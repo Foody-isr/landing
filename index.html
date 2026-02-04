@@ -347,66 +347,7 @@
       line-height: 1.45;
     }
 
-    /* Contact Form Styles */
-    .form-container {
-      padding: 22px;
-    }
-    .contact-form {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .form-group {
-      margin-bottom: 18px;
-    }
-    .form-group label {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: 600;
-      font-size: 14px;
-      color: var(--text);
-    }
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid var(--outline);
-      border-radius: var(--radius);
-      font-family: inherit;
-      font-size: 14px;
-      background: var(--surface);
-      color: var(--text);
-      transition: border-color 0.2s;
-    }
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--primary);
-    }
-    .form-group textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-    .form-actions {
-      display: flex;
-      gap: 12px;
-    }
-    .form-message {
-      margin-top: 12px;
-      padding: 12px;
-      border-radius: var(--radius);
-      font-size: 14px;
-      display: none;
-    }
-    .form-message.success {
-      background: rgba(119,186,75,0.14);
-      border: 1px solid rgba(119,186,75,0.28);
-      color: #1E4D12;
-    }
-    .form-message.error {
-      background: rgba(247,56,56,0.14);
-      border: 1px solid rgba(247,56,56,0.28);
-      color: #8B0000;
-    }
+
   </style>
 </head>
 
@@ -655,58 +596,7 @@
   <script src="./assets/js/site.js"></script>
   
   <script>
-    // Update form language field when language changes
-    window.addEventListener('languageChanged', (e) => {
-      const formLangField = document.getElementById('form-language');
-      if (formLangField) {
-        formLangField.value = e.detail.lang;
-      }
-    });
-
-    // Form submission handler
-    document.getElementById('contact-form').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      
-      const form = this;
-      const submitBtn = document.getElementById('submit-btn');
-      const messageDiv = document.getElementById('form-message');
-      const formData = new FormData(form);
-      
-      // Update button state
-      submitBtn.disabled = true;
-      const originalText = submitBtn.querySelector('[data-i18n]').textContent;
-      const sendingText = window.foodyI18n.getTranslation('form.sending_button') || 'Sending...';
-      submitBtn.querySelector('[data-i18n]').textContent = sendingText;
-      
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
-        });
-        
-        if (response.ok) {
-          // Success
-          messageDiv.className = 'form-message success';
-          messageDiv.textContent = window.foodyI18n.getTranslation('form.success_message') || 'Thank you! We\'ll be in touch soon.';
-          messageDiv.style.display = 'block';
-          form.reset();
-        } else {
-          throw new Error('Form submission failed');
-        }
-      } catch (error) {
-        // Error
-        messageDiv.className = 'form-message error';
-        messageDiv.textContent = window.foodyI18n.getTranslation('form.error_message') || 'Something went wrong. Please try again or email us directly.';
-        messageDiv.style.display = 'block';
-      } finally {
-        // Reset button
-        submitBtn.disabled = false;
-        submitBtn.querySelector('[data-i18n]').textContent = originalText;
-      }
-    });
+    // Form language field is no longer needed as the contact form has been removed
   </script>
 </body>
 </html>
