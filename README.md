@@ -5,7 +5,11 @@ A bilingual (English/French) marketing landing site for Foody POS with light and
 ## 🌟 Features
 
 - **Bilingual Support**: English (`/en/`) and French (`/fr/`) versions
-- **Automatic Language Detection**: Root page (`/`) detects browser language and redirects
+- **Instant Automatic Redirect**: Root page (`/`) immediately redirects based on browser language
+  - No manual language selection required
+  - French browsers → `/fr/`
+  - All other languages → `/en/` (default)
+  - Fallback language chooser shown if JavaScript fails or redirect doesn't complete
 - **Theme Toggle**: Light and dark modes with system preference detection
 - **Theme Persistence**: User's theme choice saved in localStorage
 - **Responsive Design**: Beautiful on all devices

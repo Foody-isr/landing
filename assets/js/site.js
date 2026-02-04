@@ -38,21 +38,22 @@ function detectAndRedirect() {
   const userLang = navigator.language || navigator.userLanguage;
   const langCode = userLang.toLowerCase().split('-')[0];
   
-  // Show redirecting message
-  const redirectMsg = document.getElementById('redirect-message');
-  if (redirectMsg) {
-    redirectMsg.style.display = 'block';
-  }
-  
-  // Redirect after a short delay to show the message
+  // Set fallback timeout first (will be cleared automatically when page navigates away)
+  // Only executes if redirect fails for some reason
   setTimeout(() => {
-    if (langCode === 'fr') {
-      window.location.href = './fr/';
-    } else {
-      // Default to English for all other languages
-      window.location.href = './en/';
+    const fallback = document.getElementById('language-fallback');
+    if (fallback) {
+      fallback.style.display = 'block';
     }
-  }, 1500);
+  }, 2000);
+  
+  // Redirect immediately based on browser language
+  if (langCode === 'fr') {
+    window.location.replace('./fr/');
+  } else {
+    // Default to English for all other languages
+    window.location.replace('./en/');
+  }
 }
 
 // Smooth Scroll for Anchor Links
