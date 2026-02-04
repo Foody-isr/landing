@@ -38,6 +38,15 @@ function detectAndRedirect() {
   const userLang = navigator.language || navigator.userLanguage;
   const langCode = userLang.toLowerCase().split('-')[0];
   
+  // Set fallback timeout first (will be cleared automatically when page navigates away)
+  // Only executes if redirect fails for some reason
+  setTimeout(() => {
+    const fallback = document.getElementById('language-fallback');
+    if (fallback) {
+      fallback.style.display = 'block';
+    }
+  }, 2000);
+  
   // Redirect immediately based on browser language
   if (langCode === 'fr') {
     window.location.replace('./fr/');
@@ -45,14 +54,6 @@ function detectAndRedirect() {
     // Default to English for all other languages
     window.location.replace('./en/');
   }
-  
-  // Show fallback links after 2 seconds if redirect somehow failed
-  setTimeout(() => {
-    const fallback = document.getElementById('language-fallback');
-    if (fallback) {
-      fallback.style.display = 'block';
-    }
-  }, 2000);
 }
 
 // Smooth Scroll for Anchor Links
