@@ -166,12 +166,8 @@
       // Create switcher buttons if they don't exist
       if (!switcher.querySelector('[data-lang]')) {
         switcher.innerHTML = `
-          <button class="lang-btn" data-lang="en" aria-label="Switch to English">
-            <span class="flag">🇬🇧</span> EN
-          </button>
-          <button class="lang-btn" data-lang="fr" aria-label="Passer au français">
-            <span class="flag">🇫🇷</span> FR
-          </button>
+          <button class="lang-btn" data-lang="en" aria-label="Switch to English">EN</button>
+          <button class="lang-btn" data-lang="fr" aria-label="Passer au français">FR</button>
         `;
       }
       
