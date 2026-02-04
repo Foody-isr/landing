@@ -347,6 +347,87 @@
       line-height: 1.45;
     }
 
+    /* Media Gallery */
+    .media-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-4);
+      margin-top: var(--space-4);
+    }
+
+    .media-item {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      border: 1px solid var(--outline);
+      box-shadow: 0 4px 12px var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .media-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px var(--shadow);
+    }
+
+    .media-item img,
+    .media-item video {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 1px solid var(--outline);
+    }
+
+    .media-caption {
+      padding: 14px;
+      text-align: center;
+    }
+
+    .media-caption h4 {
+      margin: 0 0 4px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .media-caption p {
+      margin: 0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* Single Hero Media */
+    .hero-media {
+      width: 100%;
+      border-radius: var(--radius-card);
+      box-shadow: 0 14px 38px var(--shadow);
+      border: 1px solid var(--outline);
+    }
+
+    /* Video Container */
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: var(--radius-card);
+      background: var(--surfaceSubtle);
+    }
+
+    .video-wrapper video,
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    @media (max-width: 880px) {
+      .media-gallery {
+        grid-template-columns: 1fr;
+      }
+    }
 
   </style>
 </head>
@@ -468,6 +549,93 @@
           <p data-i18n="features.analytics_desc">Daily/weekly reporting, top sellers, staff performance (MVP scope).</p>
         </div>
       </div>
+    </section>
+
+    <!-- PRODUCT SCREENSHOTS -->
+    <section class="card" style="padding:22px;">
+      <h2 class="section-title" data-i18n="screenshots.section_title">See Foody in Action</h2>
+      <p class="section-sub" data-i18n="screenshots.section_description">
+        Take a look at the intuitive interface designed for speed and clarity.
+      </p>
+
+      <div class="media-gallery">
+        <!-- POS Dashboard Screenshot -->
+        <div class="media-item">
+          <img 
+            src="./assets/img/screenshots/pos-dashboard.png" 
+            alt="POS Dashboard"
+            loading="lazy">
+          <div class="media-caption">
+            <h4 data-i18n="screenshots.pos_dashboard_title">POS Dashboard</h4>
+            <p data-i18n="screenshots.pos_dashboard_desc">Table overview, order management, and quick actions</p>
+          </div>
+        </div>
+
+        <!-- QR Ordering Flow Screenshot -->
+        <div class="media-item">
+          <img 
+            src="./assets/img/screenshots/qr-ordering-flow.png" 
+            alt="QR Ordering Flow"
+            loading="lazy">
+          <div class="media-caption">
+            <h4 data-i18n="screenshots.qr_ordering_title">QR Self-Ordering</h4>
+            <p data-i18n="screenshots.qr_ordering_desc">Guest scans QR, browses menu, and orders instantly</p>
+          </div>
+        </div>
+
+        <!-- Kitchen Display Screenshot -->
+        <div class="media-item">
+          <img 
+            src="./assets/img/screenshots/kitchen-display.png" 
+            alt="Kitchen Display"
+            loading="lazy">
+          <div class="media-caption">
+            <h4 data-i18n="screenshots.kitchen_display_title">Kitchen Display</h4>
+            <p data-i18n="screenshots.kitchen_display_desc">Real-time order tickets for kitchen staff</p>
+          </div>
+        </div>
+
+        <!-- Order Creation Screenshot -->
+        <div class="media-item">
+          <img 
+            src="./assets/img/screenshots/order-creation.png" 
+            alt="Order Creation"
+            loading="lazy">
+          <div class="media-caption">
+            <h4 data-i18n="screenshots.order_creation_title">Order Creation</h4>
+            <p data-i18n="screenshots.order_creation_desc">Fast POS order entry for staff</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO DEMO -->
+    <section class="card" style="padding:22px;">
+      <h2 class="section-title" data-i18n="video.section_title">Watch the Full Workflow</h2>
+      <p class="section-sub" data-i18n="video.section_description">
+        See how Foody streamlines the entire restaurant experience from QR scan to kitchen ticket.
+      </p>
+
+      <div class="video-wrapper">
+        <!-- Option 1: Local video file -->
+        <video controls poster="./assets/img/videos/demo-thumbnail.jpg">
+          <source src="./assets/img/videos/demo-overview.mp4" type="video/mp4">
+          <span data-i18n="video.not_supported">Your browser doesn't support video playback.</span>
+        </video>
+
+        <!-- Option 2: YouTube embed (uncomment and replace VIDEO_ID) -->
+        <!-- 
+        <iframe 
+          src="https://www.youtube.com/embed/VIDEO_ID" 
+          title="Foody POS Demo"
+          allowfullscreen>
+        </iframe>
+        -->
+      </div>
+
+      <p class="note" style="text-align:center;margin-top:16px;" data-i18n="video.caption">
+        Full demo: Guest orders via QR → POS receives → Kitchen ticket prints → Real-time status tracking
+      </p>
     </section>
 
     <!-- HOW IT WORKS -->
