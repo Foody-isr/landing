@@ -1,252 +1,466 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Foody POS - Point de vente moderne connecté au cloud avec commande QR en libre-service, mises à jour en temps réel et gestion complète de restaurant">
-  <meta name="keywords" content="POS, restaurant, commande QR, iPad POS, POS cloud, gestion restaurant">
-  <title>Foody POS - Gestion de Restaurant Moderne et Connectée</title>
-  <link rel="stylesheet" href="../assets/css/site.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Foody — POS moderne + Commande QR pour restaurants</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --primary: #EB5204;
+      --gold: #D89B35;
+      --green: #77BA4B;
+      --red: #F73838;
+
+      --bg: #F5F6F8;
+      --surface: #FFFFFF;
+      --surfaceSubtle: #F0F2F5;
+      --outline: #E4E5E7;
+
+      --text: #1A1A1A;
+      --muted: #4B5563;
+
+      --shadow: rgba(39,40,52,0.12);
+
+      --radius-card: 12px;
+      --radius: 10px;
+
+      --space-4: 20px;
+      --space-5: 28px;
+
+      --max: 1040px;
+    }
+
+    * { box-sizing: border-box; }
+    body{
+      margin:0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Nunito Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height: 1.25;
+    }
+    a{ color: var(--primary); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    .page{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 48px;
+    }
+
+    @media print{
+      body{ background:#fff; }
+      .page{ max-width:none; padding:0; }
+      .no-print{ display:none !important; }
+      a{ color: inherit; text-decoration:none; }
+    }
+
+    .card{
+      background: var(--surface);
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: var(--radius-card);
+      box-shadow: 0 10px 20px var(--shadow);
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      padding: 8px 12px;
+      background: var(--surfaceSubtle);
+      border: 1px solid var(--outline);
+      border-radius: 999px;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 12px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
+      padding: 14px 18px;
+      border-radius: var(--radius);
+      font-weight: 800;
+      letter-spacing: .2px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      user-select:none;
+      white-space: nowrap;
+    }
+    .btn-primary{ background: var(--primary); color:#fff; }
+    .btn-outline{ background: transparent; color: var(--text); border-color: var(--outline); }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      border: 1px solid transparent;
+    }
+    .badge.orange{ background: rgba(235,82,4,0.12); border-color: rgba(235,82,4,0.22); color: #8B2E00;}
+    .badge.green{ background: rgba(119,186,75,0.14); border-color: rgba(119,186,75,0.28); color: #1E4D12;}
+    .badge.gold{ background: rgba(216,155,53,0.14); border-color: rgba(216,155,53,0.28); color: #6A4708;}
+
+    .hero{
+      padding: 28px;
+      position: relative;
+      overflow:hidden;
+    }
+    .hero:before{
+      content:"";
+      position:absolute;
+      inset:-40% -20% auto auto;
+      width: 520px;
+      height: 520px;
+      background: radial-gradient(closest-side, rgba(235,82,4,0.18), rgba(235,82,4,0.0));
+      transform: translate(30px,-30px);
+      pointer-events:none;
+    }
+    .hero-inner{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: var(--space-5);
+      align-items: center;
+      position: relative;
+      z-index:1;
+    }
+    @media (max-width: 880px){
+      .hero-inner{ grid-template-columns: 1fr; }
+    }
+
+    h1{
+      margin: 10px 0 10px;
+      font-size: clamp(28px, 3.4vw, 46px);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+    .lead{
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.45;
+      max-width: 60ch;
+    }
+
+    .hero-actions{
+      margin-top: var(--space-4);
+      display:flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stats{
+      padding: 16px;
+      border-radius: var(--radius-card);
+      background: linear-gradient(180deg, rgba(216,155,53,0.12), rgba(216,155,53,0.0));
+      border: 1px solid rgba(216,155,53,0.25);
+    }
+    .stat{
+      padding: 14px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.75);
+      border: 1px solid var(--outline);
+      margin-bottom: 12px;
+    }
+    .stat:last-child{ margin-bottom: 0; }
+    .stat b{ display:block; font-size: 16px; }
+    .stat span{ color: var(--muted); font-weight: 600; font-size: 12px; }
+
+    section{ margin-top: 18px; }
+    .two-col{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4);
+    }
+    @media (max-width: 880px){
+      .two-col{ grid-template-columns: 1fr; }
+    }
+    .feature{ padding: 18px; }
+    .feature h3{ margin: 0 0 8px; font-size: 14px; }
+    .feature p{ margin:0; color: var(--muted); line-height:1.45; font-size: 14px; }
+
+    .section-title{ margin: 0 0 10px; font-size: 18px; }
+    .section-sub{ margin: 0 0 16px; color: var(--muted); line-height: 1.45; }
+
+    .pricing{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+    }
+    @media (max-width: 980px){
+      .pricing{ grid-template-columns: 1fr; }
+    }
+    .plan{ padding: 18px; }
+    .plan.popular{
+      border: 1px solid rgba(235,82,4,0.28);
+      box-shadow: 0 18px 38px rgba(235,82,4,0.14);
+    }
+    .top{ display:flex; align-items:flex-start; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+    .plan h3{ margin:0; font-size: 16px; }
+    .price{ margin: 10px 0 6px; font-size: 28px; font-weight: 900; letter-spacing: -0.02em; }
+    .price small{ font-size: 12px; font-weight: 800; color: var(--muted); }
+    .plan ul{
+      margin: 12px 0 0;
+      padding: 0 0 0 18px;
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: 13px;
+    }
+    .note{ margin-top: 10px; font-size: 12px; color: var(--muted); }
+
+    .cta{
+      padding: 22px;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      background: linear-gradient(135deg, rgba(235,82,4,0.14), rgba(216,155,53,0.10));
+      border: 1px solid rgba(235,82,4,0.20);
+    }
+    .cta h2{ margin:0; font-size: 18px; }
+    .cta p{ margin: 6px 0 0; color: var(--muted); max-width: 70ch; line-height: 1.45; }
+
+    .small-print{
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.45;
+      width:100%;
+    }
+  </style>
 </head>
+
 <body>
-  <!-- En-tête -->
-  <header>
-    <div class="header-content">
-      <a href="#" class="logo">
-        <span class="logo-icon">F</span>
-        <span>Foody POS</span>
-      </a>
-      <div class="nav-controls">
-        <a href="../en/" class="lang-switch">🇬🇧 English</a>
-        <button class="theme-toggle" aria-label="Changer le thème">🌙</button>
-      </div>
-    </div>
-  </header>
+  <div class="page">
 
-  <!-- Section Héro -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <h1>Transformez Votre Restaurant avec une Technologie POS Intelligente</h1>
-        <p class="subtitle">
-          Point de vente connecté au cloud avec commande QR en libre-service, synchronisation en temps réel et analyses puissantes
+    <header class="card hero">
+      <div class="hero-inner">
+        <div>
+          <div class="pill">
+            <span class="badge orange">Foody</span>
+            <span>POS moderne + Commande QR • Temps réel • Multi‑restaurants</span>
+          </div>
+
+          <h1>Augmentez votre chiffre d’affaires et fluidifiez le service avec un POS pensé pour la restauration.</h1>
+          <p class="lead">
+            Foody est un système de caisse connecté au cloud qui combine un POS iPad ultra‑rapide pour vos équipes
+            et la commande par QR Code pour vos clients. Tout est synchronisé en temps réel — de la table à la cuisine jusqu’au paiement.
+          </p>
+
+          <div class="hero-actions no-print">
+            <a class="btn btn-primary" href="#contact">Demander une démo</a>
+            <a class="btn btn-outline" href="#pricing">Voir les tarifs</a>
+          </div>
+        </div>
+
+        <aside class="hero-stats">
+          <div class="stat">
+            <b>Commande QR</b>
+            <span>Les clients commandent (et peuvent payer) depuis la table</span>
+          </div>
+          <div class="stat">
+            <b>Synchronisation temps réel</b>
+            <span>Créée / en cuisine / prête / servie / payée</span>
+          </div>
+          <div class="stat">
+            <b>Multi‑langues</b>
+            <span>Interface POS + impression, avec support RTL</span>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <section class="two-col">
+      <div class="card feature">
+        <div class="badge gold">Le problème</div>
+        <h2 class="section-title" style="margin-top:12px">En service, la pression monte… et le chiffre d’affaires en souffre.</h2>
+        <p class="section-sub">
+          Quand l’équipe est débordée : attente, erreurs de saisie, clients qui cherchent un serveur,
+          opportunités de vente additionnelle manquées.
         </p>
-        <div class="cta-group">
-          <a href="#contact" class="btn btn-primary">Commencer</a>
-          <a href="#features" class="btn btn-secondary">En Savoir Plus</a>
+        <ul style="margin:0;padding-left:18px;color:var(--muted);line-height:1.55;font-size:13px">
+          <li>Temps perdu sur des tâches répétitives</li>
+          <li>Risque de confusion entre salle et cuisine</li>
+          <li>Pas de suivi live pour le client</li>
+          <li>Mises à jour de menu/prix difficiles</li>
+        </ul>
+      </div>
+
+      <div class="card feature">
+        <div class="badge green">La solution</div>
+        <h2 class="section-title" style="margin-top:12px">Un seul système pour l’équipe et les clients — entièrement synchronisé.</h2>
+        <p class="section-sub">
+          Foody connecte trois expériences : un POS iPad pour le staff, une web app mobile pour les clients,
+          et un serveur robuste qui orchestre commandes et événements temps réel.
+        </p>
+        <ul style="margin:0;padding-left:18px;color:var(--muted);line-height:1.55;font-size:13px">
+          <li><b>POS (iPad)</b> : tables, commandes, impressions, analytics</li>
+          <li><b>Web client</b> : scan QR → menu → commande → suivi en direct</li>
+          <li><b>Serveur</b> : rôles/permissions, menus, commandes, QR sécurisé</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card" style="padding:22px;">
+      <h2 class="section-title">Ce que vous obtenez</h2>
+      <p class="section-sub">
+        Un produit conçu pour les restaurateurs : rapide, clair, fiable, et agréable pour les équipes comme pour les clients.
+      </p>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+        <div class="card feature" style="box-shadow:none;border:1px solid var(--outline);">
+          <h3>POS iPad pour le staff</h3>
+          <p>Gestion des tables, création de commandes, encaissement, réimpressions — pensé pour la vitesse.</p>
+        </div>
+        <div class="card feature" style="box-shadow:none;border:1px solid var(--outline);">
+          <h3>Commande par QR Code</h3>
+          <p>Le client commande depuis sa table. QR sécurisé, sessions client, suivi live de la commande.</p>
+        </div>
+        <div class="card feature" style="box-shadow:none;border:1px solid var(--outline);">
+          <h3>Tickets cuisine & reçus</h3>
+          <p>Impression ESC/POS, support multi‑langues (dont l’hébreu), mise en page claire.</p>
+        </div>
+
+        <div class="card feature" style="box-shadow:none;border:1px solid var(--outline);">
+          <h3>Temps réel</h3>
+          <p>Nouvelles commandes en ligne, changements de statut, paiement — instantanément.</p>
+        </div>
+        <div class="card feature" style="box-shadow:none;border:1px solid var(--outline);">
+          <h3>Rôles & permissions</h3>
+          <p>Propriétaire, manager, caissier, serveur, chef — accès adaptés (RBAC).</p>
+        </div>
+        <div class="card feature" style="box-shadow:none;border:1px solid var(--outline);">
+          <h3>Analytics</h3>
+          <p>Indicateurs du jour/semaine, top ventes, performance staff (scope MVP).</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Section Problème-Solution -->
-  <section class="problem-solution">
-    <div class="container">
-      <div class="section-header">
-        <h2>Le Défi de la Gestion de Restaurant</h2>
-        <p>Les systèmes traditionnels empêchent les restaurants d'atteindre leur plein potentiel</p>
+    <section class="two-col">
+      <div class="card feature">
+        <h2 class="section-title">Comment fonctionne la commande QR</h2>
+        <p class="section-sub">
+          Vous générez un QR sécurisé par table. Le client scanne, commande et suit l’avancement.
+        </p>
+        <ol style="margin:0;padding-left:18px;color:var(--muted);line-height:1.55;font-size:13px">
+          <li>Génération du QR (ex : table A5)</li>
+          <li>Scan → accès immédiat au menu</li>
+          <li>Commande → création côté serveur</li>
+          <li>Le POS reçoit l’événement → ticket cuisine</li>
+          <li>Suivi client : Ouverte → En cuisine → Prête → Servie</li>
+        </ol>
       </div>
-      <div class="problem-solution-grid">
-        <div class="problem-box">
-          <h3><span class="icon">❌</span> Problèmes Courants</h3>
+
+      <div class="card feature">
+        <h2 class="section-title">Pour quels établissements ?</h2>
+        <p class="section-sub">
+          Idéal pour moderniser le service sans perdre le contrôle opérationnel.
+        </p>
+        <div style="display:grid;gap:10px;">
+          <div class="pill"><span class="badge orange">Sur place</span><span>Tables, QR, suivi live</span></div>
+          <div class="pill"><span class="badge gold">À emporter</span><span>Commande rapide au POS (option web possible)</span></div>
+          <div class="pill"><span class="badge green">Multi‑sites</span><span>Un compte, plusieurs restaurants</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="card" style="padding:22px;">
+      <h2 class="section-title">Tarifs</h2>
+      <p class="section-sub">
+        Des offres simples selon votre taille. (Remplacez les prix “XX” ci‑dessous par votre grille finale.)
+      </p>
+
+      <div class="pricing">
+        <div class="card plan">
+          <div class="top">
+            <div>
+              <h3>Starter</h3>
+              <div class="pill" style="margin-top:8px">Pour petits cafés & restauration rapide</div>
+            </div>
+          </div>
+
+          <div class="price">€ XX <small>/ mois</small></div>
           <ul>
-            <li>Temps d'attente longs pour passer commande</li>
-            <li>Systèmes déconnectés causant erreurs et retards</li>
-            <li>Matériel coûteux avec flexibilité limitée</li>
-            <li>Aucune visibilité en temps réel sur les opérations</li>
-            <li>Formation complexe pour les nouveaux employés</li>
-            <li>Contrôle d'accès et sécurité limités</li>
+            <li>POS iPad (tables + commandes)</li>
+            <li>Gestion du menu</li>
+            <li>Impression reçus (basique)</li>
+            <li>Support standard</li>
           </ul>
+          <div class="note">Option : add‑on commande QR</div>
         </div>
-        <div class="solution-box">
-          <h3><span class="icon">✓</span> Solutions Foody</h3>
+
+        <div class="card plan popular">
+          <div class="top">
+            <div>
+              <h3>Pro</h3>
+              <div class="pill" style="margin-top:8px">Idéal pour restaurants sur place</div>
+            </div>
+            <span class="badge orange">Le plus choisi</span>
+          </div>
+
+          <div class="price">€ XX <small>/ mois</small></div>
           <ul>
-            <li>Commande QR en libre-service pour un service client instantané</li>
-            <li>Connecté au cloud avec synchronisation WebSocket en temps réel</li>
-            <li>Fonctionne sur iPad avec matériel abordable</li>
-            <li>Tableau de bord en direct avec analyses complètes</li>
-            <li>Interface intuitive nécessitant une formation minimale</li>
-            <li>Contrôle d'accès basé sur les rôles (RBAC) intégré</li>
+            <li>Tout Starter</li>
+            <li><b>Commande QR</b> + sessions sécurisées</li>
+            <li>Suivi client en temps réel (web)</li>
+            <li>Tickets cuisine + impression avancée</li>
+            <li>Rôles : serveur / caissier / chef</li>
           </ul>
+          <div class="note">Recommandé pour les services chargés.</div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Section Fonctionnalités -->
-  <section id="features" class="features">
-    <div class="container">
-      <div class="section-header">
-        <h2>Fonctionnalités Puissantes pour Restaurants Modernes</h2>
-        <p>Tout ce dont vous avez besoin pour gérer votre restaurant efficacement</p>
-      </div>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">📱</div>
-          <h3>Application POS iPad</h3>
-          <p>Belle application POS basée sur Flutter optimisée pour iPad. Interface intuitive pour prendre des commandes, gérer les tables et traiter les paiements facilement.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📲</div>
-          <h3>Commande QR en Libre-Service</h3>
-          <p>Permettez aux clients de scanner des codes QR pour parcourir votre menu et passer commande directement depuis leur téléphone. Réduisez les temps d'attente et augmentez la précision des commandes.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🖨️</div>
-          <h3>Impression ESC/POS</h3>
-          <p>Intégration transparente avec les imprimantes thermiques utilisant le protocole ESC/POS. Impression automatique vers les stations de cuisine et de bar selon le type de commande.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🔄</div>
-          <h3>Mises à Jour en Temps Réel</h3>
-          <p>La synchronisation WebSocket garantit que tous les appareils restent synchronisés. Les mises à jour de commandes apparaissent instantanément sur tous les terminaux POS et appareils clients.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">👥</div>
-          <h3>Accès Basé sur les Rôles</h3>
-          <p>Système RBAC complet avec permissions personnalisables. Contrôlez qui peut accéder à quelles fonctionnalités, gérez les comptes du personnel et suivez l'activité des utilisateurs.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📊</div>
-          <h3>Analyses Avancées</h3>
-          <p>Tableaux de bord complets avec insights en temps réel. Suivez les ventes, surveillez les stocks, analysez les tendances et prenez des décisions basées sur les données.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🌐</div>
-          <h3>Support Multi-Langues</h3>
-          <p>Servez des clients internationaux avec un support intégré pour plusieurs langues. Menu et interface disponibles en anglais, français et plus.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">☁️</div>
-          <h3>Connecté au Cloud</h3>
-          <p>Backend puissant en Go avec infrastructure cloud. Accédez à vos données de n'importe où, sauvegardes automatiques et sécurité de niveau entreprise.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🎨</div>
-          <h3>Belle Interface Web</h3>
-          <p>Application web moderne en Next.js pour clients et gestionnaires. Design responsive qui fonctionne parfaitement sur tous les appareils.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+        <div class="card plan">
+          <div class="top">
+            <div>
+              <h3>Enterprise</h3>
+              <div class="pill" style="margin-top:8px">Groupes & multi‑restaurants</div>
+            </div>
+          </div>
 
-  <!-- Section Comment Ça Marche -->
-  <section id="how-it-works" class="how-it-works">
-    <div class="container">
-      <div class="section-header">
-        <h2>Comment Fonctionne la Commande QR</h2>
-        <p>Simple, rapide et agréable pour vos clients</p>
-      </div>
-      <div class="steps">
-        <div class="step">
-          <div class="step-number">1</div>
-          <h3>Le Client Scanne le Code QR</h3>
-          <p>Placez des codes QR sur les tables ou affichez-les à votre comptoir. Les clients scannent avec l'appareil photo de leur téléphone - aucune application à télécharger.</p>
-        </div>
-        <div class="step">
-          <div class="step-number">2</div>
-          <h3>Parcourir le Menu et Commander</h3>
-          <p>Menu numérique élégant avec photos et descriptions. Les clients peuvent personnaliser les articles, ajouter au panier et passer commande en quelques secondes.</p>
-        </div>
-        <div class="step">
-          <div class="step-number">3</div>
-          <h3>Mises à Jour Cuisine en Temps Réel</h3>
-          <p>Les commandes apparaissent instantanément sur les terminaux POS et s'impriment automatiquement aux stations de cuisine. Le personnel peut suivre l'état des commandes en temps réel.</p>
-        </div>
-        <div class="step">
-          <div class="step-number">4</div>
-          <h3>Suivre l'État de la Commande</h3>
-          <p>Les clients reçoivent des mises à jour en direct sur l'avancement de leur commande. Les notifications push les tiennent informés de la préparation jusqu'à la disponibilité.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section Tarification -->
-  <section id="pricing" class="pricing">
-    <div class="container">
-      <div class="section-header">
-        <h2>Tarification Simple et Transparente</h2>
-        <p>Choisissez le plan qui convient à votre restaurant</p>
-      </div>
-      <div class="pricing-grid">
-        <div class="pricing-card">
-          <h3>Démarrage</h3>
-          <div class="price">€ XX</div>
-          <div class="price-period">par mois</div>
-          <ul class="pricing-features">
-            <li>Un seul emplacement</li>
-            <li>Jusqu'à 3 terminaux POS</li>
-            <li>Commande QR en libre-service</li>
-            <li>Analyses de base</li>
-            <li>Impression ESC/POS</li>
-            <li>Support par email</li>
+          <div class="price">Sur devis</div>
+          <ul>
+            <li>Gestion multi‑sites</li>
+            <li>Analytics avancées</li>
+            <li>Intégrations & onboarding</li>
+            <li>Support prioritaire + SLA</li>
           </ul>
-          <a href="#contact" class="btn btn-primary" style="width: 100%;">Commencer</a>
-        </div>
-        <div class="pricing-card featured">
-          <span class="pricing-badge">Le Plus Populaire</span>
-          <h3>Professionnel</h3>
-          <div class="price">€ XX</div>
-          <div class="price-period">par mois</div>
-          <ul class="pricing-features">
-            <li>Jusqu'à 3 emplacements</li>
-            <li>Terminaux POS illimités</li>
-            <li>Commande QR en libre-service</li>
-            <li>Analyses avancées</li>
-            <li>Impression ESC/POS</li>
-            <li>RBAC et gestion des utilisateurs</li>
-            <li>Support prioritaire</li>
-            <li>Image de marque personnalisée</li>
-          </ul>
-          <a href="#contact" class="btn btn-primary" style="width: 100%;">Commencer</a>
-        </div>
-        <div class="pricing-card">
-          <h3>Entreprise</h3>
-          <div class="price">Sur Mesure</div>
-          <div class="price-period">nous contacter</div>
-          <ul class="pricing-features">
-            <li>Emplacements illimités</li>
-            <li>Terminaux POS illimités</li>
-            <li>Commande QR en libre-service</li>
-            <li>Analyses d'entreprise</li>
-            <li>Impression ESC/POS</li>
-            <li>RBAC avancé</li>
-            <li>Support dédié 24/7</li>
-            <li>Intégrations personnalisées</li>
-            <li>Garantie SLA</li>
-          </ul>
-          <a href="#contact" class="btn btn-primary" style="width: 100%;">Contacter les Ventes</a>
+          <div class="note">Pour franchises ou groupes.</div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Section Contact -->
-  <section id="contact" class="contact">
-    <div class="container">
-      <h2>Prêt à Transformer Votre Restaurant ?</h2>
-      <p>Contactez notre équipe pour planifier une démonstration et voir Foody POS en action</p>
-      <a href="mailto:sales@foody-pos.com" class="btn">Nous Contacter</a>
-    </div>
-  </section>
-
-  <!-- Pied de Page -->
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-links">
-          <a href="#features">Fonctionnalités</a>
-          <a href="#how-it-works">Comment Ça Marche</a>
-          <a href="#pricing">Tarification</a>
-          <a href="mailto:support@foody-pos.com">Support</a>
-          <a href="mailto:sales@foody-pos.com">Contact</a>
-        </div>
-        <p>&copy; 2026 Foody POS. Tous droits réservés.</p>
+      <div class="small-print">
+        À préciser : frais d’installation (si applicable), politique matériel (iPads/imprimantes),
+        commissions (paiement en ligne si inclus plus tard), engagement (mensuel/annuel).
       </div>
-    </div>
-  </footer>
+    </section>
 
-  <script src="../assets/js/site.js"></script>
+    <section id="contact" class="card cta">
+      <div>
+        <h2>Prêt à découvrir Foody ?</h2>
+        <p>
+          On vous présente une démo complète : scan QR → commande → ticket cuisine → suivi live.
+        </p>
+      </div>
+
+      <div class="no-print" style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn btn-primary" href="mailto:contact@foody.com?subject=Demande%20de%20d%C3%A9mo%20Foody">Nous contacter</a>
+        <a class="btn btn-outline" href="https://github.com/Foody-isr" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+
+      <div class="small-print">
+        © Foody — POS moderne pour restaurants • Remplacez ces contacts par votre email/téléphone/site.
+      </div>
+    </section>
+
+  </div>
 </body>
 </html>
