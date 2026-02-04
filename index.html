@@ -4,29 +4,69 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Foody POS - Modern cloud-connected Point of Sale with QR self-ordering">
-  <title>Foody POS - Choose Your Language</title>
+  <title>Foody POS - Loading...</title>
   <link rel="stylesheet" href="./assets/css/site.css">
+  <style>
+    .loading-screen {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      font-family: "Nunito Sans", system-ui, -apple-system, sans-serif;
+    }
+    .loading-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #EB5204;
+    }
+    .loading-content p {
+      font-size: 1.1rem;
+      color: #4B5563;
+    }
+    .spinner {
+      margin: 1.5rem auto;
+      border: 3px solid #f3f4f6;
+      border-top: 3px solid #EB5204;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .language-fallback {
+      display: none;
+      margin-top: 2rem;
+      padding: 1rem;
+    }
+    .language-fallback a {
+      display: inline-block;
+      margin: 0 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: #EB5204;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+    .language-fallback a:hover {
+      background: #d14704;
+    }
+  </style>
 </head>
 <body>
-  <div class="language-chooser">
-    <div class="chooser-content">
+  <div class="loading-screen">
+    <div class="loading-content">
       <h1>🍽️ Foody POS</h1>
-      <p id="redirect-message" style="display: none;">Redirecting based on your browser language...</p>
-      <p>Choose your language / Choisissez votre langue</p>
-      
-      <div class="language-options">
-        <a href="./en/" class="language-option">
-          <span class="flag">🇬🇧</span>
-          <span>English</span>
-        </a>
-        <a href="./fr/" class="language-option">
-          <span class="flag">🇫🇷</span>
-          <span>Français</span>
-        </a>
-      </div>
-      
-      <div style="margin-top: 2rem;">
-        <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+      <div class="spinner"></div>
+      <p>Redirecting to your language...</p>
+      <div class="language-fallback" id="language-fallback">
+        <p style="margin-bottom: 1rem; color: #6B7280;">Choose your language:</p>
+        <a href="./en/">English 🇬🇧</a>
+        <a href="./fr/">Français 🇫🇷</a>
       </div>
     </div>
   </div>
