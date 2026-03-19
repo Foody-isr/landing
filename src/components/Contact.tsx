@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useI18n } from '@/lib/i18n/context';
 
-const FORMSPREE = 'https://formspree.io/f/xbdaqwev';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080';
 
 export default function Contact() {
   const { t } = useI18n();
@@ -54,19 +54,26 @@ export default function Contact() {
     setSubmitting(true);
     setFeedback(null);
 
-    const body = new FormData();
-    body.append('name', name);
-    body.append('email', email);
-    body.append('restaurant', restaurant);
-    body.append('order_types', orderTypes.join(', '));
-    body.append('monthly_orders', (data.get('monthly_orders') as string) || 'Not specified');
-    body.append('has_ipad', (data.get('has_ipad') as string) || 'Not specified');
-    body.append('wants_printer', (data.get('wants_printer') as string) || 'Not specified');
-    body.append('has_printer', (data.get('has_printer') as string) || 'N/A');
-    body.append('start_date', (data.get('start_date') as string || '').trim() || 'Not specified');
+    const body = {
+      first_name: name,
+      email,
+      business_name: restaurant,
+      sector: `Order types: ${orderTypes.join(', ')}`,
+      monthly_orders: (data.get('monthly_orders') as string) || '',
+      phone: [
+        `iPad: ${(data.get('has_ipad') as string) || 'N/A'}`,
+        `Printer: ${(data.get('wants_printer') as string) || 'N/A'}`,
+        `Has printer: ${(data.get('has_printer') as string) || 'N/A'}`,
+        `Start: ${(data.get('start_date') as string || '').trim() || 'N/A'}`,
+      ].join(' | '),
+    };
 
     try {
-      const res = await fetch(FORMSPREE, { method: 'POST', headers: { Accept: 'application/json' }, body });
+      const res = await fetch(`${API_URL}/api/v1/public/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
       const json = await res.json();
       if (json.ok) {
         setFeedback({ msg: t('contact.form_success'), ok: true });

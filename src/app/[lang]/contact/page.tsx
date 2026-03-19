@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useI18n } from '@/lib/i18n/context';
 
-const FORMSPREE = 'https://formspree.io/f/xbdaqwev';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080';
 
 export default function ContactPage() {
   const { t, localePath } = useI18n();
@@ -17,9 +17,9 @@ export default function ContactPage() {
     const data = new FormData(form);
 
     const firstName = (data.get('first_name') as string || '').trim();
-    const email = (data.get('email') as string || '').trim();
+    const emailVal = (data.get('email') as string || '').trim();
 
-    if (!firstName || !email) {
+    if (!firstName || !emailVal) {
       alert(t('contact.form_validation_required'));
       return;
     }
@@ -28,7 +28,20 @@ export default function ContactPage() {
     setFeedback(null);
 
     try {
-      const res = await fetch(FORMSPREE, { method: 'POST', headers: { Accept: 'application/json' }, body: data });
+      const body = {
+        first_name: firstName,
+        last_name: (data.get('last_name') as string || '').trim(),
+        email: emailVal,
+        phone: (data.get('phone') as string || '').trim(),
+        business_name: (data.get('business_name') as string || '').trim(),
+        sector: (data.get('sector') as string || '').trim(),
+        monthly_orders: (data.get('monthly_orders') as string || '').trim(),
+      };
+      const res = await fetch(`${API_URL}/api/v1/public/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
       const json = await res.json();
       if (json.ok) {
         setFeedback({ msg: t('contact.form_success'), ok: true });
