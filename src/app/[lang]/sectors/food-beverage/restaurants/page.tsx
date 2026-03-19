@@ -34,7 +34,7 @@ const TOOLS = [
 ];
 
 export default function FoodBeveragePage() {
-  const { t } = useI18n();
+  const { t, localePath } = useI18n();
 
   return (
     <>
@@ -47,7 +47,7 @@ export default function FoodBeveragePage() {
             <span className="rest-hero-label">{t('food.hero_label')}</span>
             <h1>{t('food.hero_title')}</h1>
             <p>{t('food.hero_desc')}</p>
-            <Link className="btn btn-primary" href="/contact">{t('food.hero_cta')}</Link>
+            <Link className="btn btn-primary" href={localePath('/contact')}>{t('food.hero_cta')}</Link>
           </div>
           <div className="rest-hero-image">
             <Image
@@ -128,7 +128,7 @@ export default function FoodBeveragePage() {
         <div className="rest-cta-inner">
           <h2>{t('food.cta_title')}</h2>
           <p>{t('food.cta_desc')}</p>
-          <Link className="btn btn-primary" href="/contact">{t('food.cta_button')}</Link>
+          <Link className="btn btn-primary" href={localePath('/contact')}>{t('food.cta_button')}</Link>
         </div>
       </section>
     </>

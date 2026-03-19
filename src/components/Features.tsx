@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import Link from 'next/link';
+
 import { useI18n } from '@/lib/i18n/context';
 
 const CARDS = [
@@ -43,7 +43,9 @@ export default function Features() {
                   alt={card.alt}
                   width={400}
                   height={300}
-                  style={{ width: '85%', height: 'auto', display: 'block', borderRadius: 8, boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }}
+                  style={{ width: '85%', height: 'auto', display: 'block', borderRadius: 8
+                    
+                   }}
                 />
               </div>
               <h3>{t(card.titleKey)}</h3>

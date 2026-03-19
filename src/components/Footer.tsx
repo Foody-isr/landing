@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useI18n } from '@/lib/i18n/context';
 
 export default function Footer() {
-  const { t } = useI18n();
+  const { t, localePath } = useI18n();
   return (
     <footer className="site-footer no-print">
       <div className="site-footer-inner">
@@ -17,17 +17,17 @@ export default function Footer() {
           <div className="footer-col">
             <h4>{t('footer.col1_title')}</h4>
             <ul>
-              <li><Link href="/sectors/food-beverage">{t('footer.col1_pos')}</Link></li>
-              <li><Link href="/sectors/food-beverage">{t('footer.col1_qr')}</Link></li>
-              <li><Link href="/sectors/food-beverage">{t('footer.col1_payments')}</Link></li>
-              <li><Link href="/sectors/food-beverage">{t('footer.col1_dashboard')}</Link></li>
+              <li><Link href={localePath('/sectors/food-beverage')}>{t('footer.col1_pos')}</Link></li>
+              <li><Link href={localePath('/sectors/food-beverage')}>{t('footer.col1_qr')}</Link></li>
+              <li><Link href={localePath('/sectors/food-beverage')}>{t('footer.col1_payments')}</Link></li>
+              <li><Link href={localePath('/sectors/food-beverage')}>{t('footer.col1_dashboard')}</Link></li>
             </ul>
           </div>
 
           <div className="footer-col">
             <h4>{t('footer.col2_title')}</h4>
             <ul>
-              <li><Link href="/sectors/food-beverage">{t('footer.col2_food')}</Link></li>
+              <li><Link href={localePath('/sectors/food-beverage')}>{t('footer.col2_food')}</Link></li>
               <li><span className="footer-disabled">{t('footer.col2_retail')}</span></li>
               <li><span className="footer-disabled">{t('footer.col2_beauty')}</span></li>
               <li><span className="footer-disabled">{t('footer.col2_services')}</span></li>
@@ -37,18 +37,18 @@ export default function Footer() {
           <div className="footer-col">
             <h4>{t('footer.col3_title')}</h4>
             <ul>
-              <li><Link href="/pricing">{t('footer.col3_pricing')}</Link></li>
-              <li><Link href="/contact">{t('footer.col3_contact')}</Link></li>
-              <li><Link href="/contact">{t('footer.col3_demo')}</Link></li>
+              <li><Link href={localePath('/pricing')}>{t('footer.col3_pricing')}</Link></li>
+              <li><Link href={localePath('/contact')}>{t('footer.col3_contact')}</Link></li>
+              <li><Link href={localePath('/contact')}>{t('footer.col3_demo')}</Link></li>
             </ul>
           </div>
 
           <div className="footer-col">
             <h4>{t('footer.col4_title')}</h4>
             <ul>
-              <li><Link href="/">{t('footer.col4_about')}</Link></li>
-              <li><Link href="/privacy">{t('footer.col4_privacy')}</Link></li>
-              <li><Link href="/terms">{t('footer.col4_terms')}</Link></li>
+              <li><Link href={localePath('/')}>{t('footer.col4_about')}</Link></li>
+              <li><Link href={localePath('/privacy')}>{t('footer.col4_privacy')}</Link></li>
+              <li><Link href={localePath('/terms')}>{t('footer.col4_terms')}</Link></li>
             </ul>
           </div>
         </div>

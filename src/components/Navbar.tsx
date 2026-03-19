@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useI18n } from '@/lib/i18n/context';
 
 const CATEGORIES = [
@@ -22,7 +23,8 @@ const CATEGORIES = [
 ];
 
 export default function Navbar() {
-  const { t, lang, setLang } = useI18n();
+  const { t, lang, localePath } = useI18n();
+  const pathname = usePathname();
   const [megaOpen, setMegaOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string | null>('nav.cat_food');
@@ -42,13 +44,19 @@ export default function Navbar() {
     return () => document.removeEventListener('click', handleClick);
   }, []);
 
+  // Build the path for the other locale (strip current lang prefix, add new one)
+  function switchLangHref(targetLang: string) {
+    const pathWithoutLocale = pathname.replace(/^\/(en|fr)/, '') || '/';
+    return `/${targetLang}${pathWithoutLocale}`;
+  }
+
   const activeCat = CATEGORIES.find((c) => c.key === activeCategory);
   const discoverItems = activeCat && 'discover' in activeCat ? activeCat.discover : null;
 
   return (
     <nav className="navbar no-print">
       <div className="nav-inner">
-        <Link href="/" className="nav-logo">
+        <Link href={localePath('/')} className="nav-logo">
           <Image src="/assets/logo.svg" alt="Foody" width={110} height={44} />
         </Link>
 
@@ -62,17 +70,17 @@ export default function Navbar() {
             {t('nav.sectors')}
             <span className={`nav-chevron${megaOpen ? ' open' : ''}`}>&#9662;</span>
           </button>
-          <Link href="/pricing">{t('nav.pricing')}</Link>
-          <Link href="/contact">{t('nav.contact')}</Link>
+          <Link href={localePath('/pricing')}>{t('nav.pricing')}</Link>
+          <Link href={localePath('/contact')}>{t('nav.contact')}</Link>
         </div>
 
         <div className="nav-right">
           <div className="lang-switcher">
-            <button className={`lang-btn${lang === 'en' ? ' active' : ''}`} onClick={() => setLang('en')} aria-label="Switch to English">EN</button>
-            <button className={`lang-btn${lang === 'fr' ? ' active' : ''}`} onClick={() => setLang('fr')} aria-label="Passer au français">FR</button>
+            <Link className={`lang-btn${lang === 'en' ? ' active' : ''}`} href={switchLangHref('en')} aria-label="Switch to English">EN</Link>
+            <Link className={`lang-btn${lang === 'fr' ? ' active' : ''}`} href={switchLangHref('fr')} aria-label="Passer au français">FR</Link>
           </div>
-          <Link className="nav-login" href="/contact">{t('nav.login')}</Link>
-          <Link className="btn btn-dark btn-sm no-print" href="/contact">{t('nav.cta')}</Link>
+          <Link className="nav-login" href={localePath('/contact')}>{t('nav.login')}</Link>
+          <Link className="btn btn-dark btn-sm no-print" href={localePath('/contact')}>{t('nav.cta')}</Link>
           <button
             className="nav-hamburger"
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -93,7 +101,7 @@ export default function Navbar() {
               cat.enabled ? (
                 <Link
                   key={cat.key}
-                  href={cat.href}
+                  href={localePath(cat.href)}
                   className="mobile-menu-link"
                   onClick={() => setMobileOpen(false)}
                 >
@@ -109,7 +117,7 @@ export default function Navbar() {
               (cat as typeof CATEGORIES[0]).discover?.filter(d => d.enabled).map(item => (
                 <Link
                   key={item.key}
-                  href={item.href}
+                  href={localePath(item.href)}
                   className="mobile-menu-link mobile-menu-sub"
                   onClick={() => setMobileOpen(false)}
                 >
@@ -119,18 +127,24 @@ export default function Navbar() {
             )}
           </div>
           <div className="mobile-menu-section">
-            <Link href="/pricing" className="mobile-menu-link" onClick={() => setMobileOpen(false)}>
+            <Link href={localePath('/pricing')} className="mobile-menu-link" onClick={() => setMobileOpen(false)}>
               {t('nav.pricing')}
             </Link>
-            <Link href="/contact" className="mobile-menu-link" onClick={() => setMobileOpen(false)}>
+            <Link href={localePath('/contact')} className="mobile-menu-link" onClick={() => setMobileOpen(false)}>
               {t('nav.contact')}
             </Link>
           </div>
+          <div className="mobile-menu-section">
+            <div className="mobile-menu-lang">
+              <Link className={`lang-btn${lang === 'en' ? ' active' : ''}`} href={switchLangHref('en')} onClick={() => setMobileOpen(false)}>EN</Link>
+              <Link className={`lang-btn${lang === 'fr' ? ' active' : ''}`} href={switchLangHref('fr')} onClick={() => setMobileOpen(false)}>FR</Link>
+            </div>
+          </div>
           <div className="mobile-menu-section mobile-menu-actions">
-            <Link className="btn btn-primary" href="/contact" onClick={() => setMobileOpen(false)}>
+            <Link className="btn btn-primary" href={localePath('/contact')} onClick={() => setMobileOpen(false)}>
               {t('nav.cta')}
             </Link>
-            <Link className="nav-login" href="/contact" onClick={() => setMobileOpen(false)}>
+            <Link className="nav-login" href={localePath('/contact')} onClick={() => setMobileOpen(false)}>
               {t('nav.login')}
             </Link>
           </div>
@@ -146,7 +160,7 @@ export default function Navbar() {
               cat.enabled ? (
                 <Link
                   key={cat.key}
-                  href={cat.href}
+                  href={localePath(cat.href)}
                   className={`mega-cat mega-cat-active${activeCategory === cat.key ? ' mega-cat-selected' : ''}`}
                   onMouseEnter={() => setActiveCategory(cat.key)}
                   onClick={() => setMegaOpen(false)}
@@ -171,7 +185,7 @@ export default function Navbar() {
             <div className="mega-col mega-discover">
               <span className="mega-label">{t('nav.discover')}</span>
               <Link
-                href={activeCat!.href}
+                href={localePath(activeCat!.href)}
                 className="mega-discover-overview"
                 onClick={() => setMegaOpen(false)}
               >
@@ -181,7 +195,7 @@ export default function Navbar() {
                 item.enabled ? (
                   <Link
                     key={item.key}
-                    href={item.href}
+                    href={localePath(item.href)}
                     className="mega-discover-item"
                     onClick={() => setMegaOpen(false)}
                   >

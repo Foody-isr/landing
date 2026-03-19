@@ -1,19 +1,12 @@
 'use client';
-import React, { createContext, useContext, useEffect, useState, useCallback } from 'react';
+import React, { createContext, useContext, useCallback, useMemo } from 'react';
 import en from './en.json';
 import fr from './fr.json';
 
-type Lang = 'en' | 'fr';
+export type Lang = 'en' | 'fr';
 type Translations = typeof en;
 
-const STORAGE_KEY = 'foody-language';
 const translations: Record<Lang, Translations> = { en, fr };
-
-function getBrowserLang(): Lang {
-  if (typeof navigator === 'undefined') return 'en';
-  const l = (navigator.language || '').toLowerCase();
-  return l.startsWith('fr') ? 'fr' : 'en';
-}
 
 function getKey(obj: Record<string, unknown>, key: string): string {
   const parts = key.split('.');
@@ -28,28 +21,30 @@ function getKey(obj: Record<string, unknown>, key: string): string {
 interface I18nCtx {
   lang: Lang;
   t: (key: string) => string;
-  setLang: (l: Lang) => void;
+  /** Prefix a path with the current locale, e.g. localePath('/pricing') → '/fr/pricing' */
+  localePath: (path: string) => string;
 }
 
-const Ctx = createContext<I18nCtx>({ lang: 'en', t: (k) => k, setLang: () => {} });
+const Ctx = createContext<I18nCtx>({
+  lang: 'en',
+  t: (k) => k,
+  localePath: (p) => p,
+});
 
-export function I18nProvider({ children }: { children: React.ReactNode }) {
-  const [lang, setLangState] = useState<Lang>('en');
+export function I18nProvider({ lang, children }: { lang: Lang; children: React.ReactNode }) {
+  const t = useCallback(
+    (key: string) => getKey(translations[lang] as unknown as Record<string, unknown>, key),
+    [lang],
+  );
 
-  useEffect(() => {
-    const stored = localStorage.getItem(STORAGE_KEY) as Lang | null;
-    setLangState(stored && (stored === 'en' || stored === 'fr') ? stored : getBrowserLang());
-  }, []);
+  const localePath = useCallback(
+    (path: string) => `/${lang}${path.startsWith('/') ? path : `/${path}`}`,
+    [lang],
+  );
 
-  const setLang = useCallback((l: Lang) => {
-    setLangState(l);
-    localStorage.setItem(STORAGE_KEY, l);
-    document.documentElement.lang = l;
-  }, []);
+  const value = useMemo(() => ({ lang, t, localePath }), [lang, t, localePath]);
 
-  const t = useCallback((key: string) => getKey(translations[lang] as unknown as Record<string, unknown>, key), [lang]);
-
-  return <Ctx.Provider value={{ lang, t, setLang }}>{children}</Ctx.Provider>;
+  return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }
 
 export const useI18n = () => useContext(Ctx);

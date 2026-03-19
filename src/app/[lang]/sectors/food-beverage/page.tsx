@@ -102,7 +102,7 @@ function ConceptCards({ concepts }: { concepts: typeof CONCEPTS }) {
 }
 
 export default function FoodBeveragePage() {
-  const { t } = useI18n();
+  const { t, localePath } = useI18n();
 
   return (
     <>
@@ -118,7 +118,7 @@ export default function FoodBeveragePage() {
           <div className="sector-hero-right">
             <p className="sector-hero-desc">{t('food_overview.hero_desc')}</p>
             <div className="sector-hero-actions">
-              <Link className="btn btn-primary" href="/contact">{t('food_overview.hero_cta')}</Link>
+              <Link className="btn btn-primary" href={localePath('/contact')}>{t('food_overview.hero_cta')}</Link>
             </div>
           </div>
         </div>
@@ -193,7 +193,7 @@ export default function FoodBeveragePage() {
               ))}
             </div>
             <hr className="sector-divider" />
-            <Link className="sector-link sector-link-center" href="/contact">{t('food_overview.new_way_cta')} &rarr;</Link>
+            <Link className="sector-link sector-link-center" href={localePath('/contact')}>{t('food_overview.new_way_cta')} &rarr;</Link>
           </div>
         </div>
       </section>
@@ -216,7 +216,7 @@ export default function FoodBeveragePage() {
               <h3>{t('food_overview.start_card1_title')}</h3>
               <p>{t('food_overview.start_card1_desc')}</p>
               <div className="sector-start-card-actions">
-                <Link className="btn btn-primary" href="/contact">{t('food_overview.start_card1_cta')}</Link>
+                <Link className="btn btn-primary" href={localePath('/contact')}>{t('food_overview.start_card1_cta')}</Link>
               </div>
             </div>
             <div className="sector-start-card">

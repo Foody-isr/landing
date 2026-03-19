@@ -1,8 +1,9 @@
 'use client';
+import Link from 'next/link';
 import { useI18n } from '@/lib/i18n/context';
 
 export default function Pricing() {
-  const { t } = useI18n();
+  const { t, localePath } = useI18n();
   return (
     <section id="pricing" className="section section-alt">
       <div className="section-inner">
@@ -27,7 +28,7 @@ export default function Pricing() {
                 <li key={k}>{t(`pricing.${k}`)}</li>
               ))}
             </ul>
-            <a className="btn btn-outline plan-cta no-print" href="/contact">{t('pricing.starter_cta')}</a>
+            <Link className="btn btn-outline plan-cta no-print" href={localePath('/contact')}>{t('pricing.starter_cta')}</Link>
             <div className="plan-note">{t('pricing.starter_note')}</div>
           </div>
           {/* Premium */}
@@ -46,7 +47,7 @@ export default function Pricing() {
                 <li key={k}>{t(`pricing.${k}`)}</li>
               ))}
             </ul>
-            <a className="btn btn-primary plan-cta no-print" href="/contact">{t('pricing.premium_cta')}</a>
+            <Link className="btn btn-primary plan-cta no-print" href={localePath('/contact')}>{t('pricing.premium_cta')}</Link>
             <div className="plan-note">{t('pricing.premium_note')}</div>
           </div>
           {/* Enterprise */}
@@ -64,7 +65,7 @@ export default function Pricing() {
                 <li key={k}>{t(`pricing.${k}`)}</li>
               ))}
             </ul>
-            <a className="btn btn-outline plan-cta no-print" href="/contact">{t('pricing.enterprise_cta')}</a>
+            <Link className="btn btn-outline plan-cta no-print" href={localePath('/contact')}>{t('pricing.enterprise_cta')}</Link>
             <div className="plan-note">{t('pricing.enterprise_note')}</div>
           </div>
         </div>

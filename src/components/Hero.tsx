@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useI18n } from '@/lib/i18n/context';
 
 export default function Hero() {
-  const { t } = useI18n();
+  const { t, localePath } = useI18n();
   return (
     <header className="hero">
       <div className="hero-inner">
@@ -12,7 +12,7 @@ export default function Hero() {
           <h1>{t('hero.title')}</h1>
           <p className="lead">{t('hero.lead')}</p>
           <div className="hero-actions no-print">
-            <Link className="btn btn-primary" href="/contact">{t('hero.cta')}</Link>
+            <Link className="btn btn-primary" href={localePath('/contact')}>{t('hero.cta')}</Link>
           </div>
         </div>
         <div className="hero-image-wrapper">

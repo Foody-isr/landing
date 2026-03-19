@@ -7,7 +7,7 @@ import { useI18n } from '@/lib/i18n/context';
 const FORMSPREE = 'https://formspree.io/f/xbdaqwev';
 
 export default function ContactPage() {
-  const { t } = useI18n();
+  const { t, localePath } = useI18n();
   const [submitting, setSubmitting] = useState(false);
   const [feedback, setFeedback] = useState<{ msg: string; ok: boolean } | null>(null);
 
@@ -46,7 +46,7 @@ export default function ContactPage() {
   return (
     <>
       <nav className="contact-nav">
-        <Link href="/" className="nav-logo">
+        <Link href={localePath('/')} className="nav-logo">
           <Image src="/assets/logo.svg" alt="Foody" width={110} height={44} />
         </Link>
       </nav>
