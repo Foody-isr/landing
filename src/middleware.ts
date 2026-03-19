@@ -11,31 +11,25 @@ function getPreferredLocale(request: NextRequest): string {
 
   // 2. Check Accept-Language header (browser default)
   const acceptLang = request.headers.get('accept-language') || '';
-  console.log('[middleware] Accept-Language:', acceptLang);
-
   for (const part of acceptLang.split(',')) {
     const lang = part.split(';')[0].trim().toLowerCase();
-    console.log('[middleware] checking lang part:', lang);
     for (const supported of SUPPORTED_LOCALES) {
-      if (lang === supported || lang.startsWith(`${supported}-`)) {
-        console.log('[middleware] matched:', supported);
-        return supported;
-      }
+      if (lang === supported || lang.startsWith(`${supported}-`)) return supported;
     }
   }
 
-  console.log('[middleware] no match, using default:', DEFAULT_LOCALE);
   return DEFAULT_LOCALE;
 }
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Skip static files, api routes, and Next.js internals
+  // Skip static files, api routes, Next.js internals, and generated images
   if (
     pathname.startsWith('/_next') ||
     pathname.startsWith('/api') ||
     pathname.startsWith('/assets') ||
+    pathname.startsWith('/opengraph-image') ||
     pathname.includes('.')
   ) {
     return NextResponse.next();
@@ -53,7 +47,6 @@ export function middleware(request: NextRequest) {
 
   // Redirect to the preferred locale (302 to avoid browser caching)
   const locale = getPreferredLocale(request);
-  console.log('[middleware] redirecting to:', locale);
   const url = request.nextUrl.clone();
   url.pathname = `/${locale}${pathname}`;
   return NextResponse.redirect(url, 302);
