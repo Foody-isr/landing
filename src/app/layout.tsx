@@ -2,18 +2,20 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Foody — The First AI‑Based POS for Modern Restaurants',
-  description: 'Foody AI-powered POS with QR ordering, delivery, pickup, scheduled orders, stock management, grocery reconciliation and AI menu automation.',
+  title: 'Power your business with Foody POS.',
+  description: 'Accept payments, manage sales, and run your business in-store or online with one platform. Start selling wherever you want in minutes.',
   openGraph: {
-    title: 'Foody — The First AI‑Based POS for Modern Restaurants',
-    description: 'Foody AI-powered POS with QR ordering, delivery, pickup, scheduled orders, stock management, grocery reconciliation and AI menu automation.',
+    title: 'Power your business with Foody POS.',
+    description: 'Accept payments, manage sales, and run your business in-store or online with one platform. Start selling wherever you want in minutes.',
     siteName: 'Foody POS',
     type: 'website',
+    images: [{ url: '/assets/og-image.png', width: 1200, height: 630, alt: 'Foody POS' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Foody — The First AI‑Based POS for Modern Restaurants',
-    description: 'Foody AI-powered POS with QR ordering, delivery, pickup, scheduled orders, stock management, grocery reconciliation and AI menu automation.',
+    title: 'Power your business with Foody POS.',
+    description: 'Accept payments, manage sales, and run your business in-store or online with one platform. Start selling wherever you want in minutes.',
+    images: ['/assets/og-image.png'],
   },
 };
 
