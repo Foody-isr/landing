@@ -123,6 +123,11 @@ export default function FoodBeveragePage() {
         </div>
       </section>
 
+      {/* Cross-link to Food & Beverage overview */}
+      <div className="crosslink">
+        <Link href={localePath('/sectors/food-beverage')}>{t('crosslinks.restaurants_to_food')} &rarr;</Link>
+      </div>
+
       {/* CTA section */}
       <section className="rest-cta">
         <div className="rest-cta-inner">

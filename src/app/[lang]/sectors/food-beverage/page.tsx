@@ -207,6 +207,11 @@ export default function FoodBeveragePage() {
         </div>
       </section>
 
+      {/* Cross-link to restaurants */}
+      <div className="crosslink">
+        <Link href={localePath('/sectors/food-beverage/restaurants')}>{t('crosslinks.food_to_restaurants')} &rarr;</Link>
+      </div>
+
       {/* Get started */}
       <section className="sector-section">
         <div className="sector-section-inner">
