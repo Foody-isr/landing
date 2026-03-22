@@ -2,10 +2,11 @@ import type { Metadata } from 'next';
 import { I18nProvider } from '@/lib/i18n/context';
 import en from '@/lib/i18n/en.json';
 import fr from '@/lib/i18n/fr.json';
+import he from '@/lib/i18n/he.json';
 
-type Lang = 'en' | 'fr';
-const SUPPORTED: Lang[] = ['en', 'fr'];
-const translations: Record<Lang, typeof en> = { en, fr };
+type Lang = 'en' | 'fr' | 'he';
+const SUPPORTED: Lang[] = ['en', 'fr', 'he'];
+const translations: Record<Lang, typeof en> = { en, fr, he };
 
 export function generateStaticParams() {
   return SUPPORTED.map((lang) => ({ lang }));

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const SUPPORTED_LOCALES = ['en', 'fr'];
+const SUPPORTED_LOCALES = ['en', 'fr', 'he'];
 const DEFAULT_LOCALE = 'en';
 const COOKIE_NAME = 'foody-locale';
 

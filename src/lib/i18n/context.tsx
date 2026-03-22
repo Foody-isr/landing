@@ -1,12 +1,13 @@
 'use client';
-import React, { createContext, useContext, useCallback, useMemo } from 'react';
+import React, { createContext, useContext, useCallback, useMemo, useEffect } from 'react';
 import en from './en.json';
 import fr from './fr.json';
+import he from './he.json';
 
-export type Lang = 'en' | 'fr';
+export type Lang = 'en' | 'fr' | 'he';
 type Translations = typeof en;
 
-const translations: Record<Lang, Translations> = { en, fr };
+const translations: Record<Lang, Translations> = { en, fr, he };
 
 function getKey(obj: Record<string, unknown>, key: string): string {
   const parts = key.split('.');
@@ -32,6 +33,11 @@ const Ctx = createContext<I18nCtx>({
 });
 
 export function I18nProvider({ lang, children }: { lang: Lang; children: React.ReactNode }) {
+  useEffect(() => {
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'he' ? 'rtl' : 'ltr';
+  }, [lang]);
+
   const t = useCallback(
     (key: string) => getKey(translations[lang] as unknown as Record<string, unknown>, key),
     [lang],

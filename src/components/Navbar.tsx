@@ -46,7 +46,7 @@ export default function Navbar() {
 
   // Build the path for the other locale (strip current lang prefix, add new one)
   function switchLangHref(targetLang: string) {
-    const pathWithoutLocale = pathname.replace(/^\/(en|fr)/, '') || '/';
+    const pathWithoutLocale = pathname.replace(/^\/(en|fr|he)/, '') || '/';
     return `/${targetLang}${pathWithoutLocale}`;
   }
 
@@ -78,6 +78,7 @@ export default function Navbar() {
           <div className="lang-switcher">
             <Link className={`lang-btn${lang === 'en' ? ' active' : ''}`} href={switchLangHref('en')} aria-label="Switch to English">EN</Link>
             <Link className={`lang-btn${lang === 'fr' ? ' active' : ''}`} href={switchLangHref('fr')} aria-label="Passer au français">FR</Link>
+            <Link className={`lang-btn${lang === 'he' ? ' active' : ''}`} href={switchLangHref('he')} aria-label="עברית">HE</Link>
           </div>
           <Link className="nav-login" href={localePath('/contact')}>{t('nav.login')}</Link>
           <Link className="btn btn-dark btn-sm no-print" href={localePath('/contact')}>{t('nav.cta')}</Link>
@@ -138,6 +139,7 @@ export default function Navbar() {
             <div className="mobile-menu-lang">
               <Link className={`lang-btn${lang === 'en' ? ' active' : ''}`} href={switchLangHref('en')} onClick={() => setMobileOpen(false)}>EN</Link>
               <Link className={`lang-btn${lang === 'fr' ? ' active' : ''}`} href={switchLangHref('fr')} onClick={() => setMobileOpen(false)}>FR</Link>
+              <Link className={`lang-btn${lang === 'he' ? ' active' : ''}`} href={switchLangHref('he')} onClick={() => setMobileOpen(false)}>HE</Link>
             </div>
           </div>
           <div className="mobile-menu-section mobile-menu-actions">
