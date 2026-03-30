@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { compileMDX } from 'next-mdx-remote/rsc';
+import remarkGfm from 'remark-gfm';
 import { getTopics, getArticles, getArticle, getAllArticlePaths } from '@/lib/help/content';
 import Breadcrumb from '@/components/help/Breadcrumb';
 import ArticleSidebar from '@/components/help/ArticleSidebar';
@@ -40,7 +41,7 @@ export default async function HelpArticlePage({
 
   const { content } = await compileMDX({
     source: rawContent,
-    options: { parseFrontmatter: false },
+    options: { parseFrontmatter: false, mdxOptions: { remarkPlugins: [remarkGfm] } },
   });
 
   const topics = getTopics(lang);
