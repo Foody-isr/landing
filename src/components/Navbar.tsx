@@ -72,6 +72,7 @@ export default function Navbar() {
           </button>
           <Link href={localePath('/pricing')}>{t('nav.pricing')}</Link>
           <Link href={localePath('/contact')}>{t('nav.contact')}</Link>
+          <Link href={localePath('/help')}>{t('help.nav_label')}</Link>
         </div>
 
         <div className="nav-right">
@@ -133,6 +134,9 @@ export default function Navbar() {
             </Link>
             <Link href={localePath('/contact')} className="mobile-menu-link" onClick={() => setMobileOpen(false)}>
               {t('nav.contact')}
+            </Link>
+            <Link href={localePath('/help')} className="mobile-menu-link" onClick={() => setMobileOpen(false)}>
+              {t('help.nav_label')}
             </Link>
           </div>
           <div className="mobile-menu-section">

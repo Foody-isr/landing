@@ -40,6 +40,7 @@ export default function Footer() {
               <li><Link href={localePath('/pricing')}>{t('footer.col3_pricing')}</Link></li>
               <li><Link href={localePath('/contact')}>{t('footer.col3_contact')}</Link></li>
               <li><Link href={localePath('/contact')}>{t('footer.col3_demo')}</Link></li>
+              <li><Link href={localePath('/help')}>{t('help.nav_label')}</Link></li>
             </ul>
           </div>
 
