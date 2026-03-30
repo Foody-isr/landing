@@ -1,0 +1,68 @@
+---
+title: "How Payments Work"
+description: "Understand how Foody processes payments through PayPlus and Summit, and how to close a bill in FoodyPOS."
+apps: both
+tags: [payments, payplus, summit, cash, card, checkout]
+updatedAt: 2026-03-30
+---
+
+## Payment Providers
+
+Foody integrates with two certified payment providers in Israel:
+
+| Provider | Type |
+|----------|------|
+| **PayPlus** | Server-to-server payment processing (default) |
+| **Summit (Sumit)** | Browser-based redirect payment flow |
+
+Your payment provider is configured by your Foody representative at onboarding. You can view (but not change) the configuration in **FoodyAdmin → Settings → Payment**.
+
+Both providers are:
+- PCI DSS compliant
+- Certified by the Israel Tax Authority
+- ISO 27001 certified
+
+---
+
+## Closing a Bill on FoodyPOS
+
+When a customer is ready to pay:
+
+1. Open the table or order in FoodyPOS.
+2. Tap **Charge** (bottom right of the cart).
+3. Select the payment method:
+   - **Card** — the integrated card terminal prompts the customer.
+   - **Cash** — enter the amount tendered; the app calculates the change.
+4. Once payment is confirmed, the receipt is generated automatically.
+
+---
+
+## Cash Payments
+
+When **Cash** is selected:
+1. Enter the amount the customer handed you.
+2. The app shows the **change due**.
+3. Tap **Confirm Payment** to close the order.
+
+---
+
+## Payment Confirmation and Receipts
+
+After a successful payment:
+- The order status updates to **Paid**.
+- A receipt is generated and can be printed (if a receipt printer is connected).
+- In **Table Mode**, the table returns to **Available** status.
+
+---
+
+## Failed or Declined Payments
+
+If a card payment fails:
+- The order remains open — no money is charged.
+- Try the payment again, or switch to cash.
+
+---
+
+## Viewing Payment History
+
+In **FoodyAdmin → Orders**, each order shows its payment status and method. You can filter by date range to review payment history for accounting.

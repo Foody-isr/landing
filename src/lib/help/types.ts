@@ -1,20 +1,7 @@
 export type Lang = 'en' | 'fr' | 'he';
-export type Product = 'foodypos' | 'foodyadmin';
 
-/** Frontmatter block at the top of each .mdx article file */
-export interface ArticleFrontmatter {
-  title: string;
-  description: string;
-  product: Product;
-  topic: string;
-  slug: string;
-  tags: string[];
-  /** Who this article is primarily for */
-  audience: 'staff' | 'manager' | 'owner';
-  difficulty: 'beginner' | 'intermediate' | 'advanced';
-  /** ISO date string: YYYY-MM-DD (gray-matter may parse this as a Date) */
-  updatedAt: string | Date;
-}
+/** Indicates which Foody app(s) an article applies to — used as display tags only */
+export type AppTag = 'foodypos' | 'foodyadmin' | 'both';
 
 /** Metadata stored in _meta.json at the topic directory level */
 export interface TopicMeta {
@@ -27,7 +14,6 @@ export interface TopicMeta {
 
 export interface TopicSummary extends TopicMeta {
   slug: string;
-  product: Product;
   lang: Lang;
   articleCount: number;
 }
@@ -37,17 +23,15 @@ export interface ArticleSummary {
   title: string;
   description: string;
   topic: string;
-  product: Product;
   lang: Lang;
 }
 
 /** Full entry in help-manifest.json for FoodyAI indexing */
 export interface ArticleManifestEntry extends ArticleSummary {
-  /** Unique ID: "{product}/{topic}/{slug}" */
+  /** Unique ID: "{topic}/{slug}" */
   id: string;
   tags: string[];
-  audience: string;
-  difficulty: string;
+  apps: AppTag;
   updatedAt: string;
   url: string;
   /** Plain-text body (stripped of markdown) for AI embedding */

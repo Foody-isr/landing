@@ -1,8 +1,7 @@
-import { getTopics, getArticles, getAllTopicPaths } from '@/lib/help/content';
-import HelpProductTabs from '@/components/help/HelpProductTabs';
+import { getTopics, getArticles, getAllTopicSlugs } from '@/lib/help/content';
 import HelpSearchBar from '@/components/help/HelpSearchBar';
-import type { Lang } from '@/lib/help/types';
-import type { ArticleSummary } from '@/lib/help/types';
+import TopicCard from '@/components/help/TopicCard';
+import type { Lang, ArticleSummary } from '@/lib/help/types';
 import en from '@/lib/i18n/en.json';
 import fr from '@/lib/i18n/fr.json';
 import he from '@/lib/i18n/he.json';
@@ -18,13 +17,12 @@ export default function HelpHubPage({ params }: { params: { lang: string } }) {
   const lang: Lang = SUPPORTED.includes(params.lang as Lang) ? (params.lang as Lang) : 'en';
   const t = translations[lang];
 
-  const posTopics = getTopics(lang, 'foodypos');
-  const adminTopics = getTopics(lang, 'foodyadmin');
+  const topics = getTopics(lang);
 
   // Build search manifest: all articles for this locale
   const manifest: ArticleSummary[] = [];
-  for (const { product, topic } of getAllTopicPaths(lang)) {
-    const articles = getArticles(lang, product as 'foodypos' | 'foodyadmin', topic);
+  for (const topicSlug of getAllTopicSlugs(lang)) {
+    const articles = getArticles(lang, topicSlug);
     manifest.push(...articles);
   }
 
@@ -40,13 +38,18 @@ export default function HelpHubPage({ params }: { params: { lang: string } }) {
         />
       </div>
 
-      <HelpProductTabs
-        posTopics={posTopics}
-        adminTopics={adminTopics}
-        posLabel={t.help.tab_pos}
-        adminLabel={t.help.tab_admin}
-        lang={lang}
-      />
+      <div className="help-topic-grid">
+        {topics.map((topic) => (
+          <TopicCard
+            key={topic.slug}
+            icon={topic.icon}
+            title={topic.title}
+            description={topic.description}
+            href={`/${lang}/help/${topic.slug}`}
+            articleCount={topic.articleCount}
+          />
+        ))}
+      </div>
     </main>
   );
 }

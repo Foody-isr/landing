@@ -1,0 +1,62 @@
+---
+title: "Setting Up Modifiers"
+description: "Create modifier groups that let customers customize items — add-ons, removals, and options with price adjustments."
+apps: foodyadmin
+tags: [menu, modifiers, add-ons, customization, price-delta]
+updatedAt: 2026-03-30
+---
+
+## What Are Modifiers?
+
+Modifiers are customization options attached to a menu item. Examples:
+- "No onions" (free removal)
+- "Extra cheese" (+₪5)
+- "Cooking level: Rare / Medium / Well done" (required choice)
+- "Add-ons: Avocado +₪8, Bacon +₪10" (multi-select optional)
+
+---
+
+## Creating a Modifier Group
+
+Modifier groups are created centrally and then linked to any number of items.
+
+1. In FoodyAdmin, go to **Menu → Modifiers**.
+2. Click **Add Modifier Group**.
+3. Give the group a name (e.g., "Cooking Level", "Add-ons", "Extras").
+4. Add options:
+   - **Option name** — what the customer sees
+   - **Price delta** — `+5` for +₪5, `0` for free, `-3` for -₪3
+5. Set the selection rules:
+   - **Required** — customer must pick at least one option
+   - **Optional** — customer can skip this group
+   - **Multi-select** — customer can pick multiple options
+   - **Max selections** — limit how many options can be chosen
+6. Click **Save**.
+
+---
+
+## Linking Modifiers to Items
+
+1. Go to **Menu → Items** and open an item.
+2. Scroll to the **Modifiers** section.
+3. Click **Add Modifier Group** and select from your existing groups.
+4. Repeat for each group you want to attach.
+5. Save the item.
+
+> **Tip:** One modifier group can be shared across many items. Create "Salad dressing" once and link it to every salad item — changes to the group apply everywhere.
+
+---
+
+## How Modifiers Appear on FoodyPOS
+
+When a staff member adds an item to an order that has required modifiers, the modifier panel opens automatically. Optional modifier groups are accessible by tapping the item in the cart.
+
+On the **QR ordering page**, customers see modifier groups inline when they select an item.
+
+---
+
+## Modifier Pricing
+
+Modifier prices are **added to the base item price**. The final item price shown to the customer includes all selected modifier price deltas.
+
+Example: Burger ₪55 + Extra cheese +₪5 + Avocado +₪8 = ₪68 displayed on the receipt.

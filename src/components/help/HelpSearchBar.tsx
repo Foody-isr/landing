@@ -65,8 +65,8 @@ export default function HelpSearchBar({ manifest, placeholder, noResultsLabel }:
           ) : (
             results.map((article) => (
               <Link
-                key={`${article.product}/${article.topic}/${article.slug}`}
-                href={`/${article.lang}/help/${article.product}/${article.topic}/${article.slug}`}
+                key={`${article.topic}/${article.slug}`}
+                href={`/${article.lang}/help/${article.topic}/${article.slug}`}
                 className="help-search-result-item"
                 onClick={() => { setQuery(''); setOpen(false); }}
                 role="option"
@@ -74,7 +74,7 @@ export default function HelpSearchBar({ manifest, placeholder, noResultsLabel }:
               >
                 <span className="help-search-result-title">{article.title}</span>
                 <span className="help-search-result-meta">
-                  {article.product === 'foodypos' ? 'FoodyPOS' : 'FoodyAdmin'} · {article.topic.replace(/-/g, ' ')}
+                  {article.topic.replace(/-/g, ' ')}
                 </span>
               </Link>
             ))

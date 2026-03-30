@@ -1,0 +1,73 @@
+---
+title: "Workflow Settings"
+description: "Configure auto-kitchen, order approval, rush mode, tips, scheduled orders, and pickup prep time."
+apps: both
+tags: [settings, workflow, auto-kitchen, rush-mode, tips, scheduled, order-approval]
+updatedAt: 2026-03-30
+---
+
+## Where to Find Workflow Settings
+
+Workflow settings are available in two places — they control the same configuration:
+- **FoodyAdmin → Restaurant → Workflow Settings**
+- **FoodyAdmin → Orders → Settings**
+
+Changes apply immediately to FoodyPOS.
+
+---
+
+## Auto Send to Kitchen
+
+**Default: off**
+
+When **on**: orders are automatically sent to the kitchen queue the moment they are confirmed (no manual "Send to Kitchen" tap required).
+
+When **off**: staff must tap **Send to Kitchen** in FoodyPOS to dispatch the order. This gives you a chance to review the order before it goes to the kitchen.
+
+**Recommended for:** high-volume quick-service restaurants, or any workflow where manual dispatch adds unnecessary friction.
+
+---
+
+## Require Order Approval
+
+**Default: off**
+
+When **on**: each incoming order (especially from QR self-ordering) must be manually accepted by a staff member before it appears in the kitchen queue. Useful if you want to screen orders for accuracy.
+
+When **off**: orders are auto-accepted and enter the workflow immediately.
+
+---
+
+## Tips
+
+**Default: off**
+
+When **on**: a tip prompt appears at checkout (both on FoodyPOS and on the QR payment screen). You can configure the suggested tip percentages.
+
+---
+
+## Rush Mode
+
+**Default: off**
+
+When **on**: estimated wait times are hidden from customers. Useful during peak service when wait times are unpredictable. Enable it manually when service gets busy, then disable when things calm down.
+
+---
+
+## Scheduled Orders
+
+**Default: off**
+
+When **on**: customers can place orders for a specific future date and time window (pickup or delivery). Scheduled orders appear in the **Scheduled Calendar** view on FoodyPOS.
+
+To use this effectively:
+1. Enable **Pickup** or **Delivery** order types as well.
+2. Set the **Pickup Prep Time** so the system knows when to show the order to your kitchen.
+
+---
+
+## Pickup Prep Time
+
+Defines how many minutes it takes to prepare a pickup or delivery order. This value is shown to the customer as part of their estimated ready time.
+
+Example: if Pickup Prep Time is 20 minutes and a customer orders at 12:00, the app shows "Ready at 12:20".

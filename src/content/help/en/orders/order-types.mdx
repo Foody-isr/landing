@@ -1,0 +1,73 @@
+---
+title: "Order Types"
+description: "Foody supports dine-in, pickup, delivery, and scheduled orders. Learn what each means and how to enable them."
+apps: both
+tags: [orders, dine-in, pickup, delivery, scheduled, order-types]
+updatedAt: 2026-03-30
+---
+
+## Overview
+
+Foody supports four order types. You choose which ones your restaurant accepts from **FoodyAdmin → Restaurant → Workflow Settings**.
+
+---
+
+## Dine-In
+
+Customers sit at a table and order through a staff member on **FoodyPOS**, or by scanning a **QR code** at the table.
+
+- Requires **Table Mode** to be active (see [Service Mode](/help/settings/service-mode)).
+- Orders are tied to a table number.
+- The order stays open until the bill is closed.
+
+**To enable:** Table Mode is on by default. You can enable QR dine-in from Workflow Settings if you want customers to self-order.
+
+---
+
+## Pickup
+
+Customers order ahead (online or at the counter) and collect at the restaurant. No table assignment.
+
+- Used in both **Counter Mode** (staff takes the order in FoodyPOS) and online via the QR/web ordering page.
+- A pickup time can optionally be shown to the customer.
+- Configure **Pickup Prep Time** (in minutes) in Workflow Settings so customers know when their order will be ready.
+
+**To enable:** Go to **Restaurant → Workflow Settings** and toggle **Pickup** on.
+
+---
+
+## Delivery
+
+Your restaurant handles its own delivery (or via **Spoke** integration).
+
+- Delivery orders come in through the QR ordering page or a manual entry on FoodyPOS.
+- You can configure a minimum order amount for delivery.
+- **Spoke integration**: if you use Spoke for delivery, connect your API key in **Settings → Spoke Delivery**.
+
+**To enable:** Go to **Restaurant → Workflow Settings** and toggle **Delivery** on.
+
+---
+
+## Scheduled Orders
+
+Customers choose a specific date and time window for their pickup or delivery order.
+
+- Scheduled orders appear in the **Scheduled Calendar** view on FoodyPOS.
+- Each order has a pickup window (e.g., 13:00–13:30).
+- Staff can view the day's scheduled orders and prepare accordingly.
+
+**To enable:** Go to **Restaurant → Workflow Settings** and toggle **Scheduled Orders** on.
+
+---
+
+## Which Order Types Should I Enable?
+
+| Restaurant type | Recommended |
+|-----------------|-------------|
+| Full-service restaurant (dining room) | Dine-in only, or dine-in + QR |
+| Café or quick service | Counter Mode + Pickup |
+| Restaurant with takeaway | Dine-in + Pickup |
+| Delivery operation | Pickup + Delivery + Scheduled |
+| Ghost kitchen | Pickup + Delivery + Scheduled |
+
+You can enable multiple order types at once.
