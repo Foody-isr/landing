@@ -1,0 +1,146 @@
+---
+title: "Estimated Supplies"
+description: "Automatically forecast tomorrow's ingredient needs based on historical sales data, generate supplier orders, and send them by email."
+apps: foodyadmin
+tags: [kitchen, stock, supplies, forecast, purchase-orders, suppliers, daily-operations, procurement]
+updatedAt: 2026-04-09
+---
+
+## What Is It?
+
+**Estimated Supplies** is a procurement planning tool built into the Daily Operations page. After you close a day, the system analyzes your sales history and tells you exactly what ingredients you need to order for tomorrow — grouped by supplier, ready to send.
+
+No more guessing, no more spreadsheets, no more forgetting to order the cod on Thursday.
+
+---
+
+## Why Use It?
+
+| Without Estimated Supplies | With Estimated Supplies |
+|---|---|
+| You guess how much to order based on gut feeling | The system calculates it from real sales data |
+| You manually check each ingredient's stock level | Shortages are computed automatically |
+| You write order lists on paper or WhatsApp | Orders are generated per supplier, exportable by email |
+| You forget what you ordered vs. what arrived | Reconciliation tracks ordered vs. received |
+| Over-ordering wastes money, under-ordering loses sales | Right-sized orders protect margins and revenue |
+
+---
+
+## How It Works
+
+The feature follows a simple 3-step cycle that repeats every day:
+
+### Step 1: Close the Day
+
+When you close a daily report in **Kitchen > Daily Operations**, two things happen:
+
+1. **Stock is automatically decremented** based on what was sold. If the report shows 20 Fish Burgers sold, and each Fish Burger uses 150g of cod and 2 buns, then 3kg of cod and 40 buns are deducted from your stock.
+
+2. The **Estimated Supplies** section appears at the bottom of the page.
+
+### Step 2: Generate Tomorrow's Order
+
+Click one of the three buttons to generate the order:
+
+- **From POS** — uses real order history (paid orders from your POS system)
+- **From Manual Sales** — uses the sales you entered manually in daily reports
+- **Both** — combines POS orders and manual entries
+
+The system then:
+
+1. **Predicts tomorrow's sales** by looking at the same day of the week over the last 6 weeks. If tomorrow is Thursday, it averages all your Thursdays.
+2. **Converts dishes to ingredients** using your recipes. 20 predicted Fish Burgers = 3kg cod + 1kg tomatoes + 40 buns.
+3. **Checks current stock levels** and only includes items where you don't have enough.
+4. **Groups items by supplier** and creates one draft purchase order per supplier.
+
+> **Example:** The system predicts you'll sell 20 Fish Burgers and 15 Ceviches tomorrow. Your recipes say that needs 4.5kg of cod total. You currently have 1kg in stock. The system generates an order for 3.5kg of cod from your fish supplier.
+
+### Step 3: Review, Adjust & Send
+
+Each supplier order appears as a card showing:
+
+- Supplier name and order status (Draft / Sent)
+- A table of ingredients with quantities and units
+
+You can:
+
+- **Review** the suggested quantities
+- **Send by email** — click "Send order", enter the supplier's email, and the order is sent as a formatted email. The status changes from "Draft" to "Sent".
+- **Regenerate** if you want to recalculate (e.g., after updating stock levels)
+
+---
+
+## The Daily Workflow
+
+Here's what a typical day looks like:
+
+| Time | Action |
+|------|--------|
+| End of day | Close the daily report |
+| After closing | Click "Generate order for tomorrow" |
+| | Review quantities per supplier |
+| | Send orders by email |
+| Next morning | Suppliers deliver |
+| | Go to Daily Operations for the new day |
+| | Use "Add Supply" to log what arrived |
+| | Compare what was ordered vs. what was received |
+
+---
+
+## Prerequisites
+
+For Estimated Supplies to work correctly, you need:
+
+1. **Recipes linked to stock items** — each menu item must have ingredients defined in **Kitchen > Recipes**. Without recipes, the system can't convert predicted sales into ingredient quantities.
+
+2. **Sales history** — at least 1-2 weeks of sales data for the same day of the week. The more history, the better the prediction (up to 6 weeks).
+
+3. **Current stock levels** — keep your stock quantities up to date so the shortage calculation is accurate.
+
+4. **Suppliers assigned to stock items** (optional but recommended) — go to **Kitchen > Stock**, edit an ingredient, and assign a supplier. This groups the order by supplier. Items without a supplier are grouped under "Unknown Supplier".
+
+---
+
+## Choosing the Right Data Source
+
+| Source | Best for | Description |
+|--------|----------|-------------|
+| **From POS** | Restaurants using Foody POS for all orders | Uses paid orders from the orders system |
+| **From Manual Sales** | Restaurants entering sales in Daily Operations | Uses the sales entries you type manually |
+| **Both** | Mixed workflow (some POS, some manual) | Combines both sources — avoids double-counting by aggregating |
+
+If you're not sure, try **Both** first.
+
+---
+
+## Understanding the Prediction
+
+The prediction uses a **simple average**: total sales of each item on the same weekday, divided by the number of weeks analyzed.
+
+**Example:**
+- Last 4 Thursdays you sold: 18, 22, 20, 20 Fish Burgers
+- Predicted for this Thursday: (18 + 22 + 20 + 20) / 4 = **20 Fish Burgers**
+
+This works well for restaurants with consistent patterns. It does not account for:
+- Holidays or special events
+- Weather changes
+- Seasonal trends
+- Promotions
+
+For now, use the prediction as a starting point and adjust manually when you know something unusual is coming.
+
+---
+
+## Tips
+
+> **Tip:** Close your day and generate orders at the same time every evening. This creates a routine your team can rely on.
+
+> **Tip:** If a supplier order looks wrong, check that the menu item's recipe is correct in **Kitchen > Recipes**. A missing or wrong ingredient will throw off the calculation.
+
+> **Tip:** Keep your stock quantities accurate. If you receive a delivery but don't log it, the system will think you have less than you do and over-order.
+
+---
+
+## Related
+
+- [Stock Management](/help/kitchen/stock-management) — manage your ingredient inventory

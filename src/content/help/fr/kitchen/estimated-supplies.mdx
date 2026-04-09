@@ -1,0 +1,122 @@
+---
+title: "Approvisionnements Estimes"
+description: "Prevoyez automatiquement les besoins en ingredients pour demain, generez des commandes fournisseurs et envoyez-les par email."
+apps: foodyadmin
+tags: [cuisine, stock, approvisionnements, previsions, commandes, fournisseurs, operations-quotidiennes]
+updatedAt: 2026-04-09
+---
+
+## Qu'est-ce que c'est ?
+
+**Approvisionnements Estimes** est un outil de planification des achats integre a la page Operations Quotidiennes. Apres avoir cloture une journee, le systeme analyse votre historique de ventes et vous indique exactement quels ingredients commander pour demain, regroupes par fournisseur et prets a envoyer.
+
+Plus besoin de deviner, plus de tableurs, plus d'oublis de commande.
+
+---
+
+## Pourquoi l'utiliser ?
+
+| Sans Approvisionnements Estimes | Avec Approvisionnements Estimes |
+|---|---|
+| Vous estimez les quantites au feeling | Le systeme calcule a partir de donnees reelles |
+| Vous verifiez manuellement chaque ingredient | Les ruptures sont calculees automatiquement |
+| Vous ecrivez les listes de commande sur papier | Les commandes sont generees par fournisseur, exportables par email |
+| Vous oubliez ce qui a ete commande vs. recu | La reconciliation suit commande vs. reception |
+| Trop commander gaspille, pas assez fait perdre des ventes | Des commandes ajustees protegent vos marges |
+
+---
+
+## Comment ca fonctionne
+
+La fonctionnalite suit un cycle simple en 3 etapes qui se repete chaque jour :
+
+### Etape 1 : Cloturer la journee
+
+Quand vous cloturez un rapport quotidien dans **Cuisine > Operations Quotidiennes**, deux choses se passent :
+
+1. **Le stock est automatiquement decremente** en fonction des ventes. Si le rapport montre 20 Fish Burgers vendus, et que chaque Fish Burger utilise 150g de cabillaud et 2 pains, alors 3kg de cabillaud et 40 pains sont deduits de votre stock.
+
+2. La section **Approvisionnements Estimes** apparait en bas de la page.
+
+### Etape 2 : Generer la commande de demain
+
+Cliquez sur l'un des trois boutons pour generer la commande :
+
+- **Depuis POS** — utilise l'historique des commandes reelles (commandes payees depuis votre caisse)
+- **Depuis ventes manuelles** — utilise les ventes saisies manuellement dans les rapports quotidiens
+- **Les deux** — combine les commandes POS et les saisies manuelles
+
+Le systeme ensuite :
+
+1. **Predit les ventes de demain** en regardant le meme jour de la semaine sur les 6 dernieres semaines.
+2. **Convertit les plats en ingredients** en utilisant vos recettes.
+3. **Verifie les niveaux de stock actuels** et n'inclut que les articles en rupture.
+4. **Regroupe par fournisseur** et cree un bon de commande brouillon par fournisseur.
+
+### Etape 3 : Verifier, ajuster et envoyer
+
+Chaque commande fournisseur apparait sous forme de carte avec :
+
+- Le nom du fournisseur et le statut (Brouillon / Envoye)
+- Un tableau d'ingredients avec quantites et unites
+
+Vous pouvez :
+
+- **Verifier** les quantites suggerees
+- **Envoyer par email** — cliquez sur "Envoyer la commande", entrez l'email du fournisseur, et la commande est envoyee sous forme d'email formate
+- **Regenerer** si vous voulez recalculer
+
+---
+
+## Le flux de travail quotidien
+
+| Moment | Action |
+|--------|--------|
+| Fin de journee | Cloturer le rapport quotidien |
+| Apres cloture | Cliquer sur "Generer la commande pour demain" |
+| | Verifier les quantites par fournisseur |
+| | Envoyer les commandes par email |
+| Lendemain matin | Les fournisseurs livrent |
+| | Aller dans Operations Quotidiennes du nouveau jour |
+| | Utiliser "Ajouter une livraison" pour enregistrer ce qui est arrive |
+| | Comparer ce qui a ete commande vs. ce qui a ete recu |
+
+---
+
+## Prerequis
+
+Pour que les Approvisionnements Estimes fonctionnent correctement, il faut :
+
+1. **Des recettes liees aux articles de stock** — chaque article du menu doit avoir des ingredients definis dans **Cuisine > Recettes**.
+
+2. **Un historique de ventes** — au moins 1-2 semaines de donnees pour le meme jour de la semaine.
+
+3. **Des niveaux de stock a jour** — gardez vos quantites de stock precises.
+
+4. **Des fournisseurs assignes aux articles de stock** (optionnel mais recommande) — allez dans **Cuisine > Stock**, editez un ingredient et assignez un fournisseur.
+
+---
+
+## Comprendre la prediction
+
+La prediction utilise une **moyenne simple** : total des ventes de chaque article le meme jour de la semaine, divise par le nombre de semaines analysees.
+
+**Exemple :**
+- Les 4 derniers jeudis vous avez vendu : 18, 22, 20, 20 Fish Burgers
+- Prediction pour ce jeudi : (18 + 22 + 20 + 20) / 4 = **20 Fish Burgers**
+
+---
+
+## Conseils
+
+> **Conseil :** Cloturez votre journee et generez les commandes a la meme heure chaque soir. Cela cree une routine fiable.
+
+> **Conseil :** Si une commande fournisseur semble incorrecte, verifiez la recette de l'article dans **Cuisine > Recettes**.
+
+> **Conseil :** Gardez vos quantites de stock precises. Si vous recevez une livraison sans l'enregistrer, le systeme pensera que vous avez moins que la realite.
+
+---
+
+## Articles lies
+
+- [Gestion du Stock](/help/kitchen/stock-management) — gerez votre inventaire d'ingredients
