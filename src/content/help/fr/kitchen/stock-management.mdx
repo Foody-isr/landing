@@ -1,0 +1,250 @@
+---
+title: "Gestion des Stocks"
+description: "Suivez vos ingredients, gerez les unites et conversions, enregistrez les mouvements, importez les livraisons par IA et recevez des alertes de stock bas."
+apps: foodyadmin
+tags: [cuisine, stock, inventaire, ingredients, unites, transactions, livraisons, import-ia, alertes, seuil, categories, fournisseur]
+updatedAt: 2026-04-10
+---
+
+## Qu'est-ce que c'est ?
+
+La **Gestion des Stocks** permet de suivre votre inventaire de matieres premieres — ce qui se trouve physiquement dans votre reserve. C'est separe de votre menu : les articles du menu sont ce que les clients commandent, les articles du stock sont ce que vous utilisez pour les preparer.
+
+Les recettes font le lien entre les deux. Lorsque vous associez des ingredients aux articles du menu (dans **Cuisine > Recettes**), le systeme peut automatiquement deduire le stock a la cloture de la journee, calculer le food cost et prevoir vos commandes du lendemain.
+
+Allez dans **Cuisine > Stock** dans FoodyAdmin pour commencer.
+
+---
+
+## Le Tableau de Bord
+
+En haut de la page, trois cartes de synthese vous donnent un apercu rapide :
+
+| Carte | Affiche | Details |
+|-------|---------|---------|
+| **Total Articles** | Nombre de tous les articles en stock | Votre catalogue complet d'ingredients |
+| **Stock Bas** | Nombre d'articles au niveau ou en dessous du seuil de reapprovisionnement | Devient rouge quand un article doit etre reapprovisionne |
+| **Valeur du Stock** | Somme de (quantite x cout unitaire) pour tous les articles | Valeur totale de ce qui est en reserve |
+
+---
+
+## Ajouter et Modifier des Articles
+
+1. Allez dans **Cuisine > Stock**.
+2. Cliquez sur **Ajouter un article** (en haut a droite).
+3. Remplissez les champs et cliquez sur **Creer**.
+
+Pour modifier un article existant, cliquez sur l'icone crayon sur sa ligne.
+
+### Reference des Champs
+
+| Champ | Obligatoire | Description |
+|-------|-------------|-------------|
+| **Nom** | Oui | Nom de l'ingredient (ex. "Huile d'olive", "Blanc de poulet") |
+| **Unite** | Oui | Comment vous comptez cet article — voir [Comprendre les Unites](#comprendre-les-unites) ci-dessous |
+| **Quantite** | Non | Niveau de stock actuel (defaut 0) |
+| **Contenu par Unite** | Non | Ce que contient chaque contenant — visible uniquement pour les unites de type contenant (unite, pack, boite, sac) |
+| **Unite de Contenu** | Non | Unite du contenu (g, kg, ml ou l) |
+| **Cout Unitaire** | Non | Votre prix d'achat par unite, utilise pour la valeur du stock et le calcul du food cost |
+| **Seuil de Reapprovisionnement** | Non | Quantite a partir de laquelle une alerte de stock bas se declenche |
+| **Fournisseur** | Non | Nom du fournisseur — utilise pour regrouper les bons de commande |
+| **Categorie** | Non | Etiquette libre pour organiser et filtrer (ex. "Produits laitiers", "Viande", "Legumes") |
+| **Notes** | Non | Notes internes ou instructions |
+| **Actif** | Non | Active par defaut. Les articles inactifs sont masques des recettes et des operations quotidiennes |
+
+---
+
+## Comprendre les Unites
+
+C'est le concept le plus important de la gestion des stocks. Il y a **deux niveaux** d'unites.
+
+### Niveau 1 : Unite de Stock
+
+L'unite de stock definit **comment vous comptez** l'article dans votre inventaire. Il y a 10 options en trois groupes :
+
+| Groupe | Unites | Ce que vous comptez |
+|--------|--------|---------------------|
+| **Mesurable** | kg, g, l, ml | Poids ou volume directement |
+| **Contenant** | unite, pack, boite, sac | Des contenants discrets et denombrables |
+| **Special** | dose, autre | Cas d'usage specifiques |
+
+### Niveau 2 : Contenu par Unite
+
+Lorsque vous choisissez une unite de type **contenant** (unite, pack, boite ou sac), deux champs supplementaires apparaissent : **Contenu par Unite** et **Unite de Contenu**. Ils repondent a la question : *"Qu'est-ce qu'il y a dans chaque contenant ?"*
+
+Par exemple, si vous achetez des tomates en conserve par boite et que chaque conserve fait 400g :
+- Unite de stock = **boite**
+- Contenu par unite = **400**
+- Unite de contenu = **g**
+
+### Pourquoi l'Unite de Contenu est Limitee a g, kg, ml, l ?
+
+Parce que la conversion ne fonctionne qu'entre des **unites mesurables**. Le systeme connait :
+
+- 1 kg = 1000 g
+- 1 l = 1000 ml
+
+Cela lui permet de convertir entre la facon dont vous **achetez** (boites, packs) et la facon dont les recettes **consomment** (grammes, millilitres). On ne peut pas convertir "3 boites" en "X packs" — ce sont des contenants arbitraires. Mais on *peut* convertir "3 boites de 400g" en "1200g".
+
+### Exemples Pratiques
+
+| Ingredient | Unite de Stock | Contenu par Unite | Unite de Contenu | Pourquoi |
+|-----------|---------------|------------------|-----------------|----------|
+| Tomates en conserve | boite | 400 | g | Vous comptez les boites. Chaque conserve fait 400g. Les recettes utilisent des grammes. |
+| Huile d'olive | unite (bouteille) | 750 | ml | Vous comptez les bouteilles. Chacune fait 750ml. Les recettes utilisent des ml. |
+| Farine | sac | 1 | kg | Vous comptez les sacs. Chacun fait 1kg. Les recettes utilisent des grammes ou kg. |
+| Oeufs | unite | — | — | Vous comptez les oeufs individuellement. Pas besoin de contenu — les recettes comptent les oeufs a la piece, pas au poids. |
+| Lait | l | — | — | Vous mesurez en litres directement. Pas besoin de couche contenant. |
+| Viande hachee | kg | — | — | Vous pesez en kilogrammes directement. |
+
+### Choisir la Bonne Approche
+
+> **Astuce :** Utilisez une **unite mesurable** (kg, g, l, ml) quand vous pesez ou mesurez l'ingredient directement — les articles en vrac comme la farine au kilo, le lait au litre. Utilisez une **unite contenant** (unite, pack, boite, sac) quand vous comptez des emballages discrets et que le systeme doit connaitre le contenu de chacun pour les conversions de recettes. Pour les articles comptes individuellement comme les oeufs, utilisez **unite** sans contenu — les recettes les referencent par nombre.
+
+---
+
+## Mouvements de Stock
+
+Au lieu de modifier les quantites directement, vous enregistrez des **transactions**. Cela cree un historique auditable de chaque mouvement de stock.
+
+### Enregistrer un Mouvement
+
+1. Cliquez sur l'icone **reception** (fleche vers le bas) sur la ligne de l'article, ou ouvrez l'article et choisissez un type de transaction.
+2. Selectionnez le type de transaction.
+3. Entrez la quantite (toujours positive — le systeme applique le bon signe).
+4. Ajoutez des notes optionnelles (ex. "Livraison matinale du Fournisseur X").
+5. Verifiez l'apercu montrant la quantite actuelle et resultante, puis confirmez.
+
+### Types de Transactions
+
+| Type | Effet | Utilisation |
+|------|-------|-------------|
+| **Reception** | Ajoute a la quantite | Livraisons, reapprovisionnements, achats |
+| **Perte** | Soustrait de la quantite | Perimes, endommages, jetes |
+| **Ajustement** | Soustrait de la quantite | Corrections apres un comptage physique |
+
+### Transactions Generees par le Systeme
+
+Deux types de transactions supplementaires apparaissent dans votre historique mais sont crees automatiquement — vous ne les saisissez pas manuellement :
+
+- **Deduction** — creee lorsque vous cloturez la journee dans **Operations Quotidiennes**. Le systeme calcule la quantite de chaque ingredient utilisee (selon les recettes et les ventes) et la deduit.
+- **Production** — creee lorsque la production de prep consomme des ingredients dans le systeme de preparation.
+
+---
+
+## Historique du Stock
+
+Pour consulter l'historique complet des transactions d'un article, cliquez sur l'**icone horloge** sur sa ligne. L'historique affiche les 50 dernieres transactions avec :
+
+- Le type de transaction (badge colore)
+- Les notes
+- La date et l'heure
+- La variation de quantite (vert pour les ajouts, rouge pour les deductions)
+
+### Reference des Couleurs
+
+| Type | Couleur | Signification |
+|------|---------|---------------|
+| Reception | Vert | Stock ajoute suite a une livraison ou un achat |
+| Deduction | Rouge | Utilise dans les ventes (via operations quotidiennes) |
+| Perte | Orange | Perime ou endommage |
+| Ajustement | Bleu | Correction manuelle |
+| Production | Violet | Consomme lors de la production de prep |
+
+---
+
+## Alertes de Stock Bas
+
+Definissez un **Seuil de Reapprovisionnement** sur n'importe quel article pour activer les alertes. Lorsque la quantite de l'article tombe au niveau ou en dessous du seuil, il est signale comme stock bas.
+
+Trois endroits affichent les alertes de stock bas :
+
+1. **Ligne de l'article** — un badge rouge "STOCK BAS" apparait a cote de l'article dans le tableau
+2. **Carte du tableau de bord** — le compteur Stock Bas devient rouge
+3. **Barre laterale** — un badge numerique rouge apparait a cote de "Stock" dans le menu de navigation
+
+Utilisez la case a cocher **Stock Bas Uniquement** dans les filtres pour voir rapidement tous les articles a reapprovisionner.
+
+> **Astuce :** Definissez votre seuil de reapprovisionnement en fonction de votre cycle de livraison. Si vous recevez des livraisons deux fois par semaine, fixez le seuil a environ 2-3 jours d'utilisation typique. Cela vous laisse le temps de commander avant la rupture.
+
+---
+
+## Categories
+
+Les categories vous aident a organiser vos ingredients en groupes logiques (ex. "Produits laitiers", "Viande", "Legumes", "Epicerie seche").
+
+- **Attribuez une categorie** lors de la creation ou la modification d'un article. Commencez a taper pour auto-completer depuis les categories existantes, ou tapez un nouveau nom pour en creer une.
+- **Des pastilles colorees** apparaissent a cote de chaque categorie dans le tableau pour un reperage visuel rapide.
+- **Filtrez par categorie** en utilisant le menu deroulant au-dessus du tableau pour voir une seule categorie a la fois.
+
+> **Astuce :** Gardez des noms de categories coherents. Choisissez "Produits laitiers" ou "Laitages" et tenez-vous-y. Des noms incoherents creent des categories en double qui fragmentent votre filtrage.
+
+---
+
+## Import de Livraison par IA
+
+Gagnez du temps en laissant l'IA extraire les articles des bons de livraison et factures automatiquement.
+
+### Etape 1 : Telecharger
+
+1. Cliquez sur le bouton **Importer une livraison** (icone etincelle) en haut de la page.
+2. Telechargez une photo d'un bon de livraison ou une facture PDF.
+3. Cliquez sur **Telecharger et Analyser**. L'IA traite le document.
+
+### Etape 2 : Verifier et Confirmer
+
+L'IA extrait les articles, quantites, unites, prix et le nom du fournisseur. Pour chaque article :
+
+- **Associez a un article existant** en utilisant le menu deroulant, ou laissez comme "nouveau" pour creer un nouvel article.
+- **Modifiez les quantites et prix** — nombre de packs, prix par pack et prix total sont modifiables et se calculent automatiquement.
+- **Attribuez une categorie** pour les nouveaux articles.
+- Verifiez le calcul final du **cout unitaire**.
+
+Cliquez sur **Confirmer l'import** pour enregistrer. Chaque article recoit une transaction "reception", et les nouveaux articles sont crees dans votre stock.
+
+> **Astuce :** Prenez des photos claires et bien eclairees des bons de livraison. L'IA fonctionne mieux avec un texte lisible, un format coherent et des prix visibles. Les documents flous ou partiellement masques necessiteront plus de corrections manuelles.
+
+> **Astuce :** Le systeme apprend de vos corrections. Quand vous associez un article de livraison a un article de stock existant, il cree un alias pour que les futures livraisons du meme fournisseur soient associees automatiquement.
+
+---
+
+## Operations en Masse
+
+Selectionnez plusieurs articles en utilisant les cases a cocher dans le tableau (ou la case a cocher "tout selectionner" dans l'en-tete). Une barre d'outils apparait avec deux actions :
+
+- **Modifier la Categorie** — attribuez a tous les articles selectionnes une categorie. Choisissez parmi les categories existantes ou tapez-en une nouvelle.
+- **Supprimer** — supprimez tous les articles selectionnes. Necessite une confirmation.
+
+---
+
+## Recherche et Filtres
+
+Trois outils de filtrage sont toujours visibles au-dessus du tableau :
+
+| Filtre | Fonctionnement |
+|--------|---------------|
+| **Recherche** | Filtre les articles par nom en temps reel |
+| **Menu deroulant Categorie** | Affiche uniquement les articles de la categorie selectionnee |
+| **Stock Bas Uniquement** | Case a cocher — affiche uniquement les articles au niveau ou en dessous du seuil |
+
+Les filtres se combinent avec une logique ET. Par exemple, chercher "poulet" avec la categorie "Viande" affiche uniquement les articles de viande contenant "poulet" dans le nom.
+
+---
+
+## Astuces
+
+> **Astuce :** Utilisez l'import de livraison par IA pour chaque livraison. Cela maintient les quantites et les couts a jour automatiquement, et construit un historique d'approvisionnement que vous pourrez consulter plus tard.
+
+> **Astuce :** Attribuez un fournisseur a chaque ingredient. Cela active la fonctionnalite d'approvisionnement estime dans les **Operations Quotidiennes** pour regrouper les bons de commande par fournisseur et les envoyer par email.
+
+> **Astuce :** Marquez les articles saisonniers ou discontinues comme **inactifs** plutot que de les supprimer. Cela preserve leur historique de transactions pour l'analyse du food cost tout en les masquant des flux de travail actifs.
+
+> **Astuce :** Consultez regulierement votre historique de stock. Des deductions inexpliquees ou de grands ecarts entre l'utilisation theorique et reelle peuvent indiquer des problemes de portionnement, de gaspillage ou d'inexactitudes dans les recettes.
+
+> **Astuce :** Combinez la gestion des stocks avec les **Operations Quotidiennes** pour avoir une vue complete. Le stock suit ce que vous avez ; les operations quotidiennes suivent ce que vous utilisez, calculent le food cost et generent les commandes du lendemain.
+
+---
+
+## Articles Associes
+
+- [Operations Quotidiennes](/help/kitchen/daily-operations) — cloturez la journee, deduisez le stock des ventes et generez les commandes fournisseurs
