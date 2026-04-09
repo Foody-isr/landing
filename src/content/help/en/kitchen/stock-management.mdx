@@ -1,47 +1,250 @@
 ---
 title: "Stock Management"
-description: "Track raw ingredients, set reorder thresholds, and get alerts when stock runs low."
+description: "Track raw ingredients, manage units and conversions, record transactions, import deliveries with AI, and get alerts when stock runs low."
 apps: foodyadmin
-tags: [kitchen, stock, inventory, ingredients, alerts]
-updatedAt: 2026-03-30
+tags: [kitchen, stock, inventory, ingredients, units, transactions, deliveries, ai-import, alerts, reorder, categories, supplier]
+updatedAt: 2026-04-10
 ---
 
-## Overview
+## What Is It?
 
-The **Kitchen → Stock** section in FoodyAdmin lets you track your raw ingredient inventory. It is separate from your menu items; it tracks what's in your storage, not what's on the menu.
+**Stock Management** tracks your raw ingredient inventory — what's physically in your storage. It is separate from your menu: menu items are what customers order, stock items are what you use to make them.
+
+Recipes bridge the two. When you link ingredients to menu items (in **Kitchen > Recipes**), the system can automatically deduct stock when daily operations are closed, calculate food cost, and predict what you need to order tomorrow.
+
+Navigate to **Kitchen > Stock** in FoodyAdmin to get started.
 
 ---
 
-## Adding an Ingredient
+## The Dashboard
 
-1. In FoodyAdmin, go to **Kitchen → Stock**.
-2. Click **Add Ingredient**.
-3. Fill in:
-   - **Name**: e.g., "Olive Oil", "Chicken Breast"
-   - **Unit**: kg, g, l, ml, unit, pack, box, bag, dose, or other
-   - **Current quantity**
-   - **Reorder threshold**: the quantity at which a low-stock alert is triggered
-4. Click **Save**.
+At the top of the page, three summary cards give you a quick snapshot:
+
+| Card | Shows | Details |
+|------|-------|---------|
+| **Total Items** | Count of all stock items | Your full ingredient catalog |
+| **Low Stock** | Count of items at or below reorder threshold | Turns red when any item needs restocking |
+| **Inventory Value** | Sum of (quantity × cost per unit) for all items | Total value of what's in storage |
+
+---
+
+## Adding & Editing Stock Items
+
+1. Go to **Kitchen > Stock**.
+2. Click **Add Item** (top right).
+3. Fill in the fields and click **Create**.
+
+To edit an existing item, click the pencil icon on its row.
+
+### Field Reference
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| **Name** | Yes | Ingredient name (e.g., "Olive Oil", "Chicken Breast") |
+| **Unit** | Yes | How you count this item — see [Understanding Units](#understanding-units) below |
+| **Quantity** | No | Current stock level (default 0) |
+| **Content per Unit** | No | What's inside each container — only shown for container units (unit, pack, box, bag) |
+| **Content Unit** | No | Unit of the content (g, kg, ml, or l) |
+| **Cost per Unit** | No | Your purchase cost per unit, used for inventory value and food cost calculations |
+| **Reorder Threshold** | No | Quantity at which a low-stock alert triggers |
+| **Supplier** | No | Supplier name — used for grouping in purchase orders |
+| **Category** | No | Free-text label for organizing and filtering (e.g., "Dairy", "Meat", "Produce") |
+| **Notes** | No | Internal notes or instructions |
+| **Active** | No | Defaults to on. Inactive items are hidden from recipes and daily operations |
+
+---
+
+## Understanding Units
+
+This is the most important concept in stock management. There are **two layers** of units.
+
+### Layer 1: Stock Unit
+
+The stock unit defines **how you count** the item in inventory. There are 10 options in three groups:
+
+| Group | Units | What you're counting |
+|-------|-------|---------------------|
+| **Measurable** | kg, g, l, ml | Weight or volume directly |
+| **Container** | unit, pack, box, bag | Discrete countable things |
+| **Special** | dose, other | Custom use cases |
+
+### Layer 2: Content per Unit
+
+When you pick a **container** unit (unit, pack, box, or bag), two extra fields appear: **Content per Unit** and **Content Unit**. These answer the question: *"What's inside each container?"*
+
+For example, if you buy canned tomatoes by the box and each can is 400g:
+- Stock unit = **box**
+- Content per unit = **400**
+- Content unit = **g**
+
+### Why Is Content Unit Limited to g, kg, ml, l?
+
+Because conversion only works between **measurable** units. The system knows:
+
+- 1 kg = 1000 g
+- 1 l = 1000 ml
+
+This lets it convert between how you **buy** (boxes, packs) and how recipes **consume** (grams, milliliters). You can't meaningfully convert "3 boxes" to "X packs" — those are arbitrary containers. But you *can* convert "3 boxes of 400g" to "1200g".
+
+### Practical Examples
+
+| Ingredient | Stock Unit | Content per Unit | Content Unit | Why |
+|-----------|-----------|-----------------|-------------|-----|
+| Canned tomatoes | box | 400 | g | You count boxes. Each can is 400g. Recipes use grams. |
+| Olive oil | unit (bottle) | 750 | ml | You count bottles. Each is 750ml. Recipes use ml. |
+| Flour | bag | 1 | kg | You count bags. Each is 1kg. Recipes use grams or kg. |
+| Eggs | unit | — | — | You count individual eggs. No content needed — recipes count eggs by piece, not by weight. |
+| Milk | l | — | — | You measure in liters directly. No container layer needed. |
+| Ground beef | kg | — | — | You weigh in kilograms directly. |
+
+### Choosing the Right Approach
+
+> **Tip:** Use a **measurable unit** (kg, g, l, ml) when you weigh or measure the ingredient directly — bulk items like flour by the kilo, milk by the liter. Use a **container unit** (unit, pack, box, bag) when you count discrete packages and need the system to know what's inside each one for recipe conversions. For items counted individually like eggs, use **unit** with no content — recipes will reference them by count.
+
+---
+
+## Stock Transactions
+
+Instead of editing quantities directly, you record **transactions**. This creates an auditable history of every stock movement.
+
+### Recording a Transaction
+
+1. Click the **receive** icon (arrow down) on the item row, or open the item and choose a transaction type.
+2. Select the transaction type.
+3. Enter the quantity (always positive — the system applies the correct sign).
+4. Add optional notes (e.g., "Morning delivery from Supplier X").
+5. Review the preview showing current and resulting quantity, then confirm.
+
+### Transaction Types
+
+| Type | Effect | Use for |
+|------|--------|---------|
+| **Receive** | Adds to quantity | Deliveries, restocking, purchases |
+| **Waste** | Subtracts from quantity | Spoilage, damage, expired items |
+| **Adjust** | Subtracts from quantity | Corrections after a physical count |
+
+### System-Generated Transactions
+
+Two additional transaction types appear in your history but are created automatically — you don't enter these manually:
+
+- **Deduct** — created when you close the day in **Daily Operations**. The system calculates how much of each ingredient was used (based on recipes and sales) and deducts it.
+- **Produce** — created when prep production consumes ingredients in the prep system.
+
+---
+
+## Stock History
+
+To view the full transaction history for any item, click the **clock icon** on its row. The history shows the last 50 transactions with:
+
+- Transaction type (color-coded badge)
+- Notes
+- Date and time
+- Quantity change (green for additions, red for deductions)
+
+### Transaction Color Reference
+
+| Type | Color | Meaning |
+|------|-------|---------|
+| Receive | Green | Stock added from a delivery or purchase |
+| Deduct | Red | Used in sales (via daily operations) |
+| Waste | Orange | Spoilage or damage |
+| Adjust | Blue | Manual correction |
+| Produce | Purple | Consumed during prep production |
 
 ---
 
 ## Low-Stock Alerts
 
-When an ingredient's quantity falls below its reorder threshold, a badge appears on the Kitchen menu in the sidebar. Check **Kitchen → Stock** regularly to see which items need restocking.
+Set a **Reorder Threshold** on any item to enable alerts. When the item's quantity drops to or below the threshold, it's flagged as low stock.
+
+Three places show low-stock warnings:
+
+1. **Item row** — a red "LOW STOCK" badge appears next to the item in the table
+2. **Dashboard card** — the Low Stock count turns red
+3. **Sidebar** — a red number badge appears next to "Stock" in the navigation menu
+
+Use the **Low Stock Only** checkbox in the filters to quickly see all items that need restocking.
+
+> **Tip:** Set your reorder threshold based on your delivery cycle. If you receive deliveries twice a week, set the threshold to roughly 2-3 days of typical usage. This gives you time to order before you run out.
 
 ---
 
-## Updating Quantities
+## Categories
 
-When you receive a delivery or use stock:
-1. Open the ingredient.
-2. Update the **Current quantity** field.
-3. Save.
+Categories help you organize ingredients into logical groups (e.g., "Dairy", "Meat", "Produce", "Dry Goods").
 
-> **Tip:** Connect ingredients to your prep recipes (in **Kitchen → Prep**) so quantities are adjusted automatically when production is recorded.
+- **Assign a category** when creating or editing an item. Start typing to auto-complete from existing categories, or type a new name to create one.
+- **Color-coded dots** appear next to each category in the table for quick visual scanning.
+- **Filter by category** using the dropdown above the table to view one category at a time.
+
+> **Tip:** Keep category names consistent. Decide on "Dairy" or "Milk Products" and stick with it. Inconsistent naming creates duplicate categories that fragment your filtering.
 
 ---
 
-## Supplier Integration
+## AI Delivery Import
 
-You can link ingredients to supplier products and create **Purchase Orders** in **Kitchen → Suppliers**. When a purchase order is marked as received, the quantities are updated automatically.
+Save time by letting AI extract items from delivery notes and invoices automatically.
+
+### Step 1: Upload
+
+1. Click the **Import Delivery** button (sparkle icon) at the top of the page.
+2. Upload a photo of a delivery note or a PDF invoice.
+3. Click **Upload and Analyze**. The AI processes the document.
+
+### Step 2: Review & Confirm
+
+The AI extracts items, quantities, units, prices, and supplier name. For each item:
+
+- **Match to existing stock** using the dropdown, or leave as "new" to create a new item.
+- **Edit quantities and prices** — pack count, price per pack, and total price are editable and auto-calculate each other.
+- **Assign a category** for new items.
+- Review the final **cost per unit** calculation.
+
+Click **Confirm Import** to save. Each item receives a "receive" transaction, and new items are created in your stock.
+
+> **Tip:** Take clear, well-lit photos of delivery notes. The AI works best with legible text, consistent formatting, and visible prices. Blurry or partially obscured documents may need more manual corrections.
+
+> **Tip:** The system learns from your corrections. When you match a delivery item to an existing stock item, it creates an alias so future deliveries from the same supplier are matched automatically.
+
+---
+
+## Bulk Operations
+
+Select multiple items using the checkboxes in the table (or the select-all checkbox in the header). A toolbar appears with two actions:
+
+- **Update Category** — assign all selected items to a category. Pick from existing categories or type a new one.
+- **Delete** — remove all selected items. Requires confirmation.
+
+---
+
+## Search & Filters
+
+Three filtering tools are always visible above the table:
+
+| Filter | How it works |
+|--------|-------------|
+| **Search** | Filters items by name as you type |
+| **Category dropdown** | Shows only items in the selected category |
+| **Low Stock Only** | Checkbox — shows only items at or below reorder threshold |
+
+Filters combine with AND logic. For example, searching "chicken" with category "Meat" shows only meat items with "chicken" in the name.
+
+---
+
+## Tips
+
+> **Tip:** Use the AI delivery import for every delivery. It keeps both quantities and costs up to date automatically, and builds a supply history you can reference later.
+
+> **Tip:** Assign a supplier to each ingredient. This enables the estimated supplies feature in **Daily Operations** to group purchase orders by supplier and send them by email.
+
+> **Tip:** Mark seasonal or discontinued items as **inactive** rather than deleting them. This preserves their transaction history for food cost analysis while hiding them from active workflows.
+
+> **Tip:** Review your stock history regularly. Unexplained deductions or large variances between theoretical and actual usage can point to portioning issues, waste, or recipe inaccuracies.
+
+> **Tip:** Combine stock management with **Daily Operations** for the full picture. Stock tracks what you have; daily operations tracks what you use, calculates food cost, and generates tomorrow's orders.
+
+---
+
+## Related
+
+- [Daily Operations](/help/kitchen/daily-operations) — close the day, deduct stock from sales, and generate supplier orders
