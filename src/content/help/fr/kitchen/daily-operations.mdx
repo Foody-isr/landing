@@ -8,9 +8,30 @@ updatedAt: 2026-04-10
 
 ## Qu'est-ce que c'est ?
 
-**Operations Quotidiennes** est le centre de commande du fonctionnement quotidien de votre cuisine. Il regroupe le suivi des ventes, la reception des livraisons, le comptage du stock, l'analyse du food cost, le suivi des pertes et la planification des achats dans un seul rapport quotidien.
+**Operations Quotidiennes** est l'outil le plus important pour piloter votre cuisine au jour le jour.
 
-Chaque jour suit le meme cycle : ouvrir un rapport, enregistrer ce qui s'est passe, cloturer la journee et generer les commandes fournisseurs pour demain.
+Il vous permet de :
+- Suivre ce que vous vendez
+- Comprendre ce que vous consommez reellement
+- Detecter les pertes et les surdosages
+- Controler votre food cost
+- Preparer vos commandes fournisseurs
+
+### En une phrase
+
+Chaque jour, vous comparez :
+
+- **Ce que vous auriez du utiliser** (selon les recettes)
+- **Ce que vous avez reellement utilise** (selon votre stock)
+
+La difference = **perte ou probleme**.
+
+Chaque jour suit le meme cycle :
+1. Enregistrer les ventes et livraisons
+2. Verifier le stock reel
+3. Analyser les ecarts
+4. Cloturer la journee
+5. Preparer les commandes du lendemain
 
 ---
 
@@ -56,27 +77,37 @@ La section **Livraisons Recues** affiche toutes les livraisons enregistrees pour
 
 ## Comptage & Ecarts de Stock
 
-C'est ici que vous comparez ce qui *aurait du* etre utilise (selon les recettes) a ce qui a ete *reellement* utilise (selon les comptages physiques).
+C'est ici que vous identifiez ou vous perdez de l'argent.
 
-### Comment fonctionnent les ecarts
+Le systeme compare :
+- **Attendu** (via les recettes)
+- **Reel** (via votre stock)
 
-Pour chaque ingredient, le systeme calcule :
+### Comment ca marche
 
-- **Stock d'ouverture** = ce que vous aviez au debut de la journee
-- **Recu** = livraisons enregistrees pendant la journee
-- **Usage theorique** = ce que les recettes indiquent, base sur les ventes
-- **Stock de fermeture** = ce que vous comptez physiquement en fin de journee
-- **Pertes** = deterioration ou dommages enregistres separement
+Le systeme calcule automatiquement :
 
-La formule : **Usage reel** = ouverture + recu - fermeture - pertes
+- **Usage attendu** — base sur les ventes et les recettes
+- **Usage reel** — base sur votre stock (ouverture + recu - fermeture - pertes)
 
-**Ecart** = usage reel - usage theorique
+Vous n'avez rien a calculer.
+
+**Ecart** = reel - attendu
+
+- Positif = vous avez utilise trop
+- Negatif = incoherence ou oubli
+
+### Comment interpreter rapidement
 
 | Ecart | Signification |
 |-------|---------------|
 | **< 5%** | Normal. Les recettes correspondent a la realite. |
 | **5-15%** | A surveiller. Problemes de portions ou pertes non enregistrees possibles. |
 | **> 15%** | Probleme. A investiguer immediatement : vol, deterioration, recettes incorrectes ou erreurs de comptage. |
+
+### Exemple concret
+
+Cabillaud : +300g (17%). Vous avez utilise trop de produit aujourd'hui — probable surdosage ou perte en cuisine.
 
 ### Saisie du stock de fermeture
 
@@ -90,6 +121,8 @@ Cliquez sur un ingredient pour voir le detail : quels articles du menu l'ont con
 
 ## Analyse du Food Cost
 
+Le food cost mesure combien vous depensez en ingredients pour generer votre chiffre d'affaires. L'objectif : maximiser votre marge.
+
 Le rapport calcule des indicateurs cles en temps reel :
 
 | KPI | Formule | Objectif |
@@ -100,6 +133,8 @@ Le rapport calcule des indicateurs cles en temps reel :
 | **Pertes** | Cout de la deterioration/dommages enregistres | Minimiser |
 
 Ces indicateurs se mettent a jour en ajoutant des ventes et en ajustant les comptages de stock tout au long de la journee.
+
+> **Important :** Un food cost eleve peut venir de prix d'achat eleves, de pertes importantes ou de portions trop genereuses. Regardez les donnees de variance pour comprendre lequel.
 
 ---
 
@@ -117,7 +152,9 @@ Ceux-ci sont sauvegardes avec le rapport et aident a construire un historique de
 
 ## Cloture de la Journee
 
-Quand vous etes pret, cliquez sur **Cloturer la journee**. Cela declenche plusieurs actions :
+C'est l'etape la plus importante de votre journee.
+
+Quand vous cliquez sur **Cloturer la journee** :
 
 1. **Le stock est automatiquement deduit** selon les ventes du jour. Le systeme consulte la recette de chaque article vendu, calcule les quantites d'ingredients necessaires, convertit les unites si besoin, et reduit vos niveaux de stock. Chaque deduction est enregistree comme une transaction de stock immuable liee a ce rapport.
 
@@ -127,11 +164,13 @@ Quand vous etes pret, cliquez sur **Cloturer la journee**. Cela declenche plusie
 
 La cloture est idempotente et sure — le stock n'est deduit qu'une seule fois.
 
+> **Important :** Une journee non cloturee = donnees incompletes. Faites de la cloture un rituel quotidien non negociable.
+
 ---
 
 ## Approvisionnements Estimes
 
-Apres la cloture, la section **Approvisionnements Estimes** apparait en bas du rapport. Le systeme predit ce que vous devez commander pour demain.
+Apres la cloture, le systeme vous propose automatiquement ce que vous devez commander. L'objectif : ne jamais etre en rupture, sans surstocker.
 
 ### Generer la commande de demain
 
@@ -195,6 +234,17 @@ Pour que les Operations Quotidiennes fonctionnent au mieux :
 3. **Fournisseurs assignes aux articles de stock** (optionnel mais recommande) — dans **Cuisine > Stock**, assignez un fournisseur a chaque ingredient pour regrouper les bons de commande.
 
 4. **Historique de ventes** (pour les approvisionnements estimes) — au moins 1-2 semaines de donnees pour le meme jour de la semaine.
+
+---
+
+## Erreurs Frequentes
+
+- **Ne pas definir les recettes** — aucun calcul fiable n'est possible
+- **Ne pas faire de comptage reel** — les ecarts deviennent inutiles
+- **Cloturer sans verifier** — les erreurs s'accumulent jour apres jour
+- **Ne pas enregistrer les pertes** — le food cost est fausse
+
+> Une donnee incorrecte = toutes vos analyses deviennent fausses.
 
 ---
 

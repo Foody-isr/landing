@@ -8,9 +8,30 @@ updatedAt: 2026-04-10
 
 ## What Is It?
 
-**Daily Operations** is the command center for your kitchen's daily workflow. It brings together sales tracking, supply receiving, stock counting, food cost analysis, waste monitoring, and procurement planning into a single daily report.
+**Daily Operations** is the most important tool for running your kitchen day to day.
 
-Every day follows the same cycle: open a report, record what happened, close the day, and generate tomorrow's supplier orders.
+It lets you:
+- Track what you sell
+- Understand what you actually consume
+- Detect losses and over-portioning
+- Control your food cost
+- Prepare tomorrow's supplier orders
+
+### In One Sentence
+
+Every day, you compare:
+
+- **What you should have used** (based on recipes)
+- **What you actually used** (based on your stock)
+
+The difference = **loss or problem**.
+
+Every day follows the same cycle:
+1. Record sales and deliveries
+2. Check actual stock
+3. Analyze variances
+4. Close the day
+5. Prepare tomorrow's orders
 
 ---
 
@@ -56,27 +77,37 @@ The **Supplies Received** section shows all deliveries logged for the day. You c
 
 ## Stock Count & Variance
 
-This is where you compare what *should* have been used (based on recipes) to what was *actually* used (based on physical counts).
+This is where you identify where you're losing money.
 
-### How Variance Works
+The system compares:
+- **Expected** (from your recipes)
+- **Actual** (from your stock)
 
-For each ingredient, the system calculates:
+### How It Works
 
-- **Opening stock** = what you had at the start of the day
-- **Received** = supplies logged during the day
-- **Theoretical usage** = what recipes say you should have used, based on sales
-- **Closing stock** = what you physically count at the end of the day
-- **Waste** = spoilage or damage recorded separately
+The system calculates automatically:
 
-The formula: **Actual usage** = opening + received - closing - waste
+- **Expected usage** — based on sales and recipes
+- **Actual usage** — based on your stock (opening + received - closing - waste)
 
-**Variance** = actual usage - theoretical usage
+You don't need to calculate anything.
+
+**Variance** = actual - expected
+
+- Positive = you used too much
+- Negative = inconsistency or missing data
+
+### How to Read It Quickly
 
 | Variance | Meaning |
 |----------|---------|
 | **< 5%** | Normal. Recipes match reality. |
 | **5-15%** | Needs attention. Could be portioning issues or unrecorded waste. |
 | **> 15%** | Problem. Investigate immediately: theft, spoilage, incorrect recipes, or counting errors. |
+
+### A Concrete Example
+
+Cod: +300g (17%). You used too much product today — likely over-portioning or kitchen waste.
 
 ### Recording Closing Stock
 
@@ -90,6 +121,8 @@ Click on any ingredient to see a detailed breakdown: which menu items consumed i
 
 ## Food Cost Analytics
 
+Food cost measures how much you spend on ingredients to generate your revenue. The goal: maximize your margin.
+
 The report calculates key metrics in real-time:
 
 | KPI | Formula | Target |
@@ -100,6 +133,8 @@ The report calculates key metrics in real-time:
 | **Waste** | Cost of recorded spoilage/damage | Minimize |
 
 These metrics update as you add sales and adjust stock counts throughout the day.
+
+> **Important:** A high food cost can come from high purchase prices, significant losses, or over-generous portions. Look at variance data to understand which one.
 
 ---
 
@@ -117,7 +152,9 @@ These are saved with the report and help build a history of operational patterns
 
 ## Closing the Day
 
-When you're ready, click **Close Day**. This triggers several actions:
+This is the most important step of your day.
+
+When you click **Close Day**, several things happen:
 
 1. **Stock is automatically deducted** based on the day's sales. The system looks up each sold menu item's recipe, calculates ingredient quantities needed, converts units if necessary, and reduces your stock levels. Every deduction is recorded as an immutable stock transaction linked to this report.
 
@@ -127,11 +164,13 @@ When you're ready, click **Close Day**. This triggers several actions:
 
 Closing is idempotent and safe to trigger multiple times — stock is only deducted once.
 
+> **Important:** An unclosed day = incomplete data. Make closing the day a non-negotiable daily ritual.
+
 ---
 
 ## Estimated Supplies
 
-After closing the day, the **Estimated Supplies** section appears at the bottom of the report. This is where the system predicts what you need to order for tomorrow.
+After closing the day, the system automatically suggests what you need to order. The goal: never run out of stock, without over-ordering.
 
 ### Generating Tomorrow's Order
 
@@ -195,6 +234,17 @@ For Daily Operations to work at its best:
 3. **Suppliers assigned to stock items** (optional but recommended) — in **Kitchen > Stock**, assign a supplier to each ingredient. This groups purchase orders by supplier.
 
 4. **Sales history** (for estimated supplies) — at least 1-2 weeks of data for the same weekday. More history means better predictions.
+
+---
+
+## Common Mistakes
+
+- **Not defining recipes** — no reliable calculations are possible
+- **Not doing a physical count** — variances become meaningless
+- **Closing without verifying** — errors accumulate day after day
+- **Not recording waste** — food cost data becomes inaccurate
+
+> One bad input = all your analytics become wrong.
 
 ---
 
