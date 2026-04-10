@@ -8,9 +8,30 @@ updatedAt: 2026-04-10
 
 ## What Is It?
 
-**Stock Management** tracks your raw ingredient inventory — what's physically in your storage. It is separate from your menu: menu items are what customers order, stock items are what you use to make them.
+**Stock Management** lets you know:
 
-Recipes bridge the two. When you link ingredients to menu items (in **Kitchen > Recipes**), the system can automatically deduct stock when daily operations are closed, calculate food cost, and predict what you need to order tomorrow.
+- What you have in the kitchen
+- What you use every day
+- Where you're losing money
+
+This is the foundation for controlling your food cost.
+
+### How It Works (Simply)
+
+Your system relies on three elements:
+
+- **Stock** — what you have
+- **Recipes** — what you should use
+- **Sales / Reality** — what was actually used
+
+The difference between expected and actual usage = **loss or error**.
+
+Recipes bridge stock and menu. When you link ingredients to menu items (in **Kitchen > Recipes**), the system can:
+
+- Automatically deduct stock at end of day
+- Calculate your food cost
+- Detect losses and over-portioning
+- Help you forecast tomorrow's orders
 
 Navigate to **Kitchen > Stock** in FoodyAdmin to get started.
 
@@ -105,7 +126,7 @@ This lets it convert between how you **buy** (boxes, packs) and how recipes **co
 
 ## Stock Transactions
 
-Instead of editing quantities directly, you record **transactions**. This creates an auditable history of every stock movement.
+> **Important:** Never modify stock directly. Every change should be a **transaction**. This lets you understand exactly where your stock came from, where it was used, and where you're losing product.
 
 ### Recording a Transaction
 
@@ -150,6 +171,41 @@ To view the full transaction history for any item, click the **clock icon** on i
 | Waste | Orange | Spoilage or damage |
 | Adjust | Blue | Manual correction |
 | Produce | Purple | Consumed during prep production |
+
+---
+
+## Understanding Losses
+
+The system constantly compares:
+
+- **Expected consumption** (from your recipes)
+- **Actual consumption** (from your stock)
+
+The difference is called **variance**.
+
+### A Simple Example
+
+You receive 2kg of cod. During the day you sell:
+- 8 Fish Burgers (100g each) = 800g
+- 18 Ceviches (50g each) = 900g
+
+Expected consumption = 1700g. But at the end of the day, nothing is left. You lost 300g.
+
+### Why Does This Happen?
+
+The most common causes:
+
+- Over-portioning
+- Kitchen mistakes
+- Products thrown away or expired
+- Incorrectly configured recipes
+- Unrecorded sales
+
+### Why It Matters
+
+Even a small loss adds up fast. 300g of cod = several lost dishes = lost revenue every single day.
+
+Use **Daily Operations** to detect these variances automatically, day after day.
 
 ---
 
@@ -239,9 +295,9 @@ Filters combine with AND logic. For example, searching "chicken" with category "
 
 > **Tip:** Mark seasonal or discontinued items as **inactive** rather than deleting them. This preserves their transaction history for food cost analysis while hiding them from active workflows.
 
-> **Tip:** Review your stock history regularly. Unexplained deductions or large variances between theoretical and actual usage can point to portioning issues, waste, or recipe inaccuracies.
+> **Tip:** Review your stock history regularly. Unexplained deductions or large variances between expected and actual usage can point to portioning issues, waste, or recipe inaccuracies.
 
-> **Tip:** Combine stock management with **Daily Operations** for the full picture. Stock tracks what you have; daily operations tracks what you use, calculates food cost, and generates tomorrow's orders.
+> **Tip:** Stock management alone is not enough. Combine it with **Daily Operations** to compare actual vs expected usage, detect losses automatically, and improve your profitability day after day. That's where you really save money.
 
 ---
 

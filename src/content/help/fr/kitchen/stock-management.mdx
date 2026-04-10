@@ -8,9 +8,30 @@ updatedAt: 2026-04-10
 
 ## Qu'est-ce que c'est ?
 
-La **Gestion des Stocks** permet de suivre votre inventaire de matieres premieres — ce qui se trouve physiquement dans votre reserve. C'est separe de votre menu : les articles du menu sont ce que les clients commandent, les articles du stock sont ce que vous utilisez pour les preparer.
+La **Gestion des Stocks** vous permet de savoir :
 
-Les recettes font le lien entre les deux. Lorsque vous associez des ingredients aux articles du menu (dans **Cuisine > Recettes**), le systeme peut automatiquement deduire le stock a la cloture de la journee, calculer le food cost et prevoir vos commandes du lendemain.
+- Ce que vous avez en cuisine
+- Ce que vous utilisez chaque jour
+- Ou vous perdez de l'argent
+
+C'est la base pour controler votre food cost.
+
+### Comment ca fonctionne (en simple)
+
+Votre systeme repose sur 3 elements :
+
+- **Stock** — ce que vous avez
+- **Recettes** — ce que vous devriez utiliser
+- **Ventes / Realite** — ce qui est reellement utilise
+
+La difference entre consommation attendue et reelle = **perte ou erreur**.
+
+Les recettes font le lien entre votre stock et votre menu. Lorsque vous associez des ingredients aux articles du menu (dans **Cuisine > Recettes**), le systeme peut :
+
+- Deduire automatiquement le stock en fin de journee
+- Calculer votre food cost
+- Detecter les pertes et surdosages
+- Vous aider a prevoir vos commandes
 
 Allez dans **Cuisine > Stock** dans FoodyAdmin pour commencer.
 
@@ -105,7 +126,7 @@ Cela lui permet de convertir entre la facon dont vous **achetez** (boites, packs
 
 ## Mouvements de Stock
 
-Au lieu de modifier les quantites directement, vous enregistrez des **transactions**. Cela cree un historique auditable de chaque mouvement de stock.
+> **Important :** Ne modifiez jamais le stock directement. Chaque changement doit etre une **transaction**. Cela vous permet de comprendre exactement d'ou vient votre stock, ou il a ete utilise, et ou vous perdez des produits.
 
 ### Enregistrer un Mouvement
 
@@ -150,6 +171,41 @@ Pour consulter l'historique complet des transactions d'un article, cliquez sur l
 | Perte | Orange | Perime ou endommage |
 | Ajustement | Bleu | Correction manuelle |
 | Production | Violet | Consomme lors de la production de prep |
+
+---
+
+## Comprendre les Pertes
+
+Le systeme compare en permanence :
+
+- **Consommation attendue** (via les recettes)
+- **Consommation reelle** (via votre stock)
+
+La difference s'appelle un **ecart**.
+
+### Exemple simple
+
+Vous recevez 2 kg de cabillaud. Pendant la journee vous vendez :
+- 8 Fish Burgers (100g chacun) = 800g
+- 18 Ceviches (50g chacun) = 900g
+
+Consommation attendue = 1700g. Mais en fin de journee, il ne reste rien. Vous avez perdu 300g.
+
+### Pourquoi ca arrive ?
+
+Les causes les plus frequentes :
+
+- Portions trop genereuses
+- Erreurs en cuisine
+- Produits jetes ou perimes
+- Recettes mal configurees
+- Ventes non enregistrees
+
+### Pourquoi c'est important ?
+
+Meme une petite perte peut couter cher. 300g de cabillaud = plusieurs plats perdus = perte de chiffre d'affaires chaque jour.
+
+Utilisez les **Operations Quotidiennes** pour detecter ces ecarts automatiquement, jour apres jour.
 
 ---
 
@@ -239,9 +295,9 @@ Les filtres se combinent avec une logique ET. Par exemple, chercher "poulet" ave
 
 > **Astuce :** Marquez les articles saisonniers ou discontinues comme **inactifs** plutot que de les supprimer. Cela preserve leur historique de transactions pour l'analyse du food cost tout en les masquant des flux de travail actifs.
 
-> **Astuce :** Consultez regulierement votre historique de stock. Des deductions inexpliquees ou de grands ecarts entre l'utilisation theorique et reelle peuvent indiquer des problemes de portionnement, de gaspillage ou d'inexactitudes dans les recettes.
+> **Astuce :** Consultez regulierement votre historique de stock. Des deductions inexpliquees ou de grands ecarts entre consommation attendue et reelle peuvent indiquer des problemes de portionnement, de gaspillage ou d'inexactitudes dans les recettes.
 
-> **Astuce :** Combinez la gestion des stocks avec les **Operations Quotidiennes** pour avoir une vue complete. Le stock suit ce que vous avez ; les operations quotidiennes suivent ce que vous utilisez, calculent le food cost et generent les commandes du lendemain.
+> **Astuce :** La gestion des stocks seule ne suffit pas. Combinez-la avec les **Operations Quotidiennes** pour comparer le reel vs l'attendu, detecter les pertes automatiquement et ameliorer votre rentabilite jour apres jour. C'est la que vous gagnez vraiment de l'argent.
 
 ---
 
