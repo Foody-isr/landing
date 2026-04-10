@@ -239,28 +239,48 @@ Les categories vous aident a organiser vos ingredients en groupes logiques (ex. 
 
 ## Import de Livraison par IA
 
-Gagnez du temps en laissant l'IA extraire les articles des bons de livraison et factures automatiquement.
+Gagnez du temps en laissant l'IA extraire les articles des bons de livraison et factures automatiquement. L'import utilise un affichage plein ecran en deux panneaux : le document original a gauche pour reference, et les articles extraits a droite.
 
-### Etape 1 : Telecharger
+### Etape 1 : Selectionner le fournisseur et telecharger
 
 1. Cliquez sur le bouton **Importer une livraison** (icone etincelle) en haut de la page.
-2. Telechargez une photo d'un bon de livraison ou une facture PDF.
-3. Cliquez sur **Telecharger et Analyser**. L'IA traite le document.
+2. **Selectionnez un fournisseur** dans votre liste existante, ou choisissez **+ Nouveau fournisseur** et saisissez le nom. Selectionner un fournisseur connu ameliore la precision d'extraction — le systeme utilise des indications specifiques au fournisseur apprises des imports precedents.
+3. Telechargez une photo d'un bon de livraison ou une facture PDF.
+4. Cliquez sur **Telecharger et Analyser**. L'IA utilise Google Vision OCR combine avec Claude AI pour une precision maximale.
 
 ### Etape 2 : Verifier et Confirmer
 
-L'IA extrait les articles, quantites, unites, prix et le nom du fournisseur. Pour chaque article :
+L'ecran se divise en deux panneaux : votre document original a gauche, et les articles extraits a droite. Pour chaque article :
 
-- **Associez a un article existant** en utilisant le menu deroulant, ou laissez comme "nouveau" pour creer un nouvel article.
-- **Modifiez les quantites et prix** — nombre de packs, prix par pack et prix total sont modifiables et se calculent automatiquement.
+- **Associez a un article existant** via le menu deroulant avec recherche, ou laissez comme "nouveau" pour creer un nouvel article. Le **nom original** (dans la langue du fournisseur) est affiche pour reference.
+- **Modifiez les details d'emballage** — le systeme supporte une decomposition a 3 niveaux :
+  - **Nombre de paquets** — nombre de colis/cartons (ex. 2 cartons)
+  - **Unites/Paquet** — nombre d'unites individuelles par paquet (ex. 12 boites par carton)
+  - **Prix par paquet** et **Prix total** — se calculent automatiquement
+- **Modifiez les details unitaires** :
+  - **Taille unitaire** — contenu par unite individuelle (ex. 400g par boite)
+  - **Unite** — l'unite de stock (g, kg, l, ml, etc.)
+  - **Quantite en stock** — calculee automatiquement : paquets x unites/paquet x taille unitaire (ex. 2 x 12 x 400 = 9 600g)
+- **TVA** — cochez "Prix TTC" dans l'en-tete si les prix du fournisseur incluent la taxe. Ce marqueur est sauvegarde par article pour des calculs de cout precis.
 - **Attribuez une categorie** pour les nouveaux articles.
-- Verifiez le calcul final du **cout unitaire**.
 
 Cliquez sur **Confirmer l'import** pour enregistrer. Chaque article recoit une transaction "reception", et les nouveaux articles sont crees dans votre stock.
 
-> **Astuce :** Prenez des photos claires et bien eclairees des bons de livraison. L'IA fonctionne mieux avec un texte lisible, un format coherent et des prix visibles. Les documents flous ou partiellement masques necessiteront plus de corrections manuelles.
+### Indications d'extraction fournisseur
+
+Lors du premier import d'un fournisseur, le systeme analyse automatiquement le format du document et genere des **indications d'extraction** (langue, type de mise en page, ordre des colonnes). Ces indications sont sauvegardees sur la fiche fournisseur et utilisees pour les imports futurs.
+
+Vous pouvez les consulter et les modifier dans **Cuisine → Fournisseurs → Modifier le fournisseur → Indications d'extraction IA**.
+
+> **Astuce :** Prenez des photos claires et bien eclairees des bons de livraison. L'IA fonctionne mieux avec un texte lisible, un format coherent et des prix visibles.
 
 > **Astuce :** Le systeme apprend de vos corrections. Quand vous associez un article de livraison a un article de stock existant, il cree un alias pour que les futures livraisons du meme fournisseur soient associees automatiquement.
+
+### TVA sur les articles de stock
+
+Chaque article de stock indique si son cout inclut la TVA ou non. Utilisez le bouton **Afficher HT / Afficher TTC** sur la page de stock (sous Valeur du stock) pour changer l'affichage. Le systeme normalise tous les couts sur la meme base pour des calculs de food cost precis.
+
+Configurez le taux de TVA de votre restaurant dans **Parametres → Taux TVA (%)**. La valeur par defaut est 18% pour Israel.
 
 ---
 

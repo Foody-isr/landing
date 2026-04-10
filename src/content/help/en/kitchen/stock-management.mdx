@@ -239,28 +239,48 @@ Categories help you organize ingredients into logical groups (e.g., "Dairy", "Me
 
 ## AI Delivery Import
 
-Save time by letting AI extract items from delivery notes and invoices automatically.
+Save time by letting AI extract items from delivery notes and invoices automatically. The import uses a full-screen split view: the original document is displayed on the left for reference while you review extracted items on the right.
 
-### Step 1: Upload
+### Step 1: Select Supplier & Upload
 
 1. Click the **Import Delivery** button (sparkle icon) at the top of the page.
-2. Upload a photo of a delivery note or a PDF invoice.
-3. Click **Upload and Analyze**. The AI processes the document.
+2. **Select a supplier** from your existing supplier list, or choose **+ New supplier** and type the name. Selecting a known supplier improves extraction accuracy — the system uses supplier-specific hints learned from previous imports.
+3. Upload a photo of a delivery note or a PDF invoice.
+4. Click **Upload and Analyze**. The AI uses Google Vision OCR combined with Claude AI for maximum accuracy.
 
 ### Step 2: Review & Confirm
 
-The AI extracts items, quantities, units, prices, and supplier name. For each item:
+The screen splits into two panels: your original document on the left, and extracted items on the right. For each item:
 
-- **Match to existing stock** using the dropdown, or leave as "new" to create a new item.
-- **Edit quantities and prices** — pack count, price per pack, and total price are editable and auto-calculate each other.
+- **Match to existing stock** using the searchable dropdown, or leave as "new" to create a new item. The **original name** (in the supplier's language) is shown for reference.
+- **Edit packaging details** — the system supports a 3-level breakdown:
+  - **Pack count** — number of packages/boxes (e.g., 2 boxes)
+  - **Units/Pack** — number of individual units per package (e.g., 12 cans per box)
+  - **Price per pack** and **Total price** — auto-calculate each other
+- **Edit unit details**:
+  - **Unit size** — content per individual unit (e.g., 400g per can)
+  - **Unit** — the stock unit (g, kg, l, ml, etc.)
+  - **Stock quantity** — auto-calculated: packs × units/pack × unit size (e.g., 2 × 12 × 400 = 9,600g)
+- **VAT toggle** — check "Price includes VAT" in the header if the supplier's prices include tax. This flag is saved per item so food cost calculations are accurate.
 - **Assign a category** for new items.
-- Review the final **cost per unit** calculation.
 
 Click **Confirm Import** to save. Each item receives a "receive" transaction, and new items are created in your stock.
 
-> **Tip:** Take clear, well-lit photos of delivery notes. The AI works best with legible text, consistent formatting, and visible prices. Blurry or partially obscured documents may need more manual corrections.
+### Supplier Extraction Hints
+
+When you import from a supplier for the first time, the system automatically analyzes the document format and generates **extraction hints** (language, layout type, column order). These hints are saved on the supplier record and used for future imports to improve accuracy.
+
+You can view and edit these hints in **Kitchen → Suppliers → Edit supplier → AI Extraction Hints**.
+
+> **Tip:** Take clear, well-lit photos of delivery notes. The AI works best with legible text, consistent formatting, and visible prices.
 
 > **Tip:** The system learns from your corrections. When you match a delivery item to an existing stock item, it creates an alias so future deliveries from the same supplier are matched automatically.
+
+### VAT on Stock Items
+
+Each stock item tracks whether its cost includes VAT or not. Use the **Show ex. VAT / Show inc. VAT** toggle on the stock page (under Inventory Value) to switch the display. The system normalizes all costs to the same basis for accurate food cost calculations.
+
+Configure your restaurant's VAT rate in **Settings → VAT Rate (%)**. Default is 18% for Israel.
 
 ---
 
