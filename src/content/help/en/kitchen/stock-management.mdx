@@ -264,6 +264,21 @@ The screen splits into two panels: your original document on the left, and extra
 - **VAT toggle** — check "Price includes VAT" in the header if the supplier's prices include tax. This flag is saved per item so food cost calculations are accurate.
 - **Assign a category** for new items.
 
+> **Example — Tomato Pulp (3-level breakdown):**
+> Your invoice shows "Tomato Pulp 400g × 2" at 58₪ each. Each "unit" is actually a box containing 12 cans of 400g. Here's how to fill it in:
+>
+> | Field | Value | Meaning |
+> |-------|-------|---------|
+> | Pack count | 2 | 2 boxes |
+> | Units/Pack | 12 | 12 cans per box |
+> | Price/Pack | 58 ₪ | Price per box |
+> | Total | 116 ₪ | 2 × 58 ₪ |
+> | Unit size | 400 | 400g per can |
+> | Unit | g | Stock tracked in grams |
+> | Stock quantity | 9,600 g | Auto: 2 × 12 × 400 = 9,600g |
+>
+> The cost per unit is automatically calculated: 116 ÷ 9,600 = **0.012 ₪/g**.
+
 Click **Confirm Import** to save. Each item receives a "receive" transaction, and new items are created in your stock.
 
 ### Supplier Extraction Hints

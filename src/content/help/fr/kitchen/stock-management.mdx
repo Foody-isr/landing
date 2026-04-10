@@ -264,6 +264,21 @@ L'ecran se divise en deux panneaux : votre document original a gauche, et les ar
 - **TVA** — cochez "Prix TTC" dans l'en-tete si les prix du fournisseur incluent la taxe. Ce marqueur est sauvegarde par article pour des calculs de cout precis.
 - **Attribuez une categorie** pour les nouveaux articles.
 
+> **Exemple — Pulpe de tomate (decomposition a 3 niveaux) :**
+> Votre facture indique "Pulpe de tomate 400g × 2" a 58₪ chacun. Chaque "unite" est en fait un carton contenant 12 boites de 400g. Voici comment remplir :
+>
+> | Champ | Valeur | Signification |
+> |-------|--------|---------------|
+> | Nombre de paquets | 2 | 2 cartons |
+> | Unites/Paquet | 12 | 12 boites par carton |
+> | Prix/Paquet | 58 ₪ | Prix par carton |
+> | Total | 116 ₪ | 2 × 58 ₪ |
+> | Taille unitaire | 400 | 400g par boite |
+> | Unite | g | Stock suivi en grammes |
+> | Quantite en stock | 9 600 g | Auto : 2 × 12 × 400 = 9 600g |
+>
+> Le cout unitaire est calcule automatiquement : 116 ÷ 9 600 = **0,012 ₪/g**.
+
 Cliquez sur **Confirmer l'import** pour enregistrer. Chaque article recoit une transaction "reception", et les nouveaux articles sont crees dans votre stock.
 
 ### Indications d'extraction fournisseur
