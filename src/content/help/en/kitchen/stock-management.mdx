@@ -57,21 +57,44 @@ At the top of the page, three summary cards give you a quick snapshot:
 
 To edit an existing item, click the pencil icon on its row.
 
-### Field Reference
+The create/edit modal has **two tabs**:
+
+### Tab: General
+
+Basic information about the item.
 
 | Field | Required | Description |
 |-------|----------|-------------|
 | **Name** | Yes | Ingredient name (e.g., "Olive Oil", "Chicken Breast") |
 | **Unit** | Yes | How you count this item — see [Understanding Units](#understanding-units) below |
 | **Quantity** | No | Current stock level (default 0) |
-| **Content per Unit** | No | What's inside each container — only shown for container units (unit, pack, box, bag) |
-| **Content Unit** | No | Unit of the content (g, kg, ml, or l) |
-| **Cost per Unit** | No | Your purchase cost per unit, used for inventory value and food cost calculations |
-| **Reorder Threshold** | No | Quantity at which a low-stock alert triggers |
 | **Supplier** | No | Supplier name — used for grouping in purchase orders |
 | **Category** | No | Free-text label for organizing and filtering (e.g., "Dairy", "Meat", "Produce") |
 | **Notes** | No | Internal notes or instructions |
 | **Active** | No | Defaults to on. Inactive items are hidden from recipes and daily operations |
+
+### Tab: Packaging & Pricing
+
+How the item is packaged and what it costs. Choose one of **three packaging modes**:
+
+**Simple** — For items bought by weight or volume (e.g., 5kg flour, 3L oil). Just enter cost per stock unit.
+
+**By units** — For individual containers (e.g., 6 bottles of 1.5L). Enter the content per unit (e.g., 1.5L) and cost per stock unit.
+
+**By packages** — For boxes containing multiple units (e.g., 2 cartons of 12 cans of 400g). Enter units per package, content per unit, and cost per stock unit.
+
+The modal shows a **live price summary** that updates as you type, showing HT and TTC prices at every level (per stock unit, per individual unit, per package).
+
+> **Example — Tomato Pulp (By packages mode):**
+> Set units/package = 12, content/unit = 400g, cost = 0.0121 ₪/g.
+> The summary shows: 4.83 ₪ HT / 5.70 ₪ TTC per can, 58.00 ₪ HT / 68.44 ₪ TTC per box.
+
+| Field | Description |
+|-------|-------------|
+| **Units/Package** | How many individual units in one package (e.g., 12 cans per box) |
+| **Content/Unit** | What's inside each unit (e.g., 400g per can) |
+| **Cost per Unit** | Your purchase cost per stock unit (e.g., ₪/g) |
+| **Reorder Threshold** | Quantity at which a low-stock alert triggers |
 
 ---
 
@@ -291,6 +314,14 @@ You can view and edit these hints in **Kitchen → Suppliers → Edit supplier �
 
 > **Tip:** The system learns from your corrections. When you match a delivery item to an existing stock item, it creates an alias so future deliveries from the same supplier are matched automatically.
 
+### Saving Drafts
+
+If you need to stop mid-import, click **Save Draft** in the header. The entire extraction, your edits, and the scanned document are saved to the server.
+
+Resume from **Kitchen → Supplies** (Approvisionnements) — pending imports appear at the top of the page as cards showing the supplier name, item count, and a thumbnail of the document. Click **Resume** to re-open the full-screen review with the document preview intact.
+
+Multiple drafts are supported. Drafts are automatically deleted when you confirm the import.
+
 ### VAT on Stock Items
 
 Each stock item tracks whether its cost includes VAT or not. Use the **Show ex. VAT / Show inc. VAT** toggle on the stock page (under Inventory Value) to switch the display. The system normalizes all costs to the same basis for accurate food cost calculations.
@@ -308,6 +339,25 @@ Select multiple items using the checkboxes in the table (or the select-all check
 
 ---
 
+## AI Recipe Import
+
+Import recipes by uploading a photo/PDF or pasting text. The AI extracts ingredients, quantities, and matches them to your stock items. Available from **Food Cost** page and **Recipe detail** page (sparkle icon).
+
+### How It Works
+
+1. Choose **Paste Text** or **Upload File** (image or PDF).
+2. Click **Extract Recipe**. The AI processes the content.
+3. Review in **full-screen split view** — original document or text on the left, extracted ingredients on the right.
+4. For each ingredient:
+   - Match to an existing stock item or leave as "new" to create one
+   - Edit quantity, unit, cost per unit, and category
+   - The **original name** (in the source language) is shown for reference
+   - Price summary shows line cost (quantity × cost) in both HT and TTC
+5. Set the **recipe yield** (e.g., 1.2 kg) at the top.
+6. Click **Confirm Import** to save the recipe and create any new stock items.
+
+---
+
 ## Search & Filters
 
 Three filtering tools are always visible above the table:
@@ -319,6 +369,28 @@ Three filtering tools are always visible above the table:
 | **Low Stock Only** | Checkbox — shows only items at or below reorder threshold |
 
 Filters combine with AND logic. For example, searching "chicken" with category "Meat" shows only meat items with "chicken" in the name.
+
+---
+
+## Configurable Columns
+
+Click the **gear icon** (⚙) next to the filters to show or hide table columns. Choose which information to display:
+
+| Column | Default | Description |
+|--------|---------|-------------|
+| Category | Visible | Item category with color dot |
+| Quantity | Visible | Current stock level |
+| Cost/Unit | Visible | Purchase cost per stock unit |
+| Price/Unit HT | Hidden | Price per individual unit, ex. VAT (e.g., per can) |
+| Price/Unit TTC | Hidden | Price per individual unit, inc. VAT |
+| Units/Package | Hidden | Number of units per package (e.g., 12 cans/box) |
+| Content/Unit | Hidden | Content per unit (e.g., 400g) |
+| Supplier | Visible | Supplier name |
+| Status | Visible | OK or Low Stock alert |
+| Notes | Hidden | Item notes |
+| Reorder Level | Hidden | Alert threshold |
+
+Your column preferences are saved per restaurant and persist across sessions. The table scrolls horizontally when many columns are enabled.
 
 ---
 

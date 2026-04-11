@@ -49,7 +49,7 @@ En haut de la page, trois cartes de synthese vous donnent un apercu rapide :
 
 ---
 
-## Ajouter et Modifier des Articles
+## Ajout et Modification d'Articles
 
 1. Allez dans **Cuisine > Stock**.
 2. Cliquez sur **Ajouter un article** (en haut a droite).
@@ -57,21 +57,44 @@ En haut de la page, trois cartes de synthese vous donnent un apercu rapide :
 
 Pour modifier un article existant, cliquez sur l'icone crayon sur sa ligne.
 
-### Reference des Champs
+La fenetre de creation/modification comporte **deux onglets** :
+
+### Onglet : General
+
+Informations de base sur l'article.
 
 | Champ | Obligatoire | Description |
 |-------|-------------|-------------|
 | **Nom** | Oui | Nom de l'ingredient (ex. "Huile d'olive", "Blanc de poulet") |
 | **Unite** | Oui | Comment vous comptez cet article — voir [Comprendre les Unites](#comprendre-les-unites) ci-dessous |
 | **Quantite** | Non | Niveau de stock actuel (defaut 0) |
-| **Contenu par Unite** | Non | Ce que contient chaque contenant — visible uniquement pour les unites de type contenant (unite, pack, boite, sac) |
-| **Unite de Contenu** | Non | Unite du contenu (g, kg, ml ou l) |
-| **Cout Unitaire** | Non | Votre prix d'achat par unite, utilise pour la valeur du stock et le calcul du food cost |
-| **Seuil de Reapprovisionnement** | Non | Quantite a partir de laquelle une alerte de stock bas se declenche |
 | **Fournisseur** | Non | Nom du fournisseur — utilise pour regrouper les bons de commande |
 | **Categorie** | Non | Etiquette libre pour organiser et filtrer (ex. "Produits laitiers", "Viande", "Legumes") |
 | **Notes** | Non | Notes internes ou instructions |
 | **Actif** | Non | Active par defaut. Les articles inactifs sont masques des recettes et des operations quotidiennes |
+
+### Onglet : Conditionnement & Prix
+
+Comment l'article est conditionne et combien il coute. Choisissez l'un des **trois modes de conditionnement** :
+
+**Simple** — Pour les articles achetes au poids ou au volume (ex. 5kg de farine, 3L d'huile). Entrez simplement le cout par unite de stock.
+
+**Par unites** — Pour les contenants individuels (ex. 6 bouteilles de 1,5L). Entrez le contenu par unite (ex. 1,5L) et le cout par unite de stock.
+
+**Par paquets** — Pour les cartons contenant plusieurs unites (ex. 2 cartons de 12 boites de 400g). Entrez les unites par paquet, le contenu par unite et le cout par unite de stock.
+
+La fenetre affiche un **recapitulatif de prix en temps reel** qui se met a jour a mesure que vous tapez, montrant les prix HT et TTC a chaque niveau (par unite de stock, par unite individuelle, par paquet).
+
+> **Exemple — Pulpe de tomate (mode Par paquets) :**
+> Definissez unites/paquet = 12, contenu/unite = 400g, cout = 0,0121 ₪/g.
+> Le recapitulatif affiche : 4,83 ₪ HT / 5,70 ₪ TTC par boite, 58,00 ₪ HT / 68,44 ₪ TTC par carton.
+
+| Champ | Description |
+|-------|-------------|
+| **Unites/Paquet** | Nombre d'unites individuelles dans un paquet (ex. 12 boites par carton) |
+| **Contenu/Unite** | Ce que contient chaque unite (ex. 400g par boite) |
+| **Cout Unitaire** | Votre prix d'achat par unite de stock (ex. ₪/g) |
+| **Seuil de Reapprovisionnement** | Quantite a partir de laquelle une alerte de stock bas se declenche |
 
 ---
 
@@ -291,11 +314,38 @@ Vous pouvez les consulter et les modifier dans **Cuisine → Fournisseurs → Mo
 
 > **Astuce :** Le systeme apprend de vos corrections. Quand vous associez un article de livraison a un article de stock existant, il cree un alias pour que les futures livraisons du meme fournisseur soient associees automatiquement.
 
+### Enregistrer le brouillon
+
+Si vous devez interrompre un import en cours, cliquez sur **Enregistrer le brouillon** dans l'en-tete. L'ensemble de l'extraction, vos modifications et le document scanne sont sauvegardes sur le serveur.
+
+Reprenez depuis **Cuisine → Approvisionnements** — les imports en attente apparaissent en haut de la page sous forme de cartes affichant le nom du fournisseur, le nombre d'articles et une miniature du document. Cliquez sur **Reprendre** pour rouvrir la vue plein ecran avec l'apercu du document intact.
+
+Plusieurs brouillons sont possibles. Les brouillons sont automatiquement supprimes lorsque vous confirmez l'import.
+
 ### TVA sur les articles de stock
 
 Chaque article de stock indique si son cout inclut la TVA ou non. Utilisez le bouton **Afficher HT / Afficher TTC** sur la page de stock (sous Valeur du stock) pour changer l'affichage. Le systeme normalise tous les couts sur la meme base pour des calculs de food cost precis.
 
 Configurez le taux de TVA de votre restaurant dans **Parametres → Taux TVA (%)**. La valeur par defaut est 18% pour Israel.
+
+---
+
+## Import de Recette par IA
+
+Importez des recettes en telechargeant une photo/PDF ou en collant du texte. L'IA extrait les ingredients, les quantites et les associe a vos articles de stock. Disponible depuis la page **Cout Alimentaire** et la page **Detail de la recette** (icone etincelle).
+
+### Comment ca fonctionne
+
+1. Choisissez **Coller du texte** ou **Telecharger un fichier** (image ou PDF).
+2. Cliquez sur **Extraire la recette**. L'IA traite le contenu.
+3. Verifiez dans la **vue plein ecran en deux panneaux** — le document original ou le texte a gauche, les ingredients extraits a droite.
+4. Pour chaque ingredient :
+   - Associez a un article de stock existant ou laissez comme "nouveau" pour en creer un
+   - Modifiez la quantite, l'unite, le cout unitaire et la categorie
+   - Le **nom original** (dans la langue source) est affiche pour reference
+   - Le recapitulatif de prix affiche le cout de la ligne (quantite x cout) en HT et TTC
+5. Definissez le **rendement de la recette** (ex. 1,2 kg) en haut.
+6. Cliquez sur **Confirmer l'import** pour enregistrer la recette et creer les nouveaux articles de stock.
 
 ---
 
@@ -319,6 +369,28 @@ Trois outils de filtrage sont toujours visibles au-dessus du tableau :
 | **Stock Bas Uniquement** | Case a cocher — affiche uniquement les articles au niveau ou en dessous du seuil |
 
 Les filtres se combinent avec une logique ET. Par exemple, chercher "poulet" avec la categorie "Viande" affiche uniquement les articles de viande contenant "poulet" dans le nom.
+
+---
+
+## Colonnes Configurables
+
+Cliquez sur l'**icone engrenage** (⚙) a cote des filtres pour afficher ou masquer les colonnes du tableau. Choisissez les informations a afficher :
+
+| Colonne | Par defaut | Description |
+|---------|-----------|-------------|
+| Categorie | Visible | Categorie de l'article avec pastille coloree |
+| Quantite | Visible | Niveau de stock actuel |
+| Cout/Unite | Visible | Cout d'achat par unite de stock |
+| Prix/Unite HT | Masque | Prix par unite individuelle, hors TVA (ex. par boite) |
+| Prix/Unite TTC | Masque | Prix par unite individuelle, TVA incluse |
+| Unites/Paquet | Masque | Nombre d'unites par paquet (ex. 12 boites/carton) |
+| Contenu/Unite | Masque | Contenu par unite (ex. 400g) |
+| Fournisseur | Visible | Nom du fournisseur |
+| Statut | Visible | OK ou alerte Stock Bas |
+| Notes | Masque | Notes de l'article |
+| Seuil | Masque | Seuil d'alerte |
+
+Vos preferences de colonnes sont sauvegardees par restaurant et persistent entre les sessions. Le tableau defile horizontalement lorsque de nombreuses colonnes sont activees.
 
 ---
 
