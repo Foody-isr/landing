@@ -372,25 +372,44 @@ Filters combine with AND logic. For example, searching "chicken" with category "
 
 ---
 
-## Configurable Columns
+## Table Columns
 
-Click the **gear icon** (⚙) next to the filters to show or hide table columns. Choose which information to display:
+The stock table keeps things focused on what matters day-to-day. The header stays pinned to the top while you scroll, so you always know which column you're looking at.
 
 | Column | Default | Description |
 |--------|---------|-------------|
 | Category | Visible | Item category with color dot |
-| Quantity | Visible | Current stock level |
-| Cost/Unit | Visible | Purchase cost per stock unit |
-| Price/Unit HT | Hidden | Price per individual unit, ex. VAT (e.g., per can) |
-| Price/Unit TTC | Hidden | Price per individual unit, inc. VAT |
-| Units/Package | Hidden | Number of units per package (e.g., 12 cans/box) |
-| Content/Unit | Hidden | Content per unit (e.g., 400g) |
+| Quantity | Visible | Current stock, shown at your chosen packaging level (see below) |
+| Price | Visible | Unit price at the same packaging level as Quantity |
 | Supplier | Visible | Supplier name |
 | Status | Visible | OK or Low Stock alert |
-| Notes | Hidden | Item notes |
-| Reorder Level | Hidden | Alert threshold |
 
-Your column preferences are saved per restaurant and persist across sessions. The table scrolls horizontally when many columns are enabled.
+Click the **gear icon** (⚙) next to the filters to hide any column you don't need. Preferences are saved per restaurant.
+
+## Quantity & Price — Click to Switch Level
+
+Quantity and Price are displayed together at the same **packaging level**. By default the table shows the level that matches how you *think* about your stock — not the raw base unit.
+
+**Click any Quantity or Price cell to cycle through the available levels for that row.** Your choice is remembered per item.
+
+**Example — 2 cartons of 12 cans of 400g tomatoes, bought for 116 ₪ (nested):**
+
+| Level | Quantity shown | Price shown |
+|-------|---------------|-------------|
+| Carton (outer) | 2 cartons (of 12 cans × 400g) | 58.00 ₪ / carton |
+| **Can (middle — default)** | **24 cans** | **4.83 ₪ / can** |
+| Gram (base) | 9.6 kg | 12.08 ₪ / kg |
+
+**Example — 4 bottles of 900ml oil for 40 ₪ (direct, no middle level):**
+
+| Level | Quantity shown | Price shown |
+|-------|---------------|-------------|
+| **Bottle (default)** | **4 bottles** | **10.00 ₪ / bottle** |
+| Milliliter (base) | 3.6 L | 11.11 ₪ / L |
+
+**Example — 10 kg of flour for 50 ₪ (simple, single level):** shows `10 kg` and `5.00 ₪ / kg`. The cell isn't clickable because there's only one level.
+
+The default level is the middle one for nested packaging, the outer for direct, and the base for simple — whichever reads most naturally.
 
 ---
 

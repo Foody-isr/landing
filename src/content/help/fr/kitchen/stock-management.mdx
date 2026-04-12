@@ -372,25 +372,44 @@ Les filtres se combinent avec une logique ET. Par exemple, chercher "poulet" ave
 
 ---
 
-## Colonnes Configurables
+## Colonnes du Tableau
 
-Cliquez sur l'**icone engrenage** (⚙) a cote des filtres pour afficher ou masquer les colonnes du tableau. Choisissez les informations a afficher :
+Le tableau de stock reste concentre sur l'essentiel du quotidien. L'en-tete reste fixe en haut lors du defilement, pour que vous sachiez toujours quelle colonne vous regardez.
 
 | Colonne | Par defaut | Description |
 |---------|-----------|-------------|
 | Categorie | Visible | Categorie de l'article avec pastille coloree |
-| Quantite | Visible | Niveau de stock actuel |
-| Cout/Unite | Visible | Cout d'achat par unite de stock |
-| Prix/Unite HT | Masque | Prix par unite individuelle, hors TVA (ex. par boite) |
-| Prix/Unite TTC | Masque | Prix par unite individuelle, TVA incluse |
-| Unites/Paquet | Masque | Nombre d'unites par paquet (ex. 12 boites/carton) |
-| Contenu/Unite | Masque | Contenu par unite (ex. 400g) |
+| Quantite | Visible | Stock actuel, affiche au niveau de conditionnement choisi (voir ci-dessous) |
+| Prix | Visible | Prix unitaire au meme niveau de conditionnement que la Quantite |
 | Fournisseur | Visible | Nom du fournisseur |
 | Statut | Visible | OK ou alerte Stock Bas |
-| Notes | Masque | Notes de l'article |
-| Seuil | Masque | Seuil d'alerte |
 
-Vos preferences de colonnes sont sauvegardees par restaurant et persistent entre les sessions. Le tableau defile horizontalement lorsque de nombreuses colonnes sont activees.
+Cliquez sur l'**icone engrenage** (⚙) a cote des filtres pour masquer une colonne dont vous n'avez pas besoin. Les preferences sont sauvegardees par restaurant.
+
+## Quantite & Prix — Clic pour Changer de Niveau
+
+Quantite et Prix s'affichent ensemble au meme **niveau de conditionnement**. Par defaut le tableau affiche le niveau qui correspond a votre facon de *penser* votre stock — pas l'unite de base brute.
+
+**Cliquez sur une cellule Quantite ou Prix pour faire defiler les niveaux disponibles pour cette ligne.** Votre choix est memorise par article.
+
+**Exemple — 2 cartons de 12 boites de 400g de tomates, achetes 116 ₪ (imbrique) :**
+
+| Niveau | Quantite affichee | Prix affiche |
+|--------|-------------------|--------------|
+| Carton (exterieur) | 2 cartons (de 12 boites × 400g) | 58.00 ₪ / carton |
+| **Boite (intermediaire — defaut)** | **24 boites** | **4.83 ₪ / boite** |
+| Gramme (base) | 9.6 kg | 12.08 ₪ / kg |
+
+**Exemple — 4 bouteilles de 900ml d'huile pour 40 ₪ (direct, sans niveau intermediaire) :**
+
+| Niveau | Quantite affichee | Prix affiche |
+|--------|-------------------|--------------|
+| **Bouteille (defaut)** | **4 bouteilles** | **10.00 ₪ / bouteille** |
+| Millilitre (base) | 3.6 L | 11.11 ₪ / L |
+
+**Exemple — 10 kg de farine pour 50 ₪ (simple, un seul niveau) :** affiche `10 kg` et `5.00 ₪ / kg`. La cellule n'est pas cliquable car il n'y a qu'un seul niveau.
+
+Le niveau par defaut est le niveau intermediaire pour un conditionnement imbrique, l'exterieur pour un conditionnement direct, et la base pour un article simple — celui qui se lit le plus naturellement.
 
 ---
 
