@@ -1,0 +1,132 @@
+---
+title: "Variants & Sizes"
+description: "Set up size or flavor variants on a menu item, with per-variant price, portion, and stock status."
+apps: foodyadmin
+tags: [menu, variants, sizes, options, portions]
+updatedAt: 2026-04-16
+---
+
+## What Variants Are
+
+A **variant** is a version of the same item sold at a distinct price. Common cases:
+
+* Sizes: Small / Medium / Large.
+* Styles: Classic / Spicy.
+* Bowls: 250 ml / 500 ml.
+* Meat choices: Chicken / Beef.
+
+Variants live on the item. When a customer orders, they pick exactly one per variant group.
+
+> One item can have multiple variant groups (e.g. "Size" + "Sauce"), but this is rarely needed. For customer-selectable extras, use [Modifiers](./modifiers) instead.
+
+---
+
+## Creating a Variant Group
+
+1. Open the item in `Menu → Items`.
+2. In the Détails tab, scroll to the **Variantes** section.
+3. Click **Ajouter** (or **Modifier** if one already exists).
+
+![Variants editor, empty](/assets/img/screenshots/menu/variants-modal-empty.png)
+
+4. Give the group a name (e.g. "Taille", "Size", "Flavor"). This is internal-ish — customers see the rows, not the group name.
+5. Add one row per variant. Each row has:
+   * **Name** — shown to the customer ("Normal", "Grand", "250 g").
+   * **Price** — replaces the item's base price when this variant is selected.
+   * **Portion** — size of the serving (with unit: g, ml, kg, l, unit).
+   * **Status** — Available / Out of stock.
+
+![Variants editor filled](/assets/img/screenshots/menu/variants-modal-filled.png)
+
+6. Click **Terminé**.
+
+---
+
+## Understanding Each Field
+
+### Name
+
+The label the customer picks. Keep it short and natural ("Normal", "Grand", "Petit", "XL").
+
+### Price
+
+Absolute price — not a delta. Typing `70` for Normal and `140` for Grand makes the item cost exactly that per variant, regardless of the item's base price.
+
+### Portion
+
+Two related jobs:
+
+1. **What customers see** on the web menu: "Grand 500 g" under the variant label.
+2. **Recipe scaling** on the Recette tab: ingredients scoped as "Match item size" use the variant's portion as the consumed quantity. See [Ingredients & Portions](./ingredients-and-portions).
+
+Pick a unit family consistent with your recipe:
+
+* Soup: ml.
+* Hamburger: unit.
+* Plate: g.
+
+### Status
+
+Toggle to Out of stock when you're sold out for the day. The variant grays out on POS / web without deleting it. Flip back to Available when restocked.
+
+---
+
+## Reusing a Variant Group Across Items
+
+Variant groups in Foody are backed by **Option Sets** — a reusable pool. When you type a name that matches an existing Option Set, you get a suggestion to apply it.
+
+![Existing option set suggestion](/assets/img/screenshots/menu/variants-option-set-reuse.png)
+
+Applying an existing group attaches its rows to this item. You can then override per-item:
+
+* Price (different price for this item).
+* Portion.
+* Status.
+
+Updating the **name** of a row on the Option Set level propagates everywhere. Useful for "Size" groups shared across many burgers.
+
+---
+
+## Removing or Hiding a Variant
+
+* **Hide temporarily** (keeping history intact): flip Status → Out of stock. Recommended for seasonal or sold-out items.
+* **Delete**: trash icon on the row. Deletes the variant from this item; if it's on an Option Set used elsewhere, it stays there.
+
+Deleting a variant that has order history doesn't touch the past orders — they still show the variant name and price as sold.
+
+---
+
+## Examples
+
+### Burger sizes
+
+| Variant | Price | Portion |
+|---|---|---|
+| Normal | ₪70 | 1 unit |
+| Grand | ₪140 | 2 unit |
+
+On the Recette tab, flag the beef ingredient as "Custom per variant" with 200 g for Normal, 400 g for Grand. Bread / sauce stay Fixed.
+
+### Soup bowls
+
+| Variant | Price | Portion |
+|---|---|---|
+| Bowl | ₪18 | 250 ml |
+| Large bowl | ₪32 | 500 ml |
+
+On the Recette tab, the soup prep ingredient is scoped as "Match item size". No quantity to type; the system draws 250 ml or 500 ml automatically.
+
+### Drink sizes
+
+| Variant | Price | Portion |
+|---|---|---|
+| Small | ₪12 | 330 ml |
+| Medium | ₪16 | 500 ml |
+| Large | ₪22 | 750 ml |
+
+---
+
+## What Next
+
+* [How to Configure Ingredients & Portions](./ingredients-and-portions) — hook variants into your recipe and cost.
+* [Creating a Menu Item](./creating-a-menu-item) — full item walkthrough.

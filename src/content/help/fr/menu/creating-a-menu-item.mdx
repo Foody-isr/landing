@@ -1,0 +1,172 @@
+---
+title: "Créer un article du menu, étape par étape"
+description: "Guide complet pour créer un nouvel article dans FoodyAdmin : image, nom, description, catégorie, prix, variantes, recette et coût."
+apps: foodyadmin
+tags: [menu, articles, onboarding, guide, créer]
+updatedAt: 2026-04-16
+---
+
+## Avant de commencer
+
+Un article du menu appartient à une **catégorie** (Salades, Burgers, Boissons, etc.). Si aucune catégorie n'existe, créez-la d'abord depuis `Menu → Catégories`. Voir [Catégories et articles](./categories-and-items) pour l'explication complète.
+
+Vous voudrez aussi ajouter vos **articles de stock** dans `Cuisine → Stock` si vous souhaitez suivre le coût alimentaire. Ce n'est pas obligatoire pour enregistrer l'article ; cela veut simplement dire que l'onglet Coût sera vide tant que vous n'aurez pas relié d'ingrédients.
+
+---
+
+## Ouvrir le formulaire Créer un article
+
+Dans FoodyAdmin :
+
+1. Allez dans `Menu → Articles`.
+2. Cliquez **Nouveau** en haut à droite.
+
+![Liste des articles avec le bouton Nouveau](/assets/img/screenshots/menu/item-list-new-button.png)
+
+Le modal Créer un article s'ouvre avec trois onglets : **Détails**, **Recette**, **Coût**. Vous remplissez Détails d'abord, enregistrez, puis revenez à Recette si vous voulez suivre le coût alimentaire.
+
+---
+
+## Étape 1. Image
+
+Glissez une image dans la zone ou cliquez pour télécharger. Vous pouvez aussi coller une URL.
+
+![Zone d'upload d'image](/assets/img/screenshots/menu/create-item-image-upload.png)
+
+Conseils :
+
+* Les images carrées ou 4:3 s'affichent le mieux sur POS / web / kiosque.
+* Visez 600 à 1200 px sur le côté le plus long.
+* JPG ou PNG, sous ~500 Ko.
+
+Si vous sautez l'image maintenant, les clients sur l'app web voient un placeholder. Vous pouvez l'ajouter plus tard.
+
+---
+
+## Étape 2. Nom
+
+Le nom que voient vos clients. Obligatoire.
+
+![Onglet Détails avec nom, catégorie, prix](/assets/img/screenshots/menu/create-item-details-tab.png)
+
+Conseils :
+
+* Restez sous ~40 caractères pour éviter les retours à la ligne sur l'écran POS.
+* Évitez les codes internes comme `BRG-01`. Les clients voient ce champ.
+
+---
+
+## Étape 3. Description
+
+Facultative. S'affiche sur la page de détail de l'article (web et POS). N'apparaît pas sur les reçus.
+
+Utilisez-la pour lister les ingrédients («\u00A0Bœuf, laitue, tomate, sauce maison, pain brioché\u00A0»), signaler les allergènes ou raconter une petite histoire.
+
+---
+
+## Étape 4. Catégorie
+
+Choisissez une catégorie existante dans le menu déroulant.
+
+![Sélecteur de catégorie](/assets/img/screenshots/menu/create-item-category-picker.png)
+
+Pourquoi c'est important :
+
+* Le **reporting** groupe les ventes par catégorie.
+* Le **routage cuisine** envoie les tickets à la bonne station (grill, bar, pâtisserie) selon les réglages de la catégorie.
+* L'**assignation d'imprimante** se fait par catégorie, pas par article.
+
+Les catégories sont internes. Ce que les clients voient, c'est le **groupe de menu** dans lequel l'article est placé. C'est un concept distinct, expliqué dans [Catégories et articles](./categories-and-items).
+
+---
+
+## Étape 5. Prix
+
+Le prix de base payé par le client. Saisissez dans la devise de votre restaurant (₪, €, $…).
+
+* Si votre restaurant a des variantes (Petit / Grand), ce prix de base est remplacé par variante. Voir [Variantes et tailles](./variants-and-sizes).
+* Le fait que le prix soit TTC ou HT est un réglage **au niveau du restaurant** (taux de TVA dans `Réglages → Taxes`). Le nombre saisi suit cette règle.
+
+---
+
+## Étape 6. Bascule Actif
+
+Contrôle la visibilité de l'article sur POS / web. Laissez activé, sauf si :
+
+* Article saisonnier hors menu pour l'instant.
+* Vous migrez depuis un autre outil et préparez les articles avant publication.
+
+Préférez désactiver plutôt que supprimer. La suppression est définitive ; la bascule préserve l'historique des ventes.
+
+---
+
+## Étape 7. Variantes
+
+Les variantes sont des tailles, saveurs ou choix vendus à des prix distincts (ex. Petit / Grand ; Classic / Épicé). Guide complet : [Variantes et tailles](./variants-and-sizes).
+
+Vous pouvez enregistrer l'article maintenant et ajouter les variantes plus tard. Rien n'oblige leur existence à la création.
+
+![Section Variantes avec bouton Ajouter](/assets/img/screenshots/menu/create-item-variants-button.png)
+
+---
+
+## Étape 8. Modificateurs
+
+Les modificateurs sont des options ajoutées par le client («\u00A0Extra fromage +5\u00A0₪\u00A0», «\u00A0Sans oignons\u00A0»). Guide complet : [Configurer les modificateurs](./modifiers).
+
+Comme les variantes, ils peuvent être ajoutés après enregistrement.
+
+---
+
+## Étape 9. Enregistrer, puis ouvrir Recette
+
+Cliquez **Enregistrer**. L'article apparaît dans la liste.
+
+![Liste après enregistrement](/assets/img/screenshots/menu/create-item-saved.png)
+
+Cliquez sur l'article pour le rouvrir, puis passez à l'onglet **Recette**. C'est là que vous reliez les ingrédients (stock + prép.) et voyez le vrai coût alimentaire.
+
+![Onglet Recette avec ingrédients](/assets/img/screenshots/menu/create-item-recipe-tab.png)
+
+Chaque ligne d'ingrédient choisit une **portée** (Adapter à la taille / Quantité fixe / Personnalisé par variante). Explication complète : [Configurer les ingrédients et portions](./ingredients-and-portions).
+
+L'onglet **Coût** affiche :
+
+* Coût alimentaire par variante.
+* Pourcentage de coût vs. prix.
+* Marge brute.
+* Un popup de détail quand vous cliquez sur un ingrédient de préparation.
+
+---
+
+## Étape 10. Vérifier sur POS et web
+
+Être dans une catégorie **ne suffit pas** à afficher l'article pour les clients. Il doit aussi être attaché à un **groupe de menu** :
+
+1. Allez dans `Menu → Menus`, ouvrez un menu (ex. «\u00A0Déjeuner\u00A0»).
+2. Ouvrez un groupe (ou créez-en un), cliquez «\u00A0Ajouter des articles\u00A0», choisissez votre nouvel article.
+3. Enregistrez.
+
+L'article apparaît maintenant sur la grille POS et sur le menu QR web pour ce restaurant et ce site.
+
+Voir [Catégories et articles](./categories-and-items) pour la distinction complète menu / groupe / catégorie.
+
+---
+
+## Dépannage
+
+| Symptôme | Solution |
+|---|---|
+| Article invisible sur POS | Non attaché à un groupe de menu ; ou le réglage `pos_enabled` du groupe est désactivé. |
+| Article absent du QR web | `web_enabled` du groupe désactivé ; ou groupe caché ; ou les horaires du menu excluent l'heure actuelle. |
+| Prix affiche une mauvaise TVA | Vérifiez `Réglages → Taxes` (taux + TTC/HT). |
+| Image floue | Réuploader une source à plus haute résolution (600–1200 px sur le côté long). |
+| Portion de variante manquante | Ouvrir l'éditeur Variantes et remplir le champ Portion par ligne. Requis pour le calcul du coût. |
+
+---
+
+## Pour aller plus loin
+
+* [Variantes et tailles](./variants-and-sizes) pour la logique de dimensionnement.
+* [Configurer les ingrédients et portions](./ingredients-and-portions) pour recette et coût.
+* [Configurer les modificateurs](./modifiers) pour les personnalisations client.

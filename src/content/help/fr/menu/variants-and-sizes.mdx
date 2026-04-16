@@ -1,0 +1,132 @@
+---
+title: "Variantes et tailles"
+description: "Configurez des variantes de taille ou de saveur sur un article, avec prix, portion et statut stock par variante."
+apps: foodyadmin
+tags: [menu, variantes, tailles, options, portions]
+updatedAt: 2026-04-16
+---
+
+## Ce qu'est une variante
+
+Une **variante** est une version du même article vendue à un prix distinct. Cas courants :
+
+* Tailles : Petit / Moyen / Grand.
+* Styles : Classic / Épicé.
+* Bols : 250 ml / 500 ml.
+* Choix de viande : Poulet / Bœuf.
+
+Les variantes appartiennent à l'article. À la commande, le client en choisit exactement une par groupe de variantes.
+
+> Un article peut avoir plusieurs groupes de variantes (ex. «\u00A0Taille\u00A0» + «\u00A0Sauce\u00A0»), mais c'est rarement nécessaire. Pour des extras sélectionnables, préférez les [Modificateurs](./modifiers).
+
+---
+
+## Créer un groupe de variantes
+
+1. Ouvrez l'article dans `Menu → Articles`.
+2. Dans l'onglet Détails, descendez jusqu'à la section **Variantes**.
+3. Cliquez **Ajouter** (ou **Modifier** si un groupe existe déjà).
+
+![Éditeur de variantes vide](/assets/img/screenshots/menu/variants-modal-empty.png)
+
+4. Donnez un nom au groupe (ex. «\u00A0Taille\u00A0», «\u00A0Size\u00A0», «\u00A0Saveur\u00A0»). C'est plutôt interne — les clients voient les lignes, pas le nom du groupe.
+5. Ajoutez une ligne par variante. Chaque ligne a :
+   * **Nom** — affiché au client («\u00A0Normal\u00A0», «\u00A0Grand\u00A0», «\u00A0250 g\u00A0»).
+   * **Prix** — remplace le prix de base de l'article quand cette variante est choisie.
+   * **Portion** — taille servie (avec unité : g, ml, kg, l, unit).
+   * **Statut** — Disponible / Rupture de stock.
+
+![Éditeur de variantes rempli](/assets/img/screenshots/menu/variants-modal-filled.png)
+
+6. Cliquez **Terminé**.
+
+---
+
+## Comprendre chaque champ
+
+### Nom
+
+L'étiquette que choisit le client. Courte et naturelle («\u00A0Normal\u00A0», «\u00A0Grand\u00A0», «\u00A0Petit\u00A0», «\u00A0XL\u00A0»).
+
+### Prix
+
+Prix absolu, pas un delta. Saisir `70` pour Normal et `140` pour Grand fixe exactement ce prix par variante, peu importe le prix de base de l'article.
+
+### Portion
+
+Deux rôles liés :
+
+1. **Ce que voient les clients** sur le menu web : «\u00A0Grand 500 g\u00A0» sous l'étiquette de la variante.
+2. **Mise à l'échelle de la recette** dans l'onglet Recette : les ingrédients en portée «\u00A0Adapter à la taille\u00A0» utilisent la portion de la variante comme quantité consommée. Voir [Ingrédients et portions](./ingredients-and-portions).
+
+Choisissez une famille d'unités cohérente avec votre recette :
+
+* Soupe : ml.
+* Hamburger : unit.
+* Assiette : g.
+
+### Statut
+
+Basculez sur Rupture quand c'est épuisé pour la journée. La variante est grisée sur POS / web sans être supprimée. Remettez sur Disponible quand c'est réassorti.
+
+---
+
+## Réutiliser un groupe de variantes
+
+Dans Foody, les groupes de variantes s'appuient sur des **Option Sets** — un pool réutilisable. Quand vous tapez un nom qui correspond à un Option Set existant, une suggestion apparaît.
+
+![Suggestion Option Set existant](/assets/img/screenshots/menu/variants-option-set-reuse.png)
+
+Appliquer un groupe existant attache ses lignes à cet article. Vous pouvez ensuite surcharger par article :
+
+* Prix (différent pour cet article).
+* Portion.
+* Statut.
+
+Modifier le **nom** d'une ligne au niveau Option Set propage partout. Utile pour un groupe «\u00A0Taille\u00A0» partagé sur plusieurs burgers.
+
+---
+
+## Supprimer ou masquer une variante
+
+* **Masquer temporairement** (préserver l'historique) : Statut → Rupture de stock. Recommandé pour les articles saisonniers ou épuisés.
+* **Supprimer** : icône corbeille sur la ligne. Retire la variante de cet article ; si elle vit sur un Option Set partagé, elle y reste.
+
+Supprimer une variante qui a un historique de commandes ne touche pas les commandes passées — elles gardent le nom et le prix vendu.
+
+---
+
+## Exemples
+
+### Tailles de burger
+
+| Variante | Prix | Portion |
+|---|---|---|
+| Normal | 70 ₪ | 1 unit |
+| Grand | 140 ₪ | 2 unit |
+
+Sur Recette, marquez le bœuf en «\u00A0Personnalisé par variante\u00A0» avec 200 g pour Normal, 400 g pour Grand. Pain / sauce restent en Quantité fixe.
+
+### Bols de soupe
+
+| Variante | Prix | Portion |
+|---|---|---|
+| Bol | 18 ₪ | 250 ml |
+| Grand bol | 32 ₪ | 500 ml |
+
+Sur Recette, l'ingrédient prép. soupe est en portée «\u00A0Adapter à la taille\u00A0». Pas de quantité à saisir ; le système consomme 250 ml ou 500 ml automatiquement.
+
+### Tailles de boisson
+
+| Variante | Prix | Portion |
+|---|---|---|
+| Petit | 12 ₪ | 330 ml |
+| Moyen | 16 ₪ | 500 ml |
+| Grand | 22 ₪ | 750 ml |
+
+---
+
+## Pour aller plus loin
+
+* [Configurer les ingrédients et portions](./ingredients-and-portions) — relier les variantes à la recette et au coût.
+* [Créer un article du menu](./creating-a-menu-item) — guide complet.
