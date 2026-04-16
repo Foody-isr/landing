@@ -1,0 +1,189 @@
+---
+title: "Configurer les ingrédients et portions"
+description: "Trois règles pour décrire comment chaque ingrédient se comporte selon les variantes : Adapter à la taille, Quantité fixe, ou Personnalisé par variante."
+apps: foodyadmin
+tags: [menu, ingrédients, portions, variantes, recette, coût]
+updatedAt: 2026-04-16
+---
+
+## 🍽️ Configurer les ingrédients et portions
+
+Chaque ingrédient de votre recette a besoin d'une règle de quantité.
+Cette règle définit le comportement de l'ingrédient selon la taille de l'article (variantes) et les personnalisations (modificateurs).
+
+Il existe 3 façons de configurer vos ingrédients, selon la composition de votre article.
+
+---
+
+## 🥣 1. Article simple, Adapter à la taille
+
+**Exemple : Soupe**
+
+C'est le cas le plus simple.
+
+* Votre article est composé d'une seule préparation (soupe, jus, sauce).
+* L'unité de la recette est la même que l'unité de vente (grammes, ml, etc.).
+* La taille de l'article définit directement la quantité consommée.
+
+### Comment ça marche
+
+Vous utilisez : **Adapter à la taille**.
+
+* Vous ne saisissez aucune quantité manuellement.
+* Le système utilise automatiquement la taille de la variante.
+
+### Exemple
+
+| Variante | Quantité utilisée |
+| -------- | ----------------- |
+| 250 g    | 250 g de soupe    |
+| 500 g    | 500 g de soupe    |
+
+### Quand l'utiliser
+
+Utilisez Adapter à la taille quand :
+
+* Vous n'avez qu'un seul ingrédient.
+* L'article est une préparation déjà prête.
+* La portion vendue est la portion consommée.
+
+✅ Articles typiques : Soupe, Smoothie, Sauce préparée, Jus.
+
+---
+
+## 🍔 2. Article composé, Fixe + Personnalisé par variante
+
+**Exemple : Hamburger**
+
+Ce cas est plus avancé.
+
+* Votre article contient plusieurs ingrédients.
+* Certains changent avec la taille, d'autres non.
+
+### Comment ça marche
+
+Vous combinez :
+
+* **Quantité fixe** pour les ingrédients qui ne changent jamais.
+* **Personnalisé par variante** pour les ingrédients qui dépendent de la taille.
+
+### Exemple de configuration
+
+Variantes : Classic burger, Big burger.
+
+Ingrédients :
+
+* **Bœuf** change avec la taille. Utilisez **Personnalisé par variante** :
+
+  | Variante | Bœuf  |
+  | -------- | ----- |
+  | Classic  | 200 g |
+  | Big      | 400 g |
+
+* Pain, tomate, laitue, sauce restent identiques pour toutes les variantes. Utilisez **Quantité fixe** :
+
+  * 1 pain
+  * 20 g de sauce
+  * 30 g de légumes
+
+### Quand l'utiliser
+
+Utilisez cette configuration quand :
+
+* Votre article contient plusieurs ingrédients.
+* Seuls certains ingrédients varient avec la taille.
+
+✅ Articles typiques : Burgers, Sandwichs, Bowls, Pizzas.
+
+---
+
+## 🧀 3. Article avancé, Avec modificateurs (suppléments)
+
+**Exemple : Burger + Extra fromage**
+
+Cela s'appuie sur le cas précédent.
+
+* Vous avez toujours plusieurs ingrédients.
+* Les clients peuvent ajouter des suppléments (modificateurs).
+
+### Comment ça marche
+
+Vous configurez :
+
+**1. Recette de base** (comme le cas hamburger) :
+
+* Quantité fixe pour pain, sauce, etc.
+* Personnalisé par variante pour la viande.
+
+**2. Modificateurs (suppléments)** :
+
+Chaque modificateur doit être lié à un ingrédient.
+
+Exemple :
+
+* Modificateur : Extra fromage
+* Ingrédient lié : fromage
+* Quantité ajoutée : +20 g
+
+### Ce qui se passe
+
+Si un client sélectionne Extra fromage :
+
+* +20 g de fromage sont consommés du stock.
+* Le coût alimentaire augmente automatiquement.
+
+### Quand l'utiliser
+
+Utilisez cette configuration quand :
+
+* Les clients peuvent personnaliser les articles.
+* Les suppléments impactent le stock et le coût.
+
+✅ Modificateurs typiques : Extra fromage, Extra viande, Ajouter avocat, Double portion.
+
+---
+
+## 🧠 Résumé, Choisir la bonne règle
+
+Pour chaque ingrédient, demandez-vous :
+
+1. La quantité suit-elle la taille de l'article\u00A0? ✅ Utilisez **Adapter à la taille**.
+2. La quantité est-elle toujours la même\u00A0? ✅ Utilisez **Quantité fixe**.
+3. La quantité change-t-elle selon la variante\u00A0? ✅ Utilisez **Personnalisé par variante**.
+4. Le client peut-il ajouter plus de cet ingrédient\u00A0? ✅ Liez-le à un **modificateur**.
+
+---
+
+## ⚙️ Comment le configurer dans Foody Admin
+
+### Étape 1. Créez votre article
+
+* Ajoutez les variantes (par ex. Petit, Grand ou Classic, Big).
+
+### Étape 2. Ajoutez les ingrédients
+
+Pour chaque ingrédient :
+
+* Sélectionnez l'ingrédient.
+* Choisissez son comportement :
+  * **Adapter à la taille** pour une quantité automatique.
+  * **Quantité fixe** pour saisir une seule valeur.
+  * **Personnalisé par variante** pour définir une valeur par variante.
+
+### Étape 3. Ajoutez les modificateurs (si besoin)
+
+* Créez le modificateur (par ex. Extra fromage).
+* Liez-le à un ingrédient.
+* Définissez la quantité ajoutée.
+
+---
+
+## 🎯 Modèle mental final
+
+Au lieu de penser en termes système, demandez-vous simplement :
+
+* «\u00A0Cet ingrédient dépend-il de la taille\u00A0?\u00A0»
+* «\u00A0Est-il toujours le même\u00A0?\u00A0»
+* «\u00A0Le client peut-il en ajouter\u00A0?\u00A0»
+
+C'est tout. Le système s'occupe du reste.

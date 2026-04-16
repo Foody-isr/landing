@@ -1,0 +1,189 @@
+---
+title: "How to Configure Ingredients & Portions"
+description: "Three rules to describe how each ingredient behaves across variants: Match item size, Fixed quantity, or Custom per variant."
+apps: foodyadmin
+tags: [menu, ingredients, portions, variants, recipe, food-cost]
+updatedAt: 2026-04-16
+---
+
+## 🍽️ How to Configure Ingredients & Portions
+
+Each ingredient in your recipe needs a quantity rule.
+This rule defines how the ingredient behaves depending on the item's size (variants) and customizations (modifiers).
+
+There are 3 main ways to configure your ingredients, depending on how your item is built.
+
+---
+
+## 🥣 1. Simple Item, Match Item Size
+
+**Example: Soup**
+
+This is the simplest case.
+
+* Your item is made from one preparation only (e.g. soup, juice, sauce).
+* The unit of the recipe equals the unit you sell (grams, ml, etc.).
+* The size of the item directly defines the quantity used.
+
+### How it works
+
+You use: **Match item size**.
+
+* You don't enter any quantity manually.
+* The system automatically uses the variant size.
+
+### Example
+
+| Variant | Quantity used |
+| ------- | ------------- |
+| 250 g   | 250 g soup    |
+| 500 g   | 500 g soup    |
+
+### When to use this
+
+Use Match item size when:
+
+* You have only one ingredient.
+* The item is a preparation already made.
+* The portion sold equals the portion consumed.
+
+✅ Typical items: Soup, Smoothie, Prepared sauce, Juice.
+
+---
+
+## 🍔 2. Complex Item, Fixed + Custom per Variant
+
+**Example: Hamburger**
+
+This case is more advanced.
+
+* Your item is made of multiple ingredients.
+* Some ingredients change with size, others don't.
+
+### How it works
+
+You combine:
+
+* **Fixed quantity** for ingredients that never change.
+* **Custom per variant** for ingredients that depend on size.
+
+### Example setup
+
+Variants: Classic burger, Big burger.
+
+Ingredients:
+
+* **Beef** changes with size. Use **Custom per variant**:
+
+  | Variant | Beef  |
+  | ------- | ----- |
+  | Classic | 200 g |
+  | Big     | 400 g |
+
+* Bread, tomato, lettuce, sauce stay the same for all variants. Use **Fixed quantity**:
+
+  * 1 bun
+  * 20 g sauce
+  * 30 g vegetables
+
+### When to use this
+
+Use this setup when:
+
+* Your item has multiple ingredients.
+* Only some ingredients vary with size.
+
+✅ Typical items: Burgers, Sandwiches, Bowls, Pizzas.
+
+---
+
+## 🧀 3. Advanced Item, With Modifiers (Add-ons)
+
+**Example: Burger + Extra Cheese**
+
+This builds on the previous case.
+
+* You still have multiple ingredients.
+* Customers can add extras (modifiers).
+
+### How it works
+
+You configure:
+
+**1. Base recipe** (same as the hamburger case):
+
+* Fixed quantity for bread, sauce, etc.
+* Custom per variant for meat.
+
+**2. Modifiers (add-ons)**:
+
+Each modifier must be linked to an ingredient.
+
+Example:
+
+* Modifier: Extra cheese
+* Linked ingredient: cheese
+* Quantity added: +20 g
+
+### What happens
+
+If a customer selects Extra cheese:
+
+* +20 g cheese is consumed from stock.
+* Food cost increases automatically.
+
+### When to use this
+
+Use this setup when:
+
+* Customers can customize items.
+* Extras impact inventory and cost.
+
+✅ Typical modifiers: Extra cheese, Extra meat, Add avocado, Double portion.
+
+---
+
+## 🧠 Summary, Choosing the Right Rule
+
+For each ingredient, ask yourself:
+
+1. Does the quantity follow the item size? ✅ Use **Match item size**.
+2. Is the quantity always the same? ✅ Use **Fixed quantity**.
+3. Does the quantity change depending on the variant? ✅ Use **Custom per variant**.
+4. Can the customer add more of this ingredient? ✅ Link it to a **modifier**.
+
+---
+
+## ⚙️ How to Set This Up in Foody Admin
+
+### Step 1. Create your item
+
+* Add variants (e.g. Small, Large or Classic, Big).
+
+### Step 2. Add ingredients
+
+For each ingredient:
+
+* Select the ingredient.
+* Choose how it behaves:
+  * **Match item size** for automatic quantity.
+  * **Fixed quantity** to enter one value.
+  * **Custom per variant** to define a value per variant.
+
+### Step 3. Add modifiers (if needed)
+
+* Create the modifier (e.g. Extra cheese).
+* Link it to an ingredient.
+* Define the added quantity.
+
+---
+
+## 🎯 Final Mental Model
+
+Instead of thinking in system terms, just ask:
+
+* "Does this ingredient depend on size?"
+* "Is it always the same?"
+* "Can the customer add more of it?"
+
+That's it. The system handles the rest.
