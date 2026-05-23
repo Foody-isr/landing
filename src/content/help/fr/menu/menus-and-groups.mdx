@@ -1,0 +1,75 @@
+---
+title: "Menus, cartes & groupes (ce que voient les clients)"
+description: "La différence entre articles, catégories, menus (cartes) et groupes, comment contrôler ce qui s'affiche en ligne ou en caisse, et les horaires de disponibilité de chacun."
+apps: foodyadmin
+tags: [menu, carte, groupes, catégories, articles, canaux, en-ligne, caisse, horaires, web]
+updatedAt: 2026-05-24
+---
+
+## Qu'est-ce que c'est ?
+
+Foody sépare **ce que vous vendez** de **la façon dont vous le présentez** — la même idée que
+Square, pour que le catalogue convienne à tout type d'activité.
+
+- **Articles** — votre catalogue global de plats/produits (créés une seule fois).
+- **Catégories** — des étiquettes internes pour *vous* (reporting, routage cuisine). **Les clients ne voient jamais les catégories.**
+- **Menus (cartes)** — un menu visible par le client, ex. « Petit-déjeuner », « Déjeuner », « Dîner ».
+- **Groupes** — les sections visuelles dans un menu, ex. « Salades », « Boissons ». **C'est ce que voient les clients.**
+
+> **La règle qui piège tout le monde :** un article doit être placé dans un **groupe** pour
+> apparaître aux clients. Être dans une catégorie ne suffit *pas* — les catégories sont internes.
+
+## La structure
+
+```
+Article          (catalogue global — « Salade César »)
+  └─ appartient à une Catégorie   (interne : « Salades »)  ← invisible pour les clients
+
+Menu / carte     (« Déjeuner »)
+  └─ Groupe      (« Salades »)  ← visible pour les clients
+       └─ contient des Articles   (le même article peut être dans plusieurs groupes/menus)
+```
+
+Un groupe comme « Spécial déjeuner » peut puiser des articles dans plusieurs catégories. Le même
+article peut figurer dans plusieurs groupes et menus.
+
+## Gérer vos menus
+
+Dans **Menu → Cartes** :
+
+- Créez un menu (carte) et donnez-lui des groupes.
+- Glissez des articles dans les groupes (un article peut être dans plusieurs).
+- Réorganisez groupes et articles.
+
+→ [Catégories & articles](/fr/help/menu/categories-and-items) · [Créer un article](/fr/help/menu/creating-a-menu-item)
+
+## Où ça se vend : en ligne ou en caisse
+
+Chaque menu et groupe a des interrupteurs de **canal** :
+
+- **Activé sur le web** — s'affiche dans la commande en ligne / QR pour les clients.
+- **Activé en caisse** — s'affiche sur la caisse du personnel.
+
+Vous pouvez donc avoir un menu « Dîner » uniquement web, ou cacher un groupe aux clients tout en
+le gardant en caisse. Désactivez un groupe sur un canal et il n'y apparaît tout simplement pas.
+
+## Quand ça se vend : horaires de disponibilité
+
+Un menu (et chaque groupe) peut **suivre vos horaires d'ouverture** ou utiliser des **horaires
+personnalisés** — ex. un groupe « Petit-déjeuner » visible seulement de 07:00 à 11:00. En dehors
+de ses horaires, les clients ne le voient pas.
+
+## Le lien avec la disponibilité
+
+Les canaux et les horaires décident **si** un groupe est affiché. Par-dessus,
+la [Disponibilité](/fr/help/kitchen/availability) décide, plat par plat, s'il est **épuisé ou en
+stock faible** selon sa recette et le stock. Les deux s'appliquent : un plat n'apparaît aux
+clients que si son groupe est actif *et* qu'il peut encore être préparé.
+
+## Démarrage rapide
+
+1. Créez vos articles → [Créer un article](/fr/help/menu/creating-a-menu-item).
+2. Créez un menu (carte) et ajoutez des groupes.
+3. Glissez les articles dans les bons groupes.
+4. Réglez les **canaux** (web / caisse) et les **horaires** de chaque menu/groupe.
+5. Ouvrez le site client ou la caisse — votre menu est en ligne.

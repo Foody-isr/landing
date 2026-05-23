@@ -1,0 +1,44 @@
+---
+title: "Préparations"
+description: "Des sous-recettes que vous fabriquez par lots (sauces, pâtes, marinades) et utilisez dans plusieurs plats. Produire un lot crédite le stock ; les plats qui l'utilisent retrouvent leur disponibilité automatiquement."
+apps: foodyadmin
+tags: [cuisine, préparations, prep, sous-recette, lot, rendement, stock, disponibilité]
+updatedAt: 2026-05-24
+---
+
+## Qu'est-ce que c'est ?
+
+Une **Préparation** est une sous-recette que vous préparez à l'avance par lots — une sauce, une
+pâte, une marinade, un fond — puis utilisez dans plusieurs plats. Au lieu de lister les
+ingrédients bruts sur chaque plat, vous pointez les plats vers la préparation.
+
+### Comment ça marche (simplement)
+
+1. **Définissez la préparation** dans **Cuisine → Préparations** : son nom, son unité, les
+   ingrédients bruts qu'un lot consomme (sa recette), et le **rendement par lot** (ce qu'un lot
+   produit).
+2. **Produisez un lot** quand vous la faites. Foody déduit les ingrédients bruts du **Stock** et
+   crédite la quantité produite à la préparation.
+3. **Utilisez-la dans les plats** : dans l'onglet **Recette** d'un plat, ajoutez la préparation
+   comme ingrédient avec la quantité qu'une portion nécessite.
+
+Comme les plats consomment la préparation, sa quantité actuelle alimente directement la
+[Disponibilité](/fr/help/kitchen/availability) : quand une prep tombe à 0, les plats qui
+l'utilisent passent en épuisé, et dès que vous produisez un nouveau lot, ils reviennent.
+
+![Une préparation avec sa recette et son rendement](/assets/img/screenshots/kitchen/prep-editor.png)
+
+## Pourquoi les utiliser
+
+- **Moins de duplication** — changez la recette de la sauce une fois, tous les plats qui
+  l'utilisent suivent.
+- **Coût matière exact** — le coût unitaire de la prep se calcule depuis ses ingrédients et
+  alimente chaque plat.
+- **Disponibilité réelle** — « on n'a plus de sauce verte » met automatiquement en 86 les bons plats.
+
+## Exemple
+
+Une sauce tahini rend 2 L par lot et coûte 18 ₪ à produire. Cinq plats en utilisent 50 ml
+chacun. Après avoir produit un lot, vous pouvez faire ~40 portions ; quand elle approche de
+zéro, ces plats affichent **stock faible**, puis **épuisé**, jusqu'à ce que vous produisiez un
+autre lot.

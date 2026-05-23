@@ -1,0 +1,52 @@
+---
+title: "Coût matière"
+description: "Voyez le coût et la marge de chaque plat, calculés depuis sa recette, fixez un objectif, et trouvez les plats qui grignotent votre profit."
+apps: foodyadmin
+tags: [cuisine, coût-matière, coût, marge, recette, profit, objectif, prix]
+updatedAt: 2026-05-24
+---
+
+## Qu'est-ce que c'est ?
+
+Le **coût matière** vous dit ce que chaque plat *coûte à produire* et la *marge* qu'il laisse —
+calculé automatiquement depuis sa **recette** et vos **prix de stock**. C'est ainsi que vous
+trouvez les plats qui grignotent discrètement votre profit.
+
+### Comment ça marche (simplement)
+
+Le chiffre vient directement de la chaîne que vous avez déjà configurée :
+
+```
+Prix de stock  ─┐
+                ├─→  Recette (ingrédients + préparations × quantités)  ─→  Coût du plat  ─→  Marge vs son prix
+Coûts des preps ┘
+```
+
+Un plat n'a donc un coût matière qu'une fois qu'il a une
+[recette](/fr/help/menu/ingredients-and-portions). Pas de recette = pas de coût (et le plat
+s'affiche comme non chiffré).
+
+## Ce que vous voyez
+
+Dans **Cuisine → Coût matière**, chaque plat affiche :
+
+- **Coût** — la somme de sa recette aux prix de stock actuels (HT).
+- **Prix** — son prix de vente.
+- **% de coût matière** — coût ÷ prix. Plus c'est bas, mieux c'est ; la plupart des cuisines visent ~25–35 %.
+- **Marge** — ce qu'il reste après le coût.
+
+Fixez un **objectif de % de coût matière** ; les plats au-dessus sont signalés pour que vous
+puissiez les re-tarifer, re-portionner, ou changer un ingrédient.
+
+## Comment l'utiliser
+
+- **Triez par % de coût matière** pour trouver vos pires plats en premier.
+- **Un plat coûte trop cher ?** Ajustez sa portion ou ses ingrédients dans l'[onglet Recette](/fr/help/menu/ingredients-and-portions), changez son prix, ou remplacez un ingrédient moins cher.
+- **Les prix ont changé ?** Mettez l'ingrédient à jour dans le [Stock](/fr/help/kitchen/stock-management) ; chaque plat qui l'utilise est recalculé automatiquement.
+
+## Théorique vs réel
+
+La page Coût matière montre votre coût **théorique** — ce que chaque plat *devrait* coûter. Pour
+le comparer à ce que vous avez **réellement** utilisé (pertes, sur-portionnage, erreurs), faites
+la clôture du jour dans [Opérations quotidiennes](/fr/help/kitchen/daily-operations) ; l'écart,
+c'est là que l'argent fuit.
