@@ -1,0 +1,86 @@
+---
+title: "Disponibilité (épuisé & stock faible)"
+description: "Les plats passent en épuisé ou stock faible automatiquement selon leur recette et le stock actuel. Définissez des règles réutilisables, voyez combien de portions vous pouvez encore faire, et forcez n'importe quel plat."
+apps: both
+tags: [cuisine, disponibilité, épuisé, stock-faible, stock, recette, règles, 86]
+updatedAt: 2026-05-24
+---
+
+## Qu'est-ce que c'est ?
+
+La **Disponibilité** décide, automatiquement, quand un plat doit apparaître comme **épuisé**
+ou en **stock faible** pour vos clients et votre équipe, selon la **recette** du plat et
+votre **stock actuel**.
+
+Fini de désactiver les plats à la main quand un ingrédient manque, et fini d'oublier de les
+réactiver. Dès que vous réapprovisionnez, le plat revient tout seul.
+
+### Comment ça marche (simplement)
+
+Pour chaque plat, Foody lit sa recette (ingrédients + préparations) et votre stock actuel,
+puis calcule **combien de portions vous pouvez encore faire** — limité par l'ingrédient qui
+s'épuise en premier.
+
+- Beaucoup de stock → le plat est **disponible**.
+- Plus que quelques-uns → **stock faible** (ex. « 3 restant »).
+- Impossible d'en faire un seul → **épuisé** (grisé ; les clients ne peuvent pas commander).
+
+> **Important :** un plat ne suit sa disponibilité que s'il a une **recette**. Ouvrez le
+> plat, allez dans l'onglet **Recette** et ajoutez ses ingrédients et préparations. Un plat
+> sans recette est toujours disponible — ainsi les boissons et articles non chiffrés ne
+> disparaissent jamais.
+
+![Le panneau Disponibilité d'un plat](/assets/img/screenshots/kitchen/availability-dish-panel.png)
+
+## Règles
+
+Les règles contrôlent *comment* la disponibilité se comporte, et vous pouvez les réutiliser
+sur plusieurs plats. Allez dans **Cuisine → Disponibilité**.
+
+Chaque règle a :
+
+- **Suivre le stock** — désactivez-le pour les articles de garde-manger (boissons, basiques
+  que vous n'épuisez jamais) afin qu'ils restent toujours disponibles.
+- **Alerte stock faible à ≤ N** — quand le badge « N restant » apparaît (0 = jamais).
+- **Quand épuisé** — afficher un badge **Épuisé**, ou **masquer** le plat entièrement.
+- **Afficher la quantité restante** — montrer « 3 restant » aux clients, ou un badge générique.
+
+Foody fournit trois règles de départ que vous pouvez modifier ou copier :
+
+| Règle | Comportement |
+|---|---|
+| **Standard** (par défaut) | Suit le stock, alerte à ≤ 5, badge épuisé, affiche la quantité. |
+| **Fait maison du jour** | Suit le stock, alerte plus tôt (≤ 3). |
+| **Toujours disponible** | Ne suit pas le stock — toujours commandable. |
+
+Un plat utilise sa propre règle si elle est définie, sinon celle de sa catégorie, sinon la
+règle **par défaut**.
+
+![La bibliothèque de règles](/assets/img/screenshots/kitchen/availability-rules-library.png)
+
+## Forcer un plat (« 86 »)
+
+Sur le panneau **Recette → Disponibilité** d'un plat, vous voyez le calcul en direct
+(« Réalisable maintenant : 12 portions, limité par … ») et un forçage :
+
+- **Auto** — utilise la disponibilité calculée (réglage normal).
+- **Toujours dispo** — force le plat commandable même si le stock dit le contraire.
+- **Forcer épuisé** — 86 manuel d'un plat ; remettez sur **Auto** plus tard.
+
+Le forçage est toujours prioritaire sur la règle.
+
+## Exemples
+
+- **Le thon est épuisé.** Tous les plats dont la recette utilise du thon passent en épuisé
+  sur le web et la caisse. Réceptionnez du thon dans **Stock** et ils reviennent tout seuls.
+- **Une préparation de sauce tombe à 0.** Les plats qui l'utilisent passent en épuisé.
+  Produisez un nouveau lot dans **Préparations** et ils reviennent.
+- **Boissons en bouteille.** Mettez-les sur la règle **Toujours disponible** pour qu'elles
+  ne disparaissent jamais automatiquement.
+
+## Bon à savoir
+
+- La disponibilité est aussi appliquée au paiement : si un plat s'épuise pendant que le
+  client navigue, la commande est bloquée avec un message clair.
+- Sur la caisse, les plats épuisés sont grisés et non commandables ; réactivez-en un avec le
+  forçage **Toujours dispo**.

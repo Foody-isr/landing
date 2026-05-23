@@ -1,0 +1,42 @@
+---
+title: "Preparations"
+description: "Sub-recipes you make in batches (sauces, doughs, marinades) and use across many dishes. Producing a batch credits stock; dishes that use it recover availability automatically."
+apps: foodyadmin
+tags: [kitchen, preparations, prep, sub-recipe, batch, yield, stock, availability]
+updatedAt: 2026-05-24
+---
+
+## What Is It?
+
+A **Preparation** is a sub-recipe you make ahead in batches — a sauce, a dough, a
+marinade, a stock — and then use inside several dishes. Instead of listing raw
+ingredients on every dish, you point dishes at the preparation.
+
+### How It Works (Simply)
+
+1. **Define the preparation** in **Kitchen → Preparations**: its name, unit, and the raw
+   ingredients one batch consumes (its recipe), plus the **yield per batch** (how much one
+   batch produces).
+2. **Produce a batch** when you make it. Foody deducts the raw ingredients from **Stock**
+   and credits the produced quantity to the preparation.
+3. **Use it in dishes**: on a dish's **Recipe** tab, add the preparation as an ingredient
+   with the quantity one portion needs.
+
+Because dishes consume the preparation, its current quantity feeds straight into
+[Availability](/en/help/kitchen/availability): when a prep hits 0, dishes that use it go
+sold out — and the moment you produce a new batch, they come back.
+
+![A preparation with its recipe and yield](/assets/img/screenshots/kitchen/prep-editor.png)
+
+## Why use them
+
+- **Less duplication** — change the sauce recipe once, every dish that uses it follows.
+- **Accurate food cost** — the prep's cost per unit rolls up from its ingredients and
+  flows into each dish.
+- **Real availability** — "we're out of the green sauce" automatically 86's the right dishes.
+
+## Example
+
+A tahini sauce yields 2 L per batch and costs ₪18 to make. Five dishes use 50 ml each.
+After producing one batch you can build ~40 portions; when it drops near zero those dishes
+show **low stock**, then **sold out** — until you produce another batch.

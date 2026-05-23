@@ -1,0 +1,83 @@
+---
+title: "Availability (sold-out & low stock)"
+description: "Dishes go sold-out or low automatically from their recipe and current stock. Set reusable rules, see how many portions you can still make, and override any dish."
+apps: both
+tags: [kitchen, availability, sold-out, low-stock, stock, recipe, rules, 86]
+updatedAt: 2026-05-24
+---
+
+## What Is It?
+
+**Availability** decides — automatically — when a dish should show as **sold out** or
+**low stock** to your customers and staff, based on the dish's **recipe** and your
+**current stock**.
+
+No more switching dishes off by hand when an ingredient runs out, and no more forgetting
+to switch them back on. When you restock, the dish comes back on its own.
+
+### How It Works (Simply)
+
+For each dish, Foody reads its recipe (ingredients + preparations) and your current stock,
+then works out **how many portions you can still make** — limited by whichever ingredient
+runs out first.
+
+- Plenty in stock → the dish is **available**.
+- Down to the last few → **low stock** (e.g. "3 left").
+- Can't make even one → **sold out** (greyed out; customers can't order it).
+
+> **Important:** a dish only tracks availability if it has a **recipe**. Open the dish, go
+> to the **Recipe** tab, and add its ingredients and preparations. A dish with no recipe is
+> always available — so drinks and uncosted items never disappear.
+
+![The Availability panel on a dish](/assets/img/screenshots/kitchen/availability-dish-panel.png)
+
+## Rules
+
+Rules control *how* availability behaves, and you can reuse them across dishes. Go to
+**Kitchen → Availability**.
+
+Each rule has:
+
+- **Track stock** — turn it off for pantry items (drinks, staples you never run out of) so
+  they stay always available.
+- **Low-stock warning at ≤ N** — when the "N left" badge appears (0 = never warn).
+- **When out of stock** — show a **Sold out** badge, or **hide** the dish entirely.
+- **Show remaining count** — show customers "3 left", or just a generic badge.
+
+Foody ships three starter rules you can edit or copy:
+
+| Rule | Behavior |
+|---|---|
+| **Standard** (default) | Tracks stock, warns at ≤ 5, sold-out badge, shows the count. |
+| **Made fresh daily** | Tracks stock, warns earlier (≤ 3). |
+| **Always available** | Never tracks stock — always orderable. |
+
+A dish uses its own rule if set, otherwise its category's rule, otherwise the **default**.
+
+![The rules library](/assets/img/screenshots/kitchen/availability-rules-library.png)
+
+## Overriding a single dish ("86")
+
+On a dish's **Recipe → Availability** panel you'll see the live count ("Buildable now: 12
+portions, limited by …") and an override:
+
+- **Auto** — use the computed availability (the normal setting).
+- **Always available** — force it orderable even if stock says otherwise.
+- **Force sold out** — manually 86 a dish; set it back to **Auto** later.
+
+The override always wins over the rule.
+
+## Examples
+
+- **Tuna runs out.** Every dish whose recipe uses tuna goes sold out across web and POS.
+  Receive more tuna in **Stock** and they come back automatically.
+- **A sauce preparation hits 0.** Dishes using that prep go sold out. Produce a new batch
+  in **Preparations** and they recover.
+- **Bottled drinks.** Put them on the **Always available** rule so they never auto-disappear.
+
+## Good to know
+
+- Availability is enforced at checkout: if a dish sells out while a customer is browsing,
+  the order is blocked with a clear message.
+- On the POS, sold-out dishes are dimmed and can't be added; re-enable one with the
+  **Always available** override.
