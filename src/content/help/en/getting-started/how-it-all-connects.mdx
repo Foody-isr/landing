@@ -1,0 +1,76 @@
+---
+title: "How it all connects: from ingredients to a sold-out dish"
+description: "The big picture — how stock, preparations, recipes, items, availability, food cost and orders fit together, and the order to set them up."
+apps: foodyadmin
+tags: [getting-started, overview, flow, stock, recipe, ingredients, preparations, availability, food-cost, orders]
+updatedAt: 2026-05-24
+---
+
+## The big picture
+
+Six pieces work together. Once you understand the chain, everything else clicks:
+
+- **Stock** — the raw ingredients you buy (tomatoes, tuna, oil, buns).
+- **Preparations** — things you make from stock in batches (a sauce, a dough, a marinade).
+- **Recipe** — what one dish uses: its ingredients and preparations, with quantities.
+- **Item (article)** — a dish on your menu, shown to customers inside a menu group.
+- **Availability** — computed from the recipe + current stock: low stock or sold-out, automatically.
+- **Food cost** — also computed from the recipe.
+
+The flow:
+
+```
+Stock  ┐
+       ├─→  Recipe  ─→  Item  ─→  shown to customers
+Preps  ┘                 │
+                         ├─→  Availability  (low / sold-out, automatic)
+                         └─→  Food cost      (margin per dish)
+
+An order is placed  ─→  the recipe is deducted from Stock  ─→  Availability updates
+```
+
+So a dish isn't an island: it points at a recipe, the recipe points at stock and
+preparations, and that single link makes **availability** and **food cost** work on their own.
+
+## Set it up in this order
+
+### 1. Add your ingredients to Stock
+Enter the raw ingredients you buy, with their unit and current quantity.
+→ [Stock management](/en/help/kitchen/stock-management)
+
+### 2. (Optional) Build your Preparations
+If you make sauces, doughs or bases in batches, define them once and reuse them across
+dishes. Producing a batch credits stock; dishes that use it recover automatically.
+→ [Preparations](/en/help/kitchen/preparations)
+
+### 3. Create your items
+Add each dish to your catalogue (name, price, photo, category).
+→ [Creating a menu item](/en/help/menu/creating-a-menu-item)
+
+### 4. Give each item a recipe
+On the item's **Recipe** tab, link the ingredients and preparations one portion uses, with
+quantities. **This is the link that powers everything downstream.** A dish with no recipe is
+always available and has no computed cost.
+→ [Ingredients & portions](/en/help/menu/ingredients-and-portions)
+
+### 5. Put items in a menu group
+Items only appear to customers once they're in a menu group.
+→ [Categories & items](/en/help/menu/categories-and-items)
+
+### 6. Availability now works on its own
+With recipes in place, dishes go **low stock** and **sold out** automatically as stock runs
+down, and come back when you restock. Tune it with rules, or override a single dish.
+→ [Availability](/en/help/kitchen/availability)
+
+## What you get once the chain is connected
+
+- **Automatic sold-out** — no more manually switching dishes off when an ingredient runs out.
+- **Accurate food cost** — margin per dish, rolled up from the recipe.
+- **Self-updating stock** — every order deducts its recipe, so your numbers stay honest.
+- **One place to change things** — update a preparation's recipe once and every dish follows.
+
+## Where to go next
+
+- Take and manage orders → [Managing orders](/en/help/orders/managing-orders)
+- Get paid → [How payments work](/en/help/payments/how-payments-work)
+- First-time setup checklist → [Complete setup guide](/en/help/getting-started/complete-setup-guide)

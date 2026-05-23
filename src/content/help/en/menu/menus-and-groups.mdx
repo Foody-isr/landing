@@ -1,0 +1,74 @@
+---
+title: "Menus, cartes & groups (what customers see)"
+description: "How items, categories, menus (cartes) and groups differ, how to control what shows online vs on the POS, and the availability hours for each."
+apps: foodyadmin
+tags: [menu, carte, groups, categories, items, channels, online, pos, hours, web]
+updatedAt: 2026-05-24
+---
+
+## What Is It?
+
+Foody separates **what you sell** from **how you show it** — the same idea Square uses, so the
+catalogue works for any business.
+
+- **Items** — your global catalogue of dishes/products (created once).
+- **Categories** — internal labels for *you* (reporting, kitchen routing). **Customers never see categories.**
+- **Menus (cartes)** — a customer-facing menu, e.g. "Breakfast", "Lunch", "Dinner".
+- **Groups** — the visual sections inside a menu, e.g. "Salads", "Drinks". **This is what customers see.**
+
+> **The rule that trips everyone up:** an item must be placed in a **group** to appear to
+> customers. Being in a category is *not* enough — categories are internal only.
+
+## The structure
+
+```
+Item            (global catalogue — "Caesar Salad")
+  └─ belongs to one Category   (internal: "Salads")  ← customers don't see this
+
+Menu / carte    ("Lunch")
+  └─ Group      ("Salads")  ← customers DO see this
+       └─ contains Items     (the same item can sit in several groups/menus)
+```
+
+A group like "Lunch specials" can pull items from several categories. The same item can appear
+in several groups and menus.
+
+## Manage your menus
+
+In **Menu → Cartes**:
+
+- Create a menu (carte) and give it groups.
+- Drag items into groups (an item can be in many).
+- Reorder groups and items.
+
+→ [Categories & items](/en/help/menu/categories-and-items) · [Creating a menu item](/en/help/menu/creating-a-menu-item)
+
+## Where it sells: online vs POS
+
+Each menu and group has **channel** switches:
+
+- **Web enabled** — shows in the online / QR ordering app for guests.
+- **POS enabled** — shows on the staff POS.
+
+So you can run, say, a "Dinner" menu that's web-only, or hide a group from guests but keep it
+on the POS. Turn a group off for one channel and it simply doesn't appear there.
+
+## When it sells: availability hours
+
+A menu (and each group) can **follow your opening hours** or use **custom hours** — e.g. a
+"Breakfast" group that only shows 07:00–11:00. Outside its hours, customers don't see it.
+
+## How this connects to availability
+
+Channels and hours decide **whether** a group is shown at all. On top of that,
+[Availability](/en/help/kitchen/availability) decides, per dish, whether it's **sold out or low**
+from its recipe and stock. Both apply: a dish shows to customers only when its group is on
+*and* it can still be made.
+
+## Quick start
+
+1. Create your items → [Creating a menu item](/en/help/menu/creating-a-menu-item).
+2. Create a menu (carte) and add groups.
+3. Drag items into the right groups.
+4. Set each menu/group's **channels** (web / POS) and **hours**.
+5. Open the guest site or POS — your menu is live.

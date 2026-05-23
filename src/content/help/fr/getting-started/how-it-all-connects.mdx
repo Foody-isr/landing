@@ -1,0 +1,79 @@
+---
+title: "Comment tout s'articule : de l'ingrédient au plat épuisé"
+description: "La vue d'ensemble — comment le stock, les préparations, les recettes, les articles, la disponibilité, le coût matière et les commandes s'imbriquent, et dans quel ordre les configurer."
+apps: foodyadmin
+tags: [démarrage, vue-ensemble, flux, stock, recette, ingrédients, préparations, disponibilité, coût, commandes]
+updatedAt: 2026-05-24
+---
+
+## La vue d'ensemble
+
+Six éléments fonctionnent ensemble. Une fois la chaîne comprise, tout devient clair :
+
+- **Stock** — les ingrédients bruts que vous achetez (tomates, thon, huile, pains).
+- **Préparations** — ce que vous fabriquez à partir du stock par lots (une sauce, une pâte, une marinade).
+- **Recette** — ce qu'un plat utilise : ses ingrédients et préparations, avec les quantités.
+- **Article** — un plat de votre menu, montré aux clients dans un groupe de menu.
+- **Disponibilité** — calculée depuis la recette + le stock actuel : stock faible ou épuisé, automatiquement.
+- **Coût matière** — également calculé depuis la recette.
+
+Le flux :
+
+```
+Stock        ┐
+             ├─→  Recette  ─→  Article  ─→  montré aux clients
+Préparations ┘                  │
+                                ├─→  Disponibilité  (faible / épuisé, automatique)
+                                └─→  Coût matière    (marge par plat)
+
+Une commande est passée  ─→  la recette est déduite du Stock  ─→  la disponibilité se met à jour
+```
+
+Un plat n'est donc pas isolé : il pointe vers une recette, la recette pointe vers le stock et
+les préparations, et ce seul lien fait fonctionner la **disponibilité** et le **coût matière**
+tout seuls.
+
+## Configurez dans cet ordre
+
+### 1. Ajoutez vos ingrédients au Stock
+Saisissez les ingrédients bruts que vous achetez, avec leur unité et leur quantité actuelle.
+→ [Gestion du stock](/fr/help/kitchen/stock-management)
+
+### 2. (Optionnel) Créez vos Préparations
+Si vous faites des sauces, pâtes ou bases par lots, définissez-les une fois et réutilisez-les
+sur plusieurs plats. Produire un lot crédite le stock ; les plats concernés redeviennent
+disponibles automatiquement.
+→ [Préparations](/fr/help/kitchen/preparations)
+
+### 3. Créez vos articles
+Ajoutez chaque plat à votre catalogue (nom, prix, photo, catégorie).
+→ [Créer un article](/fr/help/menu/creating-a-menu-item)
+
+### 4. Donnez une recette à chaque article
+Dans l'onglet **Recette** de l'article, liez les ingrédients et préparations qu'une portion
+utilise, avec les quantités. **C'est ce lien qui alimente tout le reste.** Un plat sans
+recette est toujours disponible et n'a pas de coût calculé.
+→ [Ingrédients & portions](/fr/help/menu/ingredients-and-portions)
+
+### 5. Placez les articles dans un groupe de menu
+Les articles n'apparaissent aux clients qu'une fois placés dans un groupe de menu.
+→ [Catégories & articles](/fr/help/menu/categories-and-items)
+
+### 6. La disponibilité fonctionne alors toute seule
+Une fois les recettes en place, les plats passent en **stock faible** et **épuisé**
+automatiquement à mesure que le stock baisse, et reviennent quand vous réapprovisionnez.
+Ajustez avec des règles, ou forcez un plat précis.
+→ [Disponibilité](/fr/help/kitchen/availability)
+
+## Ce que vous obtenez une fois la chaîne connectée
+
+- **Épuisé automatique** — fini de désactiver les plats à la main quand un ingrédient manque.
+- **Coût matière exact** — la marge par plat, calculée depuis la recette.
+- **Stock auto-actualisé** — chaque commande déduit sa recette, vos chiffres restent justes.
+- **Un seul endroit à modifier** — changez la recette d'une préparation une fois et tous les plats suivent.
+
+## Pour aller plus loin
+
+- Prendre et gérer les commandes → [Gérer les commandes](/fr/help/orders/managing-orders)
+- Être payé → [Comment fonctionnent les paiements](/fr/help/payments/how-payments-work)
+- Liste de configuration initiale → [Guide de configuration complet](/fr/help/getting-started/complete-setup-guide)

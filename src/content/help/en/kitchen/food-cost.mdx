@@ -1,0 +1,50 @@
+---
+title: "Food cost"
+description: "See the cost and margin of every dish, computed from its recipe, set a target, and find the dishes eating your profit."
+apps: foodyadmin
+tags: [kitchen, food-cost, cost, margin, recipe, profit, target, pricing]
+updatedAt: 2026-05-24
+---
+
+## What Is It?
+
+**Food cost** tells you what each dish *costs you to make* and how much *margin* it leaves —
+computed automatically from its **recipe** and your **stock prices**. It's how you find the
+dishes quietly eating your profit.
+
+### How It Works (Simply)
+
+The number comes straight from the chain you already set up:
+
+```
+Stock prices  ─┐
+               ├─→  Recipe (ingredients + preparations × quantities)  ─→  Dish cost  ─→  Margin vs its price
+Prep costs    ─┘
+```
+
+So a dish only has a food cost once it has a [recipe](/en/help/menu/ingredients-and-portions).
+No recipe = no cost (and the dish shows as un-costed).
+
+## What you see
+
+In **Kitchen → Food cost**, each dish shows:
+
+- **Cost** — the sum of its recipe at current stock prices (ex-VAT).
+- **Price** — its selling price.
+- **Food cost %** — cost ÷ price. Lower is better; most kitchens aim for ~25–35%.
+- **Margin** — what's left after the cost.
+
+Set a **target food-cost %**; dishes above it are flagged so you can re-price, re-portion, or
+swap an ingredient.
+
+## How to use it
+
+- **Sort by food cost %** to find your worst offenders first.
+- **A dish costs too much?** Adjust its portion or ingredients on the [Recipe tab](/en/help/menu/ingredients-and-portions), change its price, or substitute a cheaper ingredient.
+- **Prices changed?** Update the ingredient in [Stock](/en/help/kitchen/stock-management); every dish using it re-costs automatically.
+
+## Theoretical vs actual
+
+The Food cost page is your **theoretical** cost — what each dish *should* cost. To compare it
+against what you **actually** used (waste, over-portioning, errors), close the day in
+[Daily operations](/en/help/kitchen/daily-operations); the variance is where money leaks.
