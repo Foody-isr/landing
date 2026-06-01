@@ -6,10 +6,12 @@ import WhatsApp from '@/components/WhatsApp';
 import Profit from '@/components/Profit';
 import Screenshots from '@/components/Screenshots';
 import Footer from '@/components/Footer';
+import IntroVideo from '@/components/IntroVideo';
 
 export default function Home() {
   return (
     <>
+      <IntroVideo />
       <Navbar />
       <Hero />
       <Features />
