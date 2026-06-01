@@ -19,11 +19,23 @@ export default function IntroVideo() {
   const [phase, setPhase] = useState<Phase>('gone');
   const [progress, setProgress] = useState(0);
   const [needsSoundTap, setNeedsSoundTap] = useState(false);
+  const [needsTapToPlay, setNeedsTapToPlay] = useState(false);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
     if (window.sessionStorage.getItem(sessionKey)) return;
     setPhase('curtain');
+  }, []);
+
+  // Force muted state on the DOM element directly (React's `muted` prop sometimes
+  // doesn't reflect to the HTML attribute, which is what Chrome's autoplay policy checks).
+  const setVideoRef = useCallback((el: HTMLVideoElement | null) => {
+    videoRef.current = el;
+    if (!el) return;
+    el.muted = true;
+    el.defaultMuted = true;
+    el.setAttribute('muted', '');
+    el.setAttribute('playsinline', '');
   }, []);
 
   // Choreograph: curtain → reveal → start playback.
@@ -58,8 +70,25 @@ export default function IntroVideo() {
     v.volume = 1;
     setNeedsSoundTap(true);
 
-    v.play().catch(() => dismiss('error'));
-  }, [phase, dismiss]);
+    const start = () => {
+      const p = v.play();
+      if (p && typeof p.then === 'function') {
+        p.catch(() => setNeedsTapToPlay(true));
+      }
+    };
+
+    // Wait for the video to be playable before attempting to start it.
+    if (v.readyState >= 2) {
+      start();
+    } else {
+      const onReady = () => {
+        v.removeEventListener('canplay', onReady);
+        start();
+      };
+      v.addEventListener('canplay', onReady);
+      return () => v.removeEventListener('canplay', onReady);
+    }
+  }, [phase]);
 
   // Keyboard: Esc to skip, Space to pause/play.
   useEffect(() => {
@@ -97,7 +126,21 @@ export default function IntroVideo() {
     v.volume = 1;
     v.currentTime = 0;
     setNeedsSoundTap(false);
+    setNeedsTapToPlay(false);
     v.play().catch(() => {});
+  };
+
+  const handleTapToPlay = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = false;
+    v.volume = 1;
+    setNeedsTapToPlay(false);
+    setNeedsSoundTap(false);
+    v.play().catch(() => {
+      v.muted = true;
+      v.play().catch(() => {});
+    });
   };
 
   const handleTimeUpdate = () => {
@@ -136,7 +179,7 @@ export default function IntroVideo() {
         <span className="intro-bracket intro-bracket-br" aria-hidden />
 
         <video
-          ref={videoRef}
+          ref={setVideoRef}
           className="intro-video"
           src={VIDEO_SRC}
           playsInline
@@ -151,8 +194,8 @@ export default function IntroVideo() {
         <div className="intro-grain" aria-hidden />
       </div>
 
-      {/* Sound prompt (only shown if autoplay-with-sound was blocked) */}
-      {needsSoundTap && (
+      {/* Sound prompt (shown while video plays muted) */}
+      {needsSoundTap && !needsTapToPlay && (
         <button type="button" className="intro-sound-pill" onClick={handleEnableSound}>
           <span className="intro-sound-icon" aria-hidden>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
@@ -161,6 +204,17 @@ export default function IntroVideo() {
             </svg>
           </span>
           {t('intro.sound_on')}
+        </button>
+      )}
+
+      {/* Tap-to-play fallback (shown if even muted autoplay was blocked) */}
+      {needsTapToPlay && (
+        <button type="button" className="intro-tap-play" onClick={handleTapToPlay} aria-label="Play">
+          <span className="intro-tap-play-icon" aria-hidden>
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </span>
         </button>
       )}
 
