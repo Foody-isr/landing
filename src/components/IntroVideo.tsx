@@ -29,8 +29,8 @@ export default function IntroVideo() {
   // Choreograph: curtain → reveal → start playback.
   useEffect(() => {
     if (phase !== 'curtain') return;
-    const a = window.setTimeout(() => setPhase('reveal'), 850);
-    const b = window.setTimeout(() => setPhase('playing'), 1500);
+    const a = window.setTimeout(() => setPhase('reveal'), 1700);
+    const b = window.setTimeout(() => setPhase('playing'), 2500);
     return () => {
       window.clearTimeout(a);
       window.clearTimeout(b);
@@ -48,23 +48,17 @@ export default function IntroVideo() {
     window.setTimeout(() => setPhase('gone'), ms);
   }, []);
 
-  // Once playback phase begins, try to play with sound. If blocked, fall back to muted.
+  // Start muted (browsers always allow muted autoplay) and prompt for sound.
   useEffect(() => {
     if (phase !== 'playing') return;
     const v = videoRef.current;
     if (!v) return;
 
-    v.muted = false;
+    v.muted = true;
     v.volume = 1;
+    setNeedsSoundTap(true);
 
-    const tryPlay = v.play();
-    if (tryPlay && typeof tryPlay.then === 'function') {
-      tryPlay.catch(() => {
-        v.muted = true;
-        setNeedsSoundTap(true);
-        v.play().catch(() => dismiss('error'));
-      });
-    }
+    v.play().catch(() => dismiss('error'));
   }, [phase, dismiss]);
 
   // Keyboard: Esc to skip, Space to pause/play.
@@ -128,7 +122,7 @@ export default function IntroVideo() {
       <div className="intro-curtain">
         <div className="intro-wordmark" aria-hidden>
           {'FOODY'.split('').map((c, i) => (
-            <span key={i} style={{ animationDelay: `${i * 70}ms` }}>{c}</span>
+            <span key={i} style={{ animationDelay: `${i * 110}ms` }}>{c}</span>
           ))}
         </div>
         <div className="intro-curtain-line" />
@@ -146,6 +140,7 @@ export default function IntroVideo() {
           className="intro-video"
           src={VIDEO_SRC}
           playsInline
+          muted
           preload="auto"
           onEnded={() => dismiss('ended')}
           onError={() => dismiss('error')}
