@@ -27,8 +27,8 @@ export default function IntroVideo() {
     setPhase('curtain');
   }, []);
 
-  // Force muted state on the DOM element directly (React's `muted` prop sometimes
-  // doesn't reflect to the HTML attribute, which is what Chrome's autoplay policy checks).
+  // React doesn't reliably reflect `muted` / `autoplay` to HTML attributes, but
+  // Chrome's autoplay policy checks the attributes — set them directly.
   const setVideoRef = useCallback((el: HTMLVideoElement | null) => {
     videoRef.current = el;
     if (!el) return;
@@ -36,6 +36,14 @@ export default function IntroVideo() {
     el.defaultMuted = true;
     el.setAttribute('muted', '');
     el.setAttribute('playsinline', '');
+    el.setAttribute('webkit-playsinline', '');
+    el.setAttribute('autoplay', '');
+    // Make sure we start at frame 0 so the curtain hides the very first ms.
+    try { el.currentTime = 0; } catch { /* noop */ }
+    // Kick autoplay manually too. Browsers grant muted autoplay; if they don't, the
+    // playing-phase effect will display the tap-to-play fallback.
+    const p = el.play();
+    if (p && typeof p.then === 'function') p.catch(() => { /* fallback handled later */ });
   }, []);
 
   // Choreograph: curtain → reveal → start playback.
@@ -60,7 +68,8 @@ export default function IntroVideo() {
     window.setTimeout(() => setPhase('gone'), ms);
   }, []);
 
-  // Start muted (browsers always allow muted autoplay) and prompt for sound.
+  // At the reveal moment: make sure the video is at frame 0 and playing.
+  // If after 1.2s it's still paused (autoplay blocked), show the tap-to-play button.
   useEffect(() => {
     if (phase !== 'playing') return;
     const v = videoRef.current;
@@ -71,26 +80,54 @@ export default function IntroVideo() {
     setNeedsSoundTap(true);
 
     const start = () => {
+      try { v.currentTime = 0; } catch { /* noop */ }
       const p = v.play();
       if (p && typeof p.then === 'function') {
-        p.catch(() => setNeedsTapToPlay(true));
+        p.catch(() => { /* fallback timer below handles this */ });
       }
     };
 
-    // Wait for the video to be playable before attempting to start it.
-    if (v.readyState >= 2) {
-      start();
-    } else {
-      const onReady = () => {
-        v.removeEventListener('canplay', onReady);
-        start();
-      };
-      v.addEventListener('canplay', onReady);
-      return () => v.removeEventListener('canplay', onReady);
-    }
+    if (v.readyState >= 2) start();
+    else v.addEventListener('canplay', start, { once: true });
+
+    // Safety net: if the video is still paused after 1.2s, surface tap-to-play.
+    const stuckTimer = window.setTimeout(() => {
+      if (v.paused || v.currentTime === 0) setNeedsTapToPlay(true);
+    }, 1200);
+
+    return () => {
+      window.clearTimeout(stuckTimer);
+      v.removeEventListener('canplay', start);
+    };
   }, [phase]);
 
-  // Keyboard: Esc to skip, Space to pause/play.
+  // First user interaction anywhere on the overlay → unmute (the gesture grants it).
+  useEffect(() => {
+    if (phase === 'gone' || phase === 'dissolving') return;
+    if (!needsSoundTap) return;
+
+    const enable = () => {
+      const v = videoRef.current;
+      if (!v) return;
+      v.muted = false;
+      v.volume = 1;
+      // If the video was paused (autoplay blocked), this gesture-driven play will succeed.
+      v.play().catch(() => {});
+      setNeedsSoundTap(false);
+      setNeedsTapToPlay(false);
+    };
+
+    // Pointer/touch only — keyboard is handled below so Space doesn't double-fire.
+    const opts: AddEventListenerOptions = { once: true, capture: true };
+    window.addEventListener('pointerdown', enable, opts);
+    window.addEventListener('touchstart', enable, opts);
+    return () => {
+      window.removeEventListener('pointerdown', enable, opts);
+      window.removeEventListener('touchstart', enable, opts);
+    };
+  }, [phase, needsSoundTap]);
+
+  // Keyboard: Esc to skip, Space to play (with sound) / pause.
   useEffect(() => {
     if (phase === 'gone' || phase === 'dissolving') return;
     const onKey = (e: KeyboardEvent) => {
@@ -101,8 +138,16 @@ export default function IntroVideo() {
         e.preventDefault();
         const v = videoRef.current;
         if (!v) return;
-        if (v.paused) v.play().catch(() => {});
-        else v.pause();
+        if (v.paused) {
+          // Pressing Space to start ⇒ also unmute (the keypress grants gesture).
+          v.muted = false;
+          v.volume = 1;
+          v.play().catch(() => {});
+          setNeedsSoundTap(false);
+          setNeedsTapToPlay(false);
+        } else {
+          v.pause();
+        }
       }
     };
     window.addEventListener('keydown', onKey);

@@ -2674,9 +2674,9 @@ html[dir="rtl"] .intro-progress-fill {
   transform-origin: right center;
 }
 
-/* Skip button — ghosted, becomes confident on hover */
+/* Skip button — fades in early, sits at the bottom throughout */
 .intro-skip {
-  position: absolute;
+  position: fixed;
   bottom: 28px;
   left: 50%;
   transform: translateX(-50%);
@@ -2684,9 +2684,9 @@ html[dir="rtl"] .intro-progress-fill {
   align-items: center;
   gap: 10px;
   padding: 10px 16px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.10);
-  color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.85);
   border-radius: 999px;
   font-family: inherit;
   font-size: 12px;
@@ -2695,24 +2695,27 @@ html[dir="rtl"] .intro-progress-fill {
   text-transform: uppercase;
   cursor: pointer;
   opacity: 0;
-  z-index: 6;
+  z-index: 20;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  animation: intro-skip-in 500ms ease 1200ms forwards;
   transition:
-    opacity 500ms ease 700ms,
     color 180ms ease,
     background 180ms ease,
     border-color 180ms ease,
     transform 180ms ease;
 }
-.intro-phase-playing .intro-skip { opacity: 1; }
+.intro-phase-dissolving .intro-skip { opacity: 0; pointer-events: none; transition: opacity 300ms ease; }
 .intro-skip:hover {
   color: #fff;
-  background: rgba(255,255,255,0.08);
-  border-color: rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.14);
+  border-color: rgba(255,255,255,0.35);
   transform: translateX(-50%) translateY(-1px);
 }
 .intro-skip:active { transform: translateX(-50%) translateY(0); }
+@keyframes intro-skip-in {
+  to { opacity: 1; }
+}
 .intro-skip-kbd {
   display: inline-flex;
   align-items: center;

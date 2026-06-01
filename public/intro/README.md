@@ -6,6 +6,21 @@ Drop the current ad cut here:
 
 The stage is black until the first frame paints, so no poster image is needed.
 
+## ⚠️ IMPORTANT — must be "fast-start" / "web-optimized"
+
+The MP4 file MUST have its `moov` atom at the start of the file. Without this, iOS Safari refuses to play it and Chrome takes too long to start.
+
+**Re-export from your editor with "Fast start" or "Web optimized" checked.**
+
+If you forget, run this once after dropping the file in:
+
+```bash
+ffmpeg -i foody-intro.mp4 -c copy -movflags +faststart foody-intro-fast.mp4 \
+  && mv foody-intro-fast.mp4 foody-intro.mp4
+```
+
+(`brew install ffmpeg` if you don't have it.)
+
 ## Swapping the video every 2–3 months
 
 The intro plays once per browser session, keyed by the **filename**. To force every returning visitor to see the new cut:
