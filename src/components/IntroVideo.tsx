@@ -27,24 +27,33 @@ export default function IntroVideo() {
     setPhase('curtain');
   }, []);
 
+  // iOS Safari blocks autoplay aggressively. Detect once and route accordingly.
+  const isIOS =
+    typeof navigator !== 'undefined' &&
+    /iPad|iPhone|iPod/.test(navigator.userAgent) &&
+    !('MSStream' in window);
+
   // React doesn't reliably reflect `muted` / `autoplay` to HTML attributes, but
   // Chrome's autoplay policy checks the attributes — set them directly.
-  const setVideoRef = useCallback((el: HTMLVideoElement | null) => {
-    videoRef.current = el;
-    if (!el) return;
-    el.muted = true;
-    el.defaultMuted = true;
-    el.setAttribute('muted', '');
-    el.setAttribute('playsinline', '');
-    el.setAttribute('webkit-playsinline', '');
-    el.setAttribute('autoplay', '');
-    // Make sure we start at frame 0 so the curtain hides the very first ms.
-    try { el.currentTime = 0; } catch { /* noop */ }
-    // Kick autoplay manually too. Browsers grant muted autoplay; if they don't, the
-    // playing-phase effect will display the tap-to-play fallback.
-    const p = el.play();
-    if (p && typeof p.then === 'function') p.catch(() => { /* fallback handled later */ });
-  }, []);
+  const setVideoRef = useCallback(
+    (el: HTMLVideoElement | null) => {
+      videoRef.current = el;
+      if (!el) return;
+      el.muted = true;
+      el.defaultMuted = true;
+      el.setAttribute('muted', '');
+      el.setAttribute('playsinline', '');
+      el.setAttribute('webkit-playsinline', '');
+      // Don't pre-attempt autoplay on iOS — a failed early play() can block subsequent
+      // play() calls. We'll show a tap-to-play affordance instead.
+      if (!isIOS) {
+        el.setAttribute('autoplay', '');
+        const p = el.play();
+        if (p && typeof p.then === 'function') p.catch(() => { /* fallback handled later */ });
+      }
+    },
+    [isIOS],
+  );
 
   // Choreograph: curtain → reveal → start playback.
   useEffect(() => {
@@ -68,14 +77,19 @@ export default function IntroVideo() {
     window.setTimeout(() => setPhase('gone'), ms);
   }, []);
 
-  // At the reveal moment: make sure the video is at frame 0 and playing.
-  // If after 1.2s it's still paused (autoplay blocked), show the tap-to-play button.
+  // At the reveal moment: start playback. On iOS, skip autoplay entirely (it's blocked
+  // by policy) and surface the tap-to-play button. Elsewhere, attempt muted autoplay
+  // and fall back to tap-to-play if it doesn't kick in within 1.5s.
   useEffect(() => {
     if (phase !== 'playing') return;
     const v = videoRef.current;
     if (!v) return;
 
-    v.muted = true;
+    if (isIOS) {
+      setNeedsTapToPlay(true);
+      return;
+    }
+
     v.volume = 1;
     setNeedsSoundTap(true);
 
@@ -90,34 +104,38 @@ export default function IntroVideo() {
     if (v.readyState >= 2) start();
     else v.addEventListener('canplay', start, { once: true });
 
-    // Safety net: if the video is still paused after 1.2s, surface tap-to-play.
+    // Safety net: if the video is still paused after 1.5s, surface tap-to-play.
     const stuckTimer = window.setTimeout(() => {
-      if (v.paused || v.currentTime === 0) setNeedsTapToPlay(true);
-    }, 1200);
+      if (v.paused || v.currentTime === 0) {
+        setNeedsTapToPlay(true);
+        setNeedsSoundTap(false);
+      }
+    }, 1500);
 
     return () => {
       window.clearTimeout(stuckTimer);
       v.removeEventListener('canplay', start);
     };
-  }, [phase]);
+  }, [phase, isIOS]);
 
-  // First user interaction anywhere on the overlay → unmute (the gesture grants it).
+  // First user interaction anywhere → unmute. Attach from page load so even clicks
+  // during the curtain count (otherwise users who tapped early miss the audio).
   useEffect(() => {
     if (phase === 'gone' || phase === 'dissolving') return;
-    if (!needsSoundTap) return;
 
     const enable = () => {
       const v = videoRef.current;
       if (!v) return;
       v.muted = false;
       v.volume = 1;
-      // If the video was paused (autoplay blocked), this gesture-driven play will succeed.
+      // If the video isn't playing yet (autoplay blocked or not yet at playing phase),
+      // this gesture-driven play call will succeed.
       v.play().catch(() => {});
       setNeedsSoundTap(false);
       setNeedsTapToPlay(false);
     };
 
-    // Pointer/touch only — keyboard is handled below so Space doesn't double-fire.
+    // Pointer/touch only — keyboard handled separately so Space doesn't double-fire.
     const opts: AddEventListenerOptions = { once: true, capture: true };
     window.addEventListener('pointerdown', enable, opts);
     window.addEventListener('touchstart', enable, opts);
@@ -125,7 +143,7 @@ export default function IntroVideo() {
       window.removeEventListener('pointerdown', enable, opts);
       window.removeEventListener('touchstart', enable, opts);
     };
-  }, [phase, needsSoundTap]);
+  }, [phase]);
 
   // Keyboard: Esc to skip, Space to play (with sound) / pause.
   useEffect(() => {
@@ -239,11 +257,11 @@ export default function IntroVideo() {
         <div className="intro-grain" aria-hidden />
       </div>
 
-      {/* Sound prompt (shown while video plays muted) */}
+      {/* Sound prompt — sits at top-center while muted playback runs */}
       {needsSoundTap && !needsTapToPlay && (
         <button type="button" className="intro-sound-pill" onClick={handleEnableSound}>
           <span className="intro-sound-icon" aria-hidden>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
               <path d="M3 10v4h4l5 4V6L7 10H3z" fill="currentColor" />
               <path d="M16 8c1.5 1 2.5 2.5 2.5 4s-1 3-2.5 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" fill="none" />
             </svg>
@@ -252,14 +270,15 @@ export default function IntroVideo() {
         </button>
       )}
 
-      {/* Tap-to-play fallback (shown if even muted autoplay was blocked) */}
+      {/* Tap-to-play fallback (iOS + autoplay-blocked cases) */}
       {needsTapToPlay && (
-        <button type="button" className="intro-tap-play" onClick={handleTapToPlay} aria-label="Play">
+        <button type="button" className="intro-tap-play" onClick={handleTapToPlay} aria-label={t('intro.tap_to_begin')}>
           <span className="intro-tap-play-icon" aria-hidden>
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
               <path d="M8 5v14l11-7z" />
             </svg>
           </span>
+          <span className="intro-tap-play-label">{t('intro.tap_to_begin')}</span>
         </button>
       )}
 
