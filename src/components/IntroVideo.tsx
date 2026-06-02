@@ -20,6 +20,8 @@ export default function IntroVideo() {
   const [progress, setProgress] = useState(0);
   const [needsSoundTap, setNeedsSoundTap] = useState(false);
   const [needsTapToPlay, setNeedsTapToPlay] = useState(false);
+  // Read from video metadata once it loads — adapts to 9:16, 16:9, 1:1 alike.
+  const [stageDims, setStageDims] = useState<{ w: number; h: number }>({ w: 9, h: 16 });
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -27,33 +29,18 @@ export default function IntroVideo() {
     setPhase('curtain');
   }, []);
 
-  // iOS Safari blocks autoplay aggressively. Detect once and route accordingly.
-  const isIOS =
-    typeof navigator !== 'undefined' &&
-    /iPad|iPhone|iPod/.test(navigator.userAgent) &&
-    !('MSStream' in window);
-
   // React doesn't reliably reflect `muted` / `autoplay` to HTML attributes, but
-  // Chrome's autoplay policy checks the attributes — set them directly.
-  const setVideoRef = useCallback(
-    (el: HTMLVideoElement | null) => {
-      videoRef.current = el;
-      if (!el) return;
-      el.muted = true;
-      el.defaultMuted = true;
-      el.setAttribute('muted', '');
-      el.setAttribute('playsinline', '');
-      el.setAttribute('webkit-playsinline', '');
-      // Don't pre-attempt autoplay on iOS — a failed early play() can block subsequent
-      // play() calls. We'll show a tap-to-play affordance instead.
-      if (!isIOS) {
-        el.setAttribute('autoplay', '');
-        const p = el.play();
-        if (p && typeof p.then === 'function') p.catch(() => { /* fallback handled later */ });
-      }
-    },
-    [isIOS],
-  );
+  // Chrome and Safari's autoplay policies check the attributes — set them directly.
+  const setVideoRef = useCallback((el: HTMLVideoElement | null) => {
+    videoRef.current = el;
+    if (!el) return;
+    el.muted = true;
+    el.defaultMuted = true;
+    el.setAttribute('muted', '');
+    el.setAttribute('playsinline', '');
+    el.setAttribute('webkit-playsinline', '');
+    el.setAttribute('autoplay', '');
+  }, []);
 
   // Choreograph: curtain → reveal → start playback.
   useEffect(() => {
@@ -77,19 +64,13 @@ export default function IntroVideo() {
     window.setTimeout(() => setPhase('gone'), ms);
   }, []);
 
-  // At the reveal moment: start playback. On iOS, skip autoplay entirely (it's blocked
-  // by policy) and surface the tap-to-play button. Elsewhere, attempt muted autoplay
-  // and fall back to tap-to-play if it doesn't kick in within 1.5s.
+  // At the reveal moment: attempt muted autoplay. Show tap-to-play if it fails after 1.5s.
   useEffect(() => {
     if (phase !== 'playing') return;
     const v = videoRef.current;
     if (!v) return;
 
-    if (isIOS) {
-      setNeedsTapToPlay(true);
-      return;
-    }
-
+    v.muted = true;
     v.volume = 1;
     setNeedsSoundTap(true);
 
@@ -116,7 +97,7 @@ export default function IntroVideo() {
       window.clearTimeout(stuckTimer);
       v.removeEventListener('canplay', start);
     };
-  }, [phase, isIOS]);
+  }, [phase]);
 
   // First user interaction anywhere → unmute. Attach from page load so even clicks
   // during the curtain count (otherwise users who tapped early miss the audio).
@@ -212,6 +193,12 @@ export default function IntroVideo() {
     setProgress(v.currentTime / v.duration);
   };
 
+  const handleLoadedMetadata = () => {
+    const v = videoRef.current;
+    if (!v || !v.videoWidth || !v.videoHeight) return;
+    setStageDims({ w: v.videoWidth, h: v.videoHeight });
+  };
+
   if (phase === 'gone') return null;
 
   const overlayClass = [
@@ -234,8 +221,11 @@ export default function IntroVideo() {
         <div className="intro-curtain-line" />
       </div>
 
-      {/* Video stage */}
-      <div className="intro-stage">
+      {/* Video stage — sized to the video's actual aspect ratio */}
+      <div
+        className="intro-stage"
+        style={{ ['--aw' as string]: stageDims.w, ['--ah' as string]: stageDims.h }}
+      >
         <span className="intro-bracket intro-bracket-tl" aria-hidden />
         <span className="intro-bracket intro-bracket-tr" aria-hidden />
         <span className="intro-bracket intro-bracket-bl" aria-hidden />
@@ -248,6 +238,7 @@ export default function IntroVideo() {
           playsInline
           muted
           preload="auto"
+          onLoadedMetadata={handleLoadedMetadata}
           onEnded={() => dismiss('ended')}
           onError={() => dismiss('error')}
           onTimeUpdate={handleTimeUpdate}

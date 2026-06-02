@@ -2551,11 +2551,17 @@ html[dir="rtl"] .help-article-body th { text-align: right; }
   100% { width: clamp(140px, 30vw, 420px); }
 }
 
-/* ── Video stage ── */
+/* ── Video stage — sizes to match the video's natural aspect ratio ── */
 .intro-stage {
+  /* --aw / --ah are set inline from videoWidth/videoHeight on loadedmetadata.
+     Fallback (before metadata loads) assumes 9:16 vertical (the FB/IG ad format). */
+  --aw: 9;
+  --ah: 16;
   position: relative;
-  width: min(94vw, 1500px);
-  aspect-ratio: 16 / 9;
+  aspect-ratio: var(--aw) / var(--ah);
+  width: min(calc(88vh * var(--aw) / var(--ah)), 94vw);
+  height: auto;
+  max-width: 94vw;
   max-height: 88vh;
   border-radius: 14px;
   overflow: hidden;
@@ -2882,7 +2888,11 @@ html[dir="rtl"] .intro-progress-fill {
 }
 
 @media (max-width: 640px) {
-  .intro-stage { width: 96vw; border-radius: 10px; }
+  .intro-stage {
+    width: min(calc(88vh * var(--aw) / var(--ah)), 96vw);
+    max-width: 96vw;
+    border-radius: 10px;
+  }
   .intro-bracket { width: 14px; height: 14px; }
   .intro-bracket-tl, .intro-bracket-tr { top: 8px; }
   .intro-bracket-bl, .intro-bracket-br { bottom: 8px; }
@@ -2890,4 +2900,6 @@ html[dir="rtl"] .intro-progress-fill {
   .intro-bracket-tr, .intro-bracket-br { right: 8px; }
   .intro-skip { bottom: 18px; font-size: 11px; padding: 8px 14px; }
   .intro-sound-pill { top: 18px; font-size: 12px; }
+  .intro-tap-play-icon { width: 88px; height: 88px; }
+  .intro-tap-play-icon svg { width: 30px; height: 30px; }
 }
