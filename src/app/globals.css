@@ -2793,9 +2793,10 @@ html[dir="rtl"] .intro-progress-fill {
   }
 }
 
-/* Tap-to-play fallback — center stage, breathing halo, with label */
+/* Tap-to-Begin CTA — sits inside the stage, centered. The whole page is the
+   tap target (handled in JS), so this is presentational only. */
 .intro-tap-play {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -2803,12 +2804,13 @@ html[dir="rtl"] .intro-progress-fill {
   flex-direction: column;
   align-items: center;
   gap: 18px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 22;
-  padding: 0;
-  font-family: inherit;
+  pointer-events: none; /* JS listens on window — no need to capture here */
+  z-index: 8;
+  animation: intro-cta-in 600ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+@keyframes intro-cta-in {
+  0%   { opacity: 0; transform: translate(-50%, -46%); }
+  100% { opacity: 1; transform: translate(-50%, -50%); }
 }
 .intro-tap-play-icon {
   width: 110px;
@@ -2821,15 +2823,7 @@ html[dir="rtl"] .intro-progress-fill {
   justify-content: center;
   box-shadow: 0 16px 48px rgba(0,0,0,0.55);
   animation: intro-tap-pulse 2.2s ease-in-out infinite;
-  transition: transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1), background 200ms ease;
   margin-left: 4px; /* optical centering of the play triangle */
-}
-.intro-tap-play:hover .intro-tap-play-icon {
-  background: #fff;
-  transform: scale(1.06);
-}
-.intro-tap-play:active .intro-tap-play-icon {
-  transform: scale(0.97);
 }
 .intro-tap-play-label {
   font-size: 13px;
