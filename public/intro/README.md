@@ -6,20 +6,38 @@ Drop the current ad cut here:
 
 The stage is black until the first frame paints, so no poster image is needed.
 
-## ⚠️ IMPORTANT — must be "fast-start" / "web-optimized"
+## ⚠️ IMPORTANT — iOS Safari compatibility
 
-The MP4 file MUST have its `moov` atom at the start of the file. Without this, iOS Safari refuses to play it and Chrome takes too long to start.
+The MP4 must satisfy **both** of these or iOS Safari shows a black screen / refuses to play:
 
-**Re-export from your editor with "Fast start" or "Web optimized" checked.**
+1. **Fast-start / web-optimized** — `moov` atom at the start of the file
+2. **TV-range yuv420p** — *not* `yuvj420p` / full-range (which is what most editors output from screen recordings)
 
-If you forget, run this once after dropping the file in:
+If you re-export from your editor, check both: "Fast start" AND make sure the color range isn't "Full (PC)".
+
+If unsure, run this safe re-encode after dropping the file in — it forces both:
 
 ```bash
-ffmpeg -i foody-intro.mp4 -c copy -movflags +faststart foody-intro-fast.mp4 \
-  && mv foody-intro-fast.mp4 foody-intro.mp4
+ffmpeg -i foody-intro.mp4 \
+  -c:v libx264 -profile:v main -level 4.0 \
+  -vf "scale=in_range=full:out_range=tv,format=yuv420p" -color_range tv \
+  -c:a aac -b:a 128k \
+  -movflags +faststart \
+  foody-intro-out.mp4 \
+  && mv foody-intro-out.mp4 foody-intro.mp4
 ```
 
 (`brew install ffmpeg` if you don't have it.)
+
+**How to verify** before deploying:
+
+```bash
+ffprobe -v error -select_streams v:0 \
+  -show_entries stream=pix_fmt,color_range -of default=noprint_wrappers=1 \
+  foody-intro.mp4
+```
+
+Must output `pix_fmt=yuv420p` and `color_range=tv` (or unspecified). If it says `yuvj420p` or `color_range=pc`, iOS won't play it.
 
 ## Swapping the video every 2–3 months
 
