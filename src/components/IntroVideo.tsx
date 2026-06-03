@@ -19,7 +19,7 @@ export default function IntroVideo() {
   const beganRef = useRef(false);
   const [phase, setPhase] = useState<Phase>('gone');
   const [progress, setProgress] = useState(0);
-  const [showCTA, setShowCTA] = useState(false);
+  const [began, setBegan] = useState(false);
   // Read from video metadata once it loads — adapts to 9:16, 16:9, 1:1 alike.
   const [stageDims, setStageDims] = useState<{ w: number; h: number }>({ w: 9, h: 16 });
 
@@ -64,44 +64,41 @@ export default function IntroVideo() {
   }, []);
 
   // The one true play function. Triggered by the first tap/click anywhere
-  // (or Space key), regardless of which phase we're in. Plays from frame 0 with sound.
+  // (or Space key). Plays from frame 0 with sound. Idempotent.
   const begin = useCallback(() => {
     if (beganRef.current) return;
     const v = videoRef.current;
     if (!v) return;
     beganRef.current = true;
+    setBegan(true);
+
+    // Snap into the playing phase so the stage CSS becomes visible immediately.
+    setPhase((cur) => (cur === 'curtain' || cur === 'reveal' ? 'playing' : cur));
 
     v.muted = false;
     v.volume = 1;
     try { v.currentTime = 0; } catch { /* noop */ }
 
-    v.play().catch(() => {
-      // If the browser blocked unmuted play despite a gesture, try muted as fallback.
-      v.muted = true;
-      v.play().catch(() => {});
-    });
+    const tryPlay = () => {
+      v.play().catch(() => {
+        // Last-ditch fallback: muted play if the gesture-driven unmuted call rejected.
+        v.muted = true;
+        v.play().catch(() => {});
+      });
+    };
 
-    setShowCTA(false);
-    setPhase((cur) => (cur === 'curtain' || cur === 'reveal' ? 'playing' : cur));
+    if (v.readyState >= 2) tryPlay();
+    else v.addEventListener('canplay', tryPlay, { once: true });
   }, []);
 
-  // Show the Tap-to-Begin CTA once the stage is visible (phase=playing).
-  // If the user has already tapped during the curtain, the CTA stays hidden.
-  useEffect(() => {
-    if (phase !== 'playing') return;
-    if (beganRef.current) return;
-    setShowCTA(true);
-  }, [phase]);
-
-  // Global tap/touch anywhere → begin. Attached from page load so impatient users who
-  // tap during the curtain immediately get the video playing.
+  // Global tap/touch anywhere on the page → begin.
   useEffect(() => {
     if (phase === 'gone' || phase === 'dissolving') return;
+    if (began) return;
 
     const onPointer = (e: Event) => {
-      // Don't intercept the skip button — let its own onClick fire.
       const target = e.target as HTMLElement | null;
-      if (target && target.closest('.intro-skip')) return;
+      if (target && target.closest('.intro-skip')) return; // let skip do its thing
       begin();
     };
 
@@ -111,7 +108,7 @@ export default function IntroVideo() {
       window.removeEventListener('pointerdown', onPointer);
       window.removeEventListener('touchstart', onPointer);
     };
-  }, [phase, begin]);
+  }, [phase, began, begin]);
 
   // Keyboard: Esc to skip, Space to begin / play-pause.
   useEffect(() => {
@@ -203,20 +200,21 @@ export default function IntroVideo() {
 
         <div className="intro-vignette" aria-hidden />
         <div className="intro-grain" aria-hidden />
-
-        {/* Tap-to-Begin — sits inside the stage, centered, breathing. The user can
-            tap this OR anywhere else on the page; either way begin() fires. */}
-        {showCTA && (
-          <div className="intro-tap-play" aria-label={t('intro.tap_to_begin')}>
-            <span className="intro-tap-play-icon" aria-hidden>
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            </span>
-            <span className="intro-tap-play-label">{t('intro.tap_to_begin')}</span>
-          </div>
-        )}
       </div>
+
+      {/* Tap-to-Begin — overlays the whole viewport. CSS animation-delay handles
+          the timing so it materializes after the curtain wordmark. The whole page
+          is tappable; this is just the visual cue. */}
+      {!began && (
+        <div className="intro-tap-play" aria-label={t('intro.tap_to_begin')}>
+          <span className="intro-tap-play-icon" aria-hidden>
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </span>
+          <span className="intro-tap-play-label">{t('intro.tap_to_begin')}</span>
+        </div>
+      )}
 
       {/* Hairline progress */}
       <div className="intro-progress" aria-hidden>
