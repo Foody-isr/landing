@@ -64,7 +64,12 @@ export default function IntroVideo() {
   }, []);
 
   // The one true play function. Triggered by the first tap/click anywhere
-  // (or Space key). Plays from frame 0 with sound. Idempotent.
+  // (or Space key). Idempotent.
+  //
+  // iOS pattern: play() must be called synchronously inside the user gesture, with the
+  // video element still muted. Once the play promise resolves, we unmute. Trying to
+  // unmute *before* play() will make iOS reject the play call and you'll see a black
+  // screen with no audio.
   const begin = useCallback(() => {
     if (beganRef.current) return;
     const v = videoRef.current;
@@ -75,20 +80,22 @@ export default function IntroVideo() {
     // Snap into the playing phase so the stage CSS becomes visible immediately.
     setPhase((cur) => (cur === 'curtain' || cur === 'reveal' ? 'playing' : cur));
 
-    v.muted = false;
+    // Keep muted at this point — that's the state iOS will accept for play().
     v.volume = 1;
-    try { v.currentTime = 0; } catch { /* noop */ }
 
-    const tryPlay = () => {
-      v.play().catch(() => {
-        // Last-ditch fallback: muted play if the gesture-driven unmuted call rejected.
-        v.muted = true;
-        v.play().catch(() => {});
+    const p = v.play();
+    if (p && typeof p.then === 'function') {
+      p.then(() => {
+        // Playback started — the gesture has unlocked the audio context. Unmute now.
+        v.muted = false;
+      }).catch(() => {
+        // Even muted play was blocked (very rare — Low Power Mode, strict privacy).
+        // Stay muted; user can tap again or the video plays silently.
       });
-    };
-
-    if (v.readyState >= 2) tryPlay();
-    else v.addEventListener('canplay', tryPlay, { once: true });
+    } else {
+      // Older browser without play-promise. Unmute optimistically.
+      v.muted = false;
+    }
   }, []);
 
   // Global tap/touch anywhere on the page → begin.
@@ -191,7 +198,7 @@ export default function IntroVideo() {
           src={VIDEO_SRC}
           playsInline
           muted
-          preload="auto"
+          preload="metadata"
           onLoadedMetadata={handleLoadedMetadata}
           onEnded={() => dismiss('ended')}
           onError={() => dismiss('error')}

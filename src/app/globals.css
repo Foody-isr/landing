@@ -2622,24 +2622,24 @@ html[dir="rtl"] .help-article-body th { text-align: right; }
 .intro-bracket-bl { bottom: 14px; left: 14px; border-bottom-width: 1px; border-left-width: 1px; }
 .intro-bracket-br { bottom: 14px; right: 14px; border-bottom-width: 1px; border-right-width: 1px; }
 
-/* Vignette — feathered edges so the video melts into the void */
+/* Vignette — feathered dark edges. Plain transparent overlay (no mix-blend-mode);
+   WebKit has a long-standing bug where mix-blend-mode over a <video> renders the
+   video as solid black on iOS Safari. */
 .intro-vignette {
   position: absolute;
   inset: 0;
   pointer-events: none;
   background:
     radial-gradient(120% 90% at 50% 50%, transparent 55%, rgba(0,0,0,0.55) 100%);
-  mix-blend-mode: multiply;
   z-index: 3;
 }
 
-/* A whisper of film grain (SVG noise as data URI) */
+/* A whisper of film grain (SVG noise as data URI). No mix-blend-mode for iOS safety. */
 .intro-grain {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.07;
-  mix-blend-mode: overlay;
+  opacity: 0.05;
   z-index: 3;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
   background-size: 160px 160px;
