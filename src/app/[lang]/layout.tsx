@@ -3,17 +3,16 @@ import { I18nProvider } from '@/lib/i18n/context';
 import en from '@/lib/i18n/en.json';
 import fr from '@/lib/i18n/fr.json';
 import he from '@/lib/i18n/he.json';
+import { resolveLang, SUPPORTED_LANGS } from '@/lib/seo';
 
-type Lang = 'en' | 'fr' | 'he';
-const SUPPORTED: Lang[] = ['en', 'fr', 'he'];
-const translations: Record<Lang, typeof en> = { en, fr, he };
+const translations = { en, fr, he };
 
 export function generateStaticParams() {
-  return SUPPORTED.map((lang) => ({ lang }));
+  return SUPPORTED_LANGS.map((lang) => ({ lang }));
 }
 
 export function generateMetadata({ params }: { params: { lang: string } }): Metadata {
-  const lang: Lang = SUPPORTED.includes(params.lang as Lang) ? (params.lang as Lang) : 'en';
+  const lang = resolveLang(params.lang);
   const t = translations[lang];
 
   return {
@@ -22,17 +21,11 @@ export function generateMetadata({ params }: { params: { lang: string } }): Meta
     openGraph: {
       title: t.meta.title,
       description: t.meta.description,
-      siteName: 'Foody POS',
+      siteName: 'Foody',
       type: 'website',
-      locale: lang,
-      images: [{ url: '/assets/og-image.png', width: 1200, height: 630, alt: 'Foody POS' }],
+      locale: lang === 'he' ? 'he_IL' : `${lang}_IL`,
     },
-    twitter: {
-      card: 'summary_large_image',
-      title: t.meta.title,
-      description: t.meta.description,
-      images: ['/assets/og-image.png'],
-    },
+    robots: { index: true, follow: true },
   };
 }
 
@@ -43,7 +36,13 @@ export default function LangLayout({
   children: React.ReactNode;
   params: { lang: string };
 }) {
-  const lang: Lang = SUPPORTED.includes(params.lang as Lang) ? (params.lang as Lang) : 'en';
+  const lang = resolveLang(params.lang);
 
-  return <I18nProvider lang={lang}>{children}</I18nProvider>;
+  return (
+    <I18nProvider lang={lang}>
+      <div lang={lang} dir={lang === 'he' ? 'rtl' : 'ltr'}>
+        {children}
+      </div>
+    </I18nProvider>
+  );
 }

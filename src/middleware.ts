@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 const SUPPORTED_LOCALES = ['en', 'fr', 'he'];
-const DEFAULT_LOCALE = 'en';
+const DEFAULT_LOCALE = 'he';
 const COOKIE_NAME = 'foody-locale';
 
 function getPreferredLocale(request: NextRequest): string {
@@ -9,15 +9,8 @@ function getPreferredLocale(request: NextRequest): string {
   const cookie = request.cookies.get(COOKIE_NAME)?.value;
   if (cookie && SUPPORTED_LOCALES.includes(cookie)) return cookie;
 
-  // 2. Check Accept-Language header (browser default)
-  const acceptLang = request.headers.get('accept-language') || '';
-  for (const part of acceptLang.split(',')) {
-    const lang = part.split(';')[0].trim().toLowerCase();
-    for (const supported of SUPPORTED_LOCALES) {
-      if (lang === supported || lang.startsWith(`${supported}-`)) return supported;
-    }
-  }
-
+  // Hebrew is the acquisition default. Visitors can explicitly switch language,
+  // which stores their preference in the locale cookie above.
   return DEFAULT_LOCALE;
 }
 
