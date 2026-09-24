@@ -1,0 +1,208 @@
+---
+title: "Set up an Epson TM-U220IIB with Foody"
+description: "From unboxing to the first kitchen ticket: network setup, Epson Server Direct Print, FoodyAdmin registration, stations, routing, and testing."
+apps: both
+tags: [printer, epson, tm-u220iib, server-direct-print, kitchen, ticket, routing, station, setup]
+updatedAt: 2026-09-17
+---
+
+This guide takes an **Epson TM-U220IIB-i** from its box to the first ticket sent by Foody.
+Allow about 20 to 30 minutes per printer once the restaurant network is ready.
+
+> **Check the exact model before you start.** A printer that connects directly to Foody must be
+> the intelligent **TM-U220IIB-i** variant and show **Server Direct Print** in TMNet WebConfig.
+> A standard USB or Ethernet TM-U220IIB does not include this polling service. It must instead
+> be attached through a compatible intelligent Epson printer configured as a gateway. If Server
+> Direct Print is missing, stop and contact Foody with a photo of the model label.
+
+## What you need
+
+- The printer and its Epson power supply.
+- A compatible ribbon cassette and 76 mm paper roll.
+- An Ethernet cable connected to the restaurant router or switch.
+- A computer or iPad on the same network during setup.
+- A FoodyAdmin **owner** or **manager** account with printer-management permission.
+- A router DHCP reservation, recommended so WebConfig remains easy to reach.
+
+Do not use a guest network. Guest Wi-Fi commonly isolates devices. Foody does not require an
+incoming port at the restaurant: the printer makes an outbound HTTPS connection to Foody.
+
+## 1. Unbox and inspect the printer
+
+1. Remove the printer, power supply, power cord, and ribbon cassette from the box.
+2. Remove all transport foam, tape, and protective material.
+3. Check the label underneath or behind the printer. Record the exact model, serial number, and
+   MAC address.
+4. Place the printer away from splashes, steam, and heat, leaving room to open both covers.
+5. Keep the printer switched off while connecting cables.
+
+The MAC address identifies the network interface and can be used for a DHCP reservation.
+
+## 2. Load the ribbon and paper
+
+### Ribbon cassette
+
+1. With the printer off, open the ribbon cover.
+2. Take up slack by gently turning the cassette knob in the indicated direction.
+3. Fit the cassette flat and press until it is seated.
+4. Close the cover without forcing it.
+
+The print head may be very hot after use. Do not touch it or force the ribbon carriage by hand.
+
+### Paper roll
+
+1. Open the paper cover with its release lever.
+2. Insert the roll in the direction shown inside the cover. Paper should unwind without tension.
+3. Pull a few centimetres of paper straight out.
+4. Close the cover fully and tear off the excess at the tear bar.
+
+## 3. Connect the printer to the network
+
+1. Connect Ethernet between the printer and the router or switch.
+2. Connect the Epson power supply to the printer, then to a reliable outlet.
+3. Power on and wait for the error light to go out.
+4. Print a network status sheet with the status button on the Ethernet interface. Its position
+   depends on the installed interface; do not use the reset button.
+5. Find the **IPv4 address**, for example `192.168.1.48`.
+
+If the address is `0.0.0.0` or missing, check the cable and switch port. An address beginning
+with `169.254` means the router did not provide an address.
+
+## 4. Open Epson TMNet WebConfig
+
+1. From the computer or iPad on the same network, open `https://IP-ADDRESS`. If HTTPS is not yet
+   enabled on the device, use `http://IP-ADDRESS` only for this local setup.
+2. If the browser warns about a local certificate, continue only after confirming that the IP
+   matches the printed status sheet.
+3. Sign in with the administrator credentials printed on the product label or supplied in the
+   printer documentation. Change the default password.
+4. Reserve the address in the router, or ask the network administrator to configure a suitable
+   static address.
+
+The IP address is only for on-site administration. **It is not entered in Foody** because Server
+Direct Print uses an outbound connection from the printer to the cloud.
+
+## 5. Register the printer in FoodyAdmin
+
+Open **FoodyAdmin → Settings → Printers**, then select **Register printer**.
+
+| Field | Recommended value |
+|---|---|
+| Name | Physical location: `Kitchen`, `Pizza pass`, `Bar 1`, or `Bar 2` |
+| Vendor | `Epson Server Direct Print` |
+| Model | Exact reference, for example `TM-U220IIB-i` |
+| Epson gateway | **Direct** if this printer polls Foody; otherwise select the registered Epson gateway |
+| WebConfig ID | A unique ID such as `restaurant-kitchen-01` |
+| Printer device ID | `local_printer` in direct mode; the exact WebConfig device ID in gateway mode |
+| Width | `TM-U220 · 76 mm · 384 dots` |
+| Interval | `2 s` |
+| Station | Select an existing station or create one named after its physical location |
+
+Select **Register**. Foody then displays these values once:
+
+- Server Direct Print URL;
+- status notification URL;
+- WebConfig ID;
+- password;
+- Digest realm.
+
+Keep this screen open for the next step. The password is not shown again after closing. Do not
+send it through an unsecured message or photograph.
+
+## 6. Configure Server Direct Print in WebConfig
+
+In TMNet WebConfig, open **Server Direct Print** and enable it. Copy the values generated by
+Foody exactly:
+
+1. **Server Direct Print URL**: the print URL shown by Foody.
+2. **ID / User ID**: the WebConfig ID selected in FoodyAdmin.
+3. **Password**: the one-time password.
+4. **Device ID**: `local_printer` for the built-in printer, or the exact device ID registered
+   behind a gateway.
+5. **Interval**: 2 seconds.
+
+Enable **Status Notification** and enter its Foody URL with the same credentials. Save and apply
+the configuration, then allow the printer to restart if requested.
+
+Do not add spaces before or after the ID, password, or URLs. Foody URLs must remain `https://`.
+
+## 7. Wait for Online and print a test
+
+1. Return to **Settings → Printers**.
+2. Wait up to 15 seconds. Status should move from **Unknown** to **Online**, and Last seen should
+   update.
+3. Select **Test** or **Print test ticket**.
+4. Wait for the complete ticket. Foody marks it printed only after the Epson confirms the result.
+5. Check the station name, French and Hebrew characters, paper feed, and legibility.
+
+If status remains **Unknown**, the printer is not reaching Foody. If it is **Online** but the test
+fails, open **Jobs** to see the latest device error.
+
+## 8. Create production stations
+
+A station is a logical destination. Menu components route to the station, and the station owns
+its printer. A failed printer can therefore be replaced without changing the menu.
+
+For a four-printer kitchen, a practical layout is:
+
+| Station | Primary printer | Typical content |
+|---|---|---|
+| Kitchen | Kitchen Epson | Hot dishes, starters, fried items |
+| Pizza pass | Pizza Epson | Pizzas and pizza extras |
+| Bar 1 | First bar Epson | Drinks and cocktails |
+| Bar 2 | Second bar Epson | A second drinks copy when both bars produce |
+
+Use **Full order copy** for an expediter who needs the whole order. A **fallback printer** does
+not create a second copy; it is used only when the primary printer is unavailable. To print on
+both bar printers, create two stations and route drinks to both columns.
+
+## 9. Route categories and exceptions
+
+Open **Routing**:
+
+1. Check every station that should receive each category.
+2. For example, route `Pizzas` to **Pizza pass** and `Drinks` to **Bar 1** and **Bar 2**.
+3. Save the matrix.
+4. Add an item override only when an item must leave its category route.
+5. Add a modifier override for an independently produced component, such as a sauce sent to the
+   kitchen while the main item goes to the grill.
+
+Before enabling server printing, the setup panel should show every printer tested, every station
+assigned, and every category routed.
+
+## 10. Send a real Foody ticket
+
+1. Enable **Print kitchen tickets from the server**.
+2. In FoodyPOS, create a test order containing an item from each routed category and a modifier
+   with a special route.
+3. Confirm or send the order to the kitchen according to the restaurant workflow.
+4. Confirm that each station receives only its lines and that a full-order station receives the
+   complete order.
+5. In FoodyAdmin, open **Jobs**. Each ticket should move from **Queued** to **Awaiting
+   confirmation**, then **Printed**.
+
+Do not start live service until this end-to-end test passes. Keep the previous printing method
+available during the first live order as a temporary precaution.
+
+## Quick troubleshooting
+
+| Symptom | What to check |
+|---|---|
+| No network light | Ethernet cable, switch port, and power |
+| Address `169.254.x.x` | The router's DHCP server did not answer |
+| WebConfig cannot be reached | Same network, correct IP, and guest isolation disabled |
+| Server Direct Print is missing | Non-intelligent model or incompatible firmware/interface |
+| Unknown in Foody | Service disabled, wrong URL/ID/password, or blocked DNS/Internet |
+| Online but no order ticket | Station not assigned, category not routed, or server printing disabled |
+| Failed job | Open **Jobs**, fix the paper/cover/ribbon error, then run another test |
+| Wrong station | Review the category matrix and item/modifier overrides |
+
+## Manufacturer documentation
+
+- [Epson TM-U220IIB Series](https://www.epson.fr/fr_FR/produits/imprimantes/imprimantes-pour-points-de-vente/imprimantes-pour-points-de-vente/imprimantes-pc-pos/epson-tm-u220iib-series/p/46917)
+- [Epson Server Direct Print manual](https://files.support.epson.com/pdf/pos/bulk/server_direct_print_um_en_revk.pdf)
+- [Lightspeed TM-U220B / TM-U220IIB setup guide](https://k-series-support.lightspeedhq.com/hc/fr-fr/articles/4402057063451-Configuration-de-l-imprimante-Epson-TM-U220B-TM-U220IIB)
+
+WebConfig menu names can vary slightly by firmware and network interface. Do not factory-reset a
+printer during service. Photograph the product label, network status sheet, and relevant screen
+before contacting Foody.
