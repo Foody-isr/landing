@@ -1,7 +1,10 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Link from 'next/link';
 
-export default function TermsPage() {
+export default async function TermsPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+
   return (
     <>
       <Navbar />
@@ -55,7 +58,7 @@ export default function TermsPage() {
           <p>All content, features, and functionality of the Service are owned by Foody and protected by applicable intellectual property laws. You may not copy, modify, distribute, or create derivative works without our written permission.</p>
 
           <h2>7. Data and Privacy</h2>
-          <p>Your use of the Service is also governed by our <a href="/privacy">Privacy Policy</a>. By using the Service, you consent to the collection and use of your data as described therein.</p>
+          <p>Your use of the Service is also governed by our <Link href={`/${lang}/privacy`}>Privacy Policy</Link>. By using the Service, you consent to the collection and use of your data as described therein.</p>
 
           <h2>8. Limitation of Liability</h2>
           <p>To the maximum extent permitted by law, Foody shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of or inability to use the Service.</p>
