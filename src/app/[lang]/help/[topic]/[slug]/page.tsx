@@ -25,14 +25,15 @@ export function generateStaticParams() {
 export default async function HelpArticlePage({
   params,
 }: {
-  params: { lang: string; topic: string; slug: string };
+  params: Promise<{ lang: string; topic: string; slug: string }>;
 }) {
-  const lang: Lang = SUPPORTED.includes(params.lang as Lang) ? (params.lang as Lang) : 'en';
+  const { lang: requestedLang, topic, slug } = await params;
+  const lang: Lang = SUPPORTED.includes(requestedLang as Lang) ? (requestedLang as Lang) : 'en';
   const t = translations[lang];
 
   let articleData;
   try {
-    articleData = getArticle(lang, params.topic, params.slug);
+    articleData = getArticle(lang, topic, slug);
   } catch {
     notFound();
   }
@@ -45,11 +46,11 @@ export default async function HelpArticlePage({
   });
 
   const topics = getTopics(lang);
-  const topicMeta = topics.find((tp) => tp.slug === params.topic);
-  const articles = getArticles(lang, params.topic);
-  const basePath = `/${lang}/help/${params.topic}`;
+  const topicMeta = topics.find((tp) => tp.slug === topic);
+  const articles = getArticles(lang, topic);
+  const basePath = `/${lang}/help/${topic}`;
 
-  const title = String(frontmatter.title || params.slug);
+  const title = String(frontmatter.title || slug);
   const apps = frontmatter.apps as string | undefined;
   const updatedAt = frontmatter.updatedAt ? String(frontmatter.updatedAt).slice(0, 10) : null;
 
@@ -59,7 +60,7 @@ export default async function HelpArticlePage({
         segments={[
           { label: t.help.breadcrumb_home, href: `/${lang}` },
           { label: t.help.breadcrumb_help, href: `/${lang}/help` },
-          { label: topicMeta?.title ?? params.topic, href: basePath },
+          { label: topicMeta?.title ?? topic, href: basePath },
           { label: title },
         ]}
       />
@@ -99,7 +100,7 @@ export default async function HelpArticlePage({
         <ArticleSidebar
           articles={articles}
           basePath={basePath}
-          topicTitle={topicMeta?.title ?? params.topic}
+          topicTitle={topicMeta?.title ?? topic}
         />
       </div>
     </main>
