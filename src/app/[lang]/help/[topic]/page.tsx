@@ -20,20 +20,21 @@ export function generateStaticParams() {
   return params;
 }
 
-export default function HelpTopicPage({
+export default async function HelpTopicPage({
   params,
 }: {
-  params: { lang: string; topic: string };
+  params: Promise<{ lang: string; topic: string }>;
 }) {
-  const lang: Lang = SUPPORTED.includes(params.lang as Lang) ? (params.lang as Lang) : 'en';
+  const { lang: requestedLang, topic } = await params;
+  const lang: Lang = SUPPORTED.includes(requestedLang as Lang) ? (requestedLang as Lang) : 'en';
   const t = translations[lang];
 
   const topics = getTopics(lang);
-  const topicMeta = topics.find((tp) => tp.slug === params.topic);
+  const topicMeta = topics.find((tp) => tp.slug === topic);
   if (!topicMeta) notFound();
 
-  const articles = getArticles(lang, params.topic);
-  const basePath = `/${lang}/help/${params.topic}`;
+  const articles = getArticles(lang, topic);
+  const basePath = `/${lang}/help/${topic}`;
 
   return (
     <main className="help-topic-page">

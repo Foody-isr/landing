@@ -13,8 +13,9 @@ export function generateStaticParams() {
   return SUPPORTED.map((lang) => ({ lang }));
 }
 
-export default function HelpHubPage({ params }: { params: { lang: string } }) {
-  const lang: Lang = SUPPORTED.includes(params.lang as Lang) ? (params.lang as Lang) : 'en';
+export default async function HelpHubPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang: requestedLang } = await params;
+  const lang: Lang = SUPPORTED.includes(requestedLang as Lang) ? (requestedLang as Lang) : 'en';
   const t = translations[lang];
 
   const topics = getTopics(lang);

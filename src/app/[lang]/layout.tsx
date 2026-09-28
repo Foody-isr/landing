@@ -11,8 +11,8 @@ export function generateStaticParams() {
   return SUPPORTED_LANGS.map((lang) => ({ lang }));
 }
 
-export function generateMetadata({ params }: { params: { lang: string } }): Metadata {
-  const lang = resolveLang(params.lang);
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const lang = resolveLang((await params).lang);
   const t = translations[lang];
 
   return {
@@ -29,14 +29,14 @@ export function generateMetadata({ params }: { params: { lang: string } }): Meta
   };
 }
 
-export default function LangLayout({
+export default async function LangLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 }) {
-  const lang = resolveLang(params.lang);
+  const lang = resolveLang((await params).lang);
 
   return (
     <I18nProvider lang={lang}>
