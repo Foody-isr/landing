@@ -8,7 +8,7 @@ export default async function TermsPage({ params }: { params: Promise<{ lang: st
   return (
     <>
       <Navbar />
-      <div className="legal-page">
+      <main id="main-content" className="legal-page" lang="en" dir="ltr">
         <div className="legal-inner">
           <h1>Terms of Service</h1>
           <p className="legal-updated">Last updated: March 5, 2026</p>
@@ -80,7 +80,7 @@ export default async function TermsPage({ params }: { params: Promise<{ lang: st
           <p><strong>Email:</strong> <a href="mailto:support@foody-pos.co.il">support@foody-pos.co.il</a></p>
           <p><strong>Website:</strong> <a href="https://foody-pos.co.il">foody-pos.co.il</a></p>
         </div>
-      </div>
+      </main>
       <Footer />
     </>
   );
