@@ -1,135 +1,161 @@
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
+import { marketing, type SolutionKey } from "./marketing/content";
+import { getSolution } from "./marketing/solutions";
+import { routes } from "./marketing/ui";
 
-export type Lang = 'en' | 'fr' | 'he';
-export type MarketingPage = 'home' | 'pricing' | 'contact' | 'food' | 'restaurants';
-
-export const SUPPORTED_LANGS: Lang[] = ['en', 'fr', 'he'];
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://foody-pos.co.il';
-
+export type Lang = "en" | "fr" | "he";
+export type MarketingPage =
+  | "home"
+  | "pricing"
+  | "contact"
+  | "food"
+  | SolutionKey;
+export const SUPPORTED_LANGS: Lang[] = ["he", "en", "fr"];
+export const SITE_URL = (
+  process.env.NEXT_PUBLIC_SITE_URL || "https://foody-pos.co.il"
+).replace(/\/$/, "");
 const PATHS: Record<MarketingPage, string> = {
-  home: '',
-  pricing: '/pricing',
-  contact: '/contact',
-  food: '/sectors/food-beverage',
-  restaurants: '/sectors/food-beverage/restaurants',
+  home: "",
+  pricing: "/pricing",
+  contact: "/contact",
+  food: "/sectors/food-beverage",
+  ...routes,
 };
-
-const SEO: Record<Lang, Record<MarketingPage, { title: string; description: string }>> = {
+const TITLES = {
   he: {
-    home: {
-      title: 'מערכת הזמנות ישירות למסעדות בישראל | Foody',
-      description: 'קבלו הזמנות ישירות באתר ממותג, באיסוף, במשלוח או ב-QR. נהלו תשלומים, מטבח ולקוחות במקום אחד, ללא עמלת Foody על כל הזמנה.',
-    },
-    pricing: {
-      title: 'מחירון Foody למסעדות | החל מ-299 ₪ לחודש',
-      description: 'מסלולים שקופים למסעדות ובתי קפה בישראל: Starter ב-299 ₪ ו-Premium ב-799 ₪ לחודש. עמלות סליקה וחומרה מפורטות בנפרד.',
-    },
-    contact: {
-      title: 'הזמינו הדגמה של Foody למסעדה שלכם',
-      description: 'ספרו לנו על המסעדה, בית הקפה או המטבח שלכם וקבלו הדגמה מותאמת של הזמנות ישירות, קופה, QR ותשלומים.',
-    },
-    food: {
-      title: 'מערכת הזמנות וקופה למסעדות ובתי קפה | Foody',
-      description: 'אתר הזמנות ישירות, קופה, QR, מטבח, תשלומים ומלאי למסעדות, בתי קפה ומטבחי משלוחים בישראל.',
-    },
-    restaurants: {
-      title: 'הזמנות אונליין ישירות למסעדות בישראל | Foody',
-      description: 'בנו ערוץ הזמנות ממותג למסעדה עם איסוף, משלוח ותשלום אונליין, ושמרו על קשר ישיר עם הלקוחות שלכם.',
-    },
-  },
-  en: {
-    home: {
-      title: 'Direct Online Ordering for Restaurants in Israel | Foody',
-      description: 'Take direct pickup, delivery and QR orders from your own branded site. Manage payments, kitchen and customers in one place, with no Foody percentage commission per order.',
-    },
-    pricing: {
-      title: 'Foody Restaurant Pricing | From ₪299 per Month',
-      description: 'Transparent plans for Israeli restaurants and cafés: Starter at ₪299 and Premium at ₪799 per month. Payment processing and hardware are priced separately.',
-    },
-    contact: {
-      title: 'Book a Foody Demo for Your Restaurant',
-      description: 'Tell us about your restaurant, café or delivery kitchen and get a tailored demo of direct ordering, POS, QR and payments.',
-    },
-    food: {
-      title: 'Restaurant and Café Ordering & POS System | Foody',
-      description: 'Direct online ordering, POS, QR, kitchen, payments and inventory for restaurants, cafés and delivery kitchens in Israel.',
-    },
-    restaurants: {
-      title: 'Direct Online Ordering for Israeli Restaurants | Foody',
-      description: 'Build a branded pickup and delivery channel, accept online payments and keep a direct relationship with your restaurant customers.',
-    },
+    home: "קופה ממוחשבת בענן למסעדות ולעסקים בישראל | Foody",
+    pricing: "מחירי קופה, מסופי Verifone וסליקה | Foody",
+    contact: "תיאום הדגמה והצעת מחיר לקופה וסליקה | Foody",
+    food: "פתרונות למסעדות, בתי קפה ורשתות בישראל | Foody",
   },
   fr: {
-    home: {
-      title: 'Commande directe pour restaurants en Israël | Foody',
-      description: 'Recevez les commandes à emporter, en livraison et par QR depuis votre propre site. Gérez paiements, cuisine et clients sans commission Foody en pourcentage par commande.',
-    },
-    pricing: {
-      title: 'Tarifs Foody pour restaurants | Dès 299 ₪ par mois',
-      description: 'Des formules transparentes pour les restaurants et cafés en Israël : Starter à 299 ₪ et Premium à 799 ₪ par mois. Traitement des paiements et matériel séparés.',
-    },
-    contact: {
-      title: 'Demandez une démo Foody pour votre restaurant',
-      description: 'Présentez-nous votre restaurant, café ou dark kitchen et obtenez une démo adaptée de la commande directe, du POS, du QR et des paiements.',
-    },
-    food: {
-      title: 'Commande et POS pour restaurants et cafés | Foody',
-      description: 'Commande directe en ligne, POS, QR, cuisine, paiements et stocks pour les restaurants, cafés et dark kitchens en Israël.',
-    },
-    restaurants: {
-      title: 'Commande en ligne directe pour restaurants en Israël | Foody',
-      description: 'Créez un canal de commande à votre image pour le retrait et la livraison, acceptez les paiements et gardez une relation directe avec vos clients.',
-    },
+    home: "Caisse cloud iPad et Android en Israël | Foody",
+    pricing: "Tarifs caisse, Verifone et slika en Israël | Foody",
+    contact: "Démo et devis caisse et slika en Israël | Foody",
+    food: "Solutions pour restaurants et cafés en Israël | Foody",
+  },
+  en: {
+    home: "Cloud POS for iPad & Android in Israel | Foody",
+    pricing: "POS, Verifone & Payment Processing Pricing | Foody",
+    contact: "Book a POS & Payments Demo in Israel | Foody",
+    food: "Restaurant & Café Solutions in Israel | Foody",
   },
 };
-
-const OPEN_GRAPH_LOCALES: Record<Lang, string> = {
-  he: 'he_IL',
-  en: 'en_IL',
-  fr: 'fr_IL',
+const HOME_DESCRIPTIONS = {
+  he: "קופת ענן ב־iPad וב־Android למסעדות ולחנויות בישראל. שותף Verifone: Victa, סליקה, Epson, Star Micronics, ייצור ומלווה מטבח עם Siri.",
+  fr: "Caisse cloud iPad et Android en Israël. Partenaire Verifone, intégrateur Epson et Star Micronics. Commandes, slika, food cost et compagnon cuisine avec Siri.",
+  en: "Cloud POS for iPad and Android in Israel. Verifone partner, Epson and Star Micronics integrator. Payments, food cost and a kitchen companion with Siri.",
 };
 
+/** Resolves a supported language, using Hebrew as the acquisition default. */
 export function resolveLang(value: string): Lang {
-  return SUPPORTED_LANGS.includes(value as Lang) ? (value as Lang) : 'he';
+  return SUPPORTED_LANGS.includes(value as Lang) ? (value as Lang) : "he";
 }
 
-export function getMarketingMetadata(langValue: string, page: MarketingPage): Metadata {
-  const lang = resolveLang(langValue);
-  const pathname = PATHS[page];
-  const copy = SEO[lang][page];
-  const canonical = `${SITE_URL}/${lang}${pathname}`;
-
+/** Returns canonicals and hreflang links for the same resource in each language. */
+export function languageAlternates(pathname: string) {
   return {
-    title: copy.title,
-    description: copy.description,
-    alternates: {
-      canonical,
-      languages: {
-        'he-IL': `${SITE_URL}/he${pathname}`,
-        'en-IL': `${SITE_URL}/en${pathname}`,
-        'fr-IL': `${SITE_URL}/fr${pathname}`,
-        'x-default': `${SITE_URL}/he${pathname}`,
-      },
-    },
+    "he-IL": `${SITE_URL}/he${pathname}`,
+    "en-IL": `${SITE_URL}/en${pathname}`,
+    "fr-IL": `${SITE_URL}/fr${pathname}`,
+    "x-default": `${SITE_URL}/he${pathname}`,
+  };
+}
+
+/** Generates search and social metadata from the actual localized page content. */
+export function getMarketingMetadata(
+  langValue: string,
+  page: MarketingPage,
+): Metadata {
+  const lang = resolveLang(langValue);
+  const path = PATHS[page];
+  let title: string;
+  let description: string;
+  if (
+    page === "home" ||
+    page === "food" ||
+    page === "pricing" ||
+    page === "contact"
+  ) {
+    title = TITLES[lang][page];
+    description =
+      page === "pricing" || page === "contact"
+        ? marketing[lang][page].description
+        : HOME_DESCRIPTIONS[lang];
+  } else {
+    const content = getSolution(lang, page);
+    title = `${content.title} | Foody`;
+    description = content.description;
+  }
+  const canonical = `${SITE_URL}/${lang}${path}`;
+  const image = {
+    url: "/assets/marketing/social-card.png",
+    width: 1200,
+    height: 630,
+    alt: "Foody — POS, payments & business tools. Official Verifone partner & reseller.",
+  };
+  return {
+    title,
+    description,
+    alternates: { canonical, languages: languageAlternates(path) },
     openGraph: {
-      title: copy.title,
-      description: copy.description,
-      siteName: 'Foody',
-      type: 'website',
+      title,
+      description,
+      siteName: "Foody",
+      type: "website",
       url: canonical,
-      locale: OPEN_GRAPH_LOCALES[lang],
-      images: [{ url: '/assets/og-image.png', width: 1200, height: 630, alt: 'Foody' }],
+      locale: `${lang}_IL`,
+      alternateLocale: SUPPORTED_LANGS.filter((l) => l !== lang).map(
+        (l) => `${l}_IL`,
+      ),
+      images: [image],
     },
     twitter: {
-      card: 'summary_large_image',
-      title: copy.title,
-      description: copy.description,
-      images: ['/assets/og-image.png'],
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image.url],
     },
     robots: { index: true, follow: true },
   };
 }
 
+/** Returns the locale-independent route of a marketing page. */
 export function getMarketingPath(page: MarketingPage): string {
   return PATHS[page];
+}
+
+/** Metadata for supporting content with a self-canonical and no fabricated translations. */
+export function getContentMetadata(
+  lang: Lang,
+  path: string,
+  title: string,
+  description: string,
+  translatedLanguages: Lang[] = [lang],
+): Metadata {
+  const canonical = `${SITE_URL}/${lang}${path}`;
+  return {
+    title: `${title} | Foody`,
+    description,
+    alternates: {
+      canonical,
+      languages: Object.fromEntries(
+        translatedLanguages.map((l) => [`${l}-IL`, `${SITE_URL}/${l}${path}`]),
+      ),
+    },
+    openGraph: {
+      title: `${title} | Foody`,
+      description,
+      url: canonical,
+      type: "website",
+      locale: `${lang}_IL`,
+      images: ["/assets/marketing/social-card.png"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} | Foody`,
+      description,
+      images: ["/assets/marketing/social-card.png"],
+    },
+  };
 }

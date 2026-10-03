@@ -1,224 +1,178 @@
-'use client';
-import { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useI18n } from '@/lib/i18n/context';
+"use client";
+import { useEffect, useRef, useState } from "react";
+import FoodyLogo from "./brand/FoodyLogo";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useI18n } from "@/lib/i18n/context";
+import { routes, ui } from "@/lib/marketing/ui";
+import Icon from "./marketing/Icon";
 
-const CATEGORIES = [
-  {
-    key: 'nav.cat_food',
-    href: '/sectors/food-beverage',
-    enabled: true,
-    discover: [
-      { key: 'nav.discover_cafes', href: '/sectors/food-beverage', enabled: false, icon: '☕' },
-      { key: 'nav.discover_bakeries', href: '/sectors/food-beverage', enabled: false, icon: '🥐' },
-      { key: 'nav.discover_restaurants', href: '/sectors/food-beverage/restaurants', enabled: true, icon: '🍽️' },
-      { key: 'nav.discover_bars', href: '/sectors/food-beverage', enabled: false, icon: '🍸' },
-    ],
-  },
-  { key: 'nav.cat_retail', href: '/sectors/retail', enabled: false },
-  { key: 'nav.cat_beauty', href: '/sectors/beauty', enabled: false },
-  { key: 'nav.cat_services', href: '/sectors/professional-services', enabled: false },
-];
-
+/** Responsive navigation with keyboard-accessible solution disclosure. */
 export default function Navbar() {
-  const { t, lang, localePath } = useI18n();
+  const { lang, localePath } = useI18n();
+  const t = ui[lang];
   const pathname = usePathname();
-  const [megaOpen, setMegaOpen] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeCategory, setActiveCategory] = useState<string | null>('nav.cat_food');
-  const megaRef = useRef<HTMLDivElement>(null);
-  const triggerRef = useRef<HTMLButtonElement>(null);
-
+  const [open, setOpen] = useState(false);
+  const header = useRef<HTMLElement>(null);
+  const trigger = useRef<HTMLButtonElement>(null);
   useEffect(() => {
-    const handleClick = (e: MouseEvent) => {
-      if (
-        megaRef.current && !megaRef.current.contains(e.target as Node) &&
-        triggerRef.current && !triggerRef.current.contains(e.target as Node)
-      ) {
-        setMegaOpen(false);
+    function dismiss(event: MouseEvent) {
+      if (!header.current?.contains(event.target as Node)) setOpen(false);
+    }
+    function escape(event: KeyboardEvent) {
+      if (event.key === "Escape" && open) {
+        setOpen(false);
+        trigger.current?.focus();
       }
+    }
+    document.addEventListener("click", dismiss);
+    document.addEventListener("keydown", escape);
+    return () => {
+      document.removeEventListener("click", dismiss);
+      document.removeEventListener("keydown", escape);
     };
-    document.addEventListener('click', handleClick);
-    return () => document.removeEventListener('click', handleClick);
-  }, []);
-
-  // Build the path for the other locale (strip current lang prefix, add new one)
-  function switchLangHref(targetLang: string) {
-    const pathWithoutLocale = pathname.replace(/^\/(en|fr|he)/, '') || '/';
-    return `/${targetLang}${pathWithoutLocale}`;
-  }
-
-  const activeCat = CATEGORIES.find((c) => c.key === activeCategory);
-  const discoverItems = activeCat && 'discover' in activeCat ? activeCat.discover : null;
-
+  }, [open]);
   return (
-    <nav className="navbar no-print">
-      <div className="nav-inner">
-        <Link href={localePath('/')} className="nav-logo">
-          <Image src="/assets/logo.svg" alt="Foody" width={110} height={44} />
+    <>
+      <a className="skip-link" href="#main-content">
+        {t.skip}
+      </a>
+      <div className="partner-strip">
+        <Link href={localePath(routes.hardware)}>
+          <span className="partner-dot" />
+          {t.partner}
+          <Icon name="arrow" className="directional" />
         </Link>
-
-        <div className="nav-links">
-          <button
-            ref={triggerRef}
-            className={`nav-dropdown-trigger${megaOpen ? ' active' : ''}`}
-            onClick={() => setMegaOpen(!megaOpen)}
-            aria-expanded={megaOpen}
-          >
-            {t('nav.sectors')}
-            <span className={`nav-chevron${megaOpen ? ' open' : ''}`}>&#9662;</span>
-          </button>
-          <Link href={localePath('/pricing')}>{t('nav.pricing')}</Link>
-          <Link href={localePath('/contact')}>{t('nav.contact')}</Link>
-          <Link href={localePath('/help')}>{t('help.nav_label')}</Link>
-        </div>
-
-        <div className="nav-right">
-          <div className="lang-switcher">
-            <Link className={`lang-btn${lang === 'en' ? ' active' : ''}`} href={switchLangHref('en')} aria-label="Switch to English">EN</Link>
-            <Link className={`lang-btn${lang === 'fr' ? ' active' : ''}`} href={switchLangHref('fr')} aria-label="Passer au français">FR</Link>
-            <Link className={`lang-btn${lang === 'he' ? ' active' : ''}`} href={switchLangHref('he')} aria-label="עברית">HE</Link>
-          </div>
-          <Link className="nav-login" href={localePath('/contact')}>{t('nav.login')}</Link>
-          <Link className="btn btn-dark btn-sm no-print" href={localePath('/contact')}>{t('nav.cta')}</Link>
-          <button
-            className="nav-hamburger"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Menu"
-            aria-expanded={mobileOpen}
-          >
-            <span className={`nav-hamburger-icon${mobileOpen ? ' open' : ''}`} />
-          </button>
-        </div>
       </div>
-
-      {/* Mobile menu */}
-      {mobileOpen && (
-        <div className="mobile-menu">
-          <div className="mobile-menu-section">
-            <span className="mobile-menu-label">{t('nav.sectors')}</span>
-            {CATEGORIES.map((cat) =>
-              cat.enabled ? (
+      <header className="site-header no-print" ref={header}>
+        <nav className="shell header-inner" aria-label={t.menu}>
+          <Link
+            href={localePath("/")}
+            aria-label="Foody"
+            className="brand"
+            onClick={() => setOpen(false)}
+          >
+            <FoodyLogo width={116} decorative />
+          </Link>
+          <button
+            ref={trigger}
+            className="solutions-toggle"
+            aria-expanded={open}
+            aria-controls="solutions-menu"
+            onClick={() => setOpen(!open)}
+          >
+            <span className="desktop-label">{t.solutions}</span>
+            <span className="mobile-label">{open ? t.close : t.menu}</span>
+            <Icon name={open ? "close" : "chevron"} />
+          </button>
+          <Link className="desktop-nav" href={localePath(routes.hardware)}>
+            {t.hardware}
+          </Link>
+          <Link className="desktop-nav" href={localePath("/pricing")}>
+            {t.pricing}
+          </Link>
+          <div className="header-actions">
+            <div className="locale-switch" aria-label={t.language} dir="ltr">
+              {(["he", "en", "fr"] as const).map((l) => (
                 <Link
-                  key={cat.key}
-                  href={localePath(cat.href)}
-                  className="mobile-menu-link"
-                  onClick={() => setMobileOpen(false)}
+                  key={l}
+                  href={`/${l}${pathname.replace(/^\/(he|en|fr)(?=\/|$)/, "") || ""}`}
+                  hrefLang={l}
+                  lang={l}
+                  aria-label={{ he: "עברית", en: "English", fr: "Français" }[l]}
+                  aria-current={l === lang ? "true" : undefined}
+                  onClick={() => setOpen(false)}
                 >
-                  {t(cat.key)}
+                  {l === "he" ? "עב" : l.toUpperCase()}
                 </Link>
-              ) : (
-                <span key={cat.key} className="mobile-menu-link mobile-menu-disabled">
-                  {t(cat.key)}
-                </span>
-              )
-            )}
-            {CATEGORIES.filter(c => 'discover' in c).map(cat =>
-              (cat as typeof CATEGORIES[0]).discover?.filter(d => d.enabled).map(item => (
-                <Link
-                  key={item.key}
-                  href={localePath(item.href)}
-                  className="mobile-menu-link mobile-menu-sub"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  <span>{item.icon}</span> {t(item.key)}
-                </Link>
-              ))
-            )}
-          </div>
-          <div className="mobile-menu-section">
-            <Link href={localePath('/pricing')} className="mobile-menu-link" onClick={() => setMobileOpen(false)}>
-              {t('nav.pricing')}
-            </Link>
-            <Link href={localePath('/contact')} className="mobile-menu-link" onClick={() => setMobileOpen(false)}>
-              {t('nav.contact')}
-            </Link>
-            <Link href={localePath('/help')} className="mobile-menu-link" onClick={() => setMobileOpen(false)}>
-              {t('help.nav_label')}
-            </Link>
-          </div>
-          <div className="mobile-menu-section">
-            <div className="mobile-menu-lang">
-              <Link className={`lang-btn${lang === 'en' ? ' active' : ''}`} href={switchLangHref('en')} onClick={() => setMobileOpen(false)}>EN</Link>
-              <Link className={`lang-btn${lang === 'fr' ? ' active' : ''}`} href={switchLangHref('fr')} onClick={() => setMobileOpen(false)}>FR</Link>
-              <Link className={`lang-btn${lang === 'he' ? ' active' : ''}`} href={switchLangHref('he')} onClick={() => setMobileOpen(false)}>HE</Link>
+              ))}
             </div>
-          </div>
-          <div className="mobile-menu-section mobile-menu-actions">
-            <Link className="btn btn-primary" href={localePath('/contact')} onClick={() => setMobileOpen(false)}>
-              {t('nav.cta')}
+            <a className="login-link" href="https://admin.foody-pos.co.il">
+              {t.login}
+            </a>
+            <Link
+              className="button button-dark button-small header-cta"
+              href={localePath("/contact")}
+              onClick={() => setOpen(false)}
+            >
+              {t.demo}
             </Link>
-            <Link className="nav-login" href={localePath('/contact')} onClick={() => setMobileOpen(false)}>
-              {t('nav.login')}
-            </Link>
           </div>
-        </div>
-      )}
-
-      {/* Mega menu */}
-      <div ref={megaRef} className={`mega-menu${megaOpen ? ' open' : ''}`}>
-        <div className="mega-menu-inner">
-          {/* Left column — categories */}
-          <div className="mega-col mega-categories">
-            {CATEGORIES.map((cat) =>
-              cat.enabled ? (
+        </nav>
+        <div
+          className="mega-menu"
+          id="solutions-menu"
+          hidden={!open}
+          onBlur={(event) => {
+            if (
+              event.relatedTarget &&
+              !header.current?.contains(event.relatedTarget)
+            )
+              setOpen(false);
+          }}
+        >
+          <div className="shell mega-grid">
+            <div>
+              <p className="nav-group-label">{t.businesses}</p>
+              {(["restaurants", "chains", "retail"] as const).map((key, i) => (
                 <Link
-                  key={cat.key}
-                  href={localePath(cat.href)}
-                  className={`mega-cat mega-cat-active${activeCategory === cat.key ? ' mega-cat-selected' : ''}`}
-                  onMouseEnter={() => setActiveCategory(cat.key)}
-                  onClick={() => setMegaOpen(false)}
+                  href={localePath(routes[key])}
+                  key={key}
+                  onClick={() => setOpen(false)}
                 >
-                  {t(cat.key)}
+                  <Icon name={(["restaurant", "chain", "shop"] as const)[i]} />
+                  {t[key]}
                 </Link>
-              ) : (
-                <span
-                  key={cat.key}
-                  className="mega-cat mega-cat-disabled"
-                  onMouseEnter={() => {}}
+              ))}
+            </div>
+            <div>
+              <p className="nav-group-label">{t.products}</p>
+              {(
+                [
+                  "pos",
+                  "ordering",
+                  "kitchen",
+                  "companion",
+                  "payments",
+                  "hardware",
+                  "equipment",
+                ] as const
+              ).map((key) => (
+                <Link
+                  href={localePath(routes[key])}
+                  key={key}
+                  onClick={() => setOpen(false)}
                 >
-                  {t(cat.key)}
-                </span>
-              )
-            )}
-            <span className="mega-cat mega-cat-small">{t('nav.cat_solutions')}</span>
-          </div>
-
-          {/* Right column — discover (only visible when category has subcategories) */}
-          {discoverItems && (
-            <div className="mega-col mega-discover">
-              <span className="mega-label">{t('nav.discover')}</span>
+                  {t[key]}
+                </Link>
+              ))}
+            </div>
+            <div className="menu-feature">
+              <strong>Foody × Verifone</strong>
+              <p>{t.partner}</p>
               <Link
-                href={localePath(activeCat!.href)}
-                className="mega-discover-overview"
-                onClick={() => setMegaOpen(false)}
+                href={localePath("/contact")}
+                onClick={() => setOpen(false)}
               >
-                {t('nav.discover_overview')}
+                {t.demo}
+                <Icon name="arrow" className="directional" />
               </Link>
-              {discoverItems.map((item) =>
-                item.enabled ? (
-                  <Link
-                    key={item.key}
-                    href={localePath(item.href)}
-                    className="mega-discover-item"
-                    onClick={() => setMegaOpen(false)}
-                  >
-                    <span className="mega-discover-icon">{item.icon}</span>
-                    <span>{t(item.key)}</span>
-                  </Link>
-                ) : (
-                  <span key={item.key} className="mega-discover-item mega-discover-disabled">
-                    <span className="mega-discover-icon">{item.icon}</span>
-                    <span>{t(item.key)}</span>
-                  </span>
-                )
-              )}
             </div>
-          )}
+            <div className="menu-utility">
+              <Link
+                href={localePath("/pricing")}
+                onClick={() => setOpen(false)}
+              >
+                {t.pricing}
+              </Link>
+              <Link href={localePath("/help")} onClick={() => setOpen(false)}>
+                {t.help}
+              </Link>
+              <a href="https://admin.foody-pos.co.il">{t.login}</a>
+            </div>
+          </div>
         </div>
-      </div>
-    </nav>
+      </header>
+    </>
   );
 }

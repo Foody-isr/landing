@@ -1,17 +1,7 @@
-import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-export const metadata: Metadata = {
-  robots: { index: false, follow: true },
-};
-
+/** Shared chrome for indexable sector acquisition pages. */
 export default function SectorsLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <>
-      <Navbar />
-      {children}
-      <Footer />
-    </>
-  );
+  return <><Navbar />{children}<Footer /></>;
 }
