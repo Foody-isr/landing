@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { marketing, type SolutionKey } from "./marketing/content";
 import { getSolution } from "./marketing/solutions";
 import { routes } from "./marketing/ui";
+import social from "./marketing/social.json";
 
 export type Lang = "en" | "fr" | "he";
 export type MarketingPage =
@@ -47,6 +48,17 @@ const HOME_DESCRIPTIONS = {
   en: "Cloud POS for iPad and Android in Israel. Verifone partner, Epson and Star Micronics integrator. Run your kitchen with Foody Kitchen and Foody Companion.",
 };
 
+/** Returns the localized, versioned sharing image and its accessible description. */
+function socialImage(lang: Lang) {
+  return {
+    url: social[lang].image,
+    width: 1200,
+    height: 630,
+    type: "image/png",
+    alt: social[lang].alt,
+  };
+}
+
 /** Resolves a supported language, using Hebrew as the acquisition default. */
 export function resolveLang(value: string): Lang {
   return SUPPORTED_LANGS.includes(value as Lang) ? (value as Lang) : "he";
@@ -88,19 +100,16 @@ export function getMarketingMetadata(
     description = content.description;
   }
   const canonical = `${SITE_URL}/${lang}${path}`;
-  const image = {
-    url: "/assets/marketing/social-card.png",
-    width: 1200,
-    height: 630,
-    alt: "Foody POS, payments & business tools. Official Verifone partner & reseller.",
-  };
+  const image = socialImage(lang);
+  const shareTitle = page === "home" ? social[lang].title : title;
+  const shareDescription = page === "home" ? social[lang].description : description;
   return {
     title,
     description,
     alternates: { canonical, languages: languageAlternates(path) },
     openGraph: {
-      title,
-      description,
+      title: shareTitle,
+      description: shareDescription,
       siteName: "Foody",
       type: "website",
       url: canonical,
@@ -112,9 +121,9 @@ export function getMarketingMetadata(
     },
     twitter: {
       card: "summary_large_image",
-      title,
-      description,
-      images: [image.url],
+      title: shareTitle,
+      description: shareDescription,
+      images: [image],
     },
     robots: { index: true, follow: true },
   };
@@ -134,6 +143,7 @@ export function getContentMetadata(
   translatedLanguages: Lang[] = [lang],
 ): Metadata {
   const canonical = `${SITE_URL}/${lang}${path}`;
+  const image = socialImage(lang);
   return {
     title: `${title} | Foody`,
     description,
@@ -149,13 +159,13 @@ export function getContentMetadata(
       url: canonical,
       type: "website",
       locale: `${lang}_IL`,
-      images: ["/assets/marketing/social-card.png"],
+      images: [image],
     },
     twitter: {
       card: "summary_large_image",
       title: `${title} | Foody`,
       description,
-      images: ["/assets/marketing/social-card.png"],
+      images: [image],
     },
   };
 }
