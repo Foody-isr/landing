@@ -38,10 +38,10 @@ export default async function TermsPage({ params }: { params: Promise<{ lang: st
 
           <h2>4. Subscription and Payments</h2>
           <ul>
-            <li>Foody offers monthly subscription plans. Prices are listed on our pricing page and may be updated with prior notice.</li>
+            <li>Foody offers monthly software subscription plans, priced per establishment excluding VAT. Launch subscription prices listed on our pricing page are fixed for the first 12 months; subsequent changes require prior notice. Hardware, setup, payment services and usage charges are separate.</li>
             <li>Subscription fees are billed monthly in advance.</li>
             <li>Payment processing fees are separate and charged per transaction by the payment provider.</li>
-            <li>You may cancel your subscription at any time. No refunds are provided for partial billing periods.</li>
+            <li>You may cancel your software subscription with 30 days’ notice. No refunds are provided for partial billing periods. Hardware and payment provider agreements have their own terms.</li>
           </ul>
 
           <h2>5. Acceptable Use</h2>

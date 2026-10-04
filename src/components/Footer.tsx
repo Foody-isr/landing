@@ -3,6 +3,7 @@ import FoodyLogo from "./brand/FoodyLogo";
 import Link from "next/link";
 import { useI18n } from "@/lib/i18n/context";
 import { routes, ui } from "@/lib/marketing/ui";
+import ProductLinks from "./marketing/ProductLinks";
 
 /** Localized footer linking each offering to its own acquisition page. */
 export default function Footer() {
@@ -21,25 +22,17 @@ export default function Footer() {
           </div>
           <div>
             <h2>{t.products}</h2>
-            {(
-              [
-                "pos",
-                "ordering",
-                "kitchen",
-                "companion",
-                "payments",
-                "hardware",
-                "equipment",
-              ] as const
-            ).map((key) => (
-              <Link key={key} href={localePath(routes[key])}>
-                {t[key]}
-              </Link>
-            ))}
+            <ProductLinks lang={lang} />
           </div>
           <div>
             <h2>{t.businesses}</h2>
             {(["restaurants", "chains", "retail"] as const).map((key) => (
+              <Link key={key} href={localePath(routes[key])}>
+                {t[key]}
+              </Link>
+            ))}
+            <h2 className="nav-group-spaced">{t.hardwarePayments}</h2>
+            {(["hardware", "equipment", "payments"] as const).map((key) => (
               <Link key={key} href={localePath(routes[key])}>
                 {t[key]}
               </Link>

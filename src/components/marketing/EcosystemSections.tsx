@@ -5,6 +5,7 @@ import { ecosystem } from "@/lib/marketing/ecosystem";
 import { routes, ui } from "@/lib/marketing/ui";
 import Experience from "./Experience";
 import Icon from "./Icon";
+import ProductMentions from "./ProductMentions";
 
 const EPSON_URL =
   "https://www.epson.eu/en_EU/products/printers/pos-printers/pos-printers/pc-pos-printers/epson-tm-u220iib-(101b0):-usb,-ps,-ne-sensor,-ecw/p/52044";
@@ -100,7 +101,13 @@ export function VoiceSection({ lang }: { lang: Lang }) {
 }
 
 /** Introduces the dedicated kitchen companion without repeating the general POS demo. */
-export function CompanionTeaser({ lang }: { lang: Lang }) {
+export function CompanionTeaser({
+  lang,
+  currentHref,
+}: {
+  lang: Lang;
+  currentHref?: string;
+}) {
   const t = ecosystem[lang];
   return (
     <section className="shell section-space companion-teaser">
@@ -119,7 +126,11 @@ export function CompanionTeaser({ lang }: { lang: Lang }) {
       </div>
       <div>
         <h2>{t.companionTitle}</h2>
-        <p>{t.companionText}</p>
+        <p>
+          <ProductMentions lang={lang} currentHref={currentHref}>
+            {t.companionText}
+          </ProductMentions>
+        </p>
         <ul className="check-list">
           {t.phases.map((p) => (
             <li key={p}>
@@ -128,6 +139,11 @@ export function CompanionTeaser({ lang }: { lang: Lang }) {
             </li>
           ))}
         </ul>
+        <p>
+          <ProductMentions lang={lang} currentHref={currentHref}>
+            {t.companionIncluded}
+          </ProductMentions>
+        </p>
         <Link className="text-link" href={`/${lang}${routes.companion}`}>
           {t.companionLink}
           <Icon name="arrow" className="directional" />
@@ -216,11 +232,24 @@ export function OrderRouting({ lang }: { lang: Lang }) {
           {t.routeSteps.map((label, i) => (
             <li key={label}>
               <span>{i + 1}</span>
-              <Icon name={(["globe", "card", "printer"] as const)[i]} />
+              <Icon name={(["globe", "card", "kitchen"] as const)[i]} />
               <h3>{label}</h3>
             </li>
           ))}
         </ol>
+        <aside className="route-printing-option" data-ordering-printing>
+          <Icon name="printer" />
+          <div>
+            <p className="ecosystem-partner">{t.printingLabel}</p>
+            <h3>{t.printingTitle}</h3>
+            <p>{t.printingText}</p>
+            <p className="fine-print">{t.printingNote}</p>
+            <Link className="text-link" href={`/${lang}/contact`}>
+              {t.printingLink}
+              <Icon name="arrow" className="directional" />
+            </Link>
+          </div>
+        </aside>
       </div>
     </section>
   );

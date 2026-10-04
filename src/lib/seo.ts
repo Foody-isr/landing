@@ -24,27 +24,27 @@ const PATHS: Record<MarketingPage, string> = {
 const TITLES = {
   he: {
     home: "קופה ממוחשבת בענן למסעדות ולעסקים בישראל | Foody",
-    pricing: "מחירי קופה, מסופי Verifone וסליקה | Foody",
+    pricing: "מחירי קופה ומערכת לניהול מסעדה בישראל | Foody",
     contact: "תיאום הדגמה והצעת מחיר לקופה וסליקה | Foody",
     food: "פתרונות למסעדות, בתי קפה ורשתות בישראל | Foody",
   },
   fr: {
     home: "Caisse cloud iPad et Android en Israël | Foody",
-    pricing: "Tarifs caisse, Verifone et slika en Israël | Foody",
+    pricing: "Tarifs caisse et gestion restaurant en Israël | Foody",
     contact: "Démo et devis caisse et slika en Israël | Foody",
     food: "Solutions pour restaurants et cafés en Israël | Foody",
   },
   en: {
     home: "Cloud POS for iPad & Android in Israel | Foody",
-    pricing: "POS, Verifone & Payment Processing Pricing | Foody",
+    pricing: "POS & Restaurant Software Pricing in Israel | Foody",
     contact: "Book a POS & Payments Demo in Israel | Foody",
     food: "Restaurant & Café Solutions in Israel | Foody",
   },
 };
 const HOME_DESCRIPTIONS = {
-  he: "קופת ענן ב־iPad וב־Android למסעדות ולחנויות בישראל. שותף Verifone: Victa, סליקה, Epson, Star Micronics, ייצור ומלווה מטבח עם Siri.",
-  fr: "Caisse cloud iPad et Android en Israël. Partenaire Verifone, intégrateur Epson et Star Micronics. Commandes, slika, food cost et compagnon cuisine avec Siri.",
-  en: "Cloud POS for iPad and Android in Israel. Verifone partner, Epson and Star Micronics integrator. Payments, food cost and a kitchen companion with Siri.",
+  he: "קופת ענן ב־iPad וב־Android למסעדות ולעסקים בישראל. שותף Verifone, סליקה, Epson ו־Star Micronics. ניהול מטבח עם Foody Kitchen ו־Foody Companion.",
+  fr: "Caisse cloud iPad et Android en Israël. Partenaire Verifone, intégrateur Epson et Star Micronics. Gérez votre cuisine avec Foody Cuisine et Foody Compagnon.",
+  en: "Cloud POS for iPad and Android in Israel. Verifone partner, Epson and Star Micronics integrator. Run your kitchen with Foody Kitchen and Foody Companion.",
 };
 
 /** Resolves a supported language, using Hebrew as the acquisition default. */
@@ -92,7 +92,7 @@ export function getMarketingMetadata(
     url: "/assets/marketing/social-card.png",
     width: 1200,
     height: 630,
-    alt: "Foody — POS, payments & business tools. Official Verifone partner & reseller.",
+    alt: "Foody POS, payments & business tools. Official Verifone partner & reseller.",
   };
   return {
     title,

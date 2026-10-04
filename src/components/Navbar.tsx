@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useI18n } from "@/lib/i18n/context";
 import { routes, ui } from "@/lib/marketing/ui";
 import Icon from "./marketing/Icon";
+import ProductLinks from "./marketing/ProductLinks";
 
 /** Responsive navigation with keyboard-accessible solution disclosure. */
 export default function Navbar() {
@@ -113,6 +114,10 @@ export default function Navbar() {
         >
           <div className="shell mega-grid">
             <div>
+              <p className="nav-group-label">{t.products}</p>
+              <ProductLinks lang={lang} onNavigate={() => setOpen(false)} />
+            </div>
+            <div>
               <p className="nav-group-label">{t.businesses}</p>
               {(["restaurants", "chains", "retail"] as const).map((key, i) => (
                 <Link
@@ -124,20 +129,10 @@ export default function Navbar() {
                   {t[key]}
                 </Link>
               ))}
-            </div>
-            <div>
-              <p className="nav-group-label">{t.products}</p>
-              {(
-                [
-                  "pos",
-                  "ordering",
-                  "kitchen",
-                  "companion",
-                  "payments",
-                  "hardware",
-                  "equipment",
-                ] as const
-              ).map((key) => (
+              <p className="nav-group-label nav-group-spaced">
+                {t.hardwarePayments}
+              </p>
+              {(["hardware", "equipment", "payments"] as const).map((key) => (
                 <Link
                   href={localePath(routes[key])}
                   key={key}

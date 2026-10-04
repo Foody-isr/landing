@@ -5,7 +5,7 @@ import { SITE_URL } from "@/lib/seo";
 import { marketing, type SolutionKey } from "@/lib/marketing/content";
 import { ecosystem } from "@/lib/marketing/ecosystem";
 import { getSolution } from "@/lib/marketing/solutions";
-import { routes, ui } from "@/lib/marketing/ui";
+import { productNavigation, routes, ui } from "@/lib/marketing/ui";
 import {
   CallToAction,
   FaqSection,
@@ -26,6 +26,7 @@ import {
 import Experience from "./Experience";
 import ProductDemo from "./ProductDemo";
 import Icon from "./Icon";
+import ProductMentions from "./ProductMentions";
 
 function HeroVisual({ lang, page }: { lang: Lang; page: SolutionKey }) {
   if (page === "hardware") return <HardwareDisplay lang={lang} />;
@@ -92,7 +93,7 @@ function PageStory({ lang, page }: { lang: Lang; page: SolutionKey }) {
         </>
       );
     case "kitchen":
-      return <CompanionTeaser lang={lang} />;
+      return <CompanionTeaser lang={lang} currentHref={routes[page]} />;
     case "chains":
       return (
         <section className="shell section-space chain-story">
@@ -128,7 +129,7 @@ function PageStory({ lang, page }: { lang: Lang; page: SolutionKey }) {
             <div className="shell pos-focus">
               <div className="section-heading split-heading">
                 <h2>
-                  Foody POS
+                  {ui[lang].pos}
                   <br />
                   <span dir="ltr">iPad + Android</span>
                 </h2>
@@ -149,12 +150,12 @@ function PageStory({ lang, page }: { lang: Lang; page: SolutionKey }) {
 }
 
 const related: Record<SolutionKey, SolutionKey[]> = {
-  restaurants: ["hardware", "companion", "equipment"],
+  restaurants: ["ordering", "hardware", "kitchen"],
   chains: ["kitchen", "companion", "equipment"],
   retail: ["pos", "payments", "equipment"],
   pos: ["hardware", "equipment", "ordering"],
   kitchen: ["companion", "chains", "equipment"],
-  ordering: ["restaurants", "payments", "pos"],
+  ordering: ["kitchen", "equipment", "payments"],
   payments: ["hardware", "pos", "ordering"],
   hardware: ["restaurants", "pos", "equipment"],
   equipment: ["pos", "hardware", "companion"],
@@ -172,6 +173,8 @@ export default function SolutionPage({
   const t = getSolution(lang, page);
   const u = ui[lang];
   const e = ecosystem[lang];
+  const product = productNavigation.find((item) => item.href === routes[page]);
+  const pageLabel = product ? u[product.key] : u[page];
   return (
     <main id="main-content">
       <JsonLd
@@ -188,7 +191,7 @@ export default function SolutionPage({
             {
               "@type": "ListItem",
               position: 2,
-              name: u[page],
+              name: pageLabel,
               item: `${SITE_URL}/${lang}${routes[page]}`,
             },
           ],
@@ -197,7 +200,7 @@ export default function SolutionPage({
       <section className={`solution-hero shell solution-${page}`}>
         <div className="solution-hero-copy">
           <Link href={`/${lang}`} className="breadcrumb">
-            Foody / {u[page]}
+            Foody / {pageLabel}
           </Link>
           {page === "hardware" && (
             <span className="partner-pill">
@@ -209,11 +212,32 @@ export default function SolutionPage({
             <span className="ecosystem-partner">{e.equipmentPartner}</span>
           )}
           <h1>{t.heading}</h1>
-          <p>{t.description}</p>
-          <Link className="button button-dark" href={`/${lang}/contact`}>
-            {u.demo}
-            <Icon name="arrow" className="directional" />
-          </Link>
+          <p>
+            <ProductMentions lang={lang} currentHref={routes[page]}>
+              {t.description}
+            </ProductMentions>
+          </p>
+          {page === "ordering" && (
+            <p className="solution-offer-note" data-ordering-included>
+              <ProductMentions lang={lang} currentHref={routes[page]}>
+                {e.orderingIncluded}
+              </ProductMentions>
+            </p>
+          )}
+          <div className="solution-actions">
+            <Link className="button button-dark" href={`/${lang}/contact`}>
+              {u.demo}
+              <Icon name="arrow" className="directional" />
+            </Link>
+            {product && (
+              <Link
+                className="text-link"
+                href={`/${lang}/pricing#plan-${product.plan}`}
+              >
+                {u.viewPlan}
+              </Link>
+            )}
+          </div>
         </div>
         <div
           className={`solution-hero-visual${page === "hardware" ? " blue-visual" : ""}`}
@@ -230,8 +254,14 @@ export default function SolutionPage({
         <div
           className={`solution-intro${t.intro === t.description ? " intro-single" : ""}`}
         >
-          <h2>{t.title}</h2>
-          {t.intro !== t.description && <p>{t.intro}</p>}
+          <h2>{t.sectionTitle ?? t.title}</h2>
+          {t.intro !== t.description && (
+            <p>
+              <ProductMentions lang={lang} currentHref={routes[page]}>
+                {t.intro}
+              </ProductMentions>
+            </p>
+          )}
         </div>
         <div className="feature-columns">
           {t.features.map((feature, i) => (
@@ -245,14 +275,22 @@ export default function SolutionPage({
                       : (["pos", "kitchen", "chart"] as const)[i % 3]
                 }
               />
-              <h3>{feature.title}</h3>
-              <p>{feature.text}</p>
+              <h3>
+                <ProductMentions lang={lang} currentHref={routes[page]}>
+                  {feature.title}
+                </ProductMentions>
+              </h3>
+              <p>
+                <ProductMentions lang={lang} currentHref={routes[page]}>
+                  {feature.text}
+                </ProductMentions>
+              </p>
             </div>
           ))}
         </div>
       </section>
       <PageStory lang={lang} page={page} />
-      <FaqSection lang={lang} items={t.faq} />
+      <FaqSection lang={lang} items={t.faq} currentHref={routes[page]} />
       <section className="shell related-section">
         <h2>{u.related}</h2>
         <div>

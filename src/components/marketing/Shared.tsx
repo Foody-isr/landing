@@ -4,6 +4,7 @@ import type { Lang } from "@/lib/seo";
 import { marketing, type Faq } from "@/lib/marketing/content";
 import { routes, ui } from "@/lib/marketing/ui";
 import Icon from "./Icon";
+import ProductMentions from "./ProductMentions";
 
 /** Renders escaped structured data without permitting script injection. */
 export function JsonLd({ data }: { data: Record<string, unknown> }) {
@@ -18,7 +19,13 @@ export function JsonLd({ data }: { data: Record<string, unknown> }) {
 }
 
 /** Shared acquisition call to action. */
-export function CallToAction({ lang }: { lang: Lang }) {
+export function CallToAction({
+  lang,
+  showPricing = false,
+}: {
+  lang: Lang;
+  showPricing?: boolean;
+}) {
   const t = ui[lang];
   return (
     <section className="closing-cta">
@@ -27,17 +34,32 @@ export function CallToAction({ lang }: { lang: Lang }) {
           <h2>{t.ctaTitle}</h2>
           <p>{t.ctaText}</p>
         </div>
-        <Link className="button button-dark" href={`/${lang}/contact`}>
-          {t.demo}
-          <Icon name="arrow" className="directional" />
-        </Link>
+        <div className="closing-actions">
+          <Link className="button button-dark" href={`/${lang}/contact`}>
+            {t.demo}
+            <Icon name="arrow" className="directional" />
+          </Link>
+          {showPricing && (
+            <Link className="text-link" href={`/${lang}/pricing`}>
+              {marketing[lang].pricing.homeLink}
+            </Link>
+          )}
+        </div>
       </div>
     </section>
   );
 }
 
 /** Native disclosure FAQ remains interactive without JavaScript. */
-export function FaqSection({ lang, items }: { lang: Lang; items: Faq[] }) {
+export function FaqSection({
+  lang,
+  items,
+  currentHref,
+}: {
+  lang: Lang;
+  items: Faq[];
+  currentHref?: string;
+}) {
   return (
     <section className="shell section-space faq-section">
       <JsonLd
@@ -60,7 +82,11 @@ export function FaqSection({ lang, items }: { lang: Lang; items: Faq[] }) {
               {q}
               <span aria-hidden="true" className="faq-plus" />
             </summary>
-            <p>{a}</p>
+            <p>
+              <ProductMentions lang={lang} currentHref={currentHref}>
+                {a}
+              </ProductMentions>
+            </p>
           </details>
         ))}
       </div>

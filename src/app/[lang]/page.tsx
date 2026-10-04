@@ -201,7 +201,7 @@ export default async function Home({
           </div>
         </section>
         <FaqSection lang={lang} items={t.faq} />
-        <CallToAction lang={lang} />
+        <CallToAction lang={lang} showPricing />
       </main>
       <Footer />
     </>
