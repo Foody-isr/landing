@@ -25,7 +25,7 @@ export default function FoodyLogo({ variant = "wordmark", monochrome = false, de
       style={{ display: "block", flexShrink: 0, ...style, direction: "ltr" }}
     >
       {(symbol || lockup) && (
-        <path transform={lockup ? "translate(0 11) scale(0.78)" : undefined} fill={monochrome ? "currentColor" : "#eb5204"} d="M30 0H96L81 26H38C30 26 26 30 26 38V61L0 76V30C0 12 12 0 30 0Z M70 100H4L19 74H62C70 74 74 70 74 62V39L100 24V70C100 88 88 100 70 100Z" />
+        <path transform={lockup ? "translate(0 25) scale(0.78)" : undefined} fill={monochrome ? "currentColor" : "#eb5204"} d="M30 0H96L81 26H38C30 26 26 30 26 38V61L0 76V30C0 12 12 0 30 0Z M70 100H4L19 74H62C70 74 74 70 74 62V39L100 24V70C100 88 88 100 70 100Z" />
       )}
       {!symbol && (
         <g fill="currentColor" transform={lockup ? "translate(103 0)" : undefined}>

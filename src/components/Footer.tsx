@@ -14,8 +14,9 @@ export default function Footer() {
       <div className="shell">
         <div className="footer-top">
           <div className="footer-brand">
-            <Link href={localePath("/")}>
-              <FoodyLogo width={134} />
+            <Link href={localePath("/")} className="brand-lockup" dir="ltr" aria-label="Foody">
+              <FoodyLogo variant="symbol" monochrome width={30} className="brand-symbol" decorative />
+              <FoodyLogo width={67.5} className="brand-wordmark" decorative />
             </Link>
             <p>{t.footer}</p>
             <span className="footer-partner">{t.partner}</span>

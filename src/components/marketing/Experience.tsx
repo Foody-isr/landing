@@ -32,7 +32,7 @@ export default function Experience({
       {kind === "cloud" && (
         <div className="cloud-map">
           <div className="cloud-core">
-            <Icon name="cloud" />
+            <FoodyLogo variant="symbol" monochrome width={34} decorative />
             <strong><FoodyLogo width={100} /></strong>
             <span>{t.cloudCenter}</span>
           </div>
@@ -81,7 +81,7 @@ export default function Experience({
             <div className="handheld-shell">
               <div className="handheld-screen">
                 <div className="mini-brand">
-                  <FoodyLogo width={80} />
+                  <FoodyLogo variant="lockup" width={104} />
                   <Icon
                     name={
                       step === 0
@@ -148,7 +148,7 @@ export default function Experience({
       {kind === "companion" && (
         <div className="companion-demo">
           <div className="companion-top">
-            <span className="mini-brand"><FoodyLogo width={80} /></span>
+            <span className="mini-brand"><FoodyLogo variant="lockup" width={104} /></span>
             <Icon name="kitchen" />
           </div>
           <div
@@ -231,7 +231,7 @@ export default function Experience({
       {kind === "retail" && (
         <div className="retail-demo">
           <div className="mock-toolbar">
-            <span className="mini-brand"><FoodyLogo width={80} /></span>
+            <span className="mini-brand"><FoodyLogo variant="lockup" width={104} /></span>
             <span>{t.counter}</span>
             <Icon name="shop" />
           </div>
@@ -265,7 +265,7 @@ export default function Experience({
       {kind === "chains" && (
         <div className="chain-demo">
           <div className="mock-toolbar">
-            <span className="mini-brand"><FoodyLogo width={80} /></span>
+            <span className="mini-brand"><FoodyLogo variant="lockup" width={104} /></span>
             <Icon name="chain" />
           </div>
           <div className="chain-body">
@@ -305,7 +305,7 @@ export default function Experience({
       {kind === "recipe" && (
         <div className="recipe-demo">
           <div className="mock-toolbar">
-            <span className="mini-brand"><FoodyLogo width={80} /></span>
+            <span className="mini-brand"><FoodyLogo variant="lockup" width={104} /></span>
             <span>{t.recipe}</span>
             <Icon name="chart" />
           </div>
@@ -339,7 +339,7 @@ export default function Experience({
       )}
       {kind === "payments" && (
         <div className="payment-map">
-          <span className="mini-brand"><FoodyLogo width={80} /></span>
+          <span className="mini-brand"><FoodyLogo variant="lockup" width={104} /></span>
           <div className="payment-channels">
             {t.channels.map((label, i) => (
               <div key={label}>
