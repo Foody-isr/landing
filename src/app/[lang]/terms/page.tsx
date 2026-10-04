@@ -1,11 +1,14 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Link from 'next/link';
 
-export default function TermsPage() {
+export default async function TermsPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+
   return (
     <>
       <Navbar />
-      <div className="legal-page">
+      <main id="main-content" className="legal-page" lang="en" dir="ltr">
         <div className="legal-inner">
           <h1>Terms of Service</h1>
           <p className="legal-updated">Last updated: March 5, 2026</p>
@@ -35,10 +38,10 @@ export default function TermsPage() {
 
           <h2>4. Subscription and Payments</h2>
           <ul>
-            <li>Foody offers monthly subscription plans. Prices are listed on our pricing page and may be updated with prior notice.</li>
+            <li>Foody offers monthly software subscription plans, priced per establishment excluding VAT. Launch subscription prices listed on our pricing page are fixed for the first 12 months; subsequent changes require prior notice. Hardware, setup, payment services and usage charges are separate.</li>
             <li>Subscription fees are billed monthly in advance.</li>
             <li>Payment processing fees are separate and charged per transaction by the payment provider.</li>
-            <li>You may cancel your subscription at any time. No refunds are provided for partial billing periods.</li>
+            <li>You may cancel your software subscription with 30 days’ notice. No refunds are provided for partial billing periods. Hardware and payment provider agreements have their own terms.</li>
           </ul>
 
           <h2>5. Acceptable Use</h2>
@@ -55,7 +58,7 @@ export default function TermsPage() {
           <p>All content, features, and functionality of the Service are owned by Foody and protected by applicable intellectual property laws. You may not copy, modify, distribute, or create derivative works without our written permission.</p>
 
           <h2>7. Data and Privacy</h2>
-          <p>Your use of the Service is also governed by our <a href="/privacy">Privacy Policy</a>. By using the Service, you consent to the collection and use of your data as described therein.</p>
+          <p>Your use of the Service is also governed by our <Link href={`/${lang}/privacy`}>Privacy Policy</Link>. By using the Service, you consent to the collection and use of your data as described therein.</p>
 
           <h2>8. Limitation of Liability</h2>
           <p>To the maximum extent permitted by law, Foody shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of or inability to use the Service.</p>
@@ -77,7 +80,7 @@ export default function TermsPage() {
           <p><strong>Email:</strong> <a href="mailto:support@foody-pos.co.il">support@foody-pos.co.il</a></p>
           <p><strong>Website:</strong> <a href="https://foody-pos.co.il">foody-pos.co.il</a></p>
         </div>
-      </div>
+      </main>
       <Footer />
     </>
   );

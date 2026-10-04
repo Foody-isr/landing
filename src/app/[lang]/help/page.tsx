@@ -1,3 +1,4 @@
+import { getContentMetadata } from '@/lib/seo';
 import { getTopics, getArticles, getAllTopicSlugs } from '@/lib/help/content';
 import HelpSearchBar from '@/components/help/HelpSearchBar';
 import TopicCard from '@/components/help/TopicCard';
@@ -9,12 +10,20 @@ import he from '@/lib/i18n/he.json';
 const SUPPORTED: Lang[] = ['en', 'fr', 'he'];
 const translations = { en, fr, he } as Record<Lang, typeof en>;
 
+/** Search metadata for the help hub in its actual language. */
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
+  const lang = (await params).lang as Lang;
+  const t = translations[lang];
+  return getContentMetadata(lang, '/help', t.help.hub_title, t.help.hub_subtitle, SUPPORTED);
+}
+
 export function generateStaticParams() {
   return SUPPORTED.map((lang) => ({ lang }));
 }
 
-export default function HelpHubPage({ params }: { params: { lang: string } }) {
-  const lang: Lang = SUPPORTED.includes(params.lang as Lang) ? (params.lang as Lang) : 'en';
+export default async function HelpHubPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang: requestedLang } = await params;
+  const lang: Lang = SUPPORTED.includes(requestedLang as Lang) ? (requestedLang as Lang) : 'en';
   const t = translations[lang];
 
   const topics = getTopics(lang);
@@ -27,7 +36,7 @@ export default function HelpHubPage({ params }: { params: { lang: string } }) {
   }
 
   return (
-    <main className="help-hub">
+    <main id="main-content" className="help-hub">
       <div className="help-hub-hero">
         <h1>{t.help.hub_title}</h1>
         <p>{t.help.hub_subtitle}</p>

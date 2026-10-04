@@ -1,5 +1,5 @@
 'use client';
-import React, { createContext, useContext, useCallback, useMemo, useEffect } from 'react';
+import React, { createContext, useContext, useCallback, useMemo } from 'react';
 import en from './en.json';
 import fr from './fr.json';
 import he from './he.json';
@@ -32,12 +32,8 @@ const Ctx = createContext<I18nCtx>({
   localePath: (p) => p,
 });
 
+/** Supplies translations and locale-aware links under the server-rendered document. */
 export function I18nProvider({ lang, children }: { lang: Lang; children: React.ReactNode }) {
-  useEffect(() => {
-    document.documentElement.lang = lang;
-    document.documentElement.dir = lang === 'he' ? 'rtl' : 'ltr';
-  }, [lang]);
-
   const t = useCallback(
     (key: string) => getKey(translations[lang] as unknown as Record<string, unknown>, key),
     [lang],
@@ -53,4 +49,5 @@ export function I18nProvider({ lang, children }: { lang: Lang; children: React.R
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }
 
+/** Reads the current document locale and translation helpers. */
 export const useI18n = () => useContext(Ctx);

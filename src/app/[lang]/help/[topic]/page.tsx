@@ -1,3 +1,4 @@
+import { getContentMetadata } from '@/lib/seo';
 import { notFound } from 'next/navigation';
 import { getTopics, getArticles, getAllTopicSlugs } from '@/lib/help/content';
 import Breadcrumb from '@/components/help/Breadcrumb';
@@ -10,6 +11,16 @@ import he from '@/lib/i18n/he.json';
 const SUPPORTED: Lang[] = ['en', 'fr', 'he'];
 const translations = { en, fr, he } as Record<Lang, typeof en>;
 
+/** Topic metadata reflects existing localized topic content. */
+export async function generateMetadata({ params }: { params: Promise<{ lang: string; topic: string }> }) {
+  const { lang: value, topic } = await params;
+  const lang = value as Lang;
+  const item = getTopics(lang).find(t => t.slug === topic);
+  if (!item) notFound();
+  const available = SUPPORTED.filter(l => getTopics(l).some(t => t.slug === topic));
+  return getContentMetadata(lang, `/help/${topic}`, item.title, item.description, available);
+}
+
 export function generateStaticParams() {
   const params = [];
   for (const lang of SUPPORTED) {
@@ -20,23 +31,24 @@ export function generateStaticParams() {
   return params;
 }
 
-export default function HelpTopicPage({
+export default async function HelpTopicPage({
   params,
 }: {
-  params: { lang: string; topic: string };
+  params: Promise<{ lang: string; topic: string }>;
 }) {
-  const lang: Lang = SUPPORTED.includes(params.lang as Lang) ? (params.lang as Lang) : 'en';
+  const { lang: requestedLang, topic } = await params;
+  const lang: Lang = SUPPORTED.includes(requestedLang as Lang) ? (requestedLang as Lang) : 'en';
   const t = translations[lang];
 
   const topics = getTopics(lang);
-  const topicMeta = topics.find((tp) => tp.slug === params.topic);
+  const topicMeta = topics.find((tp) => tp.slug === topic);
   if (!topicMeta) notFound();
 
-  const articles = getArticles(lang, params.topic);
-  const basePath = `/${lang}/help/${params.topic}`;
+  const articles = getArticles(lang, topic);
+  const basePath = `/${lang}/help/${topic}`;
 
   return (
-    <main className="help-topic-page">
+    <main id="main-content" className="help-topic-page">
       <Breadcrumb
         segments={[
           { label: t.help.breadcrumb_home, href: `/${lang}` },
