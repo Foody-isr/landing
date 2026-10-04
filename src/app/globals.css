@@ -326,13 +326,22 @@ html[dir="rtl"] .directional {
 }
 .brand {
   flex-shrink: 0;
-  display: block;
   margin-inline-end: 20px;
 }
-.brand img,
-.brand > svg {
-  width: 116px;
-  height: auto;
+.brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.brand-lockup > .brand-wordmark {
+  width: auto;
+  height: 24.8px;
+  /* Center the letter body (0–102), allowing the y descender to extend below it. */
+  transform: translateY(2.5px);
+}
+.brand-lockup > .brand-symbol {
+  width: 30px;
+  height: 30px;
 }
 .solutions-toggle {
   display: flex;
@@ -2256,10 +2265,6 @@ html[dir="rtl"] .directional {
   .brand {
     margin: 0;
   }
-  .brand img,
-.brand > svg {
-    width: 90px;
-  }
   .desktop-label {
     display: none;
   }
@@ -2984,10 +2989,6 @@ html[dir="rtl"] .directional {
   }
   .header-inner {
     gap: 10px;
-  }
-  .brand img,
-.brand > svg {
-    width: 80px;
   }
   .locale-switch a {
     min-width: 22px;
@@ -3741,10 +3742,6 @@ html[dir="rtl"] .help-breadcrumb-sep {
   gap: 8px;
   border-radius: 65px;
   position: relative;
-}
-.cloud-core > .icon {
-  width: 45px;
-  height: 38px;
 }
 .cloud-core strong {
   font-size: 32px;

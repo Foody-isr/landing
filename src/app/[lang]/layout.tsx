@@ -26,8 +26,8 @@ export async function generateMetadata({
     metadataBase: new URL(SITE_URL),
     icons: {
       icon: [
-        { url: "/assets/favicon.svg?v=c2", type: "image/svg+xml" },
-        { url: "/assets/favicon-32.png?v=c2", sizes: "32x32", type: "image/png" },
+        { url: "/assets/favicon-32.png?v=c2-mono", sizes: "32x32", type: "image/png" },
+        { url: "/assets/favicon.svg?v=c2-mono", sizes: "any", type: "image/svg+xml" },
       ],
       apple: [{ url: "/assets/apple-touch-icon.png?v=c2", sizes: "180x180" }],
     },
