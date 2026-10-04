@@ -17,22 +17,22 @@ const entries: Record<
 > = {
   he: {
     restaurants: [
-      "מערכת קופה למסעדות ובתי קפה בישראל",
-      "מערכת אחת לקופה, שולחנות, הזמנות אונליין, מטבח ותשלומים. פנו יותר זמן לאורחים ופחות לניהול בין מערכות.",
+      "קופה למסעדות ולבתי קפה בישראל",
+      "Foody מסעדה מחבר קופה, ניהול שולחנות, אתר הזמנות, QR ותשלומים. השירות במקום וההזמנות אונליין עובדים יחד.",
       "מהשולחן הראשון\nועד לסגירת היום.",
       "בין הסרוויס, ההזמנות שמגיעות מהאתר והמטבח שעובד במרץ, אתם צריכים שכל הצוות יראה את אותה תמונה. Foody מחבר את נקודות המגע של המסעדה.",
       [
         [
-          "כל הזמנה מגיעה למקום הנכון.",
-          "הזמנות מהקופה, מהאתר ומ־QR משתלבות בתהליך העבודה. הצוות עוקב אחר סטטוסים והמטבח מקבל את הפרטים הנדרשים להכנה.",
+          "Foody הזמנות כלול.",
+          "אתר הזמנות, הזמנות להיום והזמנות מראש, איסוף ומשלוחים: Foody הזמנות כלול לצד הקופה והשירות בשולחן. הצוות מרכז את ההכנה במשרד האחורי.",
         ],
         [
           "שירות שזורם מההתחלה.",
           "אפליקציית Foody הרשמית על Victa Portable מחברת קבלת הזמנה, תשלום בשולחן וקבלה מודפסת במכשיר אחד, עם מסך 6.7 אינץ׳ ומדפסת מובנית.",
         ],
         [
-          "הסרוויס נגמר. התמונה מתבהרת.",
-          "חברו מכירות למתכונים ולחומרי גלם. עקבו אחרי המלאי, עלות המנות והפערים כדי להכין את היום הבא עם יותר מידע.",
+          "ליווי למטבח לאורך כל היום.",
+          "אפשר להוסיף את Foody Kitchen לניהול מתכונים, מלאי ועלויות. Foody Companion כלול במודול המטבח ומלווה את השף והצוות בהכנות, בשירות ובסגירה לקראת מחר.",
         ],
       ],
       [
@@ -107,10 +107,10 @@ const entries: Record<
       ],
     ],
     pos: [
-      "קופה בענן על iPad ו־Android לעסקים בישראל",
-      "Foody היא קופה המבוססת כולה על הענן ל־iPad ול־Android: הזמנות, תשלומים, ניהול מרחוק וציוד של Star Micronics, Epson ו־Verifone.",
+      "קופת ענן ל־iPad ול־Android בישראל",
+      "Foody קופה מרכז מכירות, קטלוג, שולחנות וניהול בענן על iPad או Android. להזמנות אונליין הוסיפו Foody הזמנות או בחרו ב־Foody מסעדה, שכולל גם הזמנה ב־QR.",
       "פחות לחיצות.\nיותר זמן ללקוחות.",
-      "הקופה פועלת על iPad או Android. העסק מנוהל בענן. Foody מחברת הזמנות, קטלוג, צוות ותשלומים — בדלפק וגם מרחוק.",
+      "הקופה פועלת על iPad או Android. העסק מנוהל בענן. Foody מחברת הזמנות, קטלוג, צוות ותשלומים, בדלפק וגם מרחוק.",
       [
         [
           "המוצרים שלכם, בדרך שלכם.",
@@ -137,7 +137,7 @@ const entries: Record<
       ],
     ],
     kitchen: [
-      "ניהול מטבח, ייצור ו־Food Cost למסעדות",
+      "ניהול מטבח, מלאי ו־Food Cost למסעדות בישראל",
       "חברו מתכונים, הכנות, מחירי קנייה, מלאי וספקים. ראו עלות מנה ופערים בין הצריכה הצפויה לצריכה בפועל.",
       "כל מנה מתחילה במתכון.\nכל החלטה מתחילה בנתונים.",
       "עלות חומרי הגלם משתנה. כמויות הייצור משתנות. חברו את המידע במקום אחד כדי לדעת מה להכין, מה להזמין ומה כדאי לבדוק.",
@@ -151,8 +151,8 @@ const entries: Record<
           "רשמו אספקות, הכנות וספירות. בסגירת היום בדקו פערים מול הצריכה הצפויה, לצד הפחת שתועד.",
         ],
         [
-          "שותף לעבודה לאורך כל היום.",
-          "לפני, בזמן ואחרי השירות, מלווה המטבח מלווה את ההכנות, הצרכים, המלאי והזמנות הספקים. ב־iPad תואם, Siri מאפשרת לקבל תדריך ומידע שימושי למטבח.",
+          "Foody Companion כלול.",
+          "העוזר היומיומי של מודול המטבח מלווה את ההכנות, סדרי העדיפויות, השירות והסגירה. הוא כלול ללא תוספת תשלום. ב־iPad תואם, Siri מאפשרת לקבל תדריך ומידע שימושי למטבח.",
         ],
       ],
       [
@@ -167,22 +167,22 @@ const entries: Record<
       ],
     ],
     ordering: [
-      "אתר הזמנות ו־QR למסעדות בישראל",
-      "קבלו הזמנות ישירות לאיסוף, למשלוח ולשולחן. אתר ממותג שמחובר לתפריט ולתהליך העבודה של Foody.",
-      "האורחים שלכם.\nערוץ ההזמנות שלכם.",
-      "תנו ללקוחות להזמין ישירות מכם, בלי להוריד אפליקציה. אתר המסעדה וה־QR מציגים את התפריט ומעבירים הזמנות לעבודה השוטפת.",
+      "הזמנות אונליין למטבחי משלוחים ולמסעדות בישראל",
+      "אתר ממותג להזמנות להיום ולהזמנות מראש. נהלו איסוף, משלוחים, כמויות להכנה ואריזה לכל לקוח דרך Foody.",
+      "Foody הזמנות\nמהאתר ועד המשלוח.",
+      "מטבח משלוחים שעובד לאורך היום, קייטרינג או עסק שמרכז הזמנות לסוף השבוע: הלקוחות מזמינים באתר שלכם והצוות עוקב אחרי ההזמנות והתשלומים במשרד האחורי, גם ללא שירות בשולחן.",
       [
         [
-          "אתר שמרגיש כמו המסעדה.",
-          "התאימו מיתוג, תפריטים ותמונות. ארגנו את המנות בקבוצות והציגו את האפשרויות והתוספות הרלוונטיות.",
+          "הזמנות להכנה היום.",
+          "קבלו הזמנות לאיסוף או למשלוח באותו יום, בהתאם לשעות ולזמינות שהגדרתם. הצוות רואה את ההזמנות הנכנסות ומארגן את ההכנה.",
         ],
         [
-          "איסוף, משלוח או QR.",
-          "בחרו את סוגי ההזמנות שמתאימים לעסק. הלקוח מזמין מהטלפון והצוות ממשיך לעבוד דרך Foody.",
+          "הזמנות מראש לפי לוח הזמנים שלכם.",
+          "הגדירו חלון הזמנות, מועד סגירה ויום איסוף או משלוח. לדוגמה: הזמנות מיום ראשון עד רביעי, ומשלוח ביום שישי.",
         ],
         [
-          "מחוברים לתשלום ולמטבח.",
-          "ספק התשלום מוגדר למסעדה. ההזמנה וסטטוס התשלום משתלבים בתהליך, כדי שהצוות ידע מה מוכן לעבודה.",
+          "לדעת מה להכין ולמי לארוז.",
+          "רכזו את הכמויות לכל מנה, בדקו מנות ואריזות לפי לקוח וסמנו הזמנות שהוכנו. ארגנו את האיסופים והמשלוחים מתוך המשרד האחורי.",
         ],
       ],
       [
@@ -193,6 +193,14 @@ const entries: Record<
         [
           "אפשר להפעיל רק איסוף?",
           "כן. סוגי השירות נקבעים לפי הגדרות העסק. ניתן להתאים את תהליך ההזמנה לאיסוף, למשלוח או לשירות במקום.",
+        ],
+        [
+          "צריך קופת Foody כדי להשתמש ב־Foody הזמנות?",
+          "לא. אפשר להשתמש ב־Foody הזמנות כמסלול עצמאי ולנהל הזמנות, הכנות ומשלוחים מהמשרד האחורי. הוא כלול גם ב־Foody מסעדה וב־Foody מסעדה ומטבח. הדפסת פתקים במטבח היא תוספת בתשלום.",
+        ],
+        [
+          "מה ההבדל בין מעקב ההכנות ל־Foody Kitchen?",
+          "Foody הזמנות מרכז כמויות להכנה ואריזה לפי ההזמנות שהתקבלו. Foody Kitchen מוסיף מתכונים, Food Cost, מלאי, ספקים ו־Foody Companion. ניתן להוסיף אותו למסלול לפי הצורך.",
         ],
       ],
     ],
@@ -259,22 +267,22 @@ const entries: Record<
   },
   fr: {
     restaurants: [
-      "Caisse pour restaurants et cafés en Israël",
-      "Caisse, tables, commandes en ligne, cuisine et paiements réunis. Plus de temps pour vos clients, moins de gestion entre les outils.",
+      "Logiciel de caisse pour restaurants et cafés en Israël",
+      "Foody Restaurant réunit caisse, gestion des tables, site de commande, QR et paiements. Votre salle et vos commandes en ligne avancent ensemble.",
       "De la première table\nà la dernière commande.",
       "Le service en salle, les commandes du site et la cuisine doivent avancer ensemble. Foody relie les équipes et les étapes du parcours de vos clients.",
       [
         [
-          "Chaque commande au bon endroit.",
-          "Les commandes de la caisse, du site et du QR rejoignent votre organisation. L’équipe suit les statuts et la cuisine reçoit les informations de préparation.",
+          "Foody Commandes est inclus.",
+          "Site de commande, ventes du jour, précommandes, retrait et livraison : Foody Commandes est inclus aux côtés de la caisse et du service en salle. Votre équipe centralise la préparation dans le back-office.",
         ],
         [
           "Un service qui garde le rythme.",
           "L’application officielle Foody sur Victa Portable réunit prise de commande, paiement à table et reçu imprimé sur un seul appareil, avec un écran de 6,7 pouces et une imprimante intégrée.",
         ],
         [
-          "Après le service, une vue plus claire.",
-          "Reliez les ventes aux recettes et aux ingrédients. Suivez les stocks, le coût matière et les écarts pour mieux préparer le lendemain.",
+          "La cuisine accompagnée toute la journée.",
+          "Complétez Foody Restaurant avec Foody Cuisine pour gérer recettes, stocks et coûts. Foody Compagnon est inclus dans le module Cuisine et accompagne le chef et son équipe dans les préparations, le service et la clôture.",
         ],
       ],
       [
@@ -350,7 +358,7 @@ const entries: Record<
     ],
     pos: [
       "Caisse cloud sur iPad et Android en Israël",
-      "Foody, la caisse entièrement cloud sur iPad et Android. Commandes, paiements, gestion à distance et écosystème Star Micronics, Epson et Verifone.",
+      "Foody Caisse réunit encaissement, catalogue, tables et gestion dans le cloud sur iPad ou Android. Pour vendre en ligne, ajoutez Foody Commandes ou choisissez Foody Restaurant, qui inclut aussi la commande QR.",
       "Moins de manipulations.\nPlus de temps pour vos clients.",
       "Votre caisse tourne sur iPad ou Android. Votre activité se pilote dans le cloud. Foody relie les commandes, le catalogue, les équipes et les paiements, au comptoir comme à distance.",
       [
@@ -379,7 +387,7 @@ const entries: Record<
       ],
     ],
     kitchen: [
-      "Production, stocks et food cost pour restaurants",
+      "Gestion de cuisine, stocks et food cost en Israël",
       "Reliez recettes, préparations, prix d’achat et fournisseurs. Comparez le coût matière théorique à la consommation réelle.",
       "Chaque plat a sa recette.\nChaque décision, ses données.",
       "Les prix d’achat évoluent. Les quantités à préparer aussi. Réunissez l’information pour savoir quoi produire, quoi commander et où agir.",
@@ -393,8 +401,8 @@ const entries: Record<
           "Enregistrez livraisons, préparations et inventaires. À la clôture, examinez les écarts de consommation et les pertes déclarées.",
         ],
         [
-          "Le compagnon, toute la journée.",
-          "Avant, pendant et après le service, le compagnon cuisine accompagne les préparations, les besoins, les stocks et les commandes fournisseurs. Sur iPad compatible, Siri donne accès au briefing et aux informations utiles.",
+          "Foody Compagnon est inclus.",
+          "L’assistant quotidien du module Cuisine accompagne les préparations, les priorités, le service et la clôture. Il est inclus sans supplément. Sur iPad compatible, Siri donne accès au briefing et aux informations utiles.",
         ],
       ],
       [
@@ -409,22 +417,22 @@ const entries: Record<
       ],
     ],
     ordering: [
-      "Commandes en ligne et QR pour restaurants en Israël",
-      "Recevez vos commandes directes en retrait, livraison ou à table. Votre site de marque est connecté à Foody.",
-      "Vos clients.\nVotre canal de commande.",
-      "Donnez à vos clients un accès direct à votre restaurant, sans application à télécharger. Le site et les QR affichent votre carte et alimentent votre organisation.",
+      "Commandes en ligne pour dark kitchens et restaurants en Israël",
+      "Votre site de commande pour les ventes du jour et les précommandes. Gérez le retrait, la livraison, les quantités à préparer et l’emballage par client depuis Foody.",
+      "Foody Commandes.\nDu site à la livraison.",
+      "Dark kitchen qui travaille en continu, traiteur ou cuisine qui regroupe les commandes de la semaine : vos clients commandent sur votre site et votre équipe suit les commandes et les paiements dans le back-office, même sans service à table.",
       [
         [
-          "Un site à l’image du restaurant.",
-          "Personnalisez l’identité, les menus et les photos. Organisez les plats en groupes avec leurs options et suppléments.",
+          "Les commandes à préparer aujourd’hui.",
+          "Recevez les commandes à emporter ou à livrer le jour même, selon les horaires et disponibilités que vous définissez. L’équipe retrouve les commandes entrantes et organise leur préparation.",
         ],
         [
-          "Retrait, livraison ou QR.",
-          "Activez les modes de commande adaptés à votre activité. Le client commande depuis son téléphone, votre équipe travaille dans Foody.",
+          "Les précommandes selon votre calendrier.",
+          "Définissez une période de commande, une date de clôture et un jour de retrait ou de livraison. Par exemple : commandes du dimanche au mercredi, puis livraison le vendredi.",
         ],
         [
-          "La cuisine et le paiement connectés.",
-          "Le prestataire est configuré pour le restaurant. La commande et son statut de paiement s’intègrent au parcours de préparation.",
+          "Savoir quoi préparer et pour qui emballer.",
+          "Regroupez les quantités par plat, consultez les portions et les emballages par client, puis marquez les commandes préparées. Organisez ensuite les retraits et les livraisons depuis le back-office.",
         ],
       ],
       [
@@ -435,6 +443,14 @@ const entries: Record<
         [
           "Puis-je proposer seulement du retrait ?",
           "Oui. Les modes de service sont définis dans les paramètres du restaurant : retrait, livraison ou consommation sur place.",
+        ],
+        [
+          "Faut-il une caisse Foody pour utiliser Foody Commandes ?",
+          "Non. Foody Commandes peut être utilisé seul pour gérer les commandes, la préparation et les livraisons depuis le back-office. Il est aussi inclus dans Foody Restaurant et Foody Restaurant & Cuisine. L’impression des bons en cuisine est une option payante.",
+        ],
+        [
+          "Quelle différence entre le suivi des préparations et Foody Cuisine ?",
+          "Foody Commandes regroupe les quantités à préparer et à emballer à partir des commandes reçues. Foody Cuisine ajoute les recettes, le food cost, les stocks, les fournisseurs et Foody Compagnon. Ce module peut compléter votre offre selon vos besoins.",
         ],
       ],
     ],
@@ -502,21 +518,21 @@ const entries: Record<
   en: {
     restaurants: [
       "Restaurant and café POS in Israel",
-      "POS, tables, online orders, kitchen and payments in one place. Spend more time with guests and less time between systems.",
+      "Foody Restaurant brings together POS, table management, an ordering website, QR and payments. Table service and online orders work together.",
       "From your first table\nto your final order.",
       "Front of house, online orders and a busy kitchen need to move together. Foody connects the people and steps that make your restaurant work.",
       [
         [
-          "Every order in the right place.",
-          "POS, website and QR orders join your workflow. Your team follows statuses and the kitchen receives the details it needs to prepare.",
+          "Foody Orders is included.",
+          "Your ordering website, same-day orders, preorders, pickup and delivery: Foody Orders is included alongside POS and table service. Your team coordinates preparation in the back office.",
         ],
         [
           "Keep service moving.",
           "The official Foody app on Victa Portable brings ordering, payment at the table and printed receipts into one device, with a 6.7-inch screen and integrated printer.",
         ],
         [
-          "A clearer picture after service.",
-          "Connect sales to recipes and ingredients. Follow stock, ingredient costs and variances to prepare for the next day.",
+          "Support for the kitchen, all day.",
+          "Add Foody Kitchen to manage recipes, stock and costs. Foody Companion is included in the Kitchen module and guides the chef and team through prep, service and closing.",
         ],
       ],
       [
@@ -591,8 +607,8 @@ const entries: Record<
       ],
     ],
     pos: [
-      "Cloud POS on iPad and Android in Israel",
-      "Foody is a fully cloud-based POS for iPad and Android, connecting orders, payments, remote management and Star Micronics, Epson and Verifone hardware.",
+      "Cloud POS for iPad and Android in Israel",
+      "Foody POS brings sales, catalogues, tables and cloud management to iPad or Android. Add Foody Orders to sell online, or choose Foody Restaurant, which also includes QR ordering.",
       "Fewer steps.\nMore time for customers.",
       "Your POS runs on iPad or Android. Your business is managed in the cloud. Foody connects orders, catalogues, teams and payments, at the counter and remotely.",
       [
@@ -621,7 +637,7 @@ const entries: Record<
       ],
     ],
     kitchen: [
-      "Restaurant production, stock and food cost",
+      "Kitchen management, stock and food cost in Israel",
       "Connect recipes, preparations, purchasing prices and suppliers. Compare theoretical ingredient cost with real consumption.",
       "Every dish starts with a recipe.\nEvery decision, with data.",
       "Ingredient prices change. Production quantities do, too. Bring the information together to know what to prepare, what to order and what needs attention.",
@@ -635,8 +651,8 @@ const entries: Record<
           "Record deliveries, preparations and inventory counts. At daily close, review consumption variances alongside recorded waste.",
         ],
         [
-          "A companion for the whole day.",
-          "Before, during and after service, the kitchen companion guides preparations, needs, stock and supplier orders. On a compatible iPad, Siri brings briefings and useful kitchen information.",
+          "Foody Companion is included.",
+          "The Kitchen module’s everyday assistant guides prep, priorities, service and closing. It is included at no extra charge. On a compatible iPad, Siri brings briefings and useful kitchen information.",
         ],
       ],
       [
@@ -651,22 +667,22 @@ const entries: Record<
       ],
     ],
     ordering: [
-      "Online and QR ordering for restaurants in Israel",
-      "Take direct pickup, delivery and table orders on a branded website connected to your Foody workflow.",
-      "Your guests.\nYour ordering channel.",
-      "Let customers order directly from you without downloading an app. Your website and QR codes display the menu and feed your daily workflow.",
+      "Online ordering for dark kitchens and restaurants in Israel",
+      "A branded ordering website for same-day sales and preorders. Manage pickup, delivery, preparation quantities and packing for each customer in Foody.",
+      "Foody Orders.\nFrom website to delivery.",
+      "Whether you run a dark kitchen taking orders throughout the day, a catering business or a kitchen collecting weekly preorders, customers order on your website and your team tracks orders and payments in the back office, even without table service.",
       [
         [
-          "A site that feels like your restaurant.",
-          "Customize branding, menus and photos. Organize dishes into groups with their relevant options and modifiers.",
+          "Orders to prepare today.",
+          "Accept same-day pickup and delivery orders within your opening hours and availability. Your team sees incoming orders and organises preparation.",
         ],
         [
-          "Pickup, delivery or QR.",
-          "Enable the order types that suit your business. Customers order from their phones while your team works through Foody.",
+          "Preorders around your schedule.",
+          "Set an ordering window, cutoff and pickup or delivery date. For example: orders from Sunday to Wednesday, with delivery on Friday.",
         ],
         [
-          "Connected to payments and the kitchen.",
-          "A payment provider is configured for the restaurant. Orders and payment statuses flow into the preparation process.",
+          "Know what to prepare and pack for each customer.",
+          "See quantities by dish, check portions and packaging per customer, and mark orders as prepared. Organise pickups and deliveries from the back office.",
         ],
       ],
       [
@@ -677,6 +693,14 @@ const entries: Record<
         [
           "Can I offer pickup only?",
           "Yes. Service types are configured for the business. The ordering flow can be adapted to pickup, delivery or dine-in.",
+        ],
+        [
+          "Do I need a Foody POS to use Foody Orders?",
+          "No. Foody Orders can be used on its own to manage orders, preparation and deliveries from the back office. It is also included in Foody Restaurant and Foody Restaurant & Kitchen. Kitchen ticket printing is a paid add-on.",
+        ],
+        [
+          "How does preparation tracking differ from Foody Kitchen?",
+          "Foody Orders brings together preparation and packing quantities from received orders. Foody Kitchen adds recipes, food cost, stock, suppliers and Foody Companion. You can add this module to your plan as needed.",
         ],
       ],
     ],
@@ -743,6 +767,30 @@ const entries: Record<
   },
 };
 
+const sectionTitles: Record<
+  Lang,
+  Partial<Record<SolutionKey, string>>
+> = {
+  fr: {
+    restaurants: "Le service en salle et les commandes en ligne réunis.",
+    pos: "Une caisse pour le comptoir et le service en salle.",
+    kitchen: "Les préparations, les stocks et les coûts au même endroit.",
+    ordering: "Pour les commandes du jour ou celles de la semaine.",
+  },
+  en: {
+    restaurants: "Table service and online orders, together.",
+    pos: "One POS for the counter and table service.",
+    kitchen: "Prep, stock and costs in one place.",
+    ordering: "For today’s orders or the week ahead.",
+  },
+  he: {
+    restaurants: "השירות במסעדה וההזמנות אונליין באותה מערכת.",
+    pos: "קופה לדלפק ולשירות בשולחן.",
+    kitchen: "ההכנות, המלאי והעלויות במקום אחד.",
+    ordering: "להזמנות של היום או להזמנות של השבוע.",
+  },
+};
+
 /** Returns localized editorial content for an acquisition page. */
 export function getSolution(lang: Lang, key: SolutionKey): Solution {
   if (key === "equipment" || key === "companion")
@@ -751,6 +799,7 @@ export function getSolution(lang: Lang, key: SolutionKey): Solution {
     entries[lang][key];
   return {
     title,
+    sectionTitle: sectionTitles[lang][key],
     description,
     heading,
     intro,

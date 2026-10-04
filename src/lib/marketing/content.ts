@@ -1,4 +1,5 @@
 import type { Lang } from "@/lib/seo";
+import { pricing } from "./pricing";
 
 export type Faq = { q: string; a: string };
 export type Feature = { title: string; text: string };
@@ -15,6 +16,7 @@ export type SolutionKey =
   | "companion";
 export type Solution = {
   title: string;
+  sectionTitle?: string;
   description: string;
   heading: string;
   intro: string;
@@ -124,57 +126,11 @@ const he = {
     target: "יעד Food Cost",
     costNote: "דוגמה להמחשה. היתרה אינה כוללת שכר, שכירות והוצאות נוספות.",
   },
-  pricing: {
-    title: "התוכנית שלכם.\nלפי העסק שלכם.",
-    description:
-      "עסק קטן ורשת מסעדות צריכים דברים שונים. בחרו נקודת פתיחה ונבנה הצעה שמתאימה לפעילות, לציוד ולסליקה שלכם.",
-    quote: "הצעה אישית",
-    popular: "למסעדה שמנהלת הכול",
-    plans: [
-      {
-        title: "קופה ותשלומים",
-        text: "לחנויות, דלפקים ועסקים בתחילת הדרך.",
-        items: [
-          "קופה וקטלוג מוצרים",
-          "חיבור למסוף תשלום תואם",
-          "דוחות מכירות",
-          "הקמה והדרכה לפי ההצעה",
-        ],
-      },
-      {
-        title: "המסעדה המחוברת",
-        text: "למסעדות ובתי קפה שרוצים לעבוד יחד.",
-        items: [
-          "קופה, שולחנות והזמנות",
-          "אתר הזמנות ו־QR",
-          "זרימת עבודה למטבח",
-          "מתכונים, מלאי ו־Food Cost",
-        ],
-      },
-      {
-        title: "רשתות וקבוצות",
-        text: "לפעילות שצומחת מסניף לסניף.",
-        items: [
-          "גישה למספר מסעדות",
-          "ייצור והכנות",
-          "ספקים ובקרת עלויות",
-          "תכנון פריסה והדרכה לצוותים",
-        ],
-      },
-    ],
-    note: "מחירי התוכנה, הציוד, ההקמה והסליקה מפורטים בנפרד בהצעה. היקף המודולים והשירות נקבע בהסכם. לא כל ספק תשלום זמין בכל שוק.",
-    includeTitle: "תמונה מלאה לפני שמחליטים.",
-    include: [
-      "התאמת המערכת לתהליך העבודה",
-      "בחירת מסופים וציוד תואם",
-      "פירוט תנאי הסליקה",
-      "תוכנית להקמה ולהדרכה",
-    ],
-  },
+  pricing: pricing.he,
   contact: {
     title: "בואו נדבר\nעל העסק שלכם.",
     description:
-      "מסעדה אחת, רשת שלמה או חנות חדשה — ספרו לנו מה אתם צריכים. נחזור אליכם לתיאום הדגמה והצעה מותאמת.",
+      "מסעדה אחת, רשת שלמה או חנות חדשה? ספרו לנו מה אתם צריכים. נחזור אליכם לתיאום הדגמה והצעה מותאמת.",
     steps: [
       "נכיר את הפעילות והאתגרים שלכם",
       "נדגים את הכלים שמתאימים לעסק",
@@ -319,53 +275,7 @@ const fr: Copy = {
     costNote:
       "Exemple illustratif. Le solde exclut les salaires, le loyer et les autres charges.",
   },
-  pricing: {
-    title: "Votre formule.\nÀ votre mesure.",
-    description:
-      "Une boutique et un réseau de restaurants ont des besoins différents. Choisissez votre point de départ : nous adaptons la proposition à votre activité, au matériel et à la slika.",
-    quote: "Sur devis",
-    popular: "Pour tout gérer au restaurant",
-    plans: [
-      {
-        title: "Caisse et paiements",
-        text: "Pour les commerces, comptoirs et nouvelles ouvertures.",
-        items: [
-          "Caisse et catalogue produits",
-          "Terminal de paiement compatible",
-          "Rapports de ventes",
-          "Installation et formation selon devis",
-        ],
-      },
-      {
-        title: "Restaurant connecté",
-        text: "Pour une salle, une cuisine et des commandes coordonnées.",
-        items: [
-          "Caisse, tables et commandes",
-          "Site de commande et QR",
-          "Organisation des commandes en cuisine",
-          "Recettes, stocks et food cost",
-        ],
-      },
-      {
-        title: "Chaînes et groupes",
-        text: "Pour une activité qui grandit, établissement par établissement.",
-        items: [
-          "Accès à plusieurs restaurants",
-          "Production et préparations",
-          "Fournisseurs et contrôle des coûts",
-          "Déploiement et formation des équipes",
-        ],
-      },
-    ],
-    note: "Logiciel, matériel, installation et slika sont chiffrés séparément. Les modules et services sont précisés dans votre contrat. La disponibilité des prestataires dépend du marché.",
-    includeTitle: "Une vue complète avant de décider.",
-    include: [
-      "Configuration adaptée à votre organisation",
-      "Choix des terminaux et du matériel compatible",
-      "Conditions de slika détaillées",
-      "Plan d’installation et de formation",
-    ],
-  },
+  pricing: pricing.fr,
   contact: {
     title: "Parlons de\nvotre activité.",
     description:
@@ -519,53 +429,7 @@ const en: Copy = {
     costNote:
       "Illustrative example. The remainder excludes wages, rent and other expenses.",
   },
-  pricing: {
-    title: "Your plan.\nOn your terms.",
-    description:
-      "A small shop and a restaurant group need different things. Choose your starting point and we’ll tailor a proposal to your workflow, equipment and payment processing.",
-    quote: "Custom proposal",
-    popular: "For the connected restaurant",
-    plans: [
-      {
-        title: "POS & payments",
-        text: "For shops, counters and businesses getting started.",
-        items: [
-          "POS and product catalogue",
-          "Compatible payment terminal",
-          "Sales reports",
-          "Setup and training as quoted",
-        ],
-      },
-      {
-        title: "Connected restaurant",
-        text: "For front of house, kitchen and orders working together.",
-        items: [
-          "POS, tables and orders",
-          "Online and QR ordering",
-          "Kitchen order workflow",
-          "Recipes, stock and food cost",
-        ],
-      },
-      {
-        title: "Restaurant groups",
-        text: "For businesses growing from one location to the next.",
-        items: [
-          "Access to multiple restaurants",
-          "Production and preparations",
-          "Suppliers and cost control",
-          "Rollout and team training plan",
-        ],
-      },
-    ],
-    note: "Software, hardware, setup and processing are quoted separately. Modules and services are defined in your agreement. Provider availability varies by market.",
-    includeTitle: "The full picture before you decide.",
-    include: [
-      "A setup that fits your workflow",
-      "Compatible terminals and equipment",
-      "A clear breakdown of processing terms",
-      "An installation and training plan",
-    ],
-  },
+  pricing: pricing.en,
   contact: {
     title: "Let’s talk about\nyour business.",
     description:

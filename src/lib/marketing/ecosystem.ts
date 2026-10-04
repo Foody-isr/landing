@@ -67,10 +67,15 @@ export const ecosystem = {
     paid: "Paiement confirmé",
     receipt: "Reçu client",
     thanks: "Merci de votre visite",
-    companionTitle: "Le compagnon du chef.\nAvant, pendant, après le service.",
+    companionTitle: "Foody Compagnon.\nL’assistant de votre cuisine.",
     companionText:
-      "Un fil conducteur pour la journée en cuisine : les préparations à lancer, les priorités du service, les stocks à vérifier et les commandes fournisseurs à préparer pour demain.",
-    companionLink: "Rencontrer le compagnon cuisine",
+      "Avant, pendant et après le service, Foody Compagnon accompagne le chef et son équipe : préparations à lancer, priorités, stocks à vérifier et besoins fournisseurs pour demain.",
+    companionIncluded:
+      "Inclus sans supplément dans Foody Cuisine et Foody Restaurant & Cuisine.",
+    companionScopeQuestion: "Foody Compagnon remplace-t-il Foody Cuisine ?",
+    companionScopeAnswer:
+      "Foody Cuisine regroupe les recettes, le food cost, les stocks, les fournisseurs et la gestion des préparations. Foody Compagnon en est l’assistant du quotidien : il aide le chef et son équipe à organiser la mise en place, suivre le service et préparer la journée suivante. Il est inclus dans le module Cuisine, seul ou avec Foody Restaurant.",
+    companionLink: "Découvrir Foody Compagnon",
     phases: ["Avant le service", "Pendant le service", "Après le service"],
     phaseDescriptions: [
       "Priorisez les préparations, les quantités et la mise en place avant l’arrivée des clients.",
@@ -115,6 +120,8 @@ export const ecosystem = {
       "Siri et les widgets nécessitent un iPad sous iPadOS 18 ou ultérieur, l’activation dans Foody et les autorisations du compte. Les actions sensibles restent soumises à confirmation.",
     voiceLabel: "Exemple de briefing vocal",
     routeTitle: "Du téléphone de votre client\nau bon poste en cuisine.",
+    orderingIncluded:
+      "Disponible seul, sans caisse POS obligatoire. Inclus dans Foody Restaurant et Foody Restaurant & Cuisine.",
     routeText:
       "Un parcours de commande à votre marque, avec le menu, les options et les modes de service que vous avez choisis. Le statut du paiement accompagne la commande jusqu’à votre équipe.",
     routeSteps: [
@@ -122,6 +129,13 @@ export const ecosystem = {
       "Le paiement est confirmé",
       "L’équipe prépare",
     ],
+    printingLabel: "Option payante",
+    printingTitle: "Les bons de commande arrivent en cuisine.",
+    printingText:
+      "Ajoutez une imprimante à bons compatible pour transmettre les commandes en cuisine. Nous configurons la connexion et le routage selon votre organisation.",
+    printingNote:
+      "L’option d’impression, le matériel et la configuration font l’objet d’un devis séparé. La connexion au cloud nécessite un modèle compatible ou une passerelle adaptée.",
+    printingLink: "Prévoir mon installation",
     guest: "Votre restaurant",
     pickup: "À emporter",
     delivery: "Livraison",
@@ -151,7 +165,7 @@ export const ecosystem = {
     supplierItems: ["Maraîcher", "Crémier", "Épicerie"],
     recipeTitle: "Une recette.\nUne vue précise du coût.",
     recipeText:
-      "Reliez chaque ingrédient à son prix d’achat, puis comparez le coût de la recette au prix de vente. Le compagnon prend le relais pour suivre les préparations pendant la journée.",
+      "Reliez chaque ingrédient à son prix d’achat, puis comparez le coût de la recette au prix de vente dans Foody Cuisine. Foody Compagnon, inclus, vous accompagne dans le suivi des préparations au quotidien.",
     recipe: "Fiche recette",
     ingredients: ["Légumes et herbes", "Fromage", "Assaisonnement"],
     foodcost: "Coût matière",
@@ -224,10 +238,15 @@ export const ecosystem = {
     paid: "Payment confirmed",
     receipt: "Customer receipt",
     thanks: "Thank you for visiting",
-    companionTitle: "The chef’s companion.\nBefore, during and after service.",
+    companionTitle: "Foody Companion.\nYour kitchen assistant.",
     companionText:
-      "A guide through the kitchen day: preparations to start, service priorities, stock to check and supplier orders to prepare for tomorrow.",
-    companionLink: "Meet the kitchen companion",
+      "Before, during and after service, Foody Companion guides the chef and team through preparations to start, priorities, stock to check and supplier needs for tomorrow.",
+    companionIncluded:
+      "Included at no extra charge in Foody Kitchen and Foody Restaurant & Kitchen.",
+    companionScopeQuestion: "Does Foody Companion replace Foody Kitchen?",
+    companionScopeAnswer:
+      "Foody Kitchen brings together recipes, food cost, stock, suppliers and preparation management. Foody Companion is its everyday assistant: it helps the chef and team organise prep, follow service and get ready for the next day. It is included in the Kitchen module, on its own or with Foody Restaurant.",
+    companionLink: "Explore Foody Companion",
     phases: ["Before service", "During service", "After service"],
     phaseDescriptions: [
       "Prioritise preparations, quantities and mise en place before guests arrive.",
@@ -276,6 +295,8 @@ export const ecosystem = {
       "Siri and widgets require an iPad with iPadOS 18 or later, activation in Foody and account permissions. Sensitive actions still require confirmation.",
     voiceLabel: "Illustrative voice briefing",
     routeTitle: "From your customer’s phone\nto the right kitchen station.",
+    orderingIncluded:
+      "Available on its own, without a required POS. Included in Foody Restaurant and Foody Restaurant & Kitchen.",
     routeText:
       "A branded ordering journey with your menu, options and service types. Payment status follows the order through to your team.",
     routeSteps: [
@@ -283,6 +304,13 @@ export const ecosystem = {
       "Payment is confirmed",
       "The team prepares",
     ],
+    printingLabel: "Paid add-on",
+    printingTitle: "Order tickets arrive in the kitchen.",
+    printingText:
+      "Add a compatible ticket printer to send orders to the kitchen. We configure the connection and routing around your workflow.",
+    printingNote:
+      "The printing add-on, hardware and setup are quoted separately. Cloud printing requires a compatible model or a suitable gateway.",
+    printingLink: "Plan my setup",
     guest: "Your restaurant",
     pickup: "Pickup",
     delivery: "Delivery",
@@ -308,7 +336,7 @@ export const ecosystem = {
     supplierItems: ["Produce supplier", "Dairy supplier", "Dry goods supplier"],
     recipeTitle: "One recipe.\nA clear view of cost.",
     recipeText:
-      "Connect every ingredient to its purchase price, then compare recipe cost with the selling price. The companion takes over to guide preparation through the day.",
+      "Connect every ingredient to its purchase price, then compare recipe cost with the selling price in Foody Kitchen. Foody Companion is included to guide preparation through the day.",
     recipe: "Recipe card",
     ingredients: ["Vegetables and herbs", "Cheese", "Dressing"],
     foodcost: "Ingredient cost",
@@ -325,7 +353,7 @@ export const ecosystem = {
     sample: "המחשה עם נתונים לדוגמה",
     cloudTitle: "הקופה כאן.\nהעסק שלכם בענן.",
     cloudText:
-      "Foody היא פלטפורמה המבוססת כולה על הענן. הקופה פועלת על iPad ועל Android, וההזמנות, הקטלוג והניהול מתחברים לאותה מערכת. בדלפק, באולם או מרחוק — כל אחד מקבל גישה לכלים שמתאימים לתפקיד שלו.",
+      "Foody היא פלטפורמה המבוססת כולה על הענן. הקופה פועלת על iPad ועל Android, וההזמנות, הקטלוג והניהול מתחברים לאותה מערכת. בדלפק, באולם או מרחוק, כל אחד מקבל גישה לכלים שמתאימים לתפקיד שלו.",
     cloudNote:
       "שירותי הענן והתשלומים המקוונים דורשים חיבור לאינטרנט. התאמת המכשירים וגרסאות התוכנה נבדקת בזמן ההקמה.",
     cloudLabels: [
@@ -365,7 +393,7 @@ export const ecosystem = {
       "אפליקציית Foody הרשמית ב־Victa Portable מרכזת את כל השירות במכשיר אחד.",
     serviceSummarySteps: ["הזמנה", "תשלום", "קבלה"],
     serviceText:
-      "אפליקציית Foody הרשמית משולבת ב־Victa Portable. המלצר מקבל הזמנה, גובה תשלום ומוסר קבלה מאותו מכשיר — לצד האורח.",
+      "אפליקציית Foody הרשמית משולבת ב־Victa Portable. המלצר מקבל הזמנה, גובה תשלום ומוסר קבלה מאותו מכשיר, לצד האורח.",
     serviceSteps: ["מקבלים הזמנה", "גובים תשלום בשולחן", "מוסרים קבלה"],
     serviceDetails: [
       "פותחים את השולחן, המנות, התוספות וההערות ב־Foody.",
@@ -381,10 +409,15 @@ export const ecosystem = {
     paid: "התשלום אושר",
     receipt: "קבלה ללקוח",
     thanks: "תודה שביקרתם",
-    companionTitle: "השותף של השף.\nלפני, בזמן ואחרי השירות.",
+    companionTitle: "Foody Companion\nהעוזר של המטבח שלכם.",
     companionText:
-      "ליווי לאורך יום העבודה במטבח: מה להכין, במה להתמקד בשירות, איזה מלאי לבדוק ואילו הזמנות ספקים להכין למחר.",
-    companionLink: "להכיר את מלווה המטבח",
+      "לפני, בזמן ואחרי השירות, Foody Companion מלווה את השף והצוות: מה להכין, במה להתמקד, איזה מלאי לבדוק ומה נדרש מהספקים למחר.",
+    companionIncluded:
+      "כלול ללא תוספת תשלום ב־Foody Kitchen ובמסלול Foody מסעדה ומטבח.",
+    companionScopeQuestion: "האם Foody Companion מחליף את Foody Kitchen?",
+    companionScopeAnswer:
+      "Foody Kitchen מרכז מתכונים, Food Cost, מלאי, ספקים וניהול הכנות. Foody Companion הוא העוזר היומיומי שלו: הוא מסייע לשף ולצוות לארגן הכנות, לעקוב אחרי השירות ולהיערך ליום הבא. הוא כלול במודול המטבח, כמסלול עצמאי או יחד עם Foody מסעדה.",
+    companionLink: "להכיר את Foody Companion",
     phases: ["לפני השירות", "בזמן השירות", "אחרי השירות"],
     phaseDescriptions: [
       "מתעדפים הכנות, כמויות והיערכות לפני הגעת האורחים.",
@@ -427,7 +460,16 @@ export const ecosystem = {
     routeTitle: "מהטלפון של הלקוח\nלעמדה הנכונה במטבח.",
     routeText:
       "תהליך הזמנה ממותג עם התפריט, האפשרויות וסוגי השירות שבחרתם. סטטוס התשלום מלווה את ההזמנה עד לצוות.",
+    orderingIncluded:
+      "זמין כמסלול עצמאי, ללא צורך בקופת POS. כלול ב־Foody מסעדה וב־Foody מסעדה ומטבח.",
     routeSteps: ["הלקוח מזמין", "התשלום מאושר", "הצוות מכין"],
+    printingLabel: "תוספת בתשלום",
+    printingTitle: "פתקי ההזמנה מגיעים למטבח.",
+    printingText:
+      "הוסיפו מדפסת פתקים תואמת להעברת ההזמנות למטבח. נגדיר את החיבור ואת ניתוב ההדפסות לפי אופן העבודה שלכם.",
+    printingNote:
+      "תוספת ההדפסה, הציוד וההגדרה מתומחרים בהצעה נפרדת. הדפסה מהענן דורשת דגם תואם או שער תקשורת מתאים.",
+    printingLink: "לתכנון ההתקנה שלי",
     guest: "המסעדה שלכם",
     pickup: "איסוף עצמי",
     delivery: "משלוח",
@@ -453,7 +495,7 @@ export const ecosystem = {
     supplierItems: ["ספק ירקות", "ספק מוצרי חלב", "ספק מוצרים יבשים"],
     recipeTitle: "מתכון אחד.\nתמונה ברורה של העלות.",
     recipeText:
-      "מחברים כל רכיב למחיר הקנייה שלו ומשווים את עלות המתכון למחיר המכירה. מלווה המטבח ממשיך איתכם למעקב אחר ההכנות לאורך היום.",
+      "מחברים כל רכיב למחיר הקנייה שלו ומשווים את עלות המתכון למחיר המכירה ב־Foody Kitchen. העוזר Foody Companion כלול ומלווה את מעקב ההכנות לאורך היום.",
     recipe: "כרטיס מתכון",
     ingredients: ["ירקות ועשבי תיבול", "גבינה", "רוטב"],
     foodcost: "עלות חומרי גלם",
@@ -461,7 +503,7 @@ export const ecosystem = {
     recipeNote: "דוגמה ללא מע״מ: 11.20 ₪ ÷ 40 ₪ = 28%. הנתון אינו הרווח הנקי.",
     paymentTitle: "כל תשלום\nמחובר להזמנה שלו.",
     paymentText:
-      "בדלפק, בשולחן או באתר — התשלום נשאר מקושר למכירה. אנחנו מלווים את בחירת הספק ותנאי הסליקה.",
+      "בדלפק, בשולחן או באתר, התשלום נשאר מקושר למכירה. אנחנו מלווים את בחירת הספק ותנאי הסליקה.",
     channels: ["בדלפק", "בשולחן", "אונליין"],
     linked: "ההזמנה והתשלום מחוברים",
   },
@@ -476,15 +518,15 @@ export const additionalSolutions: Record<
     const titles = {
       he: [
         "מדפסות Epson ו־Star Micronics לעסקים בישראל",
-        "מלווה מטבח למסעדות עם Siri ב־iPad",
+        "מלווה מטבח למסעדות עם Siri",
       ],
       fr: [
         "Imprimantes Epson et Star Micronics en Israël",
-        "Compagnon cuisine et Siri sur iPad",
+        "Assistant cuisine pour restaurants avec Siri",
       ],
       en: [
         "Epson & Star Micronics POS Printers in Israel",
-        "Kitchen Companion with Siri on iPad",
+        "Kitchen assistant for restaurants with Siri",
       ],
     }[lang];
     return [
@@ -517,14 +559,23 @@ export const additionalSolutions: Record<
         },
         companion: {
           title: titles[1],
+          sectionTitle: {
+            fr: "Un assistant pour chaque étape de la journée.",
+            en: "An assistant for every part of the day.",
+            he: "עוזר למטבח בכל שלב של היום.",
+          }[lang],
           heading: t.companionTitle,
           description: t.companionText,
-          intro: t.companionText,
+          intro: t.companionIncluded,
           features: t.phases.map((title, i) => ({
             title,
             text: t.phaseDescriptions[i],
           })),
           faq: [
+            {
+              q: t.companionScopeQuestion,
+              a: t.companionScopeAnswer,
+            },
             {
               q:
                 lang === "he"
