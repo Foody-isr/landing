@@ -1,4 +1,9 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
+
+const social = JSON.parse(await readFile(
+  new URL("../src/lib/marketing/social.json", import.meta.url), "utf8",
+));
 
 // Read-only smoke checks against a running Next server; never submit leads or payments.
 const base = process.env.MARKETING_BASE_URL || "http://localhost:3001";
@@ -74,11 +79,30 @@ for (const lang of ["he", "fr", "en"]) {
       !html.includes('name="robots" content="noindex'),
       `Indexable acquisition page: ${url}`,
     );
+    for (const [attribute, name] of [["property", "og:image"], ["name", "twitter:image"]]) {
+      assert.ok(
+        html.includes(`${attribute}="${name}" content="${canonicalBase}${social[lang].image}"`),
+        `Localized ${name}: ${url}`,
+      );
+    }
     assert.ok(
-      html.includes("og:image") &&
-        html.includes("/assets/marketing/social-card.png"),
-      `Social card: ${url}`,
+      html.includes(`property="og:image:alt" content="${social[lang].alt}"`),
+      `Localized sharing-image description: ${url}`,
     );
+    if (path === "") {
+      for (const [attribute, prefix] of [["property", "og"], ["name", "twitter"]]) {
+        for (const field of ["title", "description"]) {
+          assert.ok(
+            html.includes(`${attribute}="${prefix}:${field}" content="${social[lang][field]}"`),
+            `Concise localized sharing ${field}: ${url}`,
+          );
+        }
+      }
+      assert.notEqual(
+        html.match(/<title>([^<]+)<\/title>/)?.[1], social[lang].title,
+        `Search and sharing titles have distinct purposes: ${url}`,
+      );
+    }
     assert.ok(
       response.headers
         .get("content-security-policy")
@@ -478,9 +502,15 @@ assert.equal(
   (await fetch(base + "/he/sectors/beauty", { redirect: "manual" })).status,
   308,
 );
-const image = await fetch(base + "/assets/marketing/social-card.png");
-assert.equal(image.status, 200);
-assert.ok(image.headers.get("content-type")?.includes("image/png"));
+for (const [lang, content] of Object.entries(social)) {
+  const image = await fetch(base + content.image);
+  assert.equal(image.status, 200, `Sharing image exists: ${lang}`);
+  assert.ok(image.headers.get("content-type")?.includes("image/png"));
+  const bytes = Buffer.from(await image.arrayBuffer());
+  assert.deepEqual(bytes.subarray(0, 8), Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]));
+  assert.equal(bytes.readUInt32BE(16), 1200, `Sharing image width: ${lang}`);
+  assert.equal(bytes.readUInt32BE(20), 630, `Sharing image height: ${lang}`);
+}
 console.log(
   `Marketing checks passed: ${checked} localized pages, canonicals, hreflang, RTL, headings, security headers, sitemap, redirects, 404 and social card.`,
 );
