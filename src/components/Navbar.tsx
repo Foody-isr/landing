@@ -50,10 +50,12 @@ export default function Navbar() {
           <Link
             href={localePath("/")}
             aria-label="Foody"
-            className="brand"
+            className="brand brand-lockup"
+            dir="ltr"
             onClick={() => setOpen(false)}
           >
-            <FoodyLogo width={116} decorative />
+            <FoodyLogo variant="symbol" monochrome width={30} className="brand-symbol" decorative />
+            <FoodyLogo width={67.5} className="brand-wordmark" decorative />
           </Link>
           <button
             ref={trigger}
