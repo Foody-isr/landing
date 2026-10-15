@@ -4,6 +4,7 @@ import { readFile } from "node:fs/promises";
 const social = JSON.parse(await readFile(
   new URL("../src/lib/marketing/social.json", import.meta.url), "utf8",
 ));
+const mapsOffer = JSON.parse(await readFile(new URL('../src/lib/marketing/maps-offers.json', import.meta.url), 'utf8'));
 
 // Read-only smoke checks against a running Next server; never submit leads or payments.
 const base = process.env.MARKETING_BASE_URL || "http://localhost:3001";
@@ -158,6 +159,13 @@ for (const lang of ["he", "fr", "en"]) {
       }
     }
     if (path === "/pricing") {
+      assert.ok(html.includes('data-maps-offer-status="planned"'), `Maps extension remains explicitly planned: ${url}`);
+      assert.equal(mapsOffer.automatic_billing, false);
+      const mapsPlus = html.match(/data-pricing-maps="plus"([\s\S]*?)<\/dd>\s*<\/div>/)?.[1];
+      assert.ok(mapsPlus, `Maps Plus pricing is present: ${url}`);
+      assert.ok(mapsPlus.includes(String(mapsOffer.monthly_price)), `Maps price matches the offer contract: ${url}`);
+      assert.ok(mapsPlus.includes(`href="/${lang}/contact"`), `Maps activation uses contact only: ${url}`);
+      assert.ok(!mapsPlus.includes('<form'), `No maps checkout is published: ${url}`);
       const licenceNote = html.match(
         /<p\b[^>]*data-pricing-licences[^>]*>([\s\S]*?)<\/p>/,
       )?.[1];
@@ -313,7 +321,7 @@ for (const lang of ["he", "fr", "en"]) {
         .find((data) => data["@type"] === "FAQPage");
       assert.equal(
         faq?.mainEntity.length,
-        7,
+        8,
         `Localized pricing FAQ schema: ${url}`,
       );
       assert.ok(
