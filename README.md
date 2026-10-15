@@ -37,6 +37,17 @@ npm run test:marketing
 
 Commercial pages are rendered statically. New products belong under `/[lang]/solutions/[slug]`; sector pages preserve existing URLs. Previously empty beauty/services routes redirect permanently to the general business offering. The full-screen intro and unused older landing components were retired. Historical public assets and help content remain available.
 
+The pricing page also distinguishes included shared map usage from the planned
+Maps Plus extension: 149 ILS excluding VAT per establishment/month, with 500 Foody
+optimization credits (one per single-courier stop, three per fleet-allocation stop),
+10,000 Google tiles, 500 address searches and 500 route calls. Recalculations count
+again; higher volumes require a quote. The owner delegated these future rates on
+15 October 2026. The offer is explicitly in preparation, with contact only and no
+automatic charge or relaxation of current provider caps. The mirrored
+`src/lib/marketing/maps-offers.json` must equal the API's canonical
+`internal/delivery/maps_offers.json` before release. Existing software launch prices
+and included delivery management remain unchanged.
+
 ## Design and editorial decisions
 
 Square-inspired navigation by business and product, large merchant photography, real hardware images, specific use cases and a consistent demo CTA. Palette: white `#ffffff`, ink `#171717`, Foody orange `#eb5204`, campaign orange `#ff7b45`, light blue `#dceaff`, navy `#153b5b`. Heebo serves Hebrew; Manrope serves French and English. Both are self-hosted with their OFL licenses.
