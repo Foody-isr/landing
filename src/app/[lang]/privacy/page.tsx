@@ -8,9 +8,9 @@ export default function PrivacyPage() {
       <main id="main-content" className="legal-page" lang="en" dir="ltr">
         <div className="legal-inner">
           <h1>Privacy Policy</h1>
-          <p className="legal-updated">Last updated: March 5, 2026</p>
+          <p className="legal-updated">Last updated: October 16, 2026</p>
 
-          <p>Foody (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) operates the <strong>Foody POS</strong> iPad application and the <strong>Foody</strong> web ordering platform. This Privacy Policy explains how we collect, use, and protect your information when you use our services.</p>
+          <p>Foody (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) operates the <strong>Foody POS</strong> iPad application, the <strong>Foody</strong> web ordering platform, and the <strong>Foody</strong> marketing website. This Privacy Policy explains how we collect, use, and protect your information when you use our services.</p>
 
           <h2>1. Information We Collect</h2>
           <h3>a) Restaurant Staff (POS App)</h3>
@@ -44,6 +44,7 @@ export default function PrivacyPage() {
             <li><strong>Payment processors:</strong> PayPlus, to process transactions securely.</li>
             <li><strong>Restaurant operators:</strong> Order and customer data is shared with the restaurant that receives your order.</li>
             <li><strong>Hosting providers:</strong> AWS for secure server infrastructure.</li>
+            <li><strong>Advertising measurement:</strong> Meta receives page-view and browser data from the marketing website through the Meta Pixel, as described below.</li>
             <li><strong>Legal requirements:</strong> When required by law or to protect our rights.</li>
           </ul>
 
@@ -69,7 +70,8 @@ export default function PrivacyPage() {
           </ul>
 
           <h2>7. Cookies &amp; Tracking</h2>
-          <p>The Foody POS iPad app does not use cookies. The web ordering platform uses essential cookies for session management only. We do not use third-party advertising trackers.</p>
+          <p>The Foody POS iPad app does not use cookies. The web ordering platform uses essential cookies for session management only.</p>
+          <p>The Foody marketing website uses the Meta (Facebook) Pixel to measure page visits and advertising performance. The Pixel can use cookies and share the page URL, browser and device information, and online identifiers with Meta. Learn more in <a href="https://www.facebook.com/privacy/policy/">Meta&apos;s Privacy Policy</a>.</p>
 
           <h2>8. Children&apos;s Privacy</h2>
           <p>Our services are not directed to children under 13. We do not knowingly collect personal information from children.</p>
