@@ -22,6 +22,12 @@ npm run test:marketing
 
 `MARKETING_BASE_URL` changes the smoke-test target. `NEXT_PUBLIC_SITE_URL` controls canonical URLs (default `https://foody-pos.co.il`). No deployment or environment changes are needed to preview locally. After moving route files, `npx next typegen` regenerates Next's route types. Do not run a production build and the development server against the same `.next` directory concurrently.
 
+## Advertising measurement
+
+Production builds include Meta Pixel `1059276727609296` on every landing route and language. `src/components/MetaPixel.tsx` initializes it after hydration and sends `PageView` with `trackSingle` for the initial page and subsequent pathname changes, including browser back/forward. This supports repeated page views for this Pixel; global `track` deduplicates them. Meta's automatic history tracking is disabled to prevent duplicate events. A direct `noscript` image covers visits without JavaScript. `next dev` does not load the Pixel; local production previews do. No custom conversion events are added.
+
+The CSP permits the Meta script/configuration origin (`connect.facebook.net`) and event endpoint (`www.facebook.com`); other security directives remain in place. The privacy page discloses this marketing-site tracking. When testing a production preview in an automated browser, intercept Meta requests to avoid sending synthetic visits to the live Pixel.
+
 ## Content and routes
 
 - `src/lib/marketing/content.ts`: Hebrew, French and English homepage, pricing, demo and contact copy.
