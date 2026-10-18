@@ -561,10 +561,13 @@
       "selectors": {
         "foodyadmin": [
           "src/app/[restaurantId]/settings/orders/ProcessingSettings.tsx",
-          "src/app/[restaurantId]/settings/orders/*Workflow*"
+          "src/app/[restaurantId]/settings/orders/*Workflow*",
+          "src/app/[restaurantId]/settings/orders/WorkflowStageMessage.tsx",
+          "src/lib/settings-navigation.ts"
         ],
         "foodyserver": [
-          "internal/orderworkflow/**"
+          "internal/orders/workflow*.go",
+          "internal/metawhatsapp/workflow*.go"
         ],
         "foodypos": [
           "lib/features/orders/providers/order_workflow*"
@@ -1381,12 +1384,16 @@
           "src/app/[restaurantId]/settings/message-templates/**",
           "src/components/settings/MetaWhatsAppTemplates.tsx",
           "src/components/settings/MetaWhatsAppSatisfaction.tsx",
-          "src/components/orders/*Workflow*.tsx"
+          "src/components/orders/*Workflow*.tsx",
+          "src/app/[restaurantId]/settings/orders/WorkflowStageMessage.tsx",
+          "src/app/[restaurantId]/settings/orders/OrderWorkflowBuilder.tsx",
+          "src/lib/settings-navigation.ts"
         ],
         "foodyserver": [
           "internal/messagetemplates/**",
           "internal/whatsappmessage/**",
-          "internal/orders/workflow*.go"
+          "internal/orders/workflow*.go",
+          "internal/metawhatsapp/workflow*.go"
         ]
       }
     },
@@ -1734,6 +1741,48 @@
         ],
         "foodyweb": [
           "app/r/[restaurantId]/[page]/**"
+        ]
+      }
+    },
+    {
+      "id": "order-payment-links",
+      "article": "payments/payment-links-and-balance",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/orders/new/page.tsx",
+          "src/components/orders/NewOrderCheckoutDrawer.tsx",
+          "src/components/orders/TakePaymentDialog.tsx",
+          "src/components/orders/OrdersWorkspace.tsx",
+          "src/components/orders/detail/context/MoneyPanel.tsx",
+          "src/components/orders/detail/OrderDetailModal.tsx"
+        ],
+        "foodyserver": [
+          "internal/payment/handler.go",
+          "internal/payment/resolver.go",
+          "internal/orders/billing*.go",
+          "internal/orders/partial_payment_test.go",
+          "internal/orders/service.go"
+        ]
+      }
+    },
+    {
+      "id": "sumit-invoices",
+      "article": "payments/sumit-invoices",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/components/orders/detail/context/InvoicePanel.tsx",
+          "src/components/orders/detail/context/OrderReferences.tsx",
+          "src/components/orders/detail/menus/OrderOverflowMenu.tsx",
+          "src/components/orders/detail/OrderDetailModal.tsx"
+        ],
+        "foodyserver": [
+          "internal/payment/invoice_handler*.go",
+          "internal/payment/sumit_documents_test.go",
+          "internal/payment/sumit.go",
+          "internal/payment/handler.go",
+          "internal/orders/billing*.go"
         ]
       }
     }

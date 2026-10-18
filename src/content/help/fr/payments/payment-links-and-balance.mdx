@@ -1,0 +1,35 @@
+---
+title: Liens de paiement Sumit et compléments de paiement
+description: >-
+  Admin → Commandes → ouvrez une commande. Sumit doit être le prestataire actif du restaurant, configuré par l’équipe
+  Foody autorisée. La gestion des commandes est requise pour encaisser.
+apps: foodyadmin
+tags:
+  - payments
+  - order-payment-links
+updatedAt: '2026-10-18'
+featureId: order-payment-links
+audience: public
+releaseStatus: available
+---
+Admin → Commandes → ouvrez une commande. Sumit doit être le prestataire actif du restaurant, configuré par l’équipe Foody autorisée. La gestion des commandes est requise pour encaisser.
+
+<span id="initial-link" />
+
+## Générer le lien de paiement initial
+
+1. Dans Commandes → Nouvelle commande, ajoutez articles et quantités. Passez à l’encaissement, vérifiez service, coordonnées client, total, remise et livraison. Choisissez Lien de paiement comme moyen ; le client paie sur la page hébergée du prestataire.
+2. Créez la commande. L’écran du lien prêt affiche l’URL. Cliquez Copier le lien puis transmettez-le au bon client par le canal choisi.
+3. Pour une commande existante non annulée avec paiement En attente, ouvrez le récapitulatif de paiement et cliquez Obtenir le lien de paiement. Copiez-le ou utilisez Partager WhatsApp si un téléphone client est présent. Cette action ouvre WhatsApp avec un texte préparé ; elle n’est pas un envoi automatique de modèle.
+4. Le client ouvre la page Sumit et règle le paiement. Actualisez la commande et attendez le statut Payé vérifié par Foody. Créer, copier ou partager le lien n’encaisse pas et ne prouve pas le paiement. Ne marquez pas payé manuellement parce que le client a ouvert la page. Si la génération échoue, la commande peut déjà exister : rouvrez-la avant d’en créer une autre.
+
+<span id="partial-balance" />
+
+## Enregistrer un paiement partiel et encaisser seulement le complément
+
+Partiellement payé signifie que Foody a enregistré un montant encaissé inférieur au total. Ce n’est ni une remise, ni un remboursement, ni la preuve qu’un lien complémentaire a déjà été envoyé.
+1. Ouvrez Commandes → la commande → Actions → Encaisser. Renseignez le moyen réel et le Montant encaissé ; pour une carte externe/un virement, ajoutez la référence disponible. Enregistrez seulement l’argent réellement reçu : cet enregistrement manuel ne débite pas lui-même la carte via Sumit. Confirmez.
+2. Actualisez et vérifiez Partiellement payé, montant déjà payé et solde dû. Exemple : total 150 ₪, encaissé 50 ₪, complément 100 ₪.
+3. Dans la zone du complément requis, cliquez Générer un lien de paiement. Avec Sumit actif, Foody produit un lien hébergé pour les 100 ₪ restants, sans refaire payer les 150 ₪. Cette action est explicite ; le statut partiel seul ne génère ni n’envoie le lien.
+4. Copiez le lien ou utilisez Partager WhatsApp, vérifiez le destinataire et envoyez-le. Le client règle le complément. Actualisez puis vérifiez le statut final et le montant encaissé ; seule la confirmation de paiement solde le complément.
+5. Une commande payée dont le total augmente après modification peut aussi afficher un solde dû et cette action. Si le total diminue, traitez séparément le montant à rembourser ; aucun remboursement ou nouveau débit n’est automatique. Sans solde positif, ne générez pas de complément. En cas de résultat incertain, vérifiez commande et prestataire avant régénération/nouvelle tentative. Les acomptes catering ont une [procédure de solde d’événement distincte](/fr/help/catering/events-and-balance).

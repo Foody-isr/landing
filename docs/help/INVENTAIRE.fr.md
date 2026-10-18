@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-18.
 
-98 fiches de fonctionnalités, 348 procédures/sous-fonctionnalités, dont 89 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2049 fichiers applicatifs et 1966 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+100 fiches de fonctionnalités, 359 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2049 fichiers applicatifs et 1966 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodylanding | 127 | 21 | 8c4fc2b928d2 ; versioned |
-| foodyadmin | 734 | 754 | 55acf5ef5008 ; versioned |
-| foodyserver | 497 | 832 | 6525250c45e2 ; versioned |
-| foodyweb | 329 | 163 | dfdb76444170 ; versioned |
-| foodypos | 320 | 149 | 789065b4857b ; versioned |
-| foodybackoffice | 42 | 47 | e73fa6fece89 ; versioned |
+| foodylanding | 127 | 21 | 1bf2f0c71f15 ; versioned |
+| foodyadmin | 734 | 754 | e1a9fff05573 ; versioned |
+| foodyserver | 497 | 832 | 855929eeb83b ; versioned |
+| foodyweb | 329 | 163 | 37ed451c9637 ; versioned |
+| foodypos | 320 | 149 | 899adccd4d02 ; versioned |
+| foodybackoffice | 42 | 47 | 7e3fcb46bf54 ; versioned |
 
 ## getting-started
 
@@ -56,6 +56,7 @@ Identifiant : `getting-started-using-support`. Public : public. Disponibilité :
 - [Poser une question](../../src/content/help/fr/getting-started/using-support.mdx#section-2)
 - [Si vous ne trouvez pas la réponse](../../src/content/help/fr/getting-started/using-support.mdx#section-3)
 - [Signaler une procédure différente de votre écran](../../src/content/help/fr/getting-started/using-support.mdx#report-outdated-guide)
+- [Demander les parcours WhatsApp et les paiements Sumit](../../src/content/help/fr/getting-started/using-support.mdx#communications-and-payments)
 
 ### [Offres, démonstration et contact Foody](../../src/content/help/fr/getting-started/offers-and-contact.mdx)
 
@@ -382,6 +383,7 @@ Identifiant : `orders-managing-orders`. Public : public. Disponibilité : availa
 - [Comment ça marche (simplement)](../../src/content/help/fr/orders/managing-orders.mdx#section-2)
 - [Le flux d'une commande](../../src/content/help/fr/orders/managing-orders.mdx#section-3)
 - [Bon à savoir](../../src/content/help/fr/orders/managing-orders.mdx#section-4)
+- [Encaisser un complément et ouvrir les factures Sumit](../../src/content/help/fr/orders/managing-orders.mdx#payment-links-invoices)
 
 ### [Types de commandes et remise](../../src/content/help/fr/orders/order-types.mdx)
 
@@ -411,6 +413,7 @@ Identifiant : `order-detail`. Public : public. Disponibilité : available. Servi
 - [Modifier les informations enregistrées](../../src/content/help/fr/orders/order-details.mdx#edit)
 - [Accepter, préparer et remettre](../../src/content/help/fr/orders/order-details.mdx#status)
 - [Envoyer volontairement les messages client](../../src/content/help/fr/orders/order-details.mdx#communications)
+- [Encaisser un complément et ouvrir les factures Sumit](../../src/content/help/fr/orders/order-details.mdx#payment-links-invoices)
 
 ### [Calendrier du restaurant et exceptions](../../src/content/help/fr/orders/calendar.mdx)
 
@@ -478,6 +481,7 @@ Identifiant : `payments-how-payments-work`. Public : public. Disponibilité : av
 - [Configuration](../../src/content/help/fr/payments/how-payments-work.mdx#section-1)
 - [Vérifier un paiement en ligne](../../src/content/help/fr/payments/how-payments-work.mdx#section-2)
 - [Résultat en échec ou incertain](../../src/content/help/fr/payments/how-payments-work.mdx#section-3)
+- [Liens, paiements partiels et factures Sumit](../../src/content/help/fr/payments/how-payments-work.mdx#links-invoices)
 
 ### [Encaisser sur la caisse](../../src/content/help/fr/payments/pos-checkout.mdx)
 
@@ -495,6 +499,21 @@ Identifiant : `payment-configuration`. Public : public. Disponibilité : availab
 - [Comprendre les moyens enregistrés](../../src/content/help/fr/payments/providers-and-cibus.mdx#saved-methods)
 - [Configurer et utiliser Cibus](../../src/content/help/fr/payments/providers-and-cibus.mdx#cibus)
 - [Régler politique de paiement, TVA et pourboires](../../src/content/help/fr/payments/providers-and-cibus.mdx#policy-vat-tips)
+
+### [Liens de paiement Sumit et compléments de paiement](../../src/content/help/fr/payments/payment-links-and-balance.mdx)
+
+Identifiant : `order-payment-links`. Public : public. Disponibilité : available. Services : foodyadmin, foodyserver.
+
+- [Générer le lien de paiement initial](../../src/content/help/fr/payments/payment-links-and-balance.mdx#initial-link)
+- [Enregistrer un paiement partiel et encaisser seulement le complément](../../src/content/help/fr/payments/payment-links-and-balance.mdx#partial-balance)
+
+### [Consulter, télécharger et envoyer les factures Sumit](../../src/content/help/fr/payments/sumit-invoices.mdx)
+
+Identifiant : `sumit-invoices`. Public : public. Disponibilité : available. Services : foodyadmin, foodyserver.
+
+- [Retrouver le document officiel et son PDF](../../src/content/help/fr/payments/sumit-invoices.mdx#view-download)
+- [Envoyer ou partager la facture existante](../../src/content/help/fr/payments/sumit-invoices.mdx#send-share)
+- [Si la facture est absente ou indisponible](../../src/content/help/fr/payments/sumit-invoices.mdx#missing-document)
 
 ## printers
 
@@ -612,12 +631,13 @@ Identifiant : `pos-service-modes`. Public : public. Disponibilité : available. 
 
 ### [Traitement des commandes et flux cuisine](../../src/content/help/fr/settings/workflow-settings.mdx)
 
-Identifiant : `order-workflow`. Public : public. Disponibilité : available. Services : foodyadmin, foodypos.
+Identifiant : `order-workflow`. Public : public. Disponibilité : available. Services : foodyadmin, foodyserver, foodypos.
 
 - [Vérifier l’acceptation des commandes](../../src/content/help/fr/settings/workflow-settings.mdx#approval)
 - [Configurer la progression cuisine](../../src/content/help/fr/settings/workflow-settings.mdx#kitchen)
 - [Régler les délais de préparation](../../src/content/help/fr/settings/workflow-settings.mdx#clock)
 - [Vérifier les réglages enregistrés](../../src/content/help/fr/settings/workflow-settings.mdx#save)
+- [Activer les messages clients d’une étape](../../src/content/help/fr/settings/workflow-settings.mdx#whatsapp-notifications)
 
 ### [Profil, langues et horaires du restaurant](../../src/content/help/fr/settings/restaurant-profile.mdx)
 
@@ -789,13 +809,14 @@ Identifiant : `whatsapp`. Public : public. Disponibilité : available. Services 
 - [Connecter un expéditeur](../../src/content/help/fr/communications/whatsapp.mdx#connection)
 - [Utiliser Meta coexistence sous activation](../../src/content/help/fr/communications/whatsapp.mdx#meta)
 - [Lire l’historique des messages](../../src/content/help/fr/communications/whatsapp.mdx#delivery)
+- [Affecter un modèle WhatsApp approuvé à une notification](../../src/content/help/fr/communications/whatsapp.mdx#assign-notification)
 
 ### [Modèles et automatisations de messages](../../src/content/help/fr/communications/templates-and-automation.mdx)
 
 Identifiant : `message-templates`. Public : public. Disponibilité : available. Services : foodyadmin, foodyserver.
 
 - [Créer et vérifier un modèle](../../src/content/help/fr/communications/templates-and-automation.mdx#template)
-- [Associer les messages aux étapes](../../src/content/help/fr/communications/templates-and-automation.mdx#stage)
+- [Configurer le déclencheur WhatsApp, la notification client et le modèle](../../src/content/help/fr/communications/templates-and-automation.mdx#stage)
 
 ## guest
 
