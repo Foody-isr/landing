@@ -4,10 +4,10 @@
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "4ba558adaddaa19b48e3cb7a9e3265c4e4f5c51e",
+      "sourceCommit": "5d3b3ec54695807c98cf184628b26a63e6413a6d",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "df8af3fd3f6340b3da86ba8834530ca52cd59b84c21b008d84217fc77033f19e",
-      "workingTreeHasChanges": false,
+      "sourceSnapshot": "6f52171518bfd555598e80474c0c251031047715b685cf620a0dfdcf9b512642",
+      "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
           "sha256": "33cf30b683837b76977ed47c14d5d91ccb1b34bd60e9f62d124b8cc1079231aa",
@@ -2872,7 +2872,7 @@
           ]
         },
         "internal/payment/verifone_theme.go": {
-          "sha256": "d21e7bab8799db97db25c8f6593a552c30a55b1d023aa70c82826db3e1e1dc81",
+          "sha256": "eede363ca0dd1bcadc4118ed5cb766382d63b503af6324c768d64d59d9802f0f",
           "features": [
             "payments-how-payments-work",
             "pos-payments",
@@ -3787,7 +3787,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "1a729e7a70cc6901766d46a5664c0de1e52fe7c90be168a79f29f90e5e4bd1d9",
+          "sha256": "33ab55d4b3682d94021319fa5a11f08917c176afa1e28c0819dd50632d8583a4",
           "features": [
             "getting-started-using-support",
             "platform-api"
@@ -4090,10 +4090,10 @@
     },
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "da56ee0b5f4e1ab1ad81a9599d48c6683d629e10",
+      "sourceCommit": "25838f1f1f110a1145c52ced91ef0a834e3ec8de",
       "releaseStatus": "versioned",
       "sourceSnapshot": "ff05ad7935fa305adab8942fdf609046c7fef37e64a6f89bf966e93385ea077e",
-      "workingTreeHasChanges": true,
+      "workingTreeHasChanges": false,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
           "sha256": "13c58bc11284d66c7fb9c4d79c1b3e92c6e05539164f2147a5e966d9c17ac275",
@@ -9271,10 +9271,10 @@
     },
     "foodyweb": {
       "repository": "https://github.com/Foody-isr/web",
-      "sourceCommit": "4729df0b8034869388e8ffcc4ba08d73d546c1be",
+      "sourceCommit": "6c96b92124ea8a432d10cacb8f4d14f362f84ee7",
       "releaseStatus": "versioned",
       "sourceSnapshot": "2fa089bd0b875a2d8a0db56f1a31398c6a48eef1ff043d41260ac7f01658a3c8",
-      "workingTreeHasChanges": true,
+      "workingTreeHasChanges": false,
       "sourceFiles": {
         "app/@cart/(.)order/cart/page.tsx": {
           "sha256": "1d5bfacb3688b858b55225ea9a850fb106a77a2b64afe399cf8b42ca600d83b3",
@@ -11393,7 +11393,7 @@
     },
     "foodylanding": {
       "repository": "https://github.com/Foody-isr/landing",
-      "sourceCommit": "08869f97e9fb11a53361496347ab591ecc056bd5",
+      "sourceCommit": "d20e1269963e1df7d6483d07c7f221f0d530698c",
       "releaseStatus": "versioned",
       "sourceSnapshot": "fb8c0cfa166208b984db58a68c14c9ddab4b3c6cc377e37c1d9543842d68f6e2",
       "workingTreeHasChanges": true,
@@ -14416,7 +14416,7 @@
       "sourceCommit": "79a9ee38d09c721536edf416f8acde8573658dff",
       "releaseStatus": "versioned",
       "sourceSnapshot": "23b7a451600c740ec8092a00a0a4c7aeb8ff8aec1cccba5243daec400495b378",
-      "workingTreeHasChanges": true,
+      "workingTreeHasChanges": false,
       "sourceFiles": {
         "src/app/api/operations/status/route.ts": {
           "sha256": "fdc2921e2c97a4271e461aa265dc26e61a8726c88b534025a558a15957420118",
@@ -22921,6 +22921,19 @@
         ]
       },
       "operations": [
+        {
+          "id": "verifone-readable-hosted-theme",
+          "title": {
+            "en": "Keep the hosted payment form readable",
+            "fr": "Garder la page de paiement lisible",
+            "he": "שמירה על טופס תשלום קריא"
+          },
+          "instructions": {
+            "en": "When Foody enables a restaurant-branded Verifone hosted checkout, the payment page uses light surfaces and dark text, even if the restaurant website is dark. The published logo is kept and the brand/button accent is adapted when needed for readable contrast. This concerns online hosted payments, not POS terminals or native Apple Pay/Google Pay sheets. If an older page is unreadable, contact the Foody team to resynchronize its payment theme. The update applies to newly issued Checkout links, not the page already open. Check the current payment status before requesting another link; never repeat a debit because of a display problem.",
+            "fr": "Lorsque Foody active un thème Verifone personnalisé, la page de paiement hébergée utilise des fonds clairs et des textes foncés, même si le site du restaurant est sombre. Le logo publié est conservé et la couleur de marque ou du bouton est adaptée si nécessaire pour rester lisible. Cela concerne les paiements en ligne hébergés, pas les terminaux en caisse ni les fenêtres natives Apple Pay ou Google Pay. Si une ancienne page est illisible, contactez l’équipe Foody pour resynchroniser son thème de paiement. La mise à jour concerne les nouveaux liens Checkout, pas la page déjà ouverte. Vérifiez le statut du paiement avant de demander un autre lien ; ne répétez jamais un débit pour un problème d’affichage.",
+            "he": "כאשר Foody מפעילה עמוד תשלום מאוחסן של Verifone עם מיתוג המסעדה, הטופס משתמש ברקעים בהירים ובטקסט כהה גם אם אתר המסעדה כהה. הלוגו שפורסם נשמר וצבע המותג או הכפתור מותאם לפי הצורך לניגודיות קריאה. הנוהל נוגע לתשלומים מקוונים בעמוד מאוחסן ולא למסופי קופה או לחלונות המקוריים של Apple Pay ו-Google Pay. אם עמוד ישן אינו קריא, פנו לצוות Foody לסנכרון מחדש של ערכת התשלום. העדכון חל על קישורי Checkout חדשים ולא על העמוד שכבר פתוח. בדקו את מצב התשלום לפני בקשת קישור אחר; אין לחזור על חיוב בגלל בעיית תצוגה."
+          }
+        },
         {
           "id": "weight-hold-margin",
           "level": 2,
@@ -32143,6 +32156,19 @@
       },
       "operations": [
         {
+          "id": "verifone-readable-hosted-theme",
+          "title": {
+            "en": "Keep the hosted payment form readable",
+            "fr": "Garder la page de paiement lisible",
+            "he": "שמירה על טופס תשלום קריא"
+          },
+          "instructions": {
+            "en": "When Foody enables a restaurant-branded Verifone hosted checkout, the payment page uses light surfaces and dark text, even if the restaurant website is dark. The published logo is kept and the brand/button accent is adapted when needed for readable contrast. This concerns online hosted payments, not POS terminals or native Apple Pay/Google Pay sheets. If an older page is unreadable, contact the Foody team to resynchronize its payment theme. The update applies to newly issued Checkout links, not the page already open. Check the current payment status before requesting another link; never repeat a debit because of a display problem.",
+            "fr": "Lorsque Foody active un thème Verifone personnalisé, la page de paiement hébergée utilise des fonds clairs et des textes foncés, même si le site du restaurant est sombre. Le logo publié est conservé et la couleur de marque ou du bouton est adaptée si nécessaire pour rester lisible. Cela concerne les paiements en ligne hébergés, pas les terminaux en caisse ni les fenêtres natives Apple Pay ou Google Pay. Si une ancienne page est illisible, contactez l’équipe Foody pour resynchroniser son thème de paiement. La mise à jour concerne les nouveaux liens Checkout, pas la page déjà ouverte. Vérifiez le statut du paiement avant de demander un autre lien ; ne répétez jamais un débit pour un problème d’affichage.",
+            "he": "כאשר Foody מפעילה עמוד תשלום מאוחסן של Verifone עם מיתוג המסעדה, הטופס משתמש ברקעים בהירים ובטקסט כהה גם אם אתר המסעדה כהה. הלוגו שפורסם נשמר וצבע המותג או הכפתור מותאם לפי הצורך לניגודיות קריאה. הנוהל נוגע לתשלומים מקוונים בעמוד מאוחסן ולא למסופי קופה או לחלונות המקוריים של Apple Pay ו-Google Pay. אם עמוד ישן אינו קריא, פנו לצוות Foody לסנכרון מחדש של ערכת התשלום. העדכון חל על קישורי Checkout חדשים ולא על העמוד שכבר פתוח. בדקו את מצב התשלום לפני בקשת קישור אחר; אין לחזור על חיוב בגלל בעיית תצוגה."
+          }
+        },
+        {
           "id": "weight-hold-margin",
           "level": 2,
           "title": {
@@ -33367,6 +33393,19 @@
         ]
       },
       "operations": [
+        {
+          "id": "verifone-readable-hosted-theme",
+          "title": {
+            "en": "Keep the hosted payment form readable",
+            "fr": "Garder la page de paiement lisible",
+            "he": "שמירה על טופס תשלום קריא"
+          },
+          "instructions": {
+            "en": "When Foody enables a restaurant-branded Verifone hosted checkout, the payment page uses light surfaces and dark text, even if the restaurant website is dark. The published logo is kept and the brand/button accent is adapted when needed for readable contrast. This concerns online hosted payments, not POS terminals or native Apple Pay/Google Pay sheets. If an older page is unreadable, contact the Foody team to resynchronize its payment theme. The update applies to newly issued Checkout links, not the page already open. Check the current payment status before requesting another link; never repeat a debit because of a display problem.",
+            "fr": "Lorsque Foody active un thème Verifone personnalisé, la page de paiement hébergée utilise des fonds clairs et des textes foncés, même si le site du restaurant est sombre. Le logo publié est conservé et la couleur de marque ou du bouton est adaptée si nécessaire pour rester lisible. Cela concerne les paiements en ligne hébergés, pas les terminaux en caisse ni les fenêtres natives Apple Pay ou Google Pay. Si une ancienne page est illisible, contactez l’équipe Foody pour resynchroniser son thème de paiement. La mise à jour concerne les nouveaux liens Checkout, pas la page déjà ouverte. Vérifiez le statut du paiement avant de demander un autre lien ; ne répétez jamais un débit pour un problème d’affichage.",
+            "he": "כאשר Foody מפעילה עמוד תשלום מאוחסן של Verifone עם מיתוג המסעדה, הטופס משתמש ברקעים בהירים ובטקסט כהה גם אם אתר המסעדה כהה. הלוגו שפורסם נשמר וצבע המותג או הכפתור מותאם לפי הצורך לניגודיות קריאה. הנוהל נוגע לתשלומים מקוונים בעמוד מאוחסן ולא למסופי קופה או לחלונות המקוריים של Apple Pay ו-Google Pay. אם עמוד ישן אינו קריא, פנו לצוות Foody לסנכרון מחדש של ערכת התשלום. העדכון חל על קישורי Checkout חדשים ולא על העמוד שכבר פתוח. בדקו את מצב התשלום לפני בקשת קישור אחר; אין לחזור על חיוב בגלל בעיית תצוגה."
+          }
+        },
         {
           "id": "weight-hold-margin",
           "level": 2,
@@ -35343,6 +35382,19 @@
       },
       "operations": [
         {
+          "id": "verifone-readable-hosted-theme",
+          "title": {
+            "en": "Keep the hosted payment form readable",
+            "fr": "Garder la page de paiement lisible",
+            "he": "שמירה על טופס תשלום קריא"
+          },
+          "instructions": {
+            "en": "A superadmin opens Restaurant > Payment > Verifone in Backoffice and saves payment settings before choosing Synchronize published logo and colors. Synchronization uses only the published logo and selected button/brand accent. HPP always uses a light page, white panels and dark text; pale accents are darkened for at least 4.5:1 contrast on the page and panels. After the contrast-policy API release is installed, resynchronize previously enabled restaurants in the approved environment; the old snapshot is marked outdated. Verify logo, entered digits, labels, errors and payment icons, including mobile and French/Hebrew/English, without submitting an unapproved transaction. Website colors and native wallet sheets are unchanged. The new restaurant-specific theme is not the organization default and applies only to newly issued Checkout links. Existing links and financial state are unchanged; verify payment status before any retry. Never bulk-update production without approval.",
+            "fr": "Un superadmin ouvre Restaurant > Payment > Verifone dans Backoffice et enregistre les réglages de paiement avant de choisir Synchronize published logo and colors. La synchronisation utilise uniquement le logo publié et la couleur de marque ou du bouton sélectionné. HPP utilise toujours une page claire, des panneaux blancs et du texte foncé ; les couleurs trop pâles sont assombries pour atteindre au moins 4,5:1 de contraste sur la page et les panneaux. Après installation de la version API avec cette règle de contraste, resynchronisez les restaurants déjà activés dans l’environnement autorisé ; l’ancien thème est signalé comme obsolète. Vérifiez le logo, les chiffres saisis, les labels, les erreurs et les icônes, sur mobile et en français, hébreu et anglais, sans soumettre de transaction non autorisée. Les couleurs du site et les fenêtres natives des wallets restent inchangées. Le nouveau thème propre au restaurant ne devient pas le thème par défaut de l’organisation et ne concerne que les nouveaux liens Checkout. Les liens existants et l’état financier sont conservés ; vérifiez le paiement avant toute nouvelle tentative. Aucune mise à jour groupée de production sans autorisation.",
+            "he": "מנהל superadmin פותח Restaurant > Payment > Verifone ב-Backoffice ושומר את הגדרות התשלום לפני בחירה ב-Synchronize published logo and colors. הסנכרון משתמש רק בלוגו שפורסם ובצבע המותג או הכפתור שנבחר. עמוד HPP משתמש תמיד ברקע בהיר, בלוחות לבנים ובטקסט כהה; צבעים בהירים מדי מוכהים לניגודיות של לפחות 4.5:1 מול העמוד והלוחות. לאחר התקנת גרסת ה-API עם מדיניות הניגודיות, מסנכרנים מחדש מסעדות שהמיתוג שלהן כבר הופעל בסביבה שאושרה; תמונת המצב הישנה מסומנת כלא מעודכנת. בודקים לוגו, ספרות שהוזנו, תוויות, שגיאות וסמלי תשלום, גם בנייד ובעברית, צרפתית ואנגלית, בלי לשלוח עסקה שלא אושרה. צבעי האתר והחלונות המקוריים של הארנקים אינם משתנים. הערכה החדשה ייחודית למסעדה, אינה הופכת לברירת המחדל של הארגון וחלה רק על קישורי Checkout חדשים. הקישורים הקיימים והמצב הכספי נשמרים; בודקים את מצב התשלום לפני ניסיון נוסף. אין לבצע עדכון גורף בסביבת ייצור ללא אישור."
+          }
+        },
+        {
           "id": "entitlements",
           "title": {
             "en": "Review feature and plan assignments",
@@ -35860,6 +35912,19 @@
         ]
       },
       "operations": [
+        {
+          "id": "verifone-readable-hosted-theme",
+          "title": {
+            "en": "Keep the hosted payment form readable",
+            "fr": "Garder la page de paiement lisible",
+            "he": "שמירה על טופס תשלום קריא"
+          },
+          "instructions": {
+            "en": "A superadmin opens Restaurant > Payment > Verifone in Backoffice and saves payment settings before choosing Synchronize published logo and colors. Synchronization uses only the published logo and selected button/brand accent. HPP always uses a light page, white panels and dark text; pale accents are darkened for at least 4.5:1 contrast on the page and panels. After the contrast-policy API release is installed, resynchronize previously enabled restaurants in the approved environment; the old snapshot is marked outdated. Verify logo, entered digits, labels, errors and payment icons, including mobile and French/Hebrew/English, without submitting an unapproved transaction. Website colors and native wallet sheets are unchanged. The new restaurant-specific theme is not the organization default and applies only to newly issued Checkout links. Existing links and financial state are unchanged; verify payment status before any retry. Never bulk-update production without approval.",
+            "fr": "Un superadmin ouvre Restaurant > Payment > Verifone dans Backoffice et enregistre les réglages de paiement avant de choisir Synchronize published logo and colors. La synchronisation utilise uniquement le logo publié et la couleur de marque ou du bouton sélectionné. HPP utilise toujours une page claire, des panneaux blancs et du texte foncé ; les couleurs trop pâles sont assombries pour atteindre au moins 4,5:1 de contraste sur la page et les panneaux. Après installation de la version API avec cette règle de contraste, resynchronisez les restaurants déjà activés dans l’environnement autorisé ; l’ancien thème est signalé comme obsolète. Vérifiez le logo, les chiffres saisis, les labels, les erreurs et les icônes, sur mobile et en français, hébreu et anglais, sans soumettre de transaction non autorisée. Les couleurs du site et les fenêtres natives des wallets restent inchangées. Le nouveau thème propre au restaurant ne devient pas le thème par défaut de l’organisation et ne concerne que les nouveaux liens Checkout. Les liens existants et l’état financier sont conservés ; vérifiez le paiement avant toute nouvelle tentative. Aucune mise à jour groupée de production sans autorisation.",
+            "he": "מנהל superadmin פותח Restaurant > Payment > Verifone ב-Backoffice ושומר את הגדרות התשלום לפני בחירה ב-Synchronize published logo and colors. הסנכרון משתמש רק בלוגו שפורסם ובצבע המותג או הכפתור שנבחר. עמוד HPP משתמש תמיד ברקע בהיר, בלוחות לבנים ובטקסט כהה; צבעים בהירים מדי מוכהים לניגודיות של לפחות 4.5:1 מול העמוד והלוחות. לאחר התקנת גרסת ה-API עם מדיניות הניגודיות, מסנכרנים מחדש מסעדות שהמיתוג שלהן כבר הופעל בסביבה שאושרה; תמונת המצב הישנה מסומנת כלא מעודכנת. בודקים לוגו, ספרות שהוזנו, תוויות, שגיאות וסמלי תשלום, גם בנייד ובעברית, צרפתית ואנגלית, בלי לשלוח עסקה שלא אושרה. צבעי האתר והחלונות המקוריים של הארנקים אינם משתנים. הערכה החדשה ייחודית למסעדה, אינה הופכת לברירת המחדל של הארגון וחלה רק על קישורי Checkout חדשים. הקישורים הקיימים והמצב הכספי נשמרים; בודקים את מצב התשלום לפני ניסיון נוסף. אין לבצע עדכון גורף בסביבת ייצור ללא אישור."
+          }
+        },
         {
           "id": "weight-hold-margin",
           "level": 2,
@@ -79962,7 +80027,7 @@
   "coverage": {
     "sharedRuntimeFiles": 427,
     "features": 98,
-    "operations": 412,
+    "operations": 417,
     "sourceFiles": 2066,
     "surfaces": 1976,
     "unclassifiedRoutes": []

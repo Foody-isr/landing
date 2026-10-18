@@ -12,6 +12,12 @@ releaseStatus: available
 ---
 Internal Foody operators: open Features or the restaurant’s subscription/payment controls.
 
+<span id="verifone-readable-hosted-theme" />
+
+## Keep the hosted payment form readable
+
+A superadmin opens Restaurant > Payment > Verifone in Backoffice and saves payment settings before choosing Synchronize published logo and colors. Synchronization uses only the published logo and selected button/brand accent. HPP always uses a light page, white panels and dark text; pale accents are darkened for at least 4.5:1 contrast on the page and panels. After the contrast-policy API release is installed, resynchronize previously enabled restaurants in the approved environment; the old snapshot is marked outdated. Verify logo, entered digits, labels, errors and payment icons, including mobile and French/Hebrew/English, without submitting an unapproved transaction. Website colors and native wallet sheets are unchanged. The new restaurant-specific theme is not the organization default and applies only to newly issued Checkout links. Existing links and financial state are unchanged; verify payment status before any retry. Never bulk-update production without approval.
+
 <span id="entitlements" />
 
 ## Review feature and plan assignments
