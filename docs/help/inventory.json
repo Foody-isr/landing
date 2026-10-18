@@ -4,7 +4,7 @@
   "services": {
     "foodylanding": {
       "repository": "https://github.com/Foody-isr/landing",
-      "sourceCommit": "b5df96e1233d3e555c5d1b4afe025491070b7c57",
+      "sourceCommit": "6e0fa3bd7a6533d5900ee43252fb06c4aceb2cff",
       "releaseStatus": "versioned",
       "sourceSnapshot": "fb8c0cfa166208b984db58a68c14c9ddab4b3c6cc377e37c1d9543842d68f6e2",
       "workingTreeHasChanges": true,
@@ -797,7 +797,7 @@
     },
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "742def4eaeeb865239c3a37a6b0e815989580e12",
+      "sourceCommit": "cdb87a5381076884c17c0e17fa94856134c36645",
       "releaseStatus": "versioned",
       "sourceSnapshot": "eee696bcc9c54678f086324cb9392a908fa0c26048fa47c7667e195e80c0c20b",
       "workingTreeHasChanges": true,
@@ -5957,9 +5957,9 @@
     },
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "6477bf4338eb94b8e986958a283e68320bf18d31",
+      "sourceCommit": "08ea2d189394b1645a9dabb4890194888a7f2837",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "6c1f1574030d55937a4c5ae191c28408e1b77575967104be083fad82039cfda5",
+      "sourceSnapshot": "fc7a40f6740ab58265b82385911b6512b423cf8456a07227adfe6ee652f99a1e",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -9625,7 +9625,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "f2a39a4f4b04f020e79cfa86105408a295c528afdf8b804ebdc6fca5d59c08b1",
+          "sha256": "8b86c09a2436619ef0e87b769243ceac091635d4d56fd224728d0342d7738ad3",
           "features": [
             "getting-started-using-support",
             "platform-api"
@@ -9928,7 +9928,7 @@
     },
     "foodyweb": {
       "repository": "https://github.com/Foody-isr/web",
-      "sourceCommit": "26e08f7754561e81af61b9540b37488a7357304e",
+      "sourceCommit": "e40a8bdcad9948158153acfb757d964a6952ca7e",
       "releaseStatus": "versioned",
       "sourceSnapshot": "ae1105e554c91d705f092657f338ce073933cac66ba15f083d393e64684d327a",
       "workingTreeHasChanges": true,
@@ -12033,7 +12033,7 @@
     },
     "foodypos": {
       "repository": "https://github.com/Foody-isr/pos",
-      "sourceCommit": "6af04a980405ff9fde2aa39fe4dc810ad4ae5b96",
+      "sourceCommit": "eee34eee0773d8fac6a60ac783dd27ab5f610a66",
       "releaseStatus": "versioned",
       "sourceSnapshot": "9a1613d07e35c02ba3ab95f7fae09f8cd33cb7636e2921bc5718db6be724311d",
       "workingTreeHasChanges": true,
@@ -14260,7 +14260,7 @@
     },
     "foodybackoffice": {
       "repository": "https://github.com/Foody-isr/backoffice",
-      "sourceCommit": "0761ce3ef4b71acd1653537868b4cf30fa1d38f1",
+      "sourceCommit": "bf119ca95af87fb5bc49a19b6b42442e426fe494",
       "releaseStatus": "versioned",
       "sourceSnapshot": "6a96bf0f41b494aa071f98ac3829763ca6706afb2b8da31a58f1d878c4525bdb",
       "workingTreeHasChanges": true,
@@ -16150,9 +16150,9 @@
         "he": "זמינות (אזל ומלאי נמוך)"
       },
       "entry": {
-        "en": "Open the corresponding Foody workspace described below.",
-        "fr": "Ouvrez l’espace Foody correspondant décrit ci-dessous.",
-        "he": "פתחו את סביבת Foody המתאימה המתוארת למטה."
+        "fr": "Menu → Articles → article enregistré → Stock & disponibilité.",
+        "en": "Menu → Items → saved item → Stock & availability.",
+        "he": "תפריט → פריטים → פריט שמור → מלאי וזמינות."
       },
       "selectors": {
         "foodyadmin": [
@@ -16171,86 +16171,80 @@
       "operations": [
         {
           "id": "section-1",
-          "level": 2,
           "title": {
-            "en": "What Is It?",
-            "fr": "Qu'est-ce que c'est ?",
-            "he": "מה זה?"
+            "fr": "Ouvrir Stock & disponibilité",
+            "en": "Open Stock & availability",
+            "he": "פתיחת מלאי וזמינות"
           },
           "instructions": {
-            "en": "**Availability** decides — automatically — when a dish should show as **sold out** or\n**low stock** to your customers and staff, based on the dish's **recipe** and your\n**current stock**.\n\nNo more switching dishes off by hand when an ingredient runs out, and no more forgetting\nto switch them back on. When you restock, the dish comes back on its own.",
-            "fr": "La **Disponibilité** décide, automatiquement, quand un plat doit apparaître comme **épuisé**\nou en **stock faible** pour vos clients et votre équipe, selon la **recette** du plat et\nvotre **stock actuel**.\n\nFini de désactiver les plats à la main quand un ingrédient manque, et fini d'oublier de les\nréactiver. Dès que vous réapprovisionnez, le plat revient tout seul.",
-            "he": "**זמינות** מחליטה, אוטומטית, מתי מנה צריכה להופיע כ**אזלה** או ב**מלאי נמוך** ללקוחות\nולצוות שלכם — לפי ה**מתכון** של המנה וה**מלאי הנוכחי** שלכם.\n\nלא צריך יותר לכבות מנות ידנית כשמרכיב אוזל, ולא צריך לזכור להדליק אותן שוב. ברגע שאתם\nמחדשים מלאי, המנה חוזרת מעצמה."
+            "fr": "Ouvrez un article déjà enregistré dans Menu → Articles et faites défiler jusqu’à Stock & disponibilité. Le tableau présente l’article, sa quantité et son statut. La modification nécessite la permission de modifier le menu. Cette section fait partie de l’éditeur continu ; elle n’est pas un panneau sous un onglet Recette.",
+            "en": "Open a saved item from Menu → Items and scroll to Stock & availability. The table shows the item, quantity and status. Editing requires menu editing permission. This section is part of the continuous editor, not a panel under a Recipe tab.",
+            "he": "פתחו פריט שמור בתפריט → פריטים וגללו למלאי וזמינות. הטבלה מציגה את הפריט, הכמות והמצב. לעריכה נדרשת הרשאת עריכת תפריט. זהו חלק בעורך הרציף, ולא פאנל תחת לשונית מתכון."
           }
         },
         {
           "id": "section-2",
-          "level": 3,
           "title": {
-            "en": "How It Works (Simply)",
-            "fr": "Comment ça marche (simplement)",
-            "he": "איך זה עובד (בפשטות)"
+            "fr": "Choisir la source du stock",
+            "en": "Choose the stock basis",
+            "he": "בחירת בסיס המלאי"
           },
           "instructions": {
-            "en": "For each dish, Foody reads its recipe (ingredients + preparations) and your current stock,\nthen works out **how many portions you can still make** — limited by whichever ingredient\nruns out first.\n\n- Plenty in stock → the dish is **available**.\n- Down to the last few → **low stock** (e.g. \"3 left\").\n- Can't make even one → **sold out** (greyed out; customers can't order it).\n\n> **Important:** a dish only tracks availability if it has a **recipe**. Open the dish, go\n> to the **Recipe and cost** section, and add its ingredients and preparations. A dish with no recipe is\n> always available — so drinks and uncosted items never disappear.",
-            "fr": "Pour chaque plat, Foody lit sa recette (ingrédients + préparations) et votre stock actuel,\npuis calcule **combien de portions vous pouvez encore faire** — limité par l'ingrédient qui\ns'épuise en premier.\n\n- Beaucoup de stock → le plat est **disponible**.\n- Plus que quelques-uns → **stock faible** (ex. « 3 restant »).\n- Impossible d'en faire un seul → **épuisé** (grisé ; les clients ne peuvent pas commander).\n\n> **Important :** un plat ne suit sa disponibilité que s'il a une **recette**. Ouvrez le\n> plat, allez dans la section **Recette et coût** et ajoutez ses ingrédients et préparations. Un plat\n> sans recette est toujours disponible — ainsi les boissons et articles non chiffrés ne\n> disparaissent jamais.",
-            "he": "עבור כל מנה, Foody קוראת את המתכון שלה (מרכיבים + הכנות) ואת המלאי הנוכחי, ומחשבת **כמה\nמנות אפשר עוד להכין** — מוגבל לפי המרכיב שאוזל ראשון.\n\n- מלאי בשפע → המנה **זמינה**.\n- נשארו אחרונות → **מלאי נמוך** (למשל \"נותרו 3\").\n- אי אפשר להכין אפילו אחת → **אזל** (מעומעם; הלקוחות לא יכולים להזמין).\n\n> **חשוב:** מנה עוקבת אחר זמינות רק אם יש לה **מתכון**. פתחו את המנה, עברו ללשונית\n> **מתכון** והוסיפו את המרכיבים וההכנות שלה. מנה ללא מתכון תמיד זמינה — כך משקאות ופריטים\n> לא מתומחרים לא נעלמים."
+            "fr": "Cliquez sur la quantité ou utilisez Actions → Suivi du stock. Vous pouvez suivre une quantité commune à l’article ou des quantités par taille, selon ses variantes. Pour les articles compatibles, choisissez portions, g ou kg. Sans stock prédéfini, le calcul peut utiliser les ingrédients et préparations de la recette. L’absence de recette ne garantit pas une disponibilité illimitée : vérifiez aussi le stock prédéfini, les variantes, les règles et le statut manuel.",
+            "en": "Click the quantity or use Actions → Stock tracking. Track one shared item quantity or quantities by size, depending on its variants. Compatible items offer portions, g or kg. Without predefined item stock, calculation can use recipe ingredients and preparations. No recipe does not guarantee unlimited availability: also check predefined stock, variants, rules and manual status.",
+            "he": "לחצו על הכמות או השתמשו בפעולות → מעקב מלאי. ניתן לעקוב אחר כמות משותפת לפריט או כמויות לפי גודל, בהתאם לווריאציות. פריטים תואמים מציעים מנות, גרם או ק״ג. ללא מלאי פריט מוגדר מראש, החישוב עשוי להשתמש במרכיבים ובהכנות של המתכון. היעדר מתכון אינו מבטיח זמינות בלתי מוגבלת: בדקו גם מלאי מוגדר מראש, וריאציות, כללים ומצב ידני."
           }
         },
         {
           "id": "section-3",
-          "level": 2,
           "title": {
-            "en": "Rules",
-            "fr": "Règles",
-            "he": "כללים"
+            "fr": "Choisir et gérer une règle",
+            "en": "Choose and manage a rule",
+            "he": "בחירה וניהול של כלל"
           },
           "instructions": {
-            "en": "Rules control *how* availability behaves, and you can reuse them across dishes. Go to\n**Kitchen → Availability**.\n\nEach rule has:\n\n- **Track stock** — turn it off for pantry items (drinks, staples you never run out of) so\n  they stay always available.\n- **Low-stock warning at ≤ N** — when the \"N left\" badge appears (0 = never warn).\n- **When out of stock** — show a **Sold out** badge, or **hide** the dish entirely.\n- **Show remaining count** — show customers \"3 left\", or just a generic badge.\n\nFoody ships three starter rules you can edit or copy:\n\n| Rule | Behavior |\n|---|---|\n| **Standard** (default) | Tracks stock, warns at ≤ 5, sold-out badge, shows the count. |\n| **Made fresh daily** | Tracks stock, warns earlier (≤ 3). |\n| **Always available** | Never tracks stock — always orderable. |\n\nA dish uses its own rule if set, otherwise its category's rule, otherwise the **default**.",
-            "fr": "Les règles contrôlent *comment* la disponibilité se comporte, et vous pouvez les réutiliser\nsur plusieurs plats. Allez dans **Cuisine → Disponibilité**.\n\nChaque règle a :\n\n- **Suivre le stock** — désactivez-le pour les articles de garde-manger (boissons, basiques\n  que vous n'épuisez jamais) afin qu'ils restent toujours disponibles.\n- **Alerte stock faible à ≤ N** — quand le badge « N restant » apparaît (0 = jamais).\n- **Quand épuisé** — afficher un badge **Épuisé**, ou **masquer** le plat entièrement.\n- **Afficher la quantité restante** — montrer « 3 restant » aux clients, ou un badge générique.\n\nFoody fournit trois règles de départ que vous pouvez modifier ou copier :\n\n| Règle | Comportement |\n|---|---|\n| **Standard** (par défaut) | Suit le stock, alerte à ≤ 5, badge épuisé, affiche la quantité. |\n| **Fait maison du jour** | Suit le stock, alerte plus tôt (≤ 3). |\n| **Toujours disponible** | Ne suit pas le stock — toujours commandable. |\n\nUn plat utilise sa propre règle si elle est définie, sinon celle de sa catégorie, sinon la\nrègle **par défaut**.",
-            "he": "כללים שולטים *איך* הזמינות מתנהגת, וניתן להשתמש בהם שוב על מנות שונות. עברו ל**מטבח →\nזמינות**.\n\nלכל כלל יש:\n\n- **מעקב מלאי** — כבו עבור פריטי מזווה (משקאות, בסיסים שלא אוזלים) כדי שיישארו תמיד זמינים.\n- **התראת מלאי נמוך ב-≤ N** — מתי מופיע התג \"נותרו N\" (0 = אף פעם).\n- **כשאזל** — להציג תג **אזל**, או **להסתיר** את המנה לגמרי.\n- **הצגת כמות שנותרה** — להראות ללקוחות \"נותרו 3\", או תג כללי.\n\nFoody מגיעה עם שלושה כללים התחלתיים שאפשר לערוך או להעתיק:\n\n| כלל | התנהגות |\n|---|---|\n| **Standard** (ברירת מחדל) | עוקב אחר מלאי, מתריע ב-≤ 5, תג אזל, מציג כמות. |\n| **Made fresh daily** | עוקב אחר מלאי, מתריע מוקדם יותר (≤ 3). |\n| **Always available** | לא עוקב אחר מלאי — תמיד ניתן להזמנה. |\n\nמנה משתמשת בכלל שלה אם הוגדר, אחרת בכלל של הקטגוריה, אחרת בכלל **ברירת המחדל**."
+            "fr": "Dans le réglage de suivi du stock, choisissez la règle de disponibilité ou la règle par défaut. Actions → Gérer les règles ouvre Paramètres → Stock → Disponibilité. Les règles définissent le suivi, le seuil de stock bas, le comportement à épuisement et l’affichage du nombre restant. Vérifiez la règle affectée avant de la modifier : elle peut servir à plusieurs articles.",
+            "en": "In stock tracking settings, choose an availability rule or the default rule. Actions → Manage rules opens Settings → Stock → Availability. Rules define tracking, low-stock threshold, out-of-stock behavior and remaining-count display. Check assignments before editing a rule used by multiple items.",
+            "he": "בהגדרות מעקב המלאי בחרו כלל זמינות או את כלל ברירת המחדל. פעולות → נהל כללים פותח הגדרות → מלאי → זמינות. הכללים מגדירים מעקב, סף מלאי נמוך, התנהגות באזילה והצגת כמות שנותרה. בדקו שיוכים לפני שינוי כלל שמשמש כמה פריטים."
           }
         },
         {
           "id": "section-4",
-          "level": 2,
           "title": {
-            "en": "Overriding a single dish (\"86\")",
-            "fr": "Forcer un plat (« 86 »)",
-            "he": "דריסת מנה בודדת (\"86\")"
+            "fr": "Forcer un statut puis enregistrer",
+            "en": "Override status and save",
+            "he": "דריסת מצב ושמירה"
           },
           "instructions": {
-            "en": "On a dish's **Recipe → Availability** panel you'll see the live count (\"Buildable now: 12\nportions, limited by …\") and an override:\n\n- **Auto** — use the computed availability (the normal setting).\n- **Always available** — force it orderable even if stock says otherwise.\n- **Force sold out** — manually 86 a dish; set it back to **Auto** later.\n\nThe override always wins over the rule.",
-            "fr": "Sur le panneau **Recette → Disponibilité** d'un plat, vous voyez le calcul en direct\n(« Réalisable maintenant : 12 portions, limité par … ») et un forçage :\n\n- **Auto** — utilise la disponibilité calculée (réglage normal).\n- **Toujours dispo** — force le plat commandable même si le stock dit le contraire.\n- **Forcer épuisé** — 86 manuel d'un plat ; remettez sur **Auto** plus tard.\n\nLe forçage est toujours prioritaire sur la règle.",
-            "he": "בפאנל **מתכון → זמינות** של מנה תראו את החישוב החי (\"ניתן להכין כעת: 12 מנות, מוגבל על\nידי …\") ודריסה:\n\n- **אוטומטי** — שימוש בזמינות המחושבת (ההגדרה הרגילה).\n- **תמיד זמין** — אילוץ המנה לזמינה גם אם המלאי אומר אחרת.\n- **אילוץ אזל** — 86 ידני של מנה; החזירו ל**אוטומטי** מאוחר יותר.\n\nהדריסה תמיד גוברת על הכלל."
+            "fr": "Cliquez sur le statut et choisissez Suivre une règle, Toujours disponible ou Forcer épuisé. Cliquez sur Appliquer, puis Enregistrer dans l’en-tête de l’article pour persister le choix. Appliquer seul prépare la modification dans l’éditeur. Le forçage est prioritaire sur le calcul ; repassez sur Suivre une règle et enregistrez pour reprendre le suivi automatique.",
+            "en": "Click status and choose Follow a rule, Always available or Force sold out. Click Apply, then Save in the item header to persist it. Apply alone stages the change in the editor. The override wins over calculation; return to Follow a rule and save to resume automatic tracking.",
+            "he": "לחצו על המצב ובחרו פעל לפי כלל, תמיד זמין או אלץ אזל. לחצו החל ואז שמור בכותרת הפריט כדי לשמור בפועל. החל בלבד מכינה את השינוי בעורך. הדריסה גוברת על החישוב; חזרו לפעל לפי כלל ושמרו כדי לחדש מעקב אוטומטי."
           }
         },
         {
           "id": "section-5",
-          "level": 2,
           "title": {
-            "en": "Examples",
-            "fr": "Exemples",
-            "he": "דוגמאות"
+            "fr": "Vérifier le calcul et les quantités par taille",
+            "en": "Check calculation and size quantities",
+            "he": "בדיקת החישוב וכמויות לפי גודל"
           },
           "instructions": {
-            "en": "- **Tuna runs out.** Every dish whose recipe uses tuna goes sold out across web and POS.\n  Receive more tuna in **Stock** and they come back automatically.\n- **A sauce preparation hits 0.** Dishes using that prep go sold out. Produce a new batch\n  in **Preparations** and they recover.\n- **Bottled drinks.** Put them on the **Always available** rule so they never auto-disappear.",
-            "fr": "- **Le thon est épuisé.** Tous les plats dont la recette utilise du thon passent en épuisé\n  sur le web et la caisse. Réceptionnez du thon dans **Stock** et ils reviennent tout seuls.\n- **Une préparation de sauce tombe à 0.** Les plats qui l'utilisent passent en épuisé.\n  Produisez un nouveau lot dans **Préparations** et ils reviennent.\n- **Boissons en bouteille.** Mettez-les sur la règle **Toujours disponible** pour qu'elles\n  ne disparaissent jamais automatiquement.",
-            "he": "- **הטונה אוזלת.** כל מנה שהמתכון שלה משתמש בטונה עוברת לאזל באתר ובקופה. קבלו עוד טונה\n  ב**מלאי** והן חוזרות אוטומטית.\n- **הכנת רוטב יורדת ל-0.** מנות שמשתמשות בה עוברות לאזל. ייצרו אצווה חדשה ב**הכנות** והן\n  חוזרות.\n- **משקאות בבקבוק.** הגדירו אותם על הכלל **תמיד זמין** כדי שלא ייעלמו אוטומטית."
+            "fr": "Actions → Voir le calcul de disponibilité ouvre le détail de capacité : ventes possibles, base du calcul et ingrédient limitant lorsqu’il existe. Si vous suivez les tailles séparément, contrôlez chaque quantité. Ne confondez pas ce stock de l’article avec les quantités consommées par sa recette ni avec le filtre Actif/Inactif de la bibliothèque Articles. Un calcul indisponible est une erreur à vérifier, pas un stock nul.",
+            "en": "Actions → View availability calculation opens capacity details: possible sales, calculation basis and limiting ingredient when present. When tracking sizes separately, check each quantity. Item stock differs from recipe consumption quantities and the Active/Inactive filter in the Items library. An unavailable calculation is an error to investigate, not zero stock.",
+            "he": "פעולות → צפייה בחישוב הזמינות פותח פרטי קיבולת: מכירות אפשריות, בסיס החישוב והמרכיב המגביל אם קיים. במעקב נפרד לפי גודל בדקו כל כמות. מלאי הפריט שונה מכמויות צריכת המתכון וממסנן פעיל/לא פעיל בספריית הפריטים. חישוב לא זמין הוא שגיאה לבדיקה ולא מלאי אפס."
           }
         },
         {
           "id": "section-6",
-          "level": 2,
           "title": {
-            "en": "Good to know",
-            "fr": "Bon à savoir",
-            "he": "כדאי לדעת"
+            "fr": "Contrôler après enregistrement",
+            "en": "Verify after saving",
+            "he": "בדיקה לאחר שמירה"
           },
           "instructions": {
-            "en": "- Availability is enforced at checkout: if a dish sells out while a customer is browsing,\n  the order is blocked with a clear message.\n- On the POS, sold-out dishes are dimmed and can't be added; re-enable one with the\n  **Always available** override.",
-            "fr": "- La disponibilité est aussi appliquée au paiement : si un plat s'épuise pendant que le\n  client navigue, la commande est bloquée avec un message clair.\n- Sur la caisse, les plats épuisés sont grisés et non commandables ; réactivez-en un avec le\n  forçage **Toujours dispo**.",
-            "he": "- הזמינות נאכפת גם בתשלום: אם מנה אוזלת בזמן שהלקוח גולש, ההזמנה נחסמת עם הודעה ברורה.\n- בקופה, מנות שאזלו מעומעמות ולא ניתנות להוספה; הפעילו מנה מחדש עם הדריסה **תמיד זמין**."
+            "fr": "Après Enregistrer, rouvrez l’article et vérifiez quantité, règle et statut, puis le canal web ou POS concerné. La visibilité dépend aussi des groupes, canaux et horaires. Si le chargement des règles échoue, réessayez avant d’enregistrer ; ne remplacez pas la configuration par une valeur supposée. [Articles et menus](../menu/categories-and-items) · [Recette et quantités](../menu/ingredients-and-portions) · [Stock](./stock-management).",
+            "en": "After Save, reopen the item and check quantity, rule and status, then the relevant web or POS channel. Visibility also depends on groups, channels and hours. If rules fail to load, retry before saving; do not substitute an assumed configuration. [Items and menus](../menu/categories-and-items) · [Recipe quantities](../menu/ingredients-and-portions) · [Stock](./stock-management).",
+            "he": "לאחר שמירה פתחו שוב את הפריט ובדקו כמות, כלל ומצב, ולאחר מכן את ערוץ האתר או הקופה המתאים. הנראות תלויה גם בקבוצות, ערוצים ושעות. אם טעינת הכללים נכשלת, נסו שוב לפני שמירה; אין להחליף את ההגדרה בערך משוער. [פריטים ותפריטים](../menu/categories-and-items) · [כמויות מתכון](../menu/ingredients-and-portions) · [מלאי](./stock-management)."
           }
         }
       ],
@@ -16258,6 +16252,11 @@
       "status": "available",
       "preserveExisting": true,
       "procedureUpdatedAt": "2026-10-18",
+      "description": {
+        "fr": "Configurer le stock de l’article, sa règle de disponibilité et son statut manuel dans l’éditeur actuel.",
+        "en": "Configure item stock, its availability rule and manual status in the current item editor.",
+        "he": "הגדרת מלאי הפריט, כלל הזמינות והמצב הידני בעורך הפריט הנוכחי."
+      },
       "evidence": [
         {
           "service": "foodyadmin",
@@ -20539,14 +20538,14 @@
       "module": "menu",
       "article": "menu/menus-and-groups",
       "title": {
-        "en": "Menus, cartes & groups (what customers see)",
+        "en": "Menus and groups (what customers see)",
         "fr": "Menus, cartes & groupes (ce que voient les clients)",
         "he": "תפריטים, כרטיסים וקבוצות (מה שהלקוחות רואים)"
       },
       "entry": {
-        "en": "Open the corresponding Foody workspace described below.",
-        "fr": "Ouvrez l’espace Foody correspondant décrit ci-dessous.",
-        "he": "פתחו את סביבת Foody המתאימה המתוארת למטה."
+        "fr": "Menu → Cartes : ouvrez un menu puis créez ou modifiez ses groupes.",
+        "en": "Menu → Menus: open a menu, then create or edit its groups.",
+        "he": "תפריט → תפריטים: פתחו תפריט וצרו או ערכו את קבוצותיו."
       },
       "selectors": {
         "foodyadmin": [
@@ -20604,9 +20603,9 @@
             "he": "ניהול התפריטים שלכם"
           },
           "instructions": {
-            "en": "In **Menu → Cartes**:\n\n- Create a menu (carte) and give it groups.\n- Drag items into groups (an item can be in many).\n- Reorder groups and items.\n\n→ [Categories & items](/en/help/menu/categories-and-items) · [Creating a menu item](/en/help/menu/creating-a-menu-item)",
-            "fr": "Dans **Menu → Cartes** :\n\n- Créez un menu (carte) et donnez-lui des groupes.\n- Glissez des articles dans les groupes (un article peut être dans plusieurs).\n- Réorganisez groupes et articles.\n\n→ [Catégories & articles](/fr/help/menu/categories-and-items) · [Créer un article](/fr/help/menu/creating-a-menu-item)",
-            "he": "ב**תפריט → כרטיסים**:\n\n- צרו תפריט (כרטיס) והוסיפו לו קבוצות.\n- גררו פריטים לקבוצות (פריט יכול להיות בכמה).\n- סדרו מחדש קבוצות ופריטים.\n\n→ [קטגוריות ופריטים](/he/help/menu/categories-and-items) · [יצירת פריט](/he/help/menu/creating-a-menu-item)"
+            "fr": "Dans Menu → Cartes, créez ou ouvrez un menu puis un groupe. Dans la fiche du groupe, utilisez Ajouter un article ou Ajouter depuis une catégorie pour sélectionner des articles. Pour un groupe existant, les changements d’articles sont immédiats ; dans un nouveau groupe, ils sont appliqués lors de sa création. Le glisser-déposer sert à réordonner des groupes ou des articles déjà présents dans un groupe, pas à importer le catalogue. Le même article peut appartenir à plusieurs groupes. [Créer un article](./creating-a-menu-item).",
+            "en": "In Menu → Menus, create or open a menu, then a group. In the group editor use Add an item or Add from category to select items. Membership changes in an existing group are immediate; for a new group they are applied when it is created. Dragging reorders groups or items already inside a group; it is not the catalogue import action. The same item can belong to several groups. [Create an item](./creating-a-menu-item).",
+            "he": "בתפריט → תפריטים צרו או פתחו תפריט ואז קבוצה. בעורך הקבוצה השתמשו בהוסף פריט או בהוספה מקטגוריה לבחירת פריטים. שינויים בפריטי קבוצה קיימת נשמרים מיד; בקבוצה חדשה הם מוחלים בעת יצירתה. גרירה מסדרת קבוצות או פריטים שכבר נמצאים בקבוצה, ואינה פעולת ייבוא הקטלוג. אותו פריט יכול להשתייך לכמה קבוצות. [יצירת פריט](./creating-a-menu-item)."
           }
         },
         {
@@ -20646,9 +20645,9 @@
             "he": "איך זה מתחבר לזמינות"
           },
           "instructions": {
-            "en": "Channels and hours decide **whether** a group is shown at all. On top of that,\n[Availability](/en/help/kitchen/availability) decides, per dish, whether it's **sold out or low**\nfrom its recipe and stock. Both apply: a dish shows to customers only when its group is on\n*and* it can still be made.",
-            "fr": "Les canaux et les horaires décident **si** un groupe est affiché. Par-dessus,\nla [Disponibilité](/fr/help/kitchen/availability) décide, plat par plat, s'il est **épuisé ou en\nstock faible** selon sa recette et le stock. Les deux s'appliquent : un plat n'apparaît aux\nclients que si son groupe est actif *et* qu'il peut encore être préparé.",
-            "he": "ערוצים ושעות קובעים **האם** קבוצה מוצגת בכלל. מעל זה, ה[זמינות](/he/help/kitchen/availability)\nקובעת, לכל מנה, אם היא **אזלה או במלאי נמוך** לפי המתכון והמלאי. שניהם חלים: מנה מופיעה ללקוחות רק\nאם הקבוצה שלה פעילה *וגם* אפשר עדיין להכין אותה."
+            "fr": "Les canaux et horaires déterminent si le groupe peut être affiché. La disponibilité de l’article peut ensuite le rendre commandable, épuisé ou masqué selon sa règle et son statut manuel. Un article épuisé peut rester visible avec un badge ; sa présence dans le groupe ne garantit pas qu’il soit commandable. [Disponibilité](../kitchen/availability).",
+            "en": "Channels and hours determine whether a group can be shown. Item availability can then make it orderable, sold out or hidden, depending on its rule and manual status. A sold-out item may remain visible with a badge; membership in a group does not guarantee it is orderable. [Availability](../kitchen/availability).",
+            "he": "ערוצים ושעות קובעים אם ניתן להציג קבוצה. זמינות הפריט עשויה לאחר מכן לאפשר הזמנה, להציג אזל או להסתיר אותו, בהתאם לכלל ולמצב הידני. פריט שאזל עשוי להישאר גלוי עם תג; שייכות לקבוצה אינה מבטיחה שאפשר להזמינו. [זמינות](../kitchen/availability)."
           }
         },
         {
@@ -20660,16 +20659,16 @@
             "he": "התחלה מהירה"
           },
           "instructions": {
-            "en": "1. Create your items → [Creating a menu item](/en/help/menu/creating-a-menu-item).\n2. Create a menu (carte) and add groups.\n3. Drag items into the right groups.\n4. Set each menu/group's **channels** (web / POS) and **hours**.\n5. Open the guest site or POS — your menu is live.",
-            "fr": "1. Créez vos articles → [Créer un article](/fr/help/menu/creating-a-menu-item).\n2. Créez un menu (carte) et ajoutez des groupes.\n3. Glissez les articles dans les bons groupes.\n4. Réglez les **canaux** (web / caisse) et les **horaires** de chaque menu/groupe.\n5. Ouvrez le site client ou la caisse — votre menu est en ligne.",
-            "he": "1. צרו את הפריטים שלכם → [יצירת פריט](/he/help/menu/creating-a-menu-item).\n2. צרו תפריט (כרטיס) והוסיפו קבוצות.\n3. גררו את הפריטים לקבוצות הנכונות.\n4. הגדירו את ה**ערוצים** (אתר / קופה) וה**שעות** של כל תפריט/קבוצה.\n5. פתחו את אתר הלקוח או הקופה — התפריט שלכם באוויר."
+            "fr": "Créez et enregistrez les articles. Ouvrez le menu puis le groupe et ajoutez les articles avec le sélecteur, ou affectez les groupes depuis la zone Diffusion de l’article. Vérifiez les canaux POS/Web, les horaires, le masquage et les établissements du menu. Pour un menu tournant, vérifiez aussi la semaine sélectionnée. Contrôlez le résultat sur le canal voulu après enregistrement.",
+            "en": "Create and save items. Open the menu and group and add items with the picker, or assign groups from the item Distribution area. Check POS/Web channels, hours, hiding and menu locations. For a rotating menu also check the selected week. Verify the result on the intended channel after saving.",
+            "he": "צרו ושמרו פריטים. פתחו את התפריט והקבוצה והוסיפו פריטים באמצעות הבורר, או שייכו קבוצות מאזור ההפצה של הפריט. בדקו ערוצי קופה/אתר, שעות, הסתרה וסניפי התפריט. בתפריט מתחלף בדקו גם את השבוע שנבחר. בדקו את התוצאה בערוץ הרצוי לאחר השמירה."
           }
         }
       ],
       "audience": "public",
       "status": "available",
       "preserveExisting": true,
-      "procedureUpdatedAt": "2026-05-24",
+      "procedureUpdatedAt": "2026-10-18",
       "evidence": [
         {
           "service": "foodyadmin",
@@ -31786,6 +31785,19 @@
       },
       "operations": [
         {
+          "id": "discover-epson",
+          "title": {
+            "en": "Find an Epson printer on the local network",
+            "fr": "Trouver une imprimante Epson sur le réseau local",
+            "he": "איתור מדפסת Epson ברשת המקומית"
+          },
+          "instructions": {
+            "en": "1. Connect the iPad or Victa and the supported Epson printer to the same local network. Switch on the printer and check its paper and cover. Your account must have access to printer settings.\n2. Open POS → More → Settings → Hardware → Printers and select **Scan network**. Opening the page can also start a scan. Wait until the scan finishes.\n3. On iPad, allow **Local Network** access when iOS asks. If the first scan is empty after granting permission, run **Scan network** again. If access was denied, enable it for FoodyPOS in iPad Settings, then retry.\n4. Check the discovered model and IP address. Users with printer-management permission can register discovered printers and assign their profiles; read-only printer access does not register devices.\n5. If **Scan network** is disabled with a notice, the installed build does not enable automatic discovery. Existing configured printers still work. Use **Connect a printer → Select a printer → Advanced printer configuration → Epson printer** to enter its IP address, or install the supported update when distributed.\n\nIf no printer is found, check that the Wi-Fi allows local device communication and that the devices are not on isolated guest networks. Manual IP entry remains available when broadcast discovery is blocked. Discovery does not prove printing: deliberately run one test and check the paper before requesting another copy.",
+            "fr": "1. Connectez l’iPad ou le Victa et l’imprimante Epson compatible au même réseau local. Allumez l’imprimante et vérifiez le papier et le capot. Votre compte doit pouvoir accéder aux paramètres des imprimantes.\n2. Ouvrez POS → Plus → Paramètres → Matériel → Imprimantes et sélectionnez **Analyser le réseau**. L’ouverture de la page peut aussi lancer une recherche. Attendez sa fin.\n3. Sur iPad, autorisez l’accès au **Réseau local** lorsque iOS le demande. Si la première recherche reste vide après l’autorisation, relancez **Analyser le réseau**. Si l’accès a été refusé, activez-le pour FoodyPOS dans les réglages de l’iPad, puis réessayez.\n4. Vérifiez le modèle et l’adresse IP détectés. Les comptes disposant du droit de gestion des imprimantes peuvent enregistrer les appareils détectés et affecter leurs profils ; un accès en lecture seule n’enregistre aucun appareil.\n5. Si **Analyser le réseau** est désactivé avec un message explicatif, la version installée n’active pas la détection automatique. Les imprimantes déjà configurées restent utilisables. Passez par **Connecter une imprimante → Sélectionnez une imprimante → Configuration avancée de l’imprimante → Imprimante Epson** pour saisir son adresse IP, ou installez la mise à jour compatible lorsqu’elle sera distribuée.\n\nSi aucune imprimante n’est trouvée, vérifiez que le Wi-Fi autorise les échanges entre appareils et qu’ils ne sont pas sur des réseaux invités isolés. L’ajout par IP reste disponible lorsque la découverte par diffusion est bloquée. La détection ne confirme pas l’impression : lancez volontairement un seul test et vérifiez le papier avant de demander une autre copie.",
+            "he": "1. חברו את ה-iPad או ה-Victa ואת מדפסת Epson הנתמכת לאותה רשת מקומית. הפעילו את המדפסת ובדקו את הנייר והמכסה. לחשבון נדרשת גישה להגדרות המדפסות.\n2. פתחו קופה → עוד → הגדרות → חומרה → מדפסות ובחרו **סריקת הרשת**. גם פתיחת הדף עשויה להתחיל סריקה. המתינו לסיום.\n3. ב-iPad, אשרו גישה ל**רשת המקומית** כאשר iOS מבקש. אם הסריקה הראשונה ריקה לאחר האישור, הפעילו שוב **סריקת הרשת**. אם הגישה נדחתה, הפעילו אותה עבור FoodyPOS בהגדרות ה-iPad ונסו שוב.\n4. בדקו את הדגם ואת כתובת ה-IP שנמצאו. משתמשים בעלי הרשאת ניהול מדפסות יכולים לרשום מדפסות שהתגלו ולשייך פרופילים; גישה לקריאה בלבד אינה רושמת מכשירים.\n5. אם **סריקת הרשת** מושבתת ומוצגת הודעה, הגרסה המותקנת אינה מאפשרת גילוי אוטומטי. המדפסות שכבר הוגדרו עדיין זמינות. השתמשו ב**חיבור מדפסת → בחירת מדפסת → הגדרת מדפסת מתקדמת → מדפסת Epson** להזנת כתובת IP, או התקינו את העדכון התומך כאשר יופץ.\n\nאם לא נמצאה מדפסת, בדקו שה-Wi-Fi מאפשר תקשורת מקומית בין מכשירים ושהם אינם ברשתות אורחים מבודדות. הוספה לפי IP נשארת זמינה כשגילוי בשידור חסום. גילוי אינו מוכיח הדפסה: הפעילו בדיקה אחת במכוון ובדקו את הנייר לפני בקשת עותק נוסף."
+          }
+        },
+        {
           "id": "profile",
           "title": {
             "en": "Create or edit a shared profile",
@@ -31828,6 +31840,7 @@
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
+      "procedureUpdatedAt": "2026-10-18",
       "evidence": [
         {
           "service": "foodyadmin",
@@ -77841,7 +77854,7 @@
   "coverage": {
     "sharedRuntimeFiles": 430,
     "features": 98,
-    "operations": 358,
+    "operations": 359,
     "sourceFiles": 2049,
     "surfaces": 1966,
     "unclassifiedRoutes": []

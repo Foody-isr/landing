@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-18.
 
-98 fiches de fonctionnalités, 358 procédures/sous-fonctionnalités, dont 89 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2049 fichiers applicatifs et 1966 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+98 fiches de fonctionnalités, 359 procédures/sous-fonctionnalités, dont 89 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2049 fichiers applicatifs et 1966 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodylanding | 127 | 21 | b5df96e1233d ; versioned |
-| foodyadmin | 734 | 754 | 742def4eaeeb ; versioned |
-| foodyserver | 497 | 832 | 6477bf4338eb ; versioned |
-| foodyweb | 329 | 163 | 26e08f775456 ; versioned |
-| foodypos | 320 | 149 | 6af04a980405 ; versioned |
-| foodybackoffice | 42 | 47 | 0761ce3ef4b7 ; versioned |
+| foodylanding | 127 | 21 | 6e0fa3bd7a65 ; versioned |
+| foodyadmin | 734 | 754 | cdb87a538107 ; versioned |
+| foodyserver | 497 | 832 | 08ea2d189394 ; versioned |
+| foodyweb | 329 | 163 | e40a8bdcad99 ; versioned |
+| foodypos | 320 | 149 | eee34eee0773 ; versioned |
+| foodybackoffice | 42 | 47 | bf119ca95af8 ; versioned |
 
 ## getting-started
 
@@ -167,12 +167,12 @@ Identifiant : `business-ai`. Public : public. Disponibilité : available. Servic
 
 Identifiant : `kitchen-availability`. Public : public. Disponibilité : available. Services : foodyadmin, foodyserver, foodypos.
 
-- [Qu'est-ce que c'est ?](../../src/content/help/fr/kitchen/availability.mdx#section-1)
-- [Comment ça marche (simplement)](../../src/content/help/fr/kitchen/availability.mdx#section-2)
-- [Règles](../../src/content/help/fr/kitchen/availability.mdx#section-3)
-- [Forcer un plat (« 86 »)](../../src/content/help/fr/kitchen/availability.mdx#section-4)
-- [Exemples](../../src/content/help/fr/kitchen/availability.mdx#section-5)
-- [Bon à savoir](../../src/content/help/fr/kitchen/availability.mdx#section-6)
+- [Ouvrir Stock & disponibilité](../../src/content/help/fr/kitchen/availability.mdx#section-1)
+- [Choisir la source du stock](../../src/content/help/fr/kitchen/availability.mdx#section-2)
+- [Choisir et gérer une règle](../../src/content/help/fr/kitchen/availability.mdx#section-3)
+- [Forcer un statut puis enregistrer](../../src/content/help/fr/kitchen/availability.mdx#section-4)
+- [Vérifier le calcul et les quantités par taille](../../src/content/help/fr/kitchen/availability.mdx#section-5)
+- [Contrôler après enregistrement](../../src/content/help/fr/kitchen/availability.mdx#section-6)
 
 ### [Operations Quotidiennes](../../src/content/help/fr/kitchen/daily-operations.mdx)
 
@@ -533,6 +533,7 @@ Identifiant : `printers-epson-tm-u220iib`. Public : public. Disponibilité : ava
 
 Identifiant : `printer-profiles`. Public : public. Disponibilité : available. Services : foodyadmin, foodypos.
 
+- [Trouver une imprimante Epson sur le réseau local](../../src/content/help/fr/printers/profiles-and-routing.mdx#discover-epson)
 - [Créer ou modifier un profil partagé](../../src/content/help/fr/printers/profiles-and-routing.mdx#profile)
 - [Régler les options des tickets](../../src/content/help/fr/printers/profiles-and-routing.mdx#ticket-options)
 - [Affecter la bonne imprimante](../../src/content/help/fr/printers/profiles-and-routing.mdx#assign)
