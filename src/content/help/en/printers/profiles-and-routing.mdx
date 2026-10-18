@@ -12,6 +12,18 @@ releaseStatus: available
 ---
 Open POS → More → Settings → Hardware → Printers/Profiles, or Admin → Settings → Printers.
 
+<span id="discover-epson" />
+
+## Find an Epson printer on the local network
+
+1. Connect the iPad or Victa and the supported Epson printer to the same local network. Switch on the printer and check its paper and cover. Your account must have access to printer settings.
+2. Open POS → More → Settings → Hardware → Printers and select **Scan network**. Opening the page can also start a scan. Wait until the scan finishes.
+3. On iPad, allow **Local Network** access when iOS asks. If the first scan is empty after granting permission, run **Scan network** again. If access was denied, enable it for FoodyPOS in iPad Settings, then retry.
+4. Check the discovered model and IP address. Users with printer-management permission can register discovered printers and assign their profiles; read-only printer access does not register devices.
+5. If **Scan network** is disabled with a notice, the installed build does not enable automatic discovery. Existing configured printers still work. Use **Connect a printer → Select a printer → Advanced printer configuration → Epson printer** to enter its IP address, or install the supported update when distributed.
+
+If no printer is found, check that the Wi-Fi allows local device communication and that the devices are not on isolated guest networks. Manual IP entry remains available when broadcast discovery is blocked. Discovery does not prove printing: deliberately run one test and check the paper before requesting another copy.
+
 <span id="profile" />
 
 ## Create or edit a shared profile

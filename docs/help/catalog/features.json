@@ -6269,6 +6269,19 @@
     },
     "operations": [
       {
+        "id": "discover-epson",
+        "title": {
+          "en": "Find an Epson printer on the local network",
+          "fr": "Trouver une imprimante Epson sur le réseau local",
+          "he": "איתור מדפסת Epson ברשת המקומית"
+        },
+        "instructions": {
+          "en": "1. Connect the iPad or Victa and the supported Epson printer to the same local network. Switch on the printer and check its paper and cover. Your account must have access to printer settings.\n2. Open POS → More → Settings → Hardware → Printers and select **Scan network**. Opening the page can also start a scan. Wait until the scan finishes.\n3. On iPad, allow **Local Network** access when iOS asks. If the first scan is empty after granting permission, run **Scan network** again. If access was denied, enable it for FoodyPOS in iPad Settings, then retry.\n4. Check the discovered model and IP address. Users with printer-management permission can register discovered printers and assign their profiles; read-only printer access does not register devices.\n5. If **Scan network** is disabled with a notice, the installed build does not enable automatic discovery. Existing configured printers still work. Use **Connect a printer → Select a printer → Advanced printer configuration → Epson printer** to enter its IP address, or install the supported update when distributed.\n\nIf no printer is found, check that the Wi-Fi allows local device communication and that the devices are not on isolated guest networks. Manual IP entry remains available when broadcast discovery is blocked. Discovery does not prove printing: deliberately run one test and check the paper before requesting another copy.",
+          "fr": "1. Connectez l’iPad ou le Victa et l’imprimante Epson compatible au même réseau local. Allumez l’imprimante et vérifiez le papier et le capot. Votre compte doit pouvoir accéder aux paramètres des imprimantes.\n2. Ouvrez POS → Plus → Paramètres → Matériel → Imprimantes et sélectionnez **Analyser le réseau**. L’ouverture de la page peut aussi lancer une recherche. Attendez sa fin.\n3. Sur iPad, autorisez l’accès au **Réseau local** lorsque iOS le demande. Si la première recherche reste vide après l’autorisation, relancez **Analyser le réseau**. Si l’accès a été refusé, activez-le pour FoodyPOS dans les réglages de l’iPad, puis réessayez.\n4. Vérifiez le modèle et l’adresse IP détectés. Les comptes disposant du droit de gestion des imprimantes peuvent enregistrer les appareils détectés et affecter leurs profils ; un accès en lecture seule n’enregistre aucun appareil.\n5. Si **Analyser le réseau** est désactivé avec un message explicatif, la version installée n’active pas la détection automatique. Les imprimantes déjà configurées restent utilisables. Passez par **Connecter une imprimante → Sélectionnez une imprimante → Configuration avancée de l’imprimante → Imprimante Epson** pour saisir son adresse IP, ou installez la mise à jour compatible lorsqu’elle sera distribuée.\n\nSi aucune imprimante n’est trouvée, vérifiez que le Wi-Fi autorise les échanges entre appareils et qu’ils ne sont pas sur des réseaux invités isolés. L’ajout par IP reste disponible lorsque la découverte par diffusion est bloquée. La détection ne confirme pas l’impression : lancez volontairement un seul test et vérifiez le papier avant de demander une autre copie.",
+          "he": "1. חברו את ה-iPad או ה-Victa ואת מדפסת Epson הנתמכת לאותה רשת מקומית. הפעילו את המדפסת ובדקו את הנייר והמכסה. לחשבון נדרשת גישה להגדרות המדפסות.\n2. פתחו קופה → עוד → הגדרות → חומרה → מדפסות ובחרו **סריקת הרשת**. גם פתיחת הדף עשויה להתחיל סריקה. המתינו לסיום.\n3. ב-iPad, אשרו גישה ל**רשת המקומית** כאשר iOS מבקש. אם הסריקה הראשונה ריקה לאחר האישור, הפעילו שוב **סריקת הרשת**. אם הגישה נדחתה, הפעילו אותה עבור FoodyPOS בהגדרות ה-iPad ונסו שוב.\n4. בדקו את הדגם ואת כתובת ה-IP שנמצאו. משתמשים בעלי הרשאת ניהול מדפסות יכולים לרשום מדפסות שהתגלו ולשייך פרופילים; גישה לקריאה בלבד אינה רושמת מכשירים.\n5. אם **סריקת הרשת** מושבתת ומוצגת הודעה, הגרסה המותקנת אינה מאפשרת גילוי אוטומטי. המדפסות שכבר הוגדרו עדיין זמינות. השתמשו ב**חיבור מדפסת → בחירת מדפסת → הגדרת מדפסת מתקדמת → מדפסת Epson** להזנת כתובת IP, או התקינו את העדכון התומך כאשר יופץ.\n\nאם לא נמצאה מדפסת, בדקו שה-Wi-Fi מאפשר תקשורת מקומית בין מכשירים ושהם אינם ברשתות אורחים מבודדות. הוספה לפי IP נשארת זמינה כשגילוי בשידור חסום. גילוי אינו מוכיח הדפסה: הפעילו בדיקה אחת במכוון ובדקו את הנייר לפני בקשת עותק נוסף."
+        }
+      },
+      {
         "id": "profile",
         "title": {
           "en": "Create or edit a shared profile",
@@ -6310,7 +6323,8 @@
     ],
     "audience": "public",
     "status": "available",
-    "preserveExisting": false
+    "preserveExisting": false,
+    "procedureUpdatedAt": "2026-10-18"
   },
   {
     "id": "printer-diagnostics",
