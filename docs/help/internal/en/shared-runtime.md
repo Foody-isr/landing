@@ -14,6 +14,12 @@ releaseStatus: available
 ---
 Engineering only: shared authentication clients, state, localization, styling, proxies and platform bootstrap support the documented business modules.
 
+<span id="weight-hold-margin" />
+
+## Review the by-weight authorization ceiling
+
+Public expected_hold_amount_minor is checked against server-priced lines and the scoped margin inside order creation; mismatch rolls back before stock/provider effects. The server writes weight_hold_amount_minor and weight_hold_buffer_percent metadata, never trusts guest external_metadata, and the resolver retains that ceiling or existing HoldAmount. Settings accept finite 0–100 values; omission preserves them and defaults remain 20. Public restaurant and protected settings expose the safe policy. TypeScript never invents an unknown margin. FR/HE/EN checkout notices inherit restaurant styles. No schema change, provider credential or POS client mutation.
+
 <span id="classify" />
 
 ## Review shared source changes

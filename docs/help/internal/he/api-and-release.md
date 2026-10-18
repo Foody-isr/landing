@@ -12,6 +12,12 @@ releaseStatus: available
 ---
 צוות טכני: קראו AGENTS.md, README, חוזה API ותהליך פריסה של השירות.
 
+<span id="weight-hold-margin" />
+
+## בדיקת תקרת אישור לפריטים לפי משקל
+
+השדה הציבורי expected_hold_amount_minor נבדק מול שורות השרת ומרווח העסק בטרנזקציית יצירת ההזמנה; אי התאמה מבטלת לפני מלאי או ספק. השרת כותב weight_hold_amount_minor ו-weight_hold_buffer_percent בלי לסמוך על external_metadata של אורח; ה-resolver משמר תקרה זו או HoldAmount קיים. ההגדרות מקבלות ערכים סופיים מ-0 עד 100; היעדר שדה משמר ערך וברירת המחדל 20. עסק ציבורי והגדרות מוגנות מציגים מדיניות בטוחה. TypeScript אינו ממציא מרווח לא ידוע. הודעות FR/HE/EN יורשות עיצוב העסק. אין שינוי סכמה, מפתח ספק או לקוח POS.
+
 <span id="contracts" />
 
 ## תחזוקת חוזי API ממוקדים
