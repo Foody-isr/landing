@@ -158,6 +158,36 @@
         "await closeFoodCostReport(rid, report.id);"
       ],
       "forbidden": []
+    },
+    {
+      "id": "catalog-sidebar-labels",
+      "source": "src/components/Sidebar.tsx",
+      "required": [
+        "labelKey: 'menu'",
+        "labelKey: 'itemLibrary'",
+        "labelKey: 'modifierSets'",
+        "labelKey: 'posStaffDiscounts'"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "catalog-navigation-translations",
+      "source": "src/lib/i18n.tsx",
+      "required": [
+        "menu: 'Items & menus'",
+        "menu: 'Articles et cartes'",
+        "menu: 'פריטים ותפריטים'",
+        "itemLibrary: 'Item library'",
+        "itemLibrary: 'Articles'",
+        "itemLibrary: 'ספריית פריטים'",
+        "modifierSets: 'Modifier Sets'",
+        "modifierSets: 'Modificateurs'",
+        "modifierSets: 'קבוצות תוספות'",
+        "posStaffDiscounts: \"POS discounts\"",
+        "posStaffDiscounts: \"Remises de caisse\"",
+        "posStaffDiscounts: \"הנחות בקופה\""
+      ],
+      "forbidden": []
     }
   ],
   "guides": [
@@ -167,28 +197,37 @@
         "fr": [
           "liste sous forme de tableau",
           "État",
-          "Créer un article"
+          "Créer un article",
+          "Articles et cartes → Articles"
         ],
         "en": [
           "table-based library",
           "Status",
-          "Create item"
+          "Create item",
+          "Items & menus → Item library"
         ],
         "he": [
           "בצורת טבלה",
           "מצב",
-          "צור פריט"
+          "צור פריט",
+          "פריטים ותפריטים → ספריית פריטים"
         ]
       },
       "forbidden": {
         "fr": [
-          "Trois cartes de synthèse s’affichent"
+          "Trois cartes de synthèse s’affichent",
+          "Menu → Articles",
+          "Menu → Cartes"
         ],
         "en": [
-          "Three KPI cards are shown"
+          "Three KPI cards are shown",
+          "Menu → Items",
+          "Menu → Menus"
         ],
         "he": [
-          "מוצגים שלושה כרטיסי KPI"
+          "מוצגים שלושה כרטיסי KPI",
+          "תפריט → פריטים",
+          "תפריט → תפריטים"
         ]
       }
     },
@@ -200,35 +239,44 @@
           "Recette et coût",
           "Créer un article",
           "à gauche en hébreu",
-          "Statut, Catégories et Cartes"
+          "Statut, Catégories et Cartes",
+          "Articles et cartes → Articles"
         ],
         "en": [
           "continuous full-screen form",
           "Recipe and cost",
           "Create item",
           "on the left in Hebrew",
-          "Status, Categories and Menus"
+          "Status, Categories and Menus",
+          "Items & menus → Item library"
         ],
         "he": [
           "טופס רציף במסך מלא",
           "מתכון ועלות",
           "צור פריט",
           "משמאל בעברית",
-          "סטטוס, קטגוריות ותפריטים"
+          "סטטוס, קטגוריות ותפריטים",
+          "פריטים ותפריטים → ספריית פריטים"
         ]
       },
       "forbidden": {
         "fr": [
           "Le modal Créer un article s'ouvre avec trois onglets",
-          "zone latérale Diffusion"
+          "zone latérale Diffusion",
+          "Menu → Articles",
+          "Menu → Cartes"
         ],
         "en": [
           "The Create Item modal opens with three tabs",
-          "Distribution side area"
+          "Distribution side area",
+          "Menu → Items",
+          "Menu → Menus"
         ],
         "he": [
           "המודל יצירת פריט נפתח עם שלוש לשוניות",
-          "באזור הצד הפצה"
+          "באזור הצד הפצה",
+          "תפריט → פריטים",
+          "תפריט → תפריטים"
         ]
       }
     },
@@ -238,28 +286,37 @@
         "fr": [
           "Même quantité",
           "Recette et coût",
-          "Quantités différentes par taille"
+          "Quantités différentes par taille",
+          "Articles et cartes → Articles"
         ],
         "en": [
           "Same quantity",
           "Recipe and cost",
-          "quantities per size"
+          "quantities per size",
+          "Items & menus → Item library"
         ],
         "he": [
           "אותה כמות",
           "מתכון ועלות",
-          "כמויות שונות לפי גודל"
+          "כמויות שונות לפי גודל",
+          "פריטים ותפריטים → ספריית פריטים"
         ]
       },
       "forbidden": {
         "fr": [
-          "Adapter à la taille pour une quantité automatique"
+          "Adapter à la taille pour une quantité automatique",
+          "Menu → Articles",
+          "Menu → Cartes"
         ],
         "en": [
-          "Scale to item size for an automatic quantity"
+          "Scale to item size for an automatic quantity",
+          "Menu → Items",
+          "Menu → Menus"
         ],
         "he": [
-          "התאם לגודל לכמות אוטומטית"
+          "התאם לגודל לכמות אוטומטית",
+          "תפריט → פריטים",
+          "תפריט → תפריטים"
         ]
       }
     },
@@ -268,26 +325,35 @@
       "required": {
         "fr": [
           "Prix et variantes",
-          "Ajouter une variante"
+          "Ajouter une variante",
+          "Articles et cartes → Articles"
         ],
         "en": [
           "Price and variants",
-          "Add variant"
+          "Add variant",
+          "Items & menus → Item library"
         ],
         "he": [
           "מחיר ווריאציות",
-          "הוספת וריאציה"
+          "הוספת וריאציה",
+          "פריטים ותפריטים → ספריית פריטים"
         ]
       },
       "forbidden": {
         "fr": [
-          "Dans l'onglet Détails, descendez"
+          "Dans l'onglet Détails, descendez",
+          "Menu → Articles",
+          "Menu → Cartes"
         ],
         "en": [
-          "In the Details tab, scroll"
+          "In the Details tab, scroll",
+          "Menu → Items",
+          "Menu → Menus"
         ],
         "he": [
-          "בלשונית פרטים, גלול"
+          "בלשונית פרטים, גלול",
+          "תפריט → פריטים",
+          "תפריט → תפריטים"
         ]
       }
     },
@@ -394,6 +460,72 @@
         "he": [
           "כל הפחתה נרשמת כתנועת מלאי בלתי ניתנת לשינוי"
         ]
+      }
+    },
+    {
+      "article": "menu/menus-and-groups",
+      "required": {
+        "fr": [
+          "Articles et cartes → Cartes"
+        ],
+        "en": [
+          "Items & menus → Menus"
+        ],
+        "he": [
+          "פריטים ותפריטים → תפריטים"
+        ]
+      },
+      "forbidden": {
+        "fr": [
+          "Menu → Articles",
+          "Menu → Cartes"
+        ],
+        "en": [
+          "Menu → Items",
+          "Menu → Menus"
+        ],
+        "he": [
+          "תפריט → פריטים",
+          "תפריט → תפריטים"
+        ]
+      }
+    },
+    {
+      "article": "menu/modifiers",
+      "required": {
+        "fr": [
+          "Articles et cartes → Modificateurs"
+        ],
+        "en": [
+          "Items & menus → Modifier Sets"
+        ],
+        "he": [
+          "פריטים ותפריטים → קבוצות תוספות"
+        ]
+      },
+      "forbidden": {
+        "fr": [],
+        "en": [],
+        "he": []
+      }
+    },
+    {
+      "article": "menu/pos-discounts",
+      "required": {
+        "fr": [
+          "Articles et cartes → Remises de caisse"
+        ],
+        "en": [
+          "Items & menus → POS discounts"
+        ],
+        "he": [
+          "פריטים ותפריטים → הנחות בקופה"
+        ]
+      },
+      "forbidden": {
+        "fr": [],
+        "en": [],
+        "he": []
       }
     }
   ]
