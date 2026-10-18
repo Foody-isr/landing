@@ -4,7 +4,7 @@
   "services": {
     "foodylanding": {
       "repository": "https://github.com/Foody-isr/landing",
-      "sourceCommit": "8c4fc2b928d29223ade99df7590411aee76e0689",
+      "sourceCommit": "1bf2f0c71f1592a2d486cedb652e6d54f3b52834",
       "releaseStatus": "versioned",
       "sourceSnapshot": "fb8c0cfa166208b984db58a68c14c9ddab4b3c6cc377e37c1d9543842d68f6e2",
       "workingTreeHasChanges": true,
@@ -5957,9 +5957,9 @@
     },
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "6525250c45e25b9a2962181b3093723deca36707",
+      "sourceCommit": "855929eeb83bae3187f9f4b48fa51f6b449a92f7",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "0a02f38a9b7db8435bf0ad91ec54a13e5bb6b18fde5afc19df02282cb7af26bd",
+      "sourceSnapshot": "acc3171c87e5ea2271b807fac13c28a2eafcc45547246eb7de961dafd81d5968",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -9640,7 +9640,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "b02b708a7522b6891155e426115b7f266526ddf8fd0ad9dad71913db80c86dea",
+          "sha256": "ffa36e29dffa109bcd133245d2539cbc6efeb0861e55ba86db4773cb1b77de50",
           "features": [
             "getting-started-using-support",
             "platform-api"
@@ -9943,9 +9943,9 @@
     },
     "foodyweb": {
       "repository": "https://github.com/Foody-isr/web",
-      "sourceCommit": "dfdb76444170393c673499bc83568564c4eaf35e",
+      "sourceCommit": "37ed451c9637a00587c456bdf7ab50266d727cf1",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "ae1105e554c91d705f092657f338ce073933cac66ba15f083d393e64684d327a",
+      "sourceSnapshot": "f9c9bbc7f568470c23183f0dbe8a2231ae0ed3cac7f1026c115189ad845e0523",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "app/@cart/(.)order/cart/page.tsx": {
@@ -10071,14 +10071,16 @@
           ]
         },
         "app/order/confirmation/[orderId]/page.tsx": {
-          "sha256": "3718c06f3a9353b08a9c48383e3098ea0e355392ef0d9f26fd8091fbd4872dda",
+          "sha256": "080feeced969dde959848d04ea40fa44e6f7404f5a34eb83aa94a70fb729e8c4",
           "features": [
+            "website-journey",
             "guest-account-tracking"
           ]
         },
         "app/order/confirmation/preview/page.tsx": {
           "sha256": "ccc6d5411e87fea30554f135248ca06f5923d9580730c79a3993ab59b142f230",
           "features": [
+            "website-journey",
             "guest-account-tracking"
           ]
         },
@@ -10276,7 +10278,7 @@
           ]
         },
         "app/receipt/[token]/page.tsx": {
-          "sha256": "a2563ea9c41fc673617be9468eeb10fb53513863f34b13da97e8ff2aec7c0c96",
+          "sha256": "2f2212e85f9b3c632c78298d7ae5e26b63490b695a1cca8b0dc0c84ece555485",
           "features": [
             "website-journey",
             "guest-account-tracking"
@@ -11560,7 +11562,7 @@
           ]
         },
         "lib/og.ts": {
-          "sha256": "bccd487f12091f94db7517751e7f05f0c938b49e3099cb37a4e0359e7e5f545a",
+          "sha256": "0533483c12d2780a360f8268e9b8573c0642111dcb21afca82d47695e1eafb99",
           "features": [
             "shared-runtime"
           ]
@@ -11586,6 +11588,14 @@
         "lib/orderJourney.ts": {
           "sha256": "df403a892fb1d003216fc0e823d1f6a431d8fd60bb3b429410346f732d1d174c",
           "features": [
+            "shared-runtime"
+          ]
+        },
+        "lib/orderLinkMetadata.ts": {
+          "sha256": "6b08fe7f06af598cb1c90f13a557a7334d6cca0fb1647ef9fd52eaad9e18129e",
+          "features": [
+            "website-journey",
+            "guest-account-tracking",
             "shared-runtime"
           ]
         },
@@ -16059,9 +16069,9 @@
             "he": "שאלת שאלה"
           },
           "instructions": {
-            "en": "1. Open the assistant.\n2. Write a question or select a suggestion.\n3. Read the answer and open its **Sources** to check the procedure.\n4. Ask a follow-up question. **New conversation** clears the panel.\n\nThe assistant explains documented Foody features. It cannot view your account or orders and cannot perform actions. In Admin, the current topic helps find relevant articles; restaurant records and sign-in credentials are not forwarded.\n\nAnswers can contain errors. Do not share passwords, payment details or personal customer information. Questions and recent conversation turns are sent to our AI provider. The conversation stays in the browser tab's memory; reloading clears it.",
-            "fr": "1. Ouvrez l’assistant.\n2. Écrivez votre question ou choisissez une suggestion.\n3. Lisez les étapes proposées et ouvrez les **Sources** pour vérifier la procédure.\n4. Posez une question de suivi si nécessaire. **Nouvelle conversation** efface les échanges du panneau.\n\nL’assistant explique les fonctions documentées de Foody. Il ne consulte pas votre compte ou vos commandes et n’effectue aucune opération. Dans l’Admin, la rubrique consultée aide à trouver les articles adaptés ; les données du restaurant et les identifiants de connexion ne lui sont pas transmis.\n\nLes réponses peuvent comporter des erreurs. Ne transmettez ni mot de passe, ni données de paiement, ni informations personnelles sur vos clients. Les questions et les échanges récents sont envoyés à notre fournisseur d’IA. La conversation reste en mémoire dans l’onglet ; recharger la page l’efface.",
-            "he": "1. פתחו את העוזר.\n2. כתבו שאלה או בחרו הצעה.\n3. קראו את ההסבר ופתחו את **המקורות** כדי לבדוק את הנוהל.\n4. אפשר לשאול שאלת המשך. **שיחה חדשה** מנקה את הפאנל.\n\nהעוזר מסביר יכולות מתועדות של Foody. אין לו גישה לחשבון או להזמנות והוא אינו מבצע פעולות. בממשק הניהול הנושא הנוכחי עוזר למצוא מדריכים מתאימים; נתוני המסעדה ופרטי ההתחברות אינם נשלחים.\n\nהתשובות עלולות לכלול טעויות. אין לשתף סיסמאות, פרטי תשלום או מידע אישי על לקוחות. השאלות והודעות השיחה האחרונות נשלחות לספק הבינה המלאכותית שלנו. השיחה נשמרת בזיכרון הלשונית בלבד; טעינת העמוד מחדש מוחקת אותה."
+            "en": "1. Open the assistant.\n2. Write a question or select a suggestion.\n3. Read the answer and open its **Sources** to check the procedure.\n4. Ask a follow-up question. **New conversation** clears the panel.\n\nThe assistant explains documented Foody features. It cannot view your account or orders and cannot perform actions. In Admin, the current topic helps find relevant articles; restaurant records and sign-in credentials are not forwarded.\n\nAnswers can contain errors. Do not share passwords, payment details or personal customer information. Questions and recent conversation turns are sent to our AI provider. The conversation stays in the browser tab's memory; reloading clears it.\n\nFor receipt or confirmation link previews, ask a general question about the restaurant name or logo and open the cited guide. The assistant uses the published procedure; it cannot open your private link or inspect the order. Do not paste receipt or tracking links into the conversation.",
+            "fr": "1. Ouvrez l’assistant.\n2. Écrivez votre question ou choisissez une suggestion.\n3. Lisez les étapes proposées et ouvrez les **Sources** pour vérifier la procédure.\n4. Posez une question de suivi si nécessaire. **Nouvelle conversation** efface les échanges du panneau.\n\nL’assistant explique les fonctions documentées de Foody. Il ne consulte pas votre compte ou vos commandes et n’effectue aucune opération. Dans l’Admin, la rubrique consultée aide à trouver les articles adaptés ; les données du restaurant et les identifiants de connexion ne lui sont pas transmis.\n\nLes réponses peuvent comporter des erreurs. Ne transmettez ni mot de passe, ni données de paiement, ni informations personnelles sur vos clients. Les questions et les échanges récents sont envoyés à notre fournisseur d’IA. La conversation reste en mémoire dans l’onglet ; recharger la page l’efface.\n\nPour l’aperçu d’un lien de reçu ou de confirmation, posez une question générale sur le nom ou le logo du restaurant et ouvrez le guide cité. L’assistant utilise la procédure publiée ; il ne peut ni ouvrir votre lien privé ni consulter la commande. Ne collez pas de liens de reçu ou de suivi dans la conversation.",
+            "he": "1. פתחו את העוזר.\n2. כתבו שאלה או בחרו הצעה.\n3. קראו את ההסבר ופתחו את **המקורות** כדי לבדוק את הנוהל.\n4. אפשר לשאול שאלת המשך. **שיחה חדשה** מנקה את הפאנל.\n\nהעוזר מסביר יכולות מתועדות של Foody. אין לו גישה לחשבון או להזמנות והוא אינו מבצע פעולות. בממשק הניהול הנושא הנוכחי עוזר למצוא מדריכים מתאימים; נתוני המסעדה ופרטי ההתחברות אינם נשלחים.\n\nהתשובות עלולות לכלול טעויות. אין לשתף סיסמאות, פרטי תשלום או מידע אישי על לקוחות. השאלות והודעות השיחה האחרונות נשלחות לספק הבינה המלאכותית שלנו. השיחה נשמרת בזיכרון הלשונית בלבד; טעינת העמוד מחדש מוחקת אותה.\n\nלשאלות על תצוגה מקדימה של קישור לקבלה או לאישור הזמנה, שאלו שאלה כללית על שם המסעדה או הלוגו ופתחו את המדריך המצוטט. העוזר משתמש בנוהל שפורסם; הוא אינו יכול לפתוח קישור פרטי או לבדוק הזמנה. אין להדביק קישורי קבלה או מעקב בשיחה."
           }
         },
         {
@@ -28597,7 +28607,9 @@
         "foodyweb": [
           "app/checkout/**",
           "app/confirmation/**",
-          "app/receipt/**"
+          "app/receipt/**",
+          "lib/orderLinkMetadata.ts",
+          "app/order/confirmation/**"
         ],
         "foodyserver": [
           "internal/website/**"
@@ -28629,6 +28641,19 @@
             "fr": "Dans l’écran reçu, réglez titre/message par langue et disposition compacte ou aérée. Choisissez logo, adresse, téléphone, statut et informations client, puis impression, partage, historique et nouvelle commande. Vérifiez chaque langue et publiez. Ces réglages ne modifient ni la transaction enregistrée ni le document fiscal.",
             "he": "במסך קבלה הגדירו כותרת והודעה לכל שפה ופריסה צפופה או מרווחת. בחרו לוגו, כתובת, טלפון, מצב ופרטי לקוח, ופעולות הדפסה, שיתוף, היסטוריה והזמנה חדשה. בדקו שפות ופרסמו. ההגדרות אינן משנות עסקה או מסמך מס."
           }
+        },
+        {
+          "id": "link-preview",
+          "title": {
+            "en": "Check receipt and confirmation link previews",
+            "fr": "Vérifier l’aperçu des liens de reçu et de confirmation",
+            "he": "בדיקת תצוגה מקדימה של קישורי קבלה ואישור"
+          },
+          "instructions": {
+            "en": "Check that the restaurant has a name and logo configured, then share a valid receipt or order-confirmation link with its intended recipient. The link preview uses that restaurant’s name and logo, independently of the website’s general share image. Without a logo, the preview shows a card with the restaurant’s name. It does not include customer details, order lines or amounts. The linked page can still contain private order information: do not publish the link publicly. If the wrong identity appears, check that the link belongs to the intended restaurant and that its configured logo is accessible. An expired or invalid receipt cannot provide a restaurant preview.",
+            "fr": "Vérifiez que le restaurant possède un nom et un logo configurés, puis partagez un lien valide de reçu ou de confirmation avec son destinataire. L’aperçu reprend le nom et le logo de ce restaurant, indépendamment de l’image de partage générale du site. Sans logo, il affiche une carte au nom du restaurant. Il ne contient ni informations client, ni articles, ni montants. La page liée peut toujours contenir des informations privées : ne publiez pas le lien publiquement. Si l’identité est incorrecte, vérifiez que le lien appartient au bon restaurant et que son logo configuré est accessible. Un reçu expiré ou invalide ne permet pas d’identifier le restaurant dans l’aperçu.",
+            "he": "בדקו שלמסעדה מוגדרים שם ולוגו, ושתפו קישור תקין לקבלה או לאישור הזמנה עם הנמען המתאים. התצוגה המקדימה משתמשת בשם ובלוגו של אותה מסעדה, בנפרד מתמונת השיתוף הכללית של האתר. ללא לוגו מוצג כרטיס עם שם המסעדה. התצוגה אינה כוללת פרטי לקוח, פריטי הזמנה או סכומים. העמוד שאליו הקישור מוביל עדיין עשוי להכיל מידע פרטי: אין לפרסם את הקישור בפומבי. אם הזהות שגויה, בדקו שהקישור שייך למסעדה הנכונה ושהלוגו שהוגדר נגיש. קבלה שפג תוקפה או קבלה לא תקינה אינה מאפשרת להציג את זהות המסעדה בתצוגה המקדימה."
+          }
         }
       ],
       "audience": "public",
@@ -28657,7 +28682,19 @@
         },
         {
           "service": "foodyweb",
+          "file": "app/order/confirmation/[orderId]/page.tsx"
+        },
+        {
+          "service": "foodyweb",
+          "file": "app/order/confirmation/preview/page.tsx"
+        },
+        {
+          "service": "foodyweb",
           "file": "app/receipt/[token]/page.tsx"
+        },
+        {
+          "service": "foodyweb",
+          "file": "lib/orderLinkMetadata.ts"
         }
       ]
     },
@@ -33394,7 +33431,8 @@
           "components/CourierTrackingMap.tsx",
           "components/PaymentReturn*.tsx",
           "components/CustomerSignIn.tsx",
-          "components/GoogleSignIn.tsx"
+          "components/GoogleSignIn.tsx",
+          "lib/orderLinkMetadata.ts"
         ]
       },
       "operations": [
@@ -33435,6 +33473,19 @@
             "en": "If offered, explicitly opt into saving a payment method and complete the provider’s flow. Review the account’s saved-method state afterwards. Remove the Foody authorization through the account controls when needed; this does not cancel unrelated subscriptions with the provider.",
             "fr": "Si proposé, acceptez explicitement l’enregistrement et suivez le prestataire. Vérifiez ensuite l’état dans le compte. Retirez l’autorisation Foody via les contrôles du compte ; cela n’annule pas les abonnements externes.",
             "he": "אם מוצע, אשרו במפורש שמירת אמצעי והשלימו מסלול ספק. בדקו מצב שמור בחשבון. הסירו הרשאת Foody בבקרות החשבון לפי הצורך; אין ביטול מנויים אחרים אצל הספק."
+          }
+        },
+        {
+          "id": "link-preview",
+          "title": {
+            "en": "Check receipt and confirmation link previews",
+            "fr": "Vérifier l’aperçu des liens de reçu et de confirmation",
+            "he": "בדיקת תצוגה מקדימה של קישורי קבלה ואישור"
+          },
+          "instructions": {
+            "en": "Check that the restaurant has a name and logo configured, then share a valid receipt or order-confirmation link with its intended recipient. The link preview uses that restaurant’s name and logo, independently of the website’s general share image. Without a logo, the preview shows a card with the restaurant’s name. It does not include customer details, order lines or amounts. The linked page can still contain private order information: do not publish the link publicly. If the wrong identity appears, check that the link belongs to the intended restaurant and that its configured logo is accessible. An expired or invalid receipt cannot provide a restaurant preview.",
+            "fr": "Vérifiez que le restaurant possède un nom et un logo configurés, puis partagez un lien valide de reçu ou de confirmation avec son destinataire. L’aperçu reprend le nom et le logo de ce restaurant, indépendamment de l’image de partage générale du site. Sans logo, il affiche une carte au nom du restaurant. Il ne contient ni informations client, ni articles, ni montants. La page liée peut toujours contenir des informations privées : ne publiez pas le lien publiquement. Si l’identité est incorrecte, vérifiez que le lien appartient au bon restaurant et que son logo configuré est accessible. Un reçu expiré ou invalide ne permet pas d’identifier le restaurant dans l’aperçu.",
+            "he": "בדקו שלמסעדה מוגדרים שם ולוגו, ושתפו קישור תקין לקבלה או לאישור הזמנה עם הנמען המתאים. התצוגה המקדימה משתמשת בשם ובלוגו של אותה מסעדה, בנפרד מתמונת השיתוף הכללית של האתר. ללא לוגו מוצג כרטיס עם שם המסעדה. התצוגה אינה כוללת פרטי לקוח, פריטי הזמנה או סכומים. העמוד שאליו הקישור מוביל עדיין עשוי להכיל מידע פרטי: אין לפרסם את הקישור בפומבי. אם הזהות שגויה, בדקו שהקישור שייך למסעדה הנכונה ושהלוגו שהוגדר נגיש. קבלה שפג תוקפה או קבלה לא תקינה אינה מאפשרת להציג את זהות המסעדה בתצוגה המקדימה."
           }
         }
       ],
@@ -33545,6 +33596,10 @@
         {
           "service": "foodyweb",
           "file": "lib/customer-note.ts"
+        },
+        {
+          "service": "foodyweb",
+          "file": "lib/orderLinkMetadata.ts"
         }
       ]
     },
@@ -38720,6 +38775,10 @@
         {
           "service": "foodyweb",
           "file": "lib/orderJourney.ts"
+        },
+        {
+          "service": "foodyweb",
+          "file": "lib/orderLinkMetadata.ts"
         },
         {
           "service": "foodyweb",
@@ -70523,6 +70582,7 @@
       "service": "foodyweb",
       "source": "app/order/confirmation/[orderId]/page.tsx",
       "features": [
+        "website-journey",
         "guest-account-tracking"
       ],
       "kind": "next-page",
@@ -70534,6 +70594,7 @@
       "service": "foodyweb",
       "source": "app/order/confirmation/preview/page.tsx",
       "features": [
+        "website-journey",
         "guest-account-tracking"
       ],
       "kind": "next-page",
@@ -77796,8 +77857,8 @@
   "coverage": {
     "sharedRuntimeFiles": 430,
     "features": 98,
-    "operations": 348,
-    "sourceFiles": 2049,
+    "operations": 350,
+    "sourceFiles": 2050,
     "surfaces": 1966,
     "unclassifiedRoutes": []
   }
