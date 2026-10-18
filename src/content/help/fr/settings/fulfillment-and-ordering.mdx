@@ -31,3 +31,9 @@ Vérifiez commande immédiate/planifiée, délai minimal, horizon et créneaux. 
 ## Utiliser l’accès de test temporaire
 
 L’accès temporaire exige une IP publique précise et une échéance de sept jours au maximum. L’activation suspend les commandes publiques. Les tests créent de vraies commandes et notifications ; utilisez le dev pour les données de test. Expiration ou révocation laisse la pause active : reprenez explicitement quand prêt. Ne publiez jamais la liste des IP autorisées.
+
+<span id="courier-departure-sync" />
+
+## Suivre le départ d’une livraison affectée
+
+Lorsque le livreur affecté démarre sa tournée dans Admin, les livraisons non terminées acceptées, en préparation ou prêtes passent ensemble en « En livraison ». Les écrans du personnel reçoivent ces statuts par leur actualisation habituelle des commandes. Cette action confirme le départ réel ; affecter un livreur ou choisir un mode de remise ne démarre pas à lui seul une tournée. Les préparations retenues et commandes au poids non finalisées doivent être résolues auparavant. Si le départ échoue, les statuts précédents sont conservés. Les commandes terminées ou annulées ne sont pas rouvertes.

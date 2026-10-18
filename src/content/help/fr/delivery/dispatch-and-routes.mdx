@@ -35,3 +35,15 @@ Lancez le calcul ou l’affectation de flotte proposés puis vérifiez avant enr
 ## Enregistrer et suivre l’avancement
 
 Enregistrez la tournée vérifiée puis utilisez le dispatch. Suivez coursier et commandes et modifiez explicitement un plan devenu obsolète.
+
+<span id="endpoints" />
+
+## Définir le départ et l’arrivée de chaque livreur
+
+Avec les versions API et Admin correspondantes installées, sélectionnez commandes et livreurs dans Commandes → Livraisons → répartition. Saisissez l’adresse de départ et la destination finale de chaque livreur avant de générer le plan. Tapez au moins trois caractères et choisissez une suggestion ; une rue seule demande de préciser le numéro. Si les suggestions sont indisponibles, saisissez l’adresse complète manuellement puis enregistrez pour la localiser. L’arrivée peut être le domicile du livreur. Foody optimise les livraisons entre ces deux points en respectant les contraintes horaires existantes. Pour un départ près de Tel Aviv et un domicile final à Netanya, vérifiez que Herzliya et Raanana précèdent Netanya. Avant le départ, l’admin ou le livreur affecté peut modifier les paramètres puis enregistrer ; changer un point réinitialise un ordre manuel et recalcule la tournée. Un échec de localisation conserve le plan enregistré.
+
+<span id="customer-window" />
+
+## Régler le créneau communiqué au client
+
+Dans la répartition, utilisez « Marge du créneau communiqué au client » à côté du temps à chaque arrêt. Les nouveaux plans proposent 90 minutes. Saisissez 1:30, 1h30 ou 90 pour une heure trente ; la durée autorisée est de 1 à 720 minutes. Le créneau commence à l’arrivée calculée, arrondie à la minute affichée : 08:30 + 90 minutes donne 08:30–10:00. Ce champ n’allonge pas le temps de remise et ne remplace pas les contraintes horaires initiales de la commande. Il est enregistré par tournée et modifiable avant le départ. Les liens WhatsApp de livraison et les rappels manuels ou approuvés utilisent ce créneau. Après recalcul, rouvrez le rappel pour vérifier son texte actualisé. Les anciennes tournées sans ce réglage conservent leur créneau de rappel enregistré. Si une tournée configurée ne fournit pas d’arrivée valide, recalculez ou corrigez l’adresse avant l’envoi ; aucun horaire n’est inventé.
