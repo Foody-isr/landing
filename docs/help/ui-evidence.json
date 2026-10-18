@@ -119,6 +119,33 @@
         "document.documentElement.dir = locale === 'he' ? 'rtl' : 'ltr';"
       ],
       "forbidden": []
+    },
+    {
+      "id": "editor-visible-side-cards",
+      "source": "src/components/menu-item/MenuItemDistribution.tsx",
+      "required": [
+        "<h2 id=\"item-state-title\">{t('status')}</h2>",
+        "<h2 id=\"item-category-title\">{t('categories')}</h2>",
+        "{t('menus')}",
+        "<MenuGroupPicker"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "editor-side-card-translations",
+      "source": "src/lib/i18n.tsx",
+      "required": [
+        "status: 'Status'",
+        "status: 'סטטוס'",
+        "status: 'Statut'",
+        "categories: 'Categories'",
+        "categories: 'קטגוריות'",
+        "categories: 'Catégories'",
+        "menus: 'Menus'",
+        "menus: 'תפריטים'",
+        "menus: 'Cartes'"
+      ],
+      "forbidden": []
     }
   ],
   "guides": [
@@ -160,30 +187,36 @@
           "page continue en plein écran",
           "Recette et coût",
           "Créer un article",
-          "à gauche en hébreu"
+          "à gauche en hébreu",
+          "Statut, Catégories et Cartes"
         ],
         "en": [
           "continuous full-screen form",
           "Recipe and cost",
           "Create item",
-          "on the left in Hebrew"
+          "on the left in Hebrew",
+          "Status, Categories and Menus"
         ],
         "he": [
           "טופס רציף במסך מלא",
           "מתכון ועלות",
           "צור פריט",
-          "משמאל בעברית"
+          "משמאל בעברית",
+          "סטטוס, קטגוריות ותפריטים"
         ]
       },
       "forbidden": {
         "fr": [
-          "Le modal Créer un article s'ouvre avec trois onglets"
+          "Le modal Créer un article s'ouvre avec trois onglets",
+          "zone latérale Diffusion"
         ],
         "en": [
-          "The Create Item modal opens with three tabs"
+          "The Create Item modal opens with three tabs",
+          "Distribution side area"
         ],
         "he": [
-          "המודל יצירת פריט נפתח עם שלוש לשוניות"
+          "המודל יצירת פריט נפתח עם שלוש לשוניות",
+          "באזור הצד הפצה"
         ]
       }
     },

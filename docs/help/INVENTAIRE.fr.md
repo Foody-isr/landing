@@ -10,9 +10,9 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodylanding | 127 | 21 | a7eac3c9494e ; versioned |
-| foodyadmin | 734 | 754 | d69b435599c3 ; versioned |
-| foodyserver | 497 | 832 | 3bfe498ffb27 ; versioned |
+| foodylanding | 127 | 21 | 73a77f21e0ae ; versioned |
+| foodyadmin | 734 | 754 | 489ad02647c1 ; versioned |
+| foodyserver | 497 | 832 | 60bf87ab5f59 ; versioned |
 | foodyweb | 329 | 163 | 702afadca28d ; versioned |
 | foodypos | 320 | 149 | 084ec27b498d ; versioned |
 | foodybackoffice | 42 | 47 | 4baf2489d628 ; versioned |
@@ -308,7 +308,7 @@ Identifiant : `menu-creating-a-menu-item`. Public : public. Disponibilité : ava
 
 - [Vérifier les accès et ouvrir l’éditeur](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-1)
 - [Informations de l’article et photo](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-3)
-- [Classement et diffusion](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-6)
+- [Statut, Catégories et Cartes](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-6)
 - [Prix et variantes](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-7)
 - [Personnalisations et autres sections](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-10)
 - [Enregistrer, puis compléter la recette](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-11)
