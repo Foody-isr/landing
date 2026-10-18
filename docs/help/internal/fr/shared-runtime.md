@@ -14,6 +14,12 @@ releaseStatus: available
 ---
 Équipe technique : clients, état, traduction, styles, proxies et démarrage communs soutiennent les modules métier documentés.
 
+<span id="weight-hold-margin" />
+
+## Vérifier le plafond de préautorisation au poids
+
+Le champ public expected_hold_amount_minor est vérifié contre les lignes serveur et la marge du restaurant dans la transaction de création ; un écart annule la commande avant stock/prestataire. Le serveur écrit weight_hold_amount_minor et weight_hold_buffer_percent sans faire confiance aux external_metadata invitées ; le resolver conserve ce plafond ou HoldAmount existant. Les réglages acceptent des valeurs finies de 0 à 100 ; l’omission les préserve et le défaut reste 20. Restaurant public et réglages protégés exposent cette politique sans secret. TypeScript n’invente pas de marge inconnue. Les messages FR/HE/EN héritent du thème. Aucun changement de schéma, clé prestataire ou client POS.
+
 <span id="classify" />
 
 ## Vérifier les changements du socle
