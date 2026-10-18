@@ -2652,7 +2652,8 @@
         "internal/payment/**"
       ],
       "foodyweb": [
-        "app/r/[restaurantId]/payment/**"
+        "app/r/[restaurantId]/payment/**",
+        "lib/i18n.tsx"
       ],
       "foodypos": [
         "lib/features/payment/**"
@@ -2699,6 +2700,34 @@
           "en": "Do not assume that a timeout means no money was taken. Check the order and provider transaction before retrying a charge. Contact Foody support if they disagree or the outcome is unclear. Never include full card details, CVV or credentials in a support message.\n\nCash/manual recording, receipts, invoice issuance and refunds are separate operations. Their available controls depend on your setup and permissions. Do not record a card payment as successful solely because a customer shows a return page. Ask support for the procedure applicable to your provider before a refund or correction.",
           "fr": "Un délai dépassé ne signifie pas nécessairement qu’aucune somme n’a été débitée. Vérifiez la commande et la transaction du prestataire avant de relancer un débit. Contactez Foody si les informations divergent ou restent incertaines. Ne transmettez jamais de numéro de carte complet, de CVV ou d’identifiant secret.\n\nL’enregistrement manuel ou en espèces, les reçus, l’émission de factures et les remboursements sont des opérations distinctes. Les contrôles disponibles dépendent de votre installation et de vos permissions. Ne marquez pas un paiement carte comme réussi sur la seule base d’une page de retour. Demandez au support la procédure adaptée à votre prestataire avant un remboursement ou une correction.",
           "he": "חריגה מזמן ההמתנה אינה מוכיחה שלא בוצע חיוב. בדקו את ההזמנה ואת העסקה אצל הספק לפני ניסיון נוסף. פנו לתמיכה אם הנתונים סותרים או אינם ברורים. אין להעביר מספר כרטיס מלא, CVV או פרטי גישה סודיים.\n\nרישום ידני או במזומן, קבלות, חשבוניות והחזרים הם פעולות נפרדות. האפשרויות תלויות בהתקנה ובהרשאות. אל תסמנו תשלום כרטיס כמוצלח רק משום שהלקוח מציג עמוד חזרה. לפני החזר או תיקון בקשו מהתמיכה את הנוהל המתאים לספק שלכם."
+        }
+      },
+      {
+        "id": "verifone-cst-card-saving",
+        "level": 2,
+        "title": {
+          "en": "Save a card during the first payment (CST)",
+          "fr": "Enregistrer une carte pendant le premier paiement (CST)",
+          "he": "שמירת כרטיס בתשלום הראשון (CST)"
+        },
+        "instructions": {
+          "en": "On the CST test setup validated with Verifone, sign in or create your Foody customer account, explicitly select Save card, then confirm the order. The hosted Verifone page collects the card, CVV and Israeli ID and charges the full order amount while creating the reusable token. There is no separate 1 ILS registration payment and no automatic monthly charge. Foody opens confirmation only after verifying the transaction. On later orders, choose the saved card and explicitly confirm the new amount; the configured No-CVV contract requires neither CVV nor Israeli ID. A delayed result requires checking status, never repeating the debit. Previously issued registration links keep their old recovery flow. Weighted holds remain outside this new registration flow. Production availability requires separate merchant approval.",
+          "fr": "Sur la configuration CST de test validée avec Verifone, connectez-vous ou créez votre compte client Foody, sélectionnez explicitement Enregistrer la carte puis confirmez la commande. La page sécurisée Verifone recueille la carte, le CVV et la TZ et encaisse le montant total tout en créant le token réutilisable. Aucun paiement séparé de 1 ₪ ni prélèvement mensuel automatique. Foody ouvre la confirmation après vérification de la transaction. Pour une commande suivante, sélectionnez la carte enregistrée et confirmez le nouveau montant ; le contrat No-CVV configuré ne demande ni CVV ni TZ. En cas de délai, vérifiez le statut sans relancer le débit. Les anciens liens d’enregistrement conservent leur procédure de reprise. Les préautorisations au poids restent hors de ce nouveau parcours d’enregistrement. La disponibilité en production nécessite une validation commerçant distincte.",
+          "he": "בהגדרת הבדיקה CST שאומתה עם Verifone, מתחברים או יוצרים חשבון לקוח Foody, מסמנים במפורש שמירת כרטיס ומאשרים את ההזמנה. העמוד המאובטח של Verifone אוסף כרטיס, CVV ותעודת זהות, מחייב את מלוא סכום ההזמנה ויוצר באותה פעולה טוקן לשימוש חוזר. אין חיוב נפרד של שקל לשמירת הכרטיס ואין חיובים חודשיים אוטומטיים. Foody מציגה אישור רק לאחר אימות העסקה. בהזמנה הבאה בוחרים בכרטיס השמור ומאשרים במפורש את הסכום החדש; החוזה המוגדר ללא CVV אינו דורש CVV או תעודת זהות. אם התוצאה מתעכבת, בודקים סטטוס ולא חוזרים על החיוב. קישורי הרשמה ישנים שומרים על מסלול השחזור הקודם. הרשמה עם אישור מקדים להזמנה לפי משקל אינה חלק מהמסלול החדש. זמינות בסביבת ייצור דורשת אישור נפרד לבית העסק."
+        }
+      },
+      {
+        "id": "invoice4u-order-lines",
+        "level": 2,
+        "title": {
+          "en": "Check an itemized Invoice4U invoice",
+          "fr": "Vérifier une facture Invoice4U détaillée",
+          "he": "בדיקת חשבונית Invoice4U מפורטת"
+        },
+        "instructions": {
+          "en": "When Invoice4U issuance and an invoice document type are enabled by the Foody team for the merchant, ordinary immediate Verifone order payments send the saved order lines: items and quantities, selected variants/options, combo base and included components, order discount and delivery fee. Frozen prices already include VAT; it is not added again. The line total must equal the payment amount or payment initiation is blocked. The same detail is sent for a later saved-card sale. Legacy orders without catalogue lines and catering/table/capture operations keep their existing document behavior. An approved payment is not proof that Invoice4U issued a fiscal document: check the document in Verifone Central/Invoice4U and customer delivery. Do not create another payment to obtain a missing invoice.",
+          "fr": "Lorsque l’équipe Foody a activé Invoice4U et un type de facture pour le commerçant, les paiements immédiats des commandes Verifone transmettent les lignes enregistrées : articles et quantités, variantes/options sélectionnées, base de formule et composants inclus, remise et livraison. Les prix enregistrés sont déjà TTC ; la TVA n’est pas ajoutée à nouveau. Le total des lignes doit égaler le paiement, sinon son lancement est bloqué. Le même détail accompagne un paiement ultérieur par carte enregistrée. Les anciennes commandes sans lignes catalogue et les opérations traiteur/table/capture conservent leur comportement documentaire existant. Un paiement approuvé ne prouve pas l’émission fiscale : vérifiez le document dans Verifone Central/Invoice4U et sa réception par le client. Ne recréez pas un paiement pour obtenir une facture manquante.",
+          "he": "כאשר צוות Foody הפעיל לבית העסק הנפקה ב-Invoice4U וסוג מסמך חשבונית, תשלום מיידי של הזמנת Verifone שולח את השורות שנשמרו: פריטים וכמויות, גרסאות ותוספות שנבחרו, מחיר בסיס של ארוחה ורכיביה הכלולים, הנחת הזמנה ודמי משלוח. המחירים כבר כוללים מע״מ והוא אינו נוסף שוב. סכום השורות חייב להתאים לסכום התשלום, אחרת יצירת התשלום נחסמת. אותו פירוט נשלח גם בחיוב עתידי בכרטיס שמור. הזמנות ישנות ללא שורות קטלוג ופעולות קייטרינג, שולחן ולכידת אישור מקדים שומרות על התנהגות המסמכים הקיימת. תשלום מאושר אינו הוכחה שהופק מסמך מס: בדקו את המסמך ב-Verifone Central או Invoice4U ואת קבלתו אצל הלקוח. אין ליצור תשלום נוסף כדי לקבל חשבונית חסרה."
         }
       }
     ],
@@ -6321,6 +6350,20 @@
           "fr": "Vérifiez pourboire et total proposés avant encaissement. Après succès, ouvrez le reçu numérique ou imprimé configuré. Réimprimer ne débite pas à nouveau. Le remboursement par addition n’est pas établi pour tous les partages avancés ; contactez un opérateur autorisé sans supposer un bouton.",
           "he": "בדקו טיפ וסכום מוצעים לפני גבייה. אחרי הצלחה פתחו קבלה דיגיטלית או מודפסת. הדפסה חוזרת אינה חיוב נוסף. החזר לכל חשבון אינו מבוסס בכל מסלולי הפיצול; פנו למפעיל מורשה במקום להניח שיש כפתור החזר."
         }
+      },
+      {
+        "id": "invoice4u-order-lines",
+        "level": 2,
+        "title": {
+          "en": "Check an itemized Invoice4U invoice",
+          "fr": "Vérifier une facture Invoice4U détaillée",
+          "he": "בדיקת חשבונית Invoice4U מפורטת"
+        },
+        "instructions": {
+          "en": "This concerns online orders, not a new POS terminal integration. When Invoice4U issuance and an invoice document type are enabled by the Foody team for the merchant, ordinary immediate Verifone order payments send the saved order lines: items and quantities, selected variants/options, combo base and included components, order discount and delivery fee. Frozen prices already include VAT; it is not added again. The line total must equal the payment amount or payment initiation is blocked. The same detail is sent for a later saved-card sale. Legacy orders without catalogue lines and catering/table/capture operations keep their existing document behavior. An approved payment is not proof that Invoice4U issued a fiscal document: check the document in Verifone Central/Invoice4U and customer delivery. Do not create another payment to obtain a missing invoice.",
+          "fr": "Ce point concerne les commandes en ligne, pas une nouvelle intégration de terminal en caisse. Lorsque l’équipe Foody a activé Invoice4U et un type de facture pour le commerçant, les paiements immédiats des commandes Verifone transmettent les lignes enregistrées : articles et quantités, variantes/options sélectionnées, base de formule et composants inclus, remise et livraison. Les prix enregistrés sont déjà TTC ; la TVA n’est pas ajoutée à nouveau. Le total des lignes doit égaler le paiement, sinon son lancement est bloqué. Le même détail accompagne un paiement ultérieur par carte enregistrée. Les anciennes commandes sans lignes catalogue et les opérations traiteur/table/capture conservent leur comportement documentaire existant. Un paiement approuvé ne prouve pas l’émission fiscale : vérifiez le document dans Verifone Central/Invoice4U et sa réception par le client. Ne recréez pas un paiement pour obtenir une facture manquante.",
+          "he": "הנוהל נוגע להזמנות מקוונות ולא לאינטגרציה חדשה של מסוף בקופה. כאשר צוות Foody הפעיל לבית העסק הנפקה ב-Invoice4U וסוג מסמך חשבונית, תשלום מיידי של הזמנת Verifone שולח את השורות שנשמרו: פריטים וכמויות, גרסאות ותוספות שנבחרו, מחיר בסיס של ארוחה ורכיביה הכלולים, הנחת הזמנה ודמי משלוח. המחירים כבר כוללים מע״מ והוא אינו נוסף שוב. סכום השורות חייב להתאים לסכום התשלום, אחרת יצירת התשלום נחסמת. אותו פירוט נשלח גם בחיוב עתידי בכרטיס שמור. הזמנות ישנות ללא שורות קטלוג ופעולות קייטרינג, שולחן ולכידת אישור מקדים שומרות על התנהגות המסמכים הקיימת. תשלום מאושר אינו הוכחה שהופק מסמך מס: בדקו את המסמך ב-Verifone Central או Invoice4U ואת קבלתו אצל הלקוח. אין ליצור תשלום נוסף כדי לקבל חשבונית חסרה."
+        }
       }
     ],
     "audience": "public",
@@ -6980,6 +7023,34 @@
           "en": "In Settings → Payments review online-payment-only policy, default VAT and tips enablement. Only permitted, changed fields are saved. An unknown policy remains unknown until explicitly chosen; editing VAT must not silently choose it. Weight authorization buffer and fixed suggested-tip/rounding behavior are read-only or have no edit contract here. Verify saved values after success; retain edits on a failed save.",
           "fr": "Dans Paramètres → Paiements, vérifiez paiement en ligne obligatoire, TVA par défaut et activation des pourboires. Seuls les champs autorisés modifiés sont enregistrés. Une politique inconnue reste inconnue avant choix explicite ; modifier la TVA ne doit pas la choisir. Marge d’autorisation pondérale, suggestions fixes et arrondi ne sont pas éditables ici. Vérifiez les valeurs après succès et gardez les saisies après échec.",
           "he": "בהגדרות תשלום בדקו חיוב מקוון בלבד, מע״מ וטיפים. נשמרים רק שדות מורשים שהשתנו. מדיניות לא ידועה נשארת כך עד בחירה מפורשת; שינוי מע״מ אינו בוחר אותה. מרווח הרשאה לפי משקל, טיפים קבועים ועיגול אינם לעריכה כאן. בדקו שמירה ושמרו קלט בכשל."
+        }
+      },
+      {
+        "id": "verifone-cst-card-saving",
+        "level": 2,
+        "title": {
+          "en": "Save a card during the first payment (CST)",
+          "fr": "Enregistrer une carte pendant le premier paiement (CST)",
+          "he": "שמירת כרטיס בתשלום הראשון (CST)"
+        },
+        "instructions": {
+          "en": "On the CST test setup validated with Verifone, sign in or create your Foody customer account, explicitly select Save card, then confirm the order. The hosted Verifone page collects the card, CVV and Israeli ID and charges the full order amount while creating the reusable token. There is no separate 1 ILS registration payment and no automatic monthly charge. Foody opens confirmation only after verifying the transaction. On later orders, choose the saved card and explicitly confirm the new amount; the configured No-CVV contract requires neither CVV nor Israeli ID. A delayed result requires checking status, never repeating the debit. Previously issued registration links keep their old recovery flow. Weighted holds remain outside this new registration flow. Production availability requires separate merchant approval.",
+          "fr": "Sur la configuration CST de test validée avec Verifone, connectez-vous ou créez votre compte client Foody, sélectionnez explicitement Enregistrer la carte puis confirmez la commande. La page sécurisée Verifone recueille la carte, le CVV et la TZ et encaisse le montant total tout en créant le token réutilisable. Aucun paiement séparé de 1 ₪ ni prélèvement mensuel automatique. Foody ouvre la confirmation après vérification de la transaction. Pour une commande suivante, sélectionnez la carte enregistrée et confirmez le nouveau montant ; le contrat No-CVV configuré ne demande ni CVV ni TZ. En cas de délai, vérifiez le statut sans relancer le débit. Les anciens liens d’enregistrement conservent leur procédure de reprise. Les préautorisations au poids restent hors de ce nouveau parcours d’enregistrement. La disponibilité en production nécessite une validation commerçant distincte.",
+          "he": "בהגדרת הבדיקה CST שאומתה עם Verifone, מתחברים או יוצרים חשבון לקוח Foody, מסמנים במפורש שמירת כרטיס ומאשרים את ההזמנה. העמוד המאובטח של Verifone אוסף כרטיס, CVV ותעודת זהות, מחייב את מלוא סכום ההזמנה ויוצר באותה פעולה טוקן לשימוש חוזר. אין חיוב נפרד של שקל לשמירת הכרטיס ואין חיובים חודשיים אוטומטיים. Foody מציגה אישור רק לאחר אימות העסקה. בהזמנה הבאה בוחרים בכרטיס השמור ומאשרים במפורש את הסכום החדש; החוזה המוגדר ללא CVV אינו דורש CVV או תעודת זהות. אם התוצאה מתעכבת, בודקים סטטוס ולא חוזרים על החיוב. קישורי הרשמה ישנים שומרים על מסלול השחזור הקודם. הרשמה עם אישור מקדים להזמנה לפי משקל אינה חלק מהמסלול החדש. זמינות בסביבת ייצור דורשת אישור נפרד לבית העסק."
+        }
+      },
+      {
+        "id": "invoice4u-order-lines",
+        "level": 2,
+        "title": {
+          "en": "Check an itemized Invoice4U invoice",
+          "fr": "Vérifier une facture Invoice4U détaillée",
+          "he": "בדיקת חשבונית Invoice4U מפורטת"
+        },
+        "instructions": {
+          "en": "When Invoice4U issuance and an invoice document type are enabled by the Foody team for the merchant, ordinary immediate Verifone order payments send the saved order lines: items and quantities, selected variants/options, combo base and included components, order discount and delivery fee. Frozen prices already include VAT; it is not added again. The line total must equal the payment amount or payment initiation is blocked. The same detail is sent for a later saved-card sale. Legacy orders without catalogue lines and catering/table/capture operations keep their existing document behavior. An approved payment is not proof that Invoice4U issued a fiscal document: check the document in Verifone Central/Invoice4U and customer delivery. Do not create another payment to obtain a missing invoice.",
+          "fr": "Lorsque l’équipe Foody a activé Invoice4U et un type de facture pour le commerçant, les paiements immédiats des commandes Verifone transmettent les lignes enregistrées : articles et quantités, variantes/options sélectionnées, base de formule et composants inclus, remise et livraison. Les prix enregistrés sont déjà TTC ; la TVA n’est pas ajoutée à nouveau. Le total des lignes doit égaler le paiement, sinon son lancement est bloqué. Le même détail accompagne un paiement ultérieur par carte enregistrée. Les anciennes commandes sans lignes catalogue et les opérations traiteur/table/capture conservent leur comportement documentaire existant. Un paiement approuvé ne prouve pas l’émission fiscale : vérifiez le document dans Verifone Central/Invoice4U et sa réception par le client. Ne recréez pas un paiement pour obtenir une facture manquante.",
+          "he": "כאשר צוות Foody הפעיל לבית העסק הנפקה ב-Invoice4U וסוג מסמך חשבונית, תשלום מיידי של הזמנת Verifone שולח את השורות שנשמרו: פריטים וכמויות, גרסאות ותוספות שנבחרו, מחיר בסיס של ארוחה ורכיביה הכלולים, הנחת הזמנה ודמי משלוח. המחירים כבר כוללים מע״מ והוא אינו נוסף שוב. סכום השורות חייב להתאים לסכום התשלום, אחרת יצירת התשלום נחסמת. אותו פירוט נשלח גם בחיוב עתידי בכרטיס שמור. הזמנות ישנות ללא שורות קטלוג ופעולות קייטרינג, שולחן ולכידת אישור מקדים שומרות על התנהגות המסמכים הקיימת. תשלום מאושר אינו הוכחה שהופק מסמך מס: בדקו את המסמך ב-Verifone Central או Invoice4U ואת קבלתו אצל הלקוח. אין ליצור תשלום נוסף כדי לקבל חשבונית חסרה."
         }
       }
     ],

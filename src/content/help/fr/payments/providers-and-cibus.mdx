@@ -37,3 +37,15 @@ Dans Cibus, vérifiez l’activation. Avec les droits, remplacez ensemble identi
 ## Régler politique de paiement, TVA et pourboires
 
 Dans Paramètres → Paiements, vérifiez paiement en ligne obligatoire, TVA par défaut et activation des pourboires. Seuls les champs autorisés modifiés sont enregistrés. Une politique inconnue reste inconnue avant choix explicite ; modifier la TVA ne doit pas la choisir. Marge d’autorisation pondérale, suggestions fixes et arrondi ne sont pas éditables ici. Vérifiez les valeurs après succès et gardez les saisies après échec.
+
+<span id="verifone-cst-card-saving" />
+
+## Enregistrer une carte pendant le premier paiement (CST)
+
+Sur la configuration CST de test validée avec Verifone, connectez-vous ou créez votre compte client Foody, sélectionnez explicitement Enregistrer la carte puis confirmez la commande. La page sécurisée Verifone recueille la carte, le CVV et la TZ et encaisse le montant total tout en créant le token réutilisable. Aucun paiement séparé de 1 ₪ ni prélèvement mensuel automatique. Foody ouvre la confirmation après vérification de la transaction. Pour une commande suivante, sélectionnez la carte enregistrée et confirmez le nouveau montant ; le contrat No-CVV configuré ne demande ni CVV ni TZ. En cas de délai, vérifiez le statut sans relancer le débit. Les anciens liens d’enregistrement conservent leur procédure de reprise. Les préautorisations au poids restent hors de ce nouveau parcours d’enregistrement. La disponibilité en production nécessite une validation commerçant distincte.
+
+<span id="invoice4u-order-lines" />
+
+## Vérifier une facture Invoice4U détaillée
+
+Lorsque l’équipe Foody a activé Invoice4U et un type de facture pour le commerçant, les paiements immédiats des commandes Verifone transmettent les lignes enregistrées : articles et quantités, variantes/options sélectionnées, base de formule et composants inclus, remise et livraison. Les prix enregistrés sont déjà TTC ; la TVA n’est pas ajoutée à nouveau. Le total des lignes doit égaler le paiement, sinon son lancement est bloqué. Le même détail accompagne un paiement ultérieur par carte enregistrée. Les anciennes commandes sans lignes catalogue et les opérations traiteur/table/capture conservent leur comportement documentaire existant. Un paiement approuvé ne prouve pas l’émission fiscale : vérifiez le document dans Verifone Central/Invoice4U et sa réception par le client. Ne recréez pas un paiement pour obtenir une facture manquante.
