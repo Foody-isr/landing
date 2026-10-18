@@ -10,7 +10,7 @@ featureId: message-templates
 audience: public
 releaseStatus: available
 ---
-Open Settings → Message templates, WhatsApp templates or Order workflow according to the channel.
+Admin → Settings → Communications → WhatsApp; then Admin → Settings → Restaurant → Order journey
 
 <span id="template" />
 
@@ -20,6 +20,12 @@ Edit supported localized text and variables, or submit a WhatsApp Utility templa
 
 <span id="stage" />
 
-## Attach messages to workflow stages
+## Configure the WhatsApp event, customer switch and template
 
-Select an approved template on the intended stage and choose its supported timing. Stage-entry messages apply to future entries, not historical orders. Delivery reminders need saved delivery/courier data; satisfaction messages require recorded fulfillment. Read the selected trigger rather than assuming every reminder is sent the day before.
+1. First assign and save the approved notification template in Settings → Communications → WhatsApp, as explained in [WhatsApp](/en/help/communications/whatsapp#assign-notification). Check that Meta notifications are active.
+2. Open Settings → Restaurant → Order journey. Select the service: Pickup, Dine in or Delivery. Each service has its own saved journey. Expand the intended stage.
+3. Review the stage name and type. Select the automatic event that should move the order into it: payment confirmed, production done, courier assigned or courier delivered where offered. Without an automatic event the stage is reached manually. The event advances the stage; it does not by itself enable a customer message.
+4. Set Notify the customer to Yes. Choose Message type, then WhatsApp template with its language. For Order status you may keep the configured default; an explicit template overrides that default for this stage. WhatsApp is the channel of this template selector; this control is not a general SMS/email channel selector.
+5. For a Delivery reminder template, choose When to send: When the order reaches this stage, or The day before delivery and a time. The day-before option uses the restaurant timezone and needs a saved delivery date; courier reminders also need an assigned courier and delivery window. Other message types use stage entry, not an arbitrary schedule. Check the preview.
+6. Save this journey and verify the confirmation. Repeat for other services if required. These settings apply when orders subsequently enter the stage; saving does not send to historical orders. One message/job per order and stage is tracked.
+7. Open an order → Actions → Customer messages to review attempts and delivered/read evidence. Accepted is not delivered. If a message is missing, check saved settings, provider activity, approval/language, the actual stage transition and required delivery data. Refresh an uncertain attempt before any resend. An explicit Meta template never falls back to Twilio.

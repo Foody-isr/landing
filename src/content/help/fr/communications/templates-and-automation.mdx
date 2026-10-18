@@ -10,7 +10,7 @@ featureId: message-templates
 audience: public
 releaseStatus: available
 ---
-Ouvrez Paramètres → Modèles de messages, modèles WhatsApp ou Workflow selon le canal.
+Admin → Paramètres → Communications → WhatsApp ; puis Admin → Paramètres → Restaurant → Parcours des commandes
 
 <span id="template" />
 
@@ -20,6 +20,12 @@ Modifiez textes localisés et variables, ou soumettez un modèle WhatsApp Utilit
 
 <span id="stage" />
 
-## Associer les messages aux étapes
+## Configurer le déclencheur WhatsApp, la notification client et le modèle
 
-Choisissez un modèle approuvé sur l’étape et son déclenchement. Les messages concernent les futures entrées, sans reprise historique. Rappels livraison exigent données livreur/date ; satisfaction exige remise enregistrée. Lisez le déclencheur, sans supposer un envoi systématique la veille.
+1. Affectez d’abord le modèle approuvé à la notification dans Paramètres → Communications → WhatsApp, puis enregistrez, comme décrit dans [WhatsApp](/fr/help/communications/whatsapp#assign-notification). Vérifiez que les notifications Meta sont actives.
+2. Ouvrez Paramètres → Restaurant → Parcours des commandes. Choisissez le service : À emporter, Sur place ou Livraison. Chaque service possède son parcours enregistré. Dépliez l’étape concernée.
+3. Vérifiez son nom et son type. Cochez l’événement automatique qui doit y faire entrer la commande : paiement confirmé, production terminée, livreur affecté ou livraison effectuée selon les choix proposés. Sans événement automatique, le passage est manuel. Le déclencheur fait avancer l’étape ; il n’active pas à lui seul un message client.
+4. Réglez Prévenir le client sur Oui. Choisissez Type de message, puis Modèle WhatsApp avec sa langue. Pour Statut de commande, vous pouvez conserver le modèle par défaut configuré ; un choix explicite le remplace pour cette étape. WhatsApp est le canal de ce sélecteur de modèle ; ce contrôle n’est pas un sélecteur général SMS/email.
+5. Pour un modèle de Rappel de livraison, choisissez Quand envoyer ? : Au passage de cette étape, ou La veille de la livraison avec une heure. L’envoi la veille utilise le fuseau du restaurant et exige une date de livraison enregistrée ; le rappel livreur nécessite aussi un livreur affecté et un créneau. Les autres types suivent le passage d’étape, sans programmation horaire arbitraire. Vérifiez l’aperçu.
+6. Enregistrez ce parcours et vérifiez la confirmation. Répétez pour les autres services si nécessaire. Ces réglages s’appliquent aux prochaines entrées dans l’étape ; enregistrer ne déclenche pas un rattrapage des anciennes commandes. Un message/tâche par commande et étape est suivi.
+7. Ouvrez une commande → Actions → Messages clients pour consulter les tentatives et les preuves livré/lu. Accepté ne signifie pas livré. En cas d’absence, vérifiez réglages enregistrés, activation, approbation/langue, passage réel d’étape et données de livraison requises. Actualisez une tentative incertaine avant renvoi. Un modèle Meta explicite ne bascule jamais vers Twilio.

@@ -1,0 +1,35 @@
+---
+title: Sumit payment links and partial-payment balances
+description: >-
+  Admin → Orders → open an order. Sumit must be the restaurant’s active payment provider, configured by the authorized
+  Foody team. Managing orders is required to collect payment.
+apps: foodyadmin
+tags:
+  - payments
+  - order-payment-links
+updatedAt: '2026-10-18'
+featureId: order-payment-links
+audience: public
+releaseStatus: available
+---
+Admin → Orders → open an order. Sumit must be the restaurant’s active payment provider, configured by the authorized Foody team. Managing orders is required to collect payment.
+
+<span id="initial-link" />
+
+## Generate the initial payment link
+
+1. In Orders → New order, add items and quantities. Continue to checkout, check the service, customer details, total, discount and delivery charge. Select Payment link as the payment method; this method is paid by the customer on the hosted provider page.
+2. Create the order. The Payment link ready screen shows a URL. Copy link and send it to the intended customer through your chosen channel.
+3. For an existing, non-cancelled order with Pending payment, open its payment summary and click Get payment link. Copy it or use Share WhatsApp when a customer phone is present. This WhatsApp action opens the app with prepared text; it is not an automatic template dispatch.
+4. The customer opens the Sumit page and completes payment. Refresh the order and wait for Foody’s verified Paid status. Creating, copying or sharing the link does not collect money and does not prove payment. Do not mark a payment manually just because the customer opened the page. If link creation fails, the order may already exist: reopen it before creating another order.
+
+<span id="partial-balance" />
+
+## Record a partial payment and collect only the remainder
+
+Partially paid means Foody has recorded a collected amount below the order total. It is not a discount, a refund or proof that a balance link was already sent.
+1. Open Orders → the order → Actions → Take Payment. Record the actual tender and Amount collected; for an external card/bank transfer, add its reference when available. Only record money actually received: this manual recording does not itself charge the card through Sumit. Confirm.
+2. Refresh and check Partially paid, Amount already paid and Balance due. Example: total 150 ILS, collected 50 ILS, remaining 100 ILS.
+3. In the balance-required area, click Generate payment link. With active Sumit, Foody generates a hosted link for the 100 ILS remainder, not another charge for the full 150 ILS. This action is explicit; the partial-payment status alone does not generate or send it.
+4. Copy the link or Share WhatsApp, check the recipient and send it. The customer pays the remainder. Refresh and verify the final status and collected amount; only confirmed payment settles the balance.
+5. A paid order increased later may also show a Balance due and the same supplement action. If the total decreased, review any amount to refund separately; no automatic refund or recharge occurs. If there is no positive balance, do not create a supplement. On an uncertain provider result, check the order and provider before regenerating/retrying. Catering deposits have a separate [event balance procedure](/en/help/catering/events-and-balance).

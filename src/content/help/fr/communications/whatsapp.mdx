@@ -10,7 +10,7 @@ featureId: whatsapp
 audience: public
 releaseStatus: available
 ---
-Ouvrez Paramètres → WhatsApp. Choisissez le mode de connexion/facturation compatible avant les identifiants.
+Admin → Paramètres → Communications → WhatsApp
 
 <span id="connection" />
 
@@ -29,3 +29,13 @@ Meta coexistence direct est un pilote contrôlé, désactivé par défaut. Conne
 ## Lire l’historique des messages
 
 Dans la communication de commande, consultez envoyé, livré, lu, échec et blocage avant envoi. Un blocage ne prouve pas une livraison. Le rappel livreur relu se déclenche par son action éligible. Un résultat prestataire inconnu n’est pas rejoué automatiquement ; vérifiez avant renvoi.
+
+<span id="assign-notification" />
+
+## Affecter un modèle WhatsApp approuvé à une notification
+
+1. Ouvrez Paramètres → Communications → WhatsApp avec le droit de modifier les réglages. Pour la connexion Meta directe, vérifiez que le numéro est prêt et les notifications actives. Connecter le numéro seul ne les active pas.
+2. Dans les messages clients, cliquez Configurer sur la notification souhaitée, par exemple Statut de commande. Choisissez le modèle dans la bonne langue, approuvé en catégorie Utility et compatible avec les variables attendues. Un modèle en attente ou refusé ne peut pas être activé.
+3. Vérifiez l’aperçu, puis cliquez Terminé pour revenir à l’espace WhatsApp. Le choix reste un brouillon local : cliquez Activer les notifications Meta, ou Enregistrer si elles sont déjà actives. Les modèles de confirmation et de rappel de livraison sont tous deux requis pour l’activation ; statut et reçu sont facultatifs. Vérifiez l’état actif enregistré.
+4. Pour une notification liée à une étape, poursuivez dans Paramètres → Restaurant → Parcours des commandes et activez Prévenir le client sur l’étape voulue. Affecter le modèle par défaut ici n’active pas toutes les étapes. Voir [Modèles et automatisations](/fr/help/communications/templates-and-automation#stage).
+Avec une connexion Twilio seule, utilisez les modèles Content approuvés dans ses réglages de connexion. La sélection de modèles Meta natifs exige une connexion Meta ; aucun basculement automatique entre prestataires n’est prévu.

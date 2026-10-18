@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "Foody-isr/admin",
-  "ref": "742def4eaeeb865239c3a37a6b0e815989580e12",
+  "ref": "e1a9fff05573d305ea8356706731aa7523e65aae",
   "observations": [
     {
       "id": "items-library",
@@ -186,6 +186,61 @@
         "posStaffDiscounts: \"POS discounts\"",
         "posStaffDiscounts: \"Remises de caisse\"",
         "posStaffDiscounts: \"הנחות בקופה\""
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "whatsapp-default-assignment",
+      "source": "src/components/settings/MetaWhatsAppTemplates.tsx",
+      "required": [
+        "setEditor(kind)",
+        "waWorkspaceDone",
+        "waMetaActivate",
+        "configureMetaWhatsAppNotifications"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "workflow-customer-switch",
+      "source": "src/app/[restaurantId]/settings/orders/OrderWorkflowBuilder.tsx",
+      "required": [
+        "checked={stage.notify_customer}",
+        "<WorkflowStageMessage",
+        "wfSaveFlow"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "workflow-template-and-timing",
+      "source": "src/app/[restaurantId]/settings/orders/WorkflowStageMessage.tsx",
+      "required": [
+        "wfWhatsAppMessageType",
+        "wfWhatsAppTemplate",
+        "wfWhatsAppDayBefore",
+        "wfWhatsAppTime"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "partial-payment-balance-action",
+      "source": "src/components/orders/detail/context/MoneyPanel.tsx",
+      "required": [
+        "(editedAfterPayment || (hasPartialPaidAmount && hasBalanceDue))",
+        "canManage && !isCancelled && hasBalanceDue",
+        "collectOrderBalance(order.restaurant_id, order.id)",
+        "generateBalanceLink"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "sumit-document-actions",
+      "source": "src/components/orders/detail/context/InvoicePanel.tsx",
+      "required": [
+        "getOrderInvoice(order.restaurant_id, order.id)",
+        "invoiceView",
+        "invoiceDownload",
+        "invoiceSendEmail",
+        "SupplementInvoiceRow"
       ],
       "forbidden": []
     }
@@ -526,6 +581,93 @@
         "fr": [],
         "en": [],
         "he": []
+      }
+    },
+    {
+      "article": "communications/templates-and-automation",
+      "required": {
+        "fr": [
+          "Paramètres → Communications → WhatsApp",
+          "Parcours des commandes",
+          "Prévenir le client sur Oui",
+          "Modèle WhatsApp",
+          "La veille de la livraison"
+        ],
+        "en": [
+          "Settings → Communications → WhatsApp",
+          "Order journey",
+          "Notify the customer to Yes",
+          "WhatsApp template",
+          "The day before delivery"
+        ],
+        "he": [
+          "הגדרות → תקשורת → WhatsApp",
+          "מסלול ההזמנות",
+          "הודעה ללקוח על כן",
+          "תבנית WhatsApp",
+          "יום לפני המשלוח"
+        ]
+      },
+      "forbidden": {
+        "fr": [],
+        "he": [],
+        "en": []
+      }
+    },
+    {
+      "article": "payments/payment-links-and-balance",
+      "required": {
+        "fr": [
+          "Générer un lien de paiement",
+          "Partiellement payé",
+          "100 ₪",
+          "150 ₪"
+        ],
+        "en": [
+          "Generate payment link",
+          "Partially paid",
+          "100 ILS",
+          "150 ILS"
+        ],
+        "he": [
+          "צור קישור תשלום",
+          "שולם חלקית",
+          "100 ₪",
+          "150 ₪"
+        ]
+      },
+      "forbidden": {
+        "fr": [],
+        "he": [],
+        "en": []
+      }
+    },
+    {
+      "article": "payments/sumit-invoices",
+      "required": {
+        "fr": [
+          "Actions → Voir la facture",
+          "Télécharger",
+          "Par email (via Summit)",
+          "complémentaires"
+        ],
+        "en": [
+          "Actions → View invoice",
+          "Download",
+          "By email (via Summit)",
+          "Supplementary"
+        ],
+        "he": [
+          "פעולות → הצגת חשבונית",
+          "הורדה",
+          "במייל (דרך Summit)",
+          "משלימים"
+        ]
+      },
+      "forbidden": {
+        "fr": [],
+        "he": [],
+        "en": []
       }
     }
   ]

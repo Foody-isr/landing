@@ -10,7 +10,7 @@ featureId: whatsapp
 audience: public
 releaseStatus: available
 ---
-Open Settings → WhatsApp. Select the supported connection/billing mode before entering credentials.
+Admin → Settings → Communications → WhatsApp
 
 <span id="connection" />
 
@@ -29,3 +29,13 @@ Direct Meta coexistence is a controlled pilot and disabled by default. Connectin
 ## Read message history
 
 In the order’s communication panel inspect sent, delivered, read, failed and blocked-before-send records. A blocked automation is not proof of delivery. For a reviewed courier reminder use its explicit action only when eligible. Unknown provider outcomes are not automatically replayed; investigate before another send.
+
+<span id="assign-notification" />
+
+## Assign an approved WhatsApp template to a notification
+
+1. Open Settings → Communications → WhatsApp with permission to edit settings. For the direct Meta connection, check that the number is ready and notifications are active. Connecting a number alone does not activate notifications.
+2. Under customer messages, choose Configure on the intended notification, for example Order status. Choose a template with the correct language, Approved Utility status and compatible variables. Pending or rejected templates cannot be activated.
+3. Preview the message, then choose Done to return to the workspace. This selection is still a local draft: click Activate Meta notifications, or Save when already active. The confirmation and delivery-reminder templates are both required for activation; status and receipt templates are optional. Verify the saved active state.
+4. For an order-stage notification, continue to Settings → Restaurant → Order journey and enable Notify the customer on the intended stage. Assigning a default template here does not enable every stage. See [Templates and automation](/en/help/communications/templates-and-automation#stage).
+For a Twilio-only connection, use its approved Content templates in the connection settings. Native Meta template selection requires a Meta connection; there is no automatic provider fallback.
