@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-19'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -64,4 +64,4 @@ releaseStatus: available
 
 ## סנכרון קורפוס להזמנה בנייד
 
-בפרסום תיקון הקלדת כתובת בנייד הטמיעו public-corpus.json מאותה גרסת Landing של מדריכי עברית, צרפתית ואנגלית. בדקו את הגרסה דרך support/status בפיתוח ובייצור בלי קריאת AI בתשלום. הצמידו קומיט תיעוד קבוע בחוזי Web ו-API וקדמו את תמונת ה-API שנבדקה בפיתוח.
+תיקון ההמשך למקלדת המקורית חייב לפרסם את הוראות ההקלדה המצומצמת ולכלול את קורפוס שלוש השפות התואם. ודאו אותה גרסה דרך support/status בפיתוח ובייצור; לוגיקת ההזמנות והתשלום ב-API אינה משתנה.

@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-19'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -64,4 +64,4 @@ Counter terminal checkout persists a restaurant-scoped order with payment_status
 
 ## Synchronize the mobile ordering corpus
 
-When releasing the mobile address entry correction, embed public-corpus.json from the same Landing release as the FR/HE/EN guides. Verify its revision through support/status in development and production without a paid AI call. Pin the immutable documentation commit in Web and API contracts; promote the API image verified in development.
+The native-keyboard follow-up must release the compact entry procedures and embed their matching FR/HE/EN corpus. Verify the same revision through support/status in development and production; API order and payment logic are unchanged.

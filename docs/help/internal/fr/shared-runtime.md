@@ -7,7 +7,7 @@ apps: both
 tags:
   - internal
   - shared-runtime
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-19'
 featureId: shared-runtime
 audience: internal
 releaseStatus: available
@@ -42,4 +42,4 @@ Les exceptions internes de formule utilisent is_substitution par choix. Seuls le
 
 ## Valider le clavier dans le sélecteur de remise
 
-Le dialogue de remise mobile suit la hauteur et le décalage du VisualViewport à échelle 1 ; le zoom reste contrôlé par le navigateur. L’en-tête et la confirmation restent hors du corps défilant, les suggestions restent dans son flux et les couleurs continuent à provenir du restaurant. Le clavier se ferme seulement après une sélection d’adresse complète, pas après une rue à compléter. Vérifier WebKit et Chromium avec réduction et déplacement simulés du viewport, liste longue, navigation clavier, écran 320 px, retrait, fermeture et restauration du défilement. Cette simulation ne remplace pas une vérification du clavier natif sur iPhone avant promotion. Publier le corpus avec les guides de la version ; le contrat local reste WORKSPACE jusqu’au commit documentaire approuvé.
+En recherche d’adresse avec clavier natif ouvert, réserver le viewport réduit au champ et aux résultats : masquer les onglets, la connexion facultative, le conseil générique et la confirmation désactivée, sans masquer attribution ni erreurs. La liste défile indépendamment du champ. Garder le champ activé pendant la résolution pour préserver le focus ; une modification annule la requête et invalide sa réponse. L’arrivée du calendrier parent ne doit pas réinitialiser un dialogue déjà ouvert. Vérifier Safari iOS avec clavier logiciel, puis WebKit/Chromium et les trois langues avant promotion.
