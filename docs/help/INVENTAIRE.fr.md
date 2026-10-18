@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodylanding | 127 | 21 | 6e0fa3bd7a65 ; versioned |
-| foodyadmin | 734 | 754 | cdb87a538107 ; versioned |
-| foodyserver | 497 | 832 | 08ea2d189394 ; versioned |
-| foodyweb | 329 | 163 | e40a8bdcad99 ; versioned |
-| foodypos | 320 | 149 | eee34eee0773 ; versioned |
-| foodybackoffice | 42 | 47 | bf119ca95af8 ; versioned |
+| foodylanding | 127 | 21 | 9a97d3f27644 ; versioned |
+| foodyadmin | 734 | 754 | d69b435599c3 ; versioned |
+| foodyserver | 497 | 832 | 3bfe498ffb27 ; versioned |
+| foodyweb | 329 | 163 | 702afadca28d ; versioned |
+| foodypos | 320 | 149 | 084ec27b498d ; versioned |
+| foodybackoffice | 42 | 47 | 4baf2489d628 ; versioned |
 
 ## getting-started
 

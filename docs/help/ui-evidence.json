@@ -101,6 +101,24 @@
         "value: 'auto'"
       ],
       "forbidden": []
+    },
+    {
+      "id": "editor-responsive-distribution",
+      "source": "src/components/menu-item/item-editor.css",
+      "required": [
+        "grid-template-columns: minmax(0, 800fr) minmax(0, 360fr);",
+        "@media (max-width: 1023px)",
+        "grid-template-columns: minmax(0, 1fr);"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "editor-language-direction",
+      "source": "src/lib/i18n.tsx",
+      "required": [
+        "document.documentElement.dir = locale === 'he' ? 'rtl' : 'ltr';"
+      ],
+      "forbidden": []
     }
   ],
   "guides": [
@@ -141,17 +159,20 @@
         "fr": [
           "page continue en plein écran",
           "Recette et coût",
-          "Créer un article"
+          "Créer un article",
+          "à gauche en hébreu"
         ],
         "en": [
           "continuous full-screen form",
           "Recipe and cost",
-          "Create item"
+          "Create item",
+          "on the left in Hebrew"
         ],
         "he": [
           "טופס רציף במסך מלא",
           "מתכון ועלות",
-          "צור פריט"
+          "צור פריט",
+          "משמאל בעברית"
         ]
       },
       "forbidden": {
