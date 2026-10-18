@@ -7,7 +7,7 @@ apps: both
 tags:
   - internal
   - shared-runtime
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-19'
 featureId: shared-runtime
 audience: internal
 releaseStatus: available
@@ -42,4 +42,4 @@ Internal combo exceptions use is_substitution per selection. Only JWT staff hand
 
 ## Validate the keyboard in fulfillment selection
 
-The mobile fulfillment dialog follows VisualViewport height and offset at scale 1; the browser retains pinch zoom. Its heading and confirmation stay outside the scrolling body, suggestions remain in flow and restaurant colors are preserved. Dismiss the keyboard only after selecting a complete address, never a street needing refinement. Check WebKit and Chromium with simulated viewport reduction and pan, a long list, keyboard navigation, a 320 px screen, pickup, closing and restored page scrolling. Simulation does not replace a native iPhone keyboard check before promotion. Release the corpus with the matching guides; the local contract remains WORKSPACE until the documentation commit is approved.
+During address search with the native keyboard open, reserve the reduced viewport for the field and results: hide tabs, optional sign-in, the generic hint and disabled confirmation, preserving attribution and errors. Results scroll independently of the field. Keep the input enabled during resolution to preserve focus; an edit cancels the request and invalidates its response. A parent calendar refresh must not reinitialize an already open dialog. Verify Safari iOS with its software keyboard, then WebKit/Chromium and all three languages before promotion.

@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-19'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -64,4 +64,4 @@ L’encaissement par terminal au comptoir conserve une commande du restaurant av
 
 ## Synchroniser le corpus du parcours mobile
 
-Lors de la publication du correctif de saisie d’adresse mobile, embarquez le public-corpus.json produit par la même version Landing que les articles FR/HE/EN. Vérifiez la révision par support/status en développement puis en production, sans appel IA payant. Épinglez le commit documentaire immuable dans les contrats Web et API ; conservez l’image API validée en développement pour sa promotion.
+Le suivi du correctif de clavier natif doit publier les procédures de saisie compacte et intégrer leur corpus FR/HE/EN correspondant. Vérifier la même révision via support/status en développement puis en production ; aucun changement de logique de commande ou de paiement côté API.
