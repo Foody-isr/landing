@@ -98,3 +98,16 @@ Foody's owner supplied the Star Micronics/Epson partner and integrator status an
 - `star-mc-print3.webp`: manufacturer image from [Star mC-Print3](https://starmicronics.com/product/mc-print3-pos-receipt-printer-retail-kitchen-online-ordering/), source `https://starmicronics.com/wp-content/uploads/2022/01/mC-Print3-1-800x800.jpg.webp`.
 
 Epson is positioned for professional and fine-dining kitchens in Israel. No unsupported claim of exclusive design for Michelin-starred restaurants, endorsement or first Israeli availability is made. Direct cloud printing is qualified: compatible intelligent Epson variant or gateway required. Manufacturer images retain their own example tickets and screens.
+
+## Help center and documentation assistant
+
+Public help lives at `/fr/help`, `/he/help` and `/en/help`. The authored feature
+catalogue renders all three languages, while internal procedures stay outside the
+public corpus. Full-text search and the API support assistant use the same release.
+The API owns AI credentials and private Redis; Landing has no AI provider secret.
+Canonical browsers call `/api/v1/public/support/chat` on the runtime-selected API;
+preview questions proxy to development with a shared egress quota.
+
+Run `npm run render:help`, `npm run check:help`, `npm run test:help`, lint, TypeScript
+and build. See [maintenance and CI rules](docs/help/MAINTENANCE.md), the full
+[inventory](docs/help/inventory.json) and [French inventory index](docs/help/INVENTAIRE.fr.md).

@@ -1,10 +1,22 @@
 ---
-title: "Variantes et tailles"
-description: "Configurez des variantes de taille ou de saveur sur un article, avec prix, portion et statut stock par variante."
+title: Variantes et tailles
+description: 'Configurez des variantes de taille ou de saveur sur un article, avec prix, portion et statut stock par variante.'
 apps: foodyadmin
-tags: [menu, variantes, tailles, options, portions]
-updatedAt: 2026-04-16
+tags:
+  - menu
+  - menu-variants-and-sizes
+  - variantes
+  - tailles
+  - options
+  - portions
+updatedAt: '2026-10-18'
+featureId: menu-variants-and-sizes
+audience: public
+releaseStatus: available
 ---
+Ouvrez l’espace Foody correspondant décrit ci-dessous.
+
+<span id="section-1" />
 
 ## Ce qu'est une variante
 
@@ -21,13 +33,13 @@ Les variantes appartiennent à l'article. À la commande, le client en choisit e
 
 ---
 
+<span id="section-2" />
+
 ## Créer un groupe de variantes
 
 1. Ouvrez l'article dans `Menu → Articles`.
 2. Dans l'onglet Détails, descendez jusqu'à la section **Variantes**.
 3. Cliquez **Ajouter** (ou **Modifier** si un groupe existe déjà).
-
-![Éditeur de variantes vide](/assets/img/screenshots/menu/variants-modal-empty.png)
 
 4. Donnez un nom au groupe (ex. «\u00A0Taille\u00A0», «\u00A0Size\u00A0», «\u00A0Saveur\u00A0»). C'est plutôt interne — les clients voient les lignes, pas le nom du groupe.
 5. Ajoutez une ligne par variante. Chaque ligne a :
@@ -36,21 +48,29 @@ Les variantes appartiennent à l'article. À la commande, le client en choisit e
    * **Portion** — taille servie (avec unité : g, ml, kg, l, unit).
    * **Statut** — Disponible / Rupture de stock.
 
-![Éditeur de variantes rempli](/assets/img/screenshots/menu/variants-modal-filled.png)
-
 6. Cliquez **Terminé**.
 
 ---
 
+<span id="section-3" />
+
 ## Comprendre chaque champ
+
+Comprendre chaque champ
+
+<span id="section-4" />
 
 ### Nom
 
 L'étiquette que choisit le client. Courte et naturelle («\u00A0Normal\u00A0», «\u00A0Grand\u00A0», «\u00A0Petit\u00A0», «\u00A0XL\u00A0»).
 
+<span id="section-5" />
+
 ### Prix
 
 Prix absolu, pas un delta. Saisir `70` pour Normal et `140` pour Grand fixe exactement ce prix par variante, peu importe le prix de base de l'article.
+
+<span id="section-6" />
 
 ### Portion
 
@@ -65,17 +85,19 @@ Choisissez une famille d'unités cohérente avec votre recette :
 * Hamburger : unit.
 * Assiette : g.
 
+<span id="section-7" />
+
 ### Statut
 
 Basculez sur Rupture quand c'est épuisé pour la journée. La variante est grisée sur POS / web sans être supprimée. Remettez sur Disponible quand c'est réassorti.
 
 ---
 
+<span id="section-8" />
+
 ## Réutiliser un groupe de variantes
 
 Dans Foody, les groupes de variantes s'appuient sur des **Option Sets** — un pool réutilisable. Quand vous tapez un nom qui correspond à un Option Set existant, une suggestion apparaît.
-
-![Suggestion Option Set existant](/assets/img/screenshots/menu/variants-option-set-reuse.png)
 
 Appliquer un groupe existant attache ses lignes à cet article. Vous pouvez ensuite surcharger par article :
 
@@ -87,6 +109,8 @@ Modifier le **nom** d'une ligne au niveau Option Set propage partout. Utile pour
 
 ---
 
+<span id="section-9" />
+
 ## Supprimer ou masquer une variante
 
 * **Masquer temporairement** (préserver l'historique) : Statut → Rupture de stock. Recommandé pour les articles saisonniers ou épuisés.
@@ -96,7 +120,13 @@ Supprimer une variante qui a un historique de commandes ne touche pas les comman
 
 ---
 
+<span id="section-10" />
+
 ## Exemples
+
+Exemples
+
+<span id="section-11" />
 
 ### Tailles de burger
 
@@ -107,6 +137,8 @@ Supprimer une variante qui a un historique de commandes ne touche pas les comman
 
 Sur Recette, marquez le bœuf en «\u00A0Personnalisé par variante\u00A0» avec 200 g pour Normal, 400 g pour Grand. Pain / sauce restent en Quantité fixe.
 
+<span id="section-12" />
+
 ### Bols de soupe
 
 | Variante | Prix | Portion |
@@ -115,6 +147,8 @@ Sur Recette, marquez le bœuf en «\u00A0Personnalisé par variante\u00A0» avec
 | Grand bol | 32 ₪ | 500 ml |
 
 Sur Recette, l'ingrédient prép. soupe est en portée «\u00A0Adapter à la taille\u00A0». Pas de quantité à saisir ; le système consomme 250 ml ou 500 ml automatiquement.
+
+<span id="section-13" />
 
 ### Tailles de boisson
 
@@ -125,6 +159,8 @@ Sur Recette, l'ingrédient prép. soupe est en portée «\u00A0Adapter à la tai
 | Grand | 22 ₪ | 750 ml |
 
 ---
+
+<span id="section-14" />
 
 ## Pour aller plus loin
 

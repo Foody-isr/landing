@@ -1,0 +1,1738 @@
+{
+  "schemaVersion": 2,
+  "canonicalInventory": "inventory.json",
+  "features": [
+    {
+      "id": "account-access",
+      "article": "getting-started/first-login",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/login/**",
+          "src/app/setup-account/**",
+          "src/app/reset-password/**",
+          "src/app/select-restaurant/**",
+          "src/components/RestaurantAccountMenu.tsx",
+          "src/components/RestaurantRedirect.tsx",
+          "src/components/IdleModal.tsx",
+          "src/components/brand/AccessShell.tsx"
+        ],
+        "foodyserver": [
+          "internal/auth/**"
+        ],
+        "foodypos": [
+          "lib/features/auth/**",
+          "lib/features/splash/**"
+        ]
+      }
+    },
+    {
+      "id": "account-security",
+      "article": "account/security",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/settings/security/**",
+          "src/components/settings/*Passkey*"
+        ],
+        "foodyserver": [
+          "internal/auth/webauthn*"
+        ]
+      }
+    },
+    {
+      "id": "staff-invitations",
+      "article": "staff/invite-staff",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/staff/page.tsx",
+          "src/components/team/**"
+        ],
+        "foodyserver": [
+          "internal/staff/**"
+        ],
+        "foodypos": [
+          "lib/features/staff/**"
+        ]
+      }
+    },
+    {
+      "id": "staff-roles",
+      "article": "staff/roles-and-permissions",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/roles/**",
+          "src/lib/route-permissions.ts"
+        ],
+        "foodyserver": [
+          "internal/rbac/**"
+        ],
+        "foodypos": [
+          "lib/core/auth/**"
+        ]
+      }
+    },
+    {
+      "id": "staff-devices-shifts",
+      "article": "staff/devices-and-shifts",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/staff/devices/**",
+          "src/app/[restaurantId]/staff/shifts/**"
+        ],
+        "foodyserver": [
+          "internal/shifts/**"
+        ],
+        "foodypos": [
+          "lib/features/auth/presentation/*service*"
+        ]
+      }
+    },
+    {
+      "id": "customers-profiles",
+      "article": "customers/managing-customers",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/customers/**",
+          "src/components/customers/**"
+        ],
+        "foodyserver": [
+          "internal/customers/**"
+        ],
+        "foodypos": [
+          "lib/features/trusted_customers/**"
+        ]
+      }
+    },
+    {
+      "id": "promotions",
+      "article": "marketing/promotions",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/marketing/**",
+          "src/components/marketing/**"
+        ],
+        "foodyserver": [
+          "internal/discounts/**"
+        ],
+        "foodyweb": [
+          "components/*Discount*"
+        ]
+      }
+    },
+    {
+      "id": "billing",
+      "article": "account/subscription",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/billing/**"
+        ],
+        "foodyserver": [
+          "internal/subscription/**"
+        ],
+        "foodypos": [
+          "lib/features/subscription/**"
+        ]
+      }
+    },
+    {
+      "id": "analytics-dashboard",
+      "article": "analytics/dashboard",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/analytics/**",
+          "src/app/[restaurantId]/dashboard/**",
+          "src/components/analytics/**"
+        ],
+        "foodyserver": [
+          "internal/analytics/**"
+        ],
+        "foodypos": [
+          "lib/features/analytics/**"
+        ]
+      }
+    },
+    {
+      "id": "getting-started-complete-setup-guide",
+      "article": "getting-started/complete-setup-guide",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/components/help/**"
+        ],
+        "foodylanding": [
+          "src/components/help/**"
+        ]
+      }
+    },
+    {
+      "id": "getting-started-how-it-all-connects",
+      "article": "getting-started/how-it-all-connects",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/components/help/**"
+        ],
+        "foodylanding": [
+          "src/components/help/**"
+        ]
+      }
+    },
+    {
+      "id": "getting-started-using-support",
+      "article": "getting-started/using-support",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/components/help/**"
+        ],
+        "foodylanding": [
+          "src/components/help/**"
+        ],
+        "foodyserver": [
+          "internal/support/**"
+        ]
+      }
+    },
+    {
+      "id": "kitchen-availability",
+      "article": "kitchen/availability",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/kitchen/**"
+        ],
+        "foodyserver": [
+          "internal/stock/**",
+          "internal/prep/**",
+          "internal/availability/**",
+          "internal/recipes/**"
+        ],
+        "foodypos": [
+          "lib/features/kitchen/**"
+        ]
+      }
+    },
+    {
+      "id": "kitchen-daily-operations",
+      "article": "kitchen/daily-operations",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/kitchen/**",
+          "src/components/kitchen/**"
+        ],
+        "foodyserver": [
+          "internal/stock/**",
+          "internal/prep/**",
+          "internal/availability/**",
+          "internal/recipes/**"
+        ],
+        "foodypos": [
+          "lib/features/kitchen/**",
+          "lib/features/suggestions/**"
+        ]
+      }
+    },
+    {
+      "id": "kitchen-food-cost",
+      "article": "kitchen/food-cost",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/kitchen/**",
+          "src/components/food-cost/**"
+        ],
+        "foodyserver": [
+          "internal/stock/**",
+          "internal/prep/**",
+          "internal/availability/**",
+          "internal/recipes/**"
+        ],
+        "foodypos": [
+          "lib/features/food_cost/**"
+        ]
+      }
+    },
+    {
+      "id": "kitchen-preparations",
+      "article": "kitchen/preparations",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/kitchen/**",
+          "src/components/prep/**"
+        ],
+        "foodyserver": [
+          "internal/stock/**",
+          "internal/prep/**",
+          "internal/availability/**",
+          "internal/recipes/**"
+        ],
+        "foodypos": [
+          "lib/features/kitchen/**"
+        ]
+      }
+    },
+    {
+      "id": "kitchen-stock-management",
+      "article": "kitchen/stock-management",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/kitchen/**",
+          "src/components/stock/**",
+          "src/lib/stock/**"
+        ],
+        "foodyserver": [
+          "internal/stock/**",
+          "internal/prep/**",
+          "internal/availability/**",
+          "internal/recipes/**"
+        ],
+        "foodypos": [
+          "lib/features/kitchen/**"
+        ]
+      }
+    },
+    {
+      "id": "menu-categories-and-items",
+      "article": "menu/categories-and-items",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/menu/**",
+          "src/components/menu-item/**"
+        ],
+        "foodyserver": [
+          "internal/menu/**"
+        ],
+        "foodypos": [
+          "lib/features/menu/**"
+        ],
+        "foodyweb": [
+          "components/ItemModal*"
+        ]
+      }
+    },
+    {
+      "id": "menu-creating-a-menu-item",
+      "article": "menu/creating-a-menu-item",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/menu/**",
+          "src/components/menu-item/**"
+        ],
+        "foodyserver": [
+          "internal/menu/**"
+        ],
+        "foodypos": [
+          "lib/features/menu/**"
+        ],
+        "foodyweb": [
+          "components/ItemModal*"
+        ]
+      }
+    },
+    {
+      "id": "menu-ingredients-and-portions",
+      "article": "menu/ingredients-and-portions",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/menu/**",
+          "src/components/menu-item/**"
+        ],
+        "foodyserver": [
+          "internal/menu/**"
+        ],
+        "foodypos": [
+          "lib/features/menu/**"
+        ],
+        "foodyweb": [
+          "components/ItemModal*"
+        ]
+      }
+    },
+    {
+      "id": "menu-menus-and-groups",
+      "article": "menu/menus-and-groups",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/menu/**",
+          "src/components/menu-item/**",
+          "src/components/menu/**",
+          "src/components/MenuGroupPicker.tsx",
+          "src/lib/menu/**"
+        ],
+        "foodyserver": [
+          "internal/menu/**"
+        ],
+        "foodypos": [
+          "lib/features/menu/**"
+        ],
+        "foodyweb": [
+          "components/ItemModal*"
+        ]
+      }
+    },
+    {
+      "id": "menu-variants-and-sizes",
+      "article": "menu/variants-and-sizes",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/menu/**",
+          "src/components/menu-item/**"
+        ],
+        "foodyserver": [
+          "internal/menu/**"
+        ],
+        "foodypos": [
+          "lib/features/menu/**"
+        ],
+        "foodyweb": [
+          "components/ItemModal*"
+        ]
+      }
+    },
+    {
+      "id": "orders-managing-orders",
+      "article": "orders/managing-orders",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/orders/**",
+          "src/components/orders/**"
+        ],
+        "foodyserver": [
+          "internal/orders/**"
+        ],
+        "foodypos": [
+          "lib/features/orders/**"
+        ]
+      }
+    },
+    {
+      "id": "payments-how-payments-work",
+      "article": "payments/how-payments-work",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/settings/payments/**"
+        ],
+        "foodyserver": [
+          "internal/payment/**"
+        ],
+        "foodyweb": [
+          "app/r/[restaurantId]/payment/**"
+        ],
+        "foodypos": [
+          "lib/features/payment/**"
+        ]
+      }
+    },
+    {
+      "id": "printers-epson-tm-u220iib",
+      "article": "printers/epson-tm-u220iib",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/settings/printers/**"
+        ],
+        "foodyserver": [
+          "internal/printing/**"
+        ],
+        "foodypos": [
+          "lib/services/printing/**"
+        ]
+      }
+    },
+    {
+      "id": "website-qr-customize-your-site",
+      "article": "website-qr/customize-your-site",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/website-v3/**",
+          "src/components/website-v3/**",
+          "src/lib/website-v3/**"
+        ],
+        "foodyserver": [
+          "internal/restaurants/website*"
+        ],
+        "foodyweb": [
+          "components/website-v3/**",
+          "lib/websiteV3*.ts",
+          "lib/usePageSections.ts"
+        ]
+      }
+    },
+    {
+      "id": "menu-modifiers",
+      "article": "menu/modifiers",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/menu/modifier-sets/**",
+          "src/app/[restaurantId]/menu/modifiers/**",
+          "src/app/[restaurantId]/menu/options/**",
+          "src/components/menu-item/*Modifier*"
+        ],
+        "foodyserver": [
+          "internal/menu/**"
+        ],
+        "foodypos": [
+          "lib/features/menu/presentation/widgets/item_modifiers_editor.dart"
+        ],
+        "foodyweb": [
+          "components/ItemModal*"
+        ]
+      }
+    },
+    {
+      "id": "order-types",
+      "article": "orders/order-types",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/settings/orders/**",
+          "src/components/settings/POSSettingsWorkspace.tsx"
+        ],
+        "foodyserver": [
+          "internal/orders/**"
+        ],
+        "foodypos": [
+          "lib/features/orders/presentation/fulfillment_prompt.dart"
+        ],
+        "foodyweb": [
+          "lib/websiteFulfillment*"
+        ]
+      }
+    },
+    {
+      "id": "pos-order-entry",
+      "article": "orders/taking-an-order-pos",
+      "audience": "public",
+      "selectors": {
+        "foodypos": [
+          "lib/features/orders/presentation/pos_page.dart",
+          "lib/features/orders/presentation/add_item_flow.dart",
+          "lib/features/orders/presentation/item_customization_screen.dart"
+        ],
+        "foodyserver": [
+          "internal/orders/**"
+        ]
+      }
+    },
+    {
+      "id": "pos-service-modes",
+      "article": "settings/service-mode",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/settings/modes/**",
+          "src/components/settings/POSSettingsWorkspace.tsx"
+        ],
+        "foodypos": [
+          "lib/features/settings/presentation/full_service_settings_section.dart"
+        ],
+        "foodyserver": [
+          "internal/restaurants/pos*"
+        ]
+      }
+    },
+    {
+      "id": "order-workflow",
+      "article": "settings/workflow-settings",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/settings/orders/ProcessingSettings.tsx",
+          "src/app/[restaurantId]/settings/orders/*Workflow*"
+        ],
+        "foodyserver": [
+          "internal/orderworkflow/**"
+        ],
+        "foodypos": [
+          "lib/features/orders/providers/order_workflow*"
+        ]
+      }
+    },
+    {
+      "id": "floor-plans",
+      "article": "tables-floors/floor-plans",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/restaurant/floor-plans/**",
+          "src/app/[restaurantId]/restaurant/sections/**",
+          "src/app/[restaurantId]/restaurant/table-qr/**",
+          "src/components/tables/**"
+        ],
+        "foodyserver": [
+          "internal/floorplan/**"
+        ],
+        "foodypos": [
+          "lib/features/tables/**"
+        ],
+        "foodyweb": [
+          "app/r/[restaurantId]/t/**"
+        ]
+      }
+    },
+    {
+      "id": "order-detail",
+      "article": "orders/order-details",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/components/orders/**",
+          "src/app/[restaurantId]/orders/new/**",
+          "src/lib/orders/**"
+        ],
+        "foodyserver": [
+          "internal/orders/handler.go"
+        ]
+      }
+    },
+    {
+      "id": "calendar",
+      "article": "orders/calendar",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/calendar/**",
+          "src/lib/calendar*"
+        ],
+        "foodyserver": [
+          "internal/calendar/**"
+        ]
+      }
+    },
+    {
+      "id": "preorders",
+      "article": "orders/preorders-and-batches",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/settings/orders/PreorderSettings.tsx",
+          "src/app/[restaurantId]/settings/scheduled-orders/**"
+        ],
+        "foodyserver": [
+          "internal/orders/intake*"
+        ],
+        "foodyweb": [
+          "lib/websiteFulfillment*"
+        ],
+        "foodypos": [
+          "lib/features/orders/presentation/scheduled_calendar_page.dart"
+        ]
+      }
+    },
+    {
+      "id": "production",
+      "article": "orders/production-planning",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/orders/production/**",
+          "src/components/production/**",
+          "src/lib/production*.ts"
+        ],
+        "foodypos": [
+          "lib/features/kitchen/presentation/kitchen_plan_matrix_page.dart"
+        ],
+        "foodyserver": [
+          "internal/kitchenplan/**"
+        ]
+      }
+    },
+    {
+      "id": "delivery-zones",
+      "article": "delivery/zones-and-schedules",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/settings/delivery/page.tsx",
+          "src/components/delivery/Zone*",
+          "src/app/[restaurantId]/settings/delivery/*"
+        ],
+        "foodyserver": [
+          "internal/delivery/schedule*",
+          "internal/delivery/zones*"
+        ]
+      }
+    },
+    {
+      "id": "delivery-dispatch",
+      "article": "delivery/dispatch-and-routes",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/orders/deliveries/**",
+          "src/app/[restaurantId]/delivery/tours/**",
+          "src/components/delivery/DispatcherView.tsx",
+          "src/components/delivery/RouteSettingsEditor.tsx",
+          "src/components/delivery/**",
+          "src/lib/delivery*.ts"
+        ],
+        "foodyserver": [
+          "internal/delivery/**"
+        ]
+      }
+    },
+    {
+      "id": "courier",
+      "article": "delivery/courier-workspace",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/orders/courier-mode/**",
+          "src/components/delivery/Courier*",
+          "src/components/delivery/NavigationAppMenu.tsx"
+        ],
+        "foodyweb": [
+          "app/r/[restaurantId]/tournee/**"
+        ]
+      }
+    },
+    {
+      "id": "maps-usage",
+      "article": "delivery/maps-and-usage",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/settings/delivery/maps/**",
+          "src/components/delivery/MapsProviderDetails.tsx"
+        ],
+        "foodyserver": [
+          "internal/delivery/maps*"
+        ]
+      }
+    },
+    {
+      "id": "catalog-import",
+      "article": "menu/import-and-images",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/menu/import/**",
+          "src/app/[restaurantId]/menu/image-prompts/**",
+          "src/lib/menu-import/**",
+          "src/components/import/**"
+        ],
+        "foodyserver": [
+          "internal/menu/import*",
+          "internal/menuimages/**"
+        ]
+      }
+    },
+    {
+      "id": "combos",
+      "article": "menu/combos",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/components/menu-item/combo/**",
+          "src/components/orders/NewOrderComboModal.tsx"
+        ],
+        "foodyserver": [
+          "internal/menu/*combo*"
+        ],
+        "foodypos": [
+          "lib/features/menu/presentation/combos_page.dart",
+          "lib/features/menu/domain/combo_menu_model.dart"
+        ],
+        "foodyweb": [
+          "components/*Combo*"
+        ]
+      }
+    },
+    {
+      "id": "pos-discount-library",
+      "article": "menu/pos-discounts",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/menu/pos-discounts/**",
+          "src/lib/pos-discount-form.ts"
+        ],
+        "foodyserver": [
+          "internal/discounts/pos*"
+        ],
+        "foodypos": [
+          "lib/features/menu/presentation/pos_discounts_page.dart"
+        ]
+      }
+    },
+    {
+      "id": "suppliers-purchasing",
+      "article": "kitchen/suppliers-and-purchases",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/kitchen/suppliers/**",
+          "src/components/suppliers/**"
+        ],
+        "foodyserver": [
+          "internal/suppliers/**",
+          "internal/purchaseorders/**"
+        ]
+      }
+    },
+    {
+      "id": "delivery-import",
+      "article": "kitchen/delivery-note-import",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/kitchen/supplies/**"
+        ],
+        "foodyserver": [
+          "internal/stock/import*",
+          "internal/stock/voice*"
+        ],
+        "foodypos": [
+          "lib/features/kitchen/presentation/stock_import_page.dart",
+          "lib/features/delivery_scan/**"
+        ]
+      }
+    },
+    {
+      "id": "recipe-lab",
+      "article": "kitchen/recipe-lab",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/kitchen/lab/**",
+          "src/components/recipe/**"
+        ],
+        "foodyserver": [
+          "internal/lab/**",
+          "internal/recipes/**",
+          "internal/kitchenassistant/**"
+        ]
+      }
+    },
+    {
+      "id": "kitchen-companion",
+      "article": "kitchen/companion",
+      "audience": "public",
+      "selectors": {
+        "foodypos": [
+          "lib/features/kitchen_companion/**",
+          "lib/core/auth/kitchen_companion_access.dart",
+          "ios/Runner/*Intent*",
+          "lib/features/kitchen_assistant/**",
+          "ios/AppIntents/**"
+        ],
+        "foodyserver": [
+          "internal/kitchencompanion/**"
+        ]
+      }
+    },
+    {
+      "id": "kitchen-data",
+      "article": "kitchen/data-and-sales-links",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/kitchen/data/**"
+        ],
+        "foodypos": [
+          "lib/features/kitchen_data/**"
+        ],
+        "foodyserver": [
+          "internal/kitchendata/**"
+        ]
+      }
+    },
+    {
+      "id": "website-design",
+      "article": "website-qr/design-and-branding",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/components/website-v3/Site*.tsx",
+          "src/components/website-v3/*Color*.tsx",
+          "src/components/website-v3/*Typography*.tsx",
+          "src/components/website-v3/ItemImageFramingEditor.tsx",
+          "src/components/website-menu/**",
+          "src/lib/website-fonts.ts"
+        ],
+        "foodyweb": [
+          "components/website-v3/**"
+        ]
+      }
+    },
+    {
+      "id": "website-navigation",
+      "article": "website-qr/navigation-and-footer",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/components/website-v3/Header*.tsx",
+          "src/components/website-v3/*Navigation*.tsx",
+          "src/components/website-v3/Footer*.tsx",
+          "src/components/website-v3/MissingFooter.tsx"
+        ],
+        "foodyweb": [
+          "components/website-v3/**"
+        ]
+      }
+    },
+    {
+      "id": "website-sections",
+      "article": "website-qr/sections-and-media",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/components/website-v3/*Content*.tsx",
+          "src/components/website-v3/*Section*.tsx",
+          "src/components/website-v3/*Appearance*.tsx",
+          "src/components/website-v3/*Animation*.tsx",
+          "src/components/website-v3/*Video*.tsx",
+          "src/components/website-v3/FeaturedItemsEditor.tsx"
+        ],
+        "foodyweb": [
+          "components/website-v3/**",
+          "components/sections/**",
+          "components/Restaurant*.tsx",
+          "components/SiteNavbar*.tsx",
+          "components/PoweredByFoody.tsx",
+          "lib/themes/**"
+        ]
+      }
+    },
+    {
+      "id": "website-order-design",
+      "article": "website-qr/order-page",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/components/website-v3/OrderPageEditor.tsx",
+          "src/components/website-v3/OrderDiscoveryAppearanceEditor.tsx",
+          "src/components/website-v3/CategoryNavigationEditor.tsx",
+          "src/components/website-v3/CommerceSelector.tsx"
+        ],
+        "foodyweb": [
+          "components/website-v3/**",
+          "components/themed/**",
+          "components/Category*.tsx",
+          "components/OrderDiscovery*.tsx",
+          "components/OrderMenu*.tsx"
+        ]
+      }
+    },
+    {
+      "id": "website-journey",
+      "article": "website-qr/checkout-and-receipt",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/components/website-v3/OrderJourneyEditor.tsx",
+          "src/components/website-v3/ReceiptEditor.tsx",
+          "src/lib/website-v3/order-journey.ts",
+          "src/components/website/**"
+        ],
+        "foodyweb": [
+          "app/checkout/**",
+          "app/confirmation/**",
+          "app/receipt/**"
+        ],
+        "foodyserver": [
+          "internal/website/**"
+        ]
+      }
+    },
+    {
+      "id": "website-commerce-pages",
+      "article": "website-qr/catering-and-chain-pages",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/components/website-v3/CateringPageEditor.tsx",
+          "src/components/website-v3/ChainOrderEntryEditor.tsx",
+          "src/components/website-v3/BranchWebsitePresence.tsx"
+        ],
+        "foodyweb": [
+          "app/c/**",
+          "app/r/[slug]/catering/**"
+        ]
+      }
+    },
+    {
+      "id": "restaurant-profile",
+      "article": "settings/restaurant-profile",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/settings/page.tsx",
+          "src/app/[restaurantId]/restaurant/**",
+          "src/app/[restaurantId]/settings/branding/**",
+          "src/app/[restaurantId]/settings/language/**",
+          "src/app/[restaurantId]/settings/opening-hours/**"
+        ],
+        "foodyserver": [
+          "internal/restaurants/**"
+        ]
+      }
+    },
+    {
+      "id": "fulfillment-policy",
+      "article": "settings/fulfillment-and-ordering",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/settings/orders/**",
+          "src/app/[restaurantId]/settings/fulfillment/**",
+          "src/app/[restaurantId]/settings/scheduled-orders/**"
+        ],
+        "foodyserver": [
+          "internal/orders/**",
+          "internal/restaurants/**"
+        ]
+      }
+    },
+    {
+      "id": "pos-behavior",
+      "article": "settings/pos-behavior",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/settings/adjustments/**",
+          "src/app/[restaurantId]/settings/services/**",
+          "src/app/[restaurantId]/settings/menu-behavior/**",
+          "src/app/[restaurantId]/settings/full-service/**",
+          "src/components/settings/POSSettingsWorkspace.tsx",
+          "src/components/settings/usePOSSettings.ts"
+        ],
+        "foodypos": [
+          "lib/features/settings/**"
+        ]
+      }
+    },
+    {
+      "id": "table-service-policy",
+      "article": "tables-floors/staff-and-assistance",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/staff/table-service/**",
+          "src/app/[restaurantId]/table-status/**",
+          "src/app/[restaurantId]/settings/table-assistance/**",
+          "src/components/staff/TableAssignmentModal.tsx"
+        ],
+        "foodyserver": [
+          "internal/tableassistance/**",
+          "internal/tableassignments/**",
+          "internal/tables/**"
+        ],
+        "foodypos": [
+          "lib/features/tables/**",
+          "lib/features/table_assistance/**",
+          "lib/features/service_guidance/**"
+        ]
+      }
+    },
+    {
+      "id": "device-kds",
+      "article": "settings/devices-and-kitchen-displays",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/settings/devices/**",
+          "src/app/[restaurantId]/settings/kitchen-displays/**",
+          "src/components/settings/KitchenStationSettings.tsx"
+        ],
+        "foodyserver": [
+          "internal/devices/**",
+          "internal/kitchen/**"
+        ],
+        "foodypos": [
+          "lib/features/kitchen_display/**",
+          "lib/services/devices/**"
+        ]
+      }
+    },
+    {
+      "id": "stock-units-policy",
+      "article": "kitchen/units-and-stock-settings",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/settings/stock/**"
+        ],
+        "foodyserver": [
+          "internal/units/**",
+          "internal/availability/**",
+          "internal/stock/**"
+        ]
+      }
+    },
+    {
+      "id": "guest-ai-settings",
+      "article": "settings/guest-order-assistant",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/settings/ai-assistant/**"
+        ],
+        "foodyserver": [
+          "internal/assistant/**"
+        ],
+        "foodyweb": [
+          "components/ai-assistant/**",
+          "components/Assistant*.tsx"
+        ]
+      }
+    },
+    {
+      "id": "notifications-team",
+      "article": "settings/notifications-and-team",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/settings/notifications/**",
+          "src/app/[restaurantId]/settings/team/**"
+        ],
+        "foodyserver": [
+          "internal/notificationpreferences/**",
+          "internal/adminpush/**",
+          "internal/preferences/**"
+        ],
+        "foodypos": [
+          "lib/features/notifications/**"
+        ]
+      }
+    },
+    {
+      "id": "pos-check-split",
+      "article": "orders/split-bills",
+      "audience": "public",
+      "selectors": {
+        "foodypos": [
+          "lib/features/orders/presentation/check_split*.dart",
+          "lib/features/orders/domain/check_split.dart"
+        ],
+        "foodyserver": [
+          "internal/orders/financial_check*.go",
+          "internal/orders/check_split*.go"
+        ]
+      }
+    },
+    {
+      "id": "pos-check-move",
+      "article": "orders/move-and-merge-bills",
+      "audience": "public",
+      "selectors": {
+        "foodypos": [
+          "lib/features/orders/presentation/item_transfer_actions.dart",
+          "lib/features/orders/presentation/check_actions*.dart",
+          "lib/features/tables/**"
+        ],
+        "foodyserver": [
+          "internal/orders/financial*.go"
+        ]
+      }
+    },
+    {
+      "id": "pos-courses",
+      "article": "orders/courses-and-kitchen-release",
+      "audience": "public",
+      "selectors": {
+        "foodypos": [
+          "lib/features/orders/presentation/widgets/check_courses.dart",
+          "lib/features/orders/providers/course_providers.dart",
+          "lib/features/orders/domain/check_course_groups.dart"
+        ],
+        "foodyserver": [
+          "internal/orders/kitchen*.go",
+          "internal/orders/financial*.go"
+        ]
+      }
+    },
+    {
+      "id": "pos-comp-void",
+      "article": "orders/discount-comp-void",
+      "audience": "public",
+      "selectors": {
+        "foodypos": [
+          "lib/features/orders/**"
+        ],
+        "foodyserver": [
+          "internal/orders/comp*.go",
+          "internal/orders/void*.go",
+          "internal/orders/financial*.go",
+          "internal/discounts/**"
+        ]
+      }
+    },
+    {
+      "id": "pos-payments",
+      "article": "payments/pos-checkout",
+      "audience": "public",
+      "selectors": {
+        "foodypos": [
+          "lib/features/orders/presentation/cash_payment_dialog.dart",
+          "lib/features/orders/presentation/cibus_payment_dialog.dart",
+          "lib/features/orders/application/checkout_finalizer.dart",
+          "lib/core/payment/**",
+          "lib/services/payments/**"
+        ],
+        "foodyserver": [
+          "internal/payment/**",
+          "internal/orders/payment*.go"
+        ]
+      }
+    },
+    {
+      "id": "pos-workspace",
+      "article": "settings/pos-workspace",
+      "audience": "public",
+      "selectors": {
+        "foodypos": [
+          "lib/features/home/**",
+          "lib/features/more/**",
+          "lib/features/settings/**"
+        ]
+      }
+    },
+    {
+      "id": "printer-profiles",
+      "article": "printers/profiles-and-routing",
+      "audience": "public",
+      "selectors": {
+        "foodypos": [
+          "lib/features/settings/presentation/printer_settings_page.dart",
+          "lib/features/settings/presentation/printer*.dart"
+        ],
+        "foodyadmin": [
+          "src/app/[restaurantId]/settings/printers/**",
+          "src/lib/printer-profile-state.ts"
+        ],
+        "foodyserver": [
+          "internal/foodyspooler/**"
+        ]
+      }
+    },
+    {
+      "id": "printer-diagnostics",
+      "article": "printers/status-and-history",
+      "audience": "public",
+      "selectors": {
+        "foodypos": [
+          "lib/features/settings/presentation/printer_history_page.dart"
+        ],
+        "foodyserver": [
+          "internal/foodyspooler/**",
+          "internal/printing/**"
+        ]
+      }
+    },
+    {
+      "id": "catering-catalog",
+      "article": "catering/services-and-catalog",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/catering/services/**",
+          "src/components/catering/**"
+        ],
+        "foodyserver": [
+          "internal/catering/catalog.go",
+          "internal/catering/service.go",
+          "internal/catering/offer.go"
+        ]
+      }
+    },
+    {
+      "id": "catering-flow",
+      "article": "catering/flow-and-pricing",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/components/catering/Catering*Editor.tsx"
+        ],
+        "foodyserver": [
+          "internal/catering/flow.go",
+          "internal/catering/option.go",
+          "internal/catering/formula*.go"
+        ]
+      }
+    },
+    {
+      "id": "catering-quotes",
+      "article": "catering/review-quotes",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/catering/quotes/**"
+        ],
+        "foodyserver": [
+          "internal/catering/quote.go",
+          "internal/catering/deposit.go",
+          "internal/catering/deposit_refund.go"
+        ]
+      }
+    },
+    {
+      "id": "catering-events",
+      "article": "catering/events-and-balance",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/catering/events/**",
+          "src/components/catering/CateringBalanceHoldDialog.tsx"
+        ],
+        "foodyserver": [
+          "internal/catering/events.go",
+          "internal/catering/balance_hold*.go"
+        ]
+      }
+    },
+    {
+      "id": "catering-routing",
+      "article": "catering/branches-and-routing",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/catering/branches/**",
+          "src/app/[restaurantId]/catering/routing/**"
+        ],
+        "foodyserver": [
+          "internal/cateringrouting/**",
+          "internal/catering/branch.go",
+          "internal/catering/routing_rule.go"
+        ]
+      }
+    },
+    {
+      "id": "chains",
+      "article": "chains/branches-and-dashboard",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/chain/**",
+          "src/app/chain/**",
+          "src/components/chain/**"
+        ],
+        "foodyserver": [
+          "internal/chains/**"
+        ],
+        "foodyweb": [
+          "app/c/**",
+          "components/Chain*.tsx"
+        ]
+      }
+    },
+    {
+      "id": "payment-configuration",
+      "article": "payments/providers-and-cibus",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/settings/payments/**",
+          "src/app/[restaurantId]/settings/cibus/**"
+        ],
+        "foodyserver": [
+          "internal/payment/**",
+          "internal/invoices/**"
+        ],
+        "foodyweb": [
+          "components/account/**"
+        ]
+      }
+    },
+    {
+      "id": "whatsapp",
+      "article": "communications/whatsapp",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/settings/whatsapp/**",
+          "src/components/settings/*WhatsApp*.tsx"
+        ],
+        "foodyserver": [
+          "internal/twilio/**",
+          "internal/metawhatsapp/**"
+        ]
+      }
+    },
+    {
+      "id": "message-templates",
+      "article": "communications/templates-and-automation",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/settings/message-templates/**",
+          "src/components/settings/MetaWhatsAppTemplates.tsx",
+          "src/components/settings/MetaWhatsAppSatisfaction.tsx",
+          "src/components/orders/*Workflow*.tsx"
+        ],
+        "foodyserver": [
+          "internal/messagetemplates/**",
+          "internal/whatsappmessage/**",
+          "internal/orders/workflow*.go"
+        ]
+      }
+    },
+    {
+      "id": "social-stories",
+      "article": "marketing/stories-and-instagram",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/settings/stories/**"
+        ],
+        "foodyserver": [
+          "internal/social/**"
+        ],
+        "foodyweb": [
+          "app/r/[restaurantId]/stories/**",
+          "components/*Stories*.tsx"
+        ]
+      }
+    },
+    {
+      "id": "guest-ordering",
+      "article": "guest/online-ordering",
+      "audience": "public",
+      "selectors": {
+        "foodyweb": [
+          "app/page.tsx",
+          "app/order/page.tsx",
+          "app/r/[restaurantId]/page.tsx",
+          "app/r/[restaurantId]/[page]/page.tsx",
+          "app/r/[restaurantId]/order/**",
+          "app/r/[restaurantId]/pickup/**",
+          "app/r/[restaurantId]/delivery/**",
+          "app/order/cart/**",
+          "app/@cart/**",
+          "app/order/checkout/**",
+          "components/AIOrderAssistant.tsx",
+          "store/**",
+          "components/Cart*.tsx",
+          "components/Checkout*.tsx",
+          "components/Commerce*.tsx",
+          "components/CustomerInfo*.tsx",
+          "components/CustomerNote*.tsx",
+          "components/Delivery*.tsx",
+          "components/MenuItem*.tsx",
+          "components/Availability*.tsx",
+          "components/PreparationAvailability.tsx",
+          "components/ModeChip.tsx",
+          "components/OrderExperience.tsx",
+          "components/OrderDeliveryPromise.tsx",
+          "components/PaymentModeSheet.tsx",
+          "components/SchedulingFields.tsx",
+          "components/WebsiteCartPopover.tsx",
+          "lib/fulfillment.ts",
+          "lib/availability.ts",
+          "lib/combo/**"
+        ]
+      }
+    },
+    {
+      "id": "guest-account-tracking",
+      "article": "guest/tracking-and-account",
+      "audience": "public",
+      "selectors": {
+        "foodyweb": [
+          "app/orders/**",
+          "app/order/tracking/**",
+          "app/order/confirmation/**",
+          "app/order/receipt/**",
+          "app/receipt/**",
+          "app/r/[restaurantId]/orders/**",
+          "app/r/[restaurantId]/payment/**",
+          "components/*Account*.tsx",
+          "components/*Auth*.tsx",
+          "lib/customer*.ts",
+          "components/Confirmation*.tsx",
+          "components/Receipt*.tsx",
+          "components/OrderTracking*.tsx",
+          "components/OrderDetails*.tsx",
+          "components/OrderStatus*.tsx",
+          "components/CourierTrackingMap.tsx",
+          "components/PaymentReturn*.tsx",
+          "components/CustomerSignIn.tsx",
+          "components/GoogleSignIn.tsx"
+        ]
+      }
+    },
+    {
+      "id": "guest-table",
+      "article": "guest/table-qr",
+      "audience": "public",
+      "selectors": {
+        "foodyweb": [
+          "app/r/[restaurantId]/table/**",
+          "app/r/[restaurantId]/t/**",
+          "components/*Table*.tsx",
+          "components/GuestJoin*.tsx",
+          "components/SessionBar.tsx",
+          "components/DineIn*.tsx",
+          "components/QRScanner.tsx"
+        ],
+        "foodyserver": [
+          "internal/qr/**",
+          "internal/tables/**"
+        ]
+      }
+    },
+    {
+      "id": "guest-catering",
+      "article": "guest/catering-request",
+      "audience": "public",
+      "selectors": {
+        "foodyweb": [
+          "app/r/[restaurantId]/catering/**",
+          "app/r/[restaurantId]/tournee/**",
+          "components/catering/**",
+          "components/Catering*.tsx",
+          "lib/catering*.ts"
+        ],
+        "foodyserver": [
+          "internal/catering/public*.go"
+        ]
+      }
+    },
+    {
+      "id": "landing-offers",
+      "article": "getting-started/offers-and-contact",
+      "audience": "public",
+      "selectors": {
+        "foodylanding": [
+          "src/app/[lang]/**",
+          "src/lib/marketing/**",
+          "src/components/marketing/**",
+          "src/components/Contact*.tsx"
+        ]
+      }
+    },
+    {
+      "id": "backoffice-access",
+      "article": "internal/access-and-dashboard",
+      "audience": "internal",
+      "selectors": {
+        "foodybackoffice": [
+          "src/app/login/**",
+          "src/app/dashboard/page.tsx",
+          "src/app/dashboard/layout.tsx",
+          "src/lib/auth*",
+          "src/components/**"
+        ],
+        "foodyserver": [
+          "internal/admin/**"
+        ]
+      }
+    },
+    {
+      "id": "backoffice-onboarding",
+      "article": "internal/restaurant-onboarding",
+      "audience": "internal",
+      "selectors": {
+        "foodybackoffice": [
+          "src/app/dashboard/restaurants/**",
+          "src/app/dashboard/onboard/**",
+          "src/app/dashboard/users/**"
+        ],
+        "foodyserver": [
+          "internal/onboarding/**",
+          "internal/admin/**"
+        ]
+      }
+    },
+    {
+      "id": "backoffice-entitlements",
+      "article": "internal/features-and-payments",
+      "audience": "internal",
+      "selectors": {
+        "foodybackoffice": [
+          "src/app/dashboard/features/**",
+          "src/app/dashboard/payments/**",
+          "src/lib/api.ts"
+        ],
+        "foodyserver": [
+          "internal/subscription/**",
+          "internal/payment/**"
+        ]
+      }
+    },
+    {
+      "id": "backoffice-market",
+      "article": "internal/market-and-prospects",
+      "audience": "internal",
+      "selectors": {
+        "foodybackoffice": [
+          "src/app/dashboard/market/**"
+        ],
+        "foodyserver": [
+          "internal/market/**",
+          "internal/contact/**"
+        ]
+      }
+    },
+    {
+      "id": "backoffice-assets",
+      "article": "internal/catalog-and-assets",
+      "audience": "internal",
+      "selectors": {
+        "foodybackoffice": [
+          "src/app/dashboard/menu/**",
+          "src/app/dashboard/combos/**",
+          "src/app/dashboard/ingredient-icons/**",
+          "src/app/dashboard/pos-login-screen/**"
+        ],
+        "foodyserver": [
+          "internal/ingredienticons/**",
+          "internal/posloginscreen/**"
+        ]
+      }
+    },
+    {
+      "id": "backoffice-operations",
+      "article": "internal/operations-and-cloning",
+      "audience": "internal",
+      "selectors": {
+        "foodybackoffice": [
+          "src/app/dashboard/operations/**",
+          "src/app/dashboard/servers/**",
+          "src/app/dashboard/clone/**",
+          "src/app/api/operations/**"
+        ],
+        "foodyserver": [
+          "internal/infra/**",
+          "internal/clone/**"
+        ]
+      }
+    },
+    {
+      "id": "platform-api",
+      "article": "internal/api-and-release",
+      "audience": "internal",
+      "selectors": {
+        "foodyserver": [
+          "internal/**",
+          "cmd/**",
+          "config/**"
+        ],
+        "foodyweb": [
+          "app/api/**",
+          "app/sw.js/**"
+        ]
+      }
+    },
+    {
+      "id": "design-sandboxes",
+      "article": "internal/design-previews",
+      "audience": "internal",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/design-system/**"
+        ],
+        "foodyweb": [
+          "app/sandbox/**"
+        ]
+      }
+    },
+    {
+      "id": "shared-runtime",
+      "article": "internal/shared-runtime",
+      "audience": "internal",
+      "selectors": {
+        "foodyadmin": [
+          "src/lib/**"
+        ],
+        "foodyweb": [
+          "lib/**"
+        ],
+        "foodypos": [
+          "lib/core/**"
+        ],
+        "foodybackoffice": [
+          "src/lib/**"
+        ],
+        "foodylanding": [
+          "src/lib/**"
+        ]
+      }
+    },
+    {
+      "id": "global-search",
+      "article": "getting-started/search-and-navigation",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/components/search/**",
+          "src/lib/search-shortcut.tsx",
+          "src/components/Sidebar.tsx",
+          "src/components/TopBar.tsx",
+          "src/components/data-table/**",
+          "src/components/DateRangePicker.tsx"
+        ],
+        "foodyserver": [
+          "internal/search/**"
+        ]
+      }
+    },
+    {
+      "id": "business-ai",
+      "article": "analytics/business-assistant",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/components/ai/**",
+          "src/lib/ai-context.tsx"
+        ],
+        "foodyserver": [
+          "internal/ai/**"
+        ]
+      }
+    },
+    {
+      "id": "table-qr-design",
+      "article": "tables-floors/qr-design-and-print",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/restaurant/table-qr/**",
+          "src/components/qr/**",
+          "src/lib/qr/**"
+        ],
+        "foodyserver": [
+          "internal/qr/**"
+        ]
+      }
+    },
+    {
+      "id": "website-pages",
+      "article": "website-qr/pages-and-publication",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/components/website-v3/Page*.tsx",
+          "src/components/website-v3/WebsiteV3Builder.tsx",
+          "src/components/website-v3/BuilderShell.tsx"
+        ],
+        "foodyserver": [
+          "internal/websitev3/**"
+        ],
+        "foodyweb": [
+          "app/r/[restaurantId]/[page]/**"
+        ]
+      }
+    }
+  ]
+}

@@ -1,10 +1,32 @@
 ---
-title: "Gestion des Stocks"
-description: "Suivez vos ingredients, gerez les unites et conversions, enregistrez les mouvements, importez les livraisons par IA et recevez des alertes de stock bas."
+title: Gestion des Stocks
+description: >-
+  Suivez vos ingredients, gerez les unites et conversions, enregistrez les mouvements, importez les livraisons par IA et
+  recevez des alertes de stock bas.
 apps: foodyadmin
-tags: [cuisine, stock, inventaire, ingredients, unites, transactions, livraisons, import-ia, alertes, seuil, categories, fournisseur]
-updatedAt: 2026-04-10
+tags:
+  - kitchen
+  - kitchen-stock-management
+  - cuisine
+  - stock
+  - inventaire
+  - ingredients
+  - unites
+  - transactions
+  - livraisons
+  - import-ia
+  - alertes
+  - seuil
+  - categories
+  - fournisseur
+updatedAt: '2026-04-10'
+featureId: kitchen-stock-management
+audience: public
+releaseStatus: available
 ---
+Ouvrez l’espace Foody correspondant décrit ci-dessous.
+
+<span id="section-1" />
 
 ## Qu'est-ce que c'est ?
 
@@ -15,6 +37,8 @@ La **Gestion des Stocks** vous permet de savoir :
 - Ou vous perdez de l'argent
 
 C'est la base pour controler votre food cost.
+
+<span id="section-2" />
 
 ### Comment ca fonctionne (en simple)
 
@@ -37,6 +61,8 @@ Allez dans **Cuisine > Stock** dans FoodyAdmin pour commencer.
 
 ---
 
+<span id="section-3" />
+
 ## Le Tableau de Bord
 
 En haut de la page, trois cartes de synthese vous donnent un apercu rapide :
@@ -49,6 +75,8 @@ En haut de la page, trois cartes de synthese vous donnent un apercu rapide :
 
 ---
 
+<span id="section-4" />
+
 ## Ajout et Modification d'Articles
 
 1. Allez dans **Cuisine > Stock**.
@@ -58,6 +86,8 @@ En haut de la page, trois cartes de synthese vous donnent un apercu rapide :
 Pour modifier un article existant, cliquez sur l'icone crayon sur sa ligne.
 
 La fenetre de creation/modification comporte **deux onglets** :
+
+<span id="section-5" />
 
 ### Onglet : General
 
@@ -72,6 +102,8 @@ Informations de base sur l'article.
 | **Categorie** | Non | Etiquette libre pour organiser et filtrer (ex. "Produits laitiers", "Viande", "Legumes") |
 | **Notes** | Non | Notes internes ou instructions |
 | **Actif** | Non | Active par defaut. Les articles inactifs sont masques des recettes et des operations quotidiennes |
+
+<span id="section-6" />
 
 ### Onglet : Conditionnement & Prix
 
@@ -98,9 +130,13 @@ La fenetre affiche un **recapitulatif de prix en temps reel** qui se met a jour 
 
 ---
 
+<span id="section-7" />
+
 ## Comprendre les Unites
 
 C'est le concept le plus important de la gestion des stocks. Il y a **deux niveaux** d'unites.
+
+<span id="section-8" />
 
 ### Niveau 1 : Unite de Stock
 
@@ -112,6 +148,8 @@ L'unite de stock definit **comment vous comptez** l'article dans votre inventair
 | **Contenant** | unite, pack, boite, sac | Des contenants discrets et denombrables |
 | **Special** | dose, autre | Cas d'usage specifiques |
 
+<span id="section-9" />
+
 ### Niveau 2 : Contenu par Unite
 
 Lorsque vous choisissez une unite de type **contenant** (unite, pack, boite ou sac), deux champs supplementaires apparaissent : **Contenu par Unite** et **Unite de Contenu**. Ils repondent a la question : *"Qu'est-ce qu'il y a dans chaque contenant ?"*
@@ -121,6 +159,8 @@ Par exemple, si vous achetez des tomates en conserve par boite et que chaque con
 - Contenu par unite = **400**
 - Unite de contenu = **g**
 
+<span id="section-10" />
+
 ### Pourquoi l'Unite de Contenu est Limitee a g, kg, ml, l ?
 
 Parce que la conversion ne fonctionne qu'entre des **unites mesurables**. Le systeme connait :
@@ -129,6 +169,8 @@ Parce que la conversion ne fonctionne qu'entre des **unites mesurables**. Le sys
 - 1 l = 1000 ml
 
 Cela lui permet de convertir entre la facon dont vous **achetez** (boites, packs) et la facon dont les recettes **consomment** (grammes, millilitres). On ne peut pas convertir "3 boites" en "X packs" — ce sont des contenants arbitraires. Mais on *peut* convertir "3 boites de 400g" en "1200g".
+
+<span id="section-11" />
 
 ### Exemples Pratiques
 
@@ -141,15 +183,21 @@ Cela lui permet de convertir entre la facon dont vous **achetez** (boites, packs
 | Lait | l | — | — | Vous mesurez en litres directement. Pas besoin de couche contenant. |
 | Viande hachee | kg | — | — | Vous pesez en kilogrammes directement. |
 
+<span id="section-12" />
+
 ### Choisir la Bonne Approche
 
 > **Astuce :** Utilisez une **unite mesurable** (kg, g, l, ml) quand vous pesez ou mesurez l'ingredient directement — les articles en vrac comme la farine au kilo, le lait au litre. Utilisez une **unite contenant** (unite, pack, boite, sac) quand vous comptez des emballages discrets et que le systeme doit connaitre le contenu de chacun pour les conversions de recettes. Pour les articles comptes individuellement comme les oeufs, utilisez **unite** sans contenu — les recettes les referencent par nombre.
 
 ---
 
+<span id="section-13" />
+
 ## Mouvements de Stock
 
 > **Important :** Ne modifiez jamais le stock directement. Chaque changement doit etre une **transaction**. Cela vous permet de comprendre exactement d'ou vient votre stock, ou il a ete utilise, et ou vous perdez des produits.
+
+<span id="section-14" />
 
 ### Enregistrer un Mouvement
 
@@ -159,6 +207,8 @@ Cela lui permet de convertir entre la facon dont vous **achetez** (boites, packs
 4. Ajoutez des notes optionnelles (ex. "Livraison matinale du Fournisseur X").
 5. Verifiez l'apercu montrant la quantite actuelle et resultante, puis confirmez.
 
+<span id="section-15" />
+
 ### Types de Transactions
 
 | Type | Effet | Utilisation |
@@ -166,6 +216,8 @@ Cela lui permet de convertir entre la facon dont vous **achetez** (boites, packs
 | **Reception** | Ajoute a la quantite | Livraisons, reapprovisionnements, achats |
 | **Perte** | Soustrait de la quantite | Perimes, endommages, jetes |
 | **Ajustement** | Soustrait de la quantite | Corrections apres un comptage physique |
+
+<span id="section-16" />
 
 ### Transactions Generees par le Systeme
 
@@ -176,6 +228,8 @@ Deux types de transactions supplementaires apparaissent dans votre historique ma
 
 ---
 
+<span id="section-17" />
+
 ## Historique du Stock
 
 Pour consulter l'historique complet des transactions d'un article, cliquez sur l'**icone horloge** sur sa ligne. L'historique affiche les 50 dernieres transactions avec :
@@ -184,6 +238,8 @@ Pour consulter l'historique complet des transactions d'un article, cliquez sur l
 - Les notes
 - La date et l'heure
 - La variation de quantite (vert pour les ajouts, rouge pour les deductions)
+
+<span id="section-18" />
 
 ### Reference des Couleurs
 
@@ -197,6 +253,8 @@ Pour consulter l'historique complet des transactions d'un article, cliquez sur l
 
 ---
 
+<span id="section-19" />
+
 ## Comprendre les Pertes
 
 Le systeme compare en permanence :
@@ -206,6 +264,8 @@ Le systeme compare en permanence :
 
 La difference s'appelle un **ecart**.
 
+<span id="section-20" />
+
 ### Exemple simple
 
 Vous recevez 2 kg de cabillaud. Pendant la journee vous vendez :
@@ -213,6 +273,8 @@ Vous recevez 2 kg de cabillaud. Pendant la journee vous vendez :
 - 18 Ceviches (50g chacun) = 900g
 
 Consommation attendue = 1700g. Mais en fin de journee, il ne reste rien. Vous avez perdu 300g.
+
+<span id="section-21" />
 
 ### Pourquoi ca arrive ?
 
@@ -224,6 +286,8 @@ Les causes les plus frequentes :
 - Recettes mal configurees
 - Ventes non enregistrees
 
+<span id="section-22" />
+
 ### Pourquoi c'est important ?
 
 Meme une petite perte peut couter cher. 300g de cabillaud = plusieurs plats perdus = perte de chiffre d'affaires chaque jour.
@@ -231,6 +295,8 @@ Meme une petite perte peut couter cher. 300g de cabillaud = plusieurs plats perd
 Utilisez les **Operations Quotidiennes** pour detecter ces ecarts automatiquement, jour apres jour.
 
 ---
+
+<span id="section-23" />
 
 ## Alertes de Stock Bas
 
@@ -248,6 +314,8 @@ Utilisez la case a cocher **Stock Bas Uniquement** dans les filtres pour voir ra
 
 ---
 
+<span id="section-24" />
+
 ## Categories
 
 Les categories vous aident a organiser vos ingredients en groupes logiques (ex. "Produits laitiers", "Viande", "Legumes", "Epicerie seche").
@@ -260,9 +328,13 @@ Les categories vous aident a organiser vos ingredients en groupes logiques (ex. 
 
 ---
 
+<span id="section-25" />
+
 ## Import de Livraison par IA
 
 Gagnez du temps en laissant l'IA extraire les articles des bons de livraison et factures automatiquement. L'import utilise un affichage plein ecran en deux panneaux : le document original a gauche pour reference, et les articles extraits a droite.
+
+<span id="section-26" />
 
 ### Etape 1 : Selectionner le fournisseur et telecharger
 
@@ -270,6 +342,8 @@ Gagnez du temps en laissant l'IA extraire les articles des bons de livraison et 
 2. **Selectionnez un fournisseur** dans votre liste existante, ou choisissez **+ Nouveau fournisseur** et saisissez le nom. Selectionner un fournisseur connu ameliore la precision d'extraction — le systeme utilise des indications specifiques au fournisseur apprises des imports precedents.
 3. Telechargez une photo d'un bon de livraison ou une facture PDF.
 4. Cliquez sur **Telecharger et Analyser**. L'IA utilise Google Vision OCR combine avec Claude AI pour une precision maximale.
+
+<span id="section-27" />
 
 ### Etape 2 : Verifier et Confirmer
 
@@ -304,6 +378,8 @@ L'ecran se divise en deux panneaux : votre document original a gauche, et les ar
 
 Cliquez sur **Confirmer l'import** pour enregistrer. Chaque article recoit une transaction "reception", et les nouveaux articles sont crees dans votre stock.
 
+<span id="section-28" />
+
 ### Indications d'extraction fournisseur
 
 Lors du premier import d'un fournisseur, le systeme analyse automatiquement le format du document et genere des **indications d'extraction** (langue, type de mise en page, ordre des colonnes). Ces indications sont sauvegardees sur la fiche fournisseur et utilisees pour les imports futurs.
@@ -314,6 +390,8 @@ Vous pouvez les consulter et les modifier dans **Cuisine → Fournisseurs → Mo
 
 > **Astuce :** Le systeme apprend de vos corrections. Quand vous associez un article de livraison a un article de stock existant, il cree un alias pour que les futures livraisons du meme fournisseur soient associees automatiquement.
 
+<span id="section-29" />
+
 ### Enregistrer le brouillon
 
 Si vous devez interrompre un import en cours, cliquez sur **Enregistrer le brouillon** dans l'en-tete. L'ensemble de l'extraction, vos modifications et le document scanne sont sauvegardes sur le serveur.
@@ -321,6 +399,8 @@ Si vous devez interrompre un import en cours, cliquez sur **Enregistrer le broui
 Reprenez depuis **Cuisine → Approvisionnements** — les imports en attente apparaissent en haut de la page sous forme de cartes affichant le nom du fournisseur, le nombre d'articles et une miniature du document. Cliquez sur **Reprendre** pour rouvrir la vue plein ecran avec l'apercu du document intact.
 
 Plusieurs brouillons sont possibles. Les brouillons sont automatiquement supprimes lorsque vous confirmez l'import.
+
+<span id="section-30" />
 
 ### TVA sur les articles de stock
 
@@ -330,11 +410,15 @@ Configurez le taux de TVA de votre restaurant dans **Parametres → Taux TVA (%)
 
 ---
 
+<span id="section-31" />
+
 ## Import de Recette par IA
 
 Importez des recettes en telechargeant une photo/PDF ou en collant du texte. L'IA extrait les ingredients, les quantites et les associe a vos articles de stock. Disponible depuis la page **Cout Alimentaire** et la page **Detail de la recette** (icone etincelle).
 
-### Comment ca fonctionne
+<span id="section-32" />
+
+## Comment ca fonctionne
 
 1. Choisissez **Coller du texte** ou **Telecharger un fichier** (image ou PDF).
 2. Cliquez sur **Extraire la recette**. L'IA traite le contenu.
@@ -349,7 +433,9 @@ Importez des recettes en telechargeant une photo/PDF ou en collant du texte. L'I
 
 ---
 
-## Operations en Masse
+<span id="section-33" />
+
+### Operations en Masse
 
 Selectionnez plusieurs articles en utilisant les cases a cocher dans le tableau (ou la case a cocher "tout selectionner" dans l'en-tete). Une barre d'outils apparait avec deux actions :
 
@@ -357,6 +443,8 @@ Selectionnez plusieurs articles en utilisant les cases a cocher dans le tableau 
 - **Supprimer** — supprimez tous les articles selectionnes. Necessite une confirmation.
 
 ---
+
+<span id="section-34" />
 
 ## Recherche et Filtres
 
@@ -372,6 +460,8 @@ Les filtres se combinent avec une logique ET. Par exemple, chercher "poulet" ave
 
 ---
 
+<span id="section-35" />
+
 ## Colonnes du Tableau
 
 Le tableau de stock reste concentre sur l'essentiel du quotidien. L'en-tete reste fixe en haut lors du defilement, pour que vous sachiez toujours quelle colonne vous regardez.
@@ -385,6 +475,8 @@ Le tableau de stock reste concentre sur l'essentiel du quotidien. L'en-tete rest
 | Statut | Visible | OK ou alerte Stock Bas |
 
 Cliquez sur l'**icone engrenage** (⚙) a cote des filtres pour masquer une colonne dont vous n'avez pas besoin. Les preferences sont sauvegardees par restaurant.
+
+<span id="section-36" />
 
 ## Quantite & Prix — Clic pour Changer de Niveau
 
@@ -413,6 +505,8 @@ Le niveau par defaut est le niveau intermediaire pour un conditionnement imbriqu
 
 ---
 
+<span id="section-37" />
+
 ## Astuces
 
 > **Astuce :** Utilisez l'import de livraison par IA pour chaque livraison. Cela maintient les quantites et les couts a jour automatiquement, et construit un historique d'approvisionnement que vous pourrez consulter plus tard.
@@ -426,6 +520,8 @@ Le niveau par defaut est le niveau intermediaire pour un conditionnement imbriqu
 > **Astuce :** La gestion des stocks seule ne suffit pas. Combinez-la avec les **Operations Quotidiennes** pour comparer le reel vs l'attendu, detecter les pertes automatiquement et ameliorer votre rentabilite jour apres jour. C'est la que vous gagnez vraiment de l'argent.
 
 ---
+
+<span id="section-38" />
 
 ## Articles Associes
 

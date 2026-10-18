@@ -1,143 +1,48 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import type { Lang, TopicMeta, TopicSummary, ArticleSummary } from './types';
+import fs from 'node:fs';
+import path from 'node:path';
+import { readCorpus, localizedCorpus } from './corpus.mjs';
+import type { Lang, TopicMeta, TopicSummary, ArticleSummary, ArticleManifestEntry } from './types';
 
 const CONTENT_ROOT = path.join(process.cwd(), 'src/content/help');
+type Entry = ArticleManifestEntry & { markdown: string };
 
-// ──────────────────────────────────────────────
-// Path helpers
-// ──────────────────────────────────────────────
-
-function topicDir(lang: Lang, topic: string): string {
-  return path.join(CONTENT_ROOT, lang, topic);
+/** Returns the current published corpus with per-article English fallback. */
+export function getHelpArticles(lang: Lang): ArticleManifestEntry[] {
+  return localizedCorpus(readCorpus(CONTENT_ROOT), lang).map(({ markdown: _markdown, ...entry }: Entry) => entry);
 }
 
-function articlePath(lang: Lang, topic: string, slug: string): string {
-  return path.join(topicDir(lang, topic), `${slug}.mdx`);
-}
-
-/** Falls back to 'en' if the locale's topic dir doesn't exist */
-function resolveTopicDir(lang: Lang, topic: string): string {
-  const dir = topicDir(lang, topic);
-  return fs.existsSync(dir) ? dir : topicDir('en', topic);
-}
-
-function resolveLangDir(lang: Lang): string {
-  const dir = path.join(CONTENT_ROOT, lang);
-  return fs.existsSync(dir) ? dir : path.join(CONTENT_ROOT, 'en');
-}
-
-// ──────────────────────────────────────────────
-// Public API
-// ──────────────────────────────────────────────
-
-/**
- * Returns sorted topic list for a given locale.
- * Falls back to 'en' if locale directory doesn't exist.
- */
+/** Lists every published topic, including topics only partially translated. */
 export function getTopics(lang: Lang): TopicSummary[] {
-  const dir = resolveLangDir(lang);
-  if (!fs.existsSync(dir)) return [];
-
-  return fs
-    .readdirSync(dir, { withFileTypes: true })
-    .filter((d) => d.isDirectory())
-    .map((d) => {
-      const metaPath = path.join(dir, d.name, '_meta.json');
-      const meta: TopicMeta = fs.existsSync(metaPath)
-        ? (JSON.parse(fs.readFileSync(metaPath, 'utf8')) as TopicMeta)
-        : { title: d.name, description: '', icon: '📄', order: 99 };
-
-      const articles = getArticles(lang, d.name);
-      return { ...meta, slug: d.name, lang, articleCount: articles.length };
-    })
-    .sort((a, b) => a.order - b.order);
+  const articles = getHelpArticles(lang);
+  return [...new Set(articles.map(a => a.topic))].map(slug => {
+    const translated = path.join(CONTENT_ROOT, lang, slug, '_meta.json');
+    const original = path.join(CONTENT_ROOT, 'en', slug, '_meta.json');
+    const meta: TopicMeta = JSON.parse(fs.readFileSync(fs.existsSync(translated) ? translated : original, 'utf8'));
+    return { ...meta, slug, lang, articleCount: articles.filter(a => a.topic === slug).length };
+  }).sort((a, b) => a.order - b.order);
 }
 
-/**
- * Returns all articles for a given topic.
- * Falls back to 'en' content if the locale directory doesn't exist.
- */
+/** Returns published summaries for a topic, preserving the actual content language. */
 export function getArticles(lang: Lang, topic: string): ArticleSummary[] {
-  const dir = resolveTopicDir(lang, topic);
-  if (!fs.existsSync(dir)) return [];
-
-  return fs
-    .readdirSync(dir)
-    .filter((f) => f.endsWith('.mdx'))
-    .map((f) => {
-      const slug = f.replace('.mdx', '');
-      const raw = fs.readFileSync(path.join(dir, f), 'utf8');
-      const { data } = matter(raw);
-      return {
-        slug,
-        title: (data.title as string) || slug,
-        description: (data.description as string) || '',
-        topic,
-        lang,
-      };
-    });
+  return getHelpArticles(lang).filter(a => a.topic === topic);
 }
 
-/**
- * Reads and parses a single article.
- * Returns frontmatter, raw MDX body, and whether a locale fallback was used.
- */
-export function getArticle(
-  lang: Lang,
-  topic: string,
-  slug: string,
-): { frontmatter: Record<string, unknown>; rawContent: string; usedFallback: boolean } {
-  let filePath = articlePath(lang, topic, slug);
-  let usedFallback = false;
-
-  if (!fs.existsSync(filePath)) {
-    filePath = articlePath('en', topic, slug);
-    usedFallback = true;
-  }
-
-  const raw = fs.readFileSync(filePath, 'utf8');
-  const { data, content } = matter(raw);
-
-  return {
-    frontmatter: data,
-    rawContent: content,
-    usedFallback,
-  };
+/** Reads a published article; invalid paths, drafts and unknown articles are rejected. */
+export function getArticle(lang: Lang, topic: string, slug: string): {
+  frontmatter: Record<string, unknown>; rawContent: string; usedFallback: boolean;
+} {
+  const entry = localizedCorpus(readCorpus(CONTENT_ROOT), lang).find((a: Entry) => a.id === `${topic}/${slug}`) as Entry | undefined;
+  if (!entry) throw new Error('Help article not found');
+  const { markdown, ...frontmatter } = entry;
+  return { frontmatter, rawContent: markdown, usedFallback: entry.lang !== lang };
 }
 
-/**
- * Returns all (topic, slug) combos for a given locale.
- * Used by generateStaticParams in the article page.
- */
-export function getAllArticlePaths(lang: Lang): { topic: string; slug: string }[] {
-  const result: { topic: string; slug: string }[] = [];
-  const dir = path.join(CONTENT_ROOT, lang);
-  if (!fs.existsSync(dir)) return result;
-
-  for (const topicEntry of fs.readdirSync(dir, { withFileTypes: true })) {
-    if (!topicEntry.isDirectory()) continue;
-    const tDir = path.join(dir, topicEntry.name);
-    for (const file of fs.readdirSync(tDir)) {
-      if (file.endsWith('.mdx')) {
-        result.push({ topic: topicEntry.name, slug: file.replace('.mdx', '') });
-      }
-    }
-  }
-  return result;
+/** Lists original paths for SEO, optionally including fallback routes for static generation. */
+export function getAllArticlePaths(lang: Lang, includeFallback = false): { topic: string; slug: string }[] {
+  const all = readCorpus(CONTENT_ROOT) as Entry[];
+  return (includeFallback ? localizedCorpus(all, lang) : all.filter(a => a.lang === lang))
+    .map((a: Entry) => ({ topic: a.topic, slug: a.slug }));
 }
 
-/**
- * Returns all topic slugs for a given locale.
- * Used by generateStaticParams in the topic page.
- */
-export function getAllTopicSlugs(lang: Lang): string[] {
-  const dir = path.join(CONTENT_ROOT, lang);
-  if (!fs.existsSync(dir)) return [];
-
-  return fs
-    .readdirSync(dir, { withFileTypes: true })
-    .filter((d) => d.isDirectory())
-    .map((d) => d.name);
-}
+/** Lists all accessible topics in the selected language. */
+export function getAllTopicSlugs(lang: Lang): string[] { return getTopics(lang).map(t => t.slug); }

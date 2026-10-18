@@ -1,10 +1,25 @@
 ---
-title: "How to Configure Ingredients & Portions"
-description: "Three rules to describe how each ingredient behaves across variants: Match item size, Fixed quantity, or Custom per variant."
+title: How to Configure Ingredients & Portions
+description: >-
+  Three rules to describe how each ingredient behaves across variants: Match item size, Fixed quantity, or Custom per
+  variant.
 apps: foodyadmin
-tags: [menu, ingredients, portions, variants, recipe, food-cost]
-updatedAt: 2026-04-16
+tags:
+  - menu
+  - menu-ingredients-and-portions
+  - ingredients
+  - portions
+  - variants
+  - recipe
+  - food-cost
+updatedAt: '2026-04-16'
+featureId: menu-ingredients-and-portions
+audience: public
+releaseStatus: available
 ---
+Open the corresponding Foody workspace described below.
+
+<span id="section-1" />
 
 ## 🍽️ How to Configure Ingredients & Portions
 
@@ -14,6 +29,8 @@ This rule defines how the ingredient behaves depending on the item's size (varia
 There are 3 main ways to configure your ingredients, depending on how your item is built.
 
 ---
+
+<span id="section-2" />
 
 ## 🥣 1. Simple Item, Match Item Size
 
@@ -25,6 +42,8 @@ This is the simplest case.
 * The unit of the recipe equals the unit you sell (grams, ml, etc.).
 * The size of the item directly defines the quantity used.
 
+<span id="section-3" />
+
 ### How it works
 
 You use: **Match item size**.
@@ -32,12 +51,16 @@ You use: **Match item size**.
 * You don't enter any quantity manually.
 * The system automatically uses the variant size.
 
+<span id="section-4" />
+
 ### Example
 
 | Variant | Quantity used |
 | ------- | ------------- |
 | 250 g   | 250 g soup    |
 | 500 g   | 500 g soup    |
+
+<span id="section-5" />
 
 ### When to use this
 
@@ -51,6 +74,8 @@ Use Match item size when:
 
 ---
 
+<span id="section-6" />
+
 ## 🍔 2. Complex Item, Fixed + Custom per Variant
 
 **Example: Hamburger**
@@ -60,12 +85,16 @@ This case is more advanced.
 * Your item is made of multiple ingredients.
 * Some ingredients change with size, others don't.
 
+<span id="section-7" />
+
 ### How it works
 
 You combine:
 
 * **Fixed quantity** for ingredients that never change.
 * **Custom per variant** for ingredients that depend on size.
+
+<span id="section-8" />
 
 ### Example setup
 
@@ -86,6 +115,8 @@ Ingredients:
   * 20 g sauce
   * 30 g vegetables
 
+<span id="section-9" />
+
 ### When to use this
 
 Use this setup when:
@@ -97,6 +128,8 @@ Use this setup when:
 
 ---
 
+<span id="section-10" />
+
 ## 🧀 3. Advanced Item, With Modifiers (Add-ons)
 
 **Example: Burger + Extra Cheese**
@@ -105,6 +138,8 @@ This builds on the previous case.
 
 * You still have multiple ingredients.
 * Customers can add extras (modifiers).
+
+<span id="section-11" />
 
 ### How it works
 
@@ -125,12 +160,16 @@ Example:
 * Linked ingredient: cheese
 * Quantity added: +20 g
 
+<span id="section-12" />
+
 ### What happens
 
 If a customer selects Extra cheese:
 
 * +20 g cheese is consumed from stock.
 * Food cost increases automatically.
+
+<span id="section-13" />
 
 ### When to use this
 
@@ -143,6 +182,8 @@ Use this setup when:
 
 ---
 
+<span id="section-14" />
+
 ## 🧠 Summary, Choosing the Right Rule
 
 For each ingredient, ask yourself:
@@ -154,11 +195,19 @@ For each ingredient, ask yourself:
 
 ---
 
+<span id="section-15" />
+
 ## ⚙️ How to Set This Up in Foody Admin
+
+⚙️ How to Set This Up in Foody Admin
+
+<span id="section-16" />
 
 ### Step 1. Create your item
 
 * Add variants (e.g. Small, Large or Classic, Big).
+
+<span id="section-17" />
 
 ### Step 2. Add ingredients
 
@@ -170,6 +219,8 @@ For each ingredient:
   * **Fixed quantity** to enter one value.
   * **Custom per variant** to define a value per variant.
 
+<span id="section-18" />
+
 ### Step 3. Add modifiers (if needed)
 
 * Create the modifier (e.g. Extra cheese).
@@ -177,6 +228,8 @@ For each ingredient:
 * Define the added quantity.
 
 ---
+
+<span id="section-19" />
 
 ## 🎯 Final Mental Model
 

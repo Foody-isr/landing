@@ -1,0 +1,39 @@
+---
+title: 'Prestataires, moyens enregistrés et Cibus'
+description: >-
+  Ouvrez Paramètres → Paiements ou Cibus avec les droits requis. La disponibilité dépend du contrat et de l’intégration
+  déployée.
+apps: foodyadmin
+tags:
+  - payments
+  - payment-configuration
+updatedAt: '2026-10-18'
+featureId: payment-configuration
+audience: public
+releaseStatus: available
+---
+Ouvrez Paramètres → Paiements ou Cibus avec les droits requis. La disponibilité dépend du contrat et de l’intégration déployée.
+
+<span id="provider" />
+
+## Faire activer un prestataire
+
+Les identifiants et l’activation du prestataire sont gérés par Foody dans le backoffice protégé. Contactez un opérateur autorisé pour les modifier ; la page Paiements du commerçant ne connecte pas un prestataire carte. Vérifiez le parcours en sandbox dev. N’envoyez ni identifiants ni cartes en chat. SUMIT/Verifone dépendent du contrat ; un nom seul ne prouve pas l’activation.
+
+<span id="saved-methods" />
+
+## Comprendre les moyens enregistrés
+
+Pour client/prestataire éligible, l’enregistrement exige un parcours explicite. Le paiement invité reste possible lorsque proposé. Retirer l’autorisation Foody ne supprime pas les abonnements externes du prestataire. Un échec d’enregistrement après paiement réussi n’annule pas ce paiement.
+
+<span id="cibus" />
+
+## Configurer et utiliser Cibus
+
+Dans Cibus, vérifiez l’activation. Avec les droits, remplacez ensemble identifiant restaurant, identifiant POS et code société dans le formulaire protégé ; les indices masqués ne sont pas des identifiants de remplacement. Vérifiez le statut masqué sauvegardé. Sur POS, contrôlez résultat et solde avant un autre moyen. Un échec réseau ne prouve pas l’absence de débit.
+
+<span id="policy-vat-tips" />
+
+## Régler politique de paiement, TVA et pourboires
+
+Dans Paramètres → Paiements, vérifiez paiement en ligne obligatoire, TVA par défaut et activation des pourboires. Seuls les champs autorisés modifiés sont enregistrés. Une politique inconnue reste inconnue avant choix explicite ; modifier la TVA ne doit pas la choisir. Marge d’autorisation pondérale, suggestions fixes et arrondi ne sont pas éditables ici. Vérifiez les valeurs après succès et gardez les saisies après échec.

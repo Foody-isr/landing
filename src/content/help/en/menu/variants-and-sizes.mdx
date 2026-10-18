@@ -1,10 +1,22 @@
 ---
-title: "Variants & Sizes"
-description: "Set up size or flavor variants on a menu item, with per-variant price, portion, and stock status."
+title: Variants & Sizes
+description: 'Set up size or flavor variants on a menu item, with per-variant price, portion, and stock status.'
 apps: foodyadmin
-tags: [menu, variants, sizes, options, portions]
-updatedAt: 2026-04-16
+tags:
+  - menu
+  - menu-variants-and-sizes
+  - variants
+  - sizes
+  - options
+  - portions
+updatedAt: '2026-10-18'
+featureId: menu-variants-and-sizes
+audience: public
+releaseStatus: available
 ---
+Open the corresponding Foody workspace described below.
+
+<span id="section-1" />
 
 ## What Variants Are
 
@@ -21,13 +33,13 @@ Variants live on the item. When a customer orders, they pick exactly one per var
 
 ---
 
+<span id="section-2" />
+
 ## Creating a Variant Group
 
 1. Open the item in `Menu → Items`.
 2. In the Détails tab, scroll to the **Variantes** section.
 3. Click **Ajouter** (or **Modifier** if one already exists).
-
-![Variants editor, empty](/assets/img/screenshots/menu/variants-modal-empty.png)
 
 4. Give the group a name (e.g. "Taille", "Size", "Flavor"). This is internal-ish — customers see the rows, not the group name.
 5. Add one row per variant. Each row has:
@@ -36,21 +48,29 @@ Variants live on the item. When a customer orders, they pick exactly one per var
    * **Portion** — size of the serving (with unit: g, ml, kg, l, unit).
    * **Status** — Available / Out of stock.
 
-![Variants editor filled](/assets/img/screenshots/menu/variants-modal-filled.png)
-
 6. Click **Terminé**.
 
 ---
 
+<span id="section-3" />
+
 ## Understanding Each Field
+
+Understanding Each Field
+
+<span id="section-4" />
 
 ### Name
 
 The label the customer picks. Keep it short and natural ("Normal", "Grand", "Petit", "XL").
 
+<span id="section-5" />
+
 ### Price
 
 Absolute price — not a delta. Typing `70` for Normal and `140` for Grand makes the item cost exactly that per variant, regardless of the item's base price.
+
+<span id="section-6" />
 
 ### Portion
 
@@ -65,17 +85,19 @@ Pick a unit family consistent with your recipe:
 * Hamburger: unit.
 * Plate: g.
 
+<span id="section-7" />
+
 ### Status
 
 Toggle to Out of stock when you're sold out for the day. The variant grays out on POS / web without deleting it. Flip back to Available when restocked.
 
 ---
 
+<span id="section-8" />
+
 ## Reusing a Variant Group Across Items
 
 Variant groups in Foody are backed by **Option Sets** — a reusable pool. When you type a name that matches an existing Option Set, you get a suggestion to apply it.
-
-![Existing option set suggestion](/assets/img/screenshots/menu/variants-option-set-reuse.png)
 
 Applying an existing group attaches its rows to this item. You can then override per-item:
 
@@ -87,6 +109,8 @@ Updating the **name** of a row on the Option Set level propagates everywhere. Us
 
 ---
 
+<span id="section-9" />
+
 ## Removing or Hiding a Variant
 
 * **Hide temporarily** (keeping history intact): flip Status → Out of stock. Recommended for seasonal or sold-out items.
@@ -96,7 +120,13 @@ Deleting a variant that has order history doesn't touch the past orders — they
 
 ---
 
+<span id="section-10" />
+
 ## Examples
+
+Examples
+
+<span id="section-11" />
 
 ### Burger sizes
 
@@ -107,6 +137,8 @@ Deleting a variant that has order history doesn't touch the past orders — they
 
 On the Recette tab, flag the beef ingredient as "Custom per variant" with 200 g for Normal, 400 g for Grand. Bread / sauce stay Fixed.
 
+<span id="section-12" />
+
 ### Soup bowls
 
 | Variant | Price | Portion |
@@ -115,6 +147,8 @@ On the Recette tab, flag the beef ingredient as "Custom per variant" with 200 g 
 | Large bowl | ₪32 | 500 ml |
 
 On the Recette tab, the soup prep ingredient is scoped as "Match item size". No quantity to type; the system draws 250 ml or 500 ml automatically.
+
+<span id="section-13" />
 
 ### Drink sizes
 
@@ -125,6 +159,8 @@ On the Recette tab, the soup prep ingredient is scoped as "Match item size". No 
 | Large | ₪22 | 750 ml |
 
 ---
+
+<span id="section-14" />
 
 ## What Next
 

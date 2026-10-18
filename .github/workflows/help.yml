@@ -1,0 +1,33 @@
+name: Help and site validation
+on:
+  pull_request:
+    branches: [develop]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: help-pr-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  validate:
+    name: Help coverage and translations
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - run: npm ci
+      - run: npm run check:help
+      - run: npm run test:help
+      - name: Check exact source and documentation impact
+        env:
+          HELP_BASE: ${{ github.event.pull_request.base.sha }}
+        run: node scripts/check-help-contract.mjs ${HELP_BASE:+--base "$HELP_BASE"}
+      - run: npm run lint
+      - run: npx tsc --noEmit
+      # prebuild validates MDX metadata/links and regenerates the search and AI index.
+      - run: npm run build

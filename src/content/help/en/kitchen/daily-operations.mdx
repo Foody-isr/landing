@@ -1,10 +1,30 @@
 ---
-title: "Daily Operations"
-description: "Run your kitchen day-to-day: track sales, receive supplies, monitor food cost, analyze variance, close the day, and auto-generate tomorrow's supplier orders."
+title: Daily Operations
+description: >-
+  Run your kitchen day-to-day: track sales, receive supplies, monitor food cost, analyze variance, close the day, and
+  auto-generate tomorrow's supplier orders.
 apps: foodyadmin
-tags: [kitchen, stock, daily-operations, food-cost, variance, sales, supplies, procurement, suppliers, forecast, waste]
-updatedAt: 2026-04-10
+tags:
+  - kitchen
+  - kitchen-daily-operations
+  - stock
+  - daily-operations
+  - food-cost
+  - variance
+  - sales
+  - supplies
+  - procurement
+  - suppliers
+  - forecast
+  - waste
+updatedAt: '2026-04-10'
+featureId: kitchen-daily-operations
+audience: public
+releaseStatus: available
 ---
+Open the corresponding Foody workspace described below.
+
+<span id="section-1" />
 
 ## What Is It?
 
@@ -16,6 +36,8 @@ It lets you:
 - Detect losses and over-portioning
 - Control your food cost
 - Prepare tomorrow's supplier orders
+
+<span id="section-2" />
 
 ### In One Sentence
 
@@ -35,6 +57,8 @@ Every day follows the same cycle:
 
 ---
 
+<span id="section-3" />
+
 ## The Daily Report
 
 Each day has one report with a lifecycle:
@@ -49,13 +73,19 @@ Navigate to **Kitchen > Daily Operations** to open or view today's report. The s
 
 ---
 
+<span id="section-4" />
+
 ## Sales Tracking
 
 The report tracks what was sold during the day. You have two options:
 
+<span id="section-5" />
+
 ### Pull from POS
 
 Click **Pull from POS** to automatically import all paid orders from your ordering system. The system aggregates quantities by menu item and marks them as POS-sourced.
+
+<span id="section-6" />
 
 ### Manual Sales Entry
 
@@ -64,6 +94,8 @@ Click **Add Sales** to manually enter what was sold. Search by category, select 
 You can use both sources together. The report's `sales_source` will show as "mixed" when combining POS and manual entries.
 
 ---
+
+<span id="section-7" />
 
 ## Supplies Received
 
@@ -75,6 +107,8 @@ The **Supplies Received** section shows all deliveries logged for the day. You c
 
 ---
 
+<span id="section-8" />
+
 ## Stock Count & Variance
 
 This is where you identify where you're losing money.
@@ -82,6 +116,8 @@ This is where you identify where you're losing money.
 The system compares:
 - **Expected** (from your recipes)
 - **Actual** (from your stock)
+
+<span id="section-9" />
 
 ### How It Works
 
@@ -97,6 +133,8 @@ You don't need to calculate anything.
 - Positive = you used too much
 - Negative = inconsistency or missing data
 
+<span id="section-10" />
+
 ### How to Read It Quickly
 
 | Variance | Meaning |
@@ -105,19 +143,27 @@ You don't need to calculate anything.
 | **5-15%** | Needs attention. Could be portioning issues or unrecorded waste. |
 | **> 15%** | Problem. Investigate immediately: theft, spoilage, incorrect recipes, or counting errors. |
 
+<span id="section-11" />
+
 ### A Concrete Example
 
 Cod: +300g (17%). You used too much product today — likely over-portioning or kitchen waste.
 
+<span id="section-12" />
+
 ### Recording Closing Stock
 
 Before closing the day, do a physical count of your ingredients. Enter the quantities in the **Closing Stock** column. You can update these multiple times while the report is still open.
+
+<span id="section-13" />
 
 ### Ingredient Breakdown
 
 Click on any ingredient to see a detailed breakdown: which menu items consumed it, how much each used (based on recipes), and the total theoretical usage. This helps pinpoint where the variance is coming from.
 
 ---
+
+<span id="section-14" />
 
 ## Food Cost Analytics
 
@@ -136,6 +182,8 @@ These metrics update as you add sales and adjust stock counts throughout the day
 
 Use the **Show inc. VAT** checkbox on the ingredients table header to switch between HT and TTC cost views. All unit costs, line costs, and totals adjust accordingly. For accurate food cost %, the system normalizes both costs and revenue to the same VAT basis.
 
+<span id="section-15" />
+
 ### Importing Recipes
 
 Click the **Import Recipe** button (sparkle icon) on the food cost page or on any recipe detail page. You can paste recipe text or upload a photo/PDF. The AI extracts ingredients and matches them to your stock items in a full-screen split view. For full details, see [AI Recipe Import](/help/kitchen/stock-management#ai-recipe-import) in Stock Management.
@@ -143,6 +191,8 @@ Click the **Import Recipe** button (sparkle icon) on the food cost page or on an
 > **Important:** A high food cost can come from high purchase prices, significant losses, or over-generous portions. Look at variance data to understand which one.
 
 ---
+
+<span id="section-16" />
 
 ## Retrospective
 
@@ -155,6 +205,8 @@ Before closing the day, you can optionally fill in three reflection fields:
 These are saved with the report and help build a history of operational patterns over time. Click **Save Draft** to preserve your notes without closing the day.
 
 ---
+
+<span id="section-17" />
 
 ## Closing the Day
 
@@ -174,9 +226,13 @@ Closing is idempotent and safe to trigger multiple times — stock is only deduc
 
 ---
 
+<span id="section-18" />
+
 ## Estimated Supplies
 
 After closing the day, the system automatically suggests what you need to order. The goal: never run out of stock, without over-ordering.
+
+<span id="section-19" />
 
 ### Generating Tomorrow's Order
 
@@ -195,6 +251,8 @@ The system then:
 
 > **Example:** The system predicts you'll sell 20 Fish Burgers and 15 Ceviches tomorrow. Your recipes say that needs 4.5kg of cod total. You currently have 1kg in stock. The system generates an order for 3.5kg of cod from your fish supplier.
 
+<span id="section-20" />
+
 ### Reviewing and Sending Orders
 
 Each supplier order appears as a card with a table of ingredients, quantities, and units. You can:
@@ -203,6 +261,8 @@ Each supplier order appears as a card with a table of ingredients, quantities, a
 - **Send by email** — enter the supplier's email and the order is sent as a formatted email. Status changes from "Draft" to "Sent".
 - **Regenerate** to recalculate (e.g., after updating stock levels)
 
+<span id="section-21" />
+
 ### Understanding the Prediction
 
 The prediction uses a **simple average**: total sales of each item on the same weekday, divided by the number of weeks analyzed (up to 6).
@@ -210,6 +270,8 @@ The prediction uses a **simple average**: total sales of each item on the same w
 This works well for restaurants with consistent patterns. It does not account for holidays, weather, seasonal trends, or promotions. Use the prediction as a starting point and adjust manually when you know something unusual is coming.
 
 ---
+
+<span id="section-22" />
 
 ## The Full Daily Workflow
 
@@ -229,6 +291,8 @@ This works well for restaurants with consistent patterns. It does not account fo
 
 ---
 
+<span id="section-23" />
+
 ## Prerequisites
 
 For Daily Operations to work at its best:
@@ -243,6 +307,8 @@ For Daily Operations to work at its best:
 
 ---
 
+<span id="section-24" />
+
 ## Common Mistakes
 
 - **Not defining recipes** — no reliable calculations are possible
@@ -253,6 +319,8 @@ For Daily Operations to work at its best:
 > One bad input = all your analytics become wrong.
 
 ---
+
+<span id="section-25" />
 
 ## Tips
 
@@ -265,6 +333,8 @@ For Daily Operations to work at its best:
 > **Tip:** Use the retrospective consistently. Patterns become visible after a few weeks — recurring issues will stand out.
 
 ---
+
+<span id="section-26" />
 
 ## Related
 

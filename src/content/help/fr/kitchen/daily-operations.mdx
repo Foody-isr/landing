@@ -1,10 +1,30 @@
 ---
-title: "Operations Quotidiennes"
-description: "Gerez votre cuisine au quotidien : suivez les ventes, recevez les livraisons, surveillez le food cost, analysez les ecarts, cloturez la journee et generez automatiquement les commandes fournisseurs."
+title: Operations Quotidiennes
+description: >-
+  Gerez votre cuisine au quotidien : suivez les ventes, recevez les livraisons, surveillez le food cost, analysez les
+  ecarts, cloturez la journee et generez automatiquement les commandes fournisseurs.
 apps: foodyadmin
-tags: [cuisine, stock, operations-quotidiennes, food-cost, ecarts, ventes, approvisionnements, fournisseurs, previsions, pertes]
-updatedAt: 2026-04-10
+tags:
+  - kitchen
+  - kitchen-daily-operations
+  - cuisine
+  - stock
+  - operations-quotidiennes
+  - food-cost
+  - ecarts
+  - ventes
+  - approvisionnements
+  - fournisseurs
+  - previsions
+  - pertes
+updatedAt: '2026-04-10'
+featureId: kitchen-daily-operations
+audience: public
+releaseStatus: available
 ---
+Ouvrez l’espace Foody correspondant décrit ci-dessous.
+
+<span id="section-1" />
 
 ## Qu'est-ce que c'est ?
 
@@ -16,6 +36,8 @@ Il vous permet de :
 - Detecter les pertes et les surdosages
 - Controler votre food cost
 - Preparer vos commandes fournisseurs
+
+<span id="section-2" />
 
 ### En une phrase
 
@@ -35,6 +57,8 @@ Chaque jour suit le meme cycle :
 
 ---
 
+<span id="section-3" />
+
 ## Le Rapport Quotidien
 
 Chaque jour a un rapport avec un cycle de vie :
@@ -49,13 +73,19 @@ Naviguez vers **Cuisine > Operations Quotidiennes** pour ouvrir ou consulter le 
 
 ---
 
+<span id="section-4" />
+
 ## Suivi des Ventes
 
 Le rapport suit ce qui a ete vendu pendant la journee. Deux options :
 
+<span id="section-5" />
+
 ### Importer depuis le POS
 
 Cliquez sur **Importer depuis POS** pour importer automatiquement toutes les commandes payees depuis votre systeme de caisse. Le systeme agrege les quantites par article et les marque comme provenant du POS.
+
+<span id="section-6" />
 
 ### Saisie manuelle des ventes
 
@@ -64,6 +94,8 @@ Cliquez sur **Ajouter des ventes** pour saisir manuellement ce qui a ete vendu. 
 Vous pouvez combiner les deux sources. La source du rapport affichera "mixte" lors de la combinaison d'entrees POS et manuelles.
 
 ---
+
+<span id="section-7" />
 
 ## Livraisons Recues
 
@@ -75,6 +107,8 @@ La section **Livraisons Recues** affiche toutes les livraisons enregistrees pour
 
 ---
 
+<span id="section-8" />
+
 ## Comptage & Ecarts de Stock
 
 C'est ici que vous identifiez ou vous perdez de l'argent.
@@ -82,6 +116,8 @@ C'est ici que vous identifiez ou vous perdez de l'argent.
 Le systeme compare :
 - **Attendu** (via les recettes)
 - **Reel** (via votre stock)
+
+<span id="section-9" />
 
 ### Comment ca marche
 
@@ -97,6 +133,8 @@ Vous n'avez rien a calculer.
 - Positif = vous avez utilise trop
 - Negatif = incoherence ou oubli
 
+<span id="section-10" />
+
 ### Comment interpreter rapidement
 
 | Ecart | Signification |
@@ -105,19 +143,27 @@ Vous n'avez rien a calculer.
 | **5-15%** | A surveiller. Problemes de portions ou pertes non enregistrees possibles. |
 | **> 15%** | Probleme. A investiguer immediatement : vol, deterioration, recettes incorrectes ou erreurs de comptage. |
 
+<span id="section-11" />
+
 ### Exemple concret
 
 Cabillaud : +300g (17%). Vous avez utilise trop de produit aujourd'hui — probable surdosage ou perte en cuisine.
 
+<span id="section-12" />
+
 ### Saisie du stock de fermeture
 
 Avant de cloturer la journee, faites un comptage physique de vos ingredients. Entrez les quantites dans la colonne **Stock de fermeture**. Vous pouvez les mettre a jour plusieurs fois tant que le rapport est ouvert.
+
+<span id="section-13" />
 
 ### Detail par ingredient
 
 Cliquez sur un ingredient pour voir le detail : quels articles du menu l'ont consomme, combien chacun a utilise (selon les recettes) et l'usage theorique total. Cela aide a identifier l'origine de l'ecart.
 
 ---
+
+<span id="section-14" />
 
 ## Analyse du Food Cost
 
@@ -136,6 +182,8 @@ Ces indicateurs se mettent a jour en ajoutant des ventes et en ajustant les comp
 
 Utilisez la case a cocher **Afficher TTC** dans l'en-tete du tableau des ingredients pour basculer entre les vues de couts HT et TTC. Tous les couts unitaires, couts par ligne et totaux s'ajustent en consequence. Pour un food cost % precis, le systeme normalise les couts et le chiffre d'affaires sur la meme base de TVA.
 
+<span id="section-15" />
+
 ### Importation de Recettes
 
 Cliquez sur le bouton **Importer une recette** (icone etincelle) sur la page de food cost ou sur n'importe quelle page de detail de recette. Vous pouvez coller le texte d'une recette ou telecharger une photo/PDF. L'IA extrait les ingredients et les fait correspondre a vos articles de stock dans une vue fractionnee en plein ecran.
@@ -143,6 +191,8 @@ Cliquez sur le bouton **Importer une recette** (icone etincelle) sur la page de 
 > **Important :** Un food cost eleve peut venir de prix d'achat eleves, de pertes importantes ou de portions trop genereuses. Regardez les donnees de variance pour comprendre lequel.
 
 ---
+
+<span id="section-16" />
 
 ## Retrospective
 
@@ -155,6 +205,8 @@ Avant de cloturer la journee, vous pouvez remplir trois champs de reflexion :
 Ceux-ci sont sauvegardes avec le rapport et aident a construire un historique des tendances operationnelles. Cliquez sur **Sauvegarder le brouillon** pour preserver vos notes sans cloturer la journee.
 
 ---
+
+<span id="section-17" />
 
 ## Cloture de la Journee
 
@@ -174,9 +226,13 @@ La cloture est idempotente et sure — le stock n'est deduit qu'une seule fois.
 
 ---
 
+<span id="section-18" />
+
 ## Approvisionnements Estimes
 
 Apres la cloture, le systeme vous propose automatiquement ce que vous devez commander. L'objectif : ne jamais etre en rupture, sans surstocker.
+
+<span id="section-19" />
 
 ### Generer la commande de demain
 
@@ -195,6 +251,8 @@ Le systeme ensuite :
 
 > **Exemple :** Le systeme predit 20 Fish Burgers et 15 Ceviches demain. Vos recettes indiquent 4,5 kg de cabillaud au total. Vous avez 1 kg en stock. Le systeme genere une commande de 3,5 kg de cabillaud aupres de votre poissonnier.
 
+<span id="section-20" />
+
 ### Verification et envoi
 
 Chaque commande fournisseur apparait sous forme de carte avec un tableau d'ingredients, quantites et unites. Vous pouvez :
@@ -203,6 +261,8 @@ Chaque commande fournisseur apparait sous forme de carte avec un tableau d'ingre
 - **Envoyer par email** — entrez l'email du fournisseur et la commande est envoyee. Le statut passe de "Brouillon" a "Envoye".
 - **Regenerer** pour recalculer
 
+<span id="section-21" />
+
 ### Comprendre la prediction
 
 La prediction utilise une **moyenne simple** : ventes totales de chaque article le meme jour de la semaine, divisees par le nombre de semaines analysees (jusqu'a 6).
@@ -210,6 +270,8 @@ La prediction utilise une **moyenne simple** : ventes totales de chaque article 
 Cela fonctionne bien pour les restaurants avec des habitudes regulieres. La prediction ne tient pas compte des jours feries, de la meteo, des saisons ou des promotions. Utilisez-la comme point de depart et ajustez manuellement pour les situations inhabituelles.
 
 ---
+
+<span id="section-22" />
 
 ## Le Flux de Travail Complet
 
@@ -229,6 +291,8 @@ Cela fonctionne bien pour les restaurants avec des habitudes regulieres. La pred
 
 ---
 
+<span id="section-23" />
+
 ## Prerequis
 
 Pour que les Operations Quotidiennes fonctionnent au mieux :
@@ -243,6 +307,8 @@ Pour que les Operations Quotidiennes fonctionnent au mieux :
 
 ---
 
+<span id="section-24" />
+
 ## Erreurs Frequentes
 
 - **Ne pas definir les recettes** — aucun calcul fiable n'est possible
@@ -253,6 +319,8 @@ Pour que les Operations Quotidiennes fonctionnent au mieux :
 > Une donnee incorrecte = toutes vos analyses deviennent fausses.
 
 ---
+
+<span id="section-25" />
 
 ## Conseils
 
@@ -265,6 +333,8 @@ Pour que les Operations Quotidiennes fonctionnent au mieux :
 > **Conseil :** Utilisez la retrospective regulierement. Les tendances deviennent visibles apres quelques semaines — les problemes recurrents ressortiront.
 
 ---
+
+<span id="section-26" />
 
 ## Articles lies
 

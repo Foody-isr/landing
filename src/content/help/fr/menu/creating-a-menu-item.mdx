@@ -1,10 +1,24 @@
 ---
-title: "Créer un article du menu, étape par étape"
-description: "Guide complet pour créer un nouvel article dans FoodyAdmin : image, nom, description, catégorie, prix, variantes, recette et coût."
+title: 'Créer un article du menu, étape par étape'
+description: >-
+  Guide complet pour créer un nouvel article dans FoodyAdmin : image, nom, description, catégorie, prix, variantes,
+  recette et coût.
 apps: foodyadmin
-tags: [menu, articles, onboarding, guide, créer]
-updatedAt: 2026-04-16
+tags:
+  - menu
+  - menu-creating-a-menu-item
+  - articles
+  - onboarding
+  - guide
+  - créer
+updatedAt: '2026-10-18'
+featureId: menu-creating-a-menu-item
+audience: public
+releaseStatus: available
 ---
+Ouvrez l’espace Foody correspondant décrit ci-dessous.
+
+<span id="section-1" />
 
 ## Avant de commencer
 
@@ -14,6 +28,8 @@ Vous voudrez aussi ajouter vos **articles de stock** dans `Cuisine → Stock` si
 
 ---
 
+<span id="section-2" />
+
 ## Ouvrir le formulaire Créer un article
 
 Dans FoodyAdmin :
@@ -21,17 +37,15 @@ Dans FoodyAdmin :
 1. Allez dans `Menu → Articles`.
 2. Cliquez **Nouveau** en haut à droite.
 
-![Liste des articles avec le bouton Nouveau](/assets/img/screenshots/menu/item-list-new-button.png)
-
 Le modal Créer un article s'ouvre avec trois onglets : **Détails**, **Recette**, **Coût**. Vous remplissez Détails d'abord, enregistrez, puis revenez à Recette si vous voulez suivre le coût alimentaire.
 
 ---
 
+<span id="section-3" />
+
 ## Étape 1. Image
 
 Glissez une image dans la zone ou cliquez pour télécharger. Vous pouvez aussi coller une URL.
-
-![Zone d'upload d'image](/assets/img/screenshots/menu/create-item-image-upload.png)
 
 Conseils :
 
@@ -43,11 +57,11 @@ Si vous sautez l'image maintenant, les clients sur l'app web voient un placehold
 
 ---
 
+<span id="section-4" />
+
 ## Étape 2. Nom
 
 Le nom que voient vos clients. Obligatoire.
-
-![Onglet Détails avec nom, catégorie, prix](/assets/img/screenshots/menu/create-item-details-tab.png)
 
 Conseils :
 
@@ -55,6 +69,8 @@ Conseils :
 * Évitez les codes internes comme `BRG-01`. Les clients voient ce champ.
 
 ---
+
+<span id="section-5" />
 
 ## Étape 3. Description
 
@@ -64,11 +80,11 @@ Utilisez-la pour lister les ingrédients («\u00A0Bœuf, laitue, tomate, sauce m
 
 ---
 
+<span id="section-6" />
+
 ## Étape 4. Catégorie
 
 Choisissez une catégorie existante dans le menu déroulant.
-
-![Sélecteur de catégorie](/assets/img/screenshots/menu/create-item-category-picker.png)
 
 Pourquoi c'est important :
 
@@ -80,6 +96,8 @@ Les catégories sont internes. Ce que les clients voient, c'est le **groupe de m
 
 ---
 
+<span id="section-7" />
+
 ## Étape 5. Prix
 
 Le prix de base payé par le client. Saisissez dans la devise de votre restaurant (₪, €, $…).
@@ -88,6 +106,8 @@ Le prix de base payé par le client. Saisissez dans la devise de votre restauran
 * Le fait que le prix soit TTC ou HT est un réglage **au niveau du restaurant** (taux de TVA dans `Réglages → Taxes`). Le nombre saisi suit cette règle.
 
 ---
+
+<span id="section-8" />
 
 ## Étape 6. Bascule Actif
 
@@ -100,15 +120,17 @@ Préférez désactiver plutôt que supprimer. La suppression est définitive ; l
 
 ---
 
+<span id="section-9" />
+
 ## Étape 7. Variantes
 
 Les variantes sont des tailles, saveurs ou choix vendus à des prix distincts (ex. Petit / Grand ; Classic / Épicé). Guide complet : [Variantes et tailles](./variants-and-sizes).
 
 Vous pouvez enregistrer l'article maintenant et ajouter les variantes plus tard. Rien n'oblige leur existence à la création.
 
-![Section Variantes avec bouton Ajouter](/assets/img/screenshots/menu/create-item-variants-button.png)
-
 ---
+
+<span id="section-10" />
 
 ## Étape 8. Modificateurs
 
@@ -118,15 +140,13 @@ Comme les variantes, ils peuvent être ajoutés après enregistrement.
 
 ---
 
+<span id="section-11" />
+
 ## Étape 9. Enregistrer, puis ouvrir Recette
 
 Cliquez **Enregistrer**. L'article apparaît dans la liste.
 
-![Liste après enregistrement](/assets/img/screenshots/menu/create-item-saved.png)
-
 Cliquez sur l'article pour le rouvrir, puis passez à l'onglet **Recette**. C'est là que vous reliez les ingrédients (stock + prép.) et voyez le vrai coût alimentaire.
-
-![Onglet Recette avec ingrédients](/assets/img/screenshots/menu/create-item-recipe-tab.png)
 
 Chaque ligne d'ingrédient choisit une **portée** (Adapter à la taille / Quantité fixe / Personnalisé par variante). Explication complète : [Configurer les ingrédients et portions](./ingredients-and-portions).
 
@@ -138,6 +158,8 @@ L'onglet **Coût** affiche :
 * Un popup de détail quand vous cliquez sur un ingrédient de préparation.
 
 ---
+
+<span id="section-12" />
 
 ## Étape 10. Vérifier sur POS et web
 
@@ -153,6 +175,8 @@ Voir [Catégories et articles](./categories-and-items) pour la distinction compl
 
 ---
 
+<span id="section-13" />
+
 ## Dépannage
 
 | Symptôme | Solution |
@@ -164,6 +188,8 @@ Voir [Catégories et articles](./categories-and-items) pour la distinction compl
 | Portion de variante manquante | Ouvrir l'éditeur Variantes et remplir le champ Portion par ligne. Requis pour le calcul du coût. |
 
 ---
+
+<span id="section-14" />
 
 ## Pour aller plus loin
 

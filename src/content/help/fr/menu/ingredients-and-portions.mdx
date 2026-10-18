@@ -1,10 +1,25 @@
 ---
-title: "Configurer les ingrédients et portions"
-description: "Trois règles pour décrire comment chaque ingrédient se comporte selon les variantes : Adapter à la taille, Quantité fixe, ou Personnalisé par variante."
+title: Configurer les ingrédients et portions
+description: >-
+  Trois règles pour décrire comment chaque ingrédient se comporte selon les variantes : Adapter à la taille, Quantité
+  fixe, ou Personnalisé par variante.
 apps: foodyadmin
-tags: [menu, ingrédients, portions, variantes, recette, coût]
-updatedAt: 2026-04-16
+tags:
+  - menu
+  - menu-ingredients-and-portions
+  - ingrédients
+  - portions
+  - variantes
+  - recette
+  - coût
+updatedAt: '2026-04-16'
+featureId: menu-ingredients-and-portions
+audience: public
+releaseStatus: available
 ---
+Ouvrez l’espace Foody correspondant décrit ci-dessous.
+
+<span id="section-1" />
 
 ## 🍽️ Configurer les ingrédients et portions
 
@@ -14,6 +29,8 @@ Cette règle définit le comportement de l'ingrédient selon la taille de l'arti
 Il existe 3 façons de configurer vos ingrédients, selon la composition de votre article.
 
 ---
+
+<span id="section-2" />
 
 ## 🥣 1. Article simple, Adapter à la taille
 
@@ -25,6 +42,8 @@ C'est le cas le plus simple.
 * L'unité de la recette est la même que l'unité de vente (grammes, ml, etc.).
 * La taille de l'article définit directement la quantité consommée.
 
+<span id="section-3" />
+
 ### Comment ça marche
 
 Vous utilisez : **Adapter à la taille**.
@@ -32,12 +51,16 @@ Vous utilisez : **Adapter à la taille**.
 * Vous ne saisissez aucune quantité manuellement.
 * Le système utilise automatiquement la taille de la variante.
 
+<span id="section-4" />
+
 ### Exemple
 
 | Variante | Quantité utilisée |
 | -------- | ----------------- |
 | 250 g    | 250 g de soupe    |
 | 500 g    | 500 g de soupe    |
+
+<span id="section-5" />
 
 ### Quand l'utiliser
 
@@ -51,6 +74,8 @@ Utilisez Adapter à la taille quand :
 
 ---
 
+<span id="section-6" />
+
 ## 🍔 2. Article composé, Fixe + Personnalisé par variante
 
 **Exemple : Hamburger**
@@ -60,12 +85,16 @@ Ce cas est plus avancé.
 * Votre article contient plusieurs ingrédients.
 * Certains changent avec la taille, d'autres non.
 
+<span id="section-7" />
+
 ### Comment ça marche
 
 Vous combinez :
 
 * **Quantité fixe** pour les ingrédients qui ne changent jamais.
 * **Personnalisé par variante** pour les ingrédients qui dépendent de la taille.
+
+<span id="section-8" />
 
 ### Exemple de configuration
 
@@ -86,6 +115,8 @@ Ingrédients :
   * 20 g de sauce
   * 30 g de légumes
 
+<span id="section-9" />
+
 ### Quand l'utiliser
 
 Utilisez cette configuration quand :
@@ -97,6 +128,8 @@ Utilisez cette configuration quand :
 
 ---
 
+<span id="section-10" />
+
 ## 🧀 3. Article avancé, Avec modificateurs (suppléments)
 
 **Exemple : Burger + Extra fromage**
@@ -105,6 +138,8 @@ Cela s'appuie sur le cas précédent.
 
 * Vous avez toujours plusieurs ingrédients.
 * Les clients peuvent ajouter des suppléments (modificateurs).
+
+<span id="section-11" />
 
 ### Comment ça marche
 
@@ -125,12 +160,16 @@ Exemple :
 * Ingrédient lié : fromage
 * Quantité ajoutée : +20 g
 
+<span id="section-12" />
+
 ### Ce qui se passe
 
 Si un client sélectionne Extra fromage :
 
 * +20 g de fromage sont consommés du stock.
 * Le coût alimentaire augmente automatiquement.
+
+<span id="section-13" />
 
 ### Quand l'utiliser
 
@@ -143,6 +182,8 @@ Utilisez cette configuration quand :
 
 ---
 
+<span id="section-14" />
+
 ## 🧠 Résumé, Choisir la bonne règle
 
 Pour chaque ingrédient, demandez-vous :
@@ -154,11 +195,19 @@ Pour chaque ingrédient, demandez-vous :
 
 ---
 
+<span id="section-15" />
+
 ## ⚙️ Comment le configurer dans Foody Admin
+
+⚙️ Comment le configurer dans Foody Admin
+
+<span id="section-16" />
 
 ### Étape 1. Créez votre article
 
 * Ajoutez les variantes (par ex. Petit, Grand ou Classic, Big).
+
+<span id="section-17" />
 
 ### Étape 2. Ajoutez les ingrédients
 
@@ -170,6 +219,8 @@ Pour chaque ingrédient :
   * **Quantité fixe** pour saisir une seule valeur.
   * **Personnalisé par variante** pour définir une valeur par variante.
 
+<span id="section-18" />
+
 ### Étape 3. Ajoutez les modificateurs (si besoin)
 
 * Créez le modificateur (par ex. Extra fromage).
@@ -177,6 +228,8 @@ Pour chaque ingrédient :
 * Définissez la quantité ajoutée.
 
 ---
+
+<span id="section-19" />
 
 ## 🎯 Modèle mental final
 
