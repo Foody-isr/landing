@@ -4,9 +4,9 @@
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "d81074e7d1ccad95d08ac337c5fe967324dd643a",
+      "sourceCommit": "163ad833326c55484a5abb305e443277bef10de8",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "3eec15dabfe023c81ac32ab2eb38b58de8ce5b432ea6b85c6037546154db4c01",
+      "sourceSnapshot": "a19aa7d79eb34198758591611902ae89ce43a7514fef977c0fa260514f6a2619",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -617,7 +617,7 @@
           ]
         },
         "internal/common/models.go": {
-          "sha256": "ee26934b6660f85c949b248164ac2dc58d9dba8d155ec74871d711870cc5fc49",
+          "sha256": "90a5318264d12b90b7c248fca6ab78da4288f8a7cc41b6d35977c8594b741471",
           "features": [
             "platform-api"
           ]
@@ -720,6 +720,12 @@
         },
         "internal/common/website_form.go": {
           "sha256": "c2d335b16a6ab1890ad5427d6f96352ca334ac20267090381aa21211b0b8a626",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/common/weight_hold.go": {
+          "sha256": "463b170d31668f1a15c102938a41587c37f73cac042393950c5b69a989508477",
           "features": [
             "platform-api"
           ]
@@ -2475,7 +2481,7 @@
           ]
         },
         "internal/orders/service.go": {
-          "sha256": "4e909ed3de553713e6f6bb736930238736b9fbc268affde16b071f78ee797718",
+          "sha256": "ea1d1115f8b13702139334cc7a2fad9ef712f2057d5a0935838c29675a353839",
           "features": [
             "orders-managing-orders",
             "order-types",
@@ -2486,6 +2492,16 @@
         },
         "internal/orders/shared_seats.go": {
           "sha256": "06c8867b88e3155e9cebe16b89e544c6e30b5516217a0acc9a937926f25f9245",
+          "features": [
+            "orders-managing-orders",
+            "order-types",
+            "pos-order-entry",
+            "fulfillment-policy",
+            "platform-api"
+          ]
+        },
+        "internal/orders/weight_hold.go": {
+          "sha256": "dc057b1579bfd493cf8e7201240c79c31c2479cd29862a77f3d6b23fbf1f1bf8",
           "features": [
             "orders-managing-orders",
             "order-types",
@@ -2656,7 +2672,7 @@
           ]
         },
         "internal/payment/resolver.go": {
-          "sha256": "8f2b8da19a64d6c6379b3eca6b450215bc987d1ebff0c2d1da5cc7526e4a4e81",
+          "sha256": "e526fb7788fa71196b44c26b2482c77c69d8e991c25faa95d7fb934c4992d96a",
           "features": [
             "payments-how-payments-work",
             "pos-payments",
@@ -3238,7 +3254,7 @@
           ]
         },
         "internal/restaurants/handler.go": {
-          "sha256": "80444b723636d78a32742c9fb689773bf9b354b5ebb639d5f06dda852245f16e",
+          "sha256": "ee0adb6535b8dc868772334c84861219a1cbc5c7fb3934e46e23264ea57d36f5",
           "features": [
             "restaurant-profile",
             "fulfillment-policy",
@@ -3327,7 +3343,7 @@
           ]
         },
         "internal/restaurants/service.go": {
-          "sha256": "83ff6a3bedee7b0553a758008c73f6fa10c59f4389ce98be1cc216a6a5b1925a",
+          "sha256": "1a952ff945700d4ac6f9656ab22686180c9bcdac5f682609c03f71a3108099af",
           "features": [
             "restaurant-profile",
             "fulfillment-policy",
@@ -3761,7 +3777,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "d348de6a9cdd8f98771044656c1283471d2681474c875c20561770c5e5236fbc",
+          "sha256": "23b52389a9eee21fed8c603b84d9ebe33559c8c6b60571ad58db32b5e69c3971",
           "features": [
             "getting-started-using-support",
             "platform-api"
@@ -4064,9 +4080,9 @@
     },
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "acb898cdab6ce3c13984c8bc41771c88b691d745",
+      "sourceCommit": "82610a06446e2a132ce978bdbebe3aa2c3d216be",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "cfe1723805f7c0b2b0f5f65dcd20a24ab1e2d96e378f5fa888a296046ee8fd63",
+      "sourceSnapshot": "787190ef75d54489d1ee2fc8ab61d137c8f536f577a18e0e822202b1d6c45937",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
@@ -5358,7 +5374,7 @@
           ]
         },
         "src/app/[restaurantId]/settings/payments/page.tsx": {
-          "sha256": "2cfaf58a976c673fa72cac1e5ad04647b2c3c2bdd6b00e908286400d08a62866",
+          "sha256": "66a8726a8daba437144eec30c1f50a073cd4093e7f2fde82245220fb5efd8002",
           "features": [
             "payments-how-payments-work",
             "payment-configuration"
@@ -5959,7 +5975,7 @@
           ]
         },
         "src/components/delivery/DeliveryMap.tsx": {
-          "sha256": "9cce252c1a1b851ff6fc88b3c091fd437daaa7df1d6fb07c1757fcaeb12c9332",
+          "sha256": "b55da8f0937d8525154df9d369b56e43707217d42f2a9a23fbcefe2be45270e0",
           "features": [
             "delivery-dispatch"
           ]
@@ -8310,7 +8326,7 @@
           ]
         },
         "src/lib/i18n.tsx": {
-          "sha256": "4a999c49407983e72631090e1ad581cc91b0e77336cbd9d87c8ba87f7953a3ab",
+          "sha256": "38df3656fb62505d26fe928dde6053f38946886873c7bfa5651a32f974c68309",
           "features": [
             "delivery-dispatch",
             "shared-runtime"
@@ -9243,804 +9259,11 @@
         }
       }
     },
-    "foodylanding": {
-      "repository": "https://github.com/Foody-isr/landing",
-      "sourceCommit": "7225a8b4997f944685e0e84538b9f39fb163abc0",
-      "releaseStatus": "versioned",
-      "sourceSnapshot": "fb8c0cfa166208b984db58a68c14c9ddab4b3c6cc377e37c1d9543842d68f6e2",
-      "workingTreeHasChanges": true,
-      "sourceFiles": {
-        "src/app/[lang]/contact/layout.tsx": {
-          "sha256": "62c102ec780d416e74a175de47629e994d3158948ebf62e9610dddcd6af77f7e",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/app/[lang]/contact/page.tsx": {
-          "sha256": "dad49a43f01c5db3929605ab065ff9a84281c7f585136cdbc93b3d5f1d9b78e7",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/app/[lang]/help/[topic]/[slug]/page.tsx": {
-          "sha256": "74fd25a220dcb3ff2bee999b43c0a1a07650b950b3b42192446647bc4c4dbcc8",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/app/[lang]/help/[topic]/page.tsx": {
-          "sha256": "eb4141eb30ad84aabb434c3f90ff530f54a77d613f93aa9db42d728305838b4a",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/app/[lang]/help/layout.tsx": {
-          "sha256": "c1cb47f04a18a52236aa2110ac51de9c5a1abec734ac48f38e18e882bfee2271",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/app/[lang]/help/page.tsx": {
-          "sha256": "693b79e9fffef205fd81cfa7e1285bf2d9a0bc7871ab5652e3d7b39b4fddcd00",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/app/[lang]/help/support.css": {
-          "sha256": "1e103ff45010c6586d7f17bc6fa0ae55a6584909e3f4ee1f2552441060e1de4c",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/app/[lang]/layout.tsx": {
-          "sha256": "195eb556f440c8717a6a5559290b50ad3ec86ccfd4e84df46eb64089162f7c0e",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/app/[lang]/page.tsx": {
-          "sha256": "6d98d87e6399ef04858299793f6b37768e57562d2f43fbd13ae73b7273e32476",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/app/[lang]/pricing/layout.tsx": {
-          "sha256": "c0a4d20c68d224a86b3b2f38183da6badd5bc529b72c74da6e1bbef460d4f281",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/app/[lang]/pricing/page.tsx": {
-          "sha256": "eac392411dd2ad3d575730f68d7993161939c9e6e967a2eb0c2b1d39afd3130b",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/app/[lang]/privacy/layout.tsx": {
-          "sha256": "275ffd138c98a2def483e5fc22080ca42731a3586e682f05e5cb912de1ea56d9",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/app/[lang]/privacy/page.tsx": {
-          "sha256": "292106f672e6feb7ec4dcea7e8c379564fe8943e329ace2c92fd03b74666c23f",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/app/[lang]/sectors/beauty/page.tsx": {
-          "sha256": "644b0e0299b3222db3c3669019e664d8f9247e1c81449a764e042e1ff4199fc7",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/app/[lang]/sectors/chains/page.tsx": {
-          "sha256": "96d845427b43e2264b4b00b30036d2a1a5171316fc79510ee2a1d882f7b909fc",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/app/[lang]/sectors/food-beverage/layout.tsx": {
-          "sha256": "08880a6f46712372752f25b50ae6734ebfc29ffdbda858ff3d82eb92c24c05b7",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/app/[lang]/sectors/food-beverage/page.tsx": {
-          "sha256": "c205bd4ba9cccffe1a3944fcc447d08f7a8787d989f4cdbd4553e0628570cfbf",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/app/[lang]/sectors/food-beverage/restaurants/layout.tsx": {
-          "sha256": "4344bb9eaf3e56840a8b7ed93b5b1f26e3ac2e8f65397a62c558fdc1ad4fbe35",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/app/[lang]/sectors/food-beverage/restaurants/page.tsx": {
-          "sha256": "11dac89d34382bb69b33d6dd8f832cf11a8879d27cb8b3d4f31602bb66c9e50e",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/app/[lang]/sectors/layout.tsx": {
-          "sha256": "825910b2a0168728541f2c93e6d5d8d4e4f7013e3f5d9cbacddce681c97caf7e",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/app/[lang]/sectors/professional-services/page.tsx": {
-          "sha256": "644b0e0299b3222db3c3669019e664d8f9247e1c81449a764e042e1ff4199fc7",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/app/[lang]/sectors/retail/page.tsx": {
-          "sha256": "f2ad2038a1be30c815bcb588fe79d6524e64911d4f850b2cd9ff4713d8866006",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/app/[lang]/solutions/[slug]/page.tsx": {
-          "sha256": "5c397ece0c2426b4f25a062a43641f02340ce99d01b5aef7113cf8c56bbc5fcc",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/app/[lang]/terms/layout.tsx": {
-          "sha256": "5334328850239d9fc9cde7f4f2d67def840c1cc16c76d94c60fb961a5a74b777",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/app/[lang]/terms/page.tsx": {
-          "sha256": "154fe1a7fa2da0f482540ec152545191981042c8769997edcbe42a19ad5e061b",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/app/api/support/chat/route.ts": {
-          "sha256": "519d71f8123f17f731a610b49f5c01f2160dfd032f85d04feac888e758e35ed7",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/app/globals.css": {
-          "sha256": "dd641b180c15c786633474b41dbdcd4de75c48c685b739aeff0990d9a6941592",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/app/robots.ts": {
-          "sha256": "f4250c5a76455045e138fabc47ead310395644aa6e9a6a329ab378b68a632296",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/app/sitemap.ts": {
-          "sha256": "3cb976b36a00d5979f90e4768810b0e889a045686c6b84921c3fd75600470e1d",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/components/Footer.tsx": {
-          "sha256": "d0821e07cb5b350664a25751b9581462358bf9aee58b055aae8d92ccd137fe68",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/components/MetaPixel.tsx": {
-          "sha256": "9f03c725e25b1dad076b2abcbc399e72d33538c1f561f177362a68e1ae48f7c9",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/components/Navbar.tsx": {
-          "sha256": "f9438fdcee3f681d50e45531994796846858ae6ae4c238391966037e1b15e350",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/components/brand/FoodyLogo.tsx": {
-          "sha256": "ab1531da15fb4f6d4fd3aa845191811442a613cc33d1e545029fee6f141d976e",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/components/help/ArticleList.tsx": {
-          "sha256": "bbbf469777cc10c25afcfae26883f2a6e4848e75a307b8f768fed67399183050",
-          "features": [
-            "getting-started-complete-setup-guide",
-            "getting-started-how-it-all-connects",
-            "getting-started-using-support"
-          ]
-        },
-        "src/components/help/ArticleSidebar.tsx": {
-          "sha256": "7cffe13bf053bc01c6f85ca6418d73b7969238edbc59b413bb32a2b6f29548e7",
-          "features": [
-            "getting-started-complete-setup-guide",
-            "getting-started-how-it-all-connects",
-            "getting-started-using-support"
-          ]
-        },
-        "src/components/help/Breadcrumb.tsx": {
-          "sha256": "11695a38ed13343d00399dbe6feeec39723012b6ddda9c19ae345bc7b4f56895",
-          "features": [
-            "getting-started-complete-setup-guide",
-            "getting-started-how-it-all-connects",
-            "getting-started-using-support"
-          ]
-        },
-        "src/components/help/HelpSearchBar.tsx": {
-          "sha256": "715054af33569095dfeb0a7c7161f21378c334bdc3333f952d6e911dd0cd6828",
-          "features": [
-            "getting-started-complete-setup-guide",
-            "getting-started-how-it-all-connects",
-            "getting-started-using-support"
-          ]
-        },
-        "src/components/help/SupportAssistant.tsx": {
-          "sha256": "5d159abcaf39cb82b808c062dc00b2773c94ea72c5daa52da045cf6d0b8c2707",
-          "features": [
-            "getting-started-complete-setup-guide",
-            "getting-started-how-it-all-connects",
-            "getting-started-using-support"
-          ]
-        },
-        "src/components/help/SupportHeader.tsx": {
-          "sha256": "3d39193760b51d25ab7cc3b5f7235c4f230633efb9f6ae8751d91df23a809ba3",
-          "features": [
-            "getting-started-complete-setup-guide",
-            "getting-started-how-it-all-connects",
-            "getting-started-using-support"
-          ]
-        },
-        "src/components/help/TopicCard.tsx": {
-          "sha256": "083ade5a4e6b0dbc75aa013dc76d773f37faedf701bf38653271b8dae9f2ad93",
-          "features": [
-            "getting-started-complete-setup-guide",
-            "getting-started-how-it-all-connects",
-            "getting-started-using-support"
-          ]
-        },
-        "src/components/marketing/ContactForm.tsx": {
-          "sha256": "cceb89a5e51b1b68a04e529b59344b56fc2f11c12317bc6ecff7f913e399f448",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/components/marketing/EcosystemSections.tsx": {
-          "sha256": "8e1059fd4f5532cf05e31690a5e283371b60f72e39d571220dc36faae2d0b8c3",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/components/marketing/Experience.tsx": {
-          "sha256": "684670121824ddec3733fe162d7cd492e9425013377a168baa58b62fc3bb630c",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/components/marketing/Icon.tsx": {
-          "sha256": "0c5ddf18ce04f23624833da2f7f8fbb852201470e83fad7015e1f84f6b5154be",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/components/marketing/ProductDemo.tsx": {
-          "sha256": "32840fa5c9d8de9291625231d1bab414f583d216a606794dd3597fac0424d900",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/components/marketing/ProductLinks.tsx": {
-          "sha256": "211ea1a839233808efae01cbb174d0240b63e85837a452ae00e127e9fec8d26f",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/components/marketing/ProductMentions.tsx": {
-          "sha256": "388d551789292b73ebb5ea4f49588659e411f46c990462d4bdd9e144d036ca69",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/components/marketing/Shared.tsx": {
-          "sha256": "b1affaaee06ebd220186275062a2dcda888b3a01f053edaca5e708e6d757059d",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/components/marketing/SolutionPage.tsx": {
-          "sha256": "df4e25bf99cf5ab97bc0d36ef7241b2a119d512acbf7a69636f7dba112910269",
-          "features": [
-            "landing-offers"
-          ]
-        },
-        "src/content/help/en/account/_meta.json": {
-          "sha256": "6b5d91d71d1f58f2584ef640a5f23e759c1755826182cf77e8264f1685831350",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/en/analytics/_meta.json": {
-          "sha256": "d1764b41b9f03c971fe4ea7da8f88e387a58c0655374685ed3eb479801709135",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/en/catering/_meta.json": {
-          "sha256": "6e3b50954446439720da2efc99f50c23b5fb36d381e0de98f61688c038da3117",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/en/chains/_meta.json": {
-          "sha256": "54faa3ae8b399812519646b2b8ba1f3271d33ca2fefd78cde413f2951ee7d393",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/en/communications/_meta.json": {
-          "sha256": "2ca43e7818d2697072639f9b76129493a874d140a103b3f7ce60e5f192ecb515",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/en/customers/_meta.json": {
-          "sha256": "6f0c48e4cef9847cd9a34039d9ce23fc0498d5f816d4712ecd9eae1d5531c5aa",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/en/delivery/_meta.json": {
-          "sha256": "6982c3ee8b45791c1f6d40e9db146e89d272b7916119c5d42d49e8e6ebe6c2d8",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/en/getting-started/_meta.json": {
-          "sha256": "f4974f8fb735d1a5b109da90204169f6b1c7cabd540a2e54064d3b765864968e",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/en/guest/_meta.json": {
-          "sha256": "8d7272feeb11afa50afd5a4054b5f751ad901d1d82901db527805c26a4bba804",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/en/kitchen/_meta.json": {
-          "sha256": "6145516771f49c038710851b9a2b7c6f8812d6a3d9b4e55e55f548867154fcac",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/en/marketing/_meta.json": {
-          "sha256": "c9b1c10ac2a0a0f4072112495dae3ac5b37da6eaa42ae8dd2e9e917be23d8167",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/en/menu/_meta.json": {
-          "sha256": "48935509c57b33424355f3416dca11e687d9d72415c0c6fa5f7bcd051525d86c",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/en/orders/_meta.json": {
-          "sha256": "b8501d5f90569704938fd8b1324c32a1773d352a451e54e840a9dac5bc9829e3",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/en/payments/_meta.json": {
-          "sha256": "394277f862156b8389343a2e1b9c31a58aa2129e29bb0cb3511fb6bb551c4339",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/en/printers/_meta.json": {
-          "sha256": "3ad80b4203c2fe9161ed1f19bbb50a2b8a430b37d280faf0472f6672e2e578bc",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/en/settings/_meta.json": {
-          "sha256": "24eaaae945efcb29efee7f204c4cb8297c82d3ea8b220278d47a1958d9968c5e",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/en/staff/_meta.json": {
-          "sha256": "e728b0d5bbe0268323c5fe72709ba47c5839c287fc82cd2c84f7d7e7afa3531f",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/en/tables-floors/_meta.json": {
-          "sha256": "88a9b0194f96c58be3f36b21f90839b7162d4c8230187ac95880bdc5cbc86ae7",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/en/website-qr/_meta.json": {
-          "sha256": "34a6f22cdf839e4d2d94eb54a278d0829f6e86f6795120c5cd1af4bbbc9f8b4a",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/fr/account/_meta.json": {
-          "sha256": "608732f4600f39b77f358f6e5479c2d5fb64e6cc74d0b3f36dc53fac06ffe927",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/fr/analytics/_meta.json": {
-          "sha256": "406a7cbb7ff43404476cd1f257d8237077a511d0d65a313761f7012ad4e742b2",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/fr/catering/_meta.json": {
-          "sha256": "7503a659392c312376f1f797526fb8a0216427ecedfb5ce563dd6d800babe1a8",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/fr/chains/_meta.json": {
-          "sha256": "6d7185f572a88e83caec990be4edcaebe61bf5d32d980c5c27179b59ec452c69",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/fr/communications/_meta.json": {
-          "sha256": "04eba78ecd4022740a58a1e971d002136ae88f5562d1c3967472e1494571bae0",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/fr/customers/_meta.json": {
-          "sha256": "427d61a3263e3340bb6dd73fa8c255116c64463e20165ad32f562a40f81d3cc7",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/fr/delivery/_meta.json": {
-          "sha256": "29e8f13338cfba7eb00c0139dea0a2c7a7d12180e22a9164cc909c6b9b147866",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/fr/getting-started/_meta.json": {
-          "sha256": "1edd489d9cbb38f5afdce58b3a823846ad001c259baf61b4f65df3440706683f",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/fr/guest/_meta.json": {
-          "sha256": "13790f1c654d7b30d0dd856073672aefe728c3e2f4fcef5c9ac823926a960823",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/fr/kitchen/_meta.json": {
-          "sha256": "97321cdd757cfb7514e89789eac39bb62898901fd5f1456948f564c2e70c29f5",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/fr/marketing/_meta.json": {
-          "sha256": "fa29658d7a11355aca0967d3248ad911fc70d06ba467a88e5c7cf8307a2c6166",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/fr/menu/_meta.json": {
-          "sha256": "bfa07a8cbec7cda6967538543ebd5c840773854d9d8d4499fef875113c0655ee",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/fr/orders/_meta.json": {
-          "sha256": "02efe24d4c325f568f5d644f07c4ade6e80f2f5d72eaccafd8da3c1c0f993be5",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/fr/payments/_meta.json": {
-          "sha256": "3059e11db621f9d82931352284ba3c1694bc64eef4ebe5c56e7190d0f90b769c",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/fr/printers/_meta.json": {
-          "sha256": "fdd3c1bdd6634c978279c6b7865eac553ef6528c0825d6ffc6406f90924f376c",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/fr/settings/_meta.json": {
-          "sha256": "ff3c343b267827a80d144f52981264ecdf90fbd089aafcc8f3fe58454c223e40",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/fr/staff/_meta.json": {
-          "sha256": "0883bf973fb7d490c0a56bc8094f34461dd565452946ba2c40b9e9b77ae30ae6",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/fr/tables-floors/_meta.json": {
-          "sha256": "cf9c860e6a5fed83ce7c3140a502374c41775081542fa5121f1a16618dc30501",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/fr/website-qr/_meta.json": {
-          "sha256": "1dcc71ac9d1e0a4ba9cc345f4e55bdb774ffc84ffc54eb879fd05ba5a16bfb0c",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/he/account/_meta.json": {
-          "sha256": "a685106247c07973f1efcc2775bb580c392856e2be477159439740ab7c3c8ae7",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/he/analytics/_meta.json": {
-          "sha256": "fb474d6240c48b4483c93ccd242d9d6edad3d7b951de4d561a8f187e07239dd7",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/he/catering/_meta.json": {
-          "sha256": "4f31c57ad967b65265f49b1046202ab5276226c88fc7c5611a7434cfd6aa797e",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/he/chains/_meta.json": {
-          "sha256": "0de277026c65244048a4363136158cefed7cdfe7da9a9c1c69db46352b5245b1",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/he/communications/_meta.json": {
-          "sha256": "da65fad6ac9b75311ee858d0befe9a531e47abf8eda1cc22d2f58a2d6afe4ee1",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/he/customers/_meta.json": {
-          "sha256": "895393ee4b70485595d8c527fed9ecfa6565cedb3df32cf3a9ae907ff3053915",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/he/delivery/_meta.json": {
-          "sha256": "995c34ff809e3286000a087b14caec31c6b17711ead21d9b54c89c1402a25cd5",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/he/getting-started/_meta.json": {
-          "sha256": "6469649a8ba44e155f0a95dba32451b7064d52866cd4022cff0ad72254600e93",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/he/guest/_meta.json": {
-          "sha256": "4bbc33b1eb6f25decad35ee0205afd9871437a4c412ab2723bb9df5aa53c87bc",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/he/kitchen/_meta.json": {
-          "sha256": "140e7e5f32e91b7d1b44c0e2f384fdd3567d0209b5637a1fb18d83aa72fc6854",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/he/marketing/_meta.json": {
-          "sha256": "9308595ec68903869d4fd6892907fc163af6d7d89bc44534cb39b38582ec1e99",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/he/menu/_meta.json": {
-          "sha256": "06b1605d9a0a6e55b96539ab30fc5cdb065c0daf6bb7e7413e44f677cb59867e",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/he/orders/_meta.json": {
-          "sha256": "415eb9f90ace1d11e58c42ca0b6ebe7a9b8025d0dbb6e610844272e9bd2a3019",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/he/payments/_meta.json": {
-          "sha256": "08ab34217b416652c54b9fb4237a2721fb1264b14615e46a4de7de5aa5b2ac68",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/he/printers/_meta.json": {
-          "sha256": "41d739b9c912be1cee386aa6b283c5adbe568fbd834d54ee9c0567ef653e2e77",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/he/settings/_meta.json": {
-          "sha256": "5b94af8437a89523bc73a43a4b698207a1fffe89cc857b2273df49de2e905ec4",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/he/staff/_meta.json": {
-          "sha256": "13c82026702533827ed7c22ec9896e0768a791ff1a09f4e10c46de92cd23f0c0",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/he/tables-floors/_meta.json": {
-          "sha256": "c89d8c91af22a829e7043de753ff0d1a74a7d9ab0f3c42fa623d47a944170c8b",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/content/help/he/website-qr/_meta.json": {
-          "sha256": "39ea476683ebbf1e834b18af37dd531dc02760178929371d590c93dc96d81a8f",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/lib/help/assistant.mjs": {
-          "sha256": "476d2b03e043abe501ea8c92ca9a7e4979af5a78bf06d219fd0b14737b1b215d",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/lib/help/content.ts": {
-          "sha256": "5127095c129cf7d27194dc839ac4c691bc5cd8979f4fc053681a5a17fca2a1e6",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/lib/help/conversation.mjs": {
-          "sha256": "f23f207207f16038480f1c39e99af4bcf84e567f4d737c2b4a6a0367969833b4",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/lib/help/corpus.mjs": {
-          "sha256": "814065215f80abd0c630f5987017a10f75818109fab55e5727967ab9eb46260a",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/lib/help/search.mjs": {
-          "sha256": "8df77da09bb40a4e05315ce4a743996c339bd875843de9693abc9b65f96f065a",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/lib/help/transport.mjs": {
-          "sha256": "47f6e91553904ad12c0b5cfd31800049bdfdfc875ea00a5c6cc5b0aa88402342",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/lib/help/types.ts": {
-          "sha256": "621ef852f09dcc8a991493c3a0e17a04d830db0d5132397d5f5d14cb221a1c57",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/lib/i18n/context.tsx": {
-          "sha256": "232fed1b2257cfce06434854f28bed316894925c55fdaac10acf5a6cb6f1689e",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/lib/i18n/en.json": {
-          "sha256": "4b6ac964ff4beac37d0cda1409dee527a8e523427b236d63617d33dea08420f7",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/lib/i18n/fr.json": {
-          "sha256": "b7c7fe2e97b1745dcfbca952b230139efd32c0a9c0aeb0baeb11bc5a052d1329",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/lib/i18n/he.json": {
-          "sha256": "39b0831d3552a205fb74a9896bce7a57a3679c9d20139beea265972c0e39ed23",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/lib/marketing/content.ts": {
-          "sha256": "5e8dfe594cf7a4a3c79c35edf5e091daf0f059cf858d1463f6ab7a4611e84614",
-          "features": [
-            "landing-offers",
-            "shared-runtime"
-          ]
-        },
-        "src/lib/marketing/ecosystem.ts": {
-          "sha256": "ddcd2e9a5db73a13737f1fb2d2d09de487449981966ac3d753641838ed522144",
-          "features": [
-            "landing-offers",
-            "shared-runtime"
-          ]
-        },
-        "src/lib/marketing/maps-offers.json": {
-          "sha256": "d04e57e12aaf89e7acc37d0496067445135626df1c18ba807f3234680a71b253",
-          "features": [
-            "landing-offers",
-            "shared-runtime"
-          ]
-        },
-        "src/lib/marketing/maps-pricing.ts": {
-          "sha256": "35fc92f5c7e156a790c7c89691622b64cb4519fab8af07cf15d37d7b7facbd96",
-          "features": [
-            "landing-offers",
-            "shared-runtime"
-          ]
-        },
-        "src/lib/marketing/pricing.ts": {
-          "sha256": "16417b3afba91c7a2bb65be41a9f1c9239bba4b24c26ddb26f7a5a505e407555",
-          "features": [
-            "landing-offers",
-            "shared-runtime"
-          ]
-        },
-        "src/lib/marketing/social.json": {
-          "sha256": "69e3543ddd07177da796f172ec45784aaa1c7e94e056ee81b8142813fe39b5f7",
-          "features": [
-            "landing-offers",
-            "shared-runtime"
-          ]
-        },
-        "src/lib/marketing/solutions.ts": {
-          "sha256": "6360e7535c36c70362614828763d1045fe55e66d9e71eb1d03c50af78e3c8634",
-          "features": [
-            "landing-offers",
-            "shared-runtime"
-          ]
-        },
-        "src/lib/marketing/ui.ts": {
-          "sha256": "076e91fdc48f7dbdad483845b749a67862e5528fb27bfbc3514415738b37841f",
-          "features": [
-            "landing-offers",
-            "shared-runtime"
-          ]
-        },
-        "src/lib/seo.ts": {
-          "sha256": "7b1e7427de72cb99ec2194dc4f27c67ee5209eba8f40ac2eef85caf2200da1de",
-          "features": [
-            "shared-runtime"
-          ]
-        },
-        "src/middleware.ts": {
-          "sha256": "347b9227b779add303742db91cf448921170229fa7e4e2867389b827f38a7d64",
-          "features": [
-            "shared-runtime"
-          ]
-        }
-      }
-    },
     "foodyweb": {
       "repository": "https://github.com/Foody-isr/web",
-      "sourceCommit": "72b40fa88b5ae3f3f88928313a3b3f9ab21d51ee",
+      "sourceCommit": "8f2e8efa6f74aa6186f7560507d46e0dc06dc17b",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "f369099582b5376768a9a526a3bfbc7120137aebe7c92bdeb01df45fb0818987",
+      "sourceSnapshot": "25e075f98941860cd72ec92aa7eac34bb4c6f17d807ab5a21dfb42555543eb36",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "app/@cart/(.)order/cart/page.tsx": {
@@ -10154,7 +9377,7 @@
           ]
         },
         "app/order/checkout/CheckoutFlow.tsx": {
-          "sha256": "557076c6f5d73db02e967af5848088c9ffae95dfc158c8c5181002ce1cbf274b",
+          "sha256": "21902a5be006231f52f9c0a8a924b63bc2fc5f45a919cf56d6615229cb40768d",
           "features": [
             "guest-ordering"
           ]
@@ -10949,6 +10172,12 @@
             "guest-ordering"
           ]
         },
+        "components/WeightHoldNotice.tsx": {
+          "sha256": "f8884eaa4e2416d7345eeae15910c689cebd9e847dff613d7154b7b01ca7a5ac",
+          "features": [
+            "guest-ordering"
+          ]
+        },
         "components/WifiSheet.tsx": {
           "sha256": "3be397bbd260bf8037549bc2e080ba34f6468577823f63d60ca30792efbc2a22",
           "features": [
@@ -11513,7 +10742,7 @@
           ]
         },
         "lib/checkout-payment.ts": {
-          "sha256": "15400cb89ae57035de3816e295c798052f65c781ecd696262f1593cfd727d488",
+          "sha256": "4b7f85d43e540a2718a86f8d09e4828e688f98d2518dc64b6f276c60e43c11c0",
           "features": [
             "shared-runtime"
           ]
@@ -11609,7 +10838,7 @@
           ]
         },
         "lib/i18n.tsx": {
-          "sha256": "8c2b607116a1869748595327ff311a334a91344d58ef9d15ddaae9eb999a5a01",
+          "sha256": "721dafcf4cc824f0942828784944ef7f59012e0eb1e946f8bf75c545a525f301",
           "features": [
             "payments-how-payments-work",
             "shared-runtime"
@@ -11961,7 +11190,7 @@
           ]
         },
         "lib/types.ts": {
-          "sha256": "1ff02452328612ff24719f96358cf4769b7af8386c4962c44d3b779016306ea4",
+          "sha256": "9b84ded32127572ed2704e7e86d545be280e2bc71dd04fcf9b365203cf581f2e",
           "features": [
             "shared-runtime"
           ]
@@ -12115,7 +11344,7 @@
           ]
         },
         "services/api.ts": {
-          "sha256": "42140c3342f0bb349a47274f2a2455a2cba56d70281e800f0ce7686458dd54ea",
+          "sha256": "72ad46cf5b2aa326420f37d4b4fbf7e4b8765ca81bee5b0b729a66080472b12c",
           "features": [
             "shared-runtime"
           ]
@@ -12148,6 +11377,799 @@
           "sha256": "2e77a772841ea2d55978cee41a231464f7889b5764696d99b498536001ee1004",
           "features": [
             "guest-ordering"
+          ]
+        }
+      }
+    },
+    "foodylanding": {
+      "repository": "https://github.com/Foody-isr/landing",
+      "sourceCommit": "2aacace3085afcdcebc5e78d55698a923553708c",
+      "releaseStatus": "versioned",
+      "sourceSnapshot": "fb8c0cfa166208b984db58a68c14c9ddab4b3c6cc377e37c1d9543842d68f6e2",
+      "workingTreeHasChanges": true,
+      "sourceFiles": {
+        "src/app/[lang]/contact/layout.tsx": {
+          "sha256": "62c102ec780d416e74a175de47629e994d3158948ebf62e9610dddcd6af77f7e",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/app/[lang]/contact/page.tsx": {
+          "sha256": "dad49a43f01c5db3929605ab065ff9a84281c7f585136cdbc93b3d5f1d9b78e7",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/app/[lang]/help/[topic]/[slug]/page.tsx": {
+          "sha256": "74fd25a220dcb3ff2bee999b43c0a1a07650b950b3b42192446647bc4c4dbcc8",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/app/[lang]/help/[topic]/page.tsx": {
+          "sha256": "eb4141eb30ad84aabb434c3f90ff530f54a77d613f93aa9db42d728305838b4a",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/app/[lang]/help/layout.tsx": {
+          "sha256": "c1cb47f04a18a52236aa2110ac51de9c5a1abec734ac48f38e18e882bfee2271",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/app/[lang]/help/page.tsx": {
+          "sha256": "693b79e9fffef205fd81cfa7e1285bf2d9a0bc7871ab5652e3d7b39b4fddcd00",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/app/[lang]/help/support.css": {
+          "sha256": "1e103ff45010c6586d7f17bc6fa0ae55a6584909e3f4ee1f2552441060e1de4c",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/app/[lang]/layout.tsx": {
+          "sha256": "195eb556f440c8717a6a5559290b50ad3ec86ccfd4e84df46eb64089162f7c0e",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/app/[lang]/page.tsx": {
+          "sha256": "6d98d87e6399ef04858299793f6b37768e57562d2f43fbd13ae73b7273e32476",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/app/[lang]/pricing/layout.tsx": {
+          "sha256": "c0a4d20c68d224a86b3b2f38183da6badd5bc529b72c74da6e1bbef460d4f281",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/app/[lang]/pricing/page.tsx": {
+          "sha256": "eac392411dd2ad3d575730f68d7993161939c9e6e967a2eb0c2b1d39afd3130b",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/app/[lang]/privacy/layout.tsx": {
+          "sha256": "275ffd138c98a2def483e5fc22080ca42731a3586e682f05e5cb912de1ea56d9",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/app/[lang]/privacy/page.tsx": {
+          "sha256": "292106f672e6feb7ec4dcea7e8c379564fe8943e329ace2c92fd03b74666c23f",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/app/[lang]/sectors/beauty/page.tsx": {
+          "sha256": "644b0e0299b3222db3c3669019e664d8f9247e1c81449a764e042e1ff4199fc7",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/app/[lang]/sectors/chains/page.tsx": {
+          "sha256": "96d845427b43e2264b4b00b30036d2a1a5171316fc79510ee2a1d882f7b909fc",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/app/[lang]/sectors/food-beverage/layout.tsx": {
+          "sha256": "08880a6f46712372752f25b50ae6734ebfc29ffdbda858ff3d82eb92c24c05b7",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/app/[lang]/sectors/food-beverage/page.tsx": {
+          "sha256": "c205bd4ba9cccffe1a3944fcc447d08f7a8787d989f4cdbd4553e0628570cfbf",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/app/[lang]/sectors/food-beverage/restaurants/layout.tsx": {
+          "sha256": "4344bb9eaf3e56840a8b7ed93b5b1f26e3ac2e8f65397a62c558fdc1ad4fbe35",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/app/[lang]/sectors/food-beverage/restaurants/page.tsx": {
+          "sha256": "11dac89d34382bb69b33d6dd8f832cf11a8879d27cb8b3d4f31602bb66c9e50e",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/app/[lang]/sectors/layout.tsx": {
+          "sha256": "825910b2a0168728541f2c93e6d5d8d4e4f7013e3f5d9cbacddce681c97caf7e",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/app/[lang]/sectors/professional-services/page.tsx": {
+          "sha256": "644b0e0299b3222db3c3669019e664d8f9247e1c81449a764e042e1ff4199fc7",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/app/[lang]/sectors/retail/page.tsx": {
+          "sha256": "f2ad2038a1be30c815bcb588fe79d6524e64911d4f850b2cd9ff4713d8866006",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/app/[lang]/solutions/[slug]/page.tsx": {
+          "sha256": "5c397ece0c2426b4f25a062a43641f02340ce99d01b5aef7113cf8c56bbc5fcc",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/app/[lang]/terms/layout.tsx": {
+          "sha256": "5334328850239d9fc9cde7f4f2d67def840c1cc16c76d94c60fb961a5a74b777",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/app/[lang]/terms/page.tsx": {
+          "sha256": "154fe1a7fa2da0f482540ec152545191981042c8769997edcbe42a19ad5e061b",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/app/api/support/chat/route.ts": {
+          "sha256": "519d71f8123f17f731a610b49f5c01f2160dfd032f85d04feac888e758e35ed7",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/app/globals.css": {
+          "sha256": "dd641b180c15c786633474b41dbdcd4de75c48c685b739aeff0990d9a6941592",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/app/robots.ts": {
+          "sha256": "f4250c5a76455045e138fabc47ead310395644aa6e9a6a329ab378b68a632296",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/app/sitemap.ts": {
+          "sha256": "3cb976b36a00d5979f90e4768810b0e889a045686c6b84921c3fd75600470e1d",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/components/Footer.tsx": {
+          "sha256": "d0821e07cb5b350664a25751b9581462358bf9aee58b055aae8d92ccd137fe68",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/components/MetaPixel.tsx": {
+          "sha256": "9f03c725e25b1dad076b2abcbc399e72d33538c1f561f177362a68e1ae48f7c9",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/components/Navbar.tsx": {
+          "sha256": "f9438fdcee3f681d50e45531994796846858ae6ae4c238391966037e1b15e350",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/components/brand/FoodyLogo.tsx": {
+          "sha256": "ab1531da15fb4f6d4fd3aa845191811442a613cc33d1e545029fee6f141d976e",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/components/help/ArticleList.tsx": {
+          "sha256": "bbbf469777cc10c25afcfae26883f2a6e4848e75a307b8f768fed67399183050",
+          "features": [
+            "getting-started-complete-setup-guide",
+            "getting-started-how-it-all-connects",
+            "getting-started-using-support"
+          ]
+        },
+        "src/components/help/ArticleSidebar.tsx": {
+          "sha256": "7cffe13bf053bc01c6f85ca6418d73b7969238edbc59b413bb32a2b6f29548e7",
+          "features": [
+            "getting-started-complete-setup-guide",
+            "getting-started-how-it-all-connects",
+            "getting-started-using-support"
+          ]
+        },
+        "src/components/help/Breadcrumb.tsx": {
+          "sha256": "11695a38ed13343d00399dbe6feeec39723012b6ddda9c19ae345bc7b4f56895",
+          "features": [
+            "getting-started-complete-setup-guide",
+            "getting-started-how-it-all-connects",
+            "getting-started-using-support"
+          ]
+        },
+        "src/components/help/HelpSearchBar.tsx": {
+          "sha256": "715054af33569095dfeb0a7c7161f21378c334bdc3333f952d6e911dd0cd6828",
+          "features": [
+            "getting-started-complete-setup-guide",
+            "getting-started-how-it-all-connects",
+            "getting-started-using-support"
+          ]
+        },
+        "src/components/help/SupportAssistant.tsx": {
+          "sha256": "5d159abcaf39cb82b808c062dc00b2773c94ea72c5daa52da045cf6d0b8c2707",
+          "features": [
+            "getting-started-complete-setup-guide",
+            "getting-started-how-it-all-connects",
+            "getting-started-using-support"
+          ]
+        },
+        "src/components/help/SupportHeader.tsx": {
+          "sha256": "3d39193760b51d25ab7cc3b5f7235c4f230633efb9f6ae8751d91df23a809ba3",
+          "features": [
+            "getting-started-complete-setup-guide",
+            "getting-started-how-it-all-connects",
+            "getting-started-using-support"
+          ]
+        },
+        "src/components/help/TopicCard.tsx": {
+          "sha256": "083ade5a4e6b0dbc75aa013dc76d773f37faedf701bf38653271b8dae9f2ad93",
+          "features": [
+            "getting-started-complete-setup-guide",
+            "getting-started-how-it-all-connects",
+            "getting-started-using-support"
+          ]
+        },
+        "src/components/marketing/ContactForm.tsx": {
+          "sha256": "cceb89a5e51b1b68a04e529b59344b56fc2f11c12317bc6ecff7f913e399f448",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/components/marketing/EcosystemSections.tsx": {
+          "sha256": "8e1059fd4f5532cf05e31690a5e283371b60f72e39d571220dc36faae2d0b8c3",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/components/marketing/Experience.tsx": {
+          "sha256": "684670121824ddec3733fe162d7cd492e9425013377a168baa58b62fc3bb630c",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/components/marketing/Icon.tsx": {
+          "sha256": "0c5ddf18ce04f23624833da2f7f8fbb852201470e83fad7015e1f84f6b5154be",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/components/marketing/ProductDemo.tsx": {
+          "sha256": "32840fa5c9d8de9291625231d1bab414f583d216a606794dd3597fac0424d900",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/components/marketing/ProductLinks.tsx": {
+          "sha256": "211ea1a839233808efae01cbb174d0240b63e85837a452ae00e127e9fec8d26f",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/components/marketing/ProductMentions.tsx": {
+          "sha256": "388d551789292b73ebb5ea4f49588659e411f46c990462d4bdd9e144d036ca69",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/components/marketing/Shared.tsx": {
+          "sha256": "b1affaaee06ebd220186275062a2dcda888b3a01f053edaca5e708e6d757059d",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/components/marketing/SolutionPage.tsx": {
+          "sha256": "df4e25bf99cf5ab97bc0d36ef7241b2a119d512acbf7a69636f7dba112910269",
+          "features": [
+            "landing-offers"
+          ]
+        },
+        "src/content/help/en/account/_meta.json": {
+          "sha256": "6b5d91d71d1f58f2584ef640a5f23e759c1755826182cf77e8264f1685831350",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/en/analytics/_meta.json": {
+          "sha256": "d1764b41b9f03c971fe4ea7da8f88e387a58c0655374685ed3eb479801709135",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/en/catering/_meta.json": {
+          "sha256": "6e3b50954446439720da2efc99f50c23b5fb36d381e0de98f61688c038da3117",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/en/chains/_meta.json": {
+          "sha256": "54faa3ae8b399812519646b2b8ba1f3271d33ca2fefd78cde413f2951ee7d393",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/en/communications/_meta.json": {
+          "sha256": "2ca43e7818d2697072639f9b76129493a874d140a103b3f7ce60e5f192ecb515",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/en/customers/_meta.json": {
+          "sha256": "6f0c48e4cef9847cd9a34039d9ce23fc0498d5f816d4712ecd9eae1d5531c5aa",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/en/delivery/_meta.json": {
+          "sha256": "6982c3ee8b45791c1f6d40e9db146e89d272b7916119c5d42d49e8e6ebe6c2d8",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/en/getting-started/_meta.json": {
+          "sha256": "f4974f8fb735d1a5b109da90204169f6b1c7cabd540a2e54064d3b765864968e",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/en/guest/_meta.json": {
+          "sha256": "8d7272feeb11afa50afd5a4054b5f751ad901d1d82901db527805c26a4bba804",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/en/kitchen/_meta.json": {
+          "sha256": "6145516771f49c038710851b9a2b7c6f8812d6a3d9b4e55e55f548867154fcac",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/en/marketing/_meta.json": {
+          "sha256": "c9b1c10ac2a0a0f4072112495dae3ac5b37da6eaa42ae8dd2e9e917be23d8167",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/en/menu/_meta.json": {
+          "sha256": "48935509c57b33424355f3416dca11e687d9d72415c0c6fa5f7bcd051525d86c",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/en/orders/_meta.json": {
+          "sha256": "b8501d5f90569704938fd8b1324c32a1773d352a451e54e840a9dac5bc9829e3",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/en/payments/_meta.json": {
+          "sha256": "394277f862156b8389343a2e1b9c31a58aa2129e29bb0cb3511fb6bb551c4339",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/en/printers/_meta.json": {
+          "sha256": "3ad80b4203c2fe9161ed1f19bbb50a2b8a430b37d280faf0472f6672e2e578bc",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/en/settings/_meta.json": {
+          "sha256": "24eaaae945efcb29efee7f204c4cb8297c82d3ea8b220278d47a1958d9968c5e",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/en/staff/_meta.json": {
+          "sha256": "e728b0d5bbe0268323c5fe72709ba47c5839c287fc82cd2c84f7d7e7afa3531f",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/en/tables-floors/_meta.json": {
+          "sha256": "88a9b0194f96c58be3f36b21f90839b7162d4c8230187ac95880bdc5cbc86ae7",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/en/website-qr/_meta.json": {
+          "sha256": "34a6f22cdf839e4d2d94eb54a278d0829f6e86f6795120c5cd1af4bbbc9f8b4a",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/fr/account/_meta.json": {
+          "sha256": "608732f4600f39b77f358f6e5479c2d5fb64e6cc74d0b3f36dc53fac06ffe927",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/fr/analytics/_meta.json": {
+          "sha256": "406a7cbb7ff43404476cd1f257d8237077a511d0d65a313761f7012ad4e742b2",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/fr/catering/_meta.json": {
+          "sha256": "7503a659392c312376f1f797526fb8a0216427ecedfb5ce563dd6d800babe1a8",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/fr/chains/_meta.json": {
+          "sha256": "6d7185f572a88e83caec990be4edcaebe61bf5d32d980c5c27179b59ec452c69",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/fr/communications/_meta.json": {
+          "sha256": "04eba78ecd4022740a58a1e971d002136ae88f5562d1c3967472e1494571bae0",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/fr/customers/_meta.json": {
+          "sha256": "427d61a3263e3340bb6dd73fa8c255116c64463e20165ad32f562a40f81d3cc7",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/fr/delivery/_meta.json": {
+          "sha256": "29e8f13338cfba7eb00c0139dea0a2c7a7d12180e22a9164cc909c6b9b147866",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/fr/getting-started/_meta.json": {
+          "sha256": "1edd489d9cbb38f5afdce58b3a823846ad001c259baf61b4f65df3440706683f",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/fr/guest/_meta.json": {
+          "sha256": "13790f1c654d7b30d0dd856073672aefe728c3e2f4fcef5c9ac823926a960823",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/fr/kitchen/_meta.json": {
+          "sha256": "97321cdd757cfb7514e89789eac39bb62898901fd5f1456948f564c2e70c29f5",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/fr/marketing/_meta.json": {
+          "sha256": "fa29658d7a11355aca0967d3248ad911fc70d06ba467a88e5c7cf8307a2c6166",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/fr/menu/_meta.json": {
+          "sha256": "bfa07a8cbec7cda6967538543ebd5c840773854d9d8d4499fef875113c0655ee",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/fr/orders/_meta.json": {
+          "sha256": "02efe24d4c325f568f5d644f07c4ade6e80f2f5d72eaccafd8da3c1c0f993be5",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/fr/payments/_meta.json": {
+          "sha256": "3059e11db621f9d82931352284ba3c1694bc64eef4ebe5c56e7190d0f90b769c",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/fr/printers/_meta.json": {
+          "sha256": "fdd3c1bdd6634c978279c6b7865eac553ef6528c0825d6ffc6406f90924f376c",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/fr/settings/_meta.json": {
+          "sha256": "ff3c343b267827a80d144f52981264ecdf90fbd089aafcc8f3fe58454c223e40",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/fr/staff/_meta.json": {
+          "sha256": "0883bf973fb7d490c0a56bc8094f34461dd565452946ba2c40b9e9b77ae30ae6",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/fr/tables-floors/_meta.json": {
+          "sha256": "cf9c860e6a5fed83ce7c3140a502374c41775081542fa5121f1a16618dc30501",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/fr/website-qr/_meta.json": {
+          "sha256": "1dcc71ac9d1e0a4ba9cc345f4e55bdb774ffc84ffc54eb879fd05ba5a16bfb0c",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/he/account/_meta.json": {
+          "sha256": "a685106247c07973f1efcc2775bb580c392856e2be477159439740ab7c3c8ae7",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/he/analytics/_meta.json": {
+          "sha256": "fb474d6240c48b4483c93ccd242d9d6edad3d7b951de4d561a8f187e07239dd7",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/he/catering/_meta.json": {
+          "sha256": "4f31c57ad967b65265f49b1046202ab5276226c88fc7c5611a7434cfd6aa797e",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/he/chains/_meta.json": {
+          "sha256": "0de277026c65244048a4363136158cefed7cdfe7da9a9c1c69db46352b5245b1",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/he/communications/_meta.json": {
+          "sha256": "da65fad6ac9b75311ee858d0befe9a531e47abf8eda1cc22d2f58a2d6afe4ee1",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/he/customers/_meta.json": {
+          "sha256": "895393ee4b70485595d8c527fed9ecfa6565cedb3df32cf3a9ae907ff3053915",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/he/delivery/_meta.json": {
+          "sha256": "995c34ff809e3286000a087b14caec31c6b17711ead21d9b54c89c1402a25cd5",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/he/getting-started/_meta.json": {
+          "sha256": "6469649a8ba44e155f0a95dba32451b7064d52866cd4022cff0ad72254600e93",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/he/guest/_meta.json": {
+          "sha256": "4bbc33b1eb6f25decad35ee0205afd9871437a4c412ab2723bb9df5aa53c87bc",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/he/kitchen/_meta.json": {
+          "sha256": "140e7e5f32e91b7d1b44c0e2f384fdd3567d0209b5637a1fb18d83aa72fc6854",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/he/marketing/_meta.json": {
+          "sha256": "9308595ec68903869d4fd6892907fc163af6d7d89bc44534cb39b38582ec1e99",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/he/menu/_meta.json": {
+          "sha256": "06b1605d9a0a6e55b96539ab30fc5cdb065c0daf6bb7e7413e44f677cb59867e",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/he/orders/_meta.json": {
+          "sha256": "415eb9f90ace1d11e58c42ca0b6ebe7a9b8025d0dbb6e610844272e9bd2a3019",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/he/payments/_meta.json": {
+          "sha256": "08ab34217b416652c54b9fb4237a2721fb1264b14615e46a4de7de5aa5b2ac68",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/he/printers/_meta.json": {
+          "sha256": "41d739b9c912be1cee386aa6b283c5adbe568fbd834d54ee9c0567ef653e2e77",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/he/settings/_meta.json": {
+          "sha256": "5b94af8437a89523bc73a43a4b698207a1fffe89cc857b2273df49de2e905ec4",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/he/staff/_meta.json": {
+          "sha256": "13c82026702533827ed7c22ec9896e0768a791ff1a09f4e10c46de92cd23f0c0",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/he/tables-floors/_meta.json": {
+          "sha256": "c89d8c91af22a829e7043de753ff0d1a74a7d9ab0f3c42fa623d47a944170c8b",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/content/help/he/website-qr/_meta.json": {
+          "sha256": "39ea476683ebbf1e834b18af37dd531dc02760178929371d590c93dc96d81a8f",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/lib/help/assistant.mjs": {
+          "sha256": "476d2b03e043abe501ea8c92ca9a7e4979af5a78bf06d219fd0b14737b1b215d",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/lib/help/content.ts": {
+          "sha256": "5127095c129cf7d27194dc839ac4c691bc5cd8979f4fc053681a5a17fca2a1e6",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/lib/help/conversation.mjs": {
+          "sha256": "f23f207207f16038480f1c39e99af4bcf84e567f4d737c2b4a6a0367969833b4",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/lib/help/corpus.mjs": {
+          "sha256": "814065215f80abd0c630f5987017a10f75818109fab55e5727967ab9eb46260a",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/lib/help/search.mjs": {
+          "sha256": "8df77da09bb40a4e05315ce4a743996c339bd875843de9693abc9b65f96f065a",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/lib/help/transport.mjs": {
+          "sha256": "47f6e91553904ad12c0b5cfd31800049bdfdfc875ea00a5c6cc5b0aa88402342",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/lib/help/types.ts": {
+          "sha256": "621ef852f09dcc8a991493c3a0e17a04d830db0d5132397d5f5d14cb221a1c57",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/lib/i18n/context.tsx": {
+          "sha256": "232fed1b2257cfce06434854f28bed316894925c55fdaac10acf5a6cb6f1689e",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/lib/i18n/en.json": {
+          "sha256": "4b6ac964ff4beac37d0cda1409dee527a8e523427b236d63617d33dea08420f7",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/lib/i18n/fr.json": {
+          "sha256": "b7c7fe2e97b1745dcfbca952b230139efd32c0a9c0aeb0baeb11bc5a052d1329",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/lib/i18n/he.json": {
+          "sha256": "39b0831d3552a205fb74a9896bce7a57a3679c9d20139beea265972c0e39ed23",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/lib/marketing/content.ts": {
+          "sha256": "5e8dfe594cf7a4a3c79c35edf5e091daf0f059cf858d1463f6ab7a4611e84614",
+          "features": [
+            "landing-offers",
+            "shared-runtime"
+          ]
+        },
+        "src/lib/marketing/ecosystem.ts": {
+          "sha256": "ddcd2e9a5db73a13737f1fb2d2d09de487449981966ac3d753641838ed522144",
+          "features": [
+            "landing-offers",
+            "shared-runtime"
+          ]
+        },
+        "src/lib/marketing/maps-offers.json": {
+          "sha256": "d04e57e12aaf89e7acc37d0496067445135626df1c18ba807f3234680a71b253",
+          "features": [
+            "landing-offers",
+            "shared-runtime"
+          ]
+        },
+        "src/lib/marketing/maps-pricing.ts": {
+          "sha256": "35fc92f5c7e156a790c7c89691622b64cb4519fab8af07cf15d37d7b7facbd96",
+          "features": [
+            "landing-offers",
+            "shared-runtime"
+          ]
+        },
+        "src/lib/marketing/pricing.ts": {
+          "sha256": "16417b3afba91c7a2bb65be41a9f1c9239bba4b24c26ddb26f7a5a505e407555",
+          "features": [
+            "landing-offers",
+            "shared-runtime"
+          ]
+        },
+        "src/lib/marketing/social.json": {
+          "sha256": "69e3543ddd07177da796f172ec45784aaa1c7e94e056ee81b8142813fe39b5f7",
+          "features": [
+            "landing-offers",
+            "shared-runtime"
+          ]
+        },
+        "src/lib/marketing/solutions.ts": {
+          "sha256": "6360e7535c36c70362614828763d1045fe55e66d9e71eb1d03c50af78e3c8634",
+          "features": [
+            "landing-offers",
+            "shared-runtime"
+          ]
+        },
+        "src/lib/marketing/ui.ts": {
+          "sha256": "076e91fdc48f7dbdad483845b749a67862e5528fb27bfbc3514415738b37841f",
+          "features": [
+            "landing-offers",
+            "shared-runtime"
+          ]
+        },
+        "src/lib/seo.ts": {
+          "sha256": "7b1e7427de72cb99ec2194dc4f27c67ee5209eba8f40ac2eef85caf2200da1de",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/middleware.ts": {
+          "sha256": "347b9227b779add303742db91cf448921170229fa7e4e2867389b827f38a7d64",
+          "features": [
+            "shared-runtime"
           ]
         }
       }
@@ -21894,6 +21916,20 @@
       },
       "operations": [
         {
+          "id": "weight-hold-margin",
+          "level": 2,
+          "title": {
+            "en": "Review the by-weight authorization ceiling",
+            "fr": "Vérifier le plafond de préautorisation au poids",
+            "he": "בדיקת תקרת אישור לפריטים לפי משקל"
+          },
+          "instructions": {
+            "en": "For online by-weight orders, open Settings → Payments & VAT with settings.edit. Set Weight hold buffer % from 0 to 100 and save; the default for new restaurants is 20. A failed save keeps the draft. Zero still authorizes the estimate. Only the weight-priced subtotal gets a margin: 100 weighted + 50 fixed at 20% authorizes 170; delivery has no extra margin. Checkout shows the estimate, temporary ceiling and Confirm and authorize, in the restaurant theme. A changed ceiling requires customer review and another confirmation before payment; unknown policy blocks authorization. Existing reviewed checkouts and holds keep their ceiling. Staff confirm measured weights before capture and progression; excess beyond the hold is flagged for a separate payment, never automatically charged. Cash/pay-later makes no hold promise. Requires a configured authorize/capture provider, with partial capture, release and expiry validated before production. This neither changes the catering deposit/balance policy nor enables new-card saving with a CST weighted hold.",
+            "fr": "Pour les commandes en ligne au poids, ouvrez Réglages → Paiements & TVA avec settings.edit. Saisissez Marge d’empreinte au poids % de 0 à 100 puis enregistrez ; la valeur par défaut des nouveaux restaurants est 20. Un échec conserve la saisie. À 0 %, le montant estimé reste préautorisé. Seul le sous-total au poids reçoit une marge : 100 au poids + 50 fixes à 20 % donnent 170 préautorisés ; aucune marge sur la livraison. Le checkout affiche estimation, plafond temporaire et Confirmer et préautoriser, dans le thème du restaurant. Un plafond modifié exige une nouvelle revue et confirmation avant paiement ; une politique inconnue bloque l’autorisation. Les commandes déjà revues et empreintes existantes gardent leur plafond. Le personnel confirme les poids mesurés avant capture et progression ; un dépassement est signalé pour un paiement complémentaire, jamais débité automatiquement. Espèces/paiement ultérieur n’annoncent pas d’empreinte. Un prestataire autorisation/capture configuré est nécessaire ; validez capture partielle, libération et expiration avant production. Ce réglage ne change ni acompte/solde traiteur ni la restriction de sauvegarde d’une nouvelle carte pour une empreinte CST au poids.",
+            "he": "להזמנות מקוונות לפי משקל פתחו הגדרות → תשלומים ומע״מ עם settings.edit. הגדירו מרווח אישור מ-0 עד 100 ושמרו; ברירת המחדל לעסק חדש היא 20. כשל שמירה משאיר את הטיוטה. גם 0% מאשר את ההערכה. המרווח חל רק על פריטים לפי משקל: 100 לפי משקל ועוד 50 במחיר קבוע עם 20% נותנים אישור של 170; אין מרווח למשלוח. התשלום מציג הערכה, תקרה זמנית ואישור ותפיסת מסגרת בעיצוב העסק. שינוי תקרה דורש בדיקה ואישור מחדש לפני תשלום; הגדרה לא ידועה חוסמת אישור. הזמנות שכבר נבדקו ואישורים קיימים שומרים על התקרה. הצוות מאשר משקל שנמדד לפני לכידה והתקדמות; חריגה מסומנת לתשלום נפרד ולא נגבית אוטומטית. מזומן ותשלום מאוחר אינם מבטיחים תפיסה. נדרש ספק אישור ולכידה מוגדר, ואימות לכידה חלקית, שחרור ותוקף לפני ייצור. ההגדרה אינה משנה מקדמה ויתרת קייטרינג ואינה מאפשרת שמירת כרטיס חדש באישור CST לפי משקל."
+          }
+        },
+        {
           "id": "section-1",
           "level": 2,
           "title": {
@@ -22206,6 +22242,10 @@
         {
           "service": "foodyserver",
           "file": "internal/orders/shared_seats.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/weight_hold.go"
         },
         {
           "service": "foodyserver",
@@ -22827,6 +22867,20 @@
         ]
       },
       "operations": [
+        {
+          "id": "weight-hold-margin",
+          "level": 2,
+          "title": {
+            "en": "Review the by-weight authorization ceiling",
+            "fr": "Vérifier le plafond de préautorisation au poids",
+            "he": "בדיקת תקרת אישור לפריטים לפי משקל"
+          },
+          "instructions": {
+            "en": "For online by-weight orders, open Settings → Payments & VAT with settings.edit. Set Weight hold buffer % from 0 to 100 and save; the default for new restaurants is 20. A failed save keeps the draft. Zero still authorizes the estimate. Only the weight-priced subtotal gets a margin: 100 weighted + 50 fixed at 20% authorizes 170; delivery has no extra margin. Checkout shows the estimate, temporary ceiling and Confirm and authorize, in the restaurant theme. A changed ceiling requires customer review and another confirmation before payment; unknown policy blocks authorization. Existing reviewed checkouts and holds keep their ceiling. Staff confirm measured weights before capture and progression; excess beyond the hold is flagged for a separate payment, never automatically charged. Cash/pay-later makes no hold promise. Requires a configured authorize/capture provider, with partial capture, release and expiry validated before production. This neither changes the catering deposit/balance policy nor enables new-card saving with a CST weighted hold.",
+            "fr": "Pour les commandes en ligne au poids, ouvrez Réglages → Paiements & TVA avec settings.edit. Saisissez Marge d’empreinte au poids % de 0 à 100 puis enregistrez ; la valeur par défaut des nouveaux restaurants est 20. Un échec conserve la saisie. À 0 %, le montant estimé reste préautorisé. Seul le sous-total au poids reçoit une marge : 100 au poids + 50 fixes à 20 % donnent 170 préautorisés ; aucune marge sur la livraison. Le checkout affiche estimation, plafond temporaire et Confirmer et préautoriser, dans le thème du restaurant. Un plafond modifié exige une nouvelle revue et confirmation avant paiement ; une politique inconnue bloque l’autorisation. Les commandes déjà revues et empreintes existantes gardent leur plafond. Le personnel confirme les poids mesurés avant capture et progression ; un dépassement est signalé pour un paiement complémentaire, jamais débité automatiquement. Espèces/paiement ultérieur n’annoncent pas d’empreinte. Un prestataire autorisation/capture configuré est nécessaire ; validez capture partielle, libération et expiration avant production. Ce réglage ne change ni acompte/solde traiteur ni la restriction de sauvegarde d’une nouvelle carte pour une empreinte CST au poids.",
+            "he": "להזמנות מקוונות לפי משקל פתחו הגדרות → תשלומים ומע״מ עם settings.edit. הגדירו מרווח אישור מ-0 עד 100 ושמרו; ברירת המחדל לעסק חדש היא 20. כשל שמירה משאיר את הטיוטה. גם 0% מאשר את ההערכה. המרווח חל רק על פריטים לפי משקל: 100 לפי משקל ועוד 50 במחיר קבוע עם 20% נותנים אישור של 170; אין מרווח למשלוח. התשלום מציג הערכה, תקרה זמנית ואישור ותפיסת מסגרת בעיצוב העסק. שינוי תקרה דורש בדיקה ואישור מחדש לפני תשלום; הגדרה לא ידועה חוסמת אישור. הזמנות שכבר נבדקו ואישורים קיימים שומרים על התקרה. הצוות מאשר משקל שנמדד לפני לכידה והתקדמות; חריגה מסומנת לתשלום נפרד ולא נגבית אוטומטית. מזומן ותשלום מאוחר אינם מבטיחים תפיסה. נדרש ספק אישור ולכידה מוגדר, ואימות לכידה חלקית, שחרור ותוקף לפני ייצור. ההגדרה אינה משנה מקדמה ויתרת קייטרינג ואינה מאפשרת שמירת כרטיס חדש באישור CST לפי משקל."
+          }
+        },
         {
           "id": "section-1",
           "level": 2,
@@ -24328,6 +24382,20 @@
       },
       "operations": [
         {
+          "id": "weight-hold-margin",
+          "level": 2,
+          "title": {
+            "en": "Review the by-weight authorization ceiling",
+            "fr": "Vérifier le plafond de préautorisation au poids",
+            "he": "בדיקת תקרת אישור לפריטים לפי משקל"
+          },
+          "instructions": {
+            "en": "For online by-weight orders, open Settings → Payments & VAT with settings.edit. Set Weight hold buffer % from 0 to 100 and save; the default for new restaurants is 20. A failed save keeps the draft. Zero still authorizes the estimate. Only the weight-priced subtotal gets a margin: 100 weighted + 50 fixed at 20% authorizes 170; delivery has no extra margin. Checkout shows the estimate, temporary ceiling and Confirm and authorize, in the restaurant theme. A changed ceiling requires customer review and another confirmation before payment; unknown policy blocks authorization. Existing reviewed checkouts and holds keep their ceiling. Staff confirm measured weights before capture and progression; excess beyond the hold is flagged for a separate payment, never automatically charged. Cash/pay-later makes no hold promise. Requires a configured authorize/capture provider, with partial capture, release and expiry validated before production. This neither changes the catering deposit/balance policy nor enables new-card saving with a CST weighted hold.",
+            "fr": "Pour les commandes en ligne au poids, ouvrez Réglages → Paiements & TVA avec settings.edit. Saisissez Marge d’empreinte au poids % de 0 à 100 puis enregistrez ; la valeur par défaut des nouveaux restaurants est 20. Un échec conserve la saisie. À 0 %, le montant estimé reste préautorisé. Seul le sous-total au poids reçoit une marge : 100 au poids + 50 fixes à 20 % donnent 170 préautorisés ; aucune marge sur la livraison. Le checkout affiche estimation, plafond temporaire et Confirmer et préautoriser, dans le thème du restaurant. Un plafond modifié exige une nouvelle revue et confirmation avant paiement ; une politique inconnue bloque l’autorisation. Les commandes déjà revues et empreintes existantes gardent leur plafond. Le personnel confirme les poids mesurés avant capture et progression ; un dépassement est signalé pour un paiement complémentaire, jamais débité automatiquement. Espèces/paiement ultérieur n’annoncent pas d’empreinte. Un prestataire autorisation/capture configuré est nécessaire ; validez capture partielle, libération et expiration avant production. Ce réglage ne change ni acompte/solde traiteur ni la restriction de sauvegarde d’une nouvelle carte pour une empreinte CST au poids.",
+            "he": "להזמנות מקוונות לפי משקל פתחו הגדרות → תשלומים ומע״מ עם settings.edit. הגדירו מרווח אישור מ-0 עד 100 ושמרו; ברירת המחדל לעסק חדש היא 20. כשל שמירה משאיר את הטיוטה. גם 0% מאשר את ההערכה. המרווח חל רק על פריטים לפי משקל: 100 לפי משקל ועוד 50 במחיר קבוע עם 20% נותנים אישור של 170; אין מרווח למשלוח. התשלום מציג הערכה, תקרה זמנית ואישור ותפיסת מסגרת בעיצוב העסק. שינוי תקרה דורש בדיקה ואישור מחדש לפני תשלום; הגדרה לא ידועה חוסמת אישור. הזמנות שכבר נבדקו ואישורים קיימים שומרים על התקרה. הצוות מאשר משקל שנמדד לפני לכידה והתקדמות; חריגה מסומנת לתשלום נפרד ולא נגבית אוטומטית. מזומן ותשלום מאוחר אינם מבטיחים תפיסה. נדרש ספק אישור ולכידה מוגדר, ואימות לכידה חלקית, שחרור ותוקף לפני ייצור. ההגדרה אינה משנה מקדמה ויתרת קייטרינג ואינה מאפשרת שמירת כרטיס חדש באישור CST לפי משקל."
+          }
+        },
+        {
           "id": "dine-in",
           "title": {
             "en": "Dine-in and tables",
@@ -24625,6 +24693,10 @@
         },
         {
           "service": "foodyserver",
+          "file": "internal/orders/weight_hold.go"
+        },
+        {
+          "service": "foodyserver",
           "file": "internal/orders/workflow.go"
         },
         {
@@ -24726,6 +24798,20 @@
         ]
       },
       "operations": [
+        {
+          "id": "weight-hold-margin",
+          "level": 2,
+          "title": {
+            "en": "Review the by-weight authorization ceiling",
+            "fr": "Vérifier le plafond de préautorisation au poids",
+            "he": "בדיקת תקרת אישור לפריטים לפי משקל"
+          },
+          "instructions": {
+            "en": "For online by-weight orders, open Settings → Payments & VAT with settings.edit. Set Weight hold buffer % from 0 to 100 and save; the default for new restaurants is 20. A failed save keeps the draft. Zero still authorizes the estimate. Only the weight-priced subtotal gets a margin: 100 weighted + 50 fixed at 20% authorizes 170; delivery has no extra margin. Checkout shows the estimate, temporary ceiling and Confirm and authorize, in the restaurant theme. A changed ceiling requires customer review and another confirmation before payment; unknown policy blocks authorization. Existing reviewed checkouts and holds keep their ceiling. Staff confirm measured weights before capture and progression; excess beyond the hold is flagged for a separate payment, never automatically charged. Cash/pay-later makes no hold promise. Requires a configured authorize/capture provider, with partial capture, release and expiry validated before production. This neither changes the catering deposit/balance policy nor enables new-card saving with a CST weighted hold.",
+            "fr": "Pour les commandes en ligne au poids, ouvrez Réglages → Paiements & TVA avec settings.edit. Saisissez Marge d’empreinte au poids % de 0 à 100 puis enregistrez ; la valeur par défaut des nouveaux restaurants est 20. Un échec conserve la saisie. À 0 %, le montant estimé reste préautorisé. Seul le sous-total au poids reçoit une marge : 100 au poids + 50 fixes à 20 % donnent 170 préautorisés ; aucune marge sur la livraison. Le checkout affiche estimation, plafond temporaire et Confirmer et préautoriser, dans le thème du restaurant. Un plafond modifié exige une nouvelle revue et confirmation avant paiement ; une politique inconnue bloque l’autorisation. Les commandes déjà revues et empreintes existantes gardent leur plafond. Le personnel confirme les poids mesurés avant capture et progression ; un dépassement est signalé pour un paiement complémentaire, jamais débité automatiquement. Espèces/paiement ultérieur n’annoncent pas d’empreinte. Un prestataire autorisation/capture configuré est nécessaire ; validez capture partielle, libération et expiration avant production. Ce réglage ne change ni acompte/solde traiteur ni la restriction de sauvegarde d’une nouvelle carte pour une empreinte CST au poids.",
+            "he": "להזמנות מקוונות לפי משקל פתחו הגדרות → תשלומים ומע״מ עם settings.edit. הגדירו מרווח אישור מ-0 עד 100 ושמרו; ברירת המחדל לעסק חדש היא 20. כשל שמירה משאיר את הטיוטה. גם 0% מאשר את ההערכה. המרווח חל רק על פריטים לפי משקל: 100 לפי משקל ועוד 50 במחיר קבוע עם 20% נותנים אישור של 170; אין מרווח למשלוח. התשלום מציג הערכה, תקרה זמנית ואישור ותפיסת מסגרת בעיצוב העסק. שינוי תקרה דורש בדיקה ואישור מחדש לפני תשלום; הגדרה לא ידועה חוסמת אישור. הזמנות שכבר נבדקו ואישורים קיימים שומרים על התקרה. הצוות מאשר משקל שנמדד לפני לכידה והתקדמות; חריגה מסומנת לתשלום נפרד ולא נגבית אוטומטית. מזומן ותשלום מאוחר אינם מבטיחים תפיסה. נדרש ספק אישור ולכידה מוגדר, ואימות לכידה חלקית, שחרור ותוקף לפני ייצור. ההגדרה אינה משנה מקדמה ויתרת קייטרינג ואינה מאפשרת שמירת כרטיס חדש באישור CST לפי משקל."
+          }
+        },
         {
           "id": "start",
           "title": {
@@ -25034,6 +25120,10 @@
         {
           "service": "foodyserver",
           "file": "internal/orders/shared_seats.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/weight_hold.go"
         },
         {
           "service": "foodyserver",
@@ -26371,6 +26461,20 @@
         ]
       },
       "operations": [
+        {
+          "id": "weight-hold-margin",
+          "level": 2,
+          "title": {
+            "en": "Review the by-weight authorization ceiling",
+            "fr": "Vérifier le plafond de préautorisation au poids",
+            "he": "בדיקת תקרת אישור לפריטים לפי משקל"
+          },
+          "instructions": {
+            "en": "For online by-weight orders, open Settings → Payments & VAT with settings.edit. Set Weight hold buffer % from 0 to 100 and save; the default for new restaurants is 20. A failed save keeps the draft. Zero still authorizes the estimate. Only the weight-priced subtotal gets a margin: 100 weighted + 50 fixed at 20% authorizes 170; delivery has no extra margin. Checkout shows the estimate, temporary ceiling and Confirm and authorize, in the restaurant theme. A changed ceiling requires customer review and another confirmation before payment; unknown policy blocks authorization. Existing reviewed checkouts and holds keep their ceiling. Staff confirm measured weights before capture and progression; excess beyond the hold is flagged for a separate payment, never automatically charged. Cash/pay-later makes no hold promise. Requires a configured authorize/capture provider, with partial capture, release and expiry validated before production. This neither changes the catering deposit/balance policy nor enables new-card saving with a CST weighted hold.",
+            "fr": "Pour les commandes en ligne au poids, ouvrez Réglages → Paiements & TVA avec settings.edit. Saisissez Marge d’empreinte au poids % de 0 à 100 puis enregistrez ; la valeur par défaut des nouveaux restaurants est 20. Un échec conserve la saisie. À 0 %, le montant estimé reste préautorisé. Seul le sous-total au poids reçoit une marge : 100 au poids + 50 fixes à 20 % donnent 170 préautorisés ; aucune marge sur la livraison. Le checkout affiche estimation, plafond temporaire et Confirmer et préautoriser, dans le thème du restaurant. Un plafond modifié exige une nouvelle revue et confirmation avant paiement ; une politique inconnue bloque l’autorisation. Les commandes déjà revues et empreintes existantes gardent leur plafond. Le personnel confirme les poids mesurés avant capture et progression ; un dépassement est signalé pour un paiement complémentaire, jamais débité automatiquement. Espèces/paiement ultérieur n’annoncent pas d’empreinte. Un prestataire autorisation/capture configuré est nécessaire ; validez capture partielle, libération et expiration avant production. Ce réglage ne change ni acompte/solde traiteur ni la restriction de sauvegarde d’une nouvelle carte pour une empreinte CST au poids.",
+            "he": "להזמנות מקוונות לפי משקל פתחו הגדרות → תשלומים ומע״מ עם settings.edit. הגדירו מרווח אישור מ-0 עד 100 ושמרו; ברירת המחדל לעסק חדש היא 20. כשל שמירה משאיר את הטיוטה. גם 0% מאשר את ההערכה. המרווח חל רק על פריטים לפי משקל: 100 לפי משקל ועוד 50 במחיר קבוע עם 20% נותנים אישור של 170; אין מרווח למשלוח. התשלום מציג הערכה, תקרה זמנית ואישור ותפיסת מסגרת בעיצוב העסק. שינוי תקרה דורש בדיקה ואישור מחדש לפני תשלום; הגדרה לא ידועה חוסמת אישור. הזמנות שכבר נבדקו ואישורים קיימים שומרים על התקרה. הצוות מאשר משקל שנמדד לפני לכידה והתקדמות; חריגה מסומנת לתשלום נפרד ולא נגבית אוטומטית. מזומן ותשלום מאוחר אינם מבטיחים תפיסה. נדרש ספק אישור ולכידה מוגדר, ואימות לכידה חלקית, שחרור ותוקף לפני ייצור. ההגדרה אינה משנה מקדמה ויתרת קייטרינג ואינה מאפשרת שמירת כרטיס חדש באישור CST לפי משקל."
+          }
+        },
         {
           "id": "date",
           "title": {
@@ -29234,6 +29338,20 @@
       },
       "operations": [
         {
+          "id": "weight-hold-margin",
+          "level": 2,
+          "title": {
+            "en": "Review the by-weight authorization ceiling",
+            "fr": "Vérifier le plafond de préautorisation au poids",
+            "he": "בדיקת תקרת אישור לפריטים לפי משקל"
+          },
+          "instructions": {
+            "en": "For online by-weight orders, open Settings → Payments & VAT with settings.edit. Set Weight hold buffer % from 0 to 100 and save; the default for new restaurants is 20. A failed save keeps the draft. Zero still authorizes the estimate. Only the weight-priced subtotal gets a margin: 100 weighted + 50 fixed at 20% authorizes 170; delivery has no extra margin. Checkout shows the estimate, temporary ceiling and Confirm and authorize, in the restaurant theme. A changed ceiling requires customer review and another confirmation before payment; unknown policy blocks authorization. Existing reviewed checkouts and holds keep their ceiling. Staff confirm measured weights before capture and progression; excess beyond the hold is flagged for a separate payment, never automatically charged. Cash/pay-later makes no hold promise. Requires a configured authorize/capture provider, with partial capture, release and expiry validated before production. This neither changes the catering deposit/balance policy nor enables new-card saving with a CST weighted hold.",
+            "fr": "Pour les commandes en ligne au poids, ouvrez Réglages → Paiements & TVA avec settings.edit. Saisissez Marge d’empreinte au poids % de 0 à 100 puis enregistrez ; la valeur par défaut des nouveaux restaurants est 20. Un échec conserve la saisie. À 0 %, le montant estimé reste préautorisé. Seul le sous-total au poids reçoit une marge : 100 au poids + 50 fixes à 20 % donnent 170 préautorisés ; aucune marge sur la livraison. Le checkout affiche estimation, plafond temporaire et Confirmer et préautoriser, dans le thème du restaurant. Un plafond modifié exige une nouvelle revue et confirmation avant paiement ; une politique inconnue bloque l’autorisation. Les commandes déjà revues et empreintes existantes gardent leur plafond. Le personnel confirme les poids mesurés avant capture et progression ; un dépassement est signalé pour un paiement complémentaire, jamais débité automatiquement. Espèces/paiement ultérieur n’annoncent pas d’empreinte. Un prestataire autorisation/capture configuré est nécessaire ; validez capture partielle, libération et expiration avant production. Ce réglage ne change ni acompte/solde traiteur ni la restriction de sauvegarde d’une nouvelle carte pour une empreinte CST au poids.",
+            "he": "להזמנות מקוונות לפי משקל פתחו הגדרות → תשלומים ומע״מ עם settings.edit. הגדירו מרווח אישור מ-0 עד 100 ושמרו; ברירת המחדל לעסק חדש היא 20. כשל שמירה משאיר את הטיוטה. גם 0% מאשר את ההערכה. המרווח חל רק על פריטים לפי משקל: 100 לפי משקל ועוד 50 במחיר קבוע עם 20% נותנים אישור של 170; אין מרווח למשלוח. התשלום מציג הערכה, תקרה זמנית ואישור ותפיסת מסגרת בעיצוב העסק. שינוי תקרה דורש בדיקה ואישור מחדש לפני תשלום; הגדרה לא ידועה חוסמת אישור. הזמנות שכבר נבדקו ואישורים קיימים שומרים על התקרה. הצוות מאשר משקל שנמדד לפני לכידה והתקדמות; חריגה מסומנת לתשלום נפרד ולא נגבית אוטומטית. מזומן ותשלום מאוחר אינם מבטיחים תפיסה. נדרש ספק אישור ולכידה מוגדר, ואימות לכידה חלקית, שחרור ותוקף לפני ייצור. ההגדרה אינה משנה מקדמה ויתרת קייטרינג ואינה מאפשרת שמירת כרטיס חדש באישור CST לפי משקל."
+          }
+        },
+        {
           "id": "identity",
           "title": {
             "en": "Edit restaurant information",
@@ -29501,6 +29619,20 @@
         ]
       },
       "operations": [
+        {
+          "id": "weight-hold-margin",
+          "level": 2,
+          "title": {
+            "en": "Review the by-weight authorization ceiling",
+            "fr": "Vérifier le plafond de préautorisation au poids",
+            "he": "בדיקת תקרת אישור לפריטים לפי משקל"
+          },
+          "instructions": {
+            "en": "For online by-weight orders, open Settings → Payments & VAT with settings.edit. Set Weight hold buffer % from 0 to 100 and save; the default for new restaurants is 20. A failed save keeps the draft. Zero still authorizes the estimate. Only the weight-priced subtotal gets a margin: 100 weighted + 50 fixed at 20% authorizes 170; delivery has no extra margin. Checkout shows the estimate, temporary ceiling and Confirm and authorize, in the restaurant theme. A changed ceiling requires customer review and another confirmation before payment; unknown policy blocks authorization. Existing reviewed checkouts and holds keep their ceiling. Staff confirm measured weights before capture and progression; excess beyond the hold is flagged for a separate payment, never automatically charged. Cash/pay-later makes no hold promise. Requires a configured authorize/capture provider, with partial capture, release and expiry validated before production. This neither changes the catering deposit/balance policy nor enables new-card saving with a CST weighted hold.",
+            "fr": "Pour les commandes en ligne au poids, ouvrez Réglages → Paiements & TVA avec settings.edit. Saisissez Marge d’empreinte au poids % de 0 à 100 puis enregistrez ; la valeur par défaut des nouveaux restaurants est 20. Un échec conserve la saisie. À 0 %, le montant estimé reste préautorisé. Seul le sous-total au poids reçoit une marge : 100 au poids + 50 fixes à 20 % donnent 170 préautorisés ; aucune marge sur la livraison. Le checkout affiche estimation, plafond temporaire et Confirmer et préautoriser, dans le thème du restaurant. Un plafond modifié exige une nouvelle revue et confirmation avant paiement ; une politique inconnue bloque l’autorisation. Les commandes déjà revues et empreintes existantes gardent leur plafond. Le personnel confirme les poids mesurés avant capture et progression ; un dépassement est signalé pour un paiement complémentaire, jamais débité automatiquement. Espèces/paiement ultérieur n’annoncent pas d’empreinte. Un prestataire autorisation/capture configuré est nécessaire ; validez capture partielle, libération et expiration avant production. Ce réglage ne change ni acompte/solde traiteur ni la restriction de sauvegarde d’une nouvelle carte pour une empreinte CST au poids.",
+            "he": "להזמנות מקוונות לפי משקל פתחו הגדרות → תשלומים ומע״מ עם settings.edit. הגדירו מרווח אישור מ-0 עד 100 ושמרו; ברירת המחדל לעסק חדש היא 20. כשל שמירה משאיר את הטיוטה. גם 0% מאשר את ההערכה. המרווח חל רק על פריטים לפי משקל: 100 לפי משקל ועוד 50 במחיר קבוע עם 20% נותנים אישור של 170; אין מרווח למשלוח. התשלום מציג הערכה, תקרה זמנית ואישור ותפיסת מסגרת בעיצוב העסק. שינוי תקרה דורש בדיקה ואישור מחדש לפני תשלום; הגדרה לא ידועה חוסמת אישור. הזמנות שכבר נבדקו ואישורים קיימים שומרים על התקרה. הצוות מאשר משקל שנמדד לפני לכידה והתקדמות; חריגה מסומנת לתשלום נפרד ולא נגבית אוטומטית. מזומן ותשלום מאוחר אינם מבטיחים תפיסה. נדרש ספק אישור ולכידה מוגדר, ואימות לכידה חלקית, שחרור ותוקף לפני ייצור. ההגדרה אינה משנה מקדמה ויתרת קייטרינג ואינה מאפשרת שמירת כרטיס חדש באישור CST לפי משקל."
+          }
+        },
         {
           "id": "channels",
           "title": {
@@ -29783,6 +29915,10 @@
         {
           "service": "foodyserver",
           "file": "internal/orders/shared_seats.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/weight_hold.go"
         },
         {
           "service": "foodyserver",
@@ -31806,6 +31942,20 @@
       },
       "operations": [
         {
+          "id": "weight-hold-margin",
+          "level": 2,
+          "title": {
+            "en": "Review the by-weight authorization ceiling",
+            "fr": "Vérifier le plafond de préautorisation au poids",
+            "he": "בדיקת תקרת אישור לפריטים לפי משקל"
+          },
+          "instructions": {
+            "en": "For online by-weight orders, open Settings → Payments & VAT with settings.edit. Set Weight hold buffer % from 0 to 100 and save; the default for new restaurants is 20. A failed save keeps the draft. Zero still authorizes the estimate. Only the weight-priced subtotal gets a margin: 100 weighted + 50 fixed at 20% authorizes 170; delivery has no extra margin. Checkout shows the estimate, temporary ceiling and Confirm and authorize, in the restaurant theme. A changed ceiling requires customer review and another confirmation before payment; unknown policy blocks authorization. Existing reviewed checkouts and holds keep their ceiling. Staff confirm measured weights before capture and progression; excess beyond the hold is flagged for a separate payment, never automatically charged. Cash/pay-later makes no hold promise. Requires a configured authorize/capture provider, with partial capture, release and expiry validated before production. This neither changes the catering deposit/balance policy nor enables new-card saving with a CST weighted hold.",
+            "fr": "Pour les commandes en ligne au poids, ouvrez Réglages → Paiements & TVA avec settings.edit. Saisissez Marge d’empreinte au poids % de 0 à 100 puis enregistrez ; la valeur par défaut des nouveaux restaurants est 20. Un échec conserve la saisie. À 0 %, le montant estimé reste préautorisé. Seul le sous-total au poids reçoit une marge : 100 au poids + 50 fixes à 20 % donnent 170 préautorisés ; aucune marge sur la livraison. Le checkout affiche estimation, plafond temporaire et Confirmer et préautoriser, dans le thème du restaurant. Un plafond modifié exige une nouvelle revue et confirmation avant paiement ; une politique inconnue bloque l’autorisation. Les commandes déjà revues et empreintes existantes gardent leur plafond. Le personnel confirme les poids mesurés avant capture et progression ; un dépassement est signalé pour un paiement complémentaire, jamais débité automatiquement. Espèces/paiement ultérieur n’annoncent pas d’empreinte. Un prestataire autorisation/capture configuré est nécessaire ; validez capture partielle, libération et expiration avant production. Ce réglage ne change ni acompte/solde traiteur ni la restriction de sauvegarde d’une nouvelle carte pour une empreinte CST au poids.",
+            "he": "להזמנות מקוונות לפי משקל פתחו הגדרות → תשלומים ומע״מ עם settings.edit. הגדירו מרווח אישור מ-0 עד 100 ושמרו; ברירת המחדל לעסק חדש היא 20. כשל שמירה משאיר את הטיוטה. גם 0% מאשר את ההערכה. המרווח חל רק על פריטים לפי משקל: 100 לפי משקל ועוד 50 במחיר קבוע עם 20% נותנים אישור של 170; אין מרווח למשלוח. התשלום מציג הערכה, תקרה זמנית ואישור ותפיסת מסגרת בעיצוב העסק. שינוי תקרה דורש בדיקה ואישור מחדש לפני תשלום; הגדרה לא ידועה חוסמת אישור. הזמנות שכבר נבדקו ואישורים קיימים שומרים על התקרה. הצוות מאשר משקל שנמדד לפני לכידה והתקדמות; חריגה מסומנת לתשלום נפרד ולא נגבית אוטומטית. מזומן ותשלום מאוחר אינם מבטיחים תפיסה. נדרש ספק אישור ולכידה מוגדר, ואימות לכידה חלקית, שחרור ותוקף לפני ייצור. ההגדרה אינה משנה מקדמה ויתרת קייטרינג ואינה מאפשרת שמירת כרטיס חדש באישור CST לפי משקל."
+          }
+        },
+        {
           "id": "cash",
           "title": {
             "en": "Record cash",
@@ -33003,6 +33153,20 @@
       },
       "operations": [
         {
+          "id": "weight-hold-margin",
+          "level": 2,
+          "title": {
+            "en": "Review the by-weight authorization ceiling",
+            "fr": "Vérifier le plafond de préautorisation au poids",
+            "he": "בדיקת תקרת אישור לפריטים לפי משקל"
+          },
+          "instructions": {
+            "en": "For online by-weight orders, open Settings → Payments & VAT with settings.edit. Set Weight hold buffer % from 0 to 100 and save; the default for new restaurants is 20. A failed save keeps the draft. Zero still authorizes the estimate. Only the weight-priced subtotal gets a margin: 100 weighted + 50 fixed at 20% authorizes 170; delivery has no extra margin. Checkout shows the estimate, temporary ceiling and Confirm and authorize, in the restaurant theme. A changed ceiling requires customer review and another confirmation before payment; unknown policy blocks authorization. Existing reviewed checkouts and holds keep their ceiling. Staff confirm measured weights before capture and progression; excess beyond the hold is flagged for a separate payment, never automatically charged. Cash/pay-later makes no hold promise. Requires a configured authorize/capture provider, with partial capture, release and expiry validated before production. This neither changes the catering deposit/balance policy nor enables new-card saving with a CST weighted hold.",
+            "fr": "Pour les commandes en ligne au poids, ouvrez Réglages → Paiements & TVA avec settings.edit. Saisissez Marge d’empreinte au poids % de 0 à 100 puis enregistrez ; la valeur par défaut des nouveaux restaurants est 20. Un échec conserve la saisie. À 0 %, le montant estimé reste préautorisé. Seul le sous-total au poids reçoit une marge : 100 au poids + 50 fixes à 20 % donnent 170 préautorisés ; aucune marge sur la livraison. Le checkout affiche estimation, plafond temporaire et Confirmer et préautoriser, dans le thème du restaurant. Un plafond modifié exige une nouvelle revue et confirmation avant paiement ; une politique inconnue bloque l’autorisation. Les commandes déjà revues et empreintes existantes gardent leur plafond. Le personnel confirme les poids mesurés avant capture et progression ; un dépassement est signalé pour un paiement complémentaire, jamais débité automatiquement. Espèces/paiement ultérieur n’annoncent pas d’empreinte. Un prestataire autorisation/capture configuré est nécessaire ; validez capture partielle, libération et expiration avant production. Ce réglage ne change ni acompte/solde traiteur ni la restriction de sauvegarde d’une nouvelle carte pour une empreinte CST au poids.",
+            "he": "להזמנות מקוונות לפי משקל פתחו הגדרות → תשלומים ומע״מ עם settings.edit. הגדירו מרווח אישור מ-0 עד 100 ושמרו; ברירת המחדל לעסק חדש היא 20. כשל שמירה משאיר את הטיוטה. גם 0% מאשר את ההערכה. המרווח חל רק על פריטים לפי משקל: 100 לפי משקל ועוד 50 במחיר קבוע עם 20% נותנים אישור של 170; אין מרווח למשלוח. התשלום מציג הערכה, תקרה זמנית ואישור ותפיסת מסגרת בעיצוב העסק. שינוי תקרה דורש בדיקה ואישור מחדש לפני תשלום; הגדרה לא ידועה חוסמת אישור. הזמנות שכבר נבדקו ואישורים קיימים שומרים על התקרה. הצוות מאשר משקל שנמדד לפני לכידה והתקדמות; חריגה מסומנת לתשלום נפרד ולא נגבית אוטומטית. מזומן ותשלום מאוחר אינם מבטיחים תפיסה. נדרש ספק אישור ולכידה מוגדר, ואימות לכידה חלקית, שחרור ותוקף לפני ייצור. ההגדרה אינה משנה מקדמה ויתרת קייטרינג ואינה מאפשרת שמירת כרטיס חדש באישור CST לפי משקל."
+          }
+        },
+        {
           "id": "provider",
           "title": {
             "en": "Arrange provider activation",
@@ -33049,9 +33213,9 @@
             "he": "הגדרת מדיניות תשלום, מע״מ וטיפים"
           },
           "instructions": {
-            "en": "In Settings → Payments review online-payment-only policy, default VAT and tips enablement. Only permitted, changed fields are saved. An unknown policy remains unknown until explicitly chosen; editing VAT must not silently choose it. Weight authorization buffer and fixed suggested-tip/rounding behavior are read-only or have no edit contract here. Verify saved values after success; retain edits on a failed save.",
-            "fr": "Dans Paramètres → Paiements, vérifiez paiement en ligne obligatoire, TVA par défaut et activation des pourboires. Seuls les champs autorisés modifiés sont enregistrés. Une politique inconnue reste inconnue avant choix explicite ; modifier la TVA ne doit pas la choisir. Marge d’autorisation pondérale, suggestions fixes et arrondi ne sont pas éditables ici. Vérifiez les valeurs après succès et gardez les saisies après échec.",
-            "he": "בהגדרות תשלום בדקו חיוב מקוון בלבד, מע״מ וטיפים. נשמרים רק שדות מורשים שהשתנו. מדיניות לא ידועה נשארת כך עד בחירה מפורשת; שינוי מע״מ אינו בוחר אותה. מרווח הרשאה לפי משקל, טיפים קבועים ועיגול אינם לעריכה כאן. בדקו שמירה ושמרו קלט בכשל."
+            "en": "In Settings → Payments review online-payment-only policy, default VAT and tips enablement. Only permitted, changed fields are saved. An unknown policy remains unknown until explicitly chosen; editing VAT must not silently choose it. The weight authorization margin has its own editable field, explained below. Fixed suggested tips and rounding remain outside this form's edit contract. Verify saved values after success; retain edits on a failed save.",
+            "fr": "Dans Paramètres → Paiements, vérifiez paiement en ligne obligatoire, TVA par défaut et activation des pourboires. Seuls les champs autorisés modifiés sont enregistrés. Une politique inconnue reste inconnue avant choix explicite ; modifier la TVA ne doit pas la choisir. La marge de préautorisation au poids dispose de son champ modifiable expliqué ci-dessous. Suggestions fixes et arrondi restent hors de ce formulaire. Vérifiez les valeurs après succès et gardez les saisies après échec.",
+            "he": "בהגדרות תשלום בדקו חיוב מקוון בלבד, מע״מ וטיפים. נשמרים רק שדות מורשים שהשתנו. מדיניות לא ידועה נשארת כך עד בחירה מפורשת; שינוי מע״מ אינו בוחר אותה. למרווח אישור לפי משקל יש שדה ניתן לעריכה שמוסבר בהמשך. טיפים קבועים ועיגול נשארים מחוץ לטופס. בדקו שמירה ושמרו קלט בכשל."
           }
         },
         {
@@ -33742,6 +33906,7 @@
           "components/Cart*.tsx",
           "components/Checkout*.tsx",
           "components/Commerce*.tsx",
+          "components/WeightHoldNotice.tsx",
           "components/CustomerInfo*.tsx",
           "components/CustomerNote*.tsx",
           "components/Delivery*.tsx",
@@ -33760,6 +33925,20 @@
         ]
       },
       "operations": [
+        {
+          "id": "weight-hold-margin",
+          "level": 2,
+          "title": {
+            "en": "Review the by-weight authorization ceiling",
+            "fr": "Vérifier le plafond de préautorisation au poids",
+            "he": "בדיקת תקרת אישור לפריטים לפי משקל"
+          },
+          "instructions": {
+            "en": "For online by-weight orders, open Settings → Payments & VAT with settings.edit. Set Weight hold buffer % from 0 to 100 and save; the default for new restaurants is 20. A failed save keeps the draft. Zero still authorizes the estimate. Only the weight-priced subtotal gets a margin: 100 weighted + 50 fixed at 20% authorizes 170; delivery has no extra margin. Checkout shows the estimate, temporary ceiling and Confirm and authorize, in the restaurant theme. A changed ceiling requires customer review and another confirmation before payment; unknown policy blocks authorization. Existing reviewed checkouts and holds keep their ceiling. Staff confirm measured weights before capture and progression; excess beyond the hold is flagged for a separate payment, never automatically charged. Cash/pay-later makes no hold promise. Requires a configured authorize/capture provider, with partial capture, release and expiry validated before production. This neither changes the catering deposit/balance policy nor enables new-card saving with a CST weighted hold.",
+            "fr": "Pour les commandes en ligne au poids, ouvrez Réglages → Paiements & TVA avec settings.edit. Saisissez Marge d’empreinte au poids % de 0 à 100 puis enregistrez ; la valeur par défaut des nouveaux restaurants est 20. Un échec conserve la saisie. À 0 %, le montant estimé reste préautorisé. Seul le sous-total au poids reçoit une marge : 100 au poids + 50 fixes à 20 % donnent 170 préautorisés ; aucune marge sur la livraison. Le checkout affiche estimation, plafond temporaire et Confirmer et préautoriser, dans le thème du restaurant. Un plafond modifié exige une nouvelle revue et confirmation avant paiement ; une politique inconnue bloque l’autorisation. Les commandes déjà revues et empreintes existantes gardent leur plafond. Le personnel confirme les poids mesurés avant capture et progression ; un dépassement est signalé pour un paiement complémentaire, jamais débité automatiquement. Espèces/paiement ultérieur n’annoncent pas d’empreinte. Un prestataire autorisation/capture configuré est nécessaire ; validez capture partielle, libération et expiration avant production. Ce réglage ne change ni acompte/solde traiteur ni la restriction de sauvegarde d’une nouvelle carte pour une empreinte CST au poids.",
+            "he": "להזמנות מקוונות לפי משקל פתחו הגדרות → תשלומים ומע״מ עם settings.edit. הגדירו מרווח אישור מ-0 עד 100 ושמרו; ברירת המחדל לעסק חדש היא 20. כשל שמירה משאיר את הטיוטה. גם 0% מאשר את ההערכה. המרווח חל רק על פריטים לפי משקל: 100 לפי משקל ועוד 50 במחיר קבוע עם 20% נותנים אישור של 170; אין מרווח למשלוח. התשלום מציג הערכה, תקרה זמנית ואישור ותפיסת מסגרת בעיצוב העסק. שינוי תקרה דורש בדיקה ואישור מחדש לפני תשלום; הגדרה לא ידועה חוסמת אישור. הזמנות שכבר נבדקו ואישורים קיימים שומרים על התקרה. הצוות מאשר משקל שנמדד לפני לכידה והתקדמות; חריגה מסומנת לתשלום נפרד ולא נגבית אוטומטית. מזומן ותשלום מאוחר אינם מבטיחים תפיסה. נדרש ספק אישור ולכידה מוגדר, ואימות לכידה חלקית, שחרור ותוקף לפני ייצור. ההגדרה אינה משנה מקדמה ויתרת קייטרינג ואינה מאפשרת שמירת כרטיס חדש באישור CST לפי משקל."
+          }
+        },
         {
           "id": "basket",
           "title": {
@@ -33979,6 +34158,10 @@
         {
           "service": "foodyweb",
           "file": "components/WebsiteCartPopover.tsx"
+        },
+        {
+          "service": "foodyweb",
+          "file": "components/WeightHoldNotice.tsx"
         },
         {
           "service": "foodyweb",
@@ -35463,6 +35646,20 @@
       },
       "operations": [
         {
+          "id": "weight-hold-margin",
+          "level": 2,
+          "title": {
+            "en": "Review the by-weight authorization ceiling",
+            "fr": "Vérifier le plafond de préautorisation au poids",
+            "he": "בדיקת תקרת אישור לפריטים לפי משקל"
+          },
+          "instructions": {
+            "en": "Public expected_hold_amount_minor is checked against server-priced lines and the scoped margin inside order creation; mismatch rolls back before stock/provider effects. The server writes weight_hold_amount_minor and weight_hold_buffer_percent metadata, never trusts guest external_metadata, and the resolver retains that ceiling or existing HoldAmount. Settings accept finite 0–100 values; omission preserves them and defaults remain 20. Public restaurant and protected settings expose the safe policy. TypeScript never invents an unknown margin. FR/HE/EN checkout notices inherit restaurant styles. No schema change, provider credential or POS client mutation.",
+            "fr": "Le champ public expected_hold_amount_minor est vérifié contre les lignes serveur et la marge du restaurant dans la transaction de création ; un écart annule la commande avant stock/prestataire. Le serveur écrit weight_hold_amount_minor et weight_hold_buffer_percent sans faire confiance aux external_metadata invitées ; le resolver conserve ce plafond ou HoldAmount existant. Les réglages acceptent des valeurs finies de 0 à 100 ; l’omission les préserve et le défaut reste 20. Restaurant public et réglages protégés exposent cette politique sans secret. TypeScript n’invente pas de marge inconnue. Les messages FR/HE/EN héritent du thème. Aucun changement de schéma, clé prestataire ou client POS.",
+            "he": "השדה הציבורי expected_hold_amount_minor נבדק מול שורות השרת ומרווח העסק בטרנזקציית יצירת ההזמנה; אי התאמה מבטלת לפני מלאי או ספק. השרת כותב weight_hold_amount_minor ו-weight_hold_buffer_percent בלי לסמוך על external_metadata של אורח; ה-resolver משמר תקרה זו או HoldAmount קיים. ההגדרות מקבלות ערכים סופיים מ-0 עד 100; היעדר שדה משמר ערך וברירת המחדל 20. עסק ציבורי והגדרות מוגנות מציגים מדיניות בטוחה. TypeScript אינו ממציא מרווח לא ידוע. הודעות FR/HE/EN יורשות עיצוב העסק. אין שינוי סכמה, מפתח ספק או לקוח POS."
+          }
+        },
+        {
           "id": "contracts",
           "title": {
             "en": "Maintain scoped API contracts",
@@ -35954,6 +36151,10 @@
         {
           "service": "foodyserver",
           "file": "internal/common/website_form.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/common/weight_hold.go"
         },
         {
           "service": "foodyserver",
@@ -36770,6 +36971,10 @@
         {
           "service": "foodyserver",
           "file": "internal/orders/shared_seats.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/weight_hold.go"
         },
         {
           "service": "foodyserver",
@@ -37684,6 +37889,20 @@
         ]
       },
       "operations": [
+        {
+          "id": "weight-hold-margin",
+          "level": 2,
+          "title": {
+            "en": "Review the by-weight authorization ceiling",
+            "fr": "Vérifier le plafond de préautorisation au poids",
+            "he": "בדיקת תקרת אישור לפריטים לפי משקל"
+          },
+          "instructions": {
+            "en": "Public expected_hold_amount_minor is checked against server-priced lines and the scoped margin inside order creation; mismatch rolls back before stock/provider effects. The server writes weight_hold_amount_minor and weight_hold_buffer_percent metadata, never trusts guest external_metadata, and the resolver retains that ceiling or existing HoldAmount. Settings accept finite 0–100 values; omission preserves them and defaults remain 20. Public restaurant and protected settings expose the safe policy. TypeScript never invents an unknown margin. FR/HE/EN checkout notices inherit restaurant styles. No schema change, provider credential or POS client mutation.",
+            "fr": "Le champ public expected_hold_amount_minor est vérifié contre les lignes serveur et la marge du restaurant dans la transaction de création ; un écart annule la commande avant stock/prestataire. Le serveur écrit weight_hold_amount_minor et weight_hold_buffer_percent sans faire confiance aux external_metadata invitées ; le resolver conserve ce plafond ou HoldAmount existant. Les réglages acceptent des valeurs finies de 0 à 100 ; l’omission les préserve et le défaut reste 20. Restaurant public et réglages protégés exposent cette politique sans secret. TypeScript n’invente pas de marge inconnue. Les messages FR/HE/EN héritent du thème. Aucun changement de schéma, clé prestataire ou client POS.",
+            "he": "השדה הציבורי expected_hold_amount_minor נבדק מול שורות השרת ומרווח העסק בטרנזקציית יצירת ההזמנה; אי התאמה מבטלת לפני מלאי או ספק. השרת כותב weight_hold_amount_minor ו-weight_hold_buffer_percent בלי לסמוך על external_metadata של אורח; ה-resolver משמר תקרה זו או HoldAmount קיים. ההגדרות מקבלות ערכים סופיים מ-0 עד 100; היעדר שדה משמר ערך וברירת המחדל 20. עסק ציבורי והגדרות מוגנות מציגים מדיניות בטוחה. TypeScript אינו ממציא מרווח לא ידוע. הודעות FR/HE/EN יורשות עיצוב העסק. אין שינוי סכמה, מפתח ספק או לקוח POS."
+          }
+        },
         {
           "id": "classify",
           "title": {
@@ -38808,350 +39027,6 @@
           "file": "src/styles/tokens.css"
         },
         {
-          "service": "foodylanding",
-          "file": "src/app/api/support/chat/route.ts"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/app/globals.css"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/app/robots.ts"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/app/sitemap.ts"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/components/Footer.tsx"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/components/MetaPixel.tsx"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/components/Navbar.tsx"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/components/brand/FoodyLogo.tsx"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/en/account/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/en/analytics/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/en/catering/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/en/chains/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/en/communications/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/en/customers/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/en/delivery/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/en/getting-started/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/en/guest/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/en/kitchen/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/en/marketing/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/en/menu/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/en/orders/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/en/payments/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/en/printers/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/en/settings/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/en/staff/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/en/tables-floors/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/en/website-qr/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/fr/account/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/fr/analytics/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/fr/catering/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/fr/chains/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/fr/communications/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/fr/customers/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/fr/delivery/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/fr/getting-started/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/fr/guest/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/fr/kitchen/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/fr/marketing/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/fr/menu/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/fr/orders/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/fr/payments/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/fr/printers/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/fr/settings/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/fr/staff/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/fr/tables-floors/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/fr/website-qr/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/he/account/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/he/analytics/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/he/catering/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/he/chains/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/he/communications/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/he/customers/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/he/delivery/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/he/getting-started/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/he/guest/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/he/kitchen/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/he/marketing/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/he/menu/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/he/orders/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/he/payments/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/he/printers/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/he/settings/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/he/staff/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/he/tables-floors/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/content/help/he/website-qr/_meta.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/lib/help/assistant.mjs"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/lib/help/content.ts"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/lib/help/conversation.mjs"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/lib/help/corpus.mjs"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/lib/help/search.mjs"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/lib/help/transport.mjs"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/lib/help/types.ts"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/lib/i18n/context.tsx"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/lib/i18n/en.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/lib/i18n/fr.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/lib/i18n/he.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/lib/marketing/content.ts"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/lib/marketing/ecosystem.ts"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/lib/marketing/maps-offers.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/lib/marketing/maps-pricing.ts"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/lib/marketing/pricing.ts"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/lib/marketing/social.json"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/lib/marketing/solutions.ts"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/lib/marketing/ui.ts"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/lib/seo.ts"
-        },
-        {
-          "service": "foodylanding",
-          "file": "src/middleware.ts"
-        },
-        {
           "service": "foodyweb",
           "file": "app/globals.css"
         },
@@ -39738,6 +39613,350 @@
         {
           "service": "foodyweb",
           "file": "services/api.ts"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/app/api/support/chat/route.ts"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/app/globals.css"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/app/robots.ts"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/app/sitemap.ts"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/components/Footer.tsx"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/components/MetaPixel.tsx"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/components/Navbar.tsx"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/components/brand/FoodyLogo.tsx"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/en/account/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/en/analytics/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/en/catering/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/en/chains/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/en/communications/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/en/customers/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/en/delivery/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/en/getting-started/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/en/guest/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/en/kitchen/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/en/marketing/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/en/menu/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/en/orders/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/en/payments/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/en/printers/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/en/settings/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/en/staff/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/en/tables-floors/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/en/website-qr/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/fr/account/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/fr/analytics/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/fr/catering/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/fr/chains/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/fr/communications/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/fr/customers/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/fr/delivery/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/fr/getting-started/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/fr/guest/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/fr/kitchen/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/fr/marketing/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/fr/menu/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/fr/orders/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/fr/payments/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/fr/printers/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/fr/settings/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/fr/staff/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/fr/tables-floors/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/fr/website-qr/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/he/account/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/he/analytics/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/he/catering/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/he/chains/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/he/communications/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/he/customers/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/he/delivery/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/he/getting-started/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/he/guest/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/he/kitchen/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/he/marketing/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/he/menu/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/he/orders/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/he/payments/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/he/printers/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/he/settings/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/he/staff/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/he/tables-floors/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/content/help/he/website-qr/_meta.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/lib/help/assistant.mjs"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/lib/help/content.ts"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/lib/help/conversation.mjs"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/lib/help/corpus.mjs"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/lib/help/search.mjs"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/lib/help/transport.mjs"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/lib/help/types.ts"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/lib/i18n/context.tsx"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/lib/i18n/en.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/lib/i18n/fr.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/lib/i18n/he.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/lib/marketing/content.ts"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/lib/marketing/ecosystem.ts"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/lib/marketing/maps-offers.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/lib/marketing/maps-pricing.ts"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/lib/marketing/pricing.ts"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/lib/marketing/social.json"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/lib/marketing/solutions.ts"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/lib/marketing/ui.ts"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/lib/seo.ts"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/middleware.ts"
         },
         {
           "service": "foodypos",
@@ -60102,7 +60321,8 @@
         "paymentTipsFixed",
         "paymentTipsTitle",
         "paymentVatHint",
-        "paymentWeightReadOnly",
+        "paymentWeightExample",
+        "paymentWeightHelp",
         "paymentWeightUnknown",
         "paymentsAndVat",
         "pushPreferencesReadOnly",
@@ -71589,279 +71809,6 @@
       "line": 1
     },
     {
-      "id": "foodylanding:src/app/[lang]/contact/page.tsx:next-page:1",
-      "service": "foodylanding",
-      "source": "src/app/[lang]/contact/page.tsx",
-      "features": [
-        "landing-offers"
-      ],
-      "kind": "next-page",
-      "route": "/[lang]/contact",
-      "line": 1
-    },
-    {
-      "id": "foodylanding:src/app/[lang]/help/[topic]/[slug]/page.tsx:next-page:1",
-      "service": "foodylanding",
-      "source": "src/app/[lang]/help/[topic]/[slug]/page.tsx",
-      "features": [
-        "landing-offers"
-      ],
-      "kind": "next-page",
-      "route": "/[lang]/help/[topic]/[slug]",
-      "line": 1
-    },
-    {
-      "id": "foodylanding:src/app/[lang]/help/[topic]/[slug]/page.tsx:ui-controls:1",
-      "service": "foodylanding",
-      "source": "src/app/[lang]/help/[topic]/[slug]/page.tsx",
-      "features": [
-        "landing-offers"
-      ],
-      "kind": "ui-controls",
-      "labels": [],
-      "actions": [
-        "updatedAt",
-        "updatedDate"
-      ],
-      "line": 1
-    },
-    {
-      "id": "foodylanding:src/app/[lang]/help/[topic]/page.tsx:next-page:1",
-      "service": "foodylanding",
-      "source": "src/app/[lang]/help/[topic]/page.tsx",
-      "features": [
-        "landing-offers"
-      ],
-      "kind": "next-page",
-      "route": "/[lang]/help/[topic]",
-      "line": 1
-    },
-    {
-      "id": "foodylanding:src/app/[lang]/help/page.tsx:next-page:1",
-      "service": "foodylanding",
-      "source": "src/app/[lang]/help/page.tsx",
-      "features": [
-        "landing-offers"
-      ],
-      "kind": "next-page",
-      "route": "/[lang]/help",
-      "line": 1
-    },
-    {
-      "id": "foodylanding:src/app/[lang]/page.tsx:next-page:1",
-      "service": "foodylanding",
-      "source": "src/app/[lang]/page.tsx",
-      "features": [
-        "landing-offers"
-      ],
-      "kind": "next-page",
-      "route": "/[lang]",
-      "line": 1
-    },
-    {
-      "id": "foodylanding:src/app/[lang]/pricing/page.tsx:next-page:1",
-      "service": "foodylanding",
-      "source": "src/app/[lang]/pricing/page.tsx",
-      "features": [
-        "landing-offers"
-      ],
-      "kind": "next-page",
-      "route": "/[lang]/pricing",
-      "line": 1
-    },
-    {
-      "id": "foodylanding:src/app/[lang]/privacy/page.tsx:next-page:1",
-      "service": "foodylanding",
-      "source": "src/app/[lang]/privacy/page.tsx",
-      "features": [
-        "landing-offers"
-      ],
-      "kind": "next-page",
-      "route": "/[lang]/privacy",
-      "line": 1
-    },
-    {
-      "id": "foodylanding:src/app/[lang]/sectors/beauty/page.tsx:next-page:1",
-      "service": "foodylanding",
-      "source": "src/app/[lang]/sectors/beauty/page.tsx",
-      "features": [
-        "landing-offers"
-      ],
-      "kind": "next-page",
-      "route": "/[lang]/sectors/beauty",
-      "line": 1
-    },
-    {
-      "id": "foodylanding:src/app/[lang]/sectors/chains/page.tsx:next-page:1",
-      "service": "foodylanding",
-      "source": "src/app/[lang]/sectors/chains/page.tsx",
-      "features": [
-        "landing-offers"
-      ],
-      "kind": "next-page",
-      "route": "/[lang]/sectors/chains",
-      "line": 1
-    },
-    {
-      "id": "foodylanding:src/app/[lang]/sectors/food-beverage/page.tsx:next-page:1",
-      "service": "foodylanding",
-      "source": "src/app/[lang]/sectors/food-beverage/page.tsx",
-      "features": [
-        "landing-offers"
-      ],
-      "kind": "next-page",
-      "route": "/[lang]/sectors/food-beverage",
-      "line": 1
-    },
-    {
-      "id": "foodylanding:src/app/[lang]/sectors/food-beverage/restaurants/page.tsx:next-page:1",
-      "service": "foodylanding",
-      "source": "src/app/[lang]/sectors/food-beverage/restaurants/page.tsx",
-      "features": [
-        "landing-offers"
-      ],
-      "kind": "next-page",
-      "route": "/[lang]/sectors/food-beverage/restaurants",
-      "line": 1
-    },
-    {
-      "id": "foodylanding:src/app/[lang]/sectors/professional-services/page.tsx:next-page:1",
-      "service": "foodylanding",
-      "source": "src/app/[lang]/sectors/professional-services/page.tsx",
-      "features": [
-        "landing-offers"
-      ],
-      "kind": "next-page",
-      "route": "/[lang]/sectors/professional-services",
-      "line": 1
-    },
-    {
-      "id": "foodylanding:src/app/[lang]/sectors/retail/page.tsx:next-page:1",
-      "service": "foodylanding",
-      "source": "src/app/[lang]/sectors/retail/page.tsx",
-      "features": [
-        "landing-offers"
-      ],
-      "kind": "next-page",
-      "route": "/[lang]/sectors/retail",
-      "line": 1
-    },
-    {
-      "id": "foodylanding:src/app/[lang]/solutions/[slug]/page.tsx:next-page:1",
-      "service": "foodylanding",
-      "source": "src/app/[lang]/solutions/[slug]/page.tsx",
-      "features": [
-        "landing-offers"
-      ],
-      "kind": "next-page",
-      "route": "/[lang]/solutions/[slug]",
-      "line": 1
-    },
-    {
-      "id": "foodylanding:src/app/[lang]/terms/page.tsx:next-page:1",
-      "service": "foodylanding",
-      "source": "src/app/[lang]/terms/page.tsx",
-      "features": [
-        "landing-offers"
-      ],
-      "kind": "next-page",
-      "route": "/[lang]/terms",
-      "line": 1
-    },
-    {
-      "id": "foodylanding:src/app/api/support/chat/route.ts:next-api-route:1",
-      "service": "foodylanding",
-      "source": "src/app/api/support/chat/route.ts",
-      "features": [
-        "shared-runtime"
-      ],
-      "kind": "next-api-route",
-      "route": "/api/support/chat",
-      "line": 1
-    },
-    {
-      "id": "foodylanding:src/components/help/HelpSearchBar.tsx:ui-controls:1",
-      "service": "foodylanding",
-      "source": "src/components/help/HelpSearchBar.tsx",
-      "features": [
-        "getting-started-complete-setup-guide",
-        "getting-started-how-it-all-connects",
-        "getting-started-using-support"
-      ],
-      "kind": "ui-controls",
-      "labels": [],
-      "actions": [
-        "onClickOutside"
-      ],
-      "line": 1
-    },
-    {
-      "id": "foodylanding:src/components/help/SupportAssistant.tsx:ui-controls:1",
-      "service": "foodylanding",
-      "source": "src/components/help/SupportAssistant.tsx",
-      "features": [
-        "getting-started-complete-setup-guide",
-        "getting-started-how-it-all-connects",
-        "getting-started-using-support"
-      ],
-      "kind": "ui-controls",
-      "labels": [
-        "help.assistant_busy",
-        "help.assistant_close",
-        "help.assistant_description",
-        "help.assistant_heading",
-        "help.assistant_notice",
-        "help.assistant_open",
-        "help.assistant_placeholder",
-        "help.assistant_privacy",
-        "help.assistant_reset",
-        "help.assistant_send",
-        "help.assistant_sources",
-        "help.assistant_title",
-        "help.assistant_you",
-        "help.back_to_help",
-        "help.contact_action",
-        "help.english",
-        "help.privacy_link"
-      ],
-      "actions": [
-        "open"
-      ],
-      "line": 1
-    },
-    {
-      "id": "foodylanding:src/components/help/SupportHeader.tsx:ui-controls:1",
-      "service": "foodylanding",
-      "source": "src/components/help/SupportHeader.tsx",
-      "features": [
-        "getting-started-complete-setup-guide",
-        "getting-started-how-it-all-connects",
-        "getting-started-using-support"
-      ],
-      "kind": "ui-controls",
-      "labels": [
-        "help.account",
-        "help.resources",
-        "help.support_title"
-      ],
-      "actions": [],
-      "line": 1
-    },
-    {
-      "id": "foodylanding:src/components/marketing/ContactForm.tsx:ui-controls:1",
-      "service": "foodylanding",
-      "source": "src/components/marketing/ContactForm.tsx",
-      "features": [
-        "landing-offers"
-      ],
-      "kind": "ui-controls",
-      "labels": [],
-      "actions": [
-        "submit"
-      ],
-      "line": 1
-    },
-    {
       "id": "foodyweb:app/@cart/(.)order/cart/page.tsx:next-page:1",
       "service": "foodyweb",
       "source": "app/@cart/(.)order/cart/page.tsx",
@@ -72031,7 +71978,7 @@
         "asSoonAsPossible",
         "back",
         "batchOrderingClosed",
-        "byWeightHoldHelp",
+        "byWeightActualHelp",
         "byWeightHoldTitle",
         "calendarOrderClosed",
         "cash",
@@ -72140,6 +72087,8 @@
         "verifyCode",
         "verifyPhone",
         "verifyPhoneDescription",
+        "weightHoldChanged",
+        "weightHoldUnavailable",
         "yourCart",
         "yourName",
         "yourOrder"
@@ -74404,6 +74353,23 @@
       "line": 1
     },
     {
+      "id": "foodyweb:components/WeightHoldNotice.tsx:ui-controls:1",
+      "service": "foodyweb",
+      "source": "components/WeightHoldNotice.tsx",
+      "features": [
+        "guest-ordering"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "weightHoldCeiling",
+        "weightHoldMarginHelp",
+        "weightHoldSettlementHelp",
+        "weightHoldUnavailable"
+      ],
+      "actions": [],
+      "line": 1
+    },
+    {
       "id": "foodyweb:components/WifiSheet.tsx:ui-controls:1",
       "service": "foodyweb",
       "source": "components/WifiSheet.tsx",
@@ -75161,6 +75127,279 @@
       "labels": [],
       "actions": [
         "createLineId"
+      ],
+      "line": 1
+    },
+    {
+      "id": "foodylanding:src/app/[lang]/contact/page.tsx:next-page:1",
+      "service": "foodylanding",
+      "source": "src/app/[lang]/contact/page.tsx",
+      "features": [
+        "landing-offers"
+      ],
+      "kind": "next-page",
+      "route": "/[lang]/contact",
+      "line": 1
+    },
+    {
+      "id": "foodylanding:src/app/[lang]/help/[topic]/[slug]/page.tsx:next-page:1",
+      "service": "foodylanding",
+      "source": "src/app/[lang]/help/[topic]/[slug]/page.tsx",
+      "features": [
+        "landing-offers"
+      ],
+      "kind": "next-page",
+      "route": "/[lang]/help/[topic]/[slug]",
+      "line": 1
+    },
+    {
+      "id": "foodylanding:src/app/[lang]/help/[topic]/[slug]/page.tsx:ui-controls:1",
+      "service": "foodylanding",
+      "source": "src/app/[lang]/help/[topic]/[slug]/page.tsx",
+      "features": [
+        "landing-offers"
+      ],
+      "kind": "ui-controls",
+      "labels": [],
+      "actions": [
+        "updatedAt",
+        "updatedDate"
+      ],
+      "line": 1
+    },
+    {
+      "id": "foodylanding:src/app/[lang]/help/[topic]/page.tsx:next-page:1",
+      "service": "foodylanding",
+      "source": "src/app/[lang]/help/[topic]/page.tsx",
+      "features": [
+        "landing-offers"
+      ],
+      "kind": "next-page",
+      "route": "/[lang]/help/[topic]",
+      "line": 1
+    },
+    {
+      "id": "foodylanding:src/app/[lang]/help/page.tsx:next-page:1",
+      "service": "foodylanding",
+      "source": "src/app/[lang]/help/page.tsx",
+      "features": [
+        "landing-offers"
+      ],
+      "kind": "next-page",
+      "route": "/[lang]/help",
+      "line": 1
+    },
+    {
+      "id": "foodylanding:src/app/[lang]/page.tsx:next-page:1",
+      "service": "foodylanding",
+      "source": "src/app/[lang]/page.tsx",
+      "features": [
+        "landing-offers"
+      ],
+      "kind": "next-page",
+      "route": "/[lang]",
+      "line": 1
+    },
+    {
+      "id": "foodylanding:src/app/[lang]/pricing/page.tsx:next-page:1",
+      "service": "foodylanding",
+      "source": "src/app/[lang]/pricing/page.tsx",
+      "features": [
+        "landing-offers"
+      ],
+      "kind": "next-page",
+      "route": "/[lang]/pricing",
+      "line": 1
+    },
+    {
+      "id": "foodylanding:src/app/[lang]/privacy/page.tsx:next-page:1",
+      "service": "foodylanding",
+      "source": "src/app/[lang]/privacy/page.tsx",
+      "features": [
+        "landing-offers"
+      ],
+      "kind": "next-page",
+      "route": "/[lang]/privacy",
+      "line": 1
+    },
+    {
+      "id": "foodylanding:src/app/[lang]/sectors/beauty/page.tsx:next-page:1",
+      "service": "foodylanding",
+      "source": "src/app/[lang]/sectors/beauty/page.tsx",
+      "features": [
+        "landing-offers"
+      ],
+      "kind": "next-page",
+      "route": "/[lang]/sectors/beauty",
+      "line": 1
+    },
+    {
+      "id": "foodylanding:src/app/[lang]/sectors/chains/page.tsx:next-page:1",
+      "service": "foodylanding",
+      "source": "src/app/[lang]/sectors/chains/page.tsx",
+      "features": [
+        "landing-offers"
+      ],
+      "kind": "next-page",
+      "route": "/[lang]/sectors/chains",
+      "line": 1
+    },
+    {
+      "id": "foodylanding:src/app/[lang]/sectors/food-beverage/page.tsx:next-page:1",
+      "service": "foodylanding",
+      "source": "src/app/[lang]/sectors/food-beverage/page.tsx",
+      "features": [
+        "landing-offers"
+      ],
+      "kind": "next-page",
+      "route": "/[lang]/sectors/food-beverage",
+      "line": 1
+    },
+    {
+      "id": "foodylanding:src/app/[lang]/sectors/food-beverage/restaurants/page.tsx:next-page:1",
+      "service": "foodylanding",
+      "source": "src/app/[lang]/sectors/food-beverage/restaurants/page.tsx",
+      "features": [
+        "landing-offers"
+      ],
+      "kind": "next-page",
+      "route": "/[lang]/sectors/food-beverage/restaurants",
+      "line": 1
+    },
+    {
+      "id": "foodylanding:src/app/[lang]/sectors/professional-services/page.tsx:next-page:1",
+      "service": "foodylanding",
+      "source": "src/app/[lang]/sectors/professional-services/page.tsx",
+      "features": [
+        "landing-offers"
+      ],
+      "kind": "next-page",
+      "route": "/[lang]/sectors/professional-services",
+      "line": 1
+    },
+    {
+      "id": "foodylanding:src/app/[lang]/sectors/retail/page.tsx:next-page:1",
+      "service": "foodylanding",
+      "source": "src/app/[lang]/sectors/retail/page.tsx",
+      "features": [
+        "landing-offers"
+      ],
+      "kind": "next-page",
+      "route": "/[lang]/sectors/retail",
+      "line": 1
+    },
+    {
+      "id": "foodylanding:src/app/[lang]/solutions/[slug]/page.tsx:next-page:1",
+      "service": "foodylanding",
+      "source": "src/app/[lang]/solutions/[slug]/page.tsx",
+      "features": [
+        "landing-offers"
+      ],
+      "kind": "next-page",
+      "route": "/[lang]/solutions/[slug]",
+      "line": 1
+    },
+    {
+      "id": "foodylanding:src/app/[lang]/terms/page.tsx:next-page:1",
+      "service": "foodylanding",
+      "source": "src/app/[lang]/terms/page.tsx",
+      "features": [
+        "landing-offers"
+      ],
+      "kind": "next-page",
+      "route": "/[lang]/terms",
+      "line": 1
+    },
+    {
+      "id": "foodylanding:src/app/api/support/chat/route.ts:next-api-route:1",
+      "service": "foodylanding",
+      "source": "src/app/api/support/chat/route.ts",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "next-api-route",
+      "route": "/api/support/chat",
+      "line": 1
+    },
+    {
+      "id": "foodylanding:src/components/help/HelpSearchBar.tsx:ui-controls:1",
+      "service": "foodylanding",
+      "source": "src/components/help/HelpSearchBar.tsx",
+      "features": [
+        "getting-started-complete-setup-guide",
+        "getting-started-how-it-all-connects",
+        "getting-started-using-support"
+      ],
+      "kind": "ui-controls",
+      "labels": [],
+      "actions": [
+        "onClickOutside"
+      ],
+      "line": 1
+    },
+    {
+      "id": "foodylanding:src/components/help/SupportAssistant.tsx:ui-controls:1",
+      "service": "foodylanding",
+      "source": "src/components/help/SupportAssistant.tsx",
+      "features": [
+        "getting-started-complete-setup-guide",
+        "getting-started-how-it-all-connects",
+        "getting-started-using-support"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "help.assistant_busy",
+        "help.assistant_close",
+        "help.assistant_description",
+        "help.assistant_heading",
+        "help.assistant_notice",
+        "help.assistant_open",
+        "help.assistant_placeholder",
+        "help.assistant_privacy",
+        "help.assistant_reset",
+        "help.assistant_send",
+        "help.assistant_sources",
+        "help.assistant_title",
+        "help.assistant_you",
+        "help.back_to_help",
+        "help.contact_action",
+        "help.english",
+        "help.privacy_link"
+      ],
+      "actions": [
+        "open"
+      ],
+      "line": 1
+    },
+    {
+      "id": "foodylanding:src/components/help/SupportHeader.tsx:ui-controls:1",
+      "service": "foodylanding",
+      "source": "src/components/help/SupportHeader.tsx",
+      "features": [
+        "getting-started-complete-setup-guide",
+        "getting-started-how-it-all-connects",
+        "getting-started-using-support"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "help.account",
+        "help.resources",
+        "help.support_title"
+      ],
+      "actions": [],
+      "line": 1
+    },
+    {
+      "id": "foodylanding:src/components/marketing/ContactForm.tsx:ui-controls:1",
+      "service": "foodylanding",
+      "source": "src/components/marketing/ContactForm.tsx",
+      "features": [
+        "landing-offers"
+      ],
+      "kind": "ui-controls",
+      "labels": [],
+      "actions": [
+        "submit"
       ],
       "line": 1
     },
@@ -79459,9 +79698,9 @@
   "coverage": {
     "sharedRuntimeFiles": 427,
     "features": 98,
-    "operations": 383,
-    "sourceFiles": 2062,
-    "surfaces": 1975,
+    "operations": 395,
+    "sourceFiles": 2065,
+    "surfaces": 1976,
     "unclassifiedRoutes": []
   }
 }

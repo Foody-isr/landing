@@ -17,6 +17,12 @@ releaseStatus: available
 ---
 POS → Tables / Order entry
 
+<span id="weight-hold-margin" />
+
+## Review the by-weight authorization ceiling
+
+For online by-weight orders, open Settings → Payments & VAT with settings.edit. Set Weight hold buffer % from 0 to 100 and save; the default for new restaurants is 20. A failed save keeps the draft. Zero still authorizes the estimate. Only the weight-priced subtotal gets a margin: 100 weighted + 50 fixed at 20% authorizes 170; delivery has no extra margin. Checkout shows the estimate, temporary ceiling and Confirm and authorize, in the restaurant theme. A changed ceiling requires customer review and another confirmation before payment; unknown policy blocks authorization. Existing reviewed checkouts and holds keep their ceiling. Staff confirm measured weights before capture and progression; excess beyond the hold is flagged for a separate payment, never automatically charged. Cash/pay-later makes no hold promise. Requires a configured authorize/capture provider, with partial capture, release and expiry validated before production. This neither changes the catering deposit/balance policy nor enables new-card saving with a CST weighted hold.
+
 <span id="start" />
 
 ## Start the intended check

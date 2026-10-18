@@ -14,6 +14,12 @@ releaseStatus: available
 ---
 Open Settings → Payments or Cibus with the required permission. Provider availability is specific to the restaurant’s contract and deployed integration.
 
+<span id="weight-hold-margin" />
+
+## Review the by-weight authorization ceiling
+
+For online by-weight orders, open Settings → Payments & VAT with settings.edit. Set Weight hold buffer % from 0 to 100 and save; the default for new restaurants is 20. A failed save keeps the draft. Zero still authorizes the estimate. Only the weight-priced subtotal gets a margin: 100 weighted + 50 fixed at 20% authorizes 170; delivery has no extra margin. Checkout shows the estimate, temporary ceiling and Confirm and authorize, in the restaurant theme. A changed ceiling requires customer review and another confirmation before payment; unknown policy blocks authorization. Existing reviewed checkouts and holds keep their ceiling. Staff confirm measured weights before capture and progression; excess beyond the hold is flagged for a separate payment, never automatically charged. Cash/pay-later makes no hold promise. Requires a configured authorize/capture provider, with partial capture, release and expiry validated before production. This neither changes the catering deposit/balance policy nor enables new-card saving with a CST weighted hold.
+
 <span id="provider" />
 
 ## Arrange provider activation
@@ -36,7 +42,7 @@ In Cibus check whether the integration is enabled. With settings permission, rep
 
 ## Set payment policy, VAT and tips
 
-In Settings → Payments review online-payment-only policy, default VAT and tips enablement. Only permitted, changed fields are saved. An unknown policy remains unknown until explicitly chosen; editing VAT must not silently choose it. Weight authorization buffer and fixed suggested-tip/rounding behavior are read-only or have no edit contract here. Verify saved values after success; retain edits on a failed save.
+In Settings → Payments review online-payment-only policy, default VAT and tips enablement. Only permitted, changed fields are saved. An unknown policy remains unknown until explicitly chosen; editing VAT must not silently choose it. The weight authorization margin has its own editable field, explained below. Fixed suggested tips and rounding remain outside this form's edit contract. Verify saved values after success; retain edits on a failed save.
 
 <span id="verifone-cst-card-saving" />
 
