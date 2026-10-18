@@ -14,155 +14,56 @@ featureId: menu-variants-and-sizes
 audience: public
 releaseStatus: available
 ---
-Open the corresponding Foody workspace described below.
+Open an item and use Price and variants in its editor.
 
 <span id="section-1" />
 
-## What Variants Are
-
-A **variant** is a version of the same item sold at a distinct price. Common cases:
-
-* Sizes: Small / Medium / Large.
-* Styles: Classic / Spicy.
-* Bowls: 250 ml / 500 ml.
-* Meat choices: Chicken / Beef.
-
-Variants live on the item. When a customer orders, they pick exactly one per variant group.
-
-> One item can have multiple variant groups (e.g. "Size" + "Sauce"), but this is rarely needed. For customer-selectable extras, use [Modifiers](./modifiers) instead.
-
----
-
-<span id="section-2" />
-
-## Creating a Variant Group
-
-1. Open the item in `Menu → Items`.
-2. In the Détails tab, scroll to the **Variantes** section.
-3. Click **Ajouter** (or **Modifier** if one already exists).
-
-4. Give the group a name (e.g. "Taille", "Size", "Flavor"). This is internal-ish — customers see the rows, not the group name.
-5. Add one row per variant. Each row has:
-   * **Name** — shown to the customer ("Normal", "Grand", "250 g").
-   * **Price** — replaces the item's base price when this variant is selected.
-   * **Portion** — size of the serving (with unit: g, ml, kg, l, unit).
-   * **Status** — Available / Out of stock.
-
-6. Click **Terminé**.
-
----
-
 <span id="section-3" />
-
-## Understanding Each Field
-
-Understanding Each Field
-
-<span id="section-4" />
-
-### Name
-
-The label the customer picks. Keep it short and natural ("Normal", "Grand", "Petit", "XL").
 
 <span id="section-5" />
 
-### Price
-
-Absolute price — not a delta. Typing `70` for Normal and `140` for Grand makes the item cost exactly that per variant, regardless of the item's base price.
-
 <span id="section-6" />
 
-### Portion
+## Understand price and portion
 
-Two related jobs:
+A variant describes a size or version of an item. Its price is an absolute amount replacing the base price; modifiers are additional amounts. Portion describes serving size. Ingredient quantities are entered separately under Recipe and cost, per serving or variant.
 
-1. **What customers see** on the web menu: "Grand 500 g" under the variant label.
-2. **Recipe scaling** on the Recette tab: ingredients scoped as "Match item size" use the variant's portion as the consumed quantity. See [Ingredients & Portions](./ingredients-and-portions).
+<span id="section-2" />
 
-Pick a unit family consistent with your recipe:
+<span id="section-4" />
 
-* Soup: ml.
-* Hamburger: unit.
-* Plate: g.
+## Add and save variants
+
+Open the item from Menu → Items and scroll to Price and variants. Edit groups and rows directly in this section. Add a set if needed, enter its title and use Add variant for each size. Fill Name, Price, Portion and Status, then Save in the item header. Do not look for the old Details tab or a Done button to commit all variants.
 
 <span id="section-7" />
 
-### Status
+<span id="section-9" />
 
-Toggle to Out of stock when you're sold out for the day. The variant grays out on POS / web without deleting it. Flip back to Available when restocked.
+## Availability, order and combo-only rows
 
----
+Status offers Available and Unavailable. Arrows reorder rows; the bin removes a row and Remove detaches the group from the item. Combo-only marks rows not sold on their own. Check order and prices before Save. Past orders retain their own sale snapshots.
 
 <span id="section-8" />
 
-## Reusing a Variant Group Across Items
+## Reuse a saved option set
 
-Variant groups in Foody are backed by **Option Sets** — a reusable pool. When you type a name that matches an existing Option Set, you get a suggestion to apply it.
-
-Applying an existing group attaches its rows to this item. You can then override per-item:
-
-* Price (different price for this item).
-* Portion.
-* Status.
-
-Updating the **name** of a row on the Option Set level propagates everywhere. Useful for "Size" groups shared across many burgers.
-
----
-
-<span id="section-9" />
-
-## Removing or Hiding a Variant
-
-* **Hide temporarily** (keeping history intact): flip Status → Out of stock. Recommended for seasonal or sold-out items.
-* **Delete**: trash icon on the row. Deletes the variant from this item; if it's on an Option Set used elsewhere, it stays there.
-
-Deleting a variant that has order history doesn't touch the past orders — they still show the variant name and price as sold.
-
----
+Click Saved option sets on the relevant group, search and select a set in the picker. Typing a matching group title alone does not apply a set. Review imported rows, prices, portions and status, then save the item. Check other affected items before changing a shared library.
 
 <span id="section-10" />
 
-## Examples
-
-Examples
-
 <span id="section-11" />
-
-### Burger sizes
-
-| Variant | Price | Portion |
-|---|---|---|
-| Normal | ₪70 | 1 unit |
-| Grand | ₪140 | 2 unit |
-
-On the Recette tab, flag the beef ingredient as "Custom per variant" with 200 g for Normal, 400 g for Grand. Bread / sauce stay Fixed.
 
 <span id="section-12" />
 
-### Soup bowls
-
-| Variant | Price | Portion |
-|---|---|---|
-| Bowl | ₪18 | 250 ml |
-| Large bowl | ₪32 | 500 ml |
-
-On the Recette tab, the soup prep ingredient is scoped as "Match item size". No quantity to type; the system draws 250 ml or 500 ml automatically.
-
 <span id="section-13" />
 
-### Drink sizes
+## Connect sizes to the recipe
 
-| Variant | Price | Portion |
-|---|---|---|
-| Small | ₪12 | 330 ml |
-| Medium | ₪16 | 500 ml |
-| Large | ₪22 | 750 ml |
-
----
+Under Recipe and cost, enable different quantities per size and fill the variant columns. Example: 200 g meat for Regular and 400 g for Large, with Same quantity for an identical bun. For soup, explicitly enter 250 ml and 500 ml in the columns; Portion text alone does not supply those quantities. Check missing-quantity warnings.
 
 <span id="section-14" />
 
-## What Next
+## Check after saving
 
-* [How to Configure Ingredients & Portions](./ingredients-and-portions) — hook variants into your recipe and cost.
-* [Creating a Menu Item](./creating-a-menu-item) — full item walkthrough.
+Reopen the item to check saved rows, then inspect the enabled POS or web channel. If saving fails, retain the input and retry before closing. [Create an item](./creating-a-menu-item) · [Recipe quantities](./ingredients-and-portions).

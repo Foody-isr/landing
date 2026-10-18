@@ -18,510 +18,135 @@ tags:
   - reorder
   - categories
   - supplier
-updatedAt: '2026-04-10'
+updatedAt: '2026-10-18'
 featureId: kitchen-stock-management
 audience: public
 releaseStatus: available
 ---
-Open the corresponding Foody workspace described below.
+Kitchen → Stock: operational ingredient list, quantities and movements.
 
 <span id="section-1" />
 
-## What Is It?
-
-**Stock Management** lets you know:
-
-- What you have in the kitchen
-- What you use every day
-- Where you're losing money
-
-This is the foundation for controlling your food cost.
-
-<span id="section-2" />
-
-### How It Works (Simply)
-
-Your system relies on three elements:
-
-- **Stock** — what you have
-- **Recipes** — what you should use
-- **Sales / Reality** — what was actually used
-
-The difference between expected and actual usage = **loss or error**.
-
-Recipes bridge stock and menu. When you link ingredients to menu items (in **Kitchen > Recipes**), the system can:
-
-- Automatically deduct stock at end of day
-- Calculate your food cost
-- Detect losses and over-portioning
-- Help you forecast tomorrow's orders
-
-Navigate to **Kitchen > Stock** in FoodyAdmin to get started.
-
----
-
 <span id="section-3" />
 
-## The Dashboard
+## Read the current stock list
 
-At the top of the page, three summary cards give you a quick snapshot:
-
-| Card | Shows | Details |
-|------|-------|---------|
-| **Total Items** | Count of all stock items | Your full ingredient catalog |
-| **Low Stock** | Count of items at or below reorder threshold | Turns red when any item needs restocking |
-| **Inventory Value** | Sum of (quantity × cost per unit) for all items | Total value of what's in storage |
-
----
-
-<span id="section-4" />
-
-## Adding & Editing Stock Items
-
-1. Go to **Kitchen > Stock**.
-2. Click **Add Item** (top right).
-3. Fill in the fields and click **Create**.
-
-To edit an existing item, click the pencil icon on its row.
-
-The create/edit modal has **two tabs**:
-
-<span id="section-5" />
-
-### Tab: General
-
-Basic information about the item.
-
-| Field | Required | Description |
-|-------|----------|-------------|
-| **Name** | Yes | Ingredient name (e.g., "Olive Oil", "Chicken Breast") |
-| **Unit** | Yes | How you count this item — see [Understanding Units](#understanding-units) below |
-| **Quantity** | No | Current stock level (default 0) |
-| **Supplier** | No | Supplier name — used for grouping in purchase orders |
-| **Category** | No | Free-text label for organizing and filtering (e.g., "Dairy", "Meat", "Produce") |
-| **Notes** | No | Internal notes or instructions |
-| **Active** | No | Defaults to on. Inactive items are hidden from recipes and daily operations |
-
-<span id="section-6" />
-
-### Tab: Packaging & Pricing
-
-How the item is packaged and what it costs. Choose one of **three packaging modes**:
-
-**Simple** — For items bought by weight or volume (e.g., 5kg flour, 3L oil). Just enter cost per stock unit.
-
-**By units** — For individual containers (e.g., 6 bottles of 1.5L). Enter the content per unit (e.g., 1.5L) and cost per stock unit.
-
-**By packages** — For boxes containing multiple units (e.g., 2 cartons of 12 cans of 400g). Enter units per package, content per unit, and cost per stock unit.
-
-The modal shows a **live price summary** that updates as you type, showing HT and TTC prices at every level (per stock unit, per individual unit, per package).
-
-> **Example — Tomato Pulp (By packages mode):**
-> Set units/package = 12, content/unit = 400g, cost = 0.0121 ₪/g.
-> The summary shows: 4.83 ₪ HT / 5.70 ₪ TTC per can, 58.00 ₪ HT / 68.44 ₪ TTC per box.
-
-| Field | Description |
-|-------|-------------|
-| **Units/Package** | How many individual units in one package (e.g., 12 cans per box) |
-| **Content/Unit** | What's inside each unit (e.g., 400g per can) |
-| **Cost per Unit** | Your purchase cost per stock unit (e.g., ₪/g) |
-| **Reorder Threshold** | Quantity at which a low-stock alert triggers |
-
----
-
-<span id="section-7" />
-
-## Understanding Units
-
-This is the most important concept in stock management. There are **two layers** of units.
-
-<span id="section-8" />
-
-### Layer 1: Stock Unit
-
-The stock unit defines **how you count** the item in inventory. There are 10 options in three groups:
-
-| Group | Units | What you're counting |
-|-------|-------|---------------------|
-| **Measurable** | kg, g, l, ml | Weight or volume directly |
-| **Container** | unit, pack, box, bag | Discrete countable things |
-| **Special** | dose, other | Custom use cases |
-
-<span id="section-9" />
-
-### Layer 2: Content per Unit
-
-When you pick a **container** unit (unit, pack, box, or bag), two extra fields appear: **Content per Unit** and **Content Unit**. These answer the question: *"What's inside each container?"*
-
-For example, if you buy canned tomatoes by the box and each can is 400g:
-- Stock unit = **box**
-- Content per unit = **400**
-- Content unit = **g**
-
-<span id="section-10" />
-
-### Why Is Content Unit Limited to g, kg, ml, l?
-
-Because conversion only works between **measurable** units. The system knows:
-
-- 1 kg = 1000 g
-- 1 l = 1000 ml
-
-This lets it convert between how you **buy** (boxes, packs) and how recipes **consume** (grams, milliliters). You can't meaningfully convert "3 boxes" to "X packs" — those are arbitrary containers. But you *can* convert "3 boxes of 400g" to "1200g".
-
-<span id="section-11" />
-
-### Practical Examples
-
-| Ingredient | Stock Unit | Content per Unit | Content Unit | Why |
-|-----------|-----------|-----------------|-------------|-----|
-| Canned tomatoes | box | 400 | g | You count boxes. Each can is 400g. Recipes use grams. |
-| Olive oil | unit (bottle) | 750 | ml | You count bottles. Each is 750ml. Recipes use ml. |
-| Flour | bag | 1 | kg | You count bags. Each is 1kg. Recipes use grams or kg. |
-| Eggs | unit | — | — | You count individual eggs. No content needed — recipes count eggs by piece, not by weight. |
-| Milk | l | — | — | You measure in liters directly. No container layer needed. |
-| Ground beef | kg | — | — | You weigh in kilograms directly. |
-
-<span id="section-12" />
-
-### Choosing the Right Approach
-
-> **Tip:** Use a **measurable unit** (kg, g, l, ml) when you weigh or measure the ingredient directly — bulk items like flour by the kilo, milk by the liter. Use a **container unit** (unit, pack, box, bag) when you count discrete packages and need the system to know what's inside each one for recipe conversions. For items counted individually like eggs, use **unit** with no content — recipes will reference them by count.
-
----
-
-<span id="section-13" />
-
-## Stock Transactions
-
-> **Important:** Never modify stock directly. Every change should be a **transaction**. This lets you understand exactly where your stock came from, where it was used, and where you're losing product.
-
-<span id="section-14" />
-
-### Recording a Transaction
-
-1. Click the **receive** icon (arrow down) on the item row, or open the item and choose a transaction type.
-2. Select the transaction type.
-3. Enter the quantity (always positive — the system applies the correct sign).
-4. Add optional notes (e.g., "Morning delivery from Supplier X").
-5. Review the preview showing current and resulting quantity, then confirm.
-
-<span id="section-15" />
-
-### Transaction Types
-
-| Type | Effect | Use for |
-|------|--------|---------|
-| **Receive** | Adds to quantity | Deliveries, restocking, purchases |
-| **Waste** | Subtracts from quantity | Spoilage, damage, expired items |
-| **Adjust** | Subtracts from quantity | Corrections after a physical count |
-
-<span id="section-16" />
-
-### System-Generated Transactions
-
-Two additional transaction types appear in your history but are created automatically — you don't enter these manually:
-
-- **Deduct** — created when you close the day in **Daily Operations**. The system calculates how much of each ingredient was used (based on recipes and sales) and deducts it.
-- **Produce** — created when prep production consumes ingredients in the prep system.
-
----
-
-<span id="section-17" />
-
-## Stock History
-
-To view the full transaction history for any item, click the **clock icon** on its row. The history shows the last 50 transactions with:
-
-- Transaction type (color-coded badge)
-- Notes
-- Date and time
-- Quantity change (green for additions, red for deductions)
-
-<span id="section-18" />
-
-### Transaction Color Reference
-
-| Type | Color | Meaning |
-|------|-------|---------|
-| Receive | Green | Stock added from a delivery or purchase |
-| Deduct | Red | Used in sales (via daily operations) |
-| Waste | Orange | Spoilage or damage |
-| Adjust | Blue | Manual correction |
-| Produce | Purple | Consumed during prep production |
-
----
-
-<span id="section-19" />
-
-## Understanding Losses
-
-The system constantly compares:
-
-- **Expected consumption** (from your recipes)
-- **Actual consumption** (from your stock)
-
-The difference is called **variance**.
-
-<span id="section-20" />
-
-### A Simple Example
-
-You receive 2kg of cod. During the day you sell:
-- 8 Fish Burgers (100g each) = 800g
-- 18 Ceviches (50g each) = 900g
-
-Expected consumption = 1700g. But at the end of the day, nothing is left. You lost 300g.
-
-<span id="section-21" />
-
-### Why Does This Happen?
-
-The most common causes:
-
-- Over-portioning
-- Kitchen mistakes
-- Products thrown away or expired
-- Incorrectly configured recipes
-- Unrecorded sales
-
-<span id="section-22" />
-
-### Why It Matters
-
-Even a small loss adds up fast. 300g of cod = several lost dishes = lost revenue every single day.
-
-Use **Daily Operations** to detect these variances automatically, day after day.
-
----
-
-<span id="section-23" />
-
-## Low-Stock Alerts
-
-Set a **Reorder Threshold** on any item to enable alerts. When the item's quantity drops to or below the threshold, it's flagged as low stock.
-
-Three places show low-stock warnings:
-
-1. **Item row** — a red "LOW STOCK" badge appears next to the item in the table
-2. **Dashboard card** — the Low Stock count turns red
-3. **Sidebar** — a red number badge appears next to "Stock" in the navigation menu
-
-Use the **Low Stock Only** checkbox in the filters to quickly see all items that need restocking.
-
-> **Tip:** Set your reorder threshold based on your delivery cycle. If you receive deliveries twice a week, set the threshold to roughly 2-3 days of typical usage. This gives you time to order before you run out.
-
----
-
-<span id="section-24" />
-
-## Categories
-
-Categories help you organize ingredients into logical groups (e.g., "Dairy", "Meat", "Produce", "Dry Goods").
-
-- **Assign a category** when creating or editing an item. Start typing to auto-complete from existing categories, or type a new name to create one.
-- **Color-coded dots** appear next to each category in the table for quick visual scanning.
-- **Filter by category** using the dropdown above the table to view one category at a time.
-
-> **Tip:** Keep category names consistent. Decide on "Dairy" or "Milk Products" and stick with it. Inconsistent naming creates duplicate categories that fragment your filtering.
-
----
-
-<span id="section-25" />
-
-## AI Delivery Import
-
-Save time by letting AI extract items from delivery notes and invoices automatically. The import uses a full-screen split view: the original document is displayed on the left for reference while you review extracted items on the right.
-
-<span id="section-26" />
-
-### Step 1: Select Supplier & Upload
-
-1. Click the **Import Delivery** button (sparkle icon) at the top of the page.
-2. **Select a supplier** from your existing supplier list, or choose **+ New supplier** and type the name. Selecting a known supplier improves extraction accuracy — the system uses supplier-specific hints learned from previous imports.
-3. Upload a photo of a delivery note or a PDF invoice.
-4. Click **Upload and Analyze**. The AI uses Google Vision OCR combined with Claude AI for maximum accuracy.
-
-<span id="section-27" />
-
-### Step 2: Review & Confirm
-
-The screen splits into two panels: your original document on the left, and extracted items on the right. For each item:
-
-- **Match to existing stock** using the searchable dropdown, or leave as "new" to create a new item. The **original name** (in the supplier's language) is shown for reference.
-- **Edit packaging details** — the system supports a 3-level breakdown:
-  - **Pack count** — number of packages/boxes (e.g., 2 boxes)
-  - **Units/Pack** — number of individual units per package (e.g., 12 cans per box)
-  - **Price per pack** and **Total price** — auto-calculate each other
-- **Edit unit details**:
-  - **Unit size** — content per individual unit (e.g., 400g per can)
-  - **Unit** — the stock unit (g, kg, l, ml, etc.)
-  - **Stock quantity** — auto-calculated: packs × units/pack × unit size (e.g., 2 × 12 × 400 = 9,600g)
-- **VAT toggle** — check "Price includes VAT" in the header if the supplier's prices include tax. This flag is saved per item so food cost calculations are accurate.
-- **Assign a category** for new items.
-
-> **Example — Tomato Pulp (3-level breakdown):**
-> Your invoice shows "Tomato Pulp 400g × 2" at 58₪ each. Each "unit" is actually a box containing 12 cans of 400g. Here's how to fill it in:
->
-> | Field | Value | Meaning |
-> |-------|-------|---------|
-> | Pack count | 2 | 2 boxes |
-> | Units/Pack | 12 | 12 cans per box |
-> | Price/Pack | 58 ₪ | Price per box |
-> | Total | 116 ₪ | 2 × 58 ₪ |
-> | Unit size | 400 | 400g per can |
-> | Unit | g | Stock tracked in grams |
-> | Stock quantity | 9,600 g | Auto: 2 × 12 × 400 = 9,600g |
->
-> The cost per unit is automatically calculated: 116 ÷ 9,600 = **0.012 ₪/g**.
-
-Click **Confirm Import** to save. Each item receives a "receive" transaction, and new items are created in your stock.
-
-<span id="section-28" />
-
-### Supplier Extraction Hints
-
-When you import from a supplier for the first time, the system automatically analyzes the document format and generates **extraction hints** (language, layout type, column order). These hints are saved on the supplier record and used for future imports to improve accuracy.
-
-You can view and edit these hints in **Kitchen → Suppliers → Edit supplier → AI Extraction Hints**.
-
-> **Tip:** Take clear, well-lit photos of delivery notes. The AI works best with legible text, consistent formatting, and visible prices.
-
-> **Tip:** The system learns from your corrections. When you match a delivery item to an existing stock item, it creates an alias so future deliveries from the same supplier are matched automatically.
-
-<span id="section-29" />
-
-### Saving Drafts
-
-If you need to stop mid-import, click **Save Draft** in the header. The entire extraction, your edits, and the scanned document are saved to the server.
-
-Resume from **Kitchen → Supplies** (Approvisionnements) — pending imports appear at the top of the page as cards showing the supplier name, item count, and a thumbnail of the document. Click **Resume** to re-open the full-screen review with the document preview intact.
-
-Multiple drafts are supported. Drafts are automatically deleted when you confirm the import.
-
-<span id="section-30" />
-
-### VAT on Stock Items
-
-Each stock item tracks whether its cost includes VAT or not. Use the **Show ex. VAT / Show inc. VAT** toggle on the stock page (under Inventory Value) to switch the display. The system normalizes all costs to the same basis for accurate food cost calculations.
-
-Configure your restaurant's VAT rate in **Settings → VAT Rate (%)**. Default is 18% for Israel.
-
----
-
-<span id="section-31" />
-
-## Bulk Operations
-
-Select multiple items using the checkboxes in the table (or the select-all checkbox in the header). A toolbar appears with two actions:
-
-- **Update Category** — assign all selected items to a category. Pick from existing categories or type a new one.
-- **Delete** — remove all selected items. Requires confirmation.
-
----
-
-<span id="section-32" />
-
-## AI Recipe Import
-
-Import recipes by uploading a photo/PDF or pasting text. The AI extracts ingredients, quantities, and matches them to your stock items. Available from **Food Cost** page and **Recipe detail** page (sparkle icon).
-
-<span id="section-33" />
-
-### How It Works
-
-1. Choose **Paste Text** or **Upload File** (image or PDF).
-2. Click **Extract Recipe**. The AI processes the content.
-3. Review in **full-screen split view** — original document or text on the left, extracted ingredients on the right.
-4. For each ingredient:
-   - Match to an existing stock item or leave as "new" to create one
-   - Edit quantity, unit, cost per unit, and category
-   - The **original name** (in the source language) is shown for reference
-   - Price summary shows line cost (quantity × cost) in both HT and TTC
-5. Set the **recipe yield** (e.g., 1.2 kg) at the top.
-6. Click **Confirm Import** to save the recipe and create any new stock items.
-
----
+Stock shows a search/filter toolbar, Actions, Create item when permitted and an ingredient table. It no longer has the old Total Items, Low Stock and Inventory Value KPI cards. Value is shown per row and on the ingredient record, not in a summary card above the list.
 
 <span id="section-34" />
 
-## Search & Filters
+<span id="section-23" />
 
-Three filtering tools are always visible above the table:
+## Search and filter by category or status
 
-| Filter | How it works |
-|--------|-------------|
-| **Search** | Filters items by name as you type |
-| **Category dropdown** | Shows only items in the selected category |
-| **Low Stock Only** | Checkbox — shows only items at or below reorder threshold |
-
-Filters combine with AND logic. For example, searching "chicken" with category "Meat" shows only meat items with "chicken" in the name.
-
----
+Search by name. Category selects categories; Status offers Low Stock and OK. All Filters opens the combined filter panel. Criteria combine. Select Low Stock under Status to isolate ingredients needing restocking. Do not look for the old Low Stock Only checkbox. An empty filtered list is different from a loading error.
 
 <span id="section-35" />
 
-## Table Columns
-
-The stock table keeps things focused on what matters day-to-day. The header stays pinned to the top while you scroll, so you always know which column you're looking at.
-
-| Column | Default | Description |
-|--------|---------|-------------|
-| Category | Visible | Item category with color dot |
-| Quantity | Visible | Current stock, shown at your chosen packaging level (see below) |
-| Price | Visible | Unit price at the same packaging level as Quantity |
-| Supplier | Visible | Supplier name |
-| Status | Visible | OK or Low Stock alert |
-
-Click the **gear icon** (⚙) next to the filters to hide any column you don't need. Preferences are saved per restaurant.
-
 <span id="section-36" />
 
-## Quantity & Price — Click to Switch Level
+## Read columns and packaging levels
 
-Quantity and Price are displayed together at the same **packaging level**. By default the table shows the level that matches how you *think* about your stock — not the raw base unit.
+The table includes name, category, quantity, price, total row value, supplier and status. Status flags Low Stock when the configured threshold is reached, otherwise showing the appropriate item state. Quantity and Price cells cycle available packaging display levels. This changes presentation, not stock. There is no gear column selector beside this page’s filters. An active ingredient with zero quantity also counts as Low Stock, even without a positive threshold.
 
-**Click any Quantity or Price cell to cycle through the available levels for that row.** Your choice is remembered per item.
+<span id="section-4" />
 
-**Example — 2 cartons of 12 cans of 400g tomatoes, bought for 116 ₪ (nested):**
+<span id="section-5" />
 
-| Level | Quantity shown | Price shown |
-|-------|---------------|-------------|
-| Carton (outer) | 2 cartons (of 12 cans × 400g) | 58.00 ₪ / carton |
-| **Can (middle — default)** | **24 cans** | **4.83 ₪ / can** |
-| Gram (base) | 9.6 kg | 12.08 ₪ / kg |
+## Create or edit an ingredient record
 
-**Example — 4 bottles of 900ml oil for 40 ₪ (direct, no middle level):**
+With kitchen management permission, click Create item or open an existing row. The full-screen editor is continuous with a side summary; it does not have the old General and Packaging & Pricing tabs. Work through Identity & purchase, Purchase & price, Units and conversions, reorder threshold and Invoice names. Save commits the record.
 
-| Level | Quantity shown | Price shown |
-|-------|---------------|-------------|
-| **Bottle (default)** | **4 bottles** | **10.00 ₪ / bottle** |
-| Milliliter (base) | 3.6 L | 11.11 ₪ / L |
+<span id="section-6" />
 
-**Example — 10 kg of flour for 50 ₪ (simple, single level):** shows `10 kg` and `5.00 ₪ / kg`. The cell isn't clickable because there's only one level.
+<span id="section-30" />
 
-The default level is the middle one for nested packaging, the outer for direct, and the base for simple — whichever reads most naturally.
+## Enter identity, purchase and price
 
----
+Enter the order name, category, reference and supplier as needed. Under Purchase & price, describe the quantity and packaging actually bought, then the total price and requested VAT information. Supported forms cover a simple quantity, a container with contents, or packages containing multiple units. Check the base-unit summary before Save. Use Actions → price display to change list presentation excluding/including VAT; this does not alter recorded purchases.
+
+<span id="section-7" />
+
+<span id="section-8" />
+
+<span id="section-9" />
+
+<span id="section-10" />
+
+<span id="section-11" />
+
+<span id="section-12" />
+
+<span id="understanding-units" />
+
+## Understand units and conversions
+
+Base quantities use g, kg, ml, l or units. Packaging describes how they are bought: for example, 2 cartons × 12 cans × 400 g = 9.6 kg. Recipes use compatible units. Under Units and conversions, add a custom recipe unit with its equivalent base quantity and verify the conversion. Never infer a container’s contents from its name alone.
+
+<span id="section-13" />
+
+<span id="section-14" />
+
+<span id="section-15" />
+
+## Record a receipt, waste or adjustment
+
+Open the row action menu and choose the movement. Enter a positive quantity in the displayed unit and an optional note. Receive adds it; waste and manual adjustment subtract it. Check current and resulting stock before Confirm. If the movement saved but refresh failed, retry refresh rather than entering a second movement.
+
+<span id="section-17" />
+
+<span id="section-2" />
+
+<span id="section-16" />
+
+<span id="section-18" />
+
+<span id="section-19" />
+
+<span id="section-20" />
+
+<span id="section-21" />
+
+<span id="section-22" />
+
+## Read history and understand variance
+
+The row History action shows up to 50 recent movements with type, quantity change, note and date. Distinguish receipts, waste and adjustments from consumption created by sales or production. A load error is not empty history. Compare theoretical and actual use for the relevant day in Daily Operations and check recipes and closing counts.
+
+<span id="section-24" />
+
+<span id="section-33" />
+
+## Categories, selection and bulk actions
+
+Use row checkboxes to select records. Depending on permissions and selection, Actions offers category management, category or VAT updates, deletion and deselection. Category and Status filters limit the visible list; check selected rows before editing multiple records. Deletion confirmation is separate from filtering.
+
+<span id="section-25" />
+
+<span id="section-26" />
+
+<span id="section-27" />
+
+<span id="section-28" />
+
+<span id="section-29" />
+
+## Import a delivery and resume a draft
+
+From Actions, open Import delivery. Choose the supplier, upload the document and review extracted lines before confirming: matches to existing ingredients, units, packaging, quantities, prices and VAT. Analysis is not a confirmed receipt. Save a draft when needed and resume it from Supplies. [Delivery-note import](./delivery-note-import) · [Suppliers and purchases](./suppliers-and-purchases).
+
+<span id="section-31" />
+
+<span id="section-32" />
+
+## Link ingredients to recipes
+
+In a saved item, Recipe and cost lets you add raw ingredients or preparations and enter quantities per serving or size. Stock record price and unit feed the calculation. Import a recipe from its recipe import action or Recipe Lab; this is not a bulk action of the Stock list. [Recipe quantities](../menu/ingredients-and-portions) · [Recipe Lab](./recipe-lab).
 
 <span id="section-37" />
 
-## Tips
-
-> **Tip:** Use the AI delivery import for every delivery. It keeps both quantities and costs up to date automatically, and builds a supply history you can reference later.
-
-> **Tip:** Assign a supplier to each ingredient. This enables the estimated supplies feature in **Daily Operations** to group purchase orders by supplier and send them by email.
-
-> **Tip:** Mark seasonal or discontinued items as **inactive** rather than deleting them. This preserves their transaction history for food cost analysis while hiding them from active workflows.
-
-> **Tip:** Review your stock history regularly. Unexplained deductions or large variances between expected and actual usage can point to portioning issues, waste, or recipe inaccuracies.
-
-> **Tip:** Stock management alone is not enough. Combine it with **Daily Operations** to compare actual vs expected usage, detect losses automatically, and improve your profitability day after day. That's where you really save money.
-
----
-
 <span id="section-38" />
 
-## Related
+## Check after changes
 
-- [Daily Operations](/help/kitchen/daily-operations) — close the day, deduct stock from sales, and generate supplier orders
+After saving, check quantity, price, unit, status and effects on affected recipes. If image upload or refresh fails after a record was created, finish that step on the existing record without duplication. Align thresholds with your purchasing cycle and check the day before closing it. [Units and stock settings](./units-and-stock-settings) · [Daily Operations](./daily-operations).

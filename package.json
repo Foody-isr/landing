@@ -11,8 +11,8 @@
     "social:generate": "node scripts/generate-social-card.mjs",
     "prebuild": "npm run check:help",
     "predev": "npm run check:help",
-    "check:help": "node scripts/render-help-guides.mjs --check && node scripts/check-help.mjs && node scripts/export-help-release.mjs",
-    "test:help": "node --test scripts/help.test.mjs scripts/help-contract.test.mjs",
+    "check:help": "node scripts/render-help-guides.mjs --check && node scripts/check-help.mjs && node scripts/export-help-release.mjs && node scripts/check-help-ui.mjs",
+    "test:help": "node --test scripts/help.test.mjs scripts/help-contract.test.mjs scripts/help-ui.test.mjs",
     "render:help": "node scripts/render-help-guides.mjs"
   },
   "dependencies": {

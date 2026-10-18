@@ -16,183 +16,60 @@ featureId: menu-creating-a-menu-item
 audience: public
 releaseStatus: available
 ---
-Open the corresponding Foody workspace described below.
+Menu → Items → Create item opens the continuous full-screen editor.
 
 <span id="section-1" />
 
-## Before You Start
-
-A menu item lives inside a **category** (Salads, Burgers, Drinks, etc.). If no category exists yet, create one first from `Menu → Categories`. See [Categories and Items](./categories-and-items) for the full explanation.
-
-You also want your **stock items** added in `Kitchen → Stock` if you plan to track food cost. That's not required to save the item; it just means the cost tab will be empty until you wire up ingredients.
-
----
-
 <span id="section-2" />
 
-## Open the Create Item Form
+## Check access and open the editor
 
-In FoodyAdmin:
-
-1. Go to `Menu → Items`.
-2. Click **New** in the top right.
-
-The Create Item modal opens with three tabs: **Détails**, **Recette**, **Coût**. You'll fill Détails first, save, then come back for Recette (cost) if you want to track food cost.
-
----
+Check the active restaurant and your menu editing permission. Open Menu → Items and click Create item. This is one continuous full-screen form: scroll through its sections. It does not use the old three-tab Details, Recipe and Cost modal. Save stays available in the header.
 
 <span id="section-3" />
 
-## Step 1. Image
-
-Drag an image into the dropzone or click to upload. You can also paste a URL.
-
-Tips:
-
-* Square or 4:3 images look best across POS / web / kiosk.
-* Aim for 600–1200 px on the long edge.
-* JPG or PNG, under ~500 KB.
-
-If you skip the image now, customers on the web app see a placeholder. You can add it later.
-
----
-
 <span id="section-4" />
-
-## Step 2. Name
-
-The name your customers see. Required.
-
-Tips:
-
-* Keep it under ~40 characters so it doesn't wrap on the POS screen.
-* Avoid internal codes like `BRG-01`. Customers see this.
-
----
 
 <span id="section-5" />
 
-## Step 3. Description
+## Item information and photo
 
-Optional. Shown on the web app item page and on POS when staff tap the item. Not printed on receipts.
-
-Use it to list what's inside ("Beef, lettuce, tomato, house sauce, brioche bun"), highlight allergens, or tell a short story.
-
----
+Under Item information, choose the type, enter its name and description, and use Add photo to choose an image file. Selecting a file does not yet save the item. Pasting an image URL is not a field in this form. Open an existing photo preview to use its replacement action. Translation editing is available for saved items.
 
 <span id="section-6" />
 
-## Step 4. Category
+<span id="section-8" />
 
-Pick one of your existing categories from the dropdown.
+## Classification and distribution
 
-Why this matters:
-
-* **Reporting** groups sales by category.
-* **Kitchen routing** sends tickets to the right station (grill, bar, pastry) based on category settings.
-* **Printer assignment** uses the category, not the item.
-
-Categories are internal. What customers see is the **menu group** the item is in. That's a separate concept covered in [Categories and Items](./categories-and-items).
-
----
+Use the Distribution side area for the internal category, Active status and menu groups. Selected groups are assigned after the item is created. Categories organize the catalogue and reporting; groups structure the customer menu. An active item without a group is not automatically visible.
 
 <span id="section-7" />
 
-## Step 5. Price
-
-The base price the customer pays. Enter in your restaurant currency (₪, €, $…).
-
-* If your restaurant has variants (Small / Large), this base price is overridden per variant. See [Variants & Sizes](./variants-and-sizes).
-* Whether the price is tax-inclusive or exclusive is a **restaurant-level** setting (VAT rate in `Settings → Taxes`). The number you type here follows that rule.
-
----
-
-<span id="section-8" />
-
-## Step 6. Active Toggle
-
-Controls whether the item is visible on POS / web. Leave it on unless:
-
-* Seasonal item off the menu for now.
-* You're migrating from another tool and want to stage items before publishing.
-
-Prefer toggling Active off over deleting. Deleting is permanent; toggling keeps analytics history intact.
-
----
-
 <span id="section-9" />
 
-## Step 7. Variants
+## Price and variants
 
-Variants are sizes, flavors, or choices sold at distinct prices (e.g. Small / Large; Classic / Spicy). Full walkthrough: [Variants & Sizes](./variants-and-sizes).
-
-You can save the item now and add variants later. Nothing forces the variants to exist at create time.
-
----
+Price and variants contains selling price and sizes. A simple item requires a positive selling price. A by-weight item requires its per-kilogram price and the requested estimated weight. Variant prices are absolute and replace the base price; modifier prices are additional amounts. Portion describes serving size; it does not automatically fill recipe ingredient quantities.
 
 <span id="section-10" />
 
-## Step 8. Modifiers
+## Personalizations and other sections
 
-Modifiers are customer-selectable add-ons or changes ("Extra cheese +₪5", "No onions"). Full walkthrough: [Setting Up Modifiers](./modifiers).
-
-Like variants, they can be added after the item is saved.
-
----
+For a standard item, Personalizations holds modifiers and customer notes; checkout customization controls selection behavior on the POS. Customer information contains customer-facing facts. Stock & availability and Recipe and cost follow on the same page. AI assistant context is private guidance for the ordering assistant, separate from support. A combo uses Composition instead of the standard item recipe sections.
 
 <span id="section-11" />
 
-## Step 9. Save, Then Open Recette
+## Save, then complete the recipe
 
-Click **Enregistrer**. The item lands in the list.
-
-Click the item to re-open it, then switch to the **Recette** tab. This is where you connect ingredients (stock + prep) and see the real food cost of the dish.
-
-Each ingredient row picks a **scope** (Match item size / Fixed quantity / Custom per variant). Full explanation: [How to Configure Ingredients & Portions](./ingredients-and-portions).
-
-The **Coût** tab shows you:
-
-* Food cost per variant
-* Food cost percentage vs. price
-* Gross margin
-* A breakdown popup when you click any prep ingredient
-
----
+Click Save. Before the first save, Recipe and cost and Stock & availability offer to save and configure because these settings require a created item. Reopen it and scroll to Recipe and cost. Ingredient edits save immediately; recipe instructions and notes save with the item. Wait for confirmation and retry an error without creating another item.
 
 <span id="section-12" />
 
-## Step 10. Verify on POS and Web
-
-Being in a category is **not enough** to make the item show up for customers. The item also has to be attached to a **menu group**:
-
-1. Go to `Menu → Menus`, open a menu (e.g. "Lunch").
-2. Open a group (or create one), click "Add items", pick your new item.
-3. Save.
-
-The item now appears on the POS grid and on the web QR menu for that restaurant and location.
-
-See [Categories and Items](./categories-and-items) for the full menu / group / category distinction.
-
----
-
 <span id="section-13" />
-
-## Troubleshooting
-
-| Symptom | Fix |
-|---|---|
-| Item not visible on POS | Not attached to a menu group; or group's channel setting has `pos_enabled` off. |
-| Item not on web QR menu | Group's `web_enabled` off; or group hidden; or menu's availability hours exclude the current time. |
-| Price shows wrong tax | Check `Settings → Taxes` VAT rate + whether prices are inc/ex VAT. |
-| Image blurry | Re-upload a higher-resolution source (600–1200 px long edge). |
-| Variant portion missing | Open the Variants editor, fill the Portion field per row. Needed for recipe cost to compute. |
-
----
 
 <span id="section-14" />
 
-## What Next
+## Verify visibility and resolve a missing item
 
-* [Variants & Sizes](./variants-and-sizes) for sizing logic.
-* [How to Configure Ingredients & Portions](./ingredients-and-portions) for recipe + cost.
-* [Setting Up Modifiers](./modifiers) for customer customizations.
+Check group membership, menu/group channels, hours and availability, then inspect the relevant website or POS. If Save is disabled, check permission, name and required price. If creation is only partially complete, keep the editor and retry the remaining steps rather than recreating the item. [Items and menus](./categories-and-items) · [Variants](./variants-and-sizes) · [Recipe quantities](./ingredients-and-portions).
