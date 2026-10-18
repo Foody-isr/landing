@@ -51,3 +51,15 @@ Ouvrez les messages client pour consulter tentatives et preuves de livraison. Pr
 ## Voir la pièce jointe WhatsApp
 
 Dans la commande, l’aperçu d’un message Meta configuré avec photo/PDF affiche le nom du fichier et Voir la pièce jointe. Ce bouton ouvre le fichier fixe autorisé ou le reçu PDF généré pour cette commande sans envoyer de message. Si le fichier ou les montants changent après l’aperçu, préparez un nouvel aperçu avant d’envoyer. Messages au client conserve le nom du fichier avec chaque tentative, y compris un échec ; Livré et Lu proviennent du retour WhatsApp. Le nom seul n’est pas une preuve de livraison. La configuration de l’association reste dans Parcours des commandes ou Communications → WhatsApp.
+
+<span id="article-library" />
+
+## Ajouter des articles depuis la librairie
+
+Avec la permission orders.manage, ouvrez Nouvelle commande. Sélectionnez une carte ou Librairie d’articles au-dessus du champ de recherche. La librairie contient tous les articles actifs du restaurant, y compris ceux sans carte ou hors de la série tournante sélectionnée, et reste accessible sans carte POS. Recherchez par nom et sélectionnez un article ; choisissez son format, ses suppléments ou le contenu de son combo si demandé. Les articles épuisés restent désactivés et les articles inactifs sont absents. Le passage entre une carte et la librairie conserve le ticket. Complétez les coordonnées et la remise, vérifiez le total et envoyez une seule fois. Cet ajout ne publie pas l’article sur une carte ou le site client. Si un article manque, vérifiez son statut actif dans Articles ; s’il est épuisé, contrôlez son stock et sa disponibilité avant de réessayer.
+
+<span id="route-delivery-window" />
+
+## Vérifier le rappel de livraison calculé
+
+Pour une livraison affectée à une tournée avec une marge client enregistrée, les rappels utilisent l’arrivée calculée plus cette durée, au lieu du large créneau planifié de la commande. Exemple : arrivée à 08:30 et marge de 90 minutes → 08:30–10:00. Réglez-la dans Commandes → Livraisons → répartition, à côté du temps à chaque arrêt, puis vérifiez l’aperçu WhatsApp manuel ou approuvé avant envoi. Le même créneau alimente Twilio, Meta et les rappels par étape ; les variables des modèles et la règle J-1 existantes restent applicables. Les anciennes tournées sans réglage conservent le créneau enregistré. Si le créneau ne peut être vérifié, recalculez puis rouvrez le rappel. Un aperçu approuvé qui a changé doit être revérifié avant envoi. Modifier un modèle seul ne calcule pas de tournée et ne change pas sa marge.

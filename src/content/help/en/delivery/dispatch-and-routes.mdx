@@ -35,3 +35,15 @@ Run the offered route calculation or fleet allocation and inspect the result bef
 ## Save and track progress
 
 Save the reviewed route and use the dispatch controls. Monitor courier/order progress and update a changed plan deliberately instead of assuming the original route remains valid.
+
+<span id="endpoints" />
+
+## Set each courier’s departure and final address
+
+With the matching API and Admin release installed, select deliveries and couriers in Orders → Deliveries → allocation. Enter each courier’s departure and final destination before generating the plan. Type at least three characters and select an address suggestion; street-only results require a house number. If suggestions are unavailable, enter the complete address manually and save to locate it. The final address can be the courier’s home. Foody optimizes the deliveries between these endpoints, while retaining existing delivery-window constraints. For a departure near Tel Aviv and a final home in Netanya, review that Herzliya and Raanana precede Netanya. Before departure, the admin or assigned courier can edit the route settings and save; changing either endpoint resets a manual stop order and recalculates the route. A failed address lookup leaves the saved plan unchanged.
+
+<span id="customer-window" />
+
+## Set the customer delivery range
+
+In allocation, use Customer delivery window beside Time at each stop. New plans propose 90 minutes. Enter 1:30, 1h30 or 90 for an hour and a half; the allowed range is 1–720 minutes. The range begins at the calculated arrival, rounded down to its displayed minute: 08:30 plus 90 minutes gives 08:30–10:00. It does not extend the handover time or change the order’s original scheduling constraints. The setting is saved per route and can be edited before departure. Delivery WhatsApp links and manual/approved reminders use this range. Reopen a reminder after recalculation to review its updated text. Historic routes without this setting retain their saved reminder slot. If a configured route cannot provide a valid arrival, recalculate or correct its address before sending; no guessed range is substituted.
