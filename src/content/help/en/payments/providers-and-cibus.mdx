@@ -37,3 +37,15 @@ In Cibus check whether the integration is enabled. With settings permission, rep
 ## Set payment policy, VAT and tips
 
 In Settings → Payments review online-payment-only policy, default VAT and tips enablement. Only permitted, changed fields are saved. An unknown policy remains unknown until explicitly chosen; editing VAT must not silently choose it. Weight authorization buffer and fixed suggested-tip/rounding behavior are read-only or have no edit contract here. Verify saved values after success; retain edits on a failed save.
+
+<span id="verifone-cst-card-saving" />
+
+## Save a card during the first payment (CST)
+
+On the CST test setup validated with Verifone, sign in or create your Foody customer account, explicitly select Save card, then confirm the order. The hosted Verifone page collects the card, CVV and Israeli ID and charges the full order amount while creating the reusable token. There is no separate 1 ILS registration payment and no automatic monthly charge. Foody opens confirmation only after verifying the transaction. On later orders, choose the saved card and explicitly confirm the new amount; the configured No-CVV contract requires neither CVV nor Israeli ID. A delayed result requires checking status, never repeating the debit. Previously issued registration links keep their old recovery flow. Weighted holds remain outside this new registration flow. Production availability requires separate merchant approval.
+
+<span id="invoice4u-order-lines" />
+
+## Check an itemized Invoice4U invoice
+
+When Invoice4U issuance and an invoice document type are enabled by the Foody team for the merchant, ordinary immediate Verifone order payments send the saved order lines: items and quantities, selected variants/options, combo base and included components, order discount and delivery fee. Frozen prices already include VAT; it is not added again. The line total must equal the payment amount or payment initiation is blocked. The same detail is sent for a later saved-card sale. Legacy orders without catalogue lines and catering/table/capture operations keep their existing document behavior. An approved payment is not proof that Invoice4U issued a fiscal document: check the document in Verifone Central/Invoice4U and customer delivery. Do not create another payment to obtain a missing invoice.
