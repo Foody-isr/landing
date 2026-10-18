@@ -113,3 +113,25 @@ regression tests; verify configuration and revision without consuming quota.
 Model contract references: [Messages API](https://platform.claude.com/docs/en/api/messages/create)
 and [model lifecycle](https://platform.claude.com/docs/en/about-claude/model-deprecations).
 Validate a compatible model and its response contract before changing it.
+
+## Current UI evidence
+
+The initial source-hash baseline and successful page responses did not prove
+that imported procedures matched the rendered interface. Inspect the route and
+its imported editor components, not merely a legacy component that remains on
+disk. In particular, unused ArticlesKpiRow/StockKpiRow files do not prove that the
+Articles or Stock page renders KPI cards.
+
+`docs/help/ui-evidence.json` records focused current-screen claims and an immutable
+Admin commit. Landing CI checks those sources at that commit. Admin CI checks the
+same claims against the current PR sources. The checks also reject reviewed old
+instructions and require current wording in all three languages. Run
+`node scripts/check-help-ui.mjs --admin-root /absolute/path/to/foodyadmin`.
+These focused checks supplement manual UI/procedure review; they do not certify
+every screen or every runtime state. Update the evidence and all affected guides
+when a reviewed control changes. Keep legacy guide anchors when restructuring.
+
+Live AI verification requires explicit user authorization for paid calls and uses
+only synthetic product questions. Check answer language, procedure correctness
+against the rendered source, citation relevance, citation locale, public URL and
+corpus revision. An HTTP 200 or an existing citation alone is not a semantic pass.

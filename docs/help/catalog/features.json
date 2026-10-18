@@ -838,9 +838,9 @@
           "he": "4. תנו לכל פריט מתכון"
         },
         "instructions": {
-          "en": "On the item's **Recipe** tab, link the ingredients and preparations one portion uses, with\nquantities. **This is the link that powers everything downstream.** A dish with no recipe is\nalways available and has no computed cost.\n→ [Ingredients & portions](/en/help/menu/ingredients-and-portions)",
-          "fr": "Dans l'onglet **Recette** de l'article, liez les ingrédients et préparations qu'une portion\nutilise, avec les quantités. **C'est ce lien qui alimente tout le reste.** Un plat sans\nrecette est toujours disponible et n'a pas de coût calculé.\n→ [Ingrédients & portions](/fr/help/menu/ingredients-and-portions)",
-          "he": "בלשונית **מתכון** של הפריט, קשרו את המרכיבים וההכנות שמנה אחת משתמשת בהם, עם כמויות.\n**זה הקישור שמפעיל את כל השאר.** מנה ללא מתכון תמיד זמינה ואין לה עלות מחושבת.\n→ [מרכיבים ומנות](/he/help/menu/ingredients-and-portions)"
+          "en": "On the item's **Recipe and cost** section, link the ingredients and preparations one portion uses, with\nquantities. **This is the link that powers everything downstream.** A dish with no recipe is\nnot enough to compute ingredient consumption; check manual availability overrides separately.\n→ [Ingredients & portions](/en/help/menu/ingredients-and-portions)",
+          "fr": "Dans la section **Recette et coût** de l'article, liez les ingrédients et préparations qu'une portion\nutilise, avec les quantités. **C'est ce lien qui alimente tout le reste.** Sans recette, le stock ne permet pas de calculer la consommation du plat ; vérifiez séparément les forçages de disponibilité.\n→ [Ingrédients & portions](/fr/help/menu/ingredients-and-portions)",
+          "he": "בחלק **מתכון ועלות** של הפריט, קשרו את המרכיבים וההכנות שמנה אחת משתמשת בהם, עם כמויות.\n**זה הקישור שמפעיל את כל השאר.** בלי מתכון אי אפשר לחשב צריכת מרכיבים; בדקו בנפרד שינויי זמינות ידניים.\n→ [מרכיבים ומנות](/he/help/menu/ingredients-and-portions)"
         }
       },
       {
@@ -903,7 +903,7 @@
     "audience": "public",
     "status": "available",
     "preserveExisting": true,
-    "procedureUpdatedAt": "2026-05-24"
+    "procedureUpdatedAt": "2026-10-18"
   },
   {
     "id": "getting-started-using-support",
@@ -972,6 +972,19 @@
           "fr": "Utilisez **Contacter le support** pour écrire à support@foody-pos.co.il. Indiquez le produit, les étapes suivies et le message d’erreur, en masquant les informations sensibles. L’envoi de l’e-mail reste une action de votre messagerie.\n\nSi l’assistant est indisponible ou si sa limite de questions est atteinte, les guides et le contact support restent accessibles.",
           "he": "בחרו **פנייה לתמיכה** כדי לכתוב אל support@foody-pos.co.il. ציינו את המוצר, השלבים והודעת השגיאה, ללא מידע רגיש. שליחת ההודעה מתבצעת ביישום הדואר שלכם.\n\nאם העוזר אינו זמין או שהגעתם למגבלת השאלות, המדריכים והאפשרות לפנות לתמיכה נשארים זמינים."
         }
+      },
+      {
+        "id": "report-outdated-guide",
+        "title": {
+          "fr": "Signaler une procédure différente de votre écran",
+          "en": "Report a procedure that differs from your screen",
+          "he": "דיווח על נוהל שאינו תואם למסך"
+        },
+        "instructions": {
+          "fr": "L’assistant ne voit pas votre écran ni votre compte. Si un bouton ou une section cités n’existent plus, indiquez le produit, la langue et le nom du guide, puis contactez le support pour faire corriger la procédure. Ne partagez pas d’identifiants, de données client ou de paiement. Une citation existante ne garantit pas à elle seule que chaque étape décrit la dernière interface.",
+          "en": "The assistant cannot see your screen or account. If a named button or section no longer exists, give the product, language and guide title, then contact support to correct the procedure. Do not share credentials or customer/payment data. An existing citation alone does not guarantee that every step matches the latest interface.",
+          "he": "העוזר אינו רואה את המסך או החשבון שלכם. אם כפתור או חלק שצוינו אינם קיימים עוד, מסרו מוצר, שפה ושם מדריך ופנו לתמיכה לתיקון הנוהל. אין לשתף פרטי גישה או מידע על לקוחות ותשלומים. קישור למדריך קיים לבדו אינו מבטיח שכל שלב תואם לממשק העדכני."
+        }
       }
     ],
     "audience": "public",
@@ -1031,8 +1044,8 @@
           "he": "איך זה עובד (בפשטות)"
         },
         "instructions": {
-          "en": "For each dish, Foody reads its recipe (ingredients + preparations) and your current stock,\nthen works out **how many portions you can still make** — limited by whichever ingredient\nruns out first.\n\n- Plenty in stock → the dish is **available**.\n- Down to the last few → **low stock** (e.g. \"3 left\").\n- Can't make even one → **sold out** (greyed out; customers can't order it).\n\n> **Important:** a dish only tracks availability if it has a **recipe**. Open the dish, go\n> to the **Recipe** tab, and add its ingredients and preparations. A dish with no recipe is\n> always available — so drinks and uncosted items never disappear.",
-          "fr": "Pour chaque plat, Foody lit sa recette (ingrédients + préparations) et votre stock actuel,\npuis calcule **combien de portions vous pouvez encore faire** — limité par l'ingrédient qui\ns'épuise en premier.\n\n- Beaucoup de stock → le plat est **disponible**.\n- Plus que quelques-uns → **stock faible** (ex. « 3 restant »).\n- Impossible d'en faire un seul → **épuisé** (grisé ; les clients ne peuvent pas commander).\n\n> **Important :** un plat ne suit sa disponibilité que s'il a une **recette**. Ouvrez le\n> plat, allez dans l'onglet **Recette** et ajoutez ses ingrédients et préparations. Un plat\n> sans recette est toujours disponible — ainsi les boissons et articles non chiffrés ne\n> disparaissent jamais.",
+          "en": "For each dish, Foody reads its recipe (ingredients + preparations) and your current stock,\nthen works out **how many portions you can still make** — limited by whichever ingredient\nruns out first.\n\n- Plenty in stock → the dish is **available**.\n- Down to the last few → **low stock** (e.g. \"3 left\").\n- Can't make even one → **sold out** (greyed out; customers can't order it).\n\n> **Important:** a dish only tracks availability if it has a **recipe**. Open the dish, go\n> to the **Recipe and cost** section, and add its ingredients and preparations. A dish with no recipe is\n> always available — so drinks and uncosted items never disappear.",
+          "fr": "Pour chaque plat, Foody lit sa recette (ingrédients + préparations) et votre stock actuel,\npuis calcule **combien de portions vous pouvez encore faire** — limité par l'ingrédient qui\ns'épuise en premier.\n\n- Beaucoup de stock → le plat est **disponible**.\n- Plus que quelques-uns → **stock faible** (ex. « 3 restant »).\n- Impossible d'en faire un seul → **épuisé** (grisé ; les clients ne peuvent pas commander).\n\n> **Important :** un plat ne suit sa disponibilité que s'il a une **recette**. Ouvrez le\n> plat, allez dans la section **Recette et coût** et ajoutez ses ingrédients et préparations. Un plat\n> sans recette est toujours disponible — ainsi les boissons et articles non chiffrés ne\n> disparaissent jamais.",
           "he": "עבור כל מנה, Foody קוראת את המתכון שלה (מרכיבים + הכנות) ואת המלאי הנוכחי, ומחשבת **כמה\nמנות אפשר עוד להכין** — מוגבל לפי המרכיב שאוזל ראשון.\n\n- מלאי בשפע → המנה **זמינה**.\n- נשארו אחרונות → **מלאי נמוך** (למשל \"נותרו 3\").\n- אי אפשר להכין אפילו אחת → **אזל** (מעומעם; הלקוחות לא יכולים להזמין).\n\n> **חשוב:** מנה עוקבת אחר זמינות רק אם יש לה **מתכון**. פתחו את המנה, עברו ללשונית\n> **מתכון** והוסיפו את המרכיבים וההכנות שלה. מנה ללא מתכון תמיד זמינה — כך משקאות ופריטים\n> לא מתומחרים לא נעלמים."
         }
       },
@@ -1108,9 +1121,9 @@
       "he": "תפעול יומי"
     },
     "entry": {
-      "en": "Open the corresponding Foody workspace described below.",
-      "fr": "Ouvrez l’espace Foody correspondant décrit ci-dessous.",
-      "he": "פתחו את סביבת Foody המתאימה המתוארת למטה."
+      "fr": "Cuisine → Opérations quotidiennes : choisissez la date, puis Préparer le service, Pendant le service ou Bilan du jour.",
+      "en": "Kitchen → Daily Operations: choose the date, then Prepare service, During service or Day review.",
+      "he": "מטבח → פעילות יומית: בחרו תאריך ואז מכינים לסרוויס, במהלך הסרוויס או סיכום היום."
     },
     "selectors": {
       "foodyadmin": [
@@ -1166,9 +1179,9 @@
           "he": "הדוח היומי"
         },
         "instructions": {
-          "en": "Each day has one report with a lifecycle:\n\n| Status | Meaning |\n|--------|---------|\n| **Open** | Actively being edited. You can add sales, log supplies, update stock counts, and save notes. |\n| **Closed** | Frozen. Stock has been deducted based on sales. Estimated supplies become available. |\n| **Reviewed** | Final sign-off by a manager (optional). |\n\nNavigate to **Kitchen > Daily Operations** to open or view today's report. The system creates one automatically if it doesn't exist yet.\n\n---",
-          "fr": "Chaque jour a un rapport avec un cycle de vie :\n\n| Statut | Signification |\n|--------|---------------|\n| **Ouvert** | En cours d'edition. Vous pouvez ajouter des ventes, enregistrer des livraisons, mettre a jour les comptages et sauvegarder des notes. |\n| **Cloture** | Fige. Le stock a ete deduit selon les ventes. Les approvisionnements estimes deviennent disponibles. |\n| **Revise** | Validation finale par un manager (optionnel). |\n\nNaviguez vers **Cuisine > Operations Quotidiennes** pour ouvrir ou consulter le rapport du jour. Le systeme en cree un automatiquement s'il n'existe pas encore.\n\n---",
-          "he": "לכל יום יש דוח אחד עם מחזור חיים:\n\n| סטטוס | משמעות |\n|--------|---------|\n| **פתוח** | בעריכה פעילה. אפשר להוסיף מכירות, לרשום אספקות, לעדכן ספירות ולשמור הערות. |\n| **סגור** | קפוא. המלאי הופחת לפי המכירות. אספקה משוערת הופכת לזמינה. |\n| **נבדק** | אישור סופי על ידי מנהל (אופציונלי). |\n\nנווטו ל-**מטבח > תפעול יומי** כדי לפתוח או לצפות בדוח של היום. המערכת יוצרת דוח אוטומטית אם הוא עדיין לא קיים.\n\n---"
+          "fr": "La page est organisée en phases Préparer le service, Pendant le service et Bilan du jour. Vérifiez la date et l’état de la journée avant toute saisie. Les indicateurs, actions de ventes, livraisons et écarts sont répartis selon la phase ; utilisez Actualiser en cas de données anciennes. Une journée clôturée et une journée en cours n’offrent pas les mêmes actions.",
+          "en": "The page is organized into Opening, Service and Closing phases. Check the date and day status before entering data. Sales, deliveries, variance and their actions are arranged by phase; use Refresh for stale data. Closed and ongoing days do not offer the same actions.",
+          "he": "העמוד מחולק לשלבי מכינים לסרוויס, במהלך הסרוויס וסיכום היום. בדקו תאריך ומצב יום לפני הזנת נתונים. מכירות, משלוחים, פערים ופעולותיהם מסודרים לפי שלב; רעננו נתונים ישנים. ימים סגורים ובתהליך אינם מציעים אותן פעולות."
         }
       },
       {
@@ -1497,7 +1510,7 @@
     "audience": "public",
     "status": "available",
     "preserveExisting": true,
-    "procedureUpdatedAt": "2026-04-10"
+    "procedureUpdatedAt": "2026-10-18"
   },
   {
     "id": "kitchen-food-cost",
@@ -1566,9 +1579,9 @@
           "he": "מה רואים"
         },
         "instructions": {
-          "en": "In **Kitchen → Food cost**, each dish shows:\n\n- **Cost** — the sum of its recipe at current stock prices (ex-VAT).\n- **Price** — its selling price.\n- **Food cost %** — cost ÷ price. Lower is better; most kitchens aim for ~25–35%.\n- **Margin** — what's left after the cost.\n\nSet a **target food-cost %**; dishes above it are flagged so you can re-price, re-portion, or\nswap an ingredient.",
-          "fr": "Dans **Cuisine → Coût matière**, chaque plat affiche :\n\n- **Coût** — la somme de sa recette aux prix de stock actuels (HT).\n- **Prix** — son prix de vente.\n- **% de coût matière** — coût ÷ prix. Plus c'est bas, mieux c'est ; la plupart des cuisines visent ~25–35 %.\n- **Marge** — ce qu'il reste après le coût.\n\nFixez un **objectif de % de coût matière** ; les plats au-dessus sont signalés pour que vous\npuissiez les re-tarifer, re-portionner, ou changer un ingrédient.",
-          "he": "ב**מטבח → עלות מזון**, כל מנה מציגה:\n\n- **עלות** — סכום המתכון שלה לפי מחירי המלאי הנוכחיים (לפני מע\"מ).\n- **מחיר** — מחיר המכירה שלה.\n- **אחוז עלות מזון** — עלות ÷ מחיר. נמוך יותר = טוב יותר; רוב המטבחים שואפים ל-25%–35% בערך.\n- **רווח** — מה שנשאר אחרי העלות.\n\nקבעו **יעד אחוז עלות מזון**; מנות מעליו מסומנות כדי שתוכלו לתמחר מחדש, לשנות מנה, או להחליף מרכיב."
+          "fr": "Dans Cuisine → Coût matière, consultez le coût matière HT, le prix de vente, le pourcentage de coût et la marge des plats chiffrés. Le graphique affiche une ligne de référence à 35 % ; ce n’est pas un objectif modifiable sur cette page. Utilisez la recherche, le filtre d’état et le tri pour examiner les plats concernés. Une recette sans quantités ou coûts fiables ne permet pas une comparaison fiable.",
+          "en": "Under Kitchen → Food Cost, inspect ingredient cost excluding VAT, selling price, cost percentage and margin for priced dishes. The chart has a 35% reference line; this is not an editable target on this page. Use search, status filter and sorting to inspect dishes. Missing recipe quantities or reliable costs prevent a reliable comparison.",
+          "he": "במטבח → עלות מזון בדקו עלות מרכיבים ללא מע״מ, מחיר מכירה, אחוז עלות ומרווח למנות מתומחרות. בגרף יש קו ייחוס של 35%; הוא אינו יעד שניתן לעריכה בעמוד זה. השתמשו בחיפוש, מסנן מצב ומיון לבדיקת מנות. ללא כמויות ועלויות אמינות במתכון אין השוואה אמינה."
         }
       },
       {
@@ -1580,9 +1593,9 @@
           "he": "איך להשתמש"
         },
         "instructions": {
-          "en": "- **Sort by food cost %** to find your worst offenders first.\n- **A dish costs too much?** Adjust its portion or ingredients on the [Recipe tab](/en/help/menu/ingredients-and-portions), change its price, or substitute a cheaper ingredient.\n- **Prices changed?** Update the ingredient in [Stock](/en/help/kitchen/stock-management); every dish using it re-costs automatically.",
-          "fr": "- **Triez par % de coût matière** pour trouver vos pires plats en premier.\n- **Un plat coûte trop cher ?** Ajustez sa portion ou ses ingrédients dans l'[onglet Recette](/fr/help/menu/ingredients-and-portions), changez son prix, ou remplacez un ingrédient moins cher.\n- **Les prix ont changé ?** Mettez l'ingrédient à jour dans le [Stock](/fr/help/kitchen/stock-management) ; chaque plat qui l'utilise est recalculé automatiquement.",
-          "he": "- **מיינו לפי אחוז עלות מזון** כדי למצוא קודם את המנות הבעייתיות.\n- **מנה עולה יותר מדי?** התאימו את המנה או המרכיבים ב[לשונית המתכון](/he/help/menu/ingredients-and-portions), שנו את המחיר, או החליפו במרכיב זול יותר.\n- **המחירים השתנו?** עדכנו את המרכיב ב[מלאי](/he/help/kitchen/stock-management); כל מנה שמשתמשת בו מחושבת מחדש אוטומטית."
+          "en": "- **Sort by food cost %** to find your worst offenders first.\n- **A dish costs too much?** Adjust its portion or ingredients on the [Recipe and cost section](/en/help/menu/ingredients-and-portions), change its price, or substitute a cheaper ingredient.\n- **Prices changed?** Update the ingredient in [Stock](/en/help/kitchen/stock-management); every dish using it re-costs automatically.",
+          "fr": "- **Triez par % de coût matière** pour trouver vos pires plats en premier.\n- **Un plat coûte trop cher ?** Ajustez sa portion ou ses ingrédients dans la [section Recette et coût](/fr/help/menu/ingredients-and-portions), changez son prix, ou remplacez un ingrédient moins cher.\n- **Les prix ont changé ?** Mettez l'ingrédient à jour dans le [Stock](/fr/help/kitchen/stock-management) ; chaque plat qui l'utilise est recalculé automatiquement.",
+          "he": "- **מיינו לפי אחוז עלות מזון** כדי למצוא קודם את המנות הבעייתיות.\n- **מנה עולה יותר מדי?** התאימו את המנה או המרכיבים ב[חלק מתכון ועלות](/he/help/menu/ingredients-and-portions), שנו את המחיר, או החליפו במרכיב זול יותר.\n- **המחירים השתנו?** עדכנו את המרכיב ב[מלאי](/he/help/kitchen/stock-management); כל מנה שמשתמשת בו מחושבת מחדש אוטומטית."
         }
       },
       {
@@ -1603,7 +1616,7 @@
     "audience": "public",
     "status": "available",
     "preserveExisting": true,
-    "procedureUpdatedAt": "2026-05-24"
+    "procedureUpdatedAt": "2026-10-18"
   },
   {
     "id": "kitchen-preparations",
@@ -1658,9 +1671,9 @@
           "he": "איך זה עובד (בפשטות)"
         },
         "instructions": {
-          "en": "1. **Define the preparation** in **Kitchen → Preparations**: its name, unit, and the raw\n   ingredients one batch consumes (its recipe), plus the **yield per batch** (how much one\n   batch produces).\n2. **Produce a batch** when you make it. Foody deducts the raw ingredients from **Stock**\n   and credits the produced quantity to the preparation.\n3. **Use it in dishes**: on a dish's **Recipe** tab, add the preparation as an ingredient\n   with the quantity one portion needs.\n\nBecause dishes consume the preparation, its current quantity feeds straight into\n[Availability](/en/help/kitchen/availability): when a prep hits 0, dishes that use it go\nsold out — and the moment you produce a new batch, they come back.",
-          "fr": "1. **Définissez la préparation** dans **Cuisine → Préparations** : son nom, son unité, les\n   ingrédients bruts qu'un lot consomme (sa recette), et le **rendement par lot** (ce qu'un lot\n   produit).\n2. **Produisez un lot** quand vous la faites. Foody déduit les ingrédients bruts du **Stock** et\n   crédite la quantité produite à la préparation.\n3. **Utilisez-la dans les plats** : dans l'onglet **Recette** d'un plat, ajoutez la préparation\n   comme ingrédient avec la quantité qu'une portion nécessite.\n\nComme les plats consomment la préparation, sa quantité actuelle alimente directement la\n[Disponibilité](/fr/help/kitchen/availability) : quand une prep tombe à 0, les plats qui\nl'utilisent passent en épuisé, et dès que vous produisez un nouveau lot, ils reviennent.",
-          "he": "1. **הגדירו את ההכנה** ב**מטבח → הכנות**: השם, היחידה, המרכיבים הגולמיים שאצווה אחת צורכת\n   (המתכון שלה), וה**תפוקה לאצווה** (כמה אצווה אחת מייצרת).\n2. **ייצרו אצווה** כשאתם מכינים אותה. Foody מנכה את המרכיבים הגולמיים מה**מלאי** ומזכה את הכמות\n   המיוצרת להכנה.\n3. **השתמשו בה במנות**: בלשונית **מתכון** של מנה, הוסיפו את ההכנה כמרכיב עם הכמות שמנה אחת צריכה.\n\nמכיוון שהמנות צורכות את ההכנה, הכמות הנוכחית שלה מזינה ישירות את ה[זמינות](/he/help/kitchen/availability):\nכשהכנה יורדת ל-0, המנות שמשתמשות בה עוברות לאזל, וברגע שאתם מייצרים אצווה חדשה הן חוזרות."
+          "en": "1. **Define the preparation** in **Kitchen → Preparations**: its name, unit, and the raw\n   ingredients one batch consumes (its recipe), plus the **yield per batch** (how much one\n   batch produces).\n2. **Produce a batch** when you make it. Foody deducts the raw ingredients from **Stock**\n   and credits the produced quantity to the preparation.\n3. **Use it in dishes**: on a dish's **Recipe and cost** section, add the preparation as an ingredient\n   with the quantity one portion needs.\n\nBecause dishes consume the preparation, its current quantity feeds straight into\n[Availability](/en/help/kitchen/availability): when a prep hits 0, dishes that use it go\nsold out — and the moment you produce a new batch, they come back.",
+          "fr": "1. **Définissez la préparation** dans **Cuisine → Préparations** : son nom, son unité, les\n   ingrédients bruts qu'un lot consomme (sa recette), et le **rendement par lot** (ce qu'un lot\n   produit).\n2. **Produisez un lot** quand vous la faites. Foody déduit les ingrédients bruts du **Stock** et\n   crédite la quantité produite à la préparation.\n3. **Utilisez-la dans les plats** : dans la section **Recette et coût** d'un plat, ajoutez la préparation\n   comme ingrédient avec la quantité qu'une portion nécessite.\n\nComme les plats consomment la préparation, sa quantité actuelle alimente directement la\n[Disponibilité](/fr/help/kitchen/availability) : quand une prep tombe à 0, les plats qui\nl'utilisent passent en épuisé, et dès que vous produisez un nouveau lot, ils reviennent.",
+          "he": "1. **הגדירו את ההכנה** ב**מטבח → הכנות**: השם, היחידה, המרכיבים הגולמיים שאצווה אחת צורכת\n   (המתכון שלה), וה**תפוקה לאצווה** (כמה אצווה אחת מייצרת).\n2. **ייצרו אצווה** כשאתם מכינים אותה. Foody מנכה את המרכיבים הגולמיים מה**מלאי** ומזכה את הכמות\n   המיוצרת להכנה.\n3. **השתמשו בה במנות**: בחלק **מתכון ועלות** של מנה, הוסיפו את ההכנה כמרכיב עם הכמות שמנה אחת צריכה.\n\nמכיוון שהמנות צורכות את ההכנה, הכמות הנוכחית שלה מזינה ישירות את ה[זמינות](/he/help/kitchen/availability):\nכשהכנה יורדת ל-0, המנות שמשתמשות בה עוברות לאזל, וברגע שאתם מייצרים אצווה חדשה הן חוזרות."
         }
       },
       {
@@ -1707,9 +1720,9 @@
       "he": "ניהול מלאי"
     },
     "entry": {
-      "en": "Open the corresponding Foody workspace described below.",
-      "fr": "Ouvrez l’espace Foody correspondant décrit ci-dessous.",
-      "he": "פתחו את סביבת Foody המתאימה המתוארת למטה."
+      "fr": "Cuisine → Stock : liste opérationnelle des ingrédients, quantités et mouvements.",
+      "en": "Kitchen → Stock: operational ingredient list, quantities and movements.",
+      "he": "מטבח → מלאי: רשימת חומרי גלם תפעולית, כמויות ותנועות."
     },
     "selectors": {
       "foodyadmin": [
@@ -1730,541 +1743,216 @@
     "operations": [
       {
         "id": "section-1",
-        "level": 2,
         "title": {
-          "en": "What Is It?",
-          "fr": "Qu'est-ce que c'est ?",
-          "he": "מה זה?"
+          "fr": "Lire la liste de stock actuelle",
+          "en": "Read the current stock list",
+          "he": "קריאת רשימת המלאי הנוכחית"
         },
         "instructions": {
-          "en": "**Stock Management** lets you know:\n\n- What you have in the kitchen\n- What you use every day\n- Where you're losing money\n\nThis is the foundation for controlling your food cost.",
-          "fr": "La **Gestion des Stocks** vous permet de savoir :\n\n- Ce que vous avez en cuisine\n- Ce que vous utilisez chaque jour\n- Ou vous perdez de l'argent\n\nC'est la base pour controler votre food cost.",
-          "he": "**ניהול מלאי** מאפשר לכם לדעת:\n\n- מה יש לכם במטבח\n- מה אתם משתמשים כל יום\n- איפה אתם מפסידים כסף\n\nזה הבסיס לשליטה ב-food cost שלכם."
-        }
-      },
-      {
-        "id": "section-2",
-        "level": 3,
-        "title": {
-          "en": "How It Works (Simply)",
-          "fr": "Comment ca fonctionne (en simple)",
-          "he": "איך זה עובד (בפשטות)"
+          "fr": "La page Stock affiche une barre de recherche et de filtres, le menu Actions, le bouton Créer un article selon vos permissions et le tableau des ingrédients. Elle ne comporte plus les anciennes cartes KPI Total articles, Stock bas et Valeur du stock. La valeur est consultable par ligne dans le tableau et dans la fiche ingrédient, pas dans une carte de synthèse en haut.",
+          "en": "Stock shows a search/filter toolbar, Actions, Create item when permitted and an ingredient table. It no longer has the old Total Items, Low Stock and Inventory Value KPI cards. Value is shown per row and on the ingredient record, not in a summary card above the list.",
+          "he": "מלאי מציג סרגל חיפוש ומסננים, פעולות, צור פריט לפי הרשאות וטבלת חומרי גלם. אין עוד כרטיסי KPI ישנים של סך הפריטים, מלאי נמוך ושווי מלאי. הערך מוצג בשורה וברשומת חומר הגלם, ולא בכרטיס סיכום בראש הרשימה."
         },
-        "instructions": {
-          "en": "Your system relies on three elements:\n\n- **Stock** — what you have\n- **Recipes** — what you should use\n- **Sales / Reality** — what was actually used\n\nThe difference between expected and actual usage = **loss or error**.\n\nRecipes bridge stock and menu. When you link ingredients to menu items (in **Kitchen > Recipes**), the system can:\n\n- Automatically deduct stock at end of day\n- Calculate your food cost\n- Detect losses and over-portioning\n- Help you forecast tomorrow's orders\n\nNavigate to **Kitchen > Stock** in FoodyAdmin to get started.\n\n---",
-          "fr": "Votre systeme repose sur 3 elements :\n\n- **Stock** — ce que vous avez\n- **Recettes** — ce que vous devriez utiliser\n- **Ventes / Realite** — ce qui est reellement utilise\n\nLa difference entre consommation attendue et reelle = **perte ou erreur**.\n\nLes recettes font le lien entre votre stock et votre menu. Lorsque vous associez des ingredients aux articles du menu (dans **Cuisine > Recettes**), le systeme peut :\n\n- Deduire automatiquement le stock en fin de journee\n- Calculer votre food cost\n- Detecter les pertes et surdosages\n- Vous aider a prevoir vos commandes\n\nAllez dans **Cuisine > Stock** dans FoodyAdmin pour commencer.\n\n---",
-          "he": "המערכת מבוססת על 3 מרכיבים:\n\n- **מלאי** — מה שיש לכם\n- **מתכונים** — מה שאתם צריכים להשתמש\n- **מכירות / מציאות** — מה שבאמת נעשה בו שימוש\n\nההפרש בין צריכה צפויה לבפועל = **הפסד או טעות**.\n\nמתכונים מחברים בין המלאי לתפריט. כשאתם מקשרים מרכיבים לפריטי תפריט (ב**מטבח > מתכונים**), המערכת יכולה:\n\n- לנכות מלאי אוטומטית בסוף היום\n- לחשב את ה-food cost שלכם\n- לזהות הפסדים ומנות חורגות\n- לעזור לכם לחזות הזמנות למחר\n\nנווטו ל**מטבח > מלאי** ב-FoodyAdmin כדי להתחיל.\n\n---"
-        }
-      },
-      {
-        "id": "section-3",
-        "level": 2,
-        "title": {
-          "en": "The Dashboard",
-          "fr": "Le Tableau de Bord",
-          "he": "לוח המחוונים"
-        },
-        "instructions": {
-          "en": "At the top of the page, three summary cards give you a quick snapshot:\n\n| Card | Shows | Details |\n|------|-------|---------|\n| **Total Items** | Count of all stock items | Your full ingredient catalog |\n| **Low Stock** | Count of items at or below reorder threshold | Turns red when any item needs restocking |\n| **Inventory Value** | Sum of (quantity × cost per unit) for all items | Total value of what's in storage |\n\n---",
-          "fr": "En haut de la page, trois cartes de synthese vous donnent un apercu rapide :\n\n| Carte | Affiche | Details |\n|-------|---------|---------|\n| **Total Articles** | Nombre de tous les articles en stock | Votre catalogue complet d'ingredients |\n| **Stock Bas** | Nombre d'articles au niveau ou en dessous du seuil de reapprovisionnement | Devient rouge quand un article doit etre reapprovisionne |\n| **Valeur du Stock** | Somme de (quantite x cout unitaire) pour tous les articles | Valeur totale de ce qui est en reserve |\n\n---",
-          "he": "בראש העמוד, שלושה כרטיסי סיכום נותנים לכם תמונת מצב מהירה:\n\n| כרטיס | מציג | פרטים |\n|-------|------|-------|\n| **סה\"כ פריטים** | מספר כל פריטי המלאי | קטלוג המרכיבים המלא שלכם |\n| **מלאי נמוך** | מספר פריטים בסף ההזמנה או מתחתיו | הופך לאדום כשיש פריט שדורש חידוש מלאי |\n| **שווי מלאי** | סכום (כמות x עלות ליחידה) לכל הפריטים | הערך הכולל של מה שבמחסן |\n\n---"
-        }
-      },
-      {
-        "id": "section-4",
-        "level": 2,
-        "title": {
-          "en": "Adding & Editing Stock Items",
-          "fr": "Ajout et Modification d'Articles",
-          "he": "הוספה ועריכה של פריטי מלאי"
-        },
-        "instructions": {
-          "en": "1. Go to **Kitchen > Stock**.\n2. Click **Add Item** (top right).\n3. Fill in the fields and click **Create**.\n\nTo edit an existing item, click the pencil icon on its row.\n\nThe create/edit modal has **two tabs**:",
-          "fr": "1. Allez dans **Cuisine > Stock**.\n2. Cliquez sur **Ajouter un article** (en haut a droite).\n3. Remplissez les champs et cliquez sur **Creer**.\n\nPour modifier un article existant, cliquez sur l'icone crayon sur sa ligne.\n\nLa fenetre de creation/modification comporte **deux onglets** :",
-          "he": "1. לכו ל**מטבח > מלאי**.\n2. לחצו על **הוספת פריט** (למעלה מימין).\n3. מלאו את השדות ולחצו **צור**.\n\nלעריכת פריט קיים, לחצו על אייקון העיפרון בשורה שלו.\n\nהחלון ליצירה/עריכה מכיל **שני טאבים**:"
-        }
-      },
-      {
-        "id": "section-5",
-        "level": 3,
-        "title": {
-          "en": "Tab: General",
-          "fr": "Onglet : General",
-          "he": "טאב: כללי"
-        },
-        "instructions": {
-          "en": "Basic information about the item.\n\n| Field | Required | Description |\n|-------|----------|-------------|\n| **Name** | Yes | Ingredient name (e.g., \"Olive Oil\", \"Chicken Breast\") |\n| **Unit** | Yes | How you count this item — see [Understanding Units](#understanding-units) below |\n| **Quantity** | No | Current stock level (default 0) |\n| **Supplier** | No | Supplier name — used for grouping in purchase orders |\n| **Category** | No | Free-text label for organizing and filtering (e.g., \"Dairy\", \"Meat\", \"Produce\") |\n| **Notes** | No | Internal notes or instructions |\n| **Active** | No | Defaults to on. Inactive items are hidden from recipes and daily operations |",
-          "fr": "Informations de base sur l'article.\n\n| Champ | Obligatoire | Description |\n|-------|-------------|-------------|\n| **Nom** | Oui | Nom de l'ingredient (ex. \"Huile d'olive\", \"Blanc de poulet\") |\n| **Unite** | Oui | Comment vous comptez cet article — voir [Comprendre les Unites](#comprendre-les-unites) ci-dessous |\n| **Quantite** | Non | Niveau de stock actuel (defaut 0) |\n| **Fournisseur** | Non | Nom du fournisseur — utilise pour regrouper les bons de commande |\n| **Categorie** | Non | Etiquette libre pour organiser et filtrer (ex. \"Produits laitiers\", \"Viande\", \"Legumes\") |\n| **Notes** | Non | Notes internes ou instructions |\n| **Actif** | Non | Active par defaut. Les articles inactifs sont masques des recettes et des operations quotidiennes |",
-          "he": "מידע בסיסי על הפריט.\n\n| שדה | חובה | תיאור |\n|-----|------|-------|\n| **שם** | כן | שם המרכיב (לדוגמה: \"שמן זית\", \"חזה עוף\") |\n| **יחידה** | כן | איך אתם סופרים את הפריט — ראו [הבנת יחידות](#הבנת-יחידות) למטה |\n| **כמות** | לא | רמת מלאי נוכחית (ברירת מחדל 0) |\n| **ספק** | לא | שם הספק — משמש לקיבוץ הזמנות רכש |\n| **קטגוריה** | לא | תווית חופשית לארגון וסינון (לדוגמה: \"חלבי\", \"בשר\", \"ירקות\") |\n| **הערות** | לא | הערות פנימיות או הנחיות |\n| **פעיל** | לא | מופעל כברירת מחדל. פריטים לא פעילים מוסתרים מהמתכונים ומהתפעול היומי |"
-        }
-      },
-      {
-        "id": "section-6",
-        "level": 3,
-        "title": {
-          "en": "Tab: Packaging & Pricing",
-          "fr": "Onglet : Conditionnement & Prix",
-          "he": "טאב: אריזה ותמחור"
-        },
-        "instructions": {
-          "en": "How the item is packaged and what it costs. Choose one of **three packaging modes**:\n\n**Simple** — For items bought by weight or volume (e.g., 5kg flour, 3L oil). Just enter cost per stock unit.\n\n**By units** — For individual containers (e.g., 6 bottles of 1.5L). Enter the content per unit (e.g., 1.5L) and cost per stock unit.\n\n**By packages** — For boxes containing multiple units (e.g., 2 cartons of 12 cans of 400g). Enter units per package, content per unit, and cost per stock unit.\n\nThe modal shows a **live price summary** that updates as you type, showing HT and TTC prices at every level (per stock unit, per individual unit, per package).\n\n> **Example — Tomato Pulp (By packages mode):**\n> Set units/package = 12, content/unit = 400g, cost = 0.0121 ₪/g.\n> The summary shows: 4.83 ₪ HT / 5.70 ₪ TTC per can, 58.00 ₪ HT / 68.44 ₪ TTC per box.\n\n| Field | Description |\n|-------|-------------|\n| **Units/Package** | How many individual units in one package (e.g., 12 cans per box) |\n| **Content/Unit** | What's inside each unit (e.g., 400g per can) |\n| **Cost per Unit** | Your purchase cost per stock unit (e.g., ₪/g) |\n| **Reorder Threshold** | Quantity at which a low-stock alert triggers |\n\n---",
-          "fr": "Comment l'article est conditionne et combien il coute. Choisissez l'un des **trois modes de conditionnement** :\n\n**Simple** — Pour les articles achetes au poids ou au volume (ex. 5kg de farine, 3L d'huile). Entrez simplement le cout par unite de stock.\n\n**Par unites** — Pour les contenants individuels (ex. 6 bouteilles de 1,5L). Entrez le contenu par unite (ex. 1,5L) et le cout par unite de stock.\n\n**Par paquets** — Pour les cartons contenant plusieurs unites (ex. 2 cartons de 12 boites de 400g). Entrez les unites par paquet, le contenu par unite et le cout par unite de stock.\n\nLa fenetre affiche un **recapitulatif de prix en temps reel** qui se met a jour a mesure que vous tapez, montrant les prix HT et TTC a chaque niveau (par unite de stock, par unite individuelle, par paquet).\n\n> **Exemple — Pulpe de tomate (mode Par paquets) :**\n> Definissez unites/paquet = 12, contenu/unite = 400g, cout = 0,0121 ₪/g.\n> Le recapitulatif affiche : 4,83 ₪ HT / 5,70 ₪ TTC par boite, 58,00 ₪ HT / 68,44 ₪ TTC par carton.\n\n| Champ | Description |\n|-------|-------------|\n| **Unites/Paquet** | Nombre d'unites individuelles dans un paquet (ex. 12 boites par carton) |\n| **Contenu/Unite** | Ce que contient chaque unite (ex. 400g par boite) |\n| **Cout Unitaire** | Votre prix d'achat par unite de stock (ex. ₪/g) |\n| **Seuil de Reapprovisionnement** | Quantite a partir de laquelle une alerte de stock bas se declenche |\n\n---",
-          "he": "איך הפריט ארוז וכמה הוא עולה. בחרו אחד מ**שלושה מצבי אריזה**:\n\n**פשוט** — לפריטים שנקנים לפי משקל או נפח (לדוגמה: 5 ק\"ג קמח, 3 ליטר שמן). פשוט הזינו עלות ליחידת מלאי.\n\n**לפי יחידות** — למכלים בודדים (לדוגמה: 6 בקבוקים של 1.5 ליטר). הזינו את התכולה ליחידה (לדוגמה: 1.5 ליטר) ועלות ליחידת מלאי.\n\n**לפי אריזות** — לקרטונים שמכילים מספר יחידות (לדוגמה: 2 קרטונים של 12 קופסאות של 400 גרם). הזינו יחידות לאריזה, תכולה ליחידה ועלות ליחידת מלאי.\n\nהחלון מציג **סיכום מחירים חי** שמתעדכן תוך כדי הקלדה, ומראה מחירים לפני ואחרי מע\"מ בכל רמה (ליחידת מלאי, ליחידה בודדת, לאריזה).\n\n> **דוגמה — רסק עגבניות (מצב לפי אריזות):**\n> הגדירו יחידות/אריזה = 12, תכולה/יחידה = 400 גרם, עלות = 0.0121 ₪/גרם.\n> הסיכום מציג: 4.83 ₪ לפני מע\"מ / 5.70 ₪ כולל מע\"מ לקופסא, 58.00 ₪ לפני מע\"מ / 68.44 ₪ כולל מע\"מ לקרטון.\n\n| שדה | תיאור |\n|-----|-------|\n| **יחידות/אריזה** | כמה יחידות בודדות באריזה אחת (לדוגמה: 12 קופסאות לקרטון) |\n| **תכולה/יחידה** | מה בתוך כל יחידה (לדוגמה: 400 גרם לקופסא) |\n| **עלות ליחידה** | מחיר הקנייה שלכם ליחידת מלאי (לדוגמה: ₪/גרם) |\n| **סף הזמנה מחדש** | כמות שבה מופעלת התראת מלאי נמוך |\n\n---"
-        }
-      },
-      {
-        "id": "section-7",
-        "level": 2,
-        "title": {
-          "en": "Understanding Units",
-          "fr": "Comprendre les Unites",
-          "he": "הבנת יחידות"
-        },
-        "instructions": {
-          "en": "This is the most important concept in stock management. There are **two layers** of units.",
-          "fr": "C'est le concept le plus important de la gestion des stocks. Il y a **deux niveaux** d'unites.",
-          "he": "זה הקונספט הכי חשוב בניהול מלאי. יש **שתי שכבות** של יחידות."
-        }
-      },
-      {
-        "id": "section-8",
-        "level": 3,
-        "title": {
-          "en": "Layer 1: Stock Unit",
-          "fr": "Niveau 1 : Unite de Stock",
-          "he": "שכבה 1: יחידת מלאי"
-        },
-        "instructions": {
-          "en": "The stock unit defines **how you count** the item in inventory. There are 10 options in three groups:\n\n| Group | Units | What you're counting |\n|-------|-------|---------------------|\n| **Measurable** | kg, g, l, ml | Weight or volume directly |\n| **Container** | unit, pack, box, bag | Discrete countable things |\n| **Special** | dose, other | Custom use cases |",
-          "fr": "L'unite de stock definit **comment vous comptez** l'article dans votre inventaire. Il y a 10 options en trois groupes :\n\n| Groupe | Unites | Ce que vous comptez |\n|--------|--------|---------------------|\n| **Mesurable** | kg, g, l, ml | Poids ou volume directement |\n| **Contenant** | unite, pack, boite, sac | Des contenants discrets et denombrables |\n| **Special** | dose, autre | Cas d'usage specifiques |",
-          "he": "יחידת המלאי מגדירה **איך אתם סופרים** את הפריט במלאי. יש 10 אפשרויות בשלוש קבוצות:\n\n| קבוצה | יחידות | מה אתם סופרים |\n|-------|--------|---------------|\n| **מדידה** | kg, g, l, ml | משקל או נפח ישירות |\n| **מכל** | יחידה, חבילה, קופסה, שקית | מכלים בדידים שאפשר לספור |\n| **מיוחד** | מנה, אחר | מקרי שימוש ייחודיים |"
-        }
-      },
-      {
-        "id": "section-9",
-        "level": 3,
-        "title": {
-          "en": "Layer 2: Content per Unit",
-          "fr": "Niveau 2 : Contenu par Unite",
-          "he": "שכבה 2: תכולה ליחידה"
-        },
-        "instructions": {
-          "en": "When you pick a **container** unit (unit, pack, box, or bag), two extra fields appear: **Content per Unit** and **Content Unit**. These answer the question: *\"What's inside each container?\"*\n\nFor example, if you buy canned tomatoes by the box and each can is 400g:\n- Stock unit = **box**\n- Content per unit = **400**\n- Content unit = **g**",
-          "fr": "Lorsque vous choisissez une unite de type **contenant** (unite, pack, boite ou sac), deux champs supplementaires apparaissent : **Contenu par Unite** et **Unite de Contenu**. Ils repondent a la question : *\"Qu'est-ce qu'il y a dans chaque contenant ?\"*\n\nPar exemple, si vous achetez des tomates en conserve par boite et que chaque conserve fait 400g :\n- Unite de stock = **boite**\n- Contenu par unite = **400**\n- Unite de contenu = **g**",
-          "he": "כשבוחרים יחידת **מכל** (יחידה, חבילה, קופסה או שקית), מופיעים שני שדות נוספים: **תכולה ליחידה** ו**יחידת תכולה**. הם עונים על השאלה: *\"מה יש בתוך כל מכל?\"*\n\nלדוגמה, אם אתם קונים עגבניות משומרות לפי קופסה וכל שימורים שוקל 400 גרם:\n- יחידת מלאי = **קופסה**\n- תכולה ליחידה = **400**\n- יחידת תכולה = **g**"
-        }
-      },
-      {
-        "id": "section-10",
-        "level": 3,
-        "title": {
-          "en": "Why Is Content Unit Limited to g, kg, ml, l?",
-          "fr": "Pourquoi l'Unite de Contenu est Limitee a g, kg, ml, l ?",
-          "he": "למה יחידת התכולה מוגבלת ל-g, kg, ml, l?"
-        },
-        "instructions": {
-          "en": "Because conversion only works between **measurable** units. The system knows:\n\n- 1 kg = 1000 g\n- 1 l = 1000 ml\n\nThis lets it convert between how you **buy** (boxes, packs) and how recipes **consume** (grams, milliliters). You can't meaningfully convert \"3 boxes\" to \"X packs\" — those are arbitrary containers. But you *can* convert \"3 boxes of 400g\" to \"1200g\".",
-          "fr": "Parce que la conversion ne fonctionne qu'entre des **unites mesurables**. Le systeme connait :\n\n- 1 kg = 1000 g\n- 1 l = 1000 ml\n\nCela lui permet de convertir entre la facon dont vous **achetez** (boites, packs) et la facon dont les recettes **consomment** (grammes, millilitres). On ne peut pas convertir \"3 boites\" en \"X packs\" — ce sont des contenants arbitraires. Mais on *peut* convertir \"3 boites de 400g\" en \"1200g\".",
-          "he": "כי המרה עובדת רק בין **יחידות מדידה**. המערכת יודעת:\n\n- 1 kg = 1000 g\n- 1 l = 1000 ml\n\nזה מאפשר לה להמיר בין הדרך שבה אתם **קונים** (קופסאות, חבילות) לדרך שבה המתכונים **צורכים** (גרמים, מיליליטרים). אי אפשר להמיר \"3 קופסאות\" ל-\"X חבילות\" — אלה מכלים שרירותיים. אבל *אפשר* להמיר \"3 קופסאות של 400 גרם\" ל-\"1200 גרם\"."
-        }
-      },
-      {
-        "id": "section-11",
-        "level": 3,
-        "title": {
-          "en": "Practical Examples",
-          "fr": "Exemples Pratiques",
-          "he": "דוגמאות מעשיות"
-        },
-        "instructions": {
-          "en": "| Ingredient | Stock Unit | Content per Unit | Content Unit | Why |\n|-----------|-----------|-----------------|-------------|-----|\n| Canned tomatoes | box | 400 | g | You count boxes. Each can is 400g. Recipes use grams. |\n| Olive oil | unit (bottle) | 750 | ml | You count bottles. Each is 750ml. Recipes use ml. |\n| Flour | bag | 1 | kg | You count bags. Each is 1kg. Recipes use grams or kg. |\n| Eggs | unit | — | — | You count individual eggs. No content needed — recipes count eggs by piece, not by weight. |\n| Milk | l | — | — | You measure in liters directly. No container layer needed. |\n| Ground beef | kg | — | — | You weigh in kilograms directly. |",
-          "fr": "| Ingredient | Unite de Stock | Contenu par Unite | Unite de Contenu | Pourquoi |\n|-----------|---------------|------------------|-----------------|----------|\n| Tomates en conserve | boite | 400 | g | Vous comptez les boites. Chaque conserve fait 400g. Les recettes utilisent des grammes. |\n| Huile d'olive | unite (bouteille) | 750 | ml | Vous comptez les bouteilles. Chacune fait 750ml. Les recettes utilisent des ml. |\n| Farine | sac | 1 | kg | Vous comptez les sacs. Chacun fait 1kg. Les recettes utilisent des grammes ou kg. |\n| Oeufs | unite | — | — | Vous comptez les oeufs individuellement. Pas besoin de contenu — les recettes comptent les oeufs a la piece, pas au poids. |\n| Lait | l | — | — | Vous mesurez en litres directement. Pas besoin de couche contenant. |\n| Viande hachee | kg | — | — | Vous pesez en kilogrammes directement. |",
-          "he": "| מרכיב | יחידת מלאי | תכולה ליחידה | יחידת תכולה | למה |\n|-------|-----------|-------------|------------|-----|\n| עגבניות משומרות | קופסה | 400 | g | אתם סופרים קופסאות. כל שימורים 400 גרם. מתכונים משתמשים בגרמים. |\n| שמן זית | יחידה (בקבוק) | 750 | ml | אתם סופרים בקבוקים. כל אחד 750 מ\"ל. מתכונים משתמשים ב-ml. |\n| קמח | שקית | 1 | kg | אתם סופרים שקיות. כל אחת 1 ק\"ג. מתכונים משתמשים בגרמים או ק\"ג. |\n| ביצים | יחידה | — | — | אתם סופרים ביצים בודדות. אין צורך בתכולה — מתכונים סופרים ביצים ליחידה, לא לפי משקל. |\n| חלב | l | — | — | אתם מודדים בליטרים ישירות. אין צורך בשכבת מכל. |\n| בשר טחון | kg | — | — | אתם שוקלים בקילוגרמים ישירות. |"
-        }
-      },
-      {
-        "id": "section-12",
-        "level": 3,
-        "title": {
-          "en": "Choosing the Right Approach",
-          "fr": "Choisir la Bonne Approche",
-          "he": "בחירת הגישה הנכונה"
-        },
-        "instructions": {
-          "en": "> **Tip:** Use a **measurable unit** (kg, g, l, ml) when you weigh or measure the ingredient directly — bulk items like flour by the kilo, milk by the liter. Use a **container unit** (unit, pack, box, bag) when you count discrete packages and need the system to know what's inside each one for recipe conversions. For items counted individually like eggs, use **unit** with no content — recipes will reference them by count.\n\n---",
-          "fr": "> **Astuce :** Utilisez une **unite mesurable** (kg, g, l, ml) quand vous pesez ou mesurez l'ingredient directement — les articles en vrac comme la farine au kilo, le lait au litre. Utilisez une **unite contenant** (unite, pack, boite, sac) quand vous comptez des emballages discrets et que le systeme doit connaitre le contenu de chacun pour les conversions de recettes. Pour les articles comptes individuellement comme les oeufs, utilisez **unite** sans contenu — les recettes les referencent par nombre.\n\n---",
-          "he": "> **טיפ:** השתמשו ב**יחידת מדידה** (kg, g, l, ml) כשאתם שוקלים או מודדים את המרכיב ישירות — מוצרים בתפזורת כמו קמח לפי קילו, חלב לפי ליטר. השתמשו ב**יחידת מכל** (יחידה, חבילה, קופסה, שקית) כשאתם סופרים אריזות בדידות והמערכת צריכה לדעת מה בתוך כל אחת להמרות מתכונים. לפריטים שנספרים בודדים כמו ביצים, השתמשו ב**יחידה** בלי תכולה — מתכונים יתייחסו אליהם לפי מספר.\n\n---"
-        }
-      },
-      {
-        "id": "section-13",
-        "level": 2,
-        "title": {
-          "en": "Stock Transactions",
-          "fr": "Mouvements de Stock",
-          "he": "תנועות מלאי"
-        },
-        "instructions": {
-          "en": "> **Important:** Never modify stock directly. Every change should be a **transaction**. This lets you understand exactly where your stock came from, where it was used, and where you're losing product.",
-          "fr": "> **Important :** Ne modifiez jamais le stock directement. Chaque changement doit etre une **transaction**. Cela vous permet de comprendre exactement d'ou vient votre stock, ou il a ete utilise, et ou vous perdez des produits.",
-          "he": "> **חשוב:** לעולם אל תשנו מלאי ישירות. כל שינוי צריך להיות **תנועה**. זה מאפשר לכם להבין בדיוק מאיפה הגיע המלאי, איפה נעשה בו שימוש, ואיפה אתם מפסידים מוצרים."
-        }
-      },
-      {
-        "id": "section-14",
-        "level": 3,
-        "title": {
-          "en": "Recording a Transaction",
-          "fr": "Enregistrer un Mouvement",
-          "he": "תיעוד תנועה"
-        },
-        "instructions": {
-          "en": "1. Click the **receive** icon (arrow down) on the item row, or open the item and choose a transaction type.\n2. Select the transaction type.\n3. Enter the quantity (always positive — the system applies the correct sign).\n4. Add optional notes (e.g., \"Morning delivery from Supplier X\").\n5. Review the preview showing current and resulting quantity, then confirm.",
-          "fr": "1. Cliquez sur l'icone **reception** (fleche vers le bas) sur la ligne de l'article, ou ouvrez l'article et choisissez un type de transaction.\n2. Selectionnez le type de transaction.\n3. Entrez la quantite (toujours positive — le systeme applique le bon signe).\n4. Ajoutez des notes optionnelles (ex. \"Livraison matinale du Fournisseur X\").\n5. Verifiez l'apercu montrant la quantite actuelle et resultante, puis confirmez.",
-          "he": "1. לחצו על אייקון **קבלה** (חץ למטה) בשורת הפריט, או פתחו את הפריט ובחרו סוג תנועה.\n2. בחרו את סוג התנועה.\n3. הזינו את הכמות (תמיד חיובית — המערכת מחילה את הסימן הנכון).\n4. הוסיפו הערות אופציונליות (לדוגמה: \"משלוח בוקר מספק X\").\n5. בדקו את התצוגה המקדימה שמראה כמות נוכחית וכמות תוצאה, ואז אשרו."
-        }
-      },
-      {
-        "id": "section-15",
-        "level": 3,
-        "title": {
-          "en": "Transaction Types",
-          "fr": "Types de Transactions",
-          "he": "סוגי תנועות"
-        },
-        "instructions": {
-          "en": "| Type | Effect | Use for |\n|------|--------|---------|\n| **Receive** | Adds to quantity | Deliveries, restocking, purchases |\n| **Waste** | Subtracts from quantity | Spoilage, damage, expired items |\n| **Adjust** | Subtracts from quantity | Corrections after a physical count |",
-          "fr": "| Type | Effet | Utilisation |\n|------|-------|-------------|\n| **Reception** | Ajoute a la quantite | Livraisons, reapprovisionnements, achats |\n| **Perte** | Soustrait de la quantite | Perimes, endommages, jetes |\n| **Ajustement** | Soustrait de la quantite | Corrections apres un comptage physique |",
-          "he": "| סוג | השפעה | שימוש |\n|-----|-------|------|\n| **קבלה** | מוסיף לכמות | משלוחים, חידוש מלאי, רכישות |\n| **פחת** | מחסיר מהכמות | מוצרים שפג תוקפם, נזק, זריקה |\n| **התאמה** | מחסיר מהכמות | תיקונים אחרי ספירה פיזית |"
-        }
-      },
-      {
-        "id": "section-16",
-        "level": 3,
-        "title": {
-          "en": "System-Generated Transactions",
-          "fr": "Transactions Generees par le Systeme",
-          "he": "תנועות שנוצרות אוטומטית"
-        },
-        "instructions": {
-          "en": "Two additional transaction types appear in your history but are created automatically — you don't enter these manually:\n\n- **Deduct** — created when you close the day in **Daily Operations**. The system calculates how much of each ingredient was used (based on recipes and sales) and deducts it.\n- **Produce** — created when prep production consumes ingredients in the prep system.\n\n---",
-          "fr": "Deux types de transactions supplementaires apparaissent dans votre historique mais sont crees automatiquement — vous ne les saisissez pas manuellement :\n\n- **Deduction** — creee lorsque vous cloturez la journee dans **Operations Quotidiennes**. Le systeme calcule la quantite de chaque ingredient utilisee (selon les recettes et les ventes) et la deduit.\n- **Production** — creee lorsque la production de prep consomme des ingredients dans le systeme de preparation.\n\n---",
-          "he": "שני סוגי תנועות נוספים מופיעים בהיסטוריה אבל נוצרים אוטומטית — אתם לא מזינים אותם ידנית:\n\n- **ניכוי** — נוצר כשסוגרים את היום ב**תפעול יומי**. המערכת מחשבת כמה מכל מרכיב נעשה שימוש (לפי מתכונים ומכירות) ומנכה.\n- **ייצור** — נוצר כשייצור הכנות צורך מרכיבים במערכת ההכנות.\n\n---"
-        }
-      },
-      {
-        "id": "section-17",
-        "level": 2,
-        "title": {
-          "en": "Stock History",
-          "fr": "Historique du Stock",
-          "he": "היסטוריית מלאי"
-        },
-        "instructions": {
-          "en": "To view the full transaction history for any item, click the **clock icon** on its row. The history shows the last 50 transactions with:\n\n- Transaction type (color-coded badge)\n- Notes\n- Date and time\n- Quantity change (green for additions, red for deductions)",
-          "fr": "Pour consulter l'historique complet des transactions d'un article, cliquez sur l'**icone horloge** sur sa ligne. L'historique affiche les 50 dernieres transactions avec :\n\n- Le type de transaction (badge colore)\n- Les notes\n- La date et l'heure\n- La variation de quantite (vert pour les ajouts, rouge pour les deductions)",
-          "he": "לצפייה בהיסטוריית התנועות המלאה של פריט, לחצו על **אייקון השעון** בשורה שלו. ההיסטוריה מציגה את 50 התנועות האחרונות עם:\n\n- סוג התנועה (תג צבעוני)\n- הערות\n- תאריך ושעה\n- שינוי כמות (ירוק לתוספות, אדום לניכויים)"
-        }
-      },
-      {
-        "id": "section-18",
-        "level": 3,
-        "title": {
-          "en": "Transaction Color Reference",
-          "fr": "Reference des Couleurs",
-          "he": "מדריך צבעים"
-        },
-        "instructions": {
-          "en": "| Type | Color | Meaning |\n|------|-------|---------|\n| Receive | Green | Stock added from a delivery or purchase |\n| Deduct | Red | Used in sales (via daily operations) |\n| Waste | Orange | Spoilage or damage |\n| Adjust | Blue | Manual correction |\n| Produce | Purple | Consumed during prep production |\n\n---",
-          "fr": "| Type | Couleur | Signification |\n|------|---------|---------------|\n| Reception | Vert | Stock ajoute suite a une livraison ou un achat |\n| Deduction | Rouge | Utilise dans les ventes (via operations quotidiennes) |\n| Perte | Orange | Perime ou endommage |\n| Ajustement | Bleu | Correction manuelle |\n| Production | Violet | Consomme lors de la production de prep |\n\n---",
-          "he": "| סוג | צבע | משמעות |\n|-----|------|--------|\n| קבלה | ירוק | מלאי התווסף ממשלוח או רכישה |\n| ניכוי | אדום | שימוש במכירות (דרך תפעול יומי) |\n| פחת | כתום | פג תוקף או נזק |\n| התאמה | כחול | תיקון ידני |\n| ייצור | סגול | נצרך בייצור הכנות |\n\n---"
-        }
-      },
-      {
-        "id": "section-19",
-        "level": 2,
-        "title": {
-          "en": "Understanding Losses",
-          "fr": "Comprendre les Pertes",
-          "he": "הבנת הפסדים"
-        },
-        "instructions": {
-          "en": "The system constantly compares:\n\n- **Expected consumption** (from your recipes)\n- **Actual consumption** (from your stock)\n\nThe difference is called **variance**.",
-          "fr": "Le systeme compare en permanence :\n\n- **Consommation attendue** (via les recettes)\n- **Consommation reelle** (via votre stock)\n\nLa difference s'appelle un **ecart**.",
-          "he": "המערכת משווה באופן קבוע:\n\n- **צריכה צפויה** (מהמתכונים)\n- **צריכה בפועל** (מהמלאי)\n\nההפרש נקרא **סטייה**."
-        }
-      },
-      {
-        "id": "section-20",
-        "level": 3,
-        "title": {
-          "en": "A Simple Example",
-          "fr": "Exemple simple",
-          "he": "דוגמה פשוטה"
-        },
-        "instructions": {
-          "en": "You receive 2kg of cod. During the day you sell:\n- 8 Fish Burgers (100g each) = 800g\n- 18 Ceviches (50g each) = 900g\n\nExpected consumption = 1700g. But at the end of the day, nothing is left. You lost 300g.",
-          "fr": "Vous recevez 2 kg de cabillaud. Pendant la journee vous vendez :\n- 8 Fish Burgers (100g chacun) = 800g\n- 18 Ceviches (50g chacun) = 900g\n\nConsommation attendue = 1700g. Mais en fin de journee, il ne reste rien. Vous avez perdu 300g.",
-          "he": "אתם מקבלים 2 ק\"ג של קוד. במהלך היום מכרתם:\n- 8 פיש בורגר (100 גרם כל אחד) = 800 גרם\n- 18 סביצ'ה (50 גרם כל אחד) = 900 גרם\n\nצריכה צפויה = 1700 גרם. אבל בסוף היום, לא נשאר כלום. הפסדתם 300 גרם."
-        }
-      },
-      {
-        "id": "section-21",
-        "level": 3,
-        "title": {
-          "en": "Why Does This Happen?",
-          "fr": "Pourquoi ca arrive ?",
-          "he": "למה זה קורה?"
-        },
-        "instructions": {
-          "en": "The most common causes:\n\n- Over-portioning\n- Kitchen mistakes\n- Products thrown away or expired\n- Incorrectly configured recipes\n- Unrecorded sales",
-          "fr": "Les causes les plus frequentes :\n\n- Portions trop genereuses\n- Erreurs en cuisine\n- Produits jetes ou perimes\n- Recettes mal configurees\n- Ventes non enregistrees",
-          "he": "הסיבות הנפוצות ביותר:\n\n- מנות גדולות מדי\n- טעויות במטבח\n- מוצרים שנזרקו או פגי תוקף\n- מתכונים מוגדרים לא נכון\n- מכירות שלא נרשמו"
-        }
-      },
-      {
-        "id": "section-22",
-        "level": 3,
-        "title": {
-          "en": "Why It Matters",
-          "fr": "Pourquoi c'est important ?",
-          "he": "למה זה חשוב?"
-        },
-        "instructions": {
-          "en": "Even a small loss adds up fast. 300g of cod = several lost dishes = lost revenue every single day.\n\nUse **Daily Operations** to detect these variances automatically, day after day.\n\n---",
-          "fr": "Meme une petite perte peut couter cher. 300g de cabillaud = plusieurs plats perdus = perte de chiffre d'affaires chaque jour.\n\nUtilisez les **Operations Quotidiennes** pour detecter ces ecarts automatiquement, jour apres jour.\n\n---",
-          "he": "גם הפסד קטן מצטבר מהר. 300 גרם של קוד = כמה מנות אבודות = הפסד הכנסות כל יום.\n\nהשתמשו ב**תפעול יומי** כדי לזהות סטיות אלו אוטומטית, יום אחרי יום.\n\n---"
-        }
-      },
-      {
-        "id": "section-23",
-        "level": 2,
-        "title": {
-          "en": "Low-Stock Alerts",
-          "fr": "Alertes de Stock Bas",
-          "he": "התראות מלאי נמוך"
-        },
-        "instructions": {
-          "en": "Set a **Reorder Threshold** on any item to enable alerts. When the item's quantity drops to or below the threshold, it's flagged as low stock.\n\nThree places show low-stock warnings:\n\n1. **Item row** — a red \"LOW STOCK\" badge appears next to the item in the table\n2. **Dashboard card** — the Low Stock count turns red\n3. **Sidebar** — a red number badge appears next to \"Stock\" in the navigation menu\n\nUse the **Low Stock Only** checkbox in the filters to quickly see all items that need restocking.\n\n> **Tip:** Set your reorder threshold based on your delivery cycle. If you receive deliveries twice a week, set the threshold to roughly 2-3 days of typical usage. This gives you time to order before you run out.\n\n---",
-          "fr": "Definissez un **Seuil de Reapprovisionnement** sur n'importe quel article pour activer les alertes. Lorsque la quantite de l'article tombe au niveau ou en dessous du seuil, il est signale comme stock bas.\n\nTrois endroits affichent les alertes de stock bas :\n\n1. **Ligne de l'article** — un badge rouge \"STOCK BAS\" apparait a cote de l'article dans le tableau\n2. **Carte du tableau de bord** — le compteur Stock Bas devient rouge\n3. **Barre laterale** — un badge numerique rouge apparait a cote de \"Stock\" dans le menu de navigation\n\nUtilisez la case a cocher **Stock Bas Uniquement** dans les filtres pour voir rapidement tous les articles a reapprovisionner.\n\n> **Astuce :** Definissez votre seuil de reapprovisionnement en fonction de votre cycle de livraison. Si vous recevez des livraisons deux fois par semaine, fixez le seuil a environ 2-3 jours d'utilisation typique. Cela vous laisse le temps de commander avant la rupture.\n\n---",
-          "he": "הגדירו **סף הזמנה מחדש** על כל פריט כדי להפעיל התראות. כשכמות הפריט יורדת לסף או מתחתיו, הוא מסומן כמלאי נמוך.\n\nשלושה מקומות מציגים אזהרות מלאי נמוך:\n\n1. **שורת הפריט** — תג אדום \"מלאי נמוך\" מופיע ליד הפריט בטבלה\n2. **כרטיס לוח המחוונים** — מונה המלאי הנמוך הופך לאדום\n3. **סרגל צד** — תג מספרי אדום מופיע ליד \"מלאי\" בתפריט הניווט\n\nהשתמשו בתיבת הסימון **מלאי נמוך בלבד** בפילטרים כדי לראות במהירות את כל הפריטים שצריכים חידוש מלאי.\n\n> **טיפ:** הגדירו את סף ההזמנה מחדש לפי מחזור המשלוחים שלכם. אם אתם מקבלים משלוחים פעמיים בשבוע, הגדירו את הסף לכ-2-3 ימי שימוש רגיל. זה נותן לכם זמן להזמין לפני שנגמר.\n\n---"
-        }
-      },
-      {
-        "id": "section-24",
-        "level": 2,
-        "title": {
-          "en": "Categories",
-          "fr": "Categories",
-          "he": "קטגוריות"
-        },
-        "instructions": {
-          "en": "Categories help you organize ingredients into logical groups (e.g., \"Dairy\", \"Meat\", \"Produce\", \"Dry Goods\").\n\n- **Assign a category** when creating or editing an item. Start typing to auto-complete from existing categories, or type a new name to create one.\n- **Color-coded dots** appear next to each category in the table for quick visual scanning.\n- **Filter by category** using the dropdown above the table to view one category at a time.\n\n> **Tip:** Keep category names consistent. Decide on \"Dairy\" or \"Milk Products\" and stick with it. Inconsistent naming creates duplicate categories that fragment your filtering.\n\n---",
-          "fr": "Les categories vous aident a organiser vos ingredients en groupes logiques (ex. \"Produits laitiers\", \"Viande\", \"Legumes\", \"Epicerie seche\").\n\n- **Attribuez une categorie** lors de la creation ou la modification d'un article. Commencez a taper pour auto-completer depuis les categories existantes, ou tapez un nouveau nom pour en creer une.\n- **Des pastilles colorees** apparaissent a cote de chaque categorie dans le tableau pour un reperage visuel rapide.\n- **Filtrez par categorie** en utilisant le menu deroulant au-dessus du tableau pour voir une seule categorie a la fois.\n\n> **Astuce :** Gardez des noms de categories coherents. Choisissez \"Produits laitiers\" ou \"Laitages\" et tenez-vous-y. Des noms incoherents creent des categories en double qui fragmentent votre filtrage.\n\n---",
-          "he": "קטגוריות עוזרות לכם לארגן מרכיבים בקבוצות לוגיות (לדוגמה: \"חלבי\", \"בשר\", \"ירקות\", \"מוצרים יבשים\").\n\n- **שייכו קטגוריה** בעת יצירה או עריכה של פריט. התחילו להקליד כדי להשלים אוטומטית מקטגוריות קיימות, או הקלידו שם חדש ליצירת קטגוריה.\n- **נקודות צבעוניות** מופיעות ליד כל קטגוריה בטבלה לזיהוי חזותי מהיר.\n- **סננו לפי קטגוריה** באמצעות התפריט הנפתח מעל הטבלה לצפייה בקטגוריה אחת בכל פעם.\n\n> **טיפ:** שמרו על שמות קטגוריות עקביים. החליטו על \"חלבי\" או \"מוצרי חלב\" והישארו עם זה. שמות לא עקביים יוצרים קטגוריות כפולות שמפצלות את הסינון.\n\n---"
-        }
-      },
-      {
-        "id": "section-25",
-        "level": 2,
-        "title": {
-          "en": "AI Delivery Import",
-          "fr": "Import de Livraison par IA",
-          "he": "ייבוא משלוח באמצעות AI"
-        },
-        "instructions": {
-          "en": "Save time by letting AI extract items from delivery notes and invoices automatically. The import uses a full-screen split view: the original document is displayed on the left for reference while you review extracted items on the right.",
-          "fr": "Gagnez du temps en laissant l'IA extraire les articles des bons de livraison et factures automatiquement. L'import utilise un affichage plein ecran en deux panneaux : le document original a gauche pour reference, et les articles extraits a droite.",
-          "he": "חסכו זמן על ידי כך שה-AI מחלץ פריטים מתעודות משלוח וחשבוניות אוטומטית. הייבוא משתמש בתצוגת מסך מלא עם שני חלונות: המסמך המקורי מוצג בצד ימין לעיון, והפריטים שחולצו בצד שמאל."
-        }
-      },
-      {
-        "id": "section-26",
-        "level": 3,
-        "title": {
-          "en": "Step 1: Select Supplier & Upload",
-          "fr": "Etape 1 : Selectionner le fournisseur et telecharger",
-          "he": "שלב 1: בחירת ספק והעלאה"
-        },
-        "instructions": {
-          "en": "1. Click the **Import Delivery** button (sparkle icon) at the top of the page.\n2. **Select a supplier** from your existing supplier list, or choose **+ New supplier** and type the name. Selecting a known supplier improves extraction accuracy — the system uses supplier-specific hints learned from previous imports.\n3. Upload a photo of a delivery note or a PDF invoice.\n4. Click **Upload and Analyze**. The AI uses Google Vision OCR combined with Claude AI for maximum accuracy.",
-          "fr": "1. Cliquez sur le bouton **Importer une livraison** (icone etincelle) en haut de la page.\n2. **Selectionnez un fournisseur** dans votre liste existante, ou choisissez **+ Nouveau fournisseur** et saisissez le nom. Selectionner un fournisseur connu ameliore la precision d'extraction — le systeme utilise des indications specifiques au fournisseur apprises des imports precedents.\n3. Telechargez une photo d'un bon de livraison ou une facture PDF.\n4. Cliquez sur **Telecharger et Analyser**. L'IA utilise Google Vision OCR combine avec Claude AI pour une precision maximale.",
-          "he": "1. לחצו על כפתור **ייבוא משלוח** (אייקון ניצוצות) בראש העמוד.\n2. **בחרו ספק** מרשימת הספקים הקיימים, או בחרו **+ ספק חדש** והקלידו את השם. בחירת ספק מוכר משפרת את דיוק החילוץ — המערכת משתמשת בהנחיות ספציפיות לספק שנלמדו מייבואים קודמים.\n3. העלו תמונה של תעודת משלוח או חשבונית PDF.\n4. לחצו על **העלה ונתח**. ה-AI משתמש ב-Google Vision OCR בשילוב Claude AI לדיוק מירבי."
-        }
-      },
-      {
-        "id": "section-27",
-        "level": 3,
-        "title": {
-          "en": "Step 2: Review & Confirm",
-          "fr": "Etape 2 : Verifier et Confirmer",
-          "he": "שלב 2: בדיקה ואישור"
-        },
-        "instructions": {
-          "en": "The screen splits into two panels: your original document on the left, and extracted items on the right. For each item:\n\n- **Match to existing stock** using the searchable dropdown, or leave as \"new\" to create a new item. The **original name** (in the supplier's language) is shown for reference.\n- **Edit packaging details** — the system supports a 3-level breakdown:\n  - **Pack count** — number of packages/boxes (e.g., 2 boxes)\n  - **Units/Pack** — number of individual units per package (e.g., 12 cans per box)\n  - **Price per pack** and **Total price** — auto-calculate each other\n- **Edit unit details**:\n  - **Unit size** — content per individual unit (e.g., 400g per can)\n  - **Unit** — the stock unit (g, kg, l, ml, etc.)\n  - **Stock quantity** — auto-calculated: packs × units/pack × unit size (e.g., 2 × 12 × 400 = 9,600g)\n- **VAT toggle** — check \"Price includes VAT\" in the header if the supplier's prices include tax. This flag is saved per item so food cost calculations are accurate.\n- **Assign a category** for new items.\n\n> **Example — Tomato Pulp (3-level breakdown):**\n> Your invoice shows \"Tomato Pulp 400g × 2\" at 58₪ each. Each \"unit\" is actually a box containing 12 cans of 400g. Here's how to fill it in:\n>\n> | Field | Value | Meaning |\n> |-------|-------|---------|\n> | Pack count | 2 | 2 boxes |\n> | Units/Pack | 12 | 12 cans per box |\n> | Price/Pack | 58 ₪ | Price per box |\n> | Total | 116 ₪ | 2 × 58 ₪ |\n> | Unit size | 400 | 400g per can |\n> | Unit | g | Stock tracked in grams |\n> | Stock quantity | 9,600 g | Auto: 2 × 12 × 400 = 9,600g |\n>\n> The cost per unit is automatically calculated: 116 ÷ 9,600 = **0.012 ₪/g**.\n\nClick **Confirm Import** to save. Each item receives a \"receive\" transaction, and new items are created in your stock.",
-          "fr": "L'ecran se divise en deux panneaux : votre document original a gauche, et les articles extraits a droite. Pour chaque article :\n\n- **Associez a un article existant** via le menu deroulant avec recherche, ou laissez comme \"nouveau\" pour creer un nouvel article. Le **nom original** (dans la langue du fournisseur) est affiche pour reference.\n- **Modifiez les details d'emballage** — le systeme supporte une decomposition a 3 niveaux :\n  - **Nombre de paquets** — nombre de colis/cartons (ex. 2 cartons)\n  - **Unites/Paquet** — nombre d'unites individuelles par paquet (ex. 12 boites par carton)\n  - **Prix par paquet** et **Prix total** — se calculent automatiquement\n- **Modifiez les details unitaires** :\n  - **Taille unitaire** — contenu par unite individuelle (ex. 400g par boite)\n  - **Unite** — l'unite de stock (g, kg, l, ml, etc.)\n  - **Quantite en stock** — calculee automatiquement : paquets x unites/paquet x taille unitaire (ex. 2 x 12 x 400 = 9 600g)\n- **TVA** — cochez \"Prix TTC\" dans l'en-tete si les prix du fournisseur incluent la taxe. Ce marqueur est sauvegarde par article pour des calculs de cout precis.\n- **Attribuez une categorie** pour les nouveaux articles.\n\n> **Exemple — Pulpe de tomate (decomposition a 3 niveaux) :**\n> Votre facture indique \"Pulpe de tomate 400g × 2\" a 58₪ chacun. Chaque \"unite\" est en fait un carton contenant 12 boites de 400g. Voici comment remplir :\n>\n> | Champ | Valeur | Signification |\n> |-------|--------|---------------|\n> | Nombre de paquets | 2 | 2 cartons |\n> | Unites/Paquet | 12 | 12 boites par carton |\n> | Prix/Paquet | 58 ₪ | Prix par carton |\n> | Total | 116 ₪ | 2 × 58 ₪ |\n> | Taille unitaire | 400 | 400g par boite |\n> | Unite | g | Stock suivi en grammes |\n> | Quantite en stock | 9 600 g | Auto : 2 × 12 × 400 = 9 600g |\n>\n> Le cout unitaire est calcule automatiquement : 116 ÷ 9 600 = **0,012 ₪/g**.\n\nCliquez sur **Confirmer l'import** pour enregistrer. Chaque article recoit une transaction \"reception\", et les nouveaux articles sont crees dans votre stock.",
-          "he": "המסך מתחלק לשני חלונות: המסמך המקורי בצד ימין, והפריטים שחולצו בצד שמאל. לכל פריט:\n\n- **שייכו לפריט מלאי קיים** באמצעות תפריט נפתח עם חיפוש, או השאירו כ\"חדש\" ליצירת פריט חדש. **השם המקורי** (בשפת הספק) מוצג לעיון.\n- **ערכו פרטי אריזה** — המערכת תומכת בפירוט ב-3 רמות:\n  - **מספר אריזות** — מספר קרטונים/חבילות (לדוגמה: 2 קרטונים)\n  - **יחידות/אריזה** — מספר יחידות בודדות לאריזה (לדוגמה: 12 קופסאות לקרטון)\n  - **מחיר לאריזה** ו**מחיר כולל** — מחושבים אוטומטית\n- **ערכו פרטי יחידה**:\n  - **גודל יחידה** — תכולה ליחידה בודדת (לדוגמה: 400 גרם לקופסא)\n  - **יחידה** — יחידת המלאי (גרם, ק\"ג, ליטר, מ\"ל וכו')\n  - **כמות מלאי** — מחושבת אוטומטית: אריזות × יחידות/אריזה × גודל יחידה (לדוגמה: 2 × 12 × 400 = 9,600 גרם)\n- **מע\"מ** — סמנו \"מחיר כולל מע״מ\" בכותרת אם מחירי הספק כוללים מס. סימון זה נשמר לכל פריט כדי שחישובי עלות המזון יהיו מדויקים.\n- **שייכו קטגוריה** לפריטים חדשים.\n\n> **דוגמה — רסק עגבניות (פירוט ב-3 רמות):**\n> החשבונית מציגה \"רסק עגבניות 400 גרם × 2\" ב-58₪ כל אחד. כל \"יחידה\" היא בעצם קרטון שמכיל 12 קופסאות של 400 גרם. כך ממלאים:\n>\n> | שדה | ערך | משמעות |\n> |-----|------|--------|\n> | מספר אריזות | 2 | 2 קרטונים |\n> | יחידות/אריזה | 12 | 12 קופסאות לקרטון |\n> | מחיר/אריזה | 58 ₪ | מחיר לקרטון |\n> | סה\"כ | 116 ₪ | 2 × 58 ₪ |\n> | גודל יחידה | 400 | 400 גרם לקופסא |\n> | יחידה | g | מלאי נמדד בגרמים |\n> | כמות מלאי | 9,600 גרם | אוטומטי: 2 × 12 × 400 = 9,600 גרם |\n>\n> העלות ליחידה מחושבת אוטומטית: 116 ÷ 9,600 = **0.012 ₪/גרם**.\n\nלחצו על **אשר ייבוא** לשמירה. כל פריט מקבל תנועת \"קבלה\", ופריטים חדשים נוצרים במלאי שלכם."
-        }
-      },
-      {
-        "id": "section-28",
-        "level": 3,
-        "title": {
-          "en": "Supplier Extraction Hints",
-          "fr": "Indications d'extraction fournisseur",
-          "he": "הנחיות חילוץ ספק"
-        },
-        "instructions": {
-          "en": "When you import from a supplier for the first time, the system automatically analyzes the document format and generates **extraction hints** (language, layout type, column order). These hints are saved on the supplier record and used for future imports to improve accuracy.\n\nYou can view and edit these hints in **Kitchen → Suppliers → Edit supplier → AI Extraction Hints**.\n\n> **Tip:** Take clear, well-lit photos of delivery notes. The AI works best with legible text, consistent formatting, and visible prices.\n\n> **Tip:** The system learns from your corrections. When you match a delivery item to an existing stock item, it creates an alias so future deliveries from the same supplier are matched automatically.",
-          "fr": "Lors du premier import d'un fournisseur, le systeme analyse automatiquement le format du document et genere des **indications d'extraction** (langue, type de mise en page, ordre des colonnes). Ces indications sont sauvegardees sur la fiche fournisseur et utilisees pour les imports futurs.\n\nVous pouvez les consulter et les modifier dans **Cuisine → Fournisseurs → Modifier le fournisseur → Indications d'extraction IA**.\n\n> **Astuce :** Prenez des photos claires et bien eclairees des bons de livraison. L'IA fonctionne mieux avec un texte lisible, un format coherent et des prix visibles.\n\n> **Astuce :** Le systeme apprend de vos corrections. Quand vous associez un article de livraison a un article de stock existant, il cree un alias pour que les futures livraisons du meme fournisseur soient associees automatiquement.",
-          "he": "בייבוא ראשון מספק, המערכת מנתחת אוטומטית את פורמט המסמך ומייצרת **הנחיות חילוץ** (שפה, סוג פריסה, סדר עמודות). הנחיות אלו נשמרות בכרטיס הספק ומשמשות לייבואים עתידיים לשיפור הדיוק.\n\nניתן לצפות ולערוך הנחיות אלו ב**מטבח ← ספקים ← עריכת ספק ← הנחיות חילוץ AI**.\n\n> **טיפ:** צלמו תמונות ברורות ומוארות היטב של תעודות משלוח. ה-AI עובד הכי טוב עם טקסט קריא, פורמט עקבי ומחירים גלויים.\n\n> **טיפ:** המערכת לומדת מהתיקונים שלכם. כשאתם משייכים פריט משלוח לפריט מלאי קיים, היא יוצרת כינוי כדי שמשלוחים עתידיים מאותו ספק ישויכו אוטומטית."
-        }
-      },
-      {
-        "id": "section-29",
-        "level": 3,
-        "title": {
-          "en": "Saving Drafts",
-          "fr": "Enregistrer le brouillon",
-          "he": "שמירת טיוטה"
-        },
-        "instructions": {
-          "en": "If you need to stop mid-import, click **Save Draft** in the header. The entire extraction, your edits, and the scanned document are saved to the server.\n\nResume from **Kitchen → Supplies** (Approvisionnements) — pending imports appear at the top of the page as cards showing the supplier name, item count, and a thumbnail of the document. Click **Resume** to re-open the full-screen review with the document preview intact.\n\nMultiple drafts are supported. Drafts are automatically deleted when you confirm the import.",
-          "fr": "Si vous devez interrompre un import en cours, cliquez sur **Enregistrer le brouillon** dans l'en-tete. L'ensemble de l'extraction, vos modifications et le document scanne sont sauvegardes sur le serveur.\n\nReprenez depuis **Cuisine → Approvisionnements** — les imports en attente apparaissent en haut de la page sous forme de cartes affichant le nom du fournisseur, le nombre d'articles et une miniature du document. Cliquez sur **Reprendre** pour rouvrir la vue plein ecran avec l'apercu du document intact.\n\nPlusieurs brouillons sont possibles. Les brouillons sont automatiquement supprimes lorsque vous confirmez l'import.",
-          "he": "אם אתם צריכים לעצור באמצע ייבוא, לחצו על **שמירת טיוטה** בכותרת. כל החילוץ, העריכות שלכם והמסמך הסרוק נשמרים לשרת.\n\nחזרו מ**מטבח ← אספקה** — ייבואים ממתינים מופיעים בראש העמוד ככרטיסים שמציגים את שם הספק, מספר הפריטים ותמונה מוקטנת של המסמך. לחצו על **המשך** כדי לפתוח מחדש את תצוגת המסך המלא עם תצוגת המסמך המקדימה.\n\nניתן לשמור מספר טיוטות. טיוטות נמחקות אוטומטית כשמאשרים את הייבוא."
-        }
-      },
-      {
-        "id": "section-30",
-        "level": 3,
-        "title": {
-          "en": "VAT on Stock Items",
-          "fr": "TVA sur les articles de stock",
-          "he": "מע\"מ על פריטי מלאי"
-        },
-        "instructions": {
-          "en": "Each stock item tracks whether its cost includes VAT or not. Use the **Show ex. VAT / Show inc. VAT** toggle on the stock page (under Inventory Value) to switch the display. The system normalizes all costs to the same basis for accurate food cost calculations.\n\nConfigure your restaurant's VAT rate in **Settings → VAT Rate (%)**. Default is 18% for Israel.\n\n---",
-          "fr": "Chaque article de stock indique si son cout inclut la TVA ou non. Utilisez le bouton **Afficher HT / Afficher TTC** sur la page de stock (sous Valeur du stock) pour changer l'affichage. Le systeme normalise tous les couts sur la meme base pour des calculs de food cost precis.\n\nConfigurez le taux de TVA de votre restaurant dans **Parametres → Taux TVA (%)**. La valeur par defaut est 18% pour Israel.\n\n---",
-          "he": "כל פריט מלאי מציין אם העלות שלו כוללת מע\"מ או לא. השתמשו בלחצן **הצג ללא מע״מ / הצג כולל מע״מ** בעמוד המלאי (מתחת לערך המלאי) כדי להחליף את התצוגה. המערכת מנרמלת את כל העלויות לאותו בסיס לחישובי עלות מזון מדויקים.\n\nהגדירו את שיעור המע\"מ של המסעדה ב**הגדרות ← שיעור מע״מ (%)**. ברירת המחדל היא 18% לישראל.\n\n---"
-        }
-      },
-      {
-        "id": "section-31",
-        "level": 2,
-        "title": {
-          "en": "Bulk Operations",
-          "fr": "Import de Recette par IA",
-          "he": "ייבוא מתכון באמצעות AI"
-        },
-        "instructions": {
-          "en": "Select multiple items using the checkboxes in the table (or the select-all checkbox in the header). A toolbar appears with two actions:\n\n- **Update Category** — assign all selected items to a category. Pick from existing categories or type a new one.\n- **Delete** — remove all selected items. Requires confirmation.\n\n---",
-          "fr": "Importez des recettes en telechargeant une photo/PDF ou en collant du texte. L'IA extrait les ingredients, les quantites et les associe a vos articles de stock. Disponible depuis la page **Cout Alimentaire** et la page **Detail de la recette** (icone etincelle).",
-          "he": "ייבאו מתכונים על ידי העלאת תמונה/PDF או הדבקת טקסט. ה-AI מחלץ מרכיבים, כמויות ומשייך אותם לפריטי המלאי שלכם. זמין מעמוד **Food Cost** ומעמוד **פרטי מתכון** (אייקון ניצוצות)."
-        }
-      },
-      {
-        "id": "section-32",
-        "level": 2,
-        "title": {
-          "en": "AI Recipe Import",
-          "fr": "Comment ca fonctionne",
-          "he": "איך זה עובד"
-        },
-        "instructions": {
-          "en": "Import recipes by uploading a photo/PDF or pasting text. The AI extracts ingredients, quantities, and matches them to your stock items. Available from **Food Cost** page and **Recipe detail** page (sparkle icon).",
-          "fr": "1. Choisissez **Coller du texte** ou **Telecharger un fichier** (image ou PDF).\n2. Cliquez sur **Extraire la recette**. L'IA traite le contenu.\n3. Verifiez dans la **vue plein ecran en deux panneaux** — le document original ou le texte a gauche, les ingredients extraits a droite.\n4. Pour chaque ingredient :\n   - Associez a un article de stock existant ou laissez comme \"nouveau\" pour en creer un\n   - Modifiez la quantite, l'unite, le cout unitaire et la categorie\n   - Le **nom original** (dans la langue source) est affiche pour reference\n   - Le recapitulatif de prix affiche le cout de la ligne (quantite x cout) en HT et TTC\n5. Definissez le **rendement de la recette** (ex. 1,2 kg) en haut.\n6. Cliquez sur **Confirmer l'import** pour enregistrer la recette et creer les nouveaux articles de stock.\n\n---",
-          "he": "1. בחרו **הדבקת טקסט** או **העלאת קובץ** (תמונה או PDF).\n2. לחצו על **חלץ מתכון**. ה-AI מעבד את התוכן.\n3. בדקו ב**תצוגת מסך מלא עם שני חלונות** — המסמך או הטקסט המקורי בצד ימין, המרכיבים שחולצו בצד שמאל.\n4. לכל מרכיב:\n   - שייכו לפריט מלאי קיים או השאירו כ\"חדש\" ליצירת פריט\n   - ערכו כמות, יחידה, עלות ליחידה וקטגוריה\n   - **השם המקורי** (בשפת המקור) מוצג לעיון\n   - סיכום מחירים מציג עלות שורה (כמות x עלות) לפני ואחרי מע\"מ\n5. הגדירו את **תפוקת המתכון** (לדוגמה: 1.2 ק\"ג) בראש העמוד.\n6. לחצו על **אשר ייבוא** לשמירת המתכון ויצירת פריטי מלאי חדשים.\n\n---"
-        }
-      },
-      {
-        "id": "section-33",
-        "level": 3,
-        "title": {
-          "en": "How It Works",
-          "fr": "Operations en Masse",
-          "he": "פעולות מרובות"
-        },
-        "instructions": {
-          "en": "1. Choose **Paste Text** or **Upload File** (image or PDF).\n2. Click **Extract Recipe**. The AI processes the content.\n3. Review in **full-screen split view** — original document or text on the left, extracted ingredients on the right.\n4. For each ingredient:\n   - Match to an existing stock item or leave as \"new\" to create one\n   - Edit quantity, unit, cost per unit, and category\n   - The **original name** (in the source language) is shown for reference\n   - Price summary shows line cost (quantity × cost) in both HT and TTC\n5. Set the **recipe yield** (e.g., 1.2 kg) at the top.\n6. Click **Confirm Import** to save the recipe and create any new stock items.\n\n---",
-          "fr": "Selectionnez plusieurs articles en utilisant les cases a cocher dans le tableau (ou la case a cocher \"tout selectionner\" dans l'en-tete). Une barre d'outils apparait avec deux actions :\n\n- **Modifier la Categorie** — attribuez a tous les articles selectionnes une categorie. Choisissez parmi les categories existantes ou tapez-en une nouvelle.\n- **Supprimer** — supprimez tous les articles selectionnes. Necessite une confirmation.\n\n---",
-          "he": "בחרו מספר פריטים באמצעות תיבות הסימון בטבלה (או תיבת הסימון \"בחר הכל\" בכותרת). סרגל כלים מופיע עם שתי פעולות:\n\n- **עדכון קטגוריה** — שייכו את כל הפריטים שנבחרו לקטגוריה. בחרו מקטגוריות קיימות או הקלידו חדשה.\n- **מחיקה** — מחקו את כל הפריטים שנבחרו. דורש אישור.\n\n---"
-        }
+        "anchors": [
+          "section-3"
+        ]
       },
       {
         "id": "section-34",
-        "level": 2,
         "title": {
-          "en": "Search & Filters",
-          "fr": "Recherche et Filtres",
-          "he": "חיפוש וסינון"
+          "fr": "Rechercher et filtrer par catégorie ou état",
+          "en": "Search and filter by category or status",
+          "he": "חיפוש וסינון לפי קטגוריה או מצב"
         },
         "instructions": {
-          "en": "Three filtering tools are always visible above the table:\n\n| Filter | How it works |\n|--------|-------------|\n| **Search** | Filters items by name as you type |\n| **Category dropdown** | Shows only items in the selected category |\n| **Low Stock Only** | Checkbox — shows only items at or below reorder threshold |\n\nFilters combine with AND logic. For example, searching \"chicken\" with category \"Meat\" shows only meat items with \"chicken\" in the name.\n\n---",
-          "fr": "Trois outils de filtrage sont toujours visibles au-dessus du tableau :\n\n| Filtre | Fonctionnement |\n|--------|---------------|\n| **Recherche** | Filtre les articles par nom en temps reel |\n| **Menu deroulant Categorie** | Affiche uniquement les articles de la categorie selectionnee |\n| **Stock Bas Uniquement** | Case a cocher — affiche uniquement les articles au niveau ou en dessous du seuil |\n\nLes filtres se combinent avec une logique ET. Par exemple, chercher \"poulet\" avec la categorie \"Viande\" affiche uniquement les articles de viande contenant \"poulet\" dans le nom.\n\n---",
-          "he": "שלושה כלי סינון תמיד גלויים מעל הטבלה:\n\n| סינון | איך זה עובד |\n|-------|------------|\n| **חיפוש** | מסנן פריטים לפי שם בזמן אמת |\n| **תפריט נפתח קטגוריה** | מציג רק פריטים בקטגוריה שנבחרה |\n| **מלאי נמוך בלבד** | תיבת סימון — מציגה רק פריטים בסף או מתחתיו |\n\nהסינונים משתלבים בלוגיקת AND. לדוגמה, חיפוש \"עוף\" עם קטגוריה \"בשר\" מציג רק פריטי בשר שמכילים \"עוף\" בשם.\n\n---"
-        }
+          "fr": "Recherchez par nom. Catégorie ouvre le choix des catégories ; État propose Stock bas et OK. Tous les filtres ouvre le panneau qui regroupe ces choix. Les critères se combinent. Pour isoler les ingrédients à réapprovisionner, sélectionnez Stock bas dans État. L’ancienne case « Stock Bas Uniquement » n’est plus le contrôle à chercher. Ne confondez pas une liste filtrée vide avec une erreur de chargement.",
+          "en": "Search by name. Category selects categories; Status offers Low Stock and OK. All Filters opens the combined filter panel. Criteria combine. Select Low Stock under Status to isolate ingredients needing restocking. Do not look for the old Low Stock Only checkbox. An empty filtered list is different from a loading error.",
+          "he": "חפשו לפי שם. קטגוריה בוחרת קטגוריות; מצב מציע מלאי נמוך ותקין. כל הסינונים פותח את הלוח המשותף. התנאים משתלבים. כדי לבודד חומרי גלם לחידוש בחרו מלאי נמוך במצב. אין לחפש את תיבת הסימון הישנה מלאי נמוך בלבד. רשימה ריקה לאחר סינון שונה משגיאת טעינה."
+        },
+        "anchors": [
+          "section-23"
+        ]
       },
       {
         "id": "section-35",
-        "level": 2,
         "title": {
-          "en": "Table Columns",
-          "fr": "Colonnes du Tableau",
-          "he": "עמודות הטבלה"
+          "fr": "Lire les colonnes et les niveaux de conditionnement",
+          "en": "Read columns and packaging levels",
+          "he": "קריאת עמודות ורמות אריזה"
         },
         "instructions": {
-          "en": "The stock table keeps things focused on what matters day-to-day. The header stays pinned to the top while you scroll, so you always know which column you're looking at.\n\n| Column | Default | Description |\n|--------|---------|-------------|\n| Category | Visible | Item category with color dot |\n| Quantity | Visible | Current stock, shown at your chosen packaging level (see below) |\n| Price | Visible | Unit price at the same packaging level as Quantity |\n| Supplier | Visible | Supplier name |\n| Status | Visible | OK or Low Stock alert |\n\nClick the **gear icon** (⚙) next to the filters to hide any column you don't need. Preferences are saved per restaurant.",
-          "fr": "Le tableau de stock reste concentre sur l'essentiel du quotidien. L'en-tete reste fixe en haut lors du defilement, pour que vous sachiez toujours quelle colonne vous regardez.\n\n| Colonne | Par defaut | Description |\n|---------|-----------|-------------|\n| Categorie | Visible | Categorie de l'article avec pastille coloree |\n| Quantite | Visible | Stock actuel, affiche au niveau de conditionnement choisi (voir ci-dessous) |\n| Prix | Visible | Prix unitaire au meme niveau de conditionnement que la Quantite |\n| Fournisseur | Visible | Nom du fournisseur |\n| Statut | Visible | OK ou alerte Stock Bas |\n\nCliquez sur l'**icone engrenage** (⚙) a cote des filtres pour masquer une colonne dont vous n'avez pas besoin. Les preferences sont sauvegardees par restaurant.",
-          "he": "טבלת המלאי מתמקדת במה שחשוב ביומיום. כותרת הטבלה נשארת נעוצה בראש בזמן הגלילה, כדי שתמיד תדעו על איזו עמודה אתם מסתכלים.\n\n| עמודה | ברירת מחדל | תיאור |\n|-------|-----------|-------|\n| קטגוריה | גלויה | קטגוריית הפריט עם נקודה צבעונית |\n| כמות | גלויה | מלאי נוכחי, מוצג ברמת האריזה שבחרתם (ראו למטה) |\n| מחיר | גלויה | מחיר יחידה באותה רמת אריזה כמו הכמות |\n| ספק | גלויה | שם הספק |\n| סטטוס | גלויה | תקין או התראת מלאי נמוך |\n\nלחצו על **אייקון גלגל השיניים** (⚙) ליד הפילטרים כדי להסתיר עמודות שאינכם צריכים. ההעדפות נשמרות לכל מסעדה."
-        }
+          "fr": "Le tableau présente notamment le nom, la catégorie, la quantité, le prix, la valeur totale de ligne, le fournisseur et le statut. Le statut signale Stock bas si le seuil configuré est atteint ; sinon il indique l’état approprié de l’article. Les cellules Quantité et Prix permettent de changer le niveau de conditionnement affiché lorsqu’un autre niveau existe. Cela change la présentation, pas le stock. Il n’y a pas de sélecteur de colonnes par engrenage à côté des filtres sur cette page. Un ingrédient actif à quantité nulle est également en Stock bas, même sans seuil positif.",
+          "en": "The table includes name, category, quantity, price, total row value, supplier and status. Status flags Low Stock when the configured threshold is reached, otherwise showing the appropriate item state. Quantity and Price cells cycle available packaging display levels. This changes presentation, not stock. There is no gear column selector beside this page’s filters. An active ingredient with zero quantity also counts as Low Stock, even without a positive threshold.",
+          "he": "הטבלה כוללת שם, קטגוריה, כמות, מחיר, ערך כולל לשורה, ספק ומצב. מצב מסמן מלאי נמוך כשהסף שהוגדר מגיע, ובמקרים אחרים מציג את מצב הפריט המתאים. תאי כמות ומחיר מחליפים בין רמות אריזה זמינות לתצוגה. הדבר משנה את התצוגה ולא את המלאי. אין בורר עמודות בצורת גלגל שיניים לצד מסנני העמוד. חומר גלם פעיל בכמות אפס נחשב גם למלאי נמוך, אף ללא סף חיובי."
+        },
+        "anchors": [
+          "section-36"
+        ]
       },
       {
-        "id": "section-36",
-        "level": 2,
+        "id": "section-4",
         "title": {
-          "en": "Quantity & Price — Click to Switch Level",
-          "fr": "Quantite & Prix — Clic pour Changer de Niveau",
-          "he": "כמות ומחיר — לחיצה להחלפת רמה"
+          "fr": "Créer ou modifier une fiche ingrédient",
+          "en": "Create or edit an ingredient record",
+          "he": "יצירה או עריכה של חומר גלם"
         },
         "instructions": {
-          "en": "Quantity and Price are displayed together at the same **packaging level**. By default the table shows the level that matches how you *think* about your stock — not the raw base unit.\n\n**Click any Quantity or Price cell to cycle through the available levels for that row.** Your choice is remembered per item.\n\n**Example — 2 cartons of 12 cans of 400g tomatoes, bought for 116 ₪ (nested):**\n\n| Level | Quantity shown | Price shown |\n|-------|---------------|-------------|\n| Carton (outer) | 2 cartons (of 12 cans × 400g) | 58.00 ₪ / carton |\n| **Can (middle — default)** | **24 cans** | **4.83 ₪ / can** |\n| Gram (base) | 9.6 kg | 12.08 ₪ / kg |\n\n**Example — 4 bottles of 900ml oil for 40 ₪ (direct, no middle level):**\n\n| Level | Quantity shown | Price shown |\n|-------|---------------|-------------|\n| **Bottle (default)** | **4 bottles** | **10.00 ₪ / bottle** |\n| Milliliter (base) | 3.6 L | 11.11 ₪ / L |\n\n**Example — 10 kg of flour for 50 ₪ (simple, single level):** shows `10 kg` and `5.00 ₪ / kg`. The cell isn't clickable because there's only one level.\n\nThe default level is the middle one for nested packaging, the outer for direct, and the base for simple — whichever reads most naturally.\n\n---",
-          "fr": "Quantite et Prix s'affichent ensemble au meme **niveau de conditionnement**. Par defaut le tableau affiche le niveau qui correspond a votre facon de *penser* votre stock — pas l'unite de base brute.\n\n**Cliquez sur une cellule Quantite ou Prix pour faire defiler les niveaux disponibles pour cette ligne.** Votre choix est memorise par article.\n\n**Exemple — 2 cartons de 12 boites de 400g de tomates, achetes 116 ₪ (imbrique) :**\n\n| Niveau | Quantite affichee | Prix affiche |\n|--------|-------------------|--------------|\n| Carton (exterieur) | 2 cartons (de 12 boites × 400g) | 58.00 ₪ / carton |\n| **Boite (intermediaire — defaut)** | **24 boites** | **4.83 ₪ / boite** |\n| Gramme (base) | 9.6 kg | 12.08 ₪ / kg |\n\n**Exemple — 4 bouteilles de 900ml d'huile pour 40 ₪ (direct, sans niveau intermediaire) :**\n\n| Niveau | Quantite affichee | Prix affiche |\n|--------|-------------------|--------------|\n| **Bouteille (defaut)** | **4 bouteilles** | **10.00 ₪ / bouteille** |\n| Millilitre (base) | 3.6 L | 11.11 ₪ / L |\n\n**Exemple — 10 kg de farine pour 50 ₪ (simple, un seul niveau) :** affiche `10 kg` et `5.00 ₪ / kg`. La cellule n'est pas cliquable car il n'y a qu'un seul niveau.\n\nLe niveau par defaut est le niveau intermediaire pour un conditionnement imbrique, l'exterieur pour un conditionnement direct, et la base pour un article simple — celui qui se lit le plus naturellement.\n\n---",
-          "he": "כמות ומחיר מוצגים יחד באותה **רמת אריזה**. ברירת המחדל היא הרמה שמתאימה לאיך שאתם *חושבים* על המלאי — לא יחידת הבסיס הגולמית.\n\n**לחצו על תא כמות או מחיר כדי לעבור בין הרמות הזמינות לשורה זו.** הבחירה נשמרת לכל פריט.\n\n**דוגמה — 2 קרטונים של 12 קופסאות של 400 גרם רסק עגבניות, שנרכשו ב-116 ₪ (מקונן):**\n\n| רמה | כמות מוצגת | מחיר מוצג |\n|-----|-----------|-----------|\n| קרטון (חיצוני) | 2 קרטונים (של 12 קופסאות × 400 גרם) | 58.00 ₪ / קרטון |\n| **קופסא (אמצעי — ברירת מחדל)** | **24 קופסאות** | **4.83 ₪ / קופסא** |\n| גרם (בסיס) | 9.6 ק\"ג | 12.08 ₪ / ק\"ג |\n\n**דוגמה — 4 בקבוקים של 900 מ\"ל שמן ב-40 ₪ (ישיר, ללא רמה אמצעית):**\n\n| רמה | כמות מוצגת | מחיר מוצג |\n|-----|-----------|-----------|\n| **בקבוק (ברירת מחדל)** | **4 בקבוקים** | **10.00 ₪ / בקבוק** |\n| מיליליטר (בסיס) | 3.6 ליטר | 11.11 ₪ / ליטר |\n\n**דוגמה — 10 ק\"ג קמח ב-50 ₪ (פשוט, רמה אחת):** מציג `10 ק\"ג` ו-`5.00 ₪ / ק\"ג`. התא אינו לחיץ כי יש רק רמה אחת.\n\nרמת ברירת המחדל היא הרמה האמצעית לאריזה מקוננת, החיצונית לאריזה ישירה, והבסיס לפריט פשוט — הרמה שהכי טבעית לקריאה.\n\n---"
-        }
+          "fr": "Avec la permission de gérer la cuisine, cliquez Créer un article ou ouvrez une ligne existante. L’éditeur plein écran est continu, avec une fiche de synthèse latérale ; il ne contient pas les anciens onglets Général et Conditionnement & Prix. Parcourez Identité & achat, Achat & prix, Unités et conversions, le seuil de réapprovisionnement et Noms sur la facture. Enregistrer valide la fiche.",
+          "en": "With kitchen management permission, click Create item or open an existing row. The full-screen editor is continuous with a side summary; it does not have the old General and Packaging & Pricing tabs. Work through Identity & purchase, Purchase & price, Units and conversions, reorder threshold and Invoice names. Save commits the record.",
+          "he": "עם הרשאת ניהול מטבח, לחצו צור פריט או פתחו שורה קיימת. העורך במסך מלא הוא רציף וכולל תקציר בצד; אין בו את לשוניות כללי ואריזה ומחיר הישנות. עברו על זהות ורכישה, רכישה ומחיר, יחידות והמרות, סף הזמנה ושמות בחשבונית. שמירה מאשרת את הרשומה."
+        },
+        "anchors": [
+          "section-5"
+        ]
+      },
+      {
+        "id": "section-6",
+        "title": {
+          "fr": "Saisir l’identité, l’achat et le prix",
+          "en": "Enter identity, purchase and price",
+          "he": "הזנת זהות, רכישה ומחיר"
+        },
+        "instructions": {
+          "fr": "Renseignez le nom de commande, la catégorie, la référence et le fournisseur utiles. Dans Achat & prix, décrivez la quantité et le conditionnement effectivement achetés, puis le prix total et la TVA demandés. Les modes couvrent une quantité simple, un contenant avec contenu, ou des colis contenant plusieurs unités. Vérifiez le récapitulatif en unité de base avant Enregistrer. Pour changer seulement la présentation HT/TTC de la liste, utilisez Actions → Affichage du prix ; cela ne modifie pas les achats enregistrés.",
+          "en": "Enter the order name, category, reference and supplier as needed. Under Purchase & price, describe the quantity and packaging actually bought, then the total price and requested VAT information. Supported forms cover a simple quantity, a container with contents, or packages containing multiple units. Check the base-unit summary before Save. Use Actions → price display to change list presentation excluding/including VAT; this does not alter recorded purchases.",
+          "he": "הזינו שם להזמנה, קטגוריה, מק״ט וספק לפי הצורך. ברכישה ומחיר תארו את הכמות והאריזה שנרכשו בפועל, ואז מחיר כולל ומידע המע״מ המבוקש. האפשרויות כוללות כמות פשוטה, מיכל עם תכולה או אריזות הכוללות יחידות. בדקו תקציר ביחידת בסיס לפני שמירה. לשינוי תצוגת המחיר ברשימה לפני/כולל מע״מ השתמשו בפעולות; הדבר אינו משנה רכישות שנרשמו."
+        },
+        "anchors": [
+          "section-30"
+        ]
+      },
+      {
+        "id": "section-7",
+        "title": {
+          "fr": "Comprendre les unités et leurs conversions",
+          "en": "Understand units and conversions",
+          "he": "הבנת יחידות והמרות"
+        },
+        "instructions": {
+          "fr": "Les quantités de base utilisent g, kg, ml, l ou des unités. Le conditionnement décrit comment ces quantités sont achetées : par exemple 2 cartons × 12 boîtes × 400 g = 9,6 kg. Les recettes utilisent une unité compatible. Dans Unités et conversions, ajoutez une unité de recette personnalisée et sa quantité équivalente en unité de base, puis vérifiez l’équivalence. Ne déduisez jamais le contenu d’une boîte à partir de son seul nom.",
+          "en": "Base quantities use g, kg, ml, l or units. Packaging describes how they are bought: for example, 2 cartons × 12 cans × 400 g = 9.6 kg. Recipes use compatible units. Under Units and conversions, add a custom recipe unit with its equivalent base quantity and verify the conversion. Never infer a container’s contents from its name alone.",
+          "he": "כמויות בסיס משתמשות בגרם, ק״ג, מ״ל, ליטר או יחידות. האריזה מתארת כיצד קונים אותן: לדוגמה 2 קרטונים × 12 פחיות × 400 גרם = 9.6 ק״ג. מתכונים משתמשים ביחידות תואמות. ביחידות והמרות הוסיפו יחידת מתכון מותאמת ואת הכמות המקבילה ביחידת הבסיס, ואז בדקו את ההמרה. אין להסיק תכולת אריזה משמה בלבד."
+        },
+        "anchors": [
+          "section-8",
+          "section-9",
+          "section-10",
+          "section-11",
+          "section-12",
+          "understanding-units"
+        ]
+      },
+      {
+        "id": "section-13",
+        "title": {
+          "fr": "Enregistrer une entrée, une perte ou un ajustement",
+          "en": "Record a receipt, waste or adjustment",
+          "he": "רישום קבלה, פחת או התאמה"
+        },
+        "instructions": {
+          "fr": "Ouvrez le menu d’actions de la ligne et choisissez le mouvement voulu. Saisissez une quantité positive dans l’unité affichée et, si utile, une note. Une réception ajoute cette quantité ; perte et ajustement manuel la retirent. Vérifiez la quantité actuelle et celle après mouvement avant Confirmer. Si le mouvement est enregistré mais que l’actualisation échoue, réessayez l’actualisation plutôt que de saisir un second mouvement.",
+          "en": "Open the row action menu and choose the movement. Enter a positive quantity in the displayed unit and an optional note. Receive adds it; waste and manual adjustment subtract it. Check current and resulting stock before Confirm. If the movement saved but refresh failed, retry refresh rather than entering a second movement.",
+          "he": "פתחו את תפריט פעולות השורה ובחרו תנועה. הזינו כמות חיובית ביחידה המוצגת והערה לפי הצורך. קבלה מוסיפה אותה; פחת והתאמה ידנית מפחיתים אותה. בדקו מלאי נוכחי ותוצאה לפני אישור. אם התנועה נשמרה אך הרענון נכשל, נסו רענון במקום להזין תנועה נוספת."
+        },
+        "anchors": [
+          "section-14",
+          "section-15"
+        ]
+      },
+      {
+        "id": "section-17",
+        "title": {
+          "fr": "Consulter l’historique et comprendre les écarts",
+          "en": "Read history and understand variance",
+          "he": "עיון בהיסטוריה והבנת פערים"
+        },
+        "instructions": {
+          "fr": "L’action Historique de la ligne affiche jusqu’à 50 mouvements récents, avec type, variation, note et date. Distinguez réception, perte et ajustement des consommations créées par les ventes ou la production. Une erreur de chargement n’est pas un historique vide. Pour comparer consommation théorique et réelle, utilisez la journée concernée dans les opérations quotidiennes et vérifiez les recettes et quantités de clôture.",
+          "en": "The row History action shows up to 50 recent movements with type, quantity change, note and date. Distinguish receipts, waste and adjustments from consumption created by sales or production. A load error is not empty history. Compare theoretical and actual use for the relevant day in Daily Operations and check recipes and closing counts.",
+          "he": "פעולת היסטוריה בשורה מציגה עד 50 תנועות אחרונות עם סוג, שינוי כמות, הערה ותאריך. הבדילו בין קבלה, פחת והתאמה לבין צריכה שנוצרה ממכירות או ייצור. שגיאת טעינה אינה היסטוריה ריקה. השוו צריכה תיאורטית ובפועל ביום המתאים בפעילות היומית ובדקו מתכונים וספירת סגירה."
+        },
+        "anchors": [
+          "section-2",
+          "section-16",
+          "section-18",
+          "section-19",
+          "section-20",
+          "section-21",
+          "section-22"
+        ]
+      },
+      {
+        "id": "section-24",
+        "title": {
+          "fr": "Catégories, sélection et actions groupées",
+          "en": "Categories, selection and bulk actions",
+          "he": "קטגוריות, בחירה ופעולות מרובות"
+        },
+        "instructions": {
+          "fr": "Les cases des lignes servent à la sélection. Le menu Actions propose, selon vos permissions et la sélection, la gestion des catégories, la modification de catégorie ou de TVA, la suppression et la désélection. Les filtres Catégorie et État limitent la liste affichée ; contrôlez les lignes sélectionnées avant de modifier plusieurs fiches. La confirmation de suppression est distincte d’un simple filtre.",
+          "en": "Use row checkboxes to select records. Depending on permissions and selection, Actions offers category management, category or VAT updates, deletion and deselection. Category and Status filters limit the visible list; check selected rows before editing multiple records. Deletion confirmation is separate from filtering.",
+          "he": "תיבות השורות בוחרות רשומות. לפי הרשאות ובחירה, פעולות מציע ניהול קטגוריות, עדכון קטגוריה או מע״מ, מחיקה וביטול בחירה. מסנני קטגוריה ומצב מצמצמים את הרשימה; בדקו שורות נבחרות לפני עריכת מספר רשומות. אישור מחיקה נפרד מסינון."
+        },
+        "anchors": [
+          "section-33"
+        ]
+      },
+      {
+        "id": "section-25",
+        "title": {
+          "fr": "Importer une livraison et reprendre un brouillon",
+          "en": "Import a delivery and resume a draft",
+          "he": "ייבוא משלוח וחזרה לטיוטה"
+        },
+        "instructions": {
+          "fr": "Depuis Actions, ouvrez Importer une livraison. Choisissez le fournisseur, chargez le document puis vérifiez les lignes extraites avant confirmation : rapprochement avec les ingrédients existants, unités, conditionnement, quantités, prix et TVA. Un document analysé n’est pas encore une réception confirmée. Enregistrez un brouillon si nécessaire et reprenez-le depuis les approvisionnements. [Guide d’import des bons](./delivery-note-import) · [Fournisseurs et achats](./suppliers-and-purchases).",
+          "en": "From Actions, open Import delivery. Choose the supplier, upload the document and review extracted lines before confirming: matches to existing ingredients, units, packaging, quantities, prices and VAT. Analysis is not a confirmed receipt. Save a draft when needed and resume it from Supplies. [Delivery-note import](./delivery-note-import) · [Suppliers and purchases](./suppliers-and-purchases).",
+          "he": "מפעולות פתחו ייבוא משלוח. בחרו ספק, העלו מסמך ובדקו שורות שחולצו לפני אישור: התאמה לחומרים קיימים, יחידות, אריזה, כמויות, מחירים ומע״מ. ניתוח מסמך אינו קבלה מאושרת. שמרו טיוטה לפי הצורך וחזרו אליה מאספקות. [ייבוא תעודת משלוח](./delivery-note-import) · [ספקים ורכש](./suppliers-and-purchases)."
+        },
+        "anchors": [
+          "section-26",
+          "section-27",
+          "section-28",
+          "section-29"
+        ]
+      },
+      {
+        "id": "section-31",
+        "title": {
+          "fr": "Relier les ingrédients aux recettes",
+          "en": "Link ingredients to recipes",
+          "he": "קישור חומרי גלם למתכונים"
+        },
+        "instructions": {
+          "fr": "Dans un article enregistré, la section Recette et coût permet d’ajouter des ingrédients et des préparations, puis de saisir les quantités par portion ou par taille. Le prix et l’unité de la fiche stock alimentent le calcul. Pour importer une recette, utilisez l’action d’import de la recette concernée ou Recipe Lab ; ce n’est pas une action groupée de la liste Stock. [Recette et quantités](../menu/ingredients-and-portions) · [Recipe Lab](./recipe-lab).",
+          "en": "In a saved item, Recipe and cost lets you add raw ingredients or preparations and enter quantities per serving or size. Stock record price and unit feed the calculation. Import a recipe from its recipe import action or Recipe Lab; this is not a bulk action of the Stock list. [Recipe quantities](../menu/ingredients-and-portions) · [Recipe Lab](./recipe-lab).",
+          "he": "בפריט שמור, מתכון ועלות מאפשר הוספת חומרי גלם או הכנות והזנת כמויות לפי מנה או גודל. מחיר ויחידה ברשומת המלאי מזינים את החישוב. ייבאו מתכון מפעולת הייבוא של המתכון או מ-Recipe Lab; זו אינה פעולה מרובה ברשימת המלאי. [כמויות במתכון](../menu/ingredients-and-portions) · [Recipe Lab](./recipe-lab)."
+        },
+        "anchors": [
+          "section-32"
+        ]
       },
       {
         "id": "section-37",
-        "level": 2,
         "title": {
-          "en": "Tips",
-          "fr": "Astuces",
-          "he": "טיפים"
+          "fr": "Contrôler après une modification",
+          "en": "Check after changes",
+          "he": "בדיקה לאחר שינוי"
         },
         "instructions": {
-          "en": "> **Tip:** Use the AI delivery import for every delivery. It keeps both quantities and costs up to date automatically, and builds a supply history you can reference later.\n\n> **Tip:** Assign a supplier to each ingredient. This enables the estimated supplies feature in **Daily Operations** to group purchase orders by supplier and send them by email.\n\n> **Tip:** Mark seasonal or discontinued items as **inactive** rather than deleting them. This preserves their transaction history for food cost analysis while hiding them from active workflows.\n\n> **Tip:** Review your stock history regularly. Unexplained deductions or large variances between expected and actual usage can point to portioning issues, waste, or recipe inaccuracies.\n\n> **Tip:** Stock management alone is not enough. Combine it with **Daily Operations** to compare actual vs expected usage, detect losses automatically, and improve your profitability day after day. That's where you really save money.\n\n---",
-          "fr": "> **Astuce :** Utilisez l'import de livraison par IA pour chaque livraison. Cela maintient les quantites et les couts a jour automatiquement, et construit un historique d'approvisionnement que vous pourrez consulter plus tard.\n\n> **Astuce :** Attribuez un fournisseur a chaque ingredient. Cela active la fonctionnalite d'approvisionnement estime dans les **Operations Quotidiennes** pour regrouper les bons de commande par fournisseur et les envoyer par email.\n\n> **Astuce :** Marquez les articles saisonniers ou discontinues comme **inactifs** plutot que de les supprimer. Cela preserve leur historique de transactions pour l'analyse du food cost tout en les masquant des flux de travail actifs.\n\n> **Astuce :** Consultez regulierement votre historique de stock. Des deductions inexpliquees ou de grands ecarts entre consommation attendue et reelle peuvent indiquer des problemes de portionnement, de gaspillage ou d'inexactitudes dans les recettes.\n\n> **Astuce :** La gestion des stocks seule ne suffit pas. Combinez-la avec les **Operations Quotidiennes** pour comparer le reel vs l'attendu, detecter les pertes automatiquement et ameliorer votre rentabilite jour apres jour. C'est la que vous gagnez vraiment de l'argent.\n\n---",
-          "he": "> **טיפ:** השתמשו בייבוא משלוח ה-AI לכל משלוח. זה מעדכן כמויות ועלויות אוטומטית, ובונה היסטוריית אספקה שתוכלו לעיין בה מאוחר יותר.\n\n> **טיפ:** שייכו ספק לכל מרכיב. זה מפעיל את תכונת האספקה המשוערת ב**תפעול יומי** כדי לקבץ הזמנות רכש לפי ספק ולשלוח אותן במייל.\n\n> **טיפ:** סמנו פריטים עונתיים או שהופסקו כ**לא פעילים** במקום למחוק אותם. זה שומר את היסטוריית התנועות שלהם לניתוח food cost תוך הסתרתם מתהליכי העבודה הפעילים.\n\n> **טיפ:** בדקו את היסטוריית המלאי שלכם באופן קבוע. ניכויים בלתי מוסברים או פערים גדולים בין צריכה צפויה לבפועל יכולים להצביע על בעיות בפורציות, בזבוז או אי-דיוקים במתכונים.\n\n> **טיפ:** ניהול מלאי לבד לא מספיק. שלבו אותו עם **תפעול יומי** כדי להשוות בפועל מול צפוי, לזהות הפסדים אוטומטית ולשפר את הרווחיות יום אחרי יום. שם אתם באמת חוסכים כסף.\n\n---"
-        }
-      },
-      {
-        "id": "section-38",
-        "level": 2,
-        "title": {
-          "en": "Related",
-          "fr": "Articles Associes",
-          "he": "מאמרים קשורים"
+          "fr": "Après enregistrement, vérifiez la quantité, le prix, l’unité, le statut et les effets sur les recettes concernées. Si une image ou l’actualisation échoue après création de la fiche, terminez cette étape sur la fiche créée sans doublon. Gardez les seuils cohérents avec votre rythme d’achat et contrôlez la date de la journée avant une clôture. [Unités et réglages stock](./units-and-stock-settings) · [Opérations quotidiennes](./daily-operations).",
+          "en": "After saving, check quantity, price, unit, status and effects on affected recipes. If image upload or refresh fails after a record was created, finish that step on the existing record without duplication. Align thresholds with your purchasing cycle and check the day before closing it. [Units and stock settings](./units-and-stock-settings) · [Daily Operations](./daily-operations).",
+          "he": "לאחר שמירה בדקו כמות, מחיר, יחידה, מצב והשפעות על מתכונים קשורים. אם העלאת תמונה או רענון נכשלו אחרי יצירה, השלימו זאת ברשומה הקיימת בלי כפילות. התאימו ספים למחזור הקנייה ובדקו את היום לפני סגירה. [יחידות והגדרות מלאי](./units-and-stock-settings) · [פעילות יומית](./daily-operations)."
         },
-        "instructions": {
-          "en": "- [Daily Operations](/help/kitchen/daily-operations) — close the day, deduct stock from sales, and generate supplier orders",
-          "fr": "- [Operations Quotidiennes](/help/kitchen/daily-operations) — cloturez la journee, deduisez le stock des ventes et generez les commandes fournisseurs",
-          "he": "- [תפעול יומי](/help/kitchen/daily-operations) — סגירת היום, ניכוי מלאי ממכירות ויצירת הזמנות ספקים"
-        }
+        "anchors": [
+          "section-38"
+        ]
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": true,
-    "procedureUpdatedAt": "2026-04-10"
+    "procedureUpdatedAt": "2026-10-18"
   },
   {
     "id": "menu-categories-and-items",
@@ -2276,9 +1964,9 @@
       "he": "פריטים, קטגוריות ותפריטי לקוחות"
     },
     "entry": {
-      "en": "Open the corresponding Foody workspace described below.",
-      "fr": "Ouvrez l’espace Foody correspondant décrit ci-dessous.",
-      "he": "פתחו את סביבת Foody המתאימה המתוארת למטה."
+      "fr": "Menu → Articles : bibliothèque, filtres et actions du catalogue.",
+      "en": "Menu → Items: catalogue library, filters and actions.",
+      "he": "תפריט → פריטים: ספריית הקטלוג, מסננים ופעולות."
     },
     "selectors": {
       "foodyadmin": [
@@ -2298,30 +1986,54 @@
     "operations": [
       {
         "id": "section-1",
-        "level": 2,
         "title": {
-          "en": "Create the catalogue",
-          "fr": "Créer le catalogue",
-          "he": "יצירת הקטלוג"
+          "fr": "Consulter la bibliothèque Articles",
+          "en": "Use the Items library",
+          "he": "עיון בספריית הפריטים"
         },
         "instructions": {
-          "en": "In **Menu → Items**, create or edit the items you sell. Set the name, base price and relevant options. Categories are internal catalogue/reporting labels. A category does not make an item appear online.",
-          "fr": "Dans **Menu → Articles**, créez ou modifiez les produits vendus. Renseignez le nom, le prix de base et les options utiles. Les catégories sont des étiquettes internes de catalogue et de reporting. Une catégorie ne suffit pas à afficher un article en ligne.",
-          "he": "במסך **תפריט → פריטים** יוצרים או עורכים את הפריטים למכירה, כולל שם, מחיר בסיס ואפשרויות. קטגוריות הן תוויות פנימיות לקטלוג ולדוחות. שיוך לקטגוריה אינו מציג פריט באתר."
+          "fr": "La page Articles présente une liste sous forme de tableau, avec recherche, filtres et actions. Elle ne comporte pas de cartes KPI « Total articles » ou « Rupture de stock » au-dessus de la liste. Les catégories servent au classement interne et au reporting ; elles ne sont pas les sections du menu client.",
+          "en": "Items is a table-based library with search, filters and actions. There are no Total Items or Out of Stock KPI cards above this list. Categories classify the internal catalogue and reporting; they are not the customer menu sections.",
+          "he": "מסך הפריטים הוא ספרייה בצורת טבלה עם חיפוש, מסננים ופעולות. אין מעל הרשימה כרטיסי KPI של סך הפריטים או פריטים שאזלו. קטגוריות משמשות למיון פנימי ולדוחות, ולא כמקטעים בתפריט הלקוחות."
+        }
+      },
+      {
+        "id": "filters",
+        "title": {
+          "fr": "Rechercher, filtrer et choisir les colonnes",
+          "en": "Search, filter and choose columns",
+          "he": "חיפוש, סינון ובחירת עמודות"
+        },
+        "instructions": {
+          "fr": "Recherchez par nom. Le filtre Catégorie et le filtre État se combinent ; État propose Actif et Inactif, avec les articles actifs sélectionnés au départ. Tous les filtres ouvre le panneau récapitulatif. La disponibilité calculée est une information distincte de cet état actif/inactif. Le sélecteur de colonnes de l’en-tête permet de choisir Images, Catégorie, Disponibilité et Prix. Cliquez sur les en-têtes Nom ou Prix pour trier. La liste est paginée.",
+          "en": "Search by name. Category and Status filters combine; Status offers Active and Inactive, with active items selected initially. All Filters opens the filter panel. Calculated availability is separate from active/inactive status. The header column picker controls Images, Category, Availability and Price. Click Name or Price to sort. The list is paginated.",
+          "he": "חפשו לפי שם. מסנני קטגוריה ומצב משתלבים; מצב מציע פעיל ולא פעיל, וכברירת מחדל נבחרים פריטים פעילים. כל הסינונים פותח את לוח המסננים. זמינות מחושבת נפרדת ממצב פעיל/לא פעיל. בורר העמודות בכותרת שולט בתמונות, קטגוריה, זמינות ומחיר. לחצו על שם או מחיר למיון. הרשימה מחולקת לעמודים."
+        }
+      },
+      {
+        "id": "edit",
+        "title": {
+          "fr": "Créer, modifier et effectuer des actions groupées",
+          "en": "Create, edit and apply bulk actions",
+          "he": "יצירה, עריכה ופעולות מרובות"
+        },
+        "instructions": {
+          "fr": "Avec la permission de modifier le menu, cliquez sur Créer un article pour ouvrir l’éditeur plein écran, ou cliquez sur une ligne pour modifier un article existant. Le menu Actions permet notamment les imports et l’actualisation. Après sélection de plusieurs lignes, il propose l’affectation de catégorie, d’options ou de modificateurs, les forçages de disponibilité et la suppression avec confirmation. Vérifiez toujours la sélection et le restaurant avant une action groupée.",
+          "en": "With menu editing permission, click Create item to open the full-screen editor, or click an existing row to edit it. Actions includes imports and refresh. After selecting rows, it also offers category, option and modifier assignment, availability overrides and confirmed deletion. Check the selected items and restaurant before a bulk action.",
+          "he": "עם הרשאת עריכת תפריט, לחצו צור פריט לפתיחת העורך במסך מלא, או על שורה קיימת לעריכה. פעולות כולל ייבוא ורענון. לאחר בחירת שורות זמינים גם שיוך קטגוריה, אפשרויות ומודיפיירים, שינויי זמינות ומחיקה עם אישור. בדקו את הפריטים שנבחרו ואת המסעדה לפני פעולה מרובה."
         }
       },
       {
         "id": "section-2",
-        "level": 2,
         "title": {
-          "en": "Make an item visible",
-          "fr": "Afficher un article",
+          "fr": "Rendre un article visible aux clients",
+          "en": "Show an item to customers",
           "he": "הצגת פריט ללקוחות"
         },
         "instructions": {
-          "en": "1. Open the menu you want to offer in **Menu → Menus**.\n2. Create or choose a group inside that menu.\n3. Add the item to the group. The same item can appear in several groups or menus.\n4. Check the menu and group channels: web for online ordering, POS for staff.\n5. Check opening/custom hours, item availability and stock-related restrictions.\n6. Verify the result in the intended guest website or POS channel.\n\nIf an item is missing online, start with its group membership and web channel. Do not solve it by creating duplicate catalogue items.\n\n[Menus and groups](/en/help/menu/menus-and-groups) · [Create an item](/en/help/menu/creating-a-menu-item) · [Availability](/en/help/kitchen/availability)",
-          "fr": "1. Ouvrez la carte souhaitée dans **Menu → Cartes**.\n2. Créez ou choisissez un groupe dans cette carte.\n3. Ajoutez l’article au groupe. Le même article peut appartenir à plusieurs groupes ou cartes.\n4. Vérifiez les canaux de la carte et du groupe : web pour les clients, POS pour la caisse.\n5. Vérifiez les horaires, la disponibilité et les restrictions liées au stock.\n6. Contrôlez le résultat sur le site client ou la caisse concernée.\n\nSi l’article manque en ligne, vérifiez d’abord son groupe et le canal web. Évitez de créer un doublon de l’article.\n\n[Cartes et groupes](/fr/help/menu/menus-and-groups) · [Créer un article](/fr/help/menu/creating-a-menu-item) · [Disponibilité](/fr/help/kitchen/availability)",
-          "he": "1. פתחו את התפריט הרצוי.\n2. צרו או בחרו קבוצה בתוך התפריט.\n3. הוסיפו את הפריט לקבוצה. אותו פריט יכול להופיע בכמה קבוצות ותפריטים.\n4. בדקו את ערוצי התפריט והקבוצה: אתר להזמנות מקוונות וקופה לצוות.\n5. בדקו שעות פעילות, זמינות ומגבלות מלאי.\n6. ודאו שהפריט מוצג באתר או בקופה המתאימים.\n\nאם פריט חסר באתר, התחילו בבדיקת הקבוצה וערוץ האתר. אין צורך ליצור פריט כפול.\n\n[תפריטים וקבוצות](/he/help/menu/menus-and-groups) · [יצירת פריט](/he/help/menu/creating-a-menu-item) · [זמינות](/he/help/kitchen/availability)"
+          "fr": "Un article doit appartenir à un groupe dans une carte. Dans l’éditeur, la zone Diffusion permet de choisir ses groupes ; vous pouvez aussi ouvrir Menu → Cartes, choisir la carte et son groupe, puis ajouter l’article. Vérifiez les canaux web/POS, les horaires et la disponibilité de la carte et du groupe. Contrôlez le résultat sur le canal concerné. Être actif ou appartenir à une catégorie ne suffit pas. Évitez de créer un doublon pour résoudre un article absent.",
+          "en": "An item must belong to a group in a menu. Use Distribution in the editor to select groups, or open Menu → Menus, select the menu and group, and add the item. Check menu/group web and POS channels, hours and availability, then inspect the relevant channel. Active status or category membership alone is not enough. Do not create a duplicate to fix a missing item.",
+          "he": "פריט חייב להשתייך לקבוצה בתפריט. באזור הפצה בעורך בחרו קבוצות, או פתחו תפריט → תפריטים, בחרו תפריט וקבוצה והוסיפו את הפריט. בדקו ערוצי אתר וקופה, שעות וזמינות בתפריט ובקבוצה, ואז בדקו בערוץ המתאים. מצב פעיל או שיוך לקטגוריה בלבד אינם מספיקים. אין ליצור כפילות כדי לפתור פריט חסר."
         }
       }
     ],
@@ -2340,9 +2052,9 @@
       "he": "יצירת פריט תפריט, שלב אחר שלב"
     },
     "entry": {
-      "en": "Open the corresponding Foody workspace described below.",
-      "fr": "Ouvrez l’espace Foody correspondant décrit ci-dessous.",
-      "he": "פתחו את סביבת Foody המתאימה המתוארת למטה."
+      "fr": "Menu → Articles → Créer un article ouvre l’éditeur continu en plein écran.",
+      "en": "Menu → Items → Create item opens the continuous full-screen editor.",
+      "he": "תפריט → פריטים → צור פריט פותח עורך רציף במסך מלא."
     },
     "selectors": {
       "foodyadmin": [
@@ -2362,199 +2074,111 @@
     "operations": [
       {
         "id": "section-1",
-        "level": 2,
         "title": {
-          "en": "Before You Start",
-          "fr": "Avant de commencer",
-          "he": "לפני שמתחילים"
+          "fr": "Vérifier les accès et ouvrir l’éditeur",
+          "en": "Check access and open the editor",
+          "he": "בדיקת הרשאות ופתיחת העורך"
         },
         "instructions": {
-          "en": "A menu item lives inside a **category** (Salads, Burgers, Drinks, etc.). If no category exists yet, create one first from `Menu → Categories`. See [Categories and Items](./categories-and-items) for the full explanation.\n\nYou also want your **stock items** added in `Kitchen → Stock` if you plan to track food cost. That's not required to save the item; it just means the cost tab will be empty until you wire up ingredients.\n\n---",
-          "fr": "Un article du menu appartient à une **catégorie** (Salades, Burgers, Boissons, etc.). Si aucune catégorie n'existe, créez-la d'abord depuis `Menu → Catégories`. Voir [Catégories et articles](./categories-and-items) pour l'explication complète.\n\nVous voudrez aussi ajouter vos **articles de stock** dans `Cuisine → Stock` si vous souhaitez suivre le coût alimentaire. Ce n'est pas obligatoire pour enregistrer l'article ; cela veut simplement dire que l'onglet Coût sera vide tant que vous n'aurez pas relié d'ingrédients.\n\n---",
-          "he": "פריט תפריט שייך ל**קטגוריה** (סלטים, המבורגרים, משקאות וכו'). אם אין קטגוריה עדיין, צור אחת תחילה דרך `תפריט → קטגוריות`. ראה [קטגוריות ופריטים](./categories-and-items) להסבר מלא.\n\nכדאי גם להוסיף את **פריטי המלאי** שלך ב`מטבח → מלאי` אם אתה מתכנן לעקוב אחרי עלות מזון. זה לא חובה כדי לשמור את הפריט; פשוט הלשונית עלות תישאר ריקה עד שתקשר מרכיבים.\n\n---"
-        }
-      },
-      {
-        "id": "section-2",
-        "level": 2,
-        "title": {
-          "en": "Open the Create Item Form",
-          "fr": "Ouvrir le formulaire Créer un article",
-          "he": "פתיחת טופס יצירת פריט"
+          "fr": "Vérifiez le restaurant actif et votre permission de modifier le menu. Ouvrez Menu → Articles puis Créer un article. Le formulaire est une page continue en plein écran : faites défiler ses sections. Il n’utilise pas l’ancien modal à trois onglets Détails, Recette et Coût. Enregistrer reste accessible dans l’en-tête.",
+          "en": "Check the active restaurant and your menu editing permission. Open Menu → Items and click Create item. This is one continuous full-screen form: scroll through its sections. It does not use the old three-tab Details, Recipe and Cost modal. Save stays available in the header.",
+          "he": "בדקו את המסעדה הפעילה ואת הרשאת עריכת התפריט. פתחו תפריט → פריטים ולחצו צור פריט. זהו טופס רציף במסך מלא: גוללים בין חלקיו. הוא אינו משתמש בחלון הישן בעל שלוש הלשוניות פרטים, מתכון ועלות. שמירה נשארת זמינה בכותרת."
         },
-        "instructions": {
-          "en": "In FoodyAdmin:\n\n1. Go to `Menu → Items`.\n2. Click **New** in the top right.\n\nThe Create Item modal opens with three tabs: **Détails**, **Recette**, **Coût**. You'll fill Détails first, save, then come back for Recette (cost) if you want to track food cost.\n\n---",
-          "fr": "Dans FoodyAdmin :\n\n1. Allez dans `Menu → Articles`.\n2. Cliquez **Nouveau** en haut à droite.\n\nLe modal Créer un article s'ouvre avec trois onglets : **Détails**, **Recette**, **Coût**. Vous remplissez Détails d'abord, enregistrez, puis revenez à Recette si vous voulez suivre le coût alimentaire.\n\n---",
-          "he": "ב-FoodyAdmin:\n\n1. עבור ל`תפריט → פריטים`.\n2. לחץ על **חדש** בפינה הימנית העליונה.\n\nהמודל יצירת פריט נפתח עם שלוש לשוניות: **פרטים**, **מתכון**, **עלות**. תמלא פרטים קודם, תשמור, ואז תחזור למתכון אם תרצה לעקוב אחרי עלות מזון.\n\n---"
-        }
+        "anchors": [
+          "section-2"
+        ]
       },
       {
         "id": "section-3",
-        "level": 2,
         "title": {
-          "en": "Step 1. Image",
-          "fr": "Étape 1. Image",
-          "he": "שלב 1. תמונה"
+          "fr": "Informations de l’article et photo",
+          "en": "Item information and photo",
+          "he": "פרטי הפריט ותמונה"
         },
         "instructions": {
-          "en": "Drag an image into the dropzone or click to upload. You can also paste a URL.\n\nTips:\n\n* Square or 4:3 images look best across POS / web / kiosk.\n* Aim for 600–1200 px on the long edge.\n* JPG or PNG, under ~500 KB.\n\nIf you skip the image now, customers on the web app see a placeholder. You can add it later.\n\n---",
-          "fr": "Glissez une image dans la zone ou cliquez pour télécharger. Vous pouvez aussi coller une URL.\n\nConseils :\n\n* Les images carrées ou 4:3 s'affichent le mieux sur POS / web / kiosque.\n* Visez 600 à 1200 px sur le côté le plus long.\n* JPG ou PNG, sous ~500 Ko.\n\nSi vous sautez l'image maintenant, les clients sur l'app web voient un placeholder. Vous pouvez l'ajouter plus tard.\n\n---",
-          "he": "גרור תמונה לאזור או לחץ להעלאה. ניתן גם להדביק כתובת URL.\n\nטיפים:\n\n* תמונות ריבועיות או 4:3 נראות הכי טוב ב-POS / אינטרנט / קיוסק.\n* שאף ל-600 עד 1200 פיקסלים בצד הארוך.\n* JPG או PNG, מתחת ל-500 ק\"ב בערך.\n\nאם תדלג על התמונה כעת, לקוחות באפליקציית האינטרנט יראו מציין מיקום. אפשר להוסיף אותה מאוחר יותר.\n\n---"
-        }
-      },
-      {
-        "id": "section-4",
-        "level": 2,
-        "title": {
-          "en": "Step 2. Name",
-          "fr": "Étape 2. Nom",
-          "he": "שלב 2. שם"
+          "fr": "Dans Informations de l’article, choisissez le type, saisissez le nom et la description, puis ajoutez une photo depuis le contrôle Ajouter une photo. Choisir un fichier n’équivaut pas encore à enregistrer l’article. Une URL collée n’est pas un champ de ce formulaire. Pour modifier une photo existante, ouvrez son aperçu puis utilisez l’action de remplacement. Les champs traduits sont proposés sur un article enregistré.",
+          "en": "Under Item information, choose the type, enter its name and description, and use Add photo to choose an image file. Selecting a file does not yet save the item. Pasting an image URL is not a field in this form. Open an existing photo preview to use its replacement action. Translation editing is available for saved items.",
+          "he": "בפרטי הפריט בחרו סוג, הזינו שם ותיאור והשתמשו בהוספת תמונה לבחירת קובץ. בחירת קובץ עדיין אינה שומרת את הפריט. הדבקת כתובת תמונה אינה שדה בטופס הזה. להחלפת תמונה קיימת פתחו את התצוגה המקדימה שלה. עריכת תרגומים מוצעת בפריט שכבר נשמר."
         },
-        "instructions": {
-          "en": "The name your customers see. Required.\n\nTips:\n\n* Keep it under ~40 characters so it doesn't wrap on the POS screen.\n* Avoid internal codes like `BRG-01`. Customers see this.\n\n---",
-          "fr": "Le nom que voient vos clients. Obligatoire.\n\nConseils :\n\n* Restez sous ~40 caractères pour éviter les retours à la ligne sur l'écran POS.\n* Évitez les codes internes comme `BRG-01`. Les clients voient ce champ.\n\n---",
-          "he": "השם שהלקוחות רואים. חובה.\n\nטיפים:\n\n* שמור אותו מתחת ל-40 תווים כדי שלא ישבור שורה במסך ה-POS.\n* הימנע מקודים פנימיים כמו `BRG-01`. לקוחות רואים את השדה הזה.\n\n---"
-        }
-      },
-      {
-        "id": "section-5",
-        "level": 2,
-        "title": {
-          "en": "Step 3. Description",
-          "fr": "Étape 3. Description",
-          "he": "שלב 3. תיאור"
-        },
-        "instructions": {
-          "en": "Optional. Shown on the web app item page and on POS when staff tap the item. Not printed on receipts.\n\nUse it to list what's inside (\"Beef, lettuce, tomato, house sauce, brioche bun\"), highlight allergens, or tell a short story.\n\n---",
-          "fr": "Facultative. S'affiche sur la page de détail de l'article (web et POS). N'apparaît pas sur les reçus.\n\nUtilisez-la pour lister les ingrédients («\\u00A0Bœuf, laitue, tomate, sauce maison, pain brioché\\u00A0»), signaler les allergènes ou raconter une petite histoire.\n\n---",
-          "he": "אופציונלי. מוצג בעמוד הפריט באפליקציית האינטרנט וב-POS כשמקישים על הפריט. לא מודפס על קבלות.\n\nהשתמש בו כדי לפרט מה בפנים (\"בקר, חסה, עגבנייה, רוטב הבית, לחמניית בריוש\"), להבליט אלרגנים או לספר סיפור קצר.\n\n---"
-        }
+        "anchors": [
+          "section-4",
+          "section-5"
+        ]
       },
       {
         "id": "section-6",
-        "level": 2,
         "title": {
-          "en": "Step 4. Category",
-          "fr": "Étape 4. Catégorie",
-          "he": "שלב 4. קטגוריה"
+          "fr": "Classement et diffusion",
+          "en": "Classification and distribution",
+          "he": "מיון והפצה"
         },
         "instructions": {
-          "en": "Pick one of your existing categories from the dropdown.\n\nWhy this matters:\n\n* **Reporting** groups sales by category.\n* **Kitchen routing** sends tickets to the right station (grill, bar, pastry) based on category settings.\n* **Printer assignment** uses the category, not the item.\n\nCategories are internal. What customers see is the **menu group** the item is in. That's a separate concept covered in [Categories and Items](./categories-and-items).\n\n---",
-          "fr": "Choisissez une catégorie existante dans le menu déroulant.\n\nPourquoi c'est important :\n\n* Le **reporting** groupe les ventes par catégorie.\n* Le **routage cuisine** envoie les tickets à la bonne station (grill, bar, pâtisserie) selon les réglages de la catégorie.\n* L'**assignation d'imprimante** se fait par catégorie, pas par article.\n\nLes catégories sont internes. Ce que les clients voient, c'est le **groupe de menu** dans lequel l'article est placé. C'est un concept distinct, expliqué dans [Catégories et articles](./categories-and-items).\n\n---",
-          "he": "בחר אחת מהקטגוריות הקיימות מהתפריט הנפתח.\n\nלמה זה חשוב:\n\n* **דיווחים** מקבצים מכירות לפי קטגוריה.\n* **ניתוב מטבח** שולח כרטיסים לתחנה הנכונה (גריל, בר, קונדיטוריה) לפי הגדרות הקטגוריה.\n* **הקצאת מדפסת** משתמשת בקטגוריה, לא בפריט.\n\nהקטגוריות פנימיות. מה שהלקוחות רואים זה את **קבוצת התפריט** שבה הפריט נמצא. זה מושג נפרד, מכוסה ב[קטגוריות ופריטים](./categories-and-items).\n\n---"
-        }
+          "fr": "Dans la zone latérale Diffusion, choisissez la catégorie interne, l’état Actif et les groupes de cartes concernés. Les groupes choisis seront associés après création de l’article. Les catégories organisent le catalogue et le reporting ; seuls les groupes structurent le menu client. Un article actif sans groupe ne devient pas visible automatiquement.",
+          "en": "Use the Distribution side area for the internal category, Active status and menu groups. Selected groups are assigned after the item is created. Categories organize the catalogue and reporting; groups structure the customer menu. An active item without a group is not automatically visible.",
+          "he": "באזור הצד הפצה בחרו קטגוריה פנימית, מצב פעיל וקבוצות תפריט. הקבוצות שנבחרו משויכות לאחר יצירת הפריט. קטגוריות מארגנות את הקטלוג והדוחות; קבוצות הן מבנה התפריט ללקוחות. פריט פעיל ללא קבוצה אינו מוצג אוטומטית."
+        },
+        "anchors": [
+          "section-8"
+        ]
       },
       {
         "id": "section-7",
-        "level": 2,
         "title": {
-          "en": "Step 5. Price",
-          "fr": "Étape 5. Prix",
-          "he": "שלב 5. מחיר"
+          "fr": "Prix et variantes",
+          "en": "Price and variants",
+          "he": "מחיר ווריאציות"
         },
         "instructions": {
-          "en": "The base price the customer pays. Enter in your restaurant currency (₪, €, $…).\n\n* If your restaurant has variants (Small / Large), this base price is overridden per variant. See [Variants & Sizes](./variants-and-sizes).\n* Whether the price is tax-inclusive or exclusive is a **restaurant-level** setting (VAT rate in `Settings → Taxes`). The number you type here follows that rule.\n\n---",
-          "fr": "Le prix de base payé par le client. Saisissez dans la devise de votre restaurant (₪, €, $…).\n\n* Si votre restaurant a des variantes (Petit / Grand), ce prix de base est remplacé par variante. Voir [Variantes et tailles](./variants-and-sizes).\n* Le fait que le prix soit TTC ou HT est un réglage **au niveau du restaurant** (taux de TVA dans `Réglages → Taxes`). Le nombre saisi suit cette règle.\n\n---",
-          "he": "המחיר הבסיסי שהלקוח משלם. הזן במטבע של המסעדה (₪, €, $…).\n\n* אם למסעדה יש ווריאציות (קטן / גדול), מחיר הבסיס נדרס לפי ווריאציה. ראה [ווריאציות וגדלים](./variants-and-sizes).\n* האם המחיר כולל מע\"מ או לא הוא הגדרה **ברמת המסעדה** (שיעור מע\"מ ב`הגדרות → מסים`). המספר שתקליד עוקב אחרי הכלל הזה.\n\n---"
-        }
-      },
-      {
-        "id": "section-8",
-        "level": 2,
-        "title": {
-          "en": "Step 6. Active Toggle",
-          "fr": "Étape 6. Bascule Actif",
-          "he": "שלב 6. מתג פעיל"
+          "fr": "La section Prix et variantes regroupe le prix et les tailles. Pour un article simple, indiquez un prix de vente positif. Pour un article au poids, renseignez le prix par kilogramme et le poids estimé demandés. Avec des variantes, renseignez leurs prix absolus : ils remplacent le prix de base, tandis que les prix des modificateurs sont des suppléments. La portion décrit la taille servie ; elle ne remplit pas automatiquement les quantités d’ingrédients de la recette.",
+          "en": "Price and variants contains selling price and sizes. A simple item requires a positive selling price. A by-weight item requires its per-kilogram price and the requested estimated weight. Variant prices are absolute and replace the base price; modifier prices are additional amounts. Portion describes serving size; it does not automatically fill recipe ingredient quantities.",
+          "he": "מחיר ווריאציות כולל מחיר מכירה וגדלים. לפריט פשוט נדרש מחיר מכירה חיובי. בפריט לפי משקל הזינו מחיר לקילוגרם והמשקל המשוער המבוקש. מחירי וריאציות הם מחירים מוחלטים המחליפים את מחיר הבסיס; מחירי מודיפיירים הם תוספות. גודל מנה מתאר את ההגשה ואינו ממלא אוטומטית כמויות מרכיבים במתכון."
         },
-        "instructions": {
-          "en": "Controls whether the item is visible on POS / web. Leave it on unless:\n\n* Seasonal item off the menu for now.\n* You're migrating from another tool and want to stage items before publishing.\n\nPrefer toggling Active off over deleting. Deleting is permanent; toggling keeps analytics history intact.\n\n---",
-          "fr": "Contrôle la visibilité de l'article sur POS / web. Laissez activé, sauf si :\n\n* Article saisonnier hors menu pour l'instant.\n* Vous migrez depuis un autre outil et préparez les articles avant publication.\n\nPréférez désactiver plutôt que supprimer. La suppression est définitive ; la bascule préserve l'historique des ventes.\n\n---",
-          "he": "שולט אם הפריט נראה ב-POS / אינטרנט. השאר דלוק, אלא אם:\n\n* פריט עונתי שכרגע לא בתפריט.\n* אתה מעביר ממערכת אחרת ורוצה להכין פריטים לפני פרסום.\n\nעדיף לכבות את \"פעיל\" מאשר למחוק. מחיקה היא קבועה; המתג שומר על היסטוריית אנליטיקה.\n\n---"
-        }
-      },
-      {
-        "id": "section-9",
-        "level": 2,
-        "title": {
-          "en": "Step 7. Variants",
-          "fr": "Étape 7. Variantes",
-          "he": "שלב 7. ווריאציות"
-        },
-        "instructions": {
-          "en": "Variants are sizes, flavors, or choices sold at distinct prices (e.g. Small / Large; Classic / Spicy). Full walkthrough: [Variants & Sizes](./variants-and-sizes).\n\nYou can save the item now and add variants later. Nothing forces the variants to exist at create time.\n\n---",
-          "fr": "Les variantes sont des tailles, saveurs ou choix vendus à des prix distincts (ex. Petit / Grand ; Classic / Épicé). Guide complet : [Variantes et tailles](./variants-and-sizes).\n\nVous pouvez enregistrer l'article maintenant et ajouter les variantes plus tard. Rien n'oblige leur existence à la création.\n\n---",
-          "he": "ווריאציות הן גדלים, טעמים או בחירות שנמכרים במחירים שונים (למשל קטן / גדול; Classic / חריף). מדריך מלא: [ווריאציות וגדלים](./variants-and-sizes).\n\nאפשר לשמור את הפריט עכשיו ולהוסיף ווריאציות מאוחר יותר. שום דבר לא מחייב את קיומן ביצירה.\n\n---"
-        }
+        "anchors": [
+          "section-9"
+        ]
       },
       {
         "id": "section-10",
-        "level": 2,
         "title": {
-          "en": "Step 8. Modifiers",
-          "fr": "Étape 8. Modificateurs",
-          "he": "שלב 8. מודיפיירים"
+          "fr": "Personnalisations et autres sections",
+          "en": "Personalizations and other sections",
+          "he": "התאמות אישיות וחלקים נוספים"
         },
         "instructions": {
-          "en": "Modifiers are customer-selectable add-ons or changes (\"Extra cheese +₪5\", \"No onions\"). Full walkthrough: [Setting Up Modifiers](./modifiers).\n\nLike variants, they can be added after the item is saved.\n\n---",
-          "fr": "Les modificateurs sont des options ajoutées par le client («\\u00A0Extra fromage +5\\u00A0₪\\u00A0», «\\u00A0Sans oignons\\u00A0»). Guide complet : [Configurer les modificateurs](./modifiers).\n\nComme les variantes, ils peuvent être ajoutés après enregistrement.\n\n---",
-          "he": "מודיפיירים הם תוספות או שינויים שהלקוח בוחר (\"גבינה נוספת +5 ₪\", \"בלי בצל\"). מדריך מלא: [הגדרת מודיפיירים](./modifiers).\n\nכמו ווריאציות, ניתן להוסיף אחרי שמירת הפריט.\n\n---"
+          "fr": "Pour un article standard, Personnalisations permet les modificateurs et les notes client ; Personnalisation lors du passage en caisse règle le comportement de sélection sur la caisse. Informations client contient les informations communiquées aux clients. Stock & disponibilité et Recette et coût suivent dans la même page. Contexte pour l’assistant IA sert au descriptif privé de l’assistant de commande, distinct de l’assistant support. Pour un combo, Composition remplace les sections propres à la recette d’un article standard.",
+          "en": "For a standard item, Personalizations holds modifiers and customer notes; checkout customization controls selection behavior on the POS. Customer information contains customer-facing facts. Stock & availability and Recipe and cost follow on the same page. AI assistant context is private guidance for the ordering assistant, separate from support. A combo uses Composition instead of the standard item recipe sections.",
+          "he": "בפריט רגיל, התאמות אישיות כולל מודיפיירים והערות לקוח; התאמה במעבר בקופה קובעת את התנהגות הבחירה בקופה. מידע ללקוחות כולל עובדות המוצגות ללקוחות. מלאי וזמינות ומתכון ועלות ממשיכים באותו עמוד. הקשר לעוזר AI הוא מידע פרטי לעוזר ההזמנות, הנפרד מעוזר התמיכה. קומבו משתמש בהרכב במקום חלקי המתכון של פריט רגיל."
         }
       },
       {
         "id": "section-11",
-        "level": 2,
         "title": {
-          "en": "Step 9. Save, Then Open Recette",
-          "fr": "Étape 9. Enregistrer, puis ouvrir Recette",
-          "he": "שלב 9. שמירה, ואז פתיחת מתכון"
+          "fr": "Enregistrer, puis compléter la recette",
+          "en": "Save, then complete the recipe",
+          "he": "שמירה והשלמת המתכון"
         },
         "instructions": {
-          "en": "Click **Enregistrer**. The item lands in the list.\n\nClick the item to re-open it, then switch to the **Recette** tab. This is where you connect ingredients (stock + prep) and see the real food cost of the dish.\n\nEach ingredient row picks a **scope** (Match item size / Fixed quantity / Custom per variant). Full explanation: [How to Configure Ingredients & Portions](./ingredients-and-portions).\n\nThe **Coût** tab shows you:\n\n* Food cost per variant\n* Food cost percentage vs. price\n* Gross margin\n* A breakdown popup when you click any prep ingredient\n\n---",
-          "fr": "Cliquez **Enregistrer**. L'article apparaît dans la liste.\n\nCliquez sur l'article pour le rouvrir, puis passez à l'onglet **Recette**. C'est là que vous reliez les ingrédients (stock + prép.) et voyez le vrai coût alimentaire.\n\nChaque ligne d'ingrédient choisit une **portée** (Adapter à la taille / Quantité fixe / Personnalisé par variante). Explication complète : [Configurer les ingrédients et portions](./ingredients-and-portions).\n\nL'onglet **Coût** affiche :\n\n* Coût alimentaire par variante.\n* Pourcentage de coût vs. prix.\n* Marge brute.\n* Un popup de détail quand vous cliquez sur un ingrédient de préparation.\n\n---",
-          "he": "לחץ **שמור**. הפריט מופיע ברשימה.\n\nלחץ על הפריט לפתיחה חוזרת, ועבור ללשונית **מתכון**. כאן מחברים את המרכיבים (מלאי + הכנה) ורואים את עלות המזון האמיתית של המנה.\n\nלכל שורת מרכיב יש **היקף** (התאם לגודל הפריט / כמות קבועה / מותאם לפי ווריאציה). הסבר מלא: [הגדרת מרכיבים ומנות](./ingredients-and-portions).\n\nהלשונית **עלות** מציגה:\n\n* עלות מזון לפי ווריאציה.\n* אחוז עלות מול מחיר.\n* רווח גולמי.\n* חלונית פירוט כשלוחצים על מרכיב הכנה.\n\n---"
+          "fr": "Cliquez Enregistrer. Avant le premier enregistrement, Recette et coût et Stock & disponibilité proposent d’enregistrer puis de configurer, car ces réglages nécessitent un article créé. Rouvrez ensuite l’article et faites défiler jusqu’à Recette et coût. Les changements d’ingrédients s’enregistrent immédiatement ; les instructions et notes de recette se sauvegardent avec l’article. Attendez la confirmation et réessayez une erreur sans créer un second article.",
+          "en": "Click Save. Before the first save, Recipe and cost and Stock & availability offer to save and configure because these settings require a created item. Reopen it and scroll to Recipe and cost. Ingredient edits save immediately; recipe instructions and notes save with the item. Wait for confirmation and retry an error without creating another item.",
+          "he": "לחצו שמירה. לפני השמירה הראשונה, מתכון ועלות ומלאי וזמינות מציעים לשמור ולהגדיר, משום שנדרש פריט שנוצר. פתחו אותו שוב וגללו למתכון ועלות. שינויי מרכיבים נשמרים מיד; הוראות והערות המתכון נשמרות עם הפריט. המתינו לאישור ונסו שוב לאחר שגיאה בלי ליצור פריט נוסף."
         }
       },
       {
         "id": "section-12",
-        "level": 2,
         "title": {
-          "en": "Step 10. Verify on POS and Web",
-          "fr": "Étape 10. Vérifier sur POS et web",
-          "he": "שלב 10. בדיקה ב-POS ובאינטרנט"
+          "fr": "Vérifier l’affichage et résoudre une absence",
+          "en": "Verify visibility and resolve a missing item",
+          "he": "בדיקת תצוגה וטיפול בפריט חסר"
         },
         "instructions": {
-          "en": "Being in a category is **not enough** to make the item show up for customers. The item also has to be attached to a **menu group**:\n\n1. Go to `Menu → Menus`, open a menu (e.g. \"Lunch\").\n2. Open a group (or create one), click \"Add items\", pick your new item.\n3. Save.\n\nThe item now appears on the POS grid and on the web QR menu for that restaurant and location.\n\nSee [Categories and Items](./categories-and-items) for the full menu / group / category distinction.\n\n---",
-          "fr": "Être dans une catégorie **ne suffit pas** à afficher l'article pour les clients. Il doit aussi être attaché à un **groupe de menu** :\n\n1. Allez dans `Menu → Menus`, ouvrez un menu (ex. «\\u00A0Déjeuner\\u00A0»).\n2. Ouvrez un groupe (ou créez-en un), cliquez «\\u00A0Ajouter des articles\\u00A0», choisissez votre nouvel article.\n3. Enregistrez.\n\nL'article apparaît maintenant sur la grille POS et sur le menu QR web pour ce restaurant et ce site.\n\nVoir [Catégories et articles](./categories-and-items) pour la distinction complète menu / groupe / catégorie.\n\n---",
-          "he": "הימצאות בקטגוריה **לא מספיקה** כדי שהפריט יופיע ללקוחות. הוא צריך גם להיות מחובר ל**קבוצת תפריט**:\n\n1. עבור ל`תפריט → תפריטים`, פתח תפריט (למשל \"ארוחת צהריים\").\n2. פתח קבוצה (או צור אחת), לחץ \"הוסף פריטים\", בחר את הפריט החדש שלך.\n3. שמור.\n\nהפריט מופיע עכשיו ברשת ה-POS ובתפריט ה-QR באינטרנט עבור המסעדה והמיקום הזה.\n\nראה [קטגוריות ופריטים](./categories-and-items) להבחנה מלאה בין תפריט / קבוצה / קטגוריה.\n\n---"
-        }
-      },
-      {
-        "id": "section-13",
-        "level": 2,
-        "title": {
-          "en": "Troubleshooting",
-          "fr": "Dépannage",
-          "he": "פתרון בעיות"
+          "fr": "Vérifiez la présence de l’article dans un groupe, les canaux de la carte et du groupe, leurs horaires et la disponibilité. Contrôlez le site ou la caisse concernés. Si le bouton Enregistrer est désactivé, contrôlez les permissions, le nom et le prix requis. Si l’enregistrement n’est que partiellement terminé, conservez l’éditeur et réessayez les étapes restantes ; ne recréez pas l’article. [Articles et menus](./categories-and-items) · [Variantes](./variants-and-sizes) · [Recette et quantités](./ingredients-and-portions).",
+          "en": "Check group membership, menu/group channels, hours and availability, then inspect the relevant website or POS. If Save is disabled, check permission, name and required price. If creation is only partially complete, keep the editor and retry the remaining steps rather than recreating the item. [Items and menus](./categories-and-items) · [Variants](./variants-and-sizes) · [Recipe quantities](./ingredients-and-portions).",
+          "he": "בדקו שיוך לקבוצה, ערוצים בתפריט ובקבוצה, שעות וזמינות, ואז בדקו באתר או בקופה המתאימים. אם שמירה מושבתת, בדקו הרשאה, שם ומחיר נדרש. אם היצירה הושלמה חלקית, השאירו את העורך ונסו את השלבים שנותרו במקום ליצור שוב. [פריטים ותפריטים](./categories-and-items) · [וריאציות](./variants-and-sizes) · [כמויות במתכון](./ingredients-and-portions)."
         },
-        "instructions": {
-          "en": "| Symptom | Fix |\n|---|---|\n| Item not visible on POS | Not attached to a menu group; or group's channel setting has `pos_enabled` off. |\n| Item not on web QR menu | Group's `web_enabled` off; or group hidden; or menu's availability hours exclude the current time. |\n| Price shows wrong tax | Check `Settings → Taxes` VAT rate + whether prices are inc/ex VAT. |\n| Image blurry | Re-upload a higher-resolution source (600–1200 px long edge). |\n| Variant portion missing | Open the Variants editor, fill the Portion field per row. Needed for recipe cost to compute. |\n\n---",
-          "fr": "| Symptôme | Solution |\n|---|---|\n| Article invisible sur POS | Non attaché à un groupe de menu ; ou le réglage `pos_enabled` du groupe est désactivé. |\n| Article absent du QR web | `web_enabled` du groupe désactivé ; ou groupe caché ; ou les horaires du menu excluent l'heure actuelle. |\n| Prix affiche une mauvaise TVA | Vérifiez `Réglages → Taxes` (taux + TTC/HT). |\n| Image floue | Réuploader une source à plus haute résolution (600–1200 px sur le côté long). |\n| Portion de variante manquante | Ouvrir l'éditeur Variantes et remplir le champ Portion par ligne. Requis pour le calcul du coût. |\n\n---",
-          "he": "| תסמין | פתרון |\n|---|---|\n| הפריט לא נראה ב-POS | לא מחובר לקבוצת תפריט; או `pos_enabled` של הקבוצה כבוי. |\n| הפריט לא בתפריט QR אינטרנט | `web_enabled` של הקבוצה כבוי; או הקבוצה מוסתרת; או שעות הזמינות של התפריט מחריגות את השעה הנוכחית. |\n| המחיר מראה מע\"מ שגוי | בדוק `הגדרות → מסים` (שיעור + כולל/לא כולל מע\"מ). |\n| תמונה מטושטשת | העלה מחדש מקור ברזולוציה גבוהה יותר (600–1200 פיקסלים בצד הארוך). |\n| חסרה מנת ווריאציה | פתח את עורך הווריאציות, מלא את שדה המנה לכל שורה. נדרש לחישוב עלות המתכון. |\n\n---"
-        }
-      },
-      {
-        "id": "section-14",
-        "level": 2,
-        "title": {
-          "en": "What Next",
-          "fr": "Pour aller plus loin",
-          "he": "מה הלאה"
-        },
-        "instructions": {
-          "en": "* [Variants & Sizes](./variants-and-sizes) for sizing logic.\n* [How to Configure Ingredients & Portions](./ingredients-and-portions) for recipe + cost.\n* [Setting Up Modifiers](./modifiers) for customer customizations.",
-          "fr": "* [Variantes et tailles](./variants-and-sizes) pour la logique de dimensionnement.\n* [Configurer les ingrédients et portions](./ingredients-and-portions) pour recette et coût.\n* [Configurer les modificateurs](./modifiers) pour les personnalisations client.",
-          "he": "* [ווריאציות וגדלים](./variants-and-sizes) ללוגיקת הגדלים.\n* [הגדרת מרכיבים ומנות](./ingredients-and-portions) למתכון ועלות.\n* [הגדרת מודיפיירים](./modifiers) להתאמות לקוח."
-        }
+        "anchors": [
+          "section-13",
+          "section-14"
+        ]
       }
     ],
     "audience": "public",
@@ -2572,9 +2196,9 @@
       "he": "איך להגדיר מרכיבים ומנות"
     },
     "entry": {
-      "en": "Open the corresponding Foody workspace described below.",
-      "fr": "Ouvrez l’espace Foody correspondant décrit ci-dessous.",
-      "he": "פתחו את סביבת Foody המתאימה המתוארת למטה."
+      "fr": "Dans un article enregistré, faites défiler jusqu’à Recette et coût.",
+      "en": "In a saved item, scroll to Recipe and cost.",
+      "he": "בפריט שמור גללו למתכון ועלות."
     },
     "selectors": {
       "foodyadmin": [
@@ -2594,275 +2218,129 @@
     "operations": [
       {
         "id": "section-1",
-        "level": 2,
         "title": {
-          "en": "🍽️ How to Configure Ingredients & Portions",
-          "fr": "🍽️ Configurer les ingrédients et portions",
-          "he": "🍽️ איך להגדיר מרכיבים ומנות"
+          "fr": "Ouvrir la recette dans l’éditeur continu",
+          "en": "Open the recipe in the continuous editor",
+          "he": "פתיחת המתכון בעורך הרציף"
         },
         "instructions": {
-          "en": "Each ingredient in your recipe needs a quantity rule.\nThis rule defines how the ingredient behaves depending on the item's size (variants) and customizations (modifiers).\n\nThere are 3 main ways to configure your ingredients, depending on how your item is built.\n\n---",
-          "fr": "Chaque ingrédient de votre recette a besoin d'une règle de quantité.\nCette règle définit le comportement de l'ingrédient selon la taille de l'article (variantes) et les personnalisations (modificateurs).\n\nIl existe 3 façons de configurer vos ingrédients, selon la composition de votre article.\n\n---",
-          "he": "לכל מרכיב במתכון דרוש כלל כמות.\nהכלל קובע איך המרכיב מתנהג בהתאם לגודל הפריט (ווריאציות) ולהתאמות (מודיפיירים).\n\nישנן 3 דרכים עיקריות להגדיר את המרכיבים שלך, לפי אופן בניית הפריט.\n\n---"
-        }
+          "fr": "Ouvrez Menu → Articles, choisissez l’article enregistré et faites défiler jusqu’à Recette et coût. Il s’agit d’une section de la page, pas d’un onglet Recette ou Coût séparé. La recette relie des matières premières ou préparations aux quantités utilisées pour une vente.",
+          "en": "Open Menu → Items, select a saved item and scroll to Recipe and cost. This is a section of the page, not a separate Recipe or Cost tab. The recipe links raw ingredients or preparations to quantities used for one sale.",
+          "he": "פתחו תפריט → פריטים, בחרו פריט שמור וגללו למתכון ועלות. זהו חלק בעמוד, ולא לשונית מתכון או עלות נפרדת. המתכון מקשר חומרי גלם או הכנות לכמויות המשמשות במכירה אחת."
+        },
+        "anchors": [
+          "section-15",
+          "section-16"
+        ]
       },
       {
         "id": "section-2",
-        "level": 2,
         "title": {
-          "en": "🥣 1. Simple Item, Match Item Size",
-          "fr": "🥣 1. Article simple, Adapter à la taille",
-          "he": "🥣 1. פריט פשוט, התאם לגודל הפריט"
+          "fr": "Ajouter une matière première ou une préparation",
+          "en": "Add a raw ingredient or preparation",
+          "he": "הוספת חומר גלם או הכנה"
         },
         "instructions": {
-          "en": "**Example: Soup**\n\nThis is the simplest case.\n\n* Your item is made from one preparation only (e.g. soup, juice, sauce).\n* The unit of the recipe equals the unit you sell (grams, ml, etc.).\n* The size of the item directly defines the quantity used.",
-          "fr": "**Exemple : Soupe**\n\nC'est le cas le plus simple.\n\n* Votre article est composé d'une seule préparation (soupe, jus, sauce).\n* L'unité de la recette est la même que l'unité de vente (grammes, ml, etc.).\n* La taille de l'article définit directement la quantité consommée.",
-          "he": "**דוגמה: מרק**\n\nזהו המקרה הפשוט ביותר.\n\n* הפריט שלך מכיל הכנה אחת בלבד (למשל מרק, מיץ, רוטב).\n* יחידת המתכון זהה ליחידת המכירה (גרמים, מ״ל וכו').\n* גודל הפריט מגדיר ישירות את הכמות הנצרכת."
-        }
-      },
-      {
-        "id": "section-3",
-        "level": 3,
-        "title": {
-          "en": "How it works",
-          "fr": "Comment ça marche",
-          "he": "איך זה עובד"
+          "fr": "Utilisez l’ajout d’ingrédient au-dessus du tableau. Choisissez une matière première du stock ou une préparation, puis son unité. Recherchez une fiche existante avant d’en créer une. Après ajout, vérifiez la ligne, la quantité et la confirmation d’enregistrement. Une préparation doit avoir un rendement et un coût renseignés pour contribuer correctement au calcul.",
+          "en": "Use Add ingredient above the table. Choose a raw stock ingredient or preparation and its unit. Search for an existing record before creating one. After adding, check its row, quantity and save confirmation. A preparation needs a yield and cost for a reliable calculation.",
+          "he": "השתמשו בהוספת מרכיב מעל הטבלה. בחרו חומר גלם מהמלאי או הכנה ואת יחידתו. חפשו רשומה קיימת לפני יצירת חדשה. לאחר ההוספה בדקו שורה, כמות ואישור שמירה. להכנה נדרשים תפוקה ועלות לחישוב אמין."
         },
-        "instructions": {
-          "en": "You use: **Match item size**.\n\n* You don't enter any quantity manually.\n* The system automatically uses the variant size.",
-          "fr": "Vous utilisez : **Adapter à la taille**.\n\n* Vous ne saisissez aucune quantité manuellement.\n* Le système utilise automatiquement la taille de la variante.",
-          "he": "השתמש ב: **התאם לגודל הפריט**.\n\n* אינך מזין כמות ידנית.\n* המערכת משתמשת אוטומטית בגודל הווריאציה."
-        }
+        "anchors": [
+          "section-3",
+          "section-17"
+        ]
       },
       {
         "id": "section-4",
-        "level": 3,
         "title": {
-          "en": "Example",
-          "fr": "Exemple",
-          "he": "דוגמה"
+          "fr": "Saisir la quantité pour une portion",
+          "en": "Enter quantity for one serving",
+          "he": "הזנת כמות למנה אחת"
         },
         "instructions": {
-          "en": "| Variant | Quantity used |\n| ------- | ------------- |\n| 250 g   | 250 g soup    |\n| 500 g   | 500 g soup    |",
-          "fr": "| Variante | Quantité utilisée |\n| -------- | ----------------- |\n| 250 g    | 250 g de soupe    |\n| 500 g    | 500 g de soupe    |",
-          "he": "| ווריאציה | כמות נצרכת |\n| -------- | ---------- |\n| 250 ג״ר  | 250 ג״ר מרק |\n| 500 ג״ר  | 500 ג״ר מרק |"
-        }
-      },
-      {
-        "id": "section-5",
-        "level": 3,
-        "title": {
-          "en": "When to use this",
-          "fr": "Quand l'utiliser",
-          "he": "מתי להשתמש בזה"
+          "fr": "Sans quantités différentes par taille, saisissez la quantité de chaque ingrédient pour une portion et une unité compatible. Exemple : 200 g de bœuf, 1 pain et 20 g de sauce. Une valeur manquante n’est pas une quantité calculée automatiquement. Contrôlez les messages d’erreur avant de poursuivre.",
+          "en": "Without different quantities per size, enter each ingredient quantity for one serving in a compatible unit. Example: 200 g beef, one bun and 20 g sauce. A missing value is not an automatically calculated quantity. Resolve validation errors before continuing.",
+          "he": "בלי כמויות שונות לפי גודל, הזינו לכל מרכיב כמות למנה אחת וביחידה מתאימה. לדוגמה: 200 גרם בשר, לחמנייה אחת ו-20 גרם רוטב. ערך חסר אינו כמות שמחושבת אוטומטית. טפלו בשגיאות אימות לפני המשך."
         },
-        "instructions": {
-          "en": "Use Match item size when:\n\n* You have only one ingredient.\n* The item is a preparation already made.\n* The portion sold equals the portion consumed.\n\n✅ Typical items: Soup, Smoothie, Prepared sauce, Juice.\n\n---",
-          "fr": "Utilisez Adapter à la taille quand :\n\n* Vous n'avez qu'un seul ingrédient.\n* L'article est une préparation déjà prête.\n* La portion vendue est la portion consommée.\n\n✅ Articles typiques : Soupe, Smoothie, Sauce préparée, Jus.\n\n---",
-          "he": "השתמש ב״התאם לגודל הפריט״ כאשר:\n\n* יש לך רק מרכיב אחד.\n* הפריט הוא הכנה מוכנה.\n* המנה הנמכרת שווה למנה הנצרכת.\n\n✅ פריטים טיפוסיים: מרק, סמות'י, רוטב מוכן, מיץ.\n\n---"
-        }
-      },
-      {
-        "id": "section-6",
-        "level": 2,
-        "title": {
-          "en": "🍔 2. Complex Item, Fixed + Custom per Variant",
-          "fr": "🍔 2. Article composé, Fixe + Personnalisé par variante",
-          "he": "🍔 2. פריט מורכב, קבוע + מותאם לפי ווריאציה"
-        },
-        "instructions": {
-          "en": "**Example: Hamburger**\n\nThis case is more advanced.\n\n* Your item is made of multiple ingredients.\n* Some ingredients change with size, others don't.",
-          "fr": "**Exemple : Hamburger**\n\nCe cas est plus avancé.\n\n* Votre article contient plusieurs ingrédients.\n* Certains changent avec la taille, d'autres non.",
-          "he": "**דוגמה: המבורגר**\n\nהמקרה הזה מתקדם יותר.\n\n* הפריט שלך מכיל מספר מרכיבים.\n* חלק מהמרכיבים משתנים עם הגודל, אחרים לא."
-        }
+        "anchors": [
+          "section-5",
+          "section-6"
+        ]
       },
       {
         "id": "section-7",
-        "level": 3,
         "title": {
-          "en": "How it works",
-          "fr": "Comment ça marche",
-          "he": "איך זה עובד"
+          "fr": "Définir les quantités par taille",
+          "en": "Set quantities per size",
+          "he": "הגדרת כמויות לפי גודל"
         },
         "instructions": {
-          "en": "You combine:\n\n* **Fixed quantity** for ingredients that never change.\n* **Custom per variant** for ingredients that depend on size.",
-          "fr": "Vous combinez :\n\n* **Quantité fixe** pour les ingrédients qui ne changent jamais.\n* **Personnalisé par variante** pour les ingrédients qui dépendent de la taille.",
-          "he": "אתה משלב:\n\n* **כמות קבועה** למרכיבים שאינם משתנים.\n* **מותאם לפי ווריאציה** למרכיבים שתלויים בגודל."
-        }
-      },
-      {
-        "id": "section-8",
-        "level": 3,
-        "title": {
-          "en": "Example setup",
-          "fr": "Exemple de configuration",
-          "he": "דוגמת הגדרה"
+          "fr": "Si l’article a des variantes, activez Quantités différentes par taille ?. Le tableau affiche une colonne par variante. Saisissez les quantités consommées dans chaque cellule. Pour un ingrédient identique dans toutes les tailles, utilisez Même quantité. Exemple : bœuf 200 g en Normal et 400 g en Grand ; pain identique dans les deux. La portion affichée dans Prix et variantes ne remplace pas cette saisie.",
+          "en": "For an item with variants, enable different quantities per size. The table shows a column per variant. Enter consumption in each cell. Use Same quantity for an ingredient shared identically by every size. Example: 200 g beef for Regular and 400 g for Large, with one bun in both. The serving portion shown under Price and variants does not replace these entries.",
+          "he": "לפריט עם וריאציות הפעילו כמויות שונות לפי גודל. הטבלה מציגה עמודה לכל וריאציה. הזינו צריכה בכל תא. השתמשו באותה כמות למרכיב זהה בכל הגדלים. לדוגמה: 200 גרם בשר ברגיל ו-400 בגדול, ולחמנייה אחת בשניהם. גודל המנה המוצג במחיר ווריאציות אינו מחליף את ההזנה הזו."
         },
-        "instructions": {
-          "en": "Variants: Classic burger, Big burger.\n\nIngredients:\n\n* **Beef** changes with size. Use **Custom per variant**:\n\n  | Variant | Beef  |\n  | ------- | ----- |\n  | Classic | 200 g |\n  | Big     | 400 g |\n\n* Bread, tomato, lettuce, sauce stay the same for all variants. Use **Fixed quantity**:\n\n  * 1 bun\n  * 20 g sauce\n  * 30 g vegetables",
-          "fr": "Variantes : Classic burger, Big burger.\n\nIngrédients :\n\n* **Bœuf** change avec la taille. Utilisez **Personnalisé par variante** :\n\n  | Variante | Bœuf  |\n  | -------- | ----- |\n  | Classic  | 200 g |\n  | Big      | 400 g |\n\n* Pain, tomate, laitue, sauce restent identiques pour toutes les variantes. Utilisez **Quantité fixe** :\n\n  * 1 pain\n  * 20 g de sauce\n  * 30 g de légumes",
-          "he": "ווריאציות: Classic burger, Big burger.\n\nמרכיבים:\n\n* **בקר** משתנה עם הגודל. השתמש ב**מותאם לפי ווריאציה**:\n\n  | ווריאציה | בקר   |\n  | -------- | ----- |\n  | Classic  | 200 ג״ר |\n  | Big      | 400 ג״ר |\n\n* לחמנייה, עגבנייה, חסה, רוטב נשארים זהים לכל הווריאציות. השתמש ב**כמות קבועה**:\n\n  * 1 לחמנייה\n  * 20 ג״ר רוטב\n  * 30 ג״ר ירקות"
-        }
-      },
-      {
-        "id": "section-9",
-        "level": 3,
-        "title": {
-          "en": "When to use this",
-          "fr": "Quand l'utiliser",
-          "he": "מתי להשתמש בזה"
-        },
-        "instructions": {
-          "en": "Use this setup when:\n\n* Your item has multiple ingredients.\n* Only some ingredients vary with size.\n\n✅ Typical items: Burgers, Sandwiches, Bowls, Pizzas.\n\n---",
-          "fr": "Utilisez cette configuration quand :\n\n* Votre article contient plusieurs ingrédients.\n* Seuls certains ingrédients varient avec la taille.\n\n✅ Articles typiques : Burgers, Sandwichs, Bowls, Pizzas.\n\n---",
-          "he": "השתמש בהגדרה זו כאשר:\n\n* לפריט יש מספר מרכיבים.\n* רק חלק מהמרכיבים משתנים עם הגודל.\n\n✅ פריטים טיפוסיים: המבורגרים, סנדוויצ'ים, קעריות, פיצות.\n\n---"
-        }
-      },
-      {
-        "id": "section-10",
-        "level": 2,
-        "title": {
-          "en": "🧀 3. Advanced Item, With Modifiers (Add-ons)",
-          "fr": "🧀 3. Article avancé, Avec modificateurs (suppléments)",
-          "he": "🧀 3. פריט מתקדם, עם מודיפיירים (תוספות)"
-        },
-        "instructions": {
-          "en": "**Example: Burger + Extra Cheese**\n\nThis builds on the previous case.\n\n* You still have multiple ingredients.\n* Customers can add extras (modifiers).",
-          "fr": "**Exemple : Burger + Extra fromage**\n\nCela s'appuie sur le cas précédent.\n\n* Vous avez toujours plusieurs ingrédients.\n* Les clients peuvent ajouter des suppléments (modificateurs).",
-          "he": "**דוגמה: המבורגר + גבינה נוספת**\n\nזה בונה על המקרה הקודם.\n\n* עדיין יש לך מספר מרכיבים.\n* לקוחות יכולים להוסיף תוספות (מודיפיירים)."
-        }
+        "anchors": [
+          "section-8",
+          "section-9",
+          "section-10",
+          "section-14"
+        ]
       },
       {
         "id": "section-11",
-        "level": 3,
         "title": {
-          "en": "How it works",
-          "fr": "Comment ça marche",
-          "he": "איך זה עובד"
+          "fr": "Préremplir et contrôler les cellules",
+          "en": "Prefill and check cells",
+          "he": "מילוי מקדים ובדיקת תאים"
         },
         "instructions": {
-          "en": "You configure:\n\n**1. Base recipe** (same as the hamburger case):\n\n* Fixed quantity for bread, sauce, etc.\n* Custom per variant for meat.\n\n**2. Modifiers (add-ons)**:\n\nEach modifier must be linked to an ingredient.\n\nExample:\n\n* Modifier: Extra cheese\n* Linked ingredient: cheese\n* Quantity added: +20 g",
-          "fr": "Vous configurez :\n\n**1. Recette de base** (comme le cas hamburger) :\n\n* Quantité fixe pour pain, sauce, etc.\n* Personnalisé par variante pour la viande.\n\n**2. Modificateurs (suppléments)** :\n\nChaque modificateur doit être lié à un ingrédient.\n\nExemple :\n\n* Modificateur : Extra fromage\n* Ingrédient lié : fromage\n* Quantité ajoutée : +20 g",
-          "he": "אתה מגדיר:\n\n**1. מתכון בסיס** (כמו במקרה ההמבורגר):\n\n* כמות קבועה ללחמנייה, רוטב וכו'.\n* מותאם לפי ווריאציה לבשר.\n\n**2. מודיפיירים (תוספות)**:\n\nכל מודיפייר חייב להיות מקושר למרכיב.\n\nדוגמה:\n\n* מודיפייר: גבינה נוספת\n* מרכיב מקושר: גבינה\n* כמות מוספת: +20 ג״ר"
-        }
-      },
-      {
-        "id": "section-12",
-        "level": 3,
-        "title": {
-          "en": "What happens",
-          "fr": "Ce qui se passe",
-          "he": "מה קורה"
+          "fr": "Préremplir les quantités par taille utilise une quantité de base et les multiplicateurs que vous saisissez pour remplir les cellules vides. Chaque cellule reste modifiable. Relisez toutes les tailles : une variante sans quantité renseignée ne décompte pas cet ingrédient jusqu’à correction. Il n’y a pas de choix automatique Adapter à la taille à utiliser à la place de ces cellules.",
+          "en": "Prefill quantities by size uses a base quantity and your multipliers to fill empty cells. Each cell stays editable. Check every size: an ingredient with no quantity for a variant is not deducted for that variant until corrected. Do not look for an automatic Scale to item size mode instead of entering these cells.",
+          "he": "מילוי כמויות לפי גודל משתמש בכמות בסיס ובמכפילים שהזנתם למילוי תאים ריקים. כל תא נשאר ניתן לעריכה. בדקו כל גודל: מרכיב ללא כמות לווריאציה אינו מנוכה עבורה עד לתיקון. אין לחפש מצב אוטומטי של התאמה לגודל הפריט במקום הזנת התאים."
         },
-        "instructions": {
-          "en": "If a customer selects Extra cheese:\n\n* +20 g cheese is consumed from stock.\n* Food cost increases automatically.",
-          "fr": "Si un client sélectionne Extra fromage :\n\n* +20 g de fromage sont consommés du stock.\n* Le coût alimentaire augmente automatiquement.",
-          "he": "אם לקוח בוחר גבינה נוספת:\n\n* +20 ג״ר גבינה נצרכים מהמלאי.\n* עלות המזון עולה אוטומטית."
-        }
+        "anchors": [
+          "section-12"
+        ]
       },
       {
         "id": "section-13",
-        "level": 3,
         "title": {
-          "en": "When to use this",
-          "fr": "Quand l'utiliser",
-          "he": "מתי להשתמש בזה"
+          "fr": "Vérifier unités, coût et modificateurs",
+          "en": "Check units, cost and modifiers",
+          "he": "בדיקת יחידות, עלות ומודיפיירים"
         },
         "instructions": {
-          "en": "Use this setup when:\n\n* Customers can customize items.\n* Extras impact inventory and cost.\n\n✅ Typical modifiers: Extra cheese, Extra meat, Add avocado, Double portion.\n\n---",
-          "fr": "Utilisez cette configuration quand :\n\n* Les clients peuvent personnaliser les articles.\n* Les suppléments impactent le stock et le coût.\n\n✅ Modificateurs typiques : Extra fromage, Extra viande, Ajouter avocat, Double portion.\n\n---",
-          "he": "השתמש בהגדרה זו כאשר:\n\n* לקוחות יכולים להתאים פריטים.\n* תוספות משפיעות על מלאי ועלות.\n\n✅ מודיפיירים טיפוסיים: גבינה נוספת, בשר נוסף, הוספת אבוקדו, מנה כפולה.\n\n---"
-        }
-      },
-      {
-        "id": "section-14",
-        "level": 2,
-        "title": {
-          "en": "🧠 Summary, Choosing the Right Rule",
-          "fr": "🧠 Résumé, Choisir la bonne règle",
-          "he": "🧠 סיכום, בחירת הכלל הנכון"
+          "fr": "Utilisez des unités compatibles avec le stock ; configurez les unités personnalisées dans la fiche de l’ingrédient si nécessaire. Le tableau affiche le coût matière HT et les totaux par variante à partir des quantités saisies. Un coût manquant ou nul doit être vérifié dans la fiche stock ou la préparation, pas interprété comme une recette gratuite. Les suppléments se configurent dans les groupes de modificateurs ; leur prix ne remplit pas les quantités de la recette de base.",
+          "en": "Use units compatible with stock and configure custom recipe-unit conversions on the stock record when needed. The table derives ingredient cost excluding VAT and per-variant totals from entered quantities. Investigate a missing or zero cost on the stock/preparation record instead of treating the recipe as free. Configure add-ons through modifier groups; their price does not fill base recipe quantities.",
+          "he": "השתמשו ביחידות התואמות למלאי והגדירו המרות ליחידות מתכון מותאמות ברשומת חומר הגלם לפי הצורך. הטבלה מחשבת עלות מרכיבים ללא מע״מ וסכומים לפי וריאציה מהכמויות שהוזנו. בדקו עלות חסרה או אפס ברשומת המלאי או ההכנה במקום להניח שהמתכון חינם. תוספות מוגדרות בקבוצות מודיפיירים; המחיר שלהן אינו ממלא כמויות במתכון הבסיס."
         },
-        "instructions": {
-          "en": "For each ingredient, ask yourself:\n\n1. Does the quantity follow the item size? ✅ Use **Match item size**.\n2. Is the quantity always the same? ✅ Use **Fixed quantity**.\n3. Does the quantity change depending on the variant? ✅ Use **Custom per variant**.\n4. Can the customer add more of this ingredient? ✅ Link it to a **modifier**.\n\n---",
-          "fr": "Pour chaque ingrédient, demandez-vous :\n\n1. La quantité suit-elle la taille de l'article ? ✅ Utilisez **Adapter à la taille**.\n2. La quantité est-elle toujours la même ? ✅ Utilisez **Quantité fixe**.\n3. La quantité change-t-elle selon la variante ? ✅ Utilisez **Personnalisé par variante**.\n4. Le client peut-il ajouter plus de cet ingrédient ? ✅ Liez-le à un **modificateur**.\n\n---",
-          "he": "עבור כל מרכיב, שאל את עצמך:\n\n1. האם הכמות עוקבת אחרי גודל הפריט? ✅ השתמש ב**התאם לגודל הפריט**.\n2. האם הכמות תמיד זהה? ✅ השתמש ב**כמות קבועה**.\n3. האם הכמות משתנה בהתאם לווריאציה? ✅ השתמש ב**מותאם לפי ווריאציה**.\n4. האם הלקוח יכול להוסיף עוד מהמרכיב? ✅ קשר אותו ל**מודיפייר**.\n\n---"
-        }
-      },
-      {
-        "id": "section-15",
-        "level": 2,
-        "title": {
-          "en": "⚙️ How to Set This Up in Foody Admin",
-          "fr": "⚙️ Comment le configurer dans Foody Admin",
-          "he": "⚙️ איך להגדיר את זה ב-Foody Admin"
-        },
-        "instructions": {
-          "en": "⚙️ How to Set This Up in Foody Admin",
-          "fr": "⚙️ Comment le configurer dans Foody Admin",
-          "he": "⚙️ איך להגדיר את זה ב-Foody Admin"
-        }
-      },
-      {
-        "id": "section-16",
-        "level": 3,
-        "title": {
-          "en": "Step 1. Create your item",
-          "fr": "Étape 1. Créez votre article",
-          "he": "שלב 1. צור את הפריט שלך"
-        },
-        "instructions": {
-          "en": "* Add variants (e.g. Small, Large or Classic, Big).",
-          "fr": "* Ajoutez les variantes (par ex. Petit, Grand ou Classic, Big).",
-          "he": "* הוסף ווריאציות (למשל Small, Large או Classic, Big)."
-        }
-      },
-      {
-        "id": "section-17",
-        "level": 3,
-        "title": {
-          "en": "Step 2. Add ingredients",
-          "fr": "Étape 2. Ajoutez les ingrédients",
-          "he": "שלב 2. הוסף מרכיבים"
-        },
-        "instructions": {
-          "en": "For each ingredient:\n\n* Select the ingredient.\n* Choose how it behaves:\n  * **Match item size** for automatic quantity.\n  * **Fixed quantity** to enter one value.\n  * **Custom per variant** to define a value per variant.",
-          "fr": "Pour chaque ingrédient :\n\n* Sélectionnez l'ingrédient.\n* Choisissez son comportement :\n  * **Adapter à la taille** pour une quantité automatique.\n  * **Quantité fixe** pour saisir une seule valeur.\n  * **Personnalisé par variante** pour définir une valeur par variante.",
-          "he": "עבור כל מרכיב:\n\n* בחר את המרכיב.\n* בחר את ההתנהגות:\n  * **התאם לגודל הפריט** לכמות אוטומטית.\n  * **כמות קבועה** להזנת ערך אחד.\n  * **מותאם לפי ווריאציה** להגדרת ערך לכל ווריאציה."
-        }
-      },
-      {
-        "id": "section-18",
-        "level": 3,
-        "title": {
-          "en": "Step 3. Add modifiers (if needed)",
-          "fr": "Étape 3. Ajoutez les modificateurs (si besoin)",
-          "he": "שלב 3. הוסף מודיפיירים (במידת הצורך)"
-        },
-        "instructions": {
-          "en": "* Create the modifier (e.g. Extra cheese).\n* Link it to an ingredient.\n* Define the added quantity.\n\n---",
-          "fr": "* Créez le modificateur (par ex. Extra fromage).\n* Liez-le à un ingrédient.\n* Définissez la quantité ajoutée.\n\n---",
-          "he": "* צור מודיפייר (למשל גבינה נוספת).\n* קשר אותו למרכיב.\n* הגדר את הכמות המוספת.\n\n---"
-        }
+        "anchors": [
+          "section-18"
+        ]
       },
       {
         "id": "section-19",
-        "level": 2,
         "title": {
-          "en": "🎯 Final Mental Model",
-          "fr": "🎯 Modèle mental final",
-          "he": "🎯 מודל מנטלי סופי"
+          "fr": "Enregistrer et reprendre après une erreur",
+          "en": "Save and recover from an error",
+          "he": "שמירה והתאוששות משגיאה"
         },
         "instructions": {
-          "en": "Instead of thinking in system terms, just ask:\n\n* \"Does this ingredient depend on size?\"\n* \"Is it always the same?\"\n* \"Can the customer add more of it?\"\n\nThat's it. The system handles the rest.",
-          "fr": "Au lieu de penser en termes système, demandez-vous simplement :\n\n* « Cet ingrédient dépend-il de la taille ? »\n* « Est-il toujours le même ? »\n* « Le client peut-il en ajouter ? »\n\nC'est tout. Le système s'occupe du reste.",
-          "he": "במקום לחשוב במונחי מערכת, פשוט שאל:\n\n* \"האם המרכיב הזה תלוי בגודל?\"\n* \"האם הוא תמיד זהה?\"\n* \"האם הלקוח יכול להוסיף עוד?\"\n\nזהו. המערכת מטפלת בכל השאר."
+          "fr": "Les modifications d’ingrédients sont enregistrées immédiatement ; les instructions et notes sont sauvegardées avec l’article. Une erreur conserve la saisie : réessayez avant de quitter, puis contrôlez le résultat. Si une fiche ingrédient a été créée mais que son ajout à la recette échoue, recherchez cette fiche et terminez l’ajout sans créer de doublon. [Stock](../kitchen/stock-management) · [Variantes](./variants-and-sizes).",
+          "en": "Ingredient edits save immediately; instructions and notes save with the item. An error retains input: retry before leaving and verify the result. If an ingredient record was created but linking it failed, find that record and complete the link without creating a duplicate. [Stock](../kitchen/stock-management) · [Variants](./variants-and-sizes).",
+          "he": "שינויי מרכיבים נשמרים מיד; הוראות והערות נשמרות עם הפריט. שגיאה שומרת את הקלט: נסו שוב לפני יציאה ובדקו את התוצאה. אם רשומת מרכיב נוצרה אך הקישור למתכון נכשל, חפשו אותה והשלימו את הקישור בלי ליצור כפילות. [מלאי](../kitchen/stock-management) · [וריאציות](./variants-and-sizes)."
         }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": true,
-    "procedureUpdatedAt": "2026-04-16"
+    "procedureUpdatedAt": "2026-10-18",
+    "description": {
+      "fr": "Configurer les quantités d’ingrédients par portion ou taille, les unités, le préremplissage et le coût dans la section Recette et coût.",
+      "en": "Configure ingredient quantities per serving or size, units, prefill and cost in the Recipe and cost section.",
+      "he": "הגדרת כמויות מרכיבים למנה או לפי גודל, יחידות, מילוי מקדים ועלות בחלק מתכון ועלות."
+    }
   },
   {
     "id": "menu-menus-and-groups",
@@ -3011,9 +2489,9 @@
       "he": "ווריאציות וגדלים"
     },
     "entry": {
-      "en": "Open the corresponding Foody workspace described below.",
-      "fr": "Ouvrez l’espace Foody correspondant décrit ci-dessous.",
-      "he": "פתחו את סביבת Foody המתאימה המתוארת למטה."
+      "fr": "Ouvrez un article puis la section Prix et variantes de son éditeur.",
+      "en": "Open an item and use Price and variants in its editor.",
+      "he": "פתחו פריט והשתמשו במחיר ווריאציות בעורך."
     },
     "selectors": {
       "foodyadmin": [
@@ -3033,198 +2511,96 @@
     "operations": [
       {
         "id": "section-1",
-        "level": 2,
         "title": {
-          "en": "What Variants Are",
-          "fr": "Ce qu'est une variante",
-          "he": "מה זו ווריאציה"
+          "fr": "Comprendre le prix et la portion",
+          "en": "Understand price and portion",
+          "he": "הבנת מחיר וגודל מנה"
         },
         "instructions": {
-          "en": "A **variant** is a version of the same item sold at a distinct price. Common cases:\n\n* Sizes: Small / Medium / Large.\n* Styles: Classic / Spicy.\n* Bowls: 250 ml / 500 ml.\n* Meat choices: Chicken / Beef.\n\nVariants live on the item. When a customer orders, they pick exactly one per variant group.\n\n> One item can have multiple variant groups (e.g. \"Size\" + \"Sauce\"), but this is rarely needed. For customer-selectable extras, use [Modifiers](./modifiers) instead.\n\n---",
-          "fr": "Une **variante** est une version du même article vendue à un prix distinct. Cas courants :\n\n* Tailles : Petit / Moyen / Grand.\n* Styles : Classic / Épicé.\n* Bols : 250 ml / 500 ml.\n* Choix de viande : Poulet / Bœuf.\n\nLes variantes appartiennent à l'article. À la commande, le client en choisit exactement une par groupe de variantes.\n\n> Un article peut avoir plusieurs groupes de variantes (ex. «\\u00A0Taille\\u00A0» + «\\u00A0Sauce\\u00A0»), mais c'est rarement nécessaire. Pour des extras sélectionnables, préférez les [Modificateurs](./modifiers).\n\n---",
-          "he": "**ווריאציה** היא גרסה של אותו פריט שנמכרת במחיר נפרד. מקרים נפוצים:\n\n* גדלים: קטן / בינוני / גדול.\n* סגנונות: Classic / חריף.\n* קעריות: 250 מ\"ל / 500 מ\"ל.\n* בחירות בשר: עוף / בקר.\n\nהווריאציות שייכות לפריט. בהזמנה, הלקוח בוחר בדיוק אחת לכל קבוצת ווריאציות.\n\n> לפריט אחד יכולות להיות מספר קבוצות ווריאציות (למשל \"גודל\" + \"רוטב\"), אך לעיתים רחוקות זה נחוץ. לתוספות שהלקוח בוחר, השתמש ב[מודיפיירים](./modifiers).\n\n---"
-        }
+          "fr": "Une variante décrit une taille ou une version du même article. Son prix est un montant absolu qui remplace le prix de base ; les modificateurs, eux, sont des suppléments. Le champ Portion décrit la taille servie. Les quantités d’ingrédients sont renseignées séparément dans Recette et coût, par portion ou par variante.",
+          "en": "A variant describes a size or version of an item. Its price is an absolute amount replacing the base price; modifiers are additional amounts. Portion describes serving size. Ingredient quantities are entered separately under Recipe and cost, per serving or variant.",
+          "he": "וריאציה מתארת גודל או גרסה של פריט. מחירה הוא סכום מוחלט המחליף את מחיר הבסיס; מודיפיירים הם תוספות מחיר. גודל מנה מתאר את ההגשה. כמויות מרכיבים מוזנות בנפרד במתכון ועלות, לפי מנה או וריאציה."
+        },
+        "anchors": [
+          "section-3",
+          "section-5",
+          "section-6"
+        ]
       },
       {
         "id": "section-2",
-        "level": 2,
         "title": {
-          "en": "Creating a Variant Group",
-          "fr": "Créer un groupe de variantes",
-          "he": "יצירת קבוצת ווריאציות"
+          "fr": "Ajouter et enregistrer les variantes",
+          "en": "Add and save variants",
+          "he": "הוספת וריאציות ושמירתן"
         },
         "instructions": {
-          "en": "1. Open the item in `Menu → Items`.\n2. In the Détails tab, scroll to the **Variantes** section.\n3. Click **Ajouter** (or **Modifier** if one already exists).\n\n4. Give the group a name (e.g. \"Taille\", \"Size\", \"Flavor\"). This is internal-ish — customers see the rows, not the group name.\n5. Add one row per variant. Each row has:\n   * **Name** — shown to the customer (\"Normal\", \"Grand\", \"250 g\").\n   * **Price** — replaces the item's base price when this variant is selected.\n   * **Portion** — size of the serving (with unit: g, ml, kg, l, unit).\n   * **Status** — Available / Out of stock.\n\n6. Click **Terminé**.\n\n---",
-          "fr": "1. Ouvrez l'article dans `Menu → Articles`.\n2. Dans l'onglet Détails, descendez jusqu'à la section **Variantes**.\n3. Cliquez **Ajouter** (ou **Modifier** si un groupe existe déjà).\n\n4. Donnez un nom au groupe (ex. «\\u00A0Taille\\u00A0», «\\u00A0Size\\u00A0», «\\u00A0Saveur\\u00A0»). C'est plutôt interne — les clients voient les lignes, pas le nom du groupe.\n5. Ajoutez une ligne par variante. Chaque ligne a :\n   * **Nom** — affiché au client («\\u00A0Normal\\u00A0», «\\u00A0Grand\\u00A0», «\\u00A0250 g\\u00A0»).\n   * **Prix** — remplace le prix de base de l'article quand cette variante est choisie.\n   * **Portion** — taille servie (avec unité : g, ml, kg, l, unit).\n   * **Statut** — Disponible / Rupture de stock.\n\n6. Cliquez **Terminé**.\n\n---",
-          "he": "1. פתח את הפריט ב`תפריט → פריטים`.\n2. בלשונית פרטים, גלול לסעיף **ווריאציות**.\n3. לחץ **הוסף** (או **ערוך** אם כבר קיים).\n\n4. תן שם לקבוצה (למשל \"גודל\", \"Size\", \"טעם\"). זה פנימי למדי, הלקוחות רואים את השורות, לא את שם הקבוצה.\n5. הוסף שורה אחת לכל ווריאציה. לכל שורה יש:\n   * **שם** — מוצג ללקוח (\"Normal\", \"Grand\", \"250 ג״ר\").\n   * **מחיר** — מחליף את מחיר הבסיס של הפריט כשהווריאציה הזו נבחרת.\n   * **מנה** — גודל המנה (עם יחידה: ג״ר, מ״ל, ק״ג, ל', יחידה).\n   * **סטטוס** — זמין / אזל מהמלאי.\n\n6. לחץ **סיום**.\n\n---"
-        }
-      },
-      {
-        "id": "section-3",
-        "level": 2,
-        "title": {
-          "en": "Understanding Each Field",
-          "fr": "Comprendre chaque champ",
-          "he": "הבנת כל שדה"
+          "fr": "Dans Menu → Articles, ouvrez l’article et faites défiler jusqu’à Prix et variantes. Les groupes et lignes s’éditent directement dans cette section. Ajoutez un ensemble si nécessaire, saisissez son titre et utilisez Ajouter une variante pour chaque taille. Renseignez Nom, Prix, Portion et Statut, puis Enregistrer dans l’en-tête de l’article. Il ne faut pas chercher l’ancien onglet Détails ni un bouton Terminé pour valider toutes les variantes.",
+          "en": "Open the item from Menu → Items and scroll to Price and variants. Edit groups and rows directly in this section. Add a set if needed, enter its title and use Add variant for each size. Fill Name, Price, Portion and Status, then Save in the item header. Do not look for the old Details tab or a Done button to commit all variants.",
+          "he": "פתחו את הפריט מתפריט → פריטים וגללו למחיר ווריאציות. עורכים קבוצות ושורות ישירות בחלק הזה. הוסיפו קבוצה לפי הצורך, הזינו כותרת והשתמשו בהוספת וריאציה לכל גודל. מלאו שם, מחיר, גודל מנה ומצב, ואז שמירה בכותרת הפריט. אין לחפש את לשונית הפרטים הישנה או כפתור סיום לאישור כל הווריאציות."
         },
-        "instructions": {
-          "en": "Understanding Each Field",
-          "fr": "Comprendre chaque champ",
-          "he": "הבנת כל שדה"
-        }
-      },
-      {
-        "id": "section-4",
-        "level": 3,
-        "title": {
-          "en": "Name",
-          "fr": "Nom",
-          "he": "שם"
-        },
-        "instructions": {
-          "en": "The label the customer picks. Keep it short and natural (\"Normal\", \"Grand\", \"Petit\", \"XL\").",
-          "fr": "L'étiquette que choisit le client. Courte et naturelle («\\u00A0Normal\\u00A0», «\\u00A0Grand\\u00A0», «\\u00A0Petit\\u00A0», «\\u00A0XL\\u00A0»).",
-          "he": "התווית שהלקוח בוחר. קצרה וטבעית (\"Normal\", \"Grand\", \"קטן\", \"XL\")."
-        }
-      },
-      {
-        "id": "section-5",
-        "level": 3,
-        "title": {
-          "en": "Price",
-          "fr": "Prix",
-          "he": "מחיר"
-        },
-        "instructions": {
-          "en": "Absolute price — not a delta. Typing `70` for Normal and `140` for Grand makes the item cost exactly that per variant, regardless of the item's base price.",
-          "fr": "Prix absolu, pas un delta. Saisir `70` pour Normal et `140` pour Grand fixe exactement ce prix par variante, peu importe le prix de base de l'article.",
-          "he": "מחיר מוחלט, לא דלתא. הקלדת `70` ל-Normal ו-`140` ל-Grand קובעת את המחיר בדיוק לפי ווריאציה, ללא קשר למחיר הבסיסי של הפריט."
-        }
-      },
-      {
-        "id": "section-6",
-        "level": 3,
-        "title": {
-          "en": "Portion",
-          "fr": "Portion",
-          "he": "מנה"
-        },
-        "instructions": {
-          "en": "Two related jobs:\n\n1. **What customers see** on the web menu: \"Grand 500 g\" under the variant label.\n2. **Recipe scaling** on the Recette tab: ingredients scoped as \"Match item size\" use the variant's portion as the consumed quantity. See [Ingredients & Portions](./ingredients-and-portions).\n\nPick a unit family consistent with your recipe:\n\n* Soup: ml.\n* Hamburger: unit.\n* Plate: g.",
-          "fr": "Deux rôles liés :\n\n1. **Ce que voient les clients** sur le menu web : «\\u00A0Grand 500 g\\u00A0» sous l'étiquette de la variante.\n2. **Mise à l'échelle de la recette** dans l'onglet Recette : les ingrédients en portée «\\u00A0Adapter à la taille\\u00A0» utilisent la portion de la variante comme quantité consommée. Voir [Ingrédients et portions](./ingredients-and-portions).\n\nChoisissez une famille d'unités cohérente avec votre recette :\n\n* Soupe : ml.\n* Hamburger : unit.\n* Assiette : g.",
-          "he": "שני תפקידים קשורים:\n\n1. **מה שהלקוחות רואים** בתפריט האינטרנט: \"Grand 500 ג״ר\" מתחת לתווית הווריאציה.\n2. **קנה מידה במתכון** בלשונית מתכון: מרכיבים בהיקף \"התאם לגודל הפריט\" משתמשים במנת הווריאציה ככמות הנצרכת. ראה [מרכיבים ומנות](./ingredients-and-portions).\n\nבחר משפחת יחידות עקבית עם המתכון:\n\n* מרק: מ״ל.\n* המבורגר: יחידה.\n* צלחת: ג״ר."
-        }
+        "anchors": [
+          "section-4"
+        ]
       },
       {
         "id": "section-7",
-        "level": 3,
         "title": {
-          "en": "Status",
-          "fr": "Statut",
-          "he": "סטטוס"
+          "fr": "Disponibilité, ordre et lignes réservées aux combos",
+          "en": "Availability, order and combo-only rows",
+          "he": "זמינות, סדר ושורות לקומבו בלבד"
         },
         "instructions": {
-          "en": "Toggle to Out of stock when you're sold out for the day. The variant grays out on POS / web without deleting it. Flip back to Available when restocked.\n\n---",
-          "fr": "Basculez sur Rupture quand c'est épuisé pour la journée. La variante est grisée sur POS / web sans être supprimée. Remettez sur Disponible quand c'est réassorti.\n\n---",
-          "he": "החלף ל\"אזל\" כשנגמר ליום. הווריאציה מופיעה באפורה ב-POS / אינטרנט בלי למחוק. החזר ל\"זמין\" כשהתחדש המלאי.\n\n---"
-        }
+          "fr": "Le Statut propose Disponible ou Indisponible. Les flèches déplacent les lignes ; la corbeille retire une ligne et Retirer supprime le groupe de l’article. La case réservée aux combos distingue les lignes qui ne sont pas proposées seules. Contrôlez l’ordre et les prix avant Enregistrer. Les commandes passées conservent leurs propres informations de vente.",
+          "en": "Status offers Available and Unavailable. Arrows reorder rows; the bin removes a row and Remove detaches the group from the item. Combo-only marks rows not sold on their own. Check order and prices before Save. Past orders retain their own sale snapshots.",
+          "he": "מצב מציע זמין ולא זמין. החצים משנים סדר שורות; הפח מסיר שורה והסרה מנתקת את הקבוצה מהפריט. לקומבו בלבד מסמן שורות שאינן נמכרות בנפרד. בדקו סדר ומחירים לפני שמירה. הזמנות קודמות שומרות את נתוני המכירה שלהן."
+        },
+        "anchors": [
+          "section-9"
+        ]
       },
       {
         "id": "section-8",
-        "level": 2,
         "title": {
-          "en": "Reusing a Variant Group Across Items",
-          "fr": "Réutiliser un groupe de variantes",
-          "he": "שימוש חוזר בקבוצת ווריאציות"
+          "fr": "Réutiliser un groupe enregistré",
+          "en": "Reuse a saved option set",
+          "he": "שימוש חוזר בקבוצת אפשרויות שמורה"
         },
         "instructions": {
-          "en": "Variant groups in Foody are backed by **Option Sets** — a reusable pool. When you type a name that matches an existing Option Set, you get a suggestion to apply it.\n\nApplying an existing group attaches its rows to this item. You can then override per-item:\n\n* Price (different price for this item).\n* Portion.\n* Status.\n\nUpdating the **name** of a row on the Option Set level propagates everywhere. Useful for \"Size\" groups shared across many burgers.\n\n---",
-          "fr": "Dans Foody, les groupes de variantes s'appuient sur des **Option Sets** — un pool réutilisable. Quand vous tapez un nom qui correspond à un Option Set existant, une suggestion apparaît.\n\nAppliquer un groupe existant attache ses lignes à cet article. Vous pouvez ensuite surcharger par article :\n\n* Prix (différent pour cet article).\n* Portion.\n* Statut.\n\nModifier le **nom** d'une ligne au niveau Option Set propage partout. Utile pour un groupe «\\u00A0Taille\\u00A0» partagé sur plusieurs burgers.\n\n---",
-          "he": "ב-Foody, קבוצות ווריאציות מגובות ב**Option Sets**, מאגר לשימוש חוזר. כשאתה מקליד שם שתואם ל-Option Set קיים, מופיעה הצעה להחיל אותו.\n\nהחלת קבוצה קיימת מצרפת את שורותיה לפריט הזה. אפשר אז לדרוס לפי פריט:\n\n* מחיר (שונה לפריט הזה).\n* מנה.\n* סטטוס.\n\nעדכון **שם** של שורה ברמת Option Set מפיץ בכל מקום. שימושי לקבוצת \"גודל\" משותפת להרבה המבורגרים.\n\n---"
-        }
-      },
-      {
-        "id": "section-9",
-        "level": 2,
-        "title": {
-          "en": "Removing or Hiding a Variant",
-          "fr": "Supprimer ou masquer une variante",
-          "he": "הסרת או הסתרת ווריאציה"
-        },
-        "instructions": {
-          "en": "* **Hide temporarily** (keeping history intact): flip Status → Out of stock. Recommended for seasonal or sold-out items.\n* **Delete**: trash icon on the row. Deletes the variant from this item; if it's on an Option Set used elsewhere, it stays there.\n\nDeleting a variant that has order history doesn't touch the past orders — they still show the variant name and price as sold.\n\n---",
-          "fr": "* **Masquer temporairement** (préserver l'historique) : Statut → Rupture de stock. Recommandé pour les articles saisonniers ou épuisés.\n* **Supprimer** : icône corbeille sur la ligne. Retire la variante de cet article ; si elle vit sur un Option Set partagé, elle y reste.\n\nSupprimer une variante qui a un historique de commandes ne touche pas les commandes passées — elles gardent le nom et le prix vendu.\n\n---",
-          "he": "* **הסתרה זמנית** (שמירת היסטוריה): סטטוס → אזל מהמלאי. מומלץ לפריטים עונתיים או שאזלו.\n* **מחיקה**: אייקון פח על השורה. מסיר את הווריאציה מהפריט הזה; אם היא חיה על Option Set משותף, היא נשארת שם.\n\nמחיקת ווריאציה עם היסטוריית הזמנות לא נוגעת בהזמנות עבר, הן עדיין מראות את שם ומחיר הווריאציה כפי שנמכרה.\n\n---"
+          "fr": "Cliquez Groupes d’options enregistrés sur le groupe voulu, recherchez un ensemble et choisissez-le dans le sélecteur. Ce n’est pas une suggestion déclenchée simplement en tapant le titre du groupe. Vérifiez les lignes importées, leurs prix, portions et états, puis enregistrez l’article. Évitez de modifier une bibliothèque partagée sans vérifier les autres articles concernés.",
+          "en": "Click Saved option sets on the relevant group, search and select a set in the picker. Typing a matching group title alone does not apply a set. Review imported rows, prices, portions and status, then save the item. Check other affected items before changing a shared library.",
+          "he": "לחצו קבוצות אפשרויות שמורות בקבוצה המתאימה, חפשו ובחרו קבוצה בבורר. הקלדת כותרת תואמת בלבד אינה מחילה קבוצה. בדקו שורות, מחירים, גדלי מנה ומצבים ואז שמרו. לפני שינוי ספרייה משותפת בדקו פריטים נוספים המושפעים."
         }
       },
       {
         "id": "section-10",
-        "level": 2,
         "title": {
-          "en": "Examples",
-          "fr": "Exemples",
-          "he": "דוגמאות"
+          "fr": "Relier les tailles à la recette",
+          "en": "Connect sizes to the recipe",
+          "he": "קישור גדלים למתכון"
         },
         "instructions": {
-          "en": "Examples",
-          "fr": "Exemples",
-          "he": "דוגמאות"
-        }
-      },
-      {
-        "id": "section-11",
-        "level": 3,
-        "title": {
-          "en": "Burger sizes",
-          "fr": "Tailles de burger",
-          "he": "גדלי המבורגר"
+          "fr": "Dans Recette et coût, activez les quantités différentes par taille puis remplissez les colonnes des variantes. Exemple : 200 g de viande en Normal et 400 g en Grand, avec Même quantité pour un pain identique. Pour une soupe, saisissez explicitement 250 ml et 500 ml dans les colonnes ; le texte de Portion seul ne déclenche pas ces quantités. Vérifiez les avertissements de quantité manquante.",
+          "en": "Under Recipe and cost, enable different quantities per size and fill the variant columns. Example: 200 g meat for Regular and 400 g for Large, with Same quantity for an identical bun. For soup, explicitly enter 250 ml and 500 ml in the columns; Portion text alone does not supply those quantities. Check missing-quantity warnings.",
+          "he": "במתכון ועלות הפעילו כמויות שונות לפי גודל ומלאו את עמודות הווריאציות. לדוגמה: 200 גרם בשר לרגיל ו-400 לגדול, ואותה כמות ללחמנייה זהה. למרק הזינו במפורש 250 ו-500 מ״ל בעמודות; טקסט גודל המנה לבדו אינו מספק כמויות אלה. בדקו אזהרות על כמויות חסרות."
         },
-        "instructions": {
-          "en": "| Variant | Price | Portion |\n|---|---|---|\n| Normal | ₪70 | 1 unit |\n| Grand | ₪140 | 2 unit |\n\nOn the Recette tab, flag the beef ingredient as \"Custom per variant\" with 200 g for Normal, 400 g for Grand. Bread / sauce stay Fixed.",
-          "fr": "| Variante | Prix | Portion |\n|---|---|---|\n| Normal | 70 ₪ | 1 unit |\n| Grand | 140 ₪ | 2 unit |\n\nSur Recette, marquez le bœuf en «\\u00A0Personnalisé par variante\\u00A0» avec 200 g pour Normal, 400 g pour Grand. Pain / sauce restent en Quantité fixe.",
-          "he": "| ווריאציה | מחיר | מנה |\n|---|---|---|\n| Normal | 70 ₪ | 1 יחידה |\n| Grand | 140 ₪ | 2 יחידות |\n\nבלשונית מתכון, סמן את מרכיב הבקר כ\"מותאם לפי ווריאציה\" עם 200 ג״ר ל-Normal, 400 ג״ר ל-Grand. לחמנייה / רוטב נשארים ב\"כמות קבועה\"."
-        }
-      },
-      {
-        "id": "section-12",
-        "level": 3,
-        "title": {
-          "en": "Soup bowls",
-          "fr": "Bols de soupe",
-          "he": "קעריות מרק"
-        },
-        "instructions": {
-          "en": "| Variant | Price | Portion |\n|---|---|---|\n| Bowl | ₪18 | 250 ml |\n| Large bowl | ₪32 | 500 ml |\n\nOn the Recette tab, the soup prep ingredient is scoped as \"Match item size\". No quantity to type; the system draws 250 ml or 500 ml automatically.",
-          "fr": "| Variante | Prix | Portion |\n|---|---|---|\n| Bol | 18 ₪ | 250 ml |\n| Grand bol | 32 ₪ | 500 ml |\n\nSur Recette, l'ingrédient prép. soupe est en portée «\\u00A0Adapter à la taille\\u00A0». Pas de quantité à saisir ; le système consomme 250 ml ou 500 ml automatiquement.",
-          "he": "| ווריאציה | מחיר | מנה |\n|---|---|---|\n| קערה | 18 ₪ | 250 מ״ל |\n| קערה גדולה | 32 ₪ | 500 מ״ל |\n\nבלשונית מתכון, מרכיב הכנת המרק בהיקף \"התאם לגודל הפריט\". אין כמות להקליד; המערכת צורכת 250 מ״ל או 500 מ״ל אוטומטית."
-        }
-      },
-      {
-        "id": "section-13",
-        "level": 3,
-        "title": {
-          "en": "Drink sizes",
-          "fr": "Tailles de boisson",
-          "he": "גדלי משקה"
-        },
-        "instructions": {
-          "en": "| Variant | Price | Portion |\n|---|---|---|\n| Small | ₪12 | 330 ml |\n| Medium | ₪16 | 500 ml |\n| Large | ₪22 | 750 ml |\n\n---",
-          "fr": "| Variante | Prix | Portion |\n|---|---|---|\n| Petit | 12 ₪ | 330 ml |\n| Moyen | 16 ₪ | 500 ml |\n| Grand | 22 ₪ | 750 ml |\n\n---",
-          "he": "| ווריאציה | מחיר | מנה |\n|---|---|---|\n| קטן | 12 ₪ | 330 מ״ל |\n| בינוני | 16 ₪ | 500 מ״ל |\n| גדול | 22 ₪ | 750 מ״ל |\n\n---"
-        }
+        "anchors": [
+          "section-11",
+          "section-12",
+          "section-13"
+        ]
       },
       {
         "id": "section-14",
-        "level": 2,
         "title": {
-          "en": "What Next",
-          "fr": "Pour aller plus loin",
-          "he": "מה הלאה"
+          "fr": "Contrôler après enregistrement",
+          "en": "Check after saving",
+          "he": "בדיקה לאחר שמירה"
         },
         "instructions": {
-          "en": "* [How to Configure Ingredients & Portions](./ingredients-and-portions) — hook variants into your recipe and cost.\n* [Creating a Menu Item](./creating-a-menu-item) — full item walkthrough.",
-          "fr": "* [Configurer les ingrédients et portions](./ingredients-and-portions) — relier les variantes à la recette et au coût.\n* [Créer un article du menu](./creating-a-menu-item) — guide complet.",
-          "he": "* [הגדרת מרכיבים ומנות](./ingredients-and-portions) — חיבור הווריאציות למתכון ולעלות.\n* [יצירת פריט תפריט](./creating-a-menu-item) — המדריך המלא."
+          "fr": "Rouvrez l’article pour vérifier que les lignes sont conservées, puis contrôlez le canal POS ou web autorisé. Si une sauvegarde échoue, conservez la saisie et réessayez avant de fermer. [Créer un article](./creating-a-menu-item) · [Recette et quantités](./ingredients-and-portions).",
+          "en": "Reopen the item to check saved rows, then inspect the enabled POS or web channel. If saving fails, retain the input and retry before closing. [Create an item](./creating-a-menu-item) · [Recipe quantities](./ingredients-and-portions).",
+          "he": "פתחו שוב את הפריט לבדיקת השורות שנשמרו ואז בדקו בערוץ קופה או אתר שהופעל. אם השמירה נכשלה, שמרו את הקלט ונסו שוב לפני סגירה. [יצירת פריט](./creating-a-menu-item) · [כמויות במתכון](./ingredients-and-portions)."
         }
       }
     ],

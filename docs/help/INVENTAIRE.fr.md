@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-18.
 
-98 fiches de fonctionnalités, 408 procédures/sous-fonctionnalités, dont 89 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2049 fichiers applicatifs et 1966 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+98 fiches de fonctionnalités, 358 procédures/sous-fonctionnalités, dont 89 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2049 fichiers applicatifs et 1966 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodylanding | 127 | 21 | af82e1ae77ed ; versioned |
-| foodyadmin | 734 | 754 | a48cf4f34612 ; versioned |
-| foodyserver | 497 | 832 | 6d8672f6ac09 ; versioned |
-| foodyweb | 329 | 163 | 857b483dc85f ; versioned |
-| foodypos | 320 | 149 | 9ec4824e8805 ; versioned |
-| foodybackoffice | 42 | 47 | ad98d32a3956 ; versioned |
+| foodylanding | 127 | 21 | b5df96e1233d ; versioned |
+| foodyadmin | 734 | 754 | 742def4eaeeb ; versioned |
+| foodyserver | 497 | 832 | 6477bf4338eb ; versioned |
+| foodyweb | 329 | 163 | 26e08f775456 ; versioned |
+| foodypos | 320 | 149 | 6af04a980405 ; versioned |
+| foodybackoffice | 42 | 47 | 0761ce3ef4b7 ; versioned |
 
 ## getting-started
 
@@ -55,6 +55,7 @@ Identifiant : `getting-started-using-support`. Public : public. Disponibilité :
 - [Trouver une réponse](../../src/content/help/fr/getting-started/using-support.mdx#section-1)
 - [Poser une question](../../src/content/help/fr/getting-started/using-support.mdx#section-2)
 - [Si vous ne trouvez pas la réponse](../../src/content/help/fr/getting-started/using-support.mdx#section-3)
+- [Signaler une procédure différente de votre écran](../../src/content/help/fr/getting-started/using-support.mdx#report-outdated-guide)
 
 ### [Offres, démonstration et contact Foody](../../src/content/help/fr/getting-started/offers-and-contact.mdx)
 
@@ -227,44 +228,18 @@ Identifiant : `kitchen-preparations`. Public : public. Disponibilité : availabl
 
 Identifiant : `kitchen-stock-management`. Public : public. Disponibilité : available. Services : foodyadmin, foodyserver, foodypos.
 
-- [Qu'est-ce que c'est ?](../../src/content/help/fr/kitchen/stock-management.mdx#section-1)
-- [Comment ca fonctionne (en simple)](../../src/content/help/fr/kitchen/stock-management.mdx#section-2)
-- [Le Tableau de Bord](../../src/content/help/fr/kitchen/stock-management.mdx#section-3)
-- [Ajout et Modification d'Articles](../../src/content/help/fr/kitchen/stock-management.mdx#section-4)
-- [Onglet : General](../../src/content/help/fr/kitchen/stock-management.mdx#section-5)
-- [Onglet : Conditionnement & Prix](../../src/content/help/fr/kitchen/stock-management.mdx#section-6)
-- [Comprendre les Unites](../../src/content/help/fr/kitchen/stock-management.mdx#section-7)
-- [Niveau 1 : Unite de Stock](../../src/content/help/fr/kitchen/stock-management.mdx#section-8)
-- [Niveau 2 : Contenu par Unite](../../src/content/help/fr/kitchen/stock-management.mdx#section-9)
-- [Pourquoi l'Unite de Contenu est Limitee a g, kg, ml, l ?](../../src/content/help/fr/kitchen/stock-management.mdx#section-10)
-- [Exemples Pratiques](../../src/content/help/fr/kitchen/stock-management.mdx#section-11)
-- [Choisir la Bonne Approche](../../src/content/help/fr/kitchen/stock-management.mdx#section-12)
-- [Mouvements de Stock](../../src/content/help/fr/kitchen/stock-management.mdx#section-13)
-- [Enregistrer un Mouvement](../../src/content/help/fr/kitchen/stock-management.mdx#section-14)
-- [Types de Transactions](../../src/content/help/fr/kitchen/stock-management.mdx#section-15)
-- [Transactions Generees par le Systeme](../../src/content/help/fr/kitchen/stock-management.mdx#section-16)
-- [Historique du Stock](../../src/content/help/fr/kitchen/stock-management.mdx#section-17)
-- [Reference des Couleurs](../../src/content/help/fr/kitchen/stock-management.mdx#section-18)
-- [Comprendre les Pertes](../../src/content/help/fr/kitchen/stock-management.mdx#section-19)
-- [Exemple simple](../../src/content/help/fr/kitchen/stock-management.mdx#section-20)
-- [Pourquoi ca arrive ?](../../src/content/help/fr/kitchen/stock-management.mdx#section-21)
-- [Pourquoi c'est important ?](../../src/content/help/fr/kitchen/stock-management.mdx#section-22)
-- [Alertes de Stock Bas](../../src/content/help/fr/kitchen/stock-management.mdx#section-23)
-- [Categories](../../src/content/help/fr/kitchen/stock-management.mdx#section-24)
-- [Import de Livraison par IA](../../src/content/help/fr/kitchen/stock-management.mdx#section-25)
-- [Etape 1 : Selectionner le fournisseur et telecharger](../../src/content/help/fr/kitchen/stock-management.mdx#section-26)
-- [Etape 2 : Verifier et Confirmer](../../src/content/help/fr/kitchen/stock-management.mdx#section-27)
-- [Indications d'extraction fournisseur](../../src/content/help/fr/kitchen/stock-management.mdx#section-28)
-- [Enregistrer le brouillon](../../src/content/help/fr/kitchen/stock-management.mdx#section-29)
-- [TVA sur les articles de stock](../../src/content/help/fr/kitchen/stock-management.mdx#section-30)
-- [Import de Recette par IA](../../src/content/help/fr/kitchen/stock-management.mdx#section-31)
-- [Comment ca fonctionne](../../src/content/help/fr/kitchen/stock-management.mdx#section-32)
-- [Operations en Masse](../../src/content/help/fr/kitchen/stock-management.mdx#section-33)
-- [Recherche et Filtres](../../src/content/help/fr/kitchen/stock-management.mdx#section-34)
-- [Colonnes du Tableau](../../src/content/help/fr/kitchen/stock-management.mdx#section-35)
-- [Quantite & Prix — Clic pour Changer de Niveau](../../src/content/help/fr/kitchen/stock-management.mdx#section-36)
-- [Astuces](../../src/content/help/fr/kitchen/stock-management.mdx#section-37)
-- [Articles Associes](../../src/content/help/fr/kitchen/stock-management.mdx#section-38)
+- [Lire la liste de stock actuelle](../../src/content/help/fr/kitchen/stock-management.mdx#section-1)
+- [Rechercher et filtrer par catégorie ou état](../../src/content/help/fr/kitchen/stock-management.mdx#section-34)
+- [Lire les colonnes et les niveaux de conditionnement](../../src/content/help/fr/kitchen/stock-management.mdx#section-35)
+- [Créer ou modifier une fiche ingrédient](../../src/content/help/fr/kitchen/stock-management.mdx#section-4)
+- [Saisir l’identité, l’achat et le prix](../../src/content/help/fr/kitchen/stock-management.mdx#section-6)
+- [Comprendre les unités et leurs conversions](../../src/content/help/fr/kitchen/stock-management.mdx#section-7)
+- [Enregistrer une entrée, une perte ou un ajustement](../../src/content/help/fr/kitchen/stock-management.mdx#section-13)
+- [Consulter l’historique et comprendre les écarts](../../src/content/help/fr/kitchen/stock-management.mdx#section-17)
+- [Catégories, sélection et actions groupées](../../src/content/help/fr/kitchen/stock-management.mdx#section-24)
+- [Importer une livraison et reprendre un brouillon](../../src/content/help/fr/kitchen/stock-management.mdx#section-25)
+- [Relier les ingrédients aux recettes](../../src/content/help/fr/kitchen/stock-management.mdx#section-31)
+- [Contrôler après une modification](../../src/content/help/fr/kitchen/stock-management.mdx#section-37)
 
 ### [Fournisseurs et commandes d’achat](../../src/content/help/fr/kitchen/suppliers-and-purchases.mdx)
 
@@ -322,51 +297,34 @@ Identifiant : `stock-units-policy`. Public : public. Disponibilité : available.
 
 Identifiant : `menu-categories-and-items`. Public : public. Disponibilité : available. Services : foodyadmin, foodyserver, foodyweb, foodypos.
 
-- [Créer le catalogue](../../src/content/help/fr/menu/categories-and-items.mdx#section-1)
-- [Afficher un article](../../src/content/help/fr/menu/categories-and-items.mdx#section-2)
+- [Consulter la bibliothèque Articles](../../src/content/help/fr/menu/categories-and-items.mdx#section-1)
+- [Rechercher, filtrer et choisir les colonnes](../../src/content/help/fr/menu/categories-and-items.mdx#filters)
+- [Créer, modifier et effectuer des actions groupées](../../src/content/help/fr/menu/categories-and-items.mdx#edit)
+- [Rendre un article visible aux clients](../../src/content/help/fr/menu/categories-and-items.mdx#section-2)
 
 ### [Créer un article du menu, étape par étape](../../src/content/help/fr/menu/creating-a-menu-item.mdx)
 
 Identifiant : `menu-creating-a-menu-item`. Public : public. Disponibilité : available. Services : foodyadmin, foodyserver, foodyweb, foodypos.
 
-- [Avant de commencer](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-1)
-- [Ouvrir le formulaire Créer un article](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-2)
-- [Étape 1. Image](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-3)
-- [Étape 2. Nom](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-4)
-- [Étape 3. Description](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-5)
-- [Étape 4. Catégorie](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-6)
-- [Étape 5. Prix](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-7)
-- [Étape 6. Bascule Actif](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-8)
-- [Étape 7. Variantes](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-9)
-- [Étape 8. Modificateurs](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-10)
-- [Étape 9. Enregistrer, puis ouvrir Recette](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-11)
-- [Étape 10. Vérifier sur POS et web](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-12)
-- [Dépannage](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-13)
-- [Pour aller plus loin](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-14)
+- [Vérifier les accès et ouvrir l’éditeur](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-1)
+- [Informations de l’article et photo](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-3)
+- [Classement et diffusion](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-6)
+- [Prix et variantes](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-7)
+- [Personnalisations et autres sections](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-10)
+- [Enregistrer, puis compléter la recette](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-11)
+- [Vérifier l’affichage et résoudre une absence](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-12)
 
 ### [Configurer les ingrédients et portions](../../src/content/help/fr/menu/ingredients-and-portions.mdx)
 
 Identifiant : `menu-ingredients-and-portions`. Public : public. Disponibilité : available. Services : foodyadmin, foodyserver, foodyweb, foodypos.
 
-- [🍽️ Configurer les ingrédients et portions](../../src/content/help/fr/menu/ingredients-and-portions.mdx#section-1)
-- [🥣 1. Article simple, Adapter à la taille](../../src/content/help/fr/menu/ingredients-and-portions.mdx#section-2)
-- [Comment ça marche](../../src/content/help/fr/menu/ingredients-and-portions.mdx#section-3)
-- [Exemple](../../src/content/help/fr/menu/ingredients-and-portions.mdx#section-4)
-- [Quand l'utiliser](../../src/content/help/fr/menu/ingredients-and-portions.mdx#section-5)
-- [🍔 2. Article composé, Fixe + Personnalisé par variante](../../src/content/help/fr/menu/ingredients-and-portions.mdx#section-6)
-- [Comment ça marche](../../src/content/help/fr/menu/ingredients-and-portions.mdx#section-7)
-- [Exemple de configuration](../../src/content/help/fr/menu/ingredients-and-portions.mdx#section-8)
-- [Quand l'utiliser](../../src/content/help/fr/menu/ingredients-and-portions.mdx#section-9)
-- [🧀 3. Article avancé, Avec modificateurs (suppléments)](../../src/content/help/fr/menu/ingredients-and-portions.mdx#section-10)
-- [Comment ça marche](../../src/content/help/fr/menu/ingredients-and-portions.mdx#section-11)
-- [Ce qui se passe](../../src/content/help/fr/menu/ingredients-and-portions.mdx#section-12)
-- [Quand l'utiliser](../../src/content/help/fr/menu/ingredients-and-portions.mdx#section-13)
-- [🧠 Résumé, Choisir la bonne règle](../../src/content/help/fr/menu/ingredients-and-portions.mdx#section-14)
-- [⚙️ Comment le configurer dans Foody Admin](../../src/content/help/fr/menu/ingredients-and-portions.mdx#section-15)
-- [Étape 1. Créez votre article](../../src/content/help/fr/menu/ingredients-and-portions.mdx#section-16)
-- [Étape 2. Ajoutez les ingrédients](../../src/content/help/fr/menu/ingredients-and-portions.mdx#section-17)
-- [Étape 3. Ajoutez les modificateurs (si besoin)](../../src/content/help/fr/menu/ingredients-and-portions.mdx#section-18)
-- [🎯 Modèle mental final](../../src/content/help/fr/menu/ingredients-and-portions.mdx#section-19)
+- [Ouvrir la recette dans l’éditeur continu](../../src/content/help/fr/menu/ingredients-and-portions.mdx#section-1)
+- [Ajouter une matière première ou une préparation](../../src/content/help/fr/menu/ingredients-and-portions.mdx#section-2)
+- [Saisir la quantité pour une portion](../../src/content/help/fr/menu/ingredients-and-portions.mdx#section-4)
+- [Définir les quantités par taille](../../src/content/help/fr/menu/ingredients-and-portions.mdx#section-7)
+- [Préremplir et contrôler les cellules](../../src/content/help/fr/menu/ingredients-and-portions.mdx#section-11)
+- [Vérifier unités, coût et modificateurs](../../src/content/help/fr/menu/ingredients-and-portions.mdx#section-13)
+- [Enregistrer et reprendre après une erreur](../../src/content/help/fr/menu/ingredients-and-portions.mdx#section-19)
 
 ### [Menus, cartes & groupes (ce que voient les clients)](../../src/content/help/fr/menu/menus-and-groups.mdx)
 
@@ -384,20 +342,12 @@ Identifiant : `menu-menus-and-groups`. Public : public. Disponibilité : availab
 
 Identifiant : `menu-variants-and-sizes`. Public : public. Disponibilité : available. Services : foodyadmin, foodyserver, foodyweb, foodypos.
 
-- [Ce qu'est une variante](../../src/content/help/fr/menu/variants-and-sizes.mdx#section-1)
-- [Créer un groupe de variantes](../../src/content/help/fr/menu/variants-and-sizes.mdx#section-2)
-- [Comprendre chaque champ](../../src/content/help/fr/menu/variants-and-sizes.mdx#section-3)
-- [Nom](../../src/content/help/fr/menu/variants-and-sizes.mdx#section-4)
-- [Prix](../../src/content/help/fr/menu/variants-and-sizes.mdx#section-5)
-- [Portion](../../src/content/help/fr/menu/variants-and-sizes.mdx#section-6)
-- [Statut](../../src/content/help/fr/menu/variants-and-sizes.mdx#section-7)
-- [Réutiliser un groupe de variantes](../../src/content/help/fr/menu/variants-and-sizes.mdx#section-8)
-- [Supprimer ou masquer une variante](../../src/content/help/fr/menu/variants-and-sizes.mdx#section-9)
-- [Exemples](../../src/content/help/fr/menu/variants-and-sizes.mdx#section-10)
-- [Tailles de burger](../../src/content/help/fr/menu/variants-and-sizes.mdx#section-11)
-- [Bols de soupe](../../src/content/help/fr/menu/variants-and-sizes.mdx#section-12)
-- [Tailles de boisson](../../src/content/help/fr/menu/variants-and-sizes.mdx#section-13)
-- [Pour aller plus loin](../../src/content/help/fr/menu/variants-and-sizes.mdx#section-14)
+- [Comprendre le prix et la portion](../../src/content/help/fr/menu/variants-and-sizes.mdx#section-1)
+- [Ajouter et enregistrer les variantes](../../src/content/help/fr/menu/variants-and-sizes.mdx#section-2)
+- [Disponibilité, ordre et lignes réservées aux combos](../../src/content/help/fr/menu/variants-and-sizes.mdx#section-7)
+- [Réutiliser un groupe enregistré](../../src/content/help/fr/menu/variants-and-sizes.mdx#section-8)
+- [Relier les tailles à la recette](../../src/content/help/fr/menu/variants-and-sizes.mdx#section-10)
+- [Contrôler après enregistrement](../../src/content/help/fr/menu/variants-and-sizes.mdx#section-14)
 
 ### [Modificateurs et règles de sélection](../../src/content/help/fr/menu/modifiers.mdx)
 

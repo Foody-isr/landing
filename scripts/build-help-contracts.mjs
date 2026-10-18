@@ -14,6 +14,7 @@ for(const [service,folder] of Object.entries(roots)) {
   sources:inventory.services[service].sourceFiles,surfaces:inventory.surfaces.filter(s=>s.service===service).map(({id,kind,source,line,features,route,method,routeFragment,labels,actions,componentSources,field})=>({id,kind,source,line,features,route,method,routeFragment,labels,actions,componentSources,field}))};
  fs.mkdirSync(path.join(root,'docs/help'),{recursive:true});fs.writeFileSync(path.join(root,'docs/help/contract.json'),JSON.stringify(contract,null,2)+'\n');
  if(service==='foodylanding')continue;
+ if(service==='foodyadmin') for(const file of ['check-help-ui.mjs','help-ui.test.mjs']) { fs.mkdirSync(path.join(root,'scripts'),{recursive:true}); fs.writeFileSync(path.join(root,'scripts',file),fs.readFileSync('scripts/'+file)); }
  fs.mkdirSync(path.join(root,'scripts'),{recursive:true});fs.writeFileSync(path.join(root,'scripts/check-help-contract.mjs'),script);
  fs.writeFileSync(path.join(root,'scripts/help-contract.test.mjs'),fs.readFileSync('scripts/help-contract.test.mjs'));
  // Local-only apps receive the same runnable checks. CI is not claimed without a remote.
@@ -40,7 +41,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - run: node --test scripts/help-contract.test.mjs
+      - run: node --test scripts/help-contract.test.mjs${service==='foodyadmin'?' scripts/help-ui.test.mjs':''}
       - name: Resolve immutable documentation reference
         id: docs
         run: |
@@ -54,7 +55,9 @@ jobs:
           sparse-checkout: |
             docs/help
             src/content/help
-      - name: Check source impact and three-language procedures
+${service==='foodyadmin'?`      - name: Check guides against current Admin screens
+        run: node scripts/check-help-ui.mjs --documentation-root .help-docs --admin-root .
+`:''}      - name: Check source impact and three-language procedures
         env:
           HELP_BASE: \u0024{{ github.event.pull_request.base.sha }}
         run: node scripts/check-help-contract.mjs --documentation-root .help-docs \u0024{HELP_BASE:+--base "\u0024HELP_BASE"}

@@ -17,14 +17,16 @@ function write(file, value) {
   if (!check) { fs.mkdirSync(path.dirname(file), { recursive: true }); fs.writeFileSync(file, value); }
 }
 for (const feature of features) {
+  const anchors = feature.operations.flatMap(operation => [operation.id, ...(operation.anchors || [])]);
+  if (anchors.some(anchor => !/^[a-z0-9-]+$/.test(anchor)) || new Set(anchors).size !== anchors.length) throw new Error(feature.id + ': invalid or duplicate procedure anchors');
   for (const lang of languages) {
     const destination = feature.audience === 'internal' ? `docs/help/internal/${lang}/${feature.article.slice(9)}.md` : `src/content/help/${lang}/${feature.article}.mdx`;
     const existing = fs.existsSync(destination) ? matter(fs.readFileSync(destination, 'utf8')).data : {};
-    const meta = { title: feature.title[lang], description: existing.description || feature.entry[lang], apps: feature.module === 'guest' ? 'foodyweb' : feature.id === 'landing-offers' ? 'foodylanding' : existing.apps || (feature.selectors.foodyadmin && !feature.selectors.foodypos ? 'foodyadmin' : feature.selectors.foodypos && !feature.selectors.foodyadmin ? 'foodypos' : 'both'), tags: [...new Set([feature.module, feature.id, ...(existing.tags || [])])], updatedAt: feature.procedureUpdatedAt || '2026-10-18', featureId: feature.id, audience: feature.audience, releaseStatus: feature.status };
+    const meta = { title: feature.title[lang], description: feature.description?.[lang] || existing.description || feature.entry[lang], apps: feature.module === 'guest' ? 'foodyweb' : feature.id === 'landing-offers' ? 'foodylanding' : existing.apps || (feature.selectors.foodyadmin && !feature.selectors.foodypos ? 'foodyadmin' : feature.selectors.foodypos && !feature.selectors.foodyadmin ? 'foodypos' : 'both'), tags: [...new Set([feature.module, feature.id, ...(existing.tags || [])])], updatedAt: feature.procedureUpdatedAt || '2026-10-18', featureId: feature.id, audience: feature.audience, releaseStatus: feature.status };
     let body = feature.entry[lang] + '\n\n';
     if (feature.status === 'local-release-unverified') body += `> **${labels[lang].local}**\n> ${labels[lang].localText}\n\n`;
     if (feature.access) body += `## ${labels[lang].access}\n\n${feature.access[lang]}\n\n`;
-    for (const operation of feature.operations) body += `<span id="${operation.id}" />\n\n${'#'.repeat(operation.level || 2)} ${operation.title[lang]}\n\n${operation.instructions[lang]}\n\n`;
+    for (const operation of feature.operations) body += [operation.id, ...(operation.anchors || [])].map(anchor => '<span id="' + anchor + '" />\n\n').join('') + '#'.repeat(operation.level || 2) + ' ' + operation.title[lang] + '\n\n' + operation.instructions[lang] + '\n\n';
     if (feature.recovery) body += `## ${labels[lang].recovery}\n\n${feature.recovery[lang]}\n\n`;
     write(destination, matter.stringify(body.trim() + '\n', meta, { lineWidth: 120 }));
   }

@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "repository": "Foody-isr/admin",
+  "ref": "742def4eaeeb865239c3a37a6b0e815989580e12",
+  "observations": [
+    {
+      "id": "items-library",
+      "source": "src/app/[restaurantId]/menu/items/page.tsx",
+      "required": [
+        "<ListToolbar",
+        "<DataTable",
+        "t('createItem')",
+        "value: 'active'",
+        "value: 'inactive'"
+      ],
+      "forbidden": [
+        "<ArticlesKpiRow",
+        "<Kpi ",
+        "<KPI"
+      ]
+    },
+    {
+      "id": "continuous-item-editor",
+      "source": "src/components/menu-item/MenuItemEditorForm.tsx",
+      "required": [
+        "id=\"information\"",
+        "id=\"pricing\"",
+        "id=\"personalizations\"",
+        "id=\"recipe\"",
+        "t('itemSectionRecipe')"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "item-editor-shell",
+      "source": "src/components/menu-item/MenuItemShell.tsx",
+      "required": [
+        "data-item-editor-scroll",
+        "overflow-y-auto",
+        "<ItemSectionOutline"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "recipe-quantity-grid",
+      "source": "src/components/menu-item/MenuItemTabRecipe.tsx",
+      "required": [
+        "<RecipeTable",
+        "t('recipePerSize')"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "same-quantity",
+      "source": "src/components/menu-item/RecipeTable.tsx",
+      "required": [
+        "t('itemRecipeSameQuantity')"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "stock-library",
+      "source": "src/app/[restaurantId]/kitchen/stock/page.tsx",
+      "required": [
+        "<ListToolbar",
+        "<ListStateFilter",
+        "value: 'low'",
+        "value: 'ok'",
+        "<ListFiltersDrawer"
+      ],
+      "forbidden": [
+        "<StockKpiRow",
+        "<Kpi ",
+        "lowStockOnly",
+        "<ColumnPicker"
+      ]
+    },
+    {
+      "id": "stock-editor",
+      "source": "src/components/stock/StockItemEditor.tsx",
+      "required": [
+        "<FullScreenEditor",
+        "t('identityAndPurchase')",
+        "t('purchaseAndPrice')",
+        "t('recipeUnits')"
+      ],
+      "forbidden": [
+        "<Tabs",
+        "role=\"tablist\""
+      ]
+    }
+  ],
+  "guides": [
+    {
+      "article": "menu/categories-and-items",
+      "required": {
+        "fr": [
+          "liste sous forme de tableau",
+          "État",
+          "Créer un article"
+        ],
+        "en": [
+          "table-based library",
+          "Status",
+          "Create item"
+        ],
+        "he": [
+          "בצורת טבלה",
+          "מצב",
+          "צור פריט"
+        ]
+      },
+      "forbidden": {
+        "fr": [
+          "Trois cartes de synthèse s’affichent"
+        ],
+        "en": [
+          "Three KPI cards are shown"
+        ],
+        "he": [
+          "מוצגים שלושה כרטיסי KPI"
+        ]
+      }
+    },
+    {
+      "article": "menu/creating-a-menu-item",
+      "required": {
+        "fr": [
+          "page continue en plein écran",
+          "Recette et coût",
+          "Créer un article"
+        ],
+        "en": [
+          "continuous full-screen form",
+          "Recipe and cost",
+          "Create item"
+        ],
+        "he": [
+          "טופס רציף במסך מלא",
+          "מתכון ועלות",
+          "צור פריט"
+        ]
+      },
+      "forbidden": {
+        "fr": [
+          "Le modal Créer un article s'ouvre avec trois onglets"
+        ],
+        "en": [
+          "The Create Item modal opens with three tabs"
+        ],
+        "he": [
+          "המודל יצירת פריט נפתח עם שלוש לשוניות"
+        ]
+      }
+    },
+    {
+      "article": "menu/ingredients-and-portions",
+      "required": {
+        "fr": [
+          "Même quantité",
+          "Recette et coût",
+          "Quantités différentes par taille"
+        ],
+        "en": [
+          "Same quantity",
+          "Recipe and cost",
+          "quantities per size"
+        ],
+        "he": [
+          "אותה כמות",
+          "מתכון ועלות",
+          "כמויות שונות לפי גודל"
+        ]
+      },
+      "forbidden": {
+        "fr": [
+          "Adapter à la taille pour une quantité automatique"
+        ],
+        "en": [
+          "Scale to item size for an automatic quantity"
+        ],
+        "he": [
+          "התאם לגודל לכמות אוטומטית"
+        ]
+      }
+    },
+    {
+      "article": "menu/variants-and-sizes",
+      "required": {
+        "fr": [
+          "Prix et variantes",
+          "Ajouter une variante"
+        ],
+        "en": [
+          "Price and variants",
+          "Add variant"
+        ],
+        "he": [
+          "מחיר ווריאציות",
+          "הוספת וריאציה"
+        ]
+      },
+      "forbidden": {
+        "fr": [
+          "Dans l'onglet Détails, descendez"
+        ],
+        "en": [
+          "In the Details tab, scroll"
+        ],
+        "he": [
+          "בלשונית פרטים, גלול"
+        ]
+      }
+    },
+    {
+      "article": "kitchen/stock-management",
+      "required": {
+        "fr": [
+          "État propose Stock bas et OK",
+          "éditeur plein écran est continu"
+        ],
+        "en": [
+          "Status offers Low Stock and OK",
+          "full-screen editor is continuous"
+        ],
+        "he": [
+          "מצב מציע מלאי נמוך ותקין",
+          "העורך במסך מלא הוא רציף"
+        ]
+      },
+      "forbidden": {
+        "fr": [
+          "Au sommet de la page, trois cartes",
+          "Trois cartes de synthese",
+          "Trois cartes de synthèse",
+          "Le modal de creation/modification comporte deux onglets"
+        ],
+        "en": [
+          "At the top of the page, three summary cards",
+          "The create/edit modal has two tabs",
+          "Dashboard card — the Low Stock count turns red"
+        ],
+        "he": [
+          "שלושה כרטיסי סיכום",
+          "מודל היצירה/עריכה כולל שתי לשוניות"
+        ]
+      }
+    }
+  ]
+}

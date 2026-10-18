@@ -19,510 +19,135 @@ tags:
   - seuil
   - categories
   - fournisseur
-updatedAt: '2026-04-10'
+updatedAt: '2026-10-18'
 featureId: kitchen-stock-management
 audience: public
 releaseStatus: available
 ---
-Ouvrez l’espace Foody correspondant décrit ci-dessous.
+Cuisine → Stock : liste opérationnelle des ingrédients, quantités et mouvements.
 
 <span id="section-1" />
 
-## Qu'est-ce que c'est ?
-
-La **Gestion des Stocks** vous permet de savoir :
-
-- Ce que vous avez en cuisine
-- Ce que vous utilisez chaque jour
-- Ou vous perdez de l'argent
-
-C'est la base pour controler votre food cost.
-
-<span id="section-2" />
-
-### Comment ca fonctionne (en simple)
-
-Votre systeme repose sur 3 elements :
-
-- **Stock** — ce que vous avez
-- **Recettes** — ce que vous devriez utiliser
-- **Ventes / Realite** — ce qui est reellement utilise
-
-La difference entre consommation attendue et reelle = **perte ou erreur**.
-
-Les recettes font le lien entre votre stock et votre menu. Lorsque vous associez des ingredients aux articles du menu (dans **Cuisine > Recettes**), le systeme peut :
-
-- Deduire automatiquement le stock en fin de journee
-- Calculer votre food cost
-- Detecter les pertes et surdosages
-- Vous aider a prevoir vos commandes
-
-Allez dans **Cuisine > Stock** dans FoodyAdmin pour commencer.
-
----
-
 <span id="section-3" />
 
-## Le Tableau de Bord
+## Lire la liste de stock actuelle
 
-En haut de la page, trois cartes de synthese vous donnent un apercu rapide :
-
-| Carte | Affiche | Details |
-|-------|---------|---------|
-| **Total Articles** | Nombre de tous les articles en stock | Votre catalogue complet d'ingredients |
-| **Stock Bas** | Nombre d'articles au niveau ou en dessous du seuil de reapprovisionnement | Devient rouge quand un article doit etre reapprovisionne |
-| **Valeur du Stock** | Somme de (quantite x cout unitaire) pour tous les articles | Valeur totale de ce qui est en reserve |
-
----
-
-<span id="section-4" />
-
-## Ajout et Modification d'Articles
-
-1. Allez dans **Cuisine > Stock**.
-2. Cliquez sur **Ajouter un article** (en haut a droite).
-3. Remplissez les champs et cliquez sur **Creer**.
-
-Pour modifier un article existant, cliquez sur l'icone crayon sur sa ligne.
-
-La fenetre de creation/modification comporte **deux onglets** :
-
-<span id="section-5" />
-
-### Onglet : General
-
-Informations de base sur l'article.
-
-| Champ | Obligatoire | Description |
-|-------|-------------|-------------|
-| **Nom** | Oui | Nom de l'ingredient (ex. "Huile d'olive", "Blanc de poulet") |
-| **Unite** | Oui | Comment vous comptez cet article — voir [Comprendre les Unites](#comprendre-les-unites) ci-dessous |
-| **Quantite** | Non | Niveau de stock actuel (defaut 0) |
-| **Fournisseur** | Non | Nom du fournisseur — utilise pour regrouper les bons de commande |
-| **Categorie** | Non | Etiquette libre pour organiser et filtrer (ex. "Produits laitiers", "Viande", "Legumes") |
-| **Notes** | Non | Notes internes ou instructions |
-| **Actif** | Non | Active par defaut. Les articles inactifs sont masques des recettes et des operations quotidiennes |
-
-<span id="section-6" />
-
-### Onglet : Conditionnement & Prix
-
-Comment l'article est conditionne et combien il coute. Choisissez l'un des **trois modes de conditionnement** :
-
-**Simple** — Pour les articles achetes au poids ou au volume (ex. 5kg de farine, 3L d'huile). Entrez simplement le cout par unite de stock.
-
-**Par unites** — Pour les contenants individuels (ex. 6 bouteilles de 1,5L). Entrez le contenu par unite (ex. 1,5L) et le cout par unite de stock.
-
-**Par paquets** — Pour les cartons contenant plusieurs unites (ex. 2 cartons de 12 boites de 400g). Entrez les unites par paquet, le contenu par unite et le cout par unite de stock.
-
-La fenetre affiche un **recapitulatif de prix en temps reel** qui se met a jour a mesure que vous tapez, montrant les prix HT et TTC a chaque niveau (par unite de stock, par unite individuelle, par paquet).
-
-> **Exemple — Pulpe de tomate (mode Par paquets) :**
-> Definissez unites/paquet = 12, contenu/unite = 400g, cout = 0,0121 ₪/g.
-> Le recapitulatif affiche : 4,83 ₪ HT / 5,70 ₪ TTC par boite, 58,00 ₪ HT / 68,44 ₪ TTC par carton.
-
-| Champ | Description |
-|-------|-------------|
-| **Unites/Paquet** | Nombre d'unites individuelles dans un paquet (ex. 12 boites par carton) |
-| **Contenu/Unite** | Ce que contient chaque unite (ex. 400g par boite) |
-| **Cout Unitaire** | Votre prix d'achat par unite de stock (ex. ₪/g) |
-| **Seuil de Reapprovisionnement** | Quantite a partir de laquelle une alerte de stock bas se declenche |
-
----
-
-<span id="section-7" />
-
-## Comprendre les Unites
-
-C'est le concept le plus important de la gestion des stocks. Il y a **deux niveaux** d'unites.
-
-<span id="section-8" />
-
-### Niveau 1 : Unite de Stock
-
-L'unite de stock definit **comment vous comptez** l'article dans votre inventaire. Il y a 10 options en trois groupes :
-
-| Groupe | Unites | Ce que vous comptez |
-|--------|--------|---------------------|
-| **Mesurable** | kg, g, l, ml | Poids ou volume directement |
-| **Contenant** | unite, pack, boite, sac | Des contenants discrets et denombrables |
-| **Special** | dose, autre | Cas d'usage specifiques |
-
-<span id="section-9" />
-
-### Niveau 2 : Contenu par Unite
-
-Lorsque vous choisissez une unite de type **contenant** (unite, pack, boite ou sac), deux champs supplementaires apparaissent : **Contenu par Unite** et **Unite de Contenu**. Ils repondent a la question : *"Qu'est-ce qu'il y a dans chaque contenant ?"*
-
-Par exemple, si vous achetez des tomates en conserve par boite et que chaque conserve fait 400g :
-- Unite de stock = **boite**
-- Contenu par unite = **400**
-- Unite de contenu = **g**
-
-<span id="section-10" />
-
-### Pourquoi l'Unite de Contenu est Limitee a g, kg, ml, l ?
-
-Parce que la conversion ne fonctionne qu'entre des **unites mesurables**. Le systeme connait :
-
-- 1 kg = 1000 g
-- 1 l = 1000 ml
-
-Cela lui permet de convertir entre la facon dont vous **achetez** (boites, packs) et la facon dont les recettes **consomment** (grammes, millilitres). On ne peut pas convertir "3 boites" en "X packs" — ce sont des contenants arbitraires. Mais on *peut* convertir "3 boites de 400g" en "1200g".
-
-<span id="section-11" />
-
-### Exemples Pratiques
-
-| Ingredient | Unite de Stock | Contenu par Unite | Unite de Contenu | Pourquoi |
-|-----------|---------------|------------------|-----------------|----------|
-| Tomates en conserve | boite | 400 | g | Vous comptez les boites. Chaque conserve fait 400g. Les recettes utilisent des grammes. |
-| Huile d'olive | unite (bouteille) | 750 | ml | Vous comptez les bouteilles. Chacune fait 750ml. Les recettes utilisent des ml. |
-| Farine | sac | 1 | kg | Vous comptez les sacs. Chacun fait 1kg. Les recettes utilisent des grammes ou kg. |
-| Oeufs | unite | — | — | Vous comptez les oeufs individuellement. Pas besoin de contenu — les recettes comptent les oeufs a la piece, pas au poids. |
-| Lait | l | — | — | Vous mesurez en litres directement. Pas besoin de couche contenant. |
-| Viande hachee | kg | — | — | Vous pesez en kilogrammes directement. |
-
-<span id="section-12" />
-
-### Choisir la Bonne Approche
-
-> **Astuce :** Utilisez une **unite mesurable** (kg, g, l, ml) quand vous pesez ou mesurez l'ingredient directement — les articles en vrac comme la farine au kilo, le lait au litre. Utilisez une **unite contenant** (unite, pack, boite, sac) quand vous comptez des emballages discrets et que le systeme doit connaitre le contenu de chacun pour les conversions de recettes. Pour les articles comptes individuellement comme les oeufs, utilisez **unite** sans contenu — les recettes les referencent par nombre.
-
----
-
-<span id="section-13" />
-
-## Mouvements de Stock
-
-> **Important :** Ne modifiez jamais le stock directement. Chaque changement doit etre une **transaction**. Cela vous permet de comprendre exactement d'ou vient votre stock, ou il a ete utilise, et ou vous perdez des produits.
-
-<span id="section-14" />
-
-### Enregistrer un Mouvement
-
-1. Cliquez sur l'icone **reception** (fleche vers le bas) sur la ligne de l'article, ou ouvrez l'article et choisissez un type de transaction.
-2. Selectionnez le type de transaction.
-3. Entrez la quantite (toujours positive — le systeme applique le bon signe).
-4. Ajoutez des notes optionnelles (ex. "Livraison matinale du Fournisseur X").
-5. Verifiez l'apercu montrant la quantite actuelle et resultante, puis confirmez.
-
-<span id="section-15" />
-
-### Types de Transactions
-
-| Type | Effet | Utilisation |
-|------|-------|-------------|
-| **Reception** | Ajoute a la quantite | Livraisons, reapprovisionnements, achats |
-| **Perte** | Soustrait de la quantite | Perimes, endommages, jetes |
-| **Ajustement** | Soustrait de la quantite | Corrections apres un comptage physique |
-
-<span id="section-16" />
-
-### Transactions Generees par le Systeme
-
-Deux types de transactions supplementaires apparaissent dans votre historique mais sont crees automatiquement — vous ne les saisissez pas manuellement :
-
-- **Deduction** — creee lorsque vous cloturez la journee dans **Operations Quotidiennes**. Le systeme calcule la quantite de chaque ingredient utilisee (selon les recettes et les ventes) et la deduit.
-- **Production** — creee lorsque la production de prep consomme des ingredients dans le systeme de preparation.
-
----
-
-<span id="section-17" />
-
-## Historique du Stock
-
-Pour consulter l'historique complet des transactions d'un article, cliquez sur l'**icone horloge** sur sa ligne. L'historique affiche les 50 dernieres transactions avec :
-
-- Le type de transaction (badge colore)
-- Les notes
-- La date et l'heure
-- La variation de quantite (vert pour les ajouts, rouge pour les deductions)
-
-<span id="section-18" />
-
-### Reference des Couleurs
-
-| Type | Couleur | Signification |
-|------|---------|---------------|
-| Reception | Vert | Stock ajoute suite a une livraison ou un achat |
-| Deduction | Rouge | Utilise dans les ventes (via operations quotidiennes) |
-| Perte | Orange | Perime ou endommage |
-| Ajustement | Bleu | Correction manuelle |
-| Production | Violet | Consomme lors de la production de prep |
-
----
-
-<span id="section-19" />
-
-## Comprendre les Pertes
-
-Le systeme compare en permanence :
-
-- **Consommation attendue** (via les recettes)
-- **Consommation reelle** (via votre stock)
-
-La difference s'appelle un **ecart**.
-
-<span id="section-20" />
-
-### Exemple simple
-
-Vous recevez 2 kg de cabillaud. Pendant la journee vous vendez :
-- 8 Fish Burgers (100g chacun) = 800g
-- 18 Ceviches (50g chacun) = 900g
-
-Consommation attendue = 1700g. Mais en fin de journee, il ne reste rien. Vous avez perdu 300g.
-
-<span id="section-21" />
-
-### Pourquoi ca arrive ?
-
-Les causes les plus frequentes :
-
-- Portions trop genereuses
-- Erreurs en cuisine
-- Produits jetes ou perimes
-- Recettes mal configurees
-- Ventes non enregistrees
-
-<span id="section-22" />
-
-### Pourquoi c'est important ?
-
-Meme une petite perte peut couter cher. 300g de cabillaud = plusieurs plats perdus = perte de chiffre d'affaires chaque jour.
-
-Utilisez les **Operations Quotidiennes** pour detecter ces ecarts automatiquement, jour apres jour.
-
----
-
-<span id="section-23" />
-
-## Alertes de Stock Bas
-
-Definissez un **Seuil de Reapprovisionnement** sur n'importe quel article pour activer les alertes. Lorsque la quantite de l'article tombe au niveau ou en dessous du seuil, il est signale comme stock bas.
-
-Trois endroits affichent les alertes de stock bas :
-
-1. **Ligne de l'article** — un badge rouge "STOCK BAS" apparait a cote de l'article dans le tableau
-2. **Carte du tableau de bord** — le compteur Stock Bas devient rouge
-3. **Barre laterale** — un badge numerique rouge apparait a cote de "Stock" dans le menu de navigation
-
-Utilisez la case a cocher **Stock Bas Uniquement** dans les filtres pour voir rapidement tous les articles a reapprovisionner.
-
-> **Astuce :** Definissez votre seuil de reapprovisionnement en fonction de votre cycle de livraison. Si vous recevez des livraisons deux fois par semaine, fixez le seuil a environ 2-3 jours d'utilisation typique. Cela vous laisse le temps de commander avant la rupture.
-
----
-
-<span id="section-24" />
-
-## Categories
-
-Les categories vous aident a organiser vos ingredients en groupes logiques (ex. "Produits laitiers", "Viande", "Legumes", "Epicerie seche").
-
-- **Attribuez une categorie** lors de la creation ou la modification d'un article. Commencez a taper pour auto-completer depuis les categories existantes, ou tapez un nouveau nom pour en creer une.
-- **Des pastilles colorees** apparaissent a cote de chaque categorie dans le tableau pour un reperage visuel rapide.
-- **Filtrez par categorie** en utilisant le menu deroulant au-dessus du tableau pour voir une seule categorie a la fois.
-
-> **Astuce :** Gardez des noms de categories coherents. Choisissez "Produits laitiers" ou "Laitages" et tenez-vous-y. Des noms incoherents creent des categories en double qui fragmentent votre filtrage.
-
----
-
-<span id="section-25" />
-
-## Import de Livraison par IA
-
-Gagnez du temps en laissant l'IA extraire les articles des bons de livraison et factures automatiquement. L'import utilise un affichage plein ecran en deux panneaux : le document original a gauche pour reference, et les articles extraits a droite.
-
-<span id="section-26" />
-
-### Etape 1 : Selectionner le fournisseur et telecharger
-
-1. Cliquez sur le bouton **Importer une livraison** (icone etincelle) en haut de la page.
-2. **Selectionnez un fournisseur** dans votre liste existante, ou choisissez **+ Nouveau fournisseur** et saisissez le nom. Selectionner un fournisseur connu ameliore la precision d'extraction — le systeme utilise des indications specifiques au fournisseur apprises des imports precedents.
-3. Telechargez une photo d'un bon de livraison ou une facture PDF.
-4. Cliquez sur **Telecharger et Analyser**. L'IA utilise Google Vision OCR combine avec Claude AI pour une precision maximale.
-
-<span id="section-27" />
-
-### Etape 2 : Verifier et Confirmer
-
-L'ecran se divise en deux panneaux : votre document original a gauche, et les articles extraits a droite. Pour chaque article :
-
-- **Associez a un article existant** via le menu deroulant avec recherche, ou laissez comme "nouveau" pour creer un nouvel article. Le **nom original** (dans la langue du fournisseur) est affiche pour reference.
-- **Modifiez les details d'emballage** — le systeme supporte une decomposition a 3 niveaux :
-  - **Nombre de paquets** — nombre de colis/cartons (ex. 2 cartons)
-  - **Unites/Paquet** — nombre d'unites individuelles par paquet (ex. 12 boites par carton)
-  - **Prix par paquet** et **Prix total** — se calculent automatiquement
-- **Modifiez les details unitaires** :
-  - **Taille unitaire** — contenu par unite individuelle (ex. 400g par boite)
-  - **Unite** — l'unite de stock (g, kg, l, ml, etc.)
-  - **Quantite en stock** — calculee automatiquement : paquets x unites/paquet x taille unitaire (ex. 2 x 12 x 400 = 9 600g)
-- **TVA** — cochez "Prix TTC" dans l'en-tete si les prix du fournisseur incluent la taxe. Ce marqueur est sauvegarde par article pour des calculs de cout precis.
-- **Attribuez une categorie** pour les nouveaux articles.
-
-> **Exemple — Pulpe de tomate (decomposition a 3 niveaux) :**
-> Votre facture indique "Pulpe de tomate 400g × 2" a 58₪ chacun. Chaque "unite" est en fait un carton contenant 12 boites de 400g. Voici comment remplir :
->
-> | Champ | Valeur | Signification |
-> |-------|--------|---------------|
-> | Nombre de paquets | 2 | 2 cartons |
-> | Unites/Paquet | 12 | 12 boites par carton |
-> | Prix/Paquet | 58 ₪ | Prix par carton |
-> | Total | 116 ₪ | 2 × 58 ₪ |
-> | Taille unitaire | 400 | 400g par boite |
-> | Unite | g | Stock suivi en grammes |
-> | Quantite en stock | 9 600 g | Auto : 2 × 12 × 400 = 9 600g |
->
-> Le cout unitaire est calcule automatiquement : 116 ÷ 9 600 = **0,012 ₪/g**.
-
-Cliquez sur **Confirmer l'import** pour enregistrer. Chaque article recoit une transaction "reception", et les nouveaux articles sont crees dans votre stock.
-
-<span id="section-28" />
-
-### Indications d'extraction fournisseur
-
-Lors du premier import d'un fournisseur, le systeme analyse automatiquement le format du document et genere des **indications d'extraction** (langue, type de mise en page, ordre des colonnes). Ces indications sont sauvegardees sur la fiche fournisseur et utilisees pour les imports futurs.
-
-Vous pouvez les consulter et les modifier dans **Cuisine → Fournisseurs → Modifier le fournisseur → Indications d'extraction IA**.
-
-> **Astuce :** Prenez des photos claires et bien eclairees des bons de livraison. L'IA fonctionne mieux avec un texte lisible, un format coherent et des prix visibles.
-
-> **Astuce :** Le systeme apprend de vos corrections. Quand vous associez un article de livraison a un article de stock existant, il cree un alias pour que les futures livraisons du meme fournisseur soient associees automatiquement.
-
-<span id="section-29" />
-
-### Enregistrer le brouillon
-
-Si vous devez interrompre un import en cours, cliquez sur **Enregistrer le brouillon** dans l'en-tete. L'ensemble de l'extraction, vos modifications et le document scanne sont sauvegardes sur le serveur.
-
-Reprenez depuis **Cuisine → Approvisionnements** — les imports en attente apparaissent en haut de la page sous forme de cartes affichant le nom du fournisseur, le nombre d'articles et une miniature du document. Cliquez sur **Reprendre** pour rouvrir la vue plein ecran avec l'apercu du document intact.
-
-Plusieurs brouillons sont possibles. Les brouillons sont automatiquement supprimes lorsque vous confirmez l'import.
-
-<span id="section-30" />
-
-### TVA sur les articles de stock
-
-Chaque article de stock indique si son cout inclut la TVA ou non. Utilisez le bouton **Afficher HT / Afficher TTC** sur la page de stock (sous Valeur du stock) pour changer l'affichage. Le systeme normalise tous les couts sur la meme base pour des calculs de food cost precis.
-
-Configurez le taux de TVA de votre restaurant dans **Parametres → Taux TVA (%)**. La valeur par defaut est 18% pour Israel.
-
----
-
-<span id="section-31" />
-
-## Import de Recette par IA
-
-Importez des recettes en telechargeant une photo/PDF ou en collant du texte. L'IA extrait les ingredients, les quantites et les associe a vos articles de stock. Disponible depuis la page **Cout Alimentaire** et la page **Detail de la recette** (icone etincelle).
-
-<span id="section-32" />
-
-## Comment ca fonctionne
-
-1. Choisissez **Coller du texte** ou **Telecharger un fichier** (image ou PDF).
-2. Cliquez sur **Extraire la recette**. L'IA traite le contenu.
-3. Verifiez dans la **vue plein ecran en deux panneaux** — le document original ou le texte a gauche, les ingredients extraits a droite.
-4. Pour chaque ingredient :
-   - Associez a un article de stock existant ou laissez comme "nouveau" pour en creer un
-   - Modifiez la quantite, l'unite, le cout unitaire et la categorie
-   - Le **nom original** (dans la langue source) est affiche pour reference
-   - Le recapitulatif de prix affiche le cout de la ligne (quantite x cout) en HT et TTC
-5. Definissez le **rendement de la recette** (ex. 1,2 kg) en haut.
-6. Cliquez sur **Confirmer l'import** pour enregistrer la recette et creer les nouveaux articles de stock.
-
----
-
-<span id="section-33" />
-
-### Operations en Masse
-
-Selectionnez plusieurs articles en utilisant les cases a cocher dans le tableau (ou la case a cocher "tout selectionner" dans l'en-tete). Une barre d'outils apparait avec deux actions :
-
-- **Modifier la Categorie** — attribuez a tous les articles selectionnes une categorie. Choisissez parmi les categories existantes ou tapez-en une nouvelle.
-- **Supprimer** — supprimez tous les articles selectionnes. Necessite une confirmation.
-
----
+La page Stock affiche une barre de recherche et de filtres, le menu Actions, le bouton Créer un article selon vos permissions et le tableau des ingrédients. Elle ne comporte plus les anciennes cartes KPI Total articles, Stock bas et Valeur du stock. La valeur est consultable par ligne dans le tableau et dans la fiche ingrédient, pas dans une carte de synthèse en haut.
 
 <span id="section-34" />
 
-## Recherche et Filtres
+<span id="section-23" />
 
-Trois outils de filtrage sont toujours visibles au-dessus du tableau :
+## Rechercher et filtrer par catégorie ou état
 
-| Filtre | Fonctionnement |
-|--------|---------------|
-| **Recherche** | Filtre les articles par nom en temps reel |
-| **Menu deroulant Categorie** | Affiche uniquement les articles de la categorie selectionnee |
-| **Stock Bas Uniquement** | Case a cocher — affiche uniquement les articles au niveau ou en dessous du seuil |
-
-Les filtres se combinent avec une logique ET. Par exemple, chercher "poulet" avec la categorie "Viande" affiche uniquement les articles de viande contenant "poulet" dans le nom.
-
----
+Recherchez par nom. Catégorie ouvre le choix des catégories ; État propose Stock bas et OK. Tous les filtres ouvre le panneau qui regroupe ces choix. Les critères se combinent. Pour isoler les ingrédients à réapprovisionner, sélectionnez Stock bas dans État. L’ancienne case « Stock Bas Uniquement » n’est plus le contrôle à chercher. Ne confondez pas une liste filtrée vide avec une erreur de chargement.
 
 <span id="section-35" />
 
-## Colonnes du Tableau
-
-Le tableau de stock reste concentre sur l'essentiel du quotidien. L'en-tete reste fixe en haut lors du defilement, pour que vous sachiez toujours quelle colonne vous regardez.
-
-| Colonne | Par defaut | Description |
-|---------|-----------|-------------|
-| Categorie | Visible | Categorie de l'article avec pastille coloree |
-| Quantite | Visible | Stock actuel, affiche au niveau de conditionnement choisi (voir ci-dessous) |
-| Prix | Visible | Prix unitaire au meme niveau de conditionnement que la Quantite |
-| Fournisseur | Visible | Nom du fournisseur |
-| Statut | Visible | OK ou alerte Stock Bas |
-
-Cliquez sur l'**icone engrenage** (⚙) a cote des filtres pour masquer une colonne dont vous n'avez pas besoin. Les preferences sont sauvegardees par restaurant.
-
 <span id="section-36" />
 
-## Quantite & Prix — Clic pour Changer de Niveau
+## Lire les colonnes et les niveaux de conditionnement
 
-Quantite et Prix s'affichent ensemble au meme **niveau de conditionnement**. Par defaut le tableau affiche le niveau qui correspond a votre facon de *penser* votre stock — pas l'unite de base brute.
+Le tableau présente notamment le nom, la catégorie, la quantité, le prix, la valeur totale de ligne, le fournisseur et le statut. Le statut signale Stock bas si le seuil configuré est atteint ; sinon il indique l’état approprié de l’article. Les cellules Quantité et Prix permettent de changer le niveau de conditionnement affiché lorsqu’un autre niveau existe. Cela change la présentation, pas le stock. Il n’y a pas de sélecteur de colonnes par engrenage à côté des filtres sur cette page. Un ingrédient actif à quantité nulle est également en Stock bas, même sans seuil positif.
 
-**Cliquez sur une cellule Quantite ou Prix pour faire defiler les niveaux disponibles pour cette ligne.** Votre choix est memorise par article.
+<span id="section-4" />
 
-**Exemple — 2 cartons de 12 boites de 400g de tomates, achetes 116 ₪ (imbrique) :**
+<span id="section-5" />
 
-| Niveau | Quantite affichee | Prix affiche |
-|--------|-------------------|--------------|
-| Carton (exterieur) | 2 cartons (de 12 boites × 400g) | 58.00 ₪ / carton |
-| **Boite (intermediaire — defaut)** | **24 boites** | **4.83 ₪ / boite** |
-| Gramme (base) | 9.6 kg | 12.08 ₪ / kg |
+## Créer ou modifier une fiche ingrédient
 
-**Exemple — 4 bouteilles de 900ml d'huile pour 40 ₪ (direct, sans niveau intermediaire) :**
+Avec la permission de gérer la cuisine, cliquez Créer un article ou ouvrez une ligne existante. L’éditeur plein écran est continu, avec une fiche de synthèse latérale ; il ne contient pas les anciens onglets Général et Conditionnement & Prix. Parcourez Identité & achat, Achat & prix, Unités et conversions, le seuil de réapprovisionnement et Noms sur la facture. Enregistrer valide la fiche.
 
-| Niveau | Quantite affichee | Prix affiche |
-|--------|-------------------|--------------|
-| **Bouteille (defaut)** | **4 bouteilles** | **10.00 ₪ / bouteille** |
-| Millilitre (base) | 3.6 L | 11.11 ₪ / L |
+<span id="section-6" />
 
-**Exemple — 10 kg de farine pour 50 ₪ (simple, un seul niveau) :** affiche `10 kg` et `5.00 ₪ / kg`. La cellule n'est pas cliquable car il n'y a qu'un seul niveau.
+<span id="section-30" />
 
-Le niveau par defaut est le niveau intermediaire pour un conditionnement imbrique, l'exterieur pour un conditionnement direct, et la base pour un article simple — celui qui se lit le plus naturellement.
+## Saisir l’identité, l’achat et le prix
 
----
+Renseignez le nom de commande, la catégorie, la référence et le fournisseur utiles. Dans Achat & prix, décrivez la quantité et le conditionnement effectivement achetés, puis le prix total et la TVA demandés. Les modes couvrent une quantité simple, un contenant avec contenu, ou des colis contenant plusieurs unités. Vérifiez le récapitulatif en unité de base avant Enregistrer. Pour changer seulement la présentation HT/TTC de la liste, utilisez Actions → Affichage du prix ; cela ne modifie pas les achats enregistrés.
+
+<span id="section-7" />
+
+<span id="section-8" />
+
+<span id="section-9" />
+
+<span id="section-10" />
+
+<span id="section-11" />
+
+<span id="section-12" />
+
+<span id="understanding-units" />
+
+## Comprendre les unités et leurs conversions
+
+Les quantités de base utilisent g, kg, ml, l ou des unités. Le conditionnement décrit comment ces quantités sont achetées : par exemple 2 cartons × 12 boîtes × 400 g = 9,6 kg. Les recettes utilisent une unité compatible. Dans Unités et conversions, ajoutez une unité de recette personnalisée et sa quantité équivalente en unité de base, puis vérifiez l’équivalence. Ne déduisez jamais le contenu d’une boîte à partir de son seul nom.
+
+<span id="section-13" />
+
+<span id="section-14" />
+
+<span id="section-15" />
+
+## Enregistrer une entrée, une perte ou un ajustement
+
+Ouvrez le menu d’actions de la ligne et choisissez le mouvement voulu. Saisissez une quantité positive dans l’unité affichée et, si utile, une note. Une réception ajoute cette quantité ; perte et ajustement manuel la retirent. Vérifiez la quantité actuelle et celle après mouvement avant Confirmer. Si le mouvement est enregistré mais que l’actualisation échoue, réessayez l’actualisation plutôt que de saisir un second mouvement.
+
+<span id="section-17" />
+
+<span id="section-2" />
+
+<span id="section-16" />
+
+<span id="section-18" />
+
+<span id="section-19" />
+
+<span id="section-20" />
+
+<span id="section-21" />
+
+<span id="section-22" />
+
+## Consulter l’historique et comprendre les écarts
+
+L’action Historique de la ligne affiche jusqu’à 50 mouvements récents, avec type, variation, note et date. Distinguez réception, perte et ajustement des consommations créées par les ventes ou la production. Une erreur de chargement n’est pas un historique vide. Pour comparer consommation théorique et réelle, utilisez la journée concernée dans les opérations quotidiennes et vérifiez les recettes et quantités de clôture.
+
+<span id="section-24" />
+
+<span id="section-33" />
+
+## Catégories, sélection et actions groupées
+
+Les cases des lignes servent à la sélection. Le menu Actions propose, selon vos permissions et la sélection, la gestion des catégories, la modification de catégorie ou de TVA, la suppression et la désélection. Les filtres Catégorie et État limitent la liste affichée ; contrôlez les lignes sélectionnées avant de modifier plusieurs fiches. La confirmation de suppression est distincte d’un simple filtre.
+
+<span id="section-25" />
+
+<span id="section-26" />
+
+<span id="section-27" />
+
+<span id="section-28" />
+
+<span id="section-29" />
+
+## Importer une livraison et reprendre un brouillon
+
+Depuis Actions, ouvrez Importer une livraison. Choisissez le fournisseur, chargez le document puis vérifiez les lignes extraites avant confirmation : rapprochement avec les ingrédients existants, unités, conditionnement, quantités, prix et TVA. Un document analysé n’est pas encore une réception confirmée. Enregistrez un brouillon si nécessaire et reprenez-le depuis les approvisionnements. [Guide d’import des bons](./delivery-note-import) · [Fournisseurs et achats](./suppliers-and-purchases).
+
+<span id="section-31" />
+
+<span id="section-32" />
+
+## Relier les ingrédients aux recettes
+
+Dans un article enregistré, la section Recette et coût permet d’ajouter des ingrédients et des préparations, puis de saisir les quantités par portion ou par taille. Le prix et l’unité de la fiche stock alimentent le calcul. Pour importer une recette, utilisez l’action d’import de la recette concernée ou Recipe Lab ; ce n’est pas une action groupée de la liste Stock. [Recette et quantités](../menu/ingredients-and-portions) · [Recipe Lab](./recipe-lab).
 
 <span id="section-37" />
 
-## Astuces
-
-> **Astuce :** Utilisez l'import de livraison par IA pour chaque livraison. Cela maintient les quantites et les couts a jour automatiquement, et construit un historique d'approvisionnement que vous pourrez consulter plus tard.
-
-> **Astuce :** Attribuez un fournisseur a chaque ingredient. Cela active la fonctionnalite d'approvisionnement estime dans les **Operations Quotidiennes** pour regrouper les bons de commande par fournisseur et les envoyer par email.
-
-> **Astuce :** Marquez les articles saisonniers ou discontinues comme **inactifs** plutot que de les supprimer. Cela preserve leur historique de transactions pour l'analyse du food cost tout en les masquant des flux de travail actifs.
-
-> **Astuce :** Consultez regulierement votre historique de stock. Des deductions inexpliquees ou de grands ecarts entre consommation attendue et reelle peuvent indiquer des problemes de portionnement, de gaspillage ou d'inexactitudes dans les recettes.
-
-> **Astuce :** La gestion des stocks seule ne suffit pas. Combinez-la avec les **Operations Quotidiennes** pour comparer le reel vs l'attendu, detecter les pertes automatiquement et ameliorer votre rentabilite jour apres jour. C'est la que vous gagnez vraiment de l'argent.
-
----
-
 <span id="section-38" />
 
-## Articles Associes
+## Contrôler après une modification
 
-- [Operations Quotidiennes](/help/kitchen/daily-operations) — cloturez la journee, deduisez le stock des ventes et generez les commandes fournisseurs
+Après enregistrement, vérifiez la quantité, le prix, l’unité, le statut et les effets sur les recettes concernées. Si une image ou l’actualisation échoue après création de la fiche, terminez cette étape sur la fiche créée sans doublon. Gardez les seuils cohérents avec votre rythme d’achat et contrôlez la date de la journée avant une clôture. [Unités et réglages stock](./units-and-stock-settings) · [Opérations quotidiennes](./daily-operations).
