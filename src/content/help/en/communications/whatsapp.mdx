@@ -30,6 +30,18 @@ Direct Meta coexistence is a controlled pilot and disabled by default. Connectin
 
 In the order’s communication panel inspect sent, delivered, read, failed and blocked-before-send records. A blocked automation is not proof of delivery. For a reviewed courier reminder use its explicit action only when eligible. Unknown provider outcomes are not automatically replayed; investigate before another send.
 
+<span id="media-templates" />
+
+## Create a model with a photo or PDF
+
+In Settings → Communications → WhatsApp, a user with settings-edit permission can open Create a model. Choose the notification type, language and a new name, then Message attachment: Photo or PDF document. Upload a JPEG/PNG up to 5 MB for a photo, or a PDF up to 10 MB for a fixed document. For each order’s own receipt, choose PDF document then Document to send → Receipt for this order. The server uses a fictional sample document for Meta approval. Review the text and submit. Wait for Utility approval before assigning the model to a notification. An existing text-only model cannot gain an attachment afterward; create a new model with the required header type.
+
+<span id="media-library" />
+
+## Manage files and check sends
+
+Files are available to authorized restaurant users through attachment configuration, without a public storage link. Preview file opens an authenticated preview. Delete file requires confirmation and refuses files referenced by a notification, saved stage or pending message. Replace the file in those settings and save first. The library allows 40 files and 100 MB per restaurant. If upload or deletion is unconfirmed, refresh the list before retrying. If transfer to Meta fails, Foody does not send the text alone or switch to Twilio. In the order → Customer messages, check the attachment filename recorded with the attempt and the status returned by WhatsApp; Read depends on WhatsApp’s return.
+
 <span id="route-delivery-window" />
 
 ## Review a route-based delivery reminder
