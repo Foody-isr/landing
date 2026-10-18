@@ -1,16 +1,9 @@
-import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import SupportHeader from '@/components/help/SupportHeader';
+import SupportAssistant from '@/components/help/SupportAssistant';
+import './support.css';
 
-/**
- * Shared layout for all help center pages.
- * Navbar and Footer are inherited from the parent [lang] layout's I18nProvider.
- */
+/** Shared public support shell and one assistant conversation across help routes. */
 export default function HelpLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <>
-      <Navbar />
-      {children}
-      <Footer />
-    </>
-  );
+  return <><SupportHeader /><SupportAssistant>{children}</SupportAssistant><Footer /></>;
 }

@@ -1,0 +1,39 @@
+---
+title: 'Payment providers, saved methods and Cibus'
+description: >-
+  Open Settings → Payments or Cibus with the required permission. Provider availability is specific to the restaurant’s
+  contract and deployed integration.
+apps: foodyadmin
+tags:
+  - payments
+  - payment-configuration
+updatedAt: '2026-10-18'
+featureId: payment-configuration
+audience: public
+releaseStatus: available
+---
+Open Settings → Payments or Cibus with the required permission. Provider availability is specific to the restaurant’s contract and deployed integration.
+
+<span id="provider" />
+
+## Arrange provider activation
+
+Payment-provider credentials and activation are managed by the Foody team in the protected backoffice. Contact an authorized Foody operator to change them; the merchant Payments page does not connect a card processor. Use sandbox development to verify the supported transaction path. Never send credentials or card data to chat. SUMIT/Verifone availability depends on the contract; a provider name alone does not prove activation.
+
+<span id="saved-methods" />
+
+## Understand saved payment methods
+
+For an eligible customer/provider, saving a method requires its explicit enrollment flow. Guest checkout remains possible without enrollment where offered. Removing Foody’s saved authorization does not remove unrelated provider subscriptions. A failed enrollment can be reported after a successful order payment without undoing that payment.
+
+<span id="cibus" />
+
+## Configure and use Cibus
+
+In Cibus check whether the integration is enabled. With settings permission, replace the complete restaurant ID, POS ID and company code through the protected form; masked hints are not replacement credentials. Review the saved masked status. On POS select Cibus only when configured and inspect its result and remaining balance before another tender. A failed network response does not prove there was no charge.
+
+<span id="policy-vat-tips" />
+
+## Set payment policy, VAT and tips
+
+In Settings → Payments review online-payment-only policy, default VAT and tips enablement. Only permitted, changed fields are saved. An unknown policy remains unknown until explicitly chosen; editing VAT must not silently choose it. Weight authorization buffer and fixed suggested-tip/rounding behavior are read-only or have no edit contract here. Verify saved values after success; retain edits on a failed save.

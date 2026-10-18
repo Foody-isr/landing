@@ -1,10 +1,31 @@
 ---
-title: "Stock Management"
-description: "Track raw ingredients, manage units and conversions, record transactions, import deliveries with AI, and get alerts when stock runs low."
+title: Stock Management
+description: >-
+  Track raw ingredients, manage units and conversions, record transactions, import deliveries with AI, and get alerts
+  when stock runs low.
 apps: foodyadmin
-tags: [kitchen, stock, inventory, ingredients, units, transactions, deliveries, ai-import, alerts, reorder, categories, supplier]
-updatedAt: 2026-04-10
+tags:
+  - kitchen
+  - kitchen-stock-management
+  - stock
+  - inventory
+  - ingredients
+  - units
+  - transactions
+  - deliveries
+  - ai-import
+  - alerts
+  - reorder
+  - categories
+  - supplier
+updatedAt: '2026-04-10'
+featureId: kitchen-stock-management
+audience: public
+releaseStatus: available
 ---
+Open the corresponding Foody workspace described below.
+
+<span id="section-1" />
 
 ## What Is It?
 
@@ -15,6 +36,8 @@ updatedAt: 2026-04-10
 - Where you're losing money
 
 This is the foundation for controlling your food cost.
+
+<span id="section-2" />
 
 ### How It Works (Simply)
 
@@ -37,6 +60,8 @@ Navigate to **Kitchen > Stock** in FoodyAdmin to get started.
 
 ---
 
+<span id="section-3" />
+
 ## The Dashboard
 
 At the top of the page, three summary cards give you a quick snapshot:
@@ -49,6 +74,8 @@ At the top of the page, three summary cards give you a quick snapshot:
 
 ---
 
+<span id="section-4" />
+
 ## Adding & Editing Stock Items
 
 1. Go to **Kitchen > Stock**.
@@ -58,6 +85,8 @@ At the top of the page, three summary cards give you a quick snapshot:
 To edit an existing item, click the pencil icon on its row.
 
 The create/edit modal has **two tabs**:
+
+<span id="section-5" />
 
 ### Tab: General
 
@@ -72,6 +101,8 @@ Basic information about the item.
 | **Category** | No | Free-text label for organizing and filtering (e.g., "Dairy", "Meat", "Produce") |
 | **Notes** | No | Internal notes or instructions |
 | **Active** | No | Defaults to on. Inactive items are hidden from recipes and daily operations |
+
+<span id="section-6" />
 
 ### Tab: Packaging & Pricing
 
@@ -98,9 +129,13 @@ The modal shows a **live price summary** that updates as you type, showing HT an
 
 ---
 
+<span id="section-7" />
+
 ## Understanding Units
 
 This is the most important concept in stock management. There are **two layers** of units.
+
+<span id="section-8" />
 
 ### Layer 1: Stock Unit
 
@@ -112,6 +147,8 @@ The stock unit defines **how you count** the item in inventory. There are 10 opt
 | **Container** | unit, pack, box, bag | Discrete countable things |
 | **Special** | dose, other | Custom use cases |
 
+<span id="section-9" />
+
 ### Layer 2: Content per Unit
 
 When you pick a **container** unit (unit, pack, box, or bag), two extra fields appear: **Content per Unit** and **Content Unit**. These answer the question: *"What's inside each container?"*
@@ -121,6 +158,8 @@ For example, if you buy canned tomatoes by the box and each can is 400g:
 - Content per unit = **400**
 - Content unit = **g**
 
+<span id="section-10" />
+
 ### Why Is Content Unit Limited to g, kg, ml, l?
 
 Because conversion only works between **measurable** units. The system knows:
@@ -129,6 +168,8 @@ Because conversion only works between **measurable** units. The system knows:
 - 1 l = 1000 ml
 
 This lets it convert between how you **buy** (boxes, packs) and how recipes **consume** (grams, milliliters). You can't meaningfully convert "3 boxes" to "X packs" — those are arbitrary containers. But you *can* convert "3 boxes of 400g" to "1200g".
+
+<span id="section-11" />
 
 ### Practical Examples
 
@@ -141,15 +182,21 @@ This lets it convert between how you **buy** (boxes, packs) and how recipes **co
 | Milk | l | — | — | You measure in liters directly. No container layer needed. |
 | Ground beef | kg | — | — | You weigh in kilograms directly. |
 
+<span id="section-12" />
+
 ### Choosing the Right Approach
 
 > **Tip:** Use a **measurable unit** (kg, g, l, ml) when you weigh or measure the ingredient directly — bulk items like flour by the kilo, milk by the liter. Use a **container unit** (unit, pack, box, bag) when you count discrete packages and need the system to know what's inside each one for recipe conversions. For items counted individually like eggs, use **unit** with no content — recipes will reference them by count.
 
 ---
 
+<span id="section-13" />
+
 ## Stock Transactions
 
 > **Important:** Never modify stock directly. Every change should be a **transaction**. This lets you understand exactly where your stock came from, where it was used, and where you're losing product.
+
+<span id="section-14" />
 
 ### Recording a Transaction
 
@@ -159,6 +206,8 @@ This lets it convert between how you **buy** (boxes, packs) and how recipes **co
 4. Add optional notes (e.g., "Morning delivery from Supplier X").
 5. Review the preview showing current and resulting quantity, then confirm.
 
+<span id="section-15" />
+
 ### Transaction Types
 
 | Type | Effect | Use for |
@@ -166,6 +215,8 @@ This lets it convert between how you **buy** (boxes, packs) and how recipes **co
 | **Receive** | Adds to quantity | Deliveries, restocking, purchases |
 | **Waste** | Subtracts from quantity | Spoilage, damage, expired items |
 | **Adjust** | Subtracts from quantity | Corrections after a physical count |
+
+<span id="section-16" />
 
 ### System-Generated Transactions
 
@@ -176,6 +227,8 @@ Two additional transaction types appear in your history but are created automati
 
 ---
 
+<span id="section-17" />
+
 ## Stock History
 
 To view the full transaction history for any item, click the **clock icon** on its row. The history shows the last 50 transactions with:
@@ -184,6 +237,8 @@ To view the full transaction history for any item, click the **clock icon** on i
 - Notes
 - Date and time
 - Quantity change (green for additions, red for deductions)
+
+<span id="section-18" />
 
 ### Transaction Color Reference
 
@@ -197,6 +252,8 @@ To view the full transaction history for any item, click the **clock icon** on i
 
 ---
 
+<span id="section-19" />
+
 ## Understanding Losses
 
 The system constantly compares:
@@ -206,6 +263,8 @@ The system constantly compares:
 
 The difference is called **variance**.
 
+<span id="section-20" />
+
 ### A Simple Example
 
 You receive 2kg of cod. During the day you sell:
@@ -213,6 +272,8 @@ You receive 2kg of cod. During the day you sell:
 - 18 Ceviches (50g each) = 900g
 
 Expected consumption = 1700g. But at the end of the day, nothing is left. You lost 300g.
+
+<span id="section-21" />
 
 ### Why Does This Happen?
 
@@ -224,6 +285,8 @@ The most common causes:
 - Incorrectly configured recipes
 - Unrecorded sales
 
+<span id="section-22" />
+
 ### Why It Matters
 
 Even a small loss adds up fast. 300g of cod = several lost dishes = lost revenue every single day.
@@ -231,6 +294,8 @@ Even a small loss adds up fast. 300g of cod = several lost dishes = lost revenue
 Use **Daily Operations** to detect these variances automatically, day after day.
 
 ---
+
+<span id="section-23" />
 
 ## Low-Stock Alerts
 
@@ -248,6 +313,8 @@ Use the **Low Stock Only** checkbox in the filters to quickly see all items that
 
 ---
 
+<span id="section-24" />
+
 ## Categories
 
 Categories help you organize ingredients into logical groups (e.g., "Dairy", "Meat", "Produce", "Dry Goods").
@@ -260,9 +327,13 @@ Categories help you organize ingredients into logical groups (e.g., "Dairy", "Me
 
 ---
 
+<span id="section-25" />
+
 ## AI Delivery Import
 
 Save time by letting AI extract items from delivery notes and invoices automatically. The import uses a full-screen split view: the original document is displayed on the left for reference while you review extracted items on the right.
+
+<span id="section-26" />
 
 ### Step 1: Select Supplier & Upload
 
@@ -270,6 +341,8 @@ Save time by letting AI extract items from delivery notes and invoices automatic
 2. **Select a supplier** from your existing supplier list, or choose **+ New supplier** and type the name. Selecting a known supplier improves extraction accuracy — the system uses supplier-specific hints learned from previous imports.
 3. Upload a photo of a delivery note or a PDF invoice.
 4. Click **Upload and Analyze**. The AI uses Google Vision OCR combined with Claude AI for maximum accuracy.
+
+<span id="section-27" />
 
 ### Step 2: Review & Confirm
 
@@ -304,6 +377,8 @@ The screen splits into two panels: your original document on the left, and extra
 
 Click **Confirm Import** to save. Each item receives a "receive" transaction, and new items are created in your stock.
 
+<span id="section-28" />
+
 ### Supplier Extraction Hints
 
 When you import from a supplier for the first time, the system automatically analyzes the document format and generates **extraction hints** (language, layout type, column order). These hints are saved on the supplier record and used for future imports to improve accuracy.
@@ -314,6 +389,8 @@ You can view and edit these hints in **Kitchen → Suppliers → Edit supplier �
 
 > **Tip:** The system learns from your corrections. When you match a delivery item to an existing stock item, it creates an alias so future deliveries from the same supplier are matched automatically.
 
+<span id="section-29" />
+
 ### Saving Drafts
 
 If you need to stop mid-import, click **Save Draft** in the header. The entire extraction, your edits, and the scanned document are saved to the server.
@@ -322,6 +399,8 @@ Resume from **Kitchen → Supplies** (Approvisionnements) — pending imports ap
 
 Multiple drafts are supported. Drafts are automatically deleted when you confirm the import.
 
+<span id="section-30" />
+
 ### VAT on Stock Items
 
 Each stock item tracks whether its cost includes VAT or not. Use the **Show ex. VAT / Show inc. VAT** toggle on the stock page (under Inventory Value) to switch the display. The system normalizes all costs to the same basis for accurate food cost calculations.
@@ -329,6 +408,8 @@ Each stock item tracks whether its cost includes VAT or not. Use the **Show ex. 
 Configure your restaurant's VAT rate in **Settings → VAT Rate (%)**. Default is 18% for Israel.
 
 ---
+
+<span id="section-31" />
 
 ## Bulk Operations
 
@@ -339,9 +420,13 @@ Select multiple items using the checkboxes in the table (or the select-all check
 
 ---
 
+<span id="section-32" />
+
 ## AI Recipe Import
 
 Import recipes by uploading a photo/PDF or pasting text. The AI extracts ingredients, quantities, and matches them to your stock items. Available from **Food Cost** page and **Recipe detail** page (sparkle icon).
+
+<span id="section-33" />
 
 ### How It Works
 
@@ -358,6 +443,8 @@ Import recipes by uploading a photo/PDF or pasting text. The AI extracts ingredi
 
 ---
 
+<span id="section-34" />
+
 ## Search & Filters
 
 Three filtering tools are always visible above the table:
@@ -372,6 +459,8 @@ Filters combine with AND logic. For example, searching "chicken" with category "
 
 ---
 
+<span id="section-35" />
+
 ## Table Columns
 
 The stock table keeps things focused on what matters day-to-day. The header stays pinned to the top while you scroll, so you always know which column you're looking at.
@@ -385,6 +474,8 @@ The stock table keeps things focused on what matters day-to-day. The header stay
 | Status | Visible | OK or Low Stock alert |
 
 Click the **gear icon** (⚙) next to the filters to hide any column you don't need. Preferences are saved per restaurant.
+
+<span id="section-36" />
 
 ## Quantity & Price — Click to Switch Level
 
@@ -413,6 +504,8 @@ The default level is the middle one for nested packaging, the outer for direct, 
 
 ---
 
+<span id="section-37" />
+
 ## Tips
 
 > **Tip:** Use the AI delivery import for every delivery. It keeps both quantities and costs up to date automatically, and builds a supply history you can reference later.
@@ -426,6 +519,8 @@ The default level is the middle one for nested packaging, the outer for direct, 
 > **Tip:** Stock management alone is not enough. Combine it with **Daily Operations** to compare actual vs expected usage, detect losses automatically, and improve your profitability day after day. That's where you really save money.
 
 ---
+
+<span id="section-38" />
 
 ## Related
 

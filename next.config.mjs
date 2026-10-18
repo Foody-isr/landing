@@ -18,7 +18,7 @@ const contentSecurityPolicy = [
   "font-src 'self' data: https://fonts.gstatic.com",
   "img-src 'self' blob: data: https:",
   "media-src 'self'",
-  `connect-src 'self' ${apiOrigin} https://connect.facebook.net https://www.facebook.com`,
+  `connect-src 'self' ${apiOrigin} https://api.foody-pos.co.il https://dev-api.foody-pos.co.il https://connect.facebook.net https://www.facebook.com`,
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",

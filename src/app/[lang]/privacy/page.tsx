@@ -8,7 +8,7 @@ export default function PrivacyPage() {
       <main id="main-content" className="legal-page" lang="en" dir="ltr">
         <div className="legal-inner">
           <h1>Privacy Policy</h1>
-          <p className="legal-updated">Last updated: October 16, 2026</p>
+          <p className="legal-updated">Last updated: October 18, 2026</p>
 
           <p>Foody (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) operates the <strong>Foody POS</strong> iPad application, the <strong>Foody</strong> web ordering platform, and the <strong>Foody</strong> marketing website. This Privacy Policy explains how we collect, use, and protect your information when you use our services.</p>
 
@@ -28,6 +28,10 @@ export default function PrivacyPage() {
             <li><strong>Push notification tokens:</strong> If you opt in, we store a push subscription to notify you when your order is ready.</li>
           </ul>
 
+          <h3>c) Documentation Support Assistant</h3>
+          <p>When you use the support assistant, your question, recent conversation turns and relevant public guides are sent to Anthropic to generate a response. The Admin sends only the current product topic and language, without forwarding sign-in credentials or restaurant records. Do not include passwords, payment details or personal customer information. This feature keeps the conversation in browser-tab memory and does not persist its messages in the Foody application; our AI provider handles requests under the applicable provider agreement.</p>
+          <p>For abuse prevention, the support service uses a keyed hash of the connection IP address in expiring request counters. Questions and provider response bodies are not written to this feature’s application logs.</p>
+
           <h2>2. How We Use Your Information</h2>
           <ul>
             <li>To provide and operate our restaurant POS and ordering services.</li>
@@ -45,6 +49,7 @@ export default function PrivacyPage() {
             <li><strong>Restaurant operators:</strong> Order and customer data is shared with the restaurant that receives your order.</li>
             <li><strong>Hosting providers:</strong> AWS for secure server infrastructure.</li>
             <li><strong>Advertising measurement:</strong> Meta receives page-view and browser data from the marketing website through the Meta Pixel, as described below.</li>
+            <li><strong>AI support provider:</strong> Anthropic receives support questions, recent conversation and public documentation when you use the assistant.</li>
             <li><strong>Legal requirements:</strong> When required by law or to protect our rights.</li>
           </ul>
 

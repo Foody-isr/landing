@@ -1,7 +1,7 @@
 export type Lang = 'en' | 'fr' | 'he';
 
 /** Indicates which Foody app(s) an article applies to — used as display tags only */
-export type AppTag = 'foodypos' | 'foodyadmin' | 'both';
+export type AppTag = 'foodypos' | 'foodyadmin' | 'foodyweb' | 'foodylanding' | 'both';
 
 /** Metadata stored in _meta.json at the topic directory level */
 export interface TopicMeta {

@@ -1,0 +1,115 @@
+# Help ownership, evidence and releases
+
+The public help center lives on `foody-pos.co.il/{fr,he,en}/help`. Admin provides
+contextual access and an assistant drawer. It does not host the public knowledge
+base. `docs/help/catalog/features.json` is the authored feature/procedure source;
+`npm run render:help` renders its French, Hebrew and English guides to
+`src/content/help`. Imported detailed chapters and stable URLs are retained. References to absent historical screenshots are removed; missing local illustration assets fail publication validation.
+Internal operator procedures render separately to `docs/help/internal` and never
+enter public browsing, search or the AI corpus.
+
+## Required change workflow
+
+1. Read the closest service instructions and locate the feature and source evidence
+   in `docs/help/inventory.json`. Inspect actual controls, permissions, capabilities,
+   activation, errors and recovery. Source presence does not prove installed release
+   availability or physical hardware acceptance.
+2. Update affected operations in all three languages. Include prerequisites, steps,
+   result and recovery. Add a stable operation ID for a new sub-feature. Never merely
+   refresh a date or copy a disabled integration into an available-feature guide.
+3. Update/remove stale screenshots, using synthetic data. Never include credentials,
+   customer records, payment details or private tracking/receipt links.
+4. Render and validate the guides, export the release, then regenerate the inventory
+   using the explicit service-root map. Review source surfaces including page/API
+   routes, Flutter destinations, translated control keys and named actions.
+5. Pin the reviewed Landing commit in each affected service contract. Keep one PR
+   into develop per repository. An initial `WORKSPACE` reference supports local
+   preparation only; remote CI rejects it. Never replace it with a moving branch.
+6. Run the service help contract and complete service validations. Deploy the API
+   before the matching clients; verify development, then promote the exact artifact
+   under the workspace production rules. Do not publish guides ahead of their UI.
+
+```sh
+npm run render:help
+npm run check:help
+npm run test:help
+node scripts/build-help-inventory.mjs --workspace /absolute/path/service-roots.json
+node scripts/build-help-contracts.mjs --workspace /absolute/path/service-roots.json --documentation-ref <landing-commit-sha>
+# From an affected service, for local preparation:
+node scripts/check-help-contract.mjs --documentation-root ../foodylanding --base origin/develop
+```
+
+The scanner explicitly records shared runtime files instead of inventing customer
+features for framework code. Router-group-relative Go fragments and relative
+Flutter child paths retain their resolution status; do not present them as resolved
+standalone URLs. The inventory is evidence for review, not proof that every runtime
+state, permission or physical device was exercised.
+
+## CI enforcement in every versioned service
+
+`Help coverage and translations` runs on PRs into develop and manual dispatch.
+It checks the exact source footprint (including newly added/deleted source), feature
+classification, immutable documentation revision, all FR/HE/EN file digests and the
+API's embedded public corpus. The first installation establishes a baseline.
+Subsequent source changes require corresponding three-language guide changes or
+an explicit exact-byte `no-user-impact` review. Matching a folder does not validate
+prose. Reviewers must verify the impact classification and procedures.
+
+A behavior-neutral exception lives in that service's `docs/help/reviews/*.json`:
+
+```json
+{
+  "files": [{
+    "path": "src/example.ts",
+    "sha256": "<reviewed-file-sha256-or-deleted>",
+    "disposition": "no-user-impact",
+    "reason": "Concrete reviewed explanation of why the rendered behavior, permissions and recovery are unchanged."
+  }]
+}
+```
+
+The reason must have at least 50 characters; later source edits invalidate it.
+Do not use this exception for a behavior change. Contract regression tests verify
+missing translations, new/deleted source, stale hashes, missing guide updates,
+invalid references and exact exceptions. Branch protection should require this
+job alongside the existing service CI; a workflow alone cannot set GitHub policy.
+
+
+## Documentation assistant
+
+`GET /api/v1/public/support/status` reports configuration and documentation revision.
+`POST /api/v1/public/support/chat` is an explicitly platform-global API endpoint.
+It accepts only locale, public topic, question and at most four completed exchanges.
+Unknown fields, tenant context, injected roles and excessive requests are rejected.
+It has no database handle, restaurant tools, customer access or staff authorization.
+
+The API embeds `catalog/public-corpus.json`, using the same public guides and
+multilingual lexical aliases as search. It selects up to five complete sources (24,000 Unicode characters maximum per guide; larger guides must be split before release), calls the
+configured Anthropic Messages model and accepts only citation IDs from those
+sources. Unsupported answers are explicit; provider/limiter failures are unavailable
+states. Response text is rendered as text, not executable HTML/Markdown.
+
+The existing API `ANTHROPIC_API_KEY`, private `REDIS_URL` and JWT secret supply
+provider configuration, atomic quota storage and domain-separated HMAC identities.
+`HELP_AI_MODEL` defaults to `claude-sonnet-4-6`. No second AI key or Redis REST
+service is required on Vercel. Redis enforces 20 requests per connection origin/hour
+and 500 globally/day, with expiring hashed identifiers. Quota failure blocks calls.
+Gin's existing trusted-proxy policy determines the observed origin; configure that
+policy for the hosting edge. The global limit also bounds aggregate usage.
+
+Canonical public browsers and Admin call the API directly without credentials,
+cookies or referrers. Public preview hosts use a same-origin, credential-free proxy
+to development and intentionally share that proxy's egress quota. Production host
+selection is performed at runtime so promotion does not rebuild the artifact.
+Existing API CORS remains unchanged. Arbitrary Admin preview domains are not added
+to its allowlist.
+
+Questions and provider responses are not logged or persisted by this feature.
+Conversation lives in tab memory. Questions, recent turns and selected public text
+are processed by the AI provider under its agreement; the privacy page discloses
+this. Do not use real customer/payment data for verification. Mock paid calls in
+regression tests; verify configuration and revision without consuming quota.
+
+Model contract references: [Messages API](https://platform.claude.com/docs/en/api/messages/create)
+and [model lifecycle](https://platform.claude.com/docs/en/about-claude/model-deprecations).
+Validate a compatible model and its response contract before changing it.

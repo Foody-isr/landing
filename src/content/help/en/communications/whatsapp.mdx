@@ -1,0 +1,31 @@
+---
+title: Connect and operate WhatsApp
+description: Open Settings → WhatsApp. Select the supported connection/billing mode before entering credentials.
+apps: foodyadmin
+tags:
+  - communications
+  - whatsapp
+updatedAt: '2026-10-18'
+featureId: whatsapp
+audience: public
+releaseStatus: available
+---
+Open Settings → WhatsApp. Select the supported connection/billing mode before entering credentials.
+
+<span id="connection" />
+
+## Connect a sender
+
+Use Foody-managed connection or the restaurant’s personal Twilio account if offered. A personal sender must already be registered and online with approved Utility templates belonging to the same account. Enter secrets only in the protected form. A failed verification preserves the prior configuration; switching billing modes requires disconnecting first.
+
+<span id="meta" />
+
+## Use a gated Meta coexistence connection
+
+Direct Meta coexistence is a controlled pilot and disabled by default. Connecting alone does not switch message routing; activate the intended provider explicitly after verification. The existing Business app remains available. Do not assume fallback to Twilio if a Meta send fails.
+
+<span id="delivery" />
+
+## Read message history
+
+In the order’s communication panel inspect sent, delivered, read, failed and blocked-before-send records. A blocked automation is not proof of delivery. For a reviewed courier reminder use its explicit action only when eligible. Unknown provider outcomes are not automatically replayed; investigate before another send.

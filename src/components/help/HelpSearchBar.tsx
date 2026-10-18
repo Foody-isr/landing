@@ -1,32 +1,30 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import type { ArticleSummary } from '@/lib/help/types';
+import { searchArticles } from '@/lib/help/search.mjs';
+import Icon from '@/components/marketing/Icon';
+import type { ArticleManifestEntry } from '@/lib/help/types';
 
 interface Props {
   /** Lang-filtered article summaries used for in-memory search */
-  manifest: ArticleSummary[];
+  manifest: ArticleManifestEntry[];
   placeholder: string;
   noResultsLabel: string;
+  lang: string;
+  fallbackLabel: string;
 }
 
 /**
  * In-memory search bar. Filters articles by title, description.
  * No server round-trip needed — the full manifest is passed as a prop.
  */
-export default function HelpSearchBar({ manifest, placeholder, noResultsLabel }: Props) {
+export default function HelpSearchBar({ manifest, placeholder, noResultsLabel, lang, fallbackLabel }: Props) {
   const [query, setQuery] = useState('');
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const results = query.trim().length > 1
-    ? manifest.filter((a) => {
-        const q = query.toLowerCase();
-        return (
-          a.title.toLowerCase().includes(q) ||
-          a.description.toLowerCase().includes(q)
-        );
-      }).slice(0, 8)
+  const results: ArticleManifestEntry[] = query.trim().length > 1
+    ? searchArticles(manifest, query).slice(0, 8)
     : [];
 
   useEffect(() => {
@@ -42,7 +40,7 @@ export default function HelpSearchBar({ manifest, placeholder, noResultsLabel }:
   return (
     <div className="help-search-wrapper" ref={containerRef}>
       <div className="help-search-input-wrap">
-        <span className="help-search-icon" aria-hidden="true">🔍</span>
+        <span className="help-search-icon"><Icon name="search" /></span>
         <input
           className="help-search-input"
           type="search"
@@ -53,13 +51,14 @@ export default function HelpSearchBar({ manifest, placeholder, noResultsLabel }:
             setOpen(true);
           }}
           onFocus={() => setOpen(true)}
+          onKeyDown={e => { if (e.key === 'Escape') setOpen(false); }}
           aria-label={placeholder}
           autoComplete="off"
         />
       </div>
 
       {open && query.trim().length > 1 && (
-        <div className="help-search-results" role="listbox">
+        <div className="help-search-results" aria-label={placeholder}>
           {results.length === 0 ? (
             <div className="help-search-no-results">{noResultsLabel.replace('{query}', query)}</div>
           ) : (
@@ -69,12 +68,10 @@ export default function HelpSearchBar({ manifest, placeholder, noResultsLabel }:
                 href={`/${article.lang}/help/${article.topic}/${article.slug}`}
                 className="help-search-result-item"
                 onClick={() => { setQuery(''); setOpen(false); }}
-                role="option"
-                aria-selected="false"
               >
                 <span className="help-search-result-title">{article.title}</span>
                 <span className="help-search-result-meta">
-                  {article.topic.replace(/-/g, ' ')}
+                  {article.lang !== lang ? fallbackLabel : article.description}
                 </span>
               </Link>
             ))
