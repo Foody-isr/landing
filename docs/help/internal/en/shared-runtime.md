@@ -37,3 +37,9 @@ The Admin file client centralizes JWT, X-Restaurant-ID, one 401 refresh and no-s
 ## Make a one-order combo exception
 
 Internal combo exceptions use is_substitution per selection. Only JWT staff handlers with restaurant-scoped orders.manage set the non-JSON AllowSubstitutions authority; public callers and service creation without authority are rejected. Migration 264 adds the false-by-default combo_substitution order-item snapshot. The API validates active tenant ownership, individual fixed-price items, option membership and activation, pinned portions, step counts and size/item caps, and applies stock guards. The replacement has zero price delta and no fixed-step modifier charge. Combo definitions are never mutated; saved recomposition keeps the base-price snapshot and rolls back on failure. Admin drafts, editing and FR/HE/EN copy retain the marker. Web and Dart response contracts accept the additive snapshot without exposing a guest or POS exception control. Deploy the API and migration before Admin; keep the public help and embedded support corpus on the same reviewed release.
+
+<span id="mobile-fulfillment-viewport" />
+
+## Validate the keyboard in fulfillment selection
+
+The mobile fulfillment dialog follows VisualViewport height and offset at scale 1; the browser retains pinch zoom. Its heading and confirmation stay outside the scrolling body, suggestions remain in flow and restaurant colors are preserved. Dismiss the keyboard only after selecting a complete address, never a street needing refinement. Check WebKit and Chromium with simulated viewport reduction and pan, a long list, keyboard navigation, a 320 px screen, pickup, closing and restored page scrolling. Simulation does not replace a native iPhone keyboard check before promotion. Release the corpus with the matching guides; the local contract remains WORKSPACE until the documentation commit is approved.
