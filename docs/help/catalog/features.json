@@ -2637,6 +2637,20 @@
           "fr": "Avec la permission orders.manage, ouvrez Nouvelle commande. Sélectionnez une carte ou Librairie d’articles au-dessus du champ de recherche. La librairie contient tous les articles actifs du restaurant, y compris ceux sans carte ou hors de la série tournante sélectionnée, et reste accessible sans carte POS. Recherchez par nom et sélectionnez un article ; choisissez son format, ses suppléments ou le contenu de son combo si demandé. Les articles épuisés restent désactivés et les articles inactifs sont absents. Le passage entre une carte et la librairie conserve le ticket. Complétez les coordonnées et la remise, vérifiez le total et envoyez une seule fois. Cet ajout ne publie pas l’article sur une carte ou le site client. Si un article manque, vérifiez son statut actif dans Articles ; s’il est épuisé, contrôlez son stock et sa disponibilité avant de réessayer.",
           "he": "עם הרשאת orders.manage פתחו הזמנה חדשה. בחרו תפריט או ספריית פריטים מעל שדה החיפוש. הספרייה כוללת את כל הפריטים הפעילים של המסעדה, גם פריטים שאינם משויכים לתפריט או אינם בסדרה המתחלפת שנבחרה, וזמינה גם ללא תפריט קופה. חפשו לפי שם ובחרו פריט; בחרו גודל, תוספות או רכיבי קומבו לפי הצורך. פריטים שאזלו נשארים מושבתים ופריטים לא פעילים אינם מוצגים. מעבר בין תפריט לספרייה שומר על פריטי ההזמנה. השלימו פרטי קשר ומסירה, בדקו את הסכום ושלחו פעם אחת. הוספה כאן אינה מפרסמת את הפריט בתפריט או באתר ללקוח. אם פריט חסר, בדקו שהוא פעיל במסך פריטים; אם אזל, בדקו מלאי וזמינות לפני ניסיון חוזר."
         }
+      },
+      {
+        "id": "counter-terminal-payment-before-kitchen",
+        "level": 2,
+        "title": {
+          "en": "Wait for counter card payment before kitchen preparation",
+          "fr": "Attendre le paiement au comptoir avant la cuisine",
+          "he": "המתנה לתשלום בדלפק לפני ההכנה במטבח"
+        },
+        "instructions": {
+          "en": "For a new counter pickup order paid by card, choose Pay, then Pay by card. Wait for terminal approval and for Foody to record the payment before preparation and the kitchen ticket start. During collection the payment remains pending and is excluded from the live order board. After a refusal or cancellation, keep the same checkout and retry there; do not send it to the kitchen to bypass payment. If approval succeeded but synchronization failed, reconcile the existing payment before starting another charge. Orders deliberately sent for table service before collection keep their existing send-then-pay flow.",
+          "fr": "Pour une nouvelle commande à emporter encaissée par carte au comptoir, choisissez Payer, puis Payer par carte. Attendez l’accord du terminal et l’enregistrement du paiement dans Foody avant le départ en préparation et l’impression du bon cuisine. Pendant l’encaissement, le paiement reste en attente et n’apparaît pas dans la liste des commandes en direct. Après un refus ou une annulation, reprenez le même encaissement ; ne l’envoyez pas en cuisine pour contourner le paiement. Si le terminal a accepté mais que la synchronisation a échoué, rapprochez le paiement existant avant tout nouveau débit. Les commandes volontairement envoyées pour un service à table avant encaissement conservent leur déroulement habituel.",
+          "he": "בהזמנת איסוף חדשה המשולמת בכרטיס בדלפק, בחרו תשלום ואז תשלום בכרטיס. המתינו לאישור המסוף ולשמירת התשלום ב-Foody לפני תחילת ההכנה והדפסת פתק המטבח. במהלך הגבייה התשלום ממתין וההזמנה אינה מופיעה ברשימת ההזמנות החיה. לאחר סירוב או ביטול המשיכו באותו תהליך גבייה; אין לשלוח למטבח כדי לעקוף את התשלום. אם המסוף אישר אך הסנכרון נכשל, התאימו את התשלום הקיים לפני חיוב נוסף. הזמנות שנשלחו במכוון לשירות בשולחן לפני הגבייה שומרות על תהליך השליחה ולאחריו התשלום."
+        }
       }
     ],
     "audience": "public",
@@ -3307,6 +3321,20 @@
           "fr": "Lorsque le livreur affecté démarre sa tournée dans Admin, les livraisons non terminées acceptées, en préparation ou prêtes passent ensemble en « En livraison ». Les écrans du personnel reçoivent ces statuts par leur actualisation habituelle des commandes. Cette action confirme le départ réel ; affecter un livreur ou choisir un mode de remise ne démarre pas à lui seul une tournée. Les préparations retenues et commandes au poids non finalisées doivent être résolues auparavant. Si le départ échoue, les statuts précédents sont conservés. Les commandes terminées ou annulées ne sont pas rouvertes.",
           "he": "כאשר השליח המשויך מתחיל את המסלול בניהול, הזמנות משלוח שהתקבלו, בהכנה או מוכנות וטרם הסתיימו עוברות יחד למצב במשלוח. מסכי הצוות מקבלים את הסטטוסים ברענון ההזמנות הרגיל. הפעולה מאשרת יציאה בפועל; הקצאת שליח או בחירת אופן מסירה בלבד אינן מתחילות מסלול. יש לפתור קודם מנות מושהות והזמנות במשקל שטרם נסגרו. אם תחילת המסלול נכשלת, הסטטוסים הקודמים נשמרים. הזמנות שהסתיימו או בוטלו אינן נפתחות מחדש."
         }
+      },
+      {
+        "id": "counter-terminal-payment-before-kitchen",
+        "level": 2,
+        "title": {
+          "en": "Wait for counter card payment before kitchen preparation",
+          "fr": "Attendre le paiement au comptoir avant la cuisine",
+          "he": "המתנה לתשלום בדלפק לפני ההכנה במטבח"
+        },
+        "instructions": {
+          "en": "For a new counter pickup order paid by card, choose Pay, then Pay by card. Wait for terminal approval and for Foody to record the payment before preparation and the kitchen ticket start. During collection the payment remains pending and is excluded from the live order board. After a refusal or cancellation, keep the same checkout and retry there; do not send it to the kitchen to bypass payment. If approval succeeded but synchronization failed, reconcile the existing payment before starting another charge. Orders deliberately sent for table service before collection keep their existing send-then-pay flow.",
+          "fr": "Pour une nouvelle commande à emporter encaissée par carte au comptoir, choisissez Payer, puis Payer par carte. Attendez l’accord du terminal et l’enregistrement du paiement dans Foody avant le départ en préparation et l’impression du bon cuisine. Pendant l’encaissement, le paiement reste en attente et n’apparaît pas dans la liste des commandes en direct. Après un refus ou une annulation, reprenez le même encaissement ; ne l’envoyez pas en cuisine pour contourner le paiement. Si le terminal a accepté mais que la synchronisation a échoué, rapprochez le paiement existant avant tout nouveau débit. Les commandes volontairement envoyées pour un service à table avant encaissement conservent leur déroulement habituel.",
+          "he": "בהזמנת איסוף חדשה המשולמת בכרטיס בדלפק, בחרו תשלום ואז תשלום בכרטיס. המתינו לאישור המסוף ולשמירת התשלום ב-Foody לפני תחילת ההכנה והדפסת פתק המטבח. במהלך הגבייה התשלום ממתין וההזמנה אינה מופיעה ברשימת ההזמנות החיה. לאחר סירוב או ביטול המשיכו באותו תהליך גבייה; אין לשלוח למטבח כדי לעקוף את התשלום. אם המסוף אישר אך הסנכרון נכשל, התאימו את התשלום הקיים לפני חיוב נוסף. הזמנות שנשלחו במכוון לשירות בשולחן לפני הגבייה שומרות על תהליך השליחה ולאחריו התשלום."
+        }
       }
     ],
     "audience": "public",
@@ -3442,6 +3470,20 @@
           "en": "When the assigned courier starts their route in Admin, unfinished accepted, preparing and ready delivery orders change together to Out for delivery. Staff screens receive the updated statuses through their usual order refresh. This confirms actual departure; assigning a courier or choosing a fulfillment mode alone does not start a route. Held kitchen courses and unsettled weight orders must be resolved first. If starting fails, the previous statuses remain. The route action does not reopen finished or cancelled orders.",
           "fr": "Lorsque le livreur affecté démarre sa tournée dans Admin, les livraisons non terminées acceptées, en préparation ou prêtes passent ensemble en « En livraison ». Les écrans du personnel reçoivent ces statuts par leur actualisation habituelle des commandes. Cette action confirme le départ réel ; affecter un livreur ou choisir un mode de remise ne démarre pas à lui seul une tournée. Les préparations retenues et commandes au poids non finalisées doivent être résolues auparavant. Si le départ échoue, les statuts précédents sont conservés. Les commandes terminées ou annulées ne sont pas rouvertes.",
           "he": "כאשר השליח המשויך מתחיל את המסלול בניהול, הזמנות משלוח שהתקבלו, בהכנה או מוכנות וטרם הסתיימו עוברות יחד למצב במשלוח. מסכי הצוות מקבלים את הסטטוסים ברענון ההזמנות הרגיל. הפעולה מאשרת יציאה בפועל; הקצאת שליח או בחירת אופן מסירה בלבד אינן מתחילות מסלול. יש לפתור קודם מנות מושהות והזמנות במשקל שטרם נסגרו. אם תחילת המסלול נכשלת, הסטטוסים הקודמים נשמרים. הזמנות שהסתיימו או בוטלו אינן נפתחות מחדש."
+        }
+      },
+      {
+        "id": "counter-terminal-payment-before-kitchen",
+        "level": 2,
+        "title": {
+          "en": "Wait for counter card payment before kitchen preparation",
+          "fr": "Attendre le paiement au comptoir avant la cuisine",
+          "he": "המתנה לתשלום בדלפק לפני ההכנה במטבח"
+        },
+        "instructions": {
+          "en": "For a new counter pickup order paid by card, choose Pay, then Pay by card. Wait for terminal approval and for Foody to record the payment before preparation and the kitchen ticket start. During collection the payment remains pending and is excluded from the live order board. After a refusal or cancellation, keep the same checkout and retry there; do not send it to the kitchen to bypass payment. If approval succeeded but synchronization failed, reconcile the existing payment before starting another charge. Orders deliberately sent for table service before collection keep their existing send-then-pay flow.",
+          "fr": "Pour une nouvelle commande à emporter encaissée par carte au comptoir, choisissez Payer, puis Payer par carte. Attendez l’accord du terminal et l’enregistrement du paiement dans Foody avant le départ en préparation et l’impression du bon cuisine. Pendant l’encaissement, le paiement reste en attente et n’apparaît pas dans la liste des commandes en direct. Après un refus ou une annulation, reprenez le même encaissement ; ne l’envoyez pas en cuisine pour contourner le paiement. Si le terminal a accepté mais que la synchronisation a échoué, rapprochez le paiement existant avant tout nouveau débit. Les commandes volontairement envoyées pour un service à table avant encaissement conservent leur déroulement habituel.",
+          "he": "בהזמנת איסוף חדשה המשולמת בכרטיס בדלפק, בחרו תשלום ואז תשלום בכרטיס. המתינו לאישור המסוף ולשמירת התשלום ב-Foody לפני תחילת ההכנה והדפסת פתק המטבח. במהלך הגבייה התשלום ממתין וההזמנה אינה מופיעה ברשימת ההזמנות החיה. לאחר סירוב או ביטול המשיכו באותו תהליך גבייה; אין לשלוח למטבח כדי לעקוף את התשלום. אם המסוף אישר אך הסנכרון נכשל, התאימו את התשלום הקיים לפני חיוב נוסף. הזמנות שנשלחו במכוון לשירות בשולחן לפני הגבייה שומרות על תהליך השליחה ולאחריו התשלום."
         }
       }
     ],
@@ -5680,6 +5722,20 @@
           "fr": "Lorsque le livreur affecté démarre sa tournée dans Admin, les livraisons non terminées acceptées, en préparation ou prêtes passent ensemble en « En livraison ». Les écrans du personnel reçoivent ces statuts par leur actualisation habituelle des commandes. Cette action confirme le départ réel ; affecter un livreur ou choisir un mode de remise ne démarre pas à lui seul une tournée. Les préparations retenues et commandes au poids non finalisées doivent être résolues auparavant. Si le départ échoue, les statuts précédents sont conservés. Les commandes terminées ou annulées ne sont pas rouvertes.",
           "he": "כאשר השליח המשויך מתחיל את המסלול בניהול, הזמנות משלוח שהתקבלו, בהכנה או מוכנות וטרם הסתיימו עוברות יחד למצב במשלוח. מסכי הצוות מקבלים את הסטטוסים ברענון ההזמנות הרגיל. הפעולה מאשרת יציאה בפועל; הקצאת שליח או בחירת אופן מסירה בלבד אינן מתחילות מסלול. יש לפתור קודם מנות מושהות והזמנות במשקל שטרם נסגרו. אם תחילת המסלול נכשלת, הסטטוסים הקודמים נשמרים. הזמנות שהסתיימו או בוטלו אינן נפתחות מחדש."
         }
+      },
+      {
+        "id": "counter-terminal-payment-before-kitchen",
+        "level": 2,
+        "title": {
+          "en": "Wait for counter card payment before kitchen preparation",
+          "fr": "Attendre le paiement au comptoir avant la cuisine",
+          "he": "המתנה לתשלום בדלפק לפני ההכנה במטבח"
+        },
+        "instructions": {
+          "en": "For a new counter pickup order paid by card, choose Pay, then Pay by card. Wait for terminal approval and for Foody to record the payment before preparation and the kitchen ticket start. During collection the payment remains pending and is excluded from the live order board. After a refusal or cancellation, keep the same checkout and retry there; do not send it to the kitchen to bypass payment. If approval succeeded but synchronization failed, reconcile the existing payment before starting another charge. Orders deliberately sent for table service before collection keep their existing send-then-pay flow.",
+          "fr": "Pour une nouvelle commande à emporter encaissée par carte au comptoir, choisissez Payer, puis Payer par carte. Attendez l’accord du terminal et l’enregistrement du paiement dans Foody avant le départ en préparation et l’impression du bon cuisine. Pendant l’encaissement, le paiement reste en attente et n’apparaît pas dans la liste des commandes en direct. Après un refus ou une annulation, reprenez le même encaissement ; ne l’envoyez pas en cuisine pour contourner le paiement. Si le terminal a accepté mais que la synchronisation a échoué, rapprochez le paiement existant avant tout nouveau débit. Les commandes volontairement envoyées pour un service à table avant encaissement conservent leur déroulement habituel.",
+          "he": "בהזמנת איסוף חדשה המשולמת בכרטיס בדלפק, בחרו תשלום ואז תשלום בכרטיס. המתינו לאישור המסוף ולשמירת התשלום ב-Foody לפני תחילת ההכנה והדפסת פתק המטבח. במהלך הגבייה התשלום ממתין וההזמנה אינה מופיעה ברשימת ההזמנות החיה. לאחר סירוב או ביטול המשיכו באותו תהליך גבייה; אין לשלוח למטבח כדי לעקוף את התשלום. אם המסוף אישר אך הסנכרון נכשל, התאימו את התשלום הקיים לפני חיוב נוסף. הזמנות שנשלחו במכוון לשירות בשולחן לפני הגבייה שומרות על תהליך השליחה ולאחריו התשלום."
+        }
       }
     ],
     "audience": "public",
@@ -6371,6 +6427,20 @@
           "fr": "Utilisez Annuler uniquement pour les plats impayés éligibles et indiquez le motif. Plat préparé/terminé ou fraction payée/réservée peut bloquer. Pour un plat envoyé, vérifiez résultat et ticket d’annulation au lieu de supprimer une ligne de brouillon. Annuler n’est pas rembourser un paiement.",
           "he": "השתמשו בביטול למזון זכאי שלא שולם וספקו סיבה. מזון שהושלם או חלק ששולם או בחיוב עשויים לחסום. למזון שנשלח בדקו תוצאה וכרטיס ביטול במקום מחיקת טיוטה. ביטול מזון אינו החזר תשלום."
         }
+      },
+      {
+        "id": "counter-terminal-payment-before-kitchen",
+        "level": 2,
+        "title": {
+          "en": "Wait for counter card payment before kitchen preparation",
+          "fr": "Attendre le paiement au comptoir avant la cuisine",
+          "he": "המתנה לתשלום בדלפק לפני ההכנה במטבח"
+        },
+        "instructions": {
+          "en": "For a new counter pickup order paid by card, choose Pay, then Pay by card. Wait for terminal approval and for Foody to record the payment before preparation and the kitchen ticket start. During collection the payment remains pending and is excluded from the live order board. After a refusal or cancellation, keep the same checkout and retry there; do not send it to the kitchen to bypass payment. If approval succeeded but synchronization failed, reconcile the existing payment before starting another charge. Orders deliberately sent for table service before collection keep their existing send-then-pay flow. Any staged discounts and offered items remain part of the server-priced total used for this same charge.",
+          "fr": "Pour une nouvelle commande à emporter encaissée par carte au comptoir, choisissez Payer, puis Payer par carte. Attendez l’accord du terminal et l’enregistrement du paiement dans Foody avant le départ en préparation et l’impression du bon cuisine. Pendant l’encaissement, le paiement reste en attente et n’apparaît pas dans la liste des commandes en direct. Après un refus ou une annulation, reprenez le même encaissement ; ne l’envoyez pas en cuisine pour contourner le paiement. Si le terminal a accepté mais que la synchronisation a échoué, rapprochez le paiement existant avant tout nouveau débit. Les commandes volontairement envoyées pour un service à table avant encaissement conservent leur déroulement habituel. Les remises et articles offerts restent inclus dans le calcul serveur du montant de ce même encaissement.",
+          "he": "בהזמנת איסוף חדשה המשולמת בכרטיס בדלפק, בחרו תשלום ואז תשלום בכרטיס. המתינו לאישור המסוף ולשמירת התשלום ב-Foody לפני תחילת ההכנה והדפסת פתק המטבח. במהלך הגבייה התשלום ממתין וההזמנה אינה מופיעה ברשימת ההזמנות החיה. לאחר סירוב או ביטול המשיכו באותו תהליך גבייה; אין לשלוח למטבח כדי לעקוף את התשלום. אם המסוף אישר אך הסנכרון נכשל, התאימו את התשלום הקיים לפני חיוב נוסף. הזמנות שנשלחו במכוון לשירות בשולחן לפני הגבייה שומרות על תהליך השליחה ולאחריו התשלום. הנחות ופריטים שניתנו ללא חיוב נשארים בחישוב הסכום בשרת עבור אותה גבייה."
+        }
       }
     ],
     "audience": "public",
@@ -6475,6 +6545,20 @@
           "en": "This concerns online orders, not a new POS terminal integration. When Invoice4U issuance and an invoice document type are enabled by the Foody team for the merchant, ordinary immediate Verifone order payments send the saved order lines: items and quantities, selected variants/options, combo base and included components, order discount and delivery fee. Frozen prices already include VAT; it is not added again. The line total must equal the payment amount or payment initiation is blocked. The same detail is sent for a later saved-card sale. Legacy orders without catalogue lines and catering/table/capture operations keep their existing document behavior. An approved payment is not proof that Invoice4U issued a fiscal document: check the document in Verifone Central/Invoice4U and customer delivery. Do not create another payment to obtain a missing invoice.",
           "fr": "Ce point concerne les commandes en ligne, pas une nouvelle intégration de terminal en caisse. Lorsque l’équipe Foody a activé Invoice4U et un type de facture pour le commerçant, les paiements immédiats des commandes Verifone transmettent les lignes enregistrées : articles et quantités, variantes/options sélectionnées, base de formule et composants inclus, remise et livraison. Les prix enregistrés sont déjà TTC ; la TVA n’est pas ajoutée à nouveau. Le total des lignes doit égaler le paiement, sinon son lancement est bloqué. Le même détail accompagne un paiement ultérieur par carte enregistrée. Les anciennes commandes sans lignes catalogue et les opérations traiteur/table/capture conservent leur comportement documentaire existant. Un paiement approuvé ne prouve pas l’émission fiscale : vérifiez le document dans Verifone Central/Invoice4U et sa réception par le client. Ne recréez pas un paiement pour obtenir une facture manquante.",
           "he": "הנוהל נוגע להזמנות מקוונות ולא לאינטגרציה חדשה של מסוף בקופה. כאשר צוות Foody הפעיל לבית העסק הנפקה ב-Invoice4U וסוג מסמך חשבונית, תשלום מיידי של הזמנת Verifone שולח את השורות שנשמרו: פריטים וכמויות, גרסאות ותוספות שנבחרו, מחיר בסיס של ארוחה ורכיביה הכלולים, הנחת הזמנה ודמי משלוח. המחירים כבר כוללים מע״מ והוא אינו נוסף שוב. סכום השורות חייב להתאים לסכום התשלום, אחרת יצירת התשלום נחסמת. אותו פירוט נשלח גם בחיוב עתידי בכרטיס שמור. הזמנות ישנות ללא שורות קטלוג ופעולות קייטרינג, שולחן ולכידת אישור מקדים שומרות על התנהגות המסמכים הקיימת. תשלום מאושר אינו הוכחה שהופק מסמך מס: בדקו את המסמך ב-Verifone Central או Invoice4U ואת קבלתו אצל הלקוח. אין ליצור תשלום נוסף כדי לקבל חשבונית חסרה."
+        }
+      },
+      {
+        "id": "counter-terminal-payment-before-kitchen",
+        "level": 2,
+        "title": {
+          "en": "Wait for counter card payment before kitchen preparation",
+          "fr": "Attendre le paiement au comptoir avant la cuisine",
+          "he": "המתנה לתשלום בדלפק לפני ההכנה במטבח"
+        },
+        "instructions": {
+          "en": "For a new counter pickup order paid by card, choose Pay, then Pay by card. Wait for terminal approval and for Foody to record the payment before preparation and the kitchen ticket start. During collection the payment remains pending and is excluded from the live order board. After a refusal or cancellation, keep the same checkout and retry there; do not send it to the kitchen to bypass payment. If approval succeeded but synchronization failed, reconcile the existing payment before starting another charge. Orders deliberately sent for table service before collection keep their existing send-then-pay flow.",
+          "fr": "Pour une nouvelle commande à emporter encaissée par carte au comptoir, choisissez Payer, puis Payer par carte. Attendez l’accord du terminal et l’enregistrement du paiement dans Foody avant le départ en préparation et l’impression du bon cuisine. Pendant l’encaissement, le paiement reste en attente et n’apparaît pas dans la liste des commandes en direct. Après un refus ou une annulation, reprenez le même encaissement ; ne l’envoyez pas en cuisine pour contourner le paiement. Si le terminal a accepté mais que la synchronisation a échoué, rapprochez le paiement existant avant tout nouveau débit. Les commandes volontairement envoyées pour un service à table avant encaissement conservent leur déroulement habituel.",
+          "he": "בהזמנת איסוף חדשה המשולמת בכרטיס בדלפק, בחרו תשלום ואז תשלום בכרטיס. המתינו לאישור המסוף ולשמירת התשלום ב-Foody לפני תחילת ההכנה והדפסת פתק המטבח. במהלך הגבייה התשלום ממתין וההזמנה אינה מופיעה ברשימת ההזמנות החיה. לאחר סירוב או ביטול המשיכו באותו תהליך גבייה; אין לשלוח למטבח כדי לעקוף את התשלום. אם המסוף אישר אך הסנכרון נכשל, התאימו את התשלום הקיים לפני חיוב נוסף. הזמנות שנשלחו במכוון לשירות בשולחן לפני הגבייה שומרות על תהליך השליחה ולאחריו התשלום."
         }
       }
     ],
@@ -8276,6 +8360,20 @@
           "fr": "Migration 262 et AutoMigrate ajoutent les fichiers immuables chiffrés par établissement, la sélection source/asset_id dans les références de modèles globales et de parcours, et les métadonnées de pièce jointe dans le journal. Les routes protégées /restaurants/:id/whatsapp/meta/media et /orders/:orderID/receipt.pdf appliquent restaurant, permissions et no-store. Le PDF utilise le Chrome isolé existant via CHROME_REMOTE_URL, sans nouvelle variable ni appel fiscal. La préparation ne contacte pas les endpoints d’envoi ; le transfert de média et l’envoi du modèle avec HEADER ont lieu après prise durable de la tentative. La révalidation porte sur l’appartenance, le type et l’empreinte du reçu relu ; aucune reprise d’un envoi incertain ni repli prestataire.",
           "en": "Migration 262 and AutoMigrate add immutable encrypted tenant files, source/asset_id selections in global and workflow template references, and attachment metadata in the ledger. Protected /restaurants/:id/whatsapp/meta/media and /orders/:orderID/receipt.pdf routes enforce restaurant scope, permissions and no-store. PDFs use the existing isolated Chrome via CHROME_REMOTE_URL, with no new environment variable or fiscal call. Preparation does not contact media/message endpoints; media upload and template HEADER dispatch occur after a durable claim. Revalidation covers ownership, type and the reviewed receipt digest; uncertain sends are not replayed and providers never fall back.",
           "he": "מיגרציה 262 ו-AutoMigrate מוסיפים קבצים מוצפנים ובלתי ניתנים לשינוי לפי עסק, בחירת source/asset_id בהפניות תבנית כלליות ובמסלול, ומטא-נתוני קובץ ביומן. נתיבי media ו-receipt.pdf תחת /restaurants/:id/whatsapp/meta אוכפים שיוך עסק, הרשאות ו-no-store. PDF משתמש ב-Chrome המבודד הקיים דרך CHROME_REMOTE_URL, בלי משתנה חדש או קריאה לחשבונית מס. הכנה אינה פונה לנתיבי שליחת מדיה/הודעה; העלאה ושליחת HEADER נעשות אחרי תפיסה עמידה. נבדקים שוב בעלות, סוג וגיבוב המסמך שנבדק; אין שחזור שליחה לא ודאית או מעבר ספק."
+        }
+      },
+      {
+        "id": "counter-terminal-payment-before-kitchen",
+        "level": 2,
+        "title": {
+          "en": "Wait for counter card payment before kitchen preparation",
+          "fr": "Attendre le paiement au comptoir avant la cuisine",
+          "he": "המתנה לתשלום בדלפק לפני ההכנה במטבח"
+        },
+        "instructions": {
+          "en": "Counter terminal checkout persists a restaurant-scoped order with payment_status=pending to obtain the canonical amount and stable invoice reference. Creation holds its kitchen lifecycle, blocks dispatch before payment, and excludes pending payments from the live POS overview. Only terminal approval permits the existing staff payment-recording endpoint; the client then sends the paid order to the kitchen. Declines and cancellations reuse the same order/invoice. Preserve approval reconciliation; never retry an uncertain charge. Deploy the matching API before the POS client. This change does not alter hosted provider initiation, tenant authorization, or deliberate send-before-pay table service.",
+          "fr": "L’encaissement par terminal au comptoir conserve une commande du restaurant avec payment_status=pending pour obtenir le montant canonique et une référence stable. Sa création retient le cycle cuisine, bloque l’envoi avant paiement et exclut les paiements en attente de la vue POS en direct. Seul l’accord du terminal permet l’enregistrement par le contrat staff existant ; le client envoie ensuite la commande payée en cuisine. Refus et annulations réutilisent la même commande/référence. Conservez le rapprochement des accords ; ne rejouez jamais un débit incertain. Déployez l’API correspondante avant le client POS. Les paiements hébergés, autorisations par restaurant et services à table volontairement envoyés avant paiement restent inchangés.",
+          "he": "גבייה במסוף בדלפק שומרת הזמנה בתחום המסעדה עם payment_status=pending כדי לקבל סכום מוסמך ומזהה חשבונית יציב. יצירתה מעכבת את מסלול המטבח, חוסמת שליחה לפני תשלום ומחריגה תשלומים ממתינים מתצוגת הקופה החיה. רק אישור המסוף מאפשר רישום תשלום בחוזה הצוות הקיים; הלקוח שולח לאחר מכן את ההזמנה המשולמת למטבח. סירוב וביטול משתמשים באותה הזמנה וחשבונית. יש לשמר התאמת אישורים ולא לחזור על חיוב שתוצאתו אינה ודאית. יש לפרוס את ה-API המתאים לפני לקוח הקופה. אין שינוי בייזום תשלומים מתארחים, בהרשאות המסעדה או בשירות שולחן שנשלח במכוון לפני הגבייה."
         }
       }
     ],
