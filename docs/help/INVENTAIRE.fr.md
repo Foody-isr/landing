@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodylanding | 127 | 21 | b5df96e1233d ; versioned |
-| foodyadmin | 734 | 754 | 742def4eaeeb ; versioned |
-| foodyserver | 497 | 832 | 6477bf4338eb ; versioned |
-| foodyweb | 329 | 163 | 26e08f775456 ; versioned |
-| foodypos | 320 | 149 | 6af04a980405 ; versioned |
-| foodybackoffice | 42 | 47 | 0761ce3ef4b7 ; versioned |
+| foodylanding | 127 | 21 | e500940af7e3 ; versioned |
+| foodyadmin | 734 | 754 | 0ab1ffa36f7e ; versioned |
+| foodyserver | 497 | 832 | bf31c3bc4ecb ; versioned |
+| foodyweb | 329 | 163 | 46b2633a80a3 ; versioned |
+| foodypos | 320 | 149 | b264c840a09d ; versioned |
+| foodybackoffice | 42 | 47 | ca05bcdd4234 ; versioned |
 
 ## getting-started
 
@@ -167,12 +167,12 @@ Identifiant : `business-ai`. Public : public. Disponibilité : available. Servic
 
 Identifiant : `kitchen-availability`. Public : public. Disponibilité : available. Services : foodyadmin, foodyserver, foodypos.
 
-- [Qu'est-ce que c'est ?](../../src/content/help/fr/kitchen/availability.mdx#section-1)
-- [Comment ça marche (simplement)](../../src/content/help/fr/kitchen/availability.mdx#section-2)
-- [Règles](../../src/content/help/fr/kitchen/availability.mdx#section-3)
-- [Forcer un plat (« 86 »)](../../src/content/help/fr/kitchen/availability.mdx#section-4)
-- [Exemples](../../src/content/help/fr/kitchen/availability.mdx#section-5)
-- [Bon à savoir](../../src/content/help/fr/kitchen/availability.mdx#section-6)
+- [Ouvrir Stock & disponibilité](../../src/content/help/fr/kitchen/availability.mdx#section-1)
+- [Choisir la source du stock](../../src/content/help/fr/kitchen/availability.mdx#section-2)
+- [Choisir et gérer une règle](../../src/content/help/fr/kitchen/availability.mdx#section-3)
+- [Forcer un statut puis enregistrer](../../src/content/help/fr/kitchen/availability.mdx#section-4)
+- [Vérifier le calcul et les quantités par taille](../../src/content/help/fr/kitchen/availability.mdx#section-5)
+- [Contrôler après enregistrement](../../src/content/help/fr/kitchen/availability.mdx#section-6)
 
 ### [Operations Quotidiennes](../../src/content/help/fr/kitchen/daily-operations.mdx)
 
