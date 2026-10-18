@@ -1,8 +1,8 @@
 ---
 title: Operations Quotidiennes
 description: >-
-  Gerez votre cuisine au quotidien : suivez les ventes, recevez les livraisons, surveillez le food cost, analysez les
-  ecarts, cloturez la journee et generez automatiquement les commandes fournisseurs.
+  Préparer le service, contrôler ventes et stock, clôturer/réouvrir une journée et générer puis envoyer manuellement les
+  brouillons fournisseur.
 apps: foodyadmin
 tags:
   - kitchen
@@ -22,310 +22,122 @@ featureId: kitchen-daily-operations
 audience: public
 releaseStatus: available
 ---
-Cuisine → Opérations quotidiennes : choisissez la date, puis Préparer le service, Pendant le service ou Bilan du jour.
-
-<span id="section-1" />
-
-## Qu'est-ce que c'est ?
-
-**Operations Quotidiennes** est l'outil le plus important pour piloter votre cuisine au jour le jour.
-
-Il vous permet de :
-- Suivre ce que vous vendez
-- Comprendre ce que vous consommez reellement
-- Detecter les pertes et les surdosages
-- Controler votre food cost
-- Preparer vos commandes fournisseurs
-
-<span id="section-2" />
-
-### En une phrase
-
-Chaque jour, vous comparez :
-
-- **Ce que vous auriez du utiliser** (selon les recettes)
-- **Ce que vous avez reellement utilise** (selon votre stock)
-
-La difference = **perte ou probleme**.
-
-Chaque jour suit le meme cycle :
-1. Enregistrer les ventes et livraisons
-2. Verifier le stock reel
-3. Analyser les ecarts
-4. Cloturer la journee
-5. Preparer les commandes du lendemain
-
----
+Cuisine → Aujourd’hui → Compagnon de cuisine.
 
 <span id="section-3" />
 
-## Le Rapport Quotidien
+<span id="section-1" />
 
-La page est organisée en phases Préparer le service, Pendant le service et Bilan du jour. Vérifiez la date et l’état de la journée avant toute saisie. Les indicateurs, actions de ventes, livraisons et écarts sont répartis selon la phase ; utilisez Actualiser en cas de données anciennes. Une journée clôturée et une journée en cours n’offrent pas les mêmes actions.
+<span id="section-2" />
 
-<span id="section-4" />
+## Ouvrir la bonne journée
 
-## Suivi des Ventes
-
-Le rapport suit ce qui a ete vendu pendant la journee. Deux options :
-
-<span id="section-5" />
-
-### Importer depuis le POS
-
-Cliquez sur **Importer depuis POS** pour importer automatiquement toutes les commandes payees depuis votre systeme de caisse. Le systeme agrege les quantites par article et les marque comme provenant du POS.
-
-<span id="section-6" />
-
-### Saisie manuelle des ventes
-
-Cliquez sur **Ajouter des ventes** pour saisir manuellement ce qui a ete vendu. Recherchez par categorie, selectionnez les articles et saisissez les quantites. Utile quand toutes les ventes ne passent pas par le POS (especes, plateformes externes, etc.).
-
-Vous pouvez combiner les deux sources. La source du rapport affichera "mixte" lors de la combinaison d'entrees POS et manuelles.
-
----
-
-<span id="section-7" />
-
-## Livraisons Recues
-
-Enregistrez les livraisons a mesure qu'elles arrivent pendant la journee.
-
-Cliquez sur **Ajouter une livraison** pour enregistrer ce qu'un fournisseur a livre. Selectionnez les ingredients, entrez les quantites et sauvegardez. Chaque entree cree une transaction de stock auditable qui augmente votre inventaire.
-
-La section **Livraisons Recues** affiche toutes les livraisons enregistrees pour la journee. Vous pouvez supprimer une entree si elle a ete enregistree incorrectement — l'ajustement de stock est automatiquement inverse.
-
----
-
-<span id="section-8" />
-
-## Comptage & Ecarts de Stock
-
-C'est ici que vous identifiez ou vous perdez de l'argent.
-
-Le systeme compare :
-- **Attendu** (via les recettes)
-- **Reel** (via votre stock)
-
-<span id="section-9" />
-
-### Comment ca marche
-
-Le systeme calcule automatiquement :
-
-- **Usage attendu** — base sur les ventes et les recettes
-- **Usage reel** — base sur votre stock (ouverture + recu - fermeture - pertes)
-
-Vous n'avez rien a calculer.
-
-**Ecart** = reel - attendu
-
-- Positif = vous avez utilise trop
-- Negatif = incoherence ou oubli
-
-<span id="section-10" />
-
-### Comment interpreter rapidement
-
-| Ecart | Signification |
-|-------|---------------|
-| **< 5%** | Normal. Les recettes correspondent a la realite. |
-| **5-15%** | A surveiller. Problemes de portions ou pertes non enregistrees possibles. |
-| **> 15%** | Probleme. A investiguer immediatement : vol, deterioration, recettes incorrectes ou erreurs de comptage. |
-
-<span id="section-11" />
-
-### Exemple concret
-
-Cabillaud : +300g (17%). Vous avez utilise trop de produit aujourd'hui — probable surdosage ou perte en cuisine.
-
-<span id="section-12" />
-
-### Saisie du stock de fermeture
-
-Avant de cloturer la journee, faites un comptage physique de vos ingredients. Entrez les quantites dans la colonne **Stock de fermeture**. Vous pouvez les mettre a jour plusieurs fois tant que le rapport est ouvert.
-
-<span id="section-13" />
-
-### Detail par ingredient
-
-Cliquez sur un ingredient pour voir le detail : quels articles du menu l'ont consomme, combien chacun a utilise (selon les recettes) et l'usage theorique total. Cela aide a identifier l'origine de l'ecart.
-
----
-
-<span id="section-14" />
-
-## Analyse du Food Cost
-
-Le food cost mesure combien vous depensez en ingredients pour generer votre chiffre d'affaires. L'objectif : maximiser votre marge.
-
-Le rapport calcule des indicateurs cles en temps reel :
-
-| KPI | Formule | Objectif |
-|-----|---------|----------|
-| **Food Cost %** | (cout reel / chiffre d'affaires) x 100 | < 30% (alerte si > 35%) |
-| **Chiffre d'affaires** | Total des ventes des commandes payees | — |
-| **Ecart** | Cout de la sur/sous-utilisation | Le plus proche de 0 possible |
-| **Pertes** | Cout de la deterioration/dommages enregistres | Minimiser |
-
-Ces indicateurs se mettent a jour en ajoutant des ventes et en ajustant les comptages de stock tout au long de la journee.
-
-Utilisez la case a cocher **Afficher TTC** dans l'en-tete du tableau des ingredients pour basculer entre les vues de couts HT et TTC. Tous les couts unitaires, couts par ligne et totaux s'ajustent en consequence. Pour un food cost % precis, le systeme normalise les couts et le chiffre d'affaires sur la meme base de TVA.
-
-<span id="section-15" />
-
-### Importation de Recettes
-
-Cliquez sur le bouton **Importer une recette** (icone etincelle) sur la page de food cost ou sur n'importe quelle page de detail de recette. Vous pouvez coller le texte d'une recette ou telecharger une photo/PDF. L'IA extrait les ingredients et les fait correspondre a vos articles de stock dans une vue fractionnee en plein ecran.
-
-> **Important :** Un food cost eleve peut venir de prix d'achat eleves, de pertes importantes ou de portions trop genereuses. Regardez les donnees de variance pour comprendre lequel.
-
----
-
-<span id="section-16" />
-
-## Retrospective
-
-Avant de cloturer la journee, vous pouvez remplir trois champs de reflexion :
-
-- **Ce qui a bien marche** — a continuer
-- **Ce qui n'a pas marche** — problemes a traiter
-- **A ameliorer** — actions pour demain
-
-Ceux-ci sont sauvegardes avec le rapport et aident a construire un historique des tendances operationnelles. Cliquez sur **Sauvegarder le brouillon** pour preserver vos notes sans cloturer la journee.
-
----
-
-<span id="section-17" />
-
-## Cloture de la Journee
-
-C'est l'etape la plus importante de votre journee.
-
-Quand vous cliquez sur **Cloturer la journee** :
-
-1. **Le stock est automatiquement deduit** selon les ventes du jour. Le systeme consulte la recette de chaque article vendu, calcule les quantites d'ingredients necessaires, convertit les unites si besoin, et reduit vos niveaux de stock. Chaque deduction est enregistree comme une transaction de stock immuable liee a ce rapport.
-
-2. **Le rapport est fige** — plus de modifications des ventes, comptages ou articles.
-
-3. **La section Approvisionnements Estimes** devient disponible (voir ci-dessous).
-
-La cloture est idempotente et sure — le stock n'est deduit qu'une seule fois.
-
-> **Important :** Une journee non cloturee = donnees incompletes. Faites de la cloture un rituel quotidien non negociable.
-
----
-
-<span id="section-18" />
-
-## Approvisionnements Estimes
-
-Apres la cloture, le systeme vous propose automatiquement ce que vous devez commander. L'objectif : ne jamais etre en rupture, sans surstocker.
-
-<span id="section-19" />
-
-### Generer la commande de demain
-
-Choisissez votre source de donnees :
-
-- **Depuis POS** — utilise l'historique des commandes reelles
-- **Depuis ventes manuelles** — utilise les ventes saisies manuellement
-- **Les deux** — combine les deux sources
-
-Le systeme ensuite :
-
-1. **Predit les ventes de demain** en calculant la moyenne du meme jour de la semaine sur les 6 dernieres semaines.
-2. **Convertit les plats en ingredients** via vos recettes.
-3. **Verifie les niveaux de stock actuels** et n'inclut que les articles insuffisants.
-4. **Regroupe par fournisseur** et cree un bon de commande brouillon par fournisseur.
-
-> **Exemple :** Le systeme predit 20 Fish Burgers et 15 Ceviches demain. Vos recettes indiquent 4,5 kg de cabillaud au total. Vous avez 1 kg en stock. Le systeme genere une commande de 3,5 kg de cabillaud aupres de votre poissonnier.
-
-<span id="section-20" />
-
-### Verification et envoi
-
-Chaque commande fournisseur apparait sous forme de carte avec un tableau d'ingredients, quantites et unites. Vous pouvez :
-
-- **Verifier** les quantites suggerees et les ajuster
-- **Envoyer par email** — entrez l'email du fournisseur et la commande est envoyee. Le statut passe de "Brouillon" a "Envoye".
-- **Regenerer** pour recalculer
-
-<span id="section-21" />
-
-### Comprendre la prediction
-
-La prediction utilise une **moyenne simple** : ventes totales de chaque article le meme jour de la semaine, divisees par le nombre de semaines analysees (jusqu'a 6).
-
-Cela fonctionne bien pour les restaurants avec des habitudes regulieres. La prediction ne tient pas compte des jours feries, de la meteo, des saisons ou des promotions. Utilisez-la comme point de depart et ajustez manuellement pour les situations inhabituelles.
-
----
-
-<span id="section-22" />
-
-## Le Flux de Travail Complet
-
-| Moment | Action |
-|--------|--------|
-| **Matin** | Ouvrir le rapport du jour (cree automatiquement) |
-| | Enregistrer les livraisons du matin |
-| **Pendant la journee** | Enregistrer les livraisons a mesure qu'elles arrivent |
-| | Importer les ventes POS ou saisir les ventes manuellement |
-| **Fin de journee** | Faire un comptage physique, saisir les quantites de fermeture |
-| | Remplir la retrospective (optionnel) |
-| | Cliquer sur **Cloturer la journee** |
-| **Apres cloture** | Generer les approvisionnements estimes pour demain |
-| | Verifier les quantites par fournisseur |
-| | Envoyer les commandes par email |
-| **Lendemain matin** | Recommencer pour le nouveau jour |
-
----
+Ouvrez Cuisine → Aujourd’hui, page Compagnon de cuisine. Choisissez la date avec le calendrier et les flèches ; Aujourd’hui revient au jour courant. Vérifiez le restaurant et le statut ouvert/clos. Une journée historique sans rapport n’est pas une erreur de chargement. Certaines actions de production et de réception sont proposées seulement pour le jour courant.
 
 <span id="section-23" />
 
-## Prerequis
+## Accès et données nécessaires
 
-Pour que les Operations Quotidiennes fonctionnent au mieux :
+Les modifications demandent la permission de gestion de cuisine et les contrôles du rapport concerné. Renseignez recettes, unités, prix et fournisseurs pour des calculs utiles. Les ventes non rapprochées et les recettes manquantes limitent la couverture des consommations et prévisions ; elles ne valent pas une consommation nulle.
 
-1. **Recettes liees aux articles de stock** — chaque article du menu doit avoir des ingredients definis dans **Cuisine > Recettes**. Sans recettes, le systeme ne peut pas calculer l'usage theorique ni prevoir les besoins.
+<span id="prepare-service" />
 
-2. **Niveaux de stock a jour** — gardez les quantites precises pour que les calculs d'ecarts et les previsions soient fiables.
+## Préparer le service
 
-3. **Fournisseurs assignes aux articles de stock** (optionnel mais recommande) — dans **Cuisine > Stock**, assignez un fournisseur a chaque ingredient pour regrouper les bons de commande.
+Dans Préparer le service, consultez les préparations à lancer, les objectifs, les prévisions de ventes et les livraisons à vérifier. Une prévision est une estimation. Ouvrez une préparation et confirmez sa production pour enregistrer un lot ; consulter un objectif ou une prévision ne produit rien. Les indicateurs indisponibles affichent un état de chargement ou d’erreur, pas un zéro fiable.
 
-4. **Historique de ventes** (pour les approvisionnements estimes) — au moins 1-2 semaines de donnees pour le meme jour de la semaine.
+<span id="during-service" />
 
----
+## Pendant le service
+
+Pendant le service permet de comparer le stock des préparations à un besoin saisi pour le prochain service. Ces objectifs sont une simulation locale de la page, pas un comptage ni une commande fournisseur enregistrée. La production demande une confirmation distincte. Consultez aussi le journal des ventes et les ingrédients à réapprovisionner.
+
+<span id="section-4" />
+
+<span id="section-5" />
+
+<span id="section-6" />
+
+## Importer, rapprocher et corriger les ventes
+
+Dans Bilan du jour, ouvrez le journal, Importer les ventes ou Saisie manuelle des ventes sur un rapport ouvert. Choisissez la source Foody POS ou le fichier externe/Aviv proposé, puis contrôlez les lignes et leur rapprochement avec les articles. Ne ressaisissez pas des ventes déjà importées depuis POS. Enregistrez les quantités manuelles et vérifiez le résultat ; les articles externes non rapprochés doivent être reliés avant d’interpréter leurs consommations.
+
+<span id="section-7" />
+
+## Vérifier et recevoir les livraisons
+
+Dans Préparer le service, Vérifier la livraison ouvre une commande attendue. Contrôlez les quantités réellement livrées avant confirmation. Les actions de scan/import et de réception rapide sont distinctes. Consultez les réceptions enregistrées dans le panneau dédié. Une suppression autorisée demande confirmation et peut annuler le mouvement concerné ; ne créditez pas la même livraison une seconde fois par un autre import.
+
+<span id="section-8" />
+
+<span id="section-9" />
+
+<span id="section-10" />
+
+<span id="section-11" />
+
+<span id="section-12" />
+
+<span id="section-13" />
+
+## Comparer le prévu au compté
+
+Bilan du jour distingue le stock attendu, les quantités physiquement comptées et les écarts. Utilisez la recherche et les filtres de contrôle, ouvrez un ingrédient, saisissez la quantité restante réellement mesurée et confirmez. Un comptage est facultatif : une quantité non renseignée reste non comptée, pas zéro. Vérifiez l’unité et le résultat enregistré. Les lignes non rapprochées signalent une couverture incomplète.
+
+<span id="section-14" />
+
+<span id="section-15" />
+
+## Distinguer les espaces de coût et de recette
+
+Le bilan utilise les ventes, recettes et mouvements disponibles pour expliquer les écarts. Les analyses de coût/marge et les imports de recettes ont leurs espaces dédiés ; ne cherchez pas les anciens graphiques ou un bouton d’import de recette dans ce bilan. [Coût matière](./food-cost) · [Recipe Lab](./recipe-lab) · [Quantités de recette](../menu/ingredients-and-portions).
+
+<span id="section-16" />
+
+## Enregistrer la transmission
+
+Saisissez la note de transmission dans Bilan du jour et utilisez Enregistrer le brouillon lorsqu’elle a changé. Cette action sauvegarde la note et recalcule le rapport ; elle ne clôture pas la journée et n’envoie aucune commande fournisseur. Attendez la confirmation avant de changer de date ou de quitter.
+
+<span id="section-17" />
+
+## Clôturer la journée
+
+Vérifiez ventes, rapprochements et comptages, puis cliquez Clôturer la journée et acceptez sa confirmation. La clôture recalcule et fige le rapport, applique les consommations externes/manuelles non encore décomptées et rapproche les ingrédients explicitement comptés. Les ventes Foody POS sont déjà décomptées par le flux de commande et ne sont pas redéduites à la clôture. Clôturer ne génère ni n’envoie de commande fournisseur. Après une réponse incertaine, actualisez et vérifiez le statut clos avant toute nouvelle action.
+
+<span id="reopen-day" />
+
+## Réouvrir un rapport autorisé
+
+Réouvrir la journée est proposé sur un rapport clos autorisé, sauf import historique non réouvrable. Après confirmation, le serveur annule les déductions et rapprochements de stock propres à cette clôture et rend le rapport modifiable. Vérifiez les ventes/comptages puis clôturez à nouveau si nécessaire. Cette opération ne retire pas un e-mail déjà envoyé à un fournisseur.
+
+<span id="section-18" />
+
+<span id="section-19" />
+
+<span id="section-21" />
+
+## Générer explicitement les brouillons estimés
+
+Sur un rapport clos, ouvrez Approvisionnements estimés. Cliquez Toutes les ventes enregistrées, Depuis Aviv et les saisies manuelles ou Depuis POS pour lancer la génération. La clôture seule ne la lance pas. Le calcul utilise l’historique, les recettes et le stock pour proposer des manques groupés par fournisseur. Il crée des brouillons, sans envoyer d’e-mail ni de commande. Relisez quantités, unités et fournisseur ; une régénération remplace les brouillons déjà générés pour ce rapport. Une prévision reste une estimation et les diagnostics distinguent données absentes, recettes non liées et absence de manque.
+
+<span id="section-20" />
+
+## Vérifier puis envoyer manuellement
+
+Aucune commande fournisseur n’est envoyée automatiquement par la clôture ou la génération. Vérifiez le brouillon et sa date de livraison souhaitée ; une date/début de livraison est obligatoire pour l’e-mail. Si elle manque, utilisez le dialogue d’envoi de la commande dans Cuisine → Achats, renseignez Date et début de livraison et terminez l’envoi manuel dans ce parcours. Si la date est déjà renseignée, Envoyer la commande dans le panneau estimé ouvre le dialogue : vérifiez l’adresse puis cliquez Envoyer. Seule cette action explicite déclenche l’e-mail. Contrôlez ensuite le statut et le résultat ; en cas d’incertitude après l’envoi, vérifiez avant de recommencer. [Achats et commandes](./suppliers-and-purchases).
 
 <span id="section-24" />
 
-## Erreurs Frequentes
-
-- **Ne pas definir les recettes** — aucun calcul fiable n'est possible
-- **Ne pas faire de comptage reel** — les ecarts deviennent inutiles
-- **Cloturer sans verifier** — les erreurs s'accumulent jour apres jour
-- **Ne pas enregistrer les pertes** — le food cost est fausse
-
-> Une donnee incorrecte = toutes vos analyses deviennent fausses.
-
----
-
 <span id="section-25" />
 
-## Conseils
+## Reprendre après une erreur
 
-> **Conseil :** Cloturez votre journee et generez les commandes a la meme heure chaque soir. Cela cree une routine fiable pour votre equipe.
-
-> **Conseil :** Si l'ecart est regulierement eleve pour un ingredient, verifiez d'abord la recette dans **Cuisine > Recettes**. Une quantite erronee par portion faussera tous les calculs.
-
-> **Conseil :** Enregistrez les livraisons des qu'elles arrivent, pas en fin de journee. Cela maintient vos niveaux de stock precis et aide au suivi du food cost en temps reel.
-
-> **Conseil :** Utilisez la retrospective regulierement. Les tendances deviennent visibles apres quelques semaines — les problemes recurrents ressortiront.
-
----
+Distinguez une liste vide d’un chargement en échec. Après un enregistrement confirmé suivi d’un échec d’actualisation, rechargez le résultat au lieu de répéter réception, production, clôture ou envoi. Conservez les saisies non enregistrées avant de changer de date. Pour un envoi dont l’issue reste incertaine, faites vérifier la commande et sa livraison avant une nouvelle transmission.
 
 <span id="section-26" />
 
-## Articles lies
+<span id="section-22" />
 
-- [Gestion du Stock](/help/kitchen/stock-management) — gerez votre inventaire d'ingredients
+## Parcours et guides liés
+
+Préparez le service, recevez les livraisons, vérifiez ventes et stock, enregistrez la transmission, puis clôturez. Générez et relisez séparément les brouillons fournisseur ; envoyez seulement après validation manuelle. [Stock](./stock-management) · [Préparations](./preparations) · [Import de livraison](./delivery-note-import) · [Achats](./suppliers-and-purchases).

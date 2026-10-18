@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-18.
 
-98 fiches de fonctionnalités, 359 procédures/sous-fonctionnalités, dont 89 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2049 fichiers applicatifs et 1966 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+98 fiches de fonctionnalités, 348 procédures/sous-fonctionnalités, dont 89 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2049 fichiers applicatifs et 1966 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodylanding | 127 | 21 | 73a77f21e0ae ; versioned |
-| foodyadmin | 734 | 754 | 489ad02647c1 ; versioned |
-| foodyserver | 497 | 832 | 60bf87ab5f59 ; versioned |
-| foodyweb | 329 | 163 | 702afadca28d ; versioned |
-| foodypos | 320 | 149 | 084ec27b498d ; versioned |
-| foodybackoffice | 42 | 47 | 4baf2489d628 ; versioned |
+| foodylanding | 127 | 21 | f6a880a30ff8 ; versioned |
+| foodyadmin | 734 | 754 | 8107eff72d19 ; versioned |
+| foodyserver | 497 | 832 | d478915bc8eb ; versioned |
+| foodyweb | 329 | 163 | 03f0198c61de ; versioned |
+| foodypos | 320 | 149 | d9c53c008c90 ; versioned |
+| foodybackoffice | 42 | 47 | 690e8f3c7b35 ; versioned |
 
 ## getting-started
 
@@ -178,32 +178,21 @@ Identifiant : `kitchen-availability`. Public : public. Disponibilité : availabl
 
 Identifiant : `kitchen-daily-operations`. Public : public. Disponibilité : available. Services : foodyadmin, foodyserver, foodypos.
 
-- [Qu'est-ce que c'est ?](../../src/content/help/fr/kitchen/daily-operations.mdx#section-1)
-- [En une phrase](../../src/content/help/fr/kitchen/daily-operations.mdx#section-2)
-- [Le Rapport Quotidien](../../src/content/help/fr/kitchen/daily-operations.mdx#section-3)
-- [Suivi des Ventes](../../src/content/help/fr/kitchen/daily-operations.mdx#section-4)
-- [Importer depuis le POS](../../src/content/help/fr/kitchen/daily-operations.mdx#section-5)
-- [Saisie manuelle des ventes](../../src/content/help/fr/kitchen/daily-operations.mdx#section-6)
-- [Livraisons Recues](../../src/content/help/fr/kitchen/daily-operations.mdx#section-7)
-- [Comptage & Ecarts de Stock](../../src/content/help/fr/kitchen/daily-operations.mdx#section-8)
-- [Comment ca marche](../../src/content/help/fr/kitchen/daily-operations.mdx#section-9)
-- [Comment interpreter rapidement](../../src/content/help/fr/kitchen/daily-operations.mdx#section-10)
-- [Exemple concret](../../src/content/help/fr/kitchen/daily-operations.mdx#section-11)
-- [Saisie du stock de fermeture](../../src/content/help/fr/kitchen/daily-operations.mdx#section-12)
-- [Detail par ingredient](../../src/content/help/fr/kitchen/daily-operations.mdx#section-13)
-- [Analyse du Food Cost](../../src/content/help/fr/kitchen/daily-operations.mdx#section-14)
-- [Importation de Recettes](../../src/content/help/fr/kitchen/daily-operations.mdx#section-15)
-- [Retrospective](../../src/content/help/fr/kitchen/daily-operations.mdx#section-16)
-- [Cloture de la Journee](../../src/content/help/fr/kitchen/daily-operations.mdx#section-17)
-- [Approvisionnements Estimes](../../src/content/help/fr/kitchen/daily-operations.mdx#section-18)
-- [Generer la commande de demain](../../src/content/help/fr/kitchen/daily-operations.mdx#section-19)
-- [Verification et envoi](../../src/content/help/fr/kitchen/daily-operations.mdx#section-20)
-- [Comprendre la prediction](../../src/content/help/fr/kitchen/daily-operations.mdx#section-21)
-- [Le Flux de Travail Complet](../../src/content/help/fr/kitchen/daily-operations.mdx#section-22)
-- [Prerequis](../../src/content/help/fr/kitchen/daily-operations.mdx#section-23)
-- [Erreurs Frequentes](../../src/content/help/fr/kitchen/daily-operations.mdx#section-24)
-- [Conseils](../../src/content/help/fr/kitchen/daily-operations.mdx#section-25)
-- [Articles lies](../../src/content/help/fr/kitchen/daily-operations.mdx#section-26)
+- [Ouvrir la bonne journée](../../src/content/help/fr/kitchen/daily-operations.mdx#section-3)
+- [Accès et données nécessaires](../../src/content/help/fr/kitchen/daily-operations.mdx#section-23)
+- [Préparer le service](../../src/content/help/fr/kitchen/daily-operations.mdx#prepare-service)
+- [Pendant le service](../../src/content/help/fr/kitchen/daily-operations.mdx#during-service)
+- [Importer, rapprocher et corriger les ventes](../../src/content/help/fr/kitchen/daily-operations.mdx#section-4)
+- [Vérifier et recevoir les livraisons](../../src/content/help/fr/kitchen/daily-operations.mdx#section-7)
+- [Comparer le prévu au compté](../../src/content/help/fr/kitchen/daily-operations.mdx#section-8)
+- [Distinguer les espaces de coût et de recette](../../src/content/help/fr/kitchen/daily-operations.mdx#section-14)
+- [Enregistrer la transmission](../../src/content/help/fr/kitchen/daily-operations.mdx#section-16)
+- [Clôturer la journée](../../src/content/help/fr/kitchen/daily-operations.mdx#section-17)
+- [Réouvrir un rapport autorisé](../../src/content/help/fr/kitchen/daily-operations.mdx#reopen-day)
+- [Générer explicitement les brouillons estimés](../../src/content/help/fr/kitchen/daily-operations.mdx#section-18)
+- [Vérifier puis envoyer manuellement](../../src/content/help/fr/kitchen/daily-operations.mdx#section-20)
+- [Reprendre après une erreur](../../src/content/help/fr/kitchen/daily-operations.mdx#section-24)
+- [Parcours et guides liés](../../src/content/help/fr/kitchen/daily-operations.mdx#section-26)
 
 ### [Coût matière](../../src/content/help/fr/kitchen/food-cost.mdx)
 

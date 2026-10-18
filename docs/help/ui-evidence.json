@@ -146,6 +146,18 @@
         "menus: 'Cartes'"
       ],
       "forbidden": []
+    },
+    {
+      "id": "daily-explicit-generation-and-send",
+      "source": "src/app/[restaurantId]/kitchen/daily-operations/page.tsx",
+      "required": [
+        "const handleGenerateOrders = async",
+        "onClick={() => handleGenerateOrders(source)}",
+        "onClick={() => handleSendEmail(emailModalPO)}",
+        "setEmailModalPO(po)",
+        "await closeFoodCostReport(rid, report.id);"
+      ],
+      "forbidden": []
     }
   ],
   "guides": [
@@ -344,6 +356,43 @@
         ],
         "he": [
           "מתכון → זמינות"
+        ]
+      }
+    },
+    {
+      "article": "kitchen/daily-operations",
+      "required": {
+        "fr": [
+          "Cuisine → Aujourd’hui",
+          "Préparer le service",
+          "Bilan du jour",
+          "ne génère ni n’envoie",
+          "cliquez Envoyer"
+        ],
+        "en": [
+          "Kitchen → Today",
+          "Prepare service",
+          "Day review",
+          "Closing neither generates nor sends",
+          "click Send"
+        ],
+        "he": [
+          "מטבח → היום",
+          "מכינים לסרוויס",
+          "סיכום היום",
+          "סגירת יום אינה יוצרת ואינה שולחת",
+          "לחצו שלח"
+        ]
+      },
+      "forbidden": {
+        "fr": [
+          "Chaque déduction est enregistrée comme une transaction de stock immuable"
+        ],
+        "en": [
+          "Each deduction is logged as an immutable stock transaction"
+        ],
+        "he": [
+          "כל הפחתה נרשמת כתנועת מלאי בלתי ניתנת לשינוי"
         ]
       }
     }
