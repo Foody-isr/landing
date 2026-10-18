@@ -29,3 +29,9 @@ Direct Meta coexistence is a controlled pilot and disabled by default. Connectin
 ## Read message history
 
 In the order’s communication panel inspect sent, delivered, read, failed and blocked-before-send records. A blocked automation is not proof of delivery. For a reviewed courier reminder use its explicit action only when eligible. Unknown provider outcomes are not automatically replayed; investigate before another send.
+
+<span id="route-delivery-window" />
+
+## Review a route-based delivery reminder
+
+For an assigned delivery with a saved customer-window setting, reminders use the route arrival plus the configured duration, rather than the order’s broad scheduled slot. For example, arrival at 08:30 and 90 minutes produces 08:30–10:00. Configure it in Orders → Deliveries → allocation, beside the time at each stop, and review the manual or approved WhatsApp preview before sending. The same range supplies Twilio, Meta and stage reminders; existing template variables and J-1 eligibility remain in effect. Unconfigured historic routes keep the original saved slot. If the range cannot be verified, recalculate the route and reopen the reminder. A changed approved preview must be reviewed again before sending. Editing a template alone does not calculate a route or change its margin.

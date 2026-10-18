@@ -23,3 +23,9 @@ Modifiez textes localisés et variables, ou soumettez un modèle WhatsApp Utilit
 ## Associer les messages aux étapes
 
 Choisissez un modèle approuvé sur l’étape et son déclenchement. Les messages concernent les futures entrées, sans reprise historique. Rappels livraison exigent données livreur/date ; satisfaction exige remise enregistrée. Lisez le déclencheur, sans supposer un envoi systématique la veille.
+
+<span id="route-delivery-window" />
+
+## Vérifier le rappel de livraison calculé
+
+Pour une livraison affectée à une tournée avec une marge client enregistrée, les rappels utilisent l’arrivée calculée plus cette durée, au lieu du large créneau planifié de la commande. Exemple : arrivée à 08:30 et marge de 90 minutes → 08:30–10:00. Réglez-la dans Commandes → Livraisons → répartition, à côté du temps à chaque arrêt, puis vérifiez l’aperçu WhatsApp manuel ou approuvé avant envoi. Le même créneau alimente Twilio, Meta et les rappels par étape ; les variables des modèles et la règle J-1 existantes restent applicables. Les anciennes tournées sans réglage conservent le créneau enregistré. Si le créneau ne peut être vérifié, recalculez puis rouvrez le rappel. Un aperçu approuvé qui a changé doit être revérifié avant envoi. Modifier un modèle seul ne calcule pas de tournée et ne change pas sa marge.

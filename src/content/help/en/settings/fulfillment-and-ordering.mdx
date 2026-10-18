@@ -29,3 +29,9 @@ Review immediate versus scheduled ordering, lead time, booking horizon and time-
 ## Use temporary test access carefully
 
 Temporary test access requires a specific public IP and expiry within seven days. Activation pauses public ordering. Tests create real orders and notifications; use development for test data. Expiry or revocation leaves ordering paused: resume explicitly when ready. Never publish an allowed IP list in a guide or message.
+
+<span id="courier-departure-sync" />
+
+## Follow an assigned delivery’s departure
+
+When the assigned courier starts their route in Admin, unfinished accepted, preparing and ready delivery orders change together to Out for delivery. Staff screens receive the updated statuses through their usual order refresh. This confirms actual departure; assigning a courier or choosing a fulfillment mode alone does not start a route. Held kitchen courses and unsettled weight orders must be resolved first. If starting fails, the previous statuses remain. The route action does not reopen finished or cancelled orders.
