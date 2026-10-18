@@ -1011,6 +1011,19 @@
           "en": "Read Communications → WhatsApp and Message templates to configure a photo, fixed PDF or order PDF receipt with Meta. The guides and assistant use the same published procedure. The assistant explains documented controls; it cannot open private files, inspect orders or confirm message delivery. Check those details in Foody.",
           "he": "קראו תקשורת → WhatsApp ותבניות הודעות כדי להגדיר תמונה, PDF קבוע או קבלת PDF של הזמנה באמצעות Meta. המדריכים והעוזר משתמשים באותה גרסה מפורסמת של הנוהל. העוזר מסביר בקרות מתועדות; הוא אינו יכול לפתוח קבצים פרטיים, לבדוק הזמנות או לאשר מסירת הודעה. בדקו מידע זה ב-Foody."
         }
+      },
+      {
+        "id": "combo-substitution-question",
+        "title": {
+          "en": "Make a one-order combo exception",
+          "fr": "Faire une exception de formule sur une commande",
+          "he": "ביצוע חריגה בקומבו להזמנה אחת"
+        },
+        "instructions": {
+          "en": "Ask “How can I replace beef with fish in an internal combo without a surcharge?” The assistant should cite the combo or order guide, explain Choose another item and required orders.manage access, and distinguish the one-order exception from editing the saved definition. It cannot inspect or edit your actual order.",
+          "fr": "Demandez « Comment remplacer le bœuf par du poisson dans une formule interne sans supplément ? ». L’assistant doit citer le guide des formules ou commandes, expliquer Choisir un autre article et la permission orders.manage, et distinguer l’exception ponctuelle de la modification de la définition enregistrée. Il ne peut ni consulter ni modifier votre commande réelle.",
+          "he": "שאלו כיצד להחליף בקר בדג בקומבו פנימי ללא תוספת מחיר. העוזר צריך לצטט את מדריך הקומבו או ההזמנות, להסביר בחירת פריט אחר והרשאת orders.manage, ולהבחין בין חריגה להזמנה אחת לבין שינוי ההגדרה השמורה. הוא אינו יכול לצפות בהזמנה האמיתית או לערוך אותה."
+        }
       }
     ],
     "audience": "public",
@@ -2637,6 +2650,19 @@
           "fr": "Avec la permission orders.manage, ouvrez Nouvelle commande. Sélectionnez une carte ou Librairie d’articles au-dessus du champ de recherche. La librairie contient tous les articles actifs du restaurant, y compris ceux sans carte ou hors de la série tournante sélectionnée, et reste accessible sans carte POS. Recherchez par nom et sélectionnez un article ; choisissez son format, ses suppléments ou le contenu de son combo si demandé. Les articles épuisés restent désactivés et les articles inactifs sont absents. Le passage entre une carte et la librairie conserve le ticket. Complétez les coordonnées et la remise, vérifiez le total et envoyez une seule fois. Cet ajout ne publie pas l’article sur une carte ou le site client. Si un article manque, vérifiez son statut actif dans Articles ; s’il est épuisé, contrôlez son stock et sa disponibilité avant de réessayer.",
           "he": "עם הרשאת orders.manage פתחו הזמנה חדשה. בחרו תפריט או ספריית פריטים מעל שדה החיפוש. הספרייה כוללת את כל הפריטים הפעילים של המסעדה, גם פריטים שאינם משויכים לתפריט או אינם בסדרה המתחלפת שנבחרה, וזמינה גם ללא תפריט קופה. חפשו לפי שם ובחרו פריט; בחרו גודל, תוספות או רכיבי קומבו לפי הצורך. פריטים שאזלו נשארים מושבתים ופריטים לא פעילים אינם מוצגים. מעבר בין תפריט לספרייה שומר על פריטי ההזמנה. השלימו פרטי קשר ומסירה, בדקו את הסכום ושלחו פעם אחת. הוספה כאן אינה מפרסמת את הפריט בתפריט או באתר ללקוח. אם פריט חסר, בדקו שהוא פעיל במסך פריטים; אם אזל, בדקו מלאי וזמינות לפני ניסיון חוזר."
         }
+      },
+      {
+        "id": "internal-combo-substitution",
+        "title": {
+          "en": "Make a one-order combo exception",
+          "fr": "Faire une exception de formule sur une commande",
+          "he": "ביצוע חריגה בקומבו להזמנה אחת"
+        },
+        "instructions": {
+          "en": "With orders.manage permission, open New order or edit a saved order in Admin and open its combo composition. In the relevant step, select Choose another item. Remove one selected unit first if the step is full, search the restaurant article library and choose the replacement and its size. Exception · included identifies the choice. Active fixed-price individual items are eligible, including items outside the active carte; inactive, sold-out and weight-priced items and other combos cannot be used. Required step quantities, per-item limits and configured portions still apply. Save the combo, review the ticket and submit once. For example, replace the beef in a two-main Mamie formula with fish while retaining chicken. The replacement and its size add no surcharge; other normal configured choices keep their existing surcharges. The formula base price and saved definition do not change, and editing an existing order preserves its original base-price snapshot. The choice survives draft restoration and reopening the order editor. Guests cannot request this exception. If rejected, refresh availability and choose an active item in an allowed size; a failed saved-order replacement retains the previous composition.",
+          "fr": "Avec la permission orders.manage, ouvrez Nouvelle commande ou modifiez une commande enregistrée dans Admin, puis ouvrez la composition de sa formule. Dans l’étape concernée, sélectionnez Choisir un autre article. Retirez d’abord une unité sélectionnée si l’étape est pleine, recherchez dans la librairie du restaurant et choisissez le remplacement et son format. Exception · inclus identifie ce choix. Les articles individuels actifs à prix fixe sont admissibles, même hors de la carte active ; les articles inactifs, épuisés ou au poids et les autres formules sont exclus. Les quantités requises par étape, limites par article et portions configurées restent applicables. Enregistrez la formule, vérifiez le ticket et envoyez une seule fois. Par exemple, remplacez le bœuf d’une formule Mamie à deux plats par du poisson tout en conservant le poulet. Le remplacement et son format n’ajoutent aucun supplément ; les autres choix habituels conservent leurs suppléments configurés. Le prix de base et la définition enregistrée de la formule ne changent pas ; modifier une commande existante conserve son prix de base d’origine. Le choix est conservé dans le brouillon et à la réouverture de l’éditeur de commande. Les clients ne peuvent pas demander cette exception. En cas de refus, actualisez la disponibilité et choisissez un article actif dans un format autorisé ; un remplacement refusé sur une commande enregistrée conserve la composition précédente.",
+          "he": "עם הרשאת orders.manage פתחו הזמנה חדשה או ערכו הזמנה שמורה בממשק הניהול, ואז פתחו את הרכב הקומבו. בשלב המתאים בחרו בחירת פריט אחר. אם השלב מלא, הסירו קודם יחידה שנבחרה, חפשו בספריית המסעדה ובחרו תחליף וגודל. חריגה · כלול במחיר מסמן את הבחירה. ניתן לבחור פריטים יחידים פעילים במחיר קבוע, גם מחוץ לתפריט הפעיל; פריטים לא פעילים, שאזלו או שמתומחרים במשקל וקומבו אחר אינם זמינים. כמויות החובה בכל שלב, מגבלות לפריט וגדלים מוגדרים עדיין חלים. שמרו את הקומבו, בדקו את ההזמנה ושלחו פעם אחת. למשל, החליפו בקר בדג בקומבו Mamie עם שתי מנות עיקריות ושמרו על העוף. התחליף והגודל אינם מוסיפים תשלום; בחירות רגילות אחרות שומרות על התוספות המוגדרות שלהן. מחיר הבסיס והגדרת הקומבו השמורה אינם משתנים; עריכת הזמנה קיימת שומרת על מחיר הבסיס המקורי. הבחירה נשמרת בשחזור טיוטה ובפתיחה מחדש של עורך ההזמנה. לקוחות אינם יכולים לבקש חריגה זו. במקרה של דחייה, רעננו זמינות ובחרו פריט פעיל בגודל מותר; החלפה שנדחתה בהזמנה שמורה משאירה את ההרכב הקודם."
+        }
       }
     ],
     "audience": "public",
@@ -3307,6 +3333,19 @@
           "fr": "Lorsque le livreur affecté démarre sa tournée dans Admin, les livraisons non terminées acceptées, en préparation ou prêtes passent ensemble en « En livraison ». Les écrans du personnel reçoivent ces statuts par leur actualisation habituelle des commandes. Cette action confirme le départ réel ; affecter un livreur ou choisir un mode de remise ne démarre pas à lui seul une tournée. Les préparations retenues et commandes au poids non finalisées doivent être résolues auparavant. Si le départ échoue, les statuts précédents sont conservés. Les commandes terminées ou annulées ne sont pas rouvertes.",
           "he": "כאשר השליח המשויך מתחיל את המסלול בניהול, הזמנות משלוח שהתקבלו, בהכנה או מוכנות וטרם הסתיימו עוברות יחד למצב במשלוח. מסכי הצוות מקבלים את הסטטוסים ברענון ההזמנות הרגיל. הפעולה מאשרת יציאה בפועל; הקצאת שליח או בחירת אופן מסירה בלבד אינן מתחילות מסלול. יש לפתור קודם מנות מושהות והזמנות במשקל שטרם נסגרו. אם תחילת המסלול נכשלת, הסטטוסים הקודמים נשמרים. הזמנות שהסתיימו או בוטלו אינן נפתחות מחדש."
         }
+      },
+      {
+        "id": "internal-combo-substitution",
+        "title": {
+          "en": "Make a one-order combo exception",
+          "fr": "Faire une exception de formule sur une commande",
+          "he": "ביצוע חריגה בקומבו להזמנה אחת"
+        },
+        "instructions": {
+          "en": "For a one-order combo exception, an authorized Admin user opens the combo step and selects Choose another item. The replacement is included without a surcharge and is saved on that order only. Fulfillment, scheduling and delivery rules remain unchanged. Review the selected dish and portion in the order details. Guest and POS combo pickers retain the configured composition; arrange an exception through the internal Admin order editor. See the combo guide for quantities, eligibility and recovery.",
+          "fr": "Pour une exception de formule sur une seule commande, un utilisateur Admin autorisé ouvre l’étape de la formule et choisit Choisir un autre article. Le remplacement est inclus sans supplément et enregistré uniquement sur cette commande. Les règles de remise, programmation et livraison restent inchangées. Vérifiez le plat et la portion sélectionnés dans le détail de commande. Les sélecteurs client et POS conservent la composition configurée ; effectuez l’exception dans l’éditeur interne Admin. Consultez le guide des formules pour les quantités, articles admissibles et reprises.",
+          "he": "לחריגה בקומבו בהזמנה אחת, משתמש ניהול מורשה פותח את שלב הקומבו ובוחר בחירת פריט אחר. התחליף כלול ללא תוספת מחיר ונשמר בהזמנה זו בלבד. כללי מסירה, תזמון ומשלוח אינם משתנים. בדקו את המנה והגודל שנבחרו בפרטי ההזמנה. בוחרי הקומבו ללקוחות ובקופה שומרים על ההרכב המוגדר; בצעו חריגה בעורך ההזמנות הפנימי בניהול. ראו במדריך הקומבו כמויות, פריטים מותרים וטיפול בדחייה."
+        }
       }
     ],
     "audience": "public",
@@ -3442,6 +3481,19 @@
           "en": "When the assigned courier starts their route in Admin, unfinished accepted, preparing and ready delivery orders change together to Out for delivery. Staff screens receive the updated statuses through their usual order refresh. This confirms actual departure; assigning a courier or choosing a fulfillment mode alone does not start a route. Held kitchen courses and unsettled weight orders must be resolved first. If starting fails, the previous statuses remain. The route action does not reopen finished or cancelled orders.",
           "fr": "Lorsque le livreur affecté démarre sa tournée dans Admin, les livraisons non terminées acceptées, en préparation ou prêtes passent ensemble en « En livraison ». Les écrans du personnel reçoivent ces statuts par leur actualisation habituelle des commandes. Cette action confirme le départ réel ; affecter un livreur ou choisir un mode de remise ne démarre pas à lui seul une tournée. Les préparations retenues et commandes au poids non finalisées doivent être résolues auparavant. Si le départ échoue, les statuts précédents sont conservés. Les commandes terminées ou annulées ne sont pas rouvertes.",
           "he": "כאשר השליח המשויך מתחיל את המסלול בניהול, הזמנות משלוח שהתקבלו, בהכנה או מוכנות וטרם הסתיימו עוברות יחד למצב במשלוח. מסכי הצוות מקבלים את הסטטוסים ברענון ההזמנות הרגיל. הפעולה מאשרת יציאה בפועל; הקצאת שליח או בחירת אופן מסירה בלבד אינן מתחילות מסלול. יש לפתור קודם מנות מושהות והזמנות במשקל שטרם נסגרו. אם תחילת המסלול נכשלת, הסטטוסים הקודמים נשמרים. הזמנות שהסתיימו או בוטלו אינן נפתחות מחדש."
+        }
+      },
+      {
+        "id": "internal-combo-substitution",
+        "title": {
+          "en": "Make a one-order combo exception",
+          "fr": "Faire une exception de formule sur une commande",
+          "he": "ביצוע חריגה בקומבו להזמנה אחת"
+        },
+        "instructions": {
+          "en": "For a one-order combo exception, an authorized Admin user opens the combo step and selects Choose another item. The replacement is included without a surcharge and is saved on that order only. Fulfillment, scheduling and delivery rules remain unchanged. Review the selected dish and portion in the order details. Guest and POS combo pickers retain the configured composition; arrange an exception through the internal Admin order editor. See the combo guide for quantities, eligibility and recovery.",
+          "fr": "Pour une exception de formule sur une seule commande, un utilisateur Admin autorisé ouvre l’étape de la formule et choisit Choisir un autre article. Le remplacement est inclus sans supplément et enregistré uniquement sur cette commande. Les règles de remise, programmation et livraison restent inchangées. Vérifiez le plat et la portion sélectionnés dans le détail de commande. Les sélecteurs client et POS conservent la composition configurée ; effectuez l’exception dans l’éditeur interne Admin. Consultez le guide des formules pour les quantités, articles admissibles et reprises.",
+          "he": "לחריגה בקומבו בהזמנה אחת, משתמש ניהול מורשה פותח את שלב הקומבו ובוחר בחירת פריט אחר. התחליף כלול ללא תוספת מחיר ונשמר בהזמנה זו בלבד. כללי מסירה, תזמון ומשלוח אינם משתנים. בדקו את המנה והגודל שנבחרו בפרטי ההזמנה. בוחרי הקומבו ללקוחות ובקופה שומרים על ההרכב המוגדר; בצעו חריגה בעורך ההזמנות הפנימי בניהול. ראו במדריך הקומבו כמויות, פריטים מותרים וטיפול בדחייה."
         }
       }
     ],
@@ -3834,6 +3886,19 @@
           "en": "For an assigned delivery with a saved customer-window setting, reminders use the route arrival plus the configured duration, rather than the order’s broad scheduled slot. For example, arrival at 08:30 and 90 minutes produces 08:30–10:00. Configure it in Orders → Deliveries → allocation, beside the time at each stop, and review the manual or approved WhatsApp preview before sending. The same range supplies Twilio, Meta and stage reminders; existing template variables and J-1 eligibility remain in effect. Unconfigured historic routes keep the original saved slot. If the range cannot be verified, recalculate the route and reopen the reminder. A changed approved preview must be reviewed again before sending. Editing a template alone does not calculate a route or change its margin.",
           "fr": "Pour une livraison affectée à une tournée avec une marge client enregistrée, les rappels utilisent l’arrivée calculée plus cette durée, au lieu du large créneau planifié de la commande. Exemple : arrivée à 08:30 et marge de 90 minutes → 08:30–10:00. Réglez-la dans Commandes → Livraisons → répartition, à côté du temps à chaque arrêt, puis vérifiez l’aperçu WhatsApp manuel ou approuvé avant envoi. Le même créneau alimente Twilio, Meta et les rappels par étape ; les variables des modèles et la règle J-1 existantes restent applicables. Les anciennes tournées sans réglage conservent le créneau enregistré. Si le créneau ne peut être vérifié, recalculez puis rouvrez le rappel. Un aperçu approuvé qui a changé doit être revérifié avant envoi. Modifier un modèle seul ne calcule pas de tournée et ne change pas sa marge.",
           "he": "במשלוח המשויך למסלול עם חלון לקוח שמור, התזכורות משתמשות בזמן ההגעה המחושב בתוספת המשך שהוגדר במקום חלון התזמון הרחב של ההזמנה. לדוגמה, הגעה ב־08:30 ו־90 דקות נותנות 08:30–10:00. הגדירו בהזמנות → משלוחים → חלוקה ליד זמן בכל עצירה ובדקו את התצוגה המקדימה הידנית או המאושרת ב־WhatsApp לפני השליחה. אותו חלון משמש את Twilio, Meta ותזכורות השלבים; מיפוי המשתנים וכלל היום שלפני המשלוח נשארים בתוקף. מסלולים ישנים ללא הגדרה שומרים על החלון המקורי. אם אי אפשר לאמת את החלון, חשבו מחדש ופתחו את התזכורת שוב. יש לבדוק מחדש תצוגה מאושרת שהשתנתה לפני שליחה. עריכת תבנית בלבד אינה מחשבת מסלול ואינה משנה את משך החלון."
+        }
+      },
+      {
+        "id": "internal-combo-substitution",
+        "title": {
+          "en": "Make a one-order combo exception",
+          "fr": "Faire une exception de formule sur une commande",
+          "he": "ביצוע חריגה בקומבו להזמנה אחת"
+        },
+        "instructions": {
+          "en": "With orders.manage permission, open New order or edit a saved order in Admin and open its combo composition. In the relevant step, select Choose another item. Remove one selected unit first if the step is full, search the restaurant article library and choose the replacement and its size. Exception · included identifies the choice. Active fixed-price individual items are eligible, including items outside the active carte; inactive, sold-out and weight-priced items and other combos cannot be used. Required step quantities, per-item limits and configured portions still apply. Save the combo, review the ticket and submit once. For example, replace the beef in a two-main Mamie formula with fish while retaining chicken. The replacement and its size add no surcharge; other normal configured choices keep their existing surcharges. The formula base price and saved definition do not change, and editing an existing order preserves its original base-price snapshot. The choice survives draft restoration and reopening the order editor. Guests cannot request this exception. If rejected, refresh availability and choose an active item in an allowed size; a failed saved-order replacement retains the previous composition.",
+          "fr": "Avec la permission orders.manage, ouvrez Nouvelle commande ou modifiez une commande enregistrée dans Admin, puis ouvrez la composition de sa formule. Dans l’étape concernée, sélectionnez Choisir un autre article. Retirez d’abord une unité sélectionnée si l’étape est pleine, recherchez dans la librairie du restaurant et choisissez le remplacement et son format. Exception · inclus identifie ce choix. Les articles individuels actifs à prix fixe sont admissibles, même hors de la carte active ; les articles inactifs, épuisés ou au poids et les autres formules sont exclus. Les quantités requises par étape, limites par article et portions configurées restent applicables. Enregistrez la formule, vérifiez le ticket et envoyez une seule fois. Par exemple, remplacez le bœuf d’une formule Mamie à deux plats par du poisson tout en conservant le poulet. Le remplacement et son format n’ajoutent aucun supplément ; les autres choix habituels conservent leurs suppléments configurés. Le prix de base et la définition enregistrée de la formule ne changent pas ; modifier une commande existante conserve son prix de base d’origine. Le choix est conservé dans le brouillon et à la réouverture de l’éditeur de commande. Les clients ne peuvent pas demander cette exception. En cas de refus, actualisez la disponibilité et choisissez un article actif dans un format autorisé ; un remplacement refusé sur une commande enregistrée conserve la composition précédente.",
+          "he": "עם הרשאת orders.manage פתחו הזמנה חדשה או ערכו הזמנה שמורה בממשק הניהול, ואז פתחו את הרכב הקומבו. בשלב המתאים בחרו בחירת פריט אחר. אם השלב מלא, הסירו קודם יחידה שנבחרה, חפשו בספריית המסעדה ובחרו תחליף וגודל. חריגה · כלול במחיר מסמן את הבחירה. ניתן לבחור פריטים יחידים פעילים במחיר קבוע, גם מחוץ לתפריט הפעיל; פריטים לא פעילים, שאזלו או שמתומחרים במשקל וקומבו אחר אינם זמינים. כמויות החובה בכל שלב, מגבלות לפריט וגדלים מוגדרים עדיין חלים. שמרו את הקומבו, בדקו את ההזמנה ושלחו פעם אחת. למשל, החליפו בקר בדג בקומבו Mamie עם שתי מנות עיקריות ושמרו על העוף. התחליף והגודל אינם מוסיפים תשלום; בחירות רגילות אחרות שומרות על התוספות המוגדרות שלהן. מחיר הבסיס והגדרת הקומבו השמורה אינם משתנים; עריכת הזמנה קיימת שומרת על מחיר הבסיס המקורי. הבחירה נשמרת בשחזור טיוטה ובפתיחה מחדש של עורך ההזמנה. לקוחות אינם יכולים לבקש חריגה זו. במקרה של דחייה, רעננו זמינות ובחרו פריט פעיל בגודל מותר; החלפה שנדחתה בהזמנה שמורה משאירה את ההרכב הקודם."
         }
       }
     ],
@@ -4280,6 +4345,19 @@
           "en": "With direct Meta notifications enabled, configure the attachment in Settings → Communications → WhatsApp or on the Order workflow stage: an approved photo/PDF header template, an authorized fixed file or that order’s PDF receipt. This selection changes neither the route nor the configured sending time. Review the file in the manual preview and the attachment filename in Customer messages; a filename does not prove delivery.",
           "he": "כאשר התראות Meta ישירות מופעלות, הגדירו את הקובץ בהגדרות → תקשורת → WhatsApp או בשלב במסלול ההזמנות: תבנית מאושרת עם כותרת תמונה/PDF, קובץ קבוע מורשה או קבלת PDF של ההזמנה. הבחירה אינה משנה את המסלול או את זמן השליחה שהוגדר. בדקו את הקובץ בתצוגה הידנית ואת שם הקובץ בהודעות ללקוח; שם קובץ אינו הוכחת מסירה."
         }
+      },
+      {
+        "id": "internal-combo-substitution",
+        "title": {
+          "en": "Make a one-order combo exception",
+          "fr": "Faire une exception de formule sur une commande",
+          "he": "ביצוע חריגה בקומבו להזמנה אחת"
+        },
+        "instructions": {
+          "en": "For a one-order combo exception, an authorized Admin user opens the combo step and selects Choose another item. The replacement is included without a surcharge and is saved on that order only. Fulfillment, scheduling and delivery rules remain unchanged. Review the selected dish and portion in the order details. Guest and POS combo pickers retain the configured composition; arrange an exception through the internal Admin order editor. See the combo guide for quantities, eligibility and recovery.",
+          "fr": "Pour une exception de formule sur une seule commande, un utilisateur Admin autorisé ouvre l’étape de la formule et choisit Choisir un autre article. Le remplacement est inclus sans supplément et enregistré uniquement sur cette commande. Les règles de remise, programmation et livraison restent inchangées. Vérifiez le plat et la portion sélectionnés dans le détail de commande. Les sélecteurs client et POS conservent la composition configurée ; effectuez l’exception dans l’éditeur interne Admin. Consultez le guide des formules pour les quantités, articles admissibles et reprises.",
+          "he": "לחריגה בקומבו בהזמנה אחת, משתמש ניהול מורשה פותח את שלב הקומבו ובוחר בחירת פריט אחר. התחליף כלול ללא תוספת מחיר ונשמר בהזמנה זו בלבד. כללי מסירה, תזמון ומשלוח אינם משתנים. בדקו את המנה והגודל שנבחרו בפרטי ההזמנה. בוחרי הקומבו ללקוחות ובקופה שומרים על ההרכב המוגדר; בצעו חריגה בעורך ההזמנות הפנימי בניהול. ראו במדריך הקומבו כמויות, פריטים מותרים וטיפול בדחייה."
+        }
       }
     ],
     "audience": "public",
@@ -4578,11 +4656,25 @@
           "fr": "Choisissez la formule, complétez les étapes obligatoires et vérifiez tous les composants avant ajout. Contrôlez notes et présentation cuisine sur le canal concerné.",
           "he": "בחרו ארוחה, השלימו שלבי חובה ובדקו מרכיבים לפני הוספה. בדקו הערות והצגה במטבח בערוץ המתאים."
         }
+      },
+      {
+        "id": "internal-combo-substitution",
+        "title": {
+          "en": "Make a one-order combo exception",
+          "fr": "Faire une exception de formule sur une commande",
+          "he": "ביצוע חריגה בקומבו להזמנה אחת"
+        },
+        "instructions": {
+          "en": "With orders.manage permission, open New order or edit a saved order in Admin and open its combo composition. In the relevant step, select Choose another item. Remove one selected unit first if the step is full, search the restaurant article library and choose the replacement and its size. Exception · included identifies the choice. Active fixed-price individual items are eligible, including items outside the active carte; inactive, sold-out and weight-priced items and other combos cannot be used. Required step quantities, per-item limits and configured portions still apply. Save the combo, review the ticket and submit once. For example, replace the beef in a two-main Mamie formula with fish while retaining chicken. The replacement and its size add no surcharge; other normal configured choices keep their existing surcharges. The formula base price and saved definition do not change, and editing an existing order preserves its original base-price snapshot. The choice survives draft restoration and reopening the order editor. Guests cannot request this exception. If rejected, refresh availability and choose an active item in an allowed size; a failed saved-order replacement retains the previous composition.",
+          "fr": "Avec la permission orders.manage, ouvrez Nouvelle commande ou modifiez une commande enregistrée dans Admin, puis ouvrez la composition de sa formule. Dans l’étape concernée, sélectionnez Choisir un autre article. Retirez d’abord une unité sélectionnée si l’étape est pleine, recherchez dans la librairie du restaurant et choisissez le remplacement et son format. Exception · inclus identifie ce choix. Les articles individuels actifs à prix fixe sont admissibles, même hors de la carte active ; les articles inactifs, épuisés ou au poids et les autres formules sont exclus. Les quantités requises par étape, limites par article et portions configurées restent applicables. Enregistrez la formule, vérifiez le ticket et envoyez une seule fois. Par exemple, remplacez le bœuf d’une formule Mamie à deux plats par du poisson tout en conservant le poulet. Le remplacement et son format n’ajoutent aucun supplément ; les autres choix habituels conservent leurs suppléments configurés. Le prix de base et la définition enregistrée de la formule ne changent pas ; modifier une commande existante conserve son prix de base d’origine. Le choix est conservé dans le brouillon et à la réouverture de l’éditeur de commande. Les clients ne peuvent pas demander cette exception. En cas de refus, actualisez la disponibilité et choisissez un article actif dans un format autorisé ; un remplacement refusé sur une commande enregistrée conserve la composition précédente.",
+          "he": "עם הרשאת orders.manage פתחו הזמנה חדשה או ערכו הזמנה שמורה בממשק הניהול, ואז פתחו את הרכב הקומבו. בשלב המתאים בחרו בחירת פריט אחר. אם השלב מלא, הסירו קודם יחידה שנבחרה, חפשו בספריית המסעדה ובחרו תחליף וגודל. חריגה · כלול במחיר מסמן את הבחירה. ניתן לבחור פריטים יחידים פעילים במחיר קבוע, גם מחוץ לתפריט הפעיל; פריטים לא פעילים, שאזלו או שמתומחרים במשקל וקומבו אחר אינם זמינים. כמויות החובה בכל שלב, מגבלות לפריט וגדלים מוגדרים עדיין חלים. שמרו את הקומבו, בדקו את ההזמנה ושלחו פעם אחת. למשל, החליפו בקר בדג בקומבו Mamie עם שתי מנות עיקריות ושמרו על העוף. התחליף והגודל אינם מוסיפים תשלום; בחירות רגילות אחרות שומרות על התוספות המוגדרות שלהן. מחיר הבסיס והגדרת הקומבו השמורה אינם משתנים; עריכת הזמנה קיימת שומרת על מחיר הבסיס המקורי. הבחירה נשמרת בשחזור טיוטה ובפתיחה מחדש של עורך ההזמנה. לקוחות אינם יכולים לבקש חריגה זו. במקרה של דחייה, רעננו זמינות ובחרו פריט פעיל בגודל מותר; החלפה שנדחתה בהזמנה שמורה משאירה את ההרכב הקודם."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
-    "preserveExisting": false
+    "preserveExisting": false,
+    "procedureUpdatedAt": "2026-10-18"
   },
   {
     "id": "pos-discount-library",
@@ -5679,6 +5771,19 @@
           "en": "When the assigned courier starts their route in Admin, unfinished accepted, preparing and ready delivery orders change together to Out for delivery. Staff screens receive the updated statuses through their usual order refresh. This confirms actual departure; assigning a courier or choosing a fulfillment mode alone does not start a route. Held kitchen courses and unsettled weight orders must be resolved first. If starting fails, the previous statuses remain. The route action does not reopen finished or cancelled orders.",
           "fr": "Lorsque le livreur affecté démarre sa tournée dans Admin, les livraisons non terminées acceptées, en préparation ou prêtes passent ensemble en « En livraison ». Les écrans du personnel reçoivent ces statuts par leur actualisation habituelle des commandes. Cette action confirme le départ réel ; affecter un livreur ou choisir un mode de remise ne démarre pas à lui seul une tournée. Les préparations retenues et commandes au poids non finalisées doivent être résolues auparavant. Si le départ échoue, les statuts précédents sont conservés. Les commandes terminées ou annulées ne sont pas rouvertes.",
           "he": "כאשר השליח המשויך מתחיל את המסלול בניהול, הזמנות משלוח שהתקבלו, בהכנה או מוכנות וטרם הסתיימו עוברות יחד למצב במשלוח. מסכי הצוות מקבלים את הסטטוסים ברענון ההזמנות הרגיל. הפעולה מאשרת יציאה בפועל; הקצאת שליח או בחירת אופן מסירה בלבד אינן מתחילות מסלול. יש לפתור קודם מנות מושהות והזמנות במשקל שטרם נסגרו. אם תחילת המסלול נכשלת, הסטטוסים הקודמים נשמרים. הזמנות שהסתיימו או בוטלו אינן נפתחות מחדש."
+        }
+      },
+      {
+        "id": "internal-combo-substitution",
+        "title": {
+          "en": "Make a one-order combo exception",
+          "fr": "Faire une exception de formule sur une commande",
+          "he": "ביצוע חריגה בקומבו להזמנה אחת"
+        },
+        "instructions": {
+          "en": "For a one-order combo exception, an authorized Admin user opens the combo step and selects Choose another item. The replacement is included without a surcharge and is saved on that order only. Fulfillment, scheduling and delivery rules remain unchanged. Review the selected dish and portion in the order details. Guest and POS combo pickers retain the configured composition; arrange an exception through the internal Admin order editor. See the combo guide for quantities, eligibility and recovery.",
+          "fr": "Pour une exception de formule sur une seule commande, un utilisateur Admin autorisé ouvre l’étape de la formule et choisit Choisir un autre article. Le remplacement est inclus sans supplément et enregistré uniquement sur cette commande. Les règles de remise, programmation et livraison restent inchangées. Vérifiez le plat et la portion sélectionnés dans le détail de commande. Les sélecteurs client et POS conservent la composition configurée ; effectuez l’exception dans l’éditeur interne Admin. Consultez le guide des formules pour les quantités, articles admissibles et reprises.",
+          "he": "לחריגה בקומבו בהזמנה אחת, משתמש ניהול מורשה פותח את שלב הקומבו ובוחר בחירת פריט אחר. התחליף כלול ללא תוספת מחיר ונשמר בהזמנה זו בלבד. כללי מסירה, תזמון ומשלוח אינם משתנים. בדקו את המנה והגודל שנבחרו בפרטי ההזמנה. בוחרי הקומבו ללקוחות ובקופה שומרים על ההרכב המוגדר; בצעו חריגה בעורך ההזמנות הפנימי בניהול. ראו במדריך הקומבו כמויות, פריטים מותרים וטיפול בדחייה."
         }
       }
     ],
@@ -8277,6 +8382,19 @@
           "en": "Migration 262 and AutoMigrate add immutable encrypted tenant files, source/asset_id selections in global and workflow template references, and attachment metadata in the ledger. Protected /restaurants/:id/whatsapp/meta/media and /orders/:orderID/receipt.pdf routes enforce restaurant scope, permissions and no-store. PDFs use the existing isolated Chrome via CHROME_REMOTE_URL, with no new environment variable or fiscal call. Preparation does not contact media/message endpoints; media upload and template HEADER dispatch occur after a durable claim. Revalidation covers ownership, type and the reviewed receipt digest; uncertain sends are not replayed and providers never fall back.",
           "he": "מיגרציה 262 ו-AutoMigrate מוסיפים קבצים מוצפנים ובלתי ניתנים לשינוי לפי עסק, בחירת source/asset_id בהפניות תבנית כלליות ובמסלול, ומטא-נתוני קובץ ביומן. נתיבי media ו-receipt.pdf תחת /restaurants/:id/whatsapp/meta אוכפים שיוך עסק, הרשאות ו-no-store. PDF משתמש ב-Chrome המבודד הקיים דרך CHROME_REMOTE_URL, בלי משתנה חדש או קריאה לחשבונית מס. הכנה אינה פונה לנתיבי שליחת מדיה/הודעה; העלאה ושליחת HEADER נעשות אחרי תפיסה עמידה. נבדקים שוב בעלות, סוג וגיבוב המסמך שנבדק; אין שחזור שליחה לא ודאית או מעבר ספק."
         }
+      },
+      {
+        "id": "internal-combo-substitution-contract",
+        "title": {
+          "en": "Make a one-order combo exception",
+          "fr": "Faire une exception de formule sur une commande",
+          "he": "ביצוע חריגה בקומבו להזמנה אחת"
+        },
+        "instructions": {
+          "en": "Internal combo exceptions use is_substitution per selection. Only JWT staff handlers with restaurant-scoped orders.manage set the non-JSON AllowSubstitutions authority; public callers and service creation without authority are rejected. Migration 264 adds the false-by-default combo_substitution order-item snapshot. The API validates active tenant ownership, individual fixed-price items, option membership and activation, pinned portions, step counts and size/item caps, and applies stock guards. The replacement has zero price delta and no fixed-step modifier charge. Combo definitions are never mutated; saved recomposition keeps the base-price snapshot and rolls back on failure. Admin drafts, editing and FR/HE/EN copy retain the marker. Web and Dart response contracts accept the additive snapshot without exposing a guest or POS exception control. Deploy the API and migration before Admin; keep the public help and embedded support corpus on the same reviewed release.",
+          "fr": "Les exceptions internes de formule utilisent is_substitution par choix. Seuls les handlers JWT du personnel avec orders.manage dans le restaurant définissent l’autorité AllowSubstitutions non liée au JSON ; les appels publics et créations de service sans autorité sont refusés. La migration 264 ajoute le marqueur combo_substitution des lignes, faux par défaut. L’API vérifie appartenance au restaurant, article individuel actif à prix fixe, appartenance et activation du format, portions imposées, quantités et limites par format/article, puis les gardes de stock. Le remplacement porte un delta nul et aucun supplément de modificateur fixe de l’étape. La définition reste intacte ; la recomposition conserve le prix de base historique et s’annule entièrement en cas d’échec. Les brouillons, l’édition et les textes FR/HE/EN Admin conservent le marqueur. Les contrats de réponse Web et Dart acceptent cet ajout sans contrôle d’exception client ou POS. Déployer API et migration avant Admin ; publier l’aide et le corpus intégré sur la même révision revue.",
+          "he": "חריגות פנימיות בקומבו משתמשות ב-is_substitution לכל בחירה. רק handlers של צוות עם JWT והרשאת orders.manage במסעדה קובעים סמכות AllowSubstitutions שאינה נקשרת מ-JSON; קריאות ציבוריות ויצירה בשירות ללא סמכות נדחות. מיגרציה 264 מוסיפה סימון combo_substitution בשורת הזמנה, כבוי כברירת מחדל. ה-API בודק שיוך למסעדה, פריט יחיד פעיל במחיר קבוע, שיוך והפעלת גודל, מנות קבועות, כמויות ומגבלות לגודל ולפריט, ובקרת מלאי. לתחליף הפרש מחיר אפס ואין תשלום על תוספת קבועה של השלב. ההגדרה אינה משתנה; עריכת הרכב שומרת מחיר בסיס היסטורי ומתבטלת כולה בכישלון. טיוטות, עריכה וטקסטים בשלוש השפות שומרים על הסימון. חוזי תגובה ב-Web וב-Dart מקבלים את השדה הנוסף ללא פעולת חריגה ללקוח או לקופה. יש לפרוס API ומיגרציה לפני Admin ולשמור עזרה וקורפוס תמיכה באותה גרסה שנבדקה."
+        }
       }
     ],
     "audience": "internal",
@@ -8394,6 +8512,19 @@
           "fr": "Le client Admin centralise JWT, X-Restaurant-ID, un renouvellement 401 et no-store pour les fichiers multipart/binaires. Les URL blob sont temporaires et révoquées ; aucun secret ne figure dans une URL. Les brouillons conservent la sélection de pièce jointe dans les signatures et la réconciliation après sauvegarde. Le catalogue accepte BODY plus un HEADER IMAGE/DOCUMENT compatible, quelle que soit leur position, et conserve les correspondances de variables. Les textes et procédures sont disponibles en français, hébreu et anglais.",
           "en": "The Admin file client centralizes JWT, X-Restaurant-ID, one 401 refresh and no-store for multipart/binary files. Blob URLs are temporary and revoked; URLs contain no secrets. Draft signatures and save reconciliation retain attachment selections. The catalogue accepts BODY plus one compatible IMAGE/DOCUMENT HEADER regardless of component position while preserving variable mappings. Copy and procedures are available in French, Hebrew and English.",
           "he": "לקוח הקבצים בממשק הניהול מרכז JWT, X-Restaurant-ID, חידוש 401 יחיד ו-no-store לקבצים בינריים/multipart. כתובות blob זמניות ונשללות; אין סודות בכתובות. חתימות טיוטה ובדיקת שמירה שומרות בחירת קובץ. הקטלוג מקבל BODY וכותרת IMAGE/DOCUMENT תואמת אחת בכל סדר רכיבים, תוך שמירת מיפוי משתנים. הטקסט והמדריכים זמינים בצרפתית, בעברית ובאנגלית."
+        }
+      },
+      {
+        "id": "internal-combo-substitution-contract",
+        "title": {
+          "en": "Make a one-order combo exception",
+          "fr": "Faire une exception de formule sur une commande",
+          "he": "ביצוע חריגה בקומבו להזמנה אחת"
+        },
+        "instructions": {
+          "en": "Internal combo exceptions use is_substitution per selection. Only JWT staff handlers with restaurant-scoped orders.manage set the non-JSON AllowSubstitutions authority; public callers and service creation without authority are rejected. Migration 264 adds the false-by-default combo_substitution order-item snapshot. The API validates active tenant ownership, individual fixed-price items, option membership and activation, pinned portions, step counts and size/item caps, and applies stock guards. The replacement has zero price delta and no fixed-step modifier charge. Combo definitions are never mutated; saved recomposition keeps the base-price snapshot and rolls back on failure. Admin drafts, editing and FR/HE/EN copy retain the marker. Web and Dart response contracts accept the additive snapshot without exposing a guest or POS exception control. Deploy the API and migration before Admin; keep the public help and embedded support corpus on the same reviewed release.",
+          "fr": "Les exceptions internes de formule utilisent is_substitution par choix. Seuls les handlers JWT du personnel avec orders.manage dans le restaurant définissent l’autorité AllowSubstitutions non liée au JSON ; les appels publics et créations de service sans autorité sont refusés. La migration 264 ajoute le marqueur combo_substitution des lignes, faux par défaut. L’API vérifie appartenance au restaurant, article individuel actif à prix fixe, appartenance et activation du format, portions imposées, quantités et limites par format/article, puis les gardes de stock. Le remplacement porte un delta nul et aucun supplément de modificateur fixe de l’étape. La définition reste intacte ; la recomposition conserve le prix de base historique et s’annule entièrement en cas d’échec. Les brouillons, l’édition et les textes FR/HE/EN Admin conservent le marqueur. Les contrats de réponse Web et Dart acceptent cet ajout sans contrôle d’exception client ou POS. Déployer API et migration avant Admin ; publier l’aide et le corpus intégré sur la même révision revue.",
+          "he": "חריגות פנימיות בקומבו משתמשות ב-is_substitution לכל בחירה. רק handlers של צוות עם JWT והרשאת orders.manage במסעדה קובעים סמכות AllowSubstitutions שאינה נקשרת מ-JSON; קריאות ציבוריות ויצירה בשירות ללא סמכות נדחות. מיגרציה 264 מוסיפה סימון combo_substitution בשורת הזמנה, כבוי כברירת מחדל. ה-API בודק שיוך למסעדה, פריט יחיד פעיל במחיר קבוע, שיוך והפעלת גודל, מנות קבועות, כמויות ומגבלות לגודל ולפריט, ובקרת מלאי. לתחליף הפרש מחיר אפס ואין תשלום על תוספת קבועה של השלב. ההגדרה אינה משתנה; עריכת הרכב שומרת מחיר בסיס היסטורי ומתבטלת כולה בכישלון. טיוטות, עריכה וטקסטים בשלוש השפות שומרים על הסימון. חוזי תגובה ב-Web וב-Dart מקבלים את השדה הנוסף ללא פעולת חריגה ללקוח או לקופה. יש לפרוס API ומיגרציה לפני Admin ולשמור עזרה וקורפוס תמיכה באותה גרסה שנבדקה."
         }
       }
     ],
