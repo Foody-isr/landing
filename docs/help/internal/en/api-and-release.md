@@ -35,3 +35,9 @@ For every changed behavior, map affected features, update French/Hebrew/English 
 ## WhatsApp attachment contract
 
 Migration 262 and AutoMigrate add immutable encrypted tenant files, source/asset_id selections in global and workflow template references, and attachment metadata in the ledger. Protected /restaurants/:id/whatsapp/meta/media and /orders/:orderID/receipt.pdf routes enforce restaurant scope, permissions and no-store. PDFs use the existing isolated Chrome via CHROME_REMOTE_URL, with no new environment variable or fiscal call. Preparation does not contact media/message endpoints; media upload and template HEADER dispatch occur after a durable claim. Revalidation covers ownership, type and the reviewed receipt digest; uncertain sends are not replayed and providers never fall back.
+
+<span id="counter-terminal-payment-before-kitchen" />
+
+## Wait for counter card payment before kitchen preparation
+
+Counter terminal checkout persists a restaurant-scoped order with payment_status=pending to obtain the canonical amount and stable invoice reference. Creation holds its kitchen lifecycle, blocks dispatch before payment, and excludes pending payments from the live POS overview. Only terminal approval permits the existing staff payment-recording endpoint; the client then sends the paid order to the kitchen. Declines and cancellations reuse the same order/invoice. Preserve approval reconciliation; never retry an uncertain charge. Deploy the matching API before the POS client. This change does not alter hosted provider initiation, tenant authorization, or deliberate send-before-pay table service.
