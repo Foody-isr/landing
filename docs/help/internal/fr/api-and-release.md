@@ -59,3 +59,9 @@ Les exceptions internes de formule utilisent is_substitution par choix. Seuls le
 ## Attendre le paiement au comptoir avant la cuisine
 
 L’encaissement par terminal au comptoir conserve une commande du restaurant avec payment_status=pending pour obtenir le montant canonique et une référence stable. Sa création retient le cycle cuisine, bloque l’envoi avant paiement et exclut les paiements en attente de la vue POS en direct. Seul l’accord du terminal permet l’enregistrement par le contrat staff existant ; le client envoie ensuite la commande payée en cuisine. Refus et annulations réutilisent la même commande/référence. Conservez le rapprochement des accords ; ne rejouez jamais un débit incertain. Déployez l’API correspondante avant le client POS. Les paiements hébergés, autorisations par restaurant et services à table volontairement envoyés avant paiement restent inchangés.
+
+<span id="mobile-help-corpus" />
+
+## Synchroniser le corpus du parcours mobile
+
+Lors de la publication du correctif de saisie d’adresse mobile, embarquez le public-corpus.json produit par la même version Landing que les articles FR/HE/EN. Vérifiez la révision par support/status en développement puis en production, sans appel IA payant. Épinglez le commit documentaire immuable dans les contrats Web et API ; conservez l’image API validée en développement pour sa promotion.

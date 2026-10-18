@@ -4,9 +4,9 @@
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "5d3b3ec54695807c98cf184628b26a63e6413a6d",
+      "sourceCommit": "0943c3eb02925fc2ae69f8d5545a50cd0b02afbb",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "6f52171518bfd555598e80474c0c251031047715b685cf620a0dfdcf9b512642",
+      "sourceSnapshot": "5a8c724af0f4c4ca2f88d33beb57ae33eca1a6af26abc1840f6eb1e3bea01942",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -3787,7 +3787,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "33ab55d4b3682d94021319fa5a11f08917c176afa1e28c0819dd50632d8583a4",
+          "sha256": "05a4a6c69f6fb69a5bc5e5c0d43eff882857ba25b4c7173b943982234671742a",
           "features": [
             "getting-started-using-support",
             "platform-api"
@@ -11393,7 +11393,7 @@
     },
     "foodylanding": {
       "repository": "https://github.com/Foody-isr/landing",
-      "sourceCommit": "d20e1269963e1df7d6483d07c7f221f0d530698c",
+      "sourceCommit": "13368a380321c0840b877df9269926a8d85f9d6e",
       "releaseStatus": "versioned",
       "sourceSnapshot": "fb8c0cfa166208b984db58a68c14c9ddab4b3c6cc377e37c1d9543842d68f6e2",
       "workingTreeHasChanges": true,
@@ -16266,6 +16266,19 @@
             "en": "Ask “How can I replace beef with fish in an internal combo without a surcharge?” The assistant should cite the combo or order guide, explain Choose another item and required orders.manage access, and distinguish the one-order exception from editing the saved definition. It cannot inspect or edit your actual order.",
             "fr": "Demandez « Comment remplacer le bœuf par du poisson dans une formule interne sans supplément ? ». L’assistant doit citer le guide des formules ou commandes, expliquer Choisir un autre article et la permission orders.manage, et distinguer l’exception ponctuelle de la modification de la définition enregistrée. Il ne peut ni consulter ni modifier votre commande réelle.",
             "he": "שאלו כיצד להחליף בקר בדג בקומבו פנימי ללא תוספת מחיר. העוזר צריך לצטט את מדריך הקומבו או ההזמנות, להסביר בחירת פריט אחר והרשאת orders.manage, ולהבחין בין חריגה להזמנה אחת לבין שינוי ההגדרה השמורה. הוא אינו יכול לצפות בהזמנה האמיתית או לערוך אותה."
+          }
+        },
+        {
+          "id": "mobile-address-help",
+          "title": {
+            "fr": "Retrouver la procédure d’adresse mobile",
+            "en": "Find the mobile address procedure",
+            "he": "מציאת הוראות לכתובת בנייד"
+          },
+          "instructions": {
+            "fr": "Pour une difficulté de saisie ou de sélection d’adresse sur téléphone, recherchez adresse ou livraison dans le centre d’aide et ouvrez Commander en ligne côté client. L’assistant cite ce même guide dans la langue disponible. Vérifiez sa source et la version du site ; si la procédure manque ou ne correspond pas à votre écran, contactez le restaurant sans transmettre de coordonnées client ou de données de paiement à l’assistant.",
+            "en": "For trouble entering or choosing an address on a phone, search for address or delivery in Help and open Order online as a customer. The assistant cites the same guide in an available language. Check its source and the site release; if the procedure is missing or differs from your screen, contact the restaurant without sharing customer details or payment data with the assistant.",
+            "he": "לקושי בהקלדה או בבחירת כתובת בטלפון חפשו כתובת או משלוח במרכז העזרה ופתחו הזמנה מקוונת כלקוח. העוזר מצטט את אותו מדריך בשפה זמינה. בדקו מקור וגרסת אתר; אם ההוראות חסרות או אינן תואמות למסך, פנו למסעדה בלי לשלוח פרטי לקוחות או תשלום לעוזר."
           }
         }
       ],
@@ -36094,6 +36107,19 @@
             "en": "Counter terminal checkout persists a restaurant-scoped order with payment_status=pending to obtain the canonical amount and stable invoice reference. Creation holds its kitchen lifecycle, blocks dispatch before payment, and excludes pending payments from the live POS overview. Only terminal approval permits the existing staff payment-recording endpoint; the client then sends the paid order to the kitchen. Declines and cancellations reuse the same order/invoice. Preserve approval reconciliation; never retry an uncertain charge. Deploy the matching API before the POS client. This change does not alter hosted provider initiation, tenant authorization, or deliberate send-before-pay table service.",
             "fr": "L’encaissement par terminal au comptoir conserve une commande du restaurant avec payment_status=pending pour obtenir le montant canonique et une référence stable. Sa création retient le cycle cuisine, bloque l’envoi avant paiement et exclut les paiements en attente de la vue POS en direct. Seul l’accord du terminal permet l’enregistrement par le contrat staff existant ; le client envoie ensuite la commande payée en cuisine. Refus et annulations réutilisent la même commande/référence. Conservez le rapprochement des accords ; ne rejouez jamais un débit incertain. Déployez l’API correspondante avant le client POS. Les paiements hébergés, autorisations par restaurant et services à table volontairement envoyés avant paiement restent inchangés.",
             "he": "גבייה במסוף בדלפק שומרת הזמנה בתחום המסעדה עם payment_status=pending כדי לקבל סכום מוסמך ומזהה חשבונית יציב. יצירתה מעכבת את מסלול המטבח, חוסמת שליחה לפני תשלום ומחריגה תשלומים ממתינים מתצוגת הקופה החיה. רק אישור המסוף מאפשר רישום תשלום בחוזה הצוות הקיים; הלקוח שולח לאחר מכן את ההזמנה המשולמת למטבח. סירוב וביטול משתמשים באותה הזמנה וחשבונית. יש לשמר התאמת אישורים ולא לחזור על חיוב שתוצאתו אינה ודאית. יש לפרוס את ה-API המתאים לפני לקוח הקופה. אין שינוי בייזום תשלומים מתארחים, בהרשאות המסעדה או בשירות שולחן שנשלח במכוון לפני הגבייה."
+          }
+        },
+        {
+          "id": "mobile-help-corpus",
+          "title": {
+            "fr": "Synchroniser le corpus du parcours mobile",
+            "en": "Synchronize the mobile ordering corpus",
+            "he": "סנכרון קורפוס להזמנה בנייד"
+          },
+          "instructions": {
+            "fr": "Lors de la publication du correctif de saisie d’adresse mobile, embarquez le public-corpus.json produit par la même version Landing que les articles FR/HE/EN. Vérifiez la révision par support/status en développement puis en production, sans appel IA payant. Épinglez le commit documentaire immuable dans les contrats Web et API ; conservez l’image API validée en développement pour sa promotion.",
+            "en": "When releasing the mobile address entry correction, embed public-corpus.json from the same Landing release as the FR/HE/EN guides. Verify its revision through support/status in development and production without a paid AI call. Pin the immutable documentation commit in Web and API contracts; promote the API image verified in development.",
+            "he": "בפרסום תיקון הקלדת כתובת בנייד הטמיעו public-corpus.json מאותה גרסת Landing של מדריכי עברית, צרפתית ואנגלית. בדקו את הגרסה דרך support/status בפיתוח ובייצור בלי קריאת AI בתשלום. הצמידו קומיט תיעוד קבוע בחוזי Web ו-API וקדמו את תמונת ה-API שנבדקה בפיתוח."
           }
         }
       ],
@@ -80119,7 +80145,7 @@
   "coverage": {
     "sharedRuntimeFiles": 427,
     "features": 98,
-    "operations": 424,
+    "operations": 426,
     "sourceFiles": 2066,
     "surfaces": 1976,
     "unclassifiedRoutes": []

@@ -59,3 +59,9 @@ Internal combo exceptions use is_substitution per selection. Only JWT staff hand
 ## Wait for counter card payment before kitchen preparation
 
 Counter terminal checkout persists a restaurant-scoped order with payment_status=pending to obtain the canonical amount and stable invoice reference. Creation holds its kitchen lifecycle, blocks dispatch before payment, and excludes pending payments from the live POS overview. Only terminal approval permits the existing staff payment-recording endpoint; the client then sends the paid order to the kitchen. Declines and cancellations reuse the same order/invoice. Preserve approval reconciliation; never retry an uncertain charge. Deploy the matching API before the POS client. This change does not alter hosted provider initiation, tenant authorization, or deliberate send-before-pay table service.
+
+<span id="mobile-help-corpus" />
+
+## Synchronize the mobile ordering corpus
+
+When releasing the mobile address entry correction, embed public-corpus.json from the same Landing release as the FR/HE/EN guides. Verify its revision through support/status in development and production without a paid AI call. Pin the immutable documentation commit in Web and API contracts; promote the API image verified in development.

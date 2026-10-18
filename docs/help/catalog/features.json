@@ -1024,6 +1024,19 @@
           "fr": "Demandez « Comment remplacer le bœuf par du poisson dans une formule interne sans supplément ? ». L’assistant doit citer le guide des formules ou commandes, expliquer Choisir un autre article et la permission orders.manage, et distinguer l’exception ponctuelle de la modification de la définition enregistrée. Il ne peut ni consulter ni modifier votre commande réelle.",
           "he": "שאלו כיצד להחליף בקר בדג בקומבו פנימי ללא תוספת מחיר. העוזר צריך לצטט את מדריך הקומבו או ההזמנות, להסביר בחירת פריט אחר והרשאת orders.manage, ולהבחין בין חריגה להזמנה אחת לבין שינוי ההגדרה השמורה. הוא אינו יכול לצפות בהזמנה האמיתית או לערוך אותה."
         }
+      },
+      {
+        "id": "mobile-address-help",
+        "title": {
+          "fr": "Retrouver la procédure d’adresse mobile",
+          "en": "Find the mobile address procedure",
+          "he": "מציאת הוראות לכתובת בנייד"
+        },
+        "instructions": {
+          "fr": "Pour une difficulté de saisie ou de sélection d’adresse sur téléphone, recherchez adresse ou livraison dans le centre d’aide et ouvrez Commander en ligne côté client. L’assistant cite ce même guide dans la langue disponible. Vérifiez sa source et la version du site ; si la procédure manque ou ne correspond pas à votre écran, contactez le restaurant sans transmettre de coordonnées client ou de données de paiement à l’assistant.",
+          "en": "For trouble entering or choosing an address on a phone, search for address or delivery in Help and open Order online as a customer. The assistant cites the same guide in an available language. Check its source and the site release; if the procedure is missing or differs from your screen, contact the restaurant without sharing customer details or payment data with the assistant.",
+          "he": "לקושי בהקלדה או בבחירת כתובת בטלפון חפשו כתובת או משלוח במרכז העזרה ופתחו הזמנה מקוונת כלקוח. העוזר מצטט את אותו מדריך בשפה זמינה. בדקו מקור וגרסת אתר; אם ההוראות חסרות או אינן תואמות למסך, פנו למסעדה בלי לשלוח פרטי לקוחות או תשלום לעוזר."
+        }
       }
     ],
     "audience": "public",
@@ -8635,6 +8648,19 @@
           "en": "Counter terminal checkout persists a restaurant-scoped order with payment_status=pending to obtain the canonical amount and stable invoice reference. Creation holds its kitchen lifecycle, blocks dispatch before payment, and excludes pending payments from the live POS overview. Only terminal approval permits the existing staff payment-recording endpoint; the client then sends the paid order to the kitchen. Declines and cancellations reuse the same order/invoice. Preserve approval reconciliation; never retry an uncertain charge. Deploy the matching API before the POS client. This change does not alter hosted provider initiation, tenant authorization, or deliberate send-before-pay table service.",
           "fr": "L’encaissement par terminal au comptoir conserve une commande du restaurant avec payment_status=pending pour obtenir le montant canonique et une référence stable. Sa création retient le cycle cuisine, bloque l’envoi avant paiement et exclut les paiements en attente de la vue POS en direct. Seul l’accord du terminal permet l’enregistrement par le contrat staff existant ; le client envoie ensuite la commande payée en cuisine. Refus et annulations réutilisent la même commande/référence. Conservez le rapprochement des accords ; ne rejouez jamais un débit incertain. Déployez l’API correspondante avant le client POS. Les paiements hébergés, autorisations par restaurant et services à table volontairement envoyés avant paiement restent inchangés.",
           "he": "גבייה במסוף בדלפק שומרת הזמנה בתחום המסעדה עם payment_status=pending כדי לקבל סכום מוסמך ומזהה חשבונית יציב. יצירתה מעכבת את מסלול המטבח, חוסמת שליחה לפני תשלום ומחריגה תשלומים ממתינים מתצוגת הקופה החיה. רק אישור המסוף מאפשר רישום תשלום בחוזה הצוות הקיים; הלקוח שולח לאחר מכן את ההזמנה המשולמת למטבח. סירוב וביטול משתמשים באותה הזמנה וחשבונית. יש לשמר התאמת אישורים ולא לחזור על חיוב שתוצאתו אינה ודאית. יש לפרוס את ה-API המתאים לפני לקוח הקופה. אין שינוי בייזום תשלומים מתארחים, בהרשאות המסעדה או בשירות שולחן שנשלח במכוון לפני הגבייה."
+        }
+      },
+      {
+        "id": "mobile-help-corpus",
+        "title": {
+          "fr": "Synchroniser le corpus du parcours mobile",
+          "en": "Synchronize the mobile ordering corpus",
+          "he": "סנכרון קורפוס להזמנה בנייד"
+        },
+        "instructions": {
+          "fr": "Lors de la publication du correctif de saisie d’adresse mobile, embarquez le public-corpus.json produit par la même version Landing que les articles FR/HE/EN. Vérifiez la révision par support/status en développement puis en production, sans appel IA payant. Épinglez le commit documentaire immuable dans les contrats Web et API ; conservez l’image API validée en développement pour sa promotion.",
+          "en": "When releasing the mobile address entry correction, embed public-corpus.json from the same Landing release as the FR/HE/EN guides. Verify its revision through support/status in development and production without a paid AI call. Pin the immutable documentation commit in Web and API contracts; promote the API image verified in development.",
+          "he": "בפרסום תיקון הקלדת כתובת בנייד הטמיעו public-corpus.json מאותה גרסת Landing של מדריכי עברית, צרפתית ואנגלית. בדקו את הגרסה דרך support/status בפיתוח ובייצור בלי קריאת AI בתשלום. הצמידו קומיט תיעוד קבוע בחוזי Web ו-API וקדמו את תמונת ה-API שנבדקה בפיתוח."
         }
       }
     ],
