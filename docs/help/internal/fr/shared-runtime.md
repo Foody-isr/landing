@@ -51,3 +51,9 @@ Les exceptions internes de formule utilisent is_substitution par choix. Seuls le
 ## Valider le clavier dans le sélecteur de remise
 
 Sur mobile et bureau, vérifiez le choix initial Me connecter puis Continuer en tant qu’invité, présentés comme liens textuels sans bouton jaune supplémentaire. Avant le choix, ni champ d’adresse ni confirmation ne doivent apparaître. Vérifiez l’ouverture/fermeture de la connexion et l’accès invité : adresse en Livraison, informations de retrait sans adresse de livraison en Retrait. Retour doit conserver le brouillon ; le choix invité ne se répète pas à chaque changement de service ou réouverture. Contrôlez aussi la carte d’adresse validée d’un client connecté et Modifier. Dans une hauteur visible de 360 px avec au moins quatre résultats, quatre suggestions entières de 44 px doivent rester visibles. Le titre, les onglets, Retour et le champ gardent leur position pendant l’ouverture et la fermeture du clavier. Vérifiez les écrans de 320 px, le bureau et le français, l’hébreu et l’anglais. La vue ne doit jamais dépendre du focus ou du clavier. La saisie s’ouvre uniquement par un choix explicite. Conserver le focus intérieur et la hauteur naturelle du dropdown. Vérifier le clavier logiciel iOS réel avant publication.
+
+<span id="customer-social-choice" />
+
+## Contrôler les choix de connexion client
+
+Me connecter ouvre Google et le formulaire e-mail + mot de passe. Facebook et Apple apparaissent seulement si le service les a configurés. La connexion par e-mail + code seul n’est plus proposée. Les codes de création, de vérification d’adresse et de récupération de mot de passe restent distincts. Vérifiez la fermeture et la reprise sans perte du brouillon, sur mobile et bureau ; les quatre suggestions entières avec clavier ouvert gardent la même géométrie. Les boutons de connexion ne doivent pas réintroduire un déplacement des onglets ou du champ.
