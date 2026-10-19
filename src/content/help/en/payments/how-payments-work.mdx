@@ -6,12 +6,26 @@ tags:
   - payments
   - payments-how-payments-work
   - how-payments-work
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-19'
 featureId: payments-how-payments-work
 audience: public
 releaseStatus: available
 ---
 Open the corresponding Foody workspace described below.
+
+<span id="verifone-admin-refund-void" />
+
+## Refund or void a Verifone online payment
+
+In Admin → Orders, open the order and its payment section. An owner or manager with payments.manage can use Refund or void payment for a single verified ILS Verifone online sale or confirmed capture. Table/session, mixed tenders, partial collections, external-terminal payments and catering deposits are not supported by this control. An uncaptured hold still uses the existing cancellation/release workflow.
+
+Check Available to refund, then choose Refund payment. Keep Full remaining amount or choose Partial amount and enter the exact amount. Enter a reason of 3–300 characters, review the amount in the confirmation and submit once. Successful matched refunds already visible in Verifone history reduce the ceiling, including refunds made in Central; incomplete or unverified history blocks a new operation. The bounded history lookup covers transactions created within two years.
+
+Void entire payment is offered only for a captured transaction in SETTLEMENT_REQUESTED with no prior refund. VOID is total only. Eligibility follows the provider state and merchant/acquirer rules, not a fixed midnight or 24-hour cutoff. A refund can also be refused until the acquirer settles the sale. A refusal never triggers an automatic alternate operation.
+
+Read Payment operations for the amount, reason, date, actor account and provider transaction ID. Confirmed by Verifone requires an independent transaction read with matching parent, amount, currency, reference and merchant. A partial refund leaves the payment marked paid; a full confirmed return marks its payment refunded. Neither changes food status, items, stock or fulfillment.
+
+If the result is unknown or the browser loses the response, do not submit another refund or switch to VOID. Use Check with Verifone, which only verifies existing operations. A request with no recoverable provider ID stays blocked for support/Central verification, including after reload or an API restart. Never treat an HTTP success alone as refunded. Check the corresponding Invoice4U credit/cancellation document separately; this control does not confirm or create a fiscal credit document. FoodyPOS controls are not included in this version.
 
 <span id="verifone-readable-hosted-theme" />
 

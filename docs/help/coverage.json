@@ -431,10 +431,15 @@
       "audience": "public",
       "selectors": {
         "foodyadmin": [
-          "src/app/[restaurantId]/settings/payments/**"
+          "src/app/[restaurantId]/settings/payments/**",
+          "src/components/orders/PaymentAdjustments.tsx",
+          "src/lib/payment-adjustment-copy.ts",
+          "src/lib/orders/payment-adjustments.ts",
+          "src/lib/api.ts"
         ],
         "foodyserver": [
-          "internal/payment/**"
+          "internal/payment/**",
+          "internal/common/payment_adjustment.go"
         ],
         "foodyweb": [
           "app/r/[restaurantId]/payment/**",

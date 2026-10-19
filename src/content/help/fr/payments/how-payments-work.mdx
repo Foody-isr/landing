@@ -6,12 +6,26 @@ tags:
   - payments
   - payments-how-payments-work
   - how-payments-work
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-19'
 featureId: payments-how-payments-work
 audience: public
 releaseStatus: available
 ---
 Ouvrez l’espace Foody correspondant décrit ci-dessous.
+
+<span id="verifone-admin-refund-void" />
+
+## Rembourser ou annuler un paiement en ligne Verifone
+
+Dans Admin → Commandes, ouvrez la commande puis sa section paiement. Un propriétaire ou responsable avec payments.manage peut utiliser Rembourser ou annuler le paiement pour une vente en ligne Verifone unique en ILS ou une capture confirmée. Les tables/sessions, paiements mixtes, encaissements partiels, paiements par terminal externe et acomptes traiteur ne sont pas pris en charge par ce contrôle. Une préautorisation non encaissée conserve son parcours existant d’annulation/libération.
+
+Contrôlez le Montant remboursable, puis choisissez Rembourser le paiement. Gardez Tout le montant restant ou choisissez Montant partiel et saisissez le montant exact. Indiquez un motif de 3 à 300 caractères, vérifiez le montant dans la confirmation puis envoyez une seule fois. Les remboursements liés approuvés et visibles dans l’historique Verifone réduisent le plafond, y compris ceux effectués dans Central ; un historique incomplet ou non vérifié bloque l’opération. La consultation bornée couvre les transactions créées depuis moins de deux ans.
+
+Annuler tout le paiement apparaît uniquement pour une transaction encaissée en SETTLEMENT_REQUESTED sans remboursement antérieur. Le VOID est total uniquement. L’admissibilité dépend de l’état fournisseur et des règles commerçant/acquéreur, pas d’un passage à minuit ou d’un délai fixe de 24 heures. Un remboursement peut aussi être refusé avant la remise par l’acquéreur. Aucun refus ne lance automatiquement une opération alternative.
+
+Consultez Opérations de paiement pour le montant, motif, date, compte de l’opérateur et identifiant fournisseur. Confirmé par Verifone exige une lecture indépendante concordante : transaction parente, montant, devise, référence et commerçant. Un remboursement partiel conserve le paiement payé ; une restitution totale confirmée marque le paiement remboursé. Aucune action ne modifie le statut de préparation, les articles, le stock ou la remise.
+
+Si le résultat est inconnu ou si le navigateur perd la réponse, ne renvoyez pas de remboursement et ne passez pas au VOID. Vérifier auprès de Verifone contrôle uniquement les opérations existantes. Sans identifiant fournisseur récupérable, la demande reste bloquée pour vérification par le support/Central, même après rechargement ou redémarrage de l’API. Un simple succès HTTP ne prouve pas le remboursement. Vérifiez séparément l’avoir ou document d’annulation Invoice4U ; ce contrôle ne crée ni ne confirme un avoir fiscal. Les boutons FoodyPOS ne sont pas inclus dans cette version.
 
 <span id="verifone-readable-hosted-theme" />
 

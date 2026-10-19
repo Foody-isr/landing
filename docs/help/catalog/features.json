@@ -2555,6 +2555,19 @@
     },
     "operations": [
       {
+        "id": "verifone-admin-money-operations",
+        "title": {
+          "en": "Refund or void a Verifone online payment",
+          "fr": "Rembourser ou annuler un paiement en ligne Verifone",
+          "he": "זיכוי או ביטול תשלום מקוון ב-Verifone"
+        },
+        "instructions": {
+          "en": "The Admin order payment section supports total or partial matched refunds and total VOID for an eligible single Verifone online payment, for owners/managers with payments.manage. Provider state, captured amount and verified history govern eligibility, not a fixed 24-hour rule. This does not cancel preparation or fulfillment and does not add a POS terminal refund button. Unknown results stay reserved and must be checked, never resubmitted. Invoice4U credit/cancellation documents require a separate check. See [the online payment procedure](/en/help/payments/how-payments-work#verifone-admin-refund-void).",
+          "fr": "La section paiement d’une commande Admin permet le remboursement lié total ou partiel et le VOID total d’un paiement en ligne Verifone unique admissible, pour un propriétaire/responsable avec payments.manage. L’état fournisseur, le montant encaissé et l’historique vérifié déterminent l’admissibilité, pas un délai fixe de 24 heures. La préparation et la remise ne sont pas annulées et aucun bouton de remboursement terminal POS n’est ajouté. Un résultat inconnu reste réservé : vérifiez-le sans renvoyer l’opération. Les avoirs et annulations Invoice4U nécessitent un contrôle distinct. Voir [la procédure de paiement en ligne](/fr/help/payments/how-payments-work#verifone-admin-refund-void).",
+          "he": "באזור התשלום של הזמנה בממשק הניהול ניתן לבצע זיכוי מקושר מלא או חלקי ו-VOID מלא לתשלום מקוון יחיד ומאומת ב-Verifone, עבור בעלים או מנהל עם payments.manage. מצב הספק, סכום שנלכד והיסטוריה מאומתת קובעים זכאות ולא כלל קבוע של 24 שעות. ההכנה והמסירה אינן מבוטלות ולא נוסף כפתור זיכוי למסוף בקופה. תוצאה לא ידועה נשארת שמורה ויש לבדוק אותה בלי לשלוח שוב. מסמכי זיכוי וביטול ב-Invoice4U דורשים בדיקה נפרדת. ראו [נוהל תשלום מקוון](/he/help/payments/how-payments-work#verifone-admin-refund-void)."
+        }
+      },
+      {
         "id": "weight-hold-margin",
         "level": 2,
         "title": {
@@ -2695,7 +2708,7 @@
     "audience": "public",
     "status": "available",
     "preserveExisting": true,
-    "procedureUpdatedAt": "2026-10-18"
+    "procedureUpdatedAt": "2026-10-19"
   },
   {
     "id": "payments-how-payments-work",
@@ -2713,10 +2726,15 @@
     },
     "selectors": {
       "foodyadmin": [
-        "src/app/[restaurantId]/settings/payments/**"
+        "src/app/[restaurantId]/settings/payments/**",
+        "src/components/orders/PaymentAdjustments.tsx",
+        "src/lib/payment-adjustment-copy.ts",
+        "src/lib/orders/payment-adjustments.ts",
+        "src/lib/api.ts"
       ],
       "foodyserver": [
-        "internal/payment/**"
+        "internal/payment/**",
+        "internal/common/payment_adjustment.go"
       ],
       "foodyweb": [
         "app/r/[restaurantId]/payment/**",
@@ -2727,6 +2745,19 @@
       ]
     },
     "operations": [
+      {
+        "id": "verifone-admin-refund-void",
+        "title": {
+          "en": "Refund or void a Verifone online payment",
+          "fr": "Rembourser ou annuler un paiement en ligne Verifone",
+          "he": "זיכוי או ביטול תשלום מקוון ב-Verifone"
+        },
+        "instructions": {
+          "en": "In Admin → Orders, open the order and its payment section. An owner or manager with payments.manage can use Refund or void payment for a single verified ILS Verifone online sale or confirmed capture. Table/session, mixed tenders, partial collections, external-terminal payments and catering deposits are not supported by this control. An uncaptured hold still uses the existing cancellation/release workflow.\n\nCheck Available to refund, then choose Refund payment. Keep Full remaining amount or choose Partial amount and enter the exact amount. Enter a reason of 3–300 characters, review the amount in the confirmation and submit once. Successful matched refunds already visible in Verifone history reduce the ceiling, including refunds made in Central; incomplete or unverified history blocks a new operation. The bounded history lookup covers transactions created within two years.\n\nVoid entire payment is offered only for a captured transaction in SETTLEMENT_REQUESTED with no prior refund. VOID is total only. Eligibility follows the provider state and merchant/acquirer rules, not a fixed midnight or 24-hour cutoff. A refund can also be refused until the acquirer settles the sale. A refusal never triggers an automatic alternate operation.\n\nRead Payment operations for the amount, reason, date, actor account and provider transaction ID. Confirmed by Verifone requires an independent transaction read with matching parent, amount, currency, reference and merchant. A partial refund leaves the payment marked paid; a full confirmed return marks its payment refunded. Neither changes food status, items, stock or fulfillment.\n\nIf the result is unknown or the browser loses the response, do not submit another refund or switch to VOID. Use Check with Verifone, which only verifies existing operations. A request with no recoverable provider ID stays blocked for support/Central verification, including after reload or an API restart. Never treat an HTTP success alone as refunded. Check the corresponding Invoice4U credit/cancellation document separately; this control does not confirm or create a fiscal credit document. FoodyPOS controls are not included in this version.",
+          "fr": "Dans Admin → Commandes, ouvrez la commande puis sa section paiement. Un propriétaire ou responsable avec payments.manage peut utiliser Rembourser ou annuler le paiement pour une vente en ligne Verifone unique en ILS ou une capture confirmée. Les tables/sessions, paiements mixtes, encaissements partiels, paiements par terminal externe et acomptes traiteur ne sont pas pris en charge par ce contrôle. Une préautorisation non encaissée conserve son parcours existant d’annulation/libération.\n\nContrôlez le Montant remboursable, puis choisissez Rembourser le paiement. Gardez Tout le montant restant ou choisissez Montant partiel et saisissez le montant exact. Indiquez un motif de 3 à 300 caractères, vérifiez le montant dans la confirmation puis envoyez une seule fois. Les remboursements liés approuvés et visibles dans l’historique Verifone réduisent le plafond, y compris ceux effectués dans Central ; un historique incomplet ou non vérifié bloque l’opération. La consultation bornée couvre les transactions créées depuis moins de deux ans.\n\nAnnuler tout le paiement apparaît uniquement pour une transaction encaissée en SETTLEMENT_REQUESTED sans remboursement antérieur. Le VOID est total uniquement. L’admissibilité dépend de l’état fournisseur et des règles commerçant/acquéreur, pas d’un passage à minuit ou d’un délai fixe de 24 heures. Un remboursement peut aussi être refusé avant la remise par l’acquéreur. Aucun refus ne lance automatiquement une opération alternative.\n\nConsultez Opérations de paiement pour le montant, motif, date, compte de l’opérateur et identifiant fournisseur. Confirmé par Verifone exige une lecture indépendante concordante : transaction parente, montant, devise, référence et commerçant. Un remboursement partiel conserve le paiement payé ; une restitution totale confirmée marque le paiement remboursé. Aucune action ne modifie le statut de préparation, les articles, le stock ou la remise.\n\nSi le résultat est inconnu ou si le navigateur perd la réponse, ne renvoyez pas de remboursement et ne passez pas au VOID. Vérifier auprès de Verifone contrôle uniquement les opérations existantes. Sans identifiant fournisseur récupérable, la demande reste bloquée pour vérification par le support/Central, même après rechargement ou redémarrage de l’API. Un simple succès HTTP ne prouve pas le remboursement. Vérifiez séparément l’avoir ou document d’annulation Invoice4U ; ce contrôle ne crée ni ne confirme un avoir fiscal. Les boutons FoodyPOS ne sont pas inclus dans cette version.",
+          "he": "בממשק הניהול → הזמנות פתחו את ההזמנה ואת אזור התשלום. בעלים או מנהל עם payments.manage יכולים להשתמש בזיכוי או ביטול תשלום עבור עסקה מקוונת יחידה ומאומתת ב-Verifone בשקלים, או לכידה מאושרת. שולחנות וסשנים, אמצעי תשלום מעורבים, גבייה חלקית, מסוף חיצוני ומקדמות קייטרינג אינם נתמכים בבקרה זו. אישור מוקדם שלא חויב נשאר בתהליך הביטול והשחרור הקיים.\n\nבדקו יתרה לזיכוי ובחרו זיכוי התשלום. השאירו כל היתרה או בחרו סכום חלקי והזינו סכום מדויק. כתבו סיבה באורך 3–300 תווים, בדקו את הסכום באישור ושלחו פעם אחת. זיכויים מקושרים שאושרו ומופיעים בהיסטוריית Verifone מקטינים את התקרה, לרבות זיכויים שבוצעו ב-Central. היסטוריה חסרה או לא מאומתת חוסמת פעולה חדשה. הבדיקה המוגבלת מכסה עסקאות שנוצרו בשנתיים האחרונות.\n\nביטול התשלום במלואו מוצע רק לעסקה שנלכדה במצב SETTLEMENT_REQUESTED וללא זיכוי קודם. VOID מבטל את מלוא הסכום בלבד. הזכאות נקבעת לפי מצב הספק וכללי בית העסק והסולק ולא לפי חצות או 24 שעות קבועות. הסולק עשוי לסרב לזיכוי לפני השלמת הסליקה. דחייה אינה מפעילה אוטומטית פעולה חלופית.\n\nבפעולות בתשלום מופיעים סכום, סיבה, תאריך, חשבון מפעיל ומזהה עסקה של הספק. אושר על ידי Verifone דורש קריאה עצמאית עם התאמה לעסקת האב, לסכום, למטבע, להפניה ולבית העסק. זיכוי חלקי משאיר את התשלום כמשולם; החזר מלא שאומת מסמן את התשלום כמזוכה. מצב הכנת האוכל, הפריטים, המלאי והמסירה אינם משתנים.\n\nאם התוצאה אינה ידועה או שהדפדפן איבד את התשובה, אין לשלוח זיכוי נוסף או לעבור ל-VOID. בדיקה מול Verifone בודקת רק פעולות קיימות. בקשה ללא מזהה ספק שניתן לשחזר נשארת חסומה לבדיקת התמיכה או Central, גם אחרי רענון או אתחול ה-API. הצלחת HTTP לבדה אינה אישור לזיכוי. יש לבדוק בנפרד את מסמך הזיכוי או הביטול ב-Invoice4U; בקרה זו אינה יוצרת או מאשרת מסמך זיכוי מס. כפתורי FoodyPOS אינם נכללים בגרסה זו."
+        }
+      },
       {
         "id": "verifone-readable-hosted-theme",
         "title": {
@@ -2828,7 +2859,7 @@
     "audience": "public",
     "status": "available",
     "preserveExisting": true,
-    "procedureUpdatedAt": "2026-10-18"
+    "procedureUpdatedAt": "2026-10-19"
   },
   {
     "id": "printers-epson-tm-u220iib",
@@ -3866,6 +3897,19 @@
     },
     "operations": [
       {
+        "id": "verifone-admin-money-operations",
+        "title": {
+          "en": "Refund or void a Verifone online payment",
+          "fr": "Rembourser ou annuler un paiement en ligne Verifone",
+          "he": "זיכוי או ביטול תשלום מקוון ב-Verifone"
+        },
+        "instructions": {
+          "en": "The Admin order payment section supports total or partial matched refunds and total VOID for an eligible single Verifone online payment, for owners/managers with payments.manage. Provider state, captured amount and verified history govern eligibility, not a fixed 24-hour rule. This does not cancel preparation or fulfillment and does not add a POS terminal refund button. Unknown results stay reserved and must be checked, never resubmitted. Invoice4U credit/cancellation documents require a separate check. See [the online payment procedure](/en/help/payments/how-payments-work#verifone-admin-refund-void).",
+          "fr": "La section paiement d’une commande Admin permet le remboursement lié total ou partiel et le VOID total d’un paiement en ligne Verifone unique admissible, pour un propriétaire/responsable avec payments.manage. L’état fournisseur, le montant encaissé et l’historique vérifié déterminent l’admissibilité, pas un délai fixe de 24 heures. La préparation et la remise ne sont pas annulées et aucun bouton de remboursement terminal POS n’est ajouté. Un résultat inconnu reste réservé : vérifiez-le sans renvoyer l’opération. Les avoirs et annulations Invoice4U nécessitent un contrôle distinct. Voir [la procédure de paiement en ligne](/fr/help/payments/how-payments-work#verifone-admin-refund-void).",
+          "he": "באזור התשלום של הזמנה בממשק הניהול ניתן לבצע זיכוי מקושר מלא או חלקי ו-VOID מלא לתשלום מקוון יחיד ומאומת ב-Verifone, עבור בעלים או מנהל עם payments.manage. מצב הספק, סכום שנלכד והיסטוריה מאומתת קובעים זכאות ולא כלל קבוע של 24 שעות. ההכנה והמסירה אינן מבוטלות ולא נוסף כפתור זיכוי למסוף בקופה. תוצאה לא ידועה נשארת שמורה ויש לבדוק אותה בלי לשלוח שוב. מסמכי זיכוי וביטול ב-Invoice4U דורשים בדיקה נפרדת. ראו [נוהל תשלום מקוון](/he/help/payments/how-payments-work#verifone-admin-refund-void)."
+        }
+      },
+      {
         "id": "filter",
         "title": {
           "en": "Find the right order",
@@ -3991,7 +4035,7 @@
       "fr": "Les modifications nécessitent orders.manage ; la lecture ne donne pas le droit de modifier.",
       "he": "שינוי הזמנות דורש orders.manage; הרשאת צפייה אינה הרשאת עריכה."
     },
-    "procedureUpdatedAt": "2026-10-18"
+    "procedureUpdatedAt": "2026-10-19"
   },
   {
     "id": "calendar",
@@ -4323,6 +4367,19 @@
     },
     "operations": [
       {
+        "id": "verifone-admin-money-operations",
+        "title": {
+          "en": "Refund or void a Verifone online payment",
+          "fr": "Rembourser ou annuler un paiement en ligne Verifone",
+          "he": "זיכוי או ביטול תשלום מקוון ב-Verifone"
+        },
+        "instructions": {
+          "en": "The Admin order payment section supports total or partial matched refunds and total VOID for an eligible single Verifone online payment, for owners/managers with payments.manage. Provider state, captured amount and verified history govern eligibility, not a fixed 24-hour rule. This does not cancel preparation or fulfillment and does not add a POS terminal refund button. Unknown results stay reserved and must be checked, never resubmitted. Invoice4U credit/cancellation documents require a separate check. See [the online payment procedure](/en/help/payments/how-payments-work#verifone-admin-refund-void).",
+          "fr": "La section paiement d’une commande Admin permet le remboursement lié total ou partiel et le VOID total d’un paiement en ligne Verifone unique admissible, pour un propriétaire/responsable avec payments.manage. L’état fournisseur, le montant encaissé et l’historique vérifié déterminent l’admissibilité, pas un délai fixe de 24 heures. La préparation et la remise ne sont pas annulées et aucun bouton de remboursement terminal POS n’est ajouté. Un résultat inconnu reste réservé : vérifiez-le sans renvoyer l’opération. Les avoirs et annulations Invoice4U nécessitent un contrôle distinct. Voir [la procédure de paiement en ligne](/fr/help/payments/how-payments-work#verifone-admin-refund-void).",
+          "he": "באזור התשלום של הזמנה בממשק הניהול ניתן לבצע זיכוי מקושר מלא או חלקי ו-VOID מלא לתשלום מקוון יחיד ומאומת ב-Verifone, עבור בעלים או מנהל עם payments.manage. מצב הספק, סכום שנלכד והיסטוריה מאומתת קובעים זכאות ולא כלל קבוע של 24 שעות. ההכנה והמסירה אינן מבוטלות ולא נוסף כפתור זיכוי למסוף בקופה. תוצאה לא ידועה נשארת שמורה ויש לבדוק אותה בלי לשלוח שוב. מסמכי זיכוי וביטול ב-Invoice4U דורשים בדיקה נפרדת. ראו [נוהל תשלום מקוון](/he/help/payments/how-payments-work#verifone-admin-refund-void)."
+        }
+      },
+      {
         "id": "weight-hold-margin",
         "level": 2,
         "title": {
@@ -4444,7 +4501,7 @@
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-18"
+    "procedureUpdatedAt": "2026-10-19"
   },
   {
     "id": "courier",
@@ -6681,6 +6738,19 @@
     },
     "operations": [
       {
+        "id": "verifone-admin-money-operations",
+        "title": {
+          "en": "Refund or void a Verifone online payment",
+          "fr": "Rembourser ou annuler un paiement en ligne Verifone",
+          "he": "זיכוי או ביטול תשלום מקוון ב-Verifone"
+        },
+        "instructions": {
+          "en": "The Admin order payment section supports total or partial matched refunds and total VOID for an eligible single Verifone online payment, for owners/managers with payments.manage. Provider state, captured amount and verified history govern eligibility, not a fixed 24-hour rule. This does not cancel preparation or fulfillment and does not add a POS terminal refund button. Unknown results stay reserved and must be checked, never resubmitted. Invoice4U credit/cancellation documents require a separate check. See [the online payment procedure](/en/help/payments/how-payments-work#verifone-admin-refund-void).",
+          "fr": "La section paiement d’une commande Admin permet le remboursement lié total ou partiel et le VOID total d’un paiement en ligne Verifone unique admissible, pour un propriétaire/responsable avec payments.manage. L’état fournisseur, le montant encaissé et l’historique vérifié déterminent l’admissibilité, pas un délai fixe de 24 heures. La préparation et la remise ne sont pas annulées et aucun bouton de remboursement terminal POS n’est ajouté. Un résultat inconnu reste réservé : vérifiez-le sans renvoyer l’opération. Les avoirs et annulations Invoice4U nécessitent un contrôle distinct. Voir [la procédure de paiement en ligne](/fr/help/payments/how-payments-work#verifone-admin-refund-void).",
+          "he": "באזור התשלום של הזמנה בממשק הניהול ניתן לבצע זיכוי מקושר מלא או חלקי ו-VOID מלא לתשלום מקוון יחיד ומאומת ב-Verifone, עבור בעלים או מנהל עם payments.manage. מצב הספק, סכום שנלכד והיסטוריה מאומתת קובעים זכאות ולא כלל קבוע של 24 שעות. ההכנה והמסירה אינן מבוטלות ולא נוסף כפתור זיכוי למסוף בקופה. תוצאה לא ידועה נשארת שמורה ויש לבדוק אותה בלי לשלוח שוב. מסמכי זיכוי וביטול ב-Invoice4U דורשים בדיקה נפרדת. ראו [נוהל תשלום מקוון](/he/help/payments/how-payments-work#verifone-admin-refund-void)."
+        }
+      },
+      {
         "id": "verifone-readable-hosted-theme",
         "title": {
           "en": "Keep the hosted payment form readable",
@@ -7382,6 +7452,19 @@
       ]
     },
     "operations": [
+      {
+        "id": "verifone-admin-money-operations",
+        "title": {
+          "en": "Refund or void a Verifone online payment",
+          "fr": "Rembourser ou annuler un paiement en ligne Verifone",
+          "he": "זיכוי או ביטול תשלום מקוון ב-Verifone"
+        },
+        "instructions": {
+          "en": "The Admin order payment section supports total or partial matched refunds and total VOID for an eligible single Verifone online payment, for owners/managers with payments.manage. Provider state, captured amount and verified history govern eligibility, not a fixed 24-hour rule. This does not cancel preparation or fulfillment and does not add a POS terminal refund button. Unknown results stay reserved and must be checked, never resubmitted. Invoice4U credit/cancellation documents require a separate check. See [the online payment procedure](/en/help/payments/how-payments-work#verifone-admin-refund-void).",
+          "fr": "La section paiement d’une commande Admin permet le remboursement lié total ou partiel et le VOID total d’un paiement en ligne Verifone unique admissible, pour un propriétaire/responsable avec payments.manage. L’état fournisseur, le montant encaissé et l’historique vérifié déterminent l’admissibilité, pas un délai fixe de 24 heures. La préparation et la remise ne sont pas annulées et aucun bouton de remboursement terminal POS n’est ajouté. Un résultat inconnu reste réservé : vérifiez-le sans renvoyer l’opération. Les avoirs et annulations Invoice4U nécessitent un contrôle distinct. Voir [la procédure de paiement en ligne](/fr/help/payments/how-payments-work#verifone-admin-refund-void).",
+          "he": "באזור התשלום של הזמנה בממשק הניהול ניתן לבצע זיכוי מקושר מלא או חלקי ו-VOID מלא לתשלום מקוון יחיד ומאומת ב-Verifone, עבור בעלים או מנהל עם payments.manage. מצב הספק, סכום שנלכד והיסטוריה מאומתת קובעים זכאות ולא כלל קבוע של 24 שעות. ההכנה והמסירה אינן מבוטלות ולא נוסף כפתור זיכוי למסוף בקופה. תוצאה לא ידועה נשארת שמורה ויש לבדוק אותה בלי לשלוח שוב. מסמכי זיכוי וביטול ב-Invoice4U דורשים בדיקה נפרדת. ראו [נוהל תשלום מקוון](/he/help/payments/how-payments-work#verifone-admin-refund-void)."
+        }
+      },
       {
         "id": "verifone-readable-hosted-theme",
         "title": {
@@ -8297,6 +8380,19 @@
     },
     "operations": [
       {
+        "id": "verifone-admin-money-operations",
+        "title": {
+          "en": "Refund or void a Verifone online payment",
+          "fr": "Rembourser ou annuler un paiement en ligne Verifone",
+          "he": "זיכוי או ביטול תשלום מקוון ב-Verifone"
+        },
+        "instructions": {
+          "en": "The Admin order payment section supports total or partial matched refunds and total VOID for an eligible single Verifone online payment, for owners/managers with payments.manage. Provider state, captured amount and verified history govern eligibility, not a fixed 24-hour rule. This does not cancel preparation or fulfillment and does not add a POS terminal refund button. Unknown results stay reserved and must be checked, never resubmitted. Invoice4U credit/cancellation documents require a separate check. See [the online payment procedure](/en/help/payments/how-payments-work#verifone-admin-refund-void).",
+          "fr": "La section paiement d’une commande Admin permet le remboursement lié total ou partiel et le VOID total d’un paiement en ligne Verifone unique admissible, pour un propriétaire/responsable avec payments.manage. L’état fournisseur, le montant encaissé et l’historique vérifié déterminent l’admissibilité, pas un délai fixe de 24 heures. La préparation et la remise ne sont pas annulées et aucun bouton de remboursement terminal POS n’est ajouté. Un résultat inconnu reste réservé : vérifiez-le sans renvoyer l’opération. Les avoirs et annulations Invoice4U nécessitent un contrôle distinct. Voir [la procédure de paiement en ligne](/fr/help/payments/how-payments-work#verifone-admin-refund-void).",
+          "he": "באזור התשלום של הזמנה בממשק הניהול ניתן לבצע זיכוי מקושר מלא או חלקי ו-VOID מלא לתשלום מקוון יחיד ומאומת ב-Verifone, עבור בעלים או מנהל עם payments.manage. מצב הספק, סכום שנלכד והיסטוריה מאומתת קובעים זכאות ולא כלל קבוע של 24 שעות. ההכנה והמסירה אינן מבוטלות ולא נוסף כפתור זיכוי למסוף בקופה. תוצאה לא ידועה נשארת שמורה ויש לבדוק אותה בלי לשלוח שוב. מסמכי זיכוי וביטול ב-Invoice4U דורשים בדיקה נפרדת. ראו [נוהל תשלום מקוון](/he/help/payments/how-payments-work#verifone-admin-refund-void)."
+        }
+      },
+      {
         "id": "verifone-readable-hosted-theme",
         "title": {
           "en": "Keep the hosted payment form readable",
@@ -8564,6 +8660,19 @@
     },
     "operations": [
       {
+        "id": "verifone-admin-money-operations",
+        "title": {
+          "en": "Refund or void a Verifone online payment",
+          "fr": "Rembourser ou annuler un paiement en ligne Verifone",
+          "he": "זיכוי או ביטול תשלום מקוון ב-Verifone"
+        },
+        "instructions": {
+          "en": "The Admin order payment section supports total or partial matched refunds and total VOID for an eligible single Verifone online payment, for owners/managers with payments.manage. Provider state, captured amount and verified history govern eligibility, not a fixed 24-hour rule. This does not cancel preparation or fulfillment and does not add a POS terminal refund button. Unknown results stay reserved and must be checked, never resubmitted. Invoice4U credit/cancellation documents require a separate check. See [the online payment procedure](/en/help/payments/how-payments-work#verifone-admin-refund-void).",
+          "fr": "La section paiement d’une commande Admin permet le remboursement lié total ou partiel et le VOID total d’un paiement en ligne Verifone unique admissible, pour un propriétaire/responsable avec payments.manage. L’état fournisseur, le montant encaissé et l’historique vérifié déterminent l’admissibilité, pas un délai fixe de 24 heures. La préparation et la remise ne sont pas annulées et aucun bouton de remboursement terminal POS n’est ajouté. Un résultat inconnu reste réservé : vérifiez-le sans renvoyer l’opération. Les avoirs et annulations Invoice4U nécessitent un contrôle distinct. Voir [la procédure de paiement en ligne](/fr/help/payments/how-payments-work#verifone-admin-refund-void).",
+          "he": "באזור התשלום של הזמנה בממשק הניהול ניתן לבצע זיכוי מקושר מלא או חלקי ו-VOID מלא לתשלום מקוון יחיד ומאומת ב-Verifone, עבור בעלים או מנהל עם payments.manage. מצב הספק, סכום שנלכד והיסטוריה מאומתת קובעים זכאות ולא כלל קבוע של 24 שעות. ההכנה והמסירה אינן מבוטלות ולא נוסף כפתור זיכוי למסוף בקופה. תוצאה לא ידועה נשארת שמורה ויש לבדוק אותה בלי לשלוח שוב. מסמכי זיכוי וביטול ב-Invoice4U דורשים בדיקה נפרדת. ראו [נוהל תשלום מקוון](/he/help/payments/how-payments-work#verifone-admin-refund-void)."
+        }
+      },
+      {
         "id": "verifone-readable-hosted-theme",
         "title": {
           "en": "Keep the hosted payment form readable",
@@ -8774,6 +8883,19 @@
       ]
     },
     "operations": [
+      {
+        "id": "verifone-admin-money-operations",
+        "title": {
+          "en": "Refund or void a Verifone online payment",
+          "fr": "Rembourser ou annuler un paiement en ligne Verifone",
+          "he": "זיכוי או ביטול תשלום מקוון ב-Verifone"
+        },
+        "instructions": {
+          "en": "The Admin order payment section supports total or partial matched refunds and total VOID for an eligible single Verifone online payment, for owners/managers with payments.manage. Provider state, captured amount and verified history govern eligibility, not a fixed 24-hour rule. This does not cancel preparation or fulfillment and does not add a POS terminal refund button. Unknown results stay reserved and must be checked, never resubmitted. Invoice4U credit/cancellation documents require a separate check. See [the online payment procedure](/en/help/payments/how-payments-work#verifone-admin-refund-void).",
+          "fr": "La section paiement d’une commande Admin permet le remboursement lié total ou partiel et le VOID total d’un paiement en ligne Verifone unique admissible, pour un propriétaire/responsable avec payments.manage. L’état fournisseur, le montant encaissé et l’historique vérifié déterminent l’admissibilité, pas un délai fixe de 24 heures. La préparation et la remise ne sont pas annulées et aucun bouton de remboursement terminal POS n’est ajouté. Un résultat inconnu reste réservé : vérifiez-le sans renvoyer l’opération. Les avoirs et annulations Invoice4U nécessitent un contrôle distinct. Voir [la procédure de paiement en ligne](/fr/help/payments/how-payments-work#verifone-admin-refund-void).",
+          "he": "באזור התשלום של הזמנה בממשק הניהול ניתן לבצע זיכוי מקושר מלא או חלקי ו-VOID מלא לתשלום מקוון יחיד ומאומת ב-Verifone, עבור בעלים או מנהל עם payments.manage. מצב הספק, סכום שנלכד והיסטוריה מאומתת קובעים זכאות ולא כלל קבוע של 24 שעות. ההכנה והמסירה אינן מבוטלות ולא נוסף כפתור זיכוי למסוף בקופה. תוצאה לא ידועה נשארת שמורה ויש לבדוק אותה בלי לשלוח שוב. מסמכי זיכוי וביטול ב-Invoice4U דורשים בדיקה נפרדת. ראו [נוהל תשלום מקוון](/he/help/payments/how-payments-work#verifone-admin-refund-void)."
+        }
+      },
       {
         "id": "weight-hold-margin",
         "level": 2,

@@ -12,6 +12,12 @@ releaseStatus: available
 ---
 Internal Foody operators: open Features or the restaurant’s subscription/payment controls.
 
+<span id="verifone-admin-money-operations" />
+
+## Refund or void a Verifone online payment
+
+The Admin order payment section supports total or partial matched refunds and total VOID for an eligible single Verifone online payment, for owners/managers with payments.manage. Provider state, captured amount and verified history govern eligibility, not a fixed 24-hour rule. This does not cancel preparation or fulfillment and does not add a POS terminal refund button. Unknown results stay reserved and must be checked, never resubmitted. Invoice4U credit/cancellation documents require a separate check. See [the online payment procedure](/en/help/payments/how-payments-work#verifone-admin-refund-void).
+
 <span id="verifone-readable-hosted-theme" />
 
 ## Keep the hosted payment form readable
