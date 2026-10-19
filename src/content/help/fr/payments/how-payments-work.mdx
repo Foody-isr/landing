@@ -27,6 +27,8 @@ Consultez Opérations de paiement pour le montant, motif, date, compte de l’op
 
 Si le résultat est inconnu ou si le navigateur perd la réponse, ne renvoyez pas de remboursement et ne passez pas au VOID. Vérifier auprès de Verifone contrôle uniquement les opérations existantes. Sans identifiant fournisseur récupérable, la demande reste bloquée pour vérification par le support/Central, même après rechargement ou redémarrage de l’API. Un simple succès HTTP ne prouve pas le remboursement. Vérifiez séparément l’avoir ou document d’annulation Invoice4U ; ce contrôle ne crée ni ne confirme un avoir fiscal. Les boutons FoodyPOS ne sont pas inclus dans cette version.
 
+Après une restitution totale vérifiée dans l’historique lié de Verifone, le bilan conserve le montant initial, affiche le montant intégral restitué et un solde restant nul, sans proposer de nouveau remboursement ni VOID. Un solde capturé remis à zéro après cette restitution n’est pas une préautorisation à libérer. Une preuve manquante ou incohérente exige toujours une vérification, sans renvoyer l’opération.
+
 <span id="verifone-readable-hosted-theme" />
 
 ## Garder la page de paiement lisible
