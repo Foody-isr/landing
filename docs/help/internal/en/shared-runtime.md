@@ -14,6 +14,12 @@ releaseStatus: available
 ---
 Engineering only: shared authentication clients, state, localization, styling, proxies and platform bootstrap support the documented business modules.
 
+<span id="verifone-admin-money-operations" />
+
+## Refund or void a Verifone online payment
+
+The Admin order payment section supports total or partial matched refunds and total VOID for an eligible single Verifone online payment, for owners/managers with payments.manage. Provider state, captured amount and verified history govern eligibility, not a fixed 24-hour rule. This does not cancel preparation or fulfillment and does not add a POS terminal refund button. Unknown results stay reserved and must be checked, never resubmitted. Invoice4U credit/cancellation documents require a separate check. See [the online payment procedure](/en/help/payments/how-payments-work#verifone-admin-refund-void).
+
 <span id="weight-hold-margin" />
 
 ## Review the by-weight authorization ceiling

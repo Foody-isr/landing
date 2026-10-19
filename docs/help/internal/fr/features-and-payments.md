@@ -12,6 +12,12 @@ releaseStatus: available
 ---
 Opérateurs Foody : ouvrez Fonctions ou les contrôles abonnement/paiement du restaurant.
 
+<span id="verifone-admin-money-operations" />
+
+## Rembourser ou annuler un paiement en ligne Verifone
+
+La section paiement d’une commande Admin permet le remboursement lié total ou partiel et le VOID total d’un paiement en ligne Verifone unique admissible, pour un propriétaire/responsable avec payments.manage. L’état fournisseur, le montant encaissé et l’historique vérifié déterminent l’admissibilité, pas un délai fixe de 24 heures. La préparation et la remise ne sont pas annulées et aucun bouton de remboursement terminal POS n’est ajouté. Un résultat inconnu reste réservé : vérifiez-le sans renvoyer l’opération. Les avoirs et annulations Invoice4U nécessitent un contrôle distinct. Voir [la procédure de paiement en ligne](/fr/help/payments/how-payments-work#verifone-admin-refund-void).
+
 <span id="verifone-readable-hosted-theme" />
 
 ## Garder la page de paiement lisible
