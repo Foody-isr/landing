@@ -65,3 +65,9 @@ Counter terminal checkout persists a restaurant-scoped order with payment_status
 ## Synchronize the mobile ordering corpus
 
 The native-keyboard follow-up must release the compact entry procedures and embed their matching FR/HE/EN corpus. Verify the same revision through support/status in development and production; API order and payment logic are unchanged.
+
+<span id="google-street-refinement" />
+
+## Resolve Google street refinements
+
+Google can return a different canonical ID for a route segment. Accept this difference only for a street without a house number, after validating the country and provider response. This refinement receives neither delivery proof nor coordinates: the customer must still choose a complete address. Preserve exact place-ID matching for complete addresses, restaurant and visitor bound signatures, session limits and budgets. Test canonical streets, foreign countries, missing or invalid IDs and rejection of complete addresses for another place. Verify a street search and an address with a house number after promotion. Provider reference: https://developers.google.com/maps/documentation/places/web-service/place-id#obsolete
