@@ -65,3 +65,9 @@ L’encaissement par terminal au comptoir conserve une commande du restaurant av
 ## Synchroniser le corpus du parcours mobile
 
 Le suivi du correctif de clavier natif doit publier les procédures de saisie compacte et intégrer leur corpus FR/HE/EN correspondant. Vérifier la même révision via support/status en développement puis en production ; aucun changement de logique de commande ou de paiement côté API.
+
+<span id="google-street-refinement" />
+
+## Résoudre les suggestions de rue Google
+
+Google peut renvoyer un identifiant canonique différent pour un segment de rue. Accepter cette différence uniquement pour une rue sans numéro, après validation du pays et de la réponse du fournisseur. Cette précision ne reçoit ni preuve de livraison ni coordonnées : le client doit encore sélectionner une adresse complète. Conserver la correspondance exacte d’identifiant pour les adresses complètes, les signatures liées au restaurant et au visiteur, les limites de session et les budgets. Tester les rues canoniques, les pays étrangers, les identifiants absents ou invalides et le rejet des adresses complètes d’un autre lieu. Vérifier une recherche de rue et une adresse avec numéro après promotion. Référence fournisseur : https://developers.google.com/maps/documentation/places/web-service/place-id#obsolete
