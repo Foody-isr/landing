@@ -56,9 +56,9 @@ article peut figurer dans plusieurs groupes et menus.
 
 <span id="section-3" />
 
-## Gérer vos menus
+## Préparer, enregistrer et publier une carte
 
-Dans Articles et cartes → Cartes, créez ou ouvrez un menu puis un groupe. Dans la fiche du groupe, utilisez Ajouter un article ou Ajouter depuis une catégorie pour sélectionner des articles. Pour un groupe existant, les changements d’articles sont immédiats ; dans un nouveau groupe, ils sont appliqués lors de sa création. Le glisser-déposer sert à réordonner des groupes ou des articles déjà présents dans un groupe, pas à importer le catalogue. Le même article peut appartenir à plusieurs groupes. [Créer un article](./creating-a-menu-item).
+Ouvrez Articles et cartes → Cartes puis la carte. Pour une carte tournante, sélectionnez d’abord sa série de retrait. Ajoutez des groupes, choisissez les articles, déplacez une sélection, réordonnez avec les flèches ou par glisser-déposer, et réglez les canaux et horaires dans Paramètres de la carte ou en cliquant sur un nom de groupe. Ces changements restent locaux. Enregistrer le brouillon les conserve en privé sur le serveur ; Aperçu ouvre une liste privée sans prise de commande. Publier demande une confirmation et applique ensemble la carte enregistrée et ses stocks préparés. Enregistrer seul ne modifie jamais le site ni la caisse.
 
 <span id="section-4" />
 
@@ -88,6 +88,18 @@ Les canaux et horaires déterminent si le groupe peut être affiché. La disponi
 
 <span id="section-7" />
 
-## Démarrage rapide
+## Contrôler la publication
 
-Créez et enregistrez les articles. Ouvrez le menu puis le groupe et ajoutez les articles avec le sélecteur, ou affectez les groupes depuis la rubrique latérale Cartes de l’article. Vérifiez les canaux POS/Web, les horaires, le masquage et les établissements du menu. Pour un menu tournant, vérifiez aussi la semaine sélectionnée. Contrôlez le résultat sur le canal voulu après enregistrement.
+Créez et enregistrez d’abord les articles de la bibliothèque commune. Ajoutez-les au brouillon de carte, vérifiez la série sélectionnée, les canaux web/caisse, les horaires et le masquage des groupes, puis ouvrez l’aperçu et publiez. La série actuelle reste inchangée pendant la préparation d’une série future. Après activation de la publication, une série future sans publication n’est pas servie. Les noms, prix, recettes et statuts actif/inactif restent des modifications de la bibliothèque commune ; les disponibilités marquées immédiates s’appliquent immédiatement et sont historisées.
+
+<span id="draft-leave-and-conflict" />
+
+## Quitter et résoudre un conflit
+
+Si vous quittez ou changez de série avec des modifications non enregistrées, choisissez Enregistrer et quitter, Abandonner ou Continuer la modification. Abandonner dans ce dialogue retire seulement les changements non enregistrés ; un brouillon déjà enregistré est conservé. Supprimer le brouillon sur la carte efface le brouillon enregistré après confirmation et conserve la carte publiée. En cas d’échec, restez dans l’éditeur et vérifiez l’erreur : vos changements y restent disponibles. Une révision dépassée, un réglage de stock modifié, une quantité invalide ou inférieure aux engagements empêche la publication. Recharger le brouillon enregistré récupère explicitement la dernière version du serveur et abandonne les changements locaux non enregistrés.
+
+<span id="series-sale-stock" />
+
+## Préparer le stock d’une nouvelle série
+
+Avec la permission de modifier le menu, ouvrez la carte tournante, sélectionnez une série et cliquez sur Préparer les stocks de cette série. Saisissez les quantités INITIALES, commandes déjà passées incluses : disponible = initial − engagé. Choisissez un compteur commun en unités, une mesure compatible en g/ml, un compteur par taille ou aucune limite prédéfinie. Reprendre les quantités initiales précédentes copie les quotas, jamais les reliquats ni un ancien statut épuisé. Le stock d’un même article du restaurant est commun aux cartes de cette série. Enregistrer le brouillon garde la préparation privée ; Publier l’applique atomiquement sans recréditer les réservations faites pendant l’édition. La première activation importe le disponible actuel et les commandes programmées existantes en préservant les quantités restantes. Les séries suivantes ne reprennent jamais l’ancien compteur global. Sans limite prédéfinie, une recette, une règle ou un statut manuel peut encore limiter la disponibilité.

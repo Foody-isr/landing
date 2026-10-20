@@ -12,7 +12,7 @@ tags:
   - recipe
   - rules
   - '86'
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-20'
 featureId: kitchen-availability
 audience: public
 releaseStatus: available
@@ -23,34 +23,52 @@ Items & menus → Item library → saved item → Stock & availability.
 
 ## Open Stock & availability
 
-Open a saved item from Items & menus → Item library and scroll to Stock & availability. The table shows the item, quantity and status. Editing requires menu editing permission. This section is part of the continuous editor, not a panel under a Recipe tab.
+For items still using persistent legacy stock, open a saved item from Items & menus → Item library and scroll to Stock & availability. The table shows the item, quantity and status. Editing requires menu editing permission. This section is part of the continuous editor, not a panel under a Recipe tab.
 
 <span id="section-2" />
 
 ## Choose the stock basis
 
-Click the quantity or use Actions → Stock tracking. Track one shared item quantity or quantities by size, depending on its variants. Compatible items offer portions, g or kg. Without predefined item stock, calculation can use recipe ingredients and preparations. No recipe does not guarantee unlimited availability: also check predefined stock, variants, rules and manual status.
+For items still using persistent legacy stock, click the quantity or use Actions → Stock tracking. Track one shared item quantity or quantities by size, depending on its variants. Compatible items offer portions, g or kg. Without predefined item stock, calculation can use recipe ingredients and preparations. No recipe does not guarantee unlimited availability: also check predefined stock, variants, rules and manual status.
 
 <span id="section-3" />
 
 ## Choose and manage a rule
 
-In stock tracking settings, choose an availability rule or the default rule. Actions → Manage rules opens Settings → Stock → Availability. Rules define tracking, low-stock threshold, out-of-stock behavior and remaining-count display. Check assignments before editing a rule used by multiple items.
+In stock tracking settings, choose an availability rule or the default rule. Actions → Manage rules opens Settings → Stock → Availability. Rules define tracking, low-stock threshold, out-of-stock behavior and remaining-count display. Check assignments before editing a rule used by multiple items. When the rule allows the remaining count to be shown, a stock of 20 portions caps that item’s total cart quantity at 20, even above the low-stock threshold. The low-stock badge still depends on the threshold. Stock is checked again when placing the order and may have changed meanwhile. An item overridden to Always available does not use this cap.
 
 <span id="section-4" />
 
 ## Override status and save
 
-Click status and choose Follow a rule, Always available or Force sold out. Click Apply, then Save in the item header to persist it. Apply alone stages the change in the editor. The override wins over calculation; return to Follow a rule and save to resume automatic tracking.
+For items still using persistent legacy stock, click status and choose Follow a rule, Always available or Force sold out. Click Apply, then Save in the item header to persist it. Apply alone stages the change in the editor. The override wins over calculation; return to Follow a rule and save to resume automatic tracking.
 
 <span id="section-5" />
 
 ## Check calculation and size quantities
 
-Actions → View availability calculation opens capacity details: possible sales, calculation basis and limiting ingredient when present. When tracking sizes separately, check each quantity. Item stock differs from recipe consumption quantities and the Active/Inactive filter in the Items library. An unavailable calculation is an error to investigate, not zero stock.
+For items still using persistent legacy stock, actions → View availability calculation opens capacity details: possible sales, calculation basis and limiting ingredient when present. When tracking sizes separately, check each quantity. Item stock differs from recipe consumption quantities and the Active/Inactive filter in the Items library. An unavailable calculation is an error to investigate, not zero stock.
 
 <span id="section-6" />
 
 ## Verify after saving
 
 After Save, reopen the item and check quantity, rule and status, then the relevant web or POS channel. Visibility also depends on groups, channels and hours. If rules fail to load, retry before saving; do not substitute an assumed configuration. [Items and menus](../menu/categories-and-items) · [Recipe quantities](../menu/ingredients-and-portions) · [Stock](./stock-management).
+
+<span id="series-sale-stock" />
+
+## Prepare stock for a new series
+
+With menu editing permission, open the rotating carte, select a series and choose Prepare stocks for this series. Enter INITIAL allowances including quantities already ordered: available = initial minus committed. Use shared units, compatible base measures (g/ml), counts per size, or no predefined limit. Copy previous initial quantities copies allowances, never previous remaining quantities or an old sold-out override. Quantities are shared by the same restaurant item across cartes for that series. Save draft keeps preparation private; Publish applies it atomically without restoring reservations made while editing. The first activation imports current available stock and existing scheduled orders, preserving current remaining quantities. Later series never inherit the old global counter. No predefined limit may still be constrained by a recipe, rule or manual status.
+
+<span id="sale-stock-history" />
+
+## Investigate stock changes
+
+Open Items & menus → Item stocks for the restaurant overview, or Stock history on a product or carte item. Filter by item, movement and series; All series includes the initial legacy movements. The history records dated corrections, reservations, releases, order edits and availability overrides with before/after quantities, actor and an order link when present. Initial imports are labeled as imports, not reconstructed older activity. Earlier edits cannot be recovered. A pre-production cancellation credits the original pool; cooked food remains consumed. On Item stocks, corrections apply immediately with Apply stock corrections. Ordinary legacy stock is edited on its product record until series tracking is activated. Review an error before retrying; completed independent corrections are removed from the pending list.
+
+<span id="series-product" />
+
+## Manage a product tracked by series
+
+After series tracking is activated, Stock & availability shows the current series, available and committed quantities, Manage stock and Stock history. Use Manage stock to correct the selected series allowance. Its availability switch is immediate and journaled; it does not wait for the product Save button or carte publication. Use Automatic to resume its rule. Always available bypasses the stock cap and does not refill a counter. Product preparation settings and the availability rule remain part of the product save.
