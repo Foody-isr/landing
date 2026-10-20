@@ -59,3 +59,9 @@ For a one-order combo exception, an authorized Admin user opens the combo step a
 ## Wait for counter card payment before kitchen preparation
 
 For a new counter pickup order paid by card, choose Pay, then Pay by card. Wait for terminal approval and for Foody to record the payment before preparation and the kitchen ticket start. During collection the payment remains pending and is excluded from the live order board. After a refusal or cancellation, keep the same checkout and retry there; do not send it to the kitchen to bypass payment. If approval succeeded but synchronization failed, reconcile the existing payment before starting another charge. Orders deliberately sent for table service before collection keep their existing send-then-pay flow.
+
+<span id="carte-series-stock" />
+
+## Move a reservation between series
+
+Predefined item stocks now have a journal under Items & menus → Item stocks and on each product. A rotating carte can prepare initial allowances per series and publish them without restoring already committed units. Previous remaining counts are not carried forward. Order changes and pre-production releases use the original frozen pool; a produced item remains consumed. Ingredient/preparation quantities and recipe costs remain separate. See [Availability](/en/help/kitchen/availability) for initial imports, corrections and history filters.

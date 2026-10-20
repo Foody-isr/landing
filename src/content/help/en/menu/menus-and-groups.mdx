@@ -56,9 +56,9 @@ in several groups and menus.
 
 <span id="section-3" />
 
-## Manage your menus
+## Prepare, save and publish a carte
 
-In Items & menus → Menus, create or open a menu, then a group. In the group editor use Add an item or Add from category to select items. Membership changes in an existing group are immediate; for a new group they are applied when it is created. Dragging reorders groups or items already inside a group; it is not the catalogue import action. The same item can belong to several groups. [Create an item](./creating-a-menu-item).
+Open Items & menus → Menus and select the carte. For a rotating carte, select its fulfillment series first. Add groups, choose items, move selected items, reorder with arrows or dragging, and edit channels/hours in Carte settings or by clicking a group name. These changes stay local. Save draft stores a private server draft; Preview opens a private item-list preview that cannot take orders. Publish asks for confirmation and applies the saved carte and its prepared stock changes together. Saving alone never changes the live website or POS.
 
 <span id="section-4" />
 
@@ -87,6 +87,18 @@ Channels and hours determine whether a group can be shown. Item availability can
 
 <span id="section-7" />
 
-## Quick start
+## Check the publication
 
-Create and save items. Open the menu and group and add items with the picker, or assign groups from the item’s Menus side card. Check POS/Web channels, hours, hiding and menu locations. For a rotating menu also check the selected week. Verify the result on the intended channel after saving.
+Create and save the shared library items first. Add them to the carte draft, check the selected series, web/POS channels, hours and group hiding, then preview and publish. The current series stays unchanged while preparing a future series. A future series without a publication is not served once carte publication is activated. Product names, prices, recipes and active status remain shared library edits; availability switches marked immediate apply immediately and are journaled.
+
+<span id="draft-leave-and-conflict" />
+
+## Leave safely and resolve a conflict
+
+If you leave or change series with unsaved edits, choose Save draft and leave, Discard, or Continue editing. Discard in this dialog drops unsaved edits only; a previously saved draft remains. Discard draft on the carte removes the saved draft after confirmation and keeps the published carte live. If saving or publishing fails, stay in the editor and review the error. Your edits remain available. A stale revision, changed stock setting, invalid quantity or allowance below existing commitments prevents publication. Reload saved draft explicitly to recover the latest server version; it discards unsaved local edits.
+
+<span id="series-sale-stock" />
+
+## Prepare stock for a new series
+
+With menu editing permission, open the rotating carte, select a series and choose Prepare stocks for this series. Enter INITIAL allowances including quantities already ordered: available = initial minus committed. Use shared units, compatible base measures (g/ml), counts per size, or no predefined limit. Copy previous initial quantities copies allowances, never previous remaining quantities or an old sold-out override. Quantities are shared by the same restaurant item across cartes for that series. Save draft keeps preparation private; Publish applies it atomically without restoring reservations made while editing. The first activation imports current available stock and existing scheduled orders, preserving current remaining quantities. Later series never inherit the old global counter. No predefined limit may still be constrained by a recipe, rule or manual status.

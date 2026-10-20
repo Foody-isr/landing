@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - kitchen
   - stock-units-policy
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-20'
 featureId: stock-units-policy
 audience: public
 releaseStatus: available
@@ -22,4 +22,10 @@ Review unit names, dimensions and conversions before adding or editing a unit. U
 
 ## Set stock and availability policy
 
-Review when stock is reserved/consumed and how shortages affect public availability. Check the configured policy with a small development scenario before changing service behavior. Manual item visibility, timed availability and ingredient stock are separate restrictions and can combine.
+Review when stock is reserved/consumed and how shortages affect public availability. Check the configured policy with a small development scenario before changing service behavior. Manual item visibility, timed availability and ingredient stock are separate restrictions and can combine. For an item tracked by a shared counter whose rule shows the remaining count, the cart accounts for available quantity even above the low-stock threshold. That threshold controls the warning, not the cart cap. See [Availability](/en/help/kitchen/availability) to check the rule and manual overrides.
+
+<span id="carte-series-stock" />
+
+## Read quantities in the correct stock pool
+
+Predefined item stocks now have a journal under Items & menus → Item stocks and on each product. A rotating carte can prepare initial allowances per series and publish them without restoring already committed units. Previous remaining counts are not carried forward. Order changes and pre-production releases use the original frozen pool; a produced item remains consumed. Ingredient/preparation quantities and recipe costs remain separate. See [Availability](/en/help/kitchen/availability) for initial imports, corrections and history filters.
