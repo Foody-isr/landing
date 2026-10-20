@@ -4,9 +4,9 @@
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "30a6ee653a6e753808f116c985083f054a38fd00",
+      "sourceCommit": "c353aaa83f06514ff8a6b8f91c04574225441f34",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "ae5a16d6b71c8d0889980e1c3b693f8f7c0d42a5e75320c460682a546658aabb",
+      "sourceSnapshot": "a21afe1eb4fc1d40582a5265d9b4dfa7e463a2d61eda0640af3365315aab3cef",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -3979,7 +3979,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "4f5d7a18918dc0fb84c877e11cb69b465f9642536250068920150ae14bcc6fc8",
+          "sha256": "ddd8daa0e0ae757056cd28b80a219f48757f7a959a206d2871a66d57a02a0c72",
           "features": [
             "getting-started-using-support",
             "platform-api"
@@ -4282,9 +4282,9 @@
     },
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "e67b3cc59be249c1377cde4bf65740107bd1786a",
+      "sourceCommit": "d6e90693f87dc99bb6e81c8b4a5236188486063b",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "3f98d5b76c5455351a09df5bd23bbbaacc30b3a5eb7be5cae75876870f6c3437",
+      "sourceSnapshot": "f2ea0e510df3263fbc195f3eab8b64b2e78e4315ba779d18fa7b3a86fb9c096f",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
@@ -7020,7 +7020,7 @@
           ]
         },
         "src/components/menu/BatchPicker.tsx": {
-          "sha256": "6566a6b2ee08b393250f277574fdc063d451abedc69530e5e475aed480725b4a",
+          "sha256": "fd68d229779956171887702d32ac5f4f4124553bde2f5eb96d788b51a162e909",
           "features": [
             "menu-menus-and-groups"
           ]
@@ -7097,8 +7097,20 @@
             "menu-menus-and-groups"
           ]
         },
+        "src/components/menu/publication/CarteEditor.module.css": {
+          "sha256": "6e30d032a3fb99aa22bc50083a468978a0f5b1f7eaa01b7574db097fa27f10f1",
+          "features": [
+            "menu-menus-and-groups"
+          ]
+        },
         "src/components/menu/publication/CarteEditor.tsx": {
-          "sha256": "113dc6134aadc9c1f2b9b79827bd4ebf4d6d639cce7aa2404e7ec1a465468886",
+          "sha256": "deff8dda13c8f0cac2d843cba82f94bf2da1fe6aa6e9e0d947dcbfecf5d23a18",
+          "features": [
+            "menu-menus-and-groups"
+          ]
+        },
+        "src/components/menu/publication/CarteGroups.tsx": {
+          "sha256": "160bfa058ca0ad42cab10f5c1519b3d2ec5039dd3a87dd040bf697a5ff4a017b",
           "features": [
             "menu-menus-and-groups"
           ]
@@ -8584,7 +8596,7 @@
           ]
         },
         "src/lib/i18n.tsx": {
-          "sha256": "24a248800d5b4f426afed1640d1b55aa2161cff4cedcc57c0cb453955b7317f6",
+          "sha256": "039446dcb377c536715e78afd7db5157075fbb1c7c8fab5ac2a39cf46c5e9c5b",
           "features": [
             "delivery-dispatch",
             "shared-runtime"
@@ -9527,10 +9539,10 @@
     },
     "foodyweb": {
       "repository": "https://github.com/Foody-isr/web",
-      "sourceCommit": "f64cc9c7cb44a869517c791266865b633deebf45",
+      "sourceCommit": "8c68e2be6da32923f9863aacf371bbdb03bd59bc",
       "releaseStatus": "versioned",
       "sourceSnapshot": "87fbd93d3e164fc086122e5b92830cf0f147462acc25b2992101a8b705bb0738",
-      "workingTreeHasChanges": true,
+      "workingTreeHasChanges": false,
       "sourceFiles": {
         "app/@cart/(.)order/cart/page.tsx": {
           "sha256": "1d5bfacb3688b858b55225ea9a850fb106a77a2b64afe399cf8b42ca600d83b3",
@@ -11663,7 +11675,7 @@
     },
     "foodylanding": {
       "repository": "https://github.com/Foody-isr/landing",
-      "sourceCommit": "d8d44b53443e6043115225d53a0532b92f87b0de",
+      "sourceCommit": "2827c55eb5eb17acd3eb17fa1699e59db13dc248",
       "releaseStatus": "versioned",
       "sourceSnapshot": "0017f89048e20a416bab53c7443a4720bbe088bd715d39dcf9d1a8e67e173251",
       "workingTreeHasChanges": true,
@@ -16731,9 +16743,9 @@
             "he": "הכנת מלאי לסדרה חדשה"
           },
           "instructions": {
-            "en": "With menu editing permission, open the rotating carte, select a series and choose Prepare stocks for this series. Enter INITIAL allowances including quantities already ordered: available = initial minus committed. Use shared units, compatible base measures (g/ml), counts per size, or no predefined limit. Copy previous initial quantities copies allowances, never previous remaining quantities or an old sold-out override. Quantities are shared by the same restaurant item across cartes for that series. Save draft keeps preparation private; Publish applies it atomically without restoring reservations made while editing. The first activation imports current available stock and existing scheduled orders, preserving current remaining quantities. Later series never inherit the old global counter. No predefined limit may still be constrained by a recipe, rule or manual status.",
-            "fr": "Avec la permission de modifier le menu, ouvrez la carte tournante, sélectionnez une série et cliquez sur Préparer les stocks de cette série. Saisissez les quantités INITIALES, commandes déjà passées incluses : disponible = initial − engagé. Choisissez un compteur commun en unités, une mesure compatible en g/ml, un compteur par taille ou aucune limite prédéfinie. Reprendre les quantités initiales précédentes copie les quotas, jamais les reliquats ni un ancien statut épuisé. Le stock d’un même article du restaurant est commun aux cartes de cette série. Enregistrer le brouillon garde la préparation privée ; Publier l’applique atomiquement sans recréditer les réservations faites pendant l’édition. La première activation importe le disponible actuel et les commandes programmées existantes en préservant les quantités restantes. Les séries suivantes ne reprennent jamais l’ancien compteur global. Sans limite prédéfinie, une recette, une règle ou un statut manuel peut encore limiter la disponibilité.",
-            "he": "עם הרשאת עריכת תפריט פתחו תפריט מתחלף, בחרו סדרה ולחצו הכנת מלאי לסדרה. הזינו כמויות התחלתיות כולל הזמנות שכבר התקבלו: זמין = התחלתי פחות מחויב. בחרו יחידות משותפות, מדידה תואמת בגרמים או במ״ל, כמות לכל גודל או ללא מגבלה מוגדרת. העתקת כמויות התחלתיות קודמות מעתיקה מכסות, ולא יתרות או מצב אזל ישן. מלאי אותו פריט במסעדה משותף בין תפריטים באותה סדרה. שמירת טיוטה משאירה את ההכנה פרטית; פרסום מחיל אותה יחד בלי לזכות הזמנות שנקלטו בזמן העריכה. בהפעלה הראשונה מיובאים המלאי הזמין וההזמנות המתוזמנות תוך שמירת היתרה הנוכחית. סדרות הבאות אינן יורשות את המונה הגלובלי הישן. גם ללא מגבלה מוגדרת, מתכון, כלל או מצב ידני עשויים להגביל זמינות."
+            "en": "With menu editing permission, open the rotating carte, select a series and open the “…” menu beside the title → Prepare stocks for this series. Enter INITIAL allowances including quantities already ordered: available = initial minus committed. Use shared units, compatible base measures (g/ml), counts per size, or no predefined limit. Copy previous initial quantities copies allowances, never previous remaining quantities or an old sold-out override. Quantities are shared by the same restaurant item across cartes for that series. Save draft keeps preparation private; Publish applies it atomically without restoring reservations made while editing. The first activation imports current available stock and existing scheduled orders, preserving current remaining quantities. Later series never inherit the old global counter. No predefined limit may still be constrained by a recipe, rule or manual status.",
+            "fr": "Avec la permission de modifier le menu, ouvrez la carte tournante, sélectionnez une série puis ouvrez le menu « … » à côté du titre → Préparer les stocks de cette série. Saisissez les quantités INITIALES, commandes déjà passées incluses : disponible = initial − engagé. Choisissez un compteur commun en unités, une mesure compatible en g/ml, un compteur par taille ou aucune limite prédéfinie. Reprendre les quantités initiales précédentes copie les quotas, jamais les reliquats ni un ancien statut épuisé. Le stock d’un même article du restaurant est commun aux cartes de cette série. Enregistrer le brouillon garde la préparation privée ; Publier l’applique atomiquement sans recréditer les réservations faites pendant l’édition. La première activation importe le disponible actuel et les commandes programmées existantes en préservant les quantités restantes. Les séries suivantes ne reprennent jamais l’ancien compteur global. Sans limite prédéfinie, une recette, une règle ou un statut manuel peut encore limiter la disponibilité.",
+            "he": "עם הרשאת עריכת תפריט פתחו תפריט מתחלף, בחרו סדרה ופתחו את תפריט ״…״ ליד הכותרת → הכנת מלאי לסדרה. הזינו כמויות התחלתיות כולל הזמנות שכבר התקבלו: זמין = התחלתי פחות מחויב. בחרו יחידות משותפות, מדידה תואמת בגרמים או במ״ל, כמות לכל גודל או ללא מגבלה מוגדרת. העתקת כמויות התחלתיות קודמות מעתיקה מכסות, ולא יתרות או מצב אזל ישן. מלאי אותו פריט במסעדה משותף בין תפריטים באותה סדרה. שמירת טיוטה משאירה את ההכנה פרטית; פרסום מחיל אותה יחד בלי לזכות הזמנות שנקלטו בזמן העריכה. בהפעלה הראשונה מיובאים המלאי הזמין וההזמנות המתוזמנות תוך שמירת היתרה הנוכחית. סדרות הבאות אינן יורשות את המונה הגלובלי הישן. גם ללא מגבלה מוגדרת, מתכון, כלל או מצב ידני עשויים להגביל זמינות."
           }
         },
         {
@@ -16745,8 +16757,8 @@
           },
           "instructions": {
             "en": "Open Items & menus → Item stocks for the restaurant overview, or Stock history on a product or carte item. Filter by item, movement and series; All series includes the initial legacy movements. The history records dated corrections, reservations, releases, order edits and availability overrides with before/after quantities, actor and an order link when present. Initial imports are labeled as imports, not reconstructed older activity. Earlier edits cannot be recovered. A pre-production cancellation credits the original pool; cooked food remains consumed. On Item stocks, corrections apply immediately with Apply stock corrections. Ordinary legacy stock is edited on its product record until series tracking is activated. Review an error before retrying; completed independent corrections are removed from the pending list.",
-            "fr": "Ouvrez Articles et cartes → Stocks des articles pour la vue globale, ou Historique du stock depuis un produit ou un article de carte. Filtrez par article, mouvement et série ; Toutes les séries inclut les premiers mouvements de l’ancien stock. Le journal indique les corrections, réservations, libérations, modifications de commande et changements de disponibilité datés, avec quantités avant/après, auteur et lien vers la commande lorsqu’il existe. Les reprises initiales sont identifiées comme des imports, sans inventer les opérations passées. Les modifications antérieures ne sont pas récupérables. Une annulation avant production recrédite le compteur d’origine ; un produit déjà préparé reste consommé. Dans Stocks des articles, Appliquer les corrections de stock agit immédiatement. Le stock historique ordinaire se modifie sur la fiche produit jusqu’à l’activation du suivi par série. Vérifiez une erreur avant de réessayer ; les corrections indépendantes terminées sont retirées de la liste en attente.",
-            "he": "פתחו פריטים ותפריטים → מלאי פריטים לתצוגה כללית, או היסטוריית מלאי מתוך מוצר או פריט בתפריט. סננו לפי פריט, תנועה וסדרה; כל הסדרות כוללת גם תנועות ראשוניות של המלאי הישן. ההיסטוריה מציגה תיקונים, שמירות להזמנות, שחרורים, עריכות הזמנה ושינויי זמינות עם תאריך, כמויות לפני ואחרי, מבצע וקישור להזמנה כאשר קיים. הייבוא הראשוני מסומן כייבוא ואינו משחזר פעולות קודמות. לא ניתן לשחזר עריכות ישנות. ביטול לפני הכנה מזכה את המונה המקורי; מזון שכבר הוכן נשאר מנוכה. במלאי פריטים, החלת תיקוני מלאי חלה מייד. מלאי ישן רגיל נערך בדף המוצר עד להפעלת מעקב לפי סדרה. בדקו שגיאה לפני ניסיון נוסף; תיקונים עצמאיים שהושלמו מוסרים מרשימת ההמתנה."
+            "fr": "Ouvrez Articles et cartes → Stocks des articles pour la vue globale, ou Historique du stock depuis un produit ; dans une carte, utilisez le menu « … » de la ligne → Historique du stock. Filtrez par article, mouvement et série ; Toutes les séries inclut les premiers mouvements de l’ancien stock. Le journal indique les corrections, réservations, libérations, modifications de commande et changements de disponibilité datés, avec quantités avant/après, auteur et lien vers la commande lorsqu’il existe. Les reprises initiales sont identifiées comme des imports, sans inventer les opérations passées. Les modifications antérieures ne sont pas récupérables. Une annulation avant production recrédite le compteur d’origine ; un produit déjà préparé reste consommé. Dans Stocks des articles, Appliquer les corrections de stock agit immédiatement. Le stock historique ordinaire se modifie sur la fiche produit jusqu’à l’activation du suivi par série. Vérifiez une erreur avant de réessayer ; les corrections indépendantes terminées sont retirées de la liste en attente.",
+            "he": "פתחו פריטים ותפריטים → מלאי פריטים לתצוגה כללית, או היסטוריית מלאי מתוך מוצר; בתפריט השתמשו בתפריט ״…״ של השורה → היסטוריית מלאי. סננו לפי פריט, תנועה וסדרה; כל הסדרות כוללת גם תנועות ראשוניות של המלאי הישן. ההיסטוריה מציגה תיקונים, שמירות להזמנות, שחרורים, עריכות הזמנה ושינויי זמינות עם תאריך, כמויות לפני ואחרי, מבצע וקישור להזמנה כאשר קיים. הייבוא הראשוני מסומן כייבוא ואינו משחזר פעולות קודמות. לא ניתן לשחזר עריכות ישנות. ביטול לפני הכנה מזכה את המונה המקורי; מזון שכבר הוכן נשאר מנוכה. במלאי פריטים, החלת תיקוני מלאי חלה מייד. מלאי ישן רגיל נערך בדף המוצר עד להפעלת מעקב לפי סדרה. בדקו שגיאה לפני ניסיון נוסף; תיקונים עצמאיים שהושלמו מוסרים מרשימת ההמתנה."
           }
         },
         {
@@ -21267,9 +21279,9 @@
             "he": "הכנת תפריט, שמירה ופרסום"
           },
           "instructions": {
-            "en": "Open Items & menus → Menus and select the carte. For a rotating carte, select its fulfillment series first. Add groups, choose items, move selected items, reorder with arrows or dragging, and edit channels/hours in Carte settings or by clicking a group name. These changes stay local. Save draft stores a private server draft; Preview opens a private item-list preview that cannot take orders. Publish asks for confirmation and applies the saved carte and its prepared stock changes together. Saving alone never changes the live website or POS.",
-            "fr": "Ouvrez Articles et cartes → Cartes puis la carte. Pour une carte tournante, sélectionnez d’abord sa série de retrait. Ajoutez des groupes, choisissez les articles, déplacez une sélection, réordonnez avec les flèches ou par glisser-déposer, et réglez les canaux et horaires dans Paramètres de la carte ou en cliquant sur un nom de groupe. Ces changements restent locaux. Enregistrer le brouillon les conserve en privé sur le serveur ; Aperçu ouvre une liste privée sans prise de commande. Publier demande une confirmation et applique ensemble la carte enregistrée et ses stocks préparés. Enregistrer seul ne modifie jamais le site ni la caisse.",
-            "he": "פתחו פריטים ותפריטים → תפריטים ובחרו תפריט. בתפריט מתחלף בחרו תחילה סדרת איסוף. הוסיפו קבוצות, בחרו פריטים, העבירו בחירה וסדרו בחצים או בגרירה. ערכו ערוצים ושעות בהגדרות התפריט או בלחיצה על שם קבוצה. השינויים מקומיים עד לשמירה. שמירת טיוטה שומרת טיוטה פרטית בשרת; תצוגה מקדימה מציגה רשימה פרטית ללא הזמנות. פרסום דורש אישור ומחיל יחד את התפריט ואת כמויות המלאי שהוכנו. שמירה לבדה אינה משנה את האתר או הקופה."
+            "fr": "Ouvrez Articles et cartes → Cartes puis la carte. Pour une carte tournante, sélectionnez sa série dans l’en-tête. Ajouter permet de choisir des articles pour un groupe ou de créer un groupe ; Ajouter un groupe de cartes est aussi disponible sous la liste. La flèche d’un groupe replie ou déplie son tableau sans modifier la carte. Le menu « … » du groupe contient Modifier le groupe et Choisir les articles. Le menu « … » à côté du titre contient Paramètres de la carte et Aperçu. Les modifications de groupes, canaux et horaires restent locales. Dès qu’une modification ou un brouillon existe, la barre inférieure propose Enregistrer le brouillon et Publier. Enregistrer conserve un brouillon privé ; Aperçu ouvre une liste privée sans prise de commande. Publier demande une confirmation et applique ensemble la carte et ses stocks préparés. Enregistrer seul ne modifie jamais le site ni la caisse. Modifier la mise en page du système de caisse ouvre l’éditeur de disposition distinct ; les modifications non enregistrées restent protégées avant cette navigation.",
+            "en": "Open Items & menus → Menus and select the carte. For a rotating carte, choose its series in the header. Add lets you choose items for a group or create a group; Add menu group is also available below the list. A group’s chevron collapses or expands its table without changing the carte. Its “…” menu contains Edit group and Choose items. The “…” menu beside the carte title contains Carte settings and Preview. Group, channel and hours edits stay local. Once edits or a saved draft exist, the bottom bar offers Save draft and Publish. Save stores a private draft; Preview opens a private list that cannot take orders. Publish asks for confirmation and applies the carte and prepared stocks together. Saving alone never changes the live website or POS. Edit POS layout opens the separate tile editor; unsaved changes are guarded before navigating there.",
+            "he": "פתחו פריטים ותפריטים → תפריטים ובחרו תפריט. בתפריט מתחלף בחרו סדרה בכותרת. הוספה מאפשרת לבחור פריטים לקבוצה או ליצור קבוצה; הוספת קבוצת תפריט זמינה גם מתחת לרשימה. חץ הקבוצה מקפל או מרחיב את הטבלה בלי לשנות את התפריט. תפריט ״…״ של הקבוצה כולל עריכת קבוצה ובחירת פריטים. תפריט ״…״ ליד שם התפריט כולל הגדרות תפריט ותצוגה מקדימה. עריכת קבוצות, ערוצים ושעות נשארת מקומית. כשיש שינויים או טיוטה שמורה, הסרגל התחתון מציע שמירת טיוטה ופרסום. שמירה שומרת טיוטה פרטית; תצוגה מקדימה מציגה רשימה פרטית ללא הזמנות. פרסום דורש אישור ומחיל יחד את התפריט והמלאי שהוכן. שמירה לבדה אינה משנה את האתר או הקופה. ערוך תצוגת קופה פותח עורך אריחים נפרד, עם הגנה על שינויים שלא נשמרו לפני המעבר."
           }
         },
         {
@@ -21349,9 +21361,35 @@
             "he": "הכנת מלאי לסדרה חדשה"
           },
           "instructions": {
-            "en": "With menu editing permission, open the rotating carte, select a series and choose Prepare stocks for this series. Enter INITIAL allowances including quantities already ordered: available = initial minus committed. Use shared units, compatible base measures (g/ml), counts per size, or no predefined limit. Copy previous initial quantities copies allowances, never previous remaining quantities or an old sold-out override. Quantities are shared by the same restaurant item across cartes for that series. Save draft keeps preparation private; Publish applies it atomically without restoring reservations made while editing. The first activation imports current available stock and existing scheduled orders, preserving current remaining quantities. Later series never inherit the old global counter. No predefined limit may still be constrained by a recipe, rule or manual status.",
-            "fr": "Avec la permission de modifier le menu, ouvrez la carte tournante, sélectionnez une série et cliquez sur Préparer les stocks de cette série. Saisissez les quantités INITIALES, commandes déjà passées incluses : disponible = initial − engagé. Choisissez un compteur commun en unités, une mesure compatible en g/ml, un compteur par taille ou aucune limite prédéfinie. Reprendre les quantités initiales précédentes copie les quotas, jamais les reliquats ni un ancien statut épuisé. Le stock d’un même article du restaurant est commun aux cartes de cette série. Enregistrer le brouillon garde la préparation privée ; Publier l’applique atomiquement sans recréditer les réservations faites pendant l’édition. La première activation importe le disponible actuel et les commandes programmées existantes en préservant les quantités restantes. Les séries suivantes ne reprennent jamais l’ancien compteur global. Sans limite prédéfinie, une recette, une règle ou un statut manuel peut encore limiter la disponibilité.",
-            "he": "עם הרשאת עריכת תפריט פתחו תפריט מתחלף, בחרו סדרה ולחצו הכנת מלאי לסדרה. הזינו כמויות התחלתיות כולל הזמנות שכבר התקבלו: זמין = התחלתי פחות מחויב. בחרו יחידות משותפות, מדידה תואמת בגרמים או במ״ל, כמות לכל גודל או ללא מגבלה מוגדרת. העתקת כמויות התחלתיות קודמות מעתיקה מכסות, ולא יתרות או מצב אזל ישן. מלאי אותו פריט במסעדה משותף בין תפריטים באותה סדרה. שמירת טיוטה משאירה את ההכנה פרטית; פרסום מחיל אותה יחד בלי לזכות הזמנות שנקלטו בזמן העריכה. בהפעלה הראשונה מיובאים המלאי הזמין וההזמנות המתוזמנות תוך שמירת היתרה הנוכחית. סדרות הבאות אינן יורשות את המונה הגלובלי הישן. גם ללא מגבלה מוגדרת, מתכון, כלל או מצב ידני עשויים להגביל זמינות."
+            "en": "With menu editing permission, open the rotating carte, select a series and open the “…” menu beside the title → Prepare stocks for this series. Enter INITIAL allowances including quantities already ordered: available = initial minus committed. Use shared units, compatible base measures (g/ml), counts per size, or no predefined limit. Copy previous initial quantities copies allowances, never previous remaining quantities or an old sold-out override. Quantities are shared by the same restaurant item across cartes for that series. Save draft keeps preparation private; Publish applies it atomically without restoring reservations made while editing. The first activation imports current available stock and existing scheduled orders, preserving current remaining quantities. Later series never inherit the old global counter. No predefined limit may still be constrained by a recipe, rule or manual status.",
+            "fr": "Avec la permission de modifier le menu, ouvrez la carte tournante, sélectionnez une série puis ouvrez le menu « … » à côté du titre → Préparer les stocks de cette série. Saisissez les quantités INITIALES, commandes déjà passées incluses : disponible = initial − engagé. Choisissez un compteur commun en unités, une mesure compatible en g/ml, un compteur par taille ou aucune limite prédéfinie. Reprendre les quantités initiales précédentes copie les quotas, jamais les reliquats ni un ancien statut épuisé. Le stock d’un même article du restaurant est commun aux cartes de cette série. Enregistrer le brouillon garde la préparation privée ; Publier l’applique atomiquement sans recréditer les réservations faites pendant l’édition. La première activation importe le disponible actuel et les commandes programmées existantes en préservant les quantités restantes. Les séries suivantes ne reprennent jamais l’ancien compteur global. Sans limite prédéfinie, une recette, une règle ou un statut manuel peut encore limiter la disponibilité.",
+            "he": "עם הרשאת עריכת תפריט פתחו תפריט מתחלף, בחרו סדרה ופתחו את תפריט ״…״ ליד הכותרת → הכנת מלאי לסדרה. הזינו כמויות התחלתיות כולל הזמנות שכבר התקבלו: זמין = התחלתי פחות מחויב. בחרו יחידות משותפות, מדידה תואמת בגרמים או במ״ל, כמות לכל גודל או ללא מגבלה מוגדרת. העתקת כמויות התחלתיות קודמות מעתיקה מכסות, ולא יתרות או מצב אזל ישן. מלאי אותו פריט במסעדה משותף בין תפריטים באותה סדרה. שמירת טיוטה משאירה את ההכנה פרטית; פרסום מחיל אותה יחד בלי לזכות הזמנות שנקלטו בזמן העריכה. בהפעלה הראשונה מיובאים המלאי הזמין וההזמנות המתוזמנות תוך שמירת היתרה הנוכחית. סדרות הבאות אינן יורשות את המונה הגלובלי הישן. גם ללא מגבלה מוגדרת, מתכון, כלל או מצב ידני עשויים להגביל זמינות."
+          }
+        },
+        {
+          "id": "table-actions",
+          "title": {
+            "fr": "Utiliser le tableau et les actions des articles",
+            "en": "Use the table and item actions",
+            "he": "שימוש בטבלה ובפעולות הפריט"
+          },
+          "instructions": {
+            "fr": "Avec la permission de modifier le menu, cochez un ou plusieurs articles d’un groupe : la barre de sélection permet de les déplacer vers un autre groupe ou de les retirer du groupe. Le menu « … » d’une ligne propose aussi Monter, Descendre et Retirer du groupe. Le glisser-déposer réordonne les lignes et les groupes. Ces opérations modifient le brouillon, sans supprimer les fiches de la bibliothèque. Le nom d’un article ouvre sa fiche commune ; Sélectionner dans Modificateurs ouvre aussi la fiche commune : utilisez sa section Personnalisations pour les modifier. Le retour de la fiche ramène à la carte. Une sortie avec des modifications non enregistrées propose de les enregistrer, de les abandonner ou de continuer. Les colonnes montrent le point de vente, les canaux configurés, les modificateurs et le prix ; la quantité disponible figure sous le nom. Les canaux configurés ne garantissent pas la possibilité de commander : les horaires, le statut actif et la disponibilité restent applicables. Sur mobile, les colonnes secondaires sont masquées ; le nom, le stock, le prix et le menu « … » restent accessibles.",
+            "en": "With menu editing permission, select one or more items in a group. The selection bar lets you move them to another group or remove them from this group. A row’s “…” menu also offers Move up, Move down and Remove from group. Dragging reorders rows and groups. These actions edit the draft without deleting shared library items. An item name opens its shared item editor; Select under Modifiers also opens the shared editor; use its Personalizations section to change them. Returning from the editor brings you back to the carte. Leaving unsaved changes offers save, discard or continue editing. Columns show the location, configured channels, modifiers and price; remaining stock appears below the name. Configured channels do not guarantee ordering: hours, active status and availability still apply. On mobile, secondary columns are hidden while name, stock, price and the “…” menu remain accessible.",
+            "he": "עם הרשאת עריכת תפריט סמנו פריט אחד או יותר בקבוצה. סרגל הבחירה מאפשר להעביר אותם לקבוצה אחרת או להסירם מהקבוצה. תפריט ״…״ בשורה מציע גם העברה למעלה, העברה למטה והסרה מהקבוצה. גרירה משנה את סדר הפריטים והקבוצות. הפעולות עורכות את הטיוטה ואינן מוחקות פריטים מהספרייה המשותפת. שם הפריט פותח את העורך המשותף; בחירה בעמודת תוספות פותחת גם היא את העורך המשותף; ערכו אותן בחלק ההתאמות האישיות. חזרה מהעורך מחזירה לתפריט. יציאה עם שינויים שלא נשמרו מציעה שמירה, ויתור או המשך עריכה. העמודות מציגות נקודת מכירה, ערוצים שהוגדרו, תוספות ומחיר; המלאי מופיע מתחת לשם. הערוצים אינם מבטיחים אפשרות הזמנה: שעות, מצב פעיל וזמינות עדיין חלים. בנייד מוסתרות העמודות המשניות, אך השם, המלאי, המחיר ותפריט ״…״ נשארים נגישים."
+          }
+        },
+        {
+          "id": "contextual-availability",
+          "title": {
+            "fr": "Changer la disponibilité et lire l’historique",
+            "en": "Change availability and read history",
+            "he": "שינוי זמינות וקריאת היסטוריה"
+          },
+          "instructions": {
+            "fr": "Dans une carte tournante, sélectionnez la série, puis ouvrez le menu « … » de l’article → Modifier la disponibilité. Choisissez Automatique (immédiat), Toujours disponible (immédiat) ou Épuisé (immédiat), puis Appliquer. La sélection seule ne change rien. Appliquer agit immédiatement sur cette série, indépendamment du brouillon ; la modification est historisée. En cas d’erreur, le dialogue reste ouvert : vérifiez le message avant de réessayer. Annuler ferme sans appliquer le choix. Le même menu « … » ouvre Historique du stock pour cet article. Pour une vue de tous les articles, utilisez « … » à côté du titre → Stocks des articles, ou la rubrique correspondante de la navigation.",
+            "en": "In a rotating carte, select the series, then open the item’s “…” menu → Change availability. Choose Automatic (immediate), Always available (immediate) or Sold out (immediate), then Apply. Selecting alone changes nothing. Apply acts immediately on this series independently of the carte draft and is recorded in history. On error the dialog stays open; review the message before retrying. Cancel closes without applying the selection. The same “…” menu opens Stock history for that item. For all items, use the “…” menu beside the carte title → Item stocks, or the matching navigation entry.",
+            "he": "בתפריט מתחלף בחרו סדרה ופתחו את תפריט ״…״ של הפריט → שינוי זמינות. בחרו אוטומטי (מיידי), זמין תמיד (מיידי) או אזל (מיידי), ואז החל. בחירה בלבד אינה משנה דבר. החל פועל מיד על הסדרה ללא תלות בטיוטה ונרשם בהיסטוריה. בכשל הדיאלוג נשאר פתוח; בדקו את ההודעה לפני ניסיון נוסף. ביטול סוגר בלי להחיל את הבחירה. אותו תפריט ״…״ פותח היסטוריית מלאי לפריט. לתצוגת כל הפריטים השתמשו בתפריט ״…״ ליד הכותרת → מלאי פריטים, או ברשומה המתאימה בניווט."
           }
         }
       ],
@@ -21859,7 +21897,15 @@
         },
         {
           "service": "foodyadmin",
+          "file": "src/components/menu/publication/CarteEditor.module.css"
+        },
+        {
+          "service": "foodyadmin",
           "file": "src/components/menu/publication/CarteEditor.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/components/menu/publication/CarteGroups.tsx"
         },
         {
           "service": "foodyadmin",
@@ -66817,12 +66863,21 @@
       ],
       "kind": "ui-controls",
       "labels": [
+        "add",
+        "apply",
         "cancel",
         "carteAddGroup",
+        "carteAddGroupCard",
+        "carteAddItems",
+        "carteAvailabilityHint",
+        "carteAvailabilityTitle",
+        "carteBack",
         "carteChooseHint",
         "carteChooseItems",
         "carteConflict",
         "carteConflictHint",
+        "carteDeleteGroupHint",
+        "carteDeleteGroupTitle",
         "carteDiscardDraft",
         "carteDiscardHint",
         "carteDiscardTitle",
@@ -66830,15 +66885,15 @@
         "carteEmpty",
         "carteGroupImage",
         "carteGroupSettings",
-        "carteGroups",
+        "carteHelp",
         "carteHidden",
-        "carteImmediateAvailability",
-        "carteLiveLegacy",
+        "carteLiveStatus",
         "carteLocalChangesHint",
-        "carteMoveDown",
-        "carteMoveTo",
-        "carteMoveUp",
+        "carteMenuActions",
         "carteParentGroup",
+        "cartePosAndWeb",
+        "cartePosChannel",
+        "cartePosLayoutShort",
         "cartePreview",
         "cartePreviewHint",
         "cartePreviewStocksHint",
@@ -66848,26 +66903,26 @@
         "cartePublishTitle",
         "cartePublished",
         "carteReload",
-        "carteRemoveSelected",
         "carteSaveAndLeave",
         "carteSaveDraft",
         "carteSaved",
         "carteSavedAt",
-        "carteSelected",
         "carteSettings",
         "carteSharedLibraryHint",
+        "carteTargetGroup",
         "carteUnsaved",
         "carteUnsavedHint",
         "carteUnsavedTitle",
         "carteUntitled",
+        "carteWebChannel",
         "close",
         "delete",
         "description",
+        "editPosLayout",
         "loading",
         "menus",
         "name",
         "none",
-        "saleStockAvailable",
         "saleStockClose",
         "saleStockHistory",
         "saleStockHistoryHint",
@@ -66875,8 +66930,7 @@
         "saleStockPrepare",
         "saleStockTitle",
         "saving",
-        "search",
-        "select"
+        "search"
       ],
       "actions": [
         "accept",
@@ -66888,6 +66942,55 @@
         "save",
         "saved",
         "updateGroup"
+      ],
+      "line": 1
+    },
+    {
+      "id": "foodyadmin:src/components/menu/publication/CarteGroups.tsx:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/components/menu/publication/CarteGroups.tsx",
+      "features": [
+        "menu-menus-and-groups"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "actions",
+        "available",
+        "cancel",
+        "carteAddItems",
+        "carteAllChannels",
+        "carteAlwaysAvailable",
+        "carteAvailabilityTitle",
+        "carteChooseItems",
+        "carteEditGroup",
+        "carteGroupActions",
+        "carteGroups",
+        "carteHidden",
+        "carteItemActions",
+        "carteLocations",
+        "carteMoveDown",
+        "carteMoveTo",
+        "carteMoveUp",
+        "cartePendingChange",
+        "cartePosChannel",
+        "carteRemoveSelected",
+        "carteSelectGroup",
+        "carteSelected",
+        "carteSoldOut",
+        "carteStockRemaining",
+        "carteUntitled",
+        "carteWebChannel",
+        "channels",
+        "delete",
+        "item",
+        "modifiers",
+        "price",
+        "saleStockHistory",
+        "select"
+      ],
+      "actions": [
+        "open",
+        "update"
       ],
       "line": 1
     },
@@ -81777,9 +81880,9 @@
   "coverage": {
     "sharedRuntimeFiles": 426,
     "features": 98,
-    "operations": 466,
-    "sourceFiles": 2097,
-    "surfaces": 1996,
+    "operations": 468,
+    "sourceFiles": 2099,
+    "surfaces": 1997,
     "unclassifiedRoutes": []
   }
 }

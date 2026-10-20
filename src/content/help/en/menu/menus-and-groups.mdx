@@ -58,7 +58,7 @@ in several groups and menus.
 
 ## Prepare, save and publish a carte
 
-Open Items & menus → Menus and select the carte. For a rotating carte, select its fulfillment series first. Add groups, choose items, move selected items, reorder with arrows or dragging, and edit channels/hours in Carte settings or by clicking a group name. These changes stay local. Save draft stores a private server draft; Preview opens a private item-list preview that cannot take orders. Publish asks for confirmation and applies the saved carte and its prepared stock changes together. Saving alone never changes the live website or POS.
+Open Items & menus → Menus and select the carte. For a rotating carte, choose its series in the header. Add lets you choose items for a group or create a group; Add menu group is also available below the list. A group’s chevron collapses or expands its table without changing the carte. Its “…” menu contains Edit group and Choose items. The “…” menu beside the carte title contains Carte settings and Preview. Group, channel and hours edits stay local. Once edits or a saved draft exist, the bottom bar offers Save draft and Publish. Save stores a private draft; Preview opens a private list that cannot take orders. Publish asks for confirmation and applies the carte and prepared stocks together. Saving alone never changes the live website or POS. Edit POS layout opens the separate tile editor; unsaved changes are guarded before navigating there.
 
 <span id="section-4" />
 
@@ -101,4 +101,16 @@ If you leave or change series with unsaved edits, choose Save draft and leave, D
 
 ## Prepare stock for a new series
 
-With menu editing permission, open the rotating carte, select a series and choose Prepare stocks for this series. Enter INITIAL allowances including quantities already ordered: available = initial minus committed. Use shared units, compatible base measures (g/ml), counts per size, or no predefined limit. Copy previous initial quantities copies allowances, never previous remaining quantities or an old sold-out override. Quantities are shared by the same restaurant item across cartes for that series. Save draft keeps preparation private; Publish applies it atomically without restoring reservations made while editing. The first activation imports current available stock and existing scheduled orders, preserving current remaining quantities. Later series never inherit the old global counter. No predefined limit may still be constrained by a recipe, rule or manual status.
+With menu editing permission, open the rotating carte, select a series and open the “…” menu beside the title → Prepare stocks for this series. Enter INITIAL allowances including quantities already ordered: available = initial minus committed. Use shared units, compatible base measures (g/ml), counts per size, or no predefined limit. Copy previous initial quantities copies allowances, never previous remaining quantities or an old sold-out override. Quantities are shared by the same restaurant item across cartes for that series. Save draft keeps preparation private; Publish applies it atomically without restoring reservations made while editing. The first activation imports current available stock and existing scheduled orders, preserving current remaining quantities. Later series never inherit the old global counter. No predefined limit may still be constrained by a recipe, rule or manual status.
+
+<span id="table-actions" />
+
+## Use the table and item actions
+
+With menu editing permission, select one or more items in a group. The selection bar lets you move them to another group or remove them from this group. A row’s “…” menu also offers Move up, Move down and Remove from group. Dragging reorders rows and groups. These actions edit the draft without deleting shared library items. An item name opens its shared item editor; Select under Modifiers also opens the shared editor; use its Personalizations section to change them. Returning from the editor brings you back to the carte. Leaving unsaved changes offers save, discard or continue editing. Columns show the location, configured channels, modifiers and price; remaining stock appears below the name. Configured channels do not guarantee ordering: hours, active status and availability still apply. On mobile, secondary columns are hidden while name, stock, price and the “…” menu remain accessible.
+
+<span id="contextual-availability" />
+
+## Change availability and read history
+
+In a rotating carte, select the series, then open the item’s “…” menu → Change availability. Choose Automatic (immediate), Always available (immediate) or Sold out (immediate), then Apply. Selecting alone changes nothing. Apply acts immediately on this series independently of the carte draft and is recorded in history. On error the dialog stays open; review the message before retrying. Cancel closes without applying the selection. The same “…” menu opens Stock history for that item. For all items, use the “…” menu beside the carte title → Item stocks, or the matching navigation entry.
