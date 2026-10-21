@@ -16,6 +16,12 @@ Open the active table bill. Course availability depends on the restaurant’s PO
 
 Advanced actions appear only when the installed POS and API advertise the required capability and your role permits them. Refresh a changed bill before retrying; never create another charge to resolve an uncertain result.
 
+<span id="course-vs-cash-status" />
+
+## Keep kitchen release separate from cash collection
+
+Holding or firing a course changes kitchen timing, not payment status. A table may be served before collection; do not count it as cash until the money is received and confirmed on an enrolled POS with an open drawer session. A pending cash payment must be resolved before closing the drawer. The card terminal deposit is a separate end-of-day action.
+
 <span id="seats" />
 
 ## Assign seats and courses

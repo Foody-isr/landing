@@ -3,7 +3,7 @@ title: Encaisser sur la caisse
 description: >-
   Ouvrez la bonne addition et vérifiez le montant avant Payer. Les moyens disponibles dépendent du restaurant et de
   l’appareil.
-apps: foodypos
+apps: both
 tags:
   - payments
   - pos-payments
@@ -30,13 +30,61 @@ Pour les commandes en ligne au poids, ouvrez Réglages → Paiements & TVA avec 
 
 ## Enregistrer les espèces
 
-Choisissez espèces, saisissez le montant reçu si demandé et vérifiez la monnaie. Enregistrez uniquement l’argent réellement reçu. Pour les additions partagées, sélectionnez la bonne addition financière pour conserver reçu et paiement indépendants.
+Sur un POS autorisé avec un shift PIN actif, ouvrez d’abord Plus → Rapports → Solde en caisse et saisissez le fonds initial réellement présent. Choisissez ensuite Espèces sur la bonne commande ou addition financière, saisissez le montant reçu et vérifiez la monnaie avant de confirmer. N’enregistrez que l’argent réellement reçu. Une collecte en attente doit être reprise avec son identité existante, pas recréée comme une nouvelle vente. Les additions partagées conservent chacune reçu et statut de paiement.
+
+<span id="cash-drawer-report" />
+
+## Compter et clôturer la caisse
+
+Sur le même POS autorisé, ouvrez Plus → Rapports → Solde en caisse. Vérifiez fonds initial, ventes et remboursements en espèces enregistrés, entrées/sorties justifiées et montant attendu. Un responsable des paiements peut saisir une entrée ou sortie avec motif, sans dépasser le solde attendu pour une sortie ; si Foody refuse le montant, saisissez-en un inférieur. Comptez physiquement les espèces, saisissez le montant compté et clôturez la session ; le rapport conserve l’éventuel écart. Si un encaissement ou une action de caisse reste incertain, rapprochez ou reprenez cette opération exacte avant la clôture. Ce rapport couvre uniquement les espèces enregistrées sur ce POS : il n’est pas un solde global du restaurant et n’inclut pas les dépôts de cartes Verifone. N’utilisez jamais un ajustement espèces pour masquer un remboursement carte.
 
 <span id="card" />
 
 ## Encaisser un paiement connecté
 
 Choisissez un moyen connecté activé et suivez terminal ou page hébergée. Attendez le statut final vérifié Foody ; le retour navigateur seul ne suffit pas. En attente/incertain, actualisez puis faites vérifier la transaction par un opérateur autorisé avant nouvelle tentative. Ne transmettez pas les données de carte à l’assistant.
+
+<span id="transaction-history" />
+
+## Retrouver un paiement confirmé dans Transactions
+
+Ouvrez Transactions dans la navigation de la caisse iPad, dans Plus sur un terminal compact ou dans le menu latéral Admin, avec payments.view ou payments.manage. Ces trois écrans lisent le même historique des paiements confirmés du restaurant. Dans Admin, choisissez période, source et mode ; recherchez par article, référence ou numéro de commande, puis sélectionnez un paiement pour son montant, son moyen et les commandes liées. Sur la caisse, sélectionner une commande liée ouvre son détail enregistré en lecture seule sans quitter Transactions ; si le chargement échoue, actualisez et réessayez. La source suit la commande liée : un paiement traité par un prestataire pour une commande créée en caisse apparaît sous Caisse, pas En ligne. Les totaux couvrent tous les paiements correspondant aux filtres, pas seulement la page visible, et séparent les devises. Une commande peut avoir plusieurs encaissements et un encaissement couvrir plusieurs commandes ; Commandes reste l’espace de suivi du service. Les tentatives terminal en attente ne sont pas des ventes finalisées. L’historique ne crée pas de nouveau reçu. Les propriétaires et responsables autorisés peuvent voir des remboursements d’espèces ou des retours Verifone Checkout sur la carte d’origine lorsque le serveur confirme l’éligibilité ; lisez la procédure de remboursement avant d’agir. Si un paiement manque, vérifiez restaurant, période et filtres, puis rapprochez les résultats incertains avant un nouveau débit.
+
+<span id="transaction-payment-origin" />
+
+## Comprendre l’origine du paiement
+
+Ouvrez une transaction sur la caisse ou dans Admin et lisez Origine du paiement séparément de Source. La source indique où la commande liée a été créée ; l’origine distingue espèces, Verifone Checkout, autre prestataire ou paiement par carte enregistré. Victa (paiement déclaré) et Carte (origine non vérifiée) signifient que Foody a enregistré un résultat, pas qu’un remboursement peut être envoyé au terminal. Les anciens paiements groupés peuvent afficher Origine non attribuée. Pour un retour, vérifiez le moyen d’origine et utilisez son parcours autorisé ; ne remplacez jamais un remboursement carte par des espèces.
+
+<span id="transaction-items-and-retry" />
+
+## Rechercher tous les articles et reprendre l’historique
+
+Recherchez une transaction par n’importe quel article d’une commande liée, y compris au-delà des quatre premiers. Ouvrez le paiement pour consulter les noms d’articles liés disponibles. Sur la caisse, si le chargement de la suite échoue, les paiements déjà affichés restent visibles ; choisissez Réessayer sous la liste pour continuer. Cela relance seulement la lecture de l’historique, jamais un débit de carte.
+
+<span id="transaction-recorded-returns" />
+
+## Lire les remboursements et annulations dans Transactions
+
+Un remboursement ou une annulation Verifone Checkout réussi depuis Foody apparaît comme une transaction de retour distincte, liée au paiement d’origine. Un remboursement en espèces confirmé apparaît lui aussi séparément, lié à l’encaissement d’origine. Sur la caisse, un propriétaire ou responsable avec payments.manage peut ouvrir un paiement éligible dans Transactions. Pour une vente espèces enregistrée, choisissez Émettre un remboursement seulement si le serveur confirme la part exacte remboursable et une caisse autorisée ouverte. Sélectionnez la part de commande ou d’addition, indiquez un montant dans la limite et un motif, puis remettez l’argent seulement après confirmation de Foody. Pour un seul paiement carte Verifone Checkout capturé et lié exactement à une commande, choisissez Rembourser sur la carte d’origine ou Annuler le paiement carte si proposé. Indiquez un motif et, pour un remboursement, un montant dans la limite affichée. Foody renvoie l’argent sur la carte d’origine, jamais dans la caisse espèces. Un résultat carte incertain doit être vérifié avec la même requête enregistrée avant un autre retour ; ne remboursez pas en espèces à la place. Les paiements anciens non attribués, partagés ou liés à plusieurs commandes et les cartes Victa ne proposent pas cette action. Admin distingue encaissements bruts et retours enregistrés dans Foody ; aucun ne représente le chiffre d’affaires net. Les retours réalisés directement dans Verifone Central ou sur Victa ne sont pas inclus automatiquement.
+
+<span id="transaction-gross-total" />
+
+## Lire correctement le total des transactions
+
+La période et les heures affichées dans Admin utilisent le fuseau horaire du restaurant. Le total additionne tous les paiements confirmés correspondant aux filtres, même répartis sur plusieurs pages. Les devises restent séparées. C’est un total brut des paiements, pas des ventes nettes : les remboursements, frais de traitement, mouvements de tiroir-caisse et dépôts de fin de journée du terminal ne sont pas déduits ici. Utilisez les rapports du prestataire et de comptabilité adaptés pour rapprocher une journée.
+
+<span id="terminal-deposit" />
+
+## Clôturer et déposer un lot du terminal Verifone
+
+Sur un Victa Portable configuré ou un iPad relié à un Victa Mini, connectez-vous avec l’autorisation payments.manage. Ouvrez Plus → Rapports → Dépôts du terminal. Vérifiez la connexion et la disponibilité de Clôturer et déposer. En fin de journée, confirmez cette action une seule fois, attendez la confirmation finale du terminal et conservez sa référence de réconciliation. Cette opération est distincte de la fermeture d’un service Foody ou d’un tiroir-caisse. Si le résultat est incertain, ne la relancez pas et n’encaissez pas d’autre carte : vérifiez le lot sur le terminal ou auprès du prestataire de paiement. Un responsable ne choisit J’ai vérifié le lot qu’après cette vérification.
+
+<span id="terminal-reports-advanced" />
+
+## Consulter les totaux ou utiliser les actions avancées du terminal
+
+Dans Plus → Rapports → Dépôts du terminal, Consulter les totaux lit le lot en cours sans le clôturer ni le transmettre. Les actions avancées ne sont disponibles que si le terminal les prend en charge : Clôturer le lot uniquement ferme la période sans transmission ; Transmettre uniquement demande une réconciliation à l’acquéreur sans clôture explicite. Aucune de ces deux actions n’est à elle seule la procédure normale de fin de journée. Utilisez-les uniquement sur instruction du prestataire, confirmez une seule fois et attendez le résultat final du terminal. Si une action est indisponible ou incertaine, ne présumez pas sa réussite : vérifiez le terminal ou contactez le prestataire avant de réessayer.
 
 <span id="receipt-tip" />
 

@@ -16,6 +16,12 @@ Open the table bill or a saved item’s Options. Whole-bill movement and selecte
 
 Advanced actions appear only when the installed POS and API advertise the required capability and your role permits them. Refresh a changed bill before retrying; never create another charge to resolve an uncertain result.
 
+<span id="move-payment-boundary" />
+
+## Move a bill without duplicating cash
+
+Moving or merging a bill changes its table allocation, not the physical cash already counted in a drawer. If a payment is claimed or its result is uncertain, resolve that exact payment before moving the bill. Do not use a move, merge, or payment-method correction to turn a card result into a cash sale; cash collection is recorded only when money is received on an enrolled POS with an open drawer session.
+
 <span id="move" />
 
 ## Move a bill

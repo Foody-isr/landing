@@ -7,8 +7,11 @@ const inventory=JSON.parse(fs.readFileSync('docs/help/inventory.json','utf8'));
 const release=JSON.parse(fs.readFileSync('docs/help/catalog/release.json','utf8'));
 const refAt=process.argv.indexOf('--documentation-ref');
 const documentationRef=refAt<0?'WORKSPACE':process.argv[refAt+1];
+const servicesAt=process.argv.indexOf('--services');
+const selectedServices=servicesAt<0?null:new Set(process.argv[servicesAt+1].split(',').filter(Boolean));
 const script=fs.readFileSync('scripts/check-help-contract.mjs');
 for(const [service,folder] of Object.entries(roots)) {
+ if(selectedServices && !selectedServices.has(service))continue;
  const root=path.resolve('..',folder);
  const contract={schemaVersion:1,service,documentationRepository:'Foody-isr/landing',documentationRef:service==='foodylanding'?'self':documentationRef,documentationRevision:release.revision,articles:release.articles,
   sources:inventory.services[service].sourceFiles,surfaces:inventory.surfaces.filter(s=>s.service===service).map(({id,kind,source,line,features,route,method,routeFragment,labels,actions,componentSources,field})=>({id,kind,source,line,features,route,method,routeFragment,labels,actions,componentSources,field}))};
