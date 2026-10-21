@@ -4,9 +4,9 @@
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "fb578f2412b58ed338fc8d475f4e2a3780f2a409",
+      "sourceCommit": "bc193eb5248d051088354d7f3a2270417e4cf852",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "ff54c2b05531521c99a498caae70043edc17e2649b32c1ed2851f90616291492",
+      "sourceSnapshot": "7c2e024741cb95575205b0d554ecda825efdac2d1935d65bfe5f3e9388715c6e",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -854,8 +854,15 @@
             "platform-api"
           ]
         },
+        "internal/delivery/deadline_planning.go": {
+          "sha256": "f1e1a1b64ffc8e3d9e6f83cf3a53c9c14b5daba6a612edf86d13d212fe9d9736",
+          "features": [
+            "delivery-dispatch",
+            "platform-api"
+          ]
+        },
         "internal/delivery/geoapify.go": {
-          "sha256": "41a2a74f31943affbf49b75078f956818f720197c897eb1c707541be78a8c809",
+          "sha256": "e96082b15c5c682cac54eb2b3d29fa7d26518a06291b47e8ffb854af6aa85eea",
           "features": [
             "delivery-dispatch",
             "platform-api"
@@ -890,7 +897,7 @@
           ]
         },
         "internal/delivery/google_provider.go": {
-          "sha256": "566a44f4dfacdbb5506ad2a37d66b052f1432f1714202c9bb48da25058089999",
+          "sha256": "387b0a8ea7d3e0ec9900f99358e5485b20271cad164ea20ebd3c44253c31f119",
           "features": [
             "delivery-dispatch",
             "platform-api"
@@ -976,7 +983,7 @@
           ]
         },
         "internal/delivery/provider_settings.go": {
-          "sha256": "464068535630f63d8521df82934cb127747ed046ccc54e2bfbf9728135dec321",
+          "sha256": "6fa829a2e4ec1fc4bf0741a0a12f129eb57d84922089b00addd533114239b9aa",
           "features": [
             "delivery-dispatch",
             "platform-api"
@@ -990,7 +997,7 @@
           ]
         },
         "internal/delivery/route_calculation.go": {
-          "sha256": "9698bc5c663992bd067bb337665cc145024890581760781e0a4994075945a7df",
+          "sha256": "9503a08ec9d794b65e5fb1cc122149f98bff10323c35493bcfba760b289b8a01",
           "features": [
             "delivery-dispatch",
             "platform-api"
@@ -4055,7 +4062,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "a80db918358d3b05e5bab97b15f182dedc6d51288283617291b01132df8dfb6d",
+          "sha256": "4285e03ede3e9e476705cd6a4d3f718d36d8514da6b9f67636ff6dfe3cf3b37d",
           "features": [
             "getting-started-using-support",
             "platform-api"
@@ -28515,6 +28522,10 @@
         {
           "service": "foodyadmin",
           "file": "src/lib/i18n.tsx"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/delivery/deadline_planning.go"
         }
       ]
     },
@@ -40502,6 +40513,10 @@
         {
           "service": "foodyweb",
           "file": "app/sw.js/route.ts"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/delivery/deadline_planning.go"
         }
       ]
     },
@@ -82691,7 +82706,7 @@
     "sharedRuntimeFiles": 425,
     "features": 99,
     "operations": 529,
-    "sourceFiles": 2116,
+    "sourceFiles": 2124,
     "surfaces": 2017,
     "unclassifiedRoutes": []
   }

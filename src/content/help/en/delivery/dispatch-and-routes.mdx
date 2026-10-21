@@ -42,7 +42,7 @@ Select the intended courier, depot and orders, then review stop addresses, servi
 
 ## Review a calculated route
 
-Run the offered route calculation or fleet allocation and inspect the result before saving/dispatching. Review driving, waiting and handover duration separately; recalculations may consume provider usage.
+Run the offered route calculation or fleet allocation and inspect the result before saving/dispatching. Couriers may receive different numbers of deliveries so that promised windows can be met. When a mixed-window plan is rejected, planning can prioritize the earliest deadline and recalculate; every complete route still has to pass road-time and window checks. Review driving, waiting and handover duration separately; recalculations and unsuccessful attempts may consume provider usage. An infeasible-plan error can concern the departure, promised windows or road itinerary, not only the address. Check the departure time and each promised window; advance the departure or use more couriers when the route cannot fit.
 
 <span id="dispatch" />
 
