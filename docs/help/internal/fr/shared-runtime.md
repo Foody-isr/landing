@@ -69,3 +69,9 @@ La route Admin menu/stock et ses liens portent désormais le libellé Historique
 ## Accès aux nouveaux réglages
 
 Paramètres → Consommation et quotas affiche les plafonds et consommations Google/Geoapify du restaurant, accessibles avec la permission de consulter ou modifier les paramètres. Les crédits de remplacement et les livraisons soumises à l’optimisation sont comptés séparément des requêtes. Foody ajuste les plafonds ; un changement ne remet pas les compteurs à zéro. Voir [les règles et le renouvellement](/fr/help/settings/api-usage-and-quotas).
+
+<span id="optional-entry-access" />
+
+## Vérifier l’accès discret à la connexion
+
+Le réglage offer_sign_in pilote l’invitation automatique, pas la disponibilité du compte. Faux affiche directement le formulaire avec un petit lien Se connecter ; vrai ou absent conserve l’invitation et le choix invité. Vérifier FR/HE/EN, bureau et mobile, ouverture explicite, fermeture avec retour du focus et conservation de l’adresse saisie. Le lien garde une cible de 44 px, un fond transparent et une colonne adaptée au texte sur mobile. L’aperçu montre un lien désactivé sans authentification réelle. Les libellés de l’éditeur expliquent ce même choix ; aucun contrôle de livraison ne change. Le corpus de support embarque les mêmes procédures publiques.
