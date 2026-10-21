@@ -16,7 +16,7 @@ tags:
   - caisse
   - horaires
   - web
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-21'
 featureId: menu-menus-and-groups
 audience: public
 releaseStatus: available
@@ -56,9 +56,9 @@ article peut figurer dans plusieurs groupes et menus.
 
 <span id="section-3" />
 
-## Gérer vos menus
+## Préparer, enregistrer et publier une carte
 
-Dans Articles et cartes → Cartes, créez ou ouvrez un menu puis un groupe. Dans la fiche du groupe, utilisez Ajouter un article ou Ajouter depuis une catégorie pour sélectionner des articles. Pour un groupe existant, les changements d’articles sont immédiats ; dans un nouveau groupe, ils sont appliqués lors de sa création. Le glisser-déposer sert à réordonner des groupes ou des articles déjà présents dans un groupe, pas à importer le catalogue. Le même article peut appartenir à plusieurs groupes. [Créer un article](./creating-a-menu-item).
+Ouvrez Articles et cartes → Cartes puis la carte. Pour une carte tournante, sélectionnez sa série dans l’en-tête. Ajouter permet de choisir des articles pour un groupe ou de créer un groupe ; Ajouter un groupe de cartes est aussi disponible sous la liste. La flèche d’un groupe replie ou déplie son tableau sans modifier la carte. Le menu « … » du groupe contient Modifier le groupe et Choisir les articles. Le menu « … » à côté du titre contient Paramètres de la carte et Aperçu. Les modifications de groupes, canaux et horaires restent locales. Dès qu’une modification ou un brouillon existe, la barre inférieure propose Enregistrer le brouillon et Publier. Enregistrer conserve un brouillon privé ; Aperçu ouvre une liste privée sans prise de commande. Publier demande une confirmation et applique ensemble la carte et ses stocks préparés. Enregistrer seul ne modifie jamais le site ni la caisse. Modifier la mise en page du système de caisse ouvre l’éditeur de disposition distinct ; les modifications non enregistrées restent protégées avant cette navigation.
 
 <span id="section-4" />
 
@@ -88,6 +88,36 @@ Les canaux et horaires déterminent si le groupe peut être affiché. La disponi
 
 <span id="section-7" />
 
-## Démarrage rapide
+## Contrôler la publication
 
-Créez et enregistrez les articles. Ouvrez le menu puis le groupe et ajoutez les articles avec le sélecteur, ou affectez les groupes depuis la rubrique latérale Cartes de l’article. Vérifiez les canaux POS/Web, les horaires, le masquage et les établissements du menu. Pour un menu tournant, vérifiez aussi la semaine sélectionnée. Contrôlez le résultat sur le canal voulu après enregistrement.
+Créez et enregistrez d’abord les articles de la bibliothèque commune. Ajoutez-les au brouillon de carte, vérifiez la série sélectionnée, les canaux web/caisse, les horaires et le masquage des groupes, puis ouvrez l’aperçu et publiez. La série actuelle reste inchangée pendant la préparation d’une série future. Après activation de la publication, une série future sans publication n’est pas servie. Les noms, prix, recettes et statuts actif/inactif restent des modifications de la bibliothèque commune ; les disponibilités marquées immédiates s’appliquent immédiatement et sont historisées.
+
+<span id="draft-leave-and-conflict" />
+
+## Quitter et résoudre un conflit
+
+Si vous quittez ou changez de série avec des modifications non enregistrées, choisissez Enregistrer et quitter, Abandonner ou Continuer la modification. Abandonner dans ce dialogue retire seulement les changements non enregistrés ; un brouillon déjà enregistré est conservé. Supprimer le brouillon sur la carte efface le brouillon enregistré après confirmation et conserve la carte publiée. En cas d’échec, restez dans l’éditeur et vérifiez l’erreur : vos changements y restent disponibles. Une révision dépassée, un réglage de stock modifié, une quantité invalide ou inférieure aux engagements empêche la publication. Recharger le brouillon enregistré récupère explicitement la dernière version du serveur et abandonne les changements locaux non enregistrés.
+
+<span id="series-sale-stock" />
+
+## Préparer le stock d’une nouvelle série
+
+Avec la permission de modifier le menu, ouvrez la carte tournante, sélectionnez une série puis ouvrez le menu « … » à côté du titre → Préparer les stocks de cette série. Saisissez les quantités INITIALES, commandes déjà passées incluses : disponible = initial − engagé. Choisissez un compteur commun en unités, une mesure compatible en g/ml, un compteur par taille ou aucune limite prédéfinie. Reprendre les quantités initiales précédentes copie les quotas, jamais les reliquats ni un ancien statut épuisé. Le stock d’un même article du restaurant est commun aux cartes de cette série. Enregistrer le brouillon garde la préparation privée ; Publier l’applique atomiquement sans recréditer les réservations faites pendant l’édition. La première activation importe le disponible actuel et les commandes programmées existantes en préservant les quantités restantes. Les séries suivantes ne reprennent jamais l’ancien compteur global. Sans limite prédéfinie, une recette, une règle ou un statut manuel peut encore limiter la disponibilité.
+
+<span id="table-actions" />
+
+## Utiliser le tableau et les actions des articles
+
+Avec la permission de modifier le menu, cochez un ou plusieurs articles d’un groupe : la barre de sélection permet de les déplacer vers un autre groupe ou de les retirer du groupe. Le menu « … » d’une ligne propose aussi Monter, Descendre et Retirer du groupe. Le glisser-déposer réordonne les lignes et les groupes. Ces opérations modifient le brouillon, sans supprimer les fiches de la bibliothèque. Le nom d’un article ouvre sa fiche commune ; Sélectionner dans Modificateurs ouvre aussi la fiche commune : utilisez sa section Personnalisations pour les modifier. Le retour de la fiche ramène à la carte. Une sortie avec des modifications non enregistrées propose de les enregistrer, de les abandonner ou de continuer. Les colonnes montrent le point de vente, les canaux configurés, les modificateurs et le prix ; une colonne Disponibilité reprend les badges de la page Articles, avec la quantité sous le badge. Les canaux configurés ne garantissent pas la possibilité de commander : les horaires, le statut actif et la disponibilité restent applicables. Sur mobile, les colonnes secondaires sont masquées ; le nom, le stock, le prix et le menu « … » restent accessibles.
+
+<span id="contextual-availability" />
+
+## Changer la disponibilité et lire l’historique
+
+Dans la carte, cliquez sur un badge de la colonne Disponibilité : un petit panneau s’ouvre à côté de l’article. Le clic et les choix ne changent encore rien. Choisissez Disponible sans limite, Indisponible, Stock prédéfini ou Automatique (règles existantes), puis Appliquer. Le menu « … » → Modifier la disponibilité ouvre le même panneau. Dans une série, Stock prédéfini permet de saisir la quantité RESTANTE, en unités, en g/ml ou par taille selon le suivi. Les commandes déjà engagées restent réservées ; ne les ajoutez pas à la quantité saisie. Au moins une quantité positive est nécessaire ; pour un stock entièrement épuisé, choisissez Indisponible. Une taille laissée vide conserve une disponibilité sans limite. Un mode déjà engagé par des commandes ne peut pas être changé dans ce panneau. Appliquer agit immédiatement sur la série et alimente l’historique, indépendamment du brouillon de la carte. Disponible sans limite est un choix manuel qui ignore le plafond ; Automatique réutilise les règles et le stock actuels. En cas d’erreur, le panneau conserve la sélection et les quantités : Rechargez les stocks, vérifiez les valeurs puis appliquez à nouveau. Annuler, Échap ou cliquer à l’extérieur ferme sans sauvegarder. Pendant l’enregistrement, attendez la réponse. Sur mobile et en hébreu, le panneau reste dans l’écran. Historique du stock reste accessible sur la ligne et dans son menu ; le journal global reste dans Historique des stocks.
+
+<span id="sale-stock-history-page" />
+
+## Consulter uniquement l’historique des stocks
+
+Ouvrez Articles et cartes → Historique des stocks. Cette page est consacrée uniquement au journal des mouvements, visible dès l’ouverture : elle ne liste pas les stocks actuels et ne propose pas de corrections. Choisissez un Article ou Tous les articles, une date de Série ou Toutes les séries, et un Mouvement ou Tous les mouvements. Une date de série passée est acceptée. Les filtres se combinent et sont conservés avec Afficher la suite. Le journal indique la date et la série, l’article, le mouvement, les quantités avant/après et l’auteur ; un lien ouvre la commande lorsqu’elle est associée. Un résultat vide signifie qu’aucun mouvement n’est enregistré pour les filtres choisis. Les imports initiaux sont identifiés comme des imports ; les modifications antérieures à l’activation du suivi ne sont pas reconstituées. En cas d’erreur du filtre des articles, Réessayer recharge ce filtre et le journal reste consultable. Depuis un produit, Historique complet du stock ouvre ce journal filtré sur l’article ; Historique du stock ouvre son dialogue. Dans une carte, l’accès Historique de la ligne ou son menu « … » ouvre aussi ce dialogue. Pour préparer ou ajuster les quantités initiales d’une série, ouvrez la carte, choisissez la série puis Préparer les stocks de cette série, enregistrez le brouillon et publiez après vérification. Les disponibilités marquées immédiates conservent leur action séparée et historisée. Une annulation avant production recrédite le compteur d’origine ; un produit déjà préparé reste consommé. Si le chargement du journal échoue, Réessayer recharge les mouvements sans modifier les filtres ; cette erreur n’est pas présentée comme un historique vide.

@@ -5,12 +5,20 @@ apps: foodyadmin
 tags:
   - delivery
   - delivery-dispatch
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-21'
 featureId: delivery-dispatch
 audience: public
 releaseStatus: available
 ---
 Admin → Commandes → Livraisons / Tournées
+
+<span id="verifone-admin-money-operations" />
+
+## Rembourser ou annuler un paiement en ligne Verifone
+
+La section paiement d’une commande Admin permet le remboursement lié total ou partiel et le VOID total d’un paiement en ligne Verifone unique admissible, pour un propriétaire/responsable avec payments.manage. L’état fournisseur, le montant encaissé et l’historique vérifié déterminent l’admissibilité, pas un délai fixe de 24 heures. La préparation et la remise ne sont pas annulées et aucun bouton de remboursement terminal POS n’est ajouté. Un résultat inconnu reste réservé : vérifiez-le sans renvoyer l’opération. Les avoirs et annulations Invoice4U nécessitent un contrôle distinct. Voir [la procédure de paiement en ligne](/fr/help/payments/how-payments-work#verifone-admin-refund-void).
+
+Une vente ABS capturée encore en AUTHORISED/AUTHORIZED ou SETTLEMENT_REQUESTED n’est pas réglée : Admin affiche Montant annulable et uniquement Annuler tout le paiement, sans remboursement antérieur. Rembourser le paiement et Montant remboursable exigent un état réglé explicite ou un historique de remboursement partiel vérifié. Les états génériques APPROVED/COMPLETED, les contradictions et les preuves manquantes ne proposent aucune opération. Un changement d’état avant confirmation refuse l’action devenue obsolète ; le VOID n’est jamais remplacé automatiquement par un REFUND. Demande rejetée par Verifone signifie qu’aucune restitution n’est confirmée, pas nécessairement un refus de la banque.
 
 <span id="weight-hold-margin" />
 
@@ -65,3 +73,15 @@ Avec les notifications Meta directes activées, configurez la pièce jointe dans
 ## Faire une exception de formule sur une commande
 
 Pour une exception de formule sur une seule commande, un utilisateur Admin autorisé ouvre l’étape de la formule et choisit Choisir un autre article. Le remplacement est inclus sans supplément et enregistré uniquement sur cette commande. Les règles de remise, programmation et livraison restent inchangées. Vérifiez le plat et la portion sélectionnés dans le détail de commande. Les sélecteurs client et POS conservent la composition configurée ; effectuez l’exception dans l’éditeur interne Admin. Consultez le guide des formules pour les quantités, articles admissibles et reprises.
+
+<span id="carte-series-stock" />
+
+## Conserver l’origine du stock lors d’un déplacement
+
+Les stocks prédéfinis des articles disposent d’un journal dans Articles et cartes → Historique des stocks et sur chaque produit. Une carte tournante permet de préparer des quotas initiaux par série et de les publier sans recréditer les quantités engagées. Les reliquats précédents ne sont pas reportés. Les modifications de commande et libérations avant production utilisent le compteur d’origine enregistré ; un article déjà préparé reste consommé. Les quantités d’ingrédients et préparations et les coûts de recette restent distincts. Consultez [Disponibilité](/fr/help/kitchen/availability) pour les imports initiaux, les corrections et les filtres d’historique.
+
+<span id="related-service-controls" />
+
+## Accès aux nouveaux réglages
+
+Paramètres → Consommation et quotas affiche les plafonds et consommations Google/Geoapify du restaurant, accessibles avec la permission de consulter ou modifier les paramètres. Les crédits de remplacement et les livraisons soumises à l’optimisation sont comptés séparément des requêtes. Foody ajuste les plafonds ; un changement ne remet pas les compteurs à zéro. Voir [les règles et le renouvellement](/fr/help/settings/api-usage-and-quotas).

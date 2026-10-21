@@ -17,7 +17,7 @@ tags:
   - fournisseurs
   - previsions
   - pertes
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-21'
 featureId: kitchen-daily-operations
 audience: public
 releaseStatus: available
@@ -140,4 +140,10 @@ Distinguez une liste vide d’un chargement en échec. Après un enregistrement 
 
 ## Parcours et guides liés
 
-Préparez le service, recevez les livraisons, vérifiez ventes et stock, enregistrez la transmission, puis clôturez. Générez et relisez séparément les brouillons fournisseur ; envoyez seulement après validation manuelle. [Stock](./stock-management) · [Préparations](./preparations) · [Import de livraison](./delivery-note-import) · [Achats](./suppliers-and-purchases).
+Préparez le service, recevez les livraisons, vérifiez ventes et stock, enregistrez la transmission, puis clôturez. Générez et relisez séparément les brouillons fournisseur ; envoyez seulement après validation manuelle. [Stock](./stock-management) · [Préparations](./preparations) · [Import de livraison](./delivery-note-import) · [Achats](./suppliers-and-purchases). Pour un article suivi par un compteur commun dont la règle affiche le nombre restant, le panier tient compte de la quantité disponible même au-dessus du seuil de stock faible. Ce seuil règle l’alerte, pas le plafond du panier. Consultez [Disponibilité](/fr/help/kitchen/availability) pour vérifier la règle et les forçages manuels.
+
+<span id="carte-series-stock" />
+
+## Contrôler le journal de stock de la série
+
+Les stocks prédéfinis des articles disposent d’un journal dans Articles et cartes → Historique des stocks et sur chaque produit. Une carte tournante permet de préparer des quotas initiaux par série et de les publier sans recréditer les quantités engagées. Les reliquats précédents ne sont pas reportés. Les modifications de commande et libérations avant production utilisent le compteur d’origine enregistré ; un article déjà préparé reste consommé. Les quantités d’ingrédients et préparations et les coûts de recette restent distincts. Consultez [Disponibilité](/fr/help/kitchen/availability) pour les imports initiaux, les corrections et les filtres d’historique.

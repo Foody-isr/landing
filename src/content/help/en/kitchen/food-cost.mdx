@@ -12,7 +12,7 @@ tags:
   - profit
   - target
   - pricing
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-21'
 featureId: kitchen-food-cost
 audience: public
 releaseStatus: available
@@ -62,4 +62,10 @@ Under Kitchen → Food Cost, inspect ingredient cost excluding VAT, selling pric
 
 The Food cost page is your **theoretical** cost — what each dish *should* cost. To compare it
 against what you **actually** used (waste, over-portioning, errors), close the day in
-[Daily operations](/en/help/kitchen/daily-operations); the variance is where money leaks.
+[Daily operations](/en/help/kitchen/daily-operations); the variance is where money leaks. For an item tracked by a shared counter whose rule shows the remaining count, the cart accounts for available quantity even above the low-stock threshold. That threshold controls the warning, not the cart cap. See [Availability](/en/help/kitchen/availability) to check the rule and manual overrides.
+
+<span id="carte-series-stock" />
+
+## Sale allowance is separate from recipe cost
+
+Predefined item stocks now have a journal under Items & menus → Stock history and on each product. A rotating carte can prepare initial allowances per series and publish them without restoring already committed units. Previous remaining counts are not carried forward. Order changes and pre-production releases use the original frozen pool; a produced item remains consumed. Ingredient/preparation quantities and recipe costs remain separate. See [Availability](/en/help/kitchen/availability) for initial imports, corrections and history filters.

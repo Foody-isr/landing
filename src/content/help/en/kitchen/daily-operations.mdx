@@ -15,7 +15,7 @@ tags:
   - suppliers
   - forecast
   - waste
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-21'
 featureId: kitchen-daily-operations
 audience: public
 releaseStatus: available
@@ -138,4 +138,10 @@ Distinguish empty results from load failures. If a confirmed save is followed by
 
 ## Workflow and related guides
 
-Prepare service, receive deliveries, review sales/stock, save handover, then close. Separately generate and review supplier drafts; send only after manual confirmation. [Stock](./stock-management) · [Preparations](./preparations) · [Delivery import](./delivery-note-import) · [Purchases](./suppliers-and-purchases).
+Prepare service, receive deliveries, review sales/stock, save handover, then close. Separately generate and review supplier drafts; send only after manual confirmation. [Stock](./stock-management) · [Preparations](./preparations) · [Delivery import](./delivery-note-import) · [Purchases](./suppliers-and-purchases). For an item tracked by a shared counter whose rule shows the remaining count, the cart accounts for available quantity even above the low-stock threshold. That threshold controls the warning, not the cart cap. See [Availability](/en/help/kitchen/availability) to check the rule and manual overrides.
+
+<span id="carte-series-stock" />
+
+## Check the series stock journal
+
+Predefined item stocks now have a journal under Items & menus → Stock history and on each product. A rotating carte can prepare initial allowances per series and publish them without restoring already committed units. Previous remaining counts are not carried forward. Order changes and pre-production releases use the original frozen pool; a produced item remains consumed. Ingredient/preparation quantities and recipe costs remain separate. See [Availability](/en/help/kitchen/availability) for initial imports, corrections and history filters.

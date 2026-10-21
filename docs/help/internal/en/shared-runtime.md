@@ -7,12 +7,20 @@ apps: both
 tags:
   - internal
   - shared-runtime
-updatedAt: '2026-10-19'
+updatedAt: '2026-10-21'
 featureId: shared-runtime
 audience: internal
 releaseStatus: available
 ---
 Engineering only: shared authentication clients, state, localization, styling, proxies and platform bootstrap support the documented business modules.
+
+<span id="verifone-admin-money-operations" />
+
+## Refund or void a Verifone online payment
+
+The Admin order payment section supports total or partial matched refunds and total VOID for an eligible single Verifone online payment, for owners/managers with payments.manage. Provider state, captured amount and verified history govern eligibility, not a fixed 24-hour rule. This does not cancel preparation or fulfillment and does not add a POS terminal refund button. Unknown results stay reserved and must be checked, never resubmitted. Invoice4U credit/cancellation documents require a separate check. See [the online payment procedure](/en/help/payments/how-payments-work#verifone-admin-refund-void).
+
+A captured ABS sale still AUTHORISED/AUTHORIZED or SETTLEMENT_REQUESTED is not settled: Admin shows Available to void and only Void entire payment, with no prior refund. Refund payment and Available to refund require an explicit settled state or verified partially-refunded history. Generic APPROVED/COMPLETED, contradictory states or missing evidence offer neither action. A state change before confirmation rejects the stale action; it never switches VOID to REFUND automatically. Request rejected by Verifone means no return of funds is confirmed, not necessarily an issuer decline.
 
 <span id="weight-hold-margin" />
 
@@ -42,4 +50,22 @@ Internal combo exceptions use is_substitution per selection. Only JWT staff hand
 
 ## Validate the keyboard in fulfillment selection
 
-On mobile, Pickup and Delivery tabs, the field and the Sign in link at the top keep their positions when the keyboard opens or closes. Compact suggestions show the address and city on two lines in a larger scrolling list. During search, confirmation leaves room for suggestions; it appears after choosing a complete address. The cover is reserved for larger screens. Google Maps attribution and errors stay visible. Keep the input enabled during resolution; editing cancels the request and invalidates its response. A parent calendar does not reset the draft. Verify repeated iOS keyboard opening and dismissal, suggestion scrolling, switching to Pickup and sign-in. Assert the field position before focus, after viewport reduction and after restoration in WebKit and Chromium, in FR/HE/EN, before promotion. With at least four results available, require four whole 44 px rows in a 360 px visual viewport with the keyboard open, including long names and house-number refinement. Also verify the real iOS software keyboard; responsive emulation alone is insufficient.
+On mobile and desktop, review the initial Sign in and Continue as a guest choices as text actions without an additional yellow button. No address field or confirmation should appear before choosing. Check opening/closing sign-in and guest access: address entry for Delivery, collection details without a delivery address for Pickup. Back must retain the draft; switching services or reopening the dialog must not repeat the guest choice. Also check a signed-in customer’s validated address card and Edit. In a 360 px visual viewport with at least four results, four whole 44 px suggestions must remain visible. The title, tabs, Back and input keep their positions when the keyboard opens or closes. Check 320 px screens, desktop and French, Hebrew and English. The view must never depend on focus or keyboard state. Reveal address entry only through an explicit choice. Retain the inset focus indicator and content-sized dropdown. Check the real iOS software keyboard before release.
+
+<span id="customer-social-choice" />
+
+## Review customer sign-in choices
+
+Sign in opens Google and the email/password form. Facebook and Apple appear only when configured by the service. Standalone email-code sign-in is no longer offered. Account creation, address verification and password-recovery codes remain separate. Check dismissal and resumption without losing the draft on mobile and desktop; four whole suggestions with the keyboard open retain the same geometry. Sign-in choices must not reintroduce moving tabs or input.
+
+<span id="sale-stock-history-read-only" />
+
+## Keep the sale-stock journal read-only
+
+The Admin menu/stock route and its links now use the Stock history label in French, Hebrew and English. It reads only restaurant items for the filter and paginated sale-stock events, without calling allowance counters or correction routes. Item, series date and movement filters remain combined during pagination; responses for an earlier selection are ignored. The product link is named Full stock history. Preparation remains in the carte draft and publication. Deploy the same public corpus used by search and guides to the support service with this procedure change.
+
+<span id="related-service-controls" />
+
+## Access the new controls
+
+Settings → Usage and quotas displays this restaurant’s Google/Geoapify allowances and usage with settings view/edit permission. Fallback credits and deliveries submitted for optimization are distinct from request counts. Foody adjusts limits without resetting counters. See [limits and renewal](/en/help/settings/api-usage-and-quotas).

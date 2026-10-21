@@ -13,7 +13,7 @@ tags:
   - recette
   - règles
   - '86'
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-21'
 featureId: kitchen-availability
 audience: public
 releaseStatus: available
@@ -24,34 +24,52 @@ Articles et cartes → Articles → article enregistré → Stock & disponibilit
 
 ## Ouvrir Stock & disponibilité
 
-Ouvrez un article déjà enregistré dans Articles et cartes → Articles et faites défiler jusqu’à Stock & disponibilité. Le tableau présente l’article, sa quantité et son statut. La modification nécessite la permission de modifier le menu. Cette section fait partie de l’éditeur continu ; elle n’est pas un panneau sous un onglet Recette.
+Pour les articles utilisant encore le stock historique permanent, ouvrez un article déjà enregistré dans Articles et cartes → Articles et faites défiler jusqu’à Stock & disponibilité. Le tableau présente l’article, sa quantité et son statut. La modification nécessite la permission de modifier le menu. Cette section fait partie de l’éditeur continu ; elle n’est pas un panneau sous un onglet Recette.
 
 <span id="section-2" />
 
 ## Choisir la source du stock
 
-Cliquez sur la quantité ou utilisez Actions → Suivi du stock. Vous pouvez suivre une quantité commune à l’article ou des quantités par taille, selon ses variantes. Pour les articles compatibles, choisissez portions, g ou kg. Sans stock prédéfini, le calcul peut utiliser les ingrédients et préparations de la recette. L’absence de recette ne garantit pas une disponibilité illimitée : vérifiez aussi le stock prédéfini, les variantes, les règles et le statut manuel.
+Pour les articles utilisant encore le stock historique permanent, cliquez sur la quantité ou utilisez Actions → Suivi du stock. Vous pouvez suivre une quantité commune à l’article ou des quantités par taille, selon ses variantes. Pour les articles compatibles, choisissez portions, g ou kg. Sans stock prédéfini, le calcul peut utiliser les ingrédients et préparations de la recette. L’absence de recette ne garantit pas une disponibilité illimitée : vérifiez aussi le stock prédéfini, les variantes, les règles et le statut manuel.
 
 <span id="section-3" />
 
 ## Choisir et gérer une règle
 
-Dans le réglage de suivi du stock, choisissez la règle de disponibilité ou la règle par défaut. Actions → Gérer les règles ouvre Paramètres → Stock → Disponibilité. Les règles définissent le suivi, le seuil de stock bas, le comportement à épuisement et l’affichage du nombre restant. Vérifiez la règle affectée avant de la modifier : elle peut servir à plusieurs articles.
+Dans le réglage de suivi du stock, choisissez la règle de disponibilité ou la règle par défaut. Actions → Gérer les règles ouvre Paramètres → Stock → Disponibilité. Les règles définissent le suivi, le seuil de stock bas, le comportement à épuisement et l’affichage du nombre restant. Vérifiez la règle affectée avant de la modifier : elle peut servir à plusieurs articles. Quand la règle autorise l’affichage du nombre restant, un stock de 20 portions limite à 20 la quantité totale de cet article dans le panier, même au-dessus du seuil de stock bas. Le badge de stock faible reste lié au seuil. Le stock est vérifié à nouveau lors de la commande et peut avoir évolué entre-temps. Un article forcé Toujours disponible ne suit pas ce plafond.
 
 <span id="section-4" />
 
 ## Forcer un statut puis enregistrer
 
-Cliquez sur le statut et choisissez Suivre une règle, Toujours disponible ou Forcer épuisé. Cliquez sur Appliquer, puis Enregistrer dans l’en-tête de l’article pour persister le choix. Appliquer seul prépare la modification dans l’éditeur. Le forçage est prioritaire sur le calcul ; repassez sur Suivre une règle et enregistrez pour reprendre le suivi automatique.
+Pour les articles utilisant encore le stock historique permanent, cliquez sur le statut et choisissez Suivre une règle, Toujours disponible ou Forcer épuisé. Cliquez sur Appliquer, puis Enregistrer dans l’en-tête de l’article pour persister le choix. Appliquer seul prépare la modification dans l’éditeur. Le forçage est prioritaire sur le calcul ; repassez sur Suivre une règle et enregistrez pour reprendre le suivi automatique.
 
 <span id="section-5" />
 
 ## Vérifier le calcul et les quantités par taille
 
-Actions → Voir le calcul de disponibilité ouvre le détail de capacité : ventes possibles, base du calcul et ingrédient limitant lorsqu’il existe. Si vous suivez les tailles séparément, contrôlez chaque quantité. Ne confondez pas ce stock de l’article avec les quantités consommées par sa recette ni avec le filtre Actif/Inactif de la bibliothèque Articles. Un calcul indisponible est une erreur à vérifier, pas un stock nul.
+Pour les articles utilisant encore le stock historique permanent, actions → Voir le calcul de disponibilité ouvre le détail de capacité : ventes possibles, base du calcul et ingrédient limitant lorsqu’il existe. Si vous suivez les tailles séparément, contrôlez chaque quantité. Ne confondez pas ce stock de l’article avec les quantités consommées par sa recette ni avec le filtre Actif/Inactif de la bibliothèque Articles. Un calcul indisponible est une erreur à vérifier, pas un stock nul.
 
 <span id="section-6" />
 
 ## Contrôler après enregistrement
 
 Après Enregistrer, rouvrez l’article et vérifiez quantité, règle et statut, puis le canal web ou POS concerné. La visibilité dépend aussi des groupes, canaux et horaires. Si le chargement des règles échoue, réessayez avant d’enregistrer ; ne remplacez pas la configuration par une valeur supposée. [Articles et menus](../menu/categories-and-items) · [Recette et quantités](../menu/ingredients-and-portions) · [Stock](./stock-management).
+
+<span id="series-sale-stock" />
+
+## Préparer le stock d’une nouvelle série
+
+Avec la permission de modifier le menu, ouvrez la carte tournante, sélectionnez une série puis ouvrez le menu « … » à côté du titre → Préparer les stocks de cette série. Saisissez les quantités INITIALES, commandes déjà passées incluses : disponible = initial − engagé. Choisissez un compteur commun en unités, une mesure compatible en g/ml, un compteur par taille ou aucune limite prédéfinie. Reprendre les quantités initiales précédentes copie les quotas, jamais les reliquats ni un ancien statut épuisé. Le stock d’un même article du restaurant est commun aux cartes de cette série. Enregistrer le brouillon garde la préparation privée ; Publier l’applique atomiquement sans recréditer les réservations faites pendant l’édition. La première activation importe le disponible actuel et les commandes programmées existantes en préservant les quantités restantes. Les séries suivantes ne reprennent jamais l’ancien compteur global. Sans limite prédéfinie, une recette, une règle ou un statut manuel peut encore limiter la disponibilité.
+
+<span id="sale-stock-history" />
+
+## Rechercher les changements de stock
+
+Ouvrez Articles et cartes → Historique des stocks. Cette page est consacrée uniquement au journal des mouvements, visible dès l’ouverture : elle ne liste pas les stocks actuels et ne propose pas de corrections. Choisissez un Article ou Tous les articles, une date de Série ou Toutes les séries, et un Mouvement ou Tous les mouvements. Une date de série passée est acceptée. Les filtres se combinent et sont conservés avec Afficher la suite. Le journal indique la date et la série, l’article, le mouvement, les quantités avant/après et l’auteur ; un lien ouvre la commande lorsqu’elle est associée. Un résultat vide signifie qu’aucun mouvement n’est enregistré pour les filtres choisis. Les imports initiaux sont identifiés comme des imports ; les modifications antérieures à l’activation du suivi ne sont pas reconstituées. En cas d’erreur du filtre des articles, Réessayer recharge ce filtre et le journal reste consultable. Depuis un produit, Historique complet du stock ouvre ce journal filtré sur l’article ; Historique du stock ouvre son dialogue. Dans une carte, l’accès Historique de la ligne ou son menu « … » ouvre aussi ce dialogue. Pour préparer ou ajuster les quantités initiales d’une série, ouvrez la carte, choisissez la série puis Préparer les stocks de cette série, enregistrez le brouillon et publiez après vérification. Les disponibilités marquées immédiates conservent leur action séparée et historisée. Une annulation avant production recrédite le compteur d’origine ; un produit déjà préparé reste consommé. Si le chargement du journal échoue, Réessayer recharge les mouvements sans modifier les filtres ; cette erreur n’est pas présentée comme un historique vide.
+
+<span id="series-product" />
+
+## Gérer un produit suivi par série
+
+Après activation du suivi par série, Stock & disponibilité affiche la série actuelle, les quantités disponible et engagée, Gérer le stock et Historique du stock. Gérer le stock permet de corriger le quota de la série sélectionnée. Son sélecteur de disponibilité agit immédiatement et est historisé ; il n’attend ni Enregistrer sur le produit ni la publication de la carte. Automatique reprend la règle. Toujours disponible contourne le plafond et ne remplit pas le compteur. Les réglages de préparation et la règle restent enregistrés avec le produit.

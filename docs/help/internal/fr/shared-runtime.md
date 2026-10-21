@@ -7,12 +7,20 @@ apps: both
 tags:
   - internal
   - shared-runtime
-updatedAt: '2026-10-19'
+updatedAt: '2026-10-21'
 featureId: shared-runtime
 audience: internal
 releaseStatus: available
 ---
 Équipe technique : clients, état, traduction, styles, proxies et démarrage communs soutiennent les modules métier documentés.
+
+<span id="verifone-admin-money-operations" />
+
+## Rembourser ou annuler un paiement en ligne Verifone
+
+La section paiement d’une commande Admin permet le remboursement lié total ou partiel et le VOID total d’un paiement en ligne Verifone unique admissible, pour un propriétaire/responsable avec payments.manage. L’état fournisseur, le montant encaissé et l’historique vérifié déterminent l’admissibilité, pas un délai fixe de 24 heures. La préparation et la remise ne sont pas annulées et aucun bouton de remboursement terminal POS n’est ajouté. Un résultat inconnu reste réservé : vérifiez-le sans renvoyer l’opération. Les avoirs et annulations Invoice4U nécessitent un contrôle distinct. Voir [la procédure de paiement en ligne](/fr/help/payments/how-payments-work#verifone-admin-refund-void).
+
+Une vente ABS capturée encore en AUTHORISED/AUTHORIZED ou SETTLEMENT_REQUESTED n’est pas réglée : Admin affiche Montant annulable et uniquement Annuler tout le paiement, sans remboursement antérieur. Rembourser le paiement et Montant remboursable exigent un état réglé explicite ou un historique de remboursement partiel vérifié. Les états génériques APPROVED/COMPLETED, les contradictions et les preuves manquantes ne proposent aucune opération. Un changement d’état avant confirmation refuse l’action devenue obsolète ; le VOID n’est jamais remplacé automatiquement par un REFUND. Demande rejetée par Verifone signifie qu’aucune restitution n’est confirmée, pas nécessairement un refus de la banque.
 
 <span id="weight-hold-margin" />
 
@@ -42,4 +50,22 @@ Les exceptions internes de formule utilisent is_substitution par choix. Seuls le
 
 ## Valider le clavier dans le sélecteur de remise
 
-Sur mobile, les onglets Retrait et Livraison, le champ et le lien Se connecter en haut gardent leur position à l’ouverture et à la fermeture du clavier. Les suggestions compactes affichent l’adresse et la ville sur deux lignes dans une liste défilante plus grande. Pendant la recherche, la confirmation laisse la place aux suggestions ; elle apparaît après le choix d’une adresse complète. La couverture est réservée aux grands écrans. La mention Google Maps et les erreurs restent visibles. Garder le champ activé pendant la résolution ; une modification annule la requête et invalide sa réponse. Un calendrier parent ne réinitialise pas la saisie. Vérifier plusieurs ouvertures et fermetures du clavier iOS, le défilement des suggestions, le passage en Retrait et la connexion. Contrôler la position du champ avant focus, après réduction et après restauration du viewport dans WebKit et Chromium, en FR/HE/EN, avant promotion. Avec au moins quatre résultats disponibles, exiger quatre lignes entières de 44 px dans une hauteur visible de 360 px, avec clavier ouvert, y compris les noms longs et la précision du numéro. Vérifier aussi le vrai clavier iOS ; une émulation responsive seule ne suffit pas.
+Sur mobile et bureau, vérifiez le choix initial Me connecter puis Continuer en tant qu’invité, présentés comme liens textuels sans bouton jaune supplémentaire. Avant le choix, ni champ d’adresse ni confirmation ne doivent apparaître. Vérifiez l’ouverture/fermeture de la connexion et l’accès invité : adresse en Livraison, informations de retrait sans adresse de livraison en Retrait. Retour doit conserver le brouillon ; le choix invité ne se répète pas à chaque changement de service ou réouverture. Contrôlez aussi la carte d’adresse validée d’un client connecté et Modifier. Dans une hauteur visible de 360 px avec au moins quatre résultats, quatre suggestions entières de 44 px doivent rester visibles. Le titre, les onglets, Retour et le champ gardent leur position pendant l’ouverture et la fermeture du clavier. Vérifiez les écrans de 320 px, le bureau et le français, l’hébreu et l’anglais. La vue ne doit jamais dépendre du focus ou du clavier. La saisie s’ouvre uniquement par un choix explicite. Conserver le focus intérieur et la hauteur naturelle du dropdown. Vérifier le clavier logiciel iOS réel avant publication.
+
+<span id="customer-social-choice" />
+
+## Contrôler les choix de connexion client
+
+Me connecter ouvre Google et le formulaire e-mail + mot de passe. Facebook et Apple apparaissent seulement si le service les a configurés. La connexion par e-mail + code seul n’est plus proposée. Les codes de création, de vérification d’adresse et de récupération de mot de passe restent distincts. Vérifiez la fermeture et la reprise sans perte du brouillon, sur mobile et bureau ; les quatre suggestions entières avec clavier ouvert gardent la même géométrie. Les boutons de connexion ne doivent pas réintroduire un déplacement des onglets ou du champ.
+
+<span id="sale-stock-history-read-only" />
+
+## Conserver le journal des stocks en lecture seule
+
+La route Admin menu/stock et ses liens portent désormais le libellé Historique des stocks en français, hébreu et anglais. Elle lit uniquement les articles du restaurant pour le filtre et les événements de vente paginés, sans appeler les compteurs ni les routes de correction. Les filtres article, date de série et mouvement restent combinés lors de la pagination ; une réponse d’une sélection précédente est ignorée. Le lien produit vers cette route est nommé Historique complet du stock. Les préparations restent dans le brouillon de carte et sa publication. Déployer le corpus public identique à la recherche et aux guides dans le service de support avec ce changement de procédure.
+
+<span id="related-service-controls" />
+
+## Accès aux nouveaux réglages
+
+Paramètres → Consommation et quotas affiche les plafonds et consommations Google/Geoapify du restaurant, accessibles avec la permission de consulter ou modifier les paramètres. Les crédits de remplacement et les livraisons soumises à l’optimisation sont comptés séparément des requêtes. Foody ajuste les plafonds ; un changement ne remet pas les compteurs à zéro. Voir [les règles et le renouvellement](/fr/help/settings/api-usage-and-quotas).

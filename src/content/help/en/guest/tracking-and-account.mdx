@@ -16,7 +16,7 @@ Use the confirmation/tracking link or the restaurant’s order-history/account e
 
 ## Sign in before ordering
 
-Account access in the Pickup/Delivery dialog is optional. On mobile, tap Sign in at the top beside the title; this link stays visible when the keyboard opens or closes. On larger screens, use the one-click-ordering sign-in panel. The same form offers Google or email verification. Closing sign-in lets you continue as a guest without clearing the address draft.
+At the start of the Pickup/Delivery dialog, choose Sign in or Continue as a guest below it. Both are text actions, without a filled sign-in button. No address field or confirmation button appears before this choice. Sign-in offers Google or email verification; closing it returns to the choices. The benefit text covers saved address/payment methods/orders for Delivery and saved details/payment methods/orders for Pickup. Continue as a guest reveals address entry for Delivery; Pickup shows collection details and menu access without asking for a delivery address. Back returns to the choices without clearing the draft. The guest choice is retained when switching services and closing/reopening this dialog. Signed-in customers proceed directly: a saved address with a validated selection offers Use this address and Edit. Incomplete addresses still require completion. Signing in after starting an address retains the draft. Saving a payment method remains a separate checkout choice. Sign in opens Google and the email/password form. Facebook and Apple appear only when configured by the service. Standalone email-code sign-in is no longer offered. Account creation, address verification and password-recovery codes remain separate.
 
 <span id="tracking" />
 
@@ -41,3 +41,15 @@ If offered, explicitly opt into saving a payment method and complete the provide
 ## Check receipt and confirmation link previews
 
 Check that the restaurant has a name and logo configured, then share a valid receipt or order-confirmation link with its intended recipient. The link preview uses that restaurant’s name and logo, independently of the website’s general share image. Without a logo, the preview shows a card with the restaurant’s name. It does not include customer details, order lines or amounts. The linked page can still contain private order information: do not publish the link publicly. If the wrong identity appears, check that the link belongs to the intended restaurant and that its configured logo is accessible. An expired or invalid receipt cannot provide a restaurant preview.
+
+<span id="social-and-password" />
+
+## Choose a sign-in method
+
+Choose Google, Facebook or Apple when its button is offered, then complete authorization in the provider window. Cancellation does not replace the order draft. For email, enter your address and password under Sign in. If an older email-code account has no password, use Forgot password to set one after proving ownership; orders remain on that account. Creating an account may require address verification, and recovery still uses its separate code. Apple Hide My Email is supported. Switching providers does not guarantee account merging: if history is missing, use the original method and correct restaurant. A Facebook contact email never grants another account’s history. If a provider is absent or fails, use Google, password or guest access. Signing in does not consent to card storage.
+
+<span id="sign-in-privacy" />
+
+## Understand sign-in data
+
+Configured providers may load their library when their choices are displayed and process browser/network information under their policy. Sign-in supplies Foody with a provider identifier and the supplied name, email or photo, not your Google, Apple or Facebook password. Apple may hide the email address. Foody keeps the session in an HttpOnly cookie and temporary authentication state; provider tokens are not persisted in Web Storage or these authentication logs. You can continue as a guest. To request account deletion, use the contact in Foody’s privacy policy; deletion is not a refund action.

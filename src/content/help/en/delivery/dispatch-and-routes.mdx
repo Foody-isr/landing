@@ -5,12 +5,20 @@ apps: foodyadmin
 tags:
   - delivery
   - delivery-dispatch
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-21'
 featureId: delivery-dispatch
 audience: public
 releaseStatus: available
 ---
 Admin → Orders → Deliveries / Delivery tours
+
+<span id="verifone-admin-money-operations" />
+
+## Refund or void a Verifone online payment
+
+The Admin order payment section supports total or partial matched refunds and total VOID for an eligible single Verifone online payment, for owners/managers with payments.manage. Provider state, captured amount and verified history govern eligibility, not a fixed 24-hour rule. This does not cancel preparation or fulfillment and does not add a POS terminal refund button. Unknown results stay reserved and must be checked, never resubmitted. Invoice4U credit/cancellation documents require a separate check. See [the online payment procedure](/en/help/payments/how-payments-work#verifone-admin-refund-void).
+
+A captured ABS sale still AUTHORISED/AUTHORIZED or SETTLEMENT_REQUESTED is not settled: Admin shows Available to void and only Void entire payment, with no prior refund. Refund payment and Available to refund require an explicit settled state or verified partially-refunded history. Generic APPROVED/COMPLETED, contradictory states or missing evidence offer neither action. A state change before confirmation rejects the stale action; it never switches VOID to REFUND automatically. Request rejected by Verifone means no return of funds is confirmed, not necessarily an issuer decline.
 
 <span id="weight-hold-margin" />
 
@@ -65,3 +73,15 @@ With direct Meta notifications enabled, configure the attachment in Settings →
 ## Make a one-order combo exception
 
 For a one-order combo exception, an authorized Admin user opens the combo step and selects Choose another item. The replacement is included without a surcharge and is saved on that order only. Fulfillment, scheduling and delivery rules remain unchanged. Review the selected dish and portion in the order details. Guest and POS combo pickers retain the configured composition; arrange an exception through the internal Admin order editor. See the combo guide for quantities, eligibility and recovery.
+
+<span id="carte-series-stock" />
+
+## Keep stock provenance when moving fulfillment
+
+Predefined item stocks now have a journal under Items & menus → Stock history and on each product. A rotating carte can prepare initial allowances per series and publish them without restoring already committed units. Previous remaining counts are not carried forward. Order changes and pre-production releases use the original frozen pool; a produced item remains consumed. Ingredient/preparation quantities and recipe costs remain separate. See [Availability](/en/help/kitchen/availability) for initial imports, corrections and history filters.
+
+<span id="related-service-controls" />
+
+## Access the new controls
+
+Settings → Usage and quotas displays this restaurant’s Google/Geoapify allowances and usage with settings view/edit permission. Fallback credits and deliveries submitted for optimization are distinct from request counts. Foody adjusts limits without resetting counters. See [limits and renewal](/en/help/settings/api-usage-and-quotas).

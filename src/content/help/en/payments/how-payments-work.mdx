@@ -6,12 +6,28 @@ tags:
   - payments
   - payments-how-payments-work
   - how-payments-work
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-21'
 featureId: payments-how-payments-work
 audience: public
 releaseStatus: available
 ---
 Open the corresponding Foody workspace described below.
+
+<span id="verifone-admin-refund-void" />
+
+## Refund or void a Verifone online payment
+
+In Admin → Orders, open the order and its payment section. An owner or manager with payments.manage can use Refund or void payment for a single verified ILS Verifone online sale or confirmed capture. Table/session, mixed tenders, partial collections, external-terminal payments and catering deposits are not supported by this control. An uncaptured hold still uses the existing cancellation/release workflow.
+
+Check Available to refund, then choose Refund payment. Keep Full remaining amount or choose Partial amount and enter the exact amount. Enter a reason of 3–300 characters, review the amount in the confirmation and submit once. Successful matched refunds already visible in Verifone history reduce the ceiling, including refunds made in Central; incomplete or unverified history blocks a new operation. The bounded history lookup covers transactions created within two years.
+
+A captured ABS sale still AUTHORISED/AUTHORIZED or SETTLEMENT_REQUESTED is not settled: Admin shows Available to void and only Void entire payment, with no prior refund. Refund payment and Available to refund require an explicit settled state or verified partially-refunded history. Generic APPROVED/COMPLETED, contradictory states or missing evidence offer neither action. A state change before confirmation rejects the stale action; it never switches VOID to REFUND automatically. Request rejected by Verifone means no return of funds is confirmed, not necessarily an issuer decline. VOID is full only, never partial. Eligibility follows the provider state and merchant/acquirer rules, not midnight or a fixed 24-hour cutoff. Final acceptance is confirmed by Verifone.
+
+Read Payment operations for the amount, reason, date, actor account and provider transaction ID. Confirmed by Verifone requires an independent transaction read with matching parent, amount, currency, reference and merchant. A partial refund leaves the payment marked paid; a full confirmed return marks its payment refunded. Neither changes food status, items, stock or fulfillment.
+
+If the result is unknown or the browser loses the response, do not submit another refund or switch to VOID. Use Check with Verifone, which only verifies existing operations. A request with no recoverable provider ID stays blocked for support/Central verification, including after reload or an API restart. Never treat an HTTP success alone as refunded. Check the corresponding Invoice4U credit/cancellation document separately; this control does not confirm or create a fiscal credit document. FoodyPOS controls are not included in this version.
+
+After a full return verified against matched Verifone history, the summary keeps the original amount, shows the full amount returned and zero remaining, and offers no further refund or VOID. A cleared capture balance after that return is not an uncaptured hold to release. Missing or inconsistent evidence still requires verification without resubmission.
 
 <span id="verifone-readable-hosted-theme" />
 
@@ -59,3 +75,15 @@ On the CST test setup validated with Verifone, sign in or create your Foody cust
 ## Check an itemized Invoice4U invoice
 
 When Invoice4U issuance and an invoice document type are enabled by the Foody team for the merchant, ordinary immediate Verifone order payments send the saved order lines: items and quantities, selected variants/options, combo base and included components, order discount and delivery fee. Frozen prices already include VAT; it is not added again. The line total must equal the payment amount or payment initiation is blocked. The same detail is sent for a later saved-card sale. Legacy orders without catalogue lines and catering/table/capture operations keep their existing document behavior. An approved payment is not proof that Invoice4U issued a fiscal document: check the document in Verifone Central/Invoice4U and customer delivery. Do not create another payment to obtain a missing invoice.
+
+<span id="carte-series-stock" />
+
+## Stock reservations after late payment
+
+Predefined item stocks now have a journal under Items & menus → Stock history and on each product. A rotating carte can prepare initial allowances per series and publish them without restoring already committed units. Previous remaining counts are not carried forward. Order changes and pre-production releases use the original frozen pool; a produced item remains consumed. Ingredient/preparation quantities and recipe costs remain separate. See [Availability](/en/help/kitchen/availability) for initial imports, corrections and history filters.
+
+<span id="related-service-controls" />
+
+## Access the new controls
+
+The entry sign-in invitation is now a published website order-journey preference. Order without an account remains available; this setting does not replace mandatory phone verification or payment/delivery validation. Google/Geoapify consumption and limits are separately available in [Usage and quotas](/en/help/settings/api-usage-and-quotas).

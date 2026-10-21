@@ -1,0 +1,25 @@
+---
+title: Consommation et quotas des services externes
+description: Admin → Paramètres → Consommation et quotas
+apps: foodyadmin
+tags:
+  - settings
+  - external-api-quotas
+updatedAt: '2026-10-21'
+featureId: external-api-quotas
+audience: public
+releaseStatus: available
+---
+Admin → Paramètres → Consommation et quotas
+
+<span id="read-usage" />
+
+## Consulter les consommations de votre restaurant
+
+Avec la permission de consulter ou modifier les paramètres, ouvrez Consommation et quotas. Chaque service Google possède son propre compteur et plafond : suggestions d’adresse, détails, géocodage, itinéraires, optimisation avec un livreur ou une flotte et tuiles. Geoapify partage un plafond de crédits estimés entre ses services, y compris les services de remplacement. Les livraisons soumises à l’optimisation comptent comme des unités ; les recalculs comptent à nouveau. Une carte peut demander plusieurs tuiles. La page affiche aussi le nombre de requêtes lorsque l’unité diffère. Actualiser recharge les données ; en cas d’échec, Réessayer permet de récupérer les compteurs. La page est en lecture seule et ne montre pas les consommations des autres restaurants.
+
+<span id="limits-and-renewal" />
+
+## Comprendre les plafonds et leur renouvellement
+
+Les plafonds mensuels initiaux sont 2 000 suggestions, 500 détails, 500 géocodages Google, 500 itinéraires Google, 500 livraisons optimisées pour un livreur, 100 pour une flotte, 10 000 tuiles Google et 3 000 crédits Geoapify. Foody peut ajuster les plafonds par restaurant ; contactez l’équipe pour une modification. Une alerte apparaît à partir de 80 %. À la limite, les nouveaux appels du service sont bloqués ; un fournisseur de remplacement disponible utilise son propre quota. La saisie d’une adresse ne contourne jamais la validation de livraison. Les protections globales des fournisseurs restent applicables même si votre restaurant a du quota. Les périodes sont des mois UTC ; la date de renouvellement est affichée. Le suivi commence à la date d’activation indiquée, sans reconstruire les appels antérieurs. Les échecs et résultats incertains restent comptés. Geoapify est estimé par quarts de crédit ; un supplément de distance peut dépasser l’estimation initiale et est enregistré dès la réponse. Un plafond ne garantit pas une facture fournisseur et n’achète pas de dépassement payant.

@@ -15,7 +15,7 @@ tags:
   - web
   - qr
   - caisse
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-21'
 featureId: orders-managing-orders
 audience: public
 releaseStatus: available
@@ -27,6 +27,14 @@ Ouvrez l’espace Foody correspondant décrit ci-dessous.
 ## Ouvrir la commande liée à une transaction
 
 Dans Transactions sur la caisse, sélectionnez un paiement confirmé et ouvrez une commande liée pour consulter ses détails enregistrés en lecture seule. Un paiement peut couvrir plusieurs commandes et une commande peut avoir plusieurs paiements. Si la commande ne se charge pas, réessayez plus tard ; n’en déduisez pas que le paiement a échoué et ne relancez pas un débit en double.
+
+<span id="verifone-admin-money-operations" />
+
+## Rembourser ou annuler un paiement en ligne Verifone
+
+La section paiement d’une commande Admin permet le remboursement lié total ou partiel et le VOID total d’un paiement en ligne Verifone unique admissible, pour un propriétaire/responsable avec payments.manage. L’état fournisseur, le montant encaissé et l’historique vérifié déterminent l’admissibilité, pas un délai fixe de 24 heures. La préparation et la remise ne sont pas annulées et aucun bouton de remboursement terminal POS n’est ajouté. Un résultat inconnu reste réservé : vérifiez-le sans renvoyer l’opération. Les avoirs et annulations Invoice4U nécessitent un contrôle distinct. Voir [la procédure de paiement en ligne](/fr/help/payments/how-payments-work#verifone-admin-refund-void).
+
+Une vente ABS capturée encore en AUTHORISED/AUTHORIZED ou SETTLEMENT_REQUESTED n’est pas réglée : Admin affiche Montant annulable et uniquement Annuler tout le paiement, sans remboursement antérieur. Rembourser le paiement et Montant remboursable exigent un état réglé explicite ou un historique de remboursement partiel vérifié. Les états génériques APPROVED/COMPLETED, les contradictions et les preuves manquantes ne proposent aucune opération. Un changement d’état avant confirmation refuse l’action devenue obsolète ; le VOID n’est jamais remplacé automatiquement par un REFUND. Demande rejetée par Verifone signifie qu’aucune restitution n’est confirmée, pas nécessairement un refus de la banque.
 
 <span id="weight-hold-margin" />
 
@@ -101,3 +109,9 @@ Avec la permission orders.manage, ouvrez Nouvelle commande ou modifiez une comma
 ## Attendre le paiement au comptoir avant la cuisine
 
 Pour une nouvelle commande à emporter encaissée par carte au comptoir, choisissez Payer, puis Payer par carte. Attendez l’accord du terminal et l’enregistrement du paiement dans Foody avant le départ en préparation et l’impression du bon cuisine. Pendant l’encaissement, le paiement reste en attente et n’apparaît pas dans la liste des commandes en direct. Après un refus ou une annulation, reprenez le même encaissement ; ne l’envoyez pas en cuisine pour contourner le paiement. Si le terminal a accepté mais que la synchronisation a échoué, rapprochez le paiement existant avant tout nouveau débit. Les commandes volontairement envoyées pour un service à table avant encaissement conservent leur déroulement habituel.
+
+<span id="carte-series-stock" />
+
+## Comprendre le stock après modification de commande
+
+Les stocks prédéfinis des articles disposent d’un journal dans Articles et cartes → Historique des stocks et sur chaque produit. Une carte tournante permet de préparer des quotas initiaux par série et de les publier sans recréditer les quantités engagées. Les reliquats précédents ne sont pas reportés. Les modifications de commande et libérations avant production utilisent le compteur d’origine enregistré ; un article déjà préparé reste consommé. Les quantités d’ingrédients et préparations et les coûts de recette restent distincts. Consultez [Disponibilité](/fr/help/kitchen/availability) pour les imports initiaux, les corrections et les filtres d’historique.

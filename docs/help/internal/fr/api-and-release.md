@@ -5,12 +5,22 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-19'
+updatedAt: '2026-10-21'
 featureId: platform-api
 audience: internal
 releaseStatus: available
 ---
 Équipe technique : consultez AGENTS.md, README, contrat API et workflow du service.
+
+<span id="verifone-admin-money-operations" />
+
+## Rembourser ou annuler un paiement en ligne Verifone
+
+La section paiement d’une commande Admin permet le remboursement lié total ou partiel et le VOID total d’un paiement en ligne Verifone unique admissible, pour un propriétaire/responsable avec payments.manage. L’état fournisseur, le montant encaissé et l’historique vérifié déterminent l’admissibilité, pas un délai fixe de 24 heures. La préparation et la remise ne sont pas annulées et aucun bouton de remboursement terminal POS n’est ajouté. Un résultat inconnu reste réservé : vérifiez-le sans renvoyer l’opération. Les avoirs et annulations Invoice4U nécessitent un contrôle distinct. Voir [la procédure de paiement en ligne](/fr/help/payments/how-payments-work#verifone-admin-refund-void).
+
+Une vente ABS capturée encore en AUTHORISED/AUTHORIZED ou SETTLEMENT_REQUESTED n’est pas réglée : Admin affiche Montant annulable et uniquement Annuler tout le paiement, sans remboursement antérieur. Rembourser le paiement et Montant remboursable exigent un état réglé explicite ou un historique de remboursement partiel vérifié. Les états génériques APPROVED/COMPLETED, les contradictions et les preuves manquantes ne proposent aucune opération. Un changement d’état avant confirmation refuse l’action devenue obsolète ; le VOID n’est jamais remplacé automatiquement par un REFUND. Demande rejetée par Verifone signifie qu’aucune restitution n’est confirmée, pas nécessairement un refus de la banque.
+
+Après une restitution totale vérifiée dans l’historique lié de Verifone, le bilan conserve le montant initial, affiche le montant intégral restitué et un solde restant nul, sans proposer de nouveau remboursement ni VOID. Un solde capturé remis à zéro après cette restitution n’est pas une préautorisation à libérer. Une preuve manquante ou incohérente exige toujours une vérification, sans renvoyer l’opération.
 
 <span id="verifone-readable-hosted-theme" />
 
@@ -71,3 +81,21 @@ Le suivi du correctif de clavier natif doit publier les procédures de saisie co
 ## Résoudre les suggestions de rue Google
 
 Google peut renvoyer un identifiant canonique différent pour un segment de rue. Accepter cette différence uniquement pour une rue sans numéro, après validation du pays et de la réponse du fournisseur. Cette précision ne reçoit ni preuve de livraison ni coordonnées : le client doit encore sélectionner une adresse complète. Conserver la correspondance exacte d’identifiant pour les adresses complètes, les signatures liées au restaurant et au visiteur, les limites de session et les budgets. Tester les rues canoniques, les pays étrangers, les identifiants absents ou invalides et le rejet des adresses complètes d’un autre lieu. Vérifier une recherche de rue et une adresse avec numéro après promotion. Référence fournisseur : https://developers.google.com/maps/documentation/places/web-service/place-id#obsolete
+
+<span id="customer-social-sign-in" />
+
+## Activer Facebook et Apple pour les clients
+
+Déployer la migration 266 et l’API avant le Web. Configurer ensemble CUSTOMER_FACEBOOK_APP_ID, CUSTOMER_FACEBOOK_APP_SECRET et CUSTOMER_FACEBOOK_API_VERSION avec une version encore prise en charge par cette application Meta. Apple requiert CUSTOMER_APPLE_CLIENT_ID (Services ID), TEAM_ID, KEY_ID, PRIVATE_KEY et REDIRECT_URI sous le préfixe CUSTOMER_APPLE_. Enregistrer les domaines et l’URL HTTPS de retour exacte dans Apple Developer ; localhost/IP ne sont pas acceptés. Les identifiants de notifications Apple et de WhatsApp ne sont pas réutilisés automatiquement. GET /public/auth/providers expose seulement les réglages SDK publics des méthodes complètes ; une configuration partielle arrête le démarrage, une configuration vide désactive la méthode. Le SDK Facebook fournit un jeton utilisateur vérifié via app_id, type, validité, expiration et sujet Meta. Apple échange un code à usage unique et vérifie signature, émetteur, audience, expiration et nonce. Le BFF lie la demande au navigateur par un cookie HttpOnly temporaire, consomme cet état et conserve la session finale en HttpOnly. Aucun jeton fournisseur ni secret n’est écrit dans les logs ou le stockage du navigateur. Le sujet fournisseur reste la clé stable ; un contact Facebook ne lie jamais un compte par e-mail. Tester annulation, refus, rejouement, domaines, adresse Apple masquée et reprise du brouillon avec des comptes de test autorisés avant activation réelle. Les vérifications locales simulées ne prouvent pas la configuration externe.
+
+<span id="carte-publication-stock-contract" />
+
+## Transactions de publication de carte et de stock de vente
+
+La migration API 267 ajoute les brouillons privés par carte/série, les versions publiées et les séries, compteurs et événements de stock de vente. Les lectures et l’historique nécessitent menu.view sur le restaurant ; les changements nécessitent menu.edit. La publication vérifie dans une transaction les révisions du brouillon, de sa source et du stock, préserve les engagements de commande et refuse les références hors restaurant. Déployez l’API avant Admin. Conservez les anciens compteurs pour les anciennes commandes ; la première activation de série reprend explicitement le disponible actuel. Vérifiez réservations concurrentes, libérations, isolation des séries futures et rollback en développement avant promotion.
+
+<span id="stock-history-only-corpus" />
+
+## Synchroniser la procédure du journal des stocks
+
+Synchroniser internal/support/corpus.json avec le corpus public exporté pour la page Historique des stocks en lecture seule. Les endpoints paginés existants et leur autorisation menu.view ne changent pas. L’aide explique les filtres combinés, le lien produit et la préparation depuis le brouillon de carte ; elle ne propose plus de corrections immédiates dans menu/stock. Vérifier la même révision dans le statut public du support et les guides FR/HE/EN après déploiement, sans appel IA payant.

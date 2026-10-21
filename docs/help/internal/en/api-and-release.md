@@ -5,12 +5,22 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-19'
+updatedAt: '2026-10-21'
 featureId: platform-api
 audience: internal
 releaseStatus: available
 ---
 Engineering operators: use the closest service AGENTS.md, README, API contract and deployment workflow.
+
+<span id="verifone-admin-money-operations" />
+
+## Refund or void a Verifone online payment
+
+The Admin order payment section supports total or partial matched refunds and total VOID for an eligible single Verifone online payment, for owners/managers with payments.manage. Provider state, captured amount and verified history govern eligibility, not a fixed 24-hour rule. This does not cancel preparation or fulfillment and does not add a POS terminal refund button. Unknown results stay reserved and must be checked, never resubmitted. Invoice4U credit/cancellation documents require a separate check. See [the online payment procedure](/en/help/payments/how-payments-work#verifone-admin-refund-void).
+
+A captured ABS sale still AUTHORISED/AUTHORIZED or SETTLEMENT_REQUESTED is not settled: Admin shows Available to void and only Void entire payment, with no prior refund. Refund payment and Available to refund require an explicit settled state or verified partially-refunded history. Generic APPROVED/COMPLETED, contradictory states or missing evidence offer neither action. A state change before confirmation rejects the stale action; it never switches VOID to REFUND automatically. Request rejected by Verifone means no return of funds is confirmed, not necessarily an issuer decline.
+
+After a full return verified against matched Verifone history, the summary keeps the original amount, shows the full amount returned and zero remaining, and offers no further refund or VOID. A cleared capture balance after that return is not an uncaptured hold to release. Missing or inconsistent evidence still requires verification without resubmission.
 
 <span id="verifone-readable-hosted-theme" />
 
@@ -71,3 +81,21 @@ The native-keyboard follow-up must release the compact entry procedures and embe
 ## Resolve Google street refinements
 
 Google can return a different canonical ID for a route segment. Accept this difference only for a street without a house number, after validating the country and provider response. This refinement receives neither delivery proof nor coordinates: the customer must still choose a complete address. Preserve exact place-ID matching for complete addresses, restaurant and visitor bound signatures, session limits and budgets. Test canonical streets, foreign countries, missing or invalid IDs and rejection of complete addresses for another place. Verify a street search and an address with a house number after promotion. Provider reference: https://developers.google.com/maps/documentation/places/web-service/place-id#obsolete
+
+<span id="customer-social-sign-in" />
+
+## Enable customer Facebook and Apple sign-in
+
+Deploy migration 266 and the API before Web. Configure CUSTOMER_FACEBOOK_APP_ID, CUSTOMER_FACEBOOK_APP_SECRET and CUSTOMER_FACEBOOK_API_VERSION together using a version still supported by this Meta app. Apple requires CUSTOMER_APPLE_CLIENT_ID (Services ID), TEAM_ID, KEY_ID, PRIVATE_KEY and REDIRECT_URI under the CUSTOMER_APPLE_ prefix. Register the domains and exact HTTPS return URL in Apple Developer; localhost/IP addresses are not accepted. Apple push and WhatsApp credentials are not automatically reused. GET /public/auth/providers exposes only public SDK settings for complete methods; partial settings stop startup, empty settings disable a method. Facebook SDK user tokens are verified for app_id, type, validity, expiry and Meta subject. Apple exchanges a single-use code and checks signature, issuer, audience, expiry and nonce. The BFF binds the request to a temporary HttpOnly browser cookie, consumes that state and stores the final session in HttpOnly. No provider token or secret enters logs or browser storage. The provider subject is the stable key; Facebook contact emails never link an account by email. Test cancellation, denial, replay, domains, Apple relay addresses and draft restoration with authorized test accounts before live activation. Simulated local checks do not prove external configuration.
+
+<span id="carte-publication-stock-contract" />
+
+## Carte publication and sale-stock transactions
+
+API migration 267 adds private carte/series drafts, immutable publication snapshots and item-stock series/counters/events. Draft and stock history endpoints require scoped menu.view; changes require menu.edit. Publication checks draft/source and stock revisions in one transaction, preserves order commitments and rejects invalid tenant references. Deploy the API before Admin. Retain old global counters for older orders; the first series activation imports current remaining stock explicitly. Verify concurrent reservations, stock releases, future-series isolation and rollback in development before promoting the artifacts.
+
+<span id="stock-history-only-corpus" />
+
+## Synchronize the stock-history procedure
+
+Synchronize internal/support/corpus.json with the exported public corpus for the read-only Stock history page. Existing paginated endpoints and menu.view authorization remain unchanged. Help explains combined filters, the product link and preparation from the carte draft; it no longer offers immediate corrections in menu/stock. Verify the same revision in public support status and FR/HE/EN guides after deployment, without paid AI calls.

@@ -376,10 +376,17 @@
           "src/components/menu-item/**",
           "src/components/menu/**",
           "src/components/MenuGroupPicker.tsx",
-          "src/lib/menu/**"
+          "src/lib/menu/**",
+          "src/lib/carte-editor.ts",
+          "src/components/MenuGroupPicker.tsx"
         ],
         "foodyserver": [
-          "internal/menu/**"
+          "internal/menu/**",
+          "internal/salesstock/**",
+          "internal/common/menu_publication.go",
+          "internal/common/stock_series.go",
+          "internal/common/published_membership.go",
+          "internal/orders/sales_stock.go"
         ],
         "foodypos": [
           "lib/features/menu/**"
@@ -432,10 +439,14 @@
       "audience": "public",
       "selectors": {
         "foodyadmin": [
-          "src/app/[restaurantId]/settings/payments/**"
+          "src/app/[restaurantId]/settings/payments/**",
+          "src/components/orders/PaymentAdjustments.tsx",
+          "src/lib/orders/payment-adjustments.ts",
+          "src/lib/api.ts"
         ],
         "foodyserver": [
-          "internal/payment/**"
+          "internal/payment/**",
+          "internal/common/payment_adjustment.go"
         ],
         "foodyweb": [
           "app/r/[restaurantId]/payment/**",
@@ -959,10 +970,13 @@
           "app/confirmation/**",
           "app/receipt/**",
           "lib/orderLinkMetadata.ts",
-          "app/order/confirmation/**"
+          "app/order/confirmation/**",
+          "components/website-v3/WebsiteFulfillmentDialog.tsx",
+          "components/website-v3/SiteHeader.tsx"
         ],
         "foodyserver": [
-          "internal/website/**"
+          "internal/website/**",
+          "internal/restaurants/checkout_config.go"
         ]
       }
     },
@@ -1496,7 +1510,15 @@
           "components/PaymentReturn*.tsx",
           "components/CustomerSignIn.tsx",
           "components/GoogleSignIn.tsx",
-          "lib/orderLinkMetadata.ts"
+          "lib/orderLinkMetadata.ts",
+          "components/CustomerSocialSignIn.tsx",
+          "app/api/customer-auth/**"
+        ],
+        "foodyserver": [
+          "internal/guestauth/**"
+        ],
+        "foodylanding": [
+          "src/app/[lang]/privacy/page.tsx"
         ]
       }
     },
@@ -1591,7 +1613,9 @@
         "foodybackoffice": [
           "src/app/dashboard/features/**",
           "src/app/dashboard/payments/**",
-          "src/lib/api.ts"
+          "src/lib/api.ts",
+          "src/app/dashboard/api-usage/**",
+          "src/app/dashboard/restaurants/[id]/usage/**"
         ],
         "foodyserver": [
           "internal/subscription/**",
@@ -1760,6 +1784,22 @@
         ],
         "foodyweb": [
           "app/r/[restaurantId]/[page]/**"
+        ]
+      }
+    },
+    {
+      "id": "external-api-quotas",
+      "article": "settings/api-usage-and-quotas",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/settings/usage/**"
+        ],
+        "foodyserver": [
+          "internal/apiquota/**",
+          "internal/addresslookup/budget.go",
+          "internal/addresslookup/maps_budget.go",
+          "internal/geoapify/usage.go"
         ]
       }
     }

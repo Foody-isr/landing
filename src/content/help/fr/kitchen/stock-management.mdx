@@ -19,7 +19,7 @@ tags:
   - seuil
   - categories
   - fournisseur
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-21'
 featureId: kitchen-stock-management
 audience: public
 releaseStatus: available
@@ -150,4 +150,10 @@ Dans un article enregistré, la section Recette et coût permet d’ajouter des 
 
 ## Contrôler après une modification
 
-Après enregistrement, vérifiez la quantité, le prix, l’unité, le statut et les effets sur les recettes concernées. Si une image ou l’actualisation échoue après création de la fiche, terminez cette étape sur la fiche créée sans doublon. Gardez les seuils cohérents avec votre rythme d’achat et contrôlez la date de la journée avant une clôture. [Unités et réglages stock](./units-and-stock-settings) · [Opérations quotidiennes](./daily-operations). Les approvisionnements estimés du bilan du jour demandent une génération explicite de brouillons puis un envoi manuel ; clôturer ou générer ne transmet aucune commande fournisseur.
+Après enregistrement, vérifiez la quantité, le prix, l’unité, le statut et les effets sur les recettes concernées. Si une image ou l’actualisation échoue après création de la fiche, terminez cette étape sur la fiche créée sans doublon. Gardez les seuils cohérents avec votre rythme d’achat et contrôlez la date de la journée avant une clôture. [Unités et réglages stock](./units-and-stock-settings) · [Opérations quotidiennes](./daily-operations). Les approvisionnements estimés du bilan du jour demandent une génération explicite de brouillons puis un envoi manuel ; clôturer ou générer ne transmet aucune commande fournisseur. Pour un article suivi par un compteur commun dont la règle affiche le nombre restant, le panier tient compte de la quantité disponible même au-dessus du seuil de stock faible. Ce seuil règle l’alerte, pas le plafond du panier. Consultez [Disponibilité](/fr/help/kitchen/availability) pour vérifier la règle et les forçages manuels.
+
+<span id="carte-series-stock" />
+
+## Vérifier le stock prédéfini des articles
+
+Les stocks prédéfinis des articles disposent d’un journal dans Articles et cartes → Historique des stocks et sur chaque produit. Une carte tournante permet de préparer des quotas initiaux par série et de les publier sans recréditer les quantités engagées. Les reliquats précédents ne sont pas reportés. Les modifications de commande et libérations avant production utilisent le compteur d’origine enregistré ; un article déjà préparé reste consommé. Les quantités d’ingrédients et préparations et les coûts de recette restent distincts. Consultez [Disponibilité](/fr/help/kitchen/availability) pour les imports initiaux, les corrections et les filtres d’historique.

@@ -1,0 +1,25 @@
+---
+title: External service usage and quotas
+description: Admin → Settings → Usage and quotas
+apps: foodyadmin
+tags:
+  - settings
+  - external-api-quotas
+updatedAt: '2026-10-21'
+featureId: external-api-quotas
+audience: public
+releaseStatus: available
+---
+Admin → Settings → Usage and quotas
+
+<span id="read-usage" />
+
+## Read your restaurant usage
+
+With permission to view or edit settings, open Usage and quotas. Each Google service has an independent counter and limit: address suggestions, details, geocoding, routes, single-courier or fleet optimization, and tiles. Geoapify shares one estimated-credit allowance across its services, including fallback calls. Deliveries submitted for optimization are units; recalculations count again. One map can request multiple tiles. Request counts are also shown when the unit differs. Refresh reloads usage; after a failure use Retry. This page is read-only and never shows other restaurants’ usage.
+
+<span id="limits-and-renewal" />
+
+## Understand limits and renewal
+
+Initial monthly allowances are 2,000 suggestions, 500 details, 500 Google geocodes, 500 Google routes, 500 single-courier optimized deliveries, 100 fleet deliveries, 10,000 Google tiles and 3,000 Geoapify credits. Foody can adjust each restaurant’s limits; contact the team for a change. A warning appears from 80%. At the limit new calls for that service are blocked; an available fallback uses its own allowance. Address entry never bypasses delivery validation. Shared provider safeguards remain applicable even when this restaurant has allowance left. Periods are UTC months with a displayed renewal date. Tracking begins at the stated activation date, without reconstructing earlier calls. Failed and uncertain attempts remain counted. Geoapify estimates retain quarter credits; distance surcharges can exceed the initial estimate and are recorded on response. An allowance is not a guaranteed provider invoice or a purchase of paid overage.
