@@ -111,3 +111,9 @@ Synchroniser internal/support/corpus.json avec le corpus public exporté pour la
 ## Sauvegarder les stocks hors série
 
 POST /api/v1/menu/items/:id/sales-stock/restock accepte désormais les stocks restants des restaurants sans séries, avec menu.edit et le restaurant actif. expected_revision correspond à item.stock_revision ; tous les compteurs par taille, leur validation et leur journal sont atomiques sous le verrou des commandes. Les restaurants par séries gardent leurs compteurs par série. Les tailles étrangères, quantités invalides et révisions périmées sont rejetées sans changement partiel. Déployer cette API avant l’interface Articles. Aucun changement de schéma ou de variable d’environnement.
+
+<span id="staff-activation-pos-code" />
+
+## Code caisse à l’activation du personnel
+
+validate-invite renvoie pos_pin_required selon les permissions actuelles de l’affectation au restaurant (orders.manage ou payments.manage), sans se fonder sur le rôle global ou son ancien libellé. setup-account revérifie indépendamment le périmètre, le rôle et l’obligation du code. Un PIN envoyé par un ancien client pour un membre sans droits caisse est ignoré sans écriture. Mot de passe, PIN éventuel, consommation du lien unique et génération du JWT sont atomiques ; un échec préserve l’invitation et les identifiants existants. Les liens utilisés, expirés, anciens et ambigus ou révoqués restent bloqués par des codes d’erreur autorisés ; les erreurs de persistance inattendues n’exposent ni SQL ni jeton. Aucune migration ni variable d’environnement. Déployer l’API avant l’Admin ; un lien e-mail encore inutilisé ne nécessite aucune réparation de données ni renvoi.
