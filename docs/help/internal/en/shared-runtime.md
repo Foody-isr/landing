@@ -69,3 +69,9 @@ The Admin menu/stock route and its links now use the Stock history label in Fren
 ## Access the new controls
 
 Settings → Usage and quotas displays this restaurant’s Google/Geoapify allowances and usage with settings view/edit permission. Fallback credits and deliveries submitted for optimization are distinct from request counts. Foody adjusts limits without resetting counters. See [limits and renewal](/en/help/settings/api-usage-and-quotas).
+
+<span id="optional-entry-access" />
+
+## Verify discreet sign-in access
+
+The offer_sign_in setting controls the automatic invitation, not account availability. False shows the form directly with a small Sign in link; true or missing retains the invitation and guest choice. Verify FR/HE/EN, desktop and mobile, explicit opening, dismissal with focus restored and typed address retained. The link keeps a 44 px target, transparent background and text-sized mobile column. Preview displays a disabled link without real authentication. Editor labels explain the same choice; delivery controls are unchanged. The embedded support corpus carries the same public procedures.
