@@ -180,10 +180,16 @@
     "selectors": {
       "foodyadmin": [
         "src/app/[restaurantId]/staff/page.tsx",
-        "src/components/team/**"
+        "src/components/team/**",
+        "src/components/staff/StaffProfileEditor.tsx"
       ],
       "foodyserver": [
-        "internal/staff/**"
+        "internal/staff/**",
+        "internal/restaurants/staff_handler.go",
+        "internal/restaurants/staff_profile.go",
+        "internal/common/staff_profile.go",
+        "cmd/server/boot_models.go",
+        "cmd/server/main.go"
       ],
       "foodypos": [
         "lib/features/staff/**"
@@ -227,6 +233,19 @@
           "en": "Review role, account status and POS code configuration. Use removal only for the intended employee; owner controls remain protected.",
           "fr": "Vérifiez rôle, statut du compte et configuration du code POS. Retirez uniquement l’employé concerné ; les contrôles du propriétaire restent protégés.",
           "he": "בדקו תפקיד, סטטוס חשבון והגדרת קוד קופה. הסירו רק את העובד הנכון; פעולות הבעלים נשארות מוגנות."
+        }
+      },
+      {
+        "id": "edit-staff-contacts",
+        "title": {
+          "en": "Edit contact details and courier defaults",
+          "fr": "Modifier les coordonnées et la destination du livreur",
+          "he": "עריכת פרטי קשר ויעד השליח"
+        },
+        "instructions": {
+          "en": "In Staff, open an employee then Edit contact details. With staff management permission, edit the name, phone and Home address, then Save. These contact details belong to this establishment; the sign-in email is read-only and account credentials, roles and other establishments are unchanged. The owner’s contact details can also be edited. For a courier, set Default final destination or choose Same as home address. The linked choice follows later saved home-address edits; an empty home address cannot be used. Leave the final destination empty for no default. New routes copy this destination automatically, including the first real plan from an empty courier placeholder. You can override or clear the destination for one route while planning it. Existing routes with deliveries retain their saved destination. Changes to a courier’s name or phone update upcoming delivery reminders in this establishment, while completed orders keep their historical snapshot. Address suggestions may help complete a street or city; route planning verifies the destination before routing. An unavailable suggestion service does not erase input. Saving is explicit; errors retain the form, and closing a changed form asks whether to discard. Users with staff viewing permission can inspect the profile but cannot edit it.",
+          "fr": "Dans Personnel, ouvrez un employé puis Modifier les coordonnées. Avec l’autorisation de gérer le personnel, modifiez le nom, le téléphone et l’Adresse du domicile, puis Enregistrer. Ces coordonnées appartiennent à cet établissement ; l’email de connexion reste en lecture seule et les accès, rôles et autres établissements ne changent pas. Les coordonnées du propriétaire sont aussi modifiables. Pour un livreur, renseignez Destination finale par défaut ou choisissez Même adresse que son domicile. Cette option suit les modifications ultérieures enregistrées du domicile ; un domicile vide ne peut pas servir de destination. Laissez la destination vide pour ne pas définir de valeur par défaut. Les nouvelles tournées reprennent automatiquement cette destination, y compris la première vraie planification depuis une tournée vide créée pour le livreur. Vous pouvez la remplacer ou l’effacer pour une seule tournée pendant sa planification. Les tournées contenant déjà des livraisons conservent leur destination enregistrée. Modifier le nom ou le téléphone du livreur actualise les prochains rappels de livraison de cet établissement ; les commandes terminées gardent leur historique. Les suggestions aident à compléter une rue ou une ville ; la planification vérifie la destination avant le calcul. Une recherche indisponible n’efface pas la saisie. L’enregistrement est explicite ; les erreurs conservent le formulaire et sa fermeture demande de confirmer l’abandon des modifications. Les personnes autorisées uniquement à consulter le personnel voient la fiche sans pouvoir la modifier.",
+          "he": "בצוות פתחו עובד ובחרו עריכת פרטי קשר. עם הרשאת ניהול צוות אפשר לשנות שם, טלפון וכתובת מגורים וללחוץ על שמירה. הפרטים שייכים לעסק הזה; כתובת הדוא״ל להתחברות היא לקריאה בלבד והגישה לחשבון, התפקידים ועסקים אחרים אינם משתנים. אפשר לערוך גם את פרטי הקשר של הבעלים. לשליח הגדירו יעד סופי כברירת מחדל או בחרו זהה לכתובת המגורים. הבחירה המקושרת משתמשת בעדכונים שמורים של כתובת המגורים; אי אפשר להשתמש בכתובת ריקה. השאירו יעד ריק כדי לא להגדיר ברירת מחדל. מסלולים חדשים מקבלים את היעד אוטומטית, כולל התכנון הראשון ממסלול שליח ריק. אפשר להחליף או להסיר את היעד בתכנון מסלול יחיד. מסלולים שכבר מכילים משלוחים שומרים את היעד הקיים. עדכון שם או טלפון של שליח מעדכן תזכורות למשלוחים הקרובים בעסק הזה; הזמנות שהושלמו שומרות את הנתונים ההיסטוריים. ההצעות מסייעות בהשלמת רחוב או עיר; התכנון מאמת את היעד לפני חישוב המסלול. חיפוש שאינו זמין לא מוחק את הפרטים. השמירה מפורשת, שגיאות משאירות את הטופס וסגירת טופס שהשתנה דורשת אישור לביטול השינויים. בעלי הרשאת צפייה בצוות יכולים לקרוא את הפרופיל אך לא לערוך אותו."
         }
       }
     ],
@@ -3178,6 +3197,19 @@
           "en": "Approved WhatsApp reminders can be previewed early, while manual buttons remain blocked until the day before delivery in the restaurant’s timezone. Orders → Deliveries → WhatsApp reminders reviews and confirms reminders across every route on the selected date; WhatsApp customer and Send this reminder handle one customer. Messages use the saved route’s calculated arrival window and assigned courier. Manual buttons use the global reminder template; automatic stages retain their explicitly configured template and timing in Order workflow. For day-before-only sending, select that timing on the intended stage, for example Ready. Opening a preview enables no trigger. A previously submitted, uncertain or failed reminder is never sent again by another mode, even if its text or provider changes. Changes before sending require a refreshed preview. Acceptance does not prove delivery; consult Customer messages on the order. Preview text represents the current calculation, not an earlier stored message.",
           "he": "אפשר לצפות מראש בתזכורות WhatsApp מאושרות, וכפתורי השליחה הידנית נשארים חסומים עד היום שלפני המשלוח לפי אזור הזמן של המסעדה. הזמנות → משלוחים → תזכורות WhatsApp מאפשר לבדוק ולאשר תזכורות בכל מסלולי התאריך שנבחר; WhatsApp ללקוח ושליחת התזכורת הזו מטפלים בלקוח אחד. ההודעות משתמשות בחלון ההגעה המחושב של המסלול השמור ובשליח המשויך. הכפתורים הידניים משתמשים בתבנית התזכורת הכללית; שלבים אוטומטיים שומרים על התבנית והתזמון שהוגדרו במפורש במסלול ההזמנה. לשליחה רק ביום שלפני המשלוח בחרו תזמון זה בשלב הרצוי, למשל מוכנה. פתיחת תצוגה אינה מפעילה טריגר. תזכורת שכבר הוגשה, אינה ודאית או נכשלה לא נשלחת שוב במצב אחר, גם אם הטקסט או הספק השתנו. שינוי לפני שליחה דורש תצוגה מעודכנת. קבלה אינה מוכיחה מסירה; בדקו הודעות ללקוח בהזמנה. הטקסט מציג את החישוב הנוכחי ואינו הודעה קודמת שנשמרה."
         }
+      },
+      {
+        "id": "courier-contact-profile",
+        "title": {
+          "en": "Keep courier contact details current",
+          "fr": "Actualiser les coordonnées du livreur",
+          "he": "עדכון פרטי הקשר של השליח"
+        },
+        "instructions": {
+          "en": "Courier assignments use the contact name and phone saved for this establishment in Staff → Edit contact details. Updating those fields also refreshes the courier information used by upcoming delivery reminders here. Completed deliveries keep their historical contact snapshot. A prepared WhatsApp preview with older contact details must be refreshed and reviewed before sending. The staff home address is not part of the customer reminder.",
+          "fr": "L’affectation d’un livreur utilise le nom et le téléphone enregistrés pour cet établissement dans Personnel → Modifier les coordonnées. Modifier ces champs actualise aussi les informations utilisées par les prochains rappels de livraison de cet établissement. Les livraisons terminées conservent leur historique. Un aperçu WhatsApp préparé avec d’anciennes coordonnées doit être actualisé et relu avant l’envoi. L’adresse du domicile du personnel ne fait pas partie du rappel au client.",
+          "he": "שיוך שליח משתמש בשם ובטלפון השמורים לעסק הזה בצוות ← עריכת פרטי קשר. שינוי השדות מעדכן גם את הפרטים בתזכורות המשלוח הקרובות בעסק הזה. משלוחים שהושלמו שומרים את הנתונים ההיסטוריים. יש לרענן ולבדוק תצוגת WhatsApp שהוכנה עם פרטי קשר ישנים לפני השליחה. כתובת המגורים של איש הצוות אינה נכללת בתזכורת ללקוח."
+        }
       }
     ],
     "audience": "public",
@@ -4039,6 +4071,19 @@
           "fr": "Les stocks prédéfinis des articles disposent d’un journal dans Articles et cartes → Historique des stocks et sur chaque produit. Une carte tournante permet de préparer des quotas initiaux par série et de les publier sans recréditer les quantités engagées. Les reliquats précédents ne sont pas reportés. Les modifications de commande et libérations avant production utilisent le compteur d’origine enregistré ; un article déjà préparé reste consommé. Les quantités d’ingrédients et préparations et les coûts de recette restent distincts. Consultez [Disponibilité](/fr/help/kitchen/availability) pour les imports initiaux, les corrections et les filtres d’historique.",
           "he": "למלאי הפריטים המוגדר יש כעת יומן בפריטים ותפריטים → היסטוריית מלאי ובכל מוצר. בתפריט מתחלף ניתן להכין מכסות התחלתיות לכל סדרה ולפרסם בלי לזכות כמויות שכבר התחייבו. יתרות קודמות אינן מועברות. עריכות הזמנה ושחרורים לפני הכנה משתמשים במונה המקורי שנשמר; פריט שכבר הוכן נשאר מנוכה. כמויות מרכיבים והכנות ועלויות מתכון נשארות נפרדות. ראו [זמינות](/he/help/kitchen/availability) לייבוא הראשוני, תיקונים וסינון היסטוריה."
         }
+      },
+      {
+        "id": "staff-contact-and-courier-defaults",
+        "title": {
+          "en": "Staff contact details and courier destination",
+          "fr": "Coordonnées du personnel et destination du livreur",
+          "he": "פרטי קשר של הצוות ויעד השליח"
+        },
+        "instructions": {
+          "en": "Staff contact details are managed in Admin → Staff → employee → Edit contact details. The restaurant-scoped name and phone are used for courier assignment and upcoming delivery reminders; the sign-in email remains read-only. Couriers can save a default final destination or link it to their home address. New routes propose that destination and allow an explicit override or removal. It is the courier’s end-of-route destination, separate from the customer’s delivery address. Existing populated routes and completed delivery snapshots keep their saved data. See [staff profiles](/en/help/staff/invite-staff#edit-staff-contacts) for saving, permissions and recovery.",
+          "fr": "Les coordonnées du personnel se gèrent dans Admin → Personnel → employé → Modifier les coordonnées. Le nom et le téléphone propres à l’établissement servent à l’affectation du livreur et aux prochains rappels de livraison ; l’email de connexion reste en lecture seule. Les livreurs peuvent enregistrer une destination finale par défaut ou la lier à leur domicile. Les nouvelles tournées proposent cette destination et permettent de la remplacer ou de la retirer. Il s’agit du lieu où termine le livreur, distinct de l’adresse de livraison du client. Les tournées contenant déjà des livraisons et les historiques terminés conservent leurs données. Voir [la fiche du personnel](/fr/help/staff/invite-staff#edit-staff-contacts) pour l’enregistrement, les permissions et la reprise après erreur.",
+          "he": "פרטי הקשר של הצוות מנוהלים בממשק הניהול ← צוות ← עובד ← עריכת פרטי קשר. השם והטלפון השמורים לעסק משמשים לשיוך שליח ולתזכורות המשלוח הקרובות; הדוא״ל להתחברות נשאר לקריאה בלבד. שליחים יכולים לשמור יעד סופי כברירת מחדל או לקשר אותו לכתובת המגורים. מסלולים חדשים מציעים את היעד ואפשר להחליפו או להסירו במפורש. זהו יעד הסיום של השליח, בנפרד מכתובת המשלוח של הלקוח. מסלולים שכבר מכילים משלוחים ומשלוחים שהושלמו שומרים את הנתונים הקיימים. [בפרופיל הצוות](/he/help/staff/invite-staff#edit-staff-contacts) מפורטים השמירה, ההרשאות והטיפול בשגיאות."
+        }
       }
     ],
     "audience": "public",
@@ -4228,6 +4273,19 @@
           "en": "Predefined item stocks now have a journal under Items & menus → Stock history and on each product. A rotating carte can prepare initial allowances per series and publish them without restoring already committed units. Previous remaining counts are not carried forward. Order changes and pre-production releases use the original frozen pool; a produced item remains consumed. Ingredient/preparation quantities and recipe costs remain separate. See [Availability](/en/help/kitchen/availability) for initial imports, corrections and history filters.",
           "fr": "Les stocks prédéfinis des articles disposent d’un journal dans Articles et cartes → Historique des stocks et sur chaque produit. Une carte tournante permet de préparer des quotas initiaux par série et de les publier sans recréditer les quantités engagées. Les reliquats précédents ne sont pas reportés. Les modifications de commande et libérations avant production utilisent le compteur d’origine enregistré ; un article déjà préparé reste consommé. Les quantités d’ingrédients et préparations et les coûts de recette restent distincts. Consultez [Disponibilité](/fr/help/kitchen/availability) pour les imports initiaux, les corrections et les filtres d’historique.",
           "he": "למלאי הפריטים המוגדר יש כעת יומן בפריטים ותפריטים → היסטוריית מלאי ובכל מוצר. בתפריט מתחלף ניתן להכין מכסות התחלתיות לכל סדרה ולפרסם בלי לזכות כמויות שכבר התחייבו. יתרות קודמות אינן מועברות. עריכות הזמנה ושחרורים לפני הכנה משתמשים במונה המקורי שנשמר; פריט שכבר הוכן נשאר מנוכה. כמויות מרכיבים והכנות ועלויות מתכון נשארות נפרדות. ראו [זמינות](/he/help/kitchen/availability) לייבוא הראשוני, תיקונים וסינון היסטוריה."
+        }
+      },
+      {
+        "id": "staff-contact-and-courier-defaults",
+        "title": {
+          "en": "Staff contact details and courier destination",
+          "fr": "Coordonnées du personnel et destination du livreur",
+          "he": "פרטי קשר של הצוות ויעד השליח"
+        },
+        "instructions": {
+          "en": "Staff contact details are managed in Admin → Staff → employee → Edit contact details. The restaurant-scoped name and phone are used for courier assignment and upcoming delivery reminders; the sign-in email remains read-only. Couriers can save a default final destination or link it to their home address. New routes propose that destination and allow an explicit override or removal. It is the courier’s end-of-route destination, separate from the customer’s delivery address. Existing populated routes and completed delivery snapshots keep their saved data. See [staff profiles](/en/help/staff/invite-staff#edit-staff-contacts) for saving, permissions and recovery.",
+          "fr": "Les coordonnées du personnel se gèrent dans Admin → Personnel → employé → Modifier les coordonnées. Le nom et le téléphone propres à l’établissement servent à l’affectation du livreur et aux prochains rappels de livraison ; l’email de connexion reste en lecture seule. Les livreurs peuvent enregistrer une destination finale par défaut ou la lier à leur domicile. Les nouvelles tournées proposent cette destination et permettent de la remplacer ou de la retirer. Il s’agit du lieu où termine le livreur, distinct de l’adresse de livraison du client. Les tournées contenant déjà des livraisons et les historiques terminés conservent leurs données. Voir [la fiche du personnel](/fr/help/staff/invite-staff#edit-staff-contacts) pour l’enregistrement, les permissions et la reprise après erreur.",
+          "he": "פרטי הקשר של הצוות מנוהלים בממשק הניהול ← צוות ← עובד ← עריכת פרטי קשר. השם והטלפון השמורים לעסק משמשים לשיוך שליח ולתזכורות המשלוח הקרובות; הדוא״ל להתחברות נשאר לקריאה בלבד. שליחים יכולים לשמור יעד סופי כברירת מחדל או לקשר אותו לכתובת המגורים. מסלולים חדשים מציעים את היעד ואפשר להחליפו או להסירו במפורש. זהו יעד הסיום של השליח, בנפרד מכתובת המשלוח של הלקוח. מסלולים שכבר מכילים משלוחים ומשלוחים שהושלמו שומרים את הנתונים הקיימים. [בפרופיל הצוות](/he/help/staff/invite-staff#edit-staff-contacts) מפורטים השמירה, ההרשאות והטיפול בשגיאות."
         }
       }
     ],
@@ -5180,6 +5238,19 @@
           "fr": "Dans Commandes → Livraisons, choisissez la date puis Rappels WhatsApp pour examiner tous les clients en attente des tournées affichées. Le bouton WhatsApp au client ouvre uniquement le rappel de ce client. L’aperçu en lecture seule utilise le modèle approuvé du rappel, le destinataire enregistré, le livreur affecté et le créneau calculé de la tournée. Il peut être consulté avant la veille ; les boutons manuels restent bloqués jusqu’à la veille, selon le fuseau du restaurant. Utilisez Envoyer ce rappel pour un client, ou Envoyer les rappels puis confirmez le nombre de messages séparés pour toute la date. Aucun groupe WhatsApp n’est créé. Les rappels déjà soumis, en cours, incertains ou indisponibles sont exclus. Vérifiez les clients bloqués ; un échec de préparation n’empêche pas les autres clients admissibles. Si une tournée ou un message a changé, les envois restants s’arrêtent : actualisez, relisez et confirmez de nouveau. Une réponse d’envoi perdue reste à vérifier et n’est jamais réessayée automatiquement. Une acceptation ne prouve pas la réception ; consultez Messages au client dans la commande. L’aperçu actuel ne reconstitue pas le texte d’un ancien envoi. Pour le mode automatique, ouvrez Parcours de commande et configurez le modèle de rappel et son horaire La veille sur l’étape souhaitée, par exemple Prête. L’aperçu manuel n’active aucune automatisation. Les modes automatique, groupé et individuel partagent la protection contre un second rappel pour la même commande, même après un changement de texte ou de fournisseur.",
           "en": "In Orders → Deliveries, select a date and open WhatsApp reminders to review pending customers across all displayed routes. WhatsApp customer opens only that customer’s reminder. The read-only preview uses the approved reminder template, saved recipient, assigned courier and calculated route arrival window. It can be reviewed early; manual sending remains blocked until the day before delivery in the restaurant’s timezone. Use Send this reminder for one customer, or Send reminders and confirm the number of separate messages for the entire date. No WhatsApp group is created. Previously submitted, in-progress, uncertain and unavailable reminders are excluded. Check blocked customers; a preparation failure does not prevent other eligible customers. A changed route or message stops remaining sends: refresh, review and confirm again. A lost send response remains uncertain and is never retried automatically. Acceptance does not prove delivery; check Customer messages on the order. The current preview does not reconstruct an earlier message body. For automatic sending, open Order workflow and configure the reminder template and Day before timing on the intended stage, for example Ready. Opening previews enables no automation. Automatic, grouped and individual modes share protection against a second reminder for the same order, including after template or provider changes.",
           "he": "בהזמנות → משלוחים בחרו תאריך ופתחו תזכורות WhatsApp כדי לבדוק לקוחות ממתינים בכל המסלולים המוצגים. WhatsApp ללקוח פותח רק את התזכורת של אותו לקוח. התצוגה לקריאה בלבד משתמשת בתבנית התזכורת המאושרת, בנמען השמור, בשליח המשויך ובחלון ההגעה המחושב של המסלול. אפשר לבדוק מראש; שליחה ידנית חסומה עד היום שלפני המשלוח לפי אזור הזמן של המסעדה. לשליחה אחת בחרו שליחת התזכורת הזו, או שליחת תזכורות ואשרו את מספר ההודעות הנפרדות לכל התאריך. לא נוצרת קבוצת WhatsApp. תזכורות שכבר הוגשו, נמצאות בתהליך, אינן ודאיות או אינן זמינות לא נכללות. בדקו לקוחות חסומים; כשל בהכנה אינו מונע שליחה ללקוחות זכאים אחרים. שינוי מסלול או הודעה עוצר את שאר השליחות: רעננו, בדקו ואשרו שוב. תגובת שליחה שאבדה נשארת לא ודאית ולעולם אינה מנוסה שוב אוטומטית. קבלה אינה מוכיחה מסירה; בדקו הודעות ללקוח בהזמנה. התצוגה הנוכחית אינה משחזרת טקסט של הודעה קודמת. לשליחה אוטומטית פתחו את מסלול ההזמנה והגדירו תבנית תזכורת ותזמון ביום שלפני המשלוח בשלב הרצוי, למשל מוכנה. פתיחת תצוגה אינה מפעילה אוטומציה. המצבים האוטומטי, המרוכז והיחיד חולקים הגנה מפני תזכורת נוספת לאותה הזמנה, גם אחרי שינוי תבנית או ספק."
+        }
+      },
+      {
+        "id": "courier-profile-destination",
+        "title": {
+          "en": "Use the courier’s saved final destination",
+          "fr": "Utiliser la destination enregistrée du livreur",
+          "he": "שימוש ביעד הסופי השמור של השליח"
+        },
+        "instructions": {
+          "en": "Staff → employee → Edit contact details stores the courier’s default final destination, with an option to use the current home address. The planning drawer pre-fills it for a new route, and the API also applies it if a client omits an override. An explicit route destination, including an explicitly empty field, takes precedence. Editing the departure address retains the proposed final destination. Existing routes with deliveries retain their saved settings when a profile changes; empty courier placeholders use the latest default when first planned. Route endpoint validation and recalculation rules still apply. No staff profile edit starts or recalculates an existing route.",
+          "fr": "Personnel → employé → Modifier les coordonnées permet d’enregistrer la destination finale par défaut du livreur, avec l’option d’utiliser son domicile actuel. La planification la propose pour une nouvelle tournée et l’API l’applique aussi si le client ne transmet aucune modification. Une destination saisie pour la tournée, même explicitement vide, reste prioritaire. Modifier l’adresse de départ conserve la destination finale proposée. Les tournées contenant déjà des livraisons gardent leurs réglages lors d’une modification de la fiche ; une tournée vide du livreur reprend la dernière valeur par défaut lors de sa première planification. Les règles de validation et de recalcul des points s’appliquent toujours. Modifier la fiche ne démarre ni ne recalcule une tournée existante.",
+          "he": "צוות ← עובד ← עריכת פרטי קשר מאפשר לשמור יעד סופי כברירת מחדל, עם אפשרות להשתמש בכתובת המגורים הנוכחית. בתכנון מסלול חדש היעד מוצג מראש והשרת מחיל אותו גם אם הלקוח לא שלח שינוי. יעד מפורש למסלול, כולל ערך ריק מפורש, מקבל עדיפות. שינוי כתובת היציאה משמר את היעד המוצע. מסלולים שכבר מכילים משלוחים שומרים את ההגדרות כשמשנים פרופיל; מסלול שליח ריק משתמש בברירת המחדל העדכנית בתכנון הראשון. כללי אימות הכתובות וחישוב המסלול נשארים בתוקף. עריכת הפרופיל אינה מתחילה או מחשבת מחדש מסלול קיים."
         }
       }
     ],
@@ -6638,6 +6709,19 @@
           "en": "The entry sign-in invitation is now a published website order-journey preference. Order without an account remains available; this setting does not replace mandatory phone verification or payment/delivery validation. Google/Geoapify consumption and limits are separately available in [Usage and quotas](/en/help/settings/api-usage-and-quotas).",
           "he": "הצעת ההתחברות בכניסה היא כעת העדפה המתפרסמת במסלול ההזמנה באתר. הזמנה ללא חשבון זמינה; ההגדרה אינה מחליפה אימות טלפון מחייב או בדיקות תשלום ומשלוח. צריכת Google/Geoapify והתקרות מופיעות בנפרד ב[צריכה ומכסות](/he/help/settings/api-usage-and-quotas)."
         }
+      },
+      {
+        "id": "staff-contact-and-courier-defaults",
+        "title": {
+          "en": "Staff contact details and courier destination",
+          "fr": "Coordonnées du personnel et destination du livreur",
+          "he": "פרטי קשר של הצוות ויעד השליח"
+        },
+        "instructions": {
+          "en": "Staff contact details are managed in Admin → Staff → employee → Edit contact details. The restaurant-scoped name and phone are used for courier assignment and upcoming delivery reminders; the sign-in email remains read-only. Couriers can save a default final destination or link it to their home address. New routes propose that destination and allow an explicit override or removal. It is the courier’s end-of-route destination, separate from the customer’s delivery address. Existing populated routes and completed delivery snapshots keep their saved data. See [staff profiles](/en/help/staff/invite-staff#edit-staff-contacts) for saving, permissions and recovery.",
+          "fr": "Les coordonnées du personnel se gèrent dans Admin → Personnel → employé → Modifier les coordonnées. Le nom et le téléphone propres à l’établissement servent à l’affectation du livreur et aux prochains rappels de livraison ; l’email de connexion reste en lecture seule. Les livreurs peuvent enregistrer une destination finale par défaut ou la lier à leur domicile. Les nouvelles tournées proposent cette destination et permettent de la remplacer ou de la retirer. Il s’agit du lieu où termine le livreur, distinct de l’adresse de livraison du client. Les tournées contenant déjà des livraisons et les historiques terminés conservent leurs données. Voir [la fiche du personnel](/fr/help/staff/invite-staff#edit-staff-contacts) pour l’enregistrement, les permissions et la reprise après erreur.",
+          "he": "פרטי הקשר של הצוות מנוהלים בממשק הניהול ← צוות ← עובד ← עריכת פרטי קשר. השם והטלפון השמורים לעסק משמשים לשיוך שליח ולתזכורות המשלוח הקרובות; הדוא״ל להתחברות נשאר לקריאה בלבד. שליחים יכולים לשמור יעד סופי כברירת מחדל או לקשר אותו לכתובת המגורים. מסלולים חדשים מציעים את היעד ואפשר להחליפו או להסירו במפורש. זהו יעד הסיום של השליח, בנפרד מכתובת המשלוח של הלקוח. מסלולים שכבר מכילים משלוחים ומשלוחים שהושלמו שומרים את הנתונים הקיימים. [בפרופיל הצוות](/he/help/staff/invite-staff#edit-staff-contacts) מפורטים השמירה, ההרשאות והטיפול בשגיאות."
+        }
       }
     ],
     "audience": "public",
@@ -6814,6 +6898,19 @@
           "fr": "L’invitation à se connecter à l’entrée est désormais un choix publié dans le parcours de commande du site. Commander sans compte reste disponible ; ce réglage ne remplace pas une vérification de téléphone obligatoire ni les contrôles de paiement ou de livraison. Les consommations Google/Geoapify et leurs plafonds sont consultables séparément dans [Consommation et quotas](/fr/help/settings/api-usage-and-quotas).",
           "en": "The entry sign-in invitation is now a published website order-journey preference. Order without an account remains available; this setting does not replace mandatory phone verification or payment/delivery validation. Google/Geoapify consumption and limits are separately available in [Usage and quotas](/en/help/settings/api-usage-and-quotas).",
           "he": "הצעת ההתחברות בכניסה היא כעת העדפה המתפרסמת במסלול ההזמנה באתר. הזמנה ללא חשבון זמינה; ההגדרה אינה מחליפה אימות טלפון מחייב או בדיקות תשלום ומשלוח. צריכת Google/Geoapify והתקרות מופיעות בנפרד ב[צריכה ומכסות](/he/help/settings/api-usage-and-quotas)."
+        }
+      },
+      {
+        "id": "staff-contact-and-courier-defaults",
+        "title": {
+          "en": "Staff contact details and courier destination",
+          "fr": "Coordonnées du personnel et destination du livreur",
+          "he": "פרטי קשר של הצוות ויעד השליח"
+        },
+        "instructions": {
+          "en": "Staff contact details are managed in Admin → Staff → employee → Edit contact details. The restaurant-scoped name and phone are used for courier assignment and upcoming delivery reminders; the sign-in email remains read-only. Couriers can save a default final destination or link it to their home address. New routes propose that destination and allow an explicit override or removal. It is the courier’s end-of-route destination, separate from the customer’s delivery address. Existing populated routes and completed delivery snapshots keep their saved data. See [staff profiles](/en/help/staff/invite-staff#edit-staff-contacts) for saving, permissions and recovery.",
+          "fr": "Les coordonnées du personnel se gèrent dans Admin → Personnel → employé → Modifier les coordonnées. Le nom et le téléphone propres à l’établissement servent à l’affectation du livreur et aux prochains rappels de livraison ; l’email de connexion reste en lecture seule. Les livreurs peuvent enregistrer une destination finale par défaut ou la lier à leur domicile. Les nouvelles tournées proposent cette destination et permettent de la remplacer ou de la retirer. Il s’agit du lieu où termine le livreur, distinct de l’adresse de livraison du client. Les tournées contenant déjà des livraisons et les historiques terminés conservent leurs données. Voir [la fiche du personnel](/fr/help/staff/invite-staff#edit-staff-contacts) pour l’enregistrement, les permissions et la reprise après erreur.",
+          "he": "פרטי הקשר של הצוות מנוהלים בממשק הניהול ← צוות ← עובד ← עריכת פרטי קשר. השם והטלפון השמורים לעסק משמשים לשיוך שליח ולתזכורות המשלוח הקרובות; הדוא״ל להתחברות נשאר לקריאה בלבד. שליחים יכולים לשמור יעד סופי כברירת מחדל או לקשר אותו לכתובת המגורים. מסלולים חדשים מציעים את היעד ואפשר להחליפו או להסירו במפורש. זהו יעד הסיום של השליח, בנפרד מכתובת המשלוח של הלקוח. מסלולים שכבר מכילים משלוחים ומשלוחים שהושלמו שומרים את הנתונים הקיימים. [בפרופיל הצוות](/he/help/staff/invite-staff#edit-staff-contacts) מפורטים השמירה, ההרשאות והטיפול בשגיאות."
         }
       }
     ],

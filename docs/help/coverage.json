@@ -47,10 +47,16 @@
       "selectors": {
         "foodyadmin": [
           "src/app/[restaurantId]/staff/page.tsx",
-          "src/components/team/**"
+          "src/components/team/**",
+          "src/components/staff/StaffProfileEditor.tsx"
         ],
         "foodyserver": [
-          "internal/staff/**"
+          "internal/staff/**",
+          "internal/restaurants/staff_handler.go",
+          "internal/restaurants/staff_profile.go",
+          "internal/common/staff_profile.go",
+          "cmd/server/boot_models.go",
+          "cmd/server/main.go"
         ],
         "foodypos": [
           "lib/features/staff/**"
