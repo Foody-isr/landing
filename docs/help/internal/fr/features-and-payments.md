@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - backoffice-entitlements
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-21'
 featureId: backoffice-entitlements
 audience: internal
 releaseStatus: available
@@ -39,3 +39,9 @@ Comparez identifiants techniques au contrat approuvé. Noms hérités et prix in
 ## Configurer l’infrastructure de paiement
 
 Utilisez réglages prestataire/Cibus/portefeuille pour environnement et marchand approuvés. Vérifiez identité visuelle et capacités sans exposer secrets. Paiements/webhooks/factures exigent revue interservices et sécurité.
+
+<span id="external-api-allocation" />
+
+## Attribuer les quotas des services externes
+
+En superadmin, ouvrez Usage and quotas pour comparer les restaurants, choisissez un service puis Review allocation. Le même accès existe depuis la fiche restaurant. Saisissez les plafonds mensuels entiers ; zéro suspend un service. Indiquez un motif puis Save allocation. Use default allowances prépare les valeurs initiales dans le formulaire et nécessite aussi un enregistrement. Une modification ne remet jamais les compteurs à zéro et ne contourne pas les protections fournisseur. Les changements sont historisés avec leur auteur et leur motif. En cas d’enregistrement non confirmé ou de conflit, rechargez explicitement l’allocation avant de réessayer ; les saisies restent présentes tant que vous ne rechargez pas. La sortie avec des modifications avertit de leur abandon. Les environnements ont leurs compteurs restaurant propres ; le budget Google partagé continue de protéger le compte global.

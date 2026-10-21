@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - backoffice-access
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-21'
 featureId: backoffice-access
 audience: internal
 releaseStatus: available
@@ -23,3 +23,9 @@ releaseStatus: available
 ## קריאת נתוני פלטפורמה
 
 עיינו בסיכומים ופתחו רשומת עסק או משתמש לבדיקה. נתונים מצטברים אינם המלצת לקוח או הוכחת סליקת עסקה.
+
+<span id="related-service-controls" />
+
+## גישה להגדרות החדשות
+
+Usage and quotas מציג השוואת צריכה לפי שירות ומסעדה. Review allocation והקישור בכרטיס המסעדה פותחים תקרות חודשיות; שמירה מחייבת סיבה ושומרת את כל המונים. הכלים למנהל־על בלבד ונפרדים מהעדפת ההתחברות באתר.

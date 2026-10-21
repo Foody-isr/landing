@@ -7,7 +7,7 @@ apps: both
 tags:
   - internal
   - backoffice-access
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-21'
 featureId: backoffice-access
 audience: internal
 releaseStatus: available
@@ -25,3 +25,9 @@ Confirm environment and operator role before accessing restaurant data. Do not u
 ## Read platform totals
 
 Review dashboard totals and navigate to the specific restaurant/user record for investigation. Treat aggregates as operational observations, not as customer testimonials or proof of individual payment settlement.
+
+<span id="related-service-controls" />
+
+## Access the new controls
+
+Usage and quotas compares service consumption across restaurants. Review allocation and the restaurant-detail link open monthly limits; saving requires a reason and preserves all counters. These controls are superadmin-only and separate from the storefront sign-in preference.

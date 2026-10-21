@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - backoffice-entitlements
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-21'
 featureId: backoffice-entitlements
 audience: internal
 releaseStatus: available
@@ -39,3 +39,9 @@ Compare technical feature/plan identifiers with the approved customer contract. 
 ## Configure payment infrastructure
 
 Use protected provider/Cibus/hosted-wallet settings only for the approved environment and merchant. Validate supported branding and capability fields without exposing credentials. Payment/webhook/invoice changes require cross-service and security review before release.
+
+<span id="external-api-allocation" />
+
+## Allocate external-service allowances
+
+As superadmin open Usage and quotas to compare restaurants, select a service, then Review allocation. The restaurant detail page also links here. Enter whole monthly limits; zero pauses a service. Supply a reason and Save allocation. Use default allowances only prepares initial values in the form and still requires saving. Changes never reset usage or bypass provider protection. Each change is audited with actor and reason. After an unconfirmed save or conflict, explicitly reload the current allocation before retrying; inputs remain until you reload. Leaving with changes warns before discarding them. Environments retain their own restaurant counters while the shared Google budget continues protecting the global account.

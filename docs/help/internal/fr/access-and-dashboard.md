@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - backoffice-access
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-21'
 featureId: backoffice-access
 audience: internal
 releaseStatus: available
@@ -23,3 +23,9 @@ Vérifiez environnement et rôle avant accès aux restaurants. Un propriétaire 
 ## Lire les indicateurs plateforme
 
 Consultez totaux puis dossier restaurant/utilisateur pour enquête. Les agrégats sont des observations opérationnelles, pas des témoignages ni une preuve de règlement individuel.
+
+<span id="related-service-controls" />
+
+## Accès aux nouveaux réglages
+
+Usage and quotas ouvre la comparaison des consommations par service et par restaurant. Review allocation et le lien de la fiche restaurant ouvrent les plafonds mensuels ; leur enregistrement exige un motif et conserve tous les compteurs. Ces contrôles sont réservés au superadmin, distincts du choix de connexion du site.

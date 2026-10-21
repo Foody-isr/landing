@@ -969,10 +969,13 @@
           "app/confirmation/**",
           "app/receipt/**",
           "lib/orderLinkMetadata.ts",
-          "app/order/confirmation/**"
+          "app/order/confirmation/**",
+          "components/website-v3/WebsiteFulfillmentDialog.tsx",
+          "components/website-v3/SiteHeader.tsx"
         ],
         "foodyserver": [
-          "internal/website/**"
+          "internal/website/**",
+          "internal/restaurants/checkout_config.go"
         ]
       }
     },
@@ -1596,7 +1599,9 @@
         "foodybackoffice": [
           "src/app/dashboard/features/**",
           "src/app/dashboard/payments/**",
-          "src/lib/api.ts"
+          "src/lib/api.ts",
+          "src/app/dashboard/api-usage/**",
+          "src/app/dashboard/restaurants/[id]/usage/**"
         ],
         "foodyserver": [
           "internal/subscription/**",
@@ -1765,6 +1770,22 @@
         ],
         "foodyweb": [
           "app/r/[restaurantId]/[page]/**"
+        ]
+      }
+    },
+    {
+      "id": "external-api-quotas",
+      "article": "settings/api-usage-and-quotas",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/settings/usage/**"
+        ],
+        "foodyserver": [
+          "internal/apiquota/**",
+          "internal/addresslookup/budget.go",
+          "internal/addresslookup/maps_budget.go",
+          "internal/geoapify/usage.go"
         ]
       }
     }
