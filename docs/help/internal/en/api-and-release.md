@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-19'
+updatedAt: '2026-10-21'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -93,3 +93,9 @@ Deploy migration 266 and the API before Web. Configure CUSTOMER_FACEBOOK_APP_ID,
 ## Carte publication and sale-stock transactions
 
 API migration 267 adds private carte/series drafts, immutable publication snapshots and item-stock series/counters/events. Draft and stock history endpoints require scoped menu.view; changes require menu.edit. Publication checks draft/source and stock revisions in one transaction, preserves order commitments and rejects invalid tenant references. Deploy the API before Admin. Retain old global counters for older orders; the first series activation imports current remaining stock explicitly. Verify concurrent reservations, stock releases, future-series isolation and rollback in development before promoting the artifacts.
+
+<span id="stock-history-only-corpus" />
+
+## Synchronize the stock-history procedure
+
+Synchronize internal/support/corpus.json with the exported public corpus for the read-only Stock history page. Existing paginated endpoints and menu.view authorization remain unchanged. Help explains combined filters, the product link and preparation from the carte draft; it no longer offers immediate corrections in menu/stock. Verify the same revision in public support status and FR/HE/EN guides after deployment, without paid AI calls.

@@ -7,7 +7,7 @@ apps: both
 tags:
   - internal
   - shared-runtime
-updatedAt: '2026-10-19'
+updatedAt: '2026-10-21'
 featureId: shared-runtime
 audience: internal
 releaseStatus: available
@@ -57,3 +57,9 @@ On mobile and desktop, review the initial Sign in and Continue as a guest choice
 ## Review customer sign-in choices
 
 Sign in opens Google and the email/password form. Facebook and Apple appear only when configured by the service. Standalone email-code sign-in is no longer offered. Account creation, address verification and password-recovery codes remain separate. Check dismissal and resumption without losing the draft on mobile and desktop; four whole suggestions with the keyboard open retain the same geometry. Sign-in choices must not reintroduce moving tabs or input.
+
+<span id="sale-stock-history-read-only" />
+
+## Keep the sale-stock journal read-only
+
+The Admin menu/stock route and its links now use the Stock history label in French, Hebrew and English. It reads only restaurant items for the filter and paginated sale-stock events, without calling allowance counters or correction routes. Item, series date and movement filters remain combined during pagination; responses for an earlier selection are ignored. The product link is named Full stock history. Preparation remains in the carte draft and publication. Deploy the same public corpus used by search and guides to the support service with this procedure change.
