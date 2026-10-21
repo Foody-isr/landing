@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-19'
+updatedAt: '2026-10-21'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -93,3 +93,9 @@ Déployer la migration 266 et l’API avant le Web. Configurer ensemble CUSTOMER
 ## Transactions de publication de carte et de stock de vente
 
 La migration API 267 ajoute les brouillons privés par carte/série, les versions publiées et les séries, compteurs et événements de stock de vente. Les lectures et l’historique nécessitent menu.view sur le restaurant ; les changements nécessitent menu.edit. La publication vérifie dans une transaction les révisions du brouillon, de sa source et du stock, préserve les engagements de commande et refuse les références hors restaurant. Déployez l’API avant Admin. Conservez les anciens compteurs pour les anciennes commandes ; la première activation de série reprend explicitement le disponible actuel. Vérifiez réservations concurrentes, libérations, isolation des séries futures et rollback en développement avant promotion.
+
+<span id="stock-history-only-corpus" />
+
+## Synchroniser la procédure du journal des stocks
+
+Synchroniser internal/support/corpus.json avec le corpus public exporté pour la page Historique des stocks en lecture seule. Les endpoints paginés existants et leur autorisation menu.view ne changent pas. L’aide explique les filtres combinés, le lien produit et la préparation depuis le brouillon de carte ; elle ne propose plus de corrections immédiates dans menu/stock. Vérifier la même révision dans le statut public du support et les guides FR/HE/EN après déploiement, sans appel IA payant.
