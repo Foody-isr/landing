@@ -29,3 +29,9 @@ After activation, use the configured employee POS code. End your service or swit
 ## Review shift reports
 
 Choose the report period and employee/device filters, then inspect recorded start/end times. A missing end time must be investigated rather than assumed closed.
+
+<span id="finish-with-cash-drawer" />
+
+## Finish a shift with an open cash drawer
+
+If End shift says the cash drawer is open, open More → Reports → Cash drawer balance on the same enrolled POS. Resolve any pending cash operation, count the physical cash and close that device's cash session before trying End shift again. The shift is not ended by a Verifone card-batch deposit, and ending a shift does not itself transmit a card batch. If the count or payment result is uncertain, reconcile it with an authorized manager instead of forcing a sign-out or taking a second payment.

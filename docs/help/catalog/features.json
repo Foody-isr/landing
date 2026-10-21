@@ -71,6 +71,19 @@
           "fr": "Suivez la procédure de récupération proposée ou contactez le responsable. Ne partagez jamais de mot de passe, lien d’activation ou code POS avec l’assistant.",
           "he": "השתמשו בהוראות שחזור הגישה או פנו למנהל. אין לשתף סיסמה, קישור הפעלה או קוד קופה עם העוזר."
         }
+      },
+      {
+        "id": "end-pos-shift",
+        "title": {
+          "en": "End a POS shift safely",
+          "fr": "Terminer un shift de caisse en sécurité",
+          "he": "סיום משמרת קופה בבטחה"
+        },
+        "instructions": {
+          "en": "On an enrolled POS, choose End shift. If Foody reports an open cash drawer, use the offered shortcut to More → Reports → Cash drawer balance. Count and close the drawer on that same device, then retry End shift. A Verifone terminal deposit is separate. If cash or payment confirmation is uncertain, ask an authorized manager to reconcile it before ending the shift; do not bypass the guard by logging out another way.",
+          "fr": "Sur un POS autorisé, choisissez Terminer le shift. Si Foody signale une caisse ouverte, suivez le raccourci Plus → Rapports → Solde en caisse. Comptez et clôturez la caisse sur ce même appareil, puis réessayez de terminer le shift. Le dépôt Verifone est distinct. Si les espèces ou un paiement restent incertains, demandez le rapprochement à un responsable autorisé avant de terminer le shift ; ne contournez pas le blocage par une autre déconnexion.",
+          "he": "בקופה מורשית בחרו סיום משמרת. אם Foody מציגה שמגירת המזומן פתוחה, השתמשו בקיצור אל עוד ← דוחות ← יתרת קופה. ספרו וסגרו את המגירה באותו מכשיר ואז נסו לסיים את המשמרת שוב. הפקדת מסוף Verifone נפרדת. אם ספירת המזומן או אישור התשלום אינם ודאיים, בקשו ממנהל מורשה לבצע התאמה לפני סיום המשמרת; אין לעקוף את החסימה דרך יציאה אחרת."
+        }
       }
     ],
     "audience": "public",
@@ -274,9 +287,9 @@
           "he": "הקצאה ובדיקה"
         },
         "instructions": {
-          "en": "Assign the role from the employee profile. Verify the permitted pages and actions with that employee; menu visibility alone is not proof of authorization.",
-          "fr": "Affectez le rôle depuis la fiche employé. Vérifiez les pages et actions permises avec l’employé ; un menu visible ne prouve pas l’autorisation.",
-          "he": "הקצו את התפקיד מכרטיס העובד. בדקו עם העובד אילו מסכים ופעולות מותרים; הופעת תפריט אינה הוכחה להרשאה."
+          "en": "Assign the role from the employee profile. Verify the permitted pages and actions with that employee; menu visibility alone is not proof of authorization. The Verifone Terminal deposits screen and its batch-changing actions require payments.manage; payments.view is not enough.",
+          "fr": "Affectez le rôle depuis la fiche employé. Vérifiez les pages et actions permises avec l’employé ; un menu visible ne prouve pas l’autorisation. L’écran Dépôts du terminal Verifone et ses actions sur les lots exigent payments.manage ; payments.view ne suffit pas.",
+          "he": "הקצו את התפקיד מכרטיס העובד. בדקו עם העובד אילו מסכים ופעולות מותרים; הופעת תפריט אינה הוכחה להרשאה. מסך הפקדות מסוף Verifone והפעולות המשנות אצווה דורשים payments.manage; הרשאת payments.view לבדה אינה מספיקה."
         }
       },
       {
@@ -339,7 +352,8 @@
         "internal/shifts/**"
       ],
       "foodypos": [
-        "lib/features/auth/presentation/*service*"
+        "lib/features/auth/presentation/*service*",
+        "lib/features/more/presentation/cash_drawer_page.dart"
       ]
     },
     "operations": [
@@ -380,6 +394,19 @@
           "en": "Choose the report period and employee/device filters, then inspect recorded start/end times. A missing end time must be investigated rather than assumed closed.",
           "fr": "Choisissez la période et les filtres employé/appareil, puis consultez les débuts et fins enregistrés. Une fin absente doit être vérifiée, pas considérée comme une clôture.",
           "he": "בחרו תקופה ומסנני עובד או מכשיר ובדקו זמני התחלה וסיום שנרשמו. יש לבדוק זמן סיום חסר ולא להניח שהמשמרת נסגרה."
+        }
+      },
+      {
+        "id": "finish-with-cash-drawer",
+        "title": {
+          "en": "Finish a shift with an open cash drawer",
+          "fr": "Terminer un shift avec une caisse ouverte",
+          "he": "סיום משמרת כשמגירת המזומן פתוחה"
+        },
+        "instructions": {
+          "en": "If End shift says the cash drawer is open, open More → Reports → Cash drawer balance on the same enrolled POS. Resolve any pending cash operation, count the physical cash and close that device's cash session before trying End shift again. The shift is not ended by a Verifone card-batch deposit, and ending a shift does not itself transmit a card batch. If the count or payment result is uncertain, reconcile it with an authorized manager instead of forcing a sign-out or taking a second payment.",
+          "fr": "Si Terminer le shift indique une caisse ouverte, ouvrez Plus → Rapports → Solde en caisse sur le même POS autorisé. Résolvez toute opération espèces en attente, comptez physiquement les espèces et clôturez la session de cet appareil avant de réessayer. Le dépôt d'un lot de cartes Verifone ne termine pas le shift, et la fin du shift ne transmet pas le lot de cartes. Si le comptage ou un paiement est incertain, rapprochez-le avec un responsable autorisé plutôt que de forcer la déconnexion ou de refaire un débit.",
+          "he": "אם סיום המשמרת מציין שמגירת המזומן פתוחה, פתחו עוד ← דוחות ← יתרת קופה באותו מכשיר קופה מורשה. פתרו פעולה ממתינה, ספרו את המזומן בפועל וסגרו את משמרת הקופה של המכשיר לפני ניסיון נוסף. הפקדת אצוות כרטיסים של Verifone אינה מסיימת משמרת, וסיום משמרת אינו משדר אצוות כרטיסים. אם הספירה או תוצאת תשלום אינן ודאיות, בצעו התאמה עם מנהל מורשה במקום לכפות יציאה או לחייב שוב."
         }
       }
     ],
@@ -971,6 +998,19 @@
           "en": "1. Open the assistant.\n2. Write a question or select a suggestion.\n3. Read the answer and open its **Sources** to check the procedure.\n4. Ask a follow-up question. **New conversation** clears the panel.\n\nThe assistant explains documented Foody features. It cannot view your account or orders and cannot perform actions. In Admin, the current topic helps find relevant articles; restaurant records and sign-in credentials are not forwarded.\n\nAnswers can contain errors. Do not share passwords, payment details or personal customer information. Questions and recent conversation turns are sent to our AI provider. The conversation stays in the browser tab's memory; reloading clears it.\n\nFor receipt or confirmation link previews, ask a general question about the restaurant name or logo and open the cited guide. The assistant uses the published procedure; it cannot open your private link or inspect the order. Do not paste receipt or tracking links into the conversation.\n\nFor example, ask how to add an item outside the active menus to a staff order. Check the Article library steps in the [order guide](../orders/order-details); the assistant cannot inspect your restaurant’s items or add them to an order.",
           "fr": "1. Ouvrez l’assistant.\n2. Écrivez votre question ou choisissez une suggestion.\n3. Lisez les étapes proposées et ouvrez les **Sources** pour vérifier la procédure.\n4. Posez une question de suivi si nécessaire. **Nouvelle conversation** efface les échanges du panneau.\n\nL’assistant explique les fonctions documentées de Foody. Il ne consulte pas votre compte ou vos commandes et n’effectue aucune opération. Dans l’Admin, la rubrique consultée aide à trouver les articles adaptés ; les données du restaurant et les identifiants de connexion ne lui sont pas transmis.\n\nLes réponses peuvent comporter des erreurs. Ne transmettez ni mot de passe, ni données de paiement, ni informations personnelles sur vos clients. Les questions et les échanges récents sont envoyés à notre fournisseur d’IA. La conversation reste en mémoire dans l’onglet ; recharger la page l’efface.\n\nPour l’aperçu d’un lien de reçu ou de confirmation, posez une question générale sur le nom ou le logo du restaurant et ouvrez le guide cité. L’assistant utilise la procédure publiée ; il ne peut ni ouvrir votre lien privé ni consulter la commande. Ne collez pas de liens de reçu ou de suivi dans la conversation.\n\nPar exemple, demandez comment ajouter un article hors des cartes actives à une commande interne. Vérifiez les étapes de la Librairie d’articles dans le [guide des commandes](../orders/order-details) ; l’assistant ne peut ni consulter les articles de votre restaurant ni les ajouter à une commande.",
           "he": "1. פתחו את העוזר.\n2. כתבו שאלה או בחרו הצעה.\n3. קראו את ההסבר ופתחו את **המקורות** כדי לבדוק את הנוהל.\n4. אפשר לשאול שאלת המשך. **שיחה חדשה** מנקה את הפאנל.\n\nהעוזר מסביר יכולות מתועדות של Foody. אין לו גישה לחשבון או להזמנות והוא אינו מבצע פעולות. בממשק הניהול הנושא הנוכחי עוזר למצוא מדריכים מתאימים; נתוני המסעדה ופרטי ההתחברות אינם נשלחים.\n\nהתשובות עלולות לכלול טעויות. אין לשתף סיסמאות, פרטי תשלום או מידע אישי על לקוחות. השאלות והודעות השיחה האחרונות נשלחות לספק הבינה המלאכותית שלנו. השיחה נשמרת בזיכרון הלשונית בלבד; טעינת העמוד מחדש מוחקת אותה.\n\nלשאלות על תצוגה מקדימה של קישור לקבלה או לאישור הזמנה, שאלו שאלה כללית על שם המסעדה או הלוגו ופתחו את המדריך המצוטט. העוזר משתמש בנוהל שפורסם; הוא אינו יכול לפתוח קישור פרטי או לבדוק הזמנה. אין להדביק קישורי קבלה או מעקב בשיחה.\n\nלדוגמה, שאלו כיצד להוסיף להזמנה פנימית פריט שאינו בתפריטים הפעילים. בדקו את שלבי ספריית הפריטים ב[מדריך ההזמנות](../orders/order-details); העוזר אינו יכול לצפות בפריטי המסעדה שלכם או להוסיף אותם להזמנה."
+        }
+      },
+      {
+        "id": "ask-about-transactions",
+        "title": {
+          "en": "Ask where to find payment history",
+          "fr": "Demander où consulter les paiements",
+          "he": "שאלה על היסטוריית תשלומים"
+        },
+        "instructions": {
+          "en": "The assistant can point you to the published Transactions procedure for confirmed POS and online payments. It cannot see your restaurant's transactions, inspect a card, confirm an uncertain charge or initiate a refund. Open the actual Transactions screen with the required permission, or ask an authorized operator to reconcile a missing payment before retrying.",
+          "fr": "L’assistant peut indiquer la procédure Transactions publiée pour les paiements confirmés en caisse et en ligne. Il ne peut ni voir les transactions de votre restaurant, ni inspecter une carte, confirmer un débit incertain ou créer un remboursement. Ouvrez le véritable écran Transactions avec les droits requis ou demandez à un responsable de rapprocher un paiement manquant avant de réessayer.",
+          "he": "העוזר יכול להפנות לנוהל עסקאות שפורסם עבור תשלומים מאושרים בקופה ובאינטרנט. הוא אינו יכול לראות את עסקאות העסק, לבדוק כרטיס, לאשר חיוב לא ודאי או לבצע החזר. פתחו את מסך עסקאות עם ההרשאה הנדרשת או בקשו ממפעיל מורשה להתאים תשלום חסר לפני ניסיון נוסף."
         }
       },
       {
@@ -2950,6 +2990,20 @@
     },
     "operations": [
       {
+        "id": "open-order-from-transaction",
+        "level": 2,
+        "title": {
+          "en": "Open the order behind a transaction",
+          "fr": "Ouvrir la commande liée à une transaction",
+          "he": "פתיחת ההזמנה המקושרת לעסקה"
+        },
+        "instructions": {
+          "en": "In POS Transactions, select a confirmed payment and open a linked order to view its saved details in read-only mode. A single payment may cover multiple orders, and one order may have multiple payments. If the order cannot be loaded, retry later; do not assume that the payment failed or initiate a duplicate charge.",
+          "fr": "Dans Transactions sur la caisse, sélectionnez un paiement confirmé et ouvrez une commande liée pour consulter ses détails enregistrés en lecture seule. Un paiement peut couvrir plusieurs commandes et une commande peut avoir plusieurs paiements. Si la commande ne se charge pas, réessayez plus tard ; n’en déduisez pas que le paiement a échoué et ne relancez pas un débit en double.",
+          "he": "בעסקאות בקופה בחרו תשלום שאושר ופתחו הזמנה מקושרת כדי לראות את פרטיה השמורים לקריאה בלבד. תשלום אחד עשוי לכסות כמה הזמנות, ולהזמנה אחת עשויים להיות כמה תשלומים. אם טעינת ההזמנה נכשלת, נסו שוב מאוחר יותר; אין להסיק שהתשלום נכשל או להתחיל חיוב כפול."
+        }
+      },
+      {
         "id": "verifone-admin-money-operations",
         "title": {
           "en": "Refund or void a Verifone online payment",
@@ -3161,9 +3215,22 @@
           "he": "זיכוי או ביטול תשלום מקוון ב-Verifone"
         },
         "instructions": {
-          "en": "In Admin → Orders, open the order and its payment section. An owner or manager with payments.manage can use Refund or void payment for a single verified ILS Verifone online sale or confirmed capture. Table/session, mixed tenders, partial collections, external-terminal payments and catering deposits are not supported by this control. An uncaptured hold still uses the existing cancellation/release workflow.\n\nCheck Available to refund, then choose Refund payment. Keep Full remaining amount or choose Partial amount and enter the exact amount. Enter a reason of 3–300 characters, review the amount in the confirmation and submit once. Successful matched refunds already visible in Verifone history reduce the ceiling, including refunds made in Central; incomplete or unverified history blocks a new operation. The bounded history lookup covers transactions created within two years.\n\nA captured ABS sale still AUTHORISED/AUTHORIZED or SETTLEMENT_REQUESTED is not settled: Admin shows Available to void and only Void entire payment, with no prior refund. Refund payment and Available to refund require an explicit settled state or verified partially-refunded history. Generic APPROVED/COMPLETED, contradictory states or missing evidence offer neither action. A state change before confirmation rejects the stale action; it never switches VOID to REFUND automatically. Request rejected by Verifone means no return of funds is confirmed, not necessarily an issuer decline. VOID is full only, never partial. Eligibility follows the provider state and merchant/acquirer rules, not midnight or a fixed 24-hour cutoff. Final acceptance is confirmed by Verifone.\n\nRead Payment operations for the amount, reason, date, actor account and provider transaction ID. Confirmed by Verifone requires an independent transaction read with matching parent, amount, currency, reference and merchant. A partial refund leaves the payment marked paid; a full confirmed return marks its payment refunded. Neither changes food status, items, stock or fulfillment.\n\nIf the result is unknown or the browser loses the response, do not submit another refund or switch to VOID. Use Check with Verifone, which only verifies existing operations. A request with no recoverable provider ID stays blocked for support/Central verification, including after reload or an API restart. Never treat an HTTP success alone as refunded. Check the corresponding Invoice4U credit/cancellation document separately; this control does not confirm or create a fiscal credit document. FoodyPOS controls are not included in this version.\n\nAfter a full return verified against matched Verifone history, the summary keeps the original amount, shows the full amount returned and zero remaining, and offers no further refund or VOID. A cleared capture balance after that return is not an uncaptured hold to release. Missing or inconsistent evidence still requires verification without resubmission.",
-          "fr": "Dans Admin → Commandes, ouvrez la commande puis sa section paiement. Un propriétaire ou responsable avec payments.manage peut utiliser Rembourser ou annuler le paiement pour une vente en ligne Verifone unique en ILS ou une capture confirmée. Les tables/sessions, paiements mixtes, encaissements partiels, paiements par terminal externe et acomptes traiteur ne sont pas pris en charge par ce contrôle. Une préautorisation non encaissée conserve son parcours existant d’annulation/libération.\n\nContrôlez le Montant remboursable, puis choisissez Rembourser le paiement. Gardez Tout le montant restant ou choisissez Montant partiel et saisissez le montant exact. Indiquez un motif de 3 à 300 caractères, vérifiez le montant dans la confirmation puis envoyez une seule fois. Les remboursements liés approuvés et visibles dans l’historique Verifone réduisent le plafond, y compris ceux effectués dans Central ; un historique incomplet ou non vérifié bloque l’opération. La consultation bornée couvre les transactions créées depuis moins de deux ans.\n\nUne vente ABS capturée encore en AUTHORISED/AUTHORIZED ou SETTLEMENT_REQUESTED n’est pas réglée : Admin affiche Montant annulable et uniquement Annuler tout le paiement, sans remboursement antérieur. Rembourser le paiement et Montant remboursable exigent un état réglé explicite ou un historique de remboursement partiel vérifié. Les états génériques APPROVED/COMPLETED, les contradictions et les preuves manquantes ne proposent aucune opération. Un changement d’état avant confirmation refuse l’action devenue obsolète ; le VOID n’est jamais remplacé automatiquement par un REFUND. Demande rejetée par Verifone signifie qu’aucune restitution n’est confirmée, pas nécessairement un refus de la banque. Le VOID porte sur tout le paiement, jamais sur un montant partiel. L’admissibilité dépend de l’état fournisseur et des règles commerçant/acquéreur, pas de minuit ni de 24 heures fixes. Verifone confirme l’acceptation finale.\n\nConsultez Opérations de paiement pour le montant, motif, date, compte de l’opérateur et identifiant fournisseur. Confirmé par Verifone exige une lecture indépendante concordante : transaction parente, montant, devise, référence et commerçant. Un remboursement partiel conserve le paiement payé ; une restitution totale confirmée marque le paiement remboursé. Aucune action ne modifie le statut de préparation, les articles, le stock ou la remise.\n\nSi le résultat est inconnu ou si le navigateur perd la réponse, ne renvoyez pas de remboursement et ne passez pas au VOID. Vérifier auprès de Verifone contrôle uniquement les opérations existantes. Sans identifiant fournisseur récupérable, la demande reste bloquée pour vérification par le support/Central, même après rechargement ou redémarrage de l’API. Un simple succès HTTP ne prouve pas le remboursement. Vérifiez séparément l’avoir ou document d’annulation Invoice4U ; ce contrôle ne crée ni ne confirme un avoir fiscal. Les boutons FoodyPOS ne sont pas inclus dans cette version.\n\nAprès une restitution totale vérifiée dans l’historique lié de Verifone, le bilan conserve le montant initial, affiche le montant intégral restitué et un solde restant nul, sans proposer de nouveau remboursement ni VOID. Un solde capturé remis à zéro après cette restitution n’est pas une préautorisation à libérer. Une preuve manquante ou incohérente exige toujours une vérification, sans renvoyer l’opération.",
-          "he": "בממשק הניהול → הזמנות פתחו את ההזמנה ואת אזור התשלום. בעלים או מנהל עם payments.manage יכולים להשתמש בזיכוי או ביטול תשלום עבור עסקה מקוונת יחידה ומאומתת ב-Verifone בשקלים, או לכידה מאושרת. שולחנות וסשנים, אמצעי תשלום מעורבים, גבייה חלקית, מסוף חיצוני ומקדמות קייטרינג אינם נתמכים בבקרה זו. אישור מוקדם שלא חויב נשאר בתהליך הביטול והשחרור הקיים.\n\nבדקו יתרה לזיכוי ובחרו זיכוי התשלום. השאירו כל היתרה או בחרו סכום חלקי והזינו סכום מדויק. כתבו סיבה באורך 3–300 תווים, בדקו את הסכום באישור ושלחו פעם אחת. זיכויים מקושרים שאושרו ומופיעים בהיסטוריית Verifone מקטינים את התקרה, לרבות זיכויים שבוצעו ב-Central. היסטוריה חסרה או לא מאומתת חוסמת פעולה חדשה. הבדיקה המוגבלת מכסה עסקאות שנוצרו בשנתיים האחרונות.\n\nעסקת ABS שנלכדה ועדיין במצב AUTHORISED/AUTHORIZED או SETTLEMENT_REQUESTED טרם סיימה סליקה: מוצגים סכום לביטול ורק ביטול התשלום במלואו, ללא זיכוי קודם. זיכוי התשלום ויתרה לזיכוי דורשים מצב סליקה שהושלמה במפורש או היסטוריית זיכוי חלקי שאומתה. מצבים כלליים APPROVED/COMPLETED, סתירות או ראיות חסרות אינם מאפשרים פעולה. שינוי מצב לפני האישור דוחה את הפעולה שאינה מתאימה עוד; VOID אינו מוחלף אוטומטית ב-REFUND. בקשה שנדחתה על ידי Verifone אינה אישור להחזרת כספים ואינה מעידה בהכרח על סירוב הבנק. VOID מבטל את מלוא הסכום בלבד ולא סכום חלקי. הזכאות תלויה במצב הספק ובכללי בית העסק והסולק ולא בחצות או ב-24 שעות קבועות. Verifone מאשרת את התוצאה הסופית.\n\nבפעולות בתשלום מופיעים סכום, סיבה, תאריך, חשבון מפעיל ומזהה עסקה של הספק. אושר על ידי Verifone דורש קריאה עצמאית עם התאמה לעסקת האב, לסכום, למטבע, להפניה ולבית העסק. זיכוי חלקי משאיר את התשלום כמשולם; החזר מלא שאומת מסמן את התשלום כמזוכה. מצב הכנת האוכל, הפריטים, המלאי והמסירה אינם משתנים.\n\nאם התוצאה אינה ידועה או שהדפדפן איבד את התשובה, אין לשלוח זיכוי נוסף או לעבור ל-VOID. בדיקה מול Verifone בודקת רק פעולות קיימות. בקשה ללא מזהה ספק שניתן לשחזר נשארת חסומה לבדיקת התמיכה או Central, גם אחרי רענון או אתחול ה-API. הצלחת HTTP לבדה אינה אישור לזיכוי. יש לבדוק בנפרד את מסמך הזיכוי או הביטול ב-Invoice4U; בקרה זו אינה יוצרת או מאשרת מסמך זיכוי מס. כפתורי FoodyPOS אינם נכללים בגרסה זו.\n\nלאחר החזר מלא שאומת בהיסטוריה המקושרת של Verifone, הסיכום שומר על הסכום המקורי, מציג את מלוא הסכום שהוחזר ויתרה אפס, ואינו מציע זיכוי נוסף או VOID. יתרת לכידה שהתאפסה בעקבות ההחזר אינה אישור מוקדם שיש לשחרר. ראיות חסרות או לא עקביות עדיין מחייבות בדיקה ללא שליחה חוזרת של הפעולה."
+          "en": "In Admin → Orders, open the order and its payment section. An owner or manager with payments.manage can use Refund or void payment for a single verified ILS Verifone online sale or confirmed capture. Table/session, mixed tenders, partial collections, external-terminal payments and catering deposits are not supported by this control. An uncaptured hold still uses the existing cancellation/release workflow.\n\nCheck Available to refund, then choose Refund payment. Keep Full remaining amount or choose Partial amount and enter the exact amount. Enter a reason of 3–300 characters, review the amount in the confirmation and submit once. Successful matched refunds already visible in Verifone history reduce the ceiling, including refunds made in Central; incomplete or unverified history blocks a new operation. The bounded history lookup covers transactions created within two years.\n\nA captured ABS sale still AUTHORISED/AUTHORIZED or SETTLEMENT_REQUESTED is not settled: Admin shows Available to void and only Void entire payment, with no prior refund. Refund payment and Available to refund require an explicit settled state or verified partially-refunded history. Generic APPROVED/COMPLETED, contradictory states or missing evidence offer neither action. A state change before confirmation rejects the stale action; it never switches VOID to REFUND automatically. Request rejected by Verifone means no return of funds is confirmed, not necessarily an issuer decline. VOID is full only, never partial. Eligibility follows the provider state and merchant/acquirer rules, not midnight or a fixed 24-hour cutoff. Final acceptance is confirmed by Verifone.\n\nRead Payment operations for the amount, reason, date, actor account and provider transaction ID. Confirmed by Verifone requires an independent transaction read with matching parent, amount, currency, reference and merchant. A partial refund leaves the payment marked paid; a full confirmed return marks its payment refunded. Neither changes food status, items, stock or fulfillment.\n\nIf the result is unknown or the browser loses the response, do not submit another refund or switch to VOID. Use Check with Verifone, which only verifies existing operations. A request with no recoverable provider ID stays blocked for support/Central verification, including after reload or an API restart. Never treat an HTTP success alone as refunded. Check the corresponding Invoice4U credit/cancellation document separately; this control does not confirm or create a fiscal credit document. FoodyPOS has a separate Transactions workflow for a server-verified original Checkout payment; these Admin instructions do not cover POS terminal refunds.\n\nAfter a full return verified against matched Verifone history, the summary keeps the original amount, shows the full amount returned and zero remaining, and offers no further refund or VOID. A cleared capture balance after that return is not an uncaptured hold to release. Missing or inconsistent evidence still requires verification without resubmission.",
+          "fr": "Dans Admin → Commandes, ouvrez la commande puis sa section paiement. Un propriétaire ou responsable avec payments.manage peut utiliser Rembourser ou annuler le paiement pour une vente en ligne Verifone unique en ILS ou une capture confirmée. Les tables/sessions, paiements mixtes, encaissements partiels, paiements par terminal externe et acomptes traiteur ne sont pas pris en charge par ce contrôle. Une préautorisation non encaissée conserve son parcours existant d’annulation/libération.\n\nContrôlez le Montant remboursable, puis choisissez Rembourser le paiement. Gardez Tout le montant restant ou choisissez Montant partiel et saisissez le montant exact. Indiquez un motif de 3 à 300 caractères, vérifiez le montant dans la confirmation puis envoyez une seule fois. Les remboursements liés approuvés et visibles dans l’historique Verifone réduisent le plafond, y compris ceux effectués dans Central ; un historique incomplet ou non vérifié bloque l’opération. La consultation bornée couvre les transactions créées depuis moins de deux ans.\n\nUne vente ABS capturée encore en AUTHORISED/AUTHORIZED ou SETTLEMENT_REQUESTED n’est pas réglée : Admin affiche Montant annulable et uniquement Annuler tout le paiement, sans remboursement antérieur. Rembourser le paiement et Montant remboursable exigent un état réglé explicite ou un historique de remboursement partiel vérifié. Les états génériques APPROVED/COMPLETED, les contradictions et les preuves manquantes ne proposent aucune opération. Un changement d’état avant confirmation refuse l’action devenue obsolète ; le VOID n’est jamais remplacé automatiquement par un REFUND. Demande rejetée par Verifone signifie qu’aucune restitution n’est confirmée, pas nécessairement un refus de la banque. Le VOID porte sur tout le paiement, jamais sur un montant partiel. L’admissibilité dépend de l’état fournisseur et des règles commerçant/acquéreur, pas de minuit ni de 24 heures fixes. Verifone confirme l’acceptation finale.\n\nConsultez Opérations de paiement pour le montant, motif, date, compte de l’opérateur et identifiant fournisseur. Confirmé par Verifone exige une lecture indépendante concordante : transaction parente, montant, devise, référence et commerçant. Un remboursement partiel conserve le paiement payé ; une restitution totale confirmée marque le paiement remboursé. Aucune action ne modifie le statut de préparation, les articles, le stock ou la remise.\n\nSi le résultat est inconnu ou si le navigateur perd la réponse, ne renvoyez pas de remboursement et ne passez pas au VOID. Vérifier auprès de Verifone contrôle uniquement les opérations existantes. Sans identifiant fournisseur récupérable, la demande reste bloquée pour vérification par le support/Central, même après rechargement ou redémarrage de l’API. Un simple succès HTTP ne prouve pas le remboursement. Vérifiez séparément l’avoir ou document d’annulation Invoice4U ; ce contrôle ne crée ni ne confirme un avoir fiscal. FoodyPOS dispose d’un parcours Transactions distinct pour le paiement Checkout initial vérifié par le serveur ; ces instructions Admin ne couvrent pas les remboursements par terminal POS.\n\nAprès une restitution totale vérifiée dans l’historique lié de Verifone, le bilan conserve le montant initial, affiche le montant intégral restitué et un solde restant nul, sans proposer de nouveau remboursement ni VOID. Un solde capturé remis à zéro après cette restitution n’est pas une préautorisation à libérer. Une preuve manquante ou incohérente exige toujours une vérification, sans renvoyer l’opération.",
+          "he": "בממשק הניהול → הזמנות פתחו את ההזמנה ואת אזור התשלום. בעלים או מנהל עם payments.manage יכולים להשתמש בזיכוי או ביטול תשלום עבור עסקה מקוונת יחידה ומאומתת ב-Verifone בשקלים, או לכידה מאושרת. שולחנות וסשנים, אמצעי תשלום מעורבים, גבייה חלקית, מסוף חיצוני ומקדמות קייטרינג אינם נתמכים בבקרה זו. אישור מוקדם שלא חויב נשאר בתהליך הביטול והשחרור הקיים.\n\nבדקו יתרה לזיכוי ובחרו זיכוי התשלום. השאירו כל היתרה או בחרו סכום חלקי והזינו סכום מדויק. כתבו סיבה באורך 3–300 תווים, בדקו את הסכום באישור ושלחו פעם אחת. זיכויים מקושרים שאושרו ומופיעים בהיסטוריית Verifone מקטינים את התקרה, לרבות זיכויים שבוצעו ב-Central. היסטוריה חסרה או לא מאומתת חוסמת פעולה חדשה. הבדיקה המוגבלת מכסה עסקאות שנוצרו בשנתיים האחרונות.\n\nעסקת ABS שנלכדה ועדיין במצב AUTHORISED/AUTHORIZED או SETTLEMENT_REQUESTED טרם סיימה סליקה: מוצגים סכום לביטול ורק ביטול התשלום במלואו, ללא זיכוי קודם. זיכוי התשלום ויתרה לזיכוי דורשים מצב סליקה שהושלמה במפורש או היסטוריית זיכוי חלקי שאומתה. מצבים כלליים APPROVED/COMPLETED, סתירות או ראיות חסרות אינם מאפשרים פעולה. שינוי מצב לפני האישור דוחה את הפעולה שאינה מתאימה עוד; VOID אינו מוחלף אוטומטית ב-REFUND. בקשה שנדחתה על ידי Verifone אינה אישור להחזרת כספים ואינה מעידה בהכרח על סירוב הבנק. VOID מבטל את מלוא הסכום בלבד ולא סכום חלקי. הזכאות תלויה במצב הספק ובכללי בית העסק והסולק ולא בחצות או ב-24 שעות קבועות. Verifone מאשרת את התוצאה הסופית.\n\nבפעולות בתשלום מופיעים סכום, סיבה, תאריך, חשבון מפעיל ומזהה עסקה של הספק. אושר על ידי Verifone דורש קריאה עצמאית עם התאמה לעסקת האב, לסכום, למטבע, להפניה ולבית העסק. זיכוי חלקי משאיר את התשלום כמשולם; החזר מלא שאומת מסמן את התשלום כמזוכה. מצב הכנת האוכל, הפריטים, המלאי והמסירה אינם משתנים.\n\nאם התוצאה אינה ידועה או שהדפדפן איבד את התשובה, אין לשלוח זיכוי נוסף או לעבור ל-VOID. בדיקה מול Verifone בודקת רק פעולות קיימות. בקשה ללא מזהה ספק שניתן לשחזר נשארת חסומה לבדיקת התמיכה או Central, גם אחרי רענון או אתחול ה-API. הצלחת HTTP לבדה אינה אישור לזיכוי. יש לבדוק בנפרד את מסמך הזיכוי או הביטול ב-Invoice4U; בקרה זו אינה יוצרת או מאשרת מסמך זיכוי מס. ב-FoodyPOS קיים תהליך עסקאות נפרד לתשלום Checkout מקורי שאומת בשרת; הוראות הניהול האלה אינן מכסות זיכויים במסוף הקופה.\n\nלאחר החזר מלא שאומת בהיסטוריה המקושרת של Verifone, הסיכום שומר על הסכום המקורי, מציג את מלוא הסכום שהוחזר ויתרה אפס, ואינו מציע זיכוי נוסף או VOID. יתרת לכידה שהתאפסה בעקבות ההחזר אינה אישור מוקדם שיש לשחרר. ראיות חסרות או לא עקביות עדיין מחייבות בדיקה ללא שליחה חוזרת של הפעולה."
+        }
+      },
+      {
+        "id": "pos-checkout-original-payment-refunds",
+        "title": {
+          "en": "Refund a POS-listed online payment to its original method",
+          "fr": "Rembourser un paiement en ligne listé sur la caisse vers son moyen initial",
+          "he": "זיכוי תשלום מקוון מרשימת הקופה לאמצעי התשלום המקורי"
+        },
+        "instructions": {
+          "en": "In POS Transactions, choose a confirmed Verifone Checkout payment and request a return only when the server verifies its original payment ID, merchant, provider status and available amount. The selected transaction must match the order's payment; a shared order is not enough to authorize a different charge. A settled payment may be refunded to the same card, while an eligible captured unsettled payment may be voided in full. Enter a reason and confirm once. If the result is unknown, use the existing-operation check rather than submitting again. This does not refund a Victa terminal card payment or turn a card payment into a cash return.",
+          "fr": "Dans Transactions sur la caisse, choisissez un paiement Verifone Checkout confirmé. Demandez une restitution seulement si le serveur vérifie l'identifiant du paiement initial, le commerçant, l'état fournisseur et le montant disponible. La transaction choisie doit correspondre au paiement de la commande ; partager une commande ne permet pas de restituer un autre débit. Un paiement réglé peut être remboursé vers la même carte, tandis qu'un paiement encaissé mais non réglé admissible peut être annulé entièrement. Indiquez un motif et confirmez une seule fois. Si le résultat est inconnu, vérifiez l'opération existante au lieu de la renvoyer. Cela ne rembourse pas une carte sur terminal Victa et ne transforme pas un paiement par carte en restitution en espèces.",
+          "he": "בעסקאות בקופה בחרו תשלום Verifone Checkout שאושר. בקשו החזר רק לאחר שהשרת אימת את מזהה התשלום המקורי, בית העסק, מצב הספק והיתרה הזמינה. העסקה שנבחרה חייבת להתאים לתשלום ההזמנה; הזמנה משותפת אינה מספיקה כדי לזכות חיוב אחר. תשלום שהוסדר ניתן לזיכוי לאותו כרטיס, ואילו תשלום שנלכד אך טרם הוסדר עשוי להיות זכאי לביטול מלא. הזינו סיבה ואשרו פעם אחת. אם התוצאה אינה ידועה, בדקו את הפעולה הקיימת במקום לשלוח שוב. פעולה זו אינה מזכה תשלום בכרטיס במסוף Victa ואינה הופכת תשלום בכרטיס להחזר מזומן."
         }
       },
       {
@@ -3816,6 +3883,19 @@
     },
     "operations": [
       {
+        "id": "pos-cash-by-order-type",
+        "title": {
+          "en": "Collect cash for a POS order type",
+          "fr": "Encaisser les espèces selon le type de commande",
+          "he": "גביית מזומן לפי סוג הזמנה בקופה"
+        },
+        "instructions": {
+          "en": "Dine-in and counter pickup orders can be collected in cash only on an enrolled POS with an open cash drawer session. Open More → Reports → Cash drawer balance before taking the first cash payment, then settle the intended order or financial bill. A delivery or online pay-later order is not a recorded cash sale merely because cash is its intended tender; record only cash actually received. Card terminal deposits remain separate.",
+          "fr": "Les commandes sur place ou à emporter au comptoir ne peuvent être encaissées en espèces sur un POS autorisé qu’avec une session de caisse ouverte. Ouvrez Plus → Rapports → Solde en caisse avant le premier encaissement, puis réglez la bonne commande ou addition. Une livraison ou commande en ligne à payer plus tard n’est pas une vente espèces enregistrée tant que l’argent n’a pas été reçu. Les dépôts du terminal carte restent distincts.",
+          "he": "הזמנות ישיבה במקום או איסוף מהדלפק ניתנות לגבייה במזומן רק בקופה מורשית עם משמרת קופה פתוחה. פתחו עוד ← דוחות ← יתרת קופה לפני התשלום הראשון, ואז גבו עבור ההזמנה או החשבון הנכון. הזמנת משלוח או הזמנה מקוונת לתשלום מאוחר אינה מכירת מזומן רשומה עד שהכסף התקבל בפועל. הפקדות מסוף כרטיס נשארות נפרדות."
+        }
+      },
+      {
         "id": "weight-hold-margin",
         "level": 2,
         "title": {
@@ -3979,6 +4059,19 @@
       ]
     },
     "operations": [
+      {
+        "id": "cash-drawer-before-collection",
+        "title": {
+          "en": "Prepare this POS for cash collection",
+          "fr": "Préparer cette caisse pour les espèces",
+          "he": "הכנת הקופה לגביית מזומן"
+        },
+        "instructions": {
+          "en": "Before collecting cash for a table or counter order, start your PIN shift and open More → Reports → Cash drawer balance on this enrolled device. Enter the physical opening float, then select the right order, tap Pay and record the cash actually received. If a collection times out, reconcile or retry the retained request instead of creating a second sale. A card payment uses the terminal flow and is not cash in the drawer.",
+          "fr": "Avant un encaissement espèces pour une table ou au comptoir, démarrez votre shift PIN et ouvrez Plus → Rapports → Solde en caisse sur cet appareil autorisé. Saisissez le fonds initial physiquement présent, puis sélectionnez la bonne commande, appuyez sur Payer et enregistrez l’argent réellement reçu. Si l’encaissement expire, rapprochez ou reprenez la demande conservée sans créer une seconde vente. Un paiement carte suit le terminal et n’est pas une entrée de caisse espèces.",
+          "he": "לפני גביית מזומן עבור שולחן או דלפק, התחילו משמרת PIN ופתחו עוד ← דוחות ← יתרת קופה במכשיר המורשה הזה. הזינו את סכום הפתיחה הקיים בפועל, בחרו בהזמנה הנכונה, לחצו על תשלום ורשמו את המזומן שהתקבל. אם הבקשה פגה, התאימו או נסו שוב את הבקשה השמורה במקום ליצור מכירה שנייה. תשלום בכרטיס מתבצע במסוף ואינו מזומן במגירה."
+        }
+      },
       {
         "id": "weight-hold-margin",
         "level": 2,
@@ -4407,9 +4500,6 @@
         "src/components/orders/**",
         "src/app/[restaurantId]/orders/new/**",
         "src/lib/orders/**"
-      ],
-      "foodyserver": [
-        "internal/orders/handler.go"
       ]
     },
     "operations": [
@@ -4892,8 +4982,7 @@
       "foodyserver": [
         "internal/delivery/**",
         "internal/common/delivery_models.go",
-        "internal/orders/delivery_departure.go",
-        "cmd/server/main.go"
+        "internal/orders/delivery_departure.go"
       ]
     },
     "operations": [
@@ -6544,6 +6633,19 @@
     },
     "operations": [
       {
+        "id": "cash-collection-boundary",
+        "title": {
+          "en": "Separate cash eligibility from cash collection",
+          "fr": "Distinguer espèces autorisées et espèces encaissées",
+          "he": "הפרדה בין אישור מזומן לגביית מזומן"
+        },
+        "instructions": {
+          "en": "Order-channel or fulfillment settings may allow a customer to choose cash or pay later, but that choice does not prove payment and does not add money to the POS cash drawer. A staff member records a cash sale only after collecting the money on an enrolled POS with an open drawer session. Review the order's payment status separately from fulfillment; the Verifone card batch is not part of this drawer.",
+          "fr": "Les paramètres de canal et de remise peuvent permettre au client de choisir espèces ou paiement ultérieur, mais ce choix ne prouve aucun règlement et n’ajoute rien à la caisse. Un employé n’enregistre une vente espèces qu’après réception de l’argent sur un POS autorisé avec session de caisse ouverte. Vérifiez le statut de paiement séparément de la remise ; le lot carte Verifone n’appartient pas à cette caisse.",
+          "he": "הגדרות ערוץ ומסירה עשויות לאפשר ללקוח לבחור מזומן או תשלום מאוחר, אך הבחירה אינה מוכיחה תשלום ואינה מוסיפה כסף למגירת הקופה. עובד רושם מכירת מזומן רק לאחר קבלת הכסף בקופה מורשית עם משמרת קופה פתוחה. יש לבדוק מצב תשלום בנפרד ממצב המסירה; אצוות כרטיסי Verifone אינה חלק ממגירת המזומן."
+        }
+      },
+      {
         "id": "weight-hold-margin",
         "level": 2,
         "title": {
@@ -6747,6 +6849,19 @@
           "en": "Open Adjustments and review the available reasons and behavior for reductions, offerings and cancellation. Staff still need the corresponding permissions. Library POS discounts and online promotion codes are maintained in their own modules.",
           "fr": "Ouvrez Ajustements et vérifiez motifs et comportement proposés pour réductions, offerts et annulations. Les employés doivent toujours disposer des droits correspondants. Les remises POS et codes promotionnels en ligne se gèrent dans leurs modules.",
           "he": "פתחו התאמות ובדקו סיבות והתנהגות להנחות, על חשבון הבית וביטול. נדרשות הרשאות מתאימות. ספריית הנחות קופה וקודי מבצע מקוונים מנוהלים בנפרד."
+        }
+      },
+      {
+        "id": "terminal-batch-separation",
+        "title": {
+          "en": "Keep terminal deposits separate from POS behavior",
+          "fr": "Distinguer les dépôts du comportement POS",
+          "he": "הפרדה בין הפקדות מסוף להתנהגות הקופה"
+        },
+        "instructions": {
+          "en": "Terminal batch actions do not change the POS service profile, staff shift or cash drawer. A manager with payments.manage opens More → Reports → Terminal deposits on a configured Victa Portable or iPad/Victa Mini. Follow the dedicated POS payment guide for end-of-day confirmation and uncertain-result recovery; do not use menu behavior or adjustment settings to settle a batch.",
+          "fr": "Les actions sur le lot du terminal ne modifient ni le profil de service POS, ni le service du personnel, ni le tiroir-caisse. Un responsable avec payments.manage ouvre Plus → Rapports → Dépôts du terminal sur un Victa Portable ou un iPad/Victa Mini configuré. Suivez le guide d’encaissement POS pour la confirmation de fin de journée et la reprise d’un résultat incertain ; les réglages de menu ou d’ajustement ne règlent pas un lot.",
+          "he": "פעולות אצוות המסוף אינן משנות את פרופיל השירות בקופה, משמרת הצוות או מגירת המזומנים. מנהל עם payments.manage פותח עוד ← דוחות ← הפקדות המסוף ב-Victa Portable מוגדר או ב-iPad/Victa Mini. פעלו לפי מדריך התשלום בקופה לאישור סוף היום ולטיפול בתוצאה לא ודאית; הגדרות תפריט או התאמות אינן מסדירות אצווה."
         }
       }
     ],
@@ -7120,6 +7235,19 @@
     },
     "operations": [
       {
+        "id": "split-cash-collection",
+        "title": {
+          "en": "Take cash for a split bill",
+          "fr": "Encaisser une addition partagée en espèces",
+          "he": "גביית מזומן לחשבון מפוצל"
+        },
+        "instructions": {
+          "en": "After saving the split, select the exact financial bill and verify its amount. Cash collection requires the same enrolled POS to have an open cash drawer session; the confirmed amount is recorded for that bill and drawer. A claimed cash payment with an unknown outcome must be resolved before the drawer can close. Do not merge or move a bill to work around a pending payment, and do not make a second cash sale for a timeout.",
+          "fr": "Après avoir enregistré le partage, choisissez la bonne addition financière et vérifiez son montant. L’encaissement espèces exige une session de caisse ouverte sur le même POS autorisé ; le montant confirmé est enregistré pour cette addition et cette caisse. Un paiement espèces réservé dont le résultat est incertain doit être résolu avant la clôture. Ne fusionnez ni ne déplacez l’addition pour contourner un paiement en attente et ne créez pas une seconde vente après expiration.",
+          "he": "לאחר שמירת הפיצול בחרו בחשבון הפיננסי המדויק ובדקו את סכומו. גביית מזומן דורשת משמרת קופה פתוחה באותה קופה מורשית; הסכום המאושר נרשם לחשבון ולמגירה. יש לפתור תשלום מזומן שנתפס ותוצאתו אינה ודאית לפני סגירת המגירה. אין למזג או להעביר חשבון כדי לעקוף תשלום ממתין ואין ליצור מכירת מזומן שנייה עקב פקיעת זמן."
+        }
+      },
+      {
         "id": "allocation",
         "title": {
           "en": "Allocate covers or items",
@@ -7193,6 +7321,19 @@
       ]
     },
     "operations": [
+      {
+        "id": "move-payment-boundary",
+        "title": {
+          "en": "Move a bill without duplicating cash",
+          "fr": "Déplacer une addition sans doubler les espèces",
+          "he": "העברת חשבון ללא כפילות מזומן"
+        },
+        "instructions": {
+          "en": "Moving or merging a bill changes its table allocation, not the physical cash already counted in a drawer. If a payment is claimed or its result is uncertain, resolve that exact payment before moving the bill. Do not use a move, merge, or payment-method correction to turn a card result into a cash sale; cash collection is recorded only when money is received on an enrolled POS with an open drawer session.",
+          "fr": "Déplacer ou fusionner une addition modifie son affectation à une table, pas les espèces déjà comptées dans une caisse. Si un paiement est réservé ou incertain, résolvez ce paiement exact avant de déplacer l’addition. N’utilisez ni déplacement, ni fusion, ni correction du mode de paiement pour transformer un résultat carte en vente espèces ; celles-ci ne sont enregistrées qu’après réception sur un POS autorisé avec session de caisse ouverte.",
+          "he": "העברה או מיזוג של חשבון משנים את שיוכו לשולחן ולא את המזומן שכבר נספר במגירה. אם תשלום נתפס או שתוצאתו אינה ודאית, פתרו את אותו תשלום לפני העברת החשבון. אין להשתמש בהעברה, במיזוג או בתיקון אמצעי תשלום כדי להפוך תוצאת כרטיס למכירת מזומן; מזומן נרשם רק לאחר קבלתו בקופה מורשית עם משמרת קופה פתוחה."
+        }
+      },
       {
         "id": "move",
         "title": {
@@ -7269,6 +7410,19 @@
     },
     "operations": [
       {
+        "id": "course-vs-cash-status",
+        "title": {
+          "en": "Keep kitchen release separate from cash collection",
+          "fr": "Séparer envoi cuisine et encaissement espèces",
+          "he": "הפרדה בין שיגור למטבח לגביית מזומן"
+        },
+        "instructions": {
+          "en": "Holding or firing a course changes kitchen timing, not payment status. A table may be served before collection; do not count it as cash until the money is received and confirmed on an enrolled POS with an open drawer session. A pending cash payment must be resolved before closing the drawer. The card terminal deposit is a separate end-of-day action.",
+          "fr": "Mettre un service en attente ou l’envoyer change le rythme de préparation, pas le statut de paiement. Une table peut être servie avant encaissement ; ne la comptez pas en espèces avant réception et confirmation de l’argent sur un POS autorisé avec session de caisse ouverte. Un paiement espèces en attente doit être résolu avant la clôture. Le dépôt du terminal carte est une opération de fin de journée distincte.",
+          "he": "השהיה או שיגור של שלב הגשה משנים את תזמון המטבח ולא את מצב התשלום. אפשר להגיש לשולחן לפני גבייה; אין לספור זאת כמזומן עד שהכסף התקבל ואושר בקופה מורשית עם משמרת קופה פתוחה. יש לפתור תשלום מזומן ממתין לפני סגירת המגירה. הפקדת מסוף הכרטיסים היא פעולת סוף יום נפרדת."
+        }
+      },
+      {
         "id": "seats",
         "title": {
           "en": "Assign seats and courses",
@@ -7343,6 +7497,19 @@
       ]
     },
     "operations": [
+      {
+        "id": "historical-order-read-only",
+        "title": {
+          "en": "Read-only historical orders",
+          "fr": "Commandes historiques en lecture seule",
+          "he": "הזמנות היסטוריות לקריאה בלבד"
+        },
+        "instructions": {
+          "en": "Opening a linked order from Transactions shows saved order details only. It does not offer comp, void or refund actions. Make changes through an eligible live check with the required permission; a food void is not a payment refund.",
+          "fr": "Ouvrir une commande liée depuis Transactions affiche uniquement ses détails enregistrés. Cette vue ne permet ni offert, ni annulation d’article, ni remboursement. Effectuez les modifications sur une addition active éligible avec les droits requis ; annuler un plat ne rembourse pas un paiement.",
+          "he": "פתיחת הזמנה מקושרת מתוך עסקאות מציגה רק את פרטי ההזמנה השמורים. תצוגה זו אינה מאפשרת מתנה, ביטול פריט או החזר. בצעו שינויים בחשבון פעיל וזכאי עם ההרשאה הנדרשת; ביטול מנה אינו החזר תשלום."
+        }
+      },
       {
         "id": "discount",
         "title": {
@@ -7425,12 +7592,25 @@
         "lib/features/orders/presentation/cash_payment_dialog.dart",
         "lib/features/orders/presentation/cibus_payment_dialog.dart",
         "lib/features/orders/application/checkout_finalizer.dart",
+        "lib/features/settings/presentation/terminal_reports_page.dart",
+        "lib/features/more/presentation/cash_drawer_page.dart",
+        "lib/features/more/data/cash_drawer_repository.dart",
+        "lib/features/transactions/**",
+        "lib/core/routing/app_router.dart",
         "lib/core/payment/**",
         "lib/services/payments/**"
       ],
       "foodyserver": [
         "internal/payment/**",
-        "internal/orders/payment*.go"
+        "internal/orders/payment*.go",
+        "internal/orders/cash_drawer*.go",
+        "internal/orders/transactions*.go"
+      ],
+      "foodyadmin": [
+        "src/app/[restaurantId]/transactions/**",
+        "src/lib/api.ts",
+        "src/components/Sidebar.tsx",
+        "src/lib/route-permissions.ts"
       ]
     },
     "operations": [
@@ -7482,9 +7662,22 @@
           "he": "רישום מזומן"
         },
         "instructions": {
-          "en": "Choose cash, enter the received amount when requested and review change before confirming. Record only money actually received. On split bills select the correct financial bill so its receipt and paid status remain independent.",
-          "fr": "Choisissez espèces, saisissez le montant reçu si demandé et vérifiez la monnaie. Enregistrez uniquement l’argent réellement reçu. Pour les additions partagées, sélectionnez la bonne addition financière pour conserver reçu et paiement indépendants.",
-          "he": "בחרו מזומן, הזינו סכום שהתקבל ובדקו עודף. רשמו רק כסף שהתקבל. בחשבונות מפוצלים בחרו חשבון פיננסי נכון לקבלה ומצב תשלום עצמאיים."
+          "en": "On an enrolled POS with an active PIN shift, first open More → Reports → Cash drawer balance and enter the physical opening float. Then choose cash on the intended order or financial bill, enter the amount received and check the change before confirming. Only record money actually received. A pending cash collection must be retried with its existing identity, not recreated as another sale. Split bills keep their own receipt and paid status.",
+          "fr": "Sur un POS autorisé avec un shift PIN actif, ouvrez d’abord Plus → Rapports → Solde en caisse et saisissez le fonds initial réellement présent. Choisissez ensuite Espèces sur la bonne commande ou addition financière, saisissez le montant reçu et vérifiez la monnaie avant de confirmer. N’enregistrez que l’argent réellement reçu. Une collecte en attente doit être reprise avec son identité existante, pas recréée comme une nouvelle vente. Les additions partagées conservent chacune reçu et statut de paiement.",
+          "he": "בקופה מורשית עם משמרת PIN פעילה, פתחו תחילה עוד ← דוחות ← יתרת קופה והזינו את סכום המזומן הפיזי בפתיחה. אחר כך בחרו מזומן בהזמנה או בחשבון הנכון, הזינו את הסכום שהתקבל ובדקו עודף לפני אישור. רשמו רק כסף שהתקבל בפועל. גבייה ממתינה יש לנסות שוב עם אותו מזהה, ולא ליצור מכירה חדשה. לחשבונות מפוצלים נשמרים קבלה ומצב תשלום נפרדים."
+        }
+      },
+      {
+        "id": "cash-drawer-report",
+        "title": {
+          "en": "Count and close the cash drawer",
+          "fr": "Compter et clôturer la caisse",
+          "he": "ספירה וסגירה של מגירת המזומן"
+        },
+        "instructions": {
+          "en": "On the same enrolled POS, open More → Reports → Cash drawer balance. Review the opening float, recorded cash sales, cash refunds, paid-in/paid-out adjustments and expected cash. A payment manager may record a reasoned cash entry or removal, but cannot remove more than the expected balance; if Foody rejects that amount, enter a smaller one. Count the physical cash, enter the counted amount and close the session; the report preserves any discrepancy. If a payment claim or drawer action remains uncertain, resolve or retry that exact operation before closing. This report covers only cash recorded on this POS; it is not a restaurant-wide balance and does not include Verifone card deposits. Never use a cash adjustment to disguise a card refund.",
+          "fr": "Sur le même POS autorisé, ouvrez Plus → Rapports → Solde en caisse. Vérifiez fonds initial, ventes et remboursements en espèces enregistrés, entrées/sorties justifiées et montant attendu. Un responsable des paiements peut saisir une entrée ou sortie avec motif, sans dépasser le solde attendu pour une sortie ; si Foody refuse le montant, saisissez-en un inférieur. Comptez physiquement les espèces, saisissez le montant compté et clôturez la session ; le rapport conserve l’éventuel écart. Si un encaissement ou une action de caisse reste incertain, rapprochez ou reprenez cette opération exacte avant la clôture. Ce rapport couvre uniquement les espèces enregistrées sur ce POS : il n’est pas un solde global du restaurant et n’inclut pas les dépôts de cartes Verifone. N’utilisez jamais un ajustement espèces pour masquer un remboursement carte.",
+          "he": "באותו מכשיר קופה מורשה, פתחו עוד ← דוחות ← יתרת קופה. בדקו סכום פתיחה, מכירות והחזרים במזומן שנרשמו, כניסות ויציאות עם סיבה וסכום צפוי. מנהל תשלומים רשאי לרשום כניסה או הוצאה מנומקת, אך אינו יכול להוציא יותר מהיתרה הצפויה; אם Foody דוחה את הסכום, הזינו סכום נמוך יותר. ספרו את המזומן בפועל, הזינו את הסכום וסגרו את משמרת הקופה; הדוח שומר הפרש אם קיים. אם תשלום או פעולת קופה אינם ודאיים, התאימו או נסו שוב את אותה פעולה לפני הסגירה. הדוח כולל רק מזומן שנרשם בקופה זו, אינו יתרה כלל-עסקית ואינו כולל הפקדות כרטיס של Verifone. אין להשתמש בהתאמת מזומן כדי להסוות החזר לכרטיס."
         }
       },
       {
@@ -7498,6 +7691,97 @@
           "en": "Choose an enabled connected tender and follow the terminal or hosted page. Wait for Foody’s verified final status; browser return alone is insufficient. If the result is pending/uncertain, refresh and review the provider transaction with an authorized operator before any retry. Never ask the help assistant to inspect card details.",
           "fr": "Choisissez un moyen connecté activé et suivez terminal ou page hébergée. Attendez le statut final vérifié Foody ; le retour navigateur seul ne suffit pas. En attente/incertain, actualisez puis faites vérifier la transaction par un opérateur autorisé avant nouvelle tentative. Ne transmettez pas les données de carte à l’assistant.",
           "he": "בחרו אמצעי מחובר פעיל והמשיכו במסוף או בדף תשלום. המתינו למצב סופי מאומת של Foody; חזרה בדפדפן אינה מספיקה. במצב ממתין או לא ודאי רעננו ובקשו בדיקת מפעיל מורשה לפני ניסיון. אין להעביר פרטי כרטיס לעוזר."
+        }
+      },
+      {
+        "id": "transaction-history",
+        "title": {
+          "en": "Find a completed payment in Transactions",
+          "fr": "Retrouver un paiement confirmé dans Transactions",
+          "he": "איתור תשלום שאושר בעסקאות"
+        },
+        "instructions": {
+          "en": "Open Transactions in the iPad POS navigation, in More on compact terminals, or in the Admin sidebar, with payments.view or payments.manage. All three screens read the same restaurant-scoped confirmed payment history. In Admin choose a date range, source and method; search by item, reference or order number, then select a payment for its amount, method and linked orders. On the POS, selecting a linked order opens its saved read-only detail without leaving Transactions; if it cannot load, refresh and retry. The source follows the linked order: a provider-processed payment for a POS-created order appears under POS, not Online. Totals cover all matching payments, not just the visible page, and keep currencies separate. One order can have several tenders and one tender can cover several orders; Orders remains the place to follow fulfillment. Pending terminal attempts are not completed sales. History does not issue new receipts. Authorized owners and managers may see server-verified cash refunds or Verifone Checkout original-card returns for eligible payments; see the refund procedure before acting. If a result is missing, check restaurant, date and filters, then reconcile uncertain terminal payments before another charge.",
+          "fr": "Ouvrez Transactions dans la navigation de la caisse iPad, dans Plus sur un terminal compact ou dans le menu latéral Admin, avec payments.view ou payments.manage. Ces trois écrans lisent le même historique des paiements confirmés du restaurant. Dans Admin, choisissez période, source et mode ; recherchez par article, référence ou numéro de commande, puis sélectionnez un paiement pour son montant, son moyen et les commandes liées. Sur la caisse, sélectionner une commande liée ouvre son détail enregistré en lecture seule sans quitter Transactions ; si le chargement échoue, actualisez et réessayez. La source suit la commande liée : un paiement traité par un prestataire pour une commande créée en caisse apparaît sous Caisse, pas En ligne. Les totaux couvrent tous les paiements correspondant aux filtres, pas seulement la page visible, et séparent les devises. Une commande peut avoir plusieurs encaissements et un encaissement couvrir plusieurs commandes ; Commandes reste l’espace de suivi du service. Les tentatives terminal en attente ne sont pas des ventes finalisées. L’historique ne crée pas de nouveau reçu. Les propriétaires et responsables autorisés peuvent voir des remboursements d’espèces ou des retours Verifone Checkout sur la carte d’origine lorsque le serveur confirme l’éligibilité ; lisez la procédure de remboursement avant d’agir. Si un paiement manque, vérifiez restaurant, période et filtres, puis rapprochez les résultats incertains avant un nouveau débit.",
+          "he": "פתחו עסקאות בניווט קופת iPad, בעוד במסוף קומפקטי או בתפריט הצד של Admin, עם הרשאת payments.view או payments.manage. שלושת המסכים קוראים את אותה היסטוריית תשלומים מאושרים של העסק. ב-Admin בחרו טווח תאריכים, מקור ואמצעי; חפשו לפי פריט, אסמכתה או מספר הזמנה ובחרו תשלום להצגת הסכום, האמצעי וההזמנות הקשורות. בקופה, בחירת הזמנה מקושרת פותחת את פרטיה השמורים לקריאה בלבד בלי לצאת מעסקאות; אם הטעינה נכשלת, רעננו ונסו שוב. המקור נקבע לפי ההזמנה המקושרת: תשלום שעובד אצל ספק עבור הזמנה שנוצרה בקופה מופיע תחת קופה ולא תחת אונליין. הסכומים כוללים את כל התשלומים התואמים לסינון, לא רק את העמוד הגלוי, ומפרידים בין מטבעות. הזמנה אחת יכולה לכלול כמה תשלומים ותשלום אחד יכול לכסות כמה הזמנות; הזמנות מיועד למעקב אחר הכנה ומסירה. ניסיונות מסוף ממתינים אינם מכירות שהושלמו. ההיסטוריה אינה מנפיקה קבלה חדשה. בעלים ומנהלים מורשים יכולים לראות החזרי מזומן או החזר לכרטיס המקורי ב-Verifone Checkout כאשר השרת מאשר זכאות; קראו את נוהל ההחזר לפני פעולה. אם תשלום חסר, בדקו עסק, תקופה ומסננים והתאימו תוצאה לא ודאית לפני חיוב נוסף."
+        }
+      },
+      {
+        "id": "transaction-payment-origin",
+        "title": {
+          "en": "Understand payment origin",
+          "fr": "Comprendre l’origine du paiement",
+          "he": "הבנת מקור התשלום"
+        },
+        "instructions": {
+          "en": "Open a transaction on POS or Admin and read Payment origin separately from Source. Source identifies where the linked order was created; origin identifies cash, Verifone Checkout, another provider, or a recorded card payment. Victa (recorded payment) and Card (origin unverified) mean Foody recorded a result; they do not prove that a refund can be sent to the terminal. Older grouped payments can show Origin not attributed. For a return, confirm the original tender and use its authorized refund workflow; never substitute cash for a card payment.",
+          "fr": "Ouvrez une transaction sur la caisse ou dans Admin et lisez Origine du paiement séparément de Source. La source indique où la commande liée a été créée ; l’origine distingue espèces, Verifone Checkout, autre prestataire ou paiement par carte enregistré. Victa (paiement déclaré) et Carte (origine non vérifiée) signifient que Foody a enregistré un résultat, pas qu’un remboursement peut être envoyé au terminal. Les anciens paiements groupés peuvent afficher Origine non attribuée. Pour un retour, vérifiez le moyen d’origine et utilisez son parcours autorisé ; ne remplacez jamais un remboursement carte par des espèces.",
+          "he": "פתחו עסקה בקופה או ב-Admin וקראו את מקור התשלום בנפרד ממקור ההזמנה. מקור ההזמנה מציין היכן נוצרה ההזמנה המקושרת; מקור התשלום מבחין בין מזומן, Verifone Checkout, ספק אחר או תשלום כרטיס שנרשם. Victa (תשלום מדווח) וכרטיס (מקור לא מאומת) מציינים ש-Foody רשם תוצאה, לא שניתן לבצע החזר למסוף. תשלומים קבוצתיים ישנים עשויים להציג מקור לא משויך. להחזר, אמתו את אמצעי התשלום המקורי והשתמשו בתהליך ההחזר המורשה שלו; אל תחליפו החזר לכרטיס במזומן."
+        }
+      },
+      {
+        "id": "transaction-items-and-retry",
+        "title": {
+          "en": "Search every item and retry the history",
+          "fr": "Rechercher tous les articles et reprendre l’historique",
+          "he": "חיפוש כל הפריטים וניסיון חוזר בהיסטוריה"
+        },
+        "instructions": {
+          "en": "Search Transactions by any item in a linked order, including items after the first four. Open a payment to review the available linked item names. On the POS, if loading more results fails, the payments already shown remain visible; choose Try again under the list to continue. This retries only the history request, not a card charge.",
+          "fr": "Recherchez une transaction par n’importe quel article d’une commande liée, y compris au-delà des quatre premiers. Ouvrez le paiement pour consulter les noms d’articles liés disponibles. Sur la caisse, si le chargement de la suite échoue, les paiements déjà affichés restent visibles ; choisissez Réessayer sous la liste pour continuer. Cela relance seulement la lecture de l’historique, jamais un débit de carte.",
+          "he": "חפשו עסקאות לפי כל פריט בהזמנה מקושרת, גם אחרי ארבעת הפריטים הראשונים. פתחו תשלום כדי לראות את שמות הפריטים המקושרים הזמינים. בקופה, אם טעינת תוצאות נוספות נכשלת, התשלומים שכבר הוצגו נשארים גלויים; בחרו ניסיון חוזר מתחת לרשימה. הפעולה מנסה שוב לטעון את ההיסטוריה בלבד ואינה מחייבת כרטיס מחדש."
+        }
+      },
+      {
+        "id": "transaction-recorded-returns",
+        "title": {
+          "en": "Read refunds and payment voids in Transactions",
+          "fr": "Lire les remboursements et annulations dans Transactions",
+          "he": "צפייה בהחזרים ובביטולי תשלום בעסקאות"
+        },
+        "instructions": {
+          "en": "A successful Verifone Checkout refund or void initiated in Foody appears as its own return transaction, linked to the original payment. A confirmed cash return also appears separately, linked to its original cash tender. On the POS, an owner or manager with payments.manage can open an eligible payment in Transactions. For a journaled cash sale, choose Issue refund only when the server confirms an exact refundable portion and an open enrolled drawer. Select the order or check portion, enter an amount within the limit and a reason, then hand over cash only after Foody confirms. For one captured Verifone Checkout card payment linked to one exact order allocation, choose Refund to original card or Cancel card payment if offered. Enter a reason and, for a refund, an amount within the displayed limit. Foody sends the return to the original card, never to the cash drawer. An uncertain card result must be rechecked using the same saved request before another return; do not issue cash instead. Legacy unattributed, split/multi-order and Victa card payments do not offer this card action. Admin shows gross collections separately from returns recorded in Foody; neither figure is net revenue. Returns made directly in Verifone Central or on Victa are not included automatically.",
+          "fr": "Un remboursement ou une annulation Verifone Checkout réussi depuis Foody apparaît comme une transaction de retour distincte, liée au paiement d’origine. Un remboursement en espèces confirmé apparaît lui aussi séparément, lié à l’encaissement d’origine. Sur la caisse, un propriétaire ou responsable avec payments.manage peut ouvrir un paiement éligible dans Transactions. Pour une vente espèces enregistrée, choisissez Émettre un remboursement seulement si le serveur confirme la part exacte remboursable et une caisse autorisée ouverte. Sélectionnez la part de commande ou d’addition, indiquez un montant dans la limite et un motif, puis remettez l’argent seulement après confirmation de Foody. Pour un seul paiement carte Verifone Checkout capturé et lié exactement à une commande, choisissez Rembourser sur la carte d’origine ou Annuler le paiement carte si proposé. Indiquez un motif et, pour un remboursement, un montant dans la limite affichée. Foody renvoie l’argent sur la carte d’origine, jamais dans la caisse espèces. Un résultat carte incertain doit être vérifié avec la même requête enregistrée avant un autre retour ; ne remboursez pas en espèces à la place. Les paiements anciens non attribués, partagés ou liés à plusieurs commandes et les cartes Victa ne proposent pas cette action. Admin distingue encaissements bruts et retours enregistrés dans Foody ; aucun ne représente le chiffre d’affaires net. Les retours réalisés directement dans Verifone Central ou sur Victa ne sont pas inclus automatiquement.",
+          "he": "החזר או ביטול של Verifone Checkout שהושלם מתוך Foody מופיע כעסקת החזר נפרדת המקושרת לתשלום המקורי. גם החזר מזומן מאושר מופיע בנפרד ומקושר לתשלום המזומן המקורי. בקופה, בעלים או מנהל עם הרשאת payments.manage יכולים לפתוח תשלום זכאי בעסקאות. למכירת מזומן מתועדת בחרו החזר רק כאשר השרת מאשר חלק מדויק שניתן להחזיר וקופה מורשית פתוחה. בחרו את חלק ההזמנה או החשבון, הזינו סכום עד לתקרה וסיבה, ומסרו מזומן רק לאחר אישור Foody. לתשלום כרטיס Verifone Checkout יחיד שנקלט ומשויך בדיוק להזמנה אחת, בחרו החזר לכרטיס המקורי או ביטול תשלום בכרטיס אם האפשרות מוצגת. הזינו סיבה, ובהחזר גם סכום שאינו עולה על התקרה המוצגת. Foody מחזיר לכרטיס המקורי בלבד, לא לקופת המזומן. תוצאה לא ודאית בכרטיס מחייבת בדיקה של אותה בקשה שמורה לפני החזר נוסף; אין להחזיר מזומן במקום. תשלומים ישנים ללא שיוך, תשלומים מפוצלים או מרובי הזמנות ותשלומי כרטיס ב-Victa אינם מציעים פעולה זו. ב-Admin מוצגים בנפרד תקבולים ברוטו והחזרים שנרשמו ב-Foody; אף אחד מהם אינו הכנסה נטו. החזרים שבוצעו ישירות ב-Verifone Central או ב-Victa אינם נכללים אוטומטית."
+        }
+      },
+      {
+        "id": "transaction-gross-total",
+        "title": {
+          "en": "Read the transaction total correctly",
+          "fr": "Lire correctement le total des transactions",
+          "he": "קריאה נכונה של סך העסקאות"
+        },
+        "instructions": {
+          "en": "The Admin date range and displayed times use the restaurant’s timezone. The total sums all confirmed payment records matching the selected filters, even across several pages. Currencies remain separate. It is a gross payment total, not net sales: refunds, processing fees, cash-drawer movements and terminal end-of-day deposits are not subtracted here. Use the appropriate provider and accounting reports before reconciling a day.",
+          "fr": "La période et les heures affichées dans Admin utilisent le fuseau horaire du restaurant. Le total additionne tous les paiements confirmés correspondant aux filtres, même répartis sur plusieurs pages. Les devises restent séparées. C’est un total brut des paiements, pas des ventes nettes : les remboursements, frais de traitement, mouvements de tiroir-caisse et dépôts de fin de journée du terminal ne sont pas déduits ici. Utilisez les rapports du prestataire et de comptabilité adaptés pour rapprocher une journée.",
+          "he": "טווח התאריכים והשעות המוצגות ב-Admin משתמשים באזור הזמן של העסק. הסכום כולל את כל רשומות התשלום המאושרות התואמות למסננים, גם אם הן מוצגות בכמה עמודים. המטבעות נשארים נפרדים. זהו סכום תשלומים ברוטו ולא מכירות נטו: החזרים, עמלות סליקה, תנועות מגירת מזומן והפקדות סוף יום של המסוף אינם מנוכים כאן. להצלבת יום השתמשו בדוחות הספק והחשבונאות המתאימים."
+        }
+      },
+      {
+        "id": "terminal-deposit",
+        "title": {
+          "en": "Close and deposit a Verifone terminal batch",
+          "fr": "Clôturer et déposer un lot du terminal Verifone",
+          "he": "סגירה ושידור של אצוות מסוף Verifone"
+        },
+        "instructions": {
+          "en": "On a configured Victa Portable or an iPad connected to a Victa Mini, sign in with the payments.manage permission. Open More → Reports → Terminal deposits. Check that the terminal is connected and supports Close and deposit. At end of day, confirm Close and deposit once, then wait for the terminal's final confirmation and keep its reconciliation reference. This is separate from closing a Foody staff shift or a cash drawer. If the result is uncertain, do not repeat it or start another card payment: inspect the terminal batch or confirm its status with your payment provider. A manager may choose I verified the batch only after that check.",
+          "fr": "Sur un Victa Portable configuré ou un iPad relié à un Victa Mini, connectez-vous avec l’autorisation payments.manage. Ouvrez Plus → Rapports → Dépôts du terminal. Vérifiez la connexion et la disponibilité de Clôturer et déposer. En fin de journée, confirmez cette action une seule fois, attendez la confirmation finale du terminal et conservez sa référence de réconciliation. Cette opération est distincte de la fermeture d’un service Foody ou d’un tiroir-caisse. Si le résultat est incertain, ne la relancez pas et n’encaissez pas d’autre carte : vérifiez le lot sur le terminal ou auprès du prestataire de paiement. Un responsable ne choisit J’ai vérifié le lot qu’après cette vérification.",
+          "he": "ב-Victa Portable מוגדר או ב-iPad המחובר ל-Victa Mini, התחברו עם הרשאת payments.manage. פתחו עוד ← דוחות ← הפקדות מסוף. ודאו שהמסוף מחובר ושהפעולה סגירה ושידור זמינה. בסוף היום אשרו את הפעולה פעם אחת, המתינו לאישור הסופי מהמסוף ושמרו את אסמכתת ההתאמה. פעולה זו נפרדת מסגירת משמרת או מגירת מזומנים ב-Foody. אם התוצאה אינה ודאית, אין לחזור על הפעולה או לבצע חיוב כרטיס נוסף: בדקו את האצווה במסוף או מול ספק התשלומים. מנהל יבחר בדקתי את האצווה רק לאחר הבדיקה."
+        }
+      },
+      {
+        "id": "terminal-reports-advanced",
+        "title": {
+          "en": "Read totals or use advanced terminal actions",
+          "fr": "Consulter les totaux ou utiliser les actions avancées du terminal",
+          "he": "צפייה בסיכומים או שימוש בפעולות מסוף מתקדמות"
+        },
+        "instructions": {
+          "en": "In More → Reports → Terminal deposits, View current totals reads the active batch without closing or transmitting it. Advanced actions are shown only when supported by the terminal: Close batch only closes the reporting period without transmission; Transmit only requests acquirer reconciliation without explicitly closing it. Neither advanced action alone is the standard end-of-day flow. Use either only on your payment provider's instruction, confirm once and wait for the terminal's final result. If unsupported or uncertain, do not assume success; check the terminal or ask the provider before retrying.",
+          "fr": "Dans Plus → Rapports → Dépôts du terminal, Consulter les totaux lit le lot en cours sans le clôturer ni le transmettre. Les actions avancées ne sont disponibles que si le terminal les prend en charge : Clôturer le lot uniquement ferme la période sans transmission ; Transmettre uniquement demande une réconciliation à l’acquéreur sans clôture explicite. Aucune de ces deux actions n’est à elle seule la procédure normale de fin de journée. Utilisez-les uniquement sur instruction du prestataire, confirmez une seule fois et attendez le résultat final du terminal. Si une action est indisponible ou incertaine, ne présumez pas sa réussite : vérifiez le terminal ou contactez le prestataire avant de réessayer.",
+          "he": "בעוד ← דוחות ← הפקדות מסוף, הצגת סיכומים נוכחיים קוראת את האצווה הפעילה בלי לסגור או לשדר אותה. פעולות מתקדמות זמינות רק אם המסוף תומך בהן: סגירת אצווה בלבד סוגרת את תקופת הדיווח בלי שידור; שידור בלבד מבקש התאמה מול הסולק בלי סגירה מפורשת. אף אחת מהן לבדה אינה תהליך סוף היום הרגיל. יש לבצע אותן רק בהנחיית ספק התשלומים, לאשר פעם אחת ולהמתין לתוצאה הסופית מהמסוף. אם הפעולה אינה נתמכת או שהתוצאה אינה ודאית, אין להניח שהצליחה; בדקו את המסוף או פנו לספק לפני ניסיון חוזר."
         }
       },
       {
@@ -7576,9 +7860,9 @@
           "he": "מציאת אזורי עבודה"
         },
         "instructions": {
-          "en": "Use Home shortcuts or More for Analytics, Kitchen, Staff and Settings. Orders contains live, scheduled calendar, production matrix and history views. A missing destination can reflect permission or activation, so check the account/profile instead of reinstalling immediately.",
-          "fr": "Utilisez raccourcis Accueil ou Plus pour Analyses, Cuisine, Personnel et Paramètres. Commandes regroupe direct, calendrier, matrice de production et historique. Une destination absente peut dépendre des droits/activation ; vérifiez compte et profil avant réinstallation.",
-          "he": "השתמשו בקיצורי בית או עוד לניתוח, מטבח, צוות והגדרות. הזמנות כוללות חי, לוח מתוזמן, מטריצת ייצור והיסטוריה. יעד חסר עשוי לנבוע מהרשאה או הפעלה; בדקו חשבון ופרופיל לפני התקנה מחדש."
+          "en": "Use Home shortcuts or More for Analytics, Kitchen, Staff and Settings. Orders contains live and historical order workflows. Transactions is separate and lists completed payments for staff with payments.view or payments.manage; on a compact terminal it is in More. Reports in More contains Verifone Terminal deposits for payment managers (payments.manage). A missing destination can reflect permission or activation, so check the account/profile before reinstalling.",
+          "fr": "Utilisez les raccourcis Accueil ou Plus pour Analyses, Cuisine, Personnel et Paramètres. Commandes regroupe les parcours de commande actifs et historiques. Transactions est distinct et liste les paiements confirmés pour payments.view ou payments.manage ; sur un terminal compact, il se trouve dans Plus. Rapports dans Plus contient les Dépôts du terminal Verifone pour les responsables des paiements (payments.manage). Une destination absente peut dépendre des droits ou de l’activation ; vérifiez le compte et le profil avant réinstallation.",
+          "he": "השתמשו בקיצורי בית או בעוד לניתוח, מטבח, צוות והגדרות. הזמנות כולל תהליכי הזמנה פעילים והיסטוריים. עסקאות נפרד ומציג תשלומים שאושרו לבעלי הרשאת payments.view או payments.manage; במסוף קומפקטי הוא נמצא בעוד. דוחות בעוד כולל הפקדות מסוף Verifone למנהלי תשלומים (payments.manage). יעד חסר עשוי לנבוע מהרשאה או הפעלה; בדקו חשבון ופרופיל לפני התקנה מחדש."
         }
       },
       {
@@ -8141,7 +8425,10 @@
         "src/app/[restaurantId]/settings/cibus/**"
       ],
       "foodyserver": [
-        "internal/payment/**",
+        "internal/payment/resolver.go",
+        "internal/payment/provider.go",
+        "internal/payment/cibus.go",
+        "internal/payment/saved_token_resolver.go",
         "internal/invoices/**"
       ],
       "foodyweb": [
@@ -9514,6 +9801,19 @@
         }
       },
       {
+        "id": "pos-ledger-cash-drawer-contract",
+        "title": {
+          "en": "Review POS transaction and cash-drawer contracts",
+          "fr": "Vérifier les contrats des transactions et du tiroir-caisse POS",
+          "he": "בדיקת חוזי העסקאות ומגירת המזומן בקופה"
+        },
+        "instructions": {
+          "en": "Deploy and validate the restaurant-scoped API migrations and routes before enabling POS Transactions and cash-drawer reports. The transaction ledger identifies each original payment separately from its order: an order may have multiple payments, and a payment may cover multiple orders. Refund eligibility uses the selected original payment ID, its tender rail, amount and verified provider state; never infer it from order status alone. Cash refunds affect only original cash payments and are recorded against an open drawer session with an idempotency key. Unknown provider outcomes stay pending for reconciliation; do not silently convert them into success or retry as a new refund.",
+          "fr": "Déployez et validez les migrations et routes API liées au restaurant avant d'activer Transactions et les rapports de tiroir-caisse sur le POS. Le registre distingue chaque paiement initial de sa commande : une commande peut avoir plusieurs paiements et un paiement couvrir plusieurs commandes. L'admissibilité au remboursement repose sur l'identifiant du paiement initial sélectionné, son mode, son montant et l'état fournisseur vérifié ; ne la déduisez jamais du seul statut de commande. Un remboursement en espèces concerne uniquement un paiement initial en espèces et est enregistré dans une session de caisse ouverte avec une clé d'idempotence. Un résultat fournisseur inconnu reste en attente de rapprochement ; ne le convertissez pas silencieusement en réussite et ne relancez pas un nouveau remboursement.",
+          "he": "יש לפרוס ולאמת את המיגרציות והנתיבים של ה-API לפי עסק לפני הפעלת עסקאות ודוחות מגירת המזומן בקופה. יומן העסקאות מזהה כל תשלום מקורי בנפרד מהזמנתו: להזמנה עשויים להיות כמה תשלומים ותשלום עשוי לכסות כמה הזמנות. הזכאות לזיכוי נשענת על מזהה התשלום המקורי שנבחר, אמצעי התשלום, הסכום ומצב הספק המאומת; אין להסיק אותה ממצב ההזמנה בלבד. החזר מזומן מיועד רק לתשלום מקורי במזומן ונרשם מול סשן מגירה פתוח עם מפתח אידמפוטנטיות. תוצאת ספק לא ידועה נשארת ממתינה להתאמה; אין להפוך אותה להצלחה בשקט או לשלוח זיכוי חדש."
+        }
+      },
+      {
         "id": "contracts",
         "title": {
           "en": "Maintain scoped API contracts",
@@ -9936,9 +10236,9 @@
           "he": "סינון ובדיקת רשימה"
         },
         "instructions": {
-          "en": "Use the page’s search, filters, date range, column chooser and pagination where available. Open the row/action menu for its permitted operations. Check active filters before treating a missing record as deleted.",
-          "fr": "Utilisez recherche, filtres, période, colonnes et pagination proposés. Ouvrez la ligne ou son menu pour les actions autorisées. Vérifiez les filtres avant de supposer une suppression.",
-          "he": "השתמשו בחיפוש, סינון, טווח זמן, עמודות ודפדוף זמינים. פתחו רשומה או תפריט לפעולות מורשות. בדקו סינון לפני הנחת מחיקה."
+          "en": "Use the page’s search, filters, date range, column chooser and pagination where available. Open the row/action menu for its permitted operations. Check active filters before treating a missing record as deleted. Transactions is a separate Admin sidebar destination for confirmed payments; the global search groups items, orders, customers and stock, but is not a payment-history search.",
+          "fr": "Utilisez recherche, filtres, période, colonnes et pagination proposés. Ouvrez la ligne ou son menu pour les actions autorisées. Vérifiez les filtres avant de supposer une suppression. Transactions est une destination distincte dans le menu latéral Admin pour les paiements confirmés ; la recherche globale regroupe articles, commandes, clients et stock, mais ne recherche pas l’historique des paiements.",
+          "he": "השתמשו בחיפוש, סינון, טווח זמן, עמודות ודפדוף זמינים. פתחו רשומה או תפריט לפעולות מורשות. בדקו סינון לפני הנחת מחיקה. עסקאות הוא יעד נפרד בתפריט הצד של Admin לתשלומים מאושרים; החיפוש הכללי מציג פריטים, הזמנות, לקוחות ומלאי אך אינו חיפוש בהיסטוריית התשלומים."
         }
       },
       {

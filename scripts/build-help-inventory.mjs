@@ -56,7 +56,10 @@ for (const [service, configuredRoot] of Object.entries(roots)) {
     const bytes = fs.readFileSync(path.join(root, file));
     const text = bytes.toString('utf8');
     const matched = selectors.filter(f => f.compiled[service]?.some(pattern => pattern.test(file))).map(f => f.id);
-    const ids = matched.length ? matched : ['shared-runtime'];
+    // The unified payment-history reader lives in orders for existing data
+    // access, but it does not change order creation, types or fulfillment.
+    const ids = service === 'foodyserver' && /^internal\/orders\/transactions(?:_handler|_adjustments)?\.go$/.test(file)
+      ? ['pos-payments'] : matched.length ? matched : ['shared-runtime'];
     sources[file] = { sha256: digest(bytes), features: ids };
     const found = [];
     if (/(?:^|\/)app\/.*\/(?:page|route)\.[jt]sx?$/.test(file)) found.push({ kind: file.includes('/route.') ? 'next-api-route' : 'next-page', route: routePath(file), line: 1 });
