@@ -47,3 +47,9 @@ Files are available to authorized restaurant users through attachment configurat
 ## Review a route-based delivery reminder
 
 For an assigned delivery with a saved customer-window setting, reminders use the route arrival plus the configured duration, rather than the order’s broad scheduled slot. For example, arrival at 08:30 and 90 minutes produces 08:30–10:00. Configure it in Orders → Deliveries → allocation, beside the time at each stop, and review the manual or approved WhatsApp preview before sending. The same range supplies Twilio, Meta and stage reminders; existing template variables and J-1 eligibility remain in effect. Unconfigured historic routes keep the original saved slot. If the range cannot be verified, recalculate the route and reopen the reminder. A changed approved preview must be reviewed again before sending. Editing a template alone does not calculate a route or change its margin.
+
+<span id="manual-opening" />
+
+## Open a manual message in WhatsApp
+
+From the order, open Actions → Send via WhatsApp to share the receipt, or Actions → Send confirmation then Open WhatsApp for the editable recap. Check the recipient and text, then confirm sending in WhatsApp. Use an international phone number: for example +33 6 12 34 56 78 for France, without the national zero before the 6. The WhatsApp link uses digits with the country code, without + or the international 00 prefix; zeros within the number are preserved. If WhatsApp Web stays blank, open it directly in the same browser session and check its connection, then reload and retry the link. A blank screen does not prove that the recipient has no WhatsApp account. Opening the link sends no message, and these manual sends are not tracked in Foody history.

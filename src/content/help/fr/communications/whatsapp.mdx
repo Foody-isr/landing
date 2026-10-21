@@ -47,3 +47,9 @@ Les fichiers sont accessibles aux utilisateurs autorisés de l’établissement 
 ## Vérifier le rappel de livraison calculé
 
 Pour une livraison affectée à une tournée avec une marge client enregistrée, les rappels utilisent l’arrivée calculée plus cette durée, au lieu du large créneau planifié de la commande. Exemple : arrivée à 08:30 et marge de 90 minutes → 08:30–10:00. Réglez-la dans Commandes → Livraisons → répartition, à côté du temps à chaque arrêt, puis vérifiez l’aperçu WhatsApp manuel ou approuvé avant envoi. Le même créneau alimente Twilio, Meta et les rappels par étape ; les variables des modèles et la règle J-1 existantes restent applicables. Les anciennes tournées sans réglage conservent le créneau enregistré. Si le créneau ne peut être vérifié, recalculez puis rouvrez le rappel. Un aperçu approuvé qui a changé doit être revérifié avant envoi. Modifier un modèle seul ne calcule pas de tournée et ne change pas sa marge.
+
+<span id="manual-opening" />
+
+## Ouvrir un message manuel dans WhatsApp
+
+Depuis la commande, ouvrez Actions → Envoyer par WhatsApp pour partager le reçu, ou Actions → Envoyer la confirmation puis Ouvrir WhatsApp pour le récapitulatif modifiable. Vérifiez le destinataire et le texte, puis confirmez l’envoi dans WhatsApp. Le numéro doit être international : utilisez par exemple +33 6 12 34 56 78 pour la France, sans le zéro national devant le 6. Le lien WhatsApp utilise les chiffres avec l’indicatif pays, sans + ni préfixe international 00 ; les zéros à l’intérieur du numéro sont conservés. Si WhatsApp Web reste vide, ouvrez-le directement dans la même session du navigateur et vérifiez sa connexion, puis rechargez et réessayez le lien. Un écran vide ne prouve pas que le destinataire n’a pas WhatsApp. L’ouverture du lien n’envoie aucun message et ces envois manuels ne sont pas suivis dans l’historique Foody.

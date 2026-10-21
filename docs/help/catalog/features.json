@@ -7390,7 +7390,8 @@
     "selectors": {
       "foodyadmin": [
         "src/app/[restaurantId]/settings/whatsapp/**",
-        "src/components/settings/*WhatsApp*.tsx"
+        "src/components/settings/*WhatsApp*.tsx",
+        "src/lib/receipt-share.ts"
       ],
       "foodyserver": [
         "internal/twilio/**",
@@ -7475,6 +7476,19 @@
           "en": "For an assigned delivery with a saved customer-window setting, reminders use the route arrival plus the configured duration, rather than the order’s broad scheduled slot. For example, arrival at 08:30 and 90 minutes produces 08:30–10:00. Configure it in Orders → Deliveries → allocation, beside the time at each stop, and review the manual or approved WhatsApp preview before sending. The same range supplies Twilio, Meta and stage reminders; existing template variables and J-1 eligibility remain in effect. Unconfigured historic routes keep the original saved slot. If the range cannot be verified, recalculate the route and reopen the reminder. A changed approved preview must be reviewed again before sending. Editing a template alone does not calculate a route or change its margin.",
           "fr": "Pour une livraison affectée à une tournée avec une marge client enregistrée, les rappels utilisent l’arrivée calculée plus cette durée, au lieu du large créneau planifié de la commande. Exemple : arrivée à 08:30 et marge de 90 minutes → 08:30–10:00. Réglez-la dans Commandes → Livraisons → répartition, à côté du temps à chaque arrêt, puis vérifiez l’aperçu WhatsApp manuel ou approuvé avant envoi. Le même créneau alimente Twilio, Meta et les rappels par étape ; les variables des modèles et la règle J-1 existantes restent applicables. Les anciennes tournées sans réglage conservent le créneau enregistré. Si le créneau ne peut être vérifié, recalculez puis rouvrez le rappel. Un aperçu approuvé qui a changé doit être revérifié avant envoi. Modifier un modèle seul ne calcule pas de tournée et ne change pas sa marge.",
           "he": "במשלוח המשויך למסלול עם חלון לקוח שמור, התזכורות משתמשות בזמן ההגעה המחושב בתוספת המשך שהוגדר במקום חלון התזמון הרחב של ההזמנה. לדוגמה, הגעה ב־08:30 ו־90 דקות נותנות 08:30–10:00. הגדירו בהזמנות → משלוחים → חלוקה ליד זמן בכל עצירה ובדקו את התצוגה המקדימה הידנית או המאושרת ב־WhatsApp לפני השליחה. אותו חלון משמש את Twilio, Meta ותזכורות השלבים; מיפוי המשתנים וכלל היום שלפני המשלוח נשארים בתוקף. מסלולים ישנים ללא הגדרה שומרים על החלון המקורי. אם אי אפשר לאמת את החלון, חשבו מחדש ופתחו את התזכורת שוב. יש לבדוק מחדש תצוגה מאושרת שהשתנתה לפני שליחה. עריכת תבנית בלבד אינה מחשבת מסלול ואינה משנה את משך החלון."
+        }
+      },
+      {
+        "id": "manual-opening",
+        "title": {
+          "fr": "Ouvrir un message manuel dans WhatsApp",
+          "en": "Open a manual message in WhatsApp",
+          "he": "פתיחת הודעה ידנית ב-WhatsApp"
+        },
+        "instructions": {
+          "fr": "Depuis la commande, ouvrez Actions → Envoyer par WhatsApp pour partager le reçu, ou Actions → Envoyer la confirmation puis Ouvrir WhatsApp pour le récapitulatif modifiable. Vérifiez le destinataire et le texte, puis confirmez l’envoi dans WhatsApp. Le numéro doit être international : utilisez par exemple +33 6 12 34 56 78 pour la France, sans le zéro national devant le 6. Le lien WhatsApp utilise les chiffres avec l’indicatif pays, sans + ni préfixe international 00 ; les zéros à l’intérieur du numéro sont conservés. Si WhatsApp Web reste vide, ouvrez-le directement dans la même session du navigateur et vérifiez sa connexion, puis rechargez et réessayez le lien. Un écran vide ne prouve pas que le destinataire n’a pas WhatsApp. L’ouverture du lien n’envoie aucun message et ces envois manuels ne sont pas suivis dans l’historique Foody.",
+          "en": "From the order, open Actions → Send via WhatsApp to share the receipt, or Actions → Send confirmation then Open WhatsApp for the editable recap. Check the recipient and text, then confirm sending in WhatsApp. Use an international phone number: for example +33 6 12 34 56 78 for France, without the national zero before the 6. The WhatsApp link uses digits with the country code, without + or the international 00 prefix; zeros within the number are preserved. If WhatsApp Web stays blank, open it directly in the same browser session and check its connection, then reload and retry the link. A blank screen does not prove that the recipient has no WhatsApp account. Opening the link sends no message, and these manual sends are not tracked in Foody history.",
+          "he": "מתוך ההזמנה, פתחו פעולות → שליחה בוואטסאפ לשיתוף הקבלה, או פעולות → שליחת אישור ואז פתיחת וואטסאפ לסיכום שניתן לערוך. בדקו את הנמען והטקסט ואשרו את השליחה ב-WhatsApp. השתמשו במספר בינלאומי: לדוגמה +33 6 12 34 56 78 לצרפת, ללא האפס המקומי לפני הספרה 6. קישור WhatsApp משתמש בספרות עם קידומת המדינה, ללא + או קידומת חיוג בינלאומית 00; אפסים בתוך המספר נשמרים. אם WhatsApp Web נשאר ריק, פתחו אותו ישירות באותה הפעלת דפדפן ובדקו את החיבור, ואז רעננו ונסו שוב את הקישור. מסך ריק אינו מוכיח שלנמען אין חשבון WhatsApp. פתיחת הקישור אינה שולחת הודעה, ושליחות ידניות אלה אינן מופיעות במעקב בהיסטוריית Foody."
         }
       }
     ],
