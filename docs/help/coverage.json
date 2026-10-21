@@ -615,9 +615,6 @@
           "src/components/orders/**",
           "src/app/[restaurantId]/orders/new/**",
           "src/lib/orders/**"
-        ],
-        "foodyserver": [
-          "internal/orders/handler.go"
         ]
       }
     },
@@ -706,8 +703,7 @@
         "foodyserver": [
           "internal/delivery/**",
           "internal/common/delivery_models.go",
-          "internal/orders/delivery_departure.go",
-          "cmd/server/main.go"
+          "internal/orders/delivery_departure.go"
         ]
       }
     },
@@ -1384,7 +1380,10 @@
           "src/app/[restaurantId]/settings/cibus/**"
         ],
         "foodyserver": [
-          "internal/payment/**",
+          "internal/payment/resolver.go",
+          "internal/payment/provider.go",
+          "internal/payment/cibus.go",
+          "internal/payment/saved_token_resolver.go",
           "internal/invoices/**"
         ],
         "foodyweb": [

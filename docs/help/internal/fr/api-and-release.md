@@ -34,6 +34,12 @@ Un superadmin ouvre Restaurant > Payment > Verifone dans Backoffice et enregistr
 
 Le champ public expected_hold_amount_minor est vérifié contre les lignes serveur et la marge du restaurant dans la transaction de création ; un écart annule la commande avant stock/prestataire. Le serveur écrit weight_hold_amount_minor et weight_hold_buffer_percent sans faire confiance aux external_metadata invitées ; le resolver conserve ce plafond ou HoldAmount existant. Les réglages acceptent des valeurs finies de 0 à 100 ; l’omission les préserve et le défaut reste 20. Restaurant public et réglages protégés exposent cette politique sans secret. TypeScript n’invente pas de marge inconnue. Les messages FR/HE/EN héritent du thème. Aucun changement de schéma, clé prestataire ou client POS.
 
+<span id="pos-ledger-cash-drawer-contract" />
+
+## Vérifier les contrats des transactions et du tiroir-caisse POS
+
+Déployez et validez les migrations et routes API liées au restaurant avant d'activer Transactions et les rapports de tiroir-caisse sur le POS. Le registre distingue chaque paiement initial de sa commande : une commande peut avoir plusieurs paiements et un paiement couvrir plusieurs commandes. L'admissibilité au remboursement repose sur l'identifiant du paiement initial sélectionné, son mode, son montant et l'état fournisseur vérifié ; ne la déduisez jamais du seul statut de commande. Un remboursement en espèces concerne uniquement un paiement initial en espèces et est enregistré dans une session de caisse ouverte avec une clé d'idempotence. Un résultat fournisseur inconnu reste en attente de rapprochement ; ne le convertissez pas silencieusement en réussite et ne relancez pas un nouveau remboursement.
+
 <span id="contracts" />
 
 ## Maintenir les contrats API contextualisés
