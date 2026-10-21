@@ -105,3 +105,9 @@ API migration 267 adds private carte/series drafts, immutable publication snapsh
 ## Synchronize the stock-history procedure
 
 Synchronize internal/support/corpus.json with the exported public corpus for the read-only Stock history page. Existing paginated endpoints and menu.view authorization remain unchanged. Help explains combined filters, the product link and preparation from the carte draft; it no longer offers immediate corrections in menu/stock. Verify the same revision in public support status and FR/HE/EN guides after deployment, without paid AI calls.
+
+<span id="library-restock" />
+
+## Save stock outside series
+
+POST /api/v1/menu/items/:id/sales-stock/restock also accepts remaining stock for restaurants without series, requiring menu.edit and the active restaurant. expected_revision uses item.stock_revision; all size counters, validation and journal writes are atomic under the order stock lock. Series restaurants retain their series counters. Foreign sizes, invalid quantities and stale revisions fail without partial changes. Deploy this API before the Items UI. No schema or environment change.

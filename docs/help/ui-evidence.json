@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "Foody-isr/admin",
-  "ref": "742def4eaeeb865239c3a37a6b0e815989580e12",
+  "ref": "6e42a495d107d9ba868cb92b6b0a868747ece14f",
   "observations": [
     {
       "id": "items-library",
@@ -11,12 +11,14 @@
         "<DataTable",
         "t('createItem')",
         "value: 'active'",
-        "value: 'inactive'"
+        "value: 'inactive'",
+        "<ItemAvailabilityPopover"
       ],
       "forbidden": [
         "<ArticlesKpiRow",
         "<Kpi ",
-        "<KPI"
+        "<KPI",
+        "handleAvailabilityToggle"
       ]
     },
     {
@@ -188,6 +190,19 @@
         "posStaffDiscounts: \"הנחות בקופה\""
       ],
       "forbidden": []
+    },
+    {
+      "id": "library-availability-popover",
+      "source": "src/components/menu/ItemAvailabilityPopover.tsx",
+      "required": [
+        "<AvailabilityPopover",
+        "getSalesStock(",
+        "restockSalesStock(",
+        "setSalesStockAvailability("
+      ],
+      "forbidden": [
+        "availabilityToggleTarget"
+      ]
     }
   ],
   "guides": [

@@ -105,3 +105,9 @@ La migration API 267 ajoute les brouillons privés par carte/série, les version
 ## Synchroniser la procédure du journal des stocks
 
 Synchroniser internal/support/corpus.json avec le corpus public exporté pour la page Historique des stocks en lecture seule. Les endpoints paginés existants et leur autorisation menu.view ne changent pas. L’aide explique les filtres combinés, le lien produit et la préparation depuis le brouillon de carte ; elle ne propose plus de corrections immédiates dans menu/stock. Vérifier la même révision dans le statut public du support et les guides FR/HE/EN après déploiement, sans appel IA payant.
+
+<span id="library-restock" />
+
+## Sauvegarder les stocks hors série
+
+POST /api/v1/menu/items/:id/sales-stock/restock accepte désormais les stocks restants des restaurants sans séries, avec menu.edit et le restaurant actif. expected_revision correspond à item.stock_revision ; tous les compteurs par taille, leur validation et leur journal sont atomiques sous le verrou des commandes. Les restaurants par séries gardent leurs compteurs par série. Les tailles étrangères, quantités invalides et révisions périmées sont rejetées sans changement partiel. Déployer cette API avant l’interface Articles. Aucun changement de schéma ou de variable d’environnement.
