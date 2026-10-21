@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - backoffice-onboarding
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-21'
 featureId: backoffice-onboarding
 audience: internal
 releaseStatus: available
@@ -23,3 +23,9 @@ releaseStatus: available
 ## ניהול משתמשים מאושרים
 
 מצאו משתמש, בדקו עסק ותפקיד ושנו רק את המבוקש. סיסמאות בטפסים מוגנים בלבד ולא בלוגים או מדריכים. בדקו תוצאה ושמרו גישות אחרות.
+
+<span id="related-service-controls" />
+
+## גישה להגדרות החדשות
+
+Usage and quotas מציג השוואת צריכה לפי שירות ומסעדה. Review allocation והקישור בכרטיס המסעדה פותחים תקרות חודשיות; שמירה מחייבת סיבה ושומרת את כל המונים. הכלים למנהל־על בלבד ונפרדים מהעדפת ההתחברות באתר.

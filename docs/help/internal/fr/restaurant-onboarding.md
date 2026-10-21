@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - backoffice-onboarding
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-21'
 featureId: backoffice-onboarding
 audience: internal
 releaseStatus: available
@@ -23,3 +23,9 @@ Vérifiez invitation ou création manuelle, identité, langue, devise et propri�
 ## Gérer les utilisateurs autorisés
 
 Retrouvez l’utilisateur, vérifiez restaurant/rôle et appliquez uniquement le changement demandé. Les mots de passe passent par formulaires protégés, jamais logs ni guides. Vérifiez sauvegarde et préservez les autres accès.
+
+<span id="related-service-controls" />
+
+## Accès aux nouveaux réglages
+
+Usage and quotas ouvre la comparaison des consommations par service et par restaurant. Review allocation et le lien de la fiche restaurant ouvrent les plafonds mensuels ; leur enregistrement exige un motif et conserve tous les compteurs. Ces contrôles sont réservés au superadmin, distincts du choix de connexion du site.

@@ -63,3 +63,9 @@ Me connecter ouvre Google et le formulaire e-mail + mot de passe. Facebook et Ap
 ## Conserver le journal des stocks en lecture seule
 
 La route Admin menu/stock et ses liens portent désormais le libellé Historique des stocks en français, hébreu et anglais. Elle lit uniquement les articles du restaurant pour le filtre et les événements de vente paginés, sans appeler les compteurs ni les routes de correction. Les filtres article, date de série et mouvement restent combinés lors de la pagination ; une réponse d’une sélection précédente est ignorée. Le lien produit vers cette route est nommé Historique complet du stock. Les préparations restent dans le brouillon de carte et sa publication. Déployer le corpus public identique à la recherche et aux guides dans le service de support avec ce changement de procédure.
+
+<span id="related-service-controls" />
+
+## Accès aux nouveaux réglages
+
+Paramètres → Consommation et quotas affiche les plafonds et consommations Google/Geoapify du restaurant, accessibles avec la permission de consulter ou modifier les paramètres. Les crédits de remplacement et les livraisons soumises à l’optimisation sont comptés séparément des requêtes. Foody ajuste les plafonds ; un changement ne remet pas les compteurs à zéro. Voir [les règles et le renouvellement](/fr/help/settings/api-usage-and-quotas).
