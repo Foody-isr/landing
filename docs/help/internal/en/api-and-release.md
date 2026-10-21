@@ -111,3 +111,9 @@ Synchronize internal/support/corpus.json with the exported public corpus for the
 ## Save stock outside series
 
 POST /api/v1/menu/items/:id/sales-stock/restock also accepts remaining stock for restaurants without series, requiring menu.edit and the active restaurant. expected_revision uses item.stock_revision; all size counters, validation and journal writes are atomic under the order stock lock. Series restaurants retain their series counters. Foreign sizes, invalid quantities and stale revisions fail without partial changes. Deploy this API before the Items UI. No schema or environment change.
+
+<span id="staff-activation-pos-code" />
+
+## POS code at staff activation
+
+validate-invite returns pos_pin_required from the current scoped membership permissions (orders.manage or payments.manage), never the global or legacy role label. setup-account independently rechecks scope, role and permission requirements. Non-POS staff ignore a stale client PIN without writing one. Password, optional PIN, one-time invite consumption and JWT generation are atomic; failures preserve the existing invitation and credentials. Used, expired, ambiguous legacy and revoked links remain blocked with allowlisted error codes; unexpected persistence errors expose no SQL or tokens. No migration or environment change is needed. Deploy API before Admin; already emailed unused links require no data repair or resend.

@@ -41,9 +41,9 @@
           "he": "הפעלת הזמנה"
         },
         "instructions": {
-          "en": "Open the received invitation, check the restaurant and finish account setup. Ask the manager to resend an expired invitation.",
-          "fr": "Ouvrez l’invitation reçue, vérifiez le restaurant et terminez l’activation. Demandez au responsable de renvoyer une invitation expirée.",
-          "he": "פתחו את ההזמנה, בדקו את המסעדה והשלימו את הפעלת החשבון. בקשו מהמנהל לשלוח שוב הזמנה שפג תוקפה."
+          "en": "Open the invitation received by email, check the restaurant, choose your password and confirm your contact details. A POS code is requested only when the assigned restaurant permissions allow taking orders (orders.manage) or managing payments (payments.manage). A courier with the usual read-only delivery role, or a kitchen-only role, finishes without this step. A role name alone does not determine the requirement. Never share a password or POS code.",
+          "fr": "Ouvrez l’invitation reçue par e-mail, vérifiez le restaurant, choisissez votre mot de passe et confirmez vos coordonnées. Le code caisse est demandé uniquement si les permissions affectées dans ce restaurant permettent la prise de commande (orders.manage) ou la gestion des paiements (payments.manage). Un livreur avec les droits habituels de consultation, ou un rôle limité à la cuisine, termine sans cette étape. Le nom du rôle ne détermine pas à lui seul cette obligation. Ne partagez jamais de mot de passe ni de code caisse.",
+          "he": "פתחו את ההזמנה שהתקבלה בדוא״ל, בדקו את המסעדה, בחרו סיסמה ואשרו פרטי קשר. קוד קופה נדרש רק כאשר ההרשאות שהוקצו במסעדה מאפשרות קבלת הזמנות (orders.manage) או ניהול תשלומים (payments.manage). שליח עם הרשאת הצפייה הרגילה, או תפקיד המוגבל למטבח, מסיים ללא שלב זה. שם התפקיד לבדו אינו קובע את הדרישה. אין לשתף סיסמה או קוד קופה."
         }
       },
       {
@@ -67,9 +67,9 @@
           "he": "שחזור גישה"
         },
         "instructions": {
-          "en": "Follow the account recovery instructions or contact your manager. Never share a password, activation link or POS code in the assistant.",
-          "fr": "Suivez la procédure de récupération proposée ou contactez le responsable. Ne partagez jamais de mot de passe, lien d’activation ou code POS avec l’assistant.",
-          "he": "השתמשו בהוראות שחזור הגישה או פנו למנהל. אין לשתף סיסמה, קישור הפעלה או קוד קופה עם העוזר."
+          "en": "After a rejected POS code or failed save, reopen the same still-valid email link and retry; failed activation does not consume it. A duplicate code message means a POS operator must choose a different 4–6 digit code. A courier without POS permissions does not need to try more combinations. If the link is expired, lacks restaurant context or says it was already used and activation did not finish, ask a staff manager to open Staff → Employees → the member → Resend setup invitation. Use the newest email; resending invalidates previous unused links without recreating the member. If activation already succeeded, sign in with the password you chose, or use password recovery. Removed restaurant access must be reviewed by the manager. Never share activation links or credentials with the assistant.",
+          "fr": "Après un refus de code caisse ou un échec d’enregistrement, rouvrez le même lien e-mail encore valide et réessayez ; une activation échouée ne le consomme pas. Un code déjà utilisé impose à l’utilisateur de la caisse de choisir un autre code de 4 à 6 chiffres. Un livreur sans droits caisse n’a pas à essayer d’autres combinaisons. Si le lien a expiré, ne permet pas d’identifier le restaurant ou indique avoir déjà été utilisé alors que l’activation n’a pas abouti, demandez à un responsable autorisé d’ouvrir Personnel → Employés → le membre → Renvoyer l’invitation de configuration. Utilisez le dernier e-mail reçu ; le renvoi invalide les anciens liens inutilisés sans recréer le membre. Si l’activation a déjà réussi, connectez-vous avec le mot de passe choisi ou utilisez la récupération de mot de passe. Un accès retiré doit être vérifié par le responsable. Ne partagez jamais de lien d’activation ni d’identifiants avec l’assistant.",
+          "he": "לאחר דחיית קוד קופה או כשל בשמירה, פתחו שוב את אותו קישור דוא״ל שעדיין בתוקף ונסו שוב; הפעלה שנכשלה אינה מנצלת אותו. הודעה שהקוד כבר בשימוש מחייבת משתמש קופה לבחור קוד אחר בן 4–6 ספרות. שליח ללא הרשאות קופה אינו צריך לנסות צירופים נוספים. אם תוקף הקישור פג, לא ניתן לזהות בו את המסעדה, או שהוא מסומן כמשומש למרות שההפעלה לא הושלמה, בקשו ממנהל מורשה לפתוח צוות ← עובדים ← העובד ← שליחה מחדש של הזמנת הגדרה. השתמשו בדוא״ל האחרון; שליחה מחדש מבטלת קישורים קודמים שלא נוצלו בלי ליצור את העובד מחדש. אם ההפעלה הצליחה, התחברו עם הסיסמה שנבחרה או השתמשו בשחזור סיסמה. גישה שהוסרה דורשת בדיקת מנהל. אין לשתף קישור הפעלה או פרטי התחברות עם העוזר."
         }
       },
       {
@@ -88,7 +88,8 @@
     ],
     "audience": "public",
     "status": "available",
-    "preserveExisting": true
+    "preserveExisting": true,
+    "procedureUpdatedAt": "2026-10-21"
   },
   {
     "id": "account-security",
@@ -217,9 +218,9 @@
           "he": "שליחת הזמנה מחדש"
         },
         "instructions": {
-          "en": "Open the employee profile and use its invitation action after correcting an address or delivery problem. Check the new result.",
-          "fr": "Ouvrez la fiche employé et utilisez l’action d’invitation après correction du problème d’adresse ou d’envoi. Contrôlez le nouveau résultat.",
-          "he": "פתחו את כרטיס העובד ושלחו הזמנה מחדש לאחר תיקון הכתובת או בעיית השליחה. בדקו את התוצאה החדשה."
+          "en": "Open Staff → Employees, choose the existing member and use Resend setup invitation. Check the email delivery result and ask the member to use only the newest email. This creates a new one-time link for the same member and restaurant; it does not require deleting or adding the employee again. An unused, unexpired link can already be reopened after failed activation, and uses the current role permissions. If activation succeeded, the member can sign in or recover their password instead.",
+          "fr": "Ouvrez Personnel → Employés, choisissez le membre existant puis Renvoyer l’invitation de configuration. Vérifiez le résultat d’envoi et demandez au membre d’utiliser uniquement le dernier e-mail. Un nouveau lien à usage unique est créé pour le même membre et le même restaurant ; il n’est pas nécessaire de supprimer puis recréer l’employé. Un lien non utilisé et non expiré peut déjà être rouvert après une activation échouée et tient compte des permissions actuelles du rôle. Si l’activation a réussi, le membre peut se connecter ou récupérer son mot de passe.",
+          "he": "פתחו צוות ← עובדים, בחרו את העובד הקיים ושלחו מחדש את הזמנת ההגדרה. בדקו את תוצאת משלוח הדוא״ל ובקשו מהעובד להשתמש רק בהודעה האחרונה. נוצר קישור חד־פעמי חדש לאותו עובד ולאותה מסעדה; אין צורך למחוק וליצור את העובד מחדש. קישור שלא נוצל ושעדיין בתוקף ניתן לפתוח שוב לאחר הפעלה שנכשלה והוא מתחשב בהרשאות התפקיד העדכניות. אם ההפעלה הצליחה, העובד יכול להתחבר או לשחזר סיסמה."
         }
       },
       {
@@ -230,9 +231,9 @@
           "he": "בדיקה והסרה של גישה"
         },
         "instructions": {
-          "en": "Review role, account status and POS code configuration. Use removal only for the intended employee; owner controls remain protected.",
-          "fr": "Vérifiez rôle, statut du compte et configuration du code POS. Retirez uniquement l’employé concerné ; les contrôles du propriétaire restent protégés.",
-          "he": "בדקו תפקיד, סטטוס חשבון והגדרת קוד קופה. הסירו רק את העובד הנכון; פעולות הבעלים נשארות מוגנות."
+          "en": "Review role, account status and POS code configuration. Not required for this role means the current restaurant permissions do not require a POS code at activation; it is not an unfinished activation. Not configured applies to a role that requires a code. Use removal only for the intended employee; owner controls remain protected.",
+          "fr": "Vérifiez le rôle, le statut du compte et le code caisse. Non requis pour ce rôle signifie que les permissions actuelles du restaurant ne nécessitent pas de code caisse à l’activation ; ce n’est pas une activation inachevée. Non configuré concerne un rôle qui nécessite un code. Retirez uniquement l’employé concerné ; les contrôles du propriétaire restent protégés.",
+          "he": "בדקו תפקיד, סטטוס חשבון וקוד קופה. לא נדרש לתפקיד זה פירושו שהרשאות המסעדה העדכניות אינן דורשות קוד קופה בהפעלה; זו אינה הפעלה שלא הושלמה. לא מוגדר מתייחס לתפקיד שדורש קוד. הסירו רק את העובד הנכון; פעולות הבעלים נשארות מוגנות."
         }
       },
       {
@@ -256,7 +257,8 @@
       "en": "Requires staff management permission for invitations and changes.",
       "fr": "Les invitations et modifications nécessitent la permission de gestion de l’équipe.",
       "he": "הזמנות ושינויים דורשים הרשאת ניהול צוות."
-    }
+    },
+    "procedureUpdatedAt": "2026-10-21"
   },
   {
     "id": "staff-roles",
@@ -335,6 +337,19 @@
           "fr": "Paramètres → Consommation et quotas affiche les plafonds et consommations Google/Geoapify du restaurant, accessibles avec la permission de consulter ou modifier les paramètres. Les crédits de remplacement et les livraisons soumises à l’optimisation sont comptés séparément des requêtes. Foody ajuste les plafonds ; un changement ne remet pas les compteurs à zéro. Voir [les règles et le renouvellement](/fr/help/settings/api-usage-and-quotas).",
           "en": "Settings → Usage and quotas displays this restaurant’s Google/Geoapify allowances and usage with settings view/edit permission. Fallback credits and deliveries submitted for optimization are distinct from request counts. Foody adjusts limits without resetting counters. See [limits and renewal](/en/help/settings/api-usage-and-quotas).",
           "he": "הגדרות → צריכה ומכסות מציג את תקרות וצריכת Google/Geoapify של המסעדה עם הרשאת צפייה או עריכת הגדרות. קרדיטים לשירות חלופי ומשלוחים שנשלחו לאופטימיזציה נפרדים ממספר הבקשות. Foody משנה תקרות ללא איפוס מונים. ראו [תקרות וחידוש](/he/help/settings/api-usage-and-quotas)."
+        }
+      },
+      {
+        "id": "staff-activation-pos-code",
+        "title": {
+          "en": "POS code at staff activation",
+          "fr": "Code caisse à l’activation du personnel",
+          "he": "קוד קופה בהפעלת חשבון עובד"
+        },
+        "instructions": {
+          "en": "Staff activation checks the permissions assigned in this restaurant, including custom roles: orders.manage or payments.manage requires a private POS code. Read-only couriers and kitchen-only roles do not need one. Existing unused invitation links apply the same current rule. Changing a role label, courier address or route destination does not grant POS permissions. See [activation and recovery](/en/help/getting-started/first-login#activate).",
+          "fr": "L’activation du personnel vérifie les permissions affectées dans ce restaurant, y compris les rôles personnalisés : orders.manage ou payments.manage impose un code caisse personnel. Les livreurs en consultation et les rôles limités à la cuisine n’en ont pas besoin. Les invitations existantes encore inutilisées appliquent la même règle actuelle. Modifier le nom du rôle, l’adresse du livreur ou la destination d’une tournée n’accorde aucun droit caisse. Voir [l’activation et la reprise](/fr/help/getting-started/first-login#activate).",
+          "he": "הפעלת חשבון עובד בודקת את ההרשאות שהוקצו במסעדה, כולל תפקידים מותאמים: orders.manage או payments.manage דורשת קוד קופה אישי. שליחים עם הרשאת צפייה ותפקידים המוגבלים למטבח אינם זקוקים לקוד. גם קישורי הזמנה קיימים שלא נוצלו משתמשים באותו כלל עדכני. שינוי שם תפקיד, כתובת שליח או יעד מסלול אינו מעניק הרשאות קופה. ראו [הפעלה וחזרה לתהליך](/he/help/getting-started/first-login#activate)."
         }
       }
     ],
@@ -5252,6 +5267,19 @@
           "fr": "Personnel → employé → Modifier les coordonnées permet d’enregistrer la destination finale par défaut du livreur, avec l’option d’utiliser son domicile actuel. La planification la propose pour une nouvelle tournée et l’API l’applique aussi si le client ne transmet aucune modification. Une destination saisie pour la tournée, même explicitement vide, reste prioritaire. Modifier l’adresse de départ conserve la destination finale proposée. Les tournées contenant déjà des livraisons gardent leurs réglages lors d’une modification de la fiche ; une tournée vide du livreur reprend la dernière valeur par défaut lors de sa première planification. Les règles de validation et de recalcul des points s’appliquent toujours. Modifier la fiche ne démarre ni ne recalcule une tournée existante.",
           "he": "צוות ← עובד ← עריכת פרטי קשר מאפשר לשמור יעד סופי כברירת מחדל, עם אפשרות להשתמש בכתובת המגורים הנוכחית. בתכנון מסלול חדש היעד מוצג מראש והשרת מחיל אותו גם אם הלקוח לא שלח שינוי. יעד מפורש למסלול, כולל ערך ריק מפורש, מקבל עדיפות. שינוי כתובת היציאה משמר את היעד המוצע. מסלולים שכבר מכילים משלוחים שומרים את ההגדרות כשמשנים פרופיל; מסלול שליח ריק משתמש בברירת המחדל העדכנית בתכנון הראשון. כללי אימות הכתובות וחישוב המסלול נשארים בתוקף. עריכת הפרופיל אינה מתחילה או מחשבת מחדש מסלול קיים."
         }
+      },
+      {
+        "id": "staff-activation-pos-code",
+        "title": {
+          "en": "POS code at staff activation",
+          "fr": "Code caisse à l’activation du personnel",
+          "he": "קוד קופה בהפעלת חשבון עובד"
+        },
+        "instructions": {
+          "en": "Staff activation checks the permissions assigned in this restaurant, including custom roles: orders.manage or payments.manage requires a private POS code. Read-only couriers and kitchen-only roles do not need one. Existing unused invitation links apply the same current rule. Changing a role label, courier address or route destination does not grant POS permissions. See [activation and recovery](/en/help/getting-started/first-login#activate).",
+          "fr": "L’activation du personnel vérifie les permissions affectées dans ce restaurant, y compris les rôles personnalisés : orders.manage ou payments.manage impose un code caisse personnel. Les livreurs en consultation et les rôles limités à la cuisine n’en ont pas besoin. Les invitations existantes encore inutilisées appliquent la même règle actuelle. Modifier le nom du rôle, l’adresse du livreur ou la destination d’une tournée n’accorde aucun droit caisse. Voir [l’activation et la reprise](/fr/help/getting-started/first-login#activate).",
+          "he": "הפעלת חשבון עובד בודקת את ההרשאות שהוקצו במסעדה, כולל תפקידים מותאמים: orders.manage או payments.manage דורשת קוד קופה אישי. שליחים עם הרשאת צפייה ותפקידים המוגבלים למטבח אינם זקוקים לקוד. גם קישורי הזמנה קיימים שלא נוצלו משתמשים באותו כלל עדכני. שינוי שם תפקיד, כתובת שליח או יעד מסלול אינו מעניק הרשאות קופה. ראו [הפעלה וחזרה לתהליך](/he/help/getting-started/first-login#activate)."
+        }
       }
     ],
     "audience": "public",
@@ -6722,6 +6750,19 @@
           "fr": "Les coordonnées du personnel se gèrent dans Admin → Personnel → employé → Modifier les coordonnées. Le nom et le téléphone propres à l’établissement servent à l’affectation du livreur et aux prochains rappels de livraison ; l’email de connexion reste en lecture seule. Les livreurs peuvent enregistrer une destination finale par défaut ou la lier à leur domicile. Les nouvelles tournées proposent cette destination et permettent de la remplacer ou de la retirer. Il s’agit du lieu où termine le livreur, distinct de l’adresse de livraison du client. Les tournées contenant déjà des livraisons et les historiques terminés conservent leurs données. Voir [la fiche du personnel](/fr/help/staff/invite-staff#edit-staff-contacts) pour l’enregistrement, les permissions et la reprise après erreur.",
           "he": "פרטי הקשר של הצוות מנוהלים בממשק הניהול ← צוות ← עובד ← עריכת פרטי קשר. השם והטלפון השמורים לעסק משמשים לשיוך שליח ולתזכורות המשלוח הקרובות; הדוא״ל להתחברות נשאר לקריאה בלבד. שליחים יכולים לשמור יעד סופי כברירת מחדל או לקשר אותו לכתובת המגורים. מסלולים חדשים מציעים את היעד ואפשר להחליפו או להסירו במפורש. זהו יעד הסיום של השליח, בנפרד מכתובת המשלוח של הלקוח. מסלולים שכבר מכילים משלוחים ומשלוחים שהושלמו שומרים את הנתונים הקיימים. [בפרופיל הצוות](/he/help/staff/invite-staff#edit-staff-contacts) מפורטים השמירה, ההרשאות והטיפול בשגיאות."
         }
+      },
+      {
+        "id": "staff-activation-pos-code",
+        "title": {
+          "en": "POS code at staff activation",
+          "fr": "Code caisse à l’activation du personnel",
+          "he": "קוד קופה בהפעלת חשבון עובד"
+        },
+        "instructions": {
+          "en": "Staff activation checks the permissions assigned in this restaurant, including custom roles: orders.manage or payments.manage requires a private POS code. Read-only couriers and kitchen-only roles do not need one. Existing unused invitation links apply the same current rule. Changing a role label, courier address or route destination does not grant POS permissions. See [activation and recovery](/en/help/getting-started/first-login#activate).",
+          "fr": "L’activation du personnel vérifie les permissions affectées dans ce restaurant, y compris les rôles personnalisés : orders.manage ou payments.manage impose un code caisse personnel. Les livreurs en consultation et les rôles limités à la cuisine n’en ont pas besoin. Les invitations existantes encore inutilisées appliquent la même règle actuelle. Modifier le nom du rôle, l’adresse du livreur ou la destination d’une tournée n’accorde aucun droit caisse. Voir [l’activation et la reprise](/fr/help/getting-started/first-login#activate).",
+          "he": "הפעלת חשבון עובד בודקת את ההרשאות שהוקצו במסעדה, כולל תפקידים מותאמים: orders.manage או payments.manage דורשת קוד קופה אישי. שליחים עם הרשאת צפייה ותפקידים המוגבלים למטבח אינם זקוקים לקוד. גם קישורי הזמנה קיימים שלא נוצלו משתמשים באותו כלל עדכני. שינוי שם תפקיד, כתובת שליח או יעד מסלול אינו מעניק הרשאות קופה. ראו [הפעלה וחזרה לתהליך](/he/help/getting-started/first-login#activate)."
+        }
       }
     ],
     "audience": "public",
@@ -6911,6 +6952,19 @@
           "en": "Staff contact details are managed in Admin → Staff → employee → Edit contact details. The restaurant-scoped name and phone are used for courier assignment and upcoming delivery reminders; the sign-in email remains read-only. Couriers can save a default final destination or link it to their home address. New routes propose that destination and allow an explicit override or removal. It is the courier’s end-of-route destination, separate from the customer’s delivery address. Existing populated routes and completed delivery snapshots keep their saved data. See [staff profiles](/en/help/staff/invite-staff#edit-staff-contacts) for saving, permissions and recovery.",
           "fr": "Les coordonnées du personnel se gèrent dans Admin → Personnel → employé → Modifier les coordonnées. Le nom et le téléphone propres à l’établissement servent à l’affectation du livreur et aux prochains rappels de livraison ; l’email de connexion reste en lecture seule. Les livreurs peuvent enregistrer une destination finale par défaut ou la lier à leur domicile. Les nouvelles tournées proposent cette destination et permettent de la remplacer ou de la retirer. Il s’agit du lieu où termine le livreur, distinct de l’adresse de livraison du client. Les tournées contenant déjà des livraisons et les historiques terminés conservent leurs données. Voir [la fiche du personnel](/fr/help/staff/invite-staff#edit-staff-contacts) pour l’enregistrement, les permissions et la reprise après erreur.",
           "he": "פרטי הקשר של הצוות מנוהלים בממשק הניהול ← צוות ← עובד ← עריכת פרטי קשר. השם והטלפון השמורים לעסק משמשים לשיוך שליח ולתזכורות המשלוח הקרובות; הדוא״ל להתחברות נשאר לקריאה בלבד. שליחים יכולים לשמור יעד סופי כברירת מחדל או לקשר אותו לכתובת המגורים. מסלולים חדשים מציעים את היעד ואפשר להחליפו או להסירו במפורש. זהו יעד הסיום של השליח, בנפרד מכתובת המשלוח של הלקוח. מסלולים שכבר מכילים משלוחים ומשלוחים שהושלמו שומרים את הנתונים הקיימים. [בפרופיל הצוות](/he/help/staff/invite-staff#edit-staff-contacts) מפורטים השמירה, ההרשאות והטיפול בשגיאות."
+        }
+      },
+      {
+        "id": "staff-activation-pos-code",
+        "title": {
+          "en": "POS code at staff activation",
+          "fr": "Code caisse à l’activation du personnel",
+          "he": "קוד קופה בהפעלת חשבון עובד"
+        },
+        "instructions": {
+          "en": "Staff activation checks the permissions assigned in this restaurant, including custom roles: orders.manage or payments.manage requires a private POS code. Read-only couriers and kitchen-only roles do not need one. Existing unused invitation links apply the same current rule. Changing a role label, courier address or route destination does not grant POS permissions. See [activation and recovery](/en/help/getting-started/first-login#activate).",
+          "fr": "L’activation du personnel vérifie les permissions affectées dans ce restaurant, y compris les rôles personnalisés : orders.manage ou payments.manage impose un code caisse personnel. Les livreurs en consultation et les rôles limités à la cuisine n’en ont pas besoin. Les invitations existantes encore inutilisées appliquent la même règle actuelle. Modifier le nom du rôle, l’adresse du livreur ou la destination d’une tournée n’accorde aucun droit caisse. Voir [l’activation et la reprise](/fr/help/getting-started/first-login#activate).",
+          "he": "הפעלת חשבון עובד בודקת את ההרשאות שהוקצו במסעדה, כולל תפקידים מותאמים: orders.manage או payments.manage דורשת קוד קופה אישי. שליחים עם הרשאת צפייה ותפקידים המוגבלים למטבח אינם זקוקים לקוד. גם קישורי הזמנה קיימים שלא נוצלו משתמשים באותו כלל עדכני. שינוי שם תפקיד, כתובת שליח או יעד מסלול אינו מעניק הרשאות קופה. ראו [הפעלה וחזרה לתהליך](/he/help/getting-started/first-login#activate)."
         }
       }
     ],
@@ -10130,6 +10184,19 @@
           "fr": "POST /api/v1/menu/items/:id/sales-stock/restock accepte désormais les stocks restants des restaurants sans séries, avec menu.edit et le restaurant actif. expected_revision correspond à item.stock_revision ; tous les compteurs par taille, leur validation et leur journal sont atomiques sous le verrou des commandes. Les restaurants par séries gardent leurs compteurs par série. Les tailles étrangères, quantités invalides et révisions périmées sont rejetées sans changement partiel. Déployer cette API avant l’interface Articles. Aucun changement de schéma ou de variable d’environnement.",
           "en": "POST /api/v1/menu/items/:id/sales-stock/restock also accepts remaining stock for restaurants without series, requiring menu.edit and the active restaurant. expected_revision uses item.stock_revision; all size counters, validation and journal writes are atomic under the order stock lock. Series restaurants retain their series counters. Foreign sizes, invalid quantities and stale revisions fail without partial changes. Deploy this API before the Items UI. No schema or environment change.",
           "he": "POST /api/v1/menu/items/:id/sales-stock/restock מקבל גם מלאי שנותר למסעדות ללא סדרות, עם menu.edit והמסעדה הפעילה. expected_revision משתמש ב-item.stock_revision; כל מוני הגדלים, האימות והיומן נשמרים אטומית תחת נעילת המלאי של ההזמנות. מסעדות בסדרות ממשיכות להשתמש במוני הסדרה. גדלים זרים, כמויות לא תקינות וגרסאות ישנות נדחים ללא שינוי חלקי. פרסו API זה לפני ממשק הפריטים. אין שינוי סכימה או משתני סביבה."
+        }
+      },
+      {
+        "id": "staff-activation-pos-code",
+        "title": {
+          "en": "POS code at staff activation",
+          "fr": "Code caisse à l’activation du personnel",
+          "he": "קוד קופה בהפעלת חשבון עובד"
+        },
+        "instructions": {
+          "en": "validate-invite returns pos_pin_required from the current scoped membership permissions (orders.manage or payments.manage), never the global or legacy role label. setup-account independently rechecks scope, role and permission requirements. Non-POS staff ignore a stale client PIN without writing one. Password, optional PIN, one-time invite consumption and JWT generation are atomic; failures preserve the existing invitation and credentials. Used, expired, ambiguous legacy and revoked links remain blocked with allowlisted error codes; unexpected persistence errors expose no SQL or tokens. No migration or environment change is needed. Deploy API before Admin; already emailed unused links require no data repair or resend.",
+          "fr": "validate-invite renvoie pos_pin_required selon les permissions actuelles de l’affectation au restaurant (orders.manage ou payments.manage), sans se fonder sur le rôle global ou son ancien libellé. setup-account revérifie indépendamment le périmètre, le rôle et l’obligation du code. Un PIN envoyé par un ancien client pour un membre sans droits caisse est ignoré sans écriture. Mot de passe, PIN éventuel, consommation du lien unique et génération du JWT sont atomiques ; un échec préserve l’invitation et les identifiants existants. Les liens utilisés, expirés, anciens et ambigus ou révoqués restent bloqués par des codes d’erreur autorisés ; les erreurs de persistance inattendues n’exposent ni SQL ni jeton. Aucune migration ni variable d’environnement. Déployer l’API avant l’Admin ; un lien e-mail encore inutilisé ne nécessite aucune réparation de données ni renvoi.",
+          "he": "validate-invite מחזיר pos_pin_required לפי הרשאות השיוך העדכניות למסעדה (orders.manage או payments.manage), ללא הסתמכות על תפקיד גלובלי או שם תפקיד ישן. setup-account בודק באופן עצמאי את המסעדה, התפקיד ודרישת הקוד. קוד שנשלח מלקוח ישן עבור עובד ללא הרשאות קופה אינו נשמר. הסיסמה, הקוד לפי הצורך, ניצול הקישור החד־פעמי והפקת JWT אטומיים; כשל משמר את ההזמנה ואת פרטי ההתחברות הקיימים. קישורים משומשים, שפג תוקפם, ישנים ועמומים או מבוטלים נשארים חסומים עם קודי שגיאה מאושרים; שגיאות שמירה בלתי צפויות אינן חושפות SQL או אסימונים. אין צורך במיגרציה או בשינוי סביבה. פורסים API לפני Admin; קישורי דוא״ל שלא נוצלו אינם דורשים תיקון נתונים או שליחה מחדש."
         }
       }
     ],

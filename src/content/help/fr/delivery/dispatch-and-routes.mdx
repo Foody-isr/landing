@@ -97,3 +97,9 @@ Dans Commandes → Livraisons, choisissez la date puis Rappels WhatsApp pour exa
 ## Utiliser la destination enregistrée du livreur
 
 Personnel → employé → Modifier les coordonnées permet d’enregistrer la destination finale par défaut du livreur, avec l’option d’utiliser son domicile actuel. La planification la propose pour une nouvelle tournée et l’API l’applique aussi si le client ne transmet aucune modification. Une destination saisie pour la tournée, même explicitement vide, reste prioritaire. Modifier l’adresse de départ conserve la destination finale proposée. Les tournées contenant déjà des livraisons gardent leurs réglages lors d’une modification de la fiche ; une tournée vide du livreur reprend la dernière valeur par défaut lors de sa première planification. Les règles de validation et de recalcul des points s’appliquent toujours. Modifier la fiche ne démarre ni ne recalcule une tournée existante.
+
+<span id="staff-activation-pos-code" />
+
+## Code caisse à l’activation du personnel
+
+L’activation du personnel vérifie les permissions affectées dans ce restaurant, y compris les rôles personnalisés : orders.manage ou payments.manage impose un code caisse personnel. Les livreurs en consultation et les rôles limités à la cuisine n’en ont pas besoin. Les invitations existantes encore inutilisées appliquent la même règle actuelle. Modifier le nom du rôle, l’adresse du livreur ou la destination d’une tournée n’accorde aucun droit caisse. Voir [l’activation et la reprise](/fr/help/getting-started/first-login#activate).

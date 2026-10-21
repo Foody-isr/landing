@@ -97,3 +97,9 @@ In Orders → Deliveries, select a date and open WhatsApp reminders to review pe
 ## Use the courier’s saved final destination
 
 Staff → employee → Edit contact details stores the courier’s default final destination, with an option to use the current home address. The planning drawer pre-fills it for a new route, and the API also applies it if a client omits an override. An explicit route destination, including an explicitly empty field, takes precedence. Editing the departure address retains the proposed final destination. Existing routes with deliveries retain their saved settings when a profile changes; empty courier placeholders use the latest default when first planned. Route endpoint validation and recalculation rules still apply. No staff profile edit starts or recalculates an existing route.
+
+<span id="staff-activation-pos-code" />
+
+## POS code at staff activation
+
+Staff activation checks the permissions assigned in this restaurant, including custom roles: orders.manage or payments.manage requires a private POS code. Read-only couriers and kitchen-only roles do not need one. Existing unused invitation links apply the same current rule. Changing a role label, courier address or route destination does not grant POS permissions. See [activation and recovery](/en/help/getting-started/first-login#activate).
