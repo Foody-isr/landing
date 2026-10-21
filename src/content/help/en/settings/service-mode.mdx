@@ -1,56 +1,35 @@
 ---
-title: "Service Mode: Table vs Counter"
-description: "Choose between Table Mode (floor plan with table assignments) and Counter Mode (no tables, pickup-style service)."
+title: Service modes and device profiles
+description: 'Choose between Table Mode (floor plan with table assignments) and Counter Mode (no tables, pickup-style service).'
 apps: both
-tags: [settings, service-mode, table-mode, counter-mode, workflow]
-updatedAt: 2026-03-30
+tags:
+  - settings
+  - pos-service-modes
+  - service-mode
+  - table-mode
+  - counter-mode
+  - workflow
+updatedAt: '2026-10-18'
+featureId: pos-service-modes
+audience: public
+releaseStatus: available
 ---
+Admin → Settings → Devices → Modes
 
-## What Is the Service Mode?
+<span id="mode" />
 
-The **Service Mode** tells Foody how your restaurant operates at the point of sale. It affects how orders are created in FoodyPOS and how staff interact with the system during service.
+## Choose a mode profile
 
-You set this in **FoodyAdmin → Restaurant → Workflow Settings** (or **Orders → Settings**).
+Review the available mode profiles and select the one intended for the POS device. Check enabled modules and the device assignment before use.
 
----
+<span id="service" />
 
-## Table Mode
+## Configure table and counter behavior
 
-**Best for:** full-service restaurants with a dining room and assigned tables.
+Review seating, covers, service courses, kitchen sending and return-to-menu behavior in the corresponding POS settings. Save and verify on the intended device.
 
-- Orders are tied to a table number from your floor plan.
-- Staff tap a table on the floor plan to open or resume an order.
-- The table stays "occupied" until the bill is closed and paid.
-- Multiple orders can be open simultaneously across different tables.
-- Supports QR dine-in (customers scan their table's QR code to order directly).
+<span id="fulfillment" />
 
-**Requires:** at least one floor plan with tables configured in **Restaurant → Floor Plans**.
+## Keep fulfillment independent
 
----
-
-## Counter Mode
-
-**Best for:** cafes, quick-service restaurants, bakeries, food trucks, anywhere there are no assigned tables.
-
-- Orders are created directly without a table assignment.
-- Staff use the **POS** tab to start a new order and select **Pickup** or **Delivery**.
-- Orders are identified by a counter number or customer name instead of a table.
-- Faster for high-throughput service.
-
----
-
-## Switching Between Modes
-
-1. In FoodyAdmin, go to **Restaurant → Workflow Settings**.
-2. Under **Service Mode**, select **Table** or **Counter**.
-3. Click **Save**.
-
-The change takes effect immediately on FoodyPOS when the app refreshes (or on next login).
-
-> **Note:** Switching from Table Mode to Counter Mode does not delete your floor plans; they are just not used while in Counter Mode.
-
----
-
-## Can I Use Both?
-
-No. Only one service mode is active at a time. However, you can still accept **pickup** and **delivery** orders regardless of which mode is active. These order types are separate from the table/counter distinction.
+Pickup/delivery choices and prompts are configured separately from the table layout. Check item-level dining options and order-level fulfillment without assuming one replaces the other.

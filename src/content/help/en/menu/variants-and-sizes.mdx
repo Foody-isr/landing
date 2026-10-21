@@ -1,132 +1,87 @@
 ---
-title: "Variants & Sizes"
-description: "Set up size or flavor variants on a menu item, with per-variant price, portion, and stock status."
+title: Variants & Sizes
+description: 'Set up size or flavor variants on a menu item, with per-variant price, portion, and stock status.'
 apps: foodyadmin
-tags: [menu, variants, sizes, options, portions]
-updatedAt: 2026-04-16
+tags:
+  - menu
+  - menu-variants-and-sizes
+  - variants
+  - sizes
+  - options
+  - portions
+updatedAt: '2026-10-21'
+featureId: menu-variants-and-sizes
+audience: public
+releaseStatus: available
 ---
+Open an item and use Price and variants in its editor.
 
-## What Variants Are
+<span id="section-1" />
 
-A **variant** is a version of the same item sold at a distinct price. Common cases:
+<span id="section-3" />
 
-* Sizes: Small / Medium / Large.
-* Styles: Classic / Spicy.
-* Bowls: 250 ml / 500 ml.
-* Meat choices: Chicken / Beef.
+<span id="section-5" />
 
-Variants live on the item. When a customer orders, they pick exactly one per variant group.
+<span id="section-6" />
 
-> One item can have multiple variant groups (e.g. "Size" + "Sauce"), but this is rarely needed. For customer-selectable extras, use [Modifiers](./modifiers) instead.
+## Understand price and portion
 
----
+A variant describes a size or version of an item. Its price is an absolute amount replacing the base price; modifiers are additional amounts. Portion describes serving size. Ingredient quantities are entered separately under Recipe and cost, per serving or variant.
 
-## Creating a Variant Group
+<span id="section-2" />
 
-1. Open the item in `Menu → Items`.
-2. In the Détails tab, scroll to the **Variantes** section.
-3. Click **Ajouter** (or **Modifier** if one already exists).
+<span id="section-4" />
 
-![Variants editor, empty](/assets/img/screenshots/menu/variants-modal-empty.png)
+## Add and save variants
 
-4. Give the group a name (e.g. "Taille", "Size", "Flavor"). This is internal-ish — customers see the rows, not the group name.
-5. Add one row per variant. Each row has:
-   * **Name** — shown to the customer ("Normal", "Grand", "250 g").
-   * **Price** — replaces the item's base price when this variant is selected.
-   * **Portion** — size of the serving (with unit: g, ml, kg, l, unit).
-   * **Status** — Available / Out of stock.
+Open the item from Items & menus → Item library and scroll to Price and variants. Edit groups and rows directly in this section. Add a set if needed, enter its title and use Add variant for each size. Fill Name, Price, Portion and Status, then Save in the item header. Do not look for the old Details tab or a Done button to commit all variants.
 
-![Variants editor filled](/assets/img/screenshots/menu/variants-modal-filled.png)
+<span id="section-7" />
 
-6. Click **Terminé**.
+<span id="section-9" />
 
----
+## Availability, order and combo-only rows
 
-## Understanding Each Field
+Status offers Available and Unavailable. Arrows reorder rows; the bin removes a row and Remove detaches the group from the item. Combo-only marks rows not sold on their own. Check order and prices before Save. Past orders retain their own sale snapshots.
 
-### Name
+<span id="section-8" />
 
-The label the customer picks. Keep it short and natural ("Normal", "Grand", "Petit", "XL").
+## Reuse a saved option set
 
-### Price
+Click Saved option sets on the relevant group, search and select a set in the picker. Typing a matching group title alone does not apply a set. Review imported rows, prices, portions and status, then save the item. Check other affected items before changing a shared library.
 
-Absolute price — not a delta. Typing `70` for Normal and `140` for Grand makes the item cost exactly that per variant, regardless of the item's base price.
+<span id="section-10" />
 
-### Portion
+<span id="section-11" />
 
-Two related jobs:
+<span id="section-12" />
 
-1. **What customers see** on the web menu: "Grand 500 g" under the variant label.
-2. **Recipe scaling** on the Recette tab: ingredients scoped as "Match item size" use the variant's portion as the consumed quantity. See [Ingredients & Portions](./ingredients-and-portions).
+<span id="section-13" />
 
-Pick a unit family consistent with your recipe:
+## Connect sizes to the recipe
 
-* Soup: ml.
-* Hamburger: unit.
-* Plate: g.
+Under Recipe and cost, enable different quantities per size and fill the variant columns. Example: 200 g meat for Regular and 400 g for Large, with Same quantity for an identical bun. For soup, explicitly enter 250 ml and 500 ml in the columns; Portion text alone does not supply those quantities. Check missing-quantity warnings.
 
-### Status
+<span id="section-14" />
 
-Toggle to Out of stock when you're sold out for the day. The variant grays out on POS / web without deleting it. Flip back to Available when restocked.
+## Check after saving
 
----
+Reopen the item to check saved rows, then inspect the enabled POS or web channel. If saving fails, retain the input and retry before closing. [Create an item](./creating-a-menu-item) · [Recipe quantities](./ingredients-and-portions).
 
-## Reusing a Variant Group Across Items
+<span id="carte-series-stock" />
 
-Variant groups in Foody are backed by **Option Sets** — a reusable pool. When you type a name that matches an existing Option Set, you get a suggestion to apply it.
+## Track size stock by series
 
-![Existing option set suggestion](/assets/img/screenshots/menu/variants-option-set-reuse.png)
+Carte membership, groups, order, channels and hours now use a private draft: Save draft, Preview, then explicit Publish. Shared product details remain in the item library. On a publication-managed carte, choose item membership from the carte draft instead of the product group picker. Initial quantities for a rotating series are prepared separately from live recipe/ingredient stock. See [Menus and groups](/en/help/menu/menus-and-groups) and [Availability](/en/help/kitchen/availability) for preparation, history and recovery.
 
-Applying an existing group attaches its rows to this item. You can then override per-item:
+<span id="related-service-controls" />
 
-* Price (different price for this item).
-* Portion.
-* Status.
+## Access the new controls
 
-Updating the **name** of a row on the Option Set level propagates everywhere. Useful for "Size" groups shared across many burgers.
+Carte availability is now directly clickable beneath an item name. When the sale allowance is exhausted, enter the remaining quantity; committed orders are preserved. Review [the availability procedure](/en/help/menu/menus-and-groups#contextual-availability) before changing sale stock.
 
----
+<span id="library-availability" />
 
-## Removing or Hiding a Variant
+## Change availability from Items
 
-* **Hide temporarily** (keeping history intact): flip Status → Out of stock. Recommended for seasonal or sold-out items.
-* **Delete**: trash icon on the row. Deletes the variant from this item; if it's on an Option Set used elsewhere, it stays there.
-
-Deleting a variant that has order history doesn't touch the past orders — they still show the variant name and price as sold.
-
----
-
-## Examples
-
-### Burger sizes
-
-| Variant | Price | Portion |
-|---|---|---|
-| Normal | ₪70 | 1 unit |
-| Grand | ₪140 | 2 unit |
-
-On the Recette tab, flag the beef ingredient as "Custom per variant" with 200 g for Normal, 400 g for Grand. Bread / sauce stay Fixed.
-
-### Soup bowls
-
-| Variant | Price | Portion |
-|---|---|---|
-| Bowl | ₪18 | 250 ml |
-| Large bowl | ₪32 | 500 ml |
-
-On the Recette tab, the soup prep ingredient is scoped as "Match item size". No quantity to type; the system draws 250 ml or 500 ml automatically.
-
-### Drink sizes
-
-| Variant | Price | Portion |
-|---|---|---|
-| Small | ₪12 | 330 ml |
-| Medium | ₪16 | 500 ml |
-| Large | ₪22 | 750 ml |
-
----
-
-## What Next
-
-* [How to Configure Ingredients & Portions](./ingredients-and-portions) — hook variants into your recipe and cost.
-* [Creating a Menu Item](./creating-a-menu-item) — full item walkthrough.
+The Items library Availability column also opens the small panel shared with Cartes. Choose a status or remaining stock and Apply; simply opening it changes nothing. The current series is displayed when applicable. See [Categories and items](/en/help/menu/categories-and-items#library-availability) for choices, per-size quantities, cancellation and error recovery. Full item settings retain their own Save action.

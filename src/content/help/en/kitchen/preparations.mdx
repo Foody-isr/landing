@@ -1,16 +1,35 @@
 ---
-title: "Preparations"
-description: "Sub-recipes you make in batches (sauces, doughs, marinades) and use across many dishes. Producing a batch credits stock; dishes that use it recover availability automatically."
+title: Preparations
+description: >-
+  Sub-recipes you make in batches (sauces, doughs, marinades) and use across many dishes. Producing a batch credits
+  stock; dishes that use it recover availability automatically.
 apps: foodyadmin
-tags: [kitchen, preparations, prep, sub-recipe, batch, yield, stock, availability]
-updatedAt: 2026-05-24
+tags:
+  - kitchen
+  - kitchen-preparations
+  - preparations
+  - prep
+  - sub-recipe
+  - batch
+  - yield
+  - stock
+  - availability
+updatedAt: '2026-10-21'
+featureId: kitchen-preparations
+audience: public
+releaseStatus: available
 ---
+Open the corresponding Foody workspace described below.
+
+<span id="section-1" />
 
 ## What Is It?
 
 A **Preparation** is a sub-recipe you make ahead in batches — a sauce, a dough, a
 marinade, a stock — and then use inside several dishes. Instead of listing raw
 ingredients on every dish, you point dishes at the preparation.
+
+<span id="section-2" />
 
 ### How It Works (Simply)
 
@@ -19,14 +38,14 @@ ingredients on every dish, you point dishes at the preparation.
    batch produces).
 2. **Produce a batch** when you make it. Foody deducts the raw ingredients from **Stock**
    and credits the produced quantity to the preparation.
-3. **Use it in dishes**: on a dish's **Recipe** tab, add the preparation as an ingredient
+3. **Use it in dishes**: on a dish's **Recipe and cost** section, add the preparation as an ingredient
    with the quantity one portion needs.
 
 Because dishes consume the preparation, its current quantity feeds straight into
 [Availability](/en/help/kitchen/availability): when a prep hits 0, dishes that use it go
 sold out — and the moment you produce a new batch, they come back.
 
-![A preparation with its recipe and yield](/assets/img/screenshots/kitchen/prep-editor.png)
+<span id="section-3" />
 
 ## Why use them
 
@@ -35,8 +54,16 @@ sold out — and the moment you produce a new batch, they come back.
   flows into each dish.
 - **Real availability** — "we're out of the green sauce" automatically 86's the right dishes.
 
+<span id="section-4" />
+
 ## Example
 
 A tahini sauce yields 2 L per batch and costs ₪18 to make. Five dishes use 50 ml each.
 After producing one batch you can build ~40 portions; when it drops near zero those dishes
-show **low stock**, then **sold out** — until you produce another batch.
+show **low stock**, then **sold out** — until you produce another batch. For an item tracked by a shared counter whose rule shows the remaining count, the cart accounts for available quantity even above the low-stock threshold. That threshold controls the warning, not the cart cap. See [Availability](/en/help/kitchen/availability) to check the rule and manual overrides.
+
+<span id="carte-series-stock" />
+
+## Keep preparation stock separate from sale allowances
+
+Predefined item stocks now have a journal under Items & menus → Stock history and on each product. A rotating carte can prepare initial allowances per series and publish them without restoring already committed units. Previous remaining counts are not carried forward. Order changes and pre-production releases use the original frozen pool; a produced item remains consumed. Ingredient/preparation quantities and recipe costs remain separate. See [Availability](/en/help/kitchen/availability) for initial imports, corrections and history filters.

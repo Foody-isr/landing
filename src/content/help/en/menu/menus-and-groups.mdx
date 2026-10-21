@@ -1,10 +1,29 @@
 ---
-title: "Menus, cartes & groups (what customers see)"
-description: "How items, categories, menus (cartes) and groups differ, how to control what shows online vs on the POS, and the availability hours for each."
+title: Menus and groups (what customers see)
+description: >-
+  How items, categories, menus (cartes) and groups differ, how to control what shows online vs on the POS, and the
+  availability hours for each.
 apps: foodyadmin
-tags: [menu, carte, groups, categories, items, channels, online, pos, hours, web]
-updatedAt: 2026-05-24
+tags:
+  - menu
+  - menu-menus-and-groups
+  - carte
+  - groups
+  - categories
+  - items
+  - channels
+  - online
+  - pos
+  - hours
+  - web
+updatedAt: '2026-10-21'
+featureId: menu-menus-and-groups
+audience: public
+releaseStatus: available
 ---
+Items & menus → Menus: open a menu, then create or edit its groups.
+
+<span id="section-1" />
 
 ## What Is It?
 
@@ -18,6 +37,8 @@ catalogue works for any business.
 
 > **The rule that trips everyone up:** an item must be placed in a **group** to appear to
 > customers. Being in a category is *not* enough — categories are internal only.
+
+<span id="section-2" />
 
 ## The structure
 
@@ -33,15 +54,13 @@ Menu / carte    ("Lunch")
 A group like "Lunch specials" can pull items from several categories. The same item can appear
 in several groups and menus.
 
-## Manage your menus
+<span id="section-3" />
 
-In **Menu → Cartes**:
+## Prepare, save and publish a carte
 
-- Create a menu (carte) and give it groups.
-- Drag items into groups (an item can be in many).
-- Reorder groups and items.
+Open Items & menus → Menus and select the carte. For a rotating carte, choose its series in the header. Add lets you choose items for a group or create a group; Add menu group is also available below the list. A group’s chevron collapses or expands its table without changing the carte. Its “…” menu contains Edit group and Choose items. The “…” menu beside the carte title contains Carte settings and Preview. Group, channel and hours edits stay local. Once edits or a saved draft exist, the bottom bar offers Save draft and Publish. Save stores a private draft; Preview opens a private list that cannot take orders. Publish asks for confirmation and applies the carte and prepared stocks together. Saving alone never changes the live website or POS. Edit POS layout opens the separate tile editor; unsaved changes are guarded before navigating there.
 
-→ [Categories & items](/en/help/menu/categories-and-items) · [Creating a menu item](/en/help/menu/creating-a-menu-item)
+<span id="section-4" />
 
 ## Where it sells: online vs POS
 
@@ -53,22 +72,57 @@ Each menu and group has **channel** switches:
 So you can run, say, a "Dinner" menu that's web-only, or hide a group from guests but keep it
 on the POS. Turn a group off for one channel and it simply doesn't appear there.
 
+<span id="section-5" />
+
 ## When it sells: availability hours
 
 A menu (and each group) can **follow your opening hours** or use **custom hours** — e.g. a
 "Breakfast" group that only shows 07:00–11:00. Outside its hours, customers don't see it.
 
+<span id="section-6" />
+
 ## How this connects to availability
 
-Channels and hours decide **whether** a group is shown at all. On top of that,
-[Availability](/en/help/kitchen/availability) decides, per dish, whether it's **sold out or low**
-from its recipe and stock. Both apply: a dish shows to customers only when its group is on
-*and* it can still be made.
+Channels and hours determine whether a group can be shown. Item availability can then make it orderable, sold out or hidden, depending on its rule and manual status. A sold-out item may remain visible with a badge; membership in a group does not guarantee it is orderable. [Availability](../kitchen/availability).
 
-## Quick start
+<span id="section-7" />
 
-1. Create your items → [Creating a menu item](/en/help/menu/creating-a-menu-item).
-2. Create a menu (carte) and add groups.
-3. Drag items into the right groups.
-4. Set each menu/group's **channels** (web / POS) and **hours**.
-5. Open the guest site or POS — your menu is live.
+## Check the publication
+
+Create and save the shared library items first. Add them to the carte draft, check the selected series, web/POS channels, hours and group hiding, then preview and publish. The current series stays unchanged while preparing a future series. A future series without a publication is not served once carte publication is activated. Product names, prices, recipes and active status remain shared library edits; availability switches marked immediate apply immediately and are journaled.
+
+<span id="draft-leave-and-conflict" />
+
+## Leave safely and resolve a conflict
+
+If you leave or change series with unsaved edits, choose Save draft and leave, Discard, or Continue editing. Discard in this dialog drops unsaved edits only; a previously saved draft remains. Discard draft on the carte removes the saved draft after confirmation and keeps the published carte live. If saving or publishing fails, stay in the editor and review the error. Your edits remain available. A stale revision, changed stock setting, invalid quantity or allowance below existing commitments prevents publication. Reload saved draft explicitly to recover the latest server version; it discards unsaved local edits.
+
+<span id="series-sale-stock" />
+
+## Prepare stock for a new series
+
+With menu editing permission, open the rotating carte, select a series and open the “…” menu beside the title → Prepare stocks for this series. Enter INITIAL allowances including quantities already ordered: available = initial minus committed. Use shared units, compatible base measures (g/ml), counts per size, or no predefined limit. Copy previous initial quantities copies allowances, never previous remaining quantities or an old sold-out override. Quantities are shared by the same restaurant item across cartes for that series. Save draft keeps preparation private; Publish applies it atomically without restoring reservations made while editing. The first activation imports current available stock and existing scheduled orders, preserving current remaining quantities. Later series never inherit the old global counter. No predefined limit may still be constrained by a recipe, rule or manual status.
+
+<span id="table-actions" />
+
+## Use the table and item actions
+
+With menu editing permission, select one or more items in a group. The selection bar lets you move them to another group or remove them from this group. A row’s “…” menu also offers Move up, Move down and Remove from group. Dragging reorders rows and groups. These actions edit the draft without deleting shared library items. An item name opens its shared item editor; Select under Modifiers also opens the shared editor; use its Personalizations section to change them. Returning from the editor brings you back to the carte. Leaving unsaved changes offers save, discard or continue editing. Columns show the location, configured channels, modifiers and price; an Availability column reuses the Articles page badges, with remaining stock below each badge. Configured channels do not guarantee ordering: hours, active status and availability still apply. On mobile, secondary columns are hidden while name, stock, price and the “…” menu remain accessible.
+
+<span id="contextual-availability" />
+
+## Change availability and read history
+
+Click a badge in the carte Availability column to open a small panel beside the item. Opening it and changing choices do not write anything. Choose Available without a limit, Unavailable, Predefined stock or Automatic (existing rules), then Apply. The row’s ellipsis → Change availability opens the same panel. For a series, Predefined stock accepts the REMAINING quantity, in units, base g/ml or per size according to tracking. Committed orders stay reserved; do not add them to the entered quantity. At least one positive quantity is required; choose Unavailable for a completely exhausted stock. A blank size keeps an unlimited allowance. A tracking mode already committed by orders cannot be changed in this panel. Apply takes effect immediately on the series and is journaled independently of the carte draft. Unlimited availability is a manual override that bypasses the cap; Automatic reuses current stock and rules. On error, the panel keeps choices and quantities: Reload stock, check the values and apply again. Cancel, Escape or clicking outside closes without saving. Wait for the response while saving. The panel stays within mobile and Hebrew viewports. Stock history remains accessible on the row and in its menu; the complete journal remains under Stock history.
+
+<span id="sale-stock-history-page" />
+
+## View the stock history journal
+
+Open Items & menus → Stock history. This page contains only the movement journal, visible as soon as it opens: it does not list current stock or offer corrections. Choose an Item or All Items, a Series date or All series, and a Movement or All movements. Past series dates are accepted. Filters combine and remain applied when using Show more. The journal shows the date and series, item, movement, before/after quantities and actor; a link opens the associated order when present. An empty result means no movements were recorded for those filters. Initial imports are labeled as imports; changes before tracking was activated cannot be reconstructed. If the item filter fails, Retry reloads that filter while the journal remains available. On a product, Full stock history opens this journal filtered to the item; Stock history opens its dialog. On a carte, the row History shortcut or its “…” menu also opens that dialog. To prepare or adjust initial series quantities, open the carte, choose the series, then Prepare stocks for this series, save the draft and publish after reviewing it. Availability actions marked immediate remain separate and journaled. A pre-production cancellation credits the original pool; a produced item remains consumed. If the journal fails to load, Retry reloads movements without changing filters; this error is not presented as an empty history.
+
+<span id="library-availability" />
+
+## Change availability from Items
+
+The Items library Availability column also opens the small panel shared with Cartes. Choose a status or remaining stock and Apply; simply opening it changes nothing. The current series is displayed when applicable. See [Categories and items](/en/help/menu/categories-and-items#library-availability) for choices, per-size quantities, cancellation and error recovery. Full item settings retain their own Save action.

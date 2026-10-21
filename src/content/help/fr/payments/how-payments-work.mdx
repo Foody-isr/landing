@@ -1,0 +1,95 @@
+---
+title: Comprendre le statut d’un paiement
+description: Vérifier les paiements confirmés et traiter un résultat incertain.
+apps: both
+tags:
+  - payments
+  - payments-how-payments-work
+  - how-payments-work
+updatedAt: '2026-10-21'
+featureId: payments-how-payments-work
+audience: public
+releaseStatus: available
+---
+Ouvrez l’espace Foody correspondant décrit ci-dessous.
+
+<span id="verifone-admin-refund-void" />
+
+## Rembourser ou annuler un paiement en ligne Verifone
+
+Dans Admin → Commandes, ouvrez la commande puis sa section paiement. Un propriétaire ou responsable avec payments.manage peut utiliser Rembourser ou annuler le paiement pour une vente en ligne Verifone unique en ILS ou une capture confirmée. Les tables/sessions, paiements mixtes, encaissements partiels, paiements par terminal externe et acomptes traiteur ne sont pas pris en charge par ce contrôle. Une préautorisation non encaissée conserve son parcours existant d’annulation/libération.
+
+Contrôlez le Montant remboursable, puis choisissez Rembourser le paiement. Gardez Tout le montant restant ou choisissez Montant partiel et saisissez le montant exact. Indiquez un motif de 3 à 300 caractères, vérifiez le montant dans la confirmation puis envoyez une seule fois. Les remboursements liés approuvés et visibles dans l’historique Verifone réduisent le plafond, y compris ceux effectués dans Central ; un historique incomplet ou non vérifié bloque l’opération. La consultation bornée couvre les transactions créées depuis moins de deux ans.
+
+Une vente ABS capturée encore en AUTHORISED/AUTHORIZED ou SETTLEMENT_REQUESTED n’est pas réglée : Admin affiche Montant annulable et uniquement Annuler tout le paiement, sans remboursement antérieur. Rembourser le paiement et Montant remboursable exigent un état réglé explicite ou un historique de remboursement partiel vérifié. Les états génériques APPROVED/COMPLETED, les contradictions et les preuves manquantes ne proposent aucune opération. Un changement d’état avant confirmation refuse l’action devenue obsolète ; le VOID n’est jamais remplacé automatiquement par un REFUND. Demande rejetée par Verifone signifie qu’aucune restitution n’est confirmée, pas nécessairement un refus de la banque. Le VOID porte sur tout le paiement, jamais sur un montant partiel. L’admissibilité dépend de l’état fournisseur et des règles commerçant/acquéreur, pas de minuit ni de 24 heures fixes. Verifone confirme l’acceptation finale.
+
+Consultez Opérations de paiement pour le montant, motif, date, compte de l’opérateur et identifiant fournisseur. Confirmé par Verifone exige une lecture indépendante concordante : transaction parente, montant, devise, référence et commerçant. Un remboursement partiel conserve le paiement payé ; une restitution totale confirmée marque le paiement remboursé. Aucune action ne modifie le statut de préparation, les articles, le stock ou la remise.
+
+Si le résultat est inconnu ou si le navigateur perd la réponse, ne renvoyez pas de remboursement et ne passez pas au VOID. Vérifier auprès de Verifone contrôle uniquement les opérations existantes. Sans identifiant fournisseur récupérable, la demande reste bloquée pour vérification par le support/Central, même après rechargement ou redémarrage de l’API. Un simple succès HTTP ne prouve pas le remboursement. Vérifiez séparément l’avoir ou document d’annulation Invoice4U ; ce contrôle ne crée ni ne confirme un avoir fiscal. FoodyPOS dispose d’un parcours Transactions distinct pour le paiement Checkout initial vérifié par le serveur ; ces instructions Admin ne couvrent pas les remboursements par terminal POS.
+
+Après une restitution totale vérifiée dans l’historique lié de Verifone, le bilan conserve le montant initial, affiche le montant intégral restitué et un solde restant nul, sans proposer de nouveau remboursement ni VOID. Un solde capturé remis à zéro après cette restitution n’est pas une préautorisation à libérer. Une preuve manquante ou incohérente exige toujours une vérification, sans renvoyer l’opération.
+
+<span id="pos-checkout-original-payment-refunds" />
+
+## Rembourser un paiement en ligne listé sur la caisse vers son moyen initial
+
+Dans Transactions sur la caisse, choisissez un paiement Verifone Checkout confirmé. Demandez une restitution seulement si le serveur vérifie l'identifiant du paiement initial, le commerçant, l'état fournisseur et le montant disponible. La transaction choisie doit correspondre au paiement de la commande ; partager une commande ne permet pas de restituer un autre débit. Un paiement réglé peut être remboursé vers la même carte, tandis qu'un paiement encaissé mais non réglé admissible peut être annulé entièrement. Indiquez un motif et confirmez une seule fois. Si le résultat est inconnu, vérifiez l'opération existante au lieu de la renvoyer. Cela ne rembourse pas une carte sur terminal Victa et ne transforme pas un paiement par carte en restitution en espèces.
+
+<span id="verifone-readable-hosted-theme" />
+
+## Garder la page de paiement lisible
+
+Lorsque Foody active un thème Verifone personnalisé, la page de paiement hébergée utilise des fonds clairs et des textes foncés, même si le site du restaurant est sombre. Le logo publié est conservé et la couleur de marque ou du bouton est adaptée si nécessaire pour rester lisible. Cela concerne les paiements en ligne hébergés, pas les terminaux en caisse ni les fenêtres natives Apple Pay ou Google Pay. Si une ancienne page est illisible, contactez l’équipe Foody pour resynchroniser son thème de paiement. La mise à jour concerne les nouveaux liens Checkout, pas la page déjà ouverte. Vérifiez le statut du paiement avant de demander un autre lien ; ne répétez jamais un débit pour un problème d’affichage.
+
+<span id="weight-hold-margin" />
+
+## Vérifier le plafond de préautorisation au poids
+
+Pour les commandes en ligne au poids, ouvrez Réglages → Paiements & TVA avec settings.edit. Saisissez Marge d’empreinte au poids % de 0 à 100 puis enregistrez ; la valeur par défaut des nouveaux restaurants est 20. Un échec conserve la saisie. À 0 %, le montant estimé reste préautorisé. Seul le sous-total au poids reçoit une marge : 100 au poids + 50 fixes à 20 % donnent 170 préautorisés ; aucune marge sur la livraison. Le checkout affiche estimation, plafond temporaire et Confirmer et préautoriser, dans le thème du restaurant. Un plafond modifié exige une nouvelle revue et confirmation avant paiement ; une politique inconnue bloque l’autorisation. Les commandes déjà revues et empreintes existantes gardent leur plafond. Le personnel confirme les poids mesurés avant capture et progression ; un dépassement est signalé pour un paiement complémentaire, jamais débité automatiquement. Espèces/paiement ultérieur n’annoncent pas d’empreinte. Un prestataire autorisation/capture configuré est nécessaire ; validez capture partielle, libération et expiration avant production. Ce réglage ne change ni acompte/solde traiteur ni la restriction de sauvegarde d’une nouvelle carte pour une empreinte CST au poids.
+
+<span id="section-1" />
+
+## Configuration
+
+Le prestataire est configuré pour chaque restaurant par l’équipe Foody depuis le backoffice. Les moyens disponibles dépendent de cette configuration, du contrat commerçant et du canal de commande. Sumit et Verifone sont intégrés ; leur disponibilité doit être confirmée pour votre installation. Les nouveaux paiements PayPlus sont désactivés.
+
+<span id="section-2" />
+
+## Vérifier un paiement en ligne
+
+1. Ouvrez la commande dans **Commandes**.
+2. Consultez son statut de paiement et le moyen enregistré.
+3. Le retour d’une page de paiement ne prouve pas à lui seul l’encaissement. Foody vérifie le paiement auprès du prestataire avant de le marquer payé.
+4. Pour une commande en ligne nécessitant un paiement, sa confirmation permet son entrée dans le flux POS.
+
+<span id="section-3" />
+
+## Résultat en échec ou incertain
+
+Un délai dépassé ne signifie pas nécessairement qu’aucune somme n’a été débitée. Vérifiez la commande et la transaction du prestataire avant de relancer un débit. Contactez Foody si les informations divergent ou restent incertaines. Ne transmettez jamais de numéro de carte complet, de CVV ou d’identifiant secret.
+
+L’enregistrement manuel ou en espèces, les reçus, l’émission de factures et les remboursements sont des opérations distinctes. Les contrôles disponibles dépendent de votre installation et de vos permissions. Ne marquez pas un paiement carte comme réussi sur la seule base d’une page de retour. Demandez au support la procédure adaptée à votre prestataire avant un remboursement ou une correction.
+
+<span id="verifone-cst-card-saving" />
+
+## Enregistrer une carte pendant le premier paiement (CST)
+
+Sur la configuration CST de test validée avec Verifone, connectez-vous ou créez votre compte client Foody, sélectionnez explicitement Enregistrer la carte puis confirmez la commande. La page sécurisée Verifone recueille la carte, le CVV et la TZ et encaisse le montant total tout en créant le token réutilisable. Aucun paiement séparé de 1 ₪ ni prélèvement mensuel automatique. Foody ouvre la confirmation après vérification de la transaction. Pour une commande suivante, sélectionnez la carte enregistrée et confirmez le nouveau montant ; le contrat No-CVV configuré ne demande ni CVV ni TZ. En cas de délai, vérifiez le statut sans relancer le débit. Les anciens liens d’enregistrement conservent leur procédure de reprise. Les préautorisations au poids restent hors de ce nouveau parcours d’enregistrement. La disponibilité en production nécessite une validation commerçant distincte.
+
+<span id="invoice4u-order-lines" />
+
+## Vérifier une facture Invoice4U détaillée
+
+Lorsque l’équipe Foody a activé Invoice4U et un type de facture pour le commerçant, les paiements immédiats des commandes Verifone transmettent les lignes enregistrées : articles et quantités, variantes/options sélectionnées, base de formule et composants inclus, remise et livraison. Les prix enregistrés sont déjà TTC ; la TVA n’est pas ajoutée à nouveau. Le total des lignes doit égaler le paiement, sinon son lancement est bloqué. Le même détail accompagne un paiement ultérieur par carte enregistrée. Les anciennes commandes sans lignes catalogue et les opérations traiteur/table/capture conservent leur comportement documentaire existant. Un paiement approuvé ne prouve pas l’émission fiscale : vérifiez le document dans Verifone Central/Invoice4U et sa réception par le client. Ne recréez pas un paiement pour obtenir une facture manquante.
+
+<span id="carte-series-stock" />
+
+## Réservations après paiement tardif
+
+Les stocks prédéfinis des articles disposent d’un journal dans Articles et cartes → Historique des stocks et sur chaque produit. Une carte tournante permet de préparer des quotas initiaux par série et de les publier sans recréditer les quantités engagées. Les reliquats précédents ne sont pas reportés. Les modifications de commande et libérations avant production utilisent le compteur d’origine enregistré ; un article déjà préparé reste consommé. Les quantités d’ingrédients et préparations et les coûts de recette restent distincts. Consultez [Disponibilité](/fr/help/kitchen/availability) pour les imports initiaux, les corrections et les filtres d’historique.
+
+<span id="related-service-controls" />
+
+## Accès aux nouveaux réglages
+
+L’invitation à se connecter à l’entrée est désormais un choix publié dans le parcours de commande du site. Commander sans compte reste disponible ; ce réglage ne remplace pas une vérification de téléphone obligatoire ni les contrôles de paiement ou de livraison. Les consommations Google/Geoapify et leurs plafonds sont consultables séparément dans [Consommation et quotas](/fr/help/settings/api-usage-and-quotas).

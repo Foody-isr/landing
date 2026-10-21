@@ -1,10 +1,47 @@
 ---
-title: "Managing Orders"
-description: "Every order from web, QR and POS in one live list. Track status, accept, send to the kitchen, and follow an order through to completion."
+title: Managing Orders
+description: >-
+  Every order from web, QR and POS in one live list. Track status, accept, send to the kitchen, and follow an order
+  through to completion.
 apps: foodyadmin
-tags: [orders, live, status, kitchen, accept, web, qr, pos]
-updatedAt: 2026-05-24
+tags:
+  - orders
+  - orders-managing-orders
+  - live
+  - status
+  - kitchen
+  - accept
+  - web
+  - qr
+  - pos
+updatedAt: '2026-10-21'
+featureId: orders-managing-orders
+audience: public
+releaseStatus: available
 ---
+Open the corresponding Foody workspace described below.
+
+<span id="open-order-from-transaction" />
+
+## Open the order behind a transaction
+
+In POS Transactions, select a confirmed payment and open a linked order to view its saved details in read-only mode. A single payment may cover multiple orders, and one order may have multiple payments. If the order cannot be loaded, retry later; do not assume that the payment failed or initiate a duplicate charge.
+
+<span id="verifone-admin-money-operations" />
+
+## Refund or void a Verifone online payment
+
+The Admin order payment section supports total or partial matched refunds and total VOID for an eligible single Verifone online payment, for owners/managers with payments.manage. Provider state, captured amount and verified history govern eligibility, not a fixed 24-hour rule. This does not cancel preparation or fulfillment and does not add a POS terminal refund button. Unknown results stay reserved and must be checked, never resubmitted. Invoice4U credit/cancellation documents require a separate check. See [the online payment procedure](/en/help/payments/how-payments-work#verifone-admin-refund-void).
+
+A captured ABS sale still AUTHORISED/AUTHORIZED or SETTLEMENT_REQUESTED is not settled: Admin shows Available to void and only Void entire payment, with no prior refund. Refund payment and Available to refund require an explicit settled state or verified partially-refunded history. Generic APPROVED/COMPLETED, contradictory states or missing evidence offer neither action. A state change before confirmation rejects the stale action; it never switches VOID to REFUND automatically. Request rejected by Verifone means no return of funds is confirmed, not necessarily an issuer decline.
+
+<span id="weight-hold-margin" />
+
+## Review the by-weight authorization ceiling
+
+For online by-weight orders, open Settings → Payments & VAT with settings.edit. Set Weight hold buffer % from 0 to 100 and save; the default for new restaurants is 20. A failed save keeps the draft. Zero still authorizes the estimate. Only the weight-priced subtotal gets a margin: 100 weighted + 50 fixed at 20% authorizes 170; delivery has no extra margin. Checkout shows the estimate, temporary ceiling and Confirm and authorize, in the restaurant theme. A changed ceiling requires customer review and another confirmation before payment; unknown policy blocks authorization. Existing reviewed checkouts and holds keep their ceiling. Staff confirm measured weights before capture and progression; excess beyond the hold is flagged for a separate payment, never automatically charged. Cash/pay-later makes no hold promise. Requires a configured authorize/capture provider, with partial capture, release and expiry validated before production. This neither changes the catering deposit/balance policy nor enables new-card saving with a CST weighted hold.
+
+<span id="section-1" />
 
 ## What Is It?
 
@@ -12,13 +49,15 @@ The **Orders** screen is one live list of every order — whether it came from t
 app, a QR table, or the POS. From here you track status, accept orders, and send them to
 the kitchen.
 
+<span id="section-2" />
+
 ### How It Works (Simply)
 
 - New orders appear in real time (a **Live** badge shows the connection is active).
 - Use the **status tabs** to filter — new, in kitchen, ready, completed.
 - Open an order to see its items, customer, and totals, and to move it along.
 
-![The orders list with status tabs](/assets/img/screenshots/orders/orders-list.png)
+<span id="section-3" />
 
 ## Order flow
 
@@ -30,9 +69,47 @@ the kitchen.
 > Tip: workflow behavior (auto-accept, auto-send-to-kitchen, auto-print) is configured in
 > **Settings**. See [Workflow settings](/en/help/settings/workflow-settings).
 
+<span id="section-4" />
+
 ## Good to know
 
 - Orders only appear once **paid** (for prepaid channels), so the kitchen never sees an
   unconfirmed order.
 - If a dish sold out while the customer was ordering, checkout blocks it — see
   [Availability](/en/help/kitchen/availability).
+
+<span id="whatsapp-attachment-review" />
+
+## Review the WhatsApp attachment
+
+In an order, the preview of a configured Meta photo/PDF message shows the filename and Preview attachment. This opens the authorized fixed file or the PDF generated for that order without sending a message. If the file or amounts change after review, prepare a fresh preview before sending. Customer messages retains the filename with each attempt, including failures; Delivered and Read come from WhatsApp’s return. A filename alone does not prove delivery. The binding is configured in Order workflow or Communications → WhatsApp.
+
+<span id="route-delivery-window" />
+
+## Review a route-based delivery reminder
+
+For an assigned delivery with a saved customer-window setting, reminders use the route arrival plus the configured duration, rather than the order’s broad scheduled slot. For example, arrival at 08:30 and 90 minutes produces 08:30–10:00. Configure it in Orders → Deliveries → allocation, beside the time at each stop, and review the manual or approved WhatsApp preview before sending. The same range supplies Twilio, Meta and stage reminders; existing template variables and J-1 eligibility remain in effect. Unconfigured historic routes keep the original saved slot. If the range cannot be verified, recalculate the route and reopen the reminder. A changed approved preview must be reviewed again before sending. Editing a template alone does not calculate a route or change its margin.
+
+<span id="staff-order-library" />
+
+## Add items from the article library
+
+With orders.manage access, open New order. Select a carte or Article library above the search field. The library includes all active restaurant items, including items outside any menu or the selected rotating series, and is available even when there is no POS carte. Search by item name and select an item; choose its size, modifiers or combo contents when prompted. Sold-out items remain disabled and inactive items are absent. Switching between a carte and the library preserves the ticket. Complete contact and fulfillment details, review the total and submit once. Adding an item here does not publish it on a menu or the guest website. If an item is missing, check its active status in Items; for a sold-out item, check its stock and availability before retrying.
+
+<span id="internal-combo-substitution" />
+
+## Make a one-order combo exception
+
+With orders.manage permission, open New order or edit a saved order in Admin and open its combo composition. In the relevant step, select Choose another item. Remove one selected unit first if the step is full, search the restaurant article library and choose the replacement and its size. Exception · included identifies the choice. Active fixed-price individual items are eligible, including items outside the active carte; inactive, sold-out and weight-priced items and other combos cannot be used. Required step quantities, per-item limits and configured portions still apply. Save the combo, review the ticket and submit once. For example, replace the beef in a two-main Mamie formula with fish while retaining chicken. The replacement and its size add no surcharge; other normal configured choices keep their existing surcharges. The formula base price and saved definition do not change, and editing an existing order preserves its original base-price snapshot. The choice survives draft restoration and reopening the order editor. Guests cannot request this exception. If rejected, refresh availability and choose an active item in an allowed size; a failed saved-order replacement retains the previous composition.
+
+<span id="counter-terminal-payment-before-kitchen" />
+
+## Wait for counter card payment before kitchen preparation
+
+For a new counter pickup order paid by card, choose Pay, then Pay by card. Wait for terminal approval and for Foody to record the payment before preparation and the kitchen ticket start. During collection the payment remains pending and is excluded from the live order board. After a refusal or cancellation, keep the same checkout and retry there; do not send it to the kitchen to bypass payment. If approval succeeded but synchronization failed, reconcile the existing payment before starting another charge. Orders deliberately sent for table service before collection keep their existing send-then-pay flow.
+
+<span id="carte-series-stock" />
+
+## Understand series stock after order edits
+
+Predefined item stocks now have a journal under Items & menus → Stock history and on each product. A rotating carte can prepare initial allowances per series and publish them without restoring already committed units. Previous remaining counts are not carried forward. Order changes and pre-production releases use the original frozen pool; a produced item remains consumed. Ingredient/preparation quantities and recipe costs remain separate. See [Availability](/en/help/kitchen/availability) for initial imports, corrections and history filters.

@@ -1,0 +1,85 @@
+---
+title: Review and edit an order
+description: Admin → Orders → select an order
+apps: foodyadmin
+tags:
+  - orders
+  - order-detail
+updatedAt: '2026-10-21'
+featureId: order-detail
+audience: public
+releaseStatus: available
+---
+Admin → Orders → select an order
+
+## Availability and access
+
+Order changes require orders.manage; read access alone does not permit edits.
+
+<span id="verifone-admin-money-operations" />
+
+## Refund or void a Verifone online payment
+
+The Admin order payment section supports total or partial matched refunds and total VOID for an eligible single Verifone online payment, for owners/managers with payments.manage. Provider state, captured amount and verified history govern eligibility, not a fixed 24-hour rule. This does not cancel preparation or fulfillment and does not add a POS terminal refund button. Unknown results stay reserved and must be checked, never resubmitted. Invoice4U credit/cancellation documents require a separate check. See [the online payment procedure](/en/help/payments/how-payments-work#verifone-admin-refund-void).
+
+A captured ABS sale still AUTHORISED/AUTHORIZED or SETTLEMENT_REQUESTED is not settled: Admin shows Available to void and only Void entire payment, with no prior refund. Refund payment and Available to refund require an explicit settled state or verified partially-refunded history. Generic APPROVED/COMPLETED, contradictory states or missing evidence offer neither action. A state change before confirmation rejects the stale action; it never switches VOID to REFUND automatically. Request rejected by Verifone means no return of funds is confirmed, not necessarily an issuer decline.
+
+<span id="filter" />
+
+## Find the right order
+
+Choose order/date basis, status and fulfillment filters. Open the order and verify number, customer, service date and payment status before acting.
+
+<span id="create" />
+
+## Create a staff order
+
+Use New order, select items/options and fill the required contact and fulfillment fields. Review the total and submit once; check the created order before retrying an uncertain result.
+
+<span id="edit" />
+
+## Edit saved details
+
+Use the available edit action to change customer, address or fulfillment details. Save and reread the order; review preparation, fees and date restrictions before changing an existing schedule.
+
+<span id="status" />
+
+## Accept, prepare and hand over
+
+Use only the next status actions offered for the order. Verify acceptance, kitchen, ready and handover results separately from payment. Check consequences before rejection or cancellation.
+
+<span id="communications" />
+
+## Send customer messages deliberately
+
+Open customer messages to inspect attempts and delivery evidence. Preview a recap/reminder before sending; an uncertain send must be checked, not repeated automatically.
+
+<span id="whatsapp-attachment-review" />
+
+## Review the WhatsApp attachment
+
+In an order, the preview of a configured Meta photo/PDF message shows the filename and Preview attachment. This opens the authorized fixed file or the PDF generated for that order without sending a message. If the file or amounts change after review, prepare a fresh preview before sending. Customer messages retains the filename with each attempt, including failures; Delivered and Read come from WhatsApp’s return. A filename alone does not prove delivery. The binding is configured in Order workflow or Communications → WhatsApp.
+
+<span id="article-library" />
+
+## Add items from the article library
+
+With orders.manage access, open New order. Select a carte or Article library above the search field. The library includes all active restaurant items, including items outside any menu or the selected rotating series, and is available even when there is no POS carte. Search by item name and select an item; choose its size, modifiers or combo contents when prompted. Sold-out items remain disabled and inactive items are absent. Switching between a carte and the library preserves the ticket. Complete contact and fulfillment details, review the total and submit once. Adding an item here does not publish it on a menu or the guest website. If an item is missing, check its active status in Items; for a sold-out item, check its stock and availability before retrying.
+
+<span id="route-delivery-window" />
+
+## Review a route-based delivery reminder
+
+For an assigned delivery with a saved customer-window setting, reminders use the route arrival plus the configured duration, rather than the order’s broad scheduled slot. For example, arrival at 08:30 and 90 minutes produces 08:30–10:00. Configure it in Orders → Deliveries → allocation, beside the time at each stop, and review the manual or approved WhatsApp preview before sending. The same range supplies Twilio, Meta and stage reminders; existing template variables and J-1 eligibility remain in effect. Unconfigured historic routes keep the original saved slot. If the range cannot be verified, recalculate the route and reopen the reminder. A changed approved preview must be reviewed again before sending. Editing a template alone does not calculate a route or change its margin.
+
+<span id="internal-combo-substitution" />
+
+## Make a one-order combo exception
+
+With orders.manage permission, open New order or edit a saved order in Admin and open its combo composition. In the relevant step, select Choose another item. Remove one selected unit first if the step is full, search the restaurant article library and choose the replacement and its size. Exception · included identifies the choice. Active fixed-price individual items are eligible, including items outside the active carte; inactive, sold-out and weight-priced items and other combos cannot be used. Required step quantities, per-item limits and configured portions still apply. Save the combo, review the ticket and submit once. For example, replace the beef in a two-main Mamie formula with fish while retaining chicken. The replacement and its size add no surcharge; other normal configured choices keep their existing surcharges. The formula base price and saved definition do not change, and editing an existing order preserves its original base-price snapshot. The choice survives draft restoration and reopening the order editor. Guests cannot request this exception. If rejected, refresh availability and choose an active item in an allowed size; a failed saved-order replacement retains the previous composition.
+
+<span id="stock-provenance" />
+
+## Find the original stock movement
+
+Predefined item stocks now have a journal under Items & menus → Stock history and on each product. A rotating carte can prepare initial allowances per series and publish them without restoring already committed units. Previous remaining counts are not carried forward. Order changes and pre-production releases use the original frozen pool; a produced item remains consumed. Ingredient/preparation quantities and recipe costs remain separate. See [Availability](/en/help/kitchen/availability) for initial imports, corrections and history filters.

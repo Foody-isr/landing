@@ -1,0 +1,49 @@
+---
+title: Connecter et utiliser WhatsApp
+description: Ouvrez Paramètres → WhatsApp. Choisissez le mode de connexion/facturation compatible avant les identifiants.
+apps: foodyadmin
+tags:
+  - communications
+  - whatsapp
+updatedAt: '2026-10-18'
+featureId: whatsapp
+audience: public
+releaseStatus: available
+---
+Ouvrez Paramètres → WhatsApp. Choisissez le mode de connexion/facturation compatible avant les identifiants.
+
+<span id="connection" />
+
+## Connecter un expéditeur
+
+Utilisez la connexion Foody ou le compte Twilio propre au restaurant si proposé. L’expéditeur personnel doit déjà être enregistré/en ligne avec modèles Utility approuvés du même compte. Entrez les secrets uniquement dans le formulaire. Un échec conserve la configuration ; changez de facturation après déconnexion.
+
+<span id="meta" />
+
+## Utiliser Meta coexistence sous activation
+
+Meta coexistence direct est un pilote contrôlé, désactivé par défaut. Connecter ne change pas le routage ; activez explicitement le prestataire voulu après vérification. L’application Business est conservée. N’attendez pas un repli Twilio automatique en cas d’échec Meta.
+
+<span id="delivery" />
+
+## Lire l’historique des messages
+
+Dans la communication de commande, consultez envoyé, livré, lu, échec et blocage avant envoi. Un blocage ne prouve pas une livraison. Le rappel livreur relu se déclenche par son action éligible. Un résultat prestataire inconnu n’est pas rejoué automatiquement ; vérifiez avant renvoi.
+
+<span id="media-templates" />
+
+## Créer un modèle avec photo ou PDF
+
+Dans Paramètres → Communications → WhatsApp, un utilisateur autorisé à modifier les réglages peut ouvrir Créer un modèle. Choisissez le type de notification, la langue et un nouveau nom, puis Pièce jointe au message : Photo ou Document PDF. Pour une photo, ajoutez un JPEG/PNG de 5 Mo maximum ; pour un PDF fixe, ajoutez un PDF de 10 Mo maximum. Pour le reçu de chaque commande, choisissez Document PDF puis Document à envoyer → Reçu de cette commande. Le serveur utilise un document fictif pour la validation Meta. Relisez le texte et soumettez le modèle. Attendez son approbation Utility avant de l’associer à une notification. Un modèle textuel existant ne reçoit pas une pièce jointe ajoutée après coup : créez un nouveau modèle avec le bon type.
+
+<span id="media-library" />
+
+## Gérer les fichiers et vérifier les envois
+
+Les fichiers sont accessibles aux utilisateurs autorisés de l’établissement via la configuration des pièces jointes, sans lien de stockage public. Voir le fichier ouvre un aperçu authentifié. Supprimer le fichier demande confirmation et refuse un fichier utilisé par une notification, une étape enregistrée ou un message en attente. Remplacez d’abord le fichier dans ces réglages puis enregistrez. La bibliothèque est limitée à 40 fichiers et 100 Mo par établissement. En cas d’ajout ou suppression non confirmé, actualisez la liste avant de réessayer. Si le transfert vers Meta échoue, Foody n’envoie pas le texte seul et ne bascule pas sur Twilio. Dans la commande → Messages au client, consultez le nom de la pièce jointe enregistré avec la tentative et le statut transmis par WhatsApp ; le statut Lu dépend du retour WhatsApp.
+
+<span id="route-delivery-window" />
+
+## Vérifier le rappel de livraison calculé
+
+Pour une livraison affectée à une tournée avec une marge client enregistrée, les rappels utilisent l’arrivée calculée plus cette durée, au lieu du large créneau planifié de la commande. Exemple : arrivée à 08:30 et marge de 90 minutes → 08:30–10:00. Réglez-la dans Commandes → Livraisons → répartition, à côté du temps à chaque arrêt, puis vérifiez l’aperçu WhatsApp manuel ou approuvé avant envoi. Le même créneau alimente Twilio, Meta et les rappels par étape ; les variables des modèles et la règle J-1 existantes restent applicables. Les anciennes tournées sans réglage conservent le créneau enregistré. Si le créneau ne peut être vérifié, recalculez puis rouvrez le rappel. Un aperçu approuvé qui a changé doit être revérifié avant envoi. Modifier un modèle seul ne calcule pas de tournée et ne change pas sa marge.

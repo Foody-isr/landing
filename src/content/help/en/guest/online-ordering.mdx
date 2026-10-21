@@ -1,0 +1,55 @@
+---
+title: Order online as a customer
+description: Open the restaurant’s public link or select a branch from its chain page.
+apps: foodyweb
+tags:
+  - guest
+  - guest-ordering
+updatedAt: '2026-10-21'
+featureId: guest-ordering
+audience: public
+releaseStatus: available
+---
+Open the restaurant’s public link or select a branch from its chain page.
+
+<span id="weight-hold-margin" />
+
+## Review the by-weight authorization ceiling
+
+For online by-weight orders, open Settings → Payments & VAT with settings.edit. Set Weight hold buffer % from 0 to 100 and save; the default for new restaurants is 20. A failed save keeps the draft. Zero still authorizes the estimate. Only the weight-priced subtotal gets a margin: 100 weighted + 50 fixed at 20% authorizes 170; delivery has no extra margin. Checkout shows the estimate, temporary ceiling and Confirm and authorize, in the restaurant theme. A changed ceiling requires customer review and another confirmation before payment; unknown policy blocks authorization. Existing reviewed checkouts and holds keep their ceiling. Staff confirm measured weights before capture and progression; excess beyond the hold is flagged for a separate payment, never automatically charged. Cash/pay-later makes no hold promise. Requires a configured authorize/capture provider, with partial capture, release and expiry validated before production. This neither changes the catering deposit/balance policy nor enables new-card saving with a CST weighted hold.
+
+<span id="basket" />
+
+## Build a basket
+
+Choose pickup, delivery or table ordering when offered, select the active menu and open an item. Choose a variant, required modifiers, quantity and allowed notes, then add it. Review and edit the basket before checkout. A customer assistant suggestion still needs the same required choices and availability checks.
+
+<span id="mobile-fulfillment" />
+
+## Choose an address on a phone
+
+In the ordering dialog, choose Delivery and enter the street, house number and city. If address search is enabled, scroll the suggestions and tap the complete address. Selecting a street still requires its house number and keeps the keyboard open. A complete address dismisses the keyboard; review any offered times and tap Confirm address. The button stays disabled while checks run or delivery is unavailable. For pickup, choose Pickup then Confirm pickup. The cross at the top closes the dialog. Account access remains optional. If no address matches, refine the number or city; if the service fails, retry or contact the restaurant. On mobile, Pickup and Delivery tabs, the field and the Sign in link at the top keep their positions when the keyboard opens or closes. Compact suggestions show the address and city on two lines in a larger scrolling list. During search, confirmation leaves room for suggestions; it appears after choosing a complete address. The cover is reserved for larger screens. Google Maps attribution and errors stay visible. After choosing a street, add the house number in the same field and choose the complete address suggestion. A street alone cannot confirm delivery.
+
+<span id="fulfillment" />
+
+## Choose contact and fulfillment
+
+Enter the requested contact details, address or pickup time. For delivery check zone, fee and offered slot; for preorder/tour links follow their specific deadline/date. The final checkout revalidates current rules and prices.
+
+<span id="payment" />
+
+## Pay and verify confirmation
+
+Choose an offered payment method, review total and follow the secure payment flow. Wait for the verified order result. A rejected/pending payment is not a confirmed paid order; keep its reference and ask restaurant support before paying twice.
+
+<span id="customer-sign-in-methods" />
+
+## Sign in before ordering
+
+Under Sign in, use Google or your email and password. Facebook and Apple appear only when configured. Standalone code sign-in is removed; address-verification and password-recovery codes remain separate. Older accounts without a password can use Forgot password to set one. Checkout offers the same configured providers alongside email/password; only the payment action submits inline enrollment. Guest access remains available, and card saving still needs separate consent.
+
+<span id="related-service-controls" />
+
+## Access the new controls
+
+The entry sign-in invitation is controlled in Website → Order journey → Offer sign-in before ordering. Off goes directly to pickup/delivery details; when on, Order without an account remains immediately visible. Save the draft and publish to apply this choice. See [the journey setting](/en/help/website-qr/checkout-and-receipt#optional-entry-sign-in).

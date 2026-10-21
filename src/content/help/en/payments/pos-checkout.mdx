@@ -1,0 +1,115 @@
+---
+title: Take payments on the POS
+description: >-
+  Open the intended bill and verify its current amount before Pay. Available tenders depend on the restaurant and device
+  configuration.
+apps: both
+tags:
+  - payments
+  - pos-payments
+updatedAt: '2026-10-18'
+featureId: pos-payments
+audience: public
+releaseStatus: available
+---
+Open the intended bill and verify its current amount before Pay. Available tenders depend on the restaurant and device configuration.
+
+<span id="verifone-admin-money-operations" />
+
+## Refund or void a Verifone online payment
+
+The Admin order payment section supports total or partial matched refunds and total VOID for an eligible single Verifone online payment, for owners/managers with payments.manage. Provider state, captured amount and verified history govern eligibility, not a fixed 24-hour rule. This does not cancel preparation or fulfillment and does not add a POS terminal refund button. Unknown results stay reserved and must be checked, never resubmitted. Invoice4U credit/cancellation documents require a separate check. See [the online payment procedure](/en/help/payments/how-payments-work#verifone-admin-refund-void).
+
+A captured ABS sale still AUTHORISED/AUTHORIZED or SETTLEMENT_REQUESTED is not settled: Admin shows Available to void and only Void entire payment, with no prior refund. Refund payment and Available to refund require an explicit settled state or verified partially-refunded history. Generic APPROVED/COMPLETED, contradictory states or missing evidence offer neither action. A state change before confirmation rejects the stale action; it never switches VOID to REFUND automatically. Request rejected by Verifone means no return of funds is confirmed, not necessarily an issuer decline.
+
+After a full return verified against matched Verifone history, the summary keeps the original amount, shows the full amount returned and zero remaining, and offers no further refund or VOID. A cleared capture balance after that return is not an uncaptured hold to release. Missing or inconsistent evidence still requires verification without resubmission.
+
+<span id="verifone-readable-hosted-theme" />
+
+## Keep the hosted payment form readable
+
+When Foody enables a restaurant-branded Verifone hosted checkout, the payment page uses light surfaces and dark text, even if the restaurant website is dark. The published logo is kept and the brand/button accent is adapted when needed for readable contrast. This concerns online hosted payments, not POS terminals or native Apple Pay/Google Pay sheets. If an older page is unreadable, contact the Foody team to resynchronize its payment theme. The update applies to newly issued Checkout links, not the page already open. Check the current payment status before requesting another link; never repeat a debit because of a display problem.
+
+<span id="weight-hold-margin" />
+
+## Review the by-weight authorization ceiling
+
+For online by-weight orders, open Settings → Payments & VAT with settings.edit. Set Weight hold buffer % from 0 to 100 and save; the default for new restaurants is 20. A failed save keeps the draft. Zero still authorizes the estimate. Only the weight-priced subtotal gets a margin: 100 weighted + 50 fixed at 20% authorizes 170; delivery has no extra margin. Checkout shows the estimate, temporary ceiling and Confirm and authorize, in the restaurant theme. A changed ceiling requires customer review and another confirmation before payment; unknown policy blocks authorization. Existing reviewed checkouts and holds keep their ceiling. Staff confirm measured weights before capture and progression; excess beyond the hold is flagged for a separate payment, never automatically charged. Cash/pay-later makes no hold promise. Requires a configured authorize/capture provider, with partial capture, release and expiry validated before production. This neither changes the catering deposit/balance policy nor enables new-card saving with a CST weighted hold.
+
+<span id="cash" />
+
+## Record cash
+
+On an enrolled POS with an active PIN shift, first open More → Reports → Cash drawer balance and enter the physical opening float. Then choose cash on the intended order or financial bill, enter the amount received and check the change before confirming. Only record money actually received. A pending cash collection must be retried with its existing identity, not recreated as another sale. Split bills keep their own receipt and paid status.
+
+<span id="cash-drawer-report" />
+
+## Count and close the cash drawer
+
+On the same enrolled POS, open More → Reports → Cash drawer balance. Review the opening float, recorded cash sales, cash refunds, paid-in/paid-out adjustments and expected cash. A payment manager may record a reasoned cash entry or removal, but cannot remove more than the expected balance; if Foody rejects that amount, enter a smaller one. Count the physical cash, enter the counted amount and close the session; the report preserves any discrepancy. If a payment claim or drawer action remains uncertain, resolve or retry that exact operation before closing. This report covers only cash recorded on this POS; it is not a restaurant-wide balance and does not include Verifone card deposits. Never use a cash adjustment to disguise a card refund.
+
+<span id="card" />
+
+## Collect a connected payment
+
+Choose an enabled connected tender and follow the terminal or hosted page. Wait for Foody’s verified final status; browser return alone is insufficient. If the result is pending/uncertain, refresh and review the provider transaction with an authorized operator before any retry. Never ask the help assistant to inspect card details.
+
+<span id="transaction-history" />
+
+## Find a completed payment in Transactions
+
+Open Transactions in the iPad POS navigation, in More on compact terminals, or in the Admin sidebar, with payments.view or payments.manage. All three screens read the same restaurant-scoped confirmed payment history. In Admin choose a date range, source and method; search by item, reference or order number, then select a payment for its amount, method and linked orders. On the POS, selecting a linked order opens its saved read-only detail without leaving Transactions; if it cannot load, refresh and retry. The source follows the linked order: a provider-processed payment for a POS-created order appears under POS, not Online. Totals cover all matching payments, not just the visible page, and keep currencies separate. One order can have several tenders and one tender can cover several orders; Orders remains the place to follow fulfillment. Pending terminal attempts are not completed sales. History does not issue new receipts. Authorized owners and managers may see server-verified cash refunds or Verifone Checkout original-card returns for eligible payments; see the refund procedure before acting. If a result is missing, check restaurant, date and filters, then reconcile uncertain terminal payments before another charge.
+
+<span id="transaction-payment-origin" />
+
+## Understand payment origin
+
+Open a transaction on POS or Admin and read Payment origin separately from Source. Source identifies where the linked order was created; origin identifies cash, Verifone Checkout, another provider, or a recorded card payment. Victa (recorded payment) and Card (origin unverified) mean Foody recorded a result; they do not prove that a refund can be sent to the terminal. Older grouped payments can show Origin not attributed. For a return, confirm the original tender and use its authorized refund workflow; never substitute cash for a card payment.
+
+<span id="transaction-items-and-retry" />
+
+## Search every item and retry the history
+
+Search Transactions by any item in a linked order, including items after the first four. Open a payment to review the available linked item names. On the POS, if loading more results fails, the payments already shown remain visible; choose Try again under the list to continue. This retries only the history request, not a card charge.
+
+<span id="transaction-recorded-returns" />
+
+## Read refunds and payment voids in Transactions
+
+A successful Verifone Checkout refund or void initiated in Foody appears as its own return transaction, linked to the original payment. A confirmed cash return also appears separately, linked to its original cash tender. On the POS, an owner or manager with payments.manage can open an eligible payment in Transactions. For a journaled cash sale, choose Issue refund only when the server confirms an exact refundable portion and an open enrolled drawer. Select the order or check portion, enter an amount within the limit and a reason, then hand over cash only after Foody confirms. For one captured Verifone Checkout card payment linked to one exact order allocation, choose Refund to original card or Cancel card payment if offered. Enter a reason and, for a refund, an amount within the displayed limit. Foody sends the return to the original card, never to the cash drawer. An uncertain card result must be rechecked using the same saved request before another return; do not issue cash instead. Legacy unattributed, split/multi-order and Victa card payments do not offer this card action. Admin shows gross collections separately from returns recorded in Foody; neither figure is net revenue. Returns made directly in Verifone Central or on Victa are not included automatically.
+
+<span id="transaction-gross-total" />
+
+## Read the transaction total correctly
+
+The Admin date range and displayed times use the restaurant’s timezone. The total sums all confirmed payment records matching the selected filters, even across several pages. Currencies remain separate. It is a gross payment total, not net sales: refunds, processing fees, cash-drawer movements and terminal end-of-day deposits are not subtracted here. Use the appropriate provider and accounting reports before reconciling a day.
+
+<span id="terminal-deposit" />
+
+## Close and deposit a Verifone terminal batch
+
+On a configured Victa Portable or an iPad connected to a Victa Mini, sign in with the payments.manage permission. Open More → Reports → Terminal deposits. Check that the terminal is connected and supports Close and deposit. At end of day, confirm Close and deposit once, then wait for the terminal's final confirmation and keep its reconciliation reference. This is separate from closing a Foody staff shift or a cash drawer. If the result is uncertain, do not repeat it or start another card payment: inspect the terminal batch or confirm its status with your payment provider. A manager may choose I verified the batch only after that check.
+
+<span id="terminal-reports-advanced" />
+
+## Read totals or use advanced terminal actions
+
+In More → Reports → Terminal deposits, View current totals reads the active batch without closing or transmitting it. Advanced actions are shown only when supported by the terminal: Close batch only closes the reporting period without transmission; Transmit only requests acquirer reconciliation without explicitly closing it. Neither advanced action alone is the standard end-of-day flow. Use either only on your payment provider's instruction, confirm once and wait for the terminal's final result. If unsupported or uncertain, do not assume success; check the terminal or ask the provider before retrying.
+
+<span id="receipt-tip" />
+
+## Review tips and receipt
+
+Review any supported tip/checkout prompt before collection and confirm the total. After success open the digital or configured printer receipt. A reprint does not collect another payment. Per-bill refund controls are not established for every advanced split flow; contact an authorized operator rather than assuming a refund button exists.
+
+<span id="invoice4u-order-lines" />
+
+## Check an itemized Invoice4U invoice
+
+This concerns online orders, not a new POS terminal integration. When Invoice4U issuance and an invoice document type are enabled by the Foody team for the merchant, ordinary immediate Verifone order payments send the saved order lines: items and quantities, selected variants/options, combo base and included components, order discount and delivery fee. Frozen prices already include VAT; it is not added again. The line total must equal the payment amount or payment initiation is blocked. The same detail is sent for a later saved-card sale. Legacy orders without catalogue lines and catering/table/capture operations keep their existing document behavior. An approved payment is not proof that Invoice4U issued a fiscal document: check the document in Verifone Central/Invoice4U and customer delivery. Do not create another payment to obtain a missing invoice.
+
+<span id="counter-terminal-payment-before-kitchen" />
+
+## Wait for counter card payment before kitchen preparation
+
+For a new counter pickup order paid by card, choose Pay, then Pay by card. Wait for terminal approval and for Foody to record the payment before preparation and the kitchen ticket start. During collection the payment remains pending and is excluded from the live order board. After a refusal or cancellation, keep the same checkout and retry there; do not send it to the kitchen to bypass payment. If approval succeeded but synchronization failed, reconcile the existing payment before starting another charge. Orders deliberately sent for table service before collection keep their existing send-then-pay flow.

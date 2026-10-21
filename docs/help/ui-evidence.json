@@ -1,0 +1,547 @@
+{
+  "schemaVersion": 1,
+  "repository": "Foody-isr/admin",
+  "ref": "6e42a495d107d9ba868cb92b6b0a868747ece14f",
+  "observations": [
+    {
+      "id": "items-library",
+      "source": "src/app/[restaurantId]/menu/items/page.tsx",
+      "required": [
+        "<ListToolbar",
+        "<DataTable",
+        "t('createItem')",
+        "value: 'active'",
+        "value: 'inactive'",
+        "<ItemAvailabilityPopover"
+      ],
+      "forbidden": [
+        "<ArticlesKpiRow",
+        "<Kpi ",
+        "<KPI",
+        "handleAvailabilityToggle"
+      ]
+    },
+    {
+      "id": "continuous-item-editor",
+      "source": "src/components/menu-item/MenuItemEditorForm.tsx",
+      "required": [
+        "id=\"information\"",
+        "id=\"pricing\"",
+        "id=\"personalizations\"",
+        "id=\"recipe\"",
+        "t('itemSectionRecipe')"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "item-editor-shell",
+      "source": "src/components/menu-item/MenuItemShell.tsx",
+      "required": [
+        "data-item-editor-scroll",
+        "overflow-y-auto",
+        "<ItemSectionOutline"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "recipe-quantity-grid",
+      "source": "src/components/menu-item/MenuItemTabRecipe.tsx",
+      "required": [
+        "<RecipeTable",
+        "t('recipePerSize')"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "same-quantity",
+      "source": "src/components/menu-item/RecipeTable.tsx",
+      "required": [
+        "t('itemRecipeSameQuantity')"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "stock-library",
+      "source": "src/app/[restaurantId]/kitchen/stock/page.tsx",
+      "required": [
+        "<ListToolbar",
+        "<ListStateFilter",
+        "value: 'low'",
+        "value: 'ok'",
+        "<ListFiltersDrawer"
+      ],
+      "forbidden": [
+        "<StockKpiRow",
+        "<Kpi ",
+        "lowStockOnly",
+        "<ColumnPicker"
+      ]
+    },
+    {
+      "id": "stock-editor",
+      "source": "src/components/stock/StockItemEditor.tsx",
+      "required": [
+        "<FullScreenEditor",
+        "t('identityAndPurchase')",
+        "t('purchaseAndPrice')",
+        "t('recipeUnits')"
+      ],
+      "forbidden": [
+        "<Tabs",
+        "role=\"tablist\""
+      ]
+    },
+    {
+      "id": "item-stock-availability",
+      "source": "src/components/menu-item/ItemAvailabilityPanel.tsx",
+      "required": [
+        "t('itemStockTracking')",
+        "t('itemStockViewCalculation')",
+        "settings/stock/availability",
+        "setOverride(statusDraft!)",
+        "stock_quantity:",
+        "value: 'auto'"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "editor-responsive-distribution",
+      "source": "src/components/menu-item/item-editor.css",
+      "required": [
+        "grid-template-columns: minmax(0, 800fr) minmax(0, 360fr);",
+        "@media (max-width: 1023px)",
+        "grid-template-columns: minmax(0, 1fr);"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "editor-language-direction",
+      "source": "src/lib/i18n.tsx",
+      "required": [
+        "document.documentElement.dir = locale === 'he' ? 'rtl' : 'ltr';"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "editor-visible-side-cards",
+      "source": "src/components/menu-item/MenuItemDistribution.tsx",
+      "required": [
+        "<h2 id=\"item-state-title\">{t('status')}</h2>",
+        "<h2 id=\"item-category-title\">{t('categories')}</h2>",
+        "{t('menus')}",
+        "<MenuGroupPicker"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "editor-side-card-translations",
+      "source": "src/lib/i18n.tsx",
+      "required": [
+        "status: 'Status'",
+        "status: 'סטטוס'",
+        "status: 'Statut'",
+        "categories: 'Categories'",
+        "categories: 'קטגוריות'",
+        "categories: 'Catégories'",
+        "menus: 'Menus'",
+        "menus: 'תפריטים'",
+        "menus: 'Cartes'"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "daily-explicit-generation-and-send",
+      "source": "src/app/[restaurantId]/kitchen/daily-operations/page.tsx",
+      "required": [
+        "const handleGenerateOrders = async",
+        "onClick={() => handleGenerateOrders(source)}",
+        "onClick={() => handleSendEmail(emailModalPO)}",
+        "setEmailModalPO(po)",
+        "await closeFoodCostReport(rid, report.id);"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "catalog-sidebar-labels",
+      "source": "src/components/Sidebar.tsx",
+      "required": [
+        "labelKey: 'menu'",
+        "labelKey: 'itemLibrary'",
+        "labelKey: 'modifierSets'",
+        "labelKey: 'posStaffDiscounts'"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "catalog-navigation-translations",
+      "source": "src/lib/i18n.tsx",
+      "required": [
+        "menu: 'Items & menus'",
+        "menu: 'Articles et cartes'",
+        "menu: 'פריטים ותפריטים'",
+        "itemLibrary: 'Item library'",
+        "itemLibrary: 'Articles'",
+        "itemLibrary: 'ספריית פריטים'",
+        "modifierSets: 'Modifier Sets'",
+        "modifierSets: 'Modificateurs'",
+        "modifierSets: 'קבוצות תוספות'",
+        "posStaffDiscounts: \"POS discounts\"",
+        "posStaffDiscounts: \"Remises de caisse\"",
+        "posStaffDiscounts: \"הנחות בקופה\""
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "library-availability-popover",
+      "source": "src/components/menu/ItemAvailabilityPopover.tsx",
+      "required": [
+        "<AvailabilityPopover",
+        "getSalesStock(",
+        "restockSalesStock(",
+        "setSalesStockAvailability("
+      ],
+      "forbidden": [
+        "availabilityToggleTarget"
+      ]
+    }
+  ],
+  "guides": [
+    {
+      "article": "menu/categories-and-items",
+      "required": {
+        "fr": [
+          "liste sous forme de tableau",
+          "État",
+          "Créer un article",
+          "Articles et cartes → Articles"
+        ],
+        "en": [
+          "table-based library",
+          "Status",
+          "Create item",
+          "Items & menus → Item library"
+        ],
+        "he": [
+          "בצורת טבלה",
+          "מצב",
+          "צור פריט",
+          "פריטים ותפריטים → ספריית פריטים"
+        ]
+      },
+      "forbidden": {
+        "fr": [
+          "Trois cartes de synthèse s’affichent",
+          "Menu → Articles",
+          "Menu → Cartes"
+        ],
+        "en": [
+          "Three KPI cards are shown",
+          "Menu → Items",
+          "Menu → Menus"
+        ],
+        "he": [
+          "מוצגים שלושה כרטיסי KPI",
+          "תפריט → פריטים",
+          "תפריט → תפריטים"
+        ]
+      }
+    },
+    {
+      "article": "menu/creating-a-menu-item",
+      "required": {
+        "fr": [
+          "page continue en plein écran",
+          "Recette et coût",
+          "Créer un article",
+          "à gauche en hébreu",
+          "Statut, Catégories et Cartes",
+          "Articles et cartes → Articles"
+        ],
+        "en": [
+          "continuous full-screen form",
+          "Recipe and cost",
+          "Create item",
+          "on the left in Hebrew",
+          "Status, Categories and Menus",
+          "Items & menus → Item library"
+        ],
+        "he": [
+          "טופס רציף במסך מלא",
+          "מתכון ועלות",
+          "צור פריט",
+          "משמאל בעברית",
+          "סטטוס, קטגוריות ותפריטים",
+          "פריטים ותפריטים → ספריית פריטים"
+        ]
+      },
+      "forbidden": {
+        "fr": [
+          "Le modal Créer un article s'ouvre avec trois onglets",
+          "zone latérale Diffusion",
+          "Menu → Articles",
+          "Menu → Cartes"
+        ],
+        "en": [
+          "The Create Item modal opens with three tabs",
+          "Distribution side area",
+          "Menu → Items",
+          "Menu → Menus"
+        ],
+        "he": [
+          "המודל יצירת פריט נפתח עם שלוש לשוניות",
+          "באזור הצד הפצה",
+          "תפריט → פריטים",
+          "תפריט → תפריטים"
+        ]
+      }
+    },
+    {
+      "article": "menu/ingredients-and-portions",
+      "required": {
+        "fr": [
+          "Même quantité",
+          "Recette et coût",
+          "Quantités différentes par taille",
+          "Articles et cartes → Articles"
+        ],
+        "en": [
+          "Same quantity",
+          "Recipe and cost",
+          "quantities per size",
+          "Items & menus → Item library"
+        ],
+        "he": [
+          "אותה כמות",
+          "מתכון ועלות",
+          "כמויות שונות לפי גודל",
+          "פריטים ותפריטים → ספריית פריטים"
+        ]
+      },
+      "forbidden": {
+        "fr": [
+          "Adapter à la taille pour une quantité automatique",
+          "Menu → Articles",
+          "Menu → Cartes"
+        ],
+        "en": [
+          "Scale to item size for an automatic quantity",
+          "Menu → Items",
+          "Menu → Menus"
+        ],
+        "he": [
+          "התאם לגודל לכמות אוטומטית",
+          "תפריט → פריטים",
+          "תפריט → תפריטים"
+        ]
+      }
+    },
+    {
+      "article": "menu/variants-and-sizes",
+      "required": {
+        "fr": [
+          "Prix et variantes",
+          "Ajouter une variante",
+          "Articles et cartes → Articles"
+        ],
+        "en": [
+          "Price and variants",
+          "Add variant",
+          "Items & menus → Item library"
+        ],
+        "he": [
+          "מחיר ווריאציות",
+          "הוספת וריאציה",
+          "פריטים ותפריטים → ספריית פריטים"
+        ]
+      },
+      "forbidden": {
+        "fr": [
+          "Dans l'onglet Détails, descendez",
+          "Menu → Articles",
+          "Menu → Cartes"
+        ],
+        "en": [
+          "In the Details tab, scroll",
+          "Menu → Items",
+          "Menu → Menus"
+        ],
+        "he": [
+          "בלשונית פרטים, גלול",
+          "תפריט → פריטים",
+          "תפריט → תפריטים"
+        ]
+      }
+    },
+    {
+      "article": "kitchen/stock-management",
+      "required": {
+        "fr": [
+          "État propose Stock bas et OK",
+          "éditeur plein écran est continu"
+        ],
+        "en": [
+          "Status offers Low Stock and OK",
+          "full-screen editor is continuous"
+        ],
+        "he": [
+          "מצב מציע מלאי נמוך ותקין",
+          "העורך במסך מלא הוא רציף"
+        ]
+      },
+      "forbidden": {
+        "fr": [
+          "Au sommet de la page, trois cartes",
+          "Trois cartes de synthese",
+          "Trois cartes de synthèse",
+          "Le modal de creation/modification comporte deux onglets"
+        ],
+        "en": [
+          "At the top of the page, three summary cards",
+          "The create/edit modal has two tabs",
+          "Dashboard card — the Low Stock count turns red"
+        ],
+        "he": [
+          "שלושה כרטיסי סיכום",
+          "מודל היצירה/עריכה כולל שתי לשוניות"
+        ]
+      }
+    },
+    {
+      "article": "kitchen/availability",
+      "required": {
+        "fr": [
+          "Stock & disponibilité",
+          "Suivre une règle",
+          "Appliquer",
+          "Enregistrer"
+        ],
+        "en": [
+          "Stock & availability",
+          "Follow a rule",
+          "Apply",
+          "Save"
+        ],
+        "he": [
+          "מלאי וזמינות",
+          "פעל לפי כלל",
+          "החל",
+          "שמור"
+        ]
+      },
+      "forbidden": {
+        "fr": [
+          "Recette → Disponibilité"
+        ],
+        "en": [
+          "Recipe → Availability"
+        ],
+        "he": [
+          "מתכון → זמינות"
+        ]
+      }
+    },
+    {
+      "article": "kitchen/daily-operations",
+      "required": {
+        "fr": [
+          "Cuisine → Aujourd’hui",
+          "Préparer le service",
+          "Bilan du jour",
+          "ne génère ni n’envoie",
+          "cliquez Envoyer"
+        ],
+        "en": [
+          "Kitchen → Today",
+          "Prepare service",
+          "Day review",
+          "Closing neither generates nor sends",
+          "click Send"
+        ],
+        "he": [
+          "מטבח → היום",
+          "מכינים לסרוויס",
+          "סיכום היום",
+          "סגירת יום אינה יוצרת ואינה שולחת",
+          "לחצו שלח"
+        ]
+      },
+      "forbidden": {
+        "fr": [
+          "Chaque déduction est enregistrée comme une transaction de stock immuable"
+        ],
+        "en": [
+          "Each deduction is logged as an immutable stock transaction"
+        ],
+        "he": [
+          "כל הפחתה נרשמת כתנועת מלאי בלתי ניתנת לשינוי"
+        ]
+      }
+    },
+    {
+      "article": "menu/menus-and-groups",
+      "required": {
+        "fr": [
+          "Articles et cartes → Cartes"
+        ],
+        "en": [
+          "Items & menus → Menus"
+        ],
+        "he": [
+          "פריטים ותפריטים → תפריטים"
+        ]
+      },
+      "forbidden": {
+        "fr": [
+          "Menu → Articles",
+          "Menu → Cartes"
+        ],
+        "en": [
+          "Menu → Items",
+          "Menu → Menus"
+        ],
+        "he": [
+          "תפריט → פריטים",
+          "תפריט → תפריטים"
+        ]
+      }
+    },
+    {
+      "article": "menu/modifiers",
+      "required": {
+        "fr": [
+          "Articles et cartes → Modificateurs"
+        ],
+        "en": [
+          "Items & menus → Modifier Sets"
+        ],
+        "he": [
+          "פריטים ותפריטים → קבוצות תוספות"
+        ]
+      },
+      "forbidden": {
+        "fr": [],
+        "en": [],
+        "he": []
+      }
+    },
+    {
+      "article": "menu/pos-discounts",
+      "required": {
+        "fr": [
+          "Articles et cartes → Remises de caisse"
+        ],
+        "en": [
+          "Items & menus → POS discounts"
+        ],
+        "he": [
+          "פריטים ותפריטים → הנחות בקופה"
+        ]
+      },
+      "forbidden": {
+        "fr": [],
+        "en": [],
+        "he": []
+      }
+    }
+  ]
+}

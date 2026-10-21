@@ -1,0 +1,37 @@
+---
+title: Modèles et automatisations de messages
+description: 'Ouvrez Paramètres → Modèles de messages, modèles WhatsApp ou Workflow selon le canal.'
+apps: foodyadmin
+tags:
+  - communications
+  - message-templates
+updatedAt: '2026-10-18'
+featureId: message-templates
+audience: public
+releaseStatus: available
+---
+Ouvrez Paramètres → Modèles de messages, modèles WhatsApp ou Workflow selon le canal.
+
+<span id="template" />
+
+## Créer et vérifier un modèle
+
+Modifiez textes localisés et variables, ou soumettez un modèle WhatsApp Utility via le prestataire. Vérifiez approbation, langue et ordre des variables. La suppression peut être bloquée même si l’étape qui le référence est désactivée.
+
+<span id="stage" />
+
+## Associer les messages aux étapes
+
+Choisissez un modèle approuvé sur l’étape et son déclenchement. Les messages concernent les futures entrées, sans reprise historique. Rappels livraison exigent données livreur/date ; satisfaction exige remise enregistrée. Lisez le déclencheur, sans supposer un envoi systématique la veille.
+
+<span id="media-binding" />
+
+## Associer le fichier à la notification
+
+Après approbation, ouvrez Configurer sur le message dans WhatsApp, ou Prévenir le client dans Paramètres → Restaurant → Parcours des commandes. Choisissez le modèle avec photo/PDF, puis son fichier fixe dans la bibliothèque de cet établissement, ou Reçu de cette commande pour un modèle PDF. Enregistrez la page ou le parcours ; Terminé ferme uniquement le panneau de configuration des messages généraux. Le déclencheur et l’horaire restent ceux choisis dans le parcours. Le reçu Foody est généré à partir des articles et montants enregistrés pour cette commande ; il ne remplace pas la facture fiscale. Vérifiez l’aperçu du message et du fichier avant un envoi manuel. Une pièce jointe est envoyée par message, via Meta direct activé ; ces contrôles ne configurent pas les pièces jointes Twilio.
+
+<span id="route-delivery-window" />
+
+## Vérifier le rappel de livraison calculé
+
+Pour une livraison affectée à une tournée avec une marge client enregistrée, les rappels utilisent l’arrivée calculée plus cette durée, au lieu du large créneau planifié de la commande. Exemple : arrivée à 08:30 et marge de 90 minutes → 08:30–10:00. Réglez-la dans Commandes → Livraisons → répartition, à côté du temps à chaque arrêt, puis vérifiez l’aperçu WhatsApp manuel ou approuvé avant envoi. Le même créneau alimente Twilio, Meta et les rappels par étape ; les variables des modèles et la règle J-1 existantes restent applicables. Les anciennes tournées sans réglage conservent le créneau enregistré. Si le créneau ne peut être vérifié, recalculez puis rouvrez le rappel. Un aperçu approuvé qui a changé doit être revérifié avant envoi. Modifier un modèle seul ne calcule pas de tournée et ne change pas sa marge.

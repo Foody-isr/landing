@@ -1,0 +1,85 @@
+---
+title: Prendre une commande sur la caisse
+description: POS → Tables / Prise de commande
+apps: foodypos
+tags:
+  - orders
+  - pos-order-entry
+updatedAt: '2026-10-21'
+featureId: pos-order-entry
+audience: public
+releaseStatus: available
+---
+POS → Tables / Prise de commande
+
+<span id="cash-drawer-before-collection" />
+
+## Préparer cette caisse pour les espèces
+
+Avant un encaissement espèces pour une table ou au comptoir, démarrez votre shift PIN et ouvrez Plus → Rapports → Solde en caisse sur cet appareil autorisé. Saisissez le fonds initial physiquement présent, puis sélectionnez la bonne commande, appuyez sur Payer et enregistrez l’argent réellement reçu. Si l’encaissement expire, rapprochez ou reprenez la demande conservée sans créer une seconde vente. Un paiement carte suit le terminal et n’est pas une entrée de caisse espèces.
+
+<span id="weight-hold-margin" />
+
+## Vérifier le plafond de préautorisation au poids
+
+Pour les commandes en ligne au poids, ouvrez Réglages → Paiements & TVA avec settings.edit. Saisissez Marge d’empreinte au poids % de 0 à 100 puis enregistrez ; la valeur par défaut des nouveaux restaurants est 20. Un échec conserve la saisie. À 0 %, le montant estimé reste préautorisé. Seul le sous-total au poids reçoit une marge : 100 au poids + 50 fixes à 20 % donnent 170 préautorisés ; aucune marge sur la livraison. Le checkout affiche estimation, plafond temporaire et Confirmer et préautoriser, dans le thème du restaurant. Un plafond modifié exige une nouvelle revue et confirmation avant paiement ; une politique inconnue bloque l’autorisation. Les commandes déjà revues et empreintes existantes gardent leur plafond. Le personnel confirme les poids mesurés avant capture et progression ; un dépassement est signalé pour un paiement complémentaire, jamais débité automatiquement. Espèces/paiement ultérieur n’annoncent pas d’empreinte. Un prestataire autorisation/capture configuré est nécessaire ; validez capture partielle, libération et expiration avant production. Ce réglage ne change ni acompte/solde traiteur ni la restriction de sauvegarde d’une nouvelle carte pour une empreinte CST au poids.
+
+<span id="start" />
+
+## Ouvrir la bonne addition
+
+Choisissez table ou comptoir et vérifiez addition, service et employé actifs. Les additions déjà séparées conservent leurs soldes propres.
+
+<span id="add" />
+
+## Ajouter et personnaliser les articles
+
+Choisissez groupe POS visible, article, variante active et modificateurs autorisés. Vérifiez quantité, notes et prix avant ajout. Complétez les choix obligatoires.
+
+<span id="seat-course" />
+
+## Affecter places et services
+
+Si activé, affectez l’article à une place, la table ou un service avant envoi. Ces affectations de préparation sont distinctes du partage financier ultérieur.
+
+<span id="send" />
+
+## Envoyer et vérifier la préparation
+
+Vérifiez les articles en attente puis utilisez l’envoi cuisine configuré. Contrôlez commande enregistrée et résultat cuisine ; impression et enregistrement sont deux résultats distincts.
+
+<span id="resume" />
+
+## Reprendre ou encaisser
+
+Rouvrez l’addition pour ajouter des articles ou encaisser. Confirmez l’addition et le solde impayé avant débit ; ne renvoyez pas les plats déjà envoyés.
+
+<span id="whatsapp-stage-attachment" />
+
+## Choisir la pièce jointe d’une étape
+
+Dans l’admin, ouvrez Paramètres → Restaurant → Parcours des commandes et l’étape voulue du retrait ou de la livraison. Avec Prévenir le client activé, choisissez le type de message, un modèle Meta approuvé avec photo/PDF et sa pièce jointe : fichier fixe, ou reçu de cette commande pour un PDF. Choisissez le moment d’envoi puis enregistrez le parcours. Le changement d’étape manuel ou son événement configuré utilise cette association. Le choix d’un fichier ne change ni la progression, ni les règles de paiement, ni les conditions de livraison. Sans modèle/fichier compatible, corrigez la configuration avant de compter sur l’envoi. La bibliothèque et la création des modèles sont dans Paramètres → Communications → WhatsApp.
+
+<span id="courier-departure-sync" />
+
+## Suivre le départ d’une livraison affectée
+
+Lorsque le livreur affecté démarre sa tournée dans Admin, les livraisons non terminées acceptées, en préparation ou prêtes passent ensemble en « En livraison ». Les écrans du personnel reçoivent ces statuts par leur actualisation habituelle des commandes. Cette action confirme le départ réel ; affecter un livreur ou choisir un mode de remise ne démarre pas à lui seul une tournée. Les préparations retenues et commandes au poids non finalisées doivent être résolues auparavant. Si le départ échoue, les statuts précédents sont conservés. Les commandes terminées ou annulées ne sont pas rouvertes.
+
+<span id="internal-combo-substitution" />
+
+## Faire une exception de formule sur une commande
+
+Pour une exception de formule sur une seule commande, un utilisateur Admin autorisé ouvre l’étape de la formule et choisit Choisir un autre article. Le remplacement est inclus sans supplément et enregistré uniquement sur cette commande. Les règles de remise, programmation et livraison restent inchangées. Vérifiez le plat et la portion sélectionnés dans le détail de commande. Les sélecteurs client et POS conservent la composition configurée ; effectuez l’exception dans l’éditeur interne Admin. Consultez le guide des formules pour les quantités, articles admissibles et reprises.
+
+<span id="counter-terminal-payment-before-kitchen" />
+
+## Attendre le paiement au comptoir avant la cuisine
+
+Pour une nouvelle commande à emporter encaissée par carte au comptoir, choisissez Payer, puis Payer par carte. Attendez l’accord du terminal et l’enregistrement du paiement dans Foody avant le départ en préparation et l’impression du bon cuisine. Pendant l’encaissement, le paiement reste en attente et n’apparaît pas dans la liste des commandes en direct. Après un refus ou une annulation, reprenez le même encaissement ; ne l’envoyez pas en cuisine pour contourner le paiement. Si le terminal a accepté mais que la synchronisation a échoué, rapprochez le paiement existant avant tout nouveau débit. Les commandes volontairement envoyées pour un service à table avant encaissement conservent leur déroulement habituel.
+
+<span id="carte-series-stock" />
+
+## Utiliser la carte publiée et le stock en direct
+
+Les stocks prédéfinis des articles disposent d’un journal dans Articles et cartes → Historique des stocks et sur chaque produit. Une carte tournante permet de préparer des quotas initiaux par série et de les publier sans recréditer les quantités engagées. Les reliquats précédents ne sont pas reportés. Les modifications de commande et libérations avant production utilisent le compteur d’origine enregistré ; un article déjà préparé reste consommé. Les quantités d’ingrédients et préparations et les coûts de recette restent distincts. Consultez [Disponibilité](/fr/help/kitchen/availability) pour les imports initiaux, les corrections et les filtres d’historique.

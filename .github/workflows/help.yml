@@ -1,0 +1,44 @@
+name: Help and site validation
+on:
+  pull_request:
+    branches: [develop]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: help-pr-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  validate:
+    name: Help coverage and translations
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - run: npm ci
+      - run: npm run check:help
+      - run: npm run test:help
+      - name: Resolve reviewed Admin UI version
+        id: ui
+        run: node --input-type=module -e 'import fs from "node:fs"; const c=JSON.parse(fs.readFileSync("docs/help/ui-evidence.json")); fs.appendFileSync(process.env.GITHUB_OUTPUT,"ref="+c.ref+"\n");'
+      - uses: actions/checkout@v4
+        with:
+          repository: Foody-isr/admin
+          ref: ${{ steps.ui.outputs.ref }}
+          path: .help-admin
+          persist-credentials: false
+          sparse-checkout: src
+      - run: node scripts/check-help-ui.mjs --admin-root .help-admin
+      - name: Check exact source and documentation impact
+        env:
+          HELP_BASE: ${{ github.event.pull_request.base.sha }}
+        run: node scripts/check-help-contract.mjs ${HELP_BASE:+--base "$HELP_BASE"}
+      - run: npm run lint
+      - run: npx tsc --noEmit
+      # prebuild validates MDX metadata/links and regenerates the search and AI index.
+      - run: npm run build

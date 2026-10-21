@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { I18nProvider } from "@/lib/i18n/context";
+import MetaPixel from "@/components/MetaPixel";
 import {
   getMarketingMetadata,
   SITE_URL,
@@ -50,6 +51,7 @@ export default async function LangLayout({
     <html lang={lang} dir={lang === "he" ? "rtl" : "ltr"}>
       <body>
         <I18nProvider lang={lang}>{children}</I18nProvider>
+        {process.env.NODE_ENV === "production" && <MetaPixel />}
       </body>
     </html>
   );

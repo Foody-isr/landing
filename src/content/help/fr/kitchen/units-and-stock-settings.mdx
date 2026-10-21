@@ -1,0 +1,31 @@
+---
+title: 'Unités, politique de stock et disponibilité'
+description: 'Ouvrez Paramètres → Stock, Unités et Disponibilité. Gardez les unités cohérentes avec recettes et achats.'
+apps: foodyadmin
+tags:
+  - kitchen
+  - stock-units-policy
+updatedAt: '2026-10-21'
+featureId: stock-units-policy
+audience: public
+releaseStatus: available
+---
+Ouvrez Paramètres → Stock, Unités et Disponibilité. Gardez les unités cohérentes avec recettes et achats.
+
+<span id="units" />
+
+## Gérer les unités de mesure
+
+Vérifiez noms, dimensions et conversions avant ajout ou modification. Utilisez des unités compatibles de masse, volume ou nombre ; un colis fournisseur n’est pas automatiquement une quantité de recette. Vérifiez références ingrédients/recettes avant suppression.
+
+<span id="policy" />
+
+## Régler stock et disponibilité
+
+Vérifiez quand le stock est réservé/consommé et l’effet des ruptures sur la disponibilité publique. Contrôlez la politique sur un petit scénario en dev avant changement en service. Visibilité manuelle, disponibilité horaire et stock ingrédients sont des restrictions distinctes qui se cumulent. Pour un article suivi par un compteur commun dont la règle affiche le nombre restant, le panier tient compte de la quantité disponible même au-dessus du seuil de stock faible. Ce seuil règle l’alerte, pas le plafond du panier. Consultez [Disponibilité](/fr/help/kitchen/availability) pour vérifier la règle et les forçages manuels.
+
+<span id="carte-series-stock" />
+
+## Lire les quantités du bon compteur
+
+Les stocks prédéfinis des articles disposent d’un journal dans Articles et cartes → Historique des stocks et sur chaque produit. Une carte tournante permet de préparer des quotas initiaux par série et de les publier sans recréditer les quantités engagées. Les reliquats précédents ne sont pas reportés. Les modifications de commande et libérations avant production utilisent le compteur d’origine enregistré ; un article déjà préparé reste consommé. Les quantités d’ingrédients et préparations et les coûts de recette restent distincts. Consultez [Disponibilité](/fr/help/kitchen/availability) pour les imports initiaux, les corrections et les filtres d’historique.

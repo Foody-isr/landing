@@ -1,68 +1,95 @@
 ---
-title: "How Payments Work"
-description: "Understand how Foody processes payments through PayPlus and Summit, and how to close a bill in FoodyPOS."
+title: Understanding payment status
+description: Check confirmed payments and handle uncertain results safely.
 apps: both
-tags: [payments, payplus, summit, cash, card, checkout]
-updatedAt: 2026-03-30
+tags:
+  - payments
+  - payments-how-payments-work
+  - how-payments-work
+updatedAt: '2026-10-21'
+featureId: payments-how-payments-work
+audience: public
+releaseStatus: available
 ---
+Open the corresponding Foody workspace described below.
 
-## Payment Providers
+<span id="verifone-admin-refund-void" />
 
-Foody integrates with two certified payment providers in Israel:
+## Refund or void a Verifone online payment
 
-| Provider | Type |
-|----------|------|
-| **PayPlus** | Server-to-server payment processing (default) |
-| **Summit (Sumit)** | Browser-based redirect payment flow |
+In Admin → Orders, open the order and its payment section. An owner or manager with payments.manage can use Refund or void payment for a single verified ILS Verifone online sale or confirmed capture. Table/session, mixed tenders, partial collections, external-terminal payments and catering deposits are not supported by this control. An uncaptured hold still uses the existing cancellation/release workflow.
 
-Your payment provider is configured by your Foody representative at onboarding. You can view (but not change) the configuration in **FoodyAdmin → Settings → Payment**.
+Check Available to refund, then choose Refund payment. Keep Full remaining amount or choose Partial amount and enter the exact amount. Enter a reason of 3–300 characters, review the amount in the confirmation and submit once. Successful matched refunds already visible in Verifone history reduce the ceiling, including refunds made in Central; incomplete or unverified history blocks a new operation. The bounded history lookup covers transactions created within two years.
 
-Both providers are:
-- PCI DSS compliant
-- Certified by the Israel Tax Authority
-- ISO 27001 certified
+A captured ABS sale still AUTHORISED/AUTHORIZED or SETTLEMENT_REQUESTED is not settled: Admin shows Available to void and only Void entire payment, with no prior refund. Refund payment and Available to refund require an explicit settled state or verified partially-refunded history. Generic APPROVED/COMPLETED, contradictory states or missing evidence offer neither action. A state change before confirmation rejects the stale action; it never switches VOID to REFUND automatically. Request rejected by Verifone means no return of funds is confirmed, not necessarily an issuer decline. VOID is full only, never partial. Eligibility follows the provider state and merchant/acquirer rules, not midnight or a fixed 24-hour cutoff. Final acceptance is confirmed by Verifone.
 
----
+Read Payment operations for the amount, reason, date, actor account and provider transaction ID. Confirmed by Verifone requires an independent transaction read with matching parent, amount, currency, reference and merchant. A partial refund leaves the payment marked paid; a full confirmed return marks its payment refunded. Neither changes food status, items, stock or fulfillment.
 
-## Closing a Bill on FoodyPOS
+If the result is unknown or the browser loses the response, do not submit another refund or switch to VOID. Use Check with Verifone, which only verifies existing operations. A request with no recoverable provider ID stays blocked for support/Central verification, including after reload or an API restart. Never treat an HTTP success alone as refunded. Check the corresponding Invoice4U credit/cancellation document separately; this control does not confirm or create a fiscal credit document. FoodyPOS has a separate Transactions workflow for a server-verified original Checkout payment; these Admin instructions do not cover POS terminal refunds.
 
-When a customer is ready to pay:
+After a full return verified against matched Verifone history, the summary keeps the original amount, shows the full amount returned and zero remaining, and offers no further refund or VOID. A cleared capture balance after that return is not an uncaptured hold to release. Missing or inconsistent evidence still requires verification without resubmission.
 
-1. Open the table or order in FoodyPOS.
-2. Tap **Charge** (bottom right of the cart).
-3. Select the payment method:
-   - **Card**: the integrated card terminal prompts the customer.
-   - **Cash**: enter the amount tendered; the app calculates the change.
-4. Once payment is confirmed, the receipt is generated automatically.
+<span id="pos-checkout-original-payment-refunds" />
 
----
+## Refund a POS-listed online payment to its original method
 
-## Cash Payments
+In POS Transactions, choose a confirmed Verifone Checkout payment and request a return only when the server verifies its original payment ID, merchant, provider status and available amount. The selected transaction must match the order's payment; a shared order is not enough to authorize a different charge. A settled payment may be refunded to the same card, while an eligible captured unsettled payment may be voided in full. Enter a reason and confirm once. If the result is unknown, use the existing-operation check rather than submitting again. This does not refund a Victa terminal card payment or turn a card payment into a cash return.
 
-When **Cash** is selected:
-1. Enter the amount the customer handed you.
-2. The app shows the **change due**.
-3. Tap **Confirm Payment** to close the order.
+<span id="verifone-readable-hosted-theme" />
 
----
+## Keep the hosted payment form readable
 
-## Payment Confirmation and Receipts
+When Foody enables a restaurant-branded Verifone hosted checkout, the payment page uses light surfaces and dark text, even if the restaurant website is dark. The published logo is kept and the brand/button accent is adapted when needed for readable contrast. This concerns online hosted payments, not POS terminals or native Apple Pay/Google Pay sheets. If an older page is unreadable, contact the Foody team to resynchronize its payment theme. The update applies to newly issued Checkout links, not the page already open. Check the current payment status before requesting another link; never repeat a debit because of a display problem.
 
-After a successful payment:
-- The order status updates to **Paid**.
-- A receipt is generated and can be printed (if a receipt printer is connected).
-- In **Table Mode**, the table returns to **Available** status.
+<span id="weight-hold-margin" />
 
----
+## Review the by-weight authorization ceiling
 
-## Failed or Declined Payments
+For online by-weight orders, open Settings → Payments & VAT with settings.edit. Set Weight hold buffer % from 0 to 100 and save; the default for new restaurants is 20. A failed save keeps the draft. Zero still authorizes the estimate. Only the weight-priced subtotal gets a margin: 100 weighted + 50 fixed at 20% authorizes 170; delivery has no extra margin. Checkout shows the estimate, temporary ceiling and Confirm and authorize, in the restaurant theme. A changed ceiling requires customer review and another confirmation before payment; unknown policy blocks authorization. Existing reviewed checkouts and holds keep their ceiling. Staff confirm measured weights before capture and progression; excess beyond the hold is flagged for a separate payment, never automatically charged. Cash/pay-later makes no hold promise. Requires a configured authorize/capture provider, with partial capture, release and expiry validated before production. This neither changes the catering deposit/balance policy nor enables new-card saving with a CST weighted hold.
 
-If a card payment fails:
-- The order remains open. No money is charged.
-- Try the payment again, or switch to cash.
+<span id="section-1" />
 
----
+## Payment configuration
 
-## Viewing Payment History
+The payment provider is configured for each restaurant by the Foody team through the backoffice. Available payment methods depend on that configuration, the merchant contract and the order channel. Sumit and Verifone are integrated; availability must be confirmed for your installation. New PayPlus checkout is disabled.
 
-In **FoodyAdmin → Orders**, each order shows its payment status and method. You can filter by date range to review payment history for accounting.
+<span id="section-2" />
+
+## Check an online payment
+
+1. Open the order in **Orders**.
+2. Check its payment status and recorded method.
+3. A return from a payment page is not by itself proof of payment. Foody verifies the payment with the provider before marking it paid.
+4. For online orders requiring payment, confirmation makes the order available to the POS workflow.
+
+<span id="section-3" />
+
+## A failed or uncertain result
+
+Do not assume that a timeout means no money was taken. Check the order and provider transaction before retrying a charge. Contact Foody support if they disagree or the outcome is unclear. Never include full card details, CVV or credentials in a support message.
+
+Cash/manual recording, receipts, invoice issuance and refunds are separate operations. Their available controls depend on your setup and permissions. Do not record a card payment as successful solely because a customer shows a return page. Ask support for the procedure applicable to your provider before a refund or correction.
+
+<span id="verifone-cst-card-saving" />
+
+## Save a card during the first payment (CST)
+
+On the CST test setup validated with Verifone, sign in or create your Foody customer account, explicitly select Save card, then confirm the order. The hosted Verifone page collects the card, CVV and Israeli ID and charges the full order amount while creating the reusable token. There is no separate 1 ILS registration payment and no automatic monthly charge. Foody opens confirmation only after verifying the transaction. On later orders, choose the saved card and explicitly confirm the new amount; the configured No-CVV contract requires neither CVV nor Israeli ID. A delayed result requires checking status, never repeating the debit. Previously issued registration links keep their old recovery flow. Weighted holds remain outside this new registration flow. Production availability requires separate merchant approval.
+
+<span id="invoice4u-order-lines" />
+
+## Check an itemized Invoice4U invoice
+
+When Invoice4U issuance and an invoice document type are enabled by the Foody team for the merchant, ordinary immediate Verifone order payments send the saved order lines: items and quantities, selected variants/options, combo base and included components, order discount and delivery fee. Frozen prices already include VAT; it is not added again. The line total must equal the payment amount or payment initiation is blocked. The same detail is sent for a later saved-card sale. Legacy orders without catalogue lines and catering/table/capture operations keep their existing document behavior. An approved payment is not proof that Invoice4U issued a fiscal document: check the document in Verifone Central/Invoice4U and customer delivery. Do not create another payment to obtain a missing invoice.
+
+<span id="carte-series-stock" />
+
+## Stock reservations after late payment
+
+Predefined item stocks now have a journal under Items & menus → Stock history and on each product. A rotating carte can prepare initial allowances per series and publish them without restoring already committed units. Previous remaining counts are not carried forward. Order changes and pre-production releases use the original frozen pool; a produced item remains consumed. Ingredient/preparation quantities and recipe costs remain separate. See [Availability](/en/help/kitchen/availability) for initial imports, corrections and history filters.
+
+<span id="related-service-controls" />
+
+## Access the new controls
+
+The entry sign-in invitation is now a published website order-journey preference. Order without an account remains available; this setting does not replace mandatory phone verification or payment/delivery validation. Google/Geoapify consumption and limits are separately available in [Usage and quotas](/en/help/settings/api-usage-and-quotas).

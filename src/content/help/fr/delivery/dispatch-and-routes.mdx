@@ -1,0 +1,87 @@
+---
+title: Dispatch et planification des tournées
+description: Admin → Commandes → Livraisons / Tournées
+apps: foodyadmin
+tags:
+  - delivery
+  - delivery-dispatch
+updatedAt: '2026-10-21'
+featureId: delivery-dispatch
+audience: public
+releaseStatus: available
+---
+Admin → Commandes → Livraisons / Tournées
+
+<span id="verifone-admin-money-operations" />
+
+## Rembourser ou annuler un paiement en ligne Verifone
+
+La section paiement d’une commande Admin permet le remboursement lié total ou partiel et le VOID total d’un paiement en ligne Verifone unique admissible, pour un propriétaire/responsable avec payments.manage. L’état fournisseur, le montant encaissé et l’historique vérifié déterminent l’admissibilité, pas un délai fixe de 24 heures. La préparation et la remise ne sont pas annulées et aucun bouton de remboursement terminal POS n’est ajouté. Un résultat inconnu reste réservé : vérifiez-le sans renvoyer l’opération. Les avoirs et annulations Invoice4U nécessitent un contrôle distinct. Voir [la procédure de paiement en ligne](/fr/help/payments/how-payments-work#verifone-admin-refund-void).
+
+Une vente ABS capturée encore en AUTHORISED/AUTHORIZED ou SETTLEMENT_REQUESTED n’est pas réglée : Admin affiche Montant annulable et uniquement Annuler tout le paiement, sans remboursement antérieur. Rembourser le paiement et Montant remboursable exigent un état réglé explicite ou un historique de remboursement partiel vérifié. Les états génériques APPROVED/COMPLETED, les contradictions et les preuves manquantes ne proposent aucune opération. Un changement d’état avant confirmation refuse l’action devenue obsolète ; le VOID n’est jamais remplacé automatiquement par un REFUND. Demande rejetée par Verifone signifie qu’aucune restitution n’est confirmée, pas nécessairement un refus de la banque.
+
+<span id="weight-hold-margin" />
+
+## Vérifier le plafond de préautorisation au poids
+
+Pour les commandes en ligne au poids, ouvrez Réglages → Paiements & TVA avec settings.edit. Saisissez Marge d’empreinte au poids % de 0 à 100 puis enregistrez ; la valeur par défaut des nouveaux restaurants est 20. Un échec conserve la saisie. À 0 %, le montant estimé reste préautorisé. Seul le sous-total au poids reçoit une marge : 100 au poids + 50 fixes à 20 % donnent 170 préautorisés ; aucune marge sur la livraison. Le checkout affiche estimation, plafond temporaire et Confirmer et préautoriser, dans le thème du restaurant. Un plafond modifié exige une nouvelle revue et confirmation avant paiement ; une politique inconnue bloque l’autorisation. Les commandes déjà revues et empreintes existantes gardent leur plafond. Le personnel confirme les poids mesurés avant capture et progression ; un dépassement est signalé pour un paiement complémentaire, jamais débité automatiquement. Espèces/paiement ultérieur n’annoncent pas d’empreinte. Un prestataire autorisation/capture configuré est nécessaire ; validez capture partielle, libération et expiration avant production. Ce réglage ne change ni acompte/solde traiteur ni la restriction de sauvegarde d’une nouvelle carte pour une empreinte CST au poids.
+
+<span id="date" />
+
+## Choisir les livraisons d’une date
+
+Choisissez la date de tournée et vérifiez les commandes disponibles. Ne mélangez pas les livraisons planifiées d’un autre jour de service.
+
+<span id="assign" />
+
+## Affecter coursiers et arrêts
+
+Choisissez coursier, dépôt et commandes, puis vérifiez adresses, temps de remise et créneaux promis. Corrigez les adresses avant optimisation.
+
+<span id="optimize" />
+
+## Vérifier une tournée calculée
+
+Lancez le calcul ou l’affectation de flotte proposés puis vérifiez avant enregistrement/dispatch. Distinguez conduite, attente et remise ; les recalculs peuvent consommer des usages fournisseur.
+
+<span id="dispatch" />
+
+## Enregistrer et suivre l’avancement
+
+Enregistrez la tournée vérifiée puis utilisez le dispatch. Suivez coursier et commandes et modifiez explicitement un plan devenu obsolète.
+
+<span id="endpoints" />
+
+## Définir le départ et l’arrivée de chaque livreur
+
+Avec les versions API et Admin correspondantes installées, sélectionnez commandes et livreurs dans Commandes → Livraisons → répartition. Saisissez l’adresse de départ et la destination finale de chaque livreur avant de générer le plan. Tapez au moins trois caractères et choisissez une suggestion ; une rue seule demande de préciser le numéro. Si les suggestions sont indisponibles, saisissez l’adresse complète manuellement puis enregistrez pour la localiser. L’arrivée peut être le domicile du livreur. Foody optimise les livraisons entre ces deux points en respectant les contraintes horaires existantes. Pour un départ près de Tel Aviv et un domicile final à Netanya, vérifiez que Herzliya et Raanana précèdent Netanya. Avant le départ, l’admin ou le livreur affecté peut modifier les paramètres puis enregistrer ; changer un point réinitialise un ordre manuel et recalcule la tournée. Un échec de localisation conserve le plan enregistré. Avant le départ, les adresses de départ et de fin restent modifiables après la répartition. Indiquez numéro, rue et ville ; le numéro peut précéder ou suivre la rue, et le libellé affiché est conservé. Si « Adresse introuvable » apparaît, vérifiez le numéro et la ville puis choisissez une autre suggestion ou corrigez l’adresse complète. Une indisponibilité temporaire du service de localisation demande de réessayer plus tard. Dans les deux cas, la tournée enregistrée est conservée. Lorsque Google est actif dans Cartes et itinéraires, les adresses de départ et de fin peuvent utiliser un point précis trouvé par Google même si Geoapify ne les localise pas. Enregistrez les paramètres avant le départ puis vérifiez le dernier trajet recalculé. Si Google est indisponible ou que son quota protégé est atteint et que l’autre fournisseur ne trouve pas un point, l’enregistrement ou le recalcul est bloqué et le plan précédent est conservé ; la destination finale n’est jamais omise silencieusement. Les points connus uniquement de Google sont affichés sur la carte Google et masqués lorsque la carte change de fournisseur. Choisissez une autre adresse précisément localisée ou réessayez au retour de Google.
+
+<span id="customer-window" />
+
+## Régler le créneau communiqué au client
+
+Dans la répartition, utilisez « Marge du créneau communiqué au client » à côté du temps à chaque arrêt. Les nouveaux plans proposent 90 minutes. Saisissez 1:30, 1h30 ou 90 pour une heure trente ; la durée autorisée est de 1 à 720 minutes. Le créneau commence à l’arrivée calculée, arrondie à la minute affichée : 08:30 + 90 minutes donne 08:30–10:00. Ce champ n’allonge pas le temps de remise et ne remplace pas les contraintes horaires initiales de la commande. Il est enregistré par tournée et modifiable avant le départ. Les liens WhatsApp de livraison et les rappels manuels ou approuvés utilisent ce créneau. Après recalcul, rouvrez le rappel pour vérifier son texte actualisé. Les anciennes tournées sans ce réglage conservent leur créneau de rappel enregistré. Si une tournée configurée ne fournit pas d’arrivée valide, recalculez ou corrigez l’adresse avant l’envoi ; aucun horaire n’est inventé.
+
+<span id="whatsapp-media" />
+
+## Joindre un fichier au rappel WhatsApp
+
+Avec les notifications Meta directes activées, configurez la pièce jointe dans Paramètres → Communications → WhatsApp ou dans l’étape du Parcours des commandes : modèle approuvé avec en-tête photo/PDF, fichier fixe autorisé ou reçu PDF de cette commande. Cette sélection ne change ni la tournée ni le moment d’envoi configuré. Vérifiez le fichier dans l’aperçu manuel et le nom de la pièce jointe dans Messages au client ; ce nom ne prouve pas la livraison.
+
+<span id="internal-combo-substitution" />
+
+## Faire une exception de formule sur une commande
+
+Pour une exception de formule sur une seule commande, un utilisateur Admin autorisé ouvre l’étape de la formule et choisit Choisir un autre article. Le remplacement est inclus sans supplément et enregistré uniquement sur cette commande. Les règles de remise, programmation et livraison restent inchangées. Vérifiez le plat et la portion sélectionnés dans le détail de commande. Les sélecteurs client et POS conservent la composition configurée ; effectuez l’exception dans l’éditeur interne Admin. Consultez le guide des formules pour les quantités, articles admissibles et reprises.
+
+<span id="carte-series-stock" />
+
+## Conserver l’origine du stock lors d’un déplacement
+
+Les stocks prédéfinis des articles disposent d’un journal dans Articles et cartes → Historique des stocks et sur chaque produit. Une carte tournante permet de préparer des quotas initiaux par série et de les publier sans recréditer les quantités engagées. Les reliquats précédents ne sont pas reportés. Les modifications de commande et libérations avant production utilisent le compteur d’origine enregistré ; un article déjà préparé reste consommé. Les quantités d’ingrédients et préparations et les coûts de recette restent distincts. Consultez [Disponibilité](/fr/help/kitchen/availability) pour les imports initiaux, les corrections et les filtres d’historique.
+
+<span id="related-service-controls" />
+
+## Accès aux nouveaux réglages
+
+Paramètres → Consommation et quotas affiche les plafonds et consommations Google/Geoapify du restaurant, accessibles avec la permission de consulter ou modifier les paramètres. Les crédits de remplacement et les livraisons soumises à l’optimisation sont comptés séparément des requêtes. Foody ajuste les plafonds ; un changement ne remet pas les compteurs à zéro. Voir [les règles et le renouvellement](/fr/help/settings/api-usage-and-quotas).

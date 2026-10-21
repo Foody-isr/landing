@@ -1,21 +1,29 @@
 ---
-title: "Installer une Epson TM-U220IIB avec Foody"
-description: "Du déballage au premier bon de cuisine : réseau, Epson Server Direct Print, ajout dans FoodyAdmin, passes, routage et ticket test."
+title: Installer une Epson TM-U220IIB avec Foody
+description: >-
+  Du déballage au premier bon de cuisine : réseau, Epson Server Direct Print, ajout dans FoodyAdmin, passes, routage et
+  ticket test.
 apps: both
-tags: [imprimante, epson, tm-u220iib, server-direct-print, cuisine, bon, routage, passe, installation]
-updatedAt: 2026-09-17
+tags:
+  - printers
+  - printers-epson-tm-u220iib
+  - imprimante
+  - epson
+  - tm-u220iib
+  - server-direct-print
+  - cuisine
+  - bon
+  - routage
+  - passe
+  - installation
+updatedAt: '2026-09-17'
+featureId: printers-epson-tm-u220iib
+audience: public
+releaseStatus: available
 ---
+Ouvrez l’espace Foody correspondant décrit ci-dessous.
 
-Ce guide accompagne l'installation d'une **Epson TM-U220IIB-i** depuis son carton jusqu'au
-premier bon envoyé par Foody. Comptez environ 20 à 30 minutes par imprimante une fois le
-réseau du restaurant prêt.
-
-> **Vérifiez la référence avant de commencer.** Pour se connecter directement à Foody,
-> l'imprimante doit être la variante intelligente **TM-U220IIB-i** et proposer **Server Direct
-> Print** dans TMNet WebConfig. Une TM-U220IIB USB ou Ethernet standard ne possède pas ce
-> service embarqué. Elle doit alors passer par une imprimante Epson intelligente compatible
-> configurée comme passerelle. Si le menu Server Direct Print n'apparaît pas, arrêtez-vous et
-> contactez Foody avec une photo de l'étiquette du modèle.
+<span id="section-1" />
 
 ## Ce qu'il vous faut
 
@@ -30,6 +38,8 @@ Ne branchez pas l'imprimante sur un réseau invité : ces réseaux isolent souve
 les uns des autres. Foody n'a pas besoin d'ouvrir un port entrant dans le restaurant ; c'est
 l'imprimante qui contacte Foody en HTTPS.
 
+<span id="section-2" />
+
 ## 1. Déballez et contrôlez le matériel
 
 1. Sortez l'imprimante, l'alimentation, le câble secteur et la cassette ruban.
@@ -43,7 +53,13 @@ l'imprimante qui contacte Foody en HTTPS.
 L'adresse MAC identifie l'interface réseau. Elle peut aussi servir à créer une réservation DHCP
 sur le routeur du restaurant.
 
+<span id="section-3" />
+
 ## 2. Installez le ruban et le papier
+
+2. Installez le ruban et le papier
+
+<span id="section-4" />
 
 ### Cassette ruban
 
@@ -55,6 +71,8 @@ sur le routeur du restaurant.
 La tête d'impression peut être très chaude après utilisation. Ne la touchez pas et ne forcez
 jamais le chariot du ruban à la main.
 
+<span id="section-5" />
+
 ### Rouleau de papier
 
 1. Ouvrez le capot papier avec son levier.
@@ -62,6 +80,8 @@ jamais le chariot du ruban à la main.
    sans pli ni tension.
 3. Tirez quelques centimètres de papier droit devant vous.
 4. Refermez complètement le capot, puis déchirez l'excédent sur la barre prévue.
+
+<span id="section-6" />
 
 ## 3. Branchez l'imprimante au réseau
 
@@ -74,6 +94,8 @@ jamais le chariot du ruban à la main.
 
 Si l'adresse est `0.0.0.0` ou absente, vérifiez le câble et le port du switch. Si elle commence
 par `169.254`, l'imprimante n'a pas reçu d'adresse du routeur.
+
+<span id="section-7" />
 
 ## 4. Ouvrez Epson TMNet WebConfig
 
@@ -89,6 +111,8 @@ par `169.254`, l'imprimante n'a pas reçu d'adresse du routeur.
 
 L'adresse IP sert à administrer l'imprimante sur place. **Elle n'est pas saisie dans Foody** :
 Server Direct Print fonctionne par connexion sortante de l'imprimante vers le cloud.
+
+<span id="section-8" />
 
 ## 5. Enregistrez l'imprimante dans FoodyAdmin
 
@@ -120,6 +144,8 @@ Cliquez sur **Enregistrer**. Foody affiche ensuite une seule fois :
 Gardez cet écran ouvert pendant l'étape suivante. Le mot de passe ne sera plus affiché après
 fermeture. Ne l'envoyez pas dans un message ou une photo non sécurisée.
 
+<span id="section-9" />
+
 ## 6. Configurez Server Direct Print dans WebConfig
 
 Dans TMNet WebConfig, ouvrez **Server Direct Print** puis activez le service. Recopiez exactement
@@ -139,6 +165,8 @@ si WebConfig le demande.
 N'ajoutez aucun espace avant ou après l'ID, le mot de passe ou les URL. Les URL Foody doivent
 rester en `https://`.
 
+<span id="section-10" />
+
 ## 7. Attendez le statut En ligne et imprimez un test
 
 1. Revenez dans **Paramètres → Imprimantes**.
@@ -153,6 +181,8 @@ rester en `https://`.
 Si le statut reste **Inconnu**, l'imprimante ne joint pas encore Foody. Si elle est **En ligne**
 mais que le test échoue, ouvrez l'onglet **Tâches** pour lire la dernière erreur renvoyée par
 l'appareil.
+
+<span id="section-11" />
 
 ## 8. Créez les passes de production
 
@@ -173,6 +203,8 @@ Une **imprimante de secours** ne crée pas une deuxième copie : elle prend le r
 si l'imprimante principale est indisponible. Pour imprimer simultanément aux deux bars, utilisez
 deux passes et routez les boissons vers les deux colonnes.
 
+<span id="section-12" />
+
 ## 9. Routez les catégories et les exceptions
 
 Ouvrez l'onglet **Routage** :
@@ -188,6 +220,8 @@ Ouvrez l'onglet **Routage** :
 Avant d'activer l'impression serveur, la page doit indiquer que toutes les imprimantes ont été
 testées, que chaque passe possède une imprimante et que toutes les catégories ont une destination.
 
+<span id="section-13" />
+
 ## 10. Faites sortir un vrai bon depuis Foody
 
 1. Activez **Imprimer les tickets cuisine depuis le serveur**.
@@ -202,6 +236,8 @@ testées, que chaque passe possède une imprimante et que toutes les catégories
 Ne lancez le service qu'après ce test de bout en bout. Conservez temporairement votre ancien
 mode d'impression disponible pendant la première prise de commande réelle.
 
+<span id="section-14" />
+
 ## Dépannage rapide
 
 | Symptôme | Contrôle à effectuer |
@@ -215,6 +251,8 @@ mode d'impression disponible pendant la première prise de commande réelle.
 | Bon en échec | Ouvrez **Tâches**, corrigez l'erreur papier/capot/ruban, puis relancez le test |
 | Mauvaise passe | Contrôlez la matrice et les exceptions article/modificateur |
 
+<span id="section-15" />
+
 ## Documentation constructeur
 
 - [Epson TM-U220IIB Series](https://www.epson.fr/fr_FR/produits/imprimantes/imprimantes-pour-points-de-vente/imprimantes-pour-points-de-vente/imprimantes-pc-pos/epson-tm-u220iib-series/p/46917)
@@ -224,3 +262,9 @@ mode d'impression disponible pendant la première prise de commande réelle.
 Les noms de menus WebConfig peuvent varier légèrement selon le firmware et l'interface réseau.
 En cas de doute, ne réinitialisez pas l'imprimante pendant le service : photographiez l'étiquette,
 la feuille d'état et l'écran concerné avant de contacter Foody.
+
+<span id="whatsapp-pdf" />
+
+## Distinguer le PDF WhatsApp des travaux d’impression
+
+Un reçu PDF joint à une automatisation WhatsApp est un récapitulatif numérique de commande. Il utilise les articles et totaux enregistrés mais ne crée pas de travail d’impression, ne demande pas d’imprimante en ligne et n’apparaît pas dans son historique. Pour le configurer, utilisez Communications → WhatsApp ou Parcours des commandes. Les reçus papier, profils, diagnostics et règles d’impression existants restent configurés dans les écrans d’impression.

@@ -1,271 +1,147 @@
 ---
-title: "Daily Operations"
-description: "Run your kitchen day-to-day: track sales, receive supplies, monitor food cost, analyze variance, close the day, and auto-generate tomorrow's supplier orders."
+title: Daily Operations
+description: 'Prepare service, review sales and stock, close/reopen a day, and explicitly generate and send supplier drafts.'
 apps: foodyadmin
-tags: [kitchen, stock, daily-operations, food-cost, variance, sales, supplies, procurement, suppliers, forecast, waste]
-updatedAt: 2026-04-10
+tags:
+  - kitchen
+  - kitchen-daily-operations
+  - stock
+  - daily-operations
+  - food-cost
+  - variance
+  - sales
+  - supplies
+  - procurement
+  - suppliers
+  - forecast
+  - waste
+updatedAt: '2026-10-21'
+featureId: kitchen-daily-operations
+audience: public
+releaseStatus: available
 ---
+Kitchen → Today → Kitchen companion.
 
-## What Is It?
+<span id="section-3" />
 
-**Daily Operations** is the most important tool for running your kitchen day to day.
+<span id="section-1" />
 
-It lets you:
-- Track what you sell
-- Understand what you actually consume
-- Detect losses and over-portioning
-- Control your food cost
-- Prepare tomorrow's supplier orders
+<span id="section-2" />
 
-### In One Sentence
+## Open the correct day
 
-Every day, you compare:
+Open Kitchen → Today, the Kitchen companion page. Select a date using the calendar and arrows; Today returns to the current day. Check restaurant and open/closed status. A historical day without a report differs from a loading error. Some production and receiving actions are offered only for the current day.
 
-- **What you should have used** (based on recipes)
-- **What you actually used** (based on your stock)
+<span id="section-23" />
 
-The difference = **loss or problem**.
+## Access and required data
 
-Every day follows the same cycle:
-1. Record sales and deliveries
-2. Check actual stock
-3. Analyze variances
-4. Close the day
-5. Prepare tomorrow's orders
+Changes require kitchen management permission and the relevant report controls. Configure recipes, units, prices and suppliers for useful calculations. Unmatched sales and missing recipes limit consumption/forecast coverage; they do not mean zero consumption.
 
----
+<span id="prepare-service" />
 
-## The Daily Report
+## Prepare service
 
-Each day has one report with a lifecycle:
+In Prepare service, review preparations to launch, targets, sales forecasts and deliveries to check. A forecast is an estimate. Open a preparation and confirm production to record a batch; viewing a target or forecast produces nothing. Unavailable indicators show loading/error states, not reliable zero counts.
 
-| Status | Meaning |
-|--------|---------|
-| **Open** | Actively being edited. You can add sales, log supplies, update stock counts, and save notes. |
-| **Closed** | Frozen. Stock has been deducted based on sales. Estimated supplies become available. |
-| **Reviewed** | Final sign-off by a manager (optional). |
+<span id="during-service" />
 
-Navigate to **Kitchen > Daily Operations** to open or view today's report. The system creates one automatically if it doesn't exist yet.
+## During service
 
----
+During service compares preparation stock with a target entered for the next service. These targets are a local page simulation, not saved stock counts or supplier orders. Production requires a separate confirmation. Also review the sales journal and ingredients needing replenishment.
 
-## Sales Tracking
+<span id="section-4" />
 
-The report tracks what was sold during the day. You have two options:
+<span id="section-5" />
 
-### Pull from POS
+<span id="section-6" />
 
-Click **Pull from POS** to automatically import all paid orders from your ordering system. The system aggregates quantities by menu item and marks them as POS-sourced.
+## Import, link and correct sales
 
-### Manual Sales Entry
+In Day review, open the journal, Import sales or Manual Sales Entry on an open report. Choose Foody POS or the offered external/Aviv file source, then review rows and item links. Do not manually duplicate sales already pulled from POS. Save manual quantities and check the result; link unmatched external products before interpreting consumption.
 
-Click **Add Sales** to manually enter what was sold. Search by category, select menu items, and input quantities. Useful when not all sales go through the POS (cash sales, external platforms, etc.).
+<span id="section-7" />
 
-You can use both sources together. The report's `sales_source` will show as "mixed" when combining POS and manual entries.
+## Check and receive deliveries
 
----
+In Prepare service, Check delivery opens an expected purchase order. Check actually delivered quantities before confirming. Scan/import and quick receiving are separate actions. View recorded receipts in their drawer. Authorized deletion requires confirmation and can reverse the relevant movement; do not credit the same delivery twice through another import.
 
-## Supplies Received
+<span id="section-8" />
 
-Log deliveries as they arrive throughout the day.
+<span id="section-9" />
 
-Click **Add Supply** to record what a supplier delivered. Select ingredients, enter quantities, and save. Each entry creates an auditable stock transaction that increases your inventory.
+<span id="section-10" />
 
-The **Supplies Received** section shows all deliveries logged for the day. You can delete an entry if it was recorded incorrectly — the stock adjustment is automatically reversed.
+<span id="section-11" />
 
----
+<span id="section-12" />
 
-## Stock Count & Variance
+<span id="section-13" />
 
-This is where you identify where you're losing money.
+## Compare expected and counted stock
 
-The system compares:
-- **Expected** (from your recipes)
-- **Actual** (from your stock)
+Day review separates expected stock, physically counted quantities and variance. Use review filters/search, open an ingredient, enter its measured remaining quantity and confirm. Physical counts are optional: a missing count remains uncounted, not zero. Check the unit and saved result. Unmatched sales indicate incomplete coverage.
 
-### How It Works
+<span id="section-14" />
 
-The system calculates automatically:
+<span id="section-15" />
 
-- **Expected usage** — based on sales and recipes
-- **Actual usage** — based on your stock (opening + received - closing - waste)
+## Use the dedicated cost and recipe workspaces
 
-You don't need to calculate anything.
+The review uses available sales, recipes and movements to explain variance. Cost/margin analysis and recipe imports have dedicated workspaces; do not look for the former charts or a recipe-import button inside this review. [Food cost](./food-cost) · [Recipe Lab](./recipe-lab) · [Recipe quantities](../menu/ingredients-and-portions).
 
-**Variance** = actual - expected
+<span id="section-16" />
 
-- Positive = you used too much
-- Negative = inconsistency or missing data
+## Save the handover note
 
-### How to Read It Quickly
+Enter the handover note in Day review and use Save Draft after changes. This saves the note and recomputes the report; it does not close the day or send supplier orders. Wait for confirmation before changing date or leaving.
 
-| Variance | Meaning |
-|----------|---------|
-| **< 5%** | Normal. Recipes match reality. |
-| **5-15%** | Needs attention. Could be portioning issues or unrecorded waste. |
-| **> 15%** | Problem. Investigate immediately: theft, spoilage, incorrect recipes, or counting errors. |
+<span id="section-17" />
 
-### A Concrete Example
+## Close the day
 
-Cod: +300g (17%). You used too much product today — likely over-portioning or kitchen waste.
+Check sales, mappings and counts, then click Close Day and accept its confirmation. Closing recomputes/freezes the report, applies external/manual consumption not yet deducted and reconciles explicitly counted ingredients. Foody POS sales already deduct stock through the order flow and are not deducted again at close. Closing neither generates nor sends supplier orders. After an uncertain response, refresh and check closed status before another action.
 
-### Recording Closing Stock
+<span id="reopen-day" />
 
-Before closing the day, do a physical count of your ingredients. Enter the quantities in the **Closing Stock** column. You can update these multiple times while the report is still open.
+## Reopen an eligible report
 
-### Ingredient Breakdown
+Reopen day is offered for an eligible closed report, excluding historical-only imports. After confirmation, the server reverses deductions/count reconciliations belonging to that close and makes the report editable. Review sales/counts, then close again when appropriate. It does not recall supplier emails already sent.
 
-Click on any ingredient to see a detailed breakdown: which menu items consumed it, how much each used (based on recipes), and the total theoretical usage. This helps pinpoint where the variance is coming from.
+<span id="section-18" />
 
----
+<span id="section-19" />
 
-## Food Cost Analytics
+<span id="section-21" />
 
-Food cost measures how much you spend on ingredients to generate your revenue. The goal: maximize your margin.
+## Explicitly generate estimated drafts
 
-The report calculates key metrics in real-time:
+On a closed report, open Estimated Supplies. Click All recorded sales, Aviv and manual sales or From POS to generate. Closing alone does not run generation. The calculation uses history, recipes and stock to suggest shortages grouped by supplier. It creates drafts without sending emails or orders. Review quantities, units and supplier; regeneration replaces previously generated drafts for that report. A forecast remains an estimate; diagnostics distinguish missing history, unlinked recipes and no shortages.
 
-| KPI | Formula | Target |
-|-----|---------|--------|
-| **Food Cost %** | (actual cost / revenue) x 100 | < 30% (warns if > 35%) |
-| **Revenue** | Total sales from paid orders | — |
-| **Variance** | Cost of over/under-usage | As close to 0 as possible |
-| **Waste** | Cost of recorded spoilage/damage | Minimize |
+<span id="section-20" />
 
-These metrics update as you add sales and adjust stock counts throughout the day.
+## Review and manually send
 
-Use the **Show inc. VAT** checkbox on the ingredients table header to switch between HT and TTC cost views. All unit costs, line costs, and totals adjust accordingly. For accurate food cost %, the system normalizes both costs and revenue to the same VAT basis.
+Closing or generation never automatically sends a supplier order. Review the draft and requested delivery date; a delivery date/start is required for email. If missing, use the order’s send dialog in Kitchen → Purchases, fill Delivery date and start and complete the manual send there. If the date is already set, Send order in the estimated drawer opens the dialog: check the recipient, then click Send. Only this explicit action triggers email. Check status and result afterward; if uncertain after sending, verify before retrying. [Purchases and orders](./suppliers-and-purchases).
 
-### Importing Recipes
+<span id="section-24" />
 
-Click the **Import Recipe** button (sparkle icon) on the food cost page or on any recipe detail page. You can paste recipe text or upload a photo/PDF. The AI extracts ingredients and matches them to your stock items in a full-screen split view. For full details, see [AI Recipe Import](/help/kitchen/stock-management#ai-recipe-import) in Stock Management.
+<span id="section-25" />
 
-> **Important:** A high food cost can come from high purchase prices, significant losses, or over-generous portions. Look at variance data to understand which one.
+## Recover after an error
 
----
+Distinguish empty results from load failures. If a confirmed save is followed by refresh failure, reload the result instead of repeating receipt, production, close or send. Preserve unsaved input before changing date. If sending remains uncertain, check the order and delivery outcome before transmitting again.
 
-## Retrospective
+<span id="section-26" />
 
-Before closing the day, you can optionally fill in three reflection fields:
+<span id="section-22" />
 
-- **What went well** — things to keep doing
-- **What went wrong** — issues to address
-- **What to improve** — action items for tomorrow
+## Workflow and related guides
 
-These are saved with the report and help build a history of operational patterns over time. Click **Save Draft** to preserve your notes without closing the day.
+Prepare service, receive deliveries, review sales/stock, save handover, then close. Separately generate and review supplier drafts; send only after manual confirmation. [Stock](./stock-management) · [Preparations](./preparations) · [Delivery import](./delivery-note-import) · [Purchases](./suppliers-and-purchases). For an item tracked by a shared counter whose rule shows the remaining count, the cart accounts for available quantity even above the low-stock threshold. That threshold controls the warning, not the cart cap. See [Availability](/en/help/kitchen/availability) to check the rule and manual overrides.
 
----
+<span id="carte-series-stock" />
 
-## Closing the Day
+## Check the series stock journal
 
-This is the most important step of your day.
-
-When you click **Close Day**, several things happen:
-
-1. **Stock is automatically deducted** based on the day's sales. The system looks up each sold menu item's recipe, calculates ingredient quantities needed, converts units if necessary, and reduces your stock levels. Every deduction is recorded as an immutable stock transaction linked to this report.
-
-2. **The report is frozen** — no more edits to sales, stock counts, or items.
-
-3. **Estimated Supplies** section becomes available (see below).
-
-Closing is idempotent and safe to trigger multiple times — stock is only deducted once.
-
-> **Important:** An unclosed day = incomplete data. Make closing the day a non-negotiable daily ritual.
-
----
-
-## Estimated Supplies
-
-After closing the day, the system automatically suggests what you need to order. The goal: never run out of stock, without over-ordering.
-
-### Generating Tomorrow's Order
-
-Click one of three buttons to choose your data source:
-
-- **From POS** — uses real order history
-- **From Manual Sales** — uses manually entered sales data
-- **Both** — combines POS and manual entries
-
-The system then:
-
-1. **Predicts tomorrow's sales** by averaging the same weekday over the last 6 weeks. If tomorrow is Thursday, it averages all your recent Thursdays.
-2. **Converts dishes to ingredients** using your recipes.
-3. **Checks current stock levels** and only includes items where you don't have enough.
-4. **Groups items by supplier** and creates one draft purchase order per supplier.
-
-> **Example:** The system predicts you'll sell 20 Fish Burgers and 15 Ceviches tomorrow. Your recipes say that needs 4.5kg of cod total. You currently have 1kg in stock. The system generates an order for 3.5kg of cod from your fish supplier.
-
-### Reviewing and Sending Orders
-
-Each supplier order appears as a card with a table of ingredients, quantities, and units. You can:
-
-- **Review** the suggested quantities and adjust if needed
-- **Send by email** — enter the supplier's email and the order is sent as a formatted email. Status changes from "Draft" to "Sent".
-- **Regenerate** to recalculate (e.g., after updating stock levels)
-
-### Understanding the Prediction
-
-The prediction uses a **simple average**: total sales of each item on the same weekday, divided by the number of weeks analyzed (up to 6).
-
-This works well for restaurants with consistent patterns. It does not account for holidays, weather, seasonal trends, or promotions. Use the prediction as a starting point and adjust manually when you know something unusual is coming.
-
----
-
-## The Full Daily Workflow
-
-| Time | Action |
-|------|--------|
-| **Morning** | Open today's report (auto-created) |
-| | Log supplies received from morning deliveries |
-| **Throughout the day** | Add deliveries as they arrive |
-| | Pull POS sales or enter manual sales as needed |
-| **End of day** | Do a physical stock count, enter closing quantities |
-| | Fill in the retrospective (optional) |
-| | Click **Close Day** |
-| **After closing** | Generate estimated supplies for tomorrow |
-| | Review quantities per supplier |
-| | Send orders by email |
-| **Next morning** | Repeat for the new day |
-
----
-
-## Prerequisites
-
-For Daily Operations to work at its best:
-
-1. **Recipes linked to stock items** — each menu item should have ingredients defined in **Kitchen > Recipes**. Without recipes, the system can't calculate theoretical usage or predict supply needs.
-
-2. **Up-to-date stock levels** — keep quantities accurate so variance calculations and supply forecasts are reliable.
-
-3. **Suppliers assigned to stock items** (optional but recommended) — in **Kitchen > Stock**, assign a supplier to each ingredient. This groups purchase orders by supplier.
-
-4. **Sales history** (for estimated supplies) — at least 1-2 weeks of data for the same weekday. More history means better predictions.
-
----
-
-## Common Mistakes
-
-- **Not defining recipes** — no reliable calculations are possible
-- **Not doing a physical count** — variances become meaningless
-- **Closing without verifying** — errors accumulate day after day
-- **Not recording waste** — food cost data becomes inaccurate
-
-> One bad input = all your analytics become wrong.
-
----
-
-## Tips
-
-> **Tip:** Close your day and generate orders at the same time every evening. This creates a routine your team can rely on.
-
-> **Tip:** If variance is consistently high for an ingredient, check the recipe first in **Kitchen > Recipes**. A wrong quantity per serving will throw off all calculations.
-
-> **Tip:** Log deliveries as soon as they arrive, not at end of day. This keeps your stock levels accurate throughout the day and helps with real-time food cost tracking.
-
-> **Tip:** Use the retrospective consistently. Patterns become visible after a few weeks — recurring issues will stand out.
-
----
-
-## Related
-
-- [Stock Management](/help/kitchen/stock-management) — manage your ingredient inventory
+Predefined item stocks now have a journal under Items & menus → Stock history and on each product. A rotating carte can prepare initial allowances per series and publish them without restoring already committed units. Previous remaining counts are not carried forward. Order changes and pre-production releases use the original frozen pool; a produced item remains consumed. Ingredient/preparation quantities and recipe costs remain separate. See [Availability](/en/help/kitchen/availability) for initial imports, corrections and history filters.

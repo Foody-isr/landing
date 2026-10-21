@@ -1,0 +1,73 @@
+---
+title: 'Payment providers, saved methods and Cibus'
+description: >-
+  Open Settings → Payments or Cibus with the required permission. Provider availability is specific to the restaurant’s
+  contract and deployed integration.
+apps: foodyadmin
+tags:
+  - payments
+  - payment-configuration
+updatedAt: '2026-10-18'
+featureId: payment-configuration
+audience: public
+releaseStatus: available
+---
+Open Settings → Payments or Cibus with the required permission. Provider availability is specific to the restaurant’s contract and deployed integration.
+
+<span id="verifone-admin-money-operations" />
+
+## Refund or void a Verifone online payment
+
+The Admin order payment section supports total or partial matched refunds and total VOID for an eligible single Verifone online payment, for owners/managers with payments.manage. Provider state, captured amount and verified history govern eligibility, not a fixed 24-hour rule. This does not cancel preparation or fulfillment and does not add a POS terminal refund button. Unknown results stay reserved and must be checked, never resubmitted. Invoice4U credit/cancellation documents require a separate check. See [the online payment procedure](/en/help/payments/how-payments-work#verifone-admin-refund-void).
+
+A captured ABS sale still AUTHORISED/AUTHORIZED or SETTLEMENT_REQUESTED is not settled: Admin shows Available to void and only Void entire payment, with no prior refund. Refund payment and Available to refund require an explicit settled state or verified partially-refunded history. Generic APPROVED/COMPLETED, contradictory states or missing evidence offer neither action. A state change before confirmation rejects the stale action; it never switches VOID to REFUND automatically. Request rejected by Verifone means no return of funds is confirmed, not necessarily an issuer decline.
+
+After a full return verified against matched Verifone history, the summary keeps the original amount, shows the full amount returned and zero remaining, and offers no further refund or VOID. A cleared capture balance after that return is not an uncaptured hold to release. Missing or inconsistent evidence still requires verification without resubmission.
+
+<span id="verifone-readable-hosted-theme" />
+
+## Keep the hosted payment form readable
+
+When Foody enables a restaurant-branded Verifone hosted checkout, the payment page uses light surfaces and dark text, even if the restaurant website is dark. The published logo is kept and the brand/button accent is adapted when needed for readable contrast. This concerns online hosted payments, not POS terminals or native Apple Pay/Google Pay sheets. If an older page is unreadable, contact the Foody team to resynchronize its payment theme. The update applies to newly issued Checkout links, not the page already open. Check the current payment status before requesting another link; never repeat a debit because of a display problem.
+
+<span id="weight-hold-margin" />
+
+## Review the by-weight authorization ceiling
+
+For online by-weight orders, open Settings → Payments & VAT with settings.edit. Set Weight hold buffer % from 0 to 100 and save; the default for new restaurants is 20. A failed save keeps the draft. Zero still authorizes the estimate. Only the weight-priced subtotal gets a margin: 100 weighted + 50 fixed at 20% authorizes 170; delivery has no extra margin. Checkout shows the estimate, temporary ceiling and Confirm and authorize, in the restaurant theme. A changed ceiling requires customer review and another confirmation before payment; unknown policy blocks authorization. Existing reviewed checkouts and holds keep their ceiling. Staff confirm measured weights before capture and progression; excess beyond the hold is flagged for a separate payment, never automatically charged. Cash/pay-later makes no hold promise. Requires a configured authorize/capture provider, with partial capture, release and expiry validated before production. This neither changes the catering deposit/balance policy nor enables new-card saving with a CST weighted hold.
+
+<span id="provider" />
+
+## Arrange provider activation
+
+Payment-provider credentials and activation are managed by the Foody team in the protected backoffice. Contact an authorized Foody operator to change them; the merchant Payments page does not connect a card processor. Use sandbox development to verify the supported transaction path. Never send credentials or card data to chat. SUMIT/Verifone availability depends on the contract; a provider name alone does not prove activation.
+
+<span id="saved-methods" />
+
+## Understand saved payment methods
+
+For an eligible customer/provider, saving a method requires its explicit enrollment flow. Guest checkout remains possible without enrollment where offered. Removing Foody’s saved authorization does not remove unrelated provider subscriptions. A failed enrollment can be reported after a successful order payment without undoing that payment.
+
+<span id="cibus" />
+
+## Configure and use Cibus
+
+In Cibus check whether the integration is enabled. With settings permission, replace the complete restaurant ID, POS ID and company code through the protected form; masked hints are not replacement credentials. Review the saved masked status. On POS select Cibus only when configured and inspect its result and remaining balance before another tender. A failed network response does not prove there was no charge.
+
+<span id="policy-vat-tips" />
+
+## Set payment policy, VAT and tips
+
+In Settings → Payments review online-payment-only policy, default VAT and tips enablement. Only permitted, changed fields are saved. An unknown policy remains unknown until explicitly chosen; editing VAT must not silently choose it. The weight authorization margin has its own editable field, explained below. Fixed suggested tips and rounding remain outside this form's edit contract. Verify saved values after success; retain edits on a failed save.
+
+<span id="verifone-cst-card-saving" />
+
+## Save a card during the first payment (CST)
+
+On the CST test setup validated with Verifone, sign in or create your Foody customer account, explicitly select Save card, then confirm the order. The hosted Verifone page collects the card, CVV and Israeli ID and charges the full order amount while creating the reusable token. There is no separate 1 ILS registration payment and no automatic monthly charge. Foody opens confirmation only after verifying the transaction. On later orders, choose the saved card and explicitly confirm the new amount; the configured No-CVV contract requires neither CVV nor Israeli ID. A delayed result requires checking status, never repeating the debit. Previously issued registration links keep their old recovery flow. Weighted holds remain outside this new registration flow. Production availability requires separate merchant approval.
+
+<span id="invoice4u-order-lines" />
+
+## Check an itemized Invoice4U invoice
+
+When Invoice4U issuance and an invoice document type are enabled by the Foody team for the merchant, ordinary immediate Verifone order payments send the saved order lines: items and quantities, selected variants/options, combo base and included components, order discount and delivery fee. Frozen prices already include VAT; it is not added again. The line total must equal the payment amount or payment initiation is blocked. The same detail is sent for a later saved-card sale. Legacy orders without catalogue lines and catering/table/capture operations keep their existing document behavior. An approved payment is not proof that Invoice4U issued a fiscal document: check the document in Verifone Central/Invoice4U and customer delivery. Do not create another payment to obtain a missing invoice.

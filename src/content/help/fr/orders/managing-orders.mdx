@@ -1,16 +1,56 @@
 ---
-title: "Gérer les commandes"
-description: "Toutes les commandes du web, du QR et de la caisse dans une liste en direct. Suivez le statut, acceptez, envoyez en cuisine, et suivez une commande jusqu'au bout."
+title: Gérer les commandes
+description: >-
+  Toutes les commandes du web, du QR et de la caisse dans une liste en direct. Suivez le statut, acceptez, envoyez en
+  cuisine, et suivez une commande jusqu'au bout.
 apps: foodyadmin
-tags: [commandes, direct, statut, cuisine, accepter, web, qr, caisse]
-updatedAt: 2026-05-24
+tags:
+  - orders
+  - orders-managing-orders
+  - commandes
+  - direct
+  - statut
+  - cuisine
+  - accepter
+  - web
+  - qr
+  - caisse
+updatedAt: '2026-10-21'
+featureId: orders-managing-orders
+audience: public
+releaseStatus: available
 ---
+Ouvrez l’espace Foody correspondant décrit ci-dessous.
+
+<span id="open-order-from-transaction" />
+
+## Ouvrir la commande liée à une transaction
+
+Dans Transactions sur la caisse, sélectionnez un paiement confirmé et ouvrez une commande liée pour consulter ses détails enregistrés en lecture seule. Un paiement peut couvrir plusieurs commandes et une commande peut avoir plusieurs paiements. Si la commande ne se charge pas, réessayez plus tard ; n’en déduisez pas que le paiement a échoué et ne relancez pas un débit en double.
+
+<span id="verifone-admin-money-operations" />
+
+## Rembourser ou annuler un paiement en ligne Verifone
+
+La section paiement d’une commande Admin permet le remboursement lié total ou partiel et le VOID total d’un paiement en ligne Verifone unique admissible, pour un propriétaire/responsable avec payments.manage. L’état fournisseur, le montant encaissé et l’historique vérifié déterminent l’admissibilité, pas un délai fixe de 24 heures. La préparation et la remise ne sont pas annulées et aucun bouton de remboursement terminal POS n’est ajouté. Un résultat inconnu reste réservé : vérifiez-le sans renvoyer l’opération. Les avoirs et annulations Invoice4U nécessitent un contrôle distinct. Voir [la procédure de paiement en ligne](/fr/help/payments/how-payments-work#verifone-admin-refund-void).
+
+Une vente ABS capturée encore en AUTHORISED/AUTHORIZED ou SETTLEMENT_REQUESTED n’est pas réglée : Admin affiche Montant annulable et uniquement Annuler tout le paiement, sans remboursement antérieur. Rembourser le paiement et Montant remboursable exigent un état réglé explicite ou un historique de remboursement partiel vérifié. Les états génériques APPROVED/COMPLETED, les contradictions et les preuves manquantes ne proposent aucune opération. Un changement d’état avant confirmation refuse l’action devenue obsolète ; le VOID n’est jamais remplacé automatiquement par un REFUND. Demande rejetée par Verifone signifie qu’aucune restitution n’est confirmée, pas nécessairement un refus de la banque.
+
+<span id="weight-hold-margin" />
+
+## Vérifier le plafond de préautorisation au poids
+
+Pour les commandes en ligne au poids, ouvrez Réglages → Paiements & TVA avec settings.edit. Saisissez Marge d’empreinte au poids % de 0 à 100 puis enregistrez ; la valeur par défaut des nouveaux restaurants est 20. Un échec conserve la saisie. À 0 %, le montant estimé reste préautorisé. Seul le sous-total au poids reçoit une marge : 100 au poids + 50 fixes à 20 % donnent 170 préautorisés ; aucune marge sur la livraison. Le checkout affiche estimation, plafond temporaire et Confirmer et préautoriser, dans le thème du restaurant. Un plafond modifié exige une nouvelle revue et confirmation avant paiement ; une politique inconnue bloque l’autorisation. Les commandes déjà revues et empreintes existantes gardent leur plafond. Le personnel confirme les poids mesurés avant capture et progression ; un dépassement est signalé pour un paiement complémentaire, jamais débité automatiquement. Espèces/paiement ultérieur n’annoncent pas d’empreinte. Un prestataire autorisation/capture configuré est nécessaire ; validez capture partielle, libération et expiration avant production. Ce réglage ne change ni acompte/solde traiteur ni la restriction de sauvegarde d’une nouvelle carte pour une empreinte CST au poids.
+
+<span id="section-1" />
 
 ## Qu'est-ce que c'est ?
 
 L'écran **Commandes** est une liste en direct de toutes les commandes — qu'elles viennent de
 l'app web client, d'une table QR, ou de la caisse. Depuis ici, vous suivez le statut, acceptez
 les commandes et les envoyez en cuisine.
+
+<span id="section-2" />
 
 ### Comment ça marche (simplement)
 
@@ -19,7 +59,7 @@ les commandes et les envoyez en cuisine.
 - Utilisez les **onglets de statut** pour filtrer — nouvelles, en cuisine, prêtes, terminées.
 - Ouvrez une commande pour voir ses articles, le client et les totaux, et la faire avancer.
 
-![La liste des commandes avec les onglets de statut](/assets/img/screenshots/orders/orders-list.png)
+<span id="section-3" />
 
 ## Le flux d'une commande
 
@@ -31,9 +71,47 @@ les commandes et les envoyez en cuisine.
 > Astuce : le comportement du flux (acceptation auto, envoi auto en cuisine, impression auto) se
 > règle dans **Paramètres**. Voir [Réglages de flux](/fr/help/settings/workflow-settings).
 
+<span id="section-4" />
+
 ## Bon à savoir
 
 - Les commandes n'apparaissent qu'une fois **payées** (pour les canaux prépayés), donc la cuisine
   ne voit jamais une commande non confirmée.
 - Si un plat s'est épuisé pendant que le client commandait, le paiement le bloque — voir
   [Disponibilité](/fr/help/kitchen/availability).
+
+<span id="whatsapp-attachment-review" />
+
+## Voir la pièce jointe WhatsApp
+
+Dans la commande, l’aperçu d’un message Meta configuré avec photo/PDF affiche le nom du fichier et Voir la pièce jointe. Ce bouton ouvre le fichier fixe autorisé ou le reçu PDF généré pour cette commande sans envoyer de message. Si le fichier ou les montants changent après l’aperçu, préparez un nouvel aperçu avant d’envoyer. Messages au client conserve le nom du fichier avec chaque tentative, y compris un échec ; Livré et Lu proviennent du retour WhatsApp. Le nom seul n’est pas une preuve de livraison. La configuration de l’association reste dans Parcours des commandes ou Communications → WhatsApp.
+
+<span id="route-delivery-window" />
+
+## Vérifier le rappel de livraison calculé
+
+Pour une livraison affectée à une tournée avec une marge client enregistrée, les rappels utilisent l’arrivée calculée plus cette durée, au lieu du large créneau planifié de la commande. Exemple : arrivée à 08:30 et marge de 90 minutes → 08:30–10:00. Réglez-la dans Commandes → Livraisons → répartition, à côté du temps à chaque arrêt, puis vérifiez l’aperçu WhatsApp manuel ou approuvé avant envoi. Le même créneau alimente Twilio, Meta et les rappels par étape ; les variables des modèles et la règle J-1 existantes restent applicables. Les anciennes tournées sans réglage conservent le créneau enregistré. Si le créneau ne peut être vérifié, recalculez puis rouvrez le rappel. Un aperçu approuvé qui a changé doit être revérifié avant envoi. Modifier un modèle seul ne calcule pas de tournée et ne change pas sa marge.
+
+<span id="staff-order-library" />
+
+## Ajouter des articles depuis la librairie
+
+Avec la permission orders.manage, ouvrez Nouvelle commande. Sélectionnez une carte ou Librairie d’articles au-dessus du champ de recherche. La librairie contient tous les articles actifs du restaurant, y compris ceux sans carte ou hors de la série tournante sélectionnée, et reste accessible sans carte POS. Recherchez par nom et sélectionnez un article ; choisissez son format, ses suppléments ou le contenu de son combo si demandé. Les articles épuisés restent désactivés et les articles inactifs sont absents. Le passage entre une carte et la librairie conserve le ticket. Complétez les coordonnées et la remise, vérifiez le total et envoyez une seule fois. Cet ajout ne publie pas l’article sur une carte ou le site client. Si un article manque, vérifiez son statut actif dans Articles ; s’il est épuisé, contrôlez son stock et sa disponibilité avant de réessayer.
+
+<span id="internal-combo-substitution" />
+
+## Faire une exception de formule sur une commande
+
+Avec la permission orders.manage, ouvrez Nouvelle commande ou modifiez une commande enregistrée dans Admin, puis ouvrez la composition de sa formule. Dans l’étape concernée, sélectionnez Choisir un autre article. Retirez d’abord une unité sélectionnée si l’étape est pleine, recherchez dans la librairie du restaurant et choisissez le remplacement et son format. Exception · inclus identifie ce choix. Les articles individuels actifs à prix fixe sont admissibles, même hors de la carte active ; les articles inactifs, épuisés ou au poids et les autres formules sont exclus. Les quantités requises par étape, limites par article et portions configurées restent applicables. Enregistrez la formule, vérifiez le ticket et envoyez une seule fois. Par exemple, remplacez le bœuf d’une formule Mamie à deux plats par du poisson tout en conservant le poulet. Le remplacement et son format n’ajoutent aucun supplément ; les autres choix habituels conservent leurs suppléments configurés. Le prix de base et la définition enregistrée de la formule ne changent pas ; modifier une commande existante conserve son prix de base d’origine. Le choix est conservé dans le brouillon et à la réouverture de l’éditeur de commande. Les clients ne peuvent pas demander cette exception. En cas de refus, actualisez la disponibilité et choisissez un article actif dans un format autorisé ; un remplacement refusé sur une commande enregistrée conserve la composition précédente.
+
+<span id="counter-terminal-payment-before-kitchen" />
+
+## Attendre le paiement au comptoir avant la cuisine
+
+Pour une nouvelle commande à emporter encaissée par carte au comptoir, choisissez Payer, puis Payer par carte. Attendez l’accord du terminal et l’enregistrement du paiement dans Foody avant le départ en préparation et l’impression du bon cuisine. Pendant l’encaissement, le paiement reste en attente et n’apparaît pas dans la liste des commandes en direct. Après un refus ou une annulation, reprenez le même encaissement ; ne l’envoyez pas en cuisine pour contourner le paiement. Si le terminal a accepté mais que la synchronisation a échoué, rapprochez le paiement existant avant tout nouveau débit. Les commandes volontairement envoyées pour un service à table avant encaissement conservent leur déroulement habituel.
+
+<span id="carte-series-stock" />
+
+## Comprendre le stock après modification de commande
+
+Les stocks prédéfinis des articles disposent d’un journal dans Articles et cartes → Historique des stocks et sur chaque produit. Une carte tournante permet de préparer des quotas initiaux par série et de les publier sans recréditer les quantités engagées. Les reliquats précédents ne sont pas reportés. Les modifications de commande et libérations avant production utilisent le compteur d’origine enregistré ; un article déjà préparé reste consommé. Les quantités d’ingrédients et préparations et les coûts de recette restent distincts. Consultez [Disponibilité](/fr/help/kitchen/availability) pour les imports initiaux, les corrections et les filtres d’historique.

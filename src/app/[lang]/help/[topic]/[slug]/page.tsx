@@ -48,7 +48,7 @@ export async function generateMetadata({
 export function generateStaticParams() {
   const params = [];
   for (const lang of SUPPORTED) {
-    for (const { topic, slug } of getAllArticlePaths(lang)) {
+    for (const { topic, slug } of getAllArticlePaths(lang, true)) {
       params.push({ lang, topic, slug });
     }
   }
@@ -138,6 +138,8 @@ export default async function HelpArticlePage({
                 <span className="help-article-meta-tag">FoodyPOS</span>
               ) : apps === "foodyadmin" ? (
                 <span className="help-article-meta-tag">FoodyAdmin</span>
+              ) : ['foodyweb', 'foodylanding'].includes(apps || '') ? (
+                <span className="help-article-meta-tag">{{ foodyweb: 'Foody Web', foodylanding: 'Foody' }[apps as 'foodyweb' | 'foodylanding']}</span>
               ) : null}
               {updatedAt && (
                 <span>

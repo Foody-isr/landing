@@ -1,0 +1,41 @@
+---
+title: 'Seats, courses, hold and fire'
+description: Open the active table bill. Course availability depends on the restaurant’s POS profile and deployed API capabilities.
+apps: foodypos
+tags:
+  - orders
+  - pos-courses
+updatedAt: '2026-10-18'
+featureId: pos-courses
+audience: public
+releaseStatus: available
+---
+Open the active table bill. Course availability depends on the restaurant’s POS profile and deployed API capabilities.
+
+## Availability and access
+
+Advanced actions appear only when the installed POS and API advertise the required capability and your role permits them. Refresh a changed bill before retrying; never create another charge to resolve an uncertain result.
+
+<span id="course-vs-cash-status" />
+
+## Keep kitchen release separate from cash collection
+
+Holding or firing a course changes kitchen timing, not payment status. A table may be served before collection; do not count it as cash until the money is received and confirmed on an enrolled POS with an open drawer session. A pending cash payment must be resolved before closing the drawer. The card terminal deposit is a separate end-of-day action.
+
+<span id="seats" />
+
+## Assign seats and courses
+
+Before sending, assign items to Table or selected guests and choose their course. Check course order and required item options. Financial seat allocation can later change without rewriting already-sent kitchen seating.
+
+<span id="release" />
+
+## Hold or fire a course
+
+Review the held course and use Fire to release the selected eligible food. Shared physical units launch once even when their price is split. Refresh after uncertainty rather than sending the same food as a new sale. A historical shared batch can block a partial release.
+
+<span id="repeat" />
+
+## Repeat food as a new sale
+
+Where Repeat is offered, review the copied food in the provisional cart and send through normal validation. The action does not copy a fractional charge or previous offering into a new payment. Stock changes only through the normal new-order flow.

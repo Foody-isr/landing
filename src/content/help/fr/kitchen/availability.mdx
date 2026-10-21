@@ -1,86 +1,81 @@
 ---
-title: "Disponibilité (épuisé & stock faible)"
-description: "Les plats passent en épuisé ou stock faible automatiquement selon leur recette et le stock actuel. Définissez des règles réutilisables, voyez combien de portions vous pouvez encore faire, et forcez n'importe quel plat."
+title: Disponibilité (épuisé & stock faible)
+description: 'Configurer le stock de l’article, sa règle de disponibilité et son statut manuel dans l’éditeur actuel.'
 apps: both
-tags: [cuisine, disponibilité, épuisé, stock-faible, stock, recette, règles, 86]
-updatedAt: 2026-05-24
+tags:
+  - kitchen
+  - kitchen-availability
+  - cuisine
+  - disponibilité
+  - épuisé
+  - stock-faible
+  - stock
+  - recette
+  - règles
+  - '86'
+updatedAt: '2026-10-21'
+featureId: kitchen-availability
+audience: public
+releaseStatus: available
 ---
+Articles et cartes → Articles → article enregistré → Stock & disponibilité.
 
-## Qu'est-ce que c'est ?
+<span id="section-1" />
 
-La **Disponibilité** décide, automatiquement, quand un plat doit apparaître comme **épuisé**
-ou en **stock faible** pour vos clients et votre équipe, selon la **recette** du plat et
-votre **stock actuel**.
+## Ouvrir Stock & disponibilité
 
-Fini de désactiver les plats à la main quand un ingrédient manque, et fini d'oublier de les
-réactiver. Dès que vous réapprovisionnez, le plat revient tout seul.
+Pour les articles utilisant encore le stock historique permanent, ouvrez un article déjà enregistré dans Articles et cartes → Articles et faites défiler jusqu’à Stock & disponibilité. Le tableau présente l’article, sa quantité et son statut. La modification nécessite la permission de modifier le menu. Cette section fait partie de l’éditeur continu ; elle n’est pas un panneau sous un onglet Recette.
 
-### Comment ça marche (simplement)
+<span id="section-2" />
 
-Pour chaque plat, Foody lit sa recette (ingrédients + préparations) et votre stock actuel,
-puis calcule **combien de portions vous pouvez encore faire** — limité par l'ingrédient qui
-s'épuise en premier.
+## Choisir la source du stock
 
-- Beaucoup de stock → le plat est **disponible**.
-- Plus que quelques-uns → **stock faible** (ex. « 3 restant »).
-- Impossible d'en faire un seul → **épuisé** (grisé ; les clients ne peuvent pas commander).
+Pour les articles utilisant encore le stock historique permanent, cliquez sur la quantité ou utilisez Actions → Suivi du stock. Vous pouvez suivre une quantité commune à l’article ou des quantités par taille, selon ses variantes. Pour les articles compatibles, choisissez portions, g ou kg. Sans stock prédéfini, le calcul peut utiliser les ingrédients et préparations de la recette. L’absence de recette ne garantit pas une disponibilité illimitée : vérifiez aussi le stock prédéfini, les variantes, les règles et le statut manuel.
 
-> **Important :** un plat ne suit sa disponibilité que s'il a une **recette**. Ouvrez le
-> plat, allez dans l'onglet **Recette** et ajoutez ses ingrédients et préparations. Un plat
-> sans recette est toujours disponible — ainsi les boissons et articles non chiffrés ne
-> disparaissent jamais.
+<span id="section-3" />
 
-![Le panneau Disponibilité d'un plat](/assets/img/screenshots/kitchen/availability-dish-panel.png)
+## Choisir et gérer une règle
 
-## Règles
+Dans le réglage de suivi du stock, choisissez la règle de disponibilité ou la règle par défaut. Actions → Gérer les règles ouvre Paramètres → Stock → Disponibilité. Les règles définissent le suivi, le seuil de stock bas, le comportement à épuisement et l’affichage du nombre restant. Vérifiez la règle affectée avant de la modifier : elle peut servir à plusieurs articles. Quand la règle autorise l’affichage du nombre restant, un stock de 20 portions limite à 20 la quantité totale de cet article dans le panier, même au-dessus du seuil de stock bas. Le badge de stock faible reste lié au seuil. Le stock est vérifié à nouveau lors de la commande et peut avoir évolué entre-temps. Un article forcé Toujours disponible ne suit pas ce plafond.
 
-Les règles contrôlent *comment* la disponibilité se comporte, et vous pouvez les réutiliser
-sur plusieurs plats. Allez dans **Cuisine → Disponibilité**.
+<span id="section-4" />
 
-Chaque règle a :
+## Forcer un statut puis enregistrer
 
-- **Suivre le stock** — désactivez-le pour les articles de garde-manger (boissons, basiques
-  que vous n'épuisez jamais) afin qu'ils restent toujours disponibles.
-- **Alerte stock faible à ≤ N** — quand le badge « N restant » apparaît (0 = jamais).
-- **Quand épuisé** — afficher un badge **Épuisé**, ou **masquer** le plat entièrement.
-- **Afficher la quantité restante** — montrer « 3 restant » aux clients, ou un badge générique.
+Pour les articles utilisant encore le stock historique permanent, cliquez sur le statut et choisissez Suivre une règle, Toujours disponible ou Forcer épuisé. Cliquez sur Appliquer, puis Enregistrer dans l’en-tête de l’article pour persister le choix. Appliquer seul prépare la modification dans l’éditeur. Le forçage est prioritaire sur le calcul ; repassez sur Suivre une règle et enregistrez pour reprendre le suivi automatique.
 
-Foody fournit trois règles de départ que vous pouvez modifier ou copier :
+<span id="section-5" />
 
-| Règle | Comportement |
-|---|---|
-| **Standard** (par défaut) | Suit le stock, alerte à ≤ 5, badge épuisé, affiche la quantité. |
-| **Fait maison du jour** | Suit le stock, alerte plus tôt (≤ 3). |
-| **Toujours disponible** | Ne suit pas le stock — toujours commandable. |
+## Vérifier le calcul et les quantités par taille
 
-Un plat utilise sa propre règle si elle est définie, sinon celle de sa catégorie, sinon la
-règle **par défaut**.
+Pour les articles utilisant encore le stock historique permanent, actions → Voir le calcul de disponibilité ouvre le détail de capacité : ventes possibles, base du calcul et ingrédient limitant lorsqu’il existe. Si vous suivez les tailles séparément, contrôlez chaque quantité. Ne confondez pas ce stock de l’article avec les quantités consommées par sa recette ni avec le filtre Actif/Inactif de la bibliothèque Articles. Un calcul indisponible est une erreur à vérifier, pas un stock nul.
 
-![La bibliothèque de règles](/assets/img/screenshots/kitchen/availability-rules-library.png)
+<span id="section-6" />
 
-## Forcer un plat (« 86 »)
+## Contrôler après enregistrement
 
-Sur le panneau **Recette → Disponibilité** d'un plat, vous voyez le calcul en direct
-(« Réalisable maintenant : 12 portions, limité par … ») et un forçage :
+Après Enregistrer, rouvrez l’article et vérifiez quantité, règle et statut, puis le canal web ou POS concerné. La visibilité dépend aussi des groupes, canaux et horaires. Si le chargement des règles échoue, réessayez avant d’enregistrer ; ne remplacez pas la configuration par une valeur supposée. [Articles et menus](../menu/categories-and-items) · [Recette et quantités](../menu/ingredients-and-portions) · [Stock](./stock-management).
 
-- **Auto** — utilise la disponibilité calculée (réglage normal).
-- **Toujours dispo** — force le plat commandable même si le stock dit le contraire.
-- **Forcer épuisé** — 86 manuel d'un plat ; remettez sur **Auto** plus tard.
+<span id="series-sale-stock" />
 
-Le forçage est toujours prioritaire sur la règle.
+## Préparer le stock d’une nouvelle série
 
-## Exemples
+Avec la permission de modifier le menu, ouvrez la carte tournante, sélectionnez une série puis ouvrez le menu « … » à côté du titre → Préparer les stocks de cette série. Saisissez les quantités INITIALES, commandes déjà passées incluses : disponible = initial − engagé. Choisissez un compteur commun en unités, une mesure compatible en g/ml, un compteur par taille ou aucune limite prédéfinie. Reprendre les quantités initiales précédentes copie les quotas, jamais les reliquats ni un ancien statut épuisé. Le stock d’un même article du restaurant est commun aux cartes de cette série. Enregistrer le brouillon garde la préparation privée ; Publier l’applique atomiquement sans recréditer les réservations faites pendant l’édition. La première activation importe le disponible actuel et les commandes programmées existantes en préservant les quantités restantes. Les séries suivantes ne reprennent jamais l’ancien compteur global. Sans limite prédéfinie, une recette, une règle ou un statut manuel peut encore limiter la disponibilité.
 
-- **Le thon est épuisé.** Tous les plats dont la recette utilise du thon passent en épuisé
-  sur le web et la caisse. Réceptionnez du thon dans **Stock** et ils reviennent tout seuls.
-- **Une préparation de sauce tombe à 0.** Les plats qui l'utilisent passent en épuisé.
-  Produisez un nouveau lot dans **Préparations** et ils reviennent.
-- **Boissons en bouteille.** Mettez-les sur la règle **Toujours disponible** pour qu'elles
-  ne disparaissent jamais automatiquement.
+<span id="sale-stock-history" />
 
-## Bon à savoir
+## Rechercher les changements de stock
 
-- La disponibilité est aussi appliquée au paiement : si un plat s'épuise pendant que le
-  client navigue, la commande est bloquée avec un message clair.
-- Sur la caisse, les plats épuisés sont grisés et non commandables ; réactivez-en un avec le
-  forçage **Toujours dispo**.
+Ouvrez Articles et cartes → Historique des stocks. Cette page est consacrée uniquement au journal des mouvements, visible dès l’ouverture : elle ne liste pas les stocks actuels et ne propose pas de corrections. Choisissez un Article ou Tous les articles, une date de Série ou Toutes les séries, et un Mouvement ou Tous les mouvements. Une date de série passée est acceptée. Les filtres se combinent et sont conservés avec Afficher la suite. Le journal indique la date et la série, l’article, le mouvement, les quantités avant/après et l’auteur ; un lien ouvre la commande lorsqu’elle est associée. Un résultat vide signifie qu’aucun mouvement n’est enregistré pour les filtres choisis. Les imports initiaux sont identifiés comme des imports ; les modifications antérieures à l’activation du suivi ne sont pas reconstituées. En cas d’erreur du filtre des articles, Réessayer recharge ce filtre et le journal reste consultable. Depuis un produit, Historique complet du stock ouvre ce journal filtré sur l’article ; Historique du stock ouvre son dialogue. Dans une carte, l’accès Historique de la ligne ou son menu « … » ouvre aussi ce dialogue. Pour préparer ou ajuster les quantités initiales d’une série, ouvrez la carte, choisissez la série puis Préparer les stocks de cette série, enregistrez le brouillon et publiez après vérification. Les disponibilités marquées immédiates conservent leur action séparée et historisée. Une annulation avant production recrédite le compteur d’origine ; un produit déjà préparé reste consommé. Si le chargement du journal échoue, Réessayer recharge les mouvements sans modifier les filtres ; cette erreur n’est pas présentée comme un historique vide.
+
+<span id="series-product" />
+
+## Gérer un produit suivi par série
+
+Après activation du suivi par série, Stock & disponibilité affiche la série actuelle, les quantités disponible et engagée, Gérer le stock et Historique du stock. Gérer le stock permet de corriger le quota de la série sélectionnée. Son sélecteur de disponibilité agit immédiatement et est historisé ; il n’attend ni Enregistrer sur le produit ni la publication de la carte. Automatique reprend la règle. Toujours disponible contourne le plafond et ne remplit pas le compteur. Les réglages de préparation et la règle restent enregistrés avec le produit.
+
+<span id="library-availability" />
+
+## Changer la disponibilité depuis Articles
+
+La colonne Disponibilité de la bibliothèque Articles ouvre aussi le petit panneau commun aux Cartes. Choisissez le statut ou le stock restant puis Appliquer ; une simple ouverture ne modifie rien. La série courante est affichée lorsqu’elle s’applique. Consultez [Catégories et articles](/fr/help/menu/categories-and-items#library-availability) pour les choix, quantités par taille, annulation et récupération après erreur. Le paramétrage complet de la fiche conserve son propre bouton Enregistrer.

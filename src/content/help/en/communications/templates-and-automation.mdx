@@ -1,0 +1,37 @@
+---
+title: Message templates and workflow automation
+description: 'Open Settings → Message templates, WhatsApp templates or Order workflow according to the channel.'
+apps: foodyadmin
+tags:
+  - communications
+  - message-templates
+updatedAt: '2026-10-18'
+featureId: message-templates
+audience: public
+releaseStatus: available
+---
+Open Settings → Message templates, WhatsApp templates or Order workflow according to the channel.
+
+<span id="template" />
+
+## Create and review a template
+
+Edit supported localized text and variables, or submit a WhatsApp Utility template through the supported provider. Check approval, language and the positional variable contract before selection. Deleting a referenced template can be blocked even when its workflow stage is disabled.
+
+<span id="stage" />
+
+## Attach messages to workflow stages
+
+Select an approved template on the intended stage and choose its supported timing. Stage-entry messages apply to future entries, not historical orders. Delivery reminders need saved delivery/courier data; satisfaction messages require recorded fulfillment. Read the selected trigger rather than assuming every reminder is sent the day before.
+
+<span id="media-binding" />
+
+## Assign the file to a notification
+
+After approval, open Configure on the WhatsApp message, or Notify customer in Settings → Restaurant → Order workflow. Choose the photo/PDF model and then its fixed file from this restaurant’s library, or Receipt for this order for a PDF model. Save the page or workflow; Done only closes the general-message configuration panel. The workflow’s selected trigger and timing remain authoritative. Foody generates the receipt from the saved items and amounts for that order; it does not replace a tax invoice. Review the message and file previews before a manual send. Each message has one attachment, using activated direct Meta routing; these controls do not configure Twilio attachments.
+
+<span id="route-delivery-window" />
+
+## Review a route-based delivery reminder
+
+For an assigned delivery with a saved customer-window setting, reminders use the route arrival plus the configured duration, rather than the order’s broad scheduled slot. For example, arrival at 08:30 and 90 minutes produces 08:30–10:00. Configure it in Orders → Deliveries → allocation, beside the time at each stop, and review the manual or approved WhatsApp preview before sending. The same range supplies Twilio, Meta and stage reminders; existing template variables and J-1 eligibility remain in effect. Unconfigured historic routes keep the original saved slot. If the range cannot be verified, recalculate the route and reopen the reminder. A changed approved preview must be reviewed again before sending. Editing a template alone does not calculate a route or change its margin.

@@ -1,73 +1,83 @@
 ---
-title: "Order Types"
-description: "Foody supports dine-in, pickup, delivery, and scheduled orders. Learn what each means and how to enable them."
+title: Order types and fulfillment
+description: 'Foody supports dine-in, pickup, delivery, and scheduled orders. Learn what each means and how to enable them.'
 apps: both
-tags: [orders, dine-in, pickup, delivery, scheduled, order-types]
-updatedAt: 2026-03-30
+tags:
+  - orders
+  - order-types
+  - dine-in
+  - pickup
+  - delivery
+  - scheduled
+updatedAt: '2026-10-21'
+featureId: order-types
+audience: public
+releaseStatus: available
 ---
+Admin → Settings → Orders / POS → order entry
 
-## Overview
+<span id="pos-cash-by-order-type" />
 
-Foody supports four order types. You choose which ones your restaurant accepts from **FoodyAdmin → Restaurant → Workflow Settings**.
+## Collect cash for a POS order type
 
----
+Dine-in and counter pickup orders can be collected in cash only on an enrolled POS with an open cash drawer session. Open More → Reports → Cash drawer balance before taking the first cash payment, then settle the intended order or financial bill. A delivery or online pay-later order is not a recorded cash sale merely because cash is its intended tender; record only cash actually received. Card terminal deposits remain separate.
 
-## Dine-In
+<span id="weight-hold-margin" />
 
-Customers sit at a table and order through a staff member on **FoodyPOS**, or by scanning a **QR code** at the table.
+## Review the by-weight authorization ceiling
 
-- Requires **Table Mode** to be active (see [Service Mode](/help/settings/service-mode)).
-- Orders are tied to a table number.
-- The order stays open until the bill is closed.
+For online by-weight orders, open Settings → Payments & VAT with settings.edit. Set Weight hold buffer % from 0 to 100 and save; the default for new restaurants is 20. A failed save keeps the draft. Zero still authorizes the estimate. Only the weight-priced subtotal gets a margin: 100 weighted + 50 fixed at 20% authorizes 170; delivery has no extra margin. Checkout shows the estimate, temporary ceiling and Confirm and authorize, in the restaurant theme. A changed ceiling requires customer review and another confirmation before payment; unknown policy blocks authorization. Existing reviewed checkouts and holds keep their ceiling. Staff confirm measured weights before capture and progression; excess beyond the hold is flagged for a separate payment, never automatically charged. Cash/pay-later makes no hold promise. Requires a configured authorize/capture provider, with partial capture, release and expiry validated before production. This neither changes the catering deposit/balance policy nor enables new-card saving with a CST weighted hold.
 
-**To enable:** Table Mode is on by default. You can enable QR dine-in from Workflow Settings if you want customers to self-order.
+<span id="dine-in" />
 
----
+## Dine-in and tables
+
+Select dine-in and the intended table/session when offered. Check seats and guest count separately; order type does not assign a physical table by itself.
+
+<span id="pickup" />
 
 ## Pickup
 
-Customers order ahead (online or at the counter) and collect at the restaurant. No table assignment.
+Enable pickup in the restaurant settings, then check the offered date/time and preparation delay. The customer collects at the configured location.
 
-- Used in both **Counter Mode** (staff takes the order in FoodyPOS) and online via the QR/web ordering page.
-- A pickup time can optionally be shown to the customer.
-- Configure **Pickup Prep Time** (in minutes) in Workflow Settings so customers know when their order will be ready.
-
-**To enable:** Go to **Restaurant → Workflow Settings** and toggle **Pickup** on.
-
----
+<span id="delivery" />
 
 ## Delivery
 
-Your restaurant handles its own delivery (or via **Spoke** integration).
+Require a usable delivery address and check zone, fee and fulfillment window. A delivery day can be saved before its final time window is confirmed.
 
-- Delivery orders come in through the QR ordering page or a manual entry on FoodyPOS.
-- You can configure a minimum order amount for delivery.
-- **Spoke integration**: if you use Spoke for delivery, connect your API key in **Settings → Spoke Delivery**.
+<span id="scheduled" />
 
-**To enable:** Go to **Restaurant → Workflow Settings** and toggle **Delivery** on.
+## Scheduled and batch orders
 
----
+Review ordering windows, cutoff and fulfillment dates. With a batch calendar, use the restaurant-defined cycle instead of inventing a free date.
 
-## Scheduled Orders
+<span id="whatsapp-stage-attachment" />
 
-Customers choose a specific date and time window for their pickup or delivery order.
+## Choose a stage attachment
 
-- Scheduled orders appear in the **Scheduled Calendar** view on FoodyPOS.
-- Each order has a pickup window (e.g., 13:00–13:30).
-- Staff can view the day's scheduled orders and prepare accordingly.
+In Admin, open Settings → Restaurant → Order workflow and the required pickup or delivery stage. With Notify customer enabled, choose the message type, an approved Meta photo/PDF model and its attachment: a fixed file, or that order’s receipt for a PDF. Choose the sending time and save the workflow. Manual stage entry or its configured event uses this binding. Selecting a file changes neither progression, payment rules nor delivery eligibility. Correct an incompatible or missing model/file before relying on delivery. The model library and creation controls are in Settings → Communications → WhatsApp.
 
-**To enable:** Go to **Restaurant → Workflow Settings** and toggle **Scheduled Orders** on.
+<span id="courier-departure-sync" />
 
----
+## Follow an assigned delivery’s departure
 
-## Which Order Types Should I Enable?
+When the assigned courier starts their route in Admin, unfinished accepted, preparing and ready delivery orders change together to Out for delivery. Staff screens receive the updated statuses through their usual order refresh. This confirms actual departure; assigning a courier or choosing a fulfillment mode alone does not start a route. Held kitchen courses and unsettled weight orders must be resolved first. If starting fails, the previous statuses remain. The route action does not reopen finished or cancelled orders.
 
-| Restaurant type | Recommended |
-|-----------------|-------------|
-| Full-service restaurant (dining room) | Dine-in only, or dine-in + QR |
-| Café or quick service | Counter Mode + Pickup |
-| Restaurant with takeaway | Dine-in + Pickup |
-| Delivery operation | Pickup + Delivery + Scheduled |
-| Ghost kitchen | Pickup + Delivery + Scheduled |
+<span id="internal-combo-substitution" />
 
-You can enable multiple order types at once.
+## Make a one-order combo exception
+
+For a one-order combo exception, an authorized Admin user opens the combo step and selects Choose another item. The replacement is included without a surcharge and is saved on that order only. Fulfillment, scheduling and delivery rules remain unchanged. Review the selected dish and portion in the order details. Guest and POS combo pickers retain the configured composition; arrange an exception through the internal Admin order editor. See the combo guide for quantities, eligibility and recovery.
+
+<span id="counter-terminal-payment-before-kitchen" />
+
+## Wait for counter card payment before kitchen preparation
+
+For a new counter pickup order paid by card, choose Pay, then Pay by card. Wait for terminal approval and for Foody to record the payment before preparation and the kitchen ticket start. During collection the payment remains pending and is excluded from the live order board. After a refusal or cancellation, keep the same checkout and retry there; do not send it to the kitchen to bypass payment. If approval succeeded but synchronization failed, reconcile the existing payment before starting another charge. Orders deliberately sent for table service before collection keep their existing send-then-pay flow.
+
+<span id="carte-series-stock" />
+
+## Use the original series stock pool
+
+Predefined item stocks now have a journal under Items & menus → Stock history and on each product. A rotating carte can prepare initial allowances per series and publish them without restoring already committed units. Previous remaining counts are not carried forward. Order changes and pre-production releases use the original frozen pool; a produced item remains consumed. Ingredient/preparation quantities and recipe costs remain separate. See [Availability](/en/help/kitchen/availability) for initial imports, corrections and history filters.

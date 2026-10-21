@@ -1,71 +1,56 @@
 ---
-title: "Categories and Items"
-description: "How to create menu categories, add items with prices and photos, and control item availability."
-apps: foodyadmin
-tags: [menu, categories, items, price, availability]
-updatedAt: 2026-03-30
+title: 'Items, categories and customer menus'
+description: Understand where to create items and how to make them visible to guests.
+apps: both
+tags:
+  - menu
+  - menu-categories-and-items
+  - categories-and-items
+updatedAt: '2026-10-21'
+featureId: menu-categories-and-items
+audience: public
+releaseStatus: available
 ---
+Items & menus → Item library: catalogue library, filters and actions.
 
-## Where to Manage Your Menu
+<span id="section-1" />
 
-Menu editing is done in **FoodyAdmin** (the web dashboard). FoodyPOS displays the menu for ordering but cannot edit it.
+## Use the Items library
 
----
+Items is a table-based library with search, filters and actions. There are no Total Items or Out of Stock KPI cards above this list. Categories classify the internal catalogue and reporting; they are not the customer menu sections.
 
-## Creating a Category
+<span id="filters" />
 
-Categories organize your menu for customers (e.g., "Starters", "Mains", "Drinks").
+## Search, filter and choose columns
 
-1. In FoodyAdmin, go to **Menu → Categories**.
-2. Click **Add Category**.
-3. Enter the category **name** (shown to customers).
-4. Optionally add a **description**.
-5. Set the **display order**: lower numbers appear first.
-6. Click **Save**.
+Search by name. Category and Status filters combine; Status offers Active and Inactive, with active items selected initially. All Filters opens the filter panel. Calculated availability is separate from active/inactive status. The header column picker controls Images, Category, Availability and Price. Click Name or Price to sort. The list is paginated.
 
-To **hide a category temporarily** (e.g., seasonal menu): edit the category and toggle **Visible** off.
+<span id="edit" />
 
-To **reorder categories**: drag them in the list.
+## Create, edit and apply bulk actions
 
----
+With menu editing permission, click Create item to open the full-screen editor, or click an existing row to edit it. Actions includes imports and refresh. After selecting rows, it also offers category, option and modifier assignment, availability overrides and confirmed deletion. Check the selected items and restaurant before a bulk action.
 
-## Adding a Menu Item
+<span id="section-2" />
 
-1. Go to **Menu → Items** → click **New Item**.
-2. Fill in:
-   - **Name**: required
-   - **Category**: which section it belongs to
-   - **Price**: in ₪
-3. Optionally add:
-   - **Description**: a short text shown to customers
-   - **Photo**: JPG or PNG, max 5 MB
-4. Click **Save**.
+## Show an item to customers
 
-### Hiding an Item
+Carte membership, groups, order, channels and hours now use a private draft: Save draft, Preview, then explicit Publish. Shared product details remain in the item library. On a publication-managed carte, choose item membership from the carte draft instead of the product group picker. Initial quantities for a rotating series are prepared separately from live recipe/ingredient stock. See [Menus and groups](/en/help/menu/menus-and-groups) and [Availability](/en/help/kitchen/availability) for preparation, history and recovery.
 
-Toggle **Available** to off to hide the item without deleting it. Useful when an ingredient runs out mid-service.
+<span id="carte-series-stock" />
 
----
+## Choose groups in the carte draft
 
-## Modifiers
+Carte membership, groups, order, channels and hours now use a private draft: Save draft, Preview, then explicit Publish. Shared product details remain in the item library. On a publication-managed carte, choose item membership from the carte draft instead of the product group picker. Initial quantities for a rotating series are prepared separately from live recipe/ingredient stock. See [Menus and groups](/en/help/menu/menus-and-groups) and [Availability](/en/help/kitchen/availability) for preparation, history and recovery.
 
-Modifiers let customers customize items. See [Setting Up Modifiers](/help/menu/modifiers) for a full guide.
+<span id="related-service-controls" />
 
----
+## Access the new controls
 
-## Combos
+Carte availability is now directly clickable beneath an item name. When the sale allowance is exhausted, enter the remaining quantity; committed orders are preserved. Review [the availability procedure](/en/help/menu/menus-and-groups#contextual-availability) before changing sale stock.
 
-A combo is a bundle of items sold together at a fixed price (e.g., "Burger + Fries + Drink , ₪65").
+<span id="library-availability" />
 
-1. Go to **Menu → Combos** → click **New Combo**.
-2. Add the items that make up the combo.
-3. Set the combo price.
-4. Save.
+## Change availability from Items
 
-Combos appear on FoodyPOS and the QR ordering page just like regular items.
-
----
-
-## Weekly Menu Rotation
-
-If your menu changes by day of week, use **Menu → Rotation** to schedule which items are available on which days. Items outside their rotation window are automatically hidden.
+In Items, with menu editing permission, click an active item’s badge in the Availability column. The same small panel as in Cartes opens; opening it neither changes availability nor navigates to the item editor. Choose Available without limit, Unavailable, Predefined stock or Automatic (existing rules), then Apply. Predefined stock requires a positive remaining quantity, in units, base g/ml for measured stock, or per size. An empty size field keeps that size unlimited. Existing orders stay reserved. For a restaurant using series, the panel displays the current series resolved by the server and changes only its stock; prepare another series in its carte. Outside series, it changes the item’s stock and saves all size counters together. Changes take effect immediately after Apply, independently of carte drafts. Cancel, Escape or dismissing the panel discards unapplied choices. Fresh stock loads on opening; if loading fails, Reload stocks is available and applying is blocked. A save error keeps entered values: reload stock, review the quantity and explicitly Apply again. Inactive items and users without editing permission have a read-only status.

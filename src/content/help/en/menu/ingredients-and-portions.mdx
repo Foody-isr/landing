@@ -1,189 +1,102 @@
 ---
-title: "How to Configure Ingredients & Portions"
-description: "Three rules to describe how each ingredient behaves across variants: Match item size, Fixed quantity, or Custom per variant."
+title: How to Configure Ingredients & Portions
+description: 'Configure ingredient quantities per serving or size, units, prefill and cost in the Recipe and cost section.'
 apps: foodyadmin
-tags: [menu, ingredients, portions, variants, recipe, food-cost]
-updatedAt: 2026-04-16
+tags:
+  - menu
+  - menu-ingredients-and-portions
+  - ingredients
+  - portions
+  - variants
+  - recipe
+  - food-cost
+updatedAt: '2026-10-21'
+featureId: menu-ingredients-and-portions
+audience: public
+releaseStatus: available
 ---
+In a saved item, scroll to Recipe and cost.
 
-## 🍽️ How to Configure Ingredients & Portions
+<span id="section-1" />
 
-Each ingredient in your recipe needs a quantity rule.
-This rule defines how the ingredient behaves depending on the item's size (variants) and customizations (modifiers).
+<span id="section-15" />
 
-There are 3 main ways to configure your ingredients, depending on how your item is built.
+<span id="section-16" />
 
----
+## Open the recipe in the continuous editor
 
-## 🥣 1. Simple Item, Match Item Size
+Open Items & menus → Item library, select a saved item and scroll to Recipe and cost. This is a section of the page, not a separate Recipe or Cost tab. The recipe links raw ingredients or preparations to quantities used for one sale.
 
-**Example: Soup**
+<span id="section-2" />
 
-This is the simplest case.
+<span id="section-3" />
 
-* Your item is made from one preparation only (e.g. soup, juice, sauce).
-* The unit of the recipe equals the unit you sell (grams, ml, etc.).
-* The size of the item directly defines the quantity used.
+<span id="section-17" />
 
-### How it works
+## Add a raw ingredient or preparation
 
-You use: **Match item size**.
+Use Add ingredient above the table. Choose a raw stock ingredient or preparation and its unit. Search for an existing record before creating one. After adding, check its row, quantity and save confirmation. A preparation needs a yield and cost for a reliable calculation.
 
-* You don't enter any quantity manually.
-* The system automatically uses the variant size.
+<span id="section-4" />
 
-### Example
+<span id="section-5" />
 
-| Variant | Quantity used |
-| ------- | ------------- |
-| 250 g   | 250 g soup    |
-| 500 g   | 500 g soup    |
+<span id="section-6" />
 
-### When to use this
+## Enter quantity for one serving
 
-Use Match item size when:
+Without different quantities per size, enter each ingredient quantity for one serving in a compatible unit. Example: 200 g beef, one bun and 20 g sauce. A missing value is not an automatically calculated quantity. Resolve validation errors before continuing.
 
-* You have only one ingredient.
-* The item is a preparation already made.
-* The portion sold equals the portion consumed.
+<span id="section-7" />
 
-✅ Typical items: Soup, Smoothie, Prepared sauce, Juice.
+<span id="section-8" />
 
----
+<span id="section-9" />
 
-## 🍔 2. Complex Item, Fixed + Custom per Variant
+<span id="section-10" />
 
-**Example: Hamburger**
+<span id="section-14" />
 
-This case is more advanced.
+## Set quantities per size
 
-* Your item is made of multiple ingredients.
-* Some ingredients change with size, others don't.
+For an item with variants, enable different quantities per size. The table shows a column per variant. Enter consumption in each cell. Use Same quantity for an ingredient shared identically by every size. Example: 200 g beef for Regular and 400 g for Large, with one bun in both. The serving portion shown under Price and variants does not replace these entries.
 
-### How it works
+<span id="section-11" />
 
-You combine:
+<span id="section-12" />
 
-* **Fixed quantity** for ingredients that never change.
-* **Custom per variant** for ingredients that depend on size.
+## Prefill and check cells
 
-### Example setup
+Prefill quantities by size uses a base quantity and your multipliers to fill empty cells. Each cell stays editable. Check every size: an ingredient with no quantity for a variant is not deducted for that variant until corrected. Do not look for an automatic Scale to item size mode instead of entering these cells.
 
-Variants: Classic burger, Big burger.
+<span id="section-13" />
 
-Ingredients:
+<span id="section-18" />
 
-* **Beef** changes with size. Use **Custom per variant**:
+## Check units, cost and modifiers
 
-  | Variant | Beef  |
-  | ------- | ----- |
-  | Classic | 200 g |
-  | Big     | 400 g |
+Use units compatible with stock and configure custom recipe-unit conversions on the stock record when needed. The table derives ingredient cost excluding VAT and per-variant totals from entered quantities. Investigate a missing or zero cost on the stock/preparation record instead of treating the recipe as free. Configure add-ons through modifier groups; their price does not fill base recipe quantities.
 
-* Bread, tomato, lettuce, sauce stay the same for all variants. Use **Fixed quantity**:
+<span id="section-19" />
 
-  * 1 bun
-  * 20 g sauce
-  * 30 g vegetables
+## Save and recover from an error
 
-### When to use this
+Ingredient edits save immediately; instructions and notes save with the item. An error retains input: retry before leaving and verify the result. If an ingredient record was created but linking it failed, find that record and complete the link without creating a duplicate. [Stock](../kitchen/stock-management) · [Variants](./variants-and-sizes).
 
-Use this setup when:
+<span id="carte-series-stock" />
 
-* Your item has multiple ingredients.
-* Only some ingredients vary with size.
+## Recipe capacity and series sale allowances
 
-✅ Typical items: Burgers, Sandwiches, Bowls, Pizzas.
+Carte membership, groups, order, channels and hours now use a private draft: Save draft, Preview, then explicit Publish. Shared product details remain in the item library. On a publication-managed carte, choose item membership from the carte draft instead of the product group picker. Initial quantities for a rotating series are prepared separately from live recipe/ingredient stock. See [Menus and groups](/en/help/menu/menus-and-groups) and [Availability](/en/help/kitchen/availability) for preparation, history and recovery.
 
----
+<span id="related-service-controls" />
 
-## 🧀 3. Advanced Item, With Modifiers (Add-ons)
+## Access the new controls
 
-**Example: Burger + Extra Cheese**
+Carte availability is now directly clickable beneath an item name. When the sale allowance is exhausted, enter the remaining quantity; committed orders are preserved. Review [the availability procedure](/en/help/menu/menus-and-groups#contextual-availability) before changing sale stock.
 
-This builds on the previous case.
+<span id="library-availability" />
 
-* You still have multiple ingredients.
-* Customers can add extras (modifiers).
+## Change availability from Items
 
-### How it works
-
-You configure:
-
-**1. Base recipe** (same as the hamburger case):
-
-* Fixed quantity for bread, sauce, etc.
-* Custom per variant for meat.
-
-**2. Modifiers (add-ons)**:
-
-Each modifier must be linked to an ingredient.
-
-Example:
-
-* Modifier: Extra cheese
-* Linked ingredient: cheese
-* Quantity added: +20 g
-
-### What happens
-
-If a customer selects Extra cheese:
-
-* +20 g cheese is consumed from stock.
-* Food cost increases automatically.
-
-### When to use this
-
-Use this setup when:
-
-* Customers can customize items.
-* Extras impact inventory and cost.
-
-✅ Typical modifiers: Extra cheese, Extra meat, Add avocado, Double portion.
-
----
-
-## 🧠 Summary, Choosing the Right Rule
-
-For each ingredient, ask yourself:
-
-1. Does the quantity follow the item size? ✅ Use **Match item size**.
-2. Is the quantity always the same? ✅ Use **Fixed quantity**.
-3. Does the quantity change depending on the variant? ✅ Use **Custom per variant**.
-4. Can the customer add more of this ingredient? ✅ Link it to a **modifier**.
-
----
-
-## ⚙️ How to Set This Up in Foody Admin
-
-### Step 1. Create your item
-
-* Add variants (e.g. Small, Large or Classic, Big).
-
-### Step 2. Add ingredients
-
-For each ingredient:
-
-* Select the ingredient.
-* Choose how it behaves:
-  * **Match item size** for automatic quantity.
-  * **Fixed quantity** to enter one value.
-  * **Custom per variant** to define a value per variant.
-
-### Step 3. Add modifiers (if needed)
-
-* Create the modifier (e.g. Extra cheese).
-* Link it to an ingredient.
-* Define the added quantity.
-
----
-
-## 🎯 Final Mental Model
-
-Instead of thinking in system terms, just ask:
-
-* "Does this ingredient depend on size?"
-* "Is it always the same?"
-* "Can the customer add more of it?"
-
-That's it. The system handles the rest.
+The Items library Availability column also opens the small panel shared with Cartes. Choose a status or remaining stock and Apply; simply opening it changes nothing. The current series is displayed when applicable. See [Categories and items](/en/help/menu/categories-and-items#library-availability) for choices, per-size quantities, cancellation and error recovery. Full item settings retain their own Save action.

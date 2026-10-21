@@ -1,16 +1,36 @@
 ---
-title: "Préparations"
-description: "Des sous-recettes que vous fabriquez par lots (sauces, pâtes, marinades) et utilisez dans plusieurs plats. Produire un lot crédite le stock ; les plats qui l'utilisent retrouvent leur disponibilité automatiquement."
+title: Préparations
+description: >-
+  Des sous-recettes que vous fabriquez par lots (sauces, pâtes, marinades) et utilisez dans plusieurs plats. Produire un
+  lot crédite le stock ; les plats qui l'utilisent retrouvent leur disponibilité automatiquement.
 apps: foodyadmin
-tags: [cuisine, préparations, prep, sous-recette, lot, rendement, stock, disponibilité]
-updatedAt: 2026-05-24
+tags:
+  - kitchen
+  - kitchen-preparations
+  - cuisine
+  - préparations
+  - prep
+  - sous-recette
+  - lot
+  - rendement
+  - stock
+  - disponibilité
+updatedAt: '2026-10-21'
+featureId: kitchen-preparations
+audience: public
+releaseStatus: available
 ---
+Ouvrez l’espace Foody correspondant décrit ci-dessous.
+
+<span id="section-1" />
 
 ## Qu'est-ce que c'est ?
 
 Une **Préparation** est une sous-recette que vous préparez à l'avance par lots — une sauce, une
 pâte, une marinade, un fond — puis utilisez dans plusieurs plats. Au lieu de lister les
 ingrédients bruts sur chaque plat, vous pointez les plats vers la préparation.
+
+<span id="section-2" />
 
 ### Comment ça marche (simplement)
 
@@ -19,14 +39,14 @@ ingrédients bruts sur chaque plat, vous pointez les plats vers la préparation.
    produit).
 2. **Produisez un lot** quand vous la faites. Foody déduit les ingrédients bruts du **Stock** et
    crédite la quantité produite à la préparation.
-3. **Utilisez-la dans les plats** : dans l'onglet **Recette** d'un plat, ajoutez la préparation
+3. **Utilisez-la dans les plats** : dans la section **Recette et coût** d'un plat, ajoutez la préparation
    comme ingrédient avec la quantité qu'une portion nécessite.
 
 Comme les plats consomment la préparation, sa quantité actuelle alimente directement la
 [Disponibilité](/fr/help/kitchen/availability) : quand une prep tombe à 0, les plats qui
 l'utilisent passent en épuisé, et dès que vous produisez un nouveau lot, ils reviennent.
 
-![Une préparation avec sa recette et son rendement](/assets/img/screenshots/kitchen/prep-editor.png)
+<span id="section-3" />
 
 ## Pourquoi les utiliser
 
@@ -36,9 +56,17 @@ l'utilisent passent en épuisé, et dès que vous produisez un nouveau lot, ils 
   alimente chaque plat.
 - **Disponibilité réelle** — « on n'a plus de sauce verte » met automatiquement en 86 les bons plats.
 
+<span id="section-4" />
+
 ## Exemple
 
 Une sauce tahini rend 2 L par lot et coûte 18 ₪ à produire. Cinq plats en utilisent 50 ml
 chacun. Après avoir produit un lot, vous pouvez faire ~40 portions ; quand elle approche de
 zéro, ces plats affichent **stock faible**, puis **épuisé**, jusqu'à ce que vous produisiez un
-autre lot.
+autre lot. Pour un article suivi par un compteur commun dont la règle affiche le nombre restant, le panier tient compte de la quantité disponible même au-dessus du seuil de stock faible. Ce seuil règle l’alerte, pas le plafond du panier. Consultez [Disponibilité](/fr/help/kitchen/availability) pour vérifier la règle et les forçages manuels.
+
+<span id="carte-series-stock" />
+
+## Distinguer préparations et quotas de vente
+
+Les stocks prédéfinis des articles disposent d’un journal dans Articles et cartes → Historique des stocks et sur chaque produit. Une carte tournante permet de préparer des quotas initiaux par série et de les publier sans recréditer les quantités engagées. Les reliquats précédents ne sont pas reportés. Les modifications de commande et libérations avant production utilisent le compteur d’origine enregistré ; un article déjà préparé reste consommé. Les quantités d’ingrédients et préparations et les coûts de recette restent distincts. Consultez [Disponibilité](/fr/help/kitchen/availability) pour les imports initiaux, les corrections et les filtres d’historique.

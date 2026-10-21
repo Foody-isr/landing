@@ -1,69 +1,90 @@
 ---
-title: "Taking an Order on FoodyPOS"
-description: "How to open a table or start a counter order, add items with modifiers, and send to the kitchen."
+title: Take an order on the POS
+description: 'How to open a table or start a counter order, add items with modifiers, and send to the kitchen.'
 apps: foodypos
-tags: [orders, pos, kitchen, modifiers, table, counter]
-updatedAt: 2026-03-30
+tags:
+  - orders
+  - pos-order-entry
+  - pos
+  - kitchen
+  - modifiers
+  - table
+  - counter
+updatedAt: '2026-10-21'
+featureId: pos-order-entry
+audience: public
+releaseStatus: available
 ---
+POS → Tables / Order entry
 
-## Starting an Order
+<span id="cash-drawer-before-collection" />
 
-### Table Mode
-1. On the home screen, go to the **Tables** tab.
-2. Tap an available table on the floor plan (or table list).
-3. An order session opens for that table.
+## Prepare this POS for cash collection
 
-### Counter Mode
-1. Go to the **POS** tab.
-2. Select the order type: **Pickup** or **Delivery**.
-3. Optionally enter the customer's name or phone number.
+Before collecting cash for a table or counter order, start your PIN shift and open More → Reports → Cash drawer balance on this enrolled device. Enter the physical opening float, then select the right order, tap Pay and record the cash actually received. If a collection times out, reconcile or retry the retained request instead of creating a second sale. A card payment uses the terminal flow and is not cash in the drawer.
 
----
+<span id="weight-hold-margin" />
 
-## Adding Items
+## Review the by-weight authorization ceiling
 
-1. Browse categories on the left panel.
-2. Tap an item to add it to the cart (right panel).
-3. To add the same item multiple times, tap it again or use **+** in the cart.
+For online by-weight orders, open Settings → Payments & VAT with settings.edit. Set Weight hold buffer % from 0 to 100 and save; the default for new restaurants is 20. A failed save keeps the draft. Zero still authorizes the estimate. Only the weight-priced subtotal gets a margin: 100 weighted + 50 fixed at 20% authorizes 170; delivery has no extra margin. Checkout shows the estimate, temporary ceiling and Confirm and authorize, in the restaurant theme. A changed ceiling requires customer review and another confirmation before payment; unknown policy blocks authorization. Existing reviewed checkouts and holds keep their ceiling. Staff confirm measured weights before capture and progression; excess beyond the hold is flagged for a separate payment, never automatically charged. Cash/pay-later makes no hold promise. Requires a configured authorize/capture provider, with partial capture, release and expiry validated before production. This neither changes the catering deposit/balance policy nor enables new-card saving with a CST weighted hold.
 
-### Applying Modifiers
-If an item has required modifiers, the modifier panel opens automatically. For optional modifiers, tap the item in the cart.
+<span id="start" />
 
-1. Select the desired options.
-2. Tap **Confirm**.
+## Start the intended check
 
-The item in the cart shows a summary of chosen options and any price adjustments.
+Choose the table or counter order and verify the active check, service and employee. Existing separated checks retain their own balances.
 
----
+<span id="add" />
 
-## Sending to the Kitchen
+## Add and customize items
 
-Once the order is ready to be prepared:
+Choose a visible POS menu group, item, active variant and allowed modifiers. Review quantity, notes and price before adding. Required choices must be completed.
 
-1. Tap **Send to Kitchen** at the bottom of the cart.
-2. The order is transmitted to the kitchen queue.
-3. In **Table Mode**, the table status updates to show an active order.
+<span id="seat-course" />
 
-> **Auto Send to Kitchen**: If this setting is enabled in Workflow Settings, orders are sent automatically when confirmed; no manual step needed.
+## Assign seats and courses
 
----
+Where enabled, assign the item to a seat, shared table or course before sending. These preparation assignments are distinct from later financial bill splitting.
 
-## Adding Items to an Existing Order
+<span id="send" />
 
-If a customer wants to add more items after the initial order is sent:
+## Send and verify preparation
 
-1. Tap the table (or find the order in the Orders tab).
-2. Add the new items.
-3. Tap **Send to Kitchen** again; only the new items are sent as an additional ticket.
+Review pending items and use the configured kitchen-send action. Check the saved order and kitchen result; printer success and order persistence are separate outcomes.
 
----
+<span id="resume" />
 
-## Viewing and Managing Orders
+## Resume or collect payment
 
-Go to the **Orders** tab in FoodyPOS to see all active orders sorted by status:
-- **Pending**: placed but not yet sent to kitchen
-- **In Kitchen**: sent to kitchen, being prepared
-- **Ready**: kitchen marked it as done
-- **Served / Paid**: closed
+Reopen the saved check to add items or start payment. Confirm the selected check and unpaid balance before charging; do not resend already-sent food.
 
-In **FoodyAdmin → Orders**, managers can see the full order history with filters by date, status, and order type.
+<span id="whatsapp-stage-attachment" />
+
+## Choose a stage attachment
+
+In Admin, open Settings → Restaurant → Order workflow and the required pickup or delivery stage. With Notify customer enabled, choose the message type, an approved Meta photo/PDF model and its attachment: a fixed file, or that order’s receipt for a PDF. Choose the sending time and save the workflow. Manual stage entry or its configured event uses this binding. Selecting a file changes neither progression, payment rules nor delivery eligibility. Correct an incompatible or missing model/file before relying on delivery. The model library and creation controls are in Settings → Communications → WhatsApp.
+
+<span id="courier-departure-sync" />
+
+## Follow an assigned delivery’s departure
+
+When the assigned courier starts their route in Admin, unfinished accepted, preparing and ready delivery orders change together to Out for delivery. Staff screens receive the updated statuses through their usual order refresh. This confirms actual departure; assigning a courier or choosing a fulfillment mode alone does not start a route. Held kitchen courses and unsettled weight orders must be resolved first. If starting fails, the previous statuses remain. The route action does not reopen finished or cancelled orders.
+
+<span id="internal-combo-substitution" />
+
+## Make a one-order combo exception
+
+For a one-order combo exception, an authorized Admin user opens the combo step and selects Choose another item. The replacement is included without a surcharge and is saved on that order only. Fulfillment, scheduling and delivery rules remain unchanged. Review the selected dish and portion in the order details. Guest and POS combo pickers retain the configured composition; arrange an exception through the internal Admin order editor. See the combo guide for quantities, eligibility and recovery.
+
+<span id="counter-terminal-payment-before-kitchen" />
+
+## Wait for counter card payment before kitchen preparation
+
+For a new counter pickup order paid by card, choose Pay, then Pay by card. Wait for terminal approval and for Foody to record the payment before preparation and the kitchen ticket start. During collection the payment remains pending and is excluded from the live order board. After a refusal or cancellation, keep the same checkout and retry there; do not send it to the kitchen to bypass payment. If approval succeeded but synchronization failed, reconcile the existing payment before starting another charge. Orders deliberately sent for table service before collection keep their existing send-then-pay flow.
+
+<span id="carte-series-stock" />
+
+## Use published carte structure and live stock
+
+Predefined item stocks now have a journal under Items & menus → Stock history and on each product. A rotating carte can prepare initial allowances per series and publish them without restoring already committed units. Previous remaining counts are not carried forward. Order changes and pre-production releases use the original frozen pool; a produced item remains consumed. Ingredient/preparation quantities and recipe costs remain separate. See [Availability](/en/help/kitchen/availability) for initial imports, corrections and history filters.

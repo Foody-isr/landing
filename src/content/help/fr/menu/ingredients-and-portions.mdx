@@ -1,189 +1,104 @@
 ---
-title: "Configurer les ingrédients et portions"
-description: "Trois règles pour décrire comment chaque ingrédient se comporte selon les variantes : Adapter à la taille, Quantité fixe, ou Personnalisé par variante."
+title: Configurer les ingrédients et portions
+description: >-
+  Configurer les quantités d’ingrédients par portion ou taille, les unités, le préremplissage et le coût dans la section
+  Recette et coût.
 apps: foodyadmin
-tags: [menu, ingrédients, portions, variantes, recette, coût]
-updatedAt: 2026-04-16
+tags:
+  - menu
+  - menu-ingredients-and-portions
+  - ingrédients
+  - portions
+  - variantes
+  - recette
+  - coût
+updatedAt: '2026-10-21'
+featureId: menu-ingredients-and-portions
+audience: public
+releaseStatus: available
 ---
+Dans un article enregistré, faites défiler jusqu’à Recette et coût.
 
-## 🍽️ Configurer les ingrédients et portions
+<span id="section-1" />
 
-Chaque ingrédient de votre recette a besoin d'une règle de quantité.
-Cette règle définit le comportement de l'ingrédient selon la taille de l'article (variantes) et les personnalisations (modificateurs).
+<span id="section-15" />
 
-Il existe 3 façons de configurer vos ingrédients, selon la composition de votre article.
+<span id="section-16" />
 
----
+## Ouvrir la recette dans l’éditeur continu
 
-## 🥣 1. Article simple, Adapter à la taille
+Ouvrez Articles et cartes → Articles, choisissez l’article enregistré et faites défiler jusqu’à Recette et coût. Il s’agit d’une section de la page, pas d’un onglet Recette ou Coût séparé. La recette relie des matières premières ou préparations aux quantités utilisées pour une vente.
 
-**Exemple : Soupe**
+<span id="section-2" />
 
-C'est le cas le plus simple.
+<span id="section-3" />
 
-* Votre article est composé d'une seule préparation (soupe, jus, sauce).
-* L'unité de la recette est la même que l'unité de vente (grammes, ml, etc.).
-* La taille de l'article définit directement la quantité consommée.
+<span id="section-17" />
 
-### Comment ça marche
+## Ajouter une matière première ou une préparation
 
-Vous utilisez : **Adapter à la taille**.
+Utilisez l’ajout d’ingrédient au-dessus du tableau. Choisissez une matière première du stock ou une préparation, puis son unité. Recherchez une fiche existante avant d’en créer une. Après ajout, vérifiez la ligne, la quantité et la confirmation d’enregistrement. Une préparation doit avoir un rendement et un coût renseignés pour contribuer correctement au calcul.
 
-* Vous ne saisissez aucune quantité manuellement.
-* Le système utilise automatiquement la taille de la variante.
+<span id="section-4" />
 
-### Exemple
+<span id="section-5" />
 
-| Variante | Quantité utilisée |
-| -------- | ----------------- |
-| 250 g    | 250 g de soupe    |
-| 500 g    | 500 g de soupe    |
+<span id="section-6" />
 
-### Quand l'utiliser
+## Saisir la quantité pour une portion
 
-Utilisez Adapter à la taille quand :
+Sans quantités différentes par taille, saisissez la quantité de chaque ingrédient pour une portion et une unité compatible. Exemple : 200 g de bœuf, 1 pain et 20 g de sauce. Une valeur manquante n’est pas une quantité calculée automatiquement. Contrôlez les messages d’erreur avant de poursuivre.
 
-* Vous n'avez qu'un seul ingrédient.
-* L'article est une préparation déjà prête.
-* La portion vendue est la portion consommée.
+<span id="section-7" />
 
-✅ Articles typiques : Soupe, Smoothie, Sauce préparée, Jus.
+<span id="section-8" />
 
----
+<span id="section-9" />
 
-## 🍔 2. Article composé, Fixe + Personnalisé par variante
+<span id="section-10" />
 
-**Exemple : Hamburger**
+<span id="section-14" />
 
-Ce cas est plus avancé.
+## Définir les quantités par taille
 
-* Votre article contient plusieurs ingrédients.
-* Certains changent avec la taille, d'autres non.
+Si l’article a des variantes, activez Quantités différentes par taille ?. Le tableau affiche une colonne par variante. Saisissez les quantités consommées dans chaque cellule. Pour un ingrédient identique dans toutes les tailles, utilisez Même quantité. Exemple : bœuf 200 g en Normal et 400 g en Grand ; pain identique dans les deux. La portion affichée dans Prix et variantes ne remplace pas cette saisie.
 
-### Comment ça marche
+<span id="section-11" />
 
-Vous combinez :
+<span id="section-12" />
 
-* **Quantité fixe** pour les ingrédients qui ne changent jamais.
-* **Personnalisé par variante** pour les ingrédients qui dépendent de la taille.
+## Préremplir et contrôler les cellules
 
-### Exemple de configuration
+Préremplir les quantités par taille utilise une quantité de base et les multiplicateurs que vous saisissez pour remplir les cellules vides. Chaque cellule reste modifiable. Relisez toutes les tailles : une variante sans quantité renseignée ne décompte pas cet ingrédient jusqu’à correction. Il n’y a pas de choix automatique Adapter à la taille à utiliser à la place de ces cellules.
 
-Variantes : Classic burger, Big burger.
+<span id="section-13" />
 
-Ingrédients :
+<span id="section-18" />
 
-* **Bœuf** change avec la taille. Utilisez **Personnalisé par variante** :
+## Vérifier unités, coût et modificateurs
 
-  | Variante | Bœuf  |
-  | -------- | ----- |
-  | Classic  | 200 g |
-  | Big      | 400 g |
+Utilisez des unités compatibles avec le stock ; configurez les unités personnalisées dans la fiche de l’ingrédient si nécessaire. Le tableau affiche le coût matière HT et les totaux par variante à partir des quantités saisies. Un coût manquant ou nul doit être vérifié dans la fiche stock ou la préparation, pas interprété comme une recette gratuite. Les suppléments se configurent dans les groupes de modificateurs ; leur prix ne remplit pas les quantités de la recette de base.
 
-* Pain, tomate, laitue, sauce restent identiques pour toutes les variantes. Utilisez **Quantité fixe** :
+<span id="section-19" />
 
-  * 1 pain
-  * 20 g de sauce
-  * 30 g de légumes
+## Enregistrer et reprendre après une erreur
 
-### Quand l'utiliser
+Les modifications d’ingrédients sont enregistrées immédiatement ; les instructions et notes sont sauvegardées avec l’article. Une erreur conserve la saisie : réessayez avant de quitter, puis contrôlez le résultat. Si une fiche ingrédient a été créée mais que son ajout à la recette échoue, recherchez cette fiche et terminez l’ajout sans créer de doublon. [Stock](../kitchen/stock-management) · [Variantes](./variants-and-sizes).
 
-Utilisez cette configuration quand :
+<span id="carte-series-stock" />
 
-* Votre article contient plusieurs ingrédients.
-* Seuls certains ingrédients varient avec la taille.
+## Capacité des recettes et quotas de vente par série
 
-✅ Articles typiques : Burgers, Sandwichs, Bowls, Pizzas.
+La présence des articles, les groupes, leur ordre, les canaux et horaires passent par un brouillon privé : Enregistrer le brouillon, Aperçu, puis Publier explicitement. Les données communes du produit restent dans la bibliothèque. Pour une carte gérée par publication, choisissez les articles dans son brouillon plutôt que dans le sélecteur de groupes du produit. Les quantités initiales d’une série tournante se préparent séparément des stocks de recettes et d’ingrédients. Consultez [Cartes et groupes](/fr/help/menu/menus-and-groups) et [Disponibilité](/fr/help/kitchen/availability) pour la préparation, l’historique et la reprise après erreur.
 
----
+<span id="related-service-controls" />
 
-## 🧀 3. Article avancé, Avec modificateurs (suppléments)
+## Accès aux nouveaux réglages
 
-**Exemple : Burger + Extra fromage**
+Depuis une carte, la disponibilité est désormais directement cliquable sous le nom de l’article. Si la limite de vente est épuisée, renseignez une quantité restante ; les commandes déjà engagées restent conservées. Consultez [la procédure de disponibilité](/fr/help/menu/menus-and-groups#contextual-availability) avant de modifier les stocks de vente.
 
-Cela s'appuie sur le cas précédent.
+<span id="library-availability" />
 
-* Vous avez toujours plusieurs ingrédients.
-* Les clients peuvent ajouter des suppléments (modificateurs).
+## Changer la disponibilité depuis Articles
 
-### Comment ça marche
-
-Vous configurez :
-
-**1. Recette de base** (comme le cas hamburger) :
-
-* Quantité fixe pour pain, sauce, etc.
-* Personnalisé par variante pour la viande.
-
-**2. Modificateurs (suppléments)** :
-
-Chaque modificateur doit être lié à un ingrédient.
-
-Exemple :
-
-* Modificateur : Extra fromage
-* Ingrédient lié : fromage
-* Quantité ajoutée : +20 g
-
-### Ce qui se passe
-
-Si un client sélectionne Extra fromage :
-
-* +20 g de fromage sont consommés du stock.
-* Le coût alimentaire augmente automatiquement.
-
-### Quand l'utiliser
-
-Utilisez cette configuration quand :
-
-* Les clients peuvent personnaliser les articles.
-* Les suppléments impactent le stock et le coût.
-
-✅ Modificateurs typiques : Extra fromage, Extra viande, Ajouter avocat, Double portion.
-
----
-
-## 🧠 Résumé, Choisir la bonne règle
-
-Pour chaque ingrédient, demandez-vous :
-
-1. La quantité suit-elle la taille de l'article ? ✅ Utilisez **Adapter à la taille**.
-2. La quantité est-elle toujours la même ? ✅ Utilisez **Quantité fixe**.
-3. La quantité change-t-elle selon la variante ? ✅ Utilisez **Personnalisé par variante**.
-4. Le client peut-il ajouter plus de cet ingrédient ? ✅ Liez-le à un **modificateur**.
-
----
-
-## ⚙️ Comment le configurer dans Foody Admin
-
-### Étape 1. Créez votre article
-
-* Ajoutez les variantes (par ex. Petit, Grand ou Classic, Big).
-
-### Étape 2. Ajoutez les ingrédients
-
-Pour chaque ingrédient :
-
-* Sélectionnez l'ingrédient.
-* Choisissez son comportement :
-  * **Adapter à la taille** pour une quantité automatique.
-  * **Quantité fixe** pour saisir une seule valeur.
-  * **Personnalisé par variante** pour définir une valeur par variante.
-
-### Étape 3. Ajoutez les modificateurs (si besoin)
-
-* Créez le modificateur (par ex. Extra fromage).
-* Liez-le à un ingrédient.
-* Définissez la quantité ajoutée.
-
----
-
-## 🎯 Modèle mental final
-
-Au lieu de penser en termes système, demandez-vous simplement :
-
-* « Cet ingrédient dépend-il de la taille ? »
-* « Est-il toujours le même ? »
-* « Le client peut-il en ajouter ? »
-
-C'est tout. Le système s'occupe du reste.
+La colonne Disponibilité de la bibliothèque Articles ouvre aussi le petit panneau commun aux Cartes. Choisissez le statut ou le stock restant puis Appliquer ; une simple ouverture ne modifie rien. La série courante est affichée lorsqu’elle s’applique. Consultez [Catégories et articles](/fr/help/menu/categories-and-items#library-availability) pour les choix, quantités par taille, annulation et récupération après erreur. Le paramétrage complet de la fiche conserve son propre bouton Enregistrer.

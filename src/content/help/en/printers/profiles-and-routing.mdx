@@ -1,0 +1,43 @@
+---
+title: Printer profiles and routing
+description: 'Open POS → More → Settings → Hardware → Printers/Profiles, or Admin → Settings → Printers.'
+apps: both
+tags:
+  - printers
+  - printer-profiles
+updatedAt: '2026-10-18'
+featureId: printer-profiles
+audience: public
+releaseStatus: available
+---
+Open POS → More → Settings → Hardware → Printers/Profiles, or Admin → Settings → Printers.
+
+<span id="discover-epson" />
+
+## Find an Epson printer on the local network
+
+1. Connect the iPad or Victa and the supported Epson printer to the same local network. Switch on the printer and check its paper and cover. Your account must have access to printer settings.
+2. Open POS → More → Settings → Hardware → Printers and select **Scan network**. Opening the page can also start a scan. Wait until the scan finishes.
+3. On iPad, allow **Local Network** access when iOS asks. If the first scan is empty after granting permission, run **Scan network** again. If access was denied, enable it for FoodyPOS in iPad Settings, then retry.
+4. Check the discovered model and IP address. Users with printer-management permission can register discovered printers and assign their profiles; read-only printer access does not register devices.
+5. If **Scan network** is disabled with a notice, the installed build does not enable automatic discovery. Existing configured printers still work. Use **Connect a printer → Select a printer → Advanced printer configuration → Epson printer** to enter its IP address, or install the supported update when distributed.
+
+If no printer is found, check that the Wi-Fi allows local device communication and that the devices are not on isolated guest networks. Manual IP entry remains available when broadcast discovery is blocked. Discovery does not prove printing: deliberately run one test and check the paper before requesting another copy.
+
+<span id="profile" />
+
+## Create or edit a shared profile
+
+Managers can create/edit, disable/reactivate or delete shared profiles. New profiles begin with supported job types off: enable receipt, onsite or online tickets deliberately. A shared edit affects assigned devices; deletion removes routing metadata, not physical printers or job history.
+
+<span id="ticket-options" />
+
+## Set ticket options
+
+Configure categories, one item per ticket, kitchen names, combining identical items, footer, margins, new-category behavior, copies, recipient details, font size and sorting where offered. Common settings are shared within one profile. Save explicitly; failed saves retain your draft.
+
+<span id="assign" />
+
+## Assign the right printer
+
+In Admin assign installation/printer mappings to the intended active profiles. Disabling a profile suspends routing while preserving the assignment. Editing a profile does not replace device mappings. Verify the actual transport and printer identity before a deliberate development test ticket.

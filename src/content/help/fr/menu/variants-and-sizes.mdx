@@ -1,132 +1,87 @@
 ---
-title: "Variantes et tailles"
-description: "Configurez des variantes de taille ou de saveur sur un article, avec prix, portion et statut stock par variante."
+title: Variantes et tailles
+description: 'Configurez des variantes de taille ou de saveur sur un article, avec prix, portion et statut stock par variante.'
 apps: foodyadmin
-tags: [menu, variantes, tailles, options, portions]
-updatedAt: 2026-04-16
+tags:
+  - menu
+  - menu-variants-and-sizes
+  - variantes
+  - tailles
+  - options
+  - portions
+updatedAt: '2026-10-21'
+featureId: menu-variants-and-sizes
+audience: public
+releaseStatus: available
 ---
+Ouvrez un article puis la section Prix et variantes de son éditeur.
 
-## Ce qu'est une variante
+<span id="section-1" />
 
-Une **variante** est une version du même article vendue à un prix distinct. Cas courants :
+<span id="section-3" />
 
-* Tailles : Petit / Moyen / Grand.
-* Styles : Classic / Épicé.
-* Bols : 250 ml / 500 ml.
-* Choix de viande : Poulet / Bœuf.
+<span id="section-5" />
 
-Les variantes appartiennent à l'article. À la commande, le client en choisit exactement une par groupe de variantes.
+<span id="section-6" />
 
-> Un article peut avoir plusieurs groupes de variantes (ex. «\u00A0Taille\u00A0» + «\u00A0Sauce\u00A0»), mais c'est rarement nécessaire. Pour des extras sélectionnables, préférez les [Modificateurs](./modifiers).
+## Comprendre le prix et la portion
 
----
+Une variante décrit une taille ou une version du même article. Son prix est un montant absolu qui remplace le prix de base ; les modificateurs, eux, sont des suppléments. Le champ Portion décrit la taille servie. Les quantités d’ingrédients sont renseignées séparément dans Recette et coût, par portion ou par variante.
 
-## Créer un groupe de variantes
+<span id="section-2" />
 
-1. Ouvrez l'article dans `Menu → Articles`.
-2. Dans l'onglet Détails, descendez jusqu'à la section **Variantes**.
-3. Cliquez **Ajouter** (ou **Modifier** si un groupe existe déjà).
+<span id="section-4" />
 
-![Éditeur de variantes vide](/assets/img/screenshots/menu/variants-modal-empty.png)
+## Ajouter et enregistrer les variantes
 
-4. Donnez un nom au groupe (ex. «\u00A0Taille\u00A0», «\u00A0Size\u00A0», «\u00A0Saveur\u00A0»). C'est plutôt interne — les clients voient les lignes, pas le nom du groupe.
-5. Ajoutez une ligne par variante. Chaque ligne a :
-   * **Nom** — affiché au client («\u00A0Normal\u00A0», «\u00A0Grand\u00A0», «\u00A0250 g\u00A0»).
-   * **Prix** — remplace le prix de base de l'article quand cette variante est choisie.
-   * **Portion** — taille servie (avec unité : g, ml, kg, l, unit).
-   * **Statut** — Disponible / Rupture de stock.
+Dans Articles et cartes → Articles, ouvrez l’article et faites défiler jusqu’à Prix et variantes. Les groupes et lignes s’éditent directement dans cette section. Ajoutez un ensemble si nécessaire, saisissez son titre et utilisez Ajouter une variante pour chaque taille. Renseignez Nom, Prix, Portion et Statut, puis Enregistrer dans l’en-tête de l’article. Il ne faut pas chercher l’ancien onglet Détails ni un bouton Terminé pour valider toutes les variantes.
 
-![Éditeur de variantes rempli](/assets/img/screenshots/menu/variants-modal-filled.png)
+<span id="section-7" />
 
-6. Cliquez **Terminé**.
+<span id="section-9" />
 
----
+## Disponibilité, ordre et lignes réservées aux combos
 
-## Comprendre chaque champ
+Le Statut propose Disponible ou Indisponible. Les flèches déplacent les lignes ; la corbeille retire une ligne et Retirer supprime le groupe de l’article. La case réservée aux combos distingue les lignes qui ne sont pas proposées seules. Contrôlez l’ordre et les prix avant Enregistrer. Les commandes passées conservent leurs propres informations de vente.
 
-### Nom
+<span id="section-8" />
 
-L'étiquette que choisit le client. Courte et naturelle («\u00A0Normal\u00A0», «\u00A0Grand\u00A0», «\u00A0Petit\u00A0», «\u00A0XL\u00A0»).
+## Réutiliser un groupe enregistré
 
-### Prix
+Cliquez Groupes d’options enregistrés sur le groupe voulu, recherchez un ensemble et choisissez-le dans le sélecteur. Ce n’est pas une suggestion déclenchée simplement en tapant le titre du groupe. Vérifiez les lignes importées, leurs prix, portions et états, puis enregistrez l’article. Évitez de modifier une bibliothèque partagée sans vérifier les autres articles concernés.
 
-Prix absolu, pas un delta. Saisir `70` pour Normal et `140` pour Grand fixe exactement ce prix par variante, peu importe le prix de base de l'article.
+<span id="section-10" />
 
-### Portion
+<span id="section-11" />
 
-Deux rôles liés :
+<span id="section-12" />
 
-1. **Ce que voient les clients** sur le menu web : «\u00A0Grand 500 g\u00A0» sous l'étiquette de la variante.
-2. **Mise à l'échelle de la recette** dans l'onglet Recette : les ingrédients en portée «\u00A0Adapter à la taille\u00A0» utilisent la portion de la variante comme quantité consommée. Voir [Ingrédients et portions](./ingredients-and-portions).
+<span id="section-13" />
 
-Choisissez une famille d'unités cohérente avec votre recette :
+## Relier les tailles à la recette
 
-* Soupe : ml.
-* Hamburger : unit.
-* Assiette : g.
+Dans Recette et coût, activez les quantités différentes par taille puis remplissez les colonnes des variantes. Exemple : 200 g de viande en Normal et 400 g en Grand, avec Même quantité pour un pain identique. Pour une soupe, saisissez explicitement 250 ml et 500 ml dans les colonnes ; le texte de Portion seul ne déclenche pas ces quantités. Vérifiez les avertissements de quantité manquante.
 
-### Statut
+<span id="section-14" />
 
-Basculez sur Rupture quand c'est épuisé pour la journée. La variante est grisée sur POS / web sans être supprimée. Remettez sur Disponible quand c'est réassorti.
+## Contrôler après enregistrement
 
----
+Rouvrez l’article pour vérifier que les lignes sont conservées, puis contrôlez le canal POS ou web autorisé. Si une sauvegarde échoue, conservez la saisie et réessayez avant de fermer. [Créer un article](./creating-a-menu-item) · [Recette et quantités](./ingredients-and-portions).
 
-## Réutiliser un groupe de variantes
+<span id="carte-series-stock" />
 
-Dans Foody, les groupes de variantes s'appuient sur des **Option Sets** — un pool réutilisable. Quand vous tapez un nom qui correspond à un Option Set existant, une suggestion apparaît.
+## Suivre les stocks par taille et par série
 
-![Suggestion Option Set existant](/assets/img/screenshots/menu/variants-option-set-reuse.png)
+La présence des articles, les groupes, leur ordre, les canaux et horaires passent par un brouillon privé : Enregistrer le brouillon, Aperçu, puis Publier explicitement. Les données communes du produit restent dans la bibliothèque. Pour une carte gérée par publication, choisissez les articles dans son brouillon plutôt que dans le sélecteur de groupes du produit. Les quantités initiales d’une série tournante se préparent séparément des stocks de recettes et d’ingrédients. Consultez [Cartes et groupes](/fr/help/menu/menus-and-groups) et [Disponibilité](/fr/help/kitchen/availability) pour la préparation, l’historique et la reprise après erreur.
 
-Appliquer un groupe existant attache ses lignes à cet article. Vous pouvez ensuite surcharger par article :
+<span id="related-service-controls" />
 
-* Prix (différent pour cet article).
-* Portion.
-* Statut.
+## Accès aux nouveaux réglages
 
-Modifier le **nom** d'une ligne au niveau Option Set propage partout. Utile pour un groupe «\u00A0Taille\u00A0» partagé sur plusieurs burgers.
+Depuis une carte, la disponibilité est désormais directement cliquable sous le nom de l’article. Si la limite de vente est épuisée, renseignez une quantité restante ; les commandes déjà engagées restent conservées. Consultez [la procédure de disponibilité](/fr/help/menu/menus-and-groups#contextual-availability) avant de modifier les stocks de vente.
 
----
+<span id="library-availability" />
 
-## Supprimer ou masquer une variante
+## Changer la disponibilité depuis Articles
 
-* **Masquer temporairement** (préserver l'historique) : Statut → Rupture de stock. Recommandé pour les articles saisonniers ou épuisés.
-* **Supprimer** : icône corbeille sur la ligne. Retire la variante de cet article ; si elle vit sur un Option Set partagé, elle y reste.
-
-Supprimer une variante qui a un historique de commandes ne touche pas les commandes passées — elles gardent le nom et le prix vendu.
-
----
-
-## Exemples
-
-### Tailles de burger
-
-| Variante | Prix | Portion |
-|---|---|---|
-| Normal | 70 ₪ | 1 unit |
-| Grand | 140 ₪ | 2 unit |
-
-Sur Recette, marquez le bœuf en «\u00A0Personnalisé par variante\u00A0» avec 200 g pour Normal, 400 g pour Grand. Pain / sauce restent en Quantité fixe.
-
-### Bols de soupe
-
-| Variante | Prix | Portion |
-|---|---|---|
-| Bol | 18 ₪ | 250 ml |
-| Grand bol | 32 ₪ | 500 ml |
-
-Sur Recette, l'ingrédient prép. soupe est en portée «\u00A0Adapter à la taille\u00A0». Pas de quantité à saisir ; le système consomme 250 ml ou 500 ml automatiquement.
-
-### Tailles de boisson
-
-| Variante | Prix | Portion |
-|---|---|---|
-| Petit | 12 ₪ | 330 ml |
-| Moyen | 16 ₪ | 500 ml |
-| Grand | 22 ₪ | 750 ml |
-
----
-
-## Pour aller plus loin
-
-* [Configurer les ingrédients et portions](./ingredients-and-portions) — relier les variantes à la recette et au coût.
-* [Créer un article du menu](./creating-a-menu-item) — guide complet.
+La colonne Disponibilité de la bibliothèque Articles ouvre aussi le petit panneau commun aux Cartes. Choisissez le statut ou le stock restant puis Appliquer ; une simple ouverture ne modifie rien. La série courante est affichée lorsqu’elle s’applique. Consultez [Catégories et articles](/fr/help/menu/categories-and-items#library-availability) pour les choix, quantités par taille, annulation et récupération après erreur. Le paramétrage complet de la fiche conserve son propre bouton Enregistrer.

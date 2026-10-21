@@ -1,0 +1,79 @@
+---
+title: Ordering and fulfillment rules
+description: 'Open Settings → Orders and Fulfillment. These rules affect customer eligibility, beyond the visual Website editor.'
+apps: foodyadmin
+tags:
+  - settings
+  - fulfillment-policy
+updatedAt: '2026-10-21'
+featureId: fulfillment-policy
+audience: public
+releaseStatus: available
+---
+Open Settings → Orders and Fulfillment. These rules affect customer eligibility, beyond the visual Website editor.
+
+<span id="cash-collection-boundary" />
+
+## Separate cash eligibility from cash collection
+
+Order-channel or fulfillment settings may allow a customer to choose cash or pay later, but that choice does not prove payment and does not add money to the POS cash drawer. A staff member records a cash sale only after collecting the money on an enrolled POS with an open drawer session. Review the order's payment status separately from fulfillment; the Verifone card batch is not part of this drawer.
+
+<span id="weight-hold-margin" />
+
+## Review the by-weight authorization ceiling
+
+For online by-weight orders, open Settings → Payments & VAT with settings.edit. Set Weight hold buffer % from 0 to 100 and save; the default for new restaurants is 20. A failed save keeps the draft. Zero still authorizes the estimate. Only the weight-priced subtotal gets a margin: 100 weighted + 50 fixed at 20% authorizes 170; delivery has no extra margin. Checkout shows the estimate, temporary ceiling and Confirm and authorize, in the restaurant theme. A changed ceiling requires customer review and another confirmation before payment; unknown policy blocks authorization. Existing reviewed checkouts and holds keep their ceiling. Staff confirm measured weights before capture and progression; excess beyond the hold is flagged for a separate payment, never automatically charged. Cash/pay-later makes no hold promise. Requires a configured authorize/capture provider, with partial capture, release and expiry validated before production. This neither changes the catering deposit/balance policy nor enables new-card saving with a CST weighted hold.
+
+<span id="channels" />
+
+## Choose ordering channels
+
+Review enabled pickup, delivery and table modes and their minimums, fees and preparation settings. Change one rule at a time and inspect its customer-facing explanation. Public ordering can be paused independently of restaurant opening hours.
+
+<span id="schedule" />
+
+## Set scheduling limits
+
+Review immediate versus scheduled ordering, lead time, booking horizon and time-slot settings. Batch preorder cutoffs and delivery-tour dates have separate configuration. Verify that an offered slot satisfies all applicable rules.
+
+<span id="test-access" />
+
+## Use temporary test access carefully
+
+Temporary test access requires a specific public IP and expiry within seven days. Activation pauses public ordering. Tests create real orders and notifications; use development for test data. Expiry or revocation leaves ordering paused: resume explicitly when ready. Never publish an allowed IP list in a guide or message.
+
+<span id="whatsapp-stage-attachment" />
+
+## Choose a stage attachment
+
+In Admin, open Settings → Restaurant → Order workflow and the required pickup or delivery stage. With Notify customer enabled, choose the message type, an approved Meta photo/PDF model and its attachment: a fixed file, or that order’s receipt for a PDF. Choose the sending time and save the workflow. Manual stage entry or its configured event uses this binding. Selecting a file changes neither progression, payment rules nor delivery eligibility. Correct an incompatible or missing model/file before relying on delivery. The model library and creation controls are in Settings → Communications → WhatsApp.
+
+<span id="courier-departure-sync" />
+
+## Follow an assigned delivery’s departure
+
+When the assigned courier starts their route in Admin, unfinished accepted, preparing and ready delivery orders change together to Out for delivery. Staff screens receive the updated statuses through their usual order refresh. This confirms actual departure; assigning a courier or choosing a fulfillment mode alone does not start a route. Held kitchen courses and unsettled weight orders must be resolved first. If starting fails, the previous statuses remain. The route action does not reopen finished or cancelled orders.
+
+<span id="internal-combo-substitution" />
+
+## Make a one-order combo exception
+
+For a one-order combo exception, an authorized Admin user opens the combo step and selects Choose another item. The replacement is included without a surcharge and is saved on that order only. Fulfillment, scheduling and delivery rules remain unchanged. Review the selected dish and portion in the order details. Guest and POS combo pickers retain the configured composition; arrange an exception through the internal Admin order editor. See the combo guide for quantities, eligibility and recovery.
+
+<span id="counter-terminal-payment-before-kitchen" />
+
+## Wait for counter card payment before kitchen preparation
+
+For a new counter pickup order paid by card, choose Pay, then Pay by card. Wait for terminal approval and for Foody to record the payment before preparation and the kitchen ticket start. During collection the payment remains pending and is excluded from the live order board. After a refusal or cancellation, keep the same checkout and retry there; do not send it to the kitchen to bypass payment. If approval succeeded but synchronization failed, reconcile the existing payment before starting another charge. Orders deliberately sent for table service before collection keep their existing send-then-pay flow.
+
+<span id="carte-series-stock" />
+
+## Move a reservation between series
+
+Predefined item stocks now have a journal under Items & menus → Stock history and on each product. A rotating carte can prepare initial allowances per series and publish them without restoring already committed units. Previous remaining counts are not carried forward. Order changes and pre-production releases use the original frozen pool; a produced item remains consumed. Ingredient/preparation quantities and recipe costs remain separate. See [Availability](/en/help/kitchen/availability) for initial imports, corrections and history filters.
+
+<span id="related-service-controls" />
+
+## Access the new controls
+
+The entry sign-in invitation is now a published website order-journey preference. Order without an account remains available; this setting does not replace mandatory phone verification or payment/delivery validation. Google/Geoapify consumption and limits are separately available in [Usage and quotas](/en/help/settings/api-usage-and-quotas).

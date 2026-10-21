@@ -6,6 +6,7 @@ import ProductMentions from "@/components/marketing/ProductMentions";
 import { CallToAction, FaqSection } from "@/components/marketing/Shared";
 import { marketing } from "@/lib/marketing/content";
 import { pricingRates } from "@/lib/marketing/pricing";
+import { mapsOffer, mapsPricing } from "@/lib/marketing/maps-pricing";
 import { productNavigation, routes, ui } from "@/lib/marketing/ui";
 import { resolveLang } from "@/lib/seo";
 
@@ -17,6 +18,7 @@ export default async function PricingPage({
 }) {
   const lang = resolveLang((await params).lang);
   const t = marketing[lang].pricing;
+  const maps = mapsPricing[lang];
   const format = new Intl.NumberFormat(lang === "he" ? "he-IL" : lang);
   const price = (amount: number) => (
     <bdi dir="ltr">{format.format(amount)} ₪</bdi>
@@ -219,7 +221,25 @@ export default async function PricingPage({
             ))}
           </div>
         </section>
-        <FaqSection lang={lang} items={t.faq} />
+        <section id="maps-and-routes" className="shell section-space pricing-costs" data-maps-offer-status={mapsOffer.status}>
+          <div className="split-heading"><h2>{maps.title}</h2><p><ProductMentions lang={lang}>{maps.description}</ProductMentions></p></div>
+          <dl className="pricing-cost-list">
+            <div data-pricing-maps="included"><dt>{maps.included}</dt><dd className="cost-amount"><strong>{price(0)}</strong><span>{maps.includedUnit}</span></dd><dd className="cost-description">{maps.includedText}</dd></div>
+            <div data-pricing-maps="plus">
+              <dt>{maps.plus}<p className="fine-print">{maps.planned}</p></dt>
+              <dd className="cost-amount"><strong>{price(mapsOffer.monthly_price)}</strong><span>{maps.monthly}</span></dd>
+              <dd className="cost-description">
+                <ul className="check-list">{[[maps.optimization, mapsOffer.optimization_credits], [maps.tiles, mapsOffer.map_tiles], [maps.geocoding, mapsOffer.geocoding_requests], [maps.routes, mapsOffer.route_requests]].map(([label, amount]) => <li key={String(label)}><Icon name="check" />{String(label).replace('{n}', format.format(Number(amount)))}</li>)}</ul>
+                <p>{maps.creditRules.replace('{single}', format.format(mapsOffer.single_stop_credits)).replace('{fleet}', format.format(mapsOffer.fleet_stop_credits))}</p>
+                <p className="fine-print">{maps.activation}</p>
+                <Link className="button button-outline" href={`/${lang}/contact`}>{maps.contact}</Link>
+              </dd>
+            </div>
+            <div data-pricing-maps="custom"><dt>{maps.custom}</dt><dd className="cost-amount"><strong>{maps.quote}</strong></dd><dd className="cost-description">{maps.customText}</dd></div>
+          </dl>
+          <p className="pricing-note">{maps.noOverage}</p>
+        </section>
+        <FaqSection lang={lang} items={[...t.faq, { q: maps.faqTitle, a: maps.faqAnswer.replace('{price}', format.format(mapsOffer.monthly_price)).replace('{credits}', format.format(mapsOffer.optimization_credits)) }]} />
         <CallToAction lang={lang} />
       </main>
       <Footer />

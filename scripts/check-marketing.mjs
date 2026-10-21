@@ -4,6 +4,7 @@ import { readFile } from "node:fs/promises";
 const social = JSON.parse(await readFile(
   new URL("../src/lib/marketing/social.json", import.meta.url), "utf8",
 ));
+const mapsOffer = JSON.parse(await readFile(new URL('../src/lib/marketing/maps-offers.json', import.meta.url), 'utf8'));
 
 // Read-only smoke checks against a running Next server; never submit leads or payments.
 const base = process.env.MARKETING_BASE_URL || "http://localhost:3001";
@@ -27,6 +28,30 @@ const paths = [
   "/solutions/kitchen-companion",
 ];
 let checked = 0;
+
+function checkMetaPixel(response, html, url) {
+  const csp = response.headers.get("content-security-policy") || "";
+  const directives = Object.fromEntries(csp.split(";").map((directive) => {
+    const [name, ...sources] = directive.trim().split(/\s+/);
+    return [name, sources];
+  }));
+  assert.ok(
+    directives["script-src"]?.includes("https://connect.facebook.net"),
+    `Meta script allowed by CSP: ${url}`,
+  );
+  for (const origin of ["https://connect.facebook.net", "https://www.facebook.com"]) {
+    assert.ok(
+      directives["connect-src"]?.includes(origin),
+      `Meta connection allowed by CSP: ${origin} on ${url}`,
+    );
+  }
+  assert.match(
+    html,
+    /<noscript><img[^>]+src="https:\/\/www\.facebook\.com\/tr\?id=1059276727609296&amp;ev=PageView&amp;noscript=1"[^>]*\/><\/noscript>/,
+    `Meta no-JavaScript fallback: ${url}`,
+  );
+}
+
 for (const lang of ["he", "fr", "en"]) {
   const navigationTitles = {};
   for (const path of paths) {
@@ -34,6 +59,7 @@ for (const lang of ["he", "fr", "en"]) {
     const response = await fetch(url);
     assert.equal(response.status, 200, url);
     const html = await response.text();
+    checkMetaPixel(response, html, url);
     const main = html.match(/<main\b[\s\S]*?<\/main>/)?.[0] || "";
     const mentions = [
       ...main.matchAll(
@@ -158,6 +184,13 @@ for (const lang of ["he", "fr", "en"]) {
       }
     }
     if (path === "/pricing") {
+      assert.ok(html.includes('data-maps-offer-status="planned"'), `Maps extension remains explicitly planned: ${url}`);
+      assert.equal(mapsOffer.automatic_billing, false);
+      const mapsPlus = html.match(/data-pricing-maps="plus"([\s\S]*?)<\/dd>\s*<\/div>/)?.[1];
+      assert.ok(mapsPlus, `Maps Plus pricing is present: ${url}`);
+      assert.ok(mapsPlus.includes(String(mapsOffer.monthly_price)), `Maps price matches the offer contract: ${url}`);
+      assert.ok(mapsPlus.includes(`href="/${lang}/contact"`), `Maps activation uses contact only: ${url}`);
+      assert.ok(!mapsPlus.includes('<form'), `No maps checkout is published: ${url}`);
       const licenceNote = html.match(
         /<p\b[^>]*data-pricing-licences[^>]*>([\s\S]*?)<\/p>/,
       )?.[1];
@@ -313,7 +346,7 @@ for (const lang of ["he", "fr", "en"]) {
         .find((data) => data["@type"] === "FAQPage");
       assert.equal(
         faq?.mainEntity.length,
-        7,
+        8,
         `Localized pricing FAQ schema: ${url}`,
       );
       assert.ok(
@@ -475,6 +508,11 @@ for (const path of [
   const response = await fetch(base + path);
   assert.equal(response.status, 200, path);
   const html = await response.text();
+  checkMetaPixel(response, html, base + path);
+  if (path === "/he/privacy") {
+    assert.ok(html.includes("Meta (Facebook) Pixel"), "Privacy policy discloses Meta tracking");
+    assert.ok(!html.includes("We do not use third-party advertising trackers"));
+  }
   assert.ok(
     html.includes(`rel="canonical" href="${canonicalBase}${path}"`),
     `Supporting page canonical: ${path}`,

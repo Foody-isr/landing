@@ -22,6 +22,12 @@ npm run test:marketing
 
 `MARKETING_BASE_URL` changes the smoke-test target. `NEXT_PUBLIC_SITE_URL` controls canonical URLs (default `https://foody-pos.co.il`). No deployment or environment changes are needed to preview locally. After moving route files, `npx next typegen` regenerates Next's route types. Do not run a production build and the development server against the same `.next` directory concurrently.
 
+## Advertising measurement
+
+Production builds include Meta Pixel `1059276727609296` on every landing route and language. `src/components/MetaPixel.tsx` initializes it after hydration and sends `PageView` with `trackSingle` for the initial page and subsequent pathname changes, including browser back/forward. This supports repeated page views for this Pixel; global `track` deduplicates them. Meta's automatic history tracking is disabled to prevent duplicate events. A direct `noscript` image covers visits without JavaScript. `next dev` does not load the Pixel; local production previews do. No custom conversion events are added.
+
+The CSP permits the Meta script/configuration origin (`connect.facebook.net`) and event endpoint (`www.facebook.com`); other security directives remain in place. The privacy page discloses this marketing-site tracking. When testing a production preview in an automated browser, intercept Meta requests to avoid sending synthetic visits to the live Pixel.
+
 ## Content and routes
 
 - `src/lib/marketing/content.ts`: Hebrew, French and English homepage, pricing, demo and contact copy.
@@ -36,6 +42,17 @@ npm run test:marketing
 - `src/content/help/`: existing help articles. Their URLs and content are retained, with resource-specific metadata; untranslated article fallbacks canonicalize to their original English version.
 
 Commercial pages are rendered statically. New products belong under `/[lang]/solutions/[slug]`; sector pages preserve existing URLs. Previously empty beauty/services routes redirect permanently to the general business offering. The full-screen intro and unused older landing components were retired. Historical public assets and help content remain available.
+
+The pricing page also distinguishes included shared map usage from the planned
+Maps Plus extension: 149 ILS excluding VAT per establishment/month, with 500 Foody
+optimization credits (one per single-courier stop, three per fleet-allocation stop),
+10,000 Google tiles, 500 address searches and 500 route calls. Recalculations count
+again; higher volumes require a quote. The owner delegated these future rates on
+15 October 2026. The offer is explicitly in preparation, with contact only and no
+automatic charge or relaxation of current provider caps. The mirrored
+`src/lib/marketing/maps-offers.json` must equal the API's canonical
+`internal/delivery/maps_offers.json` before release. Existing software launch prices
+and included delivery management remain unchanged.
 
 ## Design and editorial decisions
 
@@ -81,3 +98,16 @@ Foody's owner supplied the Star Micronics/Epson partner and integrator status an
 - `star-mc-print3.webp`: manufacturer image from [Star mC-Print3](https://starmicronics.com/product/mc-print3-pos-receipt-printer-retail-kitchen-online-ordering/), source `https://starmicronics.com/wp-content/uploads/2022/01/mC-Print3-1-800x800.jpg.webp`.
 
 Epson is positioned for professional and fine-dining kitchens in Israel. No unsupported claim of exclusive design for Michelin-starred restaurants, endorsement or first Israeli availability is made. Direct cloud printing is qualified: compatible intelligent Epson variant or gateway required. Manufacturer images retain their own example tickets and screens.
+
+## Help center and documentation assistant
+
+Public help lives at `/fr/help`, `/he/help` and `/en/help`. The authored feature
+catalogue renders all three languages, while internal procedures stay outside the
+public corpus. Full-text search and the API support assistant use the same release.
+The API owns AI credentials and private Redis; Landing has no AI provider secret.
+Canonical browsers call `/api/v1/public/support/chat` on the runtime-selected API;
+preview questions proxy to development with a shared egress quota.
+
+Run `npm run render:help`, `npm run check:help`, `npm run test:help`, lint, TypeScript
+and build. See [maintenance and CI rules](docs/help/MAINTENANCE.md), the full
+[inventory](docs/help/inventory.json) and [French inventory index](docs/help/INVENTAIRE.fr.md).

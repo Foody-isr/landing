@@ -1,0 +1,55 @@
+---
+title: Commander en ligne côté client
+description: Ouvrez le lien public du restaurant ou choisissez un établissement de la chaîne.
+apps: foodyweb
+tags:
+  - guest
+  - guest-ordering
+updatedAt: '2026-10-21'
+featureId: guest-ordering
+audience: public
+releaseStatus: available
+---
+Ouvrez le lien public du restaurant ou choisissez un établissement de la chaîne.
+
+<span id="weight-hold-margin" />
+
+## Vérifier le plafond de préautorisation au poids
+
+Pour les commandes en ligne au poids, ouvrez Réglages → Paiements & TVA avec settings.edit. Saisissez Marge d’empreinte au poids % de 0 à 100 puis enregistrez ; la valeur par défaut des nouveaux restaurants est 20. Un échec conserve la saisie. À 0 %, le montant estimé reste préautorisé. Seul le sous-total au poids reçoit une marge : 100 au poids + 50 fixes à 20 % donnent 170 préautorisés ; aucune marge sur la livraison. Le checkout affiche estimation, plafond temporaire et Confirmer et préautoriser, dans le thème du restaurant. Un plafond modifié exige une nouvelle revue et confirmation avant paiement ; une politique inconnue bloque l’autorisation. Les commandes déjà revues et empreintes existantes gardent leur plafond. Le personnel confirme les poids mesurés avant capture et progression ; un dépassement est signalé pour un paiement complémentaire, jamais débité automatiquement. Espèces/paiement ultérieur n’annoncent pas d’empreinte. Un prestataire autorisation/capture configuré est nécessaire ; validez capture partielle, libération et expiration avant production. Ce réglage ne change ni acompte/solde traiteur ni la restriction de sauvegarde d’une nouvelle carte pour une empreinte CST au poids.
+
+<span id="basket" />
+
+## Composer le panier
+
+Choisissez retrait, livraison ou table si proposé, le menu actif puis un article. Choisissez variante, options obligatoires, quantité et notes autorisées, puis ajoutez. Vérifiez le panier avant paiement. Une suggestion d’assistant suit les mêmes choix et contrôles de disponibilité.
+
+<span id="mobile-fulfillment" />
+
+## Choisir une adresse sur téléphone
+
+Dans la fenêtre de commande, choisissez Livraison et saisissez la rue, le numéro et la ville. Si la recherche d’adresses est activée, faites défiler les suggestions puis touchez l’adresse complète. Une rue seule demande encore le numéro et conserve le clavier. Une adresse complète ferme le clavier ; vérifiez ensuite les créneaux proposés et touchez Confirmer l’adresse. Le bouton reste désactivé pendant les vérifications ou si la livraison est impossible. Pour le retrait, choisissez Retrait puis Confirmer le retrait. La croix en haut ferme la fenêtre. La connexion au compte reste facultative. Si aucune adresse ne convient, précisez le numéro ou la ville ; en cas d’échec du service, réessayez ou contactez le restaurant. Sur mobile, les onglets Retrait et Livraison, le champ et le lien Se connecter en haut gardent leur position à l’ouverture et à la fermeture du clavier. Les suggestions compactes affichent l’adresse et la ville sur deux lignes dans une liste défilante plus grande. Pendant la recherche, la confirmation laisse la place aux suggestions ; elle apparaît après le choix d’une adresse complète. La couverture est réservée aux grands écrans. La mention Google Maps et les erreurs restent visibles. Après avoir choisi une rue, ajoutez le numéro dans le même champ et choisissez la suggestion d’adresse complète. La rue seule ne suffit pas à confirmer la livraison.
+
+<span id="fulfillment" />
+
+## Choisir coordonnées et remise
+
+Saisissez coordonnées, adresse ou heure de retrait. En livraison vérifiez zone, frais et créneau ; pour précommande/tournée, suivez échéance/date spécifiques. Le paiement revalide règles et prix actuels.
+
+<span id="payment" />
+
+## Payer et vérifier la confirmation
+
+Choisissez un moyen proposé, vérifiez total et suivez le paiement sécurisé. Attendez le résultat vérifié. Un paiement rejeté/en attente n’est pas une commande payée confirmée ; conservez la référence et contactez le restaurant avant de payer deux fois.
+
+<span id="customer-sign-in-methods" />
+
+## Se connecter avant de commander
+
+Dans Me connecter, utilisez Google ou votre e-mail et votre mot de passe. Facebook et Apple apparaissent uniquement si ces méthodes sont configurées. La connexion par code seul est retirée ; les codes de vérification d’adresse et de récupération de mot de passe restent distincts. Un ancien compte créé sans mot de passe peut utiliser Mot de passe oublié pour en définir un. Au paiement, les mêmes fournisseurs proposés complètent le choix e-mail + mot de passe ; seul le bouton de paiement soumet l’inscription en ligne. L’accès invité reste possible, et l’enregistrement d’une carte demande toujours un consentement distinct.
+
+<span id="related-service-controls" />
+
+## Accès aux nouveaux réglages
+
+L’invitation à se connecter avant de commander se règle dans Site web → Parcours de commande → Proposer la connexion avant de commander. Désactivée, elle laisse entrer directement les informations de retrait ou de livraison ; activée, Commander sans compte reste immédiatement visible. Enregistrez le brouillon puis publiez pour appliquer ce choix. Voir [le réglage du parcours](/fr/help/website-qr/checkout-and-receipt#optional-entry-sign-in).
