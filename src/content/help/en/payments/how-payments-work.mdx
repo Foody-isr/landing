@@ -25,9 +25,15 @@ A captured ABS sale still AUTHORISED/AUTHORIZED or SETTLEMENT_REQUESTED is not s
 
 Read Payment operations for the amount, reason, date, actor account and provider transaction ID. Confirmed by Verifone requires an independent transaction read with matching parent, amount, currency, reference and merchant. A partial refund leaves the payment marked paid; a full confirmed return marks its payment refunded. Neither changes food status, items, stock or fulfillment.
 
-If the result is unknown or the browser loses the response, do not submit another refund or switch to VOID. Use Check with Verifone, which only verifies existing operations. A request with no recoverable provider ID stays blocked for support/Central verification, including after reload or an API restart. Never treat an HTTP success alone as refunded. Check the corresponding Invoice4U credit/cancellation document separately; this control does not confirm or create a fiscal credit document. FoodyPOS controls are not included in this version.
+If the result is unknown or the browser loses the response, do not submit another refund or switch to VOID. Use Check with Verifone, which only verifies existing operations. A request with no recoverable provider ID stays blocked for support/Central verification, including after reload or an API restart. Never treat an HTTP success alone as refunded. Check the corresponding Invoice4U credit/cancellation document separately; this control does not confirm or create a fiscal credit document. FoodyPOS has a separate Transactions workflow for a server-verified original Checkout payment; these Admin instructions do not cover POS terminal refunds.
 
 After a full return verified against matched Verifone history, the summary keeps the original amount, shows the full amount returned and zero remaining, and offers no further refund or VOID. A cleared capture balance after that return is not an uncaptured hold to release. Missing or inconsistent evidence still requires verification without resubmission.
+
+<span id="pos-checkout-original-payment-refunds" />
+
+## Refund a POS-listed online payment to its original method
+
+In POS Transactions, choose a confirmed Verifone Checkout payment and request a return only when the server verifies its original payment ID, merchant, provider status and available amount. The selected transaction must match the order's payment; a shared order is not enough to authorize a different charge. A settled payment may be refunded to the same card, while an eligible captured unsettled payment may be voided in full. Enter a reason and confirm once. If the result is unknown, use the existing-operation check rather than submitting again. This does not refund a Victa terminal card payment or turn a card payment into a cash return.
 
 <span id="verifone-readable-hosted-theme" />
 

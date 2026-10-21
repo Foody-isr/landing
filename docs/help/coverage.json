@@ -87,7 +87,8 @@
           "internal/shifts/**"
         ],
         "foodypos": [
-          "lib/features/auth/presentation/*service*"
+          "lib/features/auth/presentation/*service*",
+          "lib/features/more/presentation/cash_drawer_page.dart"
         ]
       }
     },
@@ -614,9 +615,6 @@
           "src/components/orders/**",
           "src/app/[restaurantId]/orders/new/**",
           "src/lib/orders/**"
-        ],
-        "foodyserver": [
-          "internal/orders/handler.go"
         ]
       }
     },
@@ -705,8 +703,7 @@
         "foodyserver": [
           "internal/delivery/**",
           "internal/common/delivery_models.go",
-          "internal/orders/delivery_departure.go",
-          "cmd/server/main.go"
+          "internal/orders/delivery_departure.go"
         ]
       }
     },
@@ -1211,12 +1208,25 @@
           "lib/features/orders/presentation/cash_payment_dialog.dart",
           "lib/features/orders/presentation/cibus_payment_dialog.dart",
           "lib/features/orders/application/checkout_finalizer.dart",
+          "lib/features/settings/presentation/terminal_reports_page.dart",
+          "lib/features/more/presentation/cash_drawer_page.dart",
+          "lib/features/more/data/cash_drawer_repository.dart",
+          "lib/features/transactions/**",
+          "lib/core/routing/app_router.dart",
           "lib/core/payment/**",
           "lib/services/payments/**"
         ],
         "foodyserver": [
           "internal/payment/**",
-          "internal/orders/payment*.go"
+          "internal/orders/payment*.go",
+          "internal/orders/cash_drawer*.go",
+          "internal/orders/transactions*.go"
+        ],
+        "foodyadmin": [
+          "src/app/[restaurantId]/transactions/**",
+          "src/lib/api.ts",
+          "src/components/Sidebar.tsx",
+          "src/lib/route-permissions.ts"
         ]
       }
     },
@@ -1370,7 +1380,10 @@
           "src/app/[restaurantId]/settings/cibus/**"
         ],
         "foodyserver": [
-          "internal/payment/**",
+          "internal/payment/resolver.go",
+          "internal/payment/provider.go",
+          "internal/payment/cibus.go",
+          "internal/payment/saved_token_resolver.go",
           "internal/invoices/**"
         ],
         "foodyweb": [

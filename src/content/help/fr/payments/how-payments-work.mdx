@@ -25,9 +25,15 @@ Une vente ABS capturée encore en AUTHORISED/AUTHORIZED ou SETTLEMENT_REQUESTED 
 
 Consultez Opérations de paiement pour le montant, motif, date, compte de l’opérateur et identifiant fournisseur. Confirmé par Verifone exige une lecture indépendante concordante : transaction parente, montant, devise, référence et commerçant. Un remboursement partiel conserve le paiement payé ; une restitution totale confirmée marque le paiement remboursé. Aucune action ne modifie le statut de préparation, les articles, le stock ou la remise.
 
-Si le résultat est inconnu ou si le navigateur perd la réponse, ne renvoyez pas de remboursement et ne passez pas au VOID. Vérifier auprès de Verifone contrôle uniquement les opérations existantes. Sans identifiant fournisseur récupérable, la demande reste bloquée pour vérification par le support/Central, même après rechargement ou redémarrage de l’API. Un simple succès HTTP ne prouve pas le remboursement. Vérifiez séparément l’avoir ou document d’annulation Invoice4U ; ce contrôle ne crée ni ne confirme un avoir fiscal. Les boutons FoodyPOS ne sont pas inclus dans cette version.
+Si le résultat est inconnu ou si le navigateur perd la réponse, ne renvoyez pas de remboursement et ne passez pas au VOID. Vérifier auprès de Verifone contrôle uniquement les opérations existantes. Sans identifiant fournisseur récupérable, la demande reste bloquée pour vérification par le support/Central, même après rechargement ou redémarrage de l’API. Un simple succès HTTP ne prouve pas le remboursement. Vérifiez séparément l’avoir ou document d’annulation Invoice4U ; ce contrôle ne crée ni ne confirme un avoir fiscal. FoodyPOS dispose d’un parcours Transactions distinct pour le paiement Checkout initial vérifié par le serveur ; ces instructions Admin ne couvrent pas les remboursements par terminal POS.
 
 Après une restitution totale vérifiée dans l’historique lié de Verifone, le bilan conserve le montant initial, affiche le montant intégral restitué et un solde restant nul, sans proposer de nouveau remboursement ni VOID. Un solde capturé remis à zéro après cette restitution n’est pas une préautorisation à libérer. Une preuve manquante ou incohérente exige toujours une vérification, sans renvoyer l’opération.
+
+<span id="pos-checkout-original-payment-refunds" />
+
+## Rembourser un paiement en ligne listé sur la caisse vers son moyen initial
+
+Dans Transactions sur la caisse, choisissez un paiement Verifone Checkout confirmé. Demandez une restitution seulement si le serveur vérifie l'identifiant du paiement initial, le commerçant, l'état fournisseur et le montant disponible. La transaction choisie doit correspondre au paiement de la commande ; partager une commande ne permet pas de restituer un autre débit. Un paiement réglé peut être remboursé vers la même carte, tandis qu'un paiement encaissé mais non réglé admissible peut être annulé entièrement. Indiquez un motif et confirmez une seule fois. Si le résultat est inconnu, vérifiez l'opération existante au lieu de la renvoyer. Cela ne rembourse pas une carte sur terminal Victa et ne transforme pas un paiement par carte en restitution en espèces.
 
 <span id="verifone-readable-hosted-theme" />
 
