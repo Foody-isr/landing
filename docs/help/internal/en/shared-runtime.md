@@ -81,3 +81,9 @@ The offer_sign_in setting controls the automatic invitation, not account availab
 ## Conditional modifier contract
 
 Migration 274 adds selection_config to the item/group link and selection_index to modifier snapshots. Deploy API and schema before compatible clients. Existing links without configuration retain their behavior. Rules use IDs verified against the restaurant and item; modifier sources are independent single-choice groups. Repeated positions are numbered 1 to 12 and require exactly one selection. The server recalculates prices, rejects duplicates, unavailable positions and hidden choices, and prefixes saved names for kitchen output. TypeScript/Dart caches and payloads retain catalog ID and position. Cross-restaurant copying remaps references. Additive API, translation and model changes do not alter existing payment, Google or delivery integrations. Documentation stays local until a reviewed Landing commit has been authorized and pinned; do not publish procedures ahead of their clients.
+
+<span id="descriptive-variant-contract" />
+
+## Descriptive variant contract
+
+Option groups carry an item-specific role: price retains the absolute priced variant, while identity retains descriptive dimensions without changing price. selection_config conditions their positions on an independent priced format. Orders send option_selections separately from selected_variant_id and modifiers; positions and labels are snapshotted and guest clarifications remain private. Deploy migration 275 and the API before compatible clients. The server validates price, restaurant ownership and every choice. Historical groups retain their behavior until explicitly reconfigured.

@@ -409,16 +409,45 @@
       "selectors": {
         "foodyadmin": [
           "src/app/[restaurantId]/menu/**",
-          "src/components/menu-item/**"
+          "src/components/menu-item/**",
+          "src/components/orders/NewOrderItemModal.tsx",
+          "src/components/orders/EditOrderDrawer.tsx",
+          "src/components/orders/detail/center/TicketLineRow.tsx",
+          "src/lib/item-options.ts"
         ],
         "foodyserver": [
-          "internal/menu/**"
+          "internal/menu/**",
+          "internal/common/option_selection.go",
+          "internal/orders/option_selection.go",
+          "internal/printing/service.go",
+          "internal/receipts/handler.go"
         ],
         "foodypos": [
-          "lib/features/menu/**"
+          "lib/features/menu/**",
+          "lib/features/orders/domain/option_selection.dart",
+          "lib/features/orders/domain/item_entry_defaults.dart",
+          "lib/features/orders/domain/order_item.dart",
+          "lib/features/orders/domain/draft_line_grouping.dart",
+          "lib/features/orders/presentation/item_customization_screen.dart",
+          "lib/features/orders/presentation/add_item_flow.dart",
+          "lib/features/orders/presentation/saved_item_detail_screen.dart",
+          "lib/features/orders/presentation/completed_order_dialog.dart",
+          "lib/features/orders/presentation/widgets/item_check_preview.dart",
+          "lib/features/orders/presentation/widgets/check_panel.dart",
+          "lib/features/orders/providers/order_providers.dart",
+          "lib/services/printing/printer_fleet_service.dart",
+          "lib/features/kitchen/presentation/service_kitchen_page.dart"
         ],
         "foodyweb": [
-          "components/ItemModal*"
+          "components/ItemModal*",
+          "lib/option-selection.ts",
+          "lib/portion.ts",
+          "lib/cart.ts",
+          "lib/order-summary.ts",
+          "components/CommerceCartItems.tsx",
+          "components/CartDrawer.tsx",
+          "components/ModifierChoicePicker.tsx",
+          "components/sections/MenuHighlightsSection.tsx"
         ]
       }
     },
