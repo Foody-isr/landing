@@ -123,3 +123,9 @@ validate-invite renvoie pos_pin_required selon les permissions actuelles de l’
 ## Contrat des modificateurs conditionnels
 
 La migration 274 ajoute selection_config au lien article/groupe et selection_index aux instantanés de modificateurs. Déployer l’API et le schéma avant les clients compatibles. Les anciennes associations sans configuration conservent leur comportement. Les règles utilisent des identifiants vérifiés dans le restaurant et l’article ; une source modificateur est indépendante et à choix unique. Les positions répétées vont de 1 à 12 et exigent exactement une sélection. Le serveur recalcule les prix, rejette doublons, indices inexistants et choix masqués, et préfixe les noms enregistrés pour la cuisine. Les caches et payloads TypeScript/Dart conservent identifiant catalogue et position. La duplication inter-restaurants remappe les références. Les changements d’API, de traduction et de modèles n’altèrent pas les intégrations de paiement, Google ou livraison existantes. La documentation reste locale tant que le commit Landing revu n’a pas été autorisé puis épinglé ; ne pas publier les procédures avant les clients.
+
+<span id="descriptive-variant-contract" />
+
+## Contrat des dimensions de variante
+
+Les groupes d’options portent un rôle propre à l’article : price conserve la variante tarifée absolue, identity conserve les dimensions descriptives sans effet sur le prix. selection_config conditionne leurs positions à un format tarifé indépendant. La commande transmet option_selections séparément de selected_variant_id et de modifiers ; les positions et les libellés sont figés, et les précisions client restent privées. Déployer la migration 275 et l’API avant les interfaces compatibles. Le contrôle du prix, de la propriété du restaurant et de chaque choix est effectué par le serveur. Les groupes historiques gardent leur comportement tant qu’ils ne sont pas reconfigurés.
