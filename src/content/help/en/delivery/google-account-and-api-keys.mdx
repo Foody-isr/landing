@@ -1,0 +1,181 @@
+---
+title: Create your Google account and prepare API keys for Foody
+description: >-
+  Step-by-step guide to a Google account, Cloud project, billing, address, map and route APIs, restricted keys and
+  handoff to Foody.
+apps: foodyadmin
+tags:
+  - delivery
+  - google-account-setup
+updatedAt: '2026-10-22'
+featureId: google-account-setup
+audience: public
+releaseStatus: available
+---
+Prepare a Google Cloud project owned by your business. For the initial phase, ask Foody to arrange manual onboarding before sending technical credentials.
+
+## Availability and access
+
+**Before you start:** the owner or an authorized manager must retain control of the account, billing and keys. Have access to a business email address, a payment method accepted by Google and permission to incur business charges.
+
+**Current Foody availability:** **Settings → Delivery → Maps** shows the provider and usage; it has no form for business-owned keys. Foody must confirm individual onboarding. This guide prepares your application; it does not guarantee activation or the end of shared usage. Wait for onboarding confirmation before enabling paid services or creating a secret file.
+
+The goal is to associate your business’s requests with its own project, usage tracking and Google billing. You do not need a separate account for each employee or end customer. For multiple branches, agree the scope and projects with Foody.
+
+<span id="account" />
+
+## 1. Create or choose the business Google account
+
+1. Open [Google account sign-up](https://accounts.google.com/signup), or sign in to the existing business account and skip to securing it.
+2. For a new account, enter the information Google requests: first name, last name and basic details.
+3. Choose a Gmail address or the option to use your existing email address. A Gmail address is not required.
+4. If Google emails you a verification code, enter it on the Google screen. Create a unique password and complete the checks shown.
+5. Open [Account security](https://myaccount.google.com/security), then **2-Step Verification**, and complete setup. Also add a recovery email and phone you control.
+
+**Result:** the business retains account access. Never send its password or sign-in codes to Foody. [Google account help](https://support.google.com/accounts/answer/27441?hl=en).
+
+<span id="project" />
+
+## 2. Create a dedicated Google Cloud project
+
+1. Open [Google Cloud Console](https://console.cloud.google.com/) and accept any terms Google presents.
+2. Click the project selector at the top, then **New project**.
+3. Use a recognizable name, such as **Foody Example Restaurant**. Select your business organization if offered.
+4. Click **Create**, then select the project.
+5. Copy its **Project ID**, such as `foody-example-restaurant`, and retain the project number. The display name and ID are different.
+
+**Result:** a project dedicated to your Foody usage, separate from other businesses’ projects. [Google project creation guide](https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects).
+
+<span id="billing" />
+
+## 3. Link your business billing account
+
+Complete this after Foody confirms onboarding.
+
+1. Open **Billing** in the console.
+2. Create a billing account or select your business’s existing account.
+3. Check the country, currency, business details and payment method directly with Google.
+4. Link the new project to this account and verify that billing is active.
+
+**Result:** usage charged to this project is billed by Google to the linked account. Creating a Google account does not make the APIs free. Pricing and any free thresholds depend on the services and Google’s terms; permanent free use is not guaranteed. [Google billing help](https://docs.cloud.google.com/billing/docs/how-to/create-billing-account).
+
+<span id="services" />
+
+## 4. Enable only the APIs confirmed by Foody
+
+In the correct project, open [APIs & Services → Library](https://console.cloud.google.com/apis/library). Find each confirmed API, open its page and click **Enable**.
+
+| Foody requirement | Google API to find | Expected configuration |
+| --- | --- | --- |
+| Address suggestions and details of the selected address | **Places API (New)** | Server key for address lookup |
+| Convert an address to coordinates | **Geocoding API** | Delivery server key |
+| Road geometry, distances and driving durations | **Routes API** | Delivery server key |
+| Google basemap in delivery views | **Map Tiles API** | Delivery server key |
+| Optimize stops and assign couriers | **Route Optimization API** | Server authentication using a service account; an API key alone is insufficient |
+
+Actual availability depends on your Foody release and configuration. For a new project, use **Places API (New)** and **Routes API**; do not follow older tutorials that routinely request Directions, Distance Matrix or Places Legacy. [Google Maps setup](https://developers.google.com/maps/get-started), [Places setup](https://developers.google.com/maps/documentation/places/web-service/get-api-key) and [Legacy services](https://developers.google.com/maps/legacy).
+
+<span id="keys" />
+
+## 5. Create and restrict server API keys
+
+1. Open [APIs & Services → Credentials](https://console.cloud.google.com/apis/credentials).
+2. Click **Create credentials → API key**.
+3. Name the first key **Foody – Server addresses**. Under **API restrictions**, choose **Restrict key**, then only **Places API (New)**.
+4. Create a second key, **Foody – Server delivery**, restricted to the delivery APIs confirmed in step 4: **Geocoding API**, **Routes API** and **Map Tiles API**, as applicable.
+5. For each key, under **Application restrictions**, select **IP addresses** and enter only the fixed outbound IPs supplied by Foody. Save.
+
+**If Foody has not confirmed outbound IPs, stop before using the key.** Do not guess an IP, use the POS/router IP or remove restrictions to make a test work. If the hosting setup requires another method, Foody must validate it.
+
+A server key is confidential. It has no accompanying “client secret” to create. [Google key restrictions](https://support.google.com/googleapi/answer/6310037?hl=en).
+
+<span id="browser" />
+
+## 6. Create a browser key only if Foody requests it
+
+The server flow above needs no public key. If Foody confirms that your release calls Google directly in the browser:
+
+1. Create a **different** key named **Foody – Web**.
+2. Under application restrictions, select **Websites** and add the exact domains and allowed referrer patterns supplied by Foody, including your custom domain if applicable.
+3. Restrict APIs to those explicitly required for this flow, such as **Maps JavaScript API** and the confirmed compatible Places version.
+
+Never reuse a server key. Do not allow all websites or generic preview domains. If an old release requests Places Legacy for a new project, contact Foody to check compatibility. A browser key may be visible in the page; restrictions are essential. [Google Maps security practices](https://developers.google.com/maps/api-security-best-practices).
+
+<span id="service-account" />
+
+## 7. Prepare optimization authentication, if requested
+
+**Only if Foody confirms Google optimization for your business.** [Route Optimization uses server-side OAuth](https://developers.google.com/maps/documentation/route-optimization/cloud-setup), not a customer sign-in secret.
+
+1. In the same project, open [IAM & Admin → Service Accounts](https://console.cloud.google.com/iam-admin/serviceaccounts).
+2. Click **Create service account**, name it `foody-delivery` and continue. [Create a service account](https://docs.cloud.google.com/iam/docs/service-accounts-create).
+3. Grant it **Route Optimization Editor** (`roles/routeoptimization.editor`) on this project. Do not grant the general Owner or Editor roles. [Google optimization role](https://docs.cloud.google.com/iam/docs/roles-permissions/routeoptimization).
+4. Give Foody the service account email and Project ID, without a private key. First confirm authentication and secure handoff arrangements.
+5. **Only if Foody requests a JSON file:** open the account → **Keys → Add key → Create new key → JSON → Create**. Keep the downloaded file in protected storage and send it only through the agreed secure channel. If your organization blocks key creation, request an approved method; do not bypass that policy. [Service account key management](https://docs.cloud.google.com/iam/docs/keys-create-delete).
+
+This JSON contains a private key: never paste it into chat, ordinary email, a repository or a screenshot.
+
+<span id="costs" />
+
+## 8. Set alerts and quotas before testing
+
+1. Open **Billing → Budgets & alerts**. Create a project-scoped budget and choose recipients.
+2. Set an amount suitable for your business and alerts, for example at 50%, 80% and 100%.
+3. Under **Google Maps Platform → Quotas**, select each API you use and agree suitable available limits with Foody.
+4. Review Google reports by project and service, especially after initial tests.
+
+**A budget alert does not stop spending.** Quotas restrict usage units depending on the API; they do not guarantee an exact monetary cap. A low limit can interrupt addresses or routes. Foody limits and offers remain separate. [Control Google Maps costs](https://developers.google.com/maps/billing-and-pricing/manage-costs).
+
+<span id="handoff" />
+
+## 9. Hand your setup over to Foody in two stages
+
+**First, contact Foody without secrets.** Use [Contact Foody](/en/contact) or your usual contact to request onboarding and a secure handoff channel. The contact form and help assistant are not credential upload channels.
+
+You can prepare this message:
+
+> I would like to use my own Google project for my business. Business name and Foody ID: fill in. Google Project ID: fill in. Requested services: addresses / maps / routes / optimization. Billing active: yes or no. Responsible contact: fill in. Please confirm compatibility, restrictions and a secure credential handoff channel.
+
+**Then, only after the channel and scope are confirmed:** provide the server address key, server delivery key, and only if requested the browser key and service account JSON. Identify each key’s purpose, restrictions and applicable branches. Foody must confirm the association with your business before any billable test.
+
+Never send a Google password, verification/recovery codes, banking details, temporary tokens or an OAuth sign-in “client secret”. Do not put keys into order instructions, public website settings or help center chat.
+
+<span id="verify" />
+
+## 10. Verify activation and your project’s usage
+
+Creating keys or selecting Google in Foody does not switch billing by itself. Wait for written confirmation from Foody identifying the services and branches actually connected. If individual onboarding is unavailable, keep the setup in preparation.
+
+After confirmed activation, agree a small test that may consume Google quota:
+
+1. Test address search with a public address and no customer data.
+2. Check a basemap and a short route; test optimization only if included in onboarding.
+3. In Google Cloud, verify that requests appear in **your project**, by API and key where available. Reports may be delayed.
+4. Ask Foody to confirm that the same requests no longer use shared credentials and are scoped to your business. Foody counters alone do not prove which project is billed.
+
+**Expected result:** confirmed services use your project with its restrictions, quotas and billing. [Review Foody providers and usage](/en/help/delivery/maps-and-usage). In courier mode, select the route at the top: map and timeline are visible together. Select a pin to reveal its stop; viewing it changes neither order nor status. Route settings are in Adjust and navigation is in the fixed bar. If a provider switch hides a Google point, check the active provider before correcting the address.
+
+<span id="other-google-services" />
+
+## 11. Understand other Google services and replace a key
+
+**Sign in with Google:** this uses separate identity configuration. Do not create an OAuth client or sign-in secret for this guide.
+
+**Document reading:** Foody may use Google Cloud Vision for delivery-note OCR when configured. Business-specific Vision onboarding is not offered by the Maps screen; do not enable **Cloud Vision API** or send another key without a specific Foody request and validation. Google Pay is not configured using these mapping keys.
+
+**Planned replacement:** create a new key with the same restrictions, hand it over securely, wait for switch confirmation and test before deleting the old one. Coordinate service account key replacement the same way.
+
+**Exposed key or suspicious usage:** contact Foody immediately and revoke the compromised key in Google Cloud without waiting for a planned replacement; this may interrupt service. Review your project’s requests and spending.
+
+## If the operation fails
+
+| Problem | Check and next step |
+| --- | --- |
+| Missing project or creation denied | Check the signed-in account and request the necessary permissions from your business Google administrator. |
+| Billing inactive | Check the account linked to the correct project and payment status with Google. Do not send card details to Foody. |
+| API denied / 403 | Check project, enabled API, IP/domain restrictions and service account role. Ask Foody to check its configuration without removing restrictions. |
+| Quota exceeded / 429 | Review quotas and reports before changing a limit. A budget alert does not increase quota. |
+| Missing addresses or LegacyApiNotActivatedMapError | Ask Foody to verify the Places version and compatibility; do not enable every API at random. |
+| Keys created but usage still shared | Request individual onboarding confirmation. Creating credentials does not switch anything automatically. |
+
+When requesting help, provide the step, Project ID, time and a redacted error message. If a screenshot is needed, hide keys, codes, payment and customer information. Google labels may vary with language and account; use the console links above to find the screens.
