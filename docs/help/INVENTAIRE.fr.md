@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-18.
 
-100 fiches de fonctionnalités, 359 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2049 fichiers applicatifs et 1966 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+101 fiches de fonctionnalités, 375 procédures/sous-fonctionnalités, dont 92 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2060 fichiers applicatifs et 1975 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -14,7 +14,7 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 | foodyadmin | 734 | 754 | e1a9fff05573 ; versioned |
 | foodyserver | 497 | 832 | 855929eeb83b ; versioned |
 | foodyweb | 329 | 163 | 37ed451c9637 ; versioned |
-| foodypos | 320 | 149 | 899adccd4d02 ; versioned |
+| foodypos | 331 | 158 | 6087847d5027 ; versioned |
 | foodybackoffice | 42 | 47 | 7e3fcb46bf54 ; versioned |
 
 ## getting-started
@@ -383,6 +383,8 @@ Identifiant : `orders-managing-orders`. Public : public. Disponibilité : availa
 - [Comment ça marche (simplement)](../../src/content/help/fr/orders/managing-orders.mdx#section-2)
 - [Le flux d'une commande](../../src/content/help/fr/orders/managing-orders.mdx#section-3)
 - [Bon à savoir](../../src/content/help/fr/orders/managing-orders.mdx#section-4)
+- [Suivre toutes les commandes enregistrées entre caisse et Admin](../../src/content/help/fr/orders/managing-orders.mdx#all-channel-order-tracking)
+- [Retrouver une vente caisse après paiement](../../src/content/help/fr/orders/managing-orders.mdx#paid-counter-orders)
 - [Encaisser un complément et ouvrir les factures Sumit](../../src/content/help/fr/orders/managing-orders.mdx#payment-links-invoices)
 
 ### [Types de commandes et remise](../../src/content/help/fr/orders/order-types.mdx)
@@ -489,6 +491,8 @@ Identifiant : `pos-payments`. Public : public. Disponibilité : available. Servi
 
 - [Enregistrer les espèces](../../src/content/help/fr/payments/pos-checkout.mdx#cash)
 - [Encaisser un paiement connecté](../../src/content/help/fr/payments/pos-checkout.mdx#card)
+- [Confirmer une vente à emporter payée en caisse](../../src/content/help/fr/payments/pos-checkout.mdx#counter-completion)
+- [Clôturer et transmettre un lot du terminal Ashrait](../../src/content/help/fr/payments/pos-checkout.mdx#terminal-deposit)
 - [Vérifier pourboire et reçu](../../src/content/help/fr/payments/pos-checkout.mdx#receipt-tip)
 
 ### [Prestataires, moyens enregistrés et Cibus](../../src/content/help/fr/payments/providers-and-cibus.mdx)
@@ -752,6 +756,23 @@ Identifiant : `maps-usage`. Public : public. Disponibilité : available. Service
 
 - [Vérifier le fournisseur configuré](../../src/content/help/fr/delivery/maps-and-usage.mdx#provider)
 - [Respecter les limites d’usage](../../src/content/help/fr/delivery/maps-and-usage.mdx#limits)
+- [Préparer votre propre projet Google](../../src/content/help/fr/delivery/maps-and-usage.mdx#own-google-project)
+
+### [Créer son compte Google et préparer ses clés API pour Foody](../../src/content/help/fr/delivery/google-account-and-api-keys.mdx)
+
+Identifiant : `google-account-setup`. Public : public. Disponibilité : available. Services : foodyadmin, foodyserver.
+
+- [1. Créer ou choisir le compte Google de l’établissement](../../src/content/help/fr/delivery/google-account-and-api-keys.mdx#account)
+- [2. Créer un projet Google Cloud dédié](../../src/content/help/fr/delivery/google-account-and-api-keys.mdx#project)
+- [3. Associer la facturation de votre établissement](../../src/content/help/fr/delivery/google-account-and-api-keys.mdx#billing)
+- [4. Activer uniquement les API confirmées par Foody](../../src/content/help/fr/delivery/google-account-and-api-keys.mdx#services)
+- [5. Créer et restreindre les clés API serveur](../../src/content/help/fr/delivery/google-account-and-api-keys.mdx#keys)
+- [6. Créer une clé navigateur seulement si Foody la demande](../../src/content/help/fr/delivery/google-account-and-api-keys.mdx#browser)
+- [7. Préparer l’authentification de l’optimisation, si demandée](../../src/content/help/fr/delivery/google-account-and-api-keys.mdx#service-account)
+- [8. Régler alertes et quotas avant les essais](../../src/content/help/fr/delivery/google-account-and-api-keys.mdx#costs)
+- [9. Transmettre le dossier à Foody en deux temps](../../src/content/help/fr/delivery/google-account-and-api-keys.mdx#handoff)
+- [10. Vérifier l’activation et l’usage de votre projet](../../src/content/help/fr/delivery/google-account-and-api-keys.mdx#verify)
+- [11. Comprendre les autres services Google et remplacer une clé](../../src/content/help/fr/delivery/google-account-and-api-keys.mdx#other-google-services)
 
 ## catering
 

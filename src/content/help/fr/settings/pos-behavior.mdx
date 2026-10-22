@@ -18,7 +18,25 @@ Ouvrez Paramètres → POS, puis le mode/profil concerné. L’ancien réglage S
 
 ## Régler le comportement du menu
 
-Ouvrez Comportement du menu et choisissez les options proposées pour sélection, modificateurs et navigation. Affectez le profil à l’appareil POS. Vérifiez un article avec choix obligatoire pour éviter de le sauter.
+Ouvrez Comportement du menu et choisissez les options proposées pour sélection, modificateurs et navigation. Affectez le profil à l’appareil POS. Vérifiez un article avec choix obligatoire pour éviter de le sauter. Un profil de mode de caisse n’affecte pas l’imprimante cuisine. Configurez séparément le profil d’impression partagé pour cette installation POS ; voir [affectations d’imprimantes et documents en attente](/fr/help/printers/profiles-and-routing#assign).
+
+<span id="fulfillment-methods" />
+
+## Configurer les modes de traitement de la caisse
+
+Avec le droit de modifier les paramètres, ouvrez Paramètres → Modes de traitement → Système de caisse, puis **Gérer par point de vente**. Vérifiez le nom du restaurant dans la fenêtre centrée : ces choix sont partagés par ses caisses, et non définis séparément pour chaque profil d’appareil. Si l’API ne prend pas en charge les modes personnalisés, un message explique pourquoi la modification est indisponible. Ajoutez ou modifiez un mode, donnez-lui un nom distinct et choisissez son type de commande : sur place, retrait ou livraison. **Terminé** ne met à jour que le brouillon de la fenêtre ; fermer l’éditeur du mode annule cette modification non confirmée. Conservez au moins un mode actif et dix modes au maximum. Réordonnez avec les flèches ou la poignée ; le premier mode actif devient le choix par défaut. Un mode désactivé n’est plus proposé pour les nouveaux choix. Cliquez sur **Enregistrer** dans Gérer par point de vente pour sauvegarder l’ensemble. Fermer avec des modifications demande de confirmer leur abandon. Si l’enregistrement échoue ou si le serveur ne confirme pas tous les champs envoyés, conservez le brouillon, consultez l’erreur et vérifiez la configuration enregistrée avant de la considérer comme appliquée. Les commandes existantes gardent leur mode enregistré ; renommer ou désactiver un mode ne réécrit pas leur historique.
+
+<span id="fulfillment-prompt" />
+
+## Choisir quand demander le mode au personnel
+
+Dans la même fenêtre, activez la demande de choix au personnel puis choisissez **Au début de chaque nouvelle commande** ou **Après avoir appuyé sur « Payer » ou « Envoyer »**. Désactiver puis réactiver la demande pendant cette modification conserve le moment choisi ; enregistrez explicitement. Sans demande, le mode par défaut s’applique à une nouvelle vente non affectée. Une table ou une addition nommée existante conserve son type de commande et son cycle de service. Sur la caisse, sélectionner une ligne dans la fenêtre ne fait que préparer le choix : **Enregistrer** l’applique, tandis que fermer/annuler laisse la vente inchangée. Si la demande initiale a été annulée, une confirmation est redemandée avant l’envoi ou le paiement. Le formulaire facultatif d’informations client se règle séparément pour chaque mode ; il n’y a pas d’interrupteur de suivi par mode. Foody conserve toutes les commandes enregistrées dans **Commandes → Toutes** sur POS et Admin, selon le restaurant, les droits et les filtres ; paiement et préparation restent deux statuts distincts. Quand la demande de sélection est désactivée, un brouillon restauré conserve le mode choisi explicitement au lieu de reprendre le défaut. Si ce mode a été désactivé depuis, rouvrez Actions → Modes de traitement et faites un nouveau choix explicite avant de continuer.
+
+<span id="fulfillment-customer" />
+
+## Demander les informations client pour un mode
+
+Nécessite les versions API et POS correspondantes. Dans l’éditeur du mode, activez **Afficher l’écran d’informations client**, choisissez **Terminé**, puis enregistrez les réglages du restaurant. Sur POS, ce choix pour toute l’addition ouvre un formulaire facultatif nom/téléphone, même pour le mode par défaut sans demande de sélection. Enregistrer confirme ensemble mode et coordonnées ; Annuler laisse la vente inchangée et le formulaire initial est redemandé avant Envoyer/Payer. Les choix d’article ne l’ouvrent jamais. Nom : 80 caractères maximum. Téléphone non vide : 7 à 15 chiffres, + initial facultatif et séparateurs usuels. Aucun compte client, adresse ou consentement marketing n’est créé. Les notifications configurées peuvent utiliser le téléphone : vérifiez leurs réglages avant toute saisie réelle. L’onglet Client affiche les coordonnées enregistrées. Les envois cuisine suivants reprennent des coordonnées cohérentes sans répéter la confirmation de création par service ; les notifications de statut restent distinctes. Les additions multi-clients ou fractionnées ne peuvent pas adopter un autre client. Si l’API est incompatible ou le contexte change, rouvrez le parcours ; Foody conserve le brouillon source sans écraser une destination occupée.
 
 <span id="courses" />
 

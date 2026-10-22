@@ -12,6 +12,24 @@ releaseStatus: available
 ---
 Admin → Paramètres → Commandes / POS → prise de commande
 
+<span id="pos-whole-check" />
+
+## Choisir le traitement de toute l’addition POS
+
+Pour une vente non envoyée, ouvrez **Actions → Modes de traitement** dans l’addition, sélectionnez le mode voulu puis **Enregistrer**. Fermer la fenêtre annule le choix préparé. Il s’agit du traitement global de l’addition, pas de celui de l’article sélectionné. Les choix viennent des [paramètres de traitement POS du restaurant](/fr/help/settings/pos-behavior#fulfillment-methods). Les articles sans choix explicite suivent l’addition ; ceux ayant leur propre consigne de préparation la conservent. Une fois l’addition envoyée, son mode global enregistré est conservé. Une addition de table reste liée à sa table/session et une addition nommée conserve son type retrait ou livraison ; ce sélecteur ne sert pas à transférer une table, fusionner des additions ou effectuer un partage financier. Si le mode demande les informations client, confirmez aussi le formulaire facultatif nom/téléphone ; son annulation annule le choix de mode préparé. L’onglet Client affiche les coordonnées enregistrées. Voir [informations client](/fr/help/settings/pos-behavior#fulfillment-customer).
+
+<span id="pos-item-method" />
+
+## Donner une consigne de préparation différente à un article
+
+Dans **Options → Modes de traitement** de la fiche article, choisissez un mode actif puis confirmez l’article avec **Terminé**. Par exemple, un article à emporter dans une addition sur place indique comment préparer ou emballer cet article ; il ne détache pas l’addition de sa table. Choisir Livraison sur une ligne ne crée ni livraison indépendante, ni destinataire, ni adresse, ni frais, ni mission de livreur. Utilisez une commande de livraison distincte avec les coordonnées nécessaires si des produits doivent réellement partir vers une autre destination. Les modes disponibles sont communs au restaurant ; il n’existe pas de grille distincte autorisant certains choix d’articles selon le service global. Ces choix ne modifient ni les affectations d’imprimantes ni les règles de catégories : vérifiez séparément le [routage d’impression](/fr/help/printers/profiles-and-routing).
+
+<span id="pos-change-draft" />
+
+## Changer le service d’un brouillon non affecté
+
+Passer un brouillon comptoir non envoyé du retrait à la livraison, ou choisir sur place puis une table éligible, peut changer sa destination. Foody ne transfère qu’un brouillon entièrement non envoyé et impayé vers une destination éligible vide ; il ne fusionne pas avec une addition occupée ou une addition financière séparée. Un brouillon avec une remise locale ne peut pas être transféré vers une table ou une addition nommée : cette réduction ne serait pas reprise par la politique enregistrée de la destination. Vérifiez la destination puis reprenez vous-même Envoyer ou Payer après un changement réussi. Si la destination contient déjà une addition, si les paramètres ont changé ou si le transfert est refusé, le brouillon initial est conservé : revenez dessus, consultez le message et ne recréez ni ne repayez les mêmes articles. Choisir une table avec des additions financières séparées annule le transfert en attente, sans ouvrir une autre addition ni reporter le transfert sur la prochaine table choisie. Pour une table ou une addition nommée existante, poursuivez son propre parcours au lieu d’utiliser ce sélecteur pour convertir son cycle de service.
+
 <span id="dine-in" />
 
 ## Sur place et tables

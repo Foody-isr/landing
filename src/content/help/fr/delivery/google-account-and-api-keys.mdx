@@ -1,0 +1,181 @@
+---
+title: Créer son compte Google et préparer ses clés API pour Foody
+description: >-
+  Guide pas à pas : compte Google, projet Cloud, facturation, API d’adresses, cartes et itinéraires, clés restreintes et
+  transmission à Foody.
+apps: foodyadmin
+tags:
+  - delivery
+  - google-account-setup
+updatedAt: '2026-10-22'
+featureId: google-account-setup
+audience: public
+releaseStatus: available
+---
+Préparez un projet Google Cloud appartenant à votre établissement. Dans un premier temps, demandez à Foody une prise en charge manuelle avant de transmettre vos identifiants techniques.
+
+## Disponibilité et accès
+
+**Avant de commencer :** le propriétaire ou un responsable autorisé doit garder la maîtrise du compte, de la facturation et des clés. Prévoyez une adresse e-mail professionnelle accessible, un moyen de paiement accepté par Google et l’autorisation d’engager les dépenses de l’établissement.
+
+**État actuel dans Foody :** l’écran **Paramètres → Livraison → Cartes** permet de consulter le fournisseur et les usages ; il ne propose pas de saisie de clés propres à l’établissement. Le raccordement individuel doit être confirmé par Foody. Ce guide permet de préparer votre dossier ; il ne garantit ni l’activation ni la fin de l’usage partagé. Attendez la confirmation de prise en charge avant d’activer des services payants ou de créer un fichier secret.
+
+L’objectif est de rattacher les appels de votre établissement à son propre projet, avec son suivi et sa facturation Google. Un compte par salarié ou par client final n’est pas nécessaire. Pour plusieurs établissements, faites valider le périmètre et les projets à utiliser.
+
+<span id="account" />
+
+## 1. Créer ou choisir le compte Google de l’établissement
+
+1. Ouvrez [la création de compte Google](https://accounts.google.com/signup), ou connectez-vous au compte professionnel existant et passez directement à la sécurisation du compte.
+2. Pour un nouveau compte, renseignez les informations demandées par Google : prénom, nom et informations générales.
+3. Choisissez une adresse Gmail ou l’option permettant d’utiliser votre adresse e-mail existante. Une adresse Gmail n’est pas obligatoire.
+4. Si Google envoie un code à votre adresse, saisissez-le dans l’écran Google. Créez un mot de passe unique et terminez les vérifications affichées.
+5. Ouvrez [Sécurité du compte](https://myaccount.google.com/security), puis **Validation en deux étapes / 2-Step Verification**, et terminez sa configuration. Ajoutez aussi une adresse et un téléphone de récupération sous votre contrôle.
+
+**Résultat :** l’établissement conserve l’accès au compte. Ne transmettez jamais son mot de passe ni ses codes de connexion à Foody. [Aide Google sur les comptes](https://support.google.com/accounts/answer/27441?hl=fr).
+
+<span id="project" />
+
+## 2. Créer un projet Google Cloud dédié
+
+1. Ouvrez [Google Cloud Console](https://console.cloud.google.com/) et acceptez les conditions si Google les affiche.
+2. Cliquez sur le sélecteur de projet en haut, puis **Nouveau projet / New project**.
+3. Donnez un nom reconnaissable, par exemple **Foody Restaurant Exemple**. Choisissez l’organisation de votre entreprise si elle est proposée.
+4. Cliquez sur **Créer / Create**, puis sélectionnez ce projet.
+5. Copiez son **ID de projet / Project ID**, par exemple `foody-restaurant-exemple`. Conservez aussi le numéro de projet. Le nom affiché et l’ID sont différents.
+
+**Résultat :** un projet dédié à votre usage Foody, distinct des projets d’autres entreprises. [Guide Google de création de projet](https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects).
+
+<span id="billing" />
+
+## 3. Associer la facturation de votre établissement
+
+À réaliser après confirmation de prise en charge par Foody.
+
+1. Dans la console, ouvrez **Facturation / Billing**.
+2. Créez un compte de facturation ou sélectionnez celui de votre entreprise.
+3. Vérifiez le pays, la devise, les coordonnées de l’entreprise et le moyen de paiement directement chez Google.
+4. Associez le projet créé à ce compte et vérifiez que la facturation est active.
+
+**Résultat :** les usages imputés à ce projet sont facturés par Google au compte associé. Créer un compte Google ne rend pas les API gratuites. Les tarifs et éventuels seuils gratuits dépendent des services et des conditions Google ; aucune gratuité permanente n’est garantie. [Aide facturation Google](https://docs.cloud.google.com/billing/docs/how-to/create-billing-account).
+
+<span id="services" />
+
+## 4. Activer uniquement les API confirmées par Foody
+
+Dans le bon projet, ouvrez [API et services → Bibliothèque](https://console.cloud.google.com/apis/library). Recherchez chaque API confirmée, ouvrez sa fiche et cliquez sur **Activer / Enable**.
+
+| Besoin dans Foody | API Google à rechercher | Configuration attendue |
+| --- | --- | --- |
+| Suggestions d’adresses et détails de l’adresse choisie | **Places API (New)** | Clé serveur pour la recherche d’adresses |
+| Transformer une adresse en coordonnées | **Geocoding API** | Clé serveur de livraison |
+| Tracés, distances et durées de trajet | **Routes API** | Clé serveur de livraison |
+| Fond de carte Google dans les vues de livraison | **Map Tiles API** | Clé serveur de livraison |
+| Optimisation des arrêts et affectation des coursiers | **Route Optimization API** | Authentification serveur avec compte de service ; la clé API seule ne suffit pas |
+
+Les fonctions réellement activées dépendent de votre version et de votre configuration Foody. Pour un nouveau projet, utilisez **Places API (New)** et **Routes API** ; ne suivez pas un ancien tutoriel demandant systématiquement Directions, Distance Matrix ou Places Legacy. [Configuration Google Maps](https://developers.google.com/maps/get-started), [configuration Places](https://developers.google.com/maps/documentation/places/web-service/get-api-key) et [services Legacy](https://developers.google.com/maps/legacy).
+
+<span id="keys" />
+
+## 5. Créer et restreindre les clés API serveur
+
+1. Ouvrez [API et services → Identifiants / Credentials](https://console.cloud.google.com/apis/credentials).
+2. Cliquez sur **Créer des identifiants / Create credentials → Clé API / API key**.
+3. Nommez la première clé **Foody – Adresses serveur**. Dans **Restrictions relatives aux API / API restrictions**, choisissez **Restreindre la clé / Restrict key**, puis seulement **Places API (New)**.
+4. Créez une deuxième clé **Foody – Livraison serveur**, limitée aux API de livraison confirmées à l’étape 4 : **Geocoding API**, **Routes API** et **Map Tiles API** selon votre périmètre.
+5. Pour chaque clé, dans **Restrictions relatives aux applications / Application restrictions**, choisissez **Adresses IP / IP addresses** et saisissez uniquement les IP de sortie fixes communiquées par Foody. Enregistrez.
+
+**Si Foody n’a pas confirmé les IP de sortie, arrêtez-vous avant l’utilisation de la clé.** N’inventez pas d’IP, n’utilisez pas celle de votre caisse ou de votre box, et ne retirez pas les restrictions pour faire fonctionner un test. Si le mode d’hébergement exige une autre méthode, Foody doit la valider.
+
+Une clé serveur reste confidentielle. Elle n’a pas de « client secret » à créer en complément. [Restrictions des clés Google](https://support.google.com/googleapi/answer/6310037?hl=fr).
+
+<span id="browser" />
+
+## 6. Créer une clé navigateur seulement si Foody la demande
+
+Le parcours serveur décrit ci-dessus n’exige pas de clé publique. Si Foody confirme que votre version utilise une intégration Google directement dans le navigateur :
+
+1. Créez une **autre** clé, nommée **Foody – Web**.
+2. Dans les restrictions d’application, sélectionnez **Sites Web / Websites** et ajoutez les domaines exacts et motifs de référents autorisés fournis par Foody, y compris votre domaine personnalisé s’il est concerné.
+3. Limitez les API à celles expressément demandées pour ce parcours, par exemple **Maps JavaScript API** et la version de Places confirmée compatible.
+
+Ne réutilisez jamais la clé serveur. N’autorisez ni tous les sites ni des domaines de prévisualisation génériques. Si une ancienne version réclame Places Legacy sur un nouveau projet, contactez Foody pour vérifier la compatibilité. Une clé navigateur peut être visible dans la page ; ses restrictions sont indispensables. [Bonnes pratiques Google Maps](https://developers.google.com/maps/api-security-best-practices).
+
+<span id="service-account" />
+
+## 7. Préparer l’authentification de l’optimisation, si demandée
+
+**Seulement si Foody confirme l’optimisation Google pour votre établissement.** [Route Optimization utilise OAuth côté serveur](https://developers.google.com/maps/documentation/route-optimization/cloud-setup), pas un secret de connexion client.
+
+1. Dans le même projet, ouvrez [IAM et administration → Comptes de service](https://console.cloud.google.com/iam-admin/serviceaccounts).
+2. Cliquez sur **Créer un compte de service / Create service account**, nommez-le `foody-delivery`, puis continuez. [Création d’un compte de service](https://docs.cloud.google.com/iam/docs/service-accounts-create).
+3. Attribuez au compte le rôle **Route Optimization Editor** (`roles/routeoptimization.editor`) sur ce projet. Ne lui donnez pas les rôles généraux Propriétaire ou Éditeur. [Rôle Google pour l’optimisation](https://docs.cloud.google.com/iam/docs/roles-permissions/routeoptimization).
+4. Communiquez à Foody l’adresse du compte de service et l’ID du projet, sans clé privée. Faites d’abord confirmer la méthode d’authentification et de remise sécurisée.
+5. **Uniquement si Foody demande un fichier JSON :** ouvrez ce compte → **Clés / Keys → Ajouter une clé / Add key → Créer une clé / Create new key → JSON → Créer**. Conservez le fichier téléchargé dans un emplacement protégé et transmettez-le seulement par le canal sécurisé convenu. S’il est interdit par la politique de votre organisation, demandez une méthode approuvée ; ne contournez pas cette règle. [Gestion des clés de comptes de service](https://docs.cloud.google.com/iam/docs/keys-create-delete).
+
+Ce JSON contient une clé privée : ne le collez jamais dans un chat, un e-mail ordinaire, un dépôt ou une capture.
+
+<span id="costs" />
+
+## 8. Régler alertes et quotas avant les essais
+
+1. Ouvrez **Facturation → Budgets et alertes / Billing → Budgets & alerts**. Créez un budget limité au projet et choisissez les destinataires.
+2. Définissez un montant adapté à votre activité et des alertes, par exemple à 50 %, 80 % et 100 %.
+3. Dans **Google Maps Platform → Quotas**, sélectionnez chaque API utilisée et ajustez les limites disponibles avec Foody.
+4. Consultez les rapports Google par projet et par service, surtout après les premiers essais.
+
+**Une alerte de budget ne bloque pas les dépenses.** Les quotas limitent des unités d’usage, selon l’API, et ne garantissent pas un plafond monétaire exact. Une limite trop basse peut interrompre les adresses ou les tournées. Les limites et offres Foody restent distinctes. [Maîtriser les coûts Google Maps](https://developers.google.com/maps/billing-and-pricing/manage-costs).
+
+<span id="handoff" />
+
+## 9. Transmettre le dossier à Foody en deux temps
+
+**D’abord, contactez Foody sans aucun secret.** Utilisez [Contacter Foody](/fr/contact) ou votre interlocuteur habituel pour demander la prise en charge et un canal de remise sécurisé. Le formulaire de contact et l’assistant du centre d’aide ne servent pas à déposer des clés.
+
+Vous pouvez préparer ce message :
+
+> Je souhaite utiliser mon propre projet Google pour mon établissement. Établissement et identifiant Foody : à renseigner. ID du projet Google : à renseigner. Services souhaités : adresses / cartes / itinéraires / optimisation. Facturation active : oui ou non. Contact responsable : à renseigner. Merci de confirmer la compatibilité, les restrictions et le canal sécurisé de transmission.
+
+**Ensuite, uniquement après confirmation du canal et du périmètre :** remettez la clé Adresses serveur, la clé Livraison serveur, et seulement si demandés la clé navigateur et le fichier JSON de compte de service. Indiquez quelle clé correspond à quel usage, les restrictions appliquées et les établissements concernés. Foody doit confirmer le rattachement à votre établissement avant tout essai facturable.
+
+Ne transmettez jamais mot de passe Google, codes de validation ou récupération, données bancaires, jetons temporaires, ni « client secret » OAuth de connexion. Ne placez aucune clé dans les instructions de commande, les paramètres publics du site ou le chat du centre d’aide.
+
+<span id="verify" />
+
+## 10. Vérifier l’activation et l’usage de votre projet
+
+Créer des clés ou choisir Google dans Foody ne suffit pas à basculer la facturation. Attendez une confirmation écrite de Foody précisant les services et établissements effectivement raccordés. Si le raccordement n’est pas encore disponible, conservez le dossier en préparation.
+
+Après activation confirmée, convenez d’un petit essai pouvant consommer du quota Google :
+
+1. Testez une recherche d’adresse avec une adresse publique, sans données client.
+2. Vérifiez un fond de carte et un itinéraire court ; testez l’optimisation seulement si elle fait partie du raccordement.
+3. Dans Google Cloud, vérifiez que les appels apparaissent dans **votre projet**, par API et par clé lorsque ce détail est disponible. Les rapports peuvent être différés.
+4. Faites confirmer par Foody que ces mêmes appels ne consomment plus les identifiants mutualisés et que le périmètre est bien limité à votre établissement. Les compteurs affichés dans Foody ne prouvent pas, seuls, le projet facturé.
+
+**Résultat attendu :** les services confirmés utilisent votre projet, avec leurs restrictions, quotas et facturation. [Consulter les fournisseurs et usages Foody](/fr/help/delivery/maps-and-usage).
+
+<span id="other-google-services" />
+
+## 11. Comprendre les autres services Google et remplacer une clé
+
+**Connexion avec Google :** elle utilise une configuration d’identité distincte. Ne créez pas de client OAuth ni de secret de connexion pour ce guide.
+
+**Lecture de documents :** Foody peut utiliser Google Cloud Vision pour l’OCR des bons de livraison lorsque le service est configuré. Le raccordement Vision par établissement n’est pas proposé par l’écran Cartes ; n’activez pas **Cloud Vision API** et ne transmettez pas de clé supplémentaire sans demande et validation spécifiques de Foody. Google Pay ne se configure pas avec ces clés de cartographie.
+
+**Remplacement planifié :** créez la nouvelle clé avec les mêmes restrictions, remettez-la par le canal sécurisé, attendez la confirmation de bascule et testez avant de supprimer l’ancienne. Pour un compte de service, appliquez la même coordination.
+
+**Clé exposée ou utilisation suspecte :** contactez Foody immédiatement et révoquez la clé compromise dans Google Cloud sans attendre un remplacement planifié ; cela peut interrompre le service. Examinez les appels et les dépenses de votre projet.
+
+## En cas d’échec
+
+| Problème | Vérification et suite |
+| --- | --- |
+| Projet absent ou création refusée | Vérifiez le compte connecté et demandez les droits nécessaires à l’administrateur Google de votre entreprise. |
+| Facturation inactive | Vérifiez le compte associé au bon projet et le statut du paiement chez Google. Ne transmettez pas les données de carte à Foody. |
+| API refusée / erreur 403 | Vérifiez projet, API activée, restrictions IP ou domaines et rôle du compte de service. Demandez à Foody de contrôler sa configuration sans retirer les restrictions. |
+| Quota dépassé / erreur 429 | Consultez les quotas et rapports avant de modifier une limite. Une alerte budgétaire n’augmente pas un quota. |
+| Adresses manquantes ou LegacyApiNotActivatedMapError | Faites vérifier la version de Places et la compatibilité Foody ; n’activez pas toutes les API au hasard. |
+| Vous avez créé les clés mais l’usage reste partagé | Demandez la confirmation de raccordement individuel. La création des identifiants n’effectue aucune bascule automatique. |
+
+Pour demander de l’aide, indiquez l’étape, l’ID du projet, l’heure et un message d’erreur expurgé. Si une capture est nécessaire, masquez clés, codes, données de paiement et informations client. Les libellés de Google peuvent varier selon la langue et le compte ; utilisez les liens de console ci-dessus pour retrouver les écrans.

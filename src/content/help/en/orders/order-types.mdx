@@ -16,6 +16,24 @@ releaseStatus: available
 ---
 Admin → Settings → Orders / POS → order entry
 
+<span id="pos-whole-check" />
+
+## Choose the method for the whole POS check
+
+For an unsent sale, open **Actions → Fulfillment methods** in the check, select the intended method, then **Save**. Closing the dialog cancels the staged choice. This is the check's overall method, not a choice for the selected item. Choices come from the restaurant's [POS fulfillment settings](/en/help/settings/pos-behavior#fulfillment-methods). Items without an explicit choice follow the check; items with their own preparation choice keep it. Once the check is sent, its recorded overall method is retained. A table check remains attached to its table/session and a named check retains its pickup or delivery type; the method selector is not a table-transfer, check-merge or financial-split tool. If the method requests customer information, confirm the optional name/phone form too; cancelling it cancels the staged mode choice. The Client tab shows the recorded contact. See [customer information](/en/help/settings/pos-behavior#fulfillment-customer).
+
+<span id="pos-item-method" />
+
+## Give one item a different preparation instruction
+
+In the item sheet's **Options → Fulfillment methods**, choose an enabled method and confirm the item with **Done**. For example, an item marked takeaway in a dine-in check indicates how that item should be prepared or packed; it does not move the check away from its table. Selecting Delivery on one line does not create another delivery, recipient, address, charge or courier task. Use a separate delivery order with the required delivery details when goods must actually go to another destination. The available methods are restaurant-wide; there is no separate matrix of allowed item choices for each parent service. These choices do not change printer assignments or category rules: verify [printer routing](/en/help/printers/profiles-and-routing) separately.
+
+<span id="pos-change-draft" />
+
+## Change an unassigned draft's service safely
+
+Changing an unsent counter draft from pickup to delivery, or selecting dine-in and an eligible table, can change its destination. Foody transfers only a wholly unsent, unpaid draft into an empty eligible destination; it does not merge into an occupied check or a separated financial check. A draft with a local discount cannot move into a table or named check: its reduction would not be adopted by that destination's saved policy. Review the destination and resume Send or Pay yourself after a successful change. If the destination already contains a check, settings changed or the transfer is refused, the original draft is kept: return to it, review the message and do not recreate or pay the same items again. Selecting a table with separated financial checks cancels the pending transfer rather than opening another bill or applying the transfer to a later table choice. For an existing table or named check, continue its own workflow instead of using this selector to convert its lifecycle.
+
 <span id="dine-in" />
 
 ## Dine-in and tables

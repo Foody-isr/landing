@@ -16,7 +16,7 @@ releaseStatus: available
 
 ## Maintenir les contrats API contextualisés
 
-L’inventaire conserve routes, handlers et sources. Un fragment relatif à un groupe n’est pas une URL autonome. Validez entrées, rôles JWT et propriété restaurant ; les routes publiques de restaurant restent contextualisées. Synchronisez Go, TypeScript et Dart.
+L’inventaire conserve routes, handlers et sources. Un fragment relatif à un groupe n’est pas une URL autonome. Validez entrées, rôles JWT et propriété restaurant ; les routes publiques de restaurant restent contextualisées. Synchronisez Go, TypeScript et Dart. Les informations client par traitement nécessitent la capability de réglages `pos_fulfillment_customer_information_supported` et `customer_information` pour l’envoi groupé. Préservez un flag omis par ID stable ; false explicite le désactive. Validez et incluez atomiquement customer_name/customer_phone/delivery_notes/delivery_apt/custom_fields dans l’empreinte d’idempotence. Les lots suivants héritent seulement de coordonnées cohérentes ; clients mixtes et additions fractionnées refusent un remplacement. La création groupée supprime les confirmations client par service sans supprimer événements cuisine/équipe ni notifications de statut indépendantes. Aucun test ne doit envoyer de notification réelle.
 
 <span id="release" />
 
