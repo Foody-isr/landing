@@ -5,7 +5,7 @@ apps: both
 tags:
   - menu
   - menu-modifiers
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-22'
 featureId: menu-modifiers
 audience: public
 releaseStatus: available
@@ -53,3 +53,9 @@ Depuis une carte, la disponibilité est désormais directement cliquable sous le
 ## Changer la disponibilité depuis Articles
 
 La colonne Disponibilité de la bibliothèque Articles ouvre aussi le petit panneau commun aux Cartes. Choisissez le statut ou le stock restant puis Appliquer ; une simple ouverture ne modifie rien. La série courante est affichée lorsqu’elle s’applique. Consultez [Catégories et articles](/fr/help/menu/categories-and-items#library-availability) pour les choix, quantités par taille, annulation et récupération après erreur. Le paramétrage complet de la fiche conserve son propre bouton Enregistrer.
+
+<span id="conditional-positions" />
+
+## Configurer les positions d’un Number Cake
+
+Avec la permission de modifier le menu et les versions API, Admin, web et POS compatibles, créez un format tarifé dans Prix et variantes : par exemple 1 caractère à 55 et 2 caractères à 110. Ces prix remplacent le prix de base. Créez un groupe de modificateurs Caractère réunissant les chiffres et lettres autorisés ; leurs prix sont uniquement des suppléments éventuels. Attachez ce groupe à l’article. Dans Personnalisations, ouvrez Conditions et affichage. Dans Afficher ce groupe selon, choisissez Format ; affectez 1 position au premier format et 2 au second. 0 ou un choix non défini masque le groupe. Choisissez Lettres et chiffres pour une grille avec recherche, ou Automatique pour un sélecteur compact lorsque la liste dépasse six choix et exige une seule sélection. Enregistrez dans ce panneau : ces règles sont propres à cet article. Chaque position répétée exige exactement un choix ; 11, AB et A7 sont possibles et leur ordre est conservé sur le ticket cuisine. Vous pouvez aussi utiliser comme source un groupe indépendant à choix unique. Une source ne peut pas elle-même être conditionnelle ; retirez les conditions dépendantes avant de détacher leur source. Testez une position vide, deux choix au même emplacement, le retour de deux caractères à un et la modification du panier : les choix devenus invisibles doivent être retirés. En cas de refus, rechargez l’article et vérifiez source, choix actifs et règle de chaque format avant une nouvelle commande. Les catalogues existants ne sont pas convertis automatiquement.

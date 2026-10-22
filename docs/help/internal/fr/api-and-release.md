@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-22'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -117,3 +117,9 @@ POST /api/v1/menu/items/:id/sales-stock/restock accepte désormais les stocks re
 ## Code caisse à l’activation du personnel
 
 validate-invite renvoie pos_pin_required selon les permissions actuelles de l’affectation au restaurant (orders.manage ou payments.manage), sans se fonder sur le rôle global ou son ancien libellé. setup-account revérifie indépendamment le périmètre, le rôle et l’obligation du code. Un PIN envoyé par un ancien client pour un membre sans droits caisse est ignoré sans écriture. Mot de passe, PIN éventuel, consommation du lien unique et génération du JWT sont atomiques ; un échec préserve l’invitation et les identifiants existants. Les liens utilisés, expirés, anciens et ambigus ou révoqués restent bloqués par des codes d’erreur autorisés ; les erreurs de persistance inattendues n’exposent ni SQL ni jeton. Aucune migration ni variable d’environnement. Déployer l’API avant l’Admin ; un lien e-mail encore inutilisé ne nécessite aucune réparation de données ni renvoi.
+
+<span id="modifier-position-contract" />
+
+## Contrat des modificateurs conditionnels
+
+La migration 274 ajoute selection_config au lien article/groupe et selection_index aux instantanés de modificateurs. Déployer l’API et le schéma avant les clients compatibles. Les anciennes associations sans configuration conservent leur comportement. Les règles utilisent des identifiants vérifiés dans le restaurant et l’article ; une source modificateur est indépendante et à choix unique. Les positions répétées vont de 1 à 12 et exigent exactement une sélection. Le serveur recalcule les prix, rejette doublons, indices inexistants et choix masqués, et préfixe les noms enregistrés pour la cuisine. Les caches et payloads TypeScript/Dart conservent identifiant catalogue et position. La duplication inter-restaurants remappe les références. Les changements d’API, de traduction et de modèles n’altèrent pas les intégrations de paiement, Google ou livraison existantes. La documentation reste locale tant que le commit Landing revu n’a pas été autorisé puis épinglé ; ne pas publier les procédures avant les clients.

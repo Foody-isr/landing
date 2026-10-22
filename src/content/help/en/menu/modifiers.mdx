@@ -9,7 +9,7 @@ tags:
   - add-ons
   - customization
   - price-delta
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-22'
 featureId: menu-modifiers
 audience: public
 releaseStatus: available
@@ -57,3 +57,9 @@ Carte availability is now directly clickable beneath an item name. When the sale
 ## Change availability from Items
 
 The Items library Availability column also opens the small panel shared with Cartes. Choose a status or remaining stock and Apply; simply opening it changes nothing. The current series is displayed when applicable. See [Categories and items](/en/help/menu/categories-and-items#library-availability) for choices, per-size quantities, cancellation and error recovery. Full item settings retain their own Save action.
+
+<span id="conditional-positions" />
+
+## Configure Number Cake positions
+
+With menu editing permission and compatible API, Admin, web and POS versions, create priced formats under Prices and variants, for example 1 character at 55 and 2 characters at 110. These prices replace the base price. Create a Character modifier group containing the allowed digits and letters; its prices are optional surcharges only. Attach it to the item. Under Customizations, open Conditions and display. In Show this group according to, choose Format; assign 1 position to the first format and 2 to the second. 0 or an unlisted choice hides the group. Choose Letters and digits for a searchable grid, or Automatic for a compact picker when a single-choice list exceeds six options. Save inside this panel: the rules apply to this item only. Each repeated position requires exactly one choice; 11, AB and A7 are allowed and their order is retained on the kitchen ticket. An independent single-choice modifier group can also be the source. Sources cannot themselves be conditional; remove dependent conditions before detaching their source. Test an empty position, two choices in one position, changing two characters back to one, and cart editing: newly hidden choices must be removed. If refused, reload the item and review its source, active choices and each format rule before ordering again. Existing catalogs are not converted automatically.

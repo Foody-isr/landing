@@ -7,7 +7,7 @@ apps: both
 tags:
   - internal
   - shared-runtime
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-22'
 featureId: shared-runtime
 audience: internal
 releaseStatus: available
@@ -75,3 +75,9 @@ Paramètres → Consommation et quotas affiche les plafonds et consommations Goo
 ## Vérifier l’accès discret à la connexion
 
 Le réglage offer_sign_in pilote l’invitation automatique, pas la disponibilité du compte. Faux affiche directement le formulaire avec un petit lien Se connecter ; vrai ou absent conserve l’invitation et le choix invité. Vérifier FR/HE/EN, bureau et mobile, ouverture explicite, fermeture avec retour du focus et conservation de l’adresse saisie. Le lien garde une cible de 44 px, un fond transparent et une colonne adaptée au texte sur mobile. L’aperçu montre un lien désactivé sans authentification réelle. Les libellés de l’éditeur expliquent ce même choix ; aucun contrôle de livraison ne change. Le corpus de support embarque les mêmes procédures publiques.
+
+<span id="modifier-position-contract" />
+
+## Contrat des modificateurs conditionnels
+
+La migration 274 ajoute selection_config au lien article/groupe et selection_index aux instantanés de modificateurs. Déployer l’API et le schéma avant les clients compatibles. Les anciennes associations sans configuration conservent leur comportement. Les règles utilisent des identifiants vérifiés dans le restaurant et l’article ; une source modificateur est indépendante et à choix unique. Les positions répétées vont de 1 à 12 et exigent exactement une sélection. Le serveur recalcule les prix, rejette doublons, indices inexistants et choix masqués, et préfixe les noms enregistrés pour la cuisine. Les caches et payloads TypeScript/Dart conservent identifiant catalogue et position. La duplication inter-restaurants remappe les références. Les changements d’API, de traduction et de modèles n’altèrent pas les intégrations de paiement, Google ou livraison existantes. La documentation reste locale tant que le commit Landing revu n’a pas été autorisé puis épinglé ; ne pas publier les procédures avant les clients.
