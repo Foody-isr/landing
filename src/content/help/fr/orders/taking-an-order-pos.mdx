@@ -5,7 +5,7 @@ apps: foodypos
 tags:
   - orders
   - pos-order-entry
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-22'
 featureId: pos-order-entry
 audience: public
 releaseStatus: available
@@ -95,3 +95,9 @@ Les coordonnées du personnel se gèrent dans Admin → Personnel → employé �
 ## Reprendre une livraison après un départ de test
 
 Un départ lancé dans le mode livreur place les commandes affectées En livraison. Si ce départ était un test, un utilisateur avec la permission de gestion des commandes peut ouvrir Commandes → Livraisons, sélectionner la date et choisir Annuler le départ tant qu’aucune arrivée, livraison ou étape ignorée n’a été enregistrée. Les commandes En livraison reviennent En préparation ; la tournée revient en brouillon et peut être désassignée puis réaffectée. Il s’agit d’une correction de livraison, pas d’une nouvelle commande, d’un remboursement ou d’une réimpression. Les paiements et les messages déjà envoyés sont conservés. Consultez [la procédure de dispatch](/fr/help/delivery/dispatch-and-routes#undo-departure).
+
+<span id="conditional-item-choices" />
+
+## Vérifier les choix conditionnels d’un article
+
+Un article configuré avec des positions répétées demande un choix distinct par emplacement selon le format sélectionné. Par exemple, un Number Cake à deux caractères accepte 11, AB ou A7. Le prix du format remplace le prix de base ; les modificateurs ajoutent uniquement leurs suppléments configurés. Réduire le nombre de positions retire les choix devenus invisibles. Les positions restent distinctes dans le panier, les commandes et le ticket cuisine ; vérifiez-les avant validation. Ces personnalisations ne changent pas les règles de livraison, de disponibilité, de recette, de remise ou d’annulation. Leur configuration nécessite les versions compatibles et la permission de modifier le menu. Consultez [Modificateurs et règles de sélection](/fr/help/menu/modifiers#conditional-positions) pour la procédure et les contrôles en cas de refus.

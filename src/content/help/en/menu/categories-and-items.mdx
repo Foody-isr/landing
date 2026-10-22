@@ -6,7 +6,7 @@ tags:
   - menu
   - menu-categories-and-items
   - categories-and-items
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-22'
 featureId: menu-categories-and-items
 audience: public
 releaseStatus: available
@@ -54,3 +54,9 @@ Carte availability is now directly clickable beneath an item name. When the sale
 ## Change availability from Items
 
 In Items, with menu editing permission, click an active item’s badge in the Availability column. The same small panel as in Cartes opens; opening it neither changes availability nor navigates to the item editor. Choose Available without limit, Unavailable, Predefined stock or Automatic (existing rules), then Apply. Predefined stock requires a positive remaining quantity, in units, base g/ml for measured stock, or per size. An empty size field keeps that size unlimited. Existing orders stay reserved. For a restaurant using series, the panel displays the current series resolved by the server and changes only its stock; prepare another series in its carte. Outside series, it changes the item’s stock and saves all size counters together. Changes take effect immediately after Apply, independently of carte drafts. Cancel, Escape or dismissing the panel discards unapplied choices. Fresh stock loads on opening; if loading fails, Reload stocks is available and applying is blocked. A save error keeps entered values: reload stock, review the quantity and explicitly Apply again. Inactive items and users without editing permission have a read-only status.
+
+<span id="conditional-item-choices" />
+
+## Check conditional item choices
+
+An item configured with repeated positions requires one separate choice per position according to the selected format. For example, a two-character Number Cake accepts 11, AB or A7. The format price replaces the base price; modifiers add only their configured surcharges. Reducing the position count removes newly hidden choices. Positions remain distinct in the cart, orders and kitchen ticket; review them before confirming. These customizations do not change delivery, availability, recipe, discount or cancellation rules. Configuration requires compatible versions and menu editing permission. See [Modifiers and selection rules](/en/help/menu/modifiers#conditional-positions) for setup and recovery after a rejected selection.

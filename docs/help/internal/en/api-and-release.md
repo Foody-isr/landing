@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-22'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -117,3 +117,9 @@ POST /api/v1/menu/items/:id/sales-stock/restock also accepts remaining stock for
 ## POS code at staff activation
 
 validate-invite returns pos_pin_required from the current scoped membership permissions (orders.manage or payments.manage), never the global or legacy role label. setup-account independently rechecks scope, role and permission requirements. Non-POS staff ignore a stale client PIN without writing one. Password, optional PIN, one-time invite consumption and JWT generation are atomic; failures preserve the existing invitation and credentials. Used, expired, ambiguous legacy and revoked links remain blocked with allowlisted error codes; unexpected persistence errors expose no SQL or tokens. No migration or environment change is needed. Deploy API before Admin; already emailed unused links require no data repair or resend.
+
+<span id="modifier-position-contract" />
+
+## Conditional modifier contract
+
+Migration 274 adds selection_config to the item/group link and selection_index to modifier snapshots. Deploy API and schema before compatible clients. Existing links without configuration retain their behavior. Rules use IDs verified against the restaurant and item; modifier sources are independent single-choice groups. Repeated positions are numbered 1 to 12 and require exactly one selection. The server recalculates prices, rejects duplicates, unavailable positions and hidden choices, and prefixes saved names for kitchen output. TypeScript/Dart caches and payloads retain catalog ID and position. Cross-restaurant copying remaps references. Additive API, translation and model changes do not alter existing payment, Google or delivery integrations. Documentation stays local until a reviewed Landing commit has been authorized and pinned; do not publish procedures ahead of their clients.

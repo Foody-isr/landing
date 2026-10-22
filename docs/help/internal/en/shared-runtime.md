@@ -7,7 +7,7 @@ apps: both
 tags:
   - internal
   - shared-runtime
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-22'
 featureId: shared-runtime
 audience: internal
 releaseStatus: available
@@ -75,3 +75,9 @@ Settings → Usage and quotas displays this restaurant’s Google/Geoapify allow
 ## Verify discreet sign-in access
 
 The offer_sign_in setting controls the automatic invitation, not account availability. False shows the form directly with a small Sign in link; true or missing retains the invitation and guest choice. Verify FR/HE/EN, desktop and mobile, explicit opening, dismissal with focus restored and typed address retained. The link keeps a 44 px target, transparent background and text-sized mobile column. Preview displays a disabled link without real authentication. Editor labels explain the same choice; delivery controls are unchanged. The embedded support corpus carries the same public procedures.
+
+<span id="modifier-position-contract" />
+
+## Conditional modifier contract
+
+Migration 274 adds selection_config to the item/group link and selection_index to modifier snapshots. Deploy API and schema before compatible clients. Existing links without configuration retain their behavior. Rules use IDs verified against the restaurant and item; modifier sources are independent single-choice groups. Repeated positions are numbered 1 to 12 and require exactly one selection. The server recalculates prices, rejects duplicates, unavailable positions and hidden choices, and prefixes saved names for kitchen output. TypeScript/Dart caches and payloads retain catalog ID and position. Cross-restaurant copying remaps references. Additive API, translation and model changes do not alter existing payment, Google or delivery integrations. Documentation stays local until a reviewed Landing commit has been authorized and pinned; do not publish procedures ahead of their clients.
