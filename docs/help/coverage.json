@@ -570,7 +570,14 @@
           "internal/orders/**"
         ],
         "foodypos": [
-          "lib/features/orders/presentation/fulfillment_prompt.dart"
+          "lib/features/orders/presentation/fulfillment_prompt.dart",
+          "lib/features/orders/presentation/dine_in_destination_dialog.dart",
+          "lib/features/orders/presentation/new_ticket_dialog.dart",
+          "lib/features/orders/presentation/open_tickets_page.dart",
+          "lib/features/orders/data/open_ticket_repository.dart",
+          "lib/features/orders/presentation/widgets/fulfillment_customer_dialog.dart",
+          "lib/features/orders/domain/order_customer_contact.dart",
+          "lib/features/orders/providers/fulfillment_providers.dart"
         ],
         "foodyweb": [
           "lib/websiteFulfillment*"
@@ -1097,10 +1104,21 @@
           "src/app/[restaurantId]/settings/menu-behavior/**",
           "src/app/[restaurantId]/settings/full-service/**",
           "src/components/settings/POSSettingsWorkspace.tsx",
-          "src/components/settings/usePOSSettings.ts"
+          "src/components/settings/usePOSSettings.ts",
+          "src/components/settings/pos-settings.css",
+          "src/lib/i18n.tsx",
+          "src/lib/pos-fulfillment.ts"
         ],
         "foodypos": [
-          "lib/features/settings/**"
+          "lib/features/settings/**",
+          "lib/core/l10n/app_en.arb",
+          "lib/core/l10n/app_fr.arb",
+          "lib/core/l10n/app_he.arb"
+        ],
+        "foodyserver": [
+          "internal/common/full_service.go",
+          "internal/common/pos_fulfillment.go",
+          "internal/restaurants/pos_settings.go"
         ]
       }
     },
@@ -1275,7 +1293,13 @@
           "lib/features/transactions/**",
           "lib/core/routing/app_router.dart",
           "lib/core/payment/**",
-          "lib/services/payments/**"
+          "lib/services/payments/**",
+          "lib/features/orders/presentation/payment_completion_dialog.dart",
+          "lib/features/orders/presentation/widgets/check_panel.dart",
+          "lib/features/orders/online/providers/online_orders_provider.dart",
+          "lib/features/transactions/providers/transaction_refresh_provider.dart",
+          "ios/Runner/VerifonePaymentBridge.m",
+          "android/app/src/main/kotlin/com/foodypos/app/VerifonePaymentBridge.kt"
         ],
         "foodyserver": [
           "internal/payment/**",

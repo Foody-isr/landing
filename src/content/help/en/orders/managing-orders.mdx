@@ -19,7 +19,7 @@ featureId: orders-managing-orders
 audience: public
 releaseStatus: available
 ---
-Open the corresponding Foody workspace described below.
+Open the corresponding Foody workspace described below. The cross-channel All view on the POS requires compatible POS and API versions; updating the API alone does not update the installed POS.
 
 <span id="open-order-from-transaction" />
 
@@ -53,9 +53,10 @@ the kitchen.
 
 ### How It Works (Simply)
 
-- New orders appear in real time (a **Live** badge shows the connection is active).
-- Use the **status tabs** to filter — new, in kitchen, ready, completed.
-- Open an order to see its items, customer, and totals, and to move it along.
+- POS **Orders → All** reads saved orders across all sources and payment states. Active, Scheduled and Completed remain separate operational views.
+- Admin **Orders → All** uses the same restaurant-owned records; its selected dates and filters still apply.
+- Payment and preparation are independent: a paid takeaway being prepared remains active.
+- Use Active orders to advance fulfillment. All-order details on the POS are read-only.
 
 <span id="section-3" />
 
@@ -73,10 +74,9 @@ the kitchen.
 
 ## Good to know
 
-- Orders only appear once **paid** (for prepaid channels), so the kitchen never sees an
-  unconfirmed order.
-- If a dish sold out while the customer was ordering, checkout blocks it — see
-  [Availability](/en/help/kitchen/availability).
+- A prepaid-channel order awaiting payment remains consultable in All. Visibility is not payment approval and does not send food to the kitchen or print a ticket.
+- Unsaved local carts are not shared orders. Restaurant access and permissions still apply.
+- If a dish sold out while the customer was ordering, checkout blocks it — see [Availability](/en/help/kitchen/availability).
 
 <span id="whatsapp-attachment-review" />
 
@@ -137,3 +137,15 @@ Starting courier mode marks assigned orders Out for delivery. If this was a test
 ## Check conditional item choices
 
 An item configured with repeated positions requires one separate choice per position according to the selected format. For example, a two-character Number Cake accepts 11, AB or A7. The format price replaces the base price; modifiers add only their configured surcharges. Reducing the position count removes newly hidden choices. Positions remain distinct in the cart, orders and kitchen ticket; review them before confirming. These customizations do not change delivery, availability, recipe, discount or cancellation rules. Configuration requires compatible versions and menu editing permission. See [Variants and sizes](/en/help/menu/variants-and-sizes#conditional-positions) for setup and recovery after a rejected selection.
+
+<span id="all-channel-order-tracking" />
+
+## Track every saved order across POS and Admin
+
+Open POS → Orders → All, or Admin → Orders → All for the same restaurant. Counter, Admin-entered, website, QR and connected-channel orders share the existing order API; source and dine-in/pickup/delivery are independent filters. The POS All list has no default date, status, source, fulfillment-type or payment filter and loads more records as you scroll. Open a row for read-only items, totals, preparation and payment status. Switching back into All reloads it; pull down on a populated list to refresh, and retry a visible loading error instead of treating it as an empty history. Confirmed live order updates also refresh the retained list. Payment-pending web orders may require this read refresh because they do not emit a kitchen-arrival event. In Admin, widen the period and reset filters when searching for older orders. Do not recreate, recharge or reprint an order merely because it is absent from a filtered view.
+
+<span id="paid-counter-orders" />
+
+## Find a counter sale after payment
+
+A paid takeaway sale sent to the kitchen belongs in Orders → Active while food is being prepared, not Completed merely because payment succeeded. Open the correct takeaway filter and clear other filters if needed. Transactions records the collection separately and refreshes on entry. Payment recorded briefly confirms the collection, then returns automatically to the floor plan. Clearing the current POS bill does not delete the saved order; Orders → All remains available for cross-channel tracking. If paper is missing, verify the profile, current POS/printer association and printer history before reprinting or collecting any additional payment. See [counter checkout](/en/help/payments/pos-checkout#counter-completion). The Client tab uses the order's saved name/phone, not a guessed customer from another bill. Optional contact collection is configured [per fulfillment method](/en/help/settings/pos-behavior#fulfillment-customer). Additional kitchen batches retain coherent contact details without sending a new order-created confirmation for each course; status notifications remain separate.

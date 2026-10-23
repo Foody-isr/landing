@@ -15,7 +15,13 @@ featureId: pos-order-entry
 audience: public
 releaseStatus: available
 ---
-POS → Tables / Order entry
+POS → Tables / Order entry. Whole-check method/contact dialogs and tableless dine-in require compatible POS and API versions. Updating the API alone does not add these controls to an older installed POS.
+
+<span id="whole-check-contact" />
+
+## Confirm the whole check’s method and contact
+
+Before the first send, confirm Actions → Fulfillment methods. If enabled, the optional name/phone form belongs to the whole check: Save confirms it, Cancel preserves the draft. All its kitchen courses share the saved contact; later sends retain coherent existing details, not those of a selected ticket. Item preparation choices create no extra customer or delivery. See [whole-check selection](/en/help/orders/order-types#pos-whole-check) and [customer information](/en/help/settings/pos-behavior#fulfillment-customer).
 
 <span id="cash-drawer-before-collection" />
 

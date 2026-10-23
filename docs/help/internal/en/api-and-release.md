@@ -44,7 +44,7 @@ Deploy and validate the restaurant-scoped API migrations and routes before enabl
 
 ## Maintain scoped API contracts
 
-The inventory records each route registration, handler and source location. Group-relative fragments are not standalone URLs. Validate inputs, JWT roles and restaurant ownership at boundaries; public restaurant endpoints still need explicit scope. Update Go, TypeScript and Dart consumers when contracts change.
+The inventory records each route registration, handler and source location. Group-relative fragments are not standalone URLs. Validate inputs, JWT roles and restaurant ownership at boundaries; public restaurant endpoints still need explicit scope. Update Go, TypeScript and Dart consumers when contracts change. Fulfillment customer information requires both the settings capability `pos_fulfillment_customer_information_supported` and grouped-send `customer_information`. Preserve an omitted method flag by stable ID; explicit false disables it. Validate and fingerprint customer_name/customer_phone/delivery_notes/delivery_apt/custom_fields atomically. Follow-up batches inherit only coherent snapshots; mixed guests and allocated bills cannot adopt replacement details. Grouped creation suppresses per-course customer confirmations without suppressing kitchen/staff events or independent status notifications. Tests must not send real notifications.
 
 <span id="release" />
 

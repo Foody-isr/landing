@@ -10,7 +10,13 @@ featureId: pos-order-entry
 audience: public
 releaseStatus: available
 ---
-POS → Tables / Prise de commande
+POS → Tables / Prise de commande. Les fenêtres de traitement/coordonnées de toute l’addition et le sur-place sans table nécessitent des versions POS et API compatibles. Une mise à jour API seule n’ajoute pas ces contrôles à un ancien POS installé.
+
+<span id="whole-check-contact" />
+
+## Confirmer le mode et les coordonnées de toute l’addition
+
+Avant le premier envoi, confirmez Actions → Modes de traitement. Si activé, le formulaire facultatif nom/téléphone concerne toute l’addition : Enregistrer le confirme, Annuler conserve le brouillon. Tous ses services cuisine partagent les coordonnées enregistrées ; les envois suivants conservent les coordonnées existantes cohérentes, pas celles d’un ticket sélectionné. Les choix de préparation par article ne créent aucun client ni livraison supplémentaire. Voir [le choix pour toute l’addition](/fr/help/orders/order-types#pos-whole-check) et [les informations client](/fr/help/settings/pos-behavior#fulfillment-customer).
 
 <span id="cash-drawer-before-collection" />
 
