@@ -16,7 +16,7 @@ Open Settings → POS, then the appropriate mode/profile. Legacy Full service se
 
 ## Set menu behavior
 
-Open Menu behavior and choose the options offered for item selection, modifiers and navigation. Assign the intended profile to the POS device. Test with an item that has a required choice so staff cannot accidentally skip it.
+Open Menu behavior and choose the options offered for item selection, modifiers and navigation. Assign the intended profile to the POS device. Test with an item that has a required choice so staff cannot accidentally skip it. A checkout-mode profile does not assign a kitchen printer. Configure the shared printing profile separately for this POS installation; see [printer assignments and pending documents](/en/help/printers/profiles-and-routing#assign).
 
 <span id="courses" />
 
@@ -30,8 +30,38 @@ Open Services and maintain the course names and order used at the restaurant. Re
 
 Open Adjustments and review the available reasons and behavior for reductions, offerings and cancellation. Staff still need the corresponding permissions. Library POS discounts and online promotion codes are maintained in their own modules.
 
+<span id="forgotten-device-assignment" />
+
+## Save settings after a device was forgotten or replaced
+
+An old POS-mode assignment to a device already forgotten in this restaurant should not block saving another setting, such as when to ask for a fulfillment method. This recovery requires an API version that includes forgotten-device cleanup; it is not guaranteed on older installations. Saving removes only the old assignment to that forgotten device. It does not reactivate the device or assign its replacement automatically. After registering a replacement, open the intended POS mode in Admin, choose **Assigned devices**, select the current device, then **Apply** and **Save**. Check the resulting assignment; printer profiles remain separate. If saving still fails, keep the draft, retain the error message and check the installed API version before retrying. Do not delete other modes or repeatedly reactivate devices to bypass the error. A new assignment to a missing, forgotten or foreign device remains invalid.
+
 <span id="terminal-batch-separation" />
 
 ## Keep terminal deposits separate from POS behavior
 
 Terminal batch actions do not change the POS service profile, staff shift or cash drawer. A manager with payments.manage opens More → Reports → Terminal deposits on a configured Victa Portable or iPad/Victa Mini. Follow the dedicated POS payment guide for end-of-day confirmation and uncertain-result recovery; do not use menu behavior or adjustment settings to settle a batch.
+
+<span id="fulfillment-methods" />
+
+## Configure POS fulfillment methods
+
+With settings-edit permission, open Settings → Fulfillment → Point of sale, then **Manage by location**. Check the restaurant name in the centered editor: these choices are shared by that restaurant's POS devices, not a separate catalogue for each device profile. If the API does not support custom methods, the editor explains why editing is unavailable. Add or edit a method, give it a distinct display name and choose its order type: dine-in, pickup or delivery. **Done** updates the editor's draft only; closing the method editor cancels that unconfirmed edit. Keep at least one method enabled and no more than ten methods. Reorder with the arrows or drag handle; the first enabled method becomes the default. A disabled method is not offered for new choices. Click **Save** in Manage by location to persist the whole configuration. Closing with changes asks whether to discard them. If saving fails or the server does not confirm all submitted fields, keep the draft, review the error and verify the saved configuration before treating it as applied. Existing orders keep their recorded method; renaming or disabling a method does not rewrite their history.
+
+<span id="fulfillment-prompt" />
+
+## Choose when staff select a method
+
+In the same editor, enable the staff selection prompt and choose **At the start of each new order** or **After tapping Pay or Send**. Switching the prompt off and back on during this edit restores the selected timing; save explicitly. With the prompt off, the default applies to a new unassigned sale. An existing table or named check retains its own order type and lifecycle. On the POS, selecting a row in the method dialog is only a draft choice: **Save** applies it and the close/cancel control leaves the sale unchanged. If a start prompt was canceled, confirmation is requested again before sending or paying. The optional customer-information form is controlled separately for each method; there is no per-method order-tracking switch. Foody keeps all saved orders available through **Orders → All** on POS and Admin, subject to restaurant scope, access and filters; payment and preparation status remain separate. When selection prompts are disabled, a restored draft keeps its explicitly chosen method instead of taking the default again. If that method has since been disabled, reopen Actions → Fulfillment methods and make an explicit new choice before continuing.
+
+<span id="tableless-open-checks" />
+
+## Enable the existing open-check workflow for onsite sales
+
+There is no separate tableless-dine-in switch. Keep a dine-in method available in the restaurant fulfillment catalogue. In the POS mode assigned to this device, open **Open checks**, enable **Use on this mode** and save if needed. Predefined ticket names remain optional. Compatible API/POS versions then offer [New check without a table](/en/help/orders/order-types#pos-tableless-dine-in). If unavailable, check the capability message and effective device mode; do not enable unrelated seat or delivery settings. This uses no artificial table and does not change online/QR order rules. Admin Orders can display the resulting dine-in orders without a table; Admin's manual new-order form remains pickup/delivery only.
+
+<span id="fulfillment-customer" />
+
+## Ask for customer details for a method
+
+Requires matching API and POS versions. In the method editor, enable **Show customer information screen**, choose **Done**, then save the restaurant settings. On POS, this whole-check choice opens an optional name/phone form, also for the default method with selection prompts disabled. Save confirms mode and contact together; Cancel leaves the sale unchanged and the initial form is requested again before Send/Pay. Item choices never open it. Name: up to 80 characters. Nonblank phone: up to 32 characters in total, with 7–15 digits, optional leading + and ordinary separators. This creates no customer account, address or marketing consent. Configured notifications may use the phone: check their settings before entering real details. The Client tab displays saved contact details. Additional kitchen batches inherit coherent existing details without repeating order-created confirmations per course; status notifications remain separate. Mixed-customer or allocated bills cannot adopt a replacement contact. If the API is unsupported or context changes, reopen the flow; Foody preserves the source draft and never overwrites an occupied destination.

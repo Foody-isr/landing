@@ -47,6 +47,24 @@ state, permission or physical device was exercised.
 
 ## CI enforcement in every versioned service
 
+### Local fulfillment review scope (22 October 2026)
+
+This review refreshes source evidence for foodyserver, foodyadmin, foodypos and
+foodylanding only. The foodyweb and foodybackoffice inventory service entries,
+their surfaces and feature evidence are retained from Landing commit
+`f45ce240438e08be227cd7406c6bdb0525db3018` (the comparison develop baseline).
+They are previously recorded evidence, **not revalidated by this change**. The
+older primary guest-web checkout must not replace that released evidence or
+silently remove its checkout, account and conditional-choice surfaces.
+
+After a full local scan for the four-service review, retain those two baseline
+service blocks and surfaces, rebuild every feature's evidence from the combined
+source files and recalculate coverage counts. Regenerate the index and only the
+four affected service contracts. A later Web/Backoffice change requires its own
+current-source review and validation; do not reuse this scope as an exemption.
+The local WORKSPACE documentation pins still require an immutable matching
+Landing commit before remote CI or publication.
+
 `Help coverage and translations` runs on PRs into develop and manual dispatch.
 It checks the exact source footprint (including newly added/deleted source), feature
 classification, immutable documentation revision, all FR/HE/EN file digests and the
@@ -73,6 +91,31 @@ Do not use this exception for a behavior change. Contract regression tests verif
 missing translations, new/deleted source, stale hashes, missing guide updates,
 invalid references and exact exceptions. Branch protection should require this
 job alongside the existing service CI; a workflow alone cannot set GitHub policy.
+
+When a shared file changes one feature but leaves other classified features
+unchanged, use a **scoped** review instead of exempting the entire file:
+
+```json
+{
+  "files": [{
+    "path": "src/lib/i18n.tsx",
+    "sha256": "<current-reviewed-file-sha256>",
+    "baseSha256": "<file-sha256-in-the-comparison-base-contract>",
+    "features": ["google-account-setup", "delivery-dispatch"],
+    "disposition": "no-user-impact",
+    "reason": "The diff adds only POS fulfillment translations; the reviewed Google and delivery controls and their behavior are unchanged."
+  }]
+}
+```
+
+The nonempty, duplicate-free `features` list must contain only feature IDs
+classified on this file and present in the release. Both file digests must match
+the exact current and comparison-base contracts. A stale/missing base digest, an
+unknown feature or an invalid scope provides no exemption. Every other affected
+feature still requires all three guide updates. Omitting `features` retains the
+legacy whole-file review format and is appropriate only when the entire diff has
+no user impact. Do not omit the scope to bypass a rejected scoped review, and do
+not use a scoped review for a newly introduced file without a reviewed base.
 
 
 ## Documentation assistant
