@@ -4271,10 +4271,10 @@
       ],
       "foodypos": [
         "lib/features/orders/presentation/fulfillment_prompt.dart",
-      "lib/features/orders/presentation/dine_in_destination_dialog.dart",
-      "lib/features/orders/presentation/new_ticket_dialog.dart",
-      "lib/features/orders/presentation/open_tickets_page.dart",
-      "lib/features/orders/data/open_ticket_repository.dart",
+        "lib/features/orders/presentation/dine_in_destination_dialog.dart",
+        "lib/features/orders/presentation/new_ticket_dialog.dart",
+        "lib/features/orders/presentation/open_tickets_page.dart",
+        "lib/features/orders/data/open_ticket_repository.dart",
         "lib/features/orders/presentation/widgets/fulfillment_customer_dialog.dart",
         "lib/features/orders/domain/order_customer_contact.dart",
         "lib/features/orders/providers/fulfillment_providers.dart"
@@ -5553,7 +5553,8 @@
       "foodyserver": [
         "internal/delivery/**",
         "internal/common/delivery_models.go",
-        "internal/orders/delivery_departure.go"
+        "internal/orders/delivery_departure.go",
+        "internal/orders/service.go"
       ]
     },
     "operations": [
@@ -5644,9 +5645,9 @@
           "he": "שמירה ומעקב התקדמות"
         },
         "instructions": {
-          "en": "Save the reviewed route and use the dispatch controls. Monitor courier/order progress and update a changed plan deliberately instead of assuming the original route remains valid. Courier mode uses a map and timeline with a route selector at the top. The courier finds Adjust and Start in the fixed bar, followed by navigation and delivery confirmation for the next stop. Viewing a pin or searching a stop does not change the saved order.\n\nIn the courier view, the order amount is shown only for cash payments. Card payments, other payment methods and orders with an unknown payment method do not show an amount.",
-          "fr": "Enregistrez la tournée vérifiée puis utilisez le dispatch. Suivez coursier et commandes et modifiez explicitement un plan devenu obsolète. Le mode livreur utilise une carte et une chronologie avec un sélecteur de tournée en haut. Le livreur retrouve Ajuster et Démarrer dans la barre fixe, puis la navigation et la confirmation de livraison pour le prochain arrêt. Consulter un repère ou rechercher un arrêt ne change pas l’ordre enregistré.\n\nDans la vue livreur, le montant de la commande est affiché uniquement pour un paiement en espèces. Les paiements par carte, les autres moyens de paiement et les commandes dont le moyen de paiement est inconnu n’affichent pas de montant.",
-          "he": "שמרו את המסלול שנבדק והשתמשו בשיגור. עקבו אחר השליח וההזמנות ועדכנו במפורש תוכנית שהשתנתה. מצב השליח משתמש במפה ובציר עצירות עם בחירת מסלול למעלה. התאמה ותחילת המסלול מופיעות בסרגל הקבוע, ובהמשך ניווט ואישור מסירה לעצירה הבאה. צפייה בסמן או חיפוש עצירה אינם משנים את הסדר השמור.\n\nבתצוגת השליח סכום ההזמנה מוצג רק בתשלום במזומן. בתשלום בכרטיס, באמצעי תשלום אחרים או כאשר אמצעי התשלום אינו ידוע, הסכום אינו מוצג."
+          "en": "Save the reviewed route and use the dispatch controls. Monitor courier/order progress and update a changed plan deliberately instead of assuming the original route remains valid. Courier mode uses a map and timeline with a route selector at the top. The courier finds Adjust and Start in the fixed bar, followed by navigation and delivery confirmation for the next stop. Viewing a pin or searching a stop does not change the saved order.\n\nIn the courier view, the order amount is shown only for cash payments. Card payments, other payment methods and orders with an unknown payment method do not show an amount.\n\nIn the courier workspace, fixed Navigate and Mark delivered buttons target the stop selected in the list or on the map; its number and address appear above. An old page cannot confirm delivery from a cancelled or inactive route, or after the order was reassigned to another courier. After rejection, refresh the routes and select the current assignment.",
+          "fr": "Enregistrez la tournée vérifiée puis utilisez le dispatch. Suivez coursier et commandes et modifiez explicitement un plan devenu obsolète. Le mode livreur utilise une carte et une chronologie avec un sélecteur de tournée en haut. Le livreur retrouve Ajuster et Démarrer dans la barre fixe, puis la navigation et la confirmation de livraison pour le prochain arrêt. Consulter un repère ou rechercher un arrêt ne change pas l’ordre enregistré.\n\nDans la vue livreur, le montant de la commande est affiché uniquement pour un paiement en espèces. Les paiements par carte, les autres moyens de paiement et les commandes dont le moyen de paiement est inconnu n’affichent pas de montant.\n\nDans l’espace livreur, les boutons fixes Naviguer et Marquer livrée ciblent l’arrêt sélectionné dans la liste ou sur la carte ; son numéro et son adresse sont affichés au-dessus. Une ancienne page ne peut pas valider une livraison depuis une tournée annulée ou inactive, ni après réaffectation de la commande à un autre livreur. En cas de refus, actualisez les tournées et sélectionnez l’affectation actuelle.",
+          "he": "שמרו את המסלול שנבדק והשתמשו בשיגור. עקבו אחר השליח וההזמנות ועדכנו במפורש תוכנית שהשתנתה. מצב השליח משתמש במפה ובציר עצירות עם בחירת מסלול למעלה. התאמה ותחילת המסלול מופיעות בסרגל הקבוע, ובהמשך ניווט ואישור מסירה לעצירה הבאה. צפייה בסמן או חיפוש עצירה אינם משנים את הסדר השמור.\n\nבתצוגת השליח סכום ההזמנה מוצג רק בתשלום במזומן. בתשלום בכרטיס, באמצעי תשלום אחרים או כאשר אמצעי התשלום אינו ידוע, הסכום אינו מוצג.\n\nבסביבת השליח, הכפתורים הקבועים ניווט וסמן נמסר מתייחסים לעצירה שנבחרה ברשימה או במפה; המספר והכתובת מוצגים מעליהם. דף ישן אינו יכול לאשר מסירה ממסלול שבוטל או שאינו פעיל, או לאחר הקצאת ההזמנה לשליח אחר. לאחר דחייה רעננו את המסלולים ובחרו את ההקצאה העדכנית."
         }
       },
       {
@@ -5858,9 +5859,9 @@
           "he": "ניווט ויצירת קשר"
         },
         "instructions": {
-          "fr": "Touchez une adresse dans la chronologie ou son repère sur la carte pour afficher les actions de cet arrêt. Le repère fait défiler la liste jusqu’à l’arrêt ; il ne valide aucune livraison. Touchez le numéro de téléphone pour appeler, WhatsApp pour préparer le message, ou Naviguer pour choisir Waze ou Google Maps. Les adresses non vérifiées restent signalées avant une recherche de navigation. Les options de l’arrêt permettent de corriger l’adresse ou de monter/descendre l’arrêt ; validez une correction avec le dispatch. Le bouton de navigation fixe en bas concerne toujours le prochain arrêt non terminé, dont l’adresse est indiquée au-dessus.",
-          "en": "Select an address in the timeline or its map pin to reveal that stop’s actions. A pin scrolls the list to the stop without confirming a delivery. Select the phone number to call, WhatsApp to prepare a message, or Navigate to choose Waze or Google Maps. Unverified addresses remain flagged before a navigation search. Stop options let you correct its address or move it up/down; confirm a correction with dispatch. Fixed navigation at the bottom always targets the next unfinished stop, whose address appears above it.",
-          "he": "לחצו על כתובת בציר העצירות או על הסמן שלה במפה להצגת פעולות העצירה. הסמן גולל את הרשימה לעצירה ואינו מאשר מסירה. לחצו על מספר הטלפון לשיחה, על WhatsApp להכנת הודעה או על ניווט לבחירת Waze או Google Maps. כתובות שלא אומתו נשארות מסומנות לפני חיפוש ניווט. אפשרויות העצירה מאפשרות תיקון כתובת או הזזה למעלה ולמטה; אשרו תיקון עם אחראי השיגור. הניווט הקבוע בתחתית מופנה תמיד לעצירה הבאה שטרם הושלמה, שהכתובת שלה מופיעה מעליו."
+          "fr": "Touchez une adresse dans la chronologie ou son repère sur la carte pour sélectionner cet arrêt et afficher ses actions. Le repère fait défiler la liste sans valider de livraison. Les boutons fixes Naviguer et Marquer livrée concernent le même arrêt sélectionné, dont le numéro et l’adresse apparaissent au-dessus sous Arrêt sélectionné. Vérifiez cette destination avant toute action. Touchez le téléphone pour appeler ou WhatsApp pour préparer un message. Les adresses non vérifiées restent signalées avant une recherche de navigation. Les options permettent de corriger l’adresse ou de monter/descendre l’arrêt ; validez une correction avec le dispatch.",
+          "en": "Select an address in the timeline or its map pin to select that stop and reveal its actions. A pin scrolls the list without confirming delivery. Fixed Navigate and Mark delivered buttons target the same selected stop, whose number and address appear above under Selected stop. Check this destination before acting. Select the phone number to call or WhatsApp to prepare a message. Unverified addresses remain flagged before a navigation search. Stop options let you correct the address or move the stop up/down; confirm a correction with dispatch.",
+          "he": "בחרו כתובת בציר העצירות או את הסמן שלה במפה כדי לבחור את העצירה ולהציג את הפעולות שלה. הסמן גולל את הרשימה ואינו מאשר מסירה. הכפתורים הקבועים ניווט וסמן נמסר מתייחסים לאותה עצירה נבחרת, שהמספר והכתובת שלה מוצגים מעליהם תחת העצירה הנבחרת. בדקו את היעד לפני הפעולה. לחצו על מספר הטלפון לשיחה או על WhatsApp להכנת הודעה. כתובות שלא אומתו נשארות מסומנות לפני חיפוש ניווט. אפשרויות העצירה מאפשרות לתקן כתובת או להזיז עצירה למעלה ולמטה; אשרו תיקון עם אחראי השיגור."
         }
       },
       {
@@ -5871,9 +5872,9 @@
           "he": "אישור התוצאה בפועל"
         },
         "instructions": {
-          "fr": "Après « Démarrer », l’action fixe « Marquer livrée » concerne le prochain arrêt non terminé, dont le numéro et l’adresse figurent au-dessus. Utilisez-la après la remise réelle. « Marquer arrivé » reste disponible dans les détails de cet arrêt mais n’est pas obligatoire avant la livraison. Pour terminer un autre arrêt, sélectionnez-le puis utilisez son propre bouton de livraison. Vérifiez la progression enregistrée ; un échec conserve la commande en attente et affiche une erreur. Une livraison confirmée n’encaisse pas seule un solde impayé.",
-          "en": "After Start, fixed Mark delivered applies to the next unfinished stop, identified by number and address above it. Use it after the actual handover. Mark arrived remains in that stop’s details but is not required before delivery. To complete a different stop, select it and use its own delivery button. Check saved progress; a failure keeps the order pending and displays an error. Delivery confirmation does not itself collect an unpaid balance.",
-          "he": "אחרי תחילת המסלול, הפעולה הקבועה סמן נמסר מתייחסת לעצירה הבאה שטרם הושלמה, שהמספר והכתובת שלה מוצגים מעליה. השתמשו בה רק לאחר המסירה בפועל. סימון הגעה נשאר בפרטי העצירה אך אינו חובה לפני המסירה. כדי להשלים עצירה אחרת, בחרו אותה והשתמשו בכפתור המסירה שלה. בדקו שההתקדמות נשמרה; כשל משאיר את ההזמנה בהמתנה ומציג שגיאה. אישור מסירה אינו גובה יתרה שלא שולמה."
+          "fr": "Après Démarrer, sélectionnez la livraison réellement remise dans la liste ou sur la carte, vérifiez son numéro et son adresse dans Arrêt sélectionné, puis touchez Marquer livrée. Sans sélection explicite, le prochain arrêt non terminé est proposé. Après une validation réussie, le prochain arrêt restant est proposé, mais aucune autre commande n’est livrée automatiquement. Marquer arrivé reste facultatif. Un arrêt déjà terminé ne peut pas être validé à nouveau depuis le bouton fixe. Si la tournée a été annulée, n’est plus active ou si la commande a changé de livreur, le serveur refuse la validation sans terminer la commande ni l’autre tournée : actualisez ou rouvrez vos tournées et sélectionnez l’affectation actuelle. Un échec affiche une erreur et conserve les livraisons restantes. La confirmation de livraison n’encaisse pas seule un solde impayé.",
+          "en": "After Start, select the delivery actually handed over in the list or on the map, check its number and address under Selected stop, then choose Mark delivered. Without an explicit selection, the next unfinished stop is proposed. After a successful confirmation, the next remaining stop is proposed, but no other order is delivered automatically. Mark arrived remains optional. A finished stop cannot be confirmed again using the fixed button. If the route was cancelled, is no longer active or the order was reassigned to another courier, the server rejects confirmation without completing the order or the other route: refresh or reopen your routes and select the current assignment. A failure displays an error and preserves remaining deliveries. Delivery confirmation does not itself collect an unpaid balance.",
+          "he": "לאחר תחילת המסלול, בחרו ברשימה או במפה את המשלוח שנמסר בפועל, בדקו את המספר והכתובת תחת העצירה הנבחרת ולחצו סמן נמסר. ללא בחירה מפורשת מוצעת העצירה הבאה שטרם הושלמה. לאחר אישור מוצלח מוצעת העצירה הבאה שנותרה, אך שום הזמנה נוספת אינה מסומנת כנמסרה אוטומטית. סימון הגעה נשאר אופציונלי. אי אפשר לאשר שוב עצירה שהושלמה באמצעות הכפתור הקבוע. אם המסלול בוטל, אינו פעיל עוד או שההזמנה הוקצתה לשליח אחר, השרת דוחה את האישור בלי להשלים את ההזמנה או את המסלול האחר: רעננו או פתחו מחדש את המסלולים ובחרו את ההקצאה העדכנית. כשל מציג שגיאה ומשאיר את המשלוחים שנותרו. אישור מסירה אינו גובה יתרה שלא שולמה."
         }
       },
       {
@@ -7830,15 +7831,15 @@
         "src/app/[restaurantId]/settings/full-service/**",
         "src/components/settings/POSSettingsWorkspace.tsx",
         "src/components/settings/usePOSSettings.ts",
-      "src/components/settings/pos-settings.css",
-      "src/lib/i18n.tsx",
+        "src/components/settings/pos-settings.css",
+        "src/lib/i18n.tsx",
         "src/lib/pos-fulfillment.ts"
       ],
       "foodypos": [
-      "lib/features/settings/**",
-      "lib/core/l10n/app_en.arb",
-      "lib/core/l10n/app_fr.arb",
-      "lib/core/l10n/app_he.arb"
+        "lib/features/settings/**",
+        "lib/core/l10n/app_en.arb",
+        "lib/core/l10n/app_fr.arb",
+        "lib/core/l10n/app_he.arb"
       ],
       "foodyserver": [
         "internal/common/full_service.go",
