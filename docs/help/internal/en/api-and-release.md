@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-22'
+updatedAt: '2026-10-24'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -129,3 +129,9 @@ Migration 274 adds selection_config to the item/group link and selection_index t
 ## Descriptive variant contract
 
 Option groups carry an item-specific role: price retains the absolute priced variant, while identity retains descriptive dimensions without changing price. selection_config conditions their positions on an independent priced format. Orders send option_selections separately from selected_variant_id and modifiers; positions and labels are snapshotted and guest clarifications remain private. Deploy migration 275 and the API before compatible clients. The server validates price, restaurant ownership and every choice. Historical groups retain their behavior until explicitly reconfigured.
+
+<span id="unified-whatsapp-order-composer" />
+
+## Verify the unified WhatsApp composer
+
+The shared Admin composer handles individual orders and current-page selections through existing preview/send endpoints, without a new dispatch route, migration, API free text or changed automation triggers. App drafts stay local and require confirmation before discarding. Uncertain results retain their original dispatch ID across message-type changes. GET /restaurants/:id/message-templates admits settings.view or orders.manage behind EnforceRestaurantAccess; PUT and DELETE still require settings.edit. No credentials become readable. FR/HE/EN copy and the order/WhatsApp procedures cover the controls. Verify lost responses, partially eligible queues, changed orders and mobile RTL with synthetic fixtures; interface verification must not send real messages. WORKSPACE is a local-review pin only: replace it with an authorized immutable Landing commit before CI/publication and deploy the API before its matching Admin.

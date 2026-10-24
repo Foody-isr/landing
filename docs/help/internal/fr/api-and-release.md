@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-22'
+updatedAt: '2026-10-24'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -129,3 +129,9 @@ La migration 274 ajoute selection_config au lien article/groupe et selection_ind
 ## Contrat des dimensions de variante
 
 Les groupes d’options portent un rôle propre à l’article : price conserve la variante tarifée absolue, identity conserve les dimensions descriptives sans effet sur le prix. selection_config conditionne leurs positions à un format tarifé indépendant. La commande transmet option_selections séparément de selected_variant_id et de modifiers ; les positions et les libellés sont figés, et les précisions client restent privées. Déployer la migration 275 et l’API avant les interfaces compatibles. Le contrôle du prix, de la propriété du restaurant et de chaque choix est effectué par le serveur. Les groupes historiques gardent leur comportement tant qu’ils ne sont pas reconfigurés.
+
+<span id="unified-whatsapp-order-composer" />
+
+## Vérifier le panneau WhatsApp unifié
+
+Le panneau Admin commun aux commandes unitaires et à la sélection de la page utilise les aperçus et envois existants, sans nouvelle route de dispatch, migration, texte libre API ou modification des déclencheurs. Les brouillons de l’application restent locaux et exigent une confirmation avant abandon. Les statuts incertains conservent l’identifiant de tentative, y compris en changeant de type de message. GET /restaurants/:id/message-templates autorise settings.view ou orders.manage avec EnforceRestaurantAccess ; PUT et DELETE conservent settings.edit. La modification des permissions ne donne aucun accès aux credentials. Les traductions FR/HE/EN et les procédures commande/WhatsApp couvrent les nouveaux contrôles. Vérifier les réponses perdues, la file partiellement éligible, le changement de commande avant dispatch et le mobile RTL avec les fixtures synthétiques ; ne pas envoyer de messages réels pour valider l’interface. Le pin WORKSPACE est réservé à la revue locale : avant CI/publication, remplacer par le commit Landing immuable autorisé et déployer l’API avant l’Admin correspondant.
