@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - orders
   - order-detail
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-24'
 featureId: order-detail
 audience: public
 releaseStatus: available
@@ -52,13 +52,13 @@ Utilisez les actions de statut proposées. Vérifiez acceptation, cuisine, prêt
 
 ## Envoyer volontairement les messages client
 
-Ouvrez les messages client pour consulter tentatives et preuves de livraison. Prévisualisez récapitulatif/rappel avant envoi ; vérifiez un envoi incertain sans le répéter automatiquement.
+Dans le détail de la commande, Envoyer un message WhatsApp ouvre le panneau commun aux envois Business et à l’application. Messages au client conserve les tentatives suivies et les preuves du prestataire. Suivez la procédure détaillée plus bas pour une commande ou une sélection.
 
 <span id="whatsapp-attachment-review" />
 
 ## Voir la pièce jointe WhatsApp
 
-Dans la commande, l’aperçu d’un message Meta configuré avec photo/PDF affiche le nom du fichier et Voir la pièce jointe. Ce bouton ouvre le fichier fixe autorisé ou le reçu PDF généré pour cette commande sans envoyer de message. Si le fichier ou les montants changent après l’aperçu, préparez un nouvel aperçu avant d’envoyer. Messages au client conserve le nom du fichier avec chaque tentative, y compris un échec ; Livré et Lu proviennent du retour WhatsApp. Le nom seul n’est pas une preuve de livraison. La configuration de l’association reste dans Parcours des commandes ou Communications → WhatsApp.
+Dans la commande, l’aperçu d’un message Meta configuré avec photo/PDF affiche le nom du fichier. Cliquez sur ce nom pour ouvrir le fichier fixe autorisé ou le reçu PDF généré pour cette commande sans envoyer de message. Si le fichier ou les montants changent après l’aperçu, préparez un nouvel aperçu avant d’envoyer. Messages au client conserve le nom du fichier avec chaque tentative, y compris un échec ; Livré et Lu proviennent du retour WhatsApp. Le nom seul n’est pas une preuve de livraison. La configuration de l’association reste dans Parcours des commandes ou Communications → WhatsApp.
 
 <span id="article-library" />
 
@@ -95,3 +95,17 @@ Les rappels WhatsApp approuvés peuvent être prévisualisés avant la veille, m
 ## Conserver les choix de variante de la commande
 
 Lors de l’ajout d’un article configuré avec des positions, choisissez un caractère ou une option dans chaque champ obligatoire avant Ajouter à la commande. Le prix du format reste unique. Le détail de commande affiche chaque position séparément des ajouts/retraits ; modifier les quantités ou les notes conserve ces choix. Vérifiez-les avant validation et préparation.
+
+<span id="unified-order-whatsapp" />
+
+## Envoyer un message WhatsApp pour une ou plusieurs commandes
+
+Prérequis : avoir l’autorisation de gérer les commandes. Pour l’envoi depuis Foody, le numéro professionnel et le modèle approuvé doivent déjà être configurés et activés. La création ou la modification des modèles reste réservée aux réglages.
+
+1. Dans le détail d’une commande, cliquez sur **Envoyer un message WhatsApp**, sous les coordonnées du client ou dans **Actions**. Pour plusieurs commandes, cochez les lignes de la liste puis cliquez sur ce même bouton. La sélection concerne uniquement la page affichée, au maximum 25 commandes ; changer de filtre, de date, de page ou d’établissement l’efface.
+2. Choisissez **WhatsApp Business** pour envoyer depuis Foody, ou **Application WhatsApp** pour préparer un texte modifiable et l’envoyer vous-même.
+3. Avec Business, choisissez **Confirmation de commande**, **Rappel de livraison** ou **Satisfaction après commande**. Foody utilise le modèle global approuvé configuré pour ce message, avec sa langue et sa pièce jointe. Le panneau ne permet pas d’envoyer un texte libre par l’API ni de choisir un modèle arbitraire de la bibliothèque. Sélectionnez chaque destinataire pour vérifier le numéro, l’expéditeur et le contenu exact. Pour voir une pièce jointe, cliquez sur son nom.
+4. Seuls les aperçus prêts sont envoyables. Les coordonnées ou données manquantes, les rappels trop tôt et les tentatives déjà effectuées restent indiqués dans la liste. Le rappel conserve sa règle de date et exige le créneau enregistré et le livreur affecté ; la satisfaction exige une commande de livraison ou à emporter terminée et une configuration active. Cliquez sur **Envoyer le message** ou **Envoyer N messages**. Pour une sélection multiple, confirmez le nombre éligible. Chaque commande produit un message séparé ; un client ayant plusieurs commandes peut donc recevoir plusieurs messages.
+5. Dans l’application, choisissez la confirmation, les informations de livraison ou le lien du reçu. La langue commence par celle du client, avec la langue du restaurant comme repli. Vous pouvez modifier chaque texte et sa langue. **Ouvrir WhatsApp** ouvre uniquement la conversation sélectionnée ; envoyez dans WhatsApp, puis revenez au panneau pour choisir le prochain destinataire. Foody indique seulement **WhatsApp ouvert**, sans confirmer l’envoi ni la réception. Abandonner un texte modifié demande confirmation.
+
+**Résultat et récupération :** les statuts Business distinguent l’acceptation de la livraison et de la lecture lorsque le prestataire les fournit. **Actualiser** vérifie une tentative existante sans la renvoyer. Une réponse perdue reste non confirmée et n’est pas rejouée automatiquement. Si une commande ou un modèle a changé, les envois restants s’arrêtent : actualisez et relisez. Corrigez les données ou les réglages manquants, puis actualisez les aperçus indisponibles. Autorisez les fenêtres surgissantes si l’application ne s’ouvre pas. **Messages au client** conserve l’historique suivi. Les automatismes du parcours gardent leurs modèles et déclencheurs ; ouvrir ce panneau ne les active ni ne les modifie.

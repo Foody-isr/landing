@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-18.
 
-100 fiches de fonctionnalités, 617 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2153 fichiers applicatifs et 2033 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+100 fiches de fonctionnalités, 623 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2153 fichiers applicatifs et 2031 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 553 | 868 | 506dd5a6304b ; versioned |
-| foodyadmin | 758 | 772 | 1060befff555 ; versioned |
+| foodyserver | 553 | 868 | 7ed54b99d7d7 ; versioned |
+| foodyadmin | 758 | 770 | a676f614dbb1 ; versioned |
 | foodyweb | 336 | 167 | 02c307406acc ; versioned |
 | foodypos | 337 | 158 | 5100d2d3affe ; versioned |
-| foodylanding | 127 | 21 | f45ce240438e ; versioned |
 | foodybackoffice | 42 | 47 | 79a9ee38d09c ; versioned |
+| foodylanding | 127 | 21 | 68fd9044b8d2 ; versioned |
 
 ## getting-started
 
@@ -69,6 +69,7 @@ Identifiant : `getting-started-using-support`. Public : public. Disponibilité :
 - [Aide sur les quotas et la connexion facultative](../../src/content/help/fr/getting-started/using-support.mdx#usage-and-entry-help)
 - [Préparer un compte Google propre à votre établissement](../../src/content/help/fr/getting-started/using-support.mdx#google-account-guide)
 - [Demander de l’aide sur les choix conditionnels](../../src/content/help/fr/getting-started/using-support.mdx#conditional-choice-help)
+- [Demander de l’aide sur un envoi WhatsApp](../../src/content/help/fr/getting-started/using-support.mdx#whatsapp-order-message-help)
 
 ### [Offres, démonstration et contact Foody](../../src/content/help/fr/getting-started/offers-and-contact.mdx)
 
@@ -459,6 +460,7 @@ Identifiant : `orders-managing-orders`. Public : public. Disponibilité : availa
 - [Vérifier les choix conditionnels d’un article](../../src/content/help/fr/orders/managing-orders.mdx#conditional-item-choices)
 - [Suivre toutes les commandes enregistrées entre caisse et Admin](../../src/content/help/fr/orders/managing-orders.mdx#all-channel-order-tracking)
 - [Retrouver une vente caisse après paiement](../../src/content/help/fr/orders/managing-orders.mdx#paid-counter-orders)
+- [Contacter les clients par WhatsApp](../../src/content/help/fr/orders/managing-orders.mdx#unified-order-whatsapp-selection)
 
 ### [Types de commandes et remise](../../src/content/help/fr/orders/order-types.mdx)
 
@@ -521,6 +523,7 @@ Identifiant : `order-detail`. Public : public. Disponibilité : available. Servi
 - [Retrouver le mouvement de stock d’origine](../../src/content/help/fr/orders/order-details.mdx#stock-provenance)
 - [Choisir le mode d’envoi du rappel](../../src/content/help/fr/orders/order-details.mdx#delivery-reminder-review-and-send)
 - [Conserver les choix de variante de la commande](../../src/content/help/fr/orders/order-details.mdx#variant-position-order)
+- [Envoyer un message WhatsApp pour une ou plusieurs commandes](../../src/content/help/fr/orders/order-details.mdx#unified-order-whatsapp)
 
 ### [Calendrier du restaurant et exceptions](../../src/content/help/fr/orders/calendar.mdx)
 
@@ -1023,6 +1026,7 @@ Identifiant : `whatsapp`. Public : public. Disponibilité : available. Services 
 - [Gérer les fichiers et vérifier les envois](../../src/content/help/fr/communications/whatsapp.mdx#media-library)
 - [Vérifier le rappel de livraison calculé](../../src/content/help/fr/communications/whatsapp.mdx#route-delivery-window)
 - [Choisir le mode d’envoi du rappel](../../src/content/help/fr/communications/whatsapp.mdx#delivery-reminder-review-and-send)
+- [Envoyer un message WhatsApp pour une ou plusieurs commandes](../../src/content/help/fr/communications/whatsapp.mdx#unified-order-whatsapp)
 
 ### [Modèles et automatisations de messages](../../src/content/help/fr/communications/templates-and-automation.mdx)
 
@@ -1150,6 +1154,7 @@ Identifiant : `platform-api`. Public : internal. Disponibilité : available. Ser
 - [Code caisse à l’activation du personnel](internal/fr/api-and-release.md#staff-activation-pos-code)
 - [Contrat des modificateurs conditionnels](internal/fr/api-and-release.md#modifier-position-contract)
 - [Contrat des dimensions de variante](internal/fr/api-and-release.md#descriptive-variant-contract)
+- [Vérifier le panneau WhatsApp unifié](internal/fr/api-and-release.md#unified-whatsapp-order-composer)
 
 ### [Aperçus internes et alias de routes](internal/fr/design-previews.md)
 
@@ -1159,7 +1164,7 @@ Identifiant : `design-sandboxes`. Public : internal. Disponibilité : available.
 
 ### [Socle applicatif partagé](internal/fr/shared-runtime.md)
 
-Identifiant : `shared-runtime`. Public : internal. Disponibilité : available. Services : foodyadmin, foodyweb, foodypos, foodylanding, foodybackoffice.
+Identifiant : `shared-runtime`. Public : internal. Disponibilité : available. Services : foodyadmin, foodyweb, foodypos, foodybackoffice, foodylanding.
 
 - [Rembourser ou annuler un paiement en ligne Verifone](internal/fr/shared-runtime.md#verifone-admin-money-operations)
 - [Vérifier le plafond de préautorisation au poids](internal/fr/shared-runtime.md#weight-hold-margin)
@@ -1173,6 +1178,7 @@ Identifiant : `shared-runtime`. Public : internal. Disponibilité : available. S
 - [Vérifier l’accès discret à la connexion](internal/fr/shared-runtime.md#optional-entry-access)
 - [Contrat des modificateurs conditionnels](internal/fr/shared-runtime.md#modifier-position-contract)
 - [Contrat des dimensions de variante](internal/fr/shared-runtime.md#descriptive-variant-contract)
+- [Vérifier le panneau WhatsApp unifié](internal/fr/shared-runtime.md#unified-whatsapp-order-composer)
 
 ## Traçabilité détaillée
 
