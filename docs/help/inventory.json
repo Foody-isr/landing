@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-10-18",
+  "reviewedAt": "2026-10-25",
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "6ce6e14287de8777517ea563502c01aead5c9f9d",
+      "sourceCommit": "e886d70a399f8d0829ddb81fcc344c15a363dccb",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "0bd206309ddccc9a7976e3de22d6877d089eb1e72ce4dbcd148cd2bb8a370f7b",
+      "sourceSnapshot": "32fe195090792671d7252bf95c8789e3ba5c04252683dac718deec3e417a195e",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -4227,7 +4227,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "fbd5e4cda4ab388bdd9841901a0c3f05ad94cb7a388269cc24846e830f207ecb",
+          "sha256": "1ce1e8a22d7bc757de7c3b2ef0528743ac5e512dd926e3f73ff1e6768f5e7324",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -4540,10 +4540,10 @@
     },
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "b146c6fdcea82a05afd12a40f9209814b1a3e449",
+      "sourceCommit": "5247d5885b5608289bf7570623198a3aa93c3a49",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "acd115966b613f54e7da42000f49fca2612e1c39eec9ae5f30ba52276af0cb40",
-      "workingTreeHasChanges": false,
+      "sourceSnapshot": "a3a67b79642975154ede3f5571ce8daf0e53701d9f43a946ac78ed9b11cb877f",
+      "workingTreeHasChanges": true,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
           "sha256": "13c58bc11284d66c7fb9c4d79c1b3e92c6e05539164f2147a5e966d9c17ac275",
@@ -8960,12 +8960,13 @@
           ]
         },
         "src/lib/i18n.tsx": {
-          "sha256": "e653a20a927321d3e8cd195feb472d04d0a3bec748f79c47115c71f51fd3bf5f",
+          "sha256": "949d06c11879cf2a6c74492807b1bb30a36a7d8dd6dcdc2a9839fd30bed3bf5a",
           "features": [
             "customers-profiles",
             "menu-menus-and-groups",
             "delivery-dispatch",
             "google-account-setup",
+            "website-order-design",
             "pos-behavior",
             "whatsapp",
             "shared-runtime"
@@ -9925,7 +9926,7 @@
     },
     "foodylanding": {
       "repository": "https://github.com/Foody-isr/landing",
-      "sourceCommit": "b146b31b49509fe1b26c27fb4df663e8104f5ccb",
+      "sourceCommit": "f151a65465b634b5869db44ea7458fea6a9db9d0",
       "releaseStatus": "versioned",
       "sourceSnapshot": "0017f89048e20a416bab53c7443a4720bbe088bd715d39dcf9d1a8e67e173251",
       "workingTreeHasChanges": true,
@@ -10719,9 +10720,9 @@
     },
     "foodyweb": {
       "repository": "https://github.com/Foody-isr/web",
-      "sourceCommit": "5ddc1ea843d9de3f8cdc814453da82d72347b81c",
+      "sourceCommit": "dae28f9f7d4631e6892b988baae45bd8ac4bea89",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "797fb330a9d50a8d2890a6a7b39a81b0eb793a46f723f9a5aaea2537cf9f80ea",
+      "sourceSnapshot": "339a1fe63aba98ae7c38312f67e36018c3785666791d7db64a2ee9e50ba8b180",
       "workingTreeHasChanges": false,
       "sourceFiles": {
         "app/@cart/(.)order/cart/page.tsx": {
@@ -10812,8 +10813,9 @@
           ]
         },
         "app/globals.css": {
-          "sha256": "0dff34b09a3819c086fb3fc0a615fa83f92f3ecdba250e5844c3192738553cc3",
+          "sha256": "f877f6c301961db797e43cb51910a5c28d2a6638db36e2133c06a37b1ddf2916",
           "features": [
+            "website-order-design",
             "shared-runtime"
           ]
         },
@@ -11437,7 +11439,7 @@
           ]
         },
         "components/OrderExperience.tsx": {
-          "sha256": "c9bfffc08511dd05dccbc44be90fb49579b0acd09618273d60a6468915e0f0e2",
+          "sha256": "7a69bacc2c581d869255998ecc6eefc20b3ce0fe2515cd9a7552e4e862347a7d",
           "features": [
             "guest-ordering"
           ]
@@ -12010,7 +12012,7 @@
           ]
         },
         "components/website-v3/WebsiteOrderMenu.tsx": {
-          "sha256": "98140d7811f522e45434365e7febab911fb6f5988b4b4ee3f91e36be0f61e01d",
+          "sha256": "d4c119649ebf74b6546361d41d244d7a6626f69501f82816c8f04d48962661cd",
           "features": [
             "website-qr-customize-your-site",
             "website-design",
@@ -22500,6 +22502,19 @@
           }
         },
         {
+          "id": "public-menu-tabs",
+          "title": {
+            "fr": "Vérifier les onglets des cartes sur le site",
+            "en": "Check menu tabs on the website",
+            "he": "בדיקת לשוניות התפריטים באתר"
+          },
+          "instructions": {
+            "fr": "Deux cartes, par exemple BASSARI et HALAVI, restent deux cartes distinctes. Sur une page de commande qui propose plusieurs cartes visibles, leurs onglets sélectionnent une carte à la fois. Les pastilles du Menu des catégories représentent les groupes à l’intérieur de cette carte, par exemple Sandwichs, et non les catégories internes de la bibliothèque. Activez le canal Web de chaque carte, sélectionnez-les dans les paramètres de la page de commande, puis vérifiez les deux niveaux dans l’aperçu et après publication. Le style de la navigation des groupes se règle dans Liste des articles. Voir [la procédure des cartes et groupes sur le site](/fr/help/website-qr/order-page#menu-tabs-and-groups).",
+            "en": "Two menus, such as BASSARI and HALAVI, remain separate menus. On an order page offering several visible menus, tabs select one menu at a time. Category menu pills represent groups within that menu, such as Sandwiches, rather than internal library categories. Enable each menu’s Web channel, select them in the order page settings, then check both navigation levels in preview and after publishing. Group navigation styling lives in Item list. See [website menu and group navigation](/en/help/website-qr/order-page#menu-tabs-and-groups).",
+            "he": "שני תפריטים, למשל BASSARI ו-HALAVI, נשארים תפריטים נפרדים. בעמוד הזמנה שמציע כמה תפריטים גלויים, הלשוניות בוחרות תפריט אחד בכל פעם. כפתורי תפריט הקטגוריות מייצגים קבוצות בתוך התפריט, למשל כריכים, ולא קטגוריות פנימיות בספרייה. הפעילו את ערוץ האינטרנט בכל תפריט, בחרו אותם בהגדרות עמוד ההזמנה ובדקו את שתי רמות הניווט בתצוגה המקדימה ואחרי הפרסום. סגנון ניווט הקבוצות מוגדר ברשימת הפריטים. ראו [ניווט בתפריטים ובקבוצות באתר](/he/help/website-qr/order-page#menu-tabs-and-groups)."
+          }
+        },
+        {
           "id": "section-3",
           "level": 2,
           "title": {
@@ -32918,14 +32933,16 @@
           "src/components/website-v3/OrderPageEditor.tsx",
           "src/components/website-v3/OrderDiscoveryAppearanceEditor.tsx",
           "src/components/website-v3/CategoryNavigationEditor.tsx",
-          "src/components/website-v3/CommerceSelector.tsx"
+          "src/components/website-v3/CommerceSelector.tsx",
+          "src/lib/i18n.tsx"
         ],
         "foodyweb": [
           "components/website-v3/**",
           "components/themed/**",
           "components/Category*.tsx",
           "components/OrderDiscovery*.tsx",
-          "components/OrderMenu*.tsx"
+          "components/OrderMenu*.tsx",
+          "app/globals.css"
         ]
       },
       "operations": [
@@ -32940,6 +32957,19 @@
             "en": "Select the displayed menu and desktop/mobile layout. Configure group banners, category navigation, prices and descriptions with the available controls. Menu groups control public ordering structure; internal categories do not create public sections.",
             "fr": "Sélectionnez le menu et les dispositions ordinateur/mobile. Réglez bannières de groupes, navigation, prix et descriptions avec les contrôles proposés. Les groupes de menu organisent l’affichage public ; les catégories internes ne créent pas de sections publiques.",
             "he": "בחרו תפריט ופריסות מחשב ונייד. הגדירו באנרים, ניווט, מחירים ותיאורים בשדות הזמינים. קבוצות תפריט בונות את התצוגה הציבורית; קטגוריות פנימיות אינן מקטעים ציבוריים."
+          }
+        },
+        {
+          "id": "menu-tabs-and-groups",
+          "title": {
+            "fr": "Distinguer les cartes et leurs groupes",
+            "en": "Separate menus from their groups",
+            "he": "הבחנה בין תפריטים לקבוצות שלהם"
+          },
+          "instructions": {
+            "fr": "Dans Site web → Liste des articles, les cartes disponibles sur cette page (par exemple BASSARI et HALAVI) ont leurs propres onglets soulignés lorsqu’il y en a plusieurs. Un onglet affiche uniquement les articles et groupes de cette carte. Le réglage Menu des catégories concerne les groupes de la carte sélectionnée, par exemple Sandwichs et Boissons. Son style Pastille, Arrondi ou Souligné s’applique aux groupes sur ordinateur ; sur mobile, ces groupes gardent la navigation soulignée. Masquer le Menu des catégories retire seulement les liens des groupes : les onglets des cartes restent accessibles. Titres des catégories contrôle les titres de groupes dans la liste. Vérifiez les deux cartes dans l’aperçu, puis publiez et contrôlez le lien public sur ordinateur et mobile. Si un onglet manque, vérifiez le canal Web, les cartes sélectionnées dans Paramètres de la page et la présence d’articles visibles dans leurs groupes.",
+            "en": "In Website → Item list, menus available on this page (for example BASSARI and HALAVI) have their own underlined tabs when more than one exists. A tab shows only that menu’s items and groups. Category menu controls groups within the selected menu, such as Sandwiches and Drinks. Its Pill, Rounded or Underlined desktop style applies to groups; on mobile these groups retain underlined navigation. Hiding Category menu removes only the group links: menu tabs stay available. Category titles controls group headings in the list. Check both menus in preview, then publish and review the public link on desktop and mobile. If a tab is missing, check the Web channel, menus selected in Page settings, and visible items inside their groups.",
+            "he": "באתר → רשימת הפריטים, לתפריטים הזמינים בעמוד (למשל BASSARI ו-HALAVI) יש לשוניות נפרדות עם קו תחתון כשיש יותר מתפריט אחד. כל לשונית מציגה רק את הפריטים והקבוצות של אותו תפריט. ההגדרה תפריט קטגוריות מתייחסת לקבוצות בתפריט שנבחר, למשל כריכים ומשקאות. הסגנון גלולה, מעוגל או קו תחתון במחשב חל על הקבוצות; בנייד נשמר ניווט קבוצות עם קו תחתון. הסתרת תפריט הקטגוריות מסירה רק את קישורי הקבוצות: לשוניות התפריטים נשארות זמינות. כותרות קטגוריות קובעת את כותרות הקבוצות ברשימה. בדקו את שני התפריטים בתצוגה המקדימה, פרסמו ובדקו את הקישור הציבורי במחשב ובנייד. אם לשונית חסרה, בדקו את ערוץ האינטרנט, את התפריטים שנבחרו בהגדרות העמוד ואת נוכחותם של פריטים גלויים בקבוצות."
           }
         },
         {
@@ -32998,7 +33028,7 @@
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-10-21",
+      "procedureUpdatedAt": "2026-10-25",
       "evidence": [
         {
           "service": "foodyadmin",
@@ -33015,6 +33045,14 @@
         {
           "service": "foodyadmin",
           "file": "src/components/website-v3/OrderPageEditor.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/lib/i18n.tsx"
+        },
+        {
+          "service": "foodyweb",
+          "file": "app/globals.css"
         },
         {
           "service": "foodyweb",
@@ -39055,6 +39093,19 @@
           }
         },
         {
+          "id": "choose-menu-and-group",
+          "title": {
+            "fr": "Choisir une carte puis un groupe",
+            "en": "Choose a menu, then a group",
+            "he": "בחירת תפריט ואז קבוצה"
+          },
+          "instructions": {
+            "fr": "Si le restaurant propose plusieurs cartes sur la page, choisissez leur onglet, par exemple BASSARI ou HALAVI. Seuls les groupes et articles de la carte sélectionnée s’affichent. Les pastilles ou liens en dessous permettent d’atteindre ses groupes, comme Sandwichs ou Boissons. La recherche et le filtre de disponibilité s’appliquent à cette carte. Une recherche sans résultat ne retire pas les onglets ; changer de carte efface la recherche. Parcourir une autre carte conserve le panier. Si vous ne trouvez pas un article, essayez l’autre carte ou effacez la recherche ; sa présence dépend aussi de sa disponibilité et de sa publication.",
+            "en": "If the restaurant offers several menus on the page, select their tab, such as BASSARI or HALAVI. Only the selected menu’s groups and items appear. Pills or links underneath navigate to its groups, such as Sandwiches or Drinks. Search and the availability filter apply to this menu. A search with no results keeps menu tabs visible; switching menus clears the search. Browsing another menu keeps the basket. If an item is missing, try another menu or clear the search; visibility also depends on availability and publication.",
+            "he": "אם העסק מציע כמה תפריטים בעמוד, בחרו לשונית כגון BASSARI או HALAVI. יוצגו רק הקבוצות והפריטים של התפריט שנבחר. הכפתורים או הקישורים שמתחת מאפשרים להגיע לקבוצות שלו, כגון כריכים ומשקאות. החיפוש ומסנן הזמינות חלים על התפריט הזה. חיפוש ללא תוצאות אינו מסתיר את לשוניות התפריטים; מעבר לתפריט אחר מנקה את החיפוש. צפייה בתפריט אחר שומרת על הסל. אם פריט חסר, נסו תפריט אחר או נקו את החיפוש; הנראות תלויה גם בזמינות ובפרסום."
+          }
+        },
+        {
           "id": "basket",
           "title": {
             "en": "Build a basket",
@@ -43738,7 +43789,8 @@
           "src/lib/**"
         ],
         "foodyweb": [
-          "lib/**"
+          "lib/**",
+          "app/globals.css"
         ],
         "foodypos": [
           "lib/core/**"
@@ -77260,17 +77312,6 @@
       "line": 1
     },
     {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:146",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "section.is_visible",
-      "line": 146
-    },
-    {
       "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:648",
       "service": "foodyadmin",
       "source": "src/components/website-v3/field-contracts.ts",
@@ -79524,6 +79565,17 @@
       "kind": "configuration-field",
       "field": "section.delete",
       "line": 1014
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:146",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.is_visible",
+      "line": 146
     },
     {
       "id": "foodyadmin:src/components/website/CheckoutEditor.tsx:ui-controls:1",
@@ -83756,6 +83808,7 @@
       "labels": [
         "left",
         "lowStock",
+        "menu",
         "soldOut"
       ],
       "actions": [
@@ -88750,9 +88803,9 @@
     }
   ],
   "coverage": {
-    "sharedRuntimeFiles": 415,
+    "sharedRuntimeFiles": 414,
     "features": 100,
-    "operations": 666,
+    "operations": 669,
     "sourceFiles": 2173,
     "surfaces": 2041,
     "unclassifiedRoutes": []

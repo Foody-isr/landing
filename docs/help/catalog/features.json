@@ -2943,6 +2943,19 @@
         }
       },
       {
+        "id": "public-menu-tabs",
+        "title": {
+          "fr": "Vérifier les onglets des cartes sur le site",
+          "en": "Check menu tabs on the website",
+          "he": "בדיקת לשוניות התפריטים באתר"
+        },
+        "instructions": {
+          "fr": "Deux cartes, par exemple BASSARI et HALAVI, restent deux cartes distinctes. Sur une page de commande qui propose plusieurs cartes visibles, leurs onglets sélectionnent une carte à la fois. Les pastilles du Menu des catégories représentent les groupes à l’intérieur de cette carte, par exemple Sandwichs, et non les catégories internes de la bibliothèque. Activez le canal Web de chaque carte, sélectionnez-les dans les paramètres de la page de commande, puis vérifiez les deux niveaux dans l’aperçu et après publication. Le style de la navigation des groupes se règle dans Liste des articles. Voir [la procédure des cartes et groupes sur le site](/fr/help/website-qr/order-page#menu-tabs-and-groups).",
+          "en": "Two menus, such as BASSARI and HALAVI, remain separate menus. On an order page offering several visible menus, tabs select one menu at a time. Category menu pills represent groups within that menu, such as Sandwiches, rather than internal library categories. Enable each menu’s Web channel, select them in the order page settings, then check both navigation levels in preview and after publishing. Group navigation styling lives in Item list. See [website menu and group navigation](/en/help/website-qr/order-page#menu-tabs-and-groups).",
+          "he": "שני תפריטים, למשל BASSARI ו-HALAVI, נשארים תפריטים נפרדים. בעמוד הזמנה שמציע כמה תפריטים גלויים, הלשוניות בוחרות תפריט אחד בכל פעם. כפתורי תפריט הקטגוריות מייצגים קבוצות בתוך התפריט, למשל כריכים, ולא קטגוריות פנימיות בספרייה. הפעילו את ערוץ האינטרנט בכל תפריט, בחרו אותם בהגדרות עמוד ההזמנה ובדקו את שתי רמות הניווט בתצוגה המקדימה ואחרי הפרסום. סגנון ניווט הקבוצות מוגדר ברשימת הפריטים. ראו [ניווט בתפריטים ובקבוצות באתר](/he/help/website-qr/order-page#menu-tabs-and-groups)."
+        }
+      },
+      {
         "id": "section-3",
         "level": 2,
         "title": {
@@ -7545,14 +7558,16 @@
         "src/components/website-v3/OrderPageEditor.tsx",
         "src/components/website-v3/OrderDiscoveryAppearanceEditor.tsx",
         "src/components/website-v3/CategoryNavigationEditor.tsx",
-        "src/components/website-v3/CommerceSelector.tsx"
+        "src/components/website-v3/CommerceSelector.tsx",
+        "src/lib/i18n.tsx"
       ],
       "foodyweb": [
         "components/website-v3/**",
         "components/themed/**",
         "components/Category*.tsx",
         "components/OrderDiscovery*.tsx",
-        "components/OrderMenu*.tsx"
+        "components/OrderMenu*.tsx",
+        "app/globals.css"
       ]
     },
     "operations": [
@@ -7567,6 +7582,19 @@
           "en": "Select the displayed menu and desktop/mobile layout. Configure group banners, category navigation, prices and descriptions with the available controls. Menu groups control public ordering structure; internal categories do not create public sections.",
           "fr": "Sélectionnez le menu et les dispositions ordinateur/mobile. Réglez bannières de groupes, navigation, prix et descriptions avec les contrôles proposés. Les groupes de menu organisent l’affichage public ; les catégories internes ne créent pas de sections publiques.",
           "he": "בחרו תפריט ופריסות מחשב ונייד. הגדירו באנרים, ניווט, מחירים ותיאורים בשדות הזמינים. קבוצות תפריט בונות את התצוגה הציבורית; קטגוריות פנימיות אינן מקטעים ציבוריים."
+        }
+      },
+      {
+        "id": "menu-tabs-and-groups",
+        "title": {
+          "fr": "Distinguer les cartes et leurs groupes",
+          "en": "Separate menus from their groups",
+          "he": "הבחנה בין תפריטים לקבוצות שלהם"
+        },
+        "instructions": {
+          "fr": "Dans Site web → Liste des articles, les cartes disponibles sur cette page (par exemple BASSARI et HALAVI) ont leurs propres onglets soulignés lorsqu’il y en a plusieurs. Un onglet affiche uniquement les articles et groupes de cette carte. Le réglage Menu des catégories concerne les groupes de la carte sélectionnée, par exemple Sandwichs et Boissons. Son style Pastille, Arrondi ou Souligné s’applique aux groupes sur ordinateur ; sur mobile, ces groupes gardent la navigation soulignée. Masquer le Menu des catégories retire seulement les liens des groupes : les onglets des cartes restent accessibles. Titres des catégories contrôle les titres de groupes dans la liste. Vérifiez les deux cartes dans l’aperçu, puis publiez et contrôlez le lien public sur ordinateur et mobile. Si un onglet manque, vérifiez le canal Web, les cartes sélectionnées dans Paramètres de la page et la présence d’articles visibles dans leurs groupes.",
+          "en": "In Website → Item list, menus available on this page (for example BASSARI and HALAVI) have their own underlined tabs when more than one exists. A tab shows only that menu’s items and groups. Category menu controls groups within the selected menu, such as Sandwiches and Drinks. Its Pill, Rounded or Underlined desktop style applies to groups; on mobile these groups retain underlined navigation. Hiding Category menu removes only the group links: menu tabs stay available. Category titles controls group headings in the list. Check both menus in preview, then publish and review the public link on desktop and mobile. If a tab is missing, check the Web channel, menus selected in Page settings, and visible items inside their groups.",
+          "he": "באתר → רשימת הפריטים, לתפריטים הזמינים בעמוד (למשל BASSARI ו-HALAVI) יש לשוניות נפרדות עם קו תחתון כשיש יותר מתפריט אחד. כל לשונית מציגה רק את הפריטים והקבוצות של אותו תפריט. ההגדרה תפריט קטגוריות מתייחסת לקבוצות בתפריט שנבחר, למשל כריכים ומשקאות. הסגנון גלולה, מעוגל או קו תחתון במחשב חל על הקבוצות; בנייד נשמר ניווט קבוצות עם קו תחתון. הסתרת תפריט הקטגוריות מסירה רק את קישורי הקבוצות: לשוניות התפריטים נשארות זמינות. כותרות קטגוריות קובעת את כותרות הקבוצות ברשימה. בדקו את שני התפריטים בתצוגה המקדימה, פרסמו ובדקו את הקישור הציבורי במחשב ובנייד. אם לשונית חסרה, בדקו את ערוץ האינטרנט, את התפריטים שנבחרו בהגדרות העמוד ואת נוכחותם של פריטים גלויים בקבוצות."
         }
       },
       {
@@ -7625,7 +7653,7 @@
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-21"
+    "procedureUpdatedAt": "2026-10-25"
   },
   {
     "id": "website-journey",
@@ -10628,6 +10656,19 @@
         }
       },
       {
+        "id": "choose-menu-and-group",
+        "title": {
+          "fr": "Choisir une carte puis un groupe",
+          "en": "Choose a menu, then a group",
+          "he": "בחירת תפריט ואז קבוצה"
+        },
+        "instructions": {
+          "fr": "Si le restaurant propose plusieurs cartes sur la page, choisissez leur onglet, par exemple BASSARI ou HALAVI. Seuls les groupes et articles de la carte sélectionnée s’affichent. Les pastilles ou liens en dessous permettent d’atteindre ses groupes, comme Sandwichs ou Boissons. La recherche et le filtre de disponibilité s’appliquent à cette carte. Une recherche sans résultat ne retire pas les onglets ; changer de carte efface la recherche. Parcourir une autre carte conserve le panier. Si vous ne trouvez pas un article, essayez l’autre carte ou effacez la recherche ; sa présence dépend aussi de sa disponibilité et de sa publication.",
+          "en": "If the restaurant offers several menus on the page, select their tab, such as BASSARI or HALAVI. Only the selected menu’s groups and items appear. Pills or links underneath navigate to its groups, such as Sandwiches or Drinks. Search and the availability filter apply to this menu. A search with no results keeps menu tabs visible; switching menus clears the search. Browsing another menu keeps the basket. If an item is missing, try another menu or clear the search; visibility also depends on availability and publication.",
+          "he": "אם העסק מציע כמה תפריטים בעמוד, בחרו לשונית כגון BASSARI או HALAVI. יוצגו רק הקבוצות והפריטים של התפריט שנבחר. הכפתורים או הקישורים שמתחת מאפשרים להגיע לקבוצות שלו, כגון כריכים ומשקאות. החיפוש ומסנן הזמינות חלים על התפריט הזה. חיפוש ללא תוצאות אינו מסתיר את לשוניות התפריטים; מעבר לתפריט אחר מנקה את החיפוש. צפייה בתפריט אחר שומרת על הסל. אם פריט חסר, נסו תפריט אחר או נקו את החיפוש; הנראות תלויה גם בזמינות ובפרסום."
+        }
+      },
+      {
         "id": "basket",
         "title": {
           "en": "Build a basket",
@@ -11905,7 +11946,8 @@
         "src/lib/**"
       ],
       "foodyweb": [
-        "lib/**"
+        "lib/**",
+        "app/globals.css"
       ],
       "foodypos": [
         "lib/core/**"
