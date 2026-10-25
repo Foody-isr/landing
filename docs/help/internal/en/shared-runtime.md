@@ -14,6 +14,12 @@ releaseStatus: available
 ---
 Engineering only: shared authentication clients, state, localization, styling, proxies and platform bootstrap support the documented business modules.
 
+<span id="pos-reports-navigation" />
+
+## Distinguish reports, cash and card deposits
+
+On a tablet, More → Reports opens Cash drawer balance when your role permits, otherwise permitted Sales or Terminal deposits. The left rail contains only accessible sections. Cash movements shows the session loaded on this device with date, type, amount and reason; it is not a history of other sessions. On a phone, Reports remains a destination list. Opening or refreshing a report closes nothing. Closing physical cash and the terminal’s Close and deposit remain separate actions even when both belong to the same end-of-day procedure.
+
 <span id="verifone-admin-money-operations" />
 
 ## Refund or void a Verifone online payment

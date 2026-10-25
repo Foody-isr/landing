@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-18.
 
-100 fiches de fonctionnalités, 666 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2173 fichiers applicatifs et 2041 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+100 fiches de fonctionnalités, 680 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2177 fichiers applicatifs et 2041 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,11 +10,11 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 560 | 870 | 6ce6e14287de ; versioned |
-| foodyadmin | 764 | 775 | b146c6fdcea8 ; versioned |
-| foodylanding | 127 | 21 | b146b31b4950 ; versioned |
-| foodyweb | 337 | 167 | 5ddc1ea843d9 ; versioned |
-| foodypos | 341 | 158 | 64dce2731c01 ; versioned |
+| foodyserver | 560 | 870 | 9ec2eb389555 ; versioned |
+| foodyadmin | 764 | 775 | b8b1b039f891 ; versioned |
+| foodyweb | 337 | 167 | dae28f9f7d46 ; versioned |
+| foodylanding | 127 | 21 | 4e604f2355c4 ; versioned |
+| foodypos | 345 | 158 | d8f8dbd13b92 ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
 
 ## getting-started
@@ -131,6 +131,8 @@ Identifiant : `staff-roles`. Public : public. Disponibilité : available. Servic
 
 Identifiant : `staff-devices-shifts`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodypos.
 
+- [Terminer le rapport avant de se déconnecter](../../src/content/help/fr/staff/devices-and-shifts.mdx#pending-cash-sign-out)
+- [Distinguer rapports, espèces et dépôt carte](../../src/content/help/fr/staff/devices-and-shifts.mdx#pos-reports-navigation)
 - [Activer un appareil POS](../../src/content/help/fr/staff/devices-and-shifts.mdx#pair)
 - [Utiliser un code POS personnel](../../src/content/help/fr/staff/devices-and-shifts.mdx#pin)
 - [Consulter les shifts](../../src/content/help/fr/staff/devices-and-shifts.mdx#report)
@@ -172,6 +174,8 @@ Identifiant : `social-stories`. Public : public. Disponibilité : available. Ser
 
 Identifiant : `analytics-dashboard`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodypos.
 
+- [Lire les réductions des commandes payées](../../src/content/help/fr/analytics/dashboard.mdx#pos-discount-basis)
+- [Lire les ventes sur la caisse](../../src/content/help/fr/analytics/dashboard.mdx#pos-sales-report)
 - [Commencer par l’accueil](../../src/content/help/fr/analytics/dashboard.mdx#section-1)
 - [Vérifier la base de date](../../src/content/help/fr/analytics/dashboard.mdx#section-2)
 - [Comparaisons et données indisponibles](../../src/content/help/fr/analytics/dashboard.mdx#section-3)
@@ -372,6 +376,7 @@ Identifiant : `menu-menus-and-groups`. Public : public. Disponibilité : availab
 
 - [Qu'est-ce que c'est ?](../../src/content/help/fr/menu/menus-and-groups.mdx#section-1)
 - [La structure](../../src/content/help/fr/menu/menus-and-groups.mdx#section-2)
+- [Vérifier les onglets des cartes sur le site](../../src/content/help/fr/menu/menus-and-groups.mdx#public-menu-tabs)
 - [Préparer, enregistrer et publier une carte](../../src/content/help/fr/menu/menus-and-groups.mdx#section-3)
 - [Choisir des articles avec photos et filtres](../../src/content/help/fr/menu/menus-and-groups.mdx#draft-item-picker)
 - [Où ça se vend : en ligne ou en caisse](../../src/content/help/fr/menu/menus-and-groups.mdx#section-4)
@@ -451,6 +456,7 @@ Identifiant : `pos-discount-library`. Public : public. Disponibilité : availabl
 
 Identifiant : `orders-managing-orders`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodypos.
 
+- [Ouvrir une commande dans Menu sans fusionner les paiements QR](../../src/content/help/fr/orders/managing-orders.mdx#open-saved-order-in-menu)
 - [Ouvrir la commande liée à une transaction](../../src/content/help/fr/orders/managing-orders.mdx#open-order-from-transaction)
 - [Rembourser ou annuler un paiement en ligne Verifone](../../src/content/help/fr/orders/managing-orders.mdx#verifone-admin-money-operations)
 - [Vérifier le plafond de préautorisation au poids](../../src/content/help/fr/orders/managing-orders.mdx#weight-hold-margin)
@@ -600,6 +606,7 @@ Identifiant : `pos-courses`. Public : public. Disponibilité : available. Servic
 
 Identifiant : `pos-comp-void`. Public : public. Disponibilité : available. Services : foodyserver, foodypos.
 
+- [Ne pas modifier les lignes d’une commande QR consultée](../../src/content/help/fr/orders/discount-comp-void.mdx#saved-qr-read-only-lines)
 - [Commandes historiques en lecture seule](../../src/content/help/fr/orders/discount-comp-void.mdx#historical-order-read-only)
 - [Appliquer une remise](../../src/content/help/fr/orders/discount-comp-void.mdx#discount)
 - [Offrir ou retirer un offert](../../src/content/help/fr/orders/discount-comp-void.mdx#comp)
@@ -643,6 +650,7 @@ Identifiant : `pos-payments`. Public : public. Disponibilité : available. Servi
 - [Lire correctement le total des transactions](../../src/content/help/fr/payments/pos-checkout.mdx#transaction-gross-total)
 - [Clôturer et déposer un lot du terminal Verifone](../../src/content/help/fr/payments/pos-checkout.mdx#terminal-deposit)
 - [Consulter les totaux ou utiliser les actions avancées du terminal](../../src/content/help/fr/payments/pos-checkout.mdx#terminal-reports-advanced)
+- [Vérifier le paiement d’une seule commande QR](../../src/content/help/fr/payments/pos-checkout.mdx#saved-qr-payment-scope)
 - [Vérifier pourboire et reçu](../../src/content/help/fr/payments/pos-checkout.mdx#receipt-tip)
 - [Vérifier une facture Invoice4U détaillée](../../src/content/help/fr/payments/pos-checkout.mdx#invoice4u-order-lines)
 - [Attendre le paiement au comptoir avant la cuisine](../../src/content/help/fr/payments/pos-checkout.mdx#counter-terminal-payment-before-kitchen)
@@ -757,6 +765,7 @@ Identifiant : `website-sections`. Public : public. Disponibilité : available. S
 Identifiant : `website-order-design`. Public : public. Disponibilité : available. Services : foodyadmin, foodyweb.
 
 - [Choisir disposition et navigation du menu](../../src/content/help/fr/website-qr/order-page.mdx#menu-layout)
+- [Distinguer les cartes et leurs groupes](../../src/content/help/fr/website-qr/order-page.mdx#menu-tabs-and-groups)
 - [Personnaliser la fiche article](../../src/content/help/fr/website-qr/order-page.mdx#item-surface)
 - [Placer les contenus de découverte](../../src/content/help/fr/website-qr/order-page.mdx#discovery)
 - [Vérifier l’entrée de commande sur mobile](../../src/content/help/fr/website-qr/order-page.mdx#mobile-fulfillment-review)
@@ -887,6 +896,9 @@ Identifiant : `notifications-team`. Public : public. Disponibilité : available.
 
 Identifiant : `pos-workspace`. Public : public. Disponibilité : available. Services : foodypos.
 
+- [Distinguer la commande sélectionnée de l’addition de table](../../src/content/help/fr/settings/pos-workspace.mdx#saved-order-workspace)
+- [Vérifier la devise des rapports](../../src/content/help/fr/settings/pos-workspace.mdx#report-currency)
+- [Distinguer rapports, espèces et dépôt carte](../../src/content/help/fr/settings/pos-workspace.mdx#pos-reports-navigation)
 - [Retrouver les espaces de travail](../../src/content/help/fr/settings/pos-workspace.mdx#navigation)
 - [Personnaliser l’appareil](../../src/content/help/fr/settings/pos-workspace.mdx#preferences)
 - [Traiter une perte de connexion](../../src/content/help/fr/settings/pos-workspace.mdx#connectivity)
@@ -1082,6 +1094,7 @@ Identifiant : `message-templates`. Public : public. Disponibilité : available. 
 Identifiant : `guest-ordering`. Public : public. Disponibilité : available. Services : foodyserver, foodyweb.
 
 - [Vérifier le plafond de préautorisation au poids](../../src/content/help/fr/guest/online-ordering.mdx#weight-hold-margin)
+- [Choisir une carte puis un groupe](../../src/content/help/fr/guest/online-ordering.mdx#choose-menu-and-group)
 - [Composer le panier](../../src/content/help/fr/guest/online-ordering.mdx#basket)
 - [Choisir une adresse sur téléphone](../../src/content/help/fr/guest/online-ordering.mdx#mobile-fulfillment)
 - [Choisir coordonnées et remise](../../src/content/help/fr/guest/online-ordering.mdx#fulfillment)
@@ -1093,7 +1106,7 @@ Identifiant : `guest-ordering`. Public : public. Disponibilité : available. Ser
 
 ### [Suivi, reçus et moyens enregistrés](../../src/content/help/fr/guest/tracking-and-account.mdx)
 
-Identifiant : `guest-account-tracking`. Public : public. Disponibilité : available. Services : foodyserver, foodylanding, foodyweb.
+Identifiant : `guest-account-tracking`. Public : public. Disponibilité : available. Services : foodyserver, foodyweb, foodylanding.
 
 - [Se connecter avant de commander](../../src/content/help/fr/guest/tracking-and-account.mdx#entry-sign-in)
 - [Lire l’état de commande](../../src/content/help/fr/guest/tracking-and-account.mdx#tracking)
@@ -1205,8 +1218,9 @@ Identifiant : `design-sandboxes`. Public : internal. Disponibilité : available.
 
 ### [Socle applicatif partagé](internal/fr/shared-runtime.md)
 
-Identifiant : `shared-runtime`. Public : internal. Disponibilité : available. Services : foodyadmin, foodylanding, foodyweb, foodypos, foodybackoffice.
+Identifiant : `shared-runtime`. Public : internal. Disponibilité : available. Services : foodyadmin, foodyweb, foodylanding, foodypos, foodybackoffice.
 
+- [Distinguer rapports, espèces et dépôt carte](internal/fr/shared-runtime.md#pos-reports-navigation)
 - [Rembourser ou annuler un paiement en ligne Verifone](internal/fr/shared-runtime.md#verifone-admin-money-operations)
 - [Vérifier le plafond de préautorisation au poids](internal/fr/shared-runtime.md#weight-hold-margin)
 - [Vérifier les changements du socle](internal/fr/shared-runtime.md#classify)

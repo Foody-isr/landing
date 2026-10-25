@@ -12,6 +12,24 @@ releaseStatus: available
 ---
 Open More/Plus on the POS. Destinations are filtered by role and device capabilities.
 
+<span id="saved-order-workspace" />
+
+## Distinguish the selected order from the table check
+
+With orders.manage, an active QR or web order opens Menu with its own saved check on the right on tablets. The catalogue remains browsable without changing saved lines or a local draft. Actions manages only that order; Guest shows its own contact. View table separately opens the verified current session and, when needed, a bill choice. Orders in the header returns to the list. A failed read shows Retry rather than an empty basket. Historical records and view-only roles remain read-only. See [the full workflow](/en/help/orders/managing-orders#open-saved-order-in-menu).
+
+<span id="report-currency" />
+
+## Check report currency
+
+Restaurant information and the sales report use the saved currency returned by the API, not a POS-forced dollar. The report refuses to load if currency is missing or the information belongs to another restaurant. Check the current restaurant and its settings, then refresh; do not manually change the symbol to reconcile amounts.
+
+<span id="pos-reports-navigation" />
+
+## Distinguish reports, cash and card deposits
+
+On a tablet, More → Reports opens Cash drawer balance when your role permits, otherwise permitted Sales or Terminal deposits. The left rail contains only accessible sections. Cash movements shows the session loaded on this device with date, type, amount and reason; it is not a history of other sessions. On a phone, Reports remains a destination list. Opening or refreshing a report closes nothing. Closing physical cash and the terminal’s Close and deposit remain separate actions even when both belong to the same end-of-day procedure.
+
 <span id="navigation" />
 
 ## Find operational workspaces
