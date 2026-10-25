@@ -784,7 +784,9 @@
       "foodyadmin": [
         "src/app/[restaurantId]/analytics/**",
         "src/app/[restaurantId]/dashboard/**",
-        "src/components/analytics/**"
+        "src/components/analytics/**",
+        "src/components/DateRangePicker.tsx",
+        "src/lib/series.ts"
       ],
       "foodyserver": [
         "internal/analytics/**"
@@ -875,12 +877,25 @@
           "fr": "Ouvrez **Rapports** pour accéder aux pages autorisées par votre rôle. Choisissez la période et vérifiez les filtres. La vue d’ensemble propose une action d’export ; contrôlez que la période et le calcul exportés correspondent à votre analyse.",
           "he": "פתחו **דוחות** כדי להציג את המסכים המותרים לתפקיד שלכם. בחרו תקופה ובדקו את המסננים. בסקירה קיימת פעולת ייצוא; ודאו שהתאריכים ושיטת החישוב תואמים לניתוח הרצוי."
         }
+      },
+      {
+        "id": "weekly-series-rollover",
+        "title": {
+          "fr": "Afficher automatiquement la série actuelle",
+          "en": "Open the current weekly batch automatically",
+          "he": "הצגה אוטומטית של הסבב השבועי הנוכחי"
+        },
+        "instructions": {
+          "fr": "Pour un restaurant configuré en lots hebdomadaires, ouvrez **Accueil** ou **Commandes** avec la base de date **Série**. La série actuelle est sélectionnée par défaut, même sans commande : ses totaux restent alors à zéro. Elle avance après le dernier jour de remise de la série précédente, selon le fuseau horaire du restaurant, sans attendre la première commande ni l’ouverture des commandes. Sur une page restée ouverte, la sélection suit ce changement au prochain rafraîchissement automatique (environ une minute) ou au retour sur l’onglet.\n\nVous pouvez sélectionner une ancienne série dans le calendrier ; cette consultation reste en place pendant que la page est ouverte. Une commande déjà prise pour une semaine plus lointaine ne remplace pas la série actuelle par défaut. Un lien de suivi des paiements conserve la période qu’il indique. Si la date semble incorrecte, vérifiez les jours de remise et le fuseau horaire configurés, puis rechargez la page. Ce basculement ne crée aucune commande et ne publie pas une carte.",
+          "en": "For a restaurant configured for weekly batches, open **Home** or **Orders** using the **Série** date basis. The current batch is selected by default even without orders; its totals then stay at zero. It advances after the previous batch’s final fulfillment day in the restaurant timezone, without waiting for the first order or for ordering to open. An open page follows this change on the next automatic refresh (about one minute) or when you return to the tab.\n\nYou can select an older service in the calendar; that selection stays in place while the page is open. An order for a later week does not replace the current batch as the default. A payment-attention link keeps its explicit period. If the date looks incorrect, check the configured fulfillment days and restaurant timezone, then reload. Rollover does not create an order or publish a menu.",
+          "he": "במסעדה שמוגדרת לסבבים שבועיים, פתחו את **בית** או **הזמנות** עם בסיס התאריך **סדרה**. הסבב הנוכחי נבחר כברירת מחדל גם ללא הזמנות, ואז הסכומים שלו הם אפס. המעבר מתבצע לאחר יום המסירה האחרון של הסבב הקודם, לפי אזור הזמן של המסעדה, בלי להמתין להזמנה הראשונה או לפתיחת ההזמנות. דף שנשאר פתוח עוקב אחר המעבר ברענון האוטומטי הבא (בערך דקה) או בחזרה ללשונית.\n\nאפשר לבחור שירות קודם בלוח השנה; הבחירה נשמרת כל עוד הדף פתוח. הזמנה לשבוע מאוחר יותר אינה מחליפה את הסבב הנוכחי כברירת מחדל. קישור למעקב תשלומים שומר על התקופה המפורשת שלו. אם התאריך נראה שגוי, בדקו את ימי המסירה ואת אזור הזמן של המסעדה ואז טענו מחדש. המעבר אינו יוצר הזמנה ואינו מפרסם תפריט."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": true,
-    "procedureUpdatedAt": "2026-10-18"
+    "procedureUpdatedAt": "2026-10-25"
   },
   {
     "id": "getting-started-complete-setup-guide",
@@ -1342,6 +1357,19 @@
           "fr": "Vous pouvez demander comment envoyer un modèle WhatsApp pour une commande ou une sélection, puis vérifier les sources du [guide WhatsApp](../communications/whatsapp). L’assistant explique le panneau Business/application, l’aperçu et les statuts documentés. Il ne peut pas lire vos commandes, savoir si votre client a reçu un message, modifier vos automatismes ou envoyer un message. Pour un résultat réel, ouvrez Messages au client dans la commande ; ne collez ni numéro de client, ni lien privé, ni identifiant de connexion dans la conversation.",
           "en": "Ask how to send a WhatsApp model for one order or a selection, then check the sources in the [WhatsApp guide](../communications/whatsapp). The assistant explains the documented Business/app composer, previews and statuses. It cannot read your orders, know whether your customer received a message, change automations or send a message. Check Customer messages on the actual order for recorded evidence; do not paste customer numbers, private links or credentials into the conversation.",
           "he": "אפשר לשאול איך לשלוח תבנית WhatsApp להזמנה אחת או לבחירה מרובה ולבדוק את המקורות ב[מדריך WhatsApp](../communications/whatsapp). העוזר מסביר את פאנל Business והאפליקציה, התצוגה המקדימה והמצבים המתועדים. אין לו אפשרות לקרוא הזמנות, לדעת אם הלקוח קיבל הודעה, לשנות אוטומציות או לשלוח הודעה. בדקו הודעות ללקוח בהזמנה עצמה לראיות מתועדות; אין להדביק בשיחה מספרי לקוחות, קישורים פרטיים או פרטי התחברות."
+        }
+      },
+      {
+        "id": "weekly-series-support",
+        "title": {
+          "fr": "Vérifier une série qui vient de changer",
+          "en": "Check a weekly batch rollover",
+          "he": "בדיקת מעבר לסבב שבועי חדש"
+        },
+        "instructions": {
+          "fr": "Pour comprendre pourquoi Accueil ou Commandes affiche une nouvelle série vide, consultez [Précommandes, créneaux et séries](../orders/preorders-and-batches). La série avance selon le calendrier du restaurant, même sans commande. L’assistant peut expliquer cette règle à partir du guide et citer sa source ; il ne peut pas consulter la configuration ou les commandes de votre restaurant.",
+          "en": "To understand why Home or Orders shows a new empty batch, open [Preorders, slots and batches](../orders/preorders-and-batches). The batch advances using the restaurant calendar even without an order. The assistant can explain the documented rule and cite its source; it cannot inspect your restaurant settings or orders.",
+          "he": "כדי להבין מדוע דף הבית או ההזמנות מציגים סבב חדש וריק, פתחו את [הזמנות מראש, משבצות וסבבים](../orders/preorders-and-batches). הסבב מתקדם לפי לוח השנה של המסעדה גם ללא הזמנה. העוזר יכול להסביר את הכלל המתועד ולצטט מקור, אך אינו יכול לבדוק את הגדרות המסעדה או את הזמנותיה."
         }
       }
     ],
@@ -3482,7 +3510,9 @@
     "selectors": {
       "foodyadmin": [
         "src/app/[restaurantId]/orders/**",
-        "src/components/orders/**"
+        "src/components/orders/**",
+        "src/components/DateRangePicker.tsx",
+        "src/lib/series.ts"
       ],
       "foodyserver": [
         "internal/orders/**"
@@ -3811,6 +3841,19 @@
           "fr": "Si le client utilise un autre numéro pour WhatsApp, ouvrez Clients → sa fiche et choisissez Utiliser pour WhatsApp dans Numéros de téléphone, puis enregistrez. Ce numéro est utilisé pour les messages Meta et Twilio et pour l’ouverture de WhatsApp depuis la commande, y compris les partages de liens et documents. Le téléphone de la commande reste celui des coordonnées et de la vérification SMS. Vérifiez le destinataire affiché dans l’aperçu ; une modification du numéro WhatsApp impose de revoir un nouvel aperçu avant un envoi API. Aucun message de test n’est envoyé lors de l’enregistrement de la fiche.",
           "en": "If the customer uses a different WhatsApp number, open Clients → their profile, select Use for WhatsApp under Phone numbers and save. That number is used by Meta and Twilio messages and by WhatsApp app handoffs from the order, including link and document sharing. The order phone remains its contact and SMS-verification number. Check the preview recipient; changing the WhatsApp selection requires a new reviewed preview before an API send. Saving the customer profile sends no test message.",
           "he": "אם ללקוח מספר WhatsApp אחר, פתחו לקוחות → כרטיס הלקוח, בחרו לשימוש ב-WhatsApp תחת מספרי טלפון ושמרו. המספר משמש הודעות Meta ו-Twilio ופתיחת WhatsApp מההזמנה, כולל שיתוף קישורים ומסמכים. טלפון ההזמנה נשאר מספר הקשר ולאימות SMS. בדקו את הנמען בתצוגה המקדימה; שינוי המספר מחייב בדיקה של תצוגה חדשה לפני שליחה דרך API. שמירת הכרטיס אינה שולחת הודעת בדיקה."
+        }
+      },
+      {
+        "id": "weekly-series-rollover",
+        "title": {
+          "fr": "Afficher automatiquement la série actuelle",
+          "en": "Open the current weekly batch automatically",
+          "he": "הצגה אוטומטית של הסבב השבועי הנוכחי"
+        },
+        "instructions": {
+          "fr": "Pour un restaurant configuré en lots hebdomadaires, ouvrez **Accueil** ou **Commandes** avec la base de date **Série**. La série actuelle est sélectionnée par défaut, même sans commande : ses totaux restent alors à zéro. Elle avance après le dernier jour de remise de la série précédente, selon le fuseau horaire du restaurant, sans attendre la première commande ni l’ouverture des commandes. Sur une page restée ouverte, la sélection suit ce changement au prochain rafraîchissement automatique (environ une minute) ou au retour sur l’onglet.\n\nVous pouvez sélectionner une ancienne série dans le calendrier ; cette consultation reste en place pendant que la page est ouverte. Une commande déjà prise pour une semaine plus lointaine ne remplace pas la série actuelle par défaut. Un lien de suivi des paiements conserve la période qu’il indique. Si la date semble incorrecte, vérifiez les jours de remise et le fuseau horaire configurés, puis rechargez la page. Ce basculement ne crée aucune commande et ne publie pas une carte.",
+          "en": "For a restaurant configured for weekly batches, open **Home** or **Orders** using the **Série** date basis. The current batch is selected by default even without orders; its totals then stay at zero. It advances after the previous batch’s final fulfillment day in the restaurant timezone, without waiting for the first order or for ordering to open. An open page follows this change on the next automatic refresh (about one minute) or when you return to the tab.\n\nYou can select an older service in the calendar; that selection stays in place while the page is open. An order for a later week does not replace the current batch as the default. A payment-attention link keeps its explicit period. If the date looks incorrect, check the configured fulfillment days and restaurant timezone, then reload. Rollover does not create an order or publish a menu.",
+          "he": "במסעדה שמוגדרת לסבבים שבועיים, פתחו את **בית** או **הזמנות** עם בסיס התאריך **סדרה**. הסבב הנוכחי נבחר כברירת מחדל גם ללא הזמנות, ואז הסכומים שלו הם אפס. המעבר מתבצע לאחר יום המסירה האחרון של הסבב הקודם, לפי אזור הזמן של המסעדה, בלי להמתין להזמנה הראשונה או לפתיחת ההזמנות. דף שנשאר פתוח עוקב אחר המעבר ברענון האוטומטי הבא (בערך דקה) או בחזרה ללשונית.\n\nאפשר לבחור שירות קודם בלוח השנה; הבחירה נשמרת כל עוד הדף פתוח. הזמנה לשבוע מאוחר יותר אינה מחליפה את הסבב הנוכחי כברירת מחדל. קישור למעקב תשלומים שומר על התקופה המפורשת שלו. אם התאריך נראה שגוי, בדקו את ימי המסירה ואת אזור הזמן של המסעדה ואז טענו מחדש. המעבר אינו יוצר הזמנה ואינו מפרסם תפריט."
         }
       }
     ],
@@ -5795,11 +5838,25 @@
           "fr": "Vérifiez paiement anticipé et exceptions par produit. Enregistrez, rouvrez les réglages et testez le parcours publié sans utiliser de paiement réel pour le test.",
           "he": "בדקו מדיניות תשלום מראש וחריגים לפי מוצר. שמרו, פתחו שוב ובדקו את המסלול הציבורי בלי לבצע חיוב אמיתי לצורך בדיקה."
         }
+      },
+      {
+        "id": "weekly-series-rollover",
+        "title": {
+          "fr": "Afficher automatiquement la série actuelle",
+          "en": "Open the current weekly batch automatically",
+          "he": "הצגה אוטומטית של הסבב השבועי הנוכחי"
+        },
+        "instructions": {
+          "fr": "Pour un restaurant configuré en lots hebdomadaires, ouvrez **Accueil** ou **Commandes** avec la base de date **Série**. La série actuelle est sélectionnée par défaut, même sans commande : ses totaux restent alors à zéro. Elle avance après le dernier jour de remise de la série précédente, selon le fuseau horaire du restaurant, sans attendre la première commande ni l’ouverture des commandes. Sur une page restée ouverte, la sélection suit ce changement au prochain rafraîchissement automatique (environ une minute) ou au retour sur l’onglet.\n\nVous pouvez sélectionner une ancienne série dans le calendrier ; cette consultation reste en place pendant que la page est ouverte. Une commande déjà prise pour une semaine plus lointaine ne remplace pas la série actuelle par défaut. Un lien de suivi des paiements conserve la période qu’il indique. Si la date semble incorrecte, vérifiez les jours de remise et le fuseau horaire configurés, puis rechargez la page. Ce basculement ne crée aucune commande et ne publie pas une carte.",
+          "en": "For a restaurant configured for weekly batches, open **Home** or **Orders** using the **Série** date basis. The current batch is selected by default even without orders; its totals then stay at zero. It advances after the previous batch’s final fulfillment day in the restaurant timezone, without waiting for the first order or for ordering to open. An open page follows this change on the next automatic refresh (about one minute) or when you return to the tab.\n\nYou can select an older service in the calendar; that selection stays in place while the page is open. An order for a later week does not replace the current batch as the default. A payment-attention link keeps its explicit period. If the date looks incorrect, check the configured fulfillment days and restaurant timezone, then reload. Rollover does not create an order or publish a menu.",
+          "he": "במסעדה שמוגדרת לסבבים שבועיים, פתחו את **בית** או **הזמנות** עם בסיס התאריך **סדרה**. הסבב הנוכחי נבחר כברירת מחדל גם ללא הזמנות, ואז הסכומים שלו הם אפס. המעבר מתבצע לאחר יום המסירה האחרון של הסבב הקודם, לפי אזור הזמן של המסעדה, בלי להמתין להזמנה הראשונה או לפתיחת ההזמנות. דף שנשאר פתוח עוקב אחר המעבר ברענון האוטומטי הבא (בערך דקה) או בחזרה ללשונית.\n\nאפשר לבחור שירות קודם בלוח השנה; הבחירה נשמרת כל עוד הדף פתוח. הזמנה לשבוע מאוחר יותר אינה מחליפה את הסבב הנוכחי כברירת מחדל. קישור למעקב תשלומים שומר על התקופה המפורשת שלו. אם התאריך נראה שגוי, בדקו את ימי המסירה ואת אזור הזמן של המסעדה ואז טענו מחדש. המעבר אינו יוצר הזמנה ואינו מפרסם תפריט."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
-    "preserveExisting": false
+    "preserveExisting": false,
+    "procedureUpdatedAt": "2026-10-25"
   },
   {
     "id": "production",
@@ -8308,12 +8365,25 @@
           "en": "Show customer information screen still controls whether details are offered immediately after a fulfillment method is selected. Its internal guest identifier and note also require an API supporting private guest details. A compatibility rejection confirms neither a kitchen send nor a payment: retain the current sale and have the API updated before resuming. Enabling the screen does not change available methods, their order, table selection at Send, delivery rules or printer profiles.",
           "he": "ההגדרה הצגת מסך פרטי לקוח ממשיכה לקבוע אם הטופס מוצע מיד לאחר בחירת אופן הטיפול. מזהה האורח וההערה הפנימיים מחייבים גם API התומך בפרטי אורח פרטיים. דחייה בשל חוסר תאימות אינה מאשרת שליחה למטבח או תשלום: שמרו את המכירה הנוכחית ועדכנו את השרת לפני ההמשך. הפעלת המסך אינה משנה את אפשרויות הטיפול, סדרן, בחירת השולחן בעת שליחה, כללי המשלוחים או פרופילי ההדפסה."
         }
+      },
+      {
+        "id": "weekly-series-rollover",
+        "title": {
+          "fr": "Afficher automatiquement la série actuelle",
+          "en": "Open the current weekly batch automatically",
+          "he": "הצגה אוטומטית של הסבב השבועי הנוכחי"
+        },
+        "instructions": {
+          "fr": "Pour un restaurant configuré en lots hebdomadaires, ouvrez **Accueil** ou **Commandes** avec la base de date **Série**. La série actuelle est sélectionnée par défaut, même sans commande : ses totaux restent alors à zéro. Elle avance après le dernier jour de remise de la série précédente, selon le fuseau horaire du restaurant, sans attendre la première commande ni l’ouverture des commandes. Sur une page restée ouverte, la sélection suit ce changement au prochain rafraîchissement automatique (environ une minute) ou au retour sur l’onglet.\n\nVous pouvez sélectionner une ancienne série dans le calendrier ; cette consultation reste en place pendant que la page est ouverte. Une commande déjà prise pour une semaine plus lointaine ne remplace pas la série actuelle par défaut. Un lien de suivi des paiements conserve la période qu’il indique. Si la date semble incorrecte, vérifiez les jours de remise et le fuseau horaire configurés, puis rechargez la page. Ce basculement ne crée aucune commande et ne publie pas une carte.",
+          "en": "For a restaurant configured for weekly batches, open **Home** or **Orders** using the **Série** date basis. The current batch is selected by default even without orders; its totals then stay at zero. It advances after the previous batch’s final fulfillment day in the restaurant timezone, without waiting for the first order or for ordering to open. An open page follows this change on the next automatic refresh (about one minute) or when you return to the tab.\n\nYou can select an older service in the calendar; that selection stays in place while the page is open. An order for a later week does not replace the current batch as the default. A payment-attention link keeps its explicit period. If the date looks incorrect, check the configured fulfillment days and restaurant timezone, then reload. Rollover does not create an order or publish a menu.",
+          "he": "במסעדה שמוגדרת לסבבים שבועיים, פתחו את **בית** או **הזמנות** עם בסיס התאריך **סדרה**. הסבב הנוכחי נבחר כברירת מחדל גם ללא הזמנות, ואז הסכומים שלו הם אפס. המעבר מתבצע לאחר יום המסירה האחרון של הסבב הקודם, לפי אזור הזמן של המסעדה, בלי להמתין להזמנה הראשונה או לפתיחת ההזמנות. דף שנשאר פתוח עוקב אחר המעבר ברענון האוטומטי הבא (בערך דקה) או בחזרה ללשונית.\n\nאפשר לבחור שירות קודם בלוח השנה; הבחירה נשמרת כל עוד הדף פתוח. הזמנה לשבוע מאוחר יותר אינה מחליפה את הסבב הנוכחי כברירת מחדל. קישור למעקב תשלומים שומר על התקופה המפורשת שלו. אם התאריך נראה שגוי, בדקו את ימי המסירה ואת אזור הזמן של המסעדה ואז טענו מחדש. המעבר אינו יוצר הזמנה ואינו מפרסם תפריט."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-22",
+    "procedureUpdatedAt": "2026-10-25",
     "updatedAt": "2026-10-20"
   },
   {
@@ -12059,6 +12129,19 @@
           "en": "GET /api/v1/restaurants/:id/whatsapp/meta/templates/:templateId/image reads an approved Utility template image belonging to the restaurant’s Meta account. JWT, restaurant access and settings-read or order permissions are required. Responses are private and uncached, with verified JPEG/PNG bytes and a 5 MB limit. Signed Meta URLs and credentials are never returned. Previews and sends automatically include the Meta image when no file was explicitly selected; changed image content invalidates the previous manual confirmation. Retrieval failure returns an error without sending text alone.",
           "he": "GET /api/v1/restaurants/:id/whatsapp/meta/templates/:templateId/image קורא תמונה מתבנית Utility מאושרת בחשבון Meta של העסק. נדרשים JWT, גישה לעסק והרשאות קריאת הגדרות או הזמנות. התשובות פרטיות וללא מטמון, עם תוכן JPEG/PNG מאומת ועד 5 MB. כתובות Meta חתומות ופרטי גישה אינם מוחזרים. תצוגות מקדימות ושליחות כוללות אוטומטית את תמונת Meta אם לא נבחר קובץ מפורש; שינוי תוכן התמונה מבטל אישור ידני קודם. כשל אחזור מחזיר שגיאה ללא שליחת טקסט בלבד."
         }
+      },
+      {
+        "id": "weekly-series-rollover",
+        "title": {
+          "fr": "Vérifier la série courante sans commande",
+          "en": "Verify the current batch without orders",
+          "he": "בדיקת הסבב הנוכחי ללא הזמנות"
+        },
+        "instructions": {
+          "fr": "GET /api/v1/orders/series conserve les dates de remise triées et les agrégats existants, puis ajoute les jours du lot courant sans inventer de commande. Le champ facultatif is_current identifie une seule date par défaut : le premier jour de remise non passé du lot opérationnel. Le lot reste courant jusqu’à la fin de son dernier jour dans le fuseau du restaurant. Le choix de la carte et les règles publiques de prise de commande conservent leur propre résolution. Le client recharge la liste toutes les minutes visibles et au retour sur l’onglet ; Accueil et Commandes suivent le lot courant, mais préservent une sélection historique effectuée sur la page et les liens explicites de suivi des paiements. Valider les limites de clôture, minuit local, changement d’heure, plusieurs jours de remise, isolation restaurant, zéro commande et agrégats existants. Déployer API avant Admin et publier les procédures ensemble.",
+          "en": "GET /api/v1/orders/series keeps the existing sorted fulfillment dates and aggregates, then includes the current batch’s service days without creating an order. Optional is_current marks one default date: the operational batch’s first fulfillment day that has not passed. The batch stays current through its final day in restaurant time. Menu selection and public ordering rules keep their separate resolution. The client refreshes every visible minute and on tab return; Home and Orders follow the current batch while preserving history chosen on the open page and explicit payment-attention links. Validate cutoff boundaries, local midnight, DST, multiple fulfillment days, tenant isolation, zero orders and existing aggregates. Deploy API before Admin and publish procedures with the feature.",
+          "he": "הנתיב GET /api/v1/orders/series שומר על תאריכי המסירה הממוינים ועל הסיכומים הקיימים ומוסיף את ימי הסבב הנוכחי בלי ליצור הזמנה. השדה האופציונלי is_current מסמן תאריך ברירת מחדל יחיד: יום המסירה הראשון בסבב התפעולי שטרם עבר. הסבב נשאר נוכחי עד סוף יומו האחרון באזור הזמן של המסעדה. בחירת התפריט וכללי ההזמנה הציבוריים שומרים על החישוב הנפרד שלהם. הלקוח מרענן בכל דקה כשהדף גלוי ובחזרה ללשונית; דף הבית וההזמנות עוקבים אחר הסבב, אך שומרים על בחירת היסטוריה בדף הפתוח ועל קישורי מעקב תשלומים מפורשים. יש לבדוק גבולות סגירה, חצות מקומי, שעון קיץ, מספר ימי מסירה, הפרדת מסעדות, אפס הזמנות וסיכומים קיימים. פרסו API לפני Admin ופרסמו את ההוראות יחד עם השינוי."
+        }
       }
     ],
     "audience": "internal",
@@ -12349,12 +12432,25 @@
           "en": "The compact theme is applied above the router, including modals and authentication. It uses neutral surfaces, blue actions, rectangular controls and centered headers. FoodyPageLayout, FoodyPageShell and Mana components adapt insets and actions; rail filters become a mobile sheet. Compact layout uses the window’s shortest side, including landscape, without treating a tablet panel as a phone. Specialized payment views and explicit status colors retain their roles. Source review and widget tests do not certify physical-device pixel equality. WORKSPACE references remain local preparation only; an immutable Landing revision is required before remote CI and publication.",
           "he": "ערכת הנושא לנייד מוחלת מעל הנתב, כולל חלונות מודאליים ואימות. היא משתמשת במשטחים ניטרליים, פעולות כחולות, פקדים מלבניים וכותרות ממורכזות. FoodyPageLayout, FoodyPageShell ורכיבי Mana מתאימים שוליים ופעולות; מסנני הסרגל הופכים לגיליון בנייד. התצוגה הקטנה נקבעת לפי הצד הקצר של החלון, כולל במצב אופקי, בלי לפרש פאנל בטאבלט כטלפון. תצוגות תשלום ייעודיות וצבעי מצב מפורשים שומרים על תפקידם. סקירת קוד ובדיקות רכיבים אינן מאשרות התאמה ברמת פיקסל במכשיר פיזי. הפניות WORKSPACE מיועדות להכנה מקומית בלבד; נדרש commit Landing קבוע לפני CI מרוחק ופרסום."
         }
+      },
+      {
+        "id": "weekly-series-rollover",
+        "title": {
+          "fr": "Vérifier la série courante sans commande",
+          "en": "Verify the current batch without orders",
+          "he": "בדיקת הסבב הנוכחי ללא הזמנות"
+        },
+        "instructions": {
+          "fr": "GET /api/v1/orders/series conserve les dates de remise triées et les agrégats existants, puis ajoute les jours du lot courant sans inventer de commande. Le champ facultatif is_current identifie une seule date par défaut : le premier jour de remise non passé du lot opérationnel. Le lot reste courant jusqu’à la fin de son dernier jour dans le fuseau du restaurant. Le choix de la carte et les règles publiques de prise de commande conservent leur propre résolution. Le client recharge la liste toutes les minutes visibles et au retour sur l’onglet ; Accueil et Commandes suivent le lot courant, mais préservent une sélection historique effectuée sur la page et les liens explicites de suivi des paiements. Valider les limites de clôture, minuit local, changement d’heure, plusieurs jours de remise, isolation restaurant, zéro commande et agrégats existants. Déployer API avant Admin et publier les procédures ensemble.",
+          "en": "GET /api/v1/orders/series keeps the existing sorted fulfillment dates and aggregates, then includes the current batch’s service days without creating an order. Optional is_current marks one default date: the operational batch’s first fulfillment day that has not passed. The batch stays current through its final day in restaurant time. Menu selection and public ordering rules keep their separate resolution. The client refreshes every visible minute and on tab return; Home and Orders follow the current batch while preserving history chosen on the open page and explicit payment-attention links. Validate cutoff boundaries, local midnight, DST, multiple fulfillment days, tenant isolation, zero orders and existing aggregates. Deploy API before Admin and publish procedures with the feature.",
+          "he": "הנתיב GET /api/v1/orders/series שומר על תאריכי המסירה הממוינים ועל הסיכומים הקיימים ומוסיף את ימי הסבב הנוכחי בלי ליצור הזמנה. השדה האופציונלי is_current מסמן תאריך ברירת מחדל יחיד: יום המסירה הראשון בסבב התפעולי שטרם עבר. הסבב נשאר נוכחי עד סוף יומו האחרון באזור הזמן של המסעדה. בחירת התפריט וכללי ההזמנה הציבוריים שומרים על החישוב הנפרד שלהם. הלקוח מרענן בכל דקה כשהדף גלוי ובחזרה ללשונית; דף הבית וההזמנות עוקבים אחר הסבב, אך שומרים על בחירת היסטוריה בדף הפתוח ועל קישורי מעקב תשלומים מפורשים. יש לבדוק גבולות סגירה, חצות מקומי, שעון קיץ, מספר ימי מסירה, הפרדת מסעדות, אפס הזמנות וסיכומים קיימים. פרסו API לפני Admin ופרסמו את ההוראות יחד עם השינוי."
+        }
       }
     ],
     "audience": "internal",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-24"
+    "procedureUpdatedAt": "2026-10-25"
   },
   {
     "id": "global-search",
