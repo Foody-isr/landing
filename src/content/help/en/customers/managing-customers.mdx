@@ -24,9 +24,9 @@ Search the customer list and inspect name, phone, address, order count and last 
 
 <span id="edit" />
 
-## Edit delivery details
+## Edit the customer profile
 
-Open the customer profile, edit the name, address and delivery details, then save. To change a phone, use Correct in the customer list. Recheck the selected order address separately for already-created orders.
+Open the profile from the customer phone, edit the name, phone numbers, address and delivery details, then save. Review addresses on existing orders separately.
 
 <span id="trusted" />
 
@@ -42,6 +42,6 @@ Review selected customer profiles and phone numbers before confirming a merge. C
 
 <span id="phone-corrections" />
 
-## Correct one or several phone numbers
+## Manage phones and choose the WhatsApp number
 
-With customers.manage, open Clients and use Correct on one row, or select customers and choose Actions → Correct phones. Recognizable formats are prefilled; correct other numbers manually. Review the current number and saved format, then Save. Israeli numbers become +972 without the national trunk zero; for another country enter + and its country code. Letters, extensions, incomplete numbers and invalid prefixes prevent saving. The batch is atomic: a number belonging to another customer or conflicting cash records blocks every correction. Existing order contacts and customer keys are corrected together for future WhatsApp sends; names, addresses, merges and cash eligibility remain intact. Login accounts and other restaurants are unchanged. Errors retain input; if only refreshing fails after a successful save, Retry reloads without repeating the write. Format validation does not verify ownership or WhatsApp registration.
+With customer-management permission, select the customer phone to open Edit customer. Under Phone numbers, correct Primary phone or choose Add a phone number. Enter a complete number; Israeli numbers are saved with +972 without the national trunk zero and foreign numbers retain their country code. Select Use for WhatsApp on the number that should receive messages, even when the calling number differs. Exactly one WhatsApp recipient is selected; a customer can have up to ten numbers. Save confirms profile and phone changes together. Invalid input, duplicate numbers or a number belonging to another record blocks this save and retains the draft; use Merge customers to associate existing records. Removing an additional number takes effect only on Save and separates its history without deleting its orders. Correcting the primary retains names, addresses and grouping and corrects existing order contacts. Login accounts and other restaurants remain unchanged. Cash eligibility belongs to the same customer; adding a number does not create another cash authorization. To correct several customers together, select at least two rows and choose Actions → Correct phones. The batch is atomic; a conflict blocks every correction. After a completed save and failed refresh, Retry reloads without repeating the write. Format validation does not prove ownership or WhatsApp registration.

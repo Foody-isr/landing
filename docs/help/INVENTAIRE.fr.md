@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-25.
 
-100 fiches de fonctionnalités, 654 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2165 fichiers applicatifs et 2036 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+100 fiches de fonctionnalités, 663 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2170 fichiers applicatifs et 2039 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,10 +10,10 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 556 | 869 | a0046cb3249b ; versioned |
-| foodyadmin | 760 | 771 | cd96e394d270 ; versioned |
+| foodyserver | 559 | 870 | 91755c424036 ; versioned |
+| foodyadmin | 762 | 773 | 335b4895ab83 ; versioned |
+| foodylanding | 127 | 21 | 902a4a6ecaa3 ; versioned |
 | foodyweb | 337 | 167 | fac3db244c15 ; versioned |
-| foodylanding | 127 | 21 | 6538a2d5a882 ; versioned |
 | foodypos | 341 | 158 | 64dce2731c01 ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
 
@@ -144,10 +144,10 @@ Identifiant : `staff-devices-shifts`. Public : public. Disponibilité : availabl
 Identifiant : `customers-profiles`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodypos.
 
 - [Retrouver un client](../../src/content/help/fr/customers/managing-customers.mdx#find)
-- [Modifier les coordonnées de livraison](../../src/content/help/fr/customers/managing-customers.mdx#edit)
+- [Modifier la fiche client](../../src/content/help/fr/customers/managing-customers.mdx#edit)
 - [Autoriser la commande en espèces](../../src/content/help/fr/customers/managing-customers.mdx#trusted)
 - [Fusionner des doublons](../../src/content/help/fr/customers/managing-customers.mdx#merge)
-- [Corriger un ou plusieurs téléphones](../../src/content/help/fr/customers/managing-customers.mdx#phone-corrections)
+- [Gérer les téléphones et choisir le numéro WhatsApp](../../src/content/help/fr/customers/managing-customers.mdx#phone-corrections)
 
 ## marketing
 
@@ -471,6 +471,8 @@ Identifiant : `orders-managing-orders`. Public : public. Disponibilité : availa
 - [Retrouver une vente caisse après paiement](../../src/content/help/fr/orders/managing-orders.mdx#paid-counter-orders)
 - [Contacter les clients par WhatsApp](../../src/content/help/fr/orders/managing-orders.mdx#unified-order-whatsapp-selection)
 - [Naviguer dans une vente mobile](../../src/content/help/fr/orders/managing-orders.mdx#mobile-terminal)
+- [Image du modèle WhatsApp](../../src/content/help/fr/orders/managing-orders.mdx#meta-template-image-preview)
+- [Choisir le destinataire WhatsApp du client](../../src/content/help/fr/orders/managing-orders.mdx#customer-whatsapp-recipient)
 
 ### [Types de commandes et remise](../../src/content/help/fr/orders/order-types.mdx)
 
@@ -536,6 +538,8 @@ Identifiant : `order-detail`. Public : public. Disponibilité : available. Servi
 - [Choisir le mode d’envoi du rappel](../../src/content/help/fr/orders/order-details.mdx#delivery-reminder-review-and-send)
 - [Conserver les choix de variante de la commande](../../src/content/help/fr/orders/order-details.mdx#variant-position-order)
 - [Envoyer un message WhatsApp pour une ou plusieurs commandes](../../src/content/help/fr/orders/order-details.mdx#unified-order-whatsapp)
+- [Image du modèle WhatsApp](../../src/content/help/fr/orders/order-details.mdx#meta-template-image-preview)
+- [Choisir le destinataire WhatsApp du client](../../src/content/help/fr/orders/order-details.mdx#customer-whatsapp-recipient)
 
 ### [Calendrier du restaurant et exceptions](../../src/content/help/fr/orders/calendar.mdx)
 
@@ -803,6 +807,7 @@ Identifiant : `order-workflow`. Public : public. Disponibilité : available. Ser
 - [Régler les délais de préparation](../../src/content/help/fr/settings/workflow-settings.mdx#clock)
 - [Vérifier les réglages enregistrés](../../src/content/help/fr/settings/workflow-settings.mdx#save)
 - [Choisir la pièce jointe d’une étape](../../src/content/help/fr/settings/workflow-settings.mdx#whatsapp-stage-attachment)
+- [Image du modèle WhatsApp](../../src/content/help/fr/settings/workflow-settings.mdx#meta-template-image-preview)
 
 ### [Profil, langues et horaires du restaurant](../../src/content/help/fr/settings/restaurant-profile.mdx)
 
@@ -1053,6 +1058,8 @@ Identifiant : `whatsapp`. Public : public. Disponibilité : available. Services 
 - [Vérifier le rappel de livraison calculé](../../src/content/help/fr/communications/whatsapp.mdx#route-delivery-window)
 - [Choisir le mode d’envoi du rappel](../../src/content/help/fr/communications/whatsapp.mdx#delivery-reminder-review-and-send)
 - [Envoyer un message WhatsApp pour une ou plusieurs commandes](../../src/content/help/fr/communications/whatsapp.mdx#unified-order-whatsapp)
+- [Récupérer automatiquement l’image du modèle Meta](../../src/content/help/fr/communications/whatsapp.mdx#meta-template-image-sync)
+- [Choisir le destinataire WhatsApp du client](../../src/content/help/fr/communications/whatsapp.mdx#customer-whatsapp-recipient)
 
 ### [Modèles et automatisations de messages](../../src/content/help/fr/communications/templates-and-automation.mdx)
 
@@ -1063,6 +1070,7 @@ Identifiant : `message-templates`. Public : public. Disponibilité : available. 
 - [Associer le fichier à la notification](../../src/content/help/fr/communications/templates-and-automation.mdx#media-binding)
 - [Vérifier le rappel de livraison calculé](../../src/content/help/fr/communications/templates-and-automation.mdx#route-delivery-window)
 - [Choisir le mode d’envoi du rappel](../../src/content/help/fr/communications/templates-and-automation.mdx#delivery-reminder-review-and-send)
+- [Récupérer automatiquement l’image du modèle Meta](../../src/content/help/fr/communications/templates-and-automation.mdx#meta-template-image-sync)
 
 ## guest
 
@@ -1082,7 +1090,7 @@ Identifiant : `guest-ordering`. Public : public. Disponibilité : available. Ser
 
 ### [Suivi, reçus et moyens enregistrés](../../src/content/help/fr/guest/tracking-and-account.mdx)
 
-Identifiant : `guest-account-tracking`. Public : public. Disponibilité : available. Services : foodyserver, foodyweb, foodylanding.
+Identifiant : `guest-account-tracking`. Public : public. Disponibilité : available. Services : foodyserver, foodylanding, foodyweb.
 
 - [Se connecter avant de commander](../../src/content/help/fr/guest/tracking-and-account.mdx#entry-sign-in)
 - [Lire l’état de commande](../../src/content/help/fr/guest/tracking-and-account.mdx#tracking)
@@ -1184,6 +1192,7 @@ Identifiant : `platform-api`. Public : internal. Disponibilité : available. Ser
 - [Contrat des modificateurs conditionnels](internal/fr/api-and-release.md#modifier-position-contract)
 - [Contrat des dimensions de variante](internal/fr/api-and-release.md#descriptive-variant-contract)
 - [Vérifier le panneau WhatsApp unifié](internal/fr/api-and-release.md#unified-whatsapp-order-composer)
+- [Image de modèle WhatsApp Meta](internal/fr/api-and-release.md#meta-template-image-proxy)
 
 ### [Aperçus internes et alias de routes](internal/fr/design-previews.md)
 
@@ -1193,7 +1202,7 @@ Identifiant : `design-sandboxes`. Public : internal. Disponibilité : available.
 
 ### [Socle applicatif partagé](internal/fr/shared-runtime.md)
 
-Identifiant : `shared-runtime`. Public : internal. Disponibilité : available. Services : foodyadmin, foodyweb, foodylanding, foodypos, foodybackoffice.
+Identifiant : `shared-runtime`. Public : internal. Disponibilité : available. Services : foodyadmin, foodylanding, foodyweb, foodypos, foodybackoffice.
 
 - [Rembourser ou annuler un paiement en ligne Verifone](internal/fr/shared-runtime.md#verifone-admin-money-operations)
 - [Vérifier le plafond de préautorisation au poids](internal/fr/shared-runtime.md#weight-hold-margin)
