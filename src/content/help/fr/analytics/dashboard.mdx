@@ -10,7 +10,7 @@ tags:
   - service
   - sales
   - dates
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-25'
 featureId: analytics-dashboard
 audience: public
 releaseStatus: available
@@ -56,3 +56,11 @@ Les comparaisons nécessitent une période ou un service précédent disponible.
 ## Rapports détaillés
 
 Ouvrez **Rapports** pour accéder aux pages autorisées par votre rôle. Choisissez la période et vérifiez les filtres. La vue d’ensemble propose une action d’export ; contrôlez que la période et le calcul exportés correspondent à votre analyse.
+
+<span id="weekly-series-rollover" />
+
+## Afficher automatiquement la série actuelle
+
+Pour un restaurant configuré en lots hebdomadaires, ouvrez **Accueil** ou **Commandes** avec la base de date **Série**. La série actuelle est sélectionnée par défaut, même sans commande : ses totaux restent alors à zéro. Elle avance après le dernier jour de remise de la série précédente, selon le fuseau horaire du restaurant, sans attendre la première commande ni l’ouverture des commandes. Sur une page restée ouverte, la sélection suit ce changement au prochain rafraîchissement automatique (environ une minute) ou au retour sur l’onglet.
+
+Vous pouvez sélectionner une ancienne série dans le calendrier ; cette consultation reste en place pendant que la page est ouverte. Une commande déjà prise pour une semaine plus lointaine ne remplace pas la série actuelle par défaut. Un lien de suivi des paiements conserve la période qu’il indique. Si la date semble incorrecte, vérifiez les jours de remise et le fuseau horaire configurés, puis rechargez la page. Ce basculement ne crée aucune commande et ne publie pas une carte.

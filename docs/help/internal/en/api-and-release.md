@@ -141,3 +141,9 @@ The shared Admin composer handles individual orders and current-page selections 
 ## Meta WhatsApp template image
 
 GET /api/v1/restaurants/:id/whatsapp/meta/templates/:templateId/image reads an approved Utility template image belonging to the restaurant’s Meta account. JWT, restaurant access and settings-read or order permissions are required. Responses are private and uncached, with verified JPEG/PNG bytes and a 5 MB limit. Signed Meta URLs and credentials are never returned. Previews and sends automatically include the Meta image when no file was explicitly selected; changed image content invalidates the previous manual confirmation. Retrieval failure returns an error without sending text alone.
+
+<span id="weekly-series-rollover" />
+
+## Verify the current batch without orders
+
+GET /api/v1/orders/series keeps the existing sorted fulfillment dates and aggregates, then includes the current batch’s service days without creating an order. Optional is_current marks one default date: the operational batch’s first fulfillment day that has not passed. The batch stays current through its final day in restaurant time. Menu selection and public ordering rules keep their separate resolution. The client refreshes every visible minute and on tab return; Home and Orders follow the current batch while preserving history chosen on the open page and explicit payment-attention links. Validate cutoff boundaries, local midnight, DST, multiple fulfillment days, tenant isolation, zero orders and existing aggregates. Deploy API before Admin and publish procedures with the feature.

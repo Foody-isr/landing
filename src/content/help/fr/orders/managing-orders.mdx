@@ -186,3 +186,11 @@ Les modèles WhatsApp Utility approuvés avec une photo utilisent automatiquemen
 ## Choisir le destinataire WhatsApp du client
 
 Si le client utilise un autre numéro pour WhatsApp, ouvrez Clients → sa fiche et choisissez Utiliser pour WhatsApp dans Numéros de téléphone, puis enregistrez. Ce numéro est utilisé pour les messages Meta et Twilio et pour l’ouverture de WhatsApp depuis la commande, y compris les partages de liens et documents. Le téléphone de la commande reste celui des coordonnées et de la vérification SMS. Vérifiez le destinataire affiché dans l’aperçu ; une modification du numéro WhatsApp impose de revoir un nouvel aperçu avant un envoi API. Aucun message de test n’est envoyé lors de l’enregistrement de la fiche.
+
+<span id="weekly-series-rollover" />
+
+## Afficher automatiquement la série actuelle
+
+Pour un restaurant configuré en lots hebdomadaires, ouvrez **Accueil** ou **Commandes** avec la base de date **Série**. La série actuelle est sélectionnée par défaut, même sans commande : ses totaux restent alors à zéro. Elle avance après le dernier jour de remise de la série précédente, selon le fuseau horaire du restaurant, sans attendre la première commande ni l’ouverture des commandes. Sur une page restée ouverte, la sélection suit ce changement au prochain rafraîchissement automatique (environ une minute) ou au retour sur l’onglet.
+
+Vous pouvez sélectionner une ancienne série dans le calendrier ; cette consultation reste en place pendant que la page est ouverte. Une commande déjà prise pour une semaine plus lointaine ne remplace pas la série actuelle par défaut. Un lien de suivi des paiements conserve la période qu’il indique. Si la date semble incorrecte, vérifiez les jours de remise et le fuseau horaire configurés, puis rechargez la page. Ce basculement ne crée aucune commande et ne publie pas une carte.

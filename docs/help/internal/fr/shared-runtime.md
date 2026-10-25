@@ -7,7 +7,7 @@ apps: both
 tags:
   - internal
   - shared-runtime
-updatedAt: '2026-10-24'
+updatedAt: '2026-10-25'
 featureId: shared-runtime
 audience: internal
 releaseStatus: available
@@ -111,3 +111,9 @@ Le parcours compact utilise le panneau Menu/Addition/Actions et masque la naviga
 ## Vérifier les pages compactes du terminal
 
 Le thème compact est appliqué au-dessus du routeur, y compris aux fenêtres modales et à l’authentification. Il utilise des surfaces neutres, des actions bleues, des contrôles rectangulaires et des en-têtes centrés. FoodyPageLayout, FoodyPageShell et les composants Mana adaptent les marges et les actions ; les filtres de rail deviennent une feuille sur mobile. Le format compact est déterminé par le plus petit côté de la fenêtre, y compris en paysage, sans réinterpréter un panneau de tablette comme un téléphone. Les vues de paiement spécialisées et les couleurs de statut explicites conservent leur rôle. La revue de source et les tests de widgets ne certifient pas une égalité pixel sur matériel physique. Les références WORKSPACE restent réservées à la préparation locale ; une révision Landing immuable est requise avant CI distante et publication.
+
+<span id="weekly-series-rollover" />
+
+## Vérifier la série courante sans commande
+
+GET /api/v1/orders/series conserve les dates de remise triées et les agrégats existants, puis ajoute les jours du lot courant sans inventer de commande. Le champ facultatif is_current identifie une seule date par défaut : le premier jour de remise non passé du lot opérationnel. Le lot reste courant jusqu’à la fin de son dernier jour dans le fuseau du restaurant. Le choix de la carte et les règles publiques de prise de commande conservent leur propre résolution. Le client recharge la liste toutes les minutes visibles et au retour sur l’onglet ; Accueil et Commandes suivent le lot courant, mais préservent une sélection historique effectuée sur la page et les liens explicites de suivi des paiements. Valider les limites de clôture, minuit local, changement d’heure, plusieurs jours de remise, isolation restaurant, zéro commande et agrégats existants. Déployer API avant Admin et publier les procédures ensemble.

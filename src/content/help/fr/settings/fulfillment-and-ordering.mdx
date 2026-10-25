@@ -7,7 +7,7 @@ apps: foodyadmin
 tags:
   - settings
   - fulfillment-policy
-updatedAt: '2026-10-22'
+updatedAt: '2026-10-25'
 featureId: fulfillment-policy
 audience: public
 releaseStatus: available
@@ -115,3 +115,11 @@ Un article configuré avec des positions répétées demande un choix distinct p
 ## Vérifier la compatibilité de la fiche client POS
 
 Le réglage Afficher l’écran d’informations client continue de décider si la fiche est proposée immédiatement après le choix d’un mode. Ses champs d’identification et de note internes nécessitent aussi l’API compatible avec les informations invité privées. Un refus de compatibilité ne confirme ni l’envoi en cuisine ni le paiement : gardez la vente en cours et faites actualiser l’API avant de reprendre. Activer la fiche ne change pas les modes disponibles, leur ordre, le choix d’une table au moment d’Envoyer, les règles de livraison ou les profils d’impression.
+
+<span id="weekly-series-rollover" />
+
+## Afficher automatiquement la série actuelle
+
+Pour un restaurant configuré en lots hebdomadaires, ouvrez **Accueil** ou **Commandes** avec la base de date **Série**. La série actuelle est sélectionnée par défaut, même sans commande : ses totaux restent alors à zéro. Elle avance après le dernier jour de remise de la série précédente, selon le fuseau horaire du restaurant, sans attendre la première commande ni l’ouverture des commandes. Sur une page restée ouverte, la sélection suit ce changement au prochain rafraîchissement automatique (environ une minute) ou au retour sur l’onglet.
+
+Vous pouvez sélectionner une ancienne série dans le calendrier ; cette consultation reste en place pendant que la page est ouverte. Une commande déjà prise pour une semaine plus lointaine ne remplace pas la série actuelle par défaut. Un lien de suivi des paiements conserve la période qu’il indique. Si la date semble incorrecte, vérifiez les jours de remise et le fuseau horaire configurés, puis rechargez la page. Ce basculement ne crée aucune commande et ne publie pas une carte.

@@ -141,3 +141,9 @@ Le panneau Admin commun aux commandes unitaires et à la sélection de la page u
 ## Image de modèle WhatsApp Meta
 
 GET /api/v1/restaurants/:id/whatsapp/meta/templates/:templateId/image lit une image de modèle Utility approuvé appartenant au compte Meta de l’établissement. JWT, accès à l’établissement et permissions de lecture des réglages ou des commandes sont exigés. La réponse est privée, sans cache, avec type JPEG/PNG vérifié et limite de 5 Mo. Les URL Meta signées et les identifiants d’accès ne sont pas retournés. Les aperçus et envois incluent l’image Meta automatiquement en l’absence de fichier explicitement choisi ; une modification de son contenu invalide la confirmation manuelle précédente. Une récupération impossible produit une erreur sans envoi de texte seul.
+
+<span id="weekly-series-rollover" />
+
+## Vérifier la série courante sans commande
+
+GET /api/v1/orders/series conserve les dates de remise triées et les agrégats existants, puis ajoute les jours du lot courant sans inventer de commande. Le champ facultatif is_current identifie une seule date par défaut : le premier jour de remise non passé du lot opérationnel. Le lot reste courant jusqu’à la fin de son dernier jour dans le fuseau du restaurant. Le choix de la carte et les règles publiques de prise de commande conservent leur propre résolution. Le client recharge la liste toutes les minutes visibles et au retour sur l’onglet ; Accueil et Commandes suivent le lot courant, mais préservent une sélection historique effectuée sur la page et les liens explicites de suivi des paiements. Valider les limites de clôture, minuit local, changement d’heure, plusieurs jours de remise, isolation restaurant, zéro commande et agrégats existants. Déployer API avant Admin et publier les procédures ensemble.

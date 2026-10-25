@@ -210,3 +210,14 @@ from Landing commit `51508f43b99659d0b71e26a5c627a275b98e3bf6`; they are unchang
 baseline evidence, not a new validation of those services. Pin this documentation
 commit in API and Admin before opening their PRs. Deploy API before Admin, and
 publish the corresponding guides with the feature release.
+
+
+## Weekly-series rollover preparation (25 October 2026)
+
+This local change reviews API, Admin and Landing only. Web, POS and Backoffice
+source inventories and surfaces retain their exact evidence from Landing commit
+`b453265`; they are not revalidated by this change. Operational batch dates are
+read-only calendar calculations, independent of menu publication and guest
+ordering windows. Publish the FR/HE/EN procedures with the API/Admin behavior.
+The local WORKSPACE documentation reference must be replaced with the matching
+immutable Landing commit after commit authorization and before remote CI.

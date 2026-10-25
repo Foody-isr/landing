@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - settings
   - fulfillment-policy
-updatedAt: '2026-10-22'
+updatedAt: '2026-10-25'
 featureId: fulfillment-policy
 audience: public
 releaseStatus: available
@@ -113,3 +113,11 @@ An item configured with repeated positions requires one separate choice per posi
 ## Check POS customer-screen compatibility
 
 Show customer information screen still controls whether details are offered immediately after a fulfillment method is selected. Its internal guest identifier and note also require an API supporting private guest details. A compatibility rejection confirms neither a kitchen send nor a payment: retain the current sale and have the API updated before resuming. Enabling the screen does not change available methods, their order, table selection at Send, delivery rules or printer profiles.
+
+<span id="weekly-series-rollover" />
+
+## Open the current weekly batch automatically
+
+For a restaurant configured for weekly batches, open **Home** or **Orders** using the **Série** date basis. The current batch is selected by default even without orders; its totals then stay at zero. It advances after the previous batch’s final fulfillment day in the restaurant timezone, without waiting for the first order or for ordering to open. An open page follows this change on the next automatic refresh (about one minute) or when you return to the tab.
+
+You can select an older service in the calendar; that selection stays in place while the page is open. An order for a later week does not replace the current batch as the default. A payment-attention link keeps its explicit period. If the date looks incorrect, check the configured fulfillment days and restaurant timezone, then reload. Rollover does not create an order or publish a menu.
