@@ -4,9 +4,9 @@
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "91755c424036d5d5c722a4a97f777be9b5d8ee38",
+      "sourceCommit": "76c048a923dd98e7d00477f6b16bfca1a0894f84",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "2ddc51b3e8071e603a24a4af747f159b2c9d9bd61eabb536b3fa2cc457bd1d50",
+      "sourceSnapshot": "34b37a30ff65dbdf46bef6b92b8b85d231d2f160a8a80424884afca444433c08",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -4220,7 +4220,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "9c1591e1d5f6debebe847005167709b8ce5f88412253a44f1214a27252c736a5",
+          "sha256": "7e8676ece79d5a214e7ea692cb8e8b86f04fff1e8204e9c18d5c8e17dacbb2c2",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -4533,9 +4533,9 @@
     },
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "335b4895ab83d90d95bc4518c458757990e8be8f",
+      "sourceCommit": "ce39977ce8cc574e16b468ab2e402b2db1b0abb2",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "0e06ae6e963c9f41f792cc79df636cc722fed20baca101e6bb99bd4b92c33586",
+      "sourceSnapshot": "83c2d536922c565820762eccc7018321fe689ff592b4ef2f29bc916736dbb88f",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
@@ -7429,7 +7429,7 @@
           ]
         },
         "src/components/menu/publication/CarteEditor.tsx": {
-          "sha256": "812fa0b43b3c6ae3b3cd1eccd90ad1d858803bdd9a993d8b694b901e662714f7",
+          "sha256": "1aee3f44091b24363dce54d731797f2bce2d060900ac9c2defe0d2c33e34b9de",
           "features": [
             "menu-menus-and-groups"
           ]
@@ -8941,9 +8941,10 @@
           ]
         },
         "src/lib/i18n.tsx": {
-          "sha256": "862c26fcb77926fd3f7bf4e2ccd2577504861992b7160098c9856f4fa0473595",
+          "sha256": "024f743632f935af2995be97c4d5a675081a7c191275091c5809996d0f9e49c3",
           "features": [
             "customers-profiles",
+            "menu-menus-and-groups",
             "delivery-dispatch",
             "google-account-setup",
             "pos-behavior",
@@ -9899,6 +9900,18 @@
           "sha256": "e53675673dd468cea83dbc85967047163e6db706fd9f4250f8df4c87f59f7578",
           "features": [
             "shared-runtime"
+          ]
+        },
+        "src/components/menu/publication/CarteItemPicker.tsx": {
+          "sha256": "4f22fab8ada2e5dd554e07b42007bda04040566c75389a2c9062a9135701d7cf",
+          "features": [
+            "menu-menus-and-groups"
+          ]
+        },
+        "src/components/menu/publication/CarteItemPicker.module.css": {
+          "sha256": "168d592aa5ec6fbb87f31ef276a4617d5a406d5d458a864052f73ecda660a820",
+          "features": [
+            "menu-menus-and-groups"
           ]
         }
       }
@@ -22432,7 +22445,8 @@
           "src/components/MenuGroupPicker.tsx",
           "src/lib/menu/**",
           "src/lib/carte-editor.ts",
-          "src/components/MenuGroupPicker.tsx"
+          "src/components/MenuGroupPicker.tsx",
+          "src/lib/i18n.tsx"
         ],
         "foodyserver": [
           "internal/menu/**",
@@ -22490,6 +22504,19 @@
             "fr": "Ouvrez Articles et cartes → Cartes puis la carte. Pour une carte tournante, sélectionnez sa série dans l’en-tête. Ajouter permet de choisir des articles pour un groupe ou de créer un groupe ; Ajouter un groupe de cartes est aussi disponible sous la liste. La flèche d’un groupe replie ou déplie son tableau sans modifier la carte. Le menu « … » du groupe contient Modifier le groupe et Choisir les articles. Le menu « … » à côté du titre contient Paramètres de la carte et Aperçu. Les modifications de groupes, canaux et horaires restent locales. Dès qu’une modification ou un brouillon existe, la barre inférieure propose Enregistrer le brouillon et Publier. Enregistrer conserve un brouillon privé ; Aperçu ouvre une liste privée sans prise de commande. Publier demande une confirmation et applique ensemble la carte et ses stocks préparés. Enregistrer seul ne modifie jamais le site ni la caisse. Modifier la mise en page du système de caisse ouvre l’éditeur de disposition distinct ; les modifications non enregistrées restent protégées avant cette navigation.",
             "en": "Open Items & menus → Menus and select the carte. For a rotating carte, choose its series in the header. Add lets you choose items for a group or create a group; Add menu group is also available below the list. A group’s chevron collapses or expands its table without changing the carte. Its “…” menu contains Edit group and Choose items. The “…” menu beside the carte title contains Carte settings and Preview. Group, channel and hours edits stay local. Once edits or a saved draft exist, the bottom bar offers Save draft and Publish. Save stores a private draft; Preview opens a private list that cannot take orders. Publish asks for confirmation and applies the carte and prepared stocks together. Saving alone never changes the live website or POS. Edit POS layout opens the separate tile editor; unsaved changes are guarded before navigating there.",
             "he": "פתחו פריטים ותפריטים → תפריטים ובחרו תפריט. בתפריט מתחלף בחרו סדרה בכותרת. הוספה מאפשרת לבחור פריטים לקבוצה או ליצור קבוצה; הוספת קבוצת תפריט זמינה גם מתחת לרשימה. חץ הקבוצה מקפל או מרחיב את הטבלה בלי לשנות את התפריט. תפריט ״…״ של הקבוצה כולל עריכת קבוצה ובחירת פריטים. תפריט ״…״ ליד שם התפריט כולל הגדרות תפריט ותצוגה מקדימה. עריכת קבוצות, ערוצים ושעות נשארת מקומית. כשיש שינויים או טיוטה שמורה, הסרגל התחתון מציע שמירת טיוטה ופרסום. שמירה שומרת טיוטה פרטית; תצוגה מקדימה מציגה רשימה פרטית ללא הזמנות. פרסום דורש אישור ומחיל יחד את התפריט והמלאי שהוכן. שמירה לבדה אינה משנה את האתר או הקופה. ערוך תצוגת קופה פותח עורך אריחים נפרד, עם הגנה על שינויים שלא נשמרו לפני המעבר."
+          }
+        },
+        {
+          "id": "draft-item-picker",
+          "title": {
+            "fr": "Choisir des articles avec photos et filtres",
+            "en": "Choose items with photos and filters",
+            "he": "בחירת פריטים עם תמונות ומסננים"
+          },
+          "instructions": {
+            "fr": "Dans un groupe de la carte, cliquez sur Ajouter des articles ou sur … → Choisir les articles. La fenêtre Ajouter ou supprimer des articles montre la photo de chaque produit, ou une icône si aucune image ne peut être affichée, et le nombre de variantes lorsqu’il y en a plusieurs. Les cases à droite ajoutent ou retirent uniquement les articles du groupe dans le brouillon ; elles ne suppriment pas les fiches de la bibliothèque. Le compteur comprend aussi les articles sélectionnés masqués par un filtre. Rechercher se combine avec Filtres → Catégorie : cochez une ou plusieurs catégories internes, puis Appliquer. Le groupe de destination est distinct de la catégorie ; depuis Ajouter → Ajouter des articles, choisissez-le dans Groupe de cartes. Les filtres Carte et Stock se combinent aussi ; Stock propose Tout le stock, Alerte de stock bas et En rupture de stock selon la disponibilité calculée pour la série sélectionnée. Point de vente reste limité au restaurant actif. Effacer retire les choix du filtre ouvert ; Appliquer les confirme. Fermer ce filtre ou Échap abandonne ses choix non appliqués. Effacer tous les filtres restaure toute la liste, sans modifier les articles cochés ni la recherche. Si aucun article ne correspond, adaptez la recherche ou effacez les filtres. Une erreur de chargement des catégories propose Réessayer ; ne la confondez pas avec une catégorie vide. Terminé ferme la sélection en conservant les changements locaux ; enregistrez ensuite le brouillon et publiez explicitement. Créer un nouvel article ouvre la fiche commune et protège d’abord les changements de carte non enregistrés.",
+            "en": "Inside a carte group, click Add items or … → Choose items. Add or remove items shows each product photo, or an icon when no image can be displayed, and the variant count when there is more than one. The trailing checkboxes add or remove group membership in the draft only; they never delete library records. The count includes selected items hidden by filters. Search combines with Filters → Category: select one or more internal categories, then Apply. The target group is separate from the category; from Add → Add items, choose it in Menu group. Menu and Stock filters also combine; Stock offers All stock, Low stock alert and Out of stock using the calculated availability for the selected series. Point of sale is limited to the active restaurant. Clear removes choices in the open filter; Apply confirms them. Closing that filter or pressing Escape discards unapplied choices. Clear all filters restores the full list without changing checked items or the search. If nothing matches, adjust the search or clear filters. A category loading failure offers Retry; it is not an empty category. Done closes the picker and keeps local edits; then Save draft and explicitly Publish. Create a new item opens the shared item editor and first protects unsaved carte changes.",
+            "he": "בתוך קבוצת תפריט לחצו על הוספת פריטים או על … → בחירת פריטים. חלון הוספה או הסרה של פריטים מציג תמונת מוצר, או סמל כאשר לא ניתן להציג תמונה, ומספר וריאנטים כשיש יותר מאחד. תיבות הסימון בסוף השורה מוסיפות או מסירות שיוך לקבוצה בטיוטה בלבד; הן אינן מוחקות פריטים מהספרייה. המונה כולל גם פריטים שנבחרו ומוסתרים במסנן. החיפוש משתלב עם מסננים → קטגוריה: בחרו קטגוריה פנימית אחת או יותר ולחצו החל. קבוצת היעד נפרדת מהקטגוריה; בנתיב הוספה → הוספת פריטים בחרו אותה בשדה קבוצת תפריט. אפשר לשלב גם מסנני תפריט ומלאי; מלאי מציע כל המלאי, התראת מלאי נמוך ואזל המלאי לפי הזמינות המחושבת לסדרה שנבחרה. נקודת המכירה מוגבלת למסעדה הפעילה. ניקוי מסיר בחירות במסנן הפתוח; החל מאשר אותן. סגירת המסנן או Escape מבטלים בחירות שלא הוחלו. ניקוי כל המסננים משחזר את הרשימה בלי לשנות סימוני פריטים או את החיפוש. אם אין תוצאות, שנו חיפוש או נקו מסננים. כשל בטעינת קטגוריות מציע ניסיון חוזר ואינו קטגוריה ריקה. סיום סוגר את הבורר ושומר שינויים מקומיים; לאחר מכן שמרו טיוטה ופרסמו במפורש. יצירת פריט חדש פותחת את העורך המשותף ומגינה תחילה על שינויים שלא נשמרו בתפריט."
           }
         },
         {
@@ -22656,7 +22683,7 @@
       "audience": "public",
       "status": "available",
       "preserveExisting": true,
-      "procedureUpdatedAt": "2026-10-22",
+      "procedureUpdatedAt": "2026-10-25",
       "updatedAt": "2026-10-20",
       "evidence": [
         {
@@ -23217,11 +23244,23 @@
         },
         {
           "service": "foodyadmin",
+          "file": "src/lib/i18n.tsx"
+        },
+        {
+          "service": "foodyadmin",
           "file": "src/lib/menu/item-table-columns.ts"
         },
         {
           "service": "foodyadmin",
           "file": "src/lib/menu/useItemTableColumns.ts"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/components/menu/publication/CarteItemPicker.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/components/menu/publication/CarteItemPicker.module.css"
         },
         {
           "service": "foodyweb",
@@ -73199,8 +73238,6 @@
         "carteAddGroupCard",
         "carteAddItems",
         "carteBack",
-        "carteChooseHint",
-        "carteChooseItems",
         "carteConflict",
         "carteConflictHint",
         "carteDeleteGroupHint",
@@ -73236,7 +73273,6 @@
         "carteSavedAt",
         "carteSettings",
         "carteSharedLibraryHint",
-        "carteTargetGroup",
         "carteUnsaved",
         "carteUnsavedHint",
         "carteUnsavedTitle",
@@ -73256,8 +73292,7 @@
         "saleStockOpen",
         "saleStockPrepare",
         "saleStockTitle",
-        "saving",
-        "search"
+        "saving"
       ],
       "actions": [
         "accept",
@@ -88605,14 +88640,60 @@
       ],
       "actions": [],
       "line": 1
+    },
+    {
+      "id": "foodyadmin:src/components/menu/publication/CarteItemPicker.tsx:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/components/menu/publication/CarteItemPicker.tsx",
+      "features": [
+        "menu-menus-and-groups"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "all",
+        "apply",
+        "carteChooseHint",
+        "cartePickerAllStock",
+        "cartePickerCategoriesError",
+        "cartePickerClear",
+        "cartePickerClearFilters",
+        "cartePickerCreate",
+        "cartePickerFilters",
+        "cartePickerItems",
+        "cartePickerLowStock",
+        "cartePickerMenu",
+        "cartePickerSelected",
+        "cartePickerSoldOut",
+        "cartePickerTitle",
+        "cartePickerVariants",
+        "carteTargetGroup",
+        "carteUntitled",
+        "category",
+        "close",
+        "done",
+        "filterBy",
+        "items",
+        "loading",
+        "noResults",
+        "pointOfSale",
+        "retry",
+        "saleStockError",
+        "search",
+        "searchCategories",
+        "stock"
+      ],
+      "actions": [
+        "openFilter"
+      ],
+      "line": 1
     }
   ],
   "coverage": {
     "sharedRuntimeFiles": 415,
     "features": 100,
-    "operations": 663,
-    "sourceFiles": 2170,
-    "surfaces": 2039,
+    "operations": 664,
+    "sourceFiles": 2172,
+    "surfaces": 2040,
     "unclassifiedRoutes": []
   }
 }
