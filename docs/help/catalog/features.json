@@ -2895,7 +2895,8 @@
         "src/components/MenuGroupPicker.tsx",
         "src/lib/menu/**",
         "src/lib/carte-editor.ts",
-        "src/components/MenuGroupPicker.tsx"
+        "src/components/MenuGroupPicker.tsx",
+        "src/lib/i18n.tsx"
       ],
       "foodyserver": [
         "internal/menu/**",
@@ -2953,6 +2954,19 @@
           "fr": "Ouvrez Articles et cartes → Cartes puis la carte. Pour une carte tournante, sélectionnez sa série dans l’en-tête. Ajouter permet de choisir des articles pour un groupe ou de créer un groupe ; Ajouter un groupe de cartes est aussi disponible sous la liste. La flèche d’un groupe replie ou déplie son tableau sans modifier la carte. Le menu « … » du groupe contient Modifier le groupe et Choisir les articles. Le menu « … » à côté du titre contient Paramètres de la carte et Aperçu. Les modifications de groupes, canaux et horaires restent locales. Dès qu’une modification ou un brouillon existe, la barre inférieure propose Enregistrer le brouillon et Publier. Enregistrer conserve un brouillon privé ; Aperçu ouvre une liste privée sans prise de commande. Publier demande une confirmation et applique ensemble la carte et ses stocks préparés. Enregistrer seul ne modifie jamais le site ni la caisse. Modifier la mise en page du système de caisse ouvre l’éditeur de disposition distinct ; les modifications non enregistrées restent protégées avant cette navigation.",
           "en": "Open Items & menus → Menus and select the carte. For a rotating carte, choose its series in the header. Add lets you choose items for a group or create a group; Add menu group is also available below the list. A group’s chevron collapses or expands its table without changing the carte. Its “…” menu contains Edit group and Choose items. The “…” menu beside the carte title contains Carte settings and Preview. Group, channel and hours edits stay local. Once edits or a saved draft exist, the bottom bar offers Save draft and Publish. Save stores a private draft; Preview opens a private list that cannot take orders. Publish asks for confirmation and applies the carte and prepared stocks together. Saving alone never changes the live website or POS. Edit POS layout opens the separate tile editor; unsaved changes are guarded before navigating there.",
           "he": "פתחו פריטים ותפריטים → תפריטים ובחרו תפריט. בתפריט מתחלף בחרו סדרה בכותרת. הוספה מאפשרת לבחור פריטים לקבוצה או ליצור קבוצה; הוספת קבוצת תפריט זמינה גם מתחת לרשימה. חץ הקבוצה מקפל או מרחיב את הטבלה בלי לשנות את התפריט. תפריט ״…״ של הקבוצה כולל עריכת קבוצה ובחירת פריטים. תפריט ״…״ ליד שם התפריט כולל הגדרות תפריט ותצוגה מקדימה. עריכת קבוצות, ערוצים ושעות נשארת מקומית. כשיש שינויים או טיוטה שמורה, הסרגל התחתון מציע שמירת טיוטה ופרסום. שמירה שומרת טיוטה פרטית; תצוגה מקדימה מציגה רשימה פרטית ללא הזמנות. פרסום דורש אישור ומחיל יחד את התפריט והמלאי שהוכן. שמירה לבדה אינה משנה את האתר או הקופה. ערוך תצוגת קופה פותח עורך אריחים נפרד, עם הגנה על שינויים שלא נשמרו לפני המעבר."
+        }
+      },
+      {
+        "id": "draft-item-picker",
+        "title": {
+          "fr": "Choisir des articles avec photos et filtres",
+          "en": "Choose items with photos and filters",
+          "he": "בחירת פריטים עם תמונות ומסננים"
+        },
+        "instructions": {
+          "fr": "Dans un groupe de la carte, cliquez sur Ajouter des articles ou sur … → Choisir les articles. La fenêtre Ajouter ou supprimer des articles montre la photo de chaque produit, ou une icône si aucune image ne peut être affichée, et le nombre de variantes lorsqu’il y en a plusieurs. Les cases à droite ajoutent ou retirent uniquement les articles du groupe dans le brouillon ; elles ne suppriment pas les fiches de la bibliothèque. Le compteur comprend aussi les articles sélectionnés masqués par un filtre. Rechercher se combine avec Filtres → Catégorie : cochez une ou plusieurs catégories internes, puis Appliquer. Le groupe de destination est distinct de la catégorie ; depuis Ajouter → Ajouter des articles, choisissez-le dans Groupe de cartes. Les filtres Carte et Stock se combinent aussi ; Stock propose Tout le stock, Alerte de stock bas et En rupture de stock selon la disponibilité calculée pour la série sélectionnée. Point de vente reste limité au restaurant actif. Effacer retire les choix du filtre ouvert ; Appliquer les confirme. Fermer ce filtre ou Échap abandonne ses choix non appliqués. Effacer tous les filtres restaure toute la liste, sans modifier les articles cochés ni la recherche. Si aucun article ne correspond, adaptez la recherche ou effacez les filtres. Une erreur de chargement des catégories propose Réessayer ; ne la confondez pas avec une catégorie vide. Terminé ferme la sélection en conservant les changements locaux ; enregistrez ensuite le brouillon et publiez explicitement. Créer un nouvel article ouvre la fiche commune et protège d’abord les changements de carte non enregistrés.",
+          "en": "Inside a carte group, click Add items or … → Choose items. Add or remove items shows each product photo, or an icon when no image can be displayed, and the variant count when there is more than one. The trailing checkboxes add or remove group membership in the draft only; they never delete library records. The count includes selected items hidden by filters. Search combines with Filters → Category: select one or more internal categories, then Apply. The target group is separate from the category; from Add → Add items, choose it in Menu group. Menu and Stock filters also combine; Stock offers All stock, Low stock alert and Out of stock using the calculated availability for the selected series. Point of sale is limited to the active restaurant. Clear removes choices in the open filter; Apply confirms them. Closing that filter or pressing Escape discards unapplied choices. Clear all filters restores the full list without changing checked items or the search. If nothing matches, adjust the search or clear filters. A category loading failure offers Retry; it is not an empty category. Done closes the picker and keeps local edits; then Save draft and explicitly Publish. Create a new item opens the shared item editor and first protects unsaved carte changes.",
+          "he": "בתוך קבוצת תפריט לחצו על הוספת פריטים או על … → בחירת פריטים. חלון הוספה או הסרה של פריטים מציג תמונת מוצר, או סמל כאשר לא ניתן להציג תמונה, ומספר וריאנטים כשיש יותר מאחד. תיבות הסימון בסוף השורה מוסיפות או מסירות שיוך לקבוצה בטיוטה בלבד; הן אינן מוחקות פריטים מהספרייה. המונה כולל גם פריטים שנבחרו ומוסתרים במסנן. החיפוש משתלב עם מסננים → קטגוריה: בחרו קטגוריה פנימית אחת או יותר ולחצו החל. קבוצת היעד נפרדת מהקטגוריה; בנתיב הוספה → הוספת פריטים בחרו אותה בשדה קבוצת תפריט. אפשר לשלב גם מסנני תפריט ומלאי; מלאי מציע כל המלאי, התראת מלאי נמוך ואזל המלאי לפי הזמינות המחושבת לסדרה שנבחרה. נקודת המכירה מוגבלת למסעדה הפעילה. ניקוי מסיר בחירות במסנן הפתוח; החל מאשר אותן. סגירת המסנן או Escape מבטלים בחירות שלא הוחלו. ניקוי כל המסננים משחזר את הרשימה בלי לשנות סימוני פריטים או את החיפוש. אם אין תוצאות, שנו חיפוש או נקו מסננים. כשל בטעינת קטגוריות מציע ניסיון חוזר ואינו קטגוריה ריקה. סיום סוגר את הבורר ושומר שינויים מקומיים; לאחר מכן שמרו טיוטה ופרסמו במפורש. יצירת פריט חדש פותחת את העורך המשותף ומגינה תחילה על שינויים שלא נשמרו בתפריט."
         }
       },
       {
@@ -3119,7 +3133,7 @@
     "audience": "public",
     "status": "available",
     "preserveExisting": true,
-    "procedureUpdatedAt": "2026-10-22",
+    "procedureUpdatedAt": "2026-10-25",
     "updatedAt": "2026-10-20"
   },
   {

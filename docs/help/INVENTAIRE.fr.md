@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-25.
 
-100 fiches de fonctionnalités, 663 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2170 fichiers applicatifs et 2039 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+100 fiches de fonctionnalités, 664 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2172 fichiers applicatifs et 2040 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,8 +10,8 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 559 | 870 | 91755c424036 ; versioned |
-| foodyadmin | 762 | 773 | 335b4895ab83 ; versioned |
+| foodyserver | 559 | 870 | 76c048a923dd ; versioned |
+| foodyadmin | 764 | 774 | ce39977ce8cc ; versioned |
 | foodylanding | 127 | 21 | 902a4a6ecaa3 ; versioned |
 | foodyweb | 337 | 167 | fac3db244c15 ; versioned |
 | foodypos | 341 | 158 | 64dce2731c01 ; versioned |
@@ -373,6 +373,7 @@ Identifiant : `menu-menus-and-groups`. Public : public. Disponibilité : availab
 - [Qu'est-ce que c'est ?](../../src/content/help/fr/menu/menus-and-groups.mdx#section-1)
 - [La structure](../../src/content/help/fr/menu/menus-and-groups.mdx#section-2)
 - [Préparer, enregistrer et publier une carte](../../src/content/help/fr/menu/menus-and-groups.mdx#section-3)
+- [Choisir des articles avec photos et filtres](../../src/content/help/fr/menu/menus-and-groups.mdx#draft-item-picker)
 - [Où ça se vend : en ligne ou en caisse](../../src/content/help/fr/menu/menus-and-groups.mdx#section-4)
 - [Quand ça se vend : horaires de disponibilité](../../src/content/help/fr/menu/menus-and-groups.mdx#section-5)
 - [Le lien avec la disponibilité](../../src/content/help/fr/menu/menus-and-groups.mdx#section-6)
