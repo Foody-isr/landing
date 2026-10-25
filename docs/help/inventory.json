@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-10-25",
+  "reviewedAt": "2026-10-18",
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "89dd36666a22c331495541ba468a90b4188d9846",
+      "sourceCommit": "6ce6e14287de8777517ea563502c01aead5c9f9d",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "1e19d66eb35552d1b59f0aeb8d885d1a424da811211597c1009b995f04d9ee61",
+      "sourceSnapshot": "0bd206309ddccc9a7976e3de22d6877d089eb1e72ce4dbcd148cd2bb8a370f7b",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -915,6 +915,13 @@
             "platform-api"
           ]
         },
+        "internal/delivery/courier_context.go": {
+          "sha256": "8a0b8344a8dc176e564eca31b722f73744d44eac14600b39b515a80ca5bff5e0",
+          "features": [
+            "delivery-dispatch",
+            "platform-api"
+          ]
+        },
         "internal/delivery/customer_window.go": {
           "sha256": "1166d5a3e3efed28bac885d4eb6de8ed257532f0746f8c9d58e638b1fe8388df",
           "features": [
@@ -988,7 +995,7 @@
           ]
         },
         "internal/delivery/handler.go": {
-          "sha256": "950c6d950b6d2f695c9b5087c9f0804596523f634fda0da7656c882c0e019ec3",
+          "sha256": "7cffb50c2fb1c4112dcee9ffe53168eede0618da59e59515e191986478001c97",
           "features": [
             "delivery-dispatch",
             "platform-api"
@@ -1025,7 +1032,7 @@
           ]
         },
         "internal/delivery/navigation_check.go": {
-          "sha256": "f1ecc25fa1559ea8619855a91269a06d5ea7676796987cbf64a6aa0acd2fbf27",
+          "sha256": "d9a5408c17119a5461064fa456caff967267572b94c12cac13b1fc5de1822f84",
           "features": [
             "delivery-dispatch",
             "platform-api"
@@ -4220,7 +4227,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "7949a076dd308833e2137efd1bf497da745ac66b860740e74476af16b9a7db0e",
+          "sha256": "fbd5e4cda4ab388bdd9841901a0c3f05ad94cb7a388269cc24846e830f207ecb",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -4533,10 +4540,10 @@
     },
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "ce39977ce8cc574e16b468ab2e402b2db1b0abb2",
+      "sourceCommit": "b146c6fdcea82a05afd12a40f9209814b1a3e449",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "83c2d536922c565820762eccc7018321fe689ff592b4ef2f29bc916736dbb88f",
-      "workingTreeHasChanges": true,
+      "sourceSnapshot": "acd115966b613f54e7da42000f49fca2612e1c39eec9ae5f30ba52276af0cb40",
+      "workingTreeHasChanges": false,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
           "sha256": "13c58bc11284d66c7fb9c4d79c1b3e92c6e05539164f2147a5e966d9c17ac275",
@@ -5461,7 +5468,7 @@
           ]
         },
         "src/app/[restaurantId]/orders/courier-mode/page.tsx": {
-          "sha256": "b339f78d7c86603ee1f824304ed94b03aed2a86b70ade570b80a71cd478b78a1",
+          "sha256": "a8425513b95d757d586c3f8d98fa9aed6ad8ad163cdea451d297bd67eb7e7d49",
           "features": [
             "orders-managing-orders",
             "courier"
@@ -6432,14 +6439,14 @@
           ]
         },
         "src/components/delivery/CourierItinerary.module.css": {
-          "sha256": "8fe7d67c04a2c5c4a00f6ffda9c87c6c0e54fc376cd43b23d1006a5fedb043a7",
+          "sha256": "71a13b2d7f30b2f761f2ed9902b669d3a37537de0d099a75b595f6b63ff04688",
           "features": [
             "delivery-dispatch",
             "courier"
           ]
         },
         "src/components/delivery/CourierItineraryView.tsx": {
-          "sha256": "debe828763e6049c4d960e7f64a05007b9e6db4c5ee378a6c924d6ae131192fd",
+          "sha256": "c1e316ec1877a7ff7e8c7e4270c331c8783288aa5fc2fab16b17b743556bbc9e",
           "features": [
             "delivery-dispatch",
             "courier"
@@ -7436,6 +7443,18 @@
         },
         "src/components/menu/publication/CarteGroups.tsx": {
           "sha256": "e85e682432473865dcec02a1d35a78933d7c2462986de24f6983d49cebceb274",
+          "features": [
+            "menu-menus-and-groups"
+          ]
+        },
+        "src/components/menu/publication/CarteItemPicker.module.css": {
+          "sha256": "168d592aa5ec6fbb87f31ef276a4617d5a406d5d458a864052f73ecda660a820",
+          "features": [
+            "menu-menus-and-groups"
+          ]
+        },
+        "src/components/menu/publication/CarteItemPicker.tsx": {
+          "sha256": "4f22fab8ada2e5dd554e07b42007bda04040566c75389a2c9062a9135701d7cf",
           "features": [
             "menu-menus-and-groups"
           ]
@@ -8885,7 +8904,7 @@
           ]
         },
         "src/lib/delivery.ts": {
-          "sha256": "9b7e09c802172fbf9c763dac662ae17da0f2ae6b3b22622bb0c91e47357123e7",
+          "sha256": "0549e30d710adae1e5411cfce21bdbb8041f95e5071c6d9e496d46bdb662af30",
           "features": [
             "delivery-dispatch",
             "shared-runtime"
@@ -8941,7 +8960,7 @@
           ]
         },
         "src/lib/i18n.tsx": {
-          "sha256": "024f743632f935af2995be97c4d5a675081a7c191275091c5809996d0f9e49c3",
+          "sha256": "e653a20a927321d3e8cd195feb472d04d0a3bec748f79c47115c71f51fd3bf5f",
           "features": [
             "customers-profiles",
             "menu-menus-and-groups",
@@ -9901,24 +9920,12 @@
           "features": [
             "shared-runtime"
           ]
-        },
-        "src/components/menu/publication/CarteItemPicker.tsx": {
-          "sha256": "4f22fab8ada2e5dd554e07b42007bda04040566c75389a2c9062a9135701d7cf",
-          "features": [
-            "menu-menus-and-groups"
-          ]
-        },
-        "src/components/menu/publication/CarteItemPicker.module.css": {
-          "sha256": "168d592aa5ec6fbb87f31ef276a4617d5a406d5d458a864052f73ecda660a820",
-          "features": [
-            "menu-menus-and-groups"
-          ]
         }
       }
     },
     "foodylanding": {
       "repository": "https://github.com/Foody-isr/landing",
-      "sourceCommit": "486f51d5d476e8c71e80a5f2f5c75d11944fb3dc",
+      "sourceCommit": "b146b31b49509fe1b26c27fb4df663e8104f5ccb",
       "releaseStatus": "versioned",
       "sourceSnapshot": "0017f89048e20a416bab53c7443a4720bbe088bd715d39dcf9d1a8e67e173251",
       "workingTreeHasChanges": true,
@@ -23224,6 +23231,14 @@
         },
         {
           "service": "foodyadmin",
+          "file": "src/components/menu/publication/CarteItemPicker.module.css"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/components/menu/publication/CarteItemPicker.tsx"
+        },
+        {
+          "service": "foodyadmin",
           "file": "src/components/menu/publication/ProductSalesStock.tsx"
         },
         {
@@ -23253,14 +23268,6 @@
         {
           "service": "foodyadmin",
           "file": "src/lib/menu/useItemTableColumns.ts"
-        },
-        {
-          "service": "foodyadmin",
-          "file": "src/components/menu/publication/CarteItemPicker.tsx"
-        },
-        {
-          "service": "foodyadmin",
-          "file": "src/components/menu/publication/CarteItemPicker.module.css"
         },
         {
           "service": "foodyweb",
@@ -30157,17 +30164,34 @@
             "en": "With order-management permission, open Orders → Deliveries, select the route date and choose Undo departure. This action is offered only for an active route whose stops are all pending. Confirm: the route returns to a draft and Out for delivery orders return to In preparation. Orders already corrected to Accepted, In preparation or Ready for delivery keep their status. The courier remains assigned; then use Unassign and allocate the orders to the correct courier. The date, addresses, stop order and payments are preserved. This undo sends no customer message or kitchen ticket; previously sent messages and their history are retained. If an arrival, delivery or skipped stop has been recorded, or the route changed meanwhile, undo is rejected: refresh and review progress before another correction. Do not mark orders delivered to unlock an assignment.",
             "he": "עם הרשאת ניהול הזמנות, פתחו הזמנות → משלוחים, בחרו את תאריך המסלול ולחצו על ביטול היציאה. הפעולה מוצעת רק למסלול פעיל שכל עצירותיו עדיין בהמתנה. אשרו: המסלול חוזר לטיוטה והזמנות שיצאו למשלוח חוזרות להכנה. הזמנות שכבר תוקנו למצב אושרה, בהכנה או מוכנה למשלוח שומרות על מצבן. השליח נשאר משויך; לאחר מכן בטלו את השיוך והקצו את ההזמנות לשליח הנכון. התאריך, הכתובות, סדר העצירות והתשלומים נשמרים. הביטול אינו שולח הודעה ללקוח או כרטיס מטבח; הודעות שכבר נשלחו וההיסטוריה שלהן נשמרות. אם נרשמו הגעה, מסירה או דילוג על עצירה, או אם המסלול השתנה בינתיים, הביטול נדחה: רעננו ובדקו את ההתקדמות לפני תיקון נוסף. אין לסמן הזמנות כנמסרו כדי לשחרר שיוך."
           }
+        },
+        {
+          "id": "superadmin-courier-mode",
+          "title": {
+            "fr": "Consulter le mode d’un autre livreur",
+            "en": "View another courier’s workspace",
+            "he": "צפייה בסביבת שליח אחר"
+          },
+          "instructions": {
+            "fr": "Un superadmin peut ouvrir Commandes → Mode livreur et choisir un livreur du restaurant dans Voir comme livreur. La carte et les tournées sont celles du livreur choisi ; les actions enregistrent de vrais changements et le GPS du superadmin n’est pas partagé pour lui. Voir [la procédure du mode livreur](/fr/help/delivery/courier-workspace#superadmin-courier-selection), y compris le changement de livreur et la récupération après erreur.",
+            "en": "A superadmin can open Orders → Courier mode and select a restaurant courier under View as courier. The map and routes belong to that courier; actions record real changes and the superadmin’s GPS is not shared for them. See [the courier-mode procedure](/en/help/delivery/courier-workspace#superadmin-courier-selection), including switching couriers and recovering from errors.",
+            "he": "סופר־אדמין יכול לפתוח הזמנות → מצב שליח ולבחור שליח של המסעדה תחת צפייה בתור שליח. המפה והמסלולים שייכים לשליח שנבחר; הפעולות מבצעות שינויים אמיתיים ומיקום הסופר־אדמין אינו משותף בשמו. ראו [הנחיות מצב שליח](/he/help/delivery/courier-workspace#superadmin-courier-selection), כולל החלפת שליח והתאוששות משגיאות."
+          }
         }
       ],
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-10-22",
+      "procedureUpdatedAt": "2026-10-25",
       "updatedAt": "2026-10-20",
       "evidence": [
         {
           "service": "foodyserver",
           "file": "internal/common/delivery_models.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/delivery/courier_context.go"
         },
         {
           "service": "foodyserver",
@@ -30522,12 +30546,25 @@
             "en": "If you start a route accidentally, tell a manager before recording any arrival or delivery. In Orders → Deliveries, a user with order-management permission can choose Undo departure while every stop is pending, then unassign and reallocate the route. Out for delivery orders return to In preparation and the replacement courier can start after reassignment. Courier mode does not offer this management correction. Previously sent messages remain in the history.",
             "he": "אם התחלתם מסלול בטעות, הודיעו למנהל לפני רישום הגעה או מסירה. בהזמנות → משלוחים, משתמש עם הרשאת ניהול הזמנות יכול לבחור ביטול היציאה כל עוד כל העצירות בהמתנה, ולאחר מכן לבטל שיוך ולהקצות מחדש את המסלול. הזמנות שיצאו למשלוח חוזרות להכנה והשליח החלופי יוכל להתחיל לאחר השיוך מחדש. תיקון ניהולי זה אינו מוצע במצב שליח. הודעות שכבר נשלחו נשמרות בהיסטוריה."
           }
+        },
+        {
+          "id": "superadmin-courier-selection",
+          "title": {
+            "fr": "Consulter le mode d’un autre livreur",
+            "en": "View another courier’s workspace",
+            "he": "צפייה בסביבת שליח אחר"
+          },
+          "instructions": {
+            "fr": "Avec un compte superadmin, ouvrez le restaurant concerné puis Commandes → Mode livreur. Dans Voir comme livreur, choisissez un livreur du restaurant ; le premier de la liste est sélectionné à l’ouverture. Vous consultez le même écran de carte, de tournées non terminées et d’arrêts que ce livreur. Changez ce choix à tout moment pour afficher les tournées du nouveau livreur ; l’arrêt sélectionné, la recherche et les panneaux précédents sont réinitialisés. Les actions affichées, dont Démarrer la tournée et Marquer livrée, agissent réellement sur ses livraisons : ne les utilisez que pour enregistrer une opération effectuée. Le compte connecté reste superadmin et sa position GPS n’est pas envoyée comme celle du livreur. Les autres comptes conservent leurs propres tournées sans ce sélecteur. Si aucun livreur n’est configuré, faites vérifier les rôles de l’équipe du restaurant. En cas d’échec de chargement, utilisez Réessayer ; une affectation supprimée ou un livreur d’un autre restaurant est refusé par le serveur.",
+            "en": "With a superadmin account, open the relevant restaurant, then Orders → Courier mode. Under View as courier, select a courier from that restaurant; the first in the list is selected initially. You see the same map, unfinished routes and stops as that courier. Change the selection at any time to display the new courier’s routes; the previous selected stop, search and panels are reset. Displayed actions, including Start route and Mark delivered, really change that courier’s deliveries: use them only to record work that has taken place. The signed-in account remains superadmin and its GPS position is not reported as the courier’s. Other accounts keep their own routes without this selector. If no couriers are configured, have the restaurant’s team roles checked. If loading fails, choose Retry; a removed membership or a courier from another restaurant is rejected by the server.",
+            "he": "בחשבון סופר־אדמין פתחו את המסעדה הרצויה ואז הזמנות → מצב שליח. תחת צפייה בתור שליח בחרו שליח של המסעדה; השליח הראשון ברשימה נבחר בפתיחה. מוצגים אותם מפה, מסלולים שטרם הושלמו ועצירות שהשליח רואה. ניתן להחליף שליח בכל עת; העצירה הנבחרת, החיפוש והחלוניות הקודמים מתאפסים. הפעולות המוצגות, כולל תחילת מסלול וסמן נמסר, משנות בפועל את המשלוחים שלו: השתמשו בהן רק לרישום פעולה שבוצעה. החשבון המחובר נשאר סופר־אדמין ומיקום ה־GPS שלו אינו מדווח כמיקום השליח. חשבונות אחרים ממשיכים לראות את המסלולים שלהם ללא בורר זה. אם לא הוגדרו שליחים, בקשו לבדוק את תפקידי צוות המסעדה. בכשל טעינה לחצו ניסיון חוזר; השרת דוחה שיוך שהוסר או שליח של מסעדה אחרת."
+          }
         }
       ],
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-10-22",
+      "procedureUpdatedAt": "2026-10-25",
       "evidence": [
         {
           "service": "foodyadmin",
@@ -41884,6 +41921,10 @@
         {
           "service": "foodyserver",
           "file": "internal/customers/service.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/delivery/courier_context.go"
         },
         {
           "service": "foodyserver",
@@ -66400,6 +66441,26 @@
       "line": 1
     },
     {
+      "id": "foodyadmin:src/app/[restaurantId]/orders/courier-mode/page.tsx:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/app/[restaurantId]/orders/courier-mode/page.tsx",
+      "features": [
+        "orders-managing-orders",
+        "courier"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "couldNotLoad",
+        "courierNoCouriers",
+        "courierSelectCourier",
+        "courierViewAs",
+        "loading",
+        "retry"
+      ],
+      "actions": [],
+      "line": 1
+    },
+    {
       "id": "foodyadmin:src/app/[restaurantId]/orders/deliveries/page.tsx:next-page:1",
       "service": "foodyadmin",
       "source": "src/app/[restaurantId]/orders/deliveries/page.tsx",
@@ -70286,6 +70347,27 @@
       "line": 1
     },
     {
+      "id": "foodyadmin:src/components/customers/CustomerPhoneFields.tsx:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/components/customers/CustomerPhoneFields.tsx",
+      "features": [
+        "customers-profiles"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "addCustomerPhone",
+        "customerContactPhones",
+        "customerPhoneAfter",
+        "customerPhoneDuplicate",
+        "customerRemovePhoneHint",
+        "customerUseForWhatsApp",
+        "customerWhatsAppPhoneHint",
+        "removeCustomerPhone"
+      ],
+      "actions": [],
+      "line": 1
+    },
+    {
       "id": "foodyadmin:src/components/data-table/ColumnPicker.tsx:ui-controls:1",
       "service": "foodyadmin",
       "source": "src/components/data-table/ColumnPicker.tsx",
@@ -73353,6 +73435,52 @@
       "actions": [
         "open",
         "update"
+      ],
+      "line": 1
+    },
+    {
+      "id": "foodyadmin:src/components/menu/publication/CarteItemPicker.tsx:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/components/menu/publication/CarteItemPicker.tsx",
+      "features": [
+        "menu-menus-and-groups"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "all",
+        "apply",
+        "carteChooseHint",
+        "cartePickerAllStock",
+        "cartePickerCategoriesError",
+        "cartePickerClear",
+        "cartePickerClearFilters",
+        "cartePickerCreate",
+        "cartePickerFilters",
+        "cartePickerItems",
+        "cartePickerLowStock",
+        "cartePickerMenu",
+        "cartePickerSelected",
+        "cartePickerSoldOut",
+        "cartePickerTitle",
+        "cartePickerVariants",
+        "carteTargetGroup",
+        "carteUntitled",
+        "category",
+        "close",
+        "done",
+        "filterBy",
+        "items",
+        "loading",
+        "noResults",
+        "pointOfSale",
+        "retry",
+        "saleStockError",
+        "search",
+        "searchCategories",
+        "stock"
+      ],
+      "actions": [
+        "openFilter"
       ],
       "line": 1
     },
@@ -77132,6 +77260,17 @@
       "line": 1
     },
     {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:146",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.is_visible",
+      "line": 146
+    },
+    {
       "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:648",
       "service": "foodyadmin",
       "source": "src/components/website-v3/field-contracts.ts",
@@ -79385,17 +79524,6 @@
       "kind": "configuration-field",
       "field": "section.delete",
       "line": 1014
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:146",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "section.is_visible",
-      "line": 146
     },
     {
       "id": "foodyadmin:src/components/website/CheckoutEditor.tsx:ui-controls:1",
@@ -84073,6 +84201,36 @@
       "line": 1
     },
     {
+      "id": "foodypos:lib/core/routing/app_router.dart:ui-controls:1",
+      "service": "foodypos",
+      "source": "lib/core/routing/app_router.dart",
+      "features": [
+        "pos-payments",
+        "shared-runtime"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "navDashboard",
+        "navMenu",
+        "navMore",
+        "navOrders",
+        "navPos",
+        "navTables",
+        "navTransactions",
+        "permissionsStaleBanner",
+        "tableAssistanceActionFailed",
+        "tableAssistanceBill",
+        "tableAssistanceDone",
+        "tableAssistanceMore",
+        "tableAssistanceTake",
+        "tableAssistanceViewTable",
+        "tableAssistanceWaiter",
+        "tableAssistanceWater"
+      ],
+      "actions": [],
+      "line": 1
+    },
+    {
       "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:225",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
@@ -84716,36 +84874,6 @@
         "lib/services/notifications/order_sound_service.dart",
         "lib/core/ui/pos_bottom_navigation.dart"
       ]
-    },
-    {
-      "id": "foodypos:lib/core/routing/app_router.dart:ui-controls:1",
-      "service": "foodypos",
-      "source": "lib/core/routing/app_router.dart",
-      "features": [
-        "pos-payments",
-        "shared-runtime"
-      ],
-      "kind": "ui-controls",
-      "labels": [
-        "navDashboard",
-        "navMenu",
-        "navMore",
-        "navOrders",
-        "navPos",
-        "navTables",
-        "navTransactions",
-        "permissionsStaleBanner",
-        "tableAssistanceActionFailed",
-        "tableAssistanceBill",
-        "tableAssistanceDone",
-        "tableAssistanceMore",
-        "tableAssistanceTake",
-        "tableAssistanceViewTable",
-        "tableAssistanceWaiter",
-        "tableAssistanceWater"
-      ],
-      "actions": [],
-      "line": 1
     },
     {
       "id": "foodypos:lib/core/storage/credential_storage.dart:ui-controls:1",
@@ -88619,81 +88747,14 @@
         "updateUserEmail"
       ],
       "line": 1
-    },
-    {
-      "id": "foodyadmin:src/components/customers/CustomerPhoneFields.tsx:ui-controls:1",
-      "service": "foodyadmin",
-      "source": "src/components/customers/CustomerPhoneFields.tsx",
-      "features": [
-        "customers-profiles"
-      ],
-      "kind": "ui-controls",
-      "labels": [
-        "addCustomerPhone",
-        "customerContactPhones",
-        "customerPhoneAfter",
-        "customerPhoneDuplicate",
-        "customerRemovePhoneHint",
-        "customerUseForWhatsApp",
-        "customerWhatsAppPhoneHint",
-        "removeCustomerPhone"
-      ],
-      "actions": [],
-      "line": 1
-    },
-    {
-      "id": "foodyadmin:src/components/menu/publication/CarteItemPicker.tsx:ui-controls:1",
-      "service": "foodyadmin",
-      "source": "src/components/menu/publication/CarteItemPicker.tsx",
-      "features": [
-        "menu-menus-and-groups"
-      ],
-      "kind": "ui-controls",
-      "labels": [
-        "all",
-        "apply",
-        "carteChooseHint",
-        "cartePickerAllStock",
-        "cartePickerCategoriesError",
-        "cartePickerClear",
-        "cartePickerClearFilters",
-        "cartePickerCreate",
-        "cartePickerFilters",
-        "cartePickerItems",
-        "cartePickerLowStock",
-        "cartePickerMenu",
-        "cartePickerSelected",
-        "cartePickerSoldOut",
-        "cartePickerTitle",
-        "cartePickerVariants",
-        "carteTargetGroup",
-        "carteUntitled",
-        "category",
-        "close",
-        "done",
-        "filterBy",
-        "items",
-        "loading",
-        "noResults",
-        "pointOfSale",
-        "retry",
-        "saleStockError",
-        "search",
-        "searchCategories",
-        "stock"
-      ],
-      "actions": [
-        "openFilter"
-      ],
-      "line": 1
     }
   ],
   "coverage": {
     "sharedRuntimeFiles": 415,
     "features": 100,
-    "operations": 664,
-    "sourceFiles": 2172,
-    "surfaces": 2040,
+    "operations": 666,
+    "sourceFiles": 2173,
+    "surfaces": 2041,
     "unclassifiedRoutes": []
   }
 }

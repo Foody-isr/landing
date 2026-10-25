@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-10-25.
+Révision du relevé : 2026-10-18.
 
-100 fiches de fonctionnalités, 664 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2172 fichiers applicatifs et 2040 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+100 fiches de fonctionnalités, 666 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2173 fichiers applicatifs et 2041 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,9 +10,9 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 559 | 870 | 89dd36666a22 ; versioned |
-| foodyadmin | 764 | 774 | ce39977ce8cc ; versioned |
-| foodylanding | 127 | 21 | 486f51d5d476 ; versioned |
+| foodyserver | 560 | 870 | 6ce6e14287de ; versioned |
+| foodyadmin | 764 | 775 | b146c6fdcea8 ; versioned |
+| foodylanding | 127 | 21 | b146b31b4950 ; versioned |
 | foodyweb | 337 | 167 | 5ddc1ea843d9 ; versioned |
 | foodypos | 341 | 158 | 64dce2731c01 ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
@@ -960,6 +960,7 @@ Identifiant : `delivery-dispatch`. Public : public. Disponibilité : available. 
 - [Code caisse à l’activation du personnel](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#staff-activation-pos-code)
 - [Préparer un compte Google propre à votre établissement](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#google-account-guide)
 - [Annuler un départ lancé par erreur](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#undo-departure)
+- [Consulter le mode d’un autre livreur](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#superadmin-courier-mode)
 
 ### [Parcours coursier et confirmation des livraisons](../../src/content/help/fr/delivery/courier-workspace.mdx)
 
@@ -972,6 +973,7 @@ Identifiant : `courier`. Public : public. Disponibilité : available. Services :
 - [Réagir à une limite du service cartographique](../../src/content/help/fr/delivery/courier-workspace.mdx#routing-service-limits)
 - [Ajuster la carte et retrouver un arrêt](../../src/content/help/fr/delivery/courier-workspace.mdx#map-timeline-panel)
 - [Corriger un démarrage de test](../../src/content/help/fr/delivery/courier-workspace.mdx#accidental-departure)
+- [Consulter le mode d’un autre livreur](../../src/content/help/fr/delivery/courier-workspace.mdx#superadmin-courier-selection)
 
 ### [Fournisseurs de cartes et usages](../../src/content/help/fr/delivery/maps-and-usage.mdx)
 
