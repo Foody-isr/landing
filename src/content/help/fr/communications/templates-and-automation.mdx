@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - communications
   - message-templates
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-25'
 featureId: message-templates
 audience: public
 releaseStatus: available
@@ -41,3 +41,9 @@ Pour une livraison affectée à une tournée avec une marge client enregistrée,
 ## Choisir le mode d’envoi du rappel
 
 Les rappels WhatsApp approuvés peuvent être prévisualisés avant la veille, mais les boutons manuels restent bloqués jusqu’à la veille selon le fuseau du restaurant. Commandes → Livraisons → Rappels WhatsApp permet de vérifier et confirmer les rappels de toutes les tournées de la date choisie ; WhatsApp au client et Envoyer ce rappel traitent un seul client. Le message utilise le créneau d’arrivée calculé de la tournée enregistrée et le livreur affecté. Les boutons manuels utilisent le modèle de rappel global ; une étape automatique conserve le modèle et l’horaire explicitement configurés dans Parcours de commande. Pour envoyer uniquement la veille, choisissez ce timing sur l’étape, par exemple Prête. Aucun déclencheur n’est activé en ouvrant un aperçu. Un rappel déjà soumis, incertain ou échoué n’est jamais renvoyé par un autre mode, même si son texte ou son fournisseur change. Une modification avant envoi demande un aperçu actualisé. L’acceptation ne prouve pas la réception ; consultez Messages au client de la commande. Le texte de l’aperçu représente le calcul actuel, pas un ancien message enregistré.
+
+<span id="meta-template-image-sync" />
+
+## Récupérer automatiquement l’image du modèle Meta
+
+Prérequis : un modèle Utility approuvé avec une en-tête Photo dans le compte Meta connecté. Dans Paramètres → Communications → WhatsApp, ouvrez Configurer sur le message : Foody relit les modèles et récupère automatiquement leur image Meta. L’aperçu affiche l’image au-dessus du texte, sans ajout de fichier dans Foody. Une sélection existante sans fichier suit aussi l’image Meta. Si vous aviez choisi une image locale, sélectionnez Image du modèle Meta dans Photo, puis Terminé et Enregistrer pour utiliser celle de Meta. Les fichiers locaux explicitement sélectionnés restent conservés. Actualiser les modèles et la connexion relit les modifications faites dans Meta. Les aperçus de satisfaction et des étapes du parcours utilisent aussi cette image ; le panneau d’envoi de commande affiche la pièce jointe réelle. L’image doit être un JPEG/PNG accessible depuis Meta, au maximum 5 Mo. Si sa récupération échoue, l’aperçu propose Actualiser et l’envoi échoue sans envoyer le texte seul. Vérifiez l’image dans Meta si le lien n’est plus disponible. Une image modifiée après la préparation d’un envoi manuel exige un nouvel aperçu avant l’envoi. L’ouverture et l’actualisation n’envoient aucun message.

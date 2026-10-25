@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-24'
+updatedAt: '2026-10-25'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -135,3 +135,9 @@ Les groupes d’options portent un rôle propre à l’article : price conserve 
 ## Vérifier le panneau WhatsApp unifié
 
 Le panneau Admin commun aux commandes unitaires et à la sélection de la page utilise les aperçus et envois existants, sans nouvelle route de dispatch, migration, texte libre API ou modification des déclencheurs. Les brouillons de l’application restent locaux et exigent une confirmation avant abandon. Les statuts incertains conservent l’identifiant de tentative, y compris en changeant de type de message. GET /restaurants/:id/message-templates autorise settings.view ou orders.manage avec EnforceRestaurantAccess ; PUT et DELETE conservent settings.edit. La modification des permissions ne donne aucun accès aux credentials. Les traductions FR/HE/EN et les procédures commande/WhatsApp couvrent les nouveaux contrôles. Vérifier les réponses perdues, la file partiellement éligible, le changement de commande avant dispatch et le mobile RTL avec les fixtures synthétiques ; ne pas envoyer de messages réels pour valider l’interface. Le pin WORKSPACE est réservé à la revue locale : avant CI/publication, remplacer par le commit Landing immuable autorisé et déployer l’API avant l’Admin correspondant.
+
+<span id="meta-template-image-proxy" />
+
+## Image de modèle WhatsApp Meta
+
+GET /api/v1/restaurants/:id/whatsapp/meta/templates/:templateId/image lit une image de modèle Utility approuvé appartenant au compte Meta de l’établissement. JWT, accès à l’établissement et permissions de lecture des réglages ou des commandes sont exigés. La réponse est privée, sans cache, avec type JPEG/PNG vérifié et limite de 5 Mo. Les URL Meta signées et les identifiants d’accès ne sont pas retournés. Les aperçus et envois incluent l’image Meta automatiquement en l’absence de fichier explicitement choisi ; une modification de son contenu invalide la confirmation manuelle précédente. Une récupération impossible produit une erreur sans envoi de texte seul.

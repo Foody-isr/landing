@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - orders
   - order-detail
-updatedAt: '2026-10-24'
+updatedAt: '2026-10-25'
 featureId: order-detail
 audience: public
 releaseStatus: available
@@ -109,3 +109,9 @@ Prérequis : avoir l’autorisation de gérer les commandes. Pour l’envoi depu
 5. Dans l’application, choisissez la confirmation, les informations de livraison ou le lien du reçu. La langue commence par celle du client, avec la langue du restaurant comme repli. Vous pouvez modifier chaque texte et sa langue. **Ouvrir WhatsApp** ouvre uniquement la conversation sélectionnée ; envoyez dans WhatsApp, puis revenez au panneau pour choisir le prochain destinataire. Foody indique seulement **WhatsApp ouvert**, sans confirmer l’envoi ni la réception. Abandonner un texte modifié demande confirmation.
 
 **Résultat et récupération :** les statuts Business distinguent l’acceptation de la livraison et de la lecture lorsque le prestataire les fournit. **Actualiser** vérifie une tentative existante sans la renvoyer. Une réponse perdue reste non confirmée et n’est pas rejouée automatiquement. Si une commande ou un modèle a changé, les envois restants s’arrêtent : actualisez et relisez. Corrigez les données ou les réglages manquants, puis actualisez les aperçus indisponibles. Autorisez les fenêtres surgissantes si l’application ne s’ouvre pas. **Messages au client** conserve l’historique suivi. Les automatismes du parcours gardent leurs modèles et déclencheurs ; ouvrir ce panneau ne les active ni ne les modifie.
+
+<span id="meta-template-image-preview" />
+
+## Image du modèle WhatsApp
+
+Les modèles WhatsApp Utility approuvés avec une photo utilisent automatiquement l’image récupérée depuis Meta lorsque aucun fichier local n’a été choisi. L’aperçu affiche cette image ; un changement avant l’envoi manuel demande une nouvelle vérification. Un échec de récupération bloque l’envoi sans envoyer le texte seul. Configurez ou actualisez le modèle dans Paramètres → Communications → WhatsApp. Voir le [guide WhatsApp](../communications/whatsapp#meta-template-image-sync).

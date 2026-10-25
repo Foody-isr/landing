@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - communications
   - message-templates
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-25'
 featureId: message-templates
 audience: public
 releaseStatus: available
@@ -41,3 +41,9 @@ For an assigned delivery with a saved customer-window setting, reminders use the
 ## Choose how to send a reminder
 
 Approved WhatsApp reminders can be previewed early, while manual buttons remain blocked until the day before delivery in the restaurant’s timezone. Orders → Deliveries → WhatsApp reminders reviews and confirms reminders across every route on the selected date; WhatsApp customer and Send this reminder handle one customer. Messages use the saved route’s calculated arrival window and assigned courier. Manual buttons use the global reminder template; automatic stages retain their explicitly configured template and timing in Order workflow. For day-before-only sending, select that timing on the intended stage, for example Ready. Opening a preview enables no trigger. A previously submitted, uncertain or failed reminder is never sent again by another mode, even if its text or provider changes. Changes before sending require a refreshed preview. Acceptance does not prove delivery; consult Customer messages on the order. Preview text represents the current calculation, not an earlier stored message.
+
+<span id="meta-template-image-sync" />
+
+## Automatically retrieve the Meta template image
+
+Prerequisite: an approved Utility template with a Photo header in the connected Meta account. In Settings → Communications → WhatsApp, open Configure for the message: Foody reloads the templates and automatically retrieves their Meta image. The preview displays the image above the text without uploading a file to Foody. An existing selection without a file also follows the Meta image. If you previously selected a local image, choose Image from Meta template under Photo, then Done and Save to use Meta’s image. Explicit local file selections are preserved. Refresh templates and connection reloads edits made in Meta. Satisfaction and workflow-stage previews also use this image; the order composer displays the actual attachment. The image must be a JPEG/PNG accessible from Meta, up to 5 MB. If retrieval fails, the preview offers Refresh and sending fails without a text-only fallback. Check the image in Meta if its link is unavailable. An image changed after a manual send was prepared requires a new preview before sending. Opening and refreshing never sends a message.

@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - orders
   - order-detail
-updatedAt: '2026-10-24'
+updatedAt: '2026-10-25'
 featureId: order-detail
 audience: public
 releaseStatus: available
@@ -109,3 +109,9 @@ Prerequisites: permission to manage orders. Sending from Foody requires an alrea
 5. In the app channel, choose confirmation, delivery information or receipt link. Language starts with the customer’s language, falling back to the restaurant’s language. Each draft and language can be edited. **Open WhatsApp** opens only the selected conversation; send inside WhatsApp, then return to select the next recipient. Foody reports only **WhatsApp opened**, without claiming sending or delivery. Discarding edited text requires confirmation.
 
 **Result and recovery:** Business statuses distinguish acceptance from delivery and reading when reported by the provider. **Refresh** checks the original attempt without resending it. A lost response remains unconfirmed and is never replayed automatically. If an order or model changes, remaining sends stop: refresh and review again. Correct missing saved details or configuration, then refresh unavailable previews. Allow pop-ups if the app does not open. **Customer messages** retains tracked history. Workflow automations keep their configured models and triggers; opening this panel does not activate or change them.
+
+<span id="meta-template-image-preview" />
+
+## WhatsApp template image
+
+Approved WhatsApp Utility templates with a photo automatically use the image retrieved from Meta when no local file was selected. The preview displays that image; a change before a manual send requires another review. Retrieval failure blocks sending without a text-only fallback. Configure or refresh the template in Settings → Communications → WhatsApp. See the [WhatsApp guide](../communications/whatsapp#meta-template-image-sync).
