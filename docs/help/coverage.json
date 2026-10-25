@@ -113,7 +113,11 @@
         "foodyserver": [
           "internal/customers/**",
           "cmd/server/main.go",
-          "internal/support/corpus.json"
+          "internal/support/corpus.json",
+          "internal/common/customer_phones.go",
+          "internal/common/customer_identity.go",
+          "internal/analytics/service.go",
+          "cmd/server/boot_models.go"
         ],
         "foodypos": [
           "lib/features/trusted_customers/**"
@@ -1014,14 +1018,16 @@
           "src/components/website-v3/OrderPageEditor.tsx",
           "src/components/website-v3/OrderDiscoveryAppearanceEditor.tsx",
           "src/components/website-v3/CategoryNavigationEditor.tsx",
-          "src/components/website-v3/CommerceSelector.tsx"
+          "src/components/website-v3/CommerceSelector.tsx",
+          "src/lib/i18n.tsx"
         ],
         "foodyweb": [
           "components/website-v3/**",
           "components/themed/**",
           "components/Category*.tsx",
           "components/OrderDiscovery*.tsx",
-          "components/OrderMenu*.tsx"
+          "components/OrderMenu*.tsx",
+          "app/globals.css"
         ]
       }
     },
@@ -1500,7 +1506,8 @@
           "internal/twilio/**",
           "internal/metawhatsapp/**",
           "internal/printing/receipt_pdf.go",
-          "cmd/server/main.go"
+          "cmd/server/main.go",
+          "internal/common/customer_phones.go"
         ]
       }
     },
@@ -1818,7 +1825,8 @@
           "src/lib/**"
         ],
         "foodyweb": [
-          "lib/**"
+          "lib/**",
+          "app/globals.css"
         ],
         "foodypos": [
           "lib/core/**"

@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-18.
 
-100 fiches de fonctionnalités, 674 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2172 fichiers applicatifs et 2037 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+100 fiches de fonctionnalités, 680 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2177 fichiers applicatifs et 2041 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 558 | 870 | 91755c424036 ; versioned |
-| foodyadmin | 763 | 774 | 335b4895ab83 ; versioned |
-| foodyweb | 337 | 167 | 24c8fe9c3eb9 ; versioned |
-| foodylanding | 127 | 21 | 902a4a6ecaa3 ; versioned |
-| foodypos | 345 | 158 | b08c4d3e364f ; versioned |
-| foodybackoffice | 42 | 47 | 126b49234438 ; versioned |
+| foodyserver | 560 | 870 | 9ec2eb389555 ; versioned |
+| foodyadmin | 764 | 775 | b8b1b039f891 ; versioned |
+| foodyweb | 337 | 167 | dae28f9f7d46 ; versioned |
+| foodylanding | 127 | 21 | 4e604f2355c4 ; versioned |
+| foodypos | 345 | 158 | d8f8dbd13b92 ; versioned |
+| foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
 
 ## getting-started
 
@@ -146,10 +146,10 @@ Identifiant : `staff-devices-shifts`. Public : public. Disponibilité : availabl
 Identifiant : `customers-profiles`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodypos.
 
 - [Retrouver un client](../../src/content/help/fr/customers/managing-customers.mdx#find)
-- [Modifier les coordonnées de livraison](../../src/content/help/fr/customers/managing-customers.mdx#edit)
+- [Modifier la fiche client](../../src/content/help/fr/customers/managing-customers.mdx#edit)
 - [Autoriser la commande en espèces](../../src/content/help/fr/customers/managing-customers.mdx#trusted)
 - [Fusionner des doublons](../../src/content/help/fr/customers/managing-customers.mdx#merge)
-- [Corriger un ou plusieurs téléphones](../../src/content/help/fr/customers/managing-customers.mdx#phone-corrections)
+- [Gérer les téléphones et choisir le numéro WhatsApp](../../src/content/help/fr/customers/managing-customers.mdx#phone-corrections)
 
 ## marketing
 
@@ -376,6 +376,7 @@ Identifiant : `menu-menus-and-groups`. Public : public. Disponibilité : availab
 
 - [Qu'est-ce que c'est ?](../../src/content/help/fr/menu/menus-and-groups.mdx#section-1)
 - [La structure](../../src/content/help/fr/menu/menus-and-groups.mdx#section-2)
+- [Vérifier les onglets des cartes sur le site](../../src/content/help/fr/menu/menus-and-groups.mdx#public-menu-tabs)
 - [Préparer, enregistrer et publier une carte](../../src/content/help/fr/menu/menus-and-groups.mdx#section-3)
 - [Choisir des articles avec photos et filtres](../../src/content/help/fr/menu/menus-and-groups.mdx#draft-item-picker)
 - [Où ça se vend : en ligne ou en caisse](../../src/content/help/fr/menu/menus-and-groups.mdx#section-4)
@@ -478,6 +479,7 @@ Identifiant : `orders-managing-orders`. Public : public. Disponibilité : availa
 - [Contacter les clients par WhatsApp](../../src/content/help/fr/orders/managing-orders.mdx#unified-order-whatsapp-selection)
 - [Naviguer dans une vente mobile](../../src/content/help/fr/orders/managing-orders.mdx#mobile-terminal)
 - [Image du modèle WhatsApp](../../src/content/help/fr/orders/managing-orders.mdx#meta-template-image-preview)
+- [Choisir le destinataire WhatsApp du client](../../src/content/help/fr/orders/managing-orders.mdx#customer-whatsapp-recipient)
 
 ### [Types de commandes et remise](../../src/content/help/fr/orders/order-types.mdx)
 
@@ -544,6 +546,7 @@ Identifiant : `order-detail`. Public : public. Disponibilité : available. Servi
 - [Conserver les choix de variante de la commande](../../src/content/help/fr/orders/order-details.mdx#variant-position-order)
 - [Envoyer un message WhatsApp pour une ou plusieurs commandes](../../src/content/help/fr/orders/order-details.mdx#unified-order-whatsapp)
 - [Image du modèle WhatsApp](../../src/content/help/fr/orders/order-details.mdx#meta-template-image-preview)
+- [Choisir le destinataire WhatsApp du client](../../src/content/help/fr/orders/order-details.mdx#customer-whatsapp-recipient)
 
 ### [Calendrier du restaurant et exceptions](../../src/content/help/fr/orders/calendar.mdx)
 
@@ -762,6 +765,7 @@ Identifiant : `website-sections`. Public : public. Disponibilité : available. S
 Identifiant : `website-order-design`. Public : public. Disponibilité : available. Services : foodyadmin, foodyweb.
 
 - [Choisir disposition et navigation du menu](../../src/content/help/fr/website-qr/order-page.mdx#menu-layout)
+- [Distinguer les cartes et leurs groupes](../../src/content/help/fr/website-qr/order-page.mdx#menu-tabs-and-groups)
 - [Personnaliser la fiche article](../../src/content/help/fr/website-qr/order-page.mdx#item-surface)
 - [Placer les contenus de découverte](../../src/content/help/fr/website-qr/order-page.mdx#discovery)
 - [Vérifier l’entrée de commande sur mobile](../../src/content/help/fr/website-qr/order-page.mdx#mobile-fulfillment-review)
@@ -1070,6 +1074,7 @@ Identifiant : `whatsapp`. Public : public. Disponibilité : available. Services 
 - [Choisir le mode d’envoi du rappel](../../src/content/help/fr/communications/whatsapp.mdx#delivery-reminder-review-and-send)
 - [Envoyer un message WhatsApp pour une ou plusieurs commandes](../../src/content/help/fr/communications/whatsapp.mdx#unified-order-whatsapp)
 - [Récupérer automatiquement l’image du modèle Meta](../../src/content/help/fr/communications/whatsapp.mdx#meta-template-image-sync)
+- [Choisir le destinataire WhatsApp du client](../../src/content/help/fr/communications/whatsapp.mdx#customer-whatsapp-recipient)
 
 ### [Modèles et automatisations de messages](../../src/content/help/fr/communications/templates-and-automation.mdx)
 
@@ -1089,6 +1094,7 @@ Identifiant : `message-templates`. Public : public. Disponibilité : available. 
 Identifiant : `guest-ordering`. Public : public. Disponibilité : available. Services : foodyserver, foodyweb.
 
 - [Vérifier le plafond de préautorisation au poids](../../src/content/help/fr/guest/online-ordering.mdx#weight-hold-margin)
+- [Choisir une carte puis un groupe](../../src/content/help/fr/guest/online-ordering.mdx#choose-menu-and-group)
 - [Composer le panier](../../src/content/help/fr/guest/online-ordering.mdx#basket)
 - [Choisir une adresse sur téléphone](../../src/content/help/fr/guest/online-ordering.mdx#mobile-fulfillment)
 - [Choisir coordonnées et remise](../../src/content/help/fr/guest/online-ordering.mdx#fulfillment)

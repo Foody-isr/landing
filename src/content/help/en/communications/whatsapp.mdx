@@ -73,3 +73,9 @@ Prerequisites: permission to manage orders. Sending from Foody requires an alrea
 ## Automatically retrieve the Meta template image
 
 Prerequisite: an approved Utility template with a Photo header in the connected Meta account. In Settings → Communications → WhatsApp, open Configure for the message: Foody reloads the templates and automatically retrieves their Meta image. The preview displays the image above the text without uploading a file to Foody. An existing selection without a file also follows the Meta image. If you previously selected a local image, choose Image from Meta template under Photo, then Done and Save to use Meta’s image. Explicit local file selections are preserved. Refresh templates and connection reloads edits made in Meta. Satisfaction and workflow-stage previews also use this image; the order composer displays the actual attachment. The image must be a JPEG/PNG accessible from Meta, up to 5 MB. If retrieval fails, the preview offers Refresh and sending fails without a text-only fallback. Check the image in Meta if its link is unavailable. An image changed after a manual send was prepared requires a new preview before sending. Opening and refreshing never sends a message.
+
+<span id="customer-whatsapp-recipient" />
+
+## Choose the customer WhatsApp recipient
+
+If the customer uses a different WhatsApp number, open Clients → their profile, select Use for WhatsApp under Phone numbers and save. That number is used by Meta and Twilio messages and by WhatsApp app handoffs from the order, including link and document sharing. The order phone remains its contact and SMS-verification number. Check the preview recipient; changing the WhatsApp selection requires a new reviewed preview before an API send. Saving the customer profile sends no test message.
