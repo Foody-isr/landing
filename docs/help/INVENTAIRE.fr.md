@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-18.
 
-100 fiches de fonctionnalités, 680 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2177 fichiers applicatifs et 2041 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+100 fiches de fonctionnalités, 683 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2177 fichiers applicatifs et 2041 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,11 +10,11 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 560 | 870 | 9ec2eb389555 ; versioned |
-| foodyadmin | 764 | 775 | b8b1b039f891 ; versioned |
-| foodyweb | 337 | 167 | dae28f9f7d46 ; versioned |
-| foodylanding | 127 | 21 | 4e604f2355c4 ; versioned |
-| foodypos | 345 | 158 | d8f8dbd13b92 ; versioned |
+| foodyserver | 560 | 870 | 16383f70d58c ; versioned |
+| foodyadmin | 764 | 775 | 41433c228b1e ; versioned |
+| foodyweb | 337 | 167 | 134d38895731 ; versioned |
+| foodylanding | 127 | 21 | e34d1464f809 ; versioned |
+| foodypos | 345 | 158 | 9893b9d62d7c ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
 
 ## getting-started
@@ -727,16 +727,18 @@ Identifiant : `website-qr-customize-your-site`. Public : public. Disponibilité 
 - [Menu et commandes](../../src/content/help/fr/website-qr/customize-your-site.mdx#section-3)
 - [Vérifier l’entrée de commande sur mobile](../../src/content/help/fr/website-qr/customize-your-site.mdx#mobile-fulfillment-review)
 - [Accès aux nouveaux réglages](../../src/content/help/fr/website-qr/customize-your-site.mdx#related-service-controls)
+- [Séparer les couleurs des cartes et des catégories](../../src/content/help/fr/website-qr/customize-your-site.mdx#menu-and-category-text-colors)
 
 ### [Apparence et identité du site](../../src/content/help/fr/website-qr/design-and-branding.mdx)
 
-Identifiant : `website-design`. Public : public. Disponibilité : available. Services : foodyadmin, foodyweb.
+Identifiant : `website-design`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb.
 
 - [Choisir un thème et les couleurs](../../src/content/help/fr/website-qr/design-and-branding.mdx#theme)
 - [Régler les polices et rôles de texte](../../src/content/help/fr/website-qr/design-and-branding.mdx#fonts)
 - [Cadrer les images des articles](../../src/content/help/fr/website-qr/design-and-branding.mdx#images)
 - [Vérifier l’entrée de commande sur mobile](../../src/content/help/fr/website-qr/design-and-branding.mdx#mobile-fulfillment-review)
 - [Accès aux nouveaux réglages](../../src/content/help/fr/website-qr/design-and-branding.mdx#related-service-controls)
+- [Séparer les couleurs des cartes et des catégories](../../src/content/help/fr/website-qr/design-and-branding.mdx#menu-and-category-text-colors)
 
 ### [En-tête, navigation et pied de page](../../src/content/help/fr/website-qr/navigation-and-footer.mdx)
 
@@ -762,7 +764,7 @@ Identifiant : `website-sections`. Public : public. Disponibilité : available. S
 
 ### [Concevoir la page de commande](../../src/content/help/fr/website-qr/order-page.mdx)
 
-Identifiant : `website-order-design`. Public : public. Disponibilité : available. Services : foodyadmin, foodyweb.
+Identifiant : `website-order-design`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb.
 
 - [Choisir disposition et navigation du menu](../../src/content/help/fr/website-qr/order-page.mdx#menu-layout)
 - [Distinguer les cartes et leurs groupes](../../src/content/help/fr/website-qr/order-page.mdx#menu-tabs-and-groups)
@@ -770,6 +772,7 @@ Identifiant : `website-order-design`. Public : public. Disponibilité : availabl
 - [Placer les contenus de découverte](../../src/content/help/fr/website-qr/order-page.mdx#discovery)
 - [Vérifier l’entrée de commande sur mobile](../../src/content/help/fr/website-qr/order-page.mdx#mobile-fulfillment-review)
 - [Accès aux nouveaux réglages](../../src/content/help/fr/website-qr/order-page.mdx#related-service-controls)
+- [Séparer les couleurs des cartes et des catégories](../../src/content/help/fr/website-qr/order-page.mdx#menu-and-category-text-colors)
 
 ### [Design du paiement, de la confirmation et du reçu](../../src/content/help/fr/website-qr/checkout-and-receipt.mdx)
 
