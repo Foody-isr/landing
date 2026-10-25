@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-10-18.
+Révision du relevé : 2026-10-25.
 
-100 fiches de fonctionnalités, 645 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2158 fichiers applicatifs et 2031 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+100 fiches de fonctionnalités, 650 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2124 fichiers applicatifs et 2011 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,11 +10,11 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 554 | 868 | 054f370c6b64 ; versioned |
-| foodyadmin | 758 | 770 | 1060befff555 ; versioned |
+| foodyserver | 556 | 869 | c05bcaea30aa ; versioned |
+| foodyadmin | 760 | 771 | c93714967fc0 ; versioned |
 | foodypos | 341 | 158 | 5100d2d3affe ; versioned |
-| foodylanding | 127 | 21 | ec575bd5c0c8 ; versioned |
-| foodyweb | 336 | 167 | 02c307406acc ; versioned |
+| foodylanding | 127 | 21 | cf76d1d39bc7 ; versioned |
+| foodyweb | 298 | 145 | 2c747129e4bc ; versioned |
 | foodybackoffice | 42 | 47 | 79a9ee38d09c ; versioned |
 
 ## getting-started
@@ -147,6 +147,7 @@ Identifiant : `customers-profiles`. Public : public. Disponibilité : available.
 - [Modifier les coordonnées de livraison](../../src/content/help/fr/customers/managing-customers.mdx#edit)
 - [Autoriser la commande en espèces](../../src/content/help/fr/customers/managing-customers.mdx#trusted)
 - [Fusionner des doublons](../../src/content/help/fr/customers/managing-customers.mdx#merge)
+- [Corriger un ou plusieurs téléphones](../../src/content/help/fr/customers/managing-customers.mdx#phone-corrections)
 
 ## marketing
 
@@ -785,6 +786,8 @@ Identifiant : `website-pages`. Public : public. Disponibilité : available. Serv
 
 Identifiant : `pos-service-modes`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodypos.
 
+- [Consulter et modifier les Modes dans Admin](../../src/content/help/fr/settings/service-mode.mdx#modes-dashboard)
+- [Revenir à l’accueil après l’envoi et ouvrir une nouvelle vente](../../src/content/help/fr/settings/service-mode.mdx#send-home-new-sale)
 - [Choisir un profil de mode](../../src/content/help/fr/settings/service-mode.mdx#mode)
 - [Configurer le service à table et au comptoir](../../src/content/help/fr/settings/service-mode.mdx#service)
 - [Garder la remise indépendante](../../src/content/help/fr/settings/service-mode.mdx#fulfillment)
@@ -1062,7 +1065,7 @@ Identifiant : `message-templates`. Public : public. Disponibilité : available. 
 
 ### [Commander en ligne côté client](../../src/content/help/fr/guest/online-ordering.mdx)
 
-Identifiant : `guest-ordering`. Public : public. Disponibilité : available. Services : foodyweb.
+Identifiant : `guest-ordering`. Public : public. Disponibilité : available. Services : foodyserver, foodyweb.
 
 - [Vérifier le plafond de préautorisation au poids](../../src/content/help/fr/guest/online-ordering.mdx#weight-hold-margin)
 - [Composer le panier](../../src/content/help/fr/guest/online-ordering.mdx#basket)
@@ -1072,6 +1075,7 @@ Identifiant : `guest-ordering`. Public : public. Disponibilité : available. Ser
 - [Se connecter avant de commander](../../src/content/help/fr/guest/online-ordering.mdx#customer-sign-in-methods)
 - [Accès aux nouveaux réglages](../../src/content/help/fr/guest/online-ordering.mdx#related-service-controls)
 - [Vérifier les choix conditionnels d’un article](../../src/content/help/fr/guest/online-ordering.mdx#conditional-item-choices)
+- [Renseigner un téléphone valide](../../src/content/help/fr/guest/online-ordering.mdx#contact-phone)
 
 ### [Suivi, reçus et moyens enregistrés](../../src/content/help/fr/guest/tracking-and-account.mdx)
 
@@ -1099,6 +1103,7 @@ Identifiant : `guest-catering`. Public : public. Disponibilité : available. Ser
 
 - [Compléter le parcours catering](../../src/content/help/fr/guest/catering-request.mdx#request)
 - [Commander pour une tournée précise](../../src/content/help/fr/guest/catering-request.mdx#tour)
+- [Renseigner un téléphone valide](../../src/content/help/fr/guest/catering-request.mdx#contact-phone)
 
 ## internal
 

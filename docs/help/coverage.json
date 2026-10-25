@@ -105,10 +105,15 @@
       "selectors": {
         "foodyadmin": [
           "src/app/[restaurantId]/customers/**",
-          "src/components/customers/**"
+          "src/components/customers/**",
+          "src/lib/customer-phone.ts",
+          "src/lib/api.ts",
+          "src/lib/i18n.tsx"
         ],
         "foodyserver": [
-          "internal/customers/**"
+          "internal/customers/**",
+          "cmd/server/main.go",
+          "internal/support/corpus.json"
         ],
         "foodypos": [
           "lib/features/trusted_customers/**"
@@ -1570,7 +1575,16 @@
           "components/WebsiteCartPopover.tsx",
           "lib/fulfillment.ts",
           "lib/availability.ts",
-          "lib/combo/**"
+          "lib/combo/**",
+          "lib/customer-phone.ts",
+          "services/api.ts",
+          "lib/i18n.tsx",
+          "components/CheckoutBuilderFields.tsx"
+        ],
+        "foodyserver": [
+          "internal/common/phone.go",
+          "internal/orders/handler.go",
+          "internal/support/corpus.json"
         ]
       }
     },
@@ -1641,10 +1655,14 @@
           "app/r/[restaurantId]/tournee/**",
           "components/catering/**",
           "components/Catering*.tsx",
-          "lib/catering*.ts"
+          "lib/catering*.ts",
+          "lib/customer-phone.ts",
+          "services/api.ts",
+          "lib/i18n.tsx"
         ],
         "foodyserver": [
-          "internal/catering/public*.go"
+          "internal/catering/public*.go",
+          "internal/support/corpus.json"
         ]
       }
     },
