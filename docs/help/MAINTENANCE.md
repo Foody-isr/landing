@@ -47,6 +47,25 @@ state, permission or physical device was exercised.
 
 ## CI enforcement in every versioned service
 
+### Cross-session release review (25 October 2026)
+
+The coordinated release scans the current integration candidates of all six
+versioned services: API, Admin, guest Web, POS, Backoffice and Landing. Their
+source inventories and contracts are regenerated together from the explicit
+release-root map; the four-service-only local review below is historical and is
+not used as an exemption for this publication. Guest Web's current develop
+implementation is retained where older local receipt and menu edits duplicate
+features that were already integrated. Private POS guest context is reviewed
+against the API capability, check snapshots and public-response redaction tests.
+Native hardware behavior still requires the documented physical acceptance;
+mocked/browser checks do not certify a real payment, printer or terminal.
+
+The approved guest Web Zod 4.6.7 security upgrade has an exact-byte impact
+review in Web's `docs/help/reviews/zod-4-security.json`. Its explicit string-key
+records preserve valid V3 page content, settings, translations and appearance
+tokens; regression tests also cover strict page variants and invalid envelopes.
+There is no new merchant/guest procedure or translation change for this upgrade.
+
 ### Local fulfillment review scope (22 October 2026)
 
 This review refreshes source evidence for foodyserver, foodyadmin, foodypos and

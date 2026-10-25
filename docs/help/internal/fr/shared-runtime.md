@@ -93,3 +93,15 @@ Les groupes d’options portent un rôle propre à l’article : price conserve 
 ## Vérifier le panneau WhatsApp unifié
 
 Le panneau Admin commun aux commandes unitaires et à la sélection de la page utilise les aperçus et envois existants, sans nouvelle route de dispatch, migration, texte libre API ou modification des déclencheurs. Les brouillons de l’application restent locaux et exigent une confirmation avant abandon. Les statuts incertains conservent l’identifiant de tentative, y compris en changeant de type de message. GET /restaurants/:id/message-templates autorise settings.view ou orders.manage avec EnforceRestaurantAccess ; PUT et DELETE conservent settings.edit. La modification des permissions ne donne aucun accès aux credentials. Les traductions FR/HE/EN et les procédures commande/WhatsApp couvrent les nouveaux contrôles. Vérifier les réponses perdues, la file partiellement éligible, le changement de commande avant dispatch et le mobile RTL avec les fixtures synthétiques ; ne pas envoyer de messages réels pour valider l’interface. Le pin WORKSPACE est réservé à la revue locale : avant CI/publication, remplacer par le commit Landing immuable autorisé et déployer l’API avant l’Admin correspondant. Le contrôle documentaire distingue les fichiers réellement présents des suppressions suivies encore non indexées : une suppression doit disparaître de l’inventaire et conserver sa revue d’impact dans les trois langues.
+
+<span id="mobile-terminal" />
+
+## Vérifier les surfaces du terminal mobile
+
+Le parcours compact utilise le panneau Menu/Addition/Actions et masque la navigation principale pendant la vente ; le retour vers les additions reste explicite. Les contrôles bleus et rectangles sont limités au mode opérationnel compact. Le mode tablette conserve sa composition. Valider 320×568 et 390×844, français/hébreu, clavier, annulation, motifs et droits. Les tests synthétiques vérifient les variantes, écarts de prix, notes, quantités et convives. Le rendu local ne constitue pas une validation physique du terminal ni une publication. Aucun nouveau contrat API ni migration ne sont nécessaires pour cette présentation.
+
+<span id="mobile-terminal-pages" />
+
+## Vérifier les pages compactes du terminal
+
+Le thème compact est appliqué au-dessus du routeur, y compris aux fenêtres modales et à l’authentification. Il utilise des surfaces neutres, des actions bleues, des contrôles rectangulaires et des en-têtes centrés. FoodyPageLayout, FoodyPageShell et les composants Mana adaptent les marges et les actions ; les filtres de rail deviennent une feuille sur mobile. Le format compact est déterminé par le plus petit côté de la fenêtre, y compris en paysage, sans réinterpréter un panneau de tablette comme un téléphone. Les vues de paiement spécialisées et les couleurs de statut explicites conservent leur rôle. La revue de source et les tests de widgets ne certifient pas une égalité pixel sur matériel physique. Les références WORKSPACE restent réservées à la préparation locale ; une révision Landing immuable est requise avant CI distante et publication.

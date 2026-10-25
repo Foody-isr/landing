@@ -103,3 +103,15 @@ With menu editing permission and compatible API, Admin, web and POS versions, op
 ## Check choices and recover a valid configuration
 
 Test every format before offering the item: leave a position empty, select the same character in two distinct positions, mix a letter and a digit, then shrink two positions to one and expand again. The second choice must have been removed and be required again. Check the cart, order, receipt and kitchen ticket: positions remain distinct, without addition/removal signs or another charge. The absolute format price is counted once; only modifiers add their configured deltas. If refused, reload the item and check its role, source, active choices and position counts. Remove dependent conditions before deleting their source. A source belonging to another item or restaurant, a cycle, an invalid character or two choices in one position is rejected; invalid saves must not partially apply variant changes.
+
+<span id="mobile-terminal" />
+
+## Choose a variant on mobile
+
+On the updated mobile POS, tap the variant field in the item summary to open its choices. A single selection returns to the summary or advances when automatic progression is enabled. Done closes a multiple-choice panel. Review the blue summary, quantity and note before Add or Done. Conditional groups and each required position remain validated; a smaller format removes hidden choices. Variants keep absolute prices and modifiers keep price deltas.
+
+<span id="mobile-terminal-pages" />
+
+## Browse the library on mobile
+
+On a handheld terminal, open Library. The filter button selects Items, Combos or Discounts. Under Items, choose a category in the selector above the list, search for a product and tap its row to open the existing editor. Price and availability remain visible, with a separate switch for authorized users. This internal list does not change published menu groups, ingredients, portions or variant rules configured in Admin.

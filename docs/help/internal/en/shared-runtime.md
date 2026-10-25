@@ -93,3 +93,15 @@ Option groups carry an item-specific role: price retains the absolute priced var
 ## Verify the unified WhatsApp composer
 
 The shared Admin composer handles individual orders and current-page selections through existing preview/send endpoints, without a new dispatch route, migration, API free text or changed automation triggers. App drafts stay local and require confirmation before discarding. Uncertain results retain their original dispatch ID across message-type changes. GET /restaurants/:id/message-templates admits settings.view or orders.manage behind EnforceRestaurantAccess; PUT and DELETE still require settings.edit. No credentials become readable. FR/HE/EN copy and the order/WhatsApp procedures cover the controls. Verify lost responses, partially eligible queues, changed orders and mobile RTL with synthetic fixtures; interface verification must not send real messages. WORKSPACE is a local-review pin only: replace it with an authorized immutable Landing commit before CI/publication and deploy the API before its matching Admin. The documentation check distinguishes existing files from unstaged tracked deletions: a deletion must leave the inventory and still pass its three-language impact review.
+
+<span id="mobile-terminal" />
+
+## Validate mobile terminal surfaces
+
+The compact workflow uses the Menu/Check/Actions panel and hides primary navigation during a sale; returning to checks remains explicit. Blue rectangular controls are limited to compact operational layouts. Tablet composition is retained. Validate 320×568 and 390×844, French/Hebrew, keyboard, cancellation, reasons and permissions. Synthetic tests cover variant prices, modifier deltas, notes, quantities and covers. A local rendering is not physical terminal acceptance or publication. This presentation requires no new API contract or migration.
+
+<span id="mobile-terminal-pages" />
+
+## Verify compact terminal pages
+
+The compact theme is applied above the router, including modals and authentication. It uses neutral surfaces, blue actions, rectangular controls and centered headers. FoodyPageLayout, FoodyPageShell and Mana components adapt insets and actions; rail filters become a mobile sheet. Compact layout uses the window’s shortest side, including landscape, without treating a tablet panel as a phone. Specialized payment views and explicit status colors retain their roles. Source review and widget tests do not certify physical-device pixel equality. WORKSPACE references remain local preparation only; an immutable Landing revision is required before remote CI and publication.
