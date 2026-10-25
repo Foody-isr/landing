@@ -222,3 +222,16 @@ publication and guest ordering windows. Publish the FR/HE/EN procedures with the
 API/Admin behavior. Pin this reviewed Landing commit in the API/Admin contracts
 before remote CI. Deploy API before Admin and promote their validated develop
 artifacts without rebuilding.
+
+
+## Manual weekly order opening release (25 October 2026)
+
+This release reviews API, Admin, Web, POS and Landing from isolated branches based
+on their current develop histories. Backoffice source inventory and surfaces are
+retained from Landing develop commit `530f19e2f3f82c47e62ea6e5bc050aff99eb9ad3` and are not revalidated here.
+The inventory records each reviewed integration base and the exact feature source
+hashes separately. Calendar intake remains the default. Manual batch intake keeps
+service days, stock and existing commitments while using explicit pause/reopen
+controls. Deploy API migration 277 before the matching clients. Publish the three
+language guides with the product rollout. Service contracts must pin this reviewed
+Landing commit before PR publication; production uses verified develop artifacts.
