@@ -10,11 +10,11 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 560 | 870 | eda4d8f3479f ; versioned |
+| foodyserver | 560 | 870 | 304b63876556 ; versioned |
 | foodyadmin | 764 | 776 | 3518f19d8ae6 ; versioned |
 | foodyweb | 337 | 167 | 18fb7cbeb1f3 ; versioned |
-| foodylanding | 127 | 21 | 551dad7acf78 ; versioned |
-| foodypos | 345 | 158 | d8f8dbd13b92 ; versioned |
+| foodylanding | 127 | 21 | 7af3a94473f9 ; versioned |
+| foodypos | 345 | 158 | 1949734825b8 ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
 
 ## getting-started
@@ -437,7 +437,7 @@ Identifiant : `catalog-import`. Public : public. Disponibilité : available. Ser
 
 ### [Combos et formules configurables](../../src/content/help/fr/menu/combos.mdx)
 
-Identifiant : `combos`. Public : public. Disponibilité : available. Services : foodyadmin, foodyweb, foodypos.
+Identifiant : `combos`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb, foodypos.
 
 - [Définir les étapes de la formule](../../src/content/help/fr/menu/combos.mdx#steps)
 - [Vérifier le prix de la formule](../../src/content/help/fr/menu/combos.mdx#price)
