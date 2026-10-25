@@ -212,12 +212,13 @@ commit in API and Admin before opening their PRs. Deploy API before Admin, and
 publish the corresponding guides with the feature release.
 
 
-## Weekly-series rollover preparation (25 October 2026)
+## Weekly-series rollover release (25 October 2026)
 
-This local change reviews API, Admin and Landing only. Web, POS and Backoffice
+This release reviews API, Admin and Landing only. Web, POS and Backoffice
 source inventories and surfaces retain their exact evidence from Landing commit
-`b453265`; they are not revalidated by this change. Operational batch dates are
-read-only calendar calculations, independent of menu publication and guest
-ordering windows. Publish the FR/HE/EN procedures with the API/Admin behavior.
-The local WORKSPACE documentation reference must be replaced with the matching
-immutable Landing commit after commit authorization and before remote CI.
+`e34d1464f8092f3caf76d77ef6ee2b9a96e87c8c`; they are not revalidated by this change.
+Operational batch dates are read-only calendar calculations, independent of menu
+publication and guest ordering windows. Publish the FR/HE/EN procedures with the
+API/Admin behavior. Pin this reviewed Landing commit in the API/Admin contracts
+before remote CI. Deploy API before Admin and promote their validated develop
+artifacts without rebuilding.
