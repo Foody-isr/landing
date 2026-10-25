@@ -6,7 +6,7 @@ tags:
   - menu
   - menu-categories-and-items
   - categories-and-items
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-22'
 featureId: menu-categories-and-items
 audience: public
 releaseStatus: available
@@ -54,3 +54,15 @@ Depuis une carte, la disponibilité est désormais directement cliquable sous le
 ## Changer la disponibilité depuis Articles
 
 Dans Articles, avec la permission de modifier le menu, cliquez sur le badge de la colonne Disponibilité d’un article actif. Le même petit panneau que dans Cartes s’ouvre ; ce clic ne change rien et n’ouvre pas la fiche produit. Choisissez Disponible sans limite, Indisponible, Stock prédéfini ou Automatique (règles existantes), puis Appliquer. Stock prédéfini demande une quantité restante positive, en unités, en g/ml pour un stock mesuré, ou par taille. Un champ de taille vide conserve une quantité illimitée. Les commandes existantes restent réservées. Pour un restaurant par séries, le panneau affiche la série courante résolue par le serveur et modifie uniquement son stock ; pour préparer une autre série, ouvrez la carte correspondante. Hors séries, il modifie le stock de l’article et toutes ses tailles sont sauvegardées ensemble. Le changement est immédiat après Appliquer, indépendamment des brouillons de carte. Annuler, Échap ou fermer le panneau abandonne les choix non appliqués. Les stocks sont rechargés à l’ouverture ; si ce chargement échoue, Recharger les stocks est disponible et aucune validation n’est possible. Une erreur de sauvegarde conserve la saisie : rechargez les stocks, vérifiez la quantité, puis appliquez de nouveau explicitement. Les articles inactifs et les utilisateurs sans droit de modification affichent un statut en lecture seule.
+
+<span id="conditional-item-choices" />
+
+## Vérifier les choix conditionnels d’un article
+
+Un article configuré avec des positions répétées demande un choix distinct par emplacement selon le format sélectionné. Par exemple, un Number Cake à deux caractères accepte 11, AB ou A7. Le prix du format remplace le prix de base ; les modificateurs ajoutent uniquement leurs suppléments configurés. Réduire le nombre de positions retire les choix devenus invisibles. Les positions restent distinctes dans le panier, les commandes et le ticket cuisine ; vérifiez-les avant validation. Ces personnalisations ne changent pas les règles de livraison, de disponibilité, de recette, de remise ou d’annulation. Leur configuration nécessite les versions compatibles et la permission de modifier le menu. Consultez [Variantes et tailles](/fr/help/menu/variants-and-sizes#conditional-positions) pour la procédure et les contrôles en cas de refus.
+
+<span id="mobile-terminal-pages" />
+
+## Parcourir la bibliothèque sur mobile
+
+Sur un terminal mobile, ouvrez Bibliothèque. Le bouton de filtres permet de choisir Articles, Formules ou Remises. Dans Articles, choisissez une catégorie dans le sélecteur au-dessus de la liste, recherchez un produit puis touchez sa ligne pour ouvrir l’éditeur existant. Le prix et la disponibilité restent visibles, avec un interrupteur distinct pour les utilisateurs autorisés. Cette liste interne n’affecte pas les groupes de menu publiés, les ingrédients, les portions ni les règles de variante configurées dans Admin.

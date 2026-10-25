@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - customers
   - customers-profiles
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-25'
 featureId: customers-profiles
 audience: public
 releaseStatus: available
@@ -24,9 +24,9 @@ Search the customer list and inspect name, phone, address, order count and last 
 
 <span id="edit" />
 
-## Edit delivery details
+## Edit the customer profile
 
-Open the customer profile, correct the phone/address and delivery details, then save. Recheck the selected order address separately for already-created orders.
+Open the profile from the customer phone, edit the name, phone numbers, address and delivery details, then save. Review addresses on existing orders separately.
 
 <span id="trusted" />
 
@@ -39,3 +39,9 @@ Use the trusted/cash-allowed setting only for the intended customer. This contro
 ## Merge duplicates
 
 Review selected customer profiles and phone numbers before confirming a merge. Check the resulting combined profile and avoid merging different people.
+
+<span id="phone-corrections" />
+
+## Manage phones and choose the WhatsApp number
+
+With customer-management permission, select the customer phone to open Edit customer. Under Phone numbers, correct Primary phone or choose Add a phone number. Enter a complete number; Israeli numbers are saved with +972 without the national trunk zero and foreign numbers retain their country code. Select Use for WhatsApp on the number that should receive messages, even when the calling number differs. Exactly one WhatsApp recipient is selected; a customer can have up to ten numbers. Save confirms profile and phone changes together. Invalid input, duplicate numbers or a number belonging to another record blocks this save and retains the draft; use Merge customers to associate existing records. Removing an additional number takes effect only on Save and separates its history without deleting its orders. Correcting the primary retains names, addresses and grouping and corrects existing order contacts. Login accounts and other restaurants remain unchanged. Cash eligibility belongs to the same customer; adding a number does not create another cash authorization. To correct several customers together, select at least two rows and choose Actions → Correct phones. The batch is atomic; a conflict blocks every correction. After a completed save and failed refresh, Retry reloads without repeating the write. Format validation does not prove ownership or WhatsApp registration.

@@ -7,16 +7,22 @@ apps: foodypos
 tags:
   - orders
   - pos-comp-void
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-22'
 featureId: pos-comp-void
 audience: public
 releaseStatus: available
 ---
-Sélectionnez article ou addition et Actions/Options. Vérifiez s’il s’agit d’un brouillon, plat envoyé ou fraction financière enregistrée.
+Sélectionnez article ou addition et Actions/Options. Vérifiez s’il s’agit d’un brouillon, plat envoyé ou fraction financière enregistrée. Une vente à emporter payée en préparation reste active. Commandes → Toutes sur la caisse permet aussi de retrouver les commandes enregistrées de toutes les sources et de tous les états de paiement ; son détail est en lecture seule, sans ajustement ni remboursement. Une absence de bon cuisine ne justifie ni d’annuler les plats ni d’encaisser à nouveau ; vérifiez d’abord la file et le profil d’imprimante.
 
 ## Disponibilité et accès
 
 Les actions avancées apparaissent si la caisse et l’API installées annoncent la capacité requise et si votre rôle l’autorise. Actualisez une addition modifiée avant de réessayer ; ne créez jamais un second débit pour résoudre un résultat incertain.
+
+<span id="saved-qr-read-only-lines" />
+
+## Ne pas modifier les lignes d’une commande QR consultée
+
+Dans Menu ouvert depuis une commande QR ou web enregistrée, les lignes sélectionnées et le catalogue sont consultables, sans ajout, remise, offert ni annulation d’article dans cette vue. Les commandes QR voisines gardent leurs identifiants et leurs paiements. Pour une opération admissible sur l’addition active de la table, utilisez Afficher la table et vérifiez la session puis l’addition choisie ; les droits et motifs habituels restent requis. Cette navigation ne rend pas un plat payé modifiable et ne rembourse rien. Voir [le parcours des commandes](/fr/help/orders/managing-orders#open-saved-order-in-menu).
 
 <span id="historical-order-read-only" />
 
@@ -28,7 +34,7 @@ Ouvrir une commande liée depuis Transactions affiche uniquement ses détails en
 
 ## Appliquer une remise
 
-Choisissez remise autorisée de bibliothèque ou manuelle, montant/pourcentage, portée et motif demandé. Vérifiez le total avant enregistrement. Une remise article et une remise panier n’ont pas la même base ; les codes promotionnels en ligne sont distincts.
+Choisissez remise autorisée de bibliothèque ou manuelle, montant/pourcentage, portée et motif demandé. Vérifiez le total avant enregistrement. Une remise article et une remise panier n’ont pas la même base ; les codes promotionnels en ligne sont distincts. Une remise globale source doit être retirée explicitement avant de déplacer une vente non affectée vers une addition sur place enregistrée. La destination conserve sa politique de remise, recalculée sur les nouvelles lignes ; les lignes et ajustements enregistrés ne sont pas renvoyés par ce transfert.
 
 <span id="comp" />
 
@@ -47,3 +53,15 @@ Utilisez Annuler uniquement pour les plats impayés éligibles et indiquez le mo
 ## Attendre le paiement au comptoir avant la cuisine
 
 Pour une nouvelle commande à emporter encaissée par carte au comptoir, choisissez Payer, puis Payer par carte. Attendez l’accord du terminal et l’enregistrement du paiement dans Foody avant le départ en préparation et l’impression du bon cuisine. Pendant l’encaissement, le paiement reste en attente et n’apparaît pas dans la liste des commandes en direct. Après un refus ou une annulation, reprenez le même encaissement ; ne l’envoyez pas en cuisine pour contourner le paiement. Si le terminal a accepté mais que la synchronisation a échoué, rapprochez le paiement existant avant tout nouveau débit. Les commandes volontairement envoyées pour un service à table avant encaissement conservent leur déroulement habituel. Les remises et articles offerts restent inclus dans le calcul serveur du montant de ce même encaissement.
+
+<span id="conditional-item-choices" />
+
+## Vérifier les choix conditionnels d’un article
+
+Un article configuré avec des positions répétées demande un choix distinct par emplacement selon le format sélectionné. Par exemple, un Number Cake à deux caractères accepte 11, AB ou A7. Le prix du format remplace le prix de base ; les modificateurs ajoutent uniquement leurs suppléments configurés. Réduire le nombre de positions retire les choix devenus invisibles. Les positions restent distinctes dans le panier, les commandes et le ticket cuisine ; vérifiez-les avant validation. Ces personnalisations ne changent pas les règles de livraison, de disponibilité, de recette, de remise ou d’annulation. Leur configuration nécessite les versions compatibles et la permission de modifier le menu. Consultez [Variantes et tailles](/fr/help/menu/variants-and-sizes#conditional-positions) pour la procédure et les contrôles en cas de refus.
+
+<span id="mobile-terminal" />
+
+## Accéder aux options sur mobile
+
+Sur le POS mobile mis à jour, ouvrez la ligne puis ⋯ en haut de la fiche article pour retrouver les options autorisées, dont Offrir ou Supprimer pour un brouillon admissible. Le panneau reste soumis aux motifs configurés et aux droits existants. Fermez-le avec Terminé pour revenir à la fiche. Les remises et opérations de toute l’addition restent dans Actions. Le changement de présentation ne rend pas une ligne envoyée modifiable et ne débloque pas un remboursement.

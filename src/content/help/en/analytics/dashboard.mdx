@@ -10,12 +10,26 @@ tags:
   - service
   - sales
   - dates
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-25'
 featureId: analytics-dashboard
 audience: public
 releaseStatus: available
 ---
 Open the corresponding Foody workspace described below.
+
+<span id="pos-discount-basis" />
+
+## Read paid-order discounts
+
+In the POS sales report, Discounts (paid orders) includes only discounts on paid orders in the period. Gross sales follows the dashboard’s counting rule, which may also include accepted unpaid orders. Do not subtract these cards to derive a net: net sales, refunds and fees remain unavailable here.
+
+<span id="pos-sales-report" />
+
+## Read sales on the POS
+
+With analytics.view, open More → Reports → Sales. On a tablet the left rail keeps the permitted sections available; on a phone open them from Reports. Choose Today, Week, Month, Quarter or Year. Each calendar period starts at its beginning and ends today; the week starts on Monday. The reference day comes from the restaurant, not the phone clock. The report uses the current restaurant, order creation dates and the dashboard’s configured counted-order rule. Amounts alone therefore do not prove bank collection. Refresh reloads the period without recording a payment.
+
+Review gross sales, sale count, average sale, discounts, the chart and recorded payment methods. Expand an item for its actual variants or a category for its items. Items and categories use paid lines with combo attribution; delivery and discounts can explain differences from order totals. A dash for net sales, refunds or fees means that metric is not supplied for the period, not that it is zero. Refresh a failed load rather than treating it as a day without sales. This report closes neither physical cash nor a Verifone card batch.
 
 <span id="section-1" />
 
@@ -42,3 +56,11 @@ Comparisons depend on an available previous period or service. For a future or o
 ## Detailed reports
 
 Open **Reports** for the reporting pages your role permits. Select the date range and review the applied filters. The overview provides an export action; export the selected scope and check that its dates and calculation match your intended analysis.
+
+<span id="weekly-series-rollover" />
+
+## Open the current weekly batch automatically
+
+For a restaurant configured for weekly batches, open **Home** or **Orders** using the **Série** date basis. The current batch is selected by default even without orders; its totals then stay at zero. It advances after the previous batch’s final fulfillment day in the restaurant timezone, without waiting for the first order or for ordering to open. An open page follows this change on the next automatic refresh (about one minute) or when you return to the tab.
+
+You can select an older service in the calendar; that selection stays in place while the page is open. An order for a later week does not replace the current batch as the default. A payment-attention link keeps its explicit period. If the date looks incorrect, check the configured fulfillment days and restaurant timezone, then reload. Rollover does not create an order or publish a menu.

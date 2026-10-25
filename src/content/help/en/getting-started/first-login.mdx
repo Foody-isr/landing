@@ -6,7 +6,7 @@ tags:
   - getting-started
   - account-access
   - first-login
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-25'
 featureId: account-access
 audience: public
 releaseStatus: available
@@ -17,7 +17,7 @@ Admin sign-in and account menu
 
 ## Activate an invitation
 
-Open the received invitation, check the restaurant and finish account setup. Ask the manager to resend an expired invitation.
+Open the invitation received by email, check the restaurant, choose your password and confirm your contact details. A POS code is requested only when the assigned restaurant permissions allow taking orders (orders.manage) or managing payments (payments.manage). A courier with the usual read-only delivery role, or a kitchen-only role, finishes without this step. A role name alone does not determine the requirement. Never share a password or POS code.
 
 <span id="restaurant" />
 
@@ -29,10 +29,10 @@ Sign in with your own account, then choose an authorized restaurant. Check its n
 
 ## Recover access
 
-Follow the account recovery instructions or contact your manager. Never share a password, activation link or POS code in the assistant.
+After a rejected POS code or failed save, reopen the same still-valid email link and retry; failed activation does not consume it. A duplicate code message means a POS operator must choose a different 4–6 digit code. A courier without POS permissions does not need to try more combinations. If the link is expired, lacks restaurant context or says it was already used and activation did not finish, ask a staff manager to open Staff → Employees → the member → Resend setup invitation. Use the newest email; resending invalidates previous unused links without recreating the member. If activation already succeeded, sign in with the password you chose, or use password recovery. Removed restaurant access must be reviewed by the manager. Never share activation links or credentials with the assistant.
 
 <span id="end-pos-shift" />
 
 ## End a POS shift safely
 
-On an enrolled POS, choose End shift. If Foody reports an open cash drawer, use the offered shortcut to More → Reports → Cash drawer balance. Count and close the drawer on that same device, then retry End shift. A Verifone terminal deposit is separate. If cash or payment confirmation is uncertain, ask an authorized manager to reconcile it before ending the shift; do not bypass the guard by logging out another way.
+On an enrolled POS, use Sign out in the navigation or End shift in More. If this POS has an open drawer or a pending cash operation, Cash drawer report pending appears before ending the shift. Cancel leaves you signed in; Finish report opens Cash drawer balance without closing anything or signing out. Resolve the pending operation, physically count and close the drawer on the same POS, then request sign-out again and confirm End shift. Without report permissions, ask an authorized manager. An unverifiable cash status keeps the session open; check the connection and retry. A Verifone deposit is separate and never starts automatically. Ending the staff shift keeps this POS enrolled for the next PIN sign-in. See [the pending-report procedure](/en/help/staff/devices-and-shifts#pending-cash-sign-out).

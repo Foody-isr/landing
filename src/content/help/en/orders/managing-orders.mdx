@@ -14,12 +14,22 @@ tags:
   - web
   - qr
   - pos
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-25'
 featureId: orders-managing-orders
 audience: public
 releaseStatus: available
 ---
-Open the corresponding Foody workspace described below.
+Open the corresponding Foody workspace described below. The cross-channel All view on the POS requires compatible POS and API versions; updating the API alone does not update the installed POS.
+
+<span id="open-saved-order-in-menu" />
+
+## Open an order in Menu without merging QR payments
+
+On the updated POS, with orders.manage, tap an active or scheduled order in Orders, or a still-actionable order in All. An open manual check resumes its existing workspace; a QR, web or standalone order opens Menu with its own saved lines, number, statuses and total in the check panel. On a phone this panel fills the screen. The frame, Check, Actions and Guest tabs, item cards and totals use the standard Menu presentation without an extra back toolbar. Return to the list through Orders in the main navigation; Refresh and this order’s statuses are in Actions. Browsing the catalogue changes neither that order nor a retained draft. Actions → Manage this order offers eligible actions for that number only; collection also requires payments.manage. Opening the view never pays, dispatches or prints.
+
+Several QR guests at one table retain their individual orders and payments even within one table session. To add food or consult the table check, choose View table: only the same still-open session is eligible. If it contains separate bills, explicitly choose the bill. This navigation never merges or settles QR orders and never closes the table. An old session cannot open the next party’s service; pending financial actions must be resolved first.
+
+Completed, cancelled or refunded orders and read-only access retain historical viewing without reopening a sale. A paid order still being prepared remains viewable and actionable without another payment. If loading fails, use Retry rather than recreating the order. Install a compatible POS build to use this navigation.
 
 <span id="open-order-from-transaction" />
 
@@ -53,9 +63,10 @@ the kitchen.
 
 ### How It Works (Simply)
 
-- New orders appear in real time (a **Live** badge shows the connection is active).
-- Use the **status tabs** to filter — new, in kitchen, ready, completed.
-- Open an order to see its items, customer, and totals, and to move it along.
+- POS **Orders → All** reads saved orders across all sources and payment states. Active, Scheduled and Completed remain separate operational views.
+- Admin **Orders → All** uses the same restaurant-owned records; its selected dates and filters still apply.
+- Payment and preparation are independent: a paid takeaway being prepared remains active.
+- On a compatible POS, authorized actionable orders open in Menu; completed records remain historical. See [saved-order navigation](#open-saved-order-in-menu).
 
 <span id="section-3" />
 
@@ -73,10 +84,9 @@ the kitchen.
 
 ## Good to know
 
-- Orders only appear once **paid** (for prepaid channels), so the kitchen never sees an
-  unconfirmed order.
-- If a dish sold out while the customer was ordering, checkout blocks it — see
-  [Availability](/en/help/kitchen/availability).
+- A prepaid-channel order awaiting payment remains consultable in All. Visibility is not payment approval and does not send food to the kitchen or print a ticket.
+- Unsaved local carts are not shared orders. Restaurant access and permissions still apply.
+- If a dish sold out while the customer was ordering, checkout blocks it — see [Availability](/en/help/kitchen/availability).
 
 <span id="whatsapp-attachment-review" />
 
@@ -113,3 +123,73 @@ For a new counter pickup order paid by card, choose Pay, then Pay by card. Wait 
 ## Understand series stock after order edits
 
 Predefined item stocks now have a journal under Items & menus → Stock history and on each product. A rotating carte can prepare initial allowances per series and publish them without restoring already committed units. Previous remaining counts are not carried forward. Order changes and pre-production releases use the original frozen pool; a produced item remains consumed. Ingredient/preparation quantities and recipe costs remain separate. See [Availability](/en/help/kitchen/availability) for initial imports, corrections and history filters.
+
+<span id="delivery-reminder-review-and-send" />
+
+## Choose how to send a reminder
+
+Approved WhatsApp reminders can be previewed early, while manual buttons remain blocked until the day before delivery in the restaurant’s timezone. Orders → Deliveries → WhatsApp reminders reviews and confirms reminders across every route on the selected date; WhatsApp customer and Send this reminder handle one customer. Messages use the saved route’s calculated arrival window and assigned courier. Manual buttons use the global reminder template; automatic stages retain their explicitly configured template and timing in Order workflow. For day-before-only sending, select that timing on the intended stage, for example Ready. Opening a preview enables no trigger. A previously submitted, uncertain or failed reminder is never sent again by another mode, even if its text or provider changes. Changes before sending require a refreshed preview. Acceptance does not prove delivery; consult Customer messages on the order. Preview text represents the current calculation, not an earlier stored message.
+
+<span id="courier-contact-profile" />
+
+## Keep courier contact details current
+
+Courier assignments use the contact name and phone saved for this establishment in Staff → Edit contact details. Updating those fields also refreshes the courier information used by upcoming delivery reminders here. Completed deliveries keep their historical contact snapshot. A prepared WhatsApp preview with older contact details must be refreshed and reviewed before sending. The staff home address is not part of the customer reminder.
+
+<span id="delivery-test-departure-recovery" />
+
+## Recover a delivery after a test departure
+
+Starting courier mode marks assigned orders Out for delivery. If this was a test departure, a user with order-management permission can open Orders → Deliveries, select the date and choose Undo departure while no arrival, delivery or skipped stop has been recorded. Out for delivery orders return to In preparation; the route returns to draft and can be unassigned and reallocated. This is a delivery correction, not a new order, refund or reprint. Payments and previously sent messages are preserved. See [the dispatch procedure](/en/help/delivery/dispatch-and-routes#undo-departure).
+
+<span id="conditional-item-choices" />
+
+## Check conditional item choices
+
+An item configured with repeated positions requires one separate choice per position according to the selected format. For example, a two-character Number Cake accepts 11, AB or A7. The format price replaces the base price; modifiers add only their configured surcharges. Reducing the position count removes newly hidden choices. Positions remain distinct in the cart, orders and kitchen ticket; review them before confirming. These customizations do not change delivery, availability, recipe, discount or cancellation rules. Configuration requires compatible versions and menu editing permission. See [Variants and sizes](/en/help/menu/variants-and-sizes#conditional-positions) for setup and recovery after a rejected selection.
+
+<span id="all-channel-order-tracking" />
+
+## Track every saved order across POS and Admin
+
+Open POS → Orders → All, or Admin → Orders → All for the same restaurant. Counter, Admin-entered, website, QR and connected-channel orders share the existing order API; source and dine-in/pickup/delivery are independent filters. The POS All list has no default date, status, source, fulfillment-type or payment filter and loads more records as you scroll. Open a row for read-only items, totals, preparation and payment status. Switching back into All reloads it; pull down on a populated list to refresh, and retry a visible loading error instead of treating it as an empty history. Confirmed live order updates also refresh the retained list. Payment-pending web orders may require this read refresh because they do not emit a kitchen-arrival event. In Admin, widen the period and reset filters when searching for older orders. Do not recreate, recharge or reprint an order merely because it is absent from a filtered view. Mode selection and any customer prompt precede items in a new onsite sale. The table/check is chosen only at Send/Continue; cancellation preserves the source. See [whole-check fulfillment](/en/help/orders/order-types#pos-whole-check). Private guest context is staff-only, never a public checkout answer or notification variable.
+
+<span id="paid-counter-orders" />
+
+## Find a counter sale after payment
+
+A paid takeaway sale sent to the kitchen belongs in Orders → Active while food is being prepared, not Completed merely because payment succeeded. Open the correct takeaway filter and clear other filters if needed. Transactions records the collection separately and refreshes on entry. Payment recorded briefly confirms the collection, then returns automatically to the floor plan. Clearing the current POS bill does not delete the saved order; Orders → All remains available for cross-channel tracking. If paper is missing, verify the profile, current POS/printer association and printer history before reprinting or collecting any additional payment. See [counter checkout](/en/help/payments/pos-checkout#counter-completion). The Client tab uses the order's saved name/phone, not a guessed customer from another bill. Optional contact collection is configured [per fulfillment method](/en/help/settings/pos-behavior#fulfillment-customer). Additional kitchen batches retain coherent contact details without sending a new order-created confirmation for each course; status notifications remain separate.
+
+<span id="unified-order-whatsapp-selection" />
+
+## Contact customers on WhatsApp
+
+With permission to manage orders, select one or more rows and choose **Send a WhatsApp message**. The page checkbox selects only displayed orders, up to 25; changing filters, date, page or restaurant clears the selection. The same composer is available in order details.
+
+Choose **WhatsApp Business** for the configured approved global confirmation, reminder or satisfaction model, or **WhatsApp app** for editable text per recipient. Review every phone and message. A Business batch confirms the ready count and produces one message per order; a customer with several orders may receive several messages. Unavailable previews, reminders that are not due and previous attempts are excluded. A changed order stops remaining sends until another review. **Refresh** checks existing attempts without automatically replaying an uncertain result. For app messages, open each conversation and send inside WhatsApp; Foody reports opening only. Automations keep their workflow configuration. See the [WhatsApp guide](../communications/whatsapp) for language, attachments, reminder requirements and recovery.
+
+<span id="mobile-terminal" />
+
+## Navigate a mobile sale
+
+In the updated mobile version, use Menu to add items, Check to review lines and courses, and Actions for check operations. The badge shows item quantity. The top button follows the permitted workflow action; on an empty check, View checks returns to the floor. Actions → Customer displays saved contact information. See [mobile order entry](/en/help/orders/taking-an-order-pos#mobile-terminal) for this presentation. The Orders list and kitchen statuses remain independent of settlement.
+
+<span id="meta-template-image-preview" />
+
+## WhatsApp template image
+
+Approved WhatsApp Utility templates with a photo automatically use the image retrieved from Meta when no local file was selected. The preview displays that image; a change before a manual send requires another review. Retrieval failure blocks sending without a text-only fallback. Configure or refresh the template in Settings → Communications → WhatsApp. See the [WhatsApp guide](../communications/whatsapp#meta-template-image-sync).
+
+<span id="customer-whatsapp-recipient" />
+
+## Choose the customer WhatsApp recipient
+
+If the customer uses a different WhatsApp number, open Clients → their profile, select Use for WhatsApp under Phone numbers and save. That number is used by Meta and Twilio messages and by WhatsApp app handoffs from the order, including link and document sharing. The order phone remains its contact and SMS-verification number. Check the preview recipient; changing the WhatsApp selection requires a new reviewed preview before an API send. Saving the customer profile sends no test message.
+
+<span id="weekly-series-rollover" />
+
+## Open the current weekly batch automatically
+
+For a restaurant configured for weekly batches, open **Home** or **Orders** using the **Série** date basis. The current batch is selected by default even without orders; its totals then stay at zero. It advances after the previous batch’s final fulfillment day in the restaurant timezone, without waiting for the first order or for ordering to open. An open page follows this change on the next automatic refresh (about one minute) or when you return to the tab.
+
+You can select an older service in the calendar; that selection stays in place while the page is open. An order for a later week does not replace the current batch as the default. A payment-attention link keeps its explicit period. If the date looks incorrect, check the configured fulfillment days and restaurant timezone, then reload. Rollover does not create an order or publish a menu.

@@ -11,7 +11,7 @@ tags:
   - tips
   - scheduled
   - order-approval
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-25'
 featureId: order-workflow
 audience: public
 releaseStatus: available
@@ -47,3 +47,9 @@ Save changes, reopen the settings and verify the POS behavior. Resolve a save er
 ## Choose a stage attachment
 
 In Admin, open Settings → Restaurant → Order workflow and the required pickup or delivery stage. With Notify customer enabled, choose the message type, an approved Meta photo/PDF model and its attachment: a fixed file, or that order’s receipt for a PDF. Choose the sending time and save the workflow. Manual stage entry or its configured event uses this binding. Selecting a file changes neither progression, payment rules nor delivery eligibility. Correct an incompatible or missing model/file before relying on delivery. The model library and creation controls are in Settings → Communications → WhatsApp.
+
+<span id="meta-template-image-preview" />
+
+## WhatsApp template image
+
+Approved WhatsApp Utility templates with a photo automatically use the image retrieved from Meta when no local file was selected. The preview displays that image; a change before a manual send requires another review. Retrieval failure blocks sending without a text-only fallback. Configure or refresh the template in Settings → Communications → WhatsApp. See the [WhatsApp guide](../communications/whatsapp#meta-template-image-sync).

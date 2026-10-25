@@ -5,12 +5,18 @@ apps: foodyadmin
 tags:
   - settings
   - fulfillment-policy
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-25'
 featureId: fulfillment-policy
 audience: public
 releaseStatus: available
 ---
 Open Settings → Orders and Fulfillment. These rules affect customer eligibility, beyond the visual Website editor.
+
+<span id="pos-contact-boundary" />
+
+## Separate POS contacts from delivery eligibility
+
+POS methods under Settings → Fulfillment → Point of sale may ask for optional name/phone details for the whole check. They collect no address, create no account and do not relax online delivery requirements. Per-item labels describe preparation exceptions. All saved orders remain available on POS and Admin, subject to access and filters; there is no per-method tracking switch. See [method settings](/en/help/settings/pos-behavior#fulfillment-methods). Mode selection and any customer prompt precede items in a new onsite sale. The table/check is chosen only at Send/Continue; cancellation preserves the source. See [whole-check fulfillment](/en/help/orders/order-types#pos-whole-check). Private guest context is staff-only, never a public checkout answer or notification variable.
 
 <span id="cash-collection-boundary" />
 
@@ -77,3 +83,41 @@ Predefined item stocks now have a journal under Items & menus → Stock history 
 ## Access the new controls
 
 The entry sign-in invitation is now a published website order-journey preference. Order without an account remains available; this setting does not replace mandatory phone verification or payment/delivery validation. Google/Geoapify consumption and limits are separately available in [Usage and quotas](/en/help/settings/api-usage-and-quotas).
+
+<span id="staff-contact-and-courier-defaults" />
+
+## Staff contact details and courier destination
+
+Staff contact details are managed in Admin → Staff → employee → Edit contact details. The restaurant-scoped name and phone are used for courier assignment and upcoming delivery reminders; the sign-in email remains read-only. Couriers can save a default final destination or link it to their home address. New routes propose that destination and allow an explicit override or removal. It is the courier’s end-of-route destination, separate from the customer’s delivery address. Existing populated routes and completed delivery snapshots keep their saved data. See [staff profiles](/en/help/staff/invite-staff#edit-staff-contacts) for saving, permissions and recovery.
+
+<span id="staff-activation-pos-code" />
+
+## POS code at staff activation
+
+Staff activation checks the permissions assigned in this restaurant, including custom roles: orders.manage or payments.manage requires a private POS code. Read-only couriers and kitchen-only roles do not need one. Existing unused invitation links apply the same current rule. Changing a role label, courier address or route destination does not grant POS permissions. See [activation and recovery](/en/help/getting-started/first-login#activate).
+
+<span id="delivery-test-departure-recovery" />
+
+## Recover a delivery after a test departure
+
+Starting courier mode marks assigned orders Out for delivery. If this was a test departure, a user with order-management permission can open Orders → Deliveries, select the date and choose Undo departure while no arrival, delivery or skipped stop has been recorded. Out for delivery orders return to In preparation; the route returns to draft and can be unassigned and reallocated. This is a delivery correction, not a new order, refund or reprint. Payments and previously sent messages are preserved. See [the dispatch procedure](/en/help/delivery/dispatch-and-routes#undo-departure).
+
+<span id="conditional-item-choices" />
+
+## Check conditional item choices
+
+An item configured with repeated positions requires one separate choice per position according to the selected format. For example, a two-character Number Cake accepts 11, AB or A7. The format price replaces the base price; modifiers add only their configured surcharges. Reducing the position count removes newly hidden choices. Positions remain distinct in the cart, orders and kitchen ticket; review them before confirming. These customizations do not change delivery, availability, recipe, discount or cancellation rules. Configuration requires compatible versions and menu editing permission. See [Variants and sizes](/en/help/menu/variants-and-sizes#conditional-positions) for setup and recovery after a rejected selection.
+
+<span id="pos-customer-screen-version" />
+
+## Check POS customer-screen compatibility
+
+Show customer information screen still controls whether details are offered immediately after a fulfillment method is selected. Its internal guest identifier and note also require an API supporting private guest details. A compatibility rejection confirms neither a kitchen send nor a payment: retain the current sale and have the API updated before resuming. Enabling the screen does not change available methods, their order, table selection at Send, delivery rules or printer profiles.
+
+<span id="weekly-series-rollover" />
+
+## Open the current weekly batch automatically
+
+For a restaurant configured for weekly batches, open **Home** or **Orders** using the **Série** date basis. The current batch is selected by default even without orders; its totals then stay at zero. It advances after the previous batch’s final fulfillment day in the restaurant timezone, without waiting for the first order or for ordering to open. An open page follows this change on the next automatic refresh (about one minute) or when you return to the tab.
+
+You can select an older service in the calendar; that selection stays in place while the page is open. An order for a later week does not replace the current batch as the default. A payment-attention link keeps its explicit period. If the date looks incorrect, check the configured fulfillment days and restaurant timezone, then reload. Rollover does not create an order or publish a menu.

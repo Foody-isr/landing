@@ -252,3 +252,9 @@ before contacting Foody.
 ## Distinguish WhatsApp PDFs from print jobs
 
 A receipt PDF attached to a WhatsApp automation is a digital order summary. It uses saved items and totals but creates no print job, requires no online printer and does not appear in printer history. Configure it in Communications → WhatsApp or Order workflow. Existing paper receipts, profiles, diagnostics and printing rules remain configured in the printing screens.
+
+<span id="variant-position-labels" />
+
+## Check printed variant positions
+
+For an item with variant positions, check that the ticket lists each choice in order, for example Character 1: A then Character 2: 7. These choices describe the product and carry no addition/removal sign or surcharge. If a detail is missing, check the API and ordering client versions, then the item configuration under [Variants and sizes](../menu/variants-and-sizes#conditional-positions). Connection, routing and print recovery procedures remain the same.

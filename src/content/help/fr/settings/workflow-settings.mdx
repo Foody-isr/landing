@@ -5,7 +5,7 @@ apps: both
 tags:
   - settings
   - order-workflow
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-25'
 featureId: order-workflow
 audience: public
 releaseStatus: available
@@ -41,3 +41,9 @@ Enregistrez, rouvrez les réglages et vérifiez le comportement POS. Résolvez u
 ## Choisir la pièce jointe d’une étape
 
 Dans l’admin, ouvrez Paramètres → Restaurant → Parcours des commandes et l’étape voulue du retrait ou de la livraison. Avec Prévenir le client activé, choisissez le type de message, un modèle Meta approuvé avec photo/PDF et sa pièce jointe : fichier fixe, ou reçu de cette commande pour un PDF. Choisissez le moment d’envoi puis enregistrez le parcours. Le changement d’étape manuel ou son événement configuré utilise cette association. Le choix d’un fichier ne change ni la progression, ni les règles de paiement, ni les conditions de livraison. Sans modèle/fichier compatible, corrigez la configuration avant de compter sur l’envoi. La bibliothèque et la création des modèles sont dans Paramètres → Communications → WhatsApp.
+
+<span id="meta-template-image-preview" />
+
+## Image du modèle WhatsApp
+
+Les modèles WhatsApp Utility approuvés avec une photo utilisent automatiquement l’image récupérée depuis Meta lorsque aucun fichier local n’a été choisi. L’aperçu affiche cette image ; un changement avant l’envoi manuel demande une nouvelle vérification. Un échec de récupération bloque l’envoi sans envoyer le texte seul. Configurez ou actualisez le modèle dans Paramètres → Communications → WhatsApp. Voir le [guide WhatsApp](../communications/whatsapp#meta-template-image-sync).

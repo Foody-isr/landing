@@ -6,7 +6,7 @@ tags:
   - staff
   - staff-invitations
   - invite-staff
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-21'
 featureId: staff-invitations
 audience: public
 releaseStatus: available
@@ -27,10 +27,28 @@ Saisissez nom, e-mail, téléphone éventuel et rôle du restaurant, puis envoye
 
 ## Renvoyer une invitation
 
-Ouvrez la fiche employé et utilisez l’action d’invitation après correction du problème d’adresse ou d’envoi. Contrôlez le nouveau résultat.
+Ouvrez Personnel → Employés, choisissez le membre existant puis Renvoyer l’invitation de configuration. Vérifiez le résultat d’envoi et demandez au membre d’utiliser uniquement le dernier e-mail. Un nouveau lien à usage unique est créé pour le même membre et le même restaurant ; il n’est pas nécessaire de supprimer puis recréer l’employé. Un lien non utilisé et non expiré peut déjà être rouvert après une activation échouée et tient compte des permissions actuelles du rôle. Si l’activation a réussi, le membre peut se connecter ou récupérer son mot de passe.
 
 <span id="review" />
 
 ## Vérifier et retirer un accès
 
-Vérifiez rôle, statut du compte et configuration du code POS. Retirez uniquement l’employé concerné ; les contrôles du propriétaire restent protégés.
+Vérifiez le rôle, le statut du compte et le code caisse. Non requis pour ce rôle signifie que les permissions actuelles du restaurant ne nécessitent pas de code caisse à l’activation ; ce n’est pas une activation inachevée. Non configuré concerne un rôle qui nécessite un code. Retirez uniquement l’employé concerné ; les contrôles du propriétaire restent protégés.
+
+<span id="edit-staff-contacts" />
+
+## Modifier les coordonnées et la destination du livreur
+
+Dans Personnel, ouvrez un employé puis Modifier les coordonnées. Avec l’autorisation de gérer le personnel, modifiez le nom, le téléphone et l’Adresse du domicile, puis Enregistrer. Ces coordonnées appartiennent à cet établissement ; l’email de connexion reste en lecture seule et les accès, rôles et autres établissements ne changent pas. Les coordonnées du propriétaire sont aussi modifiables. Pour un livreur, renseignez Destination finale par défaut ou choisissez Même adresse que son domicile. Cette option suit les modifications ultérieures enregistrées du domicile ; un domicile vide ne peut pas servir de destination. Laissez la destination vide pour ne pas définir de valeur par défaut. Les nouvelles tournées reprennent automatiquement cette destination, y compris la première vraie planification depuis une tournée vide créée pour le livreur. Vous pouvez la remplacer ou l’effacer pour une seule tournée pendant sa planification. Les tournées contenant déjà des livraisons conservent leur destination enregistrée. Modifier le nom ou le téléphone du livreur actualise les prochains rappels de livraison de cet établissement ; les commandes terminées gardent leur historique. Les suggestions aident à compléter une rue ou une ville ; la planification vérifie la destination avant le calcul. Une recherche indisponible n’efface pas la saisie. L’enregistrement est explicite ; les erreurs conservent le formulaire et sa fermeture demande de confirmer l’abandon des modifications. Les personnes autorisées uniquement à consulter le personnel voient la fiche sans pouvoir la modifier.
+
+<span id="delivery-test-departure-recovery" />
+
+## Reprendre une livraison après un départ de test
+
+Pour vérifier un accès livreur fraîchement activé, consultez une tournée affectée sans enregistrer de départ ni de livraison. Un départ lancé dans le mode livreur place les commandes affectées En livraison. Si ce départ était un test, un utilisateur avec la permission de gestion des commandes peut ouvrir Commandes → Livraisons, sélectionner la date et choisir Annuler le départ tant qu’aucune arrivée, livraison ou étape ignorée n’a été enregistrée. Les commandes En livraison reviennent En préparation ; la tournée revient en brouillon et peut être désassignée puis réaffectée. Il s’agit d’une correction de livraison, pas d’une nouvelle commande, d’un remboursement ou d’une réimpression. Les paiements et les messages déjà envoyés sont conservés. Consultez [la procédure de dispatch](/fr/help/delivery/dispatch-and-routes#undo-departure).
+
+<span id="mobile-terminal-pages" />
+
+## Consulter le personnel depuis le POS mobile
+
+La page Personnel du POS reste une liste en lecture seule, avec un en-tête centré, un retour et une actualisation sur mobile. Les invitations et modifications de droits se font toujours dans Admin par un compte autorisé.

@@ -7,12 +7,18 @@ apps: foodyadmin
 tags:
   - settings
   - fulfillment-policy
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-25'
 featureId: fulfillment-policy
 audience: public
 releaseStatus: available
 ---
 Ouvrez Paramètres → Commandes et Remise des commandes. Ces règles déterminent l’éligibilité client au-delà du design du site.
+
+<span id="pos-contact-boundary" />
+
+## Distinguer les coordonnées POS des conditions de livraison
+
+Les modes POS dans Paramètres → Modes de traitement → Système de caisse peuvent demander des coordonnées nom/téléphone facultatives pour toute l’addition. Ils ne recueillent aucune adresse, ne créent aucun compte et n’assouplissent pas les conditions de livraison en ligne. Les mentions par article décrivent des exceptions de préparation. Toutes les commandes enregistrées restent disponibles sur POS et Admin selon les droits et filtres ; il n’y a pas d’interrupteur de suivi par mode. Voir [les réglages des modes](/fr/help/settings/pos-behavior#fulfillment-methods). Dans une nouvelle vente sur place, le mode et la fiche client éventuelle précèdent les articles. La table/addition est choisie seulement à Envoyer/Continuer ; annuler conserve la source. Voir [le traitement global](/fr/help/orders/order-types#pos-whole-check). Le contexte client privé est réservé au personnel, jamais une réponse au paiement public ou une variable de notification.
 
 <span id="cash-collection-boundary" />
 
@@ -79,3 +85,41 @@ Les stocks prédéfinis des articles disposent d’un journal dans Articles et c
 ## Accès aux nouveaux réglages
 
 L’invitation à se connecter à l’entrée est désormais un choix publié dans le parcours de commande du site. Commander sans compte reste disponible ; ce réglage ne remplace pas une vérification de téléphone obligatoire ni les contrôles de paiement ou de livraison. Les consommations Google/Geoapify et leurs plafonds sont consultables séparément dans [Consommation et quotas](/fr/help/settings/api-usage-and-quotas).
+
+<span id="staff-contact-and-courier-defaults" />
+
+## Coordonnées du personnel et destination du livreur
+
+Les coordonnées du personnel se gèrent dans Admin → Personnel → employé → Modifier les coordonnées. Le nom et le téléphone propres à l’établissement servent à l’affectation du livreur et aux prochains rappels de livraison ; l’email de connexion reste en lecture seule. Les livreurs peuvent enregistrer une destination finale par défaut ou la lier à leur domicile. Les nouvelles tournées proposent cette destination et permettent de la remplacer ou de la retirer. Il s’agit du lieu où termine le livreur, distinct de l’adresse de livraison du client. Les tournées contenant déjà des livraisons et les historiques terminés conservent leurs données. Voir [la fiche du personnel](/fr/help/staff/invite-staff#edit-staff-contacts) pour l’enregistrement, les permissions et la reprise après erreur.
+
+<span id="staff-activation-pos-code" />
+
+## Code caisse à l’activation du personnel
+
+L’activation du personnel vérifie les permissions affectées dans ce restaurant, y compris les rôles personnalisés : orders.manage ou payments.manage impose un code caisse personnel. Les livreurs en consultation et les rôles limités à la cuisine n’en ont pas besoin. Les invitations existantes encore inutilisées appliquent la même règle actuelle. Modifier le nom du rôle, l’adresse du livreur ou la destination d’une tournée n’accorde aucun droit caisse. Voir [l’activation et la reprise](/fr/help/getting-started/first-login#activate).
+
+<span id="delivery-test-departure-recovery" />
+
+## Reprendre une livraison après un départ de test
+
+Un départ lancé dans le mode livreur place les commandes affectées En livraison. Si ce départ était un test, un utilisateur avec la permission de gestion des commandes peut ouvrir Commandes → Livraisons, sélectionner la date et choisir Annuler le départ tant qu’aucune arrivée, livraison ou étape ignorée n’a été enregistrée. Les commandes En livraison reviennent En préparation ; la tournée revient en brouillon et peut être désassignée puis réaffectée. Il s’agit d’une correction de livraison, pas d’une nouvelle commande, d’un remboursement ou d’une réimpression. Les paiements et les messages déjà envoyés sont conservés. Consultez [la procédure de dispatch](/fr/help/delivery/dispatch-and-routes#undo-departure).
+
+<span id="conditional-item-choices" />
+
+## Vérifier les choix conditionnels d’un article
+
+Un article configuré avec des positions répétées demande un choix distinct par emplacement selon le format sélectionné. Par exemple, un Number Cake à deux caractères accepte 11, AB ou A7. Le prix du format remplace le prix de base ; les modificateurs ajoutent uniquement leurs suppléments configurés. Réduire le nombre de positions retire les choix devenus invisibles. Les positions restent distinctes dans le panier, les commandes et le ticket cuisine ; vérifiez-les avant validation. Ces personnalisations ne changent pas les règles de livraison, de disponibilité, de recette, de remise ou d’annulation. Leur configuration nécessite les versions compatibles et la permission de modifier le menu. Consultez [Variantes et tailles](/fr/help/menu/variants-and-sizes#conditional-positions) pour la procédure et les contrôles en cas de refus.
+
+<span id="pos-customer-screen-version" />
+
+## Vérifier la compatibilité de la fiche client POS
+
+Le réglage Afficher l’écran d’informations client continue de décider si la fiche est proposée immédiatement après le choix d’un mode. Ses champs d’identification et de note internes nécessitent aussi l’API compatible avec les informations invité privées. Un refus de compatibilité ne confirme ni l’envoi en cuisine ni le paiement : gardez la vente en cours et faites actualiser l’API avant de reprendre. Activer la fiche ne change pas les modes disponibles, leur ordre, le choix d’une table au moment d’Envoyer, les règles de livraison ou les profils d’impression.
+
+<span id="weekly-series-rollover" />
+
+## Afficher automatiquement la série actuelle
+
+Pour un restaurant configuré en lots hebdomadaires, ouvrez **Accueil** ou **Commandes** avec la base de date **Série**. La série actuelle est sélectionnée par défaut, même sans commande : ses totaux restent alors à zéro. Elle avance après le dernier jour de remise de la série précédente, selon le fuseau horaire du restaurant, sans attendre la première commande ni l’ouverture des commandes. Sur une page restée ouverte, la sélection suit ce changement au prochain rafraîchissement automatique (environ une minute) ou au retour sur l’onglet.
+
+Vous pouvez sélectionner une ancienne série dans le calendrier ; cette consultation reste en place pendant que la page est ouverte. Une commande déjà prise pour une semaine plus lointaine ne remplace pas la série actuelle par défaut. Un lien de suivi des paiements conserve la période qu’il indique. Si la date semble incorrecte, vérifiez les jours de remise et le fuseau horaire configurés, puis rechargez la page. Ce basculement ne crée aucune commande et ne publie pas une carte.

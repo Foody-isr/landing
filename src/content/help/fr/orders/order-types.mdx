@@ -5,12 +5,12 @@ apps: both
 tags:
   - orders
   - order-types
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-22'
 featureId: order-types
 audience: public
 releaseStatus: available
 ---
-Admin → Paramètres → Commandes / POS → prise de commande
+Admin → Paramètres → Commandes / POS → prise de commande. Le sur-place sans table, le choix du traitement de l’addition et les informations client facultatives nécessitent des versions POS et API compatibles. Leur configuration Admin nécessite aussi une version Admin compatible ; une mise à jour API ne met pas à jour ces clients.
 
 <span id="pos-cash-by-order-type" />
 
@@ -28,7 +28,7 @@ Pour les commandes en ligne au poids, ouvrez Réglages → Paiements & TVA avec 
 
 ## Sur place et tables
 
-Choisissez sur place et la bonne table/session lorsque proposé. Vérifiez séparément places et nombre de couverts ; le type de commande n’affecte pas seul une table physique.
+Sur place décrit une consommation dans l’établissement, pas un numéro de table obligatoire. Sur POS, une nouvelle vente peut utiliser une table éligible ou une [addition nommée sans table](#pos-tableless-dine-in), si cette fonction est disponible et les additions ouvertes activées. Une table physique conserve sa session, ses couverts et ses places ; une addition sans table ne les crée pas. Les commandes invitées par QR gardent leurs exigences de table/session.
 
 <span id="pickup" />
 
@@ -77,3 +77,51 @@ Pour une nouvelle commande à emporter encaissée par carte au comptoir, choisis
 ## Utiliser le stock de la série d’origine
 
 Les stocks prédéfinis des articles disposent d’un journal dans Articles et cartes → Historique des stocks et sur chaque produit. Une carte tournante permet de préparer des quotas initiaux par série et de les publier sans recréditer les quantités engagées. Les reliquats précédents ne sont pas reportés. Les modifications de commande et libérations avant production utilisent le compteur d’origine enregistré ; un article déjà préparé reste consommé. Les quantités d’ingrédients et préparations et les coûts de recette restent distincts. Consultez [Disponibilité](/fr/help/kitchen/availability) pour les imports initiaux, les corrections et les filtres d’historique.
+
+<span id="staff-contact-and-courier-defaults" />
+
+## Coordonnées du personnel et destination du livreur
+
+Les coordonnées du personnel se gèrent dans Admin → Personnel → employé → Modifier les coordonnées. Le nom et le téléphone propres à l’établissement servent à l’affectation du livreur et aux prochains rappels de livraison ; l’email de connexion reste en lecture seule. Les livreurs peuvent enregistrer une destination finale par défaut ou la lier à leur domicile. Les nouvelles tournées proposent cette destination et permettent de la remplacer ou de la retirer. Il s’agit du lieu où termine le livreur, distinct de l’adresse de livraison du client. Les tournées contenant déjà des livraisons et les historiques terminés conservent leurs données. Voir [la fiche du personnel](/fr/help/staff/invite-staff#edit-staff-contacts) pour l’enregistrement, les permissions et la reprise après erreur.
+
+<span id="delivery-test-departure-recovery" />
+
+## Reprendre une livraison après un départ de test
+
+Un départ lancé dans le mode livreur place les commandes affectées En livraison. Si ce départ était un test, un utilisateur avec la permission de gestion des commandes peut ouvrir Commandes → Livraisons, sélectionner la date et choisir Annuler le départ tant qu’aucune arrivée, livraison ou étape ignorée n’a été enregistrée. Les commandes En livraison reviennent En préparation ; la tournée revient en brouillon et peut être désassignée puis réaffectée. Il s’agit d’une correction de livraison, pas d’une nouvelle commande, d’un remboursement ou d’une réimpression. Les paiements et les messages déjà envoyés sont conservés. Consultez [la procédure de dispatch](/fr/help/delivery/dispatch-and-routes#undo-departure).
+
+<span id="conditional-item-choices" />
+
+## Vérifier les choix conditionnels d’un article
+
+Un article configuré avec des positions répétées demande un choix distinct par emplacement selon le format sélectionné. Par exemple, un Number Cake à deux caractères accepte 11, AB ou A7. Le prix du format remplace le prix de base ; les modificateurs ajoutent uniquement leurs suppléments configurés. Réduire le nombre de positions retire les choix devenus invisibles. Les positions restent distinctes dans le panier, les commandes et le ticket cuisine ; vérifiez-les avant validation. Ces personnalisations ne changent pas les règles de livraison, de disponibilité, de recette, de remise ou d’annulation. Leur configuration nécessite les versions compatibles et la permission de modifier le menu. Consultez [Variantes et tailles](/fr/help/menu/variants-and-sizes#conditional-positions) pour la procédure et les contrôles en cas de refus.
+
+<span id="pos-tableless-dine-in" />
+
+## Ouvrir une addition sur place sans table
+
+Nécessite des versions API/POS compatibles, orders.manage et les additions ouvertes activées pour ce mode de caisse. Choisissez Sur place pour une nouvelle vente non affectée ; cela n’ouvre encore ni table ni addition. Complétez la fiche client éventuelle et saisissez les articles. À Envoyer/Continuer, Enregistrer l’addition → Nouvelle addition → Addition personnalisée permet de nommer une addition sur place sans table physique. Sinon choisissez un groupe configuré puis un nom disponible ; choisir ce nom crée l’addition. Un nom personnalisé demande Enregistrer. L’envoi explicite se poursuit alors une seule fois avec les nouvelles lignes. Changer de destination pendant Payer n’encaisse pas automatiquement : vérifiez puis engagez le paiement explicitement. Annuler conserve le panier source. Vous pouvez aussi créer d’abord l’addition vide depuis Actions → Tickets ouverts → Nouveau ticket, choisir Sur place puis groupe/nom ou nom personnalisé. Il s’agit d’une consommation sur place réelle, pas d’un retrait renommé. Les envois suivants gardent une même addition et créent des bons cuisine distincts. Paiement, préparation et fermeture restent séparés ; fermez seulement sans articles non envoyés ni lots actifs impayés. Les commandes enregistrées restent dans Commandes sur POS et Admin. Aucune table/session artificielle, aucun couvert ni place numérotée ne sont créés. Le partage financier ou le déplacement de cette addition vers une table ne sont pas pris en charge ici. Une création incertaine conserve son identité : Réessayer la même demande au lieu de créer une autre addition.
+
+<span id="pos-whole-check" />
+
+## Choisir le traitement de toute l’addition POS
+
+Pour une vente non envoyée, ouvrez **Actions → Modes de traitement** dans l’addition, touchez la ligne voulue dans **Choisissez le traitement de cette commande**. Le mode actuel est surligné avec un badge vert Sélectionné. Toucher une ligne poursuit immédiatement le parcours, sans bouton Enregistrer distinct ; fermer avant de choisir laisse la vente inchangée. Il s’agit du traitement global de l’addition, pas de celui de l’article sélectionné. Les choix viennent des [paramètres de traitement POS du restaurant](/fr/help/settings/pos-behavior#fulfillment-methods). Les articles sans choix explicite suivent l’addition ; ceux ayant leur propre consigne de préparation la conservent. Une fois l’addition envoyée, son mode global enregistré est conservé. Une addition de table reste liée à sa table/session et une addition nommée conserve son type sur place, retrait ou livraison ; ce sélecteur ne sert pas à transférer une table, fusionner des additions ou effectuer un partage financier. Si le mode demande les informations client, confirmez aussi le formulaire facultatif nom/téléphone ; son annulation annule le choix de mode préparé. L’onglet Client affiche les coordonnées enregistrées. Voir [informations client](/fr/help/settings/pos-behavior#fulfillment-customer). Pour une nouvelle vente sur place, choisissez le mode et la fiche client éventuelle avant les articles ; la table/addition est demandée seulement à Envoyer/Continuer. Enregistrer l’addition propose recherche, tris et sections. Choisissez une addition impayée sans autres lignes non envoyées, ou Nouvelle addition → section → table libre. Les couverts éventuels sont demandés seulement après ce choix. Nouvelle addition → Addition personnalisée ou groupe/nom configuré crée une addition sur place sans table physique ; les additions ouvertes doivent être activées et l’API compatible. Une nouvelle tentative garde la même identité de création ; une réponse incertaine fige la demande. Annuler conserve le panier source. Une destination existante garde client, remises et lignes enregistrées ; seules les nouvelles lignes deviennent le prochain bon cuisine. Les additions payées, en paiement, fractionnées, aux totaux incertains ou avec un autre client sont refusées sans déplacer la source. Retirez explicitement une remise globale source avant de changer de destination. Pendant Payer, changer de destination ne débite pas automatiquement : vérifiez-la puis engagez le paiement explicitement.
+
+<span id="pos-item-method" />
+
+## Donner une consigne de préparation différente à un article
+
+Dans **Options → Modes de traitement** de la fiche article, choisissez un mode actif puis confirmez l’article avec **Terminé**. Par exemple, un article à emporter dans une addition sur place indique comment préparer ou emballer cet article ; il ne détache pas l’addition de sa table. Choisir Livraison sur une ligne ne crée ni livraison indépendante, ni destinataire, ni adresse, ni frais, ni mission de livreur. Utilisez une commande de livraison distincte avec les coordonnées nécessaires si des produits doivent réellement partir vers une autre destination. Les modes disponibles sont communs au restaurant ; il n’existe pas de grille distincte autorisant certains choix d’articles selon le service global. Ces choix ne modifient ni les affectations d’imprimantes ni les règles de catégories : vérifiez séparément le [routage d’impression](/fr/help/printers/profiles-and-routing).
+
+<span id="pos-change-draft" />
+
+## Changer le service d’un brouillon non affecté
+
+Un brouillon anonyme impayé et entièrement non envoyé peut changer de cycle retrait/livraison ou être affecté à une destination sur place éligible à Envoyer/Continuer. Une destination vide garde sa propre identité table/session. Une addition sur place enregistrée, impayée et non fractionnée peut accepter les nouvelles lignes seulement sans autre travail non envoyé, avec des totaux confirmés et une fiche client compatible ; elle garde ses lignes enregistrées, son client et sa politique de remise. Aucune destination payée, en paiement, fractionnée, incertaine ou incompatible n’est écrasée. Retirez explicitement une remise globale source avant le passage vers une table/addition nommée ; cette politique n’est ni perdue ni transférée silencieusement. Après annulation ou changement de restaurant, droits, réglages, source ou cible, conservez le brouillon et consultez l’erreur au lieu de recréer ou repayer les mêmes plats. La source n’est consommée qu’après confirmation du brouillon local destination. L’envoi explicite se poursuit une fois après un choix réussi ; un changement de destination pendant Payer demande une nouvelle initiation explicite du paiement. Les services de table avec des additions financières ne sont pas convertis silencieusement par ce parcours.
+
+<span id="pos-private-guest-context" />
+
+## Garder le contexte client privé sur l’addition
+
+Dans la fiche client proposée après le choix du mode de traitement, prénom, nom, identifiant invité et note décrivent toute l’addition, pas un article ni une livraison séparée. Ces informations restent réservées au personnel et sont conservées avec les envois successifs de la même addition. Elles ne créent pas un compte client et ne sont transmises ni aux réponses publiques de suivi ou de paiement ni aux variables des notifications. Les champs privés nécessitent une version compatible de l’API ; si la caisse demande une mise à jour, conservez l’addition et faites mettre à jour le serveur avant de reprendre, sans refaire un paiement.

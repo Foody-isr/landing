@@ -32,4 +32,16 @@ Review seating, covers, service courses, kitchen sending and return-to-menu beha
 
 ## Keep fulfillment independent
 
-Pickup/delivery choices and prompts are configured separately from the table layout. Check item-level dining options and order-level fulfillment without assuming one replaces the other.
+Configure the restaurant's [fulfillment methods and prompt](/en/help/settings/pos-behavior#fulfillment-methods) separately from the table layout and device mode profile. The whole-check method determines its overall service; an item choice is a preparation exception and does not create a separate delivery. Review [whole-check and item choices](/en/help/orders/order-types#pos-whole-check) before changing a sale. A payment does not hide an order from Orders → All or automatically mark its preparation complete. Mode selection and any customer prompt precede items in a new onsite sale. The table/check is chosen only at Send/Continue; cancellation preserves the source. See [whole-check fulfillment](/en/help/orders/order-types#pos-whole-check). Private guest context is staff-only, never a public checkout answer or notification variable.
+
+<span id="modes-dashboard" />
+
+## Review and edit Modes in Admin
+
+In Settings → Device management → Modes, search, sort by name or assigned-device count, and change the page size. Select a mode name or its options button to open its side panel without leaving the list. Review the assigned devices, then Manage opens the full-screen editor. Rename stages the new name; Save explicitly persists it. Creating a mode or deleting selected modes is also staged until Save. Closing a panel retains the list draft; leaving with changes asks whether to discard. A save error retains the draft. Only settings-edit permission can mutate profiles; read-only staff can inspect the panel. An unavailable device is reported rather than silently reassigned. Creation dates show a dash because the current API does not supply mode creation dates. Restaurant defaults remain separately accessible and are not a physical device profile.
+
+<span id="send-home-new-sale" />
+
+## Return home after sending and start a fresh sale
+
+In the effective device mode, open Open checks, enable Use on this mode and Use Open Tickets as the home screen, then Save. Refresh settings on the POS. After a confirmed Send, a table check returns to the floor plan and a named check returns to open checks. Returning to Menu opens a separate empty sale; it does not reopen or erase the sent check. Reopen the saved check from its table or open-check list to add more dishes. The original customer, bill and kitchen batches remain there. Continue/Send and stay retains the current check. Failed sending or a changed restaurant, permission or editor context does not detach the source. Another unsent counter basket is not cleared. With the home setting disabled this new-sale handoff is not applied. All saved orders remain tracked on POS and Admin; payment, preparation and check closure stay independent.

@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - delivery
   - courier
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-25'
 featureId: courier
 audience: public
 releaseStatus: available
@@ -16,22 +16,48 @@ Admin → Orders → Courier mode, or assigned courier workspace
 
 ## Open the assigned itinerary
 
-Open the assigned route and check its date, stop sequence and delivery windows. Use only orders assigned to your authorized courier context.
+In Foody Admin courier mode, select your route from the list at the top, including future assignments. An active route is selected on opening. The map and numbered pins are visible immediately; on desktop, the timeline sits alongside it. Check the date, addresses, calculated times, contacts and instructions. Finish, distance and duration are plan estimates; an incomplete calculation hides them. The round menu opens account, restaurant, language and theme controls. Use only orders within your authorized courier scope.
+
+In the courier view, the order amount is shown only for cash payments. Card payments, other payment methods and orders with an unknown payment method do not show an amount.
 
 <span id="navigate" />
 
 ## Navigate and contact
 
-Open an offered navigation app for the stop and review customer contact/delivery instructions. Check a corrected address with dispatch before changing the delivery plan.
+Select an address in the timeline or its map pin to select that stop and reveal its actions. A pin scrolls the list without confirming delivery. Fixed Navigate and Mark delivered buttons target the same selected stop, whose number and address appear above under Selected stop. Check this destination before acting. Select the phone number to call or WhatsApp to prepare a message. Unverified addresses remain flagged before a navigation search. Stop options let you correct the address or move the stop up/down; confirm a correction with dispatch.
 
 <span id="complete" />
 
 ## Confirm the actual result
 
-Use the offered stop/order status action after the actual handover. Record required information and verify the saved result; a delivery confirmation does not by itself collect an unpaid balance.
+After Start, select the delivery actually handed over in the list or on the map, check its number and address under Selected stop, then choose Mark delivered. Without an explicit selection, the next unfinished stop is proposed. After a successful confirmation, the next remaining stop is proposed, but no other order is delivered automatically. Mark arrived remains optional. A finished stop cannot be confirmed again using the fixed button. If the route was cancelled, is no longer active or the order was reassigned to another courier, the server rejects confirmation without completing the order or the other route: refresh or reopen your routes and select the current assignment. A failure displays an error and preserves remaining deliveries. Delivery confirmation does not itself collect an unpaid balance.
 
 <span id="departure-settings" />
 
 ## Edit endpoints and start the route
 
-Before departure, open Edit on your assigned route. Set departure time, departure address and final destination; use the address suggestions or enter a complete address manually. Set the customer window and handover duration separately, then save and review the recalculated sequence. Changing an endpoint resets manual ordering. Start route confirms that the assigned unfinished deliveries are leaving and changes accepted, preparing and ready deliveries together to Out for delivery. Finished/cancelled deliveries are not reopened. A held kitchen course or an unsettled weight order must be resolved first. If departure fails, no partial status change is saved. A courier can have only one active route; finish it before starting another. Before departure, departure and final addresses remain editable after allocation. Include the house number, street and city; the number may appear before or after the street name, and the displayed address is retained. If Address not found appears, check the number and city, then select another suggestion or correct the full address. A temporary location-service failure requires trying again later. The saved route remains unchanged on either failure. When Google is active in Maps and routes, departure and final addresses can use a precise Google match even when Geoapify cannot locate them. Save the route settings before departure and review the recalculated final leg. If Google is unavailable or its protected quota is exhausted and the other provider cannot locate an endpoint, saving or recalculation is blocked and the previous plan is retained; the final destination is never silently omitted. Google-only points are shown on the Google map and hidden when the map switches provider. Select a precisely located alternative or try again when Google becomes available.
+Before departure, open Adjust at the bottom of your assigned route, then Edit. Settings are also available in Route options. After saving, close the panel to return to the map. The menu also offers Re-optimize, which changes the order unlike a simple search. Set departure time, departure address and final destination; use the address suggestions or enter a complete address manually. Set the customer window and handover duration separately, then save and review the recalculated sequence. Changing an endpoint resets manual ordering. Start route confirms that the assigned unfinished deliveries are leaving and changes accepted, preparing and ready deliveries together to Out for delivery. Finished/cancelled deliveries are not reopened. A held kitchen course or an unsettled weight order must be resolved first. If departure fails, no partial status change is saved. A courier can have only one active route; finish it before starting another. Before departure, departure and final addresses remain editable after allocation. Include the house number, street and city; the number may appear before or after the street name, and the displayed address is retained. If Address not found appears, check the number and city, then select another suggestion or correct the full address. A temporary location-service failure requires trying again later. The saved route remains unchanged on either failure. When Google is active in Maps and routes, departure and final addresses can use a precise Google match even when Geoapify cannot locate them. Save the route settings before departure and review the recalculated final leg. If Google is unavailable or its protected quota is exhausted and the other provider cannot locate an endpoint, saving or recalculation is blocked and the previous plan is retained; the final destination is never silently omitted. Google-only points are shown on the Google map and hidden when the map switches provider. Select a precisely located alternative or try again when Google becomes available. Enable Respect order time windows only when saved order times are agreed customer commitments. Disabled by default, this option allows stop optimization before deriving customer arrival ranges. Changing it recalculates even a previous manual sequence; review the result before departure.
+
+<span id="routing-service-limits" />
+
+## Respond to a mapping service limit
+
+An exhausted-quota or unavailable-service warning does not mean the customer address is wrong. Known Google positions remain on the Google map while their cache is valid; unchecked positions are marked temporarily unavailable. Paths and arrivals that cannot be calculated stay hidden. Ask dispatch to check Usage and quotas and wait for service availability, then refresh and recalculate if needed. Do not remove a delivery to dismiss the warning. Orders and addresses are retained. Review recalculated times before contacting customers.
+
+<span id="map-timeline-panel" />
+
+## Adjust the map and find a stop
+
+On mobile, drag the handle above the list to choose a compact, balanced or expanded view. Keyboard Up/Down and Home/End provide the same adjustment. The list scrolls independently of the fixed actions. Search stops filters by address, city, customer, phone, order number or instructions without changing the route; clear or close search to restore all stops. Selecting a pin clears the filter and reveals its stop. Fit the whole route reframes the map; + and − control zoom. Viewing another route does not stop active-route location sharing when the phone permits it.
+
+<span id="accidental-departure" />
+
+## Correct a test departure
+
+If you start a route accidentally, tell a manager before recording any arrival or delivery. In Orders → Deliveries, a user with order-management permission can choose Undo departure while every stop is pending, then unassign and reallocate the route. Out for delivery orders return to In preparation and the replacement courier can start after reassignment. Courier mode does not offer this management correction. Previously sent messages remain in the history.
+
+<span id="superadmin-courier-selection" />
+
+## View another courier’s workspace
+
+With a superadmin account, open the relevant restaurant, then Orders → Courier mode. Under View as courier, select a courier from that restaurant; the first in the list is selected initially. You see the same map, unfinished routes and stops as that courier. Change the selection at any time to display the new courier’s routes; the previous selected stop, search and panels are reset. Displayed actions, including Start route and Mark delivered, really change that courier’s deliveries: use them only to record work that has taken place. The signed-in account remains superadmin and its GPS position is not reported as the courier’s. Other accounts keep their own routes without this selector. If no couriers are configured, have the restaurant’s team roles checked. If loading fails, choose Retry; a removed membership or a courier from another restaurant is rejected by the server.

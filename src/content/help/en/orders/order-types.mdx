@@ -9,12 +9,12 @@ tags:
   - pickup
   - delivery
   - scheduled
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-22'
 featureId: order-types
 audience: public
 releaseStatus: available
 ---
-Admin → Settings → Orders / POS → order entry
+Admin → Settings → Orders / POS → order entry. Tableless dine-in, whole-check method selection and optional customer prompts require compatible POS and API versions. Their Admin configuration also requires a compatible Admin version; an API update does not update either client.
 
 <span id="pos-cash-by-order-type" />
 
@@ -32,7 +32,7 @@ For online by-weight orders, open Settings → Payments & VAT with settings.edit
 
 ## Dine-in and tables
 
-Select dine-in and the intended table/session when offered. Check seats and guest count separately; order type does not assign a physical table by itself.
+Dine-in describes onsite consumption, not a required table number. On the POS, a new sale can use an eligible table or a [named check without a table](#pos-tableless-dine-in), when supported and open checks are enabled. A physical table keeps its own service session, covers and seats; a check without a table does not create them. Guest QR ordering retains its table/session requirements.
 
 <span id="pickup" />
 
@@ -81,3 +81,51 @@ For a new counter pickup order paid by card, choose Pay, then Pay by card. Wait 
 ## Use the original series stock pool
 
 Predefined item stocks now have a journal under Items & menus → Stock history and on each product. A rotating carte can prepare initial allowances per series and publish them without restoring already committed units. Previous remaining counts are not carried forward. Order changes and pre-production releases use the original frozen pool; a produced item remains consumed. Ingredient/preparation quantities and recipe costs remain separate. See [Availability](/en/help/kitchen/availability) for initial imports, corrections and history filters.
+
+<span id="staff-contact-and-courier-defaults" />
+
+## Staff contact details and courier destination
+
+Staff contact details are managed in Admin → Staff → employee → Edit contact details. The restaurant-scoped name and phone are used for courier assignment and upcoming delivery reminders; the sign-in email remains read-only. Couriers can save a default final destination or link it to their home address. New routes propose that destination and allow an explicit override or removal. It is the courier’s end-of-route destination, separate from the customer’s delivery address. Existing populated routes and completed delivery snapshots keep their saved data. See [staff profiles](/en/help/staff/invite-staff#edit-staff-contacts) for saving, permissions and recovery.
+
+<span id="delivery-test-departure-recovery" />
+
+## Recover a delivery after a test departure
+
+Starting courier mode marks assigned orders Out for delivery. If this was a test departure, a user with order-management permission can open Orders → Deliveries, select the date and choose Undo departure while no arrival, delivery or skipped stop has been recorded. Out for delivery orders return to In preparation; the route returns to draft and can be unassigned and reallocated. This is a delivery correction, not a new order, refund or reprint. Payments and previously sent messages are preserved. See [the dispatch procedure](/en/help/delivery/dispatch-and-routes#undo-departure).
+
+<span id="conditional-item-choices" />
+
+## Check conditional item choices
+
+An item configured with repeated positions requires one separate choice per position according to the selected format. For example, a two-character Number Cake accepts 11, AB or A7. The format price replaces the base price; modifiers add only their configured surcharges. Reducing the position count removes newly hidden choices. Positions remain distinct in the cart, orders and kitchen ticket; review them before confirming. These customizations do not change delivery, availability, recipe, discount or cancellation rules. Configuration requires compatible versions and menu editing permission. See [Variants and sizes](/en/help/menu/variants-and-sizes#conditional-positions) for setup and recovery after a rejected selection.
+
+<span id="pos-tableless-dine-in" />
+
+## Open a dine-in check without a table
+
+Requires compatible API/POS versions, orders.manage and open checks enabled for this POS mode. Select Dine-In for a new unassigned sale; this does not yet open a table or check. Complete any customer prompt and enter the items. At Send/Continue, Save check → New check → Custom check lets you name an onsite check without a physical table. Alternatively select a configured naming group and an available name; choosing the name creates the check. A custom name needs Save. The explicit Send then continues once with the fresh lines. A destination change during Pay does not automatically collect money: review and initiate payment explicitly. Cancel preserves the source basket. You can also create the empty check first from Actions → Open tickets → New ticket, select Dine-In, then choose its group/name or custom name. This is real onsite consumption, not renamed pickup. Further sends keep one bill and create separate kitchen batches. Payment, preparation and closing remain separate; close only with no unsent items or unpaid live batches. Saved orders remain in Orders on POS and Admin. No artificial table/session, covers or numbered seats are created. Financial splitting or moving this named check to a table is not supported here. An uncertain creation keeps its request identity: Retry the same request instead of creating another check.
+
+<span id="pos-whole-check" />
+
+## Choose the method for the whole POS check
+
+For an unsent sale, open **Actions → Fulfillment methods** in the check, tap the intended row in **Select fulfillment for this order**. The current method is highlighted with a green Selected badge. Tapping a row continues immediately, without a separate Save button; closing before choosing leaves the sale unchanged. This is the check's overall method, not a choice for the selected item. Choices come from the restaurant's [POS fulfillment settings](/en/help/settings/pos-behavior#fulfillment-methods). Items without an explicit choice follow the check; items with their own preparation choice keep it. Once the check is sent, its recorded overall method is retained. A table check remains attached to its table/session and a named check retains its dine-in, pickup or delivery type; the method selector is not a table-transfer, check-merge or financial-split tool. If the method requests customer information, confirm the optional name/phone form too; cancelling it cancels the staged mode choice. The Client tab shows the recorded contact. See [customer information](/en/help/settings/pos-behavior#fulfillment-customer). For a new onsite sale, choose the method and any customer details before adding items; the table/check is requested only at Send/Continue. Save check provides search, sorting and sections. Choose an existing unpaid onsite check with no other unsent lines, or New check → section → free table. Required covers are requested only after that table choice. New check → Custom check or a configured group/name creates a named onsite check without a physical table, requiring open checks enabled and the matching API. A retry retains one creation identity; an uncertain response freezes that request. Cancellation keeps the source basket. An existing destination retains its customer, discounts and saved lines; only fresh lines become the next kitchen batch. Paid, pending-payment, allocated, uncertain-total or conflicting-customer checks are rejected without moving the source. Explicitly remove a source check-level discount before changing destination. A changed destination during Pay does not automatically charge: review it and initiate payment explicitly.
+
+<span id="pos-item-method" />
+
+## Give one item a different preparation instruction
+
+In the item sheet's **Options → Fulfillment methods**, choose an enabled method and confirm the item with **Done**. For example, an item marked takeaway in a dine-in check indicates how that item should be prepared or packed; it does not move the check away from its table. Selecting Delivery on one line does not create another delivery, recipient, address, charge or courier task. Use a separate delivery order with the required delivery details when goods must actually go to another destination. The available methods are restaurant-wide; there is no separate matrix of allowed item choices for each parent service. These choices do not change printer assignments or category rules: verify [printer routing](/en/help/printers/profiles-and-routing) separately.
+
+<span id="pos-change-draft" />
+
+## Change an unassigned draft's service safely
+
+An unpaid, wholly unsent anonymous draft can change pickup/delivery lifecycle or be assigned to an eligible onsite destination at Send/Continue. Empty destinations keep their own table/session identity. A saved, unpaid, unsplit onsite check can accept fresh lines only if it has no other unsent work, confirmed totals and a compatible guest snapshot; its saved lines, customer and discount policy remain unchanged. No paid/pending, allocated, uncertain or conflicting destination is overwritten. A source check-level discount must be removed explicitly before moving to a table/named check; do not silently discard or transfer that policy. On cancellation or a changed restaurant, permission, configuration, source or target, keep the source and review the error instead of recreating or paying for the same food twice. Source consumption occurs only after the destination local draft is confirmed. The explicit Send continues once after a successful choice; changing destination in Pay requires another explicit payment initiation. Table services with financial allocations are not silently converted by this flow.
+
+<span id="pos-private-guest-context" />
+
+## Keep private guest context on the check
+
+In the customer screen offered after fulfillment selection, first name, last name, guest identifier and note describe the whole check, not an item or a separate delivery. These details remain staff-only and are retained across successive sends on that check. They do not create a customer account and are not included in public tracking/payment responses or notification variables. Private fields require a compatible API version; if the POS requests an update, retain the check and have the server updated before continuing, without repeating a payment.

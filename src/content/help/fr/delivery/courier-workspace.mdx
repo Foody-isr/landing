@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - delivery
   - courier
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-25'
 featureId: courier
 audience: public
 releaseStatus: available
@@ -16,22 +16,48 @@ Admin → Commandes → Mode coursier, ou espace coursier affecté
 
 ## Ouvrir la tournée affectée
 
-Ouvrez la tournée affectée et vérifiez date, ordre des arrêts et créneaux. Utilisez uniquement les commandes de votre périmètre coursier autorisé.
+Dans le mode livreur de Foody Admin, choisissez votre tournée dans la liste en haut, y compris les affectations à venir. La tournée active est proposée à l’ouverture. La carte et ses repères numérotés sont visibles dès le départ ; sur ordinateur, la chronologie est placée à côté. Vérifiez la date, les adresses, les horaires calculés, les contacts et les consignes. La fin, la distance et la durée sont des estimations du plan ; un calcul incomplet les masque. Le menu rond donne accès au compte, au restaurant, à la langue et au thème. Utilisez uniquement les commandes de votre périmètre coursier autorisé.
+
+Dans la vue livreur, le montant de la commande est affiché uniquement pour un paiement en espèces. Les paiements par carte, les autres moyens de paiement et les commandes dont le moyen de paiement est inconnu n’affichent pas de montant.
 
 <span id="navigate" />
 
 ## Naviguer et contacter
 
-Ouvrez l’application de navigation proposée et consultez contact et consignes. Validez une adresse corrigée avec le dispatch avant de changer le plan.
+Touchez une adresse dans la chronologie ou son repère sur la carte pour sélectionner cet arrêt et afficher ses actions. Le repère fait défiler la liste sans valider de livraison. Les boutons fixes Naviguer et Marquer livrée concernent le même arrêt sélectionné, dont le numéro et l’adresse apparaissent au-dessus sous Arrêt sélectionné. Vérifiez cette destination avant toute action. Touchez le téléphone pour appeler ou WhatsApp pour préparer un message. Les adresses non vérifiées restent signalées avant une recherche de navigation. Les options permettent de corriger l’adresse ou de monter/descendre l’arrêt ; validez une correction avec le dispatch.
 
 <span id="complete" />
 
 ## Confirmer le résultat réel
 
-Utilisez l’action de statut après la remise réelle. Renseignez les informations demandées et vérifiez l’enregistrement ; une livraison confirmée n’encaisse pas seule un solde impayé.
+Après Démarrer, sélectionnez la livraison réellement remise dans la liste ou sur la carte, vérifiez son numéro et son adresse dans Arrêt sélectionné, puis touchez Marquer livrée. Sans sélection explicite, le prochain arrêt non terminé est proposé. Après une validation réussie, le prochain arrêt restant est proposé, mais aucune autre commande n’est livrée automatiquement. Marquer arrivé reste facultatif. Un arrêt déjà terminé ne peut pas être validé à nouveau depuis le bouton fixe. Si la tournée a été annulée, n’est plus active ou si la commande a changé de livreur, le serveur refuse la validation sans terminer la commande ni l’autre tournée : actualisez ou rouvrez vos tournées et sélectionnez l’affectation actuelle. Un échec affiche une erreur et conserve les livraisons restantes. La confirmation de livraison n’encaisse pas seule un solde impayé.
 
 <span id="departure-settings" />
 
 ## Modifier les points et démarrer la tournée
 
-Avant de partir, ouvrez Modifier sur votre tournée affectée. Réglez l’heure, l’adresse de départ et la destination finale ; utilisez les suggestions ou saisissez une adresse complète. Réglez séparément la marge client et le temps de remise, puis enregistrez et vérifiez l’ordre recalculé. Changer un point réinitialise l’ordre manuel. « Démarrer la tournée » confirme le départ des livraisons affectées non terminées et fait passer ensemble les commandes acceptées, en préparation ou prêtes en « En livraison ». Les commandes terminées ou annulées ne sont pas rouvertes. Une préparation retenue ou une commande au poids non finalisée doit être résolue auparavant. En cas d’échec, aucun changement partiel n’est enregistré. Un livreur ne peut avoir qu’une tournée active ; terminez-la avant de démarrer la suivante. Avant le départ, les adresses de départ et de fin restent modifiables après la répartition. Indiquez numéro, rue et ville ; le numéro peut précéder ou suivre la rue, et le libellé affiché est conservé. Si « Adresse introuvable » apparaît, vérifiez le numéro et la ville puis choisissez une autre suggestion ou corrigez l’adresse complète. Une indisponibilité temporaire du service de localisation demande de réessayer plus tard. Dans les deux cas, la tournée enregistrée est conservée. Lorsque Google est actif dans Cartes et itinéraires, les adresses de départ et de fin peuvent utiliser un point précis trouvé par Google même si Geoapify ne les localise pas. Enregistrez les paramètres avant le départ puis vérifiez le dernier trajet recalculé. Si Google est indisponible ou que son quota protégé est atteint et que l’autre fournisseur ne trouve pas un point, l’enregistrement ou le recalcul est bloqué et le plan précédent est conservé ; la destination finale n’est jamais omise silencieusement. Les points connus uniquement de Google sont affichés sur la carte Google et masqués lorsque la carte change de fournisseur. Choisissez une autre adresse précisément localisée ou réessayez au retour de Google.
+Avant de partir, ouvrez Ajuster en bas de votre tournée affectée, puis Modifier. Les paramètres sont aussi accessibles dans Options de la tournée. Après enregistrement, fermez le panneau pour retrouver la carte. Le menu permet aussi de Réoptimiser ; cette action modifie l’ordre, contrairement à la simple recherche. Réglez l’heure, l’adresse de départ et la destination finale ; utilisez les suggestions ou saisissez une adresse complète. Réglez séparément la marge client et le temps de remise, puis enregistrez et vérifiez l’ordre recalculé. Changer un point réinitialise l’ordre manuel. « Démarrer la tournée » confirme le départ des livraisons affectées non terminées et fait passer ensemble les commandes acceptées, en préparation ou prêtes en « En livraison ». Les commandes terminées ou annulées ne sont pas rouvertes. Une préparation retenue ou une commande au poids non finalisée doit être résolue auparavant. En cas d’échec, aucun changement partiel n’est enregistré. Un livreur ne peut avoir qu’une tournée active ; terminez-la avant de démarrer la suivante. Avant le départ, les adresses de départ et de fin restent modifiables après la répartition. Indiquez numéro, rue et ville ; le numéro peut précéder ou suivre la rue, et le libellé affiché est conservé. Si « Adresse introuvable » apparaît, vérifiez le numéro et la ville puis choisissez une autre suggestion ou corrigez l’adresse complète. Une indisponibilité temporaire du service de localisation demande de réessayer plus tard. Dans les deux cas, la tournée enregistrée est conservée. Lorsque Google est actif dans Cartes et itinéraires, les adresses de départ et de fin peuvent utiliser un point précis trouvé par Google même si Geoapify ne les localise pas. Enregistrez les paramètres avant le départ puis vérifiez le dernier trajet recalculé. Si Google est indisponible ou que son quota protégé est atteint et que l’autre fournisseur ne trouve pas un point, l’enregistrement ou le recalcul est bloqué et le plan précédent est conservé ; la destination finale n’est jamais omise silencieusement. Les points connus uniquement de Google sont affichés sur la carte Google et masqués lorsque la carte change de fournisseur. Choisissez une autre adresse précisément localisée ou réessayez au retour de Google. Activez « Respecter les créneaux des commandes » seulement si les horaires enregistrés correspondent à des engagements clients. Désactivée par défaut, cette option permet d’optimiser les arrêts avant de calculer les plages d’arrivée communiquées. La modifier recalcule aussi un ancien ordre manuel ; vérifiez le résultat avant de partir.
+
+<span id="routing-service-limits" />
+
+## Réagir à une limite du service cartographique
+
+Un avertissement de quota atteint ou de service indisponible ne signifie pas que l’adresse du client est fausse. Les positions Google connues restent affichées sur la carte Google tant que leur cache est valide ; les positions non vérifiées sont signalées temporairement indisponibles. Le tracé et les arrivées impossibles à calculer restent masqués. Prévenez le dispatch afin qu’il vérifie Consommation et quotas et attendez le retour du service, puis actualisez et recalculez si nécessaire. Ne supprimez pas de livraison pour faire disparaître l’avertissement. Les commandes et leurs adresses sont conservées. Vérifiez les horaires recalculés avant de contacter les clients.
+
+<span id="map-timeline-panel" />
+
+## Ajuster la carte et retrouver un arrêt
+
+Sur mobile, faites glisser la poignée en haut de la liste pour choisir une vue compacte, équilibrée ou étendue. Au clavier, les flèches haut/bas et Début/Fin font le même réglage. La liste défile indépendamment des actions fixes. Rechercher un arrêt filtre par adresse, ville, client, téléphone, numéro de commande ou consigne sans changer l’itinéraire ; effacez le champ ou fermez la recherche pour retrouver tous les arrêts. Toucher un repère efface le filtre et révèle son arrêt. « Afficher toute la tournée » recadre la carte ; + et − règlent le zoom. Changer la tournée consultée n’interrompt pas le partage de position de la tournée active si le téléphone l’autorise.
+
+<span id="accidental-departure" />
+
+## Corriger un démarrage de test
+
+Si vous avez démarré une tournée par erreur, prévenez un responsable avant d’enregistrer une arrivée ou une livraison. Dans Commandes → Livraisons, un utilisateur autorisé à gérer les commandes peut choisir Annuler le départ tant que tous les arrêts restent en attente, puis désassigner et réaffecter la tournée. Les commandes En livraison reviennent En préparation et le nouveau livreur pourra démarrer après réaffectation. Le mode livreur ne propose pas cette correction de gestion. Les messages déjà envoyés restent dans l’historique.
+
+<span id="superadmin-courier-selection" />
+
+## Consulter le mode d’un autre livreur
+
+Avec un compte superadmin, ouvrez le restaurant concerné puis Commandes → Mode livreur. Dans Voir comme livreur, choisissez un livreur du restaurant ; le premier de la liste est sélectionné à l’ouverture. Vous consultez le même écran de carte, de tournées non terminées et d’arrêts que ce livreur. Changez ce choix à tout moment pour afficher les tournées du nouveau livreur ; l’arrêt sélectionné, la recherche et les panneaux précédents sont réinitialisés. Les actions affichées, dont Démarrer la tournée et Marquer livrée, agissent réellement sur ses livraisons : ne les utilisez que pour enregistrer une opération effectuée. Le compte connecté reste superadmin et sa position GPS n’est pas envoyée comme celle du livreur. Les autres comptes conservent leurs propres tournées sans ce sélecteur. Si aucun livreur n’est configuré, faites vérifier les rôles de l’équipe du restaurant. En cas d’échec de chargement, utilisez Réessayer ; une affectation supprimée ou un livreur d’un autre restaurant est refusé par le serveur.

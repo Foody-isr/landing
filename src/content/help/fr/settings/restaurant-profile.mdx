@@ -12,6 +12,12 @@ releaseStatus: available
 ---
 Ouvrez Paramètres pour le restaurant sélectionné. Vérifiez son nom avant d’enregistrer.
 
+<span id="pos-location-configuration" />
+
+## Vérifier le restaurant avant de régler les modes POS
+
+Dans Paramètres → Modes de traitement → Système de caisse → Gérer par point de vente, vérifiez le restaurant avant de modifier les modes ou les informations client facultatives. Ces réglages POS partagés ne modifient ni son identité, ni son adresse, ni sa base clients. Terminé prépare le brouillon ; Enregistrer sauvegarde l’ensemble. Une option incompatible ou une confirmation serveur incomplète le laisse non confirmé : conservez le brouillon et résolvez l’erreur. Voir [les réglages des modes POS](/fr/help/settings/pos-behavior#fulfillment-methods).
+
 <span id="weight-hold-margin" />
 
 ## Vérifier le plafond de préautorisation au poids
@@ -41,3 +47,15 @@ Dans Horaires, modifiez chaque jour, ses plages et les jours fermés. Vérifiez 
 ## Accès aux nouveaux réglages
 
 L’invitation à se connecter à l’entrée est désormais un choix publié dans le parcours de commande du site. Commander sans compte reste disponible ; ce réglage ne remplace pas une vérification de téléphone obligatoire ni les contrôles de paiement ou de livraison. Les consommations Google/Geoapify et leurs plafonds sont consultables séparément dans [Consommation et quotas](/fr/help/settings/api-usage-and-quotas).
+
+<span id="staff-contact-and-courier-defaults" />
+
+## Coordonnées du personnel et destination du livreur
+
+Les coordonnées du personnel se gèrent dans Admin → Personnel → employé → Modifier les coordonnées. Le nom et le téléphone propres à l’établissement servent à l’affectation du livreur et aux prochains rappels de livraison ; l’email de connexion reste en lecture seule. Les livreurs peuvent enregistrer une destination finale par défaut ou la lier à leur domicile. Les nouvelles tournées proposent cette destination et permettent de la remplacer ou de la retirer. Il s’agit du lieu où termine le livreur, distinct de l’adresse de livraison du client. Les tournées contenant déjà des livraisons et les historiques terminés conservent leurs données. Voir [la fiche du personnel](/fr/help/staff/invite-staff#edit-staff-contacts) pour l’enregistrement, les permissions et la reprise après erreur.
+
+<span id="staff-activation-pos-code" />
+
+## Code caisse à l’activation du personnel
+
+L’activation du personnel vérifie les permissions affectées dans ce restaurant, y compris les rôles personnalisés : orders.manage ou payments.manage impose un code caisse personnel. Les livreurs en consultation et les rôles limités à la cuisine n’en ont pas besoin. Les invitations existantes encore inutilisées appliquent la même règle actuelle. Modifier le nom du rôle, l’adresse du livreur ou la destination d’une tournée n’accorde aucun droit caisse. Voir [l’activation et la reprise](/fr/help/getting-started/first-login#activate).

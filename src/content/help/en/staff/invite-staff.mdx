@@ -6,7 +6,7 @@ tags:
   - staff
   - staff-invitations
   - invite-staff
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-21'
 featureId: staff-invitations
 audience: public
 releaseStatus: available
@@ -27,10 +27,28 @@ Enter the name, email, optional phone and restaurant role, then submit. Read the
 
 ## Resend an invitation
 
-Open the employee profile and use its invitation action after correcting an address or delivery problem. Check the new result.
+Open Staff → Employees, choose the existing member and use Resend setup invitation. Check the email delivery result and ask the member to use only the newest email. This creates a new one-time link for the same member and restaurant; it does not require deleting or adding the employee again. An unused, unexpired link can already be reopened after failed activation, and uses the current role permissions. If activation succeeded, the member can sign in or recover their password instead.
 
 <span id="review" />
 
 ## Review and remove access
 
-Review role, account status and POS code configuration. Use removal only for the intended employee; owner controls remain protected.
+Review role, account status and POS code configuration. Not required for this role means the current restaurant permissions do not require a POS code at activation; it is not an unfinished activation. Not configured applies to a role that requires a code. Use removal only for the intended employee; owner controls remain protected.
+
+<span id="edit-staff-contacts" />
+
+## Edit contact details and courier defaults
+
+In Staff, open an employee then Edit contact details. With staff management permission, edit the name, phone and Home address, then Save. These contact details belong to this establishment; the sign-in email is read-only and account credentials, roles and other establishments are unchanged. The owner’s contact details can also be edited. For a courier, set Default final destination or choose Same as home address. The linked choice follows later saved home-address edits; an empty home address cannot be used. Leave the final destination empty for no default. New routes copy this destination automatically, including the first real plan from an empty courier placeholder. You can override or clear the destination for one route while planning it. Existing routes with deliveries retain their saved destination. Changes to a courier’s name or phone update upcoming delivery reminders in this establishment, while completed orders keep their historical snapshot. Address suggestions may help complete a street or city; route planning verifies the destination before routing. An unavailable suggestion service does not erase input. Saving is explicit; errors retain the form, and closing a changed form asks whether to discard. Users with staff viewing permission can inspect the profile but cannot edit it.
+
+<span id="delivery-test-departure-recovery" />
+
+## Recover a delivery after a test departure
+
+To check newly activated courier access, view an assigned route without recording a departure or delivery. Starting courier mode marks assigned orders Out for delivery. If this was a test departure, a user with order-management permission can open Orders → Deliveries, select the date and choose Undo departure while no arrival, delivery or skipped stop has been recorded. Out for delivery orders return to In preparation; the route returns to draft and can be unassigned and reallocated. This is a delivery correction, not a new order, refund or reprint. Payments and previously sent messages are preserved. See [the dispatch procedure](/en/help/delivery/dispatch-and-routes#undo-departure).
+
+<span id="mobile-terminal-pages" />
+
+## Read staff on the mobile POS
+
+The POS Staff page remains read-only, with a centered header, Back and Refresh on mobile. Invitations and permission edits still belong to an authorized account in Admin.

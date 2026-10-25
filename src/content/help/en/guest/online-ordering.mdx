@@ -5,7 +5,7 @@ apps: foodyweb
 tags:
   - guest
   - guest-ordering
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-25'
 featureId: guest-ordering
 audience: public
 releaseStatus: available
@@ -17,6 +17,12 @@ Open the restaurant’s public link or select a branch from its chain page.
 ## Review the by-weight authorization ceiling
 
 For online by-weight orders, open Settings → Payments & VAT with settings.edit. Set Weight hold buffer % from 0 to 100 and save; the default for new restaurants is 20. A failed save keeps the draft. Zero still authorizes the estimate. Only the weight-priced subtotal gets a margin: 100 weighted + 50 fixed at 20% authorizes 170; delivery has no extra margin. Checkout shows the estimate, temporary ceiling and Confirm and authorize, in the restaurant theme. A changed ceiling requires customer review and another confirmation before payment; unknown policy blocks authorization. Existing reviewed checkouts and holds keep their ceiling. Staff confirm measured weights before capture and progression; excess beyond the hold is flagged for a separate payment, never automatically charged. Cash/pay-later makes no hold promise. Requires a configured authorize/capture provider, with partial capture, release and expiry validated before production. This neither changes the catering deposit/balance policy nor enables new-card saving with a CST weighted hold.
+
+<span id="choose-menu-and-group" />
+
+## Choose a menu, then a group
+
+If the restaurant offers several menus on the page, select their tab, such as BASSARI or HALAVI. Only the selected menu’s groups and items appear. Pills or links underneath navigate to its groups, such as Sandwiches or Drinks. Search and the availability filter apply to this menu. A search with no results keeps menu tabs visible; switching menus clears the search. Browsing another menu keeps the basket. If an item is missing, try another menu or clear the search; visibility also depends on availability and publication. For a combo, open its sheet and choose Build your combo: the menu keeps its theme while selecting items. Use the counter and − button to review or remove a pick, then complete the steps before adding to the cart. See [website combos](/en/help/menu/combos#website-composition).
 
 <span id="basket" />
 
@@ -52,4 +58,16 @@ Under Sign in, use Google or your email and password. Facebook and Apple appear 
 
 ## Access the new controls
 
-The entry sign-in invitation is controlled in Website → Order journey → Offer sign-in before ordering. Off goes directly to pickup/delivery details; when on, Order without an account remains immediately visible. Save the draft and publish to apply this choice. See [the journey setting](/en/help/website-qr/checkout-and-receipt#optional-entry-sign-in).
+The entry sign-in invitation is controlled in Website → Order journey → Show the sign-in invitation on arrival. Off goes directly to pickup/delivery details; when on, Order without an account remains immediately visible. Save the draft and publish to apply this choice. See [the journey setting](/en/help/website-qr/checkout-and-receipt#optional-entry-sign-in). When the invitation is off, a discreet Sign in link remains available in the pickup or delivery dialog. It opens authentication only when selected; dismissing authentication retains entered details and allows ordering without an account.
+
+<span id="conditional-item-choices" />
+
+## Check conditional item choices
+
+An item configured with repeated positions requires one separate choice per position according to the selected format. For example, a two-character Number Cake accepts 11, AB or A7. The format price replaces the base price; modifiers add only their configured surcharges. Reducing the position count removes newly hidden choices. Positions remain distinct in the cart, orders and kitchen ticket; review them before confirming. These customizations do not change delivery, availability, recipe, discount or cancellation rules. Configuration requires compatible versions and menu editing permission. See [Variants and sizes](/en/help/menu/variants-and-sizes#conditional-positions) for setup and recovery after a rejected selection.
+
+<span id="contact-phone" />
+
+## Enter a valid contact phone
+
+Before submitting an order or catering request, enter a complete phone number. In checkout Contact and payment, the initial calling code follows the restaurant country: +33 for France, +972 for Israel, and so on. Choose another calling code for a foreign number, or paste an international number starting with +. Catering assumes Israel for local numbers; foreign numbers need + and their country code. Spaces, dashes and parentheses are accepted; the saved value is international, for example +972502345678. Incomplete numbers, invalid prefixes, letters and extensions block submission and require correction. Phone remains optional for table orders where the form permits it; a supplied number must be valid. Format validation does not check WhatsApp registration. Any SMS verification code still follows the restaurant setting.

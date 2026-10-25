@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - website-qr
   - website-design
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-25'
 featureId: website-design
 audience: public
 releaseStatus: available
@@ -34,10 +34,16 @@ Choose fit, crop and focal point in the image controls. Compare the card and ite
 
 ## Review mobile order entry
 
-On mobile and desktop, review the initial Sign in and Continue as a guest choices as text actions without an additional yellow button. No address field or confirmation should appear before choosing. Check opening/closing sign-in and guest access: address entry for Delivery, collection details without a delivery address for Pickup. Back must retain the draft; switching services or reopening the dialog must not repeat the guest choice. Also check a signed-in customer’s validated address card and Edit. In a 360 px visual viewport with at least four results, four whole 44 px suggestions must remain visible. The title, tabs, Back and input keep their positions when the keyboard opens or closes. Check 320 px screens, desktop and French, Hebrew and English. Sign in opens Google and the email/password form. Facebook and Apple appear only when configured by the service. Standalone email-code sign-in is no longer offered. Account creation, address verification and password-recovery codes remain separate. Check dismissal and resumption without losing the draft on mobile and desktop; four whole suggestions with the keyboard open retain the same geometry. Sign-in choices must not reintroduce moving tabs or input.
+When the invitation is enabled, on mobile and desktop, verify that Order without an account is immediately visible and usable, with Sign in as an option. No address field or confirmation should appear before choosing. Check opening/closing sign-in and guest access: address entry for Delivery, collection details without a delivery address for Pickup. Back must retain the draft; switching services or reopening the dialog must not repeat the guest choice. Also check a signed-in customer’s validated address card and Edit. In a 360 px visual viewport with at least four results, four whole 44 px suggestions must remain visible. The title, tabs, Back and input keep their positions when the keyboard opens or closes. Check 320 px screens, desktop and French, Hebrew and English. Sign in opens Google and the email/password form. Facebook and Apple appear only when configured by the service. Standalone email-code sign-in is no longer offered. Account creation, address verification and password-recovery codes remain separate. Check dismissal and resumption without losing the draft on mobile and desktop; four whole suggestions with the keyboard open retain the same geometry. Sign-in choices must not reintroduce moving tabs or input.
 
 <span id="related-service-controls" />
 
 ## Access the new controls
 
-The entry sign-in invitation is controlled in Website → Order journey → Offer sign-in before ordering. Off goes directly to pickup/delivery details; when on, Order without an account remains immediately visible. Save the draft and publish to apply this choice. See [the journey setting](/en/help/website-qr/checkout-and-receipt#optional-entry-sign-in).
+The entry sign-in invitation is controlled in Website → Order journey → Show the sign-in invitation on arrival. Off goes directly to pickup/delivery details; when on, Order without an account remains immediately visible. Save the draft and publish to apply this choice. See [the journey setting](/en/help/website-qr/checkout-and-receipt#optional-entry-sign-in). When the invitation is off, a discreet Sign in link remains available in the pickup or delivery dialog. It opens authentication only when selected; dismissing authentication retains entered details and allows ordering without an account.
+
+<span id="menu-and-category-text-colors" />
+
+## Set menu and category text colors separately
+
+In Site design → Colors, select the style assigned to Item list, then open Customize menu colors → Category menu. Menu text controls the names and underline of menu tabs, such as BASSARI and HALAVI. Category text controls unselected group links, search and its icons. The selected group keeps its active text setting. The two colors are independent: changing or resetting one field to automatic does not change the other. Without a chosen menu color, tabs use the style’s paragraph color when readable against the bar, otherwise a suitable light or dark text color. Check both levels in preview, reload to confirm draft saving, then publish and review desktop and mobile. If the wrong color appears, check the style assigned to Item list; the Wolt preset uses its dedicated palette.

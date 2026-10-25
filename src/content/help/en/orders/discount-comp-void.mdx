@@ -7,16 +7,22 @@ apps: foodypos
 tags:
   - orders
   - pos-comp-void
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-22'
 featureId: pos-comp-void
 audience: public
 releaseStatus: available
 ---
-Select the item or bill and open its available Actions/Options. Check whether it is a draft, sent food or a saved financial share.
+Select the item or bill and open its available Actions/Options. Check whether it is a draft, sent food or a saved financial share. A paid takeaway being prepared remains active. POS Orders → All can also locate saved orders across sources and payment states; its details are read-only, not an adjustment or refund action. A missing kitchen print is not a reason to void food or collect payment again; verify the printer queue and profile first.
 
 ## Availability and access
 
 Advanced actions appear only when the installed POS and API advertise the required capability and your role permits them. Refresh a changed bill before retrying; never create another charge to resolve an uncertain result.
+
+<span id="saved-qr-read-only-lines" />
+
+## Keep viewed QR order lines unchanged
+
+In Menu opened from a saved QR or web order, selected lines and the catalogue are viewable without adding, discounting, comping or voiding an item in this view. Other QR orders retain their IDs and payments. For an eligible operation on the live table check, use View table and verify the session and chosen bill; normal permissions and reasons still apply. Navigation never makes paid food editable and never refunds a payment. See [order navigation](/en/help/orders/managing-orders#open-saved-order-in-menu).
 
 <span id="historical-order-read-only" />
 
@@ -28,7 +34,7 @@ Opening a linked order from Transactions shows saved order details only. It does
 
 ## Apply a reduction
 
-Choose an allowed library or manual amount/percentage discount, its scope and any required reason. Review the resulting total before saving. An item reduction and a whole-cart reduction have different bases; online promotion codes are separate.
+Choose an allowed library or manual amount/percentage discount, its scope and any required reason. Review the resulting total before saving. An item reduction and a whole-cart reduction have different bases; online promotion codes are separate. A source check-level discount must be explicitly removed before changing an unassigned sale to a saved onsite destination. The destination keeps and recalculates its own discount policy on new lines; saved lines and adjustments are not resubmitted by this handoff.
 
 <span id="comp" />
 
@@ -47,3 +53,15 @@ Use Void only for eligible unpaid food and supply its reason. Prepared/completed
 ## Wait for counter card payment before kitchen preparation
 
 For a new counter pickup order paid by card, choose Pay, then Pay by card. Wait for terminal approval and for Foody to record the payment before preparation and the kitchen ticket start. During collection the payment remains pending and is excluded from the live order board. After a refusal or cancellation, keep the same checkout and retry there; do not send it to the kitchen to bypass payment. If approval succeeded but synchronization failed, reconcile the existing payment before starting another charge. Orders deliberately sent for table service before collection keep their existing send-then-pay flow. Any staged discounts and offered items remain part of the server-priced total used for this same charge.
+
+<span id="conditional-item-choices" />
+
+## Check conditional item choices
+
+An item configured with repeated positions requires one separate choice per position according to the selected format. For example, a two-character Number Cake accepts 11, AB or A7. The format price replaces the base price; modifiers add only their configured surcharges. Reducing the position count removes newly hidden choices. Positions remain distinct in the cart, orders and kitchen ticket; review them before confirming. These customizations do not change delivery, availability, recipe, discount or cancellation rules. Configuration requires compatible versions and menu editing permission. See [Variants and sizes](/en/help/menu/variants-and-sizes#conditional-positions) for setup and recovery after a rejected selection.
+
+<span id="mobile-terminal" />
+
+## Access item options on mobile
+
+On the updated mobile POS, open the line and use ⋯ at the top of the item summary for permitted options, including Comp or Delete for an eligible draft. Existing reasons and permissions still apply. Done closes the panel and returns to the summary. Whole-check discounts and operations remain under Actions. The presentation change does not make sent lines editable or enable refunds.

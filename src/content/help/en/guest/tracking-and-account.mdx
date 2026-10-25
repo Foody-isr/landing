@@ -5,7 +5,7 @@ apps: foodyweb
 tags:
   - guest
   - guest-account-tracking
-updatedAt: '2026-10-19'
+updatedAt: '2026-10-25'
 featureId: guest-account-tracking
 audience: public
 releaseStatus: available
@@ -53,3 +53,15 @@ Choose Google, Facebook or Apple when its button is offered, then complete autho
 ## Understand sign-in data
 
 Configured providers may load their library when their choices are displayed and process browser/network information under their policy. Sign-in supplies Foody with a provider identifier and the supplied name, email or photo, not your Google, Apple or Facebook password. Apple may hide the email address. Foody keeps the session in an HttpOnly cookie and temporary authentication state; provider tokens are not persisted in Web Storage or these authentication logs. You can continue as a guest. To request account deletion, use the contact in Foody’s privacy policy; deletion is not a refund action.
+
+<span id="optional-entry-access" />
+
+## Sign in while ordering
+
+When the invitation is off, a discreet Sign in link remains available in the pickup or delivery dialog. It opens authentication only when selected; dismissing authentication retains entered details and allows ordering without an account.
+
+<span id="saved-phone-validation" />
+
+## Correct a saved phone number
+
+A saved or previously verified number restores its own calling code, even when its country differs from the restaurant. An empty field defaults to the restaurant country. At checkout, a saved phone must pass the same validation as a new number. If it is invalid, contact details stay open for correction. Choose the correct country code or enter the international number with +, then review the order before confirming. The saved format is international and compatible with WhatsApp messaging. This does not prove ownership or WhatsApp registration and does not change your sign-in method. To save the corrected contact details in your account, use the remember-details preference offered at checkout.

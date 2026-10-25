@@ -10,13 +10,13 @@ featureId: pos-behavior
 audience: public
 releaseStatus: available
 ---
-Open Settings → POS, then the appropriate mode/profile. Legacy Full service settings redirect to the default profile.
+Open Settings → POS, then the appropriate mode/profile. Legacy Full service settings redirect to the default profile. Custom fulfillment editing and optional customer prompts below require compatible Admin, POS and API versions. Updating the API alone does not update Admin or the installed POS; an absent control is not proof of incorrect configuration.
 
 <span id="menu-behavior" />
 
 ## Set menu behavior
 
-Open Menu behavior and choose the options offered for item selection, modifiers and navigation. Assign the intended profile to the POS device. Test with an item that has a required choice so staff cannot accidentally skip it.
+Open Menu behavior and choose the options offered for item selection, modifiers and navigation. Assign the intended profile to the POS device. Test with an item that has a required choice so staff cannot accidentally skip it. A checkout-mode profile does not assign a kitchen printer. Configure the shared printing profile separately for this POS installation; see [printer assignments and pending documents](/en/help/printers/profiles-and-routing#assign).
 
 <span id="courses" />
 
@@ -30,8 +30,50 @@ Open Services and maintain the course names and order used at the restaurant. Re
 
 Open Adjustments and review the available reasons and behavior for reductions, offerings and cancellation. Staff still need the corresponding permissions. Library POS discounts and online promotion codes are maintained in their own modules.
 
+<span id="forgotten-device-assignment" />
+
+## Save settings after a device was forgotten or replaced
+
+An old POS-mode assignment to a device already forgotten in this restaurant should not block saving another setting, such as when to ask for a fulfillment method. This recovery requires an API version that includes forgotten-device cleanup; it is not guaranteed on older installations. Saving removes only the old assignment to that forgotten device. It does not reactivate the device or assign its replacement automatically. After registering a replacement, open the intended POS mode in Admin, choose **Assigned devices**, select the current device, then **Apply** and **Save**. Check the resulting assignment; printer profiles remain separate. If saving still fails, keep the draft, retain the error message and check the installed API version before retrying. Do not delete other modes or repeatedly reactivate devices to bypass the error. A new assignment to a missing, forgotten or foreign device remains invalid.
+
 <span id="terminal-batch-separation" />
 
 ## Keep terminal deposits separate from POS behavior
 
 Terminal batch actions do not change the POS service profile, staff shift or cash drawer. A manager with payments.manage opens More → Reports → Terminal deposits on a configured Victa Portable or iPad/Victa Mini. Follow the dedicated POS payment guide for end-of-day confirmation and uncertain-result recovery; do not use menu behavior or adjustment settings to settle a batch.
+
+<span id="fulfillment-methods" />
+
+## Configure POS fulfillment methods
+
+With settings-edit permission, open Settings → Fulfillment → Point of sale. The catalogue shows cards for all methods, including hidden methods. Open a card to edit its display text, order type and optional customer prompt, then Save explicitly. A failed or unconfirmed save keeps the editor and values. Manage by location sets restaurant-wide availability, order/default and prompt timing, not a separate catalogue per device. Inside that nested editor, Save on a method stages it only: Save again in Manage by location persists the whole configuration. Closing a changed editor asks before discarding. Keep at least one method enabled and at most ten; reorder with arrows or the drag handle. The first enabled method becomes the default. Delete requires confirmation and cannot remove the last active method. Foody always tracks saved orders, with no per-method tracking-disable switch. Existing orders keep their recorded method. An incompatible API disables unsupported editing.
+
+<span id="fulfillment-prompt" />
+
+## Choose when staff select a method
+
+In the same editor, enable the staff selection prompt and choose **At the start of each new order** or **After tapping Pay or Send**, then Save explicitly. Switching the prompt off and back on while editing retains the selected timing. With start prompting, entering Menu asks for a method on an unsent sale, including a retained draft when returning from another page. Closing this entry selector by its cross or background accepts the configured enabled default without opening optional customer collection or a table. Adding items, removing the last item, and Pay/Send in that same visit do not reopen the method selector. A new-sale reset or leaving and returning to Menu asks again. A saved check is not a new sale and retains its recorded method. Tapping a method explicitly continues immediately and opens its optional customer form when enabled; the onsite destination remains deferred until Send/Continue. Closing a selector opened manually from Actions or at checkout cancels that action without changing the sale. Checkout-only prompting does not open on Menu entry. With prompting disabled, new unassigned sales take the default while a restored explicitly selected method is retained; if disabled since then, choose an available method explicitly through Actions. Customer-information options remain per method, but all saved orders are tracked through **Orders → All** on POS and Admin subject to restaurant scope, access and filters. Payment and preparation remain independent. See [whole-check fulfillment](/en/help/orders/order-types#pos-whole-check).
+
+<span id="tableless-open-checks" />
+
+## Enable the existing open-check workflow for onsite sales
+
+There is no separate tableless-dine-in switch. Keep a dine-in method available in the restaurant fulfillment catalogue. In the POS mode assigned to this device, open **Open checks**, enable **Use on this mode** and save if needed. Predefined ticket names remain optional. Compatible API/POS versions then offer [New check without a table](/en/help/orders/order-types#pos-tableless-dine-in). If unavailable, check the capability message and effective device mode; do not enable unrelated seat or delivery settings. This uses no artificial table and does not change online/QR order rules. Admin Orders can display the resulting dine-in orders without a table; Admin's manual new-order form remains pickup/delivery only.
+
+<span id="fulfillment-customer" />
+
+## Ask for customer details for a method
+
+Requires matching API and POS versions. Enable Show customer information screen in the method editor and Save (also save Manage by location if editing there). Immediately after choosing this whole-check mode, the optional details form appears before adding items, including for the default with selection prompts off. Enter first/last name or use Add new or existing customer to search the restaurant directory or Enter contact for this order only. Search requires customers.view; order contact requires orders.manage. Done confirms mode and contact together. Skip retains the previous contact without applying typed changes. Back reopens mode selection; closing the flow leaves the sale unchanged. Full name: at most 80 characters. Nonblank phone: at most 32 characters, with 7–15 digits and ordinary separators. A matching guest-details API capability enables a private identifier (255 characters) and staff note (500); otherwise those fields are disabled with an explanation. Private context stays on staff order data, not public views, receipts or notification text. No customer account, marketing consent, contacts import or cash authorization is created. Configured notifications may use the saved phone. Subsequent batches inherit coherent check details; mixed-customer or allocated bills cannot adopt a replacement contact.
+
+<span id="fulfillment-order-contact-entry" />
+
+## Choose an existing contact or enter order-only details
+
+In the optional fulfillment details form, open Add new or existing customer. The Customers search requires customers.view and searches the active restaurant only after two characters. Selecting a result returns its existing name and phone without updating a profile. Enter contact is available with orders.manage even without directory access: enter separate first/last names and an optional phone, then Done. The combined trimmed name is limited to 80 Unicode code points; a nonblank phone requires 7–15 digits and at most 32 characters. Back retains these edits locally when returning to search; closing the picker applies nothing. A restaurant, permission or order-context change blocks selection, including a late search response. The details form still requires its own Done to apply the mode and contact together. This is not the creation of a persistent CRM profile: email, address, marketing consent, contacts import, groups and tax fields are not collected here.
+
+<span id="mobile-terminal-pages" />
+
+## Configure checkout on a compact screen
+
+On mobile, settings use one page stack. Back first leaves the current subpage, then its section. Headers, fields and switches use the same terminal controls. Checkout preferences retain their existing permissions and persistence. Printer options remain a draft until Save in the profile editor. Under Appearance, mobile retains neutral surfaces and blue actions; custom colors remain available on tablets. Light/dark theme and language remain configurable on the terminal.

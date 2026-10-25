@@ -10,12 +10,18 @@ tags:
   - modifiers
   - table
   - counter
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-22'
 featureId: pos-order-entry
 audience: public
 releaseStatus: available
 ---
-POS → Tables / Order entry
+POS → Tables / Order entry. Whole-check method/contact dialogs and tableless dine-in require compatible POS and API versions. Updating the API alone does not add these controls to an older installed POS.
+
+<span id="whole-check-contact" />
+
+## Confirm the whole check’s method and contact
+
+Before the first send, confirm Actions → Fulfillment methods. If enabled, the optional name/phone form belongs to the whole check: Save confirms it, Cancel preserves the draft. All its kitchen courses share the saved contact; later sends retain coherent existing details, not those of a selected ticket. Item preparation choices create no extra customer or delivery. See [whole-check selection](/en/help/orders/order-types#pos-whole-check) and [customer information](/en/help/settings/pos-behavior#fulfillment-customer). Mode selection and any customer prompt precede items in a new onsite sale. The table/check is chosen only at Send/Continue; cancellation preserves the source. See [whole-check fulfillment](/en/help/orders/order-types#pos-whole-check). Private guest context is staff-only, never a public checkout answer or notification variable.
 
 <span id="cash-drawer-before-collection" />
 
@@ -88,3 +94,27 @@ For a new counter pickup order paid by card, choose Pay, then Pay by card. Wait 
 ## Use published carte structure and live stock
 
 Predefined item stocks now have a journal under Items & menus → Stock history and on each product. A rotating carte can prepare initial allowances per series and publish them without restoring already committed units. Previous remaining counts are not carried forward. Order changes and pre-production releases use the original frozen pool; a produced item remains consumed. Ingredient/preparation quantities and recipe costs remain separate. See [Availability](/en/help/kitchen/availability) for initial imports, corrections and history filters.
+
+<span id="staff-contact-and-courier-defaults" />
+
+## Staff contact details and courier destination
+
+Staff contact details are managed in Admin → Staff → employee → Edit contact details. The restaurant-scoped name and phone are used for courier assignment and upcoming delivery reminders; the sign-in email remains read-only. Couriers can save a default final destination or link it to their home address. New routes propose that destination and allow an explicit override or removal. It is the courier’s end-of-route destination, separate from the customer’s delivery address. Existing populated routes and completed delivery snapshots keep their saved data. See [staff profiles](/en/help/staff/invite-staff#edit-staff-contacts) for saving, permissions and recovery.
+
+<span id="delivery-test-departure-recovery" />
+
+## Recover a delivery after a test departure
+
+Starting courier mode marks assigned orders Out for delivery. If this was a test departure, a user with order-management permission can open Orders → Deliveries, select the date and choose Undo departure while no arrival, delivery or skipped stop has been recorded. Out for delivery orders return to In preparation; the route returns to draft and can be unassigned and reallocated. This is a delivery correction, not a new order, refund or reprint. Payments and previously sent messages are preserved. See [the dispatch procedure](/en/help/delivery/dispatch-and-routes#undo-departure).
+
+<span id="conditional-item-choices" />
+
+## Check conditional item choices
+
+An item configured with repeated positions requires one separate choice per position according to the selected format. For example, a two-character Number Cake accepts 11, AB or A7. The format price replaces the base price; modifiers add only their configured surcharges. Reducing the position count removes newly hidden choices. Positions remain distinct in the cart, orders and kitchen ticket; review them before confirming. These customizations do not change delivery, availability, recipe, discount or cancellation rules. Configuration requires compatible versions and menu editing permission. See [Variants and sizes](/en/help/menu/variants-and-sizes#conditional-positions) for setup and recovery after a rejected selection.
+
+<span id="mobile-terminal" />
+
+## Take an order on the mobile terminal
+
+In the updated mobile version, open a table from Checks and choose the guest count or No covers. Back cancels that choice. The sale contains Menu, Check and Actions in one panel. Menu provides search and menu selection; when courses are enabled, choose the course in the bottom strip before adding an item. Tap an item-summary field to open its two-column choices. Done returns to the summary; required choices remain mandatory. Single choices return to the summary or advance according to the configured automatic progression. Enter the note, adjust the quantity at the bottom and select Add; use Done for an existing line. Close cancels customization without adding a line. The top button uses the permitted Foody workflow action, such as Send. Check shows items, courses and Pay; the bottom ⋯ menu retains the other commands. Actions → Customer displays saved contact information. Prices and send/payment eligibility are unchanged. Older installed versions retain their earlier presentation. The top handle also returns to checks during loading or after a loading error, without resetting the draft.

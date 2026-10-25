@@ -12,6 +12,24 @@ releaseStatus: available
 ---
 Open More/Plus on the POS. Destinations are filtered by role and device capabilities.
 
+<span id="saved-order-workspace" />
+
+## Distinguish the selected order from the table check
+
+With orders.manage, an active QR or web order opens Menu with its own saved check on the right on tablets. The catalogue remains browsable without changing saved lines or a local draft. Actions manages only that order; Guest shows its own contact. View table separately opens the verified current session and, when needed, a bill choice. The frame, tabs and cards use the standard Menu presentation without an extra back toolbar. Orders in the main navigation returns to the list. Refresh and order statuses are in Actions. A failed read shows Retry rather than an empty basket. Historical records and view-only roles remain read-only. See [the full workflow](/en/help/orders/managing-orders#open-saved-order-in-menu).
+
+<span id="report-currency" />
+
+## Check report currency
+
+Restaurant information and the sales report use the saved currency returned by the API, not a POS-forced dollar. The report refuses to load if currency is missing or the information belongs to another restaurant. Check the current restaurant and its settings, then refresh; do not manually change the symbol to reconcile amounts.
+
+<span id="pos-reports-navigation" />
+
+## Distinguish reports, cash and card deposits
+
+On a tablet, More → Reports opens Cash drawer balance when your role permits, otherwise permitted Sales or Terminal deposits. The left rail contains only accessible sections. Choosing Cash movements replaces the content within this workspace without stacking another Reports page. Cash movements shows the session loaded on this device with date, type, amount and reason; it is not a history of other sessions. On a phone, Reports remains a destination list. Opening or refreshing a report closes nothing. Closing physical cash and the terminal’s Close and deposit remain separate actions even when both belong to the same end-of-day procedure.
+
 <span id="navigation" />
 
 ## Find operational workspaces
@@ -28,4 +46,10 @@ In Settings choose Appearance and Shortcuts to adjust supported theme/layout and
 
 ## Handle connectivity problems
 
-Check Internet, the selected restaurant/device and explicit connection status. Refresh before repeating a save, kitchen send or payment. A cloud POS does not guarantee offline ordering, payment or printing; an unknown state must be reconciled before another action.
+Check Internet, the selected restaurant/device and explicit connection status. Refresh before repeating a save, kitchen send or payment. A cloud POS does not guarantee offline ordering, payment or printing; an unknown state must be reconciled before another action. Printing profiles are shared, but hardware assignments are per POS installation. After reinstalling, select the existing profile in Hardware → Printers. If waiting documents are reported, review read-only history before confirming; see [printer assignments](/en/help/printers/profiles-and-routing#assign).
+
+<span id="mobile-terminal-pages" />
+
+## Browse handheld terminal pages
+
+On a phone or handheld terminal, More shows a vertical list. Hardware opens devices, printers and their profiles; Appearance and the personal profile retain their own back control. Permitted reports remain under Reports. Headers are centered and long actions flow below the title. In Library, the filter button opens Items, Combos or Discounts; categories are selected above the items. The presentation grants no additional permissions. Tablets retain their columns. More opens with Welcome. When a mode is assigned to the terminal, its card shows the configured name; it opens checkout settings only when your account is authorized.

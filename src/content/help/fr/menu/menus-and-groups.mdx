@@ -16,7 +16,7 @@ tags:
   - caisse
   - horaires
   - web
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-25'
 featureId: menu-menus-and-groups
 audience: public
 releaseStatus: available
@@ -54,11 +54,23 @@ Menu / carte     (« Déjeuner »)
 Un groupe comme « Spécial déjeuner » peut puiser des articles dans plusieurs catégories. Le même
 article peut figurer dans plusieurs groupes et menus.
 
+<span id="public-menu-tabs" />
+
+## Vérifier les onglets des cartes sur le site
+
+Deux cartes, par exemple BASSARI et HALAVI, restent deux cartes distinctes. Sur une page de commande qui propose plusieurs cartes visibles, leurs onglets sélectionnent une carte à la fois. Les pastilles du Menu des catégories représentent les groupes à l’intérieur de cette carte, par exemple Sandwichs, et non les catégories internes de la bibliothèque. Activez le canal Web de chaque carte, sélectionnez-les dans les paramètres de la page de commande, puis vérifiez les deux niveaux dans l’aperçu et après publication. Le style de la navigation des groupes se règle dans Liste des articles. Voir [la procédure des cartes et groupes sur le site](/fr/help/website-qr/order-page#menu-tabs-and-groups).
+
 <span id="section-3" />
 
 ## Préparer, enregistrer et publier une carte
 
 Ouvrez Articles et cartes → Cartes puis la carte. Pour une carte tournante, sélectionnez sa série dans l’en-tête. Ajouter permet de choisir des articles pour un groupe ou de créer un groupe ; Ajouter un groupe de cartes est aussi disponible sous la liste. La flèche d’un groupe replie ou déplie son tableau sans modifier la carte. Le menu « … » du groupe contient Modifier le groupe et Choisir les articles. Le menu « … » à côté du titre contient Paramètres de la carte et Aperçu. Les modifications de groupes, canaux et horaires restent locales. Dès qu’une modification ou un brouillon existe, la barre inférieure propose Enregistrer le brouillon et Publier. Enregistrer conserve un brouillon privé ; Aperçu ouvre une liste privée sans prise de commande. Publier demande une confirmation et applique ensemble la carte et ses stocks préparés. Enregistrer seul ne modifie jamais le site ni la caisse. Modifier la mise en page du système de caisse ouvre l’éditeur de disposition distinct ; les modifications non enregistrées restent protégées avant cette navigation.
+
+<span id="draft-item-picker" />
+
+## Choisir des articles avec photos et filtres
+
+Dans un groupe de la carte, cliquez sur Ajouter des articles ou sur … → Choisir les articles. La fenêtre Ajouter ou supprimer des articles montre la photo de chaque produit, ou une icône si aucune image ne peut être affichée, et le nombre de variantes lorsqu’il y en a plusieurs. Les cases à droite ajoutent ou retirent uniquement les articles du groupe dans le brouillon ; elles ne suppriment pas les fiches de la bibliothèque. Le compteur comprend aussi les articles sélectionnés masqués par un filtre. Rechercher se combine avec Filtres → Catégorie : cochez une ou plusieurs catégories internes, puis Appliquer. Le groupe de destination est distinct de la catégorie ; depuis Ajouter → Ajouter des articles, choisissez-le dans Groupe de cartes. Les filtres Carte et Stock se combinent aussi ; Stock propose Tout le stock, Alerte de stock bas et En rupture de stock selon la disponibilité calculée pour la série sélectionnée. Point de vente reste limité au restaurant actif. Effacer retire les choix du filtre ouvert ; Appliquer les confirme. Fermer ce filtre ou Échap abandonne ses choix non appliqués. Effacer tous les filtres restaure toute la liste, sans modifier les articles cochés ni la recherche. Si aucun article ne correspond, adaptez la recherche ou effacez les filtres. Une erreur de chargement des catégories propose Réessayer ; ne la confondez pas avec une catégorie vide. Terminé ferme la sélection en conservant les changements locaux ; enregistrez ensuite le brouillon et publiez explicitement. Créer un nouvel article ouvre la fiche commune et protège d’abord les changements de carte non enregistrés.
 
 <span id="section-4" />
 
@@ -127,3 +139,15 @@ Ouvrez Articles et cartes → Historique des stocks. Cette page est consacrée u
 ## Changer la disponibilité depuis Articles
 
 La colonne Disponibilité de la bibliothèque Articles ouvre aussi le petit panneau commun aux Cartes. Choisissez le statut ou le stock restant puis Appliquer ; une simple ouverture ne modifie rien. La série courante est affichée lorsqu’elle s’applique. Consultez [Catégories et articles](/fr/help/menu/categories-and-items#library-availability) pour les choix, quantités par taille, annulation et récupération après erreur. Le paramétrage complet de la fiche conserve son propre bouton Enregistrer.
+
+<span id="conditional-item-choices" />
+
+## Vérifier les choix conditionnels d’un article
+
+Un article configuré avec des positions répétées demande un choix distinct par emplacement selon le format sélectionné. Par exemple, un Number Cake à deux caractères accepte 11, AB ou A7. Le prix du format remplace le prix de base ; les modificateurs ajoutent uniquement leurs suppléments configurés. Réduire le nombre de positions retire les choix devenus invisibles. Les positions restent distinctes dans le panier, les commandes et le ticket cuisine ; vérifiez-les avant validation. Ces personnalisations ne changent pas les règles de livraison, de disponibilité, de recette, de remise ou d’annulation. Leur configuration nécessite les versions compatibles et la permission de modifier le menu. Consultez [Variantes et tailles](/fr/help/menu/variants-and-sizes#conditional-positions) pour la procédure et les contrôles en cas de refus.
+
+<span id="mobile-terminal-pages" />
+
+## Parcourir la bibliothèque sur mobile
+
+Sur un terminal mobile, ouvrez Bibliothèque. Le bouton de filtres permet de choisir Articles, Formules ou Remises. Dans Articles, choisissez une catégorie dans le sélecteur au-dessus de la liste, recherchez un produit puis touchez sa ligne pour ouvrir l’éditeur existant. Le prix et la disponibilité restent visibles, avec un interrupteur distinct pour les utilisateurs autorisés. Cette liste interne n’affecte pas les groupes de menu publiés, les ingrédients, les portions ni les règles de variante configurées dans Admin.

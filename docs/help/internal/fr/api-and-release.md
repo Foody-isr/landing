@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-25'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -44,7 +44,7 @@ Déployez et validez les migrations et routes API liées au restaurant avant d'a
 
 ## Maintenir les contrats API contextualisés
 
-L’inventaire conserve routes, handlers et sources. Un fragment relatif à un groupe n’est pas une URL autonome. Validez entrées, rôles JWT et propriété restaurant ; les routes publiques de restaurant restent contextualisées. Synchronisez Go, TypeScript et Dart.
+L’inventaire conserve routes, handlers et sources. Un fragment relatif à un groupe n’est pas une URL autonome. Validez entrées, rôles JWT et propriété restaurant ; les routes publiques de restaurant restent contextualisées. Synchronisez Go, TypeScript et Dart. Les informations client par traitement nécessitent la capability de réglages `pos_fulfillment_customer_information_supported` et `customer_information` pour l’envoi groupé. Préservez un flag omis par ID stable ; false explicite le désactive. Validez et incluez atomiquement customer_name/customer_phone/delivery_notes/delivery_apt/custom_fields dans l’empreinte d’idempotence. Les lots suivants héritent seulement de coordonnées cohérentes ; clients mixtes et additions fractionnées refusent un remplacement. La création groupée supprime les confirmations client par service sans supprimer événements cuisine/équipe ni notifications de statut indépendantes. Aucun test ne doit envoyer de notification réelle. L’entrée pos_guest_details réservée au personnel contient first_name, last_name, identifier et note, annoncée par checks/capabilities. Les valeurs bornées et normalisées sont héritées de façon cohérente sur les envois non fractionnés. La création publique retire cette entrée et les vues publiques masquent ces métadonnées. Déployez l’API avant d’activer les champs clients correspondants ; une ancienne API les laisse désactivés. La préparation reste locale jusqu’à l’approbation et la publication de la version correspondante.
 
 <span id="release" />
 
@@ -111,3 +111,39 @@ Synchroniser internal/support/corpus.json avec le corpus public exporté pour la
 ## Sauvegarder les stocks hors série
 
 POST /api/v1/menu/items/:id/sales-stock/restock accepte désormais les stocks restants des restaurants sans séries, avec menu.edit et le restaurant actif. expected_revision correspond à item.stock_revision ; tous les compteurs par taille, leur validation et leur journal sont atomiques sous le verrou des commandes. Les restaurants par séries gardent leurs compteurs par série. Les tailles étrangères, quantités invalides et révisions périmées sont rejetées sans changement partiel. Déployer cette API avant l’interface Articles. Aucun changement de schéma ou de variable d’environnement.
+
+<span id="staff-activation-pos-code" />
+
+## Code caisse à l’activation du personnel
+
+validate-invite renvoie pos_pin_required selon les permissions actuelles de l’affectation au restaurant (orders.manage ou payments.manage), sans se fonder sur le rôle global ou son ancien libellé. setup-account revérifie indépendamment le périmètre, le rôle et l’obligation du code. Un PIN envoyé par un ancien client pour un membre sans droits caisse est ignoré sans écriture. Mot de passe, PIN éventuel, consommation du lien unique et génération du JWT sont atomiques ; un échec préserve l’invitation et les identifiants existants. Les liens utilisés, expirés, anciens et ambigus ou révoqués restent bloqués par des codes d’erreur autorisés ; les erreurs de persistance inattendues n’exposent ni SQL ni jeton. Aucune migration ni variable d’environnement. Déployer l’API avant l’Admin ; un lien e-mail encore inutilisé ne nécessite aucune réparation de données ni renvoi.
+
+<span id="modifier-position-contract" />
+
+## Contrat des modificateurs conditionnels
+
+La migration 274 ajoute selection_config au lien article/groupe et selection_index aux instantanés de modificateurs. Déployer l’API et le schéma avant les clients compatibles. Les anciennes associations sans configuration conservent leur comportement. Les règles utilisent des identifiants vérifiés dans le restaurant et l’article ; une source modificateur est indépendante et à choix unique. Les positions répétées vont de 1 à 12 et exigent exactement une sélection. Le serveur recalcule les prix, rejette doublons, indices inexistants et choix masqués, et préfixe les noms enregistrés pour la cuisine. Les caches et payloads TypeScript/Dart conservent identifiant catalogue et position. La duplication inter-restaurants remappe les références. Les changements d’API, de traduction et de modèles n’altèrent pas les intégrations de paiement, Google ou livraison existantes. La documentation reste locale tant que le commit Landing revu n’a pas été autorisé puis épinglé ; ne pas publier les procédures avant les clients.
+
+<span id="descriptive-variant-contract" />
+
+## Contrat des dimensions de variante
+
+Les groupes d’options portent un rôle propre à l’article : price conserve la variante tarifée absolue, identity conserve les dimensions descriptives sans effet sur le prix. selection_config conditionne leurs positions à un format tarifé indépendant. La commande transmet option_selections séparément de selected_variant_id et de modifiers ; les positions et les libellés sont figés, et les précisions client restent privées. Déployer la migration 275 et l’API avant les interfaces compatibles. Le contrôle du prix, de la propriété du restaurant et de chaque choix est effectué par le serveur. Les groupes historiques gardent leur comportement tant qu’ils ne sont pas reconfigurés.
+
+<span id="unified-whatsapp-order-composer" />
+
+## Vérifier le panneau WhatsApp unifié
+
+Le panneau Admin commun aux commandes unitaires et à la sélection de la page utilise les aperçus et envois existants, sans nouvelle route de dispatch, migration, texte libre API ou modification des déclencheurs. Les brouillons de l’application restent locaux et exigent une confirmation avant abandon. Les statuts incertains conservent l’identifiant de tentative, y compris en changeant de type de message. GET /restaurants/:id/message-templates autorise settings.view ou orders.manage avec EnforceRestaurantAccess ; PUT et DELETE conservent settings.edit. La modification des permissions ne donne aucun accès aux credentials. Les traductions FR/HE/EN et les procédures commande/WhatsApp couvrent les nouveaux contrôles. Vérifier les réponses perdues, la file partiellement éligible, le changement de commande avant dispatch et le mobile RTL avec les fixtures synthétiques ; ne pas envoyer de messages réels pour valider l’interface. Le pin WORKSPACE est réservé à la revue locale : avant CI/publication, remplacer par le commit Landing immuable autorisé et déployer l’API avant l’Admin correspondant.
+
+<span id="meta-template-image-proxy" />
+
+## Image de modèle WhatsApp Meta
+
+GET /api/v1/restaurants/:id/whatsapp/meta/templates/:templateId/image lit une image de modèle Utility approuvé appartenant au compte Meta de l’établissement. JWT, accès à l’établissement et permissions de lecture des réglages ou des commandes sont exigés. La réponse est privée, sans cache, avec type JPEG/PNG vérifié et limite de 5 Mo. Les URL Meta signées et les identifiants d’accès ne sont pas retournés. Les aperçus et envois incluent l’image Meta automatiquement en l’absence de fichier explicitement choisi ; une modification de son contenu invalide la confirmation manuelle précédente. Une récupération impossible produit une erreur sans envoi de texte seul.
+
+<span id="weekly-series-rollover" />
+
+## Vérifier la série courante sans commande
+
+GET /api/v1/orders/series conserve les dates de remise triées et les agrégats existants, puis ajoute les jours du lot courant sans inventer de commande. Le champ facultatif is_current identifie une seule date par défaut : le premier jour de remise non passé du lot opérationnel. Le lot reste courant jusqu’à la fin de son dernier jour dans le fuseau du restaurant. Le choix de la carte et les règles publiques de prise de commande conservent leur propre résolution. Le client recharge la liste toutes les minutes visibles et au retour sur l’onglet ; Accueil et Commandes suivent le lot courant, mais préservent une sélection historique effectuée sur la page et les liens explicites de suivi des paiements. Valider les limites de clôture, minuit local, changement d’heure, plusieurs jours de remise, isolation restaurant, zéro commande et agrégats existants. Déployer API avant Admin et publier les procédures ensemble.

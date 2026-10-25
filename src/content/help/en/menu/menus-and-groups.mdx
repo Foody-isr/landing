@@ -16,7 +16,7 @@ tags:
   - pos
   - hours
   - web
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-25'
 featureId: menu-menus-and-groups
 audience: public
 releaseStatus: available
@@ -54,11 +54,23 @@ Menu / carte    ("Lunch")
 A group like "Lunch specials" can pull items from several categories. The same item can appear
 in several groups and menus.
 
+<span id="public-menu-tabs" />
+
+## Check menu tabs on the website
+
+Two menus, such as BASSARI and HALAVI, remain separate menus. On an order page offering several visible menus, tabs select one menu at a time. Category menu pills represent groups within that menu, such as Sandwiches, rather than internal library categories. Enable each menu’s Web channel, select them in the order page settings, then check both navigation levels in preview and after publishing. Group navigation styling lives in Item list. See [website menu and group navigation](/en/help/website-qr/order-page#menu-tabs-and-groups).
+
 <span id="section-3" />
 
 ## Prepare, save and publish a carte
 
 Open Items & menus → Menus and select the carte. For a rotating carte, choose its series in the header. Add lets you choose items for a group or create a group; Add menu group is also available below the list. A group’s chevron collapses or expands its table without changing the carte. Its “…” menu contains Edit group and Choose items. The “…” menu beside the carte title contains Carte settings and Preview. Group, channel and hours edits stay local. Once edits or a saved draft exist, the bottom bar offers Save draft and Publish. Save stores a private draft; Preview opens a private list that cannot take orders. Publish asks for confirmation and applies the carte and prepared stocks together. Saving alone never changes the live website or POS. Edit POS layout opens the separate tile editor; unsaved changes are guarded before navigating there.
+
+<span id="draft-item-picker" />
+
+## Choose items with photos and filters
+
+Inside a carte group, click Add items or … → Choose items. Add or remove items shows each product photo, or an icon when no image can be displayed, and the variant count when there is more than one. The trailing checkboxes add or remove group membership in the draft only; they never delete library records. The count includes selected items hidden by filters. Search combines with Filters → Category: select one or more internal categories, then Apply. The target group is separate from the category; from Add → Add items, choose it in Menu group. Menu and Stock filters also combine; Stock offers All stock, Low stock alert and Out of stock using the calculated availability for the selected series. Point of sale is limited to the active restaurant. Clear removes choices in the open filter; Apply confirms them. Closing that filter or pressing Escape discards unapplied choices. Clear all filters restores the full list without changing checked items or the search. If nothing matches, adjust the search or clear filters. A category loading failure offers Retry; it is not an empty category. Done closes the picker and keeps local edits; then Save draft and explicitly Publish. Create a new item opens the shared item editor and first protects unsaved carte changes.
 
 <span id="section-4" />
 
@@ -126,3 +138,15 @@ Open Items & menus → Stock history. This page contains only the movement journ
 ## Change availability from Items
 
 The Items library Availability column also opens the small panel shared with Cartes. Choose a status or remaining stock and Apply; simply opening it changes nothing. The current series is displayed when applicable. See [Categories and items](/en/help/menu/categories-and-items#library-availability) for choices, per-size quantities, cancellation and error recovery. Full item settings retain their own Save action.
+
+<span id="conditional-item-choices" />
+
+## Check conditional item choices
+
+An item configured with repeated positions requires one separate choice per position according to the selected format. For example, a two-character Number Cake accepts 11, AB or A7. The format price replaces the base price; modifiers add only their configured surcharges. Reducing the position count removes newly hidden choices. Positions remain distinct in the cart, orders and kitchen ticket; review them before confirming. These customizations do not change delivery, availability, recipe, discount or cancellation rules. Configuration requires compatible versions and menu editing permission. See [Variants and sizes](/en/help/menu/variants-and-sizes#conditional-positions) for setup and recovery after a rejected selection.
+
+<span id="mobile-terminal-pages" />
+
+## Browse the library on mobile
+
+On a handheld terminal, open Library. The filter button selects Items, Combos or Discounts. Under Items, choose a category in the selector above the list, search for a product and tap its row to open the existing editor. Price and availability remain visible, with a separate switch for authorized users. This internal list does not change published menu groups, ingredients, portions or variant rules configured in Admin.

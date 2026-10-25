@@ -7,12 +7,18 @@ apps: both
 tags:
   - internal
   - shared-runtime
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-25'
 featureId: shared-runtime
 audience: internal
 releaseStatus: available
 ---
 Engineering only: shared authentication clients, state, localization, styling, proxies and platform bootstrap support the documented business modules.
+
+<span id="pos-reports-navigation" />
+
+## Distinguish reports, cash and card deposits
+
+On a tablet, More → Reports opens Cash drawer balance when your role permits, otherwise permitted Sales or Terminal deposits. The left rail contains only accessible sections. Choosing Cash movements replaces the content within this workspace without stacking another Reports page. Cash movements shows the session loaded on this device with date, type, amount and reason; it is not a history of other sessions. On a phone, Reports remains a destination list. Opening or refreshing a report closes nothing. Closing physical cash and the terminal’s Close and deposit remain separate actions even when both belong to the same end-of-day procedure.
 
 <span id="verifone-admin-money-operations" />
 
@@ -69,3 +75,45 @@ The Admin menu/stock route and its links now use the Stock history label in Fren
 ## Access the new controls
 
 Settings → Usage and quotas displays this restaurant’s Google/Geoapify allowances and usage with settings view/edit permission. Fallback credits and deliveries submitted for optimization are distinct from request counts. Foody adjusts limits without resetting counters. See [limits and renewal](/en/help/settings/api-usage-and-quotas).
+
+<span id="optional-entry-access" />
+
+## Verify discreet sign-in access
+
+The offer_sign_in setting controls the automatic invitation, not account availability. False shows the form directly with a small Sign in link; true or missing retains the invitation and guest choice. Verify FR/HE/EN, desktop and mobile, explicit opening, dismissal with focus restored and typed address retained. The link keeps a 44 px target, transparent background and text-sized mobile column. Preview displays a disabled link without real authentication. Editor labels explain the same choice; delivery controls are unchanged. The embedded support corpus carries the same public procedures.
+
+<span id="modifier-position-contract" />
+
+## Conditional modifier contract
+
+Migration 274 adds selection_config to the item/group link and selection_index to modifier snapshots. Deploy API and schema before compatible clients. Existing links without configuration retain their behavior. Rules use IDs verified against the restaurant and item; modifier sources are independent single-choice groups. Repeated positions are numbered 1 to 12 and require exactly one selection. The server recalculates prices, rejects duplicates, unavailable positions and hidden choices, and prefixes saved names for kitchen output. TypeScript/Dart caches and payloads retain catalog ID and position. Cross-restaurant copying remaps references. Additive API, translation and model changes do not alter existing payment, Google or delivery integrations. Documentation stays local until a reviewed Landing commit has been authorized and pinned; do not publish procedures ahead of their clients.
+
+<span id="descriptive-variant-contract" />
+
+## Descriptive variant contract
+
+Option groups carry an item-specific role: price retains the absolute priced variant, while identity retains descriptive dimensions without changing price. selection_config conditions their positions on an independent priced format. Orders send option_selections separately from selected_variant_id and modifiers; positions and labels are snapshotted and guest clarifications remain private. Deploy migration 275 and the API before compatible clients. The server validates price, restaurant ownership and every choice. Historical groups retain their behavior until explicitly reconfigured.
+
+<span id="unified-whatsapp-order-composer" />
+
+## Verify the unified WhatsApp composer
+
+The shared Admin composer handles individual orders and current-page selections through existing preview/send endpoints, without a new dispatch route, migration, API free text or changed automation triggers. App drafts stay local and require confirmation before discarding. Uncertain results retain their original dispatch ID across message-type changes. GET /restaurants/:id/message-templates admits settings.view or orders.manage behind EnforceRestaurantAccess; PUT and DELETE still require settings.edit. No credentials become readable. FR/HE/EN copy and the order/WhatsApp procedures cover the controls. Verify lost responses, partially eligible queues, changed orders and mobile RTL with synthetic fixtures; interface verification must not send real messages. WORKSPACE is a local-review pin only: replace it with an authorized immutable Landing commit before CI/publication and deploy the API before its matching Admin. The documentation check distinguishes existing files from unstaged tracked deletions: a deletion must leave the inventory and still pass its three-language impact review.
+
+<span id="mobile-terminal" />
+
+## Validate mobile terminal surfaces
+
+The compact workflow uses the Menu/Check/Actions panel and hides primary navigation during a sale; returning to checks remains explicit. Blue rectangular controls are limited to compact operational layouts. Tablet composition is retained. Validate 320×568 and 390×844, French/Hebrew, keyboard, cancellation, reasons and permissions. Synthetic tests cover variant prices, modifier deltas, notes, quantities and covers. A local rendering is not physical terminal acceptance or publication. This presentation requires no new API contract or migration.
+
+<span id="mobile-terminal-pages" />
+
+## Verify compact terminal pages
+
+The compact theme is applied above the router, including modals and authentication. It uses neutral surfaces, blue actions, rectangular controls and centered headers. FoodyPageLayout, FoodyPageShell and Mana components adapt insets and actions; rail filters become a mobile sheet. Compact layout uses the window’s shortest side, including landscape, without treating a tablet panel as a phone. Specialized payment views and explicit status colors retain their roles. Source review and widget tests do not certify physical-device pixel equality. WORKSPACE references remain local preparation only; an immutable Landing revision is required before remote CI and publication.
+
+<span id="weekly-series-rollover" />
+
+## Verify the current batch without orders
+
+GET /api/v1/orders/series keeps the existing sorted fulfillment dates and aggregates, then includes the current batch’s service days without creating an order. Optional is_current marks one default date: the operational batch’s first fulfillment day that has not passed. The batch stays current through its final day in restaurant time. Menu selection and public ordering rules keep their separate resolution. The client refreshes every visible minute and on tab return; Home and Orders follow the current batch while preserving history chosen on the open page and explicit payment-attention links. Validate cutoff boundaries, local midnight, DST, multiple fulfillment days, tenant isolation, zero orders and existing aggregates. Deploy API before Admin and publish procedures with the feature.

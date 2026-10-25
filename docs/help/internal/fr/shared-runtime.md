@@ -7,12 +7,18 @@ apps: both
 tags:
   - internal
   - shared-runtime
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-25'
 featureId: shared-runtime
 audience: internal
 releaseStatus: available
 ---
 Équipe technique : clients, état, traduction, styles, proxies et démarrage communs soutiennent les modules métier documentés.
+
+<span id="pos-reports-navigation" />
+
+## Distinguer rapports, espèces et dépôt carte
+
+Sur tablette, Plus → Rapports ouvre le Solde en caisse si votre rôle l’autorise, sinon les Ventes ou les Dépôts du terminal autorisés. La colonne de gauche présente uniquement les rubriques accessibles. Choisir Mouvements de caisse remplace le contenu dans ce même espace, sans superposer une seconde page Rapports. Mouvements de caisse montre la session chargée sur cet appareil avec date, type, montant et motif ; ce n’est pas un historique des autres sessions. Sur téléphone, Rapports reste une liste de destinations. Ouvrir ou actualiser un rapport ne clôture rien. La clôture d’espèces et Clôturer et déposer du terminal restent deux actions distinctes, même si elles font partie de la même fin de journée.
 
 <span id="verifone-admin-money-operations" />
 
@@ -69,3 +75,45 @@ La route Admin menu/stock et ses liens portent désormais le libellé Historique
 ## Accès aux nouveaux réglages
 
 Paramètres → Consommation et quotas affiche les plafonds et consommations Google/Geoapify du restaurant, accessibles avec la permission de consulter ou modifier les paramètres. Les crédits de remplacement et les livraisons soumises à l’optimisation sont comptés séparément des requêtes. Foody ajuste les plafonds ; un changement ne remet pas les compteurs à zéro. Voir [les règles et le renouvellement](/fr/help/settings/api-usage-and-quotas).
+
+<span id="optional-entry-access" />
+
+## Vérifier l’accès discret à la connexion
+
+Le réglage offer_sign_in pilote l’invitation automatique, pas la disponibilité du compte. Faux affiche directement le formulaire avec un petit lien Se connecter ; vrai ou absent conserve l’invitation et le choix invité. Vérifier FR/HE/EN, bureau et mobile, ouverture explicite, fermeture avec retour du focus et conservation de l’adresse saisie. Le lien garde une cible de 44 px, un fond transparent et une colonne adaptée au texte sur mobile. L’aperçu montre un lien désactivé sans authentification réelle. Les libellés de l’éditeur expliquent ce même choix ; aucun contrôle de livraison ne change. Le corpus de support embarque les mêmes procédures publiques.
+
+<span id="modifier-position-contract" />
+
+## Contrat des modificateurs conditionnels
+
+La migration 274 ajoute selection_config au lien article/groupe et selection_index aux instantanés de modificateurs. Déployer l’API et le schéma avant les clients compatibles. Les anciennes associations sans configuration conservent leur comportement. Les règles utilisent des identifiants vérifiés dans le restaurant et l’article ; une source modificateur est indépendante et à choix unique. Les positions répétées vont de 1 à 12 et exigent exactement une sélection. Le serveur recalcule les prix, rejette doublons, indices inexistants et choix masqués, et préfixe les noms enregistrés pour la cuisine. Les caches et payloads TypeScript/Dart conservent identifiant catalogue et position. La duplication inter-restaurants remappe les références. Les changements d’API, de traduction et de modèles n’altèrent pas les intégrations de paiement, Google ou livraison existantes. La documentation reste locale tant que le commit Landing revu n’a pas été autorisé puis épinglé ; ne pas publier les procédures avant les clients.
+
+<span id="descriptive-variant-contract" />
+
+## Contrat des dimensions de variante
+
+Les groupes d’options portent un rôle propre à l’article : price conserve la variante tarifée absolue, identity conserve les dimensions descriptives sans effet sur le prix. selection_config conditionne leurs positions à un format tarifé indépendant. La commande transmet option_selections séparément de selected_variant_id et de modifiers ; les positions et les libellés sont figés, et les précisions client restent privées. Déployer la migration 275 et l’API avant les interfaces compatibles. Le contrôle du prix, de la propriété du restaurant et de chaque choix est effectué par le serveur. Les groupes historiques gardent leur comportement tant qu’ils ne sont pas reconfigurés.
+
+<span id="unified-whatsapp-order-composer" />
+
+## Vérifier le panneau WhatsApp unifié
+
+Le panneau Admin commun aux commandes unitaires et à la sélection de la page utilise les aperçus et envois existants, sans nouvelle route de dispatch, migration, texte libre API ou modification des déclencheurs. Les brouillons de l’application restent locaux et exigent une confirmation avant abandon. Les statuts incertains conservent l’identifiant de tentative, y compris en changeant de type de message. GET /restaurants/:id/message-templates autorise settings.view ou orders.manage avec EnforceRestaurantAccess ; PUT et DELETE conservent settings.edit. La modification des permissions ne donne aucun accès aux credentials. Les traductions FR/HE/EN et les procédures commande/WhatsApp couvrent les nouveaux contrôles. Vérifier les réponses perdues, la file partiellement éligible, le changement de commande avant dispatch et le mobile RTL avec les fixtures synthétiques ; ne pas envoyer de messages réels pour valider l’interface. Le pin WORKSPACE est réservé à la revue locale : avant CI/publication, remplacer par le commit Landing immuable autorisé et déployer l’API avant l’Admin correspondant. Le contrôle documentaire distingue les fichiers réellement présents des suppressions suivies encore non indexées : une suppression doit disparaître de l’inventaire et conserver sa revue d’impact dans les trois langues.
+
+<span id="mobile-terminal" />
+
+## Vérifier les surfaces du terminal mobile
+
+Le parcours compact utilise le panneau Menu/Addition/Actions et masque la navigation principale pendant la vente ; le retour vers les additions reste explicite. Les contrôles bleus et rectangles sont limités au mode opérationnel compact. Le mode tablette conserve sa composition. Valider 320×568 et 390×844, français/hébreu, clavier, annulation, motifs et droits. Les tests synthétiques vérifient les variantes, écarts de prix, notes, quantités et convives. Le rendu local ne constitue pas une validation physique du terminal ni une publication. Aucun nouveau contrat API ni migration ne sont nécessaires pour cette présentation.
+
+<span id="mobile-terminal-pages" />
+
+## Vérifier les pages compactes du terminal
+
+Le thème compact est appliqué au-dessus du routeur, y compris aux fenêtres modales et à l’authentification. Il utilise des surfaces neutres, des actions bleues, des contrôles rectangulaires et des en-têtes centrés. FoodyPageLayout, FoodyPageShell et les composants Mana adaptent les marges et les actions ; les filtres de rail deviennent une feuille sur mobile. Le format compact est déterminé par le plus petit côté de la fenêtre, y compris en paysage, sans réinterpréter un panneau de tablette comme un téléphone. Les vues de paiement spécialisées et les couleurs de statut explicites conservent leur rôle. La revue de source et les tests de widgets ne certifient pas une égalité pixel sur matériel physique. Les références WORKSPACE restent réservées à la préparation locale ; une révision Landing immuable est requise avant CI distante et publication.
+
+<span id="weekly-series-rollover" />
+
+## Vérifier la série courante sans commande
+
+GET /api/v1/orders/series conserve les dates de remise triées et les agrégats existants, puis ajoute les jours du lot courant sans inventer de commande. Le champ facultatif is_current identifie une seule date par défaut : le premier jour de remise non passé du lot opérationnel. Le lot reste courant jusqu’à la fin de son dernier jour dans le fuseau du restaurant. Le choix de la carte et les règles publiques de prise de commande conservent leur propre résolution. Le client recharge la liste toutes les minutes visibles et au retour sur l’onglet ; Accueil et Commandes suivent le lot courant, mais préservent une sélection historique effectuée sur la page et les liens explicites de suivi des paiements. Valider les limites de clôture, minuit local, changement d’heure, plusieurs jours de remise, isolation restaurant, zéro commande et agrégats existants. Déployer API avant Admin et publier les procédures ensemble.

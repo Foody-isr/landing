@@ -9,7 +9,7 @@ tags:
   - tailles
   - options
   - portions
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-22'
 featureId: menu-variants-and-sizes
 audience: public
 releaseStatus: available
@@ -85,3 +85,33 @@ Depuis une carte, la disponibilité est désormais directement cliquable sous le
 ## Changer la disponibilité depuis Articles
 
 La colonne Disponibilité de la bibliothèque Articles ouvre aussi le petit panneau commun aux Cartes. Choisissez le statut ou le stock restant puis Appliquer ; une simple ouverture ne modifie rien. La série courante est affichée lorsqu’elle s’applique. Consultez [Catégories et articles](/fr/help/menu/categories-and-items#library-availability) pour les choix, quantités par taille, annulation et récupération après erreur. Le paramétrage complet de la fiche conserve son propre bouton Enregistrer.
+
+<span id="conditional-item-choices" />
+
+## Vérifier les choix conditionnels d’un article
+
+Un article configuré avec des positions répétées demande un choix distinct par emplacement selon le format sélectionné. Par exemple, un Number Cake à deux caractères accepte 11, AB ou A7. Le prix du format remplace le prix de base ; les modificateurs ajoutent uniquement leurs suppléments configurés. Réduire le nombre de positions retire les choix devenus invisibles. Les positions restent distinctes dans le panier, les commandes et le ticket cuisine ; vérifiez-les avant validation. Ces personnalisations ne changent pas les règles de livraison, de disponibilité, de recette, de remise ou d’annulation. Leur configuration nécessite les versions compatibles et la permission de modifier le menu. Consultez [Variantes et tailles](/fr/help/menu/variants-and-sizes#conditional-positions) pour la procédure et les contrôles en cas de refus.
+
+<span id="conditional-positions" />
+
+## Configurer les options d’un Number Cake
+
+Avec la permission de modifier le menu et des versions API, Admin, web et POS compatibles, ouvrez l’article dans Prix et variantes. Créez un groupe Format avec le rôle Détermine le prix : par exemple 1 caractère à 55 € et 2 caractères à 110 €. Enregistrez l’article pour disposer de ces choix comme source. Ajoutez un groupe Caractère et choisissez le rôle Précise la variante. Utilisez Ajouter les chiffres et lettres pour ajouter les choix manquants de 0–9 et A–Z, ou saisissez vos propres choix. Dans Afficher ce groupe selon, choisissez Format et renseignez 1 puis 2 Positions à remplir pour les deux formats. Choisissez Lettres et chiffres dans Affichage des choix pour la grille avec recherche, puis Enregistrer dans l’en-tête de l’article. Ces rôles et conditions sont propres à l’article. Chaque position visible exige exactement un choix : 11, AB et A7 sont possibles. Les caractères ne sont pas des modificateurs et ne changent pas le prix du format ; gardez les véritables suppléments et retraits dans Personnalisations. 0 ou un format non défini masque le groupe. Jusqu’à 12 positions sont possibles ; un article avec ces dimensions utilise au plus un groupe tarifé indépendant. La source ne peut pas être une dimension conditionnelle. Les choix par position sont proposés pour les articles vendus seuls ; les sélecteurs de composants de combo ne les proposent pas. Les articles au poids n’utilisent pas cette configuration. Les catalogues existants ne sont pas convertis automatiquement. Si cet article contient déjà des groupes Lettres et Chiffres tarifés séparément, retirez-les de cet article ou regroupez leurs choix dans la dimension Caractère : conservez un seul Format tarifé et un seul groupe réunissant chiffres et lettres. Les anciens articles à un et deux caractères ne sont pas fusionnés automatiquement.
+
+<span id="conditional-positions-check" />
+
+## Vérifier les choix et retrouver une configuration valide
+
+Testez chaque format avant de proposer l’article : laissez une position vide, sélectionnez deux fois le même caractère à des positions différentes, mélangez lettre et chiffre, puis passez de deux positions à une et revenez à deux. Le second choix doit avoir été retiré et être demandé à nouveau. Vérifiez le panier, la commande, le reçu et le ticket cuisine : les positions restent distinctes, sans signe de supplément ni prix supplémentaire. Le prix absolu du format n’est compté qu’une fois ; seuls les modificateurs ajoutent leurs écarts configurés. En cas de refus, rechargez l’article et vérifiez rôle, source, choix actifs et nombres de positions. Retirez les conditions dépendantes avant de supprimer leur source. Une source d’un autre article ou restaurant, un cycle, un caractère invalide ou deux choix pour une même position sont refusés ; un enregistrement invalide ne doit pas appliquer partiellement les variantes.
+
+<span id="mobile-terminal" />
+
+## Choisir une variante sur mobile
+
+Sur le POS mobile mis à jour, touchez le champ de variante dans la fiche article pour ouvrir les choix. Une sélection unique revient au récapitulatif ou avance si la progression automatique est activée. Terminé ferme un panneau de choix multiples. Vérifiez le récapitulatif bleu, la quantité et la note avant Ajouter ou Terminé. Les groupes conditionnels et chaque position obligatoire restent contrôlés ; réduire le format supprime les choix devenus invisibles. La variante conserve son prix absolu et les modificateurs leurs écarts de prix.
+
+<span id="mobile-terminal-pages" />
+
+## Parcourir la bibliothèque sur mobile
+
+Sur un terminal mobile, ouvrez Bibliothèque. Le bouton de filtres permet de choisir Articles, Formules ou Remises. Dans Articles, choisissez une catégorie dans le sélecteur au-dessus de la liste, recherchez un produit puis touchez sa ligne pour ouvrir l’éditeur existant. Le prix et la disponibilité restent visibles, avec un interrupteur distinct pour les utilisateurs autorisés. Cette liste interne n’affecte pas les groupes de menu publiés, les ingrédients, les portions ni les règles de variante configurées dans Admin.

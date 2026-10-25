@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - delivery
   - delivery-dispatch
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-25'
 featureId: delivery-dispatch
 audience: public
 releaseStatus: available
@@ -42,25 +42,35 @@ Choisissez coursier, dépôt et commandes, puis vérifiez adresses, temps de rem
 
 ## Vérifier une tournée calculée
 
-Lancez le calcul ou l’affectation de flotte proposés puis vérifiez avant enregistrement/dispatch. Distinguez conduite, attente et remise ; les recalculs peuvent consommer des usages fournisseur.
+Lancez le calcul ou l’affectation de flotte puis vérifiez la tournée avant le départ. Par défaut, les créneaux enregistrés sur les commandes ne contraignent pas l’ordre des arrêts : ils peuvent avoir été attribués automatiquement. Activez « Respecter les créneaux des commandes » uniquement si ces horaires ont été convenus avec les clients. Dans ce cas, les livreurs peuvent recevoir des nombres de livraisons différents et le calcul peut traiter d’abord l’échéance la plus proche ; chaque tournée complète doit respecter les créneaux activés. Distinguez conduite, attente et remise. Un refus peut concerner le départ, les créneaux activés ou les routes. Vérifiez ces réglages avant de réessayer ; les recalculs et tentatives infructueuses peuvent consommer des usages fournisseur.
+
+<span id="order-time-windows" />
+
+## Choisir les contraintes horaires de la tournée
+
+Dans Commandes → Livraisons, ouvrez la répartition ou Modifier sur une tournée brouillon. « Respecter les créneaux des commandes » est désactivé par défaut : la tournée optimise l’ordre des arrêts puis calcule les heures d’arrivée et le créneau communiqué au client. Activez cette option uniquement pour des horaires enregistrés réellement convenus avec les clients. Le choix est enregistré par tournée ; changer ce choix et enregistrer recalcule l’ordre, même s’il était manuel. Les anciennes tournées gardent leur ordre jusqu’à un recalcul explicite : utilisez Recalculer pour corriger une tournée existante. La date de livraison reste obligatoire et les horaires enregistrés sur les commandes ne sont pas effacés. Vérifiez les nouvelles estimations et rouvrez les aperçus de rappel avant tout envoi. Un message déjà envoyé n’est pas renvoyé automatiquement.
 
 <span id="dispatch" />
 
 ## Enregistrer et suivre l’avancement
 
-Enregistrez la tournée vérifiée puis utilisez le dispatch. Suivez coursier et commandes et modifiez explicitement un plan devenu obsolète.
+Enregistrez la tournée vérifiée puis utilisez le dispatch. Suivez coursier et commandes et modifiez explicitement un plan devenu obsolète. Le mode livreur utilise une carte et une chronologie avec un sélecteur de tournée en haut. Le livreur retrouve Ajuster et Démarrer dans la barre fixe, puis la navigation et la confirmation de livraison pour le prochain arrêt. Consulter un repère ou rechercher un arrêt ne change pas l’ordre enregistré.
+
+Dans la vue livreur, le montant de la commande est affiché uniquement pour un paiement en espèces. Les paiements par carte, les autres moyens de paiement et les commandes dont le moyen de paiement est inconnu n’affichent pas de montant.
+
+Dans l’espace livreur, les boutons fixes Naviguer et Marquer livrée ciblent l’arrêt sélectionné dans la liste ou sur la carte ; son numéro et son adresse sont affichés au-dessus. Une ancienne page ne peut pas valider une livraison depuis une tournée annulée ou inactive, ni après réaffectation de la commande à un autre livreur. En cas de refus, actualisez les tournées et sélectionnez l’affectation actuelle.
 
 <span id="endpoints" />
 
 ## Définir le départ et l’arrivée de chaque livreur
 
-Avec les versions API et Admin correspondantes installées, sélectionnez commandes et livreurs dans Commandes → Livraisons → répartition. Saisissez l’adresse de départ et la destination finale de chaque livreur avant de générer le plan. Tapez au moins trois caractères et choisissez une suggestion ; une rue seule demande de préciser le numéro. Si les suggestions sont indisponibles, saisissez l’adresse complète manuellement puis enregistrez pour la localiser. L’arrivée peut être le domicile du livreur. Foody optimise les livraisons entre ces deux points en respectant les contraintes horaires existantes. Pour un départ près de Tel Aviv et un domicile final à Netanya, vérifiez que Herzliya et Raanana précèdent Netanya. Avant le départ, l’admin ou le livreur affecté peut modifier les paramètres puis enregistrer ; changer un point réinitialise un ordre manuel et recalcule la tournée. Un échec de localisation conserve le plan enregistré. Avant le départ, les adresses de départ et de fin restent modifiables après la répartition. Indiquez numéro, rue et ville ; le numéro peut précéder ou suivre la rue, et le libellé affiché est conservé. Si « Adresse introuvable » apparaît, vérifiez le numéro et la ville puis choisissez une autre suggestion ou corrigez l’adresse complète. Une indisponibilité temporaire du service de localisation demande de réessayer plus tard. Dans les deux cas, la tournée enregistrée est conservée. Lorsque Google est actif dans Cartes et itinéraires, les adresses de départ et de fin peuvent utiliser un point précis trouvé par Google même si Geoapify ne les localise pas. Enregistrez les paramètres avant le départ puis vérifiez le dernier trajet recalculé. Si Google est indisponible ou que son quota protégé est atteint et que l’autre fournisseur ne trouve pas un point, l’enregistrement ou le recalcul est bloqué et le plan précédent est conservé ; la destination finale n’est jamais omise silencieusement. Les points connus uniquement de Google sont affichés sur la carte Google et masqués lorsque la carte change de fournisseur. Choisissez une autre adresse précisément localisée ou réessayez au retour de Google.
+Avant le départ, modifiez la tournée dans Commandes → Livraisons, ou définissez les points de chaque livreur pendant la répartition. Tapez au moins trois caractères dans Adresse de départ ou Destination finale et choisissez une suggestion. Une ville seule, comme Raanana, utilise son centre ; choisissez une adresse complète pour un point précis. Le libellé sélectionné est conservé sans ajouter la ville une seconde fois. Une suggestion de rue seule demande encore un numéro pour une adresse précise. Si les suggestions sont indisponibles, saisissez une ville ou une adresse complète manuellement. Enregistrez puis vérifiez le dernier trajet recalculé et les heures d’arrivée. Changer un point réinitialise un ordre manuel ; les créneaux des commandes ne s’appliquent que si « Respecter les créneaux des commandes » est activé. Un point municipal ne remplace pas les adresses précises des clients. Une rue introuvable n’est jamais remplacée par le centre-ville. Si l’adresse est introuvable, sélectionnez une suggestion de ville ou corrigez rue, numéro et ville. Un échec conserve la tournée enregistrée. Avec Google actif dans Cartes et itinéraires, les points peuvent utiliser une correspondance Google même si Geoapify ne les localise pas. Si Google est indisponible ou que son quota protégé est atteint et que l’autre fournisseur ne trouve pas le point, l’enregistrement ou le recalcul est bloqué et le plan précédent est conservé. La destination finale n’est jamais omise silencieusement. Les points connus uniquement de Google apparaissent sur la carte Google et sont masqués lorsque la carte change de fournisseur. Choisissez un autre point localisé ou réessayez au retour de Google.
 
 <span id="customer-window" />
 
 ## Régler le créneau communiqué au client
 
-Dans la répartition, utilisez « Marge du créneau communiqué au client » à côté du temps à chaque arrêt. Les nouveaux plans proposent 90 minutes. Saisissez 1:30, 1h30 ou 90 pour une heure trente ; la durée autorisée est de 1 à 720 minutes. Le créneau commence à l’arrivée calculée, arrondie à la minute affichée : 08:30 + 90 minutes donne 08:30–10:00. Ce champ n’allonge pas le temps de remise et ne remplace pas les contraintes horaires initiales de la commande. Il est enregistré par tournée et modifiable avant le départ. Les liens WhatsApp de livraison et les rappels manuels ou approuvés utilisent ce créneau. Après recalcul, rouvrez le rappel pour vérifier son texte actualisé. Les anciennes tournées sans ce réglage conservent leur créneau de rappel enregistré. Si une tournée configurée ne fournit pas d’arrivée valide, recalculez ou corrigez l’adresse avant l’envoi ; aucun horaire n’est inventé.
+Dans la répartition, utilisez « Marge du créneau communiqué au client » à côté du temps à chaque arrêt. Les nouveaux plans proposent 90 minutes. Saisissez 1:30, 1h30 ou 90 pour une heure trente ; la durée autorisée est de 1 à 720 minutes. Le créneau commence à l’arrivée calculée, arrondie à la minute affichée : 08:30 + 90 minutes donne 08:30–10:00. Ce champ n’allonge pas le temps de remise et ne remplace pas les contraintes horaires initiales de la commande. Il est enregistré par tournée et modifiable avant le départ. Les liens WhatsApp de livraison et les rappels manuels ou approuvés utilisent ce créneau. Après recalcul, rouvrez le rappel pour vérifier son texte actualisé. Les anciennes tournées sans ce réglage conservent leur créneau de rappel enregistré. Si une tournée configurée ne fournit pas d’arrivée valide, recalculez ou corrigez l’adresse avant l’envoi ; aucun horaire n’est inventé. Ce créneau est calculé après l’optimisation et ne devient jamais une contrainte d’un prochain recalcul. Seule l’option « Respecter les créneaux des commandes » active les horaires déjà enregistrés sur les commandes comme contraintes de passage.
 
 <span id="whatsapp-media" />
 
@@ -80,8 +90,50 @@ Pour une exception de formule sur une seule commande, un utilisateur Admin autor
 
 Les stocks prédéfinis des articles disposent d’un journal dans Articles et cartes → Historique des stocks et sur chaque produit. Une carte tournante permet de préparer des quotas initiaux par série et de les publier sans recréditer les quantités engagées. Les reliquats précédents ne sont pas reportés. Les modifications de commande et libérations avant production utilisent le compteur d’origine enregistré ; un article déjà préparé reste consommé. Les quantités d’ingrédients et préparations et les coûts de recette restent distincts. Consultez [Disponibilité](/fr/help/kitchen/availability) pour les imports initiaux, les corrections et les filtres d’historique.
 
+<span id="routing-service-limits" />
+
+## Distinguer un quota atteint d’une adresse introuvable
+
+Si une tournée indique un quota atteint ou un service cartographique indisponible, consultez Paramètres → Consommation et quotas avec la permission de consulter ou modifier les paramètres. Les itinéraires, les positions et les tuiles Google ont des compteurs distincts : une carte peut encore s’afficher alors que le calcul routier est bloqué. Les affichages routiers et les recalculs consomment aussi le quota ; le compteur ne représente pas seulement les tournées créées. Les positions Google déjà connues restent visibles sur la carte Google tant que leur cache est valide. Une position impossible à vérifier est signalée temporairement indisponible ; cela ne prouve pas que l’adresse est erronée. Foody masque le tracé et les horaires devenus indisponibles. Une nouvelle affectation nécessitant ces positions est refusée avant de modifier les commandes si le calcul complet est impossible. Le fournisseur de remplacement est utilisable seulement si tous les points inclus sont localisés indépendamment de Google. Ne désassignez pas les commandes pour résoudre un quota : contactez Foody pour examiner le plafond ou attendez le renouvellement indiqué, puis actualisez et recalculez si nécessaire. Vérifiez les arrivées et les rappels avant tout envoi. Un quota ne supprime ni les commandes ni leurs adresses.
+
 <span id="related-service-controls" />
 
 ## Accès aux nouveaux réglages
 
-Paramètres → Consommation et quotas affiche les plafonds et consommations Google/Geoapify du restaurant, accessibles avec la permission de consulter ou modifier les paramètres. Les crédits de remplacement et les livraisons soumises à l’optimisation sont comptés séparément des requêtes. Foody ajuste les plafonds ; un changement ne remet pas les compteurs à zéro. Voir [les règles et le renouvellement](/fr/help/settings/api-usage-and-quotas).
+Paramètres → Consommation et quotas affiche les plafonds et consommations Google/Geoapify du restaurant, accessibles avec la permission de consulter ou modifier les paramètres. Les crédits de remplacement et les livraisons soumises à l’optimisation sont comptés séparément des requêtes. Foody ajuste les plafonds ; un changement ne remet pas les compteurs à zéro. Voir [les règles et le renouvellement](/fr/help/settings/api-usage-and-quotas). L’invitation à la connexion client se règle séparément dans Site web → Parcours de commande → Afficher l’invitation à se connecter à l’arrivée ; désactivée, elle conserve un lien discret Se connecter. Elle ne change pas l’affectation des livreurs ni les règles de livraison.
+
+<span id="delivery-whatsapp-dispatch" />
+
+## Prévisualiser et envoyer les rappels de la date
+
+Dans Commandes → Livraisons, choisissez la date puis Rappels WhatsApp pour examiner tous les clients en attente des tournées affichées. Le bouton WhatsApp au client ouvre uniquement le rappel de ce client. L’aperçu en lecture seule utilise le modèle approuvé du rappel, le destinataire enregistré, le livreur affecté et le créneau calculé de la tournée. Il peut être consulté avant la veille ; les boutons manuels restent bloqués jusqu’à la veille, selon le fuseau du restaurant. Utilisez Envoyer ce rappel pour un client, ou Envoyer les rappels puis confirmez le nombre de messages séparés pour toute la date. Aucun groupe WhatsApp n’est créé. Les rappels déjà soumis, en cours, incertains ou indisponibles sont exclus. Vérifiez les clients bloqués ; un échec de préparation n’empêche pas les autres clients admissibles. Si une tournée ou un message a changé, les envois restants s’arrêtent : actualisez, relisez et confirmez de nouveau. Une réponse d’envoi perdue reste à vérifier et n’est jamais réessayée automatiquement. Une acceptation ne prouve pas la réception ; consultez Messages au client dans la commande. L’aperçu actuel ne reconstitue pas le texte d’un ancien envoi. Pour le mode automatique, ouvrez Parcours de commande et configurez le modèle de rappel et son horaire La veille sur l’étape souhaitée, par exemple Prête. L’aperçu manuel n’active aucune automatisation. Les modes automatique, groupé et individuel partagent la protection contre un second rappel pour la même commande, même après un changement de texte ou de fournisseur.
+
+<span id="courier-profile-destination" />
+
+## Utiliser la destination enregistrée du livreur
+
+Personnel → employé → Modifier les coordonnées permet d’enregistrer la destination finale par défaut du livreur, avec l’option d’utiliser son domicile actuel. La planification la propose pour une nouvelle tournée et l’API l’applique aussi si le client ne transmet aucune modification. Une destination saisie pour la tournée, même explicitement vide, reste prioritaire. Modifier l’adresse de départ conserve la destination finale proposée. Les tournées contenant déjà des livraisons gardent leurs réglages lors d’une modification de la fiche ; une tournée vide du livreur reprend la dernière valeur par défaut lors de sa première planification. Les règles de validation et de recalcul des points s’appliquent toujours. Modifier la fiche ne démarre ni ne recalcule une tournée existante.
+
+<span id="staff-activation-pos-code" />
+
+## Code caisse à l’activation du personnel
+
+L’activation du personnel vérifie les permissions affectées dans ce restaurant, y compris les rôles personnalisés : orders.manage ou payments.manage impose un code caisse personnel. Les livreurs en consultation et les rôles limités à la cuisine n’en ont pas besoin. Les invitations existantes encore inutilisées appliquent la même règle actuelle. Modifier le nom du rôle, l’adresse du livreur ou la destination d’une tournée n’accorde aucun droit caisse. Voir [l’activation et la reprise](/fr/help/getting-started/first-login#activate).
+
+<span id="google-account-guide" />
+
+## Préparer un compte Google propre à votre établissement
+
+Dans le panneau Aide et assistance de FoodyAdmin, ouvrez **Guide du compte Google et des clés API** ou choisissez la suggestion « Comment préparer mon compte Google et mes clés API pour Foody ? ». Le [guide Google pas à pas](/fr/help/delivery/google-account-and-api-keys) explique compte, projet, facturation, API, restrictions et remise sécurisée à Foody. Les mêmes traductions alimentent la recherche et les sources de l’assistant. Ne collez aucune clé ni aucun fichier secret dans la conversation. L’assistant explique la préparation ; il ne collecte pas les identifiants et n’active pas un raccordement individuel.
+
+<span id="undo-departure" />
+
+## Annuler un départ lancé par erreur
+
+Avec la permission de gestion des commandes, ouvrez Commandes → Livraisons, sélectionnez la date de la tournée et cliquez sur Annuler le départ. Cette action est proposée seulement sur une tournée en cours dont tous les arrêts sont encore en attente. Confirmez : la tournée revient en brouillon et les commandes En livraison repassent En préparation. Les commandes déjà corrigées en Acceptée, En préparation ou Prête pour livraison gardent leur statut. Le livreur reste affecté ; utilisez ensuite Désassigner, puis répartissez les commandes au bon livreur. La date, les adresses, l’ordre des arrêts et les paiements sont conservés. Aucun message client ni ticket de cuisine n’est envoyé par cette annulation ; les messages déjà envoyés et leur historique ne sont pas effacés. Si une arrivée, une livraison ou un arrêt ignoré a été enregistré, ou si la tournée a changé entre-temps, l’annulation est refusée : actualisez et vérifiez l’avancement avant une autre correction. Ne marquez pas les commandes livrées pour débloquer une affectation.
+
+<span id="superadmin-courier-mode" />
+
+## Consulter le mode d’un autre livreur
+
+Un superadmin peut ouvrir Commandes → Mode livreur et choisir un livreur du restaurant dans Voir comme livreur. La carte et les tournées sont celles du livreur choisi ; les actions enregistrent de vrais changements et le GPS du superadmin n’est pas partagé pour lui. Voir [la procédure du mode livreur](/fr/help/delivery/courier-workspace#superadmin-courier-selection), y compris le changement de livreur et la récupération après erreur.

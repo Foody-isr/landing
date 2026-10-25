@@ -10,12 +10,18 @@ tags:
   - assistant
   - aide
   - עזרה
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-25'
 featureId: getting-started-using-support
 audience: public
 releaseStatus: available
 ---
 Open the corresponding Foody workspace described below.
+
+<span id="pos-fulfillment-question" />
+
+## Ask about POS methods without customer data
+
+Ask how whole-check methods differ from item preparation options, or where to enable optional customer information. The assistant should cite [POS behavior](/en/help/settings/pos-behavior#fulfillment-customer) and [Order types](/en/help/orders/order-types#pos-whole-check). It cannot inspect checks, change settings or confirm payment. Use fictional examples, never real customer contacts, card data or terminal identifiers.
 
 <span id="section-1" />
 
@@ -72,7 +78,7 @@ The delivery guides cover departure/final address suggestions, route order towar
 
 ## Find WhatsApp attachment guidance
 
-Read Communications → WhatsApp and Message templates to configure a photo, fixed PDF or order PDF receipt with Meta. The guides and assistant use the same published procedure. The assistant explains documented controls; it cannot open private files, inspect orders or confirm message delivery. Check those details in Foody.
+Read Communications → WhatsApp and Message templates to configure a photo, fixed PDF or order PDF receipt with Meta. The guides and assistant use the same published procedure. The assistant explains documented controls; it cannot open private files, inspect orders or confirm message delivery. Check those details in Foody. Photo templates edited directly in Meta can automatically retrieve their image in the Foody preview; see the dedicated section for refresh and retrieval errors.
 
 <span id="combo-substitution-question" />
 
@@ -96,4 +102,28 @@ To investigate a quantity change, read [Availability](/en/help/kitchen/availabil
 
 ## Help with quotas and optional sign-in
 
-Help documents restaurant Google/Geoapify usage, monthly limits and renewal under Usage and quotas. It also explains the published sign-in invitation setting and Order without an account. The assistant uses the same public guides: it can explain procedures but cannot read your counters, change allowances or publish your site.
+Help documents restaurant Google/Geoapify usage, monthly limits and renewal under Usage and quotas. It also explains the published sign-in invitation setting and Order without an account. The assistant uses the same public guides: it can explain procedures but cannot read your counters, change allowances or publish your site. For customer sign-in, ask how hiding the invitation differs from disabling an account: direct ordering retains a discreet Sign in link. Support explains the published setting without modifying your site.
+
+<span id="google-account-guide" />
+
+## Prepare a business-owned Google account
+
+In FoodyAdmin’s Help and support panel, open **Google account and API keys guide** or choose “How do I prepare my Google account and API keys for Foody?”. The [step-by-step Google guide](/en/help/delivery/google-account-and-api-keys) covers accounts, projects, billing, APIs, restrictions and secure handoff to Foody. The same translations feed search and assistant sources. Never paste a key or secret file into the conversation. The assistant explains preparation; it does not collect credentials or activate individual onboarding.
+
+<span id="conditional-choice-help" />
+
+## Ask about conditional choices
+
+Ask how to configure two-character Number Cake options. The assistant must cite Variants and sizes: one priced format and separate descriptive variant dimensions for the characters, without a surcharge. Modifiers remain actual additions or removals. The assistant uses the published corpus; it cannot inspect your catalog or configure the rules.
+
+<span id="whatsapp-order-message-help" />
+
+## Ask about sending a WhatsApp message
+
+Ask how to send a WhatsApp model for one order or a selection, then check the sources in the [WhatsApp guide](../communications/whatsapp). The assistant explains the documented Business/app composer, previews and statuses. It cannot read your orders, know whether your customer received a message, change automations or send a message. Check Customer messages on the actual order for recorded evidence; do not paste customer numbers, private links or credentials into the conversation.
+
+<span id="weekly-series-support" />
+
+## Check a weekly batch rollover
+
+To understand why Home or Orders shows a new empty batch, open [Preorders, slots and batches](../orders/preorders-and-batches). The batch advances using the restaurant calendar even without an order. The assistant can explain the documented rule and cite its source; it cannot inspect your restaurant settings or orders.

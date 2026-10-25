@@ -12,13 +12,13 @@ featureId: pos-behavior
 audience: public
 releaseStatus: available
 ---
-Ouvrez Paramètres → POS, puis le mode/profil concerné. L’ancien réglage Service complet redirige vers le profil par défaut.
+Ouvrez Paramètres → POS, puis le mode/profil concerné. L’ancien réglage Service complet redirige vers le profil par défaut. L’éditeur de traitements personnalisés et les informations client facultatives ci-dessous nécessitent des versions Admin, POS et API compatibles. Une mise à jour API seule ne met pas à jour Admin ou le POS installé ; l’absence d’un contrôle ne prouve pas une mauvaise configuration.
 
 <span id="menu-behavior" />
 
 ## Régler le comportement du menu
 
-Ouvrez Comportement du menu et choisissez les options proposées pour sélection, modificateurs et navigation. Affectez le profil à l’appareil POS. Vérifiez un article avec choix obligatoire pour éviter de le sauter.
+Ouvrez Comportement du menu et choisissez les options proposées pour sélection, modificateurs et navigation. Affectez le profil à l’appareil POS. Vérifiez un article avec choix obligatoire pour éviter de le sauter. Un profil de mode de caisse n’affecte pas l’imprimante cuisine. Configurez séparément le profil d’impression partagé pour cette installation POS ; voir [affectations d’imprimantes et documents en attente](/fr/help/printers/profiles-and-routing#assign).
 
 <span id="courses" />
 
@@ -32,8 +32,50 @@ Ouvrez Services et maintenez noms et ordre des services de cuisine. Vérifiez at
 
 Ouvrez Ajustements et vérifiez motifs et comportement proposés pour réductions, offerts et annulations. Les employés doivent toujours disposer des droits correspondants. Les remises POS et codes promotionnels en ligne se gèrent dans leurs modules.
 
+<span id="forgotten-device-assignment" />
+
+## Enregistrer après l’oubli ou le remplacement d’un appareil
+
+Une ancienne affectation de mode de caisse à un appareil déjà oublié dans ce restaurant ne doit pas bloquer l’enregistrement d’un autre réglage, par exemple le moment de demander le mode de traitement. Cette reprise nécessite une version API incluant le nettoyage des appareils oubliés ; elle n’est pas garantie sur les anciennes installations. L’enregistrement retire uniquement l’ancienne affectation de cet appareil oublié. Il ne réactive pas l’appareil et n’affecte pas automatiquement son remplaçant. Après l’enregistrement d’un appareil de remplacement, ouvrez le mode de caisse voulu dans Admin, choisissez **Appareils attribués**, sélectionnez l’appareil actuel, puis **Appliquer** et **Enregistrer**. Vérifiez l’affectation obtenue ; les profils d’impression restent distincts. Si l’enregistrement échoue encore, conservez le brouillon et le message d’erreur, puis vérifiez la version API installée avant de réessayer. Ne supprimez pas les autres modes et ne répétez pas les activations pour contourner l’erreur. Une nouvelle affectation à un appareil absent, oublié ou d’un autre restaurant reste refusée.
+
 <span id="terminal-batch-separation" />
 
 ## Distinguer les dépôts du comportement POS
 
 Les actions sur le lot du terminal ne modifient ni le profil de service POS, ni le service du personnel, ni le tiroir-caisse. Un responsable avec payments.manage ouvre Plus → Rapports → Dépôts du terminal sur un Victa Portable ou un iPad/Victa Mini configuré. Suivez le guide d’encaissement POS pour la confirmation de fin de journée et la reprise d’un résultat incertain ; les réglages de menu ou d’ajustement ne règlent pas un lot.
+
+<span id="fulfillment-methods" />
+
+## Configurer les modes de traitement de la caisse
+
+Avec le droit de modifier les paramètres, ouvrez Paramètres → Modes de traitement → Système de caisse. Le catalogue présente tous les modes en cartes, y compris ceux masqués. Ouvrez une carte pour modifier le texte affiché, le type et la fiche client facultative, puis Enregistrer explicitement. Un échec ou une réponse non confirmée conserve la fenêtre et les valeurs. Gérer par point de vente règle la disponibilité, l’ordre/défaut et le moment de la demande pour le restaurant, pas un catalogue par appareil. Dans cette fenêtre imbriquée, Enregistrer sur un mode le prépare seulement : enregistrez aussi dans Gérer par point de vente pour sauvegarder l’ensemble. Fermer un éditeur modifié demande de confirmer l’abandon. Gardez au moins un mode actif et dix au maximum ; réordonnez avec flèches ou poignée. Le premier actif devient le défaut. Supprimer demande confirmation et ne peut pas retirer le dernier mode actif. Foody suit toujours les commandes enregistrées, sans interrupteur de suivi par mode. Les commandes existantes gardent leur mode. Une API incompatible désactive la modification non prise en charge.
+
+<span id="fulfillment-prompt" />
+
+## Choisir quand demander le mode au personnel
+
+Dans la même fenêtre, activez la demande au personnel et choisissez **Au début de chaque nouvelle commande** ou **Après avoir appuyé sur « Payer » ou « Envoyer »**, puis Enregistrer explicitement. Désactiver puis réactiver la demande pendant l’édition conserve le moment choisi. Avec la demande au début, entrer dans Menu propose le traitement d’une vente non envoyée, y compris un brouillon conservé quand vous revenez d’une autre page. Fermer ce sélecteur initial par la croix ou le fond applique le mode actif configuré par défaut, sans ouvrir la fiche client facultative ni choisir une table. Ajouter des articles, supprimer le dernier article et Payer/Envoyer pendant cette même visite ne rouvrent pas le sélecteur. Une nouvelle vente ou quitter puis revenir dans Menu redemande le choix. Une addition enregistrée n’est pas une nouvelle vente et garde son mode. Toucher explicitement un mode poursuit immédiatement et ouvre sa fiche client facultative si activée ; la destination sur place reste demandée seulement à Envoyer/Continuer. Fermer un sélecteur ouvert manuellement depuis Actions ou à l’encaissement annule cette action sans modifier la vente. Le réglage après Payer/Envoyer n’ouvre rien à l’entrée dans Menu. Sans demande, une nouvelle vente non affectée prend le défaut et un brouillon restauré conserve son choix explicite ; si ce mode a été désactivé, choisissez-en un disponible depuis Actions. Les fiches client se règlent par mode, mais toutes les commandes enregistrées restent suivies dans **Commandes → Toutes** sur POS et Admin selon le restaurant, les droits et les filtres. Paiement et préparation restent indépendants. Voir [le traitement global](/fr/help/orders/order-types#pos-whole-check).
+
+<span id="tableless-open-checks" />
+
+## Utiliser les additions ouvertes pour les ventes sur place
+
+Il n’y a pas d’interrupteur distinct pour le sur-place sans table. Gardez un mode sur place disponible dans le catalogue de traitement du restaurant. Dans le mode de caisse affecté à cet appareil, ouvrez **Additions en attente**, activez **Utiliser sur ce mode** et enregistrez si nécessaire. Les noms de tickets prédéfinis restent facultatifs. Des versions API/POS compatibles proposent alors [Nouvelle addition sans table](/fr/help/orders/order-types#pos-tableless-dine-in). Si le choix est indisponible, vérifiez le message de compatibilité et le mode effectif de l’appareil ; n’activez pas de réglage de places ou de livraison sans rapport. Cela ne crée pas de table artificielle et ne modifie pas les règles des commandes en ligne/QR. Les commandes sur place obtenues s’affichent dans Commandes sur Admin sans table ; le formulaire de création manuelle Admin reste limité au retrait et à la livraison.
+
+<span id="fulfillment-customer" />
+
+## Demander les informations client pour un mode
+
+Nécessite les versions API et POS correspondantes. Activez Afficher l’écran d’informations client dans le mode puis Enregistrer (enregistrez aussi Gérer par point de vente si vous y faites la modification). Immédiatement après ce choix pour toute l’addition, la fiche facultative apparaît avant les articles, même pour le défaut sans demande de sélection. Saisissez prénom/nom ou utilisez Ajouter un client nouveau ou existant pour chercher dans le répertoire du restaurant ou Saisir les coordonnées pour cette commande seulement. La recherche exige customers.view ; les coordonnées de commande exigent orders.manage. Terminé confirme ensemble mode et coordonnées. Passer conserve les coordonnées précédentes sans appliquer la saisie. Retour rouvre les modes ; fermer le parcours laisse la vente inchangée. Nom complet : 80 caractères maximum. Téléphone non vide : 32 caractères maximum, dont 7 à 15 chiffres et les séparateurs usuels. La capacité API correspondante active un identifiant privé (255 caractères) et une note au personnel (500) ; sinon ces champs restent désactivés avec une explication. Le contexte privé reste dans les données de commande du personnel, pas dans les vues publiques, reçus ou textes de notification. Aucun compte client, consentement marketing, import de contacts ou droit d’espèces n’est créé. Les notifications configurées peuvent utiliser le téléphone enregistré. Les envois suivants reprennent une fiche cohérente ; les additions multi-clients ou fractionnées n’adoptent pas un autre client.
+
+<span id="fulfillment-order-contact-entry" />
+
+## Choisir un contact existant ou saisir les coordonnées de commande
+
+Dans la fiche facultative du traitement, ouvrez Ajouter un client nouveau ou existant. La recherche Clients exige customers.view et ne cherche que dans le restaurant actif à partir de deux caractères. Choisir un résultat reprend ses nom et téléphone sans modifier son profil. Saisir les coordonnées reste accessible avec orders.manage même sans accès au répertoire : renseignez prénom et nom séparément et un téléphone facultatif, puis Terminé. Le nom complet nettoyé est limité à 80 points de code Unicode ; un téléphone non vide exige 7 à 15 chiffres et 32 caractères maximum. Retour conserve cette saisie localement en revenant à la recherche ; fermer le sélecteur n’applique rien. Un changement de restaurant, de permission ou de contexte de commande bloque la sélection, y compris une réponse de recherche tardive. Il faut encore Terminé dans la fiche principale pour appliquer ensemble mode et coordonnées. Ce n’est pas une création de profil CRM persistant : e-mail, adresse, consentement marketing, import de contacts, groupes et champs fiscaux ne sont pas recueillis ici.
+
+<span id="mobile-terminal-pages" />
+
+## Régler la caisse sur un écran compact
+
+Sur mobile, les réglages utilisent une seule pile de pages. Le retour quitte d’abord la sous-page courante, puis la rubrique. Les en-têtes, champs et interrupteurs utilisent les mêmes contrôles de terminal. Les options de caisse conservent leurs permissions et leur enregistrement existants. Pour l’impression, les options restent en brouillon jusqu’au bouton Enregistrer de l’éditeur de profil. Dans Apparence, le mobile garde une palette neutre et des actions bleues ; les couleurs personnalisées restent disponibles sur tablette. Le thème clair/sombre et la langue restent réglables sur le terminal.

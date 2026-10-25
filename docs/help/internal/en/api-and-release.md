@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-25'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -44,7 +44,7 @@ Deploy and validate the restaurant-scoped API migrations and routes before enabl
 
 ## Maintain scoped API contracts
 
-The inventory records each route registration, handler and source location. Group-relative fragments are not standalone URLs. Validate inputs, JWT roles and restaurant ownership at boundaries; public restaurant endpoints still need explicit scope. Update Go, TypeScript and Dart consumers when contracts change.
+The inventory records each route registration, handler and source location. Group-relative fragments are not standalone URLs. Validate inputs, JWT roles and restaurant ownership at boundaries; public restaurant endpoints still need explicit scope. Update Go, TypeScript and Dart consumers when contracts change. Fulfillment customer information requires both the settings capability `pos_fulfillment_customer_information_supported` and grouped-send `customer_information`. Preserve an omitted method flag by stable ID; explicit false disables it. Validate and fingerprint customer_name/customer_phone/delivery_notes/delivery_apt/custom_fields atomically. Follow-up batches inherit only coherent snapshots; mixed guests and allocated bills cannot adopt replacement details. Grouped creation suppresses per-course customer confirmations without suppressing kitchen/staff events or independent status notifications. Tests must not send real notifications. The staff-only pos_guest_details input contains first_name, last_name, identifier and note, advertised by checks/capabilities. Bounded normalized values inherit coherently on subsequent unsplit batches. Public creation clears this input and public disclosure strips the metadata. Deploy the API before enabling the matching client fields; older APIs leave them disabled. Preparation is local until the matching release is approved and published.
 
 <span id="release" />
 
@@ -111,3 +111,39 @@ Synchronize internal/support/corpus.json with the exported public corpus for the
 ## Save stock outside series
 
 POST /api/v1/menu/items/:id/sales-stock/restock also accepts remaining stock for restaurants without series, requiring menu.edit and the active restaurant. expected_revision uses item.stock_revision; all size counters, validation and journal writes are atomic under the order stock lock. Series restaurants retain their series counters. Foreign sizes, invalid quantities and stale revisions fail without partial changes. Deploy this API before the Items UI. No schema or environment change.
+
+<span id="staff-activation-pos-code" />
+
+## POS code at staff activation
+
+validate-invite returns pos_pin_required from the current scoped membership permissions (orders.manage or payments.manage), never the global or legacy role label. setup-account independently rechecks scope, role and permission requirements. Non-POS staff ignore a stale client PIN without writing one. Password, optional PIN, one-time invite consumption and JWT generation are atomic; failures preserve the existing invitation and credentials. Used, expired, ambiguous legacy and revoked links remain blocked with allowlisted error codes; unexpected persistence errors expose no SQL or tokens. No migration or environment change is needed. Deploy API before Admin; already emailed unused links require no data repair or resend.
+
+<span id="modifier-position-contract" />
+
+## Conditional modifier contract
+
+Migration 274 adds selection_config to the item/group link and selection_index to modifier snapshots. Deploy API and schema before compatible clients. Existing links without configuration retain their behavior. Rules use IDs verified against the restaurant and item; modifier sources are independent single-choice groups. Repeated positions are numbered 1 to 12 and require exactly one selection. The server recalculates prices, rejects duplicates, unavailable positions and hidden choices, and prefixes saved names for kitchen output. TypeScript/Dart caches and payloads retain catalog ID and position. Cross-restaurant copying remaps references. Additive API, translation and model changes do not alter existing payment, Google or delivery integrations. Documentation stays local until a reviewed Landing commit has been authorized and pinned; do not publish procedures ahead of their clients.
+
+<span id="descriptive-variant-contract" />
+
+## Descriptive variant contract
+
+Option groups carry an item-specific role: price retains the absolute priced variant, while identity retains descriptive dimensions without changing price. selection_config conditions their positions on an independent priced format. Orders send option_selections separately from selected_variant_id and modifiers; positions and labels are snapshotted and guest clarifications remain private. Deploy migration 275 and the API before compatible clients. The server validates price, restaurant ownership and every choice. Historical groups retain their behavior until explicitly reconfigured.
+
+<span id="unified-whatsapp-order-composer" />
+
+## Verify the unified WhatsApp composer
+
+The shared Admin composer handles individual orders and current-page selections through existing preview/send endpoints, without a new dispatch route, migration, API free text or changed automation triggers. App drafts stay local and require confirmation before discarding. Uncertain results retain their original dispatch ID across message-type changes. GET /restaurants/:id/message-templates admits settings.view or orders.manage behind EnforceRestaurantAccess; PUT and DELETE still require settings.edit. No credentials become readable. FR/HE/EN copy and the order/WhatsApp procedures cover the controls. Verify lost responses, partially eligible queues, changed orders and mobile RTL with synthetic fixtures; interface verification must not send real messages. WORKSPACE is a local-review pin only: replace it with an authorized immutable Landing commit before CI/publication and deploy the API before its matching Admin.
+
+<span id="meta-template-image-proxy" />
+
+## Meta WhatsApp template image
+
+GET /api/v1/restaurants/:id/whatsapp/meta/templates/:templateId/image reads an approved Utility template image belonging to the restaurant’s Meta account. JWT, restaurant access and settings-read or order permissions are required. Responses are private and uncached, with verified JPEG/PNG bytes and a 5 MB limit. Signed Meta URLs and credentials are never returned. Previews and sends automatically include the Meta image when no file was explicitly selected; changed image content invalidates the previous manual confirmation. Retrieval failure returns an error without sending text alone.
+
+<span id="weekly-series-rollover" />
+
+## Verify the current batch without orders
+
+GET /api/v1/orders/series keeps the existing sorted fulfillment dates and aggregates, then includes the current batch’s service days without creating an order. Optional is_current marks one default date: the operational batch’s first fulfillment day that has not passed. The batch stays current through its final day in restaurant time. Menu selection and public ordering rules keep their separate resolution. The client refreshes every visible minute and on tab return; Home and Orders follow the current batch while preserving history chosen on the open page and explicit payment-attention links. Validate cutoff boundaries, local midnight, DST, multiple fulfillment days, tenant isolation, zero orders and existing aggregates. Deploy API before Admin and publish procedures with the feature.

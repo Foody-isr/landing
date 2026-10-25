@@ -5,7 +5,7 @@ apps: foodyweb
 tags:
   - guest
   - guest-account-tracking
-updatedAt: '2026-10-19'
+updatedAt: '2026-10-25'
 featureId: guest-account-tracking
 audience: public
 releaseStatus: available
@@ -53,3 +53,15 @@ Choisissez Google, Facebook ou Apple si le bouton est proposé, puis terminez l�
 ## Comprendre les données de connexion
 
 Les fournisseurs configurés peuvent charger leur bibliothèque lorsque leurs choix sont affichés et traiter des informations de navigateur et de réseau selon leur politique. La connexion transmet à Foody un identifiant fournisseur et les nom, e-mail ou photo fournis, pas votre mot de passe Google, Apple ou Facebook. Apple peut masquer l’e-mail. Foody conserve la session dans un cookie HttpOnly et un état temporaire pour l’authentification ; les jetons fournisseur ne sont pas persistés dans Web Storage ni dans les logs de cette connexion. Vous pouvez continuer en invité. Pour demander la suppression du compte, utilisez le contact indiqué dans la politique de confidentialité Foody ; cette demande n’est pas une action de remboursement.
+
+<span id="optional-entry-access" />
+
+## Se connecter pendant la commande
+
+Lorsque l’invitation est désactivée, un lien discret Se connecter reste disponible dans la fenêtre de retrait ou de livraison. Il ouvre la connexion uniquement à la demande ; fermer cette fenêtre conserve les informations déjà saisies et permet de poursuivre sans compte.
+
+<span id="saved-phone-validation" />
+
+## Corriger un téléphone mémorisé
+
+Un numéro mémorisé ou déjà vérifié reprend son propre indicatif, même si son pays diffère de celui du restaurant. Un champ vierge utilise le pays du restaurant. Au checkout, un téléphone mémorisé doit passer la même validation qu’un nouveau numéro. S’il est invalide, les coordonnées restent ouvertes pour correction. Choisissez le bon indicatif pays ou saisissez le numéro international avec +, puis vérifiez la commande avant de confirmer. Le format enregistré est international et compatible avec les envois WhatsApp. Ce contrôle ne prouve ni la possession du numéro ni l’inscription à WhatsApp et ne change pas votre méthode de connexion. Pour enregistrer les coordonnées corrigées dans le compte, utilisez la préférence de mémorisation proposée au checkout.
