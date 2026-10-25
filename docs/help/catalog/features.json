@@ -504,10 +504,15 @@
     "selectors": {
       "foodyadmin": [
         "src/app/[restaurantId]/customers/**",
-        "src/components/customers/**"
+        "src/components/customers/**",
+        "src/lib/customer-phone.ts",
+        "src/lib/api.ts",
+        "src/lib/i18n.tsx"
       ],
       "foodyserver": [
-        "internal/customers/**"
+        "internal/customers/**",
+        "cmd/server/main.go",
+        "internal/support/corpus.json"
       ],
       "foodypos": [
         "lib/features/trusted_customers/**"
@@ -535,9 +540,9 @@
           "he": "עריכת פרטי משלוח"
         },
         "instructions": {
-          "en": "Open the customer profile, correct the phone/address and delivery details, then save. Recheck the selected order address separately for already-created orders.",
-          "fr": "Ouvrez la fiche, corrigez téléphone, adresse et précisions de livraison, puis enregistrez. Vérifiez séparément l’adresse des commandes déjà créées.",
-          "he": "פתחו את כרטיס הלקוח, תקנו טלפון, כתובת ופרטי משלוח ושמרו. בדקו בנפרד את הכתובת בהזמנות שכבר נוצרו."
+          "en": "Open the customer profile, edit the name, address and delivery details, then save. To change a phone, use Correct in the customer list. Recheck the selected order address separately for already-created orders.",
+          "fr": "Ouvrez la fiche, modifiez le nom, l’adresse et les précisions de livraison, puis enregistrez. Pour changer le téléphone, utilisez Corriger dans la liste des clients. Vérifiez séparément l’adresse des commandes déjà créées.",
+          "he": "פתחו את כרטיס הלקוח, ערכו שם, כתובת ופרטי משלוח ושמרו. לשינוי טלפון השתמשו בתיקון ברשימת הלקוחות. בדקו בנפרד כתובת בהזמנות שכבר נוצרו."
         }
       },
       {
@@ -565,6 +570,19 @@
           "fr": "Vérifiez les fiches sélectionnées et numéros avant de confirmer une fusion. Contrôlez la fiche résultante et ne fusionnez pas des personnes différentes.",
           "he": "בדקו את הכרטיסים והטלפונים שנבחרו לפני אישור איחוד. בדקו את הכרטיס המאוחד והימנעו מאיחוד אנשים שונים."
         }
+      },
+      {
+        "id": "phone-corrections",
+        "title": {
+          "fr": "Corriger un ou plusieurs téléphones",
+          "en": "Correct one or several phone numbers",
+          "he": "תיקון מספר טלפון אחד או כמה מספרים"
+        },
+        "instructions": {
+          "fr": "Avec customers.manage, ouvrez Clients et utilisez Corriger sur une ligne, ou cochez les clients puis Actions → Corriger les téléphones. Chaque numéro est prérempli lorsque le format est reconnaissable ; corrigez les autres manuellement. Vérifiez le numéro actuel et le format enregistré, puis Enregistrer. Un numéro israélien devient +972 sans le zéro national ; pour un autre pays, saisissez + et son indicatif. Les lettres, extensions, numéros incomplets et préfixes invalides bloquent la sauvegarde. Le lot est atomique : un conflit avec un autre client ou plusieurs autorisations d’espèces bloque toutes les corrections. Les contacts des commandes existantes et les clés du client sont corrigés ensemble pour les futurs envois WhatsApp ; noms, adresses, regroupements et autorisation d’espèces sont conservés. Les comptes de connexion et les autres restaurants ne changent pas. En cas d’échec, la saisie reste disponible ; si seule l’actualisation échoue après sauvegarde, Réessayer recharge sans réenregistrer. Ce contrôle du format ne confirme ni la possession du numéro ni son inscription WhatsApp.",
+          "en": "With customers.manage, open Clients and use Correct on one row, or select customers and choose Actions → Correct phones. Recognizable formats are prefilled; correct other numbers manually. Review the current number and saved format, then Save. Israeli numbers become +972 without the national trunk zero; for another country enter + and its country code. Letters, extensions, incomplete numbers and invalid prefixes prevent saving. The batch is atomic: a number belonging to another customer or conflicting cash records blocks every correction. Existing order contacts and customer keys are corrected together for future WhatsApp sends; names, addresses, merges and cash eligibility remain intact. Login accounts and other restaurants are unchanged. Errors retain input; if only refreshing fails after a successful save, Retry reloads without repeating the write. Format validation does not verify ownership or WhatsApp registration.",
+          "he": "עם customers.manage פתחו לקוחות ולחצו תיקון בשורה אחת, או בחרו לקוחות ואז פעולות → תיקון טלפונים. מספרים בפורמט מזוהה ימולאו מראש; תקנו אחרים ידנית. בדקו מספר נוכחי ופורמט לשמירה ולחצו שמירה. מספר ישראלי נשמר עם +972 ללא אפס מקומי; למדינה אחרת הזינו + וקידומת מדינה. אותיות, שלוחות, מספרים חסרים וקידומות לא תקינות חוסמים שמירה. השמירה של כל הקבוצה אטומית: מספר המשויך ללקוח אחר או הרשאות מזומן מתנגשות חוסמים את כל התיקונים. פרטי הטלפון בהזמנות קיימות ומפתחות הלקוח מתוקנים יחד לשליחות WhatsApp עתידיות; שמות, כתובות, איחודים והרשאת מזומן נשמרים. חשבונות התחברות ומסעדות אחרות אינם משתנים. שגיאה משאירה את הקלט; אם רק הרענון נכשל לאחר שמירה, ניסיון חוזר טוען ללא כתיבה נוספת. בדיקת פורמט אינה מאמתת בעלות על המספר או רישום ל-WhatsApp."
+        }
       }
     ],
     "audience": "public",
@@ -574,7 +592,8 @@
       "en": "Editing and merging require customer-management permission.",
       "fr": "La modification et la fusion nécessitent la permission de gestion des clients.",
       "he": "עריכה ואיחוד דורשים הרשאת ניהול לקוחות."
-    }
+    },
+    "procedureUpdatedAt": "2026-10-25"
   },
   {
     "id": "promotions",
@@ -10497,7 +10516,16 @@
         "components/WebsiteCartPopover.tsx",
         "lib/fulfillment.ts",
         "lib/availability.ts",
-        "lib/combo/**"
+        "lib/combo/**",
+        "lib/customer-phone.ts",
+        "services/api.ts",
+        "lib/i18n.tsx",
+        "components/CheckoutBuilderFields.tsx"
+      ],
+      "foodyserver": [
+        "internal/common/phone.go",
+        "internal/orders/handler.go",
+        "internal/support/corpus.json"
       ]
     },
     "operations": [
@@ -10605,12 +10633,25 @@
           "en": "An item configured with repeated positions requires one separate choice per position according to the selected format. For example, a two-character Number Cake accepts 11, AB or A7. The format price replaces the base price; modifiers add only their configured surcharges. Reducing the position count removes newly hidden choices. Positions remain distinct in the cart, orders and kitchen ticket; review them before confirming. These customizations do not change delivery, availability, recipe, discount or cancellation rules. Configuration requires compatible versions and menu editing permission. See [Variants and sizes](/en/help/menu/variants-and-sizes#conditional-positions) for setup and recovery after a rejected selection.",
           "he": "פריט שהוגדר עם מיקומים חוזרים דורש בחירה נפרדת לכל מיקום בהתאם לגודל שנבחר. לדוגמה, עוגה עם שני תווים מאפשרת 11, AB או A7. מחיר הגודל מחליף את מחיר הבסיס והתוספות מוסיפות רק את העלויות שהוגדרו. הקטנת מספר המיקומים מסירה בחירות שהוסתרו. המיקומים נשמרים בנפרד בסל, בהזמנות ובכרטיס המטבח; בדקו לפני אישור. ההתאמות אינן משנות כללי משלוח, זמינות, מתכון, הנחה או ביטול. הגדרה דורשת גרסאות תואמות והרשאת עריכת תפריט. ראו [ווריאציות וגדלים](/he/help/menu/variants-and-sizes#conditional-positions) להגדרה ולבדיקה לאחר דחיית בחירה."
         }
+      },
+      {
+        "id": "contact-phone",
+        "title": {
+          "fr": "Renseigner un téléphone valide",
+          "en": "Enter a valid contact phone",
+          "he": "הזנת טלפון תקין"
+        },
+        "instructions": {
+          "fr": "Avant d’envoyer la commande ou la demande traiteur, saisissez un numéro complet. Au checkout, choisissez l’indicatif pays pour un numéro local ou collez le numéro international avec + ; pour le traiteur, un numéro local est israélien par défaut et un numéro étranger doit inclure + et son indicatif. Les espaces, tirets et parenthèses sont acceptés ; le numéro est enregistré au format international, par exemple +972502345678. Un numéro incomplet, un préfixe invalide, des lettres ou une extension bloque l’envoi et demande une correction. Le téléphone reste facultatif à table lorsque le formulaire le permet ; s’il est renseigné, il doit être valide. La validation du format ne vérifie pas l’inscription à WhatsApp. Un éventuel code SMS reste soumis au réglage du restaurant.",
+          "en": "Before submitting an order or catering request, enter a complete phone number. At checkout choose the country code for a local number, or paste an international number starting with +. Catering assumes Israel for local numbers; foreign numbers need + and their country code. Spaces, dashes and parentheses are accepted; the saved value is international, for example +972502345678. Incomplete numbers, invalid prefixes, letters and extensions block submission and require correction. Phone remains optional for table orders where the form permits it; a supplied number must be valid. Format validation does not check WhatsApp registration. Any SMS verification code still follows the restaurant setting.",
+          "he": "לפני שליחת הזמנה או בקשת קייטרינג הזינו מספר מלא. בסיום הזמנה בחרו קידומת מדינה למספר מקומי או הדביקו מספר בינלאומי המתחיל ב-+. בקייטרינג מספר מקומי נחשב ישראלי; מספר זר דורש + וקידומת מדינה. רווחים, מקפים וסוגריים מותרים; המספר נשמר בפורמט בינלאומי, למשל ‎+972502345678. מספר חסר, קידומת לא תקינה, אותיות או שלוחה חוסמים שליחה ודורשים תיקון. בהזמנת שולחן הטלפון נשאר אופציונלי כשהטופס מאפשר זאת; מספר שהוזן חייב להיות תקין. בדיקת פורמט אינה בודקת רישום ל-WhatsApp. קוד SMS אם נדרש עדיין כפוף להגדרות העסק."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-22"
+    "procedureUpdatedAt": "2026-10-25"
   },
   {
     "id": "guest-account-tracking",
@@ -10762,12 +10803,25 @@
           "en": "When the invitation is off, a discreet Sign in link remains available in the pickup or delivery dialog. It opens authentication only when selected; dismissing authentication retains entered details and allows ordering without an account.",
           "he": "כשההצעה כבויה, קישור התחברות דיסקרטי נשאר זמין בחלון האיסוף או המשלוח. ההתחברות נפתחת רק בבחירה מפורשת; סגירתה שומרת על הפרטים שכבר הוזנו ומאפשרת להמשיך ללא חשבון."
         }
+      },
+      {
+        "id": "saved-phone-validation",
+        "title": {
+          "fr": "Corriger un téléphone mémorisé",
+          "en": "Correct a saved phone number",
+          "he": "תיקון מספר טלפון שמור"
+        },
+        "instructions": {
+          "fr": "Au checkout, un téléphone mémorisé doit passer la même validation qu’un nouveau numéro. S’il est invalide, les coordonnées restent ouvertes pour correction. Choisissez le bon indicatif pays ou saisissez le numéro international avec +, puis vérifiez la commande avant de confirmer. Le format enregistré est international et compatible avec les envois WhatsApp. Ce contrôle ne prouve ni la possession du numéro ni l’inscription à WhatsApp et ne change pas votre méthode de connexion. Pour enregistrer les coordonnées corrigées dans le compte, utilisez la préférence de mémorisation proposée au checkout.",
+          "en": "At checkout, a saved phone must pass the same validation as a new number. If it is invalid, contact details stay open for correction. Choose the correct country code or enter the international number with +, then review the order before confirming. The saved format is international and compatible with WhatsApp messaging. This does not prove ownership or WhatsApp registration and does not change your sign-in method. To save the corrected contact details in your account, use the remember-details preference offered at checkout.",
+          "he": "בסיום הזמנה מספר שמור עובר אותה בדיקה כמו מספר חדש. אם הוא לא תקין, פרטי הקשר נשארים פתוחים לתיקון. בחרו קידומת מדינה נכונה או הזינו מספר בינלאומי עם +, ובדקו את ההזמנה לפני האישור. הפורמט הנשמר הוא בינלאומי ומתאים לשליחת WhatsApp. הבדיקה אינה מאמתת בעלות או רישום ל-WhatsApp ואינה משנה את שיטת ההתחברות. לשמירת פרטי הקשר המתוקנים בחשבון השתמשו בהעדפת שמירת הפרטים בסיום הזמנה."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-21"
+    "procedureUpdatedAt": "2026-10-25"
   },
   {
     "id": "guest-table",
@@ -10850,10 +10904,14 @@
         "app/r/[restaurantId]/tournee/**",
         "components/catering/**",
         "components/Catering*.tsx",
-        "lib/catering*.ts"
+        "lib/catering*.ts",
+        "lib/customer-phone.ts",
+        "services/api.ts",
+        "lib/i18n.tsx"
       ],
       "foodyserver": [
-        "internal/catering/public*.go"
+        "internal/catering/public*.go",
+        "internal/support/corpus.json"
       ]
     },
     "operations": [
@@ -10882,11 +10940,25 @@
           "fr": "Vérifiez date de remise, fenêtre et clôture avant panier. Une tournée fermée ne se contourne pas avec une ancienne page. Confirmez informations de tournée/remise avant paiement.",
           "he": "בדקו תאריך מסירה, חלון וסגירה לפני סל. לא ניתן לעקוף סבב סגור בדף ישן. אשרו פרטי מסירה לפני תשלום."
         }
+      },
+      {
+        "id": "contact-phone",
+        "title": {
+          "fr": "Renseigner un téléphone valide",
+          "en": "Enter a valid contact phone",
+          "he": "הזנת טלפון תקין"
+        },
+        "instructions": {
+          "fr": "Avant d’envoyer la commande ou la demande traiteur, saisissez un numéro complet. Au checkout, choisissez l’indicatif pays pour un numéro local ou collez le numéro international avec + ; pour le traiteur, un numéro local est israélien par défaut et un numéro étranger doit inclure + et son indicatif. Les espaces, tirets et parenthèses sont acceptés ; le numéro est enregistré au format international, par exemple +972502345678. Un numéro incomplet, un préfixe invalide, des lettres ou une extension bloque l’envoi et demande une correction. Le téléphone reste facultatif à table lorsque le formulaire le permet ; s’il est renseigné, il doit être valide. La validation du format ne vérifie pas l’inscription à WhatsApp. Un éventuel code SMS reste soumis au réglage du restaurant.",
+          "en": "Before submitting an order or catering request, enter a complete phone number. At checkout choose the country code for a local number, or paste an international number starting with +. Catering assumes Israel for local numbers; foreign numbers need + and their country code. Spaces, dashes and parentheses are accepted; the saved value is international, for example +972502345678. Incomplete numbers, invalid prefixes, letters and extensions block submission and require correction. Phone remains optional for table orders where the form permits it; a supplied number must be valid. Format validation does not check WhatsApp registration. Any SMS verification code still follows the restaurant setting.",
+          "he": "לפני שליחת הזמנה או בקשת קייטרינג הזינו מספר מלא. בסיום הזמנה בחרו קידומת מדינה למספר מקומי או הדביקו מספר בינלאומי המתחיל ב-+. בקייטרינג מספר מקומי נחשב ישראלי; מספר זר דורש + וקידומת מדינה. רווחים, מקפים וסוגריים מותרים; המספר נשמר בפורמט בינלאומי, למשל ‎+972502345678. מספר חסר, קידומת לא תקינה, אותיות או שלוחה חוסמים שליחה ודורשים תיקון. בהזמנת שולחן הטלפון נשאר אופציונלי כשהטופס מאפשר זאת; מספר שהוזן חייב להיות תקין. בדיקת פורמט אינה בודקת רישום ל-WhatsApp. קוד SMS אם נדרש עדיין כפוף להגדרות העסק."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
-    "preserveExisting": false
+    "preserveExisting": false,
+    "procedureUpdatedAt": "2026-10-25"
   },
   {
     "id": "landing-offers",

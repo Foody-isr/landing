@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-10-18.
+Révision du relevé : 2026-10-25.
 
-100 fiches de fonctionnalités, 650 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2160 fichiers applicatifs et 2034 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+100 fiches de fonctionnalités, 654 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2165 fichiers applicatifs et 2036 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 554 | 868 | 3c9e8281bbf8 ; versioned |
-| foodyadmin | 758 | 770 | 6923a2ed42d9 ; versioned |
-| foodyweb | 336 | 167 | 8af769c4227a ; versioned |
-| foodylanding | 127 | 21 | a202fc74c13d ; versioned |
-| foodypos | 341 | 158 | 37fd777620b7 ; versioned |
-| foodybackoffice | 44 | 50 | c396bf4442be ; versioned |
+| foodyserver | 556 | 869 | a0046cb3249b ; versioned |
+| foodyadmin | 760 | 771 | cd96e394d270 ; versioned |
+| foodyweb | 337 | 167 | fac3db244c15 ; versioned |
+| foodylanding | 127 | 21 | 6538a2d5a882 ; versioned |
+| foodypos | 341 | 158 | 64dce2731c01 ; versioned |
+| foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
 
 ## getting-started
 
@@ -147,6 +147,7 @@ Identifiant : `customers-profiles`. Public : public. Disponibilité : available.
 - [Modifier les coordonnées de livraison](../../src/content/help/fr/customers/managing-customers.mdx#edit)
 - [Autoriser la commande en espèces](../../src/content/help/fr/customers/managing-customers.mdx#trusted)
 - [Fusionner des doublons](../../src/content/help/fr/customers/managing-customers.mdx#merge)
+- [Corriger un ou plusieurs téléphones](../../src/content/help/fr/customers/managing-customers.mdx#phone-corrections)
 
 ## marketing
 
@@ -1067,7 +1068,7 @@ Identifiant : `message-templates`. Public : public. Disponibilité : available. 
 
 ### [Commander en ligne côté client](../../src/content/help/fr/guest/online-ordering.mdx)
 
-Identifiant : `guest-ordering`. Public : public. Disponibilité : available. Services : foodyweb.
+Identifiant : `guest-ordering`. Public : public. Disponibilité : available. Services : foodyserver, foodyweb.
 
 - [Vérifier le plafond de préautorisation au poids](../../src/content/help/fr/guest/online-ordering.mdx#weight-hold-margin)
 - [Composer le panier](../../src/content/help/fr/guest/online-ordering.mdx#basket)
@@ -1077,6 +1078,7 @@ Identifiant : `guest-ordering`. Public : public. Disponibilité : available. Ser
 - [Se connecter avant de commander](../../src/content/help/fr/guest/online-ordering.mdx#customer-sign-in-methods)
 - [Accès aux nouveaux réglages](../../src/content/help/fr/guest/online-ordering.mdx#related-service-controls)
 - [Vérifier les choix conditionnels d’un article](../../src/content/help/fr/guest/online-ordering.mdx#conditional-item-choices)
+- [Renseigner un téléphone valide](../../src/content/help/fr/guest/online-ordering.mdx#contact-phone)
 
 ### [Suivi, reçus et moyens enregistrés](../../src/content/help/fr/guest/tracking-and-account.mdx)
 
@@ -1090,6 +1092,7 @@ Identifiant : `guest-account-tracking`. Public : public. Disponibilité : availa
 - [Choisir sa méthode de connexion](../../src/content/help/fr/guest/tracking-and-account.mdx#social-and-password)
 - [Comprendre les données de connexion](../../src/content/help/fr/guest/tracking-and-account.mdx#sign-in-privacy)
 - [Se connecter pendant la commande](../../src/content/help/fr/guest/tracking-and-account.mdx#optional-entry-access)
+- [Corriger un téléphone mémorisé](../../src/content/help/fr/guest/tracking-and-account.mdx#saved-phone-validation)
 
 ### [Commander avec le QR de table](../../src/content/help/fr/guest/table-qr.mdx)
 
@@ -1104,6 +1107,7 @@ Identifiant : `guest-catering`. Public : public. Disponibilité : available. Ser
 
 - [Compléter le parcours catering](../../src/content/help/fr/guest/catering-request.mdx#request)
 - [Commander pour une tournée précise](../../src/content/help/fr/guest/catering-request.mdx#tour)
+- [Renseigner un téléphone valide](../../src/content/help/fr/guest/catering-request.mdx#contact-phone)
 
 ## internal
 
