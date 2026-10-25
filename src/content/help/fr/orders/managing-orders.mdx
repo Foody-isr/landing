@@ -15,7 +15,7 @@ tags:
   - web
   - qr
   - caisse
-updatedAt: '2026-10-22'
+updatedAt: '2026-10-24'
 featureId: orders-managing-orders
 audience: public
 releaseStatus: available
@@ -150,6 +150,14 @@ Ouvrez FoodyPOS → Commandes → Toutes, ou FoodyAdmin → Commandes → Tous p
 ## Retrouver une vente caisse après paiement
 
 Une vente à emporter payée et envoyée en cuisine se trouve dans Commandes → Actives pendant la préparation, pas dans Terminées du seul fait du paiement. Choisissez le filtre À emporter et effacez les autres filtres si nécessaire. Transactions enregistre l’encaissement séparément et s’actualise à l’ouverture. Paiement enregistré confirme brièvement l’encaissement, puis le plan de salle se rouvre automatiquement. Vider l’addition courante ne supprime pas la commande enregistrée ; Commandes → Toutes permet toujours le suivi multicanal. Sans papier, vérifiez profil, association imprimante/POS actuel et historique avant de réimprimer ou d’encaisser un autre paiement. Voir [encaissement au comptoir](/fr/help/payments/pos-checkout#counter-completion). L’onglet Client utilise le nom/téléphone enregistrés sur la commande, pas un client déduit d’une autre addition. La collecte facultative se configure [par mode de traitement](/fr/help/settings/pos-behavior#fulfillment-customer). Les envois cuisine suivants conservent des coordonnées cohérentes sans nouvelle confirmation de création par service ; les notifications de statut restent distinctes.
+
+<span id="unified-order-whatsapp-selection" />
+
+## Contacter les clients par WhatsApp
+
+Avec l’autorisation de gérer les commandes, cochez une ou plusieurs lignes puis choisissez **Envoyer un message WhatsApp**. La case de page sélectionne uniquement les commandes affichées, au maximum 25 ; changer de filtre, de date, de page ou d’établissement efface la sélection. Le même panneau est accessible dans le détail d’une commande.
+
+Choisissez **WhatsApp Business** pour le modèle global approuvé configuré (confirmation, rappel ou satisfaction), ou **Application WhatsApp** pour un texte modifiable par destinataire. Relisez chaque numéro et message. L’envoi groupé Business demande confirmation du nombre prêt et produit un message distinct par commande ; un client ayant plusieurs commandes peut donc recevoir plusieurs messages. Les aperçus indisponibles, trop tôt ou déjà tentés sont exclus. Une commande modifiée arrête les envois restants jusqu’à une nouvelle vérification. **Actualiser** vérifie les tentatives existantes sans renvoi automatique d’un résultat incertain. Dans l’application, ouvrez chaque conversation et confirmez l’envoi dans WhatsApp ; Foody indique seulement son ouverture. Les automatismes restent configurés dans le parcours. Consultez le [guide WhatsApp](../communications/whatsapp) pour la langue, les pièces jointes, les conditions du rappel et la récupération.
 
 <span id="mobile-terminal" />
 

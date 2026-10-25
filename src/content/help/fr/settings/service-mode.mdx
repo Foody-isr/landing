@@ -12,18 +12,6 @@ releaseStatus: available
 ---
 Admin → Paramètres → Appareils → Modes
 
-<span id="modes-dashboard" />
-
-## Consulter et modifier les Modes dans Admin
-
-Dans Paramètres → Gestion des appareils → Modes, recherchez, triez par nom ou nombre d’appareils attribués et choisissez la taille de page. Le nom ou le bouton d’options ouvre le panneau du mode sans quitter la liste. Vérifiez les appareils attribués ; Gérer ouvre ensuite l’éditeur plein écran. Renommer prépare le nouveau nom ; Enregistrer le sauvegarde explicitement. Créer un mode ou supprimer les modes cochés reste aussi un brouillon jusqu’à Enregistrer. Fermer le panneau conserve le brouillon de la liste ; quitter avec des modifications demande de confirmer l’abandon. Un échec conserve les valeurs. Seul le droit de modifier les paramètres permet une mutation ; la lecture seule permet de consulter le panneau. Un appareil indisponible est signalé, jamais réattribué silencieusement. La date de création affiche un tiret car l’API actuelle ne fournit pas cette date pour les modes. Les réglages par défaut du restaurant restent accessibles séparément et ne sont pas un profil d’appareil physique.
-
-<span id="send-home-new-sale" />
-
-## Revenir à l’accueil après l’envoi et ouvrir une nouvelle vente
-
-Dans le mode effectif de l’appareil, ouvrez Additions en attente, activez Utiliser sur ce mode et Utiliser le menu Tickets ouverts comme écran d’accueil, puis Enregistrer. Actualisez les réglages sur le POS. Après Envoyer confirmé, une addition de table revient au plan de salle et une addition nommée revient aux additions ouvertes. Revenir dans Menu ouvre une vente vide distincte, sans rouvrir ni effacer l’addition envoyée. Rouvrez celle-ci depuis sa table ou les additions ouvertes pour ajouter des plats : client, addition et bons cuisine y sont conservés. Continuer/Envoyer et rester conserve l’addition courante. Un envoi échoué ou un changement de restaurant, de permission ou de contexte ne détache pas la source. Un autre panier comptoir non envoyé n’est pas vidé. Sans ce réglage d’accueil, ce passage à une nouvelle vente ne s’applique pas. Toutes les commandes enregistrées restent suivies sur POS et Admin ; paiement, préparation et clôture restent distincts.
-
 <span id="mode" />
 
 ## Choisir un profil de mode
@@ -41,3 +29,15 @@ Vérifiez places, couverts, services, envoi cuisine et retour au menu dans les r
 ## Garder la remise indépendante
 
 Configurez les [modes de traitement et leur demande](/fr/help/settings/pos-behavior#fulfillment-methods) pour le restaurant séparément du plan de salle et du profil de mode de l’appareil. Le traitement global définit le service de l’addition ; le choix d’un article est une exception de préparation et ne crée pas une livraison distincte. Consultez les [choix de l’addition et de l’article](/fr/help/orders/order-types#pos-whole-check) avant de changer une vente. Un paiement ne masque pas la commande dans Commandes → Toutes et ne termine pas automatiquement sa préparation. Dans une nouvelle vente sur place, le mode et la fiche client éventuelle précèdent les articles. La table/addition est choisie seulement à Envoyer/Continuer ; annuler conserve la source. Voir [le traitement global](/fr/help/orders/order-types#pos-whole-check). Le contexte client privé est réservé au personnel, jamais une réponse au paiement public ou une variable de notification.
+
+<span id="modes-dashboard" />
+
+## Consulter et modifier les Modes dans Admin
+
+Dans Paramètres → Gestion des appareils → Modes, recherchez, triez par nom ou nombre d’appareils attribués et choisissez la taille de page. Le nom ou le bouton d’options ouvre le panneau du mode sans quitter la liste. Vérifiez les appareils attribués ; Gérer ouvre ensuite l’éditeur plein écran. Renommer prépare le nouveau nom ; Enregistrer le sauvegarde explicitement. Créer un mode ou supprimer les modes cochés reste aussi un brouillon jusqu’à Enregistrer. Fermer le panneau conserve le brouillon de la liste ; quitter avec des modifications demande de confirmer l’abandon. Un échec conserve les valeurs. Seul le droit de modifier les paramètres permet une mutation ; la lecture seule permet de consulter le panneau. Un appareil indisponible est signalé, jamais réattribué silencieusement. La date de création affiche un tiret car l’API actuelle ne fournit pas cette date pour les modes. Les réglages par défaut du restaurant restent accessibles séparément et ne sont pas un profil d’appareil physique.
+
+<span id="send-home-new-sale" />
+
+## Revenir à l’accueil après l’envoi et ouvrir une nouvelle vente
+
+Dans le mode effectif de l’appareil, ouvrez Additions en attente, activez Utiliser sur ce mode et Utiliser le menu Tickets ouverts comme écran d’accueil, puis Enregistrer. Actualisez les réglages sur le POS. Après Envoyer confirmé, une addition de table revient au plan de salle et une addition nommée revient aux additions ouvertes. Revenir dans Menu ouvre une vente vide distincte, sans rouvrir ni effacer l’addition envoyée. Rouvrez celle-ci depuis sa table ou les additions ouvertes pour ajouter des plats : client, addition et bons cuisine y sont conservés. Continuer/Envoyer et rester conserve l’addition courante. Un envoi échoué ou un changement de restaurant, de permission ou de contexte ne détache pas la source. Un autre panier comptoir non envoyé n’est pas vidé. Sans ce réglage d’accueil, ce passage à une nouvelle vente ne s’applique pas. Toutes les commandes enregistrées restent suivies sur POS et Admin ; paiement, préparation et clôture restent distincts.

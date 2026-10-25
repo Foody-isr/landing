@@ -60,17 +60,17 @@ In the same editor, enable the staff selection prompt and choose **At the start 
 
 There is no separate tableless-dine-in switch. Keep a dine-in method available in the restaurant fulfillment catalogue. In the POS mode assigned to this device, open **Open checks**, enable **Use on this mode** and save if needed. Predefined ticket names remain optional. Compatible API/POS versions then offer [New check without a table](/en/help/orders/order-types#pos-tableless-dine-in). If unavailable, check the capability message and effective device mode; do not enable unrelated seat or delivery settings. This uses no artificial table and does not change online/QR order rules. Admin Orders can display the resulting dine-in orders without a table; Admin's manual new-order form remains pickup/delivery only.
 
-<span id="fulfillment-order-contact-entry" />
-
-## Choose an existing contact or enter order-only details
-
-In the optional fulfillment details form, open Add new or existing customer. The Customers search requires customers.view and searches the active restaurant only after two characters. Selecting a result returns its existing name and phone without updating a profile. Enter contact is available with orders.manage even without directory access: enter separate first/last names and an optional phone, then Done. The combined trimmed name is limited to 80 Unicode code points; a nonblank phone requires 7–15 digits and at most 32 characters. Back retains these edits locally when returning to search; closing the picker applies nothing. A restaurant, permission or order-context change blocks selection, including a late search response. The details form still requires its own Done to apply the mode and contact together. This is not the creation of a persistent CRM profile: email, address, marketing consent, contacts import, groups and tax fields are not collected here.
-
 <span id="fulfillment-customer" />
 
 ## Ask for customer details for a method
 
 Requires matching API and POS versions. Enable Show customer information screen in the method editor and Save (also save Manage by location if editing there). Immediately after choosing this whole-check mode, the optional details form appears before adding items, including for the default with selection prompts off. Enter first/last name or use Add new or existing customer to search the restaurant directory or Enter contact for this order only. Search requires customers.view; order contact requires orders.manage. Done confirms mode and contact together. Skip retains the previous contact without applying typed changes. Back reopens mode selection; closing the flow leaves the sale unchanged. Full name: at most 80 characters. Nonblank phone: at most 32 characters, with 7–15 digits and ordinary separators. A matching guest-details API capability enables a private identifier (255 characters) and staff note (500); otherwise those fields are disabled with an explanation. Private context stays on staff order data, not public views, receipts or notification text. No customer account, marketing consent, contacts import or cash authorization is created. Configured notifications may use the saved phone. Subsequent batches inherit coherent check details; mixed-customer or allocated bills cannot adopt a replacement contact.
+
+<span id="fulfillment-order-contact-entry" />
+
+## Choose an existing contact or enter order-only details
+
+In the optional fulfillment details form, open Add new or existing customer. The Customers search requires customers.view and searches the active restaurant only after two characters. Selecting a result returns its existing name and phone without updating a profile. Enter contact is available with orders.manage even without directory access: enter separate first/last names and an optional phone, then Done. The combined trimmed name is limited to 80 Unicode code points; a nonblank phone requires 7–15 digits and at most 32 characters. Back retains these edits locally when returning to search; closing the picker applies nothing. A restaurant, permission or order-context change blocks selection, including a late search response. The details form still requires its own Done to apply the mode and contact together. This is not the creation of a persistent CRM profile: email, address, marketing consent, contacts import, groups and tax fields are not collected here.
 
 <span id="mobile-terminal-pages" />
 

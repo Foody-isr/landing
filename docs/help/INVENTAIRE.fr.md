@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-10-25.
+Révision du relevé : 2026-10-18.
 
-100 fiches de fonctionnalités, 650 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2124 fichiers applicatifs et 2011 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+100 fiches de fonctionnalités, 650 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2160 fichiers applicatifs et 2034 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 556 | 869 | c05bcaea30aa ; versioned |
-| foodyadmin | 760 | 771 | c93714967fc0 ; versioned |
-| foodypos | 341 | 158 | 5100d2d3affe ; versioned |
-| foodylanding | 127 | 21 | cf76d1d39bc7 ; versioned |
-| foodyweb | 298 | 145 | 2c747129e4bc ; versioned |
-| foodybackoffice | 42 | 47 | 79a9ee38d09c ; versioned |
+| foodyserver | 554 | 868 | 3c9e8281bbf8 ; versioned |
+| foodyadmin | 758 | 770 | 6923a2ed42d9 ; versioned |
+| foodyweb | 336 | 167 | 8af769c4227a ; versioned |
+| foodylanding | 127 | 21 | a202fc74c13d ; versioned |
+| foodypos | 341 | 158 | 37fd777620b7 ; versioned |
+| foodybackoffice | 44 | 50 | c396bf4442be ; versioned |
 
 ## getting-started
 
@@ -147,7 +147,6 @@ Identifiant : `customers-profiles`. Public : public. Disponibilité : available.
 - [Modifier les coordonnées de livraison](../../src/content/help/fr/customers/managing-customers.mdx#edit)
 - [Autoriser la commande en espèces](../../src/content/help/fr/customers/managing-customers.mdx#trusted)
 - [Fusionner des doublons](../../src/content/help/fr/customers/managing-customers.mdx#merge)
-- [Corriger un ou plusieurs téléphones](../../src/content/help/fr/customers/managing-customers.mdx#phone-corrections)
 
 ## marketing
 
@@ -320,7 +319,7 @@ Identifiant : `stock-units-policy`. Public : public. Disponibilité : available.
 
 ### [Articles, catégories et menus clients](../../src/content/help/fr/menu/categories-and-items.mdx)
 
-Identifiant : `menu-categories-and-items`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodypos, foodyweb.
+Identifiant : `menu-categories-and-items`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb, foodypos.
 
 - [Consulter la bibliothèque Articles](../../src/content/help/fr/menu/categories-and-items.mdx#section-1)
 - [Rechercher, filtrer et choisir les colonnes](../../src/content/help/fr/menu/categories-and-items.mdx#filters)
@@ -334,7 +333,7 @@ Identifiant : `menu-categories-and-items`. Public : public. Disponibilité : ava
 
 ### [Créer un article du menu, étape par étape](../../src/content/help/fr/menu/creating-a-menu-item.mdx)
 
-Identifiant : `menu-creating-a-menu-item`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodypos, foodyweb.
+Identifiant : `menu-creating-a-menu-item`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb, foodypos.
 
 - [Vérifier les accès et ouvrir l’éditeur](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-1)
 - [Informations de l’article et photo](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-3)
@@ -351,7 +350,7 @@ Identifiant : `menu-creating-a-menu-item`. Public : public. Disponibilité : ava
 
 ### [Configurer les ingrédients et portions](../../src/content/help/fr/menu/ingredients-and-portions.mdx)
 
-Identifiant : `menu-ingredients-and-portions`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodypos, foodyweb.
+Identifiant : `menu-ingredients-and-portions`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb, foodypos.
 
 - [Ouvrir la recette dans l’éditeur continu](../../src/content/help/fr/menu/ingredients-and-portions.mdx#section-1)
 - [Ajouter une matière première ou une préparation](../../src/content/help/fr/menu/ingredients-and-portions.mdx#section-2)
@@ -368,7 +367,7 @@ Identifiant : `menu-ingredients-and-portions`. Public : public. Disponibilité :
 
 ### [Menus, cartes & groupes (ce que voient les clients)](../../src/content/help/fr/menu/menus-and-groups.mdx)
 
-Identifiant : `menu-menus-and-groups`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodypos, foodyweb.
+Identifiant : `menu-menus-and-groups`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb, foodypos.
 
 - [Qu'est-ce que c'est ?](../../src/content/help/fr/menu/menus-and-groups.mdx#section-1)
 - [La structure](../../src/content/help/fr/menu/menus-and-groups.mdx#section-2)
@@ -388,7 +387,7 @@ Identifiant : `menu-menus-and-groups`. Public : public. Disponibilité : availab
 
 ### [Variantes et tailles](../../src/content/help/fr/menu/variants-and-sizes.mdx)
 
-Identifiant : `menu-variants-and-sizes`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodypos, foodyweb.
+Identifiant : `menu-variants-and-sizes`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb, foodypos.
 
 - [Comprendre le prix et la portion](../../src/content/help/fr/menu/variants-and-sizes.mdx#section-1)
 - [Ajouter et enregistrer les variantes](../../src/content/help/fr/menu/variants-and-sizes.mdx#section-2)
@@ -407,7 +406,7 @@ Identifiant : `menu-variants-and-sizes`. Public : public. Disponibilité : avail
 
 ### [Modificateurs et règles de sélection](../../src/content/help/fr/menu/modifiers.mdx)
 
-Identifiant : `menu-modifiers`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodypos, foodyweb.
+Identifiant : `menu-modifiers`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb, foodypos.
 
 - [Créer un groupe réutilisable](../../src/content/help/fr/menu/modifiers.mdx#group)
 - [Définir les suppléments de prix](../../src/content/help/fr/menu/modifiers.mdx#pricing)
@@ -429,7 +428,7 @@ Identifiant : `catalog-import`. Public : public. Disponibilité : available. Ser
 
 ### [Combos et formules configurables](../../src/content/help/fr/menu/combos.mdx)
 
-Identifiant : `combos`. Public : public. Disponibilité : available. Services : foodyadmin, foodypos, foodyweb.
+Identifiant : `combos`. Public : public. Disponibilité : available. Services : foodyadmin, foodyweb, foodypos.
 
 - [Définir les étapes de la formule](../../src/content/help/fr/menu/combos.mdx#steps)
 - [Vérifier le prix de la formule](../../src/content/help/fr/menu/combos.mdx#price)
@@ -469,11 +468,12 @@ Identifiant : `orders-managing-orders`. Public : public. Disponibilité : availa
 - [Vérifier les choix conditionnels d’un article](../../src/content/help/fr/orders/managing-orders.mdx#conditional-item-choices)
 - [Suivre toutes les commandes enregistrées entre caisse et Admin](../../src/content/help/fr/orders/managing-orders.mdx#all-channel-order-tracking)
 - [Retrouver une vente caisse après paiement](../../src/content/help/fr/orders/managing-orders.mdx#paid-counter-orders)
+- [Contacter les clients par WhatsApp](../../src/content/help/fr/orders/managing-orders.mdx#unified-order-whatsapp-selection)
 - [Naviguer dans une vente mobile](../../src/content/help/fr/orders/managing-orders.mdx#mobile-terminal)
 
 ### [Types de commandes et remise](../../src/content/help/fr/orders/order-types.mdx)
 
-Identifiant : `order-types`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodypos, foodyweb.
+Identifiant : `order-types`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb, foodypos.
 
 - [Encaisser les espèces selon le type de commande](../../src/content/help/fr/orders/order-types.mdx#pos-cash-by-order-type)
 - [Vérifier le plafond de préautorisation au poids](../../src/content/help/fr/orders/order-types.mdx#weight-hold-margin)
@@ -493,6 +493,7 @@ Identifiant : `order-types`. Public : public. Disponibilité : available. Servic
 - [Choisir le traitement de toute l’addition POS](../../src/content/help/fr/orders/order-types.mdx#pos-whole-check)
 - [Donner une consigne de préparation différente à un article](../../src/content/help/fr/orders/order-types.mdx#pos-item-method)
 - [Changer le service d’un brouillon non affecté](../../src/content/help/fr/orders/order-types.mdx#pos-change-draft)
+- [Garder le contexte client privé sur l’addition](../../src/content/help/fr/orders/order-types.mdx#pos-private-guest-context)
 
 ### [Prendre une commande sur la caisse](../../src/content/help/fr/orders/taking-an-order-pos.mdx)
 
@@ -545,7 +546,7 @@ Identifiant : `calendar`. Public : public. Disponibilité : available. Services 
 
 ### [Précommandes, créneaux et séries](../../src/content/help/fr/orders/preorders-and-batches.mdx)
 
-Identifiant : `preorders`. Public : public. Disponibilité : available. Services : foodyadmin, foodypos, foodyweb.
+Identifiant : `preorders`. Public : public. Disponibilité : available. Services : foodyadmin, foodyweb, foodypos.
 
 - [Choisir la politique de prise de commande](../../src/content/help/fr/orders/preorders-and-batches.mdx#policy)
 - [Configurer les créneaux](../../src/content/help/fr/orders/preorders-and-batches.mdx#slots)
@@ -786,11 +787,11 @@ Identifiant : `website-pages`. Public : public. Disponibilité : available. Serv
 
 Identifiant : `pos-service-modes`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodypos.
 
-- [Consulter et modifier les Modes dans Admin](../../src/content/help/fr/settings/service-mode.mdx#modes-dashboard)
-- [Revenir à l’accueil après l’envoi et ouvrir une nouvelle vente](../../src/content/help/fr/settings/service-mode.mdx#send-home-new-sale)
 - [Choisir un profil de mode](../../src/content/help/fr/settings/service-mode.mdx#mode)
 - [Configurer le service à table et au comptoir](../../src/content/help/fr/settings/service-mode.mdx#service)
 - [Garder la remise indépendante](../../src/content/help/fr/settings/service-mode.mdx#fulfillment)
+- [Consulter et modifier les Modes dans Admin](../../src/content/help/fr/settings/service-mode.mdx#modes-dashboard)
+- [Revenir à l’accueil après l’envoi et ouvrir une nouvelle vente](../../src/content/help/fr/settings/service-mode.mdx#send-home-new-sale)
 
 ### [Traitement des commandes et flux cuisine](../../src/content/help/fr/settings/workflow-settings.mdx)
 
@@ -835,6 +836,7 @@ Identifiant : `fulfillment-policy`. Public : public. Disponibilité : available.
 - [Code caisse à l’activation du personnel](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#staff-activation-pos-code)
 - [Reprendre une livraison après un départ de test](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#delivery-test-departure-recovery)
 - [Vérifier les choix conditionnels d’un article](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#conditional-item-choices)
+- [Vérifier la compatibilité de la fiche client POS](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#pos-customer-screen-version)
 
 ### [Comportement POS, services et ajustements](../../src/content/help/fr/settings/pos-behavior.mdx)
 
@@ -848,8 +850,8 @@ Identifiant : `pos-behavior`. Public : public. Disponibilité : available. Servi
 - [Configurer les modes de traitement de la caisse](../../src/content/help/fr/settings/pos-behavior.mdx#fulfillment-methods)
 - [Choisir quand demander le mode au personnel](../../src/content/help/fr/settings/pos-behavior.mdx#fulfillment-prompt)
 - [Utiliser les additions ouvertes pour les ventes sur place](../../src/content/help/fr/settings/pos-behavior.mdx#tableless-open-checks)
-- [Choisir un contact existant ou saisir les coordonnées de commande](../../src/content/help/fr/settings/pos-behavior.mdx#fulfillment-order-contact-entry)
 - [Demander les informations client pour un mode](../../src/content/help/fr/settings/pos-behavior.mdx#fulfillment-customer)
+- [Choisir un contact existant ou saisir les coordonnées de commande](../../src/content/help/fr/settings/pos-behavior.mdx#fulfillment-order-contact-entry)
 - [Régler la caisse sur un écran compact](../../src/content/help/fr/settings/pos-behavior.mdx#mobile-terminal-pages)
 
 ### [Appareils et écrans cuisine](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx)
@@ -894,7 +896,7 @@ Identifiant : `external-api-quotas`. Public : public. Disponibilité : available
 
 ### [Plans de salle, tables et QR codes](../../src/content/help/fr/tables-floors/floor-plans.mdx)
 
-Identifiant : `floor-plans`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodypos, foodyweb.
+Identifiant : `floor-plans`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb, foodypos.
 
 - [Créer un plan](../../src/content/help/fr/tables-floors/floor-plans.mdx#plan)
 - [Organiser les zones de service](../../src/content/help/fr/tables-floors/floor-plans.mdx#sections)
@@ -1065,7 +1067,7 @@ Identifiant : `message-templates`. Public : public. Disponibilité : available. 
 
 ### [Commander en ligne côté client](../../src/content/help/fr/guest/online-ordering.mdx)
 
-Identifiant : `guest-ordering`. Public : public. Disponibilité : available. Services : foodyserver, foodyweb.
+Identifiant : `guest-ordering`. Public : public. Disponibilité : available. Services : foodyweb.
 
 - [Vérifier le plafond de préautorisation au poids](../../src/content/help/fr/guest/online-ordering.mdx#weight-hold-margin)
 - [Composer le panier](../../src/content/help/fr/guest/online-ordering.mdx#basket)
@@ -1075,11 +1077,10 @@ Identifiant : `guest-ordering`. Public : public. Disponibilité : available. Ser
 - [Se connecter avant de commander](../../src/content/help/fr/guest/online-ordering.mdx#customer-sign-in-methods)
 - [Accès aux nouveaux réglages](../../src/content/help/fr/guest/online-ordering.mdx#related-service-controls)
 - [Vérifier les choix conditionnels d’un article](../../src/content/help/fr/guest/online-ordering.mdx#conditional-item-choices)
-- [Renseigner un téléphone valide](../../src/content/help/fr/guest/online-ordering.mdx#contact-phone)
 
 ### [Suivi, reçus et moyens enregistrés](../../src/content/help/fr/guest/tracking-and-account.mdx)
 
-Identifiant : `guest-account-tracking`. Public : public. Disponibilité : available. Services : foodyserver, foodylanding, foodyweb.
+Identifiant : `guest-account-tracking`. Public : public. Disponibilité : available. Services : foodyserver, foodyweb, foodylanding.
 
 - [Se connecter avant de commander](../../src/content/help/fr/guest/tracking-and-account.mdx#entry-sign-in)
 - [Lire l’état de commande](../../src/content/help/fr/guest/tracking-and-account.mdx#tracking)
@@ -1103,7 +1104,6 @@ Identifiant : `guest-catering`. Public : public. Disponibilité : available. Ser
 
 - [Compléter le parcours catering](../../src/content/help/fr/guest/catering-request.mdx#request)
 - [Commander pour une tournée précise](../../src/content/help/fr/guest/catering-request.mdx#tour)
-- [Renseigner un téléphone valide](../../src/content/help/fr/guest/catering-request.mdx#contact-phone)
 
 ## internal
 
@@ -1189,7 +1189,7 @@ Identifiant : `design-sandboxes`. Public : internal. Disponibilité : available.
 
 ### [Socle applicatif partagé](internal/fr/shared-runtime.md)
 
-Identifiant : `shared-runtime`. Public : internal. Disponibilité : available. Services : foodyadmin, foodypos, foodylanding, foodyweb, foodybackoffice.
+Identifiant : `shared-runtime`. Public : internal. Disponibilité : available. Services : foodyadmin, foodyweb, foodylanding, foodypos, foodybackoffice.
 
 - [Rembourser ou annuler un paiement en ligne Verifone](internal/fr/shared-runtime.md#verifone-admin-money-operations)
 - [Vérifier le plafond de préautorisation au poids](internal/fr/shared-runtime.md#weight-hold-margin)
@@ -1203,8 +1203,8 @@ Identifiant : `shared-runtime`. Public : internal. Disponibilité : available. S
 - [Vérifier l’accès discret à la connexion](internal/fr/shared-runtime.md#optional-entry-access)
 - [Contrat des modificateurs conditionnels](internal/fr/shared-runtime.md#modifier-position-contract)
 - [Contrat des dimensions de variante](internal/fr/shared-runtime.md#descriptive-variant-contract)
-- [Vérifier les surfaces du terminal mobile](internal/fr/shared-runtime.md#mobile-terminal)
 - [Vérifier le panneau WhatsApp unifié](internal/fr/shared-runtime.md#unified-whatsapp-order-composer)
+- [Vérifier les surfaces du terminal mobile](internal/fr/shared-runtime.md#mobile-terminal)
 - [Vérifier les pages compactes du terminal](internal/fr/shared-runtime.md#mobile-terminal-pages)
 
 ## Traçabilité détaillée
