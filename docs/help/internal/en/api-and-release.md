@@ -147,3 +147,9 @@ GET /api/v1/restaurants/:id/whatsapp/meta/templates/:templateId/image reads an a
 ## Verify the current batch without orders
 
 GET /api/v1/orders/series keeps the existing sorted fulfillment dates and aggregates, then includes the current batch’s service days without creating an order. Optional is_current marks one default date: the operational batch’s first fulfillment day that has not passed. The batch stays current through its final day in restaurant time. Menu selection and public ordering rules keep their separate resolution. The client refreshes every visible minute and on tab return; Home and Orders follow the current batch while preserving history chosen on the open page and explicit payment-attention links. Validate cutoff boundaries, local midnight, DST, multiple fulfillment days, tenant isolation, zero orders and existing aggregates. Deploy API before Admin and publish procedures with the feature.
+
+<span id="manual-weekly-ordering" />
+
+## Control weekly ordering manually
+
+Migration 277 adds restaurant_settings.batch_ordering_mode (calendar default, or manual). Scoped settings GET/PUT expose batch_ordering_mode; invalid values fail before persistence. Batch preview accepts the mode. Public/staff batch configs expose ordering_mode; manual mode returns empty opening/cutoff timestamps and uses the operational current series for dates and rotating-menu references. Manual admission bypasses only automatic intake clocks (weekly and pickup/delivery opening hours). orders_paused, rush mode, enabled services, restaurant ownership, test access, preparation, stock, payment and fulfillment-date validation remain authoritative. Entering manual mode clears a scheduled reopening while retaining the effective pause. Existing orders are not updated. Deploy API migration 277 before Admin/Web/POS; stage and verify all artifacts before production promotion.
