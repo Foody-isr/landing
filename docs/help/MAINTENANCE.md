@@ -206,7 +206,7 @@ courier-selection branches. It includes only the courier selector, scoped courie
 operations, their FR/HE/EN procedures and the synchronized public support corpus.
 Uncommitted carte-picker and POS presentation changes in the shared workspace are
 excluded. Web, POS and Backoffice service blocks and source surfaces are retained
-from Landing commit `97f9e0ab89e46e6d581ebf5a5e3ece1349759328`; they are unchanged
+from Landing commit `31e01a3d27f5a762ac561ca270935ee432727f40`; they are unchanged
 baseline evidence, not a new validation of those services. Pin this documentation
 commit in API and Admin before opening their PRs. Deploy API before Admin, and
 publish the corresponding guides with the feature release.
