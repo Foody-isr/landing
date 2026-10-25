@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-24'
+updatedAt: '2026-10-25'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -135,3 +135,9 @@ Option groups carry an item-specific role: price retains the absolute priced var
 ## Verify the unified WhatsApp composer
 
 The shared Admin composer handles individual orders and current-page selections through existing preview/send endpoints, without a new dispatch route, migration, API free text or changed automation triggers. App drafts stay local and require confirmation before discarding. Uncertain results retain their original dispatch ID across message-type changes. GET /restaurants/:id/message-templates admits settings.view or orders.manage behind EnforceRestaurantAccess; PUT and DELETE still require settings.edit. No credentials become readable. FR/HE/EN copy and the order/WhatsApp procedures cover the controls. Verify lost responses, partially eligible queues, changed orders and mobile RTL with synthetic fixtures; interface verification must not send real messages. WORKSPACE is a local-review pin only: replace it with an authorized immutable Landing commit before CI/publication and deploy the API before its matching Admin.
+
+<span id="meta-template-image-proxy" />
+
+## Meta WhatsApp template image
+
+GET /api/v1/restaurants/:id/whatsapp/meta/templates/:templateId/image reads an approved Utility template image belonging to the restaurant’s Meta account. JWT, restaurant access and settings-read or order permissions are required. Responses are private and uncached, with verified JPEG/PNG bytes and a 5 MB limit. Signed Meta URLs and credentials are never returned. Previews and sends automatically include the Meta image when no file was explicitly selected; changed image content invalidates the previous manual confirmation. Retrieval failure returns an error without sending text alone.

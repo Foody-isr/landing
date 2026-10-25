@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - communications
   - whatsapp
-updatedAt: '2026-10-24'
+updatedAt: '2026-10-25'
 featureId: whatsapp
 audience: public
 releaseStatus: available
@@ -34,7 +34,7 @@ Dans la communication de commande, consultez envoyé, livré, lu, échec et bloc
 
 ## Créer un modèle avec photo ou PDF
 
-Dans Paramètres → Communications → WhatsApp, un utilisateur autorisé à modifier les réglages peut ouvrir Créer un modèle. Choisissez le type de notification, la langue et un nouveau nom, puis Pièce jointe au message : Photo ou Document PDF. Pour une photo, ajoutez un JPEG/PNG de 5 Mo maximum ; pour un PDF fixe, ajoutez un PDF de 10 Mo maximum. Pour le reçu de chaque commande, choisissez Document PDF puis Document à envoyer → Reçu de cette commande. Le serveur utilise un document fictif pour la validation Meta. Relisez le texte et soumettez le modèle. Attendez son approbation Utility avant de l’associer à une notification. Un modèle textuel existant ne reçoit pas une pièce jointe ajoutée après coup : créez un nouveau modèle avec le bon type.
+Dans Paramètres → Communications → WhatsApp, un utilisateur autorisé à modifier les réglages peut ouvrir Créer un modèle. Choisissez le type de notification, la langue et un nouveau nom, puis Pièce jointe au message : Photo ou Document PDF. Pour une photo, ajoutez un JPEG/PNG de 5 Mo maximum ; pour un PDF fixe, ajoutez un PDF de 10 Mo maximum. Pour le reçu de chaque commande, choisissez Document PDF puis Document à envoyer → Reçu de cette commande. Le serveur utilise un document fictif pour la validation Meta. Relisez le texte et soumettez le modèle. Attendez son approbation Utility avant de l’associer à une notification. La création depuis Foody prépare le fichier de validation ; pour un modèle modifié directement dans Meta, consultez la synchronisation de l’image ci-dessous.
 
 <span id="media-library" />
 
@@ -67,3 +67,9 @@ Prérequis : avoir l’autorisation de gérer les commandes. Pour l’envoi depu
 5. Dans l’application, choisissez la confirmation, les informations de livraison ou le lien du reçu. La langue commence par celle du client, avec la langue du restaurant comme repli. Vous pouvez modifier chaque texte et sa langue. **Ouvrir WhatsApp** ouvre uniquement la conversation sélectionnée ; envoyez dans WhatsApp, puis revenez au panneau pour choisir le prochain destinataire. Foody indique seulement **WhatsApp ouvert**, sans confirmer l’envoi ni la réception. Abandonner un texte modifié demande confirmation.
 
 **Résultat et récupération :** les statuts Business distinguent l’acceptation de la livraison et de la lecture lorsque le prestataire les fournit. **Actualiser** vérifie une tentative existante sans la renvoyer. Une réponse perdue reste non confirmée et n’est pas rejouée automatiquement. Si une commande ou un modèle a changé, les envois restants s’arrêtent : actualisez et relisez. Corrigez les données ou les réglages manquants, puis actualisez les aperçus indisponibles. Autorisez les fenêtres surgissantes si l’application ne s’ouvre pas. **Messages au client** conserve l’historique suivi. Les automatismes du parcours gardent leurs modèles et déclencheurs ; ouvrir ce panneau ne les active ni ne les modifie.
+
+<span id="meta-template-image-sync" />
+
+## Récupérer automatiquement l’image du modèle Meta
+
+Prérequis : un modèle Utility approuvé avec une en-tête Photo dans le compte Meta connecté. Dans Paramètres → Communications → WhatsApp, ouvrez Configurer sur le message : Foody relit les modèles et récupère automatiquement leur image Meta. L’aperçu affiche l’image au-dessus du texte, sans ajout de fichier dans Foody. Une sélection existante sans fichier suit aussi l’image Meta. Si vous aviez choisi une image locale, sélectionnez Image du modèle Meta dans Photo, puis Terminé et Enregistrer pour utiliser celle de Meta. Les fichiers locaux explicitement sélectionnés restent conservés. Actualiser les modèles et la connexion relit les modifications faites dans Meta. Les aperçus de satisfaction et des étapes du parcours utilisent aussi cette image ; le panneau d’envoi de commande affiche la pièce jointe réelle. L’image doit être un JPEG/PNG accessible depuis Meta, au maximum 5 Mo. Si sa récupération échoue, l’aperçu propose Actualiser et l’envoi échoue sans envoyer le texte seul. Vérifiez l’image dans Meta si le lien n’est plus disponible. Une image modifiée après la préparation d’un envoi manuel exige un nouvel aperçu avant l’envoi. L’ouverture et l’actualisation n’envoient aucun message.

@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - communications
   - whatsapp
-updatedAt: '2026-10-24'
+updatedAt: '2026-10-25'
 featureId: whatsapp
 audience: public
 releaseStatus: available
@@ -34,7 +34,7 @@ In the order’s communication panel inspect sent, delivered, read, failed and b
 
 ## Create a model with a photo or PDF
 
-In Settings → Communications → WhatsApp, a user with settings-edit permission can open Create a model. Choose the notification type, language and a new name, then Message attachment: Photo or PDF document. Upload a JPEG/PNG up to 5 MB for a photo, or a PDF up to 10 MB for a fixed document. For each order’s own receipt, choose PDF document then Document to send → Receipt for this order. The server uses a fictional sample document for Meta approval. Review the text and submit. Wait for Utility approval before assigning the model to a notification. An existing text-only model cannot gain an attachment afterward; create a new model with the required header type.
+In Settings → Communications → WhatsApp, a user with settings-edit permission can open Create a model. Choose the notification type, language and a new name, then Message attachment: Photo or PDF document. Upload a JPEG/PNG up to 5 MB for a photo, or a PDF up to 10 MB for a fixed document. For each order’s own receipt, choose PDF document then Document to send → Receipt for this order. The server uses a fictional sample document for Meta approval. Review the text and submit. Wait for Utility approval before assigning the model to a notification. Creation in Foody prepares the approval sample; for a model edited directly in Meta, see image synchronization below.
 
 <span id="media-library" />
 
@@ -67,3 +67,9 @@ Prerequisites: permission to manage orders. Sending from Foody requires an alrea
 5. In the app channel, choose confirmation, delivery information or receipt link. Language starts with the customer’s language, falling back to the restaurant’s language. Each draft and language can be edited. **Open WhatsApp** opens only the selected conversation; send inside WhatsApp, then return to select the next recipient. Foody reports only **WhatsApp opened**, without claiming sending or delivery. Discarding edited text requires confirmation.
 
 **Result and recovery:** Business statuses distinguish acceptance from delivery and reading when reported by the provider. **Refresh** checks the original attempt without resending it. A lost response remains unconfirmed and is never replayed automatically. If an order or model changes, remaining sends stop: refresh and review again. Correct missing saved details or configuration, then refresh unavailable previews. Allow pop-ups if the app does not open. **Customer messages** retains tracked history. Workflow automations keep their configured models and triggers; opening this panel does not activate or change them.
+
+<span id="meta-template-image-sync" />
+
+## Automatically retrieve the Meta template image
+
+Prerequisite: an approved Utility template with a Photo header in the connected Meta account. In Settings → Communications → WhatsApp, open Configure for the message: Foody reloads the templates and automatically retrieves their Meta image. The preview displays the image above the text without uploading a file to Foody. An existing selection without a file also follows the Meta image. If you previously selected a local image, choose Image from Meta template under Photo, then Done and Save to use Meta’s image. Explicit local file selections are preserved. Refresh templates and connection reloads edits made in Meta. Satisfaction and workflow-stage previews also use this image; the order composer displays the actual attachment. The image must be a JPEG/PNG accessible from Meta, up to 5 MB. If retrieval fails, the preview offers Refresh and sending fails without a text-only fallback. Check the image in Meta if its link is unavailable. An image changed after a manual send was prepared requires a new preview before sending. Opening and refreshing never sends a message.

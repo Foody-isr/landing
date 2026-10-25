@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-24'
+updatedAt: '2026-10-25'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -135,3 +135,9 @@ validate-invite מחזיר pos_pin_required לפי הרשאות השיוך הע�
 ## בדיקת פאנל WhatsApp המאוחד
 
 פאנל הניהול המשותף מטפל בהזמנה יחידה ובבחירה בעמוד דרך נתיבי התצוגה המקדימה והשליחה הקיימים, ללא נתיב שליחה חדש, מיגרציה, טקסט חופשי ב-API או שינוי טריגרים. טיוטות האפליקציה נשארות מקומיות ודורשות אישור לפני ויתור. תוצאות לא ודאיות שומרות על מזהה הניסיון המקורי גם בהחלפת סוג הודעה. GET /restaurants/:id/message-templates מאפשר settings.view או orders.manage מאחורי EnforceRestaurantAccess; PUT ו-DELETE עדיין דורשים settings.edit. אין גישה חדשה לאישורים סודיים. תרגומי FR/HE/EN ונהלי ההזמנות ו-WhatsApp מתעדים את הבקרות. יש לבדוק תשובות שאבדו, תור כשיר חלקית, הזמנה שהשתנתה ותצוגת RTL בנייד באמצעות נתונים סינתטיים, בלי לשלוח הודעות אמיתיות. WORKSPACE מיועד לבדיקה מקומית בלבד: לפני CI או פרסום יש להצמיד commit Landing קבוע ומאושר ולהפיץ את ה-API לפני ממשק הניהול התואם.
+
+<span id="meta-template-image-proxy" />
+
+## תמונת תבנית Meta WhatsApp
+
+GET /api/v1/restaurants/:id/whatsapp/meta/templates/:templateId/image קורא תמונה מתבנית Utility מאושרת בחשבון Meta של העסק. נדרשים JWT, גישה לעסק והרשאות קריאת הגדרות או הזמנות. התשובות פרטיות וללא מטמון, עם תוכן JPEG/PNG מאומת ועד 5 MB. כתובות Meta חתומות ופרטי גישה אינם מוחזרים. תצוגות מקדימות ושליחות כוללות אוטומטית את תמונת Meta אם לא נבחר קובץ מפורש; שינוי תוכן התמונה מבטל אישור ידני קודם. כשל אחזור מחזיר שגיאה ללא שליחת טקסט בלבד.
