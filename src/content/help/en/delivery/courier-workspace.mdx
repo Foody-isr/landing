@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - delivery
   - courier
-updatedAt: '2026-10-22'
+updatedAt: '2026-10-25'
 featureId: courier
 audience: public
 releaseStatus: available
@@ -55,3 +55,9 @@ On mobile, drag the handle above the list to choose a compact, balanced or expan
 ## Correct a test departure
 
 If you start a route accidentally, tell a manager before recording any arrival or delivery. In Orders → Deliveries, a user with order-management permission can choose Undo departure while every stop is pending, then unassign and reallocate the route. Out for delivery orders return to In preparation and the replacement courier can start after reassignment. Courier mode does not offer this management correction. Previously sent messages remain in the history.
+
+<span id="superadmin-courier-selection" />
+
+## View another courier’s workspace
+
+With a superadmin account, open the relevant restaurant, then Orders → Courier mode. Under View as courier, select a courier from that restaurant; the first in the list is selected initially. You see the same map, unfinished routes and stops as that courier. Change the selection at any time to display the new courier’s routes; the previous selected stop, search and panels are reset. Displayed actions, including Start route and Mark delivered, really change that courier’s deliveries: use them only to record work that has taken place. The signed-in account remains superadmin and its GPS position is not reported as the courier’s. Other accounts keep their own routes without this selector. If no couriers are configured, have the restaurant’s team roles checked. If loading fails, choose Retry; a removed membership or a courier from another restaurant is rejected by the server.

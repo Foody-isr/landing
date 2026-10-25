@@ -197,3 +197,16 @@ Live AI verification requires explicit user authorization for paid calls and use
 only synthetic product questions. Check answer language, procedure correctness
 against the rendered source, citation relevance, citation locale, public URL and
 corpus revision. An HTTP 200 or an existing citation alone is not a semantic pass.
+
+
+## Superadmin courier-selection release scope (25 October 2026)
+
+This release refreshes API, Admin and Landing evidence from isolated develop-based
+courier-selection branches. It includes only the courier selector, scoped courier
+operations, their FR/HE/EN procedures and the synchronized public support corpus.
+Uncommitted carte-picker and POS presentation changes in the shared workspace are
+excluded. Web, POS and Backoffice service blocks and source surfaces are retained
+from Landing commit `97f9e0ab89e46e6d581ebf5a5e3ece1349759328`; they are unchanged
+baseline evidence, not a new validation of those services. Pin this documentation
+commit in API and Admin before opening their PRs. Deploy API before Admin, and
+publish the corresponding guides with the feature release.

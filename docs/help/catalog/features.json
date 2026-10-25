@@ -6115,12 +6115,25 @@
           "en": "With order-management permission, open Orders → Deliveries, select the route date and choose Undo departure. This action is offered only for an active route whose stops are all pending. Confirm: the route returns to a draft and Out for delivery orders return to In preparation. Orders already corrected to Accepted, In preparation or Ready for delivery keep their status. The courier remains assigned; then use Unassign and allocate the orders to the correct courier. The date, addresses, stop order and payments are preserved. This undo sends no customer message or kitchen ticket; previously sent messages and their history are retained. If an arrival, delivery or skipped stop has been recorded, or the route changed meanwhile, undo is rejected: refresh and review progress before another correction. Do not mark orders delivered to unlock an assignment.",
           "he": "עם הרשאת ניהול הזמנות, פתחו הזמנות → משלוחים, בחרו את תאריך המסלול ולחצו על ביטול היציאה. הפעולה מוצעת רק למסלול פעיל שכל עצירותיו עדיין בהמתנה. אשרו: המסלול חוזר לטיוטה והזמנות שיצאו למשלוח חוזרות להכנה. הזמנות שכבר תוקנו למצב אושרה, בהכנה או מוכנה למשלוח שומרות על מצבן. השליח נשאר משויך; לאחר מכן בטלו את השיוך והקצו את ההזמנות לשליח הנכון. התאריך, הכתובות, סדר העצירות והתשלומים נשמרים. הביטול אינו שולח הודעה ללקוח או כרטיס מטבח; הודעות שכבר נשלחו וההיסטוריה שלהן נשמרות. אם נרשמו הגעה, מסירה או דילוג על עצירה, או אם המסלול השתנה בינתיים, הביטול נדחה: רעננו ובדקו את ההתקדמות לפני תיקון נוסף. אין לסמן הזמנות כנמסרו כדי לשחרר שיוך."
         }
+      },
+      {
+        "id": "superadmin-courier-mode",
+        "title": {
+          "fr": "Consulter le mode d’un autre livreur",
+          "en": "View another courier’s workspace",
+          "he": "צפייה בסביבת שליח אחר"
+        },
+        "instructions": {
+          "fr": "Un superadmin peut ouvrir Commandes → Mode livreur et choisir un livreur du restaurant dans Voir comme livreur. La carte et les tournées sont celles du livreur choisi ; les actions enregistrent de vrais changements et le GPS du superadmin n’est pas partagé pour lui. Voir [la procédure du mode livreur](/fr/help/delivery/courier-workspace#superadmin-courier-selection), y compris le changement de livreur et la récupération après erreur.",
+          "en": "A superadmin can open Orders → Courier mode and select a restaurant courier under View as courier. The map and routes belong to that courier; actions record real changes and the superadmin’s GPS is not shared for them. See [the courier-mode procedure](/en/help/delivery/courier-workspace#superadmin-courier-selection), including switching couriers and recovering from errors.",
+          "he": "סופר־אדמין יכול לפתוח הזמנות → מצב שליח ולבחור שליח של המסעדה תחת צפייה בתור שליח. המפה והמסלולים שייכים לשליח שנבחר; הפעולות מבצעות שינויים אמיתיים ומיקום הסופר־אדמין אינו משותף בשמו. ראו [הנחיות מצב שליח](/he/help/delivery/courier-workspace#superadmin-courier-selection), כולל החלפת שליח והתאוששות משגיאות."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-22",
+    "procedureUpdatedAt": "2026-10-25",
     "updatedAt": "2026-10-20"
   },
   {
@@ -6238,12 +6251,25 @@
           "en": "If you start a route accidentally, tell a manager before recording any arrival or delivery. In Orders → Deliveries, a user with order-management permission can choose Undo departure while every stop is pending, then unassign and reallocate the route. Out for delivery orders return to In preparation and the replacement courier can start after reassignment. Courier mode does not offer this management correction. Previously sent messages remain in the history.",
           "he": "אם התחלתם מסלול בטעות, הודיעו למנהל לפני רישום הגעה או מסירה. בהזמנות → משלוחים, משתמש עם הרשאת ניהול הזמנות יכול לבחור ביטול היציאה כל עוד כל העצירות בהמתנה, ולאחר מכן לבטל שיוך ולהקצות מחדש את המסלול. הזמנות שיצאו למשלוח חוזרות להכנה והשליח החלופי יוכל להתחיל לאחר השיוך מחדש. תיקון ניהולי זה אינו מוצע במצב שליח. הודעות שכבר נשלחו נשמרות בהיסטוריה."
         }
+      },
+      {
+        "id": "superadmin-courier-selection",
+        "title": {
+          "fr": "Consulter le mode d’un autre livreur",
+          "en": "View another courier’s workspace",
+          "he": "צפייה בסביבת שליח אחר"
+        },
+        "instructions": {
+          "fr": "Avec un compte superadmin, ouvrez le restaurant concerné puis Commandes → Mode livreur. Dans Voir comme livreur, choisissez un livreur du restaurant ; le premier de la liste est sélectionné à l’ouverture. Vous consultez le même écran de carte, de tournées non terminées et d’arrêts que ce livreur. Changez ce choix à tout moment pour afficher les tournées du nouveau livreur ; l’arrêt sélectionné, la recherche et les panneaux précédents sont réinitialisés. Les actions affichées, dont Démarrer la tournée et Marquer livrée, agissent réellement sur ses livraisons : ne les utilisez que pour enregistrer une opération effectuée. Le compte connecté reste superadmin et sa position GPS n’est pas envoyée comme celle du livreur. Les autres comptes conservent leurs propres tournées sans ce sélecteur. Si aucun livreur n’est configuré, faites vérifier les rôles de l’équipe du restaurant. En cas d’échec de chargement, utilisez Réessayer ; une affectation supprimée ou un livreur d’un autre restaurant est refusé par le serveur.",
+          "en": "With a superadmin account, open the relevant restaurant, then Orders → Courier mode. Under View as courier, select a courier from that restaurant; the first in the list is selected initially. You see the same map, unfinished routes and stops as that courier. Change the selection at any time to display the new courier’s routes; the previous selected stop, search and panels are reset. Displayed actions, including Start route and Mark delivered, really change that courier’s deliveries: use them only to record work that has taken place. The signed-in account remains superadmin and its GPS position is not reported as the courier’s. Other accounts keep their own routes without this selector. If no couriers are configured, have the restaurant’s team roles checked. If loading fails, choose Retry; a removed membership or a courier from another restaurant is rejected by the server.",
+          "he": "בחשבון סופר־אדמין פתחו את המסעדה הרצויה ואז הזמנות → מצב שליח. תחת צפייה בתור שליח בחרו שליח של המסעדה; השליח הראשון ברשימה נבחר בפתיחה. מוצגים אותם מפה, מסלולים שטרם הושלמו ועצירות שהשליח רואה. ניתן להחליף שליח בכל עת; העצירה הנבחרת, החיפוש והחלוניות הקודמים מתאפסים. הפעולות המוצגות, כולל תחילת מסלול וסמן נמסר, משנות בפועל את המשלוחים שלו: השתמשו בהן רק לרישום פעולה שבוצעה. החשבון המחובר נשאר סופר־אדמין ומיקום ה־GPS שלו אינו מדווח כמיקום השליח. חשבונות אחרים ממשיכים לראות את המסלולים שלהם ללא בורר זה. אם לא הוגדרו שליחים, בקשו לבדוק את תפקידי צוות המסעדה. בכשל טעינה לחצו ניסיון חוזר; השרת דוחה שיוך שהוסר או שליח של מסעדה אחרת."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-22"
+    "procedureUpdatedAt": "2026-10-25"
   },
   {
     "id": "maps-usage",

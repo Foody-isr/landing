@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - delivery
   - courier
-updatedAt: '2026-10-22'
+updatedAt: '2026-10-25'
 featureId: courier
 audience: public
 releaseStatus: available
@@ -55,3 +55,9 @@ Sur mobile, faites glisser la poignée en haut de la liste pour choisir une vue 
 ## Corriger un démarrage de test
 
 Si vous avez démarré une tournée par erreur, prévenez un responsable avant d’enregistrer une arrivée ou une livraison. Dans Commandes → Livraisons, un utilisateur autorisé à gérer les commandes peut choisir Annuler le départ tant que tous les arrêts restent en attente, puis désassigner et réaffecter la tournée. Les commandes En livraison reviennent En préparation et le nouveau livreur pourra démarrer après réaffectation. Le mode livreur ne propose pas cette correction de gestion. Les messages déjà envoyés restent dans l’historique.
+
+<span id="superadmin-courier-selection" />
+
+## Consulter le mode d’un autre livreur
+
+Avec un compte superadmin, ouvrez le restaurant concerné puis Commandes → Mode livreur. Dans Voir comme livreur, choisissez un livreur du restaurant ; le premier de la liste est sélectionné à l’ouverture. Vous consultez le même écran de carte, de tournées non terminées et d’arrêts que ce livreur. Changez ce choix à tout moment pour afficher les tournées du nouveau livreur ; l’arrêt sélectionné, la recherche et les panneaux précédents sont réinitialisés. Les actions affichées, dont Démarrer la tournée et Marquer livrée, agissent réellement sur ses livraisons : ne les utilisez que pour enregistrer une opération effectuée. Le compte connecté reste superadmin et sa position GPS n’est pas envoyée comme celle du livreur. Les autres comptes conservent leurs propres tournées sans ce sélecteur. Si aucun livreur n’est configuré, faites vérifier les rôles de l’équipe du restaurant. En cas d’échec de chargement, utilisez Réessayer ; une affectation supprimée ou un livreur d’un autre restaurant est refusé par le serveur.
