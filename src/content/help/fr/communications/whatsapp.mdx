@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - communications
   - whatsapp
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-24'
 featureId: whatsapp
 audience: public
 releaseStatus: available
@@ -53,3 +53,17 @@ Pour une livraison affectée à une tournée avec une marge client enregistrée,
 ## Choisir le mode d’envoi du rappel
 
 Les rappels WhatsApp approuvés peuvent être prévisualisés avant la veille, mais les boutons manuels restent bloqués jusqu’à la veille selon le fuseau du restaurant. Commandes → Livraisons → Rappels WhatsApp permet de vérifier et confirmer les rappels de toutes les tournées de la date choisie ; WhatsApp au client et Envoyer ce rappel traitent un seul client. Le message utilise le créneau d’arrivée calculé de la tournée enregistrée et le livreur affecté. Les boutons manuels utilisent le modèle de rappel global ; une étape automatique conserve le modèle et l’horaire explicitement configurés dans Parcours de commande. Pour envoyer uniquement la veille, choisissez ce timing sur l’étape, par exemple Prête. Aucun déclencheur n’est activé en ouvrant un aperçu. Un rappel déjà soumis, incertain ou échoué n’est jamais renvoyé par un autre mode, même si son texte ou son fournisseur change. Une modification avant envoi demande un aperçu actualisé. L’acceptation ne prouve pas la réception ; consultez Messages au client de la commande. Le texte de l’aperçu représente le calcul actuel, pas un ancien message enregistré.
+
+<span id="unified-order-whatsapp" />
+
+## Envoyer un message WhatsApp pour une ou plusieurs commandes
+
+Prérequis : avoir l’autorisation de gérer les commandes. Pour l’envoi depuis Foody, le numéro professionnel et le modèle approuvé doivent déjà être configurés et activés. La création ou la modification des modèles reste réservée aux réglages.
+
+1. Dans le détail d’une commande, cliquez sur **Envoyer un message WhatsApp**, sous les coordonnées du client ou dans **Actions**. Pour plusieurs commandes, cochez les lignes de la liste puis cliquez sur ce même bouton. La sélection concerne uniquement la page affichée, au maximum 25 commandes ; changer de filtre, de date, de page ou d’établissement l’efface.
+2. Choisissez **WhatsApp Business** pour envoyer depuis Foody, ou **Application WhatsApp** pour préparer un texte modifiable et l’envoyer vous-même.
+3. Avec Business, choisissez **Confirmation de commande**, **Rappel de livraison** ou **Satisfaction après commande**. Foody utilise le modèle global approuvé configuré pour ce message, avec sa langue et sa pièce jointe. Le panneau ne permet pas d’envoyer un texte libre par l’API ni de choisir un modèle arbitraire de la bibliothèque. Sélectionnez chaque destinataire pour vérifier le numéro, l’expéditeur et le contenu exact. Pour voir une pièce jointe, cliquez sur son nom.
+4. Seuls les aperçus prêts sont envoyables. Les coordonnées ou données manquantes, les rappels trop tôt et les tentatives déjà effectuées restent indiqués dans la liste. Le rappel conserve sa règle de date et exige le créneau enregistré et le livreur affecté ; la satisfaction exige une commande de livraison ou à emporter terminée et une configuration active. Cliquez sur **Envoyer le message** ou **Envoyer N messages**. Pour une sélection multiple, confirmez le nombre éligible. Chaque commande produit un message séparé ; un client ayant plusieurs commandes peut donc recevoir plusieurs messages.
+5. Dans l’application, choisissez la confirmation, les informations de livraison ou le lien du reçu. La langue commence par celle du client, avec la langue du restaurant comme repli. Vous pouvez modifier chaque texte et sa langue. **Ouvrir WhatsApp** ouvre uniquement la conversation sélectionnée ; envoyez dans WhatsApp, puis revenez au panneau pour choisir le prochain destinataire. Foody indique seulement **WhatsApp ouvert**, sans confirmer l’envoi ni la réception. Abandonner un texte modifié demande confirmation.
+
+**Résultat et récupération :** les statuts Business distinguent l’acceptation de la livraison et de la lecture lorsque le prestataire les fournit. **Actualiser** vérifie une tentative existante sans la renvoyer. Une réponse perdue reste non confirmée et n’est pas rejouée automatiquement. Si une commande ou un modèle a changé, les envois restants s’arrêtent : actualisez et relisez. Corrigez les données ou les réglages manquants, puis actualisez les aperçus indisponibles. Autorisez les fenêtres surgissantes si l’application ne s’ouvre pas. **Messages au client** conserve l’historique suivi. Les automatismes du parcours gardent leurs modèles et déclencheurs ; ouvrir ce panneau ne les active ni ne les modifie.

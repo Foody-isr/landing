@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - orders
   - order-detail
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-24'
 featureId: order-detail
 audience: public
 releaseStatus: available
@@ -52,7 +52,7 @@ Use only the next status actions offered for the order. Verify acceptance, kitch
 
 ## Send customer messages deliberately
 
-Open customer messages to inspect attempts and delivery evidence. Preview a recap/reminder before sending; an uncertain send must be checked, not repeated automatically.
+In order details, Send a WhatsApp message opens the shared Business/app composer. Customer messages retains tracked attempts and provider evidence. Follow the detailed procedure below for one order or a selection.
 
 <span id="whatsapp-attachment-review" />
 
@@ -95,3 +95,17 @@ Approved WhatsApp reminders can be previewed early, while manual buttons remain 
 ## Keep the order’s variant positions
 
 When adding an item configured with positions, choose a character or option in every required field before Add to order. The format price is counted once. Order details list each position separately from additions/removals; quantity and note edits preserve these choices. Review them before confirmation and preparation.
+
+<span id="unified-order-whatsapp" />
+
+## Send WhatsApp messages for one or several orders
+
+Prerequisites: permission to manage orders. Sending from Foody requires an already configured, active business number and approved model. Creating or editing models still requires settings access.
+
+1. In order details, click **Send a WhatsApp message** beneath the customer’s contact details or in **Actions**. For several orders, select list rows and click the same button. Selection covers only the displayed page, up to 25 orders; changing filters, date, page or restaurant clears it.
+2. Choose **WhatsApp Business** to send from Foody, or **WhatsApp app** to prepare editable text and send it yourself.
+3. With Business, choose **Order confirmation**, **Delivery reminder** or **Satisfaction after an order**. Foody uses the configured approved global model, including its actual language and attachment. This panel cannot send free text through the API or choose an arbitrary library model. Select each recipient to check the phone, sender and exact content. Click an attachment’s filename to preview it.
+4. Only ready previews can be sent. Missing details, reminders that are not due and previous attempts stay visible. Reminders retain their sending-date policy and need the saved delivery window and assigned courier; satisfaction requires a completed delivery or pickup order and active configuration. Click **Send message** or **Send N messages**. For multiple selected orders, confirm the eligible count. Each order produces a separate message; one customer with several orders may receive several messages.
+5. In the app channel, choose confirmation, delivery information or receipt link. Language starts with the customer’s language, falling back to the restaurant’s language. Each draft and language can be edited. **Open WhatsApp** opens only the selected conversation; send inside WhatsApp, then return to select the next recipient. Foody reports only **WhatsApp opened**, without claiming sending or delivery. Discarding edited text requires confirmation.
+
+**Result and recovery:** Business statuses distinguish acceptance from delivery and reading when reported by the provider. **Refresh** checks the original attempt without resending it. A lost response remains unconfirmed and is never replayed automatically. If an order or model changes, remaining sends stop: refresh and review again. Correct missing saved details or configuration, then refresh unavailable previews. Allow pop-ups if the app does not open. **Customer messages** retains tracked history. Workflow automations keep their configured models and triggers; opening this panel does not activate or change them.

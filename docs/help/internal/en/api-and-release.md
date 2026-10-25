@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-22'
+updatedAt: '2026-10-24'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -44,7 +44,7 @@ Deploy and validate the restaurant-scoped API migrations and routes before enabl
 
 ## Maintain scoped API contracts
 
-The inventory records each route registration, handler and source location. Group-relative fragments are not standalone URLs. Validate inputs, JWT roles and restaurant ownership at boundaries; public restaurant endpoints still need explicit scope. Update Go, TypeScript and Dart consumers when contracts change. Fulfillment customer information requires both the settings capability `pos_fulfillment_customer_information_supported` and grouped-send `customer_information`. Preserve an omitted method flag by stable ID; explicit false disables it. Validate and fingerprint customer_name/customer_phone/delivery_notes/delivery_apt/custom_fields atomically. Follow-up batches inherit only coherent snapshots; mixed guests and allocated bills cannot adopt replacement details. Grouped creation suppresses per-course customer confirmations without suppressing kitchen/staff events or independent status notifications. Tests must not send real notifications.
+The inventory records each route registration, handler and source location. Group-relative fragments are not standalone URLs. Validate inputs, JWT roles and restaurant ownership at boundaries; public restaurant endpoints still need explicit scope. Update Go, TypeScript and Dart consumers when contracts change. Fulfillment customer information requires both the settings capability `pos_fulfillment_customer_information_supported` and grouped-send `customer_information`. Preserve an omitted method flag by stable ID; explicit false disables it. Validate and fingerprint customer_name/customer_phone/delivery_notes/delivery_apt/custom_fields atomically. Follow-up batches inherit only coherent snapshots; mixed guests and allocated bills cannot adopt replacement details. Grouped creation suppresses per-course customer confirmations without suppressing kitchen/staff events or independent status notifications. Tests must not send real notifications. The staff-only pos_guest_details input contains first_name, last_name, identifier and note, advertised by checks/capabilities. Bounded normalized values inherit coherently on subsequent unsplit batches. Public creation clears this input and public disclosure strips the metadata. Deploy the API before enabling the matching client fields; older APIs leave them disabled. Preparation is local until the matching release is approved and published.
 
 <span id="release" />
 
@@ -129,3 +129,9 @@ Migration 274 adds selection_config to the item/group link and selection_index t
 ## Descriptive variant contract
 
 Option groups carry an item-specific role: price retains the absolute priced variant, while identity retains descriptive dimensions without changing price. selection_config conditions their positions on an independent priced format. Orders send option_selections separately from selected_variant_id and modifiers; positions and labels are snapshotted and guest clarifications remain private. Deploy migration 275 and the API before compatible clients. The server validates price, restaurant ownership and every choice. Historical groups retain their behavior until explicitly reconfigured.
+
+<span id="unified-whatsapp-order-composer" />
+
+## Verify the unified WhatsApp composer
+
+The shared Admin composer handles individual orders and current-page selections through existing preview/send endpoints, without a new dispatch route, migration, API free text or changed automation triggers. App drafts stay local and require confirmation before discarding. Uncertain results retain their original dispatch ID across message-type changes. GET /restaurants/:id/message-templates admits settings.view or orders.manage behind EnforceRestaurantAccess; PUT and DELETE still require settings.edit. No credentials become readable. FR/HE/EN copy and the order/WhatsApp procedures cover the controls. Verify lost responses, partially eligible queues, changed orders and mobile RTL with synthetic fixtures; interface verification must not send real messages. WORKSPACE is a local-review pin only: replace it with an authorized immutable Landing commit before CI/publication and deploy the API before its matching Admin.
