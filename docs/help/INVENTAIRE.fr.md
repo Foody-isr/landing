@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-10-18.
+Révision du relevé : 2026-10-25.
 
-100 fiches de fonctionnalités, 680 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2177 fichiers applicatifs et 2041 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+100 fiches de fonctionnalités, 690 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2177 fichiers applicatifs et 2042 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,10 +10,10 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 560 | 870 | 9ec2eb389555 ; versioned |
-| foodyadmin | 764 | 775 | b8b1b039f891 ; versioned |
-| foodyweb | 337 | 167 | dae28f9f7d46 ; versioned |
-| foodylanding | 127 | 21 | 4e604f2355c4 ; versioned |
+| foodyserver | 560 | 870 | eda4d8f3479f ; versioned |
+| foodyadmin | 764 | 776 | 3518f19d8ae6 ; versioned |
+| foodyweb | 337 | 167 | 134d38895731 ; versioned |
+| foodylanding | 127 | 21 | 5fe1fa9c8a65 ; versioned |
 | foodypos | 345 | 158 | d8f8dbd13b92 ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
 
@@ -70,6 +70,7 @@ Identifiant : `getting-started-using-support`. Public : public. Disponibilité :
 - [Préparer un compte Google propre à votre établissement](../../src/content/help/fr/getting-started/using-support.mdx#google-account-guide)
 - [Demander de l’aide sur les choix conditionnels](../../src/content/help/fr/getting-started/using-support.mdx#conditional-choice-help)
 - [Demander de l’aide sur un envoi WhatsApp](../../src/content/help/fr/getting-started/using-support.mdx#whatsapp-order-message-help)
+- [Vérifier une série qui vient de changer](../../src/content/help/fr/getting-started/using-support.mdx#weekly-series-support)
 
 ### [Offres, démonstration et contact Foody](../../src/content/help/fr/getting-started/offers-and-contact.mdx)
 
@@ -180,6 +181,7 @@ Identifiant : `analytics-dashboard`. Public : public. Disponibilité : available
 - [Vérifier la base de date](../../src/content/help/fr/analytics/dashboard.mdx#section-2)
 - [Comparaisons et données indisponibles](../../src/content/help/fr/analytics/dashboard.mdx#section-3)
 - [Rapports détaillés](../../src/content/help/fr/analytics/dashboard.mdx#section-4)
+- [Afficher automatiquement la série actuelle](../../src/content/help/fr/analytics/dashboard.mdx#weekly-series-rollover)
 
 ### [Assistant métier du restaurant](../../src/content/help/fr/analytics/business-assistant.mdx)
 
@@ -480,6 +482,7 @@ Identifiant : `orders-managing-orders`. Public : public. Disponibilité : availa
 - [Naviguer dans une vente mobile](../../src/content/help/fr/orders/managing-orders.mdx#mobile-terminal)
 - [Image du modèle WhatsApp](../../src/content/help/fr/orders/managing-orders.mdx#meta-template-image-preview)
 - [Choisir le destinataire WhatsApp du client](../../src/content/help/fr/orders/managing-orders.mdx#customer-whatsapp-recipient)
+- [Afficher automatiquement la série actuelle](../../src/content/help/fr/orders/managing-orders.mdx#weekly-series-rollover)
 
 ### [Types de commandes et remise](../../src/content/help/fr/orders/order-types.mdx)
 
@@ -564,6 +567,7 @@ Identifiant : `preorders`. Public : public. Disponibilité : available. Services
 - [Configurer les créneaux](../../src/content/help/fr/orders/preorders-and-batches.mdx#slots)
 - [Configurer une série](../../src/content/help/fr/orders/preorders-and-batches.mdx#batch)
 - [Vérifier paiement et exceptions produits](../../src/content/help/fr/orders/preorders-and-batches.mdx#prepayment)
+- [Afficher automatiquement la série actuelle](../../src/content/help/fr/orders/preorders-and-batches.mdx#weekly-series-rollover)
 
 ### [Quantités de production et préparation des colis](../../src/content/help/fr/orders/production-planning.mdx)
 
@@ -727,16 +731,18 @@ Identifiant : `website-qr-customize-your-site`. Public : public. Disponibilité 
 - [Menu et commandes](../../src/content/help/fr/website-qr/customize-your-site.mdx#section-3)
 - [Vérifier l’entrée de commande sur mobile](../../src/content/help/fr/website-qr/customize-your-site.mdx#mobile-fulfillment-review)
 - [Accès aux nouveaux réglages](../../src/content/help/fr/website-qr/customize-your-site.mdx#related-service-controls)
+- [Séparer les couleurs des cartes et des catégories](../../src/content/help/fr/website-qr/customize-your-site.mdx#menu-and-category-text-colors)
 
 ### [Apparence et identité du site](../../src/content/help/fr/website-qr/design-and-branding.mdx)
 
-Identifiant : `website-design`. Public : public. Disponibilité : available. Services : foodyadmin, foodyweb.
+Identifiant : `website-design`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb.
 
 - [Choisir un thème et les couleurs](../../src/content/help/fr/website-qr/design-and-branding.mdx#theme)
 - [Régler les polices et rôles de texte](../../src/content/help/fr/website-qr/design-and-branding.mdx#fonts)
 - [Cadrer les images des articles](../../src/content/help/fr/website-qr/design-and-branding.mdx#images)
 - [Vérifier l’entrée de commande sur mobile](../../src/content/help/fr/website-qr/design-and-branding.mdx#mobile-fulfillment-review)
 - [Accès aux nouveaux réglages](../../src/content/help/fr/website-qr/design-and-branding.mdx#related-service-controls)
+- [Séparer les couleurs des cartes et des catégories](../../src/content/help/fr/website-qr/design-and-branding.mdx#menu-and-category-text-colors)
 
 ### [En-tête, navigation et pied de page](../../src/content/help/fr/website-qr/navigation-and-footer.mdx)
 
@@ -762,7 +768,7 @@ Identifiant : `website-sections`. Public : public. Disponibilité : available. S
 
 ### [Concevoir la page de commande](../../src/content/help/fr/website-qr/order-page.mdx)
 
-Identifiant : `website-order-design`. Public : public. Disponibilité : available. Services : foodyadmin, foodyweb.
+Identifiant : `website-order-design`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb.
 
 - [Choisir disposition et navigation du menu](../../src/content/help/fr/website-qr/order-page.mdx#menu-layout)
 - [Distinguer les cartes et leurs groupes](../../src/content/help/fr/website-qr/order-page.mdx#menu-tabs-and-groups)
@@ -770,6 +776,7 @@ Identifiant : `website-order-design`. Public : public. Disponibilité : availabl
 - [Placer les contenus de découverte](../../src/content/help/fr/website-qr/order-page.mdx#discovery)
 - [Vérifier l’entrée de commande sur mobile](../../src/content/help/fr/website-qr/order-page.mdx#mobile-fulfillment-review)
 - [Accès aux nouveaux réglages](../../src/content/help/fr/website-qr/order-page.mdx#related-service-controls)
+- [Séparer les couleurs des cartes et des catégories](../../src/content/help/fr/website-qr/order-page.mdx#menu-and-category-text-colors)
 
 ### [Design du paiement, de la confirmation et du reçu](../../src/content/help/fr/website-qr/checkout-and-receipt.mdx)
 
@@ -853,6 +860,7 @@ Identifiant : `fulfillment-policy`. Public : public. Disponibilité : available.
 - [Reprendre une livraison après un départ de test](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#delivery-test-departure-recovery)
 - [Vérifier les choix conditionnels d’un article](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#conditional-item-choices)
 - [Vérifier la compatibilité de la fiche client POS](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#pos-customer-screen-version)
+- [Afficher automatiquement la série actuelle](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#weekly-series-rollover)
 
 ### [Comportement POS, services et ajustements](../../src/content/help/fr/settings/pos-behavior.mdx)
 
@@ -1209,6 +1217,7 @@ Identifiant : `platform-api`. Public : internal. Disponibilité : available. Ser
 - [Contrat des dimensions de variante](internal/fr/api-and-release.md#descriptive-variant-contract)
 - [Vérifier le panneau WhatsApp unifié](internal/fr/api-and-release.md#unified-whatsapp-order-composer)
 - [Image de modèle WhatsApp Meta](internal/fr/api-and-release.md#meta-template-image-proxy)
+- [Vérifier la série courante sans commande](internal/fr/api-and-release.md#weekly-series-rollover)
 
 ### [Aperçus internes et alias de routes](internal/fr/design-previews.md)
 
@@ -1236,6 +1245,7 @@ Identifiant : `shared-runtime`. Public : internal. Disponibilité : available. S
 - [Vérifier le panneau WhatsApp unifié](internal/fr/shared-runtime.md#unified-whatsapp-order-composer)
 - [Vérifier les surfaces du terminal mobile](internal/fr/shared-runtime.md#mobile-terminal)
 - [Vérifier les pages compactes du terminal](internal/fr/shared-runtime.md#mobile-terminal-pages)
+- [Vérifier la série courante sans commande](internal/fr/shared-runtime.md#weekly-series-rollover)
 
 ## Traçabilité détaillée
 

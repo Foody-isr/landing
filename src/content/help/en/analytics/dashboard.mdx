@@ -10,7 +10,7 @@ tags:
   - service
   - sales
   - dates
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-25'
 featureId: analytics-dashboard
 audience: public
 releaseStatus: available
@@ -56,3 +56,11 @@ Comparisons depend on an available previous period or service. For a future or o
 ## Detailed reports
 
 Open **Reports** for the reporting pages your role permits. Select the date range and review the applied filters. The overview provides an export action; export the selected scope and check that its dates and calculation match your intended analysis.
+
+<span id="weekly-series-rollover" />
+
+## Open the current weekly batch automatically
+
+For a restaurant configured for weekly batches, open **Home** or **Orders** using the **Série** date basis. The current batch is selected by default even without orders; its totals then stay at zero. It advances after the previous batch’s final fulfillment day in the restaurant timezone, without waiting for the first order or for ordering to open. An open page follows this change on the next automatic refresh (about one minute) or when you return to the tab.
+
+You can select an older service in the calendar; that selection stays in place while the page is open. An order for a later week does not replace the current batch as the default. A payment-attention link keeps its explicit period. If the date looks incorrect, check the configured fulfillment days and restaurant timezone, then reload. Rollover does not create an order or publish a menu.
