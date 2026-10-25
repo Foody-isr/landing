@@ -6821,7 +6821,9 @@
         "lib/features/menu/domain/combo_menu_model.dart"
       ],
       "foodyweb": [
-        "components/*Combo*"
+        "components/*Combo*",
+        "components/website-v3/WebsiteOrderMenu.tsx",
+        "lib/websiteItemAppearance.ts"
       ]
     },
     "operations": [
@@ -6876,12 +6878,25 @@
           "fr": "Avec la permission orders.manage, ouvrez Nouvelle commande ou modifiez une commande enregistrée dans Admin, puis ouvrez la composition de sa formule. Dans l’étape concernée, sélectionnez Choisir un autre article. Retirez d’abord une unité sélectionnée si l’étape est pleine, recherchez dans la librairie du restaurant et choisissez le remplacement et son format. Exception · inclus identifie ce choix. Les articles individuels actifs à prix fixe sont admissibles, même hors de la carte active ; les articles inactifs, épuisés ou au poids et les autres formules sont exclus. Les quantités requises par étape, limites par article et portions configurées restent applicables. Enregistrez la formule, vérifiez le ticket et envoyez une seule fois. Par exemple, remplacez le bœuf d’une formule Mamie à deux plats par du poisson tout en conservant le poulet. Le remplacement et son format n’ajoutent aucun supplément ; les autres choix habituels conservent leurs suppléments configurés. Le prix de base et la définition enregistrée de la formule ne changent pas ; modifier une commande existante conserve son prix de base d’origine. Le choix est conservé dans le brouillon et à la réouverture de l’éditeur de commande. Les clients ne peuvent pas demander cette exception. En cas de refus, actualisez la disponibilité et choisissez un article actif dans un format autorisé ; un remplacement refusé sur une commande enregistrée conserve la composition précédente.",
           "he": "עם הרשאת orders.manage פתחו הזמנה חדשה או ערכו הזמנה שמורה בממשק הניהול, ואז פתחו את הרכב הקומבו. בשלב המתאים בחרו בחירת פריט אחר. אם השלב מלא, הסירו קודם יחידה שנבחרה, חפשו בספריית המסעדה ובחרו תחליף וגודל. חריגה · כלול במחיר מסמן את הבחירה. ניתן לבחור פריטים יחידים פעילים במחיר קבוע, גם מחוץ לתפריט הפעיל; פריטים לא פעילים, שאזלו או שמתומחרים במשקל וקומבו אחר אינם זמינים. כמויות החובה בכל שלב, מגבלות לפריט וגדלים מוגדרים עדיין חלים. שמרו את הקומבו, בדקו את ההזמנה ושלחו פעם אחת. למשל, החליפו בקר בדג בקומבו Mamie עם שתי מנות עיקריות ושמרו על העוף. התחליף והגודל אינם מוסיפים תשלום; בחירות רגילות אחרות שומרות על התוספות המוגדרות שלהן. מחיר הבסיס והגדרת הקומבו השמורה אינם משתנים; עריכת הזמנה קיימת שומרת על מחיר הבסיס המקורי. הבחירה נשמרת בשחזור טיוטה ובפתיחה מחדש של עורך ההזמנה. לקוחות אינם יכולים לבקש חריגה זו. במקרה של דחייה, רעננו זמינות ובחרו פריט פעיל בגודל מותר; החלפה שנדחתה בהזמנה שמורה משאירה את ההרכב הקודם."
         }
+      },
+      {
+        "id": "website-composition",
+        "title": {
+          "fr": "Composer une formule sur le site du restaurant",
+          "en": "Build a combo on the restaurant website",
+          "he": "הרכבת ארוחה באתר המסעדה"
+        },
+        "instructions": {
+          "fr": "Ouvrez une formule dans la carte du site. Sa fiche reprend le style de couleur des fiches articles, les polices du site, les arrondis et la forme des boutons. Choisissez la quantité si elle est proposée, puis Composer mon menu. Le catalogue conserve sa présentation pendant les étapes ; seuls les articles éligibles et disponibles de l’étape sont sélectionnables. Touchez un article, puis sa variante si demandée. Le compteur affiche vos choix ; le bouton − retire une sélection. Étape précédente permet de revoir un choix, et Voir détails ouvre la fiche sans effacer la composition. Complétez les étapes puis ajoutez la formule au panier. Annuler quitte la composition sans ajouter de formule. Une formule fixe présente son contenu et s’ajoute directement depuis sa fiche. Si un choix est grisé, vérifiez son appartenance à l’étape et sa disponibilité. Si les couleurs sont incorrectes, vérifiez le style affecté aux fiches articles dans la page de commande et publiez les réglages vérifiés.",
+          "en": "Open a combo in the website menu. Its sheet uses the item-detail color style, site fonts, corners and button shape. Choose the quantity when offered, then Build your combo. The catalogue keeps its presentation throughout composition; only eligible, available items for the current step can be selected. Tap an item, then choose a variant if requested. The counter shows your picks; the − button removes a pick. Previous step lets you review a choice, and View details opens the sheet without clearing the composition. Complete the steps and add the combo to the cart. Cancel leaves composition without adding a combo. A fixed combo lists its contents and adds directly from its sheet. If a choice is disabled, check its step membership and availability. For incorrect colors, check the item-detail style assigned in the order page and publish the reviewed settings.",
+          "he": "פתחו ארוחה בתפריט האתר. החלון משתמש בסגנון הצבעים של פרטי הפריט, בגופני האתר, בפינות ובצורת הכפתורים. בחרו כמות כאשר האפשרות מוצעת, ואז הרכיבו את הארוחה. התפריט שומר על העיצוב לאורך ההרכבה; רק פריטים מתאימים וזמינים לשלב הנוכחי ניתנים לבחירה. לחצו על פריט ובחרו וריאנט אם נדרש. המונה מציג את הבחירות; כפתור − מסיר בחירה. השלב הקודם מאפשר לבדוק בחירה, והצג פרטים פותח את החלון בלי למחוק את ההרכבה. השלימו את השלבים והוסיפו לסל. ביטול יוצא מההרכבה בלי להוסיף ארוחה. ארוחה קבועה מציגה את תכולתה ונוספת ישירות מהחלון. אם בחירה אינה זמינה, בדקו את שיוכה לשלב ואת זמינותה. אם הצבעים שגויים, בדקו את סגנון פרטי הפריט שהוקצה בדף ההזמנה ופרסמו את ההגדרות שנבדקו."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-18"
+    "procedureUpdatedAt": "2026-10-25"
   },
   {
     "id": "pos-discount-library",
@@ -7765,9 +7780,9 @@
           "he": "התאמת חלון הפריט"
         },
         "instructions": {
-          "en": "Select the item-detail preview to edit cover image and display options. Test a real configured item with variants, required modifiers, quantities and notes. Design changes do not change its base price, modifier deltas, stock or ordering eligibility.",
-          "fr": "Sélectionnez l’aperçu de fiche pour régler couverture et options d’affichage. Vérifiez un article configuré avec variantes, options obligatoires, quantités et notes. Le design ne modifie ni prix de base, ni suppléments, ni stock, ni disponibilité à la commande.",
-          "he": "בחרו תצוגת פריט לשינוי תמונת שער ואפשרויות הצגה. בדקו פריט עם וריאנטים, תוספות חובה, כמות והערות. העיצוב אינו משנה מחיר בסיס, הפרשי תוספות, מלאי או אפשרות הזמנה."
+          "en": "Select the item-detail preview to edit cover image and display options. Test a real configured item with variants, required modifiers, quantities and notes. Design changes do not change its base price, modifier deltas, stock or ordering eligibility. Combos also use this style for their sheet, variant picker and step panel. During Build your combo, the catalogue keeps its colors, photos and layout. Check a configurable and a fixed combo on mobile and desktop; see [building combos](/en/help/menu/combos#website-composition).",
+          "fr": "Sélectionnez l’aperçu de fiche pour régler couverture et options d’affichage. Vérifiez un article configuré avec variantes, options obligatoires, quantités et notes. Le design ne modifie ni prix de base, ni suppléments, ni stock, ni disponibilité à la commande. Les formules utilisent également ce style pour leur fiche, le choix de variante et le panneau d’étapes. Pendant Composer mon menu, la liste conserve ses couleurs, ses photos et sa mise en page. Vérifiez une formule configurable et une formule fixe sur mobile et ordinateur ; consultez [la composition des formules](/fr/help/menu/combos#website-composition).",
+          "he": "בחרו תצוגת פריט לשינוי תמונת שער ואפשרויות הצגה. בדקו פריט עם וריאנטים, תוספות חובה, כמות והערות. העיצוב אינו משנה מחיר בסיס, הפרשי תוספות, מלאי או אפשרות הזמנה. גם ארוחות משתמשות בסגנון זה בחלון הפרטים, בבחירת וריאנט ובלוח השלבים. בזמן ההרכבה התפריט שומר על הצבעים, התמונות והמבנה. בדקו ארוחה בהרכבה וארוחה קבועה בנייד ובמחשב; ראו [הרכבת ארוחות](/he/help/menu/combos#website-composition)."
         }
       },
       {
@@ -10914,9 +10929,9 @@
           "he": "בחירת תפריט ואז קבוצה"
         },
         "instructions": {
-          "fr": "Si le restaurant propose plusieurs cartes sur la page, choisissez leur onglet, par exemple BASSARI ou HALAVI. Seuls les groupes et articles de la carte sélectionnée s’affichent. Les pastilles ou liens en dessous permettent d’atteindre ses groupes, comme Sandwichs ou Boissons. La recherche et le filtre de disponibilité s’appliquent à cette carte. Une recherche sans résultat ne retire pas les onglets ; changer de carte efface la recherche. Parcourir une autre carte conserve le panier. Si vous ne trouvez pas un article, essayez l’autre carte ou effacez la recherche ; sa présence dépend aussi de sa disponibilité et de sa publication.",
-          "en": "If the restaurant offers several menus on the page, select their tab, such as BASSARI or HALAVI. Only the selected menu’s groups and items appear. Pills or links underneath navigate to its groups, such as Sandwiches or Drinks. Search and the availability filter apply to this menu. A search with no results keeps menu tabs visible; switching menus clears the search. Browsing another menu keeps the basket. If an item is missing, try another menu or clear the search; visibility also depends on availability and publication.",
-          "he": "אם העסק מציע כמה תפריטים בעמוד, בחרו לשונית כגון BASSARI או HALAVI. יוצגו רק הקבוצות והפריטים של התפריט שנבחר. הכפתורים או הקישורים שמתחת מאפשרים להגיע לקבוצות שלו, כגון כריכים ומשקאות. החיפוש ומסנן הזמינות חלים על התפריט הזה. חיפוש ללא תוצאות אינו מסתיר את לשוניות התפריטים; מעבר לתפריט אחר מנקה את החיפוש. צפייה בתפריט אחר שומרת על הסל. אם פריט חסר, נסו תפריט אחר או נקו את החיפוש; הנראות תלויה גם בזמינות ובפרסום."
+          "fr": "Si le restaurant propose plusieurs cartes sur la page, choisissez leur onglet, par exemple BASSARI ou HALAVI. Seuls les groupes et articles de la carte sélectionnée s’affichent. Les pastilles ou liens en dessous permettent d’atteindre ses groupes, comme Sandwichs ou Boissons. La recherche et le filtre de disponibilité s’appliquent à cette carte. Une recherche sans résultat ne retire pas les onglets ; changer de carte efface la recherche. Parcourir une autre carte conserve le panier. Si vous ne trouvez pas un article, essayez l’autre carte ou effacez la recherche ; sa présence dépend aussi de sa disponibilité et de sa publication. Pour une formule, ouvrez sa fiche puis Composer mon menu : la carte garde son thème pendant les choix. Le compteur et le bouton − permettent de vérifier ou retirer une sélection ; complétez les étapes avant l’ajout au panier. Voir [les formules sur le site](/fr/help/menu/combos#website-composition).",
+          "en": "If the restaurant offers several menus on the page, select their tab, such as BASSARI or HALAVI. Only the selected menu’s groups and items appear. Pills or links underneath navigate to its groups, such as Sandwiches or Drinks. Search and the availability filter apply to this menu. A search with no results keeps menu tabs visible; switching menus clears the search. Browsing another menu keeps the basket. If an item is missing, try another menu or clear the search; visibility also depends on availability and publication. For a combo, open its sheet and choose Build your combo: the menu keeps its theme while selecting items. Use the counter and − button to review or remove a pick, then complete the steps before adding to the cart. See [website combos](/en/help/menu/combos#website-composition).",
+          "he": "אם העסק מציע כמה תפריטים בעמוד, בחרו לשונית כגון BASSARI או HALAVI. יוצגו רק הקבוצות והפריטים של התפריט שנבחר. הכפתורים או הקישורים שמתחת מאפשרים להגיע לקבוצות שלו, כגון כריכים ומשקאות. החיפוש ומסנן הזמינות חלים על התפריט הזה. חיפוש ללא תוצאות אינו מסתיר את לשוניות התפריטים; מעבר לתפריט אחר מנקה את החיפוש. צפייה בתפריט אחר שומרת על הסל. אם פריט חסר, נסו תפריט אחר או נקו את החיפוש; הנראות תלויה גם בזמינות ובפרסום. לארוחה בהרכבה פתחו את חלון הפרטים והתחילו להרכיב: התפריט שומר על העיצוב בזמן בחירת הפריטים. המונה וכפתור − מאפשרים לבדוק או להסיר בחירה. השלימו את השלבים לפני ההוספה לסל. ראו [ארוחות באתר](/he/help/menu/combos#website-composition)."
         }
       },
       {

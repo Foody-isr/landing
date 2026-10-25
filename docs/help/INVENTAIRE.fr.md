@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-25.
 
-100 fiches de fonctionnalités, 690 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2177 fichiers applicatifs et 2042 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+100 fiches de fonctionnalités, 691 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2177 fichiers applicatifs et 2042 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -12,8 +12,8 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 |---|---:|---:|---|
 | foodyserver | 560 | 870 | eda4d8f3479f ; versioned |
 | foodyadmin | 764 | 776 | 3518f19d8ae6 ; versioned |
-| foodyweb | 337 | 167 | 134d38895731 ; versioned |
-| foodylanding | 127 | 21 | 5fe1fa9c8a65 ; versioned |
+| foodyweb | 337 | 167 | 18fb7cbeb1f3 ; versioned |
+| foodylanding | 127 | 21 | 551dad7acf78 ; versioned |
 | foodypos | 345 | 158 | d8f8dbd13b92 ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
 
@@ -443,6 +443,7 @@ Identifiant : `combos`. Public : public. Disponibilité : available. Services : 
 - [Vérifier le prix de la formule](../../src/content/help/fr/menu/combos.mdx#price)
 - [Prendre une commande combo](../../src/content/help/fr/menu/combos.mdx#order)
 - [Faire une exception de formule sur une commande](../../src/content/help/fr/menu/combos.mdx#internal-combo-substitution)
+- [Composer une formule sur le site du restaurant](../../src/content/help/fr/menu/combos.mdx#website-composition)
 
 ### [Bibliothèque de remises du personnel](../../src/content/help/fr/menu/pos-discounts.mdx)
 
