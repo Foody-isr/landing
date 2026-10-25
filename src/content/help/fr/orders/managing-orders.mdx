@@ -22,6 +22,16 @@ releaseStatus: available
 ---
 Ouvrez l’espace Foody correspondant décrit ci-dessous. La vue Toutes multicanal sur la caisse nécessite des versions POS et API compatibles ; une mise à jour API seule ne met pas à jour le POS installé.
 
+<span id="open-saved-order-in-menu" />
+
+## Ouvrir une commande dans Menu sans fusionner les paiements QR
+
+Sur le POS mis à jour, avec orders.manage, touchez une commande active ou programmée dans Commandes, ou une commande encore exploitable dans Toutes. Une addition manuelle ouverte reprend son espace existant ; une commande QR, web ou autonome ouvre Menu avec ses propres lignes enregistrées, son numéro, ses états et son total dans le panneau d’addition. Sur téléphone, ce panneau occupe l’écran. Le catalogue consultable ne modifie pas cette commande ni un brouillon conservé. Actions → Gérer cette commande retrouve les actions admissibles sur ce seul numéro ; un paiement exige aussi payments.manage. Ouvrir la vue ne paie, n’envoie et n’imprime rien.
+
+Plusieurs clients QR d’une même table conservent chacun leur commande et leur paiement, même pendant une seule session de table. Pour ajouter des plats ou consulter l’addition de table, choisissez Afficher la table : seule la même session encore ouverte est admissible. Si elle contient plusieurs additions séparées, choisissez explicitement l’addition. Cette navigation ne fusionne ni ne solde les commandes QR et ne clôture pas la table. Une ancienne session ne permet jamais d’ouvrir celle des clients suivants ; une action financière en attente doit d’abord être résolue.
+
+Les commandes terminées, annulées ou remboursées et les accès en lecture seule gardent la consultation historique, sans rouvrir une vente. Une commande payée encore en préparation reste consultable et traitable, sans nouveau paiement. Si le chargement échoue, utilisez Réessayer ; ne recréez pas la commande. Le nouveau parcours nécessite l’installation du POS compatible.
+
 <span id="open-order-from-transaction" />
 
 ## Ouvrir la commande liée à une transaction
@@ -57,7 +67,7 @@ les commandes et les envoyez en cuisine.
 - **FoodyPOS → Commandes → Toutes** consulte les commandes enregistrées de toutes les sources et de tous les états de paiement. Actives, Programmé et Terminée restent des vues opérationnelles distinctes.
 - **FoodyAdmin → Commandes → Tous** consulte les mêmes commandes du restaurant ; la période et les filtres sélectionnés s’appliquent toujours.
 - Paiement et préparation sont indépendants : une commande à emporter payée en préparation reste active.
-- Faites avancer le traitement depuis les commandes actives. Le détail de Toutes sur la caisse est en lecture seule.
+- Sur un POS compatible, les commandes encore exploitables ouvrent Menu avec les droits requis ; les commandes terminées restent historiques. Voir [l’ouverture des commandes enregistrées](#open-saved-order-in-menu).
 
 <span id="section-3" />
 

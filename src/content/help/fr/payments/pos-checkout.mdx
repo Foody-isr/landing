@@ -46,7 +46,7 @@ Sur un POS autorisé avec un shift PIN actif, ouvrez d’abord Plus → Rapports
 
 ## Compter et clôturer la caisse
 
-Sur le même POS autorisé, ouvrez Plus → Rapports → Solde en caisse. Vérifiez fonds initial, ventes et remboursements en espèces enregistrés, entrées/sorties justifiées et montant attendu. Un responsable des paiements peut saisir une entrée ou sortie avec motif, sans dépasser le solde attendu pour une sortie ; si Foody refuse le montant, saisissez-en un inférieur. Comptez physiquement les espèces, saisissez le montant compté et clôturez la session ; le rapport conserve l’éventuel écart. Si un encaissement ou une action de caisse reste incertain, rapprochez ou reprenez cette opération exacte avant la clôture. Ce rapport couvre uniquement les espèces enregistrées sur ce POS : il n’est pas un solde global du restaurant et n’inclut pas les dépôts de cartes Verifone. N’utilisez jamais un ajustement espèces pour masquer un remboursement carte.
+Sur le même POS autorisé avec un shift PIN actif, ouvrez Plus → Rapports → Solde en caisse. Vérifiez fonds initial, ventes et remboursements en espèces, entrées/sorties et montant attendu. La description facultative est reprise dans la note de clôture, sans enregistrement automatique. Avec payments.manage, ouvrez Entrées/sorties, saisissez un montant positif et un motif obligatoire, puis choisissez Encaisser des espèces ou Décaisser des espèces. Une sortie ne peut dépasser le solde attendu. Avec orders.manage, choisissez Clôturer la session de caisse, comptez physiquement les espèces, saisissez ce montant et confirmez ; l’écart est conservé. Fermer la modale sans confirmer n’enregistre rien. Mouvements de caisse liste uniquement la session chargée sur cet appareil, pas les anciennes sessions. Reprenez toute opération incertaine avec son identité existante avant une autre action. Ce rapport n’inclut pas les cartes : la clôture espèces ne lance pas le dépôt Verifone, et le dépôt Verifone ne clôture pas les espèces. N’utilisez pas un ajustement espèces pour masquer un remboursement carte.
 
 <span id="card" />
 
@@ -95,6 +95,12 @@ Sur un Victa Portable configuré ou un iPad relié à un Victa Mini, connectez-v
 ## Consulter les totaux ou utiliser les actions avancées du terminal
 
 Dans Plus → Rapports → Dépôts du terminal, Consulter les totaux lit le lot en cours sans le clôturer ni le transmettre. Les actions avancées ne sont disponibles que si le terminal les prend en charge : Clôturer le lot uniquement ferme la période sans transmission ; Transmettre uniquement demande une réconciliation à l’acquéreur sans clôture explicite. Aucune de ces deux actions n’est à elle seule la procédure normale de fin de journée. Utilisez-les uniquement sur instruction du prestataire, confirmez une seule fois et attendez le résultat final du terminal. Si une action est indisponible ou incertaine, ne présumez pas sa réussite : vérifiez le terminal ou contactez le prestataire avant de réessayer.
+
+<span id="saved-qr-payment-scope" />
+
+## Vérifier le paiement d’une seule commande QR
+
+Depuis Commandes → Menu → Actions → Gérer cette commande, les actions proposées concernent uniquement le numéro sélectionné, jamais la somme de toutes les commandes QR de la table. L’encaissement n’est proposé que pour une commande impayée admissible au parcours et avec payments.manage ; un résultat en attente, partiel ou déjà payé ne permet pas de relancer le total. Vérifiez numéro, état et montant avant de confirmer. Changer de restaurant, d’opérateur ou perdre les droits invalide l’action ouverte. Si un accord terminal arrive après ce changement, il reste à rapprocher : ne relancez pas le débit. Afficher la table est une navigation distincte qui ne paie ni ne clôture rien. Les règles Verifone, le journal et la confirmation finale du terminal restent ceux de l’encaissement existant.
 
 <span id="receipt-tip" />
 

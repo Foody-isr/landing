@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - delivery
   - delivery-dispatch
-updatedAt: '2026-10-22'
+updatedAt: '2026-10-25'
 featureId: delivery-dispatch
 audience: public
 releaseStatus: available
@@ -131,3 +131,9 @@ Dans le panneau Aide et assistance de FoodyAdmin, ouvrez **Guide du compte Googl
 ## Annuler un départ lancé par erreur
 
 Avec la permission de gestion des commandes, ouvrez Commandes → Livraisons, sélectionnez la date de la tournée et cliquez sur Annuler le départ. Cette action est proposée seulement sur une tournée en cours dont tous les arrêts sont encore en attente. Confirmez : la tournée revient en brouillon et les commandes En livraison repassent En préparation. Les commandes déjà corrigées en Acceptée, En préparation ou Prête pour livraison gardent leur statut. Le livreur reste affecté ; utilisez ensuite Désassigner, puis répartissez les commandes au bon livreur. La date, les adresses, l’ordre des arrêts et les paiements sont conservés. Aucun message client ni ticket de cuisine n’est envoyé par cette annulation ; les messages déjà envoyés et leur historique ne sont pas effacés. Si une arrivée, une livraison ou un arrêt ignoré a été enregistré, ou si la tournée a changé entre-temps, l’annulation est refusée : actualisez et vérifiez l’avancement avant une autre correction. Ne marquez pas les commandes livrées pour débloquer une affectation.
+
+<span id="superadmin-courier-mode" />
+
+## Consulter le mode d’un autre livreur
+
+Un superadmin peut ouvrir Commandes → Mode livreur et choisir un livreur du restaurant dans Voir comme livreur. La carte et les tournées sont celles du livreur choisi ; les actions enregistrent de vrais changements et le GPS du superadmin n’est pas partagé pour lui. Voir [la procédure du mode livreur](/fr/help/delivery/courier-workspace#superadmin-courier-selection), y compris le changement de livreur et la récupération après erreur.

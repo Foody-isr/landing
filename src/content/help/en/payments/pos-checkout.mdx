@@ -46,7 +46,7 @@ On an enrolled POS with an active PIN shift, first open More → Reports → Cas
 
 ## Count and close the cash drawer
 
-On the same enrolled POS, open More → Reports → Cash drawer balance. Review the opening float, recorded cash sales, cash refunds, paid-in/paid-out adjustments and expected cash. A payment manager may record a reasoned cash entry or removal, but cannot remove more than the expected balance; if Foody rejects that amount, enter a smaller one. Count the physical cash, enter the counted amount and close the session; the report preserves any discrepancy. If a payment claim or drawer action remains uncertain, resolve or retry that exact operation before closing. This report covers only cash recorded on this POS; it is not a restaurant-wide balance and does not include Verifone card deposits. Never use a cash adjustment to disguise a card refund.
+On the same enrolled POS with an active PIN shift, open More → Reports → Cash drawer balance. Review the opening float, cash sales and refunds, paid in/out and expected cash. The optional description is copied to the closing note, without automatic saving. With payments.manage, open Paid in/out, enter a positive amount and mandatory reason, then choose Pay in cash or Pay out cash. A payout cannot exceed the expected balance. With orders.manage, choose Close cash session, count physical cash, enter that amount and confirm; any discrepancy is preserved. Dismissing the modal without confirming records nothing. Cash movements lists only the session loaded on this device, not past sessions. Resume any uncertain operation using its existing identity before another action. Cards are excluded: closing cash does not start a Verifone deposit, and a Verifone deposit does not close cash. Never use a cash adjustment to disguise a card refund.
 
 <span id="card" />
 
@@ -95,6 +95,12 @@ On a configured Victa Portable or an iPad connected to a Victa Mini, sign in wit
 ## Read totals or use advanced terminal actions
 
 In More → Reports → Terminal deposits, View current totals reads the active batch without closing or transmitting it. Advanced actions are shown only when supported by the terminal: Close batch only closes the reporting period without transmission; Transmit only requests acquirer reconciliation without explicitly closing it. Neither advanced action alone is the standard end-of-day flow. Use either only on your payment provider's instruction, confirm once and wait for the terminal's final result. If unsupported or uncertain, do not assume success; check the terminal or ask the provider before retrying.
+
+<span id="saved-qr-payment-scope" />
+
+## Verify payment for one QR order
+
+From Orders → Menu → Actions → Manage this order, offered actions affect the selected number only, never the combined value of the table’s QR orders. Collection is offered only for an eligible unpaid order in its workflow and with payments.manage; pending, partial or already-paid states do not permit charging the full total again. Verify number, state and amount before confirming. Changing restaurant or operator, or losing permission, invalidates the open action. A terminal approval arriving after that change remains to be reconciled: do not repeat the charge. View table is separate navigation that neither pays nor closes anything. Existing Verifone rules, journals and final terminal confirmation remain in place.
 
 <span id="receipt-tip" />
 

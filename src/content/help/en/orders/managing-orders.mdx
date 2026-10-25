@@ -21,6 +21,16 @@ releaseStatus: available
 ---
 Open the corresponding Foody workspace described below. The cross-channel All view on the POS requires compatible POS and API versions; updating the API alone does not update the installed POS.
 
+<span id="open-saved-order-in-menu" />
+
+## Open an order in Menu without merging QR payments
+
+On the updated POS, with orders.manage, tap an active or scheduled order in Orders, or a still-actionable order in All. An open manual check resumes its existing workspace; a QR, web or standalone order opens Menu with its own saved lines, number, statuses and total in the check panel. On a phone this panel fills the screen. Browsing the catalogue changes neither that order nor a retained draft. Actions → Manage this order offers eligible actions for that number only; collection also requires payments.manage. Opening the view never pays, dispatches or prints.
+
+Several QR guests at one table retain their individual orders and payments even within one table session. To add food or consult the table check, choose View table: only the same still-open session is eligible. If it contains separate bills, explicitly choose the bill. This navigation never merges or settles QR orders and never closes the table. An old session cannot open the next party’s service; pending financial actions must be resolved first.
+
+Completed, cancelled or refunded orders and read-only access retain historical viewing without reopening a sale. A paid order still being prepared remains viewable and actionable without another payment. If loading fails, use Retry rather than recreating the order. Install a compatible POS build to use this navigation.
+
 <span id="open-order-from-transaction" />
 
 ## Open the order behind a transaction
@@ -56,7 +66,7 @@ the kitchen.
 - POS **Orders → All** reads saved orders across all sources and payment states. Active, Scheduled and Completed remain separate operational views.
 - Admin **Orders → All** uses the same restaurant-owned records; its selected dates and filters still apply.
 - Payment and preparation are independent: a paid takeaway being prepared remains active.
-- Use Active orders to advance fulfillment. All-order details on the POS are read-only.
+- On a compatible POS, authorized actionable orders open in Menu; completed records remain historical. See [saved-order navigation](#open-saved-order-in-menu).
 
 <span id="section-3" />
 

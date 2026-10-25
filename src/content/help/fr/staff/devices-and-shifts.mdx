@@ -12,6 +12,18 @@ releaseStatus: available
 ---
 Admin → Personnel → Accès POS / Rapports de shifts
 
+<span id="pending-cash-sign-out" />
+
+## Terminer le rapport avant de se déconnecter
+
+Se déconnecter dans la navigation et Terminer le shift dans Plus suivent le même contrôle, limité au POS et au restaurant actifs. Avec orders.manage ou payments.manage, Foody vérifie le rapport avant de proposer la fin du shift. Une caisse ouverte, même sans vente ni mouvement, ou une opération espèces locale non confirmée affiche Rapport de tiroir-caisse en attente. Annuler ne modifie rien. Terminer le rapport ouvre Plus → Rapports → Solde en caisse ; ce bouton ne clôture pas, ne saisit pas le montant attendu comme comptage et ne déconnecte pas. Reprenez toute opération incertaine avec son identité existante. Pour clôturer, un opérateur avec orders.manage compte les espèces réellement présentes puis confirme la clôture. Redemandez ensuite la déconnexion et confirmez Terminer le shift pour revenir au PIN, en conservant l’autorisation de cet appareil. Une clôture de caisse seule ne termine pas automatiquement votre shift. Sans droits sur le rapport, le serveur contrôle toujours la caisse : s’il la trouve ouverte, demandez un responsable autorisé ; aucun accès au rapport n’est accordé par ce message. Si la vérification échoue, la session reste ouverte : vérifiez la connexion et Réessayer, sans effacer les données locales. Le serveur revérifie aussi après confirmation si une caisse s’est ouverte entre-temps. Le dépôt carte Verifone reste une action distincte et explicite : ni ce message ni la déconnexion ne le lancent. Une révocation ou expiration d’accès peut imposer une déconnexion de sécurité ; elle ne compte ni ne clôture les espèces et n’efface pas les journaux de reprise.
+
+<span id="pos-reports-navigation" />
+
+## Distinguer rapports, espèces et dépôt carte
+
+Sur tablette, Plus → Rapports ouvre le Solde en caisse si votre rôle l’autorise, sinon les Ventes ou les Dépôts du terminal autorisés. La colonne de gauche présente uniquement les rubriques accessibles. Mouvements de caisse montre la session chargée sur cet appareil avec date, type, montant et motif ; ce n’est pas un historique des autres sessions. Sur téléphone, Rapports reste une liste de destinations. Ouvrir ou actualiser un rapport ne clôture rien. La clôture d’espèces et Clôturer et déposer du terminal restent deux actions distinctes, même si elles font partie de la même fin de journée.
+
 <span id="pair" />
 
 ## Activer un appareil POS

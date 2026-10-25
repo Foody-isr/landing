@@ -14,6 +14,12 @@ releaseStatus: available
 ---
 Équipe technique : clients, état, traduction, styles, proxies et démarrage communs soutiennent les modules métier documentés.
 
+<span id="pos-reports-navigation" />
+
+## Distinguer rapports, espèces et dépôt carte
+
+Sur tablette, Plus → Rapports ouvre le Solde en caisse si votre rôle l’autorise, sinon les Ventes ou les Dépôts du terminal autorisés. La colonne de gauche présente uniquement les rubriques accessibles. Mouvements de caisse montre la session chargée sur cet appareil avec date, type, montant et motif ; ce n’est pas un historique des autres sessions. Sur téléphone, Rapports reste une liste de destinations. Ouvrir ou actualiser un rapport ne clôture rien. La clôture d’espèces et Clôturer et déposer du terminal restent deux actions distinctes, même si elles font partie de la même fin de journée.
+
 <span id="verifone-admin-money-operations" />
 
 ## Rembourser ou annuler un paiement en ligne Verifone

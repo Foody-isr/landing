@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-10-25.
+Révision du relevé : 2026-10-18.
 
-100 fiches de fonctionnalités, 654 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2165 fichiers applicatifs et 2036 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+100 fiches de fonctionnalités, 674 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2172 fichiers applicatifs et 2037 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 556 | 869 | a0046cb3249b ; versioned |
-| foodyadmin | 760 | 771 | cd96e394d270 ; versioned |
-| foodyweb | 337 | 167 | fac3db244c15 ; versioned |
-| foodylanding | 127 | 21 | 6538a2d5a882 ; versioned |
-| foodypos | 341 | 158 | 64dce2731c01 ; versioned |
-| foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
+| foodyserver | 558 | 870 | 91755c424036 ; versioned |
+| foodyadmin | 763 | 774 | 335b4895ab83 ; versioned |
+| foodyweb | 337 | 167 | 24c8fe9c3eb9 ; versioned |
+| foodylanding | 127 | 21 | 902a4a6ecaa3 ; versioned |
+| foodypos | 345 | 158 | b08c4d3e364f ; versioned |
+| foodybackoffice | 42 | 47 | 126b49234438 ; versioned |
 
 ## getting-started
 
@@ -131,6 +131,8 @@ Identifiant : `staff-roles`. Public : public. Disponibilité : available. Servic
 
 Identifiant : `staff-devices-shifts`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodypos.
 
+- [Terminer le rapport avant de se déconnecter](../../src/content/help/fr/staff/devices-and-shifts.mdx#pending-cash-sign-out)
+- [Distinguer rapports, espèces et dépôt carte](../../src/content/help/fr/staff/devices-and-shifts.mdx#pos-reports-navigation)
 - [Activer un appareil POS](../../src/content/help/fr/staff/devices-and-shifts.mdx#pair)
 - [Utiliser un code POS personnel](../../src/content/help/fr/staff/devices-and-shifts.mdx#pin)
 - [Consulter les shifts](../../src/content/help/fr/staff/devices-and-shifts.mdx#report)
@@ -172,6 +174,8 @@ Identifiant : `social-stories`. Public : public. Disponibilité : available. Ser
 
 Identifiant : `analytics-dashboard`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodypos.
 
+- [Lire les réductions des commandes payées](../../src/content/help/fr/analytics/dashboard.mdx#pos-discount-basis)
+- [Lire les ventes sur la caisse](../../src/content/help/fr/analytics/dashboard.mdx#pos-sales-report)
 - [Commencer par l’accueil](../../src/content/help/fr/analytics/dashboard.mdx#section-1)
 - [Vérifier la base de date](../../src/content/help/fr/analytics/dashboard.mdx#section-2)
 - [Comparaisons et données indisponibles](../../src/content/help/fr/analytics/dashboard.mdx#section-3)
@@ -373,6 +377,7 @@ Identifiant : `menu-menus-and-groups`. Public : public. Disponibilité : availab
 - [Qu'est-ce que c'est ?](../../src/content/help/fr/menu/menus-and-groups.mdx#section-1)
 - [La structure](../../src/content/help/fr/menu/menus-and-groups.mdx#section-2)
 - [Préparer, enregistrer et publier une carte](../../src/content/help/fr/menu/menus-and-groups.mdx#section-3)
+- [Choisir des articles avec photos et filtres](../../src/content/help/fr/menu/menus-and-groups.mdx#draft-item-picker)
 - [Où ça se vend : en ligne ou en caisse](../../src/content/help/fr/menu/menus-and-groups.mdx#section-4)
 - [Quand ça se vend : horaires de disponibilité](../../src/content/help/fr/menu/menus-and-groups.mdx#section-5)
 - [Le lien avec la disponibilité](../../src/content/help/fr/menu/menus-and-groups.mdx#section-6)
@@ -450,6 +455,7 @@ Identifiant : `pos-discount-library`. Public : public. Disponibilité : availabl
 
 Identifiant : `orders-managing-orders`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodypos.
 
+- [Ouvrir une commande dans Menu sans fusionner les paiements QR](../../src/content/help/fr/orders/managing-orders.mdx#open-saved-order-in-menu)
 - [Ouvrir la commande liée à une transaction](../../src/content/help/fr/orders/managing-orders.mdx#open-order-from-transaction)
 - [Rembourser ou annuler un paiement en ligne Verifone](../../src/content/help/fr/orders/managing-orders.mdx#verifone-admin-money-operations)
 - [Vérifier le plafond de préautorisation au poids](../../src/content/help/fr/orders/managing-orders.mdx#weight-hold-margin)
@@ -471,6 +477,7 @@ Identifiant : `orders-managing-orders`. Public : public. Disponibilité : availa
 - [Retrouver une vente caisse après paiement](../../src/content/help/fr/orders/managing-orders.mdx#paid-counter-orders)
 - [Contacter les clients par WhatsApp](../../src/content/help/fr/orders/managing-orders.mdx#unified-order-whatsapp-selection)
 - [Naviguer dans une vente mobile](../../src/content/help/fr/orders/managing-orders.mdx#mobile-terminal)
+- [Image du modèle WhatsApp](../../src/content/help/fr/orders/managing-orders.mdx#meta-template-image-preview)
 
 ### [Types de commandes et remise](../../src/content/help/fr/orders/order-types.mdx)
 
@@ -536,6 +543,7 @@ Identifiant : `order-detail`. Public : public. Disponibilité : available. Servi
 - [Choisir le mode d’envoi du rappel](../../src/content/help/fr/orders/order-details.mdx#delivery-reminder-review-and-send)
 - [Conserver les choix de variante de la commande](../../src/content/help/fr/orders/order-details.mdx#variant-position-order)
 - [Envoyer un message WhatsApp pour une ou plusieurs commandes](../../src/content/help/fr/orders/order-details.mdx#unified-order-whatsapp)
+- [Image du modèle WhatsApp](../../src/content/help/fr/orders/order-details.mdx#meta-template-image-preview)
 
 ### [Calendrier du restaurant et exceptions](../../src/content/help/fr/orders/calendar.mdx)
 
@@ -595,6 +603,7 @@ Identifiant : `pos-courses`. Public : public. Disponibilité : available. Servic
 
 Identifiant : `pos-comp-void`. Public : public. Disponibilité : available. Services : foodyserver, foodypos.
 
+- [Ne pas modifier les lignes d’une commande QR consultée](../../src/content/help/fr/orders/discount-comp-void.mdx#saved-qr-read-only-lines)
 - [Commandes historiques en lecture seule](../../src/content/help/fr/orders/discount-comp-void.mdx#historical-order-read-only)
 - [Appliquer une remise](../../src/content/help/fr/orders/discount-comp-void.mdx#discount)
 - [Offrir ou retirer un offert](../../src/content/help/fr/orders/discount-comp-void.mdx#comp)
@@ -638,6 +647,7 @@ Identifiant : `pos-payments`. Public : public. Disponibilité : available. Servi
 - [Lire correctement le total des transactions](../../src/content/help/fr/payments/pos-checkout.mdx#transaction-gross-total)
 - [Clôturer et déposer un lot du terminal Verifone](../../src/content/help/fr/payments/pos-checkout.mdx#terminal-deposit)
 - [Consulter les totaux ou utiliser les actions avancées du terminal](../../src/content/help/fr/payments/pos-checkout.mdx#terminal-reports-advanced)
+- [Vérifier le paiement d’une seule commande QR](../../src/content/help/fr/payments/pos-checkout.mdx#saved-qr-payment-scope)
 - [Vérifier pourboire et reçu](../../src/content/help/fr/payments/pos-checkout.mdx#receipt-tip)
 - [Vérifier une facture Invoice4U détaillée](../../src/content/help/fr/payments/pos-checkout.mdx#invoice4u-order-lines)
 - [Attendre le paiement au comptoir avant la cuisine](../../src/content/help/fr/payments/pos-checkout.mdx#counter-terminal-payment-before-kitchen)
@@ -803,6 +813,7 @@ Identifiant : `order-workflow`. Public : public. Disponibilité : available. Ser
 - [Régler les délais de préparation](../../src/content/help/fr/settings/workflow-settings.mdx#clock)
 - [Vérifier les réglages enregistrés](../../src/content/help/fr/settings/workflow-settings.mdx#save)
 - [Choisir la pièce jointe d’une étape](../../src/content/help/fr/settings/workflow-settings.mdx#whatsapp-stage-attachment)
+- [Image du modèle WhatsApp](../../src/content/help/fr/settings/workflow-settings.mdx#meta-template-image-preview)
 
 ### [Profil, langues et horaires du restaurant](../../src/content/help/fr/settings/restaurant-profile.mdx)
 
@@ -881,6 +892,9 @@ Identifiant : `notifications-team`. Public : public. Disponibilité : available.
 
 Identifiant : `pos-workspace`. Public : public. Disponibilité : available. Services : foodypos.
 
+- [Distinguer la commande sélectionnée de l’addition de table](../../src/content/help/fr/settings/pos-workspace.mdx#saved-order-workspace)
+- [Vérifier la devise des rapports](../../src/content/help/fr/settings/pos-workspace.mdx#report-currency)
+- [Distinguer rapports, espèces et dépôt carte](../../src/content/help/fr/settings/pos-workspace.mdx#pos-reports-navigation)
 - [Retrouver les espaces de travail](../../src/content/help/fr/settings/pos-workspace.mdx#navigation)
 - [Personnaliser l’appareil](../../src/content/help/fr/settings/pos-workspace.mdx#preferences)
 - [Traiter une perte de connexion](../../src/content/help/fr/settings/pos-workspace.mdx#connectivity)
@@ -954,6 +968,7 @@ Identifiant : `delivery-dispatch`. Public : public. Disponibilité : available. 
 - [Code caisse à l’activation du personnel](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#staff-activation-pos-code)
 - [Préparer un compte Google propre à votre établissement](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#google-account-guide)
 - [Annuler un départ lancé par erreur](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#undo-departure)
+- [Consulter le mode d’un autre livreur](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#superadmin-courier-mode)
 
 ### [Parcours coursier et confirmation des livraisons](../../src/content/help/fr/delivery/courier-workspace.mdx)
 
@@ -966,6 +981,7 @@ Identifiant : `courier`. Public : public. Disponibilité : available. Services :
 - [Réagir à une limite du service cartographique](../../src/content/help/fr/delivery/courier-workspace.mdx#routing-service-limits)
 - [Ajuster la carte et retrouver un arrêt](../../src/content/help/fr/delivery/courier-workspace.mdx#map-timeline-panel)
 - [Corriger un démarrage de test](../../src/content/help/fr/delivery/courier-workspace.mdx#accidental-departure)
+- [Consulter le mode d’un autre livreur](../../src/content/help/fr/delivery/courier-workspace.mdx#superadmin-courier-selection)
 
 ### [Fournisseurs de cartes et usages](../../src/content/help/fr/delivery/maps-and-usage.mdx)
 
@@ -1053,6 +1069,7 @@ Identifiant : `whatsapp`. Public : public. Disponibilité : available. Services 
 - [Vérifier le rappel de livraison calculé](../../src/content/help/fr/communications/whatsapp.mdx#route-delivery-window)
 - [Choisir le mode d’envoi du rappel](../../src/content/help/fr/communications/whatsapp.mdx#delivery-reminder-review-and-send)
 - [Envoyer un message WhatsApp pour une ou plusieurs commandes](../../src/content/help/fr/communications/whatsapp.mdx#unified-order-whatsapp)
+- [Récupérer automatiquement l’image du modèle Meta](../../src/content/help/fr/communications/whatsapp.mdx#meta-template-image-sync)
 
 ### [Modèles et automatisations de messages](../../src/content/help/fr/communications/templates-and-automation.mdx)
 
@@ -1063,6 +1080,7 @@ Identifiant : `message-templates`. Public : public. Disponibilité : available. 
 - [Associer le fichier à la notification](../../src/content/help/fr/communications/templates-and-automation.mdx#media-binding)
 - [Vérifier le rappel de livraison calculé](../../src/content/help/fr/communications/templates-and-automation.mdx#route-delivery-window)
 - [Choisir le mode d’envoi du rappel](../../src/content/help/fr/communications/templates-and-automation.mdx#delivery-reminder-review-and-send)
+- [Récupérer automatiquement l’image du modèle Meta](../../src/content/help/fr/communications/templates-and-automation.mdx#meta-template-image-sync)
 
 ## guest
 
@@ -1184,6 +1202,7 @@ Identifiant : `platform-api`. Public : internal. Disponibilité : available. Ser
 - [Contrat des modificateurs conditionnels](internal/fr/api-and-release.md#modifier-position-contract)
 - [Contrat des dimensions de variante](internal/fr/api-and-release.md#descriptive-variant-contract)
 - [Vérifier le panneau WhatsApp unifié](internal/fr/api-and-release.md#unified-whatsapp-order-composer)
+- [Image de modèle WhatsApp Meta](internal/fr/api-and-release.md#meta-template-image-proxy)
 
 ### [Aperçus internes et alias de routes](internal/fr/design-previews.md)
 
@@ -1195,6 +1214,7 @@ Identifiant : `design-sandboxes`. Public : internal. Disponibilité : available.
 
 Identifiant : `shared-runtime`. Public : internal. Disponibilité : available. Services : foodyadmin, foodyweb, foodylanding, foodypos, foodybackoffice.
 
+- [Distinguer rapports, espèces et dépôt carte](internal/fr/shared-runtime.md#pos-reports-navigation)
 - [Rembourser ou annuler un paiement en ligne Verifone](internal/fr/shared-runtime.md#verifone-admin-money-operations)
 - [Vérifier le plafond de préautorisation au poids](internal/fr/shared-runtime.md#weight-hold-margin)
 - [Vérifier les changements du socle](internal/fr/shared-runtime.md#classify)
