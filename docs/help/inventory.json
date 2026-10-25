@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-10-18",
+  "reviewedAt": "2026-10-25",
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "b58752048cbdb3f5d41810e7cdf56b231a653c43",
+      "sourceCommit": "a0046cb3249bdb6c43a1ec00ea68892bad4201ab",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "68f204d5608ecc9afbd6394996855f729099b6bb9620889b6c59daa0543b2bdc",
+      "sourceSnapshot": "c6763d9d029797cefd0db261f116e66b61aaaceaaca71947ef24c5e4cb7fab84",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -4195,7 +4195,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "af42f3c2c0c6b177f64397e4a6655bee2c8540a2d079df1bcc14d7fe1fcce968",
+          "sha256": "49da70c037ee5caf93928a15c3288dc1d8e76e611b1766239c243bdf1e4a1e33",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -4508,7 +4508,7 @@
     },
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "b3e5387e8791078f23b06bc2c99333bfa74fc63f",
+      "sourceCommit": "cd96e394d27070d3144cfe298fe7a74ae98566d8",
       "releaseStatus": "versioned",
       "sourceSnapshot": "222d90c7abb3f198c7204b3eca49dbc4b8499a7b9912e28c50cd54acc63917f6",
       "workingTreeHasChanges": true,
@@ -9868,7 +9868,7 @@
     },
     "foodyweb": {
       "repository": "https://github.com/Foody-isr/web",
-      "sourceCommit": "d3c782b9881afa43d43e47869b1617590531690f",
+      "sourceCommit": "fac3db244c155fdaa3ffca034e4bbdc3eedcd6da",
       "releaseStatus": "versioned",
       "sourceSnapshot": "a920a7b14e1e0ff7fdb3c600ff38c13e96f58e8a33d4035cf04e8cd6a687a800",
       "workingTreeHasChanges": true,
@@ -12045,7 +12045,7 @@
     },
     "foodylanding": {
       "repository": "https://github.com/Foody-isr/landing",
-      "sourceCommit": "fe1a91e0737fd9ea9731a96758cd6b1c1dbf8fc3",
+      "sourceCommit": "6538a2d5a882a4d5d85d79fc237afc12df689508",
       "releaseStatus": "versioned",
       "sourceSnapshot": "0017f89048e20a416bab53c7443a4720bbe088bd715d39dcf9d1a8e67e173251",
       "workingTreeHasChanges": true,
@@ -12839,7 +12839,7 @@
     },
     "foodypos": {
       "repository": "https://github.com/Foody-isr/pos",
-      "sourceCommit": "c23b9d2174bdd605e7affd0f784ea38c1eb7022f",
+      "sourceCommit": "64dce2731c016202df609ef519d61fdf0473ffab",
       "releaseStatus": "versioned",
       "sourceSnapshot": "ed9db3de0ab931b61dcfe40e146ede50b21fdb00e92fcdac583c1762eb999021",
       "workingTreeHasChanges": false,
@@ -15235,15 +15235,21 @@
     },
     "foodybackoffice": {
       "repository": "https://github.com/Foody-isr/backoffice",
-      "sourceCommit": "126b49234438b0bc81b5027438743997f0fd824a",
+      "sourceCommit": "8b4929d31bc4aaa9b85e4effa74192476b9e2624",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "23b7a451600c740ec8092a00a0a4c7aeb8ff8aec1cccba5243daec400495b378",
-      "workingTreeHasChanges": false,
+      "sourceSnapshot": "bfcc994d8c35d3e174520b4c2e225b6376561c51cd00770aaeada3067f02d441",
+      "workingTreeHasChanges": true,
       "sourceFiles": {
         "src/app/api/operations/status/route.ts": {
           "sha256": "fdc2921e2c97a4271e461aa265dc26e61a8726c88b534025a558a15957420118",
           "features": [
             "backoffice-operations"
+          ]
+        },
+        "src/app/dashboard/api-usage/page.tsx": {
+          "sha256": "bcfd4a52f0e2daaa0ec27a5a178555a267f69f273d98de027560cfa667c438c0",
+          "features": [
+            "backoffice-entitlements"
           ]
         },
         "src/app/dashboard/clone/page.tsx": {
@@ -15355,9 +15361,16 @@
           ]
         },
         "src/app/dashboard/restaurants/[id]/page.tsx": {
-          "sha256": "5ffed8c79b52c8990d2bb1c777af30d92302338d9ae2df77c086ef5c3df2e255",
+          "sha256": "b3bead4e89129e1bc8a509a9555562f2173c2a00b3ca051ca87646249a69fe86",
           "features": [
             "backoffice-onboarding"
+          ]
+        },
+        "src/app/dashboard/restaurants/[id]/usage/page.tsx": {
+          "sha256": "30a3016541b91474389d04aae101bdfc4882b0eba97a304a3644b0e7fb8d62b8",
+          "features": [
+            "backoffice-onboarding",
+            "backoffice-entitlements"
           ]
         },
         "src/app/dashboard/restaurants/page.tsx": {
@@ -15427,7 +15440,7 @@
           ]
         },
         "src/components/Sidebar.tsx": {
-          "sha256": "63ad75c9ece49ae662ee55f85d04b24afdb77ccb1bd3cc515a1562c48f2e42dd",
+          "sha256": "7fdac2cd08405a9d5fbe5140a2e3472adf73effef1ec0245324c281d3b0002e8",
           "features": [
             "backoffice-access"
           ]
@@ -15457,7 +15470,7 @@
           ]
         },
         "src/lib/api.ts": {
-          "sha256": "048ad0eae618be9c906d4525170572eeb4a1406c3c90921e307e65698c2e18ce",
+          "sha256": "f684a0c1d4c56b8064971ff0270715a9e38285348cd5f2e5923148d54e905e0c",
           "features": [
             "backoffice-entitlements",
             "shared-runtime"
@@ -39288,12 +39301,25 @@
             "en": "When the invitation is off, a discreet Sign in link remains available in the pickup or delivery dialog. It opens authentication only when selected; dismissing authentication retains entered details and allows ordering without an account.",
             "he": "כשההצעה כבויה, קישור התחברות דיסקרטי נשאר זמין בחלון האיסוף או המשלוח. ההתחברות נפתחת רק בבחירה מפורשת; סגירתה שומרת על הפרטים שכבר הוזנו ומאפשרת להמשיך ללא חשבון."
           }
+        },
+        {
+          "id": "saved-phone-validation",
+          "title": {
+            "fr": "Corriger un téléphone mémorisé",
+            "en": "Correct a saved phone number",
+            "he": "תיקון מספר טלפון שמור"
+          },
+          "instructions": {
+            "fr": "Au checkout, un téléphone mémorisé doit passer la même validation qu’un nouveau numéro. S’il est invalide, les coordonnées restent ouvertes pour correction. Choisissez le bon indicatif pays ou saisissez le numéro international avec +, puis vérifiez la commande avant de confirmer. Le format enregistré est international et compatible avec les envois WhatsApp. Ce contrôle ne prouve ni la possession du numéro ni l’inscription à WhatsApp et ne change pas votre méthode de connexion. Pour enregistrer les coordonnées corrigées dans le compte, utilisez la préférence de mémorisation proposée au checkout.",
+            "en": "At checkout, a saved phone must pass the same validation as a new number. If it is invalid, contact details stay open for correction. Choose the correct country code or enter the international number with +, then review the order before confirming. The saved format is international and compatible with WhatsApp messaging. This does not prove ownership or WhatsApp registration and does not change your sign-in method. To save the corrected contact details in your account, use the remember-details preference offered at checkout.",
+            "he": "בסיום הזמנה מספר שמור עובר אותה בדיקה כמו מספר חדש. אם הוא לא תקין, פרטי הקשר נשארים פתוחים לתיקון. בחרו קידומת מדינה נכונה או הזינו מספר בינלאומי עם +, ובדקו את ההזמנה לפני האישור. הפורמט הנשמר הוא בינלאומי ומתאים לשליחת WhatsApp. הבדיקה אינה מאמתת בעלות או רישום ל-WhatsApp ואינה משנה את שיטת ההתחברות. לשמירת פרטי הקשר המתוקנים בחשבון השתמשו בהעדפת שמירת הפרטים בסיום הזמנה."
+          }
         }
       ],
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-10-21",
+      "procedureUpdatedAt": "2026-10-25",
       "evidence": [
         {
           "service": "foodyserver",
@@ -40201,6 +40227,10 @@
         },
         {
           "service": "foodybackoffice",
+          "file": "src/app/dashboard/restaurants/[id]/usage/page.tsx"
+        },
+        {
+          "service": "foodybackoffice",
           "file": "src/app/dashboard/restaurants/page.tsx"
         },
         {
@@ -40462,11 +40492,19 @@
         },
         {
           "service": "foodybackoffice",
+          "file": "src/app/dashboard/api-usage/page.tsx"
+        },
+        {
+          "service": "foodybackoffice",
           "file": "src/app/dashboard/features/page.tsx"
         },
         {
           "service": "foodybackoffice",
           "file": "src/app/dashboard/payments/page.tsx"
+        },
+        {
+          "service": "foodybackoffice",
+          "file": "src/app/dashboard/restaurants/[id]/usage/page.tsx"
         },
         {
           "service": "foodybackoffice",
@@ -58390,24 +58428,6 @@
       "resolution": "router-group-relative"
     },
     {
-      "id": "foodyserver:cmd/server/main.go:api-registration:2317",
-      "service": "foodyserver",
-      "source": "cmd/server/main.go",
-      "features": [
-        "staff-invitations",
-        "customers-profiles",
-        "whatsapp",
-        "platform-api"
-      ],
-      "kind": "api-registration",
-      "method": "PUT",
-      "receiver": "customerPhonesGroup",
-      "routeFragment": "",
-      "handler": "customerHandler.CorrectPhones",
-      "line": 2317,
-      "resolution": "router-group-relative"
-    },
-    {
       "id": "foodyserver:cmd/server/main.go:api-registration:2323",
       "service": "foodyserver",
       "source": "cmd/server/main.go",
@@ -69960,27 +69980,6 @@
       "actions": [
         "close",
         "load",
-        "save"
-      ],
-      "line": 1
-    },
-    {
-      "id": "foodyadmin:src/components/customers/CustomerPhoneCorrectionModal.tsx:ui-controls:1",
-      "service": "foodyadmin",
-      "source": "src/components/customers/CustomerPhoneCorrectionModal.tsx",
-      "features": [
-        "customers-profiles"
-      ],
-      "kind": "ui-controls",
-      "labels": [
-        "correctCustomerPhones",
-        "customerPhoneAfter",
-        "customerPhoneBefore",
-        "customerPhoneConflict",
-        "customerPhoneCorrectionHint",
-        "phoneNumber"
-      ],
-      "actions": [
         "save"
       ],
       "line": 1
@@ -87602,6 +87601,17 @@
       "line": 1
     },
     {
+      "id": "foodybackoffice:src/app/dashboard/api-usage/page.tsx:next-page:1",
+      "service": "foodybackoffice",
+      "source": "src/app/dashboard/api-usage/page.tsx",
+      "features": [
+        "backoffice-entitlements"
+      ],
+      "kind": "next-page",
+      "route": "/dashboard/api-usage",
+      "line": 1
+    },
+    {
       "id": "foodybackoffice:src/app/dashboard/clone/page.tsx:next-page:1",
       "service": "foodybackoffice",
       "source": "src/app/dashboard/clone/page.tsx",
@@ -88009,8 +88019,38 @@
         "handlePaymentSave",
         "handlePlanChange",
         "handleSpokeSave",
+        "handleThemeSync",
         "handleToggle",
-        "loadData"
+        "loadData",
+        "savedPaymentCreds"
+      ],
+      "line": 1
+    },
+    {
+      "id": "foodybackoffice:src/app/dashboard/restaurants/[id]/usage/page.tsx:next-page:1",
+      "service": "foodybackoffice",
+      "source": "src/app/dashboard/restaurants/[id]/usage/page.tsx",
+      "features": [
+        "backoffice-onboarding",
+        "backoffice-entitlements"
+      ],
+      "kind": "next-page",
+      "route": "/dashboard/restaurants/[id]/usage",
+      "line": 1
+    },
+    {
+      "id": "foodybackoffice:src/app/dashboard/restaurants/[id]/usage/page.tsx:ui-controls:1",
+      "service": "foodybackoffice",
+      "source": "src/app/dashboard/restaurants/[id]/usage/page.tsx",
+      "features": [
+        "backoffice-onboarding",
+        "backoffice-entitlements"
+      ],
+      "kind": "ui-controls",
+      "labels": [],
+      "actions": [
+        "save",
+        "saved"
       ],
       "line": 1
     },
@@ -88254,6 +88294,7 @@
         "updateCibusConfig",
         "updateCombo",
         "updateCustomDomain",
+        "updateExternalApiQuotas",
         "updateIngredientIcon",
         "updatePOSLoginConfig",
         "updatePOSLoginSlide",
@@ -88265,14 +88306,53 @@
         "updateUserEmail"
       ],
       "line": 1
+    },
+    {
+      "id": "foodyserver:cmd/server/main.go:api-registration:2317",
+      "service": "foodyserver",
+      "source": "cmd/server/main.go",
+      "features": [
+        "staff-invitations",
+        "customers-profiles",
+        "whatsapp",
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "PUT",
+      "receiver": "customerPhonesGroup",
+      "routeFragment": "",
+      "handler": "customerHandler.CorrectPhones",
+      "line": 2317,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyadmin:src/components/customers/CustomerPhoneCorrectionModal.tsx:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/components/customers/CustomerPhoneCorrectionModal.tsx",
+      "features": [
+        "customers-profiles"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "correctCustomerPhones",
+        "customerPhoneAfter",
+        "customerPhoneBefore",
+        "customerPhoneConflict",
+        "customerPhoneCorrectionHint",
+        "phoneNumber"
+      ],
+      "actions": [
+        "save"
+      ],
+      "line": 1
     }
   ],
   "coverage": {
     "sharedRuntimeFiles": 415,
     "features": 100,
-    "operations": 653,
-    "sourceFiles": 2163,
-    "surfaces": 2033,
+    "operations": 654,
+    "sourceFiles": 2165,
+    "surfaces": 2036,
     "unclassifiedRoutes": []
   }
 }
