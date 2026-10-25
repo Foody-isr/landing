@@ -71,3 +71,9 @@ Requires matching API and POS versions. Enable Show customer information screen 
 ## Choose an existing contact or enter order-only details
 
 In the optional fulfillment details form, open Add new or existing customer. The Customers search requires customers.view and searches the active restaurant only after two characters. Selecting a result returns its existing name and phone without updating a profile. Enter contact is available with orders.manage even without directory access: enter separate first/last names and an optional phone, then Done. The combined trimmed name is limited to 80 Unicode code points; a nonblank phone requires 7–15 digits and at most 32 characters. Back retains these edits locally when returning to search; closing the picker applies nothing. A restaurant, permission or order-context change blocks selection, including a late search response. The details form still requires its own Done to apply the mode and contact together. This is not the creation of a persistent CRM profile: email, address, marketing consent, contacts import, groups and tax fields are not collected here.
+
+<span id="mobile-terminal-pages" />
+
+## Configure checkout on a compact screen
+
+On mobile, settings use one page stack. Back first leaves the current subpage, then its section. Headers, fields and switches use the same terminal controls. Checkout preferences retain their existing permissions and persistence. Printer options remain a draft until Save in the profile editor. Under Appearance, mobile retains neutral surfaces and blue actions; custom colors remain available on tablets. Light/dark theme and language remain configurable on the terminal.

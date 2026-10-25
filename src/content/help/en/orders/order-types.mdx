@@ -123,3 +123,9 @@ In the item sheet's **Options → Fulfillment methods**, choose an enabled metho
 ## Change an unassigned draft's service safely
 
 An unpaid, wholly unsent anonymous draft can change pickup/delivery lifecycle or be assigned to an eligible onsite destination at Send/Continue. Empty destinations keep their own table/session identity. A saved, unpaid, unsplit onsite check can accept fresh lines only if it has no other unsent work, confirmed totals and a compatible guest snapshot; its saved lines, customer and discount policy remain unchanged. No paid/pending, allocated, uncertain or conflicting destination is overwritten. A source check-level discount must be removed explicitly before moving to a table/named check; do not silently discard or transfer that policy. On cancellation or a changed restaurant, permission, configuration, source or target, keep the source and review the error instead of recreating or paying for the same food twice. Source consumption occurs only after the destination local draft is confirmed. The explicit Send continues once after a successful choice; changing destination in Pay requires another explicit payment initiation. Table services with financial allocations are not silently converted by this flow.
+
+<span id="pos-private-guest-context" />
+
+## Keep private guest context on the check
+
+In the customer screen offered after fulfillment selection, first name, last name, guest identifier and note describe the whole check, not an item or a separate delivery. These details remain staff-only and are retained across successive sends on that check. They do not create a customer account and are not included in public tracking/payment responses or notification variables. Private fields require a compatible API version; if the POS requests an update, retain the check and have the server updated before continuing, without repeating a payment.
