@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-10-18",
+  "reviewedAt": "2026-10-25",
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "53027250c24e6f2485fc31922dfac5a089b83cf5",
+      "sourceCommit": "91755c424036d5d5c722a4a97f777be9b5d8ee38",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "cdda602de921c4bce1768fb966e607baacafd75d36c227ab172db5a2a8f3f615",
+      "sourceSnapshot": "2ddc51b3e8071e603a24a4af747f159b2c9d9bd61eabb536b3fa2cc457bd1d50",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -46,9 +46,10 @@
           ]
         },
         "cmd/server/boot_models.go": {
-          "sha256": "da25cf13f19da5b32e4abe8de75c8a4a1894146b1421bd4021b5d4edf5fb56b5",
+          "sha256": "16451e3734e7137d1e478e449f0883a4f00adf8074236da68a4baf503032202f",
           "features": [
             "staff-invitations",
+            "customers-profiles",
             "platform-api"
           ]
         },
@@ -264,8 +265,9 @@
           ]
         },
         "internal/analytics/service.go": {
-          "sha256": "100b2a240f1d78ed3022ec88182574bdea22ed6731f76c331d48b132e9ebecf5",
+          "sha256": "948711afbe39eef1e0b35c6086a6ed8adba4195bc4b5157999ca0d5273613e5c",
           "features": [
+            "customers-profiles",
             "analytics-dashboard",
             "platform-api"
           ]
@@ -542,8 +544,9 @@
           ]
         },
         "internal/common/customer_identity.go": {
-          "sha256": "a4d93c9ed37194fc94de5d874883285ffddda1f80ac5e099009d68e6f1a2f4b2",
+          "sha256": "c635534922f585eb790b916b59e18bc05d6661e4a6bbb962b0b7c8f060ae63bb",
           "features": [
+            "customers-profiles",
             "platform-api"
           ]
         },
@@ -556,6 +559,14 @@
         "internal/common/customer_override.go": {
           "sha256": "d5c3a910862b1619ced98c73e2dc04c58b4cb86a148861c1b9fcb55557d2e0b7",
           "features": [
+            "platform-api"
+          ]
+        },
+        "internal/common/customer_phones.go": {
+          "sha256": "63a8034299438627160b96c5288c169cfc844b589b6b031d320f627f1755e3b1",
+          "features": [
+            "customers-profiles",
+            "whatsapp",
             "platform-api"
           ]
         },
@@ -855,6 +866,13 @@
             "platform-api"
           ]
         },
+        "internal/customers/contacts.go": {
+          "sha256": "f20fe0879379e8330e95ad219d74e945a2a23f1026a07e9493a60cd1d7e10929",
+          "features": [
+            "customers-profiles",
+            "platform-api"
+          ]
+        },
         "internal/customers/duplicates.go": {
           "sha256": "eb438bbd730bfbe95fd174abeb8ff4dc640b9d1edab852278ed75fd8073ce1df",
           "features": [
@@ -863,7 +881,7 @@
           ]
         },
         "internal/customers/handler.go": {
-          "sha256": "ba68f6bbd09764e8bb59be3f531f0520b750ad4de9f540b3406375fb3b7f9179",
+          "sha256": "4dbe08bccdc345bfa43bd2e4c23d861fd49245f77df7554312c7a3ec8da7636c",
           "features": [
             "customers-profiles",
             "platform-api"
@@ -877,21 +895,21 @@
           ]
         },
         "internal/customers/phones.go": {
-          "sha256": "6864f489af53a6a43eaa127ff0a23812ba072537dd473baf5ea457b0327ff2ef",
+          "sha256": "2f458f9e2e65dc683b8b2d6706f97415d7ad880ffcc04e46eb02c65cfffd575c",
           "features": [
             "customers-profiles",
             "platform-api"
           ]
         },
         "internal/customers/search.go": {
-          "sha256": "362e1399cdf5a89bc628d6e9d8e3b40b6dbfa7dc2aef4a2e31123c5d99d2f988",
+          "sha256": "f46e1eaac48a729dc64f844a6b8c407db330bcc7492ae8322a34645ad9098284",
           "features": [
             "customers-profiles",
             "platform-api"
           ]
         },
         "internal/customers/service.go": {
-          "sha256": "1a0f1378319814a51cb10ab28096eaad7d1c695f9355694f8056ecdc5e4c9970",
+          "sha256": "6a3e7f3663a66817908f7b55fc9a97f946bc0528e07d17e65426c10ef34d9b1a",
           "features": [
             "customers-profiles",
             "platform-api"
@@ -2112,7 +2130,7 @@
           ]
         },
         "internal/metawhatsapp/messages.go": {
-          "sha256": "736acb51f21d6f19cc76a4b55870d34b73bd39136a355b09a07d1baa3f9d97ac",
+          "sha256": "ab6c4e77311ee0c20511bab182c7aa0f46dff50469ac5f763528eb3630115d89",
           "features": [
             "whatsapp",
             "platform-api"
@@ -2647,7 +2665,7 @@
           ]
         },
         "internal/orders/handler.go": {
-          "sha256": "22c58c56926446946e9db1b7c370812c3917f39688b0df4386594672c3905c6e",
+          "sha256": "f7bfe1ced2cec9c2a3deb267f4d8c7f3bbe9aa1fbccd06dbe9a63b8f352d6724",
           "features": [
             "orders-managing-orders",
             "order-types",
@@ -2855,7 +2873,7 @@
           ]
         },
         "internal/orders/service.go": {
-          "sha256": "dbfa98b1a250f448ade54228ea1b5cccd66dd2defff5f502593f5965052255df",
+          "sha256": "37666fd283929cdb88f072d90bf5d6f2f908451838fad7c31d91e58e343dbbc0",
           "features": [
             "orders-managing-orders",
             "order-types",
@@ -4202,7 +4220,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "2769403625aa3a2951f015f6d93a70ca7bfac936704ec588ef9ff3a059b618af",
+          "sha256": "9c1591e1d5f6debebe847005167709b8ce5f88412253a44f1214a27252c736a5",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -4295,7 +4313,7 @@
           ]
         },
         "internal/testutil/testutil.go": {
-          "sha256": "8ed1bde2a262b3773e2e92fc42b6985544677f5696f4e814c8e496b5498c769a",
+          "sha256": "ccfcb97cebcb89397076996ad1449bc986d9a0d7e120d9934a454de97b477e31",
           "features": [
             "platform-api"
           ]
@@ -4377,7 +4395,7 @@
           ]
         },
         "internal/twilio/notifications.go": {
-          "sha256": "1e8b4d291812886a4345eb1a6a562c81d0b8e11d588716ae9114a64153e8b0fa",
+          "sha256": "5add86e890fc26316df4e999bea8ccde1887d091f1e5cc4167496f5e2f7946a4",
           "features": [
             "whatsapp",
             "platform-api"
@@ -4398,7 +4416,7 @@
           ]
         },
         "internal/twilio/order_messages.go": {
-          "sha256": "4cddd7a1e45c33036934208de82789e18d578756c733b323794a676f29ce738b",
+          "sha256": "333f9446d34a8f14bc1e6888553a4ee34ecba2c278a338808c141831db04e605",
           "features": [
             "whatsapp",
             "platform-api"
@@ -4515,9 +4533,9 @@
     },
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "dda58e385dfc296e850d1b21d2a12fe6e59748f7",
+      "sourceCommit": "335b4895ab83d90d95bc4518c458757990e8be8f",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "9e9daf914c8e7eedbefd0444cf62b37cd9b3aa91d95dc7597a17d46f573af316",
+      "sourceSnapshot": "0e06ae6e963c9f41f792cc79df636cc722fed20baca101e6bb99bd4b92c33586",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
@@ -4659,7 +4677,7 @@
           ]
         },
         "src/app/[restaurantId]/customers/page.tsx": {
-          "sha256": "61bbb3dcb1f40a0855879fcf1d46b6ce7d1eaef1dc198fb0824f7fb5fa738cd9",
+          "sha256": "fb277d0585962939c3abac331b626991cf35a51f9c4fb6b909517c375525a045",
           "features": [
             "customers-profiles"
           ]
@@ -6353,13 +6371,19 @@
           ]
         },
         "src/components/customers/CustomerForms.tsx": {
-          "sha256": "6375340d6d54922e786230231aa910a933f166ae6fa494cf27c134137a90f7a7",
+          "sha256": "723f3f5398f3fa8d390d1a04e7adae4a5fbc4a80d689bcbd952341a882f3176d",
           "features": [
             "customers-profiles"
           ]
         },
         "src/components/customers/CustomerPhoneCorrectionModal.tsx": {
           "sha256": "e9b89ce4e04d811f6a071887ba11c9dfdde4c76b747bcf1c664ca60ff59e5a8e",
+          "features": [
+            "customers-profiles"
+          ]
+        },
+        "src/components/customers/CustomerPhoneFields.tsx": {
+          "sha256": "663b1e2871f2bfb0ce1b556bd9c136056e86a85805eb8b031546e6505110626f",
           "features": [
             "customers-profiles"
           ]
@@ -7542,7 +7566,7 @@
           ]
         },
         "src/components/orders/OrderWhatsAppComposer.tsx": {
-          "sha256": "70a1bf4ac5fdfe61ecedf5eac4978b469340e4c2f407735a0bf76e713712827f",
+          "sha256": "b2da0b70a9cc3c2dc3cf6d4a64d8da9e6a05f7212b62b8c138b210a0e0025dda",
           "features": [
             "orders-managing-orders",
             "order-detail",
@@ -7671,14 +7695,14 @@
           ]
         },
         "src/components/orders/detail/context/InvoicePanel.tsx": {
-          "sha256": "0aca0e52791f6f62b7d305d41054959d2324816e2b568f5266a93fed601d5ca3",
+          "sha256": "6d24ece73de04b99e30b8f170bc557c6766302e5880c46eb9dd14cb1dc853b50",
           "features": [
             "orders-managing-orders",
             "order-detail"
           ]
         },
         "src/components/orders/detail/context/MoneyPanel.tsx": {
-          "sha256": "cc685cb7def8698ce9e85615207958cafbc5686db5dd14f98fefdf89dbbd58ff",
+          "sha256": "f552e13529a5e13504ff5850008f29268f61fa29096c8d0c21c8396891bbe228",
           "features": [
             "orders-managing-orders",
             "order-detail"
@@ -8731,7 +8755,7 @@
           ]
         },
         "src/lib/api.ts": {
-          "sha256": "8e4adf3628558720d5120ca4967202da3b059409d013f1674d1c5d658116ef4e",
+          "sha256": "9da2fad72abf162cbb82ef9375d085a38b7ba9a56358b5609c12a532d830f06b",
           "features": [
             "customers-profiles",
             "payments-how-payments-work",
@@ -8917,7 +8941,7 @@
           ]
         },
         "src/lib/i18n.tsx": {
-          "sha256": "658be9c1258fe44dbb43e4b946d129115767132e64f78c6cc83d4f2cafa8761d",
+          "sha256": "862c26fcb77926fd3f7bf4e2ccd2577504861992b7160098c9856f4fa0473595",
           "features": [
             "customers-profiles",
             "delivery-dispatch",
@@ -9881,7 +9905,7 @@
     },
     "foodylanding": {
       "repository": "https://github.com/Foody-isr/landing",
-      "sourceCommit": "4141ee8c498e7095fd44599ec47aba1fda616182",
+      "sourceCommit": "902a4a6ecaa3fb4f05d796428d640da9d43a900f",
       "releaseStatus": "versioned",
       "sourceSnapshot": "0017f89048e20a416bab53c7443a4720bbe088bd715d39dcf9d1a8e67e173251",
       "workingTreeHasChanges": true,
@@ -16303,7 +16327,11 @@
         "foodyserver": [
           "internal/customers/**",
           "cmd/server/main.go",
-          "internal/support/corpus.json"
+          "internal/support/corpus.json",
+          "internal/common/customer_phones.go",
+          "internal/common/customer_identity.go",
+          "internal/analytics/service.go",
+          "cmd/server/boot_models.go"
         ],
         "foodypos": [
           "lib/features/trusted_customers/**"
@@ -16326,14 +16354,14 @@
         {
           "id": "edit",
           "title": {
-            "en": "Edit delivery details",
-            "fr": "Modifier les coordonnées de livraison",
-            "he": "עריכת פרטי משלוח"
+            "fr": "Modifier la fiche client",
+            "en": "Edit the customer profile",
+            "he": "עריכת כרטיס הלקוח"
           },
           "instructions": {
-            "en": "Open the customer profile, edit the name, address and delivery details, then save. To change a phone, use Correct in the customer list. Recheck the selected order address separately for already-created orders.",
-            "fr": "Ouvrez la fiche, modifiez le nom, l’adresse et les précisions de livraison, puis enregistrez. Pour changer le téléphone, utilisez Corriger dans la liste des clients. Vérifiez séparément l’adresse des commandes déjà créées.",
-            "he": "פתחו את כרטיס הלקוח, ערכו שם, כתובת ופרטי משלוח ושמרו. לשינוי טלפון השתמשו בתיקון ברשימת הלקוחות. בדקו בנפרד כתובת בהזמנות שכבר נוצרו."
+            "fr": "Ouvrez la fiche depuis le téléphone du client, modifiez le nom, les numéros, l’adresse et les précisions de livraison, puis enregistrez. Vérifiez séparément l’adresse des commandes déjà créées.",
+            "en": "Open the profile from the customer phone, edit the name, phone numbers, address and delivery details, then save. Review addresses on existing orders separately.",
+            "he": "פתחו את הכרטיס מטלפון הלקוח, ערכו שם, מספרי טלפון, כתובת ופרטי משלוח ושמרו. בדקו בנפרד כתובות בהזמנות קיימות."
           }
         },
         {
@@ -16365,14 +16393,14 @@
         {
           "id": "phone-corrections",
           "title": {
-            "fr": "Corriger un ou plusieurs téléphones",
-            "en": "Correct one or several phone numbers",
-            "he": "תיקון מספר טלפון אחד או כמה מספרים"
+            "fr": "Gérer les téléphones et choisir le numéro WhatsApp",
+            "en": "Manage phones and choose the WhatsApp number",
+            "he": "ניהול טלפונים ובחירת מספר WhatsApp"
           },
           "instructions": {
-            "fr": "Avec customers.manage, ouvrez Clients et utilisez Corriger sur une ligne, ou cochez les clients puis Actions → Corriger les téléphones. Chaque numéro est prérempli lorsque le format est reconnaissable ; corrigez les autres manuellement. Vérifiez le numéro actuel et le format enregistré, puis Enregistrer. Un numéro israélien devient +972 sans le zéro national ; pour un autre pays, saisissez + et son indicatif. Les lettres, extensions, numéros incomplets et préfixes invalides bloquent la sauvegarde. Le lot est atomique : un conflit avec un autre client ou plusieurs autorisations d’espèces bloque toutes les corrections. Les contacts des commandes existantes et les clés du client sont corrigés ensemble pour les futurs envois WhatsApp ; noms, adresses, regroupements et autorisation d’espèces sont conservés. Les comptes de connexion et les autres restaurants ne changent pas. En cas d’échec, la saisie reste disponible ; si seule l’actualisation échoue après sauvegarde, Réessayer recharge sans réenregistrer. Ce contrôle du format ne confirme ni la possession du numéro ni son inscription WhatsApp.",
-            "en": "With customers.manage, open Clients and use Correct on one row, or select customers and choose Actions → Correct phones. Recognizable formats are prefilled; correct other numbers manually. Review the current number and saved format, then Save. Israeli numbers become +972 without the national trunk zero; for another country enter + and its country code. Letters, extensions, incomplete numbers and invalid prefixes prevent saving. The batch is atomic: a number belonging to another customer or conflicting cash records blocks every correction. Existing order contacts and customer keys are corrected together for future WhatsApp sends; names, addresses, merges and cash eligibility remain intact. Login accounts and other restaurants are unchanged. Errors retain input; if only refreshing fails after a successful save, Retry reloads without repeating the write. Format validation does not verify ownership or WhatsApp registration.",
-            "he": "עם customers.manage פתחו לקוחות ולחצו תיקון בשורה אחת, או בחרו לקוחות ואז פעולות → תיקון טלפונים. מספרים בפורמט מזוהה ימולאו מראש; תקנו אחרים ידנית. בדקו מספר נוכחי ופורמט לשמירה ולחצו שמירה. מספר ישראלי נשמר עם +972 ללא אפס מקומי; למדינה אחרת הזינו + וקידומת מדינה. אותיות, שלוחות, מספרים חסרים וקידומות לא תקינות חוסמים שמירה. השמירה של כל הקבוצה אטומית: מספר המשויך ללקוח אחר או הרשאות מזומן מתנגשות חוסמים את כל התיקונים. פרטי הטלפון בהזמנות קיימות ומפתחות הלקוח מתוקנים יחד לשליחות WhatsApp עתידיות; שמות, כתובות, איחודים והרשאת מזומן נשמרים. חשבונות התחברות ומסעדות אחרות אינם משתנים. שגיאה משאירה את הקלט; אם רק הרענון נכשל לאחר שמירה, ניסיון חוזר טוען ללא כתיבה נוספת. בדיקת פורמט אינה מאמתת בעלות על המספר או רישום ל-WhatsApp."
+            "fr": "Avec la permission de gestion des clients, cliquez sur le téléphone du client pour ouvrir Modifier le client. Dans Numéros de téléphone, corrigez le Téléphone principal ou choisissez Ajouter un numéro. Renseignez un numéro complet ; les numéros israéliens sont enregistrés avec +972 sans le zéro national et les étrangers avec leur indicatif. Choisissez Utiliser pour WhatsApp sur le numéro qui doit recevoir les messages, même si le téléphone pour les appels est différent. Un seul numéro WhatsApp est sélectionné ; jusqu’à dix numéros peuvent être associés. Enregistrez pour confirmer les coordonnées et les téléphones ensemble. Une saisie invalide, un doublon ou un numéro appartenant à une autre fiche bloque cet enregistrement et conserve le brouillon ; utilisez Fusionner les clients pour associer deux fiches existantes. Retirer un numéro supplémentaire ne prend effet qu’à l’enregistrement et dissocie son historique sans supprimer ses commandes. La correction du téléphone principal conserve les noms, adresses et regroupements et corrige les contacts des commandes existantes. Les comptes de connexion et les autres restaurants restent inchangés. L’autorisation d’espèces reste celle du client ; ajouter un numéro ne crée pas une nouvelle autorisation. Pour corriger plusieurs clients à la fois, cochez au moins deux lignes puis Actions → Corriger les téléphones. Le lot reste atomique ; un conflit bloque toutes les corrections. Après une sauvegarde réussie suivie d’un échec d’actualisation, Réessayer recharge sans réenregistrer. Le format ne confirme ni la possession du numéro ni son inscription à WhatsApp.",
+            "en": "With customer-management permission, select the customer phone to open Edit customer. Under Phone numbers, correct Primary phone or choose Add a phone number. Enter a complete number; Israeli numbers are saved with +972 without the national trunk zero and foreign numbers retain their country code. Select Use for WhatsApp on the number that should receive messages, even when the calling number differs. Exactly one WhatsApp recipient is selected; a customer can have up to ten numbers. Save confirms profile and phone changes together. Invalid input, duplicate numbers or a number belonging to another record blocks this save and retains the draft; use Merge customers to associate existing records. Removing an additional number takes effect only on Save and separates its history without deleting its orders. Correcting the primary retains names, addresses and grouping and corrects existing order contacts. Login accounts and other restaurants remain unchanged. Cash eligibility belongs to the same customer; adding a number does not create another cash authorization. To correct several customers together, select at least two rows and choose Actions → Correct phones. The batch is atomic; a conflict blocks every correction. After a completed save and failed refresh, Retry reloads without repeating the write. Format validation does not prove ownership or WhatsApp registration.",
+            "he": "עם הרשאת ניהול לקוחות לחצו על טלפון הלקוח לפתיחת עריכת לקוח. תחת מספרי טלפון תקנו טלפון ראשי או בחרו הוספת מספר טלפון. הזינו מספר מלא; מספר ישראלי נשמר עם +972 ללא האפס המקומי ומספר זר עם קידומת המדינה. בחרו לשימוש ב-WhatsApp במספר שיקבל הודעות, גם אם מספר השיחות שונה. נבחר מספר WhatsApp אחד וניתן לשייך עד עשרה מספרים. שמירה מאשרת יחד את פרטי הלקוח והטלפונים. קלט לא תקין, מספרים כפולים או מספר בכרטיס אחר חוסמים שמירה ומשאירים את הטיוטה; לאיחוד כרטיסים קיימים השתמשו באיחוד לקוחות. הסרת מספר נוסף נכנסת לתוקף רק בשמירה ומפרידה את ההיסטוריה ללא מחיקת הזמנות. תיקון הראשי שומר שמות, כתובות ושיוכים ומתקן פרטי קשר בהזמנות קיימות. חשבונות התחברות ומסעדות אחרות אינם משתנים. הרשאת המזומן שייכת לאותו לקוח; הוספת מספר אינה יוצרת הרשאת מזומן נוספת. לתיקון כמה לקוחות בחרו לפחות שתי שורות ואז פעולות → תיקון טלפונים. השמירה אטומית וסכסוך חוסם את כל התיקונים. אחרי שמירה שהצליחה ורענון שנכשל, נסה שוב מרענן ללא כתיבה נוספת. בדיקת הפורמט אינה מאמתת בעלות או רישום ל-WhatsApp."
           }
         }
       ],
@@ -16388,7 +16416,27 @@
       "evidence": [
         {
           "service": "foodyserver",
+          "file": "cmd/server/boot_models.go"
+        },
+        {
+          "service": "foodyserver",
           "file": "cmd/server/main.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/analytics/service.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/common/customer_identity.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/common/customer_phones.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/customers/contacts.go"
         },
         {
           "service": "foodyserver",
@@ -16441,6 +16489,10 @@
         {
           "service": "foodyadmin",
           "file": "src/components/customers/CustomerPhoneCorrectionModal.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/components/customers/CustomerPhoneFields.tsx"
         },
         {
           "service": "foodyadmin",
@@ -24467,6 +24519,19 @@
             "en": "Approved WhatsApp Utility templates with a photo automatically use the image retrieved from Meta when no local file was selected. The preview displays that image; a change before a manual send requires another review. Retrieval failure blocks sending without a text-only fallback. Configure or refresh the template in Settings → Communications → WhatsApp. See the [WhatsApp guide](../communications/whatsapp#meta-template-image-sync).",
             "he": "תבניות WhatsApp Utility מאושרות עם תמונה משתמשות אוטומטית בתמונה שאוחזרה מ-Meta כשלא נבחר קובץ מקומי. התצוגה מציגה תמונה זו; שינוי לפני שליחה ידנית מחייב בדיקה חדשה. כשל אחזור חוסם שליחה ללא שליחת טקסט בלבד. הגדירו או רעננו את התבנית בהגדרות → תקשורת → WhatsApp. ראו [מדריך WhatsApp](../communications/whatsapp#meta-template-image-sync)."
           }
+        },
+        {
+          "id": "customer-whatsapp-recipient",
+          "title": {
+            "fr": "Choisir le destinataire WhatsApp du client",
+            "en": "Choose the customer WhatsApp recipient",
+            "he": "בחירת נמען WhatsApp ללקוח"
+          },
+          "instructions": {
+            "fr": "Si le client utilise un autre numéro pour WhatsApp, ouvrez Clients → sa fiche et choisissez Utiliser pour WhatsApp dans Numéros de téléphone, puis enregistrez. Ce numéro est utilisé pour les messages Meta et Twilio et pour l’ouverture de WhatsApp depuis la commande, y compris les partages de liens et documents. Le téléphone de la commande reste celui des coordonnées et de la vérification SMS. Vérifiez le destinataire affiché dans l’aperçu ; une modification du numéro WhatsApp impose de revoir un nouvel aperçu avant un envoi API. Aucun message de test n’est envoyé lors de l’enregistrement de la fiche.",
+            "en": "If the customer uses a different WhatsApp number, open Clients → their profile, select Use for WhatsApp under Phone numbers and save. That number is used by Meta and Twilio messages and by WhatsApp app handoffs from the order, including link and document sharing. The order phone remains its contact and SMS-verification number. Check the preview recipient; changing the WhatsApp selection requires a new reviewed preview before an API send. Saving the customer profile sends no test message.",
+            "he": "אם ללקוח מספר WhatsApp אחר, פתחו לקוחות → כרטיס הלקוח, בחרו לשימוש ב-WhatsApp תחת מספרי טלפון ושמרו. המספר משמש הודעות Meta ו-Twilio ופתיחת WhatsApp מההזמנה, כולל שיתוף קישורים ומסמכים. טלפון ההזמנה נשאר מספר הקשר ולאימות SMS. בדקו את הנמען בתצוגה המקדימה; שינוי המספר מחייב בדיקה של תצוגה חדשה לפני שליחה דרך API. שמירת הכרטיס אינה שולחת הודעת בדיקה."
+          }
         }
       ],
       "audience": "public",
@@ -29008,6 +29073,19 @@
             "fr": "Les modèles WhatsApp Utility approuvés avec une photo utilisent automatiquement l’image récupérée depuis Meta lorsque aucun fichier local n’a été choisi. L’aperçu affiche cette image ; un changement avant l’envoi manuel demande une nouvelle vérification. Un échec de récupération bloque l’envoi sans envoyer le texte seul. Configurez ou actualisez le modèle dans Paramètres → Communications → WhatsApp. Voir le [guide WhatsApp](../communications/whatsapp#meta-template-image-sync).",
             "en": "Approved WhatsApp Utility templates with a photo automatically use the image retrieved from Meta when no local file was selected. The preview displays that image; a change before a manual send requires another review. Retrieval failure blocks sending without a text-only fallback. Configure or refresh the template in Settings → Communications → WhatsApp. See the [WhatsApp guide](../communications/whatsapp#meta-template-image-sync).",
             "he": "תבניות WhatsApp Utility מאושרות עם תמונה משתמשות אוטומטית בתמונה שאוחזרה מ-Meta כשלא נבחר קובץ מקומי. התצוגה מציגה תמונה זו; שינוי לפני שליחה ידנית מחייב בדיקה חדשה. כשל אחזור חוסם שליחה ללא שליחת טקסט בלבד. הגדירו או רעננו את התבנית בהגדרות → תקשורת → WhatsApp. ראו [מדריך WhatsApp](../communications/whatsapp#meta-template-image-sync)."
+          }
+        },
+        {
+          "id": "customer-whatsapp-recipient",
+          "title": {
+            "fr": "Choisir le destinataire WhatsApp du client",
+            "en": "Choose the customer WhatsApp recipient",
+            "he": "בחירת נמען WhatsApp ללקוח"
+          },
+          "instructions": {
+            "fr": "Si le client utilise un autre numéro pour WhatsApp, ouvrez Clients → sa fiche et choisissez Utiliser pour WhatsApp dans Numéros de téléphone, puis enregistrez. Ce numéro est utilisé pour les messages Meta et Twilio et pour l’ouverture de WhatsApp depuis la commande, y compris les partages de liens et documents. Le téléphone de la commande reste celui des coordonnées et de la vérification SMS. Vérifiez le destinataire affiché dans l’aperçu ; une modification du numéro WhatsApp impose de revoir un nouvel aperçu avant un envoi API. Aucun message de test n’est envoyé lors de l’enregistrement de la fiche.",
+            "en": "If the customer uses a different WhatsApp number, open Clients → their profile, select Use for WhatsApp under Phone numbers and save. That number is used by Meta and Twilio messages and by WhatsApp app handoffs from the order, including link and document sharing. The order phone remains its contact and SMS-verification number. Check the preview recipient; changing the WhatsApp selection requires a new reviewed preview before an API send. Saving the customer profile sends no test message.",
+            "he": "אם ללקוח מספר WhatsApp אחר, פתחו לקוחות → כרטיס הלקוח, בחרו לשימוש ב-WhatsApp תחת מספרי טלפון ושמרו. המספר משמש הודעות Meta ו-Twilio ופתיחת WhatsApp מההזמנה, כולל שיתוף קישורים ומסמכים. טלפון ההזמנה נשאר מספר הקשר ולאימות SMS. בדקו את הנמען בתצוגה המקדימה; שינוי המספר מחייב בדיקה של תצוגה חדשה לפני שליחה דרך API. שמירת הכרטיס אינה שולחת הודעת בדיקה."
           }
         }
       ],
@@ -38256,7 +38334,8 @@
           "internal/twilio/**",
           "internal/metawhatsapp/**",
           "internal/printing/receipt_pdf.go",
-          "cmd/server/main.go"
+          "cmd/server/main.go",
+          "internal/common/customer_phones.go"
         ]
       },
       "operations": [
@@ -38376,6 +38455,19 @@
             "en": "Prerequisite: an approved Utility template with a Photo header in the connected Meta account. In Settings → Communications → WhatsApp, open Configure for the message: Foody reloads the templates and automatically retrieves their Meta image. The preview displays the image above the text without uploading a file to Foody. An existing selection without a file also follows the Meta image. If you previously selected a local image, choose Image from Meta template under Photo, then Done and Save to use Meta’s image. Explicit local file selections are preserved. Refresh templates and connection reloads edits made in Meta. Satisfaction and workflow-stage previews also use this image; the order composer displays the actual attachment. The image must be a JPEG/PNG accessible from Meta, up to 5 MB. If retrieval fails, the preview offers Refresh and sending fails without a text-only fallback. Check the image in Meta if its link is unavailable. An image changed after a manual send was prepared requires a new preview before sending. Opening and refreshing never sends a message.",
             "he": "תנאי מקדים: תבנית Utility מאושרת עם כותרת תמונה בחשבון Meta המחובר. בהגדרות → תקשורת → WhatsApp פתחו הגדרה עבור ההודעה: Foody קורא מחדש את התבניות ומאחזר אוטומטית את תמונת Meta שלהן. התצוגה המקדימה מציגה את התמונה מעל הטקסט ללא העלאת קובץ ל-Foody. גם בחירה קיימת ללא קובץ משתמשת בתמונת Meta. אם בחרתם בעבר תמונה מקומית, בחרו תמונה מתבנית Meta בשדה תמונה, ואז סיום ושמירה. בחירות מפורשות בקבצים מקומיים נשמרות. רענון התבניות והחיבור קורא שינויים שנעשו ב-Meta. גם תצוגות שביעות הרצון ושלבי התהליך משתמשות בתמונה, ופאנל שליחת ההזמנה מציג את הקובץ המצורף בפועל. התמונה חייבת להיות JPEG/PNG הנגישה מ-Meta, עד 5 MB. אם האחזור נכשל, התצוגה מציעה רענון והשליחה נכשלת ללא שליחת טקסט בלבד. בדקו את התמונה ב-Meta אם הקישור אינו זמין. שינוי תמונה לאחר הכנת שליחה ידנית מחייב תצוגה מקדימה חדשה לפני השליחה. פתיחה ורענון אינם שולחים הודעה."
           }
+        },
+        {
+          "id": "customer-whatsapp-recipient",
+          "title": {
+            "fr": "Choisir le destinataire WhatsApp du client",
+            "en": "Choose the customer WhatsApp recipient",
+            "he": "בחירת נמען WhatsApp ללקוח"
+          },
+          "instructions": {
+            "fr": "Si le client utilise un autre numéro pour WhatsApp, ouvrez Clients → sa fiche et choisissez Utiliser pour WhatsApp dans Numéros de téléphone, puis enregistrez. Ce numéro est utilisé pour les messages Meta et Twilio et pour l’ouverture de WhatsApp depuis la commande, y compris les partages de liens et documents. Le téléphone de la commande reste celui des coordonnées et de la vérification SMS. Vérifiez le destinataire affiché dans l’aperçu ; une modification du numéro WhatsApp impose de revoir un nouvel aperçu avant un envoi API. Aucun message de test n’est envoyé lors de l’enregistrement de la fiche.",
+            "en": "If the customer uses a different WhatsApp number, open Clients → their profile, select Use for WhatsApp under Phone numbers and save. That number is used by Meta and Twilio messages and by WhatsApp app handoffs from the order, including link and document sharing. The order phone remains its contact and SMS-verification number. Check the preview recipient; changing the WhatsApp selection requires a new reviewed preview before an API send. Saving the customer profile sends no test message.",
+            "he": "אם ללקוח מספר WhatsApp אחר, פתחו לקוחות → כרטיס הלקוח, בחרו לשימוש ב-WhatsApp תחת מספרי טלפון ושמרו. המספר משמש הודעות Meta ו-Twilio ופתיחת WhatsApp מההזמנה, כולל שיתוף קישורים ומסמכים. טלפון ההזמנה נשאר מספר הקשר ולאימות SMS. בדקו את הנמען בתצוגה המקדימה; שינוי המספר מחייב בדיקה של תצוגה חדשה לפני שליחה דרך API. שמירת הכרטיס אינה שולחת הודעת בדיקה."
+          }
         }
       ],
       "audience": "public",
@@ -38386,6 +38478,10 @@
         {
           "service": "foodyserver",
           "file": "cmd/server/main.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/common/customer_phones.go"
         },
         {
           "service": "foodyserver",
@@ -41532,6 +41628,10 @@
         },
         {
           "service": "foodyserver",
+          "file": "internal/common/customer_phones.go"
+        },
+        {
+          "service": "foodyserver",
           "file": "internal/common/database.go"
         },
         {
@@ -41717,6 +41817,10 @@
         {
           "service": "foodyserver",
           "file": "internal/crypto/crypto.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/customers/contacts.go"
         },
         {
           "service": "foodyserver",
@@ -62959,8 +63063,6 @@
         "addCustomer",
         "address",
         "canPayCash",
-        "correctCustomerPhone",
-        "correctCustomerPhones",
         "correctCustomerPhonesSelected",
         "customerLoadFailed",
         "customers",
@@ -70100,17 +70202,14 @@
         "allowCashPayment",
         "allowCashPaymentDesc",
         "cancel",
-        "customerDetachHint",
         "customerLoadFailed",
         "customerPartiallySaved",
         "customerSavedRefresh",
         "deliveryDetails",
-        "detachNumber",
         "discardChanges",
         "discardUnsavedChanges",
         "editCustomer",
         "loading",
-        "mergeCustomersNumbers",
         "nameOptional",
         "notesOptional",
         "phoneNumber",
@@ -70120,7 +70219,9 @@
       "actions": [
         "close",
         "load",
-        "save"
+        "save",
+        "saved",
+        "savedPhone"
       ],
       "line": 1
     },
@@ -88483,14 +88584,35 @@
         "updateUserEmail"
       ],
       "line": 1
+    },
+    {
+      "id": "foodyadmin:src/components/customers/CustomerPhoneFields.tsx:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/components/customers/CustomerPhoneFields.tsx",
+      "features": [
+        "customers-profiles"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "addCustomerPhone",
+        "customerContactPhones",
+        "customerPhoneAfter",
+        "customerPhoneDuplicate",
+        "customerRemovePhoneHint",
+        "customerUseForWhatsApp",
+        "customerWhatsAppPhoneHint",
+        "removeCustomerPhone"
+      ],
+      "actions": [],
+      "line": 1
     }
   ],
   "coverage": {
     "sharedRuntimeFiles": 415,
     "features": 100,
-    "operations": 660,
-    "sourceFiles": 2167,
-    "surfaces": 2038,
+    "operations": 663,
+    "sourceFiles": 2170,
+    "surfaces": 2039,
     "unclassifiedRoutes": []
   }
 }

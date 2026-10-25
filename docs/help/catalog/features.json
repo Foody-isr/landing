@@ -512,7 +512,11 @@
       "foodyserver": [
         "internal/customers/**",
         "cmd/server/main.go",
-        "internal/support/corpus.json"
+        "internal/support/corpus.json",
+        "internal/common/customer_phones.go",
+        "internal/common/customer_identity.go",
+        "internal/analytics/service.go",
+        "cmd/server/boot_models.go"
       ],
       "foodypos": [
         "lib/features/trusted_customers/**"
@@ -535,14 +539,14 @@
       {
         "id": "edit",
         "title": {
-          "en": "Edit delivery details",
-          "fr": "Modifier les coordonnées de livraison",
-          "he": "עריכת פרטי משלוח"
+          "fr": "Modifier la fiche client",
+          "en": "Edit the customer profile",
+          "he": "עריכת כרטיס הלקוח"
         },
         "instructions": {
-          "en": "Open the customer profile, edit the name, address and delivery details, then save. To change a phone, use Correct in the customer list. Recheck the selected order address separately for already-created orders.",
-          "fr": "Ouvrez la fiche, modifiez le nom, l’adresse et les précisions de livraison, puis enregistrez. Pour changer le téléphone, utilisez Corriger dans la liste des clients. Vérifiez séparément l’adresse des commandes déjà créées.",
-          "he": "פתחו את כרטיס הלקוח, ערכו שם, כתובת ופרטי משלוח ושמרו. לשינוי טלפון השתמשו בתיקון ברשימת הלקוחות. בדקו בנפרד כתובת בהזמנות שכבר נוצרו."
+          "fr": "Ouvrez la fiche depuis le téléphone du client, modifiez le nom, les numéros, l’adresse et les précisions de livraison, puis enregistrez. Vérifiez séparément l’adresse des commandes déjà créées.",
+          "en": "Open the profile from the customer phone, edit the name, phone numbers, address and delivery details, then save. Review addresses on existing orders separately.",
+          "he": "פתחו את הכרטיס מטלפון הלקוח, ערכו שם, מספרי טלפון, כתובת ופרטי משלוח ושמרו. בדקו בנפרד כתובות בהזמנות קיימות."
         }
       },
       {
@@ -574,14 +578,14 @@
       {
         "id": "phone-corrections",
         "title": {
-          "fr": "Corriger un ou plusieurs téléphones",
-          "en": "Correct one or several phone numbers",
-          "he": "תיקון מספר טלפון אחד או כמה מספרים"
+          "fr": "Gérer les téléphones et choisir le numéro WhatsApp",
+          "en": "Manage phones and choose the WhatsApp number",
+          "he": "ניהול טלפונים ובחירת מספר WhatsApp"
         },
         "instructions": {
-          "fr": "Avec customers.manage, ouvrez Clients et utilisez Corriger sur une ligne, ou cochez les clients puis Actions → Corriger les téléphones. Chaque numéro est prérempli lorsque le format est reconnaissable ; corrigez les autres manuellement. Vérifiez le numéro actuel et le format enregistré, puis Enregistrer. Un numéro israélien devient +972 sans le zéro national ; pour un autre pays, saisissez + et son indicatif. Les lettres, extensions, numéros incomplets et préfixes invalides bloquent la sauvegarde. Le lot est atomique : un conflit avec un autre client ou plusieurs autorisations d’espèces bloque toutes les corrections. Les contacts des commandes existantes et les clés du client sont corrigés ensemble pour les futurs envois WhatsApp ; noms, adresses, regroupements et autorisation d’espèces sont conservés. Les comptes de connexion et les autres restaurants ne changent pas. En cas d’échec, la saisie reste disponible ; si seule l’actualisation échoue après sauvegarde, Réessayer recharge sans réenregistrer. Ce contrôle du format ne confirme ni la possession du numéro ni son inscription WhatsApp.",
-          "en": "With customers.manage, open Clients and use Correct on one row, or select customers and choose Actions → Correct phones. Recognizable formats are prefilled; correct other numbers manually. Review the current number and saved format, then Save. Israeli numbers become +972 without the national trunk zero; for another country enter + and its country code. Letters, extensions, incomplete numbers and invalid prefixes prevent saving. The batch is atomic: a number belonging to another customer or conflicting cash records blocks every correction. Existing order contacts and customer keys are corrected together for future WhatsApp sends; names, addresses, merges and cash eligibility remain intact. Login accounts and other restaurants are unchanged. Errors retain input; if only refreshing fails after a successful save, Retry reloads without repeating the write. Format validation does not verify ownership or WhatsApp registration.",
-          "he": "עם customers.manage פתחו לקוחות ולחצו תיקון בשורה אחת, או בחרו לקוחות ואז פעולות → תיקון טלפונים. מספרים בפורמט מזוהה ימולאו מראש; תקנו אחרים ידנית. בדקו מספר נוכחי ופורמט לשמירה ולחצו שמירה. מספר ישראלי נשמר עם +972 ללא אפס מקומי; למדינה אחרת הזינו + וקידומת מדינה. אותיות, שלוחות, מספרים חסרים וקידומות לא תקינות חוסמים שמירה. השמירה של כל הקבוצה אטומית: מספר המשויך ללקוח אחר או הרשאות מזומן מתנגשות חוסמים את כל התיקונים. פרטי הטלפון בהזמנות קיימות ומפתחות הלקוח מתוקנים יחד לשליחות WhatsApp עתידיות; שמות, כתובות, איחודים והרשאת מזומן נשמרים. חשבונות התחברות ומסעדות אחרות אינם משתנים. שגיאה משאירה את הקלט; אם רק הרענון נכשל לאחר שמירה, ניסיון חוזר טוען ללא כתיבה נוספת. בדיקת פורמט אינה מאמתת בעלות על המספר או רישום ל-WhatsApp."
+          "fr": "Avec la permission de gestion des clients, cliquez sur le téléphone du client pour ouvrir Modifier le client. Dans Numéros de téléphone, corrigez le Téléphone principal ou choisissez Ajouter un numéro. Renseignez un numéro complet ; les numéros israéliens sont enregistrés avec +972 sans le zéro national et les étrangers avec leur indicatif. Choisissez Utiliser pour WhatsApp sur le numéro qui doit recevoir les messages, même si le téléphone pour les appels est différent. Un seul numéro WhatsApp est sélectionné ; jusqu’à dix numéros peuvent être associés. Enregistrez pour confirmer les coordonnées et les téléphones ensemble. Une saisie invalide, un doublon ou un numéro appartenant à une autre fiche bloque cet enregistrement et conserve le brouillon ; utilisez Fusionner les clients pour associer deux fiches existantes. Retirer un numéro supplémentaire ne prend effet qu’à l’enregistrement et dissocie son historique sans supprimer ses commandes. La correction du téléphone principal conserve les noms, adresses et regroupements et corrige les contacts des commandes existantes. Les comptes de connexion et les autres restaurants restent inchangés. L’autorisation d’espèces reste celle du client ; ajouter un numéro ne crée pas une nouvelle autorisation. Pour corriger plusieurs clients à la fois, cochez au moins deux lignes puis Actions → Corriger les téléphones. Le lot reste atomique ; un conflit bloque toutes les corrections. Après une sauvegarde réussie suivie d’un échec d’actualisation, Réessayer recharge sans réenregistrer. Le format ne confirme ni la possession du numéro ni son inscription à WhatsApp.",
+          "en": "With customer-management permission, select the customer phone to open Edit customer. Under Phone numbers, correct Primary phone or choose Add a phone number. Enter a complete number; Israeli numbers are saved with +972 without the national trunk zero and foreign numbers retain their country code. Select Use for WhatsApp on the number that should receive messages, even when the calling number differs. Exactly one WhatsApp recipient is selected; a customer can have up to ten numbers. Save confirms profile and phone changes together. Invalid input, duplicate numbers or a number belonging to another record blocks this save and retains the draft; use Merge customers to associate existing records. Removing an additional number takes effect only on Save and separates its history without deleting its orders. Correcting the primary retains names, addresses and grouping and corrects existing order contacts. Login accounts and other restaurants remain unchanged. Cash eligibility belongs to the same customer; adding a number does not create another cash authorization. To correct several customers together, select at least two rows and choose Actions → Correct phones. The batch is atomic; a conflict blocks every correction. After a completed save and failed refresh, Retry reloads without repeating the write. Format validation does not prove ownership or WhatsApp registration.",
+          "he": "עם הרשאת ניהול לקוחות לחצו על טלפון הלקוח לפתיחת עריכת לקוח. תחת מספרי טלפון תקנו טלפון ראשי או בחרו הוספת מספר טלפון. הזינו מספר מלא; מספר ישראלי נשמר עם +972 ללא האפס המקומי ומספר זר עם קידומת המדינה. בחרו לשימוש ב-WhatsApp במספר שיקבל הודעות, גם אם מספר השיחות שונה. נבחר מספר WhatsApp אחד וניתן לשייך עד עשרה מספרים. שמירה מאשרת יחד את פרטי הלקוח והטלפונים. קלט לא תקין, מספרים כפולים או מספר בכרטיס אחר חוסמים שמירה ומשאירים את הטיוטה; לאיחוד כרטיסים קיימים השתמשו באיחוד לקוחות. הסרת מספר נוסף נכנסת לתוקף רק בשמירה ומפרידה את ההיסטוריה ללא מחיקת הזמנות. תיקון הראשי שומר שמות, כתובות ושיוכים ומתקן פרטי קשר בהזמנות קיימות. חשבונות התחברות ומסעדות אחרות אינם משתנים. הרשאת המזומן שייכת לאותו לקוח; הוספת מספר אינה יוצרת הרשאת מזומן נוספת. לתיקון כמה לקוחות בחרו לפחות שתי שורות ואז פעולות → תיקון טלפונים. השמירה אטומית וסכסוך חוסם את כל התיקונים. אחרי שמירה שהצליחה ורענון שנכשל, נסה שוב מרענן ללא כתיבה נוספת. בדיקת הפורמט אינה מאמתת בעלות או רישום ל-WhatsApp."
         }
       }
     ],
@@ -3702,6 +3706,19 @@
           "en": "Approved WhatsApp Utility templates with a photo automatically use the image retrieved from Meta when no local file was selected. The preview displays that image; a change before a manual send requires another review. Retrieval failure blocks sending without a text-only fallback. Configure or refresh the template in Settings → Communications → WhatsApp. See the [WhatsApp guide](../communications/whatsapp#meta-template-image-sync).",
           "he": "תבניות WhatsApp Utility מאושרות עם תמונה משתמשות אוטומטית בתמונה שאוחזרה מ-Meta כשלא נבחר קובץ מקומי. התצוגה מציגה תמונה זו; שינוי לפני שליחה ידנית מחייב בדיקה חדשה. כשל אחזור חוסם שליחה ללא שליחת טקסט בלבד. הגדירו או רעננו את התבנית בהגדרות → תקשורת → WhatsApp. ראו [מדריך WhatsApp](../communications/whatsapp#meta-template-image-sync)."
         }
+      },
+      {
+        "id": "customer-whatsapp-recipient",
+        "title": {
+          "fr": "Choisir le destinataire WhatsApp du client",
+          "en": "Choose the customer WhatsApp recipient",
+          "he": "בחירת נמען WhatsApp ללקוח"
+        },
+        "instructions": {
+          "fr": "Si le client utilise un autre numéro pour WhatsApp, ouvrez Clients → sa fiche et choisissez Utiliser pour WhatsApp dans Numéros de téléphone, puis enregistrez. Ce numéro est utilisé pour les messages Meta et Twilio et pour l’ouverture de WhatsApp depuis la commande, y compris les partages de liens et documents. Le téléphone de la commande reste celui des coordonnées et de la vérification SMS. Vérifiez le destinataire affiché dans l’aperçu ; une modification du numéro WhatsApp impose de revoir un nouvel aperçu avant un envoi API. Aucun message de test n’est envoyé lors de l’enregistrement de la fiche.",
+          "en": "If the customer uses a different WhatsApp number, open Clients → their profile, select Use for WhatsApp under Phone numbers and save. That number is used by Meta and Twilio messages and by WhatsApp app handoffs from the order, including link and document sharing. The order phone remains its contact and SMS-verification number. Check the preview recipient; changing the WhatsApp selection requires a new reviewed preview before an API send. Saving the customer profile sends no test message.",
+          "he": "אם ללקוח מספר WhatsApp אחר, פתחו לקוחות → כרטיס הלקוח, בחרו לשימוש ב-WhatsApp תחת מספרי טלפון ושמרו. המספר משמש הודעות Meta ו-Twilio ופתיחת WhatsApp מההזמנה, כולל שיתוף קישורים ומסמכים. טלפון ההזמנה נשאר מספר הקשר ולאימות SMS. בדקו את הנמען בתצוגה המקדימה; שינוי המספר מחייב בדיקה של תצוגה חדשה לפני שליחה דרך API. שמירת הכרטיס אינה שולחת הודעת בדיקה."
+        }
       }
     ],
     "audience": "public",
@@ -5495,6 +5512,19 @@
           "fr": "Les modèles WhatsApp Utility approuvés avec une photo utilisent automatiquement l’image récupérée depuis Meta lorsque aucun fichier local n’a été choisi. L’aperçu affiche cette image ; un changement avant l’envoi manuel demande une nouvelle vérification. Un échec de récupération bloque l’envoi sans envoyer le texte seul. Configurez ou actualisez le modèle dans Paramètres → Communications → WhatsApp. Voir le [guide WhatsApp](../communications/whatsapp#meta-template-image-sync).",
           "en": "Approved WhatsApp Utility templates with a photo automatically use the image retrieved from Meta when no local file was selected. The preview displays that image; a change before a manual send requires another review. Retrieval failure blocks sending without a text-only fallback. Configure or refresh the template in Settings → Communications → WhatsApp. See the [WhatsApp guide](../communications/whatsapp#meta-template-image-sync).",
           "he": "תבניות WhatsApp Utility מאושרות עם תמונה משתמשות אוטומטית בתמונה שאוחזרה מ-Meta כשלא נבחר קובץ מקומי. התצוגה מציגה תמונה זו; שינוי לפני שליחה ידנית מחייב בדיקה חדשה. כשל אחזור חוסם שליחה ללא שליחת טקסט בלבד. הגדירו או רעננו את התבנית בהגדרות → תקשורת → WhatsApp. ראו [מדריך WhatsApp](../communications/whatsapp#meta-template-image-sync)."
+        }
+      },
+      {
+        "id": "customer-whatsapp-recipient",
+        "title": {
+          "fr": "Choisir le destinataire WhatsApp du client",
+          "en": "Choose the customer WhatsApp recipient",
+          "he": "בחירת נמען WhatsApp ללקוח"
+        },
+        "instructions": {
+          "fr": "Si le client utilise un autre numéro pour WhatsApp, ouvrez Clients → sa fiche et choisissez Utiliser pour WhatsApp dans Numéros de téléphone, puis enregistrez. Ce numéro est utilisé pour les messages Meta et Twilio et pour l’ouverture de WhatsApp depuis la commande, y compris les partages de liens et documents. Le téléphone de la commande reste celui des coordonnées et de la vérification SMS. Vérifiez le destinataire affiché dans l’aperçu ; une modification du numéro WhatsApp impose de revoir un nouvel aperçu avant un envoi API. Aucun message de test n’est envoyé lors de l’enregistrement de la fiche.",
+          "en": "If the customer uses a different WhatsApp number, open Clients → their profile, select Use for WhatsApp under Phone numbers and save. That number is used by Meta and Twilio messages and by WhatsApp app handoffs from the order, including link and document sharing. The order phone remains its contact and SMS-verification number. Check the preview recipient; changing the WhatsApp selection requires a new reviewed preview before an API send. Saving the customer profile sends no test message.",
+          "he": "אם ללקוח מספר WhatsApp אחר, פתחו לקוחות → כרטיס הלקוח, בחרו לשימוש ב-WhatsApp תחת מספרי טלפון ושמרו. המספר משמש הודעות Meta ו-Twilio ופתיחת WhatsApp מההזמנה, כולל שיתוף קישורים ומסמכים. טלפון ההזמנה נשאר מספר הקשר ולאימות SMS. בדקו את הנמען בתצוגה המקדימה; שינוי המספר מחייב בדיקה של תצוגה חדשה לפני שליחה דרך API. שמירת הכרטיס אינה שולחת הודעת בדיקה."
         }
       }
     ],
@@ -10171,7 +10201,8 @@
         "internal/twilio/**",
         "internal/metawhatsapp/**",
         "internal/printing/receipt_pdf.go",
-        "cmd/server/main.go"
+        "cmd/server/main.go",
+        "internal/common/customer_phones.go"
       ]
     },
     "operations": [
@@ -10290,6 +10321,19 @@
           "fr": "Prérequis : un modèle Utility approuvé avec une en-tête Photo dans le compte Meta connecté. Dans Paramètres → Communications → WhatsApp, ouvrez Configurer sur le message : Foody relit les modèles et récupère automatiquement leur image Meta. L’aperçu affiche l’image au-dessus du texte, sans ajout de fichier dans Foody. Une sélection existante sans fichier suit aussi l’image Meta. Si vous aviez choisi une image locale, sélectionnez Image du modèle Meta dans Photo, puis Terminé et Enregistrer pour utiliser celle de Meta. Les fichiers locaux explicitement sélectionnés restent conservés. Actualiser les modèles et la connexion relit les modifications faites dans Meta. Les aperçus de satisfaction et des étapes du parcours utilisent aussi cette image ; le panneau d’envoi de commande affiche la pièce jointe réelle. L’image doit être un JPEG/PNG accessible depuis Meta, au maximum 5 Mo. Si sa récupération échoue, l’aperçu propose Actualiser et l’envoi échoue sans envoyer le texte seul. Vérifiez l’image dans Meta si le lien n’est plus disponible. Une image modifiée après la préparation d’un envoi manuel exige un nouvel aperçu avant l’envoi. L’ouverture et l’actualisation n’envoient aucun message.",
           "en": "Prerequisite: an approved Utility template with a Photo header in the connected Meta account. In Settings → Communications → WhatsApp, open Configure for the message: Foody reloads the templates and automatically retrieves their Meta image. The preview displays the image above the text without uploading a file to Foody. An existing selection without a file also follows the Meta image. If you previously selected a local image, choose Image from Meta template under Photo, then Done and Save to use Meta’s image. Explicit local file selections are preserved. Refresh templates and connection reloads edits made in Meta. Satisfaction and workflow-stage previews also use this image; the order composer displays the actual attachment. The image must be a JPEG/PNG accessible from Meta, up to 5 MB. If retrieval fails, the preview offers Refresh and sending fails without a text-only fallback. Check the image in Meta if its link is unavailable. An image changed after a manual send was prepared requires a new preview before sending. Opening and refreshing never sends a message.",
           "he": "תנאי מקדים: תבנית Utility מאושרת עם כותרת תמונה בחשבון Meta המחובר. בהגדרות → תקשורת → WhatsApp פתחו הגדרה עבור ההודעה: Foody קורא מחדש את התבניות ומאחזר אוטומטית את תמונת Meta שלהן. התצוגה המקדימה מציגה את התמונה מעל הטקסט ללא העלאת קובץ ל-Foody. גם בחירה קיימת ללא קובץ משתמשת בתמונת Meta. אם בחרתם בעבר תמונה מקומית, בחרו תמונה מתבנית Meta בשדה תמונה, ואז סיום ושמירה. בחירות מפורשות בקבצים מקומיים נשמרות. רענון התבניות והחיבור קורא שינויים שנעשו ב-Meta. גם תצוגות שביעות הרצון ושלבי התהליך משתמשות בתמונה, ופאנל שליחת ההזמנה מציג את הקובץ המצורף בפועל. התמונה חייבת להיות JPEG/PNG הנגישה מ-Meta, עד 5 MB. אם האחזור נכשל, התצוגה מציעה רענון והשליחה נכשלת ללא שליחת טקסט בלבד. בדקו את התמונה ב-Meta אם הקישור אינו זמין. שינוי תמונה לאחר הכנת שליחה ידנית מחייב תצוגה מקדימה חדשה לפני השליחה. פתיחה ורענון אינם שולחים הודעה."
+        }
+      },
+      {
+        "id": "customer-whatsapp-recipient",
+        "title": {
+          "fr": "Choisir le destinataire WhatsApp du client",
+          "en": "Choose the customer WhatsApp recipient",
+          "he": "בחירת נמען WhatsApp ללקוח"
+        },
+        "instructions": {
+          "fr": "Si le client utilise un autre numéro pour WhatsApp, ouvrez Clients → sa fiche et choisissez Utiliser pour WhatsApp dans Numéros de téléphone, puis enregistrez. Ce numéro est utilisé pour les messages Meta et Twilio et pour l’ouverture de WhatsApp depuis la commande, y compris les partages de liens et documents. Le téléphone de la commande reste celui des coordonnées et de la vérification SMS. Vérifiez le destinataire affiché dans l’aperçu ; une modification du numéro WhatsApp impose de revoir un nouvel aperçu avant un envoi API. Aucun message de test n’est envoyé lors de l’enregistrement de la fiche.",
+          "en": "If the customer uses a different WhatsApp number, open Clients → their profile, select Use for WhatsApp under Phone numbers and save. That number is used by Meta and Twilio messages and by WhatsApp app handoffs from the order, including link and document sharing. The order phone remains its contact and SMS-verification number. Check the preview recipient; changing the WhatsApp selection requires a new reviewed preview before an API send. Saving the customer profile sends no test message.",
+          "he": "אם ללקוח מספר WhatsApp אחר, פתחו לקוחות → כרטיס הלקוח, בחרו לשימוש ב-WhatsApp תחת מספרי טלפון ושמרו. המספר משמש הודעות Meta ו-Twilio ופתיחת WhatsApp מההזמנה, כולל שיתוף קישורים ומסמכים. טלפון ההזמנה נשאר מספר הקשר ולאימות SMS. בדקו את הנמען בתצוגה המקדימה; שינוי המספר מחייב בדיקה של תצוגה חדשה לפני שליחה דרך API. שמירת הכרטיס אינה שולחת הודעת בדיקה."
         }
       }
     ],
