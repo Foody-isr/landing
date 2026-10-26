@@ -270,3 +270,15 @@ blocks and source surfaces retain their exact evidence from Landing commit
 `39ed85b66bd66adcbf340885d1dd251a08beefd9`; they are not revalidated by this change. The API change synchronizes
 only the published support corpus. Publish the prepared guides with the matching
 UI, after development verification, and promote the same immutable artifacts.
+
+## Mode-editor deletion recovery (26 October 2026)
+
+This follow-up reviews Admin, Landing and the API's synchronized public support
+corpus. It documents the explicit pending-deletion state, complete draft undo and
+return to the list only after a confirmed save. The working production profile
+and restaurant defaults are never used as disposable test data. The Web, POS and
+Backoffice service inventories and source surfaces retain their exact evidence
+from Landing develop commit `705fcec6f5e0af4a6409dcf700befe8736f469b4` and are not
+revalidated by this follow-up. Pin the new reviewed Landing commit in Admin and
+API before publication. Publish these FR/HE/EN procedures with the matching Admin
+UI, after development verification, without rebuilding the promoted artifacts.
