@@ -282,3 +282,11 @@ from Landing develop commit `705fcec6f5e0af4a6409dcf700befe8736f469b4` and are n
 revalidated by this follow-up. Pin the new reviewed Landing commit in Admin and
 API before publication. Publish these FR/HE/EN procedures with the matching Admin
 UI, after development verification, without rebuilding the promoted artifacts.
+
+The final source review also exercises a deliberately delayed list navigation
+after successful deletion. The editor retains its mode name and a locked loading
+state until navigation finishes, rather than briefly rendering a missing mode.
+This only completes the documented confirmed-save handoff; the deletion, undo,
+permissions and error-recovery procedure above is unchanged. Refresh the exact
+Admin source evidence and immutable service pins without changing article dates
+or inventing a new merchant operation.
