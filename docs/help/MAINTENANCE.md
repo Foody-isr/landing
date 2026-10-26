@@ -315,3 +315,27 @@ support corpus into API before scanning, pin this reviewed Landing commit, run
 the API validation and verify development before promoting its exact artifact.
 Keep the pending Admin and public-documentation promotions coordinated with the
 restored API; never publish a planned recovery as an installed capability.
+
+## Previous-service orders and unconfirmed cash reads (26 October 2026)
+
+This follow-up reviews POS session isolation, cash-read confirmation and their
+FR/HE/EN procedures, plus the synchronized API support corpus. Previous or unknown
+table sessions retain separate saved order IDs; the current service alone may
+aggregate manual kitchen sends. Physical iPad observations verified navigation,
+covers, timers and visible course controls, not a payment or kitchen dispatch.
+Regression tests additionally cover canonical-session changes during asynchronous
+loads and legitimate new-service responses arriving after their matching event.
+
+Cash verification must fail closed without disabling recovery of an existing
+journaled operation. A historical replay result is not a fresh current-drawer
+read; older in-flight reads cannot reconfirm it. The API business 404 alone proves
+an absent drawer. Provider, settlement and financial routes are unchanged, and no
+real cash operation or Verifone deposit is part of acceptance.
+
+Refresh POS, API and Landing evidence from their reviewed source commits. Admin,
+Web and Backoffice inventory blocks and surfaces retain their exact baseline
+evidence from Landing develop `54cd8aa5a57b56b22f645a04ff17d6230fb1a574` and are
+not revalidated by this follow-up. Export the public corpus before scanning the
+API, pin an immutable reviewed Landing commit in API and POS, and validate each
+service before its PR is ready. Verify the compatible POS build before publishing
+these guides; API publication alone does not update an installed app.

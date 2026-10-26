@@ -12,11 +12,25 @@ releaseStatus: available
 ---
 Ouvrez Plus sur la caisse. Les destinations dépendent du rôle et des capacités de l’appareil.
 
+<span id="previous-table-service-orders" />
+
+## Distinguer les commandes d’un service précédent
+
+Sur un POS compatible mis à jour, avec orders.manage, une ancienne commande manuelle encore active reste visible séparément par son numéro et sa date. Touchez-la pour consulter ses propres lignes et son total dans Menu, sans la rattacher à l’occupation actuelle de la table. Une session absente ou différente ne permet pas d’ouvrir la table des clients suivants. Les commandes QR conservent elles aussi leurs numéros et paiements individuels. Les envois manuels d’une même session actuelle confirmée restent regroupés dans son addition habituelle.
+
+Une table peut donc avoir une session actuelle vide et des commandes antérieures encore dues : ce ne sont pas la même addition. L’ouverture ne fusionne, ne clôture, n’archive et ne règle rien. Les actions admissibles d’une commande sauvegardée restent limitées à son numéro et aux droits requis. Si la session change pendant le chargement, revenez à Commandes ou rouvrez la table actuelle ; ne recréez pas la commande et ne relancez pas un paiement pour contourner l’erreur. La mise à jour de l’API seule ne met pas à jour le POS installé.
+
 <span id="saved-order-workspace" />
 
 ## Distinguer la commande sélectionnée de l’addition de table
 
 Avec orders.manage, une commande active QR ou web ouvre Menu avec sa propre addition enregistrée à droite sur tablette. Le catalogue reste consultable sans modifier les lignes ou un brouillon local. Actions gère uniquement cette commande ; Client montre son propre contact. Afficher la table ouvre séparément la session actuelle vérifiée et, si nécessaire, un choix d’addition. Le cadre, les onglets et les cartes sont ceux du Menu habituel, sans barre de retour supplémentaire. Commandes dans la navigation principale revient à la liste. Actualiser et les états de la commande sont dans Actions. Une erreur de lecture affiche Réessayer, pas un panier vide. Les historiques et rôles de consultation restent en lecture seule. Voir [le parcours détaillé](/fr/help/orders/managing-orders#open-saved-order-in-menu).
+
+<span id="cash-report-unconfirmed" />
+
+## Réessayer une lecture de caisse non confirmée
+
+Sur le POS compatible mis à jour, une erreur de lecture ne signifie pas qu’aucune caisse n’est ouverte. Réessayer relit l’état ; les nouvelles opérations espèces restent indisponibles tant que cet état n’est pas confirmé. Conservez l’identité des opérations déjà en attente. Voir [la reprise de lecture de caisse](/fr/help/payments/pos-checkout#cash-report-unconfirmed). Le dépôt du terminal reste séparé.
 
 <span id="report-currency" />
 

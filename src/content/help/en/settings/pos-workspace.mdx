@@ -12,11 +12,25 @@ releaseStatus: available
 ---
 Open More/Plus on the POS. Destinations are filtered by role and device capabilities.
 
+<span id="previous-table-service-orders" />
+
+## Distinguish orders from a previous table service
+
+On a compatible updated POS, with orders.manage, an older manual order that is still active remains separately visible by its number and date. Tap it to view its own lines and total in Menu without attaching it to the table’s current occupancy. An absent or different session cannot open the next party’s table service. QR orders also retain their individual numbers and payments. Manual kitchen sends within one confirmed current session remain grouped in that session’s usual check.
+
+A table may therefore have an empty current session and older outstanding orders: these are not the same check. Opening the view never merges, closes, archives or settles anything. Eligible saved-order actions remain limited to its number and the required permissions. If the session changes while loading, return to Orders or reopen the current table; do not recreate the order or retry a payment to bypass the error. Updating the API alone does not update the installed POS.
+
 <span id="saved-order-workspace" />
 
 ## Distinguish the selected order from the table check
 
 With orders.manage, an active QR or web order opens Menu with its own saved check on the right on tablets. The catalogue remains browsable without changing saved lines or a local draft. Actions manages only that order; Guest shows its own contact. View table separately opens the verified current session and, when needed, a bill choice. The frame, tabs and cards use the standard Menu presentation without an extra back toolbar. Orders in the main navigation returns to the list. Refresh and order statuses are in Actions. A failed read shows Retry rather than an empty basket. Historical records and view-only roles remain read-only. See [the full workflow](/en/help/orders/managing-orders#open-saved-order-in-menu).
+
+<span id="cash-report-unconfirmed" />
+
+## Retry an unconfirmed cash-drawer read
+
+On a compatible updated POS, a failed read does not mean that no drawer is open. Retry reads the state again; new cash operations remain unavailable until that state is confirmed. Preserve the identity of already pending operations. See [cash-read recovery](/en/help/payments/pos-checkout#cash-report-unconfirmed). Terminal deposit remains separate.
 
 <span id="report-currency" />
 

@@ -42,6 +42,14 @@ Pour les commandes en ligne au poids, ouvrez Réglages → Paiements & TVA avec 
 
 Sur un POS autorisé avec un shift PIN actif, ouvrez d’abord Plus → Rapports → Solde en caisse et saisissez le fonds initial réellement présent. Choisissez ensuite Espèces sur la bonne commande ou addition financière, saisissez le montant reçu et vérifiez la monnaie avant de confirmer. N’enregistrez que l’argent réellement reçu. Une collecte en attente doit être reprise avec son identité existante, pas recréée comme une nouvelle vente. Les additions partagées conservent chacune reçu et statut de paiement.
 
+<span id="cash-report-unconfirmed" />
+
+## Réessayer une lecture de caisse non confirmée
+
+Sur un POS compatible mis à jour, si Solde en caisse ou Mouvements de caisse indique Impossible de confirmer la caisse, ce n’est pas la confirmation qu’aucune caisse n’est ouverte. Utilisez Réessayer pour relire l’état sur ce même appareil. Tant que la lecture échoue, aucune nouvelle ouverture, entrée/sortie ou clôture n’est autorisée, même si un ancien rapport reste affiché. Après une lecture réussie, les actions reviennent selon l’état confirmé et vos droits.
+
+Une opération déjà en attente suit sa récupération existante avec le même identifiant ; ne la recréez pas et n’effacez pas les données locales. Une session absente doit être confirmée par la réponse métier de l’API, pas déduite d’une erreur de connexion, d’accès ou d’une route introuvable. Réessayer ne crée aucun mouvement d’espèces et ne lance aucun dépôt Verifone.
+
 <span id="cash-drawer-report" />
 
 ## Compter et clôturer la caisse
