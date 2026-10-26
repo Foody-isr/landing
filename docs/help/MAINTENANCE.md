@@ -22,6 +22,10 @@ enter public browsing, search or the AI corpus.
 4. Render and validate the guides, export the release, then regenerate the inventory
    using the explicit service-root map. Review source surfaces including page/API
    routes, Flutter destinations, translated control keys and named actions.
+   Synchronize the exported public corpus into the API before scanning its source
+   inventory: `internal/support/corpus.json` is itself a reviewed source file.
+   Pinning documentation before this copy leaves the API contract's corpus hash
+   stale even when the public release revision already matches.
 5. Pin the reviewed Landing commit in each affected service contract. Keep one PR
    into develop per repository. An initial `WORKSPACE` reference supports local
    preparation only; remote CI rejects it. Never replace it with a moving branch.
@@ -83,6 +87,25 @@ four affected service contracts. A later Web/Backoffice change requires its own
 current-source review and validation; do not reuse this scope as an exemption.
 The local WORKSPACE documentation pins still require an immutable matching
 Landing commit before remote CI or publication.
+
+### Local order-flow audit (26 October 2026)
+
+This local preparation refreshes API, Admin, POS and Landing source evidence for
+the shared-mode synchronization and order-entry corrections. The Web and
+Backoffice service blocks and surfaces are retained exactly from the inventory
+present before this scan; they are historical recorded evidence, not a fresh
+validation of those services. Feature evidence is rebuilt from that combined
+inventory. The public FR/HE/EN guides and API support corpus share one revision.
+
+Contracts use `WORKSPACE` for local validation only, and Landing uses `self`.
+An immutable reviewed Landing commit remains required before remote CI or a
+release. Roll out the API merge capability before Admin and then the updated POS
+clients. An old client without the merge base retains the legacy replacement
+write path and does not gain conflict-safe merging merely by updating the API.
+Do not use it to edit shared settings during this rollout. No new migration is
+needed for these settings corrections; other independently prepared features
+retain their own migration and capability prerequisites. Automated evidence does
+not certify a physical iPad, Victa, printer, cash movement or payment operation.
 
 `Help coverage and translations` runs on PRs into develop and manual dispatch.
 It checks the exact source footprint (including newly added/deleted source), feature

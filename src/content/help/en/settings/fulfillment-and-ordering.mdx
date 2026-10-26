@@ -108,6 +108,12 @@ Starting courier mode marks assigned orders Out for delivery. If this was a test
 
 An item configured with repeated positions requires one separate choice per position according to the selected format. For example, a two-character Number Cake accepts 11, AB or A7. The format price replaces the base price; modifiers add only their configured surcharges. Reducing the position count removes newly hidden choices. Positions remain distinct in the cart, orders and kitchen ticket; review them before confirming. These customizations do not change delivery, availability, recipe, discount or cancellation rules. Configuration requires compatible versions and menu editing permission. See [Variants and sizes](/en/help/menu/variants-and-sizes#conditional-positions) for setup and recovery after a rejected selection.
 
+<span id="shared-pos-policy" />
+
+## Synchronize the POS mode policy
+
+Fulfillment methods belong to the restaurant; prompt timing and enabled modules follow the effective policy of the device’s assigned mode. The updated POS refreshes it automatically and waits for safe completion of an active payment, send or item edit before applying it. Refresh never repeats an operation. In Admin, a conflict retains the draft but requires reloading saved settings before a new edit. When the method prompt is disabled and Onsite is the default, a new sale stays onsite; Send asks for its table or permitted named check rather than converting it to Takeaway. Delivery, availability and payment settings retain their own validation. See [settings and recovery](/en/help/settings/pos-behavior#shared-mode-sync-recovery).
+
 <span id="pos-customer-screen-version" />
 
 ## Check POS customer-screen compatibility
