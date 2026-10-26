@@ -22,6 +22,10 @@ enter public browsing, search or the AI corpus.
 4. Render and validate the guides, export the release, then regenerate the inventory
    using the explicit service-root map. Review source surfaces including page/API
    routes, Flutter destinations, translated control keys and named actions.
+   Synchronize the exported public corpus into the API before scanning its source
+   inventory: `internal/support/corpus.json` is itself a reviewed source file.
+   Pinning documentation before this copy leaves the API contract's corpus hash
+   stale even when the public release revision already matches.
 5. Pin the reviewed Landing commit in each affected service contract. Keep one PR
    into develop per repository. An initial `WORKSPACE` reference supports local
    preparation only; remote CI rejects it. Never replace it with a moving branch.

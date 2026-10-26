@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-26.
 
-100 fiches de fonctionnalités, 711 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2192 fichiers applicatifs et 2047 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+100 fiches de fonctionnalités, 712 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2192 fichiers applicatifs et 2047 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -11,11 +11,11 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
 | foodyserver | 564 | 871 | 759e6abf71a9 ; versioned |
-| foodyadmin | 765 | 777 | 272d7045ee27 ; versioned |
+| foodyadmin | 765 | 777 | 86957631f7e4 ; versioned |
 | foodyweb | 337 | 167 | 98cc3a1c49e6 ; versioned |
-| foodypos | 355 | 161 | 9654683316c0 ; versioned |
+| foodypos | 355 | 161 | 4b4f289e9988 ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
-| foodylanding | 127 | 21 | 7bd07cb5be23 ; versioned |
+| foodylanding | 127 | 21 | c1185f0c8df8 ; versioned |
 
 ## getting-started
 
@@ -1152,6 +1152,7 @@ Identifiant : `guest-table`. Public : public. Disponibilité : available. Servic
 
 - [Rejoindre la bonne table](../../src/content/help/fr/guest/table-qr.mdx#session)
 - [Commander et demander de l’aide](../../src/content/help/fr/guest/table-qr.mdx#ordering)
+- [Lorsque l’équipe ferme la table](../../src/content/help/fr/guest/table-qr.mdx#service-ended)
 
 ### [Envoyer une demande catering](../../src/content/help/fr/guest/catering-request.mdx)
 
