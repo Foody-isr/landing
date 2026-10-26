@@ -36,6 +36,12 @@ Ouvrez les réglages QR, sélectionnez la table et personnalisez style/texte pro
 
 Choisissez le bon plan sur le POS et vérifiez le statut de la table avant ouverture. Une table déjà en cours reprend sa session actuelle sans redemander les couverts. Son espace Menu habituel affiche l’addition existante et les actions autorisées ; les additions financières séparées nécessitent toujours leur propre sélection. Seule une table libre qui démarre un nouveau service demande les couverts selon le mode affecté. Rouvrir ne modifie ni les couverts, ni les places, ni les commandes ou paiements existants. Si la lecture récente de la table/addition échoue ou si sa session a changé, reprenez la lecture sans créer un service de remplacement. Contrôlez couverts/places séparément et confirmez l’addition avant paiement ou déplacement. Choisir une table après changement du traitement d’un brouillon n’est pas déplacer ou fusionner une addition. Une table avec une addition financière existante refuse et annule ce transfert en attente, sans modifier le brouillon source ; voir [changer le service d’un brouillon](/fr/help/orders/order-types#pos-change-draft). Plusieurs clients QR conservent des ID de commande et paiements distincts même si leurs plats apparaissent dans la même session de table.
 
+<span id="saved-layout-preservation" />
+
+## Vérifier un plan enregistré après une mise à jour
+
+Après avoir disposé les tables, enregistrez explicitement le plan, rouvrez-le dans Admin et comparez positions, dimensions et rotations sur le POS. L’API mise à jour préserve la géométrie personnalisée de version 2 au démarrage ; seuls les anciens formats sont normalisés. Ce correctif empêche un redémarrage de redimensionner un plan personnalisé sauvegardé, mais ne reconstitue pas les dimensions ou angles déjà écrasés par une ancienne version. Si des tables se chevauchent soudainement, conservez une capture et faites vérifier la version API installée avant de sauvegarder un nouvel agencement. Rétablissez ensuite explicitement le dessin voulu après correction, ou faites examiner une sauvegarde disponible par un opérateur autorisé ; ne supposez pas une restauration automatique. Conservez les identités des tables et leurs additions actives : déplacer un dessin ne clôture pas un service, ne transfère pas une addition et ne fusionne pas des commandes QR. Évitez d’enregistrer depuis un ancien onglet après la modification du plan par quelqu’un d’autre.
+
 <span id="service-time-and-state" />
 
 ## Suivre la durée et l’état du service

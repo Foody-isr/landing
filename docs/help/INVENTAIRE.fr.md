@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-26.
 
-100 fiches de fonctionnalités, 713 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2192 fichiers applicatifs et 2047 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+100 fiches de fonctionnalités, 715 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2193 fichiers applicatifs et 2047 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 564 | 871 | 07a6bec5ec1f ; versioned |
+| foodyserver | 565 | 871 | b66ab45c1821 ; versioned |
 | foodyadmin | 765 | 777 | b94b5e0f8f1b ; versioned |
 | foodyweb | 337 | 167 | 98cc3a1c49e6 ; versioned |
 | foodypos | 355 | 161 | 4b4f289e9988 ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
-| foodylanding | 127 | 21 | 764c1db2e9fa ; versioned |
+| foodylanding | 127 | 21 | 0ccd3b7f2b0a ; versioned |
 
 ## getting-started
 
@@ -899,6 +899,7 @@ Identifiant : `pos-behavior`. Public : public. Disponibilité : available. Servi
 
 Identifiant : `device-kds`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodypos.
 
+- [Conserver le lien du Victa enregistré et de son imprimante intégrée](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#victa-identity-preservation)
 - [Configurer les appareils](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#devices)
 - [Régler les postes cuisine](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#stations)
 - [Traiter les tickets cuisine](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#service)
@@ -947,6 +948,7 @@ Identifiant : `floor-plans`. Public : public. Disponibilité : available. Servic
 - [Organiser les zones de service](../../src/content/help/fr/tables-floors/floor-plans.mdx#sections)
 - [Préparer les supports QR](../../src/content/help/fr/tables-floors/floor-plans.mdx#qr)
 - [Utiliser la vue des tables](../../src/content/help/fr/tables-floors/floor-plans.mdx#live)
+- [Vérifier un plan enregistré après une mise à jour](../../src/content/help/fr/tables-floors/floor-plans.mdx#saved-layout-preservation)
 - [Suivre la durée et l’état du service](../../src/content/help/fr/tables-floors/floor-plans.mdx#service-time-and-state)
 - [Utiliser Additions sur mobile](../../src/content/help/fr/tables-floors/floor-plans.mdx#mobile-terminal)
 
