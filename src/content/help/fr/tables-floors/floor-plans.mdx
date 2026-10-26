@@ -36,6 +36,12 @@ Ouvrez les réglages QR, sélectionnez la table et personnalisez style/texte pro
 
 Choisissez le bon plan sur le POS et vérifiez le statut de la table avant ouverture. Une table déjà en cours reprend sa session actuelle sans redemander les couverts. Son espace Menu habituel affiche l’addition existante et les actions autorisées ; les additions financières séparées nécessitent toujours leur propre sélection. Seule une table libre qui démarre un nouveau service demande les couverts selon le mode affecté. Rouvrir ne modifie ni les couverts, ni les places, ni les commandes ou paiements existants. Si la lecture récente de la table/addition échoue ou si sa session a changé, reprenez la lecture sans créer un service de remplacement. Contrôlez couverts/places séparément et confirmez l’addition avant paiement ou déplacement. Choisir une table après changement du traitement d’un brouillon n’est pas déplacer ou fusionner une addition. Une table avec une addition financière existante refuse et annule ce transfert en attente, sans modifier le brouillon source ; voir [changer le service d’un brouillon](/fr/help/orders/order-types#pos-change-draft). Plusieurs clients QR conservent des ID de commande et paiements distincts même si leurs plats apparaissent dans la même session de table.
 
+<span id="service-time-and-state" />
+
+## Suivre la durée et l’état du service
+
+La durée affichée sur le plan et dans la liste des additions provient du début de la session de table, pas du dernier plat ajouté. Placer des clients sans saisir de couverts démarre aussi un service ; une table ouverte ne devient pas libre parce que son nombre de couverts est absent. Rouvrir l’addition, envoyer un autre lot ou recevoir une commande QR de la même session ne remet pas cette durée à zéro. Plusieurs clients QR gardent leurs commandes et paiements séparés. Scanner seul un QR ne prouve pas que la table est occupée. Une commande à emporter ou en livraison ne doit pas occuper une table. Les états cuisine, paiement et demande d’addition restent distincts de cette durée. Après une clôture confirmée, l’ancien service ne doit pas réapparaître à cause de commandes en cache ; une nouvelle occupation a sa propre session. En cas d’échec de lecture, actualisez et vérifiez l’état serveur avant de fermer ou replacer la table.
+
 <span id="mobile-terminal" />
 
 ## Utiliser Additions sur mobile
