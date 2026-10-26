@@ -26,6 +26,12 @@ This flow needs the updated POS version and its matching API deployed before ins
 
 After rejection, check the personal code and device authorization with a manager. If an action’s result is uncertain, use Refresh hours to verify status before retrying; do not assume failure or create a second clocking event. If unavailable, have the device and API version checked. Never share your passcode or notes with the assistant.
 
+<span id="cash-report-unconfirmed" />
+
+## Retry an unconfirmed cash-drawer read
+
+On a compatible updated POS, a failed read does not mean that no drawer is open. Retry reads the state again; new cash operations remain unavailable until that state is confirmed. Preserve the identity of already pending operations. See [cash-read recovery](/en/help/payments/pos-checkout#cash-report-unconfirmed). Terminal deposit remains separate.
+
 <span id="pending-cash-sign-out" />
 
 ## Finish the report before signing out
