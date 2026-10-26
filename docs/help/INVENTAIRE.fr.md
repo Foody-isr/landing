@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-26.
 
-100 fiches de fonctionnalités, 712 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2192 fichiers applicatifs et 2047 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+100 fiches de fonctionnalités, 713 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2192 fichiers applicatifs et 2047 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 564 | 871 | 759e6abf71a9 ; versioned |
-| foodyadmin | 765 | 777 | 86957631f7e4 ; versioned |
+| foodyserver | 564 | 871 | e59a21bdd7bd ; versioned |
+| foodyadmin | 765 | 777 | a711e09a9bba ; versioned |
 | foodyweb | 337 | 167 | 98cc3a1c49e6 ; versioned |
 | foodypos | 355 | 161 | 4b4f289e9988 ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
-| foodylanding | 127 | 21 | c1185f0c8df8 ; versioned |
+| foodylanding | 127 | 21 | 705fcec6f5e0 ; versioned |
 
 ## getting-started
 
@@ -822,6 +822,7 @@ Identifiant : `pos-service-modes`. Public : public. Disponibilité : available. 
 - [Garder la remise indépendante](../../src/content/help/fr/settings/service-mode.mdx#fulfillment)
 - [Enregistrer un mode partagé et reprendre après un conflit](../../src/content/help/fr/settings/service-mode.mdx#shared-mode-save-recovery)
 - [Consulter et modifier les Modes dans Admin](../../src/content/help/fr/settings/service-mode.mdx#modes-dashboard)
+- [Confirmer ou annuler la suppression dans l’éditeur de mode](../../src/content/help/fr/settings/service-mode.mdx#mode-editor-deletion)
 - [Revenir à l’accueil après l’envoi et ouvrir une nouvelle vente](../../src/content/help/fr/settings/service-mode.mdx#send-home-new-sale)
 
 ### [Traitement des commandes et flux cuisine](../../src/content/help/fr/settings/workflow-settings.mdx)
