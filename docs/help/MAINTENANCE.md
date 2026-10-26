@@ -241,3 +241,28 @@ publication and guest ordering windows. Publish the FR/HE/EN procedures with the
 API/Admin behavior. Pin this reviewed Landing commit in the API/Admin contracts
 before remote CI. Deploy API before Admin and promote their validated develop
 artifacts without rebuilding.
+
+
+## Manual weekly order opening release (25 October 2026)
+
+This release reviews API, Admin, Web, POS and Landing from isolated branches based
+on their current develop histories. Backoffice source inventory and surfaces are
+retained from Landing develop commit `530f19e2f3f82c47e62ea6e5bc050aff99eb9ad3` and are not revalidated here.
+The inventory records each reviewed integration base and the exact feature source
+hashes separately. Calendar intake remains the default. Manual batch intake keeps
+service days, stock and existing commitments while using explicit pause/reopen
+controls. Deploy API migration 277 before the matching clients. Publish the three
+language guides with the product rollout. Service contracts must pin this reviewed
+Landing commit before PR publication; production uses verified develop artifacts.
+
+## Mobile menu layout release (26 October 2026)
+
+This release reviews guest Web, Admin, Landing and the synchronized API help
+corpus from isolated develop-based branches. The category style applies to
+groups on desktop and mobile; carte tabs stay separate and underlined. Long
+group headings wrap without enlarging the document. FR/HE/EN instructions cover
+the shared setting and selected-category colors. POS and Backoffice service
+blocks and source surfaces retain their exact evidence from Landing commit
+`39ed85b66bd66adcbf340885d1dd251a08beefd9`; they are not revalidated by this change. The API change synchronizes
+only the published support corpus. Publish the prepared guides with the matching
+UI, after development verification, and promote the same immutable artifacts.
