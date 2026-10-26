@@ -5468,7 +5468,8 @@
         "src/components/tables/**"
       ],
       "foodyserver": [
-        "internal/floorplan/**"
+        "internal/floorplan/**",
+        "cmd/server/floorplan_schema.go"
       ],
       "foodypos": [
         "lib/features/tables/**"
@@ -5528,6 +5529,19 @@
           "en": "Select the correct floor plan on the POS and inspect table status before opening a check. An already open table resumes its current session without asking for covers again. Its usual Menu workspace shows the existing check and permitted actions; separated financial bills still require their own selection. Only a free table starting a new service requests covers according to the assigned mode. Reopening does not alter existing covers, seats, orders or payments. If the latest table/check read fails or its session changes, retry the read rather than opening a replacement service. Review covers/seats separately and confirm the saved check before payment or transfer. Selecting a table after changing a draft's fulfillment method is not a bill move or merge. A table with an existing financial check refuses and cancels that pending transfer, keeping the source draft intact; see [changing a draft's service](/en/help/orders/order-types#pos-change-draft). Several QR guests keep distinct order IDs and payments even when their food appears in the same table session.",
           "fr": "Choisissez le bon plan sur le POS et vérifiez le statut de la table avant ouverture. Une table déjà en cours reprend sa session actuelle sans redemander les couverts. Son espace Menu habituel affiche l’addition existante et les actions autorisées ; les additions financières séparées nécessitent toujours leur propre sélection. Seule une table libre qui démarre un nouveau service demande les couverts selon le mode affecté. Rouvrir ne modifie ni les couverts, ni les places, ni les commandes ou paiements existants. Si la lecture récente de la table/addition échoue ou si sa session a changé, reprenez la lecture sans créer un service de remplacement. Contrôlez couverts/places séparément et confirmez l’addition avant paiement ou déplacement. Choisir une table après changement du traitement d’un brouillon n’est pas déplacer ou fusionner une addition. Une table avec une addition financière existante refuse et annule ce transfert en attente, sans modifier le brouillon source ; voir [changer le service d’un brouillon](/fr/help/orders/order-types#pos-change-draft). Plusieurs clients QR conservent des ID de commande et paiements distincts même si leurs plats apparaissent dans la même session de table.",
           "he": "בחרו את המפה הנכונה בקופה ובדקו את מצב השולחן לפני פתיחת חשבון. שולחן שכבר בשירות חוזר למפגש הנוכחי בלי לבקש שוב מספר סועדים. סביבת התפריט הרגילה מציגה את החשבון הקיים ואת הפעולות המותרות; חשבונות כספיים נפרדים עדיין מחייבים בחירה משלהם. רק שולחן פנוי שמתחיל ישיבה חדשה מבקש מספר סועדים בהתאם למצב המשויך. פתיחה מחדש אינה משנה סועדים, מושבים, הזמנות או תשלומים קיימים. אם קריאת השולחן או החשבון העדכנית נכשלת או שהמפגש התחלף, נסו שוב לקרוא ואל תיצרו שירות חלופי. בדקו סועדים ומושבים בנפרד ואשרו חשבון שמור לפני תשלום או העברה. בחירת שולחן לאחר שינוי אופן הטיפול בטיוטה אינה העברה או מיזוג של חשבון. שולחן עם חשבון פיננסי קיים מסרב להעברה הממתינה ומבטל אותה, בלי לשנות את טיוטת המקור; ראו [שינוי סוג השירות בטיוטה](/he/help/orders/order-types#pos-change-draft). כמה לקוחות QR שומרים על מזהי הזמנה ותשלומים נפרדים גם כאשר המנות מופיעות באותו מפגש שולחן."
+        }
+      },
+      {
+        "id": "saved-layout-preservation",
+        "title": {
+          "en": "Verify a saved layout after an update",
+          "fr": "Vérifier un plan enregistré après une mise à jour",
+          "he": "בדיקת מפה שמורה לאחר עדכון"
+        },
+        "instructions": {
+          "en": "After arranging tables, save the plan explicitly, reopen it in Admin and compare its positions, dimensions and rotations on the POS. The updated API preserves authored version-2 geometry during startup; only old formats are normalized. This correction prevents a restart from resizing a saved custom layout, but cannot reconstruct dimensions or angles already overwritten by an older version. If tables unexpectedly overlap, keep a screenshot and have the installed API version checked before saving another arrangement. Restore the intended drawing explicitly after the correction, or have an authorized operator review an available backup; do not assume an automatic restoration. Keep table identities and active checks intact: moving a drawing is not closing a service, transferring a bill or merging QR orders. Avoid saving from an old editor tab after another person has changed the plan.",
+          "fr": "Après avoir disposé les tables, enregistrez explicitement le plan, rouvrez-le dans Admin et comparez positions, dimensions et rotations sur le POS. L’API mise à jour préserve la géométrie personnalisée de version 2 au démarrage ; seuls les anciens formats sont normalisés. Ce correctif empêche un redémarrage de redimensionner un plan personnalisé sauvegardé, mais ne reconstitue pas les dimensions ou angles déjà écrasés par une ancienne version. Si des tables se chevauchent soudainement, conservez une capture et faites vérifier la version API installée avant de sauvegarder un nouvel agencement. Rétablissez ensuite explicitement le dessin voulu après correction, ou faites examiner une sauvegarde disponible par un opérateur autorisé ; ne supposez pas une restauration automatique. Conservez les identités des tables et leurs additions actives : déplacer un dessin ne clôture pas un service, ne transfère pas une addition et ne fusionne pas des commandes QR. Évitez d’enregistrer depuis un ancien onglet après la modification du plan par quelqu’un d’autre.",
+          "he": "לאחר סידור השולחנות שמרו את המפה במפורש, פתחו אותה מחדש בניהול והשוו מיקומים, מידות וזוויות בקופה. השרת המעודכן שומר על גיאומטריה מותאמת בגרסה 2 בעת האתחול; רק פורמטים ישנים עוברים נרמול. התיקון מונע מאתחול לשנות את מידותיה של מפה מותאמת שנשמרה, אך אינו משחזר מידות או זוויות שגרסה קודמת כבר דרסה. אם מופיעה חפיפה לא צפויה, שמרו צילום מסך ובקשו לבדוק את גרסת השרת המותקנת לפני שמירת סידור חדש. לאחר התיקון שחזרו במפורש את השרטוט הרצוי, או בקשו ממפעיל מורשה לבדוק גיבוי זמין; אין להניח שיש שחזור אוטומטי. שמרו על זהויות השולחנות ועל החשבונות הפעילים: הזזת שרטוט אינה סוגרת ישיבה, מעבירה חשבון או מאחדת הזמנות QR. הימנעו משמירה מלשונית ישנה לאחר שאדם אחר שינה את המפה."
         }
       },
       {
@@ -8945,6 +8959,19 @@
       ]
     },
     "operations": [
+      {
+        "id": "victa-identity-preservation",
+        "title": {
+          "en": "Keep an enrolled Victa and its integrated printer linked",
+          "fr": "Conserver le lien du Victa enregistré et de son imprimante intégrée",
+          "he": "שמירת הקישור בין Victa רשום למדפסת המובנית"
+        },
+        "instructions": {
+          "en": "A Victa running Foody can report itself through the POS print agent as well as through its payment-terminal capability. With the corrected API, an older generic Android hardware report does not downgrade a terminal capability already registered for that active device. Its integrated printer keeps the same owned parent, identity, profiles and job history. This is not automatic discovery or payment certification, and it does not turn an ordinary tablet into a payment terminal. If the device or integrated printer becomes unavailable after an update, retain the error and have the device inventory and API version checked. Do not forget, recreate or move devices between restaurants as a workaround, and do not resend queued documents or payments merely to test connectivity. Forgotten devices remain forgotten; printer routing and uncertain-job recovery still require their own checks.",
+          "fr": "Un Victa qui exécute Foody peut se signaler par l’agent d’impression POS et par sa capacité de terminal de paiement. Avec l’API corrigée, un ancien signalement matériel Android générique ne dégrade pas une capacité de terminal déjà enregistrée pour cet appareil actif. Son imprimante intégrée conserve le même parent du restaurant, son identité, ses profils et l’historique des travaux. Ce n’est ni une découverte automatique ni une certification de paiement, et cela ne transforme pas une tablette ordinaire en terminal. Si l’appareil ou son imprimante intégrée devient indisponible après une mise à jour, conservez l’erreur et faites vérifier l’inventaire des appareils et la version API. N’oubliez pas, ne recréez pas et ne déplacez pas les appareils entre restaurants pour contourner le problème ; ne renvoyez pas des documents en attente ou des paiements pour tester la connexion. Un appareil oublié reste oublié ; le routage et la reprise des impressions incertaines gardent leurs propres vérifications.",
+          "he": "Victa שמריץ את Foody יכול לדווח דרך סוכן ההדפסה של הקופה וגם דרך יכולת מסוף התשלום שלו. בשרת המתוקן דיווח חומרה ישן וכללי של Android אינו מבטל יכולת מסוף שכבר נרשמה למכשיר הפעיל. המדפסת המובנית שומרת על אותו מכשיר אב במסעדה, על הזהות, הפרופילים והיסטוריית המשימות. אין בכך גילוי אוטומטי או אישור תקינות תשלום, ואין בכך הפיכת טאבלט רגיל למסוף תשלום. אם המכשיר או המדפסת המובנית אינם זמינים לאחר עדכון, שמרו את השגיאה ובקשו לבדוק את מלאי המכשירים ואת גרסת השרת. אל תשכחו, תיצרו מחדש או תעבירו מכשירים בין מסעדות כפתרון עוקף, ואל תשלחו שוב מסמכים ממתינים או תשלומים רק כדי לבדוק חיבור. מכשירים שנשכחו נשארים במצב זה; ניתוב מדפסות וטיפול במשימות לא ודאיות עדיין מחייבים בדיקות נפרדות."
+        }
+      },
       {
         "id": "devices",
         "title": {

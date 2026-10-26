@@ -290,3 +290,28 @@ This only completes the documented confirmed-save handoff; the deletion, undo,
 permissions and error-recovery procedure above is unchanged. Refresh the exact
 Admin source evidence and immutable service pins without changing article dates
 or inventing a new merchant operation.
+
+## Startup integrity and production recovery (26 October 2026)
+
+This release reviews API startup integrity and its FR/HE/EN recovery guidance.
+The real PostgreSQL regression proves that the former startup normalization
+resized authored v2 tables and changed rotations. The corrected helper normalizes
+only legacy 0/1 rows; it preserves authored and unknown future versions exactly.
+It does not reconstruct previously overwritten geometry or rearrange active
+production tables. The entrypoint change only delegates that reviewed operation
+to the separately classified helper; other startup behavior is unchanged.
+
+Device-inventory regressions exercise an active, already terminal-capable Victa
+reported by a legacy generic Android print agent. Backfill must preserve its
+durable terminal capability and integrated-printer identity without relaxing
+tenant, missing-device or forgotten-device checks. No manual production database
+repair, payment, deposit, device reactivation or print replay is part of release
+verification. Physical printing and payments remain unverified by these tests.
+
+Admin, Web, POS and Backoffice inventories and surfaces retain their exact
+evidence from Landing develop `0ccd3b7f2b0a3845e46087ff1a528d0671d0f8cb`;
+their application sources do not change in this recovery. Copy the newly exported
+support corpus into API before scanning, pin this reviewed Landing commit, run
+the API validation and verify development before promoting its exact artifact.
+Keep the pending Admin and public-documentation promotions coordinated with the
+restored API; never publish a planned recovery as an installed capability.
