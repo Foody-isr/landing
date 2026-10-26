@@ -22,7 +22,8 @@
         ],
         "foodypos": [
           "lib/features/auth/**",
-          "lib/features/splash/**"
+          "lib/features/splash/**",
+          "lib/services/network/api_service.dart"
         ]
       }
     },
@@ -90,10 +91,16 @@
           "src/app/[restaurantId]/staff/shifts/**"
         ],
         "foodyserver": [
+          "internal/common/shift_models.go",
           "internal/shifts/**"
         ],
         "foodypos": [
           "lib/features/auth/presentation/*service*",
+          "lib/features/auth/presentation/pin_login_page.dart",
+          "lib/features/auth/presentation/staff_access_surface.dart",
+          "lib/features/auth/presentation/staff_timeclock_page.dart",
+          "lib/features/auth/data/staff_timeclock_repository.dart",
+          "lib/services/network/api_service.dart",
           "lib/features/more/presentation/cash_drawer_page.dart"
         ]
       }
@@ -586,6 +593,7 @@
         ],
         "foodypos": [
           "lib/features/orders/presentation/fulfillment_prompt.dart",
+          "lib/features/orders/domain/pos_fulfillment_flow.dart",
           "lib/features/orders/presentation/dine_in_destination_dialog.dart",
           "lib/features/orders/presentation/new_ticket_dialog.dart",
           "lib/features/orders/presentation/open_tickets_page.dart",
@@ -607,6 +615,7 @@
         "foodypos": [
           "lib/features/orders/presentation/pos_page.dart",
           "lib/features/orders/presentation/add_item_flow.dart",
+          "lib/features/orders/domain/pos_fulfillment_flow.dart",
           "lib/features/orders/presentation/item_customization_screen.dart"
         ],
         "foodyserver": [
@@ -851,7 +860,8 @@
         ],
         "foodypos": [
           "lib/features/menu/presentation/combos_page.dart",
-          "lib/features/menu/domain/combo_menu_model.dart"
+          "lib/features/menu/domain/combo_menu_model.dart",
+          "lib/features/orders/presentation/widgets/pos_combo_steps_view.dart"
         ],
         "foodyweb": [
           "components/*Combo*"
@@ -1146,6 +1156,7 @@
         "foodyserver": [
           "internal/common/full_service.go",
           "internal/common/pos_fulfillment.go",
+          "internal/restaurants/full_service_merge.go",
           "internal/restaurants/pos_settings.go"
         ]
       }
@@ -1327,7 +1338,9 @@
           "lib/features/orders/online/providers/online_orders_provider.dart",
           "lib/features/transactions/providers/transaction_refresh_provider.dart",
           "ios/Runner/VerifonePaymentBridge.m",
-          "android/app/src/main/kotlin/com/foodypos/app/VerifonePaymentBridge.kt"
+          "android/app/src/main/kotlin/com/foodypos/app/VerifonePaymentBridge.kt",
+          "lib/features/orders/domain/checkout_review.dart",
+          "lib/features/orders/presentation/terminal_checkout_pages.dart"
         ],
         "foodyserver": [
           "internal/payment/**",

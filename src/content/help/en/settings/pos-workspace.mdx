@@ -5,7 +5,7 @@ apps: foodypos
 tags:
   - settings
   - pos-workspace
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-26'
 featureId: pos-workspace
 audience: public
 releaseStatus: available
@@ -52,4 +52,10 @@ Check Internet, the selected restaurant/device and explicit connection status. R
 
 ## Browse handheld terminal pages
 
-On a phone or handheld terminal, More shows a vertical list. Hardware opens devices, printers and their profiles; Appearance and the personal profile retain their own back control. Permitted reports remain under Reports. Headers are centered and long actions flow below the title. In Library, the filter button opens Items, Combos or Discounts; categories are selected above the items. The presentation grants no additional permissions. Tablets retain their columns. More opens with Welcome. When a mode is assigned to the terminal, its card shows the configured name; it opens checkout settings only when your account is authorized.
+On the handheld terminal, the initials at the lower left open More; they come from the signed-in user’s name. The house opens the operational Overview and the receipt opens Checks. Orders, Transactions, Hardware, Appearance and Reports remain in More according to permissions; the role and assigned mode appear when available. The mode card opens its settings only with the corresponding permission. In Library, the filter opens Items, Combos or Discounts and categories remain above the items. Headers and back controls fit the terminal width. Tablets retain their own navigation and columns. The three targets stay above Android system buttons; while typing, the bar hides and actions move with the keyboard. Inside a sale, use Menu/Check/Actions and the explicit return to checks.
+
+<span id="operational-overview" />
+
+## View terminal overview and item availability
+
+On a handheld terminal, tap the house to open Overview. The restaurant name and collapsible cards show the availability, new/in-kitchen/ready orders and table state allowed by your role. Open View all item availability to search active items in menus available at the POS. The list uses the same catalogue as POS order entry; it does not depend on a general menu state separate from its POS availability. States are Available, Low stock, Unavailable or Not provided; a quantity appears only when supplied. Unknown availability does not mean available. Hidden groups, their descendants and combo-only components are excluded. Refresh reloads the reads; a failure displays a message and retry. Card buttons open orders or checks according to permissions. Overview reads data without changing stock or orders.

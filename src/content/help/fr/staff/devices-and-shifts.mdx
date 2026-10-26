@@ -5,12 +5,26 @@ apps: both
 tags:
   - staff
   - staff-devices-shifts
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-26'
 featureId: staff-devices-shifts
 audience: public
 releaseStatus: available
 ---
 Admin → Personnel → Accès POS / Rapports de shifts
+
+<span id="personal-time-tracking" />
+
+## Enregistrer ses heures sans ouvrir le POS
+
+Ce parcours nécessite la version POS mise à jour et l’API correspondante déployée avant son installation. Sa présence dans ce guide ne confirme pas sa disponibilité sur votre appareil.
+
+1. Sur l’écran Se connecter d’un appareil déjà enrôlé, touchez Afficher les heures. Dans Enregistrement des heures, saisissez votre code confidentiel personnel complet de 4 à 6 chiffres, puis confirmez-le. Consulter ce statut ne démarre pas de période de travail et ne vous connecte pas au POS. Fermer revient à la connexion PIN.
+2. Si aucune période n’est active, touchez Enregistrer l’arrivée pour commencer explicitement. Attendez la confirmation du serveur. L’écran actif affiche le rôle réel de votre compte, pas un poste ou un horaire prévu inventé.
+3. Pendant la période active, Ajouter des remarques ouvre la saisie facultative d’une note destinée à l’employeur, limitée à 500 caractères. Enregistrer applique la note à cette période ; fermer sans enregistrer ne l’applique pas.
+4. Touchez Terminer la période de travail pour enregistrer votre départ. Une caisse ouverte sur le POS d’origine de cette période empêche cette fin : demandez à un responsable autorisé de terminer son rapport et de clôturer les espèces sur cet appareil, puis réessayez. Ce parcours ne clôture pas la caisse et ne lance aucun dépôt Verifone.
+5. Après confirmation, Départ enregistré présente uniquement votre période concernée, ses dates/heures et la durée enregistrées par le serveur. Les heures enregistrées ne constituent pas un calcul de paie ; aucun planning de travail n’est déduit de l’absence de données. Continuer vers FoodyPOS revient à l’écran PIN, sans connexion de vente automatique.
+
+En cas de refus, vérifiez le code personnel et l’autorisation de l’appareil avec un responsable. Si le résultat d’une action est incertain, Actualiser les heures permet de vérifier le statut avant de réessayer ; ne supposez pas qu’elle a échoué et ne créez pas un second pointage. Si le parcours est indisponible, faites vérifier l’appareil et la version de l’API. Ne partagez jamais votre code ni vos remarques avec l’assistant.
 
 <span id="pending-cash-sign-out" />
 

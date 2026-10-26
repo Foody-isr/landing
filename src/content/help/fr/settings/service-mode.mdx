@@ -30,6 +30,12 @@ Vérifiez places, couverts, services, envoi cuisine et retour au menu dans les r
 
 Configurez les [modes de traitement et leur demande](/fr/help/settings/pos-behavior#fulfillment-methods) pour le restaurant séparément du plan de salle et du profil de mode de l’appareil. Le traitement global définit le service de l’addition ; le choix d’un article est une exception de préparation et ne crée pas une livraison distincte. Consultez les [choix de l’addition et de l’article](/fr/help/orders/order-types#pos-whole-check) avant de changer une vente. Un paiement ne masque pas la commande dans Commandes → Toutes et ne termine pas automatiquement sa préparation. Dans une nouvelle vente sur place, le mode et la fiche client éventuelle précèdent les articles. La table/addition est choisie seulement à Envoyer/Continuer ; annuler conserve la source. Voir [le traitement global](/fr/help/orders/order-types#pos-whole-check). Le contexte client privé est réservé au personnel, jamais une réponse au paiement public ou une variable de notification.
 
+<span id="shared-mode-save-recovery" />
+
+## Enregistrer un mode partagé et reprendre après un conflit
+
+Un mode est partagé par tous les appareils qui lui sont attribués. Enregistrer nécessite la capacité de sauvegarde sécurisée de l’API mise à jour. Des modifications sur des champs différents peuvent fusionner ; un changement concurrent du même champ est refusé et votre brouillon reste visible. Ne renvoyez pas ce brouillon périmé en boucle. Choisissez Recharger les réglages enregistrés, confirmez l’abandon du brouillon non enregistré, puis vérifiez la politique actuelle et refaites seulement la modification voulue. Cette reprise s’applique aussi si le serveur ne confirme pas la sauvegarde. Un écran en lecture seule ou connecté à une ancienne API ne peut pas activer ce nouveau contrat. Le POS mis à jour actualise la politique partagée au premier plan environ toutes les 30 secondes, à la reprise, lors de la navigation et après une action ; un paiement, un envoi ou une édition d’article en cours reporte son application jusqu’à une fin sûre, sans rejouer l’action. Vérifiez l’affectation de l’appareil et les modules effectifs avant le service.
+
 <span id="modes-dashboard" />
 
 ## Consulter et modifier les Modes dans Admin

@@ -34,6 +34,12 @@ Review seating, covers, service courses, kitchen sending and return-to-menu beha
 
 Configure the restaurant's [fulfillment methods and prompt](/en/help/settings/pos-behavior#fulfillment-methods) separately from the table layout and device mode profile. The whole-check method determines its overall service; an item choice is a preparation exception and does not create a separate delivery. Review [whole-check and item choices](/en/help/orders/order-types#pos-whole-check) before changing a sale. A payment does not hide an order from Orders → All or automatically mark its preparation complete. Mode selection and any customer prompt precede items in a new onsite sale. The table/check is chosen only at Send/Continue; cancellation preserves the source. See [whole-check fulfillment](/en/help/orders/order-types#pos-whole-check). Private guest context is staff-only, never a public checkout answer or notification variable.
 
+<span id="shared-mode-save-recovery" />
+
+## Save a shared mode and recover a conflict
+
+A mode is shared by all assigned devices. Save requires the updated API’s conflict-safe settings capability. Independent edits to different fields can merge; a competing edit to the same field is rejected and your draft remains visible. Do not repeatedly save that stale draft. Choose Reload saved settings, confirm discarding the unsaved draft, then review the latest policy and apply only the intended edit. The same recovery applies when the server cannot confirm the save. A read-only or older-API screen cannot enable the new save contract. The updated POS refreshes the shared policy in the foreground about every 30 seconds, on resume, navigation and after an action; an active payment, send or item edit defers application until its safe completion. This refresh never repeats the action. Confirm the intended device assignment and effective modules before serving.
+
 <span id="modes-dashboard" />
 
 ## Review and edit Modes in Admin

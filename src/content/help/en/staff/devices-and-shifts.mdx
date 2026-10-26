@@ -5,12 +5,26 @@ apps: both
 tags:
   - staff
   - staff-devices-shifts
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-26'
 featureId: staff-devices-shifts
 audience: public
 releaseStatus: available
 ---
 Admin → Staff → POS access / Shift reports
+
+<span id="personal-time-tracking" />
+
+## Record your hours without signing into the POS
+
+This flow needs the updated POS version and its matching API deployed before installation. This guide does not confirm availability on your installed device.
+
+1. On Sign in on an already enrolled device, tap Show hours. In Time tracking, enter your complete personal 4–6-digit passcode, then confirm it. Checking this status neither starts a shift nor signs you into the POS. Closing returns to PIN sign-in.
+2. If no shift is active, tap Clock in to start explicitly. Wait for server confirmation. The active screen shows your actual account role, not an invented job or scheduled shift.
+3. During an active shift, Add notes opens an optional note for your employer, limited to 500 characters. Save applies the note to this shift; closing without saving does not apply it.
+4. Tap End shift to record your departure. An open cash drawer on the period’s original POS prevents completion: ask an authorized manager to finish its report and close cash on that device, then retry. This flow does not close the drawer or start a Verifone deposit.
+5. Once confirmed, Clocked out shows only your relevant shift, its server-recorded dates/times and duration. Recorded hours are not a payroll calculation; missing data does not establish a work schedule. Continue to FoodyPOS returns to the PIN screen without automatically signing into sales.
+
+After rejection, check the personal code and device authorization with a manager. If an action’s result is uncertain, use Refresh hours to verify status before retrying; do not assume failure or create a second clocking event. If unavailable, have the device and API version checked. Never share your passcode or notes with the assistant.
 
 <span id="pending-cash-sign-out" />
 

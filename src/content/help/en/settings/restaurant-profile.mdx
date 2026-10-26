@@ -12,6 +12,12 @@ releaseStatus: available
 ---
 Open Settings for the selected restaurant. Confirm its name before saving changes.
 
+<span id="shared-pos-settings" />
+
+## Check shared POS settings before saving
+
+A device assigned to a mode uses that shared mode’s service settings, not a second local iPad policy. Confirm the selected restaurant and assigned mode. The updated API merges edits to different POS-policy fields and rejects conflicting edits to the same field. In Admin, retain a rejected draft for review, then use Reload saved settings and confirm discarding it before reapplying the intended change. Do not repeatedly submit an outdated policy. Update the API before Admin and POS; older clients without the merge contract retain their legacy save behavior and must not edit shared settings during rollout. Restaurant identity, address, hours and customer records are not changed by a POS-mode edit. See [shared mode recovery](/en/help/settings/service-mode#shared-mode-save-recovery).
+
 <span id="pos-location-configuration" />
 
 ## Check the restaurant before configuring POS methods
