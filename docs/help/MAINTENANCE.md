@@ -476,3 +476,19 @@ revalidated. API and Admin contracts pin the immutable documentation commit for
 remote CI. Deploy and verify the API before Admin in development, then promote
 the same verified artifacts to production. Publish the reviewed guides with this
 rollout; release synchronization to main only records the promoted history.
+
+## Stock editor viewport correction (27 October 2026)
+
+This review changes only the Admin availability presentation: a centered,
+viewport-bounded dialog replaces the small anchored panel. Its content scrolls
+independently of the persistent heading and Apply/Cancel actions; per-size fields
+use two columns where space permits. Stock conversion, reservations, permissions
+and write timing retain their existing contracts. FR/HE/EN procedures describe
+the new layout. Publish them with the compatible Admin after development checks.
+
+Only Admin, API support-corpus and Landing evidence is refreshed. Web, POS and
+Backoffice inventory blocks and surfaces retain their exact Landing develop
+baseline from `37bba41c177ac677f79b6e175a520b655c45e5be` and are not revalidated here. The API change synchronizes
+the documentation corpus only; no stock endpoint, schema or data is changed.
+Pin the immutable documentation commit, validate each affected service and
+promote the verified development artifacts under the shared release rules.
