@@ -10,7 +10,8 @@ enter public browsing, search or the AI corpus.
 
 ## Table-status descriptions review (27 October 2026)
 
-Admin source commit `53d8ebf3d85fae02da4763a913db337cc79b61d2` corrects seven
+Admin source commit `c2ce0d63db2a50252959d642288288fca513a4e9` combines the
+current availability editor with seven corrected
 visible keys in French, Hebrew and English:
 `tableStatusDesc`, `tableStatusInServiceColor`, `tableSettingsColorHint`,
 `tableStatusColorIndicatorsDesc`, `tableSettingsFreeHint`,
@@ -29,8 +30,10 @@ kitchen, payment and checkout-request states. They contain no contrary instructi
 about the time toggle or a served-food prerequisite. The copy correction adds no
 merchant action or changed procedure, so do not add optional implementation detail
 merely to change a guide digest. All article bytes, dates and the public corpus
-remain unchanged at revision
-`1d59a10a6f3e4ccbf456d993fc6e8300e41b223f469a759a97ff02e0144a4b62`.
+retain the availability-editor updates already integrated in Landing develop,
+without any additional article or corpus change from this copy correction. That
+upstream corpus revision is
+`5778368187c5b3397c8b8b5e3ddb06e7827957350ac05cfe165081f58d61fb5b`.
 
 The new UI-evidence entry asserts the exact 21 source values and rejects the old
 values at their keys. It is source concordance, not authenticated browser acceptance
@@ -39,11 +42,12 @@ features classified on the shared translation file; it explicitly acknowledges
 the visible table-status corrections rather than exempting the whole file.
 Refresh only the Admin translation hash, source snapshot and immutable source
 reference. Preserve all non-Admin inventory blocks and all source surfaces exactly
-from Landing develop `37bba41c177ac677f79b6e175a520b655c45e5be`.
+from Landing develop `cc8ab2fb69924d4914edf18797166fac696fcfa9`.
 
-Pin the reviewed metadata-only Landing commit in Admin before remote CI. No API or
-POS contract update, support-corpus change or native POS build is needed for this
-text-only follow-up.
+Pin the reviewed metadata-only Landing commit in Admin before remote CI. This
+text-only follow-up adds no API or POS change, support-corpus change or native POS
+build. The separate availability-editor release still requires its API corpus to
+match the retained upstream revision before coordinated promotion.
 Validate the Admin develop artifact before promoting that same artifact. Keep the
 previous three-hint release proofs intact; they do not certify every description
 on the table-status page.
@@ -516,3 +520,19 @@ revalidated. API and Admin contracts pin the immutable documentation commit for
 remote CI. Deploy and verify the API before Admin in development, then promote
 the same verified artifacts to production. Publish the reviewed guides with this
 rollout; release synchronization to main only records the promoted history.
+
+## Stock editor viewport correction (27 October 2026)
+
+This review changes only the Admin availability presentation: a centered,
+viewport-bounded dialog replaces the small anchored panel. Its content scrolls
+independently of the persistent heading and Apply/Cancel actions; per-size fields
+use two columns where space permits. Stock conversion, reservations, permissions
+and write timing retain their existing contracts. FR/HE/EN procedures describe
+the new layout. Publish them with the compatible Admin after development checks.
+
+Only Admin, API support-corpus and Landing evidence is refreshed. Web, POS and
+Backoffice inventory blocks and surfaces retain their exact Landing develop
+baseline from `37bba41c177ac677f79b6e175a520b655c45e5be` and are not revalidated here. The API change synchronizes
+the documentation corpus only; no stock endpoint, schema or data is changed.
+Pin the immutable documentation commit, validate each affected service and
+promote the verified development artifacts under the shared release rules.

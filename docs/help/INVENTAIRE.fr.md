@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-18.
 
-102 fiches de fonctionnalités, 734 procédures/sous-fonctionnalités, dont 93 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2200 fichiers applicatifs et 2048 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+102 fiches de fonctionnalités, 740 procédures/sous-fonctionnalités, dont 93 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2200 fichiers applicatifs et 2049 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 568 | 871 | cae13ef6e816 ; versioned |
-| foodyadmin | 767 | 777 | 83a73991461c ; versioned |
+| foodyserver | 568 | 871 | 9be650255f89 ; versioned |
+| foodyadmin | 767 | 777 | ae537cde19df ; versioned |
 | foodyweb | 339 | 168 | ad5ecd38fb4e ; versioned |
-| foodypos | 355 | 161 | 750b03d8b22c ; versioned |
+| foodypos | 355 | 162 | 07150e7193f7 ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
-| foodylanding | 127 | 21 | 1c0b71c96bf0 ; versioned |
+| foodylanding | 127 | 21 | 37bba41c177a ; versioned |
 
 ## getting-started
 
@@ -138,6 +138,7 @@ Identifiant : `staff-devices-shifts`. Public : public. Disponibilité : availabl
 - [Vérifier la liaison entre période de travail et appareil](../../src/content/help/fr/staff/devices-and-shifts.mdx#shift-device-access-integrity)
 - [Réessayer une lecture de caisse non confirmée](../../src/content/help/fr/staff/devices-and-shifts.mdx#cash-report-unconfirmed)
 - [Terminer le rapport avant de se déconnecter](../../src/content/help/fr/staff/devices-and-shifts.mdx#pending-cash-sign-out)
+- [Vérifier une fin de période dont la réponse est incertaine](../../src/content/help/fr/staff/devices-and-shifts.mdx#uncertain-shift-end)
 - [Distinguer rapports, espèces et dépôt carte](../../src/content/help/fr/staff/devices-and-shifts.mdx#pos-reports-navigation)
 - [Activer un appareil POS](../../src/content/help/fr/staff/devices-and-shifts.mdx#pair)
 - [Utiliser un code POS personnel](../../src/content/help/fr/staff/devices-and-shifts.mdx#pin)
@@ -213,6 +214,7 @@ Identifiant : `kitchen-availability`. Public : public. Disponibilité : availabl
 - [Changer la disponibilité depuis Articles](../../src/content/help/fr/kitchen/availability.mdx#library-availability)
 - [Identifier les variantes à préparer](../../src/content/help/fr/kitchen/availability.mdx#variant-position-preparation)
 - [Choisir une unité et un stock partagé ou par taille](../../src/content/help/fr/kitchen/availability.mdx#measured-stock-input)
+- [Afficher et faire défiler l’éditeur de stock](../../src/content/help/fr/kitchen/availability.mdx#stock-editor-layout)
 
 ### [Operations Quotidiennes](../../src/content/help/fr/kitchen/daily-operations.mdx)
 
@@ -345,6 +347,7 @@ Identifiant : `menu-categories-and-items`. Public : public. Disponibilité : ava
 - [Parcourir la bibliothèque sur mobile](../../src/content/help/fr/menu/categories-and-items.mdx#mobile-terminal-pages)
 - [Photos des produits](../../src/content/help/fr/menu/categories-and-items.mdx#product-photos)
 - [Choisir une unité et un stock partagé ou par taille](../../src/content/help/fr/menu/categories-and-items.mdx#measured-stock-input)
+- [Afficher et faire défiler l’éditeur de stock](../../src/content/help/fr/menu/categories-and-items.mdx#stock-editor-layout)
 
 ### [Créer un article du menu, étape par étape](../../src/content/help/fr/menu/creating-a-menu-item.mdx)
 
@@ -402,6 +405,7 @@ Identifiant : `menu-menus-and-groups`. Public : public. Disponibilité : availab
 - [Vérifier les choix conditionnels d’un article](../../src/content/help/fr/menu/menus-and-groups.mdx#conditional-item-choices)
 - [Parcourir la bibliothèque sur mobile](../../src/content/help/fr/menu/menus-and-groups.mdx#mobile-terminal-pages)
 - [Choisir une unité et un stock partagé ou par taille](../../src/content/help/fr/menu/menus-and-groups.mdx#measured-stock-input)
+- [Afficher et faire défiler l’éditeur de stock](../../src/content/help/fr/menu/menus-and-groups.mdx#stock-editor-layout)
 
 ### [Variantes et tailles](../../src/content/help/fr/menu/variants-and-sizes.mdx)
 
@@ -693,6 +697,7 @@ Identifiant : `pos-cash-access-diagnostics`. Public : public. Disponibilité : l
 
 - [Vérifier le refus sans remplacer la période ou la caisse](../../src/content/help/fr/payments/cash-access.mdx#cash-access-refusal)
 - [Distinguer la caisse espèces du terminal Verifone](../../src/content/help/fr/payments/cash-access.mdx#cash-versus-terminal)
+- [Reconfirmer le bon contexte avant un dépôt du terminal](../../src/content/help/fr/payments/cash-access.mdx#terminal-report-context)
 
 ### [Prestataires, moyens enregistrés et Cibus](../../src/content/help/fr/payments/providers-and-cibus.mdx)
 
@@ -946,6 +951,7 @@ Identifiant : `notifications-team`. Public : public. Disponibilité : available.
 
 Identifiant : `pos-workspace`. Public : public. Disponibilité : available. Services : foodypos.
 
+- [Rechoisir la table après un changement d’établissement](../../src/content/help/fr/settings/pos-workspace.mdx#restaurant-context-selection)
 - [Distinguer les commandes d’un service précédent](../../src/content/help/fr/settings/pos-workspace.mdx#previous-table-service-orders)
 - [Distinguer la commande sélectionnée de l’addition de table](../../src/content/help/fr/settings/pos-workspace.mdx#saved-order-workspace)
 - [Réessayer une lecture de caisse non confirmée](../../src/content/help/fr/settings/pos-workspace.mdx#cash-report-unconfirmed)
