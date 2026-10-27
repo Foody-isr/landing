@@ -1,8 +1,58 @@
 {
   "schemaVersion": 1,
   "repository": "Foody-isr/admin",
-  "ref": "9a62da59c1877cf083d763142bb1ac12430ccc87",
+  "ref": "53d8ebf3d85fae02da4763a913db337cc79b61d2",
   "observations": [
+    {
+      "id": "table-status-descriptions-source-contract",
+      "source": "src/lib/i18n.tsx",
+      "required": [
+        "tableSettingsColorHint: \"Used for an occupied table, even before the first order is sent, until a time or checkout indicator applies.\",",
+        "tableSettingsFreeHint: \"No active table service and no active order\",",
+        "tableSettingsOccupiedHint: \"Table in use, even before the first order is sent\",",
+        "tableSettingsSettleHint: \"Checkout requested and at least one order remains to be paid\",",
+        "tableStatusDesc: 'Set the occupied table colour and time thresholds on the floor plan.',",
+        "tableStatusColorIndicatorsDesc: 'Change occupied table colours according to elapsed time.',",
+        "tableStatusInServiceColor: 'Occupied table colour',",
+        "tableSettingsColorHint: \"משמש לשולחן תפוס, גם לפני שליחת ההזמנה הראשונה, כל עוד לא חל חיווי זמן או חיווי לתשלום.\",",
+        "tableSettingsFreeHint: \"אין שירות פעיל בשולחן ואין הזמנה פעילה\",",
+        "tableSettingsOccupiedHint: \"השולחן בשימוש, גם לפני שליחת ההזמנה הראשונה\",",
+        "tableSettingsSettleHint: \"הוגשה בקשת חשבון ולפחות הזמנה אחת טרם שולמה\",",
+        "tableStatusDesc: 'הגדירו את הצבע לשולחנות תפוסים ואת ספי הזמן במפת הישיבה.',",
+        "tableStatusColorIndicatorsDesc: 'שינוי צבע של שולחנות תפוסים לפי הזמן שחלף.',",
+        "tableStatusInServiceColor: 'צבע לשולחנות תפוסים',",
+        "tableSettingsColorHint: \"Utilisée pour une table occupée, même avant le premier envoi, tant qu’aucun indicateur de durée ou d’encaissement ne s’applique.\",",
+        "tableSettingsFreeHint: \"Aucun service de table en cours ni commande active\",",
+        "tableSettingsOccupiedHint: \"Service de table en cours, même avant le premier envoi\",",
+        "tableSettingsSettleHint: \"Règlement demandé et au moins une commande restant à payer\",",
+        "tableStatusDesc: \"Définissez la couleur des tables occupées et les seuils de durée sur le plan de salle.\",",
+        "tableStatusColorIndicatorsDesc: \"Faire évoluer la couleur des tables occupées selon la durée.\",",
+        "tableStatusInServiceColor: 'Couleur des tables occupées',"
+      ],
+      "forbidden": [
+        "tableSettingsColorHint: \"Used while a table has an active order, before any time or checkout indicator applies.\",",
+        "tableSettingsFreeHint: \"No active order\",",
+        "tableSettingsOccupiedHint: \"An active order\",",
+        "tableSettingsSettleHint: \"Checkout requested and unpaid tickets served\",",
+        "tableStatusDesc: 'Colour floor-plan tables by how long the order has been open.',",
+        "tableStatusColorIndicatorsDesc: 'Show occupancy state by colour on the floor plan',",
+        "tableStatusInServiceColor: 'Order started colour',",
+        "tableSettingsColorHint: \"מוצג כשיש לשולחן הזמנה פעילה, לפני שחיווי זמן או תשלום חל.\",",
+        "tableSettingsFreeHint: \"אין הזמנה פעילה\",",
+        "tableSettingsOccupiedHint: \"הזמנה פעילה\",",
+        "tableSettingsSettleHint: \"התבקש תשלום וההזמנות שטרם שולמו הוגשו\",",
+        "tableStatusDesc: 'צביעת שולחנות במפת הישיבה לפי הזמן שחלף מפתיחת ההזמנה.',",
+        "tableStatusColorIndicatorsDesc: 'הצגת מצב התפוסה בצבע במפת הישיבה',",
+        "tableStatusInServiceColor: 'צבע להזמנה שהתחילה',",
+        "tableSettingsColorHint: \"Utilisée lorsqu’une table a une commande active, avant les indicateurs de durée ou d’encaissement.\",",
+        "tableSettingsFreeHint: \"Aucune commande active\",",
+        "tableSettingsOccupiedHint: \"Une commande active\",",
+        "tableSettingsSettleHint: \"Encaissement demandé et tickets impayés servis\",",
+        "tableStatusDesc: \"Colorez les tables du plan de salle en fonction du temps écoulé depuis l'ouverture de la commande.\",",
+        "tableStatusColorIndicatorsDesc: \"Afficher l'état d'occupation par couleur sur le plan de salle\",",
+        "tableStatusInServiceColor: 'Couleur de prise en cours',"
+      ]
+    },
     {
       "id": "table-session-clock-hint-source-contract",
       "source": "src/lib/i18n.tsx",
@@ -225,15 +275,24 @@
       "required": {
         "fr": [
           "service-time-and-state",
-          "La durée affichée sur le plan et dans la liste des additions provient du début de la session de table"
+          "La durée affichée sur le plan et dans la liste des additions provient du début de la session de table",
+          "une table ouverte ne devient pas libre parce que son nombre de couverts est absent.",
+          "Scanner seul un QR ne prouve pas que la table est occupée.",
+          "Les états cuisine, paiement et demande d’addition restent distincts de cette durée."
         ],
         "en": [
           "service-time-and-state",
-          "The duration on the floor plan and checks list starts with the table session"
+          "The duration on the floor plan and checks list starts with the table session",
+          "an open table is not free merely because its cover count is absent.",
+          "Scanning a QR alone does not prove occupancy.",
+          "Kitchen, payment and checkout-request states remain distinct from this duration."
         ],
         "he": [
           "service-time-and-state",
-          "המשך המוצג במפת המסעדה וברשימת החשבונות מתחיל במפגש השולחן"
+          "המשך המוצג במפת המסעדה וברשימת החשבונות מתחיל במפגש השולחן",
+          "שולחן פתוח אינו פנוי רק משום שמספר הסועדים חסר.",
+          "סריקת QR בלבד אינה מוכיחה תפוסה.",
+          "מצבי מטבח, תשלום ובקשת חשבון נפרדים ממשך זה."
         ]
       },
       "forbidden": {
