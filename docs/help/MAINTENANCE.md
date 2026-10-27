@@ -8,6 +8,34 @@ base. `docs/help/catalog/features.json` is the authored feature/procedure source
 Internal operator procedures render separately to `docs/help/internal` and never
 enter public browsing, search or the AI corpus.
 
+## Table-session clock hint review (27 October 2026)
+
+Admin source commit `9a62da59c1877cf083d763142bb1ac12430ccc87` corrects only
+the French, Hebrew and English `tableSettingsClockHint` values. The visible hint
+now describes time measured from the start of the table session. No timer,
+threshold, save, permission, table state or recovery logic changes. The existing
+`tables-floors/floor-plans#service-time-and-state` procedure already states this
+rule in all three languages; its content and article dates remain unchanged.
+The public corpus stays byte-identical at revision
+`1d59a10a6f3e4ccbf456d993fc6e8300e41b223f469a759a97ff02e0144a4b62`.
+
+The new `table-session-clock-hint-source-contract` UI-evidence entry is a
+declarative source assertion, not a live browser observation of the corrected
+copy. It checks the three values and their agreement with the existing guide.
+The Admin source validation does not by itself prove deployed browser acceptance.
+The scoped Admin review exempts only the eight other public features classified
+on the shared translation file, whose strings and procedures are unchanged; it
+does not claim that the visible hint was unchanged.
+
+Refresh only the Admin translation hash, its source snapshot and immutable source
+commit in the inventory. All non-Admin service blocks and all source surfaces
+retain their exact evidence from Landing develop
+`7cca8a9cf959c29210ad621f1a373bafd9b0f64a`; they are not revalidated here.
+Pin the reviewed metadata-only Landing commit in Admin before remote CI. No API
+or POS contract, support-corpus update, rebuild or redeployment is needed for this
+copy correction. Verify the Admin develop artifact before promoting that same
+artifact; confirm the corrected text in the authenticated browser separately.
+
 ## Required change workflow
 
 1. Read the closest service instructions and locate the feature and source evidence
