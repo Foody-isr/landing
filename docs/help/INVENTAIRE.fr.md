@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-10-18.
+Révision du relevé : 2026-10-27.
 
-101 fiches de fonctionnalités, 723 procédures/sous-fonctionnalités, dont 92 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2194 fichiers applicatifs et 2047 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+102 fiches de fonctionnalités, 729 procédures/sous-fonctionnalités, dont 93 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2198 fichiers applicatifs et 2048 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 566 | 871 | e5f48ab8b6ce ; versioned |
-| foodyadmin | 765 | 777 | b94b5e0f8f1b ; versioned |
-| foodyweb | 337 | 167 | 98cc3a1c49e6 ; versioned |
+| foodyserver | 567 | 871 | c508d551c251 ; versioned |
+| foodyadmin | 766 | 777 | 7a6ad6a818e3 ; versioned |
+| foodyweb | 339 | 168 | ad5ecd38fb4e ; versioned |
 | foodypos | 355 | 161 | 750b03d8b22c ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
-| foodylanding | 127 | 21 | c6f2cedc78b1 ; versioned |
+| foodylanding | 127 | 21 | 6fda2691c93f ; versioned |
 
 ## getting-started
 
@@ -341,13 +341,14 @@ Identifiant : `menu-categories-and-items`. Public : public. Disponibilité : ava
 - [Changer la disponibilité depuis Articles](../../src/content/help/fr/menu/categories-and-items.mdx#library-availability)
 - [Vérifier les choix conditionnels d’un article](../../src/content/help/fr/menu/categories-and-items.mdx#conditional-item-choices)
 - [Parcourir la bibliothèque sur mobile](../../src/content/help/fr/menu/categories-and-items.mdx#mobile-terminal-pages)
+- [Photos des produits](../../src/content/help/fr/menu/categories-and-items.mdx#product-photos)
 
 ### [Créer un article du menu, étape par étape](../../src/content/help/fr/menu/creating-a-menu-item.mdx)
 
 Identifiant : `menu-creating-a-menu-item`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb, foodypos.
 
 - [Vérifier les accès et ouvrir l’éditeur](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-1)
-- [Informations de l’article et photo](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-3)
+- [Informations de l’article et photos](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-3)
 - [Statut, Catégories et Cartes](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-6)
 - [Prix et variantes](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-7)
 - [Personnalisations et autres sections](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-10)
@@ -457,6 +458,15 @@ Identifiant : `pos-discount-library`. Public : public. Disponibilité : availabl
 - [Créer une remise nommée](../../src/content/help/fr/menu/pos-discounts.mdx#definition)
 - [Appliquer avec autorisation](../../src/content/help/fr/menu/pos-discounts.mdx#apply)
 - [Distinguer les codes en ligne](../../src/content/help/fr/menu/pos-discounts.mdx#distinction)
+
+### [Gérer les photos des produits](../../src/content/help/fr/menu/product-photos.mdx)
+
+Identifiant : `menu-product-photos`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb.
+
+- [Ajouter plusieurs photos](../../src/content/help/fr/menu/product-photos.mdx#add-photos)
+- [Choisir la photo principale ou supprimer une photo](../../src/content/help/fr/menu/product-photos.mdx#cover-and-removal)
+- [Parcourir la galerie sur le site client](../../src/content/help/fr/menu/product-photos.mdx#view-on-website)
+- [Reprendre après un échec d’envoi ou d’enregistrement](../../src/content/help/fr/menu/product-photos.mdx#recover-upload)
 
 ## orders
 
@@ -1147,6 +1157,7 @@ Identifiant : `guest-ordering`. Public : public. Disponibilité : available. Ser
 - [Vérifier les choix conditionnels d’un article](../../src/content/help/fr/guest/online-ordering.mdx#conditional-item-choices)
 - [Renseigner un téléphone valide](../../src/content/help/fr/guest/online-ordering.mdx#contact-phone)
 - [Piloter manuellement les commandes hebdomadaires](../../src/content/help/fr/guest/online-ordering.mdx#manual-weekly-ordering)
+- [Photos des produits](../../src/content/help/fr/guest/online-ordering.mdx#product-photos)
 
 ### [Suivi, reçus et moyens enregistrés](../../src/content/help/fr/guest/tracking-and-account.mdx)
 
