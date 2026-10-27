@@ -8,6 +8,50 @@ base. `docs/help/catalog/features.json` is the authored feature/procedure source
 Internal operator procedures render separately to `docs/help/internal` and never
 enter public browsing, search or the AI corpus.
 
+## Table-status descriptions review (27 October 2026)
+
+Admin source commit `c2ce0d63db2a50252959d642288288fca513a4e9` combines the
+current availability editor with seven corrected
+visible keys in French, Hebrew and English:
+`tableStatusDesc`, `tableStatusInServiceColor`, `tableSettingsColorHint`,
+`tableStatusColorIndicatorsDesc`, `tableSettingsFreeHint`,
+`tableSettingsOccupiedHint` and `tableSettingsSettleHint`. An occupied table can
+be in service before its first order; the optional time indicators do not define
+occupancy. The checkout legend no longer suggests that food must be served before
+an explicit checkout request can accompany an unpaid order. These 21 text changes
+do not change service state, timer origin, palette, thresholds, saving, permissions
+or financial behavior. The three previously corrected `tableSettingsClockHint`
+values remain byte-identical.
+
+All three published `tables-floors/floor-plans#service-time-and-state` procedures
+were reviewed in full. They already describe the table-session clock, seating
+without covers, QR scans alone not proving occupancy, and the distinction between
+kitchen, payment and checkout-request states. They contain no contrary instruction
+about the time toggle or a served-food prerequisite. The copy correction adds no
+merchant action or changed procedure, so do not add optional implementation detail
+merely to change a guide digest. All article bytes, dates and the public corpus
+retain the availability-editor updates already integrated in Landing develop,
+without any additional article or corpus change from this copy correction. That
+upstream corpus revision is
+`5778368187c5b3397c8b8b5e3ddb06e7827957350ac05cfe165081f58d61fb5b`.
+
+The new UI-evidence entry asserts the exact 21 source values and rejects the old
+values at their keys. It is source concordance, not authenticated browser acceptance
+of every locale. The scoped Admin review covers only the eight other public
+features classified on the shared translation file; it explicitly acknowledges
+the visible table-status corrections rather than exempting the whole file.
+Refresh only the Admin translation hash, source snapshot and immutable source
+reference. Preserve all non-Admin inventory blocks and all source surfaces exactly
+from Landing develop `cc8ab2fb69924d4914edf18797166fac696fcfa9`.
+
+Pin the reviewed metadata-only Landing commit in Admin before remote CI. This
+text-only follow-up adds no API or POS change, support-corpus change or native POS
+build. The separate availability-editor release still requires its API corpus to
+match the retained upstream revision before coordinated promotion.
+Validate the Admin develop artifact before promoting that same artifact. Keep the
+previous three-hint release proofs intact; they do not certify every description
+on the table-status page.
+
 ## Table-session clock hint review (27 October 2026)
 
 Admin source commit `9a62da59c1877cf083d763142bb1ac12430ccc87` corrects only
