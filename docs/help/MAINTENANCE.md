@@ -392,3 +392,16 @@ candidate is installed. Reading the physical cash report needs the Foody API,
 not a connected Victa Mini; operations sent to a card terminal remain separate.
 Source and synthetic tests do not certify a physical installation match, a
 financial operation or recovery of historical production data.
+## Product photo gallery preparation (27 October 2026)
+
+This isolated preparation reviews API, Admin, Web and Landing from develop.
+Migration 278 adds only ordered extra product photos; the legacy cover remains
+compatible with POS. Public FR/HE/EN procedures describe save/cancel, upload
+recovery, cover selection and the customer gallery. Publish them with the matching
+product rollout after development verification, with API deployed first.
+POS and Backoffice source evidence retains the exact Landing develop baseline
+from Landing develop 6fda2691c93f8d1ec19dbbd6f06c12013d91b7f2; these clients are not revalidated.
+API, Admin and Web contracts pin the immutable reviewed Landing commit before
+remote CI. Verify the coordinated development deployments before promoting the
+same artifacts to production. Verification uses synthetic data and read-only
+public checks; it does not run a real order, payment or cash operation.
