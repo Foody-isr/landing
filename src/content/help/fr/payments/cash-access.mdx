@@ -1,0 +1,34 @@
+---
+title: Comprendre un refus d’accès à la caisse
+description: >-
+  Sur la caisse concernée, ouvrez Plus → Rapports → Solde en caisse ou Mouvements de caisse. Ce diagnostic nécessite les
+  versions compatibles du POS et de l’API ; ce guide ne confirme pas leur installation.
+apps: foodypos
+tags:
+  - payments
+  - pos-cash-access-diagnostics
+updatedAt: '2026-10-27'
+featureId: pos-cash-access-diagnostics
+audience: public
+releaseStatus: local-release-unverified
+---
+Sur la caisse concernée, ouvrez Plus → Rapports → Solde en caisse ou Mouvements de caisse. Ce diagnostic nécessite les versions compatibles du POS et de l’API ; ce guide ne confirme pas leur installation.
+
+> **Disponibilité à confirmer**
+> Cette application existe dans les sources. Ce guide ne confirme ni sa distribution publique ni sa disponibilité dans votre version installée.
+
+<span id="cash-access-refusal" />
+
+## Vérifier le refus sans remplacer la période ou la caisse
+
+Si Solde en caisse ou Mouvements de caisse ne peut pas confirmer la caisse, ce n’est pas la confirmation qu’aucune caisse n’est ouverte. Utilisez Réessayer pour relire l’état sur ce même appareil. Tant que la lecture échoue, aucune nouvelle ouverture, entrée/sortie ou clôture n’est autorisée, même si un ancien rapport reste affiché. Après une lecture réussie, les actions reviennent selon l’état confirmé et vos droits.
+
+Un message précis peut demander de vérifier la connexion PIN ou la période ouverte, de faire contrôler l’autorisation de l’appareil, ou de vérifier une installation qui ne correspond pas à la période ouverte. Faites examiner ce lien par un responsable ou l’assistance sans modifier les heures ou les associations à l’aveugle. Ne réenrôlez pas l’appareil et ne créez pas de période ou de caisse de remplacement pour contourner le refus. Le message ne répare aucune liaison et n’identifie pas à lui seul un autre appareil physique. Une vérification temporairement indisponible peut être réessayée ; elle ne prouve ni une panne réseau ni une référence absente. Un ancien POS ou une ancienne API peut encore afficher un message générique.
+
+Une opération déjà en attente suit sa récupération existante avec le même identifiant ; ne la recréez pas et n’effacez pas les données locales. Une session absente doit être confirmée par la réponse métier de l’API, pas déduite d’une erreur de connexion, d’accès ou d’une route introuvable.
+
+<span id="cash-versus-terminal" />
+
+## Distinguer la caisse espèces du terminal Verifone
+
+Réessayer ne crée aucun mouvement d’espèces et ne lance aucun dépôt Verifone. Solde en caisse a besoin d’accéder à l’API Foody, pas d’un Victa Mini connecté. Les paiements carte et les opérations envoyées au terminal suivent leur propre connexion et restent séparés. Ce rapport n’inclut pas les cartes : la clôture espèces ne lance pas le dépôt Verifone, et le dépôt Verifone ne clôture pas les espèces. N’utilisez pas un ajustement espèces pour masquer un remboursement carte.

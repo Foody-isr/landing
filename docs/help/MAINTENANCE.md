@@ -339,3 +339,56 @@ not revalidated by this follow-up. Export the public corpus before scanning the
 API, pin an immutable reviewed Landing commit in API and POS, and validate each
 service before its PR is ready. Verify the compatible POS build before publishing
 these guides; API publication alone does not update an installed app.
+
+## Local shift-access integrity preparation (26 October 2026)
+
+This preparation reviews API shift access validation and its FR/HE/EN guidance,
+not a production data repair. A saved interval retains its original authorization
+reference, start time, and cash attribution. An unresolved historical reference
+must not silently become another credential or a replacement work interval.
+Personal status reads remain separate from POS sales sign-in. Cash guards,
+provider operations, and existing financial journals are unchanged.
+
+Only API and Landing source evidence is refreshed. Admin, Web, POS, and
+Backoffice service blocks and surfaces retain their exact baseline evidence from
+Landing develop `c6f2cedc78b1fbefe568dff48f8b749912df0490`; they are not revalidated
+by this preparation. The API support corpus is copied before source scanning.
+Contracts use `WORKSPACE` for local checks only. A reviewed immutable Landing
+commit and coordinated API/documentation publication remain required before
+remote CI or release. No installed POS binary or physical financial operation is
+certified by these source and synthetic tests.
+
+The internal API recovery runbook requires proof of physical identity and cash
+journal continuity, then explicit approval of an exact production repair. Do not
+publish historical recovery as an available automatic action, apply a constraint
+to inconsistent history, or infer the origin of an inconsistency from a missing
+foreign key. Preparation and approval of preventive code do not authorize a
+production mutation.
+
+## Local cash-access diagnostic preparation (27 October 2026)
+
+This continuation refreshes API, POS and Landing evidence only. Admin, guest Web
+and Backoffice service blocks and surfaces retain their exact baseline from
+Landing commit `c6f2cedc78b1fbefe568dff48f8b749912df0490`; they are not revalidated
+by this preparation. The previous local shift-access protection remains included.
+Refresh the API's embedded corpus before the source scan and final validation.
+Contracts remain local `WORKSPACE`/`self` until an immutable reviewed documentation
+commit and the coordinated product release are explicitly authorized.
+
+The candidate classifies existing cash-access refusals without changing the
+original staff interval, credential binding, cash journal or terminal settlement.
+Missing identity and installation mismatches remain conflicts; storage failures
+remain unavailable states, never confirmed absence. Only the existing business
+404 confirms that no current drawer is open. POS maps a closed set of codes and
+statuses to localized messages, preserves its generic fallback and pending
+operation recovery, and keeps new financial actions disabled while unconfirmed.
+No client-provided installation identifier becomes a credential or a selector
+for another drawer. No new route, JWT claim, pairing or automatic repair is added.
+
+Keep the cash-access recovery procedure separate from the large checkout guide
+so that complete articles fit the unchanged AI grounding limit. All three
+translations qualify compatible API and POS versions rather than claiming the
+candidate is installed. Reading the physical cash report needs the Foody API,
+not a connected Victa Mini; operations sent to a card terminal remain separate.
+Source and synthetic tests do not certify a physical installation match, a
+financial operation or recovery of historical production data.

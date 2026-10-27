@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-10-26.
+Révision du relevé : 2026-10-18.
 
-100 fiches de fonctionnalités, 715 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2193 fichiers applicatifs et 2047 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+101 fiches de fonctionnalités, 723 procédures/sous-fonctionnalités, dont 92 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2194 fichiers applicatifs et 2047 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 565 | 871 | b66ab45c1821 ; versioned |
+| foodyserver | 566 | 871 | e5f48ab8b6ce ; versioned |
 | foodyadmin | 765 | 777 | b94b5e0f8f1b ; versioned |
 | foodyweb | 337 | 167 | 98cc3a1c49e6 ; versioned |
-| foodypos | 355 | 161 | 4b4f289e9988 ; versioned |
+| foodypos | 355 | 161 | 750b03d8b22c ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
-| foodylanding | 127 | 21 | 0ccd3b7f2b0a ; versioned |
+| foodylanding | 127 | 21 | c6f2cedc78b1 ; versioned |
 
 ## getting-started
 
@@ -134,6 +134,8 @@ Identifiant : `staff-roles`. Public : public. Disponibilité : available. Servic
 Identifiant : `staff-devices-shifts`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodypos.
 
 - [Enregistrer ses heures sans ouvrir le POS](../../src/content/help/fr/staff/devices-and-shifts.mdx#personal-time-tracking)
+- [Vérifier la liaison entre période de travail et appareil](../../src/content/help/fr/staff/devices-and-shifts.mdx#shift-device-access-integrity)
+- [Réessayer une lecture de caisse non confirmée](../../src/content/help/fr/staff/devices-and-shifts.mdx#cash-report-unconfirmed)
 - [Terminer le rapport avant de se déconnecter](../../src/content/help/fr/staff/devices-and-shifts.mdx#pending-cash-sign-out)
 - [Distinguer rapports, espèces et dépôt carte](../../src/content/help/fr/staff/devices-and-shifts.mdx#pos-reports-navigation)
 - [Activer un appareil POS](../../src/content/help/fr/staff/devices-and-shifts.mdx#pair)
@@ -653,6 +655,7 @@ Identifiant : `pos-payments`. Public : public. Disponibilité : available. Servi
 - [Garder la page de paiement lisible](../../src/content/help/fr/payments/pos-checkout.mdx#verifone-readable-hosted-theme)
 - [Vérifier le plafond de préautorisation au poids](../../src/content/help/fr/payments/pos-checkout.mdx#weight-hold-margin)
 - [Enregistrer les espèces](../../src/content/help/fr/payments/pos-checkout.mdx#cash)
+- [Réessayer une lecture de caisse non confirmée](../../src/content/help/fr/payments/pos-checkout.mdx#cash-report-unconfirmed)
 - [Compter et clôturer la caisse](../../src/content/help/fr/payments/pos-checkout.mdx#cash-drawer-report)
 - [Encaisser un paiement connecté](../../src/content/help/fr/payments/pos-checkout.mdx#card)
 - [Retrouver un paiement confirmé dans Transactions](../../src/content/help/fr/payments/pos-checkout.mdx#transaction-history)
@@ -669,6 +672,13 @@ Identifiant : `pos-payments`. Public : public. Disponibilité : available. Servi
 - [Confirmer une vente à emporter payée en caisse](../../src/content/help/fr/payments/pos-checkout.mdx#counter-completion)
 - [Retrouver Payer sur mobile](../../src/content/help/fr/payments/pos-checkout.mdx#mobile-terminal)
 - [Lire les transactions et rapports sur mobile](../../src/content/help/fr/payments/pos-checkout.mdx#mobile-terminal-pages)
+
+### [Comprendre un refus d’accès à la caisse](../../src/content/help/fr/payments/cash-access.mdx)
+
+Identifiant : `pos-cash-access-diagnostics`. Public : public. Disponibilité : local-release-unverified. Services : foodyserver, foodypos.
+
+- [Vérifier le refus sans remplacer la période ou la caisse](../../src/content/help/fr/payments/cash-access.mdx#cash-access-refusal)
+- [Distinguer la caisse espèces du terminal Verifone](../../src/content/help/fr/payments/cash-access.mdx#cash-versus-terminal)
 
 ### [Prestataires, moyens enregistrés et Cibus](../../src/content/help/fr/payments/providers-and-cibus.mdx)
 
@@ -922,7 +932,9 @@ Identifiant : `notifications-team`. Public : public. Disponibilité : available.
 
 Identifiant : `pos-workspace`. Public : public. Disponibilité : available. Services : foodypos.
 
+- [Distinguer les commandes d’un service précédent](../../src/content/help/fr/settings/pos-workspace.mdx#previous-table-service-orders)
 - [Distinguer la commande sélectionnée de l’addition de table](../../src/content/help/fr/settings/pos-workspace.mdx#saved-order-workspace)
+- [Réessayer une lecture de caisse non confirmée](../../src/content/help/fr/settings/pos-workspace.mdx#cash-report-unconfirmed)
 - [Vérifier la devise des rapports](../../src/content/help/fr/settings/pos-workspace.mdx#report-currency)
 - [Distinguer rapports, espèces et dépôt carte](../../src/content/help/fr/settings/pos-workspace.mdx#pos-reports-navigation)
 - [Retrouver les espaces de travail](../../src/content/help/fr/settings/pos-workspace.mdx#navigation)
@@ -958,6 +970,7 @@ Identifiant : `table-service-policy`. Public : public. Disponibilité : availabl
 
 - [Affecter salles, sections et tables](../../src/content/help/fr/tables-floors/staff-and-assistance.mdx#assign)
 - [Maintenir l’état des tables](../../src/content/help/fr/tables-floors/staff-and-assistance.mdx#status)
+- [Reprendre la bonne occupation d’une table](../../src/content/help/fr/tables-floors/staff-and-assistance.mdx#resume-confirmed-table-service)
 - [Vérifier les seuils et la clôture d’une table](../../src/content/help/fr/tables-floors/staff-and-assistance.mdx#timer-settings-and-close)
 - [Configurer les demandes d’assistance](../../src/content/help/fr/tables-floors/staff-and-assistance.mdx#assistance)
 - [Retrouver les outils de service sur mobile](../../src/content/help/fr/tables-floors/staff-and-assistance.mdx#mobile-terminal)

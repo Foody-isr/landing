@@ -30,7 +30,7 @@ With orders.manage, an active QR or web order opens Menu with its own saved chec
 
 ## Retry an unconfirmed cash-drawer read
 
-On a compatible updated POS, a failed read does not mean that no drawer is open. Retry reads the state again; new cash operations remain unavailable until that state is confirmed. Preserve the identity of already pending operations. See [cash-read recovery](/en/help/payments/pos-checkout#cash-report-unconfirmed). Terminal deposit remains separate.
+This diagnostic needs compatible POS and API versions; this guide does not confirm installation. A failed read does not mean that no drawer is open. The message may identify a shift or sign-in to check, device authorization needing review, an installation that does not match the open shift, or temporarily unavailable verification. Ask a manager about access refusals; Retry reads the state without repairing or moving a relationship. New cash operations stay unavailable until the state is confirmed. Preserve pending operations and local data. See [cash-read recovery](/en/help/payments/pos-checkout#cash-report-unconfirmed). Terminal deposit remains separate.
 
 <span id="report-currency" />
 
