@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "Foody-isr/admin",
-  "ref": "c2ce0d63db2a50252959d642288288fca513a4e9",
+  "ref": "f7918b67e92e9c5acfc0b80c9634604959c1428d",
   "observations": [
     {
       "id": "table-status-descriptions-source-contract",
@@ -267,6 +267,43 @@
       "forbidden": [
         "availabilityToggleTarget"
       ]
+    },
+    {
+      "id": "stock-dialog-rule-label-and-save-scope",
+      "source": "src/lib/i18n.tsx",
+      "required": [
+        "itemStockAvailabilityRule: \"Availability rule\",",
+        "itemStockRuleScopeHint: \"Applies to this product across all series. None inherits the category rule, then the restaurant rule.\",",
+        "itemStockRuleApplyHint: \"Stock changes apply immediately. Use Save on the product page to save the rule.\",",
+        "itemStockAvailabilityRule: \"כלל זמינות\",",
+        "itemStockRuleScopeHint: \"חל על הפריט בכל הסדרות. ללא כלל ייעודי, הכלל עובר בירושה מהקטגוריה ואחריה מהמסעדה.\",",
+        "itemStockRuleApplyHint: \"שינויי מלאי חלים מיד. שמרו את הפריט כדי לשמור את כלל הזמינות.\",",
+        "itemStockAvailabilityRule: \"Règle de disponibilité\",",
+        "itemStockRuleScopeHint: \"S’applique au produit, toutes séries confondues. Aucun hérite de la catégorie, puis du restaurant.\",",
+        "itemStockRuleApplyHint: \"Le stock s’applique immédiatement. Enregistrez la fiche produit pour sauvegarder la règle.\","
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "stock-dialog-product-rule-draft",
+      "source": "src/components/menu/publication/AvailabilityPopover.tsx",
+      "required": [
+        "if (ruleOnlyEdit)",
+        "ruleSelection?.onApply(ruleId)",
+        "aria-label={t(\"itemStockAvailabilityRule\")}"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "product-rule-selector-relocation",
+      "source": "src/components/menu-item/ItemAvailabilityPanel.tsx",
+      "required": [
+        "ruleSelection={{ value: stock.ruleId, options: rules",
+        "t('itemStockAvailabilityRule')"
+      ],
+      "forbidden": [
+        "<label className=\"block text-sm space-y-2\">{t('availabilityManageRules')}"
+      ]
     }
   ],
   "guides": [
@@ -308,19 +345,28 @@
           "liste sous forme de tableau",
           "État",
           "Créer un article",
-          "Articles et cartes → Articles"
+          "Articles et cartes → Articles",
+          "Règle de disponibilité",
+          "Enregistrer",
+          "toutes les séries"
         ],
         "en": [
           "table-based library",
           "Status",
           "Create item",
-          "Items & menus → Item library"
+          "Items & menus → Item library",
+          "Availability rule",
+          "Save",
+          "all series"
         ],
         "he": [
           "בצורת טבלה",
           "מצב",
           "צור פריט",
-          "פריטים ותפריטים → ספריית פריטים"
+          "פריטים ותפריטים → ספריית פריטים",
+          "כלל זמינות",
+          "שמרו את הפריט",
+          "בכל הסדרות"
         ]
       },
       "forbidden": {
@@ -508,19 +554,26 @@
           "Stock & disponibilité",
           "Suivre une règle",
           "Appliquer",
-          "Enregistrer"
+          "Enregistrer",
+          "Règle de disponibilité",
+          "toutes les séries"
         ],
         "en": [
           "Stock & availability",
           "Follow a rule",
           "Apply",
-          "Save"
+          "Save",
+          "Availability rule",
+          "all series"
         ],
         "he": [
           "מלאי וזמינות",
           "פעל לפי כלל",
           "החל",
-          "שמור"
+          "שמור",
+          "כלל זמינות",
+          "שמרו את הפריט",
+          "בכל הסדרות"
         ]
       },
       "forbidden": {
@@ -576,13 +629,22 @@
       "article": "menu/menus-and-groups",
       "required": {
         "fr": [
-          "Articles et cartes → Cartes"
+          "Articles et cartes → Cartes",
+          "Règle de disponibilité",
+          "Enregistrer",
+          "toutes les séries"
         ],
         "en": [
-          "Items & menus → Menus"
+          "Items & menus → Menus",
+          "Availability rule",
+          "Save",
+          "all series"
         ],
         "he": [
-          "פריטים ותפריטים → תפריטים"
+          "פריטים ותפריטים → תפריטים",
+          "כלל זמינות",
+          "שמרו את הפריט",
+          "בכל הסדרות"
         ]
       },
       "forbidden": {
