@@ -12,7 +12,7 @@ tags:
   - recipe
   - rules
   - '86'
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-27'
 featureId: kitchen-availability
 audience: public
 releaseStatus: available
@@ -71,7 +71,7 @@ Open Items & menus → Stock history. This page contains only the movement journ
 
 ## Manage a product tracked by series
 
-After series tracking is activated, Stock & availability shows the current series, available and committed quantities, Manage stock and Stock history. Use Manage stock to correct the selected series allowance. Its availability switch is immediate and journaled; it does not wait for the product Save button or carte publication. Use Automatic to resume its rule. Always available bypasses the stock cap and does not refill a counter. Product preparation settings and the availability rule remain part of the product save.
+After series tracking is activated, Stock & availability shows the current series, available and committed quantities, Edit stock and availability and Stock history. The edit button opens the same panel as Items and Cartes: choose availability or predefined stock, then Apply to save immediately. Cancel changes nothing. See the units and per-size stock procedure below. Preparation settings and the availability rule still save with the product Save button.
 
 <span id="library-availability" />
 
@@ -84,3 +84,9 @@ The Items library Availability column also opens the small panel shared with Car
 ## Identify the variant to prepare
 
 For an item with position choices, check the characters and their order on the order and ticket. Kitchen counters distinguish choice combinations so two products with the same format are not confused. Availability and stock movements continue to use the item and its priced format; a descriptive character creates no surcharge or second stock debit.
+
+<span id="measured-stock-input" />
+
+## Choose units and shared or per-size stock
+
+With menu editing permission, open a series-tracked product → Stock & availability → Edit stock and availability, or the Availability badge in Items or a Carte. Select Predefined stock. Choose the tracking mode, including for a series that already has committed orders: Shared unit count deducts one per item; Shared measure pools a budget across sizes; Count per size keeps an independent counter for each variant. Compatible numeric sizes offer g/kg or ml/l under Input unit. For example, 2,000 g in shared measure is shared between the 250 g and 500 g sizes. In count per size, entering 1,000 g for each allows 4 portions of 250 g and 2 portions of 500 g, with no sharing between counters. Check the displayed equivalents: each per-size budget must equal a whole number of portions. A blank size remains unlimited; enter 0 to exhaust it, with at least one other positive size. Use Unavailable to exhaust the whole item. Changing g to kg or ml to l preserves the quantity; changing tracking mode clears the fields to avoid converting portions into grams. When the mode changes, existing reservations are recalculated from each ordered size and added to the remaining quantity you enter: 2 portions of 250 g and 1 of 500 g equal 1,000 g committed; entering 2,000 g available produces an initial allowance of 3,000 g. Produced quantities remain consumed. Released reservations stay released; a later restoration uses the new mode. Prices, ordered quantities and other series remain unchanged. Conversion and its history save together. If a historic size or reservation cannot be reliably reconstructed, conversion is refused without changes; check sizes and stock history. An order being edited may cause a conflict: reload and retry. Opening, choosing or cancelling writes nothing. Apply immediately saves remaining stock for the displayed series, preserves committed orders and journals the change, without waiting for product Save or carte Publish. After a conflict your values remain visible; use Reload stock to review current quantities before applying again.

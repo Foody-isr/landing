@@ -397,8 +397,9 @@ financial operation or recovery of historical production data.
 
 This preparation reviews API, POS and Landing only. Preserve Admin, guest Web
 and Backoffice service blocks and source surfaces exactly from Landing develop
-`e8304f5805f767b8541a86c05e18553163203837`, including the product-gallery evidence
-integrated after the previous release. Those services are not revalidated here.
+`e64f385a51bb0adf87e62fbdcc0cbb485e4d6a91`, including the product-gallery and
+stock-unit evidence integrated after the previous release. Those services are
+not revalidated here.
 
 The procedures cover restaurant-scoped screen selection, saved-item places under
 the assigned POS mode, terminal-report confirmations bound to their original
@@ -407,6 +408,11 @@ Clearing a screen selection does not delete or move persisted checks. A context
 change does not cancel an already transmitted terminal command. Personal shift
 verification changes no cash journal and never treats an unavailable response as
 proof of absence. Keep all FR/HE/EN instructions qualified by compatible versions.
+
+From Save check, New check followed by Custom check opens the name form directly;
+the separate Open tickets flow retains its predefined groups. Back preserves the
+source basket. Staff POS customer details remain optional; guest delivery has its
+own validation contract. These changes add no financial operation or address rule.
 
 Release the effective saved-seat policy in the API before the POS that supplies
 its installation context. Refresh source evidence, export the public corpus and
@@ -426,3 +432,19 @@ API, Admin and Web contracts pin the immutable reviewed Landing commit before
 remote CI. Verify the coordinated development deployments before promoting the
 same artifacts to production. Verification uses synthetic data and read-only
 public checks; it does not run a real order, payment or cash operation.
+
+
+### Local stock-unit restoration (27 October 2026)
+
+This preparation restores the series product's stock editor and measured entry
+for shared or per-size allowances. API mode changes atomically rebase existing held and released reservations using
+the ordered size snapshots, reconcile old commitments, and journal the conversion.
+A stale revision, concurrent writer or unverifiable historical allocation aborts
+the entire change. No schema migration is required; deploy the API before Admin. Publish the FR/HE/EN guides with the matching Admin
+release; the public search export and API embedded support corpus must match.
+Only Admin, the API and Landing sources are refreshed in this review.
+Other service inventory entries retain the previous Landing evidence and are not
+revalidated. API and Admin contracts pin the immutable documentation commit for
+remote CI. Deploy and verify the API before Admin in development, then promote
+the same verified artifacts to production. Publish the reviewed guides with this
+rollout; release synchronization to main only records the promoted history.
