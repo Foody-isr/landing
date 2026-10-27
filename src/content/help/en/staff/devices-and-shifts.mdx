@@ -5,7 +5,7 @@ apps: both
 tags:
   - staff
   - staff-devices-shifts
-updatedAt: '2026-10-26'
+updatedAt: '2026-10-27'
 featureId: staff-devices-shifts
 audience: public
 releaseStatus: available
@@ -47,6 +47,12 @@ This diagnostic needs compatible POS and API versions; this guide does not confi
 ## Finish the report before signing out
 
 Sign out in navigation and End shift in More use the same check, scoped to the active POS and restaurant. With orders.manage or payments.manage, Foody checks the report before offering to end the shift. An open drawer, even with no sale or movement, or an unconfirmed local cash operation shows Cash drawer report pending. Cancel changes nothing. Finish report opens More → Reports → Cash drawer balance; it does not close the drawer, use expected cash as a physical count, or sign you out. Resume uncertain operations using their existing identity. To close, an operator with orders.manage physically counts the cash present and confirms closure. Then request sign-out again and confirm End shift to return to PIN while keeping the device enrolled. Closing cash alone does not automatically end your staff shift. Without report permissions, the server still checks the drawer: if open, ask an authorized manager; the message does not grant report access. If verification fails, the session stays open: check the connection and Retry without clearing local data. The server also rechecks after confirmation in case a drawer opened in the meantime. The Verifone card deposit stays separate and explicit: neither this message nor sign-out starts it. Revoked or expired access can require a security sign-out; this neither counts nor closes cash and does not erase recovery journals.
+
+<span id="uncertain-shift-end" />
+
+## Verify a shift end with an uncertain response
+
+On a compatible POS, if the shift-end confirmation is not received, keep the same sign-in and restaurant, then explicitly choose Retry. Foody rereads your current period without sending another end request during this verification. It returns to PIN only when the read confirms no active period, the same POS context is still current and no cash operation is pending. If a period is still active, you stay signed in: cash is checked again and another explicit end confirmation is required. A failed or unconfirmed read keeps you signed in and offers Retry. Resolve any pending cash operation first using its existing identity; do not clear local data. Cancel keeps you signed in but does not undo a shift end already saved. Changing sign-in or restaurant invalidates the in-flight verification. This check does not count cash, close the drawer or start a Verifone deposit. It does not certify physical testing on your device.
 
 <span id="pos-reports-navigation" />
 

@@ -5,12 +5,18 @@ apps: foodypos
 tags:
   - settings
   - pos-workspace
-updatedAt: '2026-10-26'
+updatedAt: '2026-10-27'
 featureId: pos-workspace
 audience: public
 releaseStatus: available
 ---
 Ouvrez Plus sur la caisse. Les destinations dépendent du rôle et des capacités de l’appareil.
+
+<span id="restaurant-context-selection" />
+
+## Rechoisir la table après un changement d’établissement
+
+Sur le POS compatible mis à jour, changer d’établissement réinitialise uniquement les sélections de l’écran : table, contexte d’addition et place choisie. Les commandes et additions déjà enregistrées restent dans leur établissement d’origine, avec leur contenu et leur paiement ; ce changement ne les supprime, ne les transfère et ne les renvoie pas. Dans le nouvel établissement, choisissez de nouveau la table ou l’addition voulue et vérifiez le contexte avant d’ajouter ou d’envoyer des plats. Ne vous fiez pas à la sélection affichée avant le changement. Cette protection exige le POS compatible ; elle ne prouve pas qu’un appareil donné a été mis à jour.
 
 <span id="previous-table-service-orders" />
 
@@ -43,6 +49,8 @@ Les informations du restaurant et le rapport de ventes utilisent la devise enreg
 ## Distinguer rapports, espèces et dépôt carte
 
 Sur tablette, Plus → Rapports ouvre le Solde en caisse si votre rôle l’autorise, sinon les Ventes ou les Dépôts du terminal autorisés. La colonne de gauche présente uniquement les rubriques accessibles. Choisir Mouvements de caisse remplace le contenu dans ce même espace, sans superposer une seconde page Rapports. Mouvements de caisse montre la session chargée sur cet appareil avec date, type, montant et motif ; ce n’est pas un historique des autres sessions. Sur téléphone, Rapports reste une liste de destinations. Ouvrir ou actualiser un rapport ne clôture rien. La clôture d’espèces et Clôturer et déposer du terminal restent deux actions distinctes, même si elles font partie de la même fin de journée.
+
+Si l’établissement, la connexion ou le terminal change, [rouvrez la confirmation dans le bon contexte](/fr/help/payments/cash-access#terminal-report-context).
 
 <span id="navigation" />
 

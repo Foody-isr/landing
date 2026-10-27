@@ -5,12 +5,18 @@ apps: foodypos
 tags:
   - settings
   - pos-workspace
-updatedAt: '2026-10-26'
+updatedAt: '2026-10-27'
 featureId: pos-workspace
 audience: public
 releaseStatus: available
 ---
 Open More/Plus on the POS. Destinations are filtered by role and device capabilities.
+
+<span id="restaurant-context-selection" />
+
+## Select the table again after changing restaurants
+
+On a compatible updated POS, changing restaurants resets only the screen selections: table, active check context and selected seat. Orders and checks already saved remain in their original restaurant with their contents and payment; this change does not delete, transfer or resend them. In the new restaurant, select the intended table or check again and verify the context before adding or sending food. Do not rely on the selection shown before the change. This protection requires the compatible POS; it does not prove that a particular device has been updated.
 
 <span id="previous-table-service-orders" />
 
@@ -43,6 +49,8 @@ Restaurant information and the sales report use the saved currency returned by t
 ## Distinguish reports, cash and card deposits
 
 On a tablet, More → Reports opens Cash drawer balance when your role permits, otherwise permitted Sales or Terminal deposits. The left rail contains only accessible sections. Choosing Cash movements replaces the content within this workspace without stacking another Reports page. Cash movements shows the session loaded on this device with date, type, amount and reason; it is not a history of other sessions. On a phone, Reports remains a destination list. Opening or refreshing a report closes nothing. Closing physical cash and the terminal’s Close and deposit remain separate actions even when both belong to the same end-of-day procedure.
+
+If the restaurant, sign-in or terminal changes, [reopen confirmation in the correct context](/en/help/payments/cash-access#terminal-report-context).
 
 <span id="navigation" />
 
