@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-10-27.
+Révision du relevé : 2026-10-18.
 
-102 fiches de fonctionnalités, 729 procédures/sous-fonctionnalités, dont 93 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2198 fichiers applicatifs et 2048 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+102 fiches de fonctionnalités, 734 procédures/sous-fonctionnalités, dont 93 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2200 fichiers applicatifs et 2048 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 567 | 871 | c508d551c251 ; versioned |
-| foodyadmin | 766 | 777 | 7a6ad6a818e3 ; versioned |
+| foodyserver | 568 | 871 | cc6437d0d46a ; versioned |
+| foodyadmin | 767 | 777 | 2d8986dcd153 ; versioned |
 | foodyweb | 339 | 168 | ad5ecd38fb4e ; versioned |
 | foodypos | 355 | 161 | 750b03d8b22c ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
-| foodylanding | 127 | 21 | 6fda2691c93f ; versioned |
+| foodylanding | 127 | 21 | e8304f5805f7 ; versioned |
 
 ## getting-started
 
@@ -72,6 +72,7 @@ Identifiant : `getting-started-using-support`. Public : public. Disponibilité :
 - [Demander de l’aide sur les choix conditionnels](../../src/content/help/fr/getting-started/using-support.mdx#conditional-choice-help)
 - [Demander de l’aide sur un envoi WhatsApp](../../src/content/help/fr/getting-started/using-support.mdx#whatsapp-order-message-help)
 - [Vérifier une série qui vient de changer](../../src/content/help/fr/getting-started/using-support.mdx#weekly-series-support)
+- [Retrouver les unités et les stocks par taille](../../src/content/help/fr/getting-started/using-support.mdx#measured-stock-help)
 
 ### [Offres, démonstration et contact Foody](../../src/content/help/fr/getting-started/offers-and-contact.mdx)
 
@@ -211,6 +212,7 @@ Identifiant : `kitchen-availability`. Public : public. Disponibilité : availabl
 - [Gérer un produit suivi par série](../../src/content/help/fr/kitchen/availability.mdx#series-product)
 - [Changer la disponibilité depuis Articles](../../src/content/help/fr/kitchen/availability.mdx#library-availability)
 - [Identifier les variantes à préparer](../../src/content/help/fr/kitchen/availability.mdx#variant-position-preparation)
+- [Choisir une unité et un stock partagé ou par taille](../../src/content/help/fr/kitchen/availability.mdx#measured-stock-input)
 
 ### [Operations Quotidiennes](../../src/content/help/fr/kitchen/daily-operations.mdx)
 
@@ -342,6 +344,7 @@ Identifiant : `menu-categories-and-items`. Public : public. Disponibilité : ava
 - [Vérifier les choix conditionnels d’un article](../../src/content/help/fr/menu/categories-and-items.mdx#conditional-item-choices)
 - [Parcourir la bibliothèque sur mobile](../../src/content/help/fr/menu/categories-and-items.mdx#mobile-terminal-pages)
 - [Photos des produits](../../src/content/help/fr/menu/categories-and-items.mdx#product-photos)
+- [Choisir une unité et un stock partagé ou par taille](../../src/content/help/fr/menu/categories-and-items.mdx#measured-stock-input)
 
 ### [Créer un article du menu, étape par étape](../../src/content/help/fr/menu/creating-a-menu-item.mdx)
 
@@ -398,6 +401,7 @@ Identifiant : `menu-menus-and-groups`. Public : public. Disponibilité : availab
 - [Changer la disponibilité depuis Articles](../../src/content/help/fr/menu/menus-and-groups.mdx#library-availability)
 - [Vérifier les choix conditionnels d’un article](../../src/content/help/fr/menu/menus-and-groups.mdx#conditional-item-choices)
 - [Parcourir la bibliothèque sur mobile](../../src/content/help/fr/menu/menus-and-groups.mdx#mobile-terminal-pages)
+- [Choisir une unité et un stock partagé ou par taille](../../src/content/help/fr/menu/menus-and-groups.mdx#measured-stock-input)
 
 ### [Variantes et tailles](../../src/content/help/fr/menu/variants-and-sizes.mdx)
 
@@ -1267,6 +1271,7 @@ Identifiant : `platform-api`. Public : internal. Disponibilité : available. Ser
 - [Image de modèle WhatsApp Meta](internal/fr/api-and-release.md#meta-template-image-proxy)
 - [Vérifier la série courante sans commande](internal/fr/api-and-release.md#weekly-series-rollover)
 - [Piloter manuellement les commandes hebdomadaires](internal/fr/api-and-release.md#manual-weekly-ordering)
+- [Convertir les réservations d’une série en cours](internal/fr/api-and-release.md#series-stock-mode-conversion)
 
 ### [Aperçus internes et alias de routes](internal/fr/design-previews.md)
 

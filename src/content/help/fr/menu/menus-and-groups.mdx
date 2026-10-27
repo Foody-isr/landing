@@ -16,7 +16,7 @@ tags:
   - caisse
   - horaires
   - web
-updatedAt: '2026-10-25'
+updatedAt: '2026-10-27'
 featureId: menu-menus-and-groups
 audience: public
 releaseStatus: available
@@ -151,3 +151,9 @@ Un article configuré avec des positions répétées demande un choix distinct p
 ## Parcourir la bibliothèque sur mobile
 
 Sur un terminal mobile, ouvrez Bibliothèque. Le bouton de filtres permet de choisir Articles, Formules ou Remises. Dans Articles, choisissez une catégorie dans le sélecteur au-dessus de la liste, recherchez un produit puis touchez sa ligne pour ouvrir l’éditeur existant. Le prix et la disponibilité restent visibles, avec un interrupteur distinct pour les utilisateurs autorisés. Cette liste interne n’affecte pas les groupes de menu publiés, les ingrédients, les portions ni les règles de variante configurées dans Admin.
+
+<span id="measured-stock-input" />
+
+## Choisir une unité et un stock partagé ou par taille
+
+Avec la permission de modifier le menu, ouvrez un produit suivi par série → Stock & disponibilité → Modifier le stock et la disponibilité, ou le badge Disponibilité dans Articles ou une Carte. Sélectionnez Stock prédéfini. Choisissez le mode, y compris sur une série avec des commandes déjà engagées : Compteur commun en unités retire une unité par article ; Mesure commune partage un budget entre les tailles ; Compteur par taille réserve un compteur distinct pour chaque variante. Les tailles numériques compatibles proposent g/kg ou ml/l dans Unité de saisie. Par exemple, 2 000 g en mesure commune sont partagés entre les formats 250 g et 500 g. En compteur par taille, saisir 1 000 g pour chacun donne 4 portions de 250 g et 2 portions de 500 g, sans partage entre les compteurs. Vérifiez les équivalents affichés : chaque budget par taille doit correspondre à un nombre entier de portions. Une taille laissée vide reste illimitée ; saisissez 0 pour l’épuiser, avec au moins une autre taille positive. Utilisez Indisponible pour épuiser tout l’article. Changer g en kg ou ml en l conserve la quantité ; changer de mode vide les champs pour éviter de transformer des portions en grammes. Lors d’un changement de mode, les réservations existantes sont recalculées d’après chaque taille commandée, puis ajoutées à la quantité restante que vous saisissez : 2 portions de 250 g et 1 de 500 g représentent 1 000 g engagés ; saisir 2 000 g disponibles donne un quota initial de 3 000 g. Les quantités déjà préparées restent consommées. Les réservations libérées restent libérées ; leur rétablissement ultérieur utilise le nouveau mode. Les prix, quantités commandées et autres séries ne changent pas. La conversion et son historique sont enregistrés ensemble. Si une taille historique ou une réservation ne peut pas être reconstituée de façon fiable, la conversion est refusée sans changement ; contrôlez les tailles et l’historique. Une commande en cours de modification peut provoquer un conflit : rechargez puis réessayez. Ouvrir, choisir ou Annuler n’écrit rien. Appliquer enregistre immédiatement le stock restant de la série affichée, conserve les commandes engagées et journalise le changement, sans attendre Enregistrer sur le produit ou Publier sur la carte. En cas de conflit, vos valeurs restent visibles ; vérifiez les nouvelles quantités avec Recharger les stocks avant de réappliquer.

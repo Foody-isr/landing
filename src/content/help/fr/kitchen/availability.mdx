@@ -13,7 +13,7 @@ tags:
   - recette
   - règles
   - '86'
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-27'
 featureId: kitchen-availability
 audience: public
 releaseStatus: available
@@ -72,7 +72,7 @@ Ouvrez Articles et cartes → Historique des stocks. Cette page est consacrée u
 
 ## Gérer un produit suivi par série
 
-Après activation du suivi par série, Stock & disponibilité affiche la série actuelle, les quantités disponible et engagée, Gérer le stock et Historique du stock. Gérer le stock permet de corriger le quota de la série sélectionnée. Son sélecteur de disponibilité agit immédiatement et est historisé ; il n’attend ni Enregistrer sur le produit ni la publication de la carte. Automatique reprend la règle. Toujours disponible contourne le plafond et ne remplit pas le compteur. Les réglages de préparation et la règle restent enregistrés avec le produit.
+Après activation du suivi par série, Stock & disponibilité affiche la série actuelle, les quantités disponibles et engagées, Modifier le stock et la disponibilité et Historique du stock. Le bouton de modification ouvre le panneau commun aux Articles et Cartes : choisissez une disponibilité ou un stock prédéfini, puis Appliquer pour enregistrer immédiatement. Annuler ne change rien. Consultez la procédure des unités et stocks par taille ci-dessous. Les réglages de préparation et la règle restent enregistrés avec le bouton Enregistrer du produit.
 
 <span id="library-availability" />
 
@@ -85,3 +85,9 @@ La colonne Disponibilité de la bibliothèque Articles ouvre aussi le petit pann
 ## Identifier les variantes à préparer
 
 Pour un article avec des choix par position, contrôlez les caractères et leur ordre dans la commande et le ticket. Les compteurs cuisine distinguent les combinaisons de choix pour éviter de confondre deux produits de même format. Les disponibilités et mouvements de stock continuent d’utiliser l’article et son format tarifé ; un caractère descriptif ne crée pas un supplément ni un second débit de stock.
+
+<span id="measured-stock-input" />
+
+## Choisir une unité et un stock partagé ou par taille
+
+Avec la permission de modifier le menu, ouvrez un produit suivi par série → Stock & disponibilité → Modifier le stock et la disponibilité, ou le badge Disponibilité dans Articles ou une Carte. Sélectionnez Stock prédéfini. Choisissez le mode, y compris sur une série avec des commandes déjà engagées : Compteur commun en unités retire une unité par article ; Mesure commune partage un budget entre les tailles ; Compteur par taille réserve un compteur distinct pour chaque variante. Les tailles numériques compatibles proposent g/kg ou ml/l dans Unité de saisie. Par exemple, 2 000 g en mesure commune sont partagés entre les formats 250 g et 500 g. En compteur par taille, saisir 1 000 g pour chacun donne 4 portions de 250 g et 2 portions de 500 g, sans partage entre les compteurs. Vérifiez les équivalents affichés : chaque budget par taille doit correspondre à un nombre entier de portions. Une taille laissée vide reste illimitée ; saisissez 0 pour l’épuiser, avec au moins une autre taille positive. Utilisez Indisponible pour épuiser tout l’article. Changer g en kg ou ml en l conserve la quantité ; changer de mode vide les champs pour éviter de transformer des portions en grammes. Lors d’un changement de mode, les réservations existantes sont recalculées d’après chaque taille commandée, puis ajoutées à la quantité restante que vous saisissez : 2 portions de 250 g et 1 de 500 g représentent 1 000 g engagés ; saisir 2 000 g disponibles donne un quota initial de 3 000 g. Les quantités déjà préparées restent consommées. Les réservations libérées restent libérées ; leur rétablissement ultérieur utilise le nouveau mode. Les prix, quantités commandées et autres séries ne changent pas. La conversion et son historique sont enregistrés ensemble. Si une taille historique ou une réservation ne peut pas être reconstituée de façon fiable, la conversion est refusée sans changement ; contrôlez les tailles et l’historique. Une commande en cours de modification peut provoquer un conflit : rechargez puis réessayez. Ouvrir, choisir ou Annuler n’écrit rien. Appliquer enregistre immédiatement le stock restant de la série affichée, conserve les commandes engagées et journalise le changement, sans attendre Enregistrer sur le produit ou Publier sur la carte. En cas de conflit, vos valeurs restent visibles ; vérifiez les nouvelles quantités avec Recharger les stocks avant de réappliquer.
