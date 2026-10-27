@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-18.
 
-102 fiches de fonctionnalités, 740 procédures/sous-fonctionnalités, dont 93 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2200 fichiers applicatifs et 2049 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+102 fiches de fonctionnalités, 743 procédures/sous-fonctionnalités, dont 93 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2200 fichiers applicatifs et 2049 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 568 | 871 | 325abf457450 ; versioned |
-| foodyadmin | 767 | 777 | 2f6cd1950a6b ; versioned |
+| foodyserver | 568 | 871 | 50da7b0fb51d ; versioned |
+| foodyadmin | 767 | 777 | f7918b67e92e ; versioned |
 | foodyweb | 339 | 168 | ad5ecd38fb4e ; versioned |
 | foodypos | 355 | 162 | 07150e7193f7 ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
-| foodylanding | 127 | 21 | 702e2124378e ; versioned |
+| foodylanding | 127 | 21 | 7126e2b570c5 ; versioned |
 
 ## getting-started
 
@@ -215,6 +215,7 @@ Identifiant : `kitchen-availability`. Public : public. Disponibilité : availabl
 - [Identifier les variantes à préparer](../../src/content/help/fr/kitchen/availability.mdx#variant-position-preparation)
 - [Choisir une unité et un stock partagé ou par taille](../../src/content/help/fr/kitchen/availability.mdx#measured-stock-input)
 - [Afficher et faire défiler l’éditeur de stock](../../src/content/help/fr/kitchen/availability.mdx#stock-editor-layout)
+- [Choisir la règle de disponibilité dans le modal de stock](../../src/content/help/fr/kitchen/availability.mdx#availability-rule-in-stock-modal)
 
 ### [Operations Quotidiennes](../../src/content/help/fr/kitchen/daily-operations.mdx)
 
@@ -348,6 +349,7 @@ Identifiant : `menu-categories-and-items`. Public : public. Disponibilité : ava
 - [Photos des produits](../../src/content/help/fr/menu/categories-and-items.mdx#product-photos)
 - [Choisir une unité et un stock partagé ou par taille](../../src/content/help/fr/menu/categories-and-items.mdx#measured-stock-input)
 - [Afficher et faire défiler l’éditeur de stock](../../src/content/help/fr/menu/categories-and-items.mdx#stock-editor-layout)
+- [Choisir la règle de disponibilité dans le modal de stock](../../src/content/help/fr/menu/categories-and-items.mdx#availability-rule-in-stock-modal)
 
 ### [Créer un article du menu, étape par étape](../../src/content/help/fr/menu/creating-a-menu-item.mdx)
 
@@ -406,6 +408,7 @@ Identifiant : `menu-menus-and-groups`. Public : public. Disponibilité : availab
 - [Parcourir la bibliothèque sur mobile](../../src/content/help/fr/menu/menus-and-groups.mdx#mobile-terminal-pages)
 - [Choisir une unité et un stock partagé ou par taille](../../src/content/help/fr/menu/menus-and-groups.mdx#measured-stock-input)
 - [Afficher et faire défiler l’éditeur de stock](../../src/content/help/fr/menu/menus-and-groups.mdx#stock-editor-layout)
+- [Choisir la règle de disponibilité dans le modal de stock](../../src/content/help/fr/menu/menus-and-groups.mdx#availability-rule-in-stock-modal)
 
 ### [Variantes et tailles](../../src/content/help/fr/menu/variants-and-sizes.mdx)
 
