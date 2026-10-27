@@ -5,12 +5,42 @@ apps: both
 tags:
   - staff
   - staff-devices-shifts
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-26'
 featureId: staff-devices-shifts
 audience: public
 releaseStatus: available
 ---
 Admin → Staff → POS access / Shift reports
+
+<span id="personal-time-tracking" />
+
+## Record your hours without signing into the POS
+
+This flow needs the updated POS version and its matching API deployed before installation. This guide does not confirm availability on your installed device.
+
+1. On Sign in on an already enrolled device, tap Show hours. In Time tracking, enter your complete personal 4–6-digit passcode, then confirm it. Checking this status neither starts a shift nor signs you into the POS. Closing returns to PIN sign-in.
+2. If no shift is active, tap Clock in to start explicitly. Wait for server confirmation. The active screen shows your actual account role, not an invented job or scheduled shift.
+3. During an active shift, Add notes opens an optional note for your employer, limited to 500 characters. Save applies the note to this shift; closing without saving does not apply it.
+4. Tap End shift to record your departure. An open cash drawer on the period’s original POS prevents completion: ask an authorized manager to finish its report and close cash on that device, then retry. This flow does not close the drawer or start a Verifone deposit.
+5. Once confirmed, Clocked out shows only your relevant shift, its server-recorded dates/times and duration. Recorded hours are not a payroll calculation; missing data does not establish a work schedule. Continue to FoodyPOS returns to the PIN screen without automatically signing into sales.
+
+After rejection, check the personal code and device authorization with a manager. If an action’s result is uncertain, use Refresh hours to verify status before retrying; do not assume failure or create a second clocking event. If unavailable, have the device and API version checked. Never share your passcode or notes with the assistant.
+
+<span id="shift-device-access-integrity" />
+
+## Check the shift-to-device access relationship
+
+This protection requires the compatible API to be deployed; this guide does not confirm installation. PIN sign-in that resumes an existing shift preserves that interval, its start time and its original device authorization. Signing in on another POS or renewing an authorization transfers neither that shift nor its cash drawer.
+
+If the original authorization can no longer be verified in the restaurant, sales sign-in is refused without creating a replacement shift. Depending on the POS version, the displayed error may remain generic. Ask a manager to have support verify the historical relationship. Show hours remains a separate flow for checking your own status; a successful read neither repairs the relationship nor authorizes cash closure. If that read also fails, preserve the state and ask for assistance.
+
+Do not clear local data, re-enroll the device or create a new shift to bypass the refusal. Do not blindly change hours or device assignments: selecting another authorization can hide a different cash journal. A database error does not prove that a reference is missing. Repair must be verified and approved separately while preserving recorded hours, pending operations and original journals. It never automatically closes cash or starts a Verifone deposit.
+
+<span id="cash-report-unconfirmed" />
+
+## Retry an unconfirmed cash-drawer read
+
+This diagnostic needs compatible POS and API versions; this guide does not confirm installation. A failed read does not mean that no drawer is open. The message may identify a shift or sign-in to check, device authorization needing review, an installation that does not match the open shift, or temporarily unavailable verification. Ask a manager about access refusals; Retry reads the state without repairing or moving a relationship. New cash operations stay unavailable until the state is confirmed. Preserve pending operations and local data. See [cash-read recovery](/en/help/payments/pos-checkout#cash-report-unconfirmed). Terminal deposit remains separate.
 
 <span id="pending-cash-sign-out" />
 

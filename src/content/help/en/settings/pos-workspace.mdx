@@ -5,18 +5,32 @@ apps: foodypos
 tags:
   - settings
   - pos-workspace
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-26'
 featureId: pos-workspace
 audience: public
 releaseStatus: available
 ---
 Open More/Plus on the POS. Destinations are filtered by role and device capabilities.
 
+<span id="previous-table-service-orders" />
+
+## Distinguish orders from a previous table service
+
+On a compatible updated POS, with orders.manage, an older manual order that is still active remains separately visible by its number and date. Tap it to view its own lines and total in Menu without attaching it to the table’s current occupancy. An absent or different session cannot open the next party’s table service. QR orders also retain their individual numbers and payments. Manual kitchen sends within one confirmed current session remain grouped in that session’s usual check.
+
+A table may therefore have an empty current session and older outstanding orders: these are not the same check. Opening the view never merges, closes, archives or settles anything. Eligible saved-order actions remain limited to its number and the required permissions. If the session changes while loading, return to Orders or reopen the current table; do not recreate the order or retry a payment to bypass the error. Updating the API alone does not update the installed POS.
+
 <span id="saved-order-workspace" />
 
 ## Distinguish the selected order from the table check
 
 With orders.manage, an active QR or web order opens Menu with its own saved check on the right on tablets. The catalogue remains browsable without changing saved lines or a local draft. Actions manages only that order; Guest shows its own contact. View table separately opens the verified current session and, when needed, a bill choice. The frame, tabs and cards use the standard Menu presentation without an extra back toolbar. Orders in the main navigation returns to the list. Refresh and order statuses are in Actions. A failed read shows Retry rather than an empty basket. Historical records and view-only roles remain read-only. See [the full workflow](/en/help/orders/managing-orders#open-saved-order-in-menu).
+
+<span id="cash-report-unconfirmed" />
+
+## Retry an unconfirmed cash-drawer read
+
+This diagnostic needs compatible POS and API versions; this guide does not confirm installation. A failed read does not mean that no drawer is open. The message may identify a shift or sign-in to check, device authorization needing review, an installation that does not match the open shift, or temporarily unavailable verification. Ask a manager about access refusals; Retry reads the state without repairing or moving a relationship. New cash operations stay unavailable until the state is confirmed. Preserve pending operations and local data. See [cash-read recovery](/en/help/payments/pos-checkout#cash-report-unconfirmed). Terminal deposit remains separate.
 
 <span id="report-currency" />
 
@@ -52,4 +66,10 @@ Check Internet, the selected restaurant/device and explicit connection status. R
 
 ## Browse handheld terminal pages
 
-On a phone or handheld terminal, More shows a vertical list. Hardware opens devices, printers and their profiles; Appearance and the personal profile retain their own back control. Permitted reports remain under Reports. Headers are centered and long actions flow below the title. In Library, the filter button opens Items, Combos or Discounts; categories are selected above the items. The presentation grants no additional permissions. Tablets retain their columns. More opens with Welcome. When a mode is assigned to the terminal, its card shows the configured name; it opens checkout settings only when your account is authorized.
+On the handheld terminal, the initials at the lower left open More; they come from the signed-in user’s name. The house opens the operational Overview and the receipt opens Checks. Orders, Transactions, Hardware, Appearance and Reports remain in More according to permissions; the role and assigned mode appear when available. The mode card opens its settings only with the corresponding permission. In Library, the filter opens Items, Combos or Discounts and categories remain above the items. Headers and back controls fit the terminal width. Tablets retain their own navigation and columns. The three targets stay above Android system buttons; while typing, the bar hides and actions move with the keyboard. Inside a sale, use Menu/Check/Actions and the explicit return to checks.
+
+<span id="operational-overview" />
+
+## View terminal overview and item availability
+
+On a handheld terminal, tap the house to open Overview. The restaurant name and collapsible cards show the availability, new/in-kitchen/ready orders and table state allowed by your role. Open View all item availability to search active items in menus available at the POS. The list uses the same catalogue as POS order entry; it does not depend on a general menu state separate from its POS availability. States are Available, Low stock, Unavailable or Not provided; a quantity appears only when supplied. Unknown availability does not mean available. Hidden groups, their descendants and combo-only components are excluded. Refresh reloads the reads; a failure displays a message and retry. Card buttons open orders or checks according to permissions. Overview reads data without changing stock or orders.

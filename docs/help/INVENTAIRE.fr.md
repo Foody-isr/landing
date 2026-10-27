@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-10-25.
+Révision du relevé : 2026-10-27.
 
-100 fiches de fonctionnalités, 691 procédures/sous-fonctionnalités, dont 91 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2177 fichiers applicatifs et 2042 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+102 fiches de fonctionnalités, 729 procédures/sous-fonctionnalités, dont 93 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2198 fichiers applicatifs et 2048 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 560 | 870 | 304b63876556 ; versioned |
-| foodyadmin | 764 | 776 | 3518f19d8ae6 ; versioned |
-| foodyweb | 337 | 167 | 18fb7cbeb1f3 ; versioned |
-| foodylanding | 127 | 21 | 7af3a94473f9 ; versioned |
-| foodypos | 345 | 158 | 1949734825b8 ; versioned |
+| foodyserver | 567 | 871 | c508d551c251 ; versioned |
+| foodyadmin | 766 | 777 | 7a6ad6a818e3 ; versioned |
+| foodyweb | 339 | 168 | ad5ecd38fb4e ; versioned |
+| foodypos | 355 | 161 | 750b03d8b22c ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
+| foodylanding | 127 | 21 | 6fda2691c93f ; versioned |
 
 ## getting-started
 
@@ -26,6 +26,7 @@ Identifiant : `account-access`. Public : public. Disponibilité : available. Ser
 - [Activer une invitation](../../src/content/help/fr/getting-started/first-login.mdx#activate)
 - [Sélectionner le restaurant](../../src/content/help/fr/getting-started/first-login.mdx#restaurant)
 - [Récupérer l’accès](../../src/content/help/fr/getting-started/first-login.mdx#recover)
+- [Entrer en service sur le terminal](../../src/content/help/fr/getting-started/first-login.mdx#terminal-pin-sign-in)
 - [Terminer un shift de caisse en sécurité](../../src/content/help/fr/getting-started/first-login.mdx#end-pos-shift)
 
 ### [Configurer votre restaurant avec Foody](../../src/content/help/fr/getting-started/complete-setup-guide.mdx)
@@ -132,6 +133,9 @@ Identifiant : `staff-roles`. Public : public. Disponibilité : available. Servic
 
 Identifiant : `staff-devices-shifts`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodypos.
 
+- [Enregistrer ses heures sans ouvrir le POS](../../src/content/help/fr/staff/devices-and-shifts.mdx#personal-time-tracking)
+- [Vérifier la liaison entre période de travail et appareil](../../src/content/help/fr/staff/devices-and-shifts.mdx#shift-device-access-integrity)
+- [Réessayer une lecture de caisse non confirmée](../../src/content/help/fr/staff/devices-and-shifts.mdx#cash-report-unconfirmed)
 - [Terminer le rapport avant de se déconnecter](../../src/content/help/fr/staff/devices-and-shifts.mdx#pending-cash-sign-out)
 - [Distinguer rapports, espèces et dépôt carte](../../src/content/help/fr/staff/devices-and-shifts.mdx#pos-reports-navigation)
 - [Activer un appareil POS](../../src/content/help/fr/staff/devices-and-shifts.mdx#pair)
@@ -337,13 +341,14 @@ Identifiant : `menu-categories-and-items`. Public : public. Disponibilité : ava
 - [Changer la disponibilité depuis Articles](../../src/content/help/fr/menu/categories-and-items.mdx#library-availability)
 - [Vérifier les choix conditionnels d’un article](../../src/content/help/fr/menu/categories-and-items.mdx#conditional-item-choices)
 - [Parcourir la bibliothèque sur mobile](../../src/content/help/fr/menu/categories-and-items.mdx#mobile-terminal-pages)
+- [Photos des produits](../../src/content/help/fr/menu/categories-and-items.mdx#product-photos)
 
 ### [Créer un article du menu, étape par étape](../../src/content/help/fr/menu/creating-a-menu-item.mdx)
 
 Identifiant : `menu-creating-a-menu-item`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb, foodypos.
 
 - [Vérifier les accès et ouvrir l’éditeur](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-1)
-- [Informations de l’article et photo](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-3)
+- [Informations de l’article et photos](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-3)
 - [Statut, Catégories et Cartes](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-6)
 - [Prix et variantes](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-7)
 - [Personnalisations et autres sections](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-10)
@@ -418,6 +423,7 @@ Identifiant : `menu-variants-and-sizes`. Public : public. Disponibilité : avail
 Identifiant : `menu-modifiers`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb, foodypos.
 
 - [Créer un groupe réutilisable](../../src/content/help/fr/menu/modifiers.mdx#group)
+- [Afficher les opérateurs en caisse](../../src/content/help/fr/menu/modifiers.mdx#pos-quick-customization)
 - [Définir les suppléments de prix](../../src/content/help/fr/menu/modifiers.mdx#pricing)
 - [Associer les groupes aux articles](../../src/content/help/fr/menu/modifiers.mdx#link)
 - [Configurer les précisions client](../../src/content/help/fr/menu/modifiers.mdx#notes)
@@ -452,6 +458,15 @@ Identifiant : `pos-discount-library`. Public : public. Disponibilité : availabl
 - [Créer une remise nommée](../../src/content/help/fr/menu/pos-discounts.mdx#definition)
 - [Appliquer avec autorisation](../../src/content/help/fr/menu/pos-discounts.mdx#apply)
 - [Distinguer les codes en ligne](../../src/content/help/fr/menu/pos-discounts.mdx#distinction)
+
+### [Gérer les photos des produits](../../src/content/help/fr/menu/product-photos.mdx)
+
+Identifiant : `menu-product-photos`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb.
+
+- [Ajouter plusieurs photos](../../src/content/help/fr/menu/product-photos.mdx#add-photos)
+- [Choisir la photo principale ou supprimer une photo](../../src/content/help/fr/menu/product-photos.mdx#cover-and-removal)
+- [Parcourir la galerie sur le site client](../../src/content/help/fr/menu/product-photos.mdx#view-on-website)
+- [Reprendre après un échec d’envoi ou d’enregistrement](../../src/content/help/fr/menu/product-photos.mdx#recover-upload)
 
 ## orders
 
@@ -505,9 +520,11 @@ Identifiant : `order-types`. Public : public. Disponibilité : available. Servic
 - [Vérifier les choix conditionnels d’un article](../../src/content/help/fr/orders/order-types.mdx#conditional-item-choices)
 - [Ouvrir une addition sur place sans table](../../src/content/help/fr/orders/order-types.mdx#pos-tableless-dine-in)
 - [Choisir le traitement de toute l’addition POS](../../src/content/help/fr/orders/order-types.mdx#pos-whole-check)
+- [Commencer une vente sur place sans demande de traitement](../../src/content/help/fr/orders/order-types.mdx#default-onsite-without-prompt)
 - [Donner une consigne de préparation différente à un article](../../src/content/help/fr/orders/order-types.mdx#pos-item-method)
 - [Changer le service d’un brouillon non affecté](../../src/content/help/fr/orders/order-types.mdx#pos-change-draft)
 - [Garder le contexte client privé sur l’addition](../../src/content/help/fr/orders/order-types.mdx#pos-private-guest-context)
+- [Piloter manuellement les commandes hebdomadaires](../../src/content/help/fr/orders/order-types.mdx#manual-weekly-ordering)
 
 ### [Prendre une commande sur la caisse](../../src/content/help/fr/orders/taking-an-order-pos.mdx)
 
@@ -569,6 +586,7 @@ Identifiant : `preorders`. Public : public. Disponibilité : available. Services
 - [Configurer une série](../../src/content/help/fr/orders/preorders-and-batches.mdx#batch)
 - [Vérifier paiement et exceptions produits](../../src/content/help/fr/orders/preorders-and-batches.mdx#prepayment)
 - [Afficher automatiquement la série actuelle](../../src/content/help/fr/orders/preorders-and-batches.mdx#weekly-series-rollover)
+- [Piloter manuellement les commandes hebdomadaires](../../src/content/help/fr/orders/preorders-and-batches.mdx#manual-weekly-ordering)
 
 ### [Quantités de production et préparation des colis](../../src/content/help/fr/orders/production-planning.mdx)
 
@@ -596,6 +614,7 @@ Identifiant : `pos-check-move`. Public : public. Disponibilité : available. Ser
 - [Déplacer une addition](../../src/content/help/fr/orders/move-and-merge-bills.mdx#move)
 - [Fusionner des additions occupées](../../src/content/help/fr/orders/move-and-merge-bills.mdx#merge)
 - [Transférer des articles enregistrés](../../src/content/help/fr/orders/move-and-merge-bills.mdx#transfer)
+- [Choisir l’addition sur le terminal](../../src/content/help/fr/orders/move-and-merge-bills.mdx#terminal-check-selection)
 
 ### [Couverts, services, attente et envoi cuisine](../../src/content/help/fr/orders/courses-and-kitchen-release.mdx)
 
@@ -646,6 +665,7 @@ Identifiant : `pos-payments`. Public : public. Disponibilité : available. Servi
 - [Garder la page de paiement lisible](../../src/content/help/fr/payments/pos-checkout.mdx#verifone-readable-hosted-theme)
 - [Vérifier le plafond de préautorisation au poids](../../src/content/help/fr/payments/pos-checkout.mdx#weight-hold-margin)
 - [Enregistrer les espèces](../../src/content/help/fr/payments/pos-checkout.mdx#cash)
+- [Réessayer une lecture de caisse non confirmée](../../src/content/help/fr/payments/pos-checkout.mdx#cash-report-unconfirmed)
 - [Compter et clôturer la caisse](../../src/content/help/fr/payments/pos-checkout.mdx#cash-drawer-report)
 - [Encaisser un paiement connecté](../../src/content/help/fr/payments/pos-checkout.mdx#card)
 - [Retrouver un paiement confirmé dans Transactions](../../src/content/help/fr/payments/pos-checkout.mdx#transaction-history)
@@ -662,6 +682,13 @@ Identifiant : `pos-payments`. Public : public. Disponibilité : available. Servi
 - [Confirmer une vente à emporter payée en caisse](../../src/content/help/fr/payments/pos-checkout.mdx#counter-completion)
 - [Retrouver Payer sur mobile](../../src/content/help/fr/payments/pos-checkout.mdx#mobile-terminal)
 - [Lire les transactions et rapports sur mobile](../../src/content/help/fr/payments/pos-checkout.mdx#mobile-terminal-pages)
+
+### [Comprendre un refus d’accès à la caisse](../../src/content/help/fr/payments/cash-access.mdx)
+
+Identifiant : `pos-cash-access-diagnostics`. Public : public. Disponibilité : local-release-unverified. Services : foodyserver, foodypos.
+
+- [Vérifier le refus sans remplacer la période ou la caisse](../../src/content/help/fr/payments/cash-access.mdx#cash-access-refusal)
+- [Distinguer la caisse espèces du terminal Verifone](../../src/content/help/fr/payments/cash-access.mdx#cash-versus-terminal)
 
 ### [Prestataires, moyens enregistrés et Cibus](../../src/content/help/fr/payments/providers-and-cibus.mdx)
 
@@ -813,7 +840,9 @@ Identifiant : `pos-service-modes`. Public : public. Disponibilité : available. 
 - [Choisir un profil de mode](../../src/content/help/fr/settings/service-mode.mdx#mode)
 - [Configurer le service à table et au comptoir](../../src/content/help/fr/settings/service-mode.mdx#service)
 - [Garder la remise indépendante](../../src/content/help/fr/settings/service-mode.mdx#fulfillment)
+- [Enregistrer un mode partagé et reprendre après un conflit](../../src/content/help/fr/settings/service-mode.mdx#shared-mode-save-recovery)
 - [Consulter et modifier les Modes dans Admin](../../src/content/help/fr/settings/service-mode.mdx#modes-dashboard)
+- [Confirmer ou annuler la suppression dans l’éditeur de mode](../../src/content/help/fr/settings/service-mode.mdx#mode-editor-deletion)
 - [Revenir à l’accueil après l’envoi et ouvrir une nouvelle vente](../../src/content/help/fr/settings/service-mode.mdx#send-home-new-sale)
 
 ### [Traitement des commandes et flux cuisine](../../src/content/help/fr/settings/workflow-settings.mdx)
@@ -831,6 +860,7 @@ Identifiant : `order-workflow`. Public : public. Disponibilité : available. Ser
 
 Identifiant : `restaurant-profile`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin.
 
+- [Vérifier les réglages POS partagés avant sauvegarde](../../src/content/help/fr/settings/restaurant-profile.mdx#shared-pos-settings)
 - [Vérifier le restaurant avant de régler les modes POS](../../src/content/help/fr/settings/restaurant-profile.mdx#pos-location-configuration)
 - [Vérifier le plafond de préautorisation au poids](../../src/content/help/fr/settings/restaurant-profile.mdx#weight-hold-margin)
 - [Modifier les informations du restaurant](../../src/content/help/fr/settings/restaurant-profile.mdx#identity)
@@ -839,6 +869,7 @@ Identifiant : `restaurant-profile`. Public : public. Disponibilité : available.
 - [Accès aux nouveaux réglages](../../src/content/help/fr/settings/restaurant-profile.mdx#related-service-controls)
 - [Coordonnées du personnel et destination du livreur](../../src/content/help/fr/settings/restaurant-profile.mdx#staff-contact-and-courier-defaults)
 - [Code caisse à l’activation du personnel](../../src/content/help/fr/settings/restaurant-profile.mdx#staff-activation-pos-code)
+- [Piloter manuellement les commandes hebdomadaires](../../src/content/help/fr/settings/restaurant-profile.mdx#manual-weekly-ordering)
 
 ### [Règles de commande et de remise](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx)
 
@@ -860,14 +891,18 @@ Identifiant : `fulfillment-policy`. Public : public. Disponibilité : available.
 - [Code caisse à l’activation du personnel](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#staff-activation-pos-code)
 - [Reprendre une livraison après un départ de test](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#delivery-test-departure-recovery)
 - [Vérifier les choix conditionnels d’un article](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#conditional-item-choices)
+- [Synchroniser les réglages du mode de caisse](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#shared-pos-policy)
 - [Vérifier la compatibilité de la fiche client POS](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#pos-customer-screen-version)
 - [Afficher automatiquement la série actuelle](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#weekly-series-rollover)
+- [Piloter manuellement les commandes hebdomadaires](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#manual-weekly-ordering)
 
 ### [Comportement POS, services et ajustements](../../src/content/help/fr/settings/pos-behavior.mdx)
 
 Identifiant : `pos-behavior`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodypos.
 
 - [Régler le comportement du menu](../../src/content/help/fr/settings/pos-behavior.mdx#menu-behavior)
+- [Synchroniser Admin et le mode affecté au POS](../../src/content/help/fr/settings/pos-behavior.mdx#shared-mode-sync)
+- [Reprendre une actualisation des réglages en échec](../../src/content/help/fr/settings/pos-behavior.mdx#shared-mode-sync-recovery)
 - [Configurer les services de cuisine](../../src/content/help/fr/settings/pos-behavior.mdx#courses)
 - [Vérifier les ajustements autorisés](../../src/content/help/fr/settings/pos-behavior.mdx#adjustments)
 - [Enregistrer après l’oubli ou le remplacement d’un appareil](../../src/content/help/fr/settings/pos-behavior.mdx#forgotten-device-assignment)
@@ -878,11 +913,13 @@ Identifiant : `pos-behavior`. Public : public. Disponibilité : available. Servi
 - [Demander les informations client pour un mode](../../src/content/help/fr/settings/pos-behavior.mdx#fulfillment-customer)
 - [Choisir un contact existant ou saisir les coordonnées de commande](../../src/content/help/fr/settings/pos-behavior.mdx#fulfillment-order-contact-entry)
 - [Régler la caisse sur un écran compact](../../src/content/help/fr/settings/pos-behavior.mdx#mobile-terminal-pages)
+- [Se déplacer sur le terminal](../../src/content/help/fr/settings/pos-behavior.mdx#terminal-navigation-overview)
 
 ### [Appareils et écrans cuisine](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx)
 
 Identifiant : `device-kds`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodypos.
 
+- [Conserver le lien du Victa enregistré et de son imprimante intégrée](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#victa-identity-preservation)
 - [Configurer les appareils](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#devices)
 - [Régler les postes cuisine](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#stations)
 - [Traiter les tickets cuisine](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#service)
@@ -905,13 +942,16 @@ Identifiant : `notifications-team`. Public : public. Disponibilité : available.
 
 Identifiant : `pos-workspace`. Public : public. Disponibilité : available. Services : foodypos.
 
+- [Distinguer les commandes d’un service précédent](../../src/content/help/fr/settings/pos-workspace.mdx#previous-table-service-orders)
 - [Distinguer la commande sélectionnée de l’addition de table](../../src/content/help/fr/settings/pos-workspace.mdx#saved-order-workspace)
+- [Réessayer une lecture de caisse non confirmée](../../src/content/help/fr/settings/pos-workspace.mdx#cash-report-unconfirmed)
 - [Vérifier la devise des rapports](../../src/content/help/fr/settings/pos-workspace.mdx#report-currency)
 - [Distinguer rapports, espèces et dépôt carte](../../src/content/help/fr/settings/pos-workspace.mdx#pos-reports-navigation)
 - [Retrouver les espaces de travail](../../src/content/help/fr/settings/pos-workspace.mdx#navigation)
 - [Personnaliser l’appareil](../../src/content/help/fr/settings/pos-workspace.mdx#preferences)
 - [Traiter une perte de connexion](../../src/content/help/fr/settings/pos-workspace.mdx#connectivity)
 - [Parcourir les pages du terminal mobile](../../src/content/help/fr/settings/pos-workspace.mdx#mobile-terminal-pages)
+- [Consulter l’aperçu et les disponibilités du terminal](../../src/content/help/fr/settings/pos-workspace.mdx#operational-overview)
 
 ### [Consommation et quotas des services externes](../../src/content/help/fr/settings/api-usage-and-quotas.mdx)
 
@@ -930,6 +970,8 @@ Identifiant : `floor-plans`. Public : public. Disponibilité : available. Servic
 - [Organiser les zones de service](../../src/content/help/fr/tables-floors/floor-plans.mdx#sections)
 - [Préparer les supports QR](../../src/content/help/fr/tables-floors/floor-plans.mdx#qr)
 - [Utiliser la vue des tables](../../src/content/help/fr/tables-floors/floor-plans.mdx#live)
+- [Vérifier un plan enregistré après une mise à jour](../../src/content/help/fr/tables-floors/floor-plans.mdx#saved-layout-preservation)
+- [Suivre la durée et l’état du service](../../src/content/help/fr/tables-floors/floor-plans.mdx#service-time-and-state)
 - [Utiliser Additions sur mobile](../../src/content/help/fr/tables-floors/floor-plans.mdx#mobile-terminal)
 
 ### [Accès aux tables, statuts et assistance](../../src/content/help/fr/tables-floors/staff-and-assistance.mdx)
@@ -938,6 +980,8 @@ Identifiant : `table-service-policy`. Public : public. Disponibilité : availabl
 
 - [Affecter salles, sections et tables](../../src/content/help/fr/tables-floors/staff-and-assistance.mdx#assign)
 - [Maintenir l’état des tables](../../src/content/help/fr/tables-floors/staff-and-assistance.mdx#status)
+- [Reprendre la bonne occupation d’une table](../../src/content/help/fr/tables-floors/staff-and-assistance.mdx#resume-confirmed-table-service)
+- [Vérifier les seuils et la clôture d’une table](../../src/content/help/fr/tables-floors/staff-and-assistance.mdx#timer-settings-and-close)
 - [Configurer les demandes d’assistance](../../src/content/help/fr/tables-floors/staff-and-assistance.mdx#assistance)
 - [Retrouver les outils de service sur mobile](../../src/content/help/fr/tables-floors/staff-and-assistance.mdx#mobile-terminal)
 
@@ -1112,6 +1156,8 @@ Identifiant : `guest-ordering`. Public : public. Disponibilité : available. Ser
 - [Accès aux nouveaux réglages](../../src/content/help/fr/guest/online-ordering.mdx#related-service-controls)
 - [Vérifier les choix conditionnels d’un article](../../src/content/help/fr/guest/online-ordering.mdx#conditional-item-choices)
 - [Renseigner un téléphone valide](../../src/content/help/fr/guest/online-ordering.mdx#contact-phone)
+- [Piloter manuellement les commandes hebdomadaires](../../src/content/help/fr/guest/online-ordering.mdx#manual-weekly-ordering)
+- [Photos des produits](../../src/content/help/fr/guest/online-ordering.mdx#product-photos)
 
 ### [Suivi, reçus et moyens enregistrés](../../src/content/help/fr/guest/tracking-and-account.mdx)
 
@@ -1133,6 +1179,7 @@ Identifiant : `guest-table`. Public : public. Disponibilité : available. Servic
 
 - [Rejoindre la bonne table](../../src/content/help/fr/guest/table-qr.mdx#session)
 - [Commander et demander de l’aide](../../src/content/help/fr/guest/table-qr.mdx#ordering)
+- [Lorsque l’équipe ferme la table](../../src/content/help/fr/guest/table-qr.mdx#service-ended)
 
 ### [Envoyer une demande catering](../../src/content/help/fr/guest/catering-request.mdx)
 
@@ -1219,6 +1266,7 @@ Identifiant : `platform-api`. Public : internal. Disponibilité : available. Ser
 - [Vérifier le panneau WhatsApp unifié](internal/fr/api-and-release.md#unified-whatsapp-order-composer)
 - [Image de modèle WhatsApp Meta](internal/fr/api-and-release.md#meta-template-image-proxy)
 - [Vérifier la série courante sans commande](internal/fr/api-and-release.md#weekly-series-rollover)
+- [Piloter manuellement les commandes hebdomadaires](internal/fr/api-and-release.md#manual-weekly-ordering)
 
 ### [Aperçus internes et alias de routes](internal/fr/design-previews.md)
 
@@ -1228,7 +1276,7 @@ Identifiant : `design-sandboxes`. Public : internal. Disponibilité : available.
 
 ### [Socle applicatif partagé](internal/fr/shared-runtime.md)
 
-Identifiant : `shared-runtime`. Public : internal. Disponibilité : available. Services : foodyadmin, foodyweb, foodylanding, foodypos, foodybackoffice.
+Identifiant : `shared-runtime`. Public : internal. Disponibilité : available. Services : foodyadmin, foodyweb, foodypos, foodybackoffice, foodylanding.
 
 - [Distinguer rapports, espèces et dépôt carte](internal/fr/shared-runtime.md#pos-reports-navigation)
 - [Rembourser ou annuler un paiement en ligne Verifone](internal/fr/shared-runtime.md#verifone-admin-money-operations)

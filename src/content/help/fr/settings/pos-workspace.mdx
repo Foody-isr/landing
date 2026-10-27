@@ -5,18 +5,32 @@ apps: foodypos
 tags:
   - settings
   - pos-workspace
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-26'
 featureId: pos-workspace
 audience: public
 releaseStatus: available
 ---
 Ouvrez Plus sur la caisse. Les destinations dépendent du rôle et des capacités de l’appareil.
 
+<span id="previous-table-service-orders" />
+
+## Distinguer les commandes d’un service précédent
+
+Sur un POS compatible mis à jour, avec orders.manage, une ancienne commande manuelle encore active reste visible séparément par son numéro et sa date. Touchez-la pour consulter ses propres lignes et son total dans Menu, sans la rattacher à l’occupation actuelle de la table. Une session absente ou différente ne permet pas d’ouvrir la table des clients suivants. Les commandes QR conservent elles aussi leurs numéros et paiements individuels. Les envois manuels d’une même session actuelle confirmée restent regroupés dans son addition habituelle.
+
+Une table peut donc avoir une session actuelle vide et des commandes antérieures encore dues : ce ne sont pas la même addition. L’ouverture ne fusionne, ne clôture, n’archive et ne règle rien. Les actions admissibles d’une commande sauvegardée restent limitées à son numéro et aux droits requis. Si la session change pendant le chargement, revenez à Commandes ou rouvrez la table actuelle ; ne recréez pas la commande et ne relancez pas un paiement pour contourner l’erreur. La mise à jour de l’API seule ne met pas à jour le POS installé.
+
 <span id="saved-order-workspace" />
 
 ## Distinguer la commande sélectionnée de l’addition de table
 
 Avec orders.manage, une commande active QR ou web ouvre Menu avec sa propre addition enregistrée à droite sur tablette. Le catalogue reste consultable sans modifier les lignes ou un brouillon local. Actions gère uniquement cette commande ; Client montre son propre contact. Afficher la table ouvre séparément la session actuelle vérifiée et, si nécessaire, un choix d’addition. Le cadre, les onglets et les cartes sont ceux du Menu habituel, sans barre de retour supplémentaire. Commandes dans la navigation principale revient à la liste. Actualiser et les états de la commande sont dans Actions. Une erreur de lecture affiche Réessayer, pas un panier vide. Les historiques et rôles de consultation restent en lecture seule. Voir [le parcours détaillé](/fr/help/orders/managing-orders#open-saved-order-in-menu).
+
+<span id="cash-report-unconfirmed" />
+
+## Réessayer une lecture de caisse non confirmée
+
+Ce diagnostic nécessite les versions compatibles du POS et de l’API ; ce guide ne confirme pas leur installation. Une erreur de lecture ne signifie pas qu’aucune caisse n’est ouverte. Le message peut préciser une période ou une connexion à vérifier, une autorisation d’appareil à contrôler, une installation qui ne correspond pas à la période ouverte, ou une vérification temporairement indisponible. Demandez un responsable pour les refus d’accès ; Réessayer relit l’état sans réparer ni déplacer une liaison. Les nouvelles opérations espèces restent indisponibles tant que l’état n’est pas confirmé. Conservez les opérations en attente et les données locales. Voir [la reprise de lecture de caisse](/fr/help/payments/pos-checkout#cash-report-unconfirmed). Le dépôt du terminal reste séparé.
 
 <span id="report-currency" />
 
@@ -52,4 +66,10 @@ Vérifiez Internet, restaurant/appareil et statut explicite. Actualisez avant de
 
 ## Parcourir les pages du terminal mobile
 
-Sur téléphone ou terminal portable, Plus affiche une liste verticale. Matériel mène aux appareils, aux imprimantes et à leurs profils ; Apparence et le profil personnel gardent leur propre retour. Les rapports autorisés restent accessibles par Rapports. Les en-têtes sont centrés et les actions longues passent sous le titre. Dans Bibliothèque, le bouton de filtres ouvre Articles, Formules ou Remises ; les catégories sont choisies au-dessus des articles. Le changement de présentation ne donne aucune permission supplémentaire. La tablette conserve ses colonnes. L’accueil de Plus affiche Bienvenue. Lorsqu’un mode est affecté au terminal, sa carte affiche le nom réellement configuré ; elle ouvre les réglages de caisse uniquement si votre compte y est autorisé.
+Sur le terminal portable, les initiales en bas à gauche ouvrent Plus ; elles viennent du nom de l’utilisateur connecté. La maison ouvre l’Aperçu opérationnel et le ticket ouvre les Additions. Les commandes, transactions, matériel, apparence et rapports restent accessibles dans Plus selon vos droits ; le rôle et le mode affecté sont affichés lorsqu’ils sont disponibles. La carte du mode ouvre ses réglages seulement avec l’autorisation correspondante. Dans Bibliothèque, le filtre ouvre Articles, Formules ou Remises et le sélecteur de catégories reste au-dessus des articles. Les en-têtes et retours sont adaptés à la largeur du terminal. Les tablettes conservent leur navigation et leurs colonnes. Les trois cibles restent au-dessus des boutons système Android ; pendant la saisie, la barre se masque et les actions suivent le clavier. Dans la vente, utilisez Menu/Addition/Actions et le retour explicite vers les additions.
+
+<span id="operational-overview" />
+
+## Consulter l’aperçu et les disponibilités du terminal
+
+Sur un terminal portable, touchez la maison pour ouvrir l’Aperçu. Le nom du restaurant et les cartes repliables présentent les disponibilités, les commandes nouvelles/en cuisine/prêtes et l’état des tables autorisés pour votre rôle. Ouvrez Voir la disponibilité de tous les articles pour rechercher les articles actifs des menus disponibles en caisse. La liste reprend le même catalogue que la prise de commande POS ; elle ne dépend pas d’un état général du menu différent de sa disponibilité en caisse. Les états sont Disponible, Stock faible, Indisponible ou Non renseignée ; une quantité apparaît seulement si elle est fournie. Une disponibilité inconnue ne vaut pas disponibilité. Les groupes masqués, leurs descendants et les composants réservés aux formules ne sont pas inclus. Actualiser recharge les lectures ; un échec affiche un message avec nouvelle tentative. Les boutons des cartes ouvrent les commandes ou les additions selon vos droits. L’Aperçu lit les données sans changer le stock ni les commandes.

@@ -5,7 +5,7 @@ apps: both
 tags:
   - tables-floors
   - floor-plans
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-26'
 featureId: floor-plans
 audience: public
 releaseStatus: available
@@ -34,10 +34,22 @@ Ouvrez les réglages QR, sélectionnez la table et personnalisez style/texte pro
 
 ## Utiliser la vue des tables
 
-Choisissez le bon plan sur le POS et vérifiez le statut de la table avant ouverture. Contrôlez couverts/places séparément et confirmez l’addition avant paiement ou déplacement. Choisir une table après changement du traitement d’un brouillon n’est pas déplacer ou fusionner une addition. Une table avec une addition financière existante refuse et annule ce transfert en attente, sans modifier le brouillon source ; voir [changer le service d’un brouillon](/fr/help/orders/order-types#pos-change-draft).
+Choisissez le bon plan sur le POS et vérifiez le statut de la table avant ouverture. Une table déjà en cours reprend sa session actuelle sans redemander les couverts. Son espace Menu habituel affiche l’addition existante et les actions autorisées ; les additions financières séparées nécessitent toujours leur propre sélection. Seule une table libre qui démarre un nouveau service demande les couverts selon le mode affecté. Rouvrir ne modifie ni les couverts, ni les places, ni les commandes ou paiements existants. Si la lecture récente de la table/addition échoue ou si sa session a changé, reprenez la lecture sans créer un service de remplacement. Contrôlez couverts/places séparément et confirmez l’addition avant paiement ou déplacement. Choisir une table après changement du traitement d’un brouillon n’est pas déplacer ou fusionner une addition. Une table avec une addition financière existante refuse et annule ce transfert en attente, sans modifier le brouillon source ; voir [changer le service d’un brouillon](/fr/help/orders/order-types#pos-change-draft). Plusieurs clients QR conservent des ID de commande et paiements distincts même si leurs plats apparaissent dans la même session de table.
+
+<span id="saved-layout-preservation" />
+
+## Vérifier un plan enregistré après une mise à jour
+
+Après avoir disposé les tables, enregistrez explicitement le plan, rouvrez-le dans Admin et comparez positions, dimensions et rotations sur le POS. L’API mise à jour préserve la géométrie personnalisée de version 2 au démarrage ; seuls les anciens formats sont normalisés. Ce correctif empêche un redémarrage de redimensionner un plan personnalisé sauvegardé, mais ne reconstitue pas les dimensions ou angles déjà écrasés par une ancienne version. Si des tables se chevauchent soudainement, conservez une capture et faites vérifier la version API installée avant de sauvegarder un nouvel agencement. Rétablissez ensuite explicitement le dessin voulu après correction, ou faites examiner une sauvegarde disponible par un opérateur autorisé ; ne supposez pas une restauration automatique. Conservez les identités des tables et leurs additions actives : déplacer un dessin ne clôture pas un service, ne transfère pas une addition et ne fusionne pas des commandes QR. Évitez d’enregistrer depuis un ancien onglet après la modification du plan par quelqu’un d’autre.
+
+<span id="service-time-and-state" />
+
+## Suivre la durée et l’état du service
+
+La durée affichée sur le plan et dans la liste des additions provient du début de la session de table, pas du dernier plat ajouté. Placer des clients sans saisir de couverts démarre aussi un service ; une table ouverte ne devient pas libre parce que son nombre de couverts est absent. Rouvrir l’addition, envoyer un autre lot ou recevoir une commande QR de la même session ne remet pas cette durée à zéro. Plusieurs clients QR gardent leurs commandes et paiements séparés. Scanner seul un QR ne prouve pas que la table est occupée. Une commande à emporter ou en livraison ne doit pas occuper une table. Les états cuisine, paiement et demande d’addition restent distincts de cette durée. Après une clôture confirmée, l’ancien service ne doit pas réapparaître à cause de commandes en cache ; une nouvelle occupation a sa propre session. En cas d’échec de lecture, actualisez et vérifiez l’état serveur avant de fermer ou replacer la table.
 
 <span id="mobile-terminal" />
 
 ## Utiliser Additions sur mobile
 
-Sur le POS mobile mis à jour, Additions ouvre directement le plan de salle. Touchez le nom de salle à côté de Plan pour changer de salle ; la loupe ouvre la liste avec recherche, et la croix revient au plan. Les positions, formes, états et accès aux tables restent ceux du restaurant ; déplacez ou zoomez le plan si nécessaire. Touchez une table libre puis choisissez le nombre de convives, ou Aucun couvert. Retour abandonne la sélection. Le bouton + propose la vente au comptoir, l’accès aux additions ouvertes et Actions ; Actions conserve les filtres de personnel, À faire et Actualiser. Les fonctions visibles dépendent des droits et réglages du restaurant.
+Sur le terminal mis à jour, le ticket en bas ouvre Additions. Touchez le sélecteur de vue pour choisir Toutes les additions ou un plan dans la même feuille à radios. Toutes les additions regroupe les additions nommées et les tables ouvertes accessibles ; choisir un plan revient à ses tables. La loupe ouvre la liste des additions avec recherche. Les positions, formes et états restent ceux du restaurant ; faites glisser le plan pour atteindre les tables hors écran, sans modifier sa géométrie. Ouvrez une table libre puis, si le choix est demandé, choisissez le nombre de convives ou Aucun couvert ; Retour abandonne ce choix. Le bouton + donne accès aux ventes et outils autorisés, dont Actions pour filtres de personnel, À faire et Actualiser. Les permissions et réglages continuent de limiter les destinations. Une offre ou une animation ne libère jamais une vraie table sans confirmation du serveur. La feuille réserve aussi l’espace au-dessus des boutons système Android : la dernière option reste visible et accessible. Faites défiler la liste si tous les plans ne tiennent pas dans la hauteur disponible.

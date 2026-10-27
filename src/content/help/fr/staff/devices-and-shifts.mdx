@@ -5,12 +5,42 @@ apps: both
 tags:
   - staff
   - staff-devices-shifts
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-26'
 featureId: staff-devices-shifts
 audience: public
 releaseStatus: available
 ---
 Admin → Personnel → Accès POS / Rapports de shifts
+
+<span id="personal-time-tracking" />
+
+## Enregistrer ses heures sans ouvrir le POS
+
+Ce parcours nécessite la version POS mise à jour et l’API correspondante déployée avant son installation. Sa présence dans ce guide ne confirme pas sa disponibilité sur votre appareil.
+
+1. Sur l’écran Se connecter d’un appareil déjà enrôlé, touchez Afficher les heures. Dans Enregistrement des heures, saisissez votre code confidentiel personnel complet de 4 à 6 chiffres, puis confirmez-le. Consulter ce statut ne démarre pas de période de travail et ne vous connecte pas au POS. Fermer revient à la connexion PIN.
+2. Si aucune période n’est active, touchez Enregistrer l’arrivée pour commencer explicitement. Attendez la confirmation du serveur. L’écran actif affiche le rôle réel de votre compte, pas un poste ou un horaire prévu inventé.
+3. Pendant la période active, Ajouter des remarques ouvre la saisie facultative d’une note destinée à l’employeur, limitée à 500 caractères. Enregistrer applique la note à cette période ; fermer sans enregistrer ne l’applique pas.
+4. Touchez Terminer la période de travail pour enregistrer votre départ. Une caisse ouverte sur le POS d’origine de cette période empêche cette fin : demandez à un responsable autorisé de terminer son rapport et de clôturer les espèces sur cet appareil, puis réessayez. Ce parcours ne clôture pas la caisse et ne lance aucun dépôt Verifone.
+5. Après confirmation, Départ enregistré présente uniquement votre période concernée, ses dates/heures et la durée enregistrées par le serveur. Les heures enregistrées ne constituent pas un calcul de paie ; aucun planning de travail n’est déduit de l’absence de données. Continuer vers FoodyPOS revient à l’écran PIN, sans connexion de vente automatique.
+
+En cas de refus, vérifiez le code personnel et l’autorisation de l’appareil avec un responsable. Si le résultat d’une action est incertain, Actualiser les heures permet de vérifier le statut avant de réessayer ; ne supposez pas qu’elle a échoué et ne créez pas un second pointage. Si le parcours est indisponible, faites vérifier l’appareil et la version de l’API. Ne partagez jamais votre code ni vos remarques avec l’assistant.
+
+<span id="shift-device-access-integrity" />
+
+## Vérifier la liaison entre période de travail et appareil
+
+Cette protection nécessite l’API compatible déployée ; ce guide ne confirme pas son installation. Une connexion PIN qui reprend une période existante conserve cette période, son heure de début et son autorisation d’appareil d’origine. Se connecter sur un autre POS ou renouveler une autorisation ne transfère ni cette période ni sa caisse.
+
+Si l’autorisation d’origine ne peut plus être vérifiée dans le restaurant, la connexion de vente est refusée sans créer de période de remplacement. Selon la version du POS, l’erreur affichée peut rester générique. Demandez à un responsable de faire vérifier la liaison historique avec l’assistance. Afficher les heures reste un parcours distinct pour consulter votre propre statut ; une consultation réussie ne répare pas la liaison et n’autorise pas une clôture. Si cette consultation échoue aussi, conservez l’état et demandez assistance.
+
+Ne supprimez pas les données locales, ne réenrôlez pas l’appareil et ne créez pas une nouvelle période pour contourner le refus. Ne modifiez pas les heures ou l’association d’appareil à l’aveugle : sélectionner une autre autorisation peut masquer un journal de caisse différent. Une erreur de base de données n’est pas une preuve de référence absente. La réparation doit être vérifiée et approuvée séparément, en préservant les heures, les opérations en attente et les journaux d’origine. Elle ne déclenche aucune clôture espèces ni aucun dépôt Verifone automatique.
+
+<span id="cash-report-unconfirmed" />
+
+## Réessayer une lecture de caisse non confirmée
+
+Ce diagnostic nécessite les versions compatibles du POS et de l’API ; ce guide ne confirme pas leur installation. Une erreur de lecture ne signifie pas qu’aucune caisse n’est ouverte. Le message peut préciser une période ou une connexion à vérifier, une autorisation d’appareil à contrôler, une installation qui ne correspond pas à la période ouverte, ou une vérification temporairement indisponible. Demandez un responsable pour les refus d’accès ; Réessayer relit l’état sans réparer ni déplacer une liaison. Les nouvelles opérations espèces restent indisponibles tant que l’état n’est pas confirmé. Conservez les opérations en attente et les données locales. Voir [la reprise de lecture de caisse](/fr/help/payments/pos-checkout#cash-report-unconfirmed). Le dépôt du terminal reste séparé.
 
 <span id="pending-cash-sign-out" />
 

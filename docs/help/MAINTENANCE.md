@@ -22,6 +22,10 @@ enter public browsing, search or the AI corpus.
 4. Render and validate the guides, export the release, then regenerate the inventory
    using the explicit service-root map. Review source surfaces including page/API
    routes, Flutter destinations, translated control keys and named actions.
+   Synchronize the exported public corpus into the API before scanning its source
+   inventory: `internal/support/corpus.json` is itself a reviewed source file.
+   Pinning documentation before this copy leaves the API contract's corpus hash
+   stale even when the public release revision already matches.
 5. Pin the reviewed Landing commit in each affected service contract. Keep one PR
    into develop per repository. An initial `WORKSPACE` reference supports local
    preparation only; remote CI rejects it. Never replace it with a moving branch.
@@ -83,6 +87,25 @@ four affected service contracts. A later Web/Backoffice change requires its own
 current-source review and validation; do not reuse this scope as an exemption.
 The local WORKSPACE documentation pins still require an immutable matching
 Landing commit before remote CI or publication.
+
+### Local order-flow audit (26 October 2026)
+
+This local preparation refreshes API, Admin, POS and Landing source evidence for
+the shared-mode synchronization and order-entry corrections. The Web and
+Backoffice service blocks and surfaces are retained exactly from the inventory
+present before this scan; they are historical recorded evidence, not a fresh
+validation of those services. Feature evidence is rebuilt from that combined
+inventory. The public FR/HE/EN guides and API support corpus share one revision.
+
+Contracts use `WORKSPACE` for local validation only, and Landing uses `self`.
+An immutable reviewed Landing commit remains required before remote CI or a
+release. Roll out the API merge capability before Admin and then the updated POS
+clients. An old client without the merge base retains the legacy replacement
+write path and does not gain conflict-safe merging merely by updating the API.
+Do not use it to edit shared settings during this rollout. No new migration is
+needed for these settings corrections; other independently prepared features
+retain their own migration and capability prerequisites. Automated evidence does
+not certify a physical iPad, Victa, printer, cash movement or payment operation.
 
 `Help coverage and translations` runs on PRs into develop and manual dispatch.
 It checks the exact source footprint (including newly added/deleted source), feature
@@ -235,3 +258,150 @@ service days, stock and existing commitments while using explicit pause/reopen
 controls. Deploy API migration 277 before the matching clients. Publish the three
 language guides with the product rollout. Service contracts must pin this reviewed
 Landing commit before PR publication; production uses verified develop artifacts.
+
+## Mobile menu layout release (26 October 2026)
+
+This release reviews guest Web, Admin, Landing and the synchronized API help
+corpus from isolated develop-based branches. The category style applies to
+groups on desktop and mobile; carte tabs stay separate and underlined. Long
+group headings wrap without enlarging the document. FR/HE/EN instructions cover
+the shared setting and selected-category colors. POS and Backoffice service
+blocks and source surfaces retain their exact evidence from Landing commit
+`39ed85b66bd66adcbf340885d1dd251a08beefd9`; they are not revalidated by this change. The API change synchronizes
+only the published support corpus. Publish the prepared guides with the matching
+UI, after development verification, and promote the same immutable artifacts.
+
+## Mode-editor deletion recovery (26 October 2026)
+
+This follow-up reviews Admin, Landing and the API's synchronized public support
+corpus. It documents the explicit pending-deletion state, complete draft undo and
+return to the list only after a confirmed save. The working production profile
+and restaurant defaults are never used as disposable test data. The Web, POS and
+Backoffice service inventories and source surfaces retain their exact evidence
+from Landing develop commit `705fcec6f5e0af4a6409dcf700befe8736f469b4` and are not
+revalidated by this follow-up. Pin the new reviewed Landing commit in Admin and
+API before publication. Publish these FR/HE/EN procedures with the matching Admin
+UI, after development verification, without rebuilding the promoted artifacts.
+
+The final source review also exercises a deliberately delayed list navigation
+after successful deletion. The editor retains its mode name and a locked loading
+state until navigation finishes, rather than briefly rendering a missing mode.
+This only completes the documented confirmed-save handoff; the deletion, undo,
+permissions and error-recovery procedure above is unchanged. Refresh the exact
+Admin source evidence and immutable service pins without changing article dates
+or inventing a new merchant operation.
+
+## Startup integrity and production recovery (26 October 2026)
+
+This release reviews API startup integrity and its FR/HE/EN recovery guidance.
+The real PostgreSQL regression proves that the former startup normalization
+resized authored v2 tables and changed rotations. The corrected helper normalizes
+only legacy 0/1 rows; it preserves authored and unknown future versions exactly.
+It does not reconstruct previously overwritten geometry or rearrange active
+production tables. The entrypoint change only delegates that reviewed operation
+to the separately classified helper; other startup behavior is unchanged.
+
+Device-inventory regressions exercise an active, already terminal-capable Victa
+reported by a legacy generic Android print agent. Backfill must preserve its
+durable terminal capability and integrated-printer identity without relaxing
+tenant, missing-device or forgotten-device checks. No manual production database
+repair, payment, deposit, device reactivation or print replay is part of release
+verification. Physical printing and payments remain unverified by these tests.
+
+Admin, Web, POS and Backoffice inventories and surfaces retain their exact
+evidence from Landing develop `0ccd3b7f2b0a3845e46087ff1a528d0671d0f8cb`;
+their application sources do not change in this recovery. Copy the newly exported
+support corpus into API before scanning, pin this reviewed Landing commit, run
+the API validation and verify development before promoting its exact artifact.
+Keep the pending Admin and public-documentation promotions coordinated with the
+restored API; never publish a planned recovery as an installed capability.
+
+## Previous-service orders and unconfirmed cash reads (26 October 2026)
+
+This follow-up reviews POS session isolation, cash-read confirmation and their
+FR/HE/EN procedures, plus the synchronized API support corpus. Previous or unknown
+table sessions retain separate saved order IDs; the current service alone may
+aggregate manual kitchen sends. Physical iPad observations verified navigation,
+covers, timers and visible course controls, not a payment or kitchen dispatch.
+Regression tests additionally cover canonical-session changes during asynchronous
+loads and legitimate new-service responses arriving after their matching event.
+
+Cash verification must fail closed without disabling recovery of an existing
+journaled operation. A historical replay result is not a fresh current-drawer
+read; older in-flight reads cannot reconfirm it. The API business 404 alone proves
+an absent drawer. Provider, settlement and financial routes are unchanged, and no
+real cash operation or Verifone deposit is part of acceptance.
+
+Refresh POS, API and Landing evidence from their reviewed source commits. Admin,
+Web and Backoffice inventory blocks and surfaces retain their exact baseline
+evidence from Landing develop `54cd8aa5a57b56b22f645a04ff17d6230fb1a574` and are
+not revalidated by this follow-up. Export the public corpus before scanning the
+API, pin an immutable reviewed Landing commit in API and POS, and validate each
+service before its PR is ready. Verify the compatible POS build before publishing
+these guides; API publication alone does not update an installed app.
+
+## Local shift-access integrity preparation (26 October 2026)
+
+This preparation reviews API shift access validation and its FR/HE/EN guidance,
+not a production data repair. A saved interval retains its original authorization
+reference, start time, and cash attribution. An unresolved historical reference
+must not silently become another credential or a replacement work interval.
+Personal status reads remain separate from POS sales sign-in. Cash guards,
+provider operations, and existing financial journals are unchanged.
+
+Only API and Landing source evidence is refreshed. Admin, Web, POS, and
+Backoffice service blocks and surfaces retain their exact baseline evidence from
+Landing develop `c6f2cedc78b1fbefe568dff48f8b749912df0490`; they are not revalidated
+by this preparation. The API support corpus is copied before source scanning.
+Contracts use `WORKSPACE` for local checks only. A reviewed immutable Landing
+commit and coordinated API/documentation publication remain required before
+remote CI or release. No installed POS binary or physical financial operation is
+certified by these source and synthetic tests.
+
+The internal API recovery runbook requires proof of physical identity and cash
+journal continuity, then explicit approval of an exact production repair. Do not
+publish historical recovery as an available automatic action, apply a constraint
+to inconsistent history, or infer the origin of an inconsistency from a missing
+foreign key. Preparation and approval of preventive code do not authorize a
+production mutation.
+
+## Local cash-access diagnostic preparation (27 October 2026)
+
+This continuation refreshes API, POS and Landing evidence only. Admin, guest Web
+and Backoffice service blocks and surfaces retain their exact baseline from
+Landing commit `c6f2cedc78b1fbefe568dff48f8b749912df0490`; they are not revalidated
+by this preparation. The previous local shift-access protection remains included.
+Refresh the API's embedded corpus before the source scan and final validation.
+Contracts remain local `WORKSPACE`/`self` until an immutable reviewed documentation
+commit and the coordinated product release are explicitly authorized.
+
+The candidate classifies existing cash-access refusals without changing the
+original staff interval, credential binding, cash journal or terminal settlement.
+Missing identity and installation mismatches remain conflicts; storage failures
+remain unavailable states, never confirmed absence. Only the existing business
+404 confirms that no current drawer is open. POS maps a closed set of codes and
+statuses to localized messages, preserves its generic fallback and pending
+operation recovery, and keeps new financial actions disabled while unconfirmed.
+No client-provided installation identifier becomes a credential or a selector
+for another drawer. No new route, JWT claim, pairing or automatic repair is added.
+
+Keep the cash-access recovery procedure separate from the large checkout guide
+so that complete articles fit the unchanged AI grounding limit. All three
+translations qualify compatible API and POS versions rather than claiming the
+candidate is installed. Reading the physical cash report needs the Foody API,
+not a connected Victa Mini; operations sent to a card terminal remain separate.
+Source and synthetic tests do not certify a physical installation match, a
+financial operation or recovery of historical production data.
+## Product photo gallery preparation (27 October 2026)
+
+This isolated preparation reviews API, Admin, Web and Landing from develop.
+Migration 278 adds only ordered extra product photos; the legacy cover remains
+compatible with POS. Public FR/HE/EN procedures describe save/cancel, upload
+recovery, cover selection and the customer gallery. Publish them with the matching
+product rollout after development verification, with API deployed first.
+POS and Backoffice source evidence retains the exact Landing develop baseline
+from Landing develop 6fda2691c93f8d1ec19dbbd6f06c12013d91b7f2; these clients are not revalidated.
+API, Admin and Web contracts pin the immutable reviewed Landing commit before
+remote CI. Verify the coordinated development deployments before promoting the
+same artifacts to production. Verification uses synthetic data and read-only
+public checks; it does not run a real order, payment or cash operation.

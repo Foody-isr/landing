@@ -7,7 +7,7 @@ apps: both
 tags:
   - settings
   - pos-behavior
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-26'
 featureId: pos-behavior
 audience: public
 releaseStatus: available
@@ -20,11 +20,23 @@ Ouvrez Paramètres → POS, puis le mode/profil concerné. L’ancien réglage S
 
 Ouvrez Comportement du menu et choisissez les options proposées pour sélection, modificateurs et navigation. Affectez le profil à l’appareil POS. Vérifiez un article avec choix obligatoire pour éviter de le sauter. Un profil de mode de caisse n’affecte pas l’imprimante cuisine. Configurez séparément le profil d’impression partagé pour cette installation POS ; voir [affectations d’imprimantes et documents en attente](/fr/help/printers/profiles-and-routing#assign).
 
+<span id="shared-mode-sync" />
+
+## Synchroniser Admin et le mode affecté au POS
+
+Avec des versions API et POS compatibles, comparez le restaurant et le mode affecté affichés dans POS → Plus → Paramètres → Passage en caisse avec ce mode dans Admin. L’activation des services, Envoyer et rester et les options d’additions ouvertes appartiennent au mode partagé affecté, pas à un interrupteur local indépendant sur l’iPad. Un appareil sans mode affecté utilise les valeurs du restaurant. Enregistrez une seule fois avec le droit de modifier les paramètres. Le POS au premier plan vérifie les mises à jour environ toutes les 30 secondes ainsi qu’au retour dans l’application, à la navigation et après une action de vente. L’application des changements est différée pendant un paiement, un envoi ou une édition d’article en cours, puis une nouvelle lecture est faite à la prochaine limite sûre ; cela ne relance jamais l’action. Actualiser dans Passage en caisse permet de demander une lecture récente. Une lecture en échec conserve la dernière configuration confirmée et ne prouve pas que la modification Admin est appliquée. Si un autre éditeur a changé le même réglage ou l’affectation de l’appareil, l’API refuse l’enregistrement concurrent au lieu de l’écraser. Actualisez, vérifiez mode et valeurs actuels, puis réappliquez seulement le changement voulu. Ne réactivez pas tous les modules localement et ne répétez pas un paiement pour forcer la synchronisation. Les affectations d’imprimantes cuisine restent distinctes.
+
+<span id="shared-mode-sync-recovery" />
+
+## Reprendre une actualisation des réglages en échec
+
+Si la caisse affiche l’avertissement d’actualisation des réglages, vérifiez la connexion puis utilisez Réessayer dans la bannière, ou Actualiser dans Passage en caisse. Les derniers réglages confirmés restent utilisés ; l’avertissement ne signifie pas que les services ou additions ouvertes ont été désactivés volontairement. Réessayer est indisponible pendant une action de vente. Laissez l’action courante se terminer, puis vérifiez le mode affecté et ses valeurs avant de continuer. Lire les réglages ne renvoie pas les plats, n’encaisse rien et ne change pas les dépôts du terminal. Si l’enregistrement d’un réglage est refusé parce qu’un autre éditeur l’a modifié, actualisez avant de réappliquer seulement votre modification ; renvoyer l’ancien instantané complet n’est jamais une procédure de reprise.
+
 <span id="courses" />
 
 ## Configurer les services de cuisine
 
-Ouvrez Services et maintenez noms et ordre des services de cuisine. Vérifiez attente/envoi dans le profil POS actif. Les services organisent le lancement cuisine ; ils sont distincts du partage d’addition et des groupes de menu publics.
+Ouvrez Services et maintenez les noms et l’ordre des services du restaurant. Activez leur gestion et les options autorisées d’attente/lancement ou Envoyer et rester dans le mode affecté à l’appareil POS. Dans Envoi immédiat, sélectionnez les catégories de bibliothèque voulues, appliquez puis enregistrez. Cette association utilise la catégorie de bibliothèque globale de chaque article, pas son groupe d’affichage/menu ni un nom de groupe identique. Un article d’une catégorie immédiate rejoint Envoi immédiat lors de son ajout à une vente sur place, même si un service nommé est sélectionné. Les autres nouveaux articles utilisent le service choisi. Vérifiez une ligne fraîchement ajoutée après une modification du catalogue ; les lignes déjà enregistrées ne sont pas déplacées rétroactivement. Envoi immédiat signifie que le prochain Envoyer explicite lance ces lignes en attente immédiatement : le simple ajout de l’article n’envoie ni n’imprime rien. Attente/Lancer des services nommés restent provisoires jusqu’à la réussite d’Envoyer/Continuer. Continuer est disponible seulement si le mode affecté le permet et conserve l’addition ouverte ; il ne lance pas automatiquement le service suivant. Les services organisent le lancement cuisine et restent distincts des partages financiers, des paiements propres aux clients QR et des groupes de menu publics. Vérifiez [la synchronisation du mode partagé](#shared-mode-sync) si Admin et POS montrent des activations différentes.
 
 <span id="adjustments" />
 
@@ -66,7 +78,7 @@ Il n’y a pas d’interrupteur distinct pour le sur-place sans table. Gardez un
 
 ## Demander les informations client pour un mode
 
-Nécessite les versions API et POS correspondantes. Activez Afficher l’écran d’informations client dans le mode puis Enregistrer (enregistrez aussi Gérer par point de vente si vous y faites la modification). Immédiatement après ce choix pour toute l’addition, la fiche facultative apparaît avant les articles, même pour le défaut sans demande de sélection. Saisissez prénom/nom ou utilisez Ajouter un client nouveau ou existant pour chercher dans le répertoire du restaurant ou Saisir les coordonnées pour cette commande seulement. La recherche exige customers.view ; les coordonnées de commande exigent orders.manage. Terminé confirme ensemble mode et coordonnées. Passer conserve les coordonnées précédentes sans appliquer la saisie. Retour rouvre les modes ; fermer le parcours laisse la vente inchangée. Nom complet : 80 caractères maximum. Téléphone non vide : 32 caractères maximum, dont 7 à 15 chiffres et les séparateurs usuels. La capacité API correspondante active un identifiant privé (255 caractères) et une note au personnel (500) ; sinon ces champs restent désactivés avec une explication. Le contexte privé reste dans les données de commande du personnel, pas dans les vues publiques, reçus ou textes de notification. Aucun compte client, consentement marketing, import de contacts ou droit d’espèces n’est créé. Les notifications configurées peuvent utiliser le téléphone enregistré. Les envois suivants reprennent une fiche cohérente ; les additions multi-clients ou fractionnées n’adoptent pas un autre client.
+Nécessite les versions API et POS correspondantes. Activez Afficher l’écran d’informations client dans le mode puis Enregistrer (enregistrez aussi Gérer par point de vente si vous y faites la modification). Immédiatement après ce choix pour toute l’addition, la fiche facultative apparaît avant les articles, même pour le défaut sans demande de sélection. Saisissez prénom/nom ou utilisez Ajouter un client nouveau ou existant pour chercher dans le répertoire du restaurant ou Saisir les coordonnées pour cette commande seulement. La recherche exige customers.view ; les coordonnées de commande exigent orders.manage. Terminé confirme ensemble mode et coordonnées. Passer conserve les coordonnées précédentes sans appliquer la saisie. Retour rouvre les modes ; fermer le parcours laisse la vente inchangée. Nom complet : 80 caractères maximum. Téléphone non vide : 32 caractères maximum, dont 7 à 15 chiffres et les séparateurs usuels. La capacité API correspondante active un identifiant privé (255 caractères) et une note au personnel (500) ; sinon ces champs restent désactivés avec une explication. Le contexte privé reste dans les données de commande du personnel, pas dans les vues publiques, reçus ou textes de notification. Aucun compte client, consentement marketing, import de contacts ou droit d’espèces n’est créé. Les notifications configurées peuvent utiliser le téléphone enregistré. Les envois suivants reprennent une fiche cohérente ; les additions multi-clients ou fractionnées n’adoptent pas un autre client. Pour une table contrainte à un seul traitement, le choix peut être implicite sans afficher le sélecteur, mais cette fiche, les contrôles de compatibilité et la validation commune du mode et des coordonnées restent conservés. Une fermeture ou un contexte changé n’enregistre pas un choix partiel.
 
 <span id="fulfillment-order-contact-entry" />
 
@@ -79,3 +91,9 @@ Dans la fiche facultative du traitement, ouvrez Ajouter un client nouveau ou exi
 ## Régler la caisse sur un écran compact
 
 Sur mobile, les réglages utilisent une seule pile de pages. Le retour quitte d’abord la sous-page courante, puis la rubrique. Les en-têtes, champs et interrupteurs utilisent les mêmes contrôles de terminal. Les options de caisse conservent leurs permissions et leur enregistrement existants. Pour l’impression, les options restent en brouillon jusqu’au bouton Enregistrer de l’éditeur de profil. Dans Apparence, le mobile garde une palette neutre et des actions bleues ; les couleurs personnalisées restent disponibles sur tablette. Le thème clair/sombre et la langue restent réglables sur le terminal.
+
+<span id="terminal-navigation-overview" />
+
+## Se déplacer sur le terminal
+
+Le terminal portable utilise trois boutons sans libellé : les initiales de l’utilisateur ouvrent Plus, la maison ouvre l’Aperçu et le ticket ouvre les Additions, selon vos droits. La navigation iPad conserve ses destinations configurées. Dans Additions, le sélecteur propose Toutes les additions et les plans de salle disponibles ; choisir un bouton radio change directement la vue. Le plan se déplace par glissement quand il dépasse l’écran. L’Aperçu présente des cartes repliables de disponibilités, commandes et tables autorisées. La liste complète permet de rechercher un article ; Non renseignée indique une disponibilité absente, pas un article disponible. Actualiser permet de reprendre une lecture en échec. Ces vues ne modifient ni le mode de caisse affecté ni les profils d’impression. La barre reste au-dessus de la navigation Android et se masque pendant la saisie. Dans une vente, Menu/Addition/Actions et le retour vers les additions gardent leur place propre.

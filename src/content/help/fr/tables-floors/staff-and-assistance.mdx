@@ -7,7 +7,7 @@ apps: both
 tags:
   - tables-floors
   - table-service-policy
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-26'
 featureId: table-service-policy
 audience: public
 releaseStatus: available
@@ -26,6 +26,18 @@ Choisissez affectation libre, collaborative ou stricte, lisez sa règle affiché
 
 Vérifiez libellés de statuts et contrôles table/session. Une table occupée peut avoir plusieurs additions : contrôlez session et couverts avant placement, déplacement ou fermeture. Un statut visuel ne prouve pas le paiement d’une addition. Changer le traitement d’un brouillon non envoyé ne déplace ni ne fusionne une addition existante et ne remplace pas son cycle de service. Choisir une table avec une addition financière annule le transfert du brouillon en attente et conserve la source intacte ; suivez [la procédure de changement de service](/fr/help/orders/order-types#pos-change-draft).
 
+<span id="resume-confirmed-table-service" />
+
+## Reprendre la bonne occupation d’une table
+
+Sur le POS compatible mis à jour, ouvrir une table déjà occupée reprend uniquement sa session actuelle confirmée, sans recommencer son service ni redemander ses couverts. Son chronomètre n’est pas remis à zéro. Les demandes de couverts configurées restent réservées au démarrage d’une nouvelle occupation. Si la table ferme ou change de session pendant le chargement ou le transfert d’un brouillon, la navigation vers l’ancien contexte s’arrête. Revenez au plan et rouvrez la table actuelle ; ne forcez pas le rattachement des plats aux clients suivants. Un transfert non confirmé doit être vérifié avant de renvoyer une commande. Les anciennes commandes encore dues restent distinctes et consultables par leur numéro dans [Commandes](/fr/help/settings/pos-workspace#previous-table-service-orders). Ouvrir la table ne règle ni ne clôture ces anciennes commandes.
+
+<span id="timer-settings-and-close" />
+
+## Vérifier les seuils et la clôture d’une table
+
+Dans les réglages de statut des tables, vérifiez l’activation des indicateurs, la couleur en service et les seuils jaune/rouge en minutes, puis enregistrez. Ces réglages sont communs au restaurant : changer le mode de caisse ne crée pas d’autres seuils. Si la réponse serveur ne confirme pas les champs modifiés, le brouillon reste affiché avec une erreur ; rechargez ou corrigez avant de compter sur les nouvelles couleurs. Le changement de couleur n’encaisse rien et ne clôture pas la table. Une clôture refuse les commandes encore dues ; une commande entièrement remboursée ne constitue plus une dette active. La table et ses sessions QR se ferment ensemble ou restent inchangées en cas d’échec. Si le service a changé pendant une nouvelle commande, rouvrez la table au lieu de forcer l’ancien contexte. Cela ne réalise aucun dépôt de terminal ni clôture bancaire.
+
 <span id="assistance" />
 
 ## Configurer les demandes d’assistance
@@ -36,4 +48,4 @@ Dans Assistance à table, activez les demandes et notifications adaptées. Véri
 
 ## Retrouver les outils de service sur mobile
 
-Dans Additions sur le POS mobile mis à jour, ouvrez + puis Actions pour retrouver le filtre de personnel, À faire et Actualiser. Les restrictions d’affectation et permissions continuent de limiter les tables accessibles. L’état et la géométrie du plan restent issus de la configuration du restaurant. La nouvelle présentation n’assigne ni ne libère une table automatiquement.
+Dans Additions sur le terminal mis à jour, le sélecteur à radios relie Toutes les additions aux plans de salle disponibles. Ouvrez + puis Actions pour le filtre de personnel, À faire et Actualiser. Les restrictions d’affectation et permissions continuent de limiter les tables et additions accessibles. Le plan peut se déplacer à l’écran ; ni ce déplacement ni un changement de vue n’enregistrent de nouvelle géométrie, n’affectent un employé ou ne libèrent une table. Le nom de l’utilisateur actif sert aux initiales en bas à gauche ; ce bouton ouvre Plus, sans changer l’affectation du service.

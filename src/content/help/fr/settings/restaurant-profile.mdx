@@ -12,6 +12,12 @@ releaseStatus: available
 ---
 Ouvrez Paramètres pour le restaurant sélectionné. Vérifiez son nom avant d’enregistrer.
 
+<span id="shared-pos-settings" />
+
+## Vérifier les réglages POS partagés avant sauvegarde
+
+Un appareil attribué à un mode utilise les réglages de service de ce mode partagé, pas une seconde politique locale sur l’iPad. Vérifiez le restaurant et le mode affecté. L’API mise à jour fusionne les modifications de champs POS différents et refuse les conflits sur le même champ. Dans Admin, conservez le brouillon refusé pour le vérifier, puis utilisez Recharger les réglages enregistrés et confirmez son abandon avant de refaire la modification voulue. Ne renvoyez pas une politique périmée en boucle. Mettez l’API à jour avant Admin et POS ; les anciens clients sans contrat de fusion gardent leur sauvegarde historique et ne doivent pas modifier les réglages partagés pendant la transition. Une modification de mode POS ne change ni identité, ni adresse, ni horaires, ni fichiers clients. Voir [la reprise du mode partagé](/fr/help/settings/service-mode#shared-mode-save-recovery).
+
 <span id="pos-location-configuration" />
 
 ## Vérifier le restaurant avant de régler les modes POS

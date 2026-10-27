@@ -58,8 +58,13 @@ for (const [service, configuredRoot] of Object.entries(roots)) {
     const matched = selectors.filter(f => f.compiled[service]?.some(pattern => pattern.test(file))).map(f => f.id);
     // The unified payment-history reader lives in orders for existing data
     // access, but it does not change order creation, types or fulfillment.
-    const ids = service === 'foodyserver' && /^internal\/orders\/transactions(?:_handler|_adjustments)?\.go$/.test(file)
-      ? ['pos-payments'] : matched.length ? matched : ['shared-runtime'];
+    // This extracted resolver classifies cash POS access failures only; it does
+    // not introduce order creation, fulfillment or order-type procedures.
+    const ids = service === 'foodyserver' && file === 'internal/orders/cash_drawer_context.go'
+      ? ['pos-payments', 'pos-cash-access-diagnostics']
+      : service === 'foodyserver' && /^internal\/orders\/transactions(?:_handler|_adjustments)?\.go$/.test(file)
+        ? ['pos-payments'] : service === 'foodyserver' && file === 'internal/menu/item_photos.go'
+          ? ['menu-product-photos'] : matched.length ? matched : ['shared-runtime'];
     sources[file] = { sha256: digest(bytes), features: ids };
     const found = [];
     if (/(?:^|\/)app\/.*\/(?:page|route)\.[jt]sx?$/.test(file)) found.push({ kind: file.includes('/route.') ? 'next-api-route' : 'next-page', route: routePath(file), line: 1 });
