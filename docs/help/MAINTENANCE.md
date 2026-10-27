@@ -536,3 +536,18 @@ baseline from `37bba41c177ac677f79b6e175a520b655c45e5be` and are not revalidated
 the documentation corpus only; no stock endpoint, schema or data is changed.
 Pin the immutable documentation commit, validate each affected service and
 promote the verified development artifacts under the shared release rules.
+
+## Product stock-history shortcut cleanup (27 October 2026)
+
+The product stock card retains its item-scoped Stock history dialog and removes
+the Full stock history shortcut to the separate journal page. The retained dialog
+passes the product ID on initial reads, movement filtering and pagination, across
+all series. Availability-rule assignment, stock quantities and reservations are
+unchanged. The general journal remains available through its existing navigation.
+
+Review the two public procedures and internal routing description in FR/HE/EN.
+Refresh Admin, API support-corpus and Landing evidence only. Preserve the Web,
+POS and Backoffice blocks and surfaces exactly from Landing develop
+`702e2124378e46a2f0e50b6d4f037c020cfcc7c9`. Those services are not revalidated.
+Keep the exported corpus identical in the API, pin the immutable documentation
+commit and publish with the compatible Admin after development verification.
