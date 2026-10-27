@@ -551,3 +551,28 @@ POS and Backoffice blocks and surfaces exactly from Landing develop
 `702e2124378e46a2f0e50b6d4f037c020cfcc7c9`. Those services are not revalidated.
 Keep the exported corpus identical in the API, pin the immutable documentation
 commit and publish with the compatible Admin after development verification.
+
+## Product rule selection inside stock dialog (27 October 2026)
+
+The saved product's rule selector moves into its stock dialog and is labelled
+Availability rule in French, Hebrew and English. Apply stages a product rule
+draft and product Save persists it through the existing item update route. It
+remains a restaurant-owned product assignment across all series, with unchanged
+category/default inheritance and manual availability precedence. A rule-only
+confirmation sends no stock adjustment, including for exhausted or inactive
+products. Existing stock edits still use their immediate routes; failed stock
+requests retain the rule locally and do not stage it on the product.
+
+Only API corpus, Admin and Landing source evidence is refreshed. Preserve Web,
+POS and Backoffice inventory blocks and surfaces exactly from Landing develop
+`7126e2b570c52134e9eeaf9402f4a809fb4675b4`. These services are not revalidated.
+The shared translation review excludes unrelated features; the item-panel review
+excludes unchanged creation, recipe/ingredient and variant workflows. Their
+stock-related help links still point to the updated primary procedures.
+
+Freeze and reference the reviewed Admin source, export and copy the matching
+public corpus, then regenerate exact source inventory and service contracts. Pin
+the immutable documentation commit before remote CI. Publish with the matching
+Admin after development verification and promote the same artifacts, API first.
+No schema, API payload, reservation, stock calculation or rule precedence changes
+are introduced. Synthetic browser checks do not mutate production stock.
