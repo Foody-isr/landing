@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-25'
+updatedAt: '2026-10-27'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -153,3 +153,9 @@ GET /api/v1/orders/series conserve les dates de remise triées et les agrégats 
 ## Piloter manuellement les commandes hebdomadaires
 
 La migration 277 ajoute restaurant_settings.batch_ordering_mode (calendar par défaut, ou manual). Les réglages GET/PUT limités au restaurant exposent ce champ ; une valeur invalide échoue avant persistance. L’aperçu des lots accepte ce mode. Les configurations publiques/personnel exposent ordering_mode ; le mode manuel renvoie des dates d’ouverture/clôture vides et utilise la série opérationnelle courante pour les livraisons et références des cartes tournantes. Seuls les horaires automatiques de prise des commandes (hebdomadaires et retrait/livraison) sont ignorés. orders_paused, rush mode, services actifs, appartenance au restaurant, accès de test, préparation, stock, paiement et validation de livraison restent applicables. Le passage en manuel supprime la reprise programmée en conservant la pause effective. Aucune commande existante n’est modifiée. Déployer la migration API 277 avant Admin/Web/POS et vérifier les artefacts en développement avant promotion.
+
+<span id="series-stock-mode-conversion" />
+
+## Convertir les réservations d’une série en cours
+
+Les routes de stock de série existantes acceptent le passage entre count, measure et per_variant avec expected_revision. Le restock reçoit une quantité restante ; Configure ajoute les engagements recalculés, tandis que la préparation de carte conserve une quantité initiale incluant les engagements. L’opération scoped menu.edit verrouille le stock de l’article et les commandes/lignes concernées, convertit leurs reserved_stock et les compteurs, puis écrit le journal dans la même transaction. Les snapshots commerciaux, ingrédients, statuts et autres séries restent inchangés. Les réservations libérées sont converties sans être engagées de nouveau ; les produits préparés restent consommés. Une incohérence ou une taille historique non résolue renvoie 422 stock_conversion_unavailable et annule toute la transaction. Un verrou concurrent ou une révision périmée renvoie 409 ; relire explicitement et réessayer. Déployer cette API avant l’Admin qui propose les changements sur une série engagée. Aucune migration ou variable d’environnement supplémentaire.

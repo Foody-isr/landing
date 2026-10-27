@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-25'
+updatedAt: '2026-10-27'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -153,3 +153,9 @@ GET /api/v1/orders/series keeps the existing sorted fulfillment dates and aggreg
 ## Control weekly ordering manually
 
 Migration 277 adds restaurant_settings.batch_ordering_mode (calendar default, or manual). Scoped settings GET/PUT expose batch_ordering_mode; invalid values fail before persistence. Batch preview accepts the mode. Public/staff batch configs expose ordering_mode; manual mode returns empty opening/cutoff timestamps and uses the operational current series for dates and rotating-menu references. Manual admission bypasses only automatic intake clocks (weekly and pickup/delivery opening hours). orders_paused, rush mode, enabled services, restaurant ownership, test access, preparation, stock, payment and fulfillment-date validation remain authoritative. Entering manual mode clears a scheduled reopening while retaining the effective pause. Existing orders are not updated. Deploy API migration 277 before Admin/Web/POS; stage and verify all artifacts before production promotion.
+
+<span id="series-stock-mode-conversion" />
+
+## Convert current-series reservations
+
+Existing series-stock routes accept transitions among count, measure and per_variant with expected_revision. Restock receives remaining quantity; Configure adds recalculated commitments, while carte preparation continues to use an initial allowance including commitments. The menu.edit scoped operation locks item stock and relevant orders/lines, converts their reserved_stock and counters, then records the journal in the same transaction. Commercial snapshots, ingredients, statuses and other series remain unchanged. Released reservations are converted without being committed again; produced food stays consumed. Inconsistent accounting or an unresolved historic size returns 422 stock_conversion_unavailable and rolls back the entire transaction. A concurrent lock or stale revision returns 409; explicitly reload and retry. Deploy this API before Admin offers mode changes on committed series. No additional migration or environment variable.
