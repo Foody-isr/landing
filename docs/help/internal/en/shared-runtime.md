@@ -68,7 +68,7 @@ Sign in opens Google and the email/password form. Facebook and Apple appear only
 
 ## Keep the sale-stock journal read-only
 
-The Admin menu/stock route and its links now use the Stock history label in French, Hebrew and English. It reads only restaurant items for the filter and paginated sale-stock events, without calling allowance counters or correction routes. Item, series date and movement filters remain combined during pagination; responses for an earlier selection are ignored. The product link is named Full stock history. Preparation remains in the carte draft and publication. Deploy the same public corpus used by search and guides to the support service with this procedure change.
+The Admin menu/stock route and its links now use the Stock history label in French, Hebrew and English. It reads only restaurant items for the filter and paginated sale-stock events, without calling allowance counters or correction routes. Item, series date and movement filters remain combined during pagination; responses for an earlier selection are ignored. The product retains only Stock history, opening its item-filtered movements in a dedicated dialog; it no longer links to the full journal. Preparation remains in the carte draft and publication. Deploy the same public corpus used by search and guides to the support service with this procedure change.
 
 <span id="related-service-controls" />
 

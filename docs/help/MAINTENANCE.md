@@ -8,6 +8,50 @@ base. `docs/help/catalog/features.json` is the authored feature/procedure source
 Internal operator procedures render separately to `docs/help/internal` and never
 enter public browsing, search or the AI corpus.
 
+## Table-status descriptions review (27 October 2026)
+
+Admin source commit `c2ce0d63db2a50252959d642288288fca513a4e9` combines the
+current availability editor with seven corrected
+visible keys in French, Hebrew and English:
+`tableStatusDesc`, `tableStatusInServiceColor`, `tableSettingsColorHint`,
+`tableStatusColorIndicatorsDesc`, `tableSettingsFreeHint`,
+`tableSettingsOccupiedHint` and `tableSettingsSettleHint`. An occupied table can
+be in service before its first order; the optional time indicators do not define
+occupancy. The checkout legend no longer suggests that food must be served before
+an explicit checkout request can accompany an unpaid order. These 21 text changes
+do not change service state, timer origin, palette, thresholds, saving, permissions
+or financial behavior. The three previously corrected `tableSettingsClockHint`
+values remain byte-identical.
+
+All three published `tables-floors/floor-plans#service-time-and-state` procedures
+were reviewed in full. They already describe the table-session clock, seating
+without covers, QR scans alone not proving occupancy, and the distinction between
+kitchen, payment and checkout-request states. They contain no contrary instruction
+about the time toggle or a served-food prerequisite. The copy correction adds no
+merchant action or changed procedure, so do not add optional implementation detail
+merely to change a guide digest. All article bytes, dates and the public corpus
+retain the availability-editor updates already integrated in Landing develop,
+without any additional article or corpus change from this copy correction. That
+upstream corpus revision is
+`5778368187c5b3397c8b8b5e3ddb06e7827957350ac05cfe165081f58d61fb5b`.
+
+The new UI-evidence entry asserts the exact 21 source values and rejects the old
+values at their keys. It is source concordance, not authenticated browser acceptance
+of every locale. The scoped Admin review covers only the eight other public
+features classified on the shared translation file; it explicitly acknowledges
+the visible table-status corrections rather than exempting the whole file.
+Refresh only the Admin translation hash, source snapshot and immutable source
+reference. Preserve all non-Admin inventory blocks and all source surfaces exactly
+from Landing develop `cc8ab2fb69924d4914edf18797166fac696fcfa9`.
+
+Pin the reviewed metadata-only Landing commit in Admin before remote CI. This
+text-only follow-up adds no API or POS change, support-corpus change or native POS
+build. The separate availability-editor release still requires its API corpus to
+match the retained upstream revision before coordinated promotion.
+Validate the Admin develop artifact before promoting that same artifact. Keep the
+previous three-hint release proofs intact; they do not certify every description
+on the table-status page.
+
 ## Table-session clock hint review (27 October 2026)
 
 Admin source commit `9a62da59c1877cf083d763142bb1ac12430ccc87` corrects only
@@ -492,3 +536,18 @@ baseline from `37bba41c177ac677f79b6e175a520b655c45e5be` and are not revalidated
 the documentation corpus only; no stock endpoint, schema or data is changed.
 Pin the immutable documentation commit, validate each affected service and
 promote the verified development artifacts under the shared release rules.
+
+## Product stock-history shortcut cleanup (27 October 2026)
+
+The product stock card retains its item-scoped Stock history dialog and removes
+the Full stock history shortcut to the separate journal page. The retained dialog
+passes the product ID on initial reads, movement filtering and pagination, across
+all series. Availability-rule assignment, stock quantities and reservations are
+unchanged. The general journal remains available through its existing navigation.
+
+Review the two public procedures and internal routing description in FR/HE/EN.
+Refresh Admin, API support-corpus and Landing evidence only. Preserve the Web,
+POS and Backoffice blocks and surfaces exactly from Landing develop
+`702e2124378e46a2f0e50b6d4f037c020cfcc7c9`. Those services are not revalidated.
+Keep the exported corpus identical in the API, pin the immutable documentation
+commit and publish with the compatible Admin after development verification.
