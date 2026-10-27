@@ -46,9 +46,7 @@ Sur un POS autorisé avec un shift PIN actif, ouvrez d’abord Plus → Rapports
 
 ## Réessayer une lecture de caisse non confirmée
 
-Sur un POS compatible mis à jour, si Solde en caisse ou Mouvements de caisse indique Impossible de confirmer la caisse, ce n’est pas la confirmation qu’aucune caisse n’est ouverte. Utilisez Réessayer pour relire l’état sur ce même appareil. Tant que la lecture échoue, aucune nouvelle ouverture, entrée/sortie ou clôture n’est autorisée, même si un ancien rapport reste affiché. Après une lecture réussie, les actions reviennent selon l’état confirmé et vos droits.
-
-Une opération déjà en attente suit sa récupération existante avec le même identifiant ; ne la recréez pas et n’effacez pas les données locales. Une session absente doit être confirmée par la réponse métier de l’API, pas déduite d’une erreur de connexion, d’accès ou d’une route introuvable. Réessayer ne crée aucun mouvement d’espèces et ne lance aucun dépôt Verifone.
+Si la lecture de Solde en caisse ou Mouvements de caisse échoue, n’en déduisez pas qu’aucune caisse n’est ouverte. Réessayer relit l’état sur ce même appareil, sans mouvement d’espèces ni dépôt Verifone. Les nouvelles opérations restent indisponibles tant que l’état n’est pas confirmé. Conservez les opérations en attente avec leur identifiant et n’effacez pas les données locales. Les messages précis nécessitent les versions compatibles du POS et de l’API, sans que ce guide confirme leur installation. Voir [le diagnostic d’accès à la caisse](/fr/help/payments/cash-access#cash-access-refusal) pour les refus et leur reprise sûre.
 
 <span id="cash-drawer-report" />
 

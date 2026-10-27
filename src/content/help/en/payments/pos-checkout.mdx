@@ -46,9 +46,7 @@ On an enrolled POS with an active PIN shift, first open More → Reports → Cas
 
 ## Retry an unconfirmed cash-drawer read
 
-On a compatible updated POS, if Cash drawer balance or Cash movements says the drawer could not be confirmed, this does not confirm that no drawer is open. Use Retry to read the state again on the same device. While the read fails, no new opening, cash adjustment or closure is allowed, even if an older report remains displayed. After a successful read, actions return according to the confirmed state and your permissions.
-
-An already pending operation retains its existing recovery with the same identifier; do not recreate it or erase local data. An absent session must be confirmed by the API’s business response, not inferred from a connection, access or missing-route error. Retry creates no cash movement and starts no Verifone deposit.
+If Cash drawer balance or Cash movements cannot be read, do not infer that no drawer is open. Retry reads the state on the same device without a cash movement or Verifone deposit. New operations stay unavailable until the state is confirmed. Preserve pending operations with their identifiers and do not erase local data. Specific messages need compatible POS and API versions; this guide does not confirm installation. See [cash-access diagnostics](/en/help/payments/cash-access#cash-access-refusal) for refusals and safe recovery.
 
 <span id="cash-drawer-report" />
 

@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-10-26",
+  "reviewedAt": "2026-10-18",
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "422de19541a24b46cf369527a4ed003ac8437133",
+      "sourceCommit": "e5f48ab8b6ce42fccebea815b5c403c45fc65f74",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "f4ee6b00bb84ea2c5d890aa6edc54e3da695a92318b105886f0e619c97035ea8",
+      "sourceSnapshot": "2847ce68e4baa62469a4742ac21c7e9faae56e19246feed74948530e03566a65",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -2225,7 +2225,7 @@
           ]
         },
         "internal/orders/cash_drawer.go": {
-          "sha256": "c08835f3159108081e30c6788237ca74626e8f92cea0fc456fdcc1268f20385b",
+          "sha256": "73b44c3a0d328b5a225154c9a91c8152325d0a17280fdf3a64b03d5b34af56ea",
           "features": [
             "orders-managing-orders",
             "order-types",
@@ -2235,14 +2235,22 @@
             "platform-api"
           ]
         },
+        "internal/orders/cash_drawer_context.go": {
+          "sha256": "cbbf9dd7df4a90a46ef08db7b121ab91dfb9fe7c34707ffc1001a8d382f2888e",
+          "features": [
+            "pos-payments",
+            "pos-cash-access-diagnostics"
+          ]
+        },
         "internal/orders/cash_drawer_handler.go": {
-          "sha256": "816367230348e11fba80a7fa3471f0b960cf83d2e22b307204f5e9b06abd91fa",
+          "sha256": "234f5062e1b4d5f0957a2d26f0587bfdd6842460eb4a5989871693fa3e2b630d",
           "features": [
             "orders-managing-orders",
             "order-types",
             "pos-order-entry",
             "fulfillment-policy",
             "pos-payments",
+            "pos-cash-access-diagnostics",
             "platform-api"
           ]
         },
@@ -3969,28 +3977,28 @@
           ]
         },
         "internal/shifts/handler.go": {
-          "sha256": "07fedb69a9acd793e4bf7e7b89a7c69ba920b745f4a4288609fcd13d13b0d3c8",
+          "sha256": "50adeed7b26d336bb1b040b0f152e5ab805b86eb84f5ec5424fa8cd08ef60393",
           "features": [
             "staff-devices-shifts",
             "platform-api"
           ]
         },
         "internal/shifts/service.go": {
-          "sha256": "a4329a1c17febfaf7dcccd39292a0f445f21816ee606f136e258d8d798cac349",
+          "sha256": "a5a9ece1a3229cb4e5a6f7c3dad49058b7f140718805a9d4d8e14e651f97bb15",
           "features": [
             "staff-devices-shifts",
             "platform-api"
           ]
         },
         "internal/shifts/timeclock.go": {
-          "sha256": "66a23eb1ccea98e0f0fa048d9e411fc05af6115227499086eeacc83552529139",
+          "sha256": "328b78c6c02e0caa77a5602dfb9a1a72e6758d97739cd105f6fc3557cb7c621f",
           "features": [
             "staff-devices-shifts",
             "platform-api"
           ]
         },
         "internal/shifts/timeclock_handler.go": {
-          "sha256": "401726d4f1d3ad3c0af595541ab03812250a74b0f3ef978eb0dc8bb238d1d672",
+          "sha256": "300e9033e8513ed7e56da9eaa5e74d78eb29cd7921a945ddb687e34fc3b2f90c",
           "features": [
             "staff-devices-shifts",
             "platform-api"
@@ -4266,7 +4274,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "ba86f9214b35cdf1fd3d64cc83f38ee9873cd9b4aa2d8007339e8196e6e51462",
+          "sha256": "ae03c6e199635845cecc1b53851662dd760ef24049bc0ec3e99aa8859bd4b110",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -12163,10 +12171,10 @@
     },
     "foodypos": {
       "repository": "https://github.com/Foody-isr/pos",
-      "sourceCommit": "d194b75f74700b1952c67a04001583c836a9d12b",
+      "sourceCommit": "750b03d8b22c685d27abc029525605dc1d062b03",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "20cdd7b480f7eb83fa74a7de352e8833e6c8f18fc5a482e5f581a82ee021ae86",
-      "workingTreeHasChanges": false,
+      "sourceSnapshot": "ed09e8529c94a8d06e1513e7fd4e197138483e30d96a8063267c7861c5080a75",
+      "workingTreeHasChanges": true,
       "sourceFiles": {
         "android/app/src/main/kotlin/com/foodypos/app/EpsonPrinterBridge.kt": {
           "sha256": "66b3bda81673c67dc6be3ab588b278303191cd808481d3391037cf6d2d36282b",
@@ -12280,23 +12288,26 @@
           ]
         },
         "lib/core/l10n/app_en.arb": {
-          "sha256": "5d5f374e4ed9ee22b05682835802bcce11c60151596074d1d7ec79e934da8222",
+          "sha256": "de3dc0a79a3e14e3d9d06fb4e0707e4143c2e0e2a08d059ace971090c6ec9a55",
           "features": [
             "pos-behavior",
+            "pos-cash-access-diagnostics",
             "shared-runtime"
           ]
         },
         "lib/core/l10n/app_fr.arb": {
-          "sha256": "2e4dae830bc4067c2192c4d7def323532f7027f18b33f13df3e42010dc1e9faf",
+          "sha256": "305acc10d027f3c4705fb527b52b3f33ea0bcb0d89211173fe7d35bf21af95f0",
           "features": [
             "pos-behavior",
+            "pos-cash-access-diagnostics",
             "shared-runtime"
           ]
         },
         "lib/core/l10n/app_he.arb": {
-          "sha256": "78319a3e95caaf15c0a177633401bdca49598aedbcb97d199da48def4c7f51e8",
+          "sha256": "8f5ef5ca5c543c137eb068366247cb8732d2daf6c5acf21ca0d3514bb7df60cb",
           "features": [
             "pos-behavior",
+            "pos-cash-access-diagnostics",
             "shared-runtime"
           ]
         },
@@ -13208,10 +13219,11 @@
           ]
         },
         "lib/features/more/presentation/cash_drawer_page.dart": {
-          "sha256": "05080c33d9a79f526e7438e1b2412cb830593c2f2867f1b86ac7d6ca5ae1e42f",
+          "sha256": "b7b8a2fddd06137583b98fc9ef57d19007921f6b61e6a6c0761ba8c38937b5d6",
           "features": [
             "staff-devices-shifts",
             "pos-payments",
+            "pos-cash-access-diagnostics",
             "pos-workspace"
           ]
         },
@@ -14937,7 +14949,7 @@
     },
     "foodylanding": {
       "repository": "https://github.com/Foody-isr/landing",
-      "sourceCommit": "54cd8aa5a57b56b22f645a04ff17d6230fb1a574",
+      "sourceCommit": "c6f2cedc78b1fbefe568dff48f8b749912df0490",
       "releaseStatus": "versioned",
       "sourceSnapshot": "0017f89048e20a416bab53c7443a4720bbe088bd715d39dcf9d1a8e67e173251",
       "workingTreeHasChanges": true,
@@ -16439,6 +16451,19 @@
           }
         },
         {
+          "id": "shift-device-access-integrity",
+          "title": {
+            "fr": "Vérifier la liaison entre période de travail et appareil",
+            "en": "Check the shift-to-device access relationship",
+            "he": "בדיקת הקשר בין המשמרת להרשאת המכשיר"
+          },
+          "instructions": {
+            "fr": "Cette protection nécessite l’API compatible déployée ; ce guide ne confirme pas son installation. Une connexion PIN qui reprend une période existante conserve cette période, son heure de début et son autorisation d’appareil d’origine. Se connecter sur un autre POS ou renouveler une autorisation ne transfère ni cette période ni sa caisse.\n\nSi l’autorisation d’origine ne peut plus être vérifiée dans le restaurant, la connexion de vente est refusée sans créer de période de remplacement. Selon la version du POS, l’erreur affichée peut rester générique. Demandez à un responsable de faire vérifier la liaison historique avec l’assistance. Afficher les heures reste un parcours distinct pour consulter votre propre statut ; une consultation réussie ne répare pas la liaison et n’autorise pas une clôture. Si cette consultation échoue aussi, conservez l’état et demandez assistance.\n\nNe supprimez pas les données locales, ne réenrôlez pas l’appareil et ne créez pas une nouvelle période pour contourner le refus. Ne modifiez pas les heures ou l’association d’appareil à l’aveugle : sélectionner une autre autorisation peut masquer un journal de caisse différent. Une erreur de base de données n’est pas une preuve de référence absente. La réparation doit être vérifiée et approuvée séparément, en préservant les heures, les opérations en attente et les journaux d’origine. Elle ne déclenche aucune clôture espèces ni aucun dépôt Verifone automatique.",
+            "en": "This protection requires the compatible API to be deployed; this guide does not confirm installation. PIN sign-in that resumes an existing shift preserves that interval, its start time and its original device authorization. Signing in on another POS or renewing an authorization transfers neither that shift nor its cash drawer.\n\nIf the original authorization can no longer be verified in the restaurant, sales sign-in is refused without creating a replacement shift. Depending on the POS version, the displayed error may remain generic. Ask a manager to have support verify the historical relationship. Show hours remains a separate flow for checking your own status; a successful read neither repairs the relationship nor authorizes cash closure. If that read also fails, preserve the state and ask for assistance.\n\nDo not clear local data, re-enroll the device or create a new shift to bypass the refusal. Do not blindly change hours or device assignments: selecting another authorization can hide a different cash journal. A database error does not prove that a reference is missing. Repair must be verified and approved separately while preserving recorded hours, pending operations and original journals. It never automatically closes cash or starts a Verifone deposit.",
+            "he": "ההגנה דורשת פריסה של API תואם; המדריך אינו מאשר שהגרסה הותקנה. כניסה בקוד שממשיכה משמרת קיימת שומרת את המשמרת, את שעת ההתחלה ואת הרשאת המכשיר המקורית. כניסה מקופה אחרת או חידוש הרשאה אינם מעבירים את המשמרת או את מגירת המזומן שלה.\n\nאם לא ניתן עוד לאמת את ההרשאה המקורית במסעדה, הכניסה למכירות נדחית בלי ליצור משמרת חלופית. בהתאם לגרסת הקופה, ההודעה המוצגת עשויה להישאר כללית. בקשו ממנהל לפנות לתמיכה לבדיקת הקשר ההיסטורי. הצגת שעות נשארת מסלול נפרד לבדיקת המצב האישי; קריאה מוצלחת אינה מתקנת את הקשר ואינה מאשרת סגירת קופה. אם גם הקריאה הזו נכשלת, שמרו על המצב ופנו לעזרה.\n\nאין למחוק נתונים מקומיים, לרשום מחדש את המכשיר או ליצור משמרת חדשה כדי לעקוף את הדחייה. אין לשנות שעות או שיוך מכשיר ללא אימות: בחירה בהרשאה אחרת עלולה להסתיר יומן קופה אחר. שגיאת מסד נתונים אינה הוכחה לכך שהפניה חסרה. התיקון דורש בדיקה ואישור נפרדים תוך שמירה על השעות, הפעולות הממתינות והיומנים המקוריים. הוא אינו סוגר מזומן או מפעיל הפקדת Verifone באופן אוטומטי."
+          }
+        },
+        {
           "id": "cash-report-unconfirmed",
           "level": 2,
           "title": {
@@ -16447,9 +16472,9 @@
             "he": "ניסיון חוזר לקריאת קופה שלא אושרה"
           },
           "instructions": {
-            "fr": "Sur le POS compatible mis à jour, une erreur de lecture ne signifie pas qu’aucune caisse n’est ouverte. Réessayer relit l’état ; les nouvelles opérations espèces restent indisponibles tant que cet état n’est pas confirmé. Conservez l’identité des opérations déjà en attente. Voir [la reprise de lecture de caisse](/fr/help/payments/pos-checkout#cash-report-unconfirmed). Le dépôt du terminal reste séparé.",
-            "en": "On a compatible updated POS, a failed read does not mean that no drawer is open. Retry reads the state again; new cash operations remain unavailable until that state is confirmed. Preserve the identity of already pending operations. See [cash-read recovery](/en/help/payments/pos-checkout#cash-report-unconfirmed). Terminal deposit remains separate.",
-            "he": "בקופה מעודכנת ותואמת, כשל בקריאה אינו אומר שאין קופה פתוחה. ניסיון חוזר קורא שוב את המצב; פעולות מזומן חדשות אינן זמינות עד שהמצב מאושר. שמרו על מזהי הפעולות שכבר ממתינות. ראו [שחזור קריאת הקופה](/he/help/payments/pos-checkout#cash-report-unconfirmed). הפקדת המסוף נשארת נפרדת."
+            "fr": "Ce diagnostic nécessite les versions compatibles du POS et de l’API ; ce guide ne confirme pas leur installation. Une erreur de lecture ne signifie pas qu’aucune caisse n’est ouverte. Le message peut préciser une période ou une connexion à vérifier, une autorisation d’appareil à contrôler, une installation qui ne correspond pas à la période ouverte, ou une vérification temporairement indisponible. Demandez un responsable pour les refus d’accès ; Réessayer relit l’état sans réparer ni déplacer une liaison. Les nouvelles opérations espèces restent indisponibles tant que l’état n’est pas confirmé. Conservez les opérations en attente et les données locales. Voir [la reprise de lecture de caisse](/fr/help/payments/pos-checkout#cash-report-unconfirmed). Le dépôt du terminal reste séparé.",
+            "en": "This diagnostic needs compatible POS and API versions; this guide does not confirm installation. A failed read does not mean that no drawer is open. The message may identify a shift or sign-in to check, device authorization needing review, an installation that does not match the open shift, or temporarily unavailable verification. Ask a manager about access refusals; Retry reads the state without repairing or moving a relationship. New cash operations stay unavailable until the state is confirmed. Preserve pending operations and local data. See [cash-read recovery](/en/help/payments/pos-checkout#cash-report-unconfirmed). Terminal deposit remains separate.",
+            "he": "האבחון דורש גרסאות תואמות של הקופה וה־API; המדריך אינו מאשר שהן הותקנו. כשל בקריאה אינו אומר שאין קופה פתוחה. ההודעה עשויה לציין משמרת או כניסה לבדיקה, הרשאת מכשיר הדורשת בדיקה, התקנה שאינה תואמת למשמרת הפתוחה או אימות שאינו זמין זמנית. פנו למנהל בנוגע לדחיית גישה; ניסיון חוזר קורא את המצב בלי לתקן או להעביר שיוך. פעולות מזומן חדשות נשארות חסומות עד לאישור המצב. שמרו פעולות ממתינות ונתונים מקומיים. ראו [שחזור קריאת הקופה](/he/help/payments/pos-checkout#cash-report-unconfirmed). הפקדת המסוף נשארת נפרדת."
           }
         },
         {
@@ -37649,9 +37674,9 @@
             "he": "ניסיון חוזר לקריאת קופה שלא אושרה"
           },
           "instructions": {
-            "fr": "Sur un POS compatible mis à jour, si Solde en caisse ou Mouvements de caisse indique Impossible de confirmer la caisse, ce n’est pas la confirmation qu’aucune caisse n’est ouverte. Utilisez Réessayer pour relire l’état sur ce même appareil. Tant que la lecture échoue, aucune nouvelle ouverture, entrée/sortie ou clôture n’est autorisée, même si un ancien rapport reste affiché. Après une lecture réussie, les actions reviennent selon l’état confirmé et vos droits.\n\nUne opération déjà en attente suit sa récupération existante avec le même identifiant ; ne la recréez pas et n’effacez pas les données locales. Une session absente doit être confirmée par la réponse métier de l’API, pas déduite d’une erreur de connexion, d’accès ou d’une route introuvable. Réessayer ne crée aucun mouvement d’espèces et ne lance aucun dépôt Verifone.",
-            "en": "On a compatible updated POS, if Cash drawer balance or Cash movements says the drawer could not be confirmed, this does not confirm that no drawer is open. Use Retry to read the state again on the same device. While the read fails, no new opening, cash adjustment or closure is allowed, even if an older report remains displayed. After a successful read, actions return according to the confirmed state and your permissions.\n\nAn already pending operation retains its existing recovery with the same identifier; do not recreate it or erase local data. An absent session must be confirmed by the API’s business response, not inferred from a connection, access or missing-route error. Retry creates no cash movement and starts no Verifone deposit.",
-            "he": "בקופה מעודכנת ותואמת, אם יתרת הקופה או תנועות המזומן מציגים שלא ניתן לאשר את מצב הקופה, אין זה אישור שאין קופה פתוחה. השתמשו בניסיון חוזר לקריאת המצב באותו מכשיר. כל עוד הקריאה נכשלת, אי אפשר לפתוח קופה חדשה, לבצע הכנסת או הוצאת מזומן או לסגור קופה, גם אם דוח ישן עדיין מוצג. לאחר קריאה מוצלחת הפעולות חוזרות בהתאם למצב שאושר ולהרשאות שלכם.\n\nפעולה שכבר ממתינה שומרת על מסלול השחזור הקיים ועל אותו מזהה; אל תיצרו אותה מחדש ואל תמחקו נתונים מקומיים. העובדה שאין קופה פתוחה חייבת להיות מאושרת בתשובה העסקית של ה־API, ולא מוסקת משגיאת חיבור, גישה או נתיב שלא נמצא. ניסיון חוזר אינו יוצר תנועת מזומן ואינו מתחיל הפקדת Verifone."
+            "fr": "Si la lecture de Solde en caisse ou Mouvements de caisse échoue, n’en déduisez pas qu’aucune caisse n’est ouverte. Réessayer relit l’état sur ce même appareil, sans mouvement d’espèces ni dépôt Verifone. Les nouvelles opérations restent indisponibles tant que l’état n’est pas confirmé. Conservez les opérations en attente avec leur identifiant et n’effacez pas les données locales. Les messages précis nécessitent les versions compatibles du POS et de l’API, sans que ce guide confirme leur installation. Voir [le diagnostic d’accès à la caisse](/fr/help/payments/cash-access#cash-access-refusal) pour les refus et leur reprise sûre.",
+            "en": "If Cash drawer balance or Cash movements cannot be read, do not infer that no drawer is open. Retry reads the state on the same device without a cash movement or Verifone deposit. New operations stay unavailable until the state is confirmed. Preserve pending operations with their identifiers and do not erase local data. Specific messages need compatible POS and API versions; this guide does not confirm installation. See [cash-access diagnostics](/en/help/payments/cash-access#cash-access-refusal) for refusals and safe recovery.",
+            "he": "אם קריאת יתרת הקופה או תנועות המזומן נכשלת, אין להסיק שאין קופה פתוחה. ניסיון חוזר קורא את המצב באותו מכשיר בלי תנועת מזומן או הפקדת Verifone. פעולות חדשות נשארות חסומות עד לאישור המצב. שמרו פעולות ממתינות עם המזהים שלהן ואל תמחקו נתונים מקומיים. הודעות מפורטות דורשות גרסאות תואמות של הקופה וה־API, והמדריך אינו מאשר את התקנתן. ראו [אבחון גישה לקופה](/he/help/payments/cash-access#cash-access-refusal) לפירוט הדחיות והמשך בטוח."
           }
         },
         {
@@ -37873,6 +37898,10 @@
         {
           "service": "foodyserver",
           "file": "internal/orders/cash_drawer.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/cash_drawer_context.go"
         },
         {
           "service": "foodyserver",
@@ -38121,6 +38150,93 @@
       ]
     },
     {
+      "id": "pos-cash-access-diagnostics",
+      "module": "payments",
+      "article": "payments/cash-access",
+      "title": {
+        "fr": "Comprendre un refus d’accès à la caisse",
+        "en": "Understand a cash-drawer access refusal",
+        "he": "הבנת דחיית גישה לקופה"
+      },
+      "entry": {
+        "fr": "Sur la caisse concernée, ouvrez Plus → Rapports → Solde en caisse ou Mouvements de caisse. Ce diagnostic nécessite les versions compatibles du POS et de l’API ; ce guide ne confirme pas leur installation.",
+        "en": "On the affected POS, open More → Reports → Cash drawer balance or Cash movements. This diagnostic needs compatible POS and API versions; this guide does not confirm installation.",
+        "he": "בקופה הרלוונטית פתחו עוד ← דוחות ← יתרת קופה או תנועות מזומן. האבחון דורש גרסאות תואמות של הקופה וה־API; המדריך אינו מאשר שהן הותקנו."
+      },
+      "selectors": {
+        "foodyserver": [
+          "internal/orders/cash_drawer_context.go",
+          "internal/orders/cash_drawer_handler.go"
+        ],
+        "foodypos": [
+          "lib/features/more/presentation/cash_drawer_page.dart",
+          "lib/core/l10n/app_en.arb",
+          "lib/core/l10n/app_fr.arb",
+          "lib/core/l10n/app_he.arb"
+        ]
+      },
+      "operations": [
+        {
+          "id": "cash-access-refusal",
+          "level": 2,
+          "title": {
+            "fr": "Vérifier le refus sans remplacer la période ou la caisse",
+            "en": "Review the refusal without replacing the shift or drawer",
+            "he": "בדיקת הדחייה בלי להחליף משמרת או קופה"
+          },
+          "instructions": {
+            "fr": "Si Solde en caisse ou Mouvements de caisse ne peut pas confirmer la caisse, ce n’est pas la confirmation qu’aucune caisse n’est ouverte. Utilisez Réessayer pour relire l’état sur ce même appareil. Tant que la lecture échoue, aucune nouvelle ouverture, entrée/sortie ou clôture n’est autorisée, même si un ancien rapport reste affiché. Après une lecture réussie, les actions reviennent selon l’état confirmé et vos droits.\n\nUn message précis peut demander de vérifier la connexion PIN ou la période ouverte, de faire contrôler l’autorisation de l’appareil, ou de vérifier une installation qui ne correspond pas à la période ouverte. Faites examiner ce lien par un responsable ou l’assistance sans modifier les heures ou les associations à l’aveugle. Ne réenrôlez pas l’appareil et ne créez pas de période ou de caisse de remplacement pour contourner le refus. Le message ne répare aucune liaison et n’identifie pas à lui seul un autre appareil physique. Une vérification temporairement indisponible peut être réessayée ; elle ne prouve ni une panne réseau ni une référence absente. Un ancien POS ou une ancienne API peut encore afficher un message générique.\n\nUne opération déjà en attente suit sa récupération existante avec le même identifiant ; ne la recréez pas et n’effacez pas les données locales. Une session absente doit être confirmée par la réponse métier de l’API, pas déduite d’une erreur de connexion, d’accès ou d’une route introuvable.",
+            "en": "If Cash drawer balance or Cash movements cannot confirm the drawer, this does not confirm that no drawer is open. Use Retry to read the state again on the same device. While the read fails, no new opening, cash adjustment or closure is allowed, even if an older report remains displayed. After a successful read, actions return according to the confirmed state and your permissions.\n\nA specific message may ask you to check the PIN sign-in or open shift, have the device authorization reviewed, or verify an installation that does not match the open shift. Have a manager or support examine this relationship without blindly changing hours or assignments. Do not re-enroll the device or create a replacement shift or drawer to bypass the refusal. The message repairs no relationship and does not by itself identify another physical device. Temporarily unavailable verification can be retried; it proves neither a network outage nor a missing reference. An older POS or API may still display a generic message.\n\nAn already pending operation retains its existing recovery with the same identifier; do not recreate it or erase local data. An absent session must be confirmed by the API’s business response, not inferred from a connection, access or missing-route error.",
+            "he": "אם יתרת הקופה או תנועות המזומן אינן יכולות לאשר את מצב הקופה, אין זה אישור שאין קופה פתוחה. השתמשו בניסיון חוזר לקריאת המצב באותו מכשיר. כל עוד הקריאה נכשלת, אי אפשר לפתוח קופה חדשה, לבצע הכנסת או הוצאת מזומן או לסגור קופה, גם אם דוח ישן עדיין מוצג. לאחר קריאה מוצלחת הפעולות חוזרות בהתאם למצב שאושר ולהרשאות שלכם.\n\nהודעה מפורטת עשויה לבקש לבדוק את הכניסה בקוד או את המשמרת הפתוחה, לבדוק את הרשאת המכשיר או לבדוק התקנה שאינה תואמת למשמרת הפתוחה. בקשו ממנהל או מהתמיכה לבדוק את השיוך בלי לשנות שעות או שיוכים ללא אימות. אין לרשום מחדש את המכשיר או ליצור משמרת או קופה חלופית כדי לעקוף את הדחייה. ההודעה אינה מתקנת שיוך ואינה מזהה לבדה מכשיר פיזי אחר. ניתן לנסות שוב אימות שאינו זמין זמנית; הוא אינו מוכיח תקלה ברשת או הפניה חסרה. קופה או API בגרסה ישנה עשויים עדיין להציג הודעה כללית.\n\nפעולה שכבר ממתינה שומרת על מסלול השחזור הקיים ועל אותו מזהה; אל תיצרו אותה מחדש ואל תמחקו נתונים מקומיים. העובדה שאין קופה פתוחה חייבת להיות מאושרת בתשובה העסקית של ה־API, ולא מוסקת משגיאת חיבור, גישה או נתיב שלא נמצא."
+          }
+        },
+        {
+          "id": "cash-versus-terminal",
+          "level": 2,
+          "title": {
+            "fr": "Distinguer la caisse espèces du terminal Verifone",
+            "en": "Keep physical cash and the Verifone terminal separate",
+            "he": "הפרדה בין קופת המזומן למסוף Verifone"
+          },
+          "instructions": {
+            "fr": "Réessayer ne crée aucun mouvement d’espèces et ne lance aucun dépôt Verifone. Solde en caisse a besoin d’accéder à l’API Foody, pas d’un Victa Mini connecté. Les paiements carte et les opérations envoyées au terminal suivent leur propre connexion et restent séparés. Ce rapport n’inclut pas les cartes : la clôture espèces ne lance pas le dépôt Verifone, et le dépôt Verifone ne clôture pas les espèces. N’utilisez pas un ajustement espèces pour masquer un remboursement carte.",
+            "en": "Retry creates no cash movement and starts no Verifone deposit. Cash drawer balance needs access to the Foody API, not a connected Victa Mini. Card payments and operations sent to the terminal use their own connection and remain separate. Cards are excluded: closing cash does not start a Verifone deposit, and a Verifone deposit does not close cash. Never use a cash adjustment to disguise a card refund.",
+            "he": "ניסיון חוזר אינו יוצר תנועת מזומן ואינו מתחיל הפקדת Verifone. יתרת הקופה דורשת גישה ל־API של Foody ולא חיבור ל־Victa Mini. תשלומי כרטיס ופעולות הנשלחות למסוף משתמשים בחיבור נפרד ונשארים נפרדים. כרטיסים אינם כלולים: סגירת מזומן אינה מפעילה הפקדת Verifone והפקדת Verifone אינה סוגרת מזומן. אין להסוות זיכוי לכרטיס באמצעות התאמת מזומן."
+          }
+        }
+      ],
+      "audience": "public",
+      "status": "local-release-unverified",
+      "preserveExisting": false,
+      "procedureUpdatedAt": "2026-10-27",
+      "evidence": [
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/cash_drawer_context.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/cash_drawer_handler.go"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/core/l10n/app_en.arb"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/core/l10n/app_fr.arb"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/core/l10n/app_he.arb"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/more/presentation/cash_drawer_page.dart"
+        }
+      ]
+    },
+    {
       "id": "pos-workspace",
       "module": "settings",
       "article": "settings/pos-workspace",
@@ -38178,9 +38294,9 @@
             "he": "ניסיון חוזר לקריאת קופה שלא אושרה"
           },
           "instructions": {
-            "fr": "Sur le POS compatible mis à jour, une erreur de lecture ne signifie pas qu’aucune caisse n’est ouverte. Réessayer relit l’état ; les nouvelles opérations espèces restent indisponibles tant que cet état n’est pas confirmé. Conservez l’identité des opérations déjà en attente. Voir [la reprise de lecture de caisse](/fr/help/payments/pos-checkout#cash-report-unconfirmed). Le dépôt du terminal reste séparé.",
-            "en": "On a compatible updated POS, a failed read does not mean that no drawer is open. Retry reads the state again; new cash operations remain unavailable until that state is confirmed. Preserve the identity of already pending operations. See [cash-read recovery](/en/help/payments/pos-checkout#cash-report-unconfirmed). Terminal deposit remains separate.",
-            "he": "בקופה מעודכנת ותואמת, כשל בקריאה אינו אומר שאין קופה פתוחה. ניסיון חוזר קורא שוב את המצב; פעולות מזומן חדשות אינן זמינות עד שהמצב מאושר. שמרו על מזהי הפעולות שכבר ממתינות. ראו [שחזור קריאת הקופה](/he/help/payments/pos-checkout#cash-report-unconfirmed). הפקדת המסוף נשארת נפרדת."
+            "fr": "Ce diagnostic nécessite les versions compatibles du POS et de l’API ; ce guide ne confirme pas leur installation. Une erreur de lecture ne signifie pas qu’aucune caisse n’est ouverte. Le message peut préciser une période ou une connexion à vérifier, une autorisation d’appareil à contrôler, une installation qui ne correspond pas à la période ouverte, ou une vérification temporairement indisponible. Demandez un responsable pour les refus d’accès ; Réessayer relit l’état sans réparer ni déplacer une liaison. Les nouvelles opérations espèces restent indisponibles tant que l’état n’est pas confirmé. Conservez les opérations en attente et les données locales. Voir [la reprise de lecture de caisse](/fr/help/payments/pos-checkout#cash-report-unconfirmed). Le dépôt du terminal reste séparé.",
+            "en": "This diagnostic needs compatible POS and API versions; this guide does not confirm installation. A failed read does not mean that no drawer is open. The message may identify a shift or sign-in to check, device authorization needing review, an installation that does not match the open shift, or temporarily unavailable verification. Ask a manager about access refusals; Retry reads the state without repairing or moving a relationship. New cash operations stay unavailable until the state is confirmed. Preserve pending operations and local data. See [cash-read recovery](/en/help/payments/pos-checkout#cash-report-unconfirmed). Terminal deposit remains separate.",
+            "he": "האבחון דורש גרסאות תואמות של הקופה וה־API; המדריך אינו מאשר שהן הותקנו. כשל בקריאה אינו אומר שאין קופה פתוחה. ההודעה עשויה לציין משמרת או כניסה לבדיקה, הרשאת מכשיר הדורשת בדיקה, התקנה שאינה תואמת למשמרת הפתוחה או אימות שאינו זמין זמנית. פנו למנהל בנוגע לדחיית גישה; ניסיון חוזר קורא את המצב בלי לתקן או להעביר שיוך. פעולות מזומן חדשות נשארות חסומות עד לאישור המצב. שמרו פעולות ממתינות ונתונים מקומיים. ראו [שחזור קריאת הקופה](/he/help/payments/pos-checkout#cash-report-unconfirmed). הפקדת המסוף נשארת נפרדת."
           }
         },
         {
@@ -85177,6 +85293,7 @@
       "features": [
         "staff-devices-shifts",
         "pos-payments",
+        "pos-cash-access-diagnostics",
         "pos-workspace"
       ],
       "kind": "flutter-route",
@@ -85194,6 +85311,7 @@
       "features": [
         "staff-devices-shifts",
         "pos-payments",
+        "pos-cash-access-diagnostics",
         "pos-workspace"
       ],
       "kind": "flutter-route",
@@ -90000,9 +90118,9 @@
   ],
   "coverage": {
     "sharedRuntimeFiles": 411,
-    "features": 100,
-    "operations": 720,
-    "sourceFiles": 2193,
+    "features": 101,
+    "operations": 723,
+    "sourceFiles": 2194,
     "surfaces": 2047,
     "unclassifiedRoutes": []
   }
