@@ -1,8 +1,22 @@
 {
   "schemaVersion": 1,
   "repository": "Foody-isr/admin",
-  "ref": "6e42a495d107d9ba868cb92b6b0a868747ece14f",
+  "ref": "9a62da59c1877cf083d763142bb1ac12430ccc87",
   "observations": [
+    {
+      "id": "table-session-clock-hint-source-contract",
+      "source": "src/lib/i18n.tsx",
+      "required": [
+        "La durée est calculée depuis le début de la session de table.",
+        "Time is measured from the start of the table session.",
+        "הזמן נמדד מתחילת מפגש השולחן."
+      ],
+      "forbidden": [
+        "La durée est calculée depuis la création de la commande active, et non depuis l’ouverture de la table.",
+        "Time is measured from creation of the active order, not from opening the table.",
+        "הזמן נמדד מיצירת ההזמנה הפעילה, ולא מפתיחת השולחן."
+      ]
+    },
     {
       "id": "items-library",
       "source": "src/app/[restaurantId]/menu/items/page.tsx",
@@ -206,6 +220,28 @@
     }
   ],
   "guides": [
+    {
+      "article": "tables-floors/floor-plans",
+      "required": {
+        "fr": [
+          "service-time-and-state",
+          "La durée affichée sur le plan et dans la liste des additions provient du début de la session de table"
+        ],
+        "en": [
+          "service-time-and-state",
+          "The duration on the floor plan and checks list starts with the table session"
+        ],
+        "he": [
+          "service-time-and-state",
+          "המשך המוצג במפת המסעדה וברשימת החשבונות מתחיל במפגש השולחן"
+        ]
+      },
+      "forbidden": {
+        "fr": [],
+        "en": [],
+        "he": []
+      }
+    },
     {
       "article": "menu/categories-and-items",
       "required": {

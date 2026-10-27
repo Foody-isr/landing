@@ -5,7 +5,7 @@ apps: foodypos
 tags:
   - orders
   - pos-courses
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-27'
 featureId: pos-courses
 audience: public
 releaseStatus: available
@@ -27,6 +27,8 @@ Mettre un service en attente ou l’envoyer change le rythme de préparation, pa
 ## Affecter couverts et services
 
 Avant envoi, affectez les articles à Table ou aux convives et choisissez leur service. Vérifiez ordre et options obligatoires. Une affectation financière ultérieure ne réécrit pas les couverts déjà envoyés en cuisine. La gestion des services doit être activée dans le mode partagé attribué à l’appareil ; l’iPad n’a pas un interrupteur indépendant. Lors du premier choix sur place, le panier vide démarre au premier service ; un choix explicite Envoi immédiat n’est pas réinitialisé par une nouvelle confirmation du même mode ou par l’actualisation des réglages. Les articles dont la catégorie interne de bibliothèque est configurée en envoi immédiat rejoignent Envoi immédiat ; les groupes d’affichage du menu ne pilotent pas ce classement. Envoyer reste nécessaire : ajouter un plat ne le lance et ne l’imprime jamais automatiquement. L’actualisation conserve les services sélectionnés et attentes encore valides. Désactiver la gestion des services cesse de les affecter aux nouveaux articles, sans réécrire l’historique cuisine enregistré. Après une remise à zéro confirmée, la prochaine addition reçoit son propre service initial et n’hérite ni des attentes ni des lancements en cours de la précédente.
+
+Avec les versions compatibles de l’API et du POS, l’édition des places d’un article enregistré suit le même mode affecté à l’appareil que l’envoi initial. Le mode Places facultatives permet Table ; le mode Places obligatoires exige une place numérotée lorsque des couverts sont définis. Vérifiez le mode affecté puis actualisez ses réglages si le choix est refusé. Gardez l’article dans son éditeur et rouvrez la bonne addition si le service a changé ; ne renvoyez pas le plat pour corriger sa place. Le correctif API doit être publié avant le POS qui transmet ce contexte : mettre à jour l’un seul ne garantit pas ce comportement.
 
 <span id="release" />
 

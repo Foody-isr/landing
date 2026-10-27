@@ -5,7 +5,7 @@ apps: foodypos
 tags:
   - orders
   - pos-courses
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-27'
 featureId: pos-courses
 audience: public
 releaseStatus: available
@@ -27,6 +27,8 @@ Holding or firing a course changes kitchen timing, not payment status. A table m
 ## Assign seats and courses
 
 Before sending, assign items to Table or selected guests and choose their course. Check course order and required item options. Financial seat allocation can later change without rewriting already-sent kitchen seating. Course management must be enabled in the device’s assigned shared mode; there is no independent iPad override. With a newly selected onsite method, the first course starts the empty draft; an explicit Immediate send choice is not reset by confirming the same method or refreshing settings. Items whose internal library category is configured for immediate sending enter Immediate send; menu display groups do not define this routing. Send is still required: adding an item never fires or prints it automatically. Refresh retains selected courses and holds that remain valid. Disabling course management stops assigning courses to new items; saved kitchen history is not rewritten. After a confirmed reset, the next check gets its own initial course and does not inherit holds or pending fires from the previous check.
+
+With compatible API and POS versions, editing a saved item’s places follows the same device-assigned mode as the initial send. Optional seats permits Table; Required seats requires a numbered place when covers are defined. Check the assigned mode and refresh its settings if the choice is rejected. Keep the item in its editor and reopen the correct check if the service has changed; do not resend food to correct its place. The API correction must be released before the POS that supplies this context: updating only one side does not guarantee this behavior.
 
 <span id="release" />
 

@@ -8,6 +8,34 @@ base. `docs/help/catalog/features.json` is the authored feature/procedure source
 Internal operator procedures render separately to `docs/help/internal` and never
 enter public browsing, search or the AI corpus.
 
+## Table-session clock hint review (27 October 2026)
+
+Admin source commit `9a62da59c1877cf083d763142bb1ac12430ccc87` corrects only
+the French, Hebrew and English `tableSettingsClockHint` values. The visible hint
+now describes time measured from the start of the table session. No timer,
+threshold, save, permission, table state or recovery logic changes. The existing
+`tables-floors/floor-plans#service-time-and-state` procedure already states this
+rule in all three languages; its content and article dates remain unchanged.
+The public corpus stays byte-identical at revision
+`1d59a10a6f3e4ccbf456d993fc6e8300e41b223f469a759a97ff02e0144a4b62`.
+
+The new `table-session-clock-hint-source-contract` UI-evidence entry is a
+declarative source assertion, not a live browser observation of the corrected
+copy. It checks the three values and their agreement with the existing guide.
+The Admin source validation does not by itself prove deployed browser acceptance.
+The scoped Admin review exempts only the eight other public features classified
+on the shared translation file, whose strings and procedures are unchanged; it
+does not claim that the visible hint was unchanged.
+
+Refresh only the Admin translation hash, its source snapshot and immutable source
+commit in the inventory. All non-Admin service blocks and all source surfaces
+retain their exact evidence from Landing develop
+`7cca8a9cf959c29210ad621f1a373bafd9b0f64a`; they are not revalidated here.
+Pin the reviewed metadata-only Landing commit in Admin before remote CI. No API
+or POS contract, support-corpus update, rebuild or redeployment is needed for this
+copy correction. Verify the Admin develop artifact before promoting that same
+artifact; confirm the corrected text in the authenticated browser separately.
+
 ## Required change workflow
 
 1. Read the closest service instructions and locate the feature and source evidence
@@ -392,6 +420,33 @@ candidate is installed. Reading the physical cash report needs the Foody API,
 not a connected Victa Mini; operations sent to a card terminal remain separate.
 Source and synthetic tests do not certify a physical installation match, a
 financial operation or recovery of historical production data.
+
+## Local POS flow follow-up (27 October 2026)
+
+This preparation reviews API, POS and Landing only. Preserve Admin, guest Web
+and Backoffice service blocks and source surfaces exactly from Landing develop
+`e64f385a51bb0adf87e62fbdcc0cbb485e4d6a91`, including the product-gallery and
+stock-unit evidence integrated after the previous release. Those services are
+not revalidated here.
+
+The procedures cover restaurant-scoped screen selection, saved-item places under
+the assigned POS mode, terminal-report confirmations bound to their original
+context, and explicit verification after an uncertain staff clock-out response.
+Clearing a screen selection does not delete or move persisted checks. A context
+change does not cancel an already transmitted terminal command. Personal shift
+verification changes no cash journal and never treats an unavailable response as
+proof of absence. Keep all FR/HE/EN instructions qualified by compatible versions.
+
+From Save check, New check followed by Custom check opens the name form directly;
+the separate Open tickets flow retains its predefined groups. Back preserves the
+source basket. Staff POS customer details remain optional; guest delivery has its
+own validation contract. These changes add no financial operation or address rule.
+
+Release the effective saved-seat policy in the API before the POS that supplies
+its installation context. Refresh source evidence, export the public corpus and
+copy it into API only after the product sources are frozen. Immutable service
+pins, complete validation and coordinated publication remain required. Synthetic
+regressions do not certify physical iPad, mobile terminal, payment or deposit flows.
 ## Product photo gallery preparation (27 October 2026)
 
 This isolated preparation reviews API, Admin, Web and Landing from develop.
@@ -421,3 +476,19 @@ revalidated. API and Admin contracts pin the immutable documentation commit for
 remote CI. Deploy and verify the API before Admin in development, then promote
 the same verified artifacts to production. Publish the reviewed guides with this
 rollout; release synchronization to main only records the promoted history.
+
+## Stock editor viewport correction (27 October 2026)
+
+This review changes only the Admin availability presentation: a centered,
+viewport-bounded dialog replaces the small anchored panel. Its content scrolls
+independently of the persistent heading and Apply/Cancel actions; per-size fields
+use two columns where space permits. Stock conversion, reservations, permissions
+and write timing retain their existing contracts. FR/HE/EN procedures describe
+the new layout. Publish them with the compatible Admin after development checks.
+
+Only Admin, API support-corpus and Landing evidence is refreshed. Web, POS and
+Backoffice inventory blocks and surfaces retain their exact Landing develop
+baseline from `37bba41c177ac677f79b6e175a520b655c45e5be` and are not revalidated here. The API change synchronizes
+the documentation corpus only; no stock endpoint, schema or data is changed.
+Pin the immutable documentation commit, validate each affected service and
+promote the verified development artifacts under the shared release rules.

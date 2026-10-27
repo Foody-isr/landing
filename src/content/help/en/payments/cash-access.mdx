@@ -32,3 +32,9 @@ An already pending operation retains its existing recovery with the same identif
 ## Keep physical cash and the Verifone terminal separate
 
 Retry creates no cash movement and starts no Verifone deposit. Cash drawer balance needs access to the Foody API, not a connected Victa Mini. Card payments and operations sent to the terminal use their own connection and remain separate. Cards are excluded: closing cash does not start a Verifone deposit, and a Verifone deposit does not close cash. Never use a cash adjustment to disguise a card refund.
+
+<span id="terminal-report-context" />
+
+## Reconfirm the context before a terminal deposit
+
+On a compatible POS, a Terminal deposits confirmation belongs to the restaurant, staff sign-in and terminal configuration shown when it opened. If any changes before confirmation, the old dialog must not launch an action in the new context. Reopen Terminal deposits, check the terminal and its available capabilities, then explicitly confirm the intended action. Old results are not a confirmed state for the new context. If a command had already been transmitted, changing screens or restaurants does not cancel it: check the original terminal or provider before repeating anything and preserve pending operations. This protection closes neither physical cash nor the staff period and does not certify a physical deposit on a particular device.
