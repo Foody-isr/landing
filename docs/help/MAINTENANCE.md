@@ -405,3 +405,19 @@ API, Admin and Web contracts pin the immutable reviewed Landing commit before
 remote CI. Verify the coordinated development deployments before promoting the
 same artifacts to production. Verification uses synthetic data and read-only
 public checks; it does not run a real order, payment or cash operation.
+
+
+### Local stock-unit restoration (27 October 2026)
+
+This preparation restores the series product's stock editor and measured entry
+for shared or per-size allowances. API mode changes atomically rebase existing held and released reservations using
+the ordered size snapshots, reconcile old commitments, and journal the conversion.
+A stale revision, concurrent writer or unverifiable historical allocation aborts
+the entire change. No schema migration is required; deploy the API before Admin. Publish the FR/HE/EN guides with the matching Admin
+release; the public search export and API embedded support corpus must match.
+Only Admin, the API and Landing sources are refreshed in this review.
+Other service inventory entries retain the previous Landing evidence and are not
+revalidated. API and Admin contracts pin the immutable documentation commit for
+remote CI. Deploy and verify the API before Admin in development, then promote
+the same verified artifacts to production. Publish the reviewed guides with this
+rollout; release synchronization to main only records the promoted history.
