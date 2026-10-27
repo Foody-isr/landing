@@ -101,7 +101,9 @@
           "lib/features/auth/presentation/staff_timeclock_page.dart",
           "lib/features/auth/data/staff_timeclock_repository.dart",
           "lib/services/network/api_service.dart",
-          "lib/features/more/presentation/cash_drawer_page.dart"
+          "lib/features/more/presentation/cash_drawer_page.dart",
+          "lib/features/auth/data/auth_repository.dart",
+          "lib/features/auth/providers/auth_state_notifier.dart"
         ]
       }
     },
@@ -597,6 +599,7 @@
           "lib/features/orders/domain/pos_fulfillment_flow.dart",
           "lib/features/orders/presentation/dine_in_destination_dialog.dart",
           "lib/features/orders/presentation/new_ticket_dialog.dart",
+          "lib/features/orders/presentation/save_check_dialog.dart",
           "lib/features/orders/presentation/open_tickets_page.dart",
           "lib/features/orders/data/open_ticket_repository.dart",
           "lib/features/orders/presentation/widgets/fulfillment_customer_dialog.dart",
@@ -1298,11 +1301,13 @@
         "foodypos": [
           "lib/features/orders/presentation/widgets/check_courses.dart",
           "lib/features/orders/providers/course_providers.dart",
-          "lib/features/orders/domain/check_course_groups.dart"
+          "lib/features/orders/domain/check_course_groups.dart",
+          "lib/features/orders/data/check_repository.dart"
         ],
         "foodyserver": [
           "internal/orders/kitchen*.go",
-          "internal/orders/financial*.go"
+          "internal/orders/financial*.go",
+          "internal/orders/full_service.go"
         ]
       }
     },
@@ -1374,7 +1379,8 @@
           "lib/features/more/presentation/cash_drawer_page.dart",
           "lib/core/l10n/app_en.arb",
           "lib/core/l10n/app_fr.arb",
-          "lib/core/l10n/app_he.arb"
+          "lib/core/l10n/app_he.arb",
+          "lib/features/settings/presentation/terminal_reports_page.dart"
         ]
       }
     },
@@ -1386,7 +1392,10 @@
         "foodypos": [
           "lib/features/home/**",
           "lib/features/more/**",
-          "lib/features/settings/**"
+          "lib/features/settings/**",
+          "lib/features/tables/providers/table_providers.dart",
+          "lib/features/tables/providers/seating_providers.dart",
+          "lib/features/orders/providers/order_providers.dart"
         ]
       }
     },

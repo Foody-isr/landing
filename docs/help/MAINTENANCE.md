@@ -392,6 +392,33 @@ candidate is installed. Reading the physical cash report needs the Foody API,
 not a connected Victa Mini; operations sent to a card terminal remain separate.
 Source and synthetic tests do not certify a physical installation match, a
 financial operation or recovery of historical production data.
+
+## Local POS flow follow-up (27 October 2026)
+
+This preparation reviews API, POS and Landing only. Preserve Admin, guest Web
+and Backoffice service blocks and source surfaces exactly from Landing develop
+`e64f385a51bb0adf87e62fbdcc0cbb485e4d6a91`, including the product-gallery and
+stock-unit evidence integrated after the previous release. Those services are
+not revalidated here.
+
+The procedures cover restaurant-scoped screen selection, saved-item places under
+the assigned POS mode, terminal-report confirmations bound to their original
+context, and explicit verification after an uncertain staff clock-out response.
+Clearing a screen selection does not delete or move persisted checks. A context
+change does not cancel an already transmitted terminal command. Personal shift
+verification changes no cash journal and never treats an unavailable response as
+proof of absence. Keep all FR/HE/EN instructions qualified by compatible versions.
+
+From Save check, New check followed by Custom check opens the name form directly;
+the separate Open tickets flow retains its predefined groups. Back preserves the
+source basket. Staff POS customer details remain optional; guest delivery has its
+own validation contract. These changes add no financial operation or address rule.
+
+Release the effective saved-seat policy in the API before the POS that supplies
+its installation context. Refresh source evidence, export the public corpus and
+copy it into API only after the product sources are frozen. Immutable service
+pins, complete validation and coordinated publication remain required. Synthetic
+regressions do not certify physical iPad, mobile terminal, payment or deposit flows.
 ## Product photo gallery preparation (27 October 2026)
 
 This isolated preparation reviews API, Admin, Web and Landing from develop.

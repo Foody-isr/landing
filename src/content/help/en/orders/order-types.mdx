@@ -9,7 +9,7 @@ tags:
   - pickup
   - delivery
   - scheduled
-updatedAt: '2026-10-26'
+updatedAt: '2026-10-27'
 featureId: order-types
 audience: public
 releaseStatus: available
@@ -104,7 +104,7 @@ An item configured with repeated positions requires one separate choice per posi
 
 ## Open a dine-in check without a table
 
-Requires compatible API/POS versions, orders.manage and open checks enabled for this POS mode. Select Dine-In for a new unassigned sale; this does not yet open a table or check. Complete any customer prompt and enter the items. At Send/Continue, Save check → New check → Custom check lets you name an onsite check without a physical table. Alternatively select a configured naming group and an available name; choosing the name creates the check. A custom name needs Save. The explicit Send then continues once with the fresh lines. A destination change during Pay does not automatically collect money: review and initiate payment explicitly. Cancel preserves the source basket. You can also create the empty check first from Actions → Open tickets → New ticket, select Dine-In, then choose its group/name or custom name. This is real onsite consumption, not renamed pickup. Further sends keep one bill and create separate kitchen batches. Payment, preparation and closing remain separate; close only with no unsent items or unpaid live batches. Saved orders remain in Orders on POS and Admin. No artificial table/session, covers or numbered seats are created. Financial splitting or moving this named check to a table is not supported here. An uncertain creation keeps its request identity: Retry the same request instead of creating another check.
+Requires compatible API/POS versions, orders.manage and open checks enabled for this POS mode. Select Dine-In for a new unassigned sale; this does not yet open a table or check. Complete any customer prompt and enter the items. At Send/Continue, choose Save check → New check → Custom check once: the name form opens directly, including when predefined names are enabled without a configured group. Enter the name, then Save. Back returns to destination selection without creating a check and preserves the source basket. The explicit Send then continues once with the fresh lines. A destination change during Pay does not automatically collect money: review and initiate payment explicitly. Cancel preserves the source basket. You can also create the empty check first from Actions → Open tickets → New ticket, select Dine-In, then choose its group/name or custom name. This standalone flow retains configured groups and available names: choosing a name creates the check, while a custom name needs Save. This is real onsite consumption, not renamed pickup. Further sends keep one bill and create separate kitchen batches. Payment, preparation and closing remain separate; close only with no unsent items or unpaid live batches. Saved orders remain in Orders on POS and Admin. No artificial table/session, covers or numbered seats are created. Financial splitting or moving this named check to a table is not supported here. An uncertain creation keeps its request identity: Retry the same request instead of creating another check.
 
 <span id="pos-whole-check" />
 
@@ -122,7 +122,7 @@ On compatible API/POS versions, turn off the staff fulfillment prompt and keep t
 
 ## Give one item a different preparation instruction
 
-In the item sheet's **Options → Fulfillment methods**, choose an enabled method and confirm the item with **Done**. For example, an item marked takeaway in a dine-in check indicates how that item should be prepared or packed; it does not move the check away from its table. Selecting Delivery on one line does not create another delivery, recipient, address, charge or courier task. Use a separate delivery order with the required delivery details when goods must actually go to another destination. The available methods are restaurant-wide; there is no separate matrix of allowed item choices for each parent service. These choices do not change printer assignments or category rules: verify [printer routing](/en/help/printers/profiles-and-routing) separately.
+In the item sheet's **Options → Fulfillment methods**, choose an enabled method and confirm the item with **Done**. For example, an item marked takeaway in a dine-in check indicates how that item should be prepared or packed; it does not move the check away from its table. Selecting Delivery on one line does not create another delivery, recipient, address, charge or courier task. Use a separate Delivery order when goods must actually go to another destination. Staff POS customer name/phone remain optional; this form does not require a street/city address. Guest online ordering retains its own delivery validation. The available methods are restaurant-wide; there is no separate matrix of allowed item choices for each parent service. These choices do not change printer assignments or category rules: verify [printer routing](/en/help/printers/profiles-and-routing) separately.
 
 <span id="pos-change-draft" />
 
