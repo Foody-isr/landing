@@ -14,7 +14,7 @@ tags:
   - web
   - qr
   - pos
-updatedAt: '2026-10-26'
+updatedAt: '2026-10-27'
 featureId: orders-managing-orders
 audience: public
 releaseStatus: available
@@ -74,13 +74,12 @@ the kitchen.
 
 ## Order flow
 
-1. **Placed** — a paid web/QR order, or a POS order, arrives.
-2. **Accepted** — you accept it (or it auto-accepts, depending on your workflow settings).
-3. **In kitchen** — sent to preparation; a kitchen ticket can print automatically.
-4. **Ready / Completed** — handed to the customer.
+1. The order is saved; visibility and acceptance depend on its channel and payment policy.
+2. Acceptance and kitchen dispatch follow the configured workflow. A send can print a ticket according to the printer profile.
+3. Preparation progresses by batch or station; one ready batch does not make every other batch ready.
+4. Service, pickup or delivery is confirmed separately.
 
-> Tip: workflow behavior (auto-accept, auto-send-to-kitchen, auto-print) is configured in
-> **Settings**. See [Workflow settings](/en/help/settings/workflow-settings).
+Payment is tracked separately and may precede preparation. See [workflow settings](/en/help/settings/workflow-settings).
 
 <span id="section-4" />
 
@@ -195,3 +194,9 @@ If the customer uses a different WhatsApp number, open Clients → their profile
 For a restaurant configured for weekly batches, open **Home** or **Orders** using the **Série** date basis. The current batch is selected by default even without orders; its totals then stay at zero. It advances after the previous batch’s final fulfillment day in the restaurant timezone, without waiting for the first order or for ordering to open. An open page follows this change on the next automatic refresh (about one minute) or when you return to the tab.
 
 You can select an older service in the calendar; that selection stays in place while the page is open. An order for a later week does not replace the current batch as the default. A payment-attention link keeps its explicit period. If the date looks incorrect, check the configured fulfillment days and restaurant timezone, then reload. Rollover does not create an order or publish a menu.
+
+<span id="order-lifecycle-guide" />
+
+## Separate payment from preparation and handoff
+
+See [check, payment, preparation and handoff](/en/help/orders/payment-preparation-and-handoff).

@@ -7,7 +7,7 @@ apps: foodypos
 tags:
   - payments
   - pos-cash-access-diagnostics
-updatedAt: '2026-10-27'
+updatedAt: '2026-10-28'
 featureId: pos-cash-access-diagnostics
 audience: public
 releaseStatus: local-release-unverified
@@ -26,6 +26,8 @@ If Cash drawer balance or Cash movements cannot confirm the drawer, this does no
 A specific message may ask you to check the PIN sign-in or open shift, have the device authorization reviewed, or verify an installation that does not match the open shift. Have a manager or support examine this relationship without blindly changing hours or assignments. Do not re-enroll the device or create a replacement shift or drawer to bypass the refusal. The message repairs no relationship and does not by itself identify another physical device. Temporarily unavailable verification can be retried; it proves neither a network outage nor a missing reference. An older POS or API may still display a generic message.
 
 An already pending operation retains its existing recovery with the same identifier; do not recreate it or erase local data. An absent session must be confirmed by the API’s business response, not inferred from a connection, access or missing-route error.
+
+Ending your period and current cash access remain separate checks. An expired or revoked historical authorization that is still found may permit shift end when its drawer is closed, without restoring cash controls. Sign out verifies the period before confirmation; a missing or foreign reference or failed read cannot bypass this check. If no active period is confirmed, [locking requires its own confirmation](/en/help/staff/devices-and-shifts#no-active-shift-sign-out), without another clock-out or drawer closure.
 
 <span id="cash-versus-terminal" />
 

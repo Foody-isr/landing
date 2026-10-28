@@ -34,7 +34,9 @@ Avec les versions compatibles de l’API et du POS, l’édition des places d’
 
 ## Mettre en attente ou lancer un service
 
-Vérifiez le service en attente puis Lancez les plats éligibles. Une unité physique part une seule fois même si son prix est partagé. Actualisez après une réponse incertaine au lieu de recréer la vente. Un ancien lot partagé peut bloquer un envoi partiel.
+Vérifiez le service en attente puis Lancez les plats éligibles. Une unité physique part une seule fois même si son prix est partagé. Actualisez après une réponse incertaine au lieu de recréer la vente. Un ancien lot partagé peut bloquer un envoi partiel. Avec la capacité correspondante sur l’API et la caisse, des plats déjà engagés et retenus peuvent encore être lancés après paiement de leur addition. Cette action ne rouvre pas l’addition, ne réoccupe pas une table libérée et ne modifie aucun encaissement. Une autorisation, un paiement en cours ou un remboursement peut rendre le lancement indisponible : vérifiez l’état affiché au lieu de créer une nouvelle vente.
+
+Après une fusion d’additions, ouvrez et vérifiez l’ensemble de l’addition résultante avant de confirmer le lancement. Un ancien lot ne doit pas lancer silencieusement les plats d’autres additions ; le prix partagé ne multiplie pas les quantités physiques.
 
 <span id="repeat" />
 

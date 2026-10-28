@@ -635,3 +635,101 @@ matching embedded support corpus with the compatible UI. Pin immutable Admin and
 Landing source references before remote CI. Validate and deploy API before Admin,
 then promote the exact verified development artifacts under the authorized release
 workflow. Synthetic regressions never mutate real restaurant stock or orders.
+
+### Local order lifecycle alignment (27 October 2026)
+
+This local preparation refreshes the API, Admin, guest Web, POS and Landing
+source evidence for independent order lifecycle facts and durable unsent POS
+drafts. Backoffice service metadata and surfaces are retained exactly from the
+previous inventory: they are historical evidence, not a fresh Backoffice runtime
+validation. Feature evidence is rebuilt from the combined source inventory.
+The retained Backoffice source commit is `8b4929d31bc4aaa9b85e4effa74192476b9e2624`
+with source snapshot `bfcc994d8c35d3e174520b4c2e225b6376561c51cd00770aaeada3067f02d441`.
+The scan uses an isolated detached checkout of that baseline; it does not read
+private or untracked files in the primary Backoffice checkout. Its original service
+block and surfaces are restored byte-for-byte before rebuilding combined feature
+evidence and coverage.
+
+The six remaining audit priorities are retained in the internal API alignment
+reference. Earlier physical passes do not accept this later source. Only an iPad
+is currently available; physical phone/Portable and Verifone acceptance remain
+separate. Cash access requires resolving the original owned shift/authorization
+context; no automatic rebind, attendance rewrite or cash mutation is implied.
+
+Local contracts may use WORKSPACE while preparing the coordinated changes.
+Before CI or publication they must pin the reviewed immutable Landing commit.
+Publish the FR/HE/EN corpus with the matching API and clients, after validating
+the additive API and its migration before client rollout. Do not claim a unified
+net-refund ledger, quantity-level partial handoff, universal commercial closure
+or a different table-release policy: those are not provided by this projection.
+
+Local contract comparisons use each candidate’s immutable starting commit, not
+a moving remote branch updated by another session. They prove concordance of the
+reviewed working sources and guides only. A later integration must refresh the
+comparison against its actual PR base, and the WORKSPACE documentation references
+remain unsuitable for remote CI or publication until an immutable reviewed Landing
+commit is authorized. No source validation replaces native hardware acceptance.
+
+Canonical payment `pending` is an expected payment state, not proof that a provider
+attempt or claim is active. Existing eligible payment actions remain available;
+actual provider claims, authorizations and unresolved journals retain their guards.
+The lifecycle projection adds no cross-device payment lock or new authority to
+collect. Preserve the former type, status, permission and provider conditions.
+
+## Guarded free-table admission follow-up (28 October 2026)
+
+A physical iPad pass found that a newly opened free table could reach Menu with
+an obsolete restore context. The candidate now preloads the verified table/order
+context before navigation and retains the previous draft on failure. The matching
+API advertises boolean `table_service_start_if_free`; the new POS requests
+`start_if_free:true` for a new occupation without a canonical session. A known
+inactive QR session retains its existing ID and covers under the legacy resume
+path; it is not silently replaced by a new occupation. Under the table lock, a concurrently occupied table returns
+409 `table_service_changed` before covers or session writes. Verification storage
+failure remains 503 `table_service_unavailable`; a missing table remains 404.
+Legacy callers without the flag or with false retain their earlier contract.
+
+The FR/HE/EN opening procedures explain returning to the floor, refreshing and
+reviewing the current visit without attaching an old draft. Product flows do not
+expose the protocol fields. Older APIs cannot provide the new protected admission;
+deploy API before the compatible POS. This changes no cash report, attendance
+identity, provider or table-layout geometry. Preserve all unrelated source evidence
+and the exact retained Backoffice block/surfaces. Re-export the public corpus
+before API final validation; refresh API/POS hashes after both sources are frozen.
+The WORKSPACE/self pins still require an authorized immutable Landing commit
+before remote CI or publication, and physical iPad acceptance must be repeated
+on the final compatible build.
+
+
+### Current POS profile identity follow-up (28 October 2026)
+
+The POS profile read must follow the signed-in staff actor and authentication
+context even when the restaurant and API repository stay the same. A late response
+for the previous employee must not replace the next employee’s profile. This
+corrects the read projection only: shift end, cash-report guards, device enrollment,
+authentication mutations and the existing PIN sign-in flow remain unchanged.
+The existing staff PIN and workspace procedures now clarify in French, Hebrew and
+English that the displayed POS employee is independent of an Admin browser session,
+and that the supported handover is normal shift end followed by a personal PIN.
+No new account-switch control or credential recovery is advertised. Regenerate
+source inventory and exact scoped reviews only after the final provider/test freeze;
+retain WORKSPACE pins until an immutable documentation commit is authorized.
+
+
+### Personal shift-end preflight follow-up (28 October 2026)
+
+The compatible POS uses the version1 personal end-preflight before normal
+sign-out. Historical access expiry/revocation or a removed hardware link is
+independent of a legitimate period end when the original scoped reference still
+exists and its cash duty is closed. Missing/foreign references and unknown reads
+remain refusals. Cash access, enrollment and credential bindings are unchanged.
+The guarded end names the reviewed expected_shift_id; a replacement/disappeared
+period cannot inherit an old confirmation. An already-ended state has a separate
+explicit lock confirmation and fresh read, without another clock-out. Pending
+local cash and uncertain end journals keep their existing resolution authority;
+Verifone journals stay separate. The public account, staff and cash-access guides
+explain these distinctions in French, Hebrew and English; protocol/version/error
+details stay in the internal API guide. Deploy and verify the API first.
+Regenerate inventory and scoped shared-source reviews only after API/POS freeze.
+WORKSPACE documentation references remain local preparation and are not CI-ready
+or publication-ready until an immutable documentation commit is authorized.

@@ -6,7 +6,7 @@ tags:
   - getting-started
   - account-access
   - first-login
-updatedAt: '2026-10-27'
+updatedAt: '2026-10-28'
 featureId: account-access
 audience: public
 releaseStatus: available
@@ -41,6 +41,8 @@ Sur un POS déjà enrôlé, l’écran Se connecter affiche Saisissez votre code
 
 ## Terminer un shift de caisse en sécurité
 
-Sur un POS autorisé, utilisez Se déconnecter dans la navigation ou Terminer le shift dans Plus. Si ce POS a une caisse ouverte ou une opération espèces en attente, Rapport de tiroir-caisse en attente apparaît avant la fin du shift. Annuler conserve votre connexion ; Terminer le rapport ouvre Solde en caisse sans clôture ni déconnexion. Résolvez l’opération en attente, comptez physiquement et clôturez la caisse sur le même POS, puis redemandez la déconnexion et confirmez Terminer le shift. Sans droits sur le rapport, demandez à un responsable autorisé. Si le statut de caisse est invérifiable, la session reste ouverte : vérifiez la connexion et réessayez. Le dépôt Verifone est distinct et ne démarre jamais automatiquement. La fin du shift conserve l’autorisation de cet appareil pour la prochaine connexion PIN. Voir [la procédure du rapport en attente](/fr/help/staff/devices-and-shifts#pending-cash-sign-out).
+Sur une version compatible, utilisez Se déconnecter dans la navigation ou Terminer le shift dans Plus. Foody vérifie votre période personnelle avant de proposer une confirmation. Si un rapport espèces ou une opération locale reste en attente, Rapport de tiroir-caisse en attente conserve votre connexion. Annuler ne change rien ; Terminer le rapport ouvre Solde en caisse sans clôture ni déconnexion. Résolvez l’opération, comptez physiquement et clôturez la caisse sur son POS d’origine, puis redemandez la fin du shift. Sans droits sur le rapport, demandez un responsable autorisé. Voir [le rapport en attente](/fr/help/staff/devices-and-shifts#pending-cash-sign-out).
 
-Si la réponse à Terminer le shift est incertaine, [vérifiez la fin avec Réessayer](/fr/help/staff/devices-and-shifts#uncertain-shift-end). Ne recréez pas une fin de période et ne supprimez pas les données pour contourner un statut non confirmé.
+Si aucune période n’est active, Période déjà terminée propose Verrouiller le terminal. Une confirmation explicite puis une nouvelle vérification sont nécessaires avant le retour au PIN ; aucun nouveau départ n’est enregistré. Voir [la période déjà terminée](/fr/help/staff/devices-and-shifts#no-active-shift-sign-out). Une autorisation d’appareil historique expirée ou révoquée encore retrouvée peut permettre une fin de période lorsque sa caisse est confirmée fermée ; elle ne réactive pas l’accès à la caisse.
+
+Une référence manquante ou étrangère, une vérification impossible ou une version serveur incompatible conserve la connexion et propose Réessayer. Si la réponse à une fin de shift est incertaine, [vérifiez-la avant une nouvelle action](/fr/help/staff/devices-and-shifts#uncertain-shift-end). Ne supprimez pas les journaux ou les données pour contourner un refus. La fin du shift conserve l’enrôlement pour le prochain PIN. Le dépôt Verifone reste séparé et ne démarre jamais automatiquement.

@@ -5,7 +5,7 @@ apps: foodypos
 tags:
   - settings
   - pos-workspace
-updatedAt: '2026-10-27'
+updatedAt: '2026-10-28'
 featureId: pos-workspace
 audience: public
 releaseStatus: available
@@ -58,6 +58,8 @@ Si l’établissement, la connexion ou le terminal change, [rouvrez la confirmat
 
 Utilisez les raccourcis Accueil ou Plus pour Analyses, Cuisine, Personnel et Paramètres. Commandes regroupe les parcours de commande actifs et historiques. Transactions est distinct et liste les paiements confirmés pour payments.view ou payments.manage ; sur un terminal compact, il se trouve dans Plus. Rapports dans Plus contient les Dépôts du terminal Verifone pour les responsables des paiements (payments.manage). Une destination absente peut dépendre des droits ou de l’activation ; vérifiez le compte et le profil avant réinstallation.
 
+Dans Paramètres → Compte → Profil, vérifiez le nom et l’e-mail de l’employé connecté au POS. La connexion à FoodyAdmin est distincte : changer le compte ou le restaurant dans Admin ne change pas l’employé sur l’iPad. Pour utiliser le code d’un autre employé, terminez normalement le service actuel puis connectez cet employé avec son code personnel. Un rapport de caisse non confirmé doit être résolu avant de quitter la session ; le profil est une consultation et ne propose pas de changement de compte.
+
 <span id="preferences" />
 
 ## Personnaliser l’appareil
@@ -81,3 +83,9 @@ Sur le terminal portable, les initiales en bas à gauche ouvrent Plus ; elles vi
 ## Consulter l’aperçu et les disponibilités du terminal
 
 Sur un terminal portable, touchez la maison pour ouvrir l’Aperçu. Le nom du restaurant et les cartes repliables présentent les disponibilités, les commandes nouvelles/en cuisine/prêtes et l’état des tables autorisés pour votre rôle. Ouvrez Voir la disponibilité de tous les articles pour rechercher les articles actifs des menus disponibles en caisse. La liste reprend le même catalogue que la prise de commande POS ; elle ne dépend pas d’un état général du menu différent de sa disponibilité en caisse. Les états sont Disponible, Stock faible, Indisponible ou Non renseignée ; une quantité apparaît seulement si elle est fournie. Une disponibilité inconnue ne vaut pas disponibilité. Les groupes masqués, leurs descendants et les composants réservés aux formules ne sont pas inclus. Actualiser recharge les lectures ; un échec affiche un message avec nouvelle tentative. Les boutons des cartes ouvrent les commandes ou les additions selon vos droits. L’Aperçu lit les données sans changer le stock ni les commandes.
+
+<span id="local-draft-and-lifecycle" />
+
+## Reprendre le travail après une interruption
+
+Le panier local non envoyé et l’addition enregistrée sur le serveur sont distincts. Sur une version compatible, [rouvrez le brouillon du même compte et de la même installation](/fr/help/orders/taking-an-order-pos#resume-local-draft) ; un envoi incertain demande une vérification ou une reprise explicite de son identité d’origine. Les états de paiement, de préparation et de remise restent séparés, y compris pour une addition partagée. Changer d’écran ne renvoie pas automatiquement les articles.

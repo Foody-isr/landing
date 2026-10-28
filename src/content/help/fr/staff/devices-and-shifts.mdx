@@ -5,7 +5,7 @@ apps: both
 tags:
   - staff
   - staff-devices-shifts
-updatedAt: '2026-10-27'
+updatedAt: '2026-10-28'
 featureId: staff-devices-shifts
 audience: public
 releaseStatus: available
@@ -36,6 +36,8 @@ Si l’autorisation d’origine ne peut plus être vérifiée dans le restaurant
 
 Ne supprimez pas les données locales, ne réenrôlez pas l’appareil et ne créez pas une nouvelle période pour contourner le refus. Ne modifiez pas les heures ou l’association d’appareil à l’aveugle : sélectionner une autre autorisation peut masquer un journal de caisse différent. Une erreur de base de données n’est pas une preuve de référence absente. La réparation doit être vérifiée et approuvée séparément, en préservant les heures, les opérations en attente et les journaux d’origine. Elle ne déclenche aucune clôture espèces ni aucun dépôt Verifone automatique.
 
+L’accès actuel à la vente ou à la caisse et la fin d’une période historique sont contrôlés séparément. Si l’autorisation d’origine existe encore dans ce restaurant, son expiration, sa révocation ou la fin de sa liaison matérielle ne supprime pas la période : lorsque sa caisse est confirmée fermée, la fin normale peut être proposée. Cela ne renouvelle ni ne remplace l’autorisation. Une référence d’origine manquante ou étrangère reste à faire vérifier ; aucun appareil de remplacement n’est choisi automatiquement. Voir [le contrôle avant déconnexion](/fr/help/staff/devices-and-shifts#pending-cash-sign-out).
+
 <span id="cash-report-unconfirmed" />
 
 ## Réessayer une lecture de caisse non confirmée
@@ -46,13 +48,21 @@ Ce diagnostic nécessite les versions compatibles du POS et de l’API ; ce guid
 
 ## Terminer le rapport avant de se déconnecter
 
-Se déconnecter dans la navigation et Terminer le shift dans Plus suivent le même contrôle, limité au POS et au restaurant actifs. Avec orders.manage ou payments.manage, Foody vérifie le rapport avant de proposer la fin du shift. Une caisse ouverte, même sans vente ni mouvement, ou une opération espèces locale non confirmée affiche Rapport de tiroir-caisse en attente. Annuler ne modifie rien. Terminer le rapport ouvre Plus → Rapports → Solde en caisse ; ce bouton ne clôture pas, ne saisit pas le montant attendu comme comptage et ne déconnecte pas. Reprenez toute opération incertaine avec son identité existante. Pour clôturer, un opérateur avec orders.manage compte les espèces réellement présentes puis confirme la clôture. Redemandez ensuite la déconnexion et confirmez Terminer le shift pour revenir au PIN, en conservant l’autorisation de cet appareil. Une clôture de caisse seule ne termine pas automatiquement votre shift. Sans droits sur le rapport, le serveur contrôle toujours la caisse : s’il la trouve ouverte, demandez un responsable autorisé ; aucun accès au rapport n’est accordé par ce message. Si la vérification échoue, la session reste ouverte : vérifiez la connexion et Réessayer, sans effacer les données locales. Le serveur revérifie aussi après confirmation si une caisse s’est ouverte entre-temps. Le dépôt carte Verifone reste une action distincte et explicite : ni ce message ni la déconnexion ne le lancent. Une révocation ou expiration d’accès peut imposer une déconnexion de sécurité ; elle ne compte ni ne clôture les espèces et n’efface pas les journaux de reprise.
+Se déconnecter dans la navigation et Terminer le shift dans Plus suivent le même contrôle de votre période personnelle dans le restaurant courant. Une caisse ouverte liée à cette période, même sans vente ni mouvement, ou une opération espèces locale non confirmée affiche Rapport de tiroir-caisse en attente. Annuler ne change rien. Terminer le rapport ouvre Plus → Rapports → Solde en caisse si vos droits le permettent ; ce bouton ne compte pas les espèces, ne clôture pas la caisse et ne vous déconnecte pas. Sans accès au rapport, demandez un responsable autorisé.
+
+Reprenez une opération incertaine avec son identité existante. Pour clôturer, l’opérateur autorisé compte physiquement les espèces sur le POS d’origine et confirme la clôture. Redemandez ensuite la déconnexion et confirmez Terminer le shift. Fermer la caisse seule ne termine pas la période. Le serveur vérifie encore la période et la caisse après confirmation : si la période a changé, restez connecté, actualisez et confirmez la période désormais présentée ; ne terminez pas une autre période avec l’ancienne confirmation.
+
+L’autorisation d’appareil d’origine peut être historique, expirée, révoquée ou sans liaison matérielle actuelle. Si elle existe toujours dans ce restaurant et que sa caisse est confirmée fermée, la période peut se terminer sans réactiver cette autorisation ni l’accès espèces. Une référence numérique manquante ou étrangère, une erreur ou un état ambigu ne vaut pas une caisse fermée : la session reste ouverte. Une ancienne API incompatible peut également empêcher la vérification ; faites vérifier les versions puis réessayez.
+
+Les journaux espèces locaux restent prioritaires et doivent être résolus avant de quitter la session. Les journaux du terminal restent conservés dans leur propre parcours. Ni ce message, ni une fin de période ou un verrouillage du terminal ne lancent de dépôt Verifone.
 
 <span id="uncertain-shift-end" />
 
 ## Vérifier une fin de période dont la réponse est incertaine
 
 Sur le POS compatible, si la confirmation de fin de période n’est pas reçue, gardez la même connexion et le même établissement puis choisissez explicitement Réessayer. Foody relit votre période actuelle sans envoyer une seconde demande de fin pendant cette vérification. Le retour au PIN n’a lieu que si la lecture confirme qu’aucune période n’est active, que le même contexte POS est toujours en cours et qu’aucune opération espèces n’est en attente. Si une période est encore active, la connexion reste ouverte : la caisse est revérifiée et une nouvelle confirmation de fin est nécessaire. Une lecture en erreur ou non confirmée conserve la connexion et propose Réessayer. Résolvez d’abord toute opération espèces en attente avec son identité existante ; ne supprimez pas les données locales. Annuler conserve la connexion mais n’annule pas une fin déjà enregistrée. Changer de connexion ou d’établissement invalide la vérification en cours. Cette reprise ne compte ni ne clôture la caisse, ne lance aucun dépôt Verifone et ne prouve pas un test physique sur votre appareil.
+
+La confirmation d’une nouvelle fin de période porte sur la période qui vient d’être vérifiée. Si elle a changé ou a déjà disparu avant l’enregistrement, l’ancienne confirmation est refusée ; actualisez puis examinez le nouvel état avant de confirmer quoi que ce soit. Le parcours Période déjà terminée conserve sa propre confirmation et sa nouvelle lecture ; il ne recrée pas un départ. Une version serveur sans le contrôle compatible ne permet pas une déconnexion fondée sur une erreur de lecture.
 
 <span id="pos-reports-navigation" />
 
@@ -70,7 +80,7 @@ Vérifiez la liste des appareils du restaurant et suivez l’association propos�
 
 ## Utiliser un code POS personnel
 
-Après activation, utilisez le code POS de l’employé. Terminez le service ou changez d’employé depuis la caisse au lieu de partager une session responsable.
+Après activation, utilisez le code POS personnel de l’employé. Pour changer d’employé, terminez normalement le service actuel depuis la caisse, puis saisissez le code personnel du prochain employé sur l’écran Se connecter. Si le rapport de caisse bloque la fin du service, résolvez-le avec un responsable autorisé avant de quitter la session. Ne partagez pas une session responsable. Une connexion distincte à FoodyAdmin ne change pas l’employé connecté au POS.
 
 <span id="report" />
 
@@ -89,3 +99,11 @@ Si Terminer le shift indique une caisse ouverte, ouvrez Plus → Rapports → So
 ## Lire le rapport du tiroir sur un terminal portable
 
 Plus → Rapports → Tiroir-caisse utilise une page verticale sur un terminal portable. Les montants, sessions, permissions et confirmations gardent le même fonctionnement. Le changement de couleurs et de marges ne transforme pas un rapport en clôture de caisse ou en dépôt carte.
+
+<span id="no-active-shift-sign-out" />
+
+## Confirmer le verrouillage après une période déjà terminée
+
+Ce parcours nécessite l’API et le POS compatibles ; ce guide ne confirme pas leur installation. Après Se déconnecter, Période déjà terminée signifie qu’aucune période active n’a été trouvée pour votre compte dans ce restaurant. Cela ne résulte pas d’une erreur d’accès à la caisse. Annuler conserve la connexion. Verrouiller le terminal demande une confirmation explicite puis relit l’état avant de revenir au PIN, sans envoyer une nouvelle fin de période.
+
+Si une période apparaît entre-temps, si la connexion ou le restaurant change, si la lecture échoue ou si une opération espèces locale est en attente, le verrouillage n’est pas confirmé. Gardez les données, résolvez l’opération dans son parcours puis réessayez. Les journaux de paiement du terminal sont conservés. Ce verrouillage ne clôture aucune caisse, ne crée pas de période et ne réactive pas une autorisation d’appareil.

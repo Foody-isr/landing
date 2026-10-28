@@ -6,7 +6,7 @@ tags:
   - getting-started
   - account-access
   - first-login
-updatedAt: '2026-10-27'
+updatedAt: '2026-10-28'
 featureId: account-access
 audience: public
 releaseStatus: available
@@ -41,6 +41,8 @@ On an already enrolled POS, Sign in shows Enter your passcode. Enter your comple
 
 ## End a POS shift safely
 
-On an enrolled POS, use Sign out in the navigation or End shift in More. If this POS has an open drawer or a pending cash operation, Cash drawer report pending appears before ending the shift. Cancel leaves you signed in; Finish report opens Cash drawer balance without closing anything or signing out. Resolve the pending operation, physically count and close the drawer on the same POS, then request sign-out again and confirm End shift. Without report permissions, ask an authorized manager. An unverifiable cash status keeps the session open; check the connection and retry. A Verifone deposit is separate and never starts automatically. Ending the staff shift keeps this POS enrolled for the next PIN sign-in. See [the pending-report procedure](/en/help/staff/devices-and-shifts#pending-cash-sign-out).
+On a compatible version, use Sign out in navigation or End shift in More. Foody checks your personal work period before offering confirmation. If a cash report or local operation remains pending, Cash drawer report pending keeps you signed in. Cancel changes nothing; Finish report opens Cash drawer balance without closing anything or signing out. Resolve the operation, physically count and close cash on its original POS, then request shift end again. Without report permissions, ask an authorized manager. See [the pending report](/en/help/staff/devices-and-shifts#pending-cash-sign-out).
 
-If the End shift response is uncertain, [verify it through Retry](/en/help/staff/devices-and-shifts#uncertain-shift-end). Do not recreate a shift end or clear data to bypass an unconfirmed state.
+If no period is active, Shift already ended offers Lock terminal. Explicit confirmation and another verification are required before returning to PIN; no new clock-out is recorded. See [an already ended period](/en/help/staff/devices-and-shifts#no-active-shift-sign-out). An expired or revoked historical device authorization that is still found may permit a shift end when its drawer is confirmed closed; it does not reactivate cash access.
+
+A missing or foreign reference, failed verification or incompatible server keeps you signed in and offers Retry. If a shift-end response is uncertain, [verify it before another action](/en/help/staff/devices-and-shifts#uncertain-shift-end). Never erase journals or local data to bypass a refusal. Shift end keeps the device enrolled for the next PIN. A Verifone deposit remains separate and never starts automatically.

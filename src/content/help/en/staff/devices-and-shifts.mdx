@@ -5,7 +5,7 @@ apps: both
 tags:
   - staff
   - staff-devices-shifts
-updatedAt: '2026-10-27'
+updatedAt: '2026-10-28'
 featureId: staff-devices-shifts
 audience: public
 releaseStatus: available
@@ -36,6 +36,8 @@ If the original authorization can no longer be verified in the restaurant, sales
 
 Do not clear local data, re-enroll the device or create a new shift to bypass the refusal. Do not blindly change hours or device assignments: selecting another authorization can hide a different cash journal. A database error does not prove that a reference is missing. Repair must be verified and approved separately while preserving recorded hours, pending operations and original journals. It never automatically closes cash or starts a Verifone deposit.
 
+Current sales/cash access and ending a historical period are checked separately. If the original authorization still exists in this restaurant, expiry, revocation or removal of its hardware link does not erase the period: normal shift end may be offered when its drawer is confirmed closed. This neither renews nor replaces authorization. A missing or foreign original reference still needs review; no replacement device is chosen automatically. See [the sign-out check](/en/help/staff/devices-and-shifts#pending-cash-sign-out).
+
 <span id="cash-report-unconfirmed" />
 
 ## Retry an unconfirmed cash-drawer read
@@ -46,13 +48,21 @@ This diagnostic needs compatible POS and API versions; this guide does not confi
 
 ## Finish the report before signing out
 
-Sign out in navigation and End shift in More use the same check, scoped to the active POS and restaurant. With orders.manage or payments.manage, Foody checks the report before offering to end the shift. An open drawer, even with no sale or movement, or an unconfirmed local cash operation shows Cash drawer report pending. Cancel changes nothing. Finish report opens More → Reports → Cash drawer balance; it does not close the drawer, use expected cash as a physical count, or sign you out. Resume uncertain operations using their existing identity. To close, an operator with orders.manage physically counts the cash present and confirms closure. Then request sign-out again and confirm End shift to return to PIN while keeping the device enrolled. Closing cash alone does not automatically end your staff shift. Without report permissions, the server still checks the drawer: if open, ask an authorized manager; the message does not grant report access. If verification fails, the session stays open: check the connection and Retry without clearing local data. The server also rechecks after confirmation in case a drawer opened in the meantime. The Verifone card deposit stays separate and explicit: neither this message nor sign-out starts it. Revoked or expired access can require a security sign-out; this neither counts nor closes cash and does not erase recovery journals.
+Sign out in navigation and End shift in More use the same check of your personal work period in the current restaurant. An open drawer linked to that period, even without a sale or movement, or an unconfirmed local cash operation shows Cash drawer report pending. Cancel changes nothing. Finish report opens More → Reports → Cash drawer balance when your permissions allow; it does not count cash, close the drawer or sign you out. Without report access, ask an authorized manager.
+
+Resume an uncertain operation with its existing identity. To close cash, an authorized operator physically counts it on the original POS and confirms closure. Then request sign-out again and confirm End shift. Closing cash alone does not end the period. The server rechecks the period and drawer after confirmation: if the period changed, stay signed in, refresh and confirm the period now shown; do not end a different period using the old confirmation.
+
+The original device authorization may be historical, expired, revoked or no longer linked to current hardware. If it still exists in this restaurant and its drawer is confirmed closed, the period can end without reactivating that authorization or cash access. A missing or foreign numeric reference, error or ambiguous state is not a closed drawer: the session stays open. An incompatible older API may also prevent verification; have the versions checked, then retry.
+
+Local cash journals take priority and must be resolved before leaving the session. Terminal journals are retained in their own recovery flow. This message, shift end and terminal locking never start a Verifone deposit.
 
 <span id="uncertain-shift-end" />
 
 ## Verify a shift end with an uncertain response
 
 On a compatible POS, if the shift-end confirmation is not received, keep the same sign-in and restaurant, then explicitly choose Retry. Foody rereads your current period without sending another end request during this verification. It returns to PIN only when the read confirms no active period, the same POS context is still current and no cash operation is pending. If a period is still active, you stay signed in: cash is checked again and another explicit end confirmation is required. A failed or unconfirmed read keeps you signed in and offers Retry. Resolve any pending cash operation first using its existing identity; do not clear local data. Cancel keeps you signed in but does not undo a shift end already saved. Changing sign-in or restaurant invalidates the in-flight verification. This check does not count cash, close the drawer or start a Verifone deposit. It does not certify physical testing on your device.
+
+Confirmation of a new shift end applies to the period just verified. If it changed or disappeared before recording, the old confirmation is refused; refresh and review the new state before confirming anything. Shift already ended keeps its own confirmation and fresh read; it does not recreate a clock-out. A server version without the compatible check cannot turn a failed read into permission to sign out.
 
 <span id="pos-reports-navigation" />
 
@@ -70,7 +80,7 @@ Review the restaurant device list and follow the device setup pairing flow. Conf
 
 ## Use a personal POS code
 
-After activation, use the configured employee POS code. End your service or switch employee using the POS controls instead of sharing a manager session.
+After activation, use the employee’s personal POS passcode. To change employees, finish the current shift normally from the POS, then enter the next employee’s personal code on Sign in. If a cash-drawer report prevents ending the shift, resolve it with an authorized manager before leaving the session. Do not share a manager session. A separate FoodyAdmin sign-in does not change the employee signed into the POS.
 
 <span id="report" />
 
@@ -89,3 +99,11 @@ If End shift says the cash drawer is open, open More → Reports → Cash drawer
 ## Read the cash-drawer report on a handheld
 
 More → Reports → Cash drawer uses a vertical page on a handheld terminal. Amounts, sessions, permissions and confirmations retain their existing behavior. Colors and insets do not turn a report into a drawer closure or a card deposit.
+
+<span id="no-active-shift-sign-out" />
+
+## Confirm locking after an already ended period
+
+This flow needs compatible API and POS versions; this guide does not confirm installation. After Sign out, Shift already ended means that no active period was found for your account in this restaurant. It is not inferred from a cash-access error. Cancel keeps you signed in. Lock terminal requires explicit confirmation and rereads the state before returning to PIN, without sending another shift-end request.
+
+If a period appears meanwhile, the sign-in or restaurant changes, the read fails or a local cash operation is pending, locking is not confirmed. Preserve the data, resolve the operation through its own flow, then retry. Terminal payment journals are retained. Locking closes no drawer, creates no period and reactivates no device authorization.

@@ -15,7 +15,7 @@ tags:
   - web
   - qr
   - caisse
-updatedAt: '2026-10-26'
+updatedAt: '2026-10-27'
 featureId: orders-managing-orders
 audience: public
 releaseStatus: available
@@ -73,15 +73,14 @@ les commandes et les envoyez en cuisine.
 
 <span id="section-3" />
 
-## Le flux d'une commande
+## Le flux d’une commande
 
-1. **Passée** — une commande web/QR payée, ou une commande caisse, arrive.
-2. **Acceptée** — vous l'acceptez (ou elle s'accepte automatiquement, selon vos réglages de flux).
-3. **En cuisine** — envoyée en préparation ; un ticket cuisine peut s'imprimer automatiquement.
-4. **Prête / Terminée** — remise au client.
+1. La commande est enregistrée ; sa visibilité et son acceptation dépendent du canal et de la politique de paiement.
+2. L’acceptation et l’envoi cuisine suivent le flux configuré. Un envoi peut produire un ticket selon le profil d’impression.
+3. La préparation progresse par lot ou par poste ; un lot prêt ne signifie pas que les autres le sont.
+4. Le service, le retrait ou la livraison sont confirmés séparément.
 
-> Astuce : le comportement du flux (acceptation auto, envoi auto en cuisine, impression auto) se
-> règle dans **Paramètres**. Voir [Réglages de flux](/fr/help/settings/workflow-settings).
+Le paiement est suivi à part et peut précéder la préparation. Voir les [réglages de flux](/fr/help/settings/workflow-settings).
 
 <span id="section-4" />
 
@@ -196,3 +195,9 @@ Si le client utilise un autre numéro pour WhatsApp, ouvrez Clients → sa fiche
 Pour un restaurant configuré en lots hebdomadaires, ouvrez **Accueil** ou **Commandes** avec la base de date **Série**. La série actuelle est sélectionnée par défaut, même sans commande : ses totaux restent alors à zéro. Elle avance après le dernier jour de remise de la série précédente, selon le fuseau horaire du restaurant, sans attendre la première commande ni l’ouverture des commandes. Sur une page restée ouverte, la sélection suit ce changement au prochain rafraîchissement automatique (environ une minute) ou au retour sur l’onglet.
 
 Vous pouvez sélectionner une ancienne série dans le calendrier ; cette consultation reste en place pendant que la page est ouverte. Une commande déjà prise pour une semaine plus lointaine ne remplace pas la série actuelle par défaut. Un lien de suivi des paiements conserve la période qu’il indique. Si la date semble incorrecte, vérifiez les jours de remise et le fuseau horaire configurés, puis rechargez la page. Ce basculement ne crée aucune commande et ne publie pas une carte.
+
+<span id="order-lifecycle-guide" />
+
+## Séparer paiement, préparation et remise
+
+Voir [addition, paiement, préparation et remise](/fr/help/orders/payment-preparation-and-handoff).

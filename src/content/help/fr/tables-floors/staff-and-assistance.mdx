@@ -7,7 +7,7 @@ apps: both
 tags:
   - tables-floors
   - table-service-policy
-updatedAt: '2026-10-27'
+updatedAt: '2026-10-28'
 featureId: table-service-policy
 audience: public
 releaseStatus: available
@@ -26,6 +26,8 @@ Choisissez affectation libre, collaborative ou stricte, lisez sa règle affiché
 
 Vérifiez libellés de statuts et contrôles table/session. Une table occupée peut avoir plusieurs additions : contrôlez session et couverts avant placement, déplacement ou fermeture. Un statut visuel ne prouve pas le paiement d’une addition. Changer le traitement d’un brouillon non envoyé ne déplace ni ne fusionne une addition existante et ne remplace pas son cycle de service. Choisir une table avec une addition financière annule le transfert du brouillon en attente et conserve la source intacte ; suivez [la procédure de changement de service](/fr/help/orders/order-types#pos-change-draft).
 
+Une synthèse financière ne prouve pas que les plats sont en cuisine : consultez la progression enregistrée de l’addition. Un état de préparation inconnu ne remet pas à zéro le temps de table et ne confirme pas sa libération.
+
 <span id="resume-confirmed-table-service" />
 
 ## Reprendre la bonne occupation d’une table
@@ -33,6 +35,8 @@ Vérifiez libellés de statuts et contrôles table/session. Une table occupée p
 Sur le POS compatible mis à jour, ouvrir une table déjà occupée reprend uniquement sa session actuelle confirmée, sans recommencer son service ni redemander ses couverts. Son chronomètre n’est pas remis à zéro. Les demandes de couverts configurées restent réservées au démarrage d’une nouvelle occupation. Si la table ferme ou change de session pendant le chargement ou le transfert d’un brouillon, la navigation vers l’ancien contexte s’arrête. Revenez au plan et rouvrez la table actuelle ; ne forcez pas le rattachement des plats aux clients suivants. Un transfert non confirmé doit être vérifié avant de renvoyer une commande. Les anciennes commandes encore dues restent distinctes et consultables par leur numéro dans [Commandes](/fr/help/settings/pos-workspace#previous-table-service-orders). Ouvrir la table ne règle ni ne clôture ces anciennes commandes.
 
 Après un changement d’établissement, [rechoisissez la table dans le contexte actuel](/fr/help/settings/pos-workspace#restaurant-context-selection). La sélection précédente est effacée à l’écran ; les additions enregistrées ne sont ni déplacées ni supprimées.
+
+Si une autre caisse prend en charge la table pendant votre choix des couverts, l’ouverture s’arrête sans remplacer ses couverts ni rattacher votre brouillon. Revenez au plan, actualisez, puis rouvrez la table pour vérifier l’addition de l’occupation actuelle. Le brouillon précédent reste conservé dans son contexte d’origine : ne le rattachez pas aux nouveaux clients. Si l’état ne peut pas être vérifié ou si une mise à jour est demandée, faites vérifier les versions de la caisse et du serveur avant de réessayer.
 
 <span id="timer-settings-and-close" />
 

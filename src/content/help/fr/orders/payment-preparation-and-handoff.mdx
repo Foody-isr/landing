@@ -1,0 +1,21 @@
+---
+title: 'Addition, paiement, préparation et remise'
+description: >-
+  Consultez une commande enregistrée dans une version compatible de FoodyPOS, FoodyAdmin ou du suivi client. Une mise à
+  jour du serveur seule ne met pas à jour le POS installé.
+apps: both
+tags:
+  - orders
+  - order-lifecycle
+updatedAt: '2026-10-27'
+featureId: order-lifecycle
+audience: public
+releaseStatus: available
+---
+Consultez une commande enregistrée dans une version compatible de FoodyPOS, FoodyAdmin ou du suivi client. Une mise à jour du serveur seule ne met pas à jour le POS installé.
+
+<span id="order-lifecycle-axes" />
+
+## Distinguer addition, paiement, préparation et remise
+
+Sur des versions API, POS, Admin et web compatibles, vérifiez séparément le dossier de l’addition, son paiement, les lots de préparation et la remise. Payée ne signifie pas prête ou servie ; un remboursement ne prouve pas l’annulation du travail déjà effectué. Prête ne signifie pas remise. Les informations non établies restent inconnues : ne les déduisez pas du paiement ou des réglages actuels pour une ancienne commande. Plusieurs envois d’une addition restent des lots distincts. Les commandes de clients QR à la même table conservent chacune leur identifiant et leur paiement, même lorsque la caisse présente une vue regroupée. Le partage financier ne produit pas de plats supplémentaires. Les réglages existants de libération de table restent applicables ; le paiement d’un seul client ne solde pas les commandes des autres.
