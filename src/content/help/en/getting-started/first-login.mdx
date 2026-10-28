@@ -19,6 +19,8 @@ Admin sign-in and account menu
 
 Open the invitation received by email, check the restaurant, choose your password and confirm your contact details. A POS code is requested only when the assigned restaurant permissions allow taking orders (orders.manage) or managing payments (payments.manage). A courier with the usual read-only delivery role, or a kitchen-only role, finishes without this step. A role name alone does not determine the requirement. Never share a password or POS code.
 
+The personal passcode must differ from those of other accounts configured in this restaurant. The same code may be used in a different restaurant.
+
 <span id="restaurant" />
 
 ## Select the restaurant
@@ -40,6 +42,8 @@ If your session has been revoked, sign in again with your own account when Foody
 On an already enrolled POS, Sign in shows Enter your passcode. Enter your complete personal 4–6-digit code, then tap Start shift. The four slots shown initially expand when you enter a fifth digit; they do not limit an existing code to four digits. Backspace removes the last digit. Entry is not submitted automatically: wait for the sign-in result before using the POS. A rejection displays an error and clears the entry for another attempt; never share your code. Set up this terminal with email and password returns to the sign-in form. A successful PIN session also clocks you in; your account’s role and permissions still apply. Show hours opens a separate flow: checking your status starts neither a shift nor a sales session. See [personal time tracking](/en/help/staff/devices-and-shifts#personal-time-tracking).
 
 The email address used to authorize the terminal does not determine the employee signed in afterward: the personal passcode determines this session’s profile and permissions. A separate FoodyAdmin sign-in does not replace that employee.
+
+If a code matches several accounts configured in the same restaurant, sign-in and time tracking are refused with a generic error: no new sales session or clock-in is created. The refusal does not identify those accounts. Ask a manager or support to check access, without repeated attempts or erasing terminal data.
 
 <span id="end-pos-shift" />
 
