@@ -8,6 +8,43 @@ base. `docs/help/catalog/features.json` is the authored feature/procedure source
 Internal operator procedures render separately to `docs/help/internal` and never
 enter public browsing, search or the AI corpus.
 
+## Personal-session integrity review (28 October 2026)
+
+This correction separates physical-terminal authorization from the personal staff
+session selected by PIN. The account used to authorize a terminal is not evidence
+that the same person is currently using it. The first-login and devices/shifts
+guides clarify that distinction in French, Hebrew and English. PIN length,
+explicit submission, enrollment, attendance and cash-report procedures are kept.
+
+API refresh requires the signed token version to match the current user's
+version before issuing a replacement. A revoked or unexpected version receives
+the existing generic unauthorized response without internal details. A matching
+version and the existing expiration grace remain supported; refreshing cannot
+substitute the restaurant owner for the personal token's subject.
+
+POS refresh belongs to its originating session and restaurant generation. A late
+refresh, profile or response cannot restore a previous actor, clear the next
+actor's session or replay their request. Personal-token writes and logout cache
+cleanup are serialized before a newer login. Offline permission caches are
+versioned and bound to backend, restaurant and user; unowned legacy entries are
+not adopted. The guides explain that an online profile read can therefore be
+needed after an update or an employee change. No new refresh button is promised.
+
+Order mutations require a confirmed, non-loading personal context, including
+during login and restaurant selection. A request already sent before a context
+change may have an unknown result; its original journal and identity remain the
+recovery authority. This correction adds no charge, automatic clock-out, cash
+closing, provider retry or data-reset procedure. Synthetic tests and source
+review are not a claim that all physical device or payment flows were exercised.
+
+Refresh API, POS and Landing source evidence for this correction only. Preserve
+the Admin, guest Web and Backoffice service inventories and surfaces exactly from
+Landing develop `0c914570bd4f08e5dbb3d8262f976148fa749c4e`; those sources are
+retained evidence, not recertified here. Export the final public corpus into API
+after its full runtime validation and before inventory generation. Local source
+references remain provisional until clean source checkpoints and an immutable
+documentation commit are coordinated; never mark a WORKSPACE pin ready for CI.
+
 ## Explicit stock sources and immediate modal settings (28 October 2026)
 
 Admin source `a063d4cdde1c9c8aef99d63a611c0ea0f97d152f` and API source
