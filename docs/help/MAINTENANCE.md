@@ -576,3 +576,26 @@ the immutable documentation commit before remote CI. Publish with the matching
 Admin after development verification and promote the same artifacts, API first.
 No schema, API payload, reservation, stock calculation or rule precedence changes
 are introduced. Synthetic browser checks do not mutate production stock.
+
+
+## Immediate product-rule confirmation (28 October 2026)
+
+Apply now persists the product availability rule directly instead of staging it
+for product Save. Existing availability/restock routes accept an optional scoped
+availability_rule_id; zero restores inheritance. A rule-only write updates only
+the assignment under the item/order lock. Mixed stock and rule edits commit in one
+transaction; failed writes keep the modal draft. A confirmed save followed by a
+failed refresh offers a read-only retry, never a replay of the stock adjustment.
+Unrelated product drafts, stock reservations, rule precedence and product-wide
+scope stay unchanged. The legacy non-series stock dialog saves its rule immediately
+while retaining product Save for its other stock/preparation settings.
+
+Refresh API, Admin and Landing source evidence only. Retain the exact Web, POS
+and Backoffice inventory blocks and surfaces from Landing develop
+`9d4679231a5745f23f52d781700b43b07d10f770`; they do not send the new optional field
+and are not revalidated. The existing MenuEdit-protected routes remain in place;
+no migration or environment change is needed. Publish the FR/HE/EN procedures and
+matching embedded support corpus with the compatible UI. Pin immutable Admin and
+Landing source references before remote CI. Validate and deploy API before Admin,
+then promote the exact verified development artifacts under the authorized release
+workflow. Synthetic regressions never mutate real restaurant stock or orders.
