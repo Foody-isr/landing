@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-10-28.
+Révision du relevé : 2026-10-18.
 
-103 fiches de fonctionnalités, 755 procédures/sous-fonctionnalités, dont 94 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2219 fichiers applicatifs et 2057 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+103 fiches de fonctionnalités, 757 procédures/sous-fonctionnalités, dont 94 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2220 fichiers applicatifs et 2057 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,11 +10,11 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 575 | 874 | afd2c31f01fe ; versioned |
-| foodyadmin | 768 | 777 | 836d45b192e5 ; versioned |
+| foodyserver | 576 | 874 | e0c25bd33904 ; versioned |
+| foodyadmin | 768 | 777 | d8f3be9a3a4c ; versioned |
 | foodyweb | 342 | 169 | c42a6114fac9 ; versioned |
-| foodypos | 363 | 166 | 7888c65a60ef ; versioned |
-| foodylanding | 127 | 21 | 0e314a7c7cc1 ; versioned |
+| foodypos | 363 | 166 | 486f2097f551 ; versioned |
+| foodylanding | 127 | 21 | 0c914570bd4f ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
 
 ## getting-started
@@ -1025,6 +1025,8 @@ Identifiant : `table-qr-design`. Public : public. Disponibilité : available. Se
 Identifiant : `delivery-zones`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin.
 
 - [Créer une zone de livraison](../../src/content/help/fr/delivery/zones-and-schedules.mdx#zone)
+- [Cibler un code postal français précis](../../src/content/help/fr/delivery/zones-and-schedules.mdx#postal-codes)
+- [Répartir les codes postaux par jours et tarif](../../src/content/help/fr/delivery/zones-and-schedules.mdx#postal-day-groups)
 - [Définir frais et minimums](../../src/content/help/fr/delivery/zones-and-schedules.mdx#fees)
 - [Configurer jours et créneaux](../../src/content/help/fr/delivery/zones-and-schedules.mdx#calendar)
 
