@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - delivery
   - delivery-zones
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-28'
 featureId: delivery-zones
 audience: public
 releaseStatus: available
@@ -17,6 +17,18 @@ Admin → Paramètres → Livraison
 ## Créer une zone de livraison
 
 Créez ou modifiez une zone nommée avec les contrôles carte/adresse. Vérifiez périmètre, état actif et éligibilité des commandes avant enregistrement.
+
+<span id="postal-codes" />
+
+## Cibler un code postal français précis
+
+Cette option nécessite les versions compatibles de l’API et d’Admin ; sa présence dans ce guide ne confirme pas son déploiement. Avec l’autorisation de gérer les commandes et un établissement situé en France, ouvrez Paramètres → Livraison → Ajouter une zone. Nommez la zone, choisissez Codes postaux (France), puis saisissez 75016 pour ce seul code postal. Pour plusieurs secteurs, collez les codes à 5 chiffres séparés par des espaces, des virgules ou des retours à la ligne (1 000 maximum) ; conservez les zéros initiaux, par exemple 01000. Réglez les frais, le minimum, les créneaux et l’état actif, puis Enregistrer. Rouvrez la zone pour vérifier les codes et testez des adresses de part et d’autre de sa limite avant la mise en service. 75016 est un code postal ; 75 est le département de Paris. Départements (France) accepte aussi 2A, 2B et les codes ultramarins à trois chiffres comme 971, mais couvre le département entier. Une zone par code postal est prioritaire sur les autres zones pour ses frais, son minimum et son calendrier ; si le code ne correspond pas, une autre zone active peut toujours couvrir l’adresse. Le code postal est vérifié à partir de l’adresse par le service de géocodage : un texte de ville ou des coordonnées saisis seuls ne suffisent pas. Sans code postal vérifiable, précisez l’adresse et réessayez. Une saisie invalide ne s’enregistre pas ; après une réponse d’enregistrement incertaine, utilisez Vérifier les données enregistrées avant de réessayer.
+
+<span id="postal-day-groups" />
+
+## Répartir les codes postaux par jours et tarif
+
+Créez vous-même un groupe par combinaison de liste de codes, jours et tarif : par exemple une zone du lundi au jeudi, une autre le vendredi et le dimanche, puis une zone à tarif différent pour ses propres codes. Dans chaque zone, collez uniquement sa liste de codes dans Codes postaux, réglez les frais dans la devise de l’établissement, choisissez le mode de créneau, les jours et les heures, puis enregistrez. Les doublons d’une liste sont retirés ; un même code peut rester dans plusieurs zones. Pour ce code, les calendriers se cumulent uniquement si le tarif, le minimum, le mode de créneau et l’alternative retrait sont identiques. Ainsi un groupe lundi–jeudi et un groupe vendredi/dimanche au même tarif proposent leurs six jours sans ouvrir le samedi ; les codes propres à un seul groupe gardent ses jours. Les zones enregistrées restent distinctes et aucune liste commerciale n’est ajoutée automatiquement. Les jours, tarifs et codes de cet exemple sont à configurer, pas des réglages préchargés. Les tarifs ou modes différents pour un même code ne sont pas cumulés : la priorité existante de la zone la plus ancienne reste applicable. Évitez ces recouvrements si vous avez besoin de tarifs différents selon le jour. Les fenêtres réellement superposées gardent aussi la priorité de la zone la plus ancienne ; les autres jours ne disparaissent pas. Un changement d’adresse d’une commande recontrôle son calendrier, même si une zone lui reste commune.
 
 <span id="fees" />
 
