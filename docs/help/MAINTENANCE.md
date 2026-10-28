@@ -8,6 +8,42 @@ base. `docs/help/catalog/features.json` is the authored feature/procedure source
 Internal operator procedures render separately to `docs/help/internal` and never
 enter public browsing, search or the AI corpus.
 
+## Explicit stock sources and immediate modal settings (28 October 2026)
+
+Admin source `a063d4cdde1c9c8aef99d63a611c0ea0f97d152f` and API source
+`487afe91bb0e2e2faf8fd1259ef3dec15824d192` distinguish a manual remaining quantity from
+recipe calculation. All product-stock modal settings save through Apply for both
+library and series stock; name, price and preparation drafts remain independent.
+The shared four-choice modal collapses advanced stock profiles, shows their
+resolved behavior, and explains non-tracking profiles without hiding the warning.
+The explicit recipe source preserves dormant manual pools and frozen reservations;
+manual reactivation keeps ingredient/preparation draws on recipe-era orders.
+Migration 279 is additive and defaults existing configurations to old behavior.
+
+The three stock/product/carte guides and internal API contract were reviewed in
+French, Hebrew and English, including obsolete historical product-Save instructions.
+API corpus must match the public export before the source inventory is regenerated.
+Adjacent preparation tests continue to require product Save. Browser checks use
+synthetic data and stub every API write/WebSocket; they never mutate live stock.
+The complete Go race validation, Admin lint/types/build and relevant browser
+regressions certify the code paths; deployed candidates are checked independently.
+
+Retain Web, POS and Backoffice service inventories and surfaces byte-for-byte from
+Landing develop `91ec9b2a1d2d60784781c8d90a6cc9ba1c9e8756`: their sources are not
+changed or recertified. Exact scoped reviews cover only unrelated feature claims
+on shared files, never the changed stock behavior. Pin the final immutable Landing
+commit in API/Admin. Deploy and verify API development before Admin, verify the
+three-language guides, then promote the exact same artifacts to production.
+
+The calculation details request carries the displayed managed series; the API
+uses the same effective stock source and pools for its explanation and sellable
+state. Library items omit the series query. Preview adds no stock mutation.
+
+The compatibility review retains quantity-only legacy products on manual stock.
+It changes no source semantics or public article bytes. API keeps its independently
+reviewed immutable documentation pin; Admin uses this new source-evidence pin.
+Both contracts share the same article hashes and documentation revision.
+
 ## Table-status descriptions review (27 October 2026)
 
 Admin source commit `c2ce0d63db2a50252959d642288288fca513a4e9` combines the
