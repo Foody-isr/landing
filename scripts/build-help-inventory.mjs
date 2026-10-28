@@ -48,7 +48,12 @@ for (const [service, configuredRoot] of Object.entries(roots)) {
   const root = path.resolve(workspace, configuredRoot);
   const hasGit = !!git(root, 'rev-parse', '--show-toplevel') && git(root, 'rev-parse', '--show-toplevel') === root;
   const listed = hasGit ? [...new Set((git(root, 'ls-files') + '\n' + git(root, 'ls-files', '--others', '--exclude-standard')).split('\n').filter(Boolean))] : walk(root);
-  const files = listed.filter(file => sourceRoots.test(file) && sourceExtension.test(file) && !excluded.test(file) && fs.existsSync(path.join(root, file))).sort();
+  // Only authored migration selectors opt SQL into evidence. Do not expand the
+  // review to every historical migration or to compressed/database data files.
+  const explicitMigration = file => service === 'foodyserver'
+    && /^migrations\/[^/]+\.sql$/.test(file)
+    && selectors.some(feature => feature.compiled[service]?.some(pattern => pattern.test(file)));
+  const files = listed.filter(file => ((sourceRoots.test(file) && sourceExtension.test(file)) || explicitMigration(file)) && !excluded.test(file) && fs.existsSync(path.join(root, file))).sort();
   const classes = new Map();
   for (const file of files.filter(f => f.endsWith('.dart'))) for (const match of fs.readFileSync(path.join(root, file), 'utf8').matchAll(/\bclass\s+(\w+)/g)) classes.set(match[1], [...(classes.get(match[1]) || []), file]);
   const sources = {};

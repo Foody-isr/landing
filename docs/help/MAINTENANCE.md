@@ -733,3 +733,23 @@ details stay in the internal API guide. Deploy and verify the API first.
 Regenerate inventory and scoped shared-source reviews only after API/POS freeze.
 WORKSPACE documentation references remain local preparation and are not CI-ready
 or publication-ready until an immutable documentation commit is authorized.
+
+
+### Integrated delivery bases and migration evidence (28 October 2026)
+
+The unpublished lifecycle feature is rebased onto the reviewed stock-source
+Admin develop c7cc558411f01fa9aefc066d32c907cab5f5986a and Landing develop
+e534cd316d55f0c67db9d6fd5f7b9d2aa7be94a2. Preserve immediate Apply, explicit
+recipe stock and all prior stock procedures alongside lifecycle, guarded table
+admission, personal profile and shift-end guidance. Source-contract reviews must
+compare with these actual PR bases, not the earlier local preparation baselines.
+The additive submission recovery migration is now280_check_submission_recovery_scope.sql;
+279 remains the upstream explicit recipe-stock migration. No applied migration is
+modified. The inventory admits only SQL migrations explicitly selected by authored
+features, and has a synthetic regression that excludes unselected/compressed files.
+The new migration is evidence for POS order-entry recovery and the internal API
+contract; it adds no guest handoff or payment authority. Derived conflict stages
+were preserved outside repositories and temporary WORKSPACE placeholders are not
+release-ready. Regenerate the combined inventory/contracts after all integrated
+source checkpoints and the final API corpus commit, then coordinate the immutable
+Landing pin before remote CI. No immutable pin is created by this local integration.
