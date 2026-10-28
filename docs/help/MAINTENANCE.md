@@ -39,6 +39,11 @@ The calculation details request carries the displayed managed series; the API
 uses the same effective stock source and pools for its explanation and sellable
 state. Library items omit the series query. Preview adds no stock mutation.
 
+The compatibility review retains quantity-only legacy products on manual stock.
+It changes no source semantics or public article bytes. API keeps its independently
+reviewed immutable documentation pin; Admin uses this new source-evidence pin.
+Both contracts share the same article hashes and documentation revision.
+
 ## Table-status descriptions review (27 October 2026)
 
 Admin source commit `c2ce0d63db2a50252959d642288288fca513a4e9` combines the
