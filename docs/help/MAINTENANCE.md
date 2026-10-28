@@ -881,3 +881,28 @@ baseline without claiming to revalidate them. Application source checkpoints are
 contracts; every inventoried source digest is verified against its immutable
 checkpoint. Service contracts pin the reviewed immutable Landing commit before
 remote CI or release. Synchronize the exported support corpus before scanning API sources.
+
+
+## Courier execution-only itinerary (28 October 2026)
+
+Courier mode no longer exposes Refine, route settings, address correction, stop
+reordering or reoptimization. Owners and superadmins viewing a courier use the
+same execution-only screen. Start, navigation, contacts, arrival and delivery
+confirmation remain available. Read-only total-duration details remain visible.
+Retry on a plan warning reloads saved information without optimizing the route.
+An authorized dispatcher changes plans in Orders → Deliveries. Legacy courier
+planning aliases return 403; delivery planning writes reject Courier memberships
+even when a historical orders.manage grant remains, and reject explicit
+courier_id selections. Current restaurant ownership and explicit superadmin
+access remain valid for dispatcher planning. Restaurant boundaries are preserved.
+
+Review courier, dispatch and Google verification procedures in FR/HE/EN. No
+customer windows, route order, live estimates or order states are rewritten by
+this release. Synthetic tests cover rejected writes and preserved delivery actions;
+production verification reads controls without changing real orders. Refresh only
+API, Admin and Landing evidence. Retain Web, POS and Backoffice service blocks
+and surfaces exactly from Landing develop 4a9ebdae58075afc5fa872a142f5cd23406fc3af;
+those services are not revalidated. Export and copy the identical public corpus
+before scanning API evidence, pin immutable source and documentation commits,
+validate API before clients, then promote the exact development-tested artifacts
+under the authorized courier correction release workflow.
