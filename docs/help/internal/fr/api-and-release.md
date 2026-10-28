@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-27'
+updatedAt: '2026-10-28'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -165,3 +165,9 @@ Les routes de stock de série existantes acceptent le passage entre count, measu
 ## Confirmer la règle avec le stock
 
 Les routes staff POST /api/v1/menu/items/:id/sales-stock/availability et POST /api/v1/menu/items/:id/sales-stock/restock acceptent availability_rule_id en option. Une valeur positive doit désigner une règle active du restaurant authentifié ; zéro rétablit l’héritage et un champ absent conserve l’affectation. La première route accepte une règle seule sans override : aucun compteur, engagement, état forcé ou autre champ du produit n’est réécrit. Avec override ou un ajustement de stock, l’ensemble est validé dans une transaction sous le verrou des réservations. Un conflit de révision, une règle étrangère ou supprimée ou une erreur de persistance annule toute la demande. Les routes conservent menu.edit et le contexte restaurant ; aucun nouveau droit, route ou migration. Déployer cette API avant l’Admin qui enregistre la règle dès Appliquer. Une réponse confirmée suivie d’un échec de lecture se récupère par un rechargement, jamais en rejouant le stock. Les champs absents préservent les clients existants.
+
+<span id="explicit-recipe-stock-source" />
+
+## Source explicite du stock et réservations
+
+La migration 279 ajoute stock_from_recipe à menu_items et item_stock_series, false par défaut : les configurations existantes gardent leur logique. POST /api/v1/menu/items/:id/sales-stock/restock avec stock_source=recipe, mode vide, unité vide, quantité null et expected_revision sélectionne réellement la recette. Le champ optionnel availability_rule_id peut être confirmé dans la même transaction sous verrou stock/commandes. Un conflit, une règle étrangère/supprimée ou une erreur annule tout. Les compteurs manuels dormants et les snapshots des commandes sont conservés ; les nouveaux calculs et réservations ignorent leur limite. Revenir à un mode manuel réactive les compteurs et adopte les nouvelles commandes sans perdre leurs prélèvements d’ingrédients/préparations. Les conversions de série existantes restent révisées et atomiques. Une conversion de compteur global non prouvable depuis des prélèvements historiques échoue avec stock_conversion_unavailable, sans les réinterpréter. La vente de stock déjà préparé doit être désactivée avant de sélectionner la recette. Les réponses publiques normalisent les champs manuels inactifs ; le staff reçoit stored_mode/stored_unit et recipe_configured pour l’éditeur. Les autres clients ignorent les champs ajoutés et conservent leurs contrats. Aucun changement de droits ni d’environnement. Déployer API avant Admin puis promouvoir les mêmes artefacts vérifiés en développement.

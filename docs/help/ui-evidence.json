@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "Foody-isr/admin",
-  "ref": "65ecd463041b3eb76ba843ea57284a8ae9f7ec0f",
+  "ref": "1163f8399d7e94c2329be004cf5bbc2413446bc3",
   "observations": [
     {
       "id": "table-status-descriptions-source-contract",
@@ -159,14 +159,15 @@
       "id": "item-stock-availability",
       "source": "src/components/menu-item/ItemAvailabilityPanel.tsx",
       "required": [
-        "t('itemStockTracking')",
-        "t('itemStockViewCalculation')",
+        "<ProductSalesStock",
+        "t(\"itemStockViewCalculation\")",
         "settings/stock/availability",
-        "setOverride(statusDraft!)",
-        "stock_quantity:",
-        "value: 'auto'"
+        "preparation_lead_time_minutes: preparation.leadMinutes"
       ],
-      "forbidden": []
+      "forbidden": [
+        "setOverride(statusDraft!)",
+        "StockDraft"
+      ]
     },
     {
       "id": "editor-responsive-distribution",
@@ -272,23 +273,36 @@
       "id": "stock-dialog-rule-label-and-save-scope",
       "source": "src/lib/i18n.tsx",
       "required": [
-        "itemStockAvailabilityRule: \"Availability rule\",",
-        "itemStockRuleScopeHint: \"Applies to this product across all series. None inherits the category rule, then the restaurant rule.\",",
-        "itemStockRuleApplyHint: \"Stock and the availability rule are saved immediately when you apply.\",",
-        "itemStockLegacyRuleApplyHint: \"The availability rule is saved immediately. Other stock settings still need Save on the product page.\",",
+        "carteChoiceStock: \"Manually defined quantity\",",
+        "carteChoiceAutomatic: \"Quantity calculated from recipe\",",
+        "itemStockAdvanced: \"Advanced stock settings\",",
+        "itemStockProfile: \"Stock profile\",",
+        "itemStockInheritedProfile: \"Use the default setting\",",
+        "itemStockRuleScopeHint: \"Applies to this product across all series. The default setting uses the category profile, then the restaurant profile.\",",
+        "itemStockRuleApplyHint: \"These settings are saved immediately. Other product changes stay in draft.\",",
         "itemStockSavedRefreshError: \"Saved. The display could not refresh. Retry to reload without applying the change again.\",",
-        "itemStockAvailabilityRule: \"כלל זמינות\",",
+        "carteChoiceStock: \"כמות מוגדרת ידנית\",",
+        "carteChoiceAutomatic: \"כמות מחושבת לפי המתכון\",",
+        "itemStockAdvanced: \"הגדרות מלאי מתקדמות\",",
+        "itemStockProfile: \"פרופיל מלאי\",",
+        "itemStockInheritedProfile: \"שימוש בהגדרת ברירת המחדל\",",
         "itemStockRuleScopeHint: \"חל על הפריט בכל הסדרות. ללא כלל ייעודי, הכלל עובר בירושה מהקטגוריה ואחריה מהמסעדה.\",",
-        "itemStockRuleApplyHint: \"המלאי וכלל הזמינות נשמרים מיד בעת החלה.\",",
-        "itemStockLegacyRuleApplyHint: \"כלל הזמינות נשמר מיד. הגדרות המלאי האחרות עדיין דורשות שמירה בדף הפריט.\",",
+        "itemStockRuleApplyHint: \"ההגדרות האלה נשמרות מיד. שינויים אחרים בפריט נשארים בטיוטה.\",",
         "itemStockSavedRefreshError: \"נשמר. לא ניתן לרענן את התצוגה. נסו שוב כדי לטעון בלי להחיל את השינוי מחדש.\",",
-        "itemStockAvailabilityRule: \"Règle de disponibilité\",",
-        "itemStockRuleScopeHint: \"S’applique au produit, toutes séries confondues. Aucun hérite de la catégorie, puis du restaurant.\",",
-        "itemStockRuleApplyHint: \"Le stock et la règle de disponibilité sont enregistrés immédiatement après validation.\",",
-        "itemStockLegacyRuleApplyHint: \"La règle de disponibilité est enregistrée immédiatement. Les autres réglages du stock restent à enregistrer sur la fiche.\",",
+        "carteChoiceStock: \"Quantité définie manuellement\",",
+        "carteChoiceAutomatic: \"Quantité calculée depuis la recette\",",
+        "itemStockAdvanced: \"Réglages avancés du stock\",",
+        "itemStockProfile: \"Profil de stock\",",
+        "itemStockInheritedProfile: \"Utiliser le réglage par défaut\",",
+        "itemStockRuleScopeHint: \"S’applique au produit, toutes séries confondues. Le réglage par défaut utilise celui de la catégorie, puis du restaurant.\",",
+        "itemStockRuleApplyHint: \"Ces réglages sont enregistrés immédiatement. Les autres modifications de la fiche restent en brouillon.\",",
         "itemStockSavedRefreshError: \"Enregistré. Impossible d’actualiser l’affichage. Réessayez pour recharger sans appliquer le changement une seconde fois.\","
       ],
-      "forbidden": []
+      "forbidden": [
+        "Automatic (existing rules)",
+        "Automatique (règles existantes)",
+        "Other stock settings still need Save on the product page."
+      ]
     },
     {
       "id": "stock-dialog-product-rule-immediate-save",
@@ -296,7 +310,10 @@
       "required": [
         "if (ruleOnlyEdit)",
         "await onApply(undefined, undefined, ruleId)",
-        "aria-label={t(\"itemStockAvailabilityRule\")}"
+        "aria-label={t(\"itemStockProfile\")}",
+        "itemStockRecipeDescription",
+        "itemStockAdvanced",
+        "mode: \"\""
       ],
       "forbidden": [
         "ruleSelection?.onApply(ruleId)"
@@ -306,11 +323,14 @@
       "id": "product-rule-selector-relocation",
       "source": "src/components/menu-item/ItemAvailabilityPanel.tsx",
       "required": [
-        "ruleSelection={{ value: stock.ruleId, options: rules",
-        "t('itemStockAvailabilityRule')"
+        "value: row.item.availability_rule_id ?? 0",
+        "options: rules",
+        "getSalesStock(rid, \"\", itemId)"
       ],
       "forbidden": [
-        "<label className=\"block text-sm space-y-2\">{t('availabilityManageRules')}"
+        "itemStockTracking",
+        "availability_rule_id: ruleId || undefined",
+        "StockDraft"
       ]
     },
     {
@@ -365,46 +385,64 @@
           "État",
           "Créer un article",
           "Articles et cartes → Articles",
-          "Règle de disponibilité",
           "Enregistrer",
           "toutes les séries",
-          "la règle est enregistrée immédiatement"
+          "Quantité définie manuellement",
+          "Quantité calculée depuis la recette",
+          "Réglages avancés du stock",
+          "Profil de stock",
+          "Utiliser le réglage par défaut",
+          "Appliquer enregistre directement tous les réglages"
         ],
         "en": [
           "table-based library",
           "Status",
           "Create item",
           "Items & menus → Item library",
-          "Availability rule",
           "Save",
           "all series",
-          "the rule is saved immediately"
+          "Manually defined quantity",
+          "Quantity calculated from recipe",
+          "Advanced stock settings",
+          "Stock profile",
+          "Use the default setting",
+          "Apply directly saves every setting"
         ],
         "he": [
           "בצורת טבלה",
           "מצב",
           "צור פריט",
           "פריטים ותפריטים → ספריית פריטים",
-          "כלל זמינות",
           "בכל הסדרות",
-          "הכלל נשמר מיד"
+          "כמות מוגדרת ידנית",
+          "כמות מחושבת לפי המתכון",
+          "הגדרות מלאי מתקדמות",
+          "פרופיל מלאי",
+          "שימוש בהגדרת ברירת המחדל",
+          "החלה שומרת ישירות את כל ההגדרות"
         ]
       },
       "forbidden": {
         "fr": [
           "Trois cartes de synthèse s’affichent",
           "Menu → Articles",
-          "Menu → Cartes"
+          "Menu → Cartes",
+          "Automatique (règles existantes)",
+          "ses autres réglages de stock restent à enregistrer avec la fiche"
         ],
         "en": [
           "Three KPI cards are shown",
           "Menu → Items",
-          "Menu → Menus"
+          "Menu → Menus",
+          "Automatic (existing rules)",
+          "its other stock settings still need product Save"
         ],
         "he": [
           "מוצגים שלושה כרטיסי KPI",
           "תפריט → פריטים",
-          "תפריט → תפריטים"
+          "תפריט → תפריטים",
+          "אוטומטי (כללים קיימים)",
+          "הגדרות המלאי האחרות שלה עדיין דורשות שמירה עם הפריט"
         ]
       }
     },
@@ -573,41 +611,56 @@
       "required": {
         "fr": [
           "Stock & disponibilité",
-          "Suivre une règle",
           "Appliquer",
           "Enregistrer",
-          "Règle de disponibilité",
           "toutes les séries",
-          "la règle est enregistrée immédiatement"
+          "Quantité définie manuellement",
+          "Quantité calculée depuis la recette",
+          "Réglages avancés du stock",
+          "Profil de stock",
+          "Utiliser le réglage par défaut",
+          "Appliquer enregistre directement tous les réglages"
         ],
         "en": [
           "Stock & availability",
-          "Follow a rule",
           "Apply",
           "Save",
-          "Availability rule",
           "all series",
-          "the rule is saved immediately"
+          "Manually defined quantity",
+          "Quantity calculated from recipe",
+          "Advanced stock settings",
+          "Stock profile",
+          "Use the default setting",
+          "Apply directly saves every setting"
         ],
         "he": [
           "מלאי וזמינות",
-          "פעל לפי כלל",
           "החל",
           "שמור",
-          "כלל זמינות",
           "בכל הסדרות",
-          "הכלל נשמר מיד"
+          "כמות מוגדרת ידנית",
+          "כמות מחושבת לפי המתכון",
+          "הגדרות מלאי מתקדמות",
+          "פרופיל מלאי",
+          "שימוש בהגדרת ברירת המחדל",
+          "החלה שומרת ישירות את כל ההגדרות"
         ]
       },
       "forbidden": {
         "fr": [
-          "Recette → Disponibilité"
+          "Recette → Disponibilité",
+          "Automatique (règles existantes)",
+          "ses autres réglages de stock restent à enregistrer avec la fiche"
         ],
         "en": [
-          "Recipe → Availability"
+          "Recipe → Availability",
+          "Automatic (existing rules)",
+          "its other stock settings still need product Save"
         ],
         "he": [
-          "מתכון → זמינות"
+          "מתכון → זמינות",
+          "אוטומטי (כללים קיימים)",
+          "הגדרות המלאי האחרות שלה עדיין דורשות שמירה עם הפריט"
         ]
       }
     },
@@ -653,37 +706,55 @@
       "required": {
         "fr": [
           "Articles et cartes → Cartes",
-          "Règle de disponibilité",
           "Enregistrer",
           "toutes les séries",
-          "la règle est enregistrée immédiatement"
+          "Quantité définie manuellement",
+          "Quantité calculée depuis la recette",
+          "Réglages avancés du stock",
+          "Profil de stock",
+          "Utiliser le réglage par défaut",
+          "Appliquer enregistre directement tous les réglages"
         ],
         "en": [
           "Items & menus → Menus",
-          "Availability rule",
           "Save",
           "all series",
-          "the rule is saved immediately"
+          "Manually defined quantity",
+          "Quantity calculated from recipe",
+          "Advanced stock settings",
+          "Stock profile",
+          "Use the default setting",
+          "Apply directly saves every setting"
         ],
         "he": [
           "פריטים ותפריטים → תפריטים",
-          "כלל זמינות",
           "בכל הסדרות",
-          "הכלל נשמר מיד"
+          "כמות מוגדרת ידנית",
+          "כמות מחושבת לפי המתכון",
+          "הגדרות מלאי מתקדמות",
+          "פרופיל מלאי",
+          "שימוש בהגדרת ברירת המחדל",
+          "החלה שומרת ישירות את כל ההגדרות"
         ]
       },
       "forbidden": {
         "fr": [
           "Menu → Articles",
-          "Menu → Cartes"
+          "Menu → Cartes",
+          "Automatique (règles existantes)",
+          "ses autres réglages de stock restent à enregistrer avec la fiche"
         ],
         "en": [
           "Menu → Items",
-          "Menu → Menus"
+          "Menu → Menus",
+          "Automatic (existing rules)",
+          "its other stock settings still need product Save"
         ],
         "he": [
           "תפריט → פריטים",
-          "תפריט → תפריטים"
+          "תפריט → תפריטים",
+          "אוטומטי (כללים קיימים)",
+          "הגדרות המלאי האחרות שלה עדיין דורשות שמירה עם הפריט"
         ]
       }
     },
