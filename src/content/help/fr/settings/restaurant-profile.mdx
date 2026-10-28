@@ -12,6 +12,12 @@ releaseStatus: available
 ---
 Ouvrez Paramètres pour le restaurant sélectionné. Vérifiez son nom avant d’enregistrer.
 
+<span id="shared-pos-settings" />
+
+## Vérifier les réglages POS partagés avant sauvegarde
+
+Un appareil attribué à un mode utilise les réglages de service de ce mode partagé, pas une seconde politique locale sur l’iPad. Vérifiez le restaurant et le mode affecté. L’API mise à jour fusionne les modifications de champs POS différents et refuse les conflits sur le même champ. Dans Admin, conservez le brouillon refusé pour le vérifier, puis utilisez Recharger les réglages enregistrés et confirmez son abandon avant de refaire la modification voulue. Ne renvoyez pas une politique périmée en boucle. Mettez l’API à jour avant Admin et POS ; les anciens clients sans contrat de fusion gardent leur sauvegarde historique et ne doivent pas modifier les réglages partagés pendant la transition. Une modification de mode POS ne change ni identité, ni adresse, ni horaires, ni fichiers clients. Voir [la reprise du mode partagé](/fr/help/settings/service-mode#shared-mode-save-recovery).
+
 <span id="pos-location-configuration" />
 
 ## Vérifier le restaurant avant de régler les modes POS
@@ -59,3 +65,9 @@ Les coordonnées du personnel se gèrent dans Admin → Personnel → employé �
 ## Code caisse à l’activation du personnel
 
 L’activation du personnel vérifie les permissions affectées dans ce restaurant, y compris les rôles personnalisés : orders.manage ou payments.manage impose un code caisse personnel. Les livreurs en consultation et les rôles limités à la cuisine n’en ont pas besoin. Les invitations existantes encore inutilisées appliquent la même règle actuelle. Modifier le nom du rôle, l’adresse du livreur ou la destination d’une tournée n’accorde aucun droit caisse. Voir [l’activation et la reprise](/fr/help/getting-started/first-login#activate).
+
+<span id="manual-weekly-ordering" />
+
+## Piloter manuellement les commandes hebdomadaires
+
+Les restaurants en lot hebdomadaire peuvent choisir Ouverture manuelle dans Paramètres → Commandes et livraison → Commandes et disponibilité, avec settings.edit. Enregistrez, puis ouvrez ou fermez explicitement les commandes avec le bouton de pause. Les heures d’ouverture/clôture automatiques ne pilotent plus la prise de commandes dans ce mode. Jours et créneaux de livraison, fuseau du restaurant, règles de préparation et stocks restent applicables ; les commandes existantes sont conservées. Le site reste consultable pendant la pause. Désactivez l’accès de test temporaire actif avant toute réouverture publique. Voir le guide des réglages des commandes pour la procédure complète.

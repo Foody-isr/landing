@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-25'
+updatedAt: '2026-10-28'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -147,3 +147,43 @@ GET /api/v1/restaurants/:id/whatsapp/meta/templates/:templateId/image reads an a
 ## Verify the current batch without orders
 
 GET /api/v1/orders/series keeps the existing sorted fulfillment dates and aggregates, then includes the current batch’s service days without creating an order. Optional is_current marks one default date: the operational batch’s first fulfillment day that has not passed. The batch stays current through its final day in restaurant time. Menu selection and public ordering rules keep their separate resolution. The client refreshes every visible minute and on tab return; Home and Orders follow the current batch while preserving history chosen on the open page and explicit payment-attention links. Validate cutoff boundaries, local midnight, DST, multiple fulfillment days, tenant isolation, zero orders and existing aggregates. Deploy API before Admin and publish procedures with the feature.
+
+<span id="manual-weekly-ordering" />
+
+## Control weekly ordering manually
+
+Migration 277 adds restaurant_settings.batch_ordering_mode (calendar default, or manual). Scoped settings GET/PUT expose batch_ordering_mode; invalid values fail before persistence. Batch preview accepts the mode. Public/staff batch configs expose ordering_mode; manual mode returns empty opening/cutoff timestamps and uses the operational current series for dates and rotating-menu references. Manual admission bypasses only automatic intake clocks (weekly and pickup/delivery opening hours). orders_paused, rush mode, enabled services, restaurant ownership, test access, preparation, stock, payment and fulfillment-date validation remain authoritative. Entering manual mode clears a scheduled reopening while retaining the effective pause. Existing orders are not updated. Deploy API migration 277 before Admin/Web/POS; stage and verify all artifacts before production promotion.
+
+<span id="series-stock-mode-conversion" />
+
+## Convert current-series reservations
+
+Existing series-stock routes accept transitions among count, measure and per_variant with expected_revision. Restock receives remaining quantity; Configure adds recalculated commitments, while carte preparation continues to use an initial allowance including commitments. The menu.edit scoped operation locks item stock and relevant orders/lines, converts their reserved_stock and counters, then records the journal in the same transaction. Commercial snapshots, ingredients, statuses and other series remain unchanged. Released reservations are converted without being committed again; produced food stays consumed. Inconsistent accounting or an unresolved historic size returns 422 stock_conversion_unavailable and rolls back the entire transaction. A concurrent lock or stale revision returns 409; explicitly reload and retry. Deploy this API before Admin offers mode changes on committed series. No additional migration or environment variable.
+
+<span id="immediate-product-rule-confirmation" />
+
+## Confirm a rule with stock
+
+Staff POST /api/v1/menu/items/:id/sales-stock/availability and POST /api/v1/menu/items/:id/sales-stock/restock accept optional availability_rule_id. A positive value must identify a non-deleted rule owned by the authenticated restaurant; zero restores inheritance, and omission retains the assignment. The first route accepts a rule without override: no counters, commitments, forced state or other product fields are rewritten. With an override or stock adjustment, the whole request commits in one transaction under the reservation lock. A stale revision, foreign or deleted rule, or persistence error rolls back the entire request. Existing menu.edit and restaurant scoping remain; no new permission, route or migration. Deploy API before the Admin that saves the rule on Apply. A confirmed write followed by a failed read recovers by reloading rather than replaying stock. Omitted fields preserve existing clients.
+
+<span id="explicit-recipe-stock-source" />
+
+## Explicit stock source and reservations
+
+Migration 279 adds stock_from_recipe to menu_items and item_stock_series, default false: existing configurations retain their behavior. POST /api/v1/menu/items/:id/sales-stock/restock with stock_source=recipe, empty mode and unit, null quantity and expected_revision actually selects recipe calculation. Optional availability_rule_id can commit in the same transaction under the stock/order lock. A conflict, foreign/deleted rule or error rolls back everything. Dormant manual counters and order snapshots are retained; new calculations and reservations ignore their limit. Returning to manual stock reactivates counters and adopts new orders without losing ingredient/preparation draws. Existing series conversions remain revision-checked and atomic. A global-counter conversion that cannot be proven from historical draws fails with stock_conversion_unavailable rather than reinterpreting them. Ready-stock sale must be disabled before selecting recipe stock. Public responses normalize inactive manual fields; staff receive stored_mode/stored_unit and recipe_configured for the editor. Other clients ignore added fields and retain their contracts. No permission or environment change. Deploy API before Admin, then promote the same development-verified artifacts. GET /api/v1/availability/items/:id/preview accepts optional serie_date to explain the displayed series; an invalid date returns 400. Details and status use the same active source and counters without mutation.
+
+<span id="order-lifecycle-scoped-contract" />
+
+## Scoped lifecycle and recovery contract
+
+Lifecycle schema_version 1 keeps four independent axes, explicit scope and matching identities. Public reads contain only the requested Order. Check/session views are actual aggregates, not a representative batch copied across the scope. An absent field on an old server allows explicit legacy behavior; invalid or unavailable advertised data requires unknown/retry without a financial fallback. pending means payment is expected, not proof of an active attempt, and retains existing eligibility. A card authorization, actual active claim or uncertain operation journal retains its existing guards and resolution flow. Paid preparation does not reopen payment or the table. Drafts use secure storage isolated by account, restaurant, backend and installation. Deploy additive migration 280_check_submission_recovery_scope.sql before clients; retain the reference and food for explicit idempotent resumption, never automatic replay after restart. A financial merge requires reviewing the entire canonical bill before firing its food.
+
+Admission of a new occupation without a canonical session sends start_if_free:true only after the boolean table_service_start_if_free capability. Verification and opening are atomic: if another visit appears after covers are chosen, 409 details.code=table_service_changed preserves the existing covers and session. An unavailable verification returns 503 table_service_unavailable; an unknown table remains 404. POS retains the draft, restores its prior selection and returns to floor-plan review instead of forcing the old context. Without the capability on an older API, the new guarded admission remains unavailable. The legacy contract without this flag or with false retains its behavior; it does not retroactively protect old clients. Deploy the API before the compatible POS.
+
+<span id="personal-shift-end-preflight" />
+
+## Verify the personal period before sign-out
+
+Deploy the API before POS. GET /restaurants/:id/shifts/end-preflight is a personal JWT/restaurant-scoped read: direct schema_version:1 DTO with state ready/report_required/no_active_shift. shift_id is a required positive integer for ready/report_required and must be absent for no_active_shift. No contact, cash amount or device authorization is exposed. A historical reference may be expired/revoked/unlinked if it exists in the restaurant; this restores no cash access. Missing/foreign numeric reference returns409 shift_pos_reference_invalid; errors or ambiguity return503 shift_end_preflight_unavailable. A non-POS period with a nil reference retains its legitimate end.
+
+The new client confirms ready then POSTs end with expected_shift_id; omitting the field preserves the legacy contract. Mutation relocks and rechecks the period and drawer: replacement/disappearance gives409 shift_changed, an open drawer409 cash_drawer_open, and an unconfirmed storage result on the new path503 shift_end_unavailable. Legacy errors expose no SQL detail. no_active_shift requires separate confirmation, a fresh personal GET and the same sign-in before local locking, without POST end. The local restaurant/backend cash journal retains priority; uncertain shift end keeps its dedicated GET current verification before another intent. Verifone journals remain separate. A missing route, unknown version/shape/state or error blocks without a financial fallback. No migration, enrollment or cash-binding change; no preliminary result bypasses mutation guards.

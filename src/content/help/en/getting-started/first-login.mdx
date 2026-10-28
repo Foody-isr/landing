@@ -6,7 +6,7 @@ tags:
   - getting-started
   - account-access
   - first-login
-updatedAt: '2026-10-25'
+updatedAt: '2026-10-28'
 featureId: account-access
 audience: public
 releaseStatus: available
@@ -31,8 +31,18 @@ Sign in with your own account, then choose an authorized restaurant. Check its n
 
 After a rejected POS code or failed save, reopen the same still-valid email link and retry; failed activation does not consume it. A duplicate code message means a POS operator must choose a different 4–6 digit code. A courier without POS permissions does not need to try more combinations. If the link is expired, lacks restaurant context or says it was already used and activation did not finish, ask a staff manager to open Staff → Employees → the member → Resend setup invitation. Use the newest email; resending invalidates previous unused links without recreating the member. If activation already succeeded, sign in with the password you chose, or use password recovery. Removed restaurant access must be reviewed by the manager. Never share activation links or credentials with the assistant.
 
+<span id="terminal-pin-sign-in" />
+
+## Clock in on the terminal
+
+On an already enrolled POS, Sign in shows Enter your passcode. Enter your complete personal 4–6-digit code, then tap Start shift. The four slots shown initially expand when you enter a fifth digit; they do not limit an existing code to four digits. Backspace removes the last digit. Entry is not submitted automatically: wait for the sign-in result before using the POS. A rejection displays an error and clears the entry for another attempt; never share your code. Set up this terminal with email and password returns to the sign-in form. A successful PIN session also clocks you in; your account’s role and permissions still apply. Show hours opens a separate flow: checking your status starts neither a shift nor a sales session. See [personal time tracking](/en/help/staff/devices-and-shifts#personal-time-tracking).
+
 <span id="end-pos-shift" />
 
 ## End a POS shift safely
 
-On an enrolled POS, use Sign out in the navigation or End shift in More. If this POS has an open drawer or a pending cash operation, Cash drawer report pending appears before ending the shift. Cancel leaves you signed in; Finish report opens Cash drawer balance without closing anything or signing out. Resolve the pending operation, physically count and close the drawer on the same POS, then request sign-out again and confirm End shift. Without report permissions, ask an authorized manager. An unverifiable cash status keeps the session open; check the connection and retry. A Verifone deposit is separate and never starts automatically. Ending the staff shift keeps this POS enrolled for the next PIN sign-in. See [the pending-report procedure](/en/help/staff/devices-and-shifts#pending-cash-sign-out).
+On a compatible version, use Sign out in navigation or End shift in More. Foody checks your personal work period before offering confirmation. If a cash report or local operation remains pending, Cash drawer report pending keeps you signed in. Cancel changes nothing; Finish report opens Cash drawer balance without closing anything or signing out. Resolve the operation, physically count and close cash on its original POS, then request shift end again. Without report permissions, ask an authorized manager. See [the pending report](/en/help/staff/devices-and-shifts#pending-cash-sign-out).
+
+If no period is active, Shift already ended offers Lock terminal. Explicit confirmation and another verification are required before returning to PIN; no new clock-out is recorded. See [an already ended period](/en/help/staff/devices-and-shifts#no-active-shift-sign-out). An expired or revoked historical device authorization that is still found may permit a shift end when its drawer is confirmed closed; it does not reactivate cash access.
+
+A missing or foreign reference, failed verification or incompatible server keeps you signed in and offers Retry. If a shift-end response is uncertain, [verify it before another action](/en/help/staff/devices-and-shifts#uncertain-shift-end). Never erase journals or local data to bypass a refusal. Shift end keeps the device enrolled for the next PIN. A Verifone deposit remains separate and never starts automatically.

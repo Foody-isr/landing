@@ -1,0 +1,42 @@
+---
+title: Understand a cash-drawer access refusal
+description: >-
+  On the affected POS, open More → Reports → Cash drawer balance or Cash movements. This diagnostic needs compatible POS
+  and API versions; this guide does not confirm installation.
+apps: foodypos
+tags:
+  - payments
+  - pos-cash-access-diagnostics
+updatedAt: '2026-10-28'
+featureId: pos-cash-access-diagnostics
+audience: public
+releaseStatus: local-release-unverified
+---
+On the affected POS, open More → Reports → Cash drawer balance or Cash movements. This diagnostic needs compatible POS and API versions; this guide does not confirm installation.
+
+> **Release availability must be confirmed**
+> This application exists in the source workspace. This guide does not confirm public distribution or availability in your installed release.
+
+<span id="cash-access-refusal" />
+
+## Review the refusal without replacing the shift or drawer
+
+If Cash drawer balance or Cash movements cannot confirm the drawer, this does not confirm that no drawer is open. Use Retry to read the state again on the same device. While the read fails, no new opening, cash adjustment or closure is allowed, even if an older report remains displayed. After a successful read, actions return according to the confirmed state and your permissions.
+
+A specific message may ask you to check the PIN sign-in or open shift, have the device authorization reviewed, or verify an installation that does not match the open shift. Have a manager or support examine this relationship without blindly changing hours or assignments. Do not re-enroll the device or create a replacement shift or drawer to bypass the refusal. The message repairs no relationship and does not by itself identify another physical device. Temporarily unavailable verification can be retried; it proves neither a network outage nor a missing reference. An older POS or API may still display a generic message.
+
+An already pending operation retains its existing recovery with the same identifier; do not recreate it or erase local data. An absent session must be confirmed by the API’s business response, not inferred from a connection, access or missing-route error.
+
+Ending your period and current cash access remain separate checks. An expired or revoked historical authorization that is still found may permit shift end when its drawer is closed, without restoring cash controls. Sign out verifies the period before confirmation; a missing or foreign reference or failed read cannot bypass this check. If no active period is confirmed, [locking requires its own confirmation](/en/help/staff/devices-and-shifts#no-active-shift-sign-out), without another clock-out or drawer closure.
+
+<span id="cash-versus-terminal" />
+
+## Keep physical cash and the Verifone terminal separate
+
+Retry creates no cash movement and starts no Verifone deposit. Cash drawer balance needs access to the Foody API, not a connected Victa Mini. Card payments and operations sent to the terminal use their own connection and remain separate. Cards are excluded: closing cash does not start a Verifone deposit, and a Verifone deposit does not close cash. Never use a cash adjustment to disguise a card refund.
+
+<span id="terminal-report-context" />
+
+## Reconfirm the context before a terminal deposit
+
+On a compatible POS, a Terminal deposits confirmation belongs to the restaurant, staff sign-in and terminal configuration shown when it opened. If any changes before confirmation, the old dialog must not launch an action in the new context. Reopen Terminal deposits, check the terminal and its available capabilities, then explicitly confirm the intended action. Old results are not a confirmed state for the new context. If a command had already been transmitted, changing screens or restaurants does not cancel it: check the original terminal or provider before repeating anything and preserve pending operations. This protection closes neither physical cash nor the staff period and does not certify a physical deposit on a particular device.

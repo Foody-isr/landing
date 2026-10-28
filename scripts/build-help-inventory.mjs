@@ -48,7 +48,12 @@ for (const [service, configuredRoot] of Object.entries(roots)) {
   const root = path.resolve(workspace, configuredRoot);
   const hasGit = !!git(root, 'rev-parse', '--show-toplevel') && git(root, 'rev-parse', '--show-toplevel') === root;
   const listed = hasGit ? [...new Set((git(root, 'ls-files') + '\n' + git(root, 'ls-files', '--others', '--exclude-standard')).split('\n').filter(Boolean))] : walk(root);
-  const files = listed.filter(file => sourceRoots.test(file) && sourceExtension.test(file) && !excluded.test(file) && fs.existsSync(path.join(root, file))).sort();
+  // Only authored migration selectors opt SQL into evidence. Do not expand the
+  // review to every historical migration or to compressed/database data files.
+  const explicitMigration = file => service === 'foodyserver'
+    && /^migrations\/[^/]+\.sql$/.test(file)
+    && selectors.some(feature => feature.compiled[service]?.some(pattern => pattern.test(file)));
+  const files = listed.filter(file => ((sourceRoots.test(file) && sourceExtension.test(file)) || explicitMigration(file)) && !excluded.test(file) && fs.existsSync(path.join(root, file))).sort();
   const classes = new Map();
   for (const file of files.filter(f => f.endsWith('.dart'))) for (const match of fs.readFileSync(path.join(root, file), 'utf8').matchAll(/\bclass\s+(\w+)/g)) classes.set(match[1], [...(classes.get(match[1]) || []), file]);
   const sources = {};
@@ -58,8 +63,13 @@ for (const [service, configuredRoot] of Object.entries(roots)) {
     const matched = selectors.filter(f => f.compiled[service]?.some(pattern => pattern.test(file))).map(f => f.id);
     // The unified payment-history reader lives in orders for existing data
     // access, but it does not change order creation, types or fulfillment.
-    const ids = service === 'foodyserver' && /^internal\/orders\/transactions(?:_handler|_adjustments)?\.go$/.test(file)
-      ? ['pos-payments'] : matched.length ? matched : ['shared-runtime'];
+    // This extracted resolver classifies cash POS access failures only; it does
+    // not introduce order creation, fulfillment or order-type procedures.
+    const ids = service === 'foodyserver' && file === 'internal/orders/cash_drawer_context.go'
+      ? ['pos-payments', 'pos-cash-access-diagnostics']
+      : service === 'foodyserver' && /^internal\/orders\/transactions(?:_handler|_adjustments)?\.go$/.test(file)
+        ? ['pos-payments'] : service === 'foodyserver' && file === 'internal/menu/item_photos.go'
+          ? ['menu-product-photos'] : matched.length ? matched : ['shared-runtime'];
     sources[file] = { sha256: digest(bytes), features: ids };
     const found = [];
     if (/(?:^|\/)app\/.*\/(?:page|route)\.[jt]sx?$/.test(file)) found.push({ kind: file.includes('/route.') ? 'next-api-route' : 'next-page', route: routePath(file), line: 1 });

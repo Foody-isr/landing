@@ -7,7 +7,7 @@ apps: foodyadmin
 tags:
   - settings
   - fulfillment-policy
-updatedAt: '2026-10-25'
+updatedAt: '2026-10-27'
 featureId: fulfillment-policy
 audience: public
 releaseStatus: available
@@ -110,6 +110,12 @@ Un départ lancé dans le mode livreur place les commandes affectées En livrais
 
 Un article configuré avec des positions répétées demande un choix distinct par emplacement selon le format sélectionné. Par exemple, un Number Cake à deux caractères accepte 11, AB ou A7. Le prix du format remplace le prix de base ; les modificateurs ajoutent uniquement leurs suppléments configurés. Réduire le nombre de positions retire les choix devenus invisibles. Les positions restent distinctes dans le panier, les commandes et le ticket cuisine ; vérifiez-les avant validation. Ces personnalisations ne changent pas les règles de livraison, de disponibilité, de recette, de remise ou d’annulation. Leur configuration nécessite les versions compatibles et la permission de modifier le menu. Consultez [Variantes et tailles](/fr/help/menu/variants-and-sizes#conditional-positions) pour la procédure et les contrôles en cas de refus.
 
+<span id="shared-pos-policy" />
+
+## Synchroniser les réglages du mode de caisse
+
+Les modes de traitement appartiennent au restaurant ; la demande de choix et les modules actifs suivent les réglages effectifs du mode attribué à l’appareil. Le POS mis à jour les actualise automatiquement et attend la fin sûre d’un paiement, d’un envoi ou d’une édition d’article en cours pour les appliquer. Cette actualisation ne rejoue aucune opération. Dans Admin, un conflit conserve la saisie mais exige de recharger les réglages enregistrés avant une nouvelle modification. Si la demande de traitement est désactivée avec Sur place par défaut, une nouvelle vente reste sur place ; Envoyer demande sa table ou l’addition nommée autorisée, sans convertir la vente en À emporter. Les réglages de livraison, disponibilités et paiements conservent leurs contrôles. Voir [les réglages et leur reprise](/fr/help/settings/pos-behavior#shared-mode-sync-recovery).
+
 <span id="pos-customer-screen-version" />
 
 ## Vérifier la compatibilité de la fiche client POS
@@ -123,3 +129,15 @@ Le réglage Afficher l’écran d’informations client continue de décider si 
 Pour un restaurant configuré en lots hebdomadaires, ouvrez **Accueil** ou **Commandes** avec la base de date **Série**. La série actuelle est sélectionnée par défaut, même sans commande : ses totaux restent alors à zéro. Elle avance après le dernier jour de remise de la série précédente, selon le fuseau horaire du restaurant, sans attendre la première commande ni l’ouverture des commandes. Sur une page restée ouverte, la sélection suit ce changement au prochain rafraîchissement automatique (environ une minute) ou au retour sur l’onglet.
 
 Vous pouvez sélectionner une ancienne série dans le calendrier ; cette consultation reste en place pendant que la page est ouverte. Une commande déjà prise pour une semaine plus lointaine ne remplace pas la série actuelle par défaut. Un lien de suivi des paiements conserve la période qu’il indique. Si la date semble incorrecte, vérifiez les jours de remise et le fuseau horaire configurés, puis rechargez la page. Ce basculement ne crée aucune commande et ne publie pas une carte.
+
+<span id="manual-weekly-ordering" />
+
+## Piloter manuellement les commandes hebdomadaires
+
+Dans Admin → Paramètres → Commandes et livraison → Commandes et disponibilité → Lot hebdomadaire, avec settings.edit, choisissez Ouverture manuelle ou Selon un calendrier, puis Enregistrer les modifications. Le mode manuel conserve la pause en cours ; sélectionner ce mode ne rouvre pas les commandes. Utilisez Mettre en pause les commandes en ligne → Non pour ouvrir, ou Oui pour fermer. Le mode manuel n’a ni ouverture, ni clôture, ni reprise automatique programmée. Les jours et créneaux de livraison/retrait, règles de préparation, stocks et commandes existantes sont conservés. Les nouvelles commandes rejoignent la série de livraison en cours même après l’ancienne clôture, jusqu’à la fin de son dernier jour de service dans le fuseau du restaurant. Vérifiez la date proposée avant confirmation. Revenir au calendrier restaure les horaires conservés. En cas d’échec, gardez le brouillon et relisez le statut confirmé avant de réessayer. Désactivez l’Accès de test temporaire actif avant de rouvrir au public ; son expiration ou sa désactivation seule laisse les commandes en pause. Déployez l’API compatible avant ce choix ; une API ancienne le rend indisponible.
+
+<span id="recorded-lifecycle-and-policy" />
+
+## Distinguer réglage actuel et progression enregistrée
+
+Le réglage du mode ou du flux détermine les actions disponibles pour les nouvelles opérations ; il ne reconstitue pas l’historique d’une ancienne commande. Consultez préparation, remise et paiement séparément. Une information inconnue n’est ni une remise confirmée ni un paiement dû. Après une lecture indisponible, réessayez avant toute nouvelle opération financière. Voir [addition, paiement, préparation et remise](/fr/help/orders/payment-preparation-and-handoff).

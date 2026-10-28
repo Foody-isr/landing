@@ -10,7 +10,7 @@ tags:
   - modifiers
   - table
   - counter
-updatedAt: '2026-10-22'
+updatedAt: '2026-10-28'
 featureId: pos-order-entry
 audience: public
 releaseStatus: available
@@ -39,7 +39,9 @@ For online by-weight orders, open Settings → Payments & VAT with settings.edit
 
 ## Start the intended check
 
-Choose the table or counter order and verify the active check, service and employee. Existing separated checks retain their own balances.
+Choose the table or counter order and verify the active check, service and employee. Opening an already open table resumes its existing session and check without requesting covers again; the guest-count prompt belongs to starting a new occupation, not reopening one. Existing separated checks retain their own balances and require an explicit bill choice where offered. A paid QR order still belongs to its guest: opening the table does not merge or collect that payment again. See [the live table workflow](/en/help/tables-floors/floor-plans#live).
+
+If another POS starts service at the table while you are choosing covers, opening stops without replacing its covers or attaching your draft. Return to the floor plan, refresh, then reopen the table to review the current visit’s check. The previous draft stays in its original context: do not attach it to the next guests. If the state cannot be verified or an update is required, have the POS and server versions checked before trying again.
 
 <span id="add" />
 
@@ -117,4 +119,12 @@ An item configured with repeated positions requires one separate choice per posi
 
 ## Take an order on the mobile terminal
 
-In the updated mobile version, open a table from Checks and choose the guest count or No covers. Back cancels that choice. The sale contains Menu, Check and Actions in one panel. Menu provides search and menu selection; when courses are enabled, choose the course in the bottom strip before adding an item. Tap an item-summary field to open its two-column choices. Done returns to the summary; required choices remain mandatory. Single choices return to the summary or advance according to the configured automatic progression. Enter the note, adjust the quantity at the bottom and select Add; use Done for an existing line. Close cancels customization without adding a line. The top button uses the permitted Foody workflow action, such as Send. Check shows items, courses and Pay; the bottom ⋯ menu retains the other commands. Actions → Customer displays saved contact information. Prices and send/payment eligibility are unchanged. Older installed versions retain their earlier presentation. The top handle also returns to checks during loading or after a loading error, without resetting the draft.
+On the updated terminal, open Checks with the bottom receipt icon. Its selector offers All checks or a floor plan. Open a table, then, if prompted, choose the guest count or No covers; Back cancels that choice. The sale combines Menu, Check and Actions. Menu retains search and menu selection; with courses enabled, choose a course in the bottom strip before adding an item. A new item guides outstanding choice groups. On the terminal, even a simple item without variants or modifiers opens Seat when seats are enabled, at least one cover is recorded and no individual seat is preselected, except where quick entry is explicitly configured. Quick entry keeps its policy without bypassing a required seat. With seats disabled, a seat already selected or on iPad, this new condition does not force an extra panel. A valid required single choice advances; multiple-choice groups finish explicitly with Next or Done at the top. The counter shows progress through groups. In Seat, Table occupies the first row; selecting it returns to the summary. Seats and Add seat remain below; multiple-seat assignment still requires Done. On both mobile and iPad, the Add/Extra/No palette appears only when Use conversational modifiers in POS is enabled for the group; when off, only values appear. This is separate from the item’s quick-entry setting. With the palette enabled, tap a verb then an ingredient: the verb disarms after that one ingredient, and chips preserve entry order in a scrolling row. On the side, No and Extra remain distinct actions. Reopening a field does not restart the guide. Review note, quantity and price, then Add; an existing line uses Done. Closing discards the addition. The handle returns to checks without clearing the draft, including after a read error. Send and fire/hold follow permissions and the service mode; animation does not prove physical printing. Check retains Pay and the ⋯ menu. Older installed versions keep their earlier presentation. Actions → Details → Guest displays recorded contact information. [group setting and refresh](/en/help/menu/modifiers#pos-quick-customization).
+
+<span id="resume-local-draft" />
+
+## Recover an unsent draft after restarting
+
+On the updated POS, the last successfully saved local draft is retained in the device’s secure storage. Reopen FoodyPOS with the same account, restaurant and backend on the same installation. The counter basket can be recovered; for a table or named check, reopen its verified session. Contacts, selections, seats, courses and unsent additions retain their draft values; another table session or account cannot recover them. Wait for saving to be confirmed before leaving. Resolve a storage error instead of treating it as a successful save. Local retention does not replace the server-saved check or synchronize the draft to another device. After an uncertain send, verify the existing order: reopening never automatically resends, reprints or charges. Do not recreate the same food to bypass pending verification.
+
+For an uncertain send, first choose Verify saved result: this read does not resend food. For a table, named check or financial check, Resume original send asks for confirmation and, with a compatible API, resumes only the unchanged food with the same send reference. This explicit action never collects payment. If verification remains unavailable, open Orders to inspect the existing order and retain the original intent; do not recreate the sale. Merely reopening a basket does not authorize automatic replay of an old journal or another account’s intent.

@@ -12,6 +12,12 @@ releaseStatus: available
 ---
 Open Settings for the selected restaurant. Confirm its name before saving changes.
 
+<span id="shared-pos-settings" />
+
+## Check shared POS settings before saving
+
+A device assigned to a mode uses that shared mode’s service settings, not a second local iPad policy. Confirm the selected restaurant and assigned mode. The updated API merges edits to different POS-policy fields and rejects conflicting edits to the same field. In Admin, retain a rejected draft for review, then use Reload saved settings and confirm discarding it before reapplying the intended change. Do not repeatedly submit an outdated policy. Update the API before Admin and POS; older clients without the merge contract retain their legacy save behavior and must not edit shared settings during rollout. Restaurant identity, address, hours and customer records are not changed by a POS-mode edit. See [shared mode recovery](/en/help/settings/service-mode#shared-mode-save-recovery).
+
 <span id="pos-location-configuration" />
 
 ## Check the restaurant before configuring POS methods
@@ -59,3 +65,9 @@ Staff contact details are managed in Admin → Staff → employee → Edit conta
 ## POS code at staff activation
 
 Staff activation checks the permissions assigned in this restaurant, including custom roles: orders.manage or payments.manage requires a private POS code. Read-only couriers and kitchen-only roles do not need one. Existing unused invitation links apply the same current rule. Changing a role label, courier address or route destination does not grant POS permissions. See [activation and recovery](/en/help/getting-started/first-login#activate).
+
+<span id="manual-weekly-ordering" />
+
+## Control weekly ordering manually
+
+Weekly batch restaurants can choose Manual opening under Settings → Ordering & delivery → Orders & availability, with settings.edit. Save, then explicitly open or pause online orders using the pause control. Automatic opening/cutoff times do not control intake in this mode. Delivery days/windows, the restaurant timezone, preparation and stock rules remain in effect; existing orders are untouched. The website stays browsable during a pause. Active temporary test access must be disabled before reopening publicly. See the fulfillment settings guide for the complete procedure.

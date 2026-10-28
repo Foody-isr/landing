@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-25'
+updatedAt: '2026-10-28'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -147,3 +147,43 @@ GET /api/v1/restaurants/:id/whatsapp/meta/templates/:templateId/image lit une im
 ## Vérifier la série courante sans commande
 
 GET /api/v1/orders/series conserve les dates de remise triées et les agrégats existants, puis ajoute les jours du lot courant sans inventer de commande. Le champ facultatif is_current identifie une seule date par défaut : le premier jour de remise non passé du lot opérationnel. Le lot reste courant jusqu’à la fin de son dernier jour dans le fuseau du restaurant. Le choix de la carte et les règles publiques de prise de commande conservent leur propre résolution. Le client recharge la liste toutes les minutes visibles et au retour sur l’onglet ; Accueil et Commandes suivent le lot courant, mais préservent une sélection historique effectuée sur la page et les liens explicites de suivi des paiements. Valider les limites de clôture, minuit local, changement d’heure, plusieurs jours de remise, isolation restaurant, zéro commande et agrégats existants. Déployer API avant Admin et publier les procédures ensemble.
+
+<span id="manual-weekly-ordering" />
+
+## Piloter manuellement les commandes hebdomadaires
+
+La migration 277 ajoute restaurant_settings.batch_ordering_mode (calendar par défaut, ou manual). Les réglages GET/PUT limités au restaurant exposent ce champ ; une valeur invalide échoue avant persistance. L’aperçu des lots accepte ce mode. Les configurations publiques/personnel exposent ordering_mode ; le mode manuel renvoie des dates d’ouverture/clôture vides et utilise la série opérationnelle courante pour les livraisons et références des cartes tournantes. Seuls les horaires automatiques de prise des commandes (hebdomadaires et retrait/livraison) sont ignorés. orders_paused, rush mode, services actifs, appartenance au restaurant, accès de test, préparation, stock, paiement et validation de livraison restent applicables. Le passage en manuel supprime la reprise programmée en conservant la pause effective. Aucune commande existante n’est modifiée. Déployer la migration API 277 avant Admin/Web/POS et vérifier les artefacts en développement avant promotion.
+
+<span id="series-stock-mode-conversion" />
+
+## Convertir les réservations d’une série en cours
+
+Les routes de stock de série existantes acceptent le passage entre count, measure et per_variant avec expected_revision. Le restock reçoit une quantité restante ; Configure ajoute les engagements recalculés, tandis que la préparation de carte conserve une quantité initiale incluant les engagements. L’opération scoped menu.edit verrouille le stock de l’article et les commandes/lignes concernées, convertit leurs reserved_stock et les compteurs, puis écrit le journal dans la même transaction. Les snapshots commerciaux, ingrédients, statuts et autres séries restent inchangés. Les réservations libérées sont converties sans être engagées de nouveau ; les produits préparés restent consommés. Une incohérence ou une taille historique non résolue renvoie 422 stock_conversion_unavailable et annule toute la transaction. Un verrou concurrent ou une révision périmée renvoie 409 ; relire explicitement et réessayer. Déployer cette API avant l’Admin qui propose les changements sur une série engagée. Aucune migration ou variable d’environnement supplémentaire.
+
+<span id="immediate-product-rule-confirmation" />
+
+## Confirmer la règle avec le stock
+
+Les routes staff POST /api/v1/menu/items/:id/sales-stock/availability et POST /api/v1/menu/items/:id/sales-stock/restock acceptent availability_rule_id en option. Une valeur positive doit désigner une règle active du restaurant authentifié ; zéro rétablit l’héritage et un champ absent conserve l’affectation. La première route accepte une règle seule sans override : aucun compteur, engagement, état forcé ou autre champ du produit n’est réécrit. Avec override ou un ajustement de stock, l’ensemble est validé dans une transaction sous le verrou des réservations. Un conflit de révision, une règle étrangère ou supprimée ou une erreur de persistance annule toute la demande. Les routes conservent menu.edit et le contexte restaurant ; aucun nouveau droit, route ou migration. Déployer cette API avant l’Admin qui enregistre la règle dès Appliquer. Une réponse confirmée suivie d’un échec de lecture se récupère par un rechargement, jamais en rejouant le stock. Les champs absents préservent les clients existants.
+
+<span id="explicit-recipe-stock-source" />
+
+## Source explicite du stock et réservations
+
+La migration 279 ajoute stock_from_recipe à menu_items et item_stock_series, false par défaut : les configurations existantes gardent leur logique. POST /api/v1/menu/items/:id/sales-stock/restock avec stock_source=recipe, mode vide, unité vide, quantité null et expected_revision sélectionne réellement la recette. Le champ optionnel availability_rule_id peut être confirmé dans la même transaction sous verrou stock/commandes. Un conflit, une règle étrangère/supprimée ou une erreur annule tout. Les compteurs manuels dormants et les snapshots des commandes sont conservés ; les nouveaux calculs et réservations ignorent leur limite. Revenir à un mode manuel réactive les compteurs et adopte les nouvelles commandes sans perdre leurs prélèvements d’ingrédients/préparations. Les conversions de série existantes restent révisées et atomiques. Une conversion de compteur global non prouvable depuis des prélèvements historiques échoue avec stock_conversion_unavailable, sans les réinterpréter. La vente de stock déjà préparé doit être désactivée avant de sélectionner la recette. Les réponses publiques normalisent les champs manuels inactifs ; le staff reçoit stored_mode/stored_unit et recipe_configured pour l’éditeur. Les autres clients ignorent les champs ajoutés et conservent leurs contrats. Aucun changement de droits ni d’environnement. Déployer API avant Admin puis promouvoir les mêmes artefacts vérifiés en développement. GET /api/v1/availability/items/:id/preview accepte serie_date en option pour expliquer la série affichée ; une date invalide renvoie 400. Le détail et le statut utilisent la même source active et les mêmes compteurs, sans mutation.
+
+<span id="order-lifecycle-scoped-contract" />
+
+## Contrat borné de progression et de reprise
+
+La projection lifecycle schema_version 1 conserve quatre axes indépendants, un scope explicite et ses identités. Une lecture publique contient seulement l’Order demandé. Les vues addition/session sont de vrais agrégats, pas la copie d’un lot représentatif. Absent sur un ancien serveur permet le mode historique explicite ; présent invalide ou indisponible exige inconnu/réessayer sans repli financier. pending signifie paiement attendu et ne prouve pas un attempt actif ; il conserve l’éligibilité existante. Une autorisation bancaire, un claim réellement actif ou un journal au résultat incertain conserve ses protections et son parcours de résolution. Les faits de préparation payée ne rouvrent ni paiement ni table. Les brouillons restent dans le stockage sécurisé par compte, restaurant, serveur et installation. Déployer la migration additive 280_check_submission_recovery_scope.sql avant les clients ; conserver la référence et les articles pour une reprise idempotente explicite, jamais un renvoi automatique après redémarrage. Une fusion financière exige de consulter l’ensemble de l’addition canonique avant de lancer ses plats.
+
+L’admission d’une nouvelle occupation sans session canonique utilise start_if_free:true uniquement après la capacité booléenne table_service_start_if_free. La vérification et l’ouverture sont atomiques : si une occupation apparaît après le choix des couverts, la réponse 409 details.code=table_service_changed ne modifie pas les couverts ni la session existants. Une vérification indisponible retourne 503 table_service_unavailable ; une table inconnue reste 404. Le POS conserve son brouillon, restaure sa sélection antérieure et revient à la revue du plan ; il ne force pas l’ancien contexte. Sans capacité sur une ancienne API, la nouvelle admission protégée reste indisponible. Le contrat historique sans ce flag ou avec false conserve son comportement ; ce n’est pas une protection nouvelle appliquée rétroactivement aux anciens clients. Déployer l’API avant le POS compatible.
+
+<span id="personal-shift-end-preflight" />
+
+## Vérifier la période personnelle avant déconnexion
+
+Déployer l’API avant le POS. GET /restaurants/:id/shifts/end-preflight est une lecture personnelle liée au JWT et au restaurant : DTO direct schema_version:1, state ready/report_required/no_active_shift. shift_id est un entier positif requis pour ready/report_required et doit être absent pour no_active_shift. Aucune donnée de contact, montant ou autorisation d’appareil n’est exposée. La référence historique peut être expirée/révoquée/sans liaison matérielle si elle existe dans le restaurant ; cela ne rétablit aucun accès caisse. Référence numérique manquante/étrangère : 409 shift_pos_reference_invalid ; erreur ou ambiguïté : 503 shift_end_preflight_unavailable. Une période non-POS avec référence nil conserve sa fin légitime.
+
+Le nouveau client confirme ready puis POST end avec expected_shift_id ; absence du champ conserve le contrat historique. La mutation reverrouille et revérifie la période et sa caisse : remplacement/disparition donne 409 shift_changed, caisse ouverte 409 cash_drawer_open, résultat de stockage non confirmé de la nouvelle voie 503 shift_end_unavailable. Les erreurs héritées ne renvoient aucun détail SQL. no_active_shift exige une confirmation distincte, un nouveau GET personnel et la même connexion avant verrouillage local, sans POST end. Le journal espèces local du restaurant/serveur reste prioritaire ; une fin incertaine conserve sa vérification dédiée GET current avant toute nouvelle intention. Les journaux Verifone restent séparés. Route absente, version/forme/état inconnus ou erreur bloquent sans repli financier. Aucun changement de migration, d’enrôlement ou de liaison caisse ; aucun résultat préliminaire ne remplace les protections de mutation.

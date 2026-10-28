@@ -5,7 +5,7 @@ apps: both
 tags:
   - settings
   - pos-behavior
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-27'
 featureId: pos-behavior
 audience: public
 releaseStatus: available
@@ -18,11 +18,23 @@ Open Settings → POS, then the appropriate mode/profile. Legacy Full service se
 
 Open Menu behavior and choose the options offered for item selection, modifiers and navigation. Assign the intended profile to the POS device. Test with an item that has a required choice so staff cannot accidentally skip it. A checkout-mode profile does not assign a kitchen printer. Configure the shared printing profile separately for this POS installation; see [printer assignments and pending documents](/en/help/printers/profiles-and-routing#assign).
 
+<span id="shared-mode-sync" />
+
+## Keep Admin and the assigned POS mode synchronized
+
+With compatible API and POS versions, compare the restaurant and assigned mode shown in POS → More → Settings → Checkout with that mode in Admin. Course activation, Send and stay and open-check options belong to the shared assigned mode, not an independent local iPad switch. Devices without an assigned mode use the restaurant defaults. Save changes once with the required settings permission. A foreground POS checks for updates about every 30 seconds and on resume, navigation and completion of a sale action. Updates are deferred during an in-flight payment, send or item edit and read again at the next safe boundary; they never restart that action. You can use Refresh in Checkout to request a fresh read. A failed read retains the last confirmed configuration and does not prove that Admin’s change was applied. When another editor changed the same setting or the device assignment, the API rejects the conflicting save instead of overwriting it. Refresh, verify the current mode and values, then reapply only the intended change. Do not reactivate all modules locally or repeat payments to force synchronization. Kitchen printer assignments remain separate.
+
+<span id="shared-mode-sync-recovery" />
+
+## Retry a failed settings refresh safely
+
+If the POS shows the settings refresh warning, check the connection and use Retry in the banner, or Refresh in Checkout. The last confirmed settings remain in use; the warning does not mean that courses or open checks were intentionally disabled. Retry is unavailable while a sale action is in progress. Let the current action finish, then verify the assigned mode and recheck its values before continuing. Reading settings does not resend food, collect payment or change terminal deposits. If saving a setting was rejected because another editor changed it, refresh before reapplying only your intended edit; repeating the old complete snapshot can never be a recovery procedure.
+
 <span id="courses" />
 
 ## Configure service courses
 
-Open Services and maintain the course names and order used at the restaurant. Review holding/firing behavior in the active POS profile. Courses organize kitchen release; they are distinct from payment splits and customer-facing menu groups.
+Open Services and maintain the restaurant’s course names and order. Enable course management and any permitted hold/fire or Send and stay options in the POS device’s assigned mode. In Straight fire, select the intended library categories, apply and save. This mapping uses each item’s restaurant-wide library category, not its display/menu group or a matching group name. An item in an immediate-send category enters Straight fire when added to an onsite sale, even while a named course is selected. Ordinary new items use the selected course. Check a freshly added line after a catalogue change; existing saved lines are not moved retroactively. Straight fire means the next explicit Send dispatches those pending lines immediately: simply adding the article does not send or print it. Named course Hold/Fire choices remain provisional until Send/Continue succeeds. Continue is available only when the assigned mode permits it and stays on the check; it does not automatically fire the next course. Courses organize kitchen release; they are distinct from financial splits, QR payment ownership and customer-facing menu groups. Check [shared-mode synchronization](#shared-mode-sync) if Admin and POS show different activation states.
 
 <span id="adjustments" />
 
@@ -41,6 +53,8 @@ An old POS-mode assignment to a device already forgotten in this restaurant shou
 ## Keep terminal deposits separate from POS behavior
 
 Terminal batch actions do not change the POS service profile, staff shift or cash drawer. A manager with payments.manage opens More → Reports → Terminal deposits on a configured Victa Portable or iPad/Victa Mini. Follow the dedicated POS payment guide for end-of-day confirmation and uncertain-result recovery; do not use menu behavior or adjustment settings to settle a batch.
+
+If the restaurant, sign-in or terminal changes, [reopen confirmation in the correct context](/en/help/payments/cash-access#terminal-report-context).
 
 <span id="fulfillment-methods" />
 
@@ -64,7 +78,7 @@ There is no separate tableless-dine-in switch. Keep a dine-in method available i
 
 ## Ask for customer details for a method
 
-Requires matching API and POS versions. Enable Show customer information screen in the method editor and Save (also save Manage by location if editing there). Immediately after choosing this whole-check mode, the optional details form appears before adding items, including for the default with selection prompts off. Enter first/last name or use Add new or existing customer to search the restaurant directory or Enter contact for this order only. Search requires customers.view; order contact requires orders.manage. Done confirms mode and contact together. Skip retains the previous contact without applying typed changes. Back reopens mode selection; closing the flow leaves the sale unchanged. Full name: at most 80 characters. Nonblank phone: at most 32 characters, with 7–15 digits and ordinary separators. A matching guest-details API capability enables a private identifier (255 characters) and staff note (500); otherwise those fields are disabled with an explanation. Private context stays on staff order data, not public views, receipts or notification text. No customer account, marketing consent, contacts import or cash authorization is created. Configured notifications may use the saved phone. Subsequent batches inherit coherent check details; mixed-customer or allocated bills cannot adopt a replacement contact.
+Requires matching API and POS versions. Enable Show customer information screen in the method editor and Save (also save Manage by location if editing there). Immediately after choosing this whole-check mode, the optional details form appears before adding items, including for the default with selection prompts off. Enter first/last name or use Add new or existing customer to search the restaurant directory or Enter contact for this order only. Search requires customers.view; order contact requires orders.manage. Done confirms mode and contact together. Skip retains the previous contact without applying typed changes. Back reopens mode selection; closing the flow leaves the sale unchanged. Full name: at most 80 characters. Nonblank phone: at most 32 characters, with 7–15 digits and ordinary separators. A matching guest-details API capability enables a private identifier (255 characters) and staff note (500); otherwise those fields are disabled with an explanation. Private context stays on staff order data, not public views, receipts or notification text. No customer account, marketing consent, contacts import or cash authorization is created. Configured notifications may use the saved phone. Subsequent batches inherit coherent check details; mixed-customer or allocated bills cannot adopt a replacement contact. For a table constrained to one fulfillment method, selection may be implicit without showing the picker, while this form, compatibility checks and joint confirmation of method and contact remain in place. Closing or a changed context does not save a partial choice.
 
 <span id="fulfillment-order-contact-entry" />
 
@@ -77,3 +91,9 @@ In the optional fulfillment details form, open Add new or existing customer. The
 ## Configure checkout on a compact screen
 
 On mobile, settings use one page stack. Back first leaves the current subpage, then its section. Headers, fields and switches use the same terminal controls. Checkout preferences retain their existing permissions and persistence. Printer options remain a draft until Save in the profile editor. Under Appearance, mobile retains neutral surfaces and blue actions; custom colors remain available on tablets. Light/dark theme and language remain configurable on the terminal.
+
+<span id="terminal-navigation-overview" />
+
+## Navigate the terminal
+
+The handheld terminal has three unlabeled buttons: the signed-in user’s initials open More, the house opens Overview and the receipt opens Checks, subject to permissions. iPad keeps its configured navigation destinations. In Checks, the selector offers All checks and available floor plans; selecting a radio option changes the view immediately. Drag the floor plan when it extends beyond the screen. Overview contains collapsible cards for permitted availability, orders and tables. The full list supports item search; Not provided means availability was not supplied, not that an item is available. Refresh retries a failed read. These views change neither the assigned checkout mode nor printing profiles. The bar stays above Android navigation and hides while typing. Inside a sale, Menu/Check/Actions and the return to checks retain their own controls.

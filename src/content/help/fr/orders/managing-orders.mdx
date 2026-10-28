@@ -15,7 +15,7 @@ tags:
   - web
   - qr
   - caisse
-updatedAt: '2026-10-25'
+updatedAt: '2026-10-27'
 featureId: orders-managing-orders
 audience: public
 releaseStatus: available
@@ -26,11 +26,13 @@ Ouvrez l’espace Foody correspondant décrit ci-dessous. La vue Toutes multican
 
 ## Ouvrir une commande dans Menu sans fusionner les paiements QR
 
-Sur le POS mis à jour, avec orders.manage, touchez une commande active ou programmée dans Commandes, ou une commande encore exploitable dans Toutes. Une addition manuelle ouverte reprend son espace existant ; une commande QR, web ou autonome ouvre Menu avec ses propres lignes enregistrées, son numéro, ses états et son total dans le panneau d’addition. Sur téléphone, ce panneau occupe l’écran. Le cadre, les onglets Addition, Actions et Client, les cartes d’articles et les totaux sont ceux du Menu habituel, sans barre de retour supplémentaire. Revenez à la liste par Commandes dans la navigation principale ; Actualiser et les états de cette commande sont dans Actions. Le catalogue consultable ne modifie pas cette commande ni un brouillon conservé. Actions → Gérer cette commande retrouve les actions admissibles sur ce seul numéro ; un paiement exige aussi payments.manage. Ouvrir la vue ne paie, n’envoie et n’imprime rien.
+Sur le POS mis à jour, avec orders.manage, touchez une commande active ou programmée dans Commandes, ou une commande encore exploitable dans Toutes. Une addition manuelle ouverte reprend son espace existant ; une commande QR, web ou autonome ouvre Menu avec ses propres lignes enregistrées, son numéro, ses états et son total dans le panneau d’addition. Sur téléphone, ce panneau occupe l’écran. Le cadre, les onglets Addition, Actions et Client, les cartes d’articles et les totaux sont ceux du Menu habituel, sans barre de retour supplémentaire. Revenez à la liste par Commandes dans la navigation principale sur tablette, ou Plus → Commandes sur le portable ; Actualiser et les états de cette commande sont dans Actions. Le catalogue consultable ne modifie pas cette commande ni un brouillon conservé. Actions → Gérer cette commande retrouve les actions admissibles sur ce seul numéro ; un paiement exige aussi payments.manage. Ouvrir la vue ne paie, n’envoie et n’imprime rien.
 
 Plusieurs clients QR d’une même table conservent chacun leur commande et leur paiement, même pendant une seule session de table. Pour ajouter des plats ou consulter l’addition de table, choisissez Afficher la table : seule la même session encore ouverte est admissible. Si elle contient plusieurs additions séparées, choisissez explicitement l’addition. Cette navigation ne fusionne ni ne solde les commandes QR et ne clôture pas la table. Une ancienne session ne permet jamais d’ouvrir celle des clients suivants ; une action financière en attente doit d’abord être résolue.
 
 Les commandes terminées, annulées ou remboursées et les accès en lecture seule gardent la consultation historique, sans rouvrir une vente. Une commande payée encore en préparation reste consultable et traitable, sans nouveau paiement. Si le chargement échoue, utilisez Réessayer ; ne recréez pas la commande. Le nouveau parcours nécessite l’installation du POS compatible.
+
+Les commandes manuelles d’un ancien service ou sans session identifiable restent séparées par numéro ; voir [les services précédents](/fr/help/settings/pos-workspace#previous-table-service-orders).
 
 <span id="open-order-from-transaction" />
 
@@ -71,15 +73,14 @@ les commandes et les envoyez en cuisine.
 
 <span id="section-3" />
 
-## Le flux d'une commande
+## Le flux d’une commande
 
-1. **Passée** — une commande web/QR payée, ou une commande caisse, arrive.
-2. **Acceptée** — vous l'acceptez (ou elle s'accepte automatiquement, selon vos réglages de flux).
-3. **En cuisine** — envoyée en préparation ; un ticket cuisine peut s'imprimer automatiquement.
-4. **Prête / Terminée** — remise au client.
+1. La commande est enregistrée ; sa visibilité et son acceptation dépendent du canal et de la politique de paiement.
+2. L’acceptation et l’envoi cuisine suivent le flux configuré. Un envoi peut produire un ticket selon le profil d’impression.
+3. La préparation progresse par lot ou par poste ; un lot prêt ne signifie pas que les autres le sont.
+4. Le service, le retrait ou la livraison sont confirmés séparément.
 
-> Astuce : le comportement du flux (acceptation auto, envoi auto en cuisine, impression auto) se
-> règle dans **Paramètres**. Voir [Réglages de flux](/fr/help/settings/workflow-settings).
+Le paiement est suivi à part et peut précéder la préparation. Voir les [réglages de flux](/fr/help/settings/workflow-settings).
 
 <span id="section-4" />
 
@@ -159,7 +160,7 @@ Ouvrez FoodyPOS → Commandes → Toutes, ou FoodyAdmin → Commandes → Tous p
 
 ## Retrouver une vente caisse après paiement
 
-Une vente à emporter payée et envoyée en cuisine se trouve dans Commandes → Actives pendant la préparation, pas dans Terminées du seul fait du paiement. Choisissez le filtre À emporter et effacez les autres filtres si nécessaire. Transactions enregistre l’encaissement séparément et s’actualise à l’ouverture. Paiement enregistré confirme brièvement l’encaissement, puis le plan de salle se rouvre automatiquement. Vider l’addition courante ne supprime pas la commande enregistrée ; Commandes → Toutes permet toujours le suivi multicanal. Sans papier, vérifiez profil, association imprimante/POS actuel et historique avant de réimprimer ou d’encaisser un autre paiement. Voir [encaissement au comptoir](/fr/help/payments/pos-checkout#counter-completion). L’onglet Client utilise le nom/téléphone enregistrés sur la commande, pas un client déduit d’une autre addition. La collecte facultative se configure [par mode de traitement](/fr/help/settings/pos-behavior#fulfillment-customer). Les envois cuisine suivants conservent des coordonnées cohérentes sans nouvelle confirmation de création par service ; les notifications de statut restent distinctes.
+Une vente à emporter payée et envoyée en cuisine se trouve dans Commandes → Actives pendant la préparation, pas dans Terminées du seul fait du paiement. Choisissez le filtre À emporter et effacez les autres filtres si nécessaire. Transactions enregistre l’encaissement séparément et s’actualise à l’ouverture. Sur le portable mis à jour, un encaissement confirmé et enregistré ouvre le choix du reçu, puis Nouvelle vente termine explicitement le parcours. La tablette conserve la confirmation brève Paiement enregistré et le retour automatique. Vider l’addition courante ne supprime pas la commande enregistrée ; Commandes → Toutes permet toujours le suivi multicanal. Sans papier, vérifiez profil, association imprimante/POS actuel et historique avant de réimprimer ou d’encaisser un autre paiement. Voir [encaissement au comptoir](/fr/help/payments/pos-checkout#counter-completion). L’onglet Client utilise le nom/téléphone enregistrés sur la commande, pas un client déduit d’une autre addition. La collecte facultative se configure [par mode de traitement](/fr/help/settings/pos-behavior#fulfillment-customer). Les envois cuisine suivants conservent des coordonnées cohérentes sans nouvelle confirmation de création par service ; les notifications de statut restent distinctes.
 
 <span id="unified-order-whatsapp-selection" />
 
@@ -173,7 +174,7 @@ Choisissez **WhatsApp Business** pour le modèle global approuvé configuré (co
 
 ## Naviguer dans une vente mobile
 
-Sur la version mobile mise à jour, utilisez Menu pour ajouter des articles, Addition pour consulter les lignes et les services, et Actions pour les opérations de l’addition. Le compteur indique la quantité d’articles. Le bouton supérieur reprend l’action autorisée du parcours ; sur une addition vide, Afficher les additions revient au plan. Actions → Client affiche les coordonnées enregistrées. Consultez [la prise de commande mobile](/fr/help/orders/taking-an-order-pos#mobile-terminal) avant d’utiliser cette présentation. La liste Commandes et les statuts cuisine restent indépendants du règlement.
+Sur la version mobile mise à jour, utilisez Menu pour ajouter des articles, Addition pour consulter les lignes et les services, et Actions pour les opérations de l’addition. Le compteur indique la quantité d’articles. Le bouton supérieur reprend l’action autorisée du parcours ; sur une addition vide, Afficher les additions revient au plan. Actions → Détails → Client affiche les coordonnées enregistrées. Consultez [la prise de commande mobile](/fr/help/orders/taking-an-order-pos#mobile-terminal) avant d’utiliser cette présentation. La liste Commandes et les statuts cuisine restent indépendants du règlement. Dans la liste Additions du portable, Toutes les additions et les plans se choisissent dans une seule feuille à radios. Les filtres conservent les additions personnalisées, groupes et sections autorisés ; Actualiser recharge les données. La loupe recherche les noms visibles dans le périmètre accessible, sans ouvrir d’autre restaurant. Les tables sont regroupées en Vos additions et Autres additions, puis les additions nommées. Fermer une addition nommée reste une action distincte et confirmée, réservée au personnel autorisé ; une addition avec des éléments non envoyés ou un solde non réglé ne doit pas être fermée pour la faire disparaître de la liste. Dans un groupe du menu, une seule flèche Retour permet de remonter. Les tuiles compactes avec photo gardent le nom centré sur deux lignes au maximum ; la navigation et la présentation iPad conservent leur fonctionnement.
 
 <span id="meta-template-image-preview" />
 
@@ -194,3 +195,9 @@ Si le client utilise un autre numéro pour WhatsApp, ouvrez Clients → sa fiche
 Pour un restaurant configuré en lots hebdomadaires, ouvrez **Accueil** ou **Commandes** avec la base de date **Série**. La série actuelle est sélectionnée par défaut, même sans commande : ses totaux restent alors à zéro. Elle avance après le dernier jour de remise de la série précédente, selon le fuseau horaire du restaurant, sans attendre la première commande ni l’ouverture des commandes. Sur une page restée ouverte, la sélection suit ce changement au prochain rafraîchissement automatique (environ une minute) ou au retour sur l’onglet.
 
 Vous pouvez sélectionner une ancienne série dans le calendrier ; cette consultation reste en place pendant que la page est ouverte. Une commande déjà prise pour une semaine plus lointaine ne remplace pas la série actuelle par défaut. Un lien de suivi des paiements conserve la période qu’il indique. Si la date semble incorrecte, vérifiez les jours de remise et le fuseau horaire configurés, puis rechargez la page. Ce basculement ne crée aucune commande et ne publie pas une carte.
+
+<span id="order-lifecycle-guide" />
+
+## Séparer paiement, préparation et remise
+
+Voir [addition, paiement, préparation et remise](/fr/help/orders/payment-preparation-and-handoff).
