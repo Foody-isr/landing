@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-10-28",
+  "reviewedAt": "2026-10-18",
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "cc4d62c7b2cda1582fa332fa0e3056292f88da67",
+      "sourceCommit": "e3227eaee27c93f5ebbb1b011db2d6e75405a363",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "a600a7c6087de6abd13f703335717bc3483e16f875c4ed45d681872446851880",
+      "sourceSnapshot": "3aa2663fc6950db7057115b778d3cd8170d8de2f3cbeb7daa624cf28051cf673",
       "workingTreeHasChanges": false,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -73,7 +73,7 @@
           ]
         },
         "cmd/server/main.go": {
-          "sha256": "c4382f8abb611cfa0549b410a366b48c97ff866521fadd992e86dbc294cede7e",
+          "sha256": "5044b88d77cb3e63c1ee23f5f1a2ca7367655b5e7a587d7b2b6ed152670a0316",
           "features": [
             "staff-invitations",
             "customers-profiles",
@@ -942,7 +942,14 @@
           ]
         },
         "internal/delivery/courier_context.go": {
-          "sha256": "43b4bcfea6cfca02564734c914036d363cd0872d73bd7101366fe842805f668d",
+          "sha256": "71d1cacfc9b61c4b418f603622f63e0f1b170d277a27b5956ff9935f30a94111",
+          "features": [
+            "delivery-dispatch",
+            "platform-api"
+          ]
+        },
+        "internal/delivery/courier_read_only.go": {
+          "sha256": "2221c9d26fd864c4bcb37a9e1f73b0cc4481ecc7ba84a395f2b3a77b77ea4953",
           "features": [
             "delivery-dispatch",
             "platform-api"
@@ -1024,7 +1031,7 @@
           ]
         },
         "internal/delivery/handler.go": {
-          "sha256": "7cffb50c2fb1c4112dcee9ffe53168eede0618da59e59515e191986478001c97",
+          "sha256": "bd4fb6ea458b5d0445afb0f7572fc567868b9cba9a10bd4df28aa5067f0d5957",
           "features": [
             "delivery-dispatch",
             "platform-api"
@@ -4396,7 +4403,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "c1b3bc88bb36543424fabcb9f672c950ee6c660f83a3b08d867d6b544d2ee651",
+          "sha256": "95fcd532a72192572cb460ff51cf3c621583a6fc32ab6117b7ebb599a187419f",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -4720,9 +4727,9 @@
     },
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "92bda653dddf8bda3977e74ea6513ccc4a414f0a",
+      "sourceCommit": "240bdddca0bf14e378947c4b70c12abe92d34461",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "a24a2b3e417f06b6c99fd710fcdf1c956d28039358d23fb01d0748176350cecf",
+      "sourceSnapshot": "a0e1aee01b40d1e74b6c8485c7f6253cc0e749d19124716043a737b2cdce7295",
       "workingTreeHasChanges": false,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
@@ -6616,22 +6623,15 @@
             "global-search"
           ]
         },
-        "src/components/delivery/CourierAddressEditor.tsx": {
-          "sha256": "b6b2f7ae4d5c7179fda4018725399badcee6c3a353d36f606d03ec03dcf966fc",
-          "features": [
-            "delivery-dispatch",
-            "courier"
-          ]
-        },
         "src/components/delivery/CourierItinerary.module.css": {
-          "sha256": "71a13b2d7f30b2f761f2ed9902b669d3a37537de0d099a75b595f6b63ff04688",
+          "sha256": "02b817e9fa6ea25cb82499cb0dd9f1bfaa302b5fc72b59ab505fa2b982dfe943",
           "features": [
             "delivery-dispatch",
             "courier"
           ]
         },
         "src/components/delivery/CourierItineraryView.tsx": {
-          "sha256": "c1e316ec1877a7ff7e8c7e4270c331c8783288aa5fc2fab16b17b743556bbc9e",
+          "sha256": "b76156f68174c45becd722f68474885a36d0b3781805613365129930e7a5d568",
           "features": [
             "delivery-dispatch",
             "courier"
@@ -9107,7 +9107,7 @@
           ]
         },
         "src/lib/delivery.ts": {
-          "sha256": "6b28dc003e0ff777b273b10f56907c2f6eccb9a66a3be75d5ac3591285402d7e",
+          "sha256": "7728ccdcc5cb27fb5b87be58e1550f407cbfc66ebf6273a5bf0b9736a417931a",
           "features": [
             "delivery-dispatch",
             "shared-runtime"
@@ -9164,7 +9164,7 @@
           ]
         },
         "src/lib/i18n.tsx": {
-          "sha256": "2b8a2cd06feecc9467f6c77d32e9aa82511a4df8388530dd131c305653543a07",
+          "sha256": "c12dca1253eabbd8721cc8aaa6e540ce4afe6e97ba12ff992c2e1621f8344ecf",
           "features": [
             "customers-profiles",
             "menu-menus-and-groups",
@@ -14989,7 +14989,7 @@
     },
     "foodylanding": {
       "repository": "https://github.com/Foody-isr/landing",
-      "sourceCommit": "076e5fc0e61e8fd08f2cfab18559bcda34869a84",
+      "sourceCommit": "f96b686bbb16977a81936f6ff0a2cca7f8b1058b",
       "releaseStatus": "versioned",
       "sourceSnapshot": "0017f89048e20a416bab53c7443a4720bbe088bd715d39dcf9d1a8e67e173251",
       "workingTreeHasChanges": false,
@@ -31428,9 +31428,9 @@
             "he": "שמירה ומעקב התקדמות"
           },
           "instructions": {
-            "en": "Save the reviewed route and use the dispatch controls. Monitor courier/order progress and update a changed plan deliberately instead of assuming the original route remains valid. Courier mode uses a map and timeline with a route selector at the top. The courier finds Adjust and Start in the fixed bar, followed by navigation and delivery confirmation for the next stop. Viewing a pin or searching a stop does not change the saved order.\n\nIn the courier view, the order amount is shown only for cash payments. Card payments, other payment methods and orders with an unknown payment method do not show an amount.\n\nIn the courier workspace, fixed Navigate and Mark delivered buttons target the stop selected in the list or on the map; its number and address appear above. An old page cannot confirm delivery from a cancelled or inactive route, or after the order was reassigned to another courier. After rejection, refresh the routes and select the current assignment.",
-            "fr": "Enregistrez la tournée vérifiée puis utilisez le dispatch. Suivez coursier et commandes et modifiez explicitement un plan devenu obsolète. Le mode livreur utilise une carte et une chronologie avec un sélecteur de tournée en haut. Le livreur retrouve Ajuster et Démarrer dans la barre fixe, puis la navigation et la confirmation de livraison pour le prochain arrêt. Consulter un repère ou rechercher un arrêt ne change pas l’ordre enregistré.\n\nDans la vue livreur, le montant de la commande est affiché uniquement pour un paiement en espèces. Les paiements par carte, les autres moyens de paiement et les commandes dont le moyen de paiement est inconnu n’affichent pas de montant.\n\nDans l’espace livreur, les boutons fixes Naviguer et Marquer livrée ciblent l’arrêt sélectionné dans la liste ou sur la carte ; son numéro et son adresse sont affichés au-dessus. Une ancienne page ne peut pas valider une livraison depuis une tournée annulée ou inactive, ni après réaffectation de la commande à un autre livreur. En cas de refus, actualisez les tournées et sélectionnez l’affectation actuelle.",
-            "he": "שמרו את המסלול שנבדק והשתמשו בשיגור. עקבו אחר השליח וההזמנות ועדכנו במפורש תוכנית שהשתנתה. מצב השליח משתמש במפה ובציר עצירות עם בחירת מסלול למעלה. התאמה ותחילת המסלול מופיעות בסרגל הקבוע, ובהמשך ניווט ואישור מסירה לעצירה הבאה. צפייה בסמן או חיפוש עצירה אינם משנים את הסדר השמור.\n\nבתצוגת השליח סכום ההזמנה מוצג רק בתשלום במזומן. בתשלום בכרטיס, באמצעי תשלום אחרים או כאשר אמצעי התשלום אינו ידוע, הסכום אינו מוצג.\n\nבסביבת השליח, הכפתורים הקבועים ניווט וסמן נמסר מתייחסים לעצירה שנבחרה ברשימה או במפה; המספר והכתובת מוצגים מעליהם. דף ישן אינו יכול לאשר מסירה ממסלול שבוטל או שאינו פעיל, או לאחר הקצאת ההזמנה לשליח אחר. לאחר דחייה רעננו את המסלולים ובחרו את ההקצאה העדכנית."
+            "en": "Save the checked route, then dispatch it. Follow the courier and orders and explicitly update an obsolete plan with the required management access. Courier mode provides a map, timeline and route selector. The fixed dock offers Start, then navigation and delivery confirmation. Courier mode cannot change settings, reoptimize, correct an address or change stop order or route composition. Dispatchers make these changes in Orders → Deliveries. Selecting a pin or searching for a stop does not change the saved order.\n\nIn the courier view, the order amount is shown only for cash payments. Card payments, other payment methods and orders with an unknown payment method do not show an amount.\n\nIn the courier workspace, fixed Navigate and Mark delivered buttons target the stop selected in the list or on the map; its number and address appear above. An old page cannot confirm delivery from a cancelled or inactive route, or after the order was reassigned to another courier. After rejection, refresh the routes and select the current assignment.",
+            "fr": "Enregistrez la tournée vérifiée puis utilisez le dispatch. Suivez coursier et commandes et modifiez explicitement un plan devenu obsolète avec les droits de gestion nécessaires. Le mode livreur utilise une carte, une chronologie et un sélecteur de tournée. Le livreur retrouve Démarrer dans la barre fixe, puis la navigation et la confirmation de livraison. Le mode livreur ne permet ni réglages, ni réoptimisation, ni correction d’adresse, ni changement de l’ordre ou de la composition de la tournée. Les responsables effectuent ces changements dans Commandes → Livraisons. Consulter un repère ou rechercher un arrêt ne change pas l’ordre enregistré.\n\nDans la vue livreur, le montant de la commande est affiché uniquement pour un paiement en espèces. Les paiements par carte, les autres moyens de paiement et les commandes dont le moyen de paiement est inconnu n’affichent pas de montant.\n\nDans l’espace livreur, les boutons fixes Naviguer et Marquer livrée ciblent l’arrêt sélectionné dans la liste ou sur la carte ; son numéro et son adresse sont affichés au-dessus. Une ancienne page ne peut pas valider une livraison depuis une tournée annulée ou inactive, ni après réaffectation de la commande à un autre livreur. En cas de refus, actualisez les tournées et sélectionnez l’affectation actuelle.",
+            "he": "שמרו את המסלול שנבדק ואז בצעו שיבוץ. עקבו אחר השליח וההזמנות ועדכנו במפורש תוכנית שהתיישנה עם הרשאות הניהול הנדרשות. מצב שליח מציג מפה, ציר זמן ובורר מסלול. הסרגל הקבוע מציע התחלה ובהמשך ניווט ואישור מסירה. מצב שליח אינו מאפשר שינוי הגדרות, מיטוב מחדש, תיקון כתובת או שינוי סדר עצירות והרכב המסלול. האחראים מבצעים שינויים אלה דרך הזמנות ← משלוחים. בחירת סיכה או חיפוש עצירה אינם משנים את הסדר השמור.\n\nבתצוגת השליח סכום ההזמנה מוצג רק בתשלום במזומן. בתשלום בכרטיס, באמצעי תשלום אחרים או כאשר אמצעי התשלום אינו ידוע, הסכום אינו מוצג.\n\nבסביבת השליח, הכפתורים הקבועים ניווט וסמן נמסר מתייחסים לעצירה שנבחרה ברשימה או במפה; המספר והכתובת מוצגים מעליהם. דף ישן אינו יכול לאשר מסירה ממסלול שבוטל או שאינו פעיל, או לאחר הקצאת ההזמנה לשליח אחר. לאחר דחייה רעננו את המסלולים ובחרו את ההקצאה העדכנית."
           }
         },
         {
@@ -31454,9 +31454,9 @@
             "he": "הגדרת חלון המסירה ללקוח"
           },
           "instructions": {
-            "en": "In allocation, use Customer delivery window beside Time at each stop. New plans propose 90 minutes. Enter 1:30, 1h30 or 90 for an hour and a half; the allowed range is 1–720 minutes. The range begins at the calculated arrival, rounded down to its displayed minute: 08:30 plus 90 minutes gives 08:30–10:00. It does not extend the handover time or change the order’s original scheduling constraints. The setting is saved per route and can be edited before departure. Delivery WhatsApp links and manual/approved reminders use this range. Reopen a reminder after recalculation to review its updated text. Historic routes without this setting retain their saved reminder slot. If a configured route cannot provide a valid arrival, recalculate or correct its address before sending; no guessed range is substituted. This range is calculated after optimization and never becomes a constraint on a later recalculation. Only Respect order time windows enables the slots already saved on orders as arrival constraints.",
-            "fr": "Dans la répartition, utilisez « Marge du créneau communiqué au client » à côté du temps à chaque arrêt. Les nouveaux plans proposent 90 minutes. Saisissez 1:30, 1h30 ou 90 pour une heure trente ; la durée autorisée est de 1 à 720 minutes. Le créneau commence à l’arrivée calculée, arrondie à la minute affichée : 08:30 + 90 minutes donne 08:30–10:00. Ce champ n’allonge pas le temps de remise et ne remplace pas les contraintes horaires initiales de la commande. Il est enregistré par tournée et modifiable avant le départ. Les liens WhatsApp de livraison et les rappels manuels ou approuvés utilisent ce créneau. Après recalcul, rouvrez le rappel pour vérifier son texte actualisé. Les anciennes tournées sans ce réglage conservent leur créneau de rappel enregistré. Si une tournée configurée ne fournit pas d’arrivée valide, recalculez ou corrigez l’adresse avant l’envoi ; aucun horaire n’est inventé. Ce créneau est calculé après l’optimisation et ne devient jamais une contrainte d’un prochain recalcul. Seule l’option « Respecter les créneaux des commandes » active les horaires déjà enregistrés sur les commandes comme contraintes de passage.",
-            "he": "בחלוקה השתמשו בשדה טווח זמן המסירה ללקוח ליד זמן בכל עצירה. בתוכניות חדשות מוצעות 90 דקות. הזינו 1:30, 1h30 או 90 לשעה וחצי; הטווח המותר הוא 1–720 דקות. החלון מתחיל בזמן ההגעה המחושב, מעוגל מטה לדקה המוצגת: הגעה ב־08:30 ועוד 90 דקות נותנת 08:30–10:00. ההגדרה אינה מאריכה את זמן המסירה ואינה מחליפה את מגבלות התזמון המקוריות בהזמנה. היא נשמרת לכל מסלול וניתנת לעריכה לפני היציאה. קישורי WhatsApp למשלוח ותזכורות ידניות או מאושרות משתמשים בחלון הזה. אחרי חישוב מחדש פתחו שוב את התזכורת ובדקו את הטקסט. מסלולים ישנים ללא הגדרה שומרים על חלון התזכורת המקורי. אם אין זמן הגעה תקין במסלול מוגדר, חשבו מחדש או תקנו כתובת לפני שליחה; לא מוחלף חלון משוער. טווח זה מחושב לאחר מיטוב המסלול ולעולם אינו הופך לאילוץ בחישוב חוזר. רק האפשרות לכבד את חלונות הזמן של ההזמנות הופכת את השעות שכבר נשמרו בהזמנות לאילוצי הגעה."
+            "en": "In allocation, use Customer delivery window beside Time at each stop. New plans propose 90 minutes. Enter 1:30, 1h30 or 90 for an hour and a half; the allowed range is 1–720 minutes. The range begins at the calculated arrival, rounded down to its displayed minute: 08:30 plus 90 minutes gives 08:30–10:00. It does not extend the handover time or change the order’s original scheduling constraints. The setting is saved per route and can be edited before departure. Delivery WhatsApp links and manual/approved reminders use this range. Reopen a reminder after recalculation to review its updated text. Historic routes without this setting retain their saved reminder slot. If a configured route cannot provide a valid arrival, recalculate or correct its address before sending; no guessed range is substituted. This range is calculated after optimization and never becomes a constraint on a later recalculation. Only Respect order time windows enables the slots already saved on orders as arrival constraints. Planning changes are reserved for authorized dispatchers in Deliveries; they are unavailable to courier accounts and in an owner’s or superadmin’s courier workspace.",
+            "fr": "Dans la répartition, utilisez « Marge du créneau communiqué au client » à côté du temps à chaque arrêt. Les nouveaux plans proposent 90 minutes. Saisissez 1:30, 1h30 ou 90 pour une heure trente ; la durée autorisée est de 1 à 720 minutes. Le créneau commence à l’arrivée calculée, arrondie à la minute affichée : 08:30 + 90 minutes donne 08:30–10:00. Ce champ n’allonge pas le temps de remise et ne remplace pas les contraintes horaires initiales de la commande. Il est enregistré par tournée et modifiable avant le départ. Les liens WhatsApp de livraison et les rappels manuels ou approuvés utilisent ce créneau. Après recalcul, rouvrez le rappel pour vérifier son texte actualisé. Les anciennes tournées sans ce réglage conservent leur créneau de rappel enregistré. Si une tournée configurée ne fournit pas d’arrivée valide, recalculez ou corrigez l’adresse avant l’envoi ; aucun horaire n’est inventé. Ce créneau est calculé après l’optimisation et ne devient jamais une contrainte d’un prochain recalcul. Seule l’option « Respecter les créneaux des commandes » active les horaires déjà enregistrés sur les commandes comme contraintes de passage. Les modifications de planification sont réservées aux responsables autorisés dans Livraisons ; elles ne sont pas accessibles aux comptes livreur ni depuis le mode livreur du propriétaire ou du superadmin.",
+            "he": "בחלוקה השתמשו בשדה טווח זמן המסירה ללקוח ליד זמן בכל עצירה. בתוכניות חדשות מוצעות 90 דקות. הזינו 1:30, 1h30 או 90 לשעה וחצי; הטווח המותר הוא 1–720 דקות. החלון מתחיל בזמן ההגעה המחושב, מעוגל מטה לדקה המוצגת: הגעה ב־08:30 ועוד 90 דקות נותנת 08:30–10:00. ההגדרה אינה מאריכה את זמן המסירה ואינה מחליפה את מגבלות התזמון המקוריות בהזמנה. היא נשמרת לכל מסלול וניתנת לעריכה לפני היציאה. קישורי WhatsApp למשלוח ותזכורות ידניות או מאושרות משתמשים בחלון הזה. אחרי חישוב מחדש פתחו שוב את התזכורת ובדקו את הטקסט. מסלולים ישנים ללא הגדרה שומרים על חלון התזכורת המקורי. אם אין זמן הגעה תקין במסלול מוגדר, חשבו מחדש או תקנו כתובת לפני שליחה; לא מוחלף חלון משוער. טווח זה מחושב לאחר מיטוב המסלול ולעולם אינו הופך לאילוץ בחישוב חוזר. רק האפשרות לכבד את חלונות הזמן של ההזמנות הופכת את השעות שכבר נשמרו בהזמנות לאילוצי הגעה. שינויי תכנון מיועדים לאחראים מורשים במשלוחים; הם אינם זמינים לחשבונות שליח או בתצוגת השליח של בעל מסעדה או מנהל מערכת."
           }
         },
         {
@@ -31584,9 +31584,9 @@
             "he": "ביטול יציאה שהופעלה בטעות"
           },
           "instructions": {
-            "fr": "Avec la permission de gestion des commandes, ouvrez Commandes → Livraisons, sélectionnez la date de la tournée et cliquez sur Annuler le départ. Cette action est proposée seulement sur une tournée en cours dont tous les arrêts sont encore en attente. Confirmez : la tournée revient en brouillon et les commandes En livraison repassent En préparation. Les commandes déjà corrigées en Acceptée, En préparation ou Prête pour livraison gardent leur statut. Le livreur reste affecté ; utilisez ensuite Désassigner, puis répartissez les commandes au bon livreur. La date, les adresses, l’ordre des arrêts et les paiements sont conservés. Aucun message client ni ticket de cuisine n’est envoyé par cette annulation ; les messages déjà envoyés et leur historique ne sont pas effacés. Si une arrivée, une livraison ou un arrêt ignoré a été enregistré, ou si la tournée a changé entre-temps, l’annulation est refusée : actualisez et vérifiez l’avancement avant une autre correction. Ne marquez pas les commandes livrées pour débloquer une affectation.",
-            "en": "With order-management permission, open Orders → Deliveries, select the route date and choose Undo departure. This action is offered only for an active route whose stops are all pending. Confirm: the route returns to a draft and Out for delivery orders return to In preparation. Orders already corrected to Accepted, In preparation or Ready for delivery keep their status. The courier remains assigned; then use Unassign and allocate the orders to the correct courier. The date, addresses, stop order and payments are preserved. This undo sends no customer message or kitchen ticket; previously sent messages and their history are retained. If an arrival, delivery or skipped stop has been recorded, or the route changed meanwhile, undo is rejected: refresh and review progress before another correction. Do not mark orders delivered to unlock an assignment.",
-            "he": "עם הרשאת ניהול הזמנות, פתחו הזמנות → משלוחים, בחרו את תאריך המסלול ולחצו על ביטול היציאה. הפעולה מוצעת רק למסלול פעיל שכל עצירותיו עדיין בהמתנה. אשרו: המסלול חוזר לטיוטה והזמנות שיצאו למשלוח חוזרות להכנה. הזמנות שכבר תוקנו למצב אושרה, בהכנה או מוכנה למשלוח שומרות על מצבן. השליח נשאר משויך; לאחר מכן בטלו את השיוך והקצו את ההזמנות לשליח הנכון. התאריך, הכתובות, סדר העצירות והתשלומים נשמרים. הביטול אינו שולח הודעה ללקוח או כרטיס מטבח; הודעות שכבר נשלחו וההיסטוריה שלהן נשמרות. אם נרשמו הגעה, מסירה או דילוג על עצירה, או אם המסלול השתנה בינתיים, הביטול נדחה: רעננו ובדקו את ההתקדמות לפני תיקון נוסף. אין לסמן הזמנות כנמסרו כדי לשחרר שיוך."
+            "fr": "Avec la permission de gestion des commandes, ouvrez Commandes → Livraisons, sélectionnez la date de la tournée et cliquez sur Annuler le départ. Cette action est proposée seulement sur une tournée en cours dont tous les arrêts sont encore en attente. Confirmez : la tournée revient en brouillon et les commandes En livraison repassent En préparation. Les commandes déjà corrigées en Acceptée, En préparation ou Prête pour livraison gardent leur statut. Le livreur reste affecté ; utilisez ensuite Désassigner, puis répartissez les commandes au bon livreur. La date, les adresses, l’ordre des arrêts et les paiements sont conservés. Aucun message client ni ticket de cuisine n’est envoyé par cette annulation ; les messages déjà envoyés et leur historique ne sont pas effacés. Si une arrivée, une livraison ou un arrêt ignoré a été enregistré, ou si la tournée a changé entre-temps, l’annulation est refusée : actualisez et vérifiez l’avancement avant une autre correction. Ne marquez pas les commandes livrées pour débloquer une affectation. Les modifications de planification sont réservées aux responsables autorisés dans Livraisons ; elles ne sont pas accessibles aux comptes livreur ni depuis le mode livreur du propriétaire ou du superadmin.",
+            "en": "With order-management permission, open Orders → Deliveries, select the route date and choose Undo departure. This action is offered only for an active route whose stops are all pending. Confirm: the route returns to a draft and Out for delivery orders return to In preparation. Orders already corrected to Accepted, In preparation or Ready for delivery keep their status. The courier remains assigned; then use Unassign and allocate the orders to the correct courier. The date, addresses, stop order and payments are preserved. This undo sends no customer message or kitchen ticket; previously sent messages and their history are retained. If an arrival, delivery or skipped stop has been recorded, or the route changed meanwhile, undo is rejected: refresh and review progress before another correction. Do not mark orders delivered to unlock an assignment. Planning changes are reserved for authorized dispatchers in Deliveries; they are unavailable to courier accounts and in an owner’s or superadmin’s courier workspace.",
+            "he": "עם הרשאת ניהול הזמנות, פתחו הזמנות → משלוחים, בחרו את תאריך המסלול ולחצו על ביטול היציאה. הפעולה מוצעת רק למסלול פעיל שכל עצירותיו עדיין בהמתנה. אשרו: המסלול חוזר לטיוטה והזמנות שיצאו למשלוח חוזרות להכנה. הזמנות שכבר תוקנו למצב אושרה, בהכנה או מוכנה למשלוח שומרות על מצבן. השליח נשאר משויך; לאחר מכן בטלו את השיוך והקצו את ההזמנות לשליח הנכון. התאריך, הכתובות, סדר העצירות והתשלומים נשמרים. הביטול אינו שולח הודעה ללקוח או כרטיס מטבח; הודעות שכבר נשלחו וההיסטוריה שלהן נשמרות. אם נרשמו הגעה, מסירה או דילוג על עצירה, או אם המסלול השתנה בינתיים, הביטול נדחה: רעננו ובדקו את ההתקדמות לפני תיקון נוסף. אין לסמן הזמנות כנמסרו כדי לשחרר שיוך. שינויי תכנון מיועדים לאחראים מורשים במשלוחים; הם אינם זמינים לחשבונות שליח או בתצוגת השליח של בעל מסעדה או מנהל מערכת."
           }
         },
         {
@@ -31597,9 +31597,9 @@
             "he": "צפייה בסביבת שליח אחר"
           },
           "instructions": {
-            "fr": "Avec les versions compatibles de l’API et de l’Admin, le propriétaire du restaurant peut aussi utiliser ce sélecteur, comme un superadmin. Ouvrez Commandes → Mode livreur et choisissez un livreur du restaurant dans Voir comme livreur. La carte et les tournées sont celles du livreur choisi ; les actions enregistrent de vrais changements et la position du compte connecté n’est pas partagée pour lui. Voir [la procédure du mode livreur](/fr/help/delivery/courier-workspace#superadmin-courier-selection), y compris le changement de livreur et la récupération après erreur.",
-            "en": "With compatible API and Admin versions, the restaurant owner can also use this selector, like a superadmin. Open Orders → Courier mode and select a restaurant courier under View as courier. The map and routes belong to that courier; actions record real changes and the signed-in account’s GPS is not shared for them. See [the courier-mode procedure](/en/help/delivery/courier-workspace#superadmin-courier-selection), including switching couriers and recovering from errors.",
-            "he": "בגרסאות תואמות של ה־API וממשק הניהול, גם בעל המסעדה יכול להשתמש בבורר כמו סופר־אדמין. פתחו הזמנות → מצב שליח ובחרו שליח של המסעדה תחת צפייה בתור שליח. המפה והמסלולים שייכים לשליח שנבחר; הפעולות מבצעות שינויים אמיתיים ומיקום החשבון המחובר אינו משותף בשמו. ראו [הנחיות מצב שליח](/he/help/delivery/courier-workspace#superadmin-courier-selection), כולל החלפת שליח והתאוששות משגיאות."
+            "fr": "Avec les versions compatibles de l’API et de l’Admin, le propriétaire du restaurant peut aussi utiliser ce sélecteur, comme un superadmin. Ouvrez Commandes → Mode livreur et choisissez un livreur du restaurant dans Voir comme livreur. La carte et les tournées sont celles du livreur choisi ; les actions enregistrent de vrais changements et la position du compte connecté n’est pas partagée pour lui. Voir [la procédure du mode livreur](/fr/help/delivery/courier-workspace#superadmin-courier-selection), y compris le changement de livreur et la récupération après erreur. Les modifications de planification sont réservées aux responsables autorisés dans Livraisons ; elles ne sont pas accessibles aux comptes livreur ni depuis le mode livreur du propriétaire ou du superadmin.",
+            "en": "With compatible API and Admin versions, the restaurant owner can also use this selector, like a superadmin. Open Orders → Courier mode and select a restaurant courier under View as courier. The map and routes belong to that courier; actions record real changes and the signed-in account’s GPS is not shared for them. See [the courier-mode procedure](/en/help/delivery/courier-workspace#superadmin-courier-selection), including switching couriers and recovering from errors. Planning changes are reserved for authorized dispatchers in Deliveries; they are unavailable to courier accounts and in an owner’s or superadmin’s courier workspace.",
+            "he": "בגרסאות תואמות של ה־API וממשק הניהול, גם בעל המסעדה יכול להשתמש בבורר כמו סופר־אדמין. פתחו הזמנות → מצב שליח ובחרו שליח של המסעדה תחת צפייה בתור שליח. המפה והמסלולים שייכים לשליח שנבחר; הפעולות מבצעות שינויים אמיתיים ומיקום החשבון המחובר אינו משותף בשמו. ראו [הנחיות מצב שליח](/he/help/delivery/courier-workspace#superadmin-courier-selection), כולל החלפת שליח והתאוששות משגיאות. שינויי תכנון מיועדים לאחראים מורשים במשלוחים; הם אינם זמינים לחשבונות שליח או בתצוגת השליח של בעל מסעדה או מנהל מערכת."
           }
         }
       ],
@@ -31616,6 +31616,10 @@
         {
           "service": "foodyserver",
           "file": "internal/delivery/courier_context.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/delivery/courier_read_only.go"
         },
         {
           "service": "foodyserver",
@@ -31755,10 +31759,6 @@
         },
         {
           "service": "foodyadmin",
-          "file": "src/components/delivery/CourierAddressEditor.tsx"
-        },
-        {
-          "service": "foodyadmin",
           "file": "src/components/delivery/CourierItinerary.module.css"
         },
         {
@@ -31892,9 +31892,9 @@
             "he": "פתיחת מסלול משויך"
           },
           "instructions": {
-            "fr": "Dans le mode livreur de Foody Admin, choisissez votre tournée dans la liste en haut, y compris les affectations à venir. La tournée active est proposée à l’ouverture. La carte et ses repères numérotés sont visibles dès le départ ; sur ordinateur, la chronologie est placée à côté. Vérifiez la date, les adresses, les horaires calculés, les contacts et les consignes. La fin, la distance et la durée sont des estimations du plan ; un calcul incomplet les masque. Le menu rond donne accès au compte, au restaurant, à la langue et au thème. Utilisez uniquement les commandes de votre périmètre coursier autorisé.\n\nDans la vue livreur, le montant de la commande est affiché uniquement pour un paiement en espèces. Les paiements par carte, les autres moyens de paiement et les commandes dont le moyen de paiement est inconnu n’affichent pas de montant.",
-            "en": "In Foody Admin courier mode, select your route from the list at the top, including future assignments. An active route is selected on opening. The map and numbered pins are visible immediately; on desktop, the timeline sits alongside it. Check the date, addresses, calculated times, contacts and instructions. Finish, distance and duration are plan estimates; an incomplete calculation hides them. The round menu opens account, restaurant, language and theme controls. Use only orders within your authorized courier scope.\n\nIn the courier view, the order amount is shown only for cash payments. Card payments, other payment methods and orders with an unknown payment method do not show an amount.",
-            "he": "במצב השליח של Foody Admin בחרו מסלול ברשימה למעלה, כולל הקצאות עתידיות. בפתיחה נבחר המסלול הפעיל אם קיים. המפה והסמנים הממוספרים מוצגים מיד; במחשב ציר העצירות נמצא לצד המפה. בדקו תאריך, כתובות, זמנים מחושבים, אנשי קשר והנחיות. הסיום, המרחק והמשך הם הערכות של התוכנית; חישוב חסר מסתיר אותם. התפריט העגול פותח את החשבון, החלפת המסעדה, השפה והערכת נושא. השתמשו רק בהזמנות שבתחום ההרשאה שלכם.\n\nבתצוגת השליח סכום ההזמנה מוצג רק בתשלום במזומן. בתשלום בכרטיס, באמצעי תשלום אחרים או כאשר אמצעי התשלום אינו ידוע, הסכום אינו מוצג."
+            "fr": "Dans le mode livreur de Foody Admin, choisissez votre tournée dans la liste en haut, y compris les affectations à venir. La tournée active est proposée à l’ouverture. La carte et ses repères numérotés sont visibles dès le départ ; sur ordinateur, la chronologie est placée à côté. Vérifiez la date, les adresses, les horaires calculés, les contacts et les consignes. La fin, la distance et la durée sont des estimations du plan ; un calcul incomplet les masque. Ouvrez Durée totale pour consulter le détail disponible sans modifier le plan. Le menu rond donne accès au compte, au restaurant, à la langue et au thème.\n\nLe mode livreur exécute la tournée enregistrée par le restaurant. Il ne permet pas de changer les paramètres, les adresses ou l’ordre des arrêts. Le montant de la commande est affiché uniquement pour un paiement en espèces ; il est masqué pour les autres moyens de paiement et lorsqu’il est inconnu.",
+            "en": "In Foody Admin courier mode, choose your assigned route from the top list, including upcoming assignments. The active route is selected on opening. The map and numbered pins are visible before departure; the timeline sits alongside it on desktop. Check the date, addresses, calculated times, contacts and instructions. Finish time, distance and duration are plan estimates; an incomplete calculation hides them. Open Total duration to read the available breakdown without changing the plan. The round menu provides account, restaurant, language and theme controls.\n\nCourier mode executes the itinerary saved by the restaurant. It cannot change settings, addresses or stop order. The order amount appears only for cash payments; other or unknown payment methods hide it.",
+            "he": "במצב שליח ב־Foody Admin בחרו את המסלול שהוקצה לכם ברשימה העליונה, כולל הקצאות עתידיות. המסלול הפעיל נבחר בפתיחה. המפה והסיכות הממוספרות זמינות לפני היציאה; במחשב ציר הזמן מופיע לצדה. בדקו תאריך, כתובות, שעות מחושבות, אנשי קשר והנחיות. שעת הסיום, המרחק והמשך הם הערכות של התוכנית; חישוב חסר מסתיר אותם. פתחו את משך כולל כדי לעיין בפירוט הזמין ללא שינוי התוכנית. התפריט העגול מאפשר גישה לחשבון, למסעדה, לשפה ולערכת הנושא.\n\nמצב שליח מיועד לביצוע המסלול שהמסעדה שמרה. אין בו שינוי הגדרות, כתובות או סדר עצירות. סכום ההזמנה מוצג רק בתשלום מזומן; הוא מוסתר באמצעי תשלום אחרים או לא ידועים."
           }
         },
         {
@@ -31905,9 +31905,9 @@
             "he": "ניווט ויצירת קשר"
           },
           "instructions": {
-            "fr": "Touchez une adresse dans la chronologie ou son repère sur la carte pour sélectionner cet arrêt et afficher ses actions. Le repère fait défiler la liste sans valider de livraison. Les boutons fixes Naviguer et Marquer livrée concernent le même arrêt sélectionné, dont le numéro et l’adresse apparaissent au-dessus sous Arrêt sélectionné. Vérifiez cette destination avant toute action. Touchez le téléphone pour appeler ou WhatsApp pour préparer un message. Les adresses non vérifiées restent signalées avant une recherche de navigation. Les options permettent de corriger l’adresse ou de monter/descendre l’arrêt ; validez une correction avec le dispatch.",
-            "en": "Select an address in the timeline or its map pin to select that stop and reveal its actions. A pin scrolls the list without confirming delivery. Fixed Navigate and Mark delivered buttons target the same selected stop, whose number and address appear above under Selected stop. Check this destination before acting. Select the phone number to call or WhatsApp to prepare a message. Unverified addresses remain flagged before a navigation search. Stop options let you correct the address or move the stop up/down; confirm a correction with dispatch.",
-            "he": "בחרו כתובת בציר העצירות או את הסמן שלה במפה כדי לבחור את העצירה ולהציג את הפעולות שלה. הסמן גולל את הרשימה ואינו מאשר מסירה. הכפתורים הקבועים ניווט וסמן נמסר מתייחסים לאותה עצירה נבחרת, שהמספר והכתובת שלה מוצגים מעליהם תחת העצירה הנבחרת. בדקו את היעד לפני הפעולה. לחצו על מספר הטלפון לשיחה או על WhatsApp להכנת הודעה. כתובות שלא אומתו נשארות מסומנות לפני חיפוש ניווט. אפשרויות העצירה מאפשרות לתקן כתובת או להזיז עצירה למעלה ולמטה; אשרו תיקון עם אחראי השיגור."
+            "fr": "Touchez une adresse dans la chronologie ou son repère sur la carte pour sélectionner cet arrêt et afficher ses actions. Le repère fait défiler la liste sans valider de livraison ni changer l’ordre enregistré. Les boutons fixes Naviguer et Marquer livrée concernent le même arrêt sélectionné, dont le numéro et l’adresse apparaissent au-dessus sous Arrêt sélectionné. Vérifiez cette destination avant toute action. Touchez le téléphone pour appeler ou WhatsApp pour préparer un message. Les adresses non vérifiées restent signalées avant une recherche de navigation. Pour une adresse incorrecte ou un changement d’itinéraire, contactez le responsable : le livreur ne peut ni corriger l’adresse ni déplacer un arrêt.",
+            "en": "Select an address in the timeline or its map pin to show that stop’s actions. The pin scrolls the list without confirming delivery or changing the saved order. The fixed Navigate and Mark delivered actions target the same selected stop, whose number and address appear above under Selected stop. Check this destination before acting. Tap the phone to call or WhatsApp to prepare a message. Unverified addresses remain flagged before a navigation search. Contact the dispatcher about an incorrect address or itinerary change: the courier cannot correct an address or move a stop.",
+            "he": "בחרו כתובת בציר הזמן או סיכה במפה כדי להציג את פעולות העצירה. הסיכה גוללת את הרשימה ללא אישור מסירה או שינוי הסדר השמור. פעולות הניווט וסימון המסירה הקבועות מתייחסות לאותה עצירה נבחרת, שמספרה וכתובתה מוצגים מעליהן. בדקו את היעד לפני פעולה. געו בטלפון להתקשרות או ב־WhatsApp להכנת הודעה. כתובות שלא אומתו נשארות מסומנות לפני חיפוש ניווט. אם הכתובת שגויה או נדרש שינוי מסלול, פנו לאחראי: השליח אינו יכול לתקן כתובת או להזיז עצירה."
           }
         },
         {
@@ -31926,14 +31926,14 @@
         {
           "id": "departure-settings",
           "title": {
-            "en": "Edit endpoints and start the route",
-            "fr": "Modifier les points et démarrer la tournée",
-            "he": "עריכת נקודות ותחילת המסלול"
+            "fr": "Vérifier le plan et démarrer la tournée",
+            "en": "Check the plan and start the route",
+            "he": "בדיקת התוכנית והתחלת מסלול"
           },
           "instructions": {
-            "en": "Before departure, open Adjust at the bottom of your assigned route, then Edit. Settings are also available in Route options. After saving, close the panel to return to the map. The menu also offers Re-optimize, which changes the order unlike a simple search. Set departure time, departure address and final destination; use the address suggestions or enter a complete address manually. Set the customer window and handover duration separately, then save and review the recalculated sequence. Changing an endpoint resets manual ordering. Start route confirms that the assigned unfinished deliveries are leaving and changes accepted, preparing and ready deliveries together to Out for delivery. Finished/cancelled deliveries are not reopened. A held kitchen course or an unsettled weight order must be resolved first. If departure fails, no partial status change is saved. A courier can have only one active route; finish it before starting another. Before departure, departure and final addresses remain editable after allocation. Include the house number, street and city; the number may appear before or after the street name, and the displayed address is retained. If Address not found appears, check the number and city, then select another suggestion or correct the full address. A temporary location-service failure requires trying again later. The saved route remains unchanged on either failure. When Google is active in Maps and routes, departure and final addresses can use a precise Google match even when Geoapify cannot locate them. Save the route settings before departure and review the recalculated final leg. If Google is unavailable or its protected quota is exhausted and the other provider cannot locate an endpoint, saving or recalculation is blocked and the previous plan is retained; the final destination is never silently omitted. Google-only points are shown on the Google map and hidden when the map switches provider. Select a precisely located alternative or try again when Google becomes available. Enable Respect order time windows only when saved order times are agreed customer commitments. Disabled by default, this option allows stop optimization before deriving customer arrival ranges. Changing it recalculates even a previous manual sequence; review the result before departure.",
-            "fr": "Avant de partir, ouvrez Ajuster en bas de votre tournée affectée, puis Modifier. Les paramètres sont aussi accessibles dans Options de la tournée. Après enregistrement, fermez le panneau pour retrouver la carte. Le menu permet aussi de Réoptimiser ; cette action modifie l’ordre, contrairement à la simple recherche. Réglez l’heure, l’adresse de départ et la destination finale ; utilisez les suggestions ou saisissez une adresse complète. Réglez séparément la marge client et le temps de remise, puis enregistrez et vérifiez l’ordre recalculé. Changer un point réinitialise l’ordre manuel. « Démarrer la tournée » confirme le départ des livraisons affectées non terminées et fait passer ensemble les commandes acceptées, en préparation ou prêtes en « En livraison ». Les commandes terminées ou annulées ne sont pas rouvertes. Une préparation retenue ou une commande au poids non finalisée doit être résolue auparavant. En cas d’échec, aucun changement partiel n’est enregistré. Un livreur ne peut avoir qu’une tournée active ; terminez-la avant de démarrer la suivante. Avant le départ, les adresses de départ et de fin restent modifiables après la répartition. Indiquez numéro, rue et ville ; le numéro peut précéder ou suivre la rue, et le libellé affiché est conservé. Si « Adresse introuvable » apparaît, vérifiez le numéro et la ville puis choisissez une autre suggestion ou corrigez l’adresse complète. Une indisponibilité temporaire du service de localisation demande de réessayer plus tard. Dans les deux cas, la tournée enregistrée est conservée. Lorsque Google est actif dans Cartes et itinéraires, les adresses de départ et de fin peuvent utiliser un point précis trouvé par Google même si Geoapify ne les localise pas. Enregistrez les paramètres avant le départ puis vérifiez le dernier trajet recalculé. Si Google est indisponible ou que son quota protégé est atteint et que l’autre fournisseur ne trouve pas un point, l’enregistrement ou le recalcul est bloqué et le plan précédent est conservé ; la destination finale n’est jamais omise silencieusement. Les points connus uniquement de Google sont affichés sur la carte Google et masqués lorsque la carte change de fournisseur. Choisissez une autre adresse précisément localisée ou réessayez au retour de Google. Activez « Respecter les créneaux des commandes » seulement si les horaires enregistrés correspondent à des engagements clients. Désactivée par défaut, cette option permet d’optimiser les arrêts avant de calculer les plages d’arrivée communiquées. La modifier recalcule aussi un ancien ordre manuel ; vérifiez le résultat avant de partir.",
-            "he": "לפני היציאה פתחו התאמה בתחתית המסלול המשויך ואז עריכה. ההגדרות זמינות גם באפשרויות המסלול. לאחר השמירה סגרו את הלוח לחזרה למפה. התפריט מציע גם אופטימיזציה מחדש שמשנה את הסדר, בניגוד לחיפוש רגיל. הגדירו שעה, כתובת יציאה ויעד סופי באמצעות הצעות הכתובת או כתובת מלאה ידנית. הגדירו בנפרד את חלון הלקוח ואת זמן המסירה, שמרו ובדקו את הסדר המחושב. שינוי נקודה מאפס סדר ידני. התחלת המסלול מאשרת את יציאת המשלוחים המשויכים שטרם הסתיימו ומעבירה יחד הזמנות שהתקבלו, בהכנה או מוכנות למצב במשלוח. הזמנות שהסתיימו או בוטלו אינן נפתחות מחדש. יש לפתור קודם מנה מושהית במטבח או הזמנה במשקל שלא נסגרה. כשל ביציאה אינו שומר שינויי סטטוס חלקיים. לשליח יכול להיות מסלול פעיל אחד בלבד; סיימו אותו לפני תחילת הבא. לפני היציאה אפשר לשנות את כתובות היציאה והסיום גם לאחר החלוקה. הזינו מספר בית, רחוב ועיר; המספר יכול להופיע לפני שם הרחוב או אחריו, והכתובת המוצגת נשמרת. אם מופיעה ההודעה הכתובת לא נמצאה, בדקו את המספר והעיר ואז בחרו הצעה אחרת או תקנו את הכתובת המלאה. אם שירות האיתור אינו זמין זמנית, נסו שוב מאוחר יותר. בשני המקרים המסלול השמור נשאר ללא שינוי. כאשר Google פעיל במפות ומסלולים, אפשר להשתמש בנקודות יציאה וסיום מדויקות ש־Google מזהה גם אם Geoapify אינו מוצא אותן. שמרו את ההגדרות לפני היציאה ובדקו את הקטע האחרון שחושב מחדש. אם Google אינו זמין או שהמכסה המוגנת נוצלה והספק האחר אינו מזהה נקודה, השמירה או החישוב מחדש נחסמים והתוכנית הקודמת נשמרת; היעד הסופי לעולם אינו מושמט בשקט. נקודות שזוהו רק ב־Google מוצגות במפת Google ומוסתרות כאשר ספק המפה משתנה. בחרו כתובת חלופית עם מיקום מדויק או נסו שוב כאשר Google זמין. הפעילו כיבוד חלונות הזמן של ההזמנות רק כאשר הזמנים השמורים הם התחייבות מוסכמת ללקוח. האפשרות כבויה כברירת מחדל ומאפשרת לארגן תחילה את העצירות ואז לחשב חלונות הגעה ללקוחות. שינויה מחשב מחדש גם סדר ידני קודם; בדקו את התוצאה לפני היציאה."
+            "fr": "Avant de partir, vérifiez la tournée enregistrée par le restaurant. Le mode livreur ne propose plus Ajuster, les réglages de tournée, Réoptimiser, la correction d’adresse ou le déplacement d’un arrêt. Le départ prévu, les points de départ et d’arrivée, les temps de remise, les créneaux et la composition de la tournée se modifient uniquement par un responsable autorisé dans Commandes → Livraisons. Cette règle vaut aussi pour un propriétaire ou superadmin qui consulte le mode livreur ; pour planifier, retournez dans Livraisons. Une ancienne interface ne peut pas enregistrer ces changements depuis les actions livreur.\n\nDémarrer la tournée confirme le départ réel des livraisons affectées non terminées et fait passer ensemble les commandes acceptées, en préparation ou prêtes en En livraison. Les commandes terminées ou annulées ne sont pas rouvertes. Une préparation retenue ou une commande au poids non finalisée doit être résolue auparavant. En cas d’échec, aucun changement partiel n’est enregistré. Un livreur ne peut avoir qu’une tournée active ; terminez-la avant de démarrer la suivante. Si une destination n’a pas pu être vérifiée, demandez au responsable de vérifier son adresse ou son point GPS avant de confirmer le départ.",
+            "en": "Before leaving, check the itinerary saved by the restaurant. Courier mode no longer offers Refine, route settings, Reoptimize, address correction or stop reordering. Planned departure, start and end points, handover times, customer windows and route composition can only be changed by an authorized dispatcher in Orders → Deliveries. This also applies to an owner or superadmin viewing courier mode; return to Deliveries to plan. An old interface cannot save these changes through courier actions.\n\nStart route confirms the actual departure of unfinished assigned deliveries and moves accepted, preparing or ready orders together to Out for delivery. Finished or cancelled orders are not reopened. A preparation hold or an unfinalized weighted order must be resolved first. Failure makes no partial change. A courier can have only one active route; finish it before starting another. If a destination could not be verified, ask the dispatcher to check its address or GPS point before confirming departure.",
+            "he": "לפני היציאה בדקו את המסלול שהמסעדה שמרה. מצב שליח אינו מציע עוד התאמה, הגדרות מסלול, מיטוב מחדש, תיקון כתובת או שינוי סדר עצירות. רק אחראי מורשה יכול לשנות יציאה מתוכננת, נקודות התחלה וסיום, זמני מסירה, חלונות ללקוח והרכב מסלול דרך הזמנות ← משלוחים. הכלל חל גם על בעל מסעדה או מנהל מערכת שצופה במצב שליח; לתכנון חוזרים למשלוחים. גם ממשק ישן אינו יכול לשמור שינויים אלה דרך פעולות השליח.\n\nהתחלת מסלול מאשרת יציאה בפועל של המשלוחים המשויכים שטרם הסתיימו ומעבירה יחד הזמנות שאושרו, בהכנה או מוכנות למצב בדרך. הזמנות שהסתיימו או בוטלו אינן נפתחות מחדש. יש לפתור קודם עיכוב הכנה או הזמנה במשקל שלא סוכמה. כשל אינו שומר שינוי חלקי. לשליח יכול להיות מסלול פעיל אחד בלבד; סיימו אותו לפני התחלת הבא. אם יעד לא אומת, בקשו מהאחראי לבדוק את כתובתו או נקודת ה־GPS לפני אישור היציאה."
           }
         },
         {
@@ -31944,9 +31944,9 @@
             "he": "טיפול במגבלת שירות המפות"
           },
           "instructions": {
-            "fr": "Un avertissement de quota atteint ou de service indisponible ne signifie pas que l’adresse du client est fausse. Les positions Google connues restent affichées sur la carte Google tant que leur cache est valide ; les positions non vérifiées sont signalées temporairement indisponibles. Le tracé et les arrivées impossibles à calculer restent masqués. Prévenez le dispatch afin qu’il vérifie Consommation et quotas et attendez le retour du service, puis actualisez et recalculez si nécessaire. Ne supprimez pas de livraison pour faire disparaître l’avertissement. Les commandes et leurs adresses sont conservées. Vérifiez les horaires recalculés avant de contacter les clients.",
-            "en": "An exhausted-quota or unavailable-service warning does not mean the customer address is wrong. Known Google positions remain on the Google map while their cache is valid; unchecked positions are marked temporarily unavailable. Paths and arrivals that cannot be calculated stay hidden. Ask dispatch to check Usage and quotas and wait for service availability, then refresh and recalculate if needed. Do not remove a delivery to dismiss the warning. Orders and addresses are retained. Review recalculated times before contacting customers.",
-            "he": "אזהרת מכסה שנוצלה או שירות שאינו זמין אינה אומרת שכתובת הלקוח שגויה. מיקומי Google ידועים נשארים במפת Google כל עוד המטמון בתוקף; מיקומים שלא נבדקו מסומנים כלא זמינים זמנית. תוואי והגעות שלא ניתן לחשב נשארים מוסתרים. פנו לאחראי השיגור לבדיקת צריכה ומכסות והמתינו לחזרת השירות, ואז רעננו וחשבו מחדש לפי הצורך. אל תסירו משלוח כדי להעלים אזהרה. ההזמנות והכתובות נשמרות. בדקו את הזמנים שחושבו מחדש לפני יצירת קשר עם לקוחות."
+            "fr": "Un avertissement de quota atteint ou de service indisponible ne signifie pas que l’adresse du client est fausse. Les positions Google connues restent affichées sur la carte Google tant que leur cache est valide ; les positions non vérifiées sont signalées temporairement indisponibles. Le tracé et les arrivées impossibles à calculer restent masqués. Prévenez le responsable afin qu’il vérifie Consommation et quotas, puis actualisez au retour du service. Réessayer dans le mode livreur recharge les informations sans recalculer ni modifier la tournée. Un recalcul nécessaire se fait par le responsable dans Livraisons. Les commandes et leurs adresses sont conservées. Vérifiez les horaires actualisés avant de contacter les clients.",
+            "en": "A quota or service-unavailable warning does not mean the customer address is wrong. Known Google points remain on the Google map while their cache is valid; unverified positions are flagged as temporarily unavailable. Unavailable geometry and arrival calculations stay hidden. Ask the dispatcher to review Usage and quotas, then refresh when service returns. Retry in courier mode reloads information without recalculating or changing the itinerary. Any necessary recalculation is performed by the dispatcher in Deliveries. Orders and their addresses are preserved. Check updated times before contacting customers.",
+            "he": "אזהרת מכסה או שירות לא זמין אינה אומרת שכתובת הלקוח שגויה. נקודות Google מוכרות נשארות במפת Google כל עוד המטמון תקף; נקודות לא מאומתות מסומנות כלא זמינות זמנית. תוואי ושעות הגעה שלא ניתן לחשב נשארים מוסתרים. בקשו מהאחראי לבדוק שימוש ומכסות ורעננו לאחר חזרת השירות. ניסיון חוזר במצב שליח טוען מידע ללא חישוב מחדש או שינוי המסלול. חישוב מחדש נדרש מבוצע בידי האחראי במשלוחים. ההזמנות וכתובותיהן נשמרות. בדקו שעות מעודכנות לפני פנייה ללקוחות."
           }
         },
         {
@@ -31983,9 +31983,9 @@
             "he": "צפייה בסביבת שליח אחר"
           },
           "instructions": {
-            "fr": "Avec les versions compatibles de l’API et de l’Admin, connectez-vous comme propriétaire du restaurant concerné ou comme superadmin, puis ouvrez Commandes → Mode livreur. Dans Voir comme livreur, choisissez un livreur du restaurant ; le premier de la liste est sélectionné à l’ouverture. Vous consultez le même écran de carte, de tournées non terminées et d’arrêts que ce livreur. Changez ce choix pour afficher les tournées du nouveau livreur ; l’arrêt sélectionné, la recherche et les panneaux précédents sont réinitialisés. Les actions affichées, dont Démarrer la tournée et Marquer livrée, agissent réellement sur ses livraisons : utilisez-les uniquement pour enregistrer une opération effectuée. Le compte connecté conserve son identité et sa position GPS n’est pas envoyée comme celle du livreur. Être propriétaire d’un autre restaurant ne donne pas accès à ce sélecteur ici ; les autres comptes conservent leurs propres tournées. Si aucun livreur n’est configuré, vérifiez les rôles de l’équipe. En cas d’échec de chargement, utilisez Réessayer ; une affectation supprimée ou un livreur d’un autre restaurant est refusé par le serveur. Si le sélecteur manque pour le propriétaire, faites vérifier le déploiement des deux versions compatibles, API puis Admin.",
-            "en": "With compatible API and Admin versions, sign in as the relevant restaurant’s owner or as a superadmin, then open Orders → Courier mode. Under View as courier, select a courier from that restaurant; the first in the list is selected initially. You see the same map, unfinished routes and stops as that courier. Change the selection to display the new courier’s routes; the previous selected stop, search and panels are reset. Displayed actions, including Start route and Mark delivered, really change that courier’s deliveries: use them only to record work that has taken place. The signed-in account keeps its identity and its GPS position is not reported as the courier’s. Owning another restaurant does not grant this selector here; other accounts keep their own routes. If no couriers are configured, check the team roles. If loading fails, choose Retry; a removed membership or a courier from another restaurant is rejected by the server. If the owner has no selector, have both compatible versions checked, deploying API before Admin.",
-            "he": "בגרסאות תואמות של ה־API וממשק הניהול, התחברו כבעל המסעדה הרלוונטית או כסופר־אדמין ופתחו הזמנות → מצב שליח. תחת צפייה בתור שליח בחרו שליח של המסעדה; השליח הראשון ברשימה נבחר בפתיחה. מוצגים אותם מפה, מסלולים שטרם הושלמו ועצירות שהשליח רואה. החלפת הבחירה מציגה את מסלולי השליח החדש ומאפסת את העצירה הנבחרת, החיפוש והחלוניות הקודמות. הפעולות המוצגות, כולל תחילת מסלול וסמן נמסר, משנות בפועל את המשלוחים שלו: השתמשו בהן רק לרישום פעולה שבוצעה. החשבון המחובר שומר על זהותו ומיקום ה־GPS שלו אינו מדווח כמיקום השליח. בעלות על מסעדה אחרת אינה מעניקה בורר זה כאן; חשבונות אחרים ממשיכים לראות את המסלולים שלהם. אם לא הוגדרו שליחים, בדקו את תפקידי הצוות. בכשל טעינה לחצו ניסיון חוזר; השרת דוחה שיוך שהוסר או שליח של מסעדה אחרת. אם הבורר חסר לבעל המסעדה, יש לבדוק שהותקנו שתי הגרסאות התואמות, קודם API ואז ממשק הניהול."
+            "fr": "Avec les versions compatibles de l’API et de l’Admin, connectez-vous comme propriétaire du restaurant concerné ou comme superadmin, puis ouvrez Commandes → Mode livreur. Dans Voir comme livreur, choisissez un livreur du restaurant ; le premier de la liste est sélectionné à l’ouverture. Vous consultez le même écran de carte, de tournées non terminées et d’arrêts que ce livreur. Changez ce choix pour afficher les tournées du nouveau livreur ; l’arrêt sélectionné, la recherche et les panneaux précédents sont réinitialisés. Les actions affichées, dont Démarrer la tournée et Marquer livrée, agissent réellement sur ses livraisons : utilisez-les uniquement pour enregistrer une opération effectuée. Le compte connecté conserve son identité et sa position GPS n’est pas envoyée comme celle du livreur. Être propriétaire d’un autre restaurant ne donne pas accès à ce sélecteur ici ; les autres comptes conservent leurs propres tournées. Si aucun livreur n’est configuré, vérifiez les rôles de l’équipe. En cas d’échec de chargement, utilisez Réessayer ; une affectation supprimée ou un livreur d’un autre restaurant est refusé par le serveur. Si le sélecteur manque pour le propriétaire, faites vérifier le déploiement des deux versions compatibles, API puis Admin. La consultation reste limitée à l’exécution : aucun réglage d’itinéraire n’est proposé, même pour le propriétaire ou le superadmin. Pour modifier le plan, retournez dans Commandes → Livraisons.",
+            "en": "With compatible API and Admin versions, sign in as the relevant restaurant’s owner or as a superadmin, then open Orders → Courier mode. Under View as courier, select a courier from that restaurant; the first in the list is selected initially. You see the same map, unfinished routes and stops as that courier. Change the selection to display the new courier’s routes; the previous selected stop, search and panels are reset. Displayed actions, including Start route and Mark delivered, really change that courier’s deliveries: use them only to record work that has taken place. The signed-in account keeps its identity and its GPS position is not reported as the courier’s. Owning another restaurant does not grant this selector here; other accounts keep their own routes. If no couriers are configured, check the team roles. If loading fails, choose Retry; a removed membership or a courier from another restaurant is rejected by the server. If the owner has no selector, have both compatible versions checked, deploying API before Admin. This workspace remains for execution: itinerary settings are unavailable even for an owner or superadmin. Return to Orders → Deliveries to change the plan.",
+            "he": "בגרסאות תואמות של ה־API וממשק הניהול, התחברו כבעל המסעדה הרלוונטית או כסופר־אדמין ופתחו הזמנות → מצב שליח. תחת צפייה בתור שליח בחרו שליח של המסעדה; השליח הראשון ברשימה נבחר בפתיחה. מוצגים אותם מפה, מסלולים שטרם הושלמו ועצירות שהשליח רואה. החלפת הבחירה מציגה את מסלולי השליח החדש ומאפסת את העצירה הנבחרת, החיפוש והחלוניות הקודמות. הפעולות המוצגות, כולל תחילת מסלול וסמן נמסר, משנות בפועל את המשלוחים שלו: השתמשו בהן רק לרישום פעולה שבוצעה. החשבון המחובר שומר על זהותו ומיקום ה־GPS שלו אינו מדווח כמיקום השליח. בעלות על מסעדה אחרת אינה מעניקה בורר זה כאן; חשבונות אחרים ממשיכים לראות את המסלולים שלהם. אם לא הוגדרו שליחים, בדקו את תפקידי הצוות. בכשל טעינה לחצו ניסיון חוזר; השרת דוחה שיוך שהוסר או שליח של מסעדה אחרת. אם הבורר חסר לבעל המסעדה, יש לבדוק שהותקנו שתי הגרסאות התואמות, קודם API ואז ממשק הניהול. התצוגה נשארת לביצוע בלבד: הגדרות מסלול אינן זמינות גם לבעל המסעדה או למנהל מערכת. לשינוי התוכנית חזרו להזמנות ← משלוחים."
           }
         }
       ],
@@ -31997,10 +31997,6 @@
         {
           "service": "foodyadmin",
           "file": "src/app/[restaurantId]/orders/courier-mode/page.tsx"
-        },
-        {
-          "service": "foodyadmin",
-          "file": "src/components/delivery/CourierAddressEditor.tsx"
         },
         {
           "service": "foodyadmin",
@@ -32169,7 +32165,7 @@
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-10-22",
+      "procedureUpdatedAt": "2026-10-28",
       "operations": [
         {
           "id": "account",
@@ -32296,9 +32292,9 @@
             "he": "10. בדיקת ההפעלה והשימוש בפרויקט שלכם"
           },
           "instructions": {
-            "en": "Creating keys or selecting Google in Foody does not switch billing by itself. Wait for written confirmation from Foody identifying the services and branches actually connected. If individual onboarding is unavailable, keep the setup in preparation.\n\nAfter confirmed activation, agree a small test that may consume Google quota:\n\n1. Test address search with a public address and no customer data.\n2. Check a basemap and a short route; test optimization only if included in onboarding.\n3. In Google Cloud, verify that requests appear in **your project**, by API and key where available. Reports may be delayed.\n4. Ask Foody to confirm that the same requests no longer use shared credentials and are scoped to your business. Foody counters alone do not prove which project is billed.\n\n**Expected result:** confirmed services use your project with its restrictions, quotas and billing. [Review Foody providers and usage](/en/help/delivery/maps-and-usage). In courier mode, select the route at the top: map and timeline are visible together. Select a pin to reveal its stop; viewing it changes neither order nor status. Route settings are in Adjust and navigation is in the fixed bar. If a provider switch hides a Google point, check the active provider before correcting the address.\n\nFor a courier-mode test on real orders, do not confirm an arrival or delivery. If Start was used accidentally, a manager can return to Deliveries and choose Undo departure while all stops are pending, then unassign and reallocate. This correction preserves addresses and map settings; it does not change Google keys, quotas or previously sent messages.",
-            "fr": "Créer des clés ou choisir Google dans Foody ne suffit pas à basculer la facturation. Attendez une confirmation écrite de Foody précisant les services et établissements effectivement raccordés. Si le raccordement n’est pas encore disponible, conservez le dossier en préparation.\n\nAprès activation confirmée, convenez d’un petit essai pouvant consommer du quota Google :\n\n1. Testez une recherche d’adresse avec une adresse publique, sans données client.\n2. Vérifiez un fond de carte et un itinéraire court ; testez l’optimisation seulement si elle fait partie du raccordement.\n3. Dans Google Cloud, vérifiez que les appels apparaissent dans **votre projet**, par API et par clé lorsque ce détail est disponible. Les rapports peuvent être différés.\n4. Faites confirmer par Foody que ces mêmes appels ne consomment plus les identifiants mutualisés et que le périmètre est bien limité à votre établissement. Les compteurs affichés dans Foody ne prouvent pas, seuls, le projet facturé.\n\n**Résultat attendu :** les services confirmés utilisent votre projet, avec leurs restrictions, quotas et facturation. [Consulter les fournisseurs et usages Foody](/fr/help/delivery/maps-and-usage). Dans le mode livreur, choisissez la tournée en haut : carte et chronologie sont visibles ensemble. Sélectionnez un repère pour retrouver son arrêt ; cette consultation ne change ni l’ordre ni le statut. Les réglages de tournée sont dans Ajuster et la navigation dans la barre fixe. Si un changement de fournisseur masque un point Google, vérifiez le fournisseur actif avant de corriger l’adresse.\n\nPour un essai du mode livreur sur de vraies commandes, ne confirmez aucune arrivée ou livraison. Si Démarrer a été utilisé par erreur, un responsable peut revenir dans Livraisons et choisir Annuler le départ tant que chaque arrêt reste en attente, puis désassigner et réaffecter. Cette correction conserve les adresses et réglages de carte ; elle ne modifie ni les clés Google, ni les quotas, ni les messages déjà envoyés.",
-            "he": "יצירת מפתחות או בחירה ב-Google ב-Foody אינן משנות לבדן את החיוב. המתינו לאישור כתוב מ-Foody שמפרט אילו שירותים וסניפים חוברו בפועל. אם החיבור האישי עדיין אינו זמין, השאירו את הבקשה בשלב הכנה.\n\nלאחר אישור ההפעלה תאמו בדיקה קטנה שעשויה לצרוך מכסת Google:\n\n1. בדקו חיפוש כתובת ציבורית ללא נתוני לקוחות.\n2. בדקו מפת רקע ומסלול קצר; בדקו מיטוב רק אם הוא נכלל בחיבור.\n3. ב-Google Cloud ודאו שהקריאות מופיעות ב**פרויקט שלכם**, לפי API ומפתח כשמידע זה זמין. ייתכן עיכוב בדוחות.\n4. בקשו מ-Foody לוודא שהקריאות האלה כבר אינן משתמשות בפרטי הגישה המשותפים ושהן מוגבלות לעסק שלכם. המונים ב-Foody לבדם אינם מוכיחים איזה פרויקט מחויב.\n\n**תוצאה צפויה:** השירותים שאושרו משתמשים בפרויקט שלכם, עם ההגבלות, המכסות והחיוב שלו. [בדיקת ספקים ושימוש ב-Foody](/he/help/delivery/maps-and-usage). במצב השליח בחרו מסלול למעלה: המפה וציר העצירות מוצגים יחד. בחרו סמן להצגת העצירה שלו; הצפייה אינה משנה סדר או מצב. הגדרות המסלול נמצאות בהתאמה והניווט בסרגל הקבוע. אם החלפת ספק מסתירה נקודת Google, בדקו את הספק הפעיל לפני תיקון הכתובת.\n\nבניסיון מצב שליח על הזמנות אמיתיות, אל תאשרו הגעה או מסירה. אם הופעלה התחלה בטעות, מנהל יכול לחזור למשלוחים ולבחור ביטול היציאה כל עוד כל העצירות בהמתנה, ואז לבטל שיוך ולהקצות מחדש. התיקון שומר כתובות והגדרות מפה; הוא אינו משנה מפתחות Google, מכסות או הודעות שכבר נשלחו."
+            "en": "Creating keys or selecting Google in Foody does not switch billing by itself. Wait for written confirmation from Foody identifying the services and branches actually connected. If individual onboarding is unavailable, keep the setup in preparation.\n\nAfter confirmed activation, agree a small test that may consume Google quota:\n\n1. Test address search with a public address and no customer data.\n2. Check a basemap and a short route; test optimization only if included in onboarding.\n3. In Google Cloud, verify that requests appear in **your project**, by API and key where available. Reports may be delayed.\n4. Ask Foody to confirm that the same requests no longer use shared credentials and are scoped to your business. Foody counters alone do not prove which project is billed.\n\n**Expected result:** confirmed services use your project with its restrictions, quotas and billing. [Review Foody providers and usage](/en/help/delivery/maps-and-usage). In courier mode, select the route at the top: map and timeline are visible together. Select a pin to reveal its stop; viewing it changes neither order nor status. Route settings are reserved for dispatchers in Orders → Deliveries; courier mode keeps navigation in the fixed bar and cannot change the plan. If a provider switch hides a Google point, check the active provider before correcting the address.\n\nFor a courier-mode test on real orders, do not confirm an arrival or delivery. If Start was used accidentally, a manager can return to Deliveries and choose Undo departure while all stops are pending, then unassign and reallocate. This correction preserves addresses and map settings; it does not change Google keys, quotas or previously sent messages.",
+            "fr": "Créer des clés ou choisir Google dans Foody ne suffit pas à basculer la facturation. Attendez une confirmation écrite de Foody précisant les services et établissements effectivement raccordés. Si le raccordement n’est pas encore disponible, conservez le dossier en préparation.\n\nAprès activation confirmée, convenez d’un petit essai pouvant consommer du quota Google :\n\n1. Testez une recherche d’adresse avec une adresse publique, sans données client.\n2. Vérifiez un fond de carte et un itinéraire court ; testez l’optimisation seulement si elle fait partie du raccordement.\n3. Dans Google Cloud, vérifiez que les appels apparaissent dans **votre projet**, par API et par clé lorsque ce détail est disponible. Les rapports peuvent être différés.\n4. Faites confirmer par Foody que ces mêmes appels ne consomment plus les identifiants mutualisés et que le périmètre est bien limité à votre établissement. Les compteurs affichés dans Foody ne prouvent pas, seuls, le projet facturé.\n\n**Résultat attendu :** les services confirmés utilisent votre projet, avec leurs restrictions, quotas et facturation. [Consulter les fournisseurs et usages Foody](/fr/help/delivery/maps-and-usage). Dans le mode livreur, choisissez la tournée en haut : carte et chronologie sont visibles ensemble. Sélectionnez un repère pour retrouver son arrêt ; cette consultation ne change ni l’ordre ni le statut. Les réglages de tournée sont réservés aux responsables dans Commandes → Livraisons ; le mode livreur conserve la navigation dans la barre fixe et ne modifie pas le plan. Si un changement de fournisseur masque un point Google, vérifiez le fournisseur actif avant de corriger l’adresse.\n\nPour un essai du mode livreur sur de vraies commandes, ne confirmez aucune arrivée ou livraison. Si Démarrer a été utilisé par erreur, un responsable peut revenir dans Livraisons et choisir Annuler le départ tant que chaque arrêt reste en attente, puis désassigner et réaffecter. Cette correction conserve les adresses et réglages de carte ; elle ne modifie ni les clés Google, ni les quotas, ni les messages déjà envoyés.",
+            "he": "יצירת מפתחות או בחירה ב-Google ב-Foody אינן משנות לבדן את החיוב. המתינו לאישור כתוב מ-Foody שמפרט אילו שירותים וסניפים חוברו בפועל. אם החיבור האישי עדיין אינו זמין, השאירו את הבקשה בשלב הכנה.\n\nלאחר אישור ההפעלה תאמו בדיקה קטנה שעשויה לצרוך מכסת Google:\n\n1. בדקו חיפוש כתובת ציבורית ללא נתוני לקוחות.\n2. בדקו מפת רקע ומסלול קצר; בדקו מיטוב רק אם הוא נכלל בחיבור.\n3. ב-Google Cloud ודאו שהקריאות מופיעות ב**פרויקט שלכם**, לפי API ומפתח כשמידע זה זמין. ייתכן עיכוב בדוחות.\n4. בקשו מ-Foody לוודא שהקריאות האלה כבר אינן משתמשות בפרטי הגישה המשותפים ושהן מוגבלות לעסק שלכם. המונים ב-Foody לבדם אינם מוכיחים איזה פרויקט מחויב.\n\n**תוצאה צפויה:** השירותים שאושרו משתמשים בפרויקט שלכם, עם ההגבלות, המכסות והחיוב שלו. [בדיקת ספקים ושימוש ב-Foody](/he/help/delivery/maps-and-usage). במצב השליח בחרו מסלול למעלה: המפה וציר העצירות מוצגים יחד. בחרו סמן להצגת העצירה שלו; הצפייה אינה משנה סדר או מצב. הגדרות המסלול מיועדות לאחראים דרך הזמנות ← משלוחים; מצב השליח משאיר ניווט בסרגל הקבוע ואינו משנה את התוכנית. אם החלפת ספק מסתירה נקודת Google, בדקו את הספק הפעיל לפני תיקון הכתובת.\n\nבניסיון מצב שליח על הזמנות אמיתיות, אל תאשרו הגעה או מסירה. אם הופעלה התחלה בטעות, מנהל יכול לחזור למשלוחים ולבחור ביטול היציאה כל עוד כל העצירות בהמתנה, ואז לבטל שיוך ולהקצות מחדש. התיקון שומר כתובות והגדרות מפה; הוא אינו משנה מפתחות Google, מכסות או הודעות שכבר נשלחו."
           }
         },
         {
@@ -44313,6 +44309,10 @@
         {
           "service": "foodyserver",
           "file": "internal/delivery/courier_context.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/delivery/courier_read_only.go"
         },
         {
           "service": "foodyserver",
@@ -74402,39 +74402,6 @@
       "line": 1
     },
     {
-      "id": "foodyadmin:src/components/delivery/CourierAddressEditor.tsx:ui-controls:1",
-      "service": "foodyadmin",
-      "source": "src/components/delivery/CourierAddressEditor.tsx",
-      "features": [
-        "delivery-dispatch",
-        "courier"
-      ],
-      "kind": "ui-controls",
-      "labels": [
-        "address",
-        "addressCurrentPositionUnavailable",
-        "addressLookupUnavailable",
-        "addressPositionNotFoundHelp",
-        "addressPositionVerified",
-        "back",
-        "checking",
-        "city",
-        "close",
-        "correctAddress",
-        "couldNotSave",
-        "courierAddressEditorDescription",
-        "saveAndRecalculate",
-        "saving",
-        "useCurrentPositionHere",
-        "useCurrentPositionHereHint",
-        "verifyAddressPosition"
-      ],
-      "actions": [
-        "save"
-      ],
-      "line": 1
-    },
-    {
       "id": "foodyadmin:src/components/delivery/CourierItineraryView.tsx:ui-controls:1",
       "service": "foodyadmin",
       "source": "src/components/delivery/CourierItineraryView.tsx",
@@ -74448,32 +74415,27 @@
         "back",
         "callCustomer",
         "close",
-        "correctAddress",
         "couldNotLoad",
         "courierDeliveryProgress",
         "courierEstimatedFinish",
         "courierFinishCurrentRoute",
-        "courierRefineRoute",
         "courierResizePanel",
         "courierRouteMap",
         "courierRouteNumber",
-        "courierRouteOptions",
         "courierSearchPlaceholder",
         "courierSearchStops",
         "courierSelectRoute",
         "courierSelectStop",
         "courierSelectedStop",
         "courierStartAction",
-        "courierStopOptions",
         "deliveryExpectedArrival",
         "deliveryPlanStops",
+        "deliveryPlanTotalDuration",
         "deliveryPlanWhatsApp",
         "loading",
         "locationOffNotice",
         "markArrived",
         "markDelivered",
-        "moveDown",
-        "moveUp",
         "navigate",
         "navigationCheckLoading",
         "navigationCheckUnavailable",
@@ -74481,10 +74443,7 @@
         "navigationReviewCount",
         "navigationUnverifiedTitle",
         "noStopsYet",
-        "reoptimize",
         "retry",
-        "routeSettingsSaveFailed",
-        "routeSettingsTitle",
         "routeTimelineTerminus",
         "startAnyway",
         "startRoute",
@@ -74495,9 +74454,7 @@
         "load",
         "onArrived",
         "onDelivered",
-        "onReoptimize",
-        "onSaveSettings",
-        "onSaveStopAddress",
+        "onReload",
         "onStart",
         "updated"
       ],
@@ -83875,9 +83832,7 @@
       "labels": [],
       "actions": [
         "cancelDeliveryRoute",
-        "removeStop",
         "transferRouteStop",
-        "updateMyStopAddress",
         "updateRouteSettings"
       ],
       "line": 1
@@ -92996,11 +92951,11 @@
     }
   ],
   "coverage": {
-    "sharedRuntimeFiles": 586,
+    "sharedRuntimeFiles": 409,
     "features": 104,
     "operations": 771,
     "sourceFiles": 2227,
-    "surfaces": 2064,
+    "surfaces": 2063,
     "unclassifiedRoutes": []
   }
 }
