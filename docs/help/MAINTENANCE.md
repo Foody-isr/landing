@@ -881,3 +881,27 @@ baseline without claiming to revalidate them. Application source checkpoints are
 contracts; every inventoried source digest is verified against its immutable
 checkpoint. Service contracts pin the reviewed immutable Landing commit before
 remote CI or release. Synchronize the exported support corpus before scanning API sources.
+
+## Sumit internal checkout release (28 October 2026)
+
+This preparation changes API, Admin, guest Web and the matching FR/HE/EN guides.
+Only the active, configured Sumit provider enables staff-created private basket
+links and hosted card entry. Recipient delivery addresses resolve through the
+existing restaurant-scoped zone rules; the recipient reviews server-calculated
+fees, the applicable minimum and the final total before payment. A changed total
+must be reviewed again. Admin-entered card orders retain their staff delivery quote.
+The prepared order remains pending and immutable until provider confirmation;
+retries resume one durable hosted page, and uncertain creation remains blocked.
+A 24-hour expiry uses the existing cancellation/stock-release path. No schema or
+environment change is required. Cards are entered in Sumit's hosted form and are
+not saved for later use by either new flow.
+
+Retain POS, Backoffice and unchanged Landing application sources from the current
+Landing develop inventory, rather than revalidating unrelated worktrees. Refresh
+only API/Admin/Web source inventories, render all translations, export the public
+corpus and copy it into API before its final source scan. Publish the new guide with the compatible API/Admin/Web release. Pin the final
+reviewed Landing commit in each product contract before PR readiness. The owner
+authorized development deployment followed by production promotion on 28 October.
+Verify development first, then promote those exact successful artifacts without
+rebuilding. Provider acceptance is verified separately from the browser regressions,
+which use synthetic orders and stub Sumit; no production test charge is needed.

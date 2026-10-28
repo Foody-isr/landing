@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - settings
   - fulfillment-policy
-updatedAt: '2026-10-27'
+updatedAt: '2026-10-28'
 featureId: fulfillment-policy
 audience: public
 releaseStatus: available
@@ -139,3 +139,9 @@ In Admin → Settings → Ordering & delivery → Orders & availability → Week
 ## Separate current settings from recorded progress
 
 Mode and workflow settings determine the actions available for new operations; they do not reconstruct an old order’s history. Review preparation, handoff and payment separately. Unknown information is neither confirmed handoff nor proof that payment is due. Retry an unavailable read before starting another financial operation. See [check, payment, preparation and handoff](/en/help/orders/payment-preparation-and-handoff).
+
+<span id="prepared-sumit-checkout-integration" />
+
+## Prepared Sumit checkout integration
+
+For a compatible internal Sumit basket link, the recipient’s delivery address is checked against the restaurant’s current zone, fee and minimum. The chosen service date is retained and must fit any matched zone calendar. The final total is reviewed before payment. See [Sumit checkout](/en/help/orders/internal-sumit-checkout).

@@ -7,7 +7,7 @@ apps: both
 tags:
   - internal
   - shared-runtime
-updatedAt: '2026-10-26'
+updatedAt: '2026-10-28'
 featureId: shared-runtime
 audience: internal
 releaseStatus: available
@@ -117,3 +117,9 @@ Le thème compact et PosAppFrame protègent routes, dialogues et actions avec Sa
 ## Vérifier la série courante sans commande
 
 GET /api/v1/orders/series conserve les dates de remise triées et les agrégats existants, puis ajoute les jours du lot courant sans inventer de commande. Le champ facultatif is_current identifie une seule date par défaut : le premier jour de remise non passé du lot opérationnel. Le lot reste courant jusqu’à la fin de son dernier jour dans le fuseau du restaurant. Le choix de la carte et les règles publiques de prise de commande conservent leur propre résolution. Le client recharge la liste toutes les minutes visibles et au retour sur l’onglet ; Accueil et Commandes suivent le lot courant, mais préservent une sélection historique effectuée sur la page et les liens explicites de suivi des paiements. Valider les limites de clôture, minuit local, changement d’heure, plusieurs jours de remise, isolation restaurant, zéro commande et agrégats existants. Déployer API avant Admin et publier les procédures ensemble.
+
+<span id="prepared-sumit-checkout-integration" />
+
+## Intégration du panier préparé Sumit
+
+Le récapitulatif du panier préparé compatible conserve les prix figés de l’API et compte une fois les suppléments fixes des formules. Les devis de livraison restent calculés au serveur et sont vérifiés avant le paiement Sumit hébergé. La nouvelle route privée ne charge pas de profil client et ne conserve pas les coordonnées dans le stockage du navigateur.
