@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "Foody-isr/admin",
-  "ref": "1163f8399d7e94c2329be004cf5bbc2413446bc3",
+  "ref": "a063d4cdde1c9c8aef99d63a611c0ea0f97d152f",
   "observations": [
     {
       "id": "table-status-descriptions-source-contract",
@@ -341,6 +341,16 @@
         "ruleSelection?.onSaved(ruleId)",
         "setRefreshError(true)",
         "itemStockSavedRefreshError"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "stock-calculation-selected-series",
+      "source": "src/components/menu-item/ItemAvailabilityPanel.tsx",
+      "required": [
+        "previewItemAvailability(rid, itemId, seriesKey)",
+        "current.managed ? overview.series_key : \"\"",
+        "row?.managed ? date : \"\""
       ],
       "forbidden": []
     }

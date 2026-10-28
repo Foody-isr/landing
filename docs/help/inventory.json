@@ -4,10 +4,10 @@
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "57a8ba3aca65135d63ee96663295c32aed93c6ff",
+      "sourceCommit": "487afe91bb0e2e2faf8fd1259ef3dec15824d192",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "f37155550b36dab23aca0c37e6dee3a6598cb6c371e80d4ee76beb8582aa00fb",
-      "workingTreeHasChanges": true,
+      "sourceSnapshot": "0ec188b5c706044dc841a2c2c545d7a59d10ff96b7e08fff089e99fe17a8a875",
+      "workingTreeHasChanges": false,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
           "sha256": "33cf30b683837b76977ed47c14d5d91ccb1b34bd60e9f62d124b8cc1079231aa",
@@ -362,7 +362,7 @@
           ]
         },
         "internal/availability/handler.go": {
-          "sha256": "6270ab5e0561d55fa7bdac5158809849b5acd368d288b63363601751560c5b45",
+          "sha256": "eb2d524ebd1e861f3ccb927a290e53ac00e7d354bea5f83f2685a9fc3846d192",
           "features": [
             "kitchen-availability",
             "kitchen-daily-operations",
@@ -374,7 +374,7 @@
           ]
         },
         "internal/availability/service.go": {
-          "sha256": "757fcde160a17fd6c1b39ce6265f342d11a8e2ca0c8e82a68bb95686301e3dfd",
+          "sha256": "5912bec8e49c5f55dc657d7e148af34ac13785c79ab5d8c78edc17ffb0461777",
           "features": [
             "kitchen-availability",
             "kitchen-daily-operations",
@@ -4607,10 +4607,10 @@
     },
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "1163f8399d7e94c2329be004cf5bbc2413446bc3",
+      "sourceCommit": "a063d4cdde1c9c8aef99d63a611c0ea0f97d152f",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "9007e2e763ec356b61b05d02908ab705a35160a35f8e1d7d26900ee3fe4601b3",
-      "workingTreeHasChanges": true,
+      "sourceSnapshot": "27c6d85590468b682a5c4f8033d510945e8a15094d312b001b0b27aa1d51b84d",
+      "workingTreeHasChanges": false,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
           "sha256": "13c58bc11284d66c7fb9c4d79c1b3e92c6e05539164f2147a5e966d9c17ac275",
@@ -6954,7 +6954,7 @@
           ]
         },
         "src/components/menu-item/ItemAvailabilityPanel.tsx": {
-          "sha256": "8fecb0dd5ef88f718c8995c7c5c260ab90aab25b3b0c32a0bd0cb5de8a0c6127",
+          "sha256": "61daa66744a04bc2d99781a0eeb54341edea4e5a1f6c8f116104f58d6aa3a781",
           "features": [
             "menu-categories-and-items",
             "menu-creating-a-menu-item",
@@ -8848,7 +8848,7 @@
           ]
         },
         "src/lib/api.ts": {
-          "sha256": "41eaab50a8d0d6c5f65d23d1849804b91fa4525ef2c829335fd1ec19e99429d2",
+          "sha256": "ebe0c10e6f7cf9a831524d35426bcfe6018e3b22d4f3a2ff5c2b0d14735e588a",
           "features": [
             "customers-profiles",
             "payments-how-payments-work",
@@ -15010,7 +15010,7 @@
     },
     "foodylanding": {
       "repository": "https://github.com/Foody-isr/landing",
-      "sourceCommit": "91ec9b2a1d2d60784781c8d90a6cc9ba1c9e8756",
+      "sourceCommit": "fb377692fb60b76afcfcba6ad287c1626f20a3e2",
       "releaseStatus": "versioned",
       "sourceSnapshot": "0017f89048e20a416bab53c7443a4720bbe088bd715d39dcf9d1a8e67e173251",
       "workingTreeHasChanges": true,
@@ -42950,9 +42950,9 @@
             "he": "מקור מלאי מפורש והקצאות"
           },
           "instructions": {
-            "fr": "La migration 279 ajoute stock_from_recipe à menu_items et item_stock_series, false par défaut : les configurations existantes gardent leur logique. POST /api/v1/menu/items/:id/sales-stock/restock avec stock_source=recipe, mode vide, unité vide, quantité null et expected_revision sélectionne réellement la recette. Le champ optionnel availability_rule_id peut être confirmé dans la même transaction sous verrou stock/commandes. Un conflit, une règle étrangère/supprimée ou une erreur annule tout. Les compteurs manuels dormants et les snapshots des commandes sont conservés ; les nouveaux calculs et réservations ignorent leur limite. Revenir à un mode manuel réactive les compteurs et adopte les nouvelles commandes sans perdre leurs prélèvements d’ingrédients/préparations. Les conversions de série existantes restent révisées et atomiques. Une conversion de compteur global non prouvable depuis des prélèvements historiques échoue avec stock_conversion_unavailable, sans les réinterpréter. La vente de stock déjà préparé doit être désactivée avant de sélectionner la recette. Les réponses publiques normalisent les champs manuels inactifs ; le staff reçoit stored_mode/stored_unit et recipe_configured pour l’éditeur. Les autres clients ignorent les champs ajoutés et conservent leurs contrats. Aucun changement de droits ni d’environnement. Déployer API avant Admin puis promouvoir les mêmes artefacts vérifiés en développement.",
-            "en": "Migration 279 adds stock_from_recipe to menu_items and item_stock_series, default false: existing configurations retain their behavior. POST /api/v1/menu/items/:id/sales-stock/restock with stock_source=recipe, empty mode and unit, null quantity and expected_revision actually selects recipe calculation. Optional availability_rule_id can commit in the same transaction under the stock/order lock. A conflict, foreign/deleted rule or error rolls back everything. Dormant manual counters and order snapshots are retained; new calculations and reservations ignore their limit. Returning to manual stock reactivates counters and adopts new orders without losing ingredient/preparation draws. Existing series conversions remain revision-checked and atomic. A global-counter conversion that cannot be proven from historical draws fails with stock_conversion_unavailable rather than reinterpreting them. Ready-stock sale must be disabled before selecting recipe stock. Public responses normalize inactive manual fields; staff receive stored_mode/stored_unit and recipe_configured for the editor. Other clients ignore added fields and retain their contracts. No permission or environment change. Deploy API before Admin, then promote the same development-verified artifacts.",
-            "he": "מיגרציה 279 מוסיפה stock_from_recipe ל-menu_items ול-item_stock_series, כברירת מחדל false: הגדרות קיימות שומרות על התנהגותן. POST /api/v1/menu/items/:id/sales-stock/restock עם stock_source=recipe, אופן ויחידה ריקים, כמות null ו-expected_revision בוחר בפועל חישוב לפי המתכון. availability_rule_id אופציונלי יכול להישמר באותה עסקה תחת נעילת מלאי והזמנות. התנגשות, כלל זר או מחוק או כשל מבטלים הכול. המונים הידניים הרדומים ותמונות מצב ההזמנות נשמרים; חישובים והקצאות חדשים מתעלמים מהמגבלה שלהם. חזרה למלאי ידני מפעילה את המונים ומאמצת הזמנות חדשות בלי לאבד את משיכות המרכיבים וההכנות. המרות סדרה קיימות נותרות אטומיות ומבוקרות גרסה. המרת מונה גלובלי שלא ניתן להוכיח ממשיכות היסטוריות נכשלת עם stock_conversion_unavailable במקום לפרש אותן מחדש. יש לבטל מכירה ממלאי מוכן לפני בחירת מלאי לפי המתכון. תגובות ציבוריות מנרמלות שדות ידניים לא פעילים; הצוות מקבל stored_mode/stored_unit ו-recipe_configured לעורך. לקוחות אחרים מתעלמים מהשדות שנוספו ושומרים על החוזים הקיימים. אין שינוי בהרשאות או בסביבה. יש לפרוס API לפני Admin ואז לקדם את אותם תוצרים שאומתו בפיתוח."
+            "fr": "La migration 279 ajoute stock_from_recipe à menu_items et item_stock_series, false par défaut : les configurations existantes gardent leur logique. POST /api/v1/menu/items/:id/sales-stock/restock avec stock_source=recipe, mode vide, unité vide, quantité null et expected_revision sélectionne réellement la recette. Le champ optionnel availability_rule_id peut être confirmé dans la même transaction sous verrou stock/commandes. Un conflit, une règle étrangère/supprimée ou une erreur annule tout. Les compteurs manuels dormants et les snapshots des commandes sont conservés ; les nouveaux calculs et réservations ignorent leur limite. Revenir à un mode manuel réactive les compteurs et adopte les nouvelles commandes sans perdre leurs prélèvements d’ingrédients/préparations. Les conversions de série existantes restent révisées et atomiques. Une conversion de compteur global non prouvable depuis des prélèvements historiques échoue avec stock_conversion_unavailable, sans les réinterpréter. La vente de stock déjà préparé doit être désactivée avant de sélectionner la recette. Les réponses publiques normalisent les champs manuels inactifs ; le staff reçoit stored_mode/stored_unit et recipe_configured pour l’éditeur. Les autres clients ignorent les champs ajoutés et conservent leurs contrats. Aucun changement de droits ni d’environnement. Déployer API avant Admin puis promouvoir les mêmes artefacts vérifiés en développement. GET /api/v1/availability/items/:id/preview accepte serie_date en option pour expliquer la série affichée ; une date invalide renvoie 400. Le détail et le statut utilisent la même source active et les mêmes compteurs, sans mutation.",
+            "en": "Migration 279 adds stock_from_recipe to menu_items and item_stock_series, default false: existing configurations retain their behavior. POST /api/v1/menu/items/:id/sales-stock/restock with stock_source=recipe, empty mode and unit, null quantity and expected_revision actually selects recipe calculation. Optional availability_rule_id can commit in the same transaction under the stock/order lock. A conflict, foreign/deleted rule or error rolls back everything. Dormant manual counters and order snapshots are retained; new calculations and reservations ignore their limit. Returning to manual stock reactivates counters and adopts new orders without losing ingredient/preparation draws. Existing series conversions remain revision-checked and atomic. A global-counter conversion that cannot be proven from historical draws fails with stock_conversion_unavailable rather than reinterpreting them. Ready-stock sale must be disabled before selecting recipe stock. Public responses normalize inactive manual fields; staff receive stored_mode/stored_unit and recipe_configured for the editor. Other clients ignore added fields and retain their contracts. No permission or environment change. Deploy API before Admin, then promote the same development-verified artifacts. GET /api/v1/availability/items/:id/preview accepts optional serie_date to explain the displayed series; an invalid date returns 400. Details and status use the same active source and counters without mutation.",
+            "he": "מיגרציה 279 מוסיפה stock_from_recipe ל-menu_items ול-item_stock_series, כברירת מחדל false: הגדרות קיימות שומרות על התנהגותן. POST /api/v1/menu/items/:id/sales-stock/restock עם stock_source=recipe, אופן ויחידה ריקים, כמות null ו-expected_revision בוחר בפועל חישוב לפי המתכון. availability_rule_id אופציונלי יכול להישמר באותה עסקה תחת נעילת מלאי והזמנות. התנגשות, כלל זר או מחוק או כשל מבטלים הכול. המונים הידניים הרדומים ותמונות מצב ההזמנות נשמרים; חישובים והקצאות חדשים מתעלמים מהמגבלה שלהם. חזרה למלאי ידני מפעילה את המונים ומאמצת הזמנות חדשות בלי לאבד את משיכות המרכיבים וההכנות. המרות סדרה קיימות נותרות אטומיות ומבוקרות גרסה. המרת מונה גלובלי שלא ניתן להוכיח ממשיכות היסטוריות נכשלת עם stock_conversion_unavailable במקום לפרש אותן מחדש. יש לבטל מכירה ממלאי מוכן לפני בחירת מלאי לפי המתכון. תגובות ציבוריות מנרמלות שדות ידניים לא פעילים; הצוות מקבל stored_mode/stored_unit ו-recipe_configured לעורך. לקוחות אחרים מתעלמים מהשדות שנוספו ושומרים על החוזים הקיימים. אין שינוי בהרשאות או בסביבה. יש לפרוס API לפני Admin ואז לקדם את אותם תוצרים שאומתו בפיתוח. GET /api/v1/availability/items/:id/preview מקבל serie_date אופציונלי להסבר הסדרה המוצגת; תאריך לא תקין מחזיר 400. הפירוט והמצב משתמשים באותו מקור פעיל ובאותם מונים ללא שינוי נתונים."
           }
         }
       ],

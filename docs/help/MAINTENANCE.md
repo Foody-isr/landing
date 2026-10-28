@@ -10,8 +10,8 @@ enter public browsing, search or the AI corpus.
 
 ## Explicit stock sources and immediate modal settings (28 October 2026)
 
-Admin source `1163f8399d7e94c2329be004cf5bbc2413446bc3` and API source
-`57a8ba3aca65135d63ee96663295c32aed93c6ff` distinguish a manual remaining quantity from
+Admin source `a063d4cdde1c9c8aef99d63a611c0ea0f97d152f` and API source
+`487afe91bb0e2e2faf8fd1259ef3dec15824d192` distinguish a manual remaining quantity from
 recipe calculation. All product-stock modal settings save through Apply for both
 library and series stock; name, price and preparation drafts remain independent.
 The shared four-choice modal collapses advanced stock profiles, shows their
@@ -34,6 +34,10 @@ changed or recertified. Exact scoped reviews cover only unrelated feature claims
 on shared files, never the changed stock behavior. Pin the final immutable Landing
 commit in API/Admin. Deploy and verify API development before Admin, verify the
 three-language guides, then promote the exact same artifacts to production.
+
+The calculation details request carries the displayed managed series; the API
+uses the same effective stock source and pools for its explanation and sellable
+state. Library items omit the series query. Preview adds no stock mutation.
 
 ## Table-status descriptions review (27 October 2026)
 
