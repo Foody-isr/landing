@@ -7,7 +7,7 @@ apps: foodypos
 tags:
   - payments
   - pos-cash-access-diagnostics
-updatedAt: '2026-10-27'
+updatedAt: '2026-10-28'
 featureId: pos-cash-access-diagnostics
 audience: public
 releaseStatus: local-release-unverified
@@ -26,6 +26,8 @@ Si Solde en caisse ou Mouvements de caisse ne peut pas confirmer la caisse, ce n
 Un message précis peut demander de vérifier la connexion PIN ou la période ouverte, de faire contrôler l’autorisation de l’appareil, ou de vérifier une installation qui ne correspond pas à la période ouverte. Faites examiner ce lien par un responsable ou l’assistance sans modifier les heures ou les associations à l’aveugle. Ne réenrôlez pas l’appareil et ne créez pas de période ou de caisse de remplacement pour contourner le refus. Le message ne répare aucune liaison et n’identifie pas à lui seul un autre appareil physique. Une vérification temporairement indisponible peut être réessayée ; elle ne prouve ni une panne réseau ni une référence absente. Un ancien POS ou une ancienne API peut encore afficher un message générique.
 
 Une opération déjà en attente suit sa récupération existante avec le même identifiant ; ne la recréez pas et n’effacez pas les données locales. Une session absente doit être confirmée par la réponse métier de l’API, pas déduite d’une erreur de connexion, d’accès ou d’une route introuvable.
+
+La fin de votre période et l’accès actuel aux espèces restent deux contrôles distincts. Une autorisation historique expirée ou révoquée encore retrouvée peut permettre une fin de période quand sa caisse est fermée, sans rétablir les boutons espèces. Se déconnecter vérifie la période avant confirmation ; une référence absente ou étrangère ou une lecture impossible ne permet pas de contourner ce contrôle. Si aucune période active n’est confirmée, [le verrouillage demande sa propre confirmation](/fr/help/staff/devices-and-shifts#no-active-shift-sign-out), sans nouveau départ ni clôture de caisse.
 
 <span id="cash-versus-terminal" />
 

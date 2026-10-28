@@ -34,7 +34,9 @@ With compatible API and POS versions, editing a saved item’s places follows th
 
 ## Hold or fire a course
 
-Review the held course and use Fire to release the selected eligible food. Shared physical units launch once even when their price is split. Refresh after uncertainty rather than sending the same food as a new sale. A historical shared batch can block a partial release.
+Review the held course and use Fire to release the selected eligible food. Shared physical units launch once even when their price is split. Refresh after uncertainty rather than sending the same food as a new sale. A historical shared batch can block a partial release. With the matching API and POS capability, already committed held food can still be fired after its bill has been paid. This does not reopen the bill, reoccupy a released table or change any collection. An authorization, pending payment or refund can make release unavailable: review the displayed state rather than create a new sale.
+
+After merging bills, open and review the entire resulting bill before confirming Fire. An old batch must not silently fire food from other bills; shared pricing never multiplies physical quantities.
 
 <span id="repeat" />
 

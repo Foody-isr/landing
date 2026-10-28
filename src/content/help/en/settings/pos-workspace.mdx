@@ -5,7 +5,7 @@ apps: foodypos
 tags:
   - settings
   - pos-workspace
-updatedAt: '2026-10-27'
+updatedAt: '2026-10-28'
 featureId: pos-workspace
 audience: public
 releaseStatus: available
@@ -58,6 +58,8 @@ If the restaurant, sign-in or terminal changes, [reopen confirmation in the corr
 
 Use Home shortcuts or More for Analytics, Kitchen, Staff and Settings. Orders contains live and historical order workflows. Transactions is separate and lists completed payments for staff with payments.view or payments.manage; on a compact terminal it is in More. Reports in More contains Verifone Terminal deposits for payment managers (payments.manage). A missing destination can reflect permission or activation, so check the account/profile before reinstalling.
 
+In Settings → Account → Profile, check the name and email of the employee signed into the POS. FoodyAdmin has a separate sign-in: changing the account or restaurant in Admin does not change the employee on the iPad. To use another employee’s passcode, finish the current shift normally, then sign that employee in with their personal code. An unconfirmed cash-drawer report must be resolved before leaving the session; Profile is read-only and provides no account-switch control.
+
 <span id="preferences" />
 
 ## Customize the device
@@ -81,3 +83,9 @@ On the handheld terminal, the initials at the lower left open More; they come fr
 ## View terminal overview and item availability
 
 On a handheld terminal, tap the house to open Overview. The restaurant name and collapsible cards show the availability, new/in-kitchen/ready orders and table state allowed by your role. Open View all item availability to search active items in menus available at the POS. The list uses the same catalogue as POS order entry; it does not depend on a general menu state separate from its POS availability. States are Available, Low stock, Unavailable or Not provided; a quantity appears only when supplied. Unknown availability does not mean available. Hidden groups, their descendants and combo-only components are excluded. Refresh reloads the reads; a failure displays a message and retry. Card buttons open orders or checks according to permissions. Overview reads data without changing stock or orders.
+
+<span id="local-draft-and-lifecycle" />
+
+## Resume work after an interruption
+
+The local unsent basket and the server-saved check are separate. On a compatible version, [reopen the draft with the same account and installation](/en/help/orders/taking-an-order-pos#resume-local-draft); an uncertain send requires verification or explicit resumption of its original identity. Payment, preparation and handoff remain separate, including for a split bill. Switching screens never automatically resends food.

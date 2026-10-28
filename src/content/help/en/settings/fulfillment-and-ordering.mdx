@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - settings
   - fulfillment-policy
-updatedAt: '2026-10-25'
+updatedAt: '2026-10-27'
 featureId: fulfillment-policy
 audience: public
 releaseStatus: available
@@ -133,3 +133,9 @@ You can select an older service in the calendar; that selection stays in place w
 ## Control weekly ordering manually
 
 In Admin → Settings → Ordering & delivery → Orders & availability → Weekly batch, use settings.edit to choose Manual opening or According to a calendar, then Save changes. Manual opening keeps the current pause state; it never opens ordering merely by selecting the mode. Use Pause online orders → No to open, or Yes to pause. There is no automatic opening, cutoff or scheduled reopening in manual mode. Delivery/collection days and windows, preparation rules, stock and existing orders remain unchanged. New orders target the current delivery series even after the previous calendar cutoff, until its final service day ends in the restaurant timezone. Check the offered delivery date before confirming. Returning to calendar mode restores the retained hours. If saving fails, keep the draft and reload the confirmed status before retrying. Disable active Temporary test access before reopening publicly; expiry or disabling it alone leaves orders paused. Deploy the compatible API before enabling this choice; an older API leaves it unavailable.
+
+<span id="recorded-lifecycle-and-policy" />
+
+## Separate current settings from recorded progress
+
+Mode and workflow settings determine the actions available for new operations; they do not reconstruct an old order’s history. Review preparation, handoff and payment separately. Unknown information is neither confirmed handoff nor proof that payment is due. Retry an unavailable read before starting another financial operation. See [check, payment, preparation and handoff](/en/help/orders/payment-preparation-and-handoff).

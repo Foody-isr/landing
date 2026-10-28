@@ -3,6 +3,7 @@ import { test } from 'node:test';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
 import { readCorpus, localizedCorpus, validateCorpus } from '../src/lib/help/corpus.mjs';
 import { boundedHistory } from '../src/lib/help/conversation.mjs';
 import { searchArticles } from '../src/lib/help/search.mjs';
@@ -96,4 +97,45 @@ test('long multibyte histories remain within the request budget and retain compl
 
 test('missing local guide illustrations fail publication validation', () => {
  assert.ok(validateCorpus([{...entry,markdown:'![Missing](/assets/does-not-exist.png)'}]).some(e=>e.includes('missing image asset')));
+});
+
+test('inventory tracks only explicitly selected SQL migrations', () => {
+  const fixture = fs.mkdtempSync(path.join(os.tmpdir(), 'foody-help-inventory-'));
+  try {
+    const landing = path.join(fixture, 'landing');
+    const api = path.join(fixture, 'api');
+    fs.mkdirSync(path.join(landing, 'scripts'), { recursive: true });
+    fs.mkdirSync(path.join(landing, 'docs/help/catalog'), { recursive: true });
+    fs.mkdirSync(path.join(api, 'internal'), { recursive: true });
+    fs.mkdirSync(path.join(api, 'migrations'), { recursive: true });
+    const script = path.join(landing, 'scripts/build-help-inventory.mjs');
+    fs.copyFileSync(new URL('./build-help-inventory.mjs', import.meta.url), script);
+    fs.writeFileSync(path.join(api, 'internal/entry.go'), 'package synthetic\n');
+    fs.writeFileSync(path.join(api, 'migrations/280_synthetic.sql'), 'CREATE TABLE synthetic_scope (id bigint);\n');
+    fs.writeFileSync(path.join(api, 'migrations/001_unselected.sql'), 'CREATE TABLE synthetic_unselected (id bigint);\n');
+    fs.writeFileSync(path.join(api, 'migrations/280_synthetic.sql.gz'), 'Not a reviewed source file.\n');
+    const roots = path.join(fixture, 'roots.json');
+    fs.writeFileSync(roots, JSON.stringify({ foodyserver: api }));
+    const translations = { en: 'Synthetic', fr: 'Synthétique', he: 'סינתטי' };
+    const catalogue = path.join(landing, 'docs/help/catalog/features.json');
+    const scan = selectors => {
+      fs.writeFileSync(catalogue, JSON.stringify([{
+        id: 'synthetic-entry', article: 'synthetic/entry',
+        title: translations, entry: translations, audience: 'internal',
+        selectors: { foodyserver: selectors },
+        operations: [{ id: 'read', title: translations, instructions: translations }],
+      }]));
+      execFileSync(process.execPath, [script, '--workspace', roots], {
+        cwd: landing, stdio: ['ignore', 'pipe', 'pipe'],
+      });
+      return JSON.parse(fs.readFileSync(path.join(landing, 'docs/help/inventory.json'), 'utf8'));
+    };
+    const selected = scan(['internal/**', 'migrations/280_synthetic.sql']);
+    assert.deepEqual(selected.services.foodyserver.sourceFiles['migrations/280_synthetic.sql'].features, ['synthetic-entry']);
+    assert.equal(selected.services.foodyserver.sourceFiles['migrations/001_unselected.sql'], undefined);
+    assert.equal(selected.services.foodyserver.sourceFiles['migrations/280_synthetic.sql.gz'], undefined);
+    assert.equal(scan(['internal/**']).services.foodyserver.sourceFiles['migrations/280_synthetic.sql'], undefined);
+  } finally {
+    fs.rmSync(fixture, { recursive: true, force: true });
+  }
 });

@@ -40,7 +40,7 @@ For online by-weight orders, open Settings → Payments & VAT with settings.edit
 
 ## Record cash
 
-On an enrolled POS with an active PIN shift, first open More → Reports → Cash drawer balance and enter the physical opening float. Then choose cash on the intended order or financial bill, enter the amount received and check the change before confirming. Only record money actually received. A pending cash collection must be retried with its existing identity, not recreated as another sale. Split bills keep their own receipt and paid status.
+On an enrolled POS with an active PIN shift, first open More → Reports → Cash drawer balance and enter the physical opening float. Then choose cash on the intended order or financial bill, enter the amount received and check the change before confirming. Only record money actually received. A pending cash collection must be retried with its existing identity, not recreated as another sale. Split bills keep their own receipt and paid status. A Pending payment state can simply mean payment is expected before any attempt; it does not prove an operation is in progress. Existing payment actions retain their conditions and permissions. A card authorization or an actual operation with an uncertain result must instead be resolved through its existing flow, without creating a replacement collection. Unknown kitchen progress does not authorize payment.
 
 <span id="cash-report-unconfirmed" />
 

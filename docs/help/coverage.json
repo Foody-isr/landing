@@ -620,10 +620,13 @@
           "lib/features/orders/presentation/pos_page.dart",
           "lib/features/orders/presentation/add_item_flow.dart",
           "lib/features/orders/domain/pos_fulfillment_flow.dart",
-          "lib/features/orders/presentation/item_customization_screen.dart"
+          "lib/features/orders/presentation/item_customization_screen.dart",
+          "lib/features/orders/data/local_order_draft_store.dart",
+          "lib/features/orders/providers/order_providers.dart"
         ],
         "foodyserver": [
-          "internal/orders/**"
+          "internal/orders/**",
+          "migrations/280_check_submission_recovery_scope.sql"
         ]
       }
     },
@@ -1683,7 +1686,11 @@
           "components/GoogleSignIn.tsx",
           "lib/orderLinkMetadata.ts",
           "components/CustomerSocialSignIn.tsx",
-          "app/api/customer-auth/**"
+          "app/api/customer-auth/**",
+          "lib/order-lifecycle.ts",
+          "lib/order-timeline.ts",
+          "lib/order-tracking.ts",
+          "hooks/useOrderStatus.ts"
         ],
         "foodyserver": [
           "internal/guestauth/**"
@@ -1854,7 +1861,8 @@
         "foodyserver": [
           "internal/**",
           "cmd/**",
-          "config/**"
+          "config/**",
+          "migrations/280_check_submission_recovery_scope.sql"
         ],
         "foodyweb": [
           "app/api/**",
@@ -2005,6 +2013,38 @@
           "internal/menu/item_photos.go",
           "internal/menu/service.go",
           "internal/common/models.go"
+        ]
+      }
+    },
+    {
+      "id": "order-lifecycle",
+      "article": "orders/payment-preparation-and-handoff",
+      "audience": "public",
+      "selectors": {
+        "foodyserver": [
+          "internal/common/order_lifecycle.go",
+          "internal/orders/order_lifecycle*.go"
+        ],
+        "foodyadmin": [
+          "src/lib/orders/lifecycle.ts",
+          "src/lib/orders/status-presentation.ts",
+          "src/lib/orders/workflow-stepper.ts",
+          "src/components/orders/detail/OrderDetailHead.tsx"
+        ],
+        "foodyweb": [
+          "lib/order-lifecycle.ts",
+          "lib/order-timeline.ts",
+          "lib/order-tracking.ts",
+          "hooks/useOrderStatus.ts",
+          "components/OrderStatusTimeline.tsx",
+          "components/OrderTrackingClient.tsx"
+        ],
+        "foodypos": [
+          "lib/features/orders/domain/order_state_projection.dart",
+          "lib/features/orders/data/order_lifecycle_repository.dart",
+          "lib/features/orders/presentation/order_lifecycle_labels.dart",
+          "lib/features/orders/data/held_preparation_repository.dart",
+          "lib/features/orders/presentation/held_preparation_dialog.dart"
         ]
       }
     }

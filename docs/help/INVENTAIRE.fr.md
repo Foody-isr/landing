@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-10-18.
+Révision du relevé : 2026-10-28.
 
-102 fiches de fonctionnalités, 745 procédures/sous-fonctionnalités, dont 93 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2200 fichiers applicatifs et 2049 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+103 fiches de fonctionnalités, 755 procédures/sous-fonctionnalités, dont 94 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2219 fichiers applicatifs et 2057 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 568 | 871 | 630981b9b818 ; versioned |
-| foodyadmin | 767 | 777 | a0dd487b6c8a ; versioned |
-| foodyweb | 339 | 168 | ad5ecd38fb4e ; versioned |
-| foodypos | 355 | 162 | 07150e7193f7 ; versioned |
+| foodyserver | 575 | 874 | afd2c31f01fe ; versioned |
+| foodyadmin | 768 | 777 | 836d45b192e5 ; versioned |
+| foodyweb | 342 | 169 | c42a6114fac9 ; versioned |
+| foodypos | 363 | 166 | 7888c65a60ef ; versioned |
+| foodylanding | 127 | 21 | 0e314a7c7cc1 ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
-| foodylanding | 127 | 21 | cde0636c6f1a ; versioned |
 
 ## getting-started
 
@@ -145,6 +145,7 @@ Identifiant : `staff-devices-shifts`. Public : public. Disponibilité : availabl
 - [Consulter les shifts](../../src/content/help/fr/staff/devices-and-shifts.mdx#report)
 - [Terminer un shift avec une caisse ouverte](../../src/content/help/fr/staff/devices-and-shifts.mdx#finish-with-cash-drawer)
 - [Lire le rapport du tiroir sur un terminal portable](../../src/content/help/fr/staff/devices-and-shifts.mdx#mobile-terminal-pages)
+- [Confirmer le verrouillage après une période déjà terminée](../../src/content/help/fr/staff/devices-and-shifts.mdx#no-active-shift-sign-out)
 
 ## customers
 
@@ -491,7 +492,7 @@ Identifiant : `orders-managing-orders`. Public : public. Disponibilité : availa
 - [Vérifier le plafond de préautorisation au poids](../../src/content/help/fr/orders/managing-orders.mdx#weight-hold-margin)
 - [Qu'est-ce que c'est ?](../../src/content/help/fr/orders/managing-orders.mdx#section-1)
 - [Comment ça marche (simplement)](../../src/content/help/fr/orders/managing-orders.mdx#section-2)
-- [Le flux d'une commande](../../src/content/help/fr/orders/managing-orders.mdx#section-3)
+- [Le flux d’une commande](../../src/content/help/fr/orders/managing-orders.mdx#section-3)
 - [Bon à savoir](../../src/content/help/fr/orders/managing-orders.mdx#section-4)
 - [Voir la pièce jointe WhatsApp](../../src/content/help/fr/orders/managing-orders.mdx#whatsapp-attachment-review)
 - [Vérifier le rappel de livraison calculé](../../src/content/help/fr/orders/managing-orders.mdx#route-delivery-window)
@@ -510,6 +511,7 @@ Identifiant : `orders-managing-orders`. Public : public. Disponibilité : availa
 - [Image du modèle WhatsApp](../../src/content/help/fr/orders/managing-orders.mdx#meta-template-image-preview)
 - [Choisir le destinataire WhatsApp du client](../../src/content/help/fr/orders/managing-orders.mdx#customer-whatsapp-recipient)
 - [Afficher automatiquement la série actuelle](../../src/content/help/fr/orders/managing-orders.mdx#weekly-series-rollover)
+- [Séparer paiement, préparation et remise](../../src/content/help/fr/orders/managing-orders.mdx#order-lifecycle-guide)
 
 ### [Types de commandes et remise](../../src/content/help/fr/orders/order-types.mdx)
 
@@ -536,6 +538,7 @@ Identifiant : `order-types`. Public : public. Disponibilité : available. Servic
 - [Changer le service d’un brouillon non affecté](../../src/content/help/fr/orders/order-types.mdx#pos-change-draft)
 - [Garder le contexte client privé sur l’addition](../../src/content/help/fr/orders/order-types.mdx#pos-private-guest-context)
 - [Piloter manuellement les commandes hebdomadaires](../../src/content/help/fr/orders/order-types.mdx#manual-weekly-ordering)
+- [Vérifier l’avancement selon le type de commande](../../src/content/help/fr/orders/order-types.mdx#operational-progress-by-type)
 
 ### [Prendre une commande sur la caisse](../../src/content/help/fr/orders/taking-an-order-pos.mdx)
 
@@ -558,6 +561,7 @@ Identifiant : `pos-order-entry`. Public : public. Disponibilité : available. Se
 - [Reprendre une livraison après un départ de test](../../src/content/help/fr/orders/taking-an-order-pos.mdx#delivery-test-departure-recovery)
 - [Vérifier les choix conditionnels d’un article](../../src/content/help/fr/orders/taking-an-order-pos.mdx#conditional-item-choices)
 - [Prendre une commande sur le terminal mobile](../../src/content/help/fr/orders/taking-an-order-pos.mdx#mobile-terminal)
+- [Retrouver un brouillon non envoyé après redémarrage](../../src/content/help/fr/orders/taking-an-order-pos.mdx#resume-local-draft)
 
 ### [Consulter et modifier une commande](../../src/content/help/fr/orders/order-details.mdx)
 
@@ -649,6 +653,13 @@ Identifiant : `pos-comp-void`. Public : public. Disponibilité : available. Serv
 - [Attendre le paiement au comptoir avant la cuisine](../../src/content/help/fr/orders/discount-comp-void.mdx#counter-terminal-payment-before-kitchen)
 - [Vérifier les choix conditionnels d’un article](../../src/content/help/fr/orders/discount-comp-void.mdx#conditional-item-choices)
 - [Accéder aux options sur mobile](../../src/content/help/fr/orders/discount-comp-void.mdx#mobile-terminal)
+- [Vérifier l’addition avant une correction](../../src/content/help/fr/orders/discount-comp-void.mdx#uncertain-intent-and-operational-facts)
+
+### [Addition, paiement, préparation et remise](../../src/content/help/fr/orders/payment-preparation-and-handoff.mdx)
+
+Identifiant : `order-lifecycle`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb, foodypos.
+
+- [Distinguer addition, paiement, préparation et remise](../../src/content/help/fr/orders/payment-preparation-and-handoff.mdx#order-lifecycle-axes)
 
 ## payments
 
@@ -907,6 +918,7 @@ Identifiant : `fulfillment-policy`. Public : public. Disponibilité : available.
 - [Vérifier la compatibilité de la fiche client POS](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#pos-customer-screen-version)
 - [Afficher automatiquement la série actuelle](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#weekly-series-rollover)
 - [Piloter manuellement les commandes hebdomadaires](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#manual-weekly-ordering)
+- [Distinguer réglage actuel et progression enregistrée](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#recorded-lifecycle-and-policy)
 
 ### [Comportement POS, services et ajustements](../../src/content/help/fr/settings/pos-behavior.mdx)
 
@@ -965,6 +977,7 @@ Identifiant : `pos-workspace`. Public : public. Disponibilité : available. Serv
 - [Traiter une perte de connexion](../../src/content/help/fr/settings/pos-workspace.mdx#connectivity)
 - [Parcourir les pages du terminal mobile](../../src/content/help/fr/settings/pos-workspace.mdx#mobile-terminal-pages)
 - [Consulter l’aperçu et les disponibilités du terminal](../../src/content/help/fr/settings/pos-workspace.mdx#operational-overview)
+- [Reprendre le travail après une interruption](../../src/content/help/fr/settings/pos-workspace.mdx#local-draft-and-lifecycle)
 
 ### [Consommation et quotas des services externes](../../src/content/help/fr/settings/api-usage-and-quotas.mdx)
 
@@ -1283,6 +1296,8 @@ Identifiant : `platform-api`. Public : internal. Disponibilité : available. Ser
 - [Convertir les réservations d’une série en cours](internal/fr/api-and-release.md#series-stock-mode-conversion)
 - [Confirmer la règle avec le stock](internal/fr/api-and-release.md#immediate-product-rule-confirmation)
 - [Source explicite du stock et réservations](internal/fr/api-and-release.md#explicit-recipe-stock-source)
+- [Contrat borné de progression et de reprise](internal/fr/api-and-release.md#order-lifecycle-scoped-contract)
+- [Vérifier la période personnelle avant déconnexion](internal/fr/api-and-release.md#personal-shift-end-preflight)
 
 ### [Aperçus internes et alias de routes](internal/fr/design-previews.md)
 
@@ -1292,7 +1307,7 @@ Identifiant : `design-sandboxes`. Public : internal. Disponibilité : available.
 
 ### [Socle applicatif partagé](internal/fr/shared-runtime.md)
 
-Identifiant : `shared-runtime`. Public : internal. Disponibilité : available. Services : foodyadmin, foodyweb, foodypos, foodybackoffice, foodylanding.
+Identifiant : `shared-runtime`. Public : internal. Disponibilité : available. Services : foodyadmin, foodyweb, foodypos, foodylanding, foodybackoffice.
 
 - [Distinguer rapports, espèces et dépôt carte](internal/fr/shared-runtime.md#pos-reports-navigation)
 - [Rembourser ou annuler un paiement en ligne Verifone](internal/fr/shared-runtime.md#verifone-admin-money-operations)
