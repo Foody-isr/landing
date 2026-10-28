@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-18.
 
-102 fiches de fonctionnalités, 743 procédures/sous-fonctionnalités, dont 93 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2200 fichiers applicatifs et 2049 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+102 fiches de fonctionnalités, 744 procédures/sous-fonctionnalités, dont 93 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2200 fichiers applicatifs et 2049 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 568 | 871 | 50da7b0fb51d ; versioned |
-| foodyadmin | 767 | 777 | f7918b67e92e ; versioned |
+| foodyserver | 568 | 871 | b8c216444a4c ; versioned |
+| foodyadmin | 767 | 777 | 65ecd463041b ; versioned |
 | foodyweb | 339 | 168 | ad5ecd38fb4e ; versioned |
 | foodypos | 355 | 162 | 07150e7193f7 ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
-| foodylanding | 127 | 21 | 7126e2b570c5 ; versioned |
+| foodylanding | 127 | 21 | 9d4679231a57 ; versioned |
 
 ## getting-started
 
@@ -1281,6 +1281,7 @@ Identifiant : `platform-api`. Public : internal. Disponibilité : available. Ser
 - [Vérifier la série courante sans commande](internal/fr/api-and-release.md#weekly-series-rollover)
 - [Piloter manuellement les commandes hebdomadaires](internal/fr/api-and-release.md#manual-weekly-ordering)
 - [Convertir les réservations d’une série en cours](internal/fr/api-and-release.md#series-stock-mode-conversion)
+- [Confirmer la règle avec le stock](internal/fr/api-and-release.md#immediate-product-rule-confirmation)
 
 ### [Aperçus internes et alias de routes](internal/fr/design-previews.md)
 

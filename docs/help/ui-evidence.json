@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "Foody-isr/admin",
-  "ref": "f7918b67e92e9c5acfc0b80c9634604959c1428d",
+  "ref": "65ecd463041b3eb76ba843ea57284a8ae9f7ec0f",
   "observations": [
     {
       "id": "table-status-descriptions-source-contract",
@@ -274,25 +274,33 @@
       "required": [
         "itemStockAvailabilityRule: \"Availability rule\",",
         "itemStockRuleScopeHint: \"Applies to this product across all series. None inherits the category rule, then the restaurant rule.\",",
-        "itemStockRuleApplyHint: \"Stock changes apply immediately. Use Save on the product page to save the rule.\",",
+        "itemStockRuleApplyHint: \"Stock and the availability rule are saved immediately when you apply.\",",
+        "itemStockLegacyRuleApplyHint: \"The availability rule is saved immediately. Other stock settings still need Save on the product page.\",",
+        "itemStockSavedRefreshError: \"Saved. The display could not refresh. Retry to reload without applying the change again.\",",
         "itemStockAvailabilityRule: \"כלל זמינות\",",
         "itemStockRuleScopeHint: \"חל על הפריט בכל הסדרות. ללא כלל ייעודי, הכלל עובר בירושה מהקטגוריה ואחריה מהמסעדה.\",",
-        "itemStockRuleApplyHint: \"שינויי מלאי חלים מיד. שמרו את הפריט כדי לשמור את כלל הזמינות.\",",
+        "itemStockRuleApplyHint: \"המלאי וכלל הזמינות נשמרים מיד בעת החלה.\",",
+        "itemStockLegacyRuleApplyHint: \"כלל הזמינות נשמר מיד. הגדרות המלאי האחרות עדיין דורשות שמירה בדף הפריט.\",",
+        "itemStockSavedRefreshError: \"נשמר. לא ניתן לרענן את התצוגה. נסו שוב כדי לטעון בלי להחיל את השינוי מחדש.\",",
         "itemStockAvailabilityRule: \"Règle de disponibilité\",",
         "itemStockRuleScopeHint: \"S’applique au produit, toutes séries confondues. Aucun hérite de la catégorie, puis du restaurant.\",",
-        "itemStockRuleApplyHint: \"Le stock s’applique immédiatement. Enregistrez la fiche produit pour sauvegarder la règle.\","
+        "itemStockRuleApplyHint: \"Le stock et la règle de disponibilité sont enregistrés immédiatement après validation.\",",
+        "itemStockLegacyRuleApplyHint: \"La règle de disponibilité est enregistrée immédiatement. Les autres réglages du stock restent à enregistrer sur la fiche.\",",
+        "itemStockSavedRefreshError: \"Enregistré. Impossible d’actualiser l’affichage. Réessayez pour recharger sans appliquer le changement une seconde fois.\","
       ],
       "forbidden": []
     },
     {
-      "id": "stock-dialog-product-rule-draft",
+      "id": "stock-dialog-product-rule-immediate-save",
       "source": "src/components/menu/publication/AvailabilityPopover.tsx",
       "required": [
         "if (ruleOnlyEdit)",
-        "ruleSelection?.onApply(ruleId)",
+        "await onApply(undefined, undefined, ruleId)",
         "aria-label={t(\"itemStockAvailabilityRule\")}"
       ],
-      "forbidden": []
+      "forbidden": [
+        "ruleSelection?.onApply(ruleId)"
+      ]
     },
     {
       "id": "product-rule-selector-relocation",
@@ -304,6 +312,17 @@
       "forbidden": [
         "<label className=\"block text-sm space-y-2\">{t('availabilityManageRules')}"
       ]
+    },
+    {
+      "id": "stock-rule-confirmation-and-read-only-recovery",
+      "source": "src/components/menu/ItemAvailabilityPopover.tsx",
+      "required": [
+        "availability_rule_id: ruleId",
+        "ruleSelection?.onSaved(ruleId)",
+        "setRefreshError(true)",
+        "itemStockSavedRefreshError"
+      ],
+      "forbidden": []
     }
   ],
   "guides": [
@@ -348,7 +367,8 @@
           "Articles et cartes → Articles",
           "Règle de disponibilité",
           "Enregistrer",
-          "toutes les séries"
+          "toutes les séries",
+          "la règle est enregistrée immédiatement"
         ],
         "en": [
           "table-based library",
@@ -357,7 +377,8 @@
           "Items & menus → Item library",
           "Availability rule",
           "Save",
-          "all series"
+          "all series",
+          "the rule is saved immediately"
         ],
         "he": [
           "בצורת טבלה",
@@ -365,8 +386,8 @@
           "צור פריט",
           "פריטים ותפריטים → ספריית פריטים",
           "כלל זמינות",
-          "שמרו את הפריט",
-          "בכל הסדרות"
+          "בכל הסדרות",
+          "הכלל נשמר מיד"
         ]
       },
       "forbidden": {
@@ -556,7 +577,8 @@
           "Appliquer",
           "Enregistrer",
           "Règle de disponibilité",
-          "toutes les séries"
+          "toutes les séries",
+          "la règle est enregistrée immédiatement"
         ],
         "en": [
           "Stock & availability",
@@ -564,7 +586,8 @@
           "Apply",
           "Save",
           "Availability rule",
-          "all series"
+          "all series",
+          "the rule is saved immediately"
         ],
         "he": [
           "מלאי וזמינות",
@@ -572,8 +595,8 @@
           "החל",
           "שמור",
           "כלל זמינות",
-          "שמרו את הפריט",
-          "בכל הסדרות"
+          "בכל הסדרות",
+          "הכלל נשמר מיד"
         ]
       },
       "forbidden": {
@@ -632,19 +655,21 @@
           "Articles et cartes → Cartes",
           "Règle de disponibilité",
           "Enregistrer",
-          "toutes les séries"
+          "toutes les séries",
+          "la règle est enregistrée immédiatement"
         ],
         "en": [
           "Items & menus → Menus",
           "Availability rule",
           "Save",
-          "all series"
+          "all series",
+          "the rule is saved immediately"
         ],
         "he": [
           "פריטים ותפריטים → תפריטים",
           "כלל זמינות",
-          "שמרו את הפריט",
-          "בכל הסדרות"
+          "בכל הסדרות",
+          "הכלל נשמר מיד"
         ]
       },
       "forbidden": {
