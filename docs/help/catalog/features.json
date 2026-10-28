@@ -5948,11 +5948,23 @@
       "foodyadmin": [
         "src/app/[restaurantId]/settings/delivery/page.tsx",
         "src/components/delivery/Zone*",
-        "src/app/[restaurantId]/settings/delivery/*"
+        "src/app/[restaurantId]/settings/delivery/*",
+        "src/lib/delivery-zone-state.ts",
+        "src/lib/api.ts",
+        "src/lib/i18n.tsx"
       ],
       "foodyserver": [
         "internal/delivery/schedule*",
-        "internal/delivery/zones*"
+        "internal/delivery/zones*",
+        "internal/common/delivery_schedule.go",
+        "internal/common/models.go",
+        "internal/delivery/geocode.go",
+        "internal/delivery/google_geocode.go",
+        "internal/delivery/geoapify.go",
+        "internal/delivery/optimizer.go",
+        "internal/delivery/tours.go",
+        "internal/delivery/postal_calendars.go",
+        "internal/orders/delivery_schedule.go"
       ]
     },
     "operations": [
@@ -5967,6 +5979,32 @@
           "en": "Create or edit a named zone using the map/address controls. Review its area, active state and ordering eligibility before saving.",
           "fr": "Créez ou modifiez une zone nommée avec les contrôles carte/adresse. Vérifiez périmètre, état actif et éligibilité des commandes avant enregistrement.",
           "he": "צרו או ערכו אזור בשם באמצעות מפה וכתובת. בדקו גבולות, מצב פעיל וזכאות להזמנה לפני שמירה."
+        }
+      },
+      {
+        "id": "postal-codes",
+        "title": {
+          "fr": "Cibler un code postal français précis",
+          "en": "Target an exact French postal code",
+          "he": "הגדרת מיקוד צרפתי מדויק"
+        },
+        "instructions": {
+          "fr": "Cette option nécessite les versions compatibles de l’API et d’Admin ; sa présence dans ce guide ne confirme pas son déploiement. Avec l’autorisation de gérer les commandes et un établissement situé en France, ouvrez Paramètres → Livraison → Ajouter une zone. Nommez la zone, choisissez Codes postaux (France), puis saisissez 75016 pour ce seul code postal. Pour plusieurs secteurs, collez les codes à 5 chiffres séparés par des espaces, des virgules ou des retours à la ligne (1 000 maximum) ; conservez les zéros initiaux, par exemple 01000. Réglez les frais, le minimum, les créneaux et l’état actif, puis Enregistrer. Rouvrez la zone pour vérifier les codes et testez des adresses de part et d’autre de sa limite avant la mise en service. 75016 est un code postal ; 75 est le département de Paris. Départements (France) accepte aussi 2A, 2B et les codes ultramarins à trois chiffres comme 971, mais couvre le département entier. Une zone par code postal est prioritaire sur les autres zones pour ses frais, son minimum et son calendrier ; si le code ne correspond pas, une autre zone active peut toujours couvrir l’adresse. Le code postal est vérifié à partir de l’adresse par le service de géocodage : un texte de ville ou des coordonnées saisis seuls ne suffisent pas. Sans code postal vérifiable, précisez l’adresse et réessayez. Une saisie invalide ne s’enregistre pas ; après une réponse d’enregistrement incertaine, utilisez Vérifier les données enregistrées avant de réessayer.",
+          "en": "This option requires compatible API and Admin versions; its inclusion in this guide does not confirm deployment. With permission to manage orders and a restaurant located in France, open Settings → Delivery → Add zone. Name the zone, choose Postal codes (France), and enter 75016 to cover that exact postal code only. Paste multiple five-digit codes separated by spaces, commas or line breaks (up to 1,000); keep leading zeros, for example 01000. Set the fee, minimum, calendar and active state, then Save. Reopen the zone to verify the codes and test addresses on both sides of its boundary before enabling it. 75016 is a postal code; 75 is the Paris department. Departments (France) also accepts 2A, 2B and three-digit overseas codes such as 971, but covers the entire department. Postal zones take precedence over other zones for fees, minimums and calendars; another active zone can still cover an address whose postal code does not match. The geocoding service verifies postal metadata from the address; city text or coordinates alone are insufficient. If a postal code cannot be verified, refine the address and try again. Invalid input is not saved; after an uncertain save response, use Verify saved data before retrying.",
+          "he": "האפשרות דורשת גרסאות תואמות של ה-API וממשק הניהול; הופעתה במדריך אינה אישור שהגרסה נפרסה. עם הרשאה לניהול הזמנות ובעסק שמיקומו בצרפת, פתחו הגדרות → משלוח → הוסף אזור. תנו שם, בחרו מיקודים (צרפת) והזינו 75016 כדי לכלול רק את המיקוד הזה. לכמה אזורים הדביקו מיקודים בני חמש ספרות, מופרדים ברווחים, בפסיקים או בשורות חדשות (עד 1,000), ושמרו אפסים מובילים, למשל 01000. הגדירו תעריף, מינימום, לוח ומצב פעיל ולחצו שמור. פתחו שוב ובדקו את הקודים ואת הכתובות משני צדי הגבול לפני ההפעלה. 75016 הוא מיקוד; 75 הוא מחוז פריז. מחוזות (צרפת) מקבל גם 2A, 2B וקודים בני שלוש ספרות כמו 971, אך כולל את המחוז כולו. כללי המיקוד קודמים לאזורים אחרים לתעריף, מינימום ולוח; אזור פעיל אחר עדיין יכול לכלול כתובת שהמיקוד שלה שונה. שירות האיתור מאמת את המיקוד מהכתובת; טקסט עיר או קואורדינטות בלבד אינם מספיקים. אם לא ניתן לאמת מיקוד, דייקו את הכתובת ונסו שוב. קלט שגוי אינו נשמר; אחרי תשובת שמירה לא ודאית השתמשו באימות הנתונים השמורים לפני ניסיון נוסף."
+        }
+      },
+      {
+        "id": "postal-day-groups",
+        "title": {
+          "fr": "Répartir les codes postaux par jours et tarif",
+          "en": "Group postal codes by delivery days and fee",
+          "he": "חלוקת מיקודים לפי ימים ותעריף"
+        },
+        "instructions": {
+          "fr": "Créez vous-même un groupe par combinaison de liste de codes, jours et tarif : par exemple une zone du lundi au jeudi, une autre le vendredi et le dimanche, puis une zone à tarif différent pour ses propres codes. Dans chaque zone, collez uniquement sa liste de codes dans Codes postaux, réglez les frais dans la devise de l’établissement, choisissez le mode de créneau, les jours et les heures, puis enregistrez. Les doublons d’une liste sont retirés ; un même code peut rester dans plusieurs zones. Pour ce code, les calendriers se cumulent uniquement si le tarif, le minimum, le mode de créneau et l’alternative retrait sont identiques. Ainsi un groupe lundi–jeudi et un groupe vendredi/dimanche au même tarif proposent leurs six jours sans ouvrir le samedi ; les codes propres à un seul groupe gardent ses jours. Les zones enregistrées restent distinctes et aucune liste commerciale n’est ajoutée automatiquement. Les jours, tarifs et codes de cet exemple sont à configurer, pas des réglages préchargés. Les tarifs ou modes différents pour un même code ne sont pas cumulés : la priorité existante de la zone la plus ancienne reste applicable. Évitez ces recouvrements si vous avez besoin de tarifs différents selon le jour. Les fenêtres réellement superposées gardent aussi la priorité de la zone la plus ancienne ; les autres jours ne disparaissent pas. Un changement d’adresse d’une commande recontrôle son calendrier, même si une zone lui reste commune.",
+          "en": "Create each group yourself for a combination of postal list, days and fee: for example one Monday–Thursday zone, another Friday/Sunday zone, then a different-fee zone for its own postal codes. In each zone, paste only its postal list, set the fee in the restaurant currency, choose the booking mode, weekdays and hours, then save. Duplicates within one list are removed; the same code may remain in several zones. For that code, calendars combine only when the fee, minimum, booking mode and pickup alternative are identical. A Monday–Thursday group and a Friday/Sunday group with the same fee therefore offer six days without opening Saturday; codes belonging to just one group keep its days. Saved zones remain separate and no business list is inserted automatically. The example days, fees and codes require configuration and are not preloaded defaults. Different fees or modes for the same code do not combine: existing oldest-zone priority still applies. Avoid those overlaps if you need different prices by weekday. Actually overlapping windows also retain oldest-zone priority without hiding the other weekdays. Changing an order address rechecks its calendar even when one zone remains shared.",
+          "he": "צרו בעצמכם קבוצה לכל שילוב של רשימת מיקודים, ימים ותעריף: לדוגמה אזור לימי שני עד חמישי, אזור נוסף לשישי וראשון, ואזור בתעריף אחר למיקודים משלו. בכל אזור הדביקו רק את רשימת המיקודים שלו, הגדירו תעריף במטבע העסק, בחרו מצב תזמון, ימים ושעות ושמרו. כפילויות בתוך רשימה מוסרות; אותו מיקוד יכול להופיע בכמה אזורים. לוחות הזמנים של אותו מיקוד מצטברים רק כשהתעריף, המינימום, מצב התזמון ואפשרות האיסוף החלופית זהים. כך קבוצה לשני–חמישי וקבוצה לשישי וראשון באותו תעריף מציעות שישה ימים בלי לפתוח את שבת; מיקודים שנמצאים רק בקבוצה אחת שומרים את הימים שלה. האזורים השמורים נשארים נפרדים ולא נוספת רשימה מסחרית אוטומטית. הימים, התעריפים והמיקודים בדוגמה דורשים הגדרה ואינם ברירות מחדל טעונות מראש. תעריפים או מצבי תזמון שונים לאותו מיקוד אינם מצטברים: העדיפות הקיימת של האזור הוותיק נשארת. הימנעו מחפיפה כזו אם נדרשים תעריפים שונים לפי יום. חלונות שחופפים בפועל שומרים גם הם את עדיפות האזור הוותיק, בלי להסתיר ימים אחרים. שינוי כתובת הזמנה בודק מחדש את הלוח גם כשאחד האזורים נשאר משותף."
         }
       },
       {
@@ -5998,7 +6036,8 @@
     ],
     "audience": "public",
     "status": "available",
-    "preserveExisting": false
+    "preserveExisting": false,
+    "procedureUpdatedAt": "2026-10-28"
   },
   {
     "id": "delivery-dispatch",
@@ -6067,9 +6106,9 @@
           "he": "בחירת משלוחים לתאריך אחד"
         },
         "instructions": {
-          "en": "Choose the route date and review available delivery orders. Do not combine scheduled deliveries from another service date into the route.",
-          "fr": "Choisissez la date de tournée et vérifiez les commandes disponibles. Ne mélangez pas les livraisons planifiées d’un autre jour de service.",
-          "he": "בחרו תאריך מסלול ובדקו הזמנות משלוח זמינות. אין לצרף משלוחים מתוזמנים מתאריך שירות אחר."
+          "en": "Choose the route date and review available delivery orders. Do not combine scheduled deliveries from another service date into the route. Orders retain the calendar verified for their address: postal groups with the same fee and identical options can combine weekdays without changing saved zones or opening another day. A new address can reduce those days even when one zone remains shared; choose a still-eligible window. This eligibility precedes route planning and does not change stop order. See [postal weekday groups](/en/help/delivery/zones-and-schedules#postal-day-groups).",
+          "fr": "Choisissez la date de tournée et vérifiez les commandes disponibles. Ne mélangez pas les livraisons planifiées d’un autre jour de service. Les commandes restent soumises au calendrier validé pour leur adresse : des groupes de codes postaux au même tarif et aux options identiques peuvent cumuler leurs jours, sans changer les zones enregistrées ni ouvrir un autre jour. Une nouvelle adresse peut réduire ces jours même si une zone reste commune ; choisissez un créneau encore autorisé. Cette éligibilité précède la planification de la tournée et ne modifie pas son ordre d’arrêts. Voir [les groupes de jours par code postal](/fr/help/delivery/zones-and-schedules#postal-day-groups).",
+          "he": "בחרו תאריך מסלול ובדקו הזמנות משלוח זמינות. אין לצרף משלוחים מתוזמנים מתאריך שירות אחר. ההזמנות נשארות כפופות ללוח שאומת לכתובת: קבוצות מיקוד באותו תעריף ועם אפשרויות זהות יכולות לצרף ימים בלי לשנות אזורים שמורים או לפתוח יום נוסף. כתובת חדשה יכולה לצמצם ימים גם כשאזור אחד נשאר משותף; בחרו חלון שעדיין מותר. בדיקת הזכאות קודמת לתכנון הסבב ואינה משנה סדר עצירות. ראו [קבוצות ימים לפי מיקוד](/he/help/delivery/zones-and-schedules#postal-day-groups)."
         }
       },
       {
@@ -6297,7 +6336,7 @@
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-25",
+    "procedureUpdatedAt": "2026-10-28",
     "updatedAt": "2026-10-20"
   },
   {

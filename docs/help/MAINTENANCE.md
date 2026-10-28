@@ -222,3 +222,37 @@ publication and guest ordering windows. Publish the FR/HE/EN procedures with the
 API/Admin behavior. Pin this reviewed Landing commit in the API/Admin contracts
 before remote CI. Deploy API before Admin and promote their validated develop
 artifacts without rebuilding.
+
+
+## Local exact-postal delivery coverage (28 October 2026)
+
+This preparation reviews API, Admin and Landing only. Migration 281 adds optional
+postal_codes metadata without converting existing city or department zones. Exact
+postal rules precede other zone types; provider-verified French five-digit codes,
+including leading zeros, determine eligibility, fee, minimum and calendar.
+Client city strings and coordinates cannot supply this metadata. Tests exercise
+75016 versus 75015, missing/provider-failure metadata, overlapping zones, updates,
+restaurant isolation, tour guards and the three geocoding adapters. FR/HE/EN
+browser fixtures verify create, readback, edits and invalid department input.
+
+Retain Web, POS and Backoffice inventory blocks and surfaces exactly from the
+Landing develop baseline 7d178190cc27e2e27b55c0b8d546148d6b00b1d0; these consumers receive delivery decisions
+through existing server contracts and have no zone-authoring model to update.
+Copy the regenerated public corpus into API before scanning. WORKSPACE references
+support local preparation only; immutable documentation pins require an explicitly
+authorized commit before remote CI. Deploy API/migration before Admin and publish
+the qualified guides with the compatible product release. No production mutation,
+real delivery order, paid provider call or deployment is part of these tests.
+
+
+The postal-list follow-up accepts spaces, commas, semicolons and real line breaks
+in a multiline editor, preserves leading zeros and deduplicates within each list.
+A shared postal code combines compatible zones' weekly windows without writing
+any saved zone. Fee, nullable minimum, booking mode and pickup alternative must
+all agree; existing priority remains for incompatible or overlapping promises.
+No supplied business lists, restaurant configuration or default fees are seeded.
+A changed order address compares both the zone anchor and effective calendar, so
+losing one shared day group cannot retain the previous address's extra weekdays.
+API tests exercise public calendar output, all three booking modes, Saturday
+exclusion, isolated code/rate groups and existing-order address revalidation.
+Admin fixtures verify three manually authored groups and multiline round trips.

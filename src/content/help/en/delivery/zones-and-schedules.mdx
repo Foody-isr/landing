@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - delivery
   - delivery-zones
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-28'
 featureId: delivery-zones
 audience: public
 releaseStatus: available
@@ -17,6 +17,18 @@ Admin → Settings → Delivery
 ## Create a delivery zone
 
 Create or edit a named zone using the map/address controls. Review its area, active state and ordering eligibility before saving.
+
+<span id="postal-codes" />
+
+## Target an exact French postal code
+
+This option requires compatible API and Admin versions; its inclusion in this guide does not confirm deployment. With permission to manage orders and a restaurant located in France, open Settings → Delivery → Add zone. Name the zone, choose Postal codes (France), and enter 75016 to cover that exact postal code only. Paste multiple five-digit codes separated by spaces, commas or line breaks (up to 1,000); keep leading zeros, for example 01000. Set the fee, minimum, calendar and active state, then Save. Reopen the zone to verify the codes and test addresses on both sides of its boundary before enabling it. 75016 is a postal code; 75 is the Paris department. Departments (France) also accepts 2A, 2B and three-digit overseas codes such as 971, but covers the entire department. Postal zones take precedence over other zones for fees, minimums and calendars; another active zone can still cover an address whose postal code does not match. The geocoding service verifies postal metadata from the address; city text or coordinates alone are insufficient. If a postal code cannot be verified, refine the address and try again. Invalid input is not saved; after an uncertain save response, use Verify saved data before retrying.
+
+<span id="postal-day-groups" />
+
+## Group postal codes by delivery days and fee
+
+Create each group yourself for a combination of postal list, days and fee: for example one Monday–Thursday zone, another Friday/Sunday zone, then a different-fee zone for its own postal codes. In each zone, paste only its postal list, set the fee in the restaurant currency, choose the booking mode, weekdays and hours, then save. Duplicates within one list are removed; the same code may remain in several zones. For that code, calendars combine only when the fee, minimum, booking mode and pickup alternative are identical. A Monday–Thursday group and a Friday/Sunday group with the same fee therefore offer six days without opening Saturday; codes belonging to just one group keep its days. Saved zones remain separate and no business list is inserted automatically. The example days, fees and codes require configuration and are not preloaded defaults. Different fees or modes for the same code do not combine: existing oldest-zone priority still applies. Avoid those overlaps if you need different prices by weekday. Actually overlapping windows also retain oldest-zone priority without hiding the other weekdays. Changing an order address rechecks its calendar even when one zone remains shared.
 
 <span id="fees" />
 
