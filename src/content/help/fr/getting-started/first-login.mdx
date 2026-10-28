@@ -19,6 +19,8 @@ Connexion Admin et menu du compte
 
 Ouvrez l’invitation reçue par e-mail, vérifiez le restaurant, choisissez votre mot de passe et confirmez vos coordonnées. Le code caisse est demandé uniquement si les permissions affectées dans ce restaurant permettent la prise de commande (orders.manage) ou la gestion des paiements (payments.manage). Un livreur avec les droits habituels de consultation, ou un rôle limité à la cuisine, termine sans cette étape. Le nom du rôle ne détermine pas à lui seul cette obligation. Ne partagez jamais de mot de passe ni de code caisse.
 
+Le code personnel doit être distinct de ceux des autres comptes configurés dans ce restaurant. Le même code peut être utilisé dans un autre restaurant.
+
 <span id="restaurant" />
 
 ## Sélectionner le restaurant
@@ -40,6 +42,8 @@ Si votre session a été révoquée, reconnectez-vous avec votre propre compte l
 Sur un POS déjà enrôlé, l’écran Se connecter affiche Saisissez votre code confidentiel. Saisissez votre code personnel complet de 4 à 6 chiffres, puis touchez Démarrer le shift. Les quatre emplacements affichés au départ s’étendent quand vous entrez un cinquième chiffre ; ils ne limitent pas un code existant à quatre chiffres. La touche de correction efface le dernier chiffre. L’entrée n’est pas validée automatiquement : attendez le résultat de la connexion avant d’utiliser le POS. Un refus affiche une erreur et vide la saisie pour réessayer ; ne partagez jamais votre code. Configurer ce terminal avec email et mot de passe permet de revenir au formulaire de connexion. Une session PIN réussie ouvre aussi votre service ; le rôle et les droits restent ceux de votre compte. Afficher les heures ouvre un parcours distinct : consulter son statut n’ouvre ni service ni session de vente. Voir [l’enregistrement des heures](/fr/help/staff/devices-and-shifts#personal-time-tracking).
 
 L’adresse e-mail utilisée pour autoriser le terminal ne détermine pas l’employé connecté ensuite : le code personnel saisi détermine le profil et les droits de cette session. Une connexion distincte à FoodyAdmin ne remplace pas cet employé.
+
+Si un code correspond à plusieurs comptes configurés dans le même restaurant, la connexion et l’enregistrement des heures sont refusés avec une erreur générique : aucune nouvelle session de vente ni aucun début de pointage n’est créé. Le refus n’identifie pas les comptes concernés. Faites vérifier l’accès avec un responsable ou l’assistance, sans multiplier les essais ni effacer les données du terminal.
 
 <span id="end-pos-shift" />
 

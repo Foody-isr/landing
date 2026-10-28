@@ -8,6 +8,47 @@ base. `docs/help/catalog/features.json` is the authored feature/procedure source
 Internal operator procedures render separately to `docs/help/internal` and never
 enter public browsing, search or the AI corpus.
 
+## Restaurant PIN scope and provisional fulfillment (28 October 2026)
+
+The personal code is unique among configured accounts within one restaurant;
+the same complete code may be configured in another restaurant. PIN sign-in and
+personal time tracking require exactly one configured matching code, then check
+the account's current access. A collision remains a generic refusal even when a
+matching historical row no longer has access. It consumes the existing shared
+attempt budget and creates no new sales session or attendance. Do not expose the
+matching accounts or infer that a particular restaurant has duplicate codes.
+
+The first-login and devices/shifts guides clarify that scope, the expected
+personal profile, and recovery without inventing an Admin repair control.
+French, Hebrew and English retain the existing distinction between the account
+which authorized the physical terminal and the employee selected by PIN.
+Changing a code and completing an invitation use the same restaurant lock before
+checking and saving salted codes. Setup takes restaurant locks in stable order
+before user writes, including owner onboarding; rejected setup remains atomic
+with its password and invitation. Publish API before a client which relies on
+the corrected behavior, and retain the existing data and financial journals.
+
+The separate Flutter correction invalidates only provisional fulfillment state
+and the Menu entry gate when its restaurant, personal actor or sign-in session
+changes, including a rapid return to the same IDs. A normal refresh or same-user
+profile hydration keeps the provisional intent. A saved explicit method and
+its customer details remain in their actor-bound draft. This restores the
+existing three-language procedures in order-types, local draft recovery and
+personal PIN guidance; do not add a new procedure, date or guide paragraph for
+that correction alone. Exact scoped reviews acknowledge the visible bug fix and
+retain the unchanged saved-order, discount, comp and void procedures.
+
+Refresh API and POS source evidence for this correction. Retain the unchanged
+Landing application-source block and surfaces, together with Admin, guest Web
+and Backoffice, exactly from Landing develop
+`f7f7259deb52dcd223426f8b2eef3fb5963c5934`; those source checkpoints are retained,
+not recertified from a documentation worktree with pending changes. The reviewed
+French, Hebrew and English article bytes are attested separately by the new
+public corpus, release revision and Landing self contract. Do not copy the final
+public corpus into API during its full validation. Final source references and
+documentation pins require the validated clean checkpoints; local preparation is
+not remote CI readiness, production publication or physical acceptance.
+
 ## Personal-session integrity review (28 October 2026)
 
 This correction separates physical-terminal authorization from the personal staff
