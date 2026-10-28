@@ -1,0 +1,40 @@
+---
+title: Prepare an internal order and collect payment with Sumit
+description: Admin → Orders → New order → Checkout
+apps: foodyadmin
+tags:
+  - orders
+  - orders-internal-sumit-checkout
+updatedAt: '2026-10-28'
+featureId: orders-internal-sumit-checkout
+audience: public
+releaseStatus: local-release-unverified
+---
+Admin → Orders → New order → Checkout
+
+> **Release availability must be confirmed**
+> This application exists in the source workspace. This guide does not confirm public distribution or availability in your installed release.
+
+<span id="sumit-internal-prerequisites" />
+
+## Check availability and prepare the basket
+
+On compatible API, Admin and guest Web versions, these two choices appear only when the restaurant’s active provider is configured Sumit. Creating the internal order requires orders.manage; entering a card also requires payments.manage. In New order, add items from a carte or the article library, choose pickup or delivery and the service date, and review discounts and any delivery fee. The total must be positive. Weight-priced items requiring a hold are not supported by Sumit. Ordinary cash/card recording remains a separate existing choice.
+
+<span id="sumit-customer-basket-link" />
+
+## Send the customer a Foody basket link
+
+Choose Foody payment link and Create order. The admin does not have to fill in the customer’s name, phone or address. Copy the private Foody link and share it only with the intended customer. The recipient sees the prepared items, chosen options, total, discount, service date and delivery fee; they enter their own name and phone, optional email, and the delivery address when needed. Items, discounts and service date are prepared by the restaurant. For delivery, enter the address and choose Calculate delivery and total. Foody checks the restaurant’s delivery zone, service availability and minimum, recalculates delivery fees and applicable discounts, and displays the final total. Review it, then choose Pay securely with Sumit. A changed fee requires another review; the client cannot set their own fee. Contact the restaurant for an unavailable service date. Pickup proceeds directly to Sumit’s hosted form. The link expires 24 hours after creation; the background cancellation process releases an expired unpaid basket’s stock reservations. A paid order offers View order and cannot start another payment.
+
+<span id="sumit-admin-hosted-card" />
+
+## Enter the card from Admin
+
+Fill in the customer and fulfillment details, choose Charge a card with Sumit and create the order once. Open secure Sumit payment displays Sumit’s form inside Admin. Enter the card only there; Foody has no card-number or CVV field in this flow. Open the same payment in a new tab is available if the embedded form cannot be used. The order stays pending while the payment is processed; Payment confirmed appears only after the API records Sumit confirmation. Closing the form or a successful page load does not mark the order paid. To resume later, select the saved order in Orders and use Open secure Sumit payment. Resuming opens the same hosted payment, without recreating the order.
+
+<span id="sumit-checkout-recovery" />
+
+## Recover an interrupted checkout
+
+The prepared basket is immutable while pending. To change its items, discount or fulfillment quote, cancel it and prepare a replacement after checking the payment state. Customer details bind on the first payment-opening action; Resume the same payment retains them. If the result is uncertain, check this saved order and Sumit before creating or collecting another payment. A provider or persistence failure may keep the checkout blocked for review. An invalid, expired or closed link, or a provider change away from Sumit, requires contacting the restaurant. These flows do not save a reusable card, send a payment link automatically or confirm kitchen dispatch before payment.

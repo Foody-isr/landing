@@ -2059,6 +2059,40 @@
           "lib/features/orders/presentation/held_preparation_dialog.dart"
         ]
       }
+    },
+    {
+      "id": "orders-internal-sumit-checkout",
+      "article": "orders/internal-sumit-checkout",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/orders/new/**",
+          "src/components/orders/NewOrderCheckoutDrawer.tsx",
+          "src/components/orders/InternalOrderPayment.tsx",
+          "src/components/orders/detail/OrderDetailHead.tsx",
+          "src/lib/api.ts",
+          "src/lib/i18n.tsx",
+          "src/lib/orders/order-actions.ts",
+          "src/lib/help/registry.ts"
+        ],
+        "foodyserver": [
+          "internal/common/internal_checkout.go",
+          "internal/orders/internal_checkout.go",
+          "internal/payment/internal_checkout.go",
+          "internal/orders/handler.go",
+          "internal/orders/service.go",
+          "internal/orders/financial_bill.go",
+          "internal/payment/resolver.go",
+          "internal/payment/handler.go",
+          "cmd/server/main.go"
+        ],
+        "foodyweb": [
+          "app/r/[restaurantId]/checkout/**",
+          "lib/internal-checkout.ts",
+          "services/api.ts",
+          "lib/i18n.tsx"
+        ]
+      }
     }
   ]
 }

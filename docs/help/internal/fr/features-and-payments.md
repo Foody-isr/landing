@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - backoffice-entitlements
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-28'
 featureId: backoffice-entitlements
 audience: internal
 releaseStatus: available
@@ -45,3 +45,9 @@ Utilisez réglages prestataire/Cibus/portefeuille pour environnement et marchand
 ## Attribuer les quotas des services externes
 
 En superadmin, ouvrez Usage and quotas pour comparer les restaurants, choisissez un service puis Review allocation. Le même accès existe depuis la fiche restaurant. Saisissez les plafonds mensuels entiers ; zéro suspend un service. Indiquez un motif puis Save allocation. Use default allowances prépare les valeurs initiales dans le formulaire et nécessite aussi un enregistrement. Une modification ne remet jamais les compteurs à zéro et ne contourne pas les protections fournisseur. Les changements sont historisés avec leur auteur et leur motif. En cas d’enregistrement non confirmé ou de conflit, rechargez explicitement l’allocation avant de réessayer ; les saisies restent présentes tant que vous ne rechargez pas. La sortie avec des modifications avertit de leur abandon. Les environnements ont leurs compteurs restaurant propres ; le budget Google partagé continue de protéger le compte global.
+
+<span id="prepared-sumit-checkout-integration" />
+
+## Intégration du panier préparé Sumit
+
+La capacité Sumit des commandes internes préparées dépend du fournisseur actif et des identifiants configurés valides du restaurant. Aucun bouton de formule ni contrôle d’onboarding n’est ajouté. Changer de fournisseur désactive l’ouverture de ces paiements en attente, sans les transférer silencieusement à un autre prestataire. Coordonnez API, Admin, Web et le guide Sumit.
