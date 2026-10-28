@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - delivery
   - courier
-updatedAt: '2026-10-25'
+updatedAt: '2026-10-28'
 featureId: courier
 audience: public
 releaseStatus: available
@@ -60,4 +60,4 @@ Si vous avez démarré une tournée par erreur, prévenez un responsable avant d
 
 ## Consulter le mode d’un autre livreur
 
-Avec un compte superadmin, ouvrez le restaurant concerné puis Commandes → Mode livreur. Dans Voir comme livreur, choisissez un livreur du restaurant ; le premier de la liste est sélectionné à l’ouverture. Vous consultez le même écran de carte, de tournées non terminées et d’arrêts que ce livreur. Changez ce choix à tout moment pour afficher les tournées du nouveau livreur ; l’arrêt sélectionné, la recherche et les panneaux précédents sont réinitialisés. Les actions affichées, dont Démarrer la tournée et Marquer livrée, agissent réellement sur ses livraisons : ne les utilisez que pour enregistrer une opération effectuée. Le compte connecté reste superadmin et sa position GPS n’est pas envoyée comme celle du livreur. Les autres comptes conservent leurs propres tournées sans ce sélecteur. Si aucun livreur n’est configuré, faites vérifier les rôles de l’équipe du restaurant. En cas d’échec de chargement, utilisez Réessayer ; une affectation supprimée ou un livreur d’un autre restaurant est refusé par le serveur.
+Avec les versions compatibles de l’API et de l’Admin, connectez-vous comme propriétaire du restaurant concerné ou comme superadmin, puis ouvrez Commandes → Mode livreur. Dans Voir comme livreur, choisissez un livreur du restaurant ; le premier de la liste est sélectionné à l’ouverture. Vous consultez le même écran de carte, de tournées non terminées et d’arrêts que ce livreur. Changez ce choix pour afficher les tournées du nouveau livreur ; l’arrêt sélectionné, la recherche et les panneaux précédents sont réinitialisés. Les actions affichées, dont Démarrer la tournée et Marquer livrée, agissent réellement sur ses livraisons : utilisez-les uniquement pour enregistrer une opération effectuée. Le compte connecté conserve son identité et sa position GPS n’est pas envoyée comme celle du livreur. Être propriétaire d’un autre restaurant ne donne pas accès à ce sélecteur ici ; les autres comptes conservent leurs propres tournées. Si aucun livreur n’est configuré, vérifiez les rôles de l’équipe. En cas d’échec de chargement, utilisez Réessayer ; une affectation supprimée ou un livreur d’un autre restaurant est refusé par le serveur. Si le sélecteur manque pour le propriétaire, faites vérifier le déploiement des deux versions compatibles, API puis Admin.

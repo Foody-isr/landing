@@ -865,3 +865,19 @@ losing one shared day group cannot retain the previous address's extra weekdays.
 API tests exercise public calendar output, all three booking modes, Saturday
 exclusion, isolated code/rate groups and existing-order address revalidation.
 Admin fixtures verify three manually authored groups and multiline round trips.
+
+## Owner courier-mode local preparation (28 October 2026)
+
+This preparation extends the existing scoped courier selector to the active
+restaurant owner. API ownership is authoritative; a global owner role in a
+different restaurant grants no access. FR/HE/EN procedures retain their stable
+anchors and qualify the owner flow by compatible API and Admin versions.
+Deploy API before Admin and publish these guides with the behavior. No production
+mutation or deployment is part of local validation.
+
+Refresh API, Admin and Landing evidence only. Preserve the guest Web, POS and
+Backoffice service blocks and source surfaces from the current Landing develop
+baseline without claiming to revalidate them. Application source checkpoints are committed separately from generated help
+contracts; every inventoried source digest is verified against its immutable
+checkpoint. Service contracts pin the reviewed immutable Landing commit before
+remote CI or release. Synchronize the exported support corpus before scanning API sources.
