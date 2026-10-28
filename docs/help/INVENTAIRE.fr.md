@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-28.
 
-104 fiches de fonctionnalités, 770 procédures/sous-fonctionnalités, dont 95 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2227 fichiers applicatifs et 2064 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+104 fiches de fonctionnalités, 771 procédures/sous-fonctionnalités, dont 95 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2227 fichiers applicatifs et 2064 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,8 +10,8 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 579 | 878 | 24feee4b31af ; versioned |
-| foodyadmin | 769 | 778 | 697f50cd53b8 ; versioned |
+| foodyserver | 579 | 878 | cc4d62c7b2cd ; versioned |
+| foodyadmin | 769 | 778 | 92bda653dddf ; versioned |
 | foodyweb | 345 | 171 | 31eafb06d43a ; versioned |
 | foodypos | 363 | 166 | 51f48a775eab ; versioned |
 | foodylanding | 127 | 21 | 076e5fc0e61e ; versioned |
@@ -1215,6 +1215,7 @@ Identifiant : `guest-account-tracking`. Public : public. Disponibilité : availa
 - [Comprendre les données de connexion](../../src/content/help/fr/guest/tracking-and-account.mdx#sign-in-privacy)
 - [Se connecter pendant la commande](../../src/content/help/fr/guest/tracking-and-account.mdx#optional-entry-access)
 - [Corriger un téléphone mémorisé](../../src/content/help/fr/guest/tracking-and-account.mdx#saved-phone-validation)
+- [Ouvrir un panier préparé pour Sumit](../../src/content/help/fr/guest/tracking-and-account.mdx#prepared-sumit-basket)
 
 ### [Commander avec le QR de table](../../src/content/help/fr/guest/table-qr.mdx)
 
