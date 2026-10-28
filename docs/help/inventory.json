@@ -4,10 +4,10 @@
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "afd2c31f01fe7f9baf36a3eefe994c2aac94a33a",
+      "sourceCommit": "12ef8496f10e1728bcd7843195efc1293ae42505",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "24055f0bf1578850d6660b694953fb9d68fae70d6f5c5b70fee9b88f56647415",
-      "workingTreeHasChanges": false,
+      "sourceSnapshot": "edd9251d7ef2c78ebe75f2b5fcdbb9c8eb38bfad4c7ab0dbba46d337a3f9cd9b",
+      "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
           "sha256": "33cf30b683837b76977ed47c14d5d91ccb1b34bd60e9f62d124b8cc1079231aa",
@@ -591,8 +591,9 @@
           ]
         },
         "internal/common/delivery_schedule.go": {
-          "sha256": "960d2aa8087f0132c098aee25d23fde6875f1b77fdfc19fb4399311609ccd9f1",
+          "sha256": "254d48665b606ecc6116cf335427d3241c90b326e67f9ffc3ebab2f07855379d",
           "features": [
+            "delivery-zones",
             "platform-api"
           ]
         },
@@ -677,8 +678,9 @@
           ]
         },
         "internal/common/models.go": {
-          "sha256": "d121fab2aed6510ed4ba8202a0009eb31f3504088b9d6c51aac31f6398920742",
+          "sha256": "35bb5102cad08ed31a3a142e8a21e5948fbea7b881910ec4e2f1d0a4d681b517",
           "features": [
+            "delivery-zones",
             "platform-api",
             "menu-product-photos"
           ]
@@ -953,8 +955,9 @@
           ]
         },
         "internal/delivery/geoapify.go": {
-          "sha256": "86992c38ef5738b964f6cf27e533d6798b15ce43ceac68508af63783c7d63ae4",
+          "sha256": "dd0cea662e24d279c98cdf16105f7f7e957703a33d51b7488ecfbc50dd0176c7",
           "features": [
+            "delivery-zones",
             "delivery-dispatch",
             "platform-api"
           ]
@@ -967,8 +970,9 @@
           ]
         },
         "internal/delivery/geocode.go": {
-          "sha256": "ecd8eb93c04059cb5116c08c13abf14734e7a65f7db4d1c4f6efefb4024d3e53",
+          "sha256": "426e75f0561f60e4621188bfe9996e40140b691a351ad232678b66508a08f3e6",
           "features": [
+            "delivery-zones",
             "delivery-dispatch",
             "platform-api"
           ]
@@ -981,8 +985,9 @@
           ]
         },
         "internal/delivery/google_geocode.go": {
-          "sha256": "e4ffa2738c07d6a5f9c3b09897762d4465742f5cf5d93c11cc266fa5f1494f12",
+          "sha256": "964f874bb16e42d8f5d05805199145345720b70985d1954b8998def96054e052",
           "features": [
+            "delivery-zones",
             "delivery-dispatch",
             "platform-api"
           ]
@@ -1055,8 +1060,9 @@
           ]
         },
         "internal/delivery/optimizer.go": {
-          "sha256": "3b1b214e40d124d6b99dec22db2a6d5931adadaa333a875d4f697d3d3d7b6c3e",
+          "sha256": "55dd502a8fb37449b52740c673eb3db7a6a6514353b787df0446275e1586c74e",
           "features": [
+            "delivery-zones",
             "delivery-dispatch",
             "platform-api"
           ]
@@ -1071,6 +1077,14 @@
         "internal/delivery/plan_settings.go": {
           "sha256": "96477c7ec22f41b0bae041ed84b15439d2fad24e33769ace9842b68b611c216f",
           "features": [
+            "delivery-dispatch",
+            "platform-api"
+          ]
+        },
+        "internal/delivery/postal_calendars.go": {
+          "sha256": "cae1e5c6ecbaf2f3a5758c023f50600386bd83f822b37ab175d3ebe16181ccd8",
+          "features": [
+            "delivery-zones",
             "delivery-dispatch",
             "platform-api"
           ]
@@ -1125,14 +1139,15 @@
           ]
         },
         "internal/delivery/tours.go": {
-          "sha256": "ec300e32df996ab59275666537cebc042fe16a226ed7e042570a57c7f7c216d9",
+          "sha256": "25500cac5446a3275e420be89a4b1c5e98ad3c3389c72f5a816c19cd787c4df2",
           "features": [
+            "delivery-zones",
             "delivery-dispatch",
             "platform-api"
           ]
         },
         "internal/delivery/zones.go": {
-          "sha256": "11723089e3278ead4577aa244c360f03e33a15e8a2b057c12447f3a7a575f3c1",
+          "sha256": "2c40fe78e00d20f784aa86714c23c1e95eb0e7e3697fdb6f4c18d92322b003ef",
           "features": [
             "delivery-zones",
             "delivery-dispatch",
@@ -1140,7 +1155,7 @@
           ]
         },
         "internal/delivery/zones_eval.go": {
-          "sha256": "401458187e123fec0235a50721e13f64ae7c22acb3b72be055d61fb83f81ecaf",
+          "sha256": "4c80978da09a2d40f9a450c2347bbfdbc968fc1610256e53ac9d9648d0b23316",
           "features": [
             "delivery-zones",
             "delivery-dispatch",
@@ -2466,11 +2481,12 @@
           ]
         },
         "internal/orders/delivery_schedule.go": {
-          "sha256": "227ed49ef4110cdfd1e1943f88d01f50bf4af33d6e656f3b22523bbf88d3c133",
+          "sha256": "4540c478232451742413f0f247ed278a6d269b4fd9de559561f0594af69b7ef5",
           "features": [
             "orders-managing-orders",
             "order-types",
             "pos-order-entry",
+            "delivery-zones",
             "fulfillment-policy",
             "platform-api"
           ]
@@ -4346,7 +4362,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "d7ffd96bb61de0cd4dab8d5e35b72cac2cc2568b63548169c3bf41666846a509",
+          "sha256": "407043f1fef204f288fcd70bcbb3a67d261c9f314a5bc731600981333936d080",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -4670,9 +4686,9 @@
     },
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "836d45b192e5e479e902ca25e5508da9e4e8ae3e",
+      "sourceCommit": "d8f3be9a3a4c62f8a09e0306be3308d80bb5972f",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "bc8d1134b996281fe9bdf4cd0283a634ba7701380e5939b100c41deb66afc1ee",
+      "sourceSnapshot": "ad293839fee7ec480fdc238b799b4e70eb49f19ab680c5bf6a721159073d4158",
       "workingTreeHasChanges": false,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
@@ -5773,7 +5789,7 @@
           ]
         },
         "src/app/[restaurantId]/settings/delivery/page.tsx": {
-          "sha256": "9b8cf479714f8307a004a35d17f667a1cd79914a01deae6e616d2e220641f97a",
+          "sha256": "6cad80a53b5673de798e50d89fe31b683a8b7b29c35118225c69036a16b92dea",
           "features": [
             "delivery-zones"
           ]
@@ -8912,10 +8928,11 @@
           ]
         },
         "src/lib/api.ts": {
-          "sha256": "af2ba997c7c6066709a05a350d2cc2f34ad1f2e95c580ed99d43bac1da852f46",
+          "sha256": "a27371044952521b502b59eecc6774a57e6ac48dd3739b864a3e3192c4d2a279",
           "features": [
             "customers-profiles",
             "payments-how-payments-work",
+            "delivery-zones",
             "pos-payments",
             "shared-runtime",
             "menu-product-photos"
@@ -9036,8 +9053,9 @@
           ]
         },
         "src/lib/delivery-zone-state.ts": {
-          "sha256": "d5cb3852ab63d011c247056cbd4769cbfb950f072195c7388a4baf2d337ca647",
+          "sha256": "9b146c979795be0a56de6776d792750d25e5982eab83fe337da4369d944e55b3",
           "features": [
+            "delivery-zones",
             "delivery-dispatch",
             "shared-runtime"
           ]
@@ -9099,10 +9117,11 @@
           ]
         },
         "src/lib/i18n.tsx": {
-          "sha256": "b4b8aa97144b74e8f0b654066ce3942efb8e312c803bc62c3ede373e3bc4663b",
+          "sha256": "53e1f82f0838ecb1fbccb7382be536359cae74c83e08ef2919942d8c57d2e91c",
           "features": [
             "customers-profiles",
             "menu-menus-and-groups",
+            "delivery-zones",
             "delivery-dispatch",
             "google-account-setup",
             "website-order-design",
@@ -14896,10 +14915,10 @@
     },
     "foodylanding": {
       "repository": "https://github.com/Foody-isr/landing",
-      "sourceCommit": "0e314a7c7cc1c6cd7f306bdaff7ddbceadd49459",
+      "sourceCommit": "3d5f24a149b7c302786fbb6462c01143ad9bb904",
       "releaseStatus": "versioned",
       "sourceSnapshot": "0017f89048e20a416bab53c7443a4720bbe088bd715d39dcf9d1a8e67e173251",
-      "workingTreeHasChanges": false,
+      "workingTreeHasChanges": true,
       "sourceFiles": {
         "src/app/[lang]/contact/layout.tsx": {
           "sha256": "62c102ec780d416e74a175de47629e994d3158948ebf62e9610dddcd6af77f7e",
@@ -30967,11 +30986,23 @@
         "foodyadmin": [
           "src/app/[restaurantId]/settings/delivery/page.tsx",
           "src/components/delivery/Zone*",
-          "src/app/[restaurantId]/settings/delivery/*"
+          "src/app/[restaurantId]/settings/delivery/*",
+          "src/lib/delivery-zone-state.ts",
+          "src/lib/api.ts",
+          "src/lib/i18n.tsx"
         ],
         "foodyserver": [
           "internal/delivery/schedule*",
-          "internal/delivery/zones*"
+          "internal/delivery/zones*",
+          "internal/common/delivery_schedule.go",
+          "internal/common/models.go",
+          "internal/delivery/geocode.go",
+          "internal/delivery/google_geocode.go",
+          "internal/delivery/geoapify.go",
+          "internal/delivery/optimizer.go",
+          "internal/delivery/tours.go",
+          "internal/delivery/postal_calendars.go",
+          "internal/orders/delivery_schedule.go"
         ]
       },
       "operations": [
@@ -30986,6 +31017,32 @@
             "en": "Create or edit a named zone using the map/address controls. Review its area, active state and ordering eligibility before saving.",
             "fr": "Créez ou modifiez une zone nommée avec les contrôles carte/adresse. Vérifiez périmètre, état actif et éligibilité des commandes avant enregistrement.",
             "he": "צרו או ערכו אזור בשם באמצעות מפה וכתובת. בדקו גבולות, מצב פעיל וזכאות להזמנה לפני שמירה."
+          }
+        },
+        {
+          "id": "postal-codes",
+          "title": {
+            "fr": "Cibler un code postal français précis",
+            "en": "Target an exact French postal code",
+            "he": "הגדרת מיקוד צרפתי מדויק"
+          },
+          "instructions": {
+            "fr": "Cette option nécessite les versions compatibles de l’API et d’Admin ; sa présence dans ce guide ne confirme pas son déploiement. Avec l’autorisation de gérer les commandes et un établissement situé en France, ouvrez Paramètres → Livraison → Ajouter une zone. Nommez la zone, choisissez Codes postaux (France), puis saisissez 75016 pour ce seul code postal. Pour plusieurs secteurs, collez les codes à 5 chiffres séparés par des espaces, des virgules ou des retours à la ligne (1 000 maximum) ; conservez les zéros initiaux, par exemple 01000. Réglez les frais, le minimum, les créneaux et l’état actif, puis Enregistrer. Rouvrez la zone pour vérifier les codes et testez des adresses de part et d’autre de sa limite avant la mise en service. 75016 est un code postal ; 75 est le département de Paris. Départements (France) accepte aussi 2A, 2B et les codes ultramarins à trois chiffres comme 971, mais couvre le département entier. Une zone par code postal est prioritaire sur les autres zones pour ses frais, son minimum et son calendrier ; si le code ne correspond pas, une autre zone active peut toujours couvrir l’adresse. Le code postal est vérifié à partir de l’adresse par le service de géocodage : un texte de ville ou des coordonnées saisis seuls ne suffisent pas. Sans code postal vérifiable, précisez l’adresse et réessayez. Une saisie invalide ne s’enregistre pas ; après une réponse d’enregistrement incertaine, utilisez Vérifier les données enregistrées avant de réessayer.",
+            "en": "This option requires compatible API and Admin versions; its inclusion in this guide does not confirm deployment. With permission to manage orders and a restaurant located in France, open Settings → Delivery → Add zone. Name the zone, choose Postal codes (France), and enter 75016 to cover that exact postal code only. Paste multiple five-digit codes separated by spaces, commas or line breaks (up to 1,000); keep leading zeros, for example 01000. Set the fee, minimum, calendar and active state, then Save. Reopen the zone to verify the codes and test addresses on both sides of its boundary before enabling it. 75016 is a postal code; 75 is the Paris department. Departments (France) also accepts 2A, 2B and three-digit overseas codes such as 971, but covers the entire department. Postal zones take precedence over other zones for fees, minimums and calendars; another active zone can still cover an address whose postal code does not match. The geocoding service verifies postal metadata from the address; city text or coordinates alone are insufficient. If a postal code cannot be verified, refine the address and try again. Invalid input is not saved; after an uncertain save response, use Verify saved data before retrying.",
+            "he": "האפשרות דורשת גרסאות תואמות של ה-API וממשק הניהול; הופעתה במדריך אינה אישור שהגרסה נפרסה. עם הרשאה לניהול הזמנות ובעסק שמיקומו בצרפת, פתחו הגדרות → משלוח → הוסף אזור. תנו שם, בחרו מיקודים (צרפת) והזינו 75016 כדי לכלול רק את המיקוד הזה. לכמה אזורים הדביקו מיקודים בני חמש ספרות, מופרדים ברווחים, בפסיקים או בשורות חדשות (עד 1,000), ושמרו אפסים מובילים, למשל 01000. הגדירו תעריף, מינימום, לוח ומצב פעיל ולחצו שמור. פתחו שוב ובדקו את הקודים ואת הכתובות משני צדי הגבול לפני ההפעלה. 75016 הוא מיקוד; 75 הוא מחוז פריז. מחוזות (צרפת) מקבל גם 2A, 2B וקודים בני שלוש ספרות כמו 971, אך כולל את המחוז כולו. כללי המיקוד קודמים לאזורים אחרים לתעריף, מינימום ולוח; אזור פעיל אחר עדיין יכול לכלול כתובת שהמיקוד שלה שונה. שירות האיתור מאמת את המיקוד מהכתובת; טקסט עיר או קואורדינטות בלבד אינם מספיקים. אם לא ניתן לאמת מיקוד, דייקו את הכתובת ונסו שוב. קלט שגוי אינו נשמר; אחרי תשובת שמירה לא ודאית השתמשו באימות הנתונים השמורים לפני ניסיון נוסף."
+          }
+        },
+        {
+          "id": "postal-day-groups",
+          "title": {
+            "fr": "Répartir les codes postaux par jours et tarif",
+            "en": "Group postal codes by delivery days and fee",
+            "he": "חלוקת מיקודים לפי ימים ותעריף"
+          },
+          "instructions": {
+            "fr": "Créez vous-même un groupe par combinaison de liste de codes, jours et tarif : par exemple une zone du lundi au jeudi, une autre le vendredi et le dimanche, puis une zone à tarif différent pour ses propres codes. Dans chaque zone, collez uniquement sa liste de codes dans Codes postaux, réglez les frais dans la devise de l’établissement, choisissez le mode de créneau, les jours et les heures, puis enregistrez. Les doublons d’une liste sont retirés ; un même code peut rester dans plusieurs zones. Pour ce code, les calendriers se cumulent uniquement si le tarif, le minimum, le mode de créneau et l’alternative retrait sont identiques. Ainsi un groupe lundi–jeudi et un groupe vendredi/dimanche au même tarif proposent leurs six jours sans ouvrir le samedi ; les codes propres à un seul groupe gardent ses jours. Les zones enregistrées restent distinctes et aucune liste commerciale n’est ajoutée automatiquement. Les jours, tarifs et codes de cet exemple sont à configurer, pas des réglages préchargés. Les tarifs ou modes différents pour un même code ne sont pas cumulés : la priorité existante de la zone la plus ancienne reste applicable. Évitez ces recouvrements si vous avez besoin de tarifs différents selon le jour. Les fenêtres réellement superposées gardent aussi la priorité de la zone la plus ancienne ; les autres jours ne disparaissent pas. Un changement d’adresse d’une commande recontrôle son calendrier, même si une zone lui reste commune.",
+            "en": "Create each group yourself for a combination of postal list, days and fee: for example one Monday–Thursday zone, another Friday/Sunday zone, then a different-fee zone for its own postal codes. In each zone, paste only its postal list, set the fee in the restaurant currency, choose the booking mode, weekdays and hours, then save. Duplicates within one list are removed; the same code may remain in several zones. For that code, calendars combine only when the fee, minimum, booking mode and pickup alternative are identical. A Monday–Thursday group and a Friday/Sunday group with the same fee therefore offer six days without opening Saturday; codes belonging to just one group keep its days. Saved zones remain separate and no business list is inserted automatically. The example days, fees and codes require configuration and are not preloaded defaults. Different fees or modes for the same code do not combine: existing oldest-zone priority still applies. Avoid those overlaps if you need different prices by weekday. Actually overlapping windows also retain oldest-zone priority without hiding the other weekdays. Changing an order address rechecks its calendar even when one zone remains shared.",
+            "he": "צרו בעצמכם קבוצה לכל שילוב של רשימת מיקודים, ימים ותעריף: לדוגמה אזור לימי שני עד חמישי, אזור נוסף לשישי וראשון, ואזור בתעריף אחר למיקודים משלו. בכל אזור הדביקו רק את רשימת המיקודים שלו, הגדירו תעריף במטבע העסק, בחרו מצב תזמון, ימים ושעות ושמרו. כפילויות בתוך רשימה מוסרות; אותו מיקוד יכול להופיע בכמה אזורים. לוחות הזמנים של אותו מיקוד מצטברים רק כשהתעריף, המינימום, מצב התזמון ואפשרות האיסוף החלופית זהים. כך קבוצה לשני–חמישי וקבוצה לשישי וראשון באותו תעריף מציעות שישה ימים בלי לפתוח את שבת; מיקודים שנמצאים רק בקבוצה אחת שומרים את הימים שלה. האזורים השמורים נשארים נפרדים ולא נוספת רשימה מסחרית אוטומטית. הימים, התעריפים והמיקודים בדוגמה דורשים הגדרה ואינם ברירות מחדל טעונות מראש. תעריפים או מצבי תזמון שונים לאותו מיקוד אינם מצטברים: העדיפות הקיימת של האזור הוותיק נשארת. הימנעו מחפיפה כזו אם נדרשים תעריפים שונים לפי יום. חלונות שחופפים בפועל שומרים גם הם את עדיפות האזור הוותיק, בלי להסתיר ימים אחרים. שינוי כתובת הזמנה בודק מחדש את הלוח גם כשאחד האזורים נשאר משותף."
           }
         },
         {
@@ -31018,7 +31075,40 @@
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
+      "procedureUpdatedAt": "2026-10-28",
       "evidence": [
+        {
+          "service": "foodyserver",
+          "file": "internal/common/delivery_schedule.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/common/models.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/delivery/geoapify.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/delivery/geocode.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/delivery/google_geocode.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/delivery/optimizer.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/delivery/postal_calendars.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/delivery/tours.go"
+        },
         {
           "service": "foodyserver",
           "file": "internal/delivery/zones.go"
@@ -31026,6 +31116,10 @@
         {
           "service": "foodyserver",
           "file": "internal/delivery/zones_eval.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/delivery_schedule.go"
         },
         {
           "service": "foodyadmin",
@@ -31042,6 +31136,18 @@
         {
           "service": "foodyadmin",
           "file": "src/components/delivery/ZoneScheduleFields.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/lib/api.ts"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/lib/delivery-zone-state.ts"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/lib/i18n.tsx"
         }
       ]
     },
@@ -31112,9 +31218,9 @@
             "he": "בחירת משלוחים לתאריך אחד"
           },
           "instructions": {
-            "en": "Choose the route date and review available delivery orders. Do not combine scheduled deliveries from another service date into the route.",
-            "fr": "Choisissez la date de tournée et vérifiez les commandes disponibles. Ne mélangez pas les livraisons planifiées d’un autre jour de service.",
-            "he": "בחרו תאריך מסלול ובדקו הזמנות משלוח זמינות. אין לצרף משלוחים מתוזמנים מתאריך שירות אחר."
+            "en": "Choose the route date and review available delivery orders. Do not combine scheduled deliveries from another service date into the route. Orders retain the calendar verified for their address: postal groups with the same fee and identical options can combine weekdays without changing saved zones or opening another day. A new address can reduce those days even when one zone remains shared; choose a still-eligible window. This eligibility precedes route planning and does not change stop order. See [postal weekday groups](/en/help/delivery/zones-and-schedules#postal-day-groups).",
+            "fr": "Choisissez la date de tournée et vérifiez les commandes disponibles. Ne mélangez pas les livraisons planifiées d’un autre jour de service. Les commandes restent soumises au calendrier validé pour leur adresse : des groupes de codes postaux au même tarif et aux options identiques peuvent cumuler leurs jours, sans changer les zones enregistrées ni ouvrir un autre jour. Une nouvelle adresse peut réduire ces jours même si une zone reste commune ; choisissez un créneau encore autorisé. Cette éligibilité précède la planification de la tournée et ne modifie pas son ordre d’arrêts. Voir [les groupes de jours par code postal](/fr/help/delivery/zones-and-schedules#postal-day-groups).",
+            "he": "בחרו תאריך מסלול ובדקו הזמנות משלוח זמינות. אין לצרף משלוחים מתוזמנים מתאריך שירות אחר. ההזמנות נשארות כפופות ללוח שאומת לכתובת: קבוצות מיקוד באותו תעריף ועם אפשרויות זהות יכולות לצרף ימים בלי לשנות אזורים שמורים או לפתוח יום נוסף. כתובת חדשה יכולה לצמצם ימים גם כשאזור אחד נשאר משותף; בחרו חלון שעדיין מותר. בדיקת הזכאות קודמת לתכנון הסבב ואינה משנה סדר עצירות. ראו [קבוצות ימים לפי מיקוד](/he/help/delivery/zones-and-schedules#postal-day-groups)."
           }
         },
         {
@@ -31342,7 +31448,7 @@
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-10-25",
+      "procedureUpdatedAt": "2026-10-28",
       "updatedAt": "2026-10-20",
       "evidence": [
         {
@@ -31428,6 +31534,10 @@
         {
           "service": "foodyserver",
           "file": "internal/delivery/plan_settings.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/delivery/postal_calendars.go"
         },
         {
           "service": "foodyserver",
@@ -44032,6 +44142,10 @@
         {
           "service": "foodyserver",
           "file": "internal/delivery/plan_settings.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/delivery/postal_calendars.go"
         },
         {
           "service": "foodyserver",
@@ -69892,6 +70006,8 @@
         "cityOrPostal",
         "deliveryDepartments",
         "deliveryDepartmentsHint",
+        "deliveryPostalCodes",
+        "deliveryPostalCodesHint",
         "deliveryUseSaved",
         "deliveryVerifySaved",
         "deliveryZoneCoverageTitle",
@@ -69930,6 +70046,7 @@
         "zoneType_cities",
         "zoneType_departments",
         "zoneType_polygon",
+        "zoneType_postal_codes",
         "zoneType_radius"
       ],
       "actions": [
@@ -82110,6 +82227,7 @@
       "features": [
         "customers-profiles",
         "payments-how-payments-work",
+        "delivery-zones",
         "pos-payments",
         "shared-runtime",
         "menu-product-photos"
@@ -91456,8 +91574,8 @@
   "coverage": {
     "sharedRuntimeFiles": 410,
     "features": 103,
-    "operations": 755,
-    "sourceFiles": 2219,
+    "operations": 757,
+    "sourceFiles": 2220,
     "surfaces": 2057,
     "unclassifiedRoutes": []
   }

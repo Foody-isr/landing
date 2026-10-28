@@ -767,7 +767,7 @@ restaurant isolation, tour guards and the three geocoding adapters. FR/HE/EN
 browser fixtures verify create, readback, edits and invalid department input.
 
 Retain Web, POS and Backoffice inventory blocks and surfaces exactly from the
-Landing develop baseline 7d178190cc27e2e27b55c0b8d546148d6b00b1d0; these consumers receive delivery decisions
+Landing develop baseline e79a046cc2689308687896e9ed4a70d4f429f357; these consumers receive delivery decisions
 through existing server contracts and have no zone-authoring model to update.
 Copy the regenerated public corpus into API before scanning. WORKSPACE references
 support local preparation only; immutable documentation pins require an explicitly
