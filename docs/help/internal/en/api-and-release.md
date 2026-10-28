@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-27'
+updatedAt: '2026-10-28'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -165,3 +165,9 @@ Existing series-stock routes accept transitions among count, measure and per_var
 ## Confirm a rule with stock
 
 Staff POST /api/v1/menu/items/:id/sales-stock/availability and POST /api/v1/menu/items/:id/sales-stock/restock accept optional availability_rule_id. A positive value must identify a non-deleted rule owned by the authenticated restaurant; zero restores inheritance, and omission retains the assignment. The first route accepts a rule without override: no counters, commitments, forced state or other product fields are rewritten. With an override or stock adjustment, the whole request commits in one transaction under the reservation lock. A stale revision, foreign or deleted rule, or persistence error rolls back the entire request. Existing menu.edit and restaurant scoping remain; no new permission, route or migration. Deploy API before the Admin that saves the rule on Apply. A confirmed write followed by a failed read recovers by reloading rather than replaying stock. Omitted fields preserve existing clients.
+
+<span id="explicit-recipe-stock-source" />
+
+## Explicit stock source and reservations
+
+Migration 279 adds stock_from_recipe to menu_items and item_stock_series, default false: existing configurations retain their behavior. POST /api/v1/menu/items/:id/sales-stock/restock with stock_source=recipe, empty mode and unit, null quantity and expected_revision actually selects recipe calculation. Optional availability_rule_id can commit in the same transaction under the stock/order lock. A conflict, foreign/deleted rule or error rolls back everything. Dormant manual counters and order snapshots are retained; new calculations and reservations ignore their limit. Returning to manual stock reactivates counters and adopts new orders without losing ingredient/preparation draws. Existing series conversions remain revision-checked and atomic. A global-counter conversion that cannot be proven from historical draws fails with stock_conversion_unavailable rather than reinterpreting them. Ready-stock sale must be disabled before selecting recipe stock. Public responses normalize inactive manual fields; staff receive stored_mode/stored_unit and recipe_configured for the editor. Other clients ignore added fields and retain their contracts. No permission or environment change. Deploy API before Admin, then promote the same development-verified artifacts. GET /api/v1/availability/items/:id/preview accepts optional serie_date to explain the displayed series; an invalid date returns 400. Details and status use the same active source and counters without mutation.
