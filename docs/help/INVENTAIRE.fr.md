@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-10-18.
+Révision du relevé : 2026-10-28.
 
-103 fiches de fonctionnalités, 757 procédures/sous-fonctionnalités, dont 94 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2220 fichiers applicatifs et 2057 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+104 fiches de fonctionnalités, 771 procédures/sous-fonctionnalités, dont 95 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2227 fichiers applicatifs et 2064 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,11 +10,11 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 576 | 874 | b0c7282fbeb2 ; versioned |
-| foodyadmin | 768 | 777 | d8f3be9a3a4c ; versioned |
-| foodyweb | 342 | 169 | c42a6114fac9 ; versioned |
+| foodyserver | 579 | 878 | cc4d62c7b2cd ; versioned |
+| foodyadmin | 769 | 778 | 92bda653dddf ; versioned |
+| foodyweb | 345 | 171 | 31eafb06d43a ; versioned |
 | foodypos | 363 | 166 | 51f48a775eab ; versioned |
-| foodylanding | 127 | 21 | f5006e94ada9 ; versioned |
+| foodylanding | 127 | 21 | 076e5fc0e61e ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
 
 ## getting-started
@@ -539,6 +539,7 @@ Identifiant : `order-types`. Public : public. Disponibilité : available. Servic
 - [Garder le contexte client privé sur l’addition](../../src/content/help/fr/orders/order-types.mdx#pos-private-guest-context)
 - [Piloter manuellement les commandes hebdomadaires](../../src/content/help/fr/orders/order-types.mdx#manual-weekly-ordering)
 - [Vérifier l’avancement selon le type de commande](../../src/content/help/fr/orders/order-types.mdx#operational-progress-by-type)
+- [Intégration du panier préparé Sumit](../../src/content/help/fr/orders/order-types.mdx#prepared-sumit-checkout-integration)
 
 ### [Prendre une commande sur la caisse](../../src/content/help/fr/orders/taking-an-order-pos.mdx)
 
@@ -562,6 +563,7 @@ Identifiant : `pos-order-entry`. Public : public. Disponibilité : available. Se
 - [Vérifier les choix conditionnels d’un article](../../src/content/help/fr/orders/taking-an-order-pos.mdx#conditional-item-choices)
 - [Prendre une commande sur le terminal mobile](../../src/content/help/fr/orders/taking-an-order-pos.mdx#mobile-terminal)
 - [Retrouver un brouillon non envoyé après redémarrage](../../src/content/help/fr/orders/taking-an-order-pos.mdx#resume-local-draft)
+- [Intégration du panier préparé Sumit](../../src/content/help/fr/orders/taking-an-order-pos.mdx#prepared-sumit-checkout-integration)
 
 ### [Consulter et modifier une commande](../../src/content/help/fr/orders/order-details.mdx)
 
@@ -583,6 +585,7 @@ Identifiant : `order-detail`. Public : public. Disponibilité : available. Servi
 - [Envoyer un message WhatsApp pour une ou plusieurs commandes](../../src/content/help/fr/orders/order-details.mdx#unified-order-whatsapp)
 - [Image du modèle WhatsApp](../../src/content/help/fr/orders/order-details.mdx#meta-template-image-preview)
 - [Choisir le destinataire WhatsApp du client](../../src/content/help/fr/orders/order-details.mdx#customer-whatsapp-recipient)
+- [Commandes préparées avec Sumit](../../src/content/help/fr/orders/order-details.mdx#prepared-sumit-internal-orders)
 
 ### [Calendrier du restaurant et exceptions](../../src/content/help/fr/orders/calendar.mdx)
 
@@ -661,6 +664,15 @@ Identifiant : `order-lifecycle`. Public : public. Disponibilité : available. Se
 
 - [Distinguer addition, paiement, préparation et remise](../../src/content/help/fr/orders/payment-preparation-and-handoff.mdx#order-lifecycle-axes)
 
+### [Préparer une commande interne et encaisser avec Sumit](../../src/content/help/fr/orders/internal-sumit-checkout.mdx)
+
+Identifiant : `orders-internal-sumit-checkout`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb.
+
+- [Vérifier la disponibilité et préparer le panier](../../src/content/help/fr/orders/internal-sumit-checkout.mdx#sumit-internal-prerequisites)
+- [Transmettre au client un lien de panier Foody](../../src/content/help/fr/orders/internal-sumit-checkout.mdx#sumit-customer-basket-link)
+- [Saisir la carte depuis Admin](../../src/content/help/fr/orders/internal-sumit-checkout.mdx#sumit-admin-hosted-card)
+- [Reprendre après une interruption](../../src/content/help/fr/orders/internal-sumit-checkout.mdx#sumit-checkout-recovery)
+
 ## payments
 
 ### [Comprendre le statut d’un paiement](../../src/content/help/fr/payments/how-payments-work.mdx)
@@ -678,6 +690,7 @@ Identifiant : `payments-how-payments-work`. Public : public. Disponibilité : av
 - [Vérifier une facture Invoice4U détaillée](../../src/content/help/fr/payments/how-payments-work.mdx#invoice4u-order-lines)
 - [Réservations après paiement tardif](../../src/content/help/fr/payments/how-payments-work.mdx#carte-series-stock)
 - [Accès aux nouveaux réglages](../../src/content/help/fr/payments/how-payments-work.mdx#related-service-controls)
+- [Commandes préparées avec Sumit](../../src/content/help/fr/payments/how-payments-work.mdx#prepared-sumit-internal-orders)
 
 ### [Encaisser sur la caisse](../../src/content/help/fr/payments/pos-checkout.mdx)
 
@@ -704,6 +717,7 @@ Identifiant : `pos-payments`. Public : public. Disponibilité : available. Servi
 - [Confirmer une vente à emporter payée en caisse](../../src/content/help/fr/payments/pos-checkout.mdx#counter-completion)
 - [Retrouver Payer sur mobile](../../src/content/help/fr/payments/pos-checkout.mdx#mobile-terminal)
 - [Lire les transactions et rapports sur mobile](../../src/content/help/fr/payments/pos-checkout.mdx#mobile-terminal-pages)
+- [Sumit dans Admin](../../src/content/help/fr/payments/pos-checkout.mdx#prepared-sumit-checkout-integration)
 
 ### [Comprendre un refus d’accès à la caisse](../../src/content/help/fr/payments/cash-access.mdx)
 
@@ -919,6 +933,7 @@ Identifiant : `fulfillment-policy`. Public : public. Disponibilité : available.
 - [Afficher automatiquement la série actuelle](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#weekly-series-rollover)
 - [Piloter manuellement les commandes hebdomadaires](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#manual-weekly-ordering)
 - [Distinguer réglage actuel et progression enregistrée](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#recorded-lifecycle-and-policy)
+- [Intégration du panier préparé Sumit](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#prepared-sumit-checkout-integration)
 
 ### [Comportement POS, services et ajustements](../../src/content/help/fr/settings/pos-behavior.mdx)
 
@@ -1200,6 +1215,7 @@ Identifiant : `guest-account-tracking`. Public : public. Disponibilité : availa
 - [Comprendre les données de connexion](../../src/content/help/fr/guest/tracking-and-account.mdx#sign-in-privacy)
 - [Se connecter pendant la commande](../../src/content/help/fr/guest/tracking-and-account.mdx#optional-entry-access)
 - [Corriger un téléphone mémorisé](../../src/content/help/fr/guest/tracking-and-account.mdx#saved-phone-validation)
+- [Ouvrir un panier préparé pour Sumit](../../src/content/help/fr/guest/tracking-and-account.mdx#prepared-sumit-basket)
 
 ### [Commander avec le QR de table](../../src/content/help/fr/guest/table-qr.mdx)
 
@@ -1244,6 +1260,7 @@ Identifiant : `backoffice-entitlements`. Public : internal. Disponibilité : ava
 - [Vérifier affectations de fonctions et plans](internal/fr/features-and-payments.md#entitlements)
 - [Configurer l’infrastructure de paiement](internal/fr/features-and-payments.md#providers)
 - [Attribuer les quotas des services externes](internal/fr/features-and-payments.md#external-api-allocation)
+- [Intégration du panier préparé Sumit](internal/fr/features-and-payments.md#prepared-sumit-checkout-integration)
 
 ### [Segments et prospects internes](internal/fr/market-and-prospects.md)
 
@@ -1300,6 +1317,7 @@ Identifiant : `platform-api`. Public : internal. Disponibilité : available. Ser
 - [Source explicite du stock et réservations](internal/fr/api-and-release.md#explicit-recipe-stock-source)
 - [Contrat borné de progression et de reprise](internal/fr/api-and-release.md#order-lifecycle-scoped-contract)
 - [Vérifier la période personnelle avant déconnexion](internal/fr/api-and-release.md#personal-shift-end-preflight)
+- [Intégration du panier préparé Sumit](internal/fr/api-and-release.md#prepared-sumit-checkout-integration)
 
 ### [Aperçus internes et alias de routes](internal/fr/design-previews.md)
 
@@ -1328,6 +1346,7 @@ Identifiant : `shared-runtime`. Public : internal. Disponibilité : available. S
 - [Vérifier les surfaces du terminal mobile](internal/fr/shared-runtime.md#mobile-terminal)
 - [Vérifier les pages compactes du terminal](internal/fr/shared-runtime.md#mobile-terminal-pages)
 - [Vérifier la série courante sans commande](internal/fr/shared-runtime.md#weekly-series-rollover)
+- [Intégration du panier préparé Sumit](internal/fr/shared-runtime.md#prepared-sumit-checkout-integration)
 
 ## Traçabilité détaillée
 

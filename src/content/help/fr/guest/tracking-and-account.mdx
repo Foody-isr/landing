@@ -5,7 +5,7 @@ apps: foodyweb
 tags:
   - guest
   - guest-account-tracking
-updatedAt: '2026-10-27'
+updatedAt: '2026-10-28'
 featureId: guest-account-tracking
 audience: public
 releaseStatus: available
@@ -65,3 +65,9 @@ Lorsque l’invitation est désactivée, un lien discret Se connecter reste disp
 ## Corriger un téléphone mémorisé
 
 Un numéro mémorisé ou déjà vérifié reprend son propre indicatif, même si son pays diffère de celui du restaurant. Un champ vierge utilise le pays du restaurant. Au checkout, un téléphone mémorisé doit passer la même validation qu’un nouveau numéro. S’il est invalide, les coordonnées restent ouvertes pour correction. Choisissez le bon indicatif pays ou saisissez le numéro international avec +, puis vérifiez la commande avant de confirmer. Le format enregistré est international et compatible avec les envois WhatsApp. Ce contrôle ne prouve ni la possession du numéro ni l’inscription à WhatsApp et ne change pas votre méthode de connexion. Pour enregistrer les coordonnées corrigées dans le compte, utilisez la préférence de mémorisation proposée au checkout.
+
+<span id="prepared-sumit-basket" />
+
+## Ouvrir un panier préparé pour Sumit
+
+Un lien Foody privé préparé par le restaurant ouvre son panier sans charger de profil de compte ni d’adresses enregistrées. Renseignez vos coordonnées, vérifiez le total de livraison calculé selon l’adresse puis continuez vers Sumit. Après confirmation du paiement par l’API, les pages habituelles de confirmation et de suivi utilisent le jeton privé de commande. Voir [le parcours Sumit préparé](/fr/help/orders/internal-sumit-checkout).

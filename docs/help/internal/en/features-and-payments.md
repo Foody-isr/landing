@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - backoffice-entitlements
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-28'
 featureId: backoffice-entitlements
 audience: internal
 releaseStatus: available
@@ -45,3 +45,9 @@ Use protected provider/Cibus/hosted-wallet settings only for the approved enviro
 ## Allocate external-service allowances
 
 As superadmin open Usage and quotas to compare restaurants, select a service, then Review allocation. The restaurant detail page also links here. Enter whole monthly limits; zero pauses a service. Supply a reason and Save allocation. Use default allowances only prepares initial values in the form and still requires saving. Changes never reset usage or bypass provider protection. Each change is audited with actor and reason. After an unconfirmed save or conflict, explicitly reload the current allocation before retrying; inputs remain until you reload. Leaving with changes warns before discarding them. Environments retain their own restaurant counters while the shared Google budget continues protecting the global account.
+
+<span id="prepared-sumit-checkout-integration" />
+
+## Prepared Sumit checkout integration
+
+The prepared internal-order Sumit capability derives from the restaurant’s active provider and valid configured credentials. It adds no plan switch or onboarding control. A provider change disables opening these pending checkouts; it never silently sends them to another processor. Coordinate the API/Admin/Web rollout and the new Sumit guide.
