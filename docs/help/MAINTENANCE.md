@@ -882,7 +882,7 @@ contracts; every inventoried source digest is verified against its immutable
 checkpoint. Service contracts pin the reviewed immutable Landing commit before
 remote CI or release. Synchronize the exported support corpus before scanning API sources.
 
-## Local Sumit internal checkout preparation (28 October 2026)
+## Sumit internal checkout release (28 October 2026)
 
 This preparation changes API, Admin, guest Web and the matching FR/HE/EN guides.
 Only the active, configured Sumit provider enables staff-created private basket
@@ -899,9 +899,9 @@ not saved for later use by either new flow.
 Retain POS, Backoffice and unchanged Landing application sources from the current
 Landing develop inventory, rather than revalidating unrelated worktrees. Refresh
 only API/Admin/Web source inventories, render all translations, export the public
-corpus and copy it into API before its final source scan. The new guide stays
-local-release-unverified. Local WORKSPACE pins support preparation only; an
-immutable documentation commit, complete validation and coordinated API-first
-development verification are required before remote CI or publication. No commit,
-push, provider transaction, customer message or production deployment is authorized
-by this preparation. Browser evidence uses synthetic orders and stubs Sumit.
+corpus and copy it into API before its final source scan. Publish the new guide with the compatible API/Admin/Web release. Pin the final
+reviewed Landing commit in each product contract before PR readiness. The owner
+authorized development deployment followed by production promotion on 28 October.
+Verify development first, then promote those exact successful artifacts without
+rebuilding. Provider acceptance is verified separately from the browser regressions,
+which use synthetic orders and stub Sumit; no production test charge is needed.

@@ -10,11 +10,11 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 579 | 878 | ae1225e2862c ; versioned |
-| foodyadmin | 769 | 778 | 71ddbaaf87ef ; versioned |
-| foodyweb | 345 | 171 | 17ac460c5467 ; versioned |
+| foodyserver | 579 | 878 | 24feee4b31af ; versioned |
+| foodyadmin | 769 | 778 | 697f50cd53b8 ; versioned |
+| foodyweb | 345 | 171 | 31eafb06d43a ; versioned |
 | foodypos | 363 | 166 | 51f48a775eab ; versioned |
-| foodylanding | 127 | 21 | f5006e94ada9 ; versioned |
+| foodylanding | 127 | 21 | 076e5fc0e61e ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
 
 ## getting-started
@@ -666,7 +666,7 @@ Identifiant : `order-lifecycle`. Public : public. Disponibilité : available. Se
 
 ### [Préparer une commande interne et encaisser avec Sumit](../../src/content/help/fr/orders/internal-sumit-checkout.mdx)
 
-Identifiant : `orders-internal-sumit-checkout`. Public : public. Disponibilité : local-release-unverified. Services : foodyserver, foodyadmin, foodyweb.
+Identifiant : `orders-internal-sumit-checkout`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb.
 
 - [Vérifier la disponibilité et préparer le panier](../../src/content/help/fr/orders/internal-sumit-checkout.mdx#sumit-internal-prerequisites)
 - [Transmettre au client un lien de panier Foody](../../src/content/help/fr/orders/internal-sumit-checkout.mdx#sumit-customer-basket-link)
