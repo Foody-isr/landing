@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-29.
 
-104 fiches de fonctionnalités, 800 procédures/sous-fonctionnalités, dont 95 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2260 fichiers applicatifs et 2073 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+104 fiches de fonctionnalités, 801 procédures/sous-fonctionnalités, dont 95 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2263 fichiers applicatifs et 2072 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,10 +10,10 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 600 | 882 | 3f2635219c78 ; versioned |
-| foodypos | 368 | 166 | 78111933f776 ; versioned |
-| foodyadmin | 773 | 781 | 4be0eb6d6184 ; versioned |
-| foodyweb | 348 | 173 | 168ddb68c241 ; versioned |
+| foodyserver | 600 | 882 | f18d1425319b ; versioned |
+| foodypos | 368 | 166 | 5d88d1dfb923 ; versioned |
+| foodyadmin | 775 | 781 | 8676071bc4fe ; versioned |
+| foodyweb | 349 | 172 | 0a3db85456d2 ; versioned |
 | foodylanding | 127 | 21 | f96b686bbb16 ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
 
@@ -513,6 +513,7 @@ Identifiant : `orders-managing-orders`. Public : public. Disponibilité : availa
 - [Afficher automatiquement la série actuelle](../../src/content/help/fr/orders/managing-orders.mdx#weekly-series-rollover)
 - [Séparer paiement, préparation et remise](../../src/content/help/fr/orders/managing-orders.mdx#order-lifecycle-guide)
 - [Vérifier les confirmations indépendantes](../../src/content/help/fr/orders/managing-orders.mdx#independent-lifecycle-confirmations)
+- [Finaliser une commande interne](../../src/content/help/fr/orders/managing-orders.mdx#internal-order-finalization)
 
 ### [Types de commandes et remise](../../src/content/help/fr/orders/order-types.mdx)
 

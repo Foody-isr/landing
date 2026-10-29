@@ -8,6 +8,31 @@ base. `docs/help/catalog/features.json` is the authored feature/procedure source
 Internal operator procedures render separately to `docs/help/internal` and never
 enter public browsing, search or the AI corpus.
 
+## Internal order finalization (29 October 2026)
+
+New order now finalizes inside the ticket after Continue. Explicit payment intents
+replace the ambiguous default-paid switch. Received cash/external card requires a
+fresh acknowledgement of the displayed amount; pay later stays unpaid. Sumit links
+allow optional contact details and recipient delivery calculation; hosted card entry
+opens after creation and trusts only existing API settlement. Provider capabilities,
+tenant permissions, production gates and the guest storefront theme/cart are retained.
+Back preserves customer/date, not stale discounts or delivery quotes. Ten-second Undo
+restores a line with its draft-price warning and checkout block. Compact item tiles,
+collapsed secondary controls, a fixed action footer and the existing navigation
+collapse are covered by synthetic desktop/mobile, RTL and dark-theme browser checks.
+No real payment, production order or customer message is used for UI acceptance.
+
+Review and publish the managing-orders, order-details and internal-sumit-checkout
+procedures in French, Hebrew and English together with Admin. API changes only its
+embedded public corpus; no payment endpoint, schema or payment lifecycle changes.
+The shared native radio styling now leaves an unselected group visibly empty; this
+corrects presentation without changing checked values, keyboard use or form payloads.
+Scoped source reviews cover only unchanged feature classifications on shared files,
+not the changed order workflow documented in those three guides. Refresh Admin/API
+source evidence and retain all other service inventories/surfaces exactly from Landing
+develop `34d74115133fcb7c29eb1af68685d25178bffa0b`. Pin an immutable Landing commit in
+both affected services. Verify development, then promote those exact artifacts.
+
 ## Restaurant PIN scope and provisional fulfillment (28 October 2026)
 
 The personal code is unique among configured accounts within one restaurant;

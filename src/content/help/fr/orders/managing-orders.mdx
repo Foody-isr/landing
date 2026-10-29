@@ -44,15 +44,13 @@ Dans Transactions sur la caisse, sélectionnez un paiement confirmé et ouvrez u
 
 ## Rembourser ou annuler un paiement en ligne Verifone
 
-La section paiement d’une commande Admin permet le remboursement lié total ou partiel et le VOID total d’un paiement en ligne Verifone unique admissible, pour un propriétaire/responsable avec payments.manage. L’état fournisseur, le montant encaissé et l’historique vérifié déterminent l’admissibilité, pas un délai fixe de 24 heures. La préparation et la remise ne sont pas annulées et aucun bouton de remboursement terminal POS n’est ajouté. Un résultat inconnu reste réservé : vérifiez-le sans renvoyer l’opération. Les avoirs et annulations Invoice4U nécessitent un contrôle distinct. Voir [la procédure de paiement en ligne](/fr/help/payments/how-payments-work#verifone-admin-refund-void).
-
-Une vente ABS capturée encore en AUTHORISED/AUTHORIZED ou SETTLEMENT_REQUESTED n’est pas réglée : Admin affiche Montant annulable et uniquement Annuler tout le paiement, sans remboursement antérieur. Rembourser le paiement et Montant remboursable exigent un état réglé explicite ou un historique de remboursement partiel vérifié. Les états génériques APPROVED/COMPLETED, les contradictions et les preuves manquantes ne proposent aucune opération. Un changement d’état avant confirmation refuse l’action devenue obsolète ; le VOID n’est jamais remplacé automatiquement par un REFUND. Demande rejetée par Verifone signifie qu’aucune restitution n’est confirmée, pas nécessairement un refus de la banque.
+Dans le détail de commande, vérifiez le paiement Verifone avant toute annulation ou remboursement. Un résultat incertain doit être vérifié avant une nouvelle opération. Suivez [la procédure complète](/fr/help/orders/order-details#verifone-admin-money-operations).
 
 <span id="weight-hold-margin" />
 
 ## Vérifier le plafond de préautorisation au poids
 
-Pour les commandes en ligne au poids, ouvrez Réglages → Paiements & TVA avec settings.edit. Saisissez Marge d’empreinte au poids % de 0 à 100 puis enregistrez ; la valeur par défaut des nouveaux restaurants est 20. Un échec conserve la saisie. À 0 %, le montant estimé reste préautorisé. Seul le sous-total au poids reçoit une marge : 100 au poids + 50 fixes à 20 % donnent 170 préautorisés ; aucune marge sur la livraison. Le checkout affiche estimation, plafond temporaire et Confirmer et préautoriser, dans le thème du restaurant. Un plafond modifié exige une nouvelle revue et confirmation avant paiement ; une politique inconnue bloque l’autorisation. Les commandes déjà revues et empreintes existantes gardent leur plafond. Le personnel confirme les poids mesurés avant capture et progression ; un dépassement est signalé pour un paiement complémentaire, jamais débité automatiquement. Espèces/paiement ultérieur n’annoncent pas d’empreinte. Un prestataire autorisation/capture configuré est nécessaire ; validez capture partielle, libération et expiration avant production. Ce réglage ne change ni acompte/solde traiteur ni la restriction de sauvegarde d’une nouvelle carte pour une empreinte CST au poids.
+Pour les articles au poids, vérifiez le plafond de préautorisation puis confirmez les poids mesurés avant capture. Consultez les limites et la reprise dans [le parcours des paiements](/fr/help/payments/how-payments-work#weight-hold-margin).
 
 <span id="section-1" />
 
@@ -100,7 +98,7 @@ Dans la commande, l’aperçu d’un message Meta configuré avec photo/PDF affi
 
 ## Vérifier le rappel de livraison calculé
 
-Pour une livraison affectée à une tournée avec une marge client enregistrée, les rappels utilisent l’arrivée calculée plus cette durée, au lieu du large créneau planifié de la commande. Exemple : arrivée à 08:30 et marge de 90 minutes → 08:30–10:00. Réglez-la dans Commandes → Livraisons → répartition, à côté du temps à chaque arrêt, puis vérifiez l’aperçu WhatsApp manuel ou approuvé avant envoi. Le même créneau alimente Twilio, Meta et les rappels par étape ; les variables des modèles et la règle J-1 existantes restent applicables. Les anciennes tournées sans réglage conservent le créneau enregistré. Si le créneau ne peut être vérifié, recalculez puis rouvrez le rappel. Un aperçu approuvé qui a changé doit être revérifié avant envoi. Modifier un modèle seul ne calcule pas de tournée et ne change pas sa marge.
+Vérifiez le créneau client recalculé avant d’envoyer son rappel de livraison. La marge ne remplace pas les contraintes horaires de la commande. Voir [le réglage du rappel](/fr/help/orders/order-details#route-delivery-window).
 
 <span id="staff-order-library" />
 
@@ -207,3 +205,9 @@ Voir [addition, paiement, préparation et remise](/fr/help/orders/payment-prepar
 ## Vérifier les confirmations indépendantes
 
 Avant une remise par quantité ou une clôture, revoyez la portée exacte et les faits, séparément du paiement. Voir [la procédure complète](/fr/help/orders/payment-preparation-and-handoff).
+
+<span id="internal-order-finalization" />
+
+## Finaliser une commande interne
+
+Dans Nouvelle commande, choisissez Continuer pour finaliser dans le ticket. Sélectionnez explicitement lien, carte Sumit, paiement reçu ou paiement ultérieur selon vos droits. Aucun paiement reçu par défaut. Voir [le parcours complet](/fr/help/orders/order-details#create).
