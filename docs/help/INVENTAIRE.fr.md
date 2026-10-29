@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-18.
 
-104 fiches de fonctionnalités, 777 procédures/sous-fonctionnalités, dont 95 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2220 fichiers applicatifs et 2055 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+104 fiches de fonctionnalités, 779 procédures/sous-fonctionnalités, dont 95 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2220 fichiers applicatifs et 2055 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,10 +10,10 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 580 | 878 | d2cd167e60e3 ; versioned |
-| foodyadmin | 770 | 777 | b9e9010e07ae ; versioned |
-| foodyweb | 346 | 170 | eabb23987e97 ; versioned |
-| foodylanding | 127 | 21 | f96b686bbb16 ; versioned |
+| foodyserver | 580 | 878 | b2c1629362c7 ; versioned |
+| foodyadmin | 770 | 777 | 7a82e4455d74 ; versioned |
+| foodyweb | 346 | 170 | f93445945d80 ; versioned |
+| foodylanding | 127 | 21 | 0e83bbf13438 ; versioned |
 | foodypos | 363 | 166 | 51f48a775eab ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
 
@@ -587,6 +587,7 @@ Identifiant : `order-detail`. Public : public. Disponibilité : available. Servi
 - [Image du modèle WhatsApp](../../src/content/help/fr/orders/order-details.mdx#meta-template-image-preview)
 - [Choisir le destinataire WhatsApp du client](../../src/content/help/fr/orders/order-details.mdx#customer-whatsapp-recipient)
 - [Commandes préparées avec Sumit](../../src/content/help/fr/orders/order-details.mdx#prepared-sumit-internal-orders)
+- [Confirmer l’horaire d’une livraison de zone](../../src/content/help/fr/orders/order-details.mdx#confirm-zone-delivery-time)
 
 ### [Calendrier du restaurant et exceptions](../../src/content/help/fr/orders/calendar.mdx)
 
@@ -1324,6 +1325,7 @@ Identifiant : `platform-api`. Public : internal. Disponibilité : available. Ser
 - [Vérifier la période personnelle avant déconnexion](internal/fr/api-and-release.md#personal-shift-end-preflight)
 - [Intégration du panier préparé Sumit](internal/fr/api-and-release.md#prepared-sumit-checkout-integration)
 - [Panier préparé et présentation du restaurant](internal/fr/api-and-release.md#prepared-order-existing-cart)
+- [Calendriers de livraison par jours](internal/fr/api-and-release.md#delivery-weekday-contract)
 
 ### [Aperçus internes et alias de routes](internal/fr/design-previews.md)
 
