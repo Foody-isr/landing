@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "Foody-isr/admin",
-  "ref": "dc8f96b5c61fd104c2ae8f516cc9344c323d0885",
+  "ref": "b469b9ba27cb8a714c22a5edfa47f9350dd894ea",
   "observations": [
     {
       "id": "table-status-descriptions-source-contract",
@@ -375,6 +375,36 @@
         "<option value=\"all\">{t('yes')}</option><option value=\"disabled\">{t('no')}</option>",
         "!guaranteeSupported && draft.cash_payment_policy === 'trusted_only'",
         "cash_card_guarantee_required: event.target.checked"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "pink-coffee-template-control",
+      "source": "src/lib/website-v3/restaurant-themes.ts",
+      "required": [
+        "id: \"pink-coffee\", name: \"Pink Coffee\""
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "campaign-slide-controls",
+      "source": "src/components/website-v3/CampaignSlidesEditor.tsx",
+      "required": [
+        "t(\"campaignSlides\")",
+        "t(\"campaignAutoplay\")",
+        "min={5} max={30}",
+        "MAX_CAMPAIGN_SLIDES"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "campaign-compatible-renderer-controls",
+      "source": "src/components/website-v3/SiteDesign.tsx",
+      "required": [
+        "useCampaignCapability(\"campaign_hero\")",
+        "useCampaignCapability(\"campaign_products\")",
+        "useCampaignCapability(\"display_typography\")",
+        "disabled={theme.id === \"pink-coffee\" && !campaignSupported}"
       ],
       "forbidden": []
     }
@@ -871,6 +901,63 @@
         "en": [],
         "he": []
       }
+    },
+    {
+      "article": "website-qr/design-and-branding",
+      "required": {
+        "en": [
+          "Pink Coffee requires the compatible Website and Admin release.",
+          "Applying a template changes the draft only."
+        ],
+        "fr": [
+          "Pink Coffee nécessite les versions compatibles du site client et de l’Admin.",
+          "Appliquer un modèle modifie uniquement le brouillon."
+        ],
+        "he": [
+          "Pink Coffee דורשת גרסאות תואמות של אתר הלקוחות ושל Admin.",
+          "החלת תבנית משנה רק את הטיוטה."
+        ]
+      },
+      "forbidden": {}
+    },
+    {
+      "article": "website-qr/sections-and-media",
+      "required": {
+        "en": [
+          "add up to six slides",
+          "Autoplay is off by default",
+          "5 to 30 seconds"
+        ],
+        "fr": [
+          "ajoutez jusqu’à six diapositives",
+          "La lecture automatique est désactivée par défaut",
+          "5 à 30 secondes"
+        ],
+        "he": [
+          "הוסיפו עד שש שקופיות",
+          "ההפעלה האוטומטית כבויה כברירת מחדל",
+          "5 עד 30 שניות"
+        ]
+      },
+      "forbidden": {}
+    },
+    {
+      "article": "website-qr/customize-your-site",
+      "required": {
+        "en": [
+          "before Admin enables their controls",
+          "Existing presentations retain their normal editing and publication flow."
+        ],
+        "fr": [
+          "avant l’activation de leurs contrôles dans l’Admin",
+          "Les présentations existantes conservent leur parcours habituel de modification et publication."
+        ],
+        "he": [
+          "לפני הפעלת הפקדים ב-Admin",
+          "תצוגות קיימות שומרות על מסלול העריכה והפרסום הרגיל."
+        ]
+      },
+      "forbidden": {}
     }
   ]
 }

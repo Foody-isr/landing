@@ -8,6 +8,20 @@ base. `docs/help/catalog/features.json` is the authored feature/procedure source
 Internal operator procedures render separately to `docs/help/internal` and never
 enter public browsing, search or the AI corpus.
 
+## Pink Coffee coordinated release
+
+The reviewed Website/Admin change adds the Pink Coffee template, campaign hero
+carousel, campaign product cards and display headings. The website editor, design
+and sections guides describe the controls in French, Hebrew and English and
+require compatible versions. The owner authorized commits, pushes, PRs,
+development deployment and production promotion on 29 October 2026. Exact Admin,
+Web and API corpus source checkpoints are recorded before this documentation
+freeze. POS and Backoffice retain their baseline evidence. Consumers resolve
+Landing's self reference to this immutable documentation commit before CI.
+Verify Web before Admin and publish the guides with the compatible release;
+promote only the exact successful development artifacts. See
+[scope, compatibility and pin workflow](reviews/pink-coffee-template-local-preparation.md).
+
 ## Internal order finalization (29 October 2026)
 
 New order now finalizes inside the ticket after Continue. Explicit payment intents
