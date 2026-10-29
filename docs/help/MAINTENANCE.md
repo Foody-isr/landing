@@ -8,6 +8,31 @@ base. `docs/help/catalog/features.json` is the authored feature/procedure source
 Internal operator procedures render separately to `docs/help/internal` and never
 enter public browsing, search or the AI corpus.
 
+## Internal order finalization (29 October 2026)
+
+New order now finalizes inside the ticket after Continue. Explicit payment intents
+replace the ambiguous default-paid switch. Received cash/external card requires a
+fresh acknowledgement of the displayed amount; pay later stays unpaid. Sumit links
+allow optional contact details and recipient delivery calculation; hosted card entry
+opens after creation and trusts only existing API settlement. Provider capabilities,
+tenant permissions, production gates and the guest storefront theme/cart are retained.
+Back preserves customer/date, not stale discounts or delivery quotes. Ten-second Undo
+restores a line with its draft-price warning and checkout block. Compact item tiles,
+collapsed secondary controls, a fixed action footer and the existing navigation
+collapse are covered by synthetic desktop/mobile, RTL and dark-theme browser checks.
+No real payment, production order or customer message is used for UI acceptance.
+
+Review and publish the managing-orders, order-details and internal-sumit-checkout
+procedures in French, Hebrew and English together with Admin. API changes only its
+embedded public corpus; no payment endpoint, schema or payment lifecycle changes.
+The shared native radio styling now leaves an unselected group visibly empty; this
+corrects presentation without changing checked values, keyboard use or form payloads.
+Scoped source reviews cover only unchanged feature classifications on shared files,
+not the changed order workflow documented in those three guides. Refresh Admin/API
+source evidence and retain all other service inventories/surfaces exactly from Landing
+develop `34d74115133fcb7c29eb1af68685d25178bffa0b`. Pin an immutable Landing commit in
+both affected services. Verify development, then promote those exact artifacts.
+
 ## Restaurant PIN scope and provisional fulfillment (28 October 2026)
 
 The personal code is unique among configured accounts within one restaurant;
@@ -945,3 +970,22 @@ Contracts use WORKSPACE for local preparation only. A reviewed immutable Landing
 commit is still required before remote CI, publication or release; no commit or
 push is authorized in this task. Roll out migration 282/API before Admin/Web and
 coordinate the documentation with product availability.
+
+
+## Compact item sheet local preparation (29 October 2026)
+
+This preparation reviews Web, Admin, Landing and the API's synchronized public
+help corpus on isolated develop-based branches. Product-sheet layout changes and
+Admin's Compact presentation action are documented in FR/HE/EN under
+website-order-design/item-surface and guest-ordering/basket. Authored theme roles,
+fonts, ratios, fit and framing remain the source of truth; only a missing photo
+ratio defaults to 16:9. The isolated editor test publishes only to an in-memory
+fixture. Existing public websites and production settings are never mutated.
+
+POS and Backoffice inventory blocks/surfaces retain their exact evidence from
+Landing develop 359e59e0 and are not revalidated here. Copy the exported public
+corpus to API before scanning. The user authorized commits, development and production deployment on 29 October
+2026. Contracts pin the reviewed immutable Landing commit before remote CI;
+Landing retains its self-reference. Publish the guides with the verified Web/Admin rollout
+and matching support corpus. Source and synthetic browser checks do not certify
+a live order or production deployment.

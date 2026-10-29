@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-10-29.
+Révision du relevé : 2026-10-18.
 
-104 fiches de fonctionnalités, 776 procédures/sous-fonctionnalités, dont 95 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2228 fichiers applicatifs et 2062 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+104 fiches de fonctionnalités, 777 procédures/sous-fonctionnalités, dont 95 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2220 fichiers applicatifs et 2055 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,11 +10,11 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 580 | 878 | 1790cfcb41be ; versioned |
-| foodyadmin | 768 | 777 | 240bdddca0bf ; versioned |
+| foodyserver | 580 | 878 | d2cd167e60e3 ; versioned |
+| foodyadmin | 770 | 777 | b9e9010e07ae ; versioned |
 | foodyweb | 346 | 170 | eabb23987e97 ; versioned |
-| foodypos | 363 | 166 | 51f48a775eab ; versioned |
 | foodylanding | 127 | 21 | f96b686bbb16 ; versioned |
+| foodypos | 363 | 166 | 51f48a775eab ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
 
 ## getting-started
@@ -512,6 +512,7 @@ Identifiant : `orders-managing-orders`. Public : public. Disponibilité : availa
 - [Choisir le destinataire WhatsApp du client](../../src/content/help/fr/orders/managing-orders.mdx#customer-whatsapp-recipient)
 - [Afficher automatiquement la série actuelle](../../src/content/help/fr/orders/managing-orders.mdx#weekly-series-rollover)
 - [Séparer paiement, préparation et remise](../../src/content/help/fr/orders/managing-orders.mdx#order-lifecycle-guide)
+- [Finaliser une commande interne](../../src/content/help/fr/orders/managing-orders.mdx#internal-order-finalization)
 
 ### [Types de commandes et remise](../../src/content/help/fr/orders/order-types.mdx)
 
@@ -660,7 +661,7 @@ Identifiant : `pos-comp-void`. Public : public. Disponibilité : available. Serv
 
 ### [Addition, paiement, préparation et remise](../../src/content/help/fr/orders/payment-preparation-and-handoff.mdx)
 
-Identifiant : `order-lifecycle`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb, foodypos.
+Identifiant : `order-lifecycle`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb.
 
 - [Distinguer addition, paiement, préparation et remise](../../src/content/help/fr/orders/payment-preparation-and-handoff.mdx#order-lifecycle-axes)
 
@@ -1332,7 +1333,7 @@ Identifiant : `design-sandboxes`. Public : internal. Disponibilité : available.
 
 ### [Socle applicatif partagé](internal/fr/shared-runtime.md)
 
-Identifiant : `shared-runtime`. Public : internal. Disponibilité : available. Services : foodyadmin, foodyweb, foodypos, foodylanding, foodybackoffice.
+Identifiant : `shared-runtime`. Public : internal. Disponibilité : available. Services : foodyadmin, foodyweb, foodylanding, foodypos, foodybackoffice.
 
 - [Distinguer rapports, espèces et dépôt carte](internal/fr/shared-runtime.md#pos-reports-navigation)
 - [Rembourser ou annuler un paiement en ligne Verifone](internal/fr/shared-runtime.md#verifone-admin-money-operations)
