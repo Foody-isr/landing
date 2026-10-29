@@ -7,7 +7,7 @@ apps: foodyadmin
 tags:
   - payments
   - payment-configuration
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-29'
 featureId: payment-configuration
 audience: public
 releaseStatus: available
@@ -71,3 +71,11 @@ Sur la configuration CST de test validée avec Verifone, connectez-vous ou crée
 ## Vérifier une facture Invoice4U détaillée
 
 Lorsque l’équipe Foody a activé Invoice4U et un type de facture pour le commerçant, les paiements immédiats des commandes Verifone transmettent les lignes enregistrées : articles et quantités, variantes/options sélectionnées, base de formule et composants inclus, remise et livraison. Les prix enregistrés sont déjà TTC ; la TVA n’est pas ajoutée à nouveau. Le total des lignes doit égaler le paiement, sinon son lancement est bloqué. Le même détail accompagne un paiement ultérieur par carte enregistrée. Les anciennes commandes sans lignes catalogue et les opérations traiteur/table/capture conservent leur comportement documentaire existant. Un paiement approuvé ne prouve pas l’émission fiscale : vérifiez le document dans Verifone Central/Invoice4U et sa réception par le client. Ne recréez pas un paiement pour obtenir une facture manquante.
+
+<span id="stancer-cash-guarantee" />
+
+## Utiliser les espèces avec garantie bancaire facultative
+
+Après déploiement des versions compatibles de l’API, d’Admin et du site client, et validation avec votre compte Stancer, ouvrez Admin → Paramètres → Paiements avec settings.edit. Choisissez Autres moyens autorisés, puis Paiements en espèces → Clients de confiance uniquement ou Tous les clients. Activez Exiger une garantie par carte pour les espèces et enregistrez. La garantie est désactivée par défaut et réserve 100 % du total calculé par le serveur. Elle est proposée pour une intégration Stancer configurée en EUR ; les autres prestataires conservent leurs réglages espèces et ne proposent pas cette garantie. Le paiement exclusivement en ligne exclut toujours les espèces. Les restaurants existants conservent la règle des clients de confiance. Ceux-ci restent soumis à la garantie lorsqu’elle est exigée. Vérifiez les valeurs après enregistrement. Avant activation réelle, testez l’annulation d’une réservation déjà autorisée en sandbox et confirmez auprès de Stancer le délai de libération et les frais.
+
+Conditions d’activation et reprise : [garantie bancaire pour les espèces](/fr/help/payments/cash-card-guarantee).

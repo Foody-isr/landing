@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - settings
   - fulfillment-policy
-updatedAt: '2026-10-28'
+updatedAt: '2026-10-29'
 featureId: fulfillment-policy
 audience: public
 releaseStatus: available
@@ -145,3 +145,11 @@ Mode and workflow settings determine the actions available for new operations; t
 ## Prepared Sumit checkout integration
 
 For a compatible internal Sumit basket link, the recipient’s delivery address is checked against the restaurant’s current zone, fee and minimum. The chosen service date is retained and must fit any matched zone calendar. The final total is reviewed before payment. See [Sumit checkout](/en/help/orders/internal-sumit-checkout).
+
+<span id="stancer-cash-guarantee" />
+
+## Use cash with an optional card guarantee
+
+After deployment of the compatible API, Admin and guest Web and acceptance testing with your Stancer account, open Admin → Settings → Payments with settings.edit. Select Allow other methods, then Cash payments → Trusted customers only or All customers. Enable Require a card guarantee for cash and save. The guarantee is off by default and reserves 100% of the server-priced total. The option is offered for a configured Stancer integration in EUR; other providers retain their cash settings and do not advertise this guarantee. Online-payment-only always excludes cash. Existing restaurants keep their trusted-customer policy. Selecting trusted customers does not exempt them from a configured card guarantee. Verify settings after saving. Do not enable it on a real account before testing cancellation of an authorized sandbox reservation and confirming release timing and fees with Stancer.
+
+Acceptance and recovery: [cash card guarantees](/en/help/payments/cash-card-guarantee).

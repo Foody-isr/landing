@@ -2104,6 +2104,47 @@
           "components/CartOverlayController.tsx"
         ]
       }
+    },
+    {
+      "id": "stancer-cash-guarantee",
+      "article": "payments/cash-card-guarantee",
+      "audience": "public",
+      "selectors": {
+        "foodyserver": [
+          "internal/common/cash_guarantee.go",
+          "internal/common/models.go",
+          "internal/orders/cash_guarantee.go",
+          "internal/orders/internal_checkout.go",
+          "internal/orders/service.go",
+          "internal/orders/handler.go",
+          "internal/payment/cash_guarantee.go",
+          "internal/payment/resolver.go",
+          "internal/payment/stancer.go",
+          "internal/payment/stancer_reconcile.go",
+          "internal/payment/stancer_webhook.go",
+          "internal/restaurants/handler.go",
+          "internal/restaurants/service.go",
+          "cmd/server/main.go",
+          "migrations/282_stancer_cash_guarantee.sql"
+        ],
+        "foodyadmin": [
+          "src/app/[restaurantId]/settings/payments/page.tsx",
+          "src/components/orders/CashGuaranteePanel.tsx",
+          "src/components/orders/detail/context/MoneyPanel.tsx",
+          "src/lib/api.ts",
+          "src/lib/i18n.tsx",
+          "src/lib/orders/order-actions.ts"
+        ],
+        "foodyweb": [
+          "app/order/checkout/CheckoutFlow.tsx",
+          "app/r/[restaurantId]/payment/success/page.tsx",
+          "lib/checkout-payment.ts",
+          "lib/payment-return.ts",
+          "lib/i18n.tsx",
+          "lib/types.ts",
+          "services/api.ts"
+        ]
+      }
     }
   ]
 }

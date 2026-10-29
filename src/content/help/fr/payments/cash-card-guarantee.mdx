@@ -1,0 +1,37 @@
+---
+title: Paiement en espèces avec garantie bancaire Stancer
+description: Admin → Paramètres → Paiements et détail du paiement de commande
+apps: foodyadmin
+tags:
+  - payments
+  - stancer-cash-guarantee
+updatedAt: '2026-10-29'
+featureId: stancer-cash-guarantee
+audience: public
+releaseStatus: available
+---
+Admin → Paramètres → Paiements et détail du paiement de commande
+
+<span id="activate" />
+
+## Configurer les espèces et la garantie bancaire
+
+Après déploiement des versions compatibles de l’API, d’Admin et du site client, et validation avec votre compte Stancer, ouvrez Admin → Paramètres → Paiements avec settings.edit. Choisissez Autres moyens autorisés, puis Paiements en espèces → Clients de confiance uniquement ou Tous les clients. Activez Exiger une garantie par carte pour les espèces et enregistrez. La garantie est désactivée par défaut et réserve 100 % du total calculé par le serveur. Elle est proposée pour une intégration Stancer configurée en EUR ; les autres prestataires conservent leurs réglages espèces et ne proposent pas cette garantie. Le paiement exclusivement en ligne exclut toujours les espèces. Les restaurants existants conservent la règle des clients de confiance. Ceux-ci restent soumis à la garantie lorsqu’elle est exigée. Vérifiez les valeurs après enregistrement. Avant activation réelle, testez l’annulation d’une réservation déjà autorisée en sandbox et confirmez auprès de Stancer le délai de libération et les frais.
+
+<span id="checkout" />
+
+## Réserver la carte et conserver les espèces à recevoir
+
+Pour un retrait ou une livraison, le client éligible choisit Paiement en espèces avec garantie bancaire, vérifie le montant exact et accepte explicitement sa réservation puis son encaissement si la commande reste impayée en espèces. Il saisit sa carte sur la page Stancer et effectue l’authentification bancaire éventuelle. Foody confirme la commande après vérification de l’autorisation auprès de Stancer. La vente reste impayée : la réservation ne représente ni des espèces reçues ni un paiement carte encaissé. Cette version accepte les commandes à prix fixe pour un service dans les six jours. Les produits au poids et les dates plus lointaines exigent un autre paiement. Si le montant change, vérifiez le panier actualisé et acceptez le nouveau montant. Stancer documente sept jours pour une autorisation non encaissée ; la durée de vie d’une intention de paiement est une notion différente.
+
+<span id="collect" />
+
+## Enregistrer les espèces ou encaisser explicitement la carte
+
+Dans le détail de commande, le panneau Garantie bancaire distingue montant réservé, validité et état des sommes reçues. Enregistrez le montant total en espèces uniquement après réception physique, par le parcours d’encaissement autorisé existant ; une caisse physique ouverte exige toujours le contexte POS correspondant. Cet enregistrement empêche un encaissement carte concurrent et demande la libération. Une libération à confirmer n’annule pas les espèces reçues. Les paiements partiels et le remplacement de la garantie par une carte externe ou un virement sont refusés tant qu’elle est active. Si aucune espèce n’a été reçue, un personnel avec payments.manage peut choisir Encaisser la carte en garantie et confirmer explicitement le débit total. Aucun impayé ne déclenche un débit automatique. La vente devient payée par carte après confirmation de l’encaissement par Stancer. N’utilisez pas une correction manuelle de statut pour simuler ce paiement.
+
+<span id="recover" />
+
+## Vérifier une réservation incertaine
+
+Choisissez Vérifier la réservation pour relire l’état faisant autorité. Après un encaissement ou une annulation incertains, ne relancez pas le débit et ne créez pas une seconde commande : Foody conserve l’opération unique et vérifie son résultat. Une libération toujours non confirmée exige un contrôle dans Stancer par un opérateur autorisé ; son effet bancaire immédiat n’est pas promis. Annulez ou refusez par l’action habituelle de commande ; Foody exige une libération confirmée avant de terminer. Une garantie active bloque les modifications de panier, remise et livraison/retrait ; annulez avec libération la commande existante avant son remplacement. Changer de prestataire ne supprime aucune réservation existante. Si la règle enregistrée devient incompatible, elle reste visible pour désactivation explicite et le checkout espèces est bloqué. Déployez la migration 282 et l’API avant Admin et le site client ; coordonnez activation réelle et publication documentaire avec les tests d’acceptation. Une réservation active bloque aussi la suppression définitive de la commande. Un ancien lien Stancer peut afficher un message de paiement générique après annulation ; utilisez l’état de réservation vérifié par Foody comme preuve du résultat financier.

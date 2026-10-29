@@ -956,6 +956,27 @@ before scanning API evidence, pin immutable source and documentation commits,
 validate API before clients, then promote the exact development-tested artifacts
 under the authorized courier correction release workflow.
 
+## Stancer cash guarantee release (29 October 2026)
+
+The user authorized commits, pushes, development deployment and production
+promotion on 29 October 2026. API, Admin, guest Web and Landing are integrated
+with their current develop bases. POS and Backoffice retain the exact source
+blocks and surfaces from Landing develop cf656d64; they are not revalidated.
+Existing POS cash drawer rules remain authoritative.
+
+The separate Stancer sandbox hosted-card/3DS flow authorized 0.50 EUR with
+capture=false. DELETE then an independent GET confirmed cancellation of that
+same intent, amount and currency. No capture, Foody order, customer or tenant
+setting was created. This proves the provider sandbox path; real bank release
+timing and merchant fees remain account-specific. Guarantees remain off by
+default, and deployment does not change Lovely's saved cash settings.
+
+Source checkpoints and the final reviewed Landing documentation commit are
+immutable before remote CI. Roll out migration 282/API before Admin/Web, verify
+development, then promote the exact same artifacts without rebuilding. Publish
+the three-language procedures with the compatible product release. No production
+test payment is required or authorized merely by this deployment.
+
 
 ## Compact item sheet local preparation (29 October 2026)
 

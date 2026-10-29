@@ -7,7 +7,7 @@ apps: foodyadmin
 tags:
   - settings
   - fulfillment-policy
-updatedAt: '2026-10-28'
+updatedAt: '2026-10-29'
 featureId: fulfillment-policy
 audience: public
 releaseStatus: available
@@ -147,3 +147,11 @@ Le réglage du mode ou du flux détermine les actions disponibles pour les nouve
 ## Intégration du panier préparé Sumit
 
 Pour un lien de panier interne Sumit compatible, l’adresse du destinataire est vérifiée selon zone, frais et minimum actuels. La date choisie est conservée et doit respecter le calendrier de la zone correspondante. Le total final est vérifié avant paiement. Voir [le parcours Sumit](/fr/help/orders/internal-sumit-checkout).
+
+<span id="stancer-cash-guarantee" />
+
+## Utiliser les espèces avec garantie bancaire facultative
+
+Après déploiement des versions compatibles de l’API, d’Admin et du site client, et validation avec votre compte Stancer, ouvrez Admin → Paramètres → Paiements avec settings.edit. Choisissez Autres moyens autorisés, puis Paiements en espèces → Clients de confiance uniquement ou Tous les clients. Activez Exiger une garantie par carte pour les espèces et enregistrez. La garantie est désactivée par défaut et réserve 100 % du total calculé par le serveur. Elle est proposée pour une intégration Stancer configurée en EUR ; les autres prestataires conservent leurs réglages espèces et ne proposent pas cette garantie. Le paiement exclusivement en ligne exclut toujours les espèces. Les restaurants existants conservent la règle des clients de confiance. Ceux-ci restent soumis à la garantie lorsqu’elle est exigée. Vérifiez les valeurs après enregistrement. Avant activation réelle, testez l’annulation d’une réservation déjà autorisée en sandbox et confirmez auprès de Stancer le délai de libération et les frais.
+
+Conditions d’activation et reprise : [garantie bancaire pour les espèces](/fr/help/payments/cash-card-guarantee).

@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - customers
   - customers-profiles
-updatedAt: '2026-10-25'
+updatedAt: '2026-10-29'
 featureId: customers-profiles
 audience: public
 releaseStatus: available
@@ -45,3 +45,11 @@ Vérifiez les fiches sélectionnées et numéros avant de confirmer une fusion. 
 ## Gérer les téléphones et choisir le numéro WhatsApp
 
 Avec la permission de gestion des clients, cliquez sur le téléphone du client pour ouvrir Modifier le client. Dans Numéros de téléphone, corrigez le Téléphone principal ou choisissez Ajouter un numéro. Renseignez un numéro complet ; les numéros israéliens sont enregistrés avec +972 sans le zéro national et les étrangers avec leur indicatif. Choisissez Utiliser pour WhatsApp sur le numéro qui doit recevoir les messages, même si le téléphone pour les appels est différent. Un seul numéro WhatsApp est sélectionné ; jusqu’à dix numéros peuvent être associés. Enregistrez pour confirmer les coordonnées et les téléphones ensemble. Une saisie invalide, un doublon ou un numéro appartenant à une autre fiche bloque cet enregistrement et conserve le brouillon ; utilisez Fusionner les clients pour associer deux fiches existantes. Retirer un numéro supplémentaire ne prend effet qu’à l’enregistrement et dissocie son historique sans supprimer ses commandes. La correction du téléphone principal conserve les noms, adresses et regroupements et corrige les contacts des commandes existantes. Les comptes de connexion et les autres restaurants restent inchangés. L’autorisation d’espèces reste celle du client ; ajouter un numéro ne crée pas une nouvelle autorisation. Pour corriger plusieurs clients à la fois, cochez au moins deux lignes puis Actions → Corriger les téléphones. Le lot reste atomique ; un conflit bloque toutes les corrections. Après une sauvegarde réussie suivie d’un échec d’actualisation, Réessayer recharge sans réenregistrer. Le format ne confirme ni la possession du numéro ni son inscription à WhatsApp.
+
+<span id="stancer-cash-guarantee" />
+
+## Utiliser les espèces avec garantie bancaire facultative
+
+Après déploiement des versions compatibles de l’API, d’Admin et du site client, et validation avec votre compte Stancer, ouvrez Admin → Paramètres → Paiements avec settings.edit. Choisissez Autres moyens autorisés, puis Paiements en espèces → Clients de confiance uniquement ou Tous les clients. Activez Exiger une garantie par carte pour les espèces et enregistrez. La garantie est désactivée par défaut et réserve 100 % du total calculé par le serveur. Elle est proposée pour une intégration Stancer configurée en EUR ; les autres prestataires conservent leurs réglages espèces et ne proposent pas cette garantie. Le paiement exclusivement en ligne exclut toujours les espèces. Les restaurants existants conservent la règle des clients de confiance. Ceux-ci restent soumis à la garantie lorsqu’elle est exigée. Vérifiez les valeurs après enregistrement. Avant activation réelle, testez l’annulation d’une réservation déjà autorisée en sandbox et confirmez auprès de Stancer le délai de libération et les frais.
+
+Conditions d’activation et reprise : [garantie bancaire pour les espèces](/fr/help/payments/cash-card-guarantee).

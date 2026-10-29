@@ -65,7 +65,8 @@ for (const [service, configuredRoot] of Object.entries(roots)) {
     // access, but it does not change order creation, types or fulfillment.
     // This extracted resolver classifies cash POS access failures only; it does
     // not introduce order creation, fulfillment or order-type procedures.
-    const ids = service === 'foodyserver' && file === 'internal/orders/cash_drawer_context.go'
+    const cashGuaranteeModule = (service === 'foodyserver' && ['internal/common/cash_guarantee.go','internal/orders/cash_guarantee.go','internal/payment/cash_guarantee.go'].includes(file)) || (service === 'foodyadmin' && file === 'src/components/orders/CashGuaranteePanel.tsx');
+    const ids = cashGuaranteeModule ? ['stancer-cash-guarantee'] : service === 'foodyserver' && file === 'internal/orders/cash_drawer_context.go'
       ? ['pos-payments', 'pos-cash-access-diagnostics']
       : service === 'foodyserver' && /^internal\/orders\/transactions(?:_handler|_adjustments)?\.go$/.test(file)
         ? ['pos-payments'] : service === 'foodyserver' && file === 'internal/menu/item_photos.go'
