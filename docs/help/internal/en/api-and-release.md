@@ -199,3 +199,9 @@ Local Sumit internal-checkout preparation adds restaurant-scoped capability, bas
 ## Additive order confirmation contract
 
 The lifecycle v1 field is retained. Capability order_lifecycle_v2 advertises lifecycle_v2: explicit scoped reads, nullable amounts with currency/exponent and frozen policies. Handoff and closure operations recheck actor, restaurant, assignment, revision and units under locks and atomically journal the same request_id. GET operation confirms the original journal; absence remains unconfirmed and does not justify a new ID. Public responses contain only the own order, without parent scopes, private units or staff actions. Existing payment journals remain the sole monetary authority.
+
+<span id="prepared-order-existing-cart" />
+
+## Prepared basket and restaurant presentation
+
+A private Sumit prepared-order link enters the restaurant’s existing cart, then its checkout with the published colors, fonts and fields. The personal browser basket is retained; prepared items, prices and date stay fixed. Contact details and requested answers belong to this order, without loading an account or saved card. Custom answers bind when payment first opens. Delivery fees are recalculated and reviewed before payment. See the [Sumit procedure](/en/help/orders/internal-sumit-checkout).

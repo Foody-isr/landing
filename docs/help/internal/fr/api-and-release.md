@@ -199,3 +199,9 @@ La préparation locale des commandes internes Sumit ajoute capacité, panier GET
 ## Contrat additif des confirmations de commande
 
 Le champ lifecycle v1 est conservé. La capacité order_lifecycle_v2 annonce lifecycle_v2 : lecture explicite par portée, montants nullable avec devise/exposant et politiques figées. Les opérations de remise et clôture revalident acteur, restaurant, affectation, révision et unités sous verrous et enregistrent le même request_id atomiquement. GET operation confirme le journal original ; une absence reste non confirmée et ne justifie pas un nouvel identifiant. Les réponses publiques contiennent seulement la propre commande, sans portées parentes, unités privées ou actions staff. Les journaux de paiement existants restent seuls compétents pour l’argent.
+
+<span id="prepared-order-existing-cart" />
+
+## Panier préparé et présentation du restaurant
+
+Un lien privé de commande préparée Sumit rejoint le panier habituel du restaurant, puis son formulaire de paiement avec les couleurs, polices et champs publiés. Le panier personnel du navigateur reste conservé ; les articles, prix et date préparés sont figés. Les coordonnées et réponses demandées concernent cette commande, sans chargement d’un compte ou d’une carte enregistrée. Les réponses personnalisées sont liées lors de la première ouverture du paiement. Les frais de livraison sont recalculés puis vérifiés avant paiement. Voir la [procédure Sumit](/fr/help/orders/internal-sumit-checkout).

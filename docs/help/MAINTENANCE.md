@@ -947,3 +947,28 @@ Automated API, browser and widget checks are distinct from physical acceptance.
 The manual recipe supplement remains entirely untested by a human. No installed
 build, TestFlight availability, real payment, terminal deposit, personal PIN
 repair or cash/attendance mutation is certified by these synthetic results.
+
+
+## Courier execution-only itinerary (28 October 2026)
+
+Courier mode no longer exposes Refine, route settings, address correction, stop
+reordering or reoptimization. Owners and superadmins viewing a courier use the
+same execution-only screen. Start, navigation, contacts, arrival and delivery
+confirmation remain available. Read-only total-duration details remain visible.
+Retry on a plan warning reloads saved information without optimizing the route.
+An authorized dispatcher changes plans in Orders → Deliveries. Legacy courier
+planning aliases return 403; delivery planning writes reject Courier memberships
+even when a historical orders.manage grant remains, and reject explicit
+courier_id selections. Current restaurant ownership and explicit superadmin
+access remain valid for dispatcher planning. Restaurant boundaries are preserved.
+
+Review courier, dispatch and Google verification procedures in FR/HE/EN. No
+customer windows, route order, live estimates or order states are rewritten by
+this release. Synthetic tests cover rejected writes and preserved delivery actions;
+production verification reads controls without changing real orders. Refresh only
+API, Admin and Landing evidence. Retain Web, POS and Backoffice service blocks
+and surfaces exactly from Landing develop 7c60f5a31a7e4cf58b84ad4d4adcf73907f320a9;
+those services are not revalidated. Export and copy the identical public corpus
+before scanning API evidence, pin immutable source and documentation commits,
+validate API before clients, then promote the exact development-tested artifacts
+under the authorized courier correction release workflow.
