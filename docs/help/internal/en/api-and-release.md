@@ -199,3 +199,9 @@ Local Sumit internal-checkout preparation adds restaurant-scoped capability, bas
 ## Prepared basket and restaurant presentation
 
 A private Sumit prepared-order link enters the restaurant’s existing cart, then its checkout with the published colors, fonts and fields. The personal browser basket is retained; prepared items, prices and date stay fixed. Contact details and requested answers belong to this order, without loading an account or saved card. Custom answers bind when payment first opens. Delivery fees are recalculated and reviewed before payment. See the [Sumit procedure](/en/help/orders/internal-sumit-checkout).
+
+<span id="delivery-weekday-contract" />
+
+## Delivery weekday calendars
+
+ Zone calendars accept days (one or more distinct weekdays 0–6) or legacy windows, without mixing both. New slots use restaurant hours and settings filtered by zone weekdays. Legacy windows supply only their weekdays for new bookings. Order creation rechecks the calendar, items and restaurant ownership; existing assignments use the order’s frozen availability. Prepared-basket quotes recheck weekdays and slots without a new production delay; fees, minimums and authorization remain separate checks. No schema change or data migration is required. Deploy the API before compatible clients and publish help with the product after development verification. This local preparation confirms no deployment.

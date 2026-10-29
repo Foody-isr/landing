@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "Foody-isr/admin",
-  "ref": "a0dd487b6c8a721f4ab5ae06c17cb21f9a7b9148",
+  "ref": "d1a929c3deed63b364d43a1381d41fba0e657e61",
   "observations": [
     {
       "id": "table-status-descriptions-source-contract",
@@ -353,6 +353,19 @@
         "row?.managed ? date : \"\""
       ],
       "forbidden": []
+    },
+    {
+      "id": "zone-weekdays-use-restaurant-slots",
+      "source": "src/components/delivery/ZoneScheduleFields.tsx",
+      "required": [
+        "deliveryScheduleWeekdays",
+        "zoneDeliveryDays",
+        "days, offer_pickup: value?.offer_pickup"
+      ],
+      "forbidden": [
+        "type=\"time\"",
+        "deliveryAddWindow"
+      ]
     }
   ],
   "guides": [
@@ -804,6 +817,23 @@
         "fr": [],
         "en": [],
         "he": []
+      }
+    },
+    {
+      "article": "delivery/zones-and-schedules",
+      "required": {
+        "fr": [
+          "Aucune heure ne se saisit dans la zone.",
+          "Commandes et disponibilité"
+        ],
+        "en": [
+          "Zone settings no longer ask for hours.",
+          "Orders & availability"
+        ],
+        "he": [
+          "אין להזין שעות באזור.",
+          "הזמנות וזמינות"
+        ]
       }
     }
   ]
