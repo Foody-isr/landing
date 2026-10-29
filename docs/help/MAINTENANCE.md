@@ -961,7 +961,7 @@ under the authorized courier correction release workflow.
 The user authorized commits, pushes, development deployment and production
 promotion on 29 October 2026. API, Admin, guest Web and Landing are integrated
 with their current develop bases. POS and Backoffice retain the exact source
-blocks and surfaces from Landing develop 928d5bf6; they are not revalidated.
+blocks and surfaces from Landing develop f3709668; they are not revalidated.
 Existing POS cash drawer rules remain authoritative.
 
 The separate Stancer sandbox hosted-card/3DS flow authorized 0.50 EUR with
