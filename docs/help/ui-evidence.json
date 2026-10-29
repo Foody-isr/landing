@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "Foody-isr/admin",
-  "ref": "d1a929c3deed63b364d43a1381d41fba0e657e61",
+  "ref": "dc8f96b5c61fd104c2ae8f516cc9344c323d0885",
   "observations": [
     {
       "id": "table-status-descriptions-source-contract",
@@ -366,6 +366,17 @@
         "type=\"time\"",
         "deliveryAddWindow"
       ]
+    },
+    {
+      "id": "cash-eligibility-uses-provider-capability",
+      "source": "src/app/[restaurantId]/settings/payments/page.tsx",
+      "required": [
+        "guaranteeSupported ? 'cashAllCustomersEnabled' : 'cashPaymentEligibility'",
+        "<option value=\"all\">{t('yes')}</option><option value=\"disabled\">{t('no')}</option>",
+        "!guaranteeSupported && draft.cash_payment_policy === 'trusted_only'",
+        "cash_card_guarantee_required: event.target.checked"
+      ],
+      "forbidden": []
     }
   ],
   "guides": [
@@ -834,6 +845,31 @@
           "אין להזין שעות באזור.",
           "הזמנות וזמינות"
         ]
+      }
+    },
+    {
+      "article": "payments/cash-card-guarantee",
+      "required": {
+        "fr": [
+          "Accepter les espèces pour tous les clients",
+          "Le réglage Exiger une garantie par carte pour les espèces reste indépendant",
+          "modifier la TVA ou les pourboires ne le remplace pas"
+        ],
+        "en": [
+          "Accept cash from all customers",
+          "Require a card guarantee for cash remains independent",
+          "changing VAT or tips does not replace it"
+        ],
+        "he": [
+          "קבלת מזומן מכל הלקוחות",
+          "דרישת ערבות בכרטיס למזומן נשארת הגדרה נפרדת",
+          "שינוי מע״מ או טיפים אינו מחליף אותה"
+        ]
+      },
+      "forbidden": {
+        "fr": [],
+        "en": [],
+        "he": []
       }
     }
   ]

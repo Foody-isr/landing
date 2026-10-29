@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-10-29",
+  "reviewedAt": "2026-10-18",
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "3888ccdd755fb73c1c4e07f032d63608a49a99ee",
+      "sourceCommit": "c8343acf67edc3093509cc96c5f0ad822b2a5a38",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "85041507f7ada8ff9fe58804098283e1f5888a0675c79d1daf5c457e7d78c5ad",
-      "workingTreeHasChanges": true,
+      "sourceSnapshot": "199fc6965280b4368487ea3a3896d451bff3c04612bab07e7dccf392e3cc75f2",
+      "workingTreeHasChanges": false,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
           "sha256": "33cf30b683837b76977ed47c14d5d91ccb1b34bd60e9f62d124b8cc1079231aa",
@@ -2964,11 +2964,12 @@
           ]
         },
         "internal/orders/production_sheet.go": {
-          "sha256": "2bf923ce61cc46c8d3425b6dbb9e085daee39dc20ceb671b3b0b19244df9c7e7",
+          "sha256": "65936c1365d9220e21c8e039d24fbeac08d5b4fc3cd17b7114daab5d685a2e25",
           "features": [
             "orders-managing-orders",
             "order-types",
             "pos-order-entry",
+            "production",
             "fulfillment-policy",
             "platform-api"
           ]
@@ -3836,7 +3837,7 @@
           ]
         },
         "internal/restaurants/handler.go": {
-          "sha256": "233e1d12a080260070e32a11902d2fafe7240b7f046565f1fbc24e63b19c5c35",
+          "sha256": "fca7eaa2524e239db393c1569f83f1c8bf70a99b7a3f7914a65ac42eb11aa53d",
           "features": [
             "restaurant-profile",
             "fulfillment-policy",
@@ -4434,7 +4435,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "a1612c3d9bc9941a0714b848a34e38e4cbce8c9901500753eac8d7e78c8574f4",
+          "sha256": "f99428320f998bb80173db02e598bce1276ae2bf60d942d74eba0bdbd5670f0e",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -4764,9 +4765,9 @@
     },
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "91be02b5101e54e46c6277ca37097d2f9708a82c",
+      "sourceCommit": "dc8f96b5c61fd104c2ae8f516cc9344c323d0885",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "3813b64aa94cfd658c2e02326c097de41ac498a8e27ae22fcb1869ebf61884a1",
+      "sourceSnapshot": "6a86e9f78641128ac6ef4e84217b6431dd3fdf0cfc4751f3fbb0de79241eab4a",
       "workingTreeHasChanges": false,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
@@ -6072,7 +6073,7 @@
           ]
         },
         "src/app/[restaurantId]/settings/payments/page.tsx": {
-          "sha256": "66a8726a8daba437144eec30c1f50a073cd4093e7f2fde82245220fb5efd8002",
+          "sha256": "46912298839790982ed56732624a499163312895c7afbcca404aa0f76a1920db",
           "features": [
             "payments-how-payments-work",
             "payment-configuration",
@@ -7715,6 +7716,12 @@
             "order-detail"
           ]
         },
+        "src/components/orders/CashGuaranteePanel.tsx": {
+          "sha256": "f9bcc4d52e9de1952a764d4830f579c84100c13e720b8981bc5101fa2e188576",
+          "features": [
+            "stancer-cash-guarantee"
+          ]
+        },
         "src/components/orders/CashTag.tsx": {
           "sha256": "91cf5f7bfb6da9a92719c0930097b5e228fe3980bf15701f41b1f6f41cfa5728",
           "features": [
@@ -7957,7 +7964,7 @@
           ]
         },
         "src/components/orders/detail/context/MoneyPanel.tsx": {
-          "sha256": "812a717cc1b7ce698dea110db1a3e3e256f905a8720872f2a39a059409de2d55",
+          "sha256": "9ddd9e6be75765b7024d09fa32d1644f93fb33527ee749a8b2d3e6562cd2a225",
           "features": [
             "orders-managing-orders",
             "order-detail",
@@ -9019,7 +9026,7 @@
           ]
         },
         "src/lib/api.ts": {
-          "sha256": "c532e98ff1a4715b54beef3a3c83bfd034c258f3dcf8355bc43b729cd8b7f0d5",
+          "sha256": "4b75cda1e9080628be3593aafb5af1e2dc0f0578122246774c12168527ea62c0",
           "features": [
             "customers-profiles",
             "menu-variants-and-sizes",
@@ -9212,7 +9219,7 @@
           ]
         },
         "src/lib/i18n.tsx": {
-          "sha256": "7e7bf9b326ff0c2517d3e67134b168964f32c5491a019db2a55622c60d2193b5",
+          "sha256": "89aab34cff8735085446a04efca33c803db953bf8dcae08bca29767fb41db890",
           "features": [
             "customers-profiles",
             "menu-menus-and-groups",
@@ -9458,7 +9465,7 @@
           ]
         },
         "src/lib/orders/order-actions.ts": {
-          "sha256": "2479ec10717bf386cc2943ffa13f3c466e1c46aecab37097bc5667db7738cd29",
+          "sha256": "535282a3beff09c2420996c2b82bf744c596626e267c06f12bb3bd63559359a5",
           "features": [
             "order-detail",
             "shared-runtime",
@@ -17144,9 +17151,9 @@
             "he": "אישור הזמנה במזומן"
           },
           "instructions": {
-            "en": "Use the trusted/cash-allowed setting only for the intended customer. This controls cash ordering eligibility, not evidence of an actual payment.",
-            "fr": "Utilisez le réglage client de confiance/espèces uniquement pour le client concerné. Il autorise la commande en espèces et ne prouve aucun encaissement.",
-            "he": "הפעילו הגדרת לקוח מהימן או אישור מזומן רק ללקוח הנכון. ההגדרה מאפשרת הזמנה במזומן ואינה מעידה שבוצע תשלום."
+            "fr": "Le statut de client de confiance sert à l’éligibilité aux espèces uniquement lorsque la règle du restaurant le prévoit. Si les espèces sont autorisées pour tous, ce statut n’est pas nécessaire ; si elles sont désactivées, il ne les réactive pas. Une garantie par carte exigée reste applicable aux clients de confiance. Ce statut ne prouve aucun encaissement.",
+            "en": "Trusted-customer status determines cash eligibility only when the restaurant policy requires it. If cash is enabled for everyone, the status is unnecessary; if cash is disabled, it does not re-enable cash. A required card guarantee still applies to trusted customers. Trust status is not proof that payment was received.",
+            "he": "מעמד לקוח מהימן קובע זכאות למזומן רק כאשר מדיניות המסעדה דורשת זאת. אם מזומן מותר לכולם אין צורך במעמד זה; אם מזומן חסום הוא אינו מפעיל אותו מחדש. ערבות נדרשת בכרטיס חלה גם על לקוחות מהימנים. סימון מהימנות אינו הוכחה לקבלת תשלום."
           }
         },
         {
@@ -17183,9 +17190,9 @@
             "he": "מזומן עם ערבות אופציונלית בכרטיס"
           },
           "instructions": {
-            "en": "After deployment of the compatible API, Admin and guest Web and acceptance testing with your Stancer account, open Admin → Settings → Payments with settings.edit. Select Allow other methods, then Cash payments → Trusted customers only or All customers. Enable Require a card guarantee for cash and save. The guarantee is off by default and reserves 100% of the server-priced total. The option is offered for a configured Stancer integration in EUR; other providers retain their cash settings and do not advertise this guarantee. Online-payment-only always excludes cash. Existing restaurants keep their trusted-customer policy. Selecting trusted customers does not exempt them from a configured card guarantee. Verify settings after saving. Do not enable it on a real account before testing cancellation of an authorized sandbox reservation and confirming release timing and fees with Stancer.\n\nAcceptance and recovery: [cash card guarantees](/en/help/payments/cash-card-guarantee).",
-            "fr": "Après déploiement des versions compatibles de l’API, d’Admin et du site client, et validation avec votre compte Stancer, ouvrez Admin → Paramètres → Paiements avec settings.edit. Choisissez Autres moyens autorisés, puis Paiements en espèces → Clients de confiance uniquement ou Tous les clients. Activez Exiger une garantie par carte pour les espèces et enregistrez. La garantie est désactivée par défaut et réserve 100 % du total calculé par le serveur. Elle est proposée pour une intégration Stancer configurée en EUR ; les autres prestataires conservent leurs réglages espèces et ne proposent pas cette garantie. Le paiement exclusivement en ligne exclut toujours les espèces. Les restaurants existants conservent la règle des clients de confiance. Ceux-ci restent soumis à la garantie lorsqu’elle est exigée. Vérifiez les valeurs après enregistrement. Avant activation réelle, testez l’annulation d’une réservation déjà autorisée en sandbox et confirmez auprès de Stancer le délai de libération et les frais.\n\nConditions d’activation et reprise : [garantie bancaire pour les espèces](/fr/help/payments/cash-card-guarantee).",
-            "he": "לאחר פריסת גרסאות תואמות של השרת, ממשק הניהול ואתר הלקוח ובדיקת קבלה עם חשבון Stancer שלכם, פתחו ניהול → הגדרות → תשלומים עם settings.edit. בחרו אמצעים נוספים מותרים, ואז תשלומים במזומן → לקוחות מהימנים בלבד או כל הלקוחות. הפעילו דרישת ערבות בכרטיס ושמרו. הערבות מושבתת כברירת מחדל ומשוריין מלוא הסכום שחושב בשרת. האפשרות מוצעת לחיבור Stancer מוגדר באירו; ספקים אחרים שומרים על הגדרות המזומן ללא ערבות זו. תשלום מקוון בלבד תמיד חוסם מזומן. מסעדות קיימות שומרות על כלל הלקוחות המהימנים. גם לקוחות אלה נדרשים לערבות אם הכלל מופעל. בדקו את הערכים לאחר שמירה. לפני הפעלה אמיתית, בדקו ביטול שריון שכבר אושר בסביבת הבדיקות ואמתו עם Stancer את זמני השחרור והעמלות.\n\nתנאי הפעלה והתאוששות: [ערבות בכרטיס למזומן](/he/help/payments/cash-card-guarantee)."
+            "en": "In Admin → Settings → Payments, with settings.edit permission, select Allow other methods to accept cash. For a compatible provider, Cash payments offers Accept cash from all customers: Yes allows every customer regardless of trust status; No disables cash for everyone. Require a card guarantee for cash remains independent: enable it only when you want to reserve 100% of the total on the card, then save and verify the values. The guarantee is off by default. It is currently available for configured Stancer in EUR; other integrations use the same presentation when their cash-guarantee flow is supported. Unsupported providers retain their existing cash settings without this guarantee. A previous trusted-customer-only policy is preserved until you explicitly choose Yes or No; changing VAT or tips does not replace it. Online-payment-only always excludes cash. Before real use of the guarantee, verify cancellation of an authorized sandbox reservation, release timing and fees with your Stancer account.\n\nAcceptance and recovery: [cash card guarantees](/en/help/payments/cash-card-guarantee).",
+            "fr": "Dans Admin → Paramètres → Paiements, avec la permission settings.edit, choisissez Autres moyens autorisés pour accepter les espèces. Pour un prestataire compatible, Paiements en espèces propose Accepter les espèces pour tous les clients : Oui autorise tous les clients, sans condition de confiance ; Non refuse les espèces pour tous. Le réglage Exiger une garantie par carte pour les espèces reste indépendant : activez-le uniquement si vous souhaitez réserver 100 % du total sur la carte, puis enregistrez et vérifiez les valeurs. La garantie est désactivée par défaut. Elle est disponible aujourd’hui pour Stancer configuré en EUR ; les autres intégrations utilisent ce même affichage lorsque leur parcours de garantie espèces est pris en charge. Les prestataires incompatibles conservent leurs réglages espèces sans proposer cette garantie. Un ancien réglage limité aux clients de confiance reste conservé jusqu’à votre choix explicite Oui ou Non ; modifier la TVA ou les pourboires ne le remplace pas. Le paiement exclusivement en ligne exclut toujours les espèces. Avant une utilisation réelle de la garantie, vérifiez avec votre compte Stancer l’annulation d’une réservation autorisée en sandbox, les délais de libération et les frais.\n\nConditions d’activation et reprise : [garantie bancaire pour les espèces](/fr/help/payments/cash-card-guarantee).",
+            "he": "בניהול → הגדרות → תשלומים, עם הרשאת settings.edit, בחרו אמצעים נוספים מותרים לקבלת מזומן. אצל ספק תואם, תשלומים במזומן מציע קבלת מזומן מכל הלקוחות: כן מאפשר לכל לקוח לשלם במזומן ללא תנאי מהימנות; לא חוסם מזומן לכולם. דרישת ערבות בכרטיס למזומן נשארת הגדרה נפרדת: הפעילו אותה רק אם ברצונכם לשריין בכרטיס את מלוא הסכום, ואז שמרו ובדקו את הערכים. הערבות מושבתת כברירת מחדל. היא זמינה כיום לחיבור Stancer מוגדר באירו; שילובים אחרים משתמשים באותה תצוגה כאשר מסלול ערבות המזומן שלהם נתמך. ספקים שאינם תואמים שומרים על הגדרות המזומן הקיימות ללא הערבות הזאת. מדיניות קודמת של לקוחות מהימנים בלבד נשמרת עד לבחירה מפורשת כן או לא; שינוי מע״מ או טיפים אינו מחליף אותה. תשלום מקוון בלבד תמיד חוסם מזומן. לפני שימוש אמיתי בערבות, בדקו בחשבון Stancer ביטול שריון מאושר בסביבת הבדיקות, זמני שחרור ועמלות.\n\nתנאי הפעלה והתאוששות: [ערבות בכרטיס למזומן](/he/help/payments/cash-card-guarantee)."
           }
         }
       ],
@@ -31260,7 +31267,8 @@
           "lib/features/kitchen/presentation/kitchen_plan_matrix_page.dart"
         ],
         "foodyserver": [
-          "internal/kitchenplan/**"
+          "internal/kitchenplan/**",
+          "internal/orders/production_sheet.go"
         ]
       },
       "operations": [
@@ -31272,9 +31280,9 @@
             "he": "בחירת תאריך שירות"
           },
           "instructions": {
-            "en": "Select the intended service/date and inspect included orders. Compare quantities with the same date basis used by Orders and the dashboard.",
-            "fr": "Choisissez service/date et vérifiez les commandes incluses. Comparez les quantités avec la même base de date que Commandes et Accueil.",
-            "he": "בחרו שירות או תאריך ובדקו הזמנות כלולות. השוו כמויות לפי אותו בסיס תאריך שמשמש בהזמנות ובלוח הבקרה."
+            "en": "Select the intended service/date and inspect included orders. Compare quantities with the same date basis used by Orders and the dashboard. Accepted scheduled cash pickup/delivery orders are included regardless of customer trust. When a card guarantee is required, wait for confirmed bank authorization: an awaiting or unknown guarantee is excluded by default, including for a trusted customer. The existing explicit staff override remains separate. Authorization does not confirm cash receipt: check payment separately. Disabling future cash payments does not remove already accepted orders.",
+            "fr": "Choisissez service/date et vérifiez les commandes incluses. Comparez les quantités avec la même base de date que Commandes et Accueil. Les commandes programmées à retirer ou livrer, acceptées en espèces, sont incluses sans condition de confiance. Si une garantie par carte est exigée, attendez la confirmation de l’autorisation bancaire : une garantie en attente ou inconnue reste exclue par défaut, même pour un client de confiance. L’ajout forcé explicite par le personnel reste une action distincte. L’autorisation ne confirme pas la réception des espèces : vérifiez le paiement séparément. Désactiver les futurs paiements en espèces ne retire pas les commandes déjà acceptées.",
+            "he": "בחרו שירות או תאריך ובדקו הזמנות כלולות. השוו כמויות לפי אותו בסיס תאריך שמשמש בהזמנות ובלוח הבקרה. הזמנות מתוזמנות לאיסוף או למשלוח שהתקבלו לתשלום במזומן נכללות ללא תלות במהימנות הלקוח. כאשר נדרשת ערבות בכרטיס, המתינו לאישור הבנק: ערבות ממתינה או לא ידועה אינה נכללת כברירת מחדל, גם ללקוח מהימן. הוספה כפויה מפורשת בידי הצוות נשארת פעולה נפרדת. האישור אינו אישור לקבלת המזומן; בדקו את התשלום בנפרד. השבתת תשלומי מזומן עתידיים אינה מסירה הזמנות שכבר התקבלו."
           }
         },
         {
@@ -31307,7 +31315,12 @@
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
+      "procedureUpdatedAt": "2026-10-29",
       "evidence": [
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/production_sheet.go"
+        },
         {
           "service": "foodyadmin",
           "file": "src/app/[restaurantId]/orders/production/page.tsx"
@@ -35914,9 +35927,9 @@
             "he": "מזומן עם ערבות אופציונלית בכרטיס"
           },
           "instructions": {
-            "en": "After deployment of the compatible API, Admin and guest Web and acceptance testing with your Stancer account, open Admin → Settings → Payments with settings.edit. Select Allow other methods, then Cash payments → Trusted customers only or All customers. Enable Require a card guarantee for cash and save. The guarantee is off by default and reserves 100% of the server-priced total. The option is offered for a configured Stancer integration in EUR; other providers retain their cash settings and do not advertise this guarantee. Online-payment-only always excludes cash. Existing restaurants keep their trusted-customer policy. Selecting trusted customers does not exempt them from a configured card guarantee. Verify settings after saving. Do not enable it on a real account before testing cancellation of an authorized sandbox reservation and confirming release timing and fees with Stancer.\n\nAcceptance and recovery: [cash card guarantees](/en/help/payments/cash-card-guarantee).",
-            "fr": "Après déploiement des versions compatibles de l’API, d’Admin et du site client, et validation avec votre compte Stancer, ouvrez Admin → Paramètres → Paiements avec settings.edit. Choisissez Autres moyens autorisés, puis Paiements en espèces → Clients de confiance uniquement ou Tous les clients. Activez Exiger une garantie par carte pour les espèces et enregistrez. La garantie est désactivée par défaut et réserve 100 % du total calculé par le serveur. Elle est proposée pour une intégration Stancer configurée en EUR ; les autres prestataires conservent leurs réglages espèces et ne proposent pas cette garantie. Le paiement exclusivement en ligne exclut toujours les espèces. Les restaurants existants conservent la règle des clients de confiance. Ceux-ci restent soumis à la garantie lorsqu’elle est exigée. Vérifiez les valeurs après enregistrement. Avant activation réelle, testez l’annulation d’une réservation déjà autorisée en sandbox et confirmez auprès de Stancer le délai de libération et les frais.\n\nConditions d’activation et reprise : [garantie bancaire pour les espèces](/fr/help/payments/cash-card-guarantee).",
-            "he": "לאחר פריסת גרסאות תואמות של השרת, ממשק הניהול ואתר הלקוח ובדיקת קבלה עם חשבון Stancer שלכם, פתחו ניהול → הגדרות → תשלומים עם settings.edit. בחרו אמצעים נוספים מותרים, ואז תשלומים במזומן → לקוחות מהימנים בלבד או כל הלקוחות. הפעילו דרישת ערבות בכרטיס ושמרו. הערבות מושבתת כברירת מחדל ומשוריין מלוא הסכום שחושב בשרת. האפשרות מוצעת לחיבור Stancer מוגדר באירו; ספקים אחרים שומרים על הגדרות המזומן ללא ערבות זו. תשלום מקוון בלבד תמיד חוסם מזומן. מסעדות קיימות שומרות על כלל הלקוחות המהימנים. גם לקוחות אלה נדרשים לערבות אם הכלל מופעל. בדקו את הערכים לאחר שמירה. לפני הפעלה אמיתית, בדקו ביטול שריון שכבר אושר בסביבת הבדיקות ואמתו עם Stancer את זמני השחרור והעמלות.\n\nתנאי הפעלה והתאוששות: [ערבות בכרטיס למזומן](/he/help/payments/cash-card-guarantee)."
+            "en": "In Admin → Settings → Payments, with settings.edit permission, select Allow other methods to accept cash. For a compatible provider, Cash payments offers Accept cash from all customers: Yes allows every customer regardless of trust status; No disables cash for everyone. Require a card guarantee for cash remains independent: enable it only when you want to reserve 100% of the total on the card, then save and verify the values. The guarantee is off by default. It is currently available for configured Stancer in EUR; other integrations use the same presentation when their cash-guarantee flow is supported. Unsupported providers retain their existing cash settings without this guarantee. A previous trusted-customer-only policy is preserved until you explicitly choose Yes or No; changing VAT or tips does not replace it. Online-payment-only always excludes cash. Before real use of the guarantee, verify cancellation of an authorized sandbox reservation, release timing and fees with your Stancer account.\n\nAcceptance and recovery: [cash card guarantees](/en/help/payments/cash-card-guarantee).",
+            "fr": "Dans Admin → Paramètres → Paiements, avec la permission settings.edit, choisissez Autres moyens autorisés pour accepter les espèces. Pour un prestataire compatible, Paiements en espèces propose Accepter les espèces pour tous les clients : Oui autorise tous les clients, sans condition de confiance ; Non refuse les espèces pour tous. Le réglage Exiger une garantie par carte pour les espèces reste indépendant : activez-le uniquement si vous souhaitez réserver 100 % du total sur la carte, puis enregistrez et vérifiez les valeurs. La garantie est désactivée par défaut. Elle est disponible aujourd’hui pour Stancer configuré en EUR ; les autres intégrations utilisent ce même affichage lorsque leur parcours de garantie espèces est pris en charge. Les prestataires incompatibles conservent leurs réglages espèces sans proposer cette garantie. Un ancien réglage limité aux clients de confiance reste conservé jusqu’à votre choix explicite Oui ou Non ; modifier la TVA ou les pourboires ne le remplace pas. Le paiement exclusivement en ligne exclut toujours les espèces. Avant une utilisation réelle de la garantie, vérifiez avec votre compte Stancer l’annulation d’une réservation autorisée en sandbox, les délais de libération et les frais.\n\nConditions d’activation et reprise : [garantie bancaire pour les espèces](/fr/help/payments/cash-card-guarantee).",
+            "he": "בניהול → הגדרות → תשלומים, עם הרשאת settings.edit, בחרו אמצעים נוספים מותרים לקבלת מזומן. אצל ספק תואם, תשלומים במזומן מציע קבלת מזומן מכל הלקוחות: כן מאפשר לכל לקוח לשלם במזומן ללא תנאי מהימנות; לא חוסם מזומן לכולם. דרישת ערבות בכרטיס למזומן נשארת הגדרה נפרדת: הפעילו אותה רק אם ברצונכם לשריין בכרטיס את מלוא הסכום, ואז שמרו ובדקו את הערכים. הערבות מושבתת כברירת מחדל. היא זמינה כיום לחיבור Stancer מוגדר באירו; שילובים אחרים משתמשים באותה תצוגה כאשר מסלול ערבות המזומן שלהם נתמך. ספקים שאינם תואמים שומרים על הגדרות המזומן הקיימות ללא הערבות הזאת. מדיניות קודמת של לקוחות מהימנים בלבד נשמרת עד לבחירה מפורשת כן או לא; שינוי מע״מ או טיפים אינו מחליף אותה. תשלום מקוון בלבד תמיד חוסם מזומן. לפני שימוש אמיתי בערבות, בדקו בחשבון Stancer ביטול שריון מאושר בסביבת הבדיקות, זמני שחרור ועמלות.\n\nתנאי הפעלה והתאוששות: [ערבות בכרטיס למזומן](/he/help/payments/cash-card-guarantee)."
           }
         }
       ],
@@ -40787,9 +40800,9 @@
             "he": "מזומן עם ערבות אופציונלית בכרטיס"
           },
           "instructions": {
-            "en": "After deployment of the compatible API, Admin and guest Web and acceptance testing with your Stancer account, open Admin → Settings → Payments with settings.edit. Select Allow other methods, then Cash payments → Trusted customers only or All customers. Enable Require a card guarantee for cash and save. The guarantee is off by default and reserves 100% of the server-priced total. The option is offered for a configured Stancer integration in EUR; other providers retain their cash settings and do not advertise this guarantee. Online-payment-only always excludes cash. Existing restaurants keep their trusted-customer policy. Selecting trusted customers does not exempt them from a configured card guarantee. Verify settings after saving. Do not enable it on a real account before testing cancellation of an authorized sandbox reservation and confirming release timing and fees with Stancer.\n\nAcceptance and recovery: [cash card guarantees](/en/help/payments/cash-card-guarantee).",
-            "fr": "Après déploiement des versions compatibles de l’API, d’Admin et du site client, et validation avec votre compte Stancer, ouvrez Admin → Paramètres → Paiements avec settings.edit. Choisissez Autres moyens autorisés, puis Paiements en espèces → Clients de confiance uniquement ou Tous les clients. Activez Exiger une garantie par carte pour les espèces et enregistrez. La garantie est désactivée par défaut et réserve 100 % du total calculé par le serveur. Elle est proposée pour une intégration Stancer configurée en EUR ; les autres prestataires conservent leurs réglages espèces et ne proposent pas cette garantie. Le paiement exclusivement en ligne exclut toujours les espèces. Les restaurants existants conservent la règle des clients de confiance. Ceux-ci restent soumis à la garantie lorsqu’elle est exigée. Vérifiez les valeurs après enregistrement. Avant activation réelle, testez l’annulation d’une réservation déjà autorisée en sandbox et confirmez auprès de Stancer le délai de libération et les frais.\n\nConditions d’activation et reprise : [garantie bancaire pour les espèces](/fr/help/payments/cash-card-guarantee).",
-            "he": "לאחר פריסת גרסאות תואמות של השרת, ממשק הניהול ואתר הלקוח ובדיקת קבלה עם חשבון Stancer שלכם, פתחו ניהול → הגדרות → תשלומים עם settings.edit. בחרו אמצעים נוספים מותרים, ואז תשלומים במזומן → לקוחות מהימנים בלבד או כל הלקוחות. הפעילו דרישת ערבות בכרטיס ושמרו. הערבות מושבתת כברירת מחדל ומשוריין מלוא הסכום שחושב בשרת. האפשרות מוצעת לחיבור Stancer מוגדר באירו; ספקים אחרים שומרים על הגדרות המזומן ללא ערבות זו. תשלום מקוון בלבד תמיד חוסם מזומן. מסעדות קיימות שומרות על כלל הלקוחות המהימנים. גם לקוחות אלה נדרשים לערבות אם הכלל מופעל. בדקו את הערכים לאחר שמירה. לפני הפעלה אמיתית, בדקו ביטול שריון שכבר אושר בסביבת הבדיקות ואמתו עם Stancer את זמני השחרור והעמלות.\n\nתנאי הפעלה והתאוששות: [ערבות בכרטיס למזומן](/he/help/payments/cash-card-guarantee)."
+            "en": "In Admin → Settings → Payments, with settings.edit permission, select Allow other methods to accept cash. For a compatible provider, Cash payments offers Accept cash from all customers: Yes allows every customer regardless of trust status; No disables cash for everyone. Require a card guarantee for cash remains independent: enable it only when you want to reserve 100% of the total on the card, then save and verify the values. The guarantee is off by default. It is currently available for configured Stancer in EUR; other integrations use the same presentation when their cash-guarantee flow is supported. Unsupported providers retain their existing cash settings without this guarantee. A previous trusted-customer-only policy is preserved until you explicitly choose Yes or No; changing VAT or tips does not replace it. Online-payment-only always excludes cash. Before real use of the guarantee, verify cancellation of an authorized sandbox reservation, release timing and fees with your Stancer account.\n\nAcceptance and recovery: [cash card guarantees](/en/help/payments/cash-card-guarantee).",
+            "fr": "Dans Admin → Paramètres → Paiements, avec la permission settings.edit, choisissez Autres moyens autorisés pour accepter les espèces. Pour un prestataire compatible, Paiements en espèces propose Accepter les espèces pour tous les clients : Oui autorise tous les clients, sans condition de confiance ; Non refuse les espèces pour tous. Le réglage Exiger une garantie par carte pour les espèces reste indépendant : activez-le uniquement si vous souhaitez réserver 100 % du total sur la carte, puis enregistrez et vérifiez les valeurs. La garantie est désactivée par défaut. Elle est disponible aujourd’hui pour Stancer configuré en EUR ; les autres intégrations utilisent ce même affichage lorsque leur parcours de garantie espèces est pris en charge. Les prestataires incompatibles conservent leurs réglages espèces sans proposer cette garantie. Un ancien réglage limité aux clients de confiance reste conservé jusqu’à votre choix explicite Oui ou Non ; modifier la TVA ou les pourboires ne le remplace pas. Le paiement exclusivement en ligne exclut toujours les espèces. Avant une utilisation réelle de la garantie, vérifiez avec votre compte Stancer l’annulation d’une réservation autorisée en sandbox, les délais de libération et les frais.\n\nConditions d’activation et reprise : [garantie bancaire pour les espèces](/fr/help/payments/cash-card-guarantee).",
+            "he": "בניהול → הגדרות → תשלומים, עם הרשאת settings.edit, בחרו אמצעים נוספים מותרים לקבלת מזומן. אצל ספק תואם, תשלומים במזומן מציע קבלת מזומן מכל הלקוחות: כן מאפשר לכל לקוח לשלם במזומן ללא תנאי מהימנות; לא חוסם מזומן לכולם. דרישת ערבות בכרטיס למזומן נשארת הגדרה נפרדת: הפעילו אותה רק אם ברצונכם לשריין בכרטיס את מלוא הסכום, ואז שמרו ובדקו את הערכים. הערבות מושבתת כברירת מחדל. היא זמינה כיום לחיבור Stancer מוגדר באירו; שילובים אחרים משתמשים באותה תצוגה כאשר מסלול ערבות המזומן שלהם נתמך. ספקים שאינם תואמים שומרים על הגדרות המזומן הקיימות ללא הערבות הזאת. מדיניות קודמת של לקוחות מהימנים בלבד נשמרת עד לבחירה מפורשת כן או לא; שינוי מע״מ או טיפים אינו מחליף אותה. תשלום מקוון בלבד תמיד חוסם מזומן. לפני שימוש אמיתי בערבות, בדקו בחשבון Stancer ביטול שריון מאושר בסביבת הבדיקות, זמני שחרור ועמלות.\n\nתנאי הפעלה והתאוששות: [ערבות בכרטיס למזומן](/he/help/payments/cash-card-guarantee)."
           }
         }
       ],
@@ -50293,9 +50306,9 @@
             "he": "הגדרת מזומן וערבות בכרטיס"
           },
           "instructions": {
-            "en": "After deployment of the compatible API, Admin and guest Web and acceptance testing with your Stancer account, open Admin → Settings → Payments with settings.edit. Select Allow other methods, then Cash payments → Trusted customers only or All customers. Enable Require a card guarantee for cash and save. The guarantee is off by default and reserves 100% of the server-priced total. The option is offered for a configured Stancer integration in EUR; other providers retain their cash settings and do not advertise this guarantee. Online-payment-only always excludes cash. Existing restaurants keep their trusted-customer policy. Selecting trusted customers does not exempt them from a configured card guarantee. Verify settings after saving. Do not enable it on a real account before testing cancellation of an authorized sandbox reservation and confirming release timing and fees with Stancer.",
-            "fr": "Après déploiement des versions compatibles de l’API, d’Admin et du site client, et validation avec votre compte Stancer, ouvrez Admin → Paramètres → Paiements avec settings.edit. Choisissez Autres moyens autorisés, puis Paiements en espèces → Clients de confiance uniquement ou Tous les clients. Activez Exiger une garantie par carte pour les espèces et enregistrez. La garantie est désactivée par défaut et réserve 100 % du total calculé par le serveur. Elle est proposée pour une intégration Stancer configurée en EUR ; les autres prestataires conservent leurs réglages espèces et ne proposent pas cette garantie. Le paiement exclusivement en ligne exclut toujours les espèces. Les restaurants existants conservent la règle des clients de confiance. Ceux-ci restent soumis à la garantie lorsqu’elle est exigée. Vérifiez les valeurs après enregistrement. Avant activation réelle, testez l’annulation d’une réservation déjà autorisée en sandbox et confirmez auprès de Stancer le délai de libération et les frais.",
-            "he": "לאחר פריסת גרסאות תואמות של השרת, ממשק הניהול ואתר הלקוח ובדיקת קבלה עם חשבון Stancer שלכם, פתחו ניהול → הגדרות → תשלומים עם settings.edit. בחרו אמצעים נוספים מותרים, ואז תשלומים במזומן → לקוחות מהימנים בלבד או כל הלקוחות. הפעילו דרישת ערבות בכרטיס ושמרו. הערבות מושבתת כברירת מחדל ומשוריין מלוא הסכום שחושב בשרת. האפשרות מוצעת לחיבור Stancer מוגדר באירו; ספקים אחרים שומרים על הגדרות המזומן ללא ערבות זו. תשלום מקוון בלבד תמיד חוסם מזומן. מסעדות קיימות שומרות על כלל הלקוחות המהימנים. גם לקוחות אלה נדרשים לערבות אם הכלל מופעל. בדקו את הערכים לאחר שמירה. לפני הפעלה אמיתית, בדקו ביטול שריון שכבר אושר בסביבת הבדיקות ואמתו עם Stancer את זמני השחרור והעמלות."
+            "en": "In Admin → Settings → Payments, with settings.edit permission, select Allow other methods to accept cash. For a compatible provider, Cash payments offers Accept cash from all customers: Yes allows every customer regardless of trust status; No disables cash for everyone. Require a card guarantee for cash remains independent: enable it only when you want to reserve 100% of the total on the card, then save and verify the values. The guarantee is off by default. It is currently available for configured Stancer in EUR; other integrations use the same presentation when their cash-guarantee flow is supported. Unsupported providers retain their existing cash settings without this guarantee. A previous trusted-customer-only policy is preserved until you explicitly choose Yes or No; changing VAT or tips does not replace it. Online-payment-only always excludes cash. Before real use of the guarantee, verify cancellation of an authorized sandbox reservation, release timing and fees with your Stancer account.",
+            "fr": "Dans Admin → Paramètres → Paiements, avec la permission settings.edit, choisissez Autres moyens autorisés pour accepter les espèces. Pour un prestataire compatible, Paiements en espèces propose Accepter les espèces pour tous les clients : Oui autorise tous les clients, sans condition de confiance ; Non refuse les espèces pour tous. Le réglage Exiger une garantie par carte pour les espèces reste indépendant : activez-le uniquement si vous souhaitez réserver 100 % du total sur la carte, puis enregistrez et vérifiez les valeurs. La garantie est désactivée par défaut. Elle est disponible aujourd’hui pour Stancer configuré en EUR ; les autres intégrations utilisent ce même affichage lorsque leur parcours de garantie espèces est pris en charge. Les prestataires incompatibles conservent leurs réglages espèces sans proposer cette garantie. Un ancien réglage limité aux clients de confiance reste conservé jusqu’à votre choix explicite Oui ou Non ; modifier la TVA ou les pourboires ne le remplace pas. Le paiement exclusivement en ligne exclut toujours les espèces. Avant une utilisation réelle de la garantie, vérifiez avec votre compte Stancer l’annulation d’une réservation autorisée en sandbox, les délais de libération et les frais.",
+            "he": "בניהול → הגדרות → תשלומים, עם הרשאת settings.edit, בחרו אמצעים נוספים מותרים לקבלת מזומן. אצל ספק תואם, תשלומים במזומן מציע קבלת מזומן מכל הלקוחות: כן מאפשר לכל לקוח לשלם במזומן ללא תנאי מהימנות; לא חוסם מזומן לכולם. דרישת ערבות בכרטיס למזומן נשארת הגדרה נפרדת: הפעילו אותה רק אם ברצונכם לשריין בכרטיס את מלוא הסכום, ואז שמרו ובדקו את הערכים. הערבות מושבתת כברירת מחדל. היא זמינה כיום לחיבור Stancer מוגדר באירו; שילובים אחרים משתמשים באותה תצוגה כאשר מסלול ערבות המזומן שלהם נתמך. ספקים שאינם תואמים שומרים על הגדרות המזומן הקיימות ללא הערבות הזאת. מדיניות קודמת של לקוחות מהימנים בלבד נשמרת עד לבחירה מפורשת כן או לא; שינוי מע״מ או טיפים אינו מחליף אותה. תשלום מקוון בלבד תמיד חוסם מזומן. לפני שימוש אמיתי בערבות, בדקו בחשבון Stancer ביטול שריון מאושר בסביבת הבדיקות, זמני שחרור ועמלות."
           }
         },
         {
@@ -50405,6 +50418,10 @@
         {
           "service": "foodyadmin",
           "file": "src/app/[restaurantId]/settings/payments/page.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/components/orders/CashGuaranteePanel.tsx"
         },
         {
           "service": "foodyadmin",
@@ -73761,11 +73778,21 @@
       "kind": "ui-controls",
       "labels": [
         "cancel",
+        "cashChooseGlobalPolicy",
+        "cashGuaranteeRequired",
+        "cashLegacyPolicyHint",
+        "cashOnlineOnlyHint",
+        "cashPaymentSettings",
+        "cashPolicyAll",
+        "cashPolicyDisabled",
+        "cashPolicyTrusted",
+        "cashTrustedCustomersLink",
         "discardChanges",
         "discardUnsavedChanges",
         "enableTips",
         "enableTipsDesc",
         "loading",
+        "no",
         "onlinePaymentOnly",
         "paymentCibusLink",
         "paymentCibusLinkHint",
@@ -73792,7 +73819,8 @@
         "retry",
         "vatRatesTitle",
         "weightHoldBufferLabel",
-        "weightHoldBufferTitle"
+        "weightHoldBufferTitle",
+        "yes"
       ],
       "actions": [
         "load",
@@ -78977,6 +79005,24 @@
         "close",
         "confirm"
       ],
+      "line": 1
+    },
+    {
+      "id": "foodyadmin:src/components/orders/CashGuaranteePanel.tsx:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/components/orders/CashGuaranteePanel.tsx",
+      "features": [
+        "stancer-cash-guarantee"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "cancel",
+        "cashGuaranteeCapture",
+        "cashGuaranteeConfirm",
+        "cashGuaranteeError",
+        "cashGuaranteeRefresh"
+      ],
+      "actions": [],
       "line": 1
     },
     {
@@ -94418,8 +94464,8 @@
     "sharedRuntimeFiles": 405,
     "features": 105,
     "operations": 794,
-    "sourceFiles": 2234,
-    "surfaces": 2063,
+    "sourceFiles": 2235,
+    "surfaces": 2064,
     "unclassifiedRoutes": []
   }
 }
