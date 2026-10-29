@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-10-18.
+Révision du relevé : 2026-10-29.
 
-104 fiches de fonctionnalités, 779 procédures/sous-fonctionnalités, dont 95 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2220 fichiers applicatifs et 2055 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+105 fiches de fonctionnalités, 794 procédures/sous-fonctionnalités, dont 96 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2234 fichiers applicatifs et 2063 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,11 +10,11 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 580 | 878 | bbf65d3c8f9b ; versioned |
-| foodyadmin | 770 | 777 | 84501c09158f ; versioned |
-| foodyweb | 346 | 170 | 09d8ed76b95e ; versioned |
-| foodylanding | 127 | 21 | dc21454b924d ; versioned |
-| foodypos | 363 | 166 | 51f48a775eab ; versioned |
+| foodyserver | 584 | 879 | 3888ccdd755f ; versioned |
+| foodyadmin | 770 | 777 | 91be02b5101e ; versioned |
+| foodyweb | 346 | 170 | 3aa7c8fe9b96 ; versioned |
+| foodylanding | 127 | 21 | 6fc7d39c967e ; versioned |
+| foodypos | 363 | 166 | 735f5063e8b0 ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
 
 ## getting-started
@@ -158,6 +158,7 @@ Identifiant : `customers-profiles`. Public : public. Disponibilité : available.
 - [Autoriser la commande en espèces](../../src/content/help/fr/customers/managing-customers.mdx#trusted)
 - [Fusionner des doublons](../../src/content/help/fr/customers/managing-customers.mdx#merge)
 - [Gérer les téléphones et choisir le numéro WhatsApp](../../src/content/help/fr/customers/managing-customers.mdx#phone-corrections)
+- [Utiliser les espèces avec garantie bancaire facultative](../../src/content/help/fr/customers/managing-customers.mdx#stancer-cash-guarantee)
 
 ## marketing
 
@@ -429,6 +430,7 @@ Identifiant : `menu-variants-and-sizes`. Public : public. Disponibilité : avail
 - [Vérifier les choix et retrouver une configuration valide](../../src/content/help/fr/menu/variants-and-sizes.mdx#conditional-positions-check)
 - [Choisir une variante sur mobile](../../src/content/help/fr/menu/variants-and-sizes.mdx#mobile-terminal)
 - [Parcourir la bibliothèque sur mobile](../../src/content/help/fr/menu/variants-and-sizes.mdx#mobile-terminal-pages)
+- [Choisir si une option est obligatoire](../../src/content/help/fr/menu/variants-and-sizes.mdx#option-choice-requirement)
 
 ### [Modificateurs et règles de sélection](../../src/content/help/fr/menu/modifiers.mdx)
 
@@ -565,6 +567,7 @@ Identifiant : `pos-order-entry`. Public : public. Disponibilité : available. Se
 - [Prendre une commande sur le terminal mobile](../../src/content/help/fr/orders/taking-an-order-pos.mdx#mobile-terminal)
 - [Retrouver un brouillon non envoyé après redémarrage](../../src/content/help/fr/orders/taking-an-order-pos.mdx#resume-local-draft)
 - [Intégration du panier préparé Sumit](../../src/content/help/fr/orders/taking-an-order-pos.mdx#prepared-sumit-checkout-integration)
+- [Laisser une option facultative vide](../../src/content/help/fr/orders/taking-an-order-pos.mdx#option-choice-requirement)
 
 ### [Consulter et modifier une commande](../../src/content/help/fr/orders/order-details.mdx)
 
@@ -587,7 +590,9 @@ Identifiant : `order-detail`. Public : public. Disponibilité : available. Servi
 - [Image du modèle WhatsApp](../../src/content/help/fr/orders/order-details.mdx#meta-template-image-preview)
 - [Choisir le destinataire WhatsApp du client](../../src/content/help/fr/orders/order-details.mdx#customer-whatsapp-recipient)
 - [Commandes préparées avec Sumit](../../src/content/help/fr/orders/order-details.mdx#prepared-sumit-internal-orders)
+- [Utiliser les espèces avec garantie bancaire facultative](../../src/content/help/fr/orders/order-details.mdx#stancer-cash-guarantee)
 - [Confirmer l’horaire d’une livraison de zone](../../src/content/help/fr/orders/order-details.mdx#confirm-zone-delivery-time)
+- [Laisser une option facultative vide](../../src/content/help/fr/orders/order-details.mdx#option-choice-requirement)
 
 ### [Calendrier du restaurant et exceptions](../../src/content/help/fr/orders/calendar.mdx)
 
@@ -662,7 +667,7 @@ Identifiant : `pos-comp-void`. Public : public. Disponibilité : available. Serv
 
 ### [Addition, paiement, préparation et remise](../../src/content/help/fr/orders/payment-preparation-and-handoff.mdx)
 
-Identifiant : `order-lifecycle`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb.
+Identifiant : `order-lifecycle`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb, foodypos.
 
 - [Distinguer addition, paiement, préparation et remise](../../src/content/help/fr/orders/payment-preparation-and-handoff.mdx#order-lifecycle-axes)
 
@@ -695,6 +700,7 @@ Identifiant : `payments-how-payments-work`. Public : public. Disponibilité : av
 - [Accès aux nouveaux réglages](../../src/content/help/fr/payments/how-payments-work.mdx#related-service-controls)
 - [Commandes préparées avec Sumit](../../src/content/help/fr/payments/how-payments-work.mdx#prepared-sumit-internal-orders)
 - [Panier préparé et présentation du restaurant](../../src/content/help/fr/payments/how-payments-work.mdx#prepared-order-existing-cart)
+- [Utiliser les espèces avec garantie bancaire facultative](../../src/content/help/fr/payments/how-payments-work.mdx#stancer-cash-guarantee)
 
 ### [Encaisser sur la caisse](../../src/content/help/fr/payments/pos-checkout.mdx)
 
@@ -744,6 +750,16 @@ Identifiant : `payment-configuration`. Public : public. Disponibilité : availab
 - [Régler politique de paiement, TVA et pourboires](../../src/content/help/fr/payments/providers-and-cibus.mdx#policy-vat-tips)
 - [Enregistrer une carte pendant le premier paiement (CST)](../../src/content/help/fr/payments/providers-and-cibus.mdx#verifone-cst-card-saving)
 - [Vérifier une facture Invoice4U détaillée](../../src/content/help/fr/payments/providers-and-cibus.mdx#invoice4u-order-lines)
+- [Utiliser les espèces avec garantie bancaire facultative](../../src/content/help/fr/payments/providers-and-cibus.mdx#stancer-cash-guarantee)
+
+### [Paiement en espèces avec garantie bancaire Stancer](../../src/content/help/fr/payments/cash-card-guarantee.mdx)
+
+Identifiant : `stancer-cash-guarantee`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb.
+
+- [Configurer les espèces et la garantie bancaire](../../src/content/help/fr/payments/cash-card-guarantee.mdx#activate)
+- [Réserver la carte et conserver les espèces à recevoir](../../src/content/help/fr/payments/cash-card-guarantee.mdx#checkout)
+- [Enregistrer les espèces ou encaisser explicitement la carte](../../src/content/help/fr/payments/cash-card-guarantee.mdx#collect)
+- [Vérifier une réservation incertaine](../../src/content/help/fr/payments/cash-card-guarantee.mdx#recover)
 
 ## printers
 
@@ -938,6 +954,7 @@ Identifiant : `fulfillment-policy`. Public : public. Disponibilité : available.
 - [Piloter manuellement les commandes hebdomadaires](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#manual-weekly-ordering)
 - [Distinguer réglage actuel et progression enregistrée](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#recorded-lifecycle-and-policy)
 - [Intégration du panier préparé Sumit](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#prepared-sumit-checkout-integration)
+- [Utiliser les espèces avec garantie bancaire facultative](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#stancer-cash-guarantee)
 
 ### [Comportement POS, services et ajustements](../../src/content/help/fr/settings/pos-behavior.mdx)
 
@@ -1206,6 +1223,8 @@ Identifiant : `guest-ordering`. Public : public. Disponibilité : available. Ser
 - [Piloter manuellement les commandes hebdomadaires](../../src/content/help/fr/guest/online-ordering.mdx#manual-weekly-ordering)
 - [Photos des produits](../../src/content/help/fr/guest/online-ordering.mdx#product-photos)
 - [Panier préparé et présentation du restaurant](../../src/content/help/fr/guest/online-ordering.mdx#prepared-order-existing-cart)
+- [Utiliser les espèces avec garantie bancaire facultative](../../src/content/help/fr/guest/online-ordering.mdx#stancer-cash-guarantee)
+- [Laisser une option facultative vide](../../src/content/help/fr/guest/online-ordering.mdx#option-choice-requirement)
 
 ### [Suivi, reçus et moyens enregistrés](../../src/content/help/fr/guest/tracking-and-account.mdx)
 
@@ -1326,6 +1345,7 @@ Identifiant : `platform-api`. Public : internal. Disponibilité : available. Ser
 - [Intégration du panier préparé Sumit](internal/fr/api-and-release.md#prepared-sumit-checkout-integration)
 - [Panier préparé et présentation du restaurant](internal/fr/api-and-release.md#prepared-order-existing-cart)
 - [Calendriers de livraison par jours](internal/fr/api-and-release.md#delivery-weekday-contract)
+- [Contrat des choix de variante facultatifs](internal/fr/api-and-release.md#option-choice-requirement)
 
 ### [Aperçus internes et alias de routes](internal/fr/design-previews.md)
 

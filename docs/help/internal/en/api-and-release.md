@@ -205,3 +205,9 @@ A private Sumit prepared-order link enters the restaurant’s existing cart, the
 ## Delivery weekday calendars
 
  Zone calendars accept days (one or more distinct weekdays 0–6) or legacy windows, without mixing both. New slots use restaurant hours and settings filtered by zone weekdays. Legacy windows supply only their weekdays for new bookings. Order creation rechecks the calendar, items and restaurant ownership; existing assignments use the order’s frozen availability. Prepared-basket quotes recheck weekdays and slots without a new production delay; fees, minimums and authorization remain separate checks. No schema change or data migration is required. Deploy the API before compatible clients and publish help with the product after development verification. This local preparation confirms no deployment.
+
+<span id="option-choice-requirement" />
+
+## Optional descriptive option contract
+
+selection_config.required is an optional boolean on the descriptive item/group link. Absent or null preserves one required choice per position; false allows empty positions without fabricating a selection. Submitted choices still enforce restaurant/item/group ownership, activity, visible positions, uniqueness and required notes. Priced groups and modifiers cannot use this field to bypass their rules. Existing JSON storage needs no migration. Validate API, web, POS and Admin together; deploy the API and compatible consumers before exposing the Admin setting. Preserve existing catalogs and publish all three translations with the release.
