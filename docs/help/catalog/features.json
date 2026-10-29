@@ -6440,7 +6440,8 @@
         "lib/features/kitchen/presentation/kitchen_plan_matrix_page.dart"
       ],
       "foodyserver": [
-        "internal/kitchenplan/**"
+        "internal/kitchenplan/**",
+        "internal/orders/production_sheet.go"
       ]
     },
     "operations": [
@@ -6452,9 +6453,9 @@
           "he": "בחירת תאריך שירות"
         },
         "instructions": {
-          "en": "Select the intended service/date and inspect included orders. Compare quantities with the same date basis used by Orders and the dashboard.",
-          "fr": "Choisissez service/date et vérifiez les commandes incluses. Comparez les quantités avec la même base de date que Commandes et Accueil.",
-          "he": "בחרו שירות או תאריך ובדקו הזמנות כלולות. השוו כמויות לפי אותו בסיס תאריך שמשמש בהזמנות ובלוח הבקרה."
+          "en": "Select the intended service/date and inspect included orders. Compare quantities with the same date basis used by Orders and the dashboard. Accepted scheduled cash pickup/delivery orders are included regardless of customer trust. When a card guarantee is required, wait for confirmed bank authorization: an awaiting or unknown guarantee is excluded by default, including for a trusted customer. The existing explicit staff override remains separate. Authorization does not confirm cash receipt: check payment separately. Disabling future cash payments does not remove already accepted orders.",
+          "fr": "Choisissez service/date et vérifiez les commandes incluses. Comparez les quantités avec la même base de date que Commandes et Accueil. Les commandes programmées à retirer ou livrer, acceptées en espèces, sont incluses sans condition de confiance. Si une garantie par carte est exigée, attendez la confirmation de l’autorisation bancaire : une garantie en attente ou inconnue reste exclue par défaut, même pour un client de confiance. L’ajout forcé explicite par le personnel reste une action distincte. L’autorisation ne confirme pas la réception des espèces : vérifiez le paiement séparément. Désactiver les futurs paiements en espèces ne retire pas les commandes déjà acceptées.",
+          "he": "בחרו שירות או תאריך ובדקו הזמנות כלולות. השוו כמויות לפי אותו בסיס תאריך שמשמש בהזמנות ובלוח הבקרה. הזמנות מתוזמנות לאיסוף או למשלוח שהתקבלו לתשלום במזומן נכללות ללא תלות במהימנות הלקוח. כאשר נדרשת ערבות בכרטיס, המתינו לאישור הבנק: ערבות ממתינה או לא ידועה אינה נכללת כברירת מחדל, גם ללקוח מהימן. הוספה כפויה מפורשת בידי הצוות נשארת פעולה נפרדת. האישור אינו אישור לקבלת המזומן; בדקו את התשלום בנפרד. השבתת תשלומי מזומן עתידיים אינה מסירה הזמנות שכבר התקבלו."
         }
       },
       {
@@ -6486,7 +6487,8 @@
     ],
     "audience": "public",
     "status": "available",
-    "preserveExisting": false
+    "preserveExisting": false,
+    "procedureUpdatedAt": "2026-10-29"
   },
   {
     "id": "delivery-zones",

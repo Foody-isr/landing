@@ -1036,3 +1036,14 @@ corpus, verify source checkpoints, and pin immutable documentation before CI.
 The existing authorization covers publishing this correction through development
 and production, with the same verified immutable artifacts. No tenant cash policy
 or provider configuration is changed during deployment.
+
+The production sheet and its day counts now admit accepted scheduled cash orders
+without a trust requirement. Required bank guarantees must be confirmed first;
+pending, unknown and malformed snapshots cannot bypass this gate through VIP
+status. The existing explicit staff override remains separate. Accepted orders
+remain planned if cash is subsequently disabled. This changes no received-payment
+status, debit, notification or tenant setting. The production-planning guide is
+reviewed in FR/HE/EN, with exact API source evidence; other order-entry and API
+procedures on the shared production source retain their scoped reviews.
+The full race-validation job has a 60-minute budget because the prior cold run
+exhausted 25 minutes during compilation; its test commands are unchanged.

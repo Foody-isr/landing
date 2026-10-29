@@ -4,9 +4,9 @@
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "55e5d68aa1c632b930a50192ed97c37d341800da",
+      "sourceCommit": "c8343acf67edc3093509cc96c5f0ad822b2a5a38",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "8f52c8892e91e79d71d052ee26dbff58b2f75f3fc50da4ca05182adb2896e821",
+      "sourceSnapshot": "199fc6965280b4368487ea3a3896d451bff3c04612bab07e7dccf392e3cc75f2",
       "workingTreeHasChanges": false,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -2964,11 +2964,12 @@
           ]
         },
         "internal/orders/production_sheet.go": {
-          "sha256": "2bf923ce61cc46c8d3425b6dbb9e085daee39dc20ceb671b3b0b19244df9c7e7",
+          "sha256": "65936c1365d9220e21c8e039d24fbeac08d5b4fc3cd17b7114daab5d685a2e25",
           "features": [
             "orders-managing-orders",
             "order-types",
             "pos-order-entry",
+            "production",
             "fulfillment-policy",
             "platform-api"
           ]
@@ -4434,7 +4435,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "dfc4837687290a920b3d6de2b1c554c796b18d3707fa488421a4af0b1d9f8378",
+          "sha256": "f99428320f998bb80173db02e598bce1276ae2bf60d942d74eba0bdbd5670f0e",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -16343,6 +16344,10 @@
         },
         {
           "service": "foodypos",
+          "file": "lib/features/auth/domain/shift_end_preflight.dart"
+        },
+        {
+          "service": "foodypos",
           "file": "lib/features/auth/presentation/device_setup_page.dart"
         },
         {
@@ -26251,11 +26256,23 @@
         },
         {
           "service": "foodypos",
+          "file": "lib/features/orders/data/held_preparation_repository.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/orders/data/local_order_draft_store.dart"
+        },
+        {
+          "service": "foodypos",
           "file": "lib/features/orders/data/open_ticket_repository.dart"
         },
         {
           "service": "foodypos",
           "file": "lib/features/orders/data/order_api.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/orders/data/order_lifecycle_repository.dart"
         },
         {
           "service": "foodypos",
@@ -26340,6 +26357,10 @@
         {
           "service": "foodypos",
           "file": "lib/features/orders/domain/order_stage_ladder.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/orders/domain/order_state_projection.dart"
         },
         {
           "service": "foodypos",
@@ -26431,6 +26452,10 @@
         },
         {
           "service": "foodypos",
+          "file": "lib/features/orders/presentation/held_preparation_dialog.dart"
+        },
+        {
+          "service": "foodypos",
           "file": "lib/features/orders/presentation/item_customization_screen.dart"
         },
         {
@@ -26460,6 +26485,10 @@
         {
           "service": "foodypos",
           "file": "lib/features/orders/presentation/open_tickets_page.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/orders/presentation/order_lifecycle_labels.dart"
         },
         {
           "service": "foodypos",
@@ -26552,6 +26581,10 @@
         {
           "service": "foodypos",
           "file": "lib/features/orders/presentation/widgets/menu_surface.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/orders/presentation/widgets/order_draft_recovery_notice.dart"
         },
         {
           "service": "foodypos",
@@ -29814,6 +29847,10 @@
         },
         {
           "service": "foodypos",
+          "file": "lib/features/orders/data/local_order_draft_store.dart"
+        },
+        {
+          "service": "foodypos",
           "file": "lib/features/orders/domain/pos_fulfillment_flow.dart"
         },
         {
@@ -31230,7 +31267,8 @@
           "lib/features/kitchen/presentation/kitchen_plan_matrix_page.dart"
         ],
         "foodyserver": [
-          "internal/kitchenplan/**"
+          "internal/kitchenplan/**",
+          "internal/orders/production_sheet.go"
         ]
       },
       "operations": [
@@ -31242,9 +31280,9 @@
             "he": "בחירת תאריך שירות"
           },
           "instructions": {
-            "en": "Select the intended service/date and inspect included orders. Compare quantities with the same date basis used by Orders and the dashboard.",
-            "fr": "Choisissez service/date et vérifiez les commandes incluses. Comparez les quantités avec la même base de date que Commandes et Accueil.",
-            "he": "בחרו שירות או תאריך ובדקו הזמנות כלולות. השוו כמויות לפי אותו בסיס תאריך שמשמש בהזמנות ובלוח הבקרה."
+            "en": "Select the intended service/date and inspect included orders. Compare quantities with the same date basis used by Orders and the dashboard. Accepted scheduled cash pickup/delivery orders are included regardless of customer trust. When a card guarantee is required, wait for confirmed bank authorization: an awaiting or unknown guarantee is excluded by default, including for a trusted customer. The existing explicit staff override remains separate. Authorization does not confirm cash receipt: check payment separately. Disabling future cash payments does not remove already accepted orders.",
+            "fr": "Choisissez service/date et vérifiez les commandes incluses. Comparez les quantités avec la même base de date que Commandes et Accueil. Les commandes programmées à retirer ou livrer, acceptées en espèces, sont incluses sans condition de confiance. Si une garantie par carte est exigée, attendez la confirmation de l’autorisation bancaire : une garantie en attente ou inconnue reste exclue par défaut, même pour un client de confiance. L’ajout forcé explicite par le personnel reste une action distincte. L’autorisation ne confirme pas la réception des espèces : vérifiez le paiement séparément. Désactiver les futurs paiements en espèces ne retire pas les commandes déjà acceptées.",
+            "he": "בחרו שירות או תאריך ובדקו הזמנות כלולות. השוו כמויות לפי אותו בסיס תאריך שמשמש בהזמנות ובלוח הבקרה. הזמנות מתוזמנות לאיסוף או למשלוח שהתקבלו לתשלום במזומן נכללות ללא תלות במהימנות הלקוח. כאשר נדרשת ערבות בכרטיס, המתינו לאישור הבנק: ערבות ממתינה או לא ידועה אינה נכללת כברירת מחדל, גם ללקוח מהימן. הוספה כפויה מפורשת בידי הצוות נשארת פעולה נפרדת. האישור אינו אישור לקבלת המזומן; בדקו את התשלום בנפרד. השבתת תשלומי מזומן עתידיים אינה מסירה הזמנות שכבר התקבלו."
           }
         },
         {
@@ -31277,7 +31315,12 @@
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
+      "procedureUpdatedAt": "2026-10-29",
       "evidence": [
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/production_sheet.go"
+        },
         {
           "service": "foodyadmin",
           "file": "src/app/[restaurantId]/orders/production/page.tsx"
@@ -38323,11 +38366,23 @@
         },
         {
           "service": "foodypos",
+          "file": "lib/features/orders/data/held_preparation_repository.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/orders/data/local_order_draft_store.dart"
+        },
+        {
+          "service": "foodypos",
           "file": "lib/features/orders/data/open_ticket_repository.dart"
         },
         {
           "service": "foodypos",
           "file": "lib/features/orders/data/order_api.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/orders/data/order_lifecycle_repository.dart"
         },
         {
           "service": "foodypos",
@@ -38412,6 +38467,10 @@
         {
           "service": "foodypos",
           "file": "lib/features/orders/domain/order_stage_ladder.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/orders/domain/order_state_projection.dart"
         },
         {
           "service": "foodypos",
@@ -38503,6 +38562,10 @@
         },
         {
           "service": "foodypos",
+          "file": "lib/features/orders/presentation/held_preparation_dialog.dart"
+        },
+        {
+          "service": "foodypos",
           "file": "lib/features/orders/presentation/item_customization_screen.dart"
         },
         {
@@ -38532,6 +38595,10 @@
         {
           "service": "foodypos",
           "file": "lib/features/orders/presentation/open_tickets_page.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/orders/presentation/order_lifecycle_labels.dart"
         },
         {
           "service": "foodypos",
@@ -38624,6 +38691,10 @@
         {
           "service": "foodypos",
           "file": "lib/features/orders/presentation/widgets/menu_surface.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/orders/presentation/widgets/order_draft_recovery_notice.dart"
         },
         {
           "service": "foodypos",
@@ -43023,6 +43094,10 @@
         },
         {
           "service": "foodybackoffice",
+          "file": "src/app/dashboard/restaurants/[id]/usage/page.tsx"
+        },
+        {
+          "service": "foodybackoffice",
           "file": "src/app/dashboard/restaurants/page.tsx"
         },
         {
@@ -43301,11 +43376,19 @@
         },
         {
           "service": "foodybackoffice",
+          "file": "src/app/dashboard/api-usage/page.tsx"
+        },
+        {
+          "service": "foodybackoffice",
           "file": "src/app/dashboard/features/page.tsx"
         },
         {
           "service": "foodybackoffice",
           "file": "src/app/dashboard/payments/page.tsx"
+        },
+        {
+          "service": "foodybackoffice",
+          "file": "src/app/dashboard/restaurants/[id]/usage/page.tsx"
         },
         {
           "service": "foodybackoffice",
@@ -49911,6 +49994,26 @@
         {
           "service": "foodyweb",
           "file": "lib/order-tracking.ts"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/orders/data/held_preparation_repository.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/orders/data/order_lifecycle_repository.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/orders/domain/order_state_projection.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/orders/presentation/held_preparation_dialog.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/orders/presentation/order_lifecycle_labels.dart"
         }
       ]
     },
