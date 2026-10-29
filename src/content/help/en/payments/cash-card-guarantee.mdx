@@ -1,0 +1,40 @@
+---
+title: Cash payments with a Stancer card guarantee
+description: Admin → Settings → Payments and order payment details
+apps: foodyadmin
+tags:
+  - payments
+  - stancer-cash-guarantee
+updatedAt: '2026-10-29'
+featureId: stancer-cash-guarantee
+audience: public
+releaseStatus: local-release-unverified
+---
+Admin → Settings → Payments and order payment details
+
+> **Release availability must be confirmed**
+> This application exists in the source workspace. This guide does not confirm public distribution or availability in your installed release.
+
+<span id="activate" />
+
+## Configure cash and card guarantees
+
+After deployment of the compatible API, Admin and guest Web and acceptance testing with your Stancer account, open Admin → Settings → Payments with settings.edit. Select Allow other methods, then Cash payments → Trusted customers only or All customers. Enable Require a card guarantee for cash and save. The guarantee is off by default and reserves 100% of the server-priced total. The option is offered for a configured Stancer integration in EUR; other providers retain their cash settings and do not advertise this guarantee. Online-payment-only always excludes cash. Existing restaurants keep their trusted-customer policy. Selecting trusted customers does not exempt them from a configured card guarantee. Verify settings after saving. Do not enable it on a real account before testing cancellation of an authorized sandbox reservation and confirming release timing and fees with Stancer.
+
+<span id="checkout" />
+
+## Reserve the card and keep cash due
+
+For pickup or delivery, an eligible customer selects Cash payment with card guarantee, reviews the exact reservation amount and explicitly accepts its reservation and collection if the order remains unpaid in cash. The customer enters the card on the hosted Stancer page and completes any bank authentication. Foody confirms the order only after checking the authorization with Stancer. The sale remains unpaid: the card reservation is not cash received or a completed card sale. This version supports fixed-price orders for service within six days. Weight-priced orders and later service dates must use another payment method. If the amount changes, review the updated basket and agree to the new amount. Stancer documents seven days for an uncaptured authorization; a Payment Intent’s lifetime is a different concept.
+
+<span id="collect" />
+
+## Record cash or explicitly charge the card
+
+In order details, the Card guarantee panel separates the reserved amount, validity and state from the money received. Record the full cash amount only after physically receiving it through the existing authorized collection flow; an open physical drawer still requires the same POS cash context. Recording cash prevents a concurrent card debit and requests release. A release awaiting confirmation does not undo received cash. Partial cash payments and relabelling the guaranteed payment as an external card/transfer are refused while the guarantee is active. If no cash was received, staff with payments.manage may choose Charge the guaranteed card and explicitly confirm the full debit. There is no automatic debit for an unpaid order. The sale becomes card-paid only after Stancer confirms capture. Do not use manual status corrections to simulate a guaranteed payment.
+
+<span id="recover" />
+
+## Verify an uncertain reservation
+
+Choose Verify reservation to read the authoritative state. After an uncertain capture or cancellation, do not retry the debit or create another order: Foody retains its single operation and checks its result. A release that remains unconfirmed needs verification in Stancer with an authorized operator; bank release is not promised to be immediate. Cancel/reject through the normal order action; Foody requires confirmed release before completing it. An active guarantee prevents basket, discount and fulfillment edits; release/cancel the existing order before creating a replacement. A provider change never deletes an existing reservation. If the configured rule becomes unsupported, the saved rule remains visible for explicit disabling and public cash checkout stays blocked. Deploy migration 282 and the API before Admin/Web; keep real activation and documentation publication coupled to acceptance testing. Active reservations also block permanent order deletion. A previously used Stancer page may show generic payment wording after cancellation; use Foody’s verified reservation state instead of that text as proof of settlement.

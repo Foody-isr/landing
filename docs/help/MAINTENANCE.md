@@ -930,3 +930,18 @@ those services are not revalidated. Export and copy the identical public corpus
 before scanning API evidence, pin immutable source and documentation commits,
 validate API before clients, then promote the exact development-tested artifacts
 under the authorized courier correction release workflow.
+
+## Stancer cash guarantee preparation (29 October 2026)
+
+This uncommitted preparation reviews API, Admin, guest Web and Landing on isolated
+feature branches. POS and Backoffice retain the source evidence present at Landing
+commit 34d74115; those clients are not revalidated. Existing cash drawer rules are
+retained. The new guide is explicitly local-release-unverified: mocked bank tests
+and browser fixtures do not certify Stancer authorization cancellation or real
+bank release timing. Verify the sandbox flow and merchant fees before real
+activation. No production setting or provider transaction is changed here.
+
+Contracts use WORKSPACE for local preparation only. A reviewed immutable Landing
+commit is still required before remote CI, publication or release; no commit or
+push is authorized in this task. Roll out migration 282/API before Admin/Web and
+coordinate the documentation with product availability.

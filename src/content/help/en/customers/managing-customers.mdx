@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - customers
   - customers-profiles
-updatedAt: '2026-10-25'
+updatedAt: '2026-10-29'
 featureId: customers-profiles
 audience: public
 releaseStatus: available
@@ -45,3 +45,11 @@ Review selected customer profiles and phone numbers before confirming a merge. C
 ## Manage phones and choose the WhatsApp number
 
 With customer-management permission, select the customer phone to open Edit customer. Under Phone numbers, correct Primary phone or choose Add a phone number. Enter a complete number; Israeli numbers are saved with +972 without the national trunk zero and foreign numbers retain their country code. Select Use for WhatsApp on the number that should receive messages, even when the calling number differs. Exactly one WhatsApp recipient is selected; a customer can have up to ten numbers. Save confirms profile and phone changes together. Invalid input, duplicate numbers or a number belonging to another record blocks this save and retains the draft; use Merge customers to associate existing records. Removing an additional number takes effect only on Save and separates its history without deleting its orders. Correcting the primary retains names, addresses and grouping and corrects existing order contacts. Login accounts and other restaurants remain unchanged. Cash eligibility belongs to the same customer; adding a number does not create another cash authorization. To correct several customers together, select at least two rows and choose Actions → Correct phones. The batch is atomic; a conflict blocks every correction. After a completed save and failed refresh, Retry reloads without repeating the write. Format validation does not prove ownership or WhatsApp registration.
+
+<span id="stancer-cash-guarantee" />
+
+## Use cash with an optional card guarantee
+
+After deployment of the compatible API, Admin and guest Web and acceptance testing with your Stancer account, open Admin → Settings → Payments with settings.edit. Select Allow other methods, then Cash payments → Trusted customers only or All customers. Enable Require a card guarantee for cash and save. The guarantee is off by default and reserves 100% of the server-priced total. The option is offered for a configured Stancer integration in EUR; other providers retain their cash settings and do not advertise this guarantee. Online-payment-only always excludes cash. Existing restaurants keep their trusted-customer policy. Selecting trusted customers does not exempt them from a configured card guarantee. Verify settings after saving. Do not enable it on a real account before testing cancellation of an authorized sandbox reservation and confirming release timing and fees with Stancer.
+
+Acceptance and recovery: [cash card guarantees](/en/help/payments/cash-card-guarantee).

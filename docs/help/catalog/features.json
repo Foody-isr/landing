@@ -702,6 +702,19 @@
           "en": "With customer-management permission, select the customer phone to open Edit customer. Under Phone numbers, correct Primary phone or choose Add a phone number. Enter a complete number; Israeli numbers are saved with +972 without the national trunk zero and foreign numbers retain their country code. Select Use for WhatsApp on the number that should receive messages, even when the calling number differs. Exactly one WhatsApp recipient is selected; a customer can have up to ten numbers. Save confirms profile and phone changes together. Invalid input, duplicate numbers or a number belonging to another record blocks this save and retains the draft; use Merge customers to associate existing records. Removing an additional number takes effect only on Save and separates its history without deleting its orders. Correcting the primary retains names, addresses and grouping and corrects existing order contacts. Login accounts and other restaurants remain unchanged. Cash eligibility belongs to the same customer; adding a number does not create another cash authorization. To correct several customers together, select at least two rows and choose Actions → Correct phones. The batch is atomic; a conflict blocks every correction. After a completed save and failed refresh, Retry reloads without repeating the write. Format validation does not prove ownership or WhatsApp registration.",
           "he": "עם הרשאת ניהול לקוחות לחצו על טלפון הלקוח לפתיחת עריכת לקוח. תחת מספרי טלפון תקנו טלפון ראשי או בחרו הוספת מספר טלפון. הזינו מספר מלא; מספר ישראלי נשמר עם +972 ללא האפס המקומי ומספר זר עם קידומת המדינה. בחרו לשימוש ב-WhatsApp במספר שיקבל הודעות, גם אם מספר השיחות שונה. נבחר מספר WhatsApp אחד וניתן לשייך עד עשרה מספרים. שמירה מאשרת יחד את פרטי הלקוח והטלפונים. קלט לא תקין, מספרים כפולים או מספר בכרטיס אחר חוסמים שמירה ומשאירים את הטיוטה; לאיחוד כרטיסים קיימים השתמשו באיחוד לקוחות. הסרת מספר נוסף נכנסת לתוקף רק בשמירה ומפרידה את ההיסטוריה ללא מחיקת הזמנות. תיקון הראשי שומר שמות, כתובות ושיוכים ומתקן פרטי קשר בהזמנות קיימות. חשבונות התחברות ומסעדות אחרות אינם משתנים. הרשאת המזומן שייכת לאותו לקוח; הוספת מספר אינה יוצרת הרשאת מזומן נוספת. לתיקון כמה לקוחות בחרו לפחות שתי שורות ואז פעולות → תיקון טלפונים. השמירה אטומית וסכסוך חוסם את כל התיקונים. אחרי שמירה שהצליחה ורענון שנכשל, נסה שוב מרענן ללא כתיבה נוספת. בדיקת הפורמט אינה מאמתת בעלות או רישום ל-WhatsApp."
         }
+      },
+      {
+        "id": "stancer-cash-guarantee",
+        "title": {
+          "en": "Use cash with an optional card guarantee",
+          "fr": "Utiliser les espèces avec garantie bancaire facultative",
+          "he": "מזומן עם ערבות אופציונלית בכרטיס"
+        },
+        "instructions": {
+          "en": "After deployment of the compatible API, Admin and guest Web and acceptance testing with your Stancer account, open Admin → Settings → Payments with settings.edit. Select Allow other methods, then Cash payments → Trusted customers only or All customers. Enable Require a card guarantee for cash and save. The guarantee is off by default and reserves 100% of the server-priced total. The option is offered for a configured Stancer integration in EUR; other providers retain their cash settings and do not advertise this guarantee. Online-payment-only always excludes cash. Existing restaurants keep their trusted-customer policy. Selecting trusted customers does not exempt them from a configured card guarantee. Verify settings after saving. Do not enable it on a real account before testing cancellation of an authorized sandbox reservation and confirming release timing and fees with Stancer.\n\nAcceptance and recovery: [cash card guarantees](/en/help/payments/cash-card-guarantee).",
+          "fr": "Après déploiement des versions compatibles de l’API, d’Admin et du site client, et validation avec votre compte Stancer, ouvrez Admin → Paramètres → Paiements avec settings.edit. Choisissez Autres moyens autorisés, puis Paiements en espèces → Clients de confiance uniquement ou Tous les clients. Activez Exiger une garantie par carte pour les espèces et enregistrez. La garantie est désactivée par défaut et réserve 100 % du total calculé par le serveur. Elle est proposée pour une intégration Stancer configurée en EUR ; les autres prestataires conservent leurs réglages espèces et ne proposent pas cette garantie. Le paiement exclusivement en ligne exclut toujours les espèces. Les restaurants existants conservent la règle des clients de confiance. Ceux-ci restent soumis à la garantie lorsqu’elle est exigée. Vérifiez les valeurs après enregistrement. Avant activation réelle, testez l’annulation d’une réservation déjà autorisée en sandbox et confirmez auprès de Stancer le délai de libération et les frais.\n\nConditions d’activation et reprise : [garantie bancaire pour les espèces](/fr/help/payments/cash-card-guarantee).",
+          "he": "לאחר פריסת גרסאות תואמות של השרת, ממשק הניהול ואתר הלקוח ובדיקת קבלה עם חשבון Stancer שלכם, פתחו ניהול → הגדרות → תשלומים עם settings.edit. בחרו אמצעים נוספים מותרים, ואז תשלומים במזומן → לקוחות מהימנים בלבד או כל הלקוחות. הפעילו דרישת ערבות בכרטיס ושמרו. הערבות מושבתת כברירת מחדל ומשוריין מלוא הסכום שחושב בשרת. האפשרות מוצעת לחיבור Stancer מוגדר באירו; ספקים אחרים שומרים על הגדרות המזומן ללא ערבות זו. תשלום מקוון בלבד תמיד חוסם מזומן. מסעדות קיימות שומרות על כלל הלקוחות המהימנים. גם לקוחות אלה נדרשים לערבות אם הכלל מופעל. בדקו את הערכים לאחר שמירה. לפני הפעלה אמיתית, בדקו ביטול שריון שכבר אושר בסביבת הבדיקות ואמתו עם Stancer את זמני השחרור והעמלות.\n\nתנאי הפעלה והתאוששות: [ערבות בכרטיס למזומן](/he/help/payments/cash-card-guarantee)."
+        }
       }
     ],
     "audience": "public",
@@ -712,7 +725,7 @@
       "fr": "La modification et la fusion nécessitent la permission de gestion des clients.",
       "he": "עריכה ואיחוד דורשים הרשאת ניהול לקוחות."
     },
-    "procedureUpdatedAt": "2026-10-25"
+    "procedureUpdatedAt": "2026-10-29"
   },
   {
     "id": "promotions",
@@ -4317,6 +4330,19 @@
           "en": "A private Sumit prepared-order link enters the restaurant’s existing cart, then its checkout with the published colors, fonts and fields. The personal browser basket is retained; prepared items, prices and date stay fixed. Contact details and requested answers belong to this order, without loading an account or saved card. Custom answers bind when payment first opens. Delivery fees are recalculated and reviewed before payment. See the [Sumit procedure](/en/help/orders/internal-sumit-checkout).",
           "he": "קישור פרטי להזמנה מוכנה ב־Sumit נכנס לסל הרגיל של המסעדה ומשם לטופס התשלום עם הצבעים, הגופנים והשדות שפורסמו. הסל האישי בדפדפן נשמר; הפריטים, המחירים והמועד שהוכנו נשארים קבועים. פרטי הקשר והתשובות המבוקשות שייכים להזמנה זו, בלי לטעון חשבון או כרטיס שמור. תשובות מותאמות נקשרות בפתיחת התשלום הראשונה. דמי המשלוח מחושבים מחדש ונבדקים לפני התשלום. ראו [הוראות Sumit](/he/help/orders/internal-sumit-checkout)."
         }
+      },
+      {
+        "id": "stancer-cash-guarantee",
+        "title": {
+          "en": "Use cash with an optional card guarantee",
+          "fr": "Utiliser les espèces avec garantie bancaire facultative",
+          "he": "מזומן עם ערבות אופציונלית בכרטיס"
+        },
+        "instructions": {
+          "en": "In order details, the Card guarantee panel separates the reserved amount, validity and state from the money received. Record the full cash amount only after physically receiving it through the existing authorized collection flow; an open physical drawer still requires the same POS cash context. Recording cash prevents a concurrent card debit and requests release. A release awaiting confirmation does not undo received cash. Partial cash payments and relabelling the guaranteed payment as an external card/transfer are refused while the guarantee is active. If no cash was received, staff with payments.manage may choose Charge the guaranteed card and explicitly confirm the full debit. There is no automatic debit for an unpaid order. The sale becomes card-paid only after Stancer confirms capture. Do not use manual status corrections to simulate a guaranteed payment.\n\nAcceptance and recovery: [cash card guarantees](/en/help/payments/cash-card-guarantee).",
+          "fr": "Dans le détail de commande, le panneau Garantie bancaire distingue montant réservé, validité et état des sommes reçues. Enregistrez le montant total en espèces uniquement après réception physique, par le parcours d’encaissement autorisé existant ; une caisse physique ouverte exige toujours le contexte POS correspondant. Cet enregistrement empêche un encaissement carte concurrent et demande la libération. Une libération à confirmer n’annule pas les espèces reçues. Les paiements partiels et le remplacement de la garantie par une carte externe ou un virement sont refusés tant qu’elle est active. Si aucune espèce n’a été reçue, un personnel avec payments.manage peut choisir Encaisser la carte en garantie et confirmer explicitement le débit total. Aucun impayé ne déclenche un débit automatique. La vente devient payée par carte après confirmation de l’encaissement par Stancer. N’utilisez pas une correction manuelle de statut pour simuler ce paiement.\n\nConditions d’activation et reprise : [garantie bancaire pour les espèces](/fr/help/payments/cash-card-guarantee).",
+          "he": "בפרטי ההזמנה, לוח הערבות מפריד בין הסכום המשוריין, תוקפו ומצבו לבין הכסף שהתקבל. רשמו את מלוא המזומן רק לאחר קבלתו בפועל דרך מסלול הגבייה המורשה הקיים; קופה פיזית פתוחה עדיין דורשת את הקשר ה-POS המתאים. הרישום מונע חיוב כרטיס מקביל ומבקש שחרור. שחרור הממתין לאישור אינו מבטל מזומן שהתקבל. תשלום חלקי והחלפת הערבות בכרטיס חיצוני או בהעברה נדחים כל עוד הערבות פעילה. אם לא התקבל מזומן, צוות עם payments.manage רשאי לבחור בחיוב הכרטיס שבערבות ולאשר במפורש את מלוא החיוב. אי-תשלום אינו מפעיל חיוב אוטומטי. המכירה תסומן כשולמה בכרטיס רק לאחר אישור הגבייה מול Stancer. אין לדמות גבייה באמצעות תיקון ידני של מצב התשלום.\n\nתנאי הפעלה והתאוששות: [ערבות בכרטיס למזומן](/he/help/payments/cash-card-guarantee)."
+        }
       }
     ],
     "audience": "public",
@@ -6112,6 +6138,19 @@
           "fr": "Les versions compatibles proposent un lien de panier Foody réservé à Sumit et la saisie de carte hébergée depuis Admin. Le choix du lien permet au destinataire de compléter ses coordonnées. Le panier préparé reste figé en attente du paiement ; vérifiez la commande enregistrée avant de reprendre. Voir [la procédure Sumit complète](/fr/help/orders/internal-sumit-checkout). Publiez cette procédure avec les versions API, Admin et Web client correspondantes.",
           "he": "בגרסאות תואמות זמינים קישור לסל Foody ל־Sumit בלבד והזנת כרטיס בטופס מאוחסן מתוך הניהול. בקישור הנמען יכול להשלים את פרטיו. הסל המוכן נשאר נעול בהמתנה לתשלום; בדקו את ההזמנה השמורה לפני המשך. ראו [הנוהל המלא ל־Sumit](/he/help/orders/internal-sumit-checkout). יש לפרסם את ההנחיות יחד עם גרסאות ה־API, הניהול ואתר הלקוחות התואמות."
         }
+      },
+      {
+        "id": "stancer-cash-guarantee",
+        "title": {
+          "en": "Use cash with an optional card guarantee",
+          "fr": "Utiliser les espèces avec garantie bancaire facultative",
+          "he": "מזומן עם ערבות אופציונלית בכרטיס"
+        },
+        "instructions": {
+          "en": "In order details, the Card guarantee panel separates the reserved amount, validity and state from the money received. Record the full cash amount only after physically receiving it through the existing authorized collection flow; an open physical drawer still requires the same POS cash context. Recording cash prevents a concurrent card debit and requests release. A release awaiting confirmation does not undo received cash. Partial cash payments and relabelling the guaranteed payment as an external card/transfer are refused while the guarantee is active. If no cash was received, staff with payments.manage may choose Charge the guaranteed card and explicitly confirm the full debit. There is no automatic debit for an unpaid order. The sale becomes card-paid only after Stancer confirms capture. Do not use manual status corrections to simulate a guaranteed payment.\n\nAcceptance and recovery: [cash card guarantees](/en/help/payments/cash-card-guarantee).",
+          "fr": "Dans le détail de commande, le panneau Garantie bancaire distingue montant réservé, validité et état des sommes reçues. Enregistrez le montant total en espèces uniquement après réception physique, par le parcours d’encaissement autorisé existant ; une caisse physique ouverte exige toujours le contexte POS correspondant. Cet enregistrement empêche un encaissement carte concurrent et demande la libération. Une libération à confirmer n’annule pas les espèces reçues. Les paiements partiels et le remplacement de la garantie par une carte externe ou un virement sont refusés tant qu’elle est active. Si aucune espèce n’a été reçue, un personnel avec payments.manage peut choisir Encaisser la carte en garantie et confirmer explicitement le débit total. Aucun impayé ne déclenche un débit automatique. La vente devient payée par carte après confirmation de l’encaissement par Stancer. N’utilisez pas une correction manuelle de statut pour simuler ce paiement.\n\nConditions d’activation et reprise : [garantie bancaire pour les espèces](/fr/help/payments/cash-card-guarantee).",
+          "he": "בפרטי ההזמנה, לוח הערבות מפריד בין הסכום המשוריין, תוקפו ומצבו לבין הכסף שהתקבל. רשמו את מלוא המזומן רק לאחר קבלתו בפועל דרך מסלול הגבייה המורשה הקיים; קופה פיזית פתוחה עדיין דורשת את הקשר ה-POS המתאים. הרישום מונע חיוב כרטיס מקביל ומבקש שחרור. שחרור הממתין לאישור אינו מבטל מזומן שהתקבל. תשלום חלקי והחלפת הערבות בכרטיס חיצוני או בהעברה נדחים כל עוד הערבות פעילה. אם לא התקבל מזומן, צוות עם payments.manage רשאי לבחור בחיוב הכרטיס שבערבות ולאשר במפורש את מלוא החיוב. אי-תשלום אינו מפעיל חיוב אוטומטי. המכירה תסומן כשולמה בכרטיס רק לאחר אישור הגבייה מול Stancer. אין לדמות גבייה באמצעות תיקון ידני של מצב התשלום.\n\nתנאי הפעלה והתאוששות: [ערבות בכרטיס למזומן](/he/help/payments/cash-card-guarantee)."
+        }
       }
     ],
     "audience": "public",
@@ -6122,7 +6161,7 @@
       "fr": "Les modifications nécessitent orders.manage ; la lecture ne donne pas le droit de modifier.",
       "he": "שינוי הזמנות דורש orders.manage; הרשאת צפייה אינה הרשאת עריכה."
     },
-    "procedureUpdatedAt": "2026-10-28",
+    "procedureUpdatedAt": "2026-10-29",
     "updatedAt": "2026-10-20"
   },
   {
@@ -8961,12 +9000,25 @@
           "fr": "Pour un lien de panier interne Sumit compatible, l’adresse du destinataire est vérifiée selon zone, frais et minimum actuels. La date choisie est conservée et doit respecter le calendrier de la zone correspondante. Le total final est vérifié avant paiement. Voir [le parcours Sumit](/fr/help/orders/internal-sumit-checkout).",
           "he": "בקישור פנימי תואם ל־Sumit כתובת הנמען נבדקת לפי אזור, תעריף ומינימום נוכחיים. מועד האספקה שנבחר נשמר וחייב להתאים ללוח האזור הרלוונטי. הסכום הסופי מוצג לאישור לפני תשלום. ראו [תשלום ב־Sumit](/he/help/orders/internal-sumit-checkout)."
         }
+      },
+      {
+        "id": "stancer-cash-guarantee",
+        "title": {
+          "en": "Use cash with an optional card guarantee",
+          "fr": "Utiliser les espèces avec garantie bancaire facultative",
+          "he": "מזומן עם ערבות אופציונלית בכרטיס"
+        },
+        "instructions": {
+          "en": "After deployment of the compatible API, Admin and guest Web and acceptance testing with your Stancer account, open Admin → Settings → Payments with settings.edit. Select Allow other methods, then Cash payments → Trusted customers only or All customers. Enable Require a card guarantee for cash and save. The guarantee is off by default and reserves 100% of the server-priced total. The option is offered for a configured Stancer integration in EUR; other providers retain their cash settings and do not advertise this guarantee. Online-payment-only always excludes cash. Existing restaurants keep their trusted-customer policy. Selecting trusted customers does not exempt them from a configured card guarantee. Verify settings after saving. Do not enable it on a real account before testing cancellation of an authorized sandbox reservation and confirming release timing and fees with Stancer.\n\nAcceptance and recovery: [cash card guarantees](/en/help/payments/cash-card-guarantee).",
+          "fr": "Après déploiement des versions compatibles de l’API, d’Admin et du site client, et validation avec votre compte Stancer, ouvrez Admin → Paramètres → Paiements avec settings.edit. Choisissez Autres moyens autorisés, puis Paiements en espèces → Clients de confiance uniquement ou Tous les clients. Activez Exiger une garantie par carte pour les espèces et enregistrez. La garantie est désactivée par défaut et réserve 100 % du total calculé par le serveur. Elle est proposée pour une intégration Stancer configurée en EUR ; les autres prestataires conservent leurs réglages espèces et ne proposent pas cette garantie. Le paiement exclusivement en ligne exclut toujours les espèces. Les restaurants existants conservent la règle des clients de confiance. Ceux-ci restent soumis à la garantie lorsqu’elle est exigée. Vérifiez les valeurs après enregistrement. Avant activation réelle, testez l’annulation d’une réservation déjà autorisée en sandbox et confirmez auprès de Stancer le délai de libération et les frais.\n\nConditions d’activation et reprise : [garantie bancaire pour les espèces](/fr/help/payments/cash-card-guarantee).",
+          "he": "לאחר פריסת גרסאות תואמות של השרת, ממשק הניהול ואתר הלקוח ובדיקת קבלה עם חשבון Stancer שלכם, פתחו ניהול → הגדרות → תשלומים עם settings.edit. בחרו אמצעים נוספים מותרים, ואז תשלומים במזומן → לקוחות מהימנים בלבד או כל הלקוחות. הפעילו דרישת ערבות בכרטיס ושמרו. הערבות מושבתת כברירת מחדל ומשוריין מלוא הסכום שחושב בשרת. האפשרות מוצעת לחיבור Stancer מוגדר באירו; ספקים אחרים שומרים על הגדרות המזומן ללא ערבות זו. תשלום מקוון בלבד תמיד חוסם מזומן. מסעדות קיימות שומרות על כלל הלקוחות המהימנים. גם לקוחות אלה נדרשים לערבות אם הכלל מופעל. בדקו את הערכים לאחר שמירה. לפני הפעלה אמיתית, בדקו ביטול שריון שכבר אושר בסביבת הבדיקות ואמתו עם Stancer את זמני השחרור והעמלות.\n\nתנאי הפעלה והתאוששות: [ערבות בכרטיס למזומן](/he/help/payments/cash-card-guarantee)."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-28",
+    "procedureUpdatedAt": "2026-10-29",
     "updatedAt": "2026-10-20"
   },
   {
@@ -11357,11 +11409,25 @@
           "fr": "Lorsque l’équipe Foody a activé Invoice4U et un type de facture pour le commerçant, les paiements immédiats des commandes Verifone transmettent les lignes enregistrées : articles et quantités, variantes/options sélectionnées, base de formule et composants inclus, remise et livraison. Les prix enregistrés sont déjà TTC ; la TVA n’est pas ajoutée à nouveau. Le total des lignes doit égaler le paiement, sinon son lancement est bloqué. Le même détail accompagne un paiement ultérieur par carte enregistrée. Les anciennes commandes sans lignes catalogue et les opérations traiteur/table/capture conservent leur comportement documentaire existant. Un paiement approuvé ne prouve pas l’émission fiscale : vérifiez le document dans Verifone Central/Invoice4U et sa réception par le client. Ne recréez pas un paiement pour obtenir une facture manquante.",
           "he": "כאשר צוות Foody הפעיל לבית העסק הנפקה ב-Invoice4U וסוג מסמך חשבונית, תשלום מיידי של הזמנת Verifone שולח את השורות שנשמרו: פריטים וכמויות, גרסאות ותוספות שנבחרו, מחיר בסיס של ארוחה ורכיביה הכלולים, הנחת הזמנה ודמי משלוח. המחירים כבר כוללים מע״מ והוא אינו נוסף שוב. סכום השורות חייב להתאים לסכום התשלום, אחרת יצירת התשלום נחסמת. אותו פירוט נשלח גם בחיוב עתידי בכרטיס שמור. הזמנות ישנות ללא שורות קטלוג ופעולות קייטרינג, שולחן ולכידת אישור מקדים שומרות על התנהגות המסמכים הקיימת. תשלום מאושר אינו הוכחה שהופק מסמך מס: בדקו את המסמך ב-Verifone Central או Invoice4U ואת קבלתו אצל הלקוח. אין ליצור תשלום נוסף כדי לקבל חשבונית חסרה."
         }
+      },
+      {
+        "id": "stancer-cash-guarantee",
+        "title": {
+          "en": "Use cash with an optional card guarantee",
+          "fr": "Utiliser les espèces avec garantie bancaire facultative",
+          "he": "מזומן עם ערבות אופציונלית בכרטיס"
+        },
+        "instructions": {
+          "en": "After deployment of the compatible API, Admin and guest Web and acceptance testing with your Stancer account, open Admin → Settings → Payments with settings.edit. Select Allow other methods, then Cash payments → Trusted customers only or All customers. Enable Require a card guarantee for cash and save. The guarantee is off by default and reserves 100% of the server-priced total. The option is offered for a configured Stancer integration in EUR; other providers retain their cash settings and do not advertise this guarantee. Online-payment-only always excludes cash. Existing restaurants keep their trusted-customer policy. Selecting trusted customers does not exempt them from a configured card guarantee. Verify settings after saving. Do not enable it on a real account before testing cancellation of an authorized sandbox reservation and confirming release timing and fees with Stancer.\n\nAcceptance and recovery: [cash card guarantees](/en/help/payments/cash-card-guarantee).",
+          "fr": "Après déploiement des versions compatibles de l’API, d’Admin et du site client, et validation avec votre compte Stancer, ouvrez Admin → Paramètres → Paiements avec settings.edit. Choisissez Autres moyens autorisés, puis Paiements en espèces → Clients de confiance uniquement ou Tous les clients. Activez Exiger une garantie par carte pour les espèces et enregistrez. La garantie est désactivée par défaut et réserve 100 % du total calculé par le serveur. Elle est proposée pour une intégration Stancer configurée en EUR ; les autres prestataires conservent leurs réglages espèces et ne proposent pas cette garantie. Le paiement exclusivement en ligne exclut toujours les espèces. Les restaurants existants conservent la règle des clients de confiance. Ceux-ci restent soumis à la garantie lorsqu’elle est exigée. Vérifiez les valeurs après enregistrement. Avant activation réelle, testez l’annulation d’une réservation déjà autorisée en sandbox et confirmez auprès de Stancer le délai de libération et les frais.\n\nConditions d’activation et reprise : [garantie bancaire pour les espèces](/fr/help/payments/cash-card-guarantee).",
+          "he": "לאחר פריסת גרסאות תואמות של השרת, ממשק הניהול ואתר הלקוח ובדיקת קבלה עם חשבון Stancer שלכם, פתחו ניהול → הגדרות → תשלומים עם settings.edit. בחרו אמצעים נוספים מותרים, ואז תשלומים במזומן → לקוחות מהימנים בלבד או כל הלקוחות. הפעילו דרישת ערבות בכרטיס ושמרו. הערבות מושבתת כברירת מחדל ומשוריין מלוא הסכום שחושב בשרת. האפשרות מוצעת לחיבור Stancer מוגדר באירו; ספקים אחרים שומרים על הגדרות המזומן ללא ערבות זו. תשלום מקוון בלבד תמיד חוסם מזומן. מסעדות קיימות שומרות על כלל הלקוחות המהימנים. גם לקוחות אלה נדרשים לערבות אם הכלל מופעל. בדקו את הערכים לאחר שמירה. לפני הפעלה אמיתית, בדקו ביטול שריון שכבר אושר בסביבת הבדיקות ואמתו עם Stancer את זמני השחרור והעמלות.\n\nתנאי הפעלה והתאוששות: [ערבות בכרטיס למזומן](/he/help/payments/cash-card-guarantee)."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
-    "preserveExisting": false
+    "preserveExisting": false,
+    "procedureUpdatedAt": "2026-10-29"
   },
   {
     "id": "whatsapp",
@@ -11930,6 +11996,19 @@
           "fr": "Un lien privé de commande préparée Sumit rejoint le panier habituel du restaurant, puis son formulaire de paiement avec les couleurs, polices et champs publiés. Le panier personnel du navigateur reste conservé ; les articles, prix et date préparés sont figés. Les coordonnées et réponses demandées concernent cette commande, sans chargement d’un compte ou d’une carte enregistrée. Les réponses personnalisées sont liées lors de la première ouverture du paiement. Les frais de livraison sont recalculés puis vérifiés avant paiement. Voir la [procédure Sumit](/fr/help/orders/internal-sumit-checkout).",
           "en": "A private Sumit prepared-order link enters the restaurant’s existing cart, then its checkout with the published colors, fonts and fields. The personal browser basket is retained; prepared items, prices and date stay fixed. Contact details and requested answers belong to this order, without loading an account or saved card. Custom answers bind when payment first opens. Delivery fees are recalculated and reviewed before payment. See the [Sumit procedure](/en/help/orders/internal-sumit-checkout).",
           "he": "קישור פרטי להזמנה מוכנה ב־Sumit נכנס לסל הרגיל של המסעדה ומשם לטופס התשלום עם הצבעים, הגופנים והשדות שפורסמו. הסל האישי בדפדפן נשמר; הפריטים, המחירים והמועד שהוכנו נשארים קבועים. פרטי הקשר והתשובות המבוקשות שייכים להזמנה זו, בלי לטעון חשבון או כרטיס שמור. תשובות מותאמות נקשרות בפתיחת התשלום הראשונה. דמי המשלוח מחושבים מחדש ונבדקים לפני התשלום. ראו [הוראות Sumit](/he/help/orders/internal-sumit-checkout)."
+        }
+      },
+      {
+        "id": "stancer-cash-guarantee",
+        "title": {
+          "en": "Use cash with an optional card guarantee",
+          "fr": "Utiliser les espèces avec garantie bancaire facultative",
+          "he": "מזומן עם ערבות אופציונלית בכרטיס"
+        },
+        "instructions": {
+          "en": "For pickup or delivery, an eligible customer selects Cash payment with card guarantee, reviews the exact reservation amount and explicitly accepts its reservation and collection if the order remains unpaid in cash. The customer enters the card on the hosted Stancer page and completes any bank authentication. Foody confirms the order only after checking the authorization with Stancer. The sale remains unpaid: the card reservation is not cash received or a completed card sale. This version supports fixed-price orders for service within six days. Weight-priced orders and later service dates must use another payment method. If the amount changes, review the updated basket and agree to the new amount. Stancer documents seven days for an uncaptured authorization; a Payment Intent’s lifetime is a different concept.\n\nAcceptance and recovery: [cash card guarantees](/en/help/payments/cash-card-guarantee).",
+          "fr": "Pour un retrait ou une livraison, le client éligible choisit Paiement en espèces avec garantie bancaire, vérifie le montant exact et accepte explicitement sa réservation puis son encaissement si la commande reste impayée en espèces. Il saisit sa carte sur la page Stancer et effectue l’authentification bancaire éventuelle. Foody confirme la commande après vérification de l’autorisation auprès de Stancer. La vente reste impayée : la réservation ne représente ni des espèces reçues ni un paiement carte encaissé. Cette version accepte les commandes à prix fixe pour un service dans les six jours. Les produits au poids et les dates plus lointaines exigent un autre paiement. Si le montant change, vérifiez le panier actualisé et acceptez le nouveau montant. Stancer documente sept jours pour une autorisation non encaissée ; la durée de vie d’une intention de paiement est une notion différente.\n\nConditions d’activation et reprise : [garantie bancaire pour les espèces](/fr/help/payments/cash-card-guarantee).",
+          "he": "באיסוף או במשלוח, לקוח זכאי בוחר בתשלום במזומן עם ערבות בכרטיס, בודק את הסכום המדויק ומסכים במפורש לשריונו ולגבייתו אם ההזמנה לא תשולם במזומן. הוא מזין כרטיס בעמוד Stancer ומשלים אימות בנקאי אם נדרש. Foody מאשרת את ההזמנה לאחר בדיקת ההרשאה מול Stancer. המכירה נותרת ללא תשלום: שריון אינו מזומן שהתקבל או תשלום בכרטיס שנגבה. גרסה זו תומכת בהזמנות במחיר קבוע לשירות בתוך שישה ימים. מוצרים לפי משקל ותאריכים מאוחרים יותר דורשים אמצעי אחר. אם הסכום השתנה, בדקו את הסל המעודכן ואשרו סכום חדש. Stancer מתעדת שבעה ימים להרשאה שלא נגבתה; משך חיי כוונת התשלום הוא עניין אחר.\n\nתנאי הפעלה והתאוששות: [ערבות בכרטיס למזומן](/he/help/payments/cash-card-guarantee)."
         }
       }
     ],
@@ -14144,5 +14223,113 @@
         }
       }
     ]
+  },
+  {
+    "id": "stancer-cash-guarantee",
+    "module": "payments",
+    "article": "payments/cash-card-guarantee",
+    "title": {
+      "en": "Cash payments with a Stancer card guarantee",
+      "fr": "Paiement en espèces avec garantie bancaire Stancer",
+      "he": "תשלום במזומן עם ערבות בכרטיס Stancer"
+    },
+    "entry": {
+      "en": "Admin → Settings → Payments and order payment details",
+      "fr": "Admin → Paramètres → Paiements et détail du paiement de commande",
+      "he": "ניהול → הגדרות → תשלומים ופרטי תשלום ההזמנה"
+    },
+    "selectors": {
+      "foodyserver": [
+        "internal/common/cash_guarantee.go",
+        "internal/common/models.go",
+        "internal/orders/cash_guarantee.go",
+        "internal/orders/internal_checkout.go",
+        "internal/orders/service.go",
+        "internal/orders/handler.go",
+        "internal/payment/cash_guarantee.go",
+        "internal/payment/resolver.go",
+        "internal/payment/stancer.go",
+        "internal/payment/stancer_reconcile.go",
+        "internal/payment/stancer_webhook.go",
+        "internal/restaurants/handler.go",
+        "internal/restaurants/service.go",
+        "cmd/server/main.go",
+        "migrations/282_stancer_cash_guarantee.sql"
+      ],
+      "foodyadmin": [
+        "src/app/[restaurantId]/settings/payments/page.tsx",
+        "src/components/orders/CashGuaranteePanel.tsx",
+        "src/components/orders/detail/context/MoneyPanel.tsx",
+        "src/lib/api.ts",
+        "src/lib/i18n.tsx",
+        "src/lib/orders/order-actions.ts"
+      ],
+      "foodyweb": [
+        "app/order/checkout/CheckoutFlow.tsx",
+        "app/r/[restaurantId]/payment/success/page.tsx",
+        "lib/checkout-payment.ts",
+        "lib/payment-return.ts",
+        "lib/i18n.tsx",
+        "lib/types.ts",
+        "services/api.ts"
+      ]
+    },
+    "operations": [
+      {
+        "id": "activate",
+        "title": {
+          "en": "Configure cash and card guarantees",
+          "fr": "Configurer les espèces et la garantie bancaire",
+          "he": "הגדרת מזומן וערבות בכרטיס"
+        },
+        "instructions": {
+          "en": "After deployment of the compatible API, Admin and guest Web and acceptance testing with your Stancer account, open Admin → Settings → Payments with settings.edit. Select Allow other methods, then Cash payments → Trusted customers only or All customers. Enable Require a card guarantee for cash and save. The guarantee is off by default and reserves 100% of the server-priced total. The option is offered for a configured Stancer integration in EUR; other providers retain their cash settings and do not advertise this guarantee. Online-payment-only always excludes cash. Existing restaurants keep their trusted-customer policy. Selecting trusted customers does not exempt them from a configured card guarantee. Verify settings after saving. Do not enable it on a real account before testing cancellation of an authorized sandbox reservation and confirming release timing and fees with Stancer.",
+          "fr": "Après déploiement des versions compatibles de l’API, d’Admin et du site client, et validation avec votre compte Stancer, ouvrez Admin → Paramètres → Paiements avec settings.edit. Choisissez Autres moyens autorisés, puis Paiements en espèces → Clients de confiance uniquement ou Tous les clients. Activez Exiger une garantie par carte pour les espèces et enregistrez. La garantie est désactivée par défaut et réserve 100 % du total calculé par le serveur. Elle est proposée pour une intégration Stancer configurée en EUR ; les autres prestataires conservent leurs réglages espèces et ne proposent pas cette garantie. Le paiement exclusivement en ligne exclut toujours les espèces. Les restaurants existants conservent la règle des clients de confiance. Ceux-ci restent soumis à la garantie lorsqu’elle est exigée. Vérifiez les valeurs après enregistrement. Avant activation réelle, testez l’annulation d’une réservation déjà autorisée en sandbox et confirmez auprès de Stancer le délai de libération et les frais.",
+          "he": "לאחר פריסת גרסאות תואמות של השרת, ממשק הניהול ואתר הלקוח ובדיקת קבלה עם חשבון Stancer שלכם, פתחו ניהול → הגדרות → תשלומים עם settings.edit. בחרו אמצעים נוספים מותרים, ואז תשלומים במזומן → לקוחות מהימנים בלבד או כל הלקוחות. הפעילו דרישת ערבות בכרטיס ושמרו. הערבות מושבתת כברירת מחדל ומשוריין מלוא הסכום שחושב בשרת. האפשרות מוצעת לחיבור Stancer מוגדר באירו; ספקים אחרים שומרים על הגדרות המזומן ללא ערבות זו. תשלום מקוון בלבד תמיד חוסם מזומן. מסעדות קיימות שומרות על כלל הלקוחות המהימנים. גם לקוחות אלה נדרשים לערבות אם הכלל מופעל. בדקו את הערכים לאחר שמירה. לפני הפעלה אמיתית, בדקו ביטול שריון שכבר אושר בסביבת הבדיקות ואמתו עם Stancer את זמני השחרור והעמלות."
+        }
+      },
+      {
+        "id": "checkout",
+        "title": {
+          "en": "Reserve the card and keep cash due",
+          "fr": "Réserver la carte et conserver les espèces à recevoir",
+          "he": "שריון הכרטיס והשארת המזומן לתשלום"
+        },
+        "instructions": {
+          "en": "For pickup or delivery, an eligible customer selects Cash payment with card guarantee, reviews the exact reservation amount and explicitly accepts its reservation and collection if the order remains unpaid in cash. The customer enters the card on the hosted Stancer page and completes any bank authentication. Foody confirms the order only after checking the authorization with Stancer. The sale remains unpaid: the card reservation is not cash received or a completed card sale. This version supports fixed-price orders for service within six days. Weight-priced orders and later service dates must use another payment method. If the amount changes, review the updated basket and agree to the new amount. Stancer documents seven days for an uncaptured authorization; a Payment Intent’s lifetime is a different concept.",
+          "fr": "Pour un retrait ou une livraison, le client éligible choisit Paiement en espèces avec garantie bancaire, vérifie le montant exact et accepte explicitement sa réservation puis son encaissement si la commande reste impayée en espèces. Il saisit sa carte sur la page Stancer et effectue l’authentification bancaire éventuelle. Foody confirme la commande après vérification de l’autorisation auprès de Stancer. La vente reste impayée : la réservation ne représente ni des espèces reçues ni un paiement carte encaissé. Cette version accepte les commandes à prix fixe pour un service dans les six jours. Les produits au poids et les dates plus lointaines exigent un autre paiement. Si le montant change, vérifiez le panier actualisé et acceptez le nouveau montant. Stancer documente sept jours pour une autorisation non encaissée ; la durée de vie d’une intention de paiement est une notion différente.",
+          "he": "באיסוף או במשלוח, לקוח זכאי בוחר בתשלום במזומן עם ערבות בכרטיס, בודק את הסכום המדויק ומסכים במפורש לשריונו ולגבייתו אם ההזמנה לא תשולם במזומן. הוא מזין כרטיס בעמוד Stancer ומשלים אימות בנקאי אם נדרש. Foody מאשרת את ההזמנה לאחר בדיקת ההרשאה מול Stancer. המכירה נותרת ללא תשלום: שריון אינו מזומן שהתקבל או תשלום בכרטיס שנגבה. גרסה זו תומכת בהזמנות במחיר קבוע לשירות בתוך שישה ימים. מוצרים לפי משקל ותאריכים מאוחרים יותר דורשים אמצעי אחר. אם הסכום השתנה, בדקו את הסל המעודכן ואשרו סכום חדש. Stancer מתעדת שבעה ימים להרשאה שלא נגבתה; משך חיי כוונת התשלום הוא עניין אחר."
+        }
+      },
+      {
+        "id": "collect",
+        "title": {
+          "en": "Record cash or explicitly charge the card",
+          "fr": "Enregistrer les espèces ou encaisser explicitement la carte",
+          "he": "רישום מזומן או חיוב מפורש של הכרטיס"
+        },
+        "instructions": {
+          "en": "In order details, the Card guarantee panel separates the reserved amount, validity and state from the money received. Record the full cash amount only after physically receiving it through the existing authorized collection flow; an open physical drawer still requires the same POS cash context. Recording cash prevents a concurrent card debit and requests release. A release awaiting confirmation does not undo received cash. Partial cash payments and relabelling the guaranteed payment as an external card/transfer are refused while the guarantee is active. If no cash was received, staff with payments.manage may choose Charge the guaranteed card and explicitly confirm the full debit. There is no automatic debit for an unpaid order. The sale becomes card-paid only after Stancer confirms capture. Do not use manual status corrections to simulate a guaranteed payment.",
+          "fr": "Dans le détail de commande, le panneau Garantie bancaire distingue montant réservé, validité et état des sommes reçues. Enregistrez le montant total en espèces uniquement après réception physique, par le parcours d’encaissement autorisé existant ; une caisse physique ouverte exige toujours le contexte POS correspondant. Cet enregistrement empêche un encaissement carte concurrent et demande la libération. Une libération à confirmer n’annule pas les espèces reçues. Les paiements partiels et le remplacement de la garantie par une carte externe ou un virement sont refusés tant qu’elle est active. Si aucune espèce n’a été reçue, un personnel avec payments.manage peut choisir Encaisser la carte en garantie et confirmer explicitement le débit total. Aucun impayé ne déclenche un débit automatique. La vente devient payée par carte après confirmation de l’encaissement par Stancer. N’utilisez pas une correction manuelle de statut pour simuler ce paiement.",
+          "he": "בפרטי ההזמנה, לוח הערבות מפריד בין הסכום המשוריין, תוקפו ומצבו לבין הכסף שהתקבל. רשמו את מלוא המזומן רק לאחר קבלתו בפועל דרך מסלול הגבייה המורשה הקיים; קופה פיזית פתוחה עדיין דורשת את הקשר ה-POS המתאים. הרישום מונע חיוב כרטיס מקביל ומבקש שחרור. שחרור הממתין לאישור אינו מבטל מזומן שהתקבל. תשלום חלקי והחלפת הערבות בכרטיס חיצוני או בהעברה נדחים כל עוד הערבות פעילה. אם לא התקבל מזומן, צוות עם payments.manage רשאי לבחור בחיוב הכרטיס שבערבות ולאשר במפורש את מלוא החיוב. אי-תשלום אינו מפעיל חיוב אוטומטי. המכירה תסומן כשולמה בכרטיס רק לאחר אישור הגבייה מול Stancer. אין לדמות גבייה באמצעות תיקון ידני של מצב התשלום."
+        }
+      },
+      {
+        "id": "recover",
+        "title": {
+          "en": "Verify an uncertain reservation",
+          "fr": "Vérifier une réservation incertaine",
+          "he": "בדיקת שריון שתוצאתו אינה ודאית"
+        },
+        "instructions": {
+          "en": "Choose Verify reservation to read the authoritative state. After an uncertain capture or cancellation, do not retry the debit or create another order: Foody retains its single operation and checks its result. A release that remains unconfirmed needs verification in Stancer with an authorized operator; bank release is not promised to be immediate. Cancel/reject through the normal order action; Foody requires confirmed release before completing it. An active guarantee prevents basket, discount and fulfillment edits; release/cancel the existing order before creating a replacement. A provider change never deletes an existing reservation. If the configured rule becomes unsupported, the saved rule remains visible for explicit disabling and public cash checkout stays blocked. Deploy migration 282 and the API before Admin/Web; keep real activation and documentation publication coupled to acceptance testing. Active reservations also block permanent order deletion. A previously used Stancer page may show generic payment wording after cancellation; use Foody’s verified reservation state instead of that text as proof of settlement.",
+          "fr": "Choisissez Vérifier la réservation pour relire l’état faisant autorité. Après un encaissement ou une annulation incertains, ne relancez pas le débit et ne créez pas une seconde commande : Foody conserve l’opération unique et vérifie son résultat. Une libération toujours non confirmée exige un contrôle dans Stancer par un opérateur autorisé ; son effet bancaire immédiat n’est pas promis. Annulez ou refusez par l’action habituelle de commande ; Foody exige une libération confirmée avant de terminer. Une garantie active bloque les modifications de panier, remise et livraison/retrait ; annulez avec libération la commande existante avant son remplacement. Changer de prestataire ne supprime aucune réservation existante. Si la règle enregistrée devient incompatible, elle reste visible pour désactivation explicite et le checkout espèces est bloqué. Déployez la migration 282 et l’API avant Admin et le site client ; coordonnez activation réelle et publication documentaire avec les tests d’acceptation. Une réservation active bloque aussi la suppression définitive de la commande. Un ancien lien Stancer peut afficher un message de paiement générique après annulation ; utilisez l’état de réservation vérifié par Foody comme preuve du résultat financier.",
+          "he": "בחרו בבדיקת השריון לקריאת המצב הקובע. לאחר חיוב או ביטול שתוצאתם אינה ברורה, אל תחזרו על החיוב ואל תיצרו הזמנה שנייה: Foody שומרת על הפעולה היחידה ובודקת את תוצאתה. שחרור שלא אושר דורש בדיקה ב-Stancer בידי מפעיל מורשה; אין הבטחה לשחרור בנקאי מיידי. בטלו או דחו דרך פעולת ההזמנה הרגילה; נדרש שחרור מאושר לפני סיום הביטול. ערבות פעילה חוסמת שינוי סל, הנחה ומימוש; בטלו ושחררו את ההזמנה הקיימת לפני החלפתה. שינוי ספק אינו מוחק שריון קיים. אם הכלל השמור אינו נתמך עוד, הוא נשאר גלוי לביטול מפורש ותשלום מקוון במזומן נחסם. פרסו מיגרציה 282 ואת השרת לפני ממשק הניהול ואתר הלקוח; תאמו הפעלה אמיתית ופרסום התיעוד עם בדיקות הקבלה. שריון פעיל חוסם גם מחיקה סופית של ההזמנה. עמוד Stancer שנעשה בו שימוש עשוי להציג הודעת תשלום כללית לאחר ביטול; הסתמכו על מצב השריון המאומת ב-Foody כהוכחה לתוצאה הכספית."
+        }
+      }
+    ],
+    "audience": "public",
+    "status": "local-release-unverified",
+    "procedureUpdatedAt": "2026-10-29"
   }
 ]
