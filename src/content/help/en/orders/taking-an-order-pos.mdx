@@ -10,7 +10,7 @@ tags:
   - modifiers
   - table
   - counter
-updatedAt: '2026-10-28'
+updatedAt: '2026-10-29'
 featureId: pos-order-entry
 audience: public
 releaseStatus: available
@@ -134,3 +134,9 @@ For an uncertain send, first choose Verify saved result: this read does not rese
 ## Prepared Sumit checkout integration
 
 A basket prepared in Admin for Sumit stays pending until verified payment and does not dispatch unpaid food to POS. Resume it from its saved Admin order. See [the Admin Sumit procedure](/en/help/orders/internal-sumit-checkout).
+
+<span id="option-choice-requirement" />
+
+## Leave an optional choice empty
+
+On the updated POS, an optional descriptive position may remain empty without blocking Next or Add. To clear it, tap the same selected value again. Required positions are still checked. Configure the per-item requirement in Admin → Price and variants; existing groups retain their required default. Update an older POS before using this setting. Filled positions retain their order on the order and ticket; descriptive choices add no surcharge.

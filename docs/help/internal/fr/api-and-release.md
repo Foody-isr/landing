@@ -205,3 +205,9 @@ Un lien privé de commande préparée Sumit rejoint le panier habituel du restau
 ## Calendriers de livraison par jours
 
  Le calendrier de zone accepte days (jours 0–6 uniques, au moins un) ou le format historique windows, sans mélange des deux. Les nouveaux créneaux utilisent les horaires et réglages du restaurant, filtrés par les jours de zone. Les windows historiques fournissent uniquement leurs jours pour les nouvelles réservations. Le serveur vérifie à nouveau le calendrier, les articles et leur restaurant à la création ; les affectations existantes utilisent la disponibilité figée de la commande. Le devis d’un panier préparé recontrôle jours et créneaux sans nouveau délai de production ; frais, minimum et autorisation restent contrôlés séparément. Aucun changement de schéma ni migration de données n’est requis. Déployez l’API avant les clients compatibles et publiez l’aide avec le produit après vérification en développement. Cette préparation locale ne confirme aucun déploiement.
+
+<span id="option-choice-requirement" />
+
+## Contrat des choix de variante facultatifs
+
+selection_config.required est un booléen facultatif propre au lien article/groupe descriptif. Absent ou null, il conserve un choix obligatoire par position ; false autorise les positions vides sans fabriquer de sélection. Les choix fournis restent soumis à la propriété restaurant/article/groupe, à l’activité, aux positions visibles, à l’unicité et aux précisions requises. Les groupes tarifés et modificateurs ne peuvent pas utiliser ce champ pour contourner leurs règles. Le JSON existant est conservé sans migration. Validez API, web, POS et Admin ensemble ; déployez l’API puis les consommateurs compatibles avant d’exposer le réglage Admin. Conservez les catalogues existants et publiez les trois traductions avec la version.
