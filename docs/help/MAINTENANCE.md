@@ -22,6 +22,24 @@ Verify Web before Admin and publish the guides with the compatible release;
 promote only the exact successful development artifacts. See
 [scope, compatibility and pin workflow](reviews/pink-coffee-template-local-preparation.md).
 
+### Pink Coffee field-contract evidence follow-up
+
+Admin checkpoint `312fe721588d56495ca665368ec2a0751cdf4e2b` completes eight
+static test-registry descriptors for the already documented campaign and display
+controls. The registry has no product runtime importer. Editor controls, saved
+payloads and publication behavior are unchanged. Preserve the article bytes,
+dates and public corpus from Landing `1f97f2f0e1e9e3fd3773f8ee98e6b35fe4f70ca6`.
+Refresh only the Admin registry digest, source checkpoint and configuration-field
+surfaces; retain all five other service blocks and surfaces exactly from Landing
+develop `035923bdbca6958560550fdab57f1401a97c069d`.
+
+Pin this follow-up's immutable Landing commit in Admin only. API and guest Web
+keep their independently reviewed `1f97f2f0e1e9e3fd3773f8ee98e6b35fe4f70ca6` pins
+and the identical corpus revision. This evidence change requires no public guide
+publication or API/Web rebuild. The root coordinates PRs, required checks and
+Admin artifact verification before production promotion. See the
+[exact scoped review](reviews/pink-coffee-field-contracts.md).
+
 ## Internal order finalization (29 October 2026)
 
 New order now finalizes inside the ticket after Continue. Explicit payment intents
