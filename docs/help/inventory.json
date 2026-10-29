@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-10-18",
+  "reviewedAt": "2026-10-29",
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "2992eb6f2dad5e80420212c61ade9e0704115dc2",
+      "sourceCommit": "2d139a2e32c472dcb113a90819b0e872557e3986",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "c0af246ca83ab5845e5402b4218fa1be6507e4f133d4539b05ec051653b26cbb",
+      "sourceSnapshot": "91c25ef22a2a1e451f30e1011a9d308627afec85db954e951a9393229a802c4e",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -598,8 +598,15 @@
             "platform-api"
           ]
         },
+        "internal/common/delivery_same_day.go": {
+          "sha256": "9461e0c734ea0ee8eed7ba66d8d2f8c702c9ada94802b99dca54c5ad88e23290",
+          "features": [
+            "delivery-zones",
+            "platform-api"
+          ]
+        },
         "internal/common/delivery_schedule.go": {
-          "sha256": "d4878962521a938aea96cea5255cf388d8dbd309d17b6061161066786b2228cf",
+          "sha256": "e2a0ab43356c9fe4042db2423f462e3b7a61c74f7c273a5e49cdca5a3a423af6",
           "features": [
             "delivery-zones",
             "platform-api"
@@ -693,7 +700,7 @@
           ]
         },
         "internal/common/models.go": {
-          "sha256": "339eea3946eb3964689e776eeca16f2ed564e5c285e30b598aa3f297cd8ffd55",
+          "sha256": "412f22b12f4c6479c3fe48a200ef51a9deb65f45e9b5aecb018b6f627df65eae",
           "features": [
             "delivery-zones",
             "platform-api",
@@ -814,6 +821,13 @@
         "internal/common/service_guidance_models.go": {
           "sha256": "671f9d333c72eee68cd40025f7a0ad6d023880f4d6b9b4c1d1a5d398c1c763fd",
           "features": [
+            "platform-api"
+          ]
+        },
+        "internal/common/settings_merge.go": {
+          "sha256": "83391e335b84e54a8e5c85e53bd613c54a4bb36830e56553abcfc9d36b0176db",
+          "features": [
+            "delivery-zones",
             "platform-api"
           ]
         },
@@ -1148,6 +1162,14 @@
             "platform-api"
           ]
         },
+        "internal/delivery/same_day_policy.go": {
+          "sha256": "a40f9215e4958469447155da26378557662eaff8f69cb9d8897e4bdc446fa2cc",
+          "features": [
+            "delivery-zones",
+            "delivery-dispatch",
+            "platform-api"
+          ]
+        },
         "internal/delivery/service.go": {
           "sha256": "3325f22be9d3d8efca85f6193a31d88c2e5a7445c342f829928f15b6341c676e",
           "features": [
@@ -1171,7 +1193,7 @@
           ]
         },
         "internal/delivery/zones.go": {
-          "sha256": "2c40fe78e00d20f784aa86714c23c1e95eb0e7e3697fdb6f4c18d92322b003ef",
+          "sha256": "7723290bfa3189d1dee0cf45eab3451e1266adbe22efa4ba4c48c4f1244de576",
           "features": [
             "delivery-zones",
             "delivery-dispatch",
@@ -2511,7 +2533,7 @@
           ]
         },
         "internal/orders/delivery_schedule.go": {
-          "sha256": "46de22c33bd283a7a1e6e667c750cc798580c94798ff9179072da87c66b2521d",
+          "sha256": "5bca400449756bf6b683f4ca1c2b84c5c079d9334d30b93a65e33e7938b738bd",
           "features": [
             "orders-managing-orders",
             "order-types",
@@ -3016,7 +3038,7 @@
           ]
         },
         "internal/orders/service.go": {
-          "sha256": "efe9cc0221cb6010048420f47eedbec450f0aedc565e5c537fcad96da172aa53",
+          "sha256": "c902816d5aa9417a9da4f3d8a817208b33fa2647b62c84564c0d1416e9488c21",
           "features": [
             "orders-managing-orders",
             "order-types",
@@ -3794,8 +3816,26 @@
             "platform-api"
           ]
         },
+        "internal/restaurants/delivery_same_day.go": {
+          "sha256": "952c1f8b4ffd0145bd990f73261c11901464f9312684524a125acbfdbc7b479a",
+          "features": [
+            "delivery-zones",
+            "restaurant-profile",
+            "fulfillment-policy",
+            "platform-api"
+          ]
+        },
+        "internal/restaurants/delivery_same_day_settings.go": {
+          "sha256": "b5c9e3b88deef1ada1e926e126f37ea800818e9d16cc31345c13b60140761341",
+          "features": [
+            "delivery-zones",
+            "restaurant-profile",
+            "fulfillment-policy",
+            "platform-api"
+          ]
+        },
         "internal/restaurants/delivery_schedule.go": {
-          "sha256": "6a9869ceeaa4c132ed0f89c6c6bc8c6338dddaa6f86a36f46553da475f48bdba",
+          "sha256": "d5b89e9027f7b4b1b211e409011dc6cc5b0ace7d20cd14c5fd4ed38ee1bb6cbb",
           "features": [
             "delivery-zones",
             "restaurant-profile",
@@ -3837,7 +3877,7 @@
           ]
         },
         "internal/restaurants/handler.go": {
-          "sha256": "fca7eaa2524e239db393c1569f83f1c8bf70a99b7a3f7914a65ac42eb11aa53d",
+          "sha256": "8c44e4a5525382d4d81cd9de93da197f50305941e758ecd6623dab18a1ce4719",
           "features": [
             "restaurant-profile",
             "fulfillment-policy",
@@ -3920,7 +3960,7 @@
           ]
         },
         "internal/restaurants/scheduling.go": {
-          "sha256": "4d9321aed172328fbf65131af062a3d046b515c43ea11f6e4b8117235ca8cbfe",
+          "sha256": "a5bd5aa9475ee20f9eeac73c9ac62e39ab5b9cfbe5ddb4ef0aaf5e1772053180",
           "features": [
             "restaurant-profile",
             "fulfillment-policy",
@@ -3936,7 +3976,7 @@
           ]
         },
         "internal/restaurants/service.go": {
-          "sha256": "f64d87aed44010060e28e2aa1b25e33b911947752febfb8fc9b091ea76f6a46e",
+          "sha256": "3f7248ad0b55c992effd967217aae3369dfd976e5a961276b6d2c8b84c5dcb98",
           "features": [
             "restaurant-profile",
             "fulfillment-policy",
@@ -4436,7 +4476,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "746f038e948a55e8aff871293804ad121a2b155af5f74b3691abfc0f873bc7cb",
+          "sha256": "51afb90d3376489670fa28c0a02acc27ec04e2517bf51ecdb55080bc9725c6ff",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -4763,15 +4803,21 @@
           "features": [
             "stancer-cash-guarantee"
           ]
+        },
+        "migrations/283_delivery_same_day_policy.sql": {
+          "sha256": "d87d41db4c3c8bdda98c46fc0515407d1deed066d4007646984da14cf45456a0",
+          "features": [
+            "delivery-zones"
+          ]
         }
       }
     },
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "e5bc17932f42d73ec96a313cc4b484e083276ea6",
+      "sourceCommit": "49a96dd4f4a1a42d1391c6423dfe4054f0309b4a",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "780e86944a0950f23a95cf4fee63314555d6f7d46a9695ac9f51e2b5f9baa220",
-      "workingTreeHasChanges": false,
+      "sourceSnapshot": "227bdce53dffa33500d18269da00b9cd12d3cf0937f272655efa62232309a56a",
+      "workingTreeHasChanges": true,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
           "sha256": "13c58bc11284d66c7fb9c4d79c1b3e92c6e05539164f2147a5e966d9c17ac275",
@@ -5864,6 +5910,12 @@
             "delivery-zones"
           ]
         },
+        "src/app/[restaurantId]/settings/delivery/SameDayDeliverySettings.tsx": {
+          "sha256": "66615d68fd7efaafc682296700cc3669c9c88079d4f123ee46016271b0f8b624",
+          "features": [
+            "delivery-zones"
+          ]
+        },
         "src/app/[restaurantId]/settings/delivery/maps/page.tsx": {
           "sha256": "3649416d848f3c53e8ce824a211e0af85ba3d6cef43837f488e05de1ce2444c0",
           "features": [
@@ -5872,7 +5924,7 @@
           ]
         },
         "src/app/[restaurantId]/settings/delivery/page.tsx": {
-          "sha256": "2dedc9d8c84a6405153f02815289012e41e14401d114264cd425b791321c71ac",
+          "sha256": "813572f6474e401bf2ce76de0ebbecac095e3cbcbf547bc700aed1cea10e9878",
           "features": [
             "delivery-zones"
           ]
@@ -5997,7 +6049,7 @@
           ]
         },
         "src/app/[restaurantId]/settings/orders/PreorderSettings.tsx": {
-          "sha256": "cb37b7061669dcf406da4c7d42bbc98df9a5ae3888076759671ce2720c2df241",
+          "sha256": "51d6d239182198bbf553c13ecf9abb30be6427dbf8865ddaf228d4dfcb19db39",
           "features": [
             "order-types",
             "preorders",
@@ -7754,7 +7806,7 @@
           ]
         },
         "src/components/orders/DeliverySlotAssignment.tsx": {
-          "sha256": "a96624cc05e7cc409327982a1bd6c99fdba12e7f02eb8bd813d36566b3303b7d",
+          "sha256": "8ceeb0f06bc76c0c11fc63ff658015c685da09665f963745825fb16c12c2dd86",
           "features": [
             "orders-managing-orders",
             "order-detail"
@@ -9061,7 +9113,7 @@
           ]
         },
         "src/lib/api.ts": {
-          "sha256": "4b75cda1e9080628be3593aafb5af1e2dc0f0578122246774c12168527ea62c0",
+          "sha256": "9cd0e572a8c56386cf06d9a3b14029fa2e9a1d3847b3bdc1a54af12080051fdc",
           "features": [
             "customers-profiles",
             "menu-variants-and-sizes",
@@ -9189,7 +9241,7 @@
           ]
         },
         "src/lib/delivery-zone-state.ts": {
-          "sha256": "f73e658a3aa496a83774427e91d399cdc2c0b03c983286c51860b343aee5726d",
+          "sha256": "18c3d543f39d67db0eeab1603779b94008d2bdbcf7a00429b54a1175eb9e2b83",
           "features": [
             "delivery-zones",
             "delivery-dispatch",
@@ -9254,7 +9306,7 @@
           ]
         },
         "src/lib/i18n.tsx": {
-          "sha256": "185621f4ac4f048e79297c57fb0e6d834af65c062b9589338e458286fb8301e7",
+          "sha256": "948bb49e260b3b8bf8443b5cc1ef18b6419c28af4892ac2112d6772a8a9d1436",
           "features": [
             "customers-profiles",
             "menu-menus-and-groups",
@@ -10285,10 +10337,10 @@
     },
     "foodyweb": {
       "repository": "https://github.com/Foody-isr/web",
-      "sourceCommit": "3695bb4a2dc7c2f23705cdce43f9b23e7836653a",
+      "sourceCommit": "d67202afeeb0e30e06ddc3141b42cc0e3515f7fb",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "ddd11f221319331564eb906b10f936e33f22590d8ca249237683f34909bd74f5",
-      "workingTreeHasChanges": false,
+      "sourceSnapshot": "87afae1ee73e14d1c180d8332d73ad4623650c442d6da96448c6177c93006850",
+      "workingTreeHasChanges": true,
       "sourceFiles": {
         "app/@cart/(.)order/cart/page.tsx": {
           "sha256": "1d5bfacb3688b858b55225ea9a850fb106a77a2b64afe399cf8b42ca600d83b3",
@@ -10404,7 +10456,7 @@
           ]
         },
         "app/order/checkout/CheckoutFlow.tsx": {
-          "sha256": "ed72217238de3100f364940c21f6a73188b4ac4e61b5b1cbb854e7efc4e7a941",
+          "sha256": "9f40c88368f785309abcae795e8db78abe865b2008ea6208ea32193ba7657c8d",
           "features": [
             "guest-ordering",
             "orders-internal-sumit-checkout",
@@ -10918,7 +10970,7 @@
           ]
         },
         "components/DeliverySchedulePanel.tsx": {
-          "sha256": "a1858bbea193449cf60aa7816ed42477d2f83f98cf8325ba5e44669d5022710a",
+          "sha256": "f336a2ce4a217fdf138f8e2fed2f665b1162f383925d2f98c2bf3da7ce854476",
           "features": [
             "guest-ordering"
           ]
@@ -11011,7 +11063,7 @@
           ]
         },
         "components/OrderDeliveryPromise.tsx": {
-          "sha256": "3bb2c833e79e35f121fad031dca91f6052aa5b4b98d05a9c701b8d865f960641",
+          "sha256": "4f0ff8efa77963ffa70a13aa837cdc279892f92cfab193102d80baf8d63dd666",
           "features": [
             "guest-ordering"
           ]
@@ -11029,7 +11081,7 @@
           ]
         },
         "components/OrderExperience.tsx": {
-          "sha256": "3ee02f56159b5d8c81ae63491d598fd74a5057d40ac2a96ce8258e714d804329",
+          "sha256": "486e2ae3f95bd66b1b3facc0402e24b97f92b7eca848d8b0e714d7dbfb2fd856",
           "features": [
             "guest-ordering"
           ]
@@ -11151,7 +11203,7 @@
           ]
         },
         "components/SchedulingFields.tsx": {
-          "sha256": "a8d11524829d13847987b5962a8e4d9252a3921e7a7596bf05122a654b92e9d1",
+          "sha256": "f137321d79f0a00e2c7704b57db7d0a47056d65d50818f3403d7f82a15960d9c",
           "features": [
             "guest-ordering"
           ]
@@ -11606,7 +11658,7 @@
           ]
         },
         "components/website-v3/WebsiteFulfillmentDialog.tsx": {
-          "sha256": "242941514c8a8a3c76af136b31430c90961b34abbcc1bf0e06557c39786d514f",
+          "sha256": "a8925d94357cae4f9c2c56ad833d5ccb7430f3854e6e21ba8fedb22767a58a93",
           "features": [
             "website-qr-customize-your-site",
             "website-design",
@@ -11948,7 +12000,7 @@
           ]
         },
         "lib/i18n.tsx": {
-          "sha256": "7fceae69590fff0f787a40ebc0448b418d5d758e5821bcdbf137d2f1d95b899a",
+          "sha256": "9fe18de116d0c8ba1776e3f1403c13d44d616bb4c9ed71873ec5b0e6672452f4",
           "features": [
             "menu-variants-and-sizes",
             "payments-how-payments-work",
@@ -12208,7 +12260,7 @@
           ]
         },
         "lib/scheduling.ts": {
-          "sha256": "be59696d8ec95eb214dc45307a427250c1841b8bf148b62510adf4769768cd1a",
+          "sha256": "6d2dcecc64dacbf1012d849307d0d7477b55a00e847bf0cd909f98c8e031a4eb",
           "features": [
             "shared-runtime"
           ]
@@ -12366,7 +12418,7 @@
           ]
         },
         "lib/types.ts": {
-          "sha256": "0970d423cbaa752506f47f24d12811805d318b174aebe39242835ce18d8478bb",
+          "sha256": "7c43149de9ba3483339fe138a30e4ffb9d8efe50be292c39cb291c27b1e158de",
           "features": [
             "menu-variants-and-sizes",
             "shared-runtime",
@@ -12535,7 +12587,7 @@
           ]
         },
         "services/api.ts": {
-          "sha256": "d5001a3af0e7199a250be9b9cea548aca7e00f3615996f20f7a71a339c209309",
+          "sha256": "917de7c762e08e75ace7edadfedf1f66afdc398c2c7be3974e3f9aa25bb1a068",
           "features": [
             "guest-ordering",
             "guest-catering",
@@ -30771,9 +30823,9 @@
             "he": "השארת בחירה שאינה חובה ריקה"
           },
           "instructions": {
-            "fr": "À l’ajout d’un article depuis la bibliothèque Admin, remplissez les positions obligatoires. Une position rendue facultative sur la fiche article peut rester sur Choisir une option ; revenez à cette valeur pour retirer un choix avant Ajouter à la commande. Seules les positions effectivement choisies sont conservées. Le prix absolu du format reste inchangé et les modificateurs gardent leurs suppléments propres.",
-            "en": "When adding an item from the Admin library, complete required positions. A position made optional on the item may remain on Choose an option; return to that value to remove a choice before Add to order. Only positions actually selected are retained. The absolute format price remains unchanged and modifiers keep their separate deltas.",
-            "he": "בהוספת פריט מספריית Admin מלאו את מיקומי החובה. מיקום שהוגדר לא חובה בפריט יכול להישאר בבחרו אפשרות; חזרו לערך זה כדי להסיר בחירה לפני הוספה להזמנה. נשמרים רק המיקומים שנבחרו בפועל. מחיר הגודל המוחלט אינו משתנה ותוספות שומרות על הפרשי המחיר שלהן."
+            "fr": "À l’ajout d’un article depuis la bibliothèque Admin, remplissez les positions obligatoires. Une position rendue facultative sur la fiche article peut rester sur Choisir une option ; revenez à cette valeur pour retirer un choix avant Ajouter à la commande. Seules les positions effectivement choisies sont conservées. Le prix absolu du format reste inchangé et les modificateurs gardent leurs suppléments propres. Pour la livraison facultative du jour même, consultez le guide Zones et créneaux de livraison avec des versions compatibles de l’API, d’Admin et du site client : le client peut choisir uniquement le jour, voir une estimation avant paiement puis recevoir un horaire confirmé par le restaurant. Les précommandes conservent leur mode configuré. La date locale du restaurant détermine les règles du jour même.",
+            "en": "When adding an item from the Admin library, complete required positions. A position made optional on the item may remain on Choose an option; return to that value to remove a choice before Add to order. Only positions actually selected are retained. The absolute format price remains unchanged and modifiers keep their separate deltas. For optional same-day delivery, review the Delivery zones and schedules guide with compatible API, Admin and guest versions: the customer may choose only the day, see an estimate before payment and receive a restaurant-confirmed time later. Future bookings retain their configured mode. The restaurant’s local date determines same-day rules.",
+            "he": "בהוספת פריט מספריית Admin מלאו את מיקומי החובה. מיקום שהוגדר לא חובה בפריט יכול להישאר בבחרו אפשרות; חזרו לערך זה כדי להסיר בחירה לפני הוספה להזמנה. נשמרים רק המיקומים שנבחרו בפועל. מחיר הגודל המוחלט אינו משתנה ותוספות שומרות על הפרשי המחיר שלהן. למשלוח אופציונלי באותו יום עיינו במדריך אזורים וחלונות משלוח בגרסאות תואמות של ה-API, הניהול ואתר הלקוח: הלקוח עשוי לבחור רק יום, לראות הערכה לפני תשלום ולקבל בהמשך שעה מאושרת מהמסעדה. הזמנות מראש שומרות על המצב שהוגדר. התאריך המקומי במסעדה קובע את כללי אותו יום."
           }
         }
       ],
@@ -31319,16 +31371,16 @@
             "he": "ניהול הזמנות שבועיות באופן ידני"
           },
           "instructions": {
-            "en": "Weekly batch restaurants can choose Manual opening under Settings → Ordering & delivery → Orders & availability, with settings.edit. Save, then explicitly open or pause online orders using the pause control. Automatic opening/cutoff times do not control intake in this mode. Delivery days/windows, the restaurant timezone, preparation and stock rules remain in effect; existing orders are untouched. The website stays browsable during a pause. Active temporary test access must be disabled before reopening publicly. See the fulfillment settings guide for the complete procedure.",
-            "fr": "Les restaurants en lot hebdomadaire peuvent choisir Ouverture manuelle dans Paramètres → Commandes et livraison → Commandes et disponibilité, avec settings.edit. Enregistrez, puis ouvrez ou fermez explicitement les commandes avec le bouton de pause. Les heures d’ouverture/clôture automatiques ne pilotent plus la prise de commandes dans ce mode. Jours et créneaux de livraison, fuseau du restaurant, règles de préparation et stocks restent applicables ; les commandes existantes sont conservées. Le site reste consultable pendant la pause. Désactivez l’accès de test temporaire actif avant toute réouverture publique. Voir le guide des réglages des commandes pour la procédure complète.",
-            "he": "מסעדות עם סבב שבועי יכולות לבחור פתיחה ידנית בהגדרות ← הזמנות ומשלוחים ← הזמנות וזמינות, עם הרשאת settings.edit. שמרו ואז פתחו או השהו במפורש באמצעות בקרת ההשהיה. שעות פתיחה וסגירה אוטומטיות אינן שולטות בקבלת הזמנות במצב זה. ימי וחלונות האספקה, אזור הזמן של המסעדה, כללי ההכנה והמלאי נשמרים; הזמנות קיימות אינן משתנות. האתר נשאר זמין לעיון בזמן ההשהיה. יש לכבות גישת בדיקה זמנית פעילה לפני פתיחה לציבור. ההליך המלא נמצא במדריך הגדרות ההזמנות."
+            "en": "Weekly batch restaurants can choose Manual opening under Settings → Ordering & delivery → Orders & availability, with settings.edit. Save, then explicitly open or pause online orders using the pause control. Automatic opening/cutoff times do not control intake in this mode. Delivery days/windows, the restaurant timezone, preparation and stock rules remain in effect; existing orders are untouched. The website stays browsable during a pause. Active temporary test access must be disabled before reopening publicly. See the fulfillment settings guide for the complete procedure. For optional same-day delivery, review the Delivery zones and schedules guide with compatible API, Admin and guest versions: the customer may choose only the day, see an estimate before payment and receive a restaurant-confirmed time later. Future bookings retain their configured mode. The restaurant’s local date determines same-day rules.",
+            "fr": "Les restaurants en lot hebdomadaire peuvent choisir Ouverture manuelle dans Paramètres → Commandes et livraison → Commandes et disponibilité, avec settings.edit. Enregistrez, puis ouvrez ou fermez explicitement les commandes avec le bouton de pause. Les heures d’ouverture/clôture automatiques ne pilotent plus la prise de commandes dans ce mode. Jours et créneaux de livraison, fuseau du restaurant, règles de préparation et stocks restent applicables ; les commandes existantes sont conservées. Le site reste consultable pendant la pause. Désactivez l’accès de test temporaire actif avant toute réouverture publique. Voir le guide des réglages des commandes pour la procédure complète. Pour la livraison facultative du jour même, consultez le guide Zones et créneaux de livraison avec des versions compatibles de l’API, d’Admin et du site client : le client peut choisir uniquement le jour, voir une estimation avant paiement puis recevoir un horaire confirmé par le restaurant. Les précommandes conservent leur mode configuré. La date locale du restaurant détermine les règles du jour même.",
+            "he": "מסעדות עם סבב שבועי יכולות לבחור פתיחה ידנית בהגדרות ← הזמנות ומשלוחים ← הזמנות וזמינות, עם הרשאת settings.edit. שמרו ואז פתחו או השהו במפורש באמצעות בקרת ההשהיה. שעות פתיחה וסגירה אוטומטיות אינן שולטות בקבלת הזמנות במצב זה. ימי וחלונות האספקה, אזור הזמן של המסעדה, כללי ההכנה והמלאי נשמרים; הזמנות קיימות אינן משתנות. האתר נשאר זמין לעיון בזמן ההשהיה. יש לכבות גישת בדיקה זמנית פעילה לפני פתיחה לציבור. ההליך המלא נמצא במדריך הגדרות ההזמנות. למשלוח אופציונלי באותו יום עיינו במדריך אזורים וחלונות משלוח בגרסאות תואמות של ה-API, הניהול ואתר הלקוח: הלקוח עשוי לבחור רק יום, לראות הערכה לפני תשלום ולקבל בהמשך שעה מאושרת מהמסעדה. הזמנות מראש שומרות על המצב שהוגדר. התאריך המקומי במסעדה קובע את כללי אותו יום."
           }
         }
       ],
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-10-25",
+      "procedureUpdatedAt": "2026-10-29",
       "evidence": [
         {
           "service": "foodyadmin",
@@ -31501,7 +31553,8 @@
           "src/app/[restaurantId]/settings/delivery/*",
           "src/lib/delivery-zone-state.ts",
           "src/lib/api.ts",
-          "src/lib/i18n.tsx"
+          "src/lib/i18n.tsx",
+          "src/app/[restaurantId]/settings/delivery/SameDayDeliverySettings.tsx"
         ],
         "foodyserver": [
           "internal/delivery/schedule*",
@@ -31515,7 +31568,12 @@
           "internal/delivery/tours.go",
           "internal/delivery/postal_calendars.go",
           "internal/orders/delivery_schedule.go",
-          "internal/restaurants/delivery_schedule.go"
+          "internal/restaurants/delivery_schedule.go",
+          "internal/common/delivery_same_day.go",
+          "internal/common/settings_merge.go",
+          "internal/restaurants/delivery_same_day*.go",
+          "internal/delivery/same_day_policy.go",
+          "migrations/283_delivery_same_day_policy.sql"
         ]
       },
       "operations": [
@@ -31583,13 +31641,56 @@
             "en": "With compatible API, Admin and guest-site versions, open Settings → Ordering & delivery → Delivery zones, then create or edit a zone. Choose the booking mode and select only the weekdays served, for example Friday and Sunday for 94000. Set the fee and minimum, then save. Zone settings no longer ask for hours. In Orders & availability, configure Delivery service hours, preparation time and its clock, slot duration and booking horizon. Guests see only restaurant slots on covered weekdays that satisfy their basket and exceptional closures. Ready products do not make other weekdays deliverable. Legacy zones retain the weekdays of saved windows, while their hours no longer define new bookings. Existing orders retain their promised calendar. Weekly preorders keep their batch receiving windows and cutoff. Automatic mode assigns the next slot; restaurant confirmation announces the next eligible day and leaves its time pending. Verify the address, fee and a slot before enabling delivery. If no slot is available, check Delivery hours and preparation in Orders & availability first.",
             "he": "בגרסאות תואמות של ה-API, הניהול ואתר הלקוחות, פתחו הגדרות → הזמנות ומשלוח → אזורי משלוח וצרו או ערכו אזור. בחרו את אופן קביעת החלון וסמנו רק את ימי המשלוח, למשל שישי וראשון למיקוד 94000. הגדירו תעריף ומינימום ושמרו. אין להזין שעות באזור. בהזמנות וזמינות הגדירו שעות שירות משלוח, זמן הכנה ושיטת החישוב שלו, משך חלון ואופק הזמנה. הלקוח רואה רק חלונות של המסעדה ביום שמשרתים באזור, לפי הסל וסגירות חריגות. מוצר מוכן אינו מאפשר משלוח בימים אחרים. באזורים ישנים נשמרים ימי החלונות, אך השעות הישנות אינן קובעות הזמנות חדשות. הזמנות שמורות שומרות את הלוח שהובטח להן. בהזמנה שבועית חלונות קבלת האצווה ומועד הסגירה ממשיכים לחול. מצב אוטומטי מקצה את החלון הבא; באישור המסעדה מוצג היום הבא והשעה ממתינה לאישור. בדקו כתובת, תעריף וחלון לפני הפעלה. אם אין חלון, בדקו קודם את שעות המשלוח וההכנה בהזמנות וזמינות."
           }
+        },
+        {
+          "id": "same-day",
+          "title": {
+            "en": "Configure optional same-day delivery",
+            "fr": "Configurer la livraison du jour même",
+            "he": "הגדרת משלוח באותו יום"
+          },
+          "instructions": {
+            "en": "In Delivery zones → Same-day delivery, enable the rules only after reviewing active coverage. Select allowed weekdays. On restricted weekdays, select reference zones: only their geography is used, independently of their prices and weekdays. For example, allow Monday–Friday, restrict Friday to the local Monday–Thursday sectors, and leave Sunday unchecked. These are settings to enter, not an automatic tenant preset. Saturday must be decided explicitly. Future Friday/Sunday bookings retain the original zone calendar. Today means the restaurant’s local calendar date, not the next 24 hours. Set a transport margin and choose restaurant confirmation for today. Existing orders, pickup and delivery tours are unchanged.",
+            "fr": "Dans Zones de livraison → Livraison le jour même, activez les règles après vérification des zones actives. Cochez les jours autorisés. Pour les jours à périmètre restreint, choisissez des zones de référence : seule leur géographie est utilisée, indépendamment de leurs tarifs et jours. Exemple à saisir : autoriser lundi à vendredi, limiter vendredi aux secteurs locaux du lundi au jeudi et laisser dimanche décoché. Aucun préréglage n’est appliqué automatiquement à un restaurant. Le samedi doit être décidé explicitement. Les précommandes pour vendredi ou dimanche conservent le calendrier de leur zone. Le jour même désigne la date locale du restaurant, pas les prochaines 24 heures. Réglez une marge de transport et choisissez la confirmation par le restaurant pour aujourd’hui. Les commandes existantes, le retrait et les tournées conservent leur fonctionnement.",
+            "he": "באזורי משלוח → משלוח באותו יום, הפעילו את הכללים לאחר בדיקת האזורים הפעילים. בחרו ימים מותרים. בימים מוגבלים בחרו אזורי ייחוס: משתמשים רק בגאוגרפיה שלהם, ללא המחירים או ימי המשלוח שלהם. לדוגמה, אפשרו שני עד שישי, הגבילו את שישי לשטחי המשלוח המקומיים של שני עד חמישי והשאירו ראשון לא מסומן. זו דוגמה להזנה ולא הגדרה שמופעלת אוטומטית למסעדה. יש להחליט במפורש לגבי שבת. הזמנות מראש לשישי או לראשון שומרות על לוח האזור. אותו יום הוא התאריך המקומי במסעדה, ולא 24 השעות הבאות. הגדירו מרווח הובלה ואישור שעה על ידי המסעדה להיום. הזמנות קיימות, איסוף וסבבי משלוח אינם משתנים."
+          }
+        },
+        {
+          "id": "estimate",
+          "title": {
+            "en": "Understand the estimate and confirm the time",
+            "fr": "Comprendre l’estimation et confirmer l’horaire",
+            "he": "הבנת ההערכה ואישור שעה"
+          },
+          "instructions": {
+            "en": "In a customer-choice zone with restaurant confirmation for same-day delivery, the customer chooses an available date and sees estimated arrival ranges plus the zone fee before paying. Without a basket the estimate is provisional. Product preparation, the configured preparation clock, actual ready quantities and the transport margin determine the earliest arrival inside delivery opening hours and exceptional closures. Ready stock never opens another zone or a closed day. For example, a ready roll at 11:30 with 60 minutes transport gives an earliest arrival of 12:30; four hours preparation from 09:30 plus transport gives 14:30 when the clock and opening hours allow it. The estimate is not a confirmed appointment or live courier-capacity reservation. Staff reviews the order, checks courier availability and confirms a valid range in Order details. The placement estimate remains frozen; the customer’s receipt/tracking displays the confirmed range once assigned. Payment requirements and configured messages remain the existing ones; enabling this block does not add a WhatsApp automation. Day-before route reminders do not cover a new order placed today.",
+            "fr": "Dans une zone avec choix par le client et confirmation par le restaurant pour le jour même, le client choisit une date disponible et voit des plages d’arrivée estimées ainsi que les frais de zone avant paiement. Sans panier, l’estimation est provisoire. La préparation des produits, sa méthode de calcul, les quantités réellement prêtes et la marge de transport déterminent l’arrivée la plus tôt dans les horaires de livraison, en respectant les fermetures exceptionnelles. Le stock prêt n’ouvre aucun autre secteur ni jour fermé. Exemple : un roulé prêt à 11 h 30 avec 60 minutes de transport donne une arrivée au plus tôt à 12 h 30 ; quatre heures de préparation depuis 9 h 30 plus le transport donnent 14 h 30 si la méthode et les horaires le permettent. Cette estimation n’est ni un rendez-vous confirmé ni une réservation de capacité livreur en temps réel. L’équipe vérifie la commande et la disponibilité du livreur, puis confirme une plage valide dans le détail de commande. L’estimation à la commande est conservée ; le reçu et le suivi client affichent la plage confirmée après attribution. Les exigences de paiement et les messages configurés restent applicables ; ce bloc n’ajoute pas d’automatisation WhatsApp. Les rappels de tournée J−1 ne couvrent pas une commande reçue aujourd’hui.",
+            "he": "באזור עם בחירת לקוח ואישור המסעדה למשלוח באותו יום, הלקוח בוחר תאריך זמין ורואה טווחי הגעה משוערים ודמי אזור לפני התשלום. ללא סל ההערכה זמנית. הכנת המוצרים, שיטת ספירת זמן ההכנה, הכמויות המוכנות בפועל ומרווח ההובלה קובעים את ההגעה המוקדמת בתוך שעות המשלוח ובהתאם לסגירות חריגות. מלאי מוכן אינו פותח אזור אחר או יום סגור. לדוגמה, רול מוכן ב-11:30 עם 60 דקות הובלה מאפשר הגעה החל מ-12:30; ארבע שעות הכנה מ-09:30 ועוד הובלה מאפשרות 14:30 כשהשיטה והשעות מאפשרות זאת. ההערכה אינה פגישה מאושרת או שריון קיבולת שליח בזמן אמת. הצוות בודק את ההזמנה ואת זמינות השליח ומאשר חלון תקף בפרטי ההזמנה. ההערכה בעת ההזמנה נשמרת; הקבלה והמעקב מציגים את החלון המאושר לאחר שיבוץ. דרישות התשלום וההודעות המוגדרות נשארות בתוקף; הבלוק אינו מוסיף אוטומציית WhatsApp. תזכורות מסלול ליום שלפני אינן מכסות הזמנה חדשה שהתקבלה היום."
+          }
+        },
+        {
+          "id": "precedence",
+          "title": {
+            "en": "Review priorities and safe saves",
+            "fr": "Vérifier les priorités et les sauvegardes",
+            "he": "בדיקת סדר העדיפויות ושמירה בטוחה"
+          },
+          "instructions": {
+            "en": "Coverage and its price/minimum come first. The restaurant-wide delivery minimum applies only when the matched zone has no minimum; explicit zero is preserved. A zone without a saved calendar inherits the restaurant behavior and restricts no weekdays: its name has no scheduling effect. General slot hours, when configured, replace service hours; inspect Orders & availability before changing them. Weekly batches keep their own receiving windows, opening and cutoff. Product readiness and the optional same-day rules further restrict new bookings. Disabling every classic zone historically allows every address and is not a delivery pause: use the service/pause control instead. An enabled same-day policy requires active coverage and protects referenced zones from removal. Concurrent changes to separate opening-hour fields are merged; competing edits or an outdated zone return a conflict and keep the draft. Refresh and review the saved version before editing again. If a network error leaves a zone or same-day save uncertain, verify saved data rather than repeating the write.",
+            "fr": "Le périmètre et ses frais/minimum sont résolus en premier. Le minimum global de livraison sert uniquement si la zone ne définit pas de minimum ; zéro explicite est conservé. Une zone sans calendrier enregistré hérite du fonctionnement du restaurant et ne limite aucun jour : son nom ne définit aucun calendrier. Les horaires personnalisés des créneaux, lorsqu’ils existent, remplacent les horaires du service ; vérifiez Commandes et disponibilité avant de les changer. Les lots hebdomadaires gardent leurs plages, ouverture et clôture. La préparation et les règles facultatives du jour même restreignent ensuite les nouvelles réservations. Historiquement, désactiver toutes les zones classiques autorise toute adresse : ce n’est pas une pause de livraison. Utilisez le service ou la pause des commandes. Les règles du jour même actives nécessitent un périmètre actif et protègent leurs zones de référence contre la suppression. Des changements concurrents sur des champs horaires distincts fusionnent ; une modification concurrente du même champ ou une ancienne zone déclenche un conflit et conserve la saisie. Rechargez et vérifiez la version enregistrée avant de modifier à nouveau. Si une erreur réseau rend une sauvegarde de zone ou des règles du jour même incertaine, vérifiez les données enregistrées sans répéter l’écriture.",
+            "he": "תחילה נקבעים הכיסוי והמחיר והמינימום של האזור. מינימום משלוח כללי חל רק אם לאזור אין מינימום; אפס מפורש נשמר. אזור ללא לוח שמור יורש את התנהגות המסעדה ואינו מגביל ימים: שמו אינו מגדיר לוח זמנים. שעות משבצות מותאמות, אם קיימות, מחליפות את שעות השירות; בדקו הזמנות וזמינות לפני שינוי. סדרות שבועיות שומרות על חלונות, פתיחה וסגירה משלהן. הכנת מוצרים וכללי אותו יום מצמצמים לאחר מכן הזמנות חדשות. לפי ההתנהגות ההיסטורית, השבתת כל האזורים הקלאסיים מאפשרת כל כתובת ואינה עצירת משלוחים. השתמשו בשירות או בהשהיית הזמנות. כללים פעילים לאותו יום דורשים כיסוי פעיל ומגינים על אזורי הייחוס ממחיקה. שינויים מקבילים בשדות שעות שונים מתמזגים; שינויים מתחרים באותו שדה או אזור ישן מחזירים התנגשות ושומרים את הטיוטה. טענו ובדקו את הגרסה השמורה לפני עריכה נוספת. אם שגיאת רשת משאירה שמירת אזור או כללי אותו יום במצב לא ידוע, בדקו את הנתונים השמורים בלי לחזור על הכתיבה."
+          }
         }
       ],
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-10-28",
+      "procedureUpdatedAt": "2026-10-29",
       "evidence": [
+        {
+          "service": "foodyserver",
+          "file": "internal/common/delivery_same_day.go"
+        },
         {
           "service": "foodyserver",
           "file": "internal/common/delivery_schedule.go"
@@ -31597,6 +31698,10 @@
         {
           "service": "foodyserver",
           "file": "internal/common/models.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/common/settings_merge.go"
         },
         {
           "service": "foodyserver",
@@ -31620,6 +31725,10 @@
         },
         {
           "service": "foodyserver",
+          "file": "internal/delivery/same_day_policy.go"
+        },
+        {
+          "service": "foodyserver",
           "file": "internal/delivery/tours.go"
         },
         {
@@ -31636,11 +31745,27 @@
         },
         {
           "service": "foodyserver",
+          "file": "internal/restaurants/delivery_same_day.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/restaurants/delivery_same_day_settings.go"
+        },
+        {
+          "service": "foodyserver",
           "file": "internal/restaurants/delivery_schedule.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "migrations/283_delivery_same_day_policy.sql"
         },
         {
           "service": "foodyadmin",
           "file": "src/app/[restaurantId]/settings/delivery/DeliveryMinimum.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/app/[restaurantId]/settings/delivery/SameDayDeliverySettings.tsx"
         },
         {
           "service": "foodyadmin",
@@ -31956,16 +32081,16 @@
             "he": "צפייה בסביבת שליח אחר"
           },
           "instructions": {
-            "fr": "Avec les versions compatibles de l’API et de l’Admin, le propriétaire du restaurant peut aussi utiliser ce sélecteur, comme un superadmin. Ouvrez Commandes → Mode livreur et choisissez un livreur du restaurant dans Voir comme livreur. La carte et les tournées sont celles du livreur choisi ; les actions enregistrent de vrais changements et la position du compte connecté n’est pas partagée pour lui. Voir [la procédure du mode livreur](/fr/help/delivery/courier-workspace#superadmin-courier-selection), y compris le changement de livreur et la récupération après erreur. Les modifications de planification sont réservées aux responsables autorisés dans Livraisons ; elles ne sont pas accessibles aux comptes livreur ni depuis le mode livreur du propriétaire ou du superadmin.",
-            "en": "With compatible API and Admin versions, the restaurant owner can also use this selector, like a superadmin. Open Orders → Courier mode and select a restaurant courier under View as courier. The map and routes belong to that courier; actions record real changes and the signed-in account’s GPS is not shared for them. See [the courier-mode procedure](/en/help/delivery/courier-workspace#superadmin-courier-selection), including switching couriers and recovering from errors. Planning changes are reserved for authorized dispatchers in Deliveries; they are unavailable to courier accounts and in an owner’s or superadmin’s courier workspace.",
-            "he": "בגרסאות תואמות של ה־API וממשק הניהול, גם בעל המסעדה יכול להשתמש בבורר כמו סופר־אדמין. פתחו הזמנות → מצב שליח ובחרו שליח של המסעדה תחת צפייה בתור שליח. המפה והמסלולים שייכים לשליח שנבחר; הפעולות מבצעות שינויים אמיתיים ומיקום החשבון המחובר אינו משותף בשמו. ראו [הנחיות מצב שליח](/he/help/delivery/courier-workspace#superadmin-courier-selection), כולל החלפת שליח והתאוששות משגיאות. שינויי תכנון מיועדים לאחראים מורשים במשלוחים; הם אינם זמינים לחשבונות שליח או בתצוגת השליח של בעל מסעדה או מנהל מערכת."
+            "fr": "Avec les versions compatibles de l’API et de l’Admin, le propriétaire du restaurant peut aussi utiliser ce sélecteur, comme un superadmin. Ouvrez Commandes → Mode livreur et choisissez un livreur du restaurant dans Voir comme livreur. La carte et les tournées sont celles du livreur choisi ; les actions enregistrent de vrais changements et la position du compte connecté n’est pas partagée pour lui. Voir [la procédure du mode livreur](/fr/help/delivery/courier-workspace#superadmin-courier-selection), y compris le changement de livreur et la récupération après erreur. Les modifications de planification sont réservées aux responsables autorisés dans Livraisons ; elles ne sont pas accessibles aux comptes livreur ni depuis le mode livreur du propriétaire ou du superadmin. Pour une commande du jour même avec cette option, consultez l’arrivée estimée conservée dans le détail de commande, vérifiez la disponibilité du livreur puis confirmez une plage valide. L’estimation ne réserve pas de capacité livreur. L’optimisation, l’affectation des livreurs et les rappels WhatsApp J−1 gardent leur fonctionnement ; les règles du jour même n’ajoutent aucun déclencheur de rappel.",
+            "en": "With compatible API and Admin versions, the restaurant owner can also use this selector, like a superadmin. Open Orders → Courier mode and select a restaurant courier under View as courier. The map and routes belong to that courier; actions record real changes and the signed-in account’s GPS is not shared for them. See [the courier-mode procedure](/en/help/delivery/courier-workspace#superadmin-courier-selection), including switching couriers and recovering from errors. Planning changes are reserved for authorized dispatchers in Deliveries; they are unavailable to courier accounts and in an owner’s or superadmin’s courier workspace. For optional same-day orders, inspect the frozen arrival estimate in Order details, check the courier’s availability and confirm a valid delivery range. The estimate does not reserve courier capacity. Route optimization, courier assignments and day-before WhatsApp reminders keep their existing workflows; enabling same-day rules does not create a new reminder trigger.",
+            "he": "בגרסאות תואמות של ה־API וממשק הניהול, גם בעל המסעדה יכול להשתמש בבורר כמו סופר־אדמין. פתחו הזמנות → מצב שליח ובחרו שליח של המסעדה תחת צפייה בתור שליח. המפה והמסלולים שייכים לשליח שנבחר; הפעולות מבצעות שינויים אמיתיים ומיקום החשבון המחובר אינו משותף בשמו. ראו [הנחיות מצב שליח](/he/help/delivery/courier-workspace#superadmin-courier-selection), כולל החלפת שליח והתאוששות משגיאות. שינויי תכנון מיועדים לאחראים מורשים במשלוחים; הם אינם זמינים לחשבונות שליח או בתצוגת השליח של בעל מסעדה או מנהל מערכת. בהזמנה אופציונלית לאותו יום בדקו את הערכת ההגעה השמורה בפרטי ההזמנה, את זמינות השליח ואשרו חלון משלוח תקף. ההערכה אינה שומרת קיבולת שליח. אופטימיזציה, שיבוץ ותזכורות WhatsApp ליום שלפני שומרות על התהליכים הקיימים; כללי אותו יום אינם מוסיפים טריגר תזכורת."
           }
         }
       ],
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-10-28",
+      "procedureUpdatedAt": "2026-10-29",
       "updatedAt": "2026-10-20",
       "evidence": [
         {
@@ -32079,6 +32204,10 @@
         {
           "service": "foodyserver",
           "file": "internal/delivery/route_endpoints.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/delivery/same_day_policy.go"
         },
         {
           "service": "foodyserver",
@@ -35706,16 +35835,16 @@
             "he": "ניהול הזמנות שבועיות באופן ידני"
           },
           "instructions": {
-            "en": "Weekly batch restaurants can choose Manual opening under Settings → Ordering & delivery → Orders & availability, with settings.edit. Save, then explicitly open or pause online orders using the pause control. Automatic opening/cutoff times do not control intake in this mode. Delivery days/windows, the restaurant timezone, preparation and stock rules remain in effect; existing orders are untouched. The website stays browsable during a pause. Active temporary test access must be disabled before reopening publicly. See the fulfillment settings guide for the complete procedure.",
-            "fr": "Les restaurants en lot hebdomadaire peuvent choisir Ouverture manuelle dans Paramètres → Commandes et livraison → Commandes et disponibilité, avec settings.edit. Enregistrez, puis ouvrez ou fermez explicitement les commandes avec le bouton de pause. Les heures d’ouverture/clôture automatiques ne pilotent plus la prise de commandes dans ce mode. Jours et créneaux de livraison, fuseau du restaurant, règles de préparation et stocks restent applicables ; les commandes existantes sont conservées. Le site reste consultable pendant la pause. Désactivez l’accès de test temporaire actif avant toute réouverture publique. Voir le guide des réglages des commandes pour la procédure complète.",
-            "he": "מסעדות עם סבב שבועי יכולות לבחור פתיחה ידנית בהגדרות ← הזמנות ומשלוחים ← הזמנות וזמינות, עם הרשאת settings.edit. שמרו ואז פתחו או השהו במפורש באמצעות בקרת ההשהיה. שעות פתיחה וסגירה אוטומטיות אינן שולטות בקבלת הזמנות במצב זה. ימי וחלונות האספקה, אזור הזמן של המסעדה, כללי ההכנה והמלאי נשמרים; הזמנות קיימות אינן משתנות. האתר נשאר זמין לעיון בזמן ההשהיה. יש לכבות גישת בדיקה זמנית פעילה לפני פתיחה לציבור. ההליך המלא נמצא במדריך הגדרות ההזמנות."
+            "en": "Weekly batch restaurants can choose Manual opening under Settings → Ordering & delivery → Orders & availability, with settings.edit. Save, then explicitly open or pause online orders using the pause control. Automatic opening/cutoff times do not control intake in this mode. Delivery days/windows, the restaurant timezone, preparation and stock rules remain in effect; existing orders are untouched. The website stays browsable during a pause. Active temporary test access must be disabled before reopening publicly. See the fulfillment settings guide for the complete procedure. Profile edits now persist only the fields actually changed so a concurrent name or contact save does not restore stale service hours. Opening-hour editors use a baseline: independent hour changes merge, while competing edits keep the draft and require reviewing the saved version. A zone name is only a label; configure its delivery weekdays in Delivery zones rather than relying on the name.",
+            "fr": "Les restaurants en lot hebdomadaire peuvent choisir Ouverture manuelle dans Paramètres → Commandes et livraison → Commandes et disponibilité, avec settings.edit. Enregistrez, puis ouvrez ou fermez explicitement les commandes avec le bouton de pause. Les heures d’ouverture/clôture automatiques ne pilotent plus la prise de commandes dans ce mode. Jours et créneaux de livraison, fuseau du restaurant, règles de préparation et stocks restent applicables ; les commandes existantes sont conservées. Le site reste consultable pendant la pause. Désactivez l’accès de test temporaire actif avant toute réouverture publique. Voir le guide des réglages des commandes pour la procédure complète. Les modifications de la fiche ne sauvegardent désormais que les champs réellement changés : une sauvegarde simultanée du nom ou du contact ne remet pas d’anciens horaires. L’éditeur d’horaires utilise une version de départ : les changements distincts fusionnent, les modifications concurrentes du même champ conservent la saisie et demandent de vérifier la version enregistrée. Le nom d’une zone est un libellé : configurez ses jours dans Zones de livraison sans vous fier au nom.",
+            "he": "מסעדות עם סבב שבועי יכולות לבחור פתיחה ידנית בהגדרות ← הזמנות ומשלוחים ← הזמנות וזמינות, עם הרשאת settings.edit. שמרו ואז פתחו או השהו במפורש באמצעות בקרת ההשהיה. שעות פתיחה וסגירה אוטומטיות אינן שולטות בקבלת הזמנות במצב זה. ימי וחלונות האספקה, אזור הזמן של המסעדה, כללי ההכנה והמלאי נשמרים; הזמנות קיימות אינן משתנות. האתר נשאר זמין לעיון בזמן ההשהיה. יש לכבות גישת בדיקה זמנית פעילה לפני פתיחה לציבור. ההליך המלא נמצא במדריך הגדרות ההזמנות. עריכת פרופיל שומרת כעת רק שדות שהשתנו בפועל, כך ששמירת שם או פרטי קשר במקביל אינה משחזרת שעות שירות ישנות. עורך השעות משתמש בגרסת בסיס: שינויים בשדות שונים מתמזגים, ובשינויים מתחרים הטיוטה נשמרת ונדרשת בדיקת הגרסה השמורה. שם אזור הוא תווית בלבד; הגדירו ימי משלוח באזורי משלוח ולא לפי השם."
           }
         }
       ],
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-10-21",
+      "procedureUpdatedAt": "2026-10-29",
       "evidence": [
         {
           "service": "foodyserver",
@@ -35736,6 +35865,14 @@
         {
           "service": "foodyserver",
           "file": "internal/restaurants/cover_focal.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/restaurants/delivery_same_day.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/restaurants/delivery_same_day_settings.go"
         },
         {
           "service": "foodyserver",
@@ -36249,9 +36386,9 @@
             "he": "מזומן עם ערבות אופציונלית בכרטיס"
           },
           "instructions": {
-            "en": "In Admin → Settings → Payments, with settings.edit permission, select Allow other methods to accept cash. For a compatible provider, Cash payments offers Accept cash from all customers: Yes allows every customer regardless of trust status; No disables cash for everyone. Require a card guarantee for cash remains independent: enable it only when you want to reserve 100% of the total on the card, then save and verify the values. The guarantee is off by default. It is currently available for configured Stancer in EUR; other integrations use the same presentation when their cash-guarantee flow is supported. Unsupported providers retain their existing cash settings without this guarantee. A previous trusted-customer-only policy is preserved until you explicitly choose Yes or No; changing VAT or tips does not replace it. Online-payment-only always excludes cash. Before real use of the guarantee, verify cancellation of an authorized sandbox reservation, release timing and fees with your Stancer account.\n\nAcceptance and recovery: [cash card guarantees](/en/help/payments/cash-card-guarantee).",
-            "fr": "Dans Admin → Paramètres → Paiements, avec la permission settings.edit, choisissez Autres moyens autorisés pour accepter les espèces. Pour un prestataire compatible, Paiements en espèces propose Accepter les espèces pour tous les clients : Oui autorise tous les clients, sans condition de confiance ; Non refuse les espèces pour tous. Le réglage Exiger une garantie par carte pour les espèces reste indépendant : activez-le uniquement si vous souhaitez réserver 100 % du total sur la carte, puis enregistrez et vérifiez les valeurs. La garantie est désactivée par défaut. Elle est disponible aujourd’hui pour Stancer configuré en EUR ; les autres intégrations utilisent ce même affichage lorsque leur parcours de garantie espèces est pris en charge. Les prestataires incompatibles conservent leurs réglages espèces sans proposer cette garantie. Un ancien réglage limité aux clients de confiance reste conservé jusqu’à votre choix explicite Oui ou Non ; modifier la TVA ou les pourboires ne le remplace pas. Le paiement exclusivement en ligne exclut toujours les espèces. Avant une utilisation réelle de la garantie, vérifiez avec votre compte Stancer l’annulation d’une réservation autorisée en sandbox, les délais de libération et les frais.\n\nConditions d’activation et reprise : [garantie bancaire pour les espèces](/fr/help/payments/cash-card-guarantee).",
-            "he": "בניהול → הגדרות → תשלומים, עם הרשאת settings.edit, בחרו אמצעים נוספים מותרים לקבלת מזומן. אצל ספק תואם, תשלומים במזומן מציע קבלת מזומן מכל הלקוחות: כן מאפשר לכל לקוח לשלם במזומן ללא תנאי מהימנות; לא חוסם מזומן לכולם. דרישת ערבות בכרטיס למזומן נשארת הגדרה נפרדת: הפעילו אותה רק אם ברצונכם לשריין בכרטיס את מלוא הסכום, ואז שמרו ובדקו את הערכים. הערבות מושבתת כברירת מחדל. היא זמינה כיום לחיבור Stancer מוגדר באירו; שילובים אחרים משתמשים באותה תצוגה כאשר מסלול ערבות המזומן שלהם נתמך. ספקים שאינם תואמים שומרים על הגדרות המזומן הקיימות ללא הערבות הזאת. מדיניות קודמת של לקוחות מהימנים בלבד נשמרת עד לבחירה מפורשת כן או לא; שינוי מע״מ או טיפים אינו מחליף אותה. תשלום מקוון בלבד תמיד חוסם מזומן. לפני שימוש אמיתי בערבות, בדקו בחשבון Stancer ביטול שריון מאושר בסביבת הבדיקות, זמני שחרור ועמלות.\n\nתנאי הפעלה והתאוששות: [ערבות בכרטיס למזומן](/he/help/payments/cash-card-guarantee)."
+            "en": "In Admin → Settings → Payments, with settings.edit permission, select Allow other methods to accept cash. For a compatible provider, Cash payments offers Accept cash from all customers: Yes allows every customer regardless of trust status; No disables cash for everyone. Require a card guarantee for cash remains independent: enable it only when you want to reserve 100% of the total on the card, then save and verify the values. The guarantee is off by default. It is currently available for configured Stancer in EUR; other integrations use the same presentation when their cash-guarantee flow is supported. Unsupported providers retain their existing cash settings without this guarantee. A previous trusted-customer-only policy is preserved until you explicitly choose Yes or No; changing VAT or tips does not replace it. Online-payment-only always excludes cash. Before real use of the guarantee, verify cancellation of an authorized sandbox reservation, release timing and fees with your Stancer account.\n\nAcceptance and recovery: [cash card guarantees](/en/help/payments/cash-card-guarantee). Review the optional Same-day delivery block in Delivery zones separately from the standard slot/batch settings. It limits only new bookings for today in the restaurant timezone; future bookings keep their zone rules. Today’s restaurant-confirmed estimate adds transport to product readiness inside delivery hours, and does not replace weekly-batch windows. Custom slot hours still override service hours. Never disable every delivery zone to pause ordering: use the service or pause control.",
+            "fr": "Dans Admin → Paramètres → Paiements, avec la permission settings.edit, choisissez Autres moyens autorisés pour accepter les espèces. Pour un prestataire compatible, Paiements en espèces propose Accepter les espèces pour tous les clients : Oui autorise tous les clients, sans condition de confiance ; Non refuse les espèces pour tous. Le réglage Exiger une garantie par carte pour les espèces reste indépendant : activez-le uniquement si vous souhaitez réserver 100 % du total sur la carte, puis enregistrez et vérifiez les valeurs. La garantie est désactivée par défaut. Elle est disponible aujourd’hui pour Stancer configuré en EUR ; les autres intégrations utilisent ce même affichage lorsque leur parcours de garantie espèces est pris en charge. Les prestataires incompatibles conservent leurs réglages espèces sans proposer cette garantie. Un ancien réglage limité aux clients de confiance reste conservé jusqu’à votre choix explicite Oui ou Non ; modifier la TVA ou les pourboires ne le remplace pas. Le paiement exclusivement en ligne exclut toujours les espèces. Avant une utilisation réelle de la garantie, vérifiez avec votre compte Stancer l’annulation d’une réservation autorisée en sandbox, les délais de libération et les frais.\n\nConditions d’activation et reprise : [garantie bancaire pour les espèces](/fr/help/payments/cash-card-guarantee). Vérifiez le bloc facultatif Livraison le jour même dans Zones de livraison séparément des réglages ordinaires de créneaux et de lots. Il limite uniquement les nouvelles commandes pour aujourd’hui dans le fuseau du restaurant ; les précommandes conservent leurs règles de zone. L’estimation avec confirmation par le restaurant ajoute le transport à la préparation dans les horaires de livraison, sans remplacer les plages des lots hebdomadaires. Les horaires personnalisés des créneaux restent prioritaires sur les horaires du service. Ne désactivez pas toutes les zones pour arrêter les commandes : utilisez le service ou la pause.",
+            "he": "בניהול → הגדרות → תשלומים, עם הרשאת settings.edit, בחרו אמצעים נוספים מותרים לקבלת מזומן. אצל ספק תואם, תשלומים במזומן מציע קבלת מזומן מכל הלקוחות: כן מאפשר לכל לקוח לשלם במזומן ללא תנאי מהימנות; לא חוסם מזומן לכולם. דרישת ערבות בכרטיס למזומן נשארת הגדרה נפרדת: הפעילו אותה רק אם ברצונכם לשריין בכרטיס את מלוא הסכום, ואז שמרו ובדקו את הערכים. הערבות מושבתת כברירת מחדל. היא זמינה כיום לחיבור Stancer מוגדר באירו; שילובים אחרים משתמשים באותה תצוגה כאשר מסלול ערבות המזומן שלהם נתמך. ספקים שאינם תואמים שומרים על הגדרות המזומן הקיימות ללא הערבות הזאת. מדיניות קודמת של לקוחות מהימנים בלבד נשמרת עד לבחירה מפורשת כן או לא; שינוי מע״מ או טיפים אינו מחליף אותה. תשלום מקוון בלבד תמיד חוסם מזומן. לפני שימוש אמיתי בערבות, בדקו בחשבון Stancer ביטול שריון מאושר בסביבת הבדיקות, זמני שחרור ועמלות.\n\nתנאי הפעלה והתאוששות: [ערבות בכרטיס למזומן](/he/help/payments/cash-card-guarantee). בדקו את הבלוק האופציונלי משלוח באותו יום באזורי משלוח בנפרד מהגדרות משבצות וסדרות רגילות. הוא מגביל רק הזמנות חדשות להיום באזור הזמן של המסעדה; הזמנות מראש שומרות על כללי האזור. הערכה עם אישור המסעדה מוסיפה הובלה למוכנות המוצרים בתוך שעות משלוח, בלי להחליף חלונות של סדרות שבועיות. שעות משבצות מותאמות נשארות בעדיפות על שעות שירות. אין להשבית את כל האזורים כדי לעצור הזמנות: השתמשו בשירות או בהשהיה."
           }
         }
       ],
@@ -36572,6 +36709,14 @@
         {
           "service": "foodyserver",
           "file": "internal/restaurants/cover_focal.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/restaurants/delivery_same_day.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/restaurants/delivery_same_day_settings.go"
         },
         {
           "service": "foodyserver",
@@ -42016,9 +42161,9 @@
             "he": "השארת בחירה שאינה חובה ריקה"
           },
           "instructions": {
-            "fr": "Dans une fiche produit compatible, Obligatoire demande un choix dans chaque position visible avant Ajouter au panier. Un groupe marqué Facultatif peut rester vide. Après sélection, Effacer le choix retire uniquement cette position et sa précision éventuelle ; les autres positions et le prix du format restent conservés. Une précision obligatoire liée à une option sélectionnée doit toujours être remplie. Vérifiez les choix dans le panier avant de confirmer.",
-            "en": "In a compatible product sheet, Required needs a choice in every visible position before Add to cart. A group marked Optional may remain empty. After selection, Clear choice removes only that position and its associated note; other positions and the format price remain intact. A required note attached to a selected option must still be completed. Review the choices in the cart before confirming.",
-            "he": "בדף מוצר תואם, חובה דורשת בחירה בכל מיקום גלוי לפני הוספה לסל. קבוצה שמסומנת לא חובה יכולה להישאר ריקה. לאחר בחירה, ניקוי הבחירה מסיר רק את המיקום הזה ואת ההערה הקשורה אליו; שאר המיקומים ומחיר הגודל נשמרים. עדיין יש למלא הערת חובה שמשויכת לאפשרות שנבחרה. בדקו את הבחירות בסל לפני האישור."
+            "fr": "Dans une fiche produit compatible, Obligatoire demande un choix dans chaque position visible avant Ajouter au panier. Un groupe marqué Facultatif peut rester vide. Après sélection, Effacer le choix retire uniquement cette position et sa précision éventuelle ; les autres positions et le prix du format restent conservés. Une précision obligatoire liée à une option sélectionnée doit toujours être remplie. Vérifiez les choix dans le panier avant de confirmer. Pour la livraison facultative du jour même, consultez le guide Zones et créneaux de livraison avec des versions compatibles de l’API, d’Admin et du site client : le client peut choisir uniquement le jour, voir une estimation avant paiement puis recevoir un horaire confirmé par le restaurant. Les précommandes conservent leur mode configuré. La date locale du restaurant détermine les règles du jour même.",
+            "en": "In a compatible product sheet, Required needs a choice in every visible position before Add to cart. A group marked Optional may remain empty. After selection, Clear choice removes only that position and its associated note; other positions and the format price remain intact. A required note attached to a selected option must still be completed. Review the choices in the cart before confirming. For optional same-day delivery, review the Delivery zones and schedules guide with compatible API, Admin and guest versions: the customer may choose only the day, see an estimate before payment and receive a restaurant-confirmed time later. Future bookings retain their configured mode. The restaurant’s local date determines same-day rules.",
+            "he": "בדף מוצר תואם, חובה דורשת בחירה בכל מיקום גלוי לפני הוספה לסל. קבוצה שמסומנת לא חובה יכולה להישאר ריקה. לאחר בחירה, ניקוי הבחירה מסיר רק את המיקום הזה ואת ההערה הקשורה אליו; שאר המיקומים ומחיר הגודל נשמרים. עדיין יש למלא הערת חובה שמשויכת לאפשרות שנבחרה. בדקו את הבחירות בסל לפני האישור. למשלוח אופציונלי באותו יום עיינו במדריך אזורים וחלונות משלוח בגרסאות תואמות של ה-API, הניהול ואתר הלקוח: הלקוח עשוי לבחור רק יום, לראות הערכה לפני תשלום ולקבל בהמשך שעה מאושרת מהמסעדה. הזמנות מראש שומרות על המצב שהוגדר. התאריך המקומי במסעדה קובע את כללי אותו יום."
           }
         }
       ],
@@ -44811,6 +44956,10 @@
         },
         {
           "service": "foodyserver",
+          "file": "internal/common/delivery_same_day.go"
+        },
+        {
+          "service": "foodyserver",
           "file": "internal/common/delivery_schedule.go"
         },
         {
@@ -44944,6 +45093,10 @@
         {
           "service": "foodyserver",
           "file": "internal/common/service_guidance_models.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/common/settings_merge.go"
         },
         {
           "service": "foodyserver",
@@ -45132,6 +45285,10 @@
         {
           "service": "foodyserver",
           "file": "internal/delivery/route_endpoints.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/delivery/same_day_policy.go"
         },
         {
           "service": "foodyserver",
@@ -46284,6 +46441,14 @@
         {
           "service": "foodyserver",
           "file": "internal/restaurants/cover_focal.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/restaurants/delivery_same_day.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/restaurants/delivery_same_day_settings.go"
         },
         {
           "service": "foodyserver",
@@ -73057,6 +73222,44 @@
       "line": 1
     },
     {
+      "id": "foodyadmin:src/app/[restaurantId]/settings/delivery/SameDayDeliverySettings.tsx:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/app/[restaurantId]/settings/delivery/SameDayDeliverySettings.tsx",
+      "features": [
+        "delivery-zones"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "cancel",
+        "deliverySettingsPriority",
+        "deliveryVerifySaved",
+        "discardChanges",
+        "discardUnsavedChanges",
+        "ordersAvailabilityTitle",
+        "refresh",
+        "sameDayAllowedDays",
+        "sameDayCoverage",
+        "sameDayCoverageHint",
+        "sameDayDescription",
+        "sameDayEnable",
+        "sameDayEstimateHint",
+        "sameDayPermissions",
+        "sameDayRestrictedDays",
+        "sameDayTimeInherit",
+        "sameDayTimeMode",
+        "sameDayTimeRestaurant",
+        "sameDayTitle",
+        "sameDayTransit",
+        "saved",
+        "zoneCalendarInherited"
+      ],
+      "actions": [
+        "load",
+        "save"
+      ],
+      "line": 1
+    },
+    {
       "id": "foodyadmin:src/app/[restaurantId]/settings/delivery/maps/page.tsx:next-page:1",
       "service": "foodyadmin",
       "source": "src/app/[restaurantId]/settings/delivery/maps/page.tsx",
@@ -73169,6 +73372,7 @@
         "remove",
         "reset",
         "retry",
+        "zoneCalendarInherited",
         "zoneDeliveryFee",
         "zoneFeeFreePlaceholder",
         "zoneFeeMinHint",
@@ -73792,9 +73996,9 @@
         "preparationSplitDesc",
         "preparationSplitTitle",
         "preparationStartTime",
-        "processingSaveFailed",
         "productExceptionsTitle",
         "pushPreferencesReadOnly",
+        "refresh",
         "remove",
         "reset",
         "retry",
@@ -79460,6 +79664,7 @@
         "date",
         "deliveryAssignmentError",
         "deliveryAssignmentHint",
+        "deliveryEstimatedArrival",
         "deliveryMoveReason",
         "deliverySlotSaved",
         "zoneWindowEnd",
@@ -86959,6 +87164,9 @@
         "deliveryRefineAddress",
         "deliverySlotChanged",
         "deliverySlotPending",
+        "deliveryTodayDisabled",
+        "deliveryTodayOutsideCoverage",
+        "deliveryTodayUnavailable",
         "dineIn",
         "done",
         "editOrder",
@@ -88476,6 +88684,7 @@
         "deliveryCalendarTitle",
         "deliveryCalendarUnavailable",
         "deliveryChoosePickup",
+        "deliveryEstimatedArrival",
         "deliveryFee",
         "deliverySlotPending"
       ],
@@ -88774,6 +88983,7 @@
       "kind": "ui-controls",
       "labels": [
         "deliveryCalendarTitle",
+        "deliveryEstimatedArrival",
         "deliverySlotPending",
         "deliverySlotPendingHint"
       ],
@@ -95166,9 +95376,9 @@
   "coverage": {
     "sharedRuntimeFiles": 400,
     "features": 105,
-    "operations": 800,
-    "sourceFiles": 2242,
-    "surfaces": 2091,
+    "operations": 803,
+    "sourceFiles": 2249,
+    "surfaces": 2092,
     "unclassifiedRoutes": []
   }
 }

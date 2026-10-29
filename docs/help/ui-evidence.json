@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "Foody-isr/admin",
-  "ref": "e5bc17932f42d73ec96a313cc4b484e083276ea6",
+  "ref": "49a96dd4f4a1a42d1391c6423dfe4054f0309b4a",
   "observations": [
     {
       "id": "table-status-descriptions-source-contract",
@@ -498,6 +498,18 @@
         "onChange(bounded(number))"
       ],
       "forbidden": []
+    },
+    {
+      "id": "same-day-delivery-policy",
+      "source": "src/app/[restaurantId]/settings/delivery/SameDayDeliverySettings.tsx",
+      "required": [
+        "delivery_same_day_policy_base:base",
+        "t('sameDayTitle')",
+        "coverage_zone_ids",
+        "setUncertain(!known)",
+        "reason.status===409"
+      ],
+      "forbidden": []
     }
   ],
   "guides": [
@@ -956,15 +968,18 @@
       "required": {
         "fr": [
           "Aucune heure ne se saisit dans la zone.",
-          "Commandes et disponibilité"
+          "Commandes et disponibilité",
+          "Livraison le jour même"
         ],
         "en": [
           "Zone settings no longer ask for hours.",
-          "Orders & availability"
+          "Orders & availability",
+          "Same-day delivery"
         ],
         "he": [
           "אין להזין שעות באזור.",
-          "הזמנות וזמינות"
+          "הזמנות וזמינות",
+          "משלוח באותו יום"
         ]
       }
     },

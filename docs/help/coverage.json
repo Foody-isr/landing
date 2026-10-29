@@ -768,7 +768,8 @@
           "src/app/[restaurantId]/settings/delivery/*",
           "src/lib/delivery-zone-state.ts",
           "src/lib/api.ts",
-          "src/lib/i18n.tsx"
+          "src/lib/i18n.tsx",
+          "src/app/[restaurantId]/settings/delivery/SameDayDeliverySettings.tsx"
         ],
         "foodyserver": [
           "internal/delivery/schedule*",
@@ -782,7 +783,12 @@
           "internal/delivery/tours.go",
           "internal/delivery/postal_calendars.go",
           "internal/orders/delivery_schedule.go",
-          "internal/restaurants/delivery_schedule.go"
+          "internal/restaurants/delivery_schedule.go",
+          "internal/common/delivery_same_day.go",
+          "internal/common/settings_merge.go",
+          "internal/restaurants/delivery_same_day*.go",
+          "internal/delivery/same_day_policy.go",
+          "migrations/283_delivery_same_day_policy.sql"
         ]
       }
     },

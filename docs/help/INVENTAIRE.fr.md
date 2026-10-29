@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-10-18.
+Révision du relevé : 2026-10-29.
 
-105 fiches de fonctionnalités, 800 procédures/sous-fonctionnalités, dont 96 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2242 fichiers applicatifs et 2091 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+105 fiches de fonctionnalités, 803 procédures/sous-fonctionnalités, dont 96 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2249 fichiers applicatifs et 2092 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,9 +10,9 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 584 | 879 | 2992eb6f2dad ; versioned |
-| foodyadmin | 776 | 804 | e5bc17932f42 ; versioned |
-| foodyweb | 348 | 171 | 3695bb4a2dc7 ; versioned |
+| foodyserver | 590 | 879 | 2d139a2e32c4 ; versioned |
+| foodyadmin | 777 | 805 | 49a96dd4f4a1 ; versioned |
+| foodyweb | 348 | 171 | d67202afeeb0 ; versioned |
 | foodylanding | 127 | 21 | 086993b0cc25 ; versioned |
 | foodypos | 363 | 166 | 735f5063e8b0 ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
@@ -1071,6 +1071,9 @@ Identifiant : `delivery-zones`. Public : public. Disponibilité : available. Ser
 - [Répartir les codes postaux par jours et tarif](../../src/content/help/fr/delivery/zones-and-schedules.mdx#postal-day-groups)
 - [Définir frais et minimums](../../src/content/help/fr/delivery/zones-and-schedules.mdx#fees)
 - [Configurer jours et créneaux](../../src/content/help/fr/delivery/zones-and-schedules.mdx#calendar)
+- [Configurer la livraison du jour même](../../src/content/help/fr/delivery/zones-and-schedules.mdx#same-day)
+- [Comprendre l’estimation et confirmer l’horaire](../../src/content/help/fr/delivery/zones-and-schedules.mdx#estimate)
+- [Vérifier les priorités et les sauvegardes](../../src/content/help/fr/delivery/zones-and-schedules.mdx#precedence)
 
 ### [Dispatch et planification des tournées](../../src/content/help/fr/delivery/dispatch-and-routes.mdx)
 

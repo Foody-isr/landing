@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - delivery
   - delivery-zones
-updatedAt: '2026-10-28'
+updatedAt: '2026-10-29'
 featureId: delivery-zones
 audience: public
 releaseStatus: available
@@ -41,3 +41,21 @@ Set the offered fee and minimum-order rules for the zone. Test an address and ba
 ## Configure delivery days and windows
 
 With compatible API, Admin and guest-site versions, open Settings → Ordering & delivery → Delivery zones, then create or edit a zone. Choose the booking mode and select only the weekdays served, for example Friday and Sunday for 94000. Set the fee and minimum, then save. Zone settings no longer ask for hours. In Orders & availability, configure Delivery service hours, preparation time and its clock, slot duration and booking horizon. Guests see only restaurant slots on covered weekdays that satisfy their basket and exceptional closures. Ready products do not make other weekdays deliverable. Legacy zones retain the weekdays of saved windows, while their hours no longer define new bookings. Existing orders retain their promised calendar. Weekly preorders keep their batch receiving windows and cutoff. Automatic mode assigns the next slot; restaurant confirmation announces the next eligible day and leaves its time pending. Verify the address, fee and a slot before enabling delivery. If no slot is available, check Delivery hours and preparation in Orders & availability first.
+
+<span id="same-day" />
+
+## Configure optional same-day delivery
+
+In Delivery zones → Same-day delivery, enable the rules only after reviewing active coverage. Select allowed weekdays. On restricted weekdays, select reference zones: only their geography is used, independently of their prices and weekdays. For example, allow Monday–Friday, restrict Friday to the local Monday–Thursday sectors, and leave Sunday unchecked. These are settings to enter, not an automatic tenant preset. Saturday must be decided explicitly. Future Friday/Sunday bookings retain the original zone calendar. Today means the restaurant’s local calendar date, not the next 24 hours. Set a transport margin and choose restaurant confirmation for today. Existing orders, pickup and delivery tours are unchanged.
+
+<span id="estimate" />
+
+## Understand the estimate and confirm the time
+
+In a customer-choice zone with restaurant confirmation for same-day delivery, the customer chooses an available date and sees estimated arrival ranges plus the zone fee before paying. Without a basket the estimate is provisional. Product preparation, the configured preparation clock, actual ready quantities and the transport margin determine the earliest arrival inside delivery opening hours and exceptional closures. Ready stock never opens another zone or a closed day. For example, a ready roll at 11:30 with 60 minutes transport gives an earliest arrival of 12:30; four hours preparation from 09:30 plus transport gives 14:30 when the clock and opening hours allow it. The estimate is not a confirmed appointment or live courier-capacity reservation. Staff reviews the order, checks courier availability and confirms a valid range in Order details. The placement estimate remains frozen; the customer’s receipt/tracking displays the confirmed range once assigned. Payment requirements and configured messages remain the existing ones; enabling this block does not add a WhatsApp automation. Day-before route reminders do not cover a new order placed today.
+
+<span id="precedence" />
+
+## Review priorities and safe saves
+
+Coverage and its price/minimum come first. The restaurant-wide delivery minimum applies only when the matched zone has no minimum; explicit zero is preserved. A zone without a saved calendar inherits the restaurant behavior and restricts no weekdays: its name has no scheduling effect. General slot hours, when configured, replace service hours; inspect Orders & availability before changing them. Weekly batches keep their own receiving windows, opening and cutoff. Product readiness and the optional same-day rules further restrict new bookings. Disabling every classic zone historically allows every address and is not a delivery pause: use the service/pause control instead. An enabled same-day policy requires active coverage and protects referenced zones from removal. Concurrent changes to separate opening-hour fields are merged; competing edits or an outdated zone return a conflict and keep the draft. Refresh and review the saved version before editing again. If a network error leaves a zone or same-day save uncertain, verify saved data rather than repeating the write.
