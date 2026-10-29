@@ -955,3 +955,21 @@ those services are not revalidated. Export and copy the identical public corpus
 before scanning API evidence, pin immutable source and documentation commits,
 validate API before clients, then promote the exact development-tested artifacts
 under the authorized courier correction release workflow.
+
+
+## Local delivery weekday scheduling preparation (29 October 2026)
+
+This preparation reviews API, Admin, guest Web and Landing from develop. Zone
+weekdays restrict the restaurant delivery calendar; legacy zone windows supply
+only weekdays for new bookings. Existing orders retain their frozen availability.
+The prepared-checkout quote shares the restaurant calendar without reapplying a
+production delay. Fees, minimums, tenant checks and payment authorization keep
+their separate server checks. No schema or production-data migration is required.
+
+POS and Backoffice inventory entries and surfaces retain their exact baseline
+from Landing develop `359e59e030e4a686224a3ff520f1799534fb3d67`; those clients are
+not revalidated here. POS retains delivery policy snapshots as an opaque map.
+Export FR/HE/EN procedures and synchronize the API corpus before the source scan.
+Local contracts use WORKSPACE until a reviewed immutable documentation commit is
+authorized. Deploy the API before compatible Admin/Web, verify development, and
+publish the guides with the product. This local preparation deploys nothing.
