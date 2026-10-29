@@ -8,6 +8,18 @@ base. `docs/help/catalog/features.json` is the authored feature/procedure source
 Internal operator procedures render separately to `docs/help/internal` and never
 enter public browsing, search or the AI corpus.
 
+## Same-day delivery and settings audit (29 October 2026)
+
+The optional delivery policy and stale-save protections are reviewed in
+[scope and release requirements](reviews/same-day-delivery.md). Update the
+three-language delivery-zones, preorders, order-detail and guest-ordering guides
+with compatible API, guest and Admin artifacts. The API audit records legacy
+calendar precedence and missing zone calendars without changing live settings.
+Preserve the existing POS, Backoffice and Landing application-source inventory
+blocks; freeze current API/Admin/Web sources and pin this documentation commit
+before release. The owner has requested dev and production deployment; no live
+restaurant policy is automatically enabled and no real message is sent in tests.
+
 ## Pink Coffee coordinated release
 
 The reviewed Website/Admin change adds the Pink Coffee template, campaign hero

@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - delivery
   - delivery-zones
-updatedAt: '2026-10-28'
+updatedAt: '2026-10-29'
 featureId: delivery-zones
 audience: public
 releaseStatus: available
@@ -41,3 +41,21 @@ Réglez frais et minimum de commande de la zone. Testez adresse et panier aux li
 ## Configurer jours et créneaux
 
 Avec les versions compatibles de l’API, d’Admin et du site client, ouvrez Paramètres → Commandes et livraison → Zones de livraison, puis créez ou modifiez une zone. Choisissez le mode de créneau et cochez uniquement les jours desservis : par exemple vendredi et dimanche pour 94000. Réglez les frais et le minimum, puis enregistrez. Aucune heure ne se saisit dans la zone. Dans Commandes et disponibilité, configurez les horaires du service Livraison, le délai de préparation, sa méthode de calcul, la durée des créneaux et l’horizon de réservation. Le client voit uniquement les créneaux du restaurant qui tombent un jour desservi et respectent son panier ainsi que les fermetures exceptionnelles. Un produit déjà prêt ne rend pas les autres jours livrables. Pour les anciennes zones, les jours des plages enregistrées sont conservés, mais leurs heures ne définissent plus les nouvelles réservations. Les commandes enregistrées conservent leur calendrier promis. En précommande hebdomadaire, les fenêtres de réception de la série et sa clôture restent applicables. Le mode automatique attribue le prochain créneau ; le mode de confirmation par le restaurant annonce le prochain jour et laisse l’heure à confirmer. Vérifiez l’adresse, le tarif et un créneau avant activation ; sans créneau, contrôlez d’abord les horaires Livraison et la préparation dans Commandes et disponibilité.
+
+<span id="same-day" />
+
+## Configurer la livraison du jour même
+
+Dans Zones de livraison → Livraison le jour même, activez les règles après vérification des zones actives. Cochez les jours autorisés. Pour les jours à périmètre restreint, choisissez des zones de référence : seule leur géographie est utilisée, indépendamment de leurs tarifs et jours. Exemple à saisir : autoriser lundi à vendredi, limiter vendredi aux secteurs locaux du lundi au jeudi et laisser dimanche décoché. Aucun préréglage n’est appliqué automatiquement à un restaurant. Le samedi doit être décidé explicitement. Les précommandes pour vendredi ou dimanche conservent le calendrier de leur zone. Le jour même désigne la date locale du restaurant, pas les prochaines 24 heures. Réglez une marge de transport et choisissez la confirmation par le restaurant pour aujourd’hui. Les commandes existantes, le retrait et les tournées conservent leur fonctionnement.
+
+<span id="estimate" />
+
+## Comprendre l’estimation et confirmer l’horaire
+
+Dans une zone avec choix par le client et confirmation par le restaurant pour le jour même, le client choisit une date disponible et voit des plages d’arrivée estimées ainsi que les frais de zone avant paiement. Sans panier, l’estimation est provisoire. La préparation des produits, sa méthode de calcul, les quantités réellement prêtes et la marge de transport déterminent l’arrivée la plus tôt dans les horaires de livraison, en respectant les fermetures exceptionnelles. Le stock prêt n’ouvre aucun autre secteur ni jour fermé. Exemple : un roulé prêt à 11 h 30 avec 60 minutes de transport donne une arrivée au plus tôt à 12 h 30 ; quatre heures de préparation depuis 9 h 30 plus le transport donnent 14 h 30 si la méthode et les horaires le permettent. Cette estimation n’est ni un rendez-vous confirmé ni une réservation de capacité livreur en temps réel. L’équipe vérifie la commande et la disponibilité du livreur, puis confirme une plage valide dans le détail de commande. L’estimation à la commande est conservée ; le reçu et le suivi client affichent la plage confirmée après attribution. Les exigences de paiement et les messages configurés restent applicables ; ce bloc n’ajoute pas d’automatisation WhatsApp. Les rappels de tournée J−1 ne couvrent pas une commande reçue aujourd’hui.
+
+<span id="precedence" />
+
+## Vérifier les priorités et les sauvegardes
+
+Le périmètre et ses frais/minimum sont résolus en premier. Le minimum global de livraison sert uniquement si la zone ne définit pas de minimum ; zéro explicite est conservé. Une zone sans calendrier enregistré hérite du fonctionnement du restaurant et ne limite aucun jour : son nom ne définit aucun calendrier. Les horaires personnalisés des créneaux, lorsqu’ils existent, remplacent les horaires du service ; vérifiez Commandes et disponibilité avant de les changer. Les lots hebdomadaires gardent leurs plages, ouverture et clôture. La préparation et les règles facultatives du jour même restreignent ensuite les nouvelles réservations. Historiquement, désactiver toutes les zones classiques autorise toute adresse : ce n’est pas une pause de livraison. Utilisez le service ou la pause des commandes. Les règles du jour même actives nécessitent un périmètre actif et protègent leurs zones de référence contre la suppression. Des changements concurrents sur des champs horaires distincts fusionnent ; une modification concurrente du même champ ou une ancienne zone déclenche un conflit et conserve la saisie. Rechargez et vérifiez la version enregistrée avant de modifier à nouveau. Si une erreur réseau rend une sauvegarde de zone ou des règles du jour même incertaine, vérifiez les données enregistrées sans répéter l’écriture.
