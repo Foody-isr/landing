@@ -956,20 +956,26 @@ before scanning API evidence, pin immutable source and documentation commits,
 validate API before clients, then promote the exact development-tested artifacts
 under the authorized courier correction release workflow.
 
-## Stancer cash guarantee preparation (29 October 2026)
+## Stancer cash guarantee release (29 October 2026)
 
-This uncommitted preparation reviews API, Admin, guest Web and Landing on isolated
-feature branches. POS and Backoffice retain the source evidence present at Landing
-commit 34d74115; those clients are not revalidated. Existing cash drawer rules are
-retained. The new guide is explicitly local-release-unverified: mocked bank tests
-and browser fixtures do not certify Stancer authorization cancellation or real
-bank release timing. Verify the sandbox flow and merchant fees before real
-activation. No production setting or provider transaction is changed here.
+The user authorized commits, pushes, development deployment and production
+promotion on 29 October 2026. API, Admin, guest Web and Landing are integrated
+with their current develop bases. POS and Backoffice retain the exact source
+blocks and surfaces from Landing develop 928d5bf6; they are not revalidated.
+Existing POS cash drawer rules remain authoritative.
 
-Contracts use WORKSPACE for local preparation only. A reviewed immutable Landing
-commit is still required before remote CI, publication or release; no commit or
-push is authorized in this task. Roll out migration 282/API before Admin/Web and
-coordinate the documentation with product availability.
+The separate Stancer sandbox hosted-card/3DS flow authorized 0.50 EUR with
+capture=false. DELETE then an independent GET confirmed cancellation of that
+same intent, amount and currency. No capture, Foody order, customer or tenant
+setting was created. This proves the provider sandbox path; real bank release
+timing and merchant fees remain account-specific. Guarantees remain off by
+default, and deployment does not change Lovely's saved cash settings.
+
+Source checkpoints and the final reviewed Landing documentation commit are
+immutable before remote CI. Roll out migration 282/API before Admin/Web, verify
+development, then promote the exact same artifacts without rebuilding. Publish
+the three-language procedures with the compatible product release. No production
+test payment is required or authorized merely by this deployment.
 
 
 ## Compact item sheet local preparation (29 October 2026)
