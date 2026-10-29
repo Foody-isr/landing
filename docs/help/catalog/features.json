@@ -8246,7 +8246,8 @@
         "src/components/website-v3/CommerceSelector.tsx",
         "src/lib/i18n.tsx",
         "src/lib/website-v3/site-colors.ts",
-        "src/components/website-v3/SiteColorsEditor.tsx"
+        "src/components/website-v3/SiteColorsEditor.tsx",
+        "src/lib/website-v3/order-design.ts"
       ],
       "foodyweb": [
         "components/website-v3/**",
@@ -8256,7 +8257,10 @@
         "components/OrderMenu*.tsx",
         "app/globals.css",
         "lib/siteColors.ts",
-        "lib/websiteOrderColors.ts"
+        "lib/websiteOrderColors.ts",
+        "components/ItemModal.tsx",
+        "components/ShareButton.tsx",
+        "lib/websiteOrder.ts"
       ],
       "foodyserver": [
         "internal/support/corpus.json"
@@ -8297,9 +8301,9 @@
           "he": "התאמת חלון הפריט"
         },
         "instructions": {
-          "en": "Select the item-detail preview to edit cover image and display options. Test a real configured item with variants, required modifiers, quantities and notes. Design changes do not change its base price, modifier deltas, stock or ordering eligibility. Combos also use this style for their sheet, variant picker and step panel. During Build your combo, the catalogue keeps its colors, photos and layout. Check a configurable and a fixed combo on mobile and desktop; see [building combos](/en/help/menu/combos#website-composition).",
-          "fr": "Sélectionnez l’aperçu de fiche pour régler couverture et options d’affichage. Vérifiez un article configuré avec variantes, options obligatoires, quantités et notes. Le design ne modifie ni prix de base, ni suppléments, ni stock, ni disponibilité à la commande. Les formules utilisent également ce style pour leur fiche, le choix de variante et le panneau d’étapes. Pendant Composer mon menu, la liste conserve ses couleurs, ses photos et sa mise en page. Vérifiez une formule configurable et une formule fixe sur mobile et ordinateur ; consultez [la composition des formules](/fr/help/menu/combos#website-composition).",
-          "he": "בחרו תצוגת פריט לשינוי תמונת שער ואפשרויות הצגה. בדקו פריט עם וריאנטים, תוספות חובה, כמות והערות. העיצוב אינו משנה מחיר בסיס, הפרשי תוספות, מלאי או אפשרות הזמנה. גם ארוחות משתמשות בסגנון זה בחלון הפרטים, בבחירת וריאנט ובלוח השלבים. בזמן ההרכבה התפריט שומר על הצבעים, התמונות והמבנה. בדקו ארוחה בהרכבה וארוחה קבועה בנייד ובמחשב; ראו [הרכבת ארוחות](/he/help/menu/combos#website-composition)."
+          "en": "In Website → Item list, open Item view. Compact presentation applies a 16:9 photo, compact width and rounded corners while preserving the assigned color style and saved framing. You can still choose the width, corners, image ratio and fit separately. An existing explicit ratio stays in effect until you change it; unconfigured photos default to 16:9. Full screen on mobile and Photo cover retain their mobile sheet shapes. The product photo starts at the top with a close button over it; items without photos reserve space for the same close control. Name, configured portion, price and description precede options. Quantity and Add to cart remain together at the bottom while the details scroll. The title and close control remain accessible after scrolling past the photo. Item colors come from its selected shared style: background, title, description, price, options, selections, footer and button remain independently editable in Site design. The quantity control uses the option surface and text colors. Preview shows the button colors without adding to a real cart. Verify variants, required choices, stock limits and notes, reload the draft, then publish and check the public page on desktop and mobile. Design does not change prices or ordering eligibility. Combos keep the same assigned item style; see [building combos](/en/help/menu/combos#website-composition).",
+          "fr": "Dans Site web → Liste des articles, ouvrez Fiche article. Présentation compacte applique une photo 16:9, une largeur compacte et des coins arrondis en conservant le style de couleurs attribué et le cadrage enregistré. Largeur, coins, proportions et ajustement restent réglables séparément. Un format déjà choisi reste appliqué tant que vous ne le modifiez pas ; sans réglage, la photo utilise le 16:9. Plein écran sur mobile et Photo en couverture conservent leurs formes de fenêtre sur mobile. La photo commence en haut avec la fermeture superposée ; sans photo, un espace est réservé à cette fermeture. Le nom, la portion renseignée, le prix et la description précèdent les options. La quantité et Ajouter au panier restent ensemble en bas pendant le défilement. Le titre et la fermeture restent accessibles après la photo. Les couleurs proviennent du style partagé sélectionné : fond, titre, description, prix, options, sélections, pied et bouton restent réglables dans Design du site. Le compteur utilise les couleurs de fond et de texte des options. L’aperçu montre les couleurs du bouton sans ajouter au panier réel. Vérifiez variantes, choix obligatoires, limites de stock et notes, rechargez le brouillon puis publiez et contrôlez le lien public sur ordinateur et mobile. Le design ne change ni les prix ni la disponibilité à la commande. Les formules conservent le même style de fiche ; consultez [leur composition](/fr/help/menu/combos#website-composition).",
+          "he": "באתר ← רשימת הפריטים פתחו תצוגת פריט. תצוגה קומפקטית מחילה תמונה ביחס 16:9, רוחב קומפקטי ופינות מעוגלות ושומרת על סגנון הצבעים ועל המסגור שנשמר. אפשר לשנות רוחב, פינות, יחס והתאמת תמונה בנפרד. יחס שנבחר בעבר נשמר עד לשינוי מפורש; ללא הגדרה ברירת המחדל היא 16:9. מסך מלא בנייד ותמונת שער שומרים על צורת החלון בנייד. התמונה מתחילה בראש החלון וכפתור הסגירה מעליה; ללא תמונה נשמר מקום לסגירה. השם, המנה שהוגדרה, המחיר והתיאור מופיעים לפני האפשרויות. הכמות והוספה לסל נשארות יחד בתחתית בזמן הגלילה. הכותרת והסגירה נשארות נגישות אחרי גלילת התמונה. הצבעים מגיעים מהסגנון המשותף שנבחר: רקע, כותרת, תיאור, מחיר, אפשרויות, בחירות, תחתית וכפתור נשארים ניתנים לעריכה בעיצוב האתר. פקד הכמות משתמש בצבעי הרקע והטקסט של האפשרויות. התצוגה המקדימה מראה את צבעי הכפתור בלי להוסיף לסל אמיתי. בדקו וריאנטים, בחירות חובה, מגבלות מלאי והערות, טענו מחדש את הטיוטה ואז פרסמו ובדקו במחשב ובנייד. העיצוב אינו משנה מחירים או זמינות להזמנה. ארוחות שומרות על אותו סגנון פריט; ראו [הרכבת ארוחות](/he/help/menu/combos#website-composition)."
         }
       },
       {
@@ -8358,7 +8362,7 @@
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-25"
+    "procedureUpdatedAt": "2026-10-29"
   },
   {
     "id": "website-journey",
@@ -11780,7 +11784,8 @@
         "lib/customer-phone.ts",
         "services/api.ts",
         "lib/i18n.tsx",
-        "components/CheckoutBuilderFields.tsx"
+        "components/CheckoutBuilderFields.tsx",
+        "components/ItemModal.tsx"
       ],
       "foodyserver": [
         "internal/common/phone.go",
@@ -11824,9 +11829,9 @@
           "he": "בניית סל"
         },
         "instructions": {
-          "en": "Choose pickup, delivery or table ordering when offered, select the active menu and open an item. Choose a variant, required modifiers, quantity and allowed notes, then add it. Review and edit the basket before checkout. A customer assistant suggestion still needs the same required choices and availability checks.",
-          "fr": "Choisissez retrait, livraison ou table si proposé, le menu actif puis un article. Choisissez variante, options obligatoires, quantité et notes autorisées, puis ajoutez. Vérifiez le panier avant paiement. Une suggestion d’assistant suit les mêmes choix et contrôles de disponibilité.",
-          "he": "בחרו איסוף, משלוח או שולחן כשמוצע, תפריט ופריט. בחרו וריאנט, תוספות חובה, כמות והערות ואז הוסיפו. בדקו סל לפני סיום. גם הצעת עוזר כפופה לבחירות ולזמינות."
+          "en": "Choose pickup, delivery or table ordering when offered, select the active menu and open an item. Its sheet shows the configured portion, price, description and available photos. Choose a variant, required modifiers and allowed notes. Quantity and Add to cart stay together at the bottom while you scroll through the details; the total follows your quantity and choices. The title and close control remain available after the photo scrolls away. Close without adding to discard the current selection. If adding is unavailable, complete the required choices or review the displayed availability. Review and edit the basket before checkout. A customer assistant suggestion needs the same required choices and availability checks.",
+          "fr": "Choisissez retrait, livraison ou table si proposé, le menu actif puis un article. Sa fiche montre la portion renseignée, le prix, la description et les photos disponibles. Choisissez une variante, les options obligatoires et les notes autorisées. La quantité et Ajouter au panier restent ensemble en bas pendant le défilement ; le total suit la quantité et les choix. Le titre et la fermeture restent accessibles après la photo. Fermer sans ajouter abandonne la sélection en cours. Si l’ajout est indisponible, complétez les choix obligatoires ou vérifiez la disponibilité indiquée. Vérifiez et modifiez le panier avant paiement. Une suggestion d’assistant suit les mêmes choix et contrôles de disponibilité.",
+          "he": "בחרו איסוף, משלוח או שולחן כשמוצע, תפריט ופריט. החלון מציג את המנה שהוגדרה, המחיר, התיאור והתמונות הזמינות. בחרו וריאנט, תוספות חובה והערות מותרות. הכמות והוספה לסל נשארות יחד בתחתית בזמן הגלילה; הסכום מתעדכן לפי הכמות והבחירות. הכותרת והסגירה נשארות נגישות אחרי גלילת התמונה. סגירה ללא הוספה מבטלת את הבחירה הנוכחית. אם ההוספה אינה זמינה, השלימו בחירות חובה או בדקו את הזמינות המוצגת. בדקו וערכו את הסל לפני סיום. גם הצעת עוזר כפופה לאותן בחירות ולבדיקות זמינות."
         }
       },
       {

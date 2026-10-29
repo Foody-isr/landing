@@ -957,6 +957,24 @@ validate API before clients, then promote the exact development-tested artifacts
 under the authorized courier correction release workflow.
 
 
+## Compact item sheet local preparation (29 October 2026)
+
+This preparation reviews Web, Admin, Landing and the API's synchronized public
+help corpus on isolated develop-based branches. Product-sheet layout changes and
+Admin's Compact presentation action are documented in FR/HE/EN under
+website-order-design/item-surface and guest-ordering/basket. Authored theme roles,
+fonts, ratios, fit and framing remain the source of truth; only a missing photo
+ratio defaults to 16:9. The isolated editor test publishes only to an in-memory
+fixture. Existing public websites and production settings are never mutated.
+
+POS and Backoffice inventory blocks/surfaces retain their exact evidence from
+Landing develop 359e59e0 and are not revalidated here. Copy the exported public
+corpus to API before scanning. The user authorized commits, development and production deployment on 29 October
+2026. Contracts pin the reviewed immutable Landing commit before remote CI;
+Landing retains its self-reference. Publish the guides with the verified Web/Admin rollout
+and matching support corpus. Source and synthetic browser checks do not certify
+a live order or production deployment.
+
 ## Local delivery weekday scheduling preparation (29 October 2026)
 
 This preparation reviews API, Admin, guest Web and Landing from develop. Zone
@@ -970,6 +988,6 @@ POS and Backoffice inventory entries and surfaces retain their exact baseline
 from Landing develop `359e59e030e4a686224a3ff520f1799534fb3d67`; those clients are
 not revalidated here. POS retains delivery policy snapshots as an opaque map.
 Export FR/HE/EN procedures and synchronize the API corpus before the source scan.
-Local contracts use WORKSPACE until a reviewed immutable documentation commit is
-authorized. Deploy the API before compatible Admin/Web, verify development, and
+Service contracts pin the reviewed immutable Landing documentation commit for
+remote CI and release. Deploy the API before compatible Admin/Web, verify development, and
 publish the guides with the product. This local preparation deploys nothing.
