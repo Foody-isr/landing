@@ -4,10 +4,10 @@
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "6f71829f5a5eb39c6b1fc07812cd45b64fc7a997",
+      "sourceCommit": "2992eb6f2dad5e80420212c61ade9e0704115dc2",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "9ee6ed2ca5beecc799a040405b3fe1a6e5a46c3071d566dde18d4423fadbddaf",
-      "workingTreeHasChanges": false,
+      "sourceSnapshot": "c0af246ca83ab5845e5402b4218fa1be6507e4f133d4539b05ec051653b26cbb",
+      "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
           "sha256": "33cf30b683837b76977ed47c14d5d91ccb1b34bd60e9f62d124b8cc1079231aa",
@@ -3998,9 +3998,10 @@
           ]
         },
         "internal/restaurants/website_header.go": {
-          "sha256": "ae8b4bb19abe55fc8341b97e7d351d7c9bcd817d70642e3ea8e755f91d36da70",
+          "sha256": "3a7e13a75db676ee0fb2e139d8a88f93978d128ec781aefd0acd17091c5a20c0",
           "features": [
             "website-qr-customize-your-site",
+            "website-navigation",
             "restaurant-profile",
             "fulfillment-policy",
             "platform-api"
@@ -4435,13 +4436,14 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "4397c2e41c2180f545cdc811cdea7a9312b8d84a20c508e2e7f6053b5d64419f",
+          "sha256": "746f038e948a55e8aff871293804ad121a2b155af5f74b3691abfc0f873bc7cb",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
             "website-qr-customize-your-site",
             "combos",
             "website-design",
+            "website-navigation",
             "website-sections",
             "website-order-design",
             "guest-ordering",
@@ -4766,9 +4768,9 @@
     },
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "312fe721588d56495ca665368ec2a0751cdf4e2b",
+      "sourceCommit": "e5bc17932f42d73ec96a313cc4b484e083276ea6",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "43cd93bf6a6d1dd8939445f27e94eb310bef0f9a8ad7286837e465465ea47a3b",
+      "sourceSnapshot": "780e86944a0950f23a95cf4fee63314555d6f7d46a9695ac9f51e2b5f9baa220",
       "workingTreeHasChanges": false,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
@@ -8619,6 +8621,13 @@
             "website-design"
           ]
         },
+        "src/components/website-v3/BoundedNumberInput.tsx": {
+          "sha256": "929fc5d18c87a36d093bc24227879a16b1b04e0bd33176aa54a6eab6476b5721",
+          "features": [
+            "website-qr-customize-your-site",
+            "website-sections"
+          ]
+        },
         "src/components/website-v3/BranchWebsitePresence.tsx": {
           "sha256": "34a1e0ce32a42bed4c20cfda19d67162e16f573413f7727882e64f688e6640b8",
           "features": [
@@ -8634,14 +8643,14 @@
           ]
         },
         "src/components/website-v3/CampaignRuntimeContext.tsx": {
-          "sha256": "aebe8b88a328627cca7d7c32c4e94644b50cdfac56c46b4c050cc803b1386f5d",
+          "sha256": "399f0d821fe9b60e2b8ade5110404b86e00b3d13024bbd881ba202e87a09a93b",
           "features": [
             "website-qr-customize-your-site",
             "website-sections"
           ]
         },
         "src/components/website-v3/CampaignSlidesEditor.tsx": {
-          "sha256": "fb49aac367fe76beb267925c1e8f7a459f77a3b79cb58b61eaae98b3b8b70e99",
+          "sha256": "10257436d07f4cf813ea9cfa9ca71a8b43ee30a3d19320af724e0d810ab576d1",
           "features": [
             "website-qr-customize-your-site",
             "website-sections"
@@ -8726,7 +8735,7 @@
           ]
         },
         "src/components/website-v3/FeaturedItemsEditor.tsx": {
-          "sha256": "92f6eb728324c70fccc47c4e567ffcc5774419cd400c37d6eb156b725972f9c1",
+          "sha256": "b5ed58a712645272ca578c4599a482c7ec73c0af1cfa4207ce9833bfbb1eb084",
           "features": [
             "website-qr-customize-your-site",
             "website-sections"
@@ -8754,7 +8763,7 @@
           ]
         },
         "src/components/website-v3/HeaderInspector.tsx": {
-          "sha256": "2a57ea59bfb304331fa2da9d3be7b5b88f0e5210e49c7ae405139820e424d6eb",
+          "sha256": "77a8ae57484907a476ab297e30004f6745a2e71b48c624cf7c59d5b48ab7c1c0",
           "features": [
             "website-qr-customize-your-site",
             "website-navigation"
@@ -8784,6 +8793,13 @@
           "sha256": "9927490539fd3e65c422e8b590077a8d306af5096c23d20ea281b6a5a35faaad",
           "features": [
             "website-qr-customize-your-site"
+          ]
+        },
+        "src/components/website-v3/ItemImageBackgroundEditor.tsx": {
+          "sha256": "8879e6cc0c173683b996db1236afa7e15dde5baae132a6d9630e28ac4b0d2f7f",
+          "features": [
+            "website-qr-customize-your-site",
+            "website-sections"
           ]
         },
         "src/components/website-v3/ItemImageFramingEditor.tsx": {
@@ -8920,7 +8936,7 @@
           ]
         },
         "src/components/website-v3/SiteDesign.tsx": {
-          "sha256": "88f451212f941a0de426fedfae71c4d5d7709a315903c820375cd35eb27ed850",
+          "sha256": "2bfc5da494d91026e2e2ad19b28f3fe0e80d3d6f676b09fa1b819dc0b95e664b",
           "features": [
             "website-qr-customize-your-site",
             "website-design"
@@ -9002,7 +9018,7 @@
           ]
         },
         "src/components/website-v3/field-contracts.ts": {
-          "sha256": "c87ef3381dc458392fab6b116a3eb56f310905d14994aecb47f98e6714431421",
+          "sha256": "226d6ea1bb631252a2bccb9ca200fd71658175b7af336fcffbbe98628e3c5af0",
           "features": [
             "website-qr-customize-your-site"
           ]
@@ -9238,7 +9254,7 @@
           ]
         },
         "src/lib/i18n.tsx": {
-          "sha256": "17bde8c2f586e62fae4d33c452f853cdcfa3c29a3d4d757e2d97159d2d6f70d1",
+          "sha256": "185621f4ac4f048e79297c57fb0e6d834af65c062b9589338e458286fb8301e7",
           "features": [
             "customers-profiles",
             "menu-menus-and-groups",
@@ -9942,7 +9958,7 @@
           ]
         },
         "src/lib/website-v3/campaign.ts": {
-          "sha256": "a3637c77a7a6e07907f942e3b1105eb863e4594bcaacc3013a1201b984bea889",
+          "sha256": "82ae481b2bd9b85a38d0354d03203db12038b46afd29d912b81b34d9350ded00",
           "features": [
             "website-qr-customize-your-site",
             "website-sections",
@@ -9986,9 +10002,10 @@
           ]
         },
         "src/lib/website-v3/featured-items.ts": {
-          "sha256": "e825ec3ec30909ade73af2f5c3178b48e2db8cfdc9d5a3f364e913bbd84968ea",
+          "sha256": "347ba4df2256b1bbc0df08648be64e57f70af185a91e89147859d7f64f3fdbbf",
           "features": [
             "website-qr-customize-your-site",
+            "website-sections",
             "shared-runtime"
           ]
         },
@@ -10014,7 +10031,7 @@
           ]
         },
         "src/lib/website-v3/header.ts": {
-          "sha256": "c6d12edd51e4de4e5bde09cbf67c8c55fe77f623c26fca957882f2925b3c9431",
+          "sha256": "bbaab6cc7d82429bca35785ee72696b15d13ace7931426a5ac3895497313bb0c",
           "features": [
             "website-qr-customize-your-site",
             "shared-runtime"
@@ -10107,7 +10124,7 @@
           ]
         },
         "src/lib/website-v3/restaurant-theme-blueprints.ts": {
-          "sha256": "9711bf770027abb00c243690bdf2d82dca5ab1838692e1adf2f782d5d9df2481",
+          "sha256": "d2a1476adbd6d95252075cec9d3679f11428045fcace621564213ee647a3d6ff",
           "features": [
             "website-qr-customize-your-site",
             "website-design",
@@ -10122,7 +10139,7 @@
           ]
         },
         "src/lib/website-v3/restaurant-themes.ts": {
-          "sha256": "1aa98b5cf9afd3d6cff0aa7e00c424f0c9f22c8bcb2a0e67fd98deccb06cb7b3",
+          "sha256": "0ed284395e624bce2caf96088ac5a541d32c0d02f95af73bb5fe957990052626",
           "features": [
             "website-qr-customize-your-site",
             "website-design",
@@ -10130,7 +10147,7 @@
           ]
         },
         "src/lib/website-v3/runtime-capabilities.ts": {
-          "sha256": "3d135149d8d40ad85b0e6fc0d0a214d488da686c94b72ab19e8a654d321b60fb",
+          "sha256": "a1f7456a85f56cb0a4ef794467a7ee9d7e90e9d66cd32435840516803d967e9d",
           "features": [
             "website-qr-customize-your-site",
             "website-sections",
@@ -10268,10 +10285,10 @@
     },
     "foodyweb": {
       "repository": "https://github.com/Foody-isr/web",
-      "sourceCommit": "4fab33aa2b5695eec2d3fdba941bada48a611f91",
+      "sourceCommit": "3695bb4a2dc7c2f23705cdce43f9b23e7836653a",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "b6c267eb53c48964055327348c45165336b7640ece58399db3e242d3a0ac7d0f",
-      "workingTreeHasChanges": true,
+      "sourceSnapshot": "ddd11f221319331564eb906b10f936e33f22590d8ca249237683f34909bd74f5",
+      "workingTreeHasChanges": false,
       "sourceFiles": {
         "app/@cart/(.)order/cart/page.tsx": {
           "sha256": "1d5bfacb3688b858b55225ea9a850fb106a77a2b64afe399cf8b42ca600d83b3",
@@ -10361,7 +10378,7 @@
           ]
         },
         "app/globals.css": {
-          "sha256": "68665eac93e99c96b07f4729227688d13e7cc4693e4e030b61c5e7f3eecd25c6",
+          "sha256": "c5aeb2e2b8722f921fdd353acb747b049332dd8f67cc61355ef2cd241a7803a0",
           "features": [
             "website-sections",
             "website-order-design",
@@ -11260,7 +11277,7 @@
           ]
         },
         "components/sections/CampaignHero.tsx": {
-          "sha256": "42abf9fa79102ca3a72ba6d05a9083f9d00a6d2b932cccaaef5fc4c6b945c269",
+          "sha256": "77e485490871e9f53d19a8cb195e1cb9fd825de8fdb702c82fbf3dd300baad4e",
           "features": [
             "website-sections"
           ]
@@ -11290,7 +11307,7 @@
           ]
         },
         "components/sections/MenuHighlightsSection.tsx": {
-          "sha256": "c916adac256deb79e78911e76af2302a2c9c91f617bfa2aaaa64ffdcb355d11d",
+          "sha256": "64fbbff7f9181d0bdd90f3ab19b85208be629163973358d6c7a7bac41ded91ce",
           "features": [
             "menu-variants-and-sizes",
             "website-sections"
@@ -11578,7 +11595,7 @@
           ]
         },
         "components/website-v3/SiteHeader.tsx": {
-          "sha256": "a50f8294e44a177c0c050ce7d45dee45b816bc2ec570119ee9e14dd3a2430fef",
+          "sha256": "d9747090380ab89e958de2053840feb11744f2088239dad623224f034c4a848a",
           "features": [
             "website-qr-customize-your-site",
             "website-design",
@@ -11700,7 +11717,7 @@
           ]
         },
         "lib/campaignHero.ts": {
-          "sha256": "feec589c0a377b534a2f43d19a73aae6f49c0a376c1beb24fc078cacdaae005a",
+          "sha256": "372cb4ca8acdbf61cc8f05c9312de67bf57d661e8ecb1b8df80620cc65d0f397",
           "features": [
             "website-sections",
             "shared-runtime"
@@ -12141,7 +12158,7 @@
           ]
         },
         "lib/preview/websiteV3Capabilities.ts": {
-          "sha256": "1f62a27d700db2fd7cbf2298bef1a60c1b061c139bb5dafe1ced31f60d8b6aa9",
+          "sha256": "02aa49d19e65e583ee0b2560063545dc8fe449ebd4e1c51741995eb70cb56c8a",
           "features": [
             "website-sections",
             "shared-runtime"
@@ -12414,8 +12431,9 @@
           ]
         },
         "lib/websiteFeaturedItems.ts": {
-          "sha256": "aa9c7f5dbd11c6aa16921f414bd21e8f382de909bea1dbc43c8f60444a60be5c",
+          "sha256": "60e08e671838c6d5a52dc5a900f85121c24452b68377c9edc8ffbf7f93102bd3",
           "features": [
+            "website-sections",
             "shared-runtime"
           ]
         },
@@ -12428,8 +12446,9 @@
           ]
         },
         "lib/websiteHeader.ts": {
-          "sha256": "dc16ce61b132ec216bb38749c710976c0410d668b0665dac9f283ba52377a41e",
+          "sha256": "d6ec41441096a19b8104939b18073860d2ebac9443dabd3fc67361a155b79db5",
           "features": [
+            "website-navigation",
             "shared-runtime"
           ]
         },
@@ -12481,7 +12500,7 @@
           ]
         },
         "lib/websiteV3FieldHooks.ts": {
-          "sha256": "893a2a539b02d5ac1ceebcb7605fb3e89ed61585748aa34f172188d656f03c46",
+          "sha256": "efbef55da57b036a03db1eaa082c7f3d4d9b7d54d23083253041c8dfad83174a",
           "features": [
             "website-qr-customize-your-site",
             "shared-runtime"
@@ -27629,9 +27648,9 @@
             "he": "בדיקת זמינות של תצוגות קמפיין"
           },
           "instructions": {
-            "en": "Pink Coffee, the Campaign hero/card presentation and Display headings require a compatible public Website version before Admin enables their controls. If a control is unavailable or publication reports an incompatible public renderer, keep the draft, ask Foody to update the matching Website version, then reload the editor and review the preview again. Existing presentations retain their normal editing and publication flow. A saved draft or gallery preview is not a production release. Configure the new options in [design and branding](/en/help/website-qr/design-and-branding#pink-coffee-template) and [sections and media](/en/help/website-qr/sections-and-media#campaign-hero), then publish only after checking desktop, mobile, links and item choices.",
-            "fr": "Pink Coffee, les présentations Campagne de bannière et de cartes et les titres Affichage nécessitent un site client compatible avant l’activation de leurs contrôles dans l’Admin. Si un contrôle est indisponible ou si la publication signale un rendu public incompatible, conservez le brouillon, faites mettre à jour la version correspondante du site client par Foody, puis rechargez l’éditeur et vérifiez de nouveau l’aperçu. Les présentations existantes conservent leur parcours habituel de modification et publication. Un brouillon enregistré ou un aperçu de galerie ne constitue pas une mise en production. Réglez les nouvelles options dans [apparence et identité](/fr/help/website-qr/design-and-branding#pink-coffee-template) et [sections et médias](/fr/help/website-qr/sections-and-media#campaign-hero), puis publiez après contrôle de l’ordinateur, du mobile, des liens et des choix d’articles.",
-            "he": "Pink Coffee, תצוגות הקמפיין לבאנר ולכרטיסים וכותרות תצוגה גדולה דורשים גרסה תואמת של אתר הלקוחות לפני הפעלת הפקדים ב-Admin. אם פקד אינו זמין או שהפרסום מדווח על תצוגה ציבורית לא תואמת, שמרו את הטיוטה, בקשו מ-Foody לעדכן את גרסת אתר הלקוחות המתאימה, טענו מחדש את העורך ובדקו שוב את התצוגה המקדימה. תצוגות קיימות שומרות על מסלול העריכה והפרסום הרגיל. טיוטה שמורה או תצוגת גלריה אינן גרסת ייצור. הגדירו את האפשרויות החדשות ב[עיצוב ומיתוג](/he/help/website-qr/design-and-branding#pink-coffee-template) וב[מקטעים ומדיה](/he/help/website-qr/sections-and-media#campaign-hero), ופרסמו לאחר בדיקת מחשב, נייד, קישורים ובחירות פריטים."
+            "en": "Pink Coffee, the Campaign hero/card presentation and Display headings require a compatible public Website version before Admin enables their controls. If a control is unavailable or publication reports an incompatible public renderer, keep the draft, ask Foody to update the matching Website version, then reload the editor and review the preview again. Existing presentations retain their normal editing and publication flow. A saved draft or gallery preview is not a production release. Configure the new options in [design and branding](/en/help/website-qr/design-and-branding#pink-coffee-template) and [sections and media](/en/help/website-qr/sections-and-media#campaign-hero), then publish only after checking desktop, mobile, links and item choices. New carousel layout, menu icon, grid width and individual product background controls also require their compatible release. They can remain disabled while an existing Campaign hero remains editable.",
+            "fr": "Pink Coffee, les présentations Campagne de bannière et de cartes et les titres Affichage nécessitent un site client compatible avant l’activation de leurs contrôles dans l’Admin. Si un contrôle est indisponible ou si la publication signale un rendu public incompatible, conservez le brouillon, faites mettre à jour la version correspondante du site client par Foody, puis rechargez l’éditeur et vérifiez de nouveau l’aperçu. Les présentations existantes conservent leur parcours habituel de modification et publication. Un brouillon enregistré ou un aperçu de galerie ne constitue pas une mise en production. Réglez les nouvelles options dans [apparence et identité](/fr/help/website-qr/design-and-branding#pink-coffee-template) et [sections et médias](/fr/help/website-qr/sections-and-media#campaign-hero), puis publiez après contrôle de l’ordinateur, du mobile, des liens et des choix d’articles. Les nouveaux réglages de disposition du carrousel, de l’icône menu, de largeur de mosaïque et de fonds individuels des produits nécessitent aussi leur version compatible. Ils peuvent rester désactivés alors que la bannière Campagne existante reste modifiable.",
+            "he": "Pink Coffee, תצוגות הקמפיין לבאנר ולכרטיסים וכותרות תצוגה גדולה דורשים גרסה תואמת של אתר הלקוחות לפני הפעלת הפקדים ב-Admin. אם פקד אינו זמין או שהפרסום מדווח על תצוגה ציבורית לא תואמת, שמרו את הטיוטה, בקשו מ-Foody לעדכן את גרסת אתר הלקוחות המתאימה, טענו מחדש את העורך ובדקו שוב את התצוגה המקדימה. תצוגות קיימות שומרות על מסלול העריכה והפרסום הרגיל. טיוטה שמורה או תצוגת גלריה אינן גרסת ייצור. הגדירו את האפשרויות החדשות ב[עיצוב ומיתוג](/he/help/website-qr/design-and-branding#pink-coffee-template) וב[מקטעים ומדיה](/he/help/website-qr/sections-and-media#campaign-hero), ופרסמו לאחר בדיקת מחשב, נייד, קישורים ובחירות פריטים. גם פקדי פריסת הקרוסלה, סמל התפריט, רוחב הרשת והרקע הנפרד לכל מוצר דורשים את הגרסה התואמת שלהם. הם עשויים להישאר מושבתים בזמן שבאנר קמפיין קיים נשאר ניתן לעריכה."
           }
         },
         {
@@ -27751,6 +27770,10 @@
         },
         {
           "service": "foodyadmin",
+          "file": "src/components/website-v3/BoundedNumberInput.tsx"
+        },
+        {
+          "service": "foodyadmin",
           "file": "src/components/website-v3/BranchWebsitePresence.tsx"
         },
         {
@@ -27844,6 +27867,10 @@
         {
           "service": "foodyadmin",
           "file": "src/components/website-v3/Inspector.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/components/website-v3/ItemImageBackgroundEditor.tsx"
         },
         {
           "service": "foodyadmin",
@@ -33915,9 +33942,9 @@
             "he": "תצוגה מקדימה של תבנית Pink Coffee"
           },
           "instructions": {
-            "en": "Pink Coffee requires the compatible Website and Admin release. If it is not offered, ask Foody to confirm availability before changing the site. In Site design → Website themes, select Pink Coffee and Preview. Review the home page, order page, shared colors, fonts, navigation and existing content before choosing Apply theme. The template stages a short home page with a campaign hero and featured items, plus an order page; it does not create catalogue items, prices or payment settings. Replace the sample copy and media with your own, select the real items to feature and check the order-page menu association. Applying a template changes the draft only. Wait for saving, review desktop and mobile, then publish deliberately. See [sections and media](/en/help/website-qr/sections-and-media#campaign-hero).",
-            "fr": "Pink Coffee nécessite les versions compatibles du site client et de l’Admin. Si le modèle n’est pas proposé, faites confirmer sa disponibilité par Foody avant de modifier le site. Dans Design du site → Thèmes du site, choisissez Pink Coffee puis Aperçu. Vérifiez accueil, commande, couleurs, polices, navigation et contenus existants avant Appliquer le thème. Le modèle prépare un accueil court avec une bannière de campagne et des articles mis en avant, ainsi qu’une page de commande ; il ne crée ni articles, ni prix, ni réglages de paiement. Remplacez textes et médias d’exemple, choisissez les vrais articles à mettre en avant et vérifiez la carte associée à la page de commande. Appliquer un modèle modifie uniquement le brouillon. Attendez l’enregistrement, contrôlez ordinateur et mobile, puis publiez volontairement. Voir [sections et médias](/fr/help/website-qr/sections-and-media#campaign-hero).",
-            "he": "Pink Coffee דורשת גרסאות תואמות של אתר הלקוחות ושל Admin. אם התבנית אינה מוצעת, בקשו מ-Foody לאשר זמינות לפני שינוי האתר. בעיצוב האתר → ערכות עיצוב בחרו Pink Coffee ותצוגה מקדימה. בדקו את דף הבית, דף ההזמנות, הצבעים, הגופנים, הניווט והתוכן הקיים לפני בחירת החלת העיצוב. התבנית מכינה דף בית קצר עם באנר קמפיין ופריטים מודגשים, וכן דף הזמנות; היא אינה יוצרת פריטי קטלוג, מחירים או הגדרות תשלום. החליפו טקסטים ומדיה לדוגמה בתוכן שלכם, בחרו את הפריטים האמיתיים להדגשה ובדקו את שיוך התפריט לדף ההזמנות. החלת תבנית משנה רק את הטיוטה. המתינו לשמירה, בדקו מחשב ונייד ופרסמו במכוון. ראו [מקטעים ומדיה](/he/help/website-qr/sections-and-media#campaign-hero)."
+            "en": "Pink Coffee requires the compatible Website and Admin release. If it is not offered, ask Foody to confirm availability before changing the site. In Site design → Website themes, select Pink Coffee and Preview. Review the home page, order page, shared colors, fonts, navigation and existing content before choosing Apply theme. The template stages a short home page with a campaign hero and featured items, plus an order page; it does not create catalogue items, prices or payment settings. Replace the sample copy and media with your own, select the real items to feature and check the order-page menu association. Applying a template changes the draft only. Wait for saving, review desktop and mobile, then publish deliberately. See [sections and media](/en/help/website-qr/sections-and-media#campaign-hero). The compatible Pink Coffee presentation uses a staggered menu icon with no header cart icon, a manual carousel with controls on the right and a product grid that can span multiple rows. The counter and playback control are hidden in this manual preset; descriptions are shown while each card’s prices and buttons are hidden. Change these choices in the header, carousel and featured-item controls without changing catalogue prices.",
+            "fr": "Pink Coffee nécessite les versions compatibles du site client et de l’Admin. Si le modèle n’est pas proposé, faites confirmer sa disponibilité par Foody avant de modifier le site. Dans Design du site → Thèmes du site, choisissez Pink Coffee puis Aperçu. Vérifiez accueil, commande, couleurs, polices, navigation et contenus existants avant Appliquer le thème. Le modèle prépare un accueil court avec une bannière de campagne et des articles mis en avant, ainsi qu’une page de commande ; il ne crée ni articles, ni prix, ni réglages de paiement. Remplacez textes et médias d’exemple, choisissez les vrais articles à mettre en avant et vérifiez la carte associée à la page de commande. Appliquer un modèle modifie uniquement le brouillon. Attendez l’enregistrement, contrôlez ordinateur et mobile, puis publiez volontairement. Voir [sections et médias](/fr/help/website-qr/sections-and-media#campaign-hero). La présentation Pink Coffee compatible utilise un menu à traits décalés sans icône panier dans l’en-tête, un carrousel manuel aux commandes à droite et une mosaïque pouvant occuper plusieurs lignes. Le compteur et la lecture sont masqués dans ce préréglage manuel ; les descriptions sont visibles, les prix et boutons de chaque carte masqués. Vous pouvez modifier ces choix dans les réglages de l’en-tête, du carrousel et des articles mis en avant sans changer les prix du catalogue.",
+            "he": "Pink Coffee דורשת גרסאות תואמות של אתר הלקוחות ושל Admin. אם התבנית אינה מוצעת, בקשו מ-Foody לאשר זמינות לפני שינוי האתר. בעיצוב האתר → ערכות עיצוב בחרו Pink Coffee ותצוגה מקדימה. בדקו את דף הבית, דף ההזמנות, הצבעים, הגופנים, הניווט והתוכן הקיים לפני בחירת החלת העיצוב. התבנית מכינה דף בית קצר עם באנר קמפיין ופריטים מודגשים, וכן דף הזמנות; היא אינה יוצרת פריטי קטלוג, מחירים או הגדרות תשלום. החליפו טקסטים ומדיה לדוגמה בתוכן שלכם, בחרו את הפריטים האמיתיים להדגשה ובדקו את שיוך התפריט לדף ההזמנות. החלת תבנית משנה רק את הטיוטה. המתינו לשמירה, בדקו מחשב ונייד ופרסמו במכוון. ראו [מקטעים ומדיה](/he/help/website-qr/sections-and-media#campaign-hero). תצוגת Pink Coffee התואמת משתמשת בסמל תפריט עם קווים מדורגים ללא סמל סל בכותרת העליונה, בקרוסלה ידנית עם פקדים מימין וברשת מוצרים שיכולה לכלול כמה שורות. המונה ופקד הניגון מוסתרים בהגדרה הידנית הזו; התיאורים מוצגים והמחירים והכפתורים בכל כרטיס מוסתרים. אפשר לשנות את הבחירות בהגדרות הכותרת העליונה, הקרוסלה והפריטים המודגשים בלי לשנות מחירי קטלוג."
           }
         },
         {
@@ -34156,7 +34183,12 @@
           "src/components/website-v3/MissingFooter.tsx"
         ],
         "foodyweb": [
-          "components/website-v3/**"
+          "components/website-v3/**",
+          "lib/websiteHeader.ts"
+        ],
+        "foodyserver": [
+          "internal/restaurants/website_header.go",
+          "internal/support/corpus.json"
         ]
       },
       "operations": [
@@ -34168,9 +34200,9 @@
             "he": "הגדרת הכותרת העליונה"
           },
           "instructions": {
-            "en": "Choose logo, name visibility, logo size/position and link alignment. Compare transparent/overlay and scrolled/solid states, including their separate text colors and optional scrolled logo. Preview the mobile hamburger menu.",
-            "fr": "Choisissez logo, visibilité du nom, taille, position et alignement des liens. Comparez état transparent/superposé et état défilé/opaque, avec leurs couleurs et éventuel logo distinct. Prévisualisez le menu mobile.",
-            "he": "הגדירו לוגו, הצגת שם, גודל, מיקום ויישור קישורים. השוו מצב שקוף ומצב בגלילה, כולל צבעי טקסט ולוגו חלופי. בדקו את תפריט הנייד."
+            "en": "Choose logo, name visibility, logo size/position and link alignment. Compare transparent/overlay and scrolled/solid states, including their separate text colors and optional scrolled logo. Preview the mobile hamburger menu. On a compatible release, under header navigation, Menu icon style offers Standard lines or Staggered lines. Set Menu icon size from 16 to 40 px and Menu line thickness from 1 to 4 px. The cart setting controls only the header icon; it does not remove the basket or ordering flow. Check the open and closed menu, logo and main button on desktop and mobile, then wait for draft saving before publishing.",
+            "fr": "Choisissez logo, visibilité du nom, taille, position et alignement des liens. Comparez état transparent/superposé et état défilé/opaque, avec leurs couleurs et éventuel logo distinct. Prévisualisez le menu mobile. Sur une version compatible, dans la navigation de l’en-tête, Style de l’icône menu propose Traits classiques ou Traits décalés. Réglez Taille de l’icône menu de 16 à 40 px et Épaisseur des traits du menu de 1 à 4 px. Le réglage de panier contrôle uniquement l’icône de l’en-tête ; il ne supprime pas le panier ni le parcours de commande. Contrôlez menu ouvert et fermé, logo et bouton principal sur ordinateur et mobile, puis attendez l’enregistrement du brouillon avant publication.",
+            "he": "הגדירו לוגו, הצגת שם, גודל, מיקום ויישור קישורים. השוו מצב שקוף ומצב בגלילה, כולל צבעי טקסט ולוגו חלופי. בדקו את תפריט הנייד. בגרסה תואמת, בניווט הכותרת העליונה, סגנון סמל התפריט מציע קווים רגילים או קווים מדורגים. הגדירו גודל סמל התפריט מ-16 עד 40 פיקסלים ועובי קווי התפריט מ-1 עד 4 פיקסלים. הגדרת הסל שולטת רק בסמל שבכותרת העליונה; היא אינה מסירה את הסל או את מסלול ההזמנה. בדקו תפריט פתוח וסגור, לוגו וכפתור ראשי במחשב ובנייד, והמתינו לשמירת הטיוטה לפני פרסום."
           }
         },
         {
@@ -34229,8 +34261,16 @@
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-10-21",
+      "procedureUpdatedAt": "2026-10-29",
       "evidence": [
+        {
+          "service": "foodyserver",
+          "file": "internal/restaurants/website_header.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/support/corpus.json"
+        },
         {
           "service": "foodyadmin",
           "file": "src/components/website-v3/CategoryNavigationEditor.tsx"
@@ -34334,6 +34374,10 @@
         {
           "service": "foodyweb",
           "file": "components/website-v3/WebsiteServiceBar.tsx"
+        },
+        {
+          "service": "foodyweb",
+          "file": "lib/websiteHeader.ts"
         }
       ]
     },
@@ -34369,7 +34413,10 @@
           "src/lib/website-v3/runtime-capabilities.ts",
           "src/lib/website-v3/state.ts",
           "src/lib/website-v3/square-components.ts",
-          "src/lib/i18n.tsx"
+          "src/lib/i18n.tsx",
+          "src/components/website-v3/ItemImageBackgroundEditor.tsx",
+          "src/lib/website-v3/featured-items.ts",
+          "src/components/website-v3/BoundedNumberInput.tsx"
         ],
         "foodyweb": [
           "components/website-v3/**",
@@ -34383,7 +34430,8 @@
           "lib/preview/editorElements.ts",
           "lib/preview/editorInteractions.ts",
           "app/globals.css",
-          "lib/i18n.tsx"
+          "lib/i18n.tsx",
+          "lib/websiteFeaturedItems.ts"
         ],
         "foodyserver": [
           "internal/support/corpus.json"
@@ -34437,10 +34485,23 @@
             "he": "יצירת באנר קמפיין בקרוסלה"
           },
           "instructions": {
-            "en": "This layout requires the compatible Website and Admin release. Select a Hero section and choose Campaign under Layout. Open Slides, add up to six slides and use the up/down controls to set their order. For each slide, select a photo or video, add image alternative text and edit the title, subtitle, button text/link and background. Choose Show the whole image to keep a whole cup or product, or Fill the panel; check the resulting crop on both screen sizes. The rounded panels can show a glimpse of the next slide. Autoplay is off by default; if enabled, set the slide duration from 5 to 30 seconds. Previous/next and a persistent play/pause control remain available. Editor preview stays static. Automatic progression and video pause during hover, focus, dragging, when the section is offscreen or the tab is hidden. Reduced motion prevents automation until an explicit play action. Review keyboard use and both motion preferences. Browser restrictions can prevent automatic video playback. Keep essential information and the order link readable without motion. Wait for draft saving and publish only after checking every slide; if the public view is unsupported, confirm the matching Website release before publishing.",
-            "fr": "Cette disposition nécessite les versions compatibles du site client et de l’Admin. Sélectionnez une section Bannière et choisissez Campagne dans Disposition. Ouvrez Diapositives, ajoutez jusqu’à six diapositives et réordonnez-les avec les flèches haut/bas. Pour chacune, choisissez une photo ou une vidéo, renseignez le texte alternatif de l’image puis titre, sous-titre, texte/lien du bouton et fond. Choisissez Afficher l’image entière pour conserver un gobelet ou produit entier, ou Remplir le panneau ; contrôlez le recadrage sur les deux formats. Les panneaux arrondis peuvent laisser entrevoir la diapositive suivante. La lecture automatique est désactivée par défaut ; si vous l’activez, réglez la durée de 5 à 30 secondes. Précédent/suivant et un contrôle lecture/pause permanent restent disponibles. L’aperçu d’édition reste statique. Le défilement et les vidéos automatiques s’arrêtent au survol, au focus, pendant le glissement, hors écran ou lorsque l’onglet est masqué. Le mouvement réduit empêche l’automatisme jusqu’à une demande explicite de lecture. Vérifiez le clavier et les deux préférences de mouvement. Le navigateur peut limiter la lecture vidéo automatique. Gardez les informations essentielles et le lien de commande lisibles sans animation. Attendez l’enregistrement et publiez après vérification de chaque diapositive ; si le site client ne prend pas cette disposition en charge, faites confirmer sa version compatible avant publication.",
-            "he": "פריסה זו דורשת גרסאות תואמות של אתר הלקוחות ושל Admin. בחרו מקטע באנר ובפריסה בחרו קמפיין. פתחו שקופיות, הוסיפו עד שש שקופיות וסדרו אותן באמצעות פקדי מעלה ומטה. לכל שקופית בחרו תמונה או סרטון, הוסיפו טקסט חלופי לתמונה וערכו כותרת, כותרת משנה, טקסט וקישור לכפתור ורקע. בחרו הצגת התמונה המלאה כדי להציג כוס או מוצר בשלמותם, או מילוי המסגרת; בדקו את החיתוך בשני גדלי המסך. לוחות מעוגלים יכולים לחשוף חלק מהשקופית הבאה. ההפעלה האוטומטית כבויה כברירת מחדל; אם מפעילים אותה, הגדירו משך של 5 עד 30 שניות. קודם/הבא ופקד הפעלה/השהיה קבוע נשארים זמינים. התצוגה המקדימה לעריכה נשארת סטטית. ההתקדמות והסרטונים האוטומטיים מושהים בריחוף, במיקוד, בגרירה, כשהמקטע מחוץ למסך או כשהכרטיסייה מוסתרת. צמצום תנועה מונע הפעלה אוטומטית עד לבחירת הפעלה מפורשת. בדקו שימוש במקלדת ואת שתי העדפות התנועה. הדפדפן עשוי להגביל הפעלה אוטומטית של סרטון. השאירו מידע חיוני וקישור להזמנה קריאים ללא תנועה. המתינו לשמירת הטיוטה ופרסמו רק לאחר בדיקת כל שקופית; אם אתר הלקוחות אינו תומך בפריסה, אשרו את הגרסה התואמת לפני פרסום."
+            "en": "This layout requires the compatible Website and Admin release. Select a Hero section and choose Campaign under Layout. Open Slides, add up to six slides and use the up/down controls to set their order. For each slide, select a photo or video, add image alternative text and edit the title, subtitle, button text/link and background. Choose Show the whole image to keep a whole cup or product, or Fill the panel; check the resulting crop on both screen sizes. The rounded panels can show a glimpse of the next slide. Autoplay is off by default; if enabled, set the slide duration from 5 to 30 seconds. Previous/next remain available; play/pause stays visible when autoplay is enabled. To adjust panels and hide controls for a manual presentation, see [carousel layout controls](/en/help/website-qr/sections-and-media#campaign-layout-controls). Editor preview stays static. Automatic progression and video pause during hover, focus, dragging, when the section is offscreen or the tab is hidden. Reduced motion prevents automation until an explicit play action. Review keyboard use and both motion preferences. Browser restrictions can prevent automatic video playback. Keep essential information and the order link readable without motion. Wait for draft saving and publish only after checking every slide; if the public view is unsupported, confirm the matching Website release before publishing.",
+            "fr": "Cette disposition nécessite les versions compatibles du site client et de l’Admin. Sélectionnez une section Bannière et choisissez Campagne dans Disposition. Ouvrez Diapositives, ajoutez jusqu’à six diapositives et réordonnez-les avec les flèches haut/bas. Pour chacune, choisissez une photo ou une vidéo, renseignez le texte alternatif de l’image puis titre, sous-titre, texte/lien du bouton et fond. Choisissez Afficher l’image entière pour conserver un gobelet ou produit entier, ou Remplir le panneau ; contrôlez le recadrage sur les deux formats. Les panneaux arrondis peuvent laisser entrevoir la diapositive suivante. La lecture automatique est désactivée par défaut ; si vous l’activez, réglez la durée de 5 à 30 secondes. Précédent/suivant restent disponibles ; la commande lecture/pause reste visible lorsque la lecture automatique est activée. Pour ajuster les panneaux et masquer les commandes d’une présentation manuelle, voir [les réglages du carrousel](/fr/help/website-qr/sections-and-media#campaign-layout-controls). L’aperçu d’édition reste statique. Le défilement et les vidéos automatiques s’arrêtent au survol, au focus, pendant le glissement, hors écran ou lorsque l’onglet est masqué. Le mouvement réduit empêche l’automatisme jusqu’à une demande explicite de lecture. Vérifiez le clavier et les deux préférences de mouvement. Le navigateur peut limiter la lecture vidéo automatique. Gardez les informations essentielles et le lien de commande lisibles sans animation. Attendez l’enregistrement et publiez après vérification de chaque diapositive ; si le site client ne prend pas cette disposition en charge, faites confirmer sa version compatible avant publication.",
+            "he": "פריסה זו דורשת גרסאות תואמות של אתר הלקוחות ושל Admin. בחרו מקטע באנר ובפריסה בחרו קמפיין. פתחו שקופיות, הוסיפו עד שש שקופיות וסדרו אותן באמצעות פקדי מעלה ומטה. לכל שקופית בחרו תמונה או סרטון, הוסיפו טקסט חלופי לתמונה וערכו כותרת, כותרת משנה, טקסט וקישור לכפתור ורקע. בחרו הצגת התמונה המלאה כדי להציג כוס או מוצר בשלמותם, או מילוי המסגרת; בדקו את החיתוך בשני גדלי המסך. לוחות מעוגלים יכולים לחשוף חלק מהשקופית הבאה. ההפעלה האוטומטית כבויה כברירת מחדל; אם מפעילים אותה, הגדירו משך של 5 עד 30 שניות. קודם/הבא נשארים זמינים; פקד הפעלה והשהיה נשאר גלוי כאשר ההפעלה האוטומטית פעילה. להתאמת הלוחות ולהסתרת פקדים בהצגה ידנית ראו [פקדי פריסת הקרוסלה](/he/help/website-qr/sections-and-media#campaign-layout-controls). התצוגה המקדימה לעריכה נשארת סטטית. ההתקדמות והסרטונים האוטומטיים מושהים בריחוף, במיקוד, בגרירה, כשהמקטע מחוץ למסך או כשהכרטיסייה מוסתרת. צמצום תנועה מונע הפעלה אוטומטית עד לבחירת הפעלה מפורשת. בדקו שימוש במקלדת ואת שתי העדפות התנועה. הדפדפן עשוי להגביל הפעלה אוטומטית של סרטון. השאירו מידע חיוני וקישור להזמנה קריאים ללא תנועה. המתינו לשמירת הטיוטה ופרסמו רק לאחר בדיקת כל שקופית; אם אתר הלקוחות אינו תומך בפריסה, אשרו את הגרסה התואמת לפני פרסום."
           }
+        },
+        {
+          "title": {
+            "fr": "Régler les panneaux et les commandes du carrousel",
+            "en": "Adjust carousel panels and controls",
+            "he": "התאמת לוחות הקרוסלה והפקדים"
+          },
+          "instructions": {
+            "fr": "Ces réglages nécessitent les versions compatibles du site client et de l’Admin. Dans la bannière Campagne, ouvrez Disposition du carrousel puis réglez séparément la largeur des panneaux sur ordinateur et sur mobile, de 70 à 100 %, puis leur espacement de 0 à 64 px. La diapositive active reste centrée ; la largeur choisie détermine la place visible des diapositives voisines. Utilisez Alignement des commandes pour choisir gauche, centre ou droite. Utiliser l’espacement adaptatif par défaut rétablit un espacement adapté à chaque format. Vous pouvez masquer le compteur et la commande de lecture pour une présentation manuelle. Si la lecture automatique est activée, la commande lecture/pause reste visible même lorsque son affichage est désactivé. Sans lecture automatique ni commande de lecture, les vidéos restent sur leur image d’aperçu ; les flèches permettent toujours de changer de diapositive. Vérifiez les deux formats, le clavier, le mouvement réduit et chaque média avant publication.",
+            "en": "These controls require compatible Website and Admin versions. In the Campaign hero, open Carousel layout, then set panel width separately for desktop and mobile, from 70 to 100%, then set panel spacing from 0 to 64 px. The active slide stays centered; the selected width determines how much of neighboring slides is visible. Use Navigation controls alignment to choose left, center or right. Use responsive default spacing restores spacing suited to each screen size. You can hide the counter and playback control for a manual presentation. When autoplay is enabled, play/pause remains visible even if its display is switched off. With both autoplay and playback controls off, videos stay on their poster image; the arrows still change slides. Review both screen sizes, keyboard use, reduced motion and every medium before publication.",
+            "he": "פקדים אלה דורשים גרסאות תואמות של אתר הלקוחות ושל Admin. בבאנר קמפיין פתחו פריסת הקרוסלה והגדירו בנפרד את רוחב הלוחות במחשב ובנייד, מ-70 עד 100 אחוז, ואת המרווח ביניהם מ-0 עד 64 פיקסלים. השקופית הפעילה נשארת ממורכזת; הרוחב שנבחר קובע כמה מהשקופיות השכנות נראה. ביישור פקדי הניווט בחרו שמאל, מרכז או ימין. שימוש בריווח המותאם כברירת מחדל מחזיר ריווח המתאים לכל גודל מסך. אפשר להסתיר את המונה ואת פקד ההפעלה להצגה ידנית. כשההפעלה האוטומטית פעילה, פקד הפעלה והשהיה נשאר גלוי גם אם ההגדרה להצגתו כבויה. כשההפעלה האוטומטית ופקד ההפעלה כבויים, הסרטונים נשארים בתמונת התצוגה המקדימה שלהם; החצים עדיין מחליפים שקופיות. בדקו את שני גדלי המסך, המקלדת, צמצום התנועה וכל מדיה לפני פרסום."
+          },
+          "id": "campaign-layout-controls"
         },
         {
           "id": "campaign-featured-grid",
@@ -34450,9 +34511,9 @@
             "he": "הגדרת רשת הפריטים המודגשים"
           },
           "instructions": {
-            "en": "On a compatible release, select the featured-items section, open Layout and color, and choose Campaign under Card presentation. Set the desktop columns and Mobile columns separately; Pink Coffee starts with four columns on desktop and two on mobile. Set the image background and optional alternating image background, then review the rounded image cards, names, descriptions, prices and order buttons. Choose actual catalogue items; the presentation does not create menu visibility or bypass availability, required sizes and modifiers. Check that selecting an item opens the correct item and retains its choices. If an item is absent, review its active status, menu-group membership and channel before changing the design.",
-            "fr": "Sur une version compatible, sélectionnez la section d’articles mis en avant, ouvrez Disposition et couleurs puis choisissez Campagne dans Présentation des cartes. Réglez séparément les colonnes ordinateur et Colonnes sur mobile ; Pink Coffee commence avec quatre colonnes sur ordinateur et deux sur mobile. Choisissez le fond d’image et, si utile, son fond alterné, puis vérifiez images arrondies, noms, descriptions, prix et boutons de commande. Sélectionnez de vrais articles du catalogue ; cette présentation ne publie pas les articles dans une carte et ne contourne ni disponibilité, ni tailles ou modificateurs obligatoires. Vérifiez que la sélection ouvre le bon article et conserve ses choix. Pour un article absent, contrôlez statut actif, groupe de carte et canal avant de modifier le design.",
-            "he": "בגרסה תואמת בחרו את מקטע הפריטים המודגשים, פתחו פריסה וצבע ובחרו קמפיין בתצוגת כרטיסים. הגדירו בנפרד עמודות למחשב ועמודות בנייד; Pink Coffee מתחילה בארבע עמודות במחשב ובשתיים בנייד. בחרו רקע לתמונה ורקע מתחלף לפי הצורך, ובדקו תמונות מעוגלות, שמות, תיאורים, מחירים וכפתורי הזמנה. בחרו פריטי קטלוג אמיתיים; ההצגה אינה מפרסמת פריטים בתפריט ואינה עוקפת זמינות, גדלים או תוספות חובה. בדקו שבחירת פריט פותחת את הפריט הנכון ושומרת על בחירותיו. אם פריט חסר, בדקו שהוא פעיל, משויך לקבוצת תפריט ולערוץ המתאים לפני שינוי העיצוב."
+            "en": "On a compatible release, select the featured-items section, open Layout and color, and choose Campaign under Card presentation. Set the desktop columns and Mobile columns separately; Pink Coffee starts with four columns on desktop and two on mobile. Set the image background and optional alternating image background, then review the rounded image cards, names, descriptions, prices and order buttons. Choose actual catalogue items; the presentation does not create menu visibility or bypass availability, required sizes and modifiers. Check that selecting an item opens the correct item and retains its choices. If an item is absent, review its active status, menu-group membership and channel before changing the design. In manual selection, Select all visible products adds the current filtered results; review the selection and order, then confirm. Clear selection empties that list in the picker. The grid places items across multiple rows. Grid content width sets its maximum width from 640 to 1,800 px; Space between rows sets vertical spacing from 0 to 100 px. Under Individual product backgrounds, choose Product and its Image background: it overrides the shared or alternating background for that product only. Use shared or alternating background restores that background for the selected product only. Each image’s framing and zoom remain editable. Names, descriptions, prices and buttons stay independently configurable. These settings do not change catalogue items, prices or options.",
+            "fr": "Sur une version compatible, sélectionnez la section d’articles mis en avant, ouvrez Disposition et couleurs puis choisissez Campagne dans Présentation des cartes. Réglez séparément les colonnes ordinateur et Colonnes sur mobile ; Pink Coffee commence avec quatre colonnes sur ordinateur et deux sur mobile. Choisissez le fond d’image et, si utile, son fond alterné, puis vérifiez images arrondies, noms, descriptions, prix et boutons de commande. Sélectionnez de vrais articles du catalogue ; cette présentation ne publie pas les articles dans une carte et ne contourne ni disponibilité, ni tailles ou modificateurs obligatoires. Vérifiez que la sélection ouvre le bon article et conserve ses choix. Pour un article absent, contrôlez statut actif, groupe de carte et canal avant de modifier le design. Dans la sélection manuelle, Sélectionner tous les produits affichés ajoute les résultats du filtre courant ; contrôlez la sélection et son ordre puis validez. Effacer la sélection vide cette liste dans le sélecteur. La grille répartit les articles sur plusieurs lignes. Largeur de la mosaïque règle sa largeur maximale de 640 à 1 800 px ; Espace entre les lignes règle le rythme vertical de 0 à 100 px. Dans Fonds individuels des produits, choisissez Produit puis son Fond d’image : ce choix remplace le fond commun ou alterné pour ce produit uniquement. Utiliser le fond commun ou alterné rétablit ce fond pour le seul produit sélectionné. Le cadrage et le zoom de chaque image restent modifiables. Noms, descriptions, prix et boutons restent réglables séparément. Ces réglages ne changent pas les articles, prix ou options du catalogue.",
+            "he": "בגרסה תואמת בחרו את מקטע הפריטים המודגשים, פתחו פריסה וצבע ובחרו קמפיין בתצוגת כרטיסים. הגדירו בנפרד עמודות למחשב ועמודות בנייד; Pink Coffee מתחילה בארבע עמודות במחשב ובשתיים בנייד. בחרו רקע לתמונה ורקע מתחלף לפי הצורך, ובדקו תמונות מעוגלות, שמות, תיאורים, מחירים וכפתורי הזמנה. בחרו פריטי קטלוג אמיתיים; ההצגה אינה מפרסמת פריטים בתפריט ואינה עוקפת זמינות, גדלים או תוספות חובה. בדקו שבחירת פריט פותחת את הפריט הנכון ושומרת על בחירותיו. אם פריט חסר, בדקו שהוא פעיל, משויך לקבוצת תפריט ולערוץ המתאים לפני שינוי העיצוב. בבחירה ידנית, בחירת כל המוצרים המוצגים מוסיפה את תוצאות הסינון הנוכחי; בדקו את הבחירה ואת הסדר ואשרו. ניקוי הבחירה מרוקן את הרשימה בחלון הבחירה. הרשת מציגה את הפריטים בכמה שורות. רוחב תוכן הרשת קובע רוחב מרבי מ-640 עד 1,800 פיקסלים; רווח בין שורות קובע ריווח אנכי מ-0 עד 100 פיקסלים. ברקע נפרד לכל מוצר בחרו מוצר ואת רקע התמונה שלו: הוא מחליף את הרקע המשותף או המתחלף רק עבור אותו מוצר. האפשרות שימוש ברקע המשותף או המתחלף מחזירה את הרקע הזה רק למוצר שנבחר. המסגור והזום של כל תמונה נשארים ניתנים לעריכה. שמות, תיאורים, מחירים וכפתורים נשארים ניתנים להגדרה בנפרד. ההגדרות אינן משנות פריטי קטלוג, מחירים או אפשרויות."
           }
         },
         {
@@ -34519,6 +34580,10 @@
         },
         {
           "service": "foodyadmin",
+          "file": "src/components/website-v3/BoundedNumberInput.tsx"
+        },
+        {
+          "service": "foodyadmin",
           "file": "src/components/website-v3/CampaignRuntimeContext.tsx"
         },
         {
@@ -34548,6 +34613,10 @@
         {
           "service": "foodyadmin",
           "file": "src/components/website-v3/FeaturedItemsEditor.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/components/website-v3/ItemImageBackgroundEditor.tsx"
         },
         {
           "service": "foodyadmin",
@@ -34604,6 +34673,10 @@
         {
           "service": "foodyadmin",
           "file": "src/lib/website-v3/editor-elements.ts"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/lib/website-v3/featured-items.ts"
         },
         {
           "service": "foodyadmin",
@@ -34872,6 +34945,10 @@
         {
           "service": "foodyweb",
           "file": "lib/themes/useViewMode.ts"
+        },
+        {
+          "service": "foodyweb",
+          "file": "lib/websiteFeaturedItems.ts"
         }
       ]
     },
@@ -81918,11 +81995,17 @@
         "campaignAddSlide",
         "campaignAutoplay",
         "campaignContain",
+        "campaignControlsAlignment",
         "campaignCover",
         "campaignDeleteSlide",
         "campaignDuration",
         "campaignImageFit",
+        "campaignLayoutControls",
+        "campaignPlaybackSafeguard",
+        "campaignResetGap",
         "campaignRuntimeUnavailable",
+        "campaignShowCounter",
+        "campaignShowPlayback",
         "campaignSlide",
         "campaignSlideBackground",
         "campaignSlides",
@@ -82244,8 +82327,10 @@
         "featuredAllItems",
         "featuredAutomaticSelection",
         "featuredAvailable",
+        "featuredClearSelection",
         "featuredColumns",
         "featuredContain",
+        "featuredContentMaxWidth",
         "featuredCover",
         "featuredCustomSelection",
         "featuredDirection",
@@ -82266,8 +82351,10 @@
         "featuredPrices",
         "featuredRemove",
         "featuredRetry",
+        "featuredRowSpacing",
         "featuredSave",
         "featuredSearch",
+        "featuredSelectAllVisible",
         "featuredSelectionHelp",
         "featuredSpacing",
         "featuredSpeed",
@@ -82340,7 +82427,13 @@
       ],
       "kind": "ui-controls",
       "labels": [
-        "editorOrderJourney"
+        "campaignRuntimeUnavailable",
+        "editorOrderJourney",
+        "headerHamburgerSize",
+        "headerHamburgerStaggered",
+        "headerHamburgerStandard",
+        "headerHamburgerStroke",
+        "headerHamburgerStyle"
       ],
       "actions": [
         "saveHeader"
@@ -82360,6 +82453,26 @@
       "actions": [
         "remove",
         "save"
+      ],
+      "line": 1
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/ItemImageBackgroundEditor.tsx:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/ItemImageBackgroundEditor.tsx",
+      "features": [
+        "website-qr-customize-your-site",
+        "website-sections"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "campaignImageBackground",
+        "featuredBackgroundProduct",
+        "featuredItemBackgrounds",
+        "featuredResetItemBackground"
+      ],
+      "actions": [
+        "savedColor"
       ],
       "line": 1
     },
@@ -82818,6 +82931,8 @@
         "editorTemplateHome",
         "editorTemplateMenu",
         "editorThemeCatering",
+        "editorThemeCoffeeSubtitle",
+        "editorThemeCoffeeTitle",
         "editorThemeDrinks",
         "editorThemeEmail",
         "editorThemeFresh",
@@ -83045,215 +83160,6 @@
       "line": 1
     },
     {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:668",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "page.appearance_overrides.website_order.modal_cover_url",
-      "line": 668
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:669",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "site.tagline",
-      "line": 669
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:670",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "site.navbar_style",
-      "line": 670
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:671",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "site.navbar_color",
-      "line": 671
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:672",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "site.navbar_overlay_text_color",
-      "line": 672
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:678",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "site.navbar_text_color",
-      "line": 678
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:679",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "site.logo_size",
-      "line": 679
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:680",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "site.hide_navbar_name",
-      "line": 680
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:681",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "site.navbar_logo_position",
-      "line": 681
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:682",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "site.navbar_scrolled_logo_url",
-      "line": 682
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:683",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "site.hero_logo_size",
-      "line": 683
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:684",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "site.hide_hero_logo",
-      "line": 684
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:685",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "site.navbar_show_links",
-      "line": 685
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:686",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "site.navbar_hamburger",
-      "line": 686
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:687",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "site.compact-navigation.icon",
-      "line": 687
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:688",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "site.compact-navigation.button-background",
-      "line": 688
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:689",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "site.navbar_cta.enabled",
-      "line": 689
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:690",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "site.navbar_cta.text",
-      "line": 690
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:691",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "site.navbar_cta.link",
-      "line": 691
-    },
-    {
       "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:692",
       "service": "foodyadmin",
       "source": "src/components/website-v3/field-contracts.ts",
@@ -83261,7 +83167,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "site.navbar_cta.shape",
+      "field": "site.header.navigation.hamburger_style",
       "line": 692
     },
     {
@@ -83272,7 +83178,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "site.navbar_cta.size",
+      "field": "site.header.navigation.hamburger_size",
       "line": 693
     },
     {
@@ -83283,7 +83189,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "site.navbar_cta.transparent.variant",
+      "field": "site.header.navigation.hamburger_stroke",
       "line": 694
     },
     {
@@ -83294,19 +83200,8 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "site.navbar_cta.transparent.bg",
+      "field": "site.header.icons.cart",
       "line": 695
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:696",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "site.navbar_cta.transparent.text_color",
-      "line": 696
     },
     {
       "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:697",
@@ -83316,7 +83211,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "site.navbar_cta.transparent.border_color",
+      "field": "page.appearance_overrides.website_order.modal_cover_url",
       "line": 697
     },
     {
@@ -83327,7 +83222,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "site.navbar_cta.solid.variant",
+      "field": "site.tagline",
       "line": 698
     },
     {
@@ -83338,7 +83233,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "site.navbar_cta.solid.bg",
+      "field": "site.navbar_style",
       "line": 699
     },
     {
@@ -83349,7 +83244,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "site.navbar_cta.solid.text_color",
+      "field": "site.navbar_color",
       "line": 700
     },
     {
@@ -83360,63 +83255,8 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "site.navbar_cta.solid.border_color",
+      "field": "site.navbar_overlay_text_color",
       "line": 701
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:702",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "site.favicon_url",
-      "line": 702
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:703",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "site.show_orders_link",
-      "line": 703
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:704",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "site.footer_branding.enabled",
-      "line": 704
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:705",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "site.footer_branding.background",
-      "line": 705
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:706",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "site.footer.is_visible",
-      "line": 706
     },
     {
       "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:707",
@@ -83426,7 +83266,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "site.footer.content.custom_text",
+      "field": "site.navbar_text_color",
       "line": 707
     },
     {
@@ -83437,7 +83277,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "site.footer.content.show_logo",
+      "field": "site.logo_size",
       "line": 708
     },
     {
@@ -83448,7 +83288,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "site.footer.content.show_description",
+      "field": "site.hide_navbar_name",
       "line": 709
     },
     {
@@ -83459,7 +83299,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "site.footer.content.show_address",
+      "field": "site.navbar_logo_position",
       "line": 710
     },
     {
@@ -83470,7 +83310,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "site.footer.content.show_phone",
+      "field": "site.navbar_scrolled_logo_url",
       "line": 711
     },
     {
@@ -83481,7 +83321,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "site.footer.content.show_hours",
+      "field": "site.hero_logo_size",
       "line": 712
     },
     {
@@ -83492,7 +83332,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "site.footer.content.social_links.instagram",
+      "field": "site.hide_hero_logo",
       "line": 713
     },
     {
@@ -83503,7 +83343,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "site.footer.content.social_links.facebook",
+      "field": "site.navbar_show_links",
       "line": 714
     },
     {
@@ -83514,7 +83354,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "site.footer.content.social_links.tiktok",
+      "field": "site.navbar_hamburger",
       "line": 715
     },
     {
@@ -83525,7 +83365,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "site.footer.content.social_links.whatsapp",
+      "field": "site.compact-navigation.icon",
       "line": 716
     },
     {
@@ -83536,7 +83376,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "site.footer.layout",
+      "field": "site.compact-navigation.button-background",
       "line": 717
     },
     {
@@ -83547,7 +83387,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "site.footer.settings.color_style",
+      "field": "site.navbar_cta.enabled",
       "line": 718
     },
     {
@@ -83558,7 +83398,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "site.footer.settings.custom_bg",
+      "field": "site.navbar_cta.text",
       "line": 719
     },
     {
@@ -83569,7 +83409,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "site.footer.settings.custom_text",
+      "field": "site.navbar_cta.link",
       "line": 720
     },
     {
@@ -83580,7 +83420,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "site.footer.settings.custom_muted",
+      "field": "site.navbar_cta.shape",
       "line": 721
     },
     {
@@ -83591,7 +83431,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "site.footer.settings.custom_accent",
+      "field": "site.navbar_cta.size",
       "line": 722
     },
     {
@@ -83602,7 +83442,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "site.footer.settings.custom_divider",
+      "field": "site.navbar_cta.transparent.variant",
       "line": 723
     },
     {
@@ -83613,7 +83453,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.title",
+      "field": "site.navbar_cta.transparent.bg",
       "line": 724
     },
     {
@@ -83624,7 +83464,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.slug",
+      "field": "site.navbar_cta.transparent.text_color",
       "line": 725
     },
     {
@@ -83635,7 +83475,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.type",
+      "field": "site.navbar_cta.transparent.border_color",
       "line": 726
     },
     {
@@ -83646,7 +83486,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.sort_order",
+      "field": "site.navbar_cta.solid.variant",
       "line": 727
     },
     {
@@ -83657,7 +83497,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.nav_visible",
+      "field": "site.navbar_cta.solid.bg",
       "line": 728
     },
     {
@@ -83668,7 +83508,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.is_homepage",
+      "field": "site.navbar_cta.solid.text_color",
       "line": 729
     },
     {
@@ -83679,8 +83519,74 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.is_default",
+      "field": "site.navbar_cta.solid.border_color",
       "line": 730
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:731",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "site.favicon_url",
+      "line": 731
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:732",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "site.show_orders_link",
+      "line": 732
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:733",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "site.footer_branding.enabled",
+      "line": 733
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:734",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "site.footer_branding.background",
+      "line": 734
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:735",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "site.footer.is_visible",
+      "line": 735
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:736",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "site.footer.content.custom_text",
+      "line": 736
     },
     {
       "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:737",
@@ -83690,8 +83596,63 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.appearance_overrides.hide_navbar_name",
+      "field": "site.footer.content.show_logo",
       "line": 737
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:738",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "site.footer.content.show_description",
+      "line": 738
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:739",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "site.footer.content.show_address",
+      "line": 739
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:740",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "site.footer.content.show_phone",
+      "line": 740
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:741",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "site.footer.content.show_hours",
+      "line": 741
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:742",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "site.footer.content.social_links.instagram",
+      "line": 742
     },
     {
       "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:743",
@@ -83701,8 +83662,63 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.appearance_overrides.navbar_logo_position",
+      "field": "site.footer.content.social_links.facebook",
       "line": 743
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:744",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "site.footer.content.social_links.tiktok",
+      "line": 744
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:745",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "site.footer.content.social_links.whatsapp",
+      "line": 745
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:746",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "site.footer.layout",
+      "line": 746
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:747",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "site.footer.settings.color_style",
+      "line": 747
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:748",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "site.footer.settings.custom_bg",
+      "line": 748
     },
     {
       "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:749",
@@ -83712,8 +83728,52 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.seo.title",
+      "field": "site.footer.settings.custom_text",
       "line": 749
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:750",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "site.footer.settings.custom_muted",
+      "line": 750
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:751",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "site.footer.settings.custom_accent",
+      "line": 751
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:752",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "site.footer.settings.custom_divider",
+      "line": 752
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:753",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "page.title",
+      "line": 753
     },
     {
       "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:754",
@@ -83723,19 +83783,74 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.seo.description",
+      "field": "page.slug",
       "line": 754
     },
     {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:763",
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:755",
       "service": "foodyadmin",
       "source": "src/components/website-v3/field-contracts.ts",
       "features": [
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.seo.share_image_url",
-      "line": 763
+      "field": "page.type",
+      "line": 755
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:756",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "page.sort_order",
+      "line": 756
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:757",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "page.nav_visible",
+      "line": 757
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:758",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "page.is_homepage",
+      "line": 758
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:759",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "page.is_default",
+      "line": 759
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:766",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "page.appearance_overrides.hide_navbar_name",
+      "line": 766
     },
     {
       "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:772",
@@ -83745,7 +83860,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.appearance_overrides.bg",
+      "field": "page.appearance_overrides.navbar_logo_position",
       "line": 772
     },
     {
@@ -83756,11 +83871,55 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.appearance_overrides.ink",
+      "field": "page.seo.title",
       "line": 778
     },
     {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:784",
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:783",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "page.seo.description",
+      "line": 783
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:792",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "page.seo.share_image_url",
+      "line": 792
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:801",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "page.appearance_overrides.bg",
+      "line": 801
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:807",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "page.appearance_overrides.ink",
+      "line": 807
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:813",
       "service": "foodyadmin",
       "source": "src/components/website-v3/field-contracts.ts",
       "features": [
@@ -83768,10 +83927,10 @@
       ],
       "kind": "configuration-field",
       "field": "page.appearance_overrides.accent",
-      "line": 784
+      "line": 813
     },
     {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:790",
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:819",
       "service": "foodyadmin",
       "source": "src/components/website-v3/field-contracts.ts",
       "features": [
@@ -83779,10 +83938,10 @@
       ],
       "kind": "configuration-field",
       "field": "page.appearance_overrides.headingFont",
-      "line": 790
+      "line": 819
     },
     {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:796",
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:825",
       "service": "foodyadmin",
       "source": "src/components/website-v3/field-contracts.ts",
       "features": [
@@ -83790,10 +83949,10 @@
       ],
       "kind": "configuration-field",
       "field": "page.appearance_overrides.bodyFont",
-      "line": 796
+      "line": 825
     },
     {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:821",
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:850",
       "service": "foodyadmin",
       "source": "src/components/website-v3/field-contracts.ts",
       "features": [
@@ -83801,10 +83960,10 @@
       ],
       "kind": "configuration-field",
       "field": "page.appearance_overrides.chain_order_entry.logo_url",
-      "line": 821
+      "line": 850
     },
     {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:828",
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:857",
       "service": "foodyadmin",
       "source": "src/components/website-v3/field-contracts.ts",
       "features": [
@@ -83812,10 +83971,10 @@
       ],
       "kind": "configuration-field",
       "field": "page.appearance_overrides.chain_order_entry.layout",
-      "line": 828
+      "line": 857
     },
     {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:835",
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:864",
       "service": "foodyadmin",
       "source": "src/components/website-v3/field-contracts.ts",
       "features": [
@@ -83823,10 +83982,10 @@
       ],
       "kind": "configuration-field",
       "field": "page.appearance_overrides.chain_order_entry.surface_color",
-      "line": 835
+      "line": 864
     },
     {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:842",
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:871",
       "service": "foodyadmin",
       "source": "src/components/website-v3/field-contracts.ts",
       "features": [
@@ -83834,106 +83993,7 @@
       ],
       "kind": "configuration-field",
       "field": "page.appearance_overrides.chain_order_entry.overlay_opacity",
-      "line": 842
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:868",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "page.appearance_overrides.navbar_style",
-      "line": 868
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:874",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "page.appearance_overrides.navbar_color",
-      "line": 874
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:880",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "page.appearance_overrides.navbar_text_color",
-      "line": 880
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:886",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "page.appearance_overrides.navbar_overlay_text_color",
-      "line": 886
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:892",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "page.appearance_overrides.navbar_cta",
-      "line": 892
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:893",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "page.appearance_overrides.navbar_cta.transparent.variant",
-      "line": 893
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:894",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "page.appearance_overrides.navbar_cta.transparent.bg",
-      "line": 894
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:895",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "page.appearance_overrides.navbar_cta.transparent.text_color",
-      "line": 895
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:896",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "page.appearance_overrides.navbar_cta.transparent.border_color",
-      "line": 896
+      "line": 871
     },
     {
       "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:897",
@@ -83943,63 +84003,8 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.appearance_overrides.navbar_cta.solid.variant",
+      "field": "page.appearance_overrides.navbar_style",
       "line": 897
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:898",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "page.appearance_overrides.navbar_cta.solid.bg",
-      "line": 898
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:899",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "page.appearance_overrides.navbar_cta.solid.text_color",
-      "line": 899
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:900",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "page.appearance_overrides.navbar_cta.solid.border_color",
-      "line": 900
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:901",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "page.appearance_overrides.order_type_selector.shape",
-      "line": 901
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:902",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "page.appearance_overrides.order_type_selector.variant",
-      "line": 902
     },
     {
       "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:903",
@@ -84009,63 +84014,8 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.appearance_overrides.order_type_selector.size",
+      "field": "page.appearance_overrides.navbar_color",
       "line": 903
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:904",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "page.appearance_overrides.order_type_selector.bg",
-      "line": 904
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:905",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "page.appearance_overrides.order_type_selector.text_color",
-      "line": 905
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:906",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "page.appearance_overrides.order_type_selector.border_color",
-      "line": 906
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:907",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "page.appearance_overrides.section_colors.categoryBar.bg",
-      "line": 907
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:908",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "page.appearance_overrides.section_colors.categoryBar.text",
-      "line": 908
     },
     {
       "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:909",
@@ -84075,63 +84025,8 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.appearance_overrides.section_colors.categoryBar.accent",
+      "field": "page.appearance_overrides.navbar_text_color",
       "line": 909
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:910",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "page.appearance_overrides.section_colors.categoryBar.divider",
-      "line": 910
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:911",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "page.appearance_overrides.section_colors.categoryBar.activeBg",
-      "line": 911
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:912",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "page.appearance_overrides.section_colors.categoryBar.activeText",
-      "line": 912
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:913",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "page.appearance_overrides.section_colors.categoryBar.searchBg",
-      "line": 913
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:914",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "page.appearance_overrides.section_colors.categoryBar.searchText",
-      "line": 914
     },
     {
       "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:915",
@@ -84141,52 +84036,63 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.appearance_overrides.section_colors.categoryBar.iconBg",
+      "field": "page.appearance_overrides.navbar_overlay_text_color",
       "line": 915
     },
     {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:916",
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:921",
       "service": "foodyadmin",
       "source": "src/components/website-v3/field-contracts.ts",
       "features": [
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.appearance_overrides.section_colors.categoryBar.icon",
-      "line": 916
+      "field": "page.appearance_overrides.navbar_cta",
+      "line": 921
     },
     {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:917",
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:922",
       "service": "foodyadmin",
       "source": "src/components/website-v3/field-contracts.ts",
       "features": [
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.appearance_overrides.section_colors.categoryBar.cartBg",
-      "line": 917
+      "field": "page.appearance_overrides.navbar_cta.transparent.variant",
+      "line": 922
     },
     {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:918",
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:923",
       "service": "foodyadmin",
       "source": "src/components/website-v3/field-contracts.ts",
       "features": [
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.appearance_overrides.section_colors.categoryBar.cartText",
-      "line": 918
+      "field": "page.appearance_overrides.navbar_cta.transparent.bg",
+      "line": 923
     },
     {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:919",
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:924",
       "service": "foodyadmin",
       "source": "src/components/website-v3/field-contracts.ts",
       "features": [
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.settings.menu_ids",
-      "line": 919
+      "field": "page.appearance_overrides.navbar_cta.transparent.text_color",
+      "line": 924
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:925",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "page.appearance_overrides.navbar_cta.transparent.border_color",
+      "line": 925
     },
     {
       "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:926",
@@ -84196,8 +84102,74 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.settings.service_ids",
+      "field": "page.appearance_overrides.navbar_cta.solid.variant",
       "line": 926
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:927",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "page.appearance_overrides.navbar_cta.solid.bg",
+      "line": 927
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:928",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "page.appearance_overrides.navbar_cta.solid.text_color",
+      "line": 928
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:929",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "page.appearance_overrides.navbar_cta.solid.border_color",
+      "line": 929
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:930",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "page.appearance_overrides.order_type_selector.shape",
+      "line": 930
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:931",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "page.appearance_overrides.order_type_selector.variant",
+      "line": 931
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:932",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "page.appearance_overrides.order_type_selector.size",
+      "line": 932
     },
     {
       "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:933",
@@ -84207,7 +84179,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.create",
+      "field": "page.appearance_overrides.order_type_selector.bg",
       "line": 933
     },
     {
@@ -84218,7 +84190,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.create.title",
+      "field": "page.appearance_overrides.order_type_selector.text_color",
       "line": 934
     },
     {
@@ -84229,7 +84201,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.create.type",
+      "field": "page.appearance_overrides.order_type_selector.border_color",
       "line": 935
     },
     {
@@ -84240,7 +84212,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.create.slug",
+      "field": "page.appearance_overrides.section_colors.categoryBar.bg",
       "line": 936
     },
     {
@@ -84251,7 +84223,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.create.menu_ids",
+      "field": "page.appearance_overrides.section_colors.categoryBar.text",
       "line": 937
     },
     {
@@ -84262,7 +84234,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.create.service_ids",
+      "field": "page.appearance_overrides.section_colors.categoryBar.accent",
       "line": 938
     },
     {
@@ -84273,7 +84245,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.create.is_default",
+      "field": "page.appearance_overrides.section_colors.categoryBar.divider",
       "line": 939
     },
     {
@@ -84284,7 +84256,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.duplicate",
+      "field": "page.appearance_overrides.section_colors.categoryBar.activeBg",
       "line": 940
     },
     {
@@ -84295,8 +84267,30 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "page.delete",
+      "field": "page.appearance_overrides.section_colors.categoryBar.activeText",
       "line": 941
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:942",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "page.appearance_overrides.section_colors.categoryBar.searchBg",
+      "line": 942
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:943",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "page.appearance_overrides.section_colors.categoryBar.searchText",
+      "line": 943
     },
     {
       "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:944",
@@ -84306,7 +84300,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.sort_order",
+      "field": "page.appearance_overrides.section_colors.categoryBar.iconBg",
       "line": 944
     },
     {
@@ -84317,7 +84311,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.layout",
+      "field": "page.appearance_overrides.section_colors.categoryBar.icon",
       "line": 945
     },
     {
@@ -84328,7 +84322,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.page_id",
+      "field": "page.appearance_overrides.section_colors.categoryBar.cartBg",
       "line": 946
     },
     {
@@ -84339,7 +84333,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.content.headline",
+      "field": "page.appearance_overrides.section_colors.categoryBar.cartText",
       "line": 947
     },
     {
@@ -84350,74 +84344,8 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.content.subheadline",
+      "field": "page.settings.menu_ids",
       "line": 948
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:949",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "section.settings.headline_size",
-      "line": 949
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:950",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "section.settings.autoplay",
-      "line": 950
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:951",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "section.settings.slide_duration_seconds",
-      "line": 951
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:952",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "section.settings.image_fit",
-      "line": 952
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:953",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "section.settings.title_size",
-      "line": 953
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:954",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "section.settings.card_presentation",
-      "line": 954
     },
     {
       "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:955",
@@ -84427,74 +84355,8 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.mobile_columns",
+      "field": "page.settings.service_ids",
       "line": 955
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:956",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "section.settings.alternate_image_bg_color",
-      "line": 956
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:957",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "section.content.title",
-      "line": 957
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:958",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "section.content.heading_eyebrow",
-      "line": 958
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:959",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "section.content.heading",
-      "line": 959
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:960",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "section.content.show_heading",
-      "line": 960
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:961",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "section.content.body",
-      "line": 961
     },
     {
       "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:962",
@@ -84504,7 +84366,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.content.text",
+      "field": "page.create",
       "line": 962
     },
     {
@@ -84515,7 +84377,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.content.phrases",
+      "field": "page.create.title",
       "line": 963
     },
     {
@@ -84526,7 +84388,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.show_text",
+      "field": "page.create.type",
       "line": 964
     },
     {
@@ -84537,7 +84399,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.rotating_color",
+      "field": "page.create.slug",
       "line": 965
     },
     {
@@ -84548,7 +84410,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.speed",
+      "field": "page.create.menu_ids",
       "line": 966
     },
     {
@@ -84559,7 +84421,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.content.cta_text",
+      "field": "page.create.service_ids",
       "line": 967
     },
     {
@@ -84570,7 +84432,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.content.cta_link",
+      "field": "page.create.is_default",
       "line": 968
     },
     {
@@ -84581,7 +84443,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.content.image_url",
+      "field": "page.duplicate",
       "line": 969
     },
     {
@@ -84592,30 +84454,8 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.content.video_url",
+      "field": "page.delete",
       "line": 970
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:971",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "section.settings.video_controls",
-      "line": 971
-    },
-    {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:972",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "section.settings.video_height",
-      "line": 972
     },
     {
       "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:973",
@@ -84625,7 +84465,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.video_autoplay",
+      "field": "section.sort_order",
       "line": 973
     },
     {
@@ -84636,7 +84476,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.video_loop",
+      "field": "section.layout",
       "line": 974
     },
     {
@@ -84647,7 +84487,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.video_muted",
+      "field": "section.page_id",
       "line": 975
     },
     {
@@ -84658,7 +84498,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.padding",
+      "field": "section.content.headline",
       "line": 976
     },
     {
@@ -84669,7 +84509,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.height",
+      "field": "section.content.subheadline",
       "line": 977
     },
     {
@@ -84680,7 +84520,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.width",
+      "field": "section.settings.headline_size",
       "line": 978
     },
     {
@@ -84691,7 +84531,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.content.custom_text",
+      "field": "section.settings.controls_alignment",
       "line": 979
     },
     {
@@ -84702,7 +84542,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.content.show_address",
+      "field": "section.settings.show_counter",
       "line": 980
     },
     {
@@ -84713,7 +84553,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.content.show_phone",
+      "field": "section.settings.show_playback_control",
       "line": 981
     },
     {
@@ -84724,7 +84564,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.content.show_hours",
+      "field": "section.settings.card_width_percent",
       "line": 982
     },
     {
@@ -84735,7 +84575,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.content.social_links",
+      "field": "section.settings.card_width_percent_mobile",
       "line": 983
     },
     {
@@ -84746,7 +84586,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.color_style",
+      "field": "section.settings.card_gap",
       "line": 984
     },
     {
@@ -84757,7 +84597,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.custom_bg",
+      "field": "section.settings.autoplay",
       "line": 985
     },
     {
@@ -84768,7 +84608,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.custom_text",
+      "field": "section.settings.slide_duration_seconds",
       "line": 986
     },
     {
@@ -84779,7 +84619,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.card_bg",
+      "field": "section.settings.image_fit",
       "line": 987
     },
     {
@@ -84790,7 +84630,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.card_text",
+      "field": "section.settings.title_size",
       "line": 988
     },
     {
@@ -84801,7 +84641,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.card_muted",
+      "field": "section.settings.card_presentation",
       "line": 989
     },
     {
@@ -84812,7 +84652,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.price_color",
+      "field": "section.settings.mobile_columns",
       "line": 990
     },
     {
@@ -84823,7 +84663,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.accent_color",
+      "field": "section.settings.alternate_image_bg_color",
       "line": 991
     },
     {
@@ -84834,7 +84674,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.button_bg_color",
+      "field": "section.settings.content_max_width",
       "line": 992
     },
     {
@@ -84845,7 +84685,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.button_text_color",
+      "field": "section.settings.row_spacing",
       "line": 993
     },
     {
@@ -84856,7 +84696,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.button_border_color",
+      "field": "section.settings.item_image_backgrounds",
       "line": 994
     },
     {
@@ -84867,7 +84707,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.button_shape",
+      "field": "section.featured.select_all",
       "line": 995
     },
     {
@@ -84878,7 +84718,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.image_position",
+      "field": "section.featured.clear_selection",
       "line": 996
     },
     {
@@ -84889,7 +84729,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.card_height",
+      "field": "section.featured.reset_item_background",
       "line": 997
     },
     {
@@ -84900,7 +84740,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.card_radius",
+      "field": "section.content.title",
       "line": 998
     },
     {
@@ -84911,7 +84751,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.heading_eyebrow_color",
+      "field": "section.content.heading_eyebrow",
       "line": 999
     },
     {
@@ -84922,7 +84762,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.heading_color",
+      "field": "section.content.heading",
       "line": 1000
     },
     {
@@ -84933,7 +84773,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.panel_style",
+      "field": "section.content.show_heading",
       "line": 1001
     },
     {
@@ -84944,7 +84784,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.panel_bg_color",
+      "field": "section.content.body",
       "line": 1002
     },
     {
@@ -84955,7 +84795,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.panel_bg_color_end",
+      "field": "section.content.text",
       "line": 1003
     },
     {
@@ -84966,7 +84806,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.panel_text_color",
+      "field": "section.content.phrases",
       "line": 1004
     },
     {
@@ -84977,7 +84817,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.panel_muted_color",
+      "field": "section.settings.show_text",
       "line": 1005
     },
     {
@@ -84988,7 +84828,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.mobile_text_color",
+      "field": "section.settings.rotating_color",
       "line": 1006
     },
     {
@@ -84999,7 +84839,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.mobile_overlay_opacity",
+      "field": "section.settings.speed",
       "line": 1007
     },
     {
@@ -85010,7 +84850,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.section_bg_color",
+      "field": "section.content.cta_text",
       "line": 1008
     },
     {
@@ -85021,7 +84861,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.show_dividers",
+      "field": "section.content.cta_link",
       "line": 1009
     },
     {
@@ -85032,7 +84872,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.divider_color",
+      "field": "section.content.image_url",
       "line": 1010
     },
     {
@@ -85043,7 +84883,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.placement_mode",
+      "field": "section.content.video_url",
       "line": 1011
     },
     {
@@ -85054,7 +84894,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.placement_group_id",
+      "field": "section.settings.video_controls",
       "line": 1012
     },
     {
@@ -85065,7 +84905,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.placement_edge",
+      "field": "section.settings.video_height",
       "line": 1013
     },
     {
@@ -85076,7 +84916,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.insert_after_items",
+      "field": "section.settings.video_autoplay",
       "line": 1014
     },
     {
@@ -85087,7 +84927,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.bg_image",
+      "field": "section.settings.video_loop",
       "line": 1015
     },
     {
@@ -85098,7 +84938,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.bg_overlay",
+      "field": "section.settings.video_muted",
       "line": 1016
     },
     {
@@ -85109,7 +84949,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.image_only",
+      "field": "section.settings.padding",
       "line": 1017
     },
     {
@@ -85120,7 +84960,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.text_bg_color",
+      "field": "section.settings.height",
       "line": 1018
     },
     {
@@ -85131,7 +84971,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.image_bg_color",
+      "field": "section.settings.width",
       "line": 1019
     },
     {
@@ -85142,7 +84982,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.word_animation",
+      "field": "section.content.custom_text",
       "line": 1020
     },
     {
@@ -85153,7 +84993,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.resize_width",
+      "field": "section.content.show_address",
       "line": 1021
     },
     {
@@ -85164,7 +85004,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.carousel_autoplay",
+      "field": "section.content.show_phone",
       "line": 1022
     },
     {
@@ -85175,7 +85015,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.carousel_interval",
+      "field": "section.content.show_hours",
       "line": 1023
     },
     {
@@ -85186,7 +85026,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.carousel_duration",
+      "field": "section.content.social_links",
       "line": 1024
     },
     {
@@ -85197,7 +85037,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.motion.enabled",
+      "field": "section.settings.color_style",
       "line": 1025
     },
     {
@@ -85208,7 +85048,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.motion.entrance",
+      "field": "section.settings.custom_bg",
       "line": 1026
     },
     {
@@ -85219,7 +85059,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.motion.mobile_entrance",
+      "field": "section.settings.custom_text",
       "line": 1027
     },
     {
@@ -85230,7 +85070,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.motion.duration_ms",
+      "field": "section.settings.card_bg",
       "line": 1028
     },
     {
@@ -85241,7 +85081,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.motion.delay_ms",
+      "field": "section.settings.card_text",
       "line": 1029
     },
     {
@@ -85252,7 +85092,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.motion.replay",
+      "field": "section.settings.card_muted",
       "line": 1030
     },
     {
@@ -85263,7 +85103,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.motion.media_hover",
+      "field": "section.settings.price_color",
       "line": 1031
     },
     {
@@ -85274,7 +85114,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.motion.button_hover",
+      "field": "section.settings.accent_color",
       "line": 1032
     },
     {
@@ -85285,7 +85125,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.motion.parallax",
+      "field": "section.settings.button_bg_color",
       "line": 1033
     },
     {
@@ -85296,7 +85136,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.motion.parallax_amount",
+      "field": "section.settings.button_text_color",
       "line": 1034
     },
     {
@@ -85307,7 +85147,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.motion.mobile",
+      "field": "section.settings.button_border_color",
       "line": 1035
     },
     {
@@ -85318,7 +85158,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.motion.parallax_mobile",
+      "field": "section.settings.button_shape",
       "line": 1036
     },
     {
@@ -85329,7 +85169,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.motion.parallax_target",
+      "field": "section.settings.image_position",
       "line": 1037
     },
     {
@@ -85340,7 +85180,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.motion.mobile_parallax",
+      "field": "section.settings.card_height",
       "line": 1038
     },
     {
@@ -85351,7 +85191,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.motion.mobile_parallax_target",
+      "field": "section.settings.card_radius",
       "line": 1039
     },
     {
@@ -85362,7 +85202,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.settings.motion.mobile_parallax_amount",
+      "field": "section.settings.heading_eyebrow_color",
       "line": 1040
     },
     {
@@ -85373,7 +85213,7 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.create",
+      "field": "section.settings.heading_color",
       "line": 1041
     },
     {
@@ -85384,11 +85224,462 @@
         "website-qr-customize-your-site"
       ],
       "kind": "configuration-field",
-      "field": "section.delete",
+      "field": "section.settings.panel_style",
       "line": 1042
     },
     {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:146",
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1043",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.panel_bg_color",
+      "line": 1043
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1044",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.panel_bg_color_end",
+      "line": 1044
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1045",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.panel_text_color",
+      "line": 1045
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1046",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.panel_muted_color",
+      "line": 1046
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1047",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.mobile_text_color",
+      "line": 1047
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1048",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.mobile_overlay_opacity",
+      "line": 1048
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1049",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.section_bg_color",
+      "line": 1049
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1050",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.show_dividers",
+      "line": 1050
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1051",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.divider_color",
+      "line": 1051
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1052",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.placement_mode",
+      "line": 1052
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1053",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.placement_group_id",
+      "line": 1053
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1054",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.placement_edge",
+      "line": 1054
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1055",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.insert_after_items",
+      "line": 1055
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1056",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.bg_image",
+      "line": 1056
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1057",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.bg_overlay",
+      "line": 1057
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1058",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.image_only",
+      "line": 1058
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1059",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.text_bg_color",
+      "line": 1059
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1060",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.image_bg_color",
+      "line": 1060
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1061",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.word_animation",
+      "line": 1061
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1062",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.resize_width",
+      "line": 1062
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1063",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.carousel_autoplay",
+      "line": 1063
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1064",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.carousel_interval",
+      "line": 1064
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1065",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.carousel_duration",
+      "line": 1065
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1066",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.motion.enabled",
+      "line": 1066
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1067",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.motion.entrance",
+      "line": 1067
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1068",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.motion.mobile_entrance",
+      "line": 1068
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1069",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.motion.duration_ms",
+      "line": 1069
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1070",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.motion.delay_ms",
+      "line": 1070
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1071",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.motion.replay",
+      "line": 1071
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1072",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.motion.media_hover",
+      "line": 1072
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1073",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.motion.button_hover",
+      "line": 1073
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1074",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.motion.parallax",
+      "line": 1074
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1075",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.motion.parallax_amount",
+      "line": 1075
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1076",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.motion.mobile",
+      "line": 1076
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1077",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.motion.parallax_mobile",
+      "line": 1077
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1078",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.motion.parallax_target",
+      "line": 1078
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1079",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.motion.mobile_parallax",
+      "line": 1079
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1080",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.motion.mobile_parallax_target",
+      "line": 1080
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1081",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.settings.motion.mobile_parallax_amount",
+      "line": 1081
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1082",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.create",
+      "line": 1082
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:1083",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.delete",
+      "line": 1083
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:147",
       "service": "foodyadmin",
       "source": "src/components/website-v3/field-contracts.ts",
       "features": [
@@ -85396,7 +85687,7 @@
       ],
       "kind": "configuration-field",
       "field": "section.is_visible",
-      "line": 146
+      "line": 147
     },
     {
       "id": "foodyadmin:src/components/website/CheckoutEditor.tsx:ui-controls:1",
@@ -94873,11 +95164,11 @@
     }
   ],
   "coverage": {
-    "sharedRuntimeFiles": 402,
+    "sharedRuntimeFiles": 400,
     "features": 105,
-    "operations": 799,
-    "sourceFiles": 2240,
-    "surfaces": 2074,
+    "operations": 800,
+    "sourceFiles": 2242,
+    "surfaces": 2091,
     "unclassifiedRoutes": []
   }
 }

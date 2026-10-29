@@ -40,6 +40,36 @@ publication or API/Web rebuild. The root coordinates PRs, required checks and
 Admin artifact verification before production promotion. See the
 [exact scoped review](reviews/pink-coffee-field-contracts.md).
 
+### Pink Coffee layout-controls coordinated release
+
+This follow-up reviews editable hero geometry and navigation controls, menu-icon
+style/size/stroke, and a multirow featured-product grid with per-item backgrounds.
+French, Hebrew and English procedures are reviewed together in the existing
+customize, design, sections and navigation guides. The additive optional Website
+capability `campaign_layout_controls: 1` gates the new settings independently of
+the existing campaign presentations. Autoplay must retain an accessible pause
+control even when its display preference is off. The manual Pink Coffee preset
+hides the counter/playback control and header cart icon without changing checkout.
+
+The API validates the optional header presentation fields before draft saving
+and publication. No migration, operational ordering rule, payment behavior or
+tenant catalogue mutation is introduced. Run full Go validation after API code
+freeze, then export and synchronize the final public corpus before its final
+artifact build/support tests and source inventory. Roll out the compatible API,
+then Website, before Admin exposes the new controls; publish the matching help
+release with its support corpus. Verify development before promoting those exact
+artifacts under the owner's existing authorization.
+
+API, Admin and Website source checkpoints are frozen and recorded in the
+[release evidence](reviews/pink-coffee-layout-controls-release.json); their 1,708
+source hashes match the actual committed Git objects. POS, Backoffice and unchanged
+Landing application-source blocks/surfaces retain the exact Landing develop
+`2cd01f46f75b8a4f6d7bac7cddadead728abb23b` baseline; those checkouts are not rescanned.
+All three consumer contracts resolve this documentation commit's self-reference
+to its immutable SHA before remote CI. Local validation is not production
+acceptance: the root owns PRs, required checks and artifact promotion. See the
+[review scope](reviews/pink-coffee-layout-controls-preparation.md).
+
 ## Internal order finalization (29 October 2026)
 
 New order now finalizes inside the ticket after Continue. Explicit payment intents
