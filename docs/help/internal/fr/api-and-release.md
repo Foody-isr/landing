@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-28'
+updatedAt: '2026-10-29'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -193,3 +193,9 @@ Le nouveau client confirme ready puis POST end avec expected_shift_id ; absence 
 ## Intégration du panier préparé Sumit
 
 La préparation locale des commandes internes Sumit ajoute capacité, panier GET/POST et devis de livraison sous /api/v1/public, avec restaurant explicite et jeton privé de reçu. La création exige orders.manage ; la saisie hébergée dans Admin exige aussi payments.manage. Le fournisseur actif et les identifiants Sumit configurés sont revérifiés avant ouverture. Le devis destinataire utilise zone résolue au serveur, frais, minimum et date conservée ; le paiement compare expected_total_minor à un nouveau total serveur. Une réservation durable lie coordonnées et URL fournisseur. Une création incertaine reste bloquée ; l’expiration utilise l’annulation avec libération du stock. Déployez l’API compatible avant Admin/Web et publiez les guides coordonnés. Voir le parcours Sumit.
+
+<span id="prepared-order-existing-cart" />
+
+## Panier préparé et présentation du restaurant
+
+Un lien privé de commande préparée Sumit rejoint le panier habituel du restaurant, puis son formulaire de paiement avec les couleurs, polices et champs publiés. Le panier personnel du navigateur reste conservé ; les articles, prix et date préparés sont figés. Les coordonnées et réponses demandées concernent cette commande, sans chargement d’un compte ou d’une carte enregistrée. Les réponses personnalisées sont liées lors de la première ouverture du paiement. Les frais de livraison sont recalculés puis vérifiés avant paiement. Voir la [procédure Sumit](/fr/help/orders/internal-sumit-checkout).

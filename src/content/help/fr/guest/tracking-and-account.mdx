@@ -5,7 +5,7 @@ apps: foodyweb
 tags:
   - guest
   - guest-account-tracking
-updatedAt: '2026-10-28'
+updatedAt: '2026-10-29'
 featureId: guest-account-tracking
 audience: public
 releaseStatus: available
@@ -71,3 +71,9 @@ Un numéro mémorisé ou déjà vérifié reprend son propre indicatif, même si
 ## Ouvrir un panier préparé pour Sumit
 
 Un lien Foody privé préparé par le restaurant ouvre son panier sans charger de profil de compte ni d’adresses enregistrées. Renseignez vos coordonnées, vérifiez le total de livraison calculé selon l’adresse puis continuez vers Sumit. Après confirmation du paiement par l’API, les pages habituelles de confirmation et de suivi utilisent le jeton privé de commande. Voir [le parcours Sumit préparé](/fr/help/orders/internal-sumit-checkout).
+
+<span id="prepared-order-existing-cart" />
+
+## Panier préparé et présentation du restaurant
+
+Un lien privé de commande préparée Sumit rejoint le panier habituel du restaurant, puis son formulaire de paiement avec les couleurs, polices et champs publiés. Le panier personnel du navigateur reste conservé ; les articles, prix et date préparés sont figés. Les coordonnées et réponses demandées concernent cette commande, sans chargement d’un compte ou d’une carte enregistrée. Les réponses personnalisées sont liées lors de la première ouverture du paiement. Les frais de livraison sont recalculés puis vérifiés avant paiement. Voir la [procédure Sumit](/fr/help/orders/internal-sumit-checkout).

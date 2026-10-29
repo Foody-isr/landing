@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-28'
+updatedAt: '2026-10-29'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -193,3 +193,9 @@ The new client confirms ready then POSTs end with expected_shift_id; omitting th
 ## Prepared Sumit checkout integration
 
 Local Sumit internal-checkout preparation adds restaurant-scoped capability, basket GET/POST and delivery-quote endpoints under /api/v1/public. The private receipt token is required for basket access. Staff creation requires orders.manage; hosted Admin card entry also requires payments.manage. The active provider and configured Sumit credentials are checked again before initiation. Recipient delivery quotes use server-resolved zones, fee, minimum and the retained service date; payment compares expected_total_minor to a fresh server total. One durable claim binds contacts and the provider URL. Uncertain creation stays blocked; expiry cancels through existing stock release. Deploy compatible API before Admin/Web and publish the coordinated guides. See the Sumit procedure.
+
+<span id="prepared-order-existing-cart" />
+
+## Prepared basket and restaurant presentation
+
+A private Sumit prepared-order link enters the restaurant’s existing cart, then its checkout with the published colors, fonts and fields. The personal browser basket is retained; prepared items, prices and date stay fixed. Contact details and requested answers belong to this order, without loading an account or saved card. Custom answers bind when payment first opens. Delivery fees are recalculated and reviewed before payment. See the [Sumit procedure](/en/help/orders/internal-sumit-checkout).

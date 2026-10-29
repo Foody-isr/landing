@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-10-28.
+Révision du relevé : 2026-10-29.
 
-104 fiches de fonctionnalités, 771 procédures/sous-fonctionnalités, dont 95 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2227 fichiers applicatifs et 2064 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+104 fiches de fonctionnalités, 776 procédures/sous-fonctionnalités, dont 95 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2228 fichiers applicatifs et 2062 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,11 +10,11 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 579 | 878 | cc4d62c7b2cd ; versioned |
-| foodyadmin | 769 | 778 | 92bda653dddf ; versioned |
-| foodyweb | 345 | 171 | 31eafb06d43a ; versioned |
+| foodyserver | 580 | 878 | 1790cfcb41be ; versioned |
+| foodyadmin | 768 | 777 | 240bdddca0bf ; versioned |
+| foodyweb | 346 | 170 | eabb23987e97 ; versioned |
 | foodypos | 363 | 166 | 51f48a775eab ; versioned |
-| foodylanding | 127 | 21 | 076e5fc0e61e ; versioned |
+| foodylanding | 127 | 21 | f96b686bbb16 ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
 
 ## getting-started
@@ -670,6 +670,7 @@ Identifiant : `orders-internal-sumit-checkout`. Public : public. Disponibilité 
 
 - [Vérifier la disponibilité et préparer le panier](../../src/content/help/fr/orders/internal-sumit-checkout.mdx#sumit-internal-prerequisites)
 - [Transmettre au client un lien de panier Foody](../../src/content/help/fr/orders/internal-sumit-checkout.mdx#sumit-customer-basket-link)
+- [Utiliser le panier et le thème habituels du restaurant](../../src/content/help/fr/orders/internal-sumit-checkout.mdx#sumit-shared-storefront-cart)
 - [Saisir la carte depuis Admin](../../src/content/help/fr/orders/internal-sumit-checkout.mdx#sumit-admin-hosted-card)
 - [Reprendre après une interruption](../../src/content/help/fr/orders/internal-sumit-checkout.mdx#sumit-checkout-recovery)
 
@@ -691,6 +692,7 @@ Identifiant : `payments-how-payments-work`. Public : public. Disponibilité : av
 - [Réservations après paiement tardif](../../src/content/help/fr/payments/how-payments-work.mdx#carte-series-stock)
 - [Accès aux nouveaux réglages](../../src/content/help/fr/payments/how-payments-work.mdx#related-service-controls)
 - [Commandes préparées avec Sumit](../../src/content/help/fr/payments/how-payments-work.mdx#prepared-sumit-internal-orders)
+- [Panier préparé et présentation du restaurant](../../src/content/help/fr/payments/how-payments-work.mdx#prepared-order-existing-cart)
 
 ### [Encaisser sur la caisse](../../src/content/help/fr/payments/pos-checkout.mdx)
 
@@ -1077,7 +1079,7 @@ Identifiant : `courier`. Public : public. Disponibilité : available. Services :
 - [Ouvrir la tournée affectée](../../src/content/help/fr/delivery/courier-workspace.mdx#itinerary)
 - [Naviguer et contacter](../../src/content/help/fr/delivery/courier-workspace.mdx#navigate)
 - [Confirmer le résultat réel](../../src/content/help/fr/delivery/courier-workspace.mdx#complete)
-- [Modifier les points et démarrer la tournée](../../src/content/help/fr/delivery/courier-workspace.mdx#departure-settings)
+- [Vérifier le plan et démarrer la tournée](../../src/content/help/fr/delivery/courier-workspace.mdx#departure-settings)
 - [Réagir à une limite du service cartographique](../../src/content/help/fr/delivery/courier-workspace.mdx#routing-service-limits)
 - [Ajuster la carte et retrouver un arrêt](../../src/content/help/fr/delivery/courier-workspace.mdx#map-timeline-panel)
 - [Corriger un démarrage de test](../../src/content/help/fr/delivery/courier-workspace.mdx#accidental-departure)
@@ -1201,6 +1203,7 @@ Identifiant : `guest-ordering`. Public : public. Disponibilité : available. Ser
 - [Renseigner un téléphone valide](../../src/content/help/fr/guest/online-ordering.mdx#contact-phone)
 - [Piloter manuellement les commandes hebdomadaires](../../src/content/help/fr/guest/online-ordering.mdx#manual-weekly-ordering)
 - [Photos des produits](../../src/content/help/fr/guest/online-ordering.mdx#product-photos)
+- [Panier préparé et présentation du restaurant](../../src/content/help/fr/guest/online-ordering.mdx#prepared-order-existing-cart)
 
 ### [Suivi, reçus et moyens enregistrés](../../src/content/help/fr/guest/tracking-and-account.mdx)
 
@@ -1216,6 +1219,7 @@ Identifiant : `guest-account-tracking`. Public : public. Disponibilité : availa
 - [Se connecter pendant la commande](../../src/content/help/fr/guest/tracking-and-account.mdx#optional-entry-access)
 - [Corriger un téléphone mémorisé](../../src/content/help/fr/guest/tracking-and-account.mdx#saved-phone-validation)
 - [Ouvrir un panier préparé pour Sumit](../../src/content/help/fr/guest/tracking-and-account.mdx#prepared-sumit-basket)
+- [Panier préparé et présentation du restaurant](../../src/content/help/fr/guest/tracking-and-account.mdx#prepared-order-existing-cart)
 
 ### [Commander avec le QR de table](../../src/content/help/fr/guest/table-qr.mdx)
 
@@ -1318,6 +1322,7 @@ Identifiant : `platform-api`. Public : internal. Disponibilité : available. Ser
 - [Contrat borné de progression et de reprise](internal/fr/api-and-release.md#order-lifecycle-scoped-contract)
 - [Vérifier la période personnelle avant déconnexion](internal/fr/api-and-release.md#personal-shift-end-preflight)
 - [Intégration du panier préparé Sumit](internal/fr/api-and-release.md#prepared-sumit-checkout-integration)
+- [Panier préparé et présentation du restaurant](internal/fr/api-and-release.md#prepared-order-existing-cart)
 
 ### [Aperçus internes et alias de routes](internal/fr/design-previews.md)
 
