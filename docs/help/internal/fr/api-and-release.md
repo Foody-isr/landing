@@ -199,3 +199,9 @@ La préparation locale des commandes internes Sumit ajoute capacité, panier GET
 ## Panier préparé et présentation du restaurant
 
 Un lien privé de commande préparée Sumit rejoint le panier habituel du restaurant, puis son formulaire de paiement avec les couleurs, polices et champs publiés. Le panier personnel du navigateur reste conservé ; les articles, prix et date préparés sont figés. Les coordonnées et réponses demandées concernent cette commande, sans chargement d’un compte ou d’une carte enregistrée. Les réponses personnalisées sont liées lors de la première ouverture du paiement. Les frais de livraison sont recalculés puis vérifiés avant paiement. Voir la [procédure Sumit](/fr/help/orders/internal-sumit-checkout).
+
+<span id="delivery-weekday-contract" />
+
+## Calendriers de livraison par jours
+
+ Le calendrier de zone accepte days (jours 0–6 uniques, au moins un) ou le format historique windows, sans mélange des deux. Les nouveaux créneaux utilisent les horaires et réglages du restaurant, filtrés par les jours de zone. Les windows historiques fournissent uniquement leurs jours pour les nouvelles réservations. Le serveur vérifie à nouveau le calendrier, les articles et leur restaurant à la création ; les affectations existantes utilisent la disponibilité figée de la commande. Le devis d’un panier préparé recontrôle jours et créneaux sans nouveau délai de production ; frais, minimum et autorisation restent contrôlés séparément. Aucun changement de schéma ni migration de données n’est requis. Déployez l’API avant les clients compatibles et publiez l’aide avec le produit après vérification en développement. Cette préparation locale ne confirme aucun déploiement.

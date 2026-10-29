@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-10-29.
+Révision du relevé : 2026-10-18.
 
-104 fiches de fonctionnalités, 777 procédures/sous-fonctionnalités, dont 95 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2230 fichiers applicatifs et 2062 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+104 fiches de fonctionnalités, 779 procédures/sous-fonctionnalités, dont 95 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2220 fichiers applicatifs et 2055 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,10 +10,10 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 580 | 878 | f76021172165 ; versioned |
-| foodyadmin | 770 | 777 | f1dec86805bd ; versioned |
-| foodyweb | 346 | 170 | 8be005b4b84a ; versioned |
-| foodylanding | 127 | 21 | 359e59e030e4 ; versioned |
+| foodyserver | 580 | 878 | bbf65d3c8f9b ; versioned |
+| foodyadmin | 770 | 777 | 84501c09158f ; versioned |
+| foodyweb | 346 | 170 | 09d8ed76b95e ; versioned |
+| foodylanding | 127 | 21 | dc21454b924d ; versioned |
 | foodypos | 363 | 166 | 51f48a775eab ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
 
@@ -587,6 +587,7 @@ Identifiant : `order-detail`. Public : public. Disponibilité : available. Servi
 - [Image du modèle WhatsApp](../../src/content/help/fr/orders/order-details.mdx#meta-template-image-preview)
 - [Choisir le destinataire WhatsApp du client](../../src/content/help/fr/orders/order-details.mdx#customer-whatsapp-recipient)
 - [Commandes préparées avec Sumit](../../src/content/help/fr/orders/order-details.mdx#prepared-sumit-internal-orders)
+- [Confirmer l’horaire d’une livraison de zone](../../src/content/help/fr/orders/order-details.mdx#confirm-zone-delivery-time)
 
 ### [Calendrier du restaurant et exceptions](../../src/content/help/fr/orders/calendar.mdx)
 
@@ -661,7 +662,7 @@ Identifiant : `pos-comp-void`. Public : public. Disponibilité : available. Serv
 
 ### [Addition, paiement, préparation et remise](../../src/content/help/fr/orders/payment-preparation-and-handoff.mdx)
 
-Identifiant : `order-lifecycle`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb, foodypos.
+Identifiant : `order-lifecycle`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb.
 
 - [Distinguer addition, paiement, préparation et remise](../../src/content/help/fr/orders/payment-preparation-and-handoff.mdx#order-lifecycle-axes)
 
@@ -1324,6 +1325,7 @@ Identifiant : `platform-api`. Public : internal. Disponibilité : available. Ser
 - [Vérifier la période personnelle avant déconnexion](internal/fr/api-and-release.md#personal-shift-end-preflight)
 - [Intégration du panier préparé Sumit](internal/fr/api-and-release.md#prepared-sumit-checkout-integration)
 - [Panier préparé et présentation du restaurant](internal/fr/api-and-release.md#prepared-order-existing-cart)
+- [Calendriers de livraison par jours](internal/fr/api-and-release.md#delivery-weekday-contract)
 
 ### [Aperçus internes et alias de routes](internal/fr/design-previews.md)
 

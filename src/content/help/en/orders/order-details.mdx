@@ -135,3 +135,9 @@ Compatible versions offer a Sumit-only Foody basket link and hosted card entry i
 In order details, the Card guarantee panel separates the reserved amount, validity and state from the money received. Record the full cash amount only after physically receiving it through the existing authorized collection flow; an open physical drawer still requires the same POS cash context. Recording cash prevents a concurrent card debit and requests release. A release awaiting confirmation does not undo received cash. Partial cash payments and relabelling the guaranteed payment as an external card/transfer are refused while the guarantee is active. If no cash was received, staff with payments.manage may choose Charge the guaranteed card and explicitly confirm the full debit. There is no automatic debit for an unpaid order. The sale becomes card-paid only after Stancer confirms capture. Do not use manual status corrections to simulate a guaranteed payment.
 
 Acceptance and recovery: [cash card guarantees](/en/help/payments/cash-card-guarantee).
+
+<span id="confirm-zone-delivery-time" />
+
+## Confirm a zone delivery time
+
+ With order-management permission, open the delivery detail and Time awaiting confirmation or Confirm delivery window. New zones list their covered weekdays; historical orders may still display their original promised windows. Enter the date, start and end within the allowed calendar. Changing the day requires a reason. Confirm and verify the date and time in the order and customer tracking. A time outside the verified calendar is rejected: check Delivery settings or retain the promised slot before retrying. An already reserved basket does not acquire a new preparation delay. Confirmation keeps the address and fee and sends no message; customer communication uses its dedicated action.
