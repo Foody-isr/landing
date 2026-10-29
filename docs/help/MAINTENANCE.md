@@ -1012,3 +1012,27 @@ Export FR/HE/EN procedures and synchronize the API corpus before the source scan
 Service contracts pin the reviewed immutable Landing documentation commit for
 remote CI and release. Deploy the API before compatible Admin/Web, verify development, and
 publish the guides with the product. This local preparation deploys nothing.
+
+
+## Capability-based cash controls correction (29 October 2026)
+
+For a provider whose full cash-guarantee flow is supported, the Admin cash
+selector offers Yes for all customers or No for everyone. Card guarantee remains
+a separate opt-in as clarified by the owner. Existing trusted-only policies are
+shown as a retained prior value until an explicit global choice; unrelated VAT
+or tips saves do not widen cash eligibility. Unsupported providers keep their
+existing controls. The UI reads the server capability, never a provider-name list.
+No new provider is certified by this correction.
+
+The shared private settings response now includes online_payment_only explicitly
+for both boolean values on GET and PUT. An omitted false value previously made
+Admin report an unknown policy and disabled its cash controls. The authoritative
+online-only restriction and unknown-policy fail-closed behavior remain intact.
+Public checkout already honors the all/disabled policies without a trust gate.
+No guest Web, POS or Backoffice source is changed or recertified; retain their
+exact inventory blocks and surfaces from this correction's Landing develop base.
+Update and render the activation procedure in FR/HE/EN, export the identical API
+corpus, verify source checkpoints, and pin immutable documentation before CI.
+The existing authorization covers publishing this correction through development
+and production, with the same verified immutable artifacts. No tenant cash policy
+or provider configuration is changed during deployment.
