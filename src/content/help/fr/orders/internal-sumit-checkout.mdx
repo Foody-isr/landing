@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - orders
   - orders-internal-sumit-checkout
-updatedAt: '2026-10-28'
+updatedAt: '2026-10-29'
 featureId: orders-internal-sumit-checkout
 audience: public
 releaseStatus: available
@@ -35,3 +35,9 @@ Renseignez client et traitement, choisissez Encaisser une carte avec Sumit puis 
 ## Reprendre après une interruption
 
 Le panier préparé est figé tant que le paiement est en attente. Pour changer articles, remise ou devis de traitement, annulez-le puis préparez un remplacement après vérification du paiement. Les coordonnées sont liées à la première ouverture du paiement ; Reprendre le même paiement les conserve. Si le résultat est incertain, vérifiez cette commande et Sumit avant de créer ou d’encaisser un autre paiement. Une erreur fournisseur ou d’enregistrement peut bloquer la reprise pour vérification. Un lien invalide, expiré ou clôturé, ou le remplacement de Sumit par un autre fournisseur, nécessite de contacter le restaurant. Ces parcours n’enregistrent pas de carte réutilisable, n’envoient pas le lien automatiquement et ne confirment pas d’envoi en cuisine avant paiement.
+
+<span id="independent-lifecycle-confirmations" />
+
+## Vérifier les confirmations indépendantes
+
+Le récapitulatif distingue les encaissements et remboursements enregistrés, le net reçu et le reste dû. Une valeur inconnue n’est pas zéro ; un remboursement ne recrée pas automatiquement une dette. Ce récapitulatif n’autorise aucun nouveau débit et les parcours financiers existants restent nécessaires. Voir [les montants enregistrés](/fr/help/orders/payment-preparation-and-handoff#recorded-money-summary).

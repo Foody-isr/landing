@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - orders
   - orders-internal-sumit-checkout
-updatedAt: '2026-10-28'
+updatedAt: '2026-10-29'
 featureId: orders-internal-sumit-checkout
 audience: public
 releaseStatus: available
@@ -35,3 +35,9 @@ Fill in the customer and fulfillment details, choose Charge a card with Sumit an
 ## Recover an interrupted checkout
 
 The prepared basket is immutable while pending. To change its items, discount or fulfillment quote, cancel it and prepare a replacement after checking the payment state. Customer details bind on the first payment-opening action; Resume the same payment retains them. If the result is uncertain, check this saved order and Sumit before creating or collecting another payment. A provider or persistence failure may keep the checkout blocked for review. An invalid, expired or closed link, or a provider change away from Sumit, requires contacting the restaurant. These flows do not save a reusable card, send a payment link automatically or confirm kitchen dispatch before payment.
+
+<span id="independent-lifecycle-confirmations" />
+
+## Review independent confirmations
+
+The summary distinguishes recorded collections and refunds, net received and the remaining balance. An unknown value is not zero; a refund does not automatically recreate debt. The summary authorizes no new charge and existing financial flows remain required. See [recorded amounts](/en/help/orders/payment-preparation-and-handoff#recorded-money-summary).

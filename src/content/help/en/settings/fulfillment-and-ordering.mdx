@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - settings
   - fulfillment-policy
-updatedAt: '2026-10-28'
+updatedAt: '2026-10-29'
 featureId: fulfillment-policy
 audience: public
 releaseStatus: available
@@ -145,3 +145,9 @@ Mode and workflow settings determine the actions available for new operations; t
 ## Prepared Sumit checkout integration
 
 For a compatible internal Sumit basket link, the recipient’s delivery address is checked against the restaurant’s current zone, fee and minimum. The chosen service date is retained and must fit any matched zone calendar. The final total is reviewed before payment. See [Sumit checkout](/en/help/orders/internal-sumit-checkout).
+
+<span id="independent-lifecycle-confirmations" />
+
+## Review independent confirmations
+
+POS fulfillment methods provide separate preparation and handoff tracking. Save the method’s policy in the global catalog. It applies to new sales and remains frozen with them; later changes do not rewrite history. Shared device-mode modules remain distinct from this global policy. See [tracking settings](/en/help/orders/payment-preparation-and-handoff#frozen-tracking-policy).

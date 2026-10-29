@@ -5,7 +5,7 @@ apps: foodypos
 tags:
   - orders
   - pos-check-split
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-29'
 featureId: pos-check-split
 audience: public
 releaseStatus: available
@@ -45,3 +45,9 @@ Return every unpaid part of the same original unit to its original bill/ledger a
 ## Check variant details before allocating
 
 An item’s allocation details retain its variant choices by position. Check the characters and their order before allocating; they add no surcharge to the already recorded amount. Sharing rules and production quantities remain unchanged.
+
+<span id="independent-lifecycle-confirmations" />
+
+## Review independent confirmations
+
+In a saved order’s actions, review preparation and handoff separately from payment. Handoff review selects the actual physical units; financial splitting does not multiply them. Before closure, review the exact check or financial portion and its confirmed balance. A closed scope refuses new commercial changes; another open batch is not closed by that action. See [tracking and confirmations](/en/help/orders/payment-preparation-and-handoff).

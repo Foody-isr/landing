@@ -7,7 +7,7 @@ apps: both
 tags:
   - orders
   - order-lifecycle
-updatedAt: '2026-10-27'
+updatedAt: '2026-10-29'
 featureId: order-lifecycle
 audience: public
 releaseStatus: available
@@ -19,3 +19,45 @@ Review a saved order in a compatible Foody POS, Admin or customer tracking scree
 ## Distinguish the check, payment, preparation and handoff
 
 With compatible API, POS, Admin and guest-web versions, review the commercial check, its payment, preparation batches and handoff separately. Paid does not mean ready or served; a refund does not prove that work already performed was cancelled. Ready does not mean handed over. Unestablished information remains unknown: do not infer it from payment or apply current settings to an old order. Successive sends on one check remain separate batches. QR customers at the same table retain individual order IDs and payments even when the POS groups the display. Financial splitting does not produce additional food. Existing table-release settings still apply; one customer paying does not settle the others’ orders.
+
+<span id="recorded-money-summary" />
+
+## Read recorded monetary amounts
+
+The summary separates the total, recorded collections, recorded refunds, net received and remaining balance. Net received is collections minus refunds; a refund does not automatically create new debt. An unknown value stays unavailable and is not zero. Currency and precision must be known; do not compare or sum different currencies. Use the existing payment flow and its checks to collect or refund money.
+
+<span id="convergent-preparation" />
+
+## Check actual preparation
+
+A held batch remains held until explicitly fired. With multiple required KDS stations, completing one station does not mean every unit is ready. KDS retains current station-profile routing. During an explicit completion or recall, all required stations for the affected work are recorded together; opening the board alone creates no preparation or historical routing evidence. An explicitly recorded whole-batch production completion is separate from payment and handoff. A later kitchen recall can return units to preparation. Subsequently added units do not automatically inherit an earlier completion.
+
+<span id="quantity-handoff-review" />
+
+## Confirm handoff by quantity
+
+From a saved order’s actions, open the handoff review. Check the order or check scope, items, variants and physical quantities. Select only the units actually served or collected, then confirm the offered action. Remaining units retain their state. Splitting a check does not multiply food, and handing over one QR order does not hand over other guests’ orders. Confirmation records handoff; it does not collect money, resend kitchen work or release the table.
+
+<span id="courier-handoff-and-delivery" />
+
+## Separate courier handoff from delivery
+
+For delivery, first confirm the units handed to the courier. They are in transit; this is not proof of customer receipt. Subsequently confirm only units actually delivered. Existing courier assignment and route checks remain required. Courier departure alone does not record a customer receipt time.
+
+<span id="explicit-commercial-closure" />
+
+## Close the correct commercial scope
+
+Open the closure review and check its scope: a standalone counter order, check, financial portion or table visit. If the order belongs to a check, review that check before closing it; one paid batch does not determine the parent’s state. Closure requires a confirmed zero balance and no uncertain financial operation. It prevents new commercial changes to that scope without closing neighboring scopes. It does not mean preparation is finished, food is handed over or the table is released. Existing table-release rules remain applicable. A historical paid order without closure evidence remains unknown.
+
+<span id="frozen-tracking-policy" />
+
+## Configure tracking for new sales
+
+In FoodyAdmin, open POS fulfillment methods and edit the relevant method. Configure preparation tracking and handoff tracking separately, then save. These global settings apply to new sales; each new order retains its policy and previous orders are not reinterpreted. Not tracked is an explicit choice; unknown means evidence is missing. Turning tracking off does not mark food ready or handed over and does not settle a payment.
+
+<span id="uncertain-operation-recovery" />
+
+## Recover an unconfirmed operation
+
+After a lost response or connection error during handoff or closure, retain the pending operation and check its result. Missing confirmation does not prove failure. Do not create a new action for the same units. Recovery checks the original operation ID; an offered retry preserves the same intent and ID. If the employee, restaurant or scope changes, return to the original context. If units or the order have changed, reload and review before a new action. Payment operations retain their own recovery flow.

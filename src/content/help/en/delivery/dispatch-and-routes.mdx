@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - delivery
   - delivery-dispatch
-updatedAt: '2026-10-28'
+updatedAt: '2026-10-29'
 featureId: delivery-dispatch
 audience: public
 releaseStatus: available
@@ -137,3 +137,9 @@ With order-management permission, open Orders → Deliveries, select the route d
 ## View another courier’s workspace
 
 With compatible API and Admin versions, the restaurant owner can also use this selector, like a superadmin. Open Orders → Courier mode and select a restaurant courier under View as courier. The map and routes belong to that courier; actions record real changes and the signed-in account’s GPS is not shared for them. See [the courier-mode procedure](/en/help/delivery/courier-workspace#superadmin-courier-selection), including switching couriers and recovering from errors.
+
+<span id="independent-lifecycle-confirmations" />
+
+## Review independent confirmations
+
+A partial handoff preserves remaining units. Completing one required KDS station does not complete all preparation. Courier handoff and customer receipt are separate confirmations; a route departure does not prove a customer receipt time. See [preparation and handoff](/en/help/orders/payment-preparation-and-handoff).

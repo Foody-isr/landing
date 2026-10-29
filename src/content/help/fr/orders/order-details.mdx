@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - orders
   - order-detail
-updatedAt: '2026-10-28'
+updatedAt: '2026-10-29'
 featureId: order-detail
 audience: public
 releaseStatus: available
@@ -127,3 +127,9 @@ Si le client utilise un autre numéro pour WhatsApp, ouvrez Clients → sa fiche
 ## Commandes préparées avec Sumit
 
 Les versions compatibles proposent un lien de panier Foody réservé à Sumit et la saisie de carte hébergée depuis Admin. Le choix du lien permet au destinataire de compléter ses coordonnées. Le panier préparé reste figé en attente du paiement ; vérifiez la commande enregistrée avant de reprendre. Voir [la procédure Sumit complète](/fr/help/orders/internal-sumit-checkout). Publiez cette procédure avec les versions API, Admin et Web client correspondantes.
+
+<span id="independent-lifecycle-confirmations" />
+
+## Vérifier les confirmations indépendantes
+
+Dans les actions d’une commande enregistrée, vérifiez les faits de préparation et de remise séparément du paiement. La revue de remise sélectionne les unités physiques réellement concernées ; le partage financier ne les multiplie pas. Avant une clôture, revoyez l’addition ou la part exacte et son solde confirmé. Une portée clôturée refuse de nouvelles modifications commerciales ; un autre lot ouvert n’est pas clôturé par cette action. Voir [le suivi et les confirmations](/fr/help/orders/payment-preparation-and-handoff).

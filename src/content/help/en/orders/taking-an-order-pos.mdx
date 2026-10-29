@@ -10,7 +10,7 @@ tags:
   - modifiers
   - table
   - counter
-updatedAt: '2026-10-28'
+updatedAt: '2026-10-29'
 featureId: pos-order-entry
 audience: public
 releaseStatus: available
@@ -134,3 +134,9 @@ For an uncertain send, first choose Verify saved result: this read does not rese
 ## Prepared Sumit checkout integration
 
 A basket prepared in Admin for Sumit stays pending until verified payment and does not dispatch unpaid food to POS. Resume it from its saved Admin order. See [the Admin Sumit procedure](/en/help/orders/internal-sumit-checkout).
+
+<span id="independent-lifecycle-confirmations" />
+
+## Review independent confirmations
+
+In a saved order’s actions, review preparation and handoff separately from payment. Handoff review selects the actual physical units; financial splitting does not multiply them. Before closure, review the exact check or financial portion and its confirmed balance. A closed scope refuses new commercial changes; another open batch is not closed by that action. See [tracking and confirmations](/en/help/orders/payment-preparation-and-handoff).

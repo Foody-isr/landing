@@ -5,7 +5,7 @@ apps: both
 tags:
   - settings
   - pos-service-modes
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-29'
 featureId: pos-service-modes
 audience: public
 releaseStatus: available
@@ -53,3 +53,9 @@ Avec le droit de modifier les paramètres, ouvrez un mode existant par Gérer, c
 ## Revenir à l’accueil après l’envoi et ouvrir une nouvelle vente
 
 Dans le mode effectif de l’appareil, ouvrez Additions en attente, activez Utiliser sur ce mode et Utiliser le menu Tickets ouverts comme écran d’accueil, puis Enregistrer. Actualisez les réglages sur le POS. Après Envoyer confirmé, une addition de table revient au plan de salle et une addition nommée revient aux additions ouvertes. Revenir dans Menu ouvre une vente vide distincte, sans rouvrir ni effacer l’addition envoyée. Rouvrez celle-ci depuis sa table ou les additions ouvertes pour ajouter des plats : client, addition et bons cuisine y sont conservés. Continuer/Envoyer et rester conserve l’addition courante. Un envoi échoué ou un changement de restaurant, de permission ou de contexte ne détache pas la source. Un autre panier comptoir non envoyé n’est pas vidé. Sans ce réglage d’accueil, ce passage à une nouvelle vente ne s’applique pas. Toutes les commandes enregistrées restent suivies sur POS et Admin ; paiement, préparation et clôture restent distincts.
+
+<span id="independent-lifecycle-confirmations" />
+
+## Vérifier les confirmations indépendantes
+
+Les modes de traitement du système de caisse proposent deux suivis distincts : préparation et remise. Enregistrez la politique du mode dans le catalogue global. Elle s’applique aux nouvelles ventes et reste figée avec elles ; une modification ultérieure ne réécrit pas l’historique. Les modules partagés du mode d’appareil restent distincts de cette politique globale. Voir [les réglages de suivi](/fr/help/orders/payment-preparation-and-handoff#frozen-tracking-policy).

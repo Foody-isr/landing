@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-28'
+updatedAt: '2026-10-29'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -193,3 +193,9 @@ Le nouveau client confirme ready puis POST end avec expected_shift_id ; absence 
 ## Intégration du panier préparé Sumit
 
 La préparation locale des commandes internes Sumit ajoute capacité, panier GET/POST et devis de livraison sous /api/v1/public, avec restaurant explicite et jeton privé de reçu. La création exige orders.manage ; la saisie hébergée dans Admin exige aussi payments.manage. Le fournisseur actif et les identifiants Sumit configurés sont revérifiés avant ouverture. Le devis destinataire utilise zone résolue au serveur, frais, minimum et date conservée ; le paiement compare expected_total_minor à un nouveau total serveur. Une réservation durable lie coordonnées et URL fournisseur. Une création incertaine reste bloquée ; l’expiration utilise l’annulation avec libération du stock. Déployez l’API compatible avant Admin/Web et publiez les guides coordonnés. Voir le parcours Sumit.
+
+<span id="order-lifecycle-v2-contract" />
+
+## Contrat additif des confirmations de commande
+
+Le champ lifecycle v1 est conservé. La capacité order_lifecycle_v2 annonce lifecycle_v2 : lecture explicite par portée, montants nullable avec devise/exposant et politiques figées. Les opérations de remise et clôture revalident acteur, restaurant, affectation, révision et unités sous verrous et enregistrent le même request_id atomiquement. GET operation confirme le journal original ; une absence reste non confirmée et ne justifie pas un nouvel identifiant. Les réponses publiques contiennent seulement la propre commande, sans portées parentes, unités privées ou actions staff. Les journaux de paiement existants restent seuls compétents pour l’argent.

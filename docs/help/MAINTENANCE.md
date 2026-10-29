@@ -905,3 +905,45 @@ authorized development deployment followed by production promotion on 28 October
 Verify development first, then promote those exact successful artifacts without
 rebuilding. Provider acceptance is verified separately from the browser regressions,
 which use synthetic orders and stub Sumit; no production test charge is needed.
+
+## Independent order lifecycle confirmations (29 October 2026)
+
+This delivery retains the strict v1 field and adds lifecycle_v2 with its explicit
+capability, exact commercial scopes, nullable recorded monetary amounts, physical
+unit handoff operations and creation-time tracking policy. Paid, ready, handed
+over and commercially closed remain separate facts. QR guest identities and
+payments remain separate; financial shares never duplicate physical food.
+
+Preparation and handoff policies are global fulfillment-method settings, frozen
+on each new Order. They do not reinstate an iPad override or reinterpret old
+history. KDS visibility, routing, role and completion scope retain the current
+profile behavior. Required-station observations are recorded at an actual
+new dispatch or explicit KDS completion/recall, never during a read or a profile
+save. A single completed station does not imply all required work is ready.
+Explicit handoff can precede Ready in an existing custom workflow; no intermediate
+Ready fact is fabricated. Existing validated courier departures retain their
+special route authority without manufacturing dispatch or customer receipt.
+
+Handoff and exact-scope closure share an immutable request journal with explicit
+UUID recovery. A missing response or absent lookup is not conclusive failure.
+Confirmed historical results still require the current actor and table access;
+clients refetch current facts before offering another action. A correction such
+as Undo departure appends a causal event instead of deleting history. Commercial
+closure does not collect money, complete food or release a table. Existing table
+release rules and dedicated metadata/comp/void/payment writers retain their own
+guards. Refunds and recorded net receipts do not silently create fresh debt.
+
+The lifecycle, order, fulfillment, payment and guest tracking guides were reviewed
+and updated in French, Hebrew and English, including removal of the obsolete
+claim that method tracking cannot be disabled. Exact scoped reviews cover only
+unrelated features on shared source files. The unchanged Backoffice inventory and
+surfaces are retained from Landing develop, not recertified from a different
+checkout. Preserve corpus equality and selected migration282 evidence. Export
+the final public corpus into API after full runtime validation and before final
+source inventory generation; pin an immutable documentation commit before PR
+readiness. Local source snapshots or a WORKSPACE pin do not constitute publication.
+
+Automated API, browser and widget checks are distinct from physical acceptance.
+The manual recipe supplement remains entirely untested by a human. No installed
+build, TestFlight availability, real payment, terminal deposit, personal PIN
+repair or cash/attendance mutation is certified by these synthetic results.

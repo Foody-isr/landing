@@ -2035,13 +2035,22 @@
       "selectors": {
         "foodyserver": [
           "internal/common/order_lifecycle.go",
-          "internal/orders/order_lifecycle*.go"
+          "internal/orders/order_lifecycle*.go",
+          "internal/common/order_lifecycle_v2*.go",
+          "internal/common/order_commercial_guard.go",
+          "internal/orders/order_lifecycle_v2*.go",
+          "migrations/282_order_lifecycle_v2.sql"
         ],
         "foodyadmin": [
           "src/lib/orders/lifecycle.ts",
           "src/lib/orders/status-presentation.ts",
           "src/lib/orders/workflow-stepper.ts",
-          "src/components/orders/detail/OrderDetailHead.tsx"
+          "src/components/orders/detail/OrderDetailHead.tsx",
+          "src/lib/orders/lifecycle-v2*.ts",
+          "src/components/orders/detail/OrderLifecycleV2*.tsx",
+          "src/components/orders/detail/LifecycleOperations.tsx",
+          "src/components/orders/detail/context/LifecycleFacts.tsx",
+          "src/lib/orders/lifecycle-operations.ts"
         ],
         "foodyweb": [
           "lib/order-lifecycle.ts",
@@ -2049,14 +2058,24 @@
           "lib/order-tracking.ts",
           "hooks/useOrderStatus.ts",
           "components/OrderStatusTimeline.tsx",
-          "components/OrderTrackingClient.tsx"
+          "components/OrderTrackingClient.tsx",
+          "lib/order-lifecycle-v2*.ts",
+          "components/OrderLifecycleV2*.tsx",
+          "components/OrderLifecycleFacts.tsx"
         ],
         "foodypos": [
           "lib/features/orders/domain/order_state_projection.dart",
           "lib/features/orders/data/order_lifecycle_repository.dart",
           "lib/features/orders/presentation/order_lifecycle_labels.dart",
           "lib/features/orders/data/held_preparation_repository.dart",
-          "lib/features/orders/presentation/held_preparation_dialog.dart"
+          "lib/features/orders/presentation/held_preparation_dialog.dart",
+          "lib/features/orders/domain/order_lifecycle_v2.dart",
+          "lib/features/orders/data/order_lifecycle_v2*.dart",
+          "lib/features/orders/presentation/order_lifecycle_v2*.dart",
+          "lib/features/orders/data/order_lifecycle_operation_repository.dart",
+          "lib/features/orders/presentation/order_lifecycle_panel.dart",
+          "lib/features/orders/providers/order_lifecycle_v2_provider.dart",
+          "lib/features/orders/domain/order_lifecycle_filters.dart"
         ]
       }
     },

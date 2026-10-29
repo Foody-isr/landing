@@ -5,7 +5,7 @@ apps: both
 tags:
   - settings
   - pos-behavior
-updatedAt: '2026-10-27'
+updatedAt: '2026-10-29'
 featureId: pos-behavior
 audience: public
 releaseStatus: available
@@ -60,7 +60,7 @@ If the restaurant, sign-in or terminal changes, [reopen confirmation in the corr
 
 ## Configure POS fulfillment methods
 
-With settings-edit permission, open Settings → Fulfillment → Point of sale. The catalogue shows cards for all methods, including hidden methods. Open a card to edit its display text, order type and optional customer prompt, then Save explicitly. A failed or unconfirmed save keeps the editor and values. Manage by location sets restaurant-wide availability, order/default and prompt timing, not a separate catalogue per device. Inside that nested editor, Save on a method stages it only: Save again in Manage by location persists the whole configuration. Closing a changed editor asks before discarding. Keep at least one method enabled and at most ten; reorder with arrows or the drag handle. The first enabled method becomes the default. Delete requires confirmation and cannot remove the last active method. Foody always tracks saved orders, with no per-method tracking-disable switch. Existing orders keep their recorded method. An incompatible API disables unsupported editing.
+With settings-edit permission, open Settings → Fulfillment → Point of sale. The catalogue shows cards for all methods, including hidden methods. Open a card to edit its display text, order type and optional customer prompt, then Save explicitly. A failed or unconfirmed save keeps the editor and values. Manage by location sets restaurant-wide availability, order/default and prompt timing, not a separate catalogue per device. Inside that nested editor, Save on a method stages it only: Save again in Manage by location persists the whole configuration. Closing a changed editor asks before discarding. Keep at least one method enabled and at most ten; reorder with arrows or the drag handle. The first enabled method becomes the default. Delete requires confirmation and cannot remove the last active method. For new sales, configure preparation tracking and handoff tracking separately on each method. The saved policy remains attached to the order; an older order without that evidence stays unknown. Existing orders keep their recorded method. An incompatible API disables unsupported editing.
 
 <span id="fulfillment-prompt" />
 
