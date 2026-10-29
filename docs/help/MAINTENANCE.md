@@ -955,3 +955,22 @@ those services are not revalidated. Export and copy the identical public corpus
 before scanning API evidence, pin immutable source and documentation commits,
 validate API before clients, then promote the exact development-tested artifacts
 under the authorized courier correction release workflow.
+
+
+## Compact item sheet local preparation (29 October 2026)
+
+This preparation reviews Web, Admin, Landing and the API's synchronized public
+help corpus on isolated develop-based branches. Product-sheet layout changes and
+Admin's Compact presentation action are documented in FR/HE/EN under
+website-order-design/item-surface and guest-ordering/basket. Authored theme roles,
+fonts, ratios, fit and framing remain the source of truth; only a missing photo
+ratio defaults to 16:9. The isolated editor test publishes only to an in-memory
+fixture. Existing public websites and production settings are never mutated.
+
+POS and Backoffice inventory blocks/surfaces retain their exact evidence from
+Landing develop 359e59e0 and are not revalidated here. Copy the exported public
+corpus to API before scanning. The user authorized commits, development and production deployment on 29 October
+2026. Contracts pin the reviewed immutable Landing commit before remote CI;
+Landing retains its self-reference. Publish the guides with the verified Web/Admin rollout
+and matching support corpus. Source and synthetic browser checks do not certify
+a live order or production deployment.
