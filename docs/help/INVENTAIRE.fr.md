@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-10-29.
+Révision du relevé : 2026-10-18.
 
-105 fiches de fonctionnalités, 794 procédures/sous-fonctionnalités, dont 96 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2234 fichiers applicatifs et 2063 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+105 fiches de fonctionnalités, 799 procédures/sous-fonctionnalités, dont 96 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2240 fichiers applicatifs et 2066 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,10 +10,10 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 584 | 879 | 3888ccdd755f ; versioned |
-| foodyadmin | 770 | 777 | 91be02b5101e ; versioned |
-| foodyweb | 346 | 170 | 3aa7c8fe9b96 ; versioned |
-| foodylanding | 127 | 21 | 6fc7d39c967e ; versioned |
+| foodyserver | 584 | 879 | 6f71829f5a5e ; versioned |
+| foodyadmin | 774 | 779 | b469b9ba27cb ; versioned |
+| foodyweb | 348 | 171 | 4fab33aa2b56 ; versioned |
+| foodylanding | 127 | 21 | 086993b0cc25 ; versioned |
 | foodypos | 363 | 166 | 735f5063e8b0 ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
 
@@ -615,7 +615,7 @@ Identifiant : `preorders`. Public : public. Disponibilité : available. Services
 
 ### [Quantités de production et préparation des colis](../../src/content/help/fr/orders/production-planning.mdx)
 
-Identifiant : `production`. Public : public. Disponibilité : available. Services : foodyadmin, foodypos.
+Identifiant : `production`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodypos.
 
 - [Choisir la date de service](../../src/content/help/fr/orders/production-planning.mdx#scope)
 - [Vérifier quantités et portions](../../src/content/help/fr/orders/production-planning.mdx#quantities)
@@ -813,6 +813,7 @@ Identifiant : `website-qr-customize-your-site`. Public : public. Disponibilité 
 
 - [Ouvrir l’éditeur](../../src/content/help/fr/website-qr/customize-your-site.mdx#section-1)
 - [Enregistrer et publier sont deux actions différentes](../../src/content/help/fr/website-qr/customize-your-site.mdx#section-2)
+- [Vérifier la disponibilité des présentations de campagne](../../src/content/help/fr/website-qr/customize-your-site.mdx#campaign-compatibility)
 - [Menu et commandes](../../src/content/help/fr/website-qr/customize-your-site.mdx#section-3)
 - [Vérifier l’entrée de commande sur mobile](../../src/content/help/fr/website-qr/customize-your-site.mdx#mobile-fulfillment-review)
 - [Accès aux nouveaux réglages](../../src/content/help/fr/website-qr/customize-your-site.mdx#related-service-controls)
@@ -823,6 +824,8 @@ Identifiant : `website-qr-customize-your-site`. Public : public. Disponibilité 
 Identifiant : `website-design`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb.
 
 - [Choisir un thème et les couleurs](../../src/content/help/fr/website-qr/design-and-branding.mdx#theme)
+- [Prévisualiser le modèle Pink Coffee](../../src/content/help/fr/website-qr/design-and-branding.mdx#pink-coffee-template)
+- [Utiliser un grand titre d’affichage](../../src/content/help/fr/website-qr/design-and-branding.mdx#display-headings)
 - [Régler les polices et rôles de texte](../../src/content/help/fr/website-qr/design-and-branding.mdx#fonts)
 - [Cadrer les images des articles](../../src/content/help/fr/website-qr/design-and-branding.mdx#images)
 - [Vérifier l’entrée de commande sur mobile](../../src/content/help/fr/website-qr/design-and-branding.mdx#mobile-fulfillment-review)
@@ -841,11 +844,13 @@ Identifiant : `website-navigation`. Public : public. Disponibilité : available.
 
 ### [Sections, médias et animations](../../src/content/help/fr/website-qr/sections-and-media.mdx)
 
-Identifiant : `website-sections`. Public : public. Disponibilité : available. Services : foodyadmin, foodyweb.
+Identifiant : `website-sections`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb.
 
 - [Ajouter, déplacer et masquer les sections](../../src/content/help/fr/website-qr/sections-and-media.mdx#structure)
 - [Rédiger et sélectionner le contenu](../../src/content/help/fr/website-qr/sections-and-media.mdx#content)
 - [Régler images et vidéo](../../src/content/help/fr/website-qr/sections-and-media.mdx#media)
+- [Créer une bannière de campagne en carrousel](../../src/content/help/fr/website-qr/sections-and-media.mdx#campaign-hero)
+- [Régler la grille des articles mis en avant](../../src/content/help/fr/website-qr/sections-and-media.mdx#campaign-featured-grid)
 - [Prévisualiser les animations](../../src/content/help/fr/website-qr/sections-and-media.mdx#motion)
 - [Vérifier l’entrée de commande sur mobile](../../src/content/help/fr/website-qr/sections-and-media.mdx#mobile-fulfillment-review)
 - [Accès aux nouveaux réglages](../../src/content/help/fr/website-qr/sections-and-media.mdx#related-service-controls)

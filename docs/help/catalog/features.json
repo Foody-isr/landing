@@ -4710,6 +4710,19 @@
         }
       },
       {
+        "id": "campaign-compatibility",
+        "title": {
+          "en": "Check availability of campaign presentations",
+          "fr": "Vérifier la disponibilité des présentations de campagne",
+          "he": "בדיקת זמינות של תצוגות קמפיין"
+        },
+        "instructions": {
+          "en": "Pink Coffee, the Campaign hero/card presentation and Display headings require a compatible public Website version before Admin enables their controls. If a control is unavailable or publication reports an incompatible public renderer, keep the draft, ask Foody to update the matching Website version, then reload the editor and review the preview again. Existing presentations retain their normal editing and publication flow. A saved draft or gallery preview is not a production release. Configure the new options in [design and branding](/en/help/website-qr/design-and-branding#pink-coffee-template) and [sections and media](/en/help/website-qr/sections-and-media#campaign-hero), then publish only after checking desktop, mobile, links and item choices.",
+          "fr": "Pink Coffee, les présentations Campagne de bannière et de cartes et les titres Affichage nécessitent un site client compatible avant l’activation de leurs contrôles dans l’Admin. Si un contrôle est indisponible ou si la publication signale un rendu public incompatible, conservez le brouillon, faites mettre à jour la version correspondante du site client par Foody, puis rechargez l’éditeur et vérifiez de nouveau l’aperçu. Les présentations existantes conservent leur parcours habituel de modification et publication. Un brouillon enregistré ou un aperçu de galerie ne constitue pas une mise en production. Réglez les nouvelles options dans [apparence et identité](/fr/help/website-qr/design-and-branding#pink-coffee-template) et [sections et médias](/fr/help/website-qr/sections-and-media#campaign-hero), puis publiez après contrôle de l’ordinateur, du mobile, des liens et des choix d’articles.",
+          "he": "Pink Coffee, תצוגות הקמפיין לבאנר ולכרטיסים וכותרות תצוגה גדולה דורשים גרסה תואמת של אתר הלקוחות לפני הפעלת הפקדים ב-Admin. אם פקד אינו זמין או שהפרסום מדווח על תצוגה ציבורית לא תואמת, שמרו את הטיוטה, בקשו מ-Foody לעדכן את גרסת אתר הלקוחות המתאימה, טענו מחדש את העורך ובדקו שוב את התצוגה המקדימה. תצוגות קיימות שומרות על מסלול העריכה והפרסום הרגיל. טיוטה שמורה או תצוגת גלריה אינן גרסת ייצור. הגדירו את האפשרויות החדשות ב[עיצוב ומיתוג](/he/help/website-qr/design-and-branding#pink-coffee-template) וב[מקטעים ומדיה](/he/help/website-qr/sections-and-media#campaign-hero), ופרסמו לאחר בדיקת מחשב, נייד, קישורים ובחירות פריטים."
+        }
+      },
+      {
         "id": "section-3",
         "level": 2,
         "title": {
@@ -4766,7 +4779,7 @@
     "audience": "public",
     "status": "available",
     "preserveExisting": true,
-    "procedureUpdatedAt": "2026-10-25"
+    "procedureUpdatedAt": "2026-10-29"
   },
   {
     "id": "menu-modifiers",
@@ -7988,10 +8001,13 @@
         "src/components/website-v3/*Typography*.tsx",
         "src/components/website-v3/ItemImageFramingEditor.tsx",
         "src/components/website-menu/**",
-        "src/lib/website-fonts.ts"
+        "src/lib/website-fonts.ts",
+        "src/lib/website-v3/restaurant-theme*.ts",
+        "src/components/website-v3/ElementInspector.tsx"
       ],
       "foodyweb": [
-        "components/website-v3/**"
+        "components/website-v3/**",
+        "components/sections/typography.ts"
       ],
       "foodyserver": [
         "internal/support/corpus.json"
@@ -8009,6 +8025,32 @@
           "en": "Select the theme, brand color and color style. Use custom background, text, muted, accent and divider colors where offered. Check text contrast on every background. A section override affects that section; site settings provide inherited defaults.",
           "fr": "Choisissez le thème, la couleur de marque et le style de couleurs. Réglez fond, texte, texte secondaire, accent et séparateurs lorsque ces champs sont proposés. Vérifiez la lisibilité sur chaque fond. Une surcharge de section ne modifie que cette section ; le site fournit les valeurs héritées.",
           "he": "בחרו ערכה, צבע מותג וסגנון צבעים. הגדירו רקע, טקסט, טקסט משני, הדגשה וקווים בשדות הזמינים. בדקו ניגודיות בכל רקע. הגדרת מקטע משנה אותו בלבד; הגדרות האתר הן ברירת המחדל."
+        }
+      },
+      {
+        "id": "pink-coffee-template",
+        "title": {
+          "en": "Preview the Pink Coffee template",
+          "fr": "Prévisualiser le modèle Pink Coffee",
+          "he": "תצוגה מקדימה של תבנית Pink Coffee"
+        },
+        "instructions": {
+          "en": "Pink Coffee requires the compatible Website and Admin release. If it is not offered, ask Foody to confirm availability before changing the site. In Site design → Website themes, select Pink Coffee and Preview. Review the home page, order page, shared colors, fonts, navigation and existing content before choosing Apply theme. The template stages a short home page with a campaign hero and featured items, plus an order page; it does not create catalogue items, prices or payment settings. Replace the sample copy and media with your own, select the real items to feature and check the order-page menu association. Applying a template changes the draft only. Wait for saving, review desktop and mobile, then publish deliberately. See [sections and media](/en/help/website-qr/sections-and-media#campaign-hero).",
+          "fr": "Pink Coffee nécessite les versions compatibles du site client et de l’Admin. Si le modèle n’est pas proposé, faites confirmer sa disponibilité par Foody avant de modifier le site. Dans Design du site → Thèmes du site, choisissez Pink Coffee puis Aperçu. Vérifiez accueil, commande, couleurs, polices, navigation et contenus existants avant Appliquer le thème. Le modèle prépare un accueil court avec une bannière de campagne et des articles mis en avant, ainsi qu’une page de commande ; il ne crée ni articles, ni prix, ni réglages de paiement. Remplacez textes et médias d’exemple, choisissez les vrais articles à mettre en avant et vérifiez la carte associée à la page de commande. Appliquer un modèle modifie uniquement le brouillon. Attendez l’enregistrement, contrôlez ordinateur et mobile, puis publiez volontairement. Voir [sections et médias](/fr/help/website-qr/sections-and-media#campaign-hero).",
+          "he": "Pink Coffee דורשת גרסאות תואמות של אתר הלקוחות ושל Admin. אם התבנית אינה מוצעת, בקשו מ-Foody לאשר זמינות לפני שינוי האתר. בעיצוב האתר → ערכות עיצוב בחרו Pink Coffee ותצוגה מקדימה. בדקו את דף הבית, דף ההזמנות, הצבעים, הגופנים, הניווט והתוכן הקיים לפני בחירת החלת העיצוב. התבנית מכינה דף בית קצר עם באנר קמפיין ופריטים מודגשים, וכן דף הזמנות; היא אינה יוצרת פריטי קטלוג, מחירים או הגדרות תשלום. החליפו טקסטים ומדיה לדוגמה בתוכן שלכם, בחרו את הפריטים האמיתיים להדגשה ובדקו את שיוך התפריט לדף ההזמנות. החלת תבנית משנה רק את הטיוטה. המתינו לשמירה, בדקו מחשב ונייד ופרסמו במכוון. ראו [מקטעים ומדיה](/he/help/website-qr/sections-and-media#campaign-hero)."
+        }
+      },
+      {
+        "id": "display-headings",
+        "title": {
+          "en": "Use a larger display heading",
+          "fr": "Utiliser un grand titre d’affichage",
+          "he": "שימוש בכותרת תצוגה גדולה"
+        },
+        "instructions": {
+          "en": "In a section’s title appearance controls, choose Display when the compatible release offers it. This size is intended for short presentation headings and adapts to mobile and desktop; it does not change the chosen font or text color. Keep the essential message outside images, check long titles and Hebrew direction, and compare both previews before publishing. Return to the previous size if the larger heading overwhelms the content.",
+          "fr": "Dans les réglages d’apparence du titre d’une section, choisissez Affichage lorsque la version compatible le propose. Cette taille convient aux titres de présentation courts et s’adapte au mobile et à l’ordinateur ; elle ne change ni la police ni la couleur choisie. Gardez le message essentiel hors des images, vérifiez les titres longs et le sens hébreu, puis comparez les deux aperçus avant publication. Revenez à la taille précédente si le titre prend trop de place.",
+          "he": "בפקדי המראה של כותרת מקטע בחרו תצוגה גדולה כאשר הגרסה התואמת מציעה אותו. הגודל מיועד לכותרות הצגה קצרות ומותאם לנייד ולמחשב; הוא אינו משנה את הגופן או צבע הטקסט שנבחרו. השאירו את המסר החשוב מחוץ לתמונות, בדקו כותרות ארוכות וכיווניות בעברית והשוו בין התצוגות לפני פרסום. חזרו לגודל הקודם אם הכותרת תופסת מקום רב מדי."
         }
       },
       {
@@ -8080,7 +8122,7 @@
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-25"
+    "procedureUpdatedAt": "2026-10-29"
   },
   {
     "id": "website-navigation",
@@ -8200,7 +8242,18 @@
         "src/components/website-v3/*Appearance*.tsx",
         "src/components/website-v3/*Animation*.tsx",
         "src/components/website-v3/*Video*.tsx",
-        "src/components/website-v3/FeaturedItemsEditor.tsx"
+        "src/components/website-v3/FeaturedItemsEditor.tsx",
+        "src/components/website-v3/CampaignSlidesEditor.tsx",
+        "src/components/website-v3/CampaignRuntimeContext.tsx",
+        "src/lib/website-v3/campaign.ts",
+        "src/lib/website-v3/editor-elements.ts",
+        "src/components/website-v3/EditorSidebar.tsx",
+        "src/components/website-v3/ElementInspector.tsx",
+        "src/components/website-v3/WebsiteV3Builder.tsx",
+        "src/lib/website-v3/runtime-capabilities.ts",
+        "src/lib/website-v3/state.ts",
+        "src/lib/website-v3/square-components.ts",
+        "src/lib/i18n.tsx"
       ],
       "foodyweb": [
         "components/website-v3/**",
@@ -8208,7 +8261,16 @@
         "components/Restaurant*.tsx",
         "components/SiteNavbar*.tsx",
         "components/PoweredByFoody.tsx",
-        "lib/themes/**"
+        "lib/themes/**",
+        "lib/preview/websiteV3Capabilities.ts",
+        "lib/campaignHero.ts",
+        "lib/preview/editorElements.ts",
+        "lib/preview/editorInteractions.ts",
+        "app/globals.css",
+        "lib/i18n.tsx"
+      ],
+      "foodyserver": [
+        "internal/support/corpus.json"
       ]
     },
     "operations": [
@@ -8249,6 +8311,32 @@
           "en": "Upload or select media, adjust fit, overlay, background, width, height and spacing where available. For video choose controls, autoplay, loop and muted state. Browsers can restrict autoplay; check the actual mobile page and retain readable text while media loads.",
           "fr": "Importez ou sélectionnez un média, puis réglez ajustement, voile, fond, largeur, hauteur et espacement proposés. Pour une vidéo, choisissez contrôles, lecture automatique, boucle et son coupé. Les navigateurs peuvent limiter la lecture automatique ; vérifiez le mobile et gardez le texte lisible pendant le chargement.",
           "he": "העלו או בחרו מדיה והגדירו התאמה, שכבה, רקע, רוחב, גובה וריווח. בסרטון בחרו פקדים, הפעלה אוטומטית, לולאה והשתקה. דפדפנים מגבילים הפעלה אוטומטית; בדקו בנייד ושמרו טקסט קריא בטעינה."
+        }
+      },
+      {
+        "id": "campaign-hero",
+        "title": {
+          "en": "Create a campaign hero carousel",
+          "fr": "Créer une bannière de campagne en carrousel",
+          "he": "יצירת באנר קמפיין בקרוסלה"
+        },
+        "instructions": {
+          "en": "This layout requires the compatible Website and Admin release. Select a Hero section and choose Campaign under Layout. Open Slides, add up to six slides and use the up/down controls to set their order. For each slide, select a photo or video, add image alternative text and edit the title, subtitle, button text/link and background. Choose Show the whole image to keep a whole cup or product, or Fill the panel; check the resulting crop on both screen sizes. The rounded panels can show a glimpse of the next slide. Autoplay is off by default; if enabled, set the slide duration from 5 to 30 seconds. Previous/next and a persistent play/pause control remain available. Editor preview stays static. Automatic progression and video pause during hover, focus, dragging, when the section is offscreen or the tab is hidden. Reduced motion prevents automation until an explicit play action. Review keyboard use and both motion preferences. Browser restrictions can prevent automatic video playback. Keep essential information and the order link readable without motion. Wait for draft saving and publish only after checking every slide; if the public view is unsupported, confirm the matching Website release before publishing.",
+          "fr": "Cette disposition nécessite les versions compatibles du site client et de l’Admin. Sélectionnez une section Bannière et choisissez Campagne dans Disposition. Ouvrez Diapositives, ajoutez jusqu’à six diapositives et réordonnez-les avec les flèches haut/bas. Pour chacune, choisissez une photo ou une vidéo, renseignez le texte alternatif de l’image puis titre, sous-titre, texte/lien du bouton et fond. Choisissez Afficher l’image entière pour conserver un gobelet ou produit entier, ou Remplir le panneau ; contrôlez le recadrage sur les deux formats. Les panneaux arrondis peuvent laisser entrevoir la diapositive suivante. La lecture automatique est désactivée par défaut ; si vous l’activez, réglez la durée de 5 à 30 secondes. Précédent/suivant et un contrôle lecture/pause permanent restent disponibles. L’aperçu d’édition reste statique. Le défilement et les vidéos automatiques s’arrêtent au survol, au focus, pendant le glissement, hors écran ou lorsque l’onglet est masqué. Le mouvement réduit empêche l’automatisme jusqu’à une demande explicite de lecture. Vérifiez le clavier et les deux préférences de mouvement. Le navigateur peut limiter la lecture vidéo automatique. Gardez les informations essentielles et le lien de commande lisibles sans animation. Attendez l’enregistrement et publiez après vérification de chaque diapositive ; si le site client ne prend pas cette disposition en charge, faites confirmer sa version compatible avant publication.",
+          "he": "פריסה זו דורשת גרסאות תואמות של אתר הלקוחות ושל Admin. בחרו מקטע באנר ובפריסה בחרו קמפיין. פתחו שקופיות, הוסיפו עד שש שקופיות וסדרו אותן באמצעות פקדי מעלה ומטה. לכל שקופית בחרו תמונה או סרטון, הוסיפו טקסט חלופי לתמונה וערכו כותרת, כותרת משנה, טקסט וקישור לכפתור ורקע. בחרו הצגת התמונה המלאה כדי להציג כוס או מוצר בשלמותם, או מילוי המסגרת; בדקו את החיתוך בשני גדלי המסך. לוחות מעוגלים יכולים לחשוף חלק מהשקופית הבאה. ההפעלה האוטומטית כבויה כברירת מחדל; אם מפעילים אותה, הגדירו משך של 5 עד 30 שניות. קודם/הבא ופקד הפעלה/השהיה קבוע נשארים זמינים. התצוגה המקדימה לעריכה נשארת סטטית. ההתקדמות והסרטונים האוטומטיים מושהים בריחוף, במיקוד, בגרירה, כשהמקטע מחוץ למסך או כשהכרטיסייה מוסתרת. צמצום תנועה מונע הפעלה אוטומטית עד לבחירת הפעלה מפורשת. בדקו שימוש במקלדת ואת שתי העדפות התנועה. הדפדפן עשוי להגביל הפעלה אוטומטית של סרטון. השאירו מידע חיוני וקישור להזמנה קריאים ללא תנועה. המתינו לשמירת הטיוטה ופרסמו רק לאחר בדיקת כל שקופית; אם אתר הלקוחות אינו תומך בפריסה, אשרו את הגרסה התואמת לפני פרסום."
+        }
+      },
+      {
+        "id": "campaign-featured-grid",
+        "title": {
+          "en": "Set the featured product grid",
+          "fr": "Régler la grille des articles mis en avant",
+          "he": "הגדרת רשת הפריטים המודגשים"
+        },
+        "instructions": {
+          "en": "On a compatible release, select the featured-items section, open Layout and color, and choose Campaign under Card presentation. Set the desktop columns and Mobile columns separately; Pink Coffee starts with four columns on desktop and two on mobile. Set the image background and optional alternating image background, then review the rounded image cards, names, descriptions, prices and order buttons. Choose actual catalogue items; the presentation does not create menu visibility or bypass availability, required sizes and modifiers. Check that selecting an item opens the correct item and retains its choices. If an item is absent, review its active status, menu-group membership and channel before changing the design.",
+          "fr": "Sur une version compatible, sélectionnez la section d’articles mis en avant, ouvrez Disposition et couleurs puis choisissez Campagne dans Présentation des cartes. Réglez séparément les colonnes ordinateur et Colonnes sur mobile ; Pink Coffee commence avec quatre colonnes sur ordinateur et deux sur mobile. Choisissez le fond d’image et, si utile, son fond alterné, puis vérifiez images arrondies, noms, descriptions, prix et boutons de commande. Sélectionnez de vrais articles du catalogue ; cette présentation ne publie pas les articles dans une carte et ne contourne ni disponibilité, ni tailles ou modificateurs obligatoires. Vérifiez que la sélection ouvre le bon article et conserve ses choix. Pour un article absent, contrôlez statut actif, groupe de carte et canal avant de modifier le design.",
+          "he": "בגרסה תואמת בחרו את מקטע הפריטים המודגשים, פתחו פריסה וצבע ובחרו קמפיין בתצוגת כרטיסים. הגדירו בנפרד עמודות למחשב ועמודות בנייד; Pink Coffee מתחילה בארבע עמודות במחשב ובשתיים בנייד. בחרו רקע לתמונה ורקע מתחלף לפי הצורך, ובדקו תמונות מעוגלות, שמות, תיאורים, מחירים וכפתורי הזמנה. בחרו פריטי קטלוג אמיתיים; ההצגה אינה מפרסמת פריטים בתפריט ואינה עוקפת זמינות, גדלים או תוספות חובה. בדקו שבחירת פריט פותחת את הפריט הנכון ושומרת על בחירותיו. אם פריט חסר, בדקו שהוא פעיל, משויך לקבוצת תפריט ולערוץ המתאים לפני שינוי העיצוב."
         }
       },
       {
@@ -8307,7 +8395,7 @@
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-21"
+    "procedureUpdatedAt": "2026-10-29"
   },
   {
     "id": "website-order-design",
