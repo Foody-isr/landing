@@ -11,7 +11,7 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
 | foodyserver | 590 | 879 | 2d139a2e32c4 ; versioned |
-| foodyadmin | 777 | 805 | 49a96dd4f4a1 ; versioned |
+| foodyadmin | 777 | 805 | c47e94ef78ad ; versioned |
 | foodyweb | 348 | 171 | ae0e952036c5 ; versioned |
 | foodylanding | 127 | 21 | 086993b0cc25 ; versioned |
 | foodypos | 363 | 166 | 735f5063e8b0 ; versioned |
