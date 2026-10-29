@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-18.
 
-105 fiches de fonctionnalités, 799 procédures/sous-fonctionnalités, dont 96 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2240 fichiers applicatifs et 2074 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+105 fiches de fonctionnalités, 800 procédures/sous-fonctionnalités, dont 96 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2242 fichiers applicatifs et 2091 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,9 +10,9 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 584 | 879 | 6f71829f5a5e ; versioned |
-| foodyadmin | 774 | 787 | 312fe721588d ; versioned |
-| foodyweb | 348 | 171 | 4fab33aa2b56 ; versioned |
+| foodyserver | 584 | 879 | 2992eb6f2dad ; versioned |
+| foodyadmin | 776 | 804 | e5bc17932f42 ; versioned |
+| foodyweb | 348 | 171 | 3695bb4a2dc7 ; versioned |
 | foodylanding | 127 | 21 | 086993b0cc25 ; versioned |
 | foodypos | 363 | 166 | 735f5063e8b0 ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
@@ -834,7 +834,7 @@ Identifiant : `website-design`. Public : public. Disponibilité : available. Ser
 
 ### [En-tête, navigation et pied de page](../../src/content/help/fr/website-qr/navigation-and-footer.mdx)
 
-Identifiant : `website-navigation`. Public : public. Disponibilité : available. Services : foodyadmin, foodyweb.
+Identifiant : `website-navigation`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb.
 
 - [Configurer l’en-tête](../../src/content/help/fr/website-qr/navigation-and-footer.mdx#header)
 - [Gérer les liens et le bouton principal](../../src/content/help/fr/website-qr/navigation-and-footer.mdx#links)
@@ -850,6 +850,7 @@ Identifiant : `website-sections`. Public : public. Disponibilité : available. S
 - [Rédiger et sélectionner le contenu](../../src/content/help/fr/website-qr/sections-and-media.mdx#content)
 - [Régler images et vidéo](../../src/content/help/fr/website-qr/sections-and-media.mdx#media)
 - [Créer une bannière de campagne en carrousel](../../src/content/help/fr/website-qr/sections-and-media.mdx#campaign-hero)
+- [Régler les panneaux et les commandes du carrousel](../../src/content/help/fr/website-qr/sections-and-media.mdx#campaign-layout-controls)
 - [Régler la grille des articles mis en avant](../../src/content/help/fr/website-qr/sections-and-media.mdx#campaign-featured-grid)
 - [Prévisualiser les animations](../../src/content/help/fr/website-qr/sections-and-media.mdx#motion)
 - [Vérifier l’entrée de commande sur mobile](../../src/content/help/fr/website-qr/sections-and-media.mdx#mobile-fulfillment-review)
