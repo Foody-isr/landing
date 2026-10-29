@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - orders
   - orders-internal-sumit-checkout
-updatedAt: '2026-10-28'
+updatedAt: '2026-10-29'
 featureId: orders-internal-sumit-checkout
 audience: public
 releaseStatus: available
@@ -23,6 +23,12 @@ On compatible API, Admin and guest Web versions, these two choices appear only w
 ## Send the customer a Foody basket link
 
 Choose Foody payment link and Create order. The admin does not have to fill in the customer’s name, phone or address. Copy the private Foody link and share it only with the intended customer. The recipient sees the prepared items, chosen options, total, discount, service date and delivery fee; they enter their own name and phone, optional email, and the delivery address when needed. Items, discounts and service date are prepared by the restaurant. For delivery, enter the address and choose Calculate delivery and total. Foody checks the restaurant’s delivery zone, service availability and minimum, recalculates delivery fees and applicable discounts, and displays the final total. Review it, then choose Pay securely with Sumit. A changed fee requires another review; the client cannot set their own fee. Contact the restaurant for an unavailable service date. Pickup proceeds directly to Sumit’s hosted form. The link expires 24 hours after creation; the background cancellation process releases an expired unpaid basket’s stock reservations. A paid order offers View order and cannot start another payment.
+
+<span id="sumit-shared-storefront-cart" />
+
+## Use the restaurant’s existing cart and theme
+
+The private link opens the same cart page as the restaurant website, with its logo, colors, fonts and published order-page settings. Review the basket, then choose Continue to payment to use the existing checkout form. The restaurant’s published fields and labels are reused; custom answers and notes are saved on this order. Prepared items, prices, discount and service date stay fixed. A personal basket already in the browser is kept separately. This link does not load an account, saved address or saved card. For delivery, calculate and review the final amount; changing the address requires a new calculation. Once payment has started, resuming retains the bound contact details without collecting them again. Previously created Foody links also enter this journey.
 
 <span id="sumit-admin-hosted-card" />
 

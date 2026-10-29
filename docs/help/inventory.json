@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-10-18",
+  "reviewedAt": "2026-10-29",
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "e3227eaee27c93f5ebbb1b011db2d6e75405a363",
+      "sourceCommit": "1790cfcb41beb52e8b84d064b16ee6579ed344aa",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "3aa2663fc6950db7057115b778d3cd8170d8de2f3cbeb7daa624cf28051cf673",
+      "sourceSnapshot": "51343da7e2b2f583407f30802b1be57312ba9feb4e55c787d3215675b2f1c140",
       "workingTreeHasChanges": false,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -3157,7 +3157,7 @@
           ]
         },
         "internal/payment/internal_checkout.go": {
-          "sha256": "37e5d5c6bde45787263624305e070a34d3dc2a45bab330d8ad7e5543c4c77832",
+          "sha256": "70ce25110bf16381dd5574f5f2b7a9c8ba0651f46442166628d3374a8491c611",
           "features": [
             "payments-how-payments-work",
             "pos-payments",
@@ -4403,7 +4403,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "95fcd532a72192572cb460ff51cf3c621583a6fc32ab6117b7ebb599a187419f",
+          "sha256": "e4db1e3977e223a3a87eebe86c4c49598bea8ff7bfb0ea2347e10b7f7db5767a",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -10167,9 +10167,9 @@
     },
     "foodyweb": {
       "repository": "https://github.com/Foody-isr/web",
-      "sourceCommit": "31eafb06d43a6e727985296f0b11a4c64d8b5f69",
+      "sourceCommit": "eabb23987e976a8ff7aa5c55bb1cb037f8d81acb",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "658a348bc395f03bab1d9694d49682d3c3c7534d166c4f627bdb4beaeb8a2f00",
+      "sourceSnapshot": "e1400074fe691d1a73a6aa83468c93a16fcdcc8569ad37683b8a076c21462751",
       "workingTreeHasChanges": false,
       "sourceFiles": {
         "app/@cart/(.)order/cart/page.tsx": {
@@ -10285,9 +10285,10 @@
           ]
         },
         "app/order/checkout/CheckoutFlow.tsx": {
-          "sha256": "4c451bc0230ba3285737352a0e0695ac28597c714a7456e0a17d9b09ca0ba9b2",
+          "sha256": "7568fc5de675bcf45008aa89310416a4e191ebd0de03cda229a640d0c8aa810b",
           "features": [
-            "guest-ordering"
+            "guest-ordering",
+            "orders-internal-sumit-checkout"
           ]
         },
         "app/order/checkout/page.tsx": {
@@ -10311,7 +10312,7 @@
           ]
         },
         "app/order/layout.tsx": {
-          "sha256": "cf959f4e05dee75fc86ead182086177848cdb8d7fde46e256a5e9840f4060df9",
+          "sha256": "4fa52393d4ecec4678fd4a784c924438eb7c3c060e0905f598f58436bc85c7f7",
           "features": [
             "shared-runtime"
           ]
@@ -10446,7 +10447,7 @@
           ]
         },
         "app/r/[restaurantId]/payment/checkout/[orderId]/page.tsx": {
-          "sha256": "2fc56835b14e1266d2b05738d0deb618a997003fa8900a00776a1be5524c2189",
+          "sha256": "c594e2a312702efe2ef7936c5914c8ff24e997a1372c1310cbd23d73c113888d",
           "features": [
             "payments-how-payments-work",
             "guest-account-tracking",
@@ -10576,9 +10577,10 @@
           ]
         },
         "components/CartOverlayController.tsx": {
-          "sha256": "6678d74333ab61ac9e3137499588848a51b3ee0b4d8aca3cdf19fa2aec069f92",
+          "sha256": "ea116748ef7fd79a1f55dabece0206fcbe3a935dda9c01b01924227cd94f4988",
           "features": [
-            "guest-ordering"
+            "guest-ordering",
+            "orders-internal-sumit-checkout"
           ]
         },
         "components/CategorySidebar.tsx": {
@@ -10710,9 +10712,10 @@
           ]
         },
         "components/CommerceOrderSummary.tsx": {
-          "sha256": "c068f0f4713f4de5a4e7c0873f5cc1fd970af01fc0c051b19dd76c1242320c54",
+          "sha256": "f7b4ae25e12b85e9a7407c90b74e0460dbaf1b867cb0702598e8592a61d54d9d",
           "features": [
-            "guest-ordering"
+            "guest-ordering",
+            "orders-internal-sumit-checkout"
           ]
         },
         "components/CommercePreviewProvider.tsx": {
@@ -11824,7 +11827,7 @@
           ]
         },
         "lib/internal-checkout.ts": {
-          "sha256": "bbdda6a1c2e5ffc1f38160cb15c84128f9e70a4601f72c2204e3e4b089cdf4c3",
+          "sha256": "33ad57c4684f9a5513b9958bc31d01527da0085e9b4f101d85e246146c5daa0b",
           "features": [
             "shared-runtime",
             "orders-internal-sumit-checkout"
@@ -12237,6 +12240,13 @@
             "shared-runtime"
           ]
         },
+        "lib/usePreparedCheckout.ts": {
+          "sha256": "450084bfe83fd3614c1a8345788ce54cae7d94023f6b90ab26399c458c434229",
+          "features": [
+            "shared-runtime",
+            "orders-internal-sumit-checkout"
+          ]
+        },
         "lib/useRestaurantIdentityHidden.ts": {
           "sha256": "e0e50750f16fa58258b294157930d442c0a00c1a31f5a4a37ac43fd86fde4c6b",
           "features": [
@@ -12375,7 +12385,7 @@
           ]
         },
         "services/api.ts": {
-          "sha256": "91c31107660cbd1299375352f03a1b94d21dffce382d678290117837ae06a77f",
+          "sha256": "213d32fb29c877fd0ebc3310471d2657661baccf3da04b191976178ce146663d",
           "features": [
             "guest-ordering",
             "guest-catering",
@@ -26698,12 +26708,25 @@
             "fr": "Les versions compatibles proposent un lien de panier Foody réservé à Sumit et la saisie de carte hébergée depuis Admin. Le choix du lien permet au destinataire de compléter ses coordonnées. Le panier préparé reste figé en attente du paiement ; vérifiez la commande enregistrée avant de reprendre. Voir [la procédure Sumit complète](/fr/help/orders/internal-sumit-checkout). Publiez cette procédure avec les versions API, Admin et Web client correspondantes.",
             "he": "בגרסאות תואמות זמינים קישור לסל Foody ל־Sumit בלבד והזנת כרטיס בטופס מאוחסן מתוך הניהול. בקישור הנמען יכול להשלים את פרטיו. הסל המוכן נשאר נעול בהמתנה לתשלום; בדקו את ההזמנה השמורה לפני המשך. ראו [הנוהל המלא ל־Sumit](/he/help/orders/internal-sumit-checkout). יש לפרסם את ההנחיות יחד עם גרסאות ה־API, הניהול ואתר הלקוחות התואמות."
           }
+        },
+        {
+          "id": "prepared-order-existing-cart",
+          "title": {
+            "fr": "Panier préparé et présentation du restaurant",
+            "en": "Prepared basket and restaurant presentation",
+            "he": "סל מוכן ועיצוב המסעדה"
+          },
+          "instructions": {
+            "fr": "Un lien privé de commande préparée Sumit rejoint le panier habituel du restaurant, puis son formulaire de paiement avec les couleurs, polices et champs publiés. Le panier personnel du navigateur reste conservé ; les articles, prix et date préparés sont figés. Les coordonnées et réponses demandées concernent cette commande, sans chargement d’un compte ou d’une carte enregistrée. Les réponses personnalisées sont liées lors de la première ouverture du paiement. Les frais de livraison sont recalculés puis vérifiés avant paiement. Voir la [procédure Sumit](/fr/help/orders/internal-sumit-checkout).",
+            "en": "A private Sumit prepared-order link enters the restaurant’s existing cart, then its checkout with the published colors, fonts and fields. The personal browser basket is retained; prepared items, prices and date stay fixed. Contact details and requested answers belong to this order, without loading an account or saved card. Custom answers bind when payment first opens. Delivery fees are recalculated and reviewed before payment. See the [Sumit procedure](/en/help/orders/internal-sumit-checkout).",
+            "he": "קישור פרטי להזמנה מוכנה ב־Sumit נכנס לסל הרגיל של המסעדה ומשם לטופס התשלום עם הצבעים, הגופנים והשדות שפורסמו. הסל האישי בדפדפן נשמר; הפריטים, המחירים והמועד שהוכנו נשארים קבועים. פרטי הקשר והתשובות המבוקשות שייכים להזמנה זו, בלי לטעון חשבון או כרטיס שמור. תשובות מותאמות נקשרות בפתיחת התשלום הראשונה. דמי המשלוח מחושבים מחדש ונבדקים לפני התשלום. ראו [הוראות Sumit](/he/help/orders/internal-sumit-checkout)."
+          }
         }
       ],
       "audience": "public",
       "status": "available",
       "preserveExisting": true,
-      "procedureUpdatedAt": "2026-10-28",
+      "procedureUpdatedAt": "2026-10-29",
       "updatedAt": "2026-10-20",
       "evidence": [
         {
@@ -41357,12 +41380,25 @@
             "fr": "Un article peut afficher plusieurs photos. Consultez [Photos des produits](/fr/help/menu/product-photos) pour ajouter des photos, choisir la principale et utiliser les bulles, les flèches ou le balayage horizontal dans la fiche produit. Une photo unique n’affiche pas de commandes de galerie.",
             "he": "לפריט יכולות להיות כמה תמונות. ראו [תמונות מוצרים](/he/help/menu/product-photos) להוספת תמונות, לבחירת הראשית ולשימוש בנקודות, בחצים או בהחלקה אופקית בפרטי המוצר. לתמונה יחידה אין פקדי גלריה."
           }
+        },
+        {
+          "id": "prepared-order-existing-cart",
+          "title": {
+            "fr": "Panier préparé et présentation du restaurant",
+            "en": "Prepared basket and restaurant presentation",
+            "he": "סל מוכן ועיצוב המסעדה"
+          },
+          "instructions": {
+            "fr": "Un lien privé de commande préparée Sumit rejoint le panier habituel du restaurant, puis son formulaire de paiement avec les couleurs, polices et champs publiés. Le panier personnel du navigateur reste conservé ; les articles, prix et date préparés sont figés. Les coordonnées et réponses demandées concernent cette commande, sans chargement d’un compte ou d’une carte enregistrée. Les réponses personnalisées sont liées lors de la première ouverture du paiement. Les frais de livraison sont recalculés puis vérifiés avant paiement. Voir la [procédure Sumit](/fr/help/orders/internal-sumit-checkout).",
+            "en": "A private Sumit prepared-order link enters the restaurant’s existing cart, then its checkout with the published colors, fonts and fields. The personal browser basket is retained; prepared items, prices and date stay fixed. Contact details and requested answers belong to this order, without loading an account or saved card. Custom answers bind when payment first opens. Delivery fees are recalculated and reviewed before payment. See the [Sumit procedure](/en/help/orders/internal-sumit-checkout).",
+            "he": "קישור פרטי להזמנה מוכנה ב־Sumit נכנס לסל הרגיל של המסעדה ומשם לטופס התשלום עם הצבעים, הגופנים והשדות שפורסמו. הסל האישי בדפדפן נשמר; הפריטים, המחירים והמועד שהוכנו נשארים קבועים. פרטי הקשר והתשובות המבוקשות שייכים להזמנה זו, בלי לטעון חשבון או כרטיס שמור. תשובות מותאמות נקשרות בפתיחת התשלום הראשונה. דמי המשלוח מחושבים מחדש ונבדקים לפני התשלום. ראו [הוראות Sumit](/he/help/orders/internal-sumit-checkout)."
+          }
         }
       ],
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-10-27",
+      "procedureUpdatedAt": "2026-10-29",
       "evidence": [
         {
           "service": "foodyserver",
@@ -41790,12 +41826,25 @@
             "fr": "Un lien Foody privé préparé par le restaurant ouvre son panier sans charger de profil de compte ni d’adresses enregistrées. Renseignez vos coordonnées, vérifiez le total de livraison calculé selon l’adresse puis continuez vers Sumit. Après confirmation du paiement par l’API, les pages habituelles de confirmation et de suivi utilisent le jeton privé de commande. Voir [le parcours Sumit préparé](/fr/help/orders/internal-sumit-checkout).",
             "he": "קישור Foody פרטי שהוכן במסעדה פותח סל בלי לטעון פרופיל חשבון או כתובות שמורות. הזינו פרטים, בדקו סכום משלוח לפי הכתובת והמשיכו ל־Sumit. אחרי אישור התשלום ב־API נפתחים דפי האישור והמעקב הרגילים עם אסימון ההזמנה הפרטי. ראו [תשלום Sumit לסל מוכן](/he/help/orders/internal-sumit-checkout)."
           }
+        },
+        {
+          "id": "prepared-order-existing-cart",
+          "title": {
+            "fr": "Panier préparé et présentation du restaurant",
+            "en": "Prepared basket and restaurant presentation",
+            "he": "סל מוכן ועיצוב המסעדה"
+          },
+          "instructions": {
+            "fr": "Un lien privé de commande préparée Sumit rejoint le panier habituel du restaurant, puis son formulaire de paiement avec les couleurs, polices et champs publiés. Le panier personnel du navigateur reste conservé ; les articles, prix et date préparés sont figés. Les coordonnées et réponses demandées concernent cette commande, sans chargement d’un compte ou d’une carte enregistrée. Les réponses personnalisées sont liées lors de la première ouverture du paiement. Les frais de livraison sont recalculés puis vérifiés avant paiement. Voir la [procédure Sumit](/fr/help/orders/internal-sumit-checkout).",
+            "en": "A private Sumit prepared-order link enters the restaurant’s existing cart, then its checkout with the published colors, fonts and fields. The personal browser basket is retained; prepared items, prices and date stay fixed. Contact details and requested answers belong to this order, without loading an account or saved card. Custom answers bind when payment first opens. Delivery fees are recalculated and reviewed before payment. See the [Sumit procedure](/en/help/orders/internal-sumit-checkout).",
+            "he": "קישור פרטי להזמנה מוכנה ב־Sumit נכנס לסל הרגיל של המסעדה ומשם לטופס התשלום עם הצבעים, הגופנים והשדות שפורסמו. הסל האישי בדפדפן נשמר; הפריטים, המחירים והמועד שהוכנו נשארים קבועים. פרטי הקשר והתשובות המבוקשות שייכים להזמנה זו, בלי לטעון חשבון או כרטיס שמור. תשובות מותאמות נקשרות בפתיחת התשלום הראשונה. דמי המשלוח מחושבים מחדש ונבדקים לפני התשלום. ראו [הוראות Sumit](/he/help/orders/internal-sumit-checkout)."
+          }
         }
       ],
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-10-28",
+      "procedureUpdatedAt": "2026-10-29",
       "evidence": [
         {
           "service": "foodyserver",
@@ -43746,12 +43795,25 @@
             "fr": "La préparation locale des commandes internes Sumit ajoute capacité, panier GET/POST et devis de livraison sous /api/v1/public, avec restaurant explicite et jeton privé de reçu. La création exige orders.manage ; la saisie hébergée dans Admin exige aussi payments.manage. Le fournisseur actif et les identifiants Sumit configurés sont revérifiés avant ouverture. Le devis destinataire utilise zone résolue au serveur, frais, minimum et date conservée ; le paiement compare expected_total_minor à un nouveau total serveur. Une réservation durable lie coordonnées et URL fournisseur. Une création incertaine reste bloquée ; l’expiration utilise l’annulation avec libération du stock. Déployez l’API compatible avant Admin/Web et publiez les guides coordonnés. Voir le parcours Sumit.",
             "he": "ההכנה המקומית להזמנות פנימיות Sumit מוסיפה יכולת, סל GET/POST והצעת משלוח תחת /api/v1/public עם מסעדה מפורשת ואסימון קבלה פרטי. יצירה דורשת orders.manage; הזנת כרטיס מאוחסנת בניהול דורשת גם payments.manage. הספק הפעיל ופרטי Sumit נבדקים שוב לפני פתיחה. הצעת הנמען משתמשת באזור שנפתר בשרת, תעריף, מינימום ומועד שנשמר; התשלום משווה expected_total_minor לסכום שרת חדש. שמירה עמידה קושרת פרטים וכתובת ספק. יצירה לא ודאית נשארת חסומה; תפוגה מבטלת ומשחררת מלאי. יש לפרוס API תואם לפני הניהול ואתר הלקוחות ולפרסם מדריכים מתואמים. ראו נוהל Sumit."
           }
+        },
+        {
+          "id": "prepared-order-existing-cart",
+          "title": {
+            "fr": "Panier préparé et présentation du restaurant",
+            "en": "Prepared basket and restaurant presentation",
+            "he": "סל מוכן ועיצוב המסעדה"
+          },
+          "instructions": {
+            "fr": "Un lien privé de commande préparée Sumit rejoint le panier habituel du restaurant, puis son formulaire de paiement avec les couleurs, polices et champs publiés. Le panier personnel du navigateur reste conservé ; les articles, prix et date préparés sont figés. Les coordonnées et réponses demandées concernent cette commande, sans chargement d’un compte ou d’une carte enregistrée. Les réponses personnalisées sont liées lors de la première ouverture du paiement. Les frais de livraison sont recalculés puis vérifiés avant paiement. Voir la [procédure Sumit](/fr/help/orders/internal-sumit-checkout).",
+            "en": "A private Sumit prepared-order link enters the restaurant’s existing cart, then its checkout with the published colors, fonts and fields. The personal browser basket is retained; prepared items, prices and date stay fixed. Contact details and requested answers belong to this order, without loading an account or saved card. Custom answers bind when payment first opens. Delivery fees are recalculated and reviewed before payment. See the [Sumit procedure](/en/help/orders/internal-sumit-checkout).",
+            "he": "קישור פרטי להזמנה מוכנה ב־Sumit נכנס לסל הרגיל של המסעדה ומשם לטופס התשלום עם הצבעים, הגופנים והשדות שפורסמו. הסל האישי בדפדפן נשמר; הפריטים, המחירים והמועד שהוכנו נשארים קבועים. פרטי הקשר והתשובות המבוקשות שייכים להזמנה זו, בלי לטעון חשבון או כרטיס שמור. תשובות מותאמות נקשרות בפתיחת התשלום הראשונה. דמי המשלוח מחושבים מחדש ונבדקים לפני התשלום. ראו [הוראות Sumit](/he/help/orders/internal-sumit-checkout)."
+          }
         }
       ],
       "audience": "internal",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-10-28",
+      "procedureUpdatedAt": "2026-10-29",
       "updatedAt": "2026-10-28",
       "evidence": [
         {
@@ -48099,6 +48161,10 @@
         },
         {
           "service": "foodyweb",
+          "file": "lib/usePreparedCheckout.ts"
+        },
+        {
+          "service": "foodyweb",
           "file": "lib/useRestaurantIdentityHidden.ts"
         },
         {
@@ -49656,13 +49722,17 @@
           "app/r/[restaurantId]/payment/checkout/**",
           "lib/internal-checkout.ts",
           "services/api.ts",
-          "lib/i18n.tsx"
+          "lib/i18n.tsx",
+          "app/order/checkout/CheckoutFlow.tsx",
+          "lib/usePreparedCheckout.ts",
+          "components/CommerceOrderSummary.tsx",
+          "components/CartOverlayController.tsx"
         ]
       },
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-10-28",
+      "procedureUpdatedAt": "2026-10-29",
       "operations": [
         {
           "id": "sumit-internal-prerequisites",
@@ -49688,6 +49758,19 @@
             "en": "Choose Foody payment link and Create order. The admin does not have to fill in the customer’s name, phone or address. Copy the private Foody link and share it only with the intended customer. The recipient sees the prepared items, chosen options, total, discount, service date and delivery fee; they enter their own name and phone, optional email, and the delivery address when needed. Items, discounts and service date are prepared by the restaurant. For delivery, enter the address and choose Calculate delivery and total. Foody checks the restaurant’s delivery zone, service availability and minimum, recalculates delivery fees and applicable discounts, and displays the final total. Review it, then choose Pay securely with Sumit. A changed fee requires another review; the client cannot set their own fee. Contact the restaurant for an unavailable service date. Pickup proceeds directly to Sumit’s hosted form. The link expires 24 hours after creation; the background cancellation process releases an expired unpaid basket’s stock reservations. A paid order offers View order and cannot start another payment.",
             "fr": "Choisissez Lien de paiement Foody puis Créer la commande. L’admin n’est pas obligé de renseigner nom, téléphone ou adresse du client. Copiez le lien Foody privé et partagez-le uniquement avec le client concerné. Le destinataire voit articles, options, total, remise, date et frais de livraison ; il renseigne son nom et téléphone, son e-mail facultatif et l’adresse si nécessaire. Articles, remise et date sont préparés par le restaurant. En livraison, saisissez l’adresse puis choisissez Calculer la livraison et le total. Foody vérifie la zone, la disponibilité du service et le minimum, recalcule frais et remise applicable, puis affiche le total final. Vérifiez-le avant de choisir Payer avec Sumit. Un tarif modifié nécessite une nouvelle vérification ; le client ne fixe pas ses frais. Pour une date indisponible, contactez le restaurant. Le retrait continue directement vers le formulaire Sumit. Le lien expire 24 heures après sa création ; l’annulation en arrière-plan libère les réservations de stock d’un panier impayé expiré. Une commande payée propose Voir la commande et ne peut pas ouvrir un nouveau paiement.",
             "he": "בחרו קישור לתשלום ב־Foody ואז יצירת הזמנה. המנהל אינו חייב למלא שם, טלפון או כתובת של הלקוח. העתיקו את קישור Foody הפרטי ושתפו אותו רק עם הלקוח המיועד. הנמען רואה פריטים, אפשרויות, סכום, הנחה, מועד ודמי משלוח; הוא מזין שם וטלפון, אימייל לא חובה וכתובת לפי הצורך. הפריטים, ההנחה והמועד מוכנים על ידי המסעדה. במשלוח הזינו כתובת ובחרו חישוב משלוח וסכום סופי. Foody בודק אזור, זמינות השירות ומינימום הזמנה, מחשב מחדש דמי משלוח והנחה רלוונטית ומציג סכום סופי. בדקו אותו לפני תשלום מאובטח ב־Sumit. שינוי תעריף דורש בדיקה נוספת; הלקוח אינו קובע את דמי המשלוח. למועד שאינו זמין פנו למסעדה. איסוף ממשיך ישירות לטופס Sumit. הקישור פג אחרי 24 שעות; תהליך הביטול ברקע משחרר שמירות מלאי של סל שלא שולם ופג תוקפו. הזמנה ששולמה מאפשרת צפייה בהזמנה ואינה פותחת תשלום נוסף."
+          }
+        },
+        {
+          "id": "sumit-shared-storefront-cart",
+          "title": {
+            "fr": "Utiliser le panier et le thème habituels du restaurant",
+            "en": "Use the restaurant’s existing cart and theme",
+            "he": "שימוש בסל ובעיצוב הרגילים של המסעדה"
+          },
+          "instructions": {
+            "fr": "Le lien privé ouvre la même page panier que le site du restaurant, avec son logo, ses couleurs, ses polices et les réglages publiés de la page de commande. Vérifiez le panier puis choisissez Continuer vers le paiement pour accéder au formulaire de paiement habituel. Les champs et libellés publiés par le restaurant sont réutilisés ; les réponses personnalisées et les notes sont enregistrées sur cette commande. Les articles, prix, remise et date préparés restent figés. Votre panier personnel déjà présent dans le navigateur est conservé séparément. Ce lien ne charge pas de compte, d’adresse enregistrée ni de carte mémorisée. En livraison, calculez puis vérifiez le montant final ; une modification d’adresse demande un nouveau calcul. Après l’ouverture du paiement, la reprise conserve les coordonnées déjà liées et ne demande pas de les saisir à nouveau. Les liens Foody déjà créés rejoignent aussi ce parcours.",
+            "en": "The private link opens the same cart page as the restaurant website, with its logo, colors, fonts and published order-page settings. Review the basket, then choose Continue to payment to use the existing checkout form. The restaurant’s published fields and labels are reused; custom answers and notes are saved on this order. Prepared items, prices, discount and service date stay fixed. A personal basket already in the browser is kept separately. This link does not load an account, saved address or saved card. For delivery, calculate and review the final amount; changing the address requires a new calculation. Once payment has started, resuming retains the bound contact details without collecting them again. Previously created Foody links also enter this journey.",
+            "he": "הקישור הפרטי פותח את אותו דף סל של אתר המסעדה, עם הלוגו, הצבעים, הגופנים והגדרות דף ההזמנה שפורסמו. בדקו את הסל ובחרו המשך לתשלום כדי להשתמש בטופס התשלום הרגיל. השדות והתוויות שפרסמה המסעדה משמשים גם כאן; תשובות מותאמות והערות נשמרות בהזמנה זו. הפריטים, המחירים, ההנחה ומועד האספקה שהוכנו נשארים קבועים. סל אישי שכבר נמצא בדפדפן נשמר בנפרד. הקישור אינו טוען חשבון, כתובת שמורה או כרטיס שמור. במשלוח יש לחשב ולבדוק את הסכום הסופי; שינוי כתובת דורש חישוב חדש. אחרי פתיחת התשלום ההמשך שומר את הפרטים שנקשרו ואינו מבקש להזין אותם שוב. גם קישורי Foody שנוצרו קודם מצטרפים למסלול זה."
           }
         },
         {
@@ -49788,6 +49871,10 @@
         },
         {
           "service": "foodyweb",
+          "file": "app/order/checkout/CheckoutFlow.tsx"
+        },
+        {
+          "service": "foodyweb",
           "file": "app/r/[restaurantId]/payment/checkout/[orderId]/layout.tsx"
         },
         {
@@ -49796,11 +49883,23 @@
         },
         {
           "service": "foodyweb",
+          "file": "components/CartOverlayController.tsx"
+        },
+        {
+          "service": "foodyweb",
+          "file": "components/CommerceOrderSummary.tsx"
+        },
+        {
+          "service": "foodyweb",
           "file": "lib/i18n.tsx"
         },
         {
           "service": "foodyweb",
           "file": "lib/internal-checkout.ts"
+        },
+        {
+          "service": "foodyweb",
+          "file": "lib/usePreparedCheckout.ts"
         },
         {
           "service": "foodyweb",
@@ -84692,7 +84791,8 @@
       "service": "foodyweb",
       "source": "app/order/checkout/CheckoutFlow.tsx",
       "features": [
-        "guest-ordering"
+        "guest-ordering",
+        "orders-internal-sumit-checkout"
       ],
       "kind": "ui-controls",
       "labels": [
@@ -84786,6 +84886,13 @@
         "preparationCartDefault",
         "preparationItemCalendar",
         "preparationItemZero",
+        "preparedCheckoutFeePending",
+        "preparedCheckoutFixedBasket",
+        "preparedCheckoutQuoteReady",
+        "preparedCheckoutRefresh",
+        "preparedCheckoutSecure",
+        "preparedCheckoutUnavailable",
+        "preparedCheckoutViewOrder",
         "reduceToN",
         "remove",
         "resendCode",
@@ -84839,6 +84946,7 @@
         "sendOtpMutation",
         "splitName",
         "submitLabelKey",
+        "submitting",
         "updateQuantity"
       ],
       "line": 1
@@ -85083,47 +85191,6 @@
       ],
       "kind": "next-page",
       "route": "/r/[restaurantId]/payment/checkout/[orderId]",
-      "line": 1
-    },
-    {
-      "id": "foodyweb:app/r/[restaurantId]/payment/checkout/[orderId]/page.tsx:ui-controls:1",
-      "service": "foodyweb",
-      "source": "app/r/[restaurantId]/payment/checkout/[orderId]/page.tsx",
-      "features": [
-        "payments-how-payments-work",
-        "guest-account-tracking",
-        "orders-internal-sumit-checkout"
-      ],
-      "kind": "ui-controls",
-      "labels": [
-        "deliveryFee",
-        "loading",
-        "preparedCheckoutAddress",
-        "preparedCheckoutApartment",
-        "preparedCheckoutBasket",
-        "preparedCheckoutCity",
-        "preparedCheckoutDetails",
-        "preparedCheckoutDiscount",
-        "preparedCheckoutEmail",
-        "preparedCheckoutEntryCode",
-        "preparedCheckoutFeeToCalculate",
-        "preparedCheckoutFixedBasket",
-        "preparedCheckoutFloor",
-        "preparedCheckoutName",
-        "preparedCheckoutNotes",
-        "preparedCheckoutPaid",
-        "preparedCheckoutPhone",
-        "preparedCheckoutQuoteError",
-        "preparedCheckoutQuoteReady",
-        "preparedCheckoutRefresh",
-        "preparedCheckoutSecure",
-        "preparedCheckoutTitle",
-        "preparedCheckoutViewOrder"
-      ],
-      "actions": [
-        "confirmationURL",
-        "submit"
-      ],
       "line": 1
     },
     {
@@ -85484,7 +85551,8 @@
       "service": "foodyweb",
       "source": "components/CartOverlayController.tsx",
       "features": [
-        "guest-ordering"
+        "guest-ordering",
+        "orders-internal-sumit-checkout"
       ],
       "kind": "ui-controls",
       "labels": [],
@@ -86021,12 +86089,14 @@
       "service": "foodyweb",
       "source": "components/CommerceOrderSummary.tsx",
       "features": [
-        "guest-ordering"
+        "guest-ordering",
+        "orders-internal-sumit-checkout"
       ],
       "kind": "ui-controls",
       "labels": [
         "deliveryFee",
         "deliveryFeeAtCheckout",
+        "preparedCheckoutDiscount",
         "subtotal",
         "vatIncluded"
       ],
@@ -92953,9 +93023,9 @@
   "coverage": {
     "sharedRuntimeFiles": 409,
     "features": 104,
-    "operations": 771,
-    "sourceFiles": 2227,
-    "surfaces": 2063,
+    "operations": 776,
+    "sourceFiles": 2228,
+    "surfaces": 2062,
     "unclassifiedRoutes": []
   }
 }
