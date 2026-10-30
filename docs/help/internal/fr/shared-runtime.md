@@ -7,7 +7,7 @@ apps: both
 tags:
   - internal
   - shared-runtime
-updatedAt: '2026-10-28'
+updatedAt: '2026-10-30'
 featureId: shared-runtime
 audience: internal
 releaseStatus: available
@@ -123,3 +123,9 @@ GET /api/v1/orders/series conserve les dates de remise triées et les agrégats 
 ## Intégration du panier préparé Sumit
 
 Le récapitulatif du panier préparé compatible conserve les prix figés de l’API et compte une fois les suppléments fixes des formules. Les devis de livraison restent calculés au serveur et sont vérifiés avant le paiement Sumit hébergé. La nouvelle route privée ne charge pas de profil client et ne conserve pas les coordonnées dans le stockage du navigateur.
+
+<span id="zone-same-day-contract" />
+
+## Contrat du jour même par zone et simulation de calendrier
+
+L’objet same_day facultatif de DeliverySchedule contient days, transit_minutes et time_mode inherit/restaurant. L’API refuse les jours hors calendrier, valeurs ambiguës, coexistence avec une règle globale historique active et suppression par un ancien éditeur. La capacité de liste des zones et l’état historique contrôlent Admin. L’instant de calcul et le fuseau des calendriers sont des champs additifs. La simulation utilise les résolveurs publics géographiques et de calendrier sous périmètre restaurant sans muter commande, stock, paiements ou notifications. Le corpus embarqué de support doit être identique à cette version publiée FR/HE/EN ; les lecteurs Web, POS et Backoffice restent compatibles sans nouveaux champs applicatifs.

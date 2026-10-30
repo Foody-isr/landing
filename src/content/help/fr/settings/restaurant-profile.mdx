@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - settings
   - restaurant-profile
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-30'
 featureId: restaurant-profile
 audience: public
 releaseStatus: available
@@ -46,7 +46,7 @@ Dans Langues, choisissez langues et langue par défaut proposées. Traduisez sé
 
 ## Maintenir les horaires
 
-Dans Horaires, modifiez chaque jour, ses plages et les jours fermés. Vérifiez fuseau, exceptions de calendrier et horaires distincts de retrait/livraison. Enregistrez puis contrôlez le prochain créneau proposé sans passer de vraie commande.
+Dans Horaires, modifiez chaque jour, ses plages et les jours fermés. Vérifiez fuseau, exceptions de calendrier et horaires distincts de retrait/livraison. Enregistrez puis contrôlez le prochain créneau proposé sans passer de vraie commande. Commandes et disponibilité reste la source commune des horaires de réception en retrait/livraison, des fermetures et de la préparation. Les zones ajoutent périmètre, jours, tarifs et règles explicites du jour même ; elles ne peuvent pas activer un service désactivé. Le délai propre au produit remplace le défaut du restaurant. Si des plages de réservation personnalisées sont actives, elles conservent leur priorité documentée ; ne ressaisissez pas les horaires dans chaque zone.
 
 <span id="related-service-controls" />
 
@@ -70,4 +70,4 @@ L’activation du personnel vérifie les permissions affectées dans ce restaura
 
 ## Piloter manuellement les commandes hebdomadaires
 
-Les restaurants en lot hebdomadaire peuvent choisir Ouverture manuelle dans Paramètres → Commandes et livraison → Commandes et disponibilité, avec settings.edit. Enregistrez, puis ouvrez ou fermez explicitement les commandes avec le bouton de pause. Les heures d’ouverture/clôture automatiques ne pilotent plus la prise de commandes dans ce mode. Jours et créneaux de livraison, fuseau du restaurant, règles de préparation et stocks restent applicables ; les commandes existantes sont conservées. Le site reste consultable pendant la pause. Désactivez l’accès de test temporaire actif avant toute réouverture publique. Voir le guide des réglages des commandes pour la procédure complète.
+Les restaurants en lot hebdomadaire peuvent choisir Ouverture manuelle dans Paramètres → Commandes et livraison → Commandes et disponibilité, avec settings.edit. Enregistrez, puis ouvrez ou fermez explicitement les commandes avec le bouton de pause. Les heures d’ouverture/clôture automatiques ne pilotent plus la prise de commandes dans ce mode. Jours et créneaux de livraison, fuseau du restaurant, règles de préparation et stocks restent applicables ; les commandes existantes sont conservées. Le site reste consultable pendant la pause. Désactivez l’accès de test temporaire actif avant toute réouverture publique. Voir le guide des réglages des commandes pour la procédure complète. Les modifications de la fiche ne sauvegardent désormais que les champs réellement changés : une sauvegarde simultanée du nom ou du contact ne remet pas d’anciens horaires. L’éditeur d’horaires utilise une version de départ : les changements distincts fusionnent, les modifications concurrentes du même champ conservent la saisie et demandent de vérifier la version enregistrée. Le nom d’une zone est un libellé : configurez ses jours dans Zones de livraison sans vous fier au nom.

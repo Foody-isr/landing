@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - customers
   - customers-profiles
-updatedAt: '2026-10-25'
+updatedAt: '2026-10-29'
 featureId: customers-profiles
 audience: public
 releaseStatus: available
@@ -32,7 +32,7 @@ Open the profile from the customer phone, edit the name, phone numbers, address 
 
 ## Authorize cash ordering
 
-Use the trusted/cash-allowed setting only for the intended customer. This controls cash ordering eligibility, not evidence of an actual payment.
+Trusted-customer status determines cash eligibility only when the restaurant policy requires it. If cash is enabled for everyone, the status is unnecessary; if cash is disabled, it does not re-enable cash. A required card guarantee still applies to trusted customers. Trust status is not proof that payment was received.
 
 <span id="merge" />
 
@@ -45,3 +45,11 @@ Review selected customer profiles and phone numbers before confirming a merge. C
 ## Manage phones and choose the WhatsApp number
 
 With customer-management permission, select the customer phone to open Edit customer. Under Phone numbers, correct Primary phone or choose Add a phone number. Enter a complete number; Israeli numbers are saved with +972 without the national trunk zero and foreign numbers retain their country code. Select Use for WhatsApp on the number that should receive messages, even when the calling number differs. Exactly one WhatsApp recipient is selected; a customer can have up to ten numbers. Save confirms profile and phone changes together. Invalid input, duplicate numbers or a number belonging to another record blocks this save and retains the draft; use Merge customers to associate existing records. Removing an additional number takes effect only on Save and separates its history without deleting its orders. Correcting the primary retains names, addresses and grouping and corrects existing order contacts. Login accounts and other restaurants remain unchanged. Cash eligibility belongs to the same customer; adding a number does not create another cash authorization. To correct several customers together, select at least two rows and choose Actions → Correct phones. The batch is atomic; a conflict blocks every correction. After a completed save and failed refresh, Retry reloads without repeating the write. Format validation does not prove ownership or WhatsApp registration.
+
+<span id="stancer-cash-guarantee" />
+
+## Use cash with an optional card guarantee
+
+In Admin → Settings → Payments, with settings.edit permission, select Allow other methods to accept cash. For a compatible provider, Cash payments offers Accept cash from all customers: Yes allows every customer regardless of trust status; No disables cash for everyone. Require a card guarantee for cash remains independent: enable it only when you want to reserve 100% of the total on the card, then save and verify the values. The guarantee is off by default. It is currently available for configured Stancer in EUR; other integrations use the same presentation when their cash-guarantee flow is supported. Unsupported providers retain their existing cash settings without this guarantee. A previous trusted-customer-only policy is preserved until you explicitly choose Yes or No; changing VAT or tips does not replace it. Online-payment-only always excludes cash. Before real use of the guarantee, verify cancellation of an authorized sandbox reservation, release timing and fees with your Stancer account.
+
+Acceptance and recovery: [cash card guarantees](/en/help/payments/cash-card-guarantee).

@@ -128,6 +128,26 @@ If the customer uses a different WhatsApp number, open Clients → their profile
 
 Compatible versions offer a Sumit-only Foody basket link and hosted card entry in Admin. The customer-link choice allows details to be completed by the recipient. Prepared pending baskets stay immutable; check the saved order before recovery. See [the complete Sumit procedure](/en/help/orders/internal-sumit-checkout). Publish this guidance with the matching API, Admin and guest Web rollout.
 
+<span id="stancer-cash-guarantee" />
+
+## Use cash with an optional card guarantee
+
+In order details, the Card guarantee panel separates the reserved amount, validity and state from the money received. Record the full cash amount only after physically receiving it through the existing authorized collection flow; an open physical drawer still requires the same POS cash context. Recording cash prevents a concurrent card debit and requests release. A release awaiting confirmation does not undo received cash. Partial cash payments and relabelling the guaranteed payment as an external card/transfer are refused while the guarantee is active. If no cash was received, staff with payments.manage may choose Charge the guaranteed card and explicitly confirm the full debit. There is no automatic debit for an unpaid order. The sale becomes card-paid only after Stancer confirms capture. Do not use manual status corrections to simulate a guaranteed payment.
+
+Acceptance and recovery: [cash card guarantees](/en/help/payments/cash-card-guarantee).
+
+<span id="confirm-zone-delivery-time" />
+
+## Confirm a zone delivery time
+
+ With order-management permission, open the delivery detail and Time awaiting confirmation or Confirm delivery window. New zones list their covered weekdays; historical orders may still display their original promised windows. Enter the date, start and end within the allowed calendar. Changing the day requires a reason. Confirm and verify the date and time in the order and customer tracking. A time outside the verified calendar is rejected: check Delivery settings or retain the promised slot before retrying. An already reserved basket does not acquire a new preparation delay. Confirmation keeps the address and fee and sends no message; customer communication uses its dedicated action.
+
+<span id="option-choice-requirement" />
+
+## Leave an optional choice empty
+
+When adding an item from the Admin library, complete required positions. A position made optional on the item may remain on Choose an option; return to that value to remove a choice before Add to order. Only positions actually selected are retained. The absolute format price remains unchanged and modifiers keep their separate deltas. For optional same-day delivery, review the Delivery zones and schedules guide with compatible API, Admin and guest versions: the customer may choose only the day, see an estimate before payment and receive a restaurant-confirmed time later. Future bookings retain their configured mode. The restaurant’s local date determines same-day rules.
+
 <span id="independent-lifecycle-confirmations" />
 
 ## Review independent confirmations

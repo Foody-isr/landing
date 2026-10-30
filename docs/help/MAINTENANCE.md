@@ -50,6 +50,92 @@ embed the same public corpus in API, then pin the reviewed Landing commit.
 Local validation does not assert deployment, installed-device acceptance,
 terminal compatibility or legal certification.
 
+## Zone delivery rules and shared restaurant settings (30 October 2026)
+
+The [coordinated review](reviews/zone-delivery-rules.md) moves explicit same-day
+rules into each zone, keeps restaurant service/preparation rules common and adds
+a read-only saved-basket/address calendar simulation. Publish the four affected
+guides in FR/HE/EN with compatible API/Admin artifacts and the API corpus. Refresh
+API/Admin source evidence only; preserve unchanged Web/POS/Backoffice/Landing
+application inventories exactly. The owner authorized the joint implementation
+and dev/prod promotion. Lovely's separately approved behavior is converted by a
+scoped guarded maintenance transaction after API verification, with all 560
+calendar/geography/price comparisons equal. No production test orders or messages.
+
+## Same-day delivery and settings audit (29 October 2026)
+
+The optional delivery policy and stale-save protections are reviewed in
+[scope and release requirements](reviews/same-day-delivery.md). Update the
+three-language delivery-zones, preorders, order-detail and guest-ordering guides
+with compatible API, guest and Admin artifacts. The API audit records legacy
+calendar precedence and missing zone calendars without changing live settings.
+Preserve the existing POS, Backoffice and Landing application-source inventory
+blocks; freeze current API/Admin/Web sources and pin this documentation commit
+before release. The owner has requested dev and production deployment; no live
+restaurant policy is automatically enabled and no real message is sent in tests.
+
+## Pink Coffee coordinated release
+
+The reviewed Website/Admin change adds the Pink Coffee template, campaign hero
+carousel, campaign product cards and display headings. The website editor, design
+and sections guides describe the controls in French, Hebrew and English and
+require compatible versions. The owner authorized commits, pushes, PRs,
+development deployment and production promotion on 29 October 2026. Exact Admin,
+Web and API corpus source checkpoints are recorded before this documentation
+freeze. POS and Backoffice retain their baseline evidence. Consumers resolve
+Landing's self reference to this immutable documentation commit before CI.
+Verify Web before Admin and publish the guides with the compatible release;
+promote only the exact successful development artifacts. See
+[scope, compatibility and pin workflow](reviews/pink-coffee-template-local-preparation.md).
+
+### Pink Coffee field-contract evidence follow-up
+
+Admin checkpoint `312fe721588d56495ca665368ec2a0751cdf4e2b` completes eight
+static test-registry descriptors for the already documented campaign and display
+controls. The registry has no product runtime importer. Editor controls, saved
+payloads and publication behavior are unchanged. Preserve the article bytes,
+dates and public corpus from Landing `1f97f2f0e1e9e3fd3773f8ee98e6b35fe4f70ca6`.
+Refresh only the Admin registry digest, source checkpoint and configuration-field
+surfaces; retain all five other service blocks and surfaces exactly from Landing
+develop `035923bdbca6958560550fdab57f1401a97c069d`.
+
+Pin this follow-up's immutable Landing commit in Admin only. API and guest Web
+keep their independently reviewed `1f97f2f0e1e9e3fd3773f8ee98e6b35fe4f70ca6` pins
+and the identical corpus revision. This evidence change requires no public guide
+publication or API/Web rebuild. The root coordinates PRs, required checks and
+Admin artifact verification before production promotion. See the
+[exact scoped review](reviews/pink-coffee-field-contracts.md).
+
+### Pink Coffee layout-controls coordinated release
+
+This follow-up reviews editable hero geometry and navigation controls, menu-icon
+style/size/stroke, and a multirow featured-product grid with per-item backgrounds.
+French, Hebrew and English procedures are reviewed together in the existing
+customize, design, sections and navigation guides. The additive optional Website
+capability `campaign_layout_controls: 1` gates the new settings independently of
+the existing campaign presentations. Autoplay must retain an accessible pause
+control even when its display preference is off. The manual Pink Coffee preset
+hides the counter/playback control and header cart icon without changing checkout.
+
+The API validates the optional header presentation fields before draft saving
+and publication. No migration, operational ordering rule, payment behavior or
+tenant catalogue mutation is introduced. Run full Go validation after API code
+freeze, then export and synchronize the final public corpus before its final
+artifact build/support tests and source inventory. Roll out the compatible API,
+then Website, before Admin exposes the new controls; publish the matching help
+release with its support corpus. Verify development before promoting those exact
+artifacts under the owner's existing authorization.
+
+API, Admin and Website source checkpoints are frozen and recorded in the
+[release evidence](reviews/pink-coffee-layout-controls-release.json); their 1,708
+source hashes match the actual committed Git objects. POS, Backoffice and unchanged
+Landing application-source blocks/surfaces retain the exact Landing develop
+`2cd01f46f75b8a4f6d7bac7cddadead728abb23b` baseline; those checkouts are not rescanned.
+All three consumer contracts resolve this documentation commit's self-reference
+to its immutable SHA before remote CI. Local validation is not production
+acceptance: the root owns PRs, required checks and artifact promotion. See the
+[review scope](reviews/pink-coffee-layout-controls-preparation.md).
+
 ## Internal order finalization (29 October 2026)
 
 New order now finalizes inside the ticket after Continue. Explicit payment intents
@@ -1005,7 +1091,7 @@ and updated in French, Hebrew and English, including removal of the obsolete
 claim that method tracking cannot be disabled. Exact scoped reviews cover only
 unrelated features on shared source files. The unchanged Backoffice inventory and
 surfaces are retained from Landing develop, not recertified from a different
-checkout. Preserve corpus equality and selected migration282 evidence. Export
+checkout. Preserve corpus equality and selected migration284 evidence. Export
 the final public corpus into API after full runtime validation and before final
 source inventory generation; pin an immutable documentation commit before PR
 readiness. Local source snapshots or a WORKSPACE pin do not constitute publication.
@@ -1039,3 +1125,95 @@ those services are not revalidated. Export and copy the identical public corpus
 before scanning API evidence, pin immutable source and documentation commits,
 validate API before clients, then promote the exact development-tested artifacts
 under the authorized courier correction release workflow.
+
+## Stancer cash guarantee release (29 October 2026)
+
+The user authorized commits, pushes, development deployment and production
+promotion on 29 October 2026. API, Admin, guest Web and Landing are integrated
+with their current develop bases. POS and Backoffice retain the exact source
+blocks and surfaces from Landing develop cf656d64; they are not revalidated.
+Existing POS cash drawer rules remain authoritative.
+
+The separate Stancer sandbox hosted-card/3DS flow authorized 0.50 EUR with
+capture=false. DELETE then an independent GET confirmed cancellation of that
+same intent, amount and currency. No capture, Foody order, customer or tenant
+setting was created. This proves the provider sandbox path; real bank release
+timing and merchant fees remain account-specific. Guarantees remain off by
+default, and deployment does not change Lovely's saved cash settings.
+
+Source checkpoints and the final reviewed Landing documentation commit are
+immutable before remote CI. Roll out migration 282/API before Admin/Web, verify
+development, then promote the exact same artifacts without rebuilding. Publish
+the three-language procedures with the compatible product release. No production
+test payment is required or authorized merely by this deployment.
+
+
+## Compact item sheet local preparation (29 October 2026)
+
+This preparation reviews Web, Admin, Landing and the API's synchronized public
+help corpus on isolated develop-based branches. Product-sheet layout changes and
+Admin's Compact presentation action are documented in FR/HE/EN under
+website-order-design/item-surface and guest-ordering/basket. Authored theme roles,
+fonts, ratios, fit and framing remain the source of truth; only a missing photo
+ratio defaults to 16:9. The isolated editor test publishes only to an in-memory
+fixture. Existing public websites and production settings are never mutated.
+
+POS and Backoffice inventory blocks/surfaces retain their exact evidence from
+Landing develop 359e59e0 and are not revalidated here. Copy the exported public
+corpus to API before scanning. The user authorized commits, development and production deployment on 29 October
+2026. Contracts pin the reviewed immutable Landing commit before remote CI;
+Landing retains its self-reference. Publish the guides with the verified Web/Admin rollout
+and matching support corpus. Source and synthetic browser checks do not certify
+a live order or production deployment.
+
+## Local delivery weekday scheduling preparation (29 October 2026)
+
+This preparation reviews API, Admin, guest Web and Landing from develop. Zone
+weekdays restrict the restaurant delivery calendar; legacy zone windows supply
+only weekdays for new bookings. Existing orders retain their frozen availability.
+The prepared-checkout quote shares the restaurant calendar without reapplying a
+production delay. Fees, minimums, tenant checks and payment authorization keep
+their separate server checks. No schema or production-data migration is required.
+
+POS and Backoffice inventory entries and surfaces retain their exact baseline
+from Landing develop `359e59e030e4a686224a3ff520f1799534fb3d67`; those clients are
+not revalidated here. POS retains delivery policy snapshots as an opaque map.
+Export FR/HE/EN procedures and synchronize the API corpus before the source scan.
+Service contracts pin the reviewed immutable Landing documentation commit for
+remote CI and release. Deploy the API before compatible Admin/Web, verify development, and
+publish the guides with the product. This local preparation deploys nothing.
+
+
+## Capability-based cash controls correction (29 October 2026)
+
+For a provider whose full cash-guarantee flow is supported, the Admin cash
+selector offers Yes for all customers or No for everyone. Card guarantee remains
+a separate opt-in as clarified by the owner. Existing trusted-only policies are
+shown as a retained prior value until an explicit global choice; unrelated VAT
+or tips saves do not widen cash eligibility. Unsupported providers keep their
+existing controls. The UI reads the server capability, never a provider-name list.
+No new provider is certified by this correction.
+
+The shared private settings response now includes online_payment_only explicitly
+for both boolean values on GET and PUT. An omitted false value previously made
+Admin report an unknown policy and disabled its cash controls. The authoritative
+online-only restriction and unknown-policy fail-closed behavior remain intact.
+Public checkout already honors the all/disabled policies without a trust gate.
+No guest Web, POS or Backoffice source is changed or recertified; retain their
+exact inventory blocks and surfaces from this correction's Landing develop base.
+Update and render the activation procedure in FR/HE/EN, export the identical API
+corpus, verify source checkpoints, and pin immutable documentation before CI.
+The existing authorization covers publishing this correction through development
+and production, with the same verified immutable artifacts. No tenant cash policy
+or provider configuration is changed during deployment.
+
+The production sheet and its day counts now admit accepted scheduled cash orders
+without a trust requirement. Required bank guarantees must be confirmed first;
+pending, unknown and malformed snapshots cannot bypass this gate through VIP
+status. The existing explicit staff override remains separate. Accepted orders
+remain planned if cash is subsequently disabled. This changes no received-payment
+status, debit, notification or tenant setting. The production-planning guide is
+reviewed in FR/HE/EN, with exact API source evidence; other order-entry and API
+procedures on the shared production source retain their scoped reviews.
+The full race-validation job has a 60-minute budget because the prior cold run
+exhausted 25 minutes during compilation; its test commands are unchanged.

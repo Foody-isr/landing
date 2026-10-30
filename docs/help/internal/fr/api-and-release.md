@@ -194,20 +194,32 @@ Le nouveau client confirme ready puis POST end avec expected_shift_id ; absence 
 
 La préparation locale des commandes internes Sumit ajoute capacité, panier GET/POST et devis de livraison sous /api/v1/public, avec restaurant explicite et jeton privé de reçu. La création exige orders.manage ; la saisie hébergée dans Admin exige aussi payments.manage. Le fournisseur actif et les identifiants Sumit configurés sont revérifiés avant ouverture. Le devis destinataire utilise zone résolue au serveur, frais, minimum et date conservée ; le paiement compare expected_total_minor à un nouveau total serveur. Une réservation durable lie coordonnées et URL fournisseur. Une création incertaine reste bloquée ; l’expiration utilise l’annulation avec libération du stock. Déployez l’API compatible avant Admin/Web et publiez les guides coordonnés. Voir le parcours Sumit.
 
-<span id="order-lifecycle-v2-contract" />
-
-## Contrat additif des confirmations de commande
-
-Le champ lifecycle v1 est conservé. La capacité order_lifecycle_v2 annonce lifecycle_v2 : lecture explicite par portée, montants nullable avec devise/exposant et politiques figées. Les opérations de remise et clôture revalident acteur, restaurant, affectation, révision et unités sous verrous et enregistrent le même request_id atomiquement. GET operation confirme le journal original ; une absence reste non confirmée et ne justifie pas un nouvel identifiant. Les réponses publiques contiennent seulement la propre commande, sans portées parentes, unités privées ou actions staff. Les journaux de paiement existants restent seuls compétents pour l’argent.
-
 <span id="prepared-order-existing-cart" />
 
 ## Panier préparé et présentation du restaurant
 
 Un lien privé de commande préparée Sumit rejoint le panier habituel du restaurant, puis son formulaire de paiement avec les couleurs, polices et champs publiés. Le panier personnel du navigateur reste conservé ; les articles, prix et date préparés sont figés. Les coordonnées et réponses demandées concernent cette commande, sans chargement d’un compte ou d’une carte enregistrée. Les réponses personnalisées sont liées lors de la première ouverture du paiement. Les frais de livraison sont recalculés puis vérifiés avant paiement. Voir la [procédure Sumit](/fr/help/orders/internal-sumit-checkout).
 
+<span id="delivery-weekday-contract" />
+
+## Calendriers de livraison par jours
+
+ Le calendrier de zone accepte days (jours 0–6 uniques, au moins un) ou le format historique windows, sans mélange des deux. Les nouveaux créneaux utilisent les horaires et réglages du restaurant, filtrés par les jours de zone. Les windows historiques fournissent uniquement leurs jours pour les nouvelles réservations. Le serveur vérifie à nouveau le calendrier, les articles et leur restaurant à la création ; les affectations existantes utilisent la disponibilité figée de la commande. Le devis d’un panier préparé recontrôle jours et créneaux sans nouveau délai de production ; frais, minimum et autorisation restent contrôlés séparément. Aucun changement de schéma ni migration de données n’est requis. Déployez l’API avant les clients compatibles et publiez l’aide avec le produit après vérification en développement. Cette préparation locale ne confirme aucun déploiement.
+
+<span id="option-choice-requirement" />
+
+## Contrat des choix de variante facultatifs
+
+selection_config.required est un booléen facultatif propre au lien article/groupe descriptif. Absent ou null, il conserve un choix obligatoire par position ; false autorise les positions vides sans fabriquer de sélection. Les choix fournis restent soumis à la propriété restaurant/article/groupe, à l’activité, aux positions visibles, à l’unicité et aux précisions requises. Les groupes tarifés et modificateurs ne peuvent pas utiliser ce champ pour contourner leurs règles. Le JSON existant est conservé sans migration. Validez API, web, POS et Admin ensemble ; déployez l’API puis les consommateurs compatibles avant d’exposer le réglage Admin. Conservez les catalogues existants et publiez les trois traductions avec la version.
+
+<span id="order-lifecycle-v2-contract" />
+
+## Contrat additif des confirmations de commande
+
+Le champ lifecycle v1 est conservé. La capacité order_lifecycle_v2 annonce lifecycle_v2 : lecture explicite par portée, montants nullable avec devise/exposant et politiques figées. Les opérations de remise et clôture revalident acteur, restaurant, affectation, révision et unités sous verrous et enregistrent le même request_id atomiquement. GET operation confirme le journal original ; une absence reste non confirmée et ne justifie pas un nouvel identifiant. Les réponses publiques contiennent seulement la propre commande, sans portées parentes, unités privées ou actions staff. Les journaux de paiement existants restent seuls compétents pour l’argent.
+
 <span id="end-of-day-protocol" />
 
 ## Publier le contrat EOD avant le POS
 
-Le contrat end-of-day v1 et la migration additive 284 introduisent begin, current, lecture par ID, terminal-result et finalize sous /orders/end-of-day. Les écritures conservent leurs UUID et vérifient restaurant, acteur, autorisation physique et installation. La capacité end_of_day est une déclaration de support, sans permission de paiement. La transaction serveur réserve le comptage et les identités de terminal ; elle ne contacte aucun prestataire. Dispatched précède l’appel natif et un résultat inconnu ne redevient pas une autorisation de transmettre. Une confirmation durable peut être réenregistrée avec la même identité. Finalize crée le rapport opérationnel immuable et ferme la caisse réservée atomiquement, sans pointage ni clôture commerciale. Publier l’API avant le POS, valider en développement puis promouvoir les mêmes artefacts. Les callbacks Ashrait actuels ne justifient aucun total, numéro de lot ni certificat fiscal inventé. Conserver les anciens journaux et les vérifications de droits et de provenance. Voir docs/contracts/end-of-day-v1.json et le guide public payments/end-of-day.
+Le contrat end-of-day v1 et la migration additive 285 introduisent begin, current, lecture par ID, terminal-result et finalize sous /orders/end-of-day. Les écritures conservent leurs UUID et vérifient restaurant, acteur, autorisation physique et installation. La capacité end_of_day est une déclaration de support, sans permission de paiement. La transaction serveur réserve le comptage et les identités de terminal ; elle ne contacte aucun prestataire. Dispatched précède l’appel natif et un résultat inconnu ne redevient pas une autorisation de transmettre. Une confirmation durable peut être réenregistrée avec la même identité. Finalize crée le rapport opérationnel immuable et ferme la caisse réservée atomiquement, sans pointage ni clôture commerciale. Publier l’API avant le POS, valider en développement puis promouvoir les mêmes artefacts. Les callbacks Ashrait actuels ne justifient aucun total, numéro de lot ni certificat fiscal inventé. Conserver les anciens journaux et les vérifications de droits et de provenance. Voir docs/contracts/end-of-day-v1.json et le guide public payments/end-of-day.

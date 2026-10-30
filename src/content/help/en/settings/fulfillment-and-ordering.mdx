@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - settings
   - fulfillment-policy
-updatedAt: '2026-10-29'
+updatedAt: '2026-10-30'
 featureId: fulfillment-policy
 audience: public
 releaseStatus: available
@@ -40,7 +40,7 @@ Review enabled pickup, delivery and table modes and their minimums, fees and pre
 
 ## Set scheduling limits
 
-Review immediate versus scheduled ordering, lead time, booking horizon and time-slot settings. Batch preorder cutoffs and delivery-tour dates have separate configuration. Verify that an offered slot satisfies all applicable rules.
+Review immediate versus scheduled ordering, lead time, booking horizon and time-slot settings. Batch preorder cutoffs and delivery-tour dates have separate configuration. Verify that an offered slot satisfies all applicable rules. For ordinary delivery with a zone calendar, set hours in the Delivery tab and slot duration here; the zone supplies only covered weekdays, booking mode and fee. Basket preparation, its clock and closures filter these slots. Legacy zone hours no longer apply to new bookings; saved orders retain their promise. With compatible versions, delivery same-day days, transport and time confirmation are configured inside each zone. Restaurant hours and product preparation remain mandatory. Scheduled orders can include today. Staff can test saved basket/address calendars in Orders & availability → Simulate an order; this creates no order or message.
 
 <span id="test-access" />
 
@@ -145,6 +145,14 @@ Mode and workflow settings determine the actions available for new operations; t
 ## Prepared Sumit checkout integration
 
 For a compatible internal Sumit basket link, the recipient’s delivery address is checked against the restaurant’s current zone, fee and minimum. The chosen service date is retained and must fit any matched zone calendar. The final total is reviewed before payment. See [Sumit checkout](/en/help/orders/internal-sumit-checkout).
+
+<span id="stancer-cash-guarantee" />
+
+## Use cash with an optional card guarantee
+
+In Admin → Settings → Payments, with settings.edit permission, select Allow other methods to accept cash. For a compatible provider, Cash payments offers Accept cash from all customers: Yes allows every customer regardless of trust status; No disables cash for everyone. Require a card guarantee for cash remains independent: enable it only when you want to reserve 100% of the total on the card, then save and verify the values. The guarantee is off by default. It is currently available for configured Stancer in EUR; other integrations use the same presentation when their cash-guarantee flow is supported. Unsupported providers retain their existing cash settings without this guarantee. A previous trusted-customer-only policy is preserved until you explicitly choose Yes or No; changing VAT or tips does not replace it. Online-payment-only always excludes cash. Before real use of the guarantee, verify cancellation of an authorized sandbox reservation, release timing and fees with your Stancer account.
+
+Acceptance and recovery: [cash card guarantees](/en/help/payments/cash-card-guarantee). Review the optional Same-day delivery block in Delivery zones separately from the standard slot/batch settings. It limits only new bookings for today in the restaurant timezone; future bookings keep their zone rules. Today’s restaurant-confirmed estimate adds transport to product readiness inside delivery hours, and does not replace weekly-batch windows. Custom slot hours still override service hours. Never disable every delivery zone to pause ordering: use the service or pause control.
 
 <span id="independent-lifecycle-confirmations" />
 

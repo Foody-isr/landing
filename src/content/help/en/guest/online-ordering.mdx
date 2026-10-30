@@ -5,7 +5,7 @@ apps: foodyweb
 tags:
   - guest
   - guest-ordering
-updatedAt: '2026-10-29'
+updatedAt: '2026-10-30'
 featureId: guest-ordering
 audience: public
 releaseStatus: available
@@ -28,7 +28,7 @@ If the restaurant offers several menus on the page, select their tab, such as BA
 
 ## Build a basket
 
-Choose pickup, delivery or table ordering when offered, select the active menu and open an item. Choose a variant, required modifiers, quantity and allowed notes, then add it. Review and edit the basket before checkout. A customer assistant suggestion still needs the same required choices and availability checks.
+Choose pickup, delivery or table ordering when offered, select the active menu and open an item. Its sheet shows the configured portion, price, description and available photos. Choose a variant, required modifiers and allowed notes. Quantity and Add to cart stay together at the bottom while you scroll through the details; the total follows your quantity and choices. The title and close control remain available after the photo scrolls away. Close without adding to discard the current selection. If adding is unavailable, complete the required choices or review the displayed availability. Review and edit the basket before checkout. A customer assistant suggestion needs the same required choices and availability checks.
 
 <span id="mobile-fulfillment" />
 
@@ -40,7 +40,7 @@ In the ordering dialog, choose Delivery and enter the street, house number and c
 
 ## Choose contact and fulfillment
 
-Enter the requested contact details, address or pickup time. For delivery check zone, fee and offered slot; for preorder/tour links follow their specific deadline/date. The final checkout revalidates current rules and prices.
+Enter the requested contact details, address or pickup time. For delivery check zone, fee and offered slot; for preorder/tour links follow their specific deadline/date. The final checkout revalidates current rules and prices. Once the address is checked, review the displayed delivery fee and choose Date and Time using the same controls as pickup. The zone limits weekdays; restaurant settings supply slot times and duration. Automatic mode assigns the next slot. When time needs restaurant confirmation, no time picker appears and tracking will show the confirmed time. Changing the address or basket rechecks availability; wait for the check before confirming. With compatible versions, delivery same-day days, transport and time confirmation are configured inside each zone. Restaurant hours and product preparation remain mandatory. Scheduled orders can include today. Staff can test saved basket/address calendars in Orders & availability → Simulate an order; this creates no order or message.
 
 <span id="payment" />
 
@@ -84,14 +84,28 @@ When a restaurant manages weekly ordering manually, its team opens and pauses or
 
 An item can show several photos. See [Product photos](/en/help/menu/product-photos) for adding photos, selecting the cover and using the dots, arrows or horizontal swipe in product details. A single photo has no gallery controls.
 
-<span id="independent-lifecycle-confirmations" />
-
-## Review independent confirmations
-
-Your order tracking distinguishes payment, preparation and recorded handoff, including partial handoff. Not tracked differs from unknown evidence. An unknown monetary value is not zero and does not offer a guessed payment. Other guests’ QR orders at the same table remain separate and are not exposed by this view. See [order states](/en/help/orders/payment-preparation-and-handoff).
-
 <span id="prepared-order-existing-cart" />
 
 ## Prepared basket and restaurant presentation
 
 A private Sumit prepared-order link enters the restaurant’s existing cart, then its checkout with the published colors, fonts and fields. The personal browser basket is retained; prepared items, prices and date stay fixed. Contact details and requested answers belong to this order, without loading an account or saved card. Custom answers bind when payment first opens. Delivery fees are recalculated and reviewed before payment. See the [Sumit procedure](/en/help/orders/internal-sumit-checkout).
+
+<span id="stancer-cash-guarantee" />
+
+## Use cash with an optional card guarantee
+
+For pickup or delivery, an eligible customer selects Cash payment with card guarantee, reviews the exact reservation amount and explicitly accepts its reservation and collection if the order remains unpaid in cash. The customer enters the card on the hosted Stancer page and completes any bank authentication. Foody confirms the order only after checking the authorization with Stancer. The sale remains unpaid: the card reservation is not cash received or a completed card sale. This version supports fixed-price orders for service within six days. Weight-priced orders and later service dates must use another payment method. If the amount changes, review the updated basket and agree to the new amount. Stancer documents seven days for an uncaptured authorization; a Payment Intent’s lifetime is a different concept.
+
+Acceptance and recovery: [cash card guarantees](/en/help/payments/cash-card-guarantee).
+
+<span id="option-choice-requirement" />
+
+## Leave an optional choice empty
+
+In a compatible product sheet, Required needs a choice in every visible position before Add to cart. A group marked Optional may remain empty. After selection, Clear choice removes only that position and its associated note; other positions and the format price remain intact. A required note attached to a selected option must still be completed. Review the choices in the cart before confirming. For optional same-day delivery, review the Delivery zones and schedules guide with compatible API, Admin and guest versions: the customer may choose only the day, see an estimate before payment and receive a restaurant-confirmed time later. Future bookings retain their configured mode. The restaurant’s local date determines same-day rules.
+
+<span id="independent-lifecycle-confirmations" />
+
+## Review independent confirmations
+
+Your order tracking distinguishes payment, preparation and recorded handoff, including partial handoff. Not tracked differs from unknown evidence. An unknown monetary value is not zero and does not offer a guessed payment. Other guests’ QR orders at the same table remain separate and are not exposed by this view. See [order states](/en/help/orders/payment-preparation-and-handoff).

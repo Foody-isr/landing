@@ -194,20 +194,32 @@ The new client confirms ready then POSTs end with expected_shift_id; omitting th
 
 Local Sumit internal-checkout preparation adds restaurant-scoped capability, basket GET/POST and delivery-quote endpoints under /api/v1/public. The private receipt token is required for basket access. Staff creation requires orders.manage; hosted Admin card entry also requires payments.manage. The active provider and configured Sumit credentials are checked again before initiation. Recipient delivery quotes use server-resolved zones, fee, minimum and the retained service date; payment compares expected_total_minor to a fresh server total. One durable claim binds contacts and the provider URL. Uncertain creation stays blocked; expiry cancels through existing stock release. Deploy compatible API before Admin/Web and publish the coordinated guides. See the Sumit procedure.
 
-<span id="order-lifecycle-v2-contract" />
-
-## Additive order confirmation contract
-
-The lifecycle v1 field is retained. Capability order_lifecycle_v2 advertises lifecycle_v2: explicit scoped reads, nullable amounts with currency/exponent and frozen policies. Handoff and closure operations recheck actor, restaurant, assignment, revision and units under locks and atomically journal the same request_id. GET operation confirms the original journal; absence remains unconfirmed and does not justify a new ID. Public responses contain only the own order, without parent scopes, private units or staff actions. Existing payment journals remain the sole monetary authority.
-
 <span id="prepared-order-existing-cart" />
 
 ## Prepared basket and restaurant presentation
 
 A private Sumit prepared-order link enters the restaurant’s existing cart, then its checkout with the published colors, fonts and fields. The personal browser basket is retained; prepared items, prices and date stay fixed. Contact details and requested answers belong to this order, without loading an account or saved card. Custom answers bind when payment first opens. Delivery fees are recalculated and reviewed before payment. See the [Sumit procedure](/en/help/orders/internal-sumit-checkout).
 
+<span id="delivery-weekday-contract" />
+
+## Delivery weekday calendars
+
+ Zone calendars accept days (one or more distinct weekdays 0–6) or legacy windows, without mixing both. New slots use restaurant hours and settings filtered by zone weekdays. Legacy windows supply only their weekdays for new bookings. Order creation rechecks the calendar, items and restaurant ownership; existing assignments use the order’s frozen availability. Prepared-basket quotes recheck weekdays and slots without a new production delay; fees, minimums and authorization remain separate checks. No schema change or data migration is required. Deploy the API before compatible clients and publish help with the product after development verification. This local preparation confirms no deployment.
+
+<span id="option-choice-requirement" />
+
+## Optional descriptive option contract
+
+selection_config.required is an optional boolean on the descriptive item/group link. Absent or null preserves one required choice per position; false allows empty positions without fabricating a selection. Submitted choices still enforce restaurant/item/group ownership, activity, visible positions, uniqueness and required notes. Priced groups and modifiers cannot use this field to bypass their rules. Existing JSON storage needs no migration. Validate API, web, POS and Admin together; deploy the API and compatible consumers before exposing the Admin setting. Preserve existing catalogs and publish all three translations with the release.
+
+<span id="order-lifecycle-v2-contract" />
+
+## Additive order confirmation contract
+
+The lifecycle v1 field is retained. Capability order_lifecycle_v2 advertises lifecycle_v2: explicit scoped reads, nullable amounts with currency/exponent and frozen policies. Handoff and closure operations recheck actor, restaurant, assignment, revision and units under locks and atomically journal the same request_id. GET operation confirms the original journal; absence remains unconfirmed and does not justify a new ID. Public responses contain only the own order, without parent scopes, private units or staff actions. Existing payment journals remain the sole monetary authority.
+
 <span id="end-of-day-protocol" />
 
 ## Release the EOD contract before the POS
 
-The end-of-day v1 contract and additive migration 284 add begin, current, ID read, terminal-result and finalize under /orders/end-of-day. Writes retain UUIDs and check restaurant, actor, physical authorization and installation. The end_of_day capability declares support without granting payment permission. The server transaction reserves the count and terminal identities; it contacts no provider. Dispatched precedes the native call, and an unknown outcome never becomes permission to transmit again. A durable confirmation may be recorded again with the same identity. Finalize atomically creates the immutable operational report and closes its reserved drawer without attendance or commercial closure. Release the API before the POS, validate development and promote the same artifacts. Current Ashrait callbacks justify no invented totals, batch number or fiscal certificate. Preserve old journals and permission/provenance checks. See docs/contracts/end-of-day-v1.json and public payments/end-of-day guidance.
+The end-of-day v1 contract and additive migration 285 add begin, current, ID read, terminal-result and finalize under /orders/end-of-day. Writes retain UUIDs and check restaurant, actor, physical authorization and installation. The end_of_day capability declares support without granting payment permission. The server transaction reserves the count and terminal identities; it contacts no provider. Dispatched precedes the native call, and an unknown outcome never becomes permission to transmit again. A durable confirmation may be recorded again with the same identity. Finalize atomically creates the immutable operational report and closes its reserved drawer without attendance or commercial closure. Release the API before the POS, validate development and promote the same artifacts. Current Ashrait callbacks justify no invented totals, batch number or fiscal certificate. Preserve old journals and permission/provenance checks. See docs/contracts/end-of-day-v1.json and public payments/end-of-day guidance.

@@ -7,7 +7,7 @@ apps: foodyadmin
 tags:
   - payments
   - payment-configuration
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-29'
 featureId: payment-configuration
 audience: public
 releaseStatus: available
@@ -71,3 +71,11 @@ On the CST test setup validated with Verifone, sign in or create your Foody cust
 ## Check an itemized Invoice4U invoice
 
 When Invoice4U issuance and an invoice document type are enabled by the Foody team for the merchant, ordinary immediate Verifone order payments send the saved order lines: items and quantities, selected variants/options, combo base and included components, order discount and delivery fee. Frozen prices already include VAT; it is not added again. The line total must equal the payment amount or payment initiation is blocked. The same detail is sent for a later saved-card sale. Legacy orders without catalogue lines and catering/table/capture operations keep their existing document behavior. An approved payment is not proof that Invoice4U issued a fiscal document: check the document in Verifone Central/Invoice4U and customer delivery. Do not create another payment to obtain a missing invoice.
+
+<span id="stancer-cash-guarantee" />
+
+## Use cash with an optional card guarantee
+
+In Admin → Settings → Payments, with settings.edit permission, select Allow other methods to accept cash. For a compatible provider, Cash payments offers Accept cash from all customers: Yes allows every customer regardless of trust status; No disables cash for everyone. Require a card guarantee for cash remains independent: enable it only when you want to reserve 100% of the total on the card, then save and verify the values. The guarantee is off by default. It is currently available for configured Stancer in EUR; other integrations use the same presentation when their cash-guarantee flow is supported. Unsupported providers retain their existing cash settings without this guarantee. A previous trusted-customer-only policy is preserved until you explicitly choose Yes or No; changing VAT or tips does not replace it. Online-payment-only always excludes cash. Before real use of the guarantee, verify cancellation of an authorized sandbox reservation, release timing and fees with your Stancer account.
+
+Acceptance and recovery: [cash card guarantees](/en/help/payments/cash-card-guarantee).

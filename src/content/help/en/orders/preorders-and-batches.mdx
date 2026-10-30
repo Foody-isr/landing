@@ -5,7 +5,7 @@ apps: both
 tags:
   - orders
   - preorders
-updatedAt: '2026-10-25'
+updatedAt: '2026-10-30'
 featureId: preorders
 audience: public
 releaseStatus: available
@@ -16,13 +16,13 @@ Admin → Settings → Order taking → Preorders
 
 ## Choose the intake policy
 
-Select whether preordering is disabled, offered alongside other orders, or required using the offered policy controls. Check enabled pickup/delivery services separately.
+In Orders & availability, choose Immediate orders, Scheduled orders or Both. Scheduled orders require a receiving date, including today; this does not mean future dates only. Ready products also obey that calendar. Set pickup and delivery separately. Restaurant service hours and exceptional closures remain the common framework; product-specific preparation replaces the default preparation time. Delivery zones restrict coverage and days and configure same-day delivery. Weekly batches keep their separate ordering and receiving calendar.
 
 <span id="slots" />
 
 ## Configure date/time slots
 
-Choose the slot calendar and set offered lead time, horizon and fulfillment windows. Test boundary dates in the preview rather than assuming all calendar dates are available.
+Choose Date and service calendar. Set default preparation, the preparation clock, booking horizon and slot duration. Default preparation applies only when the product has no preparation time of its own. Slot duration is the length of a selectable receiving window, not transport time. Restaurant delivery hours, closures and product readiness still apply when a zone permits a day. A zone can have a different time-choice mode for advance orders and same-day delivery. Specific booking windows, when retained, override regular service hours; review them before choosing Use service hours. The collapsed Default calendar preview excludes basket, address, zone rules and transport and is not a delivery promise.
 
 <span id="batch" />
 
@@ -48,4 +48,10 @@ You can select an older service in the calendar; that selection stays in place w
 
 ## Control weekly ordering manually
 
-Weekly batch restaurants can choose Manual opening under Settings → Ordering & delivery → Orders & availability, with settings.edit. Save, then explicitly open or pause online orders using the pause control. Automatic opening/cutoff times do not control intake in this mode. Delivery days/windows, the restaurant timezone, preparation and stock rules remain in effect; existing orders are untouched. The website stays browsable during a pause. Active temporary test access must be disabled before reopening publicly. See the fulfillment settings guide for the complete procedure.
+Weekly batch restaurants can choose Manual opening under Settings → Ordering & delivery → Orders & availability, with settings.edit. Save, then explicitly open or pause online orders using the pause control. Automatic opening/cutoff times do not control intake in this mode. Delivery days/windows, the restaurant timezone, preparation and stock rules remain in effect; existing orders are untouched. The website stays browsable during a pause. Active temporary test access must be disabled before reopening publicly. See the fulfillment settings guide for the complete procedure. For optional same-day delivery, review the Delivery zones and schedules guide with compatible API, Admin and guest versions: the customer may choose only the day, see an estimate before payment and receive a restaurant-confirmed time later. Future bookings retain their configured mode. The restaurant’s local date determines same-day rules.
+
+<span id="simulate-order" />
+
+## Simulate an order
+
+With the date/service calendar active, save changes then open Simulate an order. Select pickup or delivery, receiving date, products and quantities, and a full address for delivery. Check availability uses the saved rules for an order placed now. It reports the zone and fee, product preparation reference, same-day transport where applicable, an estimated range awaiting confirmation or selectable slots, and the next date when the selected date has no window. Default-calendar preview is separate. A changed input hides the old result; an unsaved restaurant draft blocks simulation. Menu and delivery permissions are required to load the test basket. This checks calendars, not menu publication, options or final stock/payment eligibility; it creates no order, stock reservation, payment or notification.

@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - customers
   - customers-profiles
-updatedAt: '2026-10-25'
+updatedAt: '2026-10-29'
 featureId: customers-profiles
 audience: public
 releaseStatus: available
@@ -32,7 +32,7 @@ Ouvrez la fiche depuis le téléphone du client, modifiez le nom, les numéros, 
 
 ## Autoriser la commande en espèces
 
-Utilisez le réglage client de confiance/espèces uniquement pour le client concerné. Il autorise la commande en espèces et ne prouve aucun encaissement.
+Le statut de client de confiance sert à l’éligibilité aux espèces uniquement lorsque la règle du restaurant le prévoit. Si les espèces sont autorisées pour tous, ce statut n’est pas nécessaire ; si elles sont désactivées, il ne les réactive pas. Une garantie par carte exigée reste applicable aux clients de confiance. Ce statut ne prouve aucun encaissement.
 
 <span id="merge" />
 
@@ -45,3 +45,11 @@ Vérifiez les fiches sélectionnées et numéros avant de confirmer une fusion. 
 ## Gérer les téléphones et choisir le numéro WhatsApp
 
 Avec la permission de gestion des clients, cliquez sur le téléphone du client pour ouvrir Modifier le client. Dans Numéros de téléphone, corrigez le Téléphone principal ou choisissez Ajouter un numéro. Renseignez un numéro complet ; les numéros israéliens sont enregistrés avec +972 sans le zéro national et les étrangers avec leur indicatif. Choisissez Utiliser pour WhatsApp sur le numéro qui doit recevoir les messages, même si le téléphone pour les appels est différent. Un seul numéro WhatsApp est sélectionné ; jusqu’à dix numéros peuvent être associés. Enregistrez pour confirmer les coordonnées et les téléphones ensemble. Une saisie invalide, un doublon ou un numéro appartenant à une autre fiche bloque cet enregistrement et conserve le brouillon ; utilisez Fusionner les clients pour associer deux fiches existantes. Retirer un numéro supplémentaire ne prend effet qu’à l’enregistrement et dissocie son historique sans supprimer ses commandes. La correction du téléphone principal conserve les noms, adresses et regroupements et corrige les contacts des commandes existantes. Les comptes de connexion et les autres restaurants restent inchangés. L’autorisation d’espèces reste celle du client ; ajouter un numéro ne crée pas une nouvelle autorisation. Pour corriger plusieurs clients à la fois, cochez au moins deux lignes puis Actions → Corriger les téléphones. Le lot reste atomique ; un conflit bloque toutes les corrections. Après une sauvegarde réussie suivie d’un échec d’actualisation, Réessayer recharge sans réenregistrer. Le format ne confirme ni la possession du numéro ni son inscription à WhatsApp.
+
+<span id="stancer-cash-guarantee" />
+
+## Utiliser les espèces avec garantie bancaire facultative
+
+Dans Admin → Paramètres → Paiements, avec la permission settings.edit, choisissez Autres moyens autorisés pour accepter les espèces. Pour un prestataire compatible, Paiements en espèces propose Accepter les espèces pour tous les clients : Oui autorise tous les clients, sans condition de confiance ; Non refuse les espèces pour tous. Le réglage Exiger une garantie par carte pour les espèces reste indépendant : activez-le uniquement si vous souhaitez réserver 100 % du total sur la carte, puis enregistrez et vérifiez les valeurs. La garantie est désactivée par défaut. Elle est disponible aujourd’hui pour Stancer configuré en EUR ; les autres intégrations utilisent ce même affichage lorsque leur parcours de garantie espèces est pris en charge. Les prestataires incompatibles conservent leurs réglages espèces sans proposer cette garantie. Un ancien réglage limité aux clients de confiance reste conservé jusqu’à votre choix explicite Oui ou Non ; modifier la TVA ou les pourboires ne le remplace pas. Le paiement exclusivement en ligne exclut toujours les espèces. Avant une utilisation réelle de la garantie, vérifiez avec votre compte Stancer l’annulation d’une réservation autorisée en sandbox, les délais de libération et les frais.
+
+Conditions d’activation et reprise : [garantie bancaire pour les espèces](/fr/help/payments/cash-card-guarantee).
