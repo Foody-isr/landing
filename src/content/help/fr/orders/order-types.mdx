@@ -155,3 +155,9 @@ Le parcours interne Sumit compatible conserve retrait/livraison et date choisis 
 ## Vérifier les confirmations indépendantes
 
 Dans les actions d’une commande enregistrée, vérifiez les faits de préparation et de remise séparément du paiement. La revue de remise sélectionne les unités physiques réellement concernées ; le partage financier ne les multiplie pas. Avant une clôture, revoyez l’addition ou la part exacte et son solde confirmé. Une portée clôturée refuse de nouvelles modifications commerciales ; un autre lot ouvert n’est pas clôturé par cette action. Voir [le suivi et les confirmations](/fr/help/orders/payment-preparation-and-handoff).
+
+<span id="ordering-simulation-clock" />
+
+## Tester la date de passage d’une commande
+
+Dans Commandes et disponibilité → Simuler une commande, choisissez Date et heure de la commande dans le fuseau affiché, puis la date de réception et le panier. Maintenant recharge l’heure du serveur. La préparation et les règles du jour même sont évaluées à cette référence, avec les réglages enregistrés et les quantités prêtes actuelles. Une date passée ne reconstitue pas l’historique ; le test ne réserve pas de livreur et ne crée aucune commande. Les commandes clientes gardent l’heure réelle du serveur. Voir [la procédure de simulation](/fr/help/orders/preorders-and-batches#simulate-order).

@@ -159,3 +159,9 @@ Acceptance and recovery: [cash card guarantees](/en/help/payments/cash-card-guar
 ## Review independent confirmations
 
 POS fulfillment methods provide separate preparation and handoff tracking. Save the method’s policy in the global catalog. It applies to new sales and remains frozen with them; later changes do not rewrite history. Shared device-mode modules remain distinct from this global policy. See [tracking settings](/en/help/orders/payment-preparation-and-handoff#frozen-tracking-policy).
+
+<span id="ordering-simulation-clock" />
+
+## Test when an order is placed
+
+In Orders & availability → Simulate an order, select Order date and time in the displayed timezone, then the receiving date and basket. Now reloads the server time. Preparation and same-day rules are evaluated at this reference using current saved settings and ready stock. A past date does not reconstruct history; this test neither reserves a courier nor creates an order. Customer orders retain the real server clock. See [the simulation procedure](/en/help/orders/preorders-and-batches#simulate-order).

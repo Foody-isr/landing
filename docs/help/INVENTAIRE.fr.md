@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-30.
 
-106 fiches de fonctionnalités, 840 procédures/sous-fonctionnalités, dont 97 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2295 fichiers applicatifs et 2111 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+106 fiches de fonctionnalités, 846 procédures/sous-fonctionnalités, dont 97 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2296 fichiers applicatifs et 2113 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,8 +10,8 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 616 | 888 | 07a06746f585 ; versioned |
-| foodyadmin | 784 | 811 | d92df3cd5533 ; versioned |
+| foodyserver | 617 | 890 | 4d9e75fd053a ; versioned |
+| foodyadmin | 784 | 811 | e859be6cb0e4 ; versioned |
 | foodyweb | 351 | 173 | a2bd6f6a4237 ; versioned |
 | foodylanding | 127 | 21 | 6beef053cca4 ; versioned |
 | foodypos | 373 | 168 | e643e1eaf83c ; versioned |
@@ -546,6 +546,7 @@ Identifiant : `order-types`. Public : public. Disponibilité : available. Servic
 - [Vérifier l’avancement selon le type de commande](../../src/content/help/fr/orders/order-types.mdx#operational-progress-by-type)
 - [Intégration du panier préparé Sumit](../../src/content/help/fr/orders/order-types.mdx#prepared-sumit-checkout-integration)
 - [Vérifier les confirmations indépendantes](../../src/content/help/fr/orders/order-types.mdx#independent-lifecycle-confirmations)
+- [Tester la date de passage d’une commande](../../src/content/help/fr/orders/order-types.mdx#ordering-simulation-clock)
 
 ### [Prendre une commande sur la caisse](../../src/content/help/fr/orders/taking-an-order-pos.mdx)
 
@@ -609,7 +610,7 @@ Identifiant : `calendar`. Public : public. Disponibilité : available. Services 
 
 ### [Précommandes, créneaux et séries](../../src/content/help/fr/orders/preorders-and-batches.mdx)
 
-Identifiant : `preorders`. Public : public. Disponibilité : available. Services : foodyadmin, foodyweb, foodypos.
+Identifiant : `preorders`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb, foodypos.
 
 - [Choisir la politique de prise de commande](../../src/content/help/fr/orders/preorders-and-batches.mdx#policy)
 - [Configurer les créneaux](../../src/content/help/fr/orders/preorders-and-batches.mdx#slots)
@@ -963,6 +964,7 @@ Identifiant : `restaurant-profile`. Public : public. Disponibilité : available.
 - [Coordonnées du personnel et destination du livreur](../../src/content/help/fr/settings/restaurant-profile.mdx#staff-contact-and-courier-defaults)
 - [Code caisse à l’activation du personnel](../../src/content/help/fr/settings/restaurant-profile.mdx#staff-activation-pos-code)
 - [Piloter manuellement les commandes hebdomadaires](../../src/content/help/fr/settings/restaurant-profile.mdx#manual-weekly-ordering)
+- [Tester la date de passage d’une commande](../../src/content/help/fr/settings/restaurant-profile.mdx#ordering-simulation-clock)
 
 ### [Règles de commande et de remise](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx)
 
@@ -992,6 +994,7 @@ Identifiant : `fulfillment-policy`. Public : public. Disponibilité : available.
 - [Intégration du panier préparé Sumit](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#prepared-sumit-checkout-integration)
 - [Utiliser les espèces avec garantie bancaire facultative](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#stancer-cash-guarantee)
 - [Vérifier les confirmations indépendantes](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#independent-lifecycle-confirmations)
+- [Tester la date de passage d’une commande](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#ordering-simulation-clock)
 
 ### [Comportement POS, services et ajustements](../../src/content/help/fr/settings/pos-behavior.mdx)
 
@@ -1107,6 +1110,7 @@ Identifiant : `delivery-zones`. Public : public. Disponibilité : available. Ser
 - [Configurer la livraison du jour même](../../src/content/help/fr/delivery/zones-and-schedules.mdx#same-day)
 - [Comprendre l’estimation et confirmer l’horaire](../../src/content/help/fr/delivery/zones-and-schedules.mdx#estimate)
 - [Vérifier les priorités et les sauvegardes](../../src/content/help/fr/delivery/zones-and-schedules.mdx#precedence)
+- [Tester la date de passage d’une commande](../../src/content/help/fr/delivery/zones-and-schedules.mdx#ordering-simulation-clock)
 
 ### [Dispatch et planification des tournées](../../src/content/help/fr/delivery/dispatch-and-routes.mdx)
 
@@ -1134,6 +1138,7 @@ Identifiant : `delivery-dispatch`. Public : public. Disponibilité : available. 
 - [Consulter le mode d’un autre livreur](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#superadmin-courier-mode)
 - [Lire la dernière position reçue](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#courier-position)
 - [Vérifier les confirmations indépendantes](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#independent-lifecycle-confirmations)
+- [Tester la date de passage d’une commande](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#ordering-simulation-clock)
 
 ### [Parcours coursier et confirmation des livraisons](../../src/content/help/fr/delivery/courier-workspace.mdx)
 
@@ -1396,6 +1401,7 @@ Identifiant : `platform-api`. Public : internal. Disponibilité : available. Ser
 - [Contrat des choix de variante facultatifs](internal/fr/api-and-release.md#option-choice-requirement)
 - [Contrat additif des confirmations de commande](internal/fr/api-and-release.md#order-lifecycle-v2-contract)
 - [Publier le contrat EOD avant le POS](internal/fr/api-and-release.md#end-of-day-protocol)
+- [Évaluer un panier avec une heure simulée privée](internal/fr/api-and-release.md#ordering-simulation-clock)
 
 ### [Aperçus internes et alias de routes](internal/fr/design-previews.md)
 

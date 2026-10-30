@@ -59,3 +59,9 @@ In a customer-choice zone with restaurant confirmation for same-day delivery, th
 ## Review priorities and safe saves
 
 A zone controls coverage, price/minimum and receiving days. Restaurant service hours and exceptional closures still limit receipt. Product-specific preparation replaces the default; actual ready stock can shorten preparation but cannot open another day or area. The same-day policy is saved with its zone and is not combined with a global override. Custom booking hours still replace service hours when configured, while batches keep their own windows. The global delivery minimum is used only when a zone has no minimum; explicit zero remains zero. Historical unconfigured coverage can allow all addresses if every classic zone is inactive: use the service/pause control to pause deliveries. Explicit same-day zones fail closed when inactive; deleting the last such zone requires other active classic coverage. Concurrent zone edits return a conflict and retain the draft. Reload and review the current version; after an uncertain network save, verify saved data before writing again.
+
+<span id="ordering-simulation-clock" />
+
+## Test when an order is placed
+
+In Orders & availability → Simulate an order, select Order date and time in the displayed timezone, then the receiving date and basket. Now reloads the server time. Preparation and same-day rules are evaluated at this reference using current saved settings and ready stock. A past date does not reconstruct history; this test neither reserves a courier nor creates an order. Customer orders retain the real server clock. See [the simulation procedure](/en/help/orders/preorders-and-batches#simulate-order). The simulation covers classic delivery; published tours retain their own rules.

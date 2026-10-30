@@ -151,3 +151,9 @@ Le livreur est représenté par un avatar rond, au-dessus des repères de livrai
 ## Vérifier les confirmations indépendantes
 
 Une remise partielle conserve les unités restantes. Terminer un seul poste KDS requis ne termine pas toute la préparation. La remise au livreur et la réception client sont deux confirmations distinctes ; le départ d’une tournée ne prouve pas une heure de réception client. Voir [préparation et remise](/fr/help/orders/payment-preparation-and-handoff).
+
+<span id="ordering-simulation-clock" />
+
+## Tester la date de passage d’une commande
+
+Dans Commandes et disponibilité → Simuler une commande, choisissez Date et heure de la commande dans le fuseau affiché, puis la date de réception et le panier. Maintenant recharge l’heure du serveur. La préparation et les règles du jour même sont évaluées à cette référence, avec les réglages enregistrés et les quantités prêtes actuelles. Une date passée ne reconstitue pas l’historique ; le test ne réserve pas de livreur et ne crée aucune commande. Les commandes clientes gardent l’heure réelle du serveur. Voir [la procédure de simulation](/fr/help/orders/preorders-and-batches#simulate-order). La simulation concerne la livraison classique ; les tournées publiées gardent leurs propres règles.
