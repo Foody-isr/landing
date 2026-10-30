@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - payments
   - stancer-cash-guarantee
-updatedAt: '2026-10-29'
+updatedAt: '2026-10-30'
 featureId: stancer-cash-guarantee
 audience: public
 releaseStatus: available
@@ -35,3 +35,9 @@ Dans le détail de commande, le panneau Garantie bancaire distingue montant rés
 ## Vérifier une réservation incertaine
 
 Choisissez Vérifier la réservation pour relire l’état faisant autorité. Après un encaissement ou une annulation incertains, ne relancez pas le débit et ne créez pas une seconde commande : Foody conserve l’opération unique et vérifie son résultat. Une libération toujours non confirmée exige un contrôle dans Stancer par un opérateur autorisé ; son effet bancaire immédiat n’est pas promis. Annulez ou refusez par l’action habituelle de commande ; Foody exige une libération confirmée avant de terminer. Une garantie active bloque les modifications de panier, remise et livraison/retrait ; annulez avec libération la commande existante avant son remplacement. Changer de prestataire ne supprime aucune réservation existante. Si la règle enregistrée devient incompatible, elle reste visible pour désactivation explicite et le checkout espèces est bloqué. Déployez la migration 282 et l’API avant Admin et le site client ; coordonnez activation réelle et publication documentaire avec les tests d’acceptation. Une réservation active bloque aussi la suppression définitive de la commande. Un ancien lien Stancer peut afficher un message de paiement générique après annulation ; utilisez l’état de réservation vérifié par Foody comme preuve du résultat financier.
+
+<span id="cash-guarantee-lifecycle-facts" />
+
+## Distinguer garantie et encaissement
+
+Une carte réservée en garantie n’est pas un encaissement. Les espèces confirmées restent comptées même si la libération attend vérification ; un débit de garantie ne compte qu’après confirmation de la capture, une seule fois. Un résultat incertain doit être vérifié dans l’opération existante avant toute nouvelle collecte. Les autorisations et les restrictions d’action de la garantie restent applicables.

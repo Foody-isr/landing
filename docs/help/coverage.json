@@ -2088,13 +2088,22 @@
       "selectors": {
         "foodyserver": [
           "internal/common/order_lifecycle.go",
-          "internal/orders/order_lifecycle*.go"
+          "internal/orders/order_lifecycle*.go",
+          "internal/common/order_lifecycle_v2*.go",
+          "internal/common/order_commercial_guard.go",
+          "internal/orders/order_lifecycle_v2*.go",
+          "migrations/284_order_lifecycle_v2.sql"
         ],
         "foodyadmin": [
           "src/lib/orders/lifecycle.ts",
           "src/lib/orders/status-presentation.ts",
           "src/lib/orders/workflow-stepper.ts",
-          "src/components/orders/detail/OrderDetailHead.tsx"
+          "src/components/orders/detail/OrderDetailHead.tsx",
+          "src/lib/orders/lifecycle-v2*.ts",
+          "src/components/orders/detail/OrderLifecycleV2*.tsx",
+          "src/components/orders/detail/LifecycleOperations.tsx",
+          "src/components/orders/detail/context/LifecycleFacts.tsx",
+          "src/lib/orders/lifecycle-operations.ts"
         ],
         "foodyweb": [
           "lib/order-lifecycle.ts",
@@ -2102,14 +2111,24 @@
           "lib/order-tracking.ts",
           "hooks/useOrderStatus.ts",
           "components/OrderStatusTimeline.tsx",
-          "components/OrderTrackingClient.tsx"
+          "components/OrderTrackingClient.tsx",
+          "lib/order-lifecycle-v2*.ts",
+          "components/OrderLifecycleV2*.tsx",
+          "components/OrderLifecycleFacts.tsx"
         ],
         "foodypos": [
           "lib/features/orders/domain/order_state_projection.dart",
           "lib/features/orders/data/order_lifecycle_repository.dart",
           "lib/features/orders/presentation/order_lifecycle_labels.dart",
           "lib/features/orders/data/held_preparation_repository.dart",
-          "lib/features/orders/presentation/held_preparation_dialog.dart"
+          "lib/features/orders/presentation/held_preparation_dialog.dart",
+          "lib/features/orders/domain/order_lifecycle_v2.dart",
+          "lib/features/orders/data/order_lifecycle_v2*.dart",
+          "lib/features/orders/presentation/order_lifecycle_v2*.dart",
+          "lib/features/orders/data/order_lifecycle_operation_repository.dart",
+          "lib/features/orders/presentation/order_lifecycle_panel.dart",
+          "lib/features/orders/providers/order_lifecycle_v2_provider.dart",
+          "lib/features/orders/domain/order_lifecycle_filters.dart"
         ]
       }
     },
@@ -2190,6 +2209,41 @@
           "lib/i18n.tsx",
           "lib/types.ts",
           "services/api.ts"
+        ],
+        "foodypos": [
+          "lib/features/orders/domain/order.dart",
+          "lib/features/orders/**/cash_guarantee*.dart",
+          "lib/features/orders/online/presentation/order_details_page.dart",
+          "lib/features/orders/presentation/widgets/check_panel.dart",
+          "lib/features/orders/presentation/financial_check_page.dart"
+        ]
+      }
+    },
+    {
+      "id": "pos-end-of-day",
+      "article": "payments/end-of-day",
+      "audience": "public",
+      "selectors": {
+        "foodypos": [
+          "lib/features/more/**/end_of_day*",
+          "lib/services/payments/terminal_payment_service.dart",
+          "lib/features/orders/data/financial_check_repository.dart",
+          "lib/core/ui/terminal_payment_error.dart",
+          "lib/features/more/data/cash_drawer_repository.dart",
+          "lib/features/more/presentation/cash_drawer_page.dart",
+          "lib/features/orders/presentation/cash_collection_guard.dart",
+          "lib/features/orders/presentation/financial_check_page.dart",
+          "lib/features/orders/presentation/widgets/check_panel.dart",
+          "lib/features/orders/online/presentation/order_details_page.dart",
+          "lib/features/orders/presentation/cash_payment_dialog.dart"
+        ],
+        "foodyserver": [
+          "internal/common/end_of_day*.go",
+          "internal/orders/end_of_day*.go",
+          "migrations/285_end_of_day.sql",
+          "internal/common/financial_check.go",
+          "internal/orders/financial_check_payment.go",
+          "internal/orders/cash_drawer.go"
         ]
       }
     }

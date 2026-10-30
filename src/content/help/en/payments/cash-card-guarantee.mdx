@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - payments
   - stancer-cash-guarantee
-updatedAt: '2026-10-29'
+updatedAt: '2026-10-30'
 featureId: stancer-cash-guarantee
 audience: public
 releaseStatus: available
@@ -35,3 +35,9 @@ In order details, the Card guarantee panel separates the reserved amount, validi
 ## Verify an uncertain reservation
 
 Choose Verify reservation to read the authoritative state. After an uncertain capture or cancellation, do not retry the debit or create another order: Foody retains its single operation and checks its result. A release that remains unconfirmed needs verification in Stancer with an authorized operator; bank release is not promised to be immediate. Cancel/reject through the normal order action; Foody requires confirmed release before completing it. An active guarantee prevents basket, discount and fulfillment edits; release/cancel the existing order before creating a replacement. A provider change never deletes an existing reservation. If the configured rule becomes unsupported, the saved rule remains visible for explicit disabling and public cash checkout stays blocked. Deploy migration 282 and the API before Admin/Web; keep real activation and documentation publication coupled to acceptance testing. Active reservations also block permanent order deletion. A previously used Stancer page may show generic payment wording after cancellation; use Foody’s verified reservation state instead of that text as proof of settlement.
+
+<span id="cash-guarantee-lifecycle-facts" />
+
+## Distinguish a guarantee from money received
+
+A card held as a guarantee is not money received. Confirmed cash remains counted even while release awaits verification; a guarantee charge counts only after capture is confirmed, once. An uncertain result must be checked on the existing operation before another collection. The guarantee permissions and action restrictions still apply.

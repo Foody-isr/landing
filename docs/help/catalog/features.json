@@ -14986,6 +14986,13 @@
         "lib/i18n.tsx",
         "lib/types.ts",
         "services/api.ts"
+      ],
+      "foodypos": [
+        "lib/features/orders/domain/order.dart",
+        "lib/features/orders/**/cash_guarantee*.dart",
+        "lib/features/orders/online/presentation/order_details_page.dart",
+        "lib/features/orders/presentation/widgets/check_panel.dart",
+        "lib/features/orders/presentation/financial_check_page.dart"
       ]
     },
     "operations": [
@@ -15040,11 +15047,24 @@
           "fr": "Choisissez Vérifier la réservation pour relire l’état faisant autorité. Après un encaissement ou une annulation incertains, ne relancez pas le débit et ne créez pas une seconde commande : Foody conserve l’opération unique et vérifie son résultat. Une libération toujours non confirmée exige un contrôle dans Stancer par un opérateur autorisé ; son effet bancaire immédiat n’est pas promis. Annulez ou refusez par l’action habituelle de commande ; Foody exige une libération confirmée avant de terminer. Une garantie active bloque les modifications de panier, remise et livraison/retrait ; annulez avec libération la commande existante avant son remplacement. Changer de prestataire ne supprime aucune réservation existante. Si la règle enregistrée devient incompatible, elle reste visible pour désactivation explicite et le checkout espèces est bloqué. Déployez la migration 282 et l’API avant Admin et le site client ; coordonnez activation réelle et publication documentaire avec les tests d’acceptation. Une réservation active bloque aussi la suppression définitive de la commande. Un ancien lien Stancer peut afficher un message de paiement générique après annulation ; utilisez l’état de réservation vérifié par Foody comme preuve du résultat financier.",
           "he": "בחרו בבדיקת השריון לקריאת המצב הקובע. לאחר חיוב או ביטול שתוצאתם אינה ברורה, אל תחזרו על החיוב ואל תיצרו הזמנה שנייה: Foody שומרת על הפעולה היחידה ובודקת את תוצאתה. שחרור שלא אושר דורש בדיקה ב-Stancer בידי מפעיל מורשה; אין הבטחה לשחרור בנקאי מיידי. בטלו או דחו דרך פעולת ההזמנה הרגילה; נדרש שחרור מאושר לפני סיום הביטול. ערבות פעילה חוסמת שינוי סל, הנחה ומימוש; בטלו ושחררו את ההזמנה הקיימת לפני החלפתה. שינוי ספק אינו מוחק שריון קיים. אם הכלל השמור אינו נתמך עוד, הוא נשאר גלוי לביטול מפורש ותשלום מקוון במזומן נחסם. פרסו מיגרציה 282 ואת השרת לפני ממשק הניהול ואתר הלקוח; תאמו הפעלה אמיתית ופרסום התיעוד עם בדיקות הקבלה. שריון פעיל חוסם גם מחיקה סופית של ההזמנה. עמוד Stancer שנעשה בו שימוש עשוי להציג הודעת תשלום כללית לאחר ביטול; הסתמכו על מצב השריון המאומת ב-Foody כהוכחה לתוצאה הכספית."
         }
+      },
+      {
+        "id": "cash-guarantee-lifecycle-facts",
+        "title": {
+          "fr": "Distinguer garantie et encaissement",
+          "en": "Distinguish a guarantee from money received",
+          "he": "הבחנה בין ערבות לתקבול"
+        },
+        "instructions": {
+          "fr": "Une carte réservée en garantie n’est pas un encaissement. Les espèces confirmées restent comptées même si la libération attend vérification ; un débit de garantie ne compte qu’après confirmation de la capture, une seule fois. Un résultat incertain doit être vérifié dans l’opération existante avant toute nouvelle collecte. Les autorisations et les restrictions d’action de la garantie restent applicables.",
+          "en": "A card held as a guarantee is not money received. Confirmed cash remains counted even while release awaits verification; a guarantee charge counts only after capture is confirmed, once. An uncertain result must be checked on the existing operation before another collection. The guarantee permissions and action restrictions still apply.",
+          "he": "כרטיס שמור לערבות אינו תקבול. מזומן שאושר ממשיך להיספר גם כששחרור הערבות ממתין לבדיקה; חיוב ערבות נספר רק לאחר אישור החיוב, פעם אחת. יש לבדוק תוצאה לא ודאית בפעולה הקיימת לפני גבייה נוספת. הרשאות הערבות והגבלות הפעולה שלה ממשיכות לחול."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
-    "procedureUpdatedAt": "2026-10-29"
+    "procedureUpdatedAt": "2026-10-30"
   },
   {
     "id": "pos-end-of-day",

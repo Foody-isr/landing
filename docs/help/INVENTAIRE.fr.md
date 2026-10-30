@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-30.
 
-105 fiches de fonctionnalités, 807 procédures/sous-fonctionnalités, dont 96 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2251 fichiers applicatifs et 2094 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+106 fiches de fonctionnalités, 840 procédures/sous-fonctionnalités, dont 97 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2295 fichiers applicatifs et 2111 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,11 +10,11 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 590 | 879 | be51711419f4 ; versioned |
-| foodyadmin | 779 | 807 | d256adb8e4a9 ; versioned |
-| foodyweb | 348 | 171 | ae0e952036c5 ; versioned |
-| foodylanding | 127 | 21 | e828d4e935e6 ; versioned |
-| foodypos | 363 | 166 | 735f5063e8b0 ; versioned |
+| foodyserver | 616 | 888 | 07a06746f585 ; versioned |
+| foodyadmin | 784 | 811 | d92df3cd5533 ; versioned |
+| foodyweb | 351 | 173 | a2bd6f6a4237 ; versioned |
+| foodylanding | 127 | 21 | 6beef053cca4 ; versioned |
+| foodypos | 373 | 168 | e643e1eaf83c ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
 
 ## getting-started
@@ -129,6 +129,7 @@ Identifiant : `staff-roles`. Public : public. Disponibilité : available. Servic
 - [Modifier ou retirer un rôle](../../src/content/help/fr/staff/roles-and-permissions.mdx#change)
 - [Accès aux nouveaux réglages](../../src/content/help/fr/staff/roles-and-permissions.mdx#related-service-controls)
 - [Code caisse à l’activation du personnel](../../src/content/help/fr/staff/roles-and-permissions.mdx#staff-activation-pos-code)
+- [Autoriser une clôture de journée](../../src/content/help/fr/staff/roles-and-permissions.mdx#end-of-day-permissions)
 
 ### [Accès POS, appareils et shifts](../../src/content/help/fr/staff/devices-and-shifts.mdx)
 
@@ -515,6 +516,7 @@ Identifiant : `orders-managing-orders`. Public : public. Disponibilité : availa
 - [Afficher automatiquement la série actuelle](../../src/content/help/fr/orders/managing-orders.mdx#weekly-series-rollover)
 - [Séparer paiement, préparation et remise](../../src/content/help/fr/orders/managing-orders.mdx#order-lifecycle-guide)
 - [Finaliser une commande interne](../../src/content/help/fr/orders/managing-orders.mdx#internal-order-finalization)
+- [Vérifier les confirmations indépendantes](../../src/content/help/fr/orders/managing-orders.mdx#independent-lifecycle-confirmations)
 
 ### [Types de commandes et remise](../../src/content/help/fr/orders/order-types.mdx)
 
@@ -543,6 +545,7 @@ Identifiant : `order-types`. Public : public. Disponibilité : available. Servic
 - [Piloter manuellement les commandes hebdomadaires](../../src/content/help/fr/orders/order-types.mdx#manual-weekly-ordering)
 - [Vérifier l’avancement selon le type de commande](../../src/content/help/fr/orders/order-types.mdx#operational-progress-by-type)
 - [Intégration du panier préparé Sumit](../../src/content/help/fr/orders/order-types.mdx#prepared-sumit-checkout-integration)
+- [Vérifier les confirmations indépendantes](../../src/content/help/fr/orders/order-types.mdx#independent-lifecycle-confirmations)
 
 ### [Prendre une commande sur la caisse](../../src/content/help/fr/orders/taking-an-order-pos.mdx)
 
@@ -568,6 +571,7 @@ Identifiant : `pos-order-entry`. Public : public. Disponibilité : available. Se
 - [Retrouver un brouillon non envoyé après redémarrage](../../src/content/help/fr/orders/taking-an-order-pos.mdx#resume-local-draft)
 - [Intégration du panier préparé Sumit](../../src/content/help/fr/orders/taking-an-order-pos.mdx#prepared-sumit-checkout-integration)
 - [Laisser une option facultative vide](../../src/content/help/fr/orders/taking-an-order-pos.mdx#option-choice-requirement)
+- [Vérifier les confirmations indépendantes](../../src/content/help/fr/orders/taking-an-order-pos.mdx#independent-lifecycle-confirmations)
 
 ### [Consulter et modifier une commande](../../src/content/help/fr/orders/order-details.mdx)
 
@@ -593,6 +597,7 @@ Identifiant : `order-detail`. Public : public. Disponibilité : available. Servi
 - [Utiliser les espèces avec garantie bancaire facultative](../../src/content/help/fr/orders/order-details.mdx#stancer-cash-guarantee)
 - [Confirmer l’horaire d’une livraison de zone](../../src/content/help/fr/orders/order-details.mdx#confirm-zone-delivery-time)
 - [Laisser une option facultative vide](../../src/content/help/fr/orders/order-details.mdx#option-choice-requirement)
+- [Vérifier les confirmations indépendantes](../../src/content/help/fr/orders/order-details.mdx#independent-lifecycle-confirmations)
 
 ### [Calendrier du restaurant et exceptions](../../src/content/help/fr/orders/calendar.mdx)
 
@@ -631,6 +636,7 @@ Identifiant : `pos-check-split`. Public : public. Disponibilité : available. Se
 - [Partager les articles sélectionnés](../../src/content/help/fr/orders/split-bills.mdx#share)
 - [Regrouper les fractions enregistrées](../../src/content/help/fr/orders/split-bills.mdx#combine)
 - [Vérifier les variantes du détail à répartir](../../src/content/help/fr/orders/split-bills.mdx#variant-position-details)
+- [Vérifier les confirmations indépendantes](../../src/content/help/fr/orders/split-bills.mdx#independent-lifecycle-confirmations)
 
 ### [Déplacer, fusionner et transférer les articles](../../src/content/help/fr/orders/move-and-merge-bills.mdx)
 
@@ -641,6 +647,7 @@ Identifiant : `pos-check-move`. Public : public. Disponibilité : available. Ser
 - [Fusionner des additions occupées](../../src/content/help/fr/orders/move-and-merge-bills.mdx#merge)
 - [Transférer des articles enregistrés](../../src/content/help/fr/orders/move-and-merge-bills.mdx#transfer)
 - [Choisir l’addition sur le terminal](../../src/content/help/fr/orders/move-and-merge-bills.mdx#terminal-check-selection)
+- [Vérifier les confirmations indépendantes](../../src/content/help/fr/orders/move-and-merge-bills.mdx#independent-lifecycle-confirmations)
 
 ### [Couverts, services, attente et envoi cuisine](../../src/content/help/fr/orders/courses-and-kitchen-release.mdx)
 
@@ -651,6 +658,7 @@ Identifiant : `pos-courses`. Public : public. Disponibilité : available. Servic
 - [Mettre en attente ou lancer un service](../../src/content/help/fr/orders/courses-and-kitchen-release.mdx#release)
 - [Répéter des plats comme nouvelle vente](../../src/content/help/fr/orders/courses-and-kitchen-release.mdx#repeat)
 - [Piloter les services sur mobile](../../src/content/help/fr/orders/courses-and-kitchen-release.mdx#mobile-terminal)
+- [Vérifier les confirmations indépendantes](../../src/content/help/fr/orders/courses-and-kitchen-release.mdx#independent-lifecycle-confirmations)
 
 ### [Remise, offert et annulation](../../src/content/help/fr/orders/discount-comp-void.mdx)
 
@@ -665,12 +673,20 @@ Identifiant : `pos-comp-void`. Public : public. Disponibilité : available. Serv
 - [Vérifier les choix conditionnels d’un article](../../src/content/help/fr/orders/discount-comp-void.mdx#conditional-item-choices)
 - [Accéder aux options sur mobile](../../src/content/help/fr/orders/discount-comp-void.mdx#mobile-terminal)
 - [Vérifier l’addition avant une correction](../../src/content/help/fr/orders/discount-comp-void.mdx#uncertain-intent-and-operational-facts)
+- [Vérifier les confirmations indépendantes](../../src/content/help/fr/orders/discount-comp-void.mdx#independent-lifecycle-confirmations)
 
 ### [Addition, paiement, préparation et remise](../../src/content/help/fr/orders/payment-preparation-and-handoff.mdx)
 
 Identifiant : `order-lifecycle`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb, foodypos.
 
 - [Distinguer addition, paiement, préparation et remise](../../src/content/help/fr/orders/payment-preparation-and-handoff.mdx#order-lifecycle-axes)
+- [Lire les montants enregistrés](../../src/content/help/fr/orders/payment-preparation-and-handoff.mdx#recorded-money-summary)
+- [Vérifier la préparation réelle](../../src/content/help/fr/orders/payment-preparation-and-handoff.mdx#convergent-preparation)
+- [Confirmer une remise par quantité](../../src/content/help/fr/orders/payment-preparation-and-handoff.mdx#quantity-handoff-review)
+- [Séparer la remise au livreur et la livraison](../../src/content/help/fr/orders/payment-preparation-and-handoff.mdx#courier-handoff-and-delivery)
+- [Clôturer la bonne portée commerciale](../../src/content/help/fr/orders/payment-preparation-and-handoff.mdx#explicit-commercial-closure)
+- [Régler le suivi pour les prochaines ventes](../../src/content/help/fr/orders/payment-preparation-and-handoff.mdx#frozen-tracking-policy)
+- [Reprendre une confirmation incertaine](../../src/content/help/fr/orders/payment-preparation-and-handoff.mdx#uncertain-operation-recovery)
 
 ### [Préparer une commande interne et encaisser avec Sumit](../../src/content/help/fr/orders/internal-sumit-checkout.mdx)
 
@@ -681,6 +697,7 @@ Identifiant : `orders-internal-sumit-checkout`. Public : public. Disponibilité 
 - [Utiliser le panier et le thème habituels du restaurant](../../src/content/help/fr/orders/internal-sumit-checkout.mdx#sumit-shared-storefront-cart)
 - [Saisir la carte depuis Admin](../../src/content/help/fr/orders/internal-sumit-checkout.mdx#sumit-admin-hosted-card)
 - [Reprendre après une interruption](../../src/content/help/fr/orders/internal-sumit-checkout.mdx#sumit-checkout-recovery)
+- [Vérifier les confirmations indépendantes](../../src/content/help/fr/orders/internal-sumit-checkout.mdx#independent-lifecycle-confirmations)
 
 ## payments
 
@@ -702,6 +719,7 @@ Identifiant : `payments-how-payments-work`. Public : public. Disponibilité : av
 - [Commandes préparées avec Sumit](../../src/content/help/fr/payments/how-payments-work.mdx#prepared-sumit-internal-orders)
 - [Panier préparé et présentation du restaurant](../../src/content/help/fr/payments/how-payments-work.mdx#prepared-order-existing-cart)
 - [Utiliser les espèces avec garantie bancaire facultative](../../src/content/help/fr/payments/how-payments-work.mdx#stancer-cash-guarantee)
+- [Vérifier les confirmations indépendantes](../../src/content/help/fr/payments/how-payments-work.mdx#independent-lifecycle-confirmations)
 
 ### [Encaisser sur la caisse](../../src/content/help/fr/payments/pos-checkout.mdx)
 
@@ -755,12 +773,22 @@ Identifiant : `payment-configuration`. Public : public. Disponibilité : availab
 
 ### [Paiement en espèces avec garantie bancaire Stancer](../../src/content/help/fr/payments/cash-card-guarantee.mdx)
 
-Identifiant : `stancer-cash-guarantee`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb.
+Identifiant : `stancer-cash-guarantee`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb, foodypos.
 
 - [Configurer les espèces et la garantie bancaire](../../src/content/help/fr/payments/cash-card-guarantee.mdx#activate)
 - [Réserver la carte et conserver les espèces à recevoir](../../src/content/help/fr/payments/cash-card-guarantee.mdx#checkout)
 - [Enregistrer les espèces ou encaisser explicitement la carte](../../src/content/help/fr/payments/cash-card-guarantee.mdx#collect)
 - [Vérifier une réservation incertaine](../../src/content/help/fr/payments/cash-card-guarantee.mdx#recover)
+- [Distinguer garantie et encaissement](../../src/content/help/fr/payments/cash-card-guarantee.mdx#cash-guarantee-lifecycle-facts)
+
+### [Clôture de journée et rapport Z Foody](../../src/content/help/fr/payments/end-of-day.mdx)
+
+Identifiant : `pos-end-of-day`. Public : public. Disponibilité : local-release-unverified. Services : foodyserver, foodypos.
+
+- [Vérifier ce que couvre la clôture](../../src/content/help/fr/payments/end-of-day.mdx#end-of-day-scope)
+- [Compter, transmettre et archiver](../../src/content/help/fr/payments/end-of-day.mdx#end-of-day-run)
+- [Reprendre sans transmettre deux fois](../../src/content/help/fr/payments/end-of-day.mdx#end-of-day-recovery)
+- [Résoudre les espèces en attente](../../src/content/help/fr/payments/end-of-day.mdx#end-of-day-cash-reservation)
 
 ## printers
 
@@ -908,6 +936,7 @@ Identifiant : `pos-service-modes`. Public : public. Disponibilité : available. 
 - [Consulter et modifier les Modes dans Admin](../../src/content/help/fr/settings/service-mode.mdx#modes-dashboard)
 - [Confirmer ou annuler la suppression dans l’éditeur de mode](../../src/content/help/fr/settings/service-mode.mdx#mode-editor-deletion)
 - [Revenir à l’accueil après l’envoi et ouvrir une nouvelle vente](../../src/content/help/fr/settings/service-mode.mdx#send-home-new-sale)
+- [Vérifier les confirmations indépendantes](../../src/content/help/fr/settings/service-mode.mdx#independent-lifecycle-confirmations)
 
 ### [Traitement des commandes et flux cuisine](../../src/content/help/fr/settings/workflow-settings.mdx)
 
@@ -962,6 +991,7 @@ Identifiant : `fulfillment-policy`. Public : public. Disponibilité : available.
 - [Distinguer réglage actuel et progression enregistrée](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#recorded-lifecycle-and-policy)
 - [Intégration du panier préparé Sumit](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#prepared-sumit-checkout-integration)
 - [Utiliser les espèces avec garantie bancaire facultative](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#stancer-cash-guarantee)
+- [Vérifier les confirmations indépendantes](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#independent-lifecycle-confirmations)
 
 ### [Comportement POS, services et ajustements](../../src/content/help/fr/settings/pos-behavior.mdx)
 
@@ -981,6 +1011,7 @@ Identifiant : `pos-behavior`. Public : public. Disponibilité : available. Servi
 - [Choisir un contact existant ou saisir les coordonnées de commande](../../src/content/help/fr/settings/pos-behavior.mdx#fulfillment-order-contact-entry)
 - [Régler la caisse sur un écran compact](../../src/content/help/fr/settings/pos-behavior.mdx#mobile-terminal-pages)
 - [Se déplacer sur le terminal](../../src/content/help/fr/settings/pos-behavior.mdx#terminal-navigation-overview)
+- [Retrouver le dépôt dans le parcours de fin de journée](../../src/content/help/fr/settings/pos-behavior.mdx#end-of-day-terminal-navigation)
 
 ### [Appareils et écrans cuisine](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx)
 
@@ -1021,6 +1052,7 @@ Identifiant : `pos-workspace`. Public : public. Disponibilité : available. Serv
 - [Parcourir les pages du terminal mobile](../../src/content/help/fr/settings/pos-workspace.mdx#mobile-terminal-pages)
 - [Consulter l’aperçu et les disponibilités du terminal](../../src/content/help/fr/settings/pos-workspace.mdx#operational-overview)
 - [Reprendre le travail après une interruption](../../src/content/help/fr/settings/pos-workspace.mdx#local-draft-and-lifecycle)
+- [Ouvrir la clôture de journée](../../src/content/help/fr/settings/pos-workspace.mdx#end-of-day-navigation)
 
 ### [Consommation et quotas des services externes](../../src/content/help/fr/settings/api-usage-and-quotas.mdx)
 
@@ -1101,6 +1133,7 @@ Identifiant : `delivery-dispatch`. Public : public. Disponibilité : available. 
 - [Annuler un départ lancé par erreur](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#undo-departure)
 - [Consulter le mode d’un autre livreur](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#superadmin-courier-mode)
 - [Lire la dernière position reçue](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#courier-position)
+- [Vérifier les confirmations indépendantes](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#independent-lifecycle-confirmations)
 
 ### [Parcours coursier et confirmation des livraisons](../../src/content/help/fr/delivery/courier-workspace.mdx)
 
@@ -1237,6 +1270,7 @@ Identifiant : `guest-ordering`. Public : public. Disponibilité : available. Ser
 - [Panier préparé et présentation du restaurant](../../src/content/help/fr/guest/online-ordering.mdx#prepared-order-existing-cart)
 - [Utiliser les espèces avec garantie bancaire facultative](../../src/content/help/fr/guest/online-ordering.mdx#stancer-cash-guarantee)
 - [Laisser une option facultative vide](../../src/content/help/fr/guest/online-ordering.mdx#option-choice-requirement)
+- [Vérifier les confirmations indépendantes](../../src/content/help/fr/guest/online-ordering.mdx#independent-lifecycle-confirmations)
 
 ### [Suivi, reçus et moyens enregistrés](../../src/content/help/fr/guest/tracking-and-account.mdx)
 
@@ -1252,6 +1286,7 @@ Identifiant : `guest-account-tracking`. Public : public. Disponibilité : availa
 - [Se connecter pendant la commande](../../src/content/help/fr/guest/tracking-and-account.mdx#optional-entry-access)
 - [Corriger un téléphone mémorisé](../../src/content/help/fr/guest/tracking-and-account.mdx#saved-phone-validation)
 - [Ouvrir un panier préparé pour Sumit](../../src/content/help/fr/guest/tracking-and-account.mdx#prepared-sumit-basket)
+- [Vérifier les confirmations indépendantes](../../src/content/help/fr/guest/tracking-and-account.mdx#independent-lifecycle-confirmations)
 - [Panier préparé et présentation du restaurant](../../src/content/help/fr/guest/tracking-and-account.mdx#prepared-order-existing-cart)
 
 ### [Commander avec le QR de table](../../src/content/help/fr/guest/table-qr.mdx)
@@ -1261,6 +1296,7 @@ Identifiant : `guest-table`. Public : public. Disponibilité : available. Servic
 - [Rejoindre la bonne table](../../src/content/help/fr/guest/table-qr.mdx#session)
 - [Commander et demander de l’aide](../../src/content/help/fr/guest/table-qr.mdx#ordering)
 - [Lorsque l’équipe ferme la table](../../src/content/help/fr/guest/table-qr.mdx#service-ended)
+- [Vérifier les confirmations indépendantes](../../src/content/help/fr/guest/table-qr.mdx#independent-lifecycle-confirmations)
 
 ### [Envoyer une demande catering](../../src/content/help/fr/guest/catering-request.mdx)
 
@@ -1358,6 +1394,8 @@ Identifiant : `platform-api`. Public : internal. Disponibilité : available. Ser
 - [Panier préparé et présentation du restaurant](internal/fr/api-and-release.md#prepared-order-existing-cart)
 - [Calendriers de livraison par jours](internal/fr/api-and-release.md#delivery-weekday-contract)
 - [Contrat des choix de variante facultatifs](internal/fr/api-and-release.md#option-choice-requirement)
+- [Contrat additif des confirmations de commande](internal/fr/api-and-release.md#order-lifecycle-v2-contract)
+- [Publier le contrat EOD avant le POS](internal/fr/api-and-release.md#end-of-day-protocol)
 
 ### [Aperçus internes et alias de routes](internal/fr/design-previews.md)
 
