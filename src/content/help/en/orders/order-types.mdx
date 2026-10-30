@@ -159,3 +159,9 @@ With compatible Sumit internal checkout, staff choose pickup or delivery and the
 ## Review independent confirmations
 
 In a saved order’s actions, review preparation and handoff separately from payment. Handoff review selects the actual physical units; financial splitting does not multiply them. Before closure, review the exact check or financial portion and its confirmed balance. A closed scope refuses new commercial changes; another open batch is not closed by that action. See [tracking and confirmations](/en/help/orders/payment-preparation-and-handoff).
+
+<span id="ordering-simulation-clock" />
+
+## Test when an order is placed
+
+In Orders & availability → Simulate an order, select Order date and time in the displayed timezone, then the receiving date and basket. Now reloads the server time. Preparation and same-day rules are evaluated at this reference using current saved settings and ready stock. A past date does not reconstruct history; this test neither reserves a courier nor creates an order. Customer orders retain the real server clock. See [the simulation procedure](/en/help/orders/preorders-and-batches#simulate-order).

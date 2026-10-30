@@ -151,3 +151,9 @@ The courier is represented by a round avatar above delivery pins, with an always
 ## Review independent confirmations
 
 A partial handoff preserves remaining units. Completing one required KDS station does not complete all preparation. Courier handoff and customer receipt are separate confirmations; a route departure does not prove a customer receipt time. See [preparation and handoff](/en/help/orders/payment-preparation-and-handoff).
+
+<span id="ordering-simulation-clock" />
+
+## Test when an order is placed
+
+In Orders & availability → Simulate an order, select Order date and time in the displayed timezone, then the receiving date and basket. Now reloads the server time. Preparation and same-day rules are evaluated at this reference using current saved settings and ready stock. A past date does not reconstruct history; this test neither reserves a courier nor creates an order. Customer orders retain the real server clock. See [the simulation procedure](/en/help/orders/preorders-and-batches#simulate-order). The simulation covers classic delivery; published tours retain their own rules.
