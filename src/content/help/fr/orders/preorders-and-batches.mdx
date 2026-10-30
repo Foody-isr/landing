@@ -5,7 +5,7 @@ apps: both
 tags:
   - orders
   - preorders
-updatedAt: '2026-10-29'
+updatedAt: '2026-10-30'
 featureId: preorders
 audience: public
 releaseStatus: available
@@ -16,13 +16,13 @@ Admin → Paramètres → Prise de commande → Précommandes
 
 ## Choisir la politique de prise de commande
 
-Choisissez précommande désactivée, proposée avec les autres commandes ou obligatoire dans les contrôles disponibles. Vérifiez séparément retrait/livraison activés.
+Dans Commandes et disponibilité, choisissez Commandes immédiates, Commandes planifiées ou Les deux. Commandes planifiées impose une date de réception, y compris aujourd’hui : ce mode ne signifie pas uniquement les dates futures. Les produits prêts suivent aussi ce calendrier. Activez séparément retrait et livraison. Les horaires et fermetures exceptionnelles du restaurant restent le cadre commun ; le délai propre au produit remplace la préparation par défaut. Les zones restreignent le périmètre et les jours, puis règlent la livraison du jour même. Les lots hebdomadaires conservent leur calendrier distinct de prise de commande et de réception.
 
 <span id="slots" />
 
 ## Configurer les créneaux
 
-Choisissez le calendrier par créneaux et réglez anticipation, horizon et fenêtres de remise. Testez les limites dans l’aperçu sans supposer toutes les dates disponibles.
+Choisissez Date et horaires de service. Réglez préparation par défaut, méthode de calcul, horizon et durée des créneaux. La préparation par défaut s’applique seulement si le produit n’a pas de délai propre. La durée d’un créneau est celle d’une plage de réception au choix, pas un temps de transport. Les horaires Livraison, les fermetures et la préparation restent obligatoires même si une zone autorise le jour. Le choix d’horaire d’une zone peut différer entre les commandes à l’avance et le jour même. Les plages de réservation spécifiques, si elles sont conservées, remplacent les horaires du service ; vérifiez-les avant Utiliser les horaires par service. L’Aperçu du calendrier par défaut replié exclut panier, adresse, zone et transport : il ne promet pas un horaire de livraison.
 
 <span id="batch" />
 
@@ -49,3 +49,9 @@ Vous pouvez sélectionner une ancienne série dans le calendrier ; cette consult
 ## Piloter manuellement les commandes hebdomadaires
 
 Les restaurants en lot hebdomadaire peuvent choisir Ouverture manuelle dans Paramètres → Commandes et livraison → Commandes et disponibilité, avec settings.edit. Enregistrez, puis ouvrez ou fermez explicitement les commandes avec le bouton de pause. Les heures d’ouverture/clôture automatiques ne pilotent plus la prise de commandes dans ce mode. Jours et créneaux de livraison, fuseau du restaurant, règles de préparation et stocks restent applicables ; les commandes existantes sont conservées. Le site reste consultable pendant la pause. Désactivez l’accès de test temporaire actif avant toute réouverture publique. Voir le guide des réglages des commandes pour la procédure complète. Pour la livraison facultative du jour même, consultez le guide Zones et créneaux de livraison avec des versions compatibles de l’API, d’Admin et du site client : le client peut choisir uniquement le jour, voir une estimation avant paiement puis recevoir un horaire confirmé par le restaurant. Les précommandes conservent leur mode configuré. La date locale du restaurant détermine les règles du jour même.
+
+<span id="simulate-order" />
+
+## Simuler une commande
+
+Avec le calendrier Date et horaires de service actif, enregistrez les modifications puis ouvrez Simuler une commande. Choisissez retrait ou livraison, date de réception, produits et quantités, puis une adresse complète pour la livraison. Vérifier les disponibilités utilise les règles enregistrées pour une commande passée maintenant. Le résultat indique la zone et les frais, la préparation de référence des produits, la marge de transport du jour même si elle s’applique, une plage estimée à confirmer ou des créneaux au choix, puis la prochaine date si aucune plage ne reste à la date choisie. L’aperçu par défaut reste distinct. Changer une saisie masque l’ancien résultat ; des modifications restaurant non enregistrées bloquent la simulation. Les accès au menu et aux livraisons sont nécessaires pour charger le panier de test. Cette vérification concerne les calendriers, pas la publication au menu, les options ni l’éligibilité finale du stock et du paiement ; elle ne crée aucune commande, réservation de stock, paiement ou notification.

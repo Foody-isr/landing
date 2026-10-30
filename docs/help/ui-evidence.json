@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "Foody-isr/admin",
-  "ref": "c47e94ef78add52b5962572c3fb1617376ac2849",
+  "ref": "c4ee568ec0d9ca8d64ea604f059a24b398ca2f40",
   "observations": [
     {
       "id": "table-status-descriptions-source-contract",
@@ -500,14 +500,36 @@
       "forbidden": []
     },
     {
-      "id": "same-day-delivery-policy",
-      "source": "src/app/[restaurantId]/settings/delivery/SameDayDeliverySettings.tsx",
+      "id": "zone-same-day-calendar",
+      "source": "src/components/delivery/ZoneScheduleFields.tsx",
       "required": [
-        "delivery_same_day_policy_base:base",
-        "t('sameDayTitle')",
-        "coverage_zone_ids",
-        "setUncertain(!known)",
-        "reason.status===409"
+        "sameDaySupported",
+        "t('zoneFutureTimeChoice')",
+        "same_day:",
+        "rule.days.filter(d => next.includes(d))",
+        "t('zoneSameDayTransit')"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "saved-ordering-simulation",
+      "source": "src/app/[restaurantId]/settings/orders/OrderingSimulation.tsx",
+      "required": [
+        "simulateOrderingAvailability(rid, input)",
+        "t('orderingSimulationTitle')",
+        "result?.signature === signature",
+        "disabled={busy || !valid || dirty}"
+      ],
+      "forbidden": [
+        "createOrder("
+      ]
+    },
+    {
+      "id": "delivery-workspace-legacy-visibility",
+      "source": "src/app/[restaurantId]/settings/delivery/page.tsx",
+      "required": [
+        "legacySameDay&&<SameDayDeliverySettings",
+        "sameDaySupported={zoneRulesSupported&&!legacySameDay}"
       ],
       "forbidden": []
     }

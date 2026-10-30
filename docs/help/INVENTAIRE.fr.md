@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-10-29.
+Révision du relevé : 2026-10-30.
 
-105 fiches de fonctionnalités, 803 procédures/sous-fonctionnalités, dont 96 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2249 fichiers applicatifs et 2092 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+105 fiches de fonctionnalités, 805 procédures/sous-fonctionnalités, dont 96 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2250 fichiers applicatifs et 2093 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,8 +10,8 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 590 | 879 | 2d139a2e32c4 ; versioned |
-| foodyadmin | 777 | 805 | c47e94ef78ad ; versioned |
+| foodyserver | 590 | 879 | bb18d60fa62d ; versioned |
+| foodyadmin | 778 | 806 | c4ee568ec0d9 ; versioned |
 | foodyweb | 348 | 171 | ae0e952036c5 ; versioned |
 | foodylanding | 127 | 21 | 086993b0cc25 ; versioned |
 | foodypos | 363 | 166 | 735f5063e8b0 ; versioned |
@@ -612,6 +612,7 @@ Identifiant : `preorders`. Public : public. Disponibilité : available. Services
 - [Vérifier paiement et exceptions produits](../../src/content/help/fr/orders/preorders-and-batches.mdx#prepayment)
 - [Afficher automatiquement la série actuelle](../../src/content/help/fr/orders/preorders-and-batches.mdx#weekly-series-rollover)
 - [Piloter manuellement les commandes hebdomadaires](../../src/content/help/fr/orders/preorders-and-batches.mdx#manual-weekly-ordering)
+- [Simuler une commande](../../src/content/help/fr/orders/preorders-and-batches.mdx#simulate-order)
 
 ### [Quantités de production et préparation des colis](../../src/content/help/fr/orders/production-planning.mdx)
 
@@ -1384,6 +1385,7 @@ Identifiant : `shared-runtime`. Public : internal. Disponibilité : available. S
 - [Vérifier les pages compactes du terminal](internal/fr/shared-runtime.md#mobile-terminal-pages)
 - [Vérifier la série courante sans commande](internal/fr/shared-runtime.md#weekly-series-rollover)
 - [Intégration du panier préparé Sumit](internal/fr/shared-runtime.md#prepared-sumit-checkout-integration)
+- [Contrat du jour même par zone et simulation de calendrier](internal/fr/shared-runtime.md#zone-same-day-contract)
 
 ## Traçabilité détaillée
 

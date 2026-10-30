@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - delivery
   - delivery-dispatch
-updatedAt: '2026-10-29'
+updatedAt: '2026-10-30'
 featureId: delivery-dispatch
 audience: public
 releaseStatus: available
@@ -48,7 +48,7 @@ Calculate the route or fleet allocation, then review the route before departure.
 
 ## Choose the route time constraints
 
-In Orders → Deliveries, open allocation or Edit on a draft route. Respect order time windows is off by default: the route optimizes stop order, then calculates arrivals and the customer communication range. Enable it only for saved times actually agreed with customers. The choice is saved per route; changing it and saving recalculates stop order even if it was manual. Existing routes keep their sequence until an explicit recalculation: use Recalculate to correct an existing route. Delivery dates remain enforced and saved order slots are not erased. Review the new estimates and reopen reminder previews before sending. An already sent message is not sent again automatically.
+In Orders → Deliveries, open allocation or Edit on a draft route. Respect order time windows is off by default: the route optimizes stop order, then calculates arrivals and the customer communication range. Enable it only for saved times actually agreed with customers. The choice is saved per route; changing it and saving recalculates stop order even if it was manual. Existing routes keep their sequence until an explicit recalculation: use Recalculate to correct an existing route. Delivery dates remain enforced and saved order slots are not erased. Review the new estimates and reopen reminder previews before sending. An already sent message is not sent again automatically. For new same-day orders, the receiving estimate now follows the matched zone’s saved same-day days, time mode and transport allowance, within restaurant availability and product readiness. An address in an advance-only zone cannot request delivery today. Review the frozen order estimate and confirm a valid time after checking the courier. Editing zone rules does not recalculate an existing order promise or dispatch a WhatsApp message.
 
 <span id="dispatch" />
 

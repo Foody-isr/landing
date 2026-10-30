@@ -7,7 +7,7 @@ apps: both
 tags:
   - internal
   - shared-runtime
-updatedAt: '2026-10-28'
+updatedAt: '2026-10-30'
 featureId: shared-runtime
 audience: internal
 releaseStatus: available
@@ -123,3 +123,9 @@ GET /api/v1/orders/series keeps the existing sorted fulfillment dates and aggreg
 ## Prepared Sumit checkout integration
 
 The compatible prepared-checkout summary keeps API price snapshots and includes fixed combo modifier deltas once. Recipient delivery quotes remain server-priced and are explicitly reviewed before hosted Sumit payment. The new private route does not load a customer profile or persist contact drafts in browser storage.
+
+<span id="zone-same-day-contract" />
+
+## Zone same-day contract and calendar simulation
+
+The optional same_day object in DeliverySchedule carries days, transit_minutes and inherit/restaurant time_mode. The API rejects non-delivery weekdays, ambiguous values, coexistence with an enabled legacy global rule and removal by an older editor. Zone-list capability and legacy-active metadata gate Admin. New calendar evaluation time/timezone fields are additive. Simulation uses public scoped calendar/geographic resolvers and does not mutate an order, stock, payments or notifications. The embedded support corpus must exactly match this published FR/HE/EN release; Web, POS and Backoffice parsers remain compatible without new application fields.

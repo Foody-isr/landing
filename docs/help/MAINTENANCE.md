@@ -8,6 +8,18 @@ base. `docs/help/catalog/features.json` is the authored feature/procedure source
 Internal operator procedures render separately to `docs/help/internal` and never
 enter public browsing, search or the AI corpus.
 
+## Zone delivery rules and shared restaurant settings (30 October 2026)
+
+The [coordinated review](reviews/zone-delivery-rules.md) moves explicit same-day
+rules into each zone, keeps restaurant service/preparation rules common and adds
+a read-only saved-basket/address calendar simulation. Publish the four affected
+guides in FR/HE/EN with compatible API/Admin artifacts and the API corpus. Refresh
+API/Admin source evidence only; preserve unchanged Web/POS/Backoffice/Landing
+application inventories exactly. The owner authorized the joint implementation
+and dev/prod promotion. Lovely's separately approved behavior is converted by a
+scoped guarded maintenance transaction after API verification, with all 560
+calendar/geography/price comparisons equal. No production test orders or messages.
+
 ## Same-day delivery and settings audit (29 October 2026)
 
 The optional delivery policy and stale-save protections are reviewed in
