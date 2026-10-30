@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - delivery
   - courier
-updatedAt: '2026-10-28'
+updatedAt: '2026-10-30'
 featureId: courier
 audience: public
 releaseStatus: available
@@ -69,3 +69,5 @@ Avec les versions compatibles de l’API et de l’Admin, connectez-vous comme p
 ## Vérifier le suivi de position du livreur
 
 Le livreur doit ouvrir Foody sur son téléphone avec son propre compte, démarrer sa tournée et autoriser la localisation. Gardez Foody affiché avec une connexion Internet. Les positions GPS reçues sont transmises à Foody au maximum une fois toutes les dix secondes, selon le navigateur ; cette fréquence n’est pas garantie. Le point intitulé Position du livreur indique la dernière position reçue dans Livraisons et Mode livreur. Le triangle vert reste le départ prévu. L’heure affichée indique la réception de la position ; après plus d’une minute, la position est signalée ancienne et le point s’atténue. Sans position, un message le précise. Le mode livreur distingue l’attente du GPS, le refus de permission, un GPS indisponible et un échec de transmission. Corrigez les autorisations ou la connexion puis utilisez Réessayer. Ces états ne valident aucune livraison. Ouvrir Waze, changer d’application ou verrouiller le téléphone peut interrompre le suivi web : revenez dans Foody pour reprendre. Consulter un autre livreur avec Voir comme livreur affiche sa position reçue et n’envoie jamais celle du responsable. Le partage du GPS et le déplacement du point ne déclenchent aucun appel Google ; le chargement du fond de carte et les recalculs d’itinéraire gardent leur propre consommation.
+
+Le livreur est représenté par un avatar rond, au-dessus des repères de livraison, avec un libellé toujours visible. Une position ancienne conserve son avatar et le libellé Position ancienne du livreur. Le cadrage initial inclut la dernière position reçue ; dans Mode livreur, Afficher toute la tournée la remet dans le cadre avec les arrêts. Les mises à jour GPS déplacent l’avatar sans recentrer automatiquement la carte.
