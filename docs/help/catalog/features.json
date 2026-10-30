@@ -391,6 +391,19 @@
           "fr": "L’activation du personnel vérifie les permissions affectées dans ce restaurant, y compris les rôles personnalisés : orders.manage ou payments.manage impose un code caisse personnel. Les livreurs en consultation et les rôles limités à la cuisine n’en ont pas besoin. Les invitations existantes encore inutilisées appliquent la même règle actuelle. Modifier le nom du rôle, l’adresse du livreur ou la destination d’une tournée n’accorde aucun droit caisse. Voir [l’activation et la reprise](/fr/help/getting-started/first-login#activate).",
           "he": "הפעלת חשבון עובד בודקת את ההרשאות שהוקצו במסעדה, כולל תפקידים מותאמים: orders.manage או payments.manage דורשת קוד קופה אישי. שליחים עם הרשאת צפייה ותפקידים המוגבלים למטבח אינם זקוקים לקוד. גם קישורי הזמנה קיימים שלא נוצלו משתמשים באותו כלל עדכני. שינוי שם תפקיד, כתובת שליח או יעד מסלול אינו מעניק הרשאות קופה. ראו [הפעלה וחזרה לתהליך](/he/help/getting-started/first-login#activate)."
         }
+      },
+      {
+        "id": "end-of-day-permissions",
+        "title": {
+          "fr": "Autoriser une clôture de journée",
+          "en": "Authorize end-of-day closing",
+          "he": "הרשאות לסגירת יום"
+        },
+        "instructions": {
+          "fr": "Clôture de journée nécessite payments.manage sur le POS déjà autorisé, avec la connexion personnelle PIN active. Inclure une caisse espèces nécessite aussi orders.manage. Ces droits sont vérifiés de nouveau avant chaque écriture ; ouvrir un écran ou lire une capacité ne les accorde pas. Les étapes de transmission et de finalisation restent liées à l’auteur d’origine et au POS concerné. Changer de rôle ou se reconnecter sur un autre appareil ne transfère pas une opération. Voir [les étapes et la reprise](/fr/help/payments/end-of-day).",
+          "en": "End of day requires payments.manage on an already enrolled POS with an active personal PIN session. Including a cash drawer also requires orders.manage. Permissions are checked again on each write; opening a screen or reading a capability grants none. Transmission and finalization remain bound to the original actor and relevant POS. Changing role or signing into another device does not transfer an operation. See [the steps and recovery](/en/help/payments/end-of-day).",
+          "he": "סגירת יום דורשת payments.manage בקופה שכבר מורשית ועם כניסה אישית פעילה בקוד. הכללת מגירת מזומן דורשת גם orders.manage. ההרשאות נבדקות מחדש בכל כתיבה; פתיחת מסך או קריאת יכולת אינן מעניקות הרשאה. השידור וההשלמה נשארים קשורים לעובד שהתחיל ולקופה הרלוונטית. שינוי תפקיד או כניסה במכשיר אחר אינם מעבירים פעולה. ראו [את השלבים והשחזור](/he/help/payments/end-of-day)."
+        }
       }
     ],
     "audience": "public",
@@ -401,7 +414,7 @@
       "fr": "Nécessite la permission de gestion des rôles ; le périmètre du restaurant s’applique toujours.",
       "he": "נדרשת הרשאת ניהול תפקידים; ההרשאות תמיד תחומות למסעדה."
     },
-    "procedureUpdatedAt": "2026-10-21"
+    "procedureUpdatedAt": "2026-10-30"
   },
   {
     "id": "staff-devices-shifts",
@@ -9308,12 +9321,25 @@
           "en": "The handheld terminal has three unlabeled buttons: the signed-in user’s initials open More, the house opens Overview and the receipt opens Checks, subject to permissions. iPad keeps its configured navigation destinations. In Checks, the selector offers All checks and available floor plans; selecting a radio option changes the view immediately. Drag the floor plan when it extends beyond the screen. Overview contains collapsible cards for permitted availability, orders and tables. The full list supports item search; Not provided means availability was not supplied, not that an item is available. Refresh retries a failed read. These views change neither the assigned checkout mode nor printing profiles. The bar stays above Android navigation and hides while typing. Inside a sale, Menu/Check/Actions and the return to checks retain their own controls.",
           "he": "במסוף הנייד יש שלושה כפתורים ללא תווית: ראשי התיבות של המשתמש המחובר פותחים את עוד, הבית פותח סקירה כללית וסמל הקבלה פותח חשבונות, בהתאם להרשאות. ה-iPad שומר על יעדי הניווט שהוגדרו בו. בחשבונות, הבורר מציע את כל החשבונות ואת תוכניות האולם הזמינות; בחירה באפשרות משנה מיד את התצוגה. גררו תוכנית אולם החורגת מגבולות המסך. הסקירה מציגה כרטיסים מתקפלים של זמינות, הזמנות ושולחנות המותרים לצפייה. הרשימה המלאה מאפשרת חיפוש פריט; לא נמסר פירושו שלא התקבל מצב זמינות, ולא שהפריט זמין. רענון מאפשר ניסיון חוזר לאחר כשל בקריאה. תצוגות אלה אינן משנות את מצב הקופה המשויך או את פרופילי ההדפסה. הסרגל נשאר מעל ניווט Android ומוסתר בזמן הקלדה. בתוך מכירה נשמרים פקדי תפריט/חשבון/פעולות והחזרה לחשבונות."
         }
+      },
+      {
+        "id": "end-of-day-terminal-navigation",
+        "title": {
+          "fr": "Retrouver le dépôt dans le parcours de fin de journée",
+          "en": "Find terminal deposit in the end-of-day flow",
+          "he": "מציאת ההפקדה במסלול סוף היום"
+        },
+        "instructions": {
+          "fr": "Lorsque l’API compatible propose Clôture de journée, Dépôts du terminal ouvre ce parcours commun avant toute transmission. Sur une API antérieure, l’écran de dépôt séparé reste disponible selon les capacités réelles du terminal. Un changement de configuration après affichage exige une nouvelle vérification avant de réserver la caisse. Une ancienne approbation de carte sans provenance vérifiable reste à rapprocher : elle n’autorise ni un nouvel encaissement ni son adoption par un autre restaurant. Consultez [la clôture et sa reprise](/fr/help/payments/end-of-day).",
+          "en": "When the compatible API offers End of day, Terminal deposits opens that combined flow before any transmission. With an older API, the separate deposit screen remains available according to actual terminal capabilities. A provisioning change after display requires another review before reserving cash. An old card approval without verifiable provenance remains pending reconciliation: it permits neither another collection nor adoption by another restaurant. See [closing and recovery](/en/help/payments/end-of-day).",
+          "he": "כאשר ה־API התואם מציע סגירת יום, הפקדות מסוף פותח את המסלול המשותף לפני שידור. ב־API קודם מסך ההפקדה הנפרד נשאר זמין בהתאם ליכולות המסוף בפועל. שינוי הגדרה לאחר הצגת המסך מחייב בדיקה מחדש לפני שמירת המזומן. אישור כרטיס ישן ללא מקור שניתן לאמת נשאר לבדיקת התאמה: הוא אינו מתיר חיוב נוסף או שיוך למסעדה אחרת. ראו [סגירה ושחזור](/he/help/payments/end-of-day)."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-29"
+    "procedureUpdatedAt": "2026-10-30"
   },
   {
     "id": "table-service-policy",
@@ -10345,9 +10371,9 @@
           "he": "ספירה וסגירה של מגירת המזומן"
         },
         "instructions": {
-          "fr": "Sur le même POS autorisé avec un shift PIN actif, ouvrez Plus → Rapports → Solde en caisse. Vérifiez fonds initial, ventes et remboursements en espèces, entrées/sorties et montant attendu. La description facultative est reprise dans la note de clôture, sans enregistrement automatique. Avec payments.manage, ouvrez Entrées/sorties, saisissez un montant positif et un motif obligatoire, puis choisissez Encaisser des espèces ou Décaisser des espèces. Une sortie ne peut dépasser le solde attendu. Avec orders.manage, choisissez Clôturer la session de caisse, comptez physiquement les espèces, saisissez ce montant et confirmez ; l’écart est conservé. Fermer la modale sans confirmer n’enregistre rien. Mouvements de caisse liste uniquement la session chargée sur cet appareil, pas les anciennes sessions. Reprenez toute opération incertaine avec son identité existante avant une autre action. Ce rapport n’inclut pas les cartes : la clôture espèces ne lance pas le dépôt Verifone, et le dépôt Verifone ne clôture pas les espèces. N’utilisez pas un ajustement espèces pour masquer un remboursement carte.",
-          "en": "On the same enrolled POS with an active PIN shift, open More → Reports → Cash drawer balance. Review the opening float, cash sales and refunds, paid in/out and expected cash. The optional description is copied to the closing note, without automatic saving. With payments.manage, open Paid in/out, enter a positive amount and mandatory reason, then choose Pay in cash or Pay out cash. A payout cannot exceed the expected balance. With orders.manage, choose Close cash session, count physical cash, enter that amount and confirm; any discrepancy is preserved. Dismissing the modal without confirming records nothing. Cash movements lists only the session loaded on this device, not past sessions. Resume any uncertain operation using its existing identity before another action. Cards are excluded: closing cash does not start a Verifone deposit, and a Verifone deposit does not close cash. Never use a cash adjustment to disguise a card refund.",
-          "he": "באותה קופה מורשית עם משמרת PIN פעילה פתחו עוד ← דוחות ← יתרת קופה. בדקו פתיחה, מכירות וזיכויים במזומן, הכנסות והוצאות וסכום צפוי. התיאור האופציונלי מועתק להערת הסגירה ללא שמירה אוטומטית. עם payments.manage פתחו הכנסות/הוצאות מזומן, הזינו סכום חיובי וסיבה חובה ובחרו הכנסה או הוצאה. הוצאה אינה יכולה לעלות על היתרה הצפויה. עם orders.manage בחרו סגירת משמרת מזומן, ספרו את המזומן בפועל, הזינו את הסכום ואשרו; ההפרש נשמר. סגירת החלון ללא אישור אינה רושמת דבר. תנועות מזומן מציגות רק את המשמרת הטעונה במכשיר ולא משמרות קודמות. המשיכו פעולה לא ודאית עם המזהה הקיים לפני פעולה אחרת. כרטיסים אינם כלולים: סגירת מזומן אינה מפעילה הפקדת Verifone והפקדת Verifone אינה סוגרת מזומן. אין להסוות זיכוי לכרטיס באמצעות התאמת מזומן."
+          "fr": "Sur le même POS autorisé avec un shift PIN actif, ouvrez Plus → Rapports → Solde en caisse. Vérifiez fonds initial, ventes et remboursements en espèces, entrées/sorties et montant attendu. La description facultative est reprise dans la note de clôture, sans enregistrement automatique. Avec payments.manage, ouvrez Entrées/sorties, saisissez un montant positif et un motif obligatoire, puis choisissez Encaisser des espèces ou Décaisser des espèces. Une sortie ne peut dépasser le solde attendu. Avec orders.manage, choisissez Clôturer la session de caisse, comptez physiquement les espèces, saisissez ce montant et confirmez ; l’écart est conservé. Fermer la modale sans confirmer n’enregistre rien. Mouvements de caisse liste uniquement la session chargée sur cet appareil, pas les anciennes sessions. Reprenez toute opération incertaine avec son identité existante avant une autre action. Ce rapport n’inclut pas les cartes : la clôture espèces ne lance pas le dépôt Verifone, et le dépôt Verifone ne clôture pas les espèces. N’utilisez pas un ajustement espèces pour masquer un remboursement carte.\n\nPour réunir les étapes de fin de journée, utilisez [la clôture commune](/fr/help/payments/end-of-day).",
+          "en": "On the same enrolled POS with an active PIN shift, open More → Reports → Cash drawer balance. Review the opening float, cash sales and refunds, paid in/out and expected cash. The optional description is copied to the closing note, without automatic saving. With payments.manage, open Paid in/out, enter a positive amount and mandatory reason, then choose Pay in cash or Pay out cash. A payout cannot exceed the expected balance. With orders.manage, choose Close cash session, count physical cash, enter that amount and confirm; any discrepancy is preserved. Dismissing the modal without confirming records nothing. Cash movements lists only the session loaded on this device, not past sessions. Resume any uncertain operation using its existing identity before another action. Cards are excluded: closing cash does not start a Verifone deposit, and a Verifone deposit does not close cash. Never use a cash adjustment to disguise a card refund.\n\nTo bring together the end-of-day steps, use [the combined closing flow](/en/help/payments/end-of-day).",
+          "he": "באותה קופה מורשית עם משמרת PIN פעילה פתחו עוד ← דוחות ← יתרת קופה. בדקו פתיחה, מכירות וזיכויים במזומן, הכנסות והוצאות וסכום צפוי. התיאור האופציונלי מועתק להערת הסגירה ללא שמירה אוטומטית. עם payments.manage פתחו הכנסות/הוצאות מזומן, הזינו סכום חיובי וסיבה חובה ובחרו הכנסה או הוצאה. הוצאה אינה יכולה לעלות על היתרה הצפויה. עם orders.manage בחרו סגירת משמרת מזומן, ספרו את המזומן בפועל, הזינו את הסכום ואשרו; ההפרש נשמר. סגירת החלון ללא אישור אינה רושמת דבר. תנועות מזומן מציגות רק את המשמרת הטעונה במכשיר ולא משמרות קודמות. המשיכו פעולה לא ודאית עם המזהה הקיים לפני פעולה אחרת. כרטיסים אינם כלולים: סגירת מזומן אינה מפעילה הפקדת Verifone והפקדת Verifone אינה סוגרת מזומן. אין להסוות זיכוי לכרטיס באמצעות התאמת מזומן.\n\nלריכוז שלבי סוף היום השתמשו ב[מסלול הסגירה המשותף](/he/help/payments/end-of-day)."
         }
       },
       {
@@ -10436,9 +10462,9 @@
           "he": "סגירה ושידור של אצוות מסוף Verifone"
         },
         "instructions": {
-          "en": "On a configured Victa Portable or an iPad connected to a Victa Mini, sign in with the payments.manage permission. Open More → Reports → Terminal deposits. Check that the terminal is connected and supports Close and deposit. At end of day, confirm Close and deposit once, then wait for the terminal's final confirmation and keep its reconciliation reference. This is separate from closing a Foody staff shift or a cash drawer. If the result is uncertain, do not repeat it or start another card payment: inspect the terminal batch or confirm its status with your payment provider. A manager may choose I verified the batch only after that check. Some Israeli Ashrait versions support the deposit but do not implement current totals, close-only or reconcile-only reports: those controls remain unavailable. Accepting the command alone does not prove completion, and a deposit can succeed without returning numerical totals. Never share terminal credentials or card details with support chat. Physical end-to-end compatibility must be validated for the provisioned terminal and software version.\n\nIf the restaurant, sign-in or terminal changes, [reopen confirmation in the correct context](/en/help/payments/cash-access#terminal-report-context).",
-          "fr": "Sur un Victa Portable configuré ou un iPad relié à un Victa Mini, connectez-vous avec l’autorisation payments.manage. Ouvrez Plus → Rapports → Dépôts du terminal. Vérifiez la connexion et la disponibilité de Clôturer et déposer. En fin de journée, confirmez cette action une seule fois, attendez la confirmation finale du terminal et conservez sa référence de réconciliation. Cette opération est distincte de la fermeture d’un service Foody ou d’un tiroir-caisse. Si le résultat est incertain, ne la relancez pas et n’encaissez pas d’autre carte : vérifiez le lot sur le terminal ou auprès du prestataire de paiement. Un responsable ne choisit J’ai vérifié le lot qu’après cette vérification. Certaines versions israéliennes Ashrait prennent en charge le dépôt, mais pas les totaux en cours, la clôture seule ou le rapprochement seul : ces commandes restent indisponibles. L’acceptation de la commande ne prouve pas son achèvement, et un dépôt peut réussir sans renvoyer de totaux chiffrés. Ne partagez ni identifiants du terminal ni données de carte dans le chat d’assistance. La compatibilité de bout en bout doit être validée sur le terminal provisionné et sa version logicielle.\n\nSi l’établissement, la connexion ou le terminal change, [rouvrez la confirmation dans le bon contexte](/fr/help/payments/cash-access#terminal-report-context).",
-          "he": "ב-Victa Portable מוגדר או ב-iPad המחובר ל-Victa Mini, התחברו עם הרשאת payments.manage. פתחו עוד ← דוחות ← הפקדות מסוף. ודאו שהמסוף מחובר ושהפעולה סגירה ושידור זמינה. בסוף היום אשרו את הפעולה פעם אחת, המתינו לאישור הסופי מהמסוף ושמרו את אסמכתת ההתאמה. פעולה זו נפרדת מסגירת משמרת או מגירת מזומנים ב-Foody. אם התוצאה אינה ודאית, אין לחזור על הפעולה או לבצע חיוב כרטיס נוסף: בדקו את האצווה במסוף או מול ספק התשלומים. מנהל יבחר בדקתי את האצווה רק לאחר הבדיקה. גרסאות מסוימות של Ashrait בישראל תומכות בהפקדה אך אינן מממשות סכומים שוטפים, סגירה בלבד או התאמה בלבד, ולכן פקדים אלה אינם זמינים. קבלת הפקודה לבדה אינה הוכחת השלמה, והפקדה עשויה להצליח בלי להחזיר סכומים מספריים. אין לשתף מזהי מסוף או פרטי כרטיס בצ׳אט התמיכה. יש לאמת תאימות מקצה לקצה במסוף שהוגדר ובגרסת התוכנה שלו.\n\nאם המסעדה, הכניסה או המסוף השתנו, [פתחו מחדש את האישור בהקשר הנכון](/he/help/payments/cash-access#terminal-report-context)."
+          "en": "To close cash and card activity in one flow, use [End of day and the Foody Z report](/en/help/payments/end-of-day). Staff clock-out remains separate. On older versions, Terminal deposits offers a separate Verifone transmission with payments.manage: check the terminal, confirm once at end of day and wait for final confirmation. An uncertain result blocks repetition before verification. Unsupported totals commands remain unavailable. Numerical results and the batch reference are shown only when actually supplied. Never share terminal credentials or card details in support chat. Hardware compatibility must be checked on the relevant Mini or Portable. If context changes, [reopen confirmation](/en/help/payments/cash-access#terminal-report-context).",
+          "fr": "Pour clôturer la journée espèces et carte dans un même parcours, utilisez [Clôture de journée et rapport Z Foody](/fr/help/payments/end-of-day). Le départ d’un employé reste distinct. Sur les versions antérieures, Dépôts du terminal permet une transmission Verifone séparée avec payments.manage : vérifiez le terminal, confirmez une seule fois en fin de journée et attendez la confirmation finale. Un résultat incertain bloque toute répétition avant vérification. Les commandes de totaux non prises en charge restent indisponibles. Les résultats chiffrés et la référence de lot ne sont affichés que s’ils sont réellement fournis. Ne partagez ni identifiants du terminal ni données de carte dans le chat d’assistance. La compatibilité matérielle doit être vérifiée sur le Mini ou le Portable concerné. Si le contexte change, [rouvrez la confirmation](/fr/help/payments/cash-access#terminal-report-context).",
+          "he": "לסגירת פעילות מזומן וכרטיס באותו מסלול השתמשו ב[סגירת יום ודוח Z של Foody](/he/help/payments/end-of-day). רישום יציאת עובד נשאר נפרד. בגרסאות קודמות הפקדות מסוף מאפשר שידור Verifone נפרד עם payments.manage: בדקו את המסוף, אשרו פעם אחת בסוף היום והמתינו לאישור הסופי. תוצאה לא ודאית חוסמת ניסיון חוזר לפני בדיקה. פקודות סיכום שאינן נתמכות נשארות לא זמינות. סכומים ומספר אצווה מוצגים רק אם סופקו בפועל. אין לשתף פרטי התחברות למסוף או פרטי כרטיס בצ׳אט התמיכה. יש לבדוק תאימות חומרה ב־Mini או ב־Portable הרלוונטי. אם ההקשר השתנה, [פתחו מחדש את האישור](/he/help/payments/cash-access#terminal-report-context)."
         }
       },
       {
@@ -10564,7 +10590,7 @@
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-29"
+    "procedureUpdatedAt": "2026-10-30"
   },
   {
     "id": "pos-cash-access-diagnostics",
@@ -10617,9 +10643,9 @@
           "he": "הפרדה בין קופת המזומן למסוף Verifone"
         },
         "instructions": {
-          "fr": "Réessayer ne crée aucun mouvement d’espèces et ne lance aucun dépôt Verifone. Solde en caisse a besoin d’accéder à l’API Foody, pas d’un Victa Mini connecté. Les paiements carte et les opérations envoyées au terminal suivent leur propre connexion et restent séparés. Ce rapport n’inclut pas les cartes : la clôture espèces ne lance pas le dépôt Verifone, et le dépôt Verifone ne clôture pas les espèces. N’utilisez pas un ajustement espèces pour masquer un remboursement carte.",
-          "en": "Retry creates no cash movement and starts no Verifone deposit. Cash drawer balance needs access to the Foody API, not a connected Victa Mini. Card payments and operations sent to the terminal use their own connection and remain separate. Cards are excluded: closing cash does not start a Verifone deposit, and a Verifone deposit does not close cash. Never use a cash adjustment to disguise a card refund.",
-          "he": "ניסיון חוזר אינו יוצר תנועת מזומן ואינו מתחיל הפקדת Verifone. יתרת הקופה דורשת גישה ל־API של Foody ולא חיבור ל־Victa Mini. תשלומי כרטיס ופעולות הנשלחות למסוף משתמשים בחיבור נפרד ונשארים נפרדים. כרטיסים אינם כלולים: סגירת מזומן אינה מפעילה הפקדת Verifone והפקדת Verifone אינה סוגרת מזומן. אין להסוות זיכוי לכרטיס באמצעות התאמת מזומן."
+          "fr": "Réessayer ne crée aucun mouvement d’espèces et ne lance aucun dépôt Verifone. Solde en caisse a besoin d’accéder à l’API Foody, pas d’un Victa Mini connecté. Les paiements carte et les opérations envoyées au terminal suivent leur propre connexion et restent séparés. Ce rapport n’inclut pas les cartes : la clôture espèces ne lance pas le dépôt Verifone, et le dépôt Verifone ne clôture pas les espèces. N’utilisez pas un ajustement espèces pour masquer un remboursement carte.\n\nPour réunir les étapes de fin de journée, utilisez [la clôture commune](/fr/help/payments/end-of-day).",
+          "en": "Retry creates no cash movement and starts no Verifone deposit. Cash drawer balance needs access to the Foody API, not a connected Victa Mini. Card payments and operations sent to the terminal use their own connection and remain separate. Cards are excluded: closing cash does not start a Verifone deposit, and a Verifone deposit does not close cash. Never use a cash adjustment to disguise a card refund.\n\nTo bring together the end-of-day steps, use [the combined closing flow](/en/help/payments/end-of-day).",
+          "he": "ניסיון חוזר אינו יוצר תנועת מזומן ואינו מתחיל הפקדת Verifone. יתרת הקופה דורשת גישה ל־API של Foody ולא חיבור ל־Victa Mini. תשלומי כרטיס ופעולות הנשלחות למסוף משתמשים בחיבור נפרד ונשארים נפרדים. כרטיסים אינם כלולים: סגירת מזומן אינה מפעילה הפקדת Verifone והפקדת Verifone אינה סוגרת מזומן. אין להסוות זיכוי לכרטיס באמצעות התאמת מזומן.\n\nלריכוז שלבי סוף היום השתמשו ב[מסלול הסגירה המשותף](/he/help/payments/end-of-day)."
         }
       },
       {
@@ -10823,12 +10849,25 @@
           "en": "The local unsent basket and the server-saved check are separate. On a compatible version, [reopen the draft with the same account and installation](/en/help/orders/taking-an-order-pos#resume-local-draft); an uncertain send requires verification or explicit resumption of its original identity. Payment, preparation and handoff remain separate, including for a split bill. Switching screens never automatically resends food.",
           "he": "הסל המקומי שלא נשלח והחשבון השמור בשרת נפרדים. בגרסה תואמת [פתחו את הטיוטה עם אותו חשבון ואותה התקנה](/he/help/orders/taking-an-order-pos#resume-local-draft); שליחה לא ודאית דורשת אימות או המשך מפורש של הזהות המקורית. תשלום, הכנה ומסירה נשארים נפרדים, גם בחשבון מפוצל. מעבר מסך אינו שולח שוב מזון אוטומטית."
         }
+      },
+      {
+        "id": "end-of-day-navigation",
+        "title": {
+          "fr": "Ouvrir la clôture de journée",
+          "en": "Open end-of-day closing",
+          "he": "פתיחת סגירת יום"
+        },
+        "instructions": {
+          "fr": "Sur le POS compatible, Plus → Rapports propose Clôture de journée aux comptes autorisés lorsque l’API annonce cette fonction. La tablette conserve la navigation latérale des rapports ; un écran compact ouvre le même parcours dans sa navigation simple. Ce parcours rassemble comptage, transmission du terminal et rapport opérationnel, sans terminer le pointage. Consultez [la procédure de fin de journée](/fr/help/payments/end-of-day).",
+          "en": "On a compatible POS, More → Reports offers End of day to authorized accounts when the API advertises the feature. Tablets retain the report navigation rail; compact screens open the same flow in their single navigation stack. It brings together cash counting, terminal transmission and an operational report without ending attendance. See [the end-of-day procedure](/en/help/payments/end-of-day).",
+          "he": "בקופה תואמת, עוד ← דוחות מציע סגירת יום לחשבונות מורשים כאשר ה־API מודיע על תמיכה. בטאבלט נשמר סרגל הניווט בדוחות; במסך צר אותו מסלול נפתח בניווט פשוט. המסלול מרכז ספירת מזומן, שידור מסוף ודוח תפעולי בלי לסיים משמרת. ראו [את נוהל סגירת היום](/he/help/payments/end-of-day)."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-28"
+    "procedureUpdatedAt": "2026-10-30"
   },
   {
     "id": "printer-profiles",
@@ -13436,12 +13475,25 @@
           "en": "A private Sumit prepared-order link enters the restaurant’s existing cart, then its checkout with the published colors, fonts and fields. The personal browser basket is retained; prepared items, prices and date stay fixed. Contact details and requested answers belong to this order, without loading an account or saved card. Custom answers bind when payment first opens. Delivery fees are recalculated and reviewed before payment. See the [Sumit procedure](/en/help/orders/internal-sumit-checkout).",
           "he": "קישור פרטי להזמנה מוכנה ב־Sumit נכנס לסל הרגיל של המסעדה ומשם לטופס התשלום עם הצבעים, הגופנים והשדות שפורסמו. הסל האישי בדפדפן נשמר; הפריטים, המחירים והמועד שהוכנו נשארים קבועים. פרטי הקשר והתשובות המבוקשות שייכים להזמנה זו, בלי לטעון חשבון או כרטיס שמור. תשובות מותאמות נקשרות בפתיחת התשלום הראשונה. דמי המשלוח מחושבים מחדש ונבדקים לפני התשלום. ראו [הוראות Sumit](/he/help/orders/internal-sumit-checkout)."
         }
+      },
+      {
+        "id": "end-of-day-protocol",
+        "title": {
+          "fr": "Publier le contrat EOD avant le POS",
+          "en": "Release the EOD contract before the POS",
+          "he": "פריסת חוזה EOD לפני הקופה"
+        },
+        "instructions": {
+          "fr": "Le contrat end-of-day v1 et la migration additive 284 introduisent begin, current, lecture par ID, terminal-result et finalize sous /orders/end-of-day. Les écritures conservent leurs UUID et vérifient restaurant, acteur, autorisation physique et installation. La capacité end_of_day est une déclaration de support, sans permission de paiement. La transaction serveur réserve le comptage et les identités de terminal ; elle ne contacte aucun prestataire. Dispatched précède l’appel natif et un résultat inconnu ne redevient pas une autorisation de transmettre. Une confirmation durable peut être réenregistrée avec la même identité. Finalize crée le rapport opérationnel immuable et ferme la caisse réservée atomiquement, sans pointage ni clôture commerciale. Publier l’API avant le POS, valider en développement puis promouvoir les mêmes artefacts. Les callbacks Ashrait actuels ne justifient aucun total, numéro de lot ni certificat fiscal inventé. Conserver les anciens journaux et les vérifications de droits et de provenance. Voir docs/contracts/end-of-day-v1.json et le guide public payments/end-of-day.",
+          "en": "The end-of-day v1 contract and additive migration 284 add begin, current, ID read, terminal-result and finalize under /orders/end-of-day. Writes retain UUIDs and check restaurant, actor, physical authorization and installation. The end_of_day capability declares support without granting payment permission. The server transaction reserves the count and terminal identities; it contacts no provider. Dispatched precedes the native call, and an unknown outcome never becomes permission to transmit again. A durable confirmation may be recorded again with the same identity. Finalize atomically creates the immutable operational report and closes its reserved drawer without attendance or commercial closure. Release the API before the POS, validate development and promote the same artifacts. Current Ashrait callbacks justify no invented totals, batch number or fiscal certificate. Preserve old journals and permission/provenance checks. See docs/contracts/end-of-day-v1.json and public payments/end-of-day guidance.",
+          "he": "חוזה end-of-day v1 ומיגרציה מצטברת 284 מוסיפים begin, current, קריאה לפי מזהה, terminal-result ו־finalize תחת /orders/end-of-day. כתיבות שומרות UUID ובודקות מסעדה, עובד, הרשאה פיזית והתקנה. יכולת end_of_day מצהירה על תמיכה ואינה מעניקה הרשאת תשלום. עסקת השרת שומרת את הספירה ואת זהויות המסופים; היא אינה פונה לספק. Dispatched נרשם לפני הפקודה המקורית, ותוצאה לא ודאית לעולם אינה מתירה שידור חוזר. ניתן לשמור שוב אישור קבוע עם אותה זהות. Finalize יוצר דוח תפעולי קבוע וסוגר את המגירה שנשמרה באותה עסקה, בלי שינוי נוכחות או סגירה מסחרית. יש לפרוס API לפני הקופה, לבדוק בפיתוח ולקדם אותם תוצרים. תשובות Ashrait הנוכחיות אינן מצדיקות המצאת סכומים, מספר אצווה או תעודה פיסקלית. יש לשמור יומנים קודמים ובדיקות הרשאה ומקור. ראו docs/contracts/end-of-day-v1.json ואת המדריך הציבורי payments/end-of-day."
+        }
       }
     ],
     "audience": "internal",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-29",
+    "procedureUpdatedAt": "2026-10-30",
     "updatedAt": "2026-10-28"
   },
   {
@@ -14492,5 +14544,101 @@
         }
       }
     ]
+  },
+  {
+    "id": "pos-end-of-day",
+    "module": "payments",
+    "article": "payments/end-of-day",
+    "title": {
+      "fr": "Clôture de journée et rapport Z Foody",
+      "en": "End of day and the Foody Z report",
+      "he": "סגירת יום ודוח Z של Foody"
+    },
+    "entry": {
+      "fr": "Plus → Rapports → Clôture de journée, sur le POS concerné. Nécessite le POS et l’API compatibles ; ce guide ne confirme pas leur installation.",
+      "en": "More → Reports → End of day, on the relevant POS. Requires matching POS and API versions; this guide does not confirm installation.",
+      "he": "עוד ← דוחות ← סגירת יום, בקופה הרלוונטית. נדרשות גרסאות תואמות של הקופה וה־API; המדריך אינו מאשר שהן הותקנו."
+    },
+    "selectors": {
+      "foodypos": [
+        "lib/features/more/**/end_of_day*",
+        "lib/services/payments/terminal_payment_service.dart",
+        "lib/features/orders/data/financial_check_repository.dart",
+        "lib/core/ui/terminal_payment_error.dart",
+        "lib/features/more/data/cash_drawer_repository.dart",
+        "lib/features/more/presentation/cash_drawer_page.dart",
+        "lib/features/orders/presentation/cash_collection_guard.dart",
+        "lib/features/orders/presentation/financial_check_page.dart",
+        "lib/features/orders/presentation/widgets/check_panel.dart",
+        "lib/features/orders/online/presentation/order_details_page.dart",
+        "lib/features/orders/presentation/cash_payment_dialog.dart"
+      ],
+      "foodyserver": [
+        "internal/common/end_of_day*.go",
+        "internal/orders/end_of_day*.go",
+        "migrations/284_end_of_day.sql",
+        "internal/common/financial_check.go",
+        "internal/orders/financial_check_payment.go",
+        "internal/orders/cash_drawer.go"
+      ]
+    },
+    "operations": [
+      {
+        "id": "end-of-day-scope",
+        "title": {
+          "fr": "Vérifier ce que couvre la clôture",
+          "en": "Check the closing scope",
+          "he": "בדיקת היקף הסגירה"
+        },
+        "instructions": {
+          "fr": "La clôture réunit le comptage des espèces du POS courant et la transmission des terminaux explicitement inclus. Elle ne termine aucune période de travail, ne paie aucune commande et ne libère aucune table. Elle ne certifie pas la clôture de tous les appareils du restaurant. Le journal espèces et les opérations carte restent distincts. Une journée peut comporter seulement des espèces ou seulement un terminal ; une caisse ouverte sur ce POS doit être incluse. Les paiements financiers enregistrés avec cette installation sont conservés dans le rapport. Les paiements carte sans attribution durable au POS, les autres POS et les paiements web ne sont pas ajoutés à ces totaux. Une couverture partielle ne constitue pas un rapprochement complet du terminal. Le rapport Z Foody est un document opérationnel archivé, sans garantie de certification fiscale ni de versement bancaire. GBX transmet automatiquement selon Verifone ; aucun envoi GBX n’est déclenché par ce parcours.\n\nAvant de l’utiliser, mettez à jour tous les POS partageant le terminal : un ancien binaire peut transmettre sans ce journal. Ne rétrogradez pas l’API ou le POS avec une clôture en attente ; conservez les journaux et faites vérifier la reprise.",
+          "en": "Closing brings together the current POS cash count and transmission of the explicitly included terminals. It does not end attendance, pay an order or release a table. It does not certify closure of every device in the restaurant. Cash and card records remain separate. A day may have cash only or a terminal only; any open drawer on this POS must be included. Financial payment records attributed to this installation are retained in the report. Card payments without durable POS attribution, other POS devices and web payments are not added to those totals. Partial coverage is not a complete terminal reconciliation. The Foody Z report is an archived operational document, with no fiscal-certification or bank-transfer guarantee. GBX transmits automatically according to Verifone; this flow initiates no GBX transmission.\n\nBefore using it, update every POS sharing the terminal: an older binary can transmit without this journal. Do not downgrade the API or POS with an unfinished closing operation; preserve its journals and have recovery reviewed.",
+          "he": "הסגירה מרכזת את ספירת המזומן בקופה הנוכחית ואת שידור המסופים שנכללו במפורש. היא אינה מסיימת משמרת, אינה משלמת הזמנה ואינה מפנה שולחן. היא אינה מאשרת סגירה של כל מכשירי המסעדה. רישומי המזומן והכרטיסים נשארים נפרדים. יום יכול לכלול מזומן בלבד או מסוף בלבד; חובה לכלול מגירה פתוחה בקופה הזו. הדוח שומר תשלומים פיננסיים ששויכו להתקנה הזו. תשלומי כרטיס ללא שיוך קבוע לקופה, קופות אחרות ותשלומי אתר אינם מתווספים לסכומים האלה. כיסוי חלקי אינו התאמה מלאה למסוף. דוח Z של Foody הוא מסמך תפעולי שמור, ללא הבטחת הסמכה פיסקלית או העברה בנקאית. לפי Verifone, השידור ב־GBX אוטומטי; המסלול אינו מפעיל שידור GBX.\n\nלפני השימוש עדכנו את כל הקופות המשתמשות באותו מסוף: גרסה ישנה יכולה לשדר בלי היומן הזה. אין להחזיר API או קופה לגרסה קודמת בזמן סגירה שלא הושלמה; שמרו את היומנים ובקשו לבדוק את השחזור."
+        }
+      },
+      {
+        "id": "end-of-day-run",
+        "title": {
+          "fr": "Compter, transmettre et archiver",
+          "en": "Count, transmit and archive",
+          "he": "ספירה, שידור ושמירה"
+        },
+        "instructions": {
+          "fr": "Avec payments.manage, ouvrez Clôture de journée sur le POS d’origine. Une clôture incluant des espèces exige aussi orders.manage. Vérifiez les éléments affichés ; comptez physiquement les espèces si une caisse est ouverte et saisissez le montant réel. Le début de clôture fige le comptage et réserve cette caisse : aucune nouvelle vente espèces, entrée/sortie, restitution ou clôture parallèle ne doit modifier ce comptage. Si un terminal est inclus, le Victa Mini configuré doit être connecté sur iPad, ou le terminal intégré doit être prêt sur Victa Portable. En fin de journée, confirmez la transmission une seule fois et attendez son résultat final. Une commande acceptée ne prouve pas une transmission terminée. Les totaux et le numéro de lot restent indisponibles si la réponse prise en charge ne les fournit pas ; ne les interprétez pas comme zéro. Lorsque les transmissions incluses sont confirmées, finalisez explicitement la clôture. Le serveur ferme uniquement la caisse réservée, si elle existe, et archive le rapport Z Foody figé. Consultez ce rapport dans le même parcours ; aucune impression physique n’est garantie. Ne répétez pas régulièrement le dépôt pendant la journée.",
+          "en": "With payments.manage, open End of day on the original POS. Including cash also requires orders.manage. Check the displayed scope; physically count any open drawer and enter the actual amount. Beginning closing freezes the count and reserves that drawer: new cash sales, paid in/out, refunds or a parallel closing cannot change this count. If a terminal is included, the configured Victa Mini must be connected on iPad, or the integrated terminal must be ready on Victa Portable. At end of day, explicitly confirm transmission once and wait for its final result. Command acceptance does not prove completed transmission. Totals and the batch number remain unavailable if the supported response does not supply them; never interpret them as zero. After all included transmissions are confirmed, explicitly finalize closing. The server closes only the reserved drawer, if present, and archives the frozen Foody Z report. View it in the same flow; no physical print is guaranteed. Do not deposit repeatedly during the day.",
+          "he": "עם הרשאת payments.manage פתחו סגירת יום בקופה המקורית. הכללת מזומן דורשת גם orders.manage. בדקו את ההיקף המוצג; ספרו פיזית מגירה פתוחה והזינו את הסכום בפועל. התחלת הסגירה מקפיאה את הספירה ושומרת את המגירה: מכירות מזומן חדשות, הכנסות והוצאות, החזרים או סגירה מקבילה לא יכולים לשנות אותה. אם נכלל מסוף, ב־iPad יש לחבר את ה־Victa Mini שהוגדר, או שהמסוף המובנה ב־Victa Portable חייב להיות מוכן. בסוף היום אשרו שידור פעם אחת והמתינו לתוצאה הסופית. קבלת הפקודה אינה הוכחה לשידור שהושלם. סכומים ומספר אצווה נשארים לא זמינים אם התשובה הנתמכת אינה מספקת אותם; אין לפרש אותם כאפס. לאחר שכל השידורים שנכללו אושרו, השלימו את הסגירה במפורש. השרת סוגר רק את המגירה שנשמרה, אם קיימת, ושומר את דוח Z הקבוע של Foody. צפו בדוח באותו מסלול; אין הבטחה להדפסה פיזית. אין לבצע הפקדות חוזרות באופן תדיר במהלך היום."
+        }
+      },
+      {
+        "id": "end-of-day-recovery",
+        "title": {
+          "fr": "Reprendre sans transmettre deux fois",
+          "en": "Recover without transmitting twice",
+          "he": "שחזור ללא שידור כפול"
+        },
+        "instructions": {
+          "fr": "Une erreur ou une réponse perdue ne prouve pas que le dépôt a échoué. Conservez le POS, sa configuration et ses journaux ; ne supprimez pas les données locales et ne créez pas une autre clôture pour contourner le blocage. Rouvrez le parcours sur ce POS. Une confirmation déjà conservée est relue avec la même identité, sans nouvelle transmission. Si le terminal a confirmé mais que l’API n’a pas encore enregistré le résultat ou le rapport, reprenez cet enregistrement ; aucun nouvel encaissement ou dépôt n’est nécessaire. Si aucune confirmation durable n’est disponible, le résultat reste incertain : faites vérifier le lot sur le terminal ou auprès du prestataire avant toute intervention. Une vérification manuelle ne fabrique pas une confirmation automatique dans le rapport. Pendant une opération en attente, les nouvelles cartes restent bloquées par le journal terminal. Changer de compte, de restaurant ou de terminal ne transfère pas la preuve au nouveau contexte. Les essais matériels Mini et Portable restent à réaliser sur leur configuration réelle ; ce guide ne les certifie pas.",
+          "en": "An error or lost response does not prove the deposit failed. Preserve the POS, its configuration and journals; do not clear local data or create another closing to bypass a block. Reopen this flow on the same POS. An already retained confirmation is read with the same identity without another transmission. If the terminal confirmed but the API has not yet recorded the result or report, resume that recording; no new payment or deposit is needed. Without a durable confirmation, the result remains uncertain: have the terminal batch or provider checked before any intervention. Manual verification does not fabricate an automatic confirmation in the report. The terminal journal blocks new cards while an operation is pending. Changing staff, restaurant or terminal does not transfer proof to the new context. Mini and Portable hardware acceptance must still be performed on the actual configuration; this guide does not certify it.",
+          "he": "שגיאה או תשובה שאבדה אינן הוכחה לכישלון ההפקדה. שמרו את הקופה, ההגדרות והיומנים שלה; אין למחוק נתונים מקומיים או ליצור סגירה אחרת כדי לעקוף חסימה. פתחו שוב את המסלול באותה קופה. אישור שכבר נשמר נקרא עם אותו מזהה בלי שידור נוסף. אם המסוף אישר אך ה־API טרם שמר את התוצאה או הדוח, המשיכו את השמירה; אין צורך בתשלום או בהפקדה חדשים. בלי אישור קבוע התוצאה נשארת לא ודאית: יש לבדוק את האצווה במסוף או מול הספק לפני התערבות. בדיקה ידנית אינה מייצרת אישור אוטומטי בדוח. יומן המסוף חוסם כרטיסים חדשים בזמן פעולה ממתינה. שינוי עובד, מסעדה או מסוף אינו מעביר הוכחה להקשר החדש. עדיין יש לבצע בדיקות חומרה ב־Mini וב־Portable בתצורה האמיתית; המדריך אינו מסמיך אותן."
+        }
+      },
+      {
+        "id": "end-of-day-cash-reservation",
+        "title": {
+          "fr": "Résoudre les espèces en attente",
+          "en": "Resolve pending cash operations",
+          "he": "טיפול בפעולות מזומן ממתינות"
+        },
+        "instructions": {
+          "fr": "Avant de commencer, reprenez toute opération espèces encore en attente : suivez le lien vers Solde en caisse pour une opération de tiroir, ou vers Commandes pour retrouver l’encaissement concerné. Son identité est conservée tant que son résultat reste incertain ; ne créez pas une seconde opération pour la remplacer. Une fois la caisse réservée pour la clôture, son rapport reste consultable, mais les encaissements espèces, mouvements et clôtures séparées sont bloqués. Le contrôle de caisse et du contexte personnel est répété à la confirmation, avant toute ouverture de tiroir ou validation de collecte. Un contrôle de caisse précède aussi l’ouverture du dialogue de paiement espèces ; si la lecture échoue, ne collectez pas d’espèces à partir de ce dialogue. Avec les droits nécessaires, le message de réservation permet de rejoindre Clôture de journée. Un refus explicitement confirmé par le serveur libère une demande rejetée ; une erreur réseau ne la libère pas. Reprenez la clôture existante au lieu de contourner la réservation.",
+          "en": "Before starting, recover any pending cash operation: follow the link to Cash balance for a drawer operation, or to Orders to find the affected collection. Its identity is retained while the result is uncertain; do not create a second operation to replace it. Once the drawer is reserved for closing, its report remains readable, but cash collections, movements and separate closing actions are blocked. The drawer and personal context are checked again at confirmation, before any drawer opening or collection confirmation. A current drawer check also precedes the cash tender dialog; if that read fails, do not collect cash through this dialog. With the required permissions, the reservation notice links to End of day. Only an explicit server-confirmed rejection releases a rejected request; a network error does not. Resume the existing closing instead of bypassing its reservation.",
+          "he": "לפני ההתחלה שחזרו כל פעולת מזומן ממתינה: פעלו לפי הקישור ליתרת הקופה לפעולת מגירה, או להזמנות כדי למצוא את הגבייה הרלוונטית. זהות הפעולה נשמרת כל עוד התוצאה אינה ודאית; אין ליצור פעולה שנייה במקומה. לאחר שהמגירה נשמרה לסגירת היום, אפשר עדיין לקרוא את הדוח, אך גביית מזומן, תנועות וסגירה נפרדת נחסמות. המגירה וההקשר האישי נבדקים שוב בעת האישור, לפני פתיחת מגירה או אישור גבייה. בדיקת מגירה עדכנית מתבצעת גם לפני פתיחת חלון תשלום במזומן; אם הקריאה נכשלת, אין לגבות מזומן דרך החלון הזה. עם ההרשאות הדרושות, הודעת השמירה מקשרת לסגירת יום. רק דחייה מפורשת שאושרה בשרת משחררת בקשה שנדחתה; שגיאת רשת אינה משחררת אותה. המשיכו את הסגירה הקיימת במקום לעקוף את שמירת המגירה."
+        }
+      }
+    ],
+    "audience": "public",
+    "status": "local-release-unverified",
+    "preserveExisting": false,
+    "procedureUpdatedAt": "2026-10-30"
   }
 ]

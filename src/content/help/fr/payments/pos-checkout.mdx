@@ -7,7 +7,7 @@ apps: both
 tags:
   - payments
   - pos-payments
-updatedAt: '2026-10-29'
+updatedAt: '2026-10-30'
 featureId: pos-payments
 audience: public
 releaseStatus: available
@@ -54,6 +54,8 @@ Si la lecture de Solde en caisse ou Mouvements de caisse échoue, n’en déduis
 
 Sur le même POS autorisé avec un shift PIN actif, ouvrez Plus → Rapports → Solde en caisse. Vérifiez fonds initial, ventes et remboursements en espèces, entrées/sorties et montant attendu. La description facultative est reprise dans la note de clôture, sans enregistrement automatique. Avec payments.manage, ouvrez Entrées/sorties, saisissez un montant positif et un motif obligatoire, puis choisissez Encaisser des espèces ou Décaisser des espèces. Une sortie ne peut dépasser le solde attendu. Avec orders.manage, choisissez Clôturer la session de caisse, comptez physiquement les espèces, saisissez ce montant et confirmez ; l’écart est conservé. Fermer la modale sans confirmer n’enregistre rien. Mouvements de caisse liste uniquement la session chargée sur cet appareil, pas les anciennes sessions. Reprenez toute opération incertaine avec son identité existante avant une autre action. Ce rapport n’inclut pas les cartes : la clôture espèces ne lance pas le dépôt Verifone, et le dépôt Verifone ne clôture pas les espèces. N’utilisez pas un ajustement espèces pour masquer un remboursement carte.
 
+Pour réunir les étapes de fin de journée, utilisez [la clôture commune](/fr/help/payments/end-of-day).
+
 <span id="card" />
 
 ## Encaisser un paiement connecté
@@ -94,9 +96,7 @@ La période et les heures affichées dans Admin utilisent le fuseau horaire du r
 
 ## Clôturer et déposer un lot du terminal Verifone
 
-Sur un Victa Portable configuré ou un iPad relié à un Victa Mini, connectez-vous avec l’autorisation payments.manage. Ouvrez Plus → Rapports → Dépôts du terminal. Vérifiez la connexion et la disponibilité de Clôturer et déposer. En fin de journée, confirmez cette action une seule fois, attendez la confirmation finale du terminal et conservez sa référence de réconciliation. Cette opération est distincte de la fermeture d’un service Foody ou d’un tiroir-caisse. Si le résultat est incertain, ne la relancez pas et n’encaissez pas d’autre carte : vérifiez le lot sur le terminal ou auprès du prestataire de paiement. Un responsable ne choisit J’ai vérifié le lot qu’après cette vérification. Certaines versions israéliennes Ashrait prennent en charge le dépôt, mais pas les totaux en cours, la clôture seule ou le rapprochement seul : ces commandes restent indisponibles. L’acceptation de la commande ne prouve pas son achèvement, et un dépôt peut réussir sans renvoyer de totaux chiffrés. Ne partagez ni identifiants du terminal ni données de carte dans le chat d’assistance. La compatibilité de bout en bout doit être validée sur le terminal provisionné et sa version logicielle.
-
-Si l’établissement, la connexion ou le terminal change, [rouvrez la confirmation dans le bon contexte](/fr/help/payments/cash-access#terminal-report-context).
+Pour clôturer la journée espèces et carte dans un même parcours, utilisez [Clôture de journée et rapport Z Foody](/fr/help/payments/end-of-day). Le départ d’un employé reste distinct. Sur les versions antérieures, Dépôts du terminal permet une transmission Verifone séparée avec payments.manage : vérifiez le terminal, confirmez une seule fois en fin de journée et attendez la confirmation finale. Un résultat incertain bloque toute répétition avant vérification. Les commandes de totaux non prises en charge restent indisponibles. Les résultats chiffrés et la référence de lot ne sont affichés que s’ils sont réellement fournis. Ne partagez ni identifiants du terminal ni données de carte dans le chat d’assistance. La compatibilité matérielle doit être vérifiée sur le Mini ou le Portable concerné. Si le contexte change, [rouvrez la confirmation](/fr/help/payments/cash-access#terminal-report-context).
 
 <span id="terminal-reports-advanced" />
 

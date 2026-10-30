@@ -65,7 +65,13 @@ for (const [service, configuredRoot] of Object.entries(roots)) {
     // access, but it does not change order creation, types or fulfillment.
     // This extracted resolver classifies cash POS access failures only; it does
     // not introduce order creation, fulfillment or order-type procedures.
-    const ids = service === 'foodyserver' && file === 'internal/orders/cash_drawer_context.go'
+    // Dedicated EOD coordination and cash-reservation presentation do not
+    // introduce ordinary order handling or offering/void procedures.
+    const ids = service === 'foodyserver' && /^internal\/(?:orders|common)\/end_of_day[^/]*\.go$/.test(file)
+      ? ['pos-end-of-day']
+      : service === 'foodypos' && file === 'lib/features/orders/presentation/cash_collection_guard.dart'
+      ? ['pos-payments', 'pos-end-of-day']
+      : service === 'foodyserver' && file === 'internal/orders/cash_drawer_context.go'
       ? ['pos-payments', 'pos-cash-access-diagnostics']
       : service === 'foodyserver' && /^internal\/orders\/transactions(?:_handler|_adjustments)?\.go$/.test(file)
         ? ['pos-payments'] : service === 'foodyserver' && file === 'internal/menu/item_photos.go'

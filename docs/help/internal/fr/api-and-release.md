@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-29'
+updatedAt: '2026-10-30'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -205,3 +205,9 @@ Le champ lifecycle v1 est conservé. La capacité order_lifecycle_v2 annonce lif
 ## Panier préparé et présentation du restaurant
 
 Un lien privé de commande préparée Sumit rejoint le panier habituel du restaurant, puis son formulaire de paiement avec les couleurs, polices et champs publiés. Le panier personnel du navigateur reste conservé ; les articles, prix et date préparés sont figés. Les coordonnées et réponses demandées concernent cette commande, sans chargement d’un compte ou d’une carte enregistrée. Les réponses personnalisées sont liées lors de la première ouverture du paiement. Les frais de livraison sont recalculés puis vérifiés avant paiement. Voir la [procédure Sumit](/fr/help/orders/internal-sumit-checkout).
+
+<span id="end-of-day-protocol" />
+
+## Publier le contrat EOD avant le POS
+
+Le contrat end-of-day v1 et la migration additive 284 introduisent begin, current, lecture par ID, terminal-result et finalize sous /orders/end-of-day. Les écritures conservent leurs UUID et vérifient restaurant, acteur, autorisation physique et installation. La capacité end_of_day est une déclaration de support, sans permission de paiement. La transaction serveur réserve le comptage et les identités de terminal ; elle ne contacte aucun prestataire. Dispatched précède l’appel natif et un résultat inconnu ne redevient pas une autorisation de transmettre. Une confirmation durable peut être réenregistrée avec la même identité. Finalize crée le rapport opérationnel immuable et ferme la caisse réservée atomiquement, sans pointage ni clôture commerciale. Publier l’API avant le POS, valider en développement puis promouvoir les mêmes artefacts. Les callbacks Ashrait actuels ne justifient aucun total, numéro de lot ni certificat fiscal inventé. Conserver les anciens journaux et les vérifications de droits et de provenance. Voir docs/contracts/end-of-day-v1.json et le guide public payments/end-of-day.

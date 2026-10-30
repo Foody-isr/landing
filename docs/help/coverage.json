@@ -2117,6 +2117,34 @@
           "components/CartOverlayController.tsx"
         ]
       }
+    },
+    {
+      "id": "pos-end-of-day",
+      "article": "payments/end-of-day",
+      "audience": "public",
+      "selectors": {
+        "foodypos": [
+          "lib/features/more/**/end_of_day*",
+          "lib/services/payments/terminal_payment_service.dart",
+          "lib/features/orders/data/financial_check_repository.dart",
+          "lib/core/ui/terminal_payment_error.dart",
+          "lib/features/more/data/cash_drawer_repository.dart",
+          "lib/features/more/presentation/cash_drawer_page.dart",
+          "lib/features/orders/presentation/cash_collection_guard.dart",
+          "lib/features/orders/presentation/financial_check_page.dart",
+          "lib/features/orders/presentation/widgets/check_panel.dart",
+          "lib/features/orders/online/presentation/order_details_page.dart",
+          "lib/features/orders/presentation/cash_payment_dialog.dart"
+        ],
+        "foodyserver": [
+          "internal/common/end_of_day*.go",
+          "internal/orders/end_of_day*.go",
+          "migrations/284_end_of_day.sql",
+          "internal/common/financial_check.go",
+          "internal/orders/financial_check_payment.go",
+          "internal/orders/cash_drawer.go"
+        ]
+      }
     }
   ]
 }

@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-29'
+updatedAt: '2026-10-30'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -205,3 +205,9 @@ The lifecycle v1 field is retained. Capability order_lifecycle_v2 advertises lif
 ## Prepared basket and restaurant presentation
 
 A private Sumit prepared-order link enters the restaurant’s existing cart, then its checkout with the published colors, fonts and fields. The personal browser basket is retained; prepared items, prices and date stay fixed. Contact details and requested answers belong to this order, without loading an account or saved card. Custom answers bind when payment first opens. Delivery fees are recalculated and reviewed before payment. See the [Sumit procedure](/en/help/orders/internal-sumit-checkout).
+
+<span id="end-of-day-protocol" />
+
+## Release the EOD contract before the POS
+
+The end-of-day v1 contract and additive migration 284 add begin, current, ID read, terminal-result and finalize under /orders/end-of-day. Writes retain UUIDs and check restaurant, actor, physical authorization and installation. The end_of_day capability declares support without granting payment permission. The server transaction reserves the count and terminal identities; it contacts no provider. Dispatched precedes the native call, and an unknown outcome never becomes permission to transmit again. A durable confirmation may be recorded again with the same identity. Finalize atomically creates the immutable operational report and closes its reserved drawer without attendance or commercial closure. Release the API before the POS, validate development and promote the same artifacts. Current Ashrait callbacks justify no invented totals, batch number or fiscal certificate. Preserve old journals and permission/provenance checks. See docs/contracts/end-of-day-v1.json and public payments/end-of-day guidance.

@@ -8,6 +8,48 @@ base. `docs/help/catalog/features.json` is the authored feature/procedure source
 Internal operator procedures render separately to `docs/help/internal` and never
 enter public browsing, search or the AI corpus.
 
+## End of day and terminal transmission (30 October 2026)
+
+The compatible POS/API add one explicit current-POS closing workflow. Cash and
+terminal evidence remain separate ledgers, but the operational report is frozen
+only after the counted drawer and every declared terminal transmission are
+confirmed. A day may contain only cash or only a configured terminal. The API
+reserves the drawer and terminal operations; payment and physical-cash changes
+cannot silently reuse a reserved scope. The UI retains the measured report rail
+on tablets and a single-column compact route, with French, Hebrew and English.
+This workflow neither ends attendance nor closes orders or tables.
+
+Existing cash journals must be resolved before reserving an EOD, including after
+an asynchronous native readiness check. The reserved drawer remains readable;
+its separate mutation controls and every cash-tender entry point are guarded.
+A positive, typed definitive rejection releases only its rejected cash intent;
+network uncertainty retains the original identity. The cash dialog keeps its existing rendering and reusable default behavior, with
+an optional current-context guard before confirmation and drawer opening.
+
+The native Ashrait Deposit TransactionQuery remains the existing vendor command
+on Mini and Portable. The available typed callback does not expose trustworthy
+numerical totals or a batch ID; missing values stay unknown. A durable successful
+local receipt permits recording recovery without retransmission. A crash before
+that receipt is durable remains unknown and requires provider review; no manual
+acknowledgement fabricates automatic provider proof. No live payment or deposit
+is part of local validation. GBX automation is described as vendor-supplied
+behavior, not a new integration or transmission command implemented here.
+
+The immutable digital Foody Z is an operational report, not a certified fiscal
+artifact or bank-settlement guarantee. Cash coverage is the current reserved
+drawer. Financial-payment rows require durable installation/credential provenance;
+unattributed card records, other POS and hosted web tenders are not silently
+included. Recorded references distinguish Foody traces from received payment
+references; neither is promoted to an acquirer transaction number by inference.
+No new print job or physical-paper success is promised.
+
+Review and release payments/end-of-day and the related checkout/cash-access
+links in all three languages with the API first and then the POS. Preserve
+unaffected service runtime inventories. Refresh affected source contracts and
+embed the same public corpus in API, then pin the reviewed Landing commit.
+Local validation does not assert deployment, installed-device acceptance,
+terminal compatibility or legal certification.
+
 ## Internal order finalization (29 October 2026)
 
 New order now finalizes inside the ticket after Continue. Explicit payment intents

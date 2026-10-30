@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-10-29.
+Révision du relevé : 2026-10-30.
 
-104 fiches de fonctionnalités, 801 procédures/sous-fonctionnalités, dont 95 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2263 fichiers applicatifs et 2072 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+105 fiches de fonctionnalités, 809 procédures/sous-fonctionnalités, dont 96 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2274 fichiers applicatifs et 2079 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,8 +10,8 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 600 | 882 | f18d1425319b ; versioned |
-| foodypos | 368 | 166 | 5d88d1dfb923 ; versioned |
+| foodyserver | 606 | 887 | caebba407a72 ; versioned |
+| foodypos | 373 | 168 | 560f88c14915 ; versioned |
 | foodyadmin | 775 | 781 | 8676071bc4fe ; versioned |
 | foodyweb | 349 | 172 | 0a3db85456d2 ; versioned |
 | foodylanding | 127 | 21 | f96b686bbb16 ; versioned |
@@ -129,6 +129,7 @@ Identifiant : `staff-roles`. Public : public. Disponibilité : available. Servic
 - [Modifier ou retirer un rôle](../../src/content/help/fr/staff/roles-and-permissions.mdx#change)
 - [Accès aux nouveaux réglages](../../src/content/help/fr/staff/roles-and-permissions.mdx#related-service-controls)
 - [Code caisse à l’activation du personnel](../../src/content/help/fr/staff/roles-and-permissions.mdx#staff-activation-pos-code)
+- [Autoriser une clôture de journée](../../src/content/help/fr/staff/roles-and-permissions.mdx#end-of-day-permissions)
 
 ### [Accès POS, appareils et shifts](../../src/content/help/fr/staff/devices-and-shifts.mdx)
 
@@ -761,6 +762,15 @@ Identifiant : `payment-configuration`. Public : public. Disponibilité : availab
 - [Enregistrer une carte pendant le premier paiement (CST)](../../src/content/help/fr/payments/providers-and-cibus.mdx#verifone-cst-card-saving)
 - [Vérifier une facture Invoice4U détaillée](../../src/content/help/fr/payments/providers-and-cibus.mdx#invoice4u-order-lines)
 
+### [Clôture de journée et rapport Z Foody](../../src/content/help/fr/payments/end-of-day.mdx)
+
+Identifiant : `pos-end-of-day`. Public : public. Disponibilité : local-release-unverified. Services : foodyserver, foodypos.
+
+- [Vérifier ce que couvre la clôture](../../src/content/help/fr/payments/end-of-day.mdx#end-of-day-scope)
+- [Compter, transmettre et archiver](../../src/content/help/fr/payments/end-of-day.mdx#end-of-day-run)
+- [Reprendre sans transmettre deux fois](../../src/content/help/fr/payments/end-of-day.mdx#end-of-day-recovery)
+- [Résoudre les espèces en attente](../../src/content/help/fr/payments/end-of-day.mdx#end-of-day-cash-reservation)
+
 ## printers
 
 ### [Installer une Epson TM-U220IIB avec Foody](../../src/content/help/fr/printers/epson-tm-u220iib.mdx)
@@ -975,6 +985,7 @@ Identifiant : `pos-behavior`. Public : public. Disponibilité : available. Servi
 - [Choisir un contact existant ou saisir les coordonnées de commande](../../src/content/help/fr/settings/pos-behavior.mdx#fulfillment-order-contact-entry)
 - [Régler la caisse sur un écran compact](../../src/content/help/fr/settings/pos-behavior.mdx#mobile-terminal-pages)
 - [Se déplacer sur le terminal](../../src/content/help/fr/settings/pos-behavior.mdx#terminal-navigation-overview)
+- [Retrouver le dépôt dans le parcours de fin de journée](../../src/content/help/fr/settings/pos-behavior.mdx#end-of-day-terminal-navigation)
 
 ### [Appareils et écrans cuisine](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx)
 
@@ -1015,6 +1026,7 @@ Identifiant : `pos-workspace`. Public : public. Disponibilité : available. Serv
 - [Parcourir les pages du terminal mobile](../../src/content/help/fr/settings/pos-workspace.mdx#mobile-terminal-pages)
 - [Consulter l’aperçu et les disponibilités du terminal](../../src/content/help/fr/settings/pos-workspace.mdx#operational-overview)
 - [Reprendre le travail après une interruption](../../src/content/help/fr/settings/pos-workspace.mdx#local-draft-and-lifecycle)
+- [Ouvrir la clôture de journée](../../src/content/help/fr/settings/pos-workspace.mdx#end-of-day-navigation)
 
 ### [Consommation et quotas des services externes](../../src/content/help/fr/settings/api-usage-and-quotas.mdx)
 
@@ -1348,6 +1360,7 @@ Identifiant : `platform-api`. Public : internal. Disponibilité : available. Ser
 - [Intégration du panier préparé Sumit](internal/fr/api-and-release.md#prepared-sumit-checkout-integration)
 - [Contrat additif des confirmations de commande](internal/fr/api-and-release.md#order-lifecycle-v2-contract)
 - [Panier préparé et présentation du restaurant](internal/fr/api-and-release.md#prepared-order-existing-cart)
+- [Publier le contrat EOD avant le POS](internal/fr/api-and-release.md#end-of-day-protocol)
 
 ### [Aperçus internes et alias de routes](internal/fr/design-previews.md)
 
@@ -1357,7 +1370,7 @@ Identifiant : `design-sandboxes`. Public : internal. Disponibilité : available.
 
 ### [Socle applicatif partagé](internal/fr/shared-runtime.md)
 
-Identifiant : `shared-runtime`. Public : internal. Disponibilité : available. Services : foodypos, foodyadmin, foodyweb, foodybackoffice, foodylanding.
+Identifiant : `shared-runtime`. Public : internal. Disponibilité : available. Services : foodypos, foodyadmin, foodyweb, foodylanding, foodybackoffice.
 
 - [Distinguer rapports, espèces et dépôt carte](internal/fr/shared-runtime.md#pos-reports-navigation)
 - [Rembourser ou annuler un paiement en ligne Verifone](internal/fr/shared-runtime.md#verifone-admin-money-operations)
