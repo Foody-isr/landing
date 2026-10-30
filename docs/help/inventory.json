@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-10-29",
+  "reviewedAt": "2026-10-18",
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "2d139a2e32c472dcb113a90819b0e872557e3986",
+      "sourceCommit": "84ba64cc4049d8168ff8caece566a319f26ca0f3",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "91c25ef22a2a1e451f30e1011a9d308627afec85db954e951a9393229a802c4e",
+      "sourceSnapshot": "cff19983b29f21015b6abe2b50a8cad65aa20a0d490ab34ed4092d18d44383dd",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -4476,7 +4476,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "51afb90d3376489670fa28c0a02acc27ec04e2517bf51ecdb55080bc9725c6ff",
+          "sha256": "c5a7f6d23530a98571e6184a0943cf68bc87cbea02421556a058b249a428c513",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -4814,10 +4814,10 @@
     },
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "c47e94ef78add52b5962572c3fb1617376ac2849",
+      "sourceCommit": "ab567d1da10bd273ed2ca672a2a3e4b0047cd5de",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "98e35252548703f3ce626a7073b341bcdb40319826a24e200b00af3d38a4d2fd",
-      "workingTreeHasChanges": false,
+      "sourceSnapshot": "1a49123f9b7515cb895851e3c67d5924a3f4d6e6cd402d543a32a63114cec82e",
+      "workingTreeHasChanges": true,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
           "sha256": "13c58bc11284d66c7fb9c4d79c1b3e92c6e05539164f2147a5e966d9c17ac275",
@@ -6725,7 +6725,14 @@
           ]
         },
         "src/components/delivery/CourierItineraryView.tsx": {
-          "sha256": "b76156f68174c45becd722f68474885a36d0b3781805613365129930e7a5d568",
+          "sha256": "c6f325a9c97e80de7a80bca4809fb2ed9205182f5446ebd9cba144286947a247",
+          "features": [
+            "delivery-dispatch",
+            "courier"
+          ]
+        },
+        "src/components/delivery/CourierLocationStatus.tsx": {
+          "sha256": "6ec0c96dcb8603eb4a9df51b5f522e60ff78fe04bb5ae44b5e014445d6952b68",
           "features": [
             "delivery-dispatch",
             "courier"
@@ -6751,7 +6758,7 @@
           ]
         },
         "src/components/delivery/DeliveryMap.tsx": {
-          "sha256": "a7b533e2d446793d3eeb851ba0e8a8b2c5de62596ac85a8f047408b7042b6e77",
+          "sha256": "20a0a0ed32aa158ec3cadd53e85bd2417bf6f4c70549fbb7cde082c167dfd0f6",
           "features": [
             "delivery-dispatch"
           ]
@@ -6769,7 +6776,7 @@
           ]
         },
         "src/components/delivery/DispatcherView.tsx": {
-          "sha256": "82afc694b76010d1e2a66b9a160696803d4c7f070722886c9b4c9050a2c2ca05",
+          "sha256": "407c939f57eefc36f078567a38cd5343c088061b57d3f4a01489a2caeae9c227",
           "features": [
             "delivery-dispatch"
           ]
@@ -9249,7 +9256,7 @@
           ]
         },
         "src/lib/delivery.ts": {
-          "sha256": "7728ccdcc5cb27fb5b87be58e1550f407cbfc66ebf6273a5bf0b9736a417931a",
+          "sha256": "4ea278df4343d69735b2702275441532d59911d34fc3f8e081a07382965898a9",
           "features": [
             "delivery-dispatch",
             "shared-runtime"
@@ -9306,7 +9313,7 @@
           ]
         },
         "src/lib/i18n.tsx": {
-          "sha256": "948bb49e260b3b8bf8443b5cc1ef18b6419c28af4892ac2112d6772a8a9d1436",
+          "sha256": "ac2bcbadc7771ff407bc953eb7517a119782be3a04b2a3c554b18528df42a2a3",
           "features": [
             "customers-profiles",
             "menu-menus-and-groups",
@@ -9984,8 +9991,9 @@
           ]
         },
         "src/lib/useLocationReporter.ts": {
-          "sha256": "9352709023e8d9364a1d987e568c87bc846fe1499489f729a6895220e768a1e6",
+          "sha256": "6722fbb917959cc32b75cdbc7fb7484e4a4e09842bcb692aedb869886cc8baef",
           "features": [
+            "courier",
             "shared-runtime"
           ]
         },
@@ -12630,7 +12638,7 @@
     },
     "foodylanding": {
       "repository": "https://github.com/Foody-isr/landing",
-      "sourceCommit": "086993b0cc258deee3ff030688713cdcf36a188a",
+      "sourceCommit": "e828d4e935e6d12ca4692957ba744405e5946a43",
       "releaseStatus": "versioned",
       "sourceSnapshot": "0017f89048e20a416bab53c7443a4720bbe088bd715d39dcf9d1a8e67e173251",
       "workingTreeHasChanges": true,
@@ -18351,9 +18359,9 @@
             "he": "מציאת עזרה בתכנון משלוחים"
           },
           "instructions": {
-            "en": "The delivery guides cover departure/final address suggestions, route order towards the final destination, starting all assigned deliveries together and the customer reminder range. Search for delivery customer window or open Delivery → Dispatch and route planning. Check the installed release before following newly added controls. The assistant cites the same published guides; it cannot inspect a courier’s route, change an order or send WhatsApp messages.",
-            "fr": "Les guides de livraison expliquent les suggestions d’adresses de départ et d’arrivée, l’ordre vers le point final, le départ simultané des commandes affectées et le créneau du rappel client. Recherchez marge du créneau livraison ou ouvrez Livraisons → Dispatch et planification des tournées. Vérifiez la version installée avant d’utiliser de nouveaux contrôles. L’assistant cite ces mêmes guides publiés ; il ne peut pas consulter une tournée, modifier une commande ou envoyer un WhatsApp.",
-            "he": "מדריכי המשלוחים מסבירים הצעות לכתובות יציאה וסיום, סדר לכיוון היעד הסופי, יציאה משותפת של ההזמנות המשויכות וחלון התזכורת ללקוח. חפשו חלון מסירה ללקוח או פתחו משלוחים → שיגור ותכנון מסלולים. בדקו את הגרסה המותקנת לפני שימוש בבקרות חדשות. העוזר מצטט את אותם מדריכים שפורסמו; הוא אינו יכול לבדוק מסלול שליח, לשנות הזמנה או לשלוח הודעת WhatsApp."
+            "en": "The delivery guides cover departure/final address suggestions, route order towards the final destination, starting all assigned deliveries together and the customer reminder range. Search for delivery customer window or open Delivery → Dispatch and route planning. Check the installed release before following newly added controls. The assistant cites the same published guides; it cannot inspect a courier’s route, change an order or send WhatsApp messages. For a stationary position, also read live location in the Courier mode guide: it distinguishes the planned departure, the received GPS marker and an old position. The assistant explains phone checks but cannot inspect its live location.",
+            "fr": "Les guides de livraison expliquent les suggestions d’adresses de départ et d’arrivée, l’ordre vers le point final, le départ simultané des commandes affectées et le créneau du rappel client. Recherchez marge du créneau livraison ou ouvrez Livraisons → Dispatch et planification des tournées. Vérifiez la version installée avant d’utiliser de nouveaux contrôles. L’assistant cite ces mêmes guides publiés ; il ne peut pas consulter une tournée, modifier une commande ou envoyer un WhatsApp. Pour une position immobile, consultez aussi le suivi de position dans le guide Mode livreur : il distingue le départ prévu, le point GPS reçu et une position ancienne. L’assistant explique les vérifications du téléphone mais ne peut pas vérifier sa localisation en direct.",
+            "he": "מדריכי המשלוחים מסבירים הצעות לכתובות יציאה וסיום, סדר לכיוון היעד הסופי, יציאה משותפת של ההזמנות המשויכות וחלון התזכורת ללקוח. חפשו חלון מסירה ללקוח או פתחו משלוחים → שיגור ותכנון מסלולים. בדקו את הגרסה המותקנת לפני שימוש בבקרות חדשות. העוזר מצטט את אותם מדריכים שפורסמו; הוא אינו יכול לבדוק מסלול שליח, לשנות הזמנה או לשלוח הודעת WhatsApp. אם המיקום אינו משתנה, קראו גם על מעקב המיקום במדריך מצב שליח: הוא מבחין בין נקודת היציאה המתוכננת, סמן ה-GPS שהתקבל ומיקום ישן. העוזר מסביר בדיקות בטלפון אך אינו יכול לבדוק את המיקום החי שלו."
           }
         },
         {
@@ -32085,6 +32093,19 @@
             "en": "With compatible API and Admin versions, the restaurant owner can also use this selector, like a superadmin. Open Orders → Courier mode and select a restaurant courier under View as courier. The map and routes belong to that courier; actions record real changes and the signed-in account’s GPS is not shared for them. See [the courier-mode procedure](/en/help/delivery/courier-workspace#superadmin-courier-selection), including switching couriers and recovering from errors. Planning changes are reserved for authorized dispatchers in Deliveries; they are unavailable to courier accounts and in an owner’s or superadmin’s courier workspace. For optional same-day orders, inspect the frozen arrival estimate in Order details, check the courier’s availability and confirm a valid delivery range. The estimate does not reserve courier capacity. Route optimization, courier assignments and day-before WhatsApp reminders keep their existing workflows; enabling same-day rules does not create a new reminder trigger.",
             "he": "בגרסאות תואמות של ה־API וממשק הניהול, גם בעל המסעדה יכול להשתמש בבורר כמו סופר־אדמין. פתחו הזמנות → מצב שליח ובחרו שליח של המסעדה תחת צפייה בתור שליח. המפה והמסלולים שייכים לשליח שנבחר; הפעולות מבצעות שינויים אמיתיים ומיקום החשבון המחובר אינו משותף בשמו. ראו [הנחיות מצב שליח](/he/help/delivery/courier-workspace#superadmin-courier-selection), כולל החלפת שליח והתאוששות משגיאות. שינויי תכנון מיועדים לאחראים מורשים במשלוחים; הם אינם זמינים לחשבונות שליח או בתצוגת השליח של בעל מסעדה או מנהל מערכת. בהזמנה אופציונלית לאותו יום בדקו את הערכת ההגעה השמורה בפרטי ההזמנה, את זמינות השליח ואשרו חלון משלוח תקף. ההערכה אינה שומרת קיבולת שליח. אופטימיזציה, שיבוץ ותזכורות WhatsApp ליום שלפני שומרות על התהליכים הקיימים; כללי אותו יום אינם מוסיפים טריגר תזכורת."
           }
+        },
+        {
+          "id": "courier-position",
+          "title": {
+            "fr": "Lire la dernière position reçue",
+            "en": "Read the last received position",
+            "he": "קריאת המיקום האחרון שהתקבל"
+          },
+          "instructions": {
+            "fr": "Pour une tournée En route, consultez l’indication de position sous le livreur : aucune position reçue, position reçue à l’heure indiquée, ou position ancienne après plus d’une minute. Le point Position du livreur se déplace avec les nouvelles positions reçues ; le triangle vert est le départ prévu. Une tournée active ne garantit pas que le téléphone transmet son GPS. Faites vérifier Foody affiché, la localisation autorisée et la connexion sur le téléphone du livreur. Ouvrir Mode livreur sur le téléphone du responsable ne partage pas la position du livreur. Voir [le suivi et la récupération côté livreur](../delivery/courier-workspace#live-location).",
+            "en": "For an En route run, check the location notice under the courier: no position received, position received at the displayed time, or old position after more than one minute. The Courier position marker moves with new received positions; the green triangle is the planned departure. An active route does not guarantee that the phone is sending GPS. Check that Foody is visible, location access is allowed and the courier’s phone is connected. Opening Courier mode on the manager’s phone does not share the courier’s GPS. See [courier tracking and recovery](../delivery/courier-workspace#live-location).",
+            "he": "במסלול בדרך בדקו את הודעת המיקום מתחת לשליח: לא התקבל מיקום, מיקום שהתקבל בשעה המוצגת, או מיקום ישן לאחר יותר מדקה. סמן מיקום השליח נע עם מיקומים חדשים שהתקבלו; המשולש הירוק הוא נקודת היציאה המתוכננת. מסלול פעיל אינו מבטיח שהטלפון שולח GPS. בדקו ש-Foody גלוי, שהגישה למיקום מותרת ושהטלפון של השליח מחובר. פתיחת מצב שליח בטלפון של המנהל אינה משתפת את ה-GPS של השליח. ראו [מעקב ושחזור בצד השליח](../delivery/courier-workspace#live-location)."
+          }
         }
       ],
       "audience": "public",
@@ -32255,6 +32276,10 @@
         },
         {
           "service": "foodyadmin",
+          "file": "src/components/delivery/CourierLocationStatus.tsx"
+        },
+        {
+          "service": "foodyadmin",
           "file": "src/components/delivery/CourierShell.tsx"
         },
         {
@@ -32365,7 +32390,8 @@
         "foodyadmin": [
           "src/app/[restaurantId]/orders/courier-mode/**",
           "src/components/delivery/Courier*",
-          "src/components/delivery/NavigationAppMenu.tsx"
+          "src/components/delivery/NavigationAppMenu.tsx",
+          "src/lib/useLocationReporter.ts"
         ],
         "foodyweb": [
           "app/r/[restaurantId]/tournee/**"
@@ -32475,6 +32501,19 @@
             "en": "With compatible API and Admin versions, sign in as the relevant restaurant’s owner or as a superadmin, then open Orders → Courier mode. Under View as courier, select a courier from that restaurant; the first in the list is selected initially. You see the same map, unfinished routes and stops as that courier. Change the selection to display the new courier’s routes; the previous selected stop, search and panels are reset. Displayed actions, including Start route and Mark delivered, really change that courier’s deliveries: use them only to record work that has taken place. The signed-in account keeps its identity and its GPS position is not reported as the courier’s. Owning another restaurant does not grant this selector here; other accounts keep their own routes. If no couriers are configured, check the team roles. If loading fails, choose Retry; a removed membership or a courier from another restaurant is rejected by the server. If the owner has no selector, have both compatible versions checked, deploying API before Admin. This workspace remains for execution: itinerary settings are unavailable even for an owner or superadmin. Return to Orders → Deliveries to change the plan.",
             "he": "בגרסאות תואמות של ה־API וממשק הניהול, התחברו כבעל המסעדה הרלוונטית או כסופר־אדמין ופתחו הזמנות → מצב שליח. תחת צפייה בתור שליח בחרו שליח של המסעדה; השליח הראשון ברשימה נבחר בפתיחה. מוצגים אותם מפה, מסלולים שטרם הושלמו ועצירות שהשליח רואה. החלפת הבחירה מציגה את מסלולי השליח החדש ומאפסת את העצירה הנבחרת, החיפוש והחלוניות הקודמות. הפעולות המוצגות, כולל תחילת מסלול וסמן נמסר, משנות בפועל את המשלוחים שלו: השתמשו בהן רק לרישום פעולה שבוצעה. החשבון המחובר שומר על זהותו ומיקום ה־GPS שלו אינו מדווח כמיקום השליח. בעלות על מסעדה אחרת אינה מעניקה בורר זה כאן; חשבונות אחרים ממשיכים לראות את המסלולים שלהם. אם לא הוגדרו שליחים, בדקו את תפקידי הצוות. בכשל טעינה לחצו ניסיון חוזר; השרת דוחה שיוך שהוסר או שליח של מסעדה אחרת. אם הבורר חסר לבעל המסעדה, יש לבדוק שהותקנו שתי הגרסאות התואמות, קודם API ואז ממשק הניהול. התצוגה נשארת לביצוע בלבד: הגדרות מסלול אינן זמינות גם לבעל המסעדה או למנהל מערכת. לשינוי התוכנית חזרו להזמנות ← משלוחים."
           }
+        },
+        {
+          "id": "live-location",
+          "title": {
+            "fr": "Vérifier le suivi de position du livreur",
+            "en": "Check the courier’s live position",
+            "he": "בדיקת מעקב מיקום השליח"
+          },
+          "instructions": {
+            "fr": "Le livreur doit ouvrir Foody sur son téléphone avec son propre compte, démarrer sa tournée et autoriser la localisation. Gardez Foody affiché avec une connexion Internet. Les positions GPS reçues sont transmises à Foody au maximum une fois toutes les dix secondes, selon le navigateur ; cette fréquence n’est pas garantie. Le point intitulé Position du livreur indique la dernière position reçue dans Livraisons et Mode livreur. Le triangle vert reste le départ prévu. L’heure affichée indique la réception de la position ; après plus d’une minute, la position est signalée ancienne et le point s’atténue. Sans position, un message le précise. Le mode livreur distingue l’attente du GPS, le refus de permission, un GPS indisponible et un échec de transmission. Corrigez les autorisations ou la connexion puis utilisez Réessayer. Ces états ne valident aucune livraison. Ouvrir Waze, changer d’application ou verrouiller le téléphone peut interrompre le suivi web : revenez dans Foody pour reprendre. Consulter un autre livreur avec Voir comme livreur affiche sa position reçue et n’envoie jamais celle du responsable. Le partage du GPS et le déplacement du point ne déclenchent aucun appel Google ; le chargement du fond de carte et les recalculs d’itinéraire gardent leur propre consommation.",
+            "en": "The courier must open Foody on their phone with their own account, start their route and allow location access. Keep Foody visible with an Internet connection. GPS readings are sent to Foody at most once every ten seconds, subject to browser updates; this frequency is not guaranteed. The marker titled Courier position shows the last received location in Deliveries and Courier mode. The green triangle remains the planned departure point. The displayed time is when the position was received; after more than one minute, it is labelled old and the marker fades. A message identifies a missing position. Courier mode distinguishes waiting for GPS, denied permission, unavailable GPS and transmission failure. Correct permissions or connectivity, then choose Retry. These states never confirm a delivery. Opening Waze, switching apps or locking the phone can interrupt web tracking: return to Foody to resume. View as courier displays the selected courier’s received position and never sends the manager’s location. Sharing GPS and moving the marker make no Google calls; map background loads and route recalculations retain their own usage.",
+            "he": "על השליח לפתוח את Foody בטלפון שלו עם החשבון שלו, להתחיל מסלול ולאשר גישה למיקום. השאירו את Foody גלוי עם חיבור לאינטרנט. קריאות GPS נשלחות ל-Foody לכל היותר פעם בעשר שניות, בהתאם לעדכוני הדפדפן; תדירות זו אינה מובטחת. הסמן שכותרתו מיקום השליח מציג את המיקום האחרון שהתקבל במשלוחים ובמצב שליח. המשולש הירוק נשאר נקודת היציאה המתוכננת. השעה המוצגת היא שעת קבלת המיקום; לאחר יותר מדקה המיקום מסומן כישן והסמן דוהה. הודעה מציינת שלא התקבל מיקום. מצב שליח מבחין בין המתנה ל-GPS, הרשאה שנדחתה, GPS שאינו זמין וכשל בשליחה. תקנו הרשאות או חיבור ואז בחרו נסו שוב. מצבים אלה אינם מאשרים מסירה. פתיחת Waze, מעבר לאפליקציה אחרת או נעילת הטלפון עלולים להפסיק מעקב בדפדפן: חזרו ל-Foody כדי לחדש אותו. צפייה בתור שליח מציגה את המיקום שהתקבל מהשליח הנבחר ואינה שולחת את מיקום המנהל. שיתוף GPS והזזת הסמן אינם מפעילים קריאות ל-Google; טעינת רקע המפה וחישובי מסלול שומרים על צריכה נפרדת."
+          }
         }
       ],
       "audience": "public",
@@ -32496,11 +32535,19 @@
         },
         {
           "service": "foodyadmin",
+          "file": "src/components/delivery/CourierLocationStatus.tsx"
+        },
+        {
+          "service": "foodyadmin",
           "file": "src/components/delivery/CourierShell.tsx"
         },
         {
           "service": "foodyadmin",
           "file": "src/components/delivery/NavigationAppMenu.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/lib/useLocationReporter.ts"
         },
         {
           "service": "foodyweb",
@@ -76435,6 +76482,7 @@
         "courierDeliveryProgress",
         "courierEstimatedFinish",
         "courierFinishCurrentRoute",
+        "courierLocationLocating",
         "courierResizePanel",
         "courierRouteMap",
         "courierRouteNumber",
@@ -76449,7 +76497,6 @@
         "deliveryPlanTotalDuration",
         "deliveryPlanWhatsApp",
         "loading",
-        "locationOffNotice",
         "markArrived",
         "markDelivered",
         "navigate",
@@ -76472,6 +76519,24 @@
         "onDelivered",
         "onReload",
         "onStart",
+        "saved",
+        "updated"
+      ],
+      "line": 1
+    },
+    {
+      "id": "foodyadmin:src/components/delivery/CourierLocationStatus.tsx:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/components/delivery/CourierLocationStatus.tsx",
+      "features": [
+        "delivery-dispatch",
+        "courier"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "courierLocationMissing"
+      ],
+      "actions": [
         "updated"
       ],
       "line": 1
@@ -76685,6 +76750,7 @@
         "openRouteByOrderId",
         "saveRouteSettings",
         "saveVerifiedAddress",
+        "saved",
         "savedCourierEndpoints",
         "transferSelectedStop",
         "updated"
@@ -86775,13 +86841,14 @@
       "service": "foodyadmin",
       "source": "src/lib/useLocationReporter.ts",
       "features": [
+        "courier",
         "shared-runtime"
       ],
       "kind": "ui-controls",
       "labels": [],
       "actions": [
-        "onErr",
-        "onPos"
+        "onError",
+        "onPosition"
       ],
       "line": 1
     },
@@ -95375,11 +95442,11 @@
     }
   ],
   "coverage": {
-    "sharedRuntimeFiles": 400,
+    "sharedRuntimeFiles": 399,
     "features": 105,
-    "operations": 803,
-    "sourceFiles": 2249,
-    "surfaces": 2092,
+    "operations": 805,
+    "sourceFiles": 2250,
+    "surfaces": 2093,
     "unclassifiedRoutes": []
   }
 }
