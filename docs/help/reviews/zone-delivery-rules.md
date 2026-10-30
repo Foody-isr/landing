@@ -57,3 +57,8 @@ simulation. Run complete API/Admin and Landing validations. Merge one feature PR
 per affected repository into develop, exercise the API in development, then
 promote those exact immutable artifacts and apply the approved equivalent Lovely
 conversion. No release synchronization to main is requested.
+
+Concurrent courier GPS work already merged into develop is retained in this
+release. The inventory baseline is the integrated Landing c69022ca commit;
+its unchanged service snapshots are preserved, and API/Admin evidence includes
+their merged upstream source. The combined help corpus retains both procedures.
