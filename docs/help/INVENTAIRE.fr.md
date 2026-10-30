@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-10-29.
+Révision du relevé : 2026-10-30.
 
-105 fiches de fonctionnalités, 803 procédures/sous-fonctionnalités, dont 96 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2249 fichiers applicatifs et 2092 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+105 fiches de fonctionnalités, 807 procédures/sous-fonctionnalités, dont 96 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2251 fichiers applicatifs et 2094 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,10 +10,10 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 590 | 879 | 2d139a2e32c4 ; versioned |
-| foodyadmin | 777 | 805 | c47e94ef78ad ; versioned |
+| foodyserver | 590 | 879 | be51711419f4 ; versioned |
+| foodyadmin | 779 | 807 | d256adb8e4a9 ; versioned |
 | foodyweb | 348 | 171 | ae0e952036c5 ; versioned |
-| foodylanding | 127 | 21 | 086993b0cc25 ; versioned |
+| foodylanding | 127 | 21 | e828d4e935e6 ; versioned |
 | foodypos | 363 | 166 | 735f5063e8b0 ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
 
@@ -612,6 +612,7 @@ Identifiant : `preorders`. Public : public. Disponibilité : available. Services
 - [Vérifier paiement et exceptions produits](../../src/content/help/fr/orders/preorders-and-batches.mdx#prepayment)
 - [Afficher automatiquement la série actuelle](../../src/content/help/fr/orders/preorders-and-batches.mdx#weekly-series-rollover)
 - [Piloter manuellement les commandes hebdomadaires](../../src/content/help/fr/orders/preorders-and-batches.mdx#manual-weekly-ordering)
+- [Simuler une commande](../../src/content/help/fr/orders/preorders-and-batches.mdx#simulate-order)
 
 ### [Quantités de production et préparation des colis](../../src/content/help/fr/orders/production-planning.mdx)
 
@@ -1099,6 +1100,7 @@ Identifiant : `delivery-dispatch`. Public : public. Disponibilité : available. 
 - [Préparer un compte Google propre à votre établissement](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#google-account-guide)
 - [Annuler un départ lancé par erreur](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#undo-departure)
 - [Consulter le mode d’un autre livreur](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#superadmin-courier-mode)
+- [Lire la dernière position reçue](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#courier-position)
 
 ### [Parcours coursier et confirmation des livraisons](../../src/content/help/fr/delivery/courier-workspace.mdx)
 
@@ -1112,6 +1114,7 @@ Identifiant : `courier`. Public : public. Disponibilité : available. Services :
 - [Ajuster la carte et retrouver un arrêt](../../src/content/help/fr/delivery/courier-workspace.mdx#map-timeline-panel)
 - [Corriger un démarrage de test](../../src/content/help/fr/delivery/courier-workspace.mdx#accidental-departure)
 - [Consulter le mode d’un autre livreur](../../src/content/help/fr/delivery/courier-workspace.mdx#superadmin-courier-selection)
+- [Vérifier le suivi de position du livreur](../../src/content/help/fr/delivery/courier-workspace.mdx#live-location)
 
 ### [Fournisseurs de cartes et usages](../../src/content/help/fr/delivery/maps-and-usage.mdx)
 
@@ -1384,6 +1387,7 @@ Identifiant : `shared-runtime`. Public : internal. Disponibilité : available. S
 - [Vérifier les pages compactes du terminal](internal/fr/shared-runtime.md#mobile-terminal-pages)
 - [Vérifier la série courante sans commande](internal/fr/shared-runtime.md#weekly-series-rollover)
 - [Intégration du panier préparé Sumit](internal/fr/shared-runtime.md#prepared-sumit-checkout-integration)
+- [Contrat du jour même par zone et simulation de calendrier](internal/fr/shared-runtime.md#zone-same-day-contract)
 
 ## Traçabilité détaillée
 
