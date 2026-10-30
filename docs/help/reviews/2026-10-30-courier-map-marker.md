@@ -1,8 +1,8 @@
 # Courier map marker visibility
 
-Reviewed against Admin develop `e0d58f3bc3b537f545831d0c5b9975f8f78b68de`,
-API develop `b870ca5a0a88cf2d57ccde5ae36efea539a4a481` and Landing develop
-`c69022caaa3a939b003ffc656d4ff85ea25bbf08`.
+Reviewed against Admin develop `30d6bddf169c3608f52254722ca9054eb25bda71`,
+API develop `d692fcc9c1ea0915d64d8ba1ce28def358b31025` and Landing develop
+`6beef053cca4401a8e906bf3ff1949934c6770b4`.
 
 The existing received-position marker was an 18px dot with 40% opacity when old.
 The correction uses a 44px avatar with a permanent localized label and places it
