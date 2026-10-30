@@ -5,7 +5,7 @@ apps: foodypos
 tags:
   - orders
   - pos-check-move
-updatedAt: '2026-10-26'
+updatedAt: '2026-10-29'
 featureId: pos-check-move
 audience: public
 releaseStatus: available
@@ -45,3 +45,9 @@ Open the saved item → Options → Move, choose an existing authorized table bi
 ## Select the check on the terminal
 
 On the updated handheld terminal, open Checks with the bottom receipt icon, then use the radio selector for All checks or the intended floor. A free table asks for covers when configured; an occupied table or named check opens its existing context. Verify the displayed table and bill before Actions → Move or an eligible transfer action. The view selector and floor panning neither move nor merge a bill: only confirmation of the actual business action can do so. Dismissing the selector without choosing changes no destination.
+
+<span id="independent-lifecycle-confirmations" />
+
+## Review independent confirmations
+
+In a saved order’s actions, review preparation and handoff separately from payment. Handoff review selects the actual physical units; financial splitting does not multiply them. Before closure, review the exact check or financial portion and its confirmed balance. A closed scope refuses new commercial changes; another open batch is not closed by that action. See [tracking and confirmations](/en/help/orders/payment-preparation-and-handoff).

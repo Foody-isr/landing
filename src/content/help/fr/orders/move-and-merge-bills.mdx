@@ -7,7 +7,7 @@ apps: foodypos
 tags:
   - orders
   - pos-check-move
-updatedAt: '2026-10-26'
+updatedAt: '2026-10-29'
 featureId: pos-check-move
 audience: public
 releaseStatus: available
@@ -47,3 +47,9 @@ Ouvrez l’article enregistré → Options → Déplacer, choisissez une additio
 ## Choisir l’addition sur le terminal
 
 Sur le terminal portable mis à jour, ouvrez Additions par le ticket en bas, puis le sélecteur à radios pour Toutes les additions ou le plan voulu. Une table libre demande ses convives si le mode l’exige ; une table occupée ou une addition nommée ouvre son contexte existant. Vérifiez la table et l’addition affichées avant Actions → Déplacer ou une action de transfert admissible. Le sélecteur de vue et le glissement du plan ne déplacent ni ne fusionnent une addition : seule la confirmation de l’action métier peut le faire. Fermer le sélecteur sans choisir ne modifie aucune destination.
+
+<span id="independent-lifecycle-confirmations" />
+
+## Vérifier les confirmations indépendantes
+
+Dans les actions d’une commande enregistrée, vérifiez les faits de préparation et de remise séparément du paiement. La revue de remise sélectionne les unités physiques réellement concernées ; le partage financier ne les multiplie pas. Avant une clôture, revoyez l’addition ou la part exacte et son solde confirmé. Une portée clôturée refuse de nouvelles modifications commerciales ; un autre lot ouvert n’est pas clôturé par cette action. Voir [le suivi et les confirmations](/fr/help/orders/payment-preparation-and-handoff).

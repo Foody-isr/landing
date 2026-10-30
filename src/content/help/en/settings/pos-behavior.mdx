@@ -5,7 +5,7 @@ apps: both
 tags:
   - settings
   - pos-behavior
-updatedAt: '2026-10-27'
+updatedAt: '2026-10-30'
 featureId: pos-behavior
 audience: public
 releaseStatus: available
@@ -60,7 +60,7 @@ If the restaurant, sign-in or terminal changes, [reopen confirmation in the corr
 
 ## Configure POS fulfillment methods
 
-With settings-edit permission, open Settings → Fulfillment → Point of sale. The catalogue shows cards for all methods, including hidden methods. Open a card to edit its display text, order type and optional customer prompt, then Save explicitly. A failed or unconfirmed save keeps the editor and values. Manage by location sets restaurant-wide availability, order/default and prompt timing, not a separate catalogue per device. Inside that nested editor, Save on a method stages it only: Save again in Manage by location persists the whole configuration. Closing a changed editor asks before discarding. Keep at least one method enabled and at most ten; reorder with arrows or the drag handle. The first enabled method becomes the default. Delete requires confirmation and cannot remove the last active method. Foody always tracks saved orders, with no per-method tracking-disable switch. Existing orders keep their recorded method. An incompatible API disables unsupported editing.
+With settings-edit permission, open Settings → Fulfillment → Point of sale. The catalogue shows cards for all methods, including hidden methods. Open a card to edit its display text, order type and optional customer prompt, then Save explicitly. A failed or unconfirmed save keeps the editor and values. Manage by location sets restaurant-wide availability, order/default and prompt timing, not a separate catalogue per device. Inside that nested editor, Save on a method stages it only: Save again in Manage by location persists the whole configuration. Closing a changed editor asks before discarding. Keep at least one method enabled and at most ten; reorder with arrows or the drag handle. The first enabled method becomes the default. Delete requires confirmation and cannot remove the last active method. For new sales, configure preparation tracking and handoff tracking separately on each method. The saved policy remains attached to the order; an older order without that evidence stays unknown. Existing orders keep their recorded method. An incompatible API disables unsupported editing.
 
 <span id="fulfillment-prompt" />
 
@@ -97,3 +97,9 @@ On mobile, settings use one page stack. Back first leaves the current subpage, t
 ## Navigate the terminal
 
 The handheld terminal has three unlabeled buttons: the signed-in user’s initials open More, the house opens Overview and the receipt opens Checks, subject to permissions. iPad keeps its configured navigation destinations. In Checks, the selector offers All checks and available floor plans; selecting a radio option changes the view immediately. Drag the floor plan when it extends beyond the screen. Overview contains collapsible cards for permitted availability, orders and tables. The full list supports item search; Not provided means availability was not supplied, not that an item is available. Refresh retries a failed read. These views change neither the assigned checkout mode nor printing profiles. The bar stays above Android navigation and hides while typing. Inside a sale, Menu/Check/Actions and the return to checks retain their own controls.
+
+<span id="end-of-day-terminal-navigation" />
+
+## Find terminal deposit in the end-of-day flow
+
+When the compatible API offers End of day, Terminal deposits opens that combined flow before any transmission. With an older API, the separate deposit screen remains available according to actual terminal capabilities. A provisioning change after display requires another review before reserving cash. An old card approval without verifiable provenance remains pending reconciliation: it permits neither another collection nor adoption by another restaurant. See [closing and recovery](/en/help/payments/end-of-day).

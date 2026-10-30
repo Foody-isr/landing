@@ -7,7 +7,7 @@ apps: both
 tags:
   - orders
   - order-lifecycle
-updatedAt: '2026-10-27'
+updatedAt: '2026-10-29'
 featureId: order-lifecycle
 audience: public
 releaseStatus: available
@@ -19,3 +19,45 @@ Consultez une commande enregistrée dans une version compatible de FoodyPOS, Foo
 ## Distinguer addition, paiement, préparation et remise
 
 Sur des versions API, POS, Admin et web compatibles, vérifiez séparément le dossier de l’addition, son paiement, les lots de préparation et la remise. Payée ne signifie pas prête ou servie ; un remboursement ne prouve pas l’annulation du travail déjà effectué. Prête ne signifie pas remise. Les informations non établies restent inconnues : ne les déduisez pas du paiement ou des réglages actuels pour une ancienne commande. Plusieurs envois d’une addition restent des lots distincts. Les commandes de clients QR à la même table conservent chacune leur identifiant et leur paiement, même lorsque la caisse présente une vue regroupée. Le partage financier ne produit pas de plats supplémentaires. Les réglages existants de libération de table restent applicables ; le paiement d’un seul client ne solde pas les commandes des autres.
+
+<span id="recorded-money-summary" />
+
+## Lire les montants enregistrés
+
+Le récapitulatif distingue le total, le montant encaissé enregistré, les remboursements enregistrés, le net reçu et le solde restant. Le net reçu est l’encaissement moins les remboursements ; un remboursement ne crée pas automatiquement une nouvelle dette. Une valeur inconnue reste indisponible et ne vaut pas zéro. La devise et sa précision doivent être connues ; ne comparez pas ou n’additionnez pas des devises différentes. Pour encaisser ou rembourser, utilisez toujours le parcours de paiement existant et ses contrôles.
+
+<span id="convergent-preparation" />
+
+## Vérifier la préparation réelle
+
+Un lot retenu reste en attente jusqu’à son envoi explicite. Avec plusieurs postes KDS requis, terminer un seul poste ne signifie pas que toutes les unités sont prêtes. Le KDS conserve le routage des profils de poste actuels. Lors d’une confirmation ou d’un rappel explicite, tous les postes requis pour le travail concerné sont enregistrés ensemble ; ouvrir simplement le tableau ne crée aucune preuve de préparation ou de routage historique. Une fin de préparation globale explicitement enregistrée est distinguée du paiement et de la remise. Un rappel en cuisine plus récent peut remettre les unités en préparation. Les unités ajoutées ensuite ne reprennent pas automatiquement une ancienne fin de préparation. Une augmentation de quantité ou un nouveau plat après préparation demande une nouvelle confirmation pour les nouvelles unités. Les unités déjà prêtes ne rendent pas les suivantes prêtes. Après confirmation d’une remise sur une ligne, sa quantité physique ne peut plus être modifiée ; ajoutez une nouvelle ligne pour les plats supplémentaires.
+
+<span id="quantity-handoff-review" />
+
+## Confirmer une remise par quantité
+
+Dans les actions de la commande enregistrée, ouvrez la revue de remise. Vérifiez la commande ou l’addition concernée, les articles, variantes et quantités physiques. Sélectionnez seulement les unités réellement servies ou retirées, puis confirmez l’action proposée. Les unités restantes gardent leur état. Le partage d’une addition ne multiplie pas les plats et une remise sur une commande QR ne remet pas celles des autres clients. La confirmation enregistre la remise ; elle n’encaisse pas d’argent, ne renvoie rien en cuisine et ne libère pas la table.
+
+<span id="courier-handoff-and-delivery" />
+
+## Séparer la remise au livreur et la livraison
+
+Pour une livraison, confirmez d’abord les unités remises au livreur. Elles sont en cours de livraison ; cela ne prouve pas leur réception par le client. Confirmez ensuite uniquement les unités effectivement livrées. Les affectations et les contrôles de tournée existants restent nécessaires. Un départ du livreur ne renseigne pas à lui seul une heure de réception client.
+
+<span id="explicit-commercial-closure" />
+
+## Clôturer la bonne portée commerciale
+
+Ouvrez la revue de clôture et vérifiez sa portée : commande de comptoir autonome, addition, part financière ou visite à table. Si la commande dépend d’une addition, examinez cette addition avant de la clôturer ; ne déduisez pas son état du paiement d’un seul lot. La clôture exige un solde confirmé nul et l’absence d’opération financière incertaine. Elle bloque les nouvelles modifications commerciales de cette portée, sans clôturer ses voisines. Elle ne signifie ni fin de préparation, ni remise, ni libération de table. Les règles existantes de libération restent applicables. Une ancienne commande payée sans preuve de clôture reste inconnue.
+
+<span id="frozen-tracking-policy" />
+
+## Régler le suivi pour les prochaines ventes
+
+Dans FoodyAdmin, ouvrez les modes de traitement du système de caisse et modifiez le mode concerné. Réglez séparément le suivi de préparation et le suivi de remise, puis enregistrez. Ces réglages globaux concernent les nouvelles ventes ; ils sont conservés avec chaque nouvelle commande et ne réinterprètent pas les précédentes. « Non suivi » est un choix explicite ; « Inconnu » indique une information absente. Désactiver le suivi ne rend pas les plats prêts ou remis et ne règle aucun paiement.
+
+<span id="uncertain-operation-recovery" />
+
+## Reprendre une confirmation incertaine
+
+Après une réponse perdue ou une erreur de connexion lors d’une remise ou clôture, conservez l’opération en attente et vérifiez son résultat. L’absence de confirmation ne prouve pas un échec. Ne recréez pas une nouvelle action pour les mêmes unités. Le parcours de reprise vérifie l’identifiant original ; si une nouvelle tentative est proposée, elle conserve la même intention et le même identifiant. Un changement d’employé, de restaurant ou de portée impose de revenir au contexte original. Si les unités ou la commande ont changé, rechargez et revoyez la situation avant toute nouvelle action. Les opérations de paiement gardent leur propre parcours de reprise.

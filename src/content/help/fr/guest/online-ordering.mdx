@@ -103,3 +103,9 @@ Conditions d’activation et reprise : [garantie bancaire pour les espèces](/fr
 ## Laisser une option facultative vide
 
 Dans une fiche produit compatible, Obligatoire demande un choix dans chaque position visible avant Ajouter au panier. Un groupe marqué Facultatif peut rester vide. Après sélection, Effacer le choix retire uniquement cette position et sa précision éventuelle ; les autres positions et le prix du format restent conservés. Une précision obligatoire liée à une option sélectionnée doit toujours être remplie. Vérifiez les choix dans le panier avant de confirmer. Pour la livraison facultative du jour même, consultez le guide Zones et créneaux de livraison avec des versions compatibles de l’API, d’Admin et du site client : le client peut choisir uniquement le jour, voir une estimation avant paiement puis recevoir un horaire confirmé par le restaurant. Les précommandes conservent leur mode configuré. La date locale du restaurant détermine les règles du jour même.
+
+<span id="independent-lifecycle-confirmations" />
+
+## Vérifier les confirmations indépendantes
+
+Le suivi de votre commande distingue le paiement, la préparation et la remise réellement enregistrée, y compris partielle. « Non suivi » est distinct d’une information inconnue. Une valeur monétaire inconnue n’est pas zéro et ne propose pas un paiement à deviner. Les commandes QR des autres clients d’une même table restent distinctes et ne sont pas exposées par cette vue. Voir [les états de commande](/fr/help/orders/payment-preparation-and-handoff).

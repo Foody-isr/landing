@@ -66,7 +66,11 @@ for (const [service, configuredRoot] of Object.entries(roots)) {
     // This extracted resolver classifies cash POS access failures only; it does
     // not introduce order creation, fulfillment or order-type procedures.
     const cashGuaranteeModule = (service === 'foodyserver' && ['internal/common/cash_guarantee.go','internal/orders/cash_guarantee.go','internal/payment/cash_guarantee.go'].includes(file)) || (service === 'foodyadmin' && file === 'src/components/orders/CashGuaranteePanel.tsx');
-    const ids = cashGuaranteeModule ? ['stancer-cash-guarantee'] : service === 'foodyserver' && file === 'internal/orders/cash_drawer_context.go'
+    // Dedicated EOD and guarded cash presentation do not change ordinary
+    // order handling or offering/void procedures.
+    const endOfDayModule = service === 'foodyserver' && /^internal\/(?:orders|common)\/end_of_day[^/]*\.go$/.test(file);
+    const guardedCash = service === 'foodypos' && file === 'lib/features/orders/presentation/cash_collection_guard.dart';
+    const ids = endOfDayModule ? ['pos-end-of-day'] : guardedCash ? ['pos-payments', 'pos-end-of-day'] : cashGuaranteeModule ? ['stancer-cash-guarantee'] : service === 'foodyserver' && file === 'internal/orders/cash_drawer_context.go'
       ? ['pos-payments', 'pos-cash-access-diagnostics']
       : service === 'foodyserver' && /^internal\/orders\/transactions(?:_handler|_adjustments)?\.go$/.test(file)
         ? ['pos-payments'] : service === 'foodyserver' && file === 'internal/menu/item_photos.go'

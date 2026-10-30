@@ -5,7 +5,7 @@ apps: both
 tags:
   - staff
   - staff-roles
-updatedAt: '2026-10-21'
+updatedAt: '2026-10-30'
 featureId: staff-roles
 audience: public
 releaseStatus: available
@@ -45,3 +45,9 @@ Settings → Usage and quotas displays this restaurant’s Google/Geoapify allow
 ## POS code at staff activation
 
 Staff activation checks the permissions assigned in this restaurant, including custom roles: orders.manage or payments.manage requires a private POS code. Read-only couriers and kitchen-only roles do not need one. Existing unused invitation links apply the same current rule. Changing a role label, courier address or route destination does not grant POS permissions. See [activation and recovery](/en/help/getting-started/first-login#activate).
+
+<span id="end-of-day-permissions" />
+
+## Authorize end-of-day closing
+
+End of day requires payments.manage on an already enrolled POS with an active personal PIN session. Including a cash drawer also requires orders.manage. Permissions are checked again on each write; opening a screen or reading a capability grants none. Transmission and finalization remain bound to the original actor and relevant POS. Changing role or signing into another device does not transfer an operation. See [the steps and recovery](/en/help/payments/end-of-day).

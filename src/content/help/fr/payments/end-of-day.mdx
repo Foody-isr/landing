@@ -1,0 +1,44 @@
+---
+title: Clôture de journée et rapport Z Foody
+description: >-
+  Plus → Rapports → Clôture de journée, sur le POS concerné. Nécessite le POS et l’API compatibles ; ce guide ne
+  confirme pas leur installation.
+apps: foodypos
+tags:
+  - payments
+  - pos-end-of-day
+updatedAt: '2026-10-30'
+featureId: pos-end-of-day
+audience: public
+releaseStatus: local-release-unverified
+---
+Plus → Rapports → Clôture de journée, sur le POS concerné. Nécessite le POS et l’API compatibles ; ce guide ne confirme pas leur installation.
+
+> **Disponibilité à confirmer**
+> Cette application existe dans les sources. Ce guide ne confirme ni sa distribution publique ni sa disponibilité dans votre version installée.
+
+<span id="end-of-day-scope" />
+
+## Vérifier ce que couvre la clôture
+
+La clôture réunit le comptage des espèces du POS courant et la transmission des terminaux explicitement inclus. Elle ne termine aucune période de travail, ne paie aucune commande et ne libère aucune table. Elle ne certifie pas la clôture de tous les appareils du restaurant. Le journal espèces et les opérations carte restent distincts. Une journée peut comporter seulement des espèces ou seulement un terminal ; une caisse ouverte sur ce POS doit être incluse. Les paiements financiers enregistrés avec cette installation sont conservés dans le rapport. Les paiements carte sans attribution durable au POS, les autres POS et les paiements web ne sont pas ajoutés à ces totaux. Une couverture partielle ne constitue pas un rapprochement complet du terminal. Le rapport Z Foody est un document opérationnel archivé, sans garantie de certification fiscale ni de versement bancaire. GBX transmet automatiquement selon Verifone ; aucun envoi GBX n’est déclenché par ce parcours.
+
+Avant de l’utiliser, mettez à jour tous les POS partageant le terminal : un ancien binaire peut transmettre sans ce journal. Ne rétrogradez pas l’API ou le POS avec une clôture en attente ; conservez les journaux et faites vérifier la reprise.
+
+<span id="end-of-day-run" />
+
+## Compter, transmettre et archiver
+
+Avec payments.manage, ouvrez Clôture de journée sur le POS d’origine. Une clôture incluant des espèces exige aussi orders.manage. Vérifiez les éléments affichés ; comptez physiquement les espèces si une caisse est ouverte et saisissez le montant réel. Le début de clôture fige le comptage et réserve cette caisse : aucune nouvelle vente espèces, entrée/sortie, restitution ou clôture parallèle ne doit modifier ce comptage. Si un terminal est inclus, le Victa Mini configuré doit être connecté sur iPad, ou le terminal intégré doit être prêt sur Victa Portable. En fin de journée, confirmez la transmission une seule fois et attendez son résultat final. Une commande acceptée ne prouve pas une transmission terminée. Les totaux et le numéro de lot restent indisponibles si la réponse prise en charge ne les fournit pas ; ne les interprétez pas comme zéro. Lorsque les transmissions incluses sont confirmées, finalisez explicitement la clôture. Le serveur ferme uniquement la caisse réservée, si elle existe, et archive le rapport Z Foody figé. Consultez ce rapport dans le même parcours ; aucune impression physique n’est garantie. Ne répétez pas régulièrement le dépôt pendant la journée.
+
+<span id="end-of-day-recovery" />
+
+## Reprendre sans transmettre deux fois
+
+Une erreur ou une réponse perdue ne prouve pas que le dépôt a échoué. Conservez le POS, sa configuration et ses journaux ; ne supprimez pas les données locales et ne créez pas une autre clôture pour contourner le blocage. Rouvrez le parcours sur ce POS. Une confirmation déjà conservée est relue avec la même identité, sans nouvelle transmission. Si le terminal a confirmé mais que l’API n’a pas encore enregistré le résultat ou le rapport, reprenez cet enregistrement ; aucun nouvel encaissement ou dépôt n’est nécessaire. Si aucune confirmation durable n’est disponible, le résultat reste incertain : faites vérifier le lot sur le terminal ou auprès du prestataire avant toute intervention. Une vérification manuelle ne fabrique pas une confirmation automatique dans le rapport. Pendant une opération en attente, les nouvelles cartes restent bloquées par le journal terminal. Changer de compte, de restaurant ou de terminal ne transfère pas la preuve au nouveau contexte. Les essais matériels Mini et Portable restent à réaliser sur leur configuration réelle ; ce guide ne les certifie pas.
+
+<span id="end-of-day-cash-reservation" />
+
+## Résoudre les espèces en attente
+
+Avant de commencer, reprenez toute opération espèces encore en attente : suivez le lien vers Solde en caisse pour une opération de tiroir, ou vers Commandes pour retrouver l’encaissement concerné. Son identité est conservée tant que son résultat reste incertain ; ne créez pas une seconde opération pour la remplacer. Une fois la caisse réservée pour la clôture, son rapport reste consultable, mais les encaissements espèces, mouvements et clôtures séparées sont bloqués. Le contrôle de caisse et du contexte personnel est répété à la confirmation, avant toute ouverture de tiroir ou validation de collecte. Un contrôle de caisse précède aussi l’ouverture du dialogue de paiement espèces ; si la lecture échoue, ne collectez pas d’espèces à partir de ce dialogue. Avec les droits nécessaires, le message de réservation permet de rejoindre Clôture de journée. Un refus explicitement confirmé par le serveur libère une demande rejetée ; une erreur réseau ne la libère pas. Reprenez la clôture existante au lieu de contourner la réservation.

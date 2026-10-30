@@ -113,3 +113,9 @@ Un lien privé de commande préparée Sumit rejoint le panier habituel du restau
 Dans le détail de commande, le panneau Garantie bancaire distingue montant réservé, validité et état des sommes reçues. Enregistrez le montant total en espèces uniquement après réception physique, par le parcours d’encaissement autorisé existant ; une caisse physique ouverte exige toujours le contexte POS correspondant. Cet enregistrement empêche un encaissement carte concurrent et demande la libération. Une libération à confirmer n’annule pas les espèces reçues. Les paiements partiels et le remplacement de la garantie par une carte externe ou un virement sont refusés tant qu’elle est active. Si aucune espèce n’a été reçue, un personnel avec payments.manage peut choisir Encaisser la carte en garantie et confirmer explicitement le débit total. Aucun impayé ne déclenche un débit automatique. La vente devient payée par carte après confirmation de l’encaissement par Stancer. N’utilisez pas une correction manuelle de statut pour simuler ce paiement.
 
 Conditions d’activation et reprise : [garantie bancaire pour les espèces](/fr/help/payments/cash-card-guarantee).
+
+<span id="independent-lifecycle-confirmations" />
+
+## Vérifier les confirmations indépendantes
+
+Le récapitulatif distingue les encaissements et remboursements enregistrés, le net reçu et le reste dû. Une valeur inconnue n’est pas zéro ; un remboursement ne recrée pas automatiquement une dette. Ce récapitulatif n’autorise aucun nouveau débit et les parcours financiers existants restent nécessaires. Voir [les montants enregistrés](/fr/help/orders/payment-preparation-and-handoff#recorded-money-summary).

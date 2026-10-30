@@ -7,7 +7,7 @@ apps: both
 tags:
   - payments
   - pos-payments
-updatedAt: '2026-10-28'
+updatedAt: '2026-10-30'
 featureId: pos-payments
 audience: public
 releaseStatus: available
@@ -54,6 +54,8 @@ If Cash drawer balance or Cash movements cannot be read, do not infer that no dr
 
 On the same enrolled POS with an active PIN shift, open More → Reports → Cash drawer balance. Review the opening float, cash sales and refunds, paid in/out and expected cash. The optional description is copied to the closing note, without automatic saving. With payments.manage, open Paid in/out, enter a positive amount and mandatory reason, then choose Pay in cash or Pay out cash. A payout cannot exceed the expected balance. With orders.manage, choose Close cash session, count physical cash, enter that amount and confirm; any discrepancy is preserved. Dismissing the modal without confirming records nothing. Cash movements lists only the session loaded on this device, not past sessions. Resume any uncertain operation using its existing identity before another action. Cards are excluded: closing cash does not start a Verifone deposit, and a Verifone deposit does not close cash. Never use a cash adjustment to disguise a card refund.
 
+To bring together the end-of-day steps, use [the combined closing flow](/en/help/payments/end-of-day).
+
 <span id="card" />
 
 ## Collect a connected payment
@@ -82,7 +84,7 @@ Search Transactions by any item in a linked order, including items after the fir
 
 ## Read refunds and payment voids in Transactions
 
-A successful Verifone Checkout refund or void initiated in Foody appears as its own return transaction, linked to the original payment. A confirmed cash return also appears separately, linked to its original cash tender. On the POS, an owner or manager with payments.manage can open an eligible payment in Transactions. For a journaled cash sale, choose Issue refund only when the server confirms an exact refundable portion and an open enrolled drawer. Select the order or check portion, enter an amount within the limit and a reason, then hand over cash only after Foody confirms. For one captured Verifone Checkout card payment linked to one exact order allocation, choose Refund to original card or Cancel card payment if offered. Enter a reason and, for a refund, an amount within the displayed limit. Foody sends the return to the original card, never to the cash drawer. An uncertain card result must be rechecked using the same saved request before another return; do not issue cash instead. Legacy unattributed, split/multi-order and Victa card payments do not offer this card action. Admin shows gross collections separately from returns recorded in Foody; neither figure is net revenue. Returns made directly in Verifone Central or on Victa are not included automatically.
+A successful Verifone Checkout refund or void initiated in Foody appears as its own return transaction, linked to the original payment. A confirmed cash return also appears separately, linked to its original cash tender. On the POS, an owner or manager with payments.manage can open an eligible payment in Transactions. For a journaled cash sale, choose Issue refund only when the server confirms an exact refundable portion and an open enrolled drawer. Select the order or check portion, enter an amount within the limit and a reason, then hand over cash only after Foody confirms. For one captured Verifone Checkout card payment linked to one exact order allocation, choose Refund to original card or Cancel card payment if offered. Enter a reason and, for a refund, an amount within the displayed limit. Foody sends the return to the original card, never to the cash drawer. An uncertain card result must be rechecked using the same saved request before another return; do not issue cash instead. Legacy unattributed, split/multi-order and Victa card payments do not offer this card action. Admin shows gross collections separately from returns recorded in Foody; neither figure is net revenue. Returns made directly in Verifone Central or on Victa are not included automatically. Also review [recorded net and balance](/en/help/orders/payment-preparation-and-handoff#recorded-money-summary).
 
 <span id="transaction-gross-total" />
 
@@ -94,9 +96,7 @@ The Admin date range and displayed times use the restaurant’s timezone. The to
 
 ## Close and deposit a Verifone terminal batch
 
-On a configured Victa Portable or an iPad connected to a Victa Mini, sign in with the payments.manage permission. Open More → Reports → Terminal deposits. Check that the terminal is connected and supports Close and deposit. At end of day, confirm Close and deposit once, then wait for the terminal's final confirmation and keep its reconciliation reference. This is separate from closing a Foody staff shift or a cash drawer. If the result is uncertain, do not repeat it or start another card payment: inspect the terminal batch or confirm its status with your payment provider. A manager may choose I verified the batch only after that check. Some Israeli Ashrait versions support the deposit but do not implement current totals, close-only or reconcile-only reports: those controls remain unavailable. Accepting the command alone does not prove completion, and a deposit can succeed without returning numerical totals. Never share terminal credentials or card details with support chat. Physical end-to-end compatibility must be validated for the provisioned terminal and software version.
-
-If the restaurant, sign-in or terminal changes, [reopen confirmation in the correct context](/en/help/payments/cash-access#terminal-report-context).
+To close cash and card activity in one flow, use [End of day and the Foody Z report](/en/help/payments/end-of-day). Staff clock-out remains separate. On older versions, Terminal deposits offers a separate Verifone transmission with payments.manage: check the terminal, confirm once at end of day and wait for final confirmation. An uncertain result blocks repetition before verification. Unsupported totals commands remain unavailable. Numerical results and the batch reference are shown only when actually supplied. Never share terminal credentials or card details in support chat. Hardware compatibility must be checked on the relevant Mini or Portable. If context changes, [reopen confirmation](/en/help/payments/cash-access#terminal-report-context).
 
 <span id="terminal-reports-advanced" />
 

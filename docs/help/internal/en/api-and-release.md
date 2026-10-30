@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-29'
+updatedAt: '2026-10-30'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -211,3 +211,15 @@ A private Sumit prepared-order link enters the restaurant’s existing cart, the
 ## Optional descriptive option contract
 
 selection_config.required is an optional boolean on the descriptive item/group link. Absent or null preserves one required choice per position; false allows empty positions without fabricating a selection. Submitted choices still enforce restaurant/item/group ownership, activity, visible positions, uniqueness and required notes. Priced groups and modifiers cannot use this field to bypass their rules. Existing JSON storage needs no migration. Validate API, web, POS and Admin together; deploy the API and compatible consumers before exposing the Admin setting. Preserve existing catalogs and publish all three translations with the release.
+
+<span id="order-lifecycle-v2-contract" />
+
+## Additive order confirmation contract
+
+The lifecycle v1 field is retained. Capability order_lifecycle_v2 advertises lifecycle_v2: explicit scoped reads, nullable amounts with currency/exponent and frozen policies. Handoff and closure operations recheck actor, restaurant, assignment, revision and units under locks and atomically journal the same request_id. GET operation confirms the original journal; absence remains unconfirmed and does not justify a new ID. Public responses contain only the own order, without parent scopes, private units or staff actions. Existing payment journals remain the sole monetary authority.
+
+<span id="end-of-day-protocol" />
+
+## Release the EOD contract before the POS
+
+The end-of-day v1 contract and additive migration 285 add begin, current, ID read, terminal-result and finalize under /orders/end-of-day. Writes retain UUIDs and check restaurant, actor, physical authorization and installation. The end_of_day capability declares support without granting payment permission. The server transaction reserves the count and terminal identities; it contacts no provider. Dispatched precedes the native call, and an unknown outcome never becomes permission to transmit again. A durable confirmation may be recorded again with the same identity. Finalize atomically creates the immutable operational report and closes its reserved drawer without attendance or commercial closure. Release the API before the POS, validate development and promote the same artifacts. Current Ashrait callbacks justify no invented totals, batch number or fiscal certificate. Preserve old journals and permission/provenance checks. See docs/contracts/end-of-day-v1.json and public payments/end-of-day guidance.

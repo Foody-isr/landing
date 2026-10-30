@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-29'
+updatedAt: '2026-10-30'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -211,3 +211,15 @@ Un lien privé de commande préparée Sumit rejoint le panier habituel du restau
 ## Contrat des choix de variante facultatifs
 
 selection_config.required est un booléen facultatif propre au lien article/groupe descriptif. Absent ou null, il conserve un choix obligatoire par position ; false autorise les positions vides sans fabriquer de sélection. Les choix fournis restent soumis à la propriété restaurant/article/groupe, à l’activité, aux positions visibles, à l’unicité et aux précisions requises. Les groupes tarifés et modificateurs ne peuvent pas utiliser ce champ pour contourner leurs règles. Le JSON existant est conservé sans migration. Validez API, web, POS et Admin ensemble ; déployez l’API puis les consommateurs compatibles avant d’exposer le réglage Admin. Conservez les catalogues existants et publiez les trois traductions avec la version.
+
+<span id="order-lifecycle-v2-contract" />
+
+## Contrat additif des confirmations de commande
+
+Le champ lifecycle v1 est conservé. La capacité order_lifecycle_v2 annonce lifecycle_v2 : lecture explicite par portée, montants nullable avec devise/exposant et politiques figées. Les opérations de remise et clôture revalident acteur, restaurant, affectation, révision et unités sous verrous et enregistrent le même request_id atomiquement. GET operation confirme le journal original ; une absence reste non confirmée et ne justifie pas un nouvel identifiant. Les réponses publiques contiennent seulement la propre commande, sans portées parentes, unités privées ou actions staff. Les journaux de paiement existants restent seuls compétents pour l’argent.
+
+<span id="end-of-day-protocol" />
+
+## Publier le contrat EOD avant le POS
+
+Le contrat end-of-day v1 et la migration additive 285 introduisent begin, current, lecture par ID, terminal-result et finalize sous /orders/end-of-day. Les écritures conservent leurs UUID et vérifient restaurant, acteur, autorisation physique et installation. La capacité end_of_day est une déclaration de support, sans permission de paiement. La transaction serveur réserve le comptage et les identités de terminal ; elle ne contacte aucun prestataire. Dispatched précède l’appel natif et un résultat inconnu ne redevient pas une autorisation de transmettre. Une confirmation durable peut être réenregistrée avec la même identité. Finalize crée le rapport opérationnel immuable et ferme la caisse réservée atomiquement, sans pointage ni clôture commerciale. Publier l’API avant le POS, valider en développement puis promouvoir les mêmes artefacts. Les callbacks Ashrait actuels ne justifient aucun total, numéro de lot ni certificat fiscal inventé. Conserver les anciens journaux et les vérifications de droits et de provenance. Voir docs/contracts/end-of-day-v1.json et le guide public payments/end-of-day.

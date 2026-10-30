@@ -391,6 +391,19 @@
           "fr": "L’activation du personnel vérifie les permissions affectées dans ce restaurant, y compris les rôles personnalisés : orders.manage ou payments.manage impose un code caisse personnel. Les livreurs en consultation et les rôles limités à la cuisine n’en ont pas besoin. Les invitations existantes encore inutilisées appliquent la même règle actuelle. Modifier le nom du rôle, l’adresse du livreur ou la destination d’une tournée n’accorde aucun droit caisse. Voir [l’activation et la reprise](/fr/help/getting-started/first-login#activate).",
           "he": "הפעלת חשבון עובד בודקת את ההרשאות שהוקצו במסעדה, כולל תפקידים מותאמים: orders.manage או payments.manage דורשת קוד קופה אישי. שליחים עם הרשאת צפייה ותפקידים המוגבלים למטבח אינם זקוקים לקוד. גם קישורי הזמנה קיימים שלא נוצלו משתמשים באותו כלל עדכני. שינוי שם תפקיד, כתובת שליח או יעד מסלול אינו מעניק הרשאות קופה. ראו [הפעלה וחזרה לתהליך](/he/help/getting-started/first-login#activate)."
         }
+      },
+      {
+        "id": "end-of-day-permissions",
+        "title": {
+          "fr": "Autoriser une clôture de journée",
+          "en": "Authorize end-of-day closing",
+          "he": "הרשאות לסגירת יום"
+        },
+        "instructions": {
+          "fr": "Clôture de journée nécessite payments.manage sur le POS déjà autorisé, avec la connexion personnelle PIN active. Inclure une caisse espèces nécessite aussi orders.manage. Ces droits sont vérifiés de nouveau avant chaque écriture ; ouvrir un écran ou lire une capacité ne les accorde pas. Les étapes de transmission et de finalisation restent liées à l’auteur d’origine et au POS concerné. Changer de rôle ou se reconnecter sur un autre appareil ne transfère pas une opération. Voir [les étapes et la reprise](/fr/help/payments/end-of-day).",
+          "en": "End of day requires payments.manage on an already enrolled POS with an active personal PIN session. Including a cash drawer also requires orders.manage. Permissions are checked again on each write; opening a screen or reading a capability grants none. Transmission and finalization remain bound to the original actor and relevant POS. Changing role or signing into another device does not transfer an operation. See [the steps and recovery](/en/help/payments/end-of-day).",
+          "he": "סגירת יום דורשת payments.manage בקופה שכבר מורשית ועם כניסה אישית פעילה בקוד. הכללת מגירת מזומן דורשת גם orders.manage. ההרשאות נבדקות מחדש בכל כתיבה; פתיחת מסך או קריאת יכולת אינן מעניקות הרשאה. השידור וההשלמה נשארים קשורים לעובד שהתחיל ולקופה הרלוונטית. שינוי תפקיד או כניסה במכשיר אחר אינם מעבירים פעולה. ראו [את השלבים והשחזור](/he/help/payments/end-of-day)."
+        }
       }
     ],
     "audience": "public",
@@ -401,7 +414,7 @@
       "fr": "Nécessite la permission de gestion des rôles ; le périmètre du restaurant s’applique toujours.",
       "he": "נדרשת הרשאת ניהול תפקידים; ההרשאות תמיד תחומות למסעדה."
     },
-    "procedureUpdatedAt": "2026-10-21"
+    "procedureUpdatedAt": "2026-10-30"
   },
   {
     "id": "staff-devices-shifts",
@@ -3822,9 +3835,9 @@
           "he": "זיכוי או ביטול תשלום מקוון ב-Verifone"
         },
         "instructions": {
-          "en": "The Admin order payment section supports total or partial matched refunds and total VOID for an eligible single Verifone online payment, for owners/managers with payments.manage. Provider state, captured amount and verified history govern eligibility, not a fixed 24-hour rule. This does not cancel preparation or fulfillment and does not add a POS terminal refund button. Unknown results stay reserved and must be checked, never resubmitted. Invoice4U credit/cancellation documents require a separate check. See [the online payment procedure](/en/help/payments/how-payments-work#verifone-admin-refund-void).\n\nA captured ABS sale still AUTHORISED/AUTHORIZED or SETTLEMENT_REQUESTED is not settled: Admin shows Available to void and only Void entire payment, with no prior refund. Refund payment and Available to refund require an explicit settled state or verified partially-refunded history. Generic APPROVED/COMPLETED, contradictory states or missing evidence offer neither action. A state change before confirmation rejects the stale action; it never switches VOID to REFUND automatically. Request rejected by Verifone means no return of funds is confirmed, not necessarily an issuer decline.",
-          "fr": "La section paiement d’une commande Admin permet le remboursement lié total ou partiel et le VOID total d’un paiement en ligne Verifone unique admissible, pour un propriétaire/responsable avec payments.manage. L’état fournisseur, le montant encaissé et l’historique vérifié déterminent l’admissibilité, pas un délai fixe de 24 heures. La préparation et la remise ne sont pas annulées et aucun bouton de remboursement terminal POS n’est ajouté. Un résultat inconnu reste réservé : vérifiez-le sans renvoyer l’opération. Les avoirs et annulations Invoice4U nécessitent un contrôle distinct. Voir [la procédure de paiement en ligne](/fr/help/payments/how-payments-work#verifone-admin-refund-void).\n\nUne vente ABS capturée encore en AUTHORISED/AUTHORIZED ou SETTLEMENT_REQUESTED n’est pas réglée : Admin affiche Montant annulable et uniquement Annuler tout le paiement, sans remboursement antérieur. Rembourser le paiement et Montant remboursable exigent un état réglé explicite ou un historique de remboursement partiel vérifié. Les états génériques APPROVED/COMPLETED, les contradictions et les preuves manquantes ne proposent aucune opération. Un changement d’état avant confirmation refuse l’action devenue obsolète ; le VOID n’est jamais remplacé automatiquement par un REFUND. Demande rejetée par Verifone signifie qu’aucune restitution n’est confirmée, pas nécessairement un refus de la banque.",
-          "he": "באזור התשלום של הזמנה בממשק הניהול ניתן לבצע זיכוי מקושר מלא או חלקי ו-VOID מלא לתשלום מקוון יחיד ומאומת ב-Verifone, עבור בעלים או מנהל עם payments.manage. מצב הספק, סכום שנלכד והיסטוריה מאומתת קובעים זכאות ולא כלל קבוע של 24 שעות. ההכנה והמסירה אינן מבוטלות ולא נוסף כפתור זיכוי למסוף בקופה. תוצאה לא ידועה נשארת שמורה ויש לבדוק אותה בלי לשלוח שוב. מסמכי זיכוי וביטול ב-Invoice4U דורשים בדיקה נפרדת. ראו [נוהל תשלום מקוון](/he/help/payments/how-payments-work#verifone-admin-refund-void).\n\nעסקת ABS שנלכדה ועדיין במצב AUTHORISED/AUTHORIZED או SETTLEMENT_REQUESTED טרם סיימה סליקה: מוצגים סכום לביטול ורק ביטול התשלום במלואו, ללא זיכוי קודם. זיכוי התשלום ויתרה לזיכוי דורשים מצב סליקה שהושלמה במפורש או היסטוריית זיכוי חלקי שאומתה. מצבים כלליים APPROVED/COMPLETED, סתירות או ראיות חסרות אינם מאפשרים פעולה. שינוי מצב לפני האישור דוחה את הפעולה שאינה מתאימה עוד; VOID אינו מוחלף אוטומטית ב-REFUND. בקשה שנדחתה על ידי Verifone אינה אישור להחזרת כספים ואינה מעידה בהכרח על סירוב הבנק."
+          "fr": "Dans le détail de commande, vérifiez le paiement Verifone avant toute annulation ou remboursement. Un résultat incertain doit être vérifié avant une nouvelle opération. Suivez [la procédure complète](/fr/help/orders/order-details#verifone-admin-money-operations).",
+          "en": "In order details, verify the Verifone payment before voiding or refunding. Verify an uncertain outcome before starting another operation. Follow the [complete procedure](/en/help/orders/order-details#verifone-admin-money-operations).",
+          "he": "בפרטי ההזמנה יש לבדוק את תשלום Verifone לפני ביטול או החזר. יש לברר תוצאה לא ודאית לפני פתיחת פעולה נוספת. ראו [הנוהל המלא](/he/help/orders/order-details#verifone-admin-money-operations)."
         }
       },
       {
@@ -3836,9 +3849,9 @@
           "he": "בדיקת תקרת אישור לפריטים לפי משקל"
         },
         "instructions": {
-          "en": "For online by-weight orders, open Settings → Payments & VAT with settings.edit. Set Weight hold buffer % from 0 to 100 and save; the default for new restaurants is 20. A failed save keeps the draft. Zero still authorizes the estimate. Only the weight-priced subtotal gets a margin: 100 weighted + 50 fixed at 20% authorizes 170; delivery has no extra margin. Checkout shows the estimate, temporary ceiling and Confirm and authorize, in the restaurant theme. A changed ceiling requires customer review and another confirmation before payment; unknown policy blocks authorization. Existing reviewed checkouts and holds keep their ceiling. Staff confirm measured weights before capture and progression; excess beyond the hold is flagged for a separate payment, never automatically charged. Cash/pay-later makes no hold promise. Requires a configured authorize/capture provider, with partial capture, release and expiry validated before production. This neither changes the catering deposit/balance policy nor enables new-card saving with a CST weighted hold.",
-          "fr": "Pour les commandes en ligne au poids, ouvrez Réglages → Paiements & TVA avec settings.edit. Saisissez Marge d’empreinte au poids % de 0 à 100 puis enregistrez ; la valeur par défaut des nouveaux restaurants est 20. Un échec conserve la saisie. À 0 %, le montant estimé reste préautorisé. Seul le sous-total au poids reçoit une marge : 100 au poids + 50 fixes à 20 % donnent 170 préautorisés ; aucune marge sur la livraison. Le checkout affiche estimation, plafond temporaire et Confirmer et préautoriser, dans le thème du restaurant. Un plafond modifié exige une nouvelle revue et confirmation avant paiement ; une politique inconnue bloque l’autorisation. Les commandes déjà revues et empreintes existantes gardent leur plafond. Le personnel confirme les poids mesurés avant capture et progression ; un dépassement est signalé pour un paiement complémentaire, jamais débité automatiquement. Espèces/paiement ultérieur n’annoncent pas d’empreinte. Un prestataire autorisation/capture configuré est nécessaire ; validez capture partielle, libération et expiration avant production. Ce réglage ne change ni acompte/solde traiteur ni la restriction de sauvegarde d’une nouvelle carte pour une empreinte CST au poids.",
-          "he": "להזמנות מקוונות לפי משקל פתחו הגדרות → תשלומים ומע״מ עם settings.edit. הגדירו מרווח אישור מ-0 עד 100 ושמרו; ברירת המחדל לעסק חדש היא 20. כשל שמירה משאיר את הטיוטה. גם 0% מאשר את ההערכה. המרווח חל רק על פריטים לפי משקל: 100 לפי משקל ועוד 50 במחיר קבוע עם 20% נותנים אישור של 170; אין מרווח למשלוח. התשלום מציג הערכה, תקרה זמנית ואישור ותפיסת מסגרת בעיצוב העסק. שינוי תקרה דורש בדיקה ואישור מחדש לפני תשלום; הגדרה לא ידועה חוסמת אישור. הזמנות שכבר נבדקו ואישורים קיימים שומרים על התקרה. הצוות מאשר משקל שנמדד לפני לכידה והתקדמות; חריגה מסומנת לתשלום נפרד ולא נגבית אוטומטית. מזומן ותשלום מאוחר אינם מבטיחים תפיסה. נדרש ספק אישור ולכידה מוגדר, ואימות לכידה חלקית, שחרור ותוקף לפני ייצור. ההגדרה אינה משנה מקדמה ויתרת קייטרינג ואינה מאפשרת שמירת כרטיס חדש באישור CST לפי משקל."
+          "fr": "Pour les articles au poids, vérifiez le plafond de préautorisation puis confirmez les poids mesurés avant capture. Consultez les limites et la reprise dans [le parcours des paiements](/fr/help/payments/how-payments-work#weight-hold-margin).",
+          "en": "For weighed items, check the preauthorization limit and confirm measured weights before capture. See limits and recovery in [the payment procedure](/en/help/payments/how-payments-work#weight-hold-margin).",
+          "he": "בפריטים לפי משקל יש לבדוק את תקרת האישור המקדים ולאשר את המשקלים שנמדדו לפני חיוב. ראו מגבלות והמשך טיפול ב[נוהל התשלומים](/he/help/payments/how-payments-work#weight-hold-margin)."
         }
       },
       {
@@ -3918,9 +3931,9 @@
           "he": "בדיקת תזכורת משלוח לפי המסלול"
         },
         "instructions": {
-          "en": "For an assigned delivery with a saved customer-window setting, reminders use the route arrival plus the configured duration, rather than the order’s broad scheduled slot. For example, arrival at 08:30 and 90 minutes produces 08:30–10:00. Configure it in Orders → Deliveries → allocation, beside the time at each stop, and review the manual or approved WhatsApp preview before sending. The same range supplies Twilio, Meta and stage reminders; existing template variables and J-1 eligibility remain in effect. Unconfigured historic routes keep the original saved slot. If the range cannot be verified, recalculate the route and reopen the reminder. A changed approved preview must be reviewed again before sending. Editing a template alone does not calculate a route or change its margin.",
-          "fr": "Pour une livraison affectée à une tournée avec une marge client enregistrée, les rappels utilisent l’arrivée calculée plus cette durée, au lieu du large créneau planifié de la commande. Exemple : arrivée à 08:30 et marge de 90 minutes → 08:30–10:00. Réglez-la dans Commandes → Livraisons → répartition, à côté du temps à chaque arrêt, puis vérifiez l’aperçu WhatsApp manuel ou approuvé avant envoi. Le même créneau alimente Twilio, Meta et les rappels par étape ; les variables des modèles et la règle J-1 existantes restent applicables. Les anciennes tournées sans réglage conservent le créneau enregistré. Si le créneau ne peut être vérifié, recalculez puis rouvrez le rappel. Un aperçu approuvé qui a changé doit être revérifié avant envoi. Modifier un modèle seul ne calcule pas de tournée et ne change pas sa marge.",
-          "he": "במשלוח המשויך למסלול עם חלון לקוח שמור, התזכורות משתמשות בזמן ההגעה המחושב בתוספת המשך שהוגדר במקום חלון התזמון הרחב של ההזמנה. לדוגמה, הגעה ב־08:30 ו־90 דקות נותנות 08:30–10:00. הגדירו בהזמנות → משלוחים → חלוקה ליד זמן בכל עצירה ובדקו את התצוגה המקדימה הידנית או המאושרת ב־WhatsApp לפני השליחה. אותו חלון משמש את Twilio, Meta ותזכורות השלבים; מיפוי המשתנים וכלל היום שלפני המשלוח נשארים בתוקף. מסלולים ישנים ללא הגדרה שומרים על החלון המקורי. אם אי אפשר לאמת את החלון, חשבו מחדש ופתחו את התזכורת שוב. יש לבדוק מחדש תצוגה מאושרת שהשתנתה לפני שליחה. עריכת תבנית בלבד אינה מחשבת מסלול ואינה משנה את משך החלון."
+          "fr": "Vérifiez le créneau client recalculé avant d’envoyer son rappel de livraison. La marge ne remplace pas les contraintes horaires de la commande. Voir [le réglage du rappel](/fr/help/orders/order-details#route-delivery-window).",
+          "en": "Review the recalculated customer window before sending its delivery reminder. The margin does not replace the order’s scheduling constraints. See [reminder settings](/en/help/orders/order-details#route-delivery-window).",
+          "he": "יש לבדוק את חלון המסירה המחושב ללקוח לפני שליחת התזכורת. המרווח אינו מחליף את מגבלות מועד ההזמנה. ראו [הגדרות התזכורת](/he/help/orders/order-details#route-delivery-window)."
         }
       },
       {
@@ -4144,6 +4157,19 @@
           "fr": "Dans Nouvelle commande, choisissez Continuer pour finaliser dans le ticket. Sélectionnez explicitement lien, carte Sumit, paiement reçu ou paiement ultérieur selon vos droits. Aucun paiement reçu par défaut. Voir [le parcours complet](/fr/help/orders/order-details#create).",
           "en": "In New order, choose Continue to finalize inside the ticket. Explicitly choose a link, Sumit card, received payment or later payment according to your permissions. Nothing is marked received by default. See [the full procedure](/en/help/orders/order-details#create).",
           "he": "בהזמנה חדשה בחרו המשך לסיום בתוך פריטי ההזמנה. בחרו במפורש קישור, כרטיס Sumit, תשלום שהתקבל או תשלום בהמשך לפי הרשאותיכם. אין תשלום שהתקבל כברירת מחדל. ראו [הנוהל המלא](/he/help/orders/order-details#create)."
+        }
+      },
+      {
+        "id": "independent-lifecycle-confirmations",
+        "title": {
+          "fr": "Vérifier les confirmations indépendantes",
+          "en": "Review independent confirmations",
+          "he": "בדיקת אישורים נפרדים"
+        },
+        "instructions": {
+          "fr": "Avant une remise par quantité ou une clôture, revoyez la portée exacte et les faits, séparément du paiement. Voir [la procédure complète](/fr/help/orders/payment-preparation-and-handoff).",
+          "en": "Before quantity handoff or closure, review the exact scope and facts separately from payment. See [the full procedure](/en/help/orders/payment-preparation-and-handoff).",
+          "he": "לפני מסירה לפי כמות או סגירה בדקו את ההיקף המדויק ואת העובדות בנפרד מתשלום. ראו [את ההליך המלא](/he/help/orders/payment-preparation-and-handoff)."
         }
       }
     ],
@@ -4373,6 +4399,19 @@
           "en": "In order details, the Card guarantee panel separates the reserved amount, validity and state from the money received. Record the full cash amount only after physically receiving it through the existing authorized collection flow; an open physical drawer still requires the same POS cash context. Recording cash prevents a concurrent card debit and requests release. A release awaiting confirmation does not undo received cash. Partial cash payments and relabelling the guaranteed payment as an external card/transfer are refused while the guarantee is active. If no cash was received, staff with payments.manage may choose Charge the guaranteed card and explicitly confirm the full debit. There is no automatic debit for an unpaid order. The sale becomes card-paid only after Stancer confirms capture. Do not use manual status corrections to simulate a guaranteed payment.\n\nAcceptance and recovery: [cash card guarantees](/en/help/payments/cash-card-guarantee).",
           "fr": "Dans le détail de commande, le panneau Garantie bancaire distingue montant réservé, validité et état des sommes reçues. Enregistrez le montant total en espèces uniquement après réception physique, par le parcours d’encaissement autorisé existant ; une caisse physique ouverte exige toujours le contexte POS correspondant. Cet enregistrement empêche un encaissement carte concurrent et demande la libération. Une libération à confirmer n’annule pas les espèces reçues. Les paiements partiels et le remplacement de la garantie par une carte externe ou un virement sont refusés tant qu’elle est active. Si aucune espèce n’a été reçue, un personnel avec payments.manage peut choisir Encaisser la carte en garantie et confirmer explicitement le débit total. Aucun impayé ne déclenche un débit automatique. La vente devient payée par carte après confirmation de l’encaissement par Stancer. N’utilisez pas une correction manuelle de statut pour simuler ce paiement.\n\nConditions d’activation et reprise : [garantie bancaire pour les espèces](/fr/help/payments/cash-card-guarantee).",
           "he": "בפרטי ההזמנה, לוח הערבות מפריד בין הסכום המשוריין, תוקפו ומצבו לבין הכסף שהתקבל. רשמו את מלוא המזומן רק לאחר קבלתו בפועל דרך מסלול הגבייה המורשה הקיים; קופה פיזית פתוחה עדיין דורשת את הקשר ה-POS המתאים. הרישום מונע חיוב כרטיס מקביל ומבקש שחרור. שחרור הממתין לאישור אינו מבטל מזומן שהתקבל. תשלום חלקי והחלפת הערבות בכרטיס חיצוני או בהעברה נדחים כל עוד הערבות פעילה. אם לא התקבל מזומן, צוות עם payments.manage רשאי לבחור בחיוב הכרטיס שבערבות ולאשר במפורש את מלוא החיוב. אי-תשלום אינו מפעיל חיוב אוטומטי. המכירה תסומן כשולמה בכרטיס רק לאחר אישור הגבייה מול Stancer. אין לדמות גבייה באמצעות תיקון ידני של מצב התשלום.\n\nתנאי הפעלה והתאוששות: [ערבות בכרטיס למזומן](/he/help/payments/cash-card-guarantee)."
+        }
+      },
+      {
+        "id": "independent-lifecycle-confirmations",
+        "title": {
+          "fr": "Vérifier les confirmations indépendantes",
+          "en": "Review independent confirmations",
+          "he": "בדיקת אישורים נפרדים"
+        },
+        "instructions": {
+          "fr": "Le récapitulatif distingue les encaissements et remboursements enregistrés, le net reçu et le reste dû. Une valeur inconnue n’est pas zéro ; un remboursement ne recrée pas automatiquement une dette. Ce récapitulatif n’autorise aucun nouveau débit et les parcours financiers existants restent nécessaires. Voir [les montants enregistrés](/fr/help/orders/payment-preparation-and-handoff#recorded-money-summary).",
+          "en": "The summary distinguishes recorded collections and refunds, net received and the remaining balance. An unknown value is not zero; a refund does not automatically recreate debt. The summary authorizes no new charge and existing financial flows remain required. See [recorded amounts](/en/help/orders/payment-preparation-and-handoff#recorded-money-summary).",
+          "he": "הסיכום מפריד בין תקבולים והחזרים שנרשמו, הנטו שהתקבל והיתרה. ערך לא ידוע אינו אפס; החזר אינו יוצר מחדש חוב אוטומטית. הסיכום אינו מאשר חיוב חדש ועדיין נדרשים התהליכים הכספיים הקיימים. ראו [סכומים שנרשמו](/he/help/orders/payment-preparation-and-handoff#recorded-money-summary)."
         }
       }
     ],
@@ -5283,6 +5322,19 @@
           "fr": "Le parcours interne Sumit compatible conserve retrait/livraison et date choisis par l’admin. Le destinataire complète ses coordonnées ; la livraison vérifie adresse, frais, minimum et date avant paiement. Voir [les commandes préparées Sumit](/fr/help/orders/internal-sumit-checkout).",
           "he": "במסלול הפנימי התואם ל־Sumit המנהל בוחר איסוף או משלוח ומועד לפני יצירת קישור פרטי. הנמען משלים פרטים; במשלוח נבדקים כתובת, תעריף, מינימום ומועד לפני תשלום. ראו [הזמנות מוכנות עם Sumit](/he/help/orders/internal-sumit-checkout)."
         }
+      },
+      {
+        "id": "independent-lifecycle-confirmations",
+        "title": {
+          "fr": "Vérifier les confirmations indépendantes",
+          "en": "Review independent confirmations",
+          "he": "בדיקת אישורים נפרדים"
+        },
+        "instructions": {
+          "fr": "Dans les actions d’une commande enregistrée, vérifiez les faits de préparation et de remise séparément du paiement. La revue de remise sélectionne les unités physiques réellement concernées ; le partage financier ne les multiplie pas. Avant une clôture, revoyez l’addition ou la part exacte et son solde confirmé. Une portée clôturée refuse de nouvelles modifications commerciales ; un autre lot ouvert n’est pas clôturé par cette action. Voir [le suivi et les confirmations](/fr/help/orders/payment-preparation-and-handoff).",
+          "en": "In a saved order’s actions, review preparation and handoff separately from payment. Handoff review selects the actual physical units; financial splitting does not multiply them. Before closure, review the exact check or financial portion and its confirmed balance. A closed scope refuses new commercial changes; another open batch is not closed by that action. See [tracking and confirmations](/en/help/orders/payment-preparation-and-handoff).",
+          "he": "בפעולות של הזמנה שמורה בדקו הכנה ומסירה בנפרד מתשלום. סקירת המסירה בוחרת את היחידות הפיזיות בפועל; פיצול כספי אינו מכפיל אותן. לפני סגירה בדקו את החשבון או החלק הכספי המדויק ואת היתרה המאושרת. היקף סגור מסרב לשינויים מסחריים חדשים; הפעולה אינה סוגרת קבוצה פתוחה אחרת. ראו [מעקב ואישורים](/he/help/orders/payment-preparation-and-handoff)."
+        }
       }
     ],
     "audience": "public",
@@ -5581,6 +5633,19 @@
           "en": "On the updated POS, an optional descriptive position may remain empty without blocking Next or Add. To clear it, tap the same selected value again. Required positions are still checked. Configure the per-item requirement in Admin → Price and variants; existing groups retain their required default. Update an older POS before using this setting. Filled positions retain their order on the order and ticket; descriptive choices add no surcharge.",
           "he": "ב־POS המעודכן מיקום תיאורי שאינו חובה יכול להישאר ריק בלי לחסום הבא או הוספה. להסרת הבחירה הקישו שוב על אותו ערך שנבחר. מיקומי חובה ממשיכים להיבדק. מגדירים את החובה לכל פריט ב־Admin → מחיר ווריאציות; קבוצות קיימות שומרות על ברירת המחדל של חובה. יש לעדכן POS ישן לפני שימוש בהגדרה. מיקומים שמולאו שומרים על הסדר בהזמנה ובכרטיס; בחירות תיאוריות אינן מוסיפות תשלום."
         }
+      },
+      {
+        "id": "independent-lifecycle-confirmations",
+        "title": {
+          "fr": "Vérifier les confirmations indépendantes",
+          "en": "Review independent confirmations",
+          "he": "בדיקת אישורים נפרדים"
+        },
+        "instructions": {
+          "fr": "Dans les actions d’une commande enregistrée, vérifiez les faits de préparation et de remise séparément du paiement. La revue de remise sélectionne les unités physiques réellement concernées ; le partage financier ne les multiplie pas. Avant une clôture, revoyez l’addition ou la part exacte et son solde confirmé. Une portée clôturée refuse de nouvelles modifications commerciales ; un autre lot ouvert n’est pas clôturé par cette action. Voir [le suivi et les confirmations](/fr/help/orders/payment-preparation-and-handoff).",
+          "en": "In a saved order’s actions, review preparation and handoff separately from payment. Handoff review selects the actual physical units; financial splitting does not multiply them. Before closure, review the exact check or financial portion and its confirmed balance. A closed scope refuses new commercial changes; another open batch is not closed by that action. See [tracking and confirmations](/en/help/orders/payment-preparation-and-handoff).",
+          "he": "בפעולות של הזמנה שמורה בדקו הכנה ומסירה בנפרד מתשלום. סקירת המסירה בוחרת את היחידות הפיזיות בפועל; פיצול כספי אינו מכפיל אותן. לפני סגירה בדקו את החשבון או החלק הכספי המדויק ואת היתרה המאושרת. היקף סגור מסרב לשינויים מסחריים חדשים; הפעולה אינה סוגרת קבוצה פתוחה אחרת. ראו [מעקב ואישורים](/he/help/orders/payment-preparation-and-handoff)."
+        }
       }
     ],
     "audience": "public",
@@ -5706,11 +5771,25 @@
           "fr": "Dans le mode effectif de l’appareil, ouvrez Additions en attente, activez Utiliser sur ce mode et Utiliser le menu Tickets ouverts comme écran d’accueil, puis Enregistrer. Actualisez les réglages sur le POS. Après Envoyer confirmé, une addition de table revient au plan de salle et une addition nommée revient aux additions ouvertes. Revenir dans Menu ouvre une vente vide distincte, sans rouvrir ni effacer l’addition envoyée. Rouvrez celle-ci depuis sa table ou les additions ouvertes pour ajouter des plats : client, addition et bons cuisine y sont conservés. Continuer/Envoyer et rester conserve l’addition courante. Un envoi échoué ou un changement de restaurant, de permission ou de contexte ne détache pas la source. Un autre panier comptoir non envoyé n’est pas vidé. Sans ce réglage d’accueil, ce passage à une nouvelle vente ne s’applique pas. Toutes les commandes enregistrées restent suivies sur POS et Admin ; paiement, préparation et clôture restent distincts.",
           "he": "במצב האפקטיבי של המכשיר פתחו חשבונות פתוחים, הפעילו שימוש במצב זה ושימוש בכרטיסים פתוחים כמסך בית ושמרו. רעננו הגדרות בקופה. אחרי שליחה מאושרת חשבון שולחן חוזר למפת השולחנות וחשבון עם שם חוזר לחשבונות הפתוחים. חזרה לתפריט פותחת מכירה ריקה נפרדת ואינה פותחת או מוחקת את החשבון שנשלח. פתחו אותו שוב מהשולחן או מרשימת החשבונות כדי להוסיף מנות; הלקוח, החשבון ואצוות המטבח נשמרים. המשך או שליחה והישארות שומרים את החשבון הנוכחי. כשל שליחה או שינוי מסעדה, הרשאה או הקשר העריכה אינם מנתקים את המקור. סל דלפק אחר שטרם נשלח אינו נמחק. כשהגדרת מסך הבית כבויה אין מעבר זה למכירה חדשה. כל ההזמנות השמורות נשארות במעקב בקופה ובמנהל; תשלום, הכנה וסגירת חשבון נשארים נפרדים."
         }
+      },
+      {
+        "id": "independent-lifecycle-confirmations",
+        "title": {
+          "fr": "Vérifier les confirmations indépendantes",
+          "en": "Review independent confirmations",
+          "he": "בדיקת אישורים נפרדים"
+        },
+        "instructions": {
+          "fr": "Les modes de traitement du système de caisse proposent deux suivis distincts : préparation et remise. Enregistrez la politique du mode dans le catalogue global. Elle s’applique aux nouvelles ventes et reste figée avec elles ; une modification ultérieure ne réécrit pas l’historique. Les modules partagés du mode d’appareil restent distincts de cette politique globale. Voir [les réglages de suivi](/fr/help/orders/payment-preparation-and-handoff#frozen-tracking-policy).",
+          "en": "POS fulfillment methods provide separate preparation and handoff tracking. Save the method’s policy in the global catalog. It applies to new sales and remains frozen with them; later changes do not rewrite history. Shared device-mode modules remain distinct from this global policy. See [tracking settings](/en/help/orders/payment-preparation-and-handoff#frozen-tracking-policy).",
+          "he": "שיטות הטיפול בקופה מציעות מעקב נפרד להכנה ולמסירה. שמרו את מדיניות השיטה בקטלוג הכללי. היא חלה על מכירות חדשות ונשארת קבועה איתן; שינויים מאוחרים אינם משכתבים היסטוריה. מודולים משותפים של מצב המכשיר נשארים נפרדים מהמדיניות הכללית. ראו [הגדרות מעקב](/he/help/orders/payment-preparation-and-handoff#frozen-tracking-policy)."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
-    "preserveExisting": false
+    "preserveExisting": false,
+    "procedureUpdatedAt": "2026-10-29"
   },
   {
     "id": "order-workflow",
@@ -6233,6 +6312,19 @@
           "fr": "À l’ajout d’un article depuis la bibliothèque Admin, remplissez les positions obligatoires. Une position rendue facultative sur la fiche article peut rester sur Choisir une option ; revenez à cette valeur pour retirer un choix avant Ajouter à la commande. Seules les positions effectivement choisies sont conservées. Le prix absolu du format reste inchangé et les modificateurs gardent leurs suppléments propres. Pour la livraison facultative du jour même, consultez le guide Zones et créneaux de livraison avec des versions compatibles de l’API, d’Admin et du site client : le client peut choisir uniquement le jour, voir une estimation avant paiement puis recevoir un horaire confirmé par le restaurant. Les précommandes conservent leur mode configuré. La date locale du restaurant détermine les règles du jour même.",
           "en": "When adding an item from the Admin library, complete required positions. A position made optional on the item may remain on Choose an option; return to that value to remove a choice before Add to order. Only positions actually selected are retained. The absolute format price remains unchanged and modifiers keep their separate deltas. For optional same-day delivery, review the Delivery zones and schedules guide with compatible API, Admin and guest versions: the customer may choose only the day, see an estimate before payment and receive a restaurant-confirmed time later. Future bookings retain their configured mode. The restaurant’s local date determines same-day rules.",
           "he": "בהוספת פריט מספריית Admin מלאו את מיקומי החובה. מיקום שהוגדר לא חובה בפריט יכול להישאר בבחרו אפשרות; חזרו לערך זה כדי להסיר בחירה לפני הוספה להזמנה. נשמרים רק המיקומים שנבחרו בפועל. מחיר הגודל המוחלט אינו משתנה ותוספות שומרות על הפרשי המחיר שלהן. למשלוח אופציונלי באותו יום עיינו במדריך אזורים וחלונות משלוח בגרסאות תואמות של ה-API, הניהול ואתר הלקוח: הלקוח עשוי לבחור רק יום, לראות הערכה לפני תשלום ולקבל בהמשך שעה מאושרת מהמסעדה. הזמנות מראש שומרות על המצב שהוגדר. התאריך המקומי במסעדה קובע את כללי אותו יום."
+        }
+      },
+      {
+        "id": "independent-lifecycle-confirmations",
+        "title": {
+          "fr": "Vérifier les confirmations indépendantes",
+          "en": "Review independent confirmations",
+          "he": "בדיקת אישורים נפרדים"
+        },
+        "instructions": {
+          "fr": "Dans les actions d’une commande enregistrée, vérifiez les faits de préparation et de remise séparément du paiement. La revue de remise sélectionne les unités physiques réellement concernées ; le partage financier ne les multiplie pas. Avant une clôture, revoyez l’addition ou la part exacte et son solde confirmé. Une portée clôturée refuse de nouvelles modifications commerciales ; un autre lot ouvert n’est pas clôturé par cette action. Voir [le suivi et les confirmations](/fr/help/orders/payment-preparation-and-handoff).",
+          "en": "In a saved order’s actions, review preparation and handoff separately from payment. Handoff review selects the actual physical units; financial splitting does not multiply them. Before closure, review the exact check or financial portion and its confirmed balance. A closed scope refuses new commercial changes; another open batch is not closed by that action. See [tracking and confirmations](/en/help/orders/payment-preparation-and-handoff).",
+          "he": "בפעולות של הזמנה שמורה בדקו הכנה ומסירה בנפרד מתשלום. סקירת המסירה בוחרת את היחידות הפיזיות בפועל; פיצול כספי אינו מכפיל אותן. לפני סגירה בדקו את החשבון או החלק הכספי המדויק ואת היתרה המאושרת. היקף סגור מסרב לשינויים מסחריים חדשים; הפעולה אינה סוגרת קבוצה פתוחה אחרת. ראו [מעקב ואישורים](/he/help/orders/payment-preparation-and-handoff)."
         }
       }
     ],
@@ -6977,6 +7069,19 @@
           "fr": "Pour une tournée En route, consultez l’indication de position sous le livreur : aucune position reçue, position reçue à l’heure indiquée, ou position ancienne après plus d’une minute. Le point Position du livreur se déplace avec les nouvelles positions reçues ; le triangle vert est le départ prévu. Une tournée active ne garantit pas que le téléphone transmet son GPS. Faites vérifier Foody affiché, la localisation autorisée et la connexion sur le téléphone du livreur. Ouvrir Mode livreur sur le téléphone du responsable ne partage pas la position du livreur. Voir [le suivi et la récupération côté livreur](../delivery/courier-workspace#live-location).\n\nLe livreur est représenté par un avatar rond, au-dessus des repères de livraison, avec un libellé toujours visible. Une position ancienne conserve son avatar et le libellé Position ancienne du livreur. Le cadrage initial inclut la dernière position reçue ; dans Mode livreur, Afficher toute la tournée la remet dans le cadre avec les arrêts. Les mises à jour GPS déplacent l’avatar sans recentrer automatiquement la carte.",
           "en": "For an En route run, check the location notice under the courier: no position received, position received at the displayed time, or old position after more than one minute. The Courier position marker moves with new received positions; the green triangle is the planned departure. An active route does not guarantee that the phone is sending GPS. Check that Foody is visible, location access is allowed and the courier’s phone is connected. Opening Courier mode on the manager’s phone does not share the courier’s GPS. See [courier tracking and recovery](../delivery/courier-workspace#live-location).\n\nThe courier is represented by a round avatar above delivery pins, with an always-visible label. An old position retains its avatar and the Old courier position label. Initial framing includes the last received position; in Courier mode, Fit the whole route brings it back into view with the stops. GPS updates move the avatar without automatically recentering the map.",
           "he": "במסלול בדרך בדקו את הודעת המיקום מתחת לשליח: לא התקבל מיקום, מיקום שהתקבל בשעה המוצגת, או מיקום ישן לאחר יותר מדקה. סמן מיקום השליח נע עם מיקומים חדשים שהתקבלו; המשולש הירוק הוא נקודת היציאה המתוכננת. מסלול פעיל אינו מבטיח שהטלפון שולח GPS. בדקו ש-Foody גלוי, שהגישה למיקום מותרת ושהטלפון של השליח מחובר. פתיחת מצב שליח בטלפון של המנהל אינה משתפת את ה-GPS של השליח. ראו [מעקב ושחזור בצד השליח](../delivery/courier-workspace#live-location).\n\nהשליח מוצג באווטאר עגול מעל סמני המשלוחים, עם תווית שמוצגת תמיד. מיקום ישן שומר על האווטאר ועל התווית מיקום ישן של השליח. המסגור הראשוני כולל את המיקום האחרון שהתקבל; במצב שליח, הצגת כל המסלול מחזירה אותו לתצוגה יחד עם העצירות. עדכוני GPS מזיזים את האווטאר בלי למרכז מחדש את המפה אוטומטית."
+        }
+      },
+      {
+        "id": "independent-lifecycle-confirmations",
+        "title": {
+          "fr": "Vérifier les confirmations indépendantes",
+          "en": "Review independent confirmations",
+          "he": "בדיקת אישורים נפרדים"
+        },
+        "instructions": {
+          "fr": "Une remise partielle conserve les unités restantes. Terminer un seul poste KDS requis ne termine pas toute la préparation. La remise au livreur et la réception client sont deux confirmations distinctes ; le départ d’une tournée ne prouve pas une heure de réception client. Voir [préparation et remise](/fr/help/orders/payment-preparation-and-handoff).",
+          "en": "A partial handoff preserves remaining units. Completing one required KDS station does not complete all preparation. Courier handoff and customer receipt are separate confirmations; a route departure does not prove a customer receipt time. See [preparation and handoff](/en/help/orders/payment-preparation-and-handoff).",
+          "he": "מסירה חלקית שומרת על היחידות שנותרו. סיום בעמדת KDS נדרשת אחת אינו מסיים את כל ההכנה. מסירה לשליח וקבלה אצל הלקוח הן אישורים נפרדים; יציאת מסלול אינה מוכיחה שעת קבלה אצל הלקוח. ראו [הכנה ומסירה](/he/help/orders/payment-preparation-and-handoff)."
         }
       }
     ],
@@ -9287,6 +9392,19 @@
           "fr": "Dans Admin → Paramètres → Paiements, avec la permission settings.edit, choisissez Autres moyens autorisés pour accepter les espèces. Pour un prestataire compatible, Paiements en espèces propose Accepter les espèces pour tous les clients : Oui autorise tous les clients, sans condition de confiance ; Non refuse les espèces pour tous. Le réglage Exiger une garantie par carte pour les espèces reste indépendant : activez-le uniquement si vous souhaitez réserver 100 % du total sur la carte, puis enregistrez et vérifiez les valeurs. La garantie est désactivée par défaut. Elle est disponible aujourd’hui pour Stancer configuré en EUR ; les autres intégrations utilisent ce même affichage lorsque leur parcours de garantie espèces est pris en charge. Les prestataires incompatibles conservent leurs réglages espèces sans proposer cette garantie. Un ancien réglage limité aux clients de confiance reste conservé jusqu’à votre choix explicite Oui ou Non ; modifier la TVA ou les pourboires ne le remplace pas. Le paiement exclusivement en ligne exclut toujours les espèces. Avant une utilisation réelle de la garantie, vérifiez avec votre compte Stancer l’annulation d’une réservation autorisée en sandbox, les délais de libération et les frais.\n\nConditions d’activation et reprise : [garantie bancaire pour les espèces](/fr/help/payments/cash-card-guarantee). Vérifiez le bloc facultatif Livraison le jour même dans Zones de livraison séparément des réglages ordinaires de créneaux et de lots. Il limite uniquement les nouvelles commandes pour aujourd’hui dans le fuseau du restaurant ; les précommandes conservent leurs règles de zone. L’estimation avec confirmation par le restaurant ajoute le transport à la préparation dans les horaires de livraison, sans remplacer les plages des lots hebdomadaires. Les horaires personnalisés des créneaux restent prioritaires sur les horaires du service. Ne désactivez pas toutes les zones pour arrêter les commandes : utilisez le service ou la pause.",
           "he": "בניהול → הגדרות → תשלומים, עם הרשאת settings.edit, בחרו אמצעים נוספים מותרים לקבלת מזומן. אצל ספק תואם, תשלומים במזומן מציע קבלת מזומן מכל הלקוחות: כן מאפשר לכל לקוח לשלם במזומן ללא תנאי מהימנות; לא חוסם מזומן לכולם. דרישת ערבות בכרטיס למזומן נשארת הגדרה נפרדת: הפעילו אותה רק אם ברצונכם לשריין בכרטיס את מלוא הסכום, ואז שמרו ובדקו את הערכים. הערבות מושבתת כברירת מחדל. היא זמינה כיום לחיבור Stancer מוגדר באירו; שילובים אחרים משתמשים באותה תצוגה כאשר מסלול ערבות המזומן שלהם נתמך. ספקים שאינם תואמים שומרים על הגדרות המזומן הקיימות ללא הערבות הזאת. מדיניות קודמת של לקוחות מהימנים בלבד נשמרת עד לבחירה מפורשת כן או לא; שינוי מע״מ או טיפים אינו מחליף אותה. תשלום מקוון בלבד תמיד חוסם מזומן. לפני שימוש אמיתי בערבות, בדקו בחשבון Stancer ביטול שריון מאושר בסביבת הבדיקות, זמני שחרור ועמלות.\n\nתנאי הפעלה והתאוששות: [ערבות בכרטיס למזומן](/he/help/payments/cash-card-guarantee). בדקו את הבלוק האופציונלי משלוח באותו יום באזורי משלוח בנפרד מהגדרות משבצות וסדרות רגילות. הוא מגביל רק הזמנות חדשות להיום באזור הזמן של המסעדה; הזמנות מראש שומרות על כללי האזור. הערכה עם אישור המסעדה מוסיפה הובלה למוכנות המוצרים בתוך שעות משלוח, בלי להחליף חלונות של סדרות שבועיות. שעות משבצות מותאמות נשארות בעדיפות על שעות שירות. אין להשבית את כל האזורים כדי לעצור הזמנות: השתמשו בשירות או בהשהיה."
         }
+      },
+      {
+        "id": "independent-lifecycle-confirmations",
+        "title": {
+          "fr": "Vérifier les confirmations indépendantes",
+          "en": "Review independent confirmations",
+          "he": "בדיקת אישורים נפרדים"
+        },
+        "instructions": {
+          "fr": "Les modes de traitement du système de caisse proposent deux suivis distincts : préparation et remise. Enregistrez la politique du mode dans le catalogue global. Elle s’applique aux nouvelles ventes et reste figée avec elles ; une modification ultérieure ne réécrit pas l’historique. Les modules partagés du mode d’appareil restent distincts de cette politique globale. Voir [les réglages de suivi](/fr/help/orders/payment-preparation-and-handoff#frozen-tracking-policy).",
+          "en": "POS fulfillment methods provide separate preparation and handoff tracking. Save the method’s policy in the global catalog. It applies to new sales and remains frozen with them; later changes do not rewrite history. Shared device-mode modules remain distinct from this global policy. See [tracking settings](/en/help/orders/payment-preparation-and-handoff#frozen-tracking-policy).",
+          "he": "שיטות הטיפול בקופה מציעות מעקב נפרד להכנה ולמסירה. שמרו את מדיניות השיטה בקטלוג הכללי. היא חלה על מכירות חדשות ונשארת קבועה איתן; שינויים מאוחרים אינם משכתבים היסטוריה. מודולים משותפים של מצב המכשיר נשארים נפרדים מהמדיניות הכללית. ראו [הגדרות מעקב](/he/help/orders/payment-preparation-and-handoff#frozen-tracking-policy)."
+        }
       }
     ],
     "audience": "public",
@@ -9434,9 +9552,9 @@
           "he": "הגדרת אפשרויות המסירה בקופה"
         },
         "instructions": {
-          "en": "With settings-edit permission, open Settings → Fulfillment → Point of sale. The catalogue shows cards for all methods, including hidden methods. Open a card to edit its display text, order type and optional customer prompt, then Save explicitly. A failed or unconfirmed save keeps the editor and values. Manage by location sets restaurant-wide availability, order/default and prompt timing, not a separate catalogue per device. Inside that nested editor, Save on a method stages it only: Save again in Manage by location persists the whole configuration. Closing a changed editor asks before discarding. Keep at least one method enabled and at most ten; reorder with arrows or the drag handle. The first enabled method becomes the default. Delete requires confirmation and cannot remove the last active method. Foody always tracks saved orders, with no per-method tracking-disable switch. Existing orders keep their recorded method. An incompatible API disables unsupported editing.",
-          "fr": "Avec le droit de modifier les paramètres, ouvrez Paramètres → Modes de traitement → Système de caisse. Le catalogue présente tous les modes en cartes, y compris ceux masqués. Ouvrez une carte pour modifier le texte affiché, le type et la fiche client facultative, puis Enregistrer explicitement. Un échec ou une réponse non confirmée conserve la fenêtre et les valeurs. Gérer par point de vente règle la disponibilité, l’ordre/défaut et le moment de la demande pour le restaurant, pas un catalogue par appareil. Dans cette fenêtre imbriquée, Enregistrer sur un mode le prépare seulement : enregistrez aussi dans Gérer par point de vente pour sauvegarder l’ensemble. Fermer un éditeur modifié demande de confirmer l’abandon. Gardez au moins un mode actif et dix au maximum ; réordonnez avec flèches ou poignée. Le premier actif devient le défaut. Supprimer demande confirmation et ne peut pas retirer le dernier mode actif. Foody suit toujours les commandes enregistrées, sans interrupteur de suivi par mode. Les commandes existantes gardent leur mode. Une API incompatible désactive la modification non prise en charge.",
-          "he": "עם הרשאה לעריכת הגדרות פתחו הגדרות → אפשרויות מסירה → מערכת קופה. הקטלוג מציג כרטיסים לכל השיטות, גם המוסתרות. פתחו כרטיס לעריכת הטקסט המוצג, סוג ההזמנה ובקשת פרטי לקוח ושמרו במפורש. כשל או שמירה שלא אושרה משאירים את העורך והערכים. ניהול לפי סניף מגדיר זמינות, סדר וברירת מחדל ומועד בקשה לכל המסעדה, לא קטלוג לכל מכשיר. בעורך המקונן שמירת שיטה מכינה טיוטה בלבד; שמרו גם בניהול לפי סניף לשמירת הכול. סגירת עורך ששונה מבקשת אישור ביטול. השאירו לפחות שיטה פעילה אחת ועד עשר; שנו סדר בחצים או בידית. הפעילה הראשונה היא ברירת המחדל. מחיקה דורשת אישור ואינה מסירה את הפעילה האחרונה. Foody עוקבת תמיד אחרי הזמנות שמורות ללא מתג ביטול מעקב לפי שיטה. הזמנות קיימות שומרות על השיטה שלהן. שרת לא תואם משבית עריכה שאינה נתמכת."
+          "en": "With settings-edit permission, open Settings → Fulfillment → Point of sale. The catalogue shows cards for all methods, including hidden methods. Open a card to edit its display text, order type and optional customer prompt, then Save explicitly. A failed or unconfirmed save keeps the editor and values. Manage by location sets restaurant-wide availability, order/default and prompt timing, not a separate catalogue per device. Inside that nested editor, Save on a method stages it only: Save again in Manage by location persists the whole configuration. Closing a changed editor asks before discarding. Keep at least one method enabled and at most ten; reorder with arrows or the drag handle. The first enabled method becomes the default. Delete requires confirmation and cannot remove the last active method. For new sales, configure preparation tracking and handoff tracking separately on each method. The saved policy remains attached to the order; an older order without that evidence stays unknown. Existing orders keep their recorded method. An incompatible API disables unsupported editing.",
+          "fr": "Avec le droit de modifier les paramètres, ouvrez Paramètres → Modes de traitement → Système de caisse. Le catalogue présente tous les modes en cartes, y compris ceux masqués. Ouvrez une carte pour modifier le texte affiché, le type et la fiche client facultative, puis Enregistrer explicitement. Un échec ou une réponse non confirmée conserve la fenêtre et les valeurs. Gérer par point de vente règle la disponibilité, l’ordre/défaut et le moment de la demande pour le restaurant, pas un catalogue par appareil. Dans cette fenêtre imbriquée, Enregistrer sur un mode le prépare seulement : enregistrez aussi dans Gérer par point de vente pour sauvegarder l’ensemble. Fermer un éditeur modifié demande de confirmer l’abandon. Gardez au moins un mode actif et dix au maximum ; réordonnez avec flèches ou poignée. Le premier actif devient le défaut. Supprimer demande confirmation et ne peut pas retirer le dernier mode actif. Pour les nouvelles ventes, réglez séparément le suivi de préparation et de remise de chaque mode. La politique enregistrée reste attachée à la commande ; une ancienne commande sans cette preuve reste inconnue. Les commandes existantes gardent leur mode. Une API incompatible désactive la modification non prise en charge.",
+          "he": "עם הרשאה לעריכת הגדרות פתחו הגדרות → אפשרויות מסירה → מערכת קופה. הקטלוג מציג כרטיסים לכל השיטות, גם המוסתרות. פתחו כרטיס לעריכת הטקסט המוצג, סוג ההזמנה ובקשת פרטי לקוח ושמרו במפורש. כשל או שמירה שלא אושרה משאירים את העורך והערכים. ניהול לפי סניף מגדיר זמינות, סדר וברירת מחדל ומועד בקשה לכל המסעדה, לא קטלוג לכל מכשיר. בעורך המקונן שמירת שיטה מכינה טיוטה בלבד; שמרו גם בניהול לפי סניף לשמירת הכול. סגירת עורך ששונה מבקשת אישור ביטול. השאירו לפחות שיטה פעילה אחת ועד עשר; שנו סדר בחצים או בידית. הפעילה הראשונה היא ברירת המחדל. מחיקה דורשת אישור ואינה מסירה את הפעילה האחרונה. למכירות חדשות הגדירו בנפרד מעקב הכנה ומעקב מסירה לכל שיטה. המדיניות שנשמרה נשארת משויכת להזמנה; הזמנה ישנה ללא הוכחה זו נשארת לא ידועה. הזמנות קיימות שומרות על השיטה שלהן. שרת לא תואם משבית עריכה שאינה נתמכת."
         }
       },
       {
@@ -9516,12 +9634,25 @@
           "en": "The handheld terminal has three unlabeled buttons: the signed-in user’s initials open More, the house opens Overview and the receipt opens Checks, subject to permissions. iPad keeps its configured navigation destinations. In Checks, the selector offers All checks and available floor plans; selecting a radio option changes the view immediately. Drag the floor plan when it extends beyond the screen. Overview contains collapsible cards for permitted availability, orders and tables. The full list supports item search; Not provided means availability was not supplied, not that an item is available. Refresh retries a failed read. These views change neither the assigned checkout mode nor printing profiles. The bar stays above Android navigation and hides while typing. Inside a sale, Menu/Check/Actions and the return to checks retain their own controls.",
           "he": "במסוף הנייד יש שלושה כפתורים ללא תווית: ראשי התיבות של המשתמש המחובר פותחים את עוד, הבית פותח סקירה כללית וסמל הקבלה פותח חשבונות, בהתאם להרשאות. ה-iPad שומר על יעדי הניווט שהוגדרו בו. בחשבונות, הבורר מציע את כל החשבונות ואת תוכניות האולם הזמינות; בחירה באפשרות משנה מיד את התצוגה. גררו תוכנית אולם החורגת מגבולות המסך. הסקירה מציגה כרטיסים מתקפלים של זמינות, הזמנות ושולחנות המותרים לצפייה. הרשימה המלאה מאפשרת חיפוש פריט; לא נמסר פירושו שלא התקבל מצב זמינות, ולא שהפריט זמין. רענון מאפשר ניסיון חוזר לאחר כשל בקריאה. תצוגות אלה אינן משנות את מצב הקופה המשויך או את פרופילי ההדפסה. הסרגל נשאר מעל ניווט Android ומוסתר בזמן הקלדה. בתוך מכירה נשמרים פקדי תפריט/חשבון/פעולות והחזרה לחשבונות."
         }
+      },
+      {
+        "id": "end-of-day-terminal-navigation",
+        "title": {
+          "fr": "Retrouver le dépôt dans le parcours de fin de journée",
+          "en": "Find terminal deposit in the end-of-day flow",
+          "he": "מציאת ההפקדה במסלול סוף היום"
+        },
+        "instructions": {
+          "fr": "Lorsque l’API compatible propose Clôture de journée, Dépôts du terminal ouvre ce parcours commun avant toute transmission. Sur une API antérieure, l’écran de dépôt séparé reste disponible selon les capacités réelles du terminal. Un changement de configuration après affichage exige une nouvelle vérification avant de réserver la caisse. Une ancienne approbation de carte sans provenance vérifiable reste à rapprocher : elle n’autorise ni un nouvel encaissement ni son adoption par un autre restaurant. Consultez [la clôture et sa reprise](/fr/help/payments/end-of-day).",
+          "en": "When the compatible API offers End of day, Terminal deposits opens that combined flow before any transmission. With an older API, the separate deposit screen remains available according to actual terminal capabilities. A provisioning change after display requires another review before reserving cash. An old card approval without verifiable provenance remains pending reconciliation: it permits neither another collection nor adoption by another restaurant. See [closing and recovery](/en/help/payments/end-of-day).",
+          "he": "כאשר ה־API התואם מציע סגירת יום, הפקדות מסוף פותח את המסלול המשותף לפני שידור. ב־API קודם מסך ההפקדה הנפרד נשאר זמין בהתאם ליכולות המסוף בפועל. שינוי הגדרה לאחר הצגת המסך מחייב בדיקה מחדש לפני שמירת המזומן. אישור כרטיס ישן ללא מקור שניתן לאמת נשאר לבדיקת התאמה: הוא אינו מתיר חיוב נוסף או שיוך למסעדה אחרת. ראו [סגירה ושחזור](/he/help/payments/end-of-day)."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-27"
+    "procedureUpdatedAt": "2026-10-30"
   },
   {
     "id": "table-service-policy",
@@ -10005,6 +10136,19 @@
           "en": "An item’s allocation details retain its variant choices by position. Check the characters and their order before allocating; they add no surcharge to the already recorded amount. Sharing rules and production quantities remain unchanged.",
           "he": "פרטי הפריט לחלוקה שומרים על בחירות הווריאציה לפי מיקום. בדקו את התווים וסדרם לפני החלוקה; הם אינם מוסיפים תשלום לסכום שכבר נשמר. כללי החלוקה וכמויות הייצור נשארים ללא שינוי."
         }
+      },
+      {
+        "id": "independent-lifecycle-confirmations",
+        "title": {
+          "fr": "Vérifier les confirmations indépendantes",
+          "en": "Review independent confirmations",
+          "he": "בדיקת אישורים נפרדים"
+        },
+        "instructions": {
+          "fr": "Dans les actions d’une commande enregistrée, vérifiez les faits de préparation et de remise séparément du paiement. La revue de remise sélectionne les unités physiques réellement concernées ; le partage financier ne les multiplie pas. Avant une clôture, revoyez l’addition ou la part exacte et son solde confirmé. Une portée clôturée refuse de nouvelles modifications commerciales ; un autre lot ouvert n’est pas clôturé par cette action. Voir [le suivi et les confirmations](/fr/help/orders/payment-preparation-and-handoff).",
+          "en": "In a saved order’s actions, review preparation and handoff separately from payment. Handoff review selects the actual physical units; financial splitting does not multiply them. Before closure, review the exact check or financial portion and its confirmed balance. A closed scope refuses new commercial changes; another open batch is not closed by that action. See [tracking and confirmations](/en/help/orders/payment-preparation-and-handoff).",
+          "he": "בפעולות של הזמנה שמורה בדקו הכנה ומסירה בנפרד מתשלום. סקירת המסירה בוחרת את היחידות הפיזיות בפועל; פיצול כספי אינו מכפיל אותן. לפני סגירה בדקו את החשבון או החלק הכספי המדויק ואת היתרה המאושרת. היקף סגור מסרב לשינויים מסחריים חדשים; הפעולה אינה סוגרת קבוצה פתוחה אחרת. ראו [מעקב ואישורים](/he/help/orders/payment-preparation-and-handoff)."
+        }
       }
     ],
     "audience": "public",
@@ -10014,7 +10158,8 @@
       "en": "Advanced actions appear only when the installed POS and API advertise the required capability and your role permits them. Refresh a changed bill before retrying; never create another charge to resolve an uncertain result.",
       "fr": "Les actions avancées apparaissent si la caisse et l’API installées annoncent la capacité requise et si votre rôle l’autorise. Actualisez une addition modifiée avant de réessayer ; ne créez jamais un second débit pour résoudre un résultat incertain.",
       "he": "פעולות מתקדמות זמינות רק כשהקופה והשרת תומכים וההרשאה מתאימה. רעננו חשבון שהשתנה לפני ניסיון חוזר; אין ליצור חיוב נוסף לפתרון תוצאה לא ודאית."
-    }
+    },
+    "procedureUpdatedAt": "2026-10-29"
   },
   {
     "id": "pos-check-move",
@@ -10105,6 +10250,19 @@
           "en": "On the updated handheld terminal, open Checks with the bottom receipt icon, then use the radio selector for All checks or the intended floor. A free table asks for covers when configured; an occupied table or named check opens its existing context. Verify the displayed table and bill before Actions → Move or an eligible transfer action. The view selector and floor panning neither move nor merge a bill: only confirmation of the actual business action can do so. Dismissing the selector without choosing changes no destination.",
           "he": "במסוף הנייד המעודכן פתחו חשבונות באמצעות סמל הקבלה למטה ובחרו בבורר את כל החשבונות או את האולם הרצוי. שולחן פנוי מבקש מספר סועדים כשהמצב מוגדר לכך; שולחן תפוס או חשבון בעל שם פותחים את ההקשר הקיים שלהם. בדקו את השולחן והחשבון המוצגים לפני פעולות ← העברה או העברת פריט מותרת. בורר התצוגה וגרירת התוכנית אינם מעבירים או מאחדים חשבון; רק אישור הפעולה העסקית יכול לבצע זאת. סגירת הבורר ללא בחירה אינה משנה יעד."
         }
+      },
+      {
+        "id": "independent-lifecycle-confirmations",
+        "title": {
+          "fr": "Vérifier les confirmations indépendantes",
+          "en": "Review independent confirmations",
+          "he": "בדיקת אישורים נפרדים"
+        },
+        "instructions": {
+          "fr": "Dans les actions d’une commande enregistrée, vérifiez les faits de préparation et de remise séparément du paiement. La revue de remise sélectionne les unités physiques réellement concernées ; le partage financier ne les multiplie pas. Avant une clôture, revoyez l’addition ou la part exacte et son solde confirmé. Une portée clôturée refuse de nouvelles modifications commerciales ; un autre lot ouvert n’est pas clôturé par cette action. Voir [le suivi et les confirmations](/fr/help/orders/payment-preparation-and-handoff).",
+          "en": "In a saved order’s actions, review preparation and handoff separately from payment. Handoff review selects the actual physical units; financial splitting does not multiply them. Before closure, review the exact check or financial portion and its confirmed balance. A closed scope refuses new commercial changes; another open batch is not closed by that action. See [tracking and confirmations](/en/help/orders/payment-preparation-and-handoff).",
+          "he": "בפעולות של הזמנה שמורה בדקו הכנה ומסירה בנפרד מתשלום. סקירת המסירה בוחרת את היחידות הפיזיות בפועל; פיצול כספי אינו מכפיל אותן. לפני סגירה בדקו את החשבון או החלק הכספי המדויק ואת היתרה המאושרת. היקף סגור מסרב לשינויים מסחריים חדשים; הפעולה אינה סוגרת קבוצה פתוחה אחרת. ראו [מעקב ואישורים](/he/help/orders/payment-preparation-and-handoff)."
+        }
       }
     ],
     "audience": "public",
@@ -10115,7 +10273,7 @@
       "fr": "Les actions avancées apparaissent si la caisse et l’API installées annoncent la capacité requise et si votre rôle l’autorise. Actualisez une addition modifiée avant de réessayer ; ne créez jamais un second débit pour résoudre un résultat incertain.",
       "he": "פעולות מתקדמות זמינות רק כשהקופה והשרת תומכים וההרשאה מתאימה. רעננו חשבון שהשתנה לפני ניסיון חוזר; אין ליצור חיוב נוסף לפתרון תוצאה לא ודאית."
     },
-    "procedureUpdatedAt": "2026-10-26"
+    "procedureUpdatedAt": "2026-10-29"
   },
   {
     "id": "pos-courses",
@@ -10209,6 +10367,19 @@
           "en": "On the updated mobile POS, the bottom Menu strip selects the course for the next items. In Check, each course retains its state and controls: fire to release, stop to hold and ⋯ for other permitted actions. Buttons are separate and compact; selecting the active course does not send it. Send at the top uses the existing Foody workflow and pending release selections. A course shared across bills retains one physical production. Permissions, timing, submitted states and repeat restrictions still apply.",
           "he": "בקופה הניידת המעודכנת הסרגל התחתון בתפריט בוחר את שלב ההגשה לפריטים הבאים. בחשבון כל שלב שומר על מצבו ועל הפקדים: אש לשחרור, עצירה להשהיה ו־⋯ לפעולות מותרות נוספות. הכפתורים נפרדים וקומפקטיים; בחירת שלב פעיל אינה שולחת אותו. שליחה בראש המסך משתמשת במסלול Foody הקיים ובבחירות השחרור הממתינות. שלב משותף לכמה חשבונות שומר על ייצור פיזי אחד. ההרשאות, התזמון, מצבים שנשלחו ומגבלות החזרה עדיין תקפים."
         }
+      },
+      {
+        "id": "independent-lifecycle-confirmations",
+        "title": {
+          "fr": "Vérifier les confirmations indépendantes",
+          "en": "Review independent confirmations",
+          "he": "בדיקת אישורים נפרדים"
+        },
+        "instructions": {
+          "fr": "Une remise partielle conserve les unités restantes. Terminer un seul poste KDS requis ne termine pas toute la préparation. La remise au livreur et la réception client sont deux confirmations distinctes ; le départ d’une tournée ne prouve pas une heure de réception client. Voir [préparation et remise](/fr/help/orders/payment-preparation-and-handoff).",
+          "en": "A partial handoff preserves remaining units. Completing one required KDS station does not complete all preparation. Courier handoff and customer receipt are separate confirmations; a route departure does not prove a customer receipt time. See [preparation and handoff](/en/help/orders/payment-preparation-and-handoff).",
+          "he": "מסירה חלקית שומרת על היחידות שנותרו. סיום בעמדת KDS נדרשת אחת אינו מסיים את כל ההכנה. מסירה לשליח וקבלה אצל הלקוח הן אישורים נפרדים; יציאת מסלול אינה מוכיחה שעת קבלה אצל הלקוח. ראו [הכנה ומסירה](/he/help/orders/payment-preparation-and-handoff)."
+        }
       }
     ],
     "audience": "public",
@@ -10219,7 +10390,7 @@
       "fr": "Les actions avancées apparaissent si la caisse et l’API installées annoncent la capacité requise et si votre rôle l’autorise. Actualisez une addition modifiée avant de réessayer ; ne créez jamais un second débit pour résoudre un résultat incertain.",
       "he": "פעולות מתקדמות זמינות רק כשהקופה והשרת תומכים וההרשאה מתאימה. רעננו חשבון שהשתנה לפני ניסיון חוזר; אין ליצור חיוב נוסף לפתרון תוצאה לא ודאית."
     },
-    "procedureUpdatedAt": "2026-10-27"
+    "procedureUpdatedAt": "2026-10-29"
   },
   {
     "id": "pos-comp-void",
@@ -10364,6 +10535,19 @@
           "en": "Reopen the intended check or order and verify its recorded state before a discount, comp or void. Payment remains separate from preparation; a refund does not prove kitchen work was cancelled. Do not edit a basket to bypass an unconfirmed send: [verify its saved result first](/en/help/orders/taking-an-order-pos#resume-local-draft). Use only corrections offered under your permissions. This verification creates no credit note, collection or automatic kitchen cancellation.",
           "he": "פתחו את החשבון או ההזמנה הנכונים ואמתו את המצב השמור לפני הנחה, פריט על חשבון הבית או ביטול. תשלום נשאר נפרד מהכנה; החזר אינו מוכיח שעבודת המטבח בוטלה. אין לשנות סל כדי לעקוף שליחה שלא אושרה: [בדקו תחילה את התוצאה השמורה](/he/help/orders/taking-an-order-pos#resume-local-draft). השתמשו רק בתיקונים המוצעים לפי הרשאותיכם. האימות אינו יוצר זיכוי, גבייה או ביטול אוטומטי במטבח."
         }
+      },
+      {
+        "id": "independent-lifecycle-confirmations",
+        "title": {
+          "fr": "Vérifier les confirmations indépendantes",
+          "en": "Review independent confirmations",
+          "he": "בדיקת אישורים נפרדים"
+        },
+        "instructions": {
+          "fr": "Dans les actions d’une commande enregistrée, vérifiez les faits de préparation et de remise séparément du paiement. La revue de remise sélectionne les unités physiques réellement concernées ; le partage financier ne les multiplie pas. Avant une clôture, revoyez l’addition ou la part exacte et son solde confirmé. Une portée clôturée refuse de nouvelles modifications commerciales ; un autre lot ouvert n’est pas clôturé par cette action. Voir [le suivi et les confirmations](/fr/help/orders/payment-preparation-and-handoff).",
+          "en": "In a saved order’s actions, review preparation and handoff separately from payment. Handoff review selects the actual physical units; financial splitting does not multiply them. Before closure, review the exact check or financial portion and its confirmed balance. A closed scope refuses new commercial changes; another open batch is not closed by that action. See [tracking and confirmations](/en/help/orders/payment-preparation-and-handoff).",
+          "he": "בפעולות של הזמנה שמורה בדקו הכנה ומסירה בנפרד מתשלום. סקירת המסירה בוחרת את היחידות הפיזיות בפועל; פיצול כספי אינו מכפיל אותן. לפני סגירה בדקו את החשבון או החלק הכספי המדויק ואת היתרה המאושרת. היקף סגור מסרב לשינויים מסחריים חדשים; הפעולה אינה סוגרת קבוצה פתוחה אחרת. ראו [מעקב ואישורים](/he/help/orders/payment-preparation-and-handoff)."
+        }
       }
     ],
     "audience": "public",
@@ -10374,7 +10558,7 @@
       "fr": "Les actions avancées apparaissent si la caisse et l’API installées annoncent la capacité requise et si votre rôle l’autorise. Actualisez une addition modifiée avant de réessayer ; ne créez jamais un second débit pour résoudre un résultat incertain.",
       "he": "פעולות מתקדמות זמינות רק כשהקופה והשרת תומכים וההרשאה מתאימה. רעננו חשבון שהשתנה לפני ניסיון חוזר; אין ליצור חיוב נוסף לפתרון תוצאה לא ודאית."
     },
-    "procedureUpdatedAt": "2026-10-27"
+    "procedureUpdatedAt": "2026-10-29"
   },
   {
     "id": "pos-payments",
@@ -10500,9 +10684,9 @@
           "he": "ספירה וסגירה של מגירת המזומן"
         },
         "instructions": {
-          "fr": "Sur le même POS autorisé avec un shift PIN actif, ouvrez Plus → Rapports → Solde en caisse. Vérifiez fonds initial, ventes et remboursements en espèces, entrées/sorties et montant attendu. La description facultative est reprise dans la note de clôture, sans enregistrement automatique. Avec payments.manage, ouvrez Entrées/sorties, saisissez un montant positif et un motif obligatoire, puis choisissez Encaisser des espèces ou Décaisser des espèces. Une sortie ne peut dépasser le solde attendu. Avec orders.manage, choisissez Clôturer la session de caisse, comptez physiquement les espèces, saisissez ce montant et confirmez ; l’écart est conservé. Fermer la modale sans confirmer n’enregistre rien. Mouvements de caisse liste uniquement la session chargée sur cet appareil, pas les anciennes sessions. Reprenez toute opération incertaine avec son identité existante avant une autre action. Ce rapport n’inclut pas les cartes : la clôture espèces ne lance pas le dépôt Verifone, et le dépôt Verifone ne clôture pas les espèces. N’utilisez pas un ajustement espèces pour masquer un remboursement carte.",
-          "en": "On the same enrolled POS with an active PIN shift, open More → Reports → Cash drawer balance. Review the opening float, cash sales and refunds, paid in/out and expected cash. The optional description is copied to the closing note, without automatic saving. With payments.manage, open Paid in/out, enter a positive amount and mandatory reason, then choose Pay in cash or Pay out cash. A payout cannot exceed the expected balance. With orders.manage, choose Close cash session, count physical cash, enter that amount and confirm; any discrepancy is preserved. Dismissing the modal without confirming records nothing. Cash movements lists only the session loaded on this device, not past sessions. Resume any uncertain operation using its existing identity before another action. Cards are excluded: closing cash does not start a Verifone deposit, and a Verifone deposit does not close cash. Never use a cash adjustment to disguise a card refund.",
-          "he": "באותה קופה מורשית עם משמרת PIN פעילה פתחו עוד ← דוחות ← יתרת קופה. בדקו פתיחה, מכירות וזיכויים במזומן, הכנסות והוצאות וסכום צפוי. התיאור האופציונלי מועתק להערת הסגירה ללא שמירה אוטומטית. עם payments.manage פתחו הכנסות/הוצאות מזומן, הזינו סכום חיובי וסיבה חובה ובחרו הכנסה או הוצאה. הוצאה אינה יכולה לעלות על היתרה הצפויה. עם orders.manage בחרו סגירת משמרת מזומן, ספרו את המזומן בפועל, הזינו את הסכום ואשרו; ההפרש נשמר. סגירת החלון ללא אישור אינה רושמת דבר. תנועות מזומן מציגות רק את המשמרת הטעונה במכשיר ולא משמרות קודמות. המשיכו פעולה לא ודאית עם המזהה הקיים לפני פעולה אחרת. כרטיסים אינם כלולים: סגירת מזומן אינה מפעילה הפקדת Verifone והפקדת Verifone אינה סוגרת מזומן. אין להסוות זיכוי לכרטיס באמצעות התאמת מזומן."
+          "fr": "Sur le même POS autorisé avec un shift PIN actif, ouvrez Plus → Rapports → Solde en caisse. Vérifiez fonds initial, ventes et remboursements en espèces, entrées/sorties et montant attendu. La description facultative est reprise dans la note de clôture, sans enregistrement automatique. Avec payments.manage, ouvrez Entrées/sorties, saisissez un montant positif et un motif obligatoire, puis choisissez Encaisser des espèces ou Décaisser des espèces. Une sortie ne peut dépasser le solde attendu. Avec orders.manage, choisissez Clôturer la session de caisse, comptez physiquement les espèces, saisissez ce montant et confirmez ; l’écart est conservé. Fermer la modale sans confirmer n’enregistre rien. Mouvements de caisse liste uniquement la session chargée sur cet appareil, pas les anciennes sessions. Reprenez toute opération incertaine avec son identité existante avant une autre action. Ce rapport n’inclut pas les cartes : la clôture espèces ne lance pas le dépôt Verifone, et le dépôt Verifone ne clôture pas les espèces. N’utilisez pas un ajustement espèces pour masquer un remboursement carte.\n\nPour réunir les étapes de fin de journée, utilisez [la clôture commune](/fr/help/payments/end-of-day).",
+          "en": "On the same enrolled POS with an active PIN shift, open More → Reports → Cash drawer balance. Review the opening float, cash sales and refunds, paid in/out and expected cash. The optional description is copied to the closing note, without automatic saving. With payments.manage, open Paid in/out, enter a positive amount and mandatory reason, then choose Pay in cash or Pay out cash. A payout cannot exceed the expected balance. With orders.manage, choose Close cash session, count physical cash, enter that amount and confirm; any discrepancy is preserved. Dismissing the modal without confirming records nothing. Cash movements lists only the session loaded on this device, not past sessions. Resume any uncertain operation using its existing identity before another action. Cards are excluded: closing cash does not start a Verifone deposit, and a Verifone deposit does not close cash. Never use a cash adjustment to disguise a card refund.\n\nTo bring together the end-of-day steps, use [the combined closing flow](/en/help/payments/end-of-day).",
+          "he": "באותה קופה מורשית עם משמרת PIN פעילה פתחו עוד ← דוחות ← יתרת קופה. בדקו פתיחה, מכירות וזיכויים במזומן, הכנסות והוצאות וסכום צפוי. התיאור האופציונלי מועתק להערת הסגירה ללא שמירה אוטומטית. עם payments.manage פתחו הכנסות/הוצאות מזומן, הזינו סכום חיובי וסיבה חובה ובחרו הכנסה או הוצאה. הוצאה אינה יכולה לעלות על היתרה הצפויה. עם orders.manage בחרו סגירת משמרת מזומן, ספרו את המזומן בפועל, הזינו את הסכום ואשרו; ההפרש נשמר. סגירת החלון ללא אישור אינה רושמת דבר. תנועות מזומן מציגות רק את המשמרת הטעונה במכשיר ולא משמרות קודמות. המשיכו פעולה לא ודאית עם המזהה הקיים לפני פעולה אחרת. כרטיסים אינם כלולים: סגירת מזומן אינה מפעילה הפקדת Verifone והפקדת Verifone אינה סוגרת מזומן. אין להסוות זיכוי לכרטיס באמצעות התאמת מזומן.\n\nלריכוז שלבי סוף היום השתמשו ב[מסלול הסגירה המשותף](/he/help/payments/end-of-day)."
         }
       },
       {
@@ -10565,9 +10749,9 @@
           "he": "צפייה בהחזרים ובביטולי תשלום בעסקאות"
         },
         "instructions": {
-          "en": "A successful Verifone Checkout refund or void initiated in Foody appears as its own return transaction, linked to the original payment. A confirmed cash return also appears separately, linked to its original cash tender. On the POS, an owner or manager with payments.manage can open an eligible payment in Transactions. For a journaled cash sale, choose Issue refund only when the server confirms an exact refundable portion and an open enrolled drawer. Select the order or check portion, enter an amount within the limit and a reason, then hand over cash only after Foody confirms. For one captured Verifone Checkout card payment linked to one exact order allocation, choose Refund to original card or Cancel card payment if offered. Enter a reason and, for a refund, an amount within the displayed limit. Foody sends the return to the original card, never to the cash drawer. An uncertain card result must be rechecked using the same saved request before another return; do not issue cash instead. Legacy unattributed, split/multi-order and Victa card payments do not offer this card action. Admin shows gross collections separately from returns recorded in Foody; neither figure is net revenue. Returns made directly in Verifone Central or on Victa are not included automatically.",
-          "fr": "Un remboursement ou une annulation Verifone Checkout réussi depuis Foody apparaît comme une transaction de retour distincte, liée au paiement d’origine. Un remboursement en espèces confirmé apparaît lui aussi séparément, lié à l’encaissement d’origine. Sur la caisse, un propriétaire ou responsable avec payments.manage peut ouvrir un paiement éligible dans Transactions. Pour une vente espèces enregistrée, choisissez Émettre un remboursement seulement si le serveur confirme la part exacte remboursable et une caisse autorisée ouverte. Sélectionnez la part de commande ou d’addition, indiquez un montant dans la limite et un motif, puis remettez l’argent seulement après confirmation de Foody. Pour un seul paiement carte Verifone Checkout capturé et lié exactement à une commande, choisissez Rembourser sur la carte d’origine ou Annuler le paiement carte si proposé. Indiquez un motif et, pour un remboursement, un montant dans la limite affichée. Foody renvoie l’argent sur la carte d’origine, jamais dans la caisse espèces. Un résultat carte incertain doit être vérifié avec la même requête enregistrée avant un autre retour ; ne remboursez pas en espèces à la place. Les paiements anciens non attribués, partagés ou liés à plusieurs commandes et les cartes Victa ne proposent pas cette action. Admin distingue encaissements bruts et retours enregistrés dans Foody ; aucun ne représente le chiffre d’affaires net. Les retours réalisés directement dans Verifone Central ou sur Victa ne sont pas inclus automatiquement.",
-          "he": "החזר או ביטול של Verifone Checkout שהושלם מתוך Foody מופיע כעסקת החזר נפרדת המקושרת לתשלום המקורי. גם החזר מזומן מאושר מופיע בנפרד ומקושר לתשלום המזומן המקורי. בקופה, בעלים או מנהל עם הרשאת payments.manage יכולים לפתוח תשלום זכאי בעסקאות. למכירת מזומן מתועדת בחרו החזר רק כאשר השרת מאשר חלק מדויק שניתן להחזיר וקופה מורשית פתוחה. בחרו את חלק ההזמנה או החשבון, הזינו סכום עד לתקרה וסיבה, ומסרו מזומן רק לאחר אישור Foody. לתשלום כרטיס Verifone Checkout יחיד שנקלט ומשויך בדיוק להזמנה אחת, בחרו החזר לכרטיס המקורי או ביטול תשלום בכרטיס אם האפשרות מוצגת. הזינו סיבה, ובהחזר גם סכום שאינו עולה על התקרה המוצגת. Foody מחזיר לכרטיס המקורי בלבד, לא לקופת המזומן. תוצאה לא ודאית בכרטיס מחייבת בדיקה של אותה בקשה שמורה לפני החזר נוסף; אין להחזיר מזומן במקום. תשלומים ישנים ללא שיוך, תשלומים מפוצלים או מרובי הזמנות ותשלומי כרטיס ב-Victa אינם מציעים פעולה זו. ב-Admin מוצגים בנפרד תקבולים ברוטו והחזרים שנרשמו ב-Foody; אף אחד מהם אינו הכנסה נטו. החזרים שבוצעו ישירות ב-Verifone Central או ב-Victa אינם נכללים אוטומטית."
+          "en": "A successful Verifone Checkout refund or void initiated in Foody appears as its own return transaction, linked to the original payment. A confirmed cash return also appears separately, linked to its original cash tender. On the POS, an owner or manager with payments.manage can open an eligible payment in Transactions. For a journaled cash sale, choose Issue refund only when the server confirms an exact refundable portion and an open enrolled drawer. Select the order or check portion, enter an amount within the limit and a reason, then hand over cash only after Foody confirms. For one captured Verifone Checkout card payment linked to one exact order allocation, choose Refund to original card or Cancel card payment if offered. Enter a reason and, for a refund, an amount within the displayed limit. Foody sends the return to the original card, never to the cash drawer. An uncertain card result must be rechecked using the same saved request before another return; do not issue cash instead. Legacy unattributed, split/multi-order and Victa card payments do not offer this card action. Admin shows gross collections separately from returns recorded in Foody; neither figure is net revenue. Returns made directly in Verifone Central or on Victa are not included automatically. Also review [recorded net and balance](/en/help/orders/payment-preparation-and-handoff#recorded-money-summary).",
+          "fr": "Un remboursement ou une annulation Verifone Checkout réussi depuis Foody apparaît comme une transaction de retour distincte, liée au paiement d’origine. Un remboursement en espèces confirmé apparaît lui aussi séparément, lié à l’encaissement d’origine. Sur la caisse, un propriétaire ou responsable avec payments.manage peut ouvrir un paiement éligible dans Transactions. Pour une vente espèces enregistrée, choisissez Émettre un remboursement seulement si le serveur confirme la part exacte remboursable et une caisse autorisée ouverte. Sélectionnez la part de commande ou d’addition, indiquez un montant dans la limite et un motif, puis remettez l’argent seulement après confirmation de Foody. Pour un seul paiement carte Verifone Checkout capturé et lié exactement à une commande, choisissez Rembourser sur la carte d’origine ou Annuler le paiement carte si proposé. Indiquez un motif et, pour un remboursement, un montant dans la limite affichée. Foody renvoie l’argent sur la carte d’origine, jamais dans la caisse espèces. Un résultat carte incertain doit être vérifié avec la même requête enregistrée avant un autre retour ; ne remboursez pas en espèces à la place. Les paiements anciens non attribués, partagés ou liés à plusieurs commandes et les cartes Victa ne proposent pas cette action. Admin distingue encaissements bruts et retours enregistrés dans Foody ; aucun ne représente le chiffre d’affaires net. Les retours réalisés directement dans Verifone Central ou sur Victa ne sont pas inclus automatiquement. [Récapitulatif](/fr/help/orders/payment-preparation-and-handoff#recorded-money-summary).",
+          "he": "החזר או ביטול של Verifone Checkout שהושלם מתוך Foody מופיע כעסקת החזר נפרדת המקושרת לתשלום המקורי. גם החזר מזומן מאושר מופיע בנפרד ומקושר לתשלום המזומן המקורי. בקופה, בעלים או מנהל עם הרשאת payments.manage יכולים לפתוח תשלום זכאי בעסקאות. למכירת מזומן מתועדת בחרו החזר רק כאשר השרת מאשר חלק מדויק שניתן להחזיר וקופה מורשית פתוחה. בחרו את חלק ההזמנה או החשבון, הזינו סכום עד לתקרה וסיבה, ומסרו מזומן רק לאחר אישור Foody. לתשלום כרטיס Verifone Checkout יחיד שנקלט ומשויך בדיוק להזמנה אחת, בחרו החזר לכרטיס המקורי או ביטול תשלום בכרטיס אם האפשרות מוצגת. הזינו סיבה, ובהחזר גם סכום שאינו עולה על התקרה המוצגת. Foody מחזיר לכרטיס המקורי בלבד, לא לקופת המזומן. תוצאה לא ודאית בכרטיס מחייבת בדיקה של אותה בקשה שמורה לפני החזר נוסף; אין להחזיר מזומן במקום. תשלומים ישנים ללא שיוך, תשלומים מפוצלים או מרובי הזמנות ותשלומי כרטיס ב-Victa אינם מציעים פעולה זו. ב-Admin מוצגים בנפרד תקבולים ברוטו והחזרים שנרשמו ב-Foody; אף אחד מהם אינו הכנסה נטו. החזרים שבוצעו ישירות ב-Verifone Central או ב-Victa אינם נכללים אוטומטית. ראו גם [נטו ויתרה שנרשמו](/he/help/orders/payment-preparation-and-handoff#recorded-money-summary)."
         }
       },
       {
@@ -10591,9 +10775,9 @@
           "he": "סגירה ושידור של אצוות מסוף Verifone"
         },
         "instructions": {
-          "en": "On a configured Victa Portable or an iPad connected to a Victa Mini, sign in with the payments.manage permission. Open More → Reports → Terminal deposits. Check that the terminal is connected and supports Close and deposit. At end of day, confirm Close and deposit once, then wait for the terminal's final confirmation and keep its reconciliation reference. This is separate from closing a Foody staff shift or a cash drawer. If the result is uncertain, do not repeat it or start another card payment: inspect the terminal batch or confirm its status with your payment provider. A manager may choose I verified the batch only after that check. Some Israeli Ashrait versions support the deposit but do not implement current totals, close-only or reconcile-only reports: those controls remain unavailable. Accepting the command alone does not prove completion, and a deposit can succeed without returning numerical totals. Never share terminal credentials or card details with support chat. Physical end-to-end compatibility must be validated for the provisioned terminal and software version.\n\nIf the restaurant, sign-in or terminal changes, [reopen confirmation in the correct context](/en/help/payments/cash-access#terminal-report-context).",
-          "fr": "Sur un Victa Portable configuré ou un iPad relié à un Victa Mini, connectez-vous avec l’autorisation payments.manage. Ouvrez Plus → Rapports → Dépôts du terminal. Vérifiez la connexion et la disponibilité de Clôturer et déposer. En fin de journée, confirmez cette action une seule fois, attendez la confirmation finale du terminal et conservez sa référence de réconciliation. Cette opération est distincte de la fermeture d’un service Foody ou d’un tiroir-caisse. Si le résultat est incertain, ne la relancez pas et n’encaissez pas d’autre carte : vérifiez le lot sur le terminal ou auprès du prestataire de paiement. Un responsable ne choisit J’ai vérifié le lot qu’après cette vérification. Certaines versions israéliennes Ashrait prennent en charge le dépôt, mais pas les totaux en cours, la clôture seule ou le rapprochement seul : ces commandes restent indisponibles. L’acceptation de la commande ne prouve pas son achèvement, et un dépôt peut réussir sans renvoyer de totaux chiffrés. Ne partagez ni identifiants du terminal ni données de carte dans le chat d’assistance. La compatibilité de bout en bout doit être validée sur le terminal provisionné et sa version logicielle.\n\nSi l’établissement, la connexion ou le terminal change, [rouvrez la confirmation dans le bon contexte](/fr/help/payments/cash-access#terminal-report-context).",
-          "he": "ב-Victa Portable מוגדר או ב-iPad המחובר ל-Victa Mini, התחברו עם הרשאת payments.manage. פתחו עוד ← דוחות ← הפקדות מסוף. ודאו שהמסוף מחובר ושהפעולה סגירה ושידור זמינה. בסוף היום אשרו את הפעולה פעם אחת, המתינו לאישור הסופי מהמסוף ושמרו את אסמכתת ההתאמה. פעולה זו נפרדת מסגירת משמרת או מגירת מזומנים ב-Foody. אם התוצאה אינה ודאית, אין לחזור על הפעולה או לבצע חיוב כרטיס נוסף: בדקו את האצווה במסוף או מול ספק התשלומים. מנהל יבחר בדקתי את האצווה רק לאחר הבדיקה. גרסאות מסוימות של Ashrait בישראל תומכות בהפקדה אך אינן מממשות סכומים שוטפים, סגירה בלבד או התאמה בלבד, ולכן פקדים אלה אינם זמינים. קבלת הפקודה לבדה אינה הוכחת השלמה, והפקדה עשויה להצליח בלי להחזיר סכומים מספריים. אין לשתף מזהי מסוף או פרטי כרטיס בצ׳אט התמיכה. יש לאמת תאימות מקצה לקצה במסוף שהוגדר ובגרסת התוכנה שלו.\n\nאם המסעדה, הכניסה או המסוף השתנו, [פתחו מחדש את האישור בהקשר הנכון](/he/help/payments/cash-access#terminal-report-context)."
+          "en": "To close cash and card activity in one flow, use [End of day and the Foody Z report](/en/help/payments/end-of-day). Staff clock-out remains separate. On older versions, Terminal deposits offers a separate Verifone transmission with payments.manage: check the terminal, confirm once at end of day and wait for final confirmation. An uncertain result blocks repetition before verification. Unsupported totals commands remain unavailable. Numerical results and the batch reference are shown only when actually supplied. Never share terminal credentials or card details in support chat. Hardware compatibility must be checked on the relevant Mini or Portable. If context changes, [reopen confirmation](/en/help/payments/cash-access#terminal-report-context).",
+          "fr": "Pour clôturer la journée espèces et carte dans un même parcours, utilisez [Clôture de journée et rapport Z Foody](/fr/help/payments/end-of-day). Le départ d’un employé reste distinct. Sur les versions antérieures, Dépôts du terminal permet une transmission Verifone séparée avec payments.manage : vérifiez le terminal, confirmez une seule fois en fin de journée et attendez la confirmation finale. Un résultat incertain bloque toute répétition avant vérification. Les commandes de totaux non prises en charge restent indisponibles. Les résultats chiffrés et la référence de lot ne sont affichés que s’ils sont réellement fournis. Ne partagez ni identifiants du terminal ni données de carte dans le chat d’assistance. La compatibilité matérielle doit être vérifiée sur le Mini ou le Portable concerné. Si le contexte change, [rouvrez la confirmation](/fr/help/payments/cash-access#terminal-report-context).",
+          "he": "לסגירת פעילות מזומן וכרטיס באותו מסלול השתמשו ב[סגירת יום ודוח Z של Foody](/he/help/payments/end-of-day). רישום יציאת עובד נשאר נפרד. בגרסאות קודמות הפקדות מסוף מאפשר שידור Verifone נפרד עם payments.manage: בדקו את המסוף, אשרו פעם אחת בסוף היום והמתינו לאישור הסופי. תוצאה לא ודאית חוסמת ניסיון חוזר לפני בדיקה. פקודות סיכום שאינן נתמכות נשארות לא זמינות. סכומים ומספר אצווה מוצגים רק אם סופקו בפועל. אין לשתף פרטי התחברות למסוף או פרטי כרטיס בצ׳אט התמיכה. יש לבדוק תאימות חומרה ב־Mini או ב־Portable הרלוונטי. אם ההקשר השתנה, [פתחו מחדש את האישור](/he/help/payments/cash-access#terminal-report-context)."
         }
       },
       {
@@ -10719,7 +10903,7 @@
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-28"
+    "procedureUpdatedAt": "2026-10-30"
   },
   {
     "id": "pos-cash-access-diagnostics",
@@ -10772,9 +10956,9 @@
           "he": "הפרדה בין קופת המזומן למסוף Verifone"
         },
         "instructions": {
-          "fr": "Réessayer ne crée aucun mouvement d’espèces et ne lance aucun dépôt Verifone. Solde en caisse a besoin d’accéder à l’API Foody, pas d’un Victa Mini connecté. Les paiements carte et les opérations envoyées au terminal suivent leur propre connexion et restent séparés. Ce rapport n’inclut pas les cartes : la clôture espèces ne lance pas le dépôt Verifone, et le dépôt Verifone ne clôture pas les espèces. N’utilisez pas un ajustement espèces pour masquer un remboursement carte.",
-          "en": "Retry creates no cash movement and starts no Verifone deposit. Cash drawer balance needs access to the Foody API, not a connected Victa Mini. Card payments and operations sent to the terminal use their own connection and remain separate. Cards are excluded: closing cash does not start a Verifone deposit, and a Verifone deposit does not close cash. Never use a cash adjustment to disguise a card refund.",
-          "he": "ניסיון חוזר אינו יוצר תנועת מזומן ואינו מתחיל הפקדת Verifone. יתרת הקופה דורשת גישה ל־API של Foody ולא חיבור ל־Victa Mini. תשלומי כרטיס ופעולות הנשלחות למסוף משתמשים בחיבור נפרד ונשארים נפרדים. כרטיסים אינם כלולים: סגירת מזומן אינה מפעילה הפקדת Verifone והפקדת Verifone אינה סוגרת מזומן. אין להסוות זיכוי לכרטיס באמצעות התאמת מזומן."
+          "fr": "Réessayer ne crée aucun mouvement d’espèces et ne lance aucun dépôt Verifone. Solde en caisse a besoin d’accéder à l’API Foody, pas d’un Victa Mini connecté. Les paiements carte et les opérations envoyées au terminal suivent leur propre connexion et restent séparés. Ce rapport n’inclut pas les cartes : la clôture espèces ne lance pas le dépôt Verifone, et le dépôt Verifone ne clôture pas les espèces. N’utilisez pas un ajustement espèces pour masquer un remboursement carte.\n\nPour réunir les étapes de fin de journée, utilisez [la clôture commune](/fr/help/payments/end-of-day).",
+          "en": "Retry creates no cash movement and starts no Verifone deposit. Cash drawer balance needs access to the Foody API, not a connected Victa Mini. Card payments and operations sent to the terminal use their own connection and remain separate. Cards are excluded: closing cash does not start a Verifone deposit, and a Verifone deposit does not close cash. Never use a cash adjustment to disguise a card refund.\n\nTo bring together the end-of-day steps, use [the combined closing flow](/en/help/payments/end-of-day).",
+          "he": "ניסיון חוזר אינו יוצר תנועת מזומן ואינו מתחיל הפקדת Verifone. יתרת הקופה דורשת גישה ל־API של Foody ולא חיבור ל־Victa Mini. תשלומי כרטיס ופעולות הנשלחות למסוף משתמשים בחיבור נפרד ונשארים נפרדים. כרטיסים אינם כלולים: סגירת מזומן אינה מפעילה הפקדת Verifone והפקדת Verifone אינה סוגרת מזומן. אין להסוות זיכוי לכרטיס באמצעות התאמת מזומן.\n\nלריכוז שלבי סוף היום השתמשו ב[מסלול הסגירה המשותף](/he/help/payments/end-of-day)."
         }
       },
       {
@@ -10978,12 +11162,25 @@
           "en": "The local unsent basket and the server-saved check are separate. On a compatible version, [reopen the draft with the same account and installation](/en/help/orders/taking-an-order-pos#resume-local-draft); an uncertain send requires verification or explicit resumption of its original identity. Payment, preparation and handoff remain separate, including for a split bill. Switching screens never automatically resends food.",
           "he": "הסל המקומי שלא נשלח והחשבון השמור בשרת נפרדים. בגרסה תואמת [פתחו את הטיוטה עם אותו חשבון ואותה התקנה](/he/help/orders/taking-an-order-pos#resume-local-draft); שליחה לא ודאית דורשת אימות או המשך מפורש של הזהות המקורית. תשלום, הכנה ומסירה נשארים נפרדים, גם בחשבון מפוצל. מעבר מסך אינו שולח שוב מזון אוטומטית."
         }
+      },
+      {
+        "id": "end-of-day-navigation",
+        "title": {
+          "fr": "Ouvrir la clôture de journée",
+          "en": "Open end-of-day closing",
+          "he": "פתיחת סגירת יום"
+        },
+        "instructions": {
+          "fr": "Sur le POS compatible, Plus → Rapports propose Clôture de journée aux comptes autorisés lorsque l’API annonce cette fonction. La tablette conserve la navigation latérale des rapports ; un écran compact ouvre le même parcours dans sa navigation simple. Ce parcours rassemble comptage, transmission du terminal et rapport opérationnel, sans terminer le pointage. Consultez [la procédure de fin de journée](/fr/help/payments/end-of-day).",
+          "en": "On a compatible POS, More → Reports offers End of day to authorized accounts when the API advertises the feature. Tablets retain the report navigation rail; compact screens open the same flow in their single navigation stack. It brings together cash counting, terminal transmission and an operational report without ending attendance. See [the end-of-day procedure](/en/help/payments/end-of-day).",
+          "he": "בקופה תואמת, עוד ← דוחות מציע סגירת יום לחשבונות מורשים כאשר ה־API מודיע על תמיכה. בטאבלט נשמר סרגל הניווט בדוחות; במסך צר אותו מסלול נפתח בניווט פשוט. המסלול מרכז ספירת מזומן, שידור מסוף ודוח תפעולי בלי לסיים משמרת. ראו [את נוהל סגירת היום](/he/help/payments/end-of-day)."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-28"
+    "procedureUpdatedAt": "2026-10-30"
   },
   {
     "id": "printer-profiles",
@@ -12298,6 +12495,19 @@
           "en": "In a compatible product sheet, Required needs a choice in every visible position before Add to cart. A group marked Optional may remain empty. After selection, Clear choice removes only that position and its associated note; other positions and the format price remain intact. A required note attached to a selected option must still be completed. Review the choices in the cart before confirming. For optional same-day delivery, review the Delivery zones and schedules guide with compatible API, Admin and guest versions: the customer may choose only the day, see an estimate before payment and receive a restaurant-confirmed time later. Future bookings retain their configured mode. The restaurant’s local date determines same-day rules.",
           "he": "בדף מוצר תואם, חובה דורשת בחירה בכל מיקום גלוי לפני הוספה לסל. קבוצה שמסומנת לא חובה יכולה להישאר ריקה. לאחר בחירה, ניקוי הבחירה מסיר רק את המיקום הזה ואת ההערה הקשורה אליו; שאר המיקומים ומחיר הגודל נשמרים. עדיין יש למלא הערת חובה שמשויכת לאפשרות שנבחרה. בדקו את הבחירות בסל לפני האישור. למשלוח אופציונלי באותו יום עיינו במדריך אזורים וחלונות משלוח בגרסאות תואמות של ה-API, הניהול ואתר הלקוח: הלקוח עשוי לבחור רק יום, לראות הערכה לפני תשלום ולקבל בהמשך שעה מאושרת מהמסעדה. הזמנות מראש שומרות על המצב שהוגדר. התאריך המקומי במסעדה קובע את כללי אותו יום."
         }
+      },
+      {
+        "id": "independent-lifecycle-confirmations",
+        "title": {
+          "fr": "Vérifier les confirmations indépendantes",
+          "en": "Review independent confirmations",
+          "he": "בדיקת אישורים נפרדים"
+        },
+        "instructions": {
+          "fr": "Le suivi de votre commande distingue le paiement, la préparation et la remise réellement enregistrée, y compris partielle. « Non suivi » est distinct d’une information inconnue. Une valeur monétaire inconnue n’est pas zéro et ne propose pas un paiement à deviner. Les commandes QR des autres clients d’une même table restent distinctes et ne sont pas exposées par cette vue. Voir [les états de commande](/fr/help/orders/payment-preparation-and-handoff).",
+          "en": "Your order tracking distinguishes payment, preparation and recorded handoff, including partial handoff. Not tracked differs from unknown evidence. An unknown monetary value is not zero and does not offer a guessed payment. Other guests’ QR orders at the same table remain separate and are not exposed by this view. See [order states](/en/help/orders/payment-preparation-and-handoff).",
+          "he": "מעקב ההזמנה שלכם מפריד בין תשלום, הכנה ומסירה שנרשמה, כולל מסירה חלקית. ללא מעקב שונה ממידע לא ידוע. סכום לא ידוע אינו אפס ואינו מציע תשלום לפי ניחוש. הזמנות QR של אורחים אחרים באותו שולחן נשארות נפרדות ואינן נחשפות בתצוגה זו. ראו [מצבי הזמנה](/he/help/orders/payment-preparation-and-handoff)."
+        }
       }
     ],
     "audience": "public",
@@ -12487,6 +12697,19 @@
         }
       },
       {
+        "id": "independent-lifecycle-confirmations",
+        "title": {
+          "fr": "Vérifier les confirmations indépendantes",
+          "en": "Review independent confirmations",
+          "he": "בדיקת אישורים נפרדים"
+        },
+        "instructions": {
+          "fr": "Le suivi de votre commande distingue le paiement, la préparation et la remise réellement enregistrée, y compris partielle. « Non suivi » est distinct d’une information inconnue. Une valeur monétaire inconnue n’est pas zéro et ne propose pas un paiement à deviner. Les commandes QR des autres clients d’une même table restent distinctes et ne sont pas exposées par cette vue. Voir [les états de commande](/fr/help/orders/payment-preparation-and-handoff).",
+          "en": "Your order tracking distinguishes payment, preparation and recorded handoff, including partial handoff. Not tracked differs from unknown evidence. An unknown monetary value is not zero and does not offer a guessed payment. Other guests’ QR orders at the same table remain separate and are not exposed by this view. See [order states](/en/help/orders/payment-preparation-and-handoff).",
+          "he": "מעקב ההזמנה שלכם מפריד בין תשלום, הכנה ומסירה שנרשמה, כולל מסירה חלקית. ללא מעקב שונה ממידע לא ידוע. סכום לא ידוע אינו אפס ואינו מציע תשלום לפי ניחוש. הזמנות QR של אורחים אחרים באותו שולחן נשארות נפרדות ואינן נחשפות בתצוגה זו. ראו [מצבי הזמנה](/he/help/orders/payment-preparation-and-handoff)."
+        }
+      },
+      {
         "id": "prepared-order-existing-cart",
         "title": {
           "fr": "Panier préparé et présentation du restaurant",
@@ -12573,11 +12796,25 @@
           "fr": "Une clôture confirmée par l’équipe termine ensemble la session de table et ses demandes d’assistance actives. Si la clôture échoue, la table et la session existantes restent inchangées ; la notification de fin n’est pas envoyée avant confirmation. Si le service change pendant l’envoi d’une commande, celle-ci ne peut pas être rattachée à la session expirée ni à sa remplaçante. Demandez à l’équipe de vérifier ou rouvrir la table, puis actualisez avant de vérifier de nouveau le panier. Ne répétez pas un paiement et ne réutilisez pas un ancien lien de session pour forcer la commande.",
           "he": "סגירה שאושרה על ידי הצוות מסיימת יחד את מפגש השולחן ואת בקשות הסיוע הפעילות שלו. כשל בסגירה משאיר את השולחן והמפגש הקיימים ללא שינוי; הודעת הסיום אינה נשלחת לפני האישור. אם השירות מתחלף בזמן שליחת הזמנה, אי אפשר לשייך אותה למפגש שפג או למפגש החדש במקומו. בקשו מהצוות לבדוק או לפתוח מחדש את השולחן, ורעננו לפני בדיקה חוזרת של הסל. אין לחזור על תשלום או להשתמש בקישור מפגש ישן כדי לכפות את ההזמנה."
         }
+      },
+      {
+        "id": "independent-lifecycle-confirmations",
+        "title": {
+          "fr": "Vérifier les confirmations indépendantes",
+          "en": "Review independent confirmations",
+          "he": "בדיקת אישורים נפרדים"
+        },
+        "instructions": {
+          "fr": "Le suivi de votre commande distingue le paiement, la préparation et la remise réellement enregistrée, y compris partielle. « Non suivi » est distinct d’une information inconnue. Une valeur monétaire inconnue n’est pas zéro et ne propose pas un paiement à deviner. Les commandes QR des autres clients d’une même table restent distinctes et ne sont pas exposées par cette vue. Voir [les états de commande](/fr/help/orders/payment-preparation-and-handoff).",
+          "en": "Your order tracking distinguishes payment, preparation and recorded handoff, including partial handoff. Not tracked differs from unknown evidence. An unknown monetary value is not zero and does not offer a guessed payment. Other guests’ QR orders at the same table remain separate and are not exposed by this view. See [order states](/en/help/orders/payment-preparation-and-handoff).",
+          "he": "מעקב ההזמנה שלכם מפריד בין תשלום, הכנה ומסירה שנרשמה, כולל מסירה חלקית. ללא מעקב שונה ממידע לא ידוע. סכום לא ידוע אינו אפס ואינו מציע תשלום לפי ניחוש. הזמנות QR של אורחים אחרים באותו שולחן נשארות נפרדות ואינן נחשפות בתצוגה זו. ראו [מצבי הזמנה](/he/help/orders/payment-preparation-and-handoff)."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
-    "preserveExisting": false
+    "preserveExisting": false,
+    "procedureUpdatedAt": "2026-10-29"
   },
   {
     "id": "guest-catering",
@@ -13605,12 +13842,38 @@
           "en": "selection_config.required is an optional boolean on the descriptive item/group link. Absent or null preserves one required choice per position; false allows empty positions without fabricating a selection. Submitted choices still enforce restaurant/item/group ownership, activity, visible positions, uniqueness and required notes. Priced groups and modifiers cannot use this field to bypass their rules. Existing JSON storage needs no migration. Validate API, web, POS and Admin together; deploy the API and compatible consumers before exposing the Admin setting. Preserve existing catalogs and publish all three translations with the release.",
           "he": "selection_config.required הוא ערך בוליאני אופציונלי בקישור התיאורי בין פריט לקבוצה. ערך חסר או null שומר על בחירת חובה אחת בכל מיקום; false מאפשר מיקומים ריקים בלי ליצור בחירה מלאכותית. בחירות שנשלחות עדיין נבדקות לבעלות מסעדה/פריט/קבוצה, פעילות, מיקומים גלויים, ייחודיות והערות חובה. קבוצות מחיר ותוספות אינן יכולות להשתמש בשדה לעקיפת הכללים שלהן. אחסון ה־JSON הקיים אינו דורש מיגרציה. יש לבדוק יחד API, אתר, POS ו־Admin; לפרוס את ה־API ואת הצרכנים התואמים לפני חשיפת הגדרת Admin. שמרו קטלוגים קיימים ופרסמו את שלוש השפות עם הגרסה."
         }
+      },
+      {
+        "id": "order-lifecycle-v2-contract",
+        "title": {
+          "fr": "Contrat additif des confirmations de commande",
+          "en": "Additive order confirmation contract",
+          "he": "חוזה נוסף לאישורי הזמנה"
+        },
+        "instructions": {
+          "fr": "Le champ lifecycle v1 est conservé. La capacité order_lifecycle_v2 annonce lifecycle_v2 : lecture explicite par portée, montants nullable avec devise/exposant et politiques figées. Les opérations de remise et clôture revalident acteur, restaurant, affectation, révision et unités sous verrous et enregistrent le même request_id atomiquement. GET operation confirme le journal original ; une absence reste non confirmée et ne justifie pas un nouvel identifiant. Les réponses publiques contiennent seulement la propre commande, sans portées parentes, unités privées ou actions staff. Les journaux de paiement existants restent seuls compétents pour l’argent.",
+          "en": "The lifecycle v1 field is retained. Capability order_lifecycle_v2 advertises lifecycle_v2: explicit scoped reads, nullable amounts with currency/exponent and frozen policies. Handoff and closure operations recheck actor, restaurant, assignment, revision and units under locks and atomically journal the same request_id. GET operation confirms the original journal; absence remains unconfirmed and does not justify a new ID. Public responses contain only the own order, without parent scopes, private units or staff actions. Existing payment journals remain the sole monetary authority.",
+          "he": "השדה lifecycle v1 נשמר. היכולת order_lifecycle_v2 מציינת lifecycle_v2: קריאות לפי היקף מפורש, סכומים הניתנים לערך ריק עם מטבע ודיוק ומדיניות קבועה. פעולות מסירה וסגירה בודקות מחדש עובד, מסעדה, שיוך, גרסה ויחידות תחת נעילות ורושמות אטומית את אותו request_id. GET operation מאשר את הרישום המקורי; היעדר רישום נשאר לא מאושר ואינו מצדיק מזהה חדש. תשובות ציבוריות מכילות רק את ההזמנה עצמה, בלי היקפים הוריים, יחידות פרטיות או פעולות צוות. יומני התשלום הקיימים נשארים הסמכות הכספית היחידה."
+        }
+      },
+      {
+        "id": "end-of-day-protocol",
+        "title": {
+          "fr": "Publier le contrat EOD avant le POS",
+          "en": "Release the EOD contract before the POS",
+          "he": "פריסת חוזה EOD לפני הקופה"
+        },
+        "instructions": {
+          "fr": "Le contrat end-of-day v1 et la migration additive 285 introduisent begin, current, lecture par ID, terminal-result et finalize sous /orders/end-of-day. Les écritures conservent leurs UUID et vérifient restaurant, acteur, autorisation physique et installation. La capacité end_of_day est une déclaration de support, sans permission de paiement. La transaction serveur réserve le comptage et les identités de terminal ; elle ne contacte aucun prestataire. Dispatched précède l’appel natif et un résultat inconnu ne redevient pas une autorisation de transmettre. Une confirmation durable peut être réenregistrée avec la même identité. Finalize crée le rapport opérationnel immuable et ferme la caisse réservée atomiquement, sans pointage ni clôture commerciale. Publier l’API avant le POS, valider en développement puis promouvoir les mêmes artefacts. Les callbacks Ashrait actuels ne justifient aucun total, numéro de lot ni certificat fiscal inventé. Conserver les anciens journaux et les vérifications de droits et de provenance. Voir docs/contracts/end-of-day-v1.json et le guide public payments/end-of-day.",
+          "en": "The end-of-day v1 contract and additive migration 285 add begin, current, ID read, terminal-result and finalize under /orders/end-of-day. Writes retain UUIDs and check restaurant, actor, physical authorization and installation. The end_of_day capability declares support without granting payment permission. The server transaction reserves the count and terminal identities; it contacts no provider. Dispatched precedes the native call, and an unknown outcome never becomes permission to transmit again. A durable confirmation may be recorded again with the same identity. Finalize atomically creates the immutable operational report and closes its reserved drawer without attendance or commercial closure. Release the API before the POS, validate development and promote the same artifacts. Current Ashrait callbacks justify no invented totals, batch number or fiscal certificate. Preserve old journals and permission/provenance checks. See docs/contracts/end-of-day-v1.json and public payments/end-of-day guidance.",
+          "he": "חוזה end-of-day v1 ומיגרציה מצטברת 285 מוסיפים begin, current, קריאה לפי מזהה, terminal-result ו־finalize תחת /orders/end-of-day. כתיבות שומרות UUID ובודקות מסעדה, עובד, הרשאה פיזית והתקנה. יכולת end_of_day מצהירה על תמיכה ואינה מעניקה הרשאת תשלום. עסקת השרת שומרת את הספירה ואת זהויות המסופים; היא אינה פונה לספק. Dispatched נרשם לפני הפקודה המקורית, ותוצאה לא ודאית לעולם אינה מתירה שידור חוזר. ניתן לשמור שוב אישור קבוע עם אותה זהות. Finalize יוצר דוח תפעולי קבוע וסוגר את המגירה שנשמרה באותה עסקה, בלי שינוי נוכחות או סגירה מסחרית. יש לפרוס API לפני הקופה, לבדוק בפיתוח ולקדם אותם תוצרים. תשובות Ashrait הנוכחיות אינן מצדיקות המצאת סכומים, מספר אצווה או תעודה פיסקלית. יש לשמור יומנים קודמים ובדיקות הרשאה ומקור. ראו docs/contracts/end-of-day-v1.json ואת המדריך הציבורי payments/end-of-day."
+        }
       }
     ],
     "audience": "internal",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-29",
+    "procedureUpdatedAt": "2026-10-30",
     "updatedAt": "2026-10-28"
   },
   {
@@ -14388,13 +14651,22 @@
     "selectors": {
       "foodyserver": [
         "internal/common/order_lifecycle.go",
-        "internal/orders/order_lifecycle*.go"
+        "internal/orders/order_lifecycle*.go",
+        "internal/common/order_lifecycle_v2*.go",
+        "internal/common/order_commercial_guard.go",
+        "internal/orders/order_lifecycle_v2*.go",
+        "migrations/284_order_lifecycle_v2.sql"
       ],
       "foodyadmin": [
         "src/lib/orders/lifecycle.ts",
         "src/lib/orders/status-presentation.ts",
         "src/lib/orders/workflow-stepper.ts",
-        "src/components/orders/detail/OrderDetailHead.tsx"
+        "src/components/orders/detail/OrderDetailHead.tsx",
+        "src/lib/orders/lifecycle-v2*.ts",
+        "src/components/orders/detail/OrderLifecycleV2*.tsx",
+        "src/components/orders/detail/LifecycleOperations.tsx",
+        "src/components/orders/detail/context/LifecycleFacts.tsx",
+        "src/lib/orders/lifecycle-operations.ts"
       ],
       "foodyweb": [
         "lib/order-lifecycle.ts",
@@ -14402,14 +14674,24 @@
         "lib/order-tracking.ts",
         "hooks/useOrderStatus.ts",
         "components/OrderStatusTimeline.tsx",
-        "components/OrderTrackingClient.tsx"
+        "components/OrderTrackingClient.tsx",
+        "lib/order-lifecycle-v2*.ts",
+        "components/OrderLifecycleV2*.tsx",
+        "components/OrderLifecycleFacts.tsx"
       ],
       "foodypos": [
         "lib/features/orders/domain/order_state_projection.dart",
         "lib/features/orders/data/order_lifecycle_repository.dart",
         "lib/features/orders/presentation/order_lifecycle_labels.dart",
         "lib/features/orders/data/held_preparation_repository.dart",
-        "lib/features/orders/presentation/held_preparation_dialog.dart"
+        "lib/features/orders/presentation/held_preparation_dialog.dart",
+        "lib/features/orders/domain/order_lifecycle_v2.dart",
+        "lib/features/orders/data/order_lifecycle_v2*.dart",
+        "lib/features/orders/presentation/order_lifecycle_v2*.dart",
+        "lib/features/orders/data/order_lifecycle_operation_repository.dart",
+        "lib/features/orders/presentation/order_lifecycle_panel.dart",
+        "lib/features/orders/providers/order_lifecycle_v2_provider.dart",
+        "lib/features/orders/domain/order_lifecycle_filters.dart"
       ]
     },
     "operations": [
@@ -14425,12 +14707,103 @@
           "en": "With compatible API, POS, Admin and guest-web versions, review the commercial check, its payment, preparation batches and handoff separately. Paid does not mean ready or served; a refund does not prove that work already performed was cancelled. Ready does not mean handed over. Unestablished information remains unknown: do not infer it from payment or apply current settings to an old order. Successive sends on one check remain separate batches. QR customers at the same table retain individual order IDs and payments even when the POS groups the display. Financial splitting does not produce additional food. Existing table-release settings still apply; one customer paying does not settle the others’ orders.",
           "he": "בגרסאות תואמות של השרת, הקופה, הניהול ואתר הלקוחות, בדקו בנפרד את החשבון המסחרי, התשלום, קבוצות ההכנה והמסירה. שולם אינו אומר מוכן או הוגש; החזר כספי אינו מוכיח שעבודה שכבר בוצעה בוטלה. מוכן אינו אומר נמסר. מידע שלא הוכח נשאר לא ידוע: אין להסיק אותו מהתשלום או להחיל הגדרות נוכחיות על הזמנה ישנה. שיגורים עוקבים של אותו חשבון נשארים קבוצות נפרדות. לקוחות QR באותו שולחן שומרים על מזהי הזמנה ותשלומים נפרדים גם כשהקופה מקבצת את התצוגה. פיצול כספי אינו יוצר מנות נוספות. הגדרות שחרור השולחן הקיימות נשמרות; תשלום של לקוח אחד אינו מסדיר הזמנות של אחרים."
         }
+      },
+      {
+        "id": "recorded-money-summary",
+        "title": {
+          "fr": "Lire les montants enregistrés",
+          "en": "Read recorded monetary amounts",
+          "he": "קריאת הסכומים שנרשמו"
+        },
+        "instructions": {
+          "fr": "Le récapitulatif distingue le total, le montant encaissé enregistré, les remboursements enregistrés, le net reçu et le solde restant. Le net reçu est l’encaissement moins les remboursements ; un remboursement ne crée pas automatiquement une nouvelle dette. Une valeur inconnue reste indisponible et ne vaut pas zéro. La devise et sa précision doivent être connues ; ne comparez pas ou n’additionnez pas des devises différentes. Pour encaisser ou rembourser, utilisez toujours le parcours de paiement existant et ses contrôles.",
+          "en": "The summary separates the total, recorded collections, recorded refunds, net received and remaining balance. Net received is collections minus refunds; a refund does not automatically create new debt. An unknown value stays unavailable and is not zero. Currency and precision must be known; do not compare or sum different currencies. Use the existing payment flow and its checks to collect or refund money.",
+          "he": "הסיכום מפריד בין הסכום הכולל, תקבולים שנרשמו, החזרים שנרשמו, נטו שהתקבל והיתרה לתשלום. הנטו הוא התקבולים פחות ההחזרים; החזר אינו יוצר אוטומטית חוב חדש. ערך לא ידוע נשאר לא זמין ואינו אפס. נדרשים מטבע ודיוק ידועים; אין להשוות או לחבר מטבעות שונים. לגבייה או להחזר השתמשו בתהליך התשלום הקיים ובבדיקות שלו."
+        }
+      },
+      {
+        "id": "convergent-preparation",
+        "title": {
+          "fr": "Vérifier la préparation réelle",
+          "en": "Check actual preparation",
+          "he": "בדיקת ההכנה בפועל"
+        },
+        "instructions": {
+          "fr": "Un lot retenu reste en attente jusqu’à son envoi explicite. Avec plusieurs postes KDS requis, terminer un seul poste ne signifie pas que toutes les unités sont prêtes. Le KDS conserve le routage des profils de poste actuels. Lors d’une confirmation ou d’un rappel explicite, tous les postes requis pour le travail concerné sont enregistrés ensemble ; ouvrir simplement le tableau ne crée aucune preuve de préparation ou de routage historique. Une fin de préparation globale explicitement enregistrée est distinguée du paiement et de la remise. Un rappel en cuisine plus récent peut remettre les unités en préparation. Les unités ajoutées ensuite ne reprennent pas automatiquement une ancienne fin de préparation. Une augmentation de quantité ou un nouveau plat après préparation demande une nouvelle confirmation pour les nouvelles unités. Les unités déjà prêtes ne rendent pas les suivantes prêtes. Après confirmation d’une remise sur une ligne, sa quantité physique ne peut plus être modifiée ; ajoutez une nouvelle ligne pour les plats supplémentaires.",
+          "en": "A held batch remains held until explicitly fired. With multiple required KDS stations, completing one station does not mean every unit is ready. KDS retains current station-profile routing. During an explicit completion or recall, all required stations for the affected work are recorded together; opening the board alone creates no preparation or historical routing evidence. An explicitly recorded whole-batch production completion is separate from payment and handoff. A later kitchen recall can return units to preparation. Subsequently added units do not automatically inherit an earlier completion. Increasing quantity or adding food after preparation requires a new confirmation for the new units. Already-ready units do not make the next units ready. After confirming a handoff on a line, its physical quantity cannot be changed; add a new line for additional food.",
+          "he": "קבוצה בהמתנה נשארת בהמתנה עד לשיגור מפורש. כשנדרשות כמה עמדות KDS, סיום בעמדה אחת אינו אומר שכל היחידות מוכנות. ה-KDS שומר על הניתוב לפי פרופילי העמדות הנוכחיים. בעת אישור סיום או החזרה מפורשים, כל העמדות הנדרשות לעבודה הרלוונטית נרשמות יחד; פתיחת הלוח בלבד אינה יוצרת הוכחת הכנה או ניתוב היסטורי. סיום הכנה מפורש של כל הקבוצה נפרד מתשלום וממסירה. החזרה מאוחרת יותר להכנה יכולה להחזיר יחידות למצב בהכנה. יחידות שנוספו לאחר מכן אינן יורשות אוטומטית סיום קודם. הגדלת כמות או הוספת מנה לאחר ההכנה מחייבות אישור חדש ליחידות החדשות. יחידות שכבר מוכנות אינן הופכות את הבאות למוכנות. לאחר אישור מסירה בשורה לא ניתן לשנות את הכמות הפיזית שלה; למנות נוספות יש להוסיף שורה חדשה."
+        }
+      },
+      {
+        "id": "quantity-handoff-review",
+        "title": {
+          "fr": "Confirmer une remise par quantité",
+          "en": "Confirm handoff by quantity",
+          "he": "אישור מסירה לפי כמות"
+        },
+        "instructions": {
+          "fr": "Dans les actions de la commande enregistrée, ouvrez la revue de remise. Vérifiez la commande ou l’addition concernée, les articles, variantes et quantités physiques. Sélectionnez seulement les unités réellement servies ou retirées, puis confirmez l’action proposée. Les unités restantes gardent leur état. Le partage d’une addition ne multiplie pas les plats et une remise sur une commande QR ne remet pas celles des autres clients. La confirmation enregistre la remise ; elle n’encaisse pas d’argent, ne renvoie rien en cuisine et ne libère pas la table.",
+          "en": "From a saved order’s actions, open the handoff review. Check the order or check scope, items, variants and physical quantities. Select only the units actually served or collected, then confirm the offered action. Remaining units retain their state. Splitting a check does not multiply food, and handing over one QR order does not hand over other guests’ orders. Confirmation records handoff; it does not collect money, resend kitchen work or release the table.",
+          "he": "בפעולות של הזמנה שמורה פתחו את סקירת המסירה. בדקו את ההזמנה או החשבון הרלוונטי, הפריטים, הגרסאות והכמויות הפיזיות. בחרו רק יחידות שהוגשו או נאספו בפועל ואשרו את הפעולה המוצעת. שאר היחידות שומרות על מצבן. פיצול חשבון אינו מכפיל מנות, ומסירת הזמנת QR אחת אינה מוסרת את הזמנות האורחים האחרים. האישור רושם מסירה; הוא אינו גובה כסף, אינו שולח שוב למטבח ואינו משחרר את השולחן."
+        }
+      },
+      {
+        "id": "courier-handoff-and-delivery",
+        "title": {
+          "fr": "Séparer la remise au livreur et la livraison",
+          "en": "Separate courier handoff from delivery",
+          "he": "הפרדה בין מסירה לשליח לבין מסירה ללקוח"
+        },
+        "instructions": {
+          "fr": "Pour une livraison, confirmez d’abord les unités remises au livreur. Elles sont en cours de livraison ; cela ne prouve pas leur réception par le client. Confirmez ensuite uniquement les unités effectivement livrées. Les affectations et les contrôles de tournée existants restent nécessaires. Un départ du livreur ne renseigne pas à lui seul une heure de réception client.",
+          "en": "For delivery, first confirm the units handed to the courier. They are in transit; this is not proof of customer receipt. Subsequently confirm only units actually delivered. Existing courier assignment and route checks remain required. Courier departure alone does not record a customer receipt time.",
+          "he": "במשלוח אשרו תחילה את היחידות שנמסרו לשליח. הן בדרך; זו אינה הוכחה שהלקוח קיבל אותן. לאחר מכן אשרו רק יחידות שנמסרו ללקוח בפועל. בדיקות שיוך השליח והמסלול הקיימות עדיין נדרשות. יציאת השליח לבדה אינה רושמת שעת קבלה אצל הלקוח."
+        }
+      },
+      {
+        "id": "explicit-commercial-closure",
+        "title": {
+          "fr": "Clôturer la bonne portée commerciale",
+          "en": "Close the correct commercial scope",
+          "he": "סגירת החשבון המסחרי הנכון"
+        },
+        "instructions": {
+          "fr": "Ouvrez la revue de clôture et vérifiez sa portée : commande de comptoir autonome, addition, part financière ou visite à table. Si la commande dépend d’une addition, examinez cette addition avant de la clôturer ; ne déduisez pas son état du paiement d’un seul lot. La clôture exige un solde confirmé nul et l’absence d’opération financière incertaine. Elle bloque les nouvelles modifications commerciales de cette portée, sans clôturer ses voisines. Elle ne signifie ni fin de préparation, ni remise, ni libération de table. Les règles existantes de libération restent applicables. Une ancienne commande payée sans preuve de clôture reste inconnue.",
+          "en": "Open the closure review and check its scope: a standalone counter order, check, financial portion or table visit. If the order belongs to a check, review that check before closing it; one paid batch does not determine the parent’s state. Closure requires a confirmed zero balance and no uncertain financial operation. It prevents new commercial changes to that scope without closing neighboring scopes. It does not mean preparation is finished, food is handed over or the table is released. Existing table-release rules remain applicable. A historical paid order without closure evidence remains unknown.",
+          "he": "פתחו את סקירת הסגירה ובדקו את ההיקף: הזמנת דלפק עצמאית, חשבון, חלק כספי או ביקור בשולחן. אם ההזמנה שייכת לחשבון, בדקו אותו לפני סגירתו; קבוצה אחת ששולמה אינה קובעת את מצב החשבון כולו. נדרשת יתרה מאושרת של אפס וללא פעולה כספית שתוצאתה לא ודאית. הסגירה מונעת שינויים מסחריים חדשים באותו היקף בלי לסגור היקפים אחרים. היא אינה אומרת שההכנה הסתיימה, שהאוכל נמסר או שהשולחן שוחרר. כללי שחרור השולחן הקיימים ממשיכים לחול. הזמנה היסטורית ששולמה ללא הוכחת סגירה נשארת לא ידועה."
+        }
+      },
+      {
+        "id": "frozen-tracking-policy",
+        "title": {
+          "fr": "Régler le suivi pour les prochaines ventes",
+          "en": "Configure tracking for new sales",
+          "he": "הגדרת מעקב למכירות חדשות"
+        },
+        "instructions": {
+          "fr": "Dans FoodyAdmin, ouvrez les modes de traitement du système de caisse et modifiez le mode concerné. Réglez séparément le suivi de préparation et le suivi de remise, puis enregistrez. Ces réglages globaux concernent les nouvelles ventes ; ils sont conservés avec chaque nouvelle commande et ne réinterprètent pas les précédentes. « Non suivi » est un choix explicite ; « Inconnu » indique une information absente. Désactiver le suivi ne rend pas les plats prêts ou remis et ne règle aucun paiement.",
+          "en": "In FoodyAdmin, open POS fulfillment methods and edit the relevant method. Configure preparation tracking and handoff tracking separately, then save. These global settings apply to new sales; each new order retains its policy and previous orders are not reinterpreted. Not tracked is an explicit choice; unknown means evidence is missing. Turning tracking off does not mark food ready or handed over and does not settle a payment.",
+          "he": "בניהול Foody פתחו את שיטות הטיפול של הקופה וערכו את השיטה המתאימה. הגדירו בנפרד מעקב הכנה ומעקב מסירה ושמרו. ההגדרות הכלליות חלות על מכירות חדשות; כל הזמנה חדשה שומרת את המדיניות שלה והזמנות קודמות אינן מפורשות מחדש. ללא מעקב הוא בחירה מפורשת; לא ידוע מציין מידע חסר. כיבוי מעקב אינו מסמן אוכל כמוכן או כנמסר ואינו מסדיר תשלום."
+        }
+      },
+      {
+        "id": "uncertain-operation-recovery",
+        "title": {
+          "fr": "Reprendre une confirmation incertaine",
+          "en": "Recover an unconfirmed operation",
+          "he": "טיפול בפעולה שלא אושרה"
+        },
+        "instructions": {
+          "fr": "Après une réponse perdue ou une erreur de connexion lors d’une remise ou clôture, conservez l’opération en attente et vérifiez son résultat. L’absence de confirmation ne prouve pas un échec. Ne recréez pas une nouvelle action pour les mêmes unités. Le parcours de reprise vérifie l’identifiant original ; si une nouvelle tentative est proposée, elle conserve la même intention et le même identifiant. Un changement d’employé, de restaurant ou de portée impose de revenir au contexte original. Si les unités ou la commande ont changé, rechargez et revoyez la situation avant toute nouvelle action. Les opérations de paiement gardent leur propre parcours de reprise.",
+          "en": "After a lost response or connection error during handoff or closure, retain the pending operation and check its result. Missing confirmation does not prove failure. Do not create a new action for the same units. Recovery checks the original operation ID; an offered retry preserves the same intent and ID. If the employee, restaurant or scope changes, return to the original context. If units or the order have changed, reload and review before a new action. Payment operations retain their own recovery flow.",
+          "he": "לאחר אובדן תשובה או שגיאת חיבור במהלך מסירה או סגירה, שמרו את הפעולה הממתינה ובדקו את תוצאתה. היעדר אישור אינו מוכיח כישלון. אל תיצרו פעולה חדשה לאותן יחידות. ההתאוששות בודקת את מזהה הפעולה המקורי; ניסיון חוזר שמוצע שומר את אותה כוונה ואת אותו מזהה. אם העובד, המסעדה או ההיקף השתנו, חזרו להקשר המקורי. אם היחידות או ההזמנה השתנו, רעננו ובדקו לפני פעולה חדשה. פעולות תשלום שומרות על תהליך התאוששות משלהן."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-27"
+    "procedureUpdatedAt": "2026-10-29"
   },
   {
     "id": "orders-internal-sumit-checkout",
@@ -14549,6 +14922,19 @@
           "fr": "Le panier préparé est figé tant que le paiement est en attente. Pour changer articles, remise ou devis de traitement, annulez-le puis préparez un remplacement après vérification du paiement. Les coordonnées sont liées à la première ouverture du paiement ; Reprendre le même paiement les conserve. Si le résultat est incertain, vérifiez cette commande et Sumit avant de créer ou d’encaisser un autre paiement. Une erreur fournisseur ou d’enregistrement peut bloquer la reprise pour vérification. Un lien invalide, expiré ou clôturé, ou le remplacement de Sumit par un autre fournisseur, nécessite de contacter le restaurant. Ces parcours n’enregistrent pas de carte réutilisable, n’envoient pas le lien automatiquement et ne confirment pas d’envoi en cuisine avant paiement.",
           "he": "הסל שהוכן נעול בזמן ההמתנה לתשלום. לשינוי פריטים, הנחה או הצעת האספקה, בטלו אותו והכינו חלופה רק אחרי בדיקת מצב התשלום. הפרטים נקשרים בפתיחת התשלום הראשונה; המשך לאותו תשלום שומר אותם. אם התוצאה אינה ודאית, בדקו את ההזמנה ואת Sumit לפני יצירה או גבייה של תשלום נוסף. כשל ספק או שמירה עלול להשאיר את התשלום חסום לבדיקה. קישור לא תקין, שפג תוקפו או נסגר, או מעבר מספק Sumit, מחייב פנייה למסעדה. המסלולים אינם שומרים כרטיס לשימוש חוזר, אינם שולחים קישור אוטומטית ואינם מאשרים משלוח למטבח לפני תשלום."
         }
+      },
+      {
+        "id": "independent-lifecycle-confirmations",
+        "title": {
+          "fr": "Vérifier les confirmations indépendantes",
+          "en": "Review independent confirmations",
+          "he": "בדיקת אישורים נפרדים"
+        },
+        "instructions": {
+          "fr": "Le récapitulatif distingue les encaissements et remboursements enregistrés, le net reçu et le reste dû. Une valeur inconnue n’est pas zéro ; un remboursement ne recrée pas automatiquement une dette. Ce récapitulatif n’autorise aucun nouveau débit et les parcours financiers existants restent nécessaires. Voir [les montants enregistrés](/fr/help/orders/payment-preparation-and-handoff#recorded-money-summary).",
+          "en": "The summary distinguishes recorded collections and refunds, net received and the remaining balance. An unknown value is not zero; a refund does not automatically recreate debt. The summary authorizes no new charge and existing financial flows remain required. See [recorded amounts](/en/help/orders/payment-preparation-and-handoff#recorded-money-summary).",
+          "he": "הסיכום מפריד בין תקבולים והחזרים שנרשמו, הנטו שהתקבל והיתרה. ערך לא ידוע אינו אפס; החזר אינו יוצר מחדש חוב אוטומטית. הסיכום אינו מאשר חיוב חדש ועדיין נדרשים התהליכים הכספיים הקיימים. ראו [סכומים שנרשמו](/he/help/orders/payment-preparation-and-handoff#recorded-money-summary)."
+        }
       }
     ]
   },
@@ -14600,6 +14986,13 @@
         "lib/i18n.tsx",
         "lib/types.ts",
         "services/api.ts"
+      ],
+      "foodypos": [
+        "lib/features/orders/domain/order.dart",
+        "lib/features/orders/**/cash_guarantee*.dart",
+        "lib/features/orders/online/presentation/order_details_page.dart",
+        "lib/features/orders/presentation/widgets/check_panel.dart",
+        "lib/features/orders/presentation/financial_check_page.dart"
       ]
     },
     "operations": [
@@ -14654,10 +15047,119 @@
           "fr": "Choisissez Vérifier la réservation pour relire l’état faisant autorité. Après un encaissement ou une annulation incertains, ne relancez pas le débit et ne créez pas une seconde commande : Foody conserve l’opération unique et vérifie son résultat. Une libération toujours non confirmée exige un contrôle dans Stancer par un opérateur autorisé ; son effet bancaire immédiat n’est pas promis. Annulez ou refusez par l’action habituelle de commande ; Foody exige une libération confirmée avant de terminer. Une garantie active bloque les modifications de panier, remise et livraison/retrait ; annulez avec libération la commande existante avant son remplacement. Changer de prestataire ne supprime aucune réservation existante. Si la règle enregistrée devient incompatible, elle reste visible pour désactivation explicite et le checkout espèces est bloqué. Déployez la migration 282 et l’API avant Admin et le site client ; coordonnez activation réelle et publication documentaire avec les tests d’acceptation. Une réservation active bloque aussi la suppression définitive de la commande. Un ancien lien Stancer peut afficher un message de paiement générique après annulation ; utilisez l’état de réservation vérifié par Foody comme preuve du résultat financier.",
           "he": "בחרו בבדיקת השריון לקריאת המצב הקובע. לאחר חיוב או ביטול שתוצאתם אינה ברורה, אל תחזרו על החיוב ואל תיצרו הזמנה שנייה: Foody שומרת על הפעולה היחידה ובודקת את תוצאתה. שחרור שלא אושר דורש בדיקה ב-Stancer בידי מפעיל מורשה; אין הבטחה לשחרור בנקאי מיידי. בטלו או דחו דרך פעולת ההזמנה הרגילה; נדרש שחרור מאושר לפני סיום הביטול. ערבות פעילה חוסמת שינוי סל, הנחה ומימוש; בטלו ושחררו את ההזמנה הקיימת לפני החלפתה. שינוי ספק אינו מוחק שריון קיים. אם הכלל השמור אינו נתמך עוד, הוא נשאר גלוי לביטול מפורש ותשלום מקוון במזומן נחסם. פרסו מיגרציה 282 ואת השרת לפני ממשק הניהול ואתר הלקוח; תאמו הפעלה אמיתית ופרסום התיעוד עם בדיקות הקבלה. שריון פעיל חוסם גם מחיקה סופית של ההזמנה. עמוד Stancer שנעשה בו שימוש עשוי להציג הודעת תשלום כללית לאחר ביטול; הסתמכו על מצב השריון המאומת ב-Foody כהוכחה לתוצאה הכספית."
         }
+      },
+      {
+        "id": "cash-guarantee-lifecycle-facts",
+        "title": {
+          "fr": "Distinguer garantie et encaissement",
+          "en": "Distinguish a guarantee from money received",
+          "he": "הבחנה בין ערבות לתקבול"
+        },
+        "instructions": {
+          "fr": "Une carte réservée en garantie n’est pas un encaissement. Les espèces confirmées restent comptées même si la libération attend vérification ; un débit de garantie ne compte qu’après confirmation de la capture, une seule fois. Un résultat incertain doit être vérifié dans l’opération existante avant toute nouvelle collecte. Les autorisations et les restrictions d’action de la garantie restent applicables.",
+          "en": "A card held as a guarantee is not money received. Confirmed cash remains counted even while release awaits verification; a guarantee charge counts only after capture is confirmed, once. An uncertain result must be checked on the existing operation before another collection. The guarantee permissions and action restrictions still apply.",
+          "he": "כרטיס שמור לערבות אינו תקבול. מזומן שאושר ממשיך להיספר גם כששחרור הערבות ממתין לבדיקה; חיוב ערבות נספר רק לאחר אישור החיוב, פעם אחת. יש לבדוק תוצאה לא ודאית בפעולה הקיימת לפני גבייה נוספת. הרשאות הערבות והגבלות הפעולה שלה ממשיכות לחול."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
-    "procedureUpdatedAt": "2026-10-29"
+    "procedureUpdatedAt": "2026-10-30"
+  },
+  {
+    "id": "pos-end-of-day",
+    "module": "payments",
+    "article": "payments/end-of-day",
+    "title": {
+      "fr": "Clôture de journée et rapport Z Foody",
+      "en": "End of day and the Foody Z report",
+      "he": "סגירת יום ודוח Z של Foody"
+    },
+    "entry": {
+      "fr": "Plus → Rapports → Clôture de journée, sur le POS concerné. Nécessite le POS et l’API compatibles ; ce guide ne confirme pas leur installation.",
+      "en": "More → Reports → End of day, on the relevant POS. Requires matching POS and API versions; this guide does not confirm installation.",
+      "he": "עוד ← דוחות ← סגירת יום, בקופה הרלוונטית. נדרשות גרסאות תואמות של הקופה וה־API; המדריך אינו מאשר שהן הותקנו."
+    },
+    "selectors": {
+      "foodypos": [
+        "lib/features/more/**/end_of_day*",
+        "lib/services/payments/terminal_payment_service.dart",
+        "lib/features/orders/data/financial_check_repository.dart",
+        "lib/core/ui/terminal_payment_error.dart",
+        "lib/features/more/data/cash_drawer_repository.dart",
+        "lib/features/more/presentation/cash_drawer_page.dart",
+        "lib/features/orders/presentation/cash_collection_guard.dart",
+        "lib/features/orders/presentation/financial_check_page.dart",
+        "lib/features/orders/presentation/widgets/check_panel.dart",
+        "lib/features/orders/online/presentation/order_details_page.dart",
+        "lib/features/orders/presentation/cash_payment_dialog.dart"
+      ],
+      "foodyserver": [
+        "internal/common/end_of_day*.go",
+        "internal/orders/end_of_day*.go",
+        "migrations/285_end_of_day.sql",
+        "internal/common/financial_check.go",
+        "internal/orders/financial_check_payment.go",
+        "internal/orders/cash_drawer.go"
+      ]
+    },
+    "operations": [
+      {
+        "id": "end-of-day-scope",
+        "title": {
+          "fr": "Vérifier ce que couvre la clôture",
+          "en": "Check the closing scope",
+          "he": "בדיקת היקף הסגירה"
+        },
+        "instructions": {
+          "fr": "La clôture réunit le comptage des espèces du POS courant et la transmission des terminaux explicitement inclus. Elle ne termine aucune période de travail, ne paie aucune commande et ne libère aucune table. Elle ne certifie pas la clôture de tous les appareils du restaurant. Le journal espèces et les opérations carte restent distincts. Une journée peut comporter seulement des espèces ou seulement un terminal ; une caisse ouverte sur ce POS doit être incluse. Les paiements financiers enregistrés avec cette installation sont conservés dans le rapport. Les paiements carte sans attribution durable au POS, les autres POS et les paiements web ne sont pas ajoutés à ces totaux. Une couverture partielle ne constitue pas un rapprochement complet du terminal. Le rapport Z Foody est un document opérationnel archivé, sans garantie de certification fiscale ni de versement bancaire. GBX transmet automatiquement selon Verifone ; aucun envoi GBX n’est déclenché par ce parcours.\n\nAvant de l’utiliser, mettez à jour tous les POS partageant le terminal : un ancien binaire peut transmettre sans ce journal. Ne rétrogradez pas l’API ou le POS avec une clôture en attente ; conservez les journaux et faites vérifier la reprise.",
+          "en": "Closing brings together the current POS cash count and transmission of the explicitly included terminals. It does not end attendance, pay an order or release a table. It does not certify closure of every device in the restaurant. Cash and card records remain separate. A day may have cash only or a terminal only; any open drawer on this POS must be included. Financial payment records attributed to this installation are retained in the report. Card payments without durable POS attribution, other POS devices and web payments are not added to those totals. Partial coverage is not a complete terminal reconciliation. The Foody Z report is an archived operational document, with no fiscal-certification or bank-transfer guarantee. GBX transmits automatically according to Verifone; this flow initiates no GBX transmission.\n\nBefore using it, update every POS sharing the terminal: an older binary can transmit without this journal. Do not downgrade the API or POS with an unfinished closing operation; preserve its journals and have recovery reviewed.",
+          "he": "הסגירה מרכזת את ספירת המזומן בקופה הנוכחית ואת שידור המסופים שנכללו במפורש. היא אינה מסיימת משמרת, אינה משלמת הזמנה ואינה מפנה שולחן. היא אינה מאשרת סגירה של כל מכשירי המסעדה. רישומי המזומן והכרטיסים נשארים נפרדים. יום יכול לכלול מזומן בלבד או מסוף בלבד; חובה לכלול מגירה פתוחה בקופה הזו. הדוח שומר תשלומים פיננסיים ששויכו להתקנה הזו. תשלומי כרטיס ללא שיוך קבוע לקופה, קופות אחרות ותשלומי אתר אינם מתווספים לסכומים האלה. כיסוי חלקי אינו התאמה מלאה למסוף. דוח Z של Foody הוא מסמך תפעולי שמור, ללא הבטחת הסמכה פיסקלית או העברה בנקאית. לפי Verifone, השידור ב־GBX אוטומטי; המסלול אינו מפעיל שידור GBX.\n\nלפני השימוש עדכנו את כל הקופות המשתמשות באותו מסוף: גרסה ישנה יכולה לשדר בלי היומן הזה. אין להחזיר API או קופה לגרסה קודמת בזמן סגירה שלא הושלמה; שמרו את היומנים ובקשו לבדוק את השחזור."
+        }
+      },
+      {
+        "id": "end-of-day-run",
+        "title": {
+          "fr": "Compter, transmettre et archiver",
+          "en": "Count, transmit and archive",
+          "he": "ספירה, שידור ושמירה"
+        },
+        "instructions": {
+          "fr": "Avec payments.manage, ouvrez Clôture de journée sur le POS d’origine. Une clôture incluant des espèces exige aussi orders.manage. Vérifiez les éléments affichés ; comptez physiquement les espèces si une caisse est ouverte et saisissez le montant réel. Le début de clôture fige le comptage et réserve cette caisse : aucune nouvelle vente espèces, entrée/sortie, restitution ou clôture parallèle ne doit modifier ce comptage. Si un terminal est inclus, le Victa Mini configuré doit être connecté sur iPad, ou le terminal intégré doit être prêt sur Victa Portable. En fin de journée, confirmez la transmission une seule fois et attendez son résultat final. Une commande acceptée ne prouve pas une transmission terminée. Les totaux et le numéro de lot restent indisponibles si la réponse prise en charge ne les fournit pas ; ne les interprétez pas comme zéro. Lorsque les transmissions incluses sont confirmées, finalisez explicitement la clôture. Le serveur ferme uniquement la caisse réservée, si elle existe, et archive le rapport Z Foody figé. Consultez ce rapport dans le même parcours ; aucune impression physique n’est garantie. Ne répétez pas régulièrement le dépôt pendant la journée.",
+          "en": "With payments.manage, open End of day on the original POS. Including cash also requires orders.manage. Check the displayed scope; physically count any open drawer and enter the actual amount. Beginning closing freezes the count and reserves that drawer: new cash sales, paid in/out, refunds or a parallel closing cannot change this count. If a terminal is included, the configured Victa Mini must be connected on iPad, or the integrated terminal must be ready on Victa Portable. At end of day, explicitly confirm transmission once and wait for its final result. Command acceptance does not prove completed transmission. Totals and the batch number remain unavailable if the supported response does not supply them; never interpret them as zero. After all included transmissions are confirmed, explicitly finalize closing. The server closes only the reserved drawer, if present, and archives the frozen Foody Z report. View it in the same flow; no physical print is guaranteed. Do not deposit repeatedly during the day.",
+          "he": "עם הרשאת payments.manage פתחו סגירת יום בקופה המקורית. הכללת מזומן דורשת גם orders.manage. בדקו את ההיקף המוצג; ספרו פיזית מגירה פתוחה והזינו את הסכום בפועל. התחלת הסגירה מקפיאה את הספירה ושומרת את המגירה: מכירות מזומן חדשות, הכנסות והוצאות, החזרים או סגירה מקבילה לא יכולים לשנות אותה. אם נכלל מסוף, ב־iPad יש לחבר את ה־Victa Mini שהוגדר, או שהמסוף המובנה ב־Victa Portable חייב להיות מוכן. בסוף היום אשרו שידור פעם אחת והמתינו לתוצאה הסופית. קבלת הפקודה אינה הוכחה לשידור שהושלם. סכומים ומספר אצווה נשארים לא זמינים אם התשובה הנתמכת אינה מספקת אותם; אין לפרש אותם כאפס. לאחר שכל השידורים שנכללו אושרו, השלימו את הסגירה במפורש. השרת סוגר רק את המגירה שנשמרה, אם קיימת, ושומר את דוח Z הקבוע של Foody. צפו בדוח באותו מסלול; אין הבטחה להדפסה פיזית. אין לבצע הפקדות חוזרות באופן תדיר במהלך היום."
+        }
+      },
+      {
+        "id": "end-of-day-recovery",
+        "title": {
+          "fr": "Reprendre sans transmettre deux fois",
+          "en": "Recover without transmitting twice",
+          "he": "שחזור ללא שידור כפול"
+        },
+        "instructions": {
+          "fr": "Une erreur ou une réponse perdue ne prouve pas que le dépôt a échoué. Conservez le POS, sa configuration et ses journaux ; ne supprimez pas les données locales et ne créez pas une autre clôture pour contourner le blocage. Rouvrez le parcours sur ce POS. Une confirmation déjà conservée est relue avec la même identité, sans nouvelle transmission. Si le terminal a confirmé mais que l’API n’a pas encore enregistré le résultat ou le rapport, reprenez cet enregistrement ; aucun nouvel encaissement ou dépôt n’est nécessaire. Si aucune confirmation durable n’est disponible, le résultat reste incertain : faites vérifier le lot sur le terminal ou auprès du prestataire avant toute intervention. Une vérification manuelle ne fabrique pas une confirmation automatique dans le rapport. Pendant une opération en attente, les nouvelles cartes restent bloquées par le journal terminal. Changer de compte, de restaurant ou de terminal ne transfère pas la preuve au nouveau contexte. Les essais matériels Mini et Portable restent à réaliser sur leur configuration réelle ; ce guide ne les certifie pas.",
+          "en": "An error or lost response does not prove the deposit failed. Preserve the POS, its configuration and journals; do not clear local data or create another closing to bypass a block. Reopen this flow on the same POS. An already retained confirmation is read with the same identity without another transmission. If the terminal confirmed but the API has not yet recorded the result or report, resume that recording; no new payment or deposit is needed. Without a durable confirmation, the result remains uncertain: have the terminal batch or provider checked before any intervention. Manual verification does not fabricate an automatic confirmation in the report. The terminal journal blocks new cards while an operation is pending. Changing staff, restaurant or terminal does not transfer proof to the new context. Mini and Portable hardware acceptance must still be performed on the actual configuration; this guide does not certify it.",
+          "he": "שגיאה או תשובה שאבדה אינן הוכחה לכישלון ההפקדה. שמרו את הקופה, ההגדרות והיומנים שלה; אין למחוק נתונים מקומיים או ליצור סגירה אחרת כדי לעקוף חסימה. פתחו שוב את המסלול באותה קופה. אישור שכבר נשמר נקרא עם אותו מזהה בלי שידור נוסף. אם המסוף אישר אך ה־API טרם שמר את התוצאה או הדוח, המשיכו את השמירה; אין צורך בתשלום או בהפקדה חדשים. בלי אישור קבוע התוצאה נשארת לא ודאית: יש לבדוק את האצווה במסוף או מול הספק לפני התערבות. בדיקה ידנית אינה מייצרת אישור אוטומטי בדוח. יומן המסוף חוסם כרטיסים חדשים בזמן פעולה ממתינה. שינוי עובד, מסעדה או מסוף אינו מעביר הוכחה להקשר החדש. עדיין יש לבצע בדיקות חומרה ב־Mini וב־Portable בתצורה האמיתית; המדריך אינו מסמיך אותן."
+        }
+      },
+      {
+        "id": "end-of-day-cash-reservation",
+        "title": {
+          "fr": "Résoudre les espèces en attente",
+          "en": "Resolve pending cash operations",
+          "he": "טיפול בפעולות מזומן ממתינות"
+        },
+        "instructions": {
+          "fr": "Avant de commencer, reprenez toute opération espèces encore en attente : suivez le lien vers Solde en caisse pour une opération de tiroir, ou vers Commandes pour retrouver l’encaissement concerné. Son identité est conservée tant que son résultat reste incertain ; ne créez pas une seconde opération pour la remplacer. Une fois la caisse réservée pour la clôture, son rapport reste consultable, mais les encaissements espèces, mouvements et clôtures séparées sont bloqués. Le contrôle de caisse et du contexte personnel est répété à la confirmation, avant toute ouverture de tiroir ou validation de collecte. Un contrôle de caisse précède aussi l’ouverture du dialogue de paiement espèces ; si la lecture échoue, ne collectez pas d’espèces à partir de ce dialogue. Avec les droits nécessaires, le message de réservation permet de rejoindre Clôture de journée. Un refus explicitement confirmé par le serveur libère une demande rejetée ; une erreur réseau ne la libère pas. Reprenez la clôture existante au lieu de contourner la réservation.",
+          "en": "Before starting, recover any pending cash operation: follow the link to Cash balance for a drawer operation, or to Orders to find the affected collection. Its identity is retained while the result is uncertain; do not create a second operation to replace it. Once the drawer is reserved for closing, its report remains readable, but cash collections, movements and separate closing actions are blocked. The drawer and personal context are checked again at confirmation, before any drawer opening or collection confirmation. A current drawer check also precedes the cash tender dialog; if that read fails, do not collect cash through this dialog. With the required permissions, the reservation notice links to End of day. Only an explicit server-confirmed rejection releases a rejected request; a network error does not. Resume the existing closing instead of bypassing its reservation.",
+          "he": "לפני ההתחלה שחזרו כל פעולת מזומן ממתינה: פעלו לפי הקישור ליתרת הקופה לפעולת מגירה, או להזמנות כדי למצוא את הגבייה הרלוונטית. זהות הפעולה נשמרת כל עוד התוצאה אינה ודאית; אין ליצור פעולה שנייה במקומה. לאחר שהמגירה נשמרה לסגירת היום, אפשר עדיין לקרוא את הדוח, אך גביית מזומן, תנועות וסגירה נפרדת נחסמות. המגירה וההקשר האישי נבדקים שוב בעת האישור, לפני פתיחת מגירה או אישור גבייה. בדיקת מגירה עדכנית מתבצעת גם לפני פתיחת חלון תשלום במזומן; אם הקריאה נכשלת, אין לגבות מזומן דרך החלון הזה. עם ההרשאות הדרושות, הודעת השמירה מקשרת לסגירת יום. רק דחייה מפורשת שאושרה בשרת משחררת בקשה שנדחתה; שגיאת רשת אינה משחררת אותה. המשיכו את הסגירה הקיימת במקום לעקוף את שמירת המגירה."
+        }
+      }
+    ],
+    "audience": "public",
+    "status": "local-release-unverified",
+    "preserveExisting": false,
+    "procedureUpdatedAt": "2026-10-30"
   }
 ]

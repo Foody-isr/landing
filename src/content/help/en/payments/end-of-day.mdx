@@ -1,0 +1,44 @@
+---
+title: End of day and the Foody Z report
+description: >-
+  More → Reports → End of day, on the relevant POS. Requires matching POS and API versions; this guide does not confirm
+  installation.
+apps: foodypos
+tags:
+  - payments
+  - pos-end-of-day
+updatedAt: '2026-10-30'
+featureId: pos-end-of-day
+audience: public
+releaseStatus: local-release-unverified
+---
+More → Reports → End of day, on the relevant POS. Requires matching POS and API versions; this guide does not confirm installation.
+
+> **Release availability must be confirmed**
+> This application exists in the source workspace. This guide does not confirm public distribution or availability in your installed release.
+
+<span id="end-of-day-scope" />
+
+## Check the closing scope
+
+Closing brings together the current POS cash count and transmission of the explicitly included terminals. It does not end attendance, pay an order or release a table. It does not certify closure of every device in the restaurant. Cash and card records remain separate. A day may have cash only or a terminal only; any open drawer on this POS must be included. Financial payment records attributed to this installation are retained in the report. Card payments without durable POS attribution, other POS devices and web payments are not added to those totals. Partial coverage is not a complete terminal reconciliation. The Foody Z report is an archived operational document, with no fiscal-certification or bank-transfer guarantee. GBX transmits automatically according to Verifone; this flow initiates no GBX transmission.
+
+Before using it, update every POS sharing the terminal: an older binary can transmit without this journal. Do not downgrade the API or POS with an unfinished closing operation; preserve its journals and have recovery reviewed.
+
+<span id="end-of-day-run" />
+
+## Count, transmit and archive
+
+With payments.manage, open End of day on the original POS. Including cash also requires orders.manage. Check the displayed scope; physically count any open drawer and enter the actual amount. Beginning closing freezes the count and reserves that drawer: new cash sales, paid in/out, refunds or a parallel closing cannot change this count. If a terminal is included, the configured Victa Mini must be connected on iPad, or the integrated terminal must be ready on Victa Portable. At end of day, explicitly confirm transmission once and wait for its final result. Command acceptance does not prove completed transmission. Totals and the batch number remain unavailable if the supported response does not supply them; never interpret them as zero. After all included transmissions are confirmed, explicitly finalize closing. The server closes only the reserved drawer, if present, and archives the frozen Foody Z report. View it in the same flow; no physical print is guaranteed. Do not deposit repeatedly during the day.
+
+<span id="end-of-day-recovery" />
+
+## Recover without transmitting twice
+
+An error or lost response does not prove the deposit failed. Preserve the POS, its configuration and journals; do not clear local data or create another closing to bypass a block. Reopen this flow on the same POS. An already retained confirmation is read with the same identity without another transmission. If the terminal confirmed but the API has not yet recorded the result or report, resume that recording; no new payment or deposit is needed. Without a durable confirmation, the result remains uncertain: have the terminal batch or provider checked before any intervention. Manual verification does not fabricate an automatic confirmation in the report. The terminal journal blocks new cards while an operation is pending. Changing staff, restaurant or terminal does not transfer proof to the new context. Mini and Portable hardware acceptance must still be performed on the actual configuration; this guide does not certify it.
+
+<span id="end-of-day-cash-reservation" />
+
+## Resolve pending cash operations
+
+Before starting, recover any pending cash operation: follow the link to Cash balance for a drawer operation, or to Orders to find the affected collection. Its identity is retained while the result is uncertain; do not create a second operation to replace it. Once the drawer is reserved for closing, its report remains readable, but cash collections, movements and separate closing actions are blocked. The drawer and personal context are checked again at confirmation, before any drawer opening or collection confirmation. A current drawer check also precedes the cash tender dialog; if that read fails, do not collect cash through this dialog. With the required permissions, the reservation notice links to End of day. Only an explicit server-confirmed rejection releases a rejected request; a network error does not. Resume the existing closing instead of bypassing its reservation.

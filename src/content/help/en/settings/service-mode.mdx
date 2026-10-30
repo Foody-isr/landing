@@ -9,7 +9,7 @@ tags:
   - table-mode
   - counter-mode
   - workflow
-updatedAt: '2026-10-18'
+updatedAt: '2026-10-29'
 featureId: pos-service-modes
 audience: public
 releaseStatus: available
@@ -57,3 +57,9 @@ With settings-edit permission, open an existing mode through Manage and choose D
 ## Return home after sending and start a fresh sale
 
 In the effective device mode, open Open checks, enable Use on this mode and Use Open Tickets as the home screen, then Save. Refresh settings on the POS. After a confirmed Send, a table check returns to the floor plan and a named check returns to open checks. Returning to Menu opens a separate empty sale; it does not reopen or erase the sent check. Reopen the saved check from its table or open-check list to add more dishes. The original customer, bill and kitchen batches remain there. Continue/Send and stay retains the current check. Failed sending or a changed restaurant, permission or editor context does not detach the source. Another unsent counter basket is not cleared. With the home setting disabled this new-sale handoff is not applied. All saved orders remain tracked on POS and Admin; payment, preparation and check closure stay independent.
+
+<span id="independent-lifecycle-confirmations" />
+
+## Review independent confirmations
+
+POS fulfillment methods provide separate preparation and handoff tracking. Save the method’s policy in the global catalog. It applies to new sales and remains frozen with them; later changes do not rewrite history. Shared device-mode modules remain distinct from this global policy. See [tracking settings](/en/help/orders/payment-preparation-and-handoff#frozen-tracking-policy).
