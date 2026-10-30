@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - delivery
   - courier
-updatedAt: '2026-10-28'
+updatedAt: '2026-10-30'
 featureId: courier
 audience: public
 releaseStatus: available
@@ -69,3 +69,5 @@ With compatible API and Admin versions, sign in as the relevant restaurant’s o
 ## Check the courier’s live position
 
 The courier must open Foody on their phone with their own account, start their route and allow location access. Keep Foody visible with an Internet connection. GPS readings are sent to Foody at most once every ten seconds, subject to browser updates; this frequency is not guaranteed. The marker titled Courier position shows the last received location in Deliveries and Courier mode. The green triangle remains the planned departure point. The displayed time is when the position was received; after more than one minute, it is labelled old and the marker fades. A message identifies a missing position. Courier mode distinguishes waiting for GPS, denied permission, unavailable GPS and transmission failure. Correct permissions or connectivity, then choose Retry. These states never confirm a delivery. Opening Waze, switching apps or locking the phone can interrupt web tracking: return to Foody to resume. View as courier displays the selected courier’s received position and never sends the manager’s location. Sharing GPS and moving the marker make no Google calls; map background loads and route recalculations retain their own usage.
+
+The courier is represented by a round avatar above delivery pins, with an always-visible label. An old position retains its avatar and the Old courier position label. Initial framing includes the last received position; in Courier mode, Fit the whole route brings it back into view with the stops. GPS updates move the avatar without automatically recentering the map.
