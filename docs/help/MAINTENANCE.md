@@ -1217,3 +1217,23 @@ reviewed in FR/HE/EN, with exact API source evidence; other order-entry and API
 procedures on the shared production source retain their scoped reviews.
 The full race-validation job has a 60-minute budget because the prior cold run
 exhausted 25 minutes during compilation; its test commands are unchanged.
+
+
+## Ordering simulation address suggestions (31 October 2026)
+
+The simulation delivery-address input reuses the existing scoped address search
+and selection field already used by route and staff editors. The three-language
+preorders simulation procedure now explains the three-character search, keyboard
+or pointer selection, waiting for resolution and manual entry when suggestions
+are unavailable. Receiving dates, service calendars, coverage validation, stock,
+orders, payments and restaurant settings retain their existing behavior.
+
+Only Admin application source changes. API embeds the identical reviewed public
+corpus; its executable code and provider contracts are unchanged. Preserve Web,
+POS, Backoffice and Landing application-source blocks and surfaces exactly from
+Landing develop 295b432dc934040e6e7b9c7d06e9fb25d3071c68. The exact
+[source review](reviews/ordering-simulation-address.json) records clean immutable
+source checkpoints; pin this documentation commit in Admin and API before CI.
+Verify the development artifacts, then promote those same artifacts under the
+ongoing authorized delivery correction. Publish the matching help and support
+corpus together. No real order, message or tenant configuration is changed.
