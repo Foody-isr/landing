@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "Foody-isr/admin",
-  "ref": "e859be6cb0e4bc64e4a0ce085263415c0d7d353b",
+  "ref": "c4e22b79bcc16793e9579ca390f76e483a6f97b5",
   "observations": [
     {
       "id": "table-status-descriptions-source-contract",
@@ -518,7 +518,9 @@
         "simulateOrderingAvailability(rid, input)",
         "t('orderingSimulationTitle')",
         "result?.signature === signature",
-        "disabled={busy || !valid || dirty}"
+        "disabled={busy || (input.service === 'delivery' && addressResolving) || !valid || dirty}",
+        "<RouteAddressField key={rid} restaurantId={rid} locale={locale}",
+        "onResolvingChange={setAddressResolving}"
       ],
       "forbidden": [
         "createOrder("
@@ -1152,17 +1154,20 @@
         "fr": [
           "Date et heure de la commande",
           "Maintenant recharge l’heure courante du serveur",
-          "stock historique"
+          "stock historique",
+          "Les suggestions d’adresse apparaissent après trois caractères"
         ],
         "en": [
           "Order date and time",
           "Now reloads the current server time",
-          "historical stock"
+          "historical stock",
+          "Address suggestions appear after three characters"
         ],
         "he": [
           "תאריך ושעת ההזמנה",
           "עכשיו טוען מחדש את השעה הנוכחית מהשרת",
-          "מלאי היסטורי"
+          "מלאי היסטורי",
+          "הצעות כתובת מופיעות אחרי שלושה תווים"
         ]
       },
       "forbidden": {
