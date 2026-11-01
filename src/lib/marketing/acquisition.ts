@@ -47,7 +47,7 @@ export const acquisitionContent: Record<Lang, {
         title: "מערכת הזמנות למסעדה, מהאתר ועד למסירה",
         intro: "קבלו הזמנות אונליין באתר ממותג ורכזו אותן במשרד האחורי. אפשר לעבוד עם Foody הזמנות גם ללא קופת Foody.",
         steps: [
-          { title: "מגדירים איסוף ומשלוחים", text: "התאימו שעות, אזורים ותנאי שירות לפעילות העסק. הזמנות לאותו יום והזמנות מראש פועלות לפי ההגדרות והזמינות שבחרתם.", guide: "/help/settings/delivery-zones" },
+          { title: "מגדירים איסוף ומשלוחים", text: "התאימו שעות, אזורים ותנאי שירות לפעילות העסק. הזמנות לאותו יום והזמנות מראש פועלות לפי ההגדרות והזמינות שבחרתם.", guide: "/help/delivery/zones-and-schedules" },
           { title: "קובעים מתי מזמינים ומתי מכינים", text: "להזמנות מראש מגדירים חלון הזמנה, מועד סגירה ותאריך מסירה. אפשר לרכז הזמנות למועד מסוים, בלי להפוך כל הזמנה להכנה מיידית.", guide: "/help/orders/preorders-and-batches" },
           { title: "מרכזים כמויות, אריזה ומסירה", text: "הצוות בודק כמויות לפי מנה ואריזות לפי לקוח, מסמן הכנה ומנהל איסוף או משלוח. מעקב תשלום ומצב הכנה הם שלבים נפרדים.", guide: "/help/orders/payment-preparation-and-handoff" },
         ],
@@ -93,7 +93,7 @@ export const acquisitionContent: Record<Lang, {
         title: "Les commandes en ligne, du site à la remise au client",
         intro: "Recevez les commandes sur votre site et centralisez-les dans le back-office. Foody Commandes fonctionne aussi sans caisse Foody.",
         steps: [
-          { title: "Configurer retraits et livraisons", text: "Adaptez horaires, zones et conditions de service à votre activité. Les commandes du jour et les précommandes respectent les paramètres et disponibilités choisis.", guide: "/help/settings/delivery-zones" },
+          { title: "Configurer retraits et livraisons", text: "Adaptez horaires, zones et conditions de service à votre activité. Les commandes du jour et les précommandes respectent les paramètres et disponibilités choisis.", guide: "/help/delivery/zones-and-schedules" },
           { title: "Définir les dates de commande et de préparation", text: "Pour les précommandes, définissez une fenêtre de commande, une date limite et une date de remise. Regroupez les commandes pour une échéance sans lancer chaque préparation immédiatement.", guide: "/help/orders/preorders-and-batches" },
           { title: "Regrouper quantités, emballages et remises", text: "L’équipe consulte les quantités par plat et les emballages par client, marque la préparation et organise retrait ou livraison. Le suivi du paiement et l’état de préparation restent distincts.", guide: "/help/orders/payment-preparation-and-handoff" },
         ],
@@ -139,7 +139,7 @@ export const acquisitionContent: Record<Lang, {
         title: "Online restaurant orders, from your website to handoff",
         intro: "Receive orders on your branded website and centralise them in the back office. Foody Orders can also run without a Foody POS.",
         steps: [
-          { title: "Configure pickup and delivery", text: "Set hours, zones and service conditions for your operation. Same-day orders and preorders follow the settings and availability you choose.", guide: "/help/settings/delivery-zones" },
+          { title: "Configure pickup and delivery", text: "Set hours, zones and service conditions for your operation. Same-day orders and preorders follow the settings and availability you choose.", guide: "/help/delivery/zones-and-schedules" },
           { title: "Set ordering and preparation dates", text: "For preorders, define an ordering window, cutoff and handoff date. Group orders for a particular date without starting every preparation immediately.", guide: "/help/orders/preorders-and-batches" },
           { title: "Group quantities, packing and handoffs", text: "Staff check quantities by dish and packing by customer, mark preparation and organise pickup or delivery. Payment tracking and preparation status remain separate.", guide: "/help/orders/payment-preparation-and-handoff" },
         ],

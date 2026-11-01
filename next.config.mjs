@@ -39,6 +39,14 @@ const config = {
   env: {
     NEXT_PUBLIC_API_URL: apiUrl,
   },
+  /** Retains previously shared delivery-guide links in their original language. */
+  async redirects() {
+    return ['he', 'fr', 'en'].map(lang => ({
+      source: `/${lang}/help/settings/delivery-zones`,
+      destination: `/${lang}/help/delivery/zones-and-schedules`,
+      permanent: true,
+    }));
+  },
   async headers() {
     return [
       { source: '/(.*)', headers: securityHeaders },

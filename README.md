@@ -99,7 +99,9 @@ The buying guide lives at `/{he,fr,en}/guides/restaurant-pos-israel` and is link
 
 The companion guide `/{he,fr,en}/guides/restaurant-inventory-israel` explains ingredient inventory, recipes, counts, supplier receipts and food cost with a synthetic reconciliation example. Restaurant, Kitchen, comparison and calculator pages link to it within their main content. The discovery audit verifies same-language contextual incoming links for the priority acquisition resources. See `docs/marketing/inventory-guide.md` for the evidence and limits.
 
-The existing POS page includes the reviewed order → kitchen → payment journey, five localized buying questions and software metadata for its own 590 ILS monthly offer. It cross-links with Restaurant without duplicating a new iPad acquisition URL. The discovery audit now includes POS: 36 localized pages and 18 priority targets. See `docs/marketing/pos-acquisition-evidence.md`.
+The existing POS page includes the reviewed order → kitchen → payment journey, five localized buying questions and software metadata for its own 590 ILS monthly offer. It cross-links with Restaurant without duplicating a new iPad acquisition URL and is included among discovery priorities. See `docs/marketing/pos-acquisition-evidence.md`.
+
+Orders has matching browser-software metadata, standalone pricing and qualified zero-commission answers. Marketing proof links are checked against the published help corpus and fetched during `test:marketing`; `test:marketing-links` covers invalid paths, language mistakes and English fallbacks. The former delivery-guide URL redirects permanently to the published procedure in each locale. Discovery now checks 21 priority targets across the same 36 pages. See `docs/marketing/ordering-evidence-links.md`.
 
 ## Cloud, equipment and companion update
 
