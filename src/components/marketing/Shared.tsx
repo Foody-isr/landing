@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Lang } from "@/lib/seo";
+import { acquisitionContent } from "@/lib/marketing/acquisition";
 import { marketing, type Faq } from "@/lib/marketing/content";
 import { routes, ui } from "@/lib/marketing/ui";
 import Icon from "./Icon";
@@ -200,7 +201,7 @@ export function Sectors({ lang }: { lang: Lang }) {
               />
             </div>
             <div className="sector-card-heading">
-              <h3>{ui[lang][key]}</h3>
+              <h3>{key === "restaurants" ? acquisitionContent[lang].restaurantLink : ui[lang][key]}</h3>
               <span className="circle-arrow">
                 <Icon name="arrow" className="directional" />
               </span>

@@ -75,6 +75,11 @@ for (const lang of ["he", "fr", "en"]) {
     assert.doesNotMatch(html, /<script[^>]+src="https:\/\/www\.googletagmanager\.com/, `No Google library loaded before browser opt-in: ${url}`);
     assert.ok(html.includes('class="footer-preferences"'), `Google preferences can be reopened from the footer: ${url}`);
     const main = html.match(/<main\b[\s\S]*?<\/main>/)?.[0] || "";
+    if (["", "/guides/restaurant-pos-israel", "/guides/restaurant-inventory-israel"].includes(path)) {
+      const restaurantLinks = [...main.matchAll(new RegExp(`<a\\b[^>]*href="/${lang}/sectors/food-beverage/restaurants"[^>]*>([\\s\\S]*?)</a>`, "g"))];
+      const category = { he: "קופות למסעדות", fr: "Caisses pour restaurants", en: "POS for restaurants" }[lang];
+      assert.ok(restaurantLinks.some(match => match[1].includes(category)), `Contextual restaurant-category link in homepage or guide: ${url}`);
+    }
     for (const reference of marketingHelpReferences(main, url, publishedHelp, canonicalBase)) {
       if (!helpReferences.has(reference.pathname)) helpReferences.set(reference.pathname, { ...reference, fragments: new Set() });
       if (reference.fragment) helpReferences.get(reference.pathname).fragments.add(reference.fragment);
@@ -558,6 +563,10 @@ for (const lang of ["he", "fr", "en"]) {
       );
     }
     if (path === "/sectors/food-beverage/restaurants") {
+      const category = { he: "קופה למסעדה", fr: "caisse restaurant", en: "restaurant POS" }[lang];
+      const heading = main.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1] || "";
+      assert.ok(heading.includes(category), `Restaurant category is visible in the primary heading: ${url}`);
+      assert.ok(html.match(/<title>([\s\S]*?)<\/title>/)?.[1].endsWith(" | Foody POS"), `Restaurant search title identifies Foody POS: ${url}`);
       const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((match) => JSON.parse(match[1]));
       const software = schemas.find((schema) => schema["@type"] === "SoftwareApplication");
       assert.ok(software, `Restaurant product is described as software: ${url}`);
@@ -570,6 +579,7 @@ for (const lang of ["he", "fr", "en"]) {
       assert.ok(main.includes(`href="/${lang}/compare/tabit"`));
       assert.ok(main.includes(`href="/${lang}/help/orders/taking-an-order-pos"`));
       assert.ok(main.includes(`href="/${lang}/solutions/pos"`), `Restaurant content links directly to the POS product: ${url}`);
+      for (const proof of ["/help/orders/taking-an-order-pos", "/help/tables-floors/floor-plans", "/help/orders/courses-and-kitchen-release", "/help/payments/pos-checkout", "/help/kitchen/data-and-sales-links"]) assert.ok(main.includes(`href="/${lang}${proof}"`), `Restaurant claim has a localized operational source: ${proof}/${url}`);
     }
     if (path === "/compare/tabit") {
       const demonstrations = main.match(/<section[^>]*data-comparison-examples[^>]*>([\s\S]*?)<\/section>/)?.[1];

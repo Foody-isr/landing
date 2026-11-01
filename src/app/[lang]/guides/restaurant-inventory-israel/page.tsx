@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { acquisitionContent } from "@/lib/marketing/acquisition";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -25,6 +26,6 @@ export default async function InventoryGuidePage({ params }: { params: Promise<{
       {t.sections.map(section => <section className="guide-section" id={section.id} key={section.id}><h2>{section.title}</h2><p>{section.text}</p><Link className="text-link" href={`/${lang}${section.path}`}>{section.link}</Link></section>)}
       <section className="guide-section" id="worked-example"><h2>{t.exampleTitle}</h2><p>{t.exampleIntro}</p><div className="guide-table-scroll"><table className="guide-budget"><caption>{t.exampleTitle}</caption><thead><tr>{t.exampleHeaders.map(label => <th scope="col" key={label}>{label}</th>)}</tr></thead><tbody>{t.exampleRows.map(([label, quantity]) => <tr key={label}><th scope="row">{label}</th><td><bdi dir="ltr">{quantity}</bdi></td></tr>)}</tbody></table></div><p>{t.exampleFormula}</p><p><bdi dir="ltr">20 + 10 − 6 − 1 = 23 kg</bdi><br /><bdi dir="ltr">22 − 23 = −1 kg</bdi></p><p>{t.exampleResult}</p><p className="guide-disclosure">{t.exampleNote}</p></section>
       <section className="guide-section" id="demo-checklist"><h2>{t.checklistTitle}</h2><ul className="guide-checklist">{t.checklist.map(item => <li key={item}>{item}</li>)}</ul></section>
-      <section className="guide-section"><h2>{t.nextTitle}</h2><p>{t.nextText}</p><div className="resource-inline-links"><Link className="text-link" href={`/${lang}${FOOD_COST_PATH}`}>{t.calculatorLink}</Link><Link className="text-link" href={`/${lang}${PRODUCT_DEMOS_PATH}`}>{t.demosLink}</Link><Link className="text-link" href={`/${lang}/solutions/kitchen`}>{t.kitchenLink}</Link></div></section>
+      <section className="guide-section"><h2>{t.nextTitle}</h2><p>{t.nextText}</p><div className="resource-inline-links"><Link className="text-link" href={`/${lang}${FOOD_COST_PATH}`}>{t.calculatorLink}</Link><Link className="text-link" href={`/${lang}${PRODUCT_DEMOS_PATH}`}>{t.demosLink}</Link><Link className="text-link" href={`/${lang}/solutions/kitchen`}>{t.kitchenLink}</Link><Link className="text-link" href={`/${lang}/sectors/food-beverage/restaurants`}>{acquisitionContent[lang].restaurantLink}</Link></div></section>
     </article><CallToAction lang={lang} /></main><Footer /></>;
 }

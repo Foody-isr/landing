@@ -48,6 +48,17 @@ The CSP permits the Meta script/configuration origin (`connect.facebook.net`) an
 
 Commercial pages are rendered statically. New products belong under `/[lang]/solutions/[slug]`; sector pages preserve existing URLs. Previously empty beauty/services routes redirect permanently to the general business offering. The full-screen intro and unused older landing components were retired. Historical public assets and help content remain available.
 
+The existing Restaurant sector page is the commercial destination for restaurant-POS
+searches, including Hebrew `קופה למסעדה` and `קופות למסעדות`. Its localized title,
+primary heading and opening describe table service, devices and the included ordering
+offer. Homepage category cards and both restaurant guides link to that same page;
+no keyword-variant URL is created. Order, table, checkout and recipe-mapping claims
+link to the published help corpus. The 890 ILS Restaurant plan and separate Kitchen
+scope remain unchanged. `audit:discovery` checks Restaurant among 24 localized
+priority targets. These HTTP and content checks do not establish Google indexing,
+organic position or LLM recommendation gains. Editorial impact evidence is recorded
+in `docs/help/reviews/restaurant-search-intent.json`.
+
 The pricing page also distinguishes included shared map usage from the planned
 Maps Plus extension: 149 ILS excluding VAT per establishment/month, with 500 Foody
 optimization credits (one per single-courier stop, three per fleet-allocation stop),

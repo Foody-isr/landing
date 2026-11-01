@@ -98,7 +98,7 @@ export function getMarketingMetadata(
         : HOME_DESCRIPTIONS[lang];
   } else {
     const content = getSolution(lang, page);
-    title = `${content.title} | Foody`;
+    title = `${content.title} | ${page === "restaurants" ? "Foody POS" : "Foody"}`;
     description = content.description;
   }
   const canonical = `${SITE_URL}/${lang}${path}`;

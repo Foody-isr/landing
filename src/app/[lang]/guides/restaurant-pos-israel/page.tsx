@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { CallToAction, JsonLd } from "@/components/marketing/Shared";
 import { buyingGuide } from "@/lib/marketing/buying-guide";
-import { BUYING_GUIDE_PATH } from "@/lib/marketing/acquisition";
+import { acquisitionContent, BUYING_GUIDE_PATH } from "@/lib/marketing/acquisition";
 import { TABIT_COMPARISON_PATH } from "@/lib/marketing/comparison";
 import { pricingRates } from "@/lib/marketing/pricing";
 import { getContentMetadata, languageAlternates, resolveLang, SITE_URL, SUPPORTED_LANGS } from "@/lib/seo";
@@ -27,7 +27,7 @@ export default async function BuyingGuidePage({ params }: { params: Promise<{ la
     <article className="shell buying-guide">
       <header><Link className="breadcrumb" href={`/${lang}`}>Foody POS</Link><h1>{t.title}</h1><p className="guide-intro">{t.description}</p><p className="guide-disclosure">{t.disclosure}</p><p className="fine-print">{t.reviewed} <time dateTime="2026-11-01">{new Intl.DateTimeFormat(`${lang}-IL`, { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date("2026-11-01T12:00:00Z"))}</time></p></header>
       {t.sections.map((section) => <section className="guide-section" key={section.path}><h2>{section.title}</h2><p>{section.text}</p><Link className="text-link" href={`/${lang}${section.path}`}>{section.link}</Link></section>)}
-      <section className="guide-section"><h2>{t.budgetTitle}</h2><p>{t.budgetIntro}</p><div className="guide-table-scroll"><table className="guide-budget"><caption>{t.budgetTitle}</caption><thead><tr>{t.budgetHeaders.map(label => <th scope="col" key={label}>{label}</th>)}</tr></thead><tbody>{t.budgetRows.map(([label, key]) => <tr key={key}><th scope="row">{label}</th><td><bdi>{amount(pricingRates[key])}</bdi></td></tr>)}</tbody><tfoot><tr><th scope="row">{t.monthly}</th><td><bdi>{amount(monthly)}</bdi></td></tr><tr><th scope="row">{t.firstYear}</th><td><bdi>{amount(monthly * 12 + pricingRates.setup)}</bdi></td></tr></tfoot></table></div><p className="guide-disclosure">{t.budgetNote}</p><Link className="text-link" href={`/${lang}/pricing`}>{t.pricesLink}</Link></section>
+      <section className="guide-section"><h2>{t.budgetTitle}</h2><p>{t.budgetIntro}</p><div className="guide-table-scroll"><table className="guide-budget"><caption>{t.budgetTitle}</caption><thead><tr>{t.budgetHeaders.map(label => <th scope="col" key={label}>{label}</th>)}</tr></thead><tbody>{t.budgetRows.map(([label, key]) => <tr key={key}><th scope="row">{label}</th><td><bdi>{amount(pricingRates[key])}</bdi></td></tr>)}</tbody><tfoot><tr><th scope="row">{t.monthly}</th><td><bdi>{amount(monthly)}</bdi></td></tr><tr><th scope="row">{t.firstYear}</th><td><bdi>{amount(monthly * 12 + pricingRates.setup)}</bdi></td></tr></tfoot></table></div><p className="guide-disclosure">{t.budgetNote}</p><div className="resource-inline-links"><Link className="text-link" href={`/${lang}/pricing`}>{t.pricesLink}</Link><Link className="text-link" href={`/${lang}/sectors/food-beverage/restaurants`}>{acquisitionContent[lang].restaurantLink}</Link></div></section>
       <section className="guide-section"><h2>{t.checklistTitle}</h2><ul className="guide-checklist">{t.checklist.map(item => <li key={item}>{item}</li>)}</ul><Link className="text-link" href={`/${lang}${TABIT_COMPARISON_PATH}`}>{t.compareLink}</Link></section>
     </article>
     <CallToAction lang={lang} />
