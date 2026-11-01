@@ -27,6 +27,8 @@ import Experience from "./Experience";
 import ProductDemo from "./ProductDemo";
 import Icon from "./Icon";
 import ProductMentions from "./ProductMentions";
+import { comparisonCopy, TABIT_COMPARISON_PATH } from "@/lib/marketing/comparison";
+import { pricingRates } from "@/lib/marketing/pricing";
 
 function HeroVisual({ lang, page }: { lang: Lang; page: SolutionKey }) {
   if (page === "hardware") return <HardwareDisplay lang={lang} />;
@@ -177,6 +179,26 @@ export default function SolutionPage({
   const pageLabel = product ? u[product.key] : u[page];
   return (
     <main id="main-content">
+      {page === "restaurants" && <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "@id": `${SITE_URL}/#restaurant-software`,
+        name: pageLabel,
+        url: `${SITE_URL}/${lang}${routes.restaurants}`,
+        description: t.description,
+        applicationCategory: "BusinessApplication",
+        operatingSystem: "iPadOS, Android",
+        inLanguage: ["he", "fr", "en"],
+        publisher: { "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: "Foody", url: SITE_URL },
+        offers: {
+          "@type": "Offer",
+          url: `${SITE_URL}/${lang}/pricing#plan-restaurant`,
+          price: pricingRates.restaurant,
+          priceCurrency: "ILS",
+          description: t.faq[1].a,
+          priceSpecification: { "@type": "UnitPriceSpecification", price: pricingRates.restaurant, priceCurrency: "ILS", valueAddedTaxIncluded: false, unitText: "month" },
+        },
+      }} />}
       <JsonLd
         data={{
           "@context": "https://schema.org",
@@ -291,6 +313,14 @@ export default function SolutionPage({
       </section>
       <PageStory lang={lang} page={page} />
       <FaqSection lang={lang} items={t.faq} currentHref={routes[page]} />
+      {page === "restaurants" && <section className="shell related-section">
+        <h2>{comparisonCopy[lang].linksTitle}</h2>
+        <div>
+          <Link href={`/${lang}${TABIT_COMPARISON_PATH}`}>{comparisonCopy[lang].compareLink}</Link>
+          <Link href={`/${lang}/help/orders/taking-an-order-pos`}>{comparisonCopy[lang].orderGuide}</Link>
+          <Link href={`/${lang}/help/tables-floors/floor-plans`}>{comparisonCopy[lang].tableGuide}</Link>
+        </div>
+      </section>}
       <section className="shell related-section">
         <h2>{u.related}</h2>
         <div>

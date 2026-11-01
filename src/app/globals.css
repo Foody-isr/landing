@@ -1605,6 +1605,287 @@ html[dir="rtl"] .directional {
 .overview-heading + .section-space {
   padding-top: 65px;
 }
+/* Sourced buying guide uses the same product typography and restrained palette. */
+.comparison-heading {
+  padding-block: 66px 45px;
+}
+.comparison-heading h1 {
+  font-size: clamp(36px, 4.15vw, 60px);
+  margin-block: 22px;
+  max-width: 20ch;
+}
+.comparison-heading > p {
+  max-width: 75ch;
+}
+.comparison-heading > p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-block: 18px;
+}
+.comparison-heading > .fine-print {
+  font-size: 14px;
+}
+.comparison-scroll {
+  overflow-x: auto;
+  margin-bottom: 24px;
+}
+.comparison-table {
+  width: 100%;
+  min-width: 650px;
+  border-collapse: collapse;
+  font-size: 15px;
+  line-height: 1.8;
+}
+.comparison-table caption {
+  text-align: start;
+  font-size: 23px;
+  font-weight: 600;
+  padding-bottom: 25px;
+}
+.comparison-table th,
+.comparison-table td {
+  text-align: start;
+  vertical-align: top;
+  padding: 24px;
+  border-bottom: 1px solid var(--border);
+  overflow-wrap: anywhere;
+}
+.comparison-table thead {
+  background: var(--blue);
+}
+.comparison-table thead th:first-child {
+  width: 22%;
+}
+.comparison-table td {
+  width: 39%;
+}
+.comparison-source {
+  display: block;
+  font-size: 13px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  margin-top: 12px;
+}
+.comparison-vendor {
+  display: none;
+}
+.comparison-matrix thead th:first-child {
+  width: 60%;
+}
+.comparison-matrix td {
+  width: 20%;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.comparison-matrix th,
+.comparison-matrix td {
+  padding: 14px 20px;
+  line-height: 1.45;
+}
+.comparison-matrix thead th:not(:first-child) {
+  text-align: center;
+}
+.comparison-detail {
+  font-size: 14px;
+  font-weight: 400;
+  color: #59616a;
+  margin-top: 4px;
+}
+.comparison-matrix .comparison-source {
+  display: inline;
+  margin: 0;
+  margin-inline-start: 6px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.comparison-present,
+.comparison-absent {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.comparison-present {
+  color: #166534;
+}
+.comparison-absent {
+  color: #9f2d22;
+}
+.comparison-attribution {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-block: 20px 28px;
+}
+.comparison-examples {
+  margin-block: 64px;
+}
+.comparison-examples > h2 {
+  font-size: clamp(26px, 3vw, 38px);
+  margin-bottom: 14px;
+}
+.comparison-examples > p {
+  max-width: 80ch;
+  margin-bottom: 28px;
+}
+.comparison-example {
+  border-block-start: 1px solid var(--border);
+  scroll-margin-top: 110px;
+}
+.comparison-example:last-child {
+  border-block-end: 1px solid var(--border);
+}
+.comparison-example > summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding-block: 24px;
+  cursor: pointer;
+  list-style: none;
+  font-size: 18px;
+  font-weight: 650;
+}
+.comparison-example > summary::-webkit-details-marker {
+  display: none;
+}
+.comparison-example > summary > span:last-child {
+  font-size: 14px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  white-space: nowrap;
+}
+.comparison-example-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  padding-block: 6px 32px;
+}
+.comparison-example-body > * {
+  min-width: 0;
+}
+.comparison-example-body p {
+  margin-bottom: 18px;
+}
+.comparison-example-body .text-link {
+  display: block;
+  margin-block: 14px;
+}
+.comparison-language-example,
+.comparison-stock-example {
+  background: var(--blue);
+  padding: 24px;
+}
+.comparison-language-example select {
+  display: block;
+  margin-block: 8px 24px;
+  padding: 10px 14px;
+  background: #fff;
+  color: var(--text);
+  border: 1px solid #9caebf;
+  border-radius: 4px;
+  font: inherit;
+}
+.comparison-language-panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.comparison-language-panels > div {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+  background: #fff;
+}
+.comparison-stock-example dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 12px;
+  border-bottom: 1px solid #b8cce2;
+}
+.comparison-stock-example dd {
+  font-weight: 650;
+}
+.comparison-example-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-block: 20px;
+}
+.comparison-example-actions button {
+  background: #fff;
+  border: 1px solid #153b5b;
+  color: #153b5b;
+  padding: 10px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font: inherit;
+}
+.comparison-example-actions button:disabled {
+  opacity: .5;
+  cursor: default;
+}
+.comparison-example-body .experience {
+  margin: 0;
+}
+@media (max-width: 700px) {
+  .comparison-example > summary {
+    align-items: start;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .comparison-example-body {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .comparison-language-example,
+  .comparison-stock-example {
+    padding: 18px;
+  }
+  .comparison-language-panels {
+    gap: 10px;
+  }
+  .comparison-language-panels > div {
+    padding: 12px;
+  }
+  .comparison-table,
+  .comparison-table tbody,
+  .comparison-table tr,
+  .comparison-table caption {
+    display: block;
+    width: 100%;
+    min-width: 0;
+  }
+  .comparison-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  .comparison-table tbody th,
+  .comparison-table td {
+    display: block;
+    width: 100%;
+    padding: 18px 16px;
+  }
+  .comparison-table tbody th {
+    background: var(--blue);
+  }
+  .comparison-vendor {
+    display: block;
+    font-weight: 650;
+    margin-bottom: 8px;
+  }
+  .comparison-matrix tbody th {
+    padding: 14px 16px;
+  }
+  .comparison-matrix td {
+    display: inline-block;
+    width: 50%;
+    padding: 12px 8px;
+  }
+}
 /* Pricing and the contact form deliberately share the product typography. */
 .pricing-section {
   padding-block: 80px;
