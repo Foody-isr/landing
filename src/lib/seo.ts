@@ -110,7 +110,7 @@ export function getMarketingMetadata(
     openGraph: {
       title: shareTitle,
       description: shareDescription,
-      siteName: "Foody",
+      siteName: "Foody POS",
       type: "website",
       url: canonical,
       locale: `${lang}_IL`,

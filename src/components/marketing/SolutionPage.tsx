@@ -29,6 +29,8 @@ import Icon from "./Icon";
 import ProductMentions from "./ProductMentions";
 import { comparisonCopy, TABIT_COMPARISON_PATH } from "@/lib/marketing/comparison";
 import { pricingRates } from "@/lib/marketing/pricing";
+import AcquisitionWorkflow from "./AcquisitionWorkflow";
+import ProductScreenshots from "./ProductScreenshots";
 
 function HeroVisual({ lang, page }: { lang: Lang; page: SolutionKey }) {
   if (page === "hardware") return <HardwareDisplay lang={lang} />;
@@ -312,6 +314,8 @@ export default function SolutionPage({
         </div>
       </section>
       <PageStory lang={lang} page={page} />
+      {(page === "restaurants" || page === "kitchen" || page === "ordering") && <AcquisitionWorkflow lang={lang} page={page} />}
+      {page === "kitchen" && <ProductScreenshots lang={lang} />}
       <FaqSection lang={lang} items={t.faq} currentHref={routes[page]} />
       {page === "restaurants" && <section className="shell related-section">
         <h2>{comparisonCopy[lang].linksTitle}</h2>

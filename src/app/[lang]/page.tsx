@@ -51,6 +51,8 @@ export default async function Home({
             "@type": "Organization",
             "@id": `${SITE_URL}/#organization`,
             name: "Foody",
+            alternateName: "Foody POS",
+            description: u.footer,
             url: SITE_URL,
             logo: `${SITE_URL}/assets/logo.svg`,
             areaServed: { "@type": "Country", name: "Israel" },
@@ -62,6 +64,7 @@ export default async function Home({
             },
           }}
         />
+        <JsonLd data={{ "@context": "https://schema.org", "@type": "WebSite", "@id": `${SITE_URL}/#website`, name: "Foody POS", alternateName: "Foody", url: `${SITE_URL}/`, inLanguage: ["he", "fr", "en"], publisher: { "@id": `${SITE_URL}/#organization` } }} />
         <section className="shell home-hero">
           <div className="hero-heading">
             <h1>{t.title}</h1>

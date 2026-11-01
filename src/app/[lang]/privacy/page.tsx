@@ -8,7 +8,7 @@ export default function PrivacyPage() {
       <main id="main-content" className="legal-page" lang="en" dir="ltr">
         <div className="legal-inner">
           <h1>Privacy Policy</h1>
-          <p className="legal-updated">Last updated: October 19, 2026</p>
+          <p className="legal-updated">Last updated: November 1, 2026</p>
 
           <p>Foody (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) operates the <strong>Foody POS</strong> iPad application, the <strong>Foody</strong> web ordering platform, and the <strong>Foody</strong> marketing website. This Privacy Policy explains how we collect, use, and protect your information when you use our services.</p>
 
@@ -81,6 +81,7 @@ export default function PrivacyPage() {
           <h2>7. Cookies &amp; Tracking</h2>
           <p>The Foody POS iPad app does not use cookies. The web ordering platform uses essential cookies for session management only.</p>
           <p>The Foody marketing website uses the Meta (Facebook) Pixel to measure page visits and advertising performance. The Pixel can use cookies and share the page URL, browser and device information, and online identifiers with Meta. Learn more in <a href="https://www.facebook.com/privacy/policy/">Meta&apos;s Privacy Policy</a>.</p>
+          <p>After our contact API confirms receipt of a demo request, the marketing website records a conversion event. Its custom parameters contain only the form language, entry language and broad acquisition categories such as Google, Bing, an AI assistant, social media or direct access. Names, email addresses, phone numbers, business names, form answers and campaign identifiers are not included in these custom parameters. Entry categories are kept in session storage for the current browser tab. The same event is made available to measurement tools through the browser data layer; this does not by itself install Google Analytics.</p>
 
           <h2>8. Children&apos;s Privacy</h2>
           <p>Our services are not directed to children under 13. We do not knowingly collect personal information from children.</p>

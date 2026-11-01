@@ -44,6 +44,7 @@ export default function Footer() {
             <Link href={localePath("/pricing")}>{t.pricing}</Link>
             <Link href={localePath("/contact")}>{t.contact}</Link>
             <Link href={localePath("/help")}>{t.help}</Link>
+            <Link href={localePath("/guides/restaurant-pos-israel")}>{t.buyingGuide}</Link>
             <a href="https://admin.foody-pos.co.il">{t.login}</a>
           </div>
         </div>

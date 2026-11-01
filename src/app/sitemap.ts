@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllArticlePaths, getTopics } from "@/lib/help/content";
 import { TABIT_COMPARISON_PATH } from "@/lib/marketing/comparison";
+import { BUYING_GUIDE_PATH } from "@/lib/marketing/acquisition";
 import {
   getMarketingPath,
   languageAlternates,
@@ -53,5 +54,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
     alternates: { languages: languageAlternates(TABIT_COMPARISON_PATH) },
   }));
-  return [...pages, ...comparisons, ...help];
+  const guides = SUPPORTED_LANGS.map(lang => ({ url: `${SITE_URL}/${lang}${BUYING_GUIDE_PATH}`, priority: 0.7, alternates: { languages: languageAlternates(BUYING_GUIDE_PATH) } }));
+  return [...pages, ...comparisons, ...guides, ...help];
 }
