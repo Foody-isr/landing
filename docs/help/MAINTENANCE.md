@@ -2,18 +2,18 @@
 
 ## Customer profile save feedback preparation (1 November 2026)
 
-The Admin customer form displays phone-validation failures beside Save, focuses
-and scrolls to the invalid or duplicate number, and retains delivery edits until
-the user corrects or removes the additional contact and saves again. The
+The Admin customer form identifies missing, invalid and duplicate phone numbers
+inline and in a persistent blocked-save summary. Its correction link focuses and
+scrolls to the affected contact. Add and Remove keep contact edits local until
+Save; delivery edits remain in the draft throughout recovery. The
 customers-profiles/save-validation procedure covers this recovery in FR/HE/EN.
 Synthetic browser regressions exercise saved invalid contacts and normalized
 duplicates from the delivery section, then verify one atomic successful save.
 
 This preparation refreshes Admin, Landing and the API's embedded public corpus.
 Web, POS and Backoffice inventory blocks and source surfaces retain the evidence
-from Landing develop `26e83f0adb377776a93c10d98c9e0f65e065c117`.
-Local contracts use WORKSPACE/self. Once committing is authorized, pin the reviewed
-immutable Landing commit in Admin and API before remote CI. Publish these guides
+from Landing develop `bf2140f109b7a3d8cfe88fe7ca54fe8685e37f3e`.
+Admin and API pin the reviewed immutable Landing commit before remote CI. Publish these guides
 and the synchronized support corpus with the matching Admin release.
 
 The public help center lives on `foody-pos.co.il/{fr,he,en}/help`. Admin provides
