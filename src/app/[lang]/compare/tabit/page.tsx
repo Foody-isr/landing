@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ComparisonDemonstrations from "@/components/marketing/ComparisonDemonstrations";
+import ProductScreenshots from "@/components/marketing/ProductScreenshots";
 import { CallToAction, JsonLd } from "@/components/marketing/Shared";
 import { COMPARISON_REVIEWED_AT, comparisonCopy, comparisonSources, TABIT_COMPARISON_PATH } from "@/lib/marketing/comparison";
 import { routes } from "@/lib/marketing/ui";
@@ -64,6 +65,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <Link className="text-link" href={`/${lang}/pricing`}>{t.pricingLink}</Link>
       </section>
       <ComparisonDemonstrations lang={lang} />
+      <ProductScreenshots lang={lang} />
       <section className="shell related-section" data-commission-example>
         <h2>{t.commission.title}</h2>
         <p>{t.commission.text}</p>

@@ -27,6 +27,7 @@ const paths = [
   "/solutions/equipment",
   "/solutions/kitchen-companion",
   "/compare/tabit",
+  "/guides/restaurant-pos-israel",
 ];
 let checked = 0;
 
@@ -62,6 +63,24 @@ for (const lang of ["he", "fr", "en"]) {
     const html = await response.text();
     checkMetaPixel(response, html, url);
     const main = html.match(/<main\b[\s\S]*?<\/main>/)?.[0] || "";
+    if (path === "/guides/restaurant-pos-israel") {
+      const article = [...main.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(match => JSON.parse(match[1])).find(schema => schema["@type"] === "Article");
+      assert.equal(article?.inLanguage, lang, `Guide Article language: ${url}`);
+      assert.equal(article?.mainEntityOfPage, `${canonicalBase}/${lang}${path}`, `Guide canonical entity: ${url}`);
+      assert.ok(main.includes(new Intl.NumberFormat(`${lang}-IL`).format(989)), `Three-device monthly subscription: ${url}`);
+      assert.ok(main.includes(new Intl.NumberFormat(`${lang}-IL`).format(13358)), `First-year subscription and setup arithmetic: ${url}`);
+      for (const target of ["/pricing", "/solutions/kitchen", "/solutions/online-ordering", "/compare/tabit"]) assert.ok(main.includes(`href="/${lang}${target}"`), `Guide product/source link: ${target}`);
+    }
+    const workflow = { "/sectors/food-beverage/restaurants": "restaurants", "/solutions/kitchen": "kitchen", "/solutions/online-ordering": "ordering" }[path];
+    if (workflow) {
+      assert.ok(main.includes(`data-acquisition-workflow="${workflow}"`), `Server-rendered buying workflow: ${url}`);
+      assert.ok(main.includes(`href="/${lang}/guides/restaurant-pos-israel"`), `Product links to localized buying guide: ${url}`);
+    }
+    if (path === "/solutions/kitchen" || path === "/compare/tabit") {
+      assert.ok(main.includes('id="product-captures"'), `Real product evidence included: ${url}`);
+      const capture = lang === "he" ? "food-cost-he-dark.png" : "food-cost-fr.png";
+      assert.ok(main.includes(`href="/assets/product/${capture}"`), `Full-size inspected capture: ${url}`);
+    }
     const mentions = [
       ...main.matchAll(
         /<a\b[^>]*class="product-mention"[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/g,
@@ -594,6 +613,12 @@ for (const path of paths)
 assert.ok(sitemap.includes("/he/help/kitchen/food-cost"));
 const robots = await (await fetch(base + "/robots.txt")).text();
 assert.ok(robots.includes(`${canonicalBase}/sitemap.xml`));
+for (const file of ["food-cost-fr.png", "food-cost-he-dark.png", "kitchen-fr.png", "kitchen-he-dark.png"]) {
+  const response = await fetch(`${base}/assets/product/${file}`);
+  assert.equal(response.status, 200, `Product capture available: ${file}`);
+  const bytes = Buffer.from(await response.arrayBuffer());
+  assert.deepEqual(bytes.subarray(0, 8), Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]), `Product capture PNG: ${file}`);
+}
 assert.equal((await fetch(base + "/he/solutions/not-a-product")).status, 404);
 assert.equal(
   (await fetch(base + "/he/sectors/beauty", { redirect: "manual" })).status,

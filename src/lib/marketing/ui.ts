@@ -74,7 +74,8 @@ export const ui = {
     allRights: "כל הזכויות שמורות.",
     country: "נבנה לעסקים בישראל",
     footer:
-      "מההזמנה הראשונה ועד לסניף הבא. הקופה, התשלומים והכלים שמקדמים את העסק שלכם.",
+      "Foody POS: קופה ב־iPad וב־Android, הזמנות אונליין וניהול מטבח למסעדות ולעסקים בישראל.",
+    buyingGuide: "איך לבחור קופה למסעדה בישראל",
     ctaTitle: "הצעד הבא של העסק מתחיל כאן.",
     ctaText:
       "בואו נראה לכם איך Foody עובד בעסק שלכם, ונבנה יחד הצעה לקופה, לחומרה ולסליקה.",
@@ -120,7 +121,8 @@ export const ui = {
     allRights: "Tous droits réservés.",
     country: "Pensé pour les entreprises en Israël",
     footer:
-      "De votre première commande à votre prochaine ouverture. La caisse, les paiements et les outils pour faire grandir votre activité.",
+      "Foody POS : caisse iPad et Android, commandes en ligne et gestion de cuisine pour les restaurants et commerces en Israël.",
+    buyingGuide: "Choisir une caisse restaurant en Israël",
     ctaTitle: "Votre prochaine étape commence ici.",
     ctaText:
       "Découvrez Foody avec une démo adaptée à votre activité et une proposition qui réunit logiciel, matériel et slika.",
@@ -166,7 +168,8 @@ export const ui = {
     allRights: "All rights reserved.",
     country: "Built for businesses in Israel",
     footer:
-      "From your first order to your next location. The POS, payments and tools to move your business forward.",
+      "Foody POS: iPad and Android POS, online orders and kitchen management for restaurants and businesses in Israel.",
+    buyingGuide: "Choosing a restaurant POS in Israel",
     ctaTitle: "Your next chapter starts here.",
     ctaText:
       "See Foody in action with a demo built around your business and a proposal covering software, hardware and payment processing.",

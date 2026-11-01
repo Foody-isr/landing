@@ -23,6 +23,7 @@ jobs:
       - run: npm ci
       - run: npm run check:help
       - run: npm run test:help
+      - run: npm run test:measurement
       - name: Resolve reviewed Admin UI version
         id: ui
         run: node --input-type=module -e 'import fs from "node:fs"; const c=JSON.parse(fs.readFileSync("docs/help/ui-evidence.json")); fs.appendFileSync(process.env.GITHUB_OUTPUT,"ref="+c.ref+"\n");'

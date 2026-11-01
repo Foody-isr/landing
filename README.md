@@ -24,7 +24,9 @@ npm run test:marketing
 
 ## Advertising measurement
 
-Production builds include Meta Pixel `1059276727609296` on every landing route and language. `src/components/MetaPixel.tsx` initializes it after hydration and sends `PageView` with `trackSingle` for the initial page and subsequent pathname changes, including browser back/forward. This supports repeated page views for this Pixel; global `track` deduplicates them. Meta's automatic history tracking is disabled to prevent duplicate events. A direct `noscript` image covers visits without JavaScript. `next dev` does not load the Pixel; local production previews do. No custom conversion events are added.
+Production builds include Meta Pixel `1059276727609296` on every landing route and language. `src/components/MetaPixel.tsx` initializes it after hydration and sends `PageView` with `trackSingle` for the initial page and subsequent pathname changes, including browser back/forward. This supports repeated page views for this Pixel; global `track` deduplicates them. Meta's automatic history tracking is disabled to prevent duplicate events. A direct `noscript` image covers visits without JavaScript. `next dev` does not load the Pixel; local production previews do.
+
+`src/lib/marketing/measurement.ts` captures finite acquisition categories in tab-scoped session storage. Only after the public contact API returns HTTP success and `{ "ok": true }`, the form emits Meta `Lead` and a `foody_demo_submitted` data-layer event, with form language, entry language, source and channel categories. It never accepts form values, arbitrary URLs, UTM text or click identifiers as event parameters. Attribution is indicative, can be lost when referrers/storage are blocked, and is not a server-side lead ledger. Analytics failures cannot invalidate the confirmed form receipt. No Google Analytics property or tag is installed by the data-layer event. Run `npm run test:measurement` for attribution and privacy regression checks.
 
 The CSP permits the Meta script/configuration origin (`connect.facebook.net`) and event endpoint (`www.facebook.com`); other security directives remain in place. The privacy page discloses this marketing-site tracking. When testing a production preview in an automated browser, intercept Meta requests to avoid sending synthetic visits to the live Pixel.
 
@@ -38,6 +40,9 @@ The CSP permits the Meta script/configuration origin (`connect.facebook.net`) an
 - `src/lib/marketing/ui.ts`: navigation labels and shared route map.
 - `src/components/marketing/`: reusable product illustrations, page sections, accessible tabs and contact form.
 - `src/lib/seo.ts`: localized metadata, canonical URLs and language alternates.
+- `src/lib/marketing/acquisition.ts`: FR/HE/EN restaurant, kitchen and ordering workflows linked to reviewed help.
+- `src/lib/marketing/buying-guide.ts`: the Israel restaurant-POS buying guide; price calculations use the shared rate grid.
+- `src/components/marketing/ProductScreenshots.tsx`: real Admin test captures with synthetic data; provenance in `docs/marketing/israel-growth/product-evidence.md`.
 - `src/app/[lang]/layout.tsx`: the root document. Language and RTL are rendered on the server, without waiting for JavaScript.
 - `src/content/help/`: existing help articles. Their URLs and content are retained, with resource-specific metadata; untranslated article fallbacks canonicalize to their original English version.
 
@@ -87,6 +92,10 @@ Verifone, PayPlus and SUMIT integrations are presented with market/contract qual
 - Approved C2 Foody identity: shared path-based `FoodyLogo` component, with the monochrome symbol and wordmark together in both the header and footer. Header dimensions keep the symbol-to-wordmark proportions measured on Square France, scaled for the thinner Foody lettering: a 30 px symbol, 24.8 px full wordmark height and 8 px gap, on desktop and mobile. Both drawings keep their own aspect ratios without stretching. The header and footer share an optical alignment: the wordmark is lowered by 2.5 px to center the letter body with the symbol while allowing the y descender below it. Product demos retain the compact color lockup. That lockup shares one vertical center across symbol and full wordmark, including the descender; the cloud diagram uses a white monochrome symbol above the white wordmark. The browser favicon uses the monochrome C2 symbol: black in light mode and white in dark mode, with a black-on-white PNG fallback. Its versioned URL refreshes cached favicons. Orange remains the accent for product-demo lockups, application/home-screen icons and campaign assets. Landing sharing cards use the black symbol to continue the site’s monochrome identity. The sharing-card generator consumes `public/assets/brand/foody-symbol-black.svg`, copied from the approved black-symbol master. Masters, export commands, archived originals and usage rules: `../brand/foody/identity/v1/README.md`. Device photographs retain the manufacturer's own example currency and interface.
 
 Never commit/push or deploy production without the authorization required by the workspace `AGENTS.md`.
+
+## Israel search growth follow-up
+
+The buying guide lives at `/{he,fr,en}/guides/restaurant-pos-israel` and is linked from the three relevant product pages, the footer and sitemap. Public identity consistently distinguishes Foody POS, the restaurant software, while preserving the Foody brand. `npm run audit:discovery -- --output <file.json>` checks direct HTTP accessibility, metadata, language alternates, robots and sitemap; it does not establish search-engine indexing. Search Console verification, Bing access, local business eligibility, external corrections and the measurement protocol are tracked in `docs/marketing/israel-growth/README.md`.
 
 ## Cloud, equipment and companion update
 
