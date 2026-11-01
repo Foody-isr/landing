@@ -28,6 +28,7 @@ const paths = [
   "/solutions/kitchen-companion",
   "/compare/tabit",
   "/guides/restaurant-pos-israel",
+  "/guides/restaurant-inventory-israel",
   "/tools/food-cost-calculator",
   "/demos/kitchen",
   "/about",
@@ -70,6 +71,14 @@ for (const lang of ["he", "fr", "en"]) {
     assert.doesNotMatch(html, /<script[^>]+src="https:\/\/www\.googletagmanager\.com/, `No Google library loaded before browser opt-in: ${url}`);
     assert.ok(html.includes('class="footer-preferences"'), `Google preferences can be reopened from the footer: ${url}`);
     const main = html.match(/<main\b[\s\S]*?<\/main>/)?.[0] || "";
+    if (path === "/guides/restaurant-inventory-israel") {
+      const article = [...main.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(match => JSON.parse(match[1])).find(schema => schema["@type"] === "Article");
+      assert.equal(article?.inLanguage, lang, `Inventory guide language: ${url}`);
+      assert.equal(article?.mainEntityOfPage, `${canonicalBase}/${lang}${path}`, `Inventory guide canonical entity: ${url}`);
+      assert.ok(main.includes('data-inventory-guide'), `Guide is rendered without JavaScript: ${url}`);
+      for (const target of ["/help/kitchen/stock-management", "/help/kitchen/preparations", "/help/kitchen/daily-operations", "/help/kitchen/suppliers-and-purchases", "/help/kitchen/food-cost", "/tools/food-cost-calculator", "/demos/kitchen", "/solutions/kitchen"]) assert.ok(main.includes(`href="/${lang}${target}"`), `Inventory guide source/resource link: ${target}`);
+    }
+    if (["/sectors/food-beverage/restaurants", "/solutions/kitchen", "/compare/tabit", "/tools/food-cost-calculator"].includes(path)) assert.ok(main.includes(`href="/${lang}/guides/restaurant-inventory-israel"`), `Contextual discovery link outside navigation/footer: ${url}`);
     if (path === "/guides/restaurant-pos-israel") {
       const article = [...main.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(match => JSON.parse(match[1])).find(schema => schema["@type"] === "Article");
       assert.equal(article?.inLanguage, lang, `Guide Article language: ${url}`);

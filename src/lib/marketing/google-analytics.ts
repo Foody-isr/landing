@@ -2,7 +2,7 @@ import { ACQUISITION_CHANNELS, ACQUISITION_SOURCES } from "./measurement";
 
 export type AnalyticsConsent = "granted" | "denied" | "unknown";
 export const ANALYTICS_CONSENT_KEY = "foody-google-analytics-consent-v1";
-const commercialPaths = new Set(["", "/pricing", "/contact", "/about", "/privacy", "/terms", "/sectors/food-beverage", "/sectors/food-beverage/restaurants", "/sectors/chains", "/sectors/retail", "/solutions/pos", "/solutions/kitchen", "/solutions/kitchen-companion", "/solutions/online-ordering", "/solutions/payments", "/solutions/verifone", "/solutions/equipment", "/compare/tabit", "/guides/restaurant-pos-israel", "/tools/food-cost-calculator", "/demos/kitchen", "/help"]);
+const commercialPaths = new Set(["", "/pricing", "/contact", "/about", "/privacy", "/terms", "/sectors/food-beverage", "/sectors/food-beverage/restaurants", "/sectors/chains", "/sectors/retail", "/solutions/pos", "/solutions/kitchen", "/solutions/kitchen-companion", "/solutions/online-ordering", "/solutions/payments", "/solutions/verifone", "/solutions/equipment", "/compare/tabit", "/guides/restaurant-pos-israel", "/guides/restaurant-inventory-israel", "/tools/food-cost-calculator", "/demos/kitchen", "/help"]);
 const sourceOrigins: Record<string,string> = { google:"https://www.google.com/", bing:"https://www.bing.com/", chatgpt:"https://chatgpt.com/", perplexity:"https://www.perplexity.ai/", gemini:"https://gemini.google.com/", facebook:"https://www.facebook.com/", instagram:"https://www.instagram.com/" };
 
 /** Accepts only a public Google Analytics measurement identifier, never an arbitrary script URL. */

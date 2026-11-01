@@ -7,6 +7,7 @@ import ProductScreenshots from "@/components/marketing/ProductScreenshots";
 import { CallToAction, JsonLd } from "@/components/marketing/Shared";
 import { COMPARISON_REVIEWED_AT, comparisonCopy, comparisonSources, TABIT_COMPARISON_PATH } from "@/lib/marketing/comparison";
 import { FOOD_COST_PATH, PRODUCT_DEMOS_PATH } from "@/lib/marketing/resources";
+import { inventoryGuide, INVENTORY_GUIDE_PATH } from "@/lib/marketing/inventory-guide";
 import { ui } from "@/lib/marketing/ui";
 import { routes } from "@/lib/marketing/ui";
 import { getContentMetadata, resolveLang, SITE_URL } from "@/lib/seo";
@@ -73,7 +74,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       </section>
       <ComparisonDemonstrations lang={lang} />
       <ProductScreenshots lang={lang} />
-      <div className="shell resource-inline-links"><Link className="text-link" href={`/${lang}${PRODUCT_DEMOS_PATH}`}>{ui[lang].productDemos}</Link><Link className="text-link" href={`/${lang}${FOOD_COST_PATH}`}>{ui[lang].foodCostCalculator}</Link></div>
+      <div className="shell resource-inline-links"><Link className="text-link" href={`/${lang}${PRODUCT_DEMOS_PATH}`}>{ui[lang].productDemos}</Link><Link className="text-link" href={`/${lang}${FOOD_COST_PATH}`}>{ui[lang].foodCostCalculator}</Link><Link className="text-link" href={`/${lang}${INVENTORY_GUIDE_PATH}`}>{inventoryGuide[lang].linkLabel}</Link></div>
       <section className="shell related-section" data-commission-example>
         <h2>{t.commission.title}</h2>
         <p>{t.commission.text}</p>

@@ -14,6 +14,7 @@ export function sharingResources() {
   const extras = [
     ['/compare/tabit', 'comparison.ts', 'comparisonCopy'],
     ['/guides/restaurant-pos-israel', 'buying-guide.ts', 'buyingGuide'],
+    ['/guides/restaurant-inventory-israel', 'inventory-guide.ts', 'inventoryGuide'],
     ['/tools/food-cost-calculator', 'food-cost-copy.ts', 'foodCostCopy'],
     ['/demos/kitchen', 'demonstrations.ts', 'demoCopy'],
     ['/about', 'company.ts', 'companyCopy'],
