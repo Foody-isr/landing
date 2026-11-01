@@ -97,7 +97,9 @@ Never commit/push or deploy production without the authorization required by the
 
 The buying guide lives at `/{he,fr,en}/guides/restaurant-pos-israel` and is linked from the three relevant product pages, the footer and sitemap. Public identity consistently distinguishes Foody POS, the restaurant software, while preserving the Foody brand. `npm run audit:discovery -- --output <file.json>` checks direct HTTP accessibility, metadata, language alternates, robots and sitemap; it does not establish search-engine indexing. Search Console verification, Bing access, local business eligibility, external corrections and the measurement protocol are tracked in `docs/marketing/israel-growth/README.md`.
 
-The companion guide `/{he,fr,en}/guides/restaurant-inventory-israel` explains ingredient inventory, recipes, counts, supplier receipts and food cost with a synthetic reconciliation example. Restaurant, Kitchen, comparison and calculator pages link to it within their main content. The discovery audit covers 33 localized pages and verifies same-language contextual incoming links for 15 priority targets. See `docs/marketing/inventory-guide.md` for the evidence and limits.
+The companion guide `/{he,fr,en}/guides/restaurant-inventory-israel` explains ingredient inventory, recipes, counts, supplier receipts and food cost with a synthetic reconciliation example. Restaurant, Kitchen, comparison and calculator pages link to it within their main content. The discovery audit verifies same-language contextual incoming links for the priority acquisition resources. See `docs/marketing/inventory-guide.md` for the evidence and limits.
+
+The existing POS page includes the reviewed order → kitchen → payment journey, five localized buying questions and software metadata for its own 590 ILS monthly offer. It cross-links with Restaurant without duplicating a new iPad acquisition URL. The discovery audit now includes POS: 36 localized pages and 18 priority targets. See `docs/marketing/pos-acquisition-evidence.md`.
 
 ## Cloud, equipment and companion update
 

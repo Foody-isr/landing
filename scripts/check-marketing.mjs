@@ -102,10 +102,25 @@ for (const lang of ["he", "fr", "en"]) {
       assert.ok(main.includes('08:00') && main.includes('20:00') && main.includes('15:00'), `Owner-approved contact hours: ${url}`);
       assert.ok(!main.includes('Schwartz'), `Private verification address is not published: ${url}`);
     }
-    const workflow = { "/sectors/food-beverage/restaurants": "restaurants", "/solutions/kitchen": "kitchen", "/solutions/online-ordering": "ordering" }[path];
+    const workflow = { "/sectors/food-beverage/restaurants": "restaurants", "/solutions/kitchen": "kitchen", "/solutions/online-ordering": "ordering", "/solutions/pos": "pos" }[path];
     if (workflow) {
       assert.ok(main.includes(`data-acquisition-workflow="${workflow}"`), `Server-rendered buying workflow: ${url}`);
       assert.ok(main.includes(`href="/${lang}/guides/restaurant-pos-israel"`), `Product links to localized buying guide: ${url}`);
+    }
+    if (path === "/solutions/pos") {
+      const schemas = [...main.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(match => JSON.parse(match[1]));
+      const software = schemas.find(schema => schema["@type"] === "SoftwareApplication");
+      assert.equal(software?.url, `${canonicalBase}/${lang}/solutions/pos`, `POS software describes its own page: ${url}`);
+      assert.equal(software?.offers.price, 590, `POS price is distinct from Restaurant: ${url}`);
+      assert.equal(software?.offers.url, `${canonicalBase}/${lang}/pricing#plan-pos`, `POS offer links to its own plan: ${url}`);
+      assert.equal(software?.offers.priceCurrency, "ILS");
+      assert.equal(software?.offers.priceSpecification.valueAddedTaxIncluded, false);
+      assert.equal(software?.offers.priceSpecification.unitText, "month");
+      assert.ok(main.includes("590") && main.includes("99") && main.includes("890"), `Visible licence prices and offer distinctions: ${url}`);
+      assert.equal(schemas.find(schema => schema["@type"] === "FAQPage")?.mainEntity.length, 5, `POS FAQ has complete localized answers: ${url}`);
+      for (const target of ["/help/orders/taking-an-order-pos", "/help/orders/courses-and-kitchen-release", "/help/payments/pos-checkout", "/sectors/food-beverage/restaurants"]) assert.ok(main.includes(`href="/${lang}${target}"`), `POS source or offering link: ${target}`);
+      const heading = main.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)?.[1] || "";
+      assert.ok(heading.includes("iPad") && heading.includes("Android"), `POS heading identifies the supported platforms: ${url}`);
     }
     if (path === "/solutions/kitchen" || path === "/compare/tabit") {
       assert.ok(main.includes('id="product-captures"'), `Real product evidence included: ${url}`);
@@ -535,6 +550,7 @@ for (const lang of ["he", "fr", "en"]) {
       assert.ok(main.includes("890"), `Structured price is also visible: ${url}`);
       assert.ok(main.includes(`href="/${lang}/compare/tabit"`));
       assert.ok(main.includes(`href="/${lang}/help/orders/taking-an-order-pos"`));
+      assert.ok(main.includes(`href="/${lang}/solutions/pos"`), `Restaurant content links directly to the POS product: ${url}`);
     }
     if (path === "/compare/tabit") {
       const demonstrations = main.match(/<section[^>]*data-comparison-examples[^>]*>([\s\S]*?)<\/section>/)?.[1];

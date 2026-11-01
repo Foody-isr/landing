@@ -122,7 +122,7 @@ const entries: Record<
     pos: [
       "קופת ענן ל־iPad ול־Android בישראל",
       "Foody קופה מרכז מכירות, קטלוג, שולחנות וניהול בענן על iPad או Android. להזמנות אונליין הוסיפו Foody הזמנות או בחרו ב־Foody מסעדה, שכולל גם הזמנה ב־QR.",
-      "פחות לחיצות.\nיותר זמן ללקוחות.",
+      "הקופה שלכם,\nב־iPad או ב־Android.",
       "הקופה פועלת על iPad או Android. העסק מנוהל בענן. Foody מחברת הזמנות, קטלוג, צוות ותשלומים, בדלפק וגם מרחוק.",
       [
         [
@@ -146,6 +146,18 @@ const entries: Record<
         [
           "באילו שפות זמינים הקופה והמשרד האחורי?",
           "ממשק קופת Foody וממשק הניהול זמינים בעברית, בצרפתית ובאנגלית, עם תצוגה מימין לשמאל בעברית. מדובר בשפת כלי העבודה של הצוות, בנוסף לתוכן התפריט ללקוחות.",
+        ],
+        [
+          "כמה עולה מסלול Foody קופה?",
+          `המסלול עולה ${pricingRates.pos} ₪ לחודש לעסק לפני מע״מ, עם רישיון מכשיר אחד. רישיון נוסף עולה ${pricingRates.extraPos} ₪ לחודש לפני מע״מ; הרישיון הוא למכשיר, לא לעובד. חומרה, הקמה, הדרכה, EMV, סליקה והדפסת בוני מטבח בנפרד. להזמנות אונליין ו־QR, מסלול Foody מסעדה עולה ${pricingRates.restaurant} ₪ לחודש לפני מע״מ וכולל שני רישיונות מכשיר.`,
+        ],
+        [
+          "האם כל טאבלט יכול לגבות תשלום בכרטיס?",
+          "לא. אפליקציית הקופה אינה הופכת טאבלט למסוף כרטיסים. בודקים ספק סליקה, דגם מסוף וחיבור תואמים. Victa Portable שמוגדר עם Foody יכול לשלב הזמנה, תשלום והדפסת קבלה באותו מכשיר; אין בכך הבטחת תאימות לכל מכשיר Android או לכל הסכם סליקה.",
+        ],
+        [
+          "האם נדרש חיבור לאינטרנט?",
+          "שירותי הענן, הסנכרון והתשלומים המחוברים דורשים אינטרנט. לפני ההתקנה בודקים את הרשת, דגמי המכשירים, גרסאות המערכת, המדפסות וספק הסליקה. במקרה של תקלה, בודקים את מצב ההזמנה או העסקה לפני ניסיון חוזר.",
         ],
       ],
     ],
@@ -384,7 +396,7 @@ const entries: Record<
     pos: [
       "Caisse cloud sur iPad et Android en Israël",
       "Foody Caisse réunit encaissement, catalogue, tables et gestion dans le cloud sur iPad ou Android. Pour vendre en ligne, ajoutez Foody Commandes ou choisissez Foody Restaurant, qui inclut aussi la commande QR.",
-      "Moins de manipulations.\nPlus de temps pour vos clients.",
+      "Votre caisse,\nsur iPad ou Android.",
       "Votre caisse tourne sur iPad ou Android. Votre activité se pilote dans le cloud. Foody relie les commandes, le catalogue, les équipes et les paiements, au comptoir comme à distance.",
       [
         [
@@ -408,6 +420,18 @@ const entries: Record<
         [
           "Dans quelles langues fonctionnent la caisse et le back-office ?",
           "Les interfaces de la caisse Foody et de l’administration sont disponibles en français, hébreu et anglais, avec un affichage de droite à gauche en hébreu. Il s’agit de la langue des outils du personnel, en complément du contenu du menu client.",
+        ],
+        [
+          "Combien coûte Foody Caisse ?",
+          `L’offre coûte ${pricingRates.pos} ₪ HT par établissement et par mois, avec une licence appareil. Une licence supplémentaire coûte ${pricingRates.extraPos} ₪ HT par mois ; elle concerne l’appareil, pas le salarié. Matériel, installation, formation, EMV, slika et impression des bons cuisine sont séparés. Pour les commandes en ligne et le QR, Foody Restaurant coûte ${pricingRates.restaurant} ₪ HT par mois avec deux licences appareil.`,
+        ],
+        [
+          "Une tablette peut-elle encaisser une carte bancaire ?",
+          "L’application de caisse ne transforme pas une tablette en terminal carte. Le prestataire, le modèle du terminal et la connexion doivent être compatibles. Un Victa Portable configuré avec Foody peut réunir commande, paiement et reçu imprimé sur un appareil ; cela ne garantit pas la compatibilité de tout appareil Android ou de tout contrat de slika.",
+        ],
+        [
+          "Faut-il une connexion Internet ?",
+          "Les services cloud, la synchronisation et les paiements connectés nécessitent Internet. Avant installation, nous vérifions le réseau, les modèles et versions des appareils, les imprimantes et le prestataire de slika. En cas d’incident, vérifiez l’état de la commande ou de la transaction avant de recommencer.",
         ],
       ],
     ],
@@ -646,7 +670,7 @@ const entries: Record<
     pos: [
       "Cloud POS for iPad and Android in Israel",
       "Foody POS brings sales, catalogues, tables and cloud management to iPad or Android. Add Foody Orders to sell online, or choose Foody Restaurant, which also includes QR ordering.",
-      "Fewer steps.\nMore time for customers.",
+      "Your POS,\non iPad or Android.",
       "Your POS runs on iPad or Android. Your business is managed in the cloud. Foody connects orders, catalogues, teams and payments, at the counter and remotely.",
       [
         [
@@ -670,6 +694,18 @@ const entries: Record<
         [
           "Which languages do the POS and back office support?",
           "Foody POS and management interfaces are available in French, Hebrew and English, with right-to-left display for Hebrew. These are staff interface languages, in addition to guest menu content.",
+        ],
+        [
+          "How much does Foody POS cost?",
+          `The plan costs ILS ${pricingRates.pos} per location/month excluding VAT, with one device licence. An extra licence costs ILS ${pricingRates.extraPos} per month excluding VAT; licences cover devices, not employees. Hardware, setup, training, EMV, processing and kitchen ticket printing are separate. For online and QR ordering, Foody Restaurant costs ILS ${pricingRates.restaurant} per month excluding VAT with two device licences.`,
+        ],
+        [
+          "Can any tablet accept a card payment?",
+          "The POS app does not turn a tablet into a card terminal. The provider, terminal model and connection must be compatible. A Victa Portable configured with Foody can combine ordering, payment and printed receipts on one device; that does not establish compatibility with every Android device or processing contract.",
+        ],
+        [
+          "Is an Internet connection required?",
+          "Cloud services, synchronisation and connected payments require Internet access. Before installation, check the network, device models and OS versions, printers and processing provider. If an operation fails, check the order or transaction status before trying again.",
         ],
       ],
     ],
