@@ -11,6 +11,8 @@ to the corresponding published procedure in the same language. Existing Kitchen,
 Restaurant, comparison and calculator pages link to it from their main content.
 The page has localized Article metadata, canonical/alternate URLs, a generated
 sharing card and a sitemap entry. No city variants or keyword-only pages are added.
+Its exact public path is included in the existing consent-aware Analytics allowlist.
+Unknown guide paths, query values and fragments remain excluded from measurement.
 
 ## Evidence and arithmetic
 

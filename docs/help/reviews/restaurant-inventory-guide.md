@@ -6,7 +6,9 @@ Only a three-language educational marketing guide, its contextual discovery link
 sitemap and metadata are added. All described Foody capabilities refer to the
 already published ingredient stock, sales mapping, preparations, purchasing,
 daily operations and food-cost procedures. No workflow, action, permission,
-configured value, error handling, price, form or analytics behavior changes.
+configured value, error handling, price or form changes. The new public guide
+path is added to the existing Google Analytics allowlist; consent, host gating,
+query/fragment removal and finite attribution rules remain unchanged.
 Synthetic arithmetic is visibly qualified and is not a new support procedure.
 The authored catalogue, rendered FR/HE/EN articles, release and public support
 corpus remain byte-identical. No API corpus or other service release is required.
