@@ -1,5 +1,21 @@
 # Help ownership, evidence and releases
 
+## Customer profile save feedback preparation (1 November 2026)
+
+The Admin customer form displays phone-validation failures beside Save, focuses
+and scrolls to the invalid or duplicate number, and retains delivery edits until
+the user corrects or removes the additional contact and saves again. The
+customers-profiles/save-validation procedure covers this recovery in FR/HE/EN.
+Synthetic browser regressions exercise saved invalid contacts and normalized
+duplicates from the delivery section, then verify one atomic successful save.
+
+This preparation refreshes Admin, Landing and the API's embedded public corpus.
+Web, POS and Backoffice inventory blocks and source surfaces retain the evidence
+from Landing develop `26e83f0adb377776a93c10d98c9e0f65e065c117`.
+Local contracts use WORKSPACE/self. Once committing is authorized, pin the reviewed
+immutable Landing commit in Admin and API before remote CI. Publish these guides
+and the synchronized support corpus with the matching Admin release.
+
 The public help center lives on `foody-pos.co.il/{fr,he,en}/help`. Admin provides
 contextual access and an assistant drawer. It does not host the public knowledge
 base. `docs/help/catalog/features.json` is the authored feature/procedure source;
