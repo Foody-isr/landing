@@ -43,6 +43,7 @@ function HeroVisual({ lang, page }: { lang: Lang; page: SolutionKey }) {
         width={1536}
         height={1024}
         priority
+        fetchPriority="high"
         sizes="(max-width:800px) 92vw, 50vw"
       />
     );

@@ -563,6 +563,12 @@ for (const lang of ["he", "fr", "en"]) {
       );
     }
     if (path === "/sectors/food-beverage/restaurants") {
+      const heroImage = main.match(/<img\b[^>]*src="[^"]*cafe-israel[^>]*>/)?.[0];
+      assert.ok(heroImage, `Restaurant LCP image is discoverable in initial HTML: ${url}`);
+      assert.match(heroImage, /fetchpriority="high"/i, `Restaurant LCP image has explicit network priority: ${url}`);
+      assert.doesNotMatch(heroImage, /loading="lazy"/i, `Restaurant LCP image is not deferred: ${url}`);
+      const heroPreload = [...html.matchAll(/<link\b[^>]*rel="preload"[^>]*as="image"[^>]*>/g)].find(match => match[0].includes("cafe-israel"))?.[0];
+      assert.match(heroPreload || "", /fetchpriority="high"/i, `The responsive LCP preload has the same high priority: ${url}`);
       const category = { he: "קופה למסעדה", fr: "caisse restaurant", en: "restaurant POS" }[lang];
       const heading = main.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1] || "";
       assert.ok(heading.includes(category), `Restaurant category is visible in the primary heading: ${url}`);
