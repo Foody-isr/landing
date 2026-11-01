@@ -147,16 +147,20 @@ for (const lang of ["he", "fr", "en"]) {
       !html.includes('name="robots" content="noindex'),
       `Indexable acquisition page: ${url}`,
     );
-    for (const [attribute, name] of [["property", "og:image"], ["name", "twitter:image"]]) {
-      assert.ok(
-        html.includes(`${attribute}="${name}" content="${canonicalBase}${social[lang].image}"`),
-        `Localized ${name}: ${url}`,
-      );
+    const ogImage = /<meta property="og:image" content="([^"]+)"/.exec(html)?.[1];
+    const twitterImage = /<meta name="twitter:image" content="([^"]+)"/.exec(html)?.[1];
+    const imageAlt = /<meta property="og:image:alt" content="([^"]+)"/.exec(html)?.[1];
+    assert.equal(ogImage, twitterImage, `Same resource image for Open Graph and Twitter: ${url}`);
+    if (path === "") {
+      assert.equal(ogImage, `${canonicalBase}${social[lang].image}`, `Approved home sharing image: ${url}`);
+      assert.equal(imageAlt, social[lang].alt, `Home sharing description: ${url}`);
+    } else {
+      assert.ok(ogImage?.startsWith(`${canonicalBase}/assets/sharing/${lang}/`), `Image matches the resource language: ${url}`);
+      assert.notEqual(imageAlt,social[lang].alt, `Resource-specific image description: ${url}`);
+      const imageResponse = await fetch(`${base}${new URL(ogImage).pathname}`);
+      assert.equal(imageResponse.status,200, `Resource sharing image can be fetched without JavaScript: ${url}`);
+      assert.ok(imageResponse.headers.get('content-type')?.startsWith('image/png'));
     }
-    assert.ok(
-      html.includes(`property="og:image:alt" content="${social[lang].alt}"`),
-      `Localized sharing-image description: ${url}`,
-    );
     if (path === "") {
       for (const [attribute, prefix] of [["property", "og"], ["name", "twitter"]]) {
         for (const field of ["title", "description"]) {
@@ -654,6 +658,16 @@ for (const [lang, content] of Object.entries(social)) {
   assert.deepEqual(bytes.subarray(0, 8), Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]));
   assert.equal(bytes.readUInt32BE(16), 1200, `Sharing image width: ${lang}`);
   assert.equal(bytes.readUInt32BE(20), 630, `Sharing image height: ${lang}`);
+}
+// Preview consumers must receive complete sharing metadata in HTML, without executing JavaScript.
+for (const userAgent of ["WhatsApp", "facebookexternalhit/1.1", "Twitterbot/1.0"]) {
+  for (const pathname of ["/fr/demos/kitchen", "/he/tools/food-cost-calculator", "/en/solutions/online-ordering"]) {
+    const response = await fetch(base+pathname,{headers:{"User-Agent":userAgent}});
+    assert.equal(response.status,200, `Preview consumer can fetch page: ${userAgent} ${pathname}`);
+    const html=await response.text(),head=html.slice(0,html.indexOf("</head>"));
+    for (const field of ["og:title","og:description","og:url","og:image"]) assert.ok(head.includes(`property="${field}"`), `Sharing metadata in head: ${userAgent} ${pathname} ${field}`);
+    assert.ok(head.includes('/assets/sharing/'), `Resource image served to preview consumer: ${userAgent} ${pathname}`);
+  }
 }
 console.log(
   `Marketing checks passed: ${checked} localized pages, canonicals, hreflang, RTL, headings, security headers, sitemap, redirects, 404 and social card.`,

@@ -10,14 +10,16 @@
     "test:marketing": "node scripts/check-marketing.mjs",
     "test:measurement": "node --test scripts/marketing-measurement.test.mjs",
     "audit:discovery": "node scripts/audit-discovery.mjs",
-    "social:generate": "node scripts/generate-social-card.mjs",
-    "prebuild": "npm run check:help",
-    "predev": "npm run check:help",
+    "social:generate": "node scripts/generate-social-card.mjs && node scripts/generate-page-social-cards.mjs",
+    "prebuild": "npm run check:help && npm run social:generate",
+    "predev": "npm run check:help && npm run social:generate",
     "check:help": "node scripts/render-help-guides.mjs --check && node scripts/check-help.mjs && node scripts/export-help-release.mjs && node scripts/check-help-ui.mjs",
     "test:help": "node --test scripts/help.test.mjs scripts/help-contract.test.mjs scripts/help-ui.test.mjs",
     "render:help": "node scripts/render-help-guides.mjs",
     "test:food-cost": "node --test scripts/food-cost.test.mjs",
-    "test:analytics": "node --test scripts/marketing-measurement.test.mjs scripts/google-analytics.test.mjs"
+    "test:analytics": "node --test scripts/marketing-measurement.test.mjs scripts/google-analytics.test.mjs",
+    "postbuild": "node scripts/check-built-sharing.mjs",
+    "test:social": "node --test scripts/share-cards.test.mjs"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",

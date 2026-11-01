@@ -3,6 +3,7 @@ import { marketing, type SolutionKey } from "./marketing/content";
 import { getSolution } from "./marketing/solutions";
 import { routes } from "./marketing/ui";
 import social from "./marketing/social.json";
+import { getShareCard } from "./marketing/share-cards";
 
 export type Lang = "en" | "fr" | "he";
 export type MarketingPage =
@@ -49,13 +50,14 @@ const HOME_DESCRIPTIONS = {
 };
 
 /** Returns the localized, versioned sharing image and its accessible description. */
-function socialImage(lang: Lang) {
+function socialImage(lang: Lang, path = "", title = "") {
+  const card = path ? getShareCard(lang, path, title) : null;
   return {
-    url: social[lang].image,
+    url: card?.image || social[lang].image,
     width: 1200,
     height: 630,
     type: "image/png",
-    alt: social[lang].alt,
+    alt: card?.alt || social[lang].alt,
   };
 }
 
@@ -100,7 +102,7 @@ export function getMarketingMetadata(
     description = content.description;
   }
   const canonical = `${SITE_URL}/${lang}${path}`;
-  const image = socialImage(lang);
+  const image = socialImage(lang, path, title);
   const shareTitle = page === "home" ? social[lang].title : title;
   const shareDescription = page === "home" ? social[lang].description : description;
   return {
@@ -143,7 +145,7 @@ export function getContentMetadata(
   translatedLanguages: Lang[] = [lang],
 ): Metadata {
   const canonical = `${SITE_URL}/${lang}${path}`;
-  const image = socialImage(lang);
+  const image = socialImage(lang, path, title);
   return {
     title: `${title} | Foody`,
     description,
@@ -156,6 +158,7 @@ export function getContentMetadata(
     openGraph: {
       title: `${title} | Foody`,
       description,
+      siteName: "Foody POS",
       url: canonical,
       type: "website",
       locale: `${lang}_IL`,
