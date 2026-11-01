@@ -12,7 +12,7 @@ const copy: Record<string, Copy> = {
   "/solutions/online-ordering": { fr: ["Vos commandes,\nsur votre site.", "Retrait, livraison et précommandes."], he: ["ההזמנות שלכם,\nבאתר שלכם", "איסוף, משלוחים והזמנות מראש"], en: ["Your orders,\non your website.", "Pickup, delivery and preorders."] },
   "/pricing": { fr: ["Les offres Foody.", "Licences, inclusions et frais."], he: ["המסלולים של Foody", "רישיונות, מה כלול ועלויות נפרדות"], en: ["Foody plans.", "Licences, inclusions and charges."] },
   "/compare/tabit": { fr: ["Foody ou Tabit ?", "Comparez les fonctions et les offres."], he: ["Foody או Tabit?", "השוו יכולות ומסלולים"], en: ["Foody or Tabit?", "Compare features and plans."] },
-  "/sectors/food-beverage/restaurants": { fr: ["Faites tourner\nvotre restaurant.", "De la salle à la cuisine."], he: ["מפעילים את\nהמסעדה שלכם", "מהאולם ועד המטבח"], en: ["Run your\nrestaurant.", "From the dining room to the kitchen."] },
+  "/sectors/food-beverage/restaurants": { fr: ["Votre caisse\nrestaurant.", "iPad, Android, commandes et tables."], he: ["קופה למסעדה\nבאייפד ובאנדרואיד", "הזמנות, שולחנות ותשלומים"], en: ["Your\nrestaurant POS.", "iPad, Android, orders and tables."] },
   "/solutions/kitchen-companion": { fr: ["Votre journée\navec le Compagnon.", "Avant, pendant et après le service."], he: ["יום העבודה\nעם Foody Companion", "לפני השירות, במהלכו ובסגירה"], en: ["Your day with\nFoody Companion.", "Before, during and after service."] },
   "/about": { fr: ["Foody POS,\ndu logiciel au terrain.", "Notre plateforme et nos coordonnées."], he: ["Foody POS,\nמהתוכנה לשטח", "הפלטפורמה שלנו ופרטי הקשר"], en: ["Foody POS,\nfrom software to your restaurant.", "Our platform and contact details."] },
 };

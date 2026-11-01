@@ -7,11 +7,13 @@ type Workflow = { title: string; intro: string; steps: { title: string; text: st
 
 /** Reviewed buying journeys, backed by the existing public help procedures. */
 export const acquisitionContent: Record<Lang, {
-  readProcedure: string; buyingGuide: string; workflows: Record<AcquisitionPage, Workflow>;
+  readProcedure: string; buyingGuide: string; restaurantLink: string; checkoutGuide: string; workflows: Record<AcquisitionPage, Workflow>;
 }> = {
   he: {
     readProcedure: "למדריך התפעול",
     buyingGuide: "איך לבחור קופה למסעדה בישראל",
+    restaurantLink: "קופות למסעדות ולבתי קפה עם Foody POS",
+    checkoutGuide: "איך מאשרים תשלום בקופה",
     workflows: {
       pos: {
         title: "הזמנה, מטבח ותשלום. בדקו את הרצף בהדגמה.",
@@ -24,8 +26,8 @@ export const acquisitionContent: Record<Lang, {
         offer: `Foody קופה: ${pricingRates.pos} ₪ לחודש לעסק, כולל רישיון מכשיר אחד. Foody מסעדה: ${pricingRates.restaurant} ₪ לחודש, כולל שני רישיונות, הזמנות אונליין ו־QR. הרישיון אינו כולל את המכשיר עצמו. לפני מע״מ; חומרה, הקמה, הדרכה, EMV, סליקה והדפסת בוני מטבח בנפרד.`,
       },
       restaurants: {
-        title: "מההזמנה בשולחן ועד לבדיקת המלאי",
-        intro: "קופה למסעדה צריכה להתאים לאופן שבו הצוות עובד. בהדגמה בדקו את רצף העבודה עם התפריט, השולחנות והמכשירים שאתם צריכים.",
+        title: "קופה למסעדה: בדקו הזמנה, שירות ותשלום",
+        intro: "כשמשווים קופות למסעדות, בדקו פתיחת שולחן, בחירת מנות ותוספות, שליחה להכנה ואישור תשלום. המדריכים מציגים את הפעולות והתנאים בכל שלב; מעקב אחר חומרי הגלם דורש את מודול המטבח והגדרת הקישורים למתכונים.",
         steps: [
           { title: "פותחים שולחן ולוקחים הזמנה", text: "המלצר בוחר מנות, גדלים ותוספות בטאבלט תואם. הקופה והמשרד האחורי זמינים בעברית, בצרפתית ובאנגלית, עם תצוגה מימין לשמאל בעברית.", guide: "/help/orders/taking-an-order-pos" },
           { title: "מארגנים את השירות והתשלום", text: "שולחים את המנות לפי הגדרות ההכנה ומנהלים את החשבון בשולחן. בודקים מראש התאמה למדפסות ולספק הסליקה; הדפסת בוני מטבח היא אפשרות בתשלום.", guide: "/help/orders/courses-and-kitchen-release" },
@@ -58,6 +60,8 @@ export const acquisitionContent: Record<Lang, {
   fr: {
     readProcedure: "Lire la procédure",
     buyingGuide: "Choisir une caisse restaurant en Israël",
+    restaurantLink: "Caisses pour restaurants et cafés avec Foody POS",
+    checkoutGuide: "Comment confirmer un paiement en caisse",
     workflows: {
       pos: {
         title: "Commande, cuisine, paiement. Vérifiez le parcours en démo.",
@@ -70,8 +74,8 @@ export const acquisitionContent: Record<Lang, {
         offer: `Foody Caisse : ${pricingRates.pos} ₪ HT par établissement et par mois, avec une licence appareil. Foody Restaurant : ${pricingRates.restaurant} ₪ HT par mois, avec deux licences, commandes en ligne et QR. La licence ne comprend pas l’appareil physique. Matériel, installation, formation, EMV, slika et impression des bons cuisine séparés.`,
       },
       restaurants: {
-        title: "De la commande à table au suivi des ingrédients",
-        intro: "Une caisse restaurant doit suivre le travail de votre équipe. Pendant la démo, vérifiez le parcours avec les menus, les tables et les appareils dont vous avez besoin.",
+        title: "Caisse restaurant : vérifiez commande, service et paiement",
+        intro: "Pour comparer les caisses restaurant, testez l’ouverture d’une table, les plats et suppléments, l’envoi en préparation et la confirmation du paiement. Les procédures détaillent chaque étape et ses conditions ; le suivi des ingrédients demande le module Cuisine et les liens entre ventes et recettes.",
         steps: [
           { title: "Ouvrir la table et prendre la commande", text: "Le serveur choisit plats, tailles et suppléments sur une tablette compatible. La caisse et le back-office sont disponibles en français, hébreu et anglais, avec affichage de droite à gauche en hébreu.", guide: "/help/orders/taking-an-order-pos" },
           { title: "Organiser le service et le paiement", text: "Envoyez les plats selon les règles de préparation et gérez l’addition à table. La compatibilité des imprimantes et du prestataire de slika se vérifie avant installation ; l’impression des bons en cuisine est une option payante.", guide: "/help/orders/courses-and-kitchen-release" },
@@ -104,6 +108,8 @@ export const acquisitionContent: Record<Lang, {
   en: {
     readProcedure: "Read the procedure",
     buyingGuide: "Choosing a restaurant POS in Israel",
+    restaurantLink: "POS for restaurants and cafés with Foody POS",
+    checkoutGuide: "How to confirm a POS payment",
     workflows: {
       pos: {
         title: "Orders, kitchen, payment. Check the journey in a demo.",
@@ -116,8 +122,8 @@ export const acquisitionContent: Record<Lang, {
         offer: `Foody POS: ILS ${pricingRates.pos} per location/month, with one device licence. Foody Restaurant: ILS ${pricingRates.restaurant} per month, with two licences, online orders and QR. A licence does not include the physical device. Excluding VAT; hardware, setup, training, EMV, processing and kitchen ticket printing are separate.`,
       },
       restaurants: {
-        title: "From a table order to ingredient tracking",
-        intro: "A restaurant POS should fit your team’s work. During the demo, check the journey with the menus, tables and devices you need.",
+        title: "Restaurant POS: check ordering, service and payment",
+        intro: "When comparing restaurant POS systems, test opening a table, selecting dishes and modifiers, sending to preparation and confirming payment. The procedures explain each step and its conditions; ingredient tracking requires the Kitchen module and configured sales-to-recipe mappings.",
         steps: [
           { title: "Open the table and take the order", text: "The waiter selects dishes, sizes and extras on a compatible tablet. Both POS and back-office interfaces support English, Hebrew and French, with right-to-left display in Hebrew.", guide: "/help/orders/taking-an-order-pos" },
           { title: "Organise service and payment", text: "Send dishes according to the preparation rules and manage the table’s bill. Check printer and processor compatibility before installation; kitchen ticket printing is a paid option.", guide: "/help/orders/courses-and-kitchen-release" },

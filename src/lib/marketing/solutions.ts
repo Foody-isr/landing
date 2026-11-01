@@ -18,17 +18,17 @@ const entries: Record<
 > = {
   he: {
     restaurants: [
-      "קופה למסעדות ב־iPad וב־Android בישראל",
-      "Foody מסעדה הוא פתרון קופה ב־iPad וב־Android למסעדות ולבתי קפה בישראל. הוא מחבר ניהול שולחנות, הזמנות מלצרים, אתר הזמנות, QR ותשלומים.",
-      "המסעדה שלכם.\nהקופה ב־iPad וב־Android.",
-      "בין הסרוויס, ההזמנות שמגיעות מהאתר והמטבח שעובד במרץ, אתם צריכים שכל הצוות יראה את אותה תמונה. Foody מחבר את נקודות המגע של המסעדה.",
+      "קופה למסעדה באייפד ובאנדרואיד בישראל",
+      "קופה למסעדה ולבית קפה: Foody POS באייפד ובאנדרואיד מחבר שולחנות, הזמנות מלצרים ותשלומים. מסלול Foody מסעדה כולל גם אתר הזמנות ו־QR.",
+      "קופה למסעדה.\nבאייפד ובאנדרואיד.",
+      "Foody מסעדה מרכז קופה בדלפק, הזמנות מהטאבלט של המלצר, שולחנות והזמנות מהאתר באותה פלטפורמה. הקופה והמשרד האחורי זמינים בעברית, בצרפתית ובאנגלית. לניהול מתכונים, מלאי חומרי גלם ופוד קוסט מוסיפים את Foody Kitchen.",
       [
         [
           "Foody הזמנות כלול.",
           "אתר הזמנות, הזמנות להיום והזמנות מראש, איסוף ומשלוחים: Foody הזמנות כלול לצד הקופה והשירות בשולחן. הצוות מרכז את ההכנה במשרד האחורי.",
         ],
         [
-          "שירות שזורם מההתחלה.",
+          "הזמנה ותשלום בשולחן.",
           "אפליקציית Foody הרשמית על Victa Portable מחברת קבלת הזמנה, תשלום בשולחן וקבלה מודפסת במכשיר אחד, עם מסך 6.7 אינץ׳ ומדפסת מובנית.",
         ],
         [
@@ -39,7 +39,7 @@ const entries: Record<
       [
         [
           "אפשר לקחת הזמנה מהטאבלט של המלצר?",
-          "כן. המלצר יכול לפתוח שולחן, לבחור מנות ותוספות ולשלוח את ההזמנה להכנה ממכשיר תואם. הממשק זמין בעברית, בצרפתית ובאנגלית. שירותי הענן והתשלומים המחוברים דורשים אינטרנט. לפני התקנה בודקים את דגם המכשיר, גרסת המערכת, המדפסות וספק הסליקה.",
+          "כן. המלצר יכול לפתוח שולחן, לבחור מנות ותוספות ולשלוח את ההזמנה להכנה ממכשיר תואם. ממשקי הקופה והמשרד האחורי זמינים בעברית, בצרפתית ובאנגלית. שירותי הענן והתשלומים המחוברים דורשים אינטרנט. לפני התקנה בודקים את דגם המכשיר, גרסת המערכת, המדפסות וספק הסליקה.",
         ],
         [
           "כמה עולה Foody מסעדה ומה כלול?",
@@ -300,17 +300,17 @@ const entries: Record<
   },
   fr: {
     restaurants: [
-      "Caisse iPad et Android pour restaurants en Israël",
-      "Foody Restaurant est un logiciel de caisse sur iPad et Android pour les restaurants et cafés en Israël. Il réunit gestion des tables, prise de commande par les serveurs, site de commande, QR et paiements.",
-      "Votre restaurant.\nLa caisse sur iPad et Android.",
-      "Le service en salle, les commandes du site et la cuisine doivent avancer ensemble. Foody relie les équipes et les étapes du parcours de vos clients.",
+      "Caisse restaurant sur iPad et Android en Israël",
+      "Une caisse pour restaurant et café : Foody POS sur iPad et Android réunit tables, commandes des serveurs et paiements. L’offre Restaurant inclut le site de commande et le QR.",
+      "Votre caisse restaurant.\nSur iPad et Android.",
+      "Foody Restaurant réunit caisse au comptoir, commandes sur tablette serveur, tables et commandes du site dans une même plateforme. La caisse et le back-office sont disponibles en français, hébreu et anglais. Ajoutez Foody Cuisine pour les recettes, les stocks d’ingrédients et le food cost.",
       [
         [
           "Foody Commandes est inclus.",
           "Site de commande, ventes du jour, précommandes, retrait et livraison : Foody Commandes est inclus aux côtés de la caisse et du service en salle. Votre équipe centralise la préparation dans le back-office.",
         ],
         [
-          "Un service qui garde le rythme.",
+          "Commander et payer à table.",
           "L’application officielle Foody sur Victa Portable réunit prise de commande, paiement à table et reçu imprimé sur un seul appareil, avec un écran de 6,7 pouces et une imprimante intégrée.",
         ],
         [
@@ -321,7 +321,7 @@ const entries: Record<
       [
         [
           "Les serveurs peuvent-ils prendre les commandes sur tablette ?",
-          "Oui. Le serveur peut ouvrir une table, choisir les plats et suppléments, puis envoyer la commande en préparation depuis un appareil compatible. L’interface est disponible en hébreu, français et anglais. Les services cloud et paiements connectés nécessitent Internet. Le modèle de l’appareil, sa version système, les imprimantes et le prestataire de paiement sont vérifiés avant l’installation.",
+          "Oui. Le serveur peut ouvrir une table, choisir les plats et suppléments, puis envoyer la commande en préparation depuis un appareil compatible. La caisse et le back-office sont disponibles en hébreu, français et anglais. Les services cloud et paiements connectés nécessitent Internet. Le modèle de l’appareil, sa version système, les imprimantes et le prestataire de paiement sont vérifiés avant l’installation.",
         ],
         [
           "Combien coûte Foody Restaurant et que comprend l’offre ?",
@@ -582,17 +582,17 @@ const entries: Record<
   },
   en: {
     restaurants: [
-      "iPad and Android restaurant POS in Israel",
-      "Foody Restaurant is an iPad and Android POS for restaurants and cafés in Israel. It combines table management, waiter ordering, an ordering website, QR ordering and payments.",
-      "Your restaurant.\nYour POS on iPad and Android.",
-      "Front of house, online orders and a busy kitchen need to move together. Foody connects the people and steps that make your restaurant work.",
+      "Restaurant POS on iPad and Android in Israel",
+      "A POS for restaurants and cafés: Foody POS on iPad and Android connects tables, waiter orders and payments. The Restaurant plan includes your ordering website and QR ordering.",
+      "Your restaurant POS.\nOn iPad and Android.",
+      "Foody Restaurant brings counter sales, waiter tablet orders, tables and website orders into one platform. Both POS and back office support English, Hebrew and French. Add Foody Kitchen for recipes, ingredient inventory and food cost.",
       [
         [
           "Foody Orders is included.",
           "Your ordering website, same-day orders, preorders, pickup and delivery: Foody Orders is included alongside POS and table service. Your team coordinates preparation in the back office.",
         ],
         [
-          "Keep service moving.",
+          "Ordering and payment at the table.",
           "The official Foody app on Victa Portable brings ordering, payment at the table and printed receipts into one device, with a 6.7-inch screen and integrated printer.",
         ],
         [
@@ -603,7 +603,7 @@ const entries: Record<
       [
         [
           "Can waiters take orders on a tablet?",
-          "Yes. A waiter can open a table, select dishes and modifiers, and send the order for preparation from a compatible device. The interface is available in Hebrew, French and English. Cloud services and connected payments require Internet access. Device model, operating system version, printers and payment provider are checked before installation.",
+          "Yes. A waiter can open a table, select dishes and modifiers, and send the order for preparation from a compatible device. Both POS and back office support Hebrew, French and English. Cloud services and connected payments require Internet access. Device model, operating system version, printers and payment provider are checked before installation.",
         ],
         [
           "How much is Foody Restaurant and what is included?",
