@@ -2,7 +2,7 @@ import type { Lang } from "@/lib/seo";
 import { pricingRates } from "./pricing";
 
 export const BUYING_GUIDE_PATH = "/guides/restaurant-pos-israel";
-export type AcquisitionPage = "restaurants" | "kitchen" | "ordering";
+export type AcquisitionPage = "restaurants" | "kitchen" | "ordering" | "pos";
 type Workflow = { title: string; intro: string; steps: { title: string; text: string; guide: string }[]; offer: string };
 
 /** Reviewed buying journeys, backed by the existing public help procedures. */
@@ -13,6 +13,16 @@ export const acquisitionContent: Record<Lang, {
     readProcedure: "למדריך התפעול",
     buyingGuide: "איך לבחור קופה למסעדה בישראל",
     workflows: {
+      pos: {
+        title: "הזמנה, מטבח ותשלום. בדקו את הרצף בהדגמה.",
+        intro: "לקופה בדלפק או לטאבלט של המלצר, בדקו את העבודה עם התפריט, השפות והציוד שלכם. ממשקי הקופה והמשרד האחורי זמינים בעברית, בצרפתית ובאנגלית.",
+        steps: [
+          { title: "בוחרים את השולחן ואת המנות", text: "פתחו את השולחן או את המכירה בדלפק, בחרו מנה, גודל ותוספות והשלימו בחירות חובה. לפני השליחה בדקו כמויות, הערות ומחירים. פתיחת שולחן פעיל חוזרת לחשבון הקיים; היא אינה מכירה חדשה.", guide: "/help/orders/taking-an-order-pos" },
+          { title: "שולחים לפי קצב השירות", text: "כשהפרופיל והגרסאות התואמות מאפשרים זאת, משייכים מנות לשירות ושולחים או משחררים אותן במפורש. הוספת מנה לסל אינה משגרת או מדפיסה אותה. הדפסת בוני מטבח היא אפשרות בתשלום, עם מדפסת ופרופיל מוגדרים.", guide: "/help/orders/courses-and-kitchen-release" },
+          { title: "בודקים את החשבון ואת אישור התשלום", text: "בחרו את החשבון והסכום הנכונים ושלמו באמצעות ההגדרה התואמת. טאבלט עם Foody אינו הופך בעצמו למסוף כרטיסים. תוצאה לא ברורה דורשת בדיקת העסקה הקיימת לפני ניסיון נוסף; אישור תשלום אינו אישור שהקבלה הודפסה.", guide: "/help/payments/pos-checkout" },
+        ],
+        offer: `Foody קופה: ${pricingRates.pos} ₪ לחודש לעסק, כולל רישיון מכשיר אחד. Foody מסעדה: ${pricingRates.restaurant} ₪ לחודש, כולל שני רישיונות, הזמנות אונליין ו־QR. הרישיון אינו כולל את המכשיר עצמו. לפני מע״מ; חומרה, הקמה, הדרכה, EMV, סליקה והדפסת בוני מטבח בנפרד.`,
+      },
       restaurants: {
         title: "מההזמנה בשולחן ועד לבדיקת המלאי",
         intro: "קופה למסעדה צריכה להתאים לאופן שבו הצוות עובד. בהדגמה בדקו את רצף העבודה עם התפריט, השולחנות והמכשירים שאתם צריכים.",
@@ -49,6 +59,16 @@ export const acquisitionContent: Record<Lang, {
     readProcedure: "Lire la procédure",
     buyingGuide: "Choisir une caisse restaurant en Israël",
     workflows: {
+      pos: {
+        title: "Commande, cuisine, paiement. Vérifiez le parcours en démo.",
+        intro: "Pour la caisse du comptoir ou la tablette du serveur, testez avec votre menu, vos langues et votre matériel. La caisse et le back-office sont disponibles en français, hébreu et anglais.",
+        steps: [
+          { title: "Choisir la table et les plats", text: "Ouvrez la table ou la vente au comptoir, choisissez plat, taille et suppléments, puis complétez les options obligatoires. Vérifiez quantités, notes et prix avant l’envoi. Rouvrir une table active reprend son addition ; ce n’est pas une nouvelle vente.", guide: "/help/orders/taking-an-order-pos" },
+          { title: "Envoyer au rythme du service", text: "Avec un profil et des versions compatibles, affectez les plats aux services, puis envoyez ou lancez-les explicitement. Ajouter un plat au panier ne l’envoie ni ne l’imprime. L’impression des bons cuisine est une option payante, avec imprimante et profil configurés.", guide: "/help/orders/courses-and-kitchen-release" },
+          { title: "Vérifier l’addition et le paiement confirmé", text: "Sélectionnez la bonne addition et son montant, puis utilisez le parcours de paiement compatible. Une tablette avec Foody ne devient pas elle-même un terminal carte. Un résultat incertain demande de vérifier la transaction existante avant toute nouvelle tentative ; un paiement confirmé ne prouve pas la sortie du reçu papier.", guide: "/help/payments/pos-checkout" },
+        ],
+        offer: `Foody Caisse : ${pricingRates.pos} ₪ HT par établissement et par mois, avec une licence appareil. Foody Restaurant : ${pricingRates.restaurant} ₪ HT par mois, avec deux licences, commandes en ligne et QR. La licence ne comprend pas l’appareil physique. Matériel, installation, formation, EMV, slika et impression des bons cuisine séparés.`,
+      },
       restaurants: {
         title: "De la commande à table au suivi des ingrédients",
         intro: "Une caisse restaurant doit suivre le travail de votre équipe. Pendant la démo, vérifiez le parcours avec les menus, les tables et les appareils dont vous avez besoin.",
@@ -85,6 +105,16 @@ export const acquisitionContent: Record<Lang, {
     readProcedure: "Read the procedure",
     buyingGuide: "Choosing a restaurant POS in Israel",
     workflows: {
+      pos: {
+        title: "Orders, kitchen, payment. Check the journey in a demo.",
+        intro: "For the counter POS or a waiter’s tablet, test with your menu, staff languages and equipment. Both POS and back-office interfaces support English, Hebrew and French.",
+        steps: [
+          { title: "Choose the table and dishes", text: "Open the table or counter sale, select dishes, sizes and modifiers, and complete required choices. Check quantities, notes and prices before sending. Reopening an active table resumes its existing bill; it does not create a new sale.", guide: "/help/orders/taking-an-order-pos" },
+          { title: "Send dishes at the service’s pace", text: "With a compatible profile and versions, assign courses and explicitly send or release dishes. Adding a dish to the basket does not send or print it. Kitchen ticket printing is a paid option requiring a configured printer and profile.", guide: "/help/orders/courses-and-kitchen-release" },
+          { title: "Check the bill and confirmed payment", text: "Select the correct bill and amount, then use the compatible payment flow. A tablet running Foody does not itself become a card terminal. An uncertain result requires checking the existing transaction before another attempt; confirmed payment does not prove a paper receipt was printed.", guide: "/help/payments/pos-checkout" },
+        ],
+        offer: `Foody POS: ILS ${pricingRates.pos} per location/month, with one device licence. Foody Restaurant: ILS ${pricingRates.restaurant} per month, with two licences, online orders and QR. A licence does not include the physical device. Excluding VAT; hardware, setup, training, EMV, processing and kitchen ticket printing are separate.`,
+      },
       restaurants: {
         title: "From a table order to ingredient tracking",
         intro: "A restaurant POS should fit your team’s work. During the demo, check the journey with the menus, tables and devices you need.",

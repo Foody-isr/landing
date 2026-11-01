@@ -154,10 +154,10 @@ function PageStory({ lang, page }: { lang: Lang; page: SolutionKey }) {
 }
 
 const related: Record<SolutionKey, SolutionKey[]> = {
-  restaurants: ["ordering", "hardware", "kitchen"],
+  restaurants: ["pos", "ordering", "hardware", "kitchen"],
   chains: ["kitchen", "companion", "equipment"],
   retail: ["pos", "payments", "equipment"],
-  pos: ["hardware", "equipment", "ordering"],
+  pos: ["restaurants", "hardware", "equipment", "ordering"],
   kitchen: ["companion", "chains", "equipment"],
   ordering: ["kitchen", "equipment", "payments"],
   payments: ["hardware", "pos", "ordering"],
@@ -179,14 +179,19 @@ export default function SolutionPage({
   const e = ecosystem[lang];
   const product = productNavigation.find((item) => item.href === routes[page]);
   const pageLabel = product ? u[product.key] : u[page];
+  const softwareOffer = page === "restaurants"
+    ? { plan: "restaurant", entity: "restaurant-software", rate: pricingRates.restaurant, description: t.faq[1].a }
+    : page === "pos"
+      ? { plan: "pos", entity: "pos-software", rate: pricingRates.pos, description: t.faq[2].a }
+      : null;
   return (
     <main id="main-content">
-      {page === "restaurants" && <JsonLd data={{
+      {softwareOffer && <JsonLd data={{
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        "@id": `${SITE_URL}/#restaurant-software`,
+        "@id": `${SITE_URL}/#${softwareOffer.entity}`,
         name: pageLabel,
-        url: `${SITE_URL}/${lang}${routes.restaurants}`,
+        url: `${SITE_URL}/${lang}${routes[page]}`,
         description: t.description,
         applicationCategory: "BusinessApplication",
         operatingSystem: "iPadOS, Android",
@@ -194,11 +199,11 @@ export default function SolutionPage({
         publisher: { "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: "Foody", url: SITE_URL },
         offers: {
           "@type": "Offer",
-          url: `${SITE_URL}/${lang}/pricing#plan-restaurant`,
-          price: pricingRates.restaurant,
+          url: `${SITE_URL}/${lang}/pricing#plan-${softwareOffer.plan}`,
+          price: softwareOffer.rate,
           priceCurrency: "ILS",
-          description: t.faq[1].a,
-          priceSpecification: { "@type": "UnitPriceSpecification", price: pricingRates.restaurant, priceCurrency: "ILS", valueAddedTaxIncluded: false, unitText: "month" },
+          description: softwareOffer.description,
+          priceSpecification: { "@type": "UnitPriceSpecification", price: softwareOffer.rate, priceCurrency: "ILS", valueAddedTaxIncluded: false, unitText: "month" },
         },
       }} />}
       <JsonLd
@@ -314,7 +319,7 @@ export default function SolutionPage({
         </div>
       </section>
       <PageStory lang={lang} page={page} />
-      {(page === "restaurants" || page === "kitchen" || page === "ordering") && <AcquisitionWorkflow lang={lang} page={page} />}
+      {(page === "restaurants" || page === "kitchen" || page === "ordering" || page === "pos") && <AcquisitionWorkflow lang={lang} page={page} />}
       {page === "kitchen" && <ProductScreenshots lang={lang} />}
       <FaqSection lang={lang} items={t.faq} currentHref={routes[page]} />
       {page === "restaurants" && <section className="shell related-section">

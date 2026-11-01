@@ -2,8 +2,8 @@ import { writeFile } from "node:fs/promises";
 
 const base = (process.env.DISCOVERY_BASE_URL || "https://foody-pos.co.il").replace(/\/$/, "");
 const canonicalBase = (process.env.NEXT_PUBLIC_SITE_URL || "https://foody-pos.co.il").replace(/\/$/, "");
-const paths = ["", "/sectors/food-beverage/restaurants", "/solutions/kitchen", "/solutions/online-ordering", "/pricing", "/compare/tabit", "/guides/restaurant-pos-israel", "/guides/restaurant-inventory-israel", "/tools/food-cost-calculator", "/demos/kitchen", "/about"];
-const priorities = ["/solutions/kitchen", "/pricing", "/guides/restaurant-pos-israel", "/guides/restaurant-inventory-israel", "/tools/food-cost-calculator"];
+const paths = ["", "/sectors/food-beverage/restaurants", "/solutions/pos", "/solutions/kitchen", "/solutions/online-ordering", "/pricing", "/compare/tabit", "/guides/restaurant-pos-israel", "/guides/restaurant-inventory-israel", "/tools/food-cost-calculator", "/demos/kitchen", "/about"];
+const priorities = ["/solutions/pos", "/solutions/kitchen", "/pricing", "/guides/restaurant-pos-israel", "/guides/restaurant-inventory-israel", "/tools/food-cost-calculator"];
 const headers = { "User-Agent": "FoodyDiscoveryAudit/1.0" };
 const report = { checkedAt: new Date().toISOString(), base, limitations: ["HTTP and HTML checks do not prove Google/Bing indexing or requests from real crawler IPs.", "No Search Console, Bing performance or LLM ranking data is inferred from this report."], pages: [], infrastructure: {} };
 for (const lang of ["he", "fr", "en"]) for (const path of paths) {
