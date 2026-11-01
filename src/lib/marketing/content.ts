@@ -28,7 +28,7 @@ const he = {
   home: {
     title: "העסק שלכם.\nכל האפשרויות.",
     description:
-      "קופת ענן ב־iPad וב־Android, תשלומים וניהול עסק שעובדים יחד. מהקפה השכונתי ועד לרשת המסעדות הבאה של ישראל.",
+      "Foody היא קופת ענן ב־iPad וב־Android למסעדות, בתי קפה וחנויות בישראל. חברו קופה, תשלומים וניהול, עם כלים ייעודיים לשולחנות ולהזמנות מלצרים במסעדה.",
     secondary: "למצוא את הפתרון שלי",
     photoAlt: "בעלת בית קפה מגישה קפה ללקוח ליד קופה על הדלפק",
     photoLabel: "פחות להתעסק. יותר לארח.",
@@ -170,7 +170,7 @@ const fr: Copy = {
   home: {
     title: "Votre commerce.\nToutes les possibilités.",
     description:
-      "La caisse cloud sur iPad et Android, les paiements et la gestion qui travaillent ensemble. Du café de quartier au prochain réseau de restaurants en Israël.",
+      "Foody est une caisse cloud sur iPad et Android pour les restaurants, cafés et commerces en Israël. Reliez caisse, paiements et gestion, avec des outils dédiés aux tables et aux commandes des serveurs en restauration.",
     secondary: "Trouver ma solution",
     photoAlt:
       "Une gérante de café sert un client au comptoir, à côté de sa caisse",
@@ -324,7 +324,7 @@ const en: Copy = {
   home: {
     title: "Your business.\nAll the possibilities.",
     description:
-      "Cloud POS on iPad and Android, payments and business tools that work together. From the neighborhood café to Israel’s next restaurant group.",
+      "Foody is a cloud POS on iPad and Android for restaurants, cafés and shops in Israel. Connect sales, payments and management, with dedicated table and waiter ordering tools for restaurants.",
     secondary: "Find my solution",
     photoAlt:
       "A café owner serving a customer at the counter beside her point of sale",

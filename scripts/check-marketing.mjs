@@ -26,6 +26,7 @@ const paths = [
   "/solutions/verifone",
   "/solutions/equipment",
   "/solutions/kitchen-companion",
+  "/compare/tabit",
 ];
 let checked = 0;
 
@@ -467,6 +468,64 @@ for (const lang of ["he", "fr", "en"]) {
         printingOption.includes(`href="/${lang}/contact"`),
         `Kitchen printing has a setup enquiry: ${url}`,
       );
+    }
+    if (path === "/sectors/food-beverage/restaurants") {
+      const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((match) => JSON.parse(match[1]));
+      const software = schemas.find((schema) => schema["@type"] === "SoftwareApplication");
+      assert.ok(software, `Restaurant product is described as software: ${url}`);
+      assert.equal(software.offers.price, 890, `Approved Restaurant price: ${url}`);
+      assert.equal(software.offers.priceCurrency, "ILS");
+      assert.equal(software.offers.priceSpecification.valueAddedTaxIncluded, false);
+      assert.equal(software.offers.priceSpecification.unitText, "month");
+      assert.ok(software.offers.description.includes("890"));
+      assert.ok(main.includes("890"), `Structured price is also visible: ${url}`);
+      assert.ok(main.includes(`href="/${lang}/compare/tabit"`));
+      assert.ok(main.includes(`href="/${lang}/help/orders/taking-an-order-pos"`));
+    }
+    if (path === "/compare/tabit") {
+      const demonstrations = main.match(/<section[^>]*data-comparison-examples[^>]*>([\s\S]*?)<\/section>/)?.[1];
+      assert.ok(demonstrations, `Three concrete examples are server-rendered: ${url}`);
+      assert.deepEqual([...demonstrations.matchAll(/<details[^>]*id="([^"]+)"/g)].map(match => match[1]), ["example-languages", "example-stock", "example-companion"]);
+      assert.ok(demonstrations.includes({fr: "ne sont pas des captures", en: "not application screenshots", he: "אינם צילומי מסך"}[lang]), `Illustrations are clearly distinguished from application screenshots: ${url}`);
+      const remainingStock = demonstrations.match(/<dd\b[^>]*\bdata-example-remaining(?:="[^"]*")?[^>]*>([\s\S]*?)<\/dd>/)?.[1];
+      assert.equal(remainingStock, "10 kg", `Stock example has a readable starting state: ${url}`);
+      const reasons = main.match(/<section[^>]*data-foody-reasons[^>]*>([\s\S]*?)<\/section>/)?.[1];
+      assert.ok(reasons, `Concrete Foody buying reasons are visible: ${url}`);
+      assert.equal((reasons.match(/<h3>/g) || []).length, 3, `Three substantiated Foody benefits: ${url}`);
+      const moduleScope = main.match(/<p[^>]*data-kitchen-scope[^>]*>([\s\S]*?)<\/p>/)?.[1];
+      for (const amount of ["890", "590", "1490"]) assert.ok(moduleScope?.includes(amount), `Kitchen and Restaurant module prices remain distinct: ${amount}/${url}`);
+      assert.ok(reasons.includes(`href="/${lang}/solutions/pos"`));
+      assert.ok(reasons.includes(`href="/${lang}/help/kitchen/preparations"`));
+      assert.ok(reasons.includes(`href="/${lang}/help/kitchen/daily-operations"`));
+      const example = main.match(/<section[^>]*data-commission-example[^>]*>([\s\S]*?)<\/section>/)?.[1];
+      assert.ok(example?.includes("900"), `Three-percent illustration has the correct arithmetic: ${url}`);
+      assert.ok(example.includes({fr: "sans attribution à Tabit", en: "not attributed to Tabit", he: "ללא ייחוס ל־Tabit"}[lang]), `Illustrative commission is never represented as a verified competitor tariff: ${url}`);
+      assert.ok(main.includes('<time dateTime="2026-10-30">'), `Explicit source review date: ${url}`);
+      const expectedCapabilities = ["admin-languages", "pos-languages", "ingredient-depletion", "recipe-cost", "sales-forecast", "before-service", "during-service", "day-close", "supplier-discrepancies"];
+      assert.deepEqual([...main.matchAll(/data-capability="([^"]+)"/g)].map(match => match[1]), expectedCapabilities, `Every reviewed functional comparison is rendered: ${url}`);
+      assert.equal((main.match(/scope="row"/g) || []).length, 9, `Only the owner's stated native differences are compared: ${url}`);
+      const table = main.match(/<table\b[\s\S]*?<\/table>/)?.[0];
+      assert.equal((table.match(/class="comparison-present"/g) || []).length, 9, `Foody uses explicit Present statuses: ${url}`);
+      assert.equal((table.match(/class="comparison-absent"/g) || []).length, 9, `Tabit uses explicit native-absence statuses: ${url}`);
+      assert.ok(table.includes('>Tabit*</th>'), `Native scope note is attached once to the column heading: ${url}`);
+      for (const [, cell] of table.matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/g)) {
+        assert.ok(!cell.includes('<a'), `Proof links stay with the feature rather than the status: ${url}`);
+        assert.ok(!cell.includes('<p'), `Status columns contain no descriptions: ${url}`);
+      }
+      assert.ok(table.includes('aria-describedby="comparison-assessment"'), `Status claims link to their assessment scope: ${url}`);
+      const assessment = main.match(/<p[^>]*id="comparison-assessment"[^>]*>([\s\S]*?)<\/p>/)?.[1];
+      assert.ok(assessment?.includes({fr: "n’ont pas été confirmées indépendamment", en: "not been independently confirmed", he: "לא אומתו באופן עצמאי"}[lang]), `Owner-reported absences are not represented as independently verified: ${url}`);
+      const proofAnchors = [...table.matchAll(/<a\b([^>]*)>/g)].map(match => match[1]).filter(attributes => /class="[^"]*\bcomparison-source\b[^"]*"/.test(attributes));
+      assert.equal(proofAnchors.length, 9, `Each Foody capability has a public proof link: ${url}`);
+      assert.ok(proofAnchors.every(attributes => attributes.includes('aria-label="')), `Compact proof links retain feature-specific accessible names: ${url}`);
+      const proofLinks = new Set(proofAnchors.map(attributes => attributes.match(/href="([^"]+)"/)?.[1]).filter(href => href?.startsWith('/')));
+      for (const href of proofLinks) assert.equal((await fetch(base + href)).status, 200, `Functional evidence resolves: ${href}`);
+      assert.ok(main.includes('href="https://www.tabit.cloud/integrations/"'), `Third-party integration scope is sourced: ${url}`);
+      assert.ok(main.includes('role="region"'), `Scrollable comparison is keyboard accessible: ${url}`);
+      assert.ok(main.includes(`href="/${lang}/pricing"`));
+      for (const guide of ["orders/taking-an-order-pos", "tables-floors/floor-plans"]) {
+        assert.equal((await fetch(`${base}/${lang}/help/${guide}`)).status, 200, `Published product evidence: ${lang}/${guide}`);
+      }
     }
     const contextualRoutes = {
       "": ["/solutions/kitchen", "/pricing#plan-complete"],

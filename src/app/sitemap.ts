@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllArticlePaths, getTopics } from "@/lib/help/content";
+import { TABIT_COMPARISON_PATH } from "@/lib/marketing/comparison";
 import {
   getMarketingPath,
   languageAlternates,
@@ -46,5 +47,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     })),
   ]);
-  return [...pages, ...help];
+  const comparisons = SUPPORTED_LANGS.map((lang) => ({
+    url: `${SITE_URL}/${lang}${TABIT_COMPARISON_PATH}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+    alternates: { languages: languageAlternates(TABIT_COMPARISON_PATH) },
+  }));
+  return [...pages, ...comparisons, ...help];
 }
