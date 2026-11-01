@@ -76,6 +76,10 @@ export const ui = {
     footer:
       "Foody POS: קופה ב־iPad וב־Android, הזמנות אונליין וניהול מטבח למסעדות ולעסקים בישראל.",
     buyingGuide: "איך לבחור קופה למסעדה בישראל",
+    about: "אודות Foody POS",
+    analyticsPreferences: "העדפות Google Analytics",
+    foodCostCalculator: "מחשבון פוד קוסט",
+    productDemos: "הדגמות המטבח",
     ctaTitle: "הצעד הבא של העסק מתחיל כאן.",
     ctaText:
       "בואו נראה לכם איך Foody עובד בעסק שלכם, ונבנה יחד הצעה לקופה, לחומרה ולסליקה.",
@@ -123,6 +127,10 @@ export const ui = {
     footer:
       "Foody POS : caisse iPad et Android, commandes en ligne et gestion de cuisine pour les restaurants et commerces en Israël.",
     buyingGuide: "Choisir une caisse restaurant en Israël",
+    about: "Qui sommes-nous",
+    analyticsPreferences: "Préférences Google Analytics",
+    foodCostCalculator: "Calculateur de food cost",
+    productDemos: "Démonstrations de cuisine",
     ctaTitle: "Votre prochaine étape commence ici.",
     ctaText:
       "Découvrez Foody avec une démo adaptée à votre activité et une proposition qui réunit logiciel, matériel et slika.",
@@ -170,6 +178,10 @@ export const ui = {
     footer:
       "Foody POS: iPad and Android POS, online orders and kitchen management for restaurants and businesses in Israel.",
     buyingGuide: "Choosing a restaurant POS in Israel",
+    about: "About Foody POS",
+    analyticsPreferences: "Google Analytics preferences",
+    foodCostCalculator: "Food-cost calculator",
+    productDemos: "Kitchen demonstrations",
     ctaTitle: "Your next chapter starts here.",
     ctaText:
       "See Foody in action with a demo built around your business and a proposal covering software, hardware and payment processing.",

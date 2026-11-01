@@ -1,9 +1,11 @@
 export const META_PIXEL_ID = "1059276727609296";
 const STORAGE_KEY = "foody-acquisition-v1";
-const SOURCES = ["direct", "google", "bing", "chatgpt", "perplexity", "gemini", "facebook", "instagram", "other"] as const;
-const CHANNELS = ["direct", "organic_search", "paid_search", "ai_referral", "social", "paid_social", "referral"] as const;
-type Source = (typeof SOURCES)[number];
-type Channel = (typeof CHANNELS)[number];
+/** Allowed acquisition sources; arbitrary referrer and campaign strings never become event parameters. */
+export const ACQUISITION_SOURCES = ["direct", "google", "bing", "chatgpt", "perplexity", "gemini", "facebook", "instagram", "other"] as const;
+/** Allowed acquisition channels for confirmed-demo measurement. */
+export const ACQUISITION_CHANNELS = ["direct", "organic_search", "paid_search", "ai_referral", "social", "paid_social", "referral"] as const;
+type Source = (typeof ACQUISITION_SOURCES)[number];
+type Channel = (typeof ACQUISITION_CHANNELS)[number];
 type Language = "he" | "fr" | "en";
 type Acquisition = { source: Source; channel: Channel; landingLanguage: Language };
 type MeasurementWindow = Window & {
@@ -47,7 +49,7 @@ export function captureAcquisition(): Acquisition {
   const current = classifyAcquisition(window.location.href, document.referrer);
   try {
     const stored = JSON.parse(window.sessionStorage.getItem(STORAGE_KEY) || "null");
-    if (stored && SOURCES.includes(stored.source) && CHANNELS.includes(stored.channel) && ["he", "fr", "en"].includes(stored.landingLanguage)) {
+    if (stored && ACQUISITION_SOURCES.includes(stored.source) && ACQUISITION_CHANNELS.includes(stored.channel) && ["he", "fr", "en"].includes(stored.landingLanguage)) {
       acquisition = { source: stored.source, channel: stored.channel, landingLanguage: stored.landingLanguage };
       return acquisition;
     }
@@ -66,4 +68,5 @@ export function recordDemoSubmission(language: Language): void {
   // A blocked analytics library must never turn an accepted lead into a form error.
   try { (target.dataLayer ||= []).push({ event: "foody_demo_submitted", ...params }); } catch { /* Optional measurement channel. */ }
   try { target.fbq?.("trackSingle", META_PIXEL_ID, "Lead", params); } catch { /* The API's confirmed receipt remains authoritative. */ }
+  try { if (typeof target.dispatchEvent === "function") target.dispatchEvent(new CustomEvent("foody:demo-submitted", { detail: params })); } catch { /* Optional consent-gated Google measurement cannot invalidate receipt. */ }
 }

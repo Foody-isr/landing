@@ -6,6 +6,8 @@ import ComparisonDemonstrations from "@/components/marketing/ComparisonDemonstra
 import ProductScreenshots from "@/components/marketing/ProductScreenshots";
 import { CallToAction, JsonLd } from "@/components/marketing/Shared";
 import { COMPARISON_REVIEWED_AT, comparisonCopy, comparisonSources, TABIT_COMPARISON_PATH } from "@/lib/marketing/comparison";
+import { FOOD_COST_PATH, PRODUCT_DEMOS_PATH } from "@/lib/marketing/resources";
+import { ui } from "@/lib/marketing/ui";
 import { routes } from "@/lib/marketing/ui";
 import { getContentMetadata, resolveLang, SITE_URL } from "@/lib/seo";
 
@@ -57,15 +59,21 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             <tbody>{t.rows.map(row => <tr key={row.id} data-capability={row.id}>
               <th scope="row">{row.label}<p className="comparison-detail">{row.foody} <Link className="comparison-source" href={`/${lang}${row.proof}`} aria-label={`${t.foodySource} : ${row.label}`}>{t.foodySource}</Link></p></th>
               <td><span className="comparison-vendor" aria-hidden="true">Foody</span><strong className="comparison-present"><span aria-hidden="true">✓</span>{t.presentLabel}</strong></td>
-              <td><span className="comparison-vendor" aria-hidden="true">Tabit*</span><strong className="comparison-absent"><span aria-hidden="true">✕</span>{t.absentLabel}</strong></td>
+              <td data-competitor-status={row.id === "sales-forecast" ? "documented" : "unconfirmed"}><span className="comparison-vendor" aria-hidden="true">Tabit*</span>
+                <strong className={row.id === "sales-forecast" ? "comparison-documented" : "comparison-unconfirmed"}><span aria-hidden="true">{row.id === "sales-forecast" ? "✓" : "?"}</span>{row.id === "sales-forecast" ? t.documentedLabel : t.unconfirmedLabel}</strong>
+                <p className="comparison-status-detail">{row.id === "sales-forecast" ? t.forecastNote : t.unconfirmedNote}</p>
+                {row.id === "sales-forecast" && <a className="comparison-source" href={comparisonSources.forecasts}>{t.forecastSource}</a>}
+              </td>
             </tr>)}</tbody>
           </table>
         </div>
         <p id="comparison-assessment" className="comparison-attribution">* {t.attributionNote} <a className="comparison-source" href={comparisonSources.integrations}>{t.source}</a></p>
+        <p className="comparison-scope-note">{t.scopeNote} <a className="comparison-source" href={comparisonSources.israel}>{t.israelSource}</a> <a className="comparison-source" href={comparisonSources.production}>{t.productionSource}</a></p>
         <Link className="text-link" href={`/${lang}/pricing`}>{t.pricingLink}</Link>
       </section>
       <ComparisonDemonstrations lang={lang} />
       <ProductScreenshots lang={lang} />
+      <div className="shell resource-inline-links"><Link className="text-link" href={`/${lang}${PRODUCT_DEMOS_PATH}`}>{ui[lang].productDemos}</Link><Link className="text-link" href={`/${lang}${FOOD_COST_PATH}`}>{ui[lang].foodCostCalculator}</Link></div>
       <section className="shell related-section" data-commission-example>
         <h2>{t.commission.title}</h2>
         <p>{t.commission.text}</p>

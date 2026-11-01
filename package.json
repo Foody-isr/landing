@@ -15,7 +15,9 @@
     "predev": "npm run check:help",
     "check:help": "node scripts/render-help-guides.mjs --check && node scripts/check-help.mjs && node scripts/export-help-release.mjs && node scripts/check-help-ui.mjs",
     "test:help": "node --test scripts/help.test.mjs scripts/help-contract.test.mjs scripts/help-ui.test.mjs",
-    "render:help": "node scripts/render-help-guides.mjs"
+    "render:help": "node scripts/render-help-guides.mjs",
+    "test:food-cost": "node --test scripts/food-cost.test.mjs",
+    "test:analytics": "node --test scripts/marketing-measurement.test.mjs scripts/google-analytics.test.mjs"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",

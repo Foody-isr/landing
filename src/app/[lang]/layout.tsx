@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { I18nProvider } from "@/lib/i18n/context";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import MetaPixel from "@/components/MetaPixel";
 import {
   getMarketingMetadata,
@@ -52,6 +53,7 @@ export default async function LangLayout({
       <body>
         <I18nProvider lang={lang}>{children}</I18nProvider>
         {process.env.NODE_ENV === "production" && <MetaPixel />}
+        <GoogleAnalytics lang={lang} />
       </body>
     </html>
   );

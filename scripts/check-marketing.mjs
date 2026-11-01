@@ -28,6 +28,9 @@ const paths = [
   "/solutions/kitchen-companion",
   "/compare/tabit",
   "/guides/restaurant-pos-israel",
+  "/tools/food-cost-calculator",
+  "/demos/kitchen",
+  "/about",
 ];
 let checked = 0;
 
@@ -62,6 +65,10 @@ for (const lang of ["he", "fr", "en"]) {
     assert.equal(response.status, 200, url);
     const html = await response.text();
     checkMetaPixel(response, html, url);
+    const csp = response.headers.get("content-security-policy") || "";
+    for (const origin of ["https://www.googletagmanager.com", "https://www.google-analytics.com", "https://region1.google-analytics.com"]) assert.ok(csp.includes(origin), `Consent-gated Google endpoint allowed by CSP: ${url}`);
+    assert.doesNotMatch(html, /<script[^>]+src="https:\/\/www\.googletagmanager\.com/, `No Google library loaded before browser opt-in: ${url}`);
+    assert.ok(html.includes('class="footer-preferences"'), `Google preferences can be reopened from the footer: ${url}`);
     const main = html.match(/<main\b[\s\S]*?<\/main>/)?.[0] || "";
     if (path === "/guides/restaurant-pos-israel") {
       const article = [...main.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(match => JSON.parse(match[1])).find(schema => schema["@type"] === "Article");
@@ -70,6 +77,21 @@ for (const lang of ["he", "fr", "en"]) {
       assert.ok(main.includes(new Intl.NumberFormat(`${lang}-IL`).format(989)), `Three-device monthly subscription: ${url}`);
       assert.ok(main.includes(new Intl.NumberFormat(`${lang}-IL`).format(13358)), `First-year subscription and setup arithmetic: ${url}`);
       for (const target of ["/pricing", "/solutions/kitchen", "/solutions/online-ordering", "/compare/tabit"]) assert.ok(main.includes(`href="/${lang}${target}"`), `Guide product/source link: ${target}`);
+    }
+    if (path === "/tools/food-cost-calculator") {
+      assert.ok(main.includes('data-food-cost-calculator'), `Calculator is server rendered: ${url}`);
+      assert.ok(main.includes('data-calculator-percent'), `Default cost result is visible without hydration: ${url}`);
+      assert.ok(main.includes('28%') || main.includes('28<!-- -->%'), `Worked example food-cost percentage: ${url}`);
+      assert.ok(main.includes('href="/' + lang + '/help/kitchen/food-cost"'), `Calculator links to its procedure: ${url}`);
+    }
+    if (path === "/demos/kitchen") {
+      assert.deepEqual([...main.matchAll(/data-product-walkthrough="([^"]+)"/g)].map(match => match[1]), ["sale-to-stock", "supplier-receipt", "companion-day"], `Three documented screen walkthroughs: ${url}`);
+      assert.ok(main.includes('/help/kitchen/suppliers-and-purchases'), `Supplier workflow links to its procedure: ${url}`);
+    }
+    if (path === "/about" || path === "/contact") {
+      assert.ok(main.includes('href="tel:+972537081799"'), `Owner-approved professional phone: ${url}`);
+      assert.ok(main.includes('08:00') && main.includes('20:00') && main.includes('15:00'), `Owner-approved contact hours: ${url}`);
+      assert.ok(!main.includes('Schwartz'), `Private verification address is not published: ${url}`);
     }
     const workflow = { "/sectors/food-beverage/restaurants": "restaurants", "/solutions/kitchen": "kitchen", "/solutions/online-ordering": "ordering" }[path];
     if (workflow) {
@@ -519,27 +541,27 @@ for (const lang of ["he", "fr", "en"]) {
       const example = main.match(/<section[^>]*data-commission-example[^>]*>([\s\S]*?)<\/section>/)?.[1];
       assert.ok(example?.includes("900"), `Three-percent illustration has the correct arithmetic: ${url}`);
       assert.ok(example.includes({fr: "sans attribution à Tabit", en: "not attributed to Tabit", he: "ללא ייחוס ל־Tabit"}[lang]), `Illustrative commission is never represented as a verified competitor tariff: ${url}`);
-      assert.ok(main.includes('<time dateTime="2026-10-30">'), `Explicit source review date: ${url}`);
+      assert.ok(main.includes('<time dateTime="2026-11-01">'), `Explicit source review date: ${url}`);
       const expectedCapabilities = ["admin-languages", "pos-languages", "ingredient-depletion", "recipe-cost", "sales-forecast", "before-service", "during-service", "day-close", "supplier-discrepancies"];
       assert.deepEqual([...main.matchAll(/data-capability="([^"]+)"/g)].map(match => match[1]), expectedCapabilities, `Every reviewed functional comparison is rendered: ${url}`);
       assert.equal((main.match(/scope="row"/g) || []).length, 9, `Only the owner's stated native differences are compared: ${url}`);
       const table = main.match(/<table\b[\s\S]*?<\/table>/)?.[0];
       assert.equal((table.match(/class="comparison-present"/g) || []).length, 9, `Foody uses explicit Present statuses: ${url}`);
-      assert.equal((table.match(/class="comparison-absent"/g) || []).length, 9, `Tabit uses explicit native-absence statuses: ${url}`);
+      assert.equal((table.match(/data-competitor-status="documented"/g) || []).length, 1, `Tabit forecasts are documented: ${url}`);
+      assert.equal((table.match(/data-competitor-status="unconfirmed"/g) || []).length, 8, `Unverified absences remain unconfirmed: ${url}`);
+      assert.ok(!table.includes('comparison-absent'), `No unverified absence is presented as fact: ${url}`);
+      assert.ok(main.includes('https://tabit.cloud/il/'), `Israeli competitor scope is sourced: ${url}`);
       assert.ok(table.includes('>Tabit*</th>'), `Native scope note is attached once to the column heading: ${url}`);
-      for (const [, cell] of table.matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/g)) {
-        assert.ok(!cell.includes('<a'), `Proof links stay with the feature rather than the status: ${url}`);
-        assert.ok(!cell.includes('<p'), `Status columns contain no descriptions: ${url}`);
-      }
+      assert.ok(table.includes("Tabit-Bizz-overview"), `Documented competitor forecasts link to their actual source: ${url}`);
       assert.ok(table.includes('aria-describedby="comparison-assessment"'), `Status claims link to their assessment scope: ${url}`);
       const assessment = main.match(/<p[^>]*id="comparison-assessment"[^>]*>([\s\S]*?)<\/p>/)?.[1];
-      assert.ok(assessment?.includes({fr: "n’ont pas été confirmées indépendamment", en: "not been independently confirmed", he: "לא אומתו באופן עצמאי"}[lang]), `Owner-reported absences are not represented as independently verified: ${url}`);
-      const proofAnchors = [...table.matchAll(/<a\b([^>]*)>/g)].map(match => match[1]).filter(attributes => /class="[^"]*\bcomparison-source\b[^"]*"/.test(attributes));
+      assert.ok(assessment?.includes({fr: "sans confirmation indépendante", en: "without independent confirmation", he: "ללא אימות עצמאי"}[lang]), `Owner-reported absences are not represented as independently verified: ${url}`);
+      const proofAnchors = [...table.matchAll(/<a\b([^>]*)>/g)].map(match => match[1]).filter(attributes => /class="[^"]*\bcomparison-source\b[^"]*"/.test(attributes) && /href="\//.test(attributes));
       assert.equal(proofAnchors.length, 9, `Each Foody capability has a public proof link: ${url}`);
       assert.ok(proofAnchors.every(attributes => attributes.includes('aria-label="')), `Compact proof links retain feature-specific accessible names: ${url}`);
       const proofLinks = new Set(proofAnchors.map(attributes => attributes.match(/href="([^"]+)"/)?.[1]).filter(href => href?.startsWith('/')));
       for (const href of proofLinks) assert.equal((await fetch(base + href)).status, 200, `Functional evidence resolves: ${href}`);
-      assert.ok(main.includes('href="https://www.tabit.cloud/integrations/"'), `Third-party integration scope is sourced: ${url}`);
+      assert.ok(main.includes('href="https://support-us.tabit.cloud/hc/en-us/articles/12570827573266-Overview-of-Tabit-s-Integrations"'), `Third-party integration scope is sourced: ${url}`);
       assert.ok(main.includes('role="region"'), `Scrollable comparison is keyboard accessible: ${url}`);
       assert.ok(main.includes(`href="/${lang}/pricing"`));
       for (const guide of ["orders/taking-an-order-pos", "tables-floors/floor-plans"]) {

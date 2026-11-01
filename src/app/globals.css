@@ -1670,13 +1670,13 @@ html[dir="rtl"] .directional {
   display: none;
 }
 .comparison-matrix thead th:first-child {
-  width: 60%;
+  width: 48%;
 }
 .comparison-matrix td {
-  width: 20%;
+  width: 26%;
   text-align: center;
   vertical-align: middle;
-  white-space: nowrap;
+  white-space: normal;
 }
 .comparison-matrix th,
 .comparison-matrix td {
@@ -1700,7 +1700,8 @@ html[dir="rtl"] .directional {
   white-space: nowrap;
 }
 .comparison-present,
-.comparison-absent {
+.comparison-documented,
+.comparison-unconfirmed {
   display: inline-flex;
   align-items: center;
   gap: 7px;
@@ -1708,9 +1709,8 @@ html[dir="rtl"] .directional {
 .comparison-present {
   color: #166534;
 }
-.comparison-absent {
-  color: #9f2d22;
-}
+.comparison-documented { color: #153b5b; }
+.comparison-unconfirmed { color: #79500a; }
 .comparison-attribution {
   font-size: 14px;
   line-height: 1.8;
@@ -5330,3 +5330,109 @@ html[dir="rtl"] .help-breadcrumb-sep {
 .product-captures .section-heading p { max-width: 75ch; }
 @media (max-width: 800px) { .product-capture-grid { grid-template-columns: 1fr; } }
 @media (max-width: 800px) { .workflow-steps { grid-template-columns: 1fr; gap: 2rem; } .guide-budget th, .guide-budget td { padding: .75rem .5rem; } }
+
+/* Public recipe worksheet and documented product resources. */
+.resource-heading { padding-block: clamp(3rem, 6vw, 6rem) 2.5rem; }
+.resource-heading h1 { max-width: 22ch; margin-block: 1rem 1.5rem; font-size: clamp(2.25rem, 4.5vw, 4.25rem); line-height: 1.12; letter-spacing: -.035em; text-wrap: balance; }
+.resource-heading > p { max-width: 75ch; font-size: 1.2rem; line-height: 1.8; }
+.resource-heading > .fine-print { font-size: .95rem; margin-block-start: 1.25rem; }
+.resource-inline-links { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2rem; margin-block: 1.5rem; }
+.calculator-layout { display: grid; grid-template-areas: "settings results" "ingredients results"; grid-template-columns: minmax(0, 1fr) minmax(275px, 330px); gap: clamp(1.5rem, 3vw, 3rem); align-items: start; padding-block-end: 3rem; }
+.calculator-settings-sheet { grid-area: settings; }
+.calculator-row-sheet { grid-area: ingredients; }
+.calculator-sheet, .calculator-results { min-width: 0; }
+.food-cost-page .resource-heading { padding-block: 2.5rem 2rem; }
+.food-cost-page .resource-heading h1 { font-size: clamp(2.25rem,4vw,3.5rem); max-width: 30ch; }
+.calculator-sheet > h2 { font-size: 1.7rem; margin-block-end: 1.5rem; }
+.calculator-settings { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-block-end: .75rem; }
+.calculator-sheet label { display: flex; flex-direction: column; justify-content: flex-end; min-width: 0; gap: .5rem; font-size: .85rem; font-weight: 600; line-height: 1.5; }
+.calculator-sheet input, .calculator-sheet select { width: 100%; min-width: 0; min-height: 48px; border: 1px solid #a7adb4; border-radius: 6px; padding: .65rem .75rem; background: #fff; color: #171717; font: inherit; font-size: 1rem; }
+.calculator-sheet input[type="number"] { direction: ltr; text-align: start; }
+.calculator-sheet input:focus-visible, .calculator-sheet select:focus-visible, .calculator-layout button:focus-visible, .walkthrough-screen-choices button:focus-visible { outline: 3px solid #153b5b; outline-offset: 3px; }
+.calculator-sheet input[aria-invalid="true"] { border-color: #9f2d22; }
+.calculator-field-error { color: #9f2d22; font-weight: 400; font-size: .8rem; }
+.calculator-ingredients { margin-block: 2rem; }
+.calculator-ingredient { padding: 1.25rem 0; border: 0; border-block-start: 1px solid #cbd0d5; margin-block-start: 1.5rem; min-width: 0; }
+.calculator-ingredient legend { padding-inline-end: .75rem; color: #5c6268; font-size: .8rem; }
+.calculator-ingredient-title { display: flex; gap: 1rem; align-items: center; margin-block-end: 1rem; }
+.calculator-ingredient-title > input { font-weight: 700; font-size: 1.05rem; border-color: transparent; border-radius: 0; padding-inline: 0; }
+.calculator-remove { flex: none; color: #5b6066; text-decoration: underline; text-underline-offset: 3px; min-height: 44px; background: none; border: 0; font: inherit; font-size: .85rem; cursor: pointer; }
+.calculator-remove:disabled { opacity: .45; cursor: default; }
+.calculator-ingredient-fields { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: .85rem; row-gap: .5rem; align-items: start; }
+/* Share label, control and error tracks within each visible row, including wrapped translations. */
+.calculator-settings > label, .calculator-ingredient-fields > label { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: subgrid; grid-row: span 3; row-gap: .5rem; align-items: end; justify-content: stretch; }
+.calculator-field-label { display: block; }
+.calculator-settings > label > input, .calculator-ingredient-fields > label > input, .calculator-ingredient-fields > label > select { height: 3rem; }
+.calculator-settings .calculator-field-error, .calculator-ingredient-fields .calculator-field-error { align-self: start; }
+.calculator-unit-hint { display: block; margin-block-start: .25rem; font-size: .75rem; font-weight: 400; color: #61666b; }
+.calculator-line-total { display: flex; justify-content: space-between; gap: 1rem; margin-block: 1rem 0; font-size: .9rem; }
+.calculator-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-block: 1rem; }
+.calculator-actions .text-link { background: none; border: 0; font: inherit; cursor: pointer; }
+.calculator-actions button:disabled { opacity: .5; cursor: default; }
+.calculator-results { grid-area: results; position: sticky; top: 110px; padding: 1.75rem; background: #dceaff; border-radius: 10px; }
+.calculator-results h2 { font-size: 1.2rem; line-height: 1.4; }
+.calculator-result-highlights { display: grid; align-items: end; gap: 1rem; margin-block: 1.5rem; }
+.calculator-main-result { margin-block: 0; display: grid; gap: .5rem; }
+.calculator-main-result > span { font-size: .9rem; }
+.calculator-main-result strong { font-size: clamp(2rem, 3vw, 3rem); font-variant-numeric: tabular-nums; line-height: 1.15; }
+.calculator-result-details > summary { min-height: 44px; cursor: pointer; font-size: .9rem; padding-block: .75rem; border-block-start: 1px solid #aebfd0; }
+.calculator-results dl { margin-block: .75rem 1.25rem; }
+.calculator-results dl > div { display: grid; gap: .35rem; border-block-start: 1px solid #aebfd0; padding-block: 1rem; }
+.calculator-results dt { font-size: .85rem; }
+.calculator-results dd { margin: 0; font-size: 1.3rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.calculator-results .fine-print { font-size: .8rem; line-height: 1.75; }
+.calculator-warning, .calculator-errors { color: #8b251c; font-weight: 600; line-height: 1.7; }
+.calculator-explanation { max-width: 900px; padding-block: 1rem 4rem; }
+.calculator-explanation section { border-block-start: 1px solid var(--border); padding-block: 2rem; }
+.calculator-explanation h2 { font-size: 1.8rem; margin-block-end: 1rem; line-height: 1.4; }
+.calculator-explanation p { font-size: 1.1rem; line-height: 1.9; }
+.company-products { padding-block: 2rem 3rem; }
+.company-products > h2, .company-service h2, .company-proof h2 { font-size: clamp(1.7rem, 3vw, 2.5rem); line-height: 1.3; margin-block-end: 1.5rem; }
+.company-products .feature-columns { margin-block: 2rem; }
+.company-products .feature-columns h3 { font-size: 1.2rem; }
+.company-products p, .company-service p, .company-proof p { line-height: 1.9; }
+.company-service { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; padding-block: 3rem; border-block: 1px solid var(--border); }
+.company-contact { border-inline-start: 1px solid var(--border); padding-inline-start: 3rem; }
+.company-contact dl > div { margin-block-end: 1.5rem; }
+.company-contact dt { font-size: .85rem; color: #62676c; margin-block-end: .4rem; }
+.company-contact dd { margin: 0; font-size: clamp(1rem, 2vw, 1.3rem); overflow-wrap: anywhere; }
+.company-contact h3 { margin-block: 2rem .75rem; }
+.company-contact .button { margin-block-start: 1.5rem; }
+.company-proof { max-width: 900px; padding-block: 4rem; }
+.contact-official-details { margin-block: 2rem; padding-block: 1.5rem; border-block: 1px solid var(--border); }
+.contact-official-details h2 { font-size: 1rem; margin-block: 1rem .5rem; }
+.contact-official-details a { display: inline-block; font-size: 1.5rem; }
+.contact-official-details p { line-height: 1.7; font-size: 1rem; }
+.walkthrough-navigation { display: flex; flex-wrap: wrap; gap: 1rem 2rem; margin-block-start: 2rem; }
+.product-walkthrough { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 3rem; padding-block: 4rem; border-block-start: 1px solid var(--border); scroll-margin-top: 110px; }
+.walkthrough-copy h2 { font-size: clamp(1.6rem, 2.8vw, 2.4rem); line-height: 1.3; margin-block-end: 1rem; }
+.walkthrough-copy > p { line-height: 1.9; }
+.walkthrough-copy ol { padding-inline-start: 1.5rem; margin-block: 1.5rem; }
+.walkthrough-copy li { line-height: 1.85; padding-inline-start: .4rem; margin-block: 1rem; }
+.walkthrough-example { padding: 1.25rem; background: #f1f4f6; border-inline-start: 3px solid #153b5b; margin-block: 1.5rem; }
+.walkthrough-example h3 { font-size: 1rem; margin-block-end: .75rem; }
+.walkthrough-example p { line-height: 1.85; font-size: .95rem; }
+.walkthrough-evidence { min-width: 0; }
+.walkthrough-screen-choices { display: flex; flex-wrap: wrap; gap: .5rem; margin-block-end: 1rem; }
+.walkthrough-screen-choices button { border: 1px solid #a7adb4; border-radius: 6px; min-height: 44px; padding: .6rem 1rem; background: #fff; color: #171717; font: inherit; cursor: pointer; }
+.walkthrough-screen-choices button[aria-pressed="true"] { background: #171717; color: #fff; border-color: #171717; }
+.walkthrough-evidence figure { margin: 0; padding: 1rem; border: 1px solid var(--border); background: #f1f4f6; border-radius: 8px; }
+.walkthrough-evidence figure > a { display: flex; justify-content: center; }
+.walkthrough-evidence img { display: block; width: auto; max-width: 100%; height: auto; max-height: 570px; object-fit: contain; }
+.walkthrough-evidence figcaption { font-size: .8rem; line-height: 1.8; margin-block-start: 1rem; }
+.demos-next { max-width: 900px; padding-block: 2rem 4rem; line-height: 1.9; }
+.comparison-status-detail { font-size: .8rem; font-weight: 400; line-height: 1.65; margin-block: .75rem; color: #59616a; }
+.comparison-matrix td .comparison-source { display: inline-block; white-space: normal; margin: .25rem 0; }
+.comparison-scope-note { max-width: 85ch; font-size: .95rem; line-height: 1.85; margin-block: 2rem; }
+@media (max-width: 1050px) { .calculator-ingredient-fields { grid-template-columns: repeat(2,minmax(0,1fr)); } .calculator-settings { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .calculator-layout, .product-walkthrough, .company-service { grid-template-columns: 1fr; } .calculator-layout { grid-template-areas: "settings" "results" "ingredients"; } .calculator-results { top: 80px; z-index: 5; padding: 1rem 1.25rem; } .calculator-result-highlights { grid-template-columns: 1fr 1fr; margin-block: 1rem .5rem; } .calculator-main-result strong { font-size: 2rem; } .calculator-result-details[open] { max-height: 40dvh; overflow: auto; } .calculator-settings { grid-template-columns: repeat(3,minmax(0,1fr)); } .company-contact { border-inline-start: 0; border-block-start: 1px solid var(--border); padding-inline-start: 0; padding-block-start: 2rem; } .product-walkthrough { gap: 2rem; padding-block: 3rem; } .walkthrough-evidence img { max-height: 600px; } }
+@media (max-width: 540px) { .calculator-settings { grid-template-columns: 1fr; } .calculator-results { padding: 1.5rem; } .resource-heading h1 { font-size: 2.25rem; } .calculator-actions { align-items: stretch; flex-direction: column; } .calculator-actions .text-link { padding-block: .75rem; text-align: start; } .company-service { gap: 2rem; } .product-walkthroughs .walkthrough-evidence figure { padding: .6rem; } }
+
+.analytics-choice { position: fixed; z-index: 120; inset-block-end: 1rem; inset-inline-end: 1rem; width: min(580px, calc(100% - 2rem)); max-height: calc(100dvh - 2rem); overflow-y: auto; padding: 1.5rem; background: #fff; border: 1px solid #818891; border-radius: 8px; box-shadow: 0 8px 32px #0002; }
+.analytics-choice h2 { font-size: 1.1rem; margin-block-end: .75rem; }
+.analytics-choice p { font-size: .85rem; line-height: 1.8; }
+.analytics-choice a { text-decoration: underline; text-underline-offset: 3px; }
+.analytics-choice-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-block-start: 1rem; }
+.analytics-choice-actions button { flex: 1; min-width: 90px; min-height: 44px; padding: .65rem 1rem; border: 1px solid #171717; border-radius: 6px; background: #fff; color: #171717; font: inherit; cursor: pointer; }
+.analytics-choice-actions button:focus-visible, .footer-preferences:focus-visible { outline: 3px solid #153b5b; outline-offset: 3px; }
+.footer-preferences { border: 0; background: transparent; padding: 0; color: inherit; font: inherit; cursor: pointer; text-align: start; text-decoration: underline; text-underline-offset: 3px; }
