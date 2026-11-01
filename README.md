@@ -76,6 +76,8 @@ Pricing answers use the shared approved rates, including a first-month Restauran
 and standard-setup example with hardware and optional training separated. Kitchen
 answers distinguish order displays, configured recipe consumption, supplier receipts
 and standalone versus combined offers, with direct links to their procedures.
+Kitchen's structured software offer describes the same visible standalone plan
+and its VAT-exclusive monthly rate, using the existing POS/Restaurant/Orders pattern.
 The inventory guide links its purchasing scope to pricing; the free calculator
 distinguishes a recipe estimate from actual restaurant consumption. No new keyword
 URLs, operational capability, rate or calculator behavior is introduced. The adjacent
