@@ -186,7 +186,9 @@ export default function SolutionPage({
       ? { plan: "pos", entity: "pos-software", rate: pricingRates.pos, description: t.faq[2].a, operatingSystem: "iPadOS, Android" }
       : page === "ordering"
         ? { plan: "ordering", entity: "ordering-software", rate: pricingRates.ordering, description: t.faq[4].a, operatingSystem: "Web browser" }
-        : null;
+        : page === "kitchen"
+          ? { plan: "kitchen", entity: "kitchen-software", rate: pricingRates.kitchen, description: t.faq[3].a, operatingSystem: "Web browser" }
+          : null;
   return (
     <main id="main-content">
       {softwareOffer && <JsonLd data={{

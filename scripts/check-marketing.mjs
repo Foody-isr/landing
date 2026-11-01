@@ -106,6 +106,24 @@ for (const lang of ["he", "fr", "en"]) {
       assert.ok(main.includes('28%') || main.includes('28<!-- -->%'), `Worked example food-cost percentage: ${url}`);
       assert.ok(main.includes('href="/' + lang + '/help/kitchen/food-cost"'), `Calculator links to its procedure: ${url}`);
     }
+    if (path === "/solutions/kitchen") {
+      const schemas = [...main.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(match => JSON.parse(match[1]));
+      const software = schemas.find(schema => schema["@type"] === "SoftwareApplication");
+      assert.equal(software?.offers.price, 890, `Standalone Kitchen offer retains its approved rate: ${url}`);
+      const questions = schemas.find(schema => schema["@type"] === "FAQPage")?.mainEntity;
+      assert.equal(questions?.length, 6, `Kitchen scope and purchasing answers are localized: ${url}`);
+      assert.ok(questions.some(question => question.acceptedAnswer.text.includes("890") && question.acceptedAnswer.text.includes("1490")), `Kitchen and combined plans remain distinct in visible answers: ${url}`);
+      for (const target of ["/help/kitchen/stock-management", "/help/kitchen/data-and-sales-links"]) assert.ok(main.includes(`href="/${lang}${target}"`), `Kitchen inventory and sales claims link to their procedures: ${target}`);
+    }
+    if (path === "/tools/food-cost-calculator") assert.ok(main.includes('id="recipe-versus-actual"'), `Recipe estimate and actual consumption are distinguished without JavaScript: ${url}`);
+    if (path === "/guides/restaurant-inventory-israel") {
+      assert.ok(main.includes('id="software-scope"'), `Inventory purchasing scope is server rendered: ${url}`);
+      assert.ok(main.includes(`href="/${lang}/pricing#plan-kitchen"`), `Inventory guide exposes the relevant localized price: ${url}`);
+    }
+    if (lang === "he") {
+      const expected = {"/pricing": "מחיר קופה למסעדה", "/solutions/kitchen": "תוכנה לניהול מטבח", "/guides/restaurant-inventory-israel": "ניהול מלאי למסעדות", "/tools/food-cost-calculator": "פוד קוסט למסעדה"}[path];
+      if (expected) assert.ok(main.includes(expected), `Hebrew destination answers its primary search intent: ${url}`);
+    }
     if (path === "/demos/kitchen") {
       assert.deepEqual([...main.matchAll(/data-product-walkthrough="([^"]+)"/g)].map(match => match[1]), ["sale-to-stock", "supplier-receipt", "companion-day"], `Three documented screen walkthroughs: ${url}`);
       assert.ok(main.includes('/help/kitchen/suppliers-and-purchases'), `Supplier workflow links to its procedure: ${url}`);
@@ -429,7 +447,7 @@ for (const lang of ["he", "fr", "en"]) {
         .find((data) => data["@type"] === "FAQPage");
       assert.equal(
         faq?.mainEntity.length,
-        8,
+        10,
         `Localized pricing FAQ schema: ${url}`,
       );
       assert.ok(
@@ -443,6 +461,8 @@ for (const lang of ["he", "fr", "en"]) {
         answers?.includes(`class="product-mention" href="/${lang}/solutions/online-ordering"`),
         `FAQ answer links to the ordering product: ${url}`,
       );
+      const startBudget = faq.mainEntity.find(question => question.acceptedAnswer.text.includes("2380"))?.acceptedAnswer.text;
+      assert.ok(startBudget?.includes("890") && startBudget.includes("1490") && startBudget.includes("1200"), `First-month Restaurant/setup example separates optional training: ${url}`);
       const orderingQuestion = {
         he: "מסלול Foody קופה כולל הזמנות אונליין?",
         fr: "Foody Caisse inclut-il les commandes en ligne ?",

@@ -69,6 +69,22 @@ of lazy loading. A laboratory measurement does not establish field Core Web Vita
 or a Google ranking improvement. Exact editorial/no-procedure-impact evidence is
 in `docs/help/reviews/restaurant-hero-priority.json`.
 
+The existing Pricing, Kitchen, inventory guide and food-cost calculator pages answer
+distinct Hebrew searches for restaurant POS prices, kitchen software, ingredient
+inventory and food cost. French and English carry the same scope explanations.
+Pricing answers use the shared approved rates, including a first-month Restaurant
+and standard-setup example with hardware and optional training separated. Kitchen
+answers distinguish order displays, configured recipe consumption, supplier receipts
+and standalone versus combined offers, with direct links to their procedures.
+Kitchen's structured software offer describes the same visible standalone plan
+and its VAT-exclusive monthly rate, using the existing POS/Restaurant/Orders pattern.
+The inventory guide links its purchasing scope to pricing; the free calculator
+distinguishes a recipe estimate from actual restaurant consumption. No new keyword
+URLs, operational capability, rate or calculator behavior is introduced. The adjacent
+HTTP smoke checks visible text, structured offers, examples and localized evidence
+links. Search Console inspections and indexing requests remain separate observations;
+neither HTTP success nor these editorial changes establish a ranking gain.
+
 The pricing page also distinguishes included shared map usage from the planned
 Maps Plus extension: 149 ILS excluding VAT per establishment/month, with 500 Foody
 optimization credits (one per single-courier stop, three per fleet-allocation stop),

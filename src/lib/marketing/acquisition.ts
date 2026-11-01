@@ -7,13 +7,15 @@ type Workflow = { title: string; intro: string; steps: { title: string; text: st
 
 /** Reviewed buying journeys, backed by the existing public help procedures. */
 export const acquisitionContent: Record<Lang, {
-  readProcedure: string; buyingGuide: string; restaurantLink: string; checkoutGuide: string; workflows: Record<AcquisitionPage, Workflow>;
+  readProcedure: string; buyingGuide: string; restaurantLink: string; checkoutGuide: string; stockGuide: string; salesGuide: string; workflows: Record<AcquisitionPage, Workflow>;
 }> = {
   he: {
     readProcedure: "למדריך התפעול",
     buyingGuide: "איך לבחור קופה למסעדה בישראל",
     restaurantLink: "קופות למסעדות ולבתי קפה עם Foody POS",
     checkoutGuide: "איך מאשרים תשלום בקופה",
+    stockGuide: "איך מנהלים חומרי גלם ויחידות מלאי",
+    salesGuide: "איך מקשרים מכירות למתכונים ולצריכה",
     workflows: {
       pos: {
         title: "הזמנה, מטבח ותשלום. בדקו את הרצף בהדגמה.",
@@ -62,6 +64,8 @@ export const acquisitionContent: Record<Lang, {
     buyingGuide: "Choisir une caisse restaurant en Israël",
     restaurantLink: "Caisses pour restaurants et cafés avec Foody POS",
     checkoutGuide: "Comment confirmer un paiement en caisse",
+    stockGuide: "Comment gérer les ingrédients et unités de stock",
+    salesGuide: "Comment relier ventes, recettes et consommations",
     workflows: {
       pos: {
         title: "Commande, cuisine, paiement. Vérifiez le parcours en démo.",
@@ -110,6 +114,8 @@ export const acquisitionContent: Record<Lang, {
     buyingGuide: "Choosing a restaurant POS in Israel",
     restaurantLink: "POS for restaurants and cafés with Foody POS",
     checkoutGuide: "How to confirm a POS payment",
+    stockGuide: "How to manage ingredients and stock units",
+    salesGuide: "How to connect sales, recipes and consumption",
     workflows: {
       pos: {
         title: "Orders, kitchen, payment. Check the journey in a demo.",

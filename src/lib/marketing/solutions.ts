@@ -162,10 +162,10 @@ const entries: Record<
       ],
     ],
     kitchen: [
-      "ניהול מטבח, מלאי ו־Food Cost למסעדות בישראל",
-      "חברו מתכונים, הכנות, מחירי קנייה, מלאי וספקים. ראו עלות מנה ופערים בין הצריכה הצפויה לצריכה בפועל.",
-      "כל מנה מתחילה במתכון.\nכל החלטה מתחילה בנתונים.",
-      "עלות חומרי הגלם משתנה. כמויות הייצור משתנות. חברו את המידע במקום אחד כדי לדעת מה להכין, מה להזמין ומה כדאי לבדוק.",
+      "תוכנה לניהול מטבח ומלאי למסעדות בישראל",
+      "Foody Kitchen לניהול מטבח: מתכונים, פוד קוסט למנה, מלאי חומרי גלם, ספקים והכנות. עם Foody Companion לתכנון ולמעקב לפני הסרוויס, במהלכו ובסגירה.",
+      "תוכנה לניהול מטבח.\nמההכנות ועד הסגירה.",
+      "Foody Kitchen מחבר מתכונים, מחירי רכישה, מלאי והכנות במסעדה. בדקו עלות למנה, קבלות ספקים והפרשים, ועקבו אחר הצריכה כשהמתכונים והמכירות מקושרים. Foody Companion כלול לליווי העבודה היומית.",
       [
         [
           "מהמתכון לעלות המנה.",
@@ -181,6 +181,22 @@ const entries: Record<
         ],
       ],
       [
+        [
+          "מה ההבדל בין תוכנה לניהול מטבח למסך הזמנות?",
+          "מסך הזמנות מציג לצוות מה להכין. Foody Kitchen מטפל גם במתכונים, יחידות חומרי גלם, עלות למנה, מלאי, קבלות ספקים והכנות. תצוגת הזמנות, מכסות מנות ומעקב חומרי גלם הם צרכים נפרדים; בהדגמה בדקו את התהליך שאתם צריכים.",
+        ],
+        [
+          "מתי ניהול המלאי מתעדכן לפי המכירות?",
+          "עם Foody POS, מתכונים, כמויות וקישורי מכירות שהוגדרו מאפשרים רישום צריכת חומרי גלם בתהליך ההזמנה. בסגירה אין לנכות שוב צריכה שכבר נרשמה. מכירה לא מקושרת או מתכון חסר מצביעים על כיסוי חלקי, לא על צריכה אפס. קופה חיצונית דורשת בדיקת חיבור נפרדת.",
+        ],
+        [
+          "איך בודקים פערים מול ספק?",
+          "משווים את הזמנת הרכש לכמות שהגיעה בפועל. במסמך מיובא בודקים התאמת חומרי גלם, יחידות, כמויות ומחירים לפני אישור קבלה. ניתוח מסמך אינו מאשר את הקבלה; אין לזכות אותה אספקה פעמיים.",
+        ],
+        [
+          "כמה עולה Foody Kitchen והאם צריך קופת Foody?",
+          `Foody Kitchen עצמאי עולה ${pricingRates.kitchen} ₪ לחודש לסניף לפני מע״מ, כולל Foody Companion, ללא צורך ברכישת מסלול קופת Foody. סנכרון עם קופה חיצונית מותנה בבדיקת התאמה ובהצעת מחיר נפרדת. Foody מסעדה ומטבח עולה ${pricingRates.complete} ₪ לחודש לפני מע״מ. הקמה, הדרכה, חומרה וסליקה בנפרד.`,
+        ],
         [
           "מה ההבדל בין food cost תיאורטי לאמיתי?",
           "העלות התיאורטית מבוססת על המתכון ועל מחירי חומרי הגלם. העלות בפועל תלויה גם בספירות מלאי, אספקות ופחת. ההשוואה מסייעת לזהות חריגות.",
@@ -444,10 +460,10 @@ const entries: Record<
       ],
     ],
     kitchen: [
-      "Gestion de cuisine, stocks et food cost en Israël",
-      "Reliez recettes, préparations, prix d’achat et fournisseurs. Comparez le coût matière théorique à la consommation réelle.",
-      "Chaque plat a sa recette.\nChaque décision, ses données.",
-      "Les prix d’achat évoluent. Les quantités à préparer aussi. Réunissez l’information pour savoir quoi produire, quoi commander et où agir.",
+      "Logiciel de gestion de cuisine et des stocks en Israël",
+      "Foody Cuisine relie recettes, food cost par plat, stocks d’ingrédients, fournisseurs et préparations. Foody Compagnon accompagne le travail avant, pendant et après le service.",
+      "Un logiciel de gestion de cuisine.\nDes préparations à la clôture.",
+      "Foody Cuisine réunit recettes, prix d’achat, stocks et préparations du restaurant. Vérifiez coûts par plat, réceptions fournisseurs et écarts, puis suivez les consommations avec les recettes et ventes rapprochées. Foody Compagnon est inclus pour accompagner le travail quotidien.",
       [
         [
           "De la recette au coût matière.",
@@ -463,6 +479,22 @@ const entries: Record<
         ],
       ],
       [
+        [
+          "Quelle différence entre un logiciel de cuisine et un écran de commandes ?",
+          "Un écran de commandes indique à l’équipe quoi préparer. Foody Cuisine couvre aussi recettes, unités des ingrédients, coût par plat, stocks, réceptions fournisseurs et préparations. Affichage des commandes, quotas de plats et suivi des ingrédients répondent à des besoins distincts ; testez votre parcours en démonstration.",
+        ],
+        [
+          "Quand les ventes mettent-elles les stocks à jour ?",
+          "Avec Foody Caisse, les recettes, quantités et correspondances de ventes configurées permettent d’enregistrer les consommations dans le parcours de commande. La clôture ne doit pas déduire à nouveau une consommation déjà enregistrée. Une vente non rapprochée ou une recette manquante signale une couverture partielle, pas une consommation nulle. Une caisse externe demande une validation de connexion distincte.",
+        ],
+        [
+          "Comment contrôler un écart fournisseur ?",
+          "Comparez la commande fournisseur aux quantités réellement reçues. Pour un document importé, contrôlez correspondances des ingrédients, unités, quantités et prix avant de confirmer la réception. L’analyse du document ne valide pas la réception ; ne créditez pas la même livraison deux fois.",
+        ],
+        [
+          "Combien coûte Foody Cuisine et faut-il une caisse Foody ?",
+          `Foody Cuisine seul coûte ${pricingRates.kitchen} ₪ HT par établissement et par mois, avec Foody Compagnon, sans achat obligatoire d’un abonnement Foody Caisse. La synchronisation avec une caisse externe dépend d’une validation technique et d’un devis séparé. Foody Restaurant & Cuisine coûte ${pricingRates.complete} ₪ HT par mois. Installation, formation, matériel et slika séparés.`,
+        ],
         [
           "Théorique et réel : quelle différence ?",
           "Le coût théorique vient des recettes et prix des ingrédients. Le réel s’appuie aussi sur les inventaires, réceptions et pertes. La comparaison permet de repérer des écarts.",
@@ -726,10 +758,10 @@ const entries: Record<
       ],
     ],
     kitchen: [
-      "Kitchen management, stock and food cost in Israel",
-      "Connect recipes, preparations, purchasing prices and suppliers. Compare theoretical ingredient cost with real consumption.",
-      "Every dish starts with a recipe.\nEvery decision, with data.",
-      "Ingredient prices change. Production quantities do, too. Bring the information together to know what to prepare, what to order and what needs attention.",
+      "Restaurant kitchen and inventory management software in Israel",
+      "Foody Kitchen connects recipes, food cost per dish, ingredient inventory, suppliers and preparations. Foody Companion supports your team before, during and after service.",
+      "Kitchen management software.\nFrom prep to closing.",
+      "Foody Kitchen brings together restaurant recipes, purchase prices, stock and preparations. Check cost per dish, supplier receipts and variances, then follow consumption with mapped recipes and sales. Foody Companion is included for daily operations.",
       [
         [
           "From recipe to ingredient cost.",
@@ -745,6 +777,22 @@ const entries: Record<
         ],
       ],
       [
+        [
+          "How does kitchen management software differ from an order display?",
+          "An order display tells staff what to prepare. Foody Kitchen also covers recipes, ingredient units, cost per dish, inventory, supplier receipts and preparations. Displaying orders, limiting available dishes and tracking ingredients serve different needs; test your required workflow in a demonstration.",
+        ],
+        [
+          "When do sales update ingredient stock?",
+          "With Foody POS, configured recipes, quantities and sales mappings allow ingredient consumption to be recorded in the order workflow. Closing must not deduct previously recorded consumption again. An unmatched sale or missing recipe means partial coverage, not zero consumption. An external POS requires a separate connection review.",
+        ],
+        [
+          "How can I check a supplier discrepancy?",
+          "Compare the purchase order with quantities actually received. For an imported document, check ingredient matches, units, quantities and prices before confirming receipt. Document analysis does not confirm receipt; do not credit the same delivery twice.",
+        ],
+        [
+          "How much does Foody Kitchen cost, and do I need Foody POS?",
+          `Standalone Foody Kitchen costs ILS ${pricingRates.kitchen} per location/month, excluding VAT, including Foody Companion, without a required Foody POS subscription. Synchronisation with an external POS depends on technical validation and a separate quote. Foody Restaurant & Kitchen costs ILS ${pricingRates.complete} per month, excluding VAT. Setup, training, hardware and processing are separate.`,
+        ],
         [
           "What is theoretical versus actual food cost?",
           "Theoretical cost uses recipes and ingredient prices. Actual consumption also depends on counts, deliveries and waste. Comparing them helps identify discrepancies.",

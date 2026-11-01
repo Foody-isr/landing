@@ -26,19 +26,19 @@ const PATHS: Record<MarketingPage, string> = {
 const TITLES = {
   he: {
     home: "קופה ממוחשבת בענן למסעדות ולעסקים בישראל | Foody",
-    pricing: "מחירי קופה ומערכת לניהול מסעדה בישראל | Foody",
+    pricing: "מחיר קופה למסעדה בישראל | מסלולי Foody POS",
     contact: "תיאום הדגמה והצעת מחיר לקופה וסליקה | Foody",
     food: "פתרונות למסעדות, בתי קפה ורשתות בישראל | Foody",
   },
   fr: {
     home: "Caisse cloud iPad et Android en Israël | Foody",
-    pricing: "Tarifs caisse et gestion restaurant en Israël | Foody",
+    pricing: "Prix d’une caisse restaurant en Israël | Foody POS",
     contact: "Démo et devis caisse et slika en Israël | Foody",
     food: "Solutions pour restaurants et cafés en Israël | Foody",
   },
   en: {
     home: "Cloud POS for iPad & Android in Israel | Foody",
-    pricing: "POS & Restaurant Software Pricing in Israel | Foody",
+    pricing: "Restaurant POS Pricing in Israel | Foody POS",
     contact: "Book a POS & Payments Demo in Israel | Foody",
     food: "Restaurant & Café Solutions in Israel | Foody",
   },
