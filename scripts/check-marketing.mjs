@@ -1,5 +1,7 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
+import { readCorpus } from "../src/lib/help/corpus.mjs";
+import { marketingHelpReferences } from "./marketing-help-links.mjs";
 
 const social = JSON.parse(await readFile(
   new URL("../src/lib/marketing/social.json", import.meta.url), "utf8",
@@ -34,6 +36,8 @@ const paths = [
   "/about",
 ];
 let checked = 0;
+const publishedHelp = readCorpus();
+const helpReferences = new Map();
 
 function checkMetaPixel(response, html, url) {
   const csp = response.headers.get("content-security-policy") || "";
@@ -71,6 +75,10 @@ for (const lang of ["he", "fr", "en"]) {
     assert.doesNotMatch(html, /<script[^>]+src="https:\/\/www\.googletagmanager\.com/, `No Google library loaded before browser opt-in: ${url}`);
     assert.ok(html.includes('class="footer-preferences"'), `Google preferences can be reopened from the footer: ${url}`);
     const main = html.match(/<main\b[\s\S]*?<\/main>/)?.[0] || "";
+    for (const reference of marketingHelpReferences(main, url, publishedHelp, canonicalBase)) {
+      if (!helpReferences.has(reference.pathname)) helpReferences.set(reference.pathname, { ...reference, fragments: new Set() });
+      if (reference.fragment) helpReferences.get(reference.pathname).fragments.add(reference.fragment);
+    }
     if (path === "/guides/restaurant-inventory-israel") {
       const article = [...main.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(match => JSON.parse(match[1])).find(schema => schema["@type"] === "Article");
       assert.equal(article?.inLanguage, lang, `Inventory guide language: ${url}`);
@@ -507,6 +515,17 @@ for (const lang of ["he", "fr", "en"]) {
       );
     }
     if (path === "/solutions/online-ordering") {
+      const schemas = [...main.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(match => JSON.parse(match[1]));
+      const software = schemas.find(schema => schema["@type"] === "SoftwareApplication");
+      assert.equal(software?.url, `${canonicalBase}/${lang}/solutions/online-ordering`);
+      assert.equal(software?.operatingSystem, "Web browser", `Standalone ordering does not require a native POS: ${url}`);
+      assert.equal(software?.offers.price, 590);
+      assert.equal(software?.offers.priceCurrency, "ILS");
+      assert.equal(software?.offers.url, `${canonicalBase}/${lang}/pricing#plan-ordering`);
+      assert.equal(software?.offers.priceSpecification.valueAddedTaxIncluded, false);
+      assert.equal(schemas.find(schema => schema["@type"] === "FAQPage")?.mainEntity.length, 6, `Ordering has six localized buying answers: ${url}`);
+      assert.ok(main.includes(`href="/${lang}/help/delivery/zones-and-schedules"`), `Delivery proof uses the published procedure: ${url}`);
+      assert.ok(!main.includes(`/help/settings/delivery-zones`), `Legacy alias is not used as a proof citation: ${url}`);
       assert.ok(
         html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)?.[1].includes(navigationTitles.ordering),
         `Shared ordering page is named after its product: ${url}`,
@@ -694,6 +713,25 @@ for (const userAgent of ["WhatsApp", "facebookexternalhit/1.1", "Twitterbot/1.0"
     assert.ok(head.includes('/assets/sharing/'), `Resource image served to preview consumer: ${userAgent} ${pathname}`);
   }
 }
+const proofPages = [...helpReferences.values()];
+for (let index = 0; index < proofPages.length; index += 4) await Promise.all(proofPages.slice(index, index + 4).map(async reference => {
+  const response = await fetch(base + reference.pathname, { redirect: "manual", signal: AbortSignal.timeout(20000) });
+  assert.equal(response.status, 200, `Published help citation returns directly: ${reference.pathname}`);
+  const html = await response.text();
+  assert.ok(html.includes(`rel="canonical" href="${canonicalBase}${reference.canonicalPath}"`), `Citation retains the actual published source: ${reference.pathname}`);
+  assert.match(html, /<h1\b/, `Citation renders an article or help index: ${reference.pathname}`);
+  for (const fragment of reference.fragments) {
+    const attribute = fragment.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
+    assert.ok(html.includes(`id="${attribute}"`), `Citation anchor exists: ${reference.pathname}#${fragment}`);
+  }
+}));
+for (const lang of ["he", "fr", "en"]) {
+  const response = await fetch(`${base}/${lang}/help/settings/delivery-zones`, { redirect: "manual" });
+  assert.equal(response.status, 308, `Already shared delivery links are retained: ${lang}`);
+  const target = new URL(response.headers.get("location"), base);
+  assert.equal(target.origin, new URL(base).origin);
+  assert.equal(target.pathname, `/${lang}/help/delivery/zones-and-schedules`);
+}
 console.log(
-  `Marketing checks passed: ${checked} localized pages, canonicals, hreflang, RTL, headings, security headers, sitemap, redirects, 404 and social card.`,
+  `Marketing checks passed: ${checked} localized pages, ${proofPages.length} help destinations, canonicals, hreflang, RTL, headings, security headers, sitemap, redirects, 404 and social card.`,
 );

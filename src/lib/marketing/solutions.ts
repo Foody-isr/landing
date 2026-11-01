@@ -213,7 +213,7 @@ const entries: Record<
       [
         [
           "צריך אפליקציה כדי להזמין?",
-          "לא. הלקוחות פותחים את אתר המסעדה או סורקים QR ומשתמשים בדפדפן בטלפון.",
+          "לא. הלקוחות פותחים את אתר המסעדה ומזמינים בדפדפן בטלפון. הזמנה ב־QR כלולה במסלול Foody מסעדה.",
         ],
         [
           "אפשר להפעיל רק איסוף?",
@@ -226,6 +226,14 @@ const entries: Record<
         [
           "מה ההבדל בין מעקב ההכנות ל־Foody Kitchen?",
           "Foody הזמנות מרכז כמויות להכנה ואריזה לפי ההזמנות שהתקבלו. Foody Kitchen מוסיף מתכונים, Food Cost, מלאי, ספקים ו־Foody Companion. ניתן להוסיף אותו למסלול לפי הצורך.",
+        ],
+        [
+          "כמה עולה Foody הזמנות?",
+          `המסלול העצמאי עולה ${pricingRates.ordering} ₪ לחודש לעסק לפני מע״מ, ללא חובה להשתמש בקופת Foody. הוא כלול גם ב־Foody מסעדה, במחיר ${pricingRates.restaurant} ₪ לחודש לפני מע״מ, וב־Foody מסעדה ומטבח. חומרה, הקמה, הדרכה, EMV, סליקה והדפסת בוני מטבח בנפרד. התנאים המלאים מפורטים במחירון.`,
+        ],
+        [
+          "האם Foody גובה אחוז מההזמנות הישירות?",
+          "עמלת Foody באחוזים על הזמנות ישירות היא 0%. דמי המנוי עדיין חלים. סליקה, SMS, שירותי משלוחים חיצוניים ושירותי צד שלישי מתומחרים בנפרד לפי השימוש וההסכם. 0% עמלת Foody אינו אומר שכל עלויות ההזמנה מתבטלות.",
         ],
       ],
     ],
@@ -487,7 +495,7 @@ const entries: Record<
       [
         [
           "Faut-il télécharger une application ?",
-          "Non. Les clients ouvrent votre site ou scannent un QR et commandent directement dans le navigateur de leur téléphone.",
+          "Non. Les clients ouvrent votre site et commandent dans le navigateur de leur téléphone. La commande QR est incluse dans Foody Restaurant.",
         ],
         [
           "Puis-je proposer seulement du retrait ?",
@@ -500,6 +508,14 @@ const entries: Record<
         [
           "Quelle différence entre le suivi des préparations et Foody Cuisine ?",
           "Foody Commandes regroupe les quantités à préparer et à emballer à partir des commandes reçues. Foody Cuisine ajoute les recettes, le food cost, les stocks, les fournisseurs et Foody Compagnon. Ce module peut compléter votre offre selon vos besoins.",
+        ],
+        [
+          "Combien coûte Foody Commandes ?",
+          `L’offre autonome coûte ${pricingRates.ordering} ₪ HT par établissement et par mois, sans caisse Foody obligatoire. Elle est aussi incluse dans Foody Restaurant, à ${pricingRates.restaurant} ₪ HT par mois, et Foody Restaurant & Cuisine. Matériel, installation, formation, EMV, slika et impression des bons cuisine sont séparés. Les conditions complètes figurent dans les tarifs.`,
+        ],
+        [
+          "Foody prend-il un pourcentage sur les commandes directes ?",
+          "La commission Foody en pourcentage sur les commandes directes est de 0 %. L’abonnement reste dû. Slika, SMS, livraison externe et services tiers sont facturés séparément selon l’usage et le contrat. Une commission Foody de 0 % ne supprime pas tous les coûts de la commande.",
         ],
       ],
     ],
@@ -761,7 +777,7 @@ const entries: Record<
       [
         [
           "Do customers need an app?",
-          "No. They open your website or scan a QR code and use the browser on their phone.",
+          "No. They open your website and order in their phone’s browser. QR ordering is included in Foody Restaurant.",
         ],
         [
           "Can I offer pickup only?",
@@ -774,6 +790,14 @@ const entries: Record<
         [
           "How does preparation tracking differ from Foody Kitchen?",
           "Foody Orders brings together preparation and packing quantities from received orders. Foody Kitchen adds recipes, food cost, stock, suppliers and Foody Companion. You can add this module to your plan as needed.",
+        ],
+        [
+          "How much does Foody Orders cost?",
+          `The standalone plan costs ILS ${pricingRates.ordering} per location/month excluding VAT, without a required Foody POS. It is also included in Foody Restaurant at ILS ${pricingRates.restaurant} per month excluding VAT, and Foody Restaurant & Kitchen. Hardware, setup, training, EMV, processing and kitchen ticket printing are separate. See pricing for the full terms.`,
+        ],
+        [
+          "Does Foody take a percentage of direct orders?",
+          "Foody’s percentage commission on direct orders is 0%. Subscription charges still apply. Processing, SMS, external couriers and third-party services are charged separately according to usage and contract. A 0% Foody commission does not remove every order cost.",
         ],
       ],
     ],

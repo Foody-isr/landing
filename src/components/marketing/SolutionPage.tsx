@@ -180,10 +180,12 @@ export default function SolutionPage({
   const product = productNavigation.find((item) => item.href === routes[page]);
   const pageLabel = product ? u[product.key] : u[page];
   const softwareOffer = page === "restaurants"
-    ? { plan: "restaurant", entity: "restaurant-software", rate: pricingRates.restaurant, description: t.faq[1].a }
+    ? { plan: "restaurant", entity: "restaurant-software", rate: pricingRates.restaurant, description: t.faq[1].a, operatingSystem: "iPadOS, Android" }
     : page === "pos"
-      ? { plan: "pos", entity: "pos-software", rate: pricingRates.pos, description: t.faq[2].a }
-      : null;
+      ? { plan: "pos", entity: "pos-software", rate: pricingRates.pos, description: t.faq[2].a, operatingSystem: "iPadOS, Android" }
+      : page === "ordering"
+        ? { plan: "ordering", entity: "ordering-software", rate: pricingRates.ordering, description: t.faq[4].a, operatingSystem: "Web browser" }
+        : null;
   return (
     <main id="main-content">
       {softwareOffer && <JsonLd data={{
@@ -194,7 +196,7 @@ export default function SolutionPage({
         url: `${SITE_URL}/${lang}${routes[page]}`,
         description: t.description,
         applicationCategory: "BusinessApplication",
-        operatingSystem: "iPadOS, Android",
+        operatingSystem: softwareOffer.operatingSystem,
         inLanguage: ["he", "fr", "en"],
         publisher: { "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: "Foody", url: SITE_URL },
         offers: {
