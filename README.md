@@ -59,6 +59,16 @@ priority targets. These HTTP and content checks do not establish Google indexing
 organic position or LLM recommendation gains. Editorial impact evidence is recorded
 in `docs/help/reviews/restaurant-search-intent.json`.
 
+The Restaurant hero photograph uses explicit high fetch priority on both the image
+and Next's responsive preload. This addresses the missing-priority insight from a
+1 November 2026 mobile PageSpeed run (79 performance, 5.1 s simulated LCP). Only
+this measured LCP image receives the additional hint; dimensions, responsive sizes,
+content, analytics and other image loading policies are retained. The marketing
+smoke verifies server-rendered discovery, matching high-priority preload and absence
+of lazy loading. A laboratory measurement does not establish field Core Web Vitals
+or a Google ranking improvement. Exact editorial/no-procedure-impact evidence is
+in `docs/help/reviews/restaurant-hero-priority.json`.
+
 The pricing page also distinguishes included shared map usage from the planned
 Maps Plus extension: 149 ILS excluding VAT per establishment/month, with 500 Foody
 optimization credits (one per single-courier stop, three per fleet-allocation stop),
