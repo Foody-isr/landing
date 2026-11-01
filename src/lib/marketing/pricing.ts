@@ -57,9 +57,9 @@ type PricingCopy = {
 /** Localized public pricing copy, separate from the shared numeric rates. */
 export const pricing: Record<Lang, PricingCopy> = {
   fr: {
-    title: "Des prix clairs.\nDès le premier jour.",
+    title: "Le prix de votre caisse.\nSelon votre activité.",
     description:
-      "La caisse Foody dès 590 ₪ HT par mois en Israël. Cloud, back-office et support inclus. Choisissez les outils qui correspondent à votre activité.",
+      `Foody Restaurant à ${pricingRates.restaurant} ₪ HT par mois et par établissement, avec deux licences, site de commande et QR. Matériel, installation et slika séparés.`,
     launch: "Tarifs de lancement",
     featuredLabel: "Pour le service en salle et en ligne",
     monthly: "/ mois",
@@ -173,6 +173,14 @@ export const pricing: Record<Lang, PricingCopy> = {
       "La gestion des livraisons est incluse dans Foody Commandes, seul ou avec Foody Restaurant. Les prestations des transporteurs, les SMS, les bornes Kiosk, les intégrations tierces et les commissions des plateformes externes sont chiffrés séparément.",
     faq: [
       {
+        q: "Combien coûte une caisse restaurant Foody en Israël ?",
+        a: `Foody Restaurant coûte ${pricingRates.restaurant} ₪ HT par établissement et par mois, avec deux licences appareil, site de commande et QR. Foody Caisse seul coûte ${pricingRates.pos} ₪ HT par mois avec une licence, sans commandes en ligne. Foody Restaurant & Cuisine coûte ${pricingRates.complete} ₪ HT par mois. Les licences sont logicielles ; matériel, installation, formation et slika sont séparés.`,
+      },
+      {
+        q: "Quel budget prévoir pour démarrer avec deux appareils ?",
+        a: `Exemple Foody pour un établissement : ${pricingRates.restaurant} ₪ HT de premier mois Restaurant et ${pricingRates.setup} ₪ HT d’installation standard, soit ${pricingRates.restaurant + pricingRates.setup} ₪ HT. Les deux licences sont incluses, pas les appareils. Une formation sur place, si choisie, coûte ${pricingRates.training} ₪ HT par jour. Matériel, déplacements éventuels, EMV, slika et options restent séparés ; ce calcul ne représente pas le coût complet d’ouverture.`,
+      },
+      {
         q: "Foody Caisse inclut-il les commandes en ligne ?",
         a: "Non. Pour vendre en ligne sans caisse POS, choisissez Foody Commandes, disponible seul à 590 ₪ HT par mois et par établissement. Foody Commandes et la commande QR sont aussi inclus dans Foody Restaurant, à 890 ₪ HT par mois et par établissement avec deux licences de caisse, ainsi que dans Foody Restaurant & Cuisine.",
       },
@@ -203,9 +211,9 @@ export const pricing: Record<Lang, PricingCopy> = {
     ],
   },
   en: {
-    title: "Clear prices.\nFrom day one.",
+    title: "Restaurant POS pricing.\nChoose your plan.",
     description:
-      "Foody POS from ₪590 per month, excluding VAT, in Israel. Cloud, back office and support included. Choose the tools that fit your business.",
+      `Foody Restaurant: ILS ${pricingRates.restaurant} per location/month, excluding VAT, with two licences, online ordering and QR. Hardware, setup and processing are separate.`,
     launch: "Launch pricing",
     featuredLabel: "For table service and online orders",
     monthly: "/ month",
@@ -319,6 +327,14 @@ export const pricing: Record<Lang, PricingCopy> = {
       "Delivery management is included in Foody Orders, on its own or with Foody Restaurant. Courier services, SMS, kiosks, third-party integrations and external platform commissions are quoted separately.",
     faq: [
       {
+        q: "How much does a Foody restaurant POS cost in Israel?",
+        a: `Foody Restaurant costs ILS ${pricingRates.restaurant} per location/month, excluding VAT, with two device licences, online ordering and QR. Standalone Foody POS costs ILS ${pricingRates.pos} per month with one licence, without online orders. Foody Restaurant & Kitchen costs ILS ${pricingRates.complete} per month. Licences cover software; hardware, setup, training and processing are separate.`,
+      },
+      {
+        q: "What should I budget to start with two devices?",
+        a: `Foody example for one location: ILS ${pricingRates.restaurant} for the first Restaurant month plus ILS ${pricingRates.setup} for standard setup, totalling ILS ${pricingRates.restaurant + pricingRates.setup}, excluding VAT. Two licences are included, not the devices. Optional on-site training costs ILS ${pricingRates.training} per day, excluding VAT. Hardware, any travel, EMV, processing and options are separate; this is not the full cost of opening a restaurant.`,
+      },
+      {
         q: "Does Foody POS include online orders?",
         a: "No. Choose standalone Foody Orders to sell online without a POS for ₪590 per month per location, excluding VAT. Foody Orders and QR ordering are also included in Foody Restaurant at ₪890 per month per location, excluding VAT, with two POS device licences, and in Foody Restaurant & Kitchen.",
       },
@@ -349,9 +365,9 @@ export const pricing: Record<Lang, PricingCopy> = {
     ],
   },
   he: {
-    title: "מחירים ברורים.\nמהיום הראשון.",
+    title: "מחיר קופה למסעדה.\nבחרו את המסלול שלכם.",
     description:
-      "קופת Foody החל מ־590 ₪ לחודש לפני מע״מ בישראל. ענן, משרד אחורי ותמיכה כלולים. בחרו את הכלים שמתאימים לעסק שלכם.",
+      `קופה למסעדה בישראל: Foody מסעדה ב־${pricingRates.restaurant} ₪ לחודש לסניף עם שני רישיונות, אתר הזמנות ו־QR. לפני מע״מ; חומרה, הקמה וסליקה בנפרד.`,
     launch: "מחירי השקה",
     featuredLabel: "לשירות במסעדה ולהזמנות אונליין",
     monthly: "/ חודש",
@@ -464,6 +480,14 @@ export const pricing: Record<Lang, PricingCopy> = {
     usageText:
       "ניהול משלוחים כלול ב־Foody הזמנות, כמסלול עצמאי או עם Foody מסעדה. שירותי חברות משלוחים, SMS, קיוסקים, חיבורים לספקים חיצוניים ועמלות פלטפורמות חיצוניות מתומחרים בנפרד.",
     faq: [
+      {
+        q: "מה המחיר של קופה למסעדה ב־Foody בישראל?",
+        a: `Foody מסעדה עולה ${pricingRates.restaurant} ₪ לחודש לסניף לפני מע״מ, כולל שני רישיונות מכשיר, אתר הזמנות ו־QR. Foody קופה בלבד עולה ${pricingRates.pos} ₪ לחודש עם רישיון אחד, ללא הזמנות אונליין. Foody מסעדה ומטבח עולה ${pricingRates.complete} ₪ לחודש. הרישיונות הם לתוכנה; חומרה, הקמה, הדרכה וסליקה בנפרד.`,
+      },
+      {
+        q: "איזה תקציב צריך להתחלה עם שני מכשירים?",
+        a: `דוגמה לעסק אחד ב־Foody: חודש ראשון של מסלול מסעדה ב־${pricingRates.restaurant} ₪ והקמה סטנדרטית ב־${pricingRates.setup} ₪, סך הכול ${pricingRates.restaurant + pricingRates.setup} ₪ לפני מע״מ. שני רישיונות כלולים, לא המכשירים עצמם. הדרכה בעסק, אם נבחרה, עולה ${pricingRates.training} ₪ ליום לפני מע״מ. חומרה, נסיעות ככל שישנן, EMV, סליקה ואפשרויות נוספות בנפרד; זו אינה העלות המלאה לפתיחת מסעדה.`,
+      },
       {
         q: "מסלול Foody קופה כולל הזמנות אונליין?",
         a: "לא. למכירה אונליין ללא קופת POS, בחרו ב־Foody הזמנות כמסלול עצמאי, במחיר 590 ₪ לחודש לכל סניף לפני מע״מ. Foody הזמנות והזמנה ב־QR כלולים גם ב־Foody מסעדה, במחיר 890 ₪ לחודש לכל סניף לפני מע״מ עם שני רישיונות קופה, וב־Foody מסעדה ומטבח.",
