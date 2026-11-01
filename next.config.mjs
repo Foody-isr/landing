@@ -40,7 +40,10 @@ const config = {
     NEXT_PUBLIC_API_URL: apiUrl,
   },
   async headers() {
-    return [{ source: '/(.*)', headers: securityHeaders }];
+    return [
+      { source: '/(.*)', headers: securityHeaders },
+      { source: '/assets/sharing/:path*', headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }] },
+    ];
   },
 };
 export default config;
