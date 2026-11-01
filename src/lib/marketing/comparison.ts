@@ -2,11 +2,14 @@ import type { Lang } from "@/lib/seo";
 import { pricingRates } from "./pricing";
 
 export const TABIT_COMPARISON_PATH = "/compare/tabit";
-export const COMPARISON_REVIEWED_AT = "2026-10-30";
+export const COMPARISON_REVIEWED_AT = "2026-11-01";
 export const COMMISSION_EXAMPLE = { sales: 30000, rate: 3 } as const;
 const exampleCommission = COMMISSION_EXAMPLE.sales * COMMISSION_EXAMPLE.rate / 100;
 export const comparisonSources = {
-  integrations: "https://www.tabit.cloud/integrations/",
+  integrations: "https://support-us.tabit.cloud/hc/en-us/articles/12570827573266-Overview-of-Tabit-s-Integrations",
+  israel: "https://tabit.cloud/il/",
+  forecasts: "https://support-us.tabit.cloud/hc/en-us/articles/39397401980306-Tabit-Bizz-overview",
+  production: "https://support-il.tabit.cloud/hc/he-il/articles/35665904767634",
 } as const;
 
 type ComparisonCopy = {
@@ -18,7 +21,14 @@ type ComparisonCopy = {
   criterion: string;
   source: string;
   presentLabel: string;
-  absentLabel: string;
+  unconfirmedLabel: string;
+  documentedLabel: string;
+  unconfirmedNote: string;
+  forecastNote: string;
+  forecastSource: string;
+  scopeNote: string;
+  israelSource: string;
+  productionSource: string;
   attributionNote: string;
   foodySource: string;
   moduleNote: string;
@@ -34,21 +44,28 @@ type ComparisonCopy = {
   compareLink: string;
 };
 
-/** Native-feature matrix using Foody evidence and the owner's attributed competitor assessment. */
+/** Native-feature matrix separating documented competitor capabilities from unverified absence reports. */
 export const comparisonCopy: Record<Lang, ComparisonCopy> = {
   fr: {
     title: "Foody ou Tabit : comparer sa caisse restaurant en Israël",
     description: "Administration et caisse multilingues, stocks liés aux recettes, prévisions de ventes, cuisine avant et pendant le service, fournisseurs et écarts : comparez le périmètre intégré de Foody avec Tabit.",
     heading: "Foody ou Tabit ?\nPourquoi choisir Foody.",
-    reviewed: "Évaluation Foody du",
+    reviewed: "Sources consultées le",
     caption: "Fonctionnalités natives",
     criterion: "Votre besoin",
     presentLabel: "Présent",
-    absentLabel: "Absent",
-    attributionNote: "Les absences indiquées pour Tabit reprennent l’évaluation communiquée par Foody et n’ont pas été confirmées indépendamment. Elles concernent le périmètre natif, sans logiciel tiers. Des intégrations peuvent apporter des fonctions complémentaires selon le pays, la version et le contrat.",
+    unconfirmedLabel: "À confirmer",
+    documentedLabel: "Documenté",
+    unconfirmedNote: "Absence signalée par Foody, non confirmée indépendamment.",
+    forecastNote: "Tabit Bizz documente des prévisions. Le détail des estimations et de leur lien aux préparations doit être vérifié dans l’offre locale.",
+    forecastSource: "Prévisions dans Tabit Bizz (documentation US)",
+    scopeNote: "Tabit présente aussi un KDS en Israël et la planification de quantités de produits finis. Ces périmètres doivent être distingués des consommations d’ingrédients par recette, du coût matière et du parcours quotidien Foody Compagnon.",
+    israelSource: "Produits Tabit en Israël",
+    productionSource: "Planification des produits finis chez Tabit (juin 2026)",
+    attributionNote: "Les lignes « À confirmer » reprennent un signalement d’absence fourni par Foody, sans confirmation indépendante. Elles ne constituent pas une absence vérifiée. Pour comparer, confirmez le périmètre natif, les logiciels tiers, le pays, la version et le contrat. La liste d’intégrations liée provient de la documentation US et ne garantit pas la disponibilité en Israël.",
     foodySource: "Détails",
     moduleNote: `Les fonctions de cuisine relèvent de Foody Cuisine : ${pricingRates.kitchen} ₪ HT/mois seul ou ${pricingRates.complete} ₪ HT/mois dans Foody Restaurant & Cuisine, par établissement. Foody Restaurant coûte ${pricingRates.restaurant} ₪ HT/mois et Commandes seul ${pricingRates.ordering} ₪ HT/mois. Matériel, installation, formation et frais de paiement restent distincts.`,
-    source: "Consulter les intégrations déclarées par Tabit",
+    source: "Intégrations Tabit documentées aux États-Unis",
     reasonsTitle: "Choisissez Foody pour ces besoins précis.",
     reasons: [
       { title: "Une équipe, plusieurs langues.", text: "La caisse et le back-office Foody proposent une interface en français, hébreu et anglais. La langue des outils de travail compte aussi pour le responsable, les serveurs et la cuisine, au-delà de la traduction du menu client.", href: "/solutions/pos", link: "Vérifier les interfaces disponibles" },
@@ -78,15 +95,22 @@ export const comparisonCopy: Record<Lang, ComparisonCopy> = {
     title: "Foody vs Tabit: restaurant POS comparison in Israel",
     description: "Multilingual back office and POS, recipe-linked stock, sales forecasts, kitchen prep and service, suppliers and variances: compare Foody’s integrated scope with Tabit.",
     heading: "Foody or Tabit?\nWhy choose Foody.",
-    reviewed: "Foody assessment dated",
+    reviewed: "Sources reviewed on",
     caption: "Native features",
     criterion: "Your requirement",
     presentLabel: "Present",
-    absentLabel: "Absent",
-    attributionNote: "The Tabit absences reflect the assessment supplied by Foody and have not been independently confirmed. They concern native functionality without third-party software. Integrations may provide additional capabilities depending on country, version and contract.",
+    unconfirmedLabel: "To confirm",
+    documentedLabel: "Documented",
+    unconfirmedNote: "Absence reported by Foody, not independently confirmed.",
+    forecastNote: "Tabit Bizz documents forecasts. Check the forecast type and its connection to preparation in the local offer.",
+    forecastSource: "Forecasts in Tabit Bizz (US documentation)",
+    scopeNote: "Tabit also presents a KDS in Israel and finished-item quantity planning. These scopes must be distinguished from recipe-based ingredient consumption, food cost and Foody Companion’s daily workflow.",
+    israelSource: "Tabit products in Israel",
+    productionSource: "Tabit finished-item planning (June 2026)",
+    attributionNote: "“To confirm” rows reflect absence reports supplied by Foody without independent confirmation; they are not verified absences. Confirm native scope, third-party software, country, version and contract. The linked integration list is US documentation and does not establish availability in Israel.",
     foodySource: "Details",
     moduleNote: `Kitchen functions belong to Foody Kitchen: ILS ${pricingRates.kitchen}/month standalone or ILS ${pricingRates.complete}/month in Foody Restaurant & Kitchen, per location excluding VAT. Foody Restaurant is ILS ${pricingRates.restaurant}/month and standalone Orders ILS ${pricingRates.ordering}/month excluding VAT. Hardware, setup, training and processing are separate.`,
-    source: "View Tabit’s listed integrations",
+    source: "Tabit integrations documented in the US",
     reasonsTitle: "Choose Foody for these specific needs.",
     reasons: [
       { title: "One team, multiple languages.", text: "Foody POS and back office offer French, Hebrew and English interfaces. Working-language support matters for managers, waiters and kitchen teams, beyond translating the guest menu.", href: "/solutions/pos", link: "Check available interfaces" },
@@ -116,15 +140,22 @@ export const comparisonCopy: Record<Lang, ComparisonCopy> = {
     title: "Foody או Tabit: השוואת קופה למסעדה בישראל",
     description: "משרד אחורי וקופה בכמה שפות, מלאי הקשור למתכונים, תחזיות מכירות, הכנות ושירות במטבח, ספקים והפרשים: השוו את התכולה המשולבת של Foody מול Tabit.",
     heading: "Foody או Tabit?\nלמה לבחור ב־Foody.",
-    reviewed: "הערכת Foody מתאריך",
+    reviewed: "מקורות שנבדקו בתאריך",
     caption: "יכולות מובנות",
     criterion: "הצורך שלכם",
     presentLabel: "קיים",
-    absentLabel: "לא קיים",
-    attributionNote: "היכולות שסומנו כחסרות ב־Tabit מבוססות על ההערכה שמסר Foody ולא אומתו באופן עצמאי. ההשוואה מתייחסת ליכולת מובנית, ללא תוכנה חיצונית. חיבורים עשויים לספק יכולות נוספות בהתאם למדינה, לגרסה ולחוזה.",
+    unconfirmedLabel: "דורש אישור",
+    documentedLabel: "מתועד",
+    unconfirmedNote: "Foody דיווח על היעדר היכולת, ללא אימות עצמאי.",
+    forecastNote: "Tabit Bizz מתעד תחזיות. יש לבדוק בהצעה המקומית את סוג התחזיות ואת הקשר שלהן להכנות.",
+    forecastSource: "תחזיות ב־Tabit Bizz (תיעוד ארה״ב)",
+    scopeNote: "Tabit מציגה בישראל גם KDS ותכנון כמויות של מוצרים מוגמרים. יש להבחין בין יכולות אלה לבין צריכת חומרי גלם לפי מתכון, עלות חומרי גלם ותהליך היום של Foody Companion.",
+    israelSource: "מוצרי Tabit בישראל",
+    productionSource: "תכנון מוצרים מוגמרים ב־Tabit (יוני 2026)",
+    attributionNote: "השורות ״דורש אישור״ מבוססות על דיווחי היעדר יכולת שמסר Foody ללא אימות עצמאי, ואינן הוכחה להיעדר היכולת. יש לאשר תכולה מובנית, תוכנות חיצוניות, מדינה, גרסה וחוזה. רשימת החיבורים המקושרת היא מתיעוד ארה״ב ואינה מוכיחה זמינות בישראל.",
     foodySource: "פרטים",
     moduleNote: `כלי המטבח שייכים ל־Foody Kitchen: ${pricingRates.kitchen} ₪ לחודש בנפרד או ${pricingRates.complete} ₪ לחודש בחבילת Foody מסעדה ומטבח, לעסק לפני מע״מ. Foody מסעדה עולה ${pricingRates.restaurant} ₪ לחודש ו־Foody הזמנות בנפרד ${pricingRates.ordering} ₪ לחודש לפני מע״מ. חומרה, הקמה, הדרכה וסליקה נפרדות.`,
-    source: "לצפות בחיבורים ש־Tabit מפרסם",
+    source: "חיבורי Tabit המתועדים בארה״ב",
     reasonsTitle: "בחרו ב־Foody לצרכים האלה.",
     reasons: [
       { title: "צוות אחד, כמה שפות.", text: "הקופה והמשרד האחורי של Foody מציעים ממשק בעברית, בצרפתית ובאנגלית. שפת כלי העבודה חשובה למנהלים, למלצרים ולצוות המטבח, מעבר לתרגום התפריט ללקוחות.", href: "/solutions/pos", link: "לבדוק ממשקים זמינים" },

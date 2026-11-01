@@ -22,14 +22,23 @@ arbitraires ne sont pas stockées. `gclid`/`msclkid` sont des drapeaux de canal 
 sans conserver leur valeur. Referrer absent peut masquer une visite IA/organique :
 direct n’est pas une attribution certaine.
 
-Le data layer prépare un raccordement GA4/GTM, sans installer de tag ni propriété
-Google. Identifier le compte du propriétaire et vérifier configuration et
-information de confidentialité avant ce raccordement. Aucune nouvelle origine
-réseau ni clé Analytics n’est ajoutée ici. Les exceptions analytiques ne peuvent
-pas invalider une réception confirmée. Ce suivi n’est pas un journal serveur des
-prospects et peut être bloqué côté navigateur.
+GA4 a été créé avec l’accord explicite du propriétaire le 1er novembre 2026 :
+compte 414297109, propriété 561799404, flux 16247446109, mesure publique
+`G-31GLDB1C55`. Le lot suivant ajoute une intégration distincte, sur consentement
+explicite Google et uniquement sur le domaine public en build de production.
+Le refus ne charge pas la bibliothèque Google ; le retrait désactive la mesure
+et efface les cookies de cette propriété. Les mesures améliorées sont désactivées.
+`generate_lead` est déclaré événement clé sans valeur monétaire arbitraire.
+Les pages sont envoyées manuellement avec une URL sans paramètres ni fragments,
+et une liste fermée de chemins. Les guides sont regroupés au niveau `/help`.
+Les referrers sont réduits à des racines reconnues.
 
-`npm run test:measurement` vérifie sources Israël/IA/payantes, domaines trompeurs,
+La preuve de création n’est pas une preuve de publication ou de collecte :
+contrôler le déploiement et une visite consentante après publication. Les erreurs
+analytiques ne peuvent pas invalider une réception confirmée. Ce suivi reste
+indicatif et n’est pas un journal serveur des prospects.
+
+`npm run test:analytics` vérifie sources Israël/IA/payantes, domaines trompeurs,
 UTM arbitraires/prototypes, champs de stockage inattendus, exceptions analytiques
 et absence d’émission en développement. Les parcours de formulaire sont vérifiés
 avec une API locale fictive ; aucun prospect n’est envoyé en production.

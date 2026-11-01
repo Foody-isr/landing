@@ -13,12 +13,12 @@ const apiOrigin = (() => {
 
 const contentSecurityPolicy = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline' https://connect.facebook.net${isProduction ? '' : " 'unsafe-eval'"}`,
+  `script-src 'self' 'unsafe-inline' https://connect.facebook.net https://www.googletagmanager.com${isProduction ? '' : " 'unsafe-eval'"}`,
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "font-src 'self' data: https://fonts.gstatic.com",
   "img-src 'self' blob: data: https:",
   "media-src 'self'",
-  `connect-src 'self' ${apiOrigin} https://api.foody-pos.co.il https://dev-api.foody-pos.co.il https://connect.facebook.net https://www.facebook.com`,
+  `connect-src 'self' ${apiOrigin} https://api.foody-pos.co.il https://dev-api.foody-pos.co.il https://connect.facebook.net https://www.facebook.com https://www.google-analytics.com https://region1.google-analytics.com`,
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",

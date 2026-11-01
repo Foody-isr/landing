@@ -26,17 +26,20 @@ test("custom event parameters never contain form values, URLs or campaign identi
   const { recordDemoSubmission } = await fresh();
   const environment = process.env.NODE_ENV;
   const previousWindow = globalThis.window, previousDocument = globalThis.document;
-  const sent = [];
+  const sent = [], broadcasts = [];
+  const previousCustomEvent = globalThis.CustomEvent;
   let stored;
   try {
     process.env.NODE_ENV = "production";
-    globalThis.window = { location: { href: "https://foody-pos.co.il/fr/contact?utm_source=chatgpt&utm_campaign=private%40example.com&email=private%40example.com&gclid=secret" }, sessionStorage: { getItem: () => null, setItem: (_, value) => { stored = value; } }, fbq: (...args) => sent.push(args) };
+    globalThis.CustomEvent = class { constructor(type, options) { this.type = type; this.detail = options.detail; } };
+    globalThis.window = { dispatchEvent: event => broadcasts.push({ type: event.type, detail: event.detail }), location: { href: "https://foody-pos.co.il/fr/contact?utm_source=chatgpt&utm_campaign=private%40example.com&email=private%40example.com&gclid=secret" }, sessionStorage: { getItem: () => null, setItem: (_, value) => { stored = value; } }, fbq: (...args) => sent.push(args) };
     globalThis.document = { referrer: "https://chatgpt.com/c/private-thread" };
     recordDemoSubmission("fr");
     assert.deepEqual(sent[0], ["trackSingle", "1059276727609296", "Lead", { language: "fr", acquisition_source: "chatgpt", acquisition_channel: "ai_referral", landing_language: "fr" }]);
     assert.equal(window.dataLayer[0].event, "foody_demo_submitted");
-    assert.doesNotMatch(JSON.stringify({ sent, stored, dataLayer: window.dataLayer }), /private|secret|@|https|contact/);
-  } finally { process.env.NODE_ENV = environment; globalThis.window = previousWindow; globalThis.document = previousDocument; }
+    assert.deepEqual(broadcasts, [{ type: "foody:demo-submitted", detail: sent[0][3] }]);
+    assert.doesNotMatch(JSON.stringify({ sent, stored, broadcasts, dataLayer: window.dataLayer }), /private|secret|@|https|contact/);
+  } finally { process.env.NODE_ENV = environment; globalThis.window = previousWindow; globalThis.document = previousDocument; globalThis.CustomEvent = previousCustomEvent; }
 });
 
 test("language switches keep the entry source and discard unexpected stored fields", async () => {

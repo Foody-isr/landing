@@ -7,7 +7,7 @@ import Experience from "./Experience";
 
 const copy = {
   fr: {
-    title: "Trois exemples pour voir la différence.",
+    title: "Trois exemples du fonctionnement de Foody.",
     note: "Exemples interactifs simplifiés, avec des données fictives. Les procédures liées décrivent le fonctionnement de Foody ; ces illustrations ne sont pas des captures de l’application.",
     explore: "Essayer l’exemple",
     languages: "Une caisse et un back-office dans la langue de l’équipe",
@@ -32,7 +32,7 @@ const copy = {
     companionProof: "Vérifier le parcours quotidien de la cuisine",
   },
   en: {
-    title: "Three examples to see the difference.",
+    title: "Three examples of how Foody works.",
     note: "Simplified interactive examples with sample data. The linked guides describe how Foody works; these illustrations are not application screenshots.",
     explore: "Try the example",
     languages: "POS and back office in your team’s language",
@@ -57,7 +57,7 @@ const copy = {
     companionProof: "Check the daily kitchen workflow",
   },
   he: {
-    title: "שלוש דוגמאות שממחישות את ההבדל.",
+    title: "שלוש דוגמאות לפעולה של Foody.",
     note: "דוגמאות אינטראקטיביות מפושטות עם נתונים לדוגמה. המדריכים המקושרים מתארים את פעולת Foody; האיורים אינם צילומי מסך של היישום.",
     explore: "לנסות את הדוגמה",
     languages: "קופה ומשרד אחורי בשפה של הצוות",
