@@ -1,5 +1,26 @@
 # Help ownership, evidence and releases
 
+## Item-to-carte groups (2 November 2026)
+
+The item editor can select existing publication-managed groups and stage a new
+root group under an existing carte without leaving the article. Save applies
+only this item's memberships to freshly read private drafts. Explicit series
+keys, existing editorial work and stock preparation are retained. Publication
+remains a separate action. Cancellation before Save creates no group; uncertain
+or partial saves retain editable group choices, including corrective removals.
+Synthetic browser regressions cover desktop French and mobile Hebrew without
+restaurant-data access. The reviewed procedures are in creating-a-menu-item,
+categories-and-items, menus-and-groups and using-support, in FR/HE/EN.
+
+This release refreshes Admin and Landing source evidence and the API's embedded
+public corpus. Web, POS and Backoffice retain the reviewed inventory blocks and
+surfaces from Landing develop `923ae7ae012ed7d2f2d90f32ac9ca50631380a9a`. Independently integrated internal-event sources and procedures are
+preserved. Freeze this documentation and pin its immutable commit in Admin/API
+before PR readiness. Coordinate help and support-corpus publication with the
+matching Admin artifact. The owner explicitly authorized pushes and development
+and production deployment; normal development verification and immutable artifact
+promotion still apply.
+
 ## Internal event orders preparation (2 November 2026)
 
 API migration 286 precedes Admin, guest Web and POS. Orders retain their handover

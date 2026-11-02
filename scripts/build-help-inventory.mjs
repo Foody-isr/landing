@@ -71,7 +71,13 @@ for (const [service, configuredRoot] of Object.entries(roots)) {
     const endOfDayModule = service === 'foodyserver' && /^internal\/(?:orders|common)\/end_of_day[^/]*\.go$/.test(file);
     const guardedCash = service === 'foodypos' && file === 'lib/features/orders/presentation/cash_collection_guard.dart';
     const eventModule = (service === 'foodyserver' && ['internal/common/order_event.go','internal/orders/event_orders.go','internal/payment/event_checkout.go','internal/menu/event_settings.go','migrations/286_internal_event_orders.sql'].includes(file)) || (service === 'foodyadmin' && (/src\/components\/orders\/EventOrder[^/]*\.tsx$/.test(file) || file === 'src/lib/orders/event-order-copy.ts')) || (service === 'foodyweb' && ['components/EventCheckoutFields.tsx','lib/event-order-copy.ts'].includes(file)) || (service === 'foodypos' && file === 'lib/core/ui/event_order_badge.dart');
-    const ids = eventModule ? ['orders-events'] : endOfDayModule ? ['pos-end-of-day'] : guardedCash ? ['pos-payments', 'pos-end-of-day'] : cashGuaranteeModule ? ['stancer-cash-guarantee'] : service === 'foodyserver' && file === 'internal/orders/cash_drawer_context.go'
+    // These dedicated item-to-carte modules do not configure variants, recipes,
+    // modifiers or other features covered by the broad menu-item selectors.
+    const itemMenuAssignmentModule = service === 'foodyadmin' && [
+      'src/components/MenuGroupPicker.tsx', 'src/components/menu-item/ItemMenuSaveNotice.tsx',
+      'src/lib/item-menu-assignments.ts', 'src/lib/itemDraft.ts',
+    ].includes(file);
+    const ids = itemMenuAssignmentModule ? ['menu-categories-and-items', 'menu-creating-a-menu-item', 'menu-menus-and-groups'] : eventModule ? ['orders-events'] : endOfDayModule ? ['pos-end-of-day'] : guardedCash ? ['pos-payments', 'pos-end-of-day'] : cashGuaranteeModule ? ['stancer-cash-guarantee'] : service === 'foodyserver' && file === 'internal/orders/cash_drawer_context.go'
       ? ['pos-payments', 'pos-cash-access-diagnostics']
       : service === 'foodyserver' && /^internal\/orders\/transactions(?:_handler|_adjustments)?\.go$/.test(file)
         ? ['pos-payments'] : service === 'foodyserver' && file === 'internal/menu/item_photos.go'
