@@ -1,5 +1,34 @@
 # Help ownership, evidence and releases
 
+## iPad open-check workspace preparation (2 November 2026)
+
+The compatible iPad places open manual table, named and financial checks in
+Orders → Checks. Landscape uses the existing view sidebar; portrait uses the
+view picker. Menu → Actions → Open tickets and the existing named-check home
+return reach this same workspace. The compact handheld keeps its existing
+Open tickets route. Viewing, changing views and reopening a check do not merge
+QR orders, collect payment, send food or close a check.
+
+Save check during a Menu send remains a destination dialog. Its new tablet empty
+panel distinguishes the absence of eligible onsite checks from loading failure;
+new-check creation and cancellation keep their existing authority. A separately
+created ticket preselects the service type from the current valid method or
+effective enabled default instead of forcing pickup. Staff still review that
+choice. Missing settings, eligibility or group reads do not authorize creation.
+
+The five affected procedures are reviewed in French, Hebrew and English under
+orders/managing-orders, orders/order-types, orders/taking-an-order-pos,
+settings/service-mode and settings/pos-workspace. None of these guides contains
+an embedded screenshot to update. Preserve the source inventories of services
+outside the reviewed POS and API documentation-corpus footprints from Landing
+develop 1b469b8097e7fc34bf16d92058f6bca4e9f9f29b; do not rescan unrelated worktrees.
+The API executable behavior, schema, payments and environment contract do not
+change. Export the reviewed public corpus, copy it to internal/support/corpus.json
+in the isolated API branch, then freeze its documentation source before final
+inventory and immutable pins. Do not publish these procedures before the
+compatible installed POS and matching support corpus are coordinated. Local
+documentation preparation does not certify an installation or physical test.
+
 ## Customer profile save feedback preparation (1 November 2026)
 
 The Admin customer form identifies missing, invalid and duplicate phone numbers
