@@ -4,8 +4,13 @@ import { loadLocalTypeScript } from './load-local-typescript.mjs';
 const { calculateSupplierVariance: calculate, SUPPLIER_VARIANCE_SCENARIOS: scenarios } = loadLocalTypeScript('src/lib/marketing/supplier-variance.ts');
 const base = () => ({ referencePrice: 40, invoicePrice: 40, invoicedQuantity: 10, receivedQuantity: 10 });
 
-test('three independent document cases reconcile to 40, 40 and 80 ILS', () => {
-  assert.deepEqual(scenarios.map(s => calculate(s).totalVarianceMinor), [4000, 4000, 8000]);
+test('three independent document cases reconcile to 300, 40 and 80 ILS', () => {
+  assert.deepEqual(scenarios.map(s => calculate(s).totalVarianceMinor), [30000, 4000, 8000]);
+  const price = calculate(scenarios[0]);
+  assert.equal(price.billedMinor, 100000);
+  assert.equal(price.receivedReferenceMinor, 70000);
+  assert.equal(price.priceVarianceMinor, 30000);
+  assert.equal(price.quantityVarianceMinor, 0);
   const combined = calculate(scenarios[2]);
   assert.equal(combined.billedMinor, 44000);
   assert.equal(combined.receivedReferenceMinor, 36000);

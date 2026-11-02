@@ -18,7 +18,7 @@ export type SupplierVarianceResult =
     };
 
 export const SUPPLIER_VARIANCE_SCENARIOS = [
-  { id: "price", referencePrice: 40, invoicePrice: 44, invoicedQuantity: 10, receivedQuantity: 10 },
+  { id: "price", referencePrice: 70, invoicePrice: 100, invoicedQuantity: 10, receivedQuantity: 10 },
   { id: "quantity", referencePrice: 40, invoicePrice: 40, invoicedQuantity: 10, receivedQuantity: 9 },
   { id: "combined", referencePrice: 40, invoicePrice: 44, invoicedQuantity: 10, receivedQuantity: 9 },
 ] as const;

@@ -25,7 +25,7 @@ export default function SupplierVarianceCalculator({ lang }: { lang: Lang }) {
   const quantity = (field: "invoicedQuantity" | "receivedQuantity") => errors.includes(field) ? t.unavailable : `${new Intl.NumberFormat(`${lang}-IL`, { maximumFractionDigits: 3 }).format(input[field])} ${t.units[unit]}`;
   const price = (field: "referencePrice" | "invoicePrice") => errors.includes(field) ? t.unavailable : money(Math.round(input[field] * 100));
   const choose = (id: SupplierVarianceScenarioId) => { setScenario(id); setValues(valuesFor(id)); setUnit("kg"); };
-  const product = unit === "kg" ? t.product : t.productLabel;
+  const product = unit === "kg" ? scenario === "price" ? t.priceProduct : t.product : t.productLabel;
   return <div className="supplier-simulator" data-supplier-variance-calculator>
     <div className="supplier-scenarios" role="group" aria-label={t.scenarioLabel}>
       {SUPPLIER_VARIANCE_SCENARIOS.map(item => <button key={item.id} type="button" aria-pressed={scenario === item.id} onClick={() => choose(item.id)} data-supplier-scenario={item.id}>{t.scenarios[item.id].title}</button>)}

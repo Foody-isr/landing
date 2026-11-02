@@ -30,6 +30,8 @@ export default async function SupplierVariancePage({ params }: { params: Promise
         const calculation = calculateSupplierVariance(scenario);
         return <section key={scenario.id} id={`example-${scenario.id}`} data-supplier-worked-example={scenario.id}><h3>{example.title}</h3><p>{example.text}</p><p className="supplier-example-conclusion" data-example-total-minor={calculation.ok ? calculation.totalVarianceMinor : undefined}>{example.conclusion}</p></section>;
       })}</div></section>
+      <section id="negotiated-prices"><h2>{t.agreementTitle}</h2><p>{t.agreementText}</p><p>{t.agreementRisk}</p></section>
+      <section id="invoice-price-evidence"><h2>{t.evidenceTitle}</h2><p>{t.evidenceText}</p><p className="fine-print">{t.evidenceLimit}</p><a className="text-link" href="https://supy.io/the-spread" rel="external">{t.evidenceSource}</a></section>
       <section id="reconciliation-formula"><h2>{t.formulaTitle}</h2><p className="supplier-formula">{t.formula}</p><p>{t.formulaDetails}</p></section>
       <section><h2>{t.scopeTitle}</h2><p>{t.scopeText}</p><div className="resource-inline-links"><Link className="text-link" href={`/${lang}/solutions/kitchen`}>{t.kitchenLink}</Link><Link className="text-link" href={`/${lang}/help/kitchen/suppliers-and-purchases`}>{t.procedureLink}</Link><Link className="text-link" href={`/${lang}/help/kitchen/delivery-note-import`}>{t.importLink}</Link><Link className="text-link" href={`/${lang}${INVENTORY_GUIDE_PATH}`}>{t.inventoryLink}</Link><Link className="text-link" href={`/${lang}${FOOD_COST_PATH}`}>{t.foodCostLink}</Link></div></section>
     </article>
