@@ -1,5 +1,22 @@
 # Help ownership, evidence and releases
 
+## Internal event handover and delivery fees (2 November 2026)
+
+The event calendar retains its independent handover date instead of reconciling
+it against weekly carte targets. Delivery fees are editable in Fulfillment before
+payment selection. Explicit staff quotes, including zero, survive private-link
+address validation; an omitted quote retains existing zone pricing. Coverage,
+minimum, calendar, discount and exact payment-total checks remain authoritative.
+The ordinary series selector is unchanged. Local return to articles retains the
+fee; persisted drafts deliberately require reviewing financial inputs again.
+
+Review event-orders, order-details and internal-sumit-checkout in FR/HE/EN with
+the compatible API and Admin. No screenshots exist in these procedures. Preserve
+all other service inventory blocks and source surfaces from Landing develop
+`6533c9f703a1801b3d1dbeca0a6acdbdcce24ffa`. Export the identical API support corpus
+and pin the immutable reviewed documentation before release. Verify development
+before promoting its artifacts. Synthetic tests create no real payment or order.
+
 ## Item-to-carte groups (2 November 2026)
 
 The item editor can select existing publication-managed groups and stage a new
