@@ -32,6 +32,7 @@ const paths = [
   "/guides/restaurant-pos-israel",
   "/guides/restaurant-inventory-israel",
   "/tools/food-cost-calculator",
+  "/tools/supplier-variance-calculator",
   "/demos/kitchen",
   "/about",
 ];
@@ -117,6 +118,18 @@ for (const lang of ["he", "fr", "en"]) {
       assert.ok(main.includes('data-calculator-percent'), `Default cost result is visible without hydration: ${url}`);
       assert.ok(main.includes('28%') || main.includes('28<!-- -->%'), `Worked example food-cost percentage: ${url}`);
       assert.ok(main.includes('href="/' + lang + '/help/kitchen/food-cost"'), `Calculator links to its procedure: ${url}`);
+    }
+    if (path === "/tools/supplier-variance-calculator") {
+      assert.ok(main.includes('data-supplier-variance-calculator'), `Supplier calculator is server rendered: ${url}`);
+      assert.ok(main.includes('data-supplier-total-minor="4000"'), `Default supplier result is available without JavaScript: ${url}`);
+      assert.deepEqual([...main.matchAll(/data-example-total-minor="([^"]+)"/g)].map(match => Number(match[1])), [4000, 4000, 8000], `Three independently reconciled document examples: ${url}`);
+      assert.deepEqual([...main.matchAll(/data-supplier-document="([^"]+)"/g)].map(match => match[1]), ["reference", "delivery", "invoice"], `Reference, delivery and invoice documents are present: ${url}`);
+      assert.ok(!main.includes('data-food-cost-calculator'), `Supplier worksheet is separate from the food-cost worksheet: ${url}`);
+      for (const target of ["/help/kitchen/suppliers-and-purchases", "/help/kitchen/delivery-note-import", "/tools/food-cost-calculator"]) assert.ok(main.includes(`href="/${lang}${target}"`), `Supplier calculator source/resource link: ${url}: ${target}`);
+      const software = [...main.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(match => JSON.parse(match[1])).find(schema => schema["@type"] === "WebApplication");
+      assert.equal(software?.url, `${canonicalBase}/${lang}${path}`);
+      assert.equal(software?.isAccessibleForFree, true);
+      assert.ok(!main.includes('type="file"'), `The public worksheet does not request supplier uploads: ${url}`);
     }
     if (path === "/solutions/kitchen") {
       const schemas = [...main.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(match => JSON.parse(match[1]));

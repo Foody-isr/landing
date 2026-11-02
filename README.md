@@ -32,6 +32,27 @@ The CSP permits the Meta script/configuration origin (`connect.facebook.net`) an
 
 ## Content and routes
 
+The independent public supplier worksheet lives at
+`/{he,fr,en}/tools/supplier-variance-calculator`. It is linked from Kitchen, the
+inventory guide and the footer, with its own localized metadata, sharing images
+and sitemap entries. Three fictional cases show agreed price, delivery-note
+quantity, a separate physical receiving check and the invoice. Editable values
+update the illustrative documents and the signed reconciliation locally; no
+document is uploaded, no invoice analysed and no restaurant record accessed.
+The common-unit calculation excludes VAT and requires prior pack conversion.
+Line amounts are rounded to agorot, then decomposed into price and quantity
+differences that sum exactly to billed amount minus received value at the agreed
+price. Favourable differences stay signed, including offsetting components.
+The result is an amount to review, never a promised saving or automatic credit.
+The print view retains the fictional labels and current values. All three static
+worked examples, formulas, limits, validation messages and source links are
+available in French, Hebrew and English. The existing food-cost worksheet is a
+separate route and its calculations are unchanged. Run
+`npm run test:supplier-variance` for arithmetic and reconciliation regressions.
+Exact marketing-only support impact is recorded in
+`docs/help/reviews/supplier-variance-calculator.json`; existing operational
+articles and the support corpus are retained.
+
 - `src/lib/marketing/content.ts`: Hebrew, French and English homepage, pricing, demo and contact copy.
 - `src/lib/marketing/pricing.ts`: approved public launch prices and localized plan, setup, payment and cancellation details.
 - `src/lib/marketing/solutions.ts`: editorial content for restaurants, chains, retail, POS, kitchen, online orders, payments and Verifone.

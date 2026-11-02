@@ -1,4 +1,5 @@
 export const FOOD_COST_PATH = "/tools/food-cost-calculator";
+export const SUPPLIER_VARIANCE_PATH = "/tools/supplier-variance-calculator";
 export const PRODUCT_DEMOS_PATH = "/demos/kitchen";
 export const ABOUT_PATH = "/about";
 // Verified on Apple's public listing, which links back to foody-pos.co.il.

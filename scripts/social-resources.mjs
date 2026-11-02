@@ -16,6 +16,7 @@ export function sharingResources() {
     ['/guides/restaurant-pos-israel', 'buying-guide.ts', 'buyingGuide'],
     ['/guides/restaurant-inventory-israel', 'inventory-guide.ts', 'inventoryGuide'],
     ['/tools/food-cost-calculator', 'food-cost-copy.ts', 'foodCostCopy'],
+    ['/tools/supplier-variance-calculator', 'supplier-variance-copy.ts', 'supplierVarianceCopy'],
     ['/demos/kitchen', 'demonstrations.ts', 'demoCopy'],
     ['/about', 'company.ts', 'companyCopy'],
   ];
