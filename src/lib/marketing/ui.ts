@@ -79,6 +79,7 @@ export const ui = {
     about: "אודות Foody POS",
     analyticsPreferences: "העדפות Google Analytics",
     foodCostCalculator: "מחשבון פוד קוסט",
+    supplierVarianceCalculator: "מחשבון הפרשי ספקים",
     productDemos: "הדגמות המטבח",
     ctaTitle: "הצעד הבא של העסק מתחיל כאן.",
     ctaText:
@@ -130,6 +131,7 @@ export const ui = {
     about: "Qui sommes-nous",
     analyticsPreferences: "Préférences Google Analytics",
     foodCostCalculator: "Calculateur de food cost",
+    supplierVarianceCalculator: "Simuler un écart fournisseur",
     productDemos: "Démonstrations de cuisine",
     ctaTitle: "Votre prochaine étape commence ici.",
     ctaText:
@@ -181,6 +183,7 @@ export const ui = {
     about: "About Foody POS",
     analyticsPreferences: "Google Analytics preferences",
     foodCostCalculator: "Food-cost calculator",
+    supplierVarianceCalculator: "Calculate a supplier discrepancy",
     productDemos: "Kitchen demonstrations",
     ctaTitle: "Your next chapter starts here.",
     ctaText:

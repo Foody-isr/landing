@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllArticlePaths, getTopics } from "@/lib/help/content";
-import { ABOUT_PATH, FOOD_COST_PATH, PRODUCT_DEMOS_PATH } from "@/lib/marketing/resources";
+import { ABOUT_PATH, FOOD_COST_PATH, PRODUCT_DEMOS_PATH, SUPPLIER_VARIANCE_PATH } from "@/lib/marketing/resources";
 import { TABIT_COMPARISON_PATH } from "@/lib/marketing/comparison";
 import { BUYING_GUIDE_PATH } from "@/lib/marketing/acquisition";
 import { INVENTORY_GUIDE_PATH } from "@/lib/marketing/inventory-guide";
@@ -57,6 +57,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: { languages: languageAlternates(TABIT_COMPARISON_PATH) },
   }));
   const guides = [BUYING_GUIDE_PATH, INVENTORY_GUIDE_PATH].flatMap(path => SUPPORTED_LANGS.map(lang => ({ url: `${SITE_URL}/${lang}${path}`, priority: 0.7, alternates: { languages: languageAlternates(path) } })));
-  const resources = [ABOUT_PATH, FOOD_COST_PATH, PRODUCT_DEMOS_PATH].flatMap(path => SUPPORTED_LANGS.map(lang => ({ url: `${SITE_URL}/${lang}${path}`, priority: 0.7, alternates: { languages: languageAlternates(path) } })));
+  const resources = [ABOUT_PATH, FOOD_COST_PATH, SUPPLIER_VARIANCE_PATH, PRODUCT_DEMOS_PATH].flatMap(path => SUPPORTED_LANGS.map(lang => ({ url: `${SITE_URL}/${lang}${path}`, priority: 0.7, alternates: { languages: languageAlternates(path) } })));
   return [...pages, ...comparisons, ...guides, ...resources, ...help];
 }

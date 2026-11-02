@@ -26,6 +26,16 @@ test('content changes version the image URL and encoded route segments cannot es
   assert.ok(path.resolve('public','.'+unusual.image).startsWith(path.resolve('public/assets/sharing')+path.sep));
 });
 
+test('the supplier worksheet has its own localized sharing images and subject', () => {
+  for (const lang of ['fr', 'he', 'en']) {
+    const supplier = getShareCard(lang, '/tools/supplier-variance-calculator', 'Supplier calculator');
+    const food = getShareCard(lang, '/tools/food-cost-calculator', 'Food-cost calculator');
+    assert.notEqual(supplier.image, food.image);
+    assert.notEqual(supplier.title, food.title);
+    assert.equal(supplier.kind, 'calculator');
+  }
+});
+
 test('search titles and the approved home image stay unchanged while Open Graph and Twitter use the same page-specific asset', () => {
   const home=getMarketingMetadata('fr','home');
   assert.equal(home.openGraph.images[0].url,'/assets/marketing/social-card-fr-v1.png');
