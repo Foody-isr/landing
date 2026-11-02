@@ -43,6 +43,13 @@ The common-unit calculation excludes VAT and requires prior pack conversion.
 Line amounts are rounded to agorot, then decomposed into price and quantity
 differences that sum exactly to billed amount minus received value at the agreed
 price. Favourable differences stay signed, including offsetting components.
+The first fictional case uses salmon at an applicable agreed price of 70 ILS/kg
+and an invoiced price of 100 ILS/kg: 300 ILS to review for 10 kg. The page explains
+customer-specific price lists and agreement validity without claiming all Israeli
+restaurants have annual contracts. Its external invoice-mismatch statistic links
+to the vendor's primary report and distinguishes platform data from an Israel
+estimate or proof of error. The unsupported “three restaurants in four” claim is
+not published.
 The result is an amount to review, never a promised saving or automatic credit.
 The print view retains the fictional labels and current values. All three static
 worked examples, formulas, limits, validation messages and source links are

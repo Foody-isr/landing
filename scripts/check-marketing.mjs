@@ -121,9 +121,12 @@ for (const lang of ["he", "fr", "en"]) {
     }
     if (path === "/tools/supplier-variance-calculator") {
       assert.ok(main.includes('data-supplier-variance-calculator'), `Supplier calculator is server rendered: ${url}`);
-      assert.ok(main.includes('data-supplier-total-minor="4000"'), `Default supplier result is available without JavaScript: ${url}`);
-      assert.deepEqual([...main.matchAll(/data-example-total-minor="([^"]+)"/g)].map(match => Number(match[1])), [4000, 4000, 8000], `Three independently reconciled document examples: ${url}`);
+      assert.ok(main.includes('data-supplier-total-minor="30000"'), `Default supplier result is available without JavaScript: ${url}`);
+      assert.deepEqual([...main.matchAll(/data-example-total-minor="([^"]+)"/g)].map(match => Number(match[1])), [30000, 4000, 8000], `Three independently reconciled document examples: ${url}`);
       assert.deepEqual([...main.matchAll(/data-supplier-document="([^"]+)"/g)].map(match => match[1]), ["reference", "delivery", "invoice"], `Reference, delivery and invoice documents are present: ${url}`);
+      assert.ok(main.includes('id="negotiated-prices"'), `Negotiated price and validity context is server rendered: ${url}`);
+      const evidence = main.match(/<section id="invoice-price-evidence">([\s\S]*?)<\/section>/)?.[1] || "";
+      assert.ok(evidence.includes('href="https://supy.io/the-spread"') && /22[.,]7/.test(evidence), `Invoice-level statistic has a visible primary source: ${url}`);
       assert.ok(!main.includes('data-food-cost-calculator'), `Supplier worksheet is separate from the food-cost worksheet: ${url}`);
       for (const target of ["/help/kitchen/suppliers-and-purchases", "/help/kitchen/delivery-note-import", "/tools/food-cost-calculator"]) assert.ok(main.includes(`href="/${lang}${target}"`), `Supplier calculator source/resource link: ${url}: ${target}`);
       const software = [...main.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(match => JSON.parse(match[1])).find(schema => schema["@type"] === "WebApplication");
