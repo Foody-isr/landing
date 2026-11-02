@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { JsonLd } from "@/components/marketing/Shared";
 import { companyCopy } from "@/lib/marketing/company";
-import { ABOUT_PATH, FOOD_COST_PATH, PRODUCT_DEMOS_PATH, publicContact } from "@/lib/marketing/resources";
+import { ABOUT_PATH, FOOD_COST_PATH, PRODUCT_DEMOS_PATH, POS_APP_STORE_URL, publicContact } from "@/lib/marketing/resources";
 import { getContentMetadata, resolveLang, SITE_URL, SUPPORTED_LANGS } from "@/lib/seo";
 
 /** Localized publisher identity and official public contact details. */
@@ -21,6 +21,6 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
     <header className="shell resource-heading"><h1>{t.heading}</h1><p>{t.intro}</p></header>
     <section className="shell company-products"><h2>{t.productsTitle}</h2><div className="feature-columns">{t.products.map(product=><div key={product.href}><h3><Link href={`/${lang}${product.href}`}>{product.title}</Link></h3><p>{product.text}</p></div>)}</div><p className="fine-print">{t.scope}</p><Link className="text-link" href={`/${lang}/pricing`}>{t.pricingLink}</Link></section>
     <section className="shell company-service"><div><h2>{t.onsiteTitle}</h2><p>{t.onsite}</p><p>{t.area}</p></div><div className="company-contact" id="official-contact"><h2>{t.contactTitle}</h2><dl><div><dt>{t.phone}</dt><dd><a href={`tel:${publicContact.phone}`} dir="ltr">{publicContact.displayPhone}</a></dd></div><div><dt>{t.email}</dt><dd><a href={`mailto:${publicContact.email}`} dir="ltr">{publicContact.email}</a></dd></div></dl><h3>{t.hoursTitle}</h3><p>{t.hours}</p><p className="fine-print">{t.hoursNote}</p><Link className="button button-primary" href={`/${lang}/contact`}>{t.contactLink}</Link></div></section>
-    <section className="shell company-proof"><h2>{t.proofTitle}</h2><p>{t.proof}</p><div className="resource-inline-links"><Link className="text-link" href={`/${lang}${PRODUCT_DEMOS_PATH}`}>{t.demos}</Link><Link className="text-link" href={`/${lang}${FOOD_COST_PATH}`}>{t.calculator}</Link><Link className="text-link" href={`/${lang}/help`}>{t.help}</Link></div></section>
+    <section className="shell company-proof"><h2>{t.proofTitle}</h2><p>{t.proof}</p><div className="resource-inline-links"><Link className="text-link" href={`/${lang}${PRODUCT_DEMOS_PATH}`}>{t.demos}</Link><Link className="text-link" href={`/${lang}${FOOD_COST_PATH}`}>{t.calculator}</Link><Link className="text-link" href={`/${lang}/help`}>{t.help}</Link><a className="text-link" href={POS_APP_STORE_URL}>{lang === "he" ? "אפליקציית Foody POS ל־iPad ב־App Store" : lang === "fr" ? "Foody POS pour iPad sur l’App Store" : "Foody POS for iPad on the App Store"}</a></div></section>
   </main><Footer /></>;
 }
