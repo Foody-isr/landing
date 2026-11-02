@@ -1512,12 +1512,25 @@
           "en": "Ask how to configure 2,000 g shared across sizes or 1,000 g reserved for each size. Open the cited availability guide to compare tracking modes, portion equivalents, Apply confirmation and conversion of a series with committed orders and recovery after errors. The assistant explains the published procedure; it cannot inspect your quantities or change stock. Check quantities and the series in your management workspace without copying customer data into the question.",
           "he": "שאלו כיצד להגדיר 2,000 גרם משותפים בין גדלים או 1,000 גרם שמורים לכל גודל. פתחו את מדריך הזמינות המצוטט כדי להשוות בין אופני המעקב, ההמרה למנות, אישור החלה והמרת סדרה עם הזמנות שמורות והתאוששות משגיאות. העוזר מסביר את הנוהל שפורסם; הוא אינו קורא את הכמויות שלכם ואינו משנה מלאי. בדקו כמויות וסדרה בממשק הניהול בלי להעתיק נתוני לקוחות לשאלה."
         }
+      },
+      {
+        "id": "item-menu-groups",
+        "title": {
+          "fr": "Créer un groupe sans quitter un article",
+          "en": "Create a group without leaving an item",
+          "he": "יצירת קבוצה בלי לצאת מפריט"
+        },
+        "instructions": {
+          "fr": "Demandez comment affecter un article à une carte déjà publiée ou créer un groupe sans quitter sa fiche. L’assistant doit citer [Créer un article](/fr/help/menu/creating-a-menu-item#groups-from-item), expliquer l’enregistrement dans le brouillon et la publication explicite de la carte. Il ne peut ni créer le groupe ni vérifier votre carte réelle.",
+          "en": "Ask how to assign an item to a published carte or create a group without leaving its editor. The assistant should cite [Create an item](/en/help/menu/creating-a-menu-item#groups-from-item), explain saving into a private draft and explicitly publishing the carte. It cannot create the group or inspect your actual carte.",
+          "he": "שאלו כיצד לשייך פריט לתפריט שפורסם או ליצור קבוצה בלי לצאת מעורך הפריט. על העוזר לצטט [יצירת פריט](/he/help/menu/creating-a-menu-item#groups-from-item), להסביר שמירה בטיוטה פרטית ופרסום מפורש של התפריט. הוא אינו יכול ליצור קבוצה או לבדוק את התפריט האמיתי שלכם."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": true,
-    "procedureUpdatedAt": "2026-10-30"
+    "procedureUpdatedAt": "2026-11-02"
   },
   {
     "id": "kitchen-availability",
@@ -2564,7 +2577,10 @@
     "selectors": {
       "foodyadmin": [
         "src/app/[restaurantId]/menu/**",
-        "src/components/menu-item/**"
+        "src/components/menu-item/**",
+        "src/components/MenuGroupPicker.tsx",
+        "src/lib/item-menu-assignments.ts",
+        "src/lib/itemDraft.ts"
       ],
       "foodyserver": [
         "internal/menu/**"
@@ -2624,9 +2640,9 @@
           "he": "הצגת פריט ללקוחות"
         },
         "instructions": {
-          "fr": "La présence des articles, les groupes, leur ordre, les canaux et horaires passent par un brouillon privé : Enregistrer le brouillon, Aperçu, puis Publier explicitement. Les données communes du produit restent dans la bibliothèque. Pour une carte gérée par publication, choisissez les articles dans son brouillon plutôt que dans le sélecteur de groupes du produit. Les quantités initiales d’une série tournante se préparent séparément des stocks de recettes et d’ingrédients. Consultez [Cartes et groupes](/fr/help/menu/menus-and-groups) et [Disponibilité](/fr/help/kitchen/availability) pour la préparation, l’historique et la reprise après erreur.",
-          "en": "Carte membership, groups, order, channels and hours now use a private draft: Save draft, Preview, then explicit Publish. Shared product details remain in the item library. On a publication-managed carte, choose item membership from the carte draft instead of the product group picker. Initial quantities for a rotating series are prepared separately from live recipe/ingredient stock. See [Menus and groups](/en/help/menu/menus-and-groups) and [Availability](/en/help/kitchen/availability) for preparation, history and recovery.",
-          "he": "נוכחות הפריטים, הקבוצות, הסדר, הערוצים והשעות עוברים דרך טיוטה פרטית: שמירת טיוטה, תצוגה מקדימה ופרסום מפורש. פרטי המוצר המשותפים נשארים בספרייה. בתפריט שמנוהל בפרסום בחרו פריטים בטיוטה ולא בבורר הקבוצות של המוצר. כמויות התחלתיות לסדרה מתחלפת מוכנות בנפרד ממלאי מתכונים ומרכיבים. ראו [תפריטים וקבוצות](/he/help/menu/menus-and-groups) ו[זמינות](/he/help/kitchen/availability) להכנה, היסטוריה וטיפול בשגיאות."
+          "fr": "La présence des articles, les groupes, leur ordre, les canaux et horaires passent par un brouillon privé, puis une publication explicite. Depuis la fiche article, Ajouter aux cartes permet de sélectionner des groupes existants, y compris ceux d’une carte déjà publiée ou d’un brouillon, et de créer un groupe sans quitter la fiche. Enregistrer l’article met à jour les brouillons concernés ; publiez ensuite chaque carte pour rendre ces changements visibles aux clients. Les données communes du produit restent dans la bibliothèque. Les quantités initiales d’une série tournante se préparent séparément. Consultez [Cartes et groupes](/fr/help/menu/menus-and-groups) et [Disponibilité](/fr/help/kitchen/availability).",
+          "en": "Carte membership, groups, order, channels and hours use private drafts followed by explicit publication. In the item editor, Add to menus selects existing groups, including groups in published cartes and private drafts, and creates a group without leaving the item. Saving the item updates the relevant drafts; publish each carte afterwards to make these changes visible to customers. Shared product details remain in the item library. Initial allowances for a rotating series are prepared separately. See [Menus and groups](/en/help/menu/menus-and-groups) and [Availability](/en/help/kitchen/availability).",
+          "he": "שיוך פריטים, קבוצות, סדר, ערוצים ושעות נשמרים בטיוטות פרטיות ולאחר מכן בפרסום מפורש. בעורך הפריט, הוספה לתפריטים מאפשרת לבחור קבוצות קיימות, גם בתפריט שפורסם או בטיוטה, וליצור קבוצה בלי לצאת מהפריט. שמירת הפריט מעדכנת את הטיוטות המתאימות; פרסמו כל תפריט לאחר מכן כדי להציג את השינויים ללקוחות. פרטי המוצר המשותפים נשארים בספרייה. כמויות התחלתיות לסדרה מתחלפת מוכנות בנפרד. ראו [תפריטים וקבוצות](/he/help/menu/menus-and-groups) ו[זמינות](/he/help/kitchen/availability)."
         }
       },
       {
@@ -2637,9 +2653,9 @@
           "he": "בחירת קבוצות בטיוטת התפריט"
         },
         "instructions": {
-          "en": "Carte membership, groups, order, channels and hours now use a private draft: Save draft, Preview, then explicit Publish. Shared product details remain in the item library. On a publication-managed carte, choose item membership from the carte draft instead of the product group picker. Initial quantities for a rotating series are prepared separately from live recipe/ingredient stock. See [Menus and groups](/en/help/menu/menus-and-groups) and [Availability](/en/help/kitchen/availability) for preparation, history and recovery.",
-          "fr": "La présence des articles, les groupes, leur ordre, les canaux et horaires passent par un brouillon privé : Enregistrer le brouillon, Aperçu, puis Publier explicitement. Les données communes du produit restent dans la bibliothèque. Pour une carte gérée par publication, choisissez les articles dans son brouillon plutôt que dans le sélecteur de groupes du produit. Les quantités initiales d’une série tournante se préparent séparément des stocks de recettes et d’ingrédients. Consultez [Cartes et groupes](/fr/help/menu/menus-and-groups) et [Disponibilité](/fr/help/kitchen/availability) pour la préparation, l’historique et la reprise après erreur.",
-          "he": "נוכחות הפריטים, הקבוצות, הסדר, הערוצים והשעות עוברים דרך טיוטה פרטית: שמירת טיוטה, תצוגה מקדימה ופרסום מפורש. פרטי המוצר המשותפים נשארים בספרייה. בתפריט שמנוהל בפרסום בחרו פריטים בטיוטה ולא בבורר הקבוצות של המוצר. כמויות התחלתיות לסדרה מתחלפת מוכנות בנפרד ממלאי מתכונים ומרכיבים. ראו [תפריטים וקבוצות](/he/help/menu/menus-and-groups) ו[זמינות](/he/help/kitchen/availability) להכנה, היסטוריה וטיפול בשגיאות."
+          "en": "Carte membership, groups, order, channels and hours use private drafts followed by explicit publication. In the item editor, Add to menus selects existing groups, including groups in published cartes and private drafts, and creates a group without leaving the item. Saving the item updates the relevant drafts; publish each carte afterwards to make these changes visible to customers. Shared product details remain in the item library. Initial allowances for a rotating series are prepared separately. See [Menus and groups](/en/help/menu/menus-and-groups) and [Availability](/en/help/kitchen/availability).",
+          "fr": "La présence des articles, les groupes, leur ordre, les canaux et horaires passent par un brouillon privé, puis une publication explicite. Depuis la fiche article, Ajouter aux cartes permet de sélectionner des groupes existants, y compris ceux d’une carte déjà publiée ou d’un brouillon, et de créer un groupe sans quitter la fiche. Enregistrer l’article met à jour les brouillons concernés ; publiez ensuite chaque carte pour rendre ces changements visibles aux clients. Les données communes du produit restent dans la bibliothèque. Les quantités initiales d’une série tournante se préparent séparément. Consultez [Cartes et groupes](/fr/help/menu/menus-and-groups) et [Disponibilité](/fr/help/kitchen/availability).",
+          "he": "שיוך פריטים, קבוצות, סדר, ערוצים ושעות נשמרים בטיוטות פרטיות ולאחר מכן בפרסום מפורש. בעורך הפריט, הוספה לתפריטים מאפשרת לבחור קבוצות קיימות, גם בתפריט שפורסם או בטיוטה, וליצור קבוצה בלי לצאת מהפריט. שמירת הפריט מעדכנת את הטיוטות המתאימות; פרסמו כל תפריט לאחר מכן כדי להציג את השינויים ללקוחות. פרטי המוצר המשותפים נשארים בספרייה. כמויות התחלתיות לסדרה מתחלפת מוכנות בנפרד. ראו [תפריטים וקבוצות](/he/help/menu/menus-and-groups) ו[זמינות](/he/help/kitchen/availability)."
         }
       },
       {
@@ -2745,12 +2761,25 @@
           "en": "With menu editing permission, open a saved product → Stock & availability → Edit stock and availability. The Availability badge in Items or a Carte opens the same editor for current stock. Opening it changes nothing. Choose Available without limit, Unavailable, Manually defined quantity or Quantity calculated from recipe. Manual quantity is the remaining stock entered in units, g/ml or per size; existing commitments remain reserved. Recipe calculation uses available ingredients and preparations and stops applying the manual counter. Old counters and frozen reservations remain intact for existing orders. Without recipe ingredients, no quantity limit can be calculated: a message asks you to complete the recipe. If ready-stock sale is active, disable it in the preparation settings and save the product before choosing recipe calculation. Advanced stock settings start collapsed. Open them to choose the Stock profile. Use the default setting inherits the category profile, then the restaurant profile; a named profile such as Standard is an explicit choice. The profile controls stock tracking, the low-stock threshold, displaying the remaining count and hiding the product or marking it sold out when empty. A summary describes the selected profile. If the profile does not track stock, a visible message says sales are not limited by stock. Available without limit and Unavailable keep priority. The profile belongs to the product across all series; quantities and the stock source apply to the displayed series, or the product stock outside series. Apply directly saves every setting in this dialog: availability, source, tracking mode, unit, quantities and profile. This works with or without series, without product Save. Unsaved names, prices and preparation settings stay independent and are not saved. A profile-only change does not rewrite stock or reservations, including exhausted stock and inactive products. Stock and profile changes submitted together commit in one transaction: failure rolls back both and retains inputs. Dialog controls are locked while saving. Cancel or Escape before applying discards choices; after confirmation, leaving the product does not undo the applied settings. If saving succeeds but refreshing fails, Retry only reloads data without repeating the adjustment. Edit reusable profiles in Settings → Stock → Availability.",
           "he": "עם הרשאת עריכת תפריט, פתחו פריט שמור → מלאי וזמינות → עריכת מלאי וזמינות. תג הזמינות בפריטים או בתפריט פותח את אותו עורך עבור המלאי הנוכחי. פתיחה בלבד אינה משנה דבר. בחרו זמין ללא הגבלה, לא זמין, כמות מוגדרת ידנית או כמות מחושבת לפי המתכון. הכמות הידנית היא יתרה שמזינים ביחידות, בגרמים או במ״ל או לכל גודל; ההזמנות המחויבות נשארות שמורות. חישוב לפי המתכון משתמש במרכיבים ובהכנות הזמינים ומפסיק להחיל את המונה הידני. המונים הישנים וההקצאות הקפואות נשמרים עבור הזמנות קיימות. ללא מרכיבים במתכון אי אפשר לחשב מגבלת כמות, ומופיעה הודעה להשלמת המתכון. אם מכירה ממלאי מוכן פעילה, בטלו אותה בהגדרות ההכנה ושמרו את הפריט לפני בחירת חישוב לפי המתכון. הגדרות מלאי מתקדמות סגורות בתחילה. פתחו אותן כדי לבחור פרופיל מלאי. שימוש בהגדרת ברירת המחדל יורש את פרופיל הקטגוריה ואחריו את פרופיל המסעדה; פרופיל בשם כגון Standard הוא בחירה מפורשת. הפרופיל מגדיר מעקב מלאי, סף מלאי נמוך, הצגת הכמות שנותרה והסתרת הפריט או הצגתו כאזל כשהמלאי נגמר. סיכום מציג את הגדרות הפרופיל שנבחר. אם הפרופיל אינו עוקב אחר מלאי, הודעה גלויה מציינת שמכירות אינן מוגבלות לפי המלאי. זמין ללא הגבלה ולא זמין שומרים על עדיפות. הפרופיל שייך לפריט בכל הסדרות; הכמויות ומקור המלאי חלים על הסדרה המוצגת או על מלאי הפריט ללא סדרות. החלה שומרת ישירות את כל ההגדרות בחלונית: זמינות, מקור, אופן מעקב, יחידה, כמויות ופרופיל. הפעולה עובדת עם סדרות ובלעדיהן, בלי שמירה נוספת בדף הפריט. שם, מחירים והגדרות הכנה שעדיין בטיוטה נשארים נפרדים ואינם נשמרים. שינוי פרופיל בלבד אינו משכתב מלאי או הזמנות שמורות, גם כשהמלאי אפס או כשהפריט לא פעיל. מלאי ופרופיל ששונו יחד נשמרים בעסקה אחת: כשל מבטל את שניהם ושומר את הערכים. הפקדים נעולים בזמן השמירה. ביטול או Escape לפני החלה מבטלים את הבחירות; לאחר אישור, יציאה מדף הפריט אינה מבטלת הגדרות שהוחלו. אם השמירה הצליחה אך הרענון נכשל, ניסיון חוזר רק טוען נתונים בלי להחיל שוב את העדכון. ערכו פרופילים לשימוש חוזר בהגדרות → מלאי → זמינות."
         }
+      },
+      {
+        "id": "groups-from-item",
+        "title": {
+          "fr": "Créer et affecter un groupe depuis la fiche article",
+          "en": "Create and assign a group from the item editor",
+          "he": "יצירה ושיוך של קבוצה מתוך עורך הפריט"
+        },
+        "instructions": {
+          "fr": "Depuis la fiche article, Cartes → Ajouter aux cartes permet de cocher des groupes ou de créer un groupe sous une carte existante. Le nouveau groupe est sélectionné automatiquement. Enregistrer l’article met à jour les brouillons ; chaque carte doit ensuite être publiée. Pour les séries, annulations et reprises après erreur, suivez [Créer un groupe depuis la fiche article](/fr/help/menu/creating-a-menu-item#groups-from-item).",
+          "en": "In the item editor, Menus → Add to menus selects groups or creates one under an existing carte. New groups are selected automatically. Saving the item updates private drafts; publish each carte afterwards. For series selection, cancellation and error recovery, follow [Create a group from the item editor](/en/help/menu/creating-a-menu-item#groups-from-item).",
+          "he": "בעורך הפריט, תפריטים → הוספה לתפריטים מאפשר לבחור קבוצות או ליצור קבוצה תחת תפריט קיים. קבוצה חדשה נבחרת אוטומטית. שמירת הפריט מעדכנת טיוטות פרטיות; פרסמו כל תפריט לאחר מכן. לבחירת סדרה, ביטול וטיפול בשגיאות, ראו [יצירת קבוצה מתוך עורך הפריט](/he/help/menu/creating-a-menu-item#groups-from-item)."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": true,
-    "procedureUpdatedAt": "2026-10-28",
+    "procedureUpdatedAt": "2026-11-02",
     "updatedAt": "2026-10-28"
   },
   {
@@ -2770,7 +2799,10 @@
     "selectors": {
       "foodyadmin": [
         "src/app/[restaurantId]/menu/**",
-        "src/components/menu-item/**"
+        "src/components/menu-item/**",
+        "src/components/MenuGroupPicker.tsx",
+        "src/lib/item-menu-assignments.ts",
+        "src/lib/itemDraft.ts"
       ],
       "foodyserver": [
         "internal/menu/**"
@@ -2824,9 +2856,9 @@
           "he": "סטטוס, קטגוריות ותפריטים"
         },
         "instructions": {
-          "fr": "La présence des articles, les groupes, leur ordre, les canaux et horaires passent par un brouillon privé : Enregistrer le brouillon, Aperçu, puis Publier explicitement. Les données communes du produit restent dans la bibliothèque. Pour une carte gérée par publication, choisissez les articles dans son brouillon plutôt que dans le sélecteur de groupes du produit. Les quantités initiales d’une série tournante se préparent séparément des stocks de recettes et d’ingrédients. Consultez [Cartes et groupes](/fr/help/menu/menus-and-groups) et [Disponibilité](/fr/help/kitchen/availability) pour la préparation, l’historique et la reprise après erreur. Sur grand écran, les cartes latérales sont à droite en français et en anglais et à gauche en hébreu ; sous 1024 px, elles suivent le formulaire.",
-          "en": "Carte membership, groups, order, channels and hours now use a private draft: Save draft, Preview, then explicit Publish. Shared product details remain in the item library. On a publication-managed carte, choose item membership from the carte draft instead of the product group picker. Initial quantities for a rotating series are prepared separately from live recipe/ingredient stock. See [Menus and groups](/en/help/menu/menus-and-groups) and [Availability](/en/help/kitchen/availability) for preparation, history and recovery. On wide screens the side cards appear on the right in French and English and on the left in Hebrew; below 1024 px they follow the form.",
-          "he": "נוכחות הפריטים, הקבוצות, הסדר, הערוצים והשעות עוברים דרך טיוטה פרטית: שמירת טיוטה, תצוגה מקדימה ופרסום מפורש. פרטי המוצר המשותפים נשארים בספרייה. בתפריט שמנוהל בפרסום בחרו פריטים בטיוטה ולא בבורר הקבוצות של המוצר. כמויות התחלתיות לסדרה מתחלפת מוכנות בנפרד ממלאי מתכונים ומרכיבים. ראו [תפריטים וקבוצות](/he/help/menu/menus-and-groups) ו[זמינות](/he/help/kitchen/availability) להכנה, היסטוריה וטיפול בשגיאות. במסך רחב הכרטיסים הצדדיים מימין בצרפתית ובאנגלית ומשמאל בעברית; מתחת ל־1024 פיקסלים הם מופיעים אחרי הטופס."
+          "fr": "La présence des articles, les groupes, leur ordre, les canaux et horaires passent par un brouillon privé, puis une publication explicite. Depuis la fiche article, Ajouter aux cartes permet de sélectionner des groupes existants, y compris ceux d’une carte déjà publiée ou d’un brouillon, et de créer un groupe sans quitter la fiche. Enregistrer l’article met à jour les brouillons concernés ; publiez ensuite chaque carte pour rendre ces changements visibles aux clients. Les données communes du produit restent dans la bibliothèque. Les quantités initiales d’une série tournante se préparent séparément. Consultez [Cartes et groupes](/fr/help/menu/menus-and-groups) et [Disponibilité](/fr/help/kitchen/availability). Sur grand écran, les cartes latérales sont à droite en français et en anglais et à gauche en hébreu ; sous 1024 px, elles suivent le formulaire.",
+          "en": "Carte membership, groups, order, channels and hours use private drafts followed by explicit publication. In the item editor, Add to menus selects existing groups, including groups in published cartes and private drafts, and creates a group without leaving the item. Saving the item updates the relevant drafts; publish each carte afterwards to make these changes visible to customers. Shared product details remain in the item library. Initial allowances for a rotating series are prepared separately. See [Menus and groups](/en/help/menu/menus-and-groups) and [Availability](/en/help/kitchen/availability). On wide screens the side cards appear on the right in French and English and on the left in Hebrew; below 1024 px they follow the form.",
+          "he": "שיוך פריטים, קבוצות, סדר, ערוצים ושעות נשמרים בטיוטות פרטיות ולאחר מכן בפרסום מפורש. בעורך הפריט, הוספה לתפריטים מאפשרת לבחור קבוצות קיימות, גם בתפריט שפורסם או בטיוטה, וליצור קבוצה בלי לצאת מהפריט. שמירת הפריט מעדכנת את הטיוטות המתאימות; פרסמו כל תפריט לאחר מכן כדי להציג את השינויים ללקוחות. פרטי המוצר המשותפים נשארים בספרייה. כמויות התחלתיות לסדרה מתחלפת מוכנות בנפרד. ראו [תפריטים וקבוצות](/he/help/menu/menus-and-groups) ו[זמינות](/he/help/kitchen/availability). במסך רחב הכרטיסים הצדדיים מימין בצרפתית ובאנגלית ומשמאל בעברית; מתחת ל־1024 פיקסלים הם מופיעים אחרי הטופס."
         },
         "anchors": [
           "section-8"
@@ -2899,9 +2931,9 @@
           "he": "הוספת פריט שמור לתפריט שפורסם"
         },
         "instructions": {
-          "en": "Carte membership, groups, order, channels and hours now use a private draft: Save draft, Preview, then explicit Publish. Shared product details remain in the item library. On a publication-managed carte, choose item membership from the carte draft instead of the product group picker. Initial quantities for a rotating series are prepared separately from live recipe/ingredient stock. See [Menus and groups](/en/help/menu/menus-and-groups) and [Availability](/en/help/kitchen/availability) for preparation, history and recovery.",
-          "fr": "La présence des articles, les groupes, leur ordre, les canaux et horaires passent par un brouillon privé : Enregistrer le brouillon, Aperçu, puis Publier explicitement. Les données communes du produit restent dans la bibliothèque. Pour une carte gérée par publication, choisissez les articles dans son brouillon plutôt que dans le sélecteur de groupes du produit. Les quantités initiales d’une série tournante se préparent séparément des stocks de recettes et d’ingrédients. Consultez [Cartes et groupes](/fr/help/menu/menus-and-groups) et [Disponibilité](/fr/help/kitchen/availability) pour la préparation, l’historique et la reprise après erreur.",
-          "he": "נוכחות הפריטים, הקבוצות, הסדר, הערוצים והשעות עוברים דרך טיוטה פרטית: שמירת טיוטה, תצוגה מקדימה ופרסום מפורש. פרטי המוצר המשותפים נשארים בספרייה. בתפריט שמנוהל בפרסום בחרו פריטים בטיוטה ולא בבורר הקבוצות של המוצר. כמויות התחלתיות לסדרה מתחלפת מוכנות בנפרד ממלאי מתכונים ומרכיבים. ראו [תפריטים וקבוצות](/he/help/menu/menus-and-groups) ו[זמינות](/he/help/kitchen/availability) להכנה, היסטוריה וטיפול בשגיאות."
+          "en": "Carte membership, groups, order, channels and hours use private drafts followed by explicit publication. In the item editor, Add to menus selects existing groups, including groups in published cartes and private drafts, and creates a group without leaving the item. Saving the item updates the relevant drafts; publish each carte afterwards to make these changes visible to customers. Shared product details remain in the item library. Initial allowances for a rotating series are prepared separately. See [Menus and groups](/en/help/menu/menus-and-groups) and [Availability](/en/help/kitchen/availability).",
+          "fr": "La présence des articles, les groupes, leur ordre, les canaux et horaires passent par un brouillon privé, puis une publication explicite. Depuis la fiche article, Ajouter aux cartes permet de sélectionner des groupes existants, y compris ceux d’une carte déjà publiée ou d’un brouillon, et de créer un groupe sans quitter la fiche. Enregistrer l’article met à jour les brouillons concernés ; publiez ensuite chaque carte pour rendre ces changements visibles aux clients. Les données communes du produit restent dans la bibliothèque. Les quantités initiales d’une série tournante se préparent séparément. Consultez [Cartes et groupes](/fr/help/menu/menus-and-groups) et [Disponibilité](/fr/help/kitchen/availability).",
+          "he": "שיוך פריטים, קבוצות, סדר, ערוצים ושעות נשמרים בטיוטות פרטיות ולאחר מכן בפרסום מפורש. בעורך הפריט, הוספה לתפריטים מאפשרת לבחור קבוצות קיימות, גם בתפריט שפורסם או בטיוטה, וליצור קבוצה בלי לצאת מהפריט. שמירת הפריט מעדכנת את הטיוטות המתאימות; פרסמו כל תפריט לאחר מכן כדי להציג את השינויים ללקוחות. פרטי המוצר המשותפים נשארים בספרייה. כמויות התחלתיות לסדרה מתחלפת מוכנות בנפרד. ראו [תפריטים וקבוצות](/he/help/menu/menus-and-groups) ו[זמינות](/he/help/kitchen/availability)."
         }
       },
       {
@@ -2955,12 +2987,25 @@
           "en": "On a handheld terminal, open Library. The filter button selects Items, Combos or Discounts. Under Items, choose a category in the selector above the list, search for a product and tap its row to open the existing editor. Price and availability remain visible, with a separate switch for authorized users. This internal list does not change published menu groups, ingredients, portions or variant rules configured in Admin.",
           "he": "במסוף נייד, פתחו את הספרייה. כפתור הסינון בוחר פריטים, ארוחות משולבות או הנחות. בפריטים, בחרו קטגוריה בבורר מעל הרשימה, חפשו מוצר ולחצו על שורתו לפתיחת העורך הקיים. המחיר והזמינות נשארים גלויים, עם מתג נפרד למשתמשים מורשים. רשימה פנימית זו אינה משנה קבוצות תפריט שפורסמו, מרכיבים, מנות או כללי וריאציות שהוגדרו בממשק הניהול."
         }
+      },
+      {
+        "id": "groups-from-item",
+        "title": {
+          "fr": "Créer et affecter un groupe depuis la fiche article",
+          "en": "Create and assign a group from the item editor",
+          "he": "יצירה ושיוך של קבוצה מתוך עורך הפריט"
+        },
+        "instructions": {
+          "fr": "Avec la permission de modifier le menu, ouvrez un article existant ou Créer un article, puis Cartes → Ajouter aux cartes. Cochez les groupes souhaités. Sous une carte existante, choisissez Créer un groupe de cartes, saisissez un nom distinct puis validez : le groupe est sélectionné automatiquement. Sur une carte tournante, vérifiez la série affichée et choisissez la date voulue ; les sélections restent liées à leur série. Terminé ferme la fenêtre et conserve la fiche. Avant Enregistrer l’article, les choix et les nouveaux groupes restent locaux ; abandonner la fiche ne crée aucun groupe. Le brouillon local d’un nouvel article conserve ces choix sur cet appareil si le stockage est disponible ; les images sélectionnées n’y sont pas incluses. Après Enregistrer, la confirmation précise les cartes dont le brouillon a été mis à jour : ouvrez chaque carte, vérifiez l’aperçu et publiez explicitement. Si un brouillon ne charge pas, Réessayer recharge les groupes sans effacer la fiche. Si l’enregistrement est partiel ou incertain, gardez l’éditeur ouvert et enregistrez à nouveau pour vérifier et terminer ; ne recréez pas l’article. Les choix de groupes restent modifiables pour résoudre un conflit de nom ou un groupe supprimé. Les changements déjà enregistrés restent dans la bibliothèque et les brouillons concernés.",
+          "en": "With menu editing permission, open an existing item or Create item, then Menus → Add to menus. Check the groups you want. Under an existing carte, choose Create a menu group, enter a distinct name and confirm: the group is selected automatically. For a rotating carte, check the displayed series and choose the intended date; selections stay bound to their own series. Done closes the picker and retains the item form. Before saving the item, choices and new groups stay local; discarding the item creates no group. The local new-item draft retains these choices on this device when storage is available; selected image files are excluded. After Save, the confirmation identifies the cartes whose drafts were updated: open each carte, review its preview and explicitly publish. If a draft cannot load, Retry reloads its groups without clearing the form. If saving is partial or uncertain, keep the editor open and save again to verify and finish; do not recreate the item. Group choices remain editable to resolve a conflicting name or a removed group. Already saved changes remain in the library and affected drafts.",
+          "he": "עם הרשאת עריכת תפריט, פתחו פריט קיים או צור פריט, ואז תפריטים → הוספה לתפריטים. סמנו את הקבוצות הרצויות. תחת תפריט קיים בחרו צור קבוצת תפריט, הזינו שם ייחודי ואשרו: הקבוצה נבחרת אוטומטית. בתפריט מתחלף בדקו את הסדרה המוצגת ובחרו את התאריך הרצוי; כל בחירה נשארת קשורה לסדרה שלה. סיום סוגר את הבורר ושומר על טופס הפריט. לפני שמירת הפריט, הבחירות והקבוצות החדשות נשארות מקומיות; ביטול הפריט אינו יוצר קבוצה. טיוטת פריט חדש שומרת את הבחירות במכשיר זה כאשר האחסון זמין; קובצי התמונות שנבחרו אינם כלולים. לאחר שמירה, האישור מציין אילו טיוטות תפריט עודכנו: פתחו כל תפריט, בדקו תצוגה מקדימה ופרסמו במפורש. אם טיוטה אינה נטענת, נסו שוב לטעון את הקבוצות בלי למחוק את הטופס. בשמירה חלקית או בתוצאה לא ודאית, השאירו את העורך פתוח ושמרו שוב לבדיקה ולהשלמה; אל תיצרו את הפריט מחדש. אפשר להמשיך לערוך בחירות קבוצות כדי לפתור שם כפול או קבוצה שנמחקה. שינויים שכבר נשמרו נשארים בספרייה ובטיוטות המתאימות."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": true,
-    "procedureUpdatedAt": "2026-10-27",
+    "procedureUpdatedAt": "2026-11-02",
     "updatedAt": "2026-10-20"
   },
   {
@@ -3207,9 +3252,10 @@
         "src/components/MenuGroupPicker.tsx",
         "src/lib/menu/**",
         "src/lib/carte-editor.ts",
-        "src/components/MenuGroupPicker.tsx",
         "src/lib/i18n.tsx",
-        "src/lib/sale-stock-input.ts"
+        "src/lib/sale-stock-input.ts",
+        "src/lib/item-menu-assignments.ts",
+        "src/lib/itemDraft.ts"
       ],
       "foodyserver": [
         "internal/menu/**",
@@ -3493,12 +3539,25 @@
           "en": "With menu editing permission, open a saved product → Stock & availability → Edit stock and availability. The Availability badge in Items or a Carte opens the same editor for current stock. Opening it changes nothing. Choose Available without limit, Unavailable, Manually defined quantity or Quantity calculated from recipe. Manual quantity is the remaining stock entered in units, g/ml or per size; existing commitments remain reserved. Recipe calculation uses available ingredients and preparations and stops applying the manual counter. Old counters and frozen reservations remain intact for existing orders. Without recipe ingredients, no quantity limit can be calculated: a message asks you to complete the recipe. If ready-stock sale is active, disable it in the preparation settings and save the product before choosing recipe calculation. Advanced stock settings start collapsed. Open them to choose the Stock profile. Use the default setting inherits the category profile, then the restaurant profile; a named profile such as Standard is an explicit choice. The profile controls stock tracking, the low-stock threshold, displaying the remaining count and hiding the product or marking it sold out when empty. A summary describes the selected profile. If the profile does not track stock, a visible message says sales are not limited by stock. Available without limit and Unavailable keep priority. The profile belongs to the product across all series; quantities and the stock source apply to the displayed series, or the product stock outside series. Apply directly saves every setting in this dialog: availability, source, tracking mode, unit, quantities and profile. This works with or without series, without product Save. Unsaved names, prices and preparation settings stay independent and are not saved. A profile-only change does not rewrite stock or reservations, including exhausted stock and inactive products. Stock and profile changes submitted together commit in one transaction: failure rolls back both and retains inputs. Dialog controls are locked while saving. Cancel or Escape before applying discards choices; after confirmation, leaving the product does not undo the applied settings. If saving succeeds but refreshing fails, Retry only reloads data without repeating the adjustment. Edit reusable profiles in Settings → Stock → Availability.",
           "he": "עם הרשאת עריכת תפריט, פתחו פריט שמור → מלאי וזמינות → עריכת מלאי וזמינות. תג הזמינות בפריטים או בתפריט פותח את אותו עורך עבור המלאי הנוכחי. פתיחה בלבד אינה משנה דבר. בחרו זמין ללא הגבלה, לא זמין, כמות מוגדרת ידנית או כמות מחושבת לפי המתכון. הכמות הידנית היא יתרה שמזינים ביחידות, בגרמים או במ״ל או לכל גודל; ההזמנות המחויבות נשארות שמורות. חישוב לפי המתכון משתמש במרכיבים ובהכנות הזמינים ומפסיק להחיל את המונה הידני. המונים הישנים וההקצאות הקפואות נשמרים עבור הזמנות קיימות. ללא מרכיבים במתכון אי אפשר לחשב מגבלת כמות, ומופיעה הודעה להשלמת המתכון. אם מכירה ממלאי מוכן פעילה, בטלו אותה בהגדרות ההכנה ושמרו את הפריט לפני בחירת חישוב לפי המתכון. הגדרות מלאי מתקדמות סגורות בתחילה. פתחו אותן כדי לבחור פרופיל מלאי. שימוש בהגדרת ברירת המחדל יורש את פרופיל הקטגוריה ואחריו את פרופיל המסעדה; פרופיל בשם כגון Standard הוא בחירה מפורשת. הפרופיל מגדיר מעקב מלאי, סף מלאי נמוך, הצגת הכמות שנותרה והסתרת הפריט או הצגתו כאזל כשהמלאי נגמר. סיכום מציג את הגדרות הפרופיל שנבחר. אם הפרופיל אינו עוקב אחר מלאי, הודעה גלויה מציינת שמכירות אינן מוגבלות לפי המלאי. זמין ללא הגבלה ולא זמין שומרים על עדיפות. הפרופיל שייך לפריט בכל הסדרות; הכמויות ומקור המלאי חלים על הסדרה המוצגת או על מלאי הפריט ללא סדרות. החלה שומרת ישירות את כל ההגדרות בחלונית: זמינות, מקור, אופן מעקב, יחידה, כמויות ופרופיל. הפעולה עובדת עם סדרות ובלעדיהן, בלי שמירה נוספת בדף הפריט. שם, מחירים והגדרות הכנה שעדיין בטיוטה נשארים נפרדים ואינם נשמרים. שינוי פרופיל בלבד אינו משכתב מלאי או הזמנות שמורות, גם כשהמלאי אפס או כשהפריט לא פעיל. מלאי ופרופיל ששונו יחד נשמרים בעסקה אחת: כשל מבטל את שניהם ושומר את הערכים. הפקדים נעולים בזמן השמירה. ביטול או Escape לפני החלה מבטלים את הבחירות; לאחר אישור, יציאה מדף הפריט אינה מבטלת הגדרות שהוחלו. אם השמירה הצליחה אך הרענון נכשל, ניסיון חוזר רק טוען נתונים בלי להחיל שוב את העדכון. ערכו פרופילים לשימוש חוזר בהגדרות → מלאי → זמינות."
         }
+      },
+      {
+        "id": "groups-from-item",
+        "title": {
+          "fr": "Créer et affecter un groupe depuis la fiche article",
+          "en": "Create and assign a group from the item editor",
+          "he": "יצירה ושיוך של קבוצה מתוך עורך הפריט"
+        },
+        "instructions": {
+          "fr": "Depuis la fiche article, Cartes → Ajouter aux cartes permet de cocher des groupes ou de créer un groupe sous une carte existante. Le nouveau groupe est sélectionné automatiquement. Enregistrer l’article met à jour les brouillons ; chaque carte doit ensuite être publiée. Pour les séries, annulations et reprises après erreur, suivez [Créer un groupe depuis la fiche article](/fr/help/menu/creating-a-menu-item#groups-from-item).",
+          "en": "In the item editor, Menus → Add to menus selects groups or creates one under an existing carte. New groups are selected automatically. Saving the item updates private drafts; publish each carte afterwards. For series selection, cancellation and error recovery, follow [Create a group from the item editor](/en/help/menu/creating-a-menu-item#groups-from-item).",
+          "he": "בעורך הפריט, תפריטים → הוספה לתפריטים מאפשר לבחור קבוצות או ליצור קבוצה תחת תפריט קיים. קבוצה חדשה נבחרת אוטומטית. שמירת הפריט מעדכנת טיוטות פרטיות; פרסמו כל תפריט לאחר מכן. לבחירת סדרה, ביטול וטיפול בשגיאות, ראו [יצירת קבוצה מתוך עורך הפריט](/he/help/menu/creating-a-menu-item#groups-from-item)."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": true,
-    "procedureUpdatedAt": "2026-10-28",
+    "procedureUpdatedAt": "2026-11-02",
     "updatedAt": "2026-10-28"
   },
   {
