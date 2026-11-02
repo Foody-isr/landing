@@ -67,3 +67,9 @@ After a lost response or connection error during handoff or closure, retain the 
 ## Accept a scheduled order before its date
 
 For a scheduled order, Accept remains an explicit action before its slot, subject to permissions and holds. The restaurant workflow determines whether it is accepted only or dispatched to the kitchen. Payment, date and slot stay recorded separately; a full discount is not a collection. See [accept a scheduled order](/en/help/orders/managing-orders#accept-scheduled-order).
+
+<span id="sumit-event-reservations" />
+
+## Sumit event reservations
+
+Event authorizations require the configured Sumit public verification key in addition to its existing company ID and API key. Missing configuration keeps authorization unavailable. Verify account J5 support with Sumit. Reserved funds remain separate from received payments and do not complete preparation or handover. Capture and release are managed in Sumit. See [event terms and recovery](/en/help/orders/event-orders).

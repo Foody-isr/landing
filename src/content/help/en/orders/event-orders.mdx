@@ -30,22 +30,34 @@ Create the basket in Orders. Enable Event / Catering, choose pickup or delivery 
 
 ## Choose the collection terms
 
-Choose the existing Foody link or supported hosted-card action. Configure no online payment, full payment or a deposit in a fixed amount or percentage, and optionally a balance due date. Review the total, initial collection and remaining balance. A deposit must be positive and below the total. Card guarantees are not available in this Sumit integration; do not promise that saving a card reserves funds. For collection outside this link, record only money actually received. For delivery, also set the fee in Fulfillment before choosing payment. It is included in the total used to calculate the deposit and balance, including with a private link. Leave it blank to calculate from the recipient address, or enter 0 for free delivery.
+Choose the Foody payment link or hosted Sumit card action, then configure no online payment, full payment, a deposit, bank authorization, or deposit plus authorization. Deposits use a fixed amount or percentage of the total; authorizations use a fixed amount or percentage of the unpaid balance. Both must be positive, within their respective balances. Authorization requires a compatible configured Sumit account. Review the amount due now, the remaining balance and the amount reserved separately. Deposit plus authorization has two explicit bank steps: first pay the deposit, then approve the displayed reservation. For delivery, enter the fee in Fulfillment: blank uses recipient-address pricing, 0 means free delivery, an entered amount remains fixed. Only record money actually received as payment.
 
 <span id="client" />
 
 ## Complete the private customer link
 
-Share the private Foody order link with the intended customer. They review the fixed basket, enter their contact and any required event answers, then confirm or open the reviewed Sumit payment. No online payment finalizes the event without marking it paid. A successful deposit leaves the order partially paid and its balance visible. A missing required answer or unverified payment keeps the event out of confirmed production. Event instructions and personal data are not exposed by anonymous order reads.
+Share the private Foody link with the intended customer. They review the current basket and complete required contact/event answers. For authorization, they explicitly accept the exact displayed amount before entering a card on Sumit. A reservation does not pay the order; a deposit pays only its received amount. Deposit plus authorization returns to the same Foody link for the second bank step. Staff may independently add an unpaid event to production; this never approves its payment. Anonymous order reads do not expose personal event instructions.
 
 <span id="production" />
 
 ## Plan by carte and handover date
 
-Open Production on the handover date, even if cooking earlier. By carte shows separate sheets and quantities with quick links to each section. A mixed-carte order contributes only its matching lines to each section. Historical or library lines without a unique carte appear under Other cartes instead of being duplicated. The order marker is also visible in staff order details, POS and compatible kitchen tickets. Keep Bassari and Halavi sections and their totals separate.
+Open Production on the handover date, even if cooking earlier. By carte shows separate sheets and quantities with quick links to each section. A mixed-carte order contributes only its matching lines to each section. Historical or library lines without a unique carte appear under Other cartes instead of being duplicated. The order marker is also visible in staff order details, POS and compatible kitchen tickets. Keep Bassari and Halavi sections and their totals separate. With kitchen.manage and orders.manage, use the saved event’s Actions → Add to production, even before payment. Removing it from the plan does not cancel the order or change its payment. An already-open plan refreshes on changes; use Refresh if necessary without changing the selected handover date.
 
 <span id="recovery" />
 
 ## Verify a payment and collect the balance
 
 A repeated payment action resumes the existing hosted page and must not create a new charge. To recover a missing Sumit return, open the saved event order with payments.manage, expand Verify Sumit payment, enter the transaction number from Sumit and verify. Foody checks the exact order reference, amount and currency without charging again; a mismatch remains blocked. Use the existing balance collection action for the verified remainder. Pending or uncertain payment attempts block conflicting order edits or manual collection. Refresh the saved order after verification. An expired or cancelled order requires staff review; do not create a replacement payment until the existing outcome is known.
+
+<span id="edit" />
+
+## Edit a saved event
+
+Open the saved event in Orders → Actions → Edit with orders.manage. Before bank processing starts, change items, quantities, handover date/window, delivery fee, event answers and payment terms, then save once. The private link remains the same and reads the new basket; share it again if needed. For newly added items, choose their source carte when applicable. If another user or the customer starts payment meanwhile, saving is blocked: retain your draft, reopen the current order and review it. Active bank attempts and reserved funds block commercial changes. After a confirmed deposit, payment terms stay fixed and the total cannot fall below received money. Cancelled or completed handovers cannot be edited through this action.
+
+<span id="hold-management" />
+
+## Review a Sumit authorization
+
+Event details show the verified reservation separately from received money, with its verification time and bank reference. With payments.manage, Verify authorization performs a read-only recovery of the existing bank request. An uncertain response never creates another authorization; a definitive decline permits an explicit retry. Manage capture, release and bank validity in Sumit using the displayed reference. Foody does not automatically capture or release event reservations or promise their duration. A reserved balance cannot also generate an automatic payment link. After collecting it externally, record the money actually received through the existing staff payment action.

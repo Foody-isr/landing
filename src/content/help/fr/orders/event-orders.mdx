@@ -30,22 +30,34 @@ Composez le panier depuis Commandes. Activez Événement / Catering, choisissez 
 
 ## Choisir les conditions de règlement
 
-Choisissez le lien Foody existant ou l’action carte hébergée compatible. Configurez aucun paiement en ligne, paiement intégral ou acompte en montant fixe ou pourcentage, puis éventuellement la date limite du solde. Vérifiez total, montant à payer maintenant et solde. L’acompte doit être positif et inférieur au total. L’empreinte bancaire est indisponible dans cette intégration Sumit ; sauvegarder une carte ne réserve pas des fonds. Pour un règlement hors lien, enregistrez uniquement l’argent effectivement reçu. Pour une livraison, fixez aussi les frais dans Réception de la commande avant de choisir le règlement. Ils sont inclus dans le total utilisé pour calculer l’acompte et le solde, y compris avec un lien privé. Laissez vide pour un calcul depuis l’adresse client ou saisissez 0 pour offrir la livraison.
+Choisissez le lien de paiement Foody ou la carte hébergée Sumit, puis aucun paiement en ligne, paiement intégral, acompte, empreinte bancaire ou acompte avec empreinte. L’acompte est fixe ou en pourcentage du total ; l’empreinte est fixe ou en pourcentage du solde non encaissé. Les montants doivent être positifs et respecter leurs soldes respectifs. L’empreinte nécessite un compte Sumit configuré compatible. Vérifiez séparément montant à payer maintenant, solde et somme réservée. Acompte avec empreinte comporte deux étapes bancaires explicites : payer l’acompte, puis accepter la réservation affichée. Pour la livraison, saisissez les frais dans Réception de la commande : vide utilise l’adresse client, 0 offre la livraison, un montant saisi reste fixe. Enregistrez comme paiement uniquement l’argent réellement reçu.
 
 <span id="client" />
 
 ## Finaliser par le lien client privé
 
-Partagez le lien privé Foody au client concerné. Il vérifie le panier fixé, renseigne ses coordonnées et les informations événement demandées puis confirme ou ouvre le paiement Sumit revu. Aucun paiement en ligne finalise l’événement sans le marquer payé. Un acompte confirmé laisse la commande partiellement payée et son solde visible. Une information obligatoire manquante ou un paiement non vérifié maintient l’événement hors de la production confirmée. Les lectures anonymes de commande n’exposent ni consignes événement ni données personnelles.
+Partagez le lien privé Foody au client concerné. Il vérifie le panier actuel et complète les coordonnées et réponses événement requises. Pour une empreinte, il accepte explicitement le montant exact affiché avant de saisir sa carte chez Sumit. Une réservation ne paie pas la commande ; un acompte ne règle que son montant encaissé. Acompte avec empreinte revient au même lien Foody pour la seconde étape bancaire. Le staff peut ajouter indépendamment un événement impayé en production ; cela ne valide jamais son paiement. Les lectures anonymes ne révèlent pas les consignes personnelles.
 
 <span id="production" />
 
 ## Planifier par carte et échéance
 
-Ouvrez Production sur la date de remise, même pour cuisiner avant. Par carte affiche des tableaux et quantités distincts avec des liens rapides vers les sections. Une commande de plusieurs cartes contribue seulement avec les lignes correspondantes dans chaque section. Les lignes historiques ou de bibliothèque sans carte unique restent dans Autres cartes au lieu d’être dupliquées. Le repère apparaît aussi dans le détail staff, le POS et les tickets cuisine compatibles. Gardez les sections et totaux Bassari et Halavi séparés.
+Ouvrez Production sur la date de remise, même pour cuisiner avant. Par carte affiche des tableaux et quantités distincts avec des liens rapides vers les sections. Une commande de plusieurs cartes contribue seulement avec les lignes correspondantes dans chaque section. Les lignes historiques ou de bibliothèque sans carte unique restent dans Autres cartes au lieu d’être dupliquées. Le repère apparaît aussi dans le détail staff, le POS et les tickets cuisine compatibles. Gardez les sections et totaux Bassari et Halavi séparés. Avec kitchen.manage et orders.manage, utilisez Actions → Ajouter au tableau de production sur l’événement enregistré, même avant paiement. Le retirer du plan n’annule pas la commande et ne change pas son paiement. Le plan déjà ouvert s’actualise lors des changements ; utilisez Actualiser si nécessaire sans changer la date de remise sélectionnée.
 
 <span id="recovery" />
 
 ## Vérifier le paiement et encaisser le solde
 
 Une nouvelle tentative reprend la même page hébergée sans créer un autre débit. Pour récupérer un retour Sumit manquant, ouvrez la commande événement enregistrée avec payments.manage, développez Vérifier un paiement Sumit, saisissez le numéro de transaction lu dans Sumit puis vérifiez. Foody contrôle référence exacte, montant et devise sans débiter ; une divergence reste bloquée. Utilisez l’action existante d’encaissement du solde pour le reste vérifié. Les tentatives en cours ou incertaines bloquent les modifications et encaissements manuels concurrents. Actualisez la commande après vérification. Une commande expirée ou annulée nécessite une revue staff ; ne créez pas de paiement de remplacement avant de connaître le résultat existant.
+
+<span id="edit" />
+
+## Modifier un événement enregistré
+
+Ouvrez l’événement enregistré dans Commandes → Actions → Modifier avec orders.manage. Avant le début du traitement bancaire, ajustez articles, quantités, date/créneau de remise, frais, réponses événement et conditions de règlement, puis enregistrez une fois. Le lien privé reste identique et lit le nouveau panier ; repartagez-le si nécessaire. Pour un article ajouté, choisissez sa carte d’origine si applicable. Si une autre personne ou le client commence un paiement entre-temps, l’enregistrement est bloqué : conservez votre brouillon, rouvrez la commande actuelle et vérifiez-la. Une tentative bancaire active ou des fonds réservés bloquent les changements commerciaux. Après un acompte confirmé, les conditions de règlement sont figées et le total ne peut pas devenir inférieur à l’argent reçu. Une commande annulée ou déjà remise ne se modifie pas par cette action.
+
+<span id="hold-management" />
+
+## Consulter une empreinte Sumit
+
+Le détail événement affiche la réservation vérifiée séparément de l’argent encaissé, avec l’heure de vérification et sa référence bancaire. Avec payments.manage, Vérifier l’empreinte relit la tentative existante sans opération bancaire supplémentaire. Une réponse incertaine ne crée pas une autre empreinte ; un refus définitif permet une nouvelle tentative explicite. Gérez capture, libération et validité bancaire dans Sumit avec la référence affichée. Foody ne capture ni ne libère automatiquement ces empreintes et ne promet pas leur durée. Un solde réservé ne peut pas générer en parallèle un lien d’encaissement automatique. Après encaissement externe, enregistrez l’argent effectivement reçu via l’action staff existante.

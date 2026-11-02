@@ -1,5 +1,22 @@
 # Help ownership, evidence and releases
 
+## Saved catering management (2 November 2026)
+
+Compatible API/Admin/Web add atomic saved-event edits before bank processing,
+explicit unpaid production inclusion and live plan invalidation. Source carte
+snapshots remain frozen per item. Sumit event terms expose deposit, authorization
+or both; the combined flow has two reviewed bank steps and exact amount consent.
+Reservations never attest received money. Capture/release and bank validity are
+managed in Sumit; Foody shows a historical verified reference and read-only
+recovery. No bank duration, live terminal acceptance or capture API is promised.
+See orders/event-orders and the related production, order and private-link guides
+in FR/HE/EN. No screenshots occur in these procedures. The POS dynamic JSON
+contract accepts the optional fields; no native build or POS workflow changes.
+Preserve POS and Backoffice inventory blocks/surfaces from Landing develop
+`8c6bcd57e74b1293fc08d81ad7924a40ea7197f2`. Export identical API support corpus,
+freeze immutable documentation and verify dev before exact artifact promotion.
+Synthetic tests do not submit real cards, orders or customer details.
+
 ## Full Admin calendar week (2 November 2026)
 
 Admin This week now includes all seven calendar days using the restaurant’s
@@ -56,7 +73,7 @@ promotion still apply.
 API migration 286 precedes Admin, guest Web and POS. Orders retain their handover
 date as the production reference. The private prepared Sumit link collects event
 answers and optionally a fixed/percentage deposit; the remaining amount stays due.
-Sumit card guarantees remain unavailable. Lost browser callbacks require exact
+This initial version did not yet expose Sumit event reservations; the management release below supersedes that limitation. Lost browser callbacks require exact
 transaction verification from the saved order, never invoice-total inference.
 New FR/HE/EN event procedures and the four related order/production guides ship
 with the product. Synthetic tests do not certify a real provider account, payment
