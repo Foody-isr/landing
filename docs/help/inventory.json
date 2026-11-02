@@ -4,10 +4,10 @@
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "19b9b50c3e1abfc4bcdc42468c95eb2c6a2609cc",
+      "sourceCommit": "63f024189e5d12fa5b43d6d5a93cb38cae9ef2b8",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "507d97ab5d347fe0b3169d5f3ee02d08ce5b671cb0bcbc7d01ea6638c6bbadb2",
-      "workingTreeHasChanges": true,
+      "sourceSnapshot": "bbcf9377a4a39d6bc73d9e98ddc61ff568f97aefd972cfd98abe7b4c25f70521",
+      "workingTreeHasChanges": false,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
           "sha256": "33cf30b683837b76977ed47c14d5d91ccb1b34bd60e9f62d124b8cc1079231aa",
@@ -4714,7 +4714,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "5d65a18d842a36e7029cc3e9e18789e4f8ceeed19b8c541790a21e679c361462",
+          "sha256": "aea60aa14b2f41e71be3a463878a4431b6ee2bb31ecda4d7f262d7d557e5d0f9",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -13940,9 +13940,9 @@
     },
     "foodypos": {
       "repository": "https://github.com/Foody-isr/pos",
-      "sourceCommit": "201c7711c71b5d99c383640b7103c7058ecf906d",
+      "sourceCommit": "aaaa545d49ffa95737c9d6461a9a6c306c3186fb",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "824ebe338a697b27f31184d5eb00062ac8e1128eec2a1f1a3e784cc948ad00a2",
+      "sourceSnapshot": "891ebe4448841f2213db1df8061b6beba626f9c6ad1fa82c665b2cbdd7597337",
       "workingTreeHasChanges": false,
       "sourceFiles": {
         "android/app/src/main/kotlin/com/foodypos/app/EpsonPrinterBridge.kt": {
@@ -14057,7 +14057,7 @@
           ]
         },
         "lib/core/l10n/app_en.arb": {
-          "sha256": "7b137f129eef7baade80eb99f717817d497ac2b844d2191079355152e7e6b37e",
+          "sha256": "41537baface6c1a79f56be32f208279a2a998bdc36dfe92a09b72e14e17ab73d",
           "features": [
             "pos-behavior",
             "pos-cash-access-diagnostics",
@@ -14065,7 +14065,7 @@
           ]
         },
         "lib/core/l10n/app_fr.arb": {
-          "sha256": "d96902abc6652044711475164078469db1ff06d190b47a392547725585c794d7",
+          "sha256": "3cd8ea3393c219847d130845fbcbd9b2c07a15c0e7d8dc5aefb2842104cb27d8",
           "features": [
             "pos-behavior",
             "pos-cash-access-diagnostics",
@@ -14073,7 +14073,7 @@
           ]
         },
         "lib/core/l10n/app_he.arb": {
-          "sha256": "1c876693982728cd1cb0d31a3a542c7e0d1514b83f0fdad19c80e805f7b8ff96",
+          "sha256": "5400115d52afd07a09fded3b68759239fe1e7403520039f8fb29a3e0c669aeac",
           "features": [
             "pos-behavior",
             "pos-cash-access-diagnostics",
@@ -14093,7 +14093,7 @@
           ]
         },
         "lib/core/routing/app_router.dart": {
-          "sha256": "ce5fbc159255ee4033024087840839a0ae74b5a352d31c4e88d8d900f128b36d",
+          "sha256": "010ef184356186b2bd1462c85f271bdfeab7bf17a967f0f3aeb32be717784814",
           "features": [
             "pos-payments",
             "shared-runtime"
@@ -15577,7 +15577,7 @@
           ]
         },
         "lib/features/orders/presentation/new_ticket_dialog.dart": {
-          "sha256": "f3b41e4ff439ad45789f8defb204304f1886e6fb19e477f69dc1fd9ce300b375",
+          "sha256": "e712350962d12464164d4f62fc4f73e115bcfca6f23cbc4145355e3842267472",
           "features": [
             "orders-managing-orders",
             "order-types",
@@ -15616,7 +15616,7 @@
           ]
         },
         "lib/features/orders/presentation/orders_page.dart": {
-          "sha256": "162a9133bedfb938d946369b55a7acc2d8014ae4fe70066d635c6066ff772487",
+          "sha256": "107cda4f37ac1e3fd1ff1a2370aa83bfee1fb825a1e2b0c246df9b95fe6ae591",
           "features": [
             "orders-managing-orders",
             "pos-comp-void"
@@ -15646,7 +15646,7 @@
           ]
         },
         "lib/features/orders/presentation/save_check_dialog.dart": {
-          "sha256": "28584f59c41b9d78f6a0afa5d41ae1d75f33c9b3a635d9d82e41be4a266f2488",
+          "sha256": "6ba12b0297c583f5b619707f63ad799e9844713fa9931e1e574095e57591fcf7",
           "features": [
             "orders-managing-orders",
             "order-types",
@@ -26070,6 +26070,19 @@
       },
       "operations": [
         {
+          "id": "ipad-open-checks",
+          "title": {
+            "fr": "Consulter les additions ouvertes sur iPad",
+            "en": "Review open checks on iPad",
+            "he": "צפייה בחשבונות פתוחים ב-iPad"
+          },
+          "instructions": {
+            "fr": "Sur iPad compatible, ouvrez Commandes puis Additions dans la barre latérale en paysage, ou dans le sélecteur de vues en portrait. Actions → Tickets ouverts dans Menu ouvre cette même vue, pas une seconde liste au-dessus de Menu. Elle réunit les additions manuelles ouvertes de table, nommées et financières. Touchez la bonne ligne pour retrouver son Menu ; une table avec plusieurs additions demande leur choix explicite. Les commandes QR/web gardent leurs numéros et paiements distincts dans les autres vues. Pour retrouver toute commande enregistrée, utilisez Toutes, pas Additions.\n\nAvec orders.manage et les additions ouvertes activées dans le mode effectif, + ouvre Nouveau ticket. Vérifiez le type de service prérempli, puis choisissez un nom disponible ou Addition personnalisée ; voir [la création sans table](/fr/help/orders/order-types#pos-tableless-dine-in). Consulter ne crée, ne paie, n’envoie et ne clôture rien. Si la lecture échoue, réessayez sans créer une addition de remplacement. Un changement de restaurant, d’employé ou de contexte interrompt une ouverture devenue obsolète. Sur téléphone et portable compact, le parcours Tickets ouverts existant est conservé.",
+            "en": "On a compatible iPad, open Orders, then Checks in the landscape sidebar or portrait view picker. Menu → Actions → Open tickets opens this same view, not another list above Menu. It brings together open manual table, named and financial checks. Tap the intended row to reopen its Menu; a table with separate bills requires an explicit bill choice. QR/web orders retain their own numbers and payments in the other views. Use All, rather than Checks, to find every recorded order.\n\nWith orders.manage and open checks enabled in the effective mode, + opens New ticket. Review the preselected service type, then choose an available name or Custom check; see [tableless creation](/en/help/orders/order-types#pos-tableless-dine-in). Viewing never creates, pays, sends or closes a check. If loading fails, retry without creating a replacement. A changed restaurant, employee or context stops an obsolete opening. Phones and compact handhelds retain their existing Open tickets workflow.",
+            "he": "ב-iPad עם גרסה תואמת פתחו הזמנות ואז חשבונות בסרגל הצד במצב לרוחב או בבורר התצוגות במצב לאורך. בתפריט, פעולות ← חשבונות פתוחים פותח את אותה תצוגה ולא רשימה נוספת מעל התפריט. היא מרכזת חשבונות ידניים פתוחים של שולחן, חשבונות בשם וחשבונות כספיים. לחצו על השורה המתאימה לחזרה לתפריט שלה; בשולחן עם חשבונות נפרדים נדרשת בחירה מפורשת של החשבון. הזמנות QR ואתר שומרות על המספרים והתשלומים שלהן בתצוגות האחרות. לאיתור כל הזמנה שמורה השתמשו בהכל ולא בחשבונות.\n\nעם orders.manage וחשבונות פתוחים פעילים במצב האפקטיבי, + פותח כרטיס חדש. בדקו את סוג השירות שנבחר מראש ואז בחרו שם פנוי או חשבון מותאם; ראו [יצירה ללא שולחן](/he/help/orders/order-types#pos-tableless-dine-in). צפייה אינה יוצרת, גובה, שולחת או סוגרת חשבון. בכשל טעינה נסו שוב בלי ליצור חשבון חלופי. שינוי מסעדה, עובד או הקשר עוצר פתיחה שכבר אינה תקפה. בטלפונים ובמסופים קומפקטיים נשמר מסלול החשבונות הפתוחים הקיים."
+          }
+        },
+        {
           "id": "open-saved-order-in-menu",
           "level": 2,
           "title": {
@@ -26359,9 +26372,9 @@
             "he": "ניווט במכירה ניידת"
           },
           "instructions": {
-            "fr": "Sur la version mobile mise à jour, utilisez Menu pour ajouter des articles, Addition pour consulter les lignes et les services, et Actions pour les opérations de l’addition. Le compteur indique la quantité d’articles. Le bouton supérieur reprend l’action autorisée du parcours ; sur une addition vide, Afficher les additions revient au plan. Actions → Détails → Client affiche les coordonnées enregistrées. Consultez [la prise de commande mobile](/fr/help/orders/taking-an-order-pos#mobile-terminal) avant d’utiliser cette présentation. La liste Commandes et les statuts cuisine restent indépendants du règlement. Dans la liste Additions du portable, Toutes les additions et les plans se choisissent dans une seule feuille à radios. Les filtres conservent les additions personnalisées, groupes et sections autorisés ; Actualiser recharge les données. La loupe recherche les noms visibles dans le périmètre accessible, sans ouvrir d’autre restaurant. Les tables sont regroupées en Vos additions et Autres additions, puis les additions nommées. Fermer une addition nommée reste une action distincte et confirmée, réservée au personnel autorisé ; une addition avec des éléments non envoyés ou un solde non réglé ne doit pas être fermée pour la faire disparaître de la liste. Dans un groupe du menu, une seule flèche Retour permet de remonter. Les tuiles compactes avec photo gardent le nom centré sur deux lignes au maximum ; la navigation et la présentation iPad conservent leur fonctionnement.",
-            "en": "In the updated mobile version, use Menu to add items, Check to review lines and courses, and Actions for check operations. The badge shows item quantity. The top button follows the permitted workflow action; on an empty check, View checks returns to the floor. Actions → Details → Guest displays saved contact information. See [mobile order entry](/en/help/orders/taking-an-order-pos#mobile-terminal) for this presentation. The Orders list and kitchen statuses remain independent of settlement. In the handheld Checks list, All checks and floor plans share one radio sheet. Filters retain authorized custom checks, groups and sections; Refresh reloads the data. Search matches visible names within the accessible scope, without opening another restaurant. Tables are grouped into Your checks and Other checks, followed by named checks. Closing a named check remains a separate confirmed action for authorized staff; a check with unsent items or an unpaid balance must not be closed merely to remove it from the list. Inside a menu group, use the single Back arrow to go up. Compact photo tiles keep the item name centered on up to two lines; iPad navigation and presentation retain their existing behavior.",
-            "he": "בגרסת המובייל המעודכנת השתמשו בתפריט להוספת פריטים, בחשבון לבדיקת שורות ושלבי הגשה ובפעולות לפעולות החשבון. התג מציג כמות פריטים. הכפתור העליון פועל לפי הפעולה המותרת במסלול; בחשבון ריק הצגת חשבונות מחזירה לתוכנית. פעולות → פרטים → אורח מציג פרטי קשר שמורים. ראו [קבלת הזמנה בנייד](/he/help/orders/taking-an-order-pos#mobile-terminal). רשימת ההזמנות ומצבי המטבח נשארים נפרדים מהתשלום. ברשימת החשבונות במסוף, כל החשבונות ותוכניות האולם נבחרים באותו גיליון אפשרויות. המסננים שומרים על חשבונות מותאמים, קבוצות ואזורים מורשים ורענון טוען מחדש. החיפוש מתאים לשמות הגלויים בהיקף הנגיש בלי לפתוח מסעדה אחרת. השולחנות מחולקים לחשבונות שלך ולחשבונות אחרים ואחריהם חשבונות בעלי שם. סגירת חשבון בעל שם נשארת פעולה נפרדת ומאושרת לצוות מורשה; אין לסגור חשבון עם פריטים שלא נשלחו או יתרה שלא שולמה רק כדי להעלימו מהרשימה. בתוך קבוצת תפריט השתמשו בחץ חזרה היחיד כדי לעלות רמה. באריחים קטנים עם תמונה שם הפריט ממורכז ומוצג בעד שתי שורות; הניווט והתצוגה ב-iPad שומרים על התנהגותם הקיימת."
+            "fr": "Sur la version mobile mise à jour, utilisez Menu pour ajouter des articles, Addition pour consulter les lignes et les services, et Actions pour les opérations de l’addition. Le compteur indique la quantité d’articles. Le bouton supérieur reprend l’action autorisée du parcours ; sur une addition vide, Afficher les additions revient au plan. Actions → Détails → Client affiche les coordonnées enregistrées. Consultez [la prise de commande mobile](/fr/help/orders/taking-an-order-pos#mobile-terminal) avant d’utiliser cette présentation. La liste Commandes et les statuts cuisine restent indépendants du règlement. Dans la liste Additions du portable, Toutes les additions et les plans se choisissent dans une seule feuille à radios. Les filtres conservent les additions personnalisées, groupes et sections autorisés ; Actualiser recharge les données. La loupe recherche les noms visibles dans le périmètre accessible, sans ouvrir d’autre restaurant. Les tables sont regroupées en Vos additions et Autres additions, puis les additions nommées. Fermer une addition nommée reste une action distincte et confirmée, réservée au personnel autorisé ; une addition avec des éléments non envoyés ou un solde non réglé ne doit pas être fermée pour la faire disparaître de la liste. Dans un groupe du menu, une seule flèche Retour permet de remonter. Les tuiles compactes avec photo gardent le nom centré sur deux lignes au maximum ; ce parcours reste celui du mobile. Sur iPad compatible, consultez [la vue Additions](#ipad-open-checks).",
+            "en": "In the updated mobile version, use Menu to add items, Check to review lines and courses, and Actions for check operations. The badge shows item quantity. The top button follows the permitted workflow action; on an empty check, View checks returns to the floor. Actions → Details → Guest displays saved contact information. See [mobile order entry](/en/help/orders/taking-an-order-pos#mobile-terminal) for this presentation. The Orders list and kitchen statuses remain independent of settlement. In the handheld Checks list, All checks and floor plans share one radio sheet. Filters retain authorized custom checks, groups and sections; Refresh reloads the data. Search matches visible names within the accessible scope, without opening another restaurant. Tables are grouped into Your checks and Other checks, followed by named checks. Closing a named check remains a separate confirmed action for authorized staff; a check with unsent items or an unpaid balance must not be closed merely to remove it from the list. Inside a menu group, use the single Back arrow to go up. Compact photo tiles keep the item name centered on up to two lines; this remains the mobile workflow. On a compatible iPad, see [the Checks view](#ipad-open-checks).",
+            "he": "בגרסת המובייל המעודכנת השתמשו בתפריט להוספת פריטים, בחשבון לבדיקת שורות ושלבי הגשה ובפעולות לפעולות החשבון. התג מציג כמות פריטים. הכפתור העליון פועל לפי הפעולה המותרת במסלול; בחשבון ריק הצגת חשבונות מחזירה לתוכנית. פעולות → פרטים → אורח מציג פרטי קשר שמורים. ראו [קבלת הזמנה בנייד](/he/help/orders/taking-an-order-pos#mobile-terminal). רשימת ההזמנות ומצבי המטבח נשארים נפרדים מהתשלום. ברשימת החשבונות במסוף, כל החשבונות ותוכניות האולם נבחרים באותו גיליון אפשרויות. המסננים שומרים על חשבונות מותאמים, קבוצות ואזורים מורשים ורענון טוען מחדש. החיפוש מתאים לשמות הגלויים בהיקף הנגיש בלי לפתוח מסעדה אחרת. השולחנות מחולקים לחשבונות שלך ולחשבונות אחרים ואחריהם חשבונות בעלי שם. סגירת חשבון בעל שם נשארת פעולה נפרדת ומאושרת לצוות מורשה; אין לסגור חשבון עם פריטים שלא נשלחו או יתרה שלא שולמה רק כדי להעלימו מהרשימה. בתוך קבוצת תפריט השתמשו בחץ חזרה היחיד כדי לעלות רמה. באריחים קטנים עם תמונה שם הפריט ממורכז ומוצג בעד שתי שורות; זה נשאר מסלול המובייל. ב-iPad תואם ראו [תצוגת החשבונות](#ipad-open-checks)."
           }
         },
         {
@@ -29663,9 +29676,9 @@
             "he": "פתיחת חשבון לישיבה במקום ללא שולחן"
           },
           "instructions": {
-            "en": "Requires compatible API/POS versions, orders.manage and open checks enabled for this POS mode. Select Dine-In for a new unassigned sale; this does not yet open a table or check. Complete any customer prompt and enter the items. At Send/Continue, choose Save check → New check → Custom check once: the name form opens directly, including when predefined names are enabled without a configured group. Enter the name, then Save. Back returns to destination selection without creating a check and preserves the source basket. The explicit Send then continues once with the fresh lines. A destination change during Pay does not automatically collect money: review and initiate payment explicitly. Cancel preserves the source basket. You can also create the empty check first from Actions → Open tickets → New ticket, select Dine-In, then choose its group/name or custom name. This standalone flow retains configured groups and available names: choosing a name creates the check, while a custom name needs Save. This is real onsite consumption, not renamed pickup. Further sends keep one bill and create separate kitchen batches. Payment, preparation and closing remain separate; close only with no unsent items or unpaid live batches. Saved orders remain in Orders on POS and Admin. No artificial table/session, covers or numbered seats are created. Financial splitting or moving this named check to a table is not supported here. An uncertain creation keeps its request identity: Retry the same request instead of creating another check.",
-            "fr": "Nécessite des versions API/POS compatibles, orders.manage et les additions ouvertes activées pour ce mode de caisse. Choisissez Sur place pour une nouvelle vente non affectée ; cela n’ouvre encore ni table ni addition. Complétez la fiche client éventuelle et saisissez les articles. À Envoyer/Continuer, choisissez Enregistrer l’addition → Nouvelle addition → Addition personnalisée une seule fois : le formulaire du nom s’ouvre directement, même si les noms prédéfinis sont activés sans groupe configuré. Saisissez le nom puis Enregistrer. Retour revient au choix de destination sans créer d’addition et conserve le panier source. L’envoi explicite se poursuit alors une seule fois avec les nouvelles lignes. Changer de destination pendant Payer n’encaisse pas automatiquement : vérifiez puis engagez le paiement explicitement. Annuler conserve le panier source. Vous pouvez aussi créer d’abord l’addition vide depuis Actions → Tickets ouverts → Nouveau ticket, choisir Sur place puis groupe/nom ou nom personnalisé. Ce parcours autonome conserve les groupes configurés et les noms disponibles : choisir un nom crée l’addition, tandis qu’un nom personnalisé demande Enregistrer. Il s’agit d’une consommation sur place réelle, pas d’un retrait renommé. Les envois suivants gardent une même addition et créent des bons cuisine distincts. Paiement, préparation et fermeture restent séparés ; fermez seulement sans articles non envoyés ni lots actifs impayés. Les commandes enregistrées restent dans Commandes sur POS et Admin. Aucune table/session artificielle, aucun couvert ni place numérotée ne sont créés. Le partage financier ou le déplacement de cette addition vers une table ne sont pas pris en charge ici. Une création incertaine conserve son identité : Réessayer la même demande au lieu de créer une autre addition.",
-            "he": "נדרשות גרסאות שרת וקופה תואמות, orders.manage וחשבונות פתוחים פעילים במצב הקופה. בחרו ישיבה במקום למכירה חדשה שלא שויכה; עדיין לא נפתחים שולחן או חשבון. השלימו פרטי לקוח אם נדרשים והזינו פריטים. בשליחה/המשך בחרו שמירת חשבון ← חשבון חדש ← חשבון מותאם פעם אחת: טופס השם נפתח ישירות, גם כששמות מוגדרים מראש מופעלים בלי קבוצה מוגדרת. הזינו שם ואז שמרו. חזרה מחזירה לבחירת היעד בלי ליצור חשבון ושומרת את סל המקור. השליחה המפורשת ממשיכה פעם אחת עם השורות החדשות. שינוי יעד במהלך תשלום אינו גובה אוטומטית: בדקו והתחילו תשלום במפורש. ביטול שומר את סל המקור. אפשר גם ליצור תחילה חשבון ריק דרך פעולות ← חשבונות פתוחים ← חשבון חדש, לבחור ישיבה במקום ואז קבוצה ושם או שם מותאם. המסלול העצמאי הזה שומר על הקבוצות המוגדרות והשמות הפנויים: בחירת שם יוצרת את החשבון, ואילו שם מותאם דורש שמירה. זו ישיבה במקום אמיתית ולא איסוף בשם שונה. שליחות נוספות שומרות חשבון אחד ויוצרות אצוות מטבח נפרדות. תשלום, הכנה וסגירה נפרדים; סגרו רק כשאין שורות שלא נשלחו או אצוות פעילות שלא שולמו. הזמנות שמורות נשארות בהזמנות בקופה ובמנהל. לא נוצרים שולחן או מפגש מלאכותיים, סועדים או מקומות ממוספרים. פיצול כספי או העברת חשבון זה לשולחן אינם נתמכים כאן. יצירה לא ודאית שומרת מזהה בקשה: נסו שוב אותה בקשה במקום ליצור חשבון נוסף."
+            "en": "Requires compatible API/POS versions, orders.manage and open checks enabled for this POS mode. Select Dine-In for a new unassigned sale; this does not yet open a table or check. Complete any customer prompt and enter the items. At Send/Continue, choose Save check → New check → Custom check once: the name form opens directly, including when predefined names are enabled without a configured group. Enter the name, then Save. Back returns to destination selection without creating a check and preserves the source basket. The explicit Send then continues once with the fresh lines. A destination change during Pay does not automatically collect money: review and initiate payment explicitly. Cancel preserves the source basket. To create an empty check first on a compatible iPad, open Orders → Checks, then +; Menu → Actions → Open tickets leads to this same view. Phones/compact handhelds keep Actions → Open tickets → New ticket. The preselected service type follows the current sale’s still-valid method, otherwise the restaurant’s enabled default; it is not forced to Takeaway. Review it and select Dine-In for this sale where offered. Then choose a group/name or Custom check. Configured groups and available names are retained: choosing a name creates the check, while a custom name needs Save. Without confirmed settings, an eligible method or loaded group, wait or retry; do not create another check to bypass the block. This is real onsite consumption, not renamed pickup. Further sends keep one bill and create separate kitchen batches. Payment, preparation and closing remain separate; close only with no unsent items or unpaid live batches. Saved orders remain in Orders on POS and Admin. No artificial table/session, covers or numbered seats are created. Financial splitting or moving this named check to a table is not supported here. An uncertain creation keeps its request identity: Retry the same request instead of creating another check.",
+            "fr": "Nécessite des versions API/POS compatibles, orders.manage et les additions ouvertes activées pour ce mode de caisse. Choisissez Sur place pour une nouvelle vente non affectée ; cela n’ouvre encore ni table ni addition. Complétez la fiche client éventuelle et saisissez les articles. À Envoyer/Continuer, choisissez Enregistrer l’addition → Nouvelle addition → Addition personnalisée une seule fois : le formulaire du nom s’ouvre directement, même si les noms prédéfinis sont activés sans groupe configuré. Saisissez le nom puis Enregistrer. Retour revient au choix de destination sans créer d’addition et conserve le panier source. L’envoi explicite se poursuit alors une seule fois avec les nouvelles lignes. Changer de destination pendant Payer n’encaisse pas automatiquement : vérifiez puis engagez le paiement explicitement. Annuler conserve le panier source. Pour créer d’abord une addition vide sur iPad compatible, ouvrez Commandes → Additions puis + ; Actions → Tickets ouverts dans Menu mène à cette même vue. Sur mobile/portable compact, gardez Actions → Tickets ouverts → Nouveau ticket. Le type de service prérempli vient du traitement actif encore valide de la vente courante, sinon du défaut actif du restaurant ; À emporter n’est pas imposé. Vérifiez-le et choisissez Sur place pour cette vente, si proposé. Choisissez ensuite groupe/nom ou Addition personnalisée. Les groupes configurés et noms disponibles sont conservés : choisir un nom crée l’addition, tandis qu’un nom personnalisé demande Enregistrer. Sans réglages confirmés, traitement admissible ou groupe chargé, attendez ou réessayez ; ne créez pas une autre addition pour contourner le blocage. Il s’agit d’une consommation sur place réelle, pas d’un retrait renommé. Les envois suivants gardent une même addition et créent des bons cuisine distincts. Paiement, préparation et fermeture restent séparés ; fermez seulement sans articles non envoyés ni lots actifs impayés. Les commandes enregistrées restent dans Commandes sur POS et Admin. Aucune table/session artificielle, aucun couvert ni place numérotée ne sont créés. Le partage financier ou le déplacement de cette addition vers une table ne sont pas pris en charge ici. Une création incertaine conserve son identité : Réessayer la même demande au lieu de créer une autre addition.",
+            "he": "נדרשות גרסאות שרת וקופה תואמות, orders.manage וחשבונות פתוחים פעילים במצב הקופה. בחרו ישיבה במקום למכירה חדשה שלא שויכה; עדיין לא נפתחים שולחן או חשבון. השלימו פרטי לקוח אם נדרשים והזינו פריטים. בשליחה/המשך בחרו שמירת חשבון ← חשבון חדש ← חשבון מותאם פעם אחת: טופס השם נפתח ישירות, גם כששמות מוגדרים מראש מופעלים בלי קבוצה מוגדרת. הזינו שם ואז שמרו. חזרה מחזירה לבחירת היעד בלי ליצור חשבון ושומרת את סל המקור. השליחה המפורשת ממשיכה פעם אחת עם השורות החדשות. שינוי יעד במהלך תשלום אינו גובה אוטומטית: בדקו והתחילו תשלום במפורש. ביטול שומר את סל המקור. ליצירת חשבון ריק תחילה ב-iPad תואם פתחו הזמנות ← חשבונות ואז +; בתפריט, פעולות ← חשבונות פתוחים מוביל לאותה תצוגה. בטלפון ובמסוף קומפקטי נשמר פעולות ← חשבונות פתוחים ← כרטיס חדש. סוג השירות שנבחר מראש נקבע לפי השיטה התקפה של המכירה הנוכחית, ואם אין כזו לפי ברירת המחדל הפעילה של המסעדה; איסוף אינו נבחר בכפייה. בדקו ובחרו ישיבה במקום למכירה זו אם מוצע. לאחר מכן בחרו קבוצה ושם או חשבון מותאם. הקבוצות והשמות הפנויים נשמרים: בחירת שם יוצרת חשבון ושם מותאם דורש שמירה. ללא הגדרות מאושרות, שיטה מתאימה או קבוצה שנטענה, המתינו או נסו שוב; אין ליצור חשבון נוסף כדי לעקוף את החסימה. זו ישיבה במקום אמיתית ולא איסוף בשם שונה. שליחות נוספות שומרות חשבון אחד ויוצרות אצוות מטבח נפרדות. תשלום, הכנה וסגירה נפרדים; סגרו רק כשאין שורות שלא נשלחו או אצוות פעילות שלא שולמו. הזמנות שמורות נשארות בהזמנות בקופה ובמנהל. לא נוצרים שולחן או מפגש מלאכותיים, סועדים או מקומות ממוספרים. פיצול כספי או העברת חשבון זה לשולחן אינם נתמכים כאן. יצירה לא ודאית שומרת מזהה בקשה: נסו שוב אותה בקשה במקום ליצור חשבון נוסף."
           }
         },
         {
@@ -30392,9 +30405,9 @@
             "he": "המשך או גבייה"
           },
           "instructions": {
-            "en": "Reopen the saved check to add items or start payment. Confirm the selected check and unpaid balance before charging; do not resend already-sent food.",
-            "fr": "Rouvrez l’addition pour ajouter des articles ou encaisser. Confirmez l’addition et le solde impayé avant débit ; ne renvoyez pas les plats déjà envoyés.",
-            "he": "פתחו שוב את החשבון להוספת פריטים או תשלום. אשרו את החשבון והיתרה לפני חיוב ואל תשלחו שוב מנות שכבר נשלחו."
+            "en": "Reopen the saved check to add items or start payment. Confirm the selected check and unpaid balance before charging; do not resend already-sent food.\n\nOn a compatible iPad, Orders → Checks reviews open checks; Actions → Open tickets also leads there. It does not replace Save check during a send from Menu. In that dialog, “No open checks” means no eligible onsite check is currently offered; use New check to choose a new authorized destination. A loading failure retains its error and recovery instead of this empty message. Cancel preserves the basket and sends nothing.",
+            "fr": "Rouvrez l’addition pour ajouter des articles ou encaisser. Confirmez l’addition et le solde impayé avant débit ; ne renvoyez pas les plats déjà envoyés.\n\nSur iPad compatible, Commandes → Additions consulte les additions ouvertes ; Actions → Tickets ouverts y conduit aussi. Cela ne remplace pas Enregistrer l’addition lors d’un envoi depuis Menu. Dans cette fenêtre, « Aucune addition en attente » signifie qu’aucune addition sur place éligible n’est actuellement proposée ; utilisez Nouvelle addition pour choisir une nouvelle destination autorisée. Un échec de lecture garde son erreur et sa reprise, pas ce message vide. Annuler conserve le panier et n’envoie rien.",
+            "he": "פתחו שוב את החשבון להוספת פריטים או תשלום. אשרו את החשבון והיתרה לפני חיוב ואל תשלחו שוב מנות שכבר נשלחו.\n\nב-iPad תואם הזמנות ← חשבונות מציג חשבונות פתוחים; גם פעולות ← חשבונות פתוחים מוביל לשם. זה אינו מחליף את שמירת החשבון בעת שליחה מהתפריט. בחלון זה, ״אין חשבונות פתוחים״ מציין שלא מוצע כרגע חשבון מתאים לישיבה במקום; בחרו חשבון חדש לבחירת יעד חדש ומורשה. כשל טעינה שומר על הודעת השגיאה והניסיון החוזר במקום הודעת ריק זו. ביטול שומר את הסל ואינו שולח דבר."
           }
         },
         {
@@ -30571,7 +30584,7 @@
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-10-29",
+      "procedureUpdatedAt": "2026-11-02",
       "updatedAt": "2026-10-20",
       "evidence": [
         {
@@ -31073,9 +31086,9 @@
             "he": "חזרה למסך הבית לאחר שליחה ופתיחת מכירה חדשה"
           },
           "instructions": {
-            "en": "In the effective device mode, open Open checks, enable Use on this mode and Use Open Tickets as the home screen, then Save. Refresh settings on the POS. After a confirmed Send, a table check returns to the floor plan and a named check returns to open checks. Returning to Menu opens a separate empty sale; it does not reopen or erase the sent check. Reopen the saved check from its table or open-check list to add more dishes. The original customer, bill and kitchen batches remain there. Continue/Send and stay retains the current check. Failed sending or a changed restaurant, permission or editor context does not detach the source. Another unsent counter basket is not cleared. With the home setting disabled this new-sale handoff is not applied. All saved orders remain tracked on POS and Admin; payment, preparation and check closure stay independent.",
-            "fr": "Dans le mode effectif de l’appareil, ouvrez Additions en attente, activez Utiliser sur ce mode et Utiliser le menu Tickets ouverts comme écran d’accueil, puis Enregistrer. Actualisez les réglages sur le POS. Après Envoyer confirmé, une addition de table revient au plan de salle et une addition nommée revient aux additions ouvertes. Revenir dans Menu ouvre une vente vide distincte, sans rouvrir ni effacer l’addition envoyée. Rouvrez celle-ci depuis sa table ou les additions ouvertes pour ajouter des plats : client, addition et bons cuisine y sont conservés. Continuer/Envoyer et rester conserve l’addition courante. Un envoi échoué ou un changement de restaurant, de permission ou de contexte ne détache pas la source. Un autre panier comptoir non envoyé n’est pas vidé. Sans ce réglage d’accueil, ce passage à une nouvelle vente ne s’applique pas. Toutes les commandes enregistrées restent suivies sur POS et Admin ; paiement, préparation et clôture restent distincts.",
-            "he": "במצב האפקטיבי של המכשיר פתחו חשבונות פתוחים, הפעילו שימוש במצב זה ושימוש בכרטיסים פתוחים כמסך בית ושמרו. רעננו הגדרות בקופה. אחרי שליחה מאושרת חשבון שולחן חוזר למפת השולחנות וחשבון עם שם חוזר לחשבונות הפתוחים. חזרה לתפריט פותחת מכירה ריקה נפרדת ואינה פותחת או מוחקת את החשבון שנשלח. פתחו אותו שוב מהשולחן או מרשימת החשבונות כדי להוסיף מנות; הלקוח, החשבון ואצוות המטבח נשמרים. המשך או שליחה והישארות שומרים את החשבון הנוכחי. כשל שליחה או שינוי מסעדה, הרשאה או הקשר העריכה אינם מנתקים את המקור. סל דלפק אחר שטרם נשלח אינו נמחק. כשהגדרת מסך הבית כבויה אין מעבר זה למכירה חדשה. כל ההזמנות השמורות נשארות במעקב בקופה ובמנהל; תשלום, הכנה וסגירת חשבון נשארים נפרדים."
+            "en": "In the effective device mode, open Open checks, enable Use on this mode and Use Open Tickets as the home screen, then Save. Refresh settings on the POS. After a confirmed Send, a table check returns to the floor plan. On a compatible iPad, a named check returns to Orders → Checks, the same view reached through Actions → Open tickets; use the view picker in portrait. Phones/compact handhelds return to their existing Open tickets workflow. Returning to Menu opens a separate empty sale; it does not reopen or erase the sent check. Reopen the saved check from its table or open-check list to add more dishes. The original customer, bill and kitchen batches remain there. Continue/Send and stay retains the current check. Failed sending or a changed restaurant, permission or editor context does not detach the source. Another unsent counter basket is not cleared. With the home setting disabled this new-sale handoff is not applied. All saved orders remain tracked on POS and Admin; payment, preparation and check closure stay independent.",
+            "fr": "Dans le mode effectif de l’appareil, ouvrez Additions en attente, activez Utiliser sur ce mode et Utiliser le menu Tickets ouverts comme écran d’accueil, puis Enregistrer. Actualisez les réglages sur le POS. Après Envoyer confirmé, une addition de table revient au plan de salle. Sur iPad compatible, une addition nommée revient à Commandes → Additions, la même vue que Actions → Tickets ouverts ; en portrait, utilisez le sélecteur de vues. Sur mobile/portable compact, elle revient au parcours Tickets ouverts existant. Revenir dans Menu ouvre une vente vide distincte, sans rouvrir ni effacer l’addition envoyée. Rouvrez celle-ci depuis sa table ou les additions ouvertes pour ajouter des plats : client, addition et bons cuisine y sont conservés. Continuer/Envoyer et rester conserve l’addition courante. Un envoi échoué ou un changement de restaurant, de permission ou de contexte ne détache pas la source. Un autre panier comptoir non envoyé n’est pas vidé. Sans ce réglage d’accueil, ce passage à une nouvelle vente ne s’applique pas. Toutes les commandes enregistrées restent suivies sur POS et Admin ; paiement, préparation et clôture restent distincts.",
+            "he": "במצב האפקטיבי של המכשיר פתחו חשבונות פתוחים, הפעילו שימוש במצב זה ושימוש בכרטיסים פתוחים כמסך בית ושמרו. רעננו הגדרות בקופה. אחרי שליחה מאושרת חשבון שולחן חוזר למפת השולחנות. ב-iPad תואם חשבון בשם חוזר להזמנות ← חשבונות, אותה תצוגה שאליה מגיעים דרך פעולות ← חשבונות פתוחים; במצב לאורך השתמשו בבורר התצוגות. בטלפונים ובמסופים קומפקטיים חוזרים למסלול החשבונות הפתוחים הקיים. חזרה לתפריט פותחת מכירה ריקה נפרדת ואינה פותחת או מוחקת את החשבון שנשלח. פתחו אותו שוב מהשולחן או מרשימת החשבונות כדי להוסיף מנות; הלקוח, החשבון ואצוות המטבח נשמרים. המשך או שליחה והישארות שומרים את החשבון הנוכחי. כשל שליחה או שינוי מסעדה, הרשאה או הקשר העריכה אינם מנתקים את המקור. סל דלפק אחר שטרם נשלח אינו נמחק. כשהגדרת מסך הבית כבויה אין מעבר זה למכירה חדשה. כל ההזמנות השמורות נשארות במעקב בקופה ובמנהל; תשלום, הכנה וסגירת חשבון נשארים נפרדים."
           }
         },
         {
@@ -31095,7 +31108,7 @@
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-10-29",
+      "procedureUpdatedAt": "2026-11-02",
       "evidence": [
         {
           "service": "foodyserver",
@@ -41291,9 +41304,9 @@
             "he": "הבחנה בין ההזמנה שנבחרה לחשבון השולחן"
           },
           "instructions": {
-            "fr": "Avec orders.manage, une commande active QR ou web ouvre Menu avec sa propre addition enregistrée à droite sur tablette. Le catalogue reste consultable sans modifier les lignes ou un brouillon local. Actions gère uniquement cette commande ; Client montre son propre contact. Afficher la table ouvre séparément la session actuelle vérifiée et, si nécessaire, un choix d’addition. Le cadre, les onglets et les cartes sont ceux du Menu habituel, sans barre de retour supplémentaire. Commandes dans la navigation principale revient à la liste. Actualiser et les états de la commande sont dans Actions. Une erreur de lecture affiche Réessayer, pas un panier vide. Les historiques et rôles de consultation restent en lecture seule. Voir [le parcours détaillé](/fr/help/orders/managing-orders#open-saved-order-in-menu).",
-            "en": "With orders.manage, an active QR or web order opens Menu with its own saved check on the right on tablets. The catalogue remains browsable without changing saved lines or a local draft. Actions manages only that order; Guest shows its own contact. View table separately opens the verified current session and, when needed, a bill choice. The frame, tabs and cards use the standard Menu presentation without an extra back toolbar. Orders in the main navigation returns to the list. Refresh and order statuses are in Actions. A failed read shows Retry rather than an empty basket. Historical records and view-only roles remain read-only. See [the full workflow](/en/help/orders/managing-orders#open-saved-order-in-menu).",
-            "he": "עם orders.manage, הזמנת QR או אתר פעילה פותחת את התפריט עם החשבון השמור שלה בצד בטאבלט. ניתן לעיין בקטלוג בלי לשנות שורות שמורות או טיוטה מקומית. פעולות מנהל רק הזמנה זו; אורח מציג את איש הקשר שלה. הצגת השולחן פותחת בנפרד את הישיבה הנוכחית שאומתה ובמידת הצורך בחירת חשבון. המסגרת, הלשוניות והכרטיסים משתמשים במראה התפריט הרגיל בלי סרגל חזרה נוסף. הזמנות בניווט הראשי מחזיר לרשימה. רענון ומצבי ההזמנה נמצאים בפעולות. כשל קריאה מציג ניסיון חוזר ולא סל ריק. רשומות היסטוריות ותפקידים לצפייה בלבד נשארים לקריאה בלבד. ראו [התהליך המלא](/he/help/orders/managing-orders#open-saved-order-in-menu)."
+            "fr": "Avec orders.manage, une commande active QR ou web ouvre Menu avec sa propre addition enregistrée à droite sur tablette. Le catalogue reste consultable sans modifier les lignes ou un brouillon local. Actions gère uniquement cette commande ; Client montre son propre contact. Afficher la table ouvre séparément la session actuelle vérifiée et, si nécessaire, un choix d’addition. Le cadre, les onglets et les cartes sont ceux du Menu habituel, sans barre de retour supplémentaire. Commandes dans la navigation principale revient à la liste. Actualiser et les états de la commande sont dans Actions. Une erreur de lecture affiche Réessayer, pas un panier vide. Les historiques et rôles de consultation restent en lecture seule. Voir [le parcours détaillé](/fr/help/orders/managing-orders#open-saved-order-in-menu).\n\nSur iPad compatible, la vue Additions de Commandes sert à consulter les additions manuelles ouvertes, y compris celles de table et nommées ; les commandes QR/web restent séparées dans les autres vues. Actions → Tickets ouverts ouvre cette même vue. Voir [les additions ouvertes sur iPad](/fr/help/orders/managing-orders#ipad-open-checks). Le parcours de consultation mobile reste inchangé.",
+            "en": "With orders.manage, an active QR or web order opens Menu with its own saved check on the right on tablets. The catalogue remains browsable without changing saved lines or a local draft. Actions manages only that order; Guest shows its own contact. View table separately opens the verified current session and, when needed, a bill choice. The frame, tabs and cards use the standard Menu presentation without an extra back toolbar. Orders in the main navigation returns to the list. Refresh and order statuses are in Actions. A failed read shows Retry rather than an empty basket. Historical records and view-only roles remain read-only. See [the full workflow](/en/help/orders/managing-orders#open-saved-order-in-menu).\n\nOn a compatible iPad, Orders’ Checks view reviews open manual checks, including table and named checks; QR/web orders remain separate in the other views. Actions → Open tickets opens this same view. See [open checks on iPad](/en/help/orders/managing-orders#ipad-open-checks). The mobile viewing workflow is unchanged.",
+            "he": "עם orders.manage, הזמנת QR או אתר פעילה פותחת את התפריט עם החשבון השמור שלה בצד בטאבלט. ניתן לעיין בקטלוג בלי לשנות שורות שמורות או טיוטה מקומית. פעולות מנהל רק הזמנה זו; אורח מציג את איש הקשר שלה. הצגת השולחן פותחת בנפרד את הישיבה הנוכחית שאומתה ובמידת הצורך בחירת חשבון. המסגרת, הלשוניות והכרטיסים משתמשים במראה התפריט הרגיל בלי סרגל חזרה נוסף. הזמנות בניווט הראשי מחזיר לרשימה. רענון ומצבי ההזמנה נמצאים בפעולות. כשל קריאה מציג ניסיון חוזר ולא סל ריק. רשומות היסטוריות ותפקידים לצפייה בלבד נשארים לקריאה בלבד. ראו [התהליך המלא](/he/help/orders/managing-orders#open-saved-order-in-menu).\n\nב-iPad תואם תצוגת החשבונות בהזמנות משמשת לצפייה בחשבונות ידניים פתוחים, כולל חשבונות שולחן וחשבונות בשם; הזמנות QR ואתר נשארות נפרדות בתצוגות האחרות. פעולות ← חשבונות פתוחים פותח אותה תצוגה. ראו [חשבונות פתוחים ב-iPad](/he/help/orders/managing-orders#ipad-open-checks). מסלול הצפייה בנייד אינו משתנה."
           }
         },
         {
@@ -41431,7 +41444,7 @@
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-10-30",
+      "procedureUpdatedAt": "2026-11-02",
       "evidence": [
         {
           "service": "foodypos",
@@ -93233,7 +93246,7 @@
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:272",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:280",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93241,14 +93254,14 @@
       ],
       "kind": "flutter-route",
       "route": "/",
-      "line": 272,
+      "line": 280,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/splash/presentation/splash_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:277",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:285",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93256,14 +93269,14 @@
       ],
       "kind": "flutter-route",
       "route": "/login",
-      "line": 277,
+      "line": 285,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/auth/presentation/login_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:282",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:290",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93272,14 +93285,14 @@
       ],
       "kind": "flutter-route",
       "route": "/pin",
-      "line": 282,
+      "line": 290,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/auth/presentation/pin_login_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:287",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:295",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93287,14 +93300,14 @@
       ],
       "kind": "flutter-route",
       "route": "/setup-device",
-      "line": 287,
+      "line": 295,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/auth/presentation/device_setup_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:292",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:300",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93302,14 +93315,14 @@
       ],
       "kind": "flutter-route",
       "route": "/setup-pin",
-      "line": 292,
+      "line": 300,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/auth/presentation/pin_setup_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:297",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:305",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93317,14 +93330,14 @@
       ],
       "kind": "flutter-route",
       "route": "/select-restaurant",
-      "line": 297,
+      "line": 305,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/auth/presentation/restaurant_picker_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:302",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:310",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93332,14 +93345,14 @@
       ],
       "kind": "flutter-route",
       "route": "/scan-delivery",
-      "line": 302,
+      "line": 310,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/delivery_scan/presentation/scan_delivery_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:308",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:316",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93347,14 +93360,14 @@
       ],
       "kind": "flutter-route",
       "route": "/scan-delivery/pending",
-      "line": 308,
+      "line": 316,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/delivery_scan/presentation/pending_vouchers_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:314",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:322",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93365,7 +93378,7 @@
       ],
       "kind": "flutter-route",
       "route": "/settings/notifications",
-      "line": 314,
+      "line": 322,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/settings/presentation/notification_preferences_page.dart",
@@ -93373,7 +93386,7 @@
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:330",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:338",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93382,7 +93395,7 @@
       ],
       "kind": "flutter-route",
       "route": "/home",
-      "line": 330,
+      "line": 338,
       "resolution": "absolute",
       "componentSources": [
         "lib/core/ui/responsive.dart",
@@ -93391,7 +93404,7 @@
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:338",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:346",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93399,14 +93412,14 @@
       ],
       "kind": "flutter-route",
       "route": "availability",
-      "line": 338,
+      "line": 346,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/home/presentation/phone_home_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:349",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:357",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93416,14 +93429,14 @@
       ],
       "kind": "flutter-route",
       "route": "/tables",
-      "line": 349,
+      "line": 357,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/tables/presentation/table_list_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:358",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:366",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93435,14 +93448,14 @@
       ],
       "kind": "flutter-route",
       "route": "/menu",
-      "line": 358,
+      "line": 366,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/menu/presentation/library_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:367",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:375",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93452,14 +93465,14 @@
       ],
       "kind": "flutter-route",
       "route": "/pos",
-      "line": 367,
+      "line": 375,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/orders/presentation/pos_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:372",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:380",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93470,7 +93483,7 @@
       ],
       "kind": "flutter-route",
       "route": "tickets",
-      "line": 372,
+      "line": 380,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/orders/presentation/open_tickets_page.dart",
@@ -93478,7 +93491,7 @@
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:381",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:389",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93487,14 +93500,14 @@
       ],
       "kind": "flutter-route",
       "route": "/pos/order/:id",
-      "line": 381,
+      "line": 389,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/orders/presentation/saved_order_workspace_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:395",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:403",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93503,14 +93516,14 @@
       ],
       "kind": "flutter-route",
       "route": "/orders",
-      "line": 395,
+      "line": 403,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/orders/presentation/orders_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:401",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:412",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93519,14 +93532,14 @@
       ],
       "kind": "flutter-route",
       "route": "live",
-      "line": 401,
+      "line": 412,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/orders/online/presentation/online_orders_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:409",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:420",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93536,14 +93549,14 @@
       ],
       "kind": "flutter-route",
       "route": "scheduled-calendar",
-      "line": 409,
+      "line": 420,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/orders/presentation/scheduled_calendar_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:415",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:426",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93555,14 +93568,14 @@
       ],
       "kind": "flutter-route",
       "route": "kitchen-plan-matrix/:date",
-      "line": 415,
+      "line": 426,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/kitchen/presentation/kitchen_plan_matrix_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:425",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:436",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93571,14 +93584,14 @@
       ],
       "kind": "flutter-route",
       "route": "history",
-      "line": 425,
+      "line": 436,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/orders/online/presentation/orders_history_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:431",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:442",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93589,14 +93602,14 @@
       ],
       "kind": "flutter-route",
       "route": ":id",
-      "line": 431,
+      "line": 442,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/orders/online/presentation/order_details_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:446",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:457",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93604,14 +93617,14 @@
       ],
       "kind": "flutter-route",
       "route": "/transactions",
-      "line": 446,
+      "line": 457,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/transactions/presentation/transactions_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:456",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:467",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93619,38 +93632,10 @@
       ],
       "kind": "flutter-route",
       "route": "/more",
-      "line": 456,
+      "line": 467,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/more/presentation/more_page.dart"
-      ]
-    },
-    {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:462",
-      "service": "foodypos",
-      "source": "lib/core/routing/app_router.dart",
-      "features": [
-        "kitchen-companion"
-      ],
-      "kind": "flutter-route",
-      "route": "kitchen-companion",
-      "line": 462,
-      "resolution": "relative-to-parent",
-      "componentSources": []
-    },
-    {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:467",
-      "service": "foodypos",
-      "source": "lib/core/routing/app_router.dart",
-      "features": [
-        "kitchen-food-cost"
-      ],
-      "kind": "flutter-route",
-      "route": "food-cost",
-      "line": 467,
-      "resolution": "relative-to-parent",
-      "componentSources": [
-        "lib/features/food_cost/presentation/food_cost_page.dart"
       ]
     },
     {
@@ -93658,18 +93643,46 @@
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
+        "kitchen-companion"
+      ],
+      "kind": "flutter-route",
+      "route": "kitchen-companion",
+      "line": 473,
+      "resolution": "relative-to-parent",
+      "componentSources": []
+    },
+    {
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:478",
+      "service": "foodypos",
+      "source": "lib/core/routing/app_router.dart",
+      "features": [
+        "kitchen-food-cost"
+      ],
+      "kind": "flutter-route",
+      "route": "food-cost",
+      "line": 478,
+      "resolution": "relative-to-parent",
+      "componentSources": [
+        "lib/features/food_cost/presentation/food_cost_page.dart"
+      ]
+    },
+    {
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:484",
+      "service": "foodypos",
+      "source": "lib/core/routing/app_router.dart",
+      "features": [
         "staff-invitations"
       ],
       "kind": "flutter-route",
       "route": "staff",
-      "line": 473,
+      "line": 484,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/staff/presentation/staff_list_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:480",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:491",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93678,14 +93691,14 @@
       ],
       "kind": "flutter-route",
       "route": "settings",
-      "line": 480,
+      "line": 491,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/settings/presentation/settings_hub_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:486",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:497",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93697,14 +93710,14 @@
       ],
       "kind": "flutter-route",
       "route": "kitchen/service",
-      "line": 486,
+      "line": 497,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/kitchen/presentation/service_kitchen_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:492",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:503",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93712,14 +93725,14 @@
       ],
       "kind": "flutter-route",
       "route": "kitchen/assistant",
-      "line": 492,
+      "line": 503,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/kitchen_assistant/presentation/kitchen_assistant_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:501",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:512",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93727,14 +93740,14 @@
       ],
       "kind": "flutter-route",
       "route": "kitchen/data",
-      "line": 501,
+      "line": 512,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/kitchen_data/presentation/kitchen_data_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:509",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:520",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93745,14 +93758,14 @@
       ],
       "kind": "flutter-route",
       "route": "kitchen",
-      "line": 509,
+      "line": 520,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/kitchen/presentation/kitchen_hub_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:518",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:529",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93760,12 +93773,12 @@
       ],
       "kind": "flutter-route",
       "route": "pos-settings",
-      "line": 518,
+      "line": 529,
       "resolution": "relative-to-parent",
       "componentSources": []
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:524",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:535",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93774,14 +93787,14 @@
       ],
       "kind": "flutter-route",
       "route": "checkout",
-      "line": 524,
+      "line": 535,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/settings/presentation/checkout_settings_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:533",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:544",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93790,14 +93803,14 @@
       ],
       "kind": "flutter-route",
       "route": "appearance",
-      "line": 533,
+      "line": 544,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/settings/presentation/appearance_settings_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:542",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:553",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93806,14 +93819,14 @@
       ],
       "kind": "flutter-route",
       "route": "hardware",
-      "line": 542,
+      "line": 553,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/settings/presentation/hardware_settings_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:551",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:562",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93822,14 +93835,14 @@
       ],
       "kind": "flutter-route",
       "route": "shortcuts",
-      "line": 551,
+      "line": 562,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/settings/presentation/shortcuts_settings_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:561",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:572",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -93840,7 +93853,7 @@
       ],
       "kind": "flutter-route",
       "route": "account",
-      "line": 561,
+      "line": 572,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/settings/presentation/account_settings_page.dart",
@@ -95640,7 +95653,8 @@
         "paymentStatusMixed",
         "paymentStatusPartial",
         "paymentStatusRefunded",
-        "paymentStatusUnknown"
+        "paymentStatusUnknown",
+        "posChecksTitle"
       ],
       "actions": [],
       "line": 1
@@ -98253,9 +98267,9 @@
   "coverage": {
     "sharedRuntimeFiles": 399,
     "features": 106,
-    "operations": 850,
-    "sourceFiles": 2321,
-    "surfaces": 2122,
+    "operations": 851,
+    "sourceFiles": 2325,
+    "surfaces": 2123,
     "unclassifiedRoutes": []
   }
 }
