@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - orders
   - orders-internal-sumit-checkout
-updatedAt: '2026-10-29'
+updatedAt: '2026-11-02'
 featureId: orders-internal-sumit-checkout
 audience: public
 releaseStatus: available
@@ -47,3 +47,9 @@ Le panier préparé est figé tant que le paiement est en attente. Pour changer 
 ## Vérifier les confirmations indépendantes
 
 Le récapitulatif distingue les encaissements et remboursements enregistrés, le net reçu et le reste dû. Une valeur inconnue n’est pas zéro ; un remboursement ne recrée pas automatiquement une dette. Ce récapitulatif n’autorise aucun nouveau débit et les parcours financiers existants restent nécessaires. Voir [les montants enregistrés](/fr/help/orders/payment-preparation-and-handoff#recorded-money-summary).
+
+<span id="event-orders" />
+
+## Commandes événement depuis le parcours habituel
+
+Partagez le lien privé Foody au client concerné. Il vérifie le panier fixé, renseigne ses coordonnées et les informations événement demandées puis confirme ou ouvre le paiement Sumit revu. Aucun paiement en ligne finalise l’événement sans le marquer payé. Un acompte confirmé laisse la commande partiellement payée et son solde visible. Une information obligatoire manquante ou un paiement non vérifié maintient l’événement hors de la production confirmée. Les lectures anonymes de commande n’exposent ni consignes événement ni données personnelles.

@@ -1,5 +1,19 @@
 # Help ownership, evidence and releases
 
+## Internal event orders preparation (2 November 2026)
+
+API migration 286 precedes Admin, guest Web and POS. Orders retain their handover
+date as the production reference. The private prepared Sumit link collects event
+answers and optionally a fixed/percentage deposit; the remaining amount stays due.
+Sumit card guarantees remain unavailable. Lost browser callbacks require exact
+transaction verification from the saved order, never invoice-total inference.
+New FR/HE/EN event procedures and the four related order/production guides ship
+with the product. Synthetic tests do not certify a real provider account, payment
+or physical printer. Consuming services pin the immutable reviewed Landing commit
+before remote CI or release. Backoffice
+source evidence is retained from this branch baseline and is not revalidated.
+
+
 ## iPad open-check workspace preparation (2 November 2026)
 
 The compatible iPad places open manual table, named and financial checks in

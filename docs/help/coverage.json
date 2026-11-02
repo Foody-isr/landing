@@ -2247,6 +2247,80 @@
           "internal/orders/cash_drawer.go"
         ]
       }
+    },
+    {
+      "id": "orders-events",
+      "article": "orders/event-orders",
+      "audience": "public",
+      "selectors": {
+        "foodyserver": [
+          "internal/common/order_event.go",
+          "internal/orders/event_orders.go",
+          "internal/payment/event_checkout.go",
+          "internal/menu/event_settings.go",
+          "migrations/286_internal_event_orders.sql",
+          "cmd/server/main.go",
+          "internal/common/models.go",
+          "internal/orders/internal_checkout.go",
+          "internal/orders/kitchen_checks.go",
+          "internal/orders/production_sheet.go",
+          "internal/orders/service.go",
+          "internal/payment/handler.go",
+          "internal/payment/internal_checkout.go",
+          "internal/payment/reconcile.go",
+          "internal/payment/resolver.go",
+          "internal/printing/kitchen_release.go",
+          "internal/printing/render.go",
+          "internal/printing/service.go",
+          "internal/printing/ticket.go",
+          "internal/orders/handler.go",
+          "internal/support/corpus.json"
+        ],
+        "foodyadmin": [
+          "src/components/orders/EventOrder*.tsx",
+          "src/lib/orders/event-order-copy.ts",
+          "src/app/[restaurantId]/orders/new/page.tsx",
+          "src/app/[restaurantId]/orders/production/page.tsx",
+          "src/components/menu/publication/CarteEditor.tsx",
+          "src/components/orders/NewOrderCheckoutPanel.tsx",
+          "src/components/orders/NewOrderItemModal.tsx",
+          "src/components/orders/detail/OrderDetailHead.tsx",
+          "src/components/orders/detail/OrderDetailModal.tsx",
+          "src/lib/api.ts",
+          "src/lib/orders/draftLines.ts",
+          "src/lib/orders/orderDraft.ts",
+          "src/lib/orders/table-columns.tsx",
+          "src/components/orders/InternalOrderPayment.tsx",
+          "src/components/production/ProductionMatrix.tsx",
+          "src/components/production/ProductionMobile.tsx",
+          "src/components/orders/EventOrderBadge.tsx",
+          "src/components/orders/EventOrderFields.tsx",
+          "src/components/orders/EventOrderSummary.tsx"
+        ],
+        "foodyweb": [
+          "components/EventCheckoutFields.tsx",
+          "lib/event-order-copy.ts",
+          "app/order/checkout/CheckoutFlow.tsx",
+          "services/api.ts",
+          "components/ConfirmationPageClient.tsx",
+          "lib/types.ts",
+          "components/OrderExperience.tsx",
+          "store/useCartStore.ts"
+        ],
+        "foodypos": [
+          "lib/core/ui/event_order_badge.dart",
+          "lib/core/l10n/app_en.arb",
+          "lib/core/l10n/app_fr.arb",
+          "lib/core/l10n/app_he.arb",
+          "lib/features/kitchen/presentation/kitchen_ticket_card.dart",
+          "lib/features/orders/domain/order.dart",
+          "lib/features/orders/domain/order_item.dart",
+          "lib/features/orders/online/presentation/order_card_widget.dart",
+          "lib/features/orders/online/presentation/order_details_page.dart",
+          "lib/services/printing/receipt_bitmap_renderer.dart",
+          "lib/features/orders/presentation/widgets/order_manager_row.dart"
+        ]
+      }
     }
   ]
 }

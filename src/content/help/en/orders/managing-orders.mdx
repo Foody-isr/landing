@@ -224,3 +224,9 @@ Before quantity handoff or closure, review the exact scope and facts separately 
 ## Accept a scheduled order before its date
 
 In Admin → Orders, open the scheduled order and review its date, slot and payment. With orders.manage, choose Accept. The restaurant workflow determines the result: acceptance only followed by a separate Send to kitchen action, or kitchen dispatch and production-plan inclusion when those shortcuts are configured. This explicit action preserves the pickup or delivery date and slot; it does not mark the order paid or prove readiness or handoff. A manual order discounted to 0 ₪ can follow this path without recording a fictitious collection. Unconfirmed prepared payments and pending weight settlement keep their holds. Production-plan inclusion and preparation status remain separate. If Accept is still missing, reload the detail and have permissions, holds and the API version checked; do not change the slot or payment to work around a missing button. For a scheduled order whose payment is Pending, Accept stays hidden until confirmation. Unpaid for a manual or cash order is a separate state.
+
+<span id="event-orders" />
+
+## Event orders from the existing order workflow
+
+Event orders carry the Event / Catering marker. See [Event orders](/en/help/orders/event-orders) for creation, deposits and production planning.

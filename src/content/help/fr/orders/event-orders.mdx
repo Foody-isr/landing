@@ -1,0 +1,51 @@
+---
+title: Commandes événement depuis le parcours habituel
+description: >-
+  Admin → Commandes → Nouvelle commande. Nécessite le schéma événement de l’API et les versions Admin, Web client et POS
+  compatibles. Le checkout privé préparé nécessite actuellement un compte Sumit configuré.
+apps: both
+tags:
+  - orders
+  - orders-events
+updatedAt: '2026-11-02'
+featureId: orders-events
+audience: public
+releaseStatus: available
+---
+Admin → Commandes → Nouvelle commande. Nécessite le schéma événement de l’API et les versions Admin, Web client et POS compatibles. Le checkout privé préparé nécessite actuellement un compte Sumit configuré.
+
+<span id="setup" />
+
+## Identifier les cartes catering
+
+Dans Articles et cartes → Cartes → paramètres de la carte, activez Carte catering (usage interne). Ce réglage immédiat classe la carte sans la publier ni activer son canal web. Seule la permission menu.edit permet de le modifier. Les articles choisis depuis cette carte présélectionnent Événement / Catering dans une nouvelle commande interne. Vérifiez ou activez explicitement ce repère pour une composition depuis la bibliothèque.
+
+<span id="create" />
+
+## Préparer la commande événement
+
+Composez le panier depuis Commandes. Activez Événement / Catering, choisissez retrait ou livraison puis une date de remise planifiée. Le plan de production suit cette échéance, même si l’équipe prépare les jours précédents. Renseignez selon le besoin nom, nombre de personnes, date et heure de l’événement, lieu, contact et consignes. Choisissez si personnes, date et heure sont obligatoires. Avec un lien privé, laissez les réponses inconnues au client. Autorisez la modification de date/heure seulement si souhaité ; sinon les valeurs préremplies restent en lecture seule. L’heure de l’événement peut différer de la remise. Le nombre de personnes ne modifie ni quantités de plateaux ni prix.
+
+<span id="payment" />
+
+## Choisir les conditions de règlement
+
+Choisissez le lien Foody existant ou l’action carte hébergée compatible. Configurez aucun paiement en ligne, paiement intégral ou acompte en montant fixe ou pourcentage, puis éventuellement la date limite du solde. Vérifiez total, montant à payer maintenant et solde. L’acompte doit être positif et inférieur au total. L’empreinte bancaire est indisponible dans cette intégration Sumit ; sauvegarder une carte ne réserve pas des fonds. Pour un règlement hors lien, enregistrez uniquement l’argent effectivement reçu.
+
+<span id="client" />
+
+## Finaliser par le lien client privé
+
+Partagez le lien privé Foody au client concerné. Il vérifie le panier fixé, renseigne ses coordonnées et les informations événement demandées puis confirme ou ouvre le paiement Sumit revu. Aucun paiement en ligne finalise l’événement sans le marquer payé. Un acompte confirmé laisse la commande partiellement payée et son solde visible. Une information obligatoire manquante ou un paiement non vérifié maintient l’événement hors de la production confirmée. Les lectures anonymes de commande n’exposent ni consignes événement ni données personnelles.
+
+<span id="production" />
+
+## Planifier par carte et échéance
+
+Ouvrez Production sur la date de remise, même pour cuisiner avant. Par carte affiche des tableaux et quantités distincts avec des liens rapides vers les sections. Une commande de plusieurs cartes contribue seulement avec les lignes correspondantes dans chaque section. Les lignes historiques ou de bibliothèque sans carte unique restent dans Autres cartes au lieu d’être dupliquées. Le repère apparaît aussi dans le détail staff, le POS et les tickets cuisine compatibles. Gardez les sections et totaux Bassari et Halavi séparés.
+
+<span id="recovery" />
+
+## Vérifier le paiement et encaisser le solde
+
+Une nouvelle tentative reprend la même page hébergée sans créer un autre débit. Pour récupérer un retour Sumit manquant, ouvrez la commande événement enregistrée avec payments.manage, développez Vérifier un paiement Sumit, saisissez le numéro de transaction lu dans Sumit puis vérifiez. Foody contrôle référence exacte, montant et devise sans débiter ; une divergence reste bloquée. Utilisez l’action existante d’encaissement du solde pour le reste vérifié. Les tentatives en cours ou incertaines bloquent les modifications et encaissements manuels concurrents. Actualisez la commande après vérification. Une commande expirée ou annulée nécessite une revue staff ; ne créez pas de paiement de remplacement avant de connaître le résultat existant.

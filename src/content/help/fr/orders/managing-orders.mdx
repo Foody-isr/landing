@@ -225,3 +225,9 @@ Avant une remise par quantité ou une clôture, revoyez la portée exacte et les
 ## Accepter une commande programmée avant sa date
 
 Dans Admin → Commandes, ouvrez la commande programmée et vérifiez sa date, son créneau et son paiement. Avec orders.manage, choisissez Accepter. Le workflow du restaurant détermine le résultat : acceptation seule, puis Envoyer en cuisine séparément, ou envoi en cuisine et ajout au plan si ces raccourcis sont configurés. Cette action explicite conserve la date et le créneau de retrait ou de livraison ; elle ne marque pas la commande payée et ne prouve ni préparation terminée ni remise. Une commande manuelle remise à 0 ₪ peut suivre ce parcours sans enregistrer un encaissement fictif. Les paiements préparés non confirmés et les pesées en attente gardent leurs blocages. Le plan de production et le statut de préparation sont distincts. Si Accepter reste absent, rechargez la fiche et faites vérifier les droits, les blocages et la version API ; ne changez pas le créneau ni le paiement pour contourner un bouton manquant. Pour une commande programmée dont le paiement est En attente, Accepter reste masqué jusqu’à la confirmation. Non payé pour une commande manuelle ou en espèces est un état distinct.
+
+<span id="event-orders" />
+
+## Commandes événement depuis le parcours habituel
+
+Les commandes événement portent le repère Événement / Catering. Consultez le guide [Commandes événement](/fr/help/orders/event-orders) pour leur création, leur acompte et leur planification.

@@ -1,0 +1,51 @@
+---
+title: Event orders from the existing order workflow
+description: >-
+  Admin → Orders → New order. Requires the matching API event-order schema and compatible Admin, guest Web and POS
+  versions. The prepared private checkout currently requires a configured Sumit account.
+apps: both
+tags:
+  - orders
+  - orders-events
+updatedAt: '2026-11-02'
+featureId: orders-events
+audience: public
+releaseStatus: available
+---
+Admin → Orders → New order. Requires the matching API event-order schema and compatible Admin, guest Web and POS versions. The prepared private checkout currently requires a configured Sumit account.
+
+<span id="setup" />
+
+## Classify the catering cartes
+
+In Items and menus → Cartes → the carte settings, enable Catering carte (internal). This immediately sets its internal classification without publishing the carte or enabling a web channel. Only menu.edit can change it. Items selected from that carte preselect Event / Catering in a new internal order. Review or enable this marker explicitly when composing from the library.
+
+<span id="create" />
+
+## Prepare the event order
+
+Create the basket in Orders. Enable Event / Catering, choose pickup or delivery and a scheduled handover date. The production plan follows that date, including when staff prepare food earlier. Enter event name, guest count, event date/time, venue, contact and instructions as needed. Set whether guest count, event date and event time are required. Leave unknown answers for the recipient when using a private link. Allow event date/time changes only if intended; prefilled dates and times otherwise remain read-only. Event time and handover time can differ. Guest count does not change platter quantities or prices.
+
+<span id="payment" />
+
+## Choose the collection terms
+
+Choose the existing Foody link or supported hosted-card action. Configure no online payment, full payment or a deposit in a fixed amount or percentage, and optionally a balance due date. Review the total, initial collection and remaining balance. A deposit must be positive and below the total. Card guarantees are not available in this Sumit integration; do not promise that saving a card reserves funds. For collection outside this link, record only money actually received.
+
+<span id="client" />
+
+## Complete the private customer link
+
+Share the private Foody order link with the intended customer. They review the fixed basket, enter their contact and any required event answers, then confirm or open the reviewed Sumit payment. No online payment finalizes the event without marking it paid. A successful deposit leaves the order partially paid and its balance visible. A missing required answer or unverified payment keeps the event out of confirmed production. Event instructions and personal data are not exposed by anonymous order reads.
+
+<span id="production" />
+
+## Plan by carte and handover date
+
+Open Production on the handover date, even if cooking earlier. By carte shows separate sheets and quantities with quick links to each section. A mixed-carte order contributes only its matching lines to each section. Historical or library lines without a unique carte appear under Other cartes instead of being duplicated. The order marker is also visible in staff order details, POS and compatible kitchen tickets. Keep Bassari and Halavi sections and their totals separate.
+
+<span id="recovery" />
+
+## Verify a payment and collect the balance
+
+A repeated payment action resumes the existing hosted page and must not create a new charge. To recover a missing Sumit return, open the saved event order with payments.manage, expand Verify Sumit payment, enter the transaction number from Sumit and verify. Foody checks the exact order reference, amount and currency without charging again; a mismatch remains blocked. Use the existing balance collection action for the verified remainder. Pending or uncertain payment attempts block conflicting order edits or manual collection. Refresh the saved order after verification. An expired or cancelled order requires staff review; do not create a replacement payment until the existing outcome is known.
