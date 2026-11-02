@@ -25,28 +25,28 @@ const PATHS: Record<MarketingPage, string> = {
 };
 const TITLES = {
   he: {
-    home: "קופה ממוחשבת בענן למסעדות ולעסקים בישראל | Foody",
+    home: "Foody POS | קופה וניהול מסעדות בישראל",
     pricing: "מחיר קופה למסעדה בישראל | מסלולי Foody POS",
     contact: "תיאום הדגמה והצעת מחיר לקופה וסליקה | Foody",
     food: "פתרונות למסעדות, בתי קפה ורשתות בישראל | Foody",
   },
   fr: {
-    home: "Caisse cloud iPad et Android en Israël | Foody",
+    home: "Foody POS | Caisse et gestion de restaurant en Israël",
     pricing: "Prix d’une caisse restaurant en Israël | Foody POS",
     contact: "Démo et devis caisse et slika en Israël | Foody",
     food: "Solutions pour restaurants et cafés en Israël | Foody",
   },
   en: {
-    home: "Cloud POS for iPad & Android in Israel | Foody",
+    home: "Foody POS | Restaurant POS and Management in Israel",
     pricing: "Restaurant POS Pricing in Israel | Foody POS",
     contact: "Book a POS & Payments Demo in Israel | Foody",
     food: "Restaurant & Café Solutions in Israel | Foody",
   },
 };
 const HOME_DESCRIPTIONS = {
-  he: "קופת ענן ב־iPad וב־Android למסעדות ולעסקים בישראל. שותף Verifone, סליקה, Epson ו־Star Micronics. ניהול מטבח עם Foody Kitchen ו־Foody Companion.",
-  fr: "Caisse cloud iPad et Android en Israël. Partenaire Verifone, intégrateur Epson et Star Micronics. Gérez votre cuisine avec Foody Cuisine et Foody Compagnon.",
-  en: "Cloud POS for iPad and Android in Israel. Verifone partner, Epson and Star Micronics integrator. Run your kitchen with Foody Kitchen and Foody Companion.",
+  he: "האתר הרשמי של Foody POS בישראל. קופה ל־iPad ולאנדרואיד, שולחנות, הזמנות אונליין וניהול מטבח. ממשקי עבודה בעברית, בצרפתית ובאנגלית, והתקנה והדרכה בבית העסק.",
+  fr: "Site officiel de Foody POS en Israël. Caisse iPad et Android, tables, commandes en ligne et gestion de cuisine. Interfaces en français, hébreu et anglais, installation et formation sur place.",
+  en: "Official Foody POS website in Israel. iPad and Android POS, tables, online ordering and kitchen management. Hebrew, French and English interfaces, with on-site setup and training.",
 };
 
 /** Returns the localized, versioned sharing image and its accessible description. */

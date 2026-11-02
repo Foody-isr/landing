@@ -26,9 +26,9 @@ export type Solution = {
 
 const he = {
   home: {
-    title: "העסק שלכם.\nכל האפשרויות.",
+    title: "Foody POS\nקופה וניהול למסעדות.",
     description:
-      "Foody היא קופת ענן ב־iPad וב־Android למסעדות, בתי קפה וחנויות בישראל. חברו קופה, תשלומים וניהול, עם כלים ייעודיים לשולחנות ולהזמנות מלצרים במסעדה.",
+      "Foody POS היא פלטפורמת קופה וניהול בענן למסעדות, בתי קפה וחנויות בישראל. חברו קופה ב־iPad וב־Android, שולחנות, הזמנות אונליין ומטבח, עם ממשקי עבודה בעברית, בצרפתית ובאנגלית. בחרו את המוצרים שמתאימים לפעילות שלכם.",
     secondary: "למצוא את הפתרון שלי",
     photoAlt: "בעלת בית קפה מגישה קפה ללקוח ליד קופה על הדלפק",
     photoLabel: "פחות להתעסק. יותר לארח.",
@@ -168,9 +168,9 @@ type Copy = typeof he;
 
 const fr: Copy = {
   home: {
-    title: "Votre commerce.\nToutes les possibilités.",
+    title: "Foody POS\nCaisse et gestion de restaurant.",
     description:
-      "Foody est une caisse cloud sur iPad et Android pour les restaurants, cafés et commerces en Israël. Reliez caisse, paiements et gestion, avec des outils dédiés aux tables et aux commandes des serveurs en restauration.",
+      "Foody POS est la plateforme de caisse et de gestion cloud pour les restaurants, cafés et commerces en Israël. Reliez caisse iPad et Android, tables, commandes en ligne et cuisine, avec des interfaces en français, hébreu et anglais. Choisissez les produits adaptés à votre activité.",
     secondary: "Trouver ma solution",
     photoAlt:
       "Une gérante de café sert un client au comptoir, à côté de sa caisse",
@@ -322,9 +322,9 @@ const fr: Copy = {
 
 const en: Copy = {
   home: {
-    title: "Your business.\nAll the possibilities.",
+    title: "Foody POS\nRestaurant POS and management.",
     description:
-      "Foody is a cloud POS on iPad and Android for restaurants, cafés and shops in Israel. Connect sales, payments and management, with dedicated table and waiter ordering tools for restaurants.",
+      "Foody POS is the cloud POS and management platform for restaurants, cafés and shops in Israel. Connect iPad and Android POS, tables, online ordering and kitchen work, with Hebrew, French and English interfaces. Choose the products that fit your operation.",
     secondary: "Find my solution",
     photoAlt:
       "A café owner serving a customer at the counter beside her point of sale",

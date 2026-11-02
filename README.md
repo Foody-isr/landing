@@ -98,6 +98,19 @@ and included delivery management remain unchanged.
 
 ## Design and editorial decisions
 
+The homepage uses the full Foody POS name in its localized search title, primary
+heading, introduction and Organization entity, consistently with the existing
+WebSite name and official publisher page. Its restaurant category and Israeli
+service context stay explicit; the wider retail offering is retained in the
+introduction. Apple's verified iPad listing (6758894756) links to this domain;
+the publisher page links back and the POS SoftwareApplication identifies that
+same listing. The app is not an unrelated business profile or an Android download.
+These identity signals address the observed homonym confusion without asserting
+a Google position, Knowledge Panel, review rating or recommendation gain. The
+unchanged approved logo, sharing images, locale URLs, prices, procedures and
+analytics remain authoritative. Exact editorial impact evidence is recorded in
+`docs/help/reviews/official-brand-home.json`.
+
 Square-inspired navigation by business and product, large merchant photography, real hardware images, specific use cases and a consistent demo CTA. Palette: white `#ffffff`, ink `#171717`, Foody orange `#eb5204`, campaign orange `#ff7b45`, light blue `#dceaff`, navy `#153b5b`. Heebo serves Hebrew; Manrope serves French and English. Both are self-hosted with their OFL licenses.
 
 The official Verifone partner/reseller status is supplied by Foody's owner in the redesign brief. No external certification, customer endorsement, revenue statistic, testimonial or guaranteed saving is invented. Software capabilities were checked against the workspace's payment resolver and kitchen/help implementation. Illustrative product panels are labelled as sample data; they are not screenshots or customer performance claims. Food cost examples exclude VAT consistently and do not present ingredient margin as net profit.

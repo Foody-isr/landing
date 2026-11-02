@@ -75,6 +75,18 @@ for (const lang of ["he", "fr", "en"]) {
     assert.doesNotMatch(html, /<script[^>]+src="https:\/\/www\.googletagmanager\.com/, `No Google library loaded before browser opt-in: ${url}`);
     assert.ok(html.includes('class="footer-preferences"'), `Google preferences can be reopened from the footer: ${url}`);
     const main = html.match(/<main\b[\s\S]*?<\/main>/)?.[0] || "";
+    if (path === "") {
+      const title = html.match(/<title>([^<]+)<\/title>/)?.[1] || "";
+      const heading = main.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)?.[1] || "";
+      assert.ok(title.startsWith("Foody POS |"), `Official brand leads the homepage search title: ${url}`);
+      assert.ok(heading.startsWith("Foody POS"), `Official brand is visible in the primary heading: ${url}`);
+      const schemas = [...main.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(match => JSON.parse(match[1]));
+      const organization = schemas.find(schema => schema["@type"] === "Organization");
+      const website = schemas.find(schema => schema["@type"] === "WebSite");
+      assert.equal(organization?.name, "Foody POS", `Organization and site use the same brand: ${url}`);
+      assert.equal(website?.name, organization.name);
+      assert.equal(organization?.telephone, "+972537081799");
+    }
     if (["", "/guides/restaurant-pos-israel", "/guides/restaurant-inventory-israel"].includes(path)) {
       const restaurantLinks = [...main.matchAll(new RegExp(`<a\\b[^>]*href="/${lang}/sectors/food-beverage/restaurants"[^>]*>([\\s\\S]*?)</a>`, "g"))];
       const category = { he: "קופות למסעדות", fr: "Caisses pour restaurants", en: "POS for restaurants" }[lang];
@@ -133,6 +145,7 @@ for (const lang of ["he", "fr", "en"]) {
       assert.ok(main.includes('08:00') && main.includes('20:00') && main.includes('15:00'), `Owner-approved contact hours: ${url}`);
       assert.ok(!main.includes('Schwartz'), `Private verification address is not published: ${url}`);
     }
+    if (path === "/about") assert.ok(main.includes('href="https://apps.apple.com/il/app/foody-pos/id6758894756"'), `Official publisher page links to its verified iPad app: ${url}`);
     const workflow = { "/sectors/food-beverage/restaurants": "restaurants", "/solutions/kitchen": "kitchen", "/solutions/online-ordering": "ordering", "/solutions/pos": "pos" }[path];
     if (workflow) {
       assert.ok(main.includes(`data-acquisition-workflow="${workflow}"`), `Server-rendered buying workflow: ${url}`);
@@ -145,6 +158,7 @@ for (const lang of ["he", "fr", "en"]) {
       assert.equal(software?.offers.price, 590, `POS price is distinct from Restaurant: ${url}`);
       assert.equal(software?.offers.url, `${canonicalBase}/${lang}/pricing#plan-pos`, `POS offer links to its own plan: ${url}`);
       assert.equal(software?.offers.priceCurrency, "ILS");
+      assert.deepEqual(software?.sameAs, ["https://apps.apple.com/il/app/foody-pos/id6758894756"], `POS software identifies its verified App Store listing: ${url}`);
       assert.equal(software?.offers.priceSpecification.valueAddedTaxIncluded, false);
       assert.equal(software?.offers.priceSpecification.unitText, "month");
       assert.ok(main.includes("590") && main.includes("99") && main.includes("890"), `Visible licence prices and offer distinctions: ${url}`);

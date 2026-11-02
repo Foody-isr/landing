@@ -29,6 +29,7 @@ import Icon from "./Icon";
 import ProductMentions from "./ProductMentions";
 import { comparisonCopy, TABIT_COMPARISON_PATH } from "@/lib/marketing/comparison";
 import { pricingRates } from "@/lib/marketing/pricing";
+import { POS_APP_STORE_URL } from "@/lib/marketing/resources";
 import AcquisitionWorkflow from "./AcquisitionWorkflow";
 import ProductScreenshots from "./ProductScreenshots";
 
@@ -201,7 +202,8 @@ export default function SolutionPage({
         applicationCategory: "BusinessApplication",
         operatingSystem: softwareOffer.operatingSystem,
         inLanguage: ["he", "fr", "en"],
-        publisher: { "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: "Foody", url: SITE_URL },
+        ...(page === "pos" ? { sameAs: [POS_APP_STORE_URL] } : {}),
+        publisher: { "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: "Foody POS", url: SITE_URL },
         offers: {
           "@type": "Offer",
           url: `${SITE_URL}/${lang}/pricing#plan-${softwareOffer.plan}`,

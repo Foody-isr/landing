@@ -21,6 +21,7 @@ import {
 import { marketing } from "@/lib/marketing/content";
 import { routes, ui } from "@/lib/marketing/ui";
 import { getMarketingMetadata, resolveLang, SITE_URL } from "@/lib/seo";
+import { publicContact } from "@/lib/marketing/resources";
 
 /** Localized homepage metadata for the Israeli acquisition site. */
 export async function generateMetadata({
@@ -50,16 +51,19 @@ export default async function Home({
             "@context": "https://schema.org",
             "@type": "Organization",
             "@id": `${SITE_URL}/#organization`,
-            name: "Foody",
-            alternateName: "Foody POS",
-            description: u.footer,
+            name: "Foody POS",
+            alternateName: "Foody",
+            description: t.description,
             url: SITE_URL,
             logo: `${SITE_URL}/assets/logo.svg`,
+            email: publicContact.email,
+            telephone: publicContact.phone,
             areaServed: { "@type": "Country", name: "Israel" },
             contactPoint: {
               "@type": "ContactPoint",
               contactType: "sales",
-              email: "mickael@foody-pos.co.il",
+              email: publicContact.email,
+              telephone: publicContact.phone,
               availableLanguage: ["Hebrew", "English", "French"],
             },
           }}
