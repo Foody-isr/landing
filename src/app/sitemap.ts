@@ -29,11 +29,19 @@ const PAGES: MarketingPage[] = [
   "companion",
 ];
 
+// These two pages received main-content edits in all three languages on this date.
+// Update only after a meaningful content change; never use build time as freshness.
+const CONTENT_MODIFIED: Partial<Record<MarketingPage, string>> = {
+  home: "2026-11-02",
+  restaurants: "2026-11-02",
+};
+
 /** Lists acquisition routes and existing help content without fictitious update dates. */
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages = PAGES.flatMap((page) =>
     SUPPORTED_LANGS.map((lang) => ({
       url: `${SITE_URL}/${lang}${getMarketingPath(page)}`,
+      lastModified: CONTENT_MODIFIED[page],
       changeFrequency: "monthly" as const,
       priority: page === "home" ? 1 : 0.8,
       alternates: { languages: languageAlternates(getMarketingPath(page)) },

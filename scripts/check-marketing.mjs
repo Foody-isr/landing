@@ -93,6 +93,14 @@ for (const lang of ["he", "fr", "en"]) {
       const category = { he: "קופות למסעדות", fr: "Caisses pour restaurants", en: "POS for restaurants" }[lang];
       assert.ok(restaurantLinks.some(match => match[1].includes(category)), `Contextual restaurant-category link in homepage or guide: ${url}`);
     }
+    if (path === "" || path === "/sectors/food-beverage/restaurants") {
+      const heading = main.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1] || "";
+      assert.ok(heading.includes({ he: "בישראל", fr: "Israël", en: "Israel" }[lang]), `Israeli service scope is visible in the primary heading: ${url}`);
+    }
+    if (path === "") {
+      const heroLink = main.match(/<a\b[^>]*data-home-restaurant-link[^>]*>[\s\S]*?<\/a>/)?.[0] || "";
+      assert.ok(heroLink.includes(`href="/${lang}/sectors/food-beverage/restaurants"`), `Homepage hero points directly to its localized restaurant offering: ${url}`);
+    }
     for (const reference of marketingHelpReferences(main, url, publishedHelp, canonicalBase)) {
       if (!helpReferences.has(reference.pathname)) helpReferences.set(reference.pathname, { ...reference, fragments: new Set() });
       if (reference.fragment) helpReferences.get(reference.pathname).fragments.add(reference.fragment);
@@ -621,9 +629,13 @@ for (const lang of ["he", "fr", "en"]) {
       assert.match(heroPreload || "", /fetchpriority="high"/i, `The responsive LCP preload has the same high priority: ${url}`);
       const category = { he: "קופה למסעדה", fr: "caisse restaurant", en: "restaurant POS" }[lang];
       const heading = main.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1] || "";
-      assert.ok(heading.includes(category), `Restaurant category is visible in the primary heading: ${url}`);
+      assert.ok(heading.toLocaleLowerCase().includes(category.toLocaleLowerCase()), `Restaurant category is visible in the primary heading: ${url}`);
       assert.ok(html.match(/<title>([\s\S]*?)<\/title>/)?.[1].endsWith(" | Foody POS"), `Restaurant search title identifies Foody POS: ${url}`);
       const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((match) => JSON.parse(match[1]));
+      const setupFaq = schemas.find((schema) => schema["@type"] === "FAQPage")?.mainEntity;
+      assert.equal(setupFaq?.length, 6, `Restaurant buying FAQ includes on-site installation: ${url}`);
+      const setupAnswer = setupFaq[5].acceptedAnswer.text;
+      assert.ok(setupAnswer.includes("1490") && setupAnswer.includes("1200"), `Setup and optional training retain the approved shared prices: ${url}`);
       const software = schemas.find((schema) => schema["@type"] === "SoftwareApplication");
       assert.ok(software, `Restaurant product is described as software: ${url}`);
       assert.equal(software.offers.price, 890, `Approved Restaurant price: ${url}`);
@@ -747,6 +759,9 @@ for (const path of paths)
     `Sitemap entry: ${path}`,
   );
 assert.ok(sitemap.includes("/he/help/kitchen/food-cost"));
+const datedEntries = [...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)].map(match => ({ url: match[1].match(/<loc>(.*?)<\/loc>/)?.[1], date: match[1].match(/<lastmod>(.*?)<\/lastmod>/)?.[1] })).filter(entry => entry.date);
+assert.deepEqual(datedEntries.map(entry => entry.url).sort(), ["he", "fr", "en"].flatMap(lang => ["", "/sectors/food-beverage/restaurants"].map(path => `${canonicalBase}/${lang}${path}`)).sort(), "Only the six pages with reviewed main-content edits receive a sitemap modification date");
+for (const entry of datedEntries) assert.equal(entry.date, "2026-11-02", `Sitemap date reflects the actual editorial update, independently of build time: ${entry.url}`);
 const robots = await (await fetch(base + "/robots.txt")).text();
 assert.ok(robots.includes(`${canonicalBase}/sitemap.xml`));
 for (const file of ["food-cost-fr.png", "food-cost-he-dark.png", "kitchen-fr.png", "kitchen-he-dark.png"]) {

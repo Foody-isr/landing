@@ -78,10 +78,10 @@ export default async function Home({
                 <Link className="button button-dark" href={`/${lang}/contact`}>
                   {u.demo}
                 </Link>
-                <a className="text-link" href="#solutions">
+                <Link className="text-link" href={`/${lang}${routes.restaurants}`} data-home-restaurant-link>
                   {t.secondary}
                   <Icon name="arrow" className="directional" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>

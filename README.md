@@ -87,6 +87,19 @@ priority targets. These HTTP and content checks do not establish Google indexing
 organic position or LLM recommendation gains. Editorial impact evidence is recorded
 in `docs/help/reviews/restaurant-search-intent.json`.
 
+The 2 November organic-search update makes Israel explicit in the visible home
+and Restaurant headings in all three languages. The home hero now links directly
+to the existing Restaurant destination. Its buying FAQ describes on-site setup
+and optional training with the shared approved prices and separate hardware and
+payment costs. No customer testimonial or ranking gain is fabricated.
+Only these six updated URLs receive a fixed, reviewed `lastmod` date in the
+sitemap. Do not replace it with build time or date untouched guides. Update this
+small date map after a significant change to those pages, and extend it only
+when another page receives a documented main-content review. Google's date hint
+does not guarantee a crawl or position; existing URLs, alternates and help dates
+remain intact. Exact support impact is in
+`docs/help/reviews/organic-search-core-pages.json`.
+
 The Restaurant hero photograph uses explicit high fetch priority on both the image
 and Next's responsive preload. This addresses the missing-priority insight from a
 1 November 2026 mobile PageSpeed run (79 performance, 5.1 s simulated LCP). Only
