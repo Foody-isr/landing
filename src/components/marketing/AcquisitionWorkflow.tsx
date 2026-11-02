@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { Lang } from "@/lib/seo";
 import { FOOD_COST_PATH, PRODUCT_DEMOS_PATH, SUPPLIER_VARIANCE_PATH } from "@/lib/marketing/resources";
-import { supplierVarianceCopy } from "@/lib/marketing/supplier-variance-copy";
 import { ui } from "@/lib/marketing/ui";
 import { acquisitionContent, BUYING_GUIDE_PATH, type AcquisitionPage } from "@/lib/marketing/acquisition";
 import { inventoryGuide, INVENTORY_GUIDE_PATH } from "@/lib/marketing/inventory-guide";
@@ -23,7 +22,7 @@ export default function AcquisitionWorkflow({ lang, page }: { lang: Lang; page: 
           </li>)}
         </ol>
         <p className="workflow-offer">{workflow.offer} <Link href={`/${lang}/pricing`}>{ {he:"למחירון המלא", fr:"Voir les tarifs complets", en:"See full pricing"}[lang]}</Link></p>
-        {page === "kitchen" && <p><Link className="text-link" href={`/${lang}${SUPPLIER_VARIANCE_PATH}`}>{supplierVarianceCopy[lang].linkLabel}</Link></p>}
+        {page === "kitchen" && <p><Link className="text-link" href={`/${lang}${SUPPLIER_VARIANCE_PATH}`}>{ui[lang].supplierVarianceCalculator}</Link></p>}
         <div className="resource-inline-links"><Link className="text-link" href={`/${lang}${BUYING_GUIDE_PATH}`}>{copy.buyingGuide}</Link>{page === "restaurants" && <Link className="text-link" href={`/${lang}/help/payments/pos-checkout`}>{copy.checkoutGuide}</Link>}{(page === "restaurants" || page === "kitchen") && <Link className="text-link" href={`/${lang}${INVENTORY_GUIDE_PATH}`}>{inventoryGuide[lang].linkLabel}</Link>}{page === "kitchen" && <><Link className="text-link" href={`/${lang}/help/kitchen/stock-management`}>{copy.stockGuide}</Link><Link className="text-link" href={`/${lang}/help/kitchen/data-and-sales-links`}>{copy.salesGuide}</Link><Link className="text-link" href={`/${lang}${FOOD_COST_PATH}`}>{ui[lang].foodCostCalculator}</Link><Link className="text-link" href={`/${lang}${PRODUCT_DEMOS_PATH}`}>{ui[lang].productDemos}</Link></>}</div>
       </div>
     </section>

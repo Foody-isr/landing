@@ -6,7 +6,6 @@ import Link from "next/link";
 import { useI18n } from "@/lib/i18n/context";
 import { routes, ui } from "@/lib/marketing/ui";
 import { ABOUT_PATH, FOOD_COST_PATH, PRODUCT_DEMOS_PATH, SUPPLIER_VARIANCE_PATH } from "@/lib/marketing/resources";
-import { supplierVarianceCopy } from "@/lib/marketing/supplier-variance-copy";
 import ProductLinks from "./marketing/ProductLinks";
 
 /** Localized footer linking each offering to its own acquisition page. */
@@ -50,7 +49,7 @@ export default function Footer() {
             <Link href={localePath("/help")}>{t.help}</Link>
             <Link href={localePath("/guides/restaurant-pos-israel")}>{t.buyingGuide}</Link>
             <Link href={localePath(FOOD_COST_PATH)}>{t.foodCostCalculator}</Link>
-            <Link href={localePath(SUPPLIER_VARIANCE_PATH)}>{supplierVarianceCopy[lang].linkLabel}</Link>
+            <Link href={localePath(SUPPLIER_VARIANCE_PATH)}>{t.supplierVarianceCalculator}</Link>
             <Link href={localePath(PRODUCT_DEMOS_PATH)}>{t.productDemos}</Link>
             <Link href={localePath(ABOUT_PATH)}>{t.about}</Link>
             <a href="https://admin.foody-pos.co.il">{t.login}</a>
