@@ -1,5 +1,18 @@
 # Help ownership, evidence and releases
 
+## Full Admin calendar week (2 November 2026)
+
+Admin This week now includes all seven calendar days using the restaurant’s
+configured first weekday, including upcoming days. The shared picker, dashboard
+and reports persistence use the same boundaries. Last 7 days remains rolling.
+The Friday series default and native POS reports keep their existing behavior.
+Review dashboard/reports, order-list filters and navigation instructions in
+FR/HE/EN. These operations have no screenshots. Preserve all unrelated service
+inventory blocks and surfaces from Landing develop
+`305007e72ec2275e025328418181e4a21dda0c78`.
+Export identical public/support corpora and pin the reviewed Landing commit in
+Admin/API. Verify development before promoting the same artifacts.
+
 ## Internal event handover and delivery fees (2 November 2026)
 
 The event calendar retains its independent handover date instead of reconciling
