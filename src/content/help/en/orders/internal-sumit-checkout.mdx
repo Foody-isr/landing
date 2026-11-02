@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - orders
   - orders-internal-sumit-checkout
-updatedAt: '2026-10-29'
+updatedAt: '2026-11-02'
 featureId: orders-internal-sumit-checkout
 audience: public
 releaseStatus: available
@@ -47,3 +47,9 @@ The prepared basket is immutable while pending. To change its items, discount or
 ## Review independent confirmations
 
 The summary distinguishes recorded collections and refunds, net received and the remaining balance. An unknown value is not zero; a refund does not automatically recreate debt. The summary authorizes no new charge and existing financial flows remain required. See [recorded amounts](/en/help/orders/payment-preparation-and-handoff#recorded-money-summary).
+
+<span id="event-orders" />
+
+## Event orders from the existing order workflow
+
+Share the private Foody order link with the intended customer. They review the fixed basket, enter their contact and any required event answers, then confirm or open the reviewed Sumit payment. No online payment finalizes the event without marking it paid. A successful deposit leaves the order partially paid and its balance visible. A missing required answer or unverified payment keeps the event out of confirmed production. Event instructions and personal data are not exposed by anonymous order reads.

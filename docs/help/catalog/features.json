@@ -4210,6 +4210,19 @@
           "en": "In Admin → Orders, open the scheduled order and review its date, slot and payment. With orders.manage, choose Accept. The restaurant workflow determines the result: acceptance only followed by a separate Send to kitchen action, or kitchen dispatch and production-plan inclusion when those shortcuts are configured. This explicit action preserves the pickup or delivery date and slot; it does not mark the order paid or prove readiness or handoff. A manual order discounted to 0 ₪ can follow this path without recording a fictitious collection. Unconfirmed prepared payments and pending weight settlement keep their holds. Production-plan inclusion and preparation status remain separate. If Accept is still missing, reload the detail and have permissions, holds and the API version checked; do not change the slot or payment to work around a missing button. For a scheduled order whose payment is Pending, Accept stays hidden until confirmation. Unpaid for a manual or cash order is a separate state.",
           "he": "ב־Admin ← הזמנות פתחו את ההזמנה המתוזמנת ובדקו את התאריך, החלון והתשלום. עם orders.manage בחרו אישור. תהליך העבודה של המסעדה קובע את התוצאה: אישור בלבד ולאחריו שליחה נפרדת למטבח, או שליחה למטבח והוספה לתוכנית הייצור כאשר קיצורים אלה מוגדרים. הפעולה המפורשת שומרת על תאריך וחלון האיסוף או המשלוח; היא אינה מסמנת את ההזמנה כשולמה ואינה מעידה שההכנה או המסירה הושלמו. הזמנה ידנית שהנחה הורידה את סכומה ל־0 ₪ יכולה להתקדם בלי לרשום גבייה פיקטיבית. תשלום מוכן שטרם אושר ושקילה ממתינה שומרים על החסימות שלהם. הכללה בתוכנית הייצור ומצב ההכנה הם דברים נפרדים. אם האישור עדיין חסר, טענו מחדש ובקשו לבדוק הרשאות, חסימות וגרסת API; אין לשנות את החלון או התשלום כדי לעקוף כפתור חסר. בהזמנה מתוזמנת עם תשלום במצב ממתין, האישור נשאר מוסתר עד לאישור התשלום. מצב לא שולם בהזמנה ידנית או במזומן הוא מצב נפרד."
         }
+      },
+      {
+        "id": "event-orders",
+        "title": {
+          "en": "Event orders from the existing order workflow",
+          "fr": "Commandes événement depuis le parcours habituel",
+          "he": "הזמנות אירוע במסלול ההזמנה הקיים"
+        },
+        "instructions": {
+          "fr": "Les commandes événement portent le repère Événement / Catering. Consultez le guide [Commandes événement](/fr/help/orders/event-orders) pour leur création, leur acompte et leur planification.",
+          "en": "Event orders carry the Event / Catering marker. See [Event orders](/en/help/orders/event-orders) for creation, deposits and production planning.",
+          "he": "הזמנות אירוע מסומנות באירוע / קייטרינג. ראו [הזמנות אירוע](/he/help/orders/event-orders) ליצירה, מקדמות ותכנון ייצור."
+        }
       }
     ],
     "audience": "public",
@@ -6378,6 +6391,19 @@
           "en": "In a saved order’s actions, review preparation and handoff separately from payment. Handoff review selects the actual physical units; financial splitting does not multiply them. Before closure, review the exact check or financial portion and its confirmed balance. A closed scope refuses new commercial changes; another open batch is not closed by that action. See [tracking and confirmations](/en/help/orders/payment-preparation-and-handoff).",
           "he": "בפעולות של הזמנה שמורה בדקו הכנה ומסירה בנפרד מתשלום. סקירת המסירה בוחרת את היחידות הפיזיות בפועל; פיצול כספי אינו מכפיל אותן. לפני סגירה בדקו את החשבון או החלק הכספי המדויק ואת היתרה המאושרת. היקף סגור מסרב לשינויים מסחריים חדשים; הפעולה אינה סוגרת קבוצה פתוחה אחרת. ראו [מעקב ואישורים](/he/help/orders/payment-preparation-and-handoff)."
         }
+      },
+      {
+        "id": "event-orders",
+        "title": {
+          "en": "Event orders from the existing order workflow",
+          "fr": "Commandes événement depuis le parcours habituel",
+          "he": "הזמנות אירוע במסלול ההזמנה הקיים"
+        },
+        "instructions": {
+          "fr": "Les commandes événement portent le repère Événement / Catering. Consultez le guide [Commandes événement](/fr/help/orders/event-orders) pour leur création, leur acompte et leur planification. Générer un lien de paiement pour le solde exige payments.manage, pour les commandes événement comme pour les autres commandes.",
+          "en": "Event orders carry the Event / Catering marker. See [Event orders](/en/help/orders/event-orders) for creation, deposits and production planning. Generating a balance payment link requires payments.manage for event orders and other orders.",
+          "he": "הזמנות אירוע מסומנות באירוע / קייטרינג. ראו [הזמנות אירוע](/he/help/orders/event-orders) ליצירה, מקדמות ותכנון ייצור. יצירת קישור לתשלום יתרה דורשת payments.manage בהזמנות אירוע ובהזמנות אחרות."
+        }
       }
     ],
     "audience": "public",
@@ -6388,7 +6414,7 @@
       "fr": "Les modifications nécessitent orders.manage ; la lecture ne donne pas le droit de modifier.",
       "he": "שינוי הזמנות דורש orders.manage; הרשאת צפייה אינה הרשאת עריכה."
     },
-    "procedureUpdatedAt": "2026-10-29",
+    "procedureUpdatedAt": "2026-11-02",
     "updatedAt": "2026-10-20"
   },
   {
@@ -6656,12 +6682,25 @@
           "fr": "Utilisez le détail client/commande pour organiser colis et remise retrait/livraison. Confirmez la préparation dans les contrôles proposés ; elle ne confirme pas le paiement.",
           "he": "השתמשו בפירוט לקוח והזמנה לארגון אריזות ומסירה. אשרו הכנה באפשרויות המוצגות; הכנה אינה אישור תשלום."
         }
+      },
+      {
+        "id": "event-orders",
+        "title": {
+          "en": "Event orders from the existing order workflow",
+          "fr": "Commandes événement depuis le parcours habituel",
+          "he": "הזמנות אירוע במסלול ההזמנה הקיים"
+        },
+        "instructions": {
+          "en": "Open Production on the handover date, even if cooking earlier. By carte shows separate sheets and quantities with quick links to each section. A mixed-carte order contributes only its matching lines to each section. Historical or library lines without a unique carte appear under Other cartes instead of being duplicated. The order marker is also visible in staff order details, POS and compatible kitchen tickets. Keep Bassari and Halavi sections and their totals separate.",
+          "fr": "Ouvrez Production sur la date de remise, même pour cuisiner avant. Par carte affiche des tableaux et quantités distincts avec des liens rapides vers les sections. Une commande de plusieurs cartes contribue seulement avec les lignes correspondantes dans chaque section. Les lignes historiques ou de bibliothèque sans carte unique restent dans Autres cartes au lieu d’être dupliquées. Le repère apparaît aussi dans le détail staff, le POS et les tickets cuisine compatibles. Gardez les sections et totaux Bassari et Halavi séparés.",
+          "he": "פתחו ייצור לפי תאריך המסירה גם אם מכינים קודם. לפי תפריט מציג טבלאות וכמויות נפרדות וקישורים מהירים לסעיפים. הזמנה מכמה תפריטים תורמת בכל סעיף רק את השורות המתאימות. שורות היסטוריות או מהספרייה שאין להן תפריט יחיד נשארות בתפריטים אחרים במקום להיספר פעמיים. הסימון מופיע גם בפרטי הזמנה לצוות, בקופה ובכרטיסי מטבח תואמים. שמרו על הפרדת סעיפים וסיכומים של בשרי וחלבי."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-29"
+    "procedureUpdatedAt": "2026-11-02"
   },
   {
     "id": "delivery-zones",
@@ -15000,7 +15039,7 @@
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-29",
+    "procedureUpdatedAt": "2026-11-02",
     "operations": [
       {
         "id": "sumit-internal-prerequisites",
@@ -15078,6 +15117,19 @@
           "fr": "Le récapitulatif distingue les encaissements et remboursements enregistrés, le net reçu et le reste dû. Une valeur inconnue n’est pas zéro ; un remboursement ne recrée pas automatiquement une dette. Ce récapitulatif n’autorise aucun nouveau débit et les parcours financiers existants restent nécessaires. Voir [les montants enregistrés](/fr/help/orders/payment-preparation-and-handoff#recorded-money-summary).",
           "en": "The summary distinguishes recorded collections and refunds, net received and the remaining balance. An unknown value is not zero; a refund does not automatically recreate debt. The summary authorizes no new charge and existing financial flows remain required. See [recorded amounts](/en/help/orders/payment-preparation-and-handoff#recorded-money-summary).",
           "he": "הסיכום מפריד בין תקבולים והחזרים שנרשמו, הנטו שהתקבל והיתרה. ערך לא ידוע אינו אפס; החזר אינו יוצר מחדש חוב אוטומטית. הסיכום אינו מאשר חיוב חדש ועדיין נדרשים התהליכים הכספיים הקיימים. ראו [סכומים שנרשמו](/he/help/orders/payment-preparation-and-handoff#recorded-money-summary)."
+        }
+      },
+      {
+        "id": "event-orders",
+        "title": {
+          "en": "Event orders from the existing order workflow",
+          "fr": "Commandes événement depuis le parcours habituel",
+          "he": "הזמנות אירוע במסלול ההזמנה הקיים"
+        },
+        "instructions": {
+          "en": "Share the private Foody order link with the intended customer. They review the fixed basket, enter their contact and any required event answers, then confirm or open the reviewed Sumit payment. No online payment finalizes the event without marking it paid. A successful deposit leaves the order partially paid and its balance visible. A missing required answer or unverified payment keeps the event out of confirmed production. Event instructions and personal data are not exposed by anonymous order reads.",
+          "fr": "Partagez le lien privé Foody au client concerné. Il vérifie le panier fixé, renseigne ses coordonnées et les informations événement demandées puis confirme ou ouvre le paiement Sumit revu. Aucun paiement en ligne finalise l’événement sans le marquer payé. Un acompte confirmé laisse la commande partiellement payée et son solde visible. Une information obligatoire manquante ou un paiement non vérifié maintient l’événement hors de la production confirmée. Les lectures anonymes de commande n’exposent ni consignes événement ni données personnelles.",
+          "he": "שתפו את קישור Foody הפרטי עם הלקוח המיועד. הלקוח בודק את הסל הקבוע, משלים פרטי קשר ופרטי אירוע נדרשים ואז מאשר או פותח את תשלום SUMIT שנבדק. ללא תשלום מקוון האירוע מושלם בלי לסמן ששולם. מקדמה שאומתה משאירה את ההזמנה בתשלום חלקי עם יתרה גלויה. מידע חובה חסר או תשלום שלא אומת אינם נכנסים לייצור מאושר. קריאות הזמנה אנונימיות אינן חושפות הנחיות אירוע או פרטים אישיים."
         }
       }
     ]
@@ -15305,5 +15357,173 @@
     "status": "local-release-unverified",
     "preserveExisting": false,
     "procedureUpdatedAt": "2026-10-30"
+  },
+  {
+    "id": "orders-events",
+    "module": "orders",
+    "article": "orders/event-orders",
+    "title": {
+      "en": "Event orders from the existing order workflow",
+      "fr": "Commandes événement depuis le parcours habituel",
+      "he": "הזמנות אירוע במסלול ההזמנה הקיים"
+    },
+    "entry": {
+      "en": "Admin → Orders → New order. Requires the matching API event-order schema and compatible Admin, guest Web and POS versions. The prepared private checkout currently requires a configured Sumit account.",
+      "fr": "Admin → Commandes → Nouvelle commande. Nécessite le schéma événement de l’API et les versions Admin, Web client et POS compatibles. Le checkout privé préparé nécessite actuellement un compte Sumit configuré.",
+      "he": "ניהול → הזמנות → הזמנה חדשה. נדרשים סכמת אירועים תואמת ב־API וגרסאות ניהול, אתר לקוחות וקופה תואמות. התשלום הפרטי המוכן דורש כעת חשבון SUMIT מוגדר."
+    },
+    "selectors": {
+      "foodyserver": [
+        "internal/common/order_event.go",
+        "internal/orders/event_orders.go",
+        "internal/payment/event_checkout.go",
+        "internal/menu/event_settings.go",
+        "migrations/286_internal_event_orders.sql",
+        "cmd/server/main.go",
+        "internal/common/models.go",
+        "internal/orders/internal_checkout.go",
+        "internal/orders/kitchen_checks.go",
+        "internal/orders/production_sheet.go",
+        "internal/orders/service.go",
+        "internal/payment/handler.go",
+        "internal/payment/internal_checkout.go",
+        "internal/payment/reconcile.go",
+        "internal/payment/resolver.go",
+        "internal/printing/kitchen_release.go",
+        "internal/printing/render.go",
+        "internal/printing/service.go",
+        "internal/printing/ticket.go",
+        "internal/orders/handler.go",
+        "internal/support/corpus.json"
+      ],
+      "foodyadmin": [
+        "src/components/orders/EventOrder*.tsx",
+        "src/lib/orders/event-order-copy.ts",
+        "src/app/[restaurantId]/orders/new/page.tsx",
+        "src/app/[restaurantId]/orders/production/page.tsx",
+        "src/components/menu/publication/CarteEditor.tsx",
+        "src/components/orders/NewOrderCheckoutPanel.tsx",
+        "src/components/orders/NewOrderItemModal.tsx",
+        "src/components/orders/detail/OrderDetailHead.tsx",
+        "src/components/orders/detail/OrderDetailModal.tsx",
+        "src/lib/api.ts",
+        "src/lib/orders/draftLines.ts",
+        "src/lib/orders/orderDraft.ts",
+        "src/lib/orders/table-columns.tsx",
+        "src/components/orders/InternalOrderPayment.tsx",
+        "src/components/production/ProductionMatrix.tsx",
+        "src/components/production/ProductionMobile.tsx",
+        "src/components/orders/EventOrderBadge.tsx",
+        "src/components/orders/EventOrderFields.tsx",
+        "src/components/orders/EventOrderSummary.tsx"
+      ],
+      "foodyweb": [
+        "components/EventCheckoutFields.tsx",
+        "lib/event-order-copy.ts",
+        "app/order/checkout/CheckoutFlow.tsx",
+        "services/api.ts",
+        "components/ConfirmationPageClient.tsx",
+        "lib/types.ts",
+        "components/OrderExperience.tsx",
+        "store/useCartStore.ts"
+      ],
+      "foodypos": [
+        "lib/core/ui/event_order_badge.dart",
+        "lib/core/l10n/app_en.arb",
+        "lib/core/l10n/app_fr.arb",
+        "lib/core/l10n/app_he.arb",
+        "lib/features/kitchen/presentation/kitchen_ticket_card.dart",
+        "lib/features/orders/domain/order.dart",
+        "lib/features/orders/domain/order_item.dart",
+        "lib/features/orders/online/presentation/order_card_widget.dart",
+        "lib/features/orders/online/presentation/order_details_page.dart",
+        "lib/services/printing/receipt_bitmap_renderer.dart",
+        "lib/features/orders/presentation/widgets/order_manager_row.dart"
+      ]
+    },
+    "operations": [
+      {
+        "id": "setup",
+        "title": {
+          "en": "Classify the catering cartes",
+          "fr": "Identifier les cartes catering",
+          "he": "סיווג תפריטי הקייטרינג"
+        },
+        "instructions": {
+          "en": "In Items and menus → Cartes → the carte settings, enable Catering carte (internal). This immediately sets its internal classification without publishing the carte or enabling a web channel. Only menu.edit can change it. Items selected from that carte preselect Event / Catering in a new internal order. Review or enable this marker explicitly when composing from the library.",
+          "fr": "Dans Articles et cartes → Cartes → paramètres de la carte, activez Carte catering (usage interne). Ce réglage immédiat classe la carte sans la publier ni activer son canal web. Seule la permission menu.edit permet de le modifier. Les articles choisis depuis cette carte présélectionnent Événement / Catering dans une nouvelle commande interne. Vérifiez ou activez explicitement ce repère pour une composition depuis la bibliothèque.",
+          "he": "בפריטים ותפריטים → תפריטים → הגדרות התפריט הפעילו תפריט קייטרינג (לשימוש פנימי). ההגדרה המיידית מסווגת את התפריט בלי לפרסם אותו או להפעיל ערוץ אתר. נדרשת הרשאת menu.edit לשינוי. בחירת פריטים מהתפריט מסמנת מראש אירוע / קייטרינג בהזמנה פנימית חדשה. בהרכבה מספריית הפריטים בדקו או הפעילו את הסימון במפורש."
+        }
+      },
+      {
+        "id": "create",
+        "title": {
+          "en": "Prepare the event order",
+          "fr": "Préparer la commande événement",
+          "he": "הכנת הזמנת האירוע"
+        },
+        "instructions": {
+          "en": "Create the basket in Orders. Enable Event / Catering, choose pickup or delivery and a scheduled handover date. The production plan follows that date, including when staff prepare food earlier. Enter event name, guest count, event date/time, venue, contact and instructions as needed. Set whether guest count, event date and event time are required. Leave unknown answers for the recipient when using a private link. Allow event date/time changes only if intended; prefilled dates and times otherwise remain read-only. Event time and handover time can differ. Guest count does not change platter quantities or prices.",
+          "fr": "Composez le panier depuis Commandes. Activez Événement / Catering, choisissez retrait ou livraison puis une date de remise planifiée. Le plan de production suit cette échéance, même si l’équipe prépare les jours précédents. Renseignez selon le besoin nom, nombre de personnes, date et heure de l’événement, lieu, contact et consignes. Choisissez si personnes, date et heure sont obligatoires. Avec un lien privé, laissez les réponses inconnues au client. Autorisez la modification de date/heure seulement si souhaité ; sinon les valeurs préremplies restent en lecture seule. L’heure de l’événement peut différer de la remise. Le nombre de personnes ne modifie ni quantités de plateaux ni prix.",
+          "he": "הרכיבו סל בהזמנות. הפעילו אירוע / קייטרינג, בחרו איסוף או משלוח ותאריך מסירה מתוכנן. תוכנית הייצור נקבעת לפי מועד זה גם כשהצוות מכין בימים קודמים. הזינו לפי הצורך שם, מספר אורחים, תאריך ושעת האירוע, מקום, איש קשר והנחיות. בחרו אם מספר אורחים, תאריך ושעה הם חובה. בקישור פרטי השאירו מידע לא ידוע ללקוח. אפשרו שינוי תאריך ושעה רק אם התכוונתם לכך; אחרת הערכים שמולאו מראש נשארים לקריאה בלבד. שעת האירוע יכולה להיות שונה מהמסירה. מספר האורחים אינו משנה כמויות מגשים או מחירים."
+        }
+      },
+      {
+        "id": "payment",
+        "title": {
+          "en": "Choose the collection terms",
+          "fr": "Choisir les conditions de règlement",
+          "he": "בחירת תנאי תשלום"
+        },
+        "instructions": {
+          "en": "Choose the existing Foody link or supported hosted-card action. Configure no online payment, full payment or a deposit in a fixed amount or percentage, and optionally a balance due date. Review the total, initial collection and remaining balance. A deposit must be positive and below the total. Card guarantees are not available in this Sumit integration; do not promise that saving a card reserves funds. For collection outside this link, record only money actually received.",
+          "fr": "Choisissez le lien Foody existant ou l’action carte hébergée compatible. Configurez aucun paiement en ligne, paiement intégral ou acompte en montant fixe ou pourcentage, puis éventuellement la date limite du solde. Vérifiez total, montant à payer maintenant et solde. L’acompte doit être positif et inférieur au total. L’empreinte bancaire est indisponible dans cette intégration Sumit ; sauvegarder une carte ne réserve pas des fonds. Pour un règlement hors lien, enregistrez uniquement l’argent effectivement reçu.",
+          "he": "בחרו בקישור Foody הקיים או בפעולת תשלום כרטיס מתארחת נתמכת. הגדירו ללא תשלום מקוון, תשלום מלא או מקדמה בסכום קבוע או באחוז, ואפשר להוסיף מועד אחרון ליתרה. בדקו את הסכום הכולל, הסכום עכשיו והיתרה. מקדמה חייבת להיות חיובית ונמוכה מהסכום הכולל. תפיסת מסגרת אינה זמינה בחיבור SUMIT זה; שמירת כרטיס אינה שומרת כספים. לתשלום מחוץ לקישור רשמו רק כסף שהתקבל בפועל."
+        }
+      },
+      {
+        "id": "client",
+        "title": {
+          "en": "Complete the private customer link",
+          "fr": "Finaliser par le lien client privé",
+          "he": "השלמה בקישור הלקוח הפרטי"
+        },
+        "instructions": {
+          "en": "Share the private Foody order link with the intended customer. They review the fixed basket, enter their contact and any required event answers, then confirm or open the reviewed Sumit payment. No online payment finalizes the event without marking it paid. A successful deposit leaves the order partially paid and its balance visible. A missing required answer or unverified payment keeps the event out of confirmed production. Event instructions and personal data are not exposed by anonymous order reads.",
+          "fr": "Partagez le lien privé Foody au client concerné. Il vérifie le panier fixé, renseigne ses coordonnées et les informations événement demandées puis confirme ou ouvre le paiement Sumit revu. Aucun paiement en ligne finalise l’événement sans le marquer payé. Un acompte confirmé laisse la commande partiellement payée et son solde visible. Une information obligatoire manquante ou un paiement non vérifié maintient l’événement hors de la production confirmée. Les lectures anonymes de commande n’exposent ni consignes événement ni données personnelles.",
+          "he": "שתפו את קישור Foody הפרטי עם הלקוח המיועד. הלקוח בודק את הסל הקבוע, משלים פרטי קשר ופרטי אירוע נדרשים ואז מאשר או פותח את תשלום SUMIT שנבדק. ללא תשלום מקוון האירוע מושלם בלי לסמן ששולם. מקדמה שאומתה משאירה את ההזמנה בתשלום חלקי עם יתרה גלויה. מידע חובה חסר או תשלום שלא אומת אינם נכנסים לייצור מאושר. קריאות הזמנה אנונימיות אינן חושפות הנחיות אירוע או פרטים אישיים."
+        }
+      },
+      {
+        "id": "production",
+        "title": {
+          "en": "Plan by carte and handover date",
+          "fr": "Planifier par carte et échéance",
+          "he": "תכנון לפי תפריט ומועד מסירה"
+        },
+        "instructions": {
+          "en": "Open Production on the handover date, even if cooking earlier. By carte shows separate sheets and quantities with quick links to each section. A mixed-carte order contributes only its matching lines to each section. Historical or library lines without a unique carte appear under Other cartes instead of being duplicated. The order marker is also visible in staff order details, POS and compatible kitchen tickets. Keep Bassari and Halavi sections and their totals separate.",
+          "fr": "Ouvrez Production sur la date de remise, même pour cuisiner avant. Par carte affiche des tableaux et quantités distincts avec des liens rapides vers les sections. Une commande de plusieurs cartes contribue seulement avec les lignes correspondantes dans chaque section. Les lignes historiques ou de bibliothèque sans carte unique restent dans Autres cartes au lieu d’être dupliquées. Le repère apparaît aussi dans le détail staff, le POS et les tickets cuisine compatibles. Gardez les sections et totaux Bassari et Halavi séparés.",
+          "he": "פתחו ייצור לפי תאריך המסירה גם אם מכינים קודם. לפי תפריט מציג טבלאות וכמויות נפרדות וקישורים מהירים לסעיפים. הזמנה מכמה תפריטים תורמת בכל סעיף רק את השורות המתאימות. שורות היסטוריות או מהספרייה שאין להן תפריט יחיד נשארות בתפריטים אחרים במקום להיספר פעמיים. הסימון מופיע גם בפרטי הזמנה לצוות, בקופה ובכרטיסי מטבח תואמים. שמרו על הפרדת סעיפים וסיכומים של בשרי וחלבי."
+        }
+      },
+      {
+        "id": "recovery",
+        "title": {
+          "en": "Verify a payment and collect the balance",
+          "fr": "Vérifier le paiement et encaisser le solde",
+          "he": "אימות תשלום וגביית יתרה"
+        },
+        "instructions": {
+          "en": "A repeated payment action resumes the existing hosted page and must not create a new charge. To recover a missing Sumit return, open the saved event order with payments.manage, expand Verify Sumit payment, enter the transaction number from Sumit and verify. Foody checks the exact order reference, amount and currency without charging again; a mismatch remains blocked. Use the existing balance collection action for the verified remainder. Pending or uncertain payment attempts block conflicting order edits or manual collection. Refresh the saved order after verification. An expired or cancelled order requires staff review; do not create a replacement payment until the existing outcome is known.",
+          "fr": "Une nouvelle tentative reprend la même page hébergée sans créer un autre débit. Pour récupérer un retour Sumit manquant, ouvrez la commande événement enregistrée avec payments.manage, développez Vérifier un paiement Sumit, saisissez le numéro de transaction lu dans Sumit puis vérifiez. Foody contrôle référence exacte, montant et devise sans débiter ; une divergence reste bloquée. Utilisez l’action existante d’encaissement du solde pour le reste vérifié. Les tentatives en cours ou incertaines bloquent les modifications et encaissements manuels concurrents. Actualisez la commande après vérification. Une commande expirée ou annulée nécessite une revue staff ; ne créez pas de paiement de remplacement avant de connaître le résultat existant.",
+          "he": "ניסיון נוסף חוזר לאותו עמוד תשלום בלי ליצור חיוב נוסף. לשחזור חזרה חסרה מ־SUMIT פתחו את הזמנת האירוע השמורה עם payments.manage, הרחיבו בדיקת תשלום SUMIT, הזינו את מספר העסקה מתוך SUMIT ובדקו. Foody מאמתת שיוך מדויק, סכום ומטבע בלי לחייב; אי התאמה נשארת חסומה. השתמשו בפעולת גביית היתרה הקיימת עבור היתרה שאומתה. ניסיונות בתהליך או לא ודאיים חוסמים שינויים וגבייה ידנית מתחרה. רעננו את ההזמנה אחרי הבדיקה. הזמנה שפגה או בוטלה דורשת בדיקת צוות; אין ליצור תשלום חלופי לפני בירור התוצאה הקיימת."
+        }
+      }
+    ],
+    "audience": "public",
+    "status": "available",
+    "preserveExisting": false,
+    "procedureUpdatedAt": "2026-11-02"
   }
 ]
