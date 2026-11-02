@@ -406,6 +406,21 @@ state, permission or physical device was exercised.
 
 ## CI enforcement in every versioned service
 
+### Local scheduled-acceptance correction (2 November 2026)
+
+This preparation reviews the API's restored scheduled-order acceptance descriptor,
+the unchanged Admin consumer with an added contract regression, and the FR/HE/EN
+order guides. API, Admin and Landing source footprints are checked; the Web, POS
+and Backoffice inventory snapshots remain their previously recorded evidence.
+The existing acceptance writer, restaurant workflow, scheduler, payment guards and
+fulfillment dates are retained. The API's embedded corpus matches the same public
+release. No payment-provider or shared-model change is introduced.
+
+Local preparation used `WORKSPACE`; release contracts pin the reviewed immutable
+Landing commit before remote CI or PR readiness. Then
+verify the corrected API in development and publish the guides with its approved
+promotion. This local review does not confirm production deployment.
+
 ### Cross-session release review (25 October 2026)
 
 The coordinated release scans the current integration candidates of all six

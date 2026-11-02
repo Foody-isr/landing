@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-30'
+updatedAt: '2026-11-02'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -229,3 +229,9 @@ Le contrat end-of-day v1 et la migration additive 285 introduisent begin, curren
 ## Évaluer un panier avec une heure simulée privée
 
 Les endpoints authentifiés GET/POST /api/v1/delivery/ordering-simulation partagent les résolveurs de couverture et de calendrier existants. GET retourne le fuseau effectif du restaurant et l’instant serveur sans cache ; POST reçoit une minute locale ordered_at et le panier actuel. Les accès aux réglages, au menu et à la gestion des commandes sont requis dans le périmètre du restaurant ; appartenance des articles, limites de requête/quantités et activation du service sont vérifiées. Les minutes inexistantes ou répétées au changement d’heure sont refusées. Les requêtes publiques de livraison/calendrier et les commandes réelles n’acceptent jamais cette heure forcée. Les règles et le stock prêt actuels servent d’hypothèses sans reconstituer l’historique ; le test ne crée aucune commande, réservation de stock, opération de paiement ou notification.
+
+<span id="scheduled-acceptance-capability" />
+
+## Compatibilité de l’acceptation programmée
+
+Le descripteur lifecycle_v2.actions autorise accept pour scheduled comme pour pending_review, avec orders.manage et sans settlement held. Les blocages de checkout préparé restent appliqués ensuite. Aucun nouveau writer : POST /orders/:id/accept appelle toujours AcceptOrderWithWorkflow et setStatus, qui gardent les contrôles, notifications et raccourcis propres au restaurant. Aucun envoi automatique avant date n’est ajouté ; seule une action explicite peut avancer la commande. Date, créneau et paiement restent inchangés. Déployer l’API corrigée en développement et vérifier les workflows séparé et guidé avant toute promotion approuvée. Aucun changement de schéma ou de client n’est requis pour les clients qui suivent déjà les capacités. La documentation de cette correction doit être publiée avec sa version API. Pour scheduled uniquement, payment_status=pending garde accept non autorisé ; pending_review conserve son comportement existant.

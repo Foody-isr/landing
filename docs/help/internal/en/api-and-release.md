@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-30'
+updatedAt: '2026-11-02'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -229,3 +229,9 @@ The end-of-day v1 contract and additive migration 285 add begin, current, ID rea
 ## Evaluate a basket with a private simulated clock
 
 The authenticated GET/POST /api/v1/delivery/ordering-simulation endpoints share existing coverage and calendar resolvers. GET returns the effective restaurant timezone and current server instant without caching; POST accepts a restaurant-local ordered_at minute and current basket. Settings access, menu view and order management are required under restaurant scope; item ownership, payload/quantity bounds and service activation are validated. Nonexistent or repeated daylight-saving minutes are rejected. Public delivery/scheduling queries and real checkout never accept this clock override. Current rules and ready stock are hypothetical inputs, not historical reconstruction; no order, stock reservation, payment or notification is created.
+
+<span id="scheduled-acceptance-capability" />
+
+## Scheduled acceptance compatibility
+
+The lifecycle_v2.actions descriptor permits accept for scheduled as well as pending_review, with orders.manage and without held settlement. Prepared-checkout holds still apply afterward. No new writer is introduced: POST /orders/:id/accept still calls AcceptOrderWithWorkflow and setStatus, retaining restaurant-specific guards, notifications and shortcuts. No automatic early dispatch is added; only explicit staff action can advance the order. Date, slot and payment stay unchanged. Deploy the corrected API to development and verify separate and guided workflows before an approved promotion. No schema or client change is needed for clients already following capabilities. Publish the correction guides with that API release. For scheduled only, payment_status=pending keeps accept denied; pending_review retains its existing behavior.

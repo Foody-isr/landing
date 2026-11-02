@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-10-31.
+Révision du relevé : 2026-11-02.
 
-106 fiches de fonctionnalités, 846 procédures/sous-fonctionnalités, dont 97 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2305 fichiers applicatifs et 2115 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+106 fiches de fonctionnalités, 850 procédures/sous-fonctionnalités, dont 97 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2321 fichiers applicatifs et 2122 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,10 +10,10 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 617 | 890 | d42c5a6d7dd2 ; versioned |
-| foodyadmin | 784 | 811 | c4e22b79bcc1 ; versioned |
+| foodyserver | 617 | 890 | 19b9b50c3e1a ; versioned |
+| foodyadmin | 784 | 811 | 45d6c6c9a7b0 ; versioned |
 | foodyweb | 351 | 173 | a2bd6f6a4237 ; versioned |
-| foodylanding | 136 | 23 | 12441cd4e90c ; versioned |
+| foodylanding | 156 | 31 | f69e31070dfe ; versioned |
 | foodypos | 373 | 168 | e643e1eaf83c ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
 
@@ -160,6 +160,7 @@ Identifiant : `customers-profiles`. Public : public. Disponibilité : available.
 - [Fusionner des doublons](../../src/content/help/fr/customers/managing-customers.mdx#merge)
 - [Gérer les téléphones et choisir le numéro WhatsApp](../../src/content/help/fr/customers/managing-customers.mdx#phone-corrections)
 - [Utiliser les espèces avec garantie bancaire facultative](../../src/content/help/fr/customers/managing-customers.mdx#stancer-cash-guarantee)
+- [Résoudre un enregistrement bloqué par un téléphone](../../src/content/help/fr/customers/managing-customers.mdx#save-validation)
 
 ## marketing
 
@@ -517,6 +518,7 @@ Identifiant : `orders-managing-orders`. Public : public. Disponibilité : availa
 - [Séparer paiement, préparation et remise](../../src/content/help/fr/orders/managing-orders.mdx#order-lifecycle-guide)
 - [Finaliser une commande interne](../../src/content/help/fr/orders/managing-orders.mdx#internal-order-finalization)
 - [Vérifier les confirmations indépendantes](../../src/content/help/fr/orders/managing-orders.mdx#independent-lifecycle-confirmations)
+- [Accepter une commande programmée avant sa date](../../src/content/help/fr/orders/managing-orders.mdx#accept-scheduled-order)
 
 ### [Types de commandes et remise](../../src/content/help/fr/orders/order-types.mdx)
 
@@ -688,6 +690,7 @@ Identifiant : `order-lifecycle`. Public : public. Disponibilité : available. Se
 - [Clôturer la bonne portée commerciale](../../src/content/help/fr/orders/payment-preparation-and-handoff.mdx#explicit-commercial-closure)
 - [Régler le suivi pour les prochaines ventes](../../src/content/help/fr/orders/payment-preparation-and-handoff.mdx#frozen-tracking-policy)
 - [Reprendre une confirmation incertaine](../../src/content/help/fr/orders/payment-preparation-and-handoff.mdx#uncertain-operation-recovery)
+- [Accepter une commande programmée avant sa date](../../src/content/help/fr/orders/payment-preparation-and-handoff.mdx#scheduled-acceptance)
 
 ### [Préparer une commande interne et encaisser avec Sumit](../../src/content/help/fr/orders/internal-sumit-checkout.mdx)
 
@@ -1402,6 +1405,7 @@ Identifiant : `platform-api`. Public : internal. Disponibilité : available. Ser
 - [Contrat additif des confirmations de commande](internal/fr/api-and-release.md#order-lifecycle-v2-contract)
 - [Publier le contrat EOD avant le POS](internal/fr/api-and-release.md#end-of-day-protocol)
 - [Évaluer un panier avec une heure simulée privée](internal/fr/api-and-release.md#ordering-simulation-clock)
+- [Compatibilité de l’acceptation programmée](internal/fr/api-and-release.md#scheduled-acceptance-capability)
 
 ### [Aperçus internes et alias de routes](internal/fr/design-previews.md)
 

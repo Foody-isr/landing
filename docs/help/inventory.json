@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-11-01",
+  "reviewedAt": "2026-11-02",
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "e1dc40837acc1f0ccf3742ea6854e3a025a070f3",
+      "sourceCommit": "19b9b50c3e1abfc4bcdc42468c95eb2c6a2609cc",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "a04842545e6c1ec32b4ab98c003ffac9c0ef10ee1f0a598bd9094ce5776baa67",
+      "sourceSnapshot": "507d97ab5d347fe0b3169d5f3ee02d08ce5b671cb0bcbc7d01ea6638c6bbadb2",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -3073,7 +3073,7 @@
           ]
         },
         "internal/orders/order_lifecycle_v2_handoff.go": {
-          "sha256": "7cf8478c2998ae0f8bcc7a208242632a0e2e4498618fa3e9485dd07fdf8140f3",
+          "sha256": "a5d62ee3069c959ce102b8e57bd88fbcbf202d5a300a4f0baa3af93b33aa4726",
           "features": [
             "orders-managing-orders",
             "order-types",
@@ -4714,7 +4714,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "93b545e0d77fe83232177e53dcefff24ed212955875cf71b62046c638ab2d4ce",
+          "sha256": "5d65a18d842a36e7029cc3e9e18789e4f8ceeed19b8c541790a21e679c361462",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -5064,7 +5064,7 @@
     },
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "735d8bb2676b2764005b3147e178b7b51ff2de95",
+      "sourceCommit": "45d6c6c9a7b03560994867fa2ffa9a36f2135b5e",
       "releaseStatus": "versioned",
       "sourceSnapshot": "8f2a74671bf20655cc4e9a3f5f4041227439111f915794b0e6690299eaeeff91",
       "workingTreeHasChanges": true,
@@ -12957,10 +12957,10 @@
     },
     "foodylanding": {
       "repository": "https://github.com/Foody-isr/landing",
-      "sourceCommit": "74844053322189a52e33980812d9f9809f041b1a",
+      "sourceCommit": "f69e31070dfe8b639b2759abd40609195272e7ee",
       "releaseStatus": "versioned",
       "sourceSnapshot": "08742d24c8c48ea826f437dfddae3037b233036cb86481153f742fd69c52cc75",
-      "workingTreeHasChanges": false,
+      "workingTreeHasChanges": true,
       "sourceFiles": {
         "src/app/[lang]/about/page.tsx": {
           "sha256": "ed592053bdc8472e8d3fede74c08fe0cda7ebf2aa6226350676b16fa07ef2c39",
@@ -26441,12 +26441,25 @@
             "en": "Before quantity handoff or closure, review the exact scope and facts separately from payment. See [the full procedure](/en/help/orders/payment-preparation-and-handoff).",
             "he": "לפני מסירה לפי כמות או סגירה בדקו את ההיקף המדויק ואת העובדות בנפרד מתשלום. ראו [את ההליך המלא](/he/help/orders/payment-preparation-and-handoff)."
           }
+        },
+        {
+          "id": "accept-scheduled-order",
+          "title": {
+            "fr": "Accepter une commande programmée avant sa date",
+            "en": "Accept a scheduled order before its date",
+            "he": "אישור הזמנה מתוזמנת לפני המועד"
+          },
+          "instructions": {
+            "fr": "Dans Admin → Commandes, ouvrez la commande programmée et vérifiez sa date, son créneau et son paiement. Avec orders.manage, choisissez Accepter. Le workflow du restaurant détermine le résultat : acceptation seule, puis Envoyer en cuisine séparément, ou envoi en cuisine et ajout au plan si ces raccourcis sont configurés. Cette action explicite conserve la date et le créneau de retrait ou de livraison ; elle ne marque pas la commande payée et ne prouve ni préparation terminée ni remise. Une commande manuelle remise à 0 ₪ peut suivre ce parcours sans enregistrer un encaissement fictif. Les paiements préparés non confirmés et les pesées en attente gardent leurs blocages. Le plan de production et le statut de préparation sont distincts. Si Accepter reste absent, rechargez la fiche et faites vérifier les droits, les blocages et la version API ; ne changez pas le créneau ni le paiement pour contourner un bouton manquant. Pour une commande programmée dont le paiement est En attente, Accepter reste masqué jusqu’à la confirmation. Non payé pour une commande manuelle ou en espèces est un état distinct.",
+            "en": "In Admin → Orders, open the scheduled order and review its date, slot and payment. With orders.manage, choose Accept. The restaurant workflow determines the result: acceptance only followed by a separate Send to kitchen action, or kitchen dispatch and production-plan inclusion when those shortcuts are configured. This explicit action preserves the pickup or delivery date and slot; it does not mark the order paid or prove readiness or handoff. A manual order discounted to 0 ₪ can follow this path without recording a fictitious collection. Unconfirmed prepared payments and pending weight settlement keep their holds. Production-plan inclusion and preparation status remain separate. If Accept is still missing, reload the detail and have permissions, holds and the API version checked; do not change the slot or payment to work around a missing button. For a scheduled order whose payment is Pending, Accept stays hidden until confirmation. Unpaid for a manual or cash order is a separate state.",
+            "he": "ב־Admin ← הזמנות פתחו את ההזמנה המתוזמנת ובדקו את התאריך, החלון והתשלום. עם orders.manage בחרו אישור. תהליך העבודה של המסעדה קובע את התוצאה: אישור בלבד ולאחריו שליחה נפרדת למטבח, או שליחה למטבח והוספה לתוכנית הייצור כאשר קיצורים אלה מוגדרים. הפעולה המפורשת שומרת על תאריך וחלון האיסוף או המשלוח; היא אינה מסמנת את ההזמנה כשולמה ואינה מעידה שההכנה או המסירה הושלמו. הזמנה ידנית שהנחה הורידה את סכומה ל־0 ₪ יכולה להתקדם בלי לרשום גבייה פיקטיבית. תשלום מוכן שטרם אושר ושקילה ממתינה שומרים על החסימות שלהם. הכללה בתוכנית הייצור ומצב ההכנה הם דברים נפרדים. אם האישור עדיין חסר, טענו מחדש ובקשו לבדוק הרשאות, חסימות וגרסת API; אין לשנות את החלון או התשלום כדי לעקוף כפתור חסר. בהזמנה מתוזמנת עם תשלום במצב ממתין, האישור נשאר מוסתר עד לאישור התשלום. מצב לא שולם בהזמנה ידנית או במזומן הוא מצב נפרד."
+          }
         }
       ],
       "audience": "public",
       "status": "available",
       "preserveExisting": true,
-      "procedureUpdatedAt": "2026-10-29",
+      "procedureUpdatedAt": "2026-11-02",
       "updatedAt": "2026-10-20",
       "evidence": [
         {
@@ -29532,9 +29545,9 @@
             "he": "הזמנות מתוזמנות וסדרות"
           },
           "instructions": {
-            "en": "Review ordering windows, cutoff and fulfillment dates. With a batch calendar, use the restaurant-defined cycle instead of inventing a free date. Scheduled orders require a date, including today; the label does not mean future dates only. Restaurant service/preparation rules remain common. Each delivery zone separately defines advance-order and same-day time choice. Staff may test the saved basket, address and receiving date in Orders & availability → Simulate an order without creating a new order.",
-            "fr": "Vérifiez ouverture des commandes, clôture et dates de remise. Avec un calendrier par séries, utilisez le cycle défini par le restaurant plutôt qu’une date libre. Une commande planifiée impose une date, y compris aujourd’hui : ce terme ne signifie pas seulement une date future. Les règles de service et de préparation du restaurant restent communes. Chaque zone de livraison définit séparément le choix de l’horaire à l’avance et le jour même. L’équipe peut tester panier, adresse et date de réception avec les réglages enregistrés dans Commandes et disponibilité → Simuler une commande, sans créer de commande.",
-            "he": "בדקו חלון הזמנה, מועד סגירה ותאריכי מסירה. בלוח סדרות יש להשתמש במחזור שהמסעדה הגדירה ולא בתאריך חופשי. הזמנה מתוזמנת מחייבת תאריך, גם להיום; המונח אינו מוגבל לתאריך עתידי. כללי השירות וההכנה של המסעדה נשארים משותפים. כל אזור משלוח מגדיר בנפרד בחירת שעה להזמנה מראש ולאותו יום. הצוות יכול לבדוק סל, כתובת ותאריך קבלה לפי ההגדרות השמורות בהזמנות וזמינות → הדמיית הזמנה, ללא יצירת הזמנה."
+            "en": "Review ordering windows, cutoff and fulfillment dates. With a batch calendar, use the restaurant-defined cycle instead of inventing a free date. Scheduled orders require a date, including today; the label does not mean future dates only. Restaurant service/preparation rules remain common. Each delivery zone separately defines advance-order and same-day time choice. Staff may test the saved basket, address and receiving date in Orders & availability → Simulate an order without creating a new order.\n\nAuthorized staff can explicitly accept a scheduled order before its slot. The restaurant workflow retains its stages; the date and slot stay unchanged. See [the acceptance procedure](/en/help/orders/managing-orders#accept-scheduled-order).",
+            "fr": "Vérifiez ouverture des commandes, clôture et dates de remise. Avec un calendrier par séries, utilisez le cycle défini par le restaurant plutôt qu’une date libre. Une commande planifiée impose une date, y compris aujourd’hui : ce terme ne signifie pas seulement une date future. Les règles de service et de préparation du restaurant restent communes. Chaque zone de livraison définit séparément le choix de l’horaire à l’avance et le jour même. L’équipe peut tester panier, adresse et date de réception avec les réglages enregistrés dans Commandes et disponibilité → Simuler une commande, sans créer de commande.\n\nUne commande programmée peut être acceptée explicitement avant son créneau par le personnel autorisé. Le workflow du restaurant conserve ses étapes ; la date et le créneau restent inchangés. Voir [la procédure d’acceptation](/fr/help/orders/managing-orders#accept-scheduled-order).",
+            "he": "בדקו חלון הזמנה, מועד סגירה ותאריכי מסירה. בלוח סדרות יש להשתמש במחזור שהמסעדה הגדירה ולא בתאריך חופשי. הזמנה מתוזמנת מחייבת תאריך, גם להיום; המונח אינו מוגבל לתאריך עתידי. כללי השירות וההכנה של המסעדה נשארים משותפים. כל אזור משלוח מגדיר בנפרד בחירת שעה להזמנה מראש ולאותו יום. הצוות יכול לבדוק סל, כתובת ותאריך קבלה לפי ההגדרות השמורות בהזמנות וזמינות → הדמיית הזמנה, ללא יצירת הזמנה.\n\nצוות מורשה יכול לאשר במפורש הזמנה מתוזמנת לפני החלון שלה. תהליך המסעדה שומר על שלביו והתאריך והחלון אינם משתנים. ראו [תהליך האישור](/he/help/orders/managing-orders#accept-scheduled-order)."
           }
         },
         {
@@ -29789,7 +29802,7 @@
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-10-30",
+      "procedureUpdatedAt": "2026-11-02",
       "updatedAt": "2026-10-20",
       "evidence": [
         {
@@ -44532,6 +44545,10 @@
         },
         {
           "service": "foodylanding",
+          "file": "src/app/[lang]/guides/restaurant-inventory-israel/page.tsx"
+        },
+        {
+          "service": "foodylanding",
           "file": "src/app/[lang]/guides/restaurant-pos-israel/page.tsx"
         },
         {
@@ -44632,6 +44649,10 @@
         },
         {
           "service": "foodylanding",
+          "file": "src/app/[lang]/tools/supplier-variance-calculator/page.tsx"
+        },
+        {
+          "service": "foodylanding",
           "file": "src/components/marketing/AcquisitionWorkflow.tsx"
         },
         {
@@ -44688,6 +44709,10 @@
         },
         {
           "service": "foodylanding",
+          "file": "src/components/marketing/SupplierVarianceCalculator.tsx"
+        },
+        {
+          "service": "foodylanding",
           "file": "src/lib/marketing/acquisition.ts"
         },
         {
@@ -44732,6 +44757,10 @@
         },
         {
           "service": "foodylanding",
+          "file": "src/lib/marketing/inventory-guide.ts"
+        },
+        {
+          "service": "foodylanding",
           "file": "src/lib/marketing/maps-offers.json"
         },
         {
@@ -44761,6 +44790,14 @@
         {
           "service": "foodylanding",
           "file": "src/lib/marketing/solutions.ts"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/lib/marketing/supplier-variance-copy.ts"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/lib/marketing/supplier-variance.ts"
         },
         {
           "service": "foodylanding",
@@ -46079,12 +46116,25 @@
             "fr": "Les endpoints authentifiés GET/POST /api/v1/delivery/ordering-simulation partagent les résolveurs de couverture et de calendrier existants. GET retourne le fuseau effectif du restaurant et l’instant serveur sans cache ; POST reçoit une minute locale ordered_at et le panier actuel. Les accès aux réglages, au menu et à la gestion des commandes sont requis dans le périmètre du restaurant ; appartenance des articles, limites de requête/quantités et activation du service sont vérifiées. Les minutes inexistantes ou répétées au changement d’heure sont refusées. Les requêtes publiques de livraison/calendrier et les commandes réelles n’acceptent jamais cette heure forcée. Les règles et le stock prêt actuels servent d’hypothèses sans reconstituer l’historique ; le test ne crée aucune commande, réservation de stock, opération de paiement ou notification.",
             "he": "נקודות GET/POST המאומתות /api/v1/delivery/ordering-simulation משתמשות בפותרי הכיסוי ולוחות הזמנים הקיימים. GET מחזיר את אזור הזמן בפועל של המסעדה ואת שעת השרת ללא מטמון; POST מקבל דקה מקומית ordered_at וסל נוכחי. נדרשות הרשאות הגדרות, תפריט וניהול הזמנות בהיקף המסעדה; נבדקים שיוך פריטים, מגבלות בקשה וכמויות והפעלת השירות. דקות חסרות או חוזרות במעבר שעון נדחות. שאילתות ציבוריות והזמנות אמיתיות אינן מקבלות שינוי שעון זה. הכללים והמלאי המוכן הנוכחיים הם נתוני הדמיה ולא שחזור היסטוריה; לא נוצרים הזמנה, שריון מלאי, תשלום או הודעה."
           }
+        },
+        {
+          "id": "scheduled-acceptance-capability",
+          "title": {
+            "fr": "Compatibilité de l’acceptation programmée",
+            "en": "Scheduled acceptance compatibility",
+            "he": "תאימות אישור הזמנה מתוזמנת"
+          },
+          "instructions": {
+            "fr": "Le descripteur lifecycle_v2.actions autorise accept pour scheduled comme pour pending_review, avec orders.manage et sans settlement held. Les blocages de checkout préparé restent appliqués ensuite. Aucun nouveau writer : POST /orders/:id/accept appelle toujours AcceptOrderWithWorkflow et setStatus, qui gardent les contrôles, notifications et raccourcis propres au restaurant. Aucun envoi automatique avant date n’est ajouté ; seule une action explicite peut avancer la commande. Date, créneau et paiement restent inchangés. Déployer l’API corrigée en développement et vérifier les workflows séparé et guidé avant toute promotion approuvée. Aucun changement de schéma ou de client n’est requis pour les clients qui suivent déjà les capacités. La documentation de cette correction doit être publiée avec sa version API. Pour scheduled uniquement, payment_status=pending garde accept non autorisé ; pending_review conserve son comportement existant.",
+            "en": "The lifecycle_v2.actions descriptor permits accept for scheduled as well as pending_review, with orders.manage and without held settlement. Prepared-checkout holds still apply afterward. No new writer is introduced: POST /orders/:id/accept still calls AcceptOrderWithWorkflow and setStatus, retaining restaurant-specific guards, notifications and shortcuts. No automatic early dispatch is added; only explicit staff action can advance the order. Date, slot and payment stay unchanged. Deploy the corrected API to development and verify separate and guided workflows before an approved promotion. No schema or client change is needed for clients already following capabilities. Publish the correction guides with that API release. For scheduled only, payment_status=pending keeps accept denied; pending_review retains its existing behavior.",
+            "he": "המתאר lifecycle_v2.actions מאפשר accept במצבי scheduled וגם pending_review עם orders.manage וללא settlement held. חסימות תשלום מוכן ממשיכות לחול לאחר מכן. אין נתיב כתיבה חדש: POST /orders/:id/accept ממשיך לקרוא ל־AcceptOrderWithWorkflow ול־setStatus ולשמור על הבדיקות, ההודעות והקיצורים של כל מסעדה. אין שליחה מוקדמת אוטומטית; רק פעולה מפורשת של הצוות יכולה לקדם את ההזמנה. התאריך, החלון והתשלום אינם משתנים. יש לפרוס תחילה בפיתוח ולבדוק תהליכים נפרדים ומודרכים לפני קידום מאושר. אין צורך בשינוי סכמה או לקוח שכבר משתמש ביכולות. יש לפרסם את התיעוד יחד עם גרסת ה־API. רק במצב scheduled, כאשר payment_status=pending הפעולה accept נשארת חסומה; ההתנהגות הקיימת של pending_review נשמרת."
+          }
         }
       ],
       "audience": "internal",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-10-30",
+      "procedureUpdatedAt": "2026-11-02",
       "updatedAt": "2026-10-28",
       "evidence": [
         {
@@ -51013,6 +51063,10 @@
         },
         {
           "service": "foodylanding",
+          "file": "src/lib/marketing/inventory-guide.ts"
+        },
+        {
+          "service": "foodylanding",
           "file": "src/lib/marketing/maps-offers.json"
         },
         {
@@ -51042,6 +51096,14 @@
         {
           "service": "foodylanding",
           "file": "src/lib/marketing/solutions.ts"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/lib/marketing/supplier-variance-copy.ts"
+        },
+        {
+          "service": "foodylanding",
+          "file": "src/lib/marketing/supplier-variance.ts"
         },
         {
           "service": "foodylanding",
@@ -52179,12 +52241,25 @@
             "en": "After a lost response or connection error during handoff or closure, retain the pending operation and check its result. Missing confirmation does not prove failure. Do not create a new action for the same units. Recovery checks the original operation ID; an offered retry preserves the same intent and ID. If the employee, restaurant or scope changes, return to the original context. If units or the order have changed, reload and review before a new action. Payment operations retain their own recovery flow.",
             "he": "לאחר אובדן תשובה או שגיאת חיבור במהלך מסירה או סגירה, שמרו את הפעולה הממתינה ובדקו את תוצאתה. היעדר אישור אינו מוכיח כישלון. אל תיצרו פעולה חדשה לאותן יחידות. ההתאוששות בודקת את מזהה הפעולה המקורי; ניסיון חוזר שמוצע שומר את אותה כוונה ואת אותו מזהה. אם העובד, המסעדה או ההיקף השתנו, חזרו להקשר המקורי. אם היחידות או ההזמנה השתנו, רעננו ובדקו לפני פעולה חדשה. פעולות תשלום שומרות על תהליך התאוששות משלהן."
           }
+        },
+        {
+          "id": "scheduled-acceptance",
+          "title": {
+            "fr": "Accepter une commande programmée avant sa date",
+            "en": "Accept a scheduled order before its date",
+            "he": "אישור הזמנה מתוזמנת לפני המועד"
+          },
+          "instructions": {
+            "fr": "Pour une commande programmée, Accepter reste une action explicite disponible avant le créneau, sous réserve des droits et blocages. Le workflow du restaurant décide si elle est seulement acceptée ou envoyée en cuisine. Le paiement, la date et le créneau restent enregistrés séparément ; une remise totale n’est pas un encaissement. Voir [accepter une commande programmée](/fr/help/orders/managing-orders#accept-scheduled-order).",
+            "en": "For a scheduled order, Accept remains an explicit action before its slot, subject to permissions and holds. The restaurant workflow determines whether it is accepted only or dispatched to the kitchen. Payment, date and slot stay recorded separately; a full discount is not a collection. See [accept a scheduled order](/en/help/orders/managing-orders#accept-scheduled-order).",
+            "he": "בהזמנה מתוזמנת אישור נשאר פעולה מפורשת לפני החלון, בכפוף להרשאות ולחסימות. תהליך המסעדה קובע אם ההזמנה רק מאושרת או נשלחת למטבח. התשלום, התאריך והחלון נשארים נפרדים; הנחה מלאה אינה גבייה. ראו [אישור הזמנה מתוזמנת](/he/help/orders/managing-orders#accept-scheduled-order)."
+          }
         }
       ],
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-10-29",
+      "procedureUpdatedAt": "2026-11-02",
       "evidence": [
         {
           "service": "foodyserver",
@@ -98178,7 +98253,7 @@
   "coverage": {
     "sharedRuntimeFiles": 399,
     "features": 106,
-    "operations": 847,
+    "operations": 850,
     "sourceFiles": 2321,
     "surfaces": 2122,
     "unclassifiedRoutes": []
