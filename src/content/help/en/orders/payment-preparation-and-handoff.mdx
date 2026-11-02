@@ -7,7 +7,7 @@ apps: both
 tags:
   - orders
   - order-lifecycle
-updatedAt: '2026-10-29'
+updatedAt: '2026-11-02'
 featureId: order-lifecycle
 audience: public
 releaseStatus: available
@@ -61,3 +61,9 @@ In FoodyAdmin, open POS fulfillment methods and edit the relevant method. Config
 ## Recover an unconfirmed operation
 
 After a lost response or connection error during handoff or closure, retain the pending operation and check its result. Missing confirmation does not prove failure. Do not create a new action for the same units. Recovery checks the original operation ID; an offered retry preserves the same intent and ID. If the employee, restaurant or scope changes, return to the original context. If units or the order have changed, reload and review before a new action. Payment operations retain their own recovery flow.
+
+<span id="scheduled-acceptance" />
+
+## Accept a scheduled order before its date
+
+For a scheduled order, Accept remains an explicit action before its slot, subject to permissions and holds. The restaurant workflow determines whether it is accepted only or dispatched to the kitchen. Payment, date and slot stay recorded separately; a full discount is not a collection. See [accept a scheduled order](/en/help/orders/managing-orders#accept-scheduled-order).

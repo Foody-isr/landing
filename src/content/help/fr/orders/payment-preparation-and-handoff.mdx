@@ -7,7 +7,7 @@ apps: both
 tags:
   - orders
   - order-lifecycle
-updatedAt: '2026-10-29'
+updatedAt: '2026-11-02'
 featureId: order-lifecycle
 audience: public
 releaseStatus: available
@@ -61,3 +61,9 @@ Dans FoodyAdmin, ouvrez les modes de traitement du système de caisse et modifie
 ## Reprendre une confirmation incertaine
 
 Après une réponse perdue ou une erreur de connexion lors d’une remise ou clôture, conservez l’opération en attente et vérifiez son résultat. L’absence de confirmation ne prouve pas un échec. Ne recréez pas une nouvelle action pour les mêmes unités. Le parcours de reprise vérifie l’identifiant original ; si une nouvelle tentative est proposée, elle conserve la même intention et le même identifiant. Un changement d’employé, de restaurant ou de portée impose de revenir au contexte original. Si les unités ou la commande ont changé, rechargez et revoyez la situation avant toute nouvelle action. Les opérations de paiement gardent leur propre parcours de reprise.
+
+<span id="scheduled-acceptance" />
+
+## Accepter une commande programmée avant sa date
+
+Pour une commande programmée, Accepter reste une action explicite disponible avant le créneau, sous réserve des droits et blocages. Le workflow du restaurant décide si elle est seulement acceptée ou envoyée en cuisine. Le paiement, la date et le créneau restent enregistrés séparément ; une remise totale n’est pas un encaissement. Voir [accepter une commande programmée](/fr/help/orders/managing-orders#accept-scheduled-order).
