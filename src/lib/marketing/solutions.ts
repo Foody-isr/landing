@@ -18,9 +18,9 @@ const entries: Record<
 > = {
   he: {
     restaurants: [
-      "קופה למסעדה באייפד ובאנדרואיד בישראל",
+      "קופה למסעדה בישראל באייפד ובאנדרואיד",
       "קופה למסעדה ולבית קפה: Foody POS באייפד ובאנדרואיד מחבר שולחנות, הזמנות מלצרים ותשלומים. מסלול Foody מסעדה כולל גם אתר הזמנות ו־QR.",
-      "קופה למסעדה.\nבאייפד ובאנדרואיד.",
+      "קופה למסעדה בישראל.\nבאייפד ובאנדרואיד.",
       "Foody מסעדה מרכז קופה בדלפק, הזמנות מהטאבלט של המלצר, שולחנות והזמנות מהאתר באותה פלטפורמה. הקופה והמשרד האחורי זמינים בעברית, בצרפתית ובאנגלית. לניהול מתכונים, מלאי חומרי גלם ופוד קוסט מוסיפים את Foody Kitchen.",
       [
         [
@@ -56,6 +56,10 @@ const entries: Record<
         [
           "האם אתר ההזמנות מחובר לקופה?",
           "כן. אתר Foody, ה־QR והקופה משתמשים באותה פלטפורמה. התפריטים, זמינות המנות ותהליך ההזמנה מנוהלים בהתאם להגדרות המסעדה.",
+        ],
+        [
+          "האם יש התקנה והדרכה במסעדה בישראל?",
+          `כן. Foody מגיעים למסעדה להתקנה ולהדרכת הצוות. לפני ההפעלה בודקים מכשירים תואמים, חיבור אינטרנט, מדפסות וספק סליקה. הקמה סטנדרטית עולה ${pricingRates.setup} ₪ חד־פעמי; הדרכה במקום, אם נבחרה, עולה ${pricingRates.training} ₪ ליום. המחירים לפני מע״מ. חומרה ושירותי תשלום מתומחרים בנפרד.`,
         ],
       ],
     ],
@@ -316,9 +320,9 @@ const entries: Record<
   },
   fr: {
     restaurants: [
-      "Caisse restaurant sur iPad et Android en Israël",
+      "Caisse restaurant en Israël, sur iPad et Android",
       "Une caisse pour restaurant et café : Foody POS sur iPad et Android réunit tables, commandes des serveurs et paiements. L’offre Restaurant inclut le site de commande et le QR.",
-      "Votre caisse restaurant.\nSur iPad et Android.",
+      "Caisse restaurant en Israël.\nSur iPad et Android.",
       "Foody Restaurant réunit caisse au comptoir, commandes sur tablette serveur, tables et commandes du site dans une même plateforme. La caisse et le back-office sont disponibles en français, hébreu et anglais. Ajoutez Foody Cuisine pour les recettes, les stocks d’ingrédients et le food cost.",
       [
         [
@@ -354,6 +358,10 @@ const entries: Record<
         [
           "Le site est-il relié à la caisse ?",
           "Oui. Le site Foody, le QR et la caisse utilisent la même plateforme. Menus, disponibilités et commandes suivent les paramètres de votre établissement.",
+        ],
+        [
+          "L’installation et la formation sont-elles proposées en Israël ?",
+          `Oui. Foody intervient sur place pour l’installation et la formation de l’équipe. Avant la mise en service, nous vérifions les appareils compatibles, la connexion Internet, les imprimantes et le prestataire de slika. L’installation standard coûte ${pricingRates.setup} ₪ HT une fois ; la formation sur place, si retenue, ${pricingRates.training} ₪ HT par jour. Le matériel et les services de paiement sont chiffrés séparément.`,
         ],
       ],
     ],
@@ -614,9 +622,9 @@ const entries: Record<
   },
   en: {
     restaurants: [
-      "Restaurant POS on iPad and Android in Israel",
+      "Restaurant POS in Israel on iPad and Android",
       "A POS for restaurants and cafés: Foody POS on iPad and Android connects tables, waiter orders and payments. The Restaurant plan includes your ordering website and QR ordering.",
-      "Your restaurant POS.\nOn iPad and Android.",
+      "Restaurant POS in Israel.\nOn iPad and Android.",
       "Foody Restaurant brings counter sales, waiter tablet orders, tables and website orders into one platform. Both POS and back office support English, Hebrew and French. Add Foody Kitchen for recipes, ingredient inventory and food cost.",
       [
         [
@@ -652,6 +660,10 @@ const entries: Record<
         [
           "Is the website connected to the POS?",
           "Yes. Your Foody website, QR and POS use the same platform. Menus, availability and order workflows follow your restaurant settings.",
+        ],
+        [
+          "Can Foody install the system and train my team in Israel?",
+          `Yes. Foody visits the restaurant for installation and staff training. Before launch, we check compatible devices, Internet access, printers and the payment provider. Standard setup costs ILS ${pricingRates.setup} once; on-site training, if selected, costs ILS ${pricingRates.training} per day. Prices exclude VAT. Hardware and payment services are quoted separately.`,
         ],
       ],
     ],

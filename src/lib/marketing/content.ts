@@ -26,10 +26,10 @@ export type Solution = {
 
 const he = {
   home: {
-    title: "Foody POS\nקופה וניהול למסעדות.",
+    title: "Foody POS\nקופה וניהול למסעדות בישראל.",
     description:
       "Foody POS היא פלטפורמת קופה וניהול בענן למסעדות, בתי קפה וחנויות בישראל. חברו קופה ב־iPad וב־Android, שולחנות, הזמנות אונליין ומטבח, עם ממשקי עבודה בעברית, בצרפתית ובאנגלית. בחרו את המוצרים שמתאימים לפעילות שלכם.",
-    secondary: "למצוא את הפתרון שלי",
+    secondary: "לגלות את הקופה למסעדה",
     photoAlt: "בעלת בית קפה מגישה קפה ללקוח ליד קופה על הדלפק",
     photoLabel: "פחות להתעסק. יותר לארח.",
     intro: "כל מה שצריך כדי\nלעשות עסק טוב.",
@@ -168,10 +168,10 @@ type Copy = typeof he;
 
 const fr: Copy = {
   home: {
-    title: "Foody POS\nCaisse et gestion de restaurant.",
+    title: "Foody POS\nCaisse et gestion de restaurant en Israël.",
     description:
       "Foody POS est la plateforme de caisse et de gestion cloud pour les restaurants, cafés et commerces en Israël. Reliez caisse iPad et Android, tables, commandes en ligne et cuisine, avec des interfaces en français, hébreu et anglais. Choisissez les produits adaptés à votre activité.",
-    secondary: "Trouver ma solution",
+    secondary: "Découvrir la caisse restaurant",
     photoAlt:
       "Une gérante de café sert un client au comptoir, à côté de sa caisse",
     photoLabel: "Moins de gestion. Plus de liens.",
@@ -322,10 +322,10 @@ const fr: Copy = {
 
 const en: Copy = {
   home: {
-    title: "Foody POS\nRestaurant POS and management.",
+    title: "Foody POS\nRestaurant POS and management in Israel.",
     description:
       "Foody POS is the cloud POS and management platform for restaurants, cafés and shops in Israel. Connect iPad and Android POS, tables, online ordering and kitchen work, with Hebrew, French and English interfaces. Choose the products that fit your operation.",
-    secondary: "Find my solution",
+    secondary: "Explore restaurant POS",
     photoAlt:
       "A café owner serving a customer at the counter beside her point of sale",
     photoLabel: "Less admin. More connection.",
