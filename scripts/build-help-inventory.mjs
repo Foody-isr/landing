@@ -13,7 +13,7 @@ const workspace = path.dirname(landing);
 const features = JSON.parse(fs.readFileSync(path.join(landing, 'docs/help/catalog/features.json'), 'utf8'));
 const languages = ['en', 'fr', 'he'];
 const digest = value => crypto.createHash('sha256').update(value).digest('hex');
-const sourceExtension = /\.(?:tsx?|jsx?|mjs|css|go|dart|swift|kt|json|arb)$/;
+const sourceExtension = /\.(?:tsx?|jsx?|mjs|css|go|dart|swift|kt|m|h|json|arb)$/;
 const sourceRoots = /^(?:src|app|components|lib|services|store|internal|config|cmd|ios\/Runner|ios\/AppIntents|android\/app\/src)\//;
 const excluded = /(?:^|\/)(?:__tests__|test|tests|node_modules|build|Pods|\.dart_tool|generated|l10n\/app_localizations[^/]*)(?:\/|$)|(?:\.test|\.spec|_test|\.g|\.freezed)\./;
 const glob = value => new RegExp('^' + value.split('**').map(part => part.split('*').map(x => x.replace(/[.+?^${}()|[\]\\]/g, '\\$&')).join('[^/]*')).join('.*') + '$');

@@ -3920,9 +3920,9 @@
           "he": "זיכוי או ביטול תשלום מקוון ב-Verifone"
         },
         "instructions": {
-          "fr": "Dans le détail de commande, vérifiez le paiement Verifone avant toute annulation ou remboursement. Un résultat incertain doit être vérifié avant une nouvelle opération. Suivez [la procédure complète](/fr/help/orders/order-details#verifone-admin-money-operations).",
-          "en": "In order details, verify the Verifone payment before voiding or refunding. Verify an uncertain outcome before starting another operation. Follow the [complete procedure](/en/help/orders/order-details#verifone-admin-money-operations).",
-          "he": "בפרטי ההזמנה יש לבדוק את תשלום Verifone לפני ביטול או החזר. יש לברר תוצאה לא ודאית לפני פתיחת פעולה נוספת. ראו [הנוהל המלא](/he/help/orders/order-details#verifone-admin-money-operations)."
+          "en": "For eligible online payments, follow the [Verifone refund/VOID procedure](/en/help/payments/how-payments-work#verifone-admin-refund-void). Never repeat an uncertain operation.",
+          "fr": "Pour les paiements en ligne éligibles, suivez la [procédure Verifone de remboursement/VOID](/fr/help/payments/how-payments-work#verifone-admin-refund-void). Ne répétez pas une opération incertaine.",
+          "he": "לתשלומים מקוונים מתאימים, פעלו לפי [נוהל החזר/VOID של Verifone](/he/help/payments/how-payments-work#verifone-admin-refund-void). אין לחזור על פעולה לא ודאית."
         }
       },
       {
@@ -4282,6 +4282,19 @@
           "fr": "Pour modifier un événement enregistré, l’ajouter en production et régler acompte ou empreinte Sumit, consultez [Event / Catering](/fr/help/orders/event-orders).",
           "he": "לעריכת אירוע שמור, הוספה לייצור והגדרת מקדמה או תפיסת מסגרת SUMIT, ראו [Event / Catering](/he/help/orders/event-orders)."
         }
+      },
+      {
+        "id": "physical-card-destination",
+        "title": {
+          "en": "Choose the terminal",
+          "fr": "Choisir le terminal",
+          "he": "בחירת מסוף"
+        },
+        "instructions": {
+          "en": "For iPad card payments, see [Mini/Portable selection](/en/help/payments/victa-mini#explicit-terminal-selection).",
+          "fr": "Pour payer par carte sur iPad, voir le [choix Mini/Portable](/fr/help/payments/victa-mini#explicit-terminal-selection).",
+          "he": "לתשלום בכרטיס באייפד, ראו [בחירת Mini/Portable](/he/help/payments/victa-mini#explicit-terminal-selection)."
+        }
       }
     ],
     "audience": "public",
@@ -4536,6 +4549,19 @@
           "en": "For saved-event edits, explicit production inclusion, private links, deposits and Sumit authorizations kept separate from received money, see [Event / Catering](/en/help/orders/event-orders).",
           "fr": "Pour modifier un événement enregistré, l’ajouter en production, partager son lien et distinguer acompte encaissé et empreinte Sumit, consultez [Event / Catering](/fr/help/orders/event-orders).",
           "he": "לעריכת אירוע שמור, הוספה מפורשת לייצור, קישור פרטי והפרדה בין מקדמה שהתקבלה למסגרת SUMIT שנשמרה, ראו [Event / Catering](/he/help/orders/event-orders)."
+        }
+      },
+      {
+        "id": "physical-card-destination",
+        "title": {
+          "en": "Review the physical card destination",
+          "fr": "Vérifier la destination physique du paiement carte",
+          "he": "בדיקת יעד הכרטיס הפיזי"
+        },
+        "instructions": {
+          "en": "With the compatible POS/API, review the physical card destination before collection: see [Mini/Portable selection](/en/help/payments/victa-mini#explicit-terminal-selection) and [verified hardware setup](/en/help/payments/victa-mini#connection). Existing order IDs, QR separation, kitchen progression and table-release settings remain independent. An unresolved terminal reservation blocks another collection; recover the original operation rather than creating a replacement sale.",
+          "fr": "Avec les versions POS/API compatibles, vérifiez la destination physique avant l’encaissement carte : consultez le [choix Mini/Portable](/fr/help/payments/victa-mini#explicit-terminal-selection) et la [configuration vérifiée du matériel](/fr/help/payments/victa-mini#connection). Les identifiants existants, la séparation QR, la préparation et les réglages de libération des tables restent indépendants. Une réservation terminal non résolue bloque un autre encaissement ; reprenez l’opération d’origine plutôt que de créer une vente de remplacement.",
+          "he": "בגרסאות POS/API התואמות, בדקו את יעד הכרטיס הפיזי לפני גבייה: ראו [בחירת Mini/Portable](/he/help/payments/victa-mini#explicit-terminal-selection) ו[הגדרת חומרה מאומתת](/he/help/payments/victa-mini#connection). מזהי הזמנות קיימים, הפרדת QR, התקדמות מטבח והגדרות שחרור שולחנות נשארים עצמאיים. שריון מסוף שלא הוכרע חוסם גבייה אחרת; המשיכו את הפעולה המקורית במקום ליצור מכירה חלופית."
         }
       }
     ],
@@ -5472,6 +5498,19 @@
           "en": "In Orders & availability → Simulate an order, select Order date and time in the displayed timezone, then the receiving date and basket. Now reloads the server time. Preparation and same-day rules are evaluated at this reference using current saved settings and ready stock. A past date does not reconstruct history; this test neither reserves a courier nor creates an order. Customer orders retain the real server clock. See [the simulation procedure](/en/help/orders/preorders-and-batches#simulate-order).",
           "he": "בהזמנות וזמינות → הדמיית הזמנה בחרו תאריך ושעת ההזמנה באזור הזמן המוצג, ואז תאריך קבלה וסל. עכשיו טוען מחדש את שעת השרת. ההכנה וכללי אותו יום נבדקים לפי מועד זה באמצעות ההגדרות והמלאי המוכן הנוכחיים. תאריך בעבר אינו משחזר היסטוריה; הבדיקה אינה שומרת שליח ואינה יוצרת הזמנה. הזמנות לקוח ממשיכות להשתמש בשעת השרת האמיתית. ראו [הנחיות ההדמיה](/he/help/orders/preorders-and-batches#simulate-order)."
         }
+      },
+      {
+        "id": "card-collection-recovery",
+        "title": {
+          "en": "Respect a pending card collection",
+          "fr": "Respecter un encaissement carte en cours",
+          "he": "שמירה על גביית כרטיס ממתינה"
+        },
+        "instructions": {
+          "en": "An unresolved native card collection keeps its original order and terminal reserved. Do not change its financial contents or start another tender; kitchen progression and fulfillment settings remain independent. See [Mini/Portable selection and recovery](/en/help/payments/victa-mini#explicit-terminal-selection).",
+          "fr": "Un encaissement carte natif non résolu réserve sa commande et son terminal d’origine. Ne modifiez pas son contenu financier et ne lancez pas un autre paiement ; la préparation et les réglages de traitement restent indépendants. Consultez le [choix Mini/Portable et la reprise](/fr/help/payments/victa-mini#explicit-terminal-selection).",
+          "he": "גביית כרטיס מקומית שלא הוכרעה שומרת על ההזמנה ועל המסוף המקוריים משוריינים. אין לשנות את תוכנה הכספי או להתחיל גבייה אחרת; התקדמות המטבח והגדרות הטיפול נשארות עצמאיות. ראו [בחירת Mini/Portable ושחזור](/he/help/payments/victa-mini#explicit-terminal-selection)."
+        }
       }
     ],
     "audience": "public",
@@ -5782,6 +5821,19 @@
           "fr": "Dans les actions d’une commande enregistrée, vérifiez les faits de préparation et de remise séparément du paiement. La revue de remise sélectionne les unités physiques réellement concernées ; le partage financier ne les multiplie pas. Avant une clôture, revoyez l’addition ou la part exacte et son solde confirmé. Une portée clôturée refuse de nouvelles modifications commerciales ; un autre lot ouvert n’est pas clôturé par cette action. Voir [le suivi et les confirmations](/fr/help/orders/payment-preparation-and-handoff).",
           "en": "In a saved order’s actions, review preparation and handoff separately from payment. Handoff review selects the actual physical units; financial splitting does not multiply them. Before closure, review the exact check or financial portion and its confirmed balance. A closed scope refuses new commercial changes; another open batch is not closed by that action. See [tracking and confirmations](/en/help/orders/payment-preparation-and-handoff).",
           "he": "בפעולות של הזמנה שמורה בדקו הכנה ומסירה בנפרד מתשלום. סקירת המסירה בוחרת את היחידות הפיזיות בפועל; פיצול כספי אינו מכפיל אותן. לפני סגירה בדקו את החשבון או החלק הכספי המדויק ואת היתרה המאושרת. היקף סגור מסרב לשינויים מסחריים חדשים; הפעולה אינה סוגרת קבוצה פתוחה אחרת. ראו [מעקב ואישורים](/he/help/orders/payment-preparation-and-handoff)."
+        }
+      },
+      {
+        "id": "card-collection-recovery",
+        "title": {
+          "en": "Respect a pending card collection",
+          "fr": "Respecter un encaissement carte en cours",
+          "he": "שמירה על גביית כרטיס ממתינה"
+        },
+        "instructions": {
+          "en": "An unresolved native card collection keeps its original order and terminal reserved. Do not change its financial contents or start another tender; kitchen progression and fulfillment settings remain independent. See [Mini/Portable selection and recovery](/en/help/payments/victa-mini#explicit-terminal-selection).",
+          "fr": "Un encaissement carte natif non résolu réserve sa commande et son terminal d’origine. Ne modifiez pas son contenu financier et ne lancez pas un autre paiement ; la préparation et les réglages de traitement restent indépendants. Consultez le [choix Mini/Portable et la reprise](/fr/help/payments/victa-mini#explicit-terminal-selection).",
+          "he": "גביית כרטיס מקומית שלא הוכרעה שומרת על ההזמנה ועל המסוף המקוריים משוריינים. אין לשנות את תוכנה הכספי או להתחיל גבייה אחרת; התקדמות המטבח והגדרות הטיפול נשארות עצמאיות. ראו [בחירת Mini/Portable ושחזור](/he/help/payments/victa-mini#explicit-terminal-selection)."
         }
       }
     ],
@@ -9621,6 +9673,19 @@
           "en": "In Orders & availability → Simulate an order, select Order date and time in the displayed timezone, then the receiving date and basket. Now reloads the server time. Preparation and same-day rules are evaluated at this reference using current saved settings and ready stock. A past date does not reconstruct history; this test neither reserves a courier nor creates an order. Customer orders retain the real server clock. See [the simulation procedure](/en/help/orders/preorders-and-batches#simulate-order).",
           "he": "בהזמנות וזמינות → הדמיית הזמנה בחרו תאריך ושעת ההזמנה באזור הזמן המוצג, ואז תאריך קבלה וסל. עכשיו טוען מחדש את שעת השרת. ההכנה וכללי אותו יום נבדקים לפי מועד זה באמצעות ההגדרות והמלאי המוכן הנוכחיים. תאריך בעבר אינו משחזר היסטוריה; הבדיקה אינה שומרת שליח ואינה יוצרת הזמנה. הזמנות לקוח ממשיכות להשתמש בשעת השרת האמיתית. ראו [הנחיות ההדמיה](/he/help/orders/preorders-and-batches#simulate-order)."
         }
+      },
+      {
+        "id": "card-collection-recovery",
+        "title": {
+          "en": "Respect a pending card collection",
+          "fr": "Respecter un encaissement carte en cours",
+          "he": "שמירה על גביית כרטיס ממתינה"
+        },
+        "instructions": {
+          "en": "An unresolved native card collection keeps its original order and terminal reserved. Do not change its financial contents or start another tender; kitchen progression and fulfillment settings remain independent. See [Mini/Portable selection and recovery](/en/help/payments/victa-mini#explicit-terminal-selection).",
+          "fr": "Un encaissement carte natif non résolu réserve sa commande et son terminal d’origine. Ne modifiez pas son contenu financier et ne lancez pas un autre paiement ; la préparation et les réglages de traitement restent indépendants. Consultez le [choix Mini/Portable et la reprise](/fr/help/payments/victa-mini#explicit-terminal-selection).",
+          "he": "גביית כרטיס מקומית שלא הוכרעה שומרת על ההזמנה ועל המסוף המקוריים משוריינים. אין לשנות את תוכנה הכספי או להתחיל גבייה אחרת; התקדמות המטבח והגדרות הטיפול נשארות עצמאיות. ראו [בחירת Mini/Portable ושחזור](/he/help/payments/victa-mini#explicit-terminal-selection)."
+        }
       }
     ],
     "audience": "public",
@@ -9875,6 +9940,19 @@
           "fr": "Sur iPad, Matériel → Terminaux de paiement propose Connecter un Victa Mini, puis le terminal enregistré et son état de connexion. La configuration et la reconnexion automatique sont décrites dans [Connexion du Victa Mini](/fr/help/payments/victa-mini#connection). Ce parcours ne change ni les profils d’imprimante, ni les réglages du mode de caisse, ni les opérations de paiement en attente.",
           "en": "On iPad, Hardware → Payment terminals offers Connect a Victa Mini, then the saved terminal and its connection state. Configuration and automatic restoration are explained in [Victa Mini connection](/en/help/payments/victa-mini#connection). This flow does not change printer profiles, POS mode policy or pending payment operations.",
           "he": "ב־iPad, חומרה → מסופי תשלום מציג חיבור Victa Mini ובהמשך את המסוף השמור ומצב החיבור שלו. ההגדרה ושחזור החיבור האוטומטי מוסברים ב[חיבור Victa Mini](/he/help/payments/victa-mini#connection). התהליך אינו משנה פרופילי הדפסה, הגדרות מצב קופה או פעולות תשלום ממתינות."
+        }
+      },
+      {
+        "id": "physical-card-destination",
+        "title": {
+          "en": "Review the physical card destination",
+          "fr": "Vérifier la destination physique du paiement carte",
+          "he": "בדיקת יעד הכרטיס הפיזי"
+        },
+        "instructions": {
+          "en": "With the compatible POS/API, review the physical card destination before collection: see [Mini/Portable selection](/en/help/payments/victa-mini#explicit-terminal-selection) and [verified hardware setup](/en/help/payments/victa-mini#connection). Existing order IDs, QR separation, kitchen progression and table-release settings remain independent. An unresolved terminal reservation blocks another collection; recover the original operation rather than creating a replacement sale.",
+          "fr": "Avec les versions POS/API compatibles, vérifiez la destination physique avant l’encaissement carte : consultez le [choix Mini/Portable](/fr/help/payments/victa-mini#explicit-terminal-selection) et la [configuration vérifiée du matériel](/fr/help/payments/victa-mini#connection). Les identifiants existants, la séparation QR, la préparation et les réglages de libération des tables restent indépendants. Une réservation terminal non résolue bloque un autre encaissement ; reprenez l’opération d’origine plutôt que de créer une vente de remplacement.",
+          "he": "בגרסאות POS/API התואמות, בדקו את יעד הכרטיס הפיזי לפני גבייה: ראו [בחירת Mini/Portable](/he/help/payments/victa-mini#explicit-terminal-selection) ו[הגדרת חומרה מאומתת](/he/help/payments/victa-mini#connection). מזהי הזמנות קיימים, הפרדת QR, התקדמות מטבח והגדרות שחרור שולחנות נשארים עצמאיים. שריון מסוף שלא הוכרע חוסם גבייה אחרת; המשיכו את הפעולה המקורית במקום ליצור מכירה חלופית."
         }
       }
     ],
@@ -10777,6 +10855,19 @@
           "en": "In a saved order’s actions, review preparation and handoff separately from payment. Handoff review selects the actual physical units; financial splitting does not multiply them. Before closure, review the exact check or financial portion and its confirmed balance. A closed scope refuses new commercial changes; another open batch is not closed by that action. See [tracking and confirmations](/en/help/orders/payment-preparation-and-handoff).",
           "he": "בפעולות של הזמנה שמורה בדקו הכנה ומסירה בנפרד מתשלום. סקירת המסירה בוחרת את היחידות הפיזיות בפועל; פיצול כספי אינו מכפיל אותן. לפני סגירה בדקו את החשבון או החלק הכספי המדויק ואת היתרה המאושרת. היקף סגור מסרב לשינויים מסחריים חדשים; הפעולה אינה סוגרת קבוצה פתוחה אחרת. ראו [מעקב ואישורים](/he/help/orders/payment-preparation-and-handoff)."
         }
+      },
+      {
+        "id": "card-collection-recovery",
+        "title": {
+          "en": "Respect a pending card collection",
+          "fr": "Respecter un encaissement carte en cours",
+          "he": "שמירה על גביית כרטיס ממתינה"
+        },
+        "instructions": {
+          "en": "An unresolved native card collection keeps its original order and terminal reserved. Do not change its financial contents or start another tender; kitchen progression and fulfillment settings remain independent. See [Mini/Portable selection and recovery](/en/help/payments/victa-mini#explicit-terminal-selection).",
+          "fr": "Un encaissement carte natif non résolu réserve sa commande et son terminal d’origine. Ne modifiez pas son contenu financier et ne lancez pas un autre paiement ; la préparation et les réglages de traitement restent indépendants. Consultez le [choix Mini/Portable et la reprise](/fr/help/payments/victa-mini#explicit-terminal-selection).",
+          "he": "גביית כרטיס מקומית שלא הוכרעה שומרת על ההזמנה ועל המסוף המקוריים משוריינים. אין לשנות את תוכנה הכספי או להתחיל גבייה אחרת; התקדמות המטבח והגדרות הטיפול נשארות עצמאיות. ראו [בחירת Mini/Portable ושחזור](/he/help/payments/victa-mini#explicit-terminal-selection)."
+        }
       }
     ],
     "audience": "public",
@@ -10823,13 +10914,17 @@
         "android/app/src/main/kotlin/com/foodypos/app/VerifonePaymentBridge.kt",
         "lib/features/orders/domain/checkout_review.dart",
         "lib/features/orders/presentation/terminal_checkout_pages.dart",
-        "lib/main.dart"
+        "lib/main.dart",
+        "lib/features/orders/presentation/payment_terminal_picker.dart"
       ],
       "foodyserver": [
         "internal/payment/**",
         "internal/orders/payment*.go",
         "internal/orders/cash_drawer*.go",
-        "internal/orders/transactions*.go"
+        "internal/orders/transactions*.go",
+        "internal/common/pos_card_collection.go",
+        "internal/orders/pos_card_collection*.go",
+        "migrations/287_pos_card_collections.sql"
       ],
       "foodyadmin": [
         "src/app/[restaurantId]/transactions/**",
@@ -10847,9 +10942,9 @@
           "he": "זיכוי או ביטול תשלום מקוון ב-Verifone"
         },
         "instructions": {
-          "en": "The Admin order payment section supports total or partial matched refunds and total VOID for an eligible single Verifone online payment, for owners/managers with payments.manage. Provider state, captured amount and verified history govern eligibility, not a fixed 24-hour rule. This does not cancel preparation or fulfillment and does not add a POS terminal refund button. Unknown results stay reserved and must be checked, never resubmitted. Invoice4U credit/cancellation documents require a separate check. See [the online payment procedure](/en/help/payments/how-payments-work#verifone-admin-refund-void).\n\nA captured ABS sale still AUTHORISED/AUTHORIZED or SETTLEMENT_REQUESTED is not settled: Admin shows Available to void and only Void entire payment, with no prior refund. Refund payment and Available to refund require an explicit settled state or verified partially-refunded history. Generic APPROVED/COMPLETED, contradictory states or missing evidence offer neither action. A state change before confirmation rejects the stale action; it never switches VOID to REFUND automatically. Request rejected by Verifone means no return of funds is confirmed, not necessarily an issuer decline.\n\nAfter a full return verified against matched Verifone history, the summary keeps the original amount, shows the full amount returned and zero remaining, and offers no further refund or VOID. A cleared capture balance after that return is not an uncaptured hold to release. Missing or inconsistent evidence still requires verification without resubmission.",
-          "fr": "La section paiement d’une commande Admin permet le remboursement lié total ou partiel et le VOID total d’un paiement en ligne Verifone unique admissible, pour un propriétaire/responsable avec payments.manage. L’état fournisseur, le montant encaissé et l’historique vérifié déterminent l’admissibilité, pas un délai fixe de 24 heures. La préparation et la remise ne sont pas annulées et aucun bouton de remboursement terminal POS n’est ajouté. Un résultat inconnu reste réservé : vérifiez-le sans renvoyer l’opération. Les avoirs et annulations Invoice4U nécessitent un contrôle distinct. Voir [la procédure de paiement en ligne](/fr/help/payments/how-payments-work#verifone-admin-refund-void).\n\nUne vente ABS capturée encore en AUTHORISED/AUTHORIZED ou SETTLEMENT_REQUESTED n’est pas réglée : Admin affiche Montant annulable et uniquement Annuler tout le paiement, sans remboursement antérieur. Rembourser le paiement et Montant remboursable exigent un état réglé explicite ou un historique de remboursement partiel vérifié. Les états génériques APPROVED/COMPLETED, les contradictions et les preuves manquantes ne proposent aucune opération. Un changement d’état avant confirmation refuse l’action devenue obsolète ; le VOID n’est jamais remplacé automatiquement par un REFUND. Demande rejetée par Verifone signifie qu’aucune restitution n’est confirmée, pas nécessairement un refus de la banque.\n\nAprès une restitution totale vérifiée dans l’historique lié de Verifone, le bilan conserve le montant initial, affiche le montant intégral restitué et un solde restant nul, sans proposer de nouveau remboursement ni VOID. Un solde capturé remis à zéro après cette restitution n’est pas une préautorisation à libérer. Une preuve manquante ou incohérente exige toujours une vérification, sans renvoyer l’opération.",
-          "he": "באזור התשלום של הזמנה בממשק הניהול ניתן לבצע זיכוי מקושר מלא או חלקי ו-VOID מלא לתשלום מקוון יחיד ומאומת ב-Verifone, עבור בעלים או מנהל עם payments.manage. מצב הספק, סכום שנלכד והיסטוריה מאומתת קובעים זכאות ולא כלל קבוע של 24 שעות. ההכנה והמסירה אינן מבוטלות ולא נוסף כפתור זיכוי למסוף בקופה. תוצאה לא ידועה נשארת שמורה ויש לבדוק אותה בלי לשלוח שוב. מסמכי זיכוי וביטול ב-Invoice4U דורשים בדיקה נפרדת. ראו [נוהל תשלום מקוון](/he/help/payments/how-payments-work#verifone-admin-refund-void).\n\nעסקת ABS שנלכדה ועדיין במצב AUTHORISED/AUTHORIZED או SETTLEMENT_REQUESTED טרם סיימה סליקה: מוצגים סכום לביטול ורק ביטול התשלום במלואו, ללא זיכוי קודם. זיכוי התשלום ויתרה לזיכוי דורשים מצב סליקה שהושלמה במפורש או היסטוריית זיכוי חלקי שאומתה. מצבים כלליים APPROVED/COMPLETED, סתירות או ראיות חסרות אינם מאפשרים פעולה. שינוי מצב לפני האישור דוחה את הפעולה שאינה מתאימה עוד; VOID אינו מוחלף אוטומטית ב-REFUND. בקשה שנדחתה על ידי Verifone אינה אישור להחזרת כספים ואינה מעידה בהכרח על סירוב הבנק.\n\nלאחר החזר מלא שאומת בהיסטוריה המקושרת של Verifone, הסיכום שומר על הסכום המקורי, מציג את מלוא הסכום שהוחזר ויתרה אפס, ואינו מציע זיכוי נוסף או VOID. יתרת לכידה שהתאפסה בעקבות ההחזר אינה אישור מוקדם שיש לשחרר. ראיות חסרות או לא עקביות עדיין מחייבות בדיקה ללא שליחה חוזרת של הפעולה."
+          "en": "For eligible Verifone online payments in Admin, follow the complete [refund and VOID procedure](/en/help/payments/how-payments-work#verifone-admin-refund-void). Verified provider state determines the available action. An uncertain result must be checked without repeating it. This does not add a terminal refund action or cancel preparation.",
+          "fr": "Pour un paiement Verifone en ligne éligible dans Admin, suivez la [procédure complète de remboursement et VOID](/fr/help/payments/how-payments-work#verifone-admin-refund-void). L’état vérifié du prestataire détermine l’action proposée. Vérifiez un résultat incertain sans le répéter. Cela n’ajoute pas de remboursement sur terminal et n’annule pas la préparation.",
+          "he": "לתשלום מקוון מתאים של Verifone בממשק הניהול, פעלו לפי [הנוהל המלא להחזר ול-VOID](/he/help/payments/how-payments-work#verifone-admin-refund-void). מצב מאומת אצל הספק קובע את הפעולה הזמינה. יש לבדוק תוצאה לא ודאית ללא ניסיון חוזר. אין כאן הוספת פעולת החזר במסוף או ביטול הכנה."
         }
       },
       {
@@ -11141,6 +11236,19 @@
           "en": "On iPad, connect the terminal once under More → Settings → Hardware → Payment terminals. The compatible POS then attempts to reconnect on opening and returning to the foreground, after restaurant access and permissions are restored. See [Victa Mini connection](/en/help/payments/victa-mini#connection) for secure setup, states and recovery locks. This flow starts no charge or deposit.",
           "he": "ב־iPad, חברו את המסוף פעם אחת דרך עוד ← הגדרות ← חומרה ← מסופי תשלום. גרסת ה־POS התואמת מנסה לחדש את החיבור בפתיחה ובחזרה לאפליקציה לאחר שחזור המסעדה וההרשאות. ראו [חיבור Victa Mini](/he/help/payments/victa-mini#connection) להגדרות מאובטחות, מצבים וחסימות שחזור. התהליך אינו יוזם חיוב או הפקדה."
         }
+      },
+      {
+        "id": "physical-card-destination",
+        "title": {
+          "en": "Choose the terminal",
+          "fr": "Choisir le terminal",
+          "he": "בחירת מסוף"
+        },
+        "instructions": {
+          "en": "For iPad card payments, see [Mini/Portable selection](/en/help/payments/victa-mini#explicit-terminal-selection).",
+          "fr": "Pour payer par carte sur iPad, voir le [choix Mini/Portable](/fr/help/payments/victa-mini#explicit-terminal-selection).",
+          "he": "לתשלום בכרטיס באייפד, ראו [בחירת Mini/Portable](/he/help/payments/victa-mini#explicit-terminal-selection)."
+        }
       }
     ],
     "audience": "public",
@@ -11179,9 +11287,22 @@
           "he": "חיבור ושחזור החיבור ל־Victa Mini ב־iPad"
         },
         "instructions": {
-          "fr": "Avec payments.manage, ouvrez Plus → Paramètres → Matériel → Terminaux de paiement → Connecter un Victa Mini. Le parcours utilise les mêmes surfaces neutres et contrôles de fermeture/enregistrement que les autres connexions matériel. Saisissez son adresse IPv4 locale et l’identifiant Ashrait à 10 chiffres fourni par Verifone, puis Enregistrer. L’identifiant reste masqué et la configuration est conservée de façon sécurisée pour ce restaurant et cet environnement API sur cet iPad ; une adresse enregistrée ne confirme pas une connexion.\n\nAprès la restauration du restaurant et des droits, FoodyPOS tente automatiquement de reconnecter le terminal enregistré à l’ouverture puis au retour au premier plan. Il doit être allumé et joignable sur le même réseau local. Consultez Connexion…, Connecté ou Échec de la connexion ; Tester la connexion reprend une tentative en échec et Détails de connexion permet de consulter le diagnostic. Il n’est pas nécessaire de ressaisir les paramètres à chaque fermeture de l’application. Si vous changez un terminal déjà connecté, fermez puis rouvrez FoodyPOS comme indiqué.\n\nLa reconnexion automatique ne lance aucun encaissement, recherche de transaction ou dépôt. Un paiement, un dépôt incertain ou une opération terminal en cours bloque cette reconnexion : gardez la configuration et reprenez l’opération d’origine dans son parcours. Ne supprimez pas les données pour contourner le blocage. Ce parcours nécessite le build compatible ; il ne certifie ni une connexion réelle sur votre réseau ni l’acceptation bancaire du terminal.",
-          "en": "With payments.manage, open More → Settings → Hardware → Payment terminals → Connect a Victa Mini. The flow uses the same neutral surfaces and close/save controls as other hardware connections. Enter its local IPv4 address and the 10-digit Ashrait Terminal ID supplied by Verifone, then Save. The ID stays masked and the configuration is stored securely for this restaurant and API environment on this iPad; a saved address does not confirm a connection.\n\nAfter the restaurant and permissions are restored, FoodyPOS automatically tries to reconnect the saved terminal on opening and when returning to the foreground. Keep it switched on and reachable on the same local network. Check Connecting…, Connected or Connection failed; Test connection retries a failed attempt and Connection details shows diagnostics. You do not need to re-enter settings after each app closure. If you change an already connected terminal, close and reopen FoodyPOS as instructed.\n\nAutomatic reconnection starts no charge, transaction lookup or deposit. A pending payment, uncertain deposit or ongoing terminal operation blocks it: retain the configuration and recover the original operation through its own workflow. Do not erase data to bypass the lock. This flow needs the compatible build; it does not certify a real connection on your network or terminal banking acceptance.",
-          "he": "עם הרשאת payments.manage, פתחו עוד → הגדרות → חומרה → מסופי תשלום → חיבור Victa Mini. התהליך משתמש באותו עיצוב ניטרלי ובפקדי סגירה ושמירה כמו חיבורי החומרה האחרים. הזינו את כתובת ה־IPv4 המקומית ואת מזהה מסוף Ashrait בן 10 הספרות שקיבלתם מ־Verifone ולחצו על שמירה. המזהה נשאר מוסתר וההגדרות נשמרות בצורה מאובטחת עבור המסעדה וסביבת ה־API ב־iPad הזה; כתובת שמורה אינה מאשרת חיבור.\n\nלאחר שחזור המסעדה וההרשאות, FoodyPOS מנסה לחדש אוטומטית את החיבור למסוף השמור בפתיחה ובחזרה לאפליקציה. המסוף צריך להיות מופעל וזמין באותה רשת מקומית. בדקו את מצב ההתחברות, מחובר או החיבור נכשל; בדיקת החיבור מאפשרת לנסות שוב לאחר כישלון ופרטי חיבור מציגים אבחון. אין צורך להזין מחדש את ההגדרות בכל סגירה של האפליקציה. אם מחליפים מסוף שכבר מחובר, סגרו ופתחו את FoodyPOS לפי ההנחיה.\n\nחיבור אוטומטי אינו יוזם חיוב, בירור עסקה או הפקדה. תשלום ממתין, הפקדה עם תוצאה לא ודאית או פעולה שמתבצעת במסוף חוסמים אותו: שמרו על ההגדרות וחזרו לפעולה המקורית בתהליך שלה. אל תמחקו נתונים כדי לעקוף חסימה. נדרשת גרסת האפליקציה התואמת; המדריך אינו מאשר חיבור בפועל ברשת שלכם או תקינות בנקאית של המסוף."
+          "en": "With payments.manage, open More → Settings → Hardware → Payment terminals. Configure the saved terminal or choose Add a payment terminal. Give it a recognizable name, select Mini or Portable, and enter its local IPv4 address and the 10-digit Ashrait ID supplied by Verifone. Choose Verify terminal identity: this reads the connected model and serial number without login, payment or Deposit. Check them against the intended physical device and explicitly confirm the identity before Save. A name or saved address alone does not prove which device is connected. A legacy configuration also requires this one-time verification. The ID stays masked and the catalogue is stored securely for this restaurant and API environment on this iPad. An unavailable or different physical identity blocks collection instead of selecting another terminal.\n\nThe first saved terminal becomes the default. The Default terminal option can change it; choosing another terminal for one payment keeps that default. Keep each device switched on and reachable on the local network. When the restaurant and permissions are restored, opening FoodyPOS or returning to the foreground retries the same idle saved connection; Test connection retries a failed attempt. An idle verified destination can change without restarting the application. An ongoing initialization, payment or uncertain deposit prevents changes.\n\nAutomatic reconnection sends no charge, transaction lookup or Deposit. Preserve the original device, configuration and journals when a payment or deposit is unresolved; do not erase data or downgrade to bypass a lock. Use the compatible POS and API on every device sharing a terminal. Physical Mini/Portable acceptance and availability of remote control on a Portable also running FoodyPOS must be checked with Verifone; these instructions do not certify that hardware scenario.",
+          "fr": "Avec payments.manage, ouvrez Plus → Paramètres → Matériel → Terminaux de paiement. Configurez le terminal enregistré ou choisissez Ajouter un terminal de paiement. Donnez-lui un nom reconnaissable, choisissez Mini ou Portable puis saisissez son adresse IPv4 locale et l’identifiant Ashrait à 10 chiffres fourni par Verifone. Choisissez Vérifier l’identité du terminal : cette lecture relève le modèle et le numéro de série, sans connexion bancaire, paiement ni Deposit. Comparez-les au matériel voulu et confirmez explicitement cette identité avant Enregistrer. Un nom ou une adresse enregistrée ne prouve pas quel appareil est connecté. Une ancienne configuration nécessite aussi cette vérification unique. L’identifiant reste masqué et le catalogue est conservé de manière sécurisée pour ce restaurant et cet environnement API sur cet iPad. Un appareil indisponible ou différent bloque l’encaissement au lieu de sélectionner un autre terminal.\n\nLe premier terminal enregistré devient celui par défaut. L’option Terminal par défaut permet de le modifier ; choisir un autre terminal pour un paiement conserve ce défaut. Gardez chaque appareil allumé et joignable sur le réseau local. Après restauration du restaurant et des droits, l’ouverture de FoodyPOS ou le retour au premier plan retente la même connexion enregistrée si elle est libre ; Tester la connexion relance un essai échoué. Une destination vérifiée et libre peut changer sans redémarrer l’application. Une initialisation, un paiement ou un dépôt incertain bloque les modifications.\n\nLa reconnexion automatique n’envoie ni paiement, ni recherche de transaction, ni Deposit. Conservez l’appareil, la configuration et les journaux d’origine lorsqu’un paiement ou dépôt reste à résoudre ; n’effacez pas les données et ne rétrogradez pas pour contourner un blocage. Installez les versions POS et API compatibles sur chaque appareil partageant un terminal. L’acceptation matérielle Mini/Portable et le contrôle distant d’un Portable exécutant aussi FoodyPOS restent à vérifier avec Verifone ; cette procédure ne certifie pas ce scénario matériel.",
+          "he": "עם ההרשאה payments.manage, פתחו עוד → הגדרות → חומרה → מסופי תשלום. הגדירו את המסוף השמור או בחרו הוספת מסוף תשלום. הזינו שם ברור, בחרו Mini או Portable והזינו כתובת IPv4 מקומית ומזהה Ashrait בן 10 ספרות שסופק על ידי Verifone. בחרו אימות זהות המסוף: הפעולה קוראת דגם ומספר סידורי ללא התחברות בנקאית, תשלום או Deposit. השוו למכשיר הפיזי הרצוי ואשרו במפורש את הזהות לפני שמירה. שם או כתובת שמורה אינם מוכיחים איזה מכשיר מחובר. גם הגדרה ישנה מחייבת אימות חד-פעמי זה. המזהה נשאר מוסתר והקטלוג נשמר באופן מאובטח למסעדה ולסביבת ה-API באייפד זה. מכשיר לא זמין או בעל זהות שונה חוסם גבייה במקום לבחור מסוף אחר.\n\nהמסוף הראשון שנשמר הופך לברירת המחדל. ניתן לשנות זאת באפשרות מסוף ברירת מחדל; בחירת מסוף אחר לתשלום אחד שומרת על ברירת המחדל. השאירו כל מכשיר פעיל ונגיש ברשת המקומית. לאחר שחזור המסעדה וההרשאות, פתיחת FoodyPOS או חזרה לקדמת המסך מנסה שוב את החיבור השמור כשהוא פנוי; בדיקת חיבור חוזרת על ניסיון שנכשל. ניתן להחליף יעד מאומת ופנוי ללא הפעלה מחדש של האפליקציה. אתחול פעיל, תשלום או הפקדה לא ודאית חוסמים שינויים.\n\nחיבור מחדש אינו שולח חיוב, חיפוש עסקה או Deposit. שמרו על המכשיר, ההגדרה והיומנים המקוריים כאשר תשלום או הפקדה טרם הוכרעו; אין למחוק נתונים או לשנמך כדי לעקוף חסימה. כל מכשיר שמשתף מסוף זקוק לגרסאות POS ו-API תואמות. יש לבדוק עם Verifone קבלה פיזית ב-Mini וב-Portable וזמינות שליטה מרחוק ב-Portable שמריץ גם FoodyPOS; ההוראות אינן מאשרות תרחיש חומרה זה."
+        }
+      },
+      {
+        "id": "explicit-terminal-selection",
+        "title": {
+          "en": "Choose Mini or Portable for this collection",
+          "fr": "Choisir Mini ou Portable pour cet encaissement",
+          "he": "בחירת Mini או Portable לגבייה זו"
+        },
+        "instructions": {
+          "en": "On iPad, choose Card on the existing order or financial bill, review the payment-terminal dialog, and explicitly confirm Mini or Portable. The configured default is initially selected; there is no automatic fallback to another connected device. Cancelling sends no payment. On a Victa Portable running FoodyPOS, open that same saved order/check and use its integrated reader. Do not recreate the sale. A server reservation protects the physical terminal and the selected orders while collection is in progress. Another device or tender must wait. QR orders keep their separate IDs and payments.\n\nIf the result is unknown, preserve the original POS and terminal and recover the existing operation. Neither elapsed time nor restarting the app authorizes another debit. A definitive refusal or cancellation permits a new reviewed attempt. A confirmed approval must be recorded with its original reservation before it is released. This changes the destination review, not the existing receipt-printing settings; validate hardware, remote Portable operation and integrated printing with Verifone.",
+          "fr": "Sur iPad, choisissez Carte sur la commande ou l’addition financière existante, vérifiez la fenêtre du terminal de paiement puis confirmez explicitement Mini ou Portable. Le terminal configuré par défaut est présélectionné ; aucun autre appareil connecté ne le remplace automatiquement. Annuler n’envoie aucun paiement. Sur un Victa Portable exécutant FoodyPOS, ouvrez cette même commande ou addition enregistrée et utilisez son lecteur intégré. Ne recréez pas la vente. Une réservation serveur protège le terminal physique et les commandes sélectionnées pendant l’encaissement. Un autre appareil ou moyen de paiement doit attendre. Les commandes QR conservent leurs identifiants et paiements séparés.\n\nSi le résultat est inconnu, conservez le POS et le terminal d’origine puis reprenez l’opération existante. Ni le temps écoulé ni un redémarrage n’autorisent un nouveau débit. Un refus ou une annulation définitive permet un nouvel essai revu. Une approbation confirmée doit être enregistrée avec sa réservation d’origine avant libération. Ce changement concerne le choix de destination, sans modifier les réglages d’impression existants ; validez le matériel, le contrôle distant du Portable et l’impression intégrée avec Verifone.",
+          "he": "באייפד, בחרו כרטיס בהזמנה או בחשבון הכספי הקיימים, בדקו את חלון מסוף התשלום ואשרו במפורש Mini או Portable. ברירת המחדל שהוגדרה מסומנת בתחילה; אין מעבר אוטומטי למכשיר מחובר אחר. ביטול אינו שולח תשלום. ב-Victa Portable שמריץ FoodyPOS, פתחו את אותה הזמנה או חשבון שמורים והשתמשו בקורא המובנה. אין ליצור מכירה נוספת. שריון שרת מגן על המסוף הפיזי ועל ההזמנות שנבחרו בזמן הגבייה. מכשיר אחר או אמצעי תשלום אחר צריכים להמתין. הזמנות QR שומרות על מזהים ותשלומים נפרדים.\n\nאם התוצאה אינה ידועה, שמרו על הקופה והמסוף המקוריים והמשיכו את הפעולה הקיימת. זמן שחלף או הפעלה מחדש אינם מתירים חיוב נוסף. סירוב או ביטול ודאיים מאפשרים ניסיון חדש לאחר בדיקה. אישור תשלום ודאי חייב להירשם עם השריון המקורי לפני שחרורו. השינוי נוגע לבחירת היעד ואינו משנה הגדרות הדפסה קיימות; יש לאמת חומרה, שליטה מרחוק ב-Portable והדפסה מובנית עם Verifone."
         }
       }
     ],
@@ -11470,6 +11591,19 @@
           "fr": "Sur iPad, Matériel → Terminaux de paiement propose Connecter un Victa Mini, puis le terminal enregistré et son état de connexion. La configuration et la reconnexion automatique sont décrites dans [Connexion du Victa Mini](/fr/help/payments/victa-mini#connection). Ce parcours ne change ni les profils d’imprimante, ni les réglages du mode de caisse, ni les opérations de paiement en attente.",
           "en": "On iPad, Hardware → Payment terminals offers Connect a Victa Mini, then the saved terminal and its connection state. Configuration and automatic restoration are explained in [Victa Mini connection](/en/help/payments/victa-mini#connection). This flow does not change printer profiles, POS mode policy or pending payment operations.",
           "he": "ב־iPad, חומרה → מסופי תשלום מציג חיבור Victa Mini ובהמשך את המסוף השמור ומצב החיבור שלו. ההגדרה ושחזור החיבור האוטומטי מוסברים ב[חיבור Victa Mini](/he/help/payments/victa-mini#connection). התהליך אינו משנה פרופילי הדפסה, הגדרות מצב קופה או פעולות תשלום ממתינות."
+        }
+      },
+      {
+        "id": "physical-card-destination",
+        "title": {
+          "en": "Review the physical card destination",
+          "fr": "Vérifier la destination physique du paiement carte",
+          "he": "בדיקת יעד הכרטיס הפיזי"
+        },
+        "instructions": {
+          "en": "With the compatible POS/API, review the physical card destination before collection: see [Mini/Portable selection](/en/help/payments/victa-mini#explicit-terminal-selection) and [verified hardware setup](/en/help/payments/victa-mini#connection). Existing order IDs, QR separation, kitchen progression and table-release settings remain independent. An unresolved terminal reservation blocks another collection; recover the original operation rather than creating a replacement sale.",
+          "fr": "Avec les versions POS/API compatibles, vérifiez la destination physique avant l’encaissement carte : consultez le [choix Mini/Portable](/fr/help/payments/victa-mini#explicit-terminal-selection) et la [configuration vérifiée du matériel](/fr/help/payments/victa-mini#connection). Les identifiants existants, la séparation QR, la préparation et les réglages de libération des tables restent indépendants. Une réservation terminal non résolue bloque un autre encaissement ; reprenez l’opération d’origine plutôt que de créer une vente de remplacement.",
+          "he": "בגרסאות POS/API התואמות, בדקו את יעד הכרטיס הפיזי לפני גבייה: ראו [בחירת Mini/Portable](/he/help/payments/victa-mini#explicit-terminal-selection) ו[הגדרת חומרה מאומתת](/he/help/payments/victa-mini#connection). מזהי הזמנות קיימים, הפרדת QR, התקדמות מטבח והגדרות שחרור שולחנות נשארים עצמאיים. שריון מסוף שלא הוכרע חוסם גבייה אחרת; המשיכו את הפעולה המקורית במקום ליצור מכירה חלופית."
         }
       }
     ],
@@ -14216,6 +14350,19 @@
           "en": "The lifecycle_v2.actions descriptor permits accept for scheduled as well as pending_review, with orders.manage and without held settlement. Prepared-checkout holds still apply afterward. No new writer is introduced: POST /orders/:id/accept still calls AcceptOrderWithWorkflow and setStatus, retaining restaurant-specific guards, notifications and shortcuts. No automatic early dispatch is added; only explicit staff action can advance the order. Date, slot and payment stay unchanged. Deploy the corrected API to development and verify separate and guided workflows before an approved promotion. No schema or client change is needed for clients already following capabilities. Publish the correction guides with that API release. For scheduled only, payment_status=pending keeps accept denied; pending_review retains its existing behavior.",
           "he": "המתאר lifecycle_v2.actions מאפשר accept במצבי scheduled וגם pending_review עם orders.manage וללא settlement held. חסימות תשלום מוכן ממשיכות לחול לאחר מכן. אין נתיב כתיבה חדש: POST /orders/:id/accept ממשיך לקרוא ל־AcceptOrderWithWorkflow ול־setStatus ולשמור על הבדיקות, ההודעות והקיצורים של כל מסעדה. אין שליחה מוקדמת אוטומטית; רק פעולה מפורשת של הצוות יכולה לקדם את ההזמנה. התאריך, החלון והתשלום אינם משתנים. יש לפרוס תחילה בפיתוח ולבדוק תהליכים נפרדים ומודרכים לפני קידום מאושר. אין צורך בשינוי סכמה או לקוח שכבר משתמש ביכולות. יש לפרסם את התיעוד יחד עם גרסת ה־API. רק במצב scheduled, כאשר payment_status=pending הפעולה accept נשארת חסומה; ההתנהגות הקיימת של pending_review נשמרת."
         }
+      },
+      {
+        "id": "pos-terminal-collection-contract",
+        "title": {
+          "en": "Reserve physical card collection before native dispatch",
+          "fr": "Réserver l’encaissement physique avant l’envoi natif",
+          "he": "שריון גבייה פיזית לפני שליחה למכשיר"
+        },
+        "instructions": {
+          "en": "On iPad, choose Card on the existing order or financial bill, review the payment-terminal dialog, and explicitly confirm Mini or Portable. The configured default is initially selected; there is no automatic fallback to another connected device. Cancelling sends no payment. On a Victa Portable running FoodyPOS, open that same saved order/check and use its integrated reader. Do not recreate the sale. A server reservation protects the physical terminal and the selected orders while collection is in progress. Another device or tender must wait. QR orders keep their separate IDs and payments.\n\nIf the result is unknown, preserve the original POS and terminal and recover the existing operation. Neither elapsed time nor restarting the app authorizes another debit. A definitive refusal or cancellation permits a new reviewed attempt. A confirmed approval must be recorded with its original reservation before it is released. This changes the destination review, not the existing receipt-printing settings; validate hardware, remote Portable operation and integrated printing with Verifone.",
+          "fr": "Sur iPad, choisissez Carte sur la commande ou l’addition financière existante, vérifiez la fenêtre du terminal de paiement puis confirmez explicitement Mini ou Portable. Le terminal configuré par défaut est présélectionné ; aucun autre appareil connecté ne le remplace automatiquement. Annuler n’envoie aucun paiement. Sur un Victa Portable exécutant FoodyPOS, ouvrez cette même commande ou addition enregistrée et utilisez son lecteur intégré. Ne recréez pas la vente. Une réservation serveur protège le terminal physique et les commandes sélectionnées pendant l’encaissement. Un autre appareil ou moyen de paiement doit attendre. Les commandes QR conservent leurs identifiants et paiements séparés.\n\nSi le résultat est inconnu, conservez le POS et le terminal d’origine puis reprenez l’opération existante. Ni le temps écoulé ni un redémarrage n’autorisent un nouveau débit. Un refus ou une annulation définitive permet un nouvel essai revu. Une approbation confirmée doit être enregistrée avec sa réservation d’origine avant libération. Ce changement concerne le choix de destination, sans modifier les réglages d’impression existants ; validez le matériel, le contrôle distant du Portable et l’impression intégrée avec Verifone.",
+          "he": "באייפד, בחרו כרטיס בהזמנה או בחשבון הכספי הקיימים, בדקו את חלון מסוף התשלום ואשרו במפורש Mini או Portable. ברירת המחדל שהוגדרה מסומנת בתחילה; אין מעבר אוטומטי למכשיר מחובר אחר. ביטול אינו שולח תשלום. ב-Victa Portable שמריץ FoodyPOS, פתחו את אותה הזמנה או חשבון שמורים והשתמשו בקורא המובנה. אין ליצור מכירה נוספת. שריון שרת מגן על המסוף הפיזי ועל ההזמנות שנבחרו בזמן הגבייה. מכשיר אחר או אמצעי תשלום אחר צריכים להמתין. הזמנות QR שומרות על מזהים ותשלומים נפרדים.\n\nאם התוצאה אינה ידועה, שמרו על הקופה והמסוף המקוריים והמשיכו את הפעולה הקיימת. זמן שחלף או הפעלה מחדש אינם מתירים חיוב נוסף. סירוב או ביטול ודאיים מאפשרים ניסיון חדש לאחר בדיקה. אישור תשלום ודאי חייב להירשם עם השריון המקורי לפני שחרורו. השינוי נוגע לבחירת היעד ואינו משנה הגדרות הדפסה קיימות; יש לאמת חומרה, שליטה מרחוק ב-Portable והדפסה מובנית עם Verifone."
+        }
       }
     ],
     "audience": "internal",
@@ -15541,6 +15688,19 @@
           "fr": "Avant de commencer, reprenez toute opération espèces encore en attente : suivez le lien vers Solde en caisse pour une opération de tiroir, ou vers Commandes pour retrouver l’encaissement concerné. Son identité est conservée tant que son résultat reste incertain ; ne créez pas une seconde opération pour la remplacer. Une fois la caisse réservée pour la clôture, son rapport reste consultable, mais les encaissements espèces, mouvements et clôtures séparées sont bloqués. Le contrôle de caisse et du contexte personnel est répété à la confirmation, avant toute ouverture de tiroir ou validation de collecte. Un contrôle de caisse précède aussi l’ouverture du dialogue de paiement espèces ; si la lecture échoue, ne collectez pas d’espèces à partir de ce dialogue. Avec les droits nécessaires, le message de réservation permet de rejoindre Clôture de journée. Un refus explicitement confirmé par le serveur libère une demande rejetée ; une erreur réseau ne la libère pas. Reprenez la clôture existante au lieu de contourner la réservation.",
           "en": "Before starting, recover any pending cash operation: follow the link to Cash balance for a drawer operation, or to Orders to find the affected collection. Its identity is retained while the result is uncertain; do not create a second operation to replace it. Once the drawer is reserved for closing, its report remains readable, but cash collections, movements and separate closing actions are blocked. The drawer and personal context are checked again at confirmation, before any drawer opening or collection confirmation. A current drawer check also precedes the cash tender dialog; if that read fails, do not collect cash through this dialog. With the required permissions, the reservation notice links to End of day. Only an explicit server-confirmed rejection releases a rejected request; a network error does not. Resume the existing closing instead of bypassing its reservation.",
           "he": "לפני ההתחלה שחזרו כל פעולת מזומן ממתינה: פעלו לפי הקישור ליתרת הקופה לפעולת מגירה, או להזמנות כדי למצוא את הגבייה הרלוונטית. זהות הפעולה נשמרת כל עוד התוצאה אינה ודאית; אין ליצור פעולה שנייה במקומה. לאחר שהמגירה נשמרה לסגירת היום, אפשר עדיין לקרוא את הדוח, אך גביית מזומן, תנועות וסגירה נפרדת נחסמות. המגירה וההקשר האישי נבדקים שוב בעת האישור, לפני פתיחת מגירה או אישור גבייה. בדיקת מגירה עדכנית מתבצעת גם לפני פתיחת חלון תשלום במזומן; אם הקריאה נכשלת, אין לגבות מזומן דרך החלון הזה. עם ההרשאות הדרושות, הודעת השמירה מקשרת לסגירת יום. רק דחייה מפורשת שאושרה בשרת משחררת בקשה שנדחתה; שגיאת רשת אינה משחררת אותה. המשיכו את הסגירה הקיימת במקום לעקוף את שמירת המגירה."
+        }
+      },
+      {
+        "id": "multiple-terminal-closing",
+        "title": {
+          "en": "Review several physical terminals",
+          "fr": "Vérifier plusieurs terminaux physiques",
+          "he": "בדיקת כמה מסופים פיזיים"
+        },
+        "instructions": {
+          "en": "On the compatible iPad, the closing review lists every verified terminal in its saved catalogue. Review all destinations before beginning; each transmission still requires a separate explicit action and positive confirmation. Unverified profiles must first be verified in Hardware. The server requires inclusion of physical terminals used by recorded card collections on this POS in the closing window. Their collection references and amounts are retained separately from existing financial-payment records; do not add those overlapping lists as independent sales. Legacy and other-POS attribution remains partial.\n\nA positively confirmed transmission checkpoint can release its local receipt lock so the next included terminal can be selected, but the server closing reservation still blocks new card collections until the final Z report is archived. An unknown transmission never releases that lock or permits a second transmission on another terminal. Configuration changes cannot move a pending result. Finalizing still includes the reserved cash drawer and all declared terminal confirmations.",
+          "fr": "Sur l’iPad compatible, la vérification de clôture liste chaque terminal vérifié du catalogue enregistré. Vérifiez toutes les destinations avant de commencer ; chaque transmission nécessite toujours une action explicite séparée et une confirmation positive. Les profils non vérifiés doivent d’abord être contrôlés dans Matériel. Le serveur impose l’inclusion des terminaux physiques utilisés par les encaissements carte enregistrés sur ce POS pendant la période. Leurs références et montants sont conservés séparément des paiements financiers existants ; n’additionnez pas ces listes qui peuvent se recouper comme des ventes distinctes. L’attribution des anciens paiements et des autres POS reste partielle.\n\nUne confirmation de transmission enregistrée positivement peut libérer le verrou local de son reçu pour sélectionner le prochain terminal inclus, mais la réservation serveur de clôture bloque toujours les nouveaux encaissements carte jusqu’à l’archivage du rapport Z final. Une transmission inconnue ne libère jamais ce verrou et ne permet pas une seconde transmission sur un autre terminal. Modifier une configuration ne déplace pas un résultat en attente. La finalisation comprend toujours le tiroir réservé et les confirmations de tous les terminaux déclarés.",
+          "he": "באייפד התואם, בדיקת הסגירה מציגה כל מסוף מאומת בקטלוג השמור. בדקו את כל היעדים לפני התחלה; כל שידור עדיין מחייב פעולה מפורשת נפרדת ואישור חיובי. יש לאמת תחילה פרופילים לא מאומתים בחומרה. השרת מחייב לכלול מסופים פיזיים ששימשו לגביות כרטיס שנרשמו בקופה זו בחלון הסגירה. ההפניות והסכומים נשמרים בנפרד מרשומות התשלומים הכספיים הקיימות; אין לחבר רשימות חופפות כמכירות נפרדות. שיוך תשלומים ישנים או מקופות אחרות נשאר חלקי.\n\nנקודת אישור שידור שנרשמה בוודאות יכולה לשחרר את נעילת הקבלה המקומית כדי לבחור במסוף הכלול הבא, אך שריון הסגירה בשרת עדיין חוסם גביות כרטיס חדשות עד ארכוב דוח Z הסופי. שידור לא ודאי לעולם אינו משחרר נעילה זו ואינו מתיר שידור נוסף במסוף אחר. שינוי הגדרה אינו מעביר תוצאה ממתינה. השלמת הסגירה עדיין כוללת את המגירה המשוריינת ואת אישורי כל המסופים שהוצהרו."
         }
       }
     ],
