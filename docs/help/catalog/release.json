@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": "ca634b61b2d0517afc4e0fa6169201c86837297539d00083a78491e0f8406b08",
+  "revision": "253e585cd589a751328fed872aa31555cd81e139aac32bf3e2a9dbf596cc5659",
   "articles": {
     "getting-started/first-login": {
       "feature": "account-access",
@@ -1092,15 +1092,15 @@
       "translations": {
         "en": {
           "path": "src/content/help/en/settings/pos-behavior.mdx",
-          "sha256": "dffbd387c3e519061cf421d244d3e685c64821fcfd795049842919c9b81cd353"
+          "sha256": "452952d01e7ae78ea953cb701a8bb1afeffe1ed48d79579e2dc97052b406d602"
         },
         "fr": {
           "path": "src/content/help/fr/settings/pos-behavior.mdx",
-          "sha256": "d363e80e1ae370db1c20990624d56cce5c087c4fd7e6acfe527a03962fbee557"
+          "sha256": "340feef806aa50568251a94125b0222d0e96975e04a5a89d8a640b5f573e677a"
         },
         "he": {
           "path": "src/content/help/he/settings/pos-behavior.mdx",
-          "sha256": "0480b05c14b77b57228c0e1bc6358d46bb9e1d4ebd4ac6131d2f4f70016b8eef"
+          "sha256": "1dbe0327b285bfc86fe6e63a8d60ae11cbde9aea783343f4a133a6ae0d8876fe"
         }
       }
     },
@@ -1282,15 +1282,34 @@
       "translations": {
         "en": {
           "path": "src/content/help/en/payments/pos-checkout.mdx",
-          "sha256": "1240c9188d0c87234d0e0c2e7b0310f0c9d56f7f952f8fae6df059ae3e2506bd"
+          "sha256": "a3a417d2edebdc884a5b70fae2b36214648e9a498422c395a5516eeaf7edf539"
         },
         "fr": {
           "path": "src/content/help/fr/payments/pos-checkout.mdx",
-          "sha256": "810539891e3d19c2a7c78ffd2025f45bb0547e23b473aae426c64e6af58f78b2"
+          "sha256": "66f35e6274fd7eb7fe42370472db2a596e575a20480a88192ddd7dfa29d46985"
         },
         "he": {
           "path": "src/content/help/he/payments/pos-checkout.mdx",
-          "sha256": "0a1e72d0cb6e961386d8c1c290c843ec5626ae81c1efe509a420631f21a1abe2"
+          "sha256": "7b50728e6bd329e453b9181fca6235f222658910d26b0fac21c0e8917d2f8541"
+        }
+      }
+    },
+    "payments/victa-mini": {
+      "feature": "pos-victa-mini",
+      "audience": "public",
+      "status": "available",
+      "translations": {
+        "en": {
+          "path": "src/content/help/en/payments/victa-mini.mdx",
+          "sha256": "5c9f654b694e7f52121c325a62380501ab6e051cacb6d3ddf7dedf71a73b8616"
+        },
+        "fr": {
+          "path": "src/content/help/fr/payments/victa-mini.mdx",
+          "sha256": "fc2e5f155694745c8fc0a3ac1bebdadb26b9b940c6bad9d1ac7ac3a09f7591e8"
+        },
+        "he": {
+          "path": "src/content/help/he/payments/victa-mini.mdx",
+          "sha256": "8f104df4edfee261b7c08b2c559053256dc911506e8187584a7c6c60251ff138"
         }
       }
     },
@@ -1320,15 +1339,15 @@
       "translations": {
         "en": {
           "path": "src/content/help/en/settings/pos-workspace.mdx",
-          "sha256": "9b5dc4a360547945597bab95b0719e1bdd723cc664e42d84bdcd609093e41ba7"
+          "sha256": "5be07e582b894b334992c0b5c1736711e49a1e3a3675d7aeaa53a78d20cdbce3"
         },
         "fr": {
           "path": "src/content/help/fr/settings/pos-workspace.mdx",
-          "sha256": "2b45debda0419d50e53548a17c0fcf244060942c493527a574765760c566b73c"
+          "sha256": "8344173e9714d6e49beffc5189cf3719d56c1dc9e7ec240cf9073bafb77bf115"
         },
         "he": {
           "path": "src/content/help/he/settings/pos-workspace.mdx",
-          "sha256": "07d0617a8ddfc020cf1698b0b70433a12690cad35d9b3aa50f6a8c22a73073b8"
+          "sha256": "c20068cd79c42ea89e2f7900aeda713588f36bdfc4b7f921ea2f77073c7b1d24"
         }
       }
     },
@@ -2036,7 +2055,7 @@
       }
     }
   },
-  "publicArticleCount": 98,
+  "publicArticleCount": 99,
   "features": [
     {
       "id": "account-access",
@@ -3128,7 +3147,8 @@
         "fulfillment-order-contact-entry",
         "mobile-terminal-pages",
         "terminal-navigation-overview",
-        "end-of-day-terminal-navigation"
+        "end-of-day-terminal-navigation",
+        "victa-mini-hardware"
       ]
     },
     {
@@ -3285,7 +3305,18 @@
         "counter-completion",
         "mobile-terminal",
         "mobile-terminal-pages",
-        "prepared-sumit-checkout-integration"
+        "prepared-sumit-checkout-integration",
+        "victa-mini-connection"
+      ]
+    },
+    {
+      "id": "pos-victa-mini",
+      "article": "payments/victa-mini",
+      "module": "payments",
+      "audience": "public",
+      "status": "available",
+      "operations": [
+        "connection"
       ]
     },
     {
@@ -3319,7 +3350,8 @@
         "mobile-terminal-pages",
         "operational-overview",
         "local-draft-and-lifecycle",
-        "end-of-day-navigation"
+        "end-of-day-navigation",
+        "victa-mini-hardware"
       ]
     },
     {

@@ -1,5 +1,27 @@
 # Help ownership, evidence and releases
 
+## Saved Victa Mini connections (3 November 2026)
+
+The compatible iPad client uses the existing neutral hardware setup theme for
+Connect a Victa Mini, the saved terminal row, connection state and diagnostics.
+It retains the secure API/restaurant-scoped address and masked Ashrait ID.
+Startup waits for configuration and payments.manage instead of trying once
+before authentication finishes. Foreground return attempts the same idle
+connection. Connection restoration checks local financial journals and the
+native recovery lock, sends no charge, lookup or Deposit, and discards obsolete
+context results. Targeted tests cover delayed restaurant/permission restore, a
+new provider container using saved secure settings, foreground return, native
+locks, corrupt approval evidence, tenant changes during preflight, request
+coalescing and the unchanged Android path. UI tests cover FR/HE/EN at 320 and
+1210 logical pixels. Hardware acceptance still requires the configured Mini. Changing an already connected terminal still requires the
+existing explicit application restart; no native banking sequence is changed.
+
+The dedicated payments/victa-mini procedure has complete French, Hebrew and
+English versions, with links from POS checkout, behavior and workspace guides.
+They require a compatible installed client and do not claim hardware/banking
+acceptance. The support corpus is copied byte-for-byte to the API. This local
+preparation does not itself publish, install or operate a terminal.
+
 ## Saved catering management (2 November 2026)
 
 Compatible API/Admin/Web add atomic saved-event edits before bank processing,

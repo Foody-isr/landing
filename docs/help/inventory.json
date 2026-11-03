@@ -4,10 +4,10 @@
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "320277b9d91b06870a4390ea29a3d3dc2c30fccd",
+      "sourceCommit": "a84e5c78051bedb1e357b22807f0b15cfea0618e",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "38565a416631d51b26ff6b82aed7718dd5a6ba6fee7b0d6154cc00d943aa4b08",
-      "workingTreeHasChanges": true,
+      "sourceSnapshot": "9512222c01d739ed746633dc085dbe33f895a5a81f7b02ac70cfb1b5124ba1c1",
+      "workingTreeHasChanges": false,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
           "sha256": "33cf30b683837b76977ed47c14d5d91ccb1b34bd60e9f62d124b8cc1079231aa",
@@ -2628,6 +2628,12 @@
             "pos-end-of-day"
           ]
         },
+        "internal/orders/event_edit.go": {
+          "sha256": "10fac079b8095a1a716b7f778145c90564fcd275739c8fa051d209d04a4d704c",
+          "features": [
+            "orders-events"
+          ]
+        },
         "internal/orders/event_orders.go": {
           "sha256": "609ee75812ba54b15fb19a8032abb69e62d558d684bf034876ad35fcd7572b91",
           "features": [
@@ -3458,6 +3464,12 @@
         },
         "internal/payment/event_checkout.go": {
           "sha256": "70baa1b9ca59343f97c23999db3301193094be2ad4fbf1adeb2c636083eeaf9d",
+          "features": [
+            "orders-events"
+          ]
+        },
+        "internal/payment/event_hold.go": {
+          "sha256": "c0cdef236acec03b38007d3262c94339bf9d56d02f87d15799b326583cecbe3e",
           "features": [
             "orders-events"
           ]
@@ -4753,7 +4765,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "4a3b49be529f2dcd2552218a9eead4de22f4fc4bc4eab5b2fe7c795b480a7614",
+          "sha256": "4ec43a0069bd57fe1ef316c323e620f3e37d44b6fb16b85f4b59d4972850cb45",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -5102,18 +5114,6 @@
         },
         "migrations/286_internal_event_orders.sql": {
           "sha256": "bfd4ac4c53f98ce318e756b685c1adad2264be1dc1521a0ef504519b98432f7e",
-          "features": [
-            "orders-events"
-          ]
-        },
-        "internal/orders/event_edit.go": {
-          "sha256": "10fac079b8095a1a716b7f778145c90564fcd275739c8fa051d209d04a4d704c",
-          "features": [
-            "orders-events"
-          ]
-        },
-        "internal/payment/event_hold.go": {
-          "sha256": "c0cdef236acec03b38007d3262c94339bf9d56d02f87d15799b326583cecbe3e",
           "features": [
             "orders-events"
           ]
@@ -14074,10 +14074,10 @@
     },
     "foodypos": {
       "repository": "https://github.com/Foody-isr/pos",
-      "sourceCommit": "fa6853dd2bb496df22ff26baed65fb1de683b4bd",
+      "sourceCommit": "ba877c11e8b70bebf7a5335498c220a06131cb2b",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "d74f2d97c7bfc23e6ffb9a6d95fc14c6d04d93faa0b249b95e12221252d0ebb0",
-      "workingTreeHasChanges": true,
+      "sourceSnapshot": "dc0690506d2d42e5d055b35a29069ef11ed92bd569cd9ded144583f9c3d37942",
+      "workingTreeHasChanges": false,
       "sourceFiles": {
         "android/app/src/main/kotlin/com/foodypos/app/EpsonPrinterBridge.kt": {
           "sha256": "66b3bda81673c67dc6be3ab588b278303191cd808481d3391037cf6d2d36282b",
@@ -14191,7 +14191,7 @@
           ]
         },
         "lib/core/l10n/app_en.arb": {
-          "sha256": "0a2c81335ef7fe71d8b12af06aebdae04a8c6797b85908d1c992acc36d734e42",
+          "sha256": "65db0843d1b6782109bc00fd34940c772c24db178bbbd96b9cccc1a1413cb02b",
           "features": [
             "pos-behavior",
             "pos-cash-access-diagnostics",
@@ -14200,7 +14200,7 @@
           ]
         },
         "lib/core/l10n/app_fr.arb": {
-          "sha256": "3f5970f35f2d1dba722bcf663ec7a166b370300943fe84654b044920866a9f6a",
+          "sha256": "05ae51e3d86f1e026b436292c08ebb9008e28d975de03286375c6a102f1608cd",
           "features": [
             "pos-behavior",
             "pos-cash-access-diagnostics",
@@ -14209,7 +14209,7 @@
           ]
         },
         "lib/core/l10n/app_he.arb": {
-          "sha256": "ab810bfa0d26501f9c11567a93fd4e42c5a4175b8bf7288a0e415878ab58fc70",
+          "sha256": "aad3be83d1137b2f6ff36fe95ed1e709496d912ea4de077f1f992e89a715bba5",
           "features": [
             "pos-behavior",
             "pos-cash-access-diagnostics",
@@ -16243,9 +16243,10 @@
           ]
         },
         "lib/features/settings/presentation/victa_mini_settings_card.dart": {
-          "sha256": "82f7caf6c2519e1452e5d6030812d2531cf012a75657597b1aeb3ab9a21af466",
+          "sha256": "824350f1b15753bd1869f463447c5f8a8e4f290fce253b6a9a56917fbadf6f65",
           "features": [
             "pos-behavior",
+            "pos-victa-mini",
             "pos-workspace"
           ]
         },
@@ -16527,9 +16528,10 @@
           ]
         },
         "lib/main.dart": {
-          "sha256": "ec010fbcea92554c8222993d581ae8b1c7f3fce777cbe2147066498bf53ff241",
+          "sha256": "10d012a09d11968d583dc5c718465c540b911edbc42a2aae075a05d725821670",
           "features": [
-            "shared-runtime"
+            "pos-payments",
+            "pos-victa-mini"
           ]
         },
         "lib/services/devices/device_inventory_repository.dart": {
@@ -16578,11 +16580,19 @@
         "lib/services/payments/terminal_configuration.dart": {
           "sha256": "6008d7c0f1cdb464bd764589ab8a901bf6677d05359670bdb8b439cbfa0106c7",
           "features": [
-            "pos-payments"
+            "pos-payments",
+            "pos-victa-mini"
+          ]
+        },
+        "lib/services/payments/terminal_connection_provider.dart": {
+          "sha256": "e22db03e8adcfb6a74668e407545413bdd6199f38df13bce8820f518ce1e1a97",
+          "features": [
+            "pos-payments",
+            "pos-victa-mini"
           ]
         },
         "lib/services/payments/terminal_payment_service.dart": {
-          "sha256": "f80f63de42a4f218e949839c8e10d32afc0bbb3d833f48f52f3d876d9cd8adc1",
+          "sha256": "f4d0fdb69af6dc87aedf2dfba0f40e9f1cd26fcee886447111f44e6e1ff5b3b6",
           "features": [
             "pos-payments",
             "pos-end-of-day"
@@ -38656,6 +38666,19 @@
             "en": "When the compatible API offers End of day, Terminal deposits opens that combined flow before any transmission. With an older API, the separate deposit screen remains available according to actual terminal capabilities. A provisioning change after display requires another review before reserving cash. An old card approval without verifiable provenance remains pending reconciliation: it permits neither another collection nor adoption by another restaurant. See [closing and recovery](/en/help/payments/end-of-day).",
             "he": "כאשר ה־API התואם מציע סגירת יום, הפקדות מסוף פותח את המסלול המשותף לפני שידור. ב־API קודם מסך ההפקדה הנפרד נשאר זמין בהתאם ליכולות המסוף בפועל. שינוי הגדרה לאחר הצגת המסך מחייב בדיקה מחדש לפני שמירת המזומן. אישור כרטיס ישן ללא מקור שניתן לאמת נשאר לבדיקת התאמה: הוא אינו מתיר חיוב נוסף או שיוך למסעדה אחרת. ראו [סגירה ושחזור](/he/help/payments/end-of-day)."
           }
+        },
+        {
+          "id": "victa-mini-hardware",
+          "title": {
+            "fr": "Connecter et retrouver le Victa Mini sur iPad",
+            "en": "Connect and restore the Victa Mini on iPad",
+            "he": "חיבור ושחזור החיבור ל־Victa Mini ב־iPad"
+          },
+          "instructions": {
+            "fr": "Sur iPad, Matériel → Terminaux de paiement propose Connecter un Victa Mini, puis le terminal enregistré et son état de connexion. La configuration et la reconnexion automatique sont décrites dans [Connexion du Victa Mini](/fr/help/payments/victa-mini#connection). Ce parcours ne change ni les profils d’imprimante, ni les réglages du mode de caisse, ni les opérations de paiement en attente.",
+            "en": "On iPad, Hardware → Payment terminals offers Connect a Victa Mini, then the saved terminal and its connection state. Configuration and automatic restoration are explained in [Victa Mini connection](/en/help/payments/victa-mini#connection). This flow does not change printer profiles, POS mode policy or pending payment operations.",
+            "he": "ב־iPad, חומרה → מסופי תשלום מציג חיבור Victa Mini ובהמשך את המסוף השמור ומצב החיבור שלו. ההגדרה ושחזור החיבור האוטומטי מוסברים ב[חיבור Victa Mini](/he/help/payments/victa-mini#connection). התהליך אינו משנה פרופילי הדפסה, הגדרות מצב קופה או פעולות תשלום ממתינות."
+          }
         }
       ],
       "audience": "public",
@@ -40870,7 +40893,8 @@
           "ios/Runner/VerifonePaymentBridge.m",
           "android/app/src/main/kotlin/com/foodypos/app/VerifonePaymentBridge.kt",
           "lib/features/orders/domain/checkout_review.dart",
-          "lib/features/orders/presentation/terminal_checkout_pages.dart"
+          "lib/features/orders/presentation/terminal_checkout_pages.dart",
+          "lib/main.dart"
         ],
         "foodyserver": [
           "internal/payment/**",
@@ -41175,6 +41199,19 @@
             "fr": "Paiement Sumit dans Admin : [procédure](/fr/help/orders/internal-sumit-checkout).",
             "he": "לתשלום Sumit בניהול ראו [הנוהל הייעודי](/he/help/orders/internal-sumit-checkout)."
           }
+        },
+        {
+          "id": "victa-mini-connection",
+          "title": {
+            "fr": "Connecter et retrouver le Victa Mini sur iPad",
+            "en": "Connect and restore the Victa Mini on iPad",
+            "he": "חיבור ושחזור החיבור ל־Victa Mini ב־iPad"
+          },
+          "instructions": {
+            "fr": "Sur iPad, connectez le terminal dans Plus → Paramètres → Matériel → Terminaux de paiement. Le POS compatible tente ensuite la reconnexion à l’ouverture et au retour au premier plan, après restauration du restaurant et des droits. Consultez [Connexion du Victa Mini](/fr/help/payments/victa-mini#connection) pour les réglages et les blocages de reprise. Aucun paiement ni dépôt n’est lancé.",
+            "en": "On iPad, connect the terminal once under More → Settings → Hardware → Payment terminals. The compatible POS then attempts to reconnect on opening and returning to the foreground, after restaurant access and permissions are restored. See [Victa Mini connection](/en/help/payments/victa-mini#connection) for secure setup, states and recovery locks. This flow starts no charge or deposit.",
+            "he": "ב־iPad, חברו את המסוף פעם אחת דרך עוד ← הגדרות ← חומרה ← מסופי תשלום. גרסת ה־POS התואמת מנסה לחדש את החיבור בפתיחה ובחזרה לאפליקציה לאחר שחזור המסעדה וההרשאות. ראו [חיבור Victa Mini](/he/help/payments/victa-mini#connection) להגדרות מאובטחות, מצבים וחסימות שחזור. התהליך אינו יוזם חיוב או הפקדה."
+          }
         }
       ],
       "audience": "public",
@@ -41436,11 +41473,77 @@
         },
         {
           "service": "foodypos",
+          "file": "lib/main.dart"
+        },
+        {
+          "service": "foodypos",
           "file": "lib/services/payments/terminal_configuration.dart"
         },
         {
           "service": "foodypos",
+          "file": "lib/services/payments/terminal_connection_provider.dart"
+        },
+        {
+          "service": "foodypos",
           "file": "lib/services/payments/terminal_payment_service.dart"
+        }
+      ]
+    },
+    {
+      "id": "pos-victa-mini",
+      "module": "payments",
+      "article": "payments/victa-mini",
+      "title": {
+        "fr": "Connecter et retrouver le Victa Mini sur iPad",
+        "en": "Connect and restore the Victa Mini on iPad",
+        "he": "חיבור ושחזור החיבור ל־Victa Mini ב־iPad"
+      },
+      "entry": {
+        "fr": "POS iPad → Plus → Paramètres → Matériel → Terminaux de paiement",
+        "en": "iPad POS → More → Settings → Hardware → Payment terminals",
+        "he": "POS ב־iPad ← עוד ← הגדרות ← חומרה ← מסופי תשלום"
+      },
+      "selectors": {
+        "foodypos": [
+          "lib/services/payments/terminal_connection_provider.dart",
+          "lib/services/payments/terminal_configuration.dart",
+          "lib/features/settings/presentation/victa_mini_settings_card.dart",
+          "lib/main.dart"
+        ]
+      },
+      "operations": [
+        {
+          "id": "connection",
+          "title": {
+            "fr": "Connecter et retrouver le Victa Mini sur iPad",
+            "en": "Connect and restore the Victa Mini on iPad",
+            "he": "חיבור ושחזור החיבור ל־Victa Mini ב־iPad"
+          },
+          "instructions": {
+            "fr": "Avec payments.manage, ouvrez Plus → Paramètres → Matériel → Terminaux de paiement → Connecter un Victa Mini. Le parcours utilise les mêmes surfaces neutres et contrôles de fermeture/enregistrement que les autres connexions matériel. Saisissez son adresse IPv4 locale et l’identifiant Ashrait à 10 chiffres fourni par Verifone, puis Enregistrer. L’identifiant reste masqué et la configuration est conservée de façon sécurisée pour ce restaurant et cet environnement API sur cet iPad ; une adresse enregistrée ne confirme pas une connexion.\n\nAprès la restauration du restaurant et des droits, FoodyPOS tente automatiquement de reconnecter le terminal enregistré à l’ouverture puis au retour au premier plan. Il doit être allumé et joignable sur le même réseau local. Consultez Connexion…, Connecté ou Échec de la connexion ; Tester la connexion reprend une tentative en échec et Détails de connexion permet de consulter le diagnostic. Il n’est pas nécessaire de ressaisir les paramètres à chaque fermeture de l’application. Si vous changez un terminal déjà connecté, fermez puis rouvrez FoodyPOS comme indiqué.\n\nLa reconnexion automatique ne lance aucun encaissement, recherche de transaction ou dépôt. Un paiement, un dépôt incertain ou une opération terminal en cours bloque cette reconnexion : gardez la configuration et reprenez l’opération d’origine dans son parcours. Ne supprimez pas les données pour contourner le blocage. Ce parcours nécessite le build compatible ; il ne certifie ni une connexion réelle sur votre réseau ni l’acceptation bancaire du terminal.",
+            "en": "With payments.manage, open More → Settings → Hardware → Payment terminals → Connect a Victa Mini. The flow uses the same neutral surfaces and close/save controls as other hardware connections. Enter its local IPv4 address and the 10-digit Ashrait Terminal ID supplied by Verifone, then Save. The ID stays masked and the configuration is stored securely for this restaurant and API environment on this iPad; a saved address does not confirm a connection.\n\nAfter the restaurant and permissions are restored, FoodyPOS automatically tries to reconnect the saved terminal on opening and when returning to the foreground. Keep it switched on and reachable on the same local network. Check Connecting…, Connected or Connection failed; Test connection retries a failed attempt and Connection details shows diagnostics. You do not need to re-enter settings after each app closure. If you change an already connected terminal, close and reopen FoodyPOS as instructed.\n\nAutomatic reconnection starts no charge, transaction lookup or deposit. A pending payment, uncertain deposit or ongoing terminal operation blocks it: retain the configuration and recover the original operation through its own workflow. Do not erase data to bypass the lock. This flow needs the compatible build; it does not certify a real connection on your network or terminal banking acceptance.",
+            "he": "עם הרשאת payments.manage, פתחו עוד → הגדרות → חומרה → מסופי תשלום → חיבור Victa Mini. התהליך משתמש באותו עיצוב ניטרלי ובפקדי סגירה ושמירה כמו חיבורי החומרה האחרים. הזינו את כתובת ה־IPv4 המקומית ואת מזהה מסוף Ashrait בן 10 הספרות שקיבלתם מ־Verifone ולחצו על שמירה. המזהה נשאר מוסתר וההגדרות נשמרות בצורה מאובטחת עבור המסעדה וסביבת ה־API ב־iPad הזה; כתובת שמורה אינה מאשרת חיבור.\n\nלאחר שחזור המסעדה וההרשאות, FoodyPOS מנסה לחדש אוטומטית את החיבור למסוף השמור בפתיחה ובחזרה לאפליקציה. המסוף צריך להיות מופעל וזמין באותה רשת מקומית. בדקו את מצב ההתחברות, מחובר או החיבור נכשל; בדיקת החיבור מאפשרת לנסות שוב לאחר כישלון ופרטי חיבור מציגים אבחון. אין צורך להזין מחדש את ההגדרות בכל סגירה של האפליקציה. אם מחליפים מסוף שכבר מחובר, סגרו ופתחו את FoodyPOS לפי ההנחיה.\n\nחיבור אוטומטי אינו יוזם חיוב, בירור עסקה או הפקדה. תשלום ממתין, הפקדה עם תוצאה לא ודאית או פעולה שמתבצעת במסוף חוסמים אותו: שמרו על ההגדרות וחזרו לפעולה המקורית בתהליך שלה. אל תמחקו נתונים כדי לעקוף חסימה. נדרשת גרסת האפליקציה התואמת; המדריך אינו מאשר חיבור בפועל ברשת שלכם או תקינות בנקאית של המסוף."
+          }
+        }
+      ],
+      "audience": "public",
+      "status": "available",
+      "evidence": [
+        {
+          "service": "foodypos",
+          "file": "lib/features/settings/presentation/victa_mini_settings_card.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/main.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/services/payments/terminal_configuration.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/services/payments/terminal_connection_provider.dart"
         }
       ]
     },
@@ -41743,6 +41846,19 @@
             "fr": "Sur le POS compatible, Plus → Rapports propose Clôture de journée aux comptes autorisés lorsque l’API annonce cette fonction. La tablette conserve la navigation latérale des rapports ; un écran compact ouvre le même parcours dans sa navigation simple. Ce parcours rassemble comptage, transmission du terminal et rapport opérationnel, sans terminer le pointage. Consultez [la procédure de fin de journée](/fr/help/payments/end-of-day).",
             "en": "On a compatible POS, More → Reports offers End of day to authorized accounts when the API advertises the feature. Tablets retain the report navigation rail; compact screens open the same flow in their single navigation stack. It brings together cash counting, terminal transmission and an operational report without ending attendance. See [the end-of-day procedure](/en/help/payments/end-of-day).",
             "he": "בקופה תואמת, עוד ← דוחות מציע סגירת יום לחשבונות מורשים כאשר ה־API מודיע על תמיכה. בטאבלט נשמר סרגל הניווט בדוחות; במסך צר אותו מסלול נפתח בניווט פשוט. המסלול מרכז ספירת מזומן, שידור מסוף ודוח תפעולי בלי לסיים משמרת. ראו [את נוהל סגירת היום](/he/help/payments/end-of-day)."
+          }
+        },
+        {
+          "id": "victa-mini-hardware",
+          "title": {
+            "fr": "Connecter et retrouver le Victa Mini sur iPad",
+            "en": "Connect and restore the Victa Mini on iPad",
+            "he": "חיבור ושחזור החיבור ל־Victa Mini ב־iPad"
+          },
+          "instructions": {
+            "fr": "Sur iPad, Matériel → Terminaux de paiement propose Connecter un Victa Mini, puis le terminal enregistré et son état de connexion. La configuration et la reconnexion automatique sont décrites dans [Connexion du Victa Mini](/fr/help/payments/victa-mini#connection). Ce parcours ne change ni les profils d’imprimante, ni les réglages du mode de caisse, ni les opérations de paiement en attente.",
+            "en": "On iPad, Hardware → Payment terminals offers Connect a Victa Mini, then the saved terminal and its connection state. Configuration and automatic restoration are explained in [Victa Mini connection](/en/help/payments/victa-mini#connection). This flow does not change printer profiles, POS mode policy or pending payment operations.",
+            "he": "ב־iPad, חומרה → מסופי תשלום מציג חיבור Victa Mini ובהמשך את המסוף השמור ומצב החיבור שלו. ההגדרה ושחזור החיבור האוטומטי מוסברים ב[חיבור Victa Mini](/he/help/payments/victa-mini#connection). התהליך אינו משנה פרופילי הדפסה, הגדרות מצב קופה או פעולות תשלום ממתינות."
           }
         }
       ],
@@ -51635,10 +51751,6 @@
         },
         {
           "service": "foodypos",
-          "file": "lib/main.dart"
-        },
-        {
-          "service": "foodypos",
           "file": "lib/services/network/ws_service.dart"
         },
         {
@@ -53732,6 +53844,10 @@
         },
         {
           "service": "foodyserver",
+          "file": "internal/orders/event_edit.go"
+        },
+        {
+          "service": "foodyserver",
           "file": "internal/orders/event_orders.go"
         },
         {
@@ -53757,6 +53873,10 @@
         {
           "service": "foodyserver",
           "file": "internal/payment/event_checkout.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/payment/event_hold.go"
         },
         {
           "service": "foodyserver",
@@ -53945,14 +54065,6 @@
         {
           "service": "foodypos",
           "file": "lib/services/printing/receipt_bitmap_renderer.dart"
-        },
-        {
-          "service": "foodyserver",
-          "file": "internal/orders/event_edit.go"
-        },
-        {
-          "service": "foodyserver",
-          "file": "internal/payment/event_hold.go"
         }
       ]
     }
@@ -62002,6 +62114,27 @@
       "resolution": "router-group-relative"
     },
     {
+      "id": "foodyserver:cmd/server/main.go:api-registration:1716",
+      "service": "foodyserver",
+      "source": "cmd/server/main.go",
+      "features": [
+        "staff-invitations",
+        "customers-profiles",
+        "whatsapp",
+        "platform-api",
+        "orders-internal-sumit-checkout",
+        "stancer-cash-guarantee",
+        "orders-events"
+      ],
+      "kind": "api-registration",
+      "method": "PUT",
+      "receiver": "orderGroup",
+      "routeFragment": "/:id/event",
+      "handler": "orderHandler.EditEventOrder",
+      "line": 1716,
+      "resolution": "router-group-relative"
+    },
+    {
       "id": "foodyserver:cmd/server/main.go:api-registration:1718",
       "service": "foodyserver",
       "source": "cmd/server/main.go",
@@ -62839,6 +62972,27 @@
       "routeFragment": "/:id/event-payment/reconcile",
       "handler": "paymentHandler.ReconcileEventPayment",
       "line": 1781,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:cmd/server/main.go:api-registration:1782",
+      "service": "foodyserver",
+      "source": "cmd/server/main.go",
+      "features": [
+        "staff-invitations",
+        "customers-profiles",
+        "whatsapp",
+        "platform-api",
+        "orders-internal-sumit-checkout",
+        "stancer-cash-guarantee",
+        "orders-events"
+      ],
+      "kind": "api-registration",
+      "method": "POST",
+      "receiver": "orderGroup",
+      "routeFragment": "/:id/event-hold/reconcile",
+      "handler": "paymentHandler.ReconcileEventHold",
+      "line": 1782,
       "resolution": "router-group-relative"
     },
     {
@@ -71983,6 +72137,26 @@
       "routeFragment": "/webhooks/verifone/:restaurantId",
       "handler": "h.WebhookVerifone",
       "line": 1624,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/payment/handler.go:api-registration:1625",
+      "service": "foodyserver",
+      "source": "internal/payment/handler.go",
+      "features": [
+        "payments-how-payments-work",
+        "pos-payments",
+        "backoffice-entitlements",
+        "platform-api",
+        "orders-internal-sumit-checkout",
+        "orders-events"
+      ],
+      "kind": "api-registration",
+      "method": "GET",
+      "receiver": "api",
+      "routeFragment": "/webhooks/sumit/event-hold",
+      "handler": "h.SumitEventHoldCallback",
+      "line": 1625,
       "resolution": "router-group-relative"
     },
     {
@@ -91286,6 +91460,40 @@
       "line": 1
     },
     {
+      "id": "foodyadmin:src/components/menu-item/ItemMenuSaveNotice.tsx:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/components/menu-item/ItemMenuSaveNotice.tsx",
+      "features": [
+        "menu-categories-and-items",
+        "menu-creating-a-menu-item",
+        "menu-menus-and-groups"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "done",
+        "itemMenuDraftSaved",
+        "itemMenuSavedTitle"
+      ],
+      "actions": [],
+      "line": 1
+    },
+    {
+      "id": "foodyadmin:src/lib/item-menu-assignments.ts:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/lib/item-menu-assignments.ts",
+      "features": [
+        "menu-categories-and-items",
+        "menu-creating-a-menu-item",
+        "menu-menus-and-groups"
+      ],
+      "kind": "ui-controls",
+      "labels": [],
+      "actions": [
+        "saveItemMenuAssignments"
+      ],
+      "line": 1
+    },
+    {
       "id": "foodyweb:app/@cart/(.)order/cart/page.tsx:next-page:1",
       "service": "foodyweb",
       "source": "app/@cart/(.)order/cart/page.tsx",
@@ -98616,32 +98824,22 @@
       "source": "lib/features/settings/presentation/victa_mini_settings_card.dart",
       "features": [
         "pos-behavior",
+        "pos-victa-mini",
         "pos-workspace"
       ],
       "kind": "ui-controls",
       "labels": [
         "commonCancel",
         "commonSave",
-        "hardwareRefresh",
         "hardwareVictaMiniAddress",
         "hardwareVictaMiniAddressInvalid",
-        "hardwareVictaMiniConfigure",
-        "hardwareVictaMiniConfigured",
-        "hardwareVictaMiniModel",
-        "hardwareVictaMiniPaymentApp",
-        "hardwareVictaMiniProtocol",
-        "hardwareVictaMiniReady",
+        "hardwareVictaMiniAutomatic",
+        "hardwareVictaMiniConnect",
         "hardwareVictaMiniRestart",
         "hardwareVictaMiniSaveError",
         "hardwareVictaMiniSetupHelp",
-        "hardwareVictaMiniSetupRequired",
-        "hardwareVictaMiniStorageError",
         "hardwareVictaMiniTerminalId",
-        "hardwareVictaMiniTerminalIdInvalid",
-        "hardwareVictaMiniTestConnection",
-        "hardwareVictaMiniTesting",
-        "hardwareVictaMiniTitle",
-        "hardwareVictaMiniUnavailable"
+        "hardwareVictaMiniTerminalIdInvalid"
       ],
       "actions": [],
       "line": 1
@@ -99068,7 +99266,8 @@
       "service": "foodypos",
       "source": "lib/services/payments/terminal_configuration.dart",
       "features": [
-        "pos-payments"
+        "pos-payments",
+        "pos-victa-mini"
       ],
       "kind": "ui-controls",
       "labels": [],
@@ -99974,109 +100173,13 @@
         "updateUserEmail"
       ],
       "line": 1
-    },
-    {
-      "id": "foodyadmin:src/components/menu-item/ItemMenuSaveNotice.tsx:ui-controls:1",
-      "service": "foodyadmin",
-      "source": "src/components/menu-item/ItemMenuSaveNotice.tsx",
-      "features": [
-        "menu-categories-and-items",
-        "menu-creating-a-menu-item",
-        "menu-menus-and-groups"
-      ],
-      "kind": "ui-controls",
-      "labels": [
-        "done",
-        "itemMenuDraftSaved",
-        "itemMenuSavedTitle"
-      ],
-      "actions": [],
-      "line": 1
-    },
-    {
-      "id": "foodyadmin:src/lib/item-menu-assignments.ts:ui-controls:1",
-      "service": "foodyadmin",
-      "source": "src/lib/item-menu-assignments.ts",
-      "features": [
-        "menu-categories-and-items",
-        "menu-creating-a-menu-item",
-        "menu-menus-and-groups"
-      ],
-      "kind": "ui-controls",
-      "labels": [],
-      "actions": [
-        "saveItemMenuAssignments"
-      ],
-      "line": 1
-    },
-    {
-      "id": "foodyserver:cmd/server/main.go:api-registration:1716",
-      "service": "foodyserver",
-      "source": "cmd/server/main.go",
-      "features": [
-        "staff-invitations",
-        "customers-profiles",
-        "whatsapp",
-        "platform-api",
-        "orders-internal-sumit-checkout",
-        "stancer-cash-guarantee",
-        "orders-events"
-      ],
-      "kind": "api-registration",
-      "method": "PUT",
-      "receiver": "orderGroup",
-      "routeFragment": "/:id/event",
-      "handler": "orderHandler.EditEventOrder",
-      "line": 1716,
-      "resolution": "router-group-relative"
-    },
-    {
-      "id": "foodyserver:cmd/server/main.go:api-registration:1782",
-      "service": "foodyserver",
-      "source": "cmd/server/main.go",
-      "features": [
-        "staff-invitations",
-        "customers-profiles",
-        "whatsapp",
-        "platform-api",
-        "orders-internal-sumit-checkout",
-        "stancer-cash-guarantee",
-        "orders-events"
-      ],
-      "kind": "api-registration",
-      "method": "POST",
-      "receiver": "orderGroup",
-      "routeFragment": "/:id/event-hold/reconcile",
-      "handler": "paymentHandler.ReconcileEventHold",
-      "line": 1782,
-      "resolution": "router-group-relative"
-    },
-    {
-      "id": "foodyserver:internal/payment/handler.go:api-registration:1625",
-      "service": "foodyserver",
-      "source": "internal/payment/handler.go",
-      "features": [
-        "payments-how-payments-work",
-        "pos-payments",
-        "backoffice-entitlements",
-        "platform-api",
-        "orders-internal-sumit-checkout",
-        "orders-events"
-      ],
-      "kind": "api-registration",
-      "method": "GET",
-      "receiver": "api",
-      "routeFragment": "/webhooks/sumit/event-hold",
-      "handler": "h.SumitEventHoldCallback",
-      "line": 1625,
-      "resolution": "router-group-relative"
     }
   ],
   "coverage": {
-    "sharedRuntimeFiles": 398,
-    "features": 107,
-    "operations": 871,
-    "sourceFiles": 2341,
+    "sharedRuntimeFiles": 397,
+    "features": 108,
+    "operations": 875,
+    "sourceFiles": 2342,
     "surfaces": 2132,
     "unclassifiedRoutes": []
   }
