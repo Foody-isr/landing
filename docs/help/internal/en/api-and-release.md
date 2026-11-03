@@ -235,3 +235,11 @@ The authenticated GET/POST /api/v1/delivery/ordering-simulation endpoints share 
 ## Scheduled acceptance compatibility
 
 The lifecycle_v2.actions descriptor permits accept for scheduled as well as pending_review, with orders.manage and without held settlement. Prepared-checkout holds still apply afterward. No new writer is introduced: POST /orders/:id/accept still calls AcceptOrderWithWorkflow and setStatus, retaining restaurant-specific guards, notifications and shortcuts. No automatic early dispatch is added; only explicit staff action can advance the order. Date, slot and payment stay unchanged. Deploy the corrected API to development and verify separate and guided workflows before an approved promotion. No schema or client change is needed for clients already following capabilities. Publish the correction guides with that API release. For scheduled only, payment_status=pending keeps accept denied; pending_review retains its existing behavior.
+
+<span id="pos-terminal-collection-contract" />
+
+## Reserve physical card collection before native dispatch
+
+On iPad, choose Card on the existing order or financial bill, review the payment-terminal dialog, and explicitly confirm Mini or Portable. The configured default is initially selected; there is no automatic fallback to another connected device. Cancelling sends no payment. On a Victa Portable running FoodyPOS, open that same saved order/check and use its integrated reader. Do not recreate the sale. A server reservation protects the physical terminal and the selected orders while collection is in progress. Another device or tender must wait. QR orders keep their separate IDs and payments.
+
+If the result is unknown, preserve the original POS and terminal and recover the existing operation. Neither elapsed time nor restarting the app authorizes another debit. A definitive refusal or cancellation permits a new reviewed attempt. A confirmed approval must be recorded with its original reservation before it is released. This changes the destination review, not the existing receipt-printing settings; validate hardware, remote Portable operation and integrated printing with Verifone.

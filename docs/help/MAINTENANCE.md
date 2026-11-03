@@ -1,5 +1,34 @@
 # Help ownership, evidence and releases
 
+## Explicit physical terminal selection (3 November 2026)
+
+This reviewed slice adds an iPad secure terminal catalogue, an explicit card
+payment destination, and model/serial verification before Login or payment.
+The Portable keeps its own integrated reader and existing order/check identity.
+There is no automatic fallback. Local durable evidence and API reservations
+protect the terminal and overlapping ordinary check batches; financial bills
+retain their existing allocation claim. Reserved attempts have no timeout.
+Definitive no-charge outcomes release the claim; recorded approvals release it
+atomically. Unknown native results never authorize another debit.
+
+EOD reviews all verified iPad profiles and requires terminals used by the current
+POS's recorded card collections. Each Deposit needs its own explicit action.
+A server-confirmed terminal checkpoint permits switching to the next idle target;
+the server day reservation remains until final Z. Unknown results keep locks.
+The additional card collection list overlaps financial references and is not an
+extra sales total. Legacy and other-device attribution remains partial.
+
+FR/HE/EN procedures cover setup, selection, order recovery and closing. There are
+no screenshots in these procedures to update. The API must precede the POS;
+all devices sharing hardware need compatible versions. Synthetic tests do not
+certify actual Mini/Portable payments, simultaneous remote/local Portable use,
+printer acceptance, or bank settlement; those remain Verifone hardware checks.
+Preserve unrelated source inventory and surfaces from Landing baseline
+415dd7009aa3d4a5f017eab95bd24d064dec9d38. Export the identical support corpus and
+pin immutable reviewed documentation. The saved-connection notes below describe
+the preceding release; its restart requirement is superseded by idle verified
+selection in this slice. Native Objective-C is now included in source evidence.
+
 ## Saved Victa Mini connections (3 November 2026)
 
 The compatible iPad client uses the existing neutral hardware setup theme for

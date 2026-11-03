@@ -42,3 +42,11 @@ An error or lost response does not prove the deposit failed. Preserve the POS, i
 ## Resolve pending cash operations
 
 Before starting, recover any pending cash operation: follow the link to Cash balance for a drawer operation, or to Orders to find the affected collection. Its identity is retained while the result is uncertain; do not create a second operation to replace it. Once the drawer is reserved for closing, its report remains readable, but cash collections, movements and separate closing actions are blocked. The drawer and personal context are checked again at confirmation, before any drawer opening or collection confirmation. A current drawer check also precedes the cash tender dialog; if that read fails, do not collect cash through this dialog. With the required permissions, the reservation notice links to End of day. Only an explicit server-confirmed rejection releases a rejected request; a network error does not. Resume the existing closing instead of bypassing its reservation.
+
+<span id="multiple-terminal-closing" />
+
+## Review several physical terminals
+
+On the compatible iPad, the closing review lists every verified terminal in its saved catalogue. Review all destinations before beginning; each transmission still requires a separate explicit action and positive confirmation. Unverified profiles must first be verified in Hardware. The server requires inclusion of physical terminals used by recorded card collections on this POS in the closing window. Their collection references and amounts are retained separately from existing financial-payment records; do not add those overlapping lists as independent sales. Legacy and other-POS attribution remains partial.
+
+A positively confirmed transmission checkpoint can release its local receipt lock so the next included terminal can be selected, but the server closing reservation still blocks new card collections until the final Z report is archived. An unknown transmission never releases that lock or permits a second transmission on another terminal. Configuration changes cannot move a pending result. Finalizing still includes the reserved cash drawer and all declared terminal confirmations.
