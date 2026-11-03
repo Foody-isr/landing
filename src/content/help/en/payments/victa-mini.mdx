@@ -1,0 +1,23 @@
+---
+title: Connect and restore the Victa Mini on iPad
+description: iPad POS → More → Settings → Hardware → Payment terminals
+apps: foodypos
+tags:
+  - payments
+  - pos-victa-mini
+updatedAt: '2026-10-18'
+featureId: pos-victa-mini
+audience: public
+releaseStatus: available
+---
+iPad POS → More → Settings → Hardware → Payment terminals
+
+<span id="connection" />
+
+## Connect and restore the Victa Mini on iPad
+
+With payments.manage, open More → Settings → Hardware → Payment terminals → Connect a Victa Mini. The flow uses the same neutral surfaces and close/save controls as other hardware connections. Enter its local IPv4 address and the 10-digit Ashrait Terminal ID supplied by Verifone, then Save. The ID stays masked and the configuration is stored securely for this restaurant and API environment on this iPad; a saved address does not confirm a connection.
+
+After the restaurant and permissions are restored, FoodyPOS automatically tries to reconnect the saved terminal on opening and when returning to the foreground. Keep it switched on and reachable on the same local network. Check Connecting…, Connected or Connection failed; Test connection retries a failed attempt and Connection details shows diagnostics. You do not need to re-enter settings after each app closure. If you change an already connected terminal, close and reopen FoodyPOS as instructed.
+
+Automatic reconnection starts no charge, transaction lookup or deposit. A pending payment, uncertain deposit or ongoing terminal operation blocks it: retain the configuration and recover the original operation through its own workflow. Do not erase data to bypass the lock. This flow needs the compatible build; it does not certify a real connection on your network or terminal banking acceptance.
