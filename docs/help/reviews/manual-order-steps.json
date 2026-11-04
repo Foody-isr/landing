@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-04",
+  "scope": "Manual-order step navigation, field validation and visible production summary",
+  "features": [
+    "orders-managing-orders",
+    "order-detail",
+    "orders-internal-sumit-checkout",
+    "orders-events"
+  ],
+  "articles": [
+    "orders/managing-orders",
+    "orders/order-details",
+    "orders/internal-sumit-checkout",
+    "orders/event-orders"
+  ],
+  "languages": [
+    "fr",
+    "he",
+    "en"
+  ],
+  "serviceBases": {
+    "foodylanding": "f2e371aef9568cbc03da013a00862a9ed497b4e9",
+    "foodyadmin": "f19728cb856c60ddf9ba463065cf6898531fafba",
+    "foodyserver": "3d0a2cab946dd25a7c68ebf0e76ae99ec1934fd7"
+  },
+  "preservedServiceEvidence": [
+    "foodyweb",
+    "foodypos",
+    "foodybackoffice"
+  ],
+  "documentationPin": "Immutable reviewed Landing commit is pinned in API/Admin before CI.",
+  "screenshots": "Existing procedures contain no screenshots; local evidence uses synthetic fixtures only.",
+  "contractReview": {
+    "tenancy": "Existing active restaurant ID, shared API authentication and ownership checks are retained. No endpoint or permission contract changes.",
+    "payment": "Only an explicit final action submits the existing payment intent. Acknowledgement follows the current amount and recorded method. Applied manual discounts recalculate for changed items; coupon quotes still invalidate with their basket/address context. API amount and provider confirmation remain authoritative.",
+    "production": "The UI describes server eligibility and preserves the existing manual production request and hosted-event kitchen permission gate. It does not confirm payment or publish unpaid POS order events."
+  },
+  "authorization": "Owner requested commit, push, PRs into develop and subsequent production promotion on 4 November 2026."
+}

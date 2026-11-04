@@ -1,5 +1,30 @@
 # Help ownership, evidence and releases
 
+## Manual order steps (4 November 2026, coordinated release)
+
+The compatible Admin finalization uses two steps for ordinary orders and inserts
+Event for catering. Visited-step navigation and Back to items preserve in-memory
+contact, scheduling and financial choices. Per-field validation opens the correct
+step/optional section and focuses the first issue; a summary links every error.
+Private links still defer recipient answers. Equal window boundaries receive a
+specific error; an event at handover end is valid and a later window produces a
+nonblocking scheduling warning. Production date/conditions remain visible and its
+authorized inclusion control appears on the final step. Existing server production,
+payment and confirmation gates remain authoritative.
+
+FR/HE/EN order-details, event-orders, internal-sumit-checkout and managing-orders
+are updated and the identical public corpus is embedded in API. Their existing
+procedures have no screenshots to replace. Synthetic local screenshots use fixture
+data only. Other customer-profile callers receive no new behavior from optional
+accessibility props; that exact source exemption is recorded in Admin. API runtime
+code, Web, POS and Backoffice behavior is unchanged. Their evidence is preserved
+from Landing base f2e371ae; only the API corpus digest is refreshed against its
+6b5cb5b develop integration base. The owner authorized commits, pushes, PRs into
+develop and production promotion on 4 November 2026. Freeze reviewed source
+checkpoints and pin the immutable Landing documentation commit before CI. Verify
+development and promote the same successful artifacts to production.
+Publish these qualified procedures with the compatible Admin version.
+
 ## Ordinary internal delivery fee regression (4 November 2026)
 
 Ordinary deliveries default to a quote for the current customer address. The

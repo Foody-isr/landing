@@ -7,7 +7,7 @@ apps: both
 tags:
   - orders
   - orders-events
-updatedAt: '2026-11-02'
+updatedAt: '2026-11-04'
 featureId: orders-events
 audience: public
 releaseStatus: available
@@ -24,7 +24,7 @@ In Items and menus → Cartes → the carte settings, enable Catering carte (int
 
 ## Prepare the event order
 
-Create the basket in Orders. Enable Event / Catering, choose pickup or delivery and a scheduled handover date. The production plan follows that date, including when staff prepare food earlier. Enter event name, guest count, event date/time, venue, contact and instructions as needed. Set whether guest count, event date and event time are required. Leave unknown answers for the recipient when using a private link. Allow event date/time changes only if intended; prefilled dates and times otherwise remain read-only. Event time and handover time can differ. Guest count does not change platter quantities or prices. Choose the handover date freely in the event calendar, independently of the carte series: for example, November 4 while viewing a carte for the November 6 series. Switching pickup/delivery or returning to items preserves that date and its time window. An ordinary non-event order retains the configured series selector.
+On the first step, enable Event / Catering and choose pickup or delivery with a scheduled handover date. Enter details in the Event step and Additional information. For a private link, Information to request from the customer groups required answers and allowed date changes. Production follows handover, independently of event date and carte series. Guest count does not automatically change quantities or prices. Switching pickup/delivery or returning to items retains the date and window. Ordinary orders retain the configured series selector. Follow the step-navigation procedure below.
 
 <span id="payment" />
 
@@ -61,3 +61,15 @@ Open the saved event in Orders → Actions → Edit with orders.manage. Before b
 ## Review a Sumit authorization
 
 Event details show the verified reservation separately from received money, with its verification time and bank reference. With payments.manage, Verify authorization performs a read-only recovery of the existing bank request. An uncertain response never creates another authorization; a definitive decline permits an explicit retry. Manage capture, release and bank validity in Sumit using the displayed reference. Foody does not automatically capture or release event reservations or promise their duration. A reserved balance cannot also generate an automatic payment link. After collecting it externally, record the money actually received through the existing staff payment action.
+
+<span id="manual-order-steps" />
+
+## Move between checkout steps
+
+With the compatible Admin version, add items and choose Continue. Checkout contains Handover and customer, then Payment and confirmation; Event / Catering adds an Event step between them. In Handover and customer, choose pickup or delivery, its date and window, then enter customer details and an address when needed. For an eligible Sumit restaurant, select The customer will complete their details through the Foody link when the recipient should provide those answers: missing contact and event answers then do not block link creation. In Event, enter guests, date and time; other fields are under Additional information. Date, address and contact reuse buttons copy values only after your click; review them after changes. Information to request from the customer groups requirements and permission to change the event date and time. In Payment and confirmation, explicitly choose payment, review any deposit/authorization terms, discount, items and total, then use the final action. Navigating between steps never confirms receipt of money.
+
+Previous and visited step titles let you go back. Continue validates required fields before advancing; selecting a previously visited later step repeats that validation. Entered details, payment choice, fees and discounts remain in memory on return, including Back to items. An applied percentage discount is recalculated for the current items. Changing the received-payment method or amount requires acknowledging receipt again. Reloading a saved local draft does not restore financial exceptions: review them again.
+
+When a step has errors, all affected fields have a red outline and a specific message. The panel focuses the first field; the correction list opens other fields, including collapsed sections or earlier steps. Correct the fields and choose Continue. A time window needs both start and end, with end strictly after start; 12:00–12:00 is rejected. Event time can equal the handover end. A window ending after the event starts shows a warning to review, without imposing an installation delay. Switching from a link to manual payment may require completing customer and event answers.
+
+Production plan stays visible with its date and remaining conditions. On the final step, Add to production plan appears when explicit inclusion is useful and authorized; automatic inclusion is shown in the status. This request never confirms payment or bypasses server event-confirmation requirements. Failed creation preserves the form; check a saved order before retrying an uncertain result.
