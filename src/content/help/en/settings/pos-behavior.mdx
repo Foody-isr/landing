@@ -5,7 +5,7 @@ apps: both
 tags:
   - settings
   - pos-behavior
-updatedAt: '2026-10-30'
+updatedAt: '2026-11-04'
 featureId: pos-behavior
 audience: public
 releaseStatus: available
@@ -103,6 +103,8 @@ The handheld terminal has three unlabeled buttons: the signed-in user’s initia
 ## Find terminal deposit in the end-of-day flow
 
 When the compatible API offers End of day, Terminal deposits opens that combined flow before any transmission. With an older API, the separate deposit screen remains available according to actual terminal capabilities. A provisioning change after display requires another review before reserving cash. An old card approval without verifiable provenance remains pending reconciliation: it permits neither another collection nor adoption by another restaurant. See [closing and recovery](/en/help/payments/end-of-day).
+
+A compatible report shows its frozen period and distinguishes Foody-recorded card collections from the terminal’s bank totals. Previous Z reports reads the twenty latest finalized closes on this POS without replacing the active close. Starting a close blocks new card payments until the Z report is finalized; closing and reopening the cash drawer does not complete it. See [report steps and limits](/en/help/payments/end-of-day#end-of-day-steps-and-period).
 
 <span id="victa-mini-hardware" />
 

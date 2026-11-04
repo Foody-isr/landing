@@ -7,7 +7,7 @@ apps: foodypos
 tags:
   - payments
   - pos-end-of-day
-updatedAt: '2026-10-30'
+updatedAt: '2026-11-04'
 featureId: pos-end-of-day
 audience: public
 releaseStatus: local-release-unverified
@@ -50,3 +50,17 @@ Before starting, recover any pending cash operation: follow the link to Cash bal
 On the compatible iPad, the closing review lists every verified terminal in its saved catalogue. Review all destinations before beginning; each transmission still requires a separate explicit action and positive confirmation. Unverified profiles must first be verified in Hardware. The server requires inclusion of physical terminals used by recorded card collections on this POS in the closing window. Their collection references and amounts are retained separately from existing financial-payment records; do not add those overlapping lists as independent sales. Legacy and other-POS attribution remains partial.
 
 A positively confirmed transmission checkpoint can release its local receipt lock so the next included terminal can be selected, but the server closing reservation still blocks new card collections until the final Z report is archived. An unknown transmission never releases that lock or permits a second transmission on another terminal. Configuration changes cannot move a pending result. Finalizing still includes the reserved cash drawer and all declared terminal confirmations.
+
+<span id="end-of-day-steps-and-period" />
+
+## Understand the card block and report period
+
+Starting end of day reserves the day and blocks new card payments until Finalize and create Z report. Report period shows the frozen window: payments already included in the previous close are not added again. Awaiting transmission means that transmission has not yet been dispatched in this workflow: use Transmit end of day once for the matching terminal, wait for confirmation, then finalize. Transmission must be verified instead means its result is uncertain: do not transmit again. Closing and reopening a cash session does not finalize an active card close. No cash drawer included describes this report’s scope, not the state of every drawer in the restaurant.
+
+<span id="end-of-day-recorded-cards-and-history" />
+
+## View recorded card collections and previous reports
+
+A compatible POS separately shows the count and traces of ordinary card collections archived by Foody, and their amount when the original currency is known for every entry. The subtotal excludes refunds and proves neither bank totals nor settlement. Do not add it to financial payments: these lists can overlap. If historical currency is missing or differs between entries, no common total is invented. Older reports are not rewritten using the restaurant’s current currency. Terminal totals remain Unavailable when the terminal result supplies no numerical values; this does not mean zero.
+
+Previous Z reports lets you select one of the twenty latest finalized reports on this POS. Viewing is read only: it does not replace the active close, transmit anything or authorize payment. An older API explains that viewing requires a compatible version. Reports belonging to other POS devices or restaurants are excluded.

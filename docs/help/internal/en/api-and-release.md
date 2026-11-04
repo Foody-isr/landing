@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-11-02'
+updatedAt: '2026-11-04'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -243,3 +243,9 @@ The lifecycle_v2.actions descriptor permits accept for scheduled as well as pend
 On iPad, choose Card on the existing order or financial bill, review the payment-terminal dialog, and explicitly confirm Mini or Portable. The configured default is initially selected; there is no automatic fallback to another connected device. Cancelling sends no payment. On a Victa Portable running FoodyPOS, open that same saved order/check and use its integrated reader. Do not recreate the sale. A server reservation protects the physical terminal and the selected orders while collection is in progress. Another device or tender must wait. QR orders keep their separate IDs and payments.
 
 If the result is unknown, preserve the original POS and terminal and recover the existing operation. Neither elapsed time nor restarting the app authorizes another debit. A definitive refusal or cancellation permits a new reviewed attempt. A confirmed approval must be recorded with its original reservation before it is released. This changes the destination review, not the existing receipt-printing settings; validate hardware, remote Portable operation and integrated printing with Verifone.
+
+<span id="scoped-end-of-day-report-history" />
+
+## Read finalized POS report identities
+
+GET /orders/end-of-day/history requires payments.manage and a current enrolled POS installation. It returns at most twenty finalized report IDs and frozen periods for that POS, newest first. GET /orders/end-of-day/:id reads the exact scoped report. Both are read only and never release an active close or dispatch a terminal operation. The capability end_of_day_history gates older clients. New recorded card snapshots carry currency only with original matching sale evidence; archived reports are not rewritten using current restaurant currency.

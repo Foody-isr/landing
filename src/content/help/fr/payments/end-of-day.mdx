@@ -7,7 +7,7 @@ apps: foodypos
 tags:
   - payments
   - pos-end-of-day
-updatedAt: '2026-10-30'
+updatedAt: '2026-11-04'
 featureId: pos-end-of-day
 audience: public
 releaseStatus: local-release-unverified
@@ -50,3 +50,17 @@ Avant de commencer, reprenez toute opération espèces encore en attente : suive
 Sur l’iPad compatible, la vérification de clôture liste chaque terminal vérifié du catalogue enregistré. Vérifiez toutes les destinations avant de commencer ; chaque transmission nécessite toujours une action explicite séparée et une confirmation positive. Les profils non vérifiés doivent d’abord être contrôlés dans Matériel. Le serveur impose l’inclusion des terminaux physiques utilisés par les encaissements carte enregistrés sur ce POS pendant la période. Leurs références et montants sont conservés séparément des paiements financiers existants ; n’additionnez pas ces listes qui peuvent se recouper comme des ventes distinctes. L’attribution des anciens paiements et des autres POS reste partielle.
 
 Une confirmation de transmission enregistrée positivement peut libérer le verrou local de son reçu pour sélectionner le prochain terminal inclus, mais la réservation serveur de clôture bloque toujours les nouveaux encaissements carte jusqu’à l’archivage du rapport Z final. Une transmission inconnue ne libère jamais ce verrou et ne permet pas une seconde transmission sur un autre terminal. Modifier une configuration ne déplace pas un résultat en attente. La finalisation comprend toujours le tiroir réservé et les confirmations de tous les terminaux déclarés.
+
+<span id="end-of-day-steps-and-period" />
+
+## Comprendre le blocage des cartes et la période
+
+Commencer la clôture réserve la journée et bloque les nouveaux paiements carte jusqu’à Finaliser et générer le rapport Z. La ligne Période du rapport indique la fenêtre figée : les paiements déjà inclus dans la clôture précédente ne sont pas ajoutés une seconde fois. Transmission en attente signifie que cette transmission n’a pas encore été lancée dans ce parcours : utilisez Transmettre la fin de journée une seule fois sur le terminal correspondant, attendez la confirmation, puis finalisez. Transmission à vérifier signifie au contraire qu’un résultat reste incertain : ne transmettez pas à nouveau. Fermer puis rouvrir une session espèces ne finalise pas une clôture carte en cours. Aucune caisse espèces incluse décrit le contenu de ce rapport, pas l’état de toutes les caisses du restaurant.
+
+<span id="end-of-day-recorded-cards-and-history" />
+
+## Consulter les cartes enregistrées et les rapports précédents
+
+Le POS compatible affiche séparément le nombre et les traces des encaissements carte ordinaires archivés par Foody, ainsi que leur montant lorsque la devise originale est connue pour tous les éléments. Le sous-total exclut les remboursements et ne prouve ni total bancaire ni versement. Ne l’additionnez pas aux paiements financiers : ces listes peuvent se recouper. Si la devise historique manque ou diffère entre lignes, aucun total commun n’est inventé. Les anciens rapports ne sont pas réécrits avec la devise actuelle du restaurant. Les totaux du terminal restent Indisponible lorsque son retour ne fournit pas de chiffres ; cela ne signifie pas zéro.
+
+Rapports Z précédents permet de sélectionner l’un des vingt derniers rapports finalisés de ce POS. La consultation est en lecture seule : elle ne remplace pas la clôture active, ne transmet rien et n’autorise aucun paiement. Une API plus ancienne indique que cette consultation nécessite une version compatible. Les rapports des autres POS ou d’un autre restaurant ne sont pas inclus.

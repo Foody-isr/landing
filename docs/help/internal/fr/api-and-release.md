@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-11-02'
+updatedAt: '2026-11-04'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -243,3 +243,9 @@ Le descripteur lifecycle_v2.actions autorise accept pour scheduled comme pour pe
 Sur iPad, choisissez Carte sur la commande ou l’addition financière existante, vérifiez la fenêtre du terminal de paiement puis confirmez explicitement Mini ou Portable. Le terminal configuré par défaut est présélectionné ; aucun autre appareil connecté ne le remplace automatiquement. Annuler n’envoie aucun paiement. Sur un Victa Portable exécutant FoodyPOS, ouvrez cette même commande ou addition enregistrée et utilisez son lecteur intégré. Ne recréez pas la vente. Une réservation serveur protège le terminal physique et les commandes sélectionnées pendant l’encaissement. Un autre appareil ou moyen de paiement doit attendre. Les commandes QR conservent leurs identifiants et paiements séparés.
 
 Si le résultat est inconnu, conservez le POS et le terminal d’origine puis reprenez l’opération existante. Ni le temps écoulé ni un redémarrage n’autorisent un nouveau débit. Un refus ou une annulation définitive permet un nouvel essai revu. Une approbation confirmée doit être enregistrée avec sa réservation d’origine avant libération. Ce changement concerne le choix de destination, sans modifier les réglages d’impression existants ; validez le matériel, le contrôle distant du Portable et l’impression intégrée avec Verifone.
+
+<span id="scoped-end-of-day-report-history" />
+
+## Lire les références des rapports POS finalisés
+
+GET /orders/end-of-day/history exige payments.manage et une installation POS enrôlée courante. Il retourne au plus vingt références de rapports finalisés et leurs périodes figées pour ce POS, des plus récents aux plus anciens. GET /orders/end-of-day/:id lit le rapport exact dans ce périmètre. Ces lectures ne libèrent aucune clôture active et ne transmettent aucune opération terminal. La capacité end_of_day_history protège la compatibilité. Les nouveaux instantanés carte conservent une devise seulement avec les preuves concordantes de la vente originale ; les rapports archivés ne sont pas réécrits avec la devise actuelle du restaurant.

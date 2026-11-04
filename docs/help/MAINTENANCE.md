@@ -17,6 +17,30 @@ from develop `3d0a2cab946dd25a7c68ebf0e76ae99ec1934fd7`; this release changes
 only its support corpus relative to that integration baseline.
 Pin immutable reviewed documentation and verify dev before promoting the same
 artifacts. Synthetic browser tests submit no customer order or real payment.
+## End-of-day consultation and next steps (4 November 2026)
+
+The API adds a payments.manage-protected, enrolled-POS-scoped list of the twenty
+latest finalized report identities. Reads leave active operations, leases,
+attendance, payments, cash and immutable reports untouched. New card snapshots
+retain currency only from every original order policy or a matching financial
+payment currency snapshot. Missing, mixed or unproven currency remains unknown;
+archived reports are never backfilled with current restaurant settings.
+
+The POS now parses archived ordinary card collections instead of silently showing
+only financial payment rows. It keeps those overlapping lists separate and shows
+a recorded gross card subtotal only with complete matching currency evidence.
+This is never a terminal total, refund/net ledger or bank settlement attestation.
+The existing Ashrait Deposit callback still provides no numerical totals or batch
+reference. No native dispatch, payment guard or finalization rule changes.
+
+The report displays its frozen period, appropriate next step and cash inclusion.
+Archived report dialogs are read only and hide data on personal-context changes;
+reading never replaces or finalizes an active close. FR/HE/EN and 320/1210 layouts
+are tested. No screenshots occur in the updated guide. The matching API must be
+published before the POS, and hardware acceptance remains separate. Preserve
+unrelated source inventory, synchronize the support corpus and pin immutable
+reviewed documentation before publication.
+
 
 ## Paid table closure after an earlier expired occupation (4 November 2026)
 
