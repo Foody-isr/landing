@@ -1,5 +1,23 @@
 # Help ownership, evidence and releases
 
+## Paid table closure after an earlier expired occupation (4 November 2026)
+
+Compatible API table close/release guards exclude only positively identified
+expired sessions of the same restaurant and table. Earlier ordinary/QR tickets
+and separate financial bills retain their balances and kitchen states. Unknown
+legacy links and current unpaid balances still block release. No schema, payment
+initiation, bank result, terminal journal or EOD behavior changes.
+
+The compatible POS propagates a failed status write to the initiating action,
+retaining its confirmed table list and selection; Menu and the floor action show
+the existing localized close error. Read failures still expose unavailable data.
+FR/HE/EN table, floor, workspace and payment procedures explain recorded
+payment versus closure and warn against another charge. No screenshots occur
+in these updated procedures. Synthetic regressions do not attest a bank debit.
+Preserve unrelated service evidence from Landing d416d716defde81960ec95379975e88feb39781a,
+export the identical support corpus and pin immutable reviewed documentation.
+Validate development before promoting the exact artifact and shipping the POS.
+
 ## Explicit physical terminal selection (3 November 2026)
 
 This reviewed slice adds an iPad secure terminal catalogue, an explicit card

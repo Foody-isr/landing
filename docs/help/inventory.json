@@ -4,9 +4,9 @@
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "0043773024e05ef693976d387eb5d93dd7368c59",
+      "sourceCommit": "7bc54ad468fed278e416df3a8131412c737a6fb9",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "7fa645c989a177ef766fd72cfda247561c172a36a853d5d235bb8ecf8b1c9ac7",
+      "sourceSnapshot": "4075a07f208bc8f0b3ae75183da1ae0169a3ebae15e9cf8b43403836c32344b9",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -4794,7 +4794,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "67fcc687db785e49918d61edf3a0e9cd502a3f5f2d7c4343c268a763b48609e0",
+          "sha256": "1577eac5c32543dae793f93bb735e4625676d1270855cad024697ed2a5dd317c",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -4862,7 +4862,7 @@
           ]
         },
         "internal/tables/service.go": {
-          "sha256": "3b7d97942a10fada3a529645939356e44b83b3f016e75d3afa4830a8fb55c5f9",
+          "sha256": "05436ce8b02d23c700774c42824720ea5b3cb1de8d3f8f4e530941d2b9c5b7fc",
           "features": [
             "table-service-policy",
             "guest-table",
@@ -14109,9 +14109,9 @@
     },
     "foodypos": {
       "repository": "https://github.com/Foody-isr/pos",
-      "sourceCommit": "d9255777780921620e43fa2e42cf80bd6c84e46a",
+      "sourceCommit": "e49c995067bbfd97211c45af4a4ffedd23158b4f",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "b09b1469bc5689e42f5528c84f4f43c812f7bf4306768ca08b34603ee2df72c4",
+      "sourceSnapshot": "d8915faf34874a8e3bd72ae789473296f1d2b64333f2ec480d7c2d1d88ac0bde",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "android/app/src/main/kotlin/com/foodypos/app/EpsonPrinterBridge.kt": {
@@ -15956,7 +15956,7 @@
           ]
         },
         "lib/features/orders/presentation/widgets/check_panel.dart": {
-          "sha256": "6b1be80b0df02822fa8371357cc9bb53929fec2d479390f6e3d5a6337efc1a52",
+          "sha256": "c767bf07f498e1e2f9c9209df9e437c9b8718a369b91167f518b4c11374db899",
           "features": [
             "menu-variants-and-sizes",
             "orders-managing-orders",
@@ -16489,7 +16489,7 @@
           ]
         },
         "lib/features/tables/presentation/table_list_page.dart": {
-          "sha256": "da93e1eac4cb63823e511c728ed9ebc0c74431178c3d5f972931e8f9500a9a2d",
+          "sha256": "68529bef499a462def62ee14dac0b061380a9624f19c3ff26dbbfcb0b10ba650",
           "features": [
             "floor-plans",
             "table-service-policy",
@@ -16538,7 +16538,7 @@
           ]
         },
         "lib/features/tables/providers/table_providers.dart": {
-          "sha256": "e4464c24b55621346f19886e0211170f3e14155e46241ff116970331b1b56482",
+          "sha256": "3b72a8f56a1a0309b1fe25726e481532583068b9763c7e877657604a5683e1b7",
           "features": [
             "floor-plans",
             "table-service-policy",
@@ -31754,9 +31754,9 @@
             "he": "יצירת מפה"
           },
           "instructions": {
-            "en": "Create a named floor plan, add the required tables and arrange their position, shape and capacity using the editor. Save before opening it on the POS.",
-            "fr": "Créez un plan nommé, ajoutez les tables et réglez position, forme et capacité dans l’éditeur. Enregistrez avant ouverture sur le POS.",
-            "he": "צרו מפה בשם, הוסיפו שולחנות וסדרו מיקום, צורה וקיבולת בעורך. שמרו לפני פתיחה בקופה."
+            "en": "Create a named floor plan, add the required tables and arrange their position, shape and capacity using the editor. Save before opening it on the POS.\n\nAfter an approved payment, a closing error does not authorize another collection. Follow [the table-service closing check](/en/help/tables-floors/staff-and-assistance#paid-table-close-recovery).",
+            "fr": "Créez un plan nommé, ajoutez les tables et réglez position, forme et capacité dans l’éditeur. Enregistrez avant ouverture sur le POS.\n\nAprès un paiement accepté, une erreur de fermeture ne justifie pas un nouvel encaissement. Suivez [la vérification de fermeture de la session](/fr/help/tables-floors/staff-and-assistance#paid-table-close-recovery).",
+            "he": "צרו מפה בשם, הוסיפו שולחנות וסדרו מיקום, צורה וקיבולת בעורך. שמרו לפני פתיחה בקופה.\n\nלאחר תשלום שאושר, שגיאת סגירה אינה מאשרת גבייה נוספת. פעלו לפי [בדיקת סגירת ישיבת השולחן](/he/help/tables-floors/staff-and-assistance#paid-table-close-recovery)."
           }
         },
         {
@@ -31841,7 +31841,7 @@
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-10-28",
+      "procedureUpdatedAt": "2026-11-04",
       "evidence": [
         {
           "service": "foodyserver",
@@ -39147,12 +39147,25 @@
             "en": "In Checks on the updated terminal, the radio selector connects All checks with available floor plans. Open + then Actions for the staff filter, To do and Refresh. Assignment restrictions and permissions still limit accessible tables and checks. The plan can pan on screen; neither panning nor switching views saves new geometry, assigns staff or releases a table. The active user’s name supplies the initials at the lower left; that button opens More without changing service assignment.",
             "he": "בחשבונות במסוף המעודכן בורר האפשרויות מחבר בין כל החשבונות לתוכניות האולם הזמינות. פתחו + ואז פעולות למסנן הצוות, משימות ורענון. מגבלות השיוך וההרשאות ממשיכות להגביל שולחנות וחשבונות נגישים. ניתן לגרור את התוכנית על המסך; גרירה או החלפת תצוגה אינן שומרות גיאומטריה חדשה, משייכות עובד או משחררות שולחן. שם המשתמש הפעיל מספק את ראשי התיבות בתחתית משמאל; הכפתור פותח את עוד בלי לשנות שיוך שירות."
           }
+        },
+        {
+          "id": "paid-table-close-recovery",
+          "title": {
+            "fr": "Fermer la bonne session après un paiement accepté",
+            "en": "Close the correct service after an approved payment",
+            "he": "סגירת הישיבה הנכונה לאחר תשלום שאושר"
+          },
+          "instructions": {
+            "fr": "Sur les versions compatibles du serveur et du POS, une ancienne commande rattachée à une session confirmée expirée ne bloque plus la fermeture ou la libération de la nouvelle occupation de la même table. Cette ancienne commande reste dans Commandes avec son état de paiement ; elle n’est ni encaissée, ni annulée, ni rattachée aux nouveaux clients. Les sommes encore dues dans la session actuelle et les anciens rattachements non confirmés restent à résoudre avant fermeture.\n\nSi le terminal a accepté la carte mais que la fermeture échoue, ne relancez pas le paiement. Actualisez l’addition et vérifiez que Foody l’affiche payée ; réessayez ensuite uniquement Fermer la commande. Si le paiement n’est pas confirmé dans Foody, utilisez la vérification de l’opération d’origine ou demandez un responsable. Dans le POS compatible, un refus de fermeture affiche un message et conserve le plan et l’occupation confirmés. La fermeture ne termine pas les plats en cuisine et ne réalise aucun dépôt ou fin de journée bancaire.",
+            "en": "On compatible server and POS versions, an older order linked to a confirmed expired session no longer blocks closing or releasing the next visit at the same table. That older order remains in Orders with its payment state; it is not collected, cancelled or attached to the next guests. Amounts still due in the current session and unconfirmed legacy links must still be resolved before closure.\n\nIf the terminal approved the card but closing failed, do not pay again. Refresh the check and verify that Foody shows it paid; then retry only Close order. If Foody has not confirmed payment, verify the original operation or ask a manager. On the compatible POS, a rejected close displays a message while preserving the confirmed floor and occupancy. Closing does not finish food in the kitchen or perform a deposit or banking end of day.",
+            "he": "בגרסאות תואמות של השרת והקופה, הזמנה ישנה המקושרת לישיבה שאומתה כפגת תוקף אינה חוסמת עוד סגירה או שחרור של הישיבה הבאה באותו שולחן. ההזמנה הישנה נשארת בהזמנות עם מצב התשלום שלה; היא אינה נגבית, מתבטלת או משויכת לאורחים הבאים. עדיין יש להסדיר סכומים שנותרו לתשלום בישיבה הנוכחית וקישורים ישנים שלא אומתו לפני הסגירה.\n\nאם המסוף אישר את הכרטיס אך הסגירה נכשלה, אין לשלם שוב. רעננו את החשבון ובדקו שהוא מוצג כשולם ב-Foody; לאחר מכן נסו שוב רק את סגירת ההזמנה. אם התשלום לא אושר ב-Foody, בדקו את הפעולה המקורית או פנו למנהל. בקופה התואמת, דחיית סגירה מציגה הודעה ומשאירה את המפה והתפוסה המאומתות. הסגירה אינה מסיימת מנות במטבח ואינה מבצעת הפקדה או סגירת יום בנקאית."
+          }
         }
       ],
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-10-28",
+      "procedureUpdatedAt": "2026-11-04",
       "evidence": [
         {
           "service": "foodyserver",
@@ -41132,9 +41145,9 @@
             "he": "זיכוי או ביטול תשלום מקוון ב-Verifone"
           },
           "instructions": {
-            "en": "For eligible Verifone online payments in Admin, follow the complete [refund and VOID procedure](/en/help/payments/how-payments-work#verifone-admin-refund-void). Verified provider state determines the available action. An uncertain result must be checked without repeating it. This does not add a terminal refund action or cancel preparation.",
-            "fr": "Pour un paiement Verifone en ligne éligible dans Admin, suivez la [procédure complète de remboursement et VOID](/fr/help/payments/how-payments-work#verifone-admin-refund-void). L’état vérifié du prestataire détermine l’action proposée. Vérifiez un résultat incertain sans le répéter. Cela n’ajoute pas de remboursement sur terminal et n’annule pas la préparation.",
-            "he": "לתשלום מקוון מתאים של Verifone בממשק הניהול, פעלו לפי [הנוהל המלא להחזר ול-VOID](/he/help/payments/how-payments-work#verifone-admin-refund-void). מצב מאומת אצל הספק קובע את הפעולה הזמינה. יש לבדוק תוצאה לא ודאית ללא ניסיון חוזר. אין כאן הוספת פעולת החזר במסוף או ביטול הכנה."
+            "en": "For eligible Verifone online payments in Admin, follow the complete [refund and VOID procedure](/en/help/payments/how-payments-work#verifone-admin-refund-void). Verified provider state determines the available action. An uncertain result must be checked without repeating it. This does not add a terminal refund action or cancel preparation.\n\nAfter an approved payment, a closing error does not authorize another collection. Follow [the table-service closing check](/en/help/tables-floors/staff-and-assistance#paid-table-close-recovery).",
+            "fr": "Pour un paiement Verifone en ligne éligible dans Admin, suivez la [procédure complète de remboursement et VOID](/fr/help/payments/how-payments-work#verifone-admin-refund-void). L’état vérifié du prestataire détermine l’action proposée. Vérifiez un résultat incertain sans le répéter. Cela n’ajoute pas de remboursement sur terminal et n’annule pas la préparation.\n\nAprès un paiement accepté, une erreur de fermeture ne justifie pas un nouvel encaissement. Suivez [la vérification de fermeture de la session](/fr/help/tables-floors/staff-and-assistance#paid-table-close-recovery).",
+            "he": "לתשלום מקוון מתאים של Verifone בממשק הניהול, פעלו לפי [הנוהל המלא להחזר ול-VOID](/he/help/payments/how-payments-work#verifone-admin-refund-void). מצב מאומת אצל הספק קובע את הפעולה הזמינה. יש לבדוק תוצאה לא ודאית ללא ניסיון חוזר. אין כאן הוספת פעולת החזר במסוף או ביטול הכנה.\n\nלאחר תשלום שאושר, שגיאת סגירה אינה מאשרת גבייה נוספת. פעלו לפי [בדיקת סגירת ישיבת השולחן](/he/help/tables-floors/staff-and-assistance#paid-table-close-recovery)."
           }
         },
         {
@@ -41444,7 +41457,7 @@
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-10-30",
+      "procedureUpdatedAt": "2026-11-04",
       "evidence": [
         {
           "service": "foodyserver",
@@ -41967,9 +41980,9 @@
             "he": "הבחנה בהזמנות מישיבת שולחן קודמת"
           },
           "instructions": {
-            "fr": "Sur un POS compatible mis à jour, avec orders.manage, une ancienne commande manuelle encore active reste visible séparément par son numéro et sa date. Touchez-la pour consulter ses propres lignes et son total dans Menu, sans la rattacher à l’occupation actuelle de la table. Une session absente ou différente ne permet pas d’ouvrir la table des clients suivants. Les commandes QR conservent elles aussi leurs numéros et paiements individuels. Les envois manuels d’une même session actuelle confirmée restent regroupés dans son addition habituelle.\n\nUne table peut donc avoir une session actuelle vide et des commandes antérieures encore dues : ce ne sont pas la même addition. L’ouverture ne fusionne, ne clôture, n’archive et ne règle rien. Les actions admissibles d’une commande sauvegardée restent limitées à son numéro et aux droits requis. Si la session change pendant le chargement, revenez à Commandes ou rouvrez la table actuelle ; ne recréez pas la commande et ne relancez pas un paiement pour contourner l’erreur. La mise à jour de l’API seule ne met pas à jour le POS installé.",
-            "en": "On a compatible updated POS, with orders.manage, an older manual order that is still active remains separately visible by its number and date. Tap it to view its own lines and total in Menu without attaching it to the table’s current occupancy. An absent or different session cannot open the next party’s table service. QR orders also retain their individual numbers and payments. Manual kitchen sends within one confirmed current session remain grouped in that session’s usual check.\n\nA table may therefore have an empty current session and older outstanding orders: these are not the same check. Opening the view never merges, closes, archives or settles anything. Eligible saved-order actions remain limited to its number and the required permissions. If the session changes while loading, return to Orders or reopen the current table; do not recreate the order or retry a payment to bypass the error. Updating the API alone does not update the installed POS.",
-            "he": "בקופה מעודכנת ותואמת, עם orders.manage, הזמנה ידנית ישנה שעדיין פעילה נשארת מוצגת בנפרד לפי מספרה ותאריכה. לחצו עליה לצפייה בשורות ובסכום שלה בתפריט, בלי לשייך אותה לישיבה הנוכחית בשולחן. ישיבה חסרה או שונה אינה יכולה לפתוח את שירות השולחן של הלקוחות הבאים. גם הזמנות QR שומרות על מספרי ההזמנה והתשלומים הנפרדים שלהן. שליחות ידניות למטבח במסגרת אותה ישיבה נוכחית שאומתה נשארות מקובצות בחשבון הרגיל שלה.\n\nלכן ייתכן שלשולחן יש ישיבה נוכחית ריקה והזמנות ישנות שעדיין חייבות בתשלום: אלה אינם אותו חשבון. פתיחת התצוגה אינה מאחדת, סוגרת, מעבירה לארכיון או מסדירה דבר. הפעולות המותרות בהזמנה שמורה מוגבלות למספר שלה ולהרשאות הנדרשות. אם הישיבה מתחלפת בזמן הטעינה, חזרו להזמנות או פתחו מחדש את השולחן הנוכחי; אל תיצרו את ההזמנה מחדש ואל תנסו שוב תשלום כדי לעקוף את השגיאה. עדכון API בלבד אינו מעדכן את הקופה המותקנת."
+            "fr": "Sur un POS compatible mis à jour, avec orders.manage, une ancienne commande manuelle encore active reste visible séparément par son numéro et sa date. Touchez-la pour consulter ses propres lignes et son total dans Menu, sans la rattacher à l’occupation actuelle de la table. Une session absente ou différente ne permet pas d’ouvrir la table des clients suivants. Les commandes QR conservent elles aussi leurs numéros et paiements individuels. Les envois manuels d’une même session actuelle confirmée restent regroupés dans son addition habituelle.\n\nUne table peut donc avoir une session actuelle vide et des commandes antérieures encore dues : ce ne sont pas la même addition. L’ouverture ne fusionne, ne clôture, n’archive et ne règle rien. Les actions admissibles d’une commande sauvegardée restent limitées à son numéro et aux droits requis. Si la session change pendant le chargement, revenez à Commandes ou rouvrez la table actuelle ; ne recréez pas la commande et ne relancez pas un paiement pour contourner l’erreur. La mise à jour de l’API seule ne met pas à jour le POS installé.\n\nAprès un paiement accepté, une erreur de fermeture ne justifie pas un nouvel encaissement. Suivez [la vérification de fermeture de la session](/fr/help/tables-floors/staff-and-assistance#paid-table-close-recovery).",
+            "en": "On a compatible updated POS, with orders.manage, an older manual order that is still active remains separately visible by its number and date. Tap it to view its own lines and total in Menu without attaching it to the table’s current occupancy. An absent or different session cannot open the next party’s table service. QR orders also retain their individual numbers and payments. Manual kitchen sends within one confirmed current session remain grouped in that session’s usual check.\n\nA table may therefore have an empty current session and older outstanding orders: these are not the same check. Opening the view never merges, closes, archives or settles anything. Eligible saved-order actions remain limited to its number and the required permissions. If the session changes while loading, return to Orders or reopen the current table; do not recreate the order or retry a payment to bypass the error. Updating the API alone does not update the installed POS.\n\nAfter an approved payment, a closing error does not authorize another collection. Follow [the table-service closing check](/en/help/tables-floors/staff-and-assistance#paid-table-close-recovery).",
+            "he": "בקופה מעודכנת ותואמת, עם orders.manage, הזמנה ידנית ישנה שעדיין פעילה נשארת מוצגת בנפרד לפי מספרה ותאריכה. לחצו עליה לצפייה בשורות ובסכום שלה בתפריט, בלי לשייך אותה לישיבה הנוכחית בשולחן. ישיבה חסרה או שונה אינה יכולה לפתוח את שירות השולחן של הלקוחות הבאים. גם הזמנות QR שומרות על מספרי ההזמנה והתשלומים הנפרדים שלהן. שליחות ידניות למטבח במסגרת אותה ישיבה נוכחית שאומתה נשארות מקובצות בחשבון הרגיל שלה.\n\nלכן ייתכן שלשולחן יש ישיבה נוכחית ריקה והזמנות ישנות שעדיין חייבות בתשלום: אלה אינם אותו חשבון. פתיחת התצוגה אינה מאחדת, סוגרת, מעבירה לארכיון או מסדירה דבר. הפעולות המותרות בהזמנה שמורה מוגבלות למספר שלה ולהרשאות הנדרשות. אם הישיבה מתחלפת בזמן הטעינה, חזרו להזמנות או פתחו מחדש את השולחן הנוכחי; אל תיצרו את ההזמנה מחדש ואל תנסו שוב תשלום כדי לעקוף את השגיאה. עדכון API בלבד אינו מעדכן את הקופה המותקנת.\n\nלאחר תשלום שאושר, שגיאת סגירה אינה מאשרת גבייה נוספת. פעלו לפי [בדיקת סגירת ישיבת השולחן](/he/help/tables-floors/staff-and-assistance#paid-table-close-recovery)."
           }
         },
         {
@@ -42146,7 +42159,7 @@
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-11-02",
+      "procedureUpdatedAt": "2026-11-04",
       "evidence": [
         {
           "service": "foodypos",
@@ -99439,6 +99452,7 @@
         "floorPlanTableStatusTitle",
         "ordersActionsButton",
         "posChecksTitle",
+        "posCloseTableFailed",
         "serviceGuidanceDueCount",
         "serviceGuidanceToDo",
         "tablesAllTables",
@@ -100602,7 +100616,7 @@
   "coverage": {
     "sharedRuntimeFiles": 401,
     "features": 108,
-    "operations": 887,
+    "operations": 888,
     "sourceFiles": 2353,
     "surfaces": 2136,
     "unclassifiedRoutes": []

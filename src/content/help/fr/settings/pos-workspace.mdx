@@ -5,7 +5,7 @@ apps: foodypos
 tags:
   - settings
   - pos-workspace
-updatedAt: '2026-11-02'
+updatedAt: '2026-11-04'
 featureId: pos-workspace
 audience: public
 releaseStatus: available
@@ -25,6 +25,8 @@ Sur le POS compatible mis à jour, changer d’établissement réinitialise uniq
 Sur un POS compatible mis à jour, avec orders.manage, une ancienne commande manuelle encore active reste visible séparément par son numéro et sa date. Touchez-la pour consulter ses propres lignes et son total dans Menu, sans la rattacher à l’occupation actuelle de la table. Une session absente ou différente ne permet pas d’ouvrir la table des clients suivants. Les commandes QR conservent elles aussi leurs numéros et paiements individuels. Les envois manuels d’une même session actuelle confirmée restent regroupés dans son addition habituelle.
 
 Une table peut donc avoir une session actuelle vide et des commandes antérieures encore dues : ce ne sont pas la même addition. L’ouverture ne fusionne, ne clôture, n’archive et ne règle rien. Les actions admissibles d’une commande sauvegardée restent limitées à son numéro et aux droits requis. Si la session change pendant le chargement, revenez à Commandes ou rouvrez la table actuelle ; ne recréez pas la commande et ne relancez pas un paiement pour contourner l’erreur. La mise à jour de l’API seule ne met pas à jour le POS installé.
+
+Après un paiement accepté, une erreur de fermeture ne justifie pas un nouvel encaissement. Suivez [la vérification de fermeture de la session](/fr/help/tables-floors/staff-and-assistance#paid-table-close-recovery).
 
 <span id="saved-order-workspace" />
 
