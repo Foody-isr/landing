@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "Foody-isr/admin",
-  "ref": "1c0953a0b9da0d34a2bd9e3b3f74a4b8895c22fb",
+  "ref": "318605d81b864be8943d2ff74d965220243afea4",
   "observations": [
     {
       "id": "table-status-descriptions-source-contract",
@@ -556,10 +556,13 @@
         "const steps: CheckoutStep[] = eventConfig ? ['reception', 'event', 'payment'] : ['reception', 'payment'];",
         "function goToStep(target: CheckoutStep)",
         "setFocusRequest",
-        "data-production-summary"
+        "name=\"production-plan\"",
+        "addToProduction === true",
+        "addToProduction === false"
       ],
       "forbidden": [
-        "disabled={!canConfirm}"
+        "disabled={!canConfirm}",
+        "data-production-summary"
       ]
     },
     {

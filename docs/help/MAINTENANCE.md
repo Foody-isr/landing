@@ -1535,3 +1535,19 @@ source checkpoints; pin this documentation commit in Admin and API before CI.
 Verify the development artifacts, then promote those same artifacts under the
 ongoing authorized delivery correction. Publish the matching help and support
 corpus together. No real order, message or tenant configuration is changed.
+
+## Explicit manual-order production choice (4 November 2026)
+
+This review refreshes Admin, API and Landing only. Web, POS and Backoffice source
+blocks and surfaces retain the exact Landing develop 5119de2e evidence; those
+clients are not revalidated or republished. Existing clients omit the optional
+staff-only production_plan input and retain their admission rules. The shared
+Order response model is unchanged, so no Flutter model or release is required.
+The final Admin step requires Yes/No without a default and earlier production
+banners are removed. No is persisted as server-owned metadata and excludes both
+sheet rows and day counts even after scheduling/payment/automatic pinning. Yes
+retains prepared-checkout and event confirmation gates. Existing authorized manual
+pin/unpin actions supersede the creation decision. Public creation cannot set it.
+Publish the updated three-language procedures and exact support corpus with this
+release. Verify and promote the immutable API artifact before the matching Admin;
+no schema migration, real financial operation or production data repair is needed.
