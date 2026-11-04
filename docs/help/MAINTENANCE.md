@@ -1551,3 +1551,33 @@ Backoffice source evidence. Export the identical support corpus after runtime
 validation, refresh these source contracts and retain WORKSPACE references until
 an immutable documentation commit is authorized. This is not PR or release
 readiness, and production is explicitly outside the user's requested scope.
+
+## Explicit manual-order production choice (4 November 2026)
+
+This review refreshes Admin, API and Landing only. Web, POS and Backoffice source
+blocks and surfaces retain the exact Landing develop 5119de2e evidence; those
+clients are not revalidated or republished. Existing clients omit the optional
+staff-only production_plan input and retain their admission rules. The shared
+Order response model is unchanged, so no Flutter model or release is required.
+The final Admin step requires Yes/No without a default and earlier production
+banners are removed. No is persisted as server-owned metadata and excludes both
+sheet rows and day counts even after scheduling/payment/automatic pinning. Yes
+retains prepared-checkout and event confirmation gates. Existing authorized manual
+pin/unpin actions supersede the creation decision. Public creation cannot set it.
+Publish the updated three-language procedures and exact support corpus with this
+release. Verify and promote the immutable API artifact before the matching Admin;
+no schema migration, real financial operation or production data repair is needed.
+
+
+### Authorized fulfillment delivery (4 November 2026)
+
+The user authorized commits, branch pushes, four PRs into develop and production
+promotion. The coordinated candidate preserves the manual-production choices
+already integrated in develop, including their three-language procedures. Pin
+the immutable reviewed Landing commit in API/Admin/Web before CI. Run complete
+validations against the combined sources, merge only green PRs, verify development
+and promote those exact artifacts: API first, then compatible clients and guides.
+This authorization does not claim a deployment has completed or configure a real
+restaurant automatically. Google-backed production checks use read-only simulation
+and synthetic/public address data; no real order or payment is needed. Preserve
+unaffected POS/Backoffice evidence and existing Google provider protections.

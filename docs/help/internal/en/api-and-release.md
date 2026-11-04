@@ -252,8 +252,14 @@ GET /orders/end-of-day/history requires payments.manage and a current enrolled P
 
 GET /orders/end-of-day/preview reads the current POS period and attributable card collections without reserving anything. end_of_day_preview advertises the capability. Common history returns kind=cash or end_of_day, excludes duplicate drawers already included in a Z report and remains scoped to the authenticated POS.
 
+<span id="manual-production-plan-choice" />
+
+## Staff production-plan intent
+
+POST /api/v1/orders accepts the optional staff-only boolean production_plan. Omission retains legacy behavior. False excludes the order from the production sheet and its date counts, including after payment, scheduling or automatic force_production changes. True pins a manual non-hosted order; an ordinary prepared link still waits for collected payment and events retain their confirmation gates. The server owns the persisted external_metadata.production_plan value and rejects direct metadata injection. Guest creation strips the input, and service-level guest calls cannot supply it. Explicit staff pin/unpin actions supersede the creation choice and restore the existing manual-override/automatic rules. No shared response model or schema migration changes; older POS and guest clients can omit the optional input.
+
 <span id="configurable-fulfillment-compatibility" />
 
 ## Prepare configurable fulfillment contracts
 
-Local preparation: nullable dated/revisioned shelf stock and optional zone deadlines configure no restaurant automatically. Private APIs verify restaurant ownership and existing permissions. Public calendars and submission remain authoritative; private quantities are not added to the public item contract. Historical series leftovers use the operational service series for display and reservation, independently of the next preorder series. Verify defaults, reservation races, pre-production releases, older editors and translations; retain payment providers and existing orders. Migration 288/API precede Admin/Web. Export the identical corpus after runtime validation and keep a local WORKSPACE reference until commits are authorized; no production availability is attested.
+Local preparation: nullable dated/revisioned shelf stock and optional zone deadlines configure no restaurant automatically. Private APIs verify restaurant ownership and existing permissions. Public calendars and submission remain authoritative; private quantities are not added to the public item contract. Historical series leftovers use the operational service series for display and reservation, independently of the next preorder series. Verify defaults, reservation races, pre-production releases, older editors and translations; retain payment providers and existing orders. Migration 288/API precede Admin/Web. Export the identical corpus after runtime validation and pin the reviewed immutable Landing commit before CI. Verify the develop artifacts, then promote those exact artifacts under the approved release workflow; source review alone does not attest production availability.

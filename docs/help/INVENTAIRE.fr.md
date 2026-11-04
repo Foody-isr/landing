@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-11-04.
 
-108 fiches de fonctionnalités, 907 procédures/sous-fonctionnalités, dont 99 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2364 fichiers applicatifs et 2142 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+108 fiches de fonctionnalités, 909 procédures/sous-fonctionnalités, dont 99 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2364 fichiers applicatifs et 2142 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,10 +10,10 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 635 | 902 | e147db3582a8 ; versioned |
-| foodyadmin | 793 | 816 | 660b5c918e82 ; versioned |
-| foodyweb | 354 | 173 | 49514bde6953 ; versioned |
-| foodylanding | 156 | 31 | 5119de2e9521 ; versioned |
+| foodyserver | 635 | 902 | 94d062cc652d ; versioned |
+| foodyadmin | 793 | 816 | 89f37ce7a7ea ; versioned |
+| foodyweb | 354 | 173 | dbc41d0603bc ; versioned |
+| foodylanding | 156 | 31 | 20fde7e3f9a1 ; versioned |
 | foodypos | 382 | 170 | 63c69f697390 ; versioned |
 | foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
 
@@ -645,6 +645,7 @@ Identifiant : `production`. Public : public. Disponibilité : available. Service
 - [Vérifier quantités et portions](../../src/content/help/fr/orders/production-planning.mdx#quantities)
 - [Préparer les colis clients](../../src/content/help/fr/orders/production-planning.mdx#packing)
 - [Commandes événement depuis le parcours habituel](../../src/content/help/fr/orders/production-planning.mdx#event-orders)
+- [Choisir la production lors d’une commande manuelle](../../src/content/help/fr/orders/production-planning.mdx#manual-order-production-choice)
 
 ### [Partager et regrouper les additions](../../src/content/help/fr/orders/split-bills.mdx)
 
@@ -1471,6 +1472,7 @@ Identifiant : `platform-api`. Public : internal. Disponibilité : available. Ser
 - [Compatibilité de l’acceptation programmée](internal/fr/api-and-release.md#scheduled-acceptance-capability)
 - [Réserver l’encaissement physique avant l’envoi natif](internal/fr/api-and-release.md#pos-terminal-collection-contract)
 - [Lire les références des rapports POS finalisés](internal/fr/api-and-release.md#scoped-end-of-day-report-history)
+- [Choix staff du plan de production](internal/fr/api-and-release.md#manual-production-plan-choice)
 - [Préparer les contrats de disponibilité configurables](internal/fr/api-and-release.md#configurable-fulfillment-compatibility)
 
 ### [Aperçus internes et alias de routes](internal/fr/design-previews.md)
