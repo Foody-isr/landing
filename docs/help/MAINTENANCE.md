@@ -1581,3 +1581,21 @@ This authorization does not claim a deployment has completed or configure a real
 restaurant automatically. Google-backed production checks use read-only simulation
 and synthetic/public address data; no real order or payment is needed. Preserve
 unaffected POS/Backoffice evidence and existing Google provider protections.
+
+
+### Historical immediate-stock simulation correction (4 November 2026)
+
+After documentation PR 178 merged, the user explicitly requested verification
+of the original predefined-count plus immediate-sale channel. A failing HTTP
+regression reproduced ready delivery at 11:00 but pickup at 14:30 due to four
+hours of production being reapplied. The corrected shared stock exception gives
+pickup 10:30, preserves insufficient-quantity and mixed-basket preparation, and
+is rechecked at checkout. Ordinary article defaults and the separate dated pool
+remain unchanged. The Admin result explains ready stock; no stock is reserved by
+simulation. This focused follow-up documentation PR preserves the first release
+guidance, updates its source evidence and provides a new immutable pin for the
+still-open API/Admin/Web PRs. Production promotion waits for this correction.
+
+Compatibility regressions also retain historical counted-stock future receiving
+appointments; the new dated pool does not impose its expiry on that existing
+mechanism. A ready product still cannot waive a zone intake deadline.

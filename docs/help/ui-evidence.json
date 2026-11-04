@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "Foody-isr/admin",
-  "ref": "89f37ce7a7ea09542ba50bc6a6c096350ef04919",
+  "ref": "4312c58242d0656d5ecf34e8bfa6331d35e6910f",
   "observations": [
     {
       "id": "table-status-descriptions-source-contract",
@@ -607,6 +607,23 @@
         "{deadlinesSupported && <fieldset",
         "order_deadlines",
         "days_before"
+      ]
+    },
+    {
+      "id": "simulation-ready-stock-explanation",
+      "source": "src/lib/i18n.tsx",
+      "required": [
+        "orderingSimulationReadyStock: \"The calculation includes already available stock. Basket quantities, service hours and delivery rules still apply.\",",
+        "orderingSimulationReadyStock: \"החישוב כולל מלאי שכבר זמין. כמויות הסל, שעות השירות וכללי המשלוח עדיין חלים.\",",
+        "orderingSimulationReadyStock: \"Le calcul tient compte du stock déjà disponible. Les quantités du panier, les horaires et les règles de livraison restent applicables.\","
+      ]
+    },
+    {
+      "id": "simulation-stock-exception-response",
+      "source": "src/app/[restaurantId]/settings/orders/OrderingSimulation.tsx",
+      "required": [
+        "calendar?.prepared_stock_applied",
+        "t('orderingSimulationReadyStock')"
       ]
     }
   ],
