@@ -96,18 +96,6 @@ La période et les heures affichées dans Admin utilisent le fuseau horaire du r
 
 Pour clôturer la journée espèces et carte dans un même parcours, utilisez [Clôture de journée et rapport Z Foody](/fr/help/payments/end-of-day). Le départ d’un employé reste distinct. Sur les versions antérieures, Dépôts du terminal permet une transmission Verifone séparée avec payments.manage : vérifiez le terminal, confirmez une seule fois en fin de journée et attendez la confirmation finale. Un résultat incertain bloque toute répétition avant vérification. Les commandes de totaux non prises en charge restent indisponibles. Les résultats chiffrés et la référence de lot ne sont affichés que s’ils sont réellement fournis. Ne partagez ni identifiants du terminal ni données de carte dans le chat d’assistance. La compatibilité matérielle doit être vérifiée sur le Mini ou le Portable concerné. Si le contexte change, [rouvrez la confirmation](/fr/help/payments/cash-access#terminal-report-context).
 
-<span id="terminal-reports-advanced" />
-
-## Capacités des rapports Ashrait en Israël
-
-Sur la version compatible avec Ashrait Israël, les anciennes actions génériques Consulter les totaux, Clôturer uniquement et Transmettre uniquement sont retirées. Pour la fin de journée, utilisez le parcours Solde en caisse et sa transmission explicite du terminal. Les ventes enregistrées dans Foody ne sont pas les totaux bancaires du terminal. Si Ashrait confirme le dépôt sans fournir de chiffres ou de référence de lot, ces informations restent indisponibles : elles ne valent pas zéro. Les autres commandes décrites dans une documentation prestataire ne sont pas nécessairement proposées dans Foody. Faites vérifier leur disponibilité et la procédure par un responsable et Verifone avant toute opération de maintenance ou financière avancée.
-
-<span id="ashrait-last-transaction-recovery" />
-
-## Reprendre un paiement Ashrait interrompu
-
-Si une réponse carte est perdue, conservez l’addition, le restaurant, le POS et le terminal d’origine. La reprise vérifie la dernière transaction Ashrait et sa correspondance avec la demande initiale ; lire une transaction ne lance aucun nouveau débit. Une réponse vide après redémarrage ne prouve pas l’absence de débit. Si Foody ne peut pas établir la correspondance ou si le résultat reste inconnu, le verrou est conservé : ne relancez pas le paiement sur un autre appareil et ne supprimez pas les données de l’application. Faites vérifier l’opération d’origine par un responsable avec Verifone. Une confirmation déjà enregistrée se reprend sans redébit.
-
 <span id="saved-qr-payment-scope" />
 
 ## Vérifier le paiement d’une seule commande QR
@@ -173,3 +161,9 @@ Pour payer par carte sur iPad, voir le [choix Mini/Portable](/fr/help/payments/v
 ## Utiliser le suivi de caisse commun
 
 Avec les droits de paiement et les versions compatibles, ouvrez Plus → Rapports → Solde en caisse. Le même espace présente le tiroir espèces, les encaissements carte enregistrés par terminal et la clôture guidée. Historique de caisse réunit les sessions espèces closes et les rapports Z finalisés. Les anciennes adresses de clôture et de dépôt rejoignent cet espace ; les API plus anciennes conservent leur parcours précédent. Consultez [le parcours de caisse commun](/fr/help/payments/end-of-day#unified-cash-workspace).
+
+<span id="ashrait-last-transaction-inspection" />
+
+## Consulter la dernière transaction du terminal
+
+Dans Matériel → Terminaux de paiement, un responsable peut consulter la dernière transaction du terminal connecté. Cette lecture ne modifie aucun paiement. Voir [la procédure et ses limites](/fr/help/payments/ashrait-terminal-inspection).

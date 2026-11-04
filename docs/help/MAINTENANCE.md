@@ -1,5 +1,26 @@
 # Help ownership, evidence and releases
 
+## Ashrait read-only terminal inspection (4 November 2026)
+
+The compatible POS adds explicit latest-transaction inspection to Hardware for
+paired iPad terminals and inventory-recognized Portable devices. Opening the
+dialog sends nothing. The existing connection must already be ready; the read
+does not initialize/download parameters, collect, settle, clear recovery, print
+or replay a bank operation. Native query IDs and physical/tenant/actor scope
+reject foreign or late results. Only allowlisted reference, effect, authorization
+and exact known money reach Flutter; receipt/card JSON stays native. Empty after
+restart does not mean no debit. Corrupt native recovery remains a lock. The iOS
+ordinary-charge guard is corrected at dispatch entry.
+
+Review pos-checkout, victa-mini, pos-workspace and pos-behavior in FR/HE/EN. The
+new display has synthetic iPad/French and compact/Hebrew fixtures; no real bank
+data, hardware payment or transmission is used. The other advanced PDF methods
+remain unactivated pending regional mapping, maintenance/accounting and receipt
+contracts; the public guides must not claim full implementation or certification.
+API runtime, Admin, Web and Backoffice remain unchanged; API receives the exact
+updated public corpus. Preserve all unrelated inventory/source evidence and pin
+an immutable documentation commit. Publish procedures only with the matching POS.
+
 ## Ashrait Israel protocol checkpoint (4 November 2026)
 
 The compatible POS replaces generic last-transaction lookup with the regional

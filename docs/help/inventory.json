@@ -4,10 +4,10 @@
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "e147db3582a854fcb07d761897d82a0335de8e25",
+      "sourceCommit": "4329d0e0681eb58bf6496abdf789a7b3b291577c",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "87338c08a51d2cc9b68c8581ea5c7a8faf2f32c359c3560645efe02c014b52ee",
-      "workingTreeHasChanges": true,
+      "sourceSnapshot": "5892c2f5f5ac3df8c666575a6f08445a342e389f726f38f181d619b02cada468",
+      "workingTreeHasChanges": false,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
           "sha256": "33cf30b683837b76977ed47c14d5d91ccb1b34bd60e9f62d124b8cc1079231aa",
@@ -4794,7 +4794,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "05e07dd30b78c693681a3c3ba1a886504d43af5df595ba84457b8ff35b0ee3af",
+          "sha256": "4b5822712ed1dd29d512178d7d7d2a376002b47b04b96c79099ffd3ae55113f0",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -14123,13 +14123,13 @@
     },
     "foodypos": {
       "repository": "https://github.com/Foody-isr/pos",
-      "sourceCommit": "1f08ec5240054602a8067040f8dec5195720d38f",
+      "sourceCommit": "f8dabebe66ee82dedc3ecd436f227f0b59b78e3f",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "a0609c628ec6d9c01e0748b0c391d275060d2ce894579b2018fc24cfda8560ac",
-      "workingTreeHasChanges": true,
+      "sourceSnapshot": "c0a2ee45de1f1e04181ac6d916451e8cd72c7241148109c34edf3aee3f685b05",
+      "workingTreeHasChanges": false,
       "sourceFiles": {
         "android/app/src/main/kotlin/com/foodypos/app/AshraitProtocol.kt": {
-          "sha256": "8e2edc0d625d501d03c2205209821669ded9cc2caec10306eff2664f41aad34b",
+          "sha256": "590ffe058183af8795b79cd7eb33822adbb0f383e9d014bcd34594e4ae3b96fc",
           "features": [
             "pos-payments"
           ]
@@ -14147,9 +14147,10 @@
           ]
         },
         "android/app/src/main/kotlin/com/foodypos/app/VerifonePaymentBridge.kt": {
-          "sha256": "01c91d6c434f24ffb92da94a9e5df5ee7e289871157cfb29e2eb56f68d840ea9",
+          "sha256": "769f7447530650f553e97a9e25c063cb05dd85081590c461a5011a90db2d361c",
           "features": [
-            "pos-payments"
+            "pos-payments",
+            "pos-ashrait-terminal-inspection"
           ]
         },
         "android/app/src/main/kotlin/com/foodypos/app/VerifonePrinterBridge.kt": {
@@ -14165,7 +14166,7 @@
           ]
         },
         "ios/Runner/AshraitProtocol.h": {
-          "sha256": "94379be1ee6937533cad047554b9a65f56ce59c40dda6007038a9b2a4d173cc8",
+          "sha256": "6e6c7bf9959973874d9cb890855322438cae7c70bb6707a345f1d84a6e90a6e1",
           "features": [
             "pos-payments"
           ]
@@ -14231,9 +14232,10 @@
           ]
         },
         "ios/Runner/VerifonePaymentBridge.m": {
-          "sha256": "f604166e14b4fc7e7082ee5c9cfb9afe0efb62068dcfe0b47f7ab779332a1b39",
+          "sha256": "9c4d4fda01e49d731ad797f5b711fefa4e332ab0c5d75c7cf5bc77b56f363ab2",
           "features": [
-            "pos-payments"
+            "pos-payments",
+            "pos-ashrait-terminal-inspection"
           ]
         },
         "lib/core/auth/kitchen_companion_access.dart": {
@@ -14282,7 +14284,7 @@
           ]
         },
         "lib/core/l10n/app_en.arb": {
-          "sha256": "c25742656f755d2a28f5e7d92c3b94b398846bb83f336f32319362f42654c750",
+          "sha256": "59a91e2fb9844b8e6a6c4fc377c1b535466b68b54f494d2ed1266740624a7d99",
           "features": [
             "pos-behavior",
             "pos-cash-access-diagnostics",
@@ -14291,7 +14293,7 @@
           ]
         },
         "lib/core/l10n/app_fr.arb": {
-          "sha256": "f5abcaff8e319bb4558625605afc76c940e7ac4c3a60be3889e64e91faf6e9a3",
+          "sha256": "d00a34eceff5d5115373f3ed0b58ec4991da51089491bcef492afcd1eb469a41",
           "features": [
             "pos-behavior",
             "pos-cash-access-diagnostics",
@@ -14300,7 +14302,7 @@
           ]
         },
         "lib/core/l10n/app_he.arb": {
-          "sha256": "511b1d386d568566207ad809eefc77f2f858d2b667697de916fc2792dc0c4846",
+          "sha256": "acf60dab44274d6abcf411ce7b73ebe17e4632775e683f17043aa8c7c8ef5338",
           "features": [
             "pos-behavior",
             "pos-cash-access-diagnostics",
@@ -16238,6 +16240,15 @@
             "pos-workspace"
           ]
         },
+        "lib/features/settings/presentation/ashrait_last_transaction_tile.dart": {
+          "sha256": "ad62cb1a9edd063bfe1c227f2381b04a7d04175ecb3f7c7b9dc747de8a5a4115",
+          "features": [
+            "pos-behavior",
+            "pos-payments",
+            "pos-ashrait-terminal-inspection",
+            "pos-workspace"
+          ]
+        },
         "lib/features/settings/presentation/checkout_settings_page.dart": {
           "sha256": "a9c2b37be25a868ec04a505b95a86307df94b44ccb8bb22b42219048c52af726",
           "features": [
@@ -16261,9 +16272,10 @@
           ]
         },
         "lib/features/settings/presentation/hardware_settings_page.dart": {
-          "sha256": "21acaec21240eec2afe1d46f326a8c30ee04aa160552a93b0da8d9c737975dd2",
+          "sha256": "1db5310811c255c1fba36df26642e15152b61ffb537c0e5964555d615837cf1f",
           "features": [
             "pos-behavior",
+            "pos-payments",
             "pos-workspace"
           ]
         },
@@ -16343,9 +16355,10 @@
           ]
         },
         "lib/features/settings/presentation/victa_mini_settings_card.dart": {
-          "sha256": "ead4a6ea711192348b6ef321244695f63d077e7d48b0051a8ba8427c976c01b0",
+          "sha256": "8945b707c418bc5199b47483478257829955bbcd581405bbbc5afd17eeb0f0ad",
           "features": [
             "pos-behavior",
+            "pos-payments",
             "pos-victa-mini",
             "pos-workspace"
           ]
@@ -16677,8 +16690,15 @@
             "shared-runtime"
           ]
         },
+        "lib/services/payments/ashrait_last_transaction.dart": {
+          "sha256": "4f1ffe70fef61b0f1303cb3a78faa5bc30a6869303cfac45aa796fd647406864",
+          "features": [
+            "pos-payments",
+            "pos-ashrait-terminal-inspection"
+          ]
+        },
         "lib/services/payments/ashrait_protocol.dart": {
-          "sha256": "361678e44bc8c64c3cc813f03c7b0131d8d260de11dcdb1923b421a9548c114b",
+          "sha256": "baeaf265a00d8dfd78c1e65f0758d863bbda88b764621450750b6cb55def2a74",
           "features": [
             "pos-payments"
           ]
@@ -16704,9 +16724,10 @@
           ]
         },
         "lib/services/payments/terminal_payment_service.dart": {
-          "sha256": "853626b45b8602e8dcae9bd7f248f8e6be483d16931bcdd6b93bdbe97c3163d8",
+          "sha256": "20557eefd023cf4e0a46cda241f55cf81b88c4370bebe6162532341a901080cd",
           "features": [
             "pos-payments",
+            "pos-ashrait-terminal-inspection",
             "pos-end-of-day"
           ]
         },
@@ -38939,6 +38960,19 @@
             "en": "With payment permissions and compatible versions, open More → Reports → Current drawer. The same workspace shows the cash drawer, recorded card collections by terminal and guided closing. Drawer history combines closed cash sessions and finalized Z reports. Older closing and deposit addresses open this workspace; older APIs retain their previous workflow. See [the unified cash workflow](/en/help/payments/end-of-day#unified-cash-workspace).",
             "he": "עם הרשאות תשלום וגרסאות תואמות, פתחו עוד ← דוחות ← יתרת קופה. אותו מרחב מציג את מגירת המזומנים, חיובי הכרטיס שנרשמו לפי מסוף וסגירה מודרכת. היסטוריית קופה משלבת משמרות מזומן סגורות ודוחות Z שהושלמו. כתובות הסגירה וההפקדה הקודמות פותחות מרחב זה; API ישן שומר על המסלול הקודם. ראו [תהליך הקופה המאוחד](/he/help/payments/end-of-day#unified-cash-workspace)."
           }
+        },
+        {
+          "id": "ashrait-last-transaction-inspection",
+          "title": {
+            "fr": "Consulter la dernière transaction du terminal",
+            "en": "Inspect the last terminal transaction",
+            "he": "צפייה בעסקה האחרונה במסוף"
+          },
+          "instructions": {
+            "fr": "Dans Matériel → Terminaux de paiement, un responsable peut consulter la dernière transaction du terminal connecté. Cette lecture ne modifie aucun paiement. Voir [la procédure et ses limites](/fr/help/payments/ashrait-terminal-inspection).",
+            "en": "In Hardware → Payment terminals, a manager can inspect the last transaction on the connected terminal. This read changes no payment. See [the procedure and its limits](/en/help/payments/ashrait-terminal-inspection).",
+            "he": "בחומרה ← מסופי תשלום מנהל יכול לצפות בעסקה האחרונה במסוף המחובר. הקריאה אינה משנה תשלום. ראו [הוראות ומגבלות](/he/help/payments/ashrait-terminal-inspection)."
+          }
         }
       ],
       "audience": "public",
@@ -39029,6 +39063,10 @@
         {
           "service": "foodypos",
           "file": "lib/features/settings/presentation/appearance_settings_page.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/settings/presentation/ashrait_last_transaction_tile.dart"
         },
         {
           "service": "foodypos",
@@ -41188,7 +41226,10 @@
           "lib/features/orders/presentation/payment_terminal_picker.dart",
           "ios/Runner/AshraitProtocol.h",
           "android/app/src/main/kotlin/com/foodypos/app/AshraitProtocol.kt",
-          "lib/core/ui/terminal_payment_error.dart"
+          "lib/core/ui/terminal_payment_error.dart",
+          "lib/features/settings/presentation/ashrait_last_transaction_tile.dart",
+          "lib/features/settings/presentation/victa_mini_settings_card.dart",
+          "lib/features/settings/presentation/hardware_settings_page.dart"
         ],
         "foodyserver": [
           "internal/payment/**",
@@ -41379,32 +41420,6 @@
           }
         },
         {
-          "id": "terminal-reports-advanced",
-          "title": {
-            "en": "Israeli Ashrait report capabilities",
-            "fr": "Capacités des rapports Ashrait en Israël",
-            "he": "יכולות הדיווח של Ashrait בישראל"
-          },
-          "instructions": {
-            "fr": "Sur la version compatible avec Ashrait Israël, les anciennes actions génériques Consulter les totaux, Clôturer uniquement et Transmettre uniquement sont retirées. Pour la fin de journée, utilisez le parcours Solde en caisse et sa transmission explicite du terminal. Les ventes enregistrées dans Foody ne sont pas les totaux bancaires du terminal. Si Ashrait confirme le dépôt sans fournir de chiffres ou de référence de lot, ces informations restent indisponibles : elles ne valent pas zéro. Les autres commandes décrites dans une documentation prestataire ne sont pas nécessairement proposées dans Foody. Faites vérifier leur disponibilité et la procédure par un responsable et Verifone avant toute opération de maintenance ou financière avancée.",
-            "en": "In the compatible Israeli Ashrait version, the old generic View current totals, Close only and Transmit only actions are removed. For end of day, use Current drawer and its explicit terminal transmission. Sales recorded by Foody are not the terminal’s bank totals. If Ashrait confirms a deposit without numeric results or a batch reference, those details remain unavailable; they are not zero. Other commands described in provider documentation are not necessarily available in Foody. Have a manager and Verifone confirm availability and the procedure before advanced financial or maintenance operations.",
-            "he": "בגרסה התואמת ל־Ashrait בישראל הוסרו הפעולות הכלליות הישנות הצגת סיכומים, סגירה בלבד ושידור בלבד. לסוף היום השתמשו ביתרת הקופה ובשידור המפורש של המסוף במסלול זה. המכירות הרשומות ב־Foody אינן הסיכומים הבנקאיים של המסוף. אם Ashrait מאשר הפקדה בלי סכומים או מזהה אצווה, הפרטים נשארים לא זמינים ואינם אפס. פקודות נוספות המתוארות בתיעוד הספק אינן בהכרח זמינות ב־Foody. לפני פעולה כספית מתקדמת או פעולת תחזוקה בקשו ממנהל ומ־Verifone לאשר את הזמינות ואת ההליך."
-          }
-        },
-        {
-          "id": "ashrait-last-transaction-recovery",
-          "title": {
-            "fr": "Reprendre un paiement Ashrait interrompu",
-            "en": "Recover an interrupted Ashrait payment",
-            "he": "בירור תשלום Ashrait שנקטע"
-          },
-          "instructions": {
-            "fr": "Si une réponse carte est perdue, conservez l’addition, le restaurant, le POS et le terminal d’origine. La reprise vérifie la dernière transaction Ashrait et sa correspondance avec la demande initiale ; lire une transaction ne lance aucun nouveau débit. Une réponse vide après redémarrage ne prouve pas l’absence de débit. Si Foody ne peut pas établir la correspondance ou si le résultat reste inconnu, le verrou est conservé : ne relancez pas le paiement sur un autre appareil et ne supprimez pas les données de l’application. Faites vérifier l’opération d’origine par un responsable avec Verifone. Une confirmation déjà enregistrée se reprend sans redébit.",
-            "en": "If a card response is lost, preserve the original bill, restaurant, POS and terminal. Recovery checks the last Ashrait transaction against the original request; reading a transaction does not start a new debit. An empty response, including after a terminal restart, does not prove that the payment failed. If Foody cannot establish a match or the outcome stays unknown, the lock remains: do not repeat payment on another device or erase application data. Have an authorized manager verify the original operation with Verifone. A confirmed result already recorded by Foody can be resumed without another debit.",
-            "he": "אם תשובת תשלום בכרטיס אבדה, שמרו על החשבון, המסעדה, הקופה והמסוף המקוריים. הבירור בודק את עסקת Ashrait האחרונה מול הבקשה המקורית; קריאת עסקה אינה מתחילה חיוב חדש. תשובה ריקה, לרבות לאחר אתחול מסוף, אינה מוכיחה שהתשלום נכשל. אם Foody אינה יכולה להוכיח התאמה או שהתוצאה נשארת לא ידועה, החסימה נשמרת: אין לחזור על התשלום במכשיר אחר ואין למחוק נתוני אפליקציה. בקשו ממנהל מורשה לברר את הפעולה המקורית מול Verifone. ניתן להמשיך תוצאה מאושרת שכבר נרשמה ב־Foody בלי חיוב נוסף."
-          }
-        },
-        {
           "id": "saved-qr-payment-scope",
           "title": {
             "fr": "Vérifier le paiement d’une seule commande QR",
@@ -41547,6 +41562,19 @@
             "fr": "Avec les droits de paiement et les versions compatibles, ouvrez Plus → Rapports → Solde en caisse. Le même espace présente le tiroir espèces, les encaissements carte enregistrés par terminal et la clôture guidée. Historique de caisse réunit les sessions espèces closes et les rapports Z finalisés. Les anciennes adresses de clôture et de dépôt rejoignent cet espace ; les API plus anciennes conservent leur parcours précédent. Consultez [le parcours de caisse commun](/fr/help/payments/end-of-day#unified-cash-workspace).",
             "en": "With payment permissions and compatible versions, open More → Reports → Current drawer. The same workspace shows the cash drawer, recorded card collections by terminal and guided closing. Drawer history combines closed cash sessions and finalized Z reports. Older closing and deposit addresses open this workspace; older APIs retain their previous workflow. See [the unified cash workflow](/en/help/payments/end-of-day#unified-cash-workspace).",
             "he": "עם הרשאות תשלום וגרסאות תואמות, פתחו עוד ← דוחות ← יתרת קופה. אותו מרחב מציג את מגירת המזומנים, חיובי הכרטיס שנרשמו לפי מסוף וסגירה מודרכת. היסטוריית קופה משלבת משמרות מזומן סגורות ודוחות Z שהושלמו. כתובות הסגירה וההפקדה הקודמות פותחות מרחב זה; API ישן שומר על המסלול הקודם. ראו [תהליך הקופה המאוחד](/he/help/payments/end-of-day#unified-cash-workspace)."
+          }
+        },
+        {
+          "id": "ashrait-last-transaction-inspection",
+          "title": {
+            "fr": "Consulter la dernière transaction du terminal",
+            "en": "Inspect the last terminal transaction",
+            "he": "צפייה בעסקה האחרונה במסוף"
+          },
+          "instructions": {
+            "fr": "Dans Matériel → Terminaux de paiement, un responsable peut consulter la dernière transaction du terminal connecté. Cette lecture ne modifie aucun paiement. Voir [la procédure et ses limites](/fr/help/payments/ashrait-terminal-inspection).",
+            "en": "In Hardware → Payment terminals, a manager can inspect the last transaction on the connected terminal. This read changes no payment. See [the procedure and its limits](/en/help/payments/ashrait-terminal-inspection).",
+            "he": "בחומרה ← מסופי תשלום מנהל יכול לצפות בעסקה האחרונה במסוף המחובר. הקריאה אינה משנה תשלום. ראו [הוראות ומגבלות](/he/help/payments/ashrait-terminal-inspection)."
           }
         }
       ],
@@ -41821,7 +41849,19 @@
         },
         {
           "service": "foodypos",
+          "file": "lib/features/settings/presentation/ashrait_last_transaction_tile.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/settings/presentation/hardware_settings_page.dart"
+        },
+        {
+          "service": "foodypos",
           "file": "lib/features/settings/presentation/terminal_reports_page.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/settings/presentation/victa_mini_settings_card.dart"
         },
         {
           "service": "foodypos",
@@ -41846,6 +41886,10 @@
         {
           "service": "foodypos",
           "file": "lib/main.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/services/payments/ashrait_last_transaction.dart"
         },
         {
           "service": "foodypos",
@@ -41917,10 +41961,24 @@
             "fr": "Sur iPad, choisissez Carte sur la commande ou l’addition financière existante, vérifiez la fenêtre du terminal de paiement puis confirmez explicitement Mini ou Portable. Le terminal configuré par défaut est présélectionné ; aucun autre appareil connecté ne le remplace automatiquement. Annuler n’envoie aucun paiement. Sur un Victa Portable exécutant FoodyPOS, ouvrez cette même commande ou addition enregistrée et utilisez son lecteur intégré. Ne recréez pas la vente. Une réservation serveur protège le terminal physique et les commandes sélectionnées pendant l’encaissement. Un autre appareil ou moyen de paiement doit attendre. Les commandes QR conservent leurs identifiants et paiements séparés.\n\nSi le résultat est inconnu, conservez le POS et le terminal d’origine puis reprenez l’opération existante. Ni le temps écoulé ni un redémarrage n’autorisent un nouveau débit. Un refus ou une annulation définitive permet un nouvel essai revu. Une approbation confirmée doit être enregistrée avec sa réservation d’origine avant libération. Ce changement concerne le choix de destination, sans modifier les réglages d’impression existants ; validez le matériel, le contrôle distant du Portable et l’impression intégrée avec Verifone.",
             "he": "באייפד, בחרו כרטיס בהזמנה או בחשבון הכספי הקיימים, בדקו את חלון מסוף התשלום ואשרו במפורש Mini או Portable. ברירת המחדל שהוגדרה מסומנת בתחילה; אין מעבר אוטומטי למכשיר מחובר אחר. ביטול אינו שולח תשלום. ב-Victa Portable שמריץ FoodyPOS, פתחו את אותה הזמנה או חשבון שמורים והשתמשו בקורא המובנה. אין ליצור מכירה נוספת. שריון שרת מגן על המסוף הפיזי ועל ההזמנות שנבחרו בזמן הגבייה. מכשיר אחר או אמצעי תשלום אחר צריכים להמתין. הזמנות QR שומרות על מזהים ותשלומים נפרדים.\n\nאם התוצאה אינה ידועה, שמרו על הקופה והמסוף המקוריים והמשיכו את הפעולה הקיימת. זמן שחלף או הפעלה מחדש אינם מתירים חיוב נוסף. סירוב או ביטול ודאיים מאפשרים ניסיון חדש לאחר בדיקה. אישור תשלום ודאי חייב להירשם עם השריון המקורי לפני שחרורו. השינוי נוגע לבחירת היעד ואינו משנה הגדרות הדפסה קיימות; יש לאמת חומרה, שליטה מרחוק ב-Portable והדפסה מובנית עם Verifone."
           }
+        },
+        {
+          "id": "ashrait-last-transaction-inspection",
+          "title": {
+            "fr": "Consulter la dernière transaction du terminal",
+            "en": "Inspect the last terminal transaction",
+            "he": "צפייה בעסקה האחרונה במסוף"
+          },
+          "instructions": {
+            "fr": "Dans Matériel → Terminaux de paiement, un responsable peut consulter la dernière transaction du terminal connecté. Cette lecture ne modifie aucun paiement. Voir [la procédure et ses limites](/fr/help/payments/ashrait-terminal-inspection).",
+            "en": "In Hardware → Payment terminals, a manager can inspect the last transaction on the connected terminal. This read changes no payment. See [the procedure and its limits](/en/help/payments/ashrait-terminal-inspection).",
+            "he": "בחומרה ← מסופי תשלום מנהל יכול לצפות בעסקה האחרונה במסוף המחובר. הקריאה אינה משנה תשלום. ראו [הוראות ומגבלות](/he/help/payments/ashrait-terminal-inspection)."
+          }
         }
       ],
       "audience": "public",
       "status": "available",
+      "procedureUpdatedAt": "2026-11-04",
       "evidence": [
         {
           "service": "foodypos",
@@ -41937,6 +41995,96 @@
         {
           "service": "foodypos",
           "file": "lib/services/payments/terminal_connection_provider.dart"
+        }
+      ]
+    },
+    {
+      "id": "pos-ashrait-terminal-inspection",
+      "module": "payments",
+      "article": "payments/ashrait-terminal-inspection",
+      "title": {
+        "fr": "Consulter la dernière transaction du terminal",
+        "en": "Inspect the last terminal transaction",
+        "he": "צפייה בעסקה האחרונה במסוף"
+      },
+      "entry": {
+        "fr": "POS → Plus → Paramètres → Matériel → Terminaux de paiement",
+        "en": "POS → More → Settings → Hardware → Payment terminals",
+        "he": "POS ← עוד ← הגדרות ← חומרה ← מסופי תשלום"
+      },
+      "selectors": {
+        "foodypos": [
+          "lib/services/payments/ashrait_last_transaction.dart",
+          "lib/features/settings/presentation/ashrait_last_transaction_tile.dart",
+          "lib/services/payments/terminal_payment_service.dart",
+          "ios/Runner/VerifonePaymentBridge.m",
+          "android/app/src/main/kotlin/com/foodypos/app/VerifonePaymentBridge.kt"
+        ]
+      },
+      "audience": "public",
+      "status": "available",
+      "procedureUpdatedAt": "2026-11-04",
+      "operations": [
+        {
+          "id": "ashrait-last-transaction-inspection",
+          "title": {
+            "fr": "Consulter la dernière transaction du terminal",
+            "en": "Inspect the last terminal transaction",
+            "he": "צפייה בעסקה האחרונה במסוף"
+          },
+          "instructions": {
+            "fr": "Sur la version compatible, ouvrez Plus → Paramètres → Matériel → Terminaux de paiement. Sur iPad, la consultation concerne le terminal associé actuellement actif ; sur un Victa Portable reconnu dans l’inventaire, elle concerne cet appareil. Le terminal doit déjà être connecté. Avec le droit de gérer les paiements, ouvrez Dernière transaction du terminal puis appuyez sur Consulter la dernière transaction. Ouvrir la fenêtre ne lance aucune requête. La consultation affiche uniquement la référence, le type, le résultat communiqué et le montant lorsqu’ils sont disponibles. Une préautorisation reste distincte d’un achat ; aucun paiement ni aucune addition n’est modifié. Aucun reçu ni donnée de carte n’est affiché. Une réponse vide, notamment après redémarrage, ne prouve pas l’absence d’un paiement. Si un paiement ou dépôt doit être vérifié, reprenez son parcours d’origine : la consultation ne lève aucun verrou et ne relance aucune opération. Après un changement de compte, de restaurant, de droit ou de terminal, consultez à nouveau ; l’ancien résultat n’est pas réutilisé.",
+            "en": "In the compatible version, open More → Settings → Hardware → Payment terminals. On iPad, inspection concerns the currently active paired terminal; on a Victa Portable recognized in the inventory, it concerns that device. The terminal must already be connected. With permission to manage payments, open Last terminal transaction and press Read last transaction. Opening the dialog does not send a query. Inspection shows only the reference, type, reported result and amount when available. A preauthorization stays distinct from a purchase; no payment or check is changed. No receipt or card details are displayed. An empty response, including after restart, does not prove that no payment occurred. For a pending payment or deposit, return to its original verification flow: inspection clears no lock and replays no operation. After changing account, restaurant, permission or terminal, read again; the old result is not reused.",
+            "he": "בגרסה התואמת פתחו עוד ← הגדרות ← חומרה ← מסופי תשלום. ב-iPad הבירור מתייחס למסוף המשויך הפעיל כרגע; ב-Victa Portable המזוהה במלאי המכשירים הוא מתייחס לאותו מכשיר. המסוף צריך להיות מחובר מראש. עם הרשאה לניהול תשלומים פתחו העסקה האחרונה במסוף ולחצו הצגת העסקה האחרונה. פתיחת החלון אינה שולחת שאילתה. מוצגים רק האסמכתה, הסוג, התוצאה שדווחה והסכום, כאשר הם זמינים. אישור מוקדם נפרד מרכישה; אין שינוי בתשלום או בחשבון. אין הצגה של קבלה או פרטי כרטיס. תשובה ריקה, לרבות לאחר אתחול, אינה מוכיחה שלא בוצע תשלום. לבירור תשלום או הפקדה ממתינים חזרו לתהליך הבדיקה המקורי: הצפייה אינה מסירה חסימה ואינה חוזרת על פעולה. אחרי שינוי חשבון, מסעדה, הרשאה או מסוף יש לבצע קריאה חדשה; אין שימוש חוזר בתוצאה הישנה."
+          }
+        },
+        {
+          "id": "terminal-reports-advanced",
+          "title": {
+            "en": "Israeli Ashrait report capabilities",
+            "fr": "Capacités des rapports Ashrait en Israël",
+            "he": "יכולות הדיווח של Ashrait בישראל"
+          },
+          "instructions": {
+            "fr": "Sur la version compatible avec Ashrait Israël, les anciennes actions génériques Consulter les totaux, Clôturer uniquement et Transmettre uniquement sont retirées. Pour la fin de journée, utilisez le parcours Solde en caisse et sa transmission explicite du terminal. Les ventes enregistrées dans Foody ne sont pas les totaux bancaires du terminal. Si Ashrait confirme le dépôt sans fournir de chiffres ou de référence de lot, ces informations restent indisponibles : elles ne valent pas zéro. Les autres commandes décrites dans une documentation prestataire ne sont pas nécessairement proposées dans Foody. Faites vérifier leur disponibilité et la procédure par un responsable et Verifone avant toute opération de maintenance ou financière avancée.",
+            "en": "In the compatible Israeli Ashrait version, the old generic View current totals, Close only and Transmit only actions are removed. For end of day, use Current drawer and its explicit terminal transmission. Sales recorded by Foody are not the terminal’s bank totals. If Ashrait confirms a deposit without numeric results or a batch reference, those details remain unavailable; they are not zero. Other commands described in provider documentation are not necessarily available in Foody. Have a manager and Verifone confirm availability and the procedure before advanced financial or maintenance operations.",
+            "he": "בגרסה התואמת ל־Ashrait בישראל הוסרו הפעולות הכלליות הישנות הצגת סיכומים, סגירה בלבד ושידור בלבד. לסוף היום השתמשו ביתרת הקופה ובשידור המפורש של המסוף במסלול זה. המכירות הרשומות ב־Foody אינן הסיכומים הבנקאיים של המסוף. אם Ashrait מאשר הפקדה בלי סכומים או מזהה אצווה, הפרטים נשארים לא זמינים ואינם אפס. פקודות נוספות המתוארות בתיעוד הספק אינן בהכרח זמינות ב־Foody. לפני פעולה כספית מתקדמת או פעולת תחזוקה בקשו ממנהל ומ־Verifone לאשר את הזמינות ואת ההליך."
+          }
+        },
+        {
+          "id": "ashrait-last-transaction-recovery",
+          "title": {
+            "fr": "Reprendre un paiement Ashrait interrompu",
+            "en": "Recover an interrupted Ashrait payment",
+            "he": "בירור תשלום Ashrait שנקטע"
+          },
+          "instructions": {
+            "fr": "Si une réponse carte est perdue, conservez l’addition, le restaurant, le POS et le terminal d’origine. La reprise vérifie la dernière transaction Ashrait et sa correspondance avec la demande initiale ; lire une transaction ne lance aucun nouveau débit. Une réponse vide après redémarrage ne prouve pas l’absence de débit. Si Foody ne peut pas établir la correspondance ou si le résultat reste inconnu, le verrou est conservé : ne relancez pas le paiement sur un autre appareil et ne supprimez pas les données de l’application. Faites vérifier l’opération d’origine par un responsable avec Verifone. Une confirmation déjà enregistrée se reprend sans redébit.",
+            "en": "If a card response is lost, preserve the original bill, restaurant, POS and terminal. Recovery checks the last Ashrait transaction against the original request; reading a transaction does not start a new debit. An empty response, including after a terminal restart, does not prove that the payment failed. If Foody cannot establish a match or the outcome stays unknown, the lock remains: do not repeat payment on another device or erase application data. Have an authorized manager verify the original operation with Verifone. A confirmed result already recorded by Foody can be resumed without another debit.",
+            "he": "אם תשובת תשלום בכרטיס אבדה, שמרו על החשבון, המסעדה, הקופה והמסוף המקוריים. הבירור בודק את עסקת Ashrait האחרונה מול הבקשה המקורית; קריאת עסקה אינה מתחילה חיוב חדש. תשובה ריקה, לרבות לאחר אתחול מסוף, אינה מוכיחה שהתשלום נכשל. אם Foody אינה יכולה להוכיח התאמה או שהתוצאה נשארת לא ידועה, החסימה נשמרת: אין לחזור על התשלום במכשיר אחר ואין למחוק נתוני אפליקציה. בקשו ממנהל מורשה לברר את הפעולה המקורית מול Verifone. ניתן להמשיך תוצאה מאושרת שכבר נרשמה ב־Foody בלי חיוב נוסף."
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "service": "foodypos",
+          "file": "android/app/src/main/kotlin/com/foodypos/app/VerifonePaymentBridge.kt"
+        },
+        {
+          "service": "foodypos",
+          "file": "ios/Runner/VerifonePaymentBridge.m"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/settings/presentation/ashrait_last_transaction_tile.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/services/payments/ashrait_last_transaction.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/services/payments/terminal_payment_service.dart"
         }
       ]
     },
@@ -42279,6 +42427,19 @@
             "en": "With payment permissions and compatible versions, open More → Reports → Current drawer. The same workspace shows the cash drawer, recorded card collections by terminal and guided closing. Drawer history combines closed cash sessions and finalized Z reports. Older closing and deposit addresses open this workspace; older APIs retain their previous workflow. See [the unified cash workflow](/en/help/payments/end-of-day#unified-cash-workspace).",
             "he": "עם הרשאות תשלום וגרסאות תואמות, פתחו עוד ← דוחות ← יתרת קופה. אותו מרחב מציג את מגירת המזומנים, חיובי הכרטיס שנרשמו לפי מסוף וסגירה מודרכת. היסטוריית קופה משלבת משמרות מזומן סגורות ודוחות Z שהושלמו. כתובות הסגירה וההפקדה הקודמות פותחות מרחב זה; API ישן שומר על המסלול הקודם. ראו [תהליך הקופה המאוחד](/he/help/payments/end-of-day#unified-cash-workspace)."
           }
+        },
+        {
+          "id": "ashrait-last-transaction-inspection",
+          "title": {
+            "fr": "Consulter la dernière transaction du terminal",
+            "en": "Inspect the last terminal transaction",
+            "he": "צפייה בעסקה האחרונה במסוף"
+          },
+          "instructions": {
+            "fr": "Dans Matériel → Terminaux de paiement, un responsable peut consulter la dernière transaction du terminal connecté. Cette lecture ne modifie aucun paiement. Voir [la procédure et ses limites](/fr/help/payments/ashrait-terminal-inspection).",
+            "en": "In Hardware → Payment terminals, a manager can inspect the last transaction on the connected terminal. This read changes no payment. See [the procedure and its limits](/en/help/payments/ashrait-terminal-inspection).",
+            "he": "בחומרה ← מסופי תשלום מנהל יכול לצפות בעסקה האחרונה במסוף המחובר. הקריאה אינה משנה תשלום. ראו [הוראות ומגבלות](/he/help/payments/ashrait-terminal-inspection)."
+          }
         }
       ],
       "audience": "public",
@@ -42393,6 +42554,10 @@
         {
           "service": "foodypos",
           "file": "lib/features/settings/presentation/appearance_settings_page.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/settings/presentation/ashrait_last_transaction_tile.dart"
         },
         {
           "service": "foodypos",
@@ -96802,6 +96967,7 @@
       "source": "lib/core/routing/app_router.dart",
       "features": [
         "pos-behavior",
+        "pos-payments",
         "pos-workspace"
       ],
       "kind": "flutter-route",
@@ -99170,6 +99336,7 @@
       "source": "lib/features/settings/presentation/hardware_settings_page.dart",
       "features": [
         "pos-behavior",
+        "pos-payments",
         "pos-workspace"
       ],
       "kind": "ui-controls",
@@ -99503,6 +99670,7 @@
       "source": "lib/features/settings/presentation/victa_mini_settings_card.dart",
       "features": [
         "pos-behavior",
+        "pos-payments",
         "pos-victa-mini",
         "pos-workspace"
       ],
@@ -99985,6 +100153,7 @@
       "source": "lib/services/payments/terminal_payment_service.dart",
       "features": [
         "pos-payments",
+        "pos-ashrait-terminal-inspection",
         "pos-end-of-day"
       ],
       "kind": "ui-controls",
@@ -100879,9 +101048,9 @@
   ],
   "coverage": {
     "sharedRuntimeFiles": 401,
-    "features": 108,
-    "operations": 899,
-    "sourceFiles": 2358,
+    "features": 109,
+    "operations": 904,
+    "sourceFiles": 2360,
     "surfaces": 2139,
     "unclassifiedRoutes": []
   }
