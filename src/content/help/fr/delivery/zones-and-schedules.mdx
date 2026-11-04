@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - delivery
   - delivery-zones
-updatedAt: '2026-10-30'
+updatedAt: '2026-11-04'
 featureId: delivery-zones
 audience: public
 releaseStatus: available
@@ -65,3 +65,11 @@ La zone définit périmètre, frais/minimum et jours de réception. Les horaires
 ## Tester la date de passage d’une commande
 
 Dans Commandes et disponibilité → Simuler une commande, choisissez Date et heure de la commande dans le fuseau affiché, puis la date de réception et le panier. Maintenant recharge l’heure du serveur. La préparation et les règles du jour même sont évaluées à cette référence, avec les réglages enregistrés et les quantités prêtes actuelles. Une date passée ne reconstitue pas l’historique ; le test ne réserve pas de livreur et ne crée aucune commande. Les commandes clientes gardent l’heure réelle du serveur. Voir [la procédure de simulation](/fr/help/orders/preorders-and-batches#simulate-order). La simulation concerne la livraison classique ; les tournées publiées gardent leurs propres règles.
+
+<span id="order-deadlines" />
+
+## Fermer les commandes avant une livraison
+
+Avec les versions API et Admin compatibles, ouvrez Paramètres → Commandes et livraison → Zones de livraison, puis une zone. Dans Échéances de commande, choisissez pour chaque jour de réception le décalage en jours et l’heure limite. Aucun réglage n’est activé automatiquement. Pour une livraison vendredi commandable jusqu’à vendredi 13 h, choisissez vendredi, le jour même, 13:00. Pour accepter les livraisons du dimanche uniquement avant le début du samedi, choisissez dimanche, la veille, 00:00. L’échéance est exclusive et suit le fuseau du restaurant : à l’heure limite, la date disparaît du calendrier des nouvelles commandes. Enregistrez la zone. Les créneaux de livraison restent indépendants de l’heure limite de commande ; le retrait et les commandes déjà enregistrées conservent leurs règles. Même un produit déjà préparé ne contourne pas cette échéance. Pour limiter le vendredi au jour même dans l’ouest, autorisez également vendredi dans Livraison le jour même de cette zone et désactivez ce jour dans les autres zones ; les commandes anticipées restent possibles selon leur calendrier. Une erreur conserve la saisie : rechargez les données si la zone a été modifiée par un autre utilisateur, puis vérifiez avant de sauvegarder.
+
+Désactiver toutes les zones avec des heures limites maintient la livraison fermée, sans rétablir une couverture illimitée. Avant de supprimer la dernière zone, retirez explicitement ses heures limites et enregistrez.

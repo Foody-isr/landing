@@ -7,7 +7,7 @@ apps: foodyadmin
 tags:
   - settings
   - fulfillment-policy
-updatedAt: '2026-10-30'
+updatedAt: '2026-11-04'
 featureId: fulfillment-policy
 audience: public
 releaseStatus: available
@@ -168,8 +168,16 @@ Les modes de traitement du système de caisse proposent deux suivis distincts : 
 
 Dans Commandes et disponibilité → Simuler une commande, choisissez Date et heure de la commande dans le fuseau affiché, puis la date de réception et le panier. Maintenant recharge l’heure du serveur. La préparation et les règles du jour même sont évaluées à cette référence, avec les réglages enregistrés et les quantités prêtes actuelles. Une date passée ne reconstitue pas l’historique ; le test ne réserve pas de livreur et ne crée aucune commande. Les commandes clientes gardent l’heure réelle du serveur. Voir [la procédure de simulation](/fr/help/orders/preorders-and-batches#simulate-order).
 
+Le simulateur utilise aussi le réglage historique stock prédéfini compté + vente immédiate. Quand toute la quantité demandée d’un article est prête, ses créneaux de retrait du jour évitent la fabrication, comme le calcul de livraison. Un panier mixte conserve la préparation des articles à fabriquer ; une quantité supérieure au stock prêt perd cette exception. Le résultat explique quand le stock prêt participe au calendrier. Le stock prédéfini historique conserve ses règles existantes de réception future ; seul le compteur indépendant daté utilise la nouvelle date de validité. Un restaurant en commandes planifiées exige toujours un créneau. La simulation ne crée aucune commande et ne réserve aucun stock ; la validation finale contrôle encore les limites de vente, les ingrédients et la commande complète.
+
 <span id="card-collection-recovery" />
 
 ## Respecter un encaissement carte en cours
 
 Un encaissement carte natif non résolu réserve sa commande et son terminal d’origine. Ne modifiez pas son contenu financier et ne lancez pas un autre paiement ; la préparation et les réglages de traitement restent indépendants. Consultez le [choix Mini/Portable et la reprise](/fr/help/payments/victa-mini#explicit-terminal-selection).
+
+<span id="configurable-production-exceptions" />
+
+## Vérifier les exceptions de préparation
+
+Les versions compatibles ajoutent des échéances par zone de livraison et un stock de produits préparés par article, chacun activé explicitement pour le restaurant. Ils conservent le retrait, les limites de vente et les autres restaurants. Le délai général sert avant la sélection des produits ; le calendrier est recalculé avec le panier. Consultez [la combinaison des règles](/fr/help/orders/preorders-and-batches#product-stock-and-zone-deadlines) avant de configurer ou simuler une commande.

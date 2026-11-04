@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - delivery
   - delivery-zones
-updatedAt: '2026-10-30'
+updatedAt: '2026-11-04'
 featureId: delivery-zones
 audience: public
 releaseStatus: available
@@ -65,3 +65,11 @@ A zone controls coverage, price/minimum and receiving days. Restaurant service h
 ## Test when an order is placed
 
 In Orders & availability → Simulate an order, select Order date and time in the displayed timezone, then the receiving date and basket. Now reloads the server time. Preparation and same-day rules are evaluated at this reference using current saved settings and ready stock. A past date does not reconstruct history; this test neither reserves a courier nor creates an order. Customer orders retain the real server clock. See [the simulation procedure](/en/help/orders/preorders-and-batches#simulate-order). The simulation covers classic delivery; published tours retain their own rules.
+
+<span id="order-deadlines" />
+
+## Close orders before a delivery
+
+With compatible API and Admin versions, open Settings → Ordering & delivery → Delivery zones and edit a zone. Under Order deadlines, choose the day offset and cutoff time for each receiving weekday. Nothing is enabled automatically. For Friday delivery bookable until Friday 13:00, select Friday, Same day, 13:00. To accept Sunday deliveries only before Saturday starts, select Sunday, Previous day, 00:00. The deadline is exclusive and uses the restaurant timezone: at the cutoff, the receiving date disappears from new-booking calendars. Save the zone. Delivery slots remain separate from ordering deadlines; pickup and recorded orders retain their rules. Even already prepared products cannot bypass this deadline. For Friday same-day delivery only in the west, also allow Friday in that zone’s Same-day delivery rule and disable it in other zones; advance bookings retain their own calendar. Errors retain input. Reload competing edits and review before saving again.
+
+Disabling every zone with ordering deadlines keeps delivery closed; it does not restore unrestricted coverage. Before deleting the last zone, explicitly clear its ordering deadlines and save.

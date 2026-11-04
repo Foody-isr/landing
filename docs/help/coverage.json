@@ -234,13 +234,18 @@
       "audience": "public",
       "selectors": {
         "foodyadmin": [
-          "src/app/[restaurantId]/kitchen/**"
+          "src/app/[restaurantId]/kitchen/**",
+          "src/components/menu-item/PreparedStockEditor.tsx"
         ],
         "foodyserver": [
           "internal/stock/**",
           "internal/prep/**",
           "internal/availability/**",
-          "internal/recipes/**"
+          "internal/recipes/**",
+          "internal/common/prepared_stock.go",
+          "internal/salesstock/prepared_stock.go",
+          "internal/menu/prepared_stock.go",
+          "migrations/288_prepared_product_stock.sql"
         ],
         "foodypos": [
           "lib/features/kitchen/**"
@@ -738,7 +743,8 @@
         ],
         "foodyserver": [
           "internal/orders/intake*",
-          "internal/delivery/ordering_simulation.go"
+          "internal/delivery/ordering_simulation.go",
+          "internal/restaurants/fulfillment_stock.go"
         ],
         "foodyweb": [
           "lib/websiteFulfillment*"
@@ -798,7 +804,8 @@
           "internal/common/settings_merge.go",
           "internal/restaurants/delivery_same_day*.go",
           "internal/delivery/same_day_policy.go",
-          "migrations/283_delivery_same_day_policy.sql"
+          "migrations/283_delivery_same_day_policy.sql",
+          "internal/common/ordering_deadline.go"
         ]
       }
     },
