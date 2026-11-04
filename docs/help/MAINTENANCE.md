@@ -1,5 +1,23 @@
 # Help ownership, evidence and releases
 
+## Ordinary internal delivery fee regression (4 November 2026)
+
+Ordinary deliveries default to a quote for the current customer address. The
+fixed-fee editor requires an explicit action; catering retains its visible fee
+field. Free zones and absent fees are valid zeroes, while pending/failed or stale
+address lookups cannot silently create a free delivery. Retry and return to
+automatic pricing preserve the staff draft. Explicit fixed quotes, including
+zero on private links, keep their existing semantics. Review order-details and
+internal-sumit-checkout in FR/HE/EN. No procedure screenshots need updating.
+No API, Web, POS or Backoffice runtime behavior changes; the API receives only
+the identical published support corpus. Preserve their existing source evidence
+from Landing develop `fed70e9791cc92071ed37b35b184c409b912fe89` except for that corpus digest.
+The API evidence also retains the already reviewed public-carte visibility fix
+from develop `3d0a2cab946dd25a7c68ebf0e76ae99ec1934fd7`; this release changes
+only its support corpus relative to that integration baseline.
+Pin immutable reviewed documentation and verify dev before promoting the same
+artifacts. Synthetic browser tests submit no customer order or real payment.
+
 ## Paid table closure after an earlier expired occupation (4 November 2026)
 
 Compatible API table close/release guards exclude only positively identified
