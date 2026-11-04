@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "Foody-isr/admin",
-  "ref": "c4e22b79bcc16793e9579ca390f76e483a6f97b5",
+  "ref": "1c0953a0b9da0d34a2bd9e3b3f74a4b8895c22fb",
   "observations": [
     {
       "id": "table-status-descriptions-source-contract",
@@ -548,6 +548,28 @@
       "forbidden": [
         "timeZone: 'UTC', year: 'numeric'"
       ]
+    },
+    {
+      "id": "manual-order-step-navigation",
+      "source": "src/components/orders/NewOrderCheckoutPanel.tsx",
+      "required": [
+        "const steps: CheckoutStep[] = eventConfig ? ['reception', 'event', 'payment'] : ['reception', 'payment'];",
+        "function goToStep(target: CheckoutStep)",
+        "setFocusRequest",
+        "data-production-summary"
+      ],
+      "forbidden": [
+        "disabled={!canConfirm}"
+      ]
+    },
+    {
+      "id": "manual-order-invalid-control-outline",
+      "source": "src/components/orders/order-checkout.module.css",
+      "required": [
+        "[aria-invalid='true']",
+        "outline: 2px solid var(--danger-500)"
+      ],
+      "forbidden": []
     }
   ],
   "guides": [
@@ -1179,6 +1201,66 @@
         ],
         "he": [
           "בכללים השמורים להזמנה שתבוצע עכשיו"
+        ]
+      }
+    },
+    {
+      "article": "orders/order-details",
+      "required": {
+        "fr": [
+          "Réception et client",
+          "Précédent",
+          "bordure rouge"
+        ],
+        "en": [
+          "Handover and customer",
+          "Previous",
+          "red outline"
+        ],
+        "he": [
+          "קבלת ההזמנה ופרטי לקוח",
+          "הקודם",
+          "מסגרת אדומה"
+        ]
+      }
+    },
+    {
+      "article": "orders/internal-sumit-checkout",
+      "required": {
+        "fr": [
+          "Réception et client",
+          "Précédent",
+          "bordure rouge"
+        ],
+        "en": [
+          "Handover and customer",
+          "Previous",
+          "red outline"
+        ],
+        "he": [
+          "קבלת ההזמנה ופרטי לקוח",
+          "הקודם",
+          "מסגרת אדומה"
+        ]
+      }
+    },
+    {
+      "article": "orders/event-orders",
+      "required": {
+        "fr": [
+          "Réception et client",
+          "Précédent",
+          "bordure rouge"
+        ],
+        "en": [
+          "Handover and customer",
+          "Previous",
+          "red outline"
+        ],
+        "he": [
+          "קבלת ההזמנה ופרטי לקוח",
+          "הקודם",
+          "מסגרת אדומה"
         ]
       }
     }

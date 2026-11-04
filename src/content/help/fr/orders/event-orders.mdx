@@ -7,7 +7,7 @@ apps: both
 tags:
   - orders
   - orders-events
-updatedAt: '2026-11-02'
+updatedAt: '2026-11-04'
 featureId: orders-events
 audience: public
 releaseStatus: available
@@ -24,7 +24,7 @@ Dans Articles et cartes → Cartes → paramètres de la carte, activez Carte ca
 
 ## Préparer la commande événement
 
-Composez le panier depuis Commandes. Activez Événement / Catering, choisissez retrait ou livraison puis une date de remise planifiée. Le plan de production suit cette échéance, même si l’équipe prépare les jours précédents. Renseignez selon le besoin nom, nombre de personnes, date et heure de l’événement, lieu, contact et consignes. Choisissez si personnes, date et heure sont obligatoires. Avec un lien privé, laissez les réponses inconnues au client. Autorisez la modification de date/heure seulement si souhaité ; sinon les valeurs préremplies restent en lecture seule. L’heure de l’événement peut différer de la remise. Le nombre de personnes ne modifie ni quantités de plateaux ni prix. La date de remise se choisit librement dans le calendrier événement, indépendamment de la série de la carte : par exemple, le 4 novembre pour une carte consultée sur la série du 6. Changer retrait/livraison ou revenir aux articles conserve cette date et son créneau. Une commande ordinaire hors événement conserve le choix des séries configurées.
+À la première étape, activez Événement / Catering et choisissez retrait ou livraison avec une date de remise planifiée. Renseignez les détails dans l’étape Événement et ses Informations complémentaires. Pour un lien privé, Informations à demander au client regroupe les exigences et les changements de date autorisés. Le plan de production suit la remise, indépendamment de la date de l’événement et de la série de la carte. Le nombre de personnes ne change pas automatiquement les quantités ni le prix. Changer retrait/livraison ou revenir aux articles conserve la date et son créneau. Une commande ordinaire conserve le choix des séries configurées. Suivez la procédure de navigation ci-dessous.
 
 <span id="payment" />
 
@@ -61,3 +61,15 @@ Ouvrez l’événement enregistré dans Commandes → Actions → Modifier avec 
 ## Consulter une empreinte Sumit
 
 Le détail événement affiche la réservation vérifiée séparément de l’argent encaissé, avec l’heure de vérification et sa référence bancaire. Avec payments.manage, Vérifier l’empreinte relit la tentative existante sans opération bancaire supplémentaire. Une réponse incertaine ne crée pas une autre empreinte ; un refus définitif permet une nouvelle tentative explicite. Gérez capture, libération et validité bancaire dans Sumit avec la référence affichée. Foody ne capture ni ne libère automatiquement ces empreintes et ne promet pas leur durée. Un solde réservé ne peut pas générer en parallèle un lien d’encaissement automatique. Après encaissement externe, enregistrez l’argent effectivement reçu via l’action staff existante.
+
+<span id="manual-order-steps" />
+
+## Avancer et revenir dans la finalisation
+
+Avec la version Admin compatible, ajoutez les articles puis choisissez Continuer. La finalisation comporte Réception et client, puis Paiement et confirmation ; Événement / Catering ajoute une étape Événement entre les deux. Dans Réception et client, choisissez retrait ou livraison, la date et le créneau, puis renseignez le client et l’adresse si nécessaire. Pour un restaurant Sumit éligible, cochez Le client complétera ses informations via le lien Foody si ces réponses doivent être demandées au destinataire : les coordonnées et réponses événement manquantes ne bloquent alors pas la création du lien. Dans Événement, indiquez personnes, date et heure ; les autres champs sont dans Informations complémentaires. Les boutons de reprise de date, adresse et contact copient les valeurs uniquement après votre clic ; vérifiez-les après un changement. Informations à demander au client regroupe les exigences et l’autorisation de modifier la date et l’heure. Dans Paiement et confirmation, choisissez explicitement le règlement, vérifiez les éventuelles conditions d’acompte/empreinte, la réduction, les articles et le total, puis utilisez l’action finale. Aucun encaissement n’est confirmé par la navigation entre étapes.
+
+Précédent et les titres des étapes déjà visitées permettent de revenir. Continuer contrôle les champs requis avant d’avancer ; cliquer sur une étape ultérieure déjà visitée refait ce contrôle. Les saisies, le règlement choisi, les frais et réductions restent en mémoire lors des retours, y compris Retour aux articles. Une réduction en pourcentage appliquée est recalculée selon les articles actuels. Un changement du montant ou du moyen de paiement reçu demande de confirmer à nouveau le montant encaissé. Le brouillon rechargé après actualisation ne restaure pas les exceptions financières : revérifiez-les.
+
+Si une étape contient des erreurs, tous les champs concernés ont une bordure rouge et un message précis. Le panneau rejoint le premier champ ; la liste des points à corriger permet d’ouvrir les autres, y compris une section repliée ou une étape précédente. Corrigez puis choisissez Continuer. Le début et la fin d’un créneau doivent être tous deux renseignés et la fin strictement postérieure au début ; 12:00–12:00 est refusé. L’heure de l’événement peut être égale à la fin de remise. Un créneau se terminant après le début de l’événement affiche un avertissement à vérifier, sans créer un délai d’installation obligatoire. Passer d’un lien à un paiement manuel peut demander de compléter les coordonnées et réponses événement.
+
+Le Plan de production reste visible avec sa date et les conditions restantes. À la dernière étape, Ajouter au plan de production apparaît lorsqu’un ajout explicite est utile et autorisé ; une inclusion automatique est indiquée par l’état. Cette demande ne confirme jamais un paiement et ne contourne pas les conditions serveur de confirmation d’un événement. Un échec de création conserve le formulaire ; après un résultat incertain, vérifiez la commande enregistrée avant une nouvelle tentative.
