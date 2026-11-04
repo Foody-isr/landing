@@ -60,47 +60,11 @@ To bring together the end-of-day steps, use [the combined closing flow](/en/help
 
 On an ordinary counter or table check on the updated handheld terminal, Pay opens a black customer review with the selected check’s lines, modifiers and confirmed amount. Review it before Confirm and pay. The ⋯ menu offers cash; the language selector changes only this review, without changing the device language. Dismissing the review collects nothing. Tablets retain the full-screen Card/Cash tender choice. Choose Pay by card. Foody keeps a full-screen progress view during preparation, terminal connection, reported login/session/parameter stages, the terminal instructions, payment recording and the counter order's kitchen send. Only stages actually reported are shown; not every payment needs every stage. Card reading and PIN entry remain on the secure Verifone terminal. The displayed kitchen send confirms order submission, not physical paper output: only categories selected in the assigned kitchen profile print. The screen closes on refusal or cancellation without marking the bill paid; review the displayed error before retrying. Wait for Foody’s verified final status; browser return alone is insufficient. If the result is pending/uncertain, refresh and review the provider transaction with an authorized operator before any retry. Never ask the help assistant to inspect card details. Before collection, Foody checks the bill data again. A change to lines, amount, paid state or restaurant/account context stops the flow: reopen Pay and confirm the updated review. The same check protects cash confirmation. An interrupted review does not establish a charge; if the provider has already returned an uncertain result, use the reconciliation procedure below. A new item or kitchen batch added to the check during review or cash entry also requires fresh confirmation; it must not be ignored when collecting. This Victa checkout uses ILS; changing language does not convert currency.
 
-<span id="transaction-history" />
-
-## Find a completed payment in Transactions
-
-Open Transactions in the iPad POS navigation, in More on compact terminals, or in the Admin sidebar, with payments.view or payments.manage. All three screens read the same restaurant-scoped confirmed payment history. In Admin choose a date range, source and method; search by item, reference or order number, then select a payment for its amount, method and linked orders. On the POS, selecting a linked order opens its saved read-only detail without leaving Transactions; if it cannot load, refresh and retry. The source follows the linked order: a provider-processed payment for a POS-created order appears under POS, not Online. Totals cover all matching payments, not just the visible page, and keep currencies separate. One order can have several tenders and one tender can cover several orders; Orders remains the place to follow fulfillment. Pending terminal attempts are not completed sales. History does not issue new receipts. Authorized owners and managers may see server-verified cash refunds or Verifone Checkout original-card returns for eligible payments; see the refund procedure before acting. If a result is missing, check restaurant, date and filters, then reconcile uncertain terminal payments before another charge.
-
-<span id="transaction-payment-origin" />
-
-## Understand payment origin
-
-Open a transaction on POS or Admin and read Payment origin separately from Source. Source identifies where the linked order was created; origin identifies cash, Verifone Checkout, another provider, or a recorded card payment. Victa (recorded payment) and Card (origin unverified) mean Foody recorded a result; they do not prove that a refund can be sent to the terminal. Older grouped payments can show Origin not attributed. For a return, confirm the original tender and use its authorized refund workflow; never substitute cash for a card payment.
-
-<span id="transaction-items-and-retry" />
-
-## Search every item and retry the history
-
-Search Transactions by any item in a linked order, including items after the first four. Open a payment to review the available linked item names. On the POS, if loading more results fails, the payments already shown remain visible; choose Try again under the list to continue. This retries only the history request, not a card charge.
-
-<span id="transaction-recorded-returns" />
-
-## Read refunds and payment voids in Transactions
-
-A successful Verifone Checkout refund or void initiated in Foody appears as its own return transaction, linked to the original payment. A confirmed cash return also appears separately, linked to its original cash tender. On the POS, an owner or manager with payments.manage can open an eligible payment in Transactions. For a journaled cash sale, choose Issue refund only when the server confirms an exact refundable portion and an open enrolled drawer. Select the order or check portion, enter an amount within the limit and a reason, then hand over cash only after Foody confirms. For one captured Verifone Checkout card payment linked to one exact order allocation, choose Refund to original card or Cancel card payment if offered. Enter a reason and, for a refund, an amount within the displayed limit. Foody sends the return to the original card, never to the cash drawer. An uncertain card result must be rechecked using the same saved request before another return; do not issue cash instead. Legacy unattributed, split/multi-order and Victa card payments do not offer this card action. Admin shows gross collections separately from returns recorded in Foody; neither figure is net revenue. Returns made directly in Verifone Central or on Victa are not included automatically. Also review [recorded net and balance](/en/help/orders/payment-preparation-and-handoff#recorded-money-summary).
-
-<span id="transaction-gross-total" />
-
-## Read the transaction total correctly
-
-The Admin date range and displayed times use the restaurant’s timezone. The total sums all confirmed payment records matching the selected filters, even across several pages. Currencies remain separate. It is a gross payment total, not net sales: refunds, processing fees, cash-drawer movements and terminal end-of-day deposits are not subtracted here. Use the appropriate provider and accounting reports before reconciling a day.
-
 <span id="terminal-deposit" />
 
 ## Close and deposit a Verifone terminal batch
 
 To close cash and card activity in one flow, use [End of day and the Foody Z report](/en/help/payments/end-of-day). Staff clock-out remains separate. On older versions, Terminal deposits offers a separate Verifone transmission with payments.manage: check the terminal, confirm once at end of day and wait for final confirmation. An uncertain result blocks repetition before verification. Unsupported totals commands remain unavailable. Numerical results and the batch reference are shown only when actually supplied. Never share terminal credentials or card details in support chat. Hardware compatibility must be checked on the relevant Mini or Portable. If context changes, [reopen confirmation](/en/help/payments/cash-access#terminal-report-context).
-
-<span id="terminal-reports-advanced" />
-
-## Read totals or use advanced terminal actions
-
-In More → Reports → Terminal deposits, View current totals reads the active batch without closing or transmitting it. Advanced actions are shown only when supported by the terminal: Close batch only closes the reporting period without transmission; Transmit only requests acquirer reconciliation without explicitly closing it. Neither advanced action alone is the standard end-of-day flow. Use either only on your payment provider's instruction, confirm once and wait for the terminal's final result. If unsupported or uncertain, do not assume success; check the terminal or ask the provider before retrying.
 
 <span id="saved-qr-payment-scope" />
 
@@ -112,7 +76,7 @@ From Orders → Menu → Actions → Manage this order, offered actions affect t
 
 ## Review tips and receipt
 
-Review any supported tip step before collection and confirm the total; availability depends on configuration. After confirmed payment for an ordinary check on the updated terminal, the receipt page offers Print when a printing action is available, or No receipt. Print requests an additional copy through the existing printing service; configured automatic receipt output may already have been requested. Email and SMS remain disabled when no sending service is supplied; they do not establish delivery. After the choice, You’re all set appears; New sale explicitly finishes the flow. For cash, the receipt shows known change, or No change for exact payment; missing or invalid values are omitted. Card receipts show no cash change. A fully paid table returns to the floor only after server-confirmed closure; an Open checks home configuration can retain its list. If restaurant, bill or permissions changed during receipt choice, Foody does not automatically close the old context. If closure fails after recorded payment, resume closure of that same check without collecting again. On a failed or uncertain print result, inspect history and jobs before another copy; never repeat payment. Per-check refunds are not established for every advanced split flow: use an authorized manager rather than assuming a refund button exists.
+Check any configured tipping steps before collection and confirm the total. After confirmed payment of an ordinary check on iPad or Victa with compatible versions, receipt choice offers Print receipt using this device’s destinations, Other printers… for a one-off choice, or No receipt. The new flow prints on demand without also creating an automatic receipt at payment confirmation. [Configure destinations for each device](/en/help/printers/profiles-and-routing#device-receipt-destinations). Email and SMS remain disabled without a sending service. Results appear per printer; an Epson failure does not block the Victa. New sale explicitly finishes the flow; requested receipts stay in the queue. A failed table close never justifies collecting again. Check paper and history before requesting a copy whose outcome is uncertain. Older clients and financial-share flows retain their previous behavior and are not validated by this new flow.
 
 <span id="invoice4u-order-lines" />
 
@@ -167,3 +131,15 @@ For iPad card payments, see [Mini/Portable selection](/en/help/payments/victa-mi
 ## Use the unified cash workspace
 
 With payment permissions and compatible versions, open More → Reports → Current drawer. The same workspace shows the cash drawer, recorded card collections by terminal and guided closing. Drawer history combines closed cash sessions and finalized Z reports. Older closing and deposit addresses open this workspace; older APIs retain their previous workflow. See [the unified cash workflow](/en/help/payments/end-of-day#unified-cash-workspace).
+
+<span id="transaction-history" />
+
+## Review completed payments
+
+Open Transactions to review recorded cash, POS card and online payments. Follow [transaction history](/en/help/payments/transactions) for filters, payment origins, returns and unavailable original orders. This shared history does not retrieve all payments from Ashrait.
+
+<span id="ashrait-last-transaction-inspection" />
+
+## Inspect the last terminal transaction
+
+In Hardware → Payment terminals, a manager can inspect the last transaction on the connected terminal. This read changes no payment. See [the procedure and its limits](/en/help/payments/ashrait-terminal-inspection).

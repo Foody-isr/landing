@@ -60,47 +60,11 @@ Pour réunir les étapes de fin de journée, utilisez [la clôture commune](/fr/
 
 Sur une addition ordinaire de table ou de comptoir sur le terminal portable mis à jour, Payer ouvre un récapitulatif client noir avec les lignes et modificateurs de l’addition sélectionnée et son montant confirmé. Vérifiez-le avant Confirmer et payer. Le menu ⋯ permet de choisir les espèces ; le sélecteur de langue ne change que ce récapitulatif, sans modifier la langue de l’appareil. Fermer ce récapitulatif ne débite rien. Sur tablette, le choix plein écran Carte/Espèces reste disponible. Choisissez Payer par carte. Foody conserve un écran de suivi pendant la préparation, la connexion au terminal, les étapes d’identification/session/paramètres signalées, les instructions du terminal, l’enregistrement du paiement et l’envoi en cuisine d’une commande au comptoir. Seules les étapes réellement signalées apparaissent ; chaque paiement ne passe pas nécessairement par toutes. Lecture de carte et saisie du PIN restent sur le terminal sécurisé Verifone. L’envoi cuisine affiché confirme la soumission de la commande, pas la sortie papier : seules les catégories sélectionnées dans le profil cuisine affecté s’impriment. En cas de refus ou d’annulation, l’écran se ferme sans marquer l’addition payée ; vérifiez l’erreur affichée avant de réessayer. Attendez le statut final vérifié Foody ; le retour navigateur seul ne suffit pas. En attente/incertain, actualisez puis faites vérifier la transaction par un opérateur autorisé avant nouvelle tentative. Ne transmettez pas les données de carte à l’assistant. Avant de lancer la collecte, Foody vérifie à nouveau les données à encaisser. Un changement de lignes, montant, état payé ou contexte de restaurant/compte interrompt le parcours : rouvrez Payer et faites confirmer le récapitulatif actualisé. Le même contrôle protège la confirmation espèces. Une vérification interrompue n’autorise pas à supposer qu’un débit a eu lieu ; si le fournisseur a déjà répondu par un résultat incertain, suivez la procédure de rapprochement ci-dessous. Un nouvel article ou un nouvel envoi cuisine ajouté à l’addition pendant le récapitulatif ou la saisie espèces exige aussi une nouvelle confirmation ; il ne doit pas être ignoré au moment d’encaisser. Ce parcours Victa utilise les ILS ; changer de langue ne convertit pas la devise.
 
-<span id="transaction-history" />
-
-## Retrouver un paiement confirmé dans Transactions
-
-Ouvrez Transactions dans la navigation de la caisse iPad, dans Plus sur un terminal compact ou dans le menu latéral Admin, avec payments.view ou payments.manage. Ces trois écrans lisent le même historique des paiements confirmés du restaurant. Dans Admin, choisissez période, source et mode ; recherchez par article, référence ou numéro de commande, puis sélectionnez un paiement pour son montant, son moyen et les commandes liées. Sur la caisse, sélectionner une commande liée ouvre son détail enregistré en lecture seule sans quitter Transactions ; si le chargement échoue, actualisez et réessayez. La source suit la commande liée : un paiement traité par un prestataire pour une commande créée en caisse apparaît sous Caisse, pas En ligne. Les totaux couvrent tous les paiements correspondant aux filtres, pas seulement la page visible, et séparent les devises. Une commande peut avoir plusieurs encaissements et un encaissement couvrir plusieurs commandes ; Commandes reste l’espace de suivi du service. Les tentatives terminal en attente ne sont pas des ventes finalisées. L’historique ne crée pas de nouveau reçu. Les propriétaires et responsables autorisés peuvent voir des remboursements d’espèces ou des retours Verifone Checkout sur la carte d’origine lorsque le serveur confirme l’éligibilité ; lisez la procédure de remboursement avant d’agir. Si un paiement manque, vérifiez restaurant, période et filtres, puis rapprochez les résultats incertains avant un nouveau débit.
-
-<span id="transaction-payment-origin" />
-
-## Comprendre l’origine du paiement
-
-Ouvrez une transaction sur la caisse ou dans Admin et lisez Origine du paiement séparément de Source. La source indique où la commande liée a été créée ; l’origine distingue espèces, Verifone Checkout, autre prestataire ou paiement par carte enregistré. Victa (paiement déclaré) et Carte (origine non vérifiée) signifient que Foody a enregistré un résultat, pas qu’un remboursement peut être envoyé au terminal. Les anciens paiements groupés peuvent afficher Origine non attribuée. Pour un retour, vérifiez le moyen d’origine et utilisez son parcours autorisé ; ne remplacez jamais un remboursement carte par des espèces.
-
-<span id="transaction-items-and-retry" />
-
-## Rechercher tous les articles et reprendre l’historique
-
-Recherchez une transaction par n’importe quel article d’une commande liée, y compris au-delà des quatre premiers. Ouvrez le paiement pour consulter les noms d’articles liés disponibles. Sur la caisse, si le chargement de la suite échoue, les paiements déjà affichés restent visibles ; choisissez Réessayer sous la liste pour continuer. Cela relance seulement la lecture de l’historique, jamais un débit de carte.
-
-<span id="transaction-recorded-returns" />
-
-## Lire les remboursements et annulations dans Transactions
-
-Un remboursement ou une annulation Verifone Checkout réussi depuis Foody apparaît comme une transaction de retour distincte, liée au paiement d’origine. Un remboursement en espèces confirmé apparaît lui aussi séparément, lié à l’encaissement d’origine. Sur la caisse, un propriétaire ou responsable avec payments.manage peut ouvrir un paiement éligible dans Transactions. Pour une vente espèces enregistrée, choisissez Émettre un remboursement seulement si le serveur confirme la part exacte remboursable et une caisse autorisée ouverte. Sélectionnez la part de commande ou d’addition, indiquez un montant dans la limite et un motif, puis remettez l’argent seulement après confirmation de Foody. Pour un seul paiement carte Verifone Checkout capturé et lié exactement à une commande, choisissez Rembourser sur la carte d’origine ou Annuler le paiement carte si proposé. Indiquez un motif et, pour un remboursement, un montant dans la limite affichée. Foody renvoie l’argent sur la carte d’origine, jamais dans la caisse espèces. Un résultat carte incertain doit être vérifié avec la même requête enregistrée avant un autre retour ; ne remboursez pas en espèces à la place. Les paiements anciens non attribués, partagés ou liés à plusieurs commandes et les cartes Victa ne proposent pas cette action. Admin distingue encaissements bruts et retours enregistrés dans Foody ; aucun ne représente le chiffre d’affaires net. Les retours réalisés directement dans Verifone Central ou sur Victa ne sont pas inclus automatiquement. [Récapitulatif](/fr/help/orders/payment-preparation-and-handoff#recorded-money-summary).
-
-<span id="transaction-gross-total" />
-
-## Lire correctement le total des transactions
-
-La période et les heures affichées dans Admin utilisent le fuseau horaire du restaurant. Le total additionne tous les paiements confirmés correspondant aux filtres, même répartis sur plusieurs pages. Les devises restent séparées. C’est un total brut des paiements, pas des ventes nettes : les remboursements, frais de traitement, mouvements de tiroir-caisse et dépôts de fin de journée du terminal ne sont pas déduits ici. Utilisez les rapports du prestataire et de comptabilité adaptés pour rapprocher une journée.
-
 <span id="terminal-deposit" />
 
 ## Clôturer et déposer un lot du terminal Verifone
 
 Pour clôturer la journée espèces et carte dans un même parcours, utilisez [Clôture de journée et rapport Z Foody](/fr/help/payments/end-of-day). Le départ d’un employé reste distinct. Sur les versions antérieures, Dépôts du terminal permet une transmission Verifone séparée avec payments.manage : vérifiez le terminal, confirmez une seule fois en fin de journée et attendez la confirmation finale. Un résultat incertain bloque toute répétition avant vérification. Les commandes de totaux non prises en charge restent indisponibles. Les résultats chiffrés et la référence de lot ne sont affichés que s’ils sont réellement fournis. Ne partagez ni identifiants du terminal ni données de carte dans le chat d’assistance. La compatibilité matérielle doit être vérifiée sur le Mini ou le Portable concerné. Si le contexte change, [rouvrez la confirmation](/fr/help/payments/cash-access#terminal-report-context).
-
-<span id="terminal-reports-advanced" />
-
-## Consulter les totaux ou utiliser les actions avancées du terminal
-
-Dans Plus → Rapports → Dépôts du terminal, Consulter les totaux lit le lot en cours sans le clôturer ni le transmettre. Les actions avancées ne sont disponibles que si le terminal les prend en charge : Clôturer le lot uniquement ferme la période sans transmission ; Transmettre uniquement demande une réconciliation à l’acquéreur sans clôture explicite. Aucune de ces deux actions n’est à elle seule la procédure normale de fin de journée. Utilisez-les uniquement sur instruction du prestataire, confirmez une seule fois et attendez le résultat final du terminal. Si une action est indisponible ou incertaine, ne présumez pas sa réussite : vérifiez le terminal ou contactez le prestataire avant de réessayer.
 
 <span id="saved-qr-payment-scope" />
 
@@ -112,7 +76,7 @@ Depuis Commandes → Menu → Actions → Gérer cette commande, les actions pro
 
 ## Vérifier pourboire et reçu
 
-Vérifiez les éventuelles étapes de pourboire avant l’encaissement et confirmez le total ; leur disponibilité dépend de la configuration. Après un paiement confirmé d’une addition ordinaire sur le terminal mis à jour, la page de reçu propose Imprimer quand une action d’impression est disponible, ou Aucun reçu. Imprimer demande une copie supplémentaire via le service d’impression existant ; un reçu automatique configuré peut déjà avoir été demandé. E-mail et SMS restent désactivés si aucun service d’envoi n’est fourni ; ils ne prouvent aucun envoi. Après ce choix, Vous êtes prêt s’affiche ; Nouvelle vente termine explicitement le parcours. En espèces, le reçu affiche la monnaie connue, ou Pas de monnaie pour un paiement exact ; une valeur absente ou invalide n’est pas affichée. La carte n’affiche pas de monnaie. Une table entièrement réglée revient au plan seulement après la clôture confirmée par le serveur ; le mode Additions ouvertes peut conserver sa liste. Si le restaurant, l’addition ou les droits ont changé pendant le reçu, Foody ne clôture pas l’ancien contexte automatiquement. En cas d’échec de clôture après un paiement enregistré, reprenez uniquement la clôture de cette même addition, sans nouvel encaissement. En cas d’échec ou de résultat d’impression incertain, contrôlez l’historique et les travaux avant toute nouvelle copie ; ne recommencez jamais le paiement. Les remboursements par addition ne sont pas établis pour tous les partages avancés : faites intervenir un responsable autorisé plutôt que de supposer un bouton disponible.
+Vérifiez les éventuelles étapes de pourboire avant l’encaissement et confirmez le total ; leur disponibilité dépend de la configuration. Après un paiement confirmé d’une addition ordinaire sur iPad ou Victa avec la version compatible, la page de reçu propose Imprimer le reçu sur les destinations de cet appareil, Autres imprimantes… pour une exception, ou Aucun reçu. Le nouveau parcours imprime à la demande sans ajouter de reçu automatique à la confirmation du paiement. [Configurez les destinations de chaque appareil](/fr/help/printers/profiles-and-routing#device-receipt-destinations). E-mail et SMS restent désactivés sans service d’envoi. Un résultat est affiché par imprimante ; un échec Epson ne bloque pas le Victa. Nouvelle vente termine explicitement le parcours ; les reçus demandés restent dans la file. Un échec de fermeture de table ne justifie aucun nouvel encaissement. Vérifiez papier et historique avant toute copie dont le résultat est incertain. Les anciens clients et les partages financiers conservent leur comportement antérieur et ne sont pas validés par ce nouveau parcours.
 
 <span id="invoice4u-order-lines" />
 
@@ -167,3 +131,15 @@ Pour payer par carte sur iPad, voir le [choix Mini/Portable](/fr/help/payments/v
 ## Utiliser le suivi de caisse commun
 
 Avec les droits de paiement et les versions compatibles, ouvrez Plus → Rapports → Solde en caisse. Le même espace présente le tiroir espèces, les encaissements carte enregistrés par terminal et la clôture guidée. Historique de caisse réunit les sessions espèces closes et les rapports Z finalisés. Les anciennes adresses de clôture et de dépôt rejoignent cet espace ; les API plus anciennes conservent leur parcours précédent. Consultez [le parcours de caisse commun](/fr/help/payments/end-of-day#unified-cash-workspace).
+
+<span id="transaction-history" />
+
+## Consulter les paiements confirmés
+
+Ouvrez Transactions pour consulter les encaissements espèces, carte en caisse et en ligne enregistrés. Suivez [l’historique des transactions](/fr/help/payments/transactions) pour les filtres, origines, retours et commandes d’origine indisponibles. Cet historique partagé ne télécharge pas tous les paiements depuis Ashrait.
+
+<span id="ashrait-last-transaction-inspection" />
+
+## Consulter la dernière transaction du terminal
+
+Dans Matériel → Terminaux de paiement, un responsable peut consulter la dernière transaction du terminal connecté. Cette lecture ne modifie aucun paiement. Voir [la procédure et ses limites](/fr/help/payments/ashrait-terminal-inspection).

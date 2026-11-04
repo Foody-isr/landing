@@ -4863,6 +4863,19 @@
           "en": "For an item with variant positions, check that the ticket lists each choice in order, for example Character 1: A then Character 2: 7. These choices describe the product and carry no addition/removal sign or surcharge. If a detail is missing, check the API and ordering client versions, then the item configuration under [Variants and sizes](../menu/variants-and-sizes#conditional-positions). Connection, routing and print recovery procedures remain the same.",
           "he": "בפריט עם מיקומי וריאציה, ודאו שהכרטיס מציג כל בחירה לפי הסדר, למשל תו 1: A ואז תו 2: 7. הבחירות מתארות את הפריט וללא סימן הוספה או הסרה או תוספת מחיר. אם פרט חסר, בדקו את גרסת השרת ואת גרסת ערוץ ההזמנה ואת הגדרת הפריט ב[ווריאציות וגדלים](../menu/variants-and-sizes#conditional-positions). נהלי החיבור, הניתוב והשחזור של ההדפסה נשארים ללא שינוי."
         }
+      },
+      {
+        "id": "device-receipt-destinations",
+        "title": {
+          "fr": "Choisir le reçu depuis chaque poste",
+          "en": "Choose receipts from each POS",
+          "he": "בחירת קבלות מכל עמדת קופה"
+        },
+        "instructions": {
+          "fr": "Sur les versions compatibles, la destination du reçu est propre à chaque appareil, restaurant et environnement. Le Victa Portable privilégie son imprimante intégrée et l’iPad son Epson TM-m30III affectée aux reçus. Pour une vente, Autres imprimantes… permet de choisir une imprimante ou les deux, sans modifier les profils partagés. Une Epson indisponible ne bloque pas le travail du Victa. Consultez [les réglages par appareil](/fr/help/printers/profiles-and-routing#device-receipt-destinations) et [la reprise par imprimante](/fr/help/printers/status-and-history#independent-receipt-results). Une impression incertaine demande une vérification du papier avant toute nouvelle copie ; ne répétez pas le paiement.",
+          "en": "On compatible versions, receipt destinations belong to each device, restaurant and environment. Victa Portable prefers its integrated printer; iPad prefers its assigned Epson TM-m30III receipt printer. For one sale, Other printers… selects one printer or both without editing shared profiles. An unavailable Epson does not block the Victa worker. See [per-device settings](/en/help/printers/profiles-and-routing#device-receipt-destinations) and [per-printer recovery](/en/help/printers/status-and-history#independent-receipt-results). Uncertain printing requires checking paper before another copy; never repeat payment.",
+          "he": "בגרסאות תואמות, יעדי הקבלות שייכים לכל מכשיר, מסעדה וסביבה. Victa Portable מעדיף את המדפסת המובנית; iPad מעדיף Epson TM-m30III המשויכת לקבלות. למכירה אחת, מדפסות אחרות… מאפשר לבחור מדפסת אחת או את שתיהן בלי לשנות פרופילים משותפים. Epson שאינה זמינה אינה חוסמת את המשימה של Victa. ראו [הגדרות לכל מכשיר](/he/help/printers/profiles-and-routing#device-receipt-destinations) ו[טיפול בכל מדפסת](/he/help/printers/status-and-history#independent-receipt-results). הדפסה לא מאושרת מחייבת בדיקת נייר לפני עותק נוסף; אין לחזור על התשלום."
+        }
       }
     ],
     "audience": "public",
@@ -10078,6 +10091,19 @@
           "en": "With payment permissions and compatible versions, open More → Reports → Current drawer. The same workspace shows the cash drawer, recorded card collections by terminal and guided closing. Drawer history combines closed cash sessions and finalized Z reports. Older closing and deposit addresses open this workspace; older APIs retain their previous workflow. See [the unified cash workflow](/en/help/payments/end-of-day#unified-cash-workspace).",
           "he": "עם הרשאות תשלום וגרסאות תואמות, פתחו עוד ← דוחות ← יתרת קופה. אותו מרחב מציג את מגירת המזומנים, חיובי הכרטיס שנרשמו לפי מסוף וסגירה מודרכת. היסטוריית קופה משלבת משמרות מזומן סגורות ודוחות Z שהושלמו. כתובות הסגירה וההפקדה הקודמות פותחות מרחב זה; API ישן שומר על המסלול הקודם. ראו [תהליך הקופה המאוחד](/he/help/payments/end-of-day#unified-cash-workspace)."
         }
+      },
+      {
+        "id": "ashrait-last-transaction-inspection",
+        "title": {
+          "fr": "Consulter la dernière transaction du terminal",
+          "en": "Inspect the last terminal transaction",
+          "he": "צפייה בעסקה האחרונה במסוף"
+        },
+        "instructions": {
+          "fr": "Dans Matériel → Terminaux de paiement, un responsable peut consulter la dernière transaction du terminal connecté. Cette lecture ne modifie aucun paiement. Voir [la procédure et ses limites](/fr/help/payments/ashrait-terminal-inspection).",
+          "en": "In Hardware → Payment terminals, a manager can inspect the last transaction on the connected terminal. This read changes no payment. See [the procedure and its limits](/en/help/payments/ashrait-terminal-inspection).",
+          "he": "בחומרה ← מסופי תשלום מנהל יכול לצפות בעסקה האחרונה במסוף המחובר. הקריאה אינה משנה תשלום. ראו [הוראות ומגבלות](/he/help/payments/ashrait-terminal-inspection)."
+        }
       }
     ],
     "audience": "public",
@@ -11052,7 +11078,17 @@
         "lib/features/orders/domain/checkout_review.dart",
         "lib/features/orders/presentation/terminal_checkout_pages.dart",
         "lib/main.dart",
-        "lib/features/orders/presentation/payment_terminal_picker.dart"
+        "lib/features/orders/presentation/payment_terminal_picker.dart",
+        "ios/Runner/AshraitProtocol.h",
+        "android/app/src/main/kotlin/com/foodypos/app/AshraitProtocol.kt",
+        "lib/core/ui/terminal_payment_error.dart",
+        "lib/features/settings/presentation/ashrait_last_transaction_tile.dart",
+        "lib/features/settings/presentation/victa_mini_settings_card.dart",
+        "lib/features/settings/presentation/hardware_settings_page.dart",
+        "lib/services/printing/receipt_delivery*.dart",
+        "lib/features/orders/data/order_api.dart",
+        "lib/features/orders/data/order_repository.dart",
+        "lib/features/orders/providers/order_providers.dart"
       ],
       "foodyserver": [
         "internal/payment/**",
@@ -11061,7 +11097,9 @@
         "internal/orders/transactions*.go",
         "internal/common/pos_card_collection.go",
         "internal/orders/pos_card_collection*.go",
-        "migrations/287_pos_card_collections.sql"
+        "migrations/287_pos_card_collections.sql",
+        "internal/orders/handler.go",
+        "internal/orders/service.go"
       ],
       "foodyadmin": [
         "src/app/[restaurantId]/transactions/**",
@@ -11165,71 +11203,6 @@
         }
       },
       {
-        "id": "transaction-history",
-        "title": {
-          "en": "Find a completed payment in Transactions",
-          "fr": "Retrouver un paiement confirmé dans Transactions",
-          "he": "איתור תשלום שאושר בעסקאות"
-        },
-        "instructions": {
-          "en": "Open Transactions in the iPad POS navigation, in More on compact terminals, or in the Admin sidebar, with payments.view or payments.manage. All three screens read the same restaurant-scoped confirmed payment history. In Admin choose a date range, source and method; search by item, reference or order number, then select a payment for its amount, method and linked orders. On the POS, selecting a linked order opens its saved read-only detail without leaving Transactions; if it cannot load, refresh and retry. The source follows the linked order: a provider-processed payment for a POS-created order appears under POS, not Online. Totals cover all matching payments, not just the visible page, and keep currencies separate. One order can have several tenders and one tender can cover several orders; Orders remains the place to follow fulfillment. Pending terminal attempts are not completed sales. History does not issue new receipts. Authorized owners and managers may see server-verified cash refunds or Verifone Checkout original-card returns for eligible payments; see the refund procedure before acting. If a result is missing, check restaurant, date and filters, then reconcile uncertain terminal payments before another charge.",
-          "fr": "Ouvrez Transactions dans la navigation de la caisse iPad, dans Plus sur un terminal compact ou dans le menu latéral Admin, avec payments.view ou payments.manage. Ces trois écrans lisent le même historique des paiements confirmés du restaurant. Dans Admin, choisissez période, source et mode ; recherchez par article, référence ou numéro de commande, puis sélectionnez un paiement pour son montant, son moyen et les commandes liées. Sur la caisse, sélectionner une commande liée ouvre son détail enregistré en lecture seule sans quitter Transactions ; si le chargement échoue, actualisez et réessayez. La source suit la commande liée : un paiement traité par un prestataire pour une commande créée en caisse apparaît sous Caisse, pas En ligne. Les totaux couvrent tous les paiements correspondant aux filtres, pas seulement la page visible, et séparent les devises. Une commande peut avoir plusieurs encaissements et un encaissement couvrir plusieurs commandes ; Commandes reste l’espace de suivi du service. Les tentatives terminal en attente ne sont pas des ventes finalisées. L’historique ne crée pas de nouveau reçu. Les propriétaires et responsables autorisés peuvent voir des remboursements d’espèces ou des retours Verifone Checkout sur la carte d’origine lorsque le serveur confirme l’éligibilité ; lisez la procédure de remboursement avant d’agir. Si un paiement manque, vérifiez restaurant, période et filtres, puis rapprochez les résultats incertains avant un nouveau débit.",
-          "he": "פתחו עסקאות בניווט קופת iPad, בעוד במסוף קומפקטי או בתפריט הצד של Admin, עם הרשאת payments.view או payments.manage. שלושת המסכים קוראים את אותה היסטוריית תשלומים מאושרים של העסק. ב-Admin בחרו טווח תאריכים, מקור ואמצעי; חפשו לפי פריט, אסמכתה או מספר הזמנה ובחרו תשלום להצגת הסכום, האמצעי וההזמנות הקשורות. בקופה, בחירת הזמנה מקושרת פותחת את פרטיה השמורים לקריאה בלבד בלי לצאת מעסקאות; אם הטעינה נכשלת, רעננו ונסו שוב. המקור נקבע לפי ההזמנה המקושרת: תשלום שעובד אצל ספק עבור הזמנה שנוצרה בקופה מופיע תחת קופה ולא תחת אונליין. הסכומים כוללים את כל התשלומים התואמים לסינון, לא רק את העמוד הגלוי, ומפרידים בין מטבעות. הזמנה אחת יכולה לכלול כמה תשלומים ותשלום אחד יכול לכסות כמה הזמנות; הזמנות מיועד למעקב אחר הכנה ומסירה. ניסיונות מסוף ממתינים אינם מכירות שהושלמו. ההיסטוריה אינה מנפיקה קבלה חדשה. בעלים ומנהלים מורשים יכולים לראות החזרי מזומן או החזר לכרטיס המקורי ב-Verifone Checkout כאשר השרת מאשר זכאות; קראו את נוהל ההחזר לפני פעולה. אם תשלום חסר, בדקו עסק, תקופה ומסננים והתאימו תוצאה לא ודאית לפני חיוב נוסף."
-        }
-      },
-      {
-        "id": "transaction-payment-origin",
-        "title": {
-          "en": "Understand payment origin",
-          "fr": "Comprendre l’origine du paiement",
-          "he": "הבנת מקור התשלום"
-        },
-        "instructions": {
-          "en": "Open a transaction on POS or Admin and read Payment origin separately from Source. Source identifies where the linked order was created; origin identifies cash, Verifone Checkout, another provider, or a recorded card payment. Victa (recorded payment) and Card (origin unverified) mean Foody recorded a result; they do not prove that a refund can be sent to the terminal. Older grouped payments can show Origin not attributed. For a return, confirm the original tender and use its authorized refund workflow; never substitute cash for a card payment.",
-          "fr": "Ouvrez une transaction sur la caisse ou dans Admin et lisez Origine du paiement séparément de Source. La source indique où la commande liée a été créée ; l’origine distingue espèces, Verifone Checkout, autre prestataire ou paiement par carte enregistré. Victa (paiement déclaré) et Carte (origine non vérifiée) signifient que Foody a enregistré un résultat, pas qu’un remboursement peut être envoyé au terminal. Les anciens paiements groupés peuvent afficher Origine non attribuée. Pour un retour, vérifiez le moyen d’origine et utilisez son parcours autorisé ; ne remplacez jamais un remboursement carte par des espèces.",
-          "he": "פתחו עסקה בקופה או ב-Admin וקראו את מקור התשלום בנפרד ממקור ההזמנה. מקור ההזמנה מציין היכן נוצרה ההזמנה המקושרת; מקור התשלום מבחין בין מזומן, Verifone Checkout, ספק אחר או תשלום כרטיס שנרשם. Victa (תשלום מדווח) וכרטיס (מקור לא מאומת) מציינים ש-Foody רשם תוצאה, לא שניתן לבצע החזר למסוף. תשלומים קבוצתיים ישנים עשויים להציג מקור לא משויך. להחזר, אמתו את אמצעי התשלום המקורי והשתמשו בתהליך ההחזר המורשה שלו; אל תחליפו החזר לכרטיס במזומן."
-        }
-      },
-      {
-        "id": "transaction-items-and-retry",
-        "title": {
-          "en": "Search every item and retry the history",
-          "fr": "Rechercher tous les articles et reprendre l’historique",
-          "he": "חיפוש כל הפריטים וניסיון חוזר בהיסטוריה"
-        },
-        "instructions": {
-          "en": "Search Transactions by any item in a linked order, including items after the first four. Open a payment to review the available linked item names. On the POS, if loading more results fails, the payments already shown remain visible; choose Try again under the list to continue. This retries only the history request, not a card charge.",
-          "fr": "Recherchez une transaction par n’importe quel article d’une commande liée, y compris au-delà des quatre premiers. Ouvrez le paiement pour consulter les noms d’articles liés disponibles. Sur la caisse, si le chargement de la suite échoue, les paiements déjà affichés restent visibles ; choisissez Réessayer sous la liste pour continuer. Cela relance seulement la lecture de l’historique, jamais un débit de carte.",
-          "he": "חפשו עסקאות לפי כל פריט בהזמנה מקושרת, גם אחרי ארבעת הפריטים הראשונים. פתחו תשלום כדי לראות את שמות הפריטים המקושרים הזמינים. בקופה, אם טעינת תוצאות נוספות נכשלת, התשלומים שכבר הוצגו נשארים גלויים; בחרו ניסיון חוזר מתחת לרשימה. הפעולה מנסה שוב לטעון את ההיסטוריה בלבד ואינה מחייבת כרטיס מחדש."
-        }
-      },
-      {
-        "id": "transaction-recorded-returns",
-        "title": {
-          "en": "Read refunds and payment voids in Transactions",
-          "fr": "Lire les remboursements et annulations dans Transactions",
-          "he": "צפייה בהחזרים ובביטולי תשלום בעסקאות"
-        },
-        "instructions": {
-          "en": "A successful Verifone Checkout refund or void initiated in Foody appears as its own return transaction, linked to the original payment. A confirmed cash return also appears separately, linked to its original cash tender. On the POS, an owner or manager with payments.manage can open an eligible payment in Transactions. For a journaled cash sale, choose Issue refund only when the server confirms an exact refundable portion and an open enrolled drawer. Select the order or check portion, enter an amount within the limit and a reason, then hand over cash only after Foody confirms. For one captured Verifone Checkout card payment linked to one exact order allocation, choose Refund to original card or Cancel card payment if offered. Enter a reason and, for a refund, an amount within the displayed limit. Foody sends the return to the original card, never to the cash drawer. An uncertain card result must be rechecked using the same saved request before another return; do not issue cash instead. Legacy unattributed, split/multi-order and Victa card payments do not offer this card action. Admin shows gross collections separately from returns recorded in Foody; neither figure is net revenue. Returns made directly in Verifone Central or on Victa are not included automatically. Also review [recorded net and balance](/en/help/orders/payment-preparation-and-handoff#recorded-money-summary).",
-          "fr": "Un remboursement ou une annulation Verifone Checkout réussi depuis Foody apparaît comme une transaction de retour distincte, liée au paiement d’origine. Un remboursement en espèces confirmé apparaît lui aussi séparément, lié à l’encaissement d’origine. Sur la caisse, un propriétaire ou responsable avec payments.manage peut ouvrir un paiement éligible dans Transactions. Pour une vente espèces enregistrée, choisissez Émettre un remboursement seulement si le serveur confirme la part exacte remboursable et une caisse autorisée ouverte. Sélectionnez la part de commande ou d’addition, indiquez un montant dans la limite et un motif, puis remettez l’argent seulement après confirmation de Foody. Pour un seul paiement carte Verifone Checkout capturé et lié exactement à une commande, choisissez Rembourser sur la carte d’origine ou Annuler le paiement carte si proposé. Indiquez un motif et, pour un remboursement, un montant dans la limite affichée. Foody renvoie l’argent sur la carte d’origine, jamais dans la caisse espèces. Un résultat carte incertain doit être vérifié avec la même requête enregistrée avant un autre retour ; ne remboursez pas en espèces à la place. Les paiements anciens non attribués, partagés ou liés à plusieurs commandes et les cartes Victa ne proposent pas cette action. Admin distingue encaissements bruts et retours enregistrés dans Foody ; aucun ne représente le chiffre d’affaires net. Les retours réalisés directement dans Verifone Central ou sur Victa ne sont pas inclus automatiquement. [Récapitulatif](/fr/help/orders/payment-preparation-and-handoff#recorded-money-summary).",
-          "he": "החזר או ביטול של Verifone Checkout שהושלם מתוך Foody מופיע כעסקת החזר נפרדת המקושרת לתשלום המקורי. גם החזר מזומן מאושר מופיע בנפרד ומקושר לתשלום המזומן המקורי. בקופה, בעלים או מנהל עם הרשאת payments.manage יכולים לפתוח תשלום זכאי בעסקאות. למכירת מזומן מתועדת בחרו החזר רק כאשר השרת מאשר חלק מדויק שניתן להחזיר וקופה מורשית פתוחה. בחרו את חלק ההזמנה או החשבון, הזינו סכום עד לתקרה וסיבה, ומסרו מזומן רק לאחר אישור Foody. לתשלום כרטיס Verifone Checkout יחיד שנקלט ומשויך בדיוק להזמנה אחת, בחרו החזר לכרטיס המקורי או ביטול תשלום בכרטיס אם האפשרות מוצגת. הזינו סיבה, ובהחזר גם סכום שאינו עולה על התקרה המוצגת. Foody מחזיר לכרטיס המקורי בלבד, לא לקופת המזומן. תוצאה לא ודאית בכרטיס מחייבת בדיקה של אותה בקשה שמורה לפני החזר נוסף; אין להחזיר מזומן במקום. תשלומים ישנים ללא שיוך, תשלומים מפוצלים או מרובי הזמנות ותשלומי כרטיס ב-Victa אינם מציעים פעולה זו. ב-Admin מוצגים בנפרד תקבולים ברוטו והחזרים שנרשמו ב-Foody; אף אחד מהם אינו הכנסה נטו. החזרים שבוצעו ישירות ב-Verifone Central או ב-Victa אינם נכללים אוטומטית. ראו גם [נטו ויתרה שנרשמו](/he/help/orders/payment-preparation-and-handoff#recorded-money-summary)."
-        }
-      },
-      {
-        "id": "transaction-gross-total",
-        "title": {
-          "en": "Read the transaction total correctly",
-          "fr": "Lire correctement le total des transactions",
-          "he": "קריאה נכונה של סך העסקאות"
-        },
-        "instructions": {
-          "en": "The Admin date range and displayed times use the restaurant’s timezone. The total sums all confirmed payment records matching the selected filters, even across several pages. Currencies remain separate. It is a gross payment total, not net sales: refunds, processing fees, cash-drawer movements and terminal end-of-day deposits are not subtracted here. Use the appropriate provider and accounting reports before reconciling a day.",
-          "fr": "La période et les heures affichées dans Admin utilisent le fuseau horaire du restaurant. Le total additionne tous les paiements confirmés correspondant aux filtres, même répartis sur plusieurs pages. Les devises restent séparées. C’est un total brut des paiements, pas des ventes nettes : les remboursements, frais de traitement, mouvements de tiroir-caisse et dépôts de fin de journée du terminal ne sont pas déduits ici. Utilisez les rapports du prestataire et de comptabilité adaptés pour rapprocher une journée.",
-          "he": "טווח התאריכים והשעות המוצגות ב-Admin משתמשים באזור הזמן של העסק. הסכום כולל את כל רשומות התשלום המאושרות התואמות למסננים, גם אם הן מוצגות בכמה עמודים. המטבעות נשארים נפרדים. זהו סכום תשלומים ברוטו ולא מכירות נטו: החזרים, עמלות סליקה, תנועות מגירת מזומן והפקדות סוף יום של המסוף אינם מנוכים כאן. להצלבת יום השתמשו בדוחות הספק והחשבונאות המתאימים."
-        }
-      },
-      {
         "id": "terminal-deposit",
         "title": {
           "en": "Close and deposit a Verifone terminal batch",
@@ -11240,19 +11213,6 @@
           "en": "To close cash and card activity in one flow, use [End of day and the Foody Z report](/en/help/payments/end-of-day). Staff clock-out remains separate. On older versions, Terminal deposits offers a separate Verifone transmission with payments.manage: check the terminal, confirm once at end of day and wait for final confirmation. An uncertain result blocks repetition before verification. Unsupported totals commands remain unavailable. Numerical results and the batch reference are shown only when actually supplied. Never share terminal credentials or card details in support chat. Hardware compatibility must be checked on the relevant Mini or Portable. If context changes, [reopen confirmation](/en/help/payments/cash-access#terminal-report-context).",
           "fr": "Pour clôturer la journée espèces et carte dans un même parcours, utilisez [Clôture de journée et rapport Z Foody](/fr/help/payments/end-of-day). Le départ d’un employé reste distinct. Sur les versions antérieures, Dépôts du terminal permet une transmission Verifone séparée avec payments.manage : vérifiez le terminal, confirmez une seule fois en fin de journée et attendez la confirmation finale. Un résultat incertain bloque toute répétition avant vérification. Les commandes de totaux non prises en charge restent indisponibles. Les résultats chiffrés et la référence de lot ne sont affichés que s’ils sont réellement fournis. Ne partagez ni identifiants du terminal ni données de carte dans le chat d’assistance. La compatibilité matérielle doit être vérifiée sur le Mini ou le Portable concerné. Si le contexte change, [rouvrez la confirmation](/fr/help/payments/cash-access#terminal-report-context).",
           "he": "לסגירת פעילות מזומן וכרטיס באותו מסלול השתמשו ב[סגירת יום ודוח Z של Foody](/he/help/payments/end-of-day). רישום יציאת עובד נשאר נפרד. בגרסאות קודמות הפקדות מסוף מאפשר שידור Verifone נפרד עם payments.manage: בדקו את המסוף, אשרו פעם אחת בסוף היום והמתינו לאישור הסופי. תוצאה לא ודאית חוסמת ניסיון חוזר לפני בדיקה. פקודות סיכום שאינן נתמכות נשארות לא זמינות. סכומים ומספר אצווה מוצגים רק אם סופקו בפועל. אין לשתף פרטי התחברות למסוף או פרטי כרטיס בצ׳אט התמיכה. יש לבדוק תאימות חומרה ב־Mini או ב־Portable הרלוונטי. אם ההקשר השתנה, [פתחו מחדש את האישור](/he/help/payments/cash-access#terminal-report-context)."
-        }
-      },
-      {
-        "id": "terminal-reports-advanced",
-        "title": {
-          "en": "Read totals or use advanced terminal actions",
-          "fr": "Consulter les totaux ou utiliser les actions avancées du terminal",
-          "he": "צפייה בסיכומים או שימוש בפעולות מסוף מתקדמות"
-        },
-        "instructions": {
-          "en": "In More → Reports → Terminal deposits, View current totals reads the active batch without closing or transmitting it. Advanced actions are shown only when supported by the terminal: Close batch only closes the reporting period without transmission; Transmit only requests acquirer reconciliation without explicitly closing it. Neither advanced action alone is the standard end-of-day flow. Use either only on your payment provider's instruction, confirm once and wait for the terminal's final result. If unsupported or uncertain, do not assume success; check the terminal or ask the provider before retrying.",
-          "fr": "Dans Plus → Rapports → Dépôts du terminal, Consulter les totaux lit le lot en cours sans le clôturer ni le transmettre. Les actions avancées ne sont disponibles que si le terminal les prend en charge : Clôturer le lot uniquement ferme la période sans transmission ; Transmettre uniquement demande une réconciliation à l’acquéreur sans clôture explicite. Aucune de ces deux actions n’est à elle seule la procédure normale de fin de journée. Utilisez-les uniquement sur instruction du prestataire, confirmez une seule fois et attendez le résultat final du terminal. Si une action est indisponible ou incertaine, ne présumez pas sa réussite : vérifiez le terminal ou contactez le prestataire avant de réessayer.",
-          "he": "בעוד ← דוחות ← הפקדות מסוף, הצגת סיכומים נוכחיים קוראת את האצווה הפעילה בלי לסגור או לשדר אותה. פעולות מתקדמות זמינות רק אם המסוף תומך בהן: סגירת אצווה בלבד סוגרת את תקופת הדיווח בלי שידור; שידור בלבד מבקש התאמה מול הסולק בלי סגירה מפורשת. אף אחת מהן לבדה אינה תהליך סוף היום הרגיל. יש לבצע אותן רק בהנחיית ספק התשלומים, לאשר פעם אחת ולהמתין לתוצאה הסופית מהמסוף. אם הפעולה אינה נתמכת או שהתוצאה אינה ודאית, אין להניח שהצליחה; בדקו את המסוף או פנו לספק לפני ניסיון חוזר."
         }
       },
       {
@@ -11276,9 +11236,9 @@
           "he": "בדיקת טיפ וקבלה"
         },
         "instructions": {
-          "fr": "Vérifiez les éventuelles étapes de pourboire avant l’encaissement et confirmez le total ; leur disponibilité dépend de la configuration. Après un paiement confirmé d’une addition ordinaire sur le terminal mis à jour, la page de reçu propose Imprimer quand une action d’impression est disponible, ou Aucun reçu. Imprimer demande une copie supplémentaire via le service d’impression existant ; un reçu automatique configuré peut déjà avoir été demandé. E-mail et SMS restent désactivés si aucun service d’envoi n’est fourni ; ils ne prouvent aucun envoi. Après ce choix, Vous êtes prêt s’affiche ; Nouvelle vente termine explicitement le parcours. En espèces, le reçu affiche la monnaie connue, ou Pas de monnaie pour un paiement exact ; une valeur absente ou invalide n’est pas affichée. La carte n’affiche pas de monnaie. Une table entièrement réglée revient au plan seulement après la clôture confirmée par le serveur ; le mode Additions ouvertes peut conserver sa liste. Si le restaurant, l’addition ou les droits ont changé pendant le reçu, Foody ne clôture pas l’ancien contexte automatiquement. En cas d’échec de clôture après un paiement enregistré, reprenez uniquement la clôture de cette même addition, sans nouvel encaissement. En cas d’échec ou de résultat d’impression incertain, contrôlez l’historique et les travaux avant toute nouvelle copie ; ne recommencez jamais le paiement. Les remboursements par addition ne sont pas établis pour tous les partages avancés : faites intervenir un responsable autorisé plutôt que de supposer un bouton disponible.",
-          "en": "Review any supported tip step before collection and confirm the total; availability depends on configuration. After confirmed payment for an ordinary check on the updated terminal, the receipt page offers Print when a printing action is available, or No receipt. Print requests an additional copy through the existing printing service; configured automatic receipt output may already have been requested. Email and SMS remain disabled when no sending service is supplied; they do not establish delivery. After the choice, You’re all set appears; New sale explicitly finishes the flow. For cash, the receipt shows known change, or No change for exact payment; missing or invalid values are omitted. Card receipts show no cash change. A fully paid table returns to the floor only after server-confirmed closure; an Open checks home configuration can retain its list. If restaurant, bill or permissions changed during receipt choice, Foody does not automatically close the old context. If closure fails after recorded payment, resume closure of that same check without collecting again. On a failed or uncertain print result, inspect history and jobs before another copy; never repeat payment. Per-check refunds are not established for every advanced split flow: use an authorized manager rather than assuming a refund button exists.",
-          "he": "בדקו כל שלב טיפ נתמך לפני הגבייה ואשרו את הסכום; הזמינות תלויה בהגדרות. לאחר תשלום מאושר לחשבון רגיל במסוף המעודכן, עמוד הקבלה מציע הדפסה כאשר קיימת פעולת הדפסה או ללא קבלה. הדפסה מבקשת עותק נוסף דרך שירות ההדפסה הקיים; ייתכן שכבר התבקשה קבלה אוטומטית בהתאם להגדרות. דוא״ל ו-SMS נשארים מושבתים כשלא סופק שירות שליחה ואינם מעידים על מסירה. אחרי הבחירה מוצג סיימתם; מכירה חדשה מסיימת את המסלול במפורש. במזומן הקבלה מציגה עודף ידוע או אין עודף לתשלום מדויק; ערך חסר או לא תקין אינו מוצג. בכרטיס לא מוצג עודף מזומן. שולחן ששולם במלואו חוזר לתוכנית רק לאחר סגירה שאושרה בשרת; הגדרת בית של חשבונות פתוחים יכולה להשאיר את הרשימה. אם המסעדה, החשבון או ההרשאות השתנו בזמן בחירת הקבלה, Foody אינה סוגרת אוטומטית את ההקשר הקודם. אם הסגירה נכשלת אחרי תשלום שנרשם, המשיכו רק את סגירת אותו חשבון בלי לגבות שוב. בכשל הדפסה או בתוצאה לא ודאית בדקו היסטוריה ועבודות לפני עותק נוסף ולעולם אל תחזרו על התשלום. החזר לפי חשבון אינו זמין בהכרח בכל מסלול פיצול מתקדם; פנו למנהל מורשה במקום להניח שקיים כפתור החזר."
+          "fr": "Vérifiez les éventuelles étapes de pourboire avant l’encaissement et confirmez le total ; leur disponibilité dépend de la configuration. Après un paiement confirmé d’une addition ordinaire sur iPad ou Victa avec la version compatible, la page de reçu propose Imprimer le reçu sur les destinations de cet appareil, Autres imprimantes… pour une exception, ou Aucun reçu. Le nouveau parcours imprime à la demande sans ajouter de reçu automatique à la confirmation du paiement. [Configurez les destinations de chaque appareil](/fr/help/printers/profiles-and-routing#device-receipt-destinations). E-mail et SMS restent désactivés sans service d’envoi. Un résultat est affiché par imprimante ; un échec Epson ne bloque pas le Victa. Nouvelle vente termine explicitement le parcours ; les reçus demandés restent dans la file. Un échec de fermeture de table ne justifie aucun nouvel encaissement. Vérifiez papier et historique avant toute copie dont le résultat est incertain. Les anciens clients et les partages financiers conservent leur comportement antérieur et ne sont pas validés par ce nouveau parcours.",
+          "en": "Check any configured tipping steps before collection and confirm the total. After confirmed payment of an ordinary check on iPad or Victa with compatible versions, receipt choice offers Print receipt using this device’s destinations, Other printers… for a one-off choice, or No receipt. The new flow prints on demand without also creating an automatic receipt at payment confirmation. [Configure destinations for each device](/en/help/printers/profiles-and-routing#device-receipt-destinations). Email and SMS remain disabled without a sending service. Results appear per printer; an Epson failure does not block the Victa. New sale explicitly finishes the flow; requested receipts stay in the queue. A failed table close never justifies collecting again. Check paper and history before requesting a copy whose outcome is uncertain. Older clients and financial-share flows retain their previous behavior and are not validated by this new flow.",
+          "he": "בדקו שלבי טיפ שהוגדרו לפני הגבייה ואשרו את הסכום. אחרי תשלום מאושר של חשבון רגיל ב-iPad או ב-Victa עם גרסאות תואמות, מסך הקבלות מציע הדפסת קבלה ביעדי המכשיר, מדפסות אחרות… לבחירה חד-פעמית, או ללא קבלה. המסלול החדש מדפיס לפי דרישה ואינו יוצר בנוסף קבלה אוטומטית באישור התשלום. [הגדירו יעדים לכל מכשיר](/he/help/printers/profiles-and-routing#device-receipt-destinations). דוא״ל ו-SMS נשארים כבויים ללא שירות שליחה. התוצאות מוצגות לכל מדפסת; כישלון Epson אינו חוסם את Victa. מכירה חדשה מסיימת את המסלול במפורש; קבלות שהתבקשו נשארות בתור. כישלון בסגירת שולחן אינו מצדיק גבייה נוספת. בדקו נייר והיסטוריה לפני בקשת עותק שתוצאתו אינה ידועה. לקוחות ישנים וחשבונות מפוצלים שומרים על התנהגותם הקודמת ואינם מאומתים במסלול החדש."
         }
       },
       {
@@ -11399,6 +11359,32 @@
           "en": "With payment permissions and compatible versions, open More → Reports → Current drawer. The same workspace shows the cash drawer, recorded card collections by terminal and guided closing. Drawer history combines closed cash sessions and finalized Z reports. Older closing and deposit addresses open this workspace; older APIs retain their previous workflow. See [the unified cash workflow](/en/help/payments/end-of-day#unified-cash-workspace).",
           "he": "עם הרשאות תשלום וגרסאות תואמות, פתחו עוד ← דוחות ← יתרת קופה. אותו מרחב מציג את מגירת המזומנים, חיובי הכרטיס שנרשמו לפי מסוף וסגירה מודרכת. היסטוריית קופה משלבת משמרות מזומן סגורות ודוחות Z שהושלמו. כתובות הסגירה וההפקדה הקודמות פותחות מרחב זה; API ישן שומר על המסלול הקודם. ראו [תהליך הקופה המאוחד](/he/help/payments/end-of-day#unified-cash-workspace)."
         }
+      },
+      {
+        "id": "transaction-history",
+        "title": {
+          "en": "Review completed payments",
+          "fr": "Consulter les paiements confirmés",
+          "he": "צפייה בתשלומים שאושרו"
+        },
+        "instructions": {
+          "en": "Open Transactions to review recorded cash, POS card and online payments. Follow [transaction history](/en/help/payments/transactions) for filters, payment origins, returns and unavailable original orders. This shared history does not retrieve all payments from Ashrait.",
+          "fr": "Ouvrez Transactions pour consulter les encaissements espèces, carte en caisse et en ligne enregistrés. Suivez [l’historique des transactions](/fr/help/payments/transactions) pour les filtres, origines, retours et commandes d’origine indisponibles. Cet historique partagé ne télécharge pas tous les paiements depuis Ashrait.",
+          "he": "פתחו עסקאות לצפייה בתקבולי מזומן, כרטיס בקופה ואונליין שנרשמו. ראו [היסטוריית עסקאות](/he/help/payments/transactions) לסינון, מקור, החזרים והזמנות מקוריות שאינן זמינות. ההיסטוריה המשותפת אינה מורידה את כל התשלומים מ-Ashrait."
+        }
+      },
+      {
+        "id": "ashrait-last-transaction-inspection",
+        "title": {
+          "fr": "Consulter la dernière transaction du terminal",
+          "en": "Inspect the last terminal transaction",
+          "he": "צפייה בעסקה האחרונה במסוף"
+        },
+        "instructions": {
+          "fr": "Dans Matériel → Terminaux de paiement, un responsable peut consulter la dernière transaction du terminal connecté. Cette lecture ne modifie aucun paiement. Voir [la procédure et ses limites](/fr/help/payments/ashrait-terminal-inspection).",
+          "en": "In Hardware → Payment terminals, a manager can inspect the last transaction on the connected terminal. This read changes no payment. See [the procedure and its limits](/en/help/payments/ashrait-terminal-inspection).",
+          "he": "בחומרה ← מסופי תשלום מנהל יכול לצפות בעסקה האחרונה במסוף המחובר. הקריאה אינה משנה תשלום. ראו [הוראות ומגבלות](/he/help/payments/ashrait-terminal-inspection)."
+        }
       }
     ],
     "audience": "public",
@@ -11454,10 +11440,24 @@
           "fr": "Sur iPad, choisissez Carte sur la commande ou l’addition financière existante, vérifiez la fenêtre du terminal de paiement puis confirmez explicitement Mini ou Portable. Le terminal configuré par défaut est présélectionné ; aucun autre appareil connecté ne le remplace automatiquement. Annuler n’envoie aucun paiement. Sur un Victa Portable exécutant FoodyPOS, ouvrez cette même commande ou addition enregistrée et utilisez son lecteur intégré. Ne recréez pas la vente. Une réservation serveur protège le terminal physique et les commandes sélectionnées pendant l’encaissement. Un autre appareil ou moyen de paiement doit attendre. Les commandes QR conservent leurs identifiants et paiements séparés.\n\nSi le résultat est inconnu, conservez le POS et le terminal d’origine puis reprenez l’opération existante. Ni le temps écoulé ni un redémarrage n’autorisent un nouveau débit. Un refus ou une annulation définitive permet un nouvel essai revu. Une approbation confirmée doit être enregistrée avec sa réservation d’origine avant libération. Ce changement concerne le choix de destination, sans modifier les réglages d’impression existants ; validez le matériel, le contrôle distant du Portable et l’impression intégrée avec Verifone.",
           "he": "באייפד, בחרו כרטיס בהזמנה או בחשבון הכספי הקיימים, בדקו את חלון מסוף התשלום ואשרו במפורש Mini או Portable. ברירת המחדל שהוגדרה מסומנת בתחילה; אין מעבר אוטומטי למכשיר מחובר אחר. ביטול אינו שולח תשלום. ב-Victa Portable שמריץ FoodyPOS, פתחו את אותה הזמנה או חשבון שמורים והשתמשו בקורא המובנה. אין ליצור מכירה נוספת. שריון שרת מגן על המסוף הפיזי ועל ההזמנות שנבחרו בזמן הגבייה. מכשיר אחר או אמצעי תשלום אחר צריכים להמתין. הזמנות QR שומרות על מזהים ותשלומים נפרדים.\n\nאם התוצאה אינה ידועה, שמרו על הקופה והמסוף המקוריים והמשיכו את הפעולה הקיימת. זמן שחלף או הפעלה מחדש אינם מתירים חיוב נוסף. סירוב או ביטול ודאיים מאפשרים ניסיון חדש לאחר בדיקה. אישור תשלום ודאי חייב להירשם עם השריון המקורי לפני שחרורו. השינוי נוגע לבחירת היעד ואינו משנה הגדרות הדפסה קיימות; יש לאמת חומרה, שליטה מרחוק ב-Portable והדפסה מובנית עם Verifone."
         }
+      },
+      {
+        "id": "ashrait-last-transaction-inspection",
+        "title": {
+          "fr": "Consulter la dernière transaction du terminal",
+          "en": "Inspect the last terminal transaction",
+          "he": "צפייה בעסקה האחרונה במסוף"
+        },
+        "instructions": {
+          "fr": "Dans Matériel → Terminaux de paiement, un responsable peut consulter la dernière transaction du terminal connecté. Cette lecture ne modifie aucun paiement. Voir [la procédure et ses limites](/fr/help/payments/ashrait-terminal-inspection).",
+          "en": "In Hardware → Payment terminals, a manager can inspect the last transaction on the connected terminal. This read changes no payment. See [the procedure and its limits](/en/help/payments/ashrait-terminal-inspection).",
+          "he": "בחומרה ← מסופי תשלום מנהל יכול לצפות בעסקה האחרונה במסוף המחובר. הקריאה אינה משנה תשלום. ראו [הוראות ומגבלות](/he/help/payments/ashrait-terminal-inspection)."
+        }
       }
     ],
     "audience": "public",
-    "status": "available"
+    "status": "available",
+    "procedureUpdatedAt": "2026-11-04"
   },
   {
     "id": "pos-cash-access-diagnostics",
@@ -11768,6 +11768,19 @@
           "en": "With payment permissions and compatible versions, open More → Reports → Current drawer. The same workspace shows the cash drawer, recorded card collections by terminal and guided closing. Drawer history combines closed cash sessions and finalized Z reports. Older closing and deposit addresses open this workspace; older APIs retain their previous workflow. See [the unified cash workflow](/en/help/payments/end-of-day#unified-cash-workspace).",
           "he": "עם הרשאות תשלום וגרסאות תואמות, פתחו עוד ← דוחות ← יתרת קופה. אותו מרחב מציג את מגירת המזומנים, חיובי הכרטיס שנרשמו לפי מסוף וסגירה מודרכת. היסטוריית קופה משלבת משמרות מזומן סגורות ודוחות Z שהושלמו. כתובות הסגירה וההפקדה הקודמות פותחות מרחב זה; API ישן שומר על המסלול הקודם. ראו [תהליך הקופה המאוחד](/he/help/payments/end-of-day#unified-cash-workspace)."
         }
+      },
+      {
+        "id": "ashrait-last-transaction-inspection",
+        "title": {
+          "fr": "Consulter la dernière transaction du terminal",
+          "en": "Inspect the last terminal transaction",
+          "he": "צפייה בעסקה האחרונה במסוף"
+        },
+        "instructions": {
+          "fr": "Dans Matériel → Terminaux de paiement, un responsable peut consulter la dernière transaction du terminal connecté. Cette lecture ne modifie aucun paiement. Voir [la procédure et ses limites](/fr/help/payments/ashrait-terminal-inspection).",
+          "en": "In Hardware → Payment terminals, a manager can inspect the last transaction on the connected terminal. This read changes no payment. See [the procedure and its limits](/en/help/payments/ashrait-terminal-inspection).",
+          "he": "בחומרה ← מסופי תשלום מנהל יכול לצפות בעסקה האחרונה במסוף המחובר. הקריאה אינה משנה תשלום. ראו [הוראות ומגבלות](/he/help/payments/ashrait-terminal-inspection)."
+        }
       }
     ],
     "audience": "public",
@@ -11792,14 +11805,18 @@
     "selectors": {
       "foodypos": [
         "lib/features/settings/presentation/printer_settings_page.dart",
-        "lib/features/settings/presentation/printer*.dart"
+        "lib/features/settings/presentation/printer*.dart",
+        "lib/services/printing/receipt_delivery*.dart"
       ],
       "foodyadmin": [
         "src/app/[restaurantId]/settings/printers/**",
         "src/lib/printer-profile-state.ts"
       ],
       "foodyserver": [
-        "internal/foodyspooler/**"
+        "internal/foodyspooler/**",
+        "internal/printing/customer_receipts.go",
+        "internal/common/receipt_print_request.go",
+        "migrations/289_device_receipt_requests.sql"
       ]
     },
     "operations": [
@@ -11867,6 +11884,19 @@
           "en": "Open More → Hardware → Printers → Profiles, select the profile and choose Edit. The editor fills the mobile screen. Choose Receipts, In-person tickets or Online tickets to open its options. The switch enables that document type in the draft; select categories under Categories to print. Remove top margin preserves the bottom setting; the bottom margin remains separately editable. Shared profile preferences apply across its ticket types. Return to the editor and Save; leaving a changed draft asks for confirmation, and a failed save retains it. Automatically including new categories does not mean automatically printing new orders. Installation assignments remain separate from the shared profile.",
           "he": "פתחו עוד → חומרה → מדפסות → פרופילים, בחרו פרופיל ואז עריכה. העורך ממלא את מסך הנייד. בחרו קבלות, כרטיסים במקום או כרטיסים מקוונים כדי לפתוח אפשרויות. המתג מפעיל את סוג המסמך בטיוטה; בחרו קטגוריות בקטגוריות להדפסה. הסרת השוליים העליונים שומרת את הגדרת השוליים התחתונים, הניתנת לעריכה בנפרד. העדפות הפרופיל המשותפות חלות על סוגי הכרטיסים שלו. חזרו לעורך ושמרו; יציאה מטיוטה ששונתה דורשת אישור וכשל בשמירה שומר את הטיוטה. הכללה אוטומטית של קטגוריות חדשות אינה הדפסה אוטומטית של הזמנות חדשות. שיוכי ההתקנות נשארים נפרדים מהפרופיל המשותף."
         }
+      },
+      {
+        "id": "device-receipt-destinations",
+        "title": {
+          "fr": "Choisir les reçus de chaque appareil",
+          "en": "Choose receipt destinations for each device",
+          "he": "בחירת יעדי קבלות לכל מכשיר"
+        },
+        "instructions": {
+          "fr": "Sur une version compatible de l’API et de FoodyPOS, ouvrez Plus → Paramètres → Imprimantes → Reçus de cet appareil. Avec la permission de gestion des imprimantes, sélectionnez une ou plusieurs imprimantes déjà affectées à un profil Reçus, puis Enregistrer. Sur le Victa Portable, l’imprimante intégrée est choisie par défaut. Sur iPad, l’Epson TM-m30III affectée aux reçus est privilégiée. Si aucune destination attendue n’est disponible, configurez son profil ou choisissez explicitement une autre imprimante. Une destination enregistrée devenue indisponible n’est jamais remplacée automatiquement. Le choix est conservé pour cette installation, ce restaurant et cet environnement ; il ne modifie ni l’iPad, ni un autre Victa, ni le profil partagé.\n\nAprès le paiement confirmé d’une addition ordinaire, Imprimer le reçu utilise ce choix. Autres imprimantes… permet de cocher le Victa, l’Epson ou les deux pour cette vente et de confirmer par Imprimer le reçu. Cette exception ne change pas les valeurs par défaut. Chaque destination sélectionnée reçoit un exemplaire. Le nouveau parcours demande le reçu à la demande et ne crée pas en plus un reçu automatique à la confirmation du paiement. Les anciens clients et les parcours de partage financier conservent leur fonctionnement antérieur : déployez l’API compatible avant la mise à jour POS et vérifiez la version installée.",
+          "en": "With compatible API and FoodyPOS versions, open More → Settings → Printers → Receipts from this device. With printer-management permission, select one or more printers already assigned a Receipts profile, then Save. Victa Portable defaults to its integrated printer. On iPad, an assigned Epson TM-m30III receipt printer is preferred. If the expected destination is unavailable, configure its profile or explicitly choose another printer. A saved destination that becomes unavailable is never automatically substituted. The choice belongs to this installation, restaurant and environment; it changes neither another iPad or Victa nor the shared profile.\n\nAfter confirmed payment of an ordinary check, Print receipt uses that choice. Other printers… lets you select the Victa, Epson or both for this sale, then confirm with Print receipt. This exception does not change defaults. Each selected destination receives one copy. The new flow requests receipts on demand and does not also create an automatic receipt at payment confirmation. Older clients and financial-share flows retain their previous behavior: deploy the compatible API before updating POS and verify the installed version.",
+          "he": "בגרסאות תואמות של ה-API ושל FoodyPOS, פתחו עוד → הגדרות → מדפסות → קבלות ממכשיר זה. עם הרשאת ניהול מדפסות, בחרו מדפסת אחת או יותר שכבר משויכות לפרופיל קבלות ולחצו שמירה. ב-Victa Portable ברירת המחדל היא המדפסת המובנית. ב-iPad ניתנת עדיפות ל-Epson TM-m30III המשויכת לקבלות. אם היעד הצפוי אינו זמין, הגדירו את הפרופיל שלו או בחרו במפורש מדפסת אחרת. יעד שמור שהפך ללא זמין אינו מוחלף אוטומטית. הבחירה נשמרת להתקנה, למסעדה ולסביבה האלה בלבד; היא אינה משנה iPad או Victa אחרים או את הפרופיל המשותף.\n\nאחרי תשלום מאושר של חשבון רגיל, הדפסת קבלה משתמשת בבחירה הזו. מדפסות אחרות… מאפשר לבחור Victa, Epson או את שתיהן למכירה הזו ולאשר בהדפסת קבלה. הבחירה החד-פעמית אינה משנה את ברירות המחדל. כל יעד שנבחר מקבל עותק אחד. המסלול החדש מבקש קבלות לפי דרישה ואינו יוצר בנוסף קבלה אוטומטית בעת אישור התשלום. לקוחות ישנים ומסלולי חשבונות מפוצלים שומרים על ההתנהגות הקודמת: פרסו API תואם לפני עדכון POS ובדקו את הגרסה המותקנת."
+        }
       }
     ],
     "audience": "public",
@@ -11890,7 +11920,11 @@
     },
     "selectors": {
       "foodypos": [
-        "lib/features/settings/presentation/printer_history_page.dart"
+        "lib/features/settings/presentation/printer_history_page.dart",
+        "lib/services/printing/print_spooler_fleet.dart",
+        "lib/services/printing/foody_print_spooler.dart",
+        "lib/services/printing/print_spooler_repository.dart",
+        "lib/services/printing/print_spooler_provider.dart"
       ],
       "foodyserver": [
         "internal/foodyspooler/**",
@@ -11961,6 +11995,19 @@
           "fr": "Matériel → Imprimantes → choisissez l’imprimante → Afficher l’historique ouvre une liste mobile avec retour en haut. Actualiser et Charger la suite restent des lectures. Le bouton de test d’impression est une action distincte sur la fiche de l’imprimante ; consulter l’historique ne lance aucun test, reprise ou réimpression.",
           "en": "Hardware → Printers → select the printer → View history opens a mobile list with a back control at the top. Refresh and Load more remain read-only. Print test is a separate action on the printer details page; opening history starts no test, retry or reprint.",
           "he": "חומרה → מדפסות → בחירת מדפסת → הצגת היסטוריה פותח רשימה בנייד עם כפתור חזרה בראש המסך. רענון וטעינת המשך הם לקריאה בלבד. בדיקת הדפסה היא פעולה נפרדת בפרטי המדפסת; פתיחת ההיסטוריה אינה מפעילה בדיקה, ניסיון חוזר או הדפסה חוזרת."
+        }
+      },
+      {
+        "id": "independent-receipt-results",
+        "title": {
+          "fr": "Reprendre seulement l’imprimante en échec",
+          "en": "Recover only the failed receipt printer",
+          "he": "טיפול רק במדפסת הקבלות שנכשלה"
+        },
+        "instructions": {
+          "fr": "Sur les versions compatibles, le Victa et les imprimantes réseau ont des files locales indépendantes. Une Epson hors ligne ne bloque pas l’impression intégrée du Victa. Après une demande sur plusieurs destinations, l’écran indique le résultat de chacune dès qu’il est connu : Imprimé, En attente ou un échec. Vous pouvez choisir Nouvelle vente ; les reçus déjà demandés restent dans la file durable.\n\nRéessayer n’est proposé que pour un échec confirmé avant envoi et reprend le même travail, sur cette imprimante seulement. Une destination déjà imprimée n’est pas réimprimée. Une impression non confirmée exige le contrôle du papier et de l’historique avant toute nouvelle copie ; ne relancez jamais le paiement. Au redémarrage, la demande conservée reprend avec sa même identité et ses mêmes destinations, sans créer une nouvelle copie. Les anciens travaux Epson déjà en attente ne sont ni supprimés ni annulés par le choix d’une destination de reçu.",
+          "en": "On compatible versions, the Victa and network printers have independent local workers. An offline Epson does not block the Victa integrated printer. After requesting several destinations, the screen shows each result as it becomes known: Printed, Waiting or a failure. You can choose New sale; already requested receipts remain in the durable queue.\n\nRetry is offered only for a confirmed failure before dispatch and resumes the same job on that printer alone. An already printed destination is not printed again. Unconfirmed printing requires checking paper and history before any additional copy; never repeat payment. After restart, the saved request resumes with its original identity and destinations, without creating a new copy. Selecting a receipt destination neither deletes nor cancels older queued Epson jobs.",
+          "he": "בגרסאות תואמות, ל-Victa ולמדפסות הרשת יש תורים מקומיים עצמאיים. Epson לא מקוונת אינה חוסמת את המדפסת המובנית של Victa. אחרי בקשה למספר יעדים, המסך מציג את התוצאה של כל מדפסת כשהיא ידועה: הודפס, ממתין או כישלון. אפשר לבחור מכירה חדשה; הקבלות שכבר התבקשו נשארות בתור המתמשך.\n\nניסיון נוסף מוצע רק כשאושר כישלון לפני שליחת המסמך, והוא ממשיך את אותה משימה במדפסת הזו בלבד. יעד שכבר הודפס אינו מודפס שוב. הדפסה לא מאושרת מחייבת בדיקת הנייר וההיסטוריה לפני עותק נוסף; אין לחזור על התשלום. אחרי הפעלה מחדש, הבקשה השמורה ממשיכה עם אותו מזהה ואותם יעדים בלי ליצור עותק חדש. בחירת יעד לקבלות אינה מוחקת או מבטלת משימות Epson ישנות שכבר ממתינות."
         }
       }
     ],
@@ -13639,9 +13686,9 @@
           "he": "גישה להגדרות החדשות"
         },
         "instructions": {
-          "fr": "Usage and quotas ouvre la comparaison des consommations par service et par restaurant. Review allocation et le lien de la fiche restaurant ouvrent les plafonds mensuels ; leur enregistrement exige un motif et conserve tous les compteurs. Ces contrôles sont réservés au superadmin, distincts du choix de connexion du site.",
-          "en": "Usage and quotas compares service consumption across restaurants. Review allocation and the restaurant-detail link open monthly limits; saving requires a reason and preserves all counters. These controls are superadmin-only and separate from the storefront sign-in preference.",
-          "he": "Usage and quotas מציג השוואת צריכה לפי שירות ומסעדה. Review allocation והקישור בכרטיס המסעדה פותחים תקרות חודשיות; שמירה מחייבת סיבה ושומרת את כל המונים. הכלים למנהל־על בלבד ונפרדים מהעדפת ההתחברות באתר."
+          "fr": "Usage and quotas ouvre la comparaison des consommations par service et par restaurant. Review allocation et le lien de la fiche restaurant ouvrent les plafonds mensuels ; leur enregistrement exige un motif et conserve tous les compteurs. Ces contrôles sont réservés au superadmin, distincts du choix de connexion du site.\n\nSur les versions compatibles, Parc des terminaux est également réservé aux superadmins Foody. Il liste les appareils entre restaurants ; les numéros DID/SHVA et le fournisseur saisis restent des déclarations auditées, pas une configuration bancaire appliquée.",
+          "en": "Usage and quotas compares service consumption across restaurants. Review allocation and the restaurant-detail link open monthly limits; saving requires a reason and preserves all counters. These controls are superadmin-only and separate from the storefront sign-in preference.\n\nOn compatible versions, Terminal fleet is also restricted to Foody superadmins. It lists devices across restaurants; entered DID/SHVA numbers and supplier remain audited declarations, not applied bank configuration.",
+          "he": "Usage and quotas מציג השוואת צריכה לפי שירות ומסעדה. Review allocation והקישור בכרטיס המסעדה פותחים תקרות חודשיות; שמירה מחייבת סיבה ושומרת את כל המונים. הכלים למנהל־על בלבד ונפרדים מהעדפת ההתחברות באתר.\n\nבגרסאות תואמות, צי המסופים מוגבל גם הוא למנהלי־על של Foody. הוא מציג מכשירים בין מסעדות; מספרי DID/שב״א והספק שהוזנו נשארים הצהרות מתועדות, ולא הגדרת בנק שהוחלה."
         }
       }
     ],
@@ -13710,9 +13757,9 @@
           "he": "גישה להגדרות החדשות"
         },
         "instructions": {
-          "fr": "Usage and quotas ouvre la comparaison des consommations par service et par restaurant. Review allocation et le lien de la fiche restaurant ouvrent les plafonds mensuels ; leur enregistrement exige un motif et conserve tous les compteurs. Ces contrôles sont réservés au superadmin, distincts du choix de connexion du site.",
-          "en": "Usage and quotas compares service consumption across restaurants. Review allocation and the restaurant-detail link open monthly limits; saving requires a reason and preserves all counters. These controls are superadmin-only and separate from the storefront sign-in preference.",
-          "he": "Usage and quotas מציג השוואת צריכה לפי שירות ומסעדה. Review allocation והקישור בכרטיס המסעדה פותחים תקרות חודשיות; שמירה מחייבת סיבה ושומרת את כל המונים. הכלים למנהל־על בלבד ונפרדים מהעדפת ההתחברות באתר."
+          "fr": "Usage and quotas ouvre la comparaison des consommations par service et par restaurant. Review allocation et le lien de la fiche restaurant ouvrent les plafonds mensuels ; leur enregistrement exige un motif et conserve tous les compteurs. Ces contrôles sont réservés au superadmin, distincts du choix de connexion du site.\n\nLe parc global permet de déclarer un terminal en réparation ou retourné et de renseigner ses identifiants commerciaux. Cela ne réaffecte pas l’appareil et ne configure pas un nouveau prestataire de paiement ; suivez la procédure régionale confirmée avec Verifone avant sa remise en service.",
+          "en": "Usage and quotas compares service consumption across restaurants. Review allocation and the restaurant-detail link open monthly limits; saving requires a reason and preserves all counters. These controls are superadmin-only and separate from the storefront sign-in preference.\n\nThe global fleet can record a terminal as under repair or returned and maintain its declared commercial identifiers. This neither reassigns hardware nor configures a new payment supplier; follow the confirmed regional Verifone procedure before returning it to service.",
+          "he": "Usage and quotas מציג השוואת צריכה לפי שירות ומסעדה. Review allocation והקישור בכרטיס המסעדה פותחים תקרות חודשיות; שמירה מחייבת סיבה ושומרת את כל המונים. הכלים למנהל־על בלבד ונפרדים מהעדפת ההתחברות באתר.\n\nבצי הגלובלי אפשר לתעד מסוף בתיקון או מסוף שהוחזר ולתחזק את המזהים המסחריים המוצהרים שלו. הדבר אינו משייך מחדש חומרה ואינו מגדיר ספק תשלומים חדש; לפני החזרה לשירות יש לפעול לפי הנוהל האזורי שאושר עם Verifone."
         }
       }
     ],
@@ -14049,11 +14096,19 @@
         "internal/**",
         "cmd/**",
         "config/**",
-        "migrations/280_check_submission_recovery_scope.sql"
+        "migrations/280_check_submission_recovery_scope.sql",
+        "internal/admin/terminal_fleet*.go",
+        "internal/common/terminal_fleet.go",
+        "migrations/290_terminal_fleet_metadata.sql"
       ],
       "foodyweb": [
         "app/api/**",
         "app/sw.js/**"
+      ],
+      "foodybackoffice": [
+        "src/app/dashboard/terminals/**",
+        "src/lib/api.ts",
+        "src/components/Sidebar.tsx"
       ]
     },
     "operations": [
@@ -14564,6 +14619,32 @@
           "en": "POST /api/v1/orders accepts the optional staff-only boolean production_plan. Omission retains legacy behavior. False excludes the order from the production sheet and its date counts, including after payment, scheduling or automatic force_production changes. True pins a manual non-hosted order; an ordinary prepared link still waits for collected payment and events retain their confirmation gates. The server owns the persisted external_metadata.production_plan value and rejects direct metadata injection. Guest creation strips the input, and service-level guest calls cannot supply it. Explicit staff pin/unpin actions supersede the creation choice and restore the existing manual-override/automatic rules. No shared response model or schema migration changes; older POS and guest clients can omit the optional input.",
           "fr": "POST /api/v1/orders accepte le booléen staff facultatif production_plan. Son absence conserve les règles antérieures. False exclut la commande du tableau de production et du comptage des jours, y compris après paiement, programmation ou changement automatique de force_production. True ajoute une commande manuelle sans paiement hébergé ; un lien préparé ordinaire attend encore un paiement collecté et un événement conserve ses conditions de confirmation. Le serveur possède external_metadata.production_plan et refuse son injection directe. La création publique efface le champ et un appel de service invité ne peut pas le fournir. Les actions staff explicites d’ajout/retrait manuel remplacent le choix initial et rétablissent les règles existantes d’ajout manuel/automatique. Aucun modèle de réponse partagé ni migration ne change ; les anciens clients POS et invités peuvent omettre ce champ optionnel.",
           "he": "POST /api/v1/orders מקבל את השדה הבוליאני האופציונלי production_plan לצוות בלבד. השמטתו שומרת על הכללים הקודמים. False מוציא את ההזמנה מטבלת הייצור ומספירת הימים, גם אחרי תשלום, תזמון או שינוי אוטומטי של force_production. True מוסיף הזמנה ידנית ללא תשלום מתארח; קישור מוכן רגיל עדיין ממתין לתשלום שנגבה ואירוע שומר על תנאי האישור שלו. השרת מנהל את external_metadata.production_plan ודוחה הזרקת מטא־נתונים ישירה. יצירה ציבורית מסירה את השדה וקריאת שירות של אורח אינה רשאית לספק אותו. פעולות צוות מפורשות להוספה או הסרת הוספה ידנית מחליפות את הבחירה הראשונית ומחזירות את כללי ההוספה הידנית והאוטומטית הקיימים. אין שינוי במודל התשובה המשותף או מיגרציה; לקוחות POS ואורחים ישנים יכולים להשמיט את השדה האופציונלי."
+        }
+      },
+      {
+        "id": "device-receipt-contract",
+        "title": {
+          "fr": "Déployer la demande de reçu par appareil",
+          "en": "Release device-scoped receipt requests",
+          "he": "פריסת בקשות קבלה לפי מכשיר"
+        },
+        "instructions": {
+          "fr": "Préparation locale : appliquer la migration 289 et déployer l’API compatible avant le POS. La capacité receipt-capabilities annonce device_receipts_version=1 ; les clients mis à jour transmettent receipt_on_request=true aux règlements ordinaires simples ou groupés. Le paiement est enregistré avec ses journaux existants, sans reçu automatique supplémentaire. Le POST staff /restaurants/:id/printing/spooler/receipts exige orders.manage et un contexte restaurant identique. Il lie request_id, spooler_id, order_ids payés, printer_ids affectés et locale à une demande immuable ; une reprise exacte retourne les travaux initiaux et une intention différente renvoie 409. La preuve d’appartenance du terminal intégré reste exigée. Le GET de statut est en lecture seule et n’envoie aucun document. Les anciens clients et les partages financiers conservent leurs contrats ; la cuisine reste séparée. Les tests synthétiques ne certifient pas l’installation physique ni une livraison en production. Valider en développement avant promotion approuvée du même artefact.",
+          "en": "Local preparation: apply migration 289 and deploy the compatible API before POS. Receipt capabilities advertise device_receipts_version=1; updated clients send receipt_on_request=true for ordinary single/batch settlements. Payment uses its existing journals without an additional automatic receipt. Staff POST /restaurants/:id/printing/spooler/receipts requires orders.manage and identical restaurant context. It binds request_id, spooler_id, paid order_ids, assigned printer_ids and locale to one immutable request; an exact replay returns the original jobs and a changed intent returns 409. Integrated-terminal ownership proof remains required. The status GET is read-only and sends no document. Older clients and financial shares retain their contracts; kitchen dispatch remains separate. Synthetic tests do not certify physical installation or production delivery. Validate development before approved promotion of the same artifact.",
+          "he": "הכנה מקומית: החילו מיגרציה 289 ופרסו API תואם לפני POS. יכולת receipt-capabilities מצהירה על device_receipts_version=1; לקוחות מעודכנים שולחים receipt_on_request=true בסגירת תשלומים רגילים בודדים או קבוצתיים. התשלום נרשם ביומנים הקיימים בלי קבלה אוטומטית נוספת. POST לצוות /restaurants/:id/printing/spooler/receipts דורש orders.manage והקשר מסעדה זהה. הוא קושר request_id, spooler_id, order_ids ששולמו, printer_ids משויכים ושפה לבקשה בלתי משתנה; חזרה זהה מחזירה את המשימות המקוריות ושינוי כוונה מחזיר 409. עדיין נדרשת הוכחת בעלות על המסוף המובנה. GET הסטטוס הוא לקריאה בלבד ואינו שולח מסמך. לקוחות ישנים וחשבונות מפוצלים שומרים על החוזים שלהם; שליחת המטבח נפרדת. בדיקות סינתטיות אינן מאשרות התקנה פיזית או מסירה בייצור. יש לאמת בפיתוח לפני קידום מאושר של אותו ארטיפקט."
+        }
+      },
+      {
+        "id": "terminal-fleet-declarations",
+        "title": {
+          "en": "Global terminal declarations",
+          "fr": "Déclarations du parc de terminaux",
+          "he": "הצהרות במלאי המסופים"
+        },
+        "instructions": {
+          "en": "On compatible API and Backoffice versions, a Foody superadmin opens Backoffice → Terminal fleet to search terminals across restaurants and edit declared serial, DID, SHVA terminal number, supplier, acquirer and lifecycle. Save checks the current revision and records an audit event. These values remain declared, not applied: saving does not reassign hardware, alter banking parameters or start an Ashrait command. A returned/repair label alone does not authorize reuse. Remote bank configuration and its verified readback remain unavailable pending the regional Verifone contract. Restaurant Admin retains its restaurant scope. Never enter credentials or card data in these fields.",
+          "fr": "Sur les versions compatibles de l’API et du Backoffice, un superadmin Foody ouvre Backoffice → Terminal fleet pour rechercher les terminaux de tous les restaurants et modifier la série, le DID, le numéro SHVA, le fournisseur, l’acquéreur et le cycle de vie déclarés. Enregistrer vérifie la révision et crée une trace d’audit. Ces valeurs restent déclarées, non appliquées : la sauvegarde ne réattribue pas le matériel, ne change pas ses paramètres bancaires et ne lance aucune commande Ashrait. Un libellé Retourné ou Réparation n’autorise pas sa réutilisation. La configuration bancaire distante et sa vérification restent indisponibles en attendant le contrat régional Verifone. L’Admin conserve son périmètre restaurant. Ne saisissez aucun secret ni donnée de carte dans ces champs.",
+          "he": "בגרסאות תואמות של ה-API וה-Backoffice, סופר-אדמין Foody פותח Backoffice → Terminal fleet לחיפוש מסופים בכל המסעדות ולעריכת מספר סידורי, DID, מספר שב״א, ספק, סולק ומצב מחזור חיים שהוצהרו. השמירה בודקת את הגרסה ורושמת אירוע ביקורת. הערכים נשארים מוצהרים ולא מיושמים: שמירה אינה משייכת חומרה מחדש, משנה פרמטרים בנקאיים או מפעילה פקודת Ashrait. סימון הוחזר או בתיקון אינו מאשר שימוש חוזר. הגדרה בנקאית מרחוק ואימות היישום עדיין אינם זמינים עד לקבלת החוזה האזורי מ-Verifone. ממשק ניהול המסעדה נשאר מוגבל למסעדה שלה. אין להזין סודות או נתוני כרטיס בשדות האלה."
         }
       },
       {
@@ -15901,9 +15982,9 @@
           "he": "ספירה, שידור ושמירה"
         },
         "instructions": {
-          "fr": "Avec payments.manage, ouvrez Clôture de journée sur le POS d’origine. Une clôture incluant des espèces exige aussi orders.manage. Vérifiez les éléments affichés ; comptez physiquement les espèces si une caisse est ouverte et saisissez le montant réel. Le début de clôture fige le comptage et réserve cette caisse : aucune nouvelle vente espèces, entrée/sortie, restitution ou clôture parallèle ne doit modifier ce comptage. Si un terminal est inclus, le Victa Mini configuré doit être connecté sur iPad, ou le terminal intégré doit être prêt sur Victa Portable. En fin de journée, confirmez la transmission une seule fois et attendez son résultat final. Une commande acceptée ne prouve pas une transmission terminée. Les totaux et le numéro de lot restent indisponibles si la réponse prise en charge ne les fournit pas ; ne les interprétez pas comme zéro. Lorsque les transmissions incluses sont confirmées, finalisez explicitement la clôture. Le serveur ferme uniquement la caisse réservée, si elle existe, et archive le rapport Z Foody figé. Consultez ce rapport dans le même parcours ; aucune impression physique n’est garantie. Ne répétez pas régulièrement le dépôt pendant la journée.",
-          "en": "With payments.manage, open End of day on the original POS. Including cash also requires orders.manage. Check the displayed scope; physically count any open drawer and enter the actual amount. Beginning closing freezes the count and reserves that drawer: new cash sales, paid in/out, refunds or a parallel closing cannot change this count. If a terminal is included, the configured Victa Mini must be connected on iPad, or the integrated terminal must be ready on Victa Portable. At end of day, explicitly confirm transmission once and wait for its final result. Command acceptance does not prove completed transmission. Totals and the batch number remain unavailable if the supported response does not supply them; never interpret them as zero. After all included transmissions are confirmed, explicitly finalize closing. The server closes only the reserved drawer, if present, and archives the frozen Foody Z report. View it in the same flow; no physical print is guaranteed. Do not deposit repeatedly during the day.",
-          "he": "עם הרשאת payments.manage פתחו סגירת יום בקופה המקורית. הכללת מזומן דורשת גם orders.manage. בדקו את ההיקף המוצג; ספרו פיזית מגירה פתוחה והזינו את הסכום בפועל. התחלת הסגירה מקפיאה את הספירה ושומרת את המגירה: מכירות מזומן חדשות, הכנסות והוצאות, החזרים או סגירה מקבילה לא יכולים לשנות אותה. אם נכלל מסוף, ב־iPad יש לחבר את ה־Victa Mini שהוגדר, או שהמסוף המובנה ב־Victa Portable חייב להיות מוכן. בסוף היום אשרו שידור פעם אחת והמתינו לתוצאה הסופית. קבלת הפקודה אינה הוכחה לשידור שהושלם. סכומים ומספר אצווה נשארים לא זמינים אם התשובה הנתמכת אינה מספקת אותם; אין לפרש אותם כאפס. לאחר שכל השידורים שנכללו אושרו, השלימו את הסגירה במפורש. השרת סוגר רק את המגירה שנשמרה, אם קיימת, ושומר את דוח Z הקבוע של Foody. צפו בדוח באותו מסלול; אין הבטחה להדפסה פיזית. אין לבצע הפקדות חוזרות באופן תדיר במהלך היום."
+          "fr": "Avec payments.manage, ouvrez Clôture de journée sur le POS d’origine. Une clôture incluant des espèces exige aussi orders.manage. Vérifiez les éléments affichés ; comptez physiquement les espèces si une caisse est ouverte et saisissez le montant réel. Le début de clôture fige le comptage et réserve cette caisse : aucune nouvelle vente espèces, entrée/sortie, restitution ou clôture parallèle ne doit modifier ce comptage. Si un terminal est inclus, le Victa Mini configuré doit être connecté sur iPad, ou le terminal intégré doit être prêt sur Victa Portable. En fin de journée, confirmez la transmission une seule fois et attendez son résultat final. Une commande acceptée ne prouve pas une transmission terminée. Les totaux et le numéro de lot restent indisponibles si la réponse prise en charge ne les fournit pas ; ne les interprétez pas comme zéro. Lorsque les transmissions incluses sont confirmées, finalisez explicitement la clôture. Le serveur ferme uniquement la caisse réservée, si elle existe, et archive le rapport Z Foody figé. Consultez ce rapport dans le même parcours ; aucune impression physique n’est garantie. Ne répétez pas régulièrement le dépôt pendant la journée.\n\nSur iPad, vérifiez aussi les imprimantes de reçus affectées dans Matériel. Leur chargement se fait avant une opération susceptible d’imprimer et ne conditionne pas la reconnexion automatique du Mini. Le succès du dépôt ne garantit pas à lui seul un rapport bancaire imprimable : le format régional SHVA et sa réimpression restent à confirmer.",
+          "en": "With payments.manage, open End of day on the original POS. Including cash also requires orders.manage. Check the displayed scope; physically count any open drawer and enter the actual amount. Beginning closing freezes the count and reserves that drawer: new cash sales, paid in/out, refunds or a parallel closing cannot change this count. If a terminal is included, the configured Victa Mini must be connected on iPad, or the integrated terminal must be ready on Victa Portable. At end of day, explicitly confirm transmission once and wait for its final result. Command acceptance does not prove completed transmission. Totals and the batch number remain unavailable if the supported response does not supply them; never interpret them as zero. After all included transmissions are confirmed, explicitly finalize closing. The server closes only the reserved drawer, if present, and archives the frozen Foody Z report. View it in the same flow; no physical print is guaranteed. Do not deposit repeatedly during the day.\n\nOn iPad, also check the assigned receipt printers in Hardware. They are loaded before an operation that may print and do not gate automatic Mini reconnection. A successful deposit alone does not guarantee a printable bank report: the regional SHVA report format and safe reprinting still need confirmation.",
+          "he": "עם הרשאת payments.manage פתחו סגירת יום בקופה המקורית. הכללת מזומן דורשת גם orders.manage. בדקו את ההיקף המוצג; ספרו פיזית מגירה פתוחה והזינו את הסכום בפועל. התחלת הסגירה מקפיאה את הספירה ושומרת את המגירה: מכירות מזומן חדשות, הכנסות והוצאות, החזרים או סגירה מקבילה לא יכולים לשנות אותה. אם נכלל מסוף, ב־iPad יש לחבר את ה־Victa Mini שהוגדר, או שהמסוף המובנה ב־Victa Portable חייב להיות מוכן. בסוף היום אשרו שידור פעם אחת והמתינו לתוצאה הסופית. קבלת הפקודה אינה הוכחה לשידור שהושלם. סכומים ומספר אצווה נשארים לא זמינים אם התשובה הנתמכת אינה מספקת אותם; אין לפרש אותם כאפס. לאחר שכל השידורים שנכללו אושרו, השלימו את הסגירה במפורש. השרת סוגר רק את המגירה שנשמרה, אם קיימת, ושומר את דוח Z הקבוע של Foody. צפו בדוח באותו מסלול; אין הבטחה להדפסה פיזית. אין לבצע הפקדות חוזרות באופן תדיר במהלך היום.\n\nב־iPad בדקו גם את מדפסות הקבלות המשויכות בחומרה. הן נטענות לפני פעולה שעשויה להדפיס ואינן תנאי לחיבור האוטומטי מחדש של ה־Mini. הפקדה שהצליחה אינה מבטיחה כשלעצמה דוח בנקאי להדפסה: עדיין נדרש אישור לפורמט דוח שב״א האזורי ולהדפסה חוזרת בטוחה."
         }
       },
       {
@@ -16197,5 +16278,205 @@
     "preserveExisting": false,
     "procedureUpdatedAt": "2026-11-04",
     "updatedAt": "2026-11-04"
+  },
+  {
+    "id": "payments-transactions",
+    "module": "payments",
+    "article": "payments/transactions",
+    "audience": "public",
+    "status": "available",
+    "preserveExisting": false,
+    "procedureUpdatedAt": "2026-11-04",
+    "title": {
+      "en": "Review transaction history",
+      "fr": "Consulter les transactions",
+      "he": "צפייה בהיסטוריית עסקאות"
+    },
+    "entry": {
+      "en": "Read the restaurant’s confirmed Foody payment history from Transactions in the POS or Admin. The same restaurant and payment-view permission apply. This procedure requires the matching API, Admin and installed POS release.",
+      "fr": "Consultez les paiements confirmés enregistrés dans Foody depuis Transactions sur la caisse ou dans Admin. Le restaurant actif et les droits de lecture des paiements restent déterminants. Cette procédure nécessite les versions API, Admin et POS correspondantes.",
+      "he": "היסטוריית התשלומים שאושרו ונרשמו ב-Foody זמינה בעסקאות בקופה וב-Admin, לפי העסק הפעיל והרשאת צפייה בתשלומים. נדרשות גרסאות API, Admin וקופה תואמות."
+    },
+    "selectors": {
+      "foodyserver": [
+        "internal/orders/transactions*.go"
+      ],
+      "foodypos": [
+        "lib/features/transactions/**",
+        "lib/core/l10n/app_en.arb",
+        "lib/core/l10n/app_fr.arb",
+        "lib/core/l10n/app_he.arb"
+      ],
+      "foodyadmin": [
+        "src/app/[restaurantId]/transactions/**",
+        "src/lib/transactions.ts",
+        "src/lib/api.ts",
+        "src/lib/route-permissions.ts",
+        "src/components/Sidebar.tsx",
+        "src/app/[restaurantId]/layout.tsx",
+        "src/lib/i18n.tsx"
+      ]
+    },
+    "operations": [
+      {
+        "id": "transaction-history",
+        "title": {
+          "en": "Find a completed payment in Transactions",
+          "fr": "Retrouver un paiement confirmé dans Transactions",
+          "he": "איתור תשלום שאושר בעסקאות"
+        },
+        "instructions": {
+          "en": "Open Transactions in the iPad POS navigation, in More on compact terminals, or in the Admin sidebar, with payments.view or payments.manage. All three screens read the same restaurant-scoped confirmed payment history. In Admin choose a date range, source and method; search by item, reference or order number, then select a payment for its amount, method and linked orders. On the POS, selecting a linked order opens its saved read-only detail without leaving Transactions; if it cannot load, refresh and retry. The source follows the linked order: a provider-processed payment for a POS-created order appears under POS, not Online. Totals cover all matching payments, not just the visible page, and keep currencies separate. One order can have several tenders and one tender can cover several orders; Orders remains the place to follow fulfillment. Pending terminal attempts are not completed sales. History does not issue new receipts. Authorized owners and managers may see server-verified cash refunds or Verifone Checkout original-card returns for eligible payments; see the refund procedure before acting. If a result is missing, check restaurant, date and filters, then reconcile uncertain terminal payments before another charge.",
+          "fr": "Ouvrez Transactions dans la navigation de la caisse iPad, dans Plus sur un terminal compact ou dans le menu latéral Admin, avec payments.view ou payments.manage. Ces trois écrans lisent le même historique des paiements confirmés du restaurant. Dans Admin, choisissez période, source et mode ; recherchez par article, référence ou numéro de commande, puis sélectionnez un paiement pour son montant, son moyen et les commandes liées. Sur la caisse, sélectionner une commande liée ouvre son détail enregistré en lecture seule sans quitter Transactions ; si le chargement échoue, actualisez et réessayez. La source suit la commande liée : un paiement traité par un prestataire pour une commande créée en caisse apparaît sous Caisse, pas En ligne. Les totaux couvrent tous les paiements correspondant aux filtres, pas seulement la page visible, et séparent les devises. Une commande peut avoir plusieurs encaissements et un encaissement couvrir plusieurs commandes ; Commandes reste l’espace de suivi du service. Les tentatives terminal en attente ne sont pas des ventes finalisées. L’historique ne crée pas de nouveau reçu. Les propriétaires et responsables autorisés peuvent voir des remboursements d’espèces ou des retours Verifone Checkout sur la carte d’origine lorsque le serveur confirme l’éligibilité ; lisez la procédure de remboursement avant d’agir. Si un paiement manque, vérifiez restaurant, période et filtres, puis rapprochez les résultats incertains avant un nouveau débit.",
+          "he": "פתחו עסקאות בניווט קופת iPad, בעוד במסוף קומפקטי או בתפריט הצד של Admin, עם הרשאת payments.view או payments.manage. שלושת המסכים קוראים את אותה היסטוריית תשלומים מאושרים של העסק. ב-Admin בחרו טווח תאריכים, מקור ואמצעי; חפשו לפי פריט, אסמכתה או מספר הזמנה ובחרו תשלום להצגת הסכום, האמצעי וההזמנות הקשורות. בקופה, בחירת הזמנה מקושרת פותחת את פרטיה השמורים לקריאה בלבד בלי לצאת מעסקאות; אם הטעינה נכשלת, רעננו ונסו שוב. המקור נקבע לפי ההזמנה המקושרת: תשלום שעובד אצל ספק עבור הזמנה שנוצרה בקופה מופיע תחת קופה ולא תחת אונליין. הסכומים כוללים את כל התשלומים התואמים לסינון, לא רק את העמוד הגלוי, ומפרידים בין מטבעות. הזמנה אחת יכולה לכלול כמה תשלומים ותשלום אחד יכול לכסות כמה הזמנות; הזמנות מיועד למעקב אחר הכנה ומסירה. ניסיונות מסוף ממתינים אינם מכירות שהושלמו. ההיסטוריה אינה מנפיקה קבלה חדשה. בעלים ומנהלים מורשים יכולים לראות החזרי מזומן או החזר לכרטיס המקורי ב-Verifone Checkout כאשר השרת מאשר זכאות; קראו את נוהל ההחזר לפני פעולה. אם תשלום חסר, בדקו עסק, תקופה ומסננים והתאימו תוצאה לא ודאית לפני חיוב נוסף."
+        }
+      },
+      {
+        "id": "transaction-payment-origin",
+        "title": {
+          "en": "Understand payment origin",
+          "fr": "Comprendre l’origine du paiement",
+          "he": "הבנת מקור התשלום"
+        },
+        "instructions": {
+          "en": "Open a transaction on POS or Admin and read Payment origin separately from Source. Source identifies where the linked order was created; origin identifies cash, Verifone Checkout, another provider, or a recorded card payment. Victa (recorded payment) and Card (origin unverified) mean Foody recorded a result; they do not prove that a refund can be sent to the terminal. Older grouped payments can show Origin not attributed. For a return, confirm the original tender and use its authorized refund workflow; never substitute cash for a card payment.",
+          "fr": "Ouvrez une transaction sur la caisse ou dans Admin et lisez Origine du paiement séparément de Source. La source indique où la commande liée a été créée ; l’origine distingue espèces, Verifone Checkout, autre prestataire ou paiement par carte enregistré. Victa (paiement déclaré) et Carte (origine non vérifiée) signifient que Foody a enregistré un résultat, pas qu’un remboursement peut être envoyé au terminal. Les anciens paiements groupés peuvent afficher Origine non attribuée. Pour un retour, vérifiez le moyen d’origine et utilisez son parcours autorisé ; ne remplacez jamais un remboursement carte par des espèces.",
+          "he": "פתחו עסקה בקופה או ב-Admin וקראו את מקור התשלום בנפרד ממקור ההזמנה. מקור ההזמנה מציין היכן נוצרה ההזמנה המקושרת; מקור התשלום מבחין בין מזומן, Verifone Checkout, ספק אחר או תשלום כרטיס שנרשם. Victa (תשלום מדווח) וכרטיס (מקור לא מאומת) מציינים ש-Foody רשם תוצאה, לא שניתן לבצע החזר למסוף. תשלומים קבוצתיים ישנים עשויים להציג מקור לא משויך. להחזר, אמתו את אמצעי התשלום המקורי והשתמשו בתהליך ההחזר המורשה שלו; אל תחליפו החזר לכרטיס במזומן."
+        }
+      },
+      {
+        "id": "transaction-items-and-retry",
+        "title": {
+          "en": "Search every item and retry the history",
+          "fr": "Rechercher tous les articles et reprendre l’historique",
+          "he": "חיפוש כל הפריטים וניסיון חוזר בהיסטוריה"
+        },
+        "instructions": {
+          "en": "Search Transactions by any item in a linked order, including items after the first four. Open a payment to review the available linked item names. On the POS, if loading more results fails, the payments already shown remain visible; choose Try again under the list to continue. This retries only the history request, not a card charge.",
+          "fr": "Recherchez une transaction par n’importe quel article d’une commande liée, y compris au-delà des quatre premiers. Ouvrez le paiement pour consulter les noms d’articles liés disponibles. Sur la caisse, si le chargement de la suite échoue, les paiements déjà affichés restent visibles ; choisissez Réessayer sous la liste pour continuer. Cela relance seulement la lecture de l’historique, jamais un débit de carte.",
+          "he": "חפשו עסקאות לפי כל פריט בהזמנה מקושרת, גם אחרי ארבעת הפריטים הראשונים. פתחו תשלום כדי לראות את שמות הפריטים המקושרים הזמינים. בקופה, אם טעינת תוצאות נוספות נכשלת, התשלומים שכבר הוצגו נשארים גלויים; בחרו ניסיון חוזר מתחת לרשימה. הפעולה מנסה שוב לטעון את ההיסטוריה בלבד ואינה מחייבת כרטיס מחדש."
+        }
+      },
+      {
+        "id": "transaction-recorded-returns",
+        "title": {
+          "en": "Read refunds and payment voids in Transactions",
+          "fr": "Lire les remboursements et annulations dans Transactions",
+          "he": "צפייה בהחזרים ובביטולי תשלום בעסקאות"
+        },
+        "instructions": {
+          "en": "A successful Verifone Checkout refund or void initiated in Foody appears as its own return transaction, linked to the original payment. A confirmed cash return also appears separately, linked to its original cash tender. On the POS, an owner or manager with payments.manage can open an eligible payment in Transactions. For a journaled cash sale, choose Issue refund only when the server confirms an exact refundable portion and an open enrolled drawer. Select the order or check portion, enter an amount within the limit and a reason, then hand over cash only after Foody confirms. For one captured Verifone Checkout card payment linked to one exact order allocation, choose Refund to original card or Cancel card payment if offered. Enter a reason and, for a refund, an amount within the displayed limit. Foody sends the return to the original card, never to the cash drawer. An uncertain card result must be rechecked using the same saved request before another return; do not issue cash instead. Legacy unattributed, split/multi-order and Victa card payments do not offer this card action. Admin shows gross collections separately from returns recorded in Foody; neither figure is net revenue. Returns made directly in Verifone Central or on Victa are not included automatically. Also review [recorded net and balance](/en/help/orders/payment-preparation-and-handoff#recorded-money-summary).",
+          "fr": "Un remboursement ou une annulation Verifone Checkout réussi depuis Foody apparaît comme une transaction de retour distincte, liée au paiement d’origine. Un remboursement en espèces confirmé apparaît lui aussi séparément, lié à l’encaissement d’origine. Sur la caisse, un propriétaire ou responsable avec payments.manage peut ouvrir un paiement éligible dans Transactions. Pour une vente espèces enregistrée, choisissez Émettre un remboursement seulement si le serveur confirme la part exacte remboursable et une caisse autorisée ouverte. Sélectionnez la part de commande ou d’addition, indiquez un montant dans la limite et un motif, puis remettez l’argent seulement après confirmation de Foody. Pour un seul paiement carte Verifone Checkout capturé et lié exactement à une commande, choisissez Rembourser sur la carte d’origine ou Annuler le paiement carte si proposé. Indiquez un motif et, pour un remboursement, un montant dans la limite affichée. Foody renvoie l’argent sur la carte d’origine, jamais dans la caisse espèces. Un résultat carte incertain doit être vérifié avec la même requête enregistrée avant un autre retour ; ne remboursez pas en espèces à la place. Les paiements anciens non attribués, partagés ou liés à plusieurs commandes et les cartes Victa ne proposent pas cette action. Admin distingue encaissements bruts et retours enregistrés dans Foody ; aucun ne représente le chiffre d’affaires net. Les retours réalisés directement dans Verifone Central ou sur Victa ne sont pas inclus automatiquement. [Récapitulatif](/fr/help/orders/payment-preparation-and-handoff#recorded-money-summary).",
+          "he": "החזר או ביטול של Verifone Checkout שהושלם מתוך Foody מופיע כעסקת החזר נפרדת המקושרת לתשלום המקורי. גם החזר מזומן מאושר מופיע בנפרד ומקושר לתשלום המזומן המקורי. בקופה, בעלים או מנהל עם הרשאת payments.manage יכולים לפתוח תשלום זכאי בעסקאות. למכירת מזומן מתועדת בחרו החזר רק כאשר השרת מאשר חלק מדויק שניתן להחזיר וקופה מורשית פתוחה. בחרו את חלק ההזמנה או החשבון, הזינו סכום עד לתקרה וסיבה, ומסרו מזומן רק לאחר אישור Foody. לתשלום כרטיס Verifone Checkout יחיד שנקלט ומשויך בדיוק להזמנה אחת, בחרו החזר לכרטיס המקורי או ביטול תשלום בכרטיס אם האפשרות מוצגת. הזינו סיבה, ובהחזר גם סכום שאינו עולה על התקרה המוצגת. Foody מחזיר לכרטיס המקורי בלבד, לא לקופת המזומן. תוצאה לא ודאית בכרטיס מחייבת בדיקה של אותה בקשה שמורה לפני החזר נוסף; אין להחזיר מזומן במקום. תשלומים ישנים ללא שיוך, תשלומים מפוצלים או מרובי הזמנות ותשלומי כרטיס ב-Victa אינם מציעים פעולה זו. ב-Admin מוצגים בנפרד תקבולים ברוטו והחזרים שנרשמו ב-Foody; אף אחד מהם אינו הכנסה נטו. החזרים שבוצעו ישירות ב-Verifone Central או ב-Victa אינם נכללים אוטומטית. ראו גם [נטו ויתרה שנרשמו](/he/help/orders/payment-preparation-and-handoff#recorded-money-summary)."
+        }
+      },
+      {
+        "id": "transaction-gross-total",
+        "title": {
+          "en": "Read the transaction total correctly",
+          "fr": "Lire correctement le total des transactions",
+          "he": "קריאה נכונה של סך העסקאות"
+        },
+        "instructions": {
+          "en": "The Admin date range and displayed times use the restaurant’s timezone. The total sums all confirmed payment records matching the selected filters, even across several pages. Currencies remain separate. It is a gross payment total, not net sales: refunds, processing fees, cash-drawer movements and terminal end-of-day deposits are not subtracted here. Use the appropriate provider and accounting reports before reconciling a day.",
+          "fr": "La période et les heures affichées dans Admin utilisent le fuseau horaire du restaurant. Le total additionne tous les paiements confirmés correspondant aux filtres, même répartis sur plusieurs pages. Les devises restent séparées. C’est un total brut des paiements, pas des ventes nettes : les remboursements, frais de traitement, mouvements de tiroir-caisse et dépôts de fin de journée du terminal ne sont pas déduits ici. Utilisez les rapports du prestataire et de comptabilité adaptés pour rapprocher une journée.",
+          "he": "טווח התאריכים והשעות המוצגות ב-Admin משתמשים באזור הזמן של העסק. הסכום כולל את כל רשומות התשלום המאושרות התואמות למסננים, גם אם הן מוצגות בכמה עמודים. המטבעות נשארים נפרדים. זהו סכום תשלומים ברוטו ולא מכירות נטו: החזרים, עמלות סליקה, תנועות מגירת מזומן והפקדות סוף יום של המסוף אינם מנוכים כאן. להצלבת יום השתמשו בדוחות הספק והחשבונאות המתאימים."
+        }
+      },
+      {
+        "id": "transaction-central-history",
+        "title": {
+          "en": "Understand providers and history coverage",
+          "fr": "Comprendre les prestataires et la couverture",
+          "he": "הבנת הספקים והיקף ההיסטוריה"
+        },
+        "instructions": {
+          "en": "Transactions reads Foody’s central history, not a list downloaded from Ashrait. It includes confirmed recorded cash, POS card and QR/website payments, including Verifone, Sumit and Stancer. The online provider remains the payment’s actual processor; displaying it does not connect a new provider to POS hardware. Card-present terminal operations remain Verifone-only. getLastTransaction reads only a terminal’s latest operation and cannot reconstruct a restaurant’s history. Provider actions performed outside Foody may be absent. Keep gross collections and locally recorded returns separate, by currency; no currency conversion or bank-net total is inferred.",
+          "fr": "Transactions lit l’historique central de Foody, pas une liste téléchargée depuis Ashrait. Il réunit les encaissements confirmés enregistrés en espèces, par carte en caisse et sur QR/site, notamment Verifone, Sumit et Stancer. Le prestataire en ligne reste celui du paiement d’origine ; son affichage ne connecte aucun nouveau prestataire au matériel POS. Les opérations carte sur terminal restent exclusivement Verifone. getLastTransaction ne consulte que la dernière opération d’un terminal et ne reconstitue pas l’historique du restaurant. Des opérations réalisées directement chez le prestataire peuvent être absentes. Séparez les encaissements bruts des retours enregistrés, par devise ; aucun change ni total bancaire net n’est déduit.",
+          "he": "עסקאות קורא את ההיסטוריה המרכזית של Foody ולא רשימה שהורדה מ-Ashrait. היא כוללת תקבולי מזומן, כרטיס בקופה ותשלומי QR/אתר שאושרו ונרשמו, לרבות Verifone, Sumit ו-Stancer. הספק המקוון נשאר ספק התשלום המקורי; הצגתו אינה מחברת ספק חדש לחומרת הקופה. פעולות כרטיס במסוף נשארות בלעדיות ל-Verifone. getLastTransaction קורא רק את הפעולה האחרונה במסוף ואינו משחזר היסטוריה של עסק. פעולות שבוצעו ישירות אצל הספק עשויות להיות חסרות. יש להפריד תקבולים ברוטו מהחזרים שנרשמו, לפי מטבע; אין הסקת המרת מטבע או סכום בנקאי נטו."
+        }
+      },
+      {
+        "id": "transaction-unavailable-allocation",
+        "title": {
+          "en": "Read an entry whose original order is unavailable",
+          "fr": "Lire une écriture dont la commande est indisponible",
+          "he": "צפייה ברשומה שההזמנה המקורית שלה אינה זמינה"
+        },
+        "instructions": {
+          "en": "A confirmed cash sale or return remains in the immutable cash ledger even when its operational order or check is no longer readable. Transactions retains the recorded amount, date, currency and original payment identity, and shows an unavailable-original warning. Missing or foreign order/check identifiers are hidden; no amount is assigned to a guessed replacement. This read never rewrites a payment, deletes cash evidence or enables a refund. In Admin, Details is read-only. In POS, an entry marked unavailable has no refund action. A retry reloads history only; it never charges a card or sends Deposit.",
+          "fr": "Une vente ou un retour espèces confirmé reste dans le journal immuable de caisse même si sa commande ou son addition opérationnelle n’est plus lisible. Transactions conserve montant, date, devise et identité du paiement enregistrés et signale l’indisponibilité de l’origine. Les identifiants de commandes ou additions absentes ou étrangères au restaurant sont masqués ; aucun montant n’est attribué à un remplacement supposé. Cette consultation ne réécrit aucun paiement, ne supprime aucune preuve de caisse et n’active aucun remboursement. Dans Admin, Détails est en lecture seule. Sur le POS, une écriture signalée indisponible ne propose pas de remboursement. Réessayer recharge seulement l’historique ; aucun débit carte ni Deposit n’est lancé.",
+          "he": "מכירה או החזר מזומן שאושרו נשארים ביומן הקופה גם אם ההזמנה או החשבון התפעוליים המקוריים אינם נגישים. עסקאות שומר את הסכום, התאריך, המטבע וזהות התשלום שנרשמו ומציג אזהרה שהמקור אינו זמין. מזהי הזמנות או חשבונות חסרים או ששייכים לעסק אחר מוסתרים; אין שיוך סכום למקור חלופי משוער. הצפייה אינה משנה תשלום, מוחקת ראיית קופה או מאפשרת החזר. ב-Admin הפרטים הם לקריאה בלבד. בקופה אין פעולת החזר לרשומה שסומנה כך. ניסיון חוזר טוען היסטוריה בלבד; הוא אינו מחייב כרטיס או מבצע Deposit."
+        }
+      }
+    ]
+  },
+  {
+    "id": "pos-ashrait-terminal-inspection",
+    "module": "payments",
+    "article": "payments/ashrait-terminal-inspection",
+    "title": {
+      "fr": "Consulter la dernière transaction du terminal",
+      "en": "Inspect the last terminal transaction",
+      "he": "צפייה בעסקה האחרונה במסוף"
+    },
+    "entry": {
+      "fr": "POS → Plus → Paramètres → Matériel → Terminaux de paiement",
+      "en": "POS → More → Settings → Hardware → Payment terminals",
+      "he": "POS ← עוד ← הגדרות ← חומרה ← מסופי תשלום"
+    },
+    "selectors": {
+      "foodypos": [
+        "lib/services/payments/ashrait_last_transaction.dart",
+        "lib/features/settings/presentation/ashrait_last_transaction_tile.dart",
+        "lib/services/payments/terminal_payment_service.dart",
+        "ios/Runner/VerifonePaymentBridge.m",
+        "android/app/src/main/kotlin/com/foodypos/app/VerifonePaymentBridge.kt"
+      ]
+    },
+    "audience": "public",
+    "status": "available",
+    "procedureUpdatedAt": "2026-11-04",
+    "operations": [
+      {
+        "id": "ashrait-last-transaction-inspection",
+        "title": {
+          "fr": "Consulter la dernière transaction du terminal",
+          "en": "Inspect the last terminal transaction",
+          "he": "צפייה בעסקה האחרונה במסוף"
+        },
+        "instructions": {
+          "fr": "Sur la version compatible, ouvrez Plus → Paramètres → Matériel → Terminaux de paiement. Sur iPad, la consultation concerne le terminal associé actuellement actif ; sur un Victa Portable reconnu dans l’inventaire, elle concerne cet appareil. Le terminal doit déjà être connecté. Avec le droit de gérer les paiements, ouvrez Dernière transaction du terminal puis appuyez sur Consulter la dernière transaction. Ouvrir la fenêtre ne lance aucune requête. La consultation affiche uniquement la référence, le type, le résultat communiqué et le montant lorsqu’ils sont disponibles. Une préautorisation reste distincte d’un achat ; aucun paiement ni aucune addition n’est modifié. Aucun reçu ni donnée de carte n’est affiché. Une réponse vide, notamment après redémarrage, ne prouve pas l’absence d’un paiement. Si un paiement ou dépôt doit être vérifié, reprenez son parcours d’origine : la consultation ne lève aucun verrou et ne relance aucune opération. Après un changement de compte, de restaurant, de droit ou de terminal, consultez à nouveau ; l’ancien résultat n’est pas réutilisé.",
+          "en": "In the compatible version, open More → Settings → Hardware → Payment terminals. On iPad, inspection concerns the currently active paired terminal; on a Victa Portable recognized in the inventory, it concerns that device. The terminal must already be connected. With permission to manage payments, open Last terminal transaction and press Read last transaction. Opening the dialog does not send a query. Inspection shows only the reference, type, reported result and amount when available. A preauthorization stays distinct from a purchase; no payment or check is changed. No receipt or card details are displayed. An empty response, including after restart, does not prove that no payment occurred. For a pending payment or deposit, return to its original verification flow: inspection clears no lock and replays no operation. After changing account, restaurant, permission or terminal, read again; the old result is not reused.",
+          "he": "בגרסה התואמת פתחו עוד ← הגדרות ← חומרה ← מסופי תשלום. ב-iPad הבירור מתייחס למסוף המשויך הפעיל כרגע; ב-Victa Portable המזוהה במלאי המכשירים הוא מתייחס לאותו מכשיר. המסוף צריך להיות מחובר מראש. עם הרשאה לניהול תשלומים פתחו העסקה האחרונה במסוף ולחצו הצגת העסקה האחרונה. פתיחת החלון אינה שולחת שאילתה. מוצגים רק האסמכתה, הסוג, התוצאה שדווחה והסכום, כאשר הם זמינים. אישור מוקדם נפרד מרכישה; אין שינוי בתשלום או בחשבון. אין הצגה של קבלה או פרטי כרטיס. תשובה ריקה, לרבות לאחר אתחול, אינה מוכיחה שלא בוצע תשלום. לבירור תשלום או הפקדה ממתינים חזרו לתהליך הבדיקה המקורי: הצפייה אינה מסירה חסימה ואינה חוזרת על פעולה. אחרי שינוי חשבון, מסעדה, הרשאה או מסוף יש לבצע קריאה חדשה; אין שימוש חוזר בתוצאה הישנה."
+        }
+      },
+      {
+        "id": "terminal-reports-advanced",
+        "title": {
+          "en": "Israeli Ashrait report capabilities",
+          "fr": "Capacités des rapports Ashrait en Israël",
+          "he": "יכולות הדיווח של Ashrait בישראל"
+        },
+        "instructions": {
+          "fr": "Sur la version compatible avec Ashrait Israël, les anciennes actions génériques Consulter les totaux, Clôturer uniquement et Transmettre uniquement sont retirées. Pour la fin de journée, utilisez le parcours Solde en caisse et sa transmission explicite du terminal. Les ventes enregistrées dans Foody ne sont pas les totaux bancaires du terminal. Si Ashrait confirme le dépôt sans fournir de chiffres ou de référence de lot, ces informations restent indisponibles : elles ne valent pas zéro. Les autres commandes décrites dans une documentation prestataire ne sont pas nécessairement proposées dans Foody. Faites vérifier leur disponibilité et la procédure par un responsable et Verifone avant toute opération de maintenance ou financière avancée.",
+          "en": "In the compatible Israeli Ashrait version, the old generic View current totals, Close only and Transmit only actions are removed. For end of day, use Current drawer and its explicit terminal transmission. Sales recorded by Foody are not the terminal’s bank totals. If Ashrait confirms a deposit without numeric results or a batch reference, those details remain unavailable; they are not zero. Other commands described in provider documentation are not necessarily available in Foody. Have a manager and Verifone confirm availability and the procedure before advanced financial or maintenance operations.",
+          "he": "בגרסה התואמת ל־Ashrait בישראל הוסרו הפעולות הכלליות הישנות הצגת סיכומים, סגירה בלבד ושידור בלבד. לסוף היום השתמשו ביתרת הקופה ובשידור המפורש של המסוף במסלול זה. המכירות הרשומות ב־Foody אינן הסיכומים הבנקאיים של המסוף. אם Ashrait מאשר הפקדה בלי סכומים או מזהה אצווה, הפרטים נשארים לא זמינים ואינם אפס. פקודות נוספות המתוארות בתיעוד הספק אינן בהכרח זמינות ב־Foody. לפני פעולה כספית מתקדמת או פעולת תחזוקה בקשו ממנהל ומ־Verifone לאשר את הזמינות ואת ההליך."
+        }
+      },
+      {
+        "id": "ashrait-last-transaction-recovery",
+        "title": {
+          "fr": "Reprendre un paiement Ashrait interrompu",
+          "en": "Recover an interrupted Ashrait payment",
+          "he": "בירור תשלום Ashrait שנקטע"
+        },
+        "instructions": {
+          "fr": "Si une réponse carte est perdue, conservez l’addition, le restaurant, le POS et le terminal d’origine. La reprise vérifie la dernière transaction Ashrait et sa correspondance avec la demande initiale ; lire une transaction ne lance aucun nouveau débit. Une réponse vide après redémarrage ne prouve pas l’absence de débit. Si Foody ne peut pas établir la correspondance ou si le résultat reste inconnu, le verrou est conservé : ne relancez pas le paiement sur un autre appareil et ne supprimez pas les données de l’application. Faites vérifier l’opération d’origine par un responsable avec Verifone. Une confirmation déjà enregistrée se reprend sans redébit.",
+          "en": "If a card response is lost, preserve the original bill, restaurant, POS and terminal. Recovery checks the last Ashrait transaction against the original request; reading a transaction does not start a new debit. An empty response, including after a terminal restart, does not prove that the payment failed. If Foody cannot establish a match or the outcome stays unknown, the lock remains: do not repeat payment on another device or erase application data. Have an authorized manager verify the original operation with Verifone. A confirmed result already recorded by Foody can be resumed without another debit.",
+          "he": "אם תשובת תשלום בכרטיס אבדה, שמרו על החשבון, המסעדה, הקופה והמסוף המקוריים. הבירור בודק את עסקת Ashrait האחרונה מול הבקשה המקורית; קריאת עסקה אינה מתחילה חיוב חדש. תשובה ריקה, לרבות לאחר אתחול מסוף, אינה מוכיחה שהתשלום נכשל. אם Foody אינה יכולה להוכיח התאמה או שהתוצאה נשארת לא ידועה, החסימה נשמרת: אין לחזור על התשלום במכשיר אחר ואין למחוק נתוני אפליקציה. בקשו ממנהל מורשה לברר את הפעולה המקורית מול Verifone. ניתן להמשיך תוצאה מאושרת שכבר נרשמה ב־Foody בלי חיוב נוסף."
+        }
+      }
+    ]
   }
 ]

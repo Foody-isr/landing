@@ -1,5 +1,84 @@
 # Help ownership, evidence and releases
 
+## Combined transactions, receipts and terminal inventory (4 November 2026)
+
+This coordinated release retains current develop stock/fulfillment procedures,
+adds the scoped transaction history correction, and combines Ashrait inspection
+with explicit ordinary POS receipt destinations. Receipt migration 289 and fleet
+declaration migration 290 follow the already integrated prepared-stock migration
+288. Deploy API before Backoffice, Admin and POS. The independent web checkout
+and provider resolver are unchanged. Update all affected FR/HE/EN procedures,
+refresh exact source evidence and embed the identical public corpus in the API.
+Pin an immutable Landing commit before PR readiness; verify development and
+promote its exact successful artifacts under the user's release authorization.
+
+On the Mini CST connected to the production Foody API, one normal coordinated
+Deposit completed and finalized successfully. Its first payment contained a
+non-JSON string; no documented totals or batch reference were inferred and no
+PrintEvent arrived. Later reads after transmission and SDK restarts returned
+zero payments; both the profile build and the operator confirmed the empty UI.
+The Objective-C Boolean boxing defect and duplicate Xcode object ID are fixed.
+No repeat Deposit, card charge, refund, reset or remote reprovisioning was run.
+Temporary probe code is removed from the product source. These observations do
+not establish the cause of an empty cache, receipt/report paper acceptance,
+Portable acceptance or certification. The regional report format, safe reprint,
+advanced enum mappings and live remote provisioning still need Verifone's
+contract. The fleet editor records audited declarations only and clearly says
+they are not applied. No public guide claims these outstanding capabilities.
+
+Native iOS PrintEvent now acknowledges actual configured Epson delivery instead
+of success without printing. Bank data remains native; a missing/uncertain print
+is not acknowledged as confirmed. Printer discovery is deferred until payment
+or report preflight, preserving independent terminal reconnection. The internal
+structured receipt-copy primitive has no public UI yet. Existing Android
+integrated printing remains unchanged. No screenshots occur in these revised
+procedures; synthetic UI/native fixtures contain no real bank/customer data.
+
+## Ashrait read-only terminal inspection (4 November 2026)
+
+The compatible POS adds explicit latest-transaction inspection to Hardware for
+paired iPad terminals and inventory-recognized Portable devices. Opening the
+dialog sends nothing. The existing connection must already be ready; the read
+does not initialize/download parameters, collect, settle, clear recovery, print
+or replay a bank operation. Native query IDs and physical/tenant/actor scope
+reject foreign or late results. Only allowlisted reference, effect, authorization
+and exact known money reach Flutter; receipt/card JSON stays native. Empty after
+restart does not mean no debit. Corrupt native recovery remains a lock. The iOS
+ordinary-charge guard is corrected at dispatch entry.
+
+Review pos-checkout, victa-mini, pos-workspace and pos-behavior in FR/HE/EN. The
+new display has synthetic iPad/French and compact/Hebrew fixtures; no real bank
+data, hardware payment or transmission is used. The other advanced PDF methods
+remain unactivated pending regional mapping, maintenance/accounting and receipt
+contracts; the public guides must not claim full implementation or certification.
+API runtime, Admin, Web and Backoffice remain unchanged; API receives the exact
+updated public corpus. Preserve all unrelated inventory/source evidence and pin
+an immutable documentation commit. Publish procedures only with the matching POS.
+
+## Ashrait Israel protocol checkpoint (4 November 2026)
+
+The compatible POS replaces generic last-transaction lookup with the regional
+getLastTransaction query and parses first-payment paymentBrand JSON natively.
+Unknown/empty/mismatched recovery retains the original debit lock; restart is
+not evidence of no charge. Purchase capture, server reservation and guided
+Deposit/Z remain separate from advanced financial effects. Generic totals,
+close-only and reconcile-only controls and dead global reconciliation parsing
+are removed. Legacy deposit journal UUIDs remain readable without retransmission.
+
+FR/HE/EN pos-checkout removes the obsolete procedures and adds recovery guidance.
+The supplied document does not specify bank totals/Deposit response fields or
+all PSDK mappings. New typed contracts are preparation, not activated advanced
+payment/maintenance features; public help must not claim them available. See POS
+docs/ashrait-israel-integration.md for the full matrix and remaining vendor/device
+acceptance. Raw card/receipt JSON stays native. No hardware debit, Deposit, erase
+or VHQ reassignment was performed. This checkpoint is not a production release.
+
+API runtime/accounting, Admin and Guest Web are unchanged. Embed the identical
+public help corpus in API, refresh only API/POS source inventory and preserve
+other services’ reviewed evidence. Pin immutable Landing documentation before
+release; do not advertise a certification or deploy unconfirmed advanced flows.
+No screenshots occur in the revised procedures.
+
 ## Unified current-drawer workspace (4 November 2026)
 
 Compatible POS/API versions group cash, recorded card collections by physical
@@ -1535,6 +1614,12 @@ source checkpoints; pin this documentation commit in Admin and API before CI.
 Verify the development artifacts, then promote those same artifacts under the
 ongoing authorized delivery correction. Publish the matching help and support
 corpus together. No real order, message or tenant configuration is changed.
+
+## Unified transaction history correction (4 November 2026)
+
+Transactions reads confirmed Foody records across cash, card-present Verifone and online providers. The read-only Admin destination now exists with payments.view/manage gates, date/channel/tender/search filters and per-currency gross/recorded-return figures. Stancer keeps its explicit processor label. A restaurant-owned immutable cash sale/return survives an unavailable original order: only its display allocations are hidden and flagged, without rewriting the journal or granting refund authority. Corrupt amounts, refund relationships, actor/session checks and financial mutation guards retain their checks. No bank, Deposit, credential, provider-routing or schema mutation is introduced.
+
+Review the dedicated transactions guide in FR/HE/EN with the matching API/POS/Admin release; move the existing history sections without changing their public scope. Preserve the unrelated Web, Backoffice and Landing application-source inventory from this develop base. Refresh only API, POS and Admin source evidence, embed the identical support corpus and pin an immutable Landing commit. All browser fixtures use synthetic data and block provider requests. Production diagnosis reads only aggregate linkage metadata; no payment, cash movement or real business record is modified.
 
 
 ## Optional prepared products and delivery intake deadlines (4 November 2026, local)

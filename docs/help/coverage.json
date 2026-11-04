@@ -1434,7 +1434,17 @@
           "lib/features/orders/domain/checkout_review.dart",
           "lib/features/orders/presentation/terminal_checkout_pages.dart",
           "lib/main.dart",
-          "lib/features/orders/presentation/payment_terminal_picker.dart"
+          "lib/features/orders/presentation/payment_terminal_picker.dart",
+          "ios/Runner/AshraitProtocol.h",
+          "android/app/src/main/kotlin/com/foodypos/app/AshraitProtocol.kt",
+          "lib/core/ui/terminal_payment_error.dart",
+          "lib/features/settings/presentation/ashrait_last_transaction_tile.dart",
+          "lib/features/settings/presentation/victa_mini_settings_card.dart",
+          "lib/features/settings/presentation/hardware_settings_page.dart",
+          "lib/services/printing/receipt_delivery*.dart",
+          "lib/features/orders/data/order_api.dart",
+          "lib/features/orders/data/order_repository.dart",
+          "lib/features/orders/providers/order_providers.dart"
         ],
         "foodyserver": [
           "internal/payment/**",
@@ -1443,7 +1453,9 @@
           "internal/orders/transactions*.go",
           "internal/common/pos_card_collection.go",
           "internal/orders/pos_card_collection*.go",
-          "migrations/287_pos_card_collections.sql"
+          "migrations/287_pos_card_collections.sql",
+          "internal/orders/handler.go",
+          "internal/orders/service.go"
         ],
         "foodyadmin": [
           "src/app/[restaurantId]/transactions/**",
@@ -1506,14 +1518,18 @@
       "selectors": {
         "foodypos": [
           "lib/features/settings/presentation/printer_settings_page.dart",
-          "lib/features/settings/presentation/printer*.dart"
+          "lib/features/settings/presentation/printer*.dart",
+          "lib/services/printing/receipt_delivery*.dart"
         ],
         "foodyadmin": [
           "src/app/[restaurantId]/settings/printers/**",
           "src/lib/printer-profile-state.ts"
         ],
         "foodyserver": [
-          "internal/foodyspooler/**"
+          "internal/foodyspooler/**",
+          "internal/printing/customer_receipts.go",
+          "internal/common/receipt_print_request.go",
+          "migrations/289_device_receipt_requests.sql"
         ]
       }
     },
@@ -1523,7 +1539,11 @@
       "audience": "public",
       "selectors": {
         "foodypos": [
-          "lib/features/settings/presentation/printer_history_page.dart"
+          "lib/features/settings/presentation/printer_history_page.dart",
+          "lib/services/printing/print_spooler_fleet.dart",
+          "lib/services/printing/foody_print_spooler.dart",
+          "lib/services/printing/print_spooler_repository.dart",
+          "lib/services/printing/print_spooler_provider.dart"
         ],
         "foodyserver": [
           "internal/foodyspooler/**",
@@ -1960,11 +1980,19 @@
           "internal/**",
           "cmd/**",
           "config/**",
-          "migrations/280_check_submission_recovery_scope.sql"
+          "migrations/280_check_submission_recovery_scope.sql",
+          "internal/admin/terminal_fleet*.go",
+          "internal/common/terminal_fleet.go",
+          "migrations/290_terminal_fleet_metadata.sql"
         ],
         "foodyweb": [
           "app/api/**",
           "app/sw.js/**"
+        ],
+        "foodybackoffice": [
+          "src/app/dashboard/terminals/**",
+          "src/lib/api.ts",
+          "src/components/Sidebar.tsx"
         ]
       }
     },
@@ -2351,6 +2379,45 @@
           "lib/features/orders/online/presentation/order_details_page.dart",
           "lib/services/printing/receipt_bitmap_renderer.dart",
           "lib/features/orders/presentation/widgets/order_manager_row.dart"
+        ]
+      }
+    },
+    {
+      "id": "payments-transactions",
+      "article": "payments/transactions",
+      "audience": "public",
+      "selectors": {
+        "foodyserver": [
+          "internal/orders/transactions*.go"
+        ],
+        "foodypos": [
+          "lib/features/transactions/**",
+          "lib/core/l10n/app_en.arb",
+          "lib/core/l10n/app_fr.arb",
+          "lib/core/l10n/app_he.arb"
+        ],
+        "foodyadmin": [
+          "src/app/[restaurantId]/transactions/**",
+          "src/lib/transactions.ts",
+          "src/lib/api.ts",
+          "src/lib/route-permissions.ts",
+          "src/components/Sidebar.tsx",
+          "src/app/[restaurantId]/layout.tsx",
+          "src/lib/i18n.tsx"
+        ]
+      }
+    },
+    {
+      "id": "pos-ashrait-terminal-inspection",
+      "article": "payments/ashrait-terminal-inspection",
+      "audience": "public",
+      "selectors": {
+        "foodypos": [
+          "lib/services/payments/ashrait_last_transaction.dart",
+          "lib/features/settings/presentation/ashrait_last_transaction_tile.dart",
+          "lib/services/payments/terminal_payment_service.dart",
+          "ios/Runner/VerifonePaymentBridge.m",
+          "android/app/src/main/kotlin/com/foodypos/app/VerifonePaymentBridge.kt"
         ]
       }
     }

@@ -258,6 +258,18 @@ GET /orders/end-of-day/preview reads the current POS period and attributable car
 
 POST /api/v1/orders accepts the optional staff-only boolean production_plan. Omission retains legacy behavior. False excludes the order from the production sheet and its date counts, including after payment, scheduling or automatic force_production changes. True pins a manual non-hosted order; an ordinary prepared link still waits for collected payment and events retain their confirmation gates. The server owns the persisted external_metadata.production_plan value and rejects direct metadata injection. Guest creation strips the input, and service-level guest calls cannot supply it. Explicit staff pin/unpin actions supersede the creation choice and restore the existing manual-override/automatic rules. No shared response model or schema migration changes; older POS and guest clients can omit the optional input.
 
+<span id="device-receipt-contract" />
+
+## Release device-scoped receipt requests
+
+Local preparation: apply migration 289 and deploy the compatible API before POS. Receipt capabilities advertise device_receipts_version=1; updated clients send receipt_on_request=true for ordinary single/batch settlements. Payment uses its existing journals without an additional automatic receipt. Staff POST /restaurants/:id/printing/spooler/receipts requires orders.manage and identical restaurant context. It binds request_id, spooler_id, paid order_ids, assigned printer_ids and locale to one immutable request; an exact replay returns the original jobs and a changed intent returns 409. Integrated-terminal ownership proof remains required. The status GET is read-only and sends no document. Older clients and financial shares retain their contracts; kitchen dispatch remains separate. Synthetic tests do not certify physical installation or production delivery. Validate development before approved promotion of the same artifact.
+
+<span id="terminal-fleet-declarations" />
+
+## Global terminal declarations
+
+On compatible API and Backoffice versions, a Foody superadmin opens Backoffice → Terminal fleet to search terminals across restaurants and edit declared serial, DID, SHVA terminal number, supplier, acquirer and lifecycle. Save checks the current revision and records an audit event. These values remain declared, not applied: saving does not reassign hardware, alter banking parameters or start an Ashrait command. A returned/repair label alone does not authorize reuse. Remote bank configuration and its verified readback remain unavailable pending the regional Verifone contract. Restaurant Admin retains its restaurant scope. Never enter credentials or card data in these fields.
+
 <span id="configurable-fulfillment-compatibility" />
 
 ## Prepare configurable fulfillment contracts

@@ -1,0 +1,31 @@
+---
+title: Inspect the last terminal transaction
+description: POS → More → Settings → Hardware → Payment terminals
+apps: foodypos
+tags:
+  - payments
+  - pos-ashrait-terminal-inspection
+updatedAt: '2026-11-04'
+featureId: pos-ashrait-terminal-inspection
+audience: public
+releaseStatus: available
+---
+POS → More → Settings → Hardware → Payment terminals
+
+<span id="ashrait-last-transaction-inspection" />
+
+## Inspect the last terminal transaction
+
+In the compatible version, open More → Settings → Hardware → Payment terminals. On iPad, inspection concerns the currently active paired terminal; on a Victa Portable recognized in the inventory, it concerns that device. The terminal must already be connected. With permission to manage payments, open Last terminal transaction and press Read last transaction. Opening the dialog does not send a query. Inspection shows only the reference, type, reported result and amount when available. A preauthorization stays distinct from a purchase; no payment or check is changed. No receipt or card details are displayed. An empty response, including after restart, does not prove that no payment occurred. For a pending payment or deposit, return to its original verification flow: inspection clears no lock and replays no operation. After changing account, restaurant, permission or terminal, read again; the old result is not reused.
+
+<span id="terminal-reports-advanced" />
+
+## Israeli Ashrait report capabilities
+
+In the compatible Israeli Ashrait version, the old generic View current totals, Close only and Transmit only actions are removed. For end of day, use Current drawer and its explicit terminal transmission. Sales recorded by Foody are not the terminal’s bank totals. If Ashrait confirms a deposit without numeric results or a batch reference, those details remain unavailable; they are not zero. Other commands described in provider documentation are not necessarily available in Foody. Have a manager and Verifone confirm availability and the procedure before advanced financial or maintenance operations.
+
+<span id="ashrait-last-transaction-recovery" />
+
+## Recover an interrupted Ashrait payment
+
+If a card response is lost, preserve the original bill, restaurant, POS and terminal. Recovery checks the last Ashrait transaction against the original request; reading a transaction does not start a new debit. An empty response, including after a terminal restart, does not prove that the payment failed. If Foody cannot establish a match or the outcome stays unknown, the lock remains: do not repeat payment on another device or erase application data. Have an authorized manager verify the original operation with Verifone. A confirmed result already recorded by Foody can be resumed without another debit.
