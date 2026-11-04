@@ -7,7 +7,7 @@ apps: both
 tags:
   - tables-floors
   - table-service-policy
-updatedAt: '2026-10-28'
+updatedAt: '2026-11-04'
 featureId: table-service-policy
 audience: public
 releaseStatus: available
@@ -55,3 +55,11 @@ Dans Assistance à table, activez les demandes et notifications adaptées. Véri
 ## Retrouver les outils de service sur mobile
 
 Dans Additions sur le terminal mis à jour, le sélecteur à radios relie Toutes les additions aux plans de salle disponibles. Ouvrez + puis Actions pour le filtre de personnel, À faire et Actualiser. Les restrictions d’affectation et permissions continuent de limiter les tables et additions accessibles. Le plan peut se déplacer à l’écran ; ni ce déplacement ni un changement de vue n’enregistrent de nouvelle géométrie, n’affectent un employé ou ne libèrent une table. Le nom de l’utilisateur actif sert aux initiales en bas à gauche ; ce bouton ouvre Plus, sans changer l’affectation du service.
+
+<span id="paid-table-close-recovery" />
+
+## Fermer la bonne session après un paiement accepté
+
+Sur les versions compatibles du serveur et du POS, une ancienne commande rattachée à une session confirmée expirée ne bloque plus la fermeture ou la libération de la nouvelle occupation de la même table. Cette ancienne commande reste dans Commandes avec son état de paiement ; elle n’est ni encaissée, ni annulée, ni rattachée aux nouveaux clients. Les sommes encore dues dans la session actuelle et les anciens rattachements non confirmés restent à résoudre avant fermeture.
+
+Si le terminal a accepté la carte mais que la fermeture échoue, ne relancez pas le paiement. Actualisez l’addition et vérifiez que Foody l’affiche payée ; réessayez ensuite uniquement Fermer la commande. Si le paiement n’est pas confirmé dans Foody, utilisez la vérification de l’opération d’origine ou demandez un responsable. Dans le POS compatible, un refus de fermeture affiche un message et conserve le plan et l’occupation confirmés. La fermeture ne termine pas les plats en cuisine et ne réalise aucun dépôt ou fin de journée bancaire.
