@@ -166,6 +166,8 @@ POS fulfillment methods provide separate preparation and handoff tracking. Save 
 
 In Orders & availability → Simulate an order, select Order date and time in the displayed timezone, then the receiving date and basket. Now reloads the server time. Preparation and same-day rules are evaluated at this reference using current saved settings and ready stock. A past date does not reconstruct history; this test neither reserves a courier nor creates an order. Customer orders retain the real server clock. See [the simulation procedure](/en/help/orders/preorders-and-batches#simulate-order).
 
+The ordering simulation also uses the historical predefined counted stock plus immediate-sale setting. When the full requested quantity of an article is ready, its same-day pickup slots skip production notice just as its delivery calculation does. A mixed basket retains the preparation of articles that still need making; quantities above the ready count lose that exception. The result explains when ready stock contributes to the calendar. Historical stock is not given a future receiving validity automatically, and planned-only restaurants still require a service slot. The simulation creates no order and reserves no stock; final checkout still validates sale/ingredient availability and the full order.
+
 <span id="card-collection-recovery" />
 
 ## Respect a pending card collection
