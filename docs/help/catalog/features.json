@@ -4832,6 +4832,19 @@
           "en": "For an item with variant positions, check that the ticket lists each choice in order, for example Character 1: A then Character 2: 7. These choices describe the product and carry no addition/removal sign or surcharge. If a detail is missing, check the API and ordering client versions, then the item configuration under [Variants and sizes](../menu/variants-and-sizes#conditional-positions). Connection, routing and print recovery procedures remain the same.",
           "he": "בפריט עם מיקומי וריאציה, ודאו שהכרטיס מציג כל בחירה לפי הסדר, למשל תו 1: A ואז תו 2: 7. הבחירות מתארות את הפריט וללא סימן הוספה או הסרה או תוספת מחיר. אם פרט חסר, בדקו את גרסת השרת ואת גרסת ערוץ ההזמנה ואת הגדרת הפריט ב[ווריאציות וגדלים](../menu/variants-and-sizes#conditional-positions). נהלי החיבור, הניתוב והשחזור של ההדפסה נשארים ללא שינוי."
         }
+      },
+      {
+        "id": "device-receipt-destinations",
+        "title": {
+          "fr": "Choisir le reçu depuis chaque poste",
+          "en": "Choose receipts from each POS",
+          "he": "בחירת קבלות מכל עמדת קופה"
+        },
+        "instructions": {
+          "fr": "Sur les versions compatibles, la destination du reçu est propre à chaque appareil, restaurant et environnement. Le Victa Portable privilégie son imprimante intégrée et l’iPad son Epson TM-m30III affectée aux reçus. Pour une vente, Autres imprimantes… permet de choisir une imprimante ou les deux, sans modifier les profils partagés. Une Epson indisponible ne bloque pas le travail du Victa. Consultez [les réglages par appareil](/fr/help/printers/profiles-and-routing#device-receipt-destinations) et [la reprise par imprimante](/fr/help/printers/status-and-history#independent-receipt-results). Une impression incertaine demande une vérification du papier avant toute nouvelle copie ; ne répétez pas le paiement.",
+          "en": "On compatible versions, receipt destinations belong to each device, restaurant and environment. Victa Portable prefers its integrated printer; iPad prefers its assigned Epson TM-m30III receipt printer. For one sale, Other printers… selects one printer or both without editing shared profiles. An unavailable Epson does not block the Victa worker. See [per-device settings](/en/help/printers/profiles-and-routing#device-receipt-destinations) and [per-printer recovery](/en/help/printers/status-and-history#independent-receipt-results). Uncertain printing requires checking paper before another copy; never repeat payment.",
+          "he": "בגרסאות תואמות, יעדי הקבלות שייכים לכל מכשיר, מסעדה וסביבה. Victa Portable מעדיף את המדפסת המובנית; iPad מעדיף Epson TM-m30III המשויכת לקבלות. למכירה אחת, מדפסות אחרות… מאפשר לבחור מדפסת אחת או את שתיהן בלי לשנות פרופילים משותפים. Epson שאינה זמינה אינה חוסמת את המשימה של Victa. ראו [הגדרות לכל מכשיר](/he/help/printers/profiles-and-routing#device-receipt-destinations) ו[טיפול בכל מדפסת](/he/help/printers/status-and-history#independent-receipt-results). הדפסה לא מאושרת מחייבת בדיקת נייר לפני עותק נוסף; אין לחזור על התשלום."
+        }
       }
     ],
     "audience": "public",
@@ -10986,7 +10999,11 @@
         "lib/core/ui/terminal_payment_error.dart",
         "lib/features/settings/presentation/ashrait_last_transaction_tile.dart",
         "lib/features/settings/presentation/victa_mini_settings_card.dart",
-        "lib/features/settings/presentation/hardware_settings_page.dart"
+        "lib/features/settings/presentation/hardware_settings_page.dart",
+        "lib/services/printing/receipt_delivery*.dart",
+        "lib/features/orders/data/order_api.dart",
+        "lib/features/orders/data/order_repository.dart",
+        "lib/features/orders/providers/order_providers.dart"
       ],
       "foodyserver": [
         "internal/payment/**",
@@ -10995,7 +11012,9 @@
         "internal/orders/transactions*.go",
         "internal/common/pos_card_collection.go",
         "internal/orders/pos_card_collection*.go",
-        "migrations/287_pos_card_collections.sql"
+        "migrations/287_pos_card_collections.sql",
+        "internal/orders/handler.go",
+        "internal/orders/service.go"
       ],
       "foodyadmin": [
         "src/app/[restaurantId]/transactions/**",
@@ -11132,9 +11151,9 @@
           "he": "בדיקת טיפ וקבלה"
         },
         "instructions": {
-          "fr": "Vérifiez les éventuelles étapes de pourboire avant l’encaissement et confirmez le total ; leur disponibilité dépend de la configuration. Après un paiement confirmé d’une addition ordinaire sur le terminal mis à jour, la page de reçu propose Imprimer quand une action d’impression est disponible, ou Aucun reçu. Imprimer demande une copie supplémentaire via le service d’impression existant ; un reçu automatique configuré peut déjà avoir été demandé. E-mail et SMS restent désactivés si aucun service d’envoi n’est fourni ; ils ne prouvent aucun envoi. Après ce choix, Vous êtes prêt s’affiche ; Nouvelle vente termine explicitement le parcours. En espèces, le reçu affiche la monnaie connue, ou Pas de monnaie pour un paiement exact ; une valeur absente ou invalide n’est pas affichée. La carte n’affiche pas de monnaie. Une table entièrement réglée revient au plan seulement après la clôture confirmée par le serveur ; le mode Additions ouvertes peut conserver sa liste. Si le restaurant, l’addition ou les droits ont changé pendant le reçu, Foody ne clôture pas l’ancien contexte automatiquement. En cas d’échec de clôture après un paiement enregistré, reprenez uniquement la clôture de cette même addition, sans nouvel encaissement. En cas d’échec ou de résultat d’impression incertain, contrôlez l’historique et les travaux avant toute nouvelle copie ; ne recommencez jamais le paiement. Les remboursements par addition ne sont pas établis pour tous les partages avancés : faites intervenir un responsable autorisé plutôt que de supposer un bouton disponible.",
-          "en": "Review any supported tip step before collection and confirm the total; availability depends on configuration. After confirmed payment for an ordinary check on the updated terminal, the receipt page offers Print when a printing action is available, or No receipt. Print requests an additional copy through the existing printing service; configured automatic receipt output may already have been requested. Email and SMS remain disabled when no sending service is supplied; they do not establish delivery. After the choice, You’re all set appears; New sale explicitly finishes the flow. For cash, the receipt shows known change, or No change for exact payment; missing or invalid values are omitted. Card receipts show no cash change. A fully paid table returns to the floor only after server-confirmed closure; an Open checks home configuration can retain its list. If restaurant, bill or permissions changed during receipt choice, Foody does not automatically close the old context. If closure fails after recorded payment, resume closure of that same check without collecting again. On a failed or uncertain print result, inspect history and jobs before another copy; never repeat payment. Per-check refunds are not established for every advanced split flow: use an authorized manager rather than assuming a refund button exists.",
-          "he": "בדקו כל שלב טיפ נתמך לפני הגבייה ואשרו את הסכום; הזמינות תלויה בהגדרות. לאחר תשלום מאושר לחשבון רגיל במסוף המעודכן, עמוד הקבלה מציע הדפסה כאשר קיימת פעולת הדפסה או ללא קבלה. הדפסה מבקשת עותק נוסף דרך שירות ההדפסה הקיים; ייתכן שכבר התבקשה קבלה אוטומטית בהתאם להגדרות. דוא״ל ו-SMS נשארים מושבתים כשלא סופק שירות שליחה ואינם מעידים על מסירה. אחרי הבחירה מוצג סיימתם; מכירה חדשה מסיימת את המסלול במפורש. במזומן הקבלה מציגה עודף ידוע או אין עודף לתשלום מדויק; ערך חסר או לא תקין אינו מוצג. בכרטיס לא מוצג עודף מזומן. שולחן ששולם במלואו חוזר לתוכנית רק לאחר סגירה שאושרה בשרת; הגדרת בית של חשבונות פתוחים יכולה להשאיר את הרשימה. אם המסעדה, החשבון או ההרשאות השתנו בזמן בחירת הקבלה, Foody אינה סוגרת אוטומטית את ההקשר הקודם. אם הסגירה נכשלת אחרי תשלום שנרשם, המשיכו רק את סגירת אותו חשבון בלי לגבות שוב. בכשל הדפסה או בתוצאה לא ודאית בדקו היסטוריה ועבודות לפני עותק נוסף ולעולם אל תחזרו על התשלום. החזר לפי חשבון אינו זמין בהכרח בכל מסלול פיצול מתקדם; פנו למנהל מורשה במקום להניח שקיים כפתור החזר."
+          "fr": "Vérifiez les éventuelles étapes de pourboire avant l’encaissement et confirmez le total ; leur disponibilité dépend de la configuration. Après un paiement confirmé d’une addition ordinaire sur iPad ou Victa avec la version compatible, la page de reçu propose Imprimer le reçu sur les destinations de cet appareil, Autres imprimantes… pour une exception, ou Aucun reçu. Le nouveau parcours imprime à la demande sans ajouter de reçu automatique à la confirmation du paiement. [Configurez les destinations de chaque appareil](/fr/help/printers/profiles-and-routing#device-receipt-destinations). E-mail et SMS restent désactivés sans service d’envoi. Un résultat est affiché par imprimante ; un échec Epson ne bloque pas le Victa. Nouvelle vente termine explicitement le parcours ; les reçus demandés restent dans la file. Un échec de fermeture de table ne justifie aucun nouvel encaissement. Vérifiez papier et historique avant toute copie dont le résultat est incertain. Les anciens clients et les partages financiers conservent leur comportement antérieur et ne sont pas validés par ce nouveau parcours.",
+          "en": "Check any configured tipping steps before collection and confirm the total. After confirmed payment of an ordinary check on iPad or Victa with compatible versions, receipt choice offers Print receipt using this device’s destinations, Other printers… for a one-off choice, or No receipt. The new flow prints on demand without also creating an automatic receipt at payment confirmation. [Configure destinations for each device](/en/help/printers/profiles-and-routing#device-receipt-destinations). Email and SMS remain disabled without a sending service. Results appear per printer; an Epson failure does not block the Victa. New sale explicitly finishes the flow; requested receipts stay in the queue. A failed table close never justifies collecting again. Check paper and history before requesting a copy whose outcome is uncertain. Older clients and financial-share flows retain their previous behavior and are not validated by this new flow.",
+          "he": "בדקו שלבי טיפ שהוגדרו לפני הגבייה ואשרו את הסכום. אחרי תשלום מאושר של חשבון רגיל ב-iPad או ב-Victa עם גרסאות תואמות, מסך הקבלות מציע הדפסת קבלה ביעדי המכשיר, מדפסות אחרות… לבחירה חד-פעמית, או ללא קבלה. המסלול החדש מדפיס לפי דרישה ואינו יוצר בנוסף קבלה אוטומטית באישור התשלום. [הגדירו יעדים לכל מכשיר](/he/help/printers/profiles-and-routing#device-receipt-destinations). דוא״ל ו-SMS נשארים כבויים ללא שירות שליחה. התוצאות מוצגות לכל מדפסת; כישלון Epson אינו חוסם את Victa. מכירה חדשה מסיימת את המסלול במפורש; קבלות שהתבקשו נשארות בתור. כישלון בסגירת שולחן אינו מצדיק גבייה נוספת. בדקו נייר והיסטוריה לפני בקשת עותק שתוצאתו אינה ידועה. לקוחות ישנים וחשבונות מפוצלים שומרים על התנהגותם הקודמת ואינם מאומתים במסלול החדש."
         }
       },
       {
@@ -11701,14 +11720,18 @@
     "selectors": {
       "foodypos": [
         "lib/features/settings/presentation/printer_settings_page.dart",
-        "lib/features/settings/presentation/printer*.dart"
+        "lib/features/settings/presentation/printer*.dart",
+        "lib/services/printing/receipt_delivery*.dart"
       ],
       "foodyadmin": [
         "src/app/[restaurantId]/settings/printers/**",
         "src/lib/printer-profile-state.ts"
       ],
       "foodyserver": [
-        "internal/foodyspooler/**"
+        "internal/foodyspooler/**",
+        "internal/printing/customer_receipts.go",
+        "internal/common/receipt_print_request.go",
+        "migrations/289_device_receipt_requests.sql"
       ]
     },
     "operations": [
@@ -11776,6 +11799,19 @@
           "en": "Open More → Hardware → Printers → Profiles, select the profile and choose Edit. The editor fills the mobile screen. Choose Receipts, In-person tickets or Online tickets to open its options. The switch enables that document type in the draft; select categories under Categories to print. Remove top margin preserves the bottom setting; the bottom margin remains separately editable. Shared profile preferences apply across its ticket types. Return to the editor and Save; leaving a changed draft asks for confirmation, and a failed save retains it. Automatically including new categories does not mean automatically printing new orders. Installation assignments remain separate from the shared profile.",
           "he": "פתחו עוד → חומרה → מדפסות → פרופילים, בחרו פרופיל ואז עריכה. העורך ממלא את מסך הנייד. בחרו קבלות, כרטיסים במקום או כרטיסים מקוונים כדי לפתוח אפשרויות. המתג מפעיל את סוג המסמך בטיוטה; בחרו קטגוריות בקטגוריות להדפסה. הסרת השוליים העליונים שומרת את הגדרת השוליים התחתונים, הניתנת לעריכה בנפרד. העדפות הפרופיל המשותפות חלות על סוגי הכרטיסים שלו. חזרו לעורך ושמרו; יציאה מטיוטה ששונתה דורשת אישור וכשל בשמירה שומר את הטיוטה. הכללה אוטומטית של קטגוריות חדשות אינה הדפסה אוטומטית של הזמנות חדשות. שיוכי ההתקנות נשארים נפרדים מהפרופיל המשותף."
         }
+      },
+      {
+        "id": "device-receipt-destinations",
+        "title": {
+          "fr": "Choisir les reçus de chaque appareil",
+          "en": "Choose receipt destinations for each device",
+          "he": "בחירת יעדי קבלות לכל מכשיר"
+        },
+        "instructions": {
+          "fr": "Sur une version compatible de l’API et de FoodyPOS, ouvrez Plus → Paramètres → Imprimantes → Reçus de cet appareil. Avec la permission de gestion des imprimantes, sélectionnez une ou plusieurs imprimantes déjà affectées à un profil Reçus, puis Enregistrer. Sur le Victa Portable, l’imprimante intégrée est choisie par défaut. Sur iPad, l’Epson TM-m30III affectée aux reçus est privilégiée. Si aucune destination attendue n’est disponible, configurez son profil ou choisissez explicitement une autre imprimante. Une destination enregistrée devenue indisponible n’est jamais remplacée automatiquement. Le choix est conservé pour cette installation, ce restaurant et cet environnement ; il ne modifie ni l’iPad, ni un autre Victa, ni le profil partagé.\n\nAprès le paiement confirmé d’une addition ordinaire, Imprimer le reçu utilise ce choix. Autres imprimantes… permet de cocher le Victa, l’Epson ou les deux pour cette vente et de confirmer par Imprimer le reçu. Cette exception ne change pas les valeurs par défaut. Chaque destination sélectionnée reçoit un exemplaire. Le nouveau parcours demande le reçu à la demande et ne crée pas en plus un reçu automatique à la confirmation du paiement. Les anciens clients et les parcours de partage financier conservent leur fonctionnement antérieur : déployez l’API compatible avant la mise à jour POS et vérifiez la version installée.",
+          "en": "With compatible API and FoodyPOS versions, open More → Settings → Printers → Receipts from this device. With printer-management permission, select one or more printers already assigned a Receipts profile, then Save. Victa Portable defaults to its integrated printer. On iPad, an assigned Epson TM-m30III receipt printer is preferred. If the expected destination is unavailable, configure its profile or explicitly choose another printer. A saved destination that becomes unavailable is never automatically substituted. The choice belongs to this installation, restaurant and environment; it changes neither another iPad or Victa nor the shared profile.\n\nAfter confirmed payment of an ordinary check, Print receipt uses that choice. Other printers… lets you select the Victa, Epson or both for this sale, then confirm with Print receipt. This exception does not change defaults. Each selected destination receives one copy. The new flow requests receipts on demand and does not also create an automatic receipt at payment confirmation. Older clients and financial-share flows retain their previous behavior: deploy the compatible API before updating POS and verify the installed version.",
+          "he": "בגרסאות תואמות של ה-API ושל FoodyPOS, פתחו עוד → הגדרות → מדפסות → קבלות ממכשיר זה. עם הרשאת ניהול מדפסות, בחרו מדפסת אחת או יותר שכבר משויכות לפרופיל קבלות ולחצו שמירה. ב-Victa Portable ברירת המחדל היא המדפסת המובנית. ב-iPad ניתנת עדיפות ל-Epson TM-m30III המשויכת לקבלות. אם היעד הצפוי אינו זמין, הגדירו את הפרופיל שלו או בחרו במפורש מדפסת אחרת. יעד שמור שהפך ללא זמין אינו מוחלף אוטומטית. הבחירה נשמרת להתקנה, למסעדה ולסביבה האלה בלבד; היא אינה משנה iPad או Victa אחרים או את הפרופיל המשותף.\n\nאחרי תשלום מאושר של חשבון רגיל, הדפסת קבלה משתמשת בבחירה הזו. מדפסות אחרות… מאפשר לבחור Victa, Epson או את שתיהן למכירה הזו ולאשר בהדפסת קבלה. הבחירה החד-פעמית אינה משנה את ברירות המחדל. כל יעד שנבחר מקבל עותק אחד. המסלול החדש מבקש קבלות לפי דרישה ואינו יוצר בנוסף קבלה אוטומטית בעת אישור התשלום. לקוחות ישנים ומסלולי חשבונות מפוצלים שומרים על ההתנהגות הקודמת: פרסו API תואם לפני עדכון POS ובדקו את הגרסה המותקנת."
+        }
       }
     ],
     "audience": "public",
@@ -11799,7 +11835,11 @@
     },
     "selectors": {
       "foodypos": [
-        "lib/features/settings/presentation/printer_history_page.dart"
+        "lib/features/settings/presentation/printer_history_page.dart",
+        "lib/services/printing/print_spooler_fleet.dart",
+        "lib/services/printing/foody_print_spooler.dart",
+        "lib/services/printing/print_spooler_repository.dart",
+        "lib/services/printing/print_spooler_provider.dart"
       ],
       "foodyserver": [
         "internal/foodyspooler/**",
@@ -11870,6 +11910,19 @@
           "fr": "Matériel → Imprimantes → choisissez l’imprimante → Afficher l’historique ouvre une liste mobile avec retour en haut. Actualiser et Charger la suite restent des lectures. Le bouton de test d’impression est une action distincte sur la fiche de l’imprimante ; consulter l’historique ne lance aucun test, reprise ou réimpression.",
           "en": "Hardware → Printers → select the printer → View history opens a mobile list with a back control at the top. Refresh and Load more remain read-only. Print test is a separate action on the printer details page; opening history starts no test, retry or reprint.",
           "he": "חומרה → מדפסות → בחירת מדפסת → הצגת היסטוריה פותח רשימה בנייד עם כפתור חזרה בראש המסך. רענון וטעינת המשך הם לקריאה בלבד. בדיקת הדפסה היא פעולה נפרדת בפרטי המדפסת; פתיחת ההיסטוריה אינה מפעילה בדיקה, ניסיון חוזר או הדפסה חוזרת."
+        }
+      },
+      {
+        "id": "independent-receipt-results",
+        "title": {
+          "fr": "Reprendre seulement l’imprimante en échec",
+          "en": "Recover only the failed receipt printer",
+          "he": "טיפול רק במדפסת הקבלות שנכשלה"
+        },
+        "instructions": {
+          "fr": "Sur les versions compatibles, le Victa et les imprimantes réseau ont des files locales indépendantes. Une Epson hors ligne ne bloque pas l’impression intégrée du Victa. Après une demande sur plusieurs destinations, l’écran indique le résultat de chacune dès qu’il est connu : Imprimé, En attente ou un échec. Vous pouvez choisir Nouvelle vente ; les reçus déjà demandés restent dans la file durable.\n\nRéessayer n’est proposé que pour un échec confirmé avant envoi et reprend le même travail, sur cette imprimante seulement. Une destination déjà imprimée n’est pas réimprimée. Une impression non confirmée exige le contrôle du papier et de l’historique avant toute nouvelle copie ; ne relancez jamais le paiement. Au redémarrage, la demande conservée reprend avec sa même identité et ses mêmes destinations, sans créer une nouvelle copie. Les anciens travaux Epson déjà en attente ne sont ni supprimés ni annulés par le choix d’une destination de reçu.",
+          "en": "On compatible versions, the Victa and network printers have independent local workers. An offline Epson does not block the Victa integrated printer. After requesting several destinations, the screen shows each result as it becomes known: Printed, Waiting or a failure. You can choose New sale; already requested receipts remain in the durable queue.\n\nRetry is offered only for a confirmed failure before dispatch and resumes the same job on that printer alone. An already printed destination is not printed again. Unconfirmed printing requires checking paper and history before any additional copy; never repeat payment. After restart, the saved request resumes with its original identity and destinations, without creating a new copy. Selecting a receipt destination neither deletes nor cancels older queued Epson jobs.",
+          "he": "בגרסאות תואמות, ל-Victa ולמדפסות הרשת יש תורים מקומיים עצמאיים. Epson לא מקוונת אינה חוסמת את המדפסת המובנית של Victa. אחרי בקשה למספר יעדים, המסך מציג את התוצאה של כל מדפסת כשהיא ידועה: הודפס, ממתין או כישלון. אפשר לבחור מכירה חדשה; הקבלות שכבר התבקשו נשארות בתור המתמשך.\n\nניסיון נוסף מוצע רק כשאושר כישלון לפני שליחת המסמך, והוא ממשיך את אותה משימה במדפסת הזו בלבד. יעד שכבר הודפס אינו מודפס שוב. הדפסה לא מאושרת מחייבת בדיקת הנייר וההיסטוריה לפני עותק נוסף; אין לחזור על התשלום. אחרי הפעלה מחדש, הבקשה השמורה ממשיכה עם אותו מזהה ואותם יעדים בלי ליצור עותק חדש. בחירת יעד לקבלות אינה מוחקת או מבטלת משימות Epson ישנות שכבר ממתינות."
         }
       }
     ],
@@ -13945,11 +13998,19 @@
         "internal/**",
         "cmd/**",
         "config/**",
-        "migrations/280_check_submission_recovery_scope.sql"
+        "migrations/280_check_submission_recovery_scope.sql",
+        "internal/admin/terminal_fleet*.go",
+        "internal/common/terminal_fleet.go",
+        "migrations/290_terminal_fleet_metadata.sql"
       ],
       "foodyweb": [
         "app/api/**",
         "app/sw.js/**"
+      ],
+      "foodybackoffice": [
+        "src/app/dashboard/terminals/**",
+        "src/lib/api.ts",
+        "src/components/Sidebar.tsx"
       ]
     },
     "operations": [
@@ -14460,6 +14521,32 @@
           "en": "POST /api/v1/orders accepts the optional staff-only boolean production_plan. Omission retains legacy behavior. False excludes the order from the production sheet and its date counts, including after payment, scheduling or automatic force_production changes. True pins a manual non-hosted order; an ordinary prepared link still waits for collected payment and events retain their confirmation gates. The server owns the persisted external_metadata.production_plan value and rejects direct metadata injection. Guest creation strips the input, and service-level guest calls cannot supply it. Explicit staff pin/unpin actions supersede the creation choice and restore the existing manual-override/automatic rules. No shared response model or schema migration changes; older POS and guest clients can omit the optional input.",
           "fr": "POST /api/v1/orders accepte le booléen staff facultatif production_plan. Son absence conserve les règles antérieures. False exclut la commande du tableau de production et du comptage des jours, y compris après paiement, programmation ou changement automatique de force_production. True ajoute une commande manuelle sans paiement hébergé ; un lien préparé ordinaire attend encore un paiement collecté et un événement conserve ses conditions de confirmation. Le serveur possède external_metadata.production_plan et refuse son injection directe. La création publique efface le champ et un appel de service invité ne peut pas le fournir. Les actions staff explicites d’ajout/retrait manuel remplacent le choix initial et rétablissent les règles existantes d’ajout manuel/automatique. Aucun modèle de réponse partagé ni migration ne change ; les anciens clients POS et invités peuvent omettre ce champ optionnel.",
           "he": "POST /api/v1/orders מקבל את השדה הבוליאני האופציונלי production_plan לצוות בלבד. השמטתו שומרת על הכללים הקודמים. False מוציא את ההזמנה מטבלת הייצור ומספירת הימים, גם אחרי תשלום, תזמון או שינוי אוטומטי של force_production. True מוסיף הזמנה ידנית ללא תשלום מתארח; קישור מוכן רגיל עדיין ממתין לתשלום שנגבה ואירוע שומר על תנאי האישור שלו. השרת מנהל את external_metadata.production_plan ודוחה הזרקת מטא־נתונים ישירה. יצירה ציבורית מסירה את השדה וקריאת שירות של אורח אינה רשאית לספק אותו. פעולות צוות מפורשות להוספה או הסרת הוספה ידנית מחליפות את הבחירה הראשונית ומחזירות את כללי ההוספה הידנית והאוטומטית הקיימים. אין שינוי במודל התשובה המשותף או מיגרציה; לקוחות POS ואורחים ישנים יכולים להשמיט את השדה האופציונלי."
+        }
+      },
+      {
+        "id": "device-receipt-contract",
+        "title": {
+          "fr": "Déployer la demande de reçu par appareil",
+          "en": "Release device-scoped receipt requests",
+          "he": "פריסת בקשות קבלה לפי מכשיר"
+        },
+        "instructions": {
+          "fr": "Préparation locale : appliquer la migration 289 et déployer l’API compatible avant le POS. La capacité receipt-capabilities annonce device_receipts_version=1 ; les clients mis à jour transmettent receipt_on_request=true aux règlements ordinaires simples ou groupés. Le paiement est enregistré avec ses journaux existants, sans reçu automatique supplémentaire. Le POST staff /restaurants/:id/printing/spooler/receipts exige orders.manage et un contexte restaurant identique. Il lie request_id, spooler_id, order_ids payés, printer_ids affectés et locale à une demande immuable ; une reprise exacte retourne les travaux initiaux et une intention différente renvoie 409. La preuve d’appartenance du terminal intégré reste exigée. Le GET de statut est en lecture seule et n’envoie aucun document. Les anciens clients et les partages financiers conservent leurs contrats ; la cuisine reste séparée. Les tests synthétiques ne certifient pas l’installation physique ni une livraison en production. Valider en développement avant promotion approuvée du même artefact.",
+          "en": "Local preparation: apply migration 289 and deploy the compatible API before POS. Receipt capabilities advertise device_receipts_version=1; updated clients send receipt_on_request=true for ordinary single/batch settlements. Payment uses its existing journals without an additional automatic receipt. Staff POST /restaurants/:id/printing/spooler/receipts requires orders.manage and identical restaurant context. It binds request_id, spooler_id, paid order_ids, assigned printer_ids and locale to one immutable request; an exact replay returns the original jobs and a changed intent returns 409. Integrated-terminal ownership proof remains required. The status GET is read-only and sends no document. Older clients and financial shares retain their contracts; kitchen dispatch remains separate. Synthetic tests do not certify physical installation or production delivery. Validate development before approved promotion of the same artifact.",
+          "he": "הכנה מקומית: החילו מיגרציה 289 ופרסו API תואם לפני POS. יכולת receipt-capabilities מצהירה על device_receipts_version=1; לקוחות מעודכנים שולחים receipt_on_request=true בסגירת תשלומים רגילים בודדים או קבוצתיים. התשלום נרשם ביומנים הקיימים בלי קבלה אוטומטית נוספת. POST לצוות /restaurants/:id/printing/spooler/receipts דורש orders.manage והקשר מסעדה זהה. הוא קושר request_id, spooler_id, order_ids ששולמו, printer_ids משויכים ושפה לבקשה בלתי משתנה; חזרה זהה מחזירה את המשימות המקוריות ושינוי כוונה מחזיר 409. עדיין נדרשת הוכחת בעלות על המסוף המובנה. GET הסטטוס הוא לקריאה בלבד ואינו שולח מסמך. לקוחות ישנים וחשבונות מפוצלים שומרים על החוזים שלהם; שליחת המטבח נפרדת. בדיקות סינתטיות אינן מאשרות התקנה פיזית או מסירה בייצור. יש לאמת בפיתוח לפני קידום מאושר של אותו ארטיפקט."
+        }
+      },
+      {
+        "id": "terminal-fleet-declarations",
+        "title": {
+          "en": "Global terminal declarations",
+          "fr": "Déclarations du parc de terminaux",
+          "he": "הצהרות במלאי המסופים"
+        },
+        "instructions": {
+          "en": "On compatible API and Backoffice versions, a Foody superadmin opens Backoffice → Terminal fleet to search terminals across restaurants and edit declared serial, DID, SHVA terminal number, supplier, acquirer and lifecycle. Save checks the current revision and records an audit event. These values remain declared, not applied: saving does not reassign hardware, alter banking parameters or start an Ashrait command. A returned/repair label alone does not authorize reuse. Remote bank configuration and its verified readback remain unavailable pending the regional Verifone contract. Restaurant Admin retains its restaurant scope. Never enter credentials or card data in these fields.",
+          "fr": "Sur les versions compatibles de l’API et du Backoffice, un superadmin Foody ouvre Backoffice → Terminal fleet pour rechercher les terminaux de tous les restaurants et modifier la série, le DID, le numéro SHVA, le fournisseur, l’acquéreur et le cycle de vie déclarés. Enregistrer vérifie la révision et crée une trace d’audit. Ces valeurs restent déclarées, non appliquées : la sauvegarde ne réattribue pas le matériel, ne change pas ses paramètres bancaires et ne lance aucune commande Ashrait. Un libellé Retourné ou Réparation n’autorise pas sa réutilisation. La configuration bancaire distante et sa vérification restent indisponibles en attendant le contrat régional Verifone. L’Admin conserve son périmètre restaurant. Ne saisissez aucun secret ni donnée de carte dans ces champs.",
+          "he": "בגרסאות תואמות של ה-API וה-Backoffice, סופר-אדמין Foody פותח Backoffice → Terminal fleet לחיפוש מסופים בכל המסעדות ולעריכת מספר סידורי, DID, מספר שב״א, ספק, סולק ומצב מחזור חיים שהוצהרו. השמירה בודקת את הגרסה ורושמת אירוע ביקורת. הערכים נשארים מוצהרים ולא מיושמים: שמירה אינה משייכת חומרה מחדש, משנה פרמטרים בנקאיים או מפעילה פקודת Ashrait. סימון הוחזר או בתיקון אינו מאשר שימוש חוזר. הגדרה בנקאית מרחוק ואימות היישום עדיין אינם זמינים עד לקבלת החוזה האזורי מ-Verifone. ממשק ניהול המסעדה נשאר מוגבל למסעדה שלה. אין להזין סודות או נתוני כרטיס בשדות האלה."
         }
       }
     ],
