@@ -1535,3 +1535,19 @@ source checkpoints; pin this documentation commit in Admin and API before CI.
 Verify the development artifacts, then promote those same artifacts under the
 ongoing authorized delivery correction. Publish the matching help and support
 corpus together. No real order, message or tenant configuration is changed.
+
+
+## Optional prepared products and delivery intake deadlines (4 November 2026, local)
+
+This uncommitted preparation changes API, Admin and guest Web. It configures no
+restaurant and performs no deployment, live order, payment or customer message.
+Nullable prepared stock and absent zone deadlines preserve prior behavior. Public
+FR/HE/EN procedures qualify compatible release availability and distinguish shelf
+stock, dated validity, production deadlines, receiving weekdays and service/zone
+constraints. The original Available now channel is retained and repaired for slot
+scheduling and page-selected cartes; no article is automatically reconfigured.
+No screenshots occur in the updated procedures. Preserve unaffected POS and
+Backoffice source evidence. Export the identical support corpus after runtime
+validation, refresh these source contracts and retain WORKSPACE references until
+an immutable documentation commit is authorized. This is not PR or release
+readiness, and production is explicitly outside the user's requested scope.

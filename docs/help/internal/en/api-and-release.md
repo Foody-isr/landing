@@ -251,3 +251,9 @@ If the result is unknown, preserve the original POS and terminal and recover the
 GET /orders/end-of-day/history requires payments.manage and a current enrolled POS installation. It returns at most twenty finalized report IDs and frozen periods for that POS, newest first. GET /orders/end-of-day/:id reads the exact scoped report. Both are read only and never release an active close or dispatch a terminal operation. The capability end_of_day_history gates older clients. New recorded card snapshots carry currency only with original matching sale evidence; archived reports are not rewritten using current restaurant currency.
 
 GET /orders/end-of-day/preview reads the current POS period and attributable card collections without reserving anything. end_of_day_preview advertises the capability. Common history returns kind=cash or end_of_day, excludes duplicate drawers already included in a Z report and remains scoped to the authenticated POS.
+
+<span id="configurable-fulfillment-compatibility" />
+
+## Prepare configurable fulfillment contracts
+
+Local preparation: nullable dated/revisioned shelf stock and optional zone deadlines configure no restaurant automatically. Private APIs verify restaurant ownership and existing permissions. Public calendars and submission remain authoritative; private quantities are not added to the public item contract. Historical series leftovers use the operational service series for display and reservation, independently of the next preorder series. Verify defaults, reservation races, pre-production releases, older editors and translations; retain payment providers and existing orders. Migration 288/API precede Admin/Web. Export the identical corpus after runtime validation and keep a local WORKSPACE reference until commits are authorized; no production availability is attested.
