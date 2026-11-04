@@ -251,3 +251,9 @@ If the result is unknown, preserve the original POS and terminal and recover the
 GET /orders/end-of-day/history requires payments.manage and a current enrolled POS installation. It returns at most twenty finalized report IDs and frozen periods for that POS, newest first. GET /orders/end-of-day/:id reads the exact scoped report. Both are read only and never release an active close or dispatch a terminal operation. The capability end_of_day_history gates older clients. New recorded card snapshots carry currency only with original matching sale evidence; archived reports are not rewritten using current restaurant currency.
 
 GET /orders/end-of-day/preview reads the current POS period and attributable card collections without reserving anything. end_of_day_preview advertises the capability. Common history returns kind=cash or end_of_day, excludes duplicate drawers already included in a Z report and remains scoped to the authenticated POS.
+
+<span id="manual-production-plan-choice" />
+
+## Staff production-plan intent
+
+POST /api/v1/orders accepts the optional staff-only boolean production_plan. Omission retains legacy behavior. False excludes the order from the production sheet and its date counts, including after payment, scheduling or automatic force_production changes. True pins a manual non-hosted order; an ordinary prepared link still waits for collected payment and events retain their confirmation gates. The server owns the persisted external_metadata.production_plan value and rejects direct metadata injection. Guest creation strips the input, and service-level guest calls cannot supply it. Explicit staff pin/unpin actions supersede the creation choice and restore the existing manual-override/automatic rules. No shared response model or schema migration changes; older POS and guest clients can omit the optional input.

@@ -1586,3 +1586,18 @@ corpus together. No real order, message or tenant configuration is changed.
 Transactions reads confirmed Foody records across cash, card-present Verifone and online providers. The read-only Admin destination now exists with payments.view/manage gates, date/channel/tender/search filters and per-currency gross/recorded-return figures. Stancer keeps its explicit processor label. A restaurant-owned immutable cash sale/return survives an unavailable original order: only its display allocations are hidden and flagged, without rewriting the journal or granting refund authority. Corrupt amounts, refund relationships, actor/session checks and financial mutation guards retain their checks. No bank, Deposit, credential, provider-routing or schema mutation is introduced.
 
 Review the dedicated transactions guide in FR/HE/EN with the matching API/POS/Admin release; move the existing history sections without changing their public scope. Preserve the unrelated Web, Backoffice and Landing application-source inventory from this develop base. Refresh only API, POS and Admin source evidence, embed the identical support corpus and pin an immutable Landing commit. All browser fixtures use synthetic data and block provider requests. Production diagnosis reads only aggregate linkage metadata; no payment, cash movement or real business record is modified.
+## Explicit manual-order production choice (4 November 2026)
+
+This review refreshes Admin, API and Landing only. Web, POS and Backoffice source
+blocks and surfaces retain the exact Landing develop 5119de2e evidence; those
+clients are not revalidated or republished. Existing clients omit the optional
+staff-only production_plan input and retain their admission rules. The shared
+Order response model is unchanged, so no Flutter model or release is required.
+The final Admin step requires Yes/No without a default and earlier production
+banners are removed. No is persisted as server-owned metadata and excludes both
+sheet rows and day counts even after scheduling/payment/automatic pinning. Yes
+retains prepared-checkout and event confirmation gates. Existing authorized manual
+pin/unpin actions supersede the creation decision. Public creation cannot set it.
+Publish the updated three-language procedures and exact support corpus with this
+release. Verify and promote the immutable API artifact before the matching Admin;
+no schema migration, real financial operation or production data repair is needed.
