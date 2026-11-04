@@ -1,5 +1,5 @@
 ---
-title: Clôture de journée et rapport Z Foody
+title: 'Solde en caisse, clôture et rapport Z'
 description: >-
   Plus → Rapports → Clôture de journée, sur le POS concerné. Nécessite le POS et l’API compatibles ; ce guide ne
   confirme pas leur installation.
@@ -12,7 +12,7 @@ featureId: pos-end-of-day
 audience: public
 releaseStatus: local-release-unverified
 ---
-Plus → Rapports → Clôture de journée, sur le POS concerné. Nécessite le POS et l’API compatibles ; ce guide ne confirme pas leur installation.
+Plus → Rapports → Solde en caisse, sur le POS concerné. Le POS et l’API compatibles regroupent ici les espèces, les cartes et la clôture.
 
 > **Disponibilité à confirmer**
 > Cette application existe dans les sources. Ce guide ne confirme ni sa distribution publique ni sa disponibilité dans votre version installée.
@@ -63,4 +63,14 @@ Commencer la clôture réserve la journée et bloque les nouveaux paiements cart
 
 Le POS compatible affiche séparément le nombre et les traces des encaissements carte ordinaires archivés par Foody, ainsi que leur montant lorsque la devise originale est connue pour tous les éléments. Le sous-total exclut les remboursements et ne prouve ni total bancaire ni versement. Ne l’additionnez pas aux paiements financiers : ces listes peuvent se recouper. Si la devise historique manque ou diffère entre lignes, aucun total commun n’est inventé. Les anciens rapports ne sont pas réécrits avec la devise actuelle du restaurant. Les totaux du terminal restent Indisponible lorsque son retour ne fournit pas de chiffres ; cela ne signifie pas zéro.
 
-Rapports Z précédents permet de sélectionner l’un des vingt derniers rapports finalisés de ce POS. La consultation est en lecture seule : elle ne remplace pas la clôture active, ne transmet rien et n’autorise aucun paiement. Une API plus ancienne indique que cette consultation nécessite une version compatible. Les rapports des autres POS ou d’un autre restaurant ne sont pas inclus.
+Historique de caisse permet de sélectionner l’un des vingt derniers rapports finalisés de ce POS. La consultation est en lecture seule : elle ne remplace pas la clôture active, ne transmet rien et n’autorise aucun paiement. Une API plus ancienne indique que cette consultation nécessite une version compatible. Les rapports des autres POS ou d’un autre restaurant ne sont pas inclus.
+
+<span id="unified-cash-workspace" />
+
+## Suivre et clôturer depuis Solde en caisse
+
+Avec payments.manage et une API compatible, Solde en caisse est l’entrée commune. Ouvrir une session espèces demande le fonds initial, qui peut être zéro ; cette ouverture ne connecte aucun terminal et ne transmet rien. Pendant le service, les mouvements restent dans ce même espace. Les cartes sont présentées séparément par terminal et pour la période indiquée, sans être ajoutées aux espèces physiques attendues.
+
+Clôturer la session ouvre la vérification des espèces et des terminaux inclus. Annuler à ce stade ne réserve pas la caisse et ne transmet rien. Valider Commencer la clôture fige le comptage et bloque les nouvelles opérations jusqu’à la fin. Les étapes de transmission, reprise et finalisation restent dans Solde en caisse. Chaque terminal inclus exige sa confirmation explicite de transmission, une seule fois ; un changement d’employé ne déclenche aucun dépôt. Une clôture déjà commencée réapparaît directement dans ce même espace jusqu’à son rapport Z confirmé. Aucun effacement de journal ni seconde transmission ne sert à la contourner.
+
+Historique de caisse liste les vingt entrées récentes : rapports Z finalisés et sessions espèces closes hors rapport Z. Une caisse déjà incluse dans un rapport Z n’apparaît pas une seconde fois. Ouvrir une entrée affiche ses données en lecture seule, sans remplacer la session courante. Les anciennes API et les droits restreints conservent les écrans autorisés ; la consultation des espèces n’accorde pas le droit de transmettre un terminal. Les essais matériels restent distincts de la validation logicielle.

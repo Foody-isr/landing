@@ -1,5 +1,25 @@
 # Help ownership, evidence and releases
 
+## Unified current-drawer workspace (4 November 2026)
+
+Compatible POS/API versions group cash, recorded card collections by physical
+terminal, closing review, explicit transmissions, recovery and final Z in Current
+drawer. Drawer history combines up to twenty finalized Z and standalone closed
+cash sessions; a drawer included in a Z is represented once. Archive dialogs stay
+read only and never replace the active close. Older APIs/restricted roles retain
+existing authorized screens. No native dispatch or bank attestation changes.
+
+The read-only preview uses the same original-currency and period rules as the
+closing snapshot, batches policy reads and creates no reservation. Opening the
+close review and cancelling do nothing; only the existing Begin action freezes
+the count. Transmit remains explicit per included terminal; successful native
+receipts and uncertain journals retain their exact recovery behavior. Counts and
+Foody recorded gross card subtotals are distinct from unavailable bank totals.
+No actual hardware payment or Deposit was run for this change. FR/HE/EN and
+compact/tablet regressions cover navigation, cancellation, history and existing
+cash/terminal safeguards. No screenshots occur in the changed procedures.
+
+
 ## Ordinary internal delivery fee regression (4 November 2026)
 
 Ordinary deliveries default to a quote for the current customer address. The

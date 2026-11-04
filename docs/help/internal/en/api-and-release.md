@@ -249,3 +249,5 @@ If the result is unknown, preserve the original POS and terminal and recover the
 ## Read finalized POS report identities
 
 GET /orders/end-of-day/history requires payments.manage and a current enrolled POS installation. It returns at most twenty finalized report IDs and frozen periods for that POS, newest first. GET /orders/end-of-day/:id reads the exact scoped report. Both are read only and never release an active close or dispatch a terminal operation. The capability end_of_day_history gates older clients. New recorded card snapshots carry currency only with original matching sale evidence; archived reports are not rewritten using current restaurant currency.
+
+GET /orders/end-of-day/preview reads the current POS period and attributable card collections without reserving anything. end_of_day_preview advertises the capability. Common history returns kind=cash or end_of_day, excludes duplicate drawers already included in a Z report and remains scoped to the authenticated POS.

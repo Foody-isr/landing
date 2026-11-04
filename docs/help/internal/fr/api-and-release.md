@@ -249,3 +249,5 @@ Si le résultat est inconnu, conservez le POS et le terminal d’origine puis re
 ## Lire les références des rapports POS finalisés
 
 GET /orders/end-of-day/history exige payments.manage et une installation POS enrôlée courante. Il retourne au plus vingt références de rapports finalisés et leurs périodes figées pour ce POS, des plus récents aux plus anciens. GET /orders/end-of-day/:id lit le rapport exact dans ce périmètre. Ces lectures ne libèrent aucune clôture active et ne transmettent aucune opération terminal. La capacité end_of_day_history protège la compatibilité. Les nouveaux instantanés carte conservent une devise seulement avec les preuves concordantes de la vente originale ; les rapports archivés ne sont pas réécrits avec la devise actuelle du restaurant.
+
+GET /orders/end-of-day/preview lit la période et les encaissements carte attribuables du POS sans réservation. end_of_day_preview annonce cette capacité. L’historique commun retourne kind=cash ou end_of_day, exclut les doublons de tiroirs inclus dans un Z et reste limité au POS authentifié.

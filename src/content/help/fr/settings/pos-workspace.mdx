@@ -100,7 +100,7 @@ Le panier local non envoyé et l’addition enregistrée sur le serveur sont dis
 
 Sur le POS compatible, Plus → Rapports propose Clôture de journée aux comptes autorisés lorsque l’API annonce cette fonction. La tablette conserve la navigation latérale des rapports ; un écran compact ouvre le même parcours dans sa navigation simple. Ce parcours rassemble comptage, transmission du terminal et rapport opérationnel, sans terminer le pointage. Consultez [la procédure de fin de journée](/fr/help/payments/end-of-day).
 
-Le rapport compatible affiche sa période figée et distingue les encaissements carte enregistrés par Foody des totaux bancaires du terminal. Rapports Z précédents consulte les vingt dernières clôtures finalisées de ce POS en lecture seule, sans remplacer la clôture en cours. Commencer une clôture bloque les nouvelles cartes jusqu’à la finalisation du rapport Z ; fermer puis rouvrir la caisse espèces ne la termine pas. Consultez [les étapes et les limites du rapport](/fr/help/payments/end-of-day#end-of-day-steps-and-period).
+Le rapport compatible affiche sa période figée et distingue les encaissements carte enregistrés par Foody des totaux bancaires du terminal. Historique de caisse consulte les vingt dernières clôtures finalisées de ce POS en lecture seule, sans remplacer la clôture en cours. Commencer une clôture bloque les nouvelles cartes jusqu’à la finalisation du rapport Z ; fermer puis rouvrir la caisse espèces ne la termine pas. Consultez [les étapes et les limites du rapport](/fr/help/payments/end-of-day#end-of-day-steps-and-period).
 
 <span id="victa-mini-hardware" />
 
@@ -113,3 +113,9 @@ Sur iPad, Matériel → Terminaux de paiement propose Connecter un Victa Mini, p
 ## Vérifier la destination physique du paiement carte
 
 Avec les versions POS/API compatibles, vérifiez la destination physique avant l’encaissement carte : consultez le [choix Mini/Portable](/fr/help/payments/victa-mini#explicit-terminal-selection) et la [configuration vérifiée du matériel](/fr/help/payments/victa-mini#connection). Les identifiants existants, la séparation QR, la préparation et les réglages de libération des tables restent indépendants. Une réservation terminal non résolue bloque un autre encaissement ; reprenez l’opération d’origine plutôt que de créer une vente de remplacement.
+
+<span id="unified-cash-workspace" />
+
+## Utiliser le suivi de caisse commun
+
+Avec les droits de paiement et les versions compatibles, ouvrez Plus → Rapports → Solde en caisse. Le même espace présente le tiroir espèces, les encaissements carte enregistrés par terminal et la clôture guidée. Historique de caisse réunit les sessions espèces closes et les rapports Z finalisés. Les anciennes adresses de clôture et de dépôt rejoignent cet espace ; les API plus anciennes conservent leur parcours précédent. Consultez [le parcours de caisse commun](/fr/help/payments/end-of-day#unified-cash-workspace).

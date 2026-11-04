@@ -1,5 +1,5 @@
 ---
-title: End of day and the Foody Z report
+title: 'Current drawer, closing and Z report'
 description: >-
   More → Reports → End of day, on the relevant POS. Requires matching POS and API versions; this guide does not confirm
   installation.
@@ -12,7 +12,7 @@ featureId: pos-end-of-day
 audience: public
 releaseStatus: local-release-unverified
 ---
-More → Reports → End of day, on the relevant POS. Requires matching POS and API versions; this guide does not confirm installation.
+More → Reports → Current drawer on the relevant POS. Compatible POS and API versions bring cash, cards and closing together here.
 
 > **Release availability must be confirmed**
 > This application exists in the source workspace. This guide does not confirm public distribution or availability in your installed release.
@@ -63,4 +63,14 @@ Starting end of day reserves the day and blocks new card payments until Finalize
 
 A compatible POS separately shows the count and traces of ordinary card collections archived by Foody, and their amount when the original currency is known for every entry. The subtotal excludes refunds and proves neither bank totals nor settlement. Do not add it to financial payments: these lists can overlap. If historical currency is missing or differs between entries, no common total is invented. Older reports are not rewritten using the restaurant’s current currency. Terminal totals remain Unavailable when the terminal result supplies no numerical values; this does not mean zero.
 
-Previous Z reports lets you select one of the twenty latest finalized reports on this POS. Viewing is read only: it does not replace the active close, transmit anything or authorize payment. An older API explains that viewing requires a compatible version. Reports belonging to other POS devices or restaurants are excluded.
+Drawer history lets you select one of the twenty latest finalized reports on this POS. Viewing is read only: it does not replace the active close, transmit anything or authorize payment. An older API explains that viewing requires a compatible version. Reports belonging to other POS devices or restaurants are excluded.
+
+<span id="unified-cash-workspace" />
+
+## Track and close from Current drawer
+
+With payments.manage and a compatible API, Current drawer is the common entry point. Opening a cash session asks for starting cash, which may be zero; opening does not connect a terminal or transmit anything. During service, cash movements stay in this workspace. Cards are shown separately by terminal and for the displayed period, without adding them to expected physical cash.
+
+Close drawer opens the review of cash and included terminals. Cancelling at this stage neither reserves the drawer nor transmits anything. Confirming Start end of day freezes the count and blocks new operations until completion. Transmission, recovery and finalization remain inside Current drawer. Each included terminal needs one explicit transmission confirmation; changing employees never triggers a deposit. An already-started close reappears directly in this workspace until its Z report is confirmed. Erasing journals or retransmitting is never a workaround.
+
+Drawer history lists twenty recent entries: finalized Z reports and closed standalone cash sessions. Cash already included in a Z report is not shown a second time. Opening an entry is read only and does not replace the current session. Older APIs and restricted permissions retain their authorized screens; viewing cash grants no terminal-transmission permission. Hardware acceptance remains separate from software validation.
