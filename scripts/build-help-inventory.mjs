@@ -91,7 +91,12 @@ for (const [service, configuredRoot] of Object.entries(roots)) {
       'foodyserver:internal/salesstock/prepared_stock.go': ['kitchen-availability', 'menu-creating-a-menu-item', 'preorders'],
       'foodyadmin:src/components/menu-item/PreparedStockEditor.tsx': ['kitchen-availability', 'menu-creating-a-menu-item'],
     };
-    ids = focusedStockOwnership[`${service}:${file}`] ?? ids;
+    const currentPOSProofOwnership = {
+      'foodyserver:internal/devices/pos_device_proof.go': ['staff-devices-shifts', 'pos-payments', 'pos-end-of-day'],
+      'foodyserver:internal/orders/pos_device_context.go': ['pos-payments', 'pos-end-of-day'],
+      'foodyserver:internal/shifts/pos_device_context.go': ['staff-devices-shifts', 'platform-api'],
+    };
+    ids = currentPOSProofOwnership[`${service}:${file}`] ?? focusedStockOwnership[`${service}:${file}`] ?? ids;
     sources[file] = { sha256: digest(bytes), features: ids };
     const found = [];
     if (/(?:^|\/)app\/.*\/(?:page|route)\.[jt]sx?$/.test(file)) found.push({ kind: file.includes('/route.') ? 'next-api-route' : 'next-page', route: routePath(file), line: 1 });

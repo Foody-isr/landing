@@ -5,7 +5,7 @@ apps: both
 tags:
   - staff
   - staff-devices-shifts
-updatedAt: '2026-10-28'
+updatedAt: '2026-11-04'
 featureId: staff-devices-shifts
 audience: public
 releaseStatus: available
@@ -111,3 +111,9 @@ Plus → Rapports → Tiroir-caisse utilise une page verticale sur un terminal p
 Ce parcours nécessite l’API et le POS compatibles ; ce guide ne confirme pas leur installation. Après Se déconnecter, Période déjà terminée signifie qu’aucune période active n’a été trouvée pour votre compte dans ce restaurant. Cela ne résulte pas d’une erreur d’accès à la caisse. Annuler conserve la connexion. Verrouiller le terminal demande une confirmation explicite puis relit l’état avant de revenir au PIN, sans envoyer une nouvelle fin de période.
 
 Si une période apparaît entre-temps, si la connexion ou le restaurant change, si la lecture échoue ou si une opération espèces locale est en attente, le verrouillage n’est pas confirmé. Gardez les données, résolvez l’opération dans son parcours puis réessayez. Les journaux de paiement du terminal sont conservés. Ce verrouillage ne clôture aucune caisse, ne crée pas de période et ne réactive pas une autorisation d’appareil.
+
+<span id="current-pos-cash-context" />
+
+## Utiliser plusieurs caisses sans déplacer le pointage
+
+Avec l’API et le POS compatibles, un même employé peut reprendre sa période sur un autre appareil enrôlé du même restaurant : Solde en caisse et la clôture utilisent l’autorisation propre à cet appareil. La période garde son début et son appareil d’origine ; aucune caisse ni opération n’est transférée. Avant la déconnexion, les caisses ouvertes de l’appareil d’origine et de l’appareil courant doivent être résolues. Une autorisation absente, expirée, révoquée ou étrangère ne permet aucun contournement.
