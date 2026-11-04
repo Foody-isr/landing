@@ -14125,11 +14125,11 @@
       "repository": "https://github.com/Foody-isr/pos",
       "sourceCommit": "1f08ec5240054602a8067040f8dec5195720d38f",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "65362062757fd4035ea6f0b0adbab6faa1eb2397e44e7624d0a6070b9e8c855f",
+      "sourceSnapshot": "a0609c628ec6d9c01e0748b0c391d275060d2ce894579b2018fc24cfda8560ac",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "android/app/src/main/kotlin/com/foodypos/app/AshraitProtocol.kt": {
-          "sha256": "2d48e71207993ecb4db1292a9c82031fa6d30e48f1d9db65ee3103ba965b75c3",
+          "sha256": "8e2edc0d625d501d03c2205209821669ded9cc2caec10306eff2664f41aad34b",
           "features": [
             "pos-payments"
           ]
@@ -14147,7 +14147,7 @@
           ]
         },
         "android/app/src/main/kotlin/com/foodypos/app/VerifonePaymentBridge.kt": {
-          "sha256": "56754af14377e6854a7514ee35357db3b98a6888634aa6530f9307cc976c150a",
+          "sha256": "01c91d6c434f24ffb92da94a9e5df5ee7e289871157cfb29e2eb56f68d840ea9",
           "features": [
             "pos-payments"
           ]
@@ -14454,8 +14454,9 @@
           ]
         },
         "lib/core/ui/terminal_payment_error.dart": {
-          "sha256": "5c9586bee0e014ce76b3fc19393749eef1a5b571dfb6304a93b69c8a5d842d6c",
+          "sha256": "a8969ec2ad15978b503331cb1b1b72a896382ccff7ef0718cae30949916b3d58",
           "features": [
+            "pos-payments",
             "shared-runtime",
             "pos-end-of-day"
           ]
@@ -16703,7 +16704,7 @@
           ]
         },
         "lib/services/payments/terminal_payment_service.dart": {
-          "sha256": "5ee7657fc325356b041c2fa1675952295bef8bb555d350abcbd63c36bfa2040c",
+          "sha256": "853626b45b8602e8dcae9bd7f248f8e6be483d16931bcdd6b93bdbe97c3163d8",
           "features": [
             "pos-payments",
             "pos-end-of-day"
@@ -41186,7 +41187,8 @@
           "lib/main.dart",
           "lib/features/orders/presentation/payment_terminal_picker.dart",
           "ios/Runner/AshraitProtocol.h",
-          "android/app/src/main/kotlin/com/foodypos/app/AshraitProtocol.kt"
+          "android/app/src/main/kotlin/com/foodypos/app/AshraitProtocol.kt",
+          "lib/core/ui/terminal_payment_error.dart"
         ],
         "foodyserver": [
           "internal/payment/**",
@@ -41764,6 +41766,10 @@
         {
           "service": "foodypos",
           "file": "lib/core/routing/app_router.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/core/ui/terminal_payment_error.dart"
         },
         {
           "service": "foodypos",
@@ -96973,6 +96979,7 @@
       "service": "foodypos",
       "source": "lib/core/ui/terminal_payment_error.dart",
       "features": [
+        "pos-payments",
         "shared-runtime",
         "pos-end-of-day"
       ],
