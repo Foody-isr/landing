@@ -1595,3 +1595,7 @@ remain unchanged. The Admin result explains ready stock; no stock is reserved by
 simulation. This focused follow-up documentation PR preserves the first release
 guidance, updates its source evidence and provides a new immutable pin for the
 still-open API/Admin/Web PRs. Production promotion waits for this correction.
+
+Compatibility regressions also retain historical counted-stock future receiving
+appointments; the new dated pool does not impose its expiry on that existing
+mechanism. A ready product still cannot waive a zone intake deadline.
