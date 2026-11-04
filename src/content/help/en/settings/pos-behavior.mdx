@@ -5,7 +5,7 @@ apps: both
 tags:
   - settings
   - pos-behavior
-updatedAt: '2026-10-30'
+updatedAt: '2026-11-04'
 featureId: pos-behavior
 audience: public
 releaseStatus: available
@@ -104,6 +104,8 @@ The handheld terminal has three unlabeled buttons: the signed-in user’s initia
 
 When the compatible API offers End of day, Terminal deposits opens that combined flow before any transmission. With an older API, the separate deposit screen remains available according to actual terminal capabilities. A provisioning change after display requires another review before reserving cash. An old card approval without verifiable provenance remains pending reconciliation: it permits neither another collection nor adoption by another restaurant. See [closing and recovery](/en/help/payments/end-of-day).
 
+A compatible report shows its frozen period and distinguishes Foody-recorded card collections from the terminal’s bank totals. Drawer history reads the twenty latest finalized closes on this POS without replacing the active close. Starting a close blocks new card payments until the Z report is finalized; closing and reopening the cash drawer does not complete it. See [report steps and limits](/en/help/payments/end-of-day#end-of-day-steps-and-period).
+
 <span id="victa-mini-hardware" />
 
 ## Connect and restore the Victa Mini on iPad
@@ -115,3 +117,9 @@ On iPad, Hardware → Payment terminals offers Connect a Victa Mini, then the sa
 ## Review the physical card destination
 
 With the compatible POS/API, review the physical card destination before collection: see [Mini/Portable selection](/en/help/payments/victa-mini#explicit-terminal-selection) and [verified hardware setup](/en/help/payments/victa-mini#connection). Existing order IDs, QR separation, kitchen progression and table-release settings remain independent. An unresolved terminal reservation blocks another collection; recover the original operation rather than creating a replacement sale.
+
+<span id="unified-cash-workspace" />
+
+## Use the unified cash workspace
+
+With payment permissions and compatible versions, open More → Reports → Current drawer. The same workspace shows the cash drawer, recorded card collections by terminal and guided closing. Drawer history combines closed cash sessions and finalized Z reports. Older closing and deposit addresses open this workspace; older APIs retain their previous workflow. See [the unified cash workflow](/en/help/payments/end-of-day#unified-cash-workspace).
