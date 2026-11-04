@@ -1,5 +1,50 @@
 # Help ownership, evidence and releases
 
+## Ashrait read-only terminal inspection (4 November 2026)
+
+The compatible POS adds explicit latest-transaction inspection to Hardware for
+paired iPad terminals and inventory-recognized Portable devices. Opening the
+dialog sends nothing. The existing connection must already be ready; the read
+does not initialize/download parameters, collect, settle, clear recovery, print
+or replay a bank operation. Native query IDs and physical/tenant/actor scope
+reject foreign or late results. Only allowlisted reference, effect, authorization
+and exact known money reach Flutter; receipt/card JSON stays native. Empty after
+restart does not mean no debit. Corrupt native recovery remains a lock. The iOS
+ordinary-charge guard is corrected at dispatch entry.
+
+Review pos-checkout, victa-mini, pos-workspace and pos-behavior in FR/HE/EN. The
+new display has synthetic iPad/French and compact/Hebrew fixtures; no real bank
+data, hardware payment or transmission is used. The other advanced PDF methods
+remain unactivated pending regional mapping, maintenance/accounting and receipt
+contracts; the public guides must not claim full implementation or certification.
+API runtime, Admin, Web and Backoffice remain unchanged; API receives the exact
+updated public corpus. Preserve all unrelated inventory/source evidence and pin
+an immutable documentation commit. Publish procedures only with the matching POS.
+
+## Ashrait Israel protocol checkpoint (4 November 2026)
+
+The compatible POS replaces generic last-transaction lookup with the regional
+getLastTransaction query and parses first-payment paymentBrand JSON natively.
+Unknown/empty/mismatched recovery retains the original debit lock; restart is
+not evidence of no charge. Purchase capture, server reservation and guided
+Deposit/Z remain separate from advanced financial effects. Generic totals,
+close-only and reconcile-only controls and dead global reconciliation parsing
+are removed. Legacy deposit journal UUIDs remain readable without retransmission.
+
+FR/HE/EN pos-checkout removes the obsolete procedures and adds recovery guidance.
+The supplied document does not specify bank totals/Deposit response fields or
+all PSDK mappings. New typed contracts are preparation, not activated advanced
+payment/maintenance features; public help must not claim them available. See POS
+docs/ashrait-israel-integration.md for the full matrix and remaining vendor/device
+acceptance. Raw card/receipt JSON stays native. No hardware debit, Deposit, erase
+or VHQ reassignment was performed. This checkpoint is not a production release.
+
+API runtime/accounting, Admin and Guest Web are unchanged. Embed the identical
+public help corpus in API, refresh only API/POS source inventory and preserve
+other services’ reviewed evidence. Pin immutable Landing documentation before
+release; do not advertise a certification or deploy unconfirmed advanced flows.
+No screenshots occur in the revised procedures.
+
 ## Unified current-drawer workspace (4 November 2026)
 
 Compatible POS/API versions group cash, recorded card collections by physical

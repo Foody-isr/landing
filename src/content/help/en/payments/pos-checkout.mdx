@@ -66,12 +66,6 @@ On an ordinary counter or table check on the updated handheld terminal, Pay open
 
 To close cash and card activity in one flow, use [End of day and the Foody Z report](/en/help/payments/end-of-day). Staff clock-out remains separate. On older versions, Terminal deposits offers a separate Verifone transmission with payments.manage: check the terminal, confirm once at end of day and wait for final confirmation. An uncertain result blocks repetition before verification. Unsupported totals commands remain unavailable. Numerical results and the batch reference are shown only when actually supplied. Never share terminal credentials or card details in support chat. Hardware compatibility must be checked on the relevant Mini or Portable. If context changes, [reopen confirmation](/en/help/payments/cash-access#terminal-report-context).
 
-<span id="terminal-reports-advanced" />
-
-## Read totals or use advanced terminal actions
-
-In More → Reports → Terminal deposits, View current totals reads the active batch without closing or transmitting it. Advanced actions are shown only when supported by the terminal: Close batch only closes the reporting period without transmission; Transmit only requests acquirer reconciliation without explicitly closing it. Neither advanced action alone is the standard end-of-day flow. Use either only on your payment provider's instruction, confirm once and wait for the terminal's final result. If unsupported or uncertain, do not assume success; check the terminal or ask the provider before retrying.
-
 <span id="saved-qr-payment-scope" />
 
 ## Verify payment for one QR order
@@ -143,3 +137,9 @@ With payment permissions and compatible versions, open More → Reports → Curr
 ## Review completed payments
 
 Open Transactions to review recorded cash, POS card and online payments. Follow [transaction history](/en/help/payments/transactions) for filters, payment origins, returns and unavailable original orders. This shared history does not retrieve all payments from Ashrait.
+
+<span id="ashrait-last-transaction-inspection" />
+
+## Inspect the last terminal transaction
+
+In Hardware → Payment terminals, a manager can inspect the last transaction on the connected terminal. This read changes no payment. See [the procedure and its limits](/en/help/payments/ashrait-terminal-inspection).
