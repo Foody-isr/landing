@@ -1548,13 +1548,18 @@
     },
     "selectors": {
       "foodyadmin": [
-        "src/app/[restaurantId]/kitchen/**"
+        "src/app/[restaurantId]/kitchen/**",
+        "src/components/menu-item/PreparedStockEditor.tsx"
       ],
       "foodyserver": [
         "internal/stock/**",
         "internal/prep/**",
         "internal/availability/**",
-        "internal/recipes/**"
+        "internal/recipes/**",
+        "internal/common/prepared_stock.go",
+        "internal/salesstock/prepared_stock.go",
+        "internal/menu/prepared_stock.go",
+        "migrations/288_prepared_product_stock.sql"
       ],
       "foodypos": [
         "lib/features/kitchen/**"
@@ -1742,12 +1747,25 @@
           "en": "With menu editing permission, open a saved product → Stock & availability → Edit stock and availability. The Availability badge in Items or a Carte opens the same editor for current stock. Opening it changes nothing. Choose Available without limit, Unavailable, Manually defined quantity or Quantity calculated from recipe. Manual quantity is the remaining stock entered in units, g/ml or per size; existing commitments remain reserved. Recipe calculation uses available ingredients and preparations and stops applying the manual counter. Old counters and frozen reservations remain intact for existing orders. Without recipe ingredients, no quantity limit can be calculated: a message asks you to complete the recipe. If ready-stock sale is active, disable it in the preparation settings and save the product before choosing recipe calculation. Advanced stock settings start collapsed. Open them to choose the Stock profile. Use the default setting inherits the category profile, then the restaurant profile; a named profile such as Standard is an explicit choice. The profile controls stock tracking, the low-stock threshold, displaying the remaining count and hiding the product or marking it sold out when empty. A summary describes the selected profile. If the profile does not track stock, a visible message says sales are not limited by stock. Available without limit and Unavailable keep priority. The profile belongs to the product across all series; quantities and the stock source apply to the displayed series, or the product stock outside series. Apply directly saves every setting in this dialog: availability, source, tracking mode, unit, quantities and profile. This works with or without series, without product Save. Unsaved names, prices and preparation settings stay independent and are not saved. A profile-only change does not rewrite stock or reservations, including exhausted stock and inactive products. Stock and profile changes submitted together commit in one transaction: failure rolls back both and retains inputs. Dialog controls are locked while saving. Cancel or Escape before applying discards choices; after confirmation, leaving the product does not undo the applied settings. If saving succeeds but refreshing fails, Retry only reloads data without repeating the adjustment. Edit reusable profiles in Settings → Stock → Availability.",
           "he": "עם הרשאת עריכת תפריט, פתחו פריט שמור → מלאי וזמינות → עריכת מלאי וזמינות. תג הזמינות בפריטים או בתפריט פותח את אותו עורך עבור המלאי הנוכחי. פתיחה בלבד אינה משנה דבר. בחרו זמין ללא הגבלה, לא זמין, כמות מוגדרת ידנית או כמות מחושבת לפי המתכון. הכמות הידנית היא יתרה שמזינים ביחידות, בגרמים או במ״ל או לכל גודל; ההזמנות המחויבות נשארות שמורות. חישוב לפי המתכון משתמש במרכיבים ובהכנות הזמינים ומפסיק להחיל את המונה הידני. המונים הישנים וההקצאות הקפואות נשמרים עבור הזמנות קיימות. ללא מרכיבים במתכון אי אפשר לחשב מגבלת כמות, ומופיעה הודעה להשלמת המתכון. אם מכירה ממלאי מוכן פעילה, בטלו אותה בהגדרות ההכנה ושמרו את הפריט לפני בחירת חישוב לפי המתכון. הגדרות מלאי מתקדמות סגורות בתחילה. פתחו אותן כדי לבחור פרופיל מלאי. שימוש בהגדרת ברירת המחדל יורש את פרופיל הקטגוריה ואחריו את פרופיל המסעדה; פרופיל בשם כגון Standard הוא בחירה מפורשת. הפרופיל מגדיר מעקב מלאי, סף מלאי נמוך, הצגת הכמות שנותרה והסתרת הפריט או הצגתו כאזל כשהמלאי נגמר. סיכום מציג את הגדרות הפרופיל שנבחר. אם הפרופיל אינו עוקב אחר מלאי, הודעה גלויה מציינת שמכירות אינן מוגבלות לפי המלאי. זמין ללא הגבלה ולא זמין שומרים על עדיפות. הפרופיל שייך לפריט בכל הסדרות; הכמויות ומקור המלאי חלים על הסדרה המוצגת או על מלאי הפריט ללא סדרות. החלה שומרת ישירות את כל ההגדרות בחלונית: זמינות, מקור, אופן מעקב, יחידה, כמויות ופרופיל. הפעולה עובדת עם סדרות ובלעדיהן, בלי שמירה נוספת בדף הפריט. שם, מחירים והגדרות הכנה שעדיין בטיוטה נשארים נפרדים ואינם נשמרים. שינוי פרופיל בלבד אינו משכתב מלאי או הזמנות שמורות, גם כשהמלאי אפס או כשהפריט לא פעיל. מלאי ופרופיל ששונו יחד נשמרים בעסקה אחת: כשל מבטל את שניהם ושומר את הערכים. הפקדים נעולים בזמן השמירה. ביטול או Escape לפני החלה מבטלים את הבחירות; לאחר אישור, יציאה מדף הפריט אינה מבטלת הגדרות שהוחלו. אם השמירה הצליחה אך הרענון נכשל, ניסיון חוזר רק טוען נתונים בלי להחיל שוב את העדכון. ערכו פרופילים לשימוש חוזר בהגדרות → מלאי → זמינות."
         }
+      },
+      {
+        "id": "prepared-product-stock",
+        "title": {
+          "fr": "Gérer les produits déjà préparés",
+          "en": "Manage already prepared products",
+          "he": "ניהול מוצרים שכבר הוכנו"
+        },
+        "instructions": {
+          "fr": "Avec les versions compatibles et la permission de modifier le menu, ouvrez un article enregistré → Stock et disponibilité → Produits déjà préparés. Activez Utiliser un compteur de stock prêt indépendant, indiquez les unités préparées restantes et Stock prêt utilisable jusqu’au, puis Appliquer. La date proposée par l’API est aujourd’hui dans le fuseau du restaurant. Choisissez explicitement vendredi pour pouvoir vendre ce reliquat jeudi soir pour vendredi après la clôture de fabrication. Les unités sont communes aux formats de l’article : utilisez des articles distincts lorsque les formats ont besoin de stocks prêts distincts. Appliquer enregistre immédiatement ce compteur ; le bouton Enregistrer du produit conserve son rôle pour le délai de préparation. Le stock prêt ne remplace ni les limites de vente, ni les ingrédients, ni un article forcé épuisé. Si la quantité couvre tout cet article dans le panier et si la réception respecte sa date de validité, la fabrication et ses échéances peuvent être évitées. Sinon, le délai et les échéances du produit reprennent : un stock prêt nul ne ferme pas à lui seul la fabrication sur commande. Les horaires, fermetures, séries et règles de livraison restent applicables. Les unités sont réservées lors de la commande et libérées une seule fois en cas d’annulation avant production. Le journal distingue ces mouvements des quotas de vente. Après un conflit ou une réponse incertaine, conservez votre saisie, utilisez Recharger le stock actuel puis revérifiez avant d’appliquer. Désactiver ce compteur ne modifie pas les commandes existantes et une libération ultérieure ne le réactive pas. Les réglages historiques Stock prédéfini et vente immédiate restent disponibles ; ils ne sont ni convertis ni activés automatiquement. Les jours de réception exclus par l’article restent exclus. Pour les stocks prédéfinis historiques gérés par série, Disponible maintenant lit le reliquat de la série opérationnelle, pas le quota de la prochaine précommande.",
+          "en": "With compatible versions and menu-edit permission, open a saved article → Stock & availability → Products already prepared. Enable Use an independent shelf counter, enter Remaining prepared units and Prepared stock usable through, then Apply. The API proposes today in the restaurant timezone. Explicitly choose Friday to offer Thursday-evening leftovers for Friday after production has closed. Units are shared across this article’s formats: use separate articles when formats require separate ready-stock pools. Apply saves this counter immediately; product Save still persists the preparation draft. Shelf stock does not replace sales limits, ingredients or a manually sold-out article. When it covers the whole article quantity in the basket and the receiving date is within its validity, production time and product deadlines may be skipped. Otherwise normal production time and deadlines apply: zero shelf stock alone does not close made-to-order sales. Service hours, closures, batches and delivery rules still apply. Units are reserved at order placement and released once on cancellation before production. The journal distinguishes these movements from sales allowances. After a conflict or uncertain response, keep your input, use Reload current stock and review before applying again. Disabling the pool does not change existing orders and a later release cannot re-enable it. Historical predefined-stock and immediate-sale settings remain available and are never converted or enabled automatically. Receiving weekdays excluded by the article remain excluded. For historical predefined stock managed by series, Available now reads the operational service series remaining stock, not the next preorder allowance.",
+          "he": "בגרסאות תואמות ועם הרשאת עריכת תפריט, פתחו פריט שמור → מלאי וזמינות → מוצרים שכבר הוכנו. הפעילו שימוש במונה נפרד למלאי מוכן, הזינו יחידות מוכנות שנותרו ואת התאריך ניתן להשתמש במלאי המוכן עד, ולחצו החלה. ה־API מציע את היום לפי אזור הזמן של המסעדה. בחרו במפורש יום שישי כדי להציע ביום חמישי בערב שאריות מוכנות למסירה בשישי אחרי סגירת הייצור. היחידות משותפות לכל הגדלים של הפריט: השתמשו בפריטים נפרדים כאשר לגדלים נדרשים מאגרי מלאי מוכנים נפרדים. החלה שומרת את המונה מיד; שמירת המוצר עדיין שומרת את טיוטת ההכנה. מלאי מוכן אינו מחליף מגבלות מכירה, מרכיבים או פריט שסומן ידנית כאזול. כאשר הוא מכסה את כל כמות הפריט בסל ותאריך המסירה בתוך התוקף, ניתן לדלג על זמן ההכנה ומועדי הסגירה של המוצר. אחרת חלים זמן ההכנה והמועדים הרגילים: אפס במלאי המוכן אינו סוגר לבדו מכירה לפי הזמנה. שעות שירות, סגירות, סדרות וכללי משלוח עדיין חלים. היחידות משוריינות ביצירת ההזמנה ומשוחררות פעם אחת בביטול לפני ייצור. היומן מבדיל תנועות אלה ממכסות מכירה. אחרי התנגשות או תשובה לא ודאית, שמרו את הקלט, טענו את המלאי הנוכחי ובדקו לפני החלה נוספת. ביטול המונה אינו משנה הזמנות קיימות ושחרור מאוחר לא מפעיל אותו מחדש. הגדרות המלאי המוגדר מראש והמכירה המיידית ההיסטוריות נשארות זמינות ואינן מומרות או מופעלות אוטומטית. ימי מסירה שהפריט אינו מאפשר נשארים חסומים. במלאי מוגדר מראש היסטורי המנוהל לפי סדרות, זמין עכשיו קורא את יתרת סדרת השירות התפעולית ולא את מכסת ההזמנה מראש הבאה."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": true,
-    "procedureUpdatedAt": "2026-10-28",
+    "procedureUpdatedAt": "2026-11-04",
     "description": {
       "fr": "Configurer le stock de l’article, sa règle de disponibilité et son statut manuel dans l’éditeur actuel.",
       "en": "Configure item stock, its availability rule and manual status in the current item editor.",
@@ -3000,12 +3018,25 @@
           "en": "With menu editing permission, open an existing item or Create item, then Menus → Add to menus. Check the groups you want. Under an existing carte, choose Create a menu group, enter a distinct name and confirm: the group is selected automatically. For a rotating carte, check the displayed series and choose the intended date; selections stay bound to their own series. Done closes the picker and retains the item form. Before saving the item, choices and new groups stay local; discarding the item creates no group. The local new-item draft retains these choices on this device when storage is available; selected image files are excluded. After Save, the confirmation identifies the cartes whose drafts were updated: open each carte, review its preview and explicitly publish. If a draft cannot load, Retry reloads its groups without clearing the form. If saving is partial or uncertain, keep the editor open and save again to verify and finish; do not recreate the item. Group choices remain editable to resolve a conflicting name or a removed group. Already saved changes remain in the library and affected drafts.",
           "he": "עם הרשאת עריכת תפריט, פתחו פריט קיים או צור פריט, ואז תפריטים → הוספה לתפריטים. סמנו את הקבוצות הרצויות. תחת תפריט קיים בחרו צור קבוצת תפריט, הזינו שם ייחודי ואשרו: הקבוצה נבחרת אוטומטית. בתפריט מתחלף בדקו את הסדרה המוצגת ובחרו את התאריך הרצוי; כל בחירה נשארת קשורה לסדרה שלה. סיום סוגר את הבורר ושומר על טופס הפריט. לפני שמירת הפריט, הבחירות והקבוצות החדשות נשארות מקומיות; ביטול הפריט אינו יוצר קבוצה. טיוטת פריט חדש שומרת את הבחירות במכשיר זה כאשר האחסון זמין; קובצי התמונות שנבחרו אינם כלולים. לאחר שמירה, האישור מציין אילו טיוטות תפריט עודכנו: פתחו כל תפריט, בדקו תצוגה מקדימה ופרסמו במפורש. אם טיוטה אינה נטענת, נסו שוב לטעון את הקבוצות בלי למחוק את הטופס. בשמירה חלקית או בתוצאה לא ודאית, השאירו את העורך פתוח ושמרו שוב לבדיקה ולהשלמה; אל תיצרו את הפריט מחדש. אפשר להמשיך לערוך בחירות קבוצות כדי לפתור שם כפול או קבוצה שנמחקה. שינויים שכבר נשמרו נשארים בספרייה ובטיוטות המתאימות."
         }
+      },
+      {
+        "id": "prepared-product-stock",
+        "title": {
+          "fr": "Séparer fabrication et produits déjà prêts",
+          "en": "Separate production and products already ready",
+          "he": "הפרדה בין ייצור למוצרים שכבר מוכנים"
+        },
+        "instructions": {
+          "fr": "Après avoir enregistré l’article, configurez son délai et ses échéances dans Temps de préparation, puis Enregistrer. Avec les versions compatibles, le bloc Produits déjà préparés dispose d’un compteur et d’une date de validité indépendants, enregistrés par Appliquer. Il permet par exemple un fraisier prêt immédiatement tant que les unités suffisent, puis une fabrication en 1 h lorsque le stock prêt est épuisé, si les autres règles autorisent encore cette fabrication. Consultez [le stock prêt](/fr/help/kitchen/availability#prepared-product-stock) pour les quotas, formats, annulations et conflits. Une quantité restante ne change pas automatiquement le délai, la visibilité ou les zones de livraison. Les articles déjà configurés en vente immédiate gardent leur configuration.",
+          "en": "After saving an article, configure its production time and deadlines under preparation settings and Save. With compatible versions, Products already prepared has an independent quantity and validity date, saved by Apply. For example, a cake can be ready immediately while enough units remain, then require one hour of production after shelf stock is exhausted, provided the other rules still permit production. See [prepared stock](/en/help/kitchen/availability#prepared-product-stock) for allowances, formats, cancellations and conflicts. Remaining units do not automatically change preparation, visibility or delivery coverage. Articles already configured for immediate sale retain their settings.",
+          "he": "לאחר שמירת פריט הגדירו את זמן ההכנה ומועדי הסגירה ושמרו. בגרסאות תואמות, למוצרים שכבר הוכנו יש כמות ותאריך תוקף נפרדים, הנשמרים בהחלה. לדוגמה, עוגה יכולה להיות מוכנה מיד כאשר יש מספיק יחידות, ולאחר אזילתן לדרוש שעת ייצור, אם הכללים האחרים עדיין מאפשרים ייצור. ראו [מלאי מוכן](/he/help/kitchen/availability#prepared-product-stock) למכסות, גדלים, ביטולים והתנגשויות. כמות שנותרה אינה משנה אוטומטית זמן הכנה, נראות או כיסוי משלוח. פריטים שכבר הוגדרו למכירה מיידית שומרים על הגדרותיהם."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": true,
-    "procedureUpdatedAt": "2026-11-02",
+    "procedureUpdatedAt": "2026-11-04",
     "updatedAt": "2026-10-20"
   },
   {
@@ -5125,13 +5156,26 @@
           "en": "Conditions remain available for actual modifiers, such as offering an extra only for a particular format. In the item, under Customizations, attach the group and open Conditions and display. Under Show this group according to, choose an independent priced format or an independent single-choice modifier group. Set its position count per choice: 0 or an unlisted choice hides the group, 1 shows it once, and 2–12 creates required single-choice positions. Save within this panel; these rules apply only to this item. Prices remain deltas added to the item or format price. Sources cannot themselves be conditional; remove dependent conditions before detaching one. For Number Cake characters use option groups under [Variants and sizes](./variants-and-sizes#conditional-positions), preserving their role as variant dimensions without surcharges. Existing modifier groups are not converted automatically.",
           "he": "התנאים נשארים זמינים לתוספות אמיתיות, למשל תוספת שמוצעת רק בגודל מסוים. בפריט, בהתאמות אישיות, שייכו קבוצה ופתחו תנאים ותצוגה. בהצגת הקבוצה לפי בחרו גודל מתומחר עצמאי או קבוצת תוספות עצמאית עם בחירה יחידה. הגדירו מספר מיקומים לכל אפשרות: 0 או אפשרות שלא הוגדרה מסתירים את הקבוצה, 1 מציג אותה פעם אחת ו־2–12 יוצרים מיקומי חובה עם בחירה יחידה. שמרו מתוך הפאנל; הכללים חלים רק על פריט זה. המחירים נשארים הפרשים שנוספים למחיר הפריט או הגודל. מקור אינו יכול להיות מותנה בעצמו; הסירו תנאים תלויים לפני ניתוקו. לתווי עוגת מספרים השתמשו בקבוצות האפשרויות ב[ווריאציות וגדלים](./variants-and-sizes#conditional-positions), כדי לשמור על תפקידם כמימדי גרסה ללא תוספת מחיר. קבוצות תוספות קיימות אינן מומרות אוטומטית."
         }
+      },
+      {
+        "id": "one-cake-flavour",
+        "title": {
+          "fr": "Demander une seule saveur pour un gâteau",
+          "en": "Ask for one cake flavour",
+          "he": "בקשת טעם אחד לעוגה"
+        },
+        "instructions": {
+          "fr": "Sur l’article, rattachez une seule fois le groupe Saveur et imposez un choix minimum et maximum de 1. Gardez ce groupe sans positions conditionnelles répétées lorsque le goût doit être commun à tout le gâteau. Les positions de chiffres ou de lettres appartiennent à leur propre groupe ; elles ne doivent pas multiplier la saveur. Corrigez le nom affiché si un groupe réutilisé porte encore Number/Letter Cake sur un cœur, puis vérifiez la fiche client et le panier. Aucune fiche existante n’est renommée ou dédupliquée automatiquement.",
+          "en": "Attach the Flavour group once to the article and require exactly one selection, minimum and maximum 1. Keep that group free of repeated conditional positions when one flavour applies to the whole cake. Digit or letter positions belong to their own group and must not multiply the flavour choice. Correct the display name if a reusable group still says Number/Letter Cake on a heart, then check the guest item modal and basket. Existing articles are never renamed or deduplicated automatically.",
+          "he": "קשרו את קבוצת הטעם לפריט פעם אחת והגדירו בחירה אחת בדיוק, מינימום ומקסימום 1. השאירו את הקבוצה ללא מיקומים מותנים חוזרים כאשר טעם אחד משותף לכל העוגה. מיקומי ספרות או אותיות שייכים לקבוצה נפרדת ואינם אמורים להכפיל את בחירת הטעם. תקנו את השם המוצג אם קבוצה משותפת עדיין מציגה Number/Letter Cake בעוגת לב, ובדקו את חלון הפריט והסל. פריטים קיימים אינם מקבלים שם חדש ואינם עוברים הסרת כפילויות אוטומטית."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
     "updatedAt": "2026-10-20",
-    "procedureUpdatedAt": "2026-10-26"
+    "procedureUpdatedAt": "2026-11-04"
   },
   {
     "id": "order-types",
@@ -6645,7 +6689,8 @@
       ],
       "foodyserver": [
         "internal/orders/intake*",
-        "internal/delivery/ordering_simulation.go"
+        "internal/delivery/ordering_simulation.go",
+        "internal/restaurants/fulfillment_stock.go"
       ],
       "foodyweb": [
         "lib/websiteFulfillment*"
@@ -6745,12 +6790,25 @@
           "fr": "Avec le calendrier Date et horaires de service actif, enregistrez les modifications puis ouvrez Simuler une commande. Choisissez Date et heure de la commande dans le fuseau du restaurant affiché ; le jour de la semaine apparaît dessous. Maintenant recharge l’heure courante du serveur. Choisissez retrait ou livraison, date de réception, produits et quantités, puis une adresse complète pour la livraison. Les suggestions d’adresse apparaissent après trois caractères ; sélectionnez-en une au clavier ou à la souris et attendez sa résolution avant de vérifier les disponibilités. Si les suggestions sont indisponibles, saisissez l’adresse complète manuellement ; le serveur vérifie toujours le périmètre. La réception ne peut précéder le jour de commande ; avancer la commande décale une date de réception devenue antérieure. Vérifier les disponibilités applique la préparation, les horaires, l’horizon de réservation et les règles du jour même à cette référence. Le résultat indique zone et frais, préparation de référence, transport applicable, plage estimée à confirmer ou créneaux au choix et prochaine date disponible. Les règles enregistrées et les quantités prêtes actuelles sont utilisées même pour une date passée : le stock historique et la disponibilité des livreurs ne sont pas reconstitués. Une heure inexistante ou répétée au changement d’heure doit être remplacée. Changer une saisie masque l’ancien résultat ; des modifications restaurant non enregistrées bloquent la simulation. Les accès aux réglages, au menu et à la gestion des commandes sont requis. Ce test concerne les calendriers, pas la publication au menu, les options ni l’éligibilité finale du stock et du paiement ; le test ne crée aucune commande, réservation de stock, opération de paiement ou notification.",
           "he": "כאשר לוח התאריכים ושעות השירות פעיל, שמרו שינויים ופתחו הדמיית הזמנה. בחרו תאריך ושעת ההזמנה באזור הזמן המוצג של המסעדה; יום השבוע מופיע מתחת. עכשיו טוען מחדש את השעה הנוכחית מהשרת. בחרו איסוף או משלוח, תאריך קבלה, מוצרים וכמויות וכתובת מלאה למשלוח. הצעות כתובת מופיעות אחרי שלושה תווים; בחרו הצעה במקלדת או בעכבר והמתינו להשלמתה לפני בדיקת זמינות. אם ההצעות אינן זמינות, הקלידו כתובת מלאה ידנית; השרת עדיין בודק את אזור הכיסוי. הקבלה אינה יכולה להקדים את יום ההזמנה; הזזת ההזמנה ליום מאוחר יותר מקדמת תאריך קבלה שקדם לו. בדיקת זמינות מחילה את ההכנה, שעות השירות, טווח ההזמנה וכללי אותו יום לפי מועד זה. מוצגים האזור והמחיר, זמן ההכנה, מרווח הנסיעה המתאים, טווח משוער לאישור או חלונות לבחירה והתאריך הזמין הבא. נעשה שימוש בכללים השמורים ובמלאי המוכן הנוכחי גם לתאריך בעבר; אין שחזור של מלאי היסטורי או זמינות שליחים. שעה שאינה קיימת או מופיעה פעמיים במעבר שעון דורשת בחירה אחרת. שינוי קלט מסתיר את התוצאה הישנה; שינויים שלא נשמרו חוסמים הדמיה. נדרשות הרשאות הגדרות, תפריט וניהול הזמנות. זו בדיקת לוח זמנים ולא פרסום בתפריט, אפשרויות או זכאות סופית למלאי ולתשלום; לא נוצרים הזמנה, שריון מלאי, תשלום או הודעה."
         }
+      },
+      {
+        "id": "product-stock-and-zone-deadlines",
+        "title": {
+          "fr": "Combiner préparation, stock prêt et livraison",
+          "en": "Combine preparation, shelf stock and delivery",
+          "he": "שילוב הכנה, מלאי מוכן ומשלוח"
+        },
+        "instructions": {
+          "fr": "Avec les versions compatibles, réglez la préparation générale dans Commandes et disponibilité, les exceptions par article sur sa fiche, puis les jours, livraisons du jour même et échéances dans chaque zone. Sans panier, l’aperçu utilise le délai général ; la simulation avec articles et quantités vérifie le panier réel sans réserver de stock. Les échéances produit peuvent être évitées par un stock prêt suffisant dans sa validité ; les échéances de livraison, fermetures et règles de série restent applicables. Une date exclue ne doit pas être rétablie en allongeant artificiellement un créneau. Consultez [les échéances par zone](/fr/help/delivery/zones-and-schedules#order-deadlines) et [les produits prêts](/fr/help/kitchen/availability#prepared-product-stock). Ces réglages sont propres à chaque restaurant ; sans activation, le comportement existant est conservé.",
+          "en": "With compatible versions, set the restaurant production default in Orders & availability, article exceptions on each product, then receiving weekdays, same-day delivery and order deadlines per zone. Without a basket, the preview uses the restaurant default; simulation with articles and quantities checks that basket without reserving stock. Sufficient prepared stock within its validity can skip product production deadlines; delivery deadlines, closures and batch rules still apply. Do not restore an excluded date by artificially extending a slot. See [zone deadlines](/en/help/delivery/zones-and-schedules#order-deadlines) and [ready products](/en/help/kitchen/availability#prepared-product-stock). These settings belong to each restaurant; without activation, existing behavior is preserved.",
+          "he": "בגרסאות תואמות, הגדירו ברירת מחדל להכנה בהזמנות וזמינות, חריגים בכל פריט, ואז ימי מסירה, משלוח להיום ומועדי סגירה לכל אזור. ללא סל, התצוגה משתמשת בברירת המחדל; סימולציה עם פריטים וכמויות בודקת את הסל ללא שריון מלאי. מלאי מוכן מספיק ובתוקף יכול לדלג על מועדי ייצור של המוצר; מועדי משלוח, סגירות וכללי סדרה עדיין חלים. אין להחזיר תאריך חסום באמצעות הארכה מלאכותית של חלון. ראו [מועדים לפי אזור](/he/help/delivery/zones-and-schedules#order-deadlines) ו[מוצרים מוכנים](/he/help/kitchen/availability#prepared-product-stock). ההגדרות שייכות לכל מסעדה בנפרד; ללא הפעלה, ההתנהגות הקיימת נשמרת."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-30"
+    "procedureUpdatedAt": "2026-11-04"
   },
   {
     "id": "production",
@@ -6893,7 +6951,8 @@
         "internal/common/settings_merge.go",
         "internal/restaurants/delivery_same_day*.go",
         "internal/delivery/same_day_policy.go",
-        "migrations/283_delivery_same_day_policy.sql"
+        "migrations/283_delivery_same_day_policy.sql",
+        "internal/common/ordering_deadline.go"
       ]
     },
     "operations": [
@@ -7013,12 +7072,25 @@
           "en": "In Orders & availability → Simulate an order, select Order date and time in the displayed timezone, then the receiving date and basket. Now reloads the server time. Preparation and same-day rules are evaluated at this reference using current saved settings and ready stock. A past date does not reconstruct history; this test neither reserves a courier nor creates an order. Customer orders retain the real server clock. See [the simulation procedure](/en/help/orders/preorders-and-batches#simulate-order). The simulation covers classic delivery; published tours retain their own rules.",
           "he": "בהזמנות וזמינות → הדמיית הזמנה בחרו תאריך ושעת ההזמנה באזור הזמן המוצג, ואז תאריך קבלה וסל. עכשיו טוען מחדש את שעת השרת. ההכנה וכללי אותו יום נבדקים לפי מועד זה באמצעות ההגדרות והמלאי המוכן הנוכחיים. תאריך בעבר אינו משחזר היסטוריה; הבדיקה אינה שומרת שליח ואינה יוצרת הזמנה. הזמנות לקוח ממשיכות להשתמש בשעת השרת האמיתית. ראו [הנחיות ההדמיה](/he/help/orders/preorders-and-batches#simulate-order). ההדמיה מתייחסת למשלוח רגיל; סבבים שפורסמו שומרים על הכללים שלהם."
         }
+      },
+      {
+        "id": "order-deadlines",
+        "title": {
+          "fr": "Fermer les commandes avant une livraison",
+          "en": "Close orders before a delivery",
+          "he": "סגירת הזמנות לפני משלוח"
+        },
+        "instructions": {
+          "fr": "Avec les versions API et Admin compatibles, ouvrez Paramètres → Commandes et livraison → Zones de livraison, puis une zone. Dans Échéances de commande, choisissez pour chaque jour de réception le décalage en jours et l’heure limite. Aucun réglage n’est activé automatiquement. Pour une livraison vendredi commandable jusqu’à vendredi 13 h, choisissez vendredi, le jour même, 13:00. Pour accepter les livraisons du dimanche uniquement avant le début du samedi, choisissez dimanche, la veille, 00:00. L’échéance est exclusive et suit le fuseau du restaurant : à l’heure limite, la date disparaît du calendrier des nouvelles commandes. Enregistrez la zone. Les créneaux de livraison restent indépendants de l’heure limite de commande ; le retrait et les commandes déjà enregistrées conservent leurs règles. Même un produit déjà préparé ne contourne pas cette échéance. Pour limiter le vendredi au jour même dans l’ouest, autorisez également vendredi dans Livraison le jour même de cette zone et désactivez ce jour dans les autres zones ; les commandes anticipées restent possibles selon leur calendrier. Une erreur conserve la saisie : rechargez les données si la zone a été modifiée par un autre utilisateur, puis vérifiez avant de sauvegarder.\n\nDésactiver toutes les zones avec des heures limites maintient la livraison fermée, sans rétablir une couverture illimitée. Avant de supprimer la dernière zone, retirez explicitement ses heures limites et enregistrez.",
+          "en": "With compatible API and Admin versions, open Settings → Ordering & delivery → Delivery zones and edit a zone. Under Order deadlines, choose the day offset and cutoff time for each receiving weekday. Nothing is enabled automatically. For Friday delivery bookable until Friday 13:00, select Friday, Same day, 13:00. To accept Sunday deliveries only before Saturday starts, select Sunday, Previous day, 00:00. The deadline is exclusive and uses the restaurant timezone: at the cutoff, the receiving date disappears from new-booking calendars. Save the zone. Delivery slots remain separate from ordering deadlines; pickup and recorded orders retain their rules. Even already prepared products cannot bypass this deadline. For Friday same-day delivery only in the west, also allow Friday in that zone’s Same-day delivery rule and disable it in other zones; advance bookings retain their own calendar. Errors retain input. Reload competing edits and review before saving again.\n\nDisabling every zone with ordering deadlines keeps delivery closed; it does not restore unrestricted coverage. Before deleting the last zone, explicitly clear its ordering deadlines and save.",
+          "he": "בגרסאות API וניהול תואמות, פתחו הגדרות → הזמנות ומשלוחים → אזורי משלוח וערכו אזור. במועדי סגירת הזמנות בחרו לכל יום מסירה את מספר הימים לפניו ואת שעת הסגירה. דבר אינו מופעל אוטומטית. למשלוח ביום שישי שניתן להזמין עד יום שישי ב־13:00, בחרו שישי, באותו יום, 13:00. לקבלת משלוחים ביום ראשון רק לפני תחילת שבת, בחרו ראשון, ביום הקודם, 00:00. המועד אינו כולל את שעת הסגירה ומחושב לפי אזור הזמן של המסעדה: בהגיעו, תאריך המסירה מוסר מלוח ההזמנות החדשות. שמרו את האזור. שעות המשלוח נפרדות ממועד סגירת ההזמנה; איסוף עצמי והזמנות שנרשמו שומרים על הכללים שלהם. גם מוצר שכבר הוכן אינו עוקף את המועד. למשלוח באותו יום בשישי רק במערב, אפשרו שישי בכלל המשלוח להיום של האזור ובטלו אותו באזורים האחרים; הזמנות מראש ממשיכות לפי לוח הזמנים שלהן. שגיאות שומרות את הקלט. טענו שינויים מתחרים ובדקו לפני שמירה חוזרת.\n\nהשבתת כל האזורים עם מועדי סגירת הזמנות משאירה את המשלוחים סגורים ואינה מחזירה כיסוי ללא הגבלה. לפני מחיקת האזור האחרון, הסירו במפורש את מועדי הסגירה שלו ושמרו."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-30"
+    "procedureUpdatedAt": "2026-11-04"
   },
   {
     "id": "delivery-dispatch",
@@ -9712,12 +9784,25 @@
           "fr": "Un encaissement carte natif non résolu réserve sa commande et son terminal d’origine. Ne modifiez pas son contenu financier et ne lancez pas un autre paiement ; la préparation et les réglages de traitement restent indépendants. Consultez le [choix Mini/Portable et la reprise](/fr/help/payments/victa-mini#explicit-terminal-selection).",
           "he": "גביית כרטיס מקומית שלא הוכרעה שומרת על ההזמנה ועל המסוף המקוריים משוריינים. אין לשנות את תוכנה הכספי או להתחיל גבייה אחרת; התקדמות המטבח והגדרות הטיפול נשארות עצמאיות. ראו [בחירת Mini/Portable ושחזור](/he/help/payments/victa-mini#explicit-terminal-selection)."
         }
+      },
+      {
+        "id": "configurable-production-exceptions",
+        "title": {
+          "fr": "Vérifier les exceptions de préparation",
+          "en": "Review preparation exceptions",
+          "he": "בדיקת חריגי הכנה"
+        },
+        "instructions": {
+          "fr": "Les versions compatibles ajoutent des échéances par zone de livraison et un stock de produits préparés par article, chacun activé explicitement pour le restaurant. Ils conservent le retrait, les limites de vente et les autres restaurants. Le délai général sert avant la sélection des produits ; le calendrier est recalculé avec le panier. Consultez [la combinaison des règles](/fr/help/orders/preorders-and-batches#product-stock-and-zone-deadlines) avant de configurer ou simuler une commande.",
+          "en": "Compatible versions add delivery-zone ordering deadlines and prepared-product stock per article, each explicitly enabled for the restaurant. They preserve pickup, sale limits and other restaurants. The default preparation promise applies before products are selected; the calendar is recalculated with the basket. Read [combined rules](/en/help/orders/preorders-and-batches#product-stock-and-zone-deadlines) before configuring or simulating an order.",
+          "he": "גרסאות תואמות מוסיפות מועדי הזמנה לפי אזור משלוח ומלאי מוצרים מוכנים לפי פריט, כל אחד מופעל במפורש במסעדה. הם משמרים איסוף עצמי, מגבלות מכירה ומסעדות אחרות. ברירת המחדל להכנה חלה לפני בחירת מוצרים; לוח הזמנים מחושב מחדש עם הסל. קראו על [שילוב הכללים](/he/help/orders/preorders-and-batches#product-stock-and-zone-deadlines) לפני הגדרה או סימולציה של הזמנה."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-30",
+    "procedureUpdatedAt": "2026-11-04",
     "updatedAt": "2026-10-20"
   },
   {
@@ -13042,12 +13127,25 @@
           "fr": "Pour modifier un événement enregistré, l’ajouter en production, partager son lien et distinguer acompte encaissé et empreinte Sumit, consultez [Event / Catering](/fr/help/orders/event-orders).",
           "he": "לעריכת אירוע שמור, הוספה מפורשת לייצור, קישור פרטי והפרדה בין מקדמה שהתקבלה למסגרת SUMIT שנשמרה, ראו [Event / Catering](/he/help/orders/event-orders)."
         }
+      },
+      {
+        "id": "ready-products-and-cutoffs",
+        "title": {
+          "fr": "Comprendre les produits prêts et les échéances",
+          "en": "Understand ready products and deadlines",
+          "he": "הבנת מוצרים מוכנים ומועדי סגירה"
+        },
+        "instructions": {
+          "fr": "Avec les versions compatibles, Disponible maintenant reste visible sur la première carte sélectionnée pour cette page du site, même si ce n’est pas la première carte du catalogue. Les produits publiés avec un stock prêt indépendant peuvent aussi y apparaître pendant leur validité. Le panier vérifie la quantité totale, les dates et les créneaux ; ajouter au panier ne réserve pas le stock. Si celui-ci change avant confirmation, rechargez les créneaux et choisissez une proposition disponible. Une échéance de livraison peut exclure un vendredi après 13 h ou un dimanche commandé samedi, même pour un gâteau prêt ; le retrait utilise son propre calendrier. Avant de choisir un article, le créneau proposé utilise la préparation générale du restaurant. Après ajout, il est vérifié pour tout le panier : un roulé rapide ne doit pas hériter du délai d’un gâteau absent du panier.",
+          "en": "With compatible versions, Available now remains on the first carte selected for this website page, even when it is not the catalogue’s first carte. Published products with an independent shelf pool can also appear while valid. The basket checks total quantities, dates and slots; adding a product does not reserve stock. If stock changes before confirmation, refresh the slots and choose an available proposal. A delivery deadline may exclude Friday after 13:00 or Sunday booked on Saturday, even for a ready cake; pickup uses its own calendar. Before choosing an article, the suggested slot uses the restaurant default production time. After adding products it is checked against the whole basket: a quick roll must not inherit the delay of a cake absent from the basket.",
+          "he": "בגרסאות תואמות, זמין עכשיו נשאר בתפריט הראשון שנבחר לעמוד האתר, גם אם אינו התפריט הראשון בקטלוג. מוצרים שפורסמו עם מאגר מלאי מוכן נפרד עשויים להופיע בו כל עוד הם בתוקף. הסל בודק כמות כוללת, תאריכים ושעות; הוספה לסל אינה משריינת מלאי. אם המלאי השתנה לפני האישור, רעננו את השעות ובחרו הצעה זמינה. מועד סגירת משלוח עשוי למנוע הזמנה לשישי אחרי 13:00 או לראשון כשההזמנה בשבת, גם לעוגה מוכנה; לאיסוף עצמי לוח נפרד. לפני בחירת פריט, ההצעה משתמשת בזמן ההכנה הכללי של המסעדה. אחרי ההוספה היא נבדקת לכל הסל: מאפה מהיר אינו אמור לקבל זמן הכנה של עוגה שאינה בסל."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-11-02"
+    "procedureUpdatedAt": "2026-11-04"
   },
   {
     "id": "guest-account-tracking",
@@ -14467,6 +14565,19 @@
           "fr": "POST /api/v1/orders accepte le booléen staff facultatif production_plan. Son absence conserve les règles antérieures. False exclut la commande du tableau de production et du comptage des jours, y compris après paiement, programmation ou changement automatique de force_production. True ajoute une commande manuelle sans paiement hébergé ; un lien préparé ordinaire attend encore un paiement collecté et un événement conserve ses conditions de confirmation. Le serveur possède external_metadata.production_plan et refuse son injection directe. La création publique efface le champ et un appel de service invité ne peut pas le fournir. Les actions staff explicites d’ajout/retrait manuel remplacent le choix initial et rétablissent les règles existantes d’ajout manuel/automatique. Aucun modèle de réponse partagé ni migration ne change ; les anciens clients POS et invités peuvent omettre ce champ optionnel.",
           "he": "POST /api/v1/orders מקבל את השדה הבוליאני האופציונלי production_plan לצוות בלבד. השמטתו שומרת על הכללים הקודמים. False מוציא את ההזמנה מטבלת הייצור ומספירת הימים, גם אחרי תשלום, תזמון או שינוי אוטומטי של force_production. True מוסיף הזמנה ידנית ללא תשלום מתארח; קישור מוכן רגיל עדיין ממתין לתשלום שנגבה ואירוע שומר על תנאי האישור שלו. השרת מנהל את external_metadata.production_plan ודוחה הזרקת מטא־נתונים ישירה. יצירה ציבורית מסירה את השדה וקריאת שירות של אורח אינה רשאית לספק אותו. פעולות צוות מפורשות להוספה או הסרת הוספה ידנית מחליפות את הבחירה הראשונית ומחזירות את כללי ההוספה הידנית והאוטומטית הקיימים. אין שינוי במודל התשובה המשותף או מיגרציה; לקוחות POS ואורחים ישנים יכולים להשמיט את השדה האופציונלי."
         }
+      },
+      {
+        "id": "configurable-fulfillment-compatibility",
+        "title": {
+          "fr": "Préparer les contrats de disponibilité configurables",
+          "en": "Prepare configurable fulfillment contracts",
+          "he": "הכנת חוזי זמינות ניתנים להגדרה"
+        },
+        "instructions": {
+          "fr": "Préparation locale : le stock prêt nullable, daté et révisionné et les échéances facultatives par zone ne configurent aucun restaurant automatiquement. Les API privées vérifient le restaurant et les permissions existantes. Les calendriers publics et la soumission de commande restent autoritaires ; les quantités privées ne sont pas ajoutées au contrat public des articles. Les reliquats historiques par série utilisent la série opérationnelle pour affichage et réservation, indépendamment de la série suivante en précommande. Vérifier les valeurs par défaut, courses de réservation, libérations avant production, anciennes interfaces et traductions ; ne changer ni les fournisseurs de paiement, ni les commandes existantes. La migration 288 et l’API doivent précéder Admin/Web. Exporter le corpus identique après validation et épingler le commit Landing immuable revu avant la CI. Vérifier les artefacts develop, puis promouvoir ces mêmes artefacts selon le processus de livraison autorisé ; la revue des sources seule n’atteste pas la disponibilité en production.",
+          "en": "Local preparation: nullable dated/revisioned shelf stock and optional zone deadlines configure no restaurant automatically. Private APIs verify restaurant ownership and existing permissions. Public calendars and submission remain authoritative; private quantities are not added to the public item contract. Historical series leftovers use the operational service series for display and reservation, independently of the next preorder series. Verify defaults, reservation races, pre-production releases, older editors and translations; retain payment providers and existing orders. Migration 288/API precede Admin/Web. Export the identical corpus after runtime validation and pin the reviewed immutable Landing commit before CI. Verify the develop artifacts, then promote those exact artifacts under the approved release workflow; source review alone does not attest production availability.",
+          "he": "הכנה מקומית: מלאי מוכן אופציונלי עם תאריך וגרסה, ומועדי סגירה אופציונליים לפי אזור, אינם מגדירים אף מסעדה אוטומטית. API פרטיים בודקים בעלות במסעדה והרשאות קיימות. לוחות ציבוריים והגשת הזמנה נשארים סמכותיים; כמויות פרטיות אינן נוספות לחוזה הפריט הציבורי. שאריות היסטוריות לפי סדרה משתמשות בסדרת השירות התפעולית להצגה ולשריון, בנפרד מסדרת ההזמנה מראש הבאה. בדקו ברירות מחדל, התנגשויות שריון, שחרור לפני ייצור, עורכים ישנים ותרגומים; שמרו על ספקי תשלום והזמנות קיימות. מיגרציה 288 וה־API קודמים לניהול ולאתר. יצאו קורפוס זהה אחרי בדיקות ריצה וקבעו את קומיט Landing הבלתי משתנה שנבדק לפני CI. בדקו את תוצרי develop ואז קדמו את אותם תוצרים לפי תהליך ההפצה המאושר; סקירת מקורות בלבד אינה מאשרת זמינות בייצור."
+        }
       }
     ],
     "audience": "internal",
@@ -14796,12 +14907,25 @@
           "fr": "L’objet same_day facultatif de DeliverySchedule contient days, transit_minutes et time_mode inherit/restaurant. L’API refuse les jours hors calendrier, valeurs ambiguës, coexistence avec une règle globale historique active et suppression par un ancien éditeur. La capacité de liste des zones et l’état historique contrôlent Admin. L’instant de calcul et le fuseau des calendriers sont des champs additifs. La simulation utilise les résolveurs publics géographiques et de calendrier sous périmètre restaurant sans muter commande, stock, paiements ou notifications. Le corpus embarqué de support doit être identique à cette version publiée FR/HE/EN ; les lecteurs Web, POS et Backoffice restent compatibles sans nouveaux champs applicatifs.",
           "he": "האובייקט האופציונלי same_day ב-DeliverySchedule כולל days, transit_minutes ו-time_mode מסוג inherit או restaurant. ה-API דוחה ימים מחוץ ללוח, ערכים עמומים, שילוב עם כלל כללי ישן פעיל ומחיקה דרך עורך ישן. יכולת רשימת האזורים ומצב הכלל הישן קובעים את הצגת Admin. זמן החישוב ואזור הזמן בלוח הם שדות נוספים. ההדמיה משתמשת בפותרי כתובת ולוח ציבוריים בהיקף המסעדה ואינה משנה הזמנה, מלאי, תשלומים או הודעות. קורפוס התמיכה המוטמע חייב להיות זהה לגרסת התיעוד המפורסמת בשלוש השפות; קוראי Web, POS ו-Backoffice נשארים תואמים ללא שדות יישום חדשים."
         }
+      },
+      {
+        "id": "configurable-fulfillment-compatibility",
+        "title": {
+          "fr": "Préparer les contrats de disponibilité configurables",
+          "en": "Prepare configurable fulfillment contracts",
+          "he": "הכנת חוזי זמינות ניתנים להגדרה"
+        },
+        "instructions": {
+          "fr": "Préparation locale : le stock prêt nullable, daté et révisionné et les échéances facultatives par zone ne configurent aucun restaurant automatiquement. Les API privées vérifient le restaurant et les permissions existantes. Les calendriers publics et la soumission de commande restent autoritaires ; les quantités privées ne sont pas ajoutées au contrat public des articles. Les reliquats historiques par série utilisent la série opérationnelle pour affichage et réservation, indépendamment de la série suivante en précommande. Vérifier les valeurs par défaut, courses de réservation, libérations avant production, anciennes interfaces et traductions ; ne changer ni les fournisseurs de paiement, ni les commandes existantes. La migration 288 et l’API doivent précéder Admin/Web. Exporter le corpus identique après validation et conserver une référence locale WORKSPACE tant que les commits ne sont pas autorisés ; aucune disponibilité en production n’est attestée.",
+          "en": "Local preparation: nullable dated/revisioned shelf stock and optional zone deadlines configure no restaurant automatically. Private APIs verify restaurant ownership and existing permissions. Public calendars and submission remain authoritative; private quantities are not added to the public item contract. Historical series leftovers use the operational service series for display and reservation, independently of the next preorder series. Verify defaults, reservation races, pre-production releases, older editors and translations; retain payment providers and existing orders. Migration 288/API precede Admin/Web. Export the identical corpus after runtime validation and keep a local WORKSPACE reference until commits are authorized; no production availability is attested.",
+          "he": "הכנה מקומית: מלאי מוכן אופציונלי עם תאריך וגרסה, ומועדי סגירה אופציונליים לפי אזור, אינם מגדירים אף מסעדה אוטומטית. API פרטיים בודקים בעלות במסעדה והרשאות קיימות. לוחות ציבוריים והגשת הזמנה נשארים סמכותיים; כמויות פרטיות אינן נוספות לחוזה הפריט הציבורי. שאריות היסטוריות לפי סדרה משתמשות בסדרת השירות התפעולית להצגה ולשריון, בנפרד מסדרת ההזמנה מראש הבאה. בדקו ברירות מחדל, התנגשויות שריון, שחרור לפני ייצור, עורכים ישנים ותרגומים; שמרו על ספקי תשלום והזמנות קיימות. מיגרציה 288 וה־API קודמים לניהול ולאתר. יצאו קורפוס זהה אחרי בדיקות ריצה והשאירו WORKSPACE מקומי עד לאישור שמירות Git; אין אישור לזמינות בייצור."
+        }
       }
     ],
     "audience": "internal",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-30"
+    "procedureUpdatedAt": "2026-11-04"
   },
   {
     "id": "global-search",

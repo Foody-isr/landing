@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "Foody-isr/admin",
-  "ref": "318605d81b864be8943d2ff74d965220243afea4",
+  "ref": "89f37ce7a7ea09542ba50bc6a6c096350ef04919",
   "observations": [
     {
       "id": "table-status-descriptions-source-contract",
@@ -363,7 +363,6 @@
         "days, offer_pickup: value?.offer_pickup"
       ],
       "forbidden": [
-        "type=\"time\"",
         "deliveryAddWindow"
       ]
     },
@@ -573,6 +572,42 @@
         "outline: 2px solid var(--danger-500)"
       ],
       "forbidden": []
+    },
+    {
+      "id": "configurable-prepared-stock-and-zone-deadline-controls",
+      "source": "src/lib/i18n.tsx",
+      "required": [
+        "preparedStockUntil: \"Prepared stock usable through\",",
+        "zoneDeadlineTitle: \"Order deadlines\",",
+        "preparedStockTitle: \"Products already prepared\",",
+        "preparedStockEnable: \"Use an independent shelf counter\",",
+        "preparedStockUntil: \"ניתן להשתמש במלאי המוכן עד\",",
+        "zoneDeadlineTitle: \"מועדי סגירת הזמנות\",",
+        "preparedStockTitle: \"מוצרים שכבר הוכנו\",",
+        "preparedStockEnable: \"שימוש במונה נפרד למלאי מוכן\",",
+        "preparedStockUntil: \"Stock prêt utilisable jusqu’au\",",
+        "zoneDeadlineTitle: \"Échéances de commande\",",
+        "preparedStockTitle: \"Produits déjà préparés\",",
+        "preparedStockEnable: \"Utiliser un compteur de stock prêt indépendant\","
+      ]
+    },
+    {
+      "id": "prepared-pool-independent-save-and-revision",
+      "source": "src/components/menu-item/PreparedStockEditor.tsx",
+      "required": [
+        "setPreparedStock(rid,itemId,next,saved.revision,until)",
+        "hasAnyPermission('menu.edit')",
+        "type=\"date\""
+      ]
+    },
+    {
+      "id": "zone-ordering-deadline-capability-and-fields",
+      "source": "src/components/delivery/ZoneScheduleFields.tsx",
+      "required": [
+        "{deadlinesSupported && <fieldset",
+        "order_deadlines",
+        "days_before"
+      ]
     }
   ],
   "guides": [

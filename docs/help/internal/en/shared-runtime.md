@@ -7,7 +7,7 @@ apps: both
 tags:
   - internal
   - shared-runtime
-updatedAt: '2026-10-30'
+updatedAt: '2026-11-04'
 featureId: shared-runtime
 audience: internal
 releaseStatus: available
@@ -129,3 +129,9 @@ The compatible prepared-checkout summary keeps API price snapshots and includes 
 ## Zone same-day contract and calendar simulation
 
 The optional same_day object in DeliverySchedule carries days, transit_minutes and inherit/restaurant time_mode. The API rejects non-delivery weekdays, ambiguous values, coexistence with an enabled legacy global rule and removal by an older editor. Zone-list capability and legacy-active metadata gate Admin. New calendar evaluation time/timezone fields are additive. Simulation uses public scoped calendar/geographic resolvers and does not mutate an order, stock, payments or notifications. The embedded support corpus must exactly match this published FR/HE/EN release; Web, POS and Backoffice parsers remain compatible without new application fields.
+
+<span id="configurable-fulfillment-compatibility" />
+
+## Prepare configurable fulfillment contracts
+
+Local preparation: nullable dated/revisioned shelf stock and optional zone deadlines configure no restaurant automatically. Private APIs verify restaurant ownership and existing permissions. Public calendars and submission remain authoritative; private quantities are not added to the public item contract. Historical series leftovers use the operational service series for display and reservation, independently of the next preorder series. Verify defaults, reservation races, pre-production releases, older editors and translations; retain payment providers and existing orders. Migration 288/API precede Admin/Web. Export the identical corpus after runtime validation and keep a local WORKSPACE reference until commits are authorized; no production availability is attested.

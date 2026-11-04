@@ -77,11 +77,21 @@ for (const [service, configuredRoot] of Object.entries(roots)) {
       'src/components/MenuGroupPicker.tsx', 'src/components/menu-item/ItemMenuSaveNotice.tsx',
       'src/lib/item-menu-assignments.ts', 'src/lib/itemDraft.ts',
     ].includes(file);
-    const ids = itemMenuAssignmentModule ? ['menu-categories-and-items', 'menu-creating-a-menu-item', 'menu-menus-and-groups'] : eventModule ? ['orders-events'] : endOfDayModule ? ['pos-end-of-day'] : guardedCash ? ['pos-payments', 'pos-end-of-day'] : cashGuaranteeModule ? ['stancer-cash-guarantee'] : service === 'foodyserver' && file === 'internal/orders/cash_drawer_context.go'
+    let ids = itemMenuAssignmentModule ? ['menu-categories-and-items', 'menu-creating-a-menu-item', 'menu-menus-and-groups'] : eventModule ? ['orders-events'] : endOfDayModule ? ['pos-end-of-day'] : guardedCash ? ['pos-payments', 'pos-end-of-day'] : cashGuaranteeModule ? ['stancer-cash-guarantee'] : service === 'foodyserver' && file === 'internal/orders/cash_drawer_context.go'
       ? ['pos-payments', 'pos-cash-access-diagnostics']
       : service === 'foodyserver' && /^internal\/orders\/transactions(?:_handler|_adjustments)?\.go$/.test(file)
         ? ['pos-payments'] : service === 'foodyserver' && file === 'internal/menu/item_photos.go'
           ? ['menu-product-photos'] : matched.length ? matched : ['shared-runtime'];
+    // Dedicated shelf-stock modules do not implement modifier, combo, variant
+    // or payment procedures merely because those guides share broad domain globs.
+    const focusedStockOwnership = {
+      'foodyserver:internal/menu/prepared_stock.go': ['kitchen-availability', 'menu-creating-a-menu-item'],
+      'foodyserver:internal/orders/prepared_stock.go': ['kitchen-availability', 'preorders', 'guest-ordering'],
+      'foodyserver:internal/restaurants/fulfillment_stock.go': ['kitchen-availability', 'preorders', 'guest-ordering'],
+      'foodyserver:internal/salesstock/prepared_stock.go': ['kitchen-availability', 'menu-creating-a-menu-item', 'preorders'],
+      'foodyadmin:src/components/menu-item/PreparedStockEditor.tsx': ['kitchen-availability', 'menu-creating-a-menu-item'],
+    };
+    ids = focusedStockOwnership[`${service}:${file}`] ?? ids;
     sources[file] = { sha256: digest(bytes), features: ids };
     const found = [];
     if (/(?:^|\/)app\/.*\/(?:page|route)\.[jt]sx?$/.test(file)) found.push({ kind: file.includes('/route.') ? 'next-api-route' : 'next-page', route: routePath(file), line: 1 });

@@ -1536,6 +1536,22 @@ Verify the development artifacts, then promote those same artifacts under the
 ongoing authorized delivery correction. Publish the matching help and support
 corpus together. No real order, message or tenant configuration is changed.
 
+
+## Optional prepared products and delivery intake deadlines (4 November 2026, local)
+
+This uncommitted preparation changes API, Admin and guest Web. It configures no
+restaurant and performs no deployment, live order, payment or customer message.
+Nullable prepared stock and absent zone deadlines preserve prior behavior. Public
+FR/HE/EN procedures qualify compatible release availability and distinguish shelf
+stock, dated validity, production deadlines, receiving weekdays and service/zone
+constraints. The original Available now channel is retained and repaired for slot
+scheduling and page-selected cartes; no article is automatically reconfigured.
+No screenshots occur in the updated procedures. Preserve unaffected POS and
+Backoffice source evidence. Export the identical support corpus after runtime
+validation, refresh these source contracts and retain WORKSPACE references until
+an immutable documentation commit is authorized. This is not PR or release
+readiness, and production is explicitly outside the user's requested scope.
+
 ## Explicit manual-order production choice (4 November 2026)
 
 This review refreshes Admin, API and Landing only. Web, POS and Backoffice source
@@ -1551,3 +1567,17 @@ pin/unpin actions supersede the creation decision. Public creation cannot set it
 Publish the updated three-language procedures and exact support corpus with this
 release. Verify and promote the immutable API artifact before the matching Admin;
 no schema migration, real financial operation or production data repair is needed.
+
+
+### Authorized fulfillment delivery (4 November 2026)
+
+The user authorized commits, branch pushes, four PRs into develop and production
+promotion. The coordinated candidate preserves the manual-production choices
+already integrated in develop, including their three-language procedures. Pin
+the immutable reviewed Landing commit in API/Admin/Web before CI. Run complete
+validations against the combined sources, merge only green PRs, verify development
+and promote those exact artifacts: API first, then compatible clients and guides.
+This authorization does not claim a deployment has completed or configure a real
+restaurant automatically. Google-backed production checks use read-only simulation
+and synthetic/public address data; no real order or payment is needed. Preserve
+unaffected POS/Backoffice evidence and existing Google provider protections.
