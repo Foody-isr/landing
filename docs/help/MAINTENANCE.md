@@ -1535,3 +1535,9 @@ source checkpoints; pin this documentation commit in Admin and API before CI.
 Verify the development artifacts, then promote those same artifacts under the
 ongoing authorized delivery correction. Publish the matching help and support
 corpus together. No real order, message or tenant configuration is changed.
+
+## Unified transaction history correction (4 November 2026)
+
+Transactions reads confirmed Foody records across cash, card-present Verifone and online providers. The read-only Admin destination now exists with payments.view/manage gates, date/channel/tender/search filters and per-currency gross/recorded-return figures. Stancer keeps its explicit processor label. A restaurant-owned immutable cash sale/return survives an unavailable original order: only its display allocations are hidden and flagged, without rewriting the journal or granting refund authority. Corrupt amounts, refund relationships, actor/session checks and financial mutation guards retain their checks. No bank, Deposit, credential, provider-routing or schema mutation is introduced.
+
+Review the dedicated transactions guide in FR/HE/EN with the matching API/POS/Admin release; move the existing history sections without changing their public scope. Preserve the unrelated Web, Backoffice and Landing application-source inventory from this develop base. Refresh only API, POS and Admin source evidence, embed the identical support corpus and pin an immutable Landing commit. All browser fixtures use synthetic data and block provider requests. Production diagnosis reads only aggregate linkage metadata; no payment, cash movement or real business record is modified.

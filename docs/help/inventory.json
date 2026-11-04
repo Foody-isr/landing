@@ -4,10 +4,10 @@
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "3fa61a7b6edb0c608f211456a59ac3fc1c55e962",
+      "sourceCommit": "ee2bb934e75b368f796c2065897b40da5ee0d8ba",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "3f5cf64343e1b56e351d8b2327829b1cddd1ab630008939ad4c262e52972e88c",
-      "workingTreeHasChanges": true,
+      "sourceSnapshot": "3dd627ed220dd580aef7ca6ea7959a705cfb794815eadcb28753001aa27d8a87",
+      "workingTreeHasChanges": false,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
           "sha256": "33cf30b683837b76977ed47c14d5d91ccb1b34bd60e9f62d124b8cc1079231aa",
@@ -3359,7 +3359,7 @@
           ]
         },
         "internal/orders/transactions.go": {
-          "sha256": "44cc8974682b099b90497278779a5e9c6b82c434346598197cbcba863c2e05f7",
+          "sha256": "c3222014bd5b7b057dd1d89d93cbedb134063e9358d732030ca986b58b002b69",
           "features": [
             "pos-payments"
           ]
@@ -3371,14 +3371,15 @@
           ]
         },
         "internal/orders/transactions_cash.go": {
-          "sha256": "e2cda329748c6323ef944aaeb4b287c7e8d1ad049ae0484292edb50e010b0027",
+          "sha256": "e4f03b938676a7db691c99c42f3730ad7c5a18b6fed18d222f34d7fcdd479ae8",
           "features": [
             "orders-managing-orders",
             "order-types",
             "pos-order-entry",
             "fulfillment-policy",
             "pos-payments",
-            "platform-api"
+            "platform-api",
+            "payments-transactions"
           ]
         },
         "internal/orders/transactions_handler.go": {
@@ -4794,7 +4795,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "581bf877488821e069db412f5cf54a011055ea941abd453d7ac2f5c6bc1e4cdd",
+          "sha256": "bb5a8cce633767c2ac798e933a0db434369b2cde9268d07343b574ffce4fee44",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -5157,9 +5158,9 @@
     },
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "1c0953a0b9da0d34a2bd9e3b3f74a4b8895c22fb",
+      "sourceCommit": "27524c5b23c937ce4349700e3f2408a17bad1091",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "96989e606d24896de69643fb662b070776d7c3b76c8d6d7c28cb4d3613a83a91",
+      "sourceSnapshot": "d8304f928c94f5caed4c6271fbe0e52a66a770648cd1aca5b9f76de9525b8b47",
       "workingTreeHasChanges": false,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
@@ -5804,9 +5805,9 @@
           ]
         },
         "src/app/[restaurantId]/layout.tsx": {
-          "sha256": "fbe07d6638f411bfd400f4299bfd90a654039f7d065e67285b0c775a17a224e8",
+          "sha256": "415869a600fe445826b155e837a6a7d122c5a60d6db16c0292ff3f1d0db11122",
           "features": [
-            "shared-runtime"
+            "payments-transactions"
           ]
         },
         "src/app/[restaurantId]/marketing/discounts/page.tsx": {
@@ -6107,7 +6108,7 @@
           ]
         },
         "src/app/[restaurantId]/orders/new/page.tsx": {
-          "sha256": "e76dae582731cd9dcbe0835a3f7ed8c02a8154a1ab6518ad549d2876824d0ba9",
+          "sha256": "e7216dd4441eb1b65658f6d7c23649d87b7a600323a8fa3d37bdc2b8cdc6601f",
           "features": [
             "orders-managing-orders",
             "order-detail",
@@ -6613,6 +6614,13 @@
             "table-service-policy"
           ]
         },
+        "src/app/[restaurantId]/transactions/page.tsx": {
+          "sha256": "0228d7330b7edbc3d25668027eee2fce0b94193f394fb6df526f5651d78a4591",
+          "features": [
+            "pos-payments",
+            "payments-transactions"
+          ]
+        },
         "src/app/[restaurantId]/website-v3/layout.tsx": {
           "sha256": "96116cc122468e313f7ee96825989c2843f10e6dd3a3df201e3522959ddf0232",
           "features": [
@@ -6816,10 +6824,11 @@
           ]
         },
         "src/components/Sidebar.tsx": {
-          "sha256": "a7736ad0df925cf178f415429ba1e5691b946ccbff016f2e4efcd4934bfd1bb7",
+          "sha256": "ae61688a629131a8513d3859e4f0629baef69655b539ec77a5185780ad3ba61a",
           "features": [
             "pos-payments",
-            "global-search"
+            "global-search",
+            "payments-transactions"
           ]
         },
         "src/components/StatusPill.tsx": {
@@ -8241,7 +8250,7 @@
           ]
         },
         "src/components/orders/NewOrderCheckoutPanel.tsx": {
-          "sha256": "b365c7de5305f5c31b957627ba32165816a5d7f020c125ce6b6c9cd0ea3cc1a5",
+          "sha256": "7c2ec89e3e54fd00773a594d65af374d3245c468f2b24af7f2f385994d56bf33",
           "features": [
             "orders-managing-orders",
             "order-detail",
@@ -8536,7 +8545,7 @@
           ]
         },
         "src/components/orders/order-checkout.module.css": {
-          "sha256": "f4b5ece7e37c2cd17c4c0592ef4ca016d34de02155fd2bc5de5723c3621fa677",
+          "sha256": "fccbea8bd4a5d0d0b7253cb4f11a3909b899d2b30656abd237c4f2588fa4df93",
           "features": [
             "orders-managing-orders",
             "order-detail"
@@ -9526,7 +9535,7 @@
           ]
         },
         "src/lib/api.ts": {
-          "sha256": "3f2edc07b968c5a43a58ee57a9ba01745f140177c3e63c0d41ed1c04da4e37be",
+          "sha256": "5d35fd19cac2273410c573dd1a57b7e1c52ac952f8b35c0b71db2b3f57538072",
           "features": [
             "customers-profiles",
             "menu-variants-and-sizes",
@@ -9537,7 +9546,8 @@
             "menu-product-photos",
             "orders-internal-sumit-checkout",
             "stancer-cash-guarantee",
-            "orders-events"
+            "orders-events",
+            "payments-transactions"
           ]
         },
         "src/lib/auth-context.tsx": {
@@ -9720,7 +9730,7 @@
           ]
         },
         "src/lib/i18n.tsx": {
-          "sha256": "6fc347c9921adaca8593b650c1db7cd90b75c62abf47d3014da328cf824fba29",
+          "sha256": "3043fa00726774b44f6d9403530dc109d6d66f39b2c8801b63444de2d93fac30",
           "features": [
             "customers-profiles",
             "menu-menus-and-groups",
@@ -9735,7 +9745,8 @@
             "shared-runtime",
             "menu-product-photos",
             "orders-internal-sumit-checkout",
-            "stancer-cash-guarantee"
+            "stancer-cash-guarantee",
+            "payments-transactions"
           ]
         },
         "src/lib/israel-cities.ts": {
@@ -10303,11 +10314,12 @@
           ]
         },
         "src/lib/route-permissions.ts": {
-          "sha256": "f9fc057cea85dc9091fd991ef364a82c9dd3f11b14107071447925f373a51fea",
+          "sha256": "dd6c85c411a1d895b062664ea47a217618ec123326969f9f2108fd6dea440d6c",
           "features": [
             "staff-roles",
             "pos-payments",
-            "shared-runtime"
+            "shared-runtime",
+            "payments-transactions"
           ]
         },
         "src/lib/runtime-origins.ts": {
@@ -10392,6 +10404,13 @@
           "sha256": "d99246d15f4e511bcc7744d3e53ac71c2517e7f34a361f14ca1246bd2b222fcc",
           "features": [
             "shared-runtime"
+          ]
+        },
+        "src/lib/transactions.ts": {
+          "sha256": "68f8f7b8defa144d51f766ce67bf7b831714295fad459c0032796c982296080e",
+          "features": [
+            "shared-runtime",
+            "payments-transactions"
           ]
         },
         "src/lib/units.ts": {
@@ -14123,9 +14142,9 @@
     },
     "foodypos": {
       "repository": "https://github.com/Foody-isr/pos",
-      "sourceCommit": "63c69f697390c6fde6f68683f6a708d8f16ca64f",
+      "sourceCommit": "1dea7102e317fb501cad704d6da11bd0af97ad53",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "94a2cf34bd6878617be9c79f6c72ea87cb48ed72e82b00f5d3207768ca1a090c",
+      "sourceSnapshot": "7dd4415cf1cb65dd094226a8f0433837171fca565ac93dec36b8cce11b9c6107",
       "workingTreeHasChanges": false,
       "sourceFiles": {
         "android/app/src/main/kotlin/com/foodypos/app/EpsonPrinterBridge.kt": {
@@ -14270,30 +14289,33 @@
           ]
         },
         "lib/core/l10n/app_en.arb": {
-          "sha256": "4c9a21572c28023675b69f1c76b23a00c6e8a245849f7d2111d76c453ad59950",
+          "sha256": "8758e18868f3a6c0643f733e9097840b3a6b0e0093cada76c020a88853807358",
           "features": [
             "pos-behavior",
             "pos-cash-access-diagnostics",
             "shared-runtime",
-            "orders-events"
+            "orders-events",
+            "payments-transactions"
           ]
         },
         "lib/core/l10n/app_fr.arb": {
-          "sha256": "611790b88da91b86f1deeb58b4e3d5322e04fdf4daffc005d14cbfa4cfda3732",
+          "sha256": "b8fc293a3f7c9def146990cda99f9e02178b189e80ced44d1c6541a4df23feff",
           "features": [
             "pos-behavior",
             "pos-cash-access-diagnostics",
             "shared-runtime",
-            "orders-events"
+            "orders-events",
+            "payments-transactions"
           ]
         },
         "lib/core/l10n/app_he.arb": {
-          "sha256": "225891020fcf97688c8cd20b37c097e04b19d61f3ad614b793cfef833d675340",
+          "sha256": "f4aab66318c370e23593538822e6cfb01fdc537e1785e80fad81b4471c648808",
           "features": [
             "pos-behavior",
             "pos-cash-access-diagnostics",
             "shared-runtime",
-            "orders-events"
+            "orders-events",
+            "payments-transactions"
           ]
         },
         "lib/core/locale/locale_provider.dart": {
@@ -16563,31 +16585,36 @@
         "lib/features/transactions/data/checkout_adjustment_repository.dart": {
           "sha256": "a44bd02d3f8c868116a45c328b6cb9863209b629ef0de8f4046a1d450e8881d9",
           "features": [
-            "pos-payments"
+            "pos-payments",
+            "payments-transactions"
           ]
         },
         "lib/features/transactions/data/transaction_repository.dart": {
           "sha256": "25b746b128b1a834d5d4451237187aea944c5115d22560998c6c9b7e83f71a84",
           "features": [
-            "pos-payments"
+            "pos-payments",
+            "payments-transactions"
           ]
         },
         "lib/features/transactions/domain/pos_transaction.dart": {
-          "sha256": "85911232998204ba9eafb5ad7724d67ccdf355c5364b3f34328300a9d8945ab1",
+          "sha256": "cafe607239717c768b4bfd3ce82b383a26a48da6dbfd62047ecb0ba429586ffd",
           "features": [
-            "pos-payments"
+            "pos-payments",
+            "payments-transactions"
           ]
         },
         "lib/features/transactions/presentation/transactions_page.dart": {
-          "sha256": "547c560099f8eda5e4b32fc789d8f9822af61afb6fdf5c7d57a5140f1edeb329",
+          "sha256": "658ee681d876afc4e95303e75cad97f7cdc778fe182836344cffe6033929862f",
           "features": [
-            "pos-payments"
+            "pos-payments",
+            "payments-transactions"
           ]
         },
         "lib/features/transactions/providers/transaction_refresh_provider.dart": {
           "sha256": "c0e346ee90da20a17c28c0db01773a93192c68b9bea9ea407bf761368719a0c0",
           "features": [
-            "pos-payments"
+            "pos-payments",
+            "payments-transactions"
           ]
         },
         "lib/features/trusted_customers/data/trusted_customer_repository.dart": {
@@ -41279,71 +41306,6 @@
           }
         },
         {
-          "id": "transaction-history",
-          "title": {
-            "en": "Find a completed payment in Transactions",
-            "fr": "Retrouver un paiement confirmé dans Transactions",
-            "he": "איתור תשלום שאושר בעסקאות"
-          },
-          "instructions": {
-            "en": "Open Transactions in the iPad POS navigation, in More on compact terminals, or in the Admin sidebar, with payments.view or payments.manage. All three screens read the same restaurant-scoped confirmed payment history. In Admin choose a date range, source and method; search by item, reference or order number, then select a payment for its amount, method and linked orders. On the POS, selecting a linked order opens its saved read-only detail without leaving Transactions; if it cannot load, refresh and retry. The source follows the linked order: a provider-processed payment for a POS-created order appears under POS, not Online. Totals cover all matching payments, not just the visible page, and keep currencies separate. One order can have several tenders and one tender can cover several orders; Orders remains the place to follow fulfillment. Pending terminal attempts are not completed sales. History does not issue new receipts. Authorized owners and managers may see server-verified cash refunds or Verifone Checkout original-card returns for eligible payments; see the refund procedure before acting. If a result is missing, check restaurant, date and filters, then reconcile uncertain terminal payments before another charge.",
-            "fr": "Ouvrez Transactions dans la navigation de la caisse iPad, dans Plus sur un terminal compact ou dans le menu latéral Admin, avec payments.view ou payments.manage. Ces trois écrans lisent le même historique des paiements confirmés du restaurant. Dans Admin, choisissez période, source et mode ; recherchez par article, référence ou numéro de commande, puis sélectionnez un paiement pour son montant, son moyen et les commandes liées. Sur la caisse, sélectionner une commande liée ouvre son détail enregistré en lecture seule sans quitter Transactions ; si le chargement échoue, actualisez et réessayez. La source suit la commande liée : un paiement traité par un prestataire pour une commande créée en caisse apparaît sous Caisse, pas En ligne. Les totaux couvrent tous les paiements correspondant aux filtres, pas seulement la page visible, et séparent les devises. Une commande peut avoir plusieurs encaissements et un encaissement couvrir plusieurs commandes ; Commandes reste l’espace de suivi du service. Les tentatives terminal en attente ne sont pas des ventes finalisées. L’historique ne crée pas de nouveau reçu. Les propriétaires et responsables autorisés peuvent voir des remboursements d’espèces ou des retours Verifone Checkout sur la carte d’origine lorsque le serveur confirme l’éligibilité ; lisez la procédure de remboursement avant d’agir. Si un paiement manque, vérifiez restaurant, période et filtres, puis rapprochez les résultats incertains avant un nouveau débit.",
-            "he": "פתחו עסקאות בניווט קופת iPad, בעוד במסוף קומפקטי או בתפריט הצד של Admin, עם הרשאת payments.view או payments.manage. שלושת המסכים קוראים את אותה היסטוריית תשלומים מאושרים של העסק. ב-Admin בחרו טווח תאריכים, מקור ואמצעי; חפשו לפי פריט, אסמכתה או מספר הזמנה ובחרו תשלום להצגת הסכום, האמצעי וההזמנות הקשורות. בקופה, בחירת הזמנה מקושרת פותחת את פרטיה השמורים לקריאה בלבד בלי לצאת מעסקאות; אם הטעינה נכשלת, רעננו ונסו שוב. המקור נקבע לפי ההזמנה המקושרת: תשלום שעובד אצל ספק עבור הזמנה שנוצרה בקופה מופיע תחת קופה ולא תחת אונליין. הסכומים כוללים את כל התשלומים התואמים לסינון, לא רק את העמוד הגלוי, ומפרידים בין מטבעות. הזמנה אחת יכולה לכלול כמה תשלומים ותשלום אחד יכול לכסות כמה הזמנות; הזמנות מיועד למעקב אחר הכנה ומסירה. ניסיונות מסוף ממתינים אינם מכירות שהושלמו. ההיסטוריה אינה מנפיקה קבלה חדשה. בעלים ומנהלים מורשים יכולים לראות החזרי מזומן או החזר לכרטיס המקורי ב-Verifone Checkout כאשר השרת מאשר זכאות; קראו את נוהל ההחזר לפני פעולה. אם תשלום חסר, בדקו עסק, תקופה ומסננים והתאימו תוצאה לא ודאית לפני חיוב נוסף."
-          }
-        },
-        {
-          "id": "transaction-payment-origin",
-          "title": {
-            "en": "Understand payment origin",
-            "fr": "Comprendre l’origine du paiement",
-            "he": "הבנת מקור התשלום"
-          },
-          "instructions": {
-            "en": "Open a transaction on POS or Admin and read Payment origin separately from Source. Source identifies where the linked order was created; origin identifies cash, Verifone Checkout, another provider, or a recorded card payment. Victa (recorded payment) and Card (origin unverified) mean Foody recorded a result; they do not prove that a refund can be sent to the terminal. Older grouped payments can show Origin not attributed. For a return, confirm the original tender and use its authorized refund workflow; never substitute cash for a card payment.",
-            "fr": "Ouvrez une transaction sur la caisse ou dans Admin et lisez Origine du paiement séparément de Source. La source indique où la commande liée a été créée ; l’origine distingue espèces, Verifone Checkout, autre prestataire ou paiement par carte enregistré. Victa (paiement déclaré) et Carte (origine non vérifiée) signifient que Foody a enregistré un résultat, pas qu’un remboursement peut être envoyé au terminal. Les anciens paiements groupés peuvent afficher Origine non attribuée. Pour un retour, vérifiez le moyen d’origine et utilisez son parcours autorisé ; ne remplacez jamais un remboursement carte par des espèces.",
-            "he": "פתחו עסקה בקופה או ב-Admin וקראו את מקור התשלום בנפרד ממקור ההזמנה. מקור ההזמנה מציין היכן נוצרה ההזמנה המקושרת; מקור התשלום מבחין בין מזומן, Verifone Checkout, ספק אחר או תשלום כרטיס שנרשם. Victa (תשלום מדווח) וכרטיס (מקור לא מאומת) מציינים ש-Foody רשם תוצאה, לא שניתן לבצע החזר למסוף. תשלומים קבוצתיים ישנים עשויים להציג מקור לא משויך. להחזר, אמתו את אמצעי התשלום המקורי והשתמשו בתהליך ההחזר המורשה שלו; אל תחליפו החזר לכרטיס במזומן."
-          }
-        },
-        {
-          "id": "transaction-items-and-retry",
-          "title": {
-            "en": "Search every item and retry the history",
-            "fr": "Rechercher tous les articles et reprendre l’historique",
-            "he": "חיפוש כל הפריטים וניסיון חוזר בהיסטוריה"
-          },
-          "instructions": {
-            "en": "Search Transactions by any item in a linked order, including items after the first four. Open a payment to review the available linked item names. On the POS, if loading more results fails, the payments already shown remain visible; choose Try again under the list to continue. This retries only the history request, not a card charge.",
-            "fr": "Recherchez une transaction par n’importe quel article d’une commande liée, y compris au-delà des quatre premiers. Ouvrez le paiement pour consulter les noms d’articles liés disponibles. Sur la caisse, si le chargement de la suite échoue, les paiements déjà affichés restent visibles ; choisissez Réessayer sous la liste pour continuer. Cela relance seulement la lecture de l’historique, jamais un débit de carte.",
-            "he": "חפשו עסקאות לפי כל פריט בהזמנה מקושרת, גם אחרי ארבעת הפריטים הראשונים. פתחו תשלום כדי לראות את שמות הפריטים המקושרים הזמינים. בקופה, אם טעינת תוצאות נוספות נכשלת, התשלומים שכבר הוצגו נשארים גלויים; בחרו ניסיון חוזר מתחת לרשימה. הפעולה מנסה שוב לטעון את ההיסטוריה בלבד ואינה מחייבת כרטיס מחדש."
-          }
-        },
-        {
-          "id": "transaction-recorded-returns",
-          "title": {
-            "en": "Read refunds and payment voids in Transactions",
-            "fr": "Lire les remboursements et annulations dans Transactions",
-            "he": "צפייה בהחזרים ובביטולי תשלום בעסקאות"
-          },
-          "instructions": {
-            "en": "A successful Verifone Checkout refund or void initiated in Foody appears as its own return transaction, linked to the original payment. A confirmed cash return also appears separately, linked to its original cash tender. On the POS, an owner or manager with payments.manage can open an eligible payment in Transactions. For a journaled cash sale, choose Issue refund only when the server confirms an exact refundable portion and an open enrolled drawer. Select the order or check portion, enter an amount within the limit and a reason, then hand over cash only after Foody confirms. For one captured Verifone Checkout card payment linked to one exact order allocation, choose Refund to original card or Cancel card payment if offered. Enter a reason and, for a refund, an amount within the displayed limit. Foody sends the return to the original card, never to the cash drawer. An uncertain card result must be rechecked using the same saved request before another return; do not issue cash instead. Legacy unattributed, split/multi-order and Victa card payments do not offer this card action. Admin shows gross collections separately from returns recorded in Foody; neither figure is net revenue. Returns made directly in Verifone Central or on Victa are not included automatically. Also review [recorded net and balance](/en/help/orders/payment-preparation-and-handoff#recorded-money-summary).",
-            "fr": "Un remboursement ou une annulation Verifone Checkout réussi depuis Foody apparaît comme une transaction de retour distincte, liée au paiement d’origine. Un remboursement en espèces confirmé apparaît lui aussi séparément, lié à l’encaissement d’origine. Sur la caisse, un propriétaire ou responsable avec payments.manage peut ouvrir un paiement éligible dans Transactions. Pour une vente espèces enregistrée, choisissez Émettre un remboursement seulement si le serveur confirme la part exacte remboursable et une caisse autorisée ouverte. Sélectionnez la part de commande ou d’addition, indiquez un montant dans la limite et un motif, puis remettez l’argent seulement après confirmation de Foody. Pour un seul paiement carte Verifone Checkout capturé et lié exactement à une commande, choisissez Rembourser sur la carte d’origine ou Annuler le paiement carte si proposé. Indiquez un motif et, pour un remboursement, un montant dans la limite affichée. Foody renvoie l’argent sur la carte d’origine, jamais dans la caisse espèces. Un résultat carte incertain doit être vérifié avec la même requête enregistrée avant un autre retour ; ne remboursez pas en espèces à la place. Les paiements anciens non attribués, partagés ou liés à plusieurs commandes et les cartes Victa ne proposent pas cette action. Admin distingue encaissements bruts et retours enregistrés dans Foody ; aucun ne représente le chiffre d’affaires net. Les retours réalisés directement dans Verifone Central ou sur Victa ne sont pas inclus automatiquement. [Récapitulatif](/fr/help/orders/payment-preparation-and-handoff#recorded-money-summary).",
-            "he": "החזר או ביטול של Verifone Checkout שהושלם מתוך Foody מופיע כעסקת החזר נפרדת המקושרת לתשלום המקורי. גם החזר מזומן מאושר מופיע בנפרד ומקושר לתשלום המזומן המקורי. בקופה, בעלים או מנהל עם הרשאת payments.manage יכולים לפתוח תשלום זכאי בעסקאות. למכירת מזומן מתועדת בחרו החזר רק כאשר השרת מאשר חלק מדויק שניתן להחזיר וקופה מורשית פתוחה. בחרו את חלק ההזמנה או החשבון, הזינו סכום עד לתקרה וסיבה, ומסרו מזומן רק לאחר אישור Foody. לתשלום כרטיס Verifone Checkout יחיד שנקלט ומשויך בדיוק להזמנה אחת, בחרו החזר לכרטיס המקורי או ביטול תשלום בכרטיס אם האפשרות מוצגת. הזינו סיבה, ובהחזר גם סכום שאינו עולה על התקרה המוצגת. Foody מחזיר לכרטיס המקורי בלבד, לא לקופת המזומן. תוצאה לא ודאית בכרטיס מחייבת בדיקה של אותה בקשה שמורה לפני החזר נוסף; אין להחזיר מזומן במקום. תשלומים ישנים ללא שיוך, תשלומים מפוצלים או מרובי הזמנות ותשלומי כרטיס ב-Victa אינם מציעים פעולה זו. ב-Admin מוצגים בנפרד תקבולים ברוטו והחזרים שנרשמו ב-Foody; אף אחד מהם אינו הכנסה נטו. החזרים שבוצעו ישירות ב-Verifone Central או ב-Victa אינם נכללים אוטומטית. ראו גם [נטו ויתרה שנרשמו](/he/help/orders/payment-preparation-and-handoff#recorded-money-summary)."
-          }
-        },
-        {
-          "id": "transaction-gross-total",
-          "title": {
-            "en": "Read the transaction total correctly",
-            "fr": "Lire correctement le total des transactions",
-            "he": "קריאה נכונה של סך העסקאות"
-          },
-          "instructions": {
-            "en": "The Admin date range and displayed times use the restaurant’s timezone. The total sums all confirmed payment records matching the selected filters, even across several pages. Currencies remain separate. It is a gross payment total, not net sales: refunds, processing fees, cash-drawer movements and terminal end-of-day deposits are not subtracted here. Use the appropriate provider and accounting reports before reconciling a day.",
-            "fr": "La période et les heures affichées dans Admin utilisent le fuseau horaire du restaurant. Le total additionne tous les paiements confirmés correspondant aux filtres, même répartis sur plusieurs pages. Les devises restent séparées. C’est un total brut des paiements, pas des ventes nettes : les remboursements, frais de traitement, mouvements de tiroir-caisse et dépôts de fin de journée du terminal ne sont pas déduits ici. Utilisez les rapports du prestataire et de comptabilité adaptés pour rapprocher une journée.",
-            "he": "טווח התאריכים והשעות המוצגות ב-Admin משתמשים באזור הזמן של העסק. הסכום כולל את כל רשומות התשלום המאושרות התואמות למסננים, גם אם הן מוצגות בכמה עמודים. המטבעות נשארים נפרדים. זהו סכום תשלומים ברוטו ולא מכירות נטו: החזרים, עמלות סליקה, תנועות מגירת מזומן והפקדות סוף יום של המסוף אינם מנוכים כאן. להצלבת יום השתמשו בדוחות הספק והחשבונאות המתאימים."
-          }
-        },
-        {
           "id": "terminal-deposit",
           "title": {
             "en": "Close and deposit a Verifone terminal batch",
@@ -41512,6 +41474,19 @@
             "fr": "Avec les droits de paiement et les versions compatibles, ouvrez Plus → Rapports → Solde en caisse. Le même espace présente le tiroir espèces, les encaissements carte enregistrés par terminal et la clôture guidée. Historique de caisse réunit les sessions espèces closes et les rapports Z finalisés. Les anciennes adresses de clôture et de dépôt rejoignent cet espace ; les API plus anciennes conservent leur parcours précédent. Consultez [le parcours de caisse commun](/fr/help/payments/end-of-day#unified-cash-workspace).",
             "en": "With payment permissions and compatible versions, open More → Reports → Current drawer. The same workspace shows the cash drawer, recorded card collections by terminal and guided closing. Drawer history combines closed cash sessions and finalized Z reports. Older closing and deposit addresses open this workspace; older APIs retain their previous workflow. See [the unified cash workflow](/en/help/payments/end-of-day#unified-cash-workspace).",
             "he": "עם הרשאות תשלום וגרסאות תואמות, פתחו עוד ← דוחות ← יתרת קופה. אותו מרחב מציג את מגירת המזומנים, חיובי הכרטיס שנרשמו לפי מסוף וסגירה מודרכת. היסטוריית קופה משלבת משמרות מזומן סגורות ודוחות Z שהושלמו. כתובות הסגירה וההפקדה הקודמות פותחות מרחב זה; API ישן שומר על המסלול הקודם. ראו [תהליך הקופה המאוחד](/he/help/payments/end-of-day#unified-cash-workspace)."
+          }
+        },
+        {
+          "id": "transaction-history",
+          "title": {
+            "en": "Review completed payments",
+            "fr": "Consulter les paiements confirmés",
+            "he": "צפייה בתשלומים שאושרו"
+          },
+          "instructions": {
+            "en": "Open Transactions to review recorded cash, POS card and online payments. Follow [transaction history](/en/help/payments/transactions) for filters, payment origins, returns and unavailable original orders. This shared history does not retrieve all payments from Ashrait.",
+            "fr": "Ouvrez Transactions pour consulter les encaissements espèces, carte en caisse et en ligne enregistrés. Suivez [l’historique des transactions](/fr/help/payments/transactions) pour les filtres, origines, retours et commandes d’origine indisponibles. Cet historique partagé ne télécharge pas tous les paiements depuis Ashrait.",
+            "he": "פתחו עסקאות לצפייה בתקבולי מזומן, כרטיס בקופה ואונליין שנרשמו. ראו [היסטוריית עסקאות](/he/help/payments/transactions) לסינון, מקור, החזרים והזמנות מקוריות שאינן זמינות. ההיסטוריה המשותפת אינה מורידה את כל התשלומים מ-Ashrait."
           }
         }
       ],
@@ -41699,6 +41674,10 @@
         {
           "service": "foodyserver",
           "file": "migrations/287_pos_card_collections.sql"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/app/[restaurantId]/transactions/page.tsx"
         },
         {
           "service": "foodyadmin",
@@ -49801,10 +49780,6 @@
       "evidence": [
         {
           "service": "foodyadmin",
-          "file": "src/app/[restaurantId]/layout.tsx"
-        },
-        {
-          "service": "foodyadmin",
           "file": "src/app/[restaurantId]/settings/layout.tsx"
         },
         {
@@ -50706,6 +50681,10 @@
         {
           "service": "foodyadmin",
           "file": "src/lib/theme-context.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/lib/transactions.ts"
         },
         {
           "service": "foodyadmin",
@@ -54575,6 +54554,204 @@
         {
           "service": "foodypos",
           "file": "lib/services/printing/receipt_bitmap_renderer.dart"
+        }
+      ]
+    },
+    {
+      "id": "payments-transactions",
+      "module": "payments",
+      "article": "payments/transactions",
+      "audience": "public",
+      "status": "available",
+      "preserveExisting": false,
+      "procedureUpdatedAt": "2026-11-04",
+      "title": {
+        "en": "Review transaction history",
+        "fr": "Consulter les transactions",
+        "he": "צפייה בהיסטוריית עסקאות"
+      },
+      "entry": {
+        "en": "Read the restaurant’s confirmed Foody payment history from Transactions in the POS or Admin. The same restaurant and payment-view permission apply. This procedure requires the matching API, Admin and installed POS release.",
+        "fr": "Consultez les paiements confirmés enregistrés dans Foody depuis Transactions sur la caisse ou dans Admin. Le restaurant actif et les droits de lecture des paiements restent déterminants. Cette procédure nécessite les versions API, Admin et POS correspondantes.",
+        "he": "היסטוריית התשלומים שאושרו ונרשמו ב-Foody זמינה בעסקאות בקופה וב-Admin, לפי העסק הפעיל והרשאת צפייה בתשלומים. נדרשות גרסאות API, Admin וקופה תואמות."
+      },
+      "selectors": {
+        "foodyserver": [
+          "internal/orders/transactions*.go"
+        ],
+        "foodypos": [
+          "lib/features/transactions/**",
+          "lib/core/l10n/app_en.arb",
+          "lib/core/l10n/app_fr.arb",
+          "lib/core/l10n/app_he.arb"
+        ],
+        "foodyadmin": [
+          "src/app/[restaurantId]/transactions/**",
+          "src/lib/transactions.ts",
+          "src/lib/api.ts",
+          "src/lib/route-permissions.ts",
+          "src/components/Sidebar.tsx",
+          "src/app/[restaurantId]/layout.tsx",
+          "src/lib/i18n.tsx"
+        ]
+      },
+      "operations": [
+        {
+          "id": "transaction-history",
+          "title": {
+            "en": "Find a completed payment in Transactions",
+            "fr": "Retrouver un paiement confirmé dans Transactions",
+            "he": "איתור תשלום שאושר בעסקאות"
+          },
+          "instructions": {
+            "en": "Open Transactions in the iPad POS navigation, in More on compact terminals, or in the Admin sidebar, with payments.view or payments.manage. All three screens read the same restaurant-scoped confirmed payment history. In Admin choose a date range, source and method; search by item, reference or order number, then select a payment for its amount, method and linked orders. On the POS, selecting a linked order opens its saved read-only detail without leaving Transactions; if it cannot load, refresh and retry. The source follows the linked order: a provider-processed payment for a POS-created order appears under POS, not Online. Totals cover all matching payments, not just the visible page, and keep currencies separate. One order can have several tenders and one tender can cover several orders; Orders remains the place to follow fulfillment. Pending terminal attempts are not completed sales. History does not issue new receipts. Authorized owners and managers may see server-verified cash refunds or Verifone Checkout original-card returns for eligible payments; see the refund procedure before acting. If a result is missing, check restaurant, date and filters, then reconcile uncertain terminal payments before another charge.",
+            "fr": "Ouvrez Transactions dans la navigation de la caisse iPad, dans Plus sur un terminal compact ou dans le menu latéral Admin, avec payments.view ou payments.manage. Ces trois écrans lisent le même historique des paiements confirmés du restaurant. Dans Admin, choisissez période, source et mode ; recherchez par article, référence ou numéro de commande, puis sélectionnez un paiement pour son montant, son moyen et les commandes liées. Sur la caisse, sélectionner une commande liée ouvre son détail enregistré en lecture seule sans quitter Transactions ; si le chargement échoue, actualisez et réessayez. La source suit la commande liée : un paiement traité par un prestataire pour une commande créée en caisse apparaît sous Caisse, pas En ligne. Les totaux couvrent tous les paiements correspondant aux filtres, pas seulement la page visible, et séparent les devises. Une commande peut avoir plusieurs encaissements et un encaissement couvrir plusieurs commandes ; Commandes reste l’espace de suivi du service. Les tentatives terminal en attente ne sont pas des ventes finalisées. L’historique ne crée pas de nouveau reçu. Les propriétaires et responsables autorisés peuvent voir des remboursements d’espèces ou des retours Verifone Checkout sur la carte d’origine lorsque le serveur confirme l’éligibilité ; lisez la procédure de remboursement avant d’agir. Si un paiement manque, vérifiez restaurant, période et filtres, puis rapprochez les résultats incertains avant un nouveau débit.",
+            "he": "פתחו עסקאות בניווט קופת iPad, בעוד במסוף קומפקטי או בתפריט הצד של Admin, עם הרשאת payments.view או payments.manage. שלושת המסכים קוראים את אותה היסטוריית תשלומים מאושרים של העסק. ב-Admin בחרו טווח תאריכים, מקור ואמצעי; חפשו לפי פריט, אסמכתה או מספר הזמנה ובחרו תשלום להצגת הסכום, האמצעי וההזמנות הקשורות. בקופה, בחירת הזמנה מקושרת פותחת את פרטיה השמורים לקריאה בלבד בלי לצאת מעסקאות; אם הטעינה נכשלת, רעננו ונסו שוב. המקור נקבע לפי ההזמנה המקושרת: תשלום שעובד אצל ספק עבור הזמנה שנוצרה בקופה מופיע תחת קופה ולא תחת אונליין. הסכומים כוללים את כל התשלומים התואמים לסינון, לא רק את העמוד הגלוי, ומפרידים בין מטבעות. הזמנה אחת יכולה לכלול כמה תשלומים ותשלום אחד יכול לכסות כמה הזמנות; הזמנות מיועד למעקב אחר הכנה ומסירה. ניסיונות מסוף ממתינים אינם מכירות שהושלמו. ההיסטוריה אינה מנפיקה קבלה חדשה. בעלים ומנהלים מורשים יכולים לראות החזרי מזומן או החזר לכרטיס המקורי ב-Verifone Checkout כאשר השרת מאשר זכאות; קראו את נוהל ההחזר לפני פעולה. אם תשלום חסר, בדקו עסק, תקופה ומסננים והתאימו תוצאה לא ודאית לפני חיוב נוסף."
+          }
+        },
+        {
+          "id": "transaction-payment-origin",
+          "title": {
+            "en": "Understand payment origin",
+            "fr": "Comprendre l’origine du paiement",
+            "he": "הבנת מקור התשלום"
+          },
+          "instructions": {
+            "en": "Open a transaction on POS or Admin and read Payment origin separately from Source. Source identifies where the linked order was created; origin identifies cash, Verifone Checkout, another provider, or a recorded card payment. Victa (recorded payment) and Card (origin unverified) mean Foody recorded a result; they do not prove that a refund can be sent to the terminal. Older grouped payments can show Origin not attributed. For a return, confirm the original tender and use its authorized refund workflow; never substitute cash for a card payment.",
+            "fr": "Ouvrez une transaction sur la caisse ou dans Admin et lisez Origine du paiement séparément de Source. La source indique où la commande liée a été créée ; l’origine distingue espèces, Verifone Checkout, autre prestataire ou paiement par carte enregistré. Victa (paiement déclaré) et Carte (origine non vérifiée) signifient que Foody a enregistré un résultat, pas qu’un remboursement peut être envoyé au terminal. Les anciens paiements groupés peuvent afficher Origine non attribuée. Pour un retour, vérifiez le moyen d’origine et utilisez son parcours autorisé ; ne remplacez jamais un remboursement carte par des espèces.",
+            "he": "פתחו עסקה בקופה או ב-Admin וקראו את מקור התשלום בנפרד ממקור ההזמנה. מקור ההזמנה מציין היכן נוצרה ההזמנה המקושרת; מקור התשלום מבחין בין מזומן, Verifone Checkout, ספק אחר או תשלום כרטיס שנרשם. Victa (תשלום מדווח) וכרטיס (מקור לא מאומת) מציינים ש-Foody רשם תוצאה, לא שניתן לבצע החזר למסוף. תשלומים קבוצתיים ישנים עשויים להציג מקור לא משויך. להחזר, אמתו את אמצעי התשלום המקורי והשתמשו בתהליך ההחזר המורשה שלו; אל תחליפו החזר לכרטיס במזומן."
+          }
+        },
+        {
+          "id": "transaction-items-and-retry",
+          "title": {
+            "en": "Search every item and retry the history",
+            "fr": "Rechercher tous les articles et reprendre l’historique",
+            "he": "חיפוש כל הפריטים וניסיון חוזר בהיסטוריה"
+          },
+          "instructions": {
+            "en": "Search Transactions by any item in a linked order, including items after the first four. Open a payment to review the available linked item names. On the POS, if loading more results fails, the payments already shown remain visible; choose Try again under the list to continue. This retries only the history request, not a card charge.",
+            "fr": "Recherchez une transaction par n’importe quel article d’une commande liée, y compris au-delà des quatre premiers. Ouvrez le paiement pour consulter les noms d’articles liés disponibles. Sur la caisse, si le chargement de la suite échoue, les paiements déjà affichés restent visibles ; choisissez Réessayer sous la liste pour continuer. Cela relance seulement la lecture de l’historique, jamais un débit de carte.",
+            "he": "חפשו עסקאות לפי כל פריט בהזמנה מקושרת, גם אחרי ארבעת הפריטים הראשונים. פתחו תשלום כדי לראות את שמות הפריטים המקושרים הזמינים. בקופה, אם טעינת תוצאות נוספות נכשלת, התשלומים שכבר הוצגו נשארים גלויים; בחרו ניסיון חוזר מתחת לרשימה. הפעולה מנסה שוב לטעון את ההיסטוריה בלבד ואינה מחייבת כרטיס מחדש."
+          }
+        },
+        {
+          "id": "transaction-recorded-returns",
+          "title": {
+            "en": "Read refunds and payment voids in Transactions",
+            "fr": "Lire les remboursements et annulations dans Transactions",
+            "he": "צפייה בהחזרים ובביטולי תשלום בעסקאות"
+          },
+          "instructions": {
+            "en": "A successful Verifone Checkout refund or void initiated in Foody appears as its own return transaction, linked to the original payment. A confirmed cash return also appears separately, linked to its original cash tender. On the POS, an owner or manager with payments.manage can open an eligible payment in Transactions. For a journaled cash sale, choose Issue refund only when the server confirms an exact refundable portion and an open enrolled drawer. Select the order or check portion, enter an amount within the limit and a reason, then hand over cash only after Foody confirms. For one captured Verifone Checkout card payment linked to one exact order allocation, choose Refund to original card or Cancel card payment if offered. Enter a reason and, for a refund, an amount within the displayed limit. Foody sends the return to the original card, never to the cash drawer. An uncertain card result must be rechecked using the same saved request before another return; do not issue cash instead. Legacy unattributed, split/multi-order and Victa card payments do not offer this card action. Admin shows gross collections separately from returns recorded in Foody; neither figure is net revenue. Returns made directly in Verifone Central or on Victa are not included automatically. Also review [recorded net and balance](/en/help/orders/payment-preparation-and-handoff#recorded-money-summary).",
+            "fr": "Un remboursement ou une annulation Verifone Checkout réussi depuis Foody apparaît comme une transaction de retour distincte, liée au paiement d’origine. Un remboursement en espèces confirmé apparaît lui aussi séparément, lié à l’encaissement d’origine. Sur la caisse, un propriétaire ou responsable avec payments.manage peut ouvrir un paiement éligible dans Transactions. Pour une vente espèces enregistrée, choisissez Émettre un remboursement seulement si le serveur confirme la part exacte remboursable et une caisse autorisée ouverte. Sélectionnez la part de commande ou d’addition, indiquez un montant dans la limite et un motif, puis remettez l’argent seulement après confirmation de Foody. Pour un seul paiement carte Verifone Checkout capturé et lié exactement à une commande, choisissez Rembourser sur la carte d’origine ou Annuler le paiement carte si proposé. Indiquez un motif et, pour un remboursement, un montant dans la limite affichée. Foody renvoie l’argent sur la carte d’origine, jamais dans la caisse espèces. Un résultat carte incertain doit être vérifié avec la même requête enregistrée avant un autre retour ; ne remboursez pas en espèces à la place. Les paiements anciens non attribués, partagés ou liés à plusieurs commandes et les cartes Victa ne proposent pas cette action. Admin distingue encaissements bruts et retours enregistrés dans Foody ; aucun ne représente le chiffre d’affaires net. Les retours réalisés directement dans Verifone Central ou sur Victa ne sont pas inclus automatiquement. [Récapitulatif](/fr/help/orders/payment-preparation-and-handoff#recorded-money-summary).",
+            "he": "החזר או ביטול של Verifone Checkout שהושלם מתוך Foody מופיע כעסקת החזר נפרדת המקושרת לתשלום המקורי. גם החזר מזומן מאושר מופיע בנפרד ומקושר לתשלום המזומן המקורי. בקופה, בעלים או מנהל עם הרשאת payments.manage יכולים לפתוח תשלום זכאי בעסקאות. למכירת מזומן מתועדת בחרו החזר רק כאשר השרת מאשר חלק מדויק שניתן להחזיר וקופה מורשית פתוחה. בחרו את חלק ההזמנה או החשבון, הזינו סכום עד לתקרה וסיבה, ומסרו מזומן רק לאחר אישור Foody. לתשלום כרטיס Verifone Checkout יחיד שנקלט ומשויך בדיוק להזמנה אחת, בחרו החזר לכרטיס המקורי או ביטול תשלום בכרטיס אם האפשרות מוצגת. הזינו סיבה, ובהחזר גם סכום שאינו עולה על התקרה המוצגת. Foody מחזיר לכרטיס המקורי בלבד, לא לקופת המזומן. תוצאה לא ודאית בכרטיס מחייבת בדיקה של אותה בקשה שמורה לפני החזר נוסף; אין להחזיר מזומן במקום. תשלומים ישנים ללא שיוך, תשלומים מפוצלים או מרובי הזמנות ותשלומי כרטיס ב-Victa אינם מציעים פעולה זו. ב-Admin מוצגים בנפרד תקבולים ברוטו והחזרים שנרשמו ב-Foody; אף אחד מהם אינו הכנסה נטו. החזרים שבוצעו ישירות ב-Verifone Central או ב-Victa אינם נכללים אוטומטית. ראו גם [נטו ויתרה שנרשמו](/he/help/orders/payment-preparation-and-handoff#recorded-money-summary)."
+          }
+        },
+        {
+          "id": "transaction-gross-total",
+          "title": {
+            "en": "Read the transaction total correctly",
+            "fr": "Lire correctement le total des transactions",
+            "he": "קריאה נכונה של סך העסקאות"
+          },
+          "instructions": {
+            "en": "The Admin date range and displayed times use the restaurant’s timezone. The total sums all confirmed payment records matching the selected filters, even across several pages. Currencies remain separate. It is a gross payment total, not net sales: refunds, processing fees, cash-drawer movements and terminal end-of-day deposits are not subtracted here. Use the appropriate provider and accounting reports before reconciling a day.",
+            "fr": "La période et les heures affichées dans Admin utilisent le fuseau horaire du restaurant. Le total additionne tous les paiements confirmés correspondant aux filtres, même répartis sur plusieurs pages. Les devises restent séparées. C’est un total brut des paiements, pas des ventes nettes : les remboursements, frais de traitement, mouvements de tiroir-caisse et dépôts de fin de journée du terminal ne sont pas déduits ici. Utilisez les rapports du prestataire et de comptabilité adaptés pour rapprocher une journée.",
+            "he": "טווח התאריכים והשעות המוצגות ב-Admin משתמשים באזור הזמן של העסק. הסכום כולל את כל רשומות התשלום המאושרות התואמות למסננים, גם אם הן מוצגות בכמה עמודים. המטבעות נשארים נפרדים. זהו סכום תשלומים ברוטו ולא מכירות נטו: החזרים, עמלות סליקה, תנועות מגירת מזומן והפקדות סוף יום של המסוף אינם מנוכים כאן. להצלבת יום השתמשו בדוחות הספק והחשבונאות המתאימים."
+          }
+        },
+        {
+          "id": "transaction-central-history",
+          "title": {
+            "en": "Understand providers and history coverage",
+            "fr": "Comprendre les prestataires et la couverture",
+            "he": "הבנת הספקים והיקף ההיסטוריה"
+          },
+          "instructions": {
+            "en": "Transactions reads Foody’s central history, not a list downloaded from Ashrait. It includes confirmed recorded cash, POS card and QR/website payments, including Verifone, Sumit and Stancer. The online provider remains the payment’s actual processor; displaying it does not connect a new provider to POS hardware. Card-present terminal operations remain Verifone-only. getLastTransaction reads only a terminal’s latest operation and cannot reconstruct a restaurant’s history. Provider actions performed outside Foody may be absent. Keep gross collections and locally recorded returns separate, by currency; no currency conversion or bank-net total is inferred.",
+            "fr": "Transactions lit l’historique central de Foody, pas une liste téléchargée depuis Ashrait. Il réunit les encaissements confirmés enregistrés en espèces, par carte en caisse et sur QR/site, notamment Verifone, Sumit et Stancer. Le prestataire en ligne reste celui du paiement d’origine ; son affichage ne connecte aucun nouveau prestataire au matériel POS. Les opérations carte sur terminal restent exclusivement Verifone. getLastTransaction ne consulte que la dernière opération d’un terminal et ne reconstitue pas l’historique du restaurant. Des opérations réalisées directement chez le prestataire peuvent être absentes. Séparez les encaissements bruts des retours enregistrés, par devise ; aucun change ni total bancaire net n’est déduit.",
+            "he": "עסקאות קורא את ההיסטוריה המרכזית של Foody ולא רשימה שהורדה מ-Ashrait. היא כוללת תקבולי מזומן, כרטיס בקופה ותשלומי QR/אתר שאושרו ונרשמו, לרבות Verifone, Sumit ו-Stancer. הספק המקוון נשאר ספק התשלום המקורי; הצגתו אינה מחברת ספק חדש לחומרת הקופה. פעולות כרטיס במסוף נשארות בלעדיות ל-Verifone. getLastTransaction קורא רק את הפעולה האחרונה במסוף ואינו משחזר היסטוריה של עסק. פעולות שבוצעו ישירות אצל הספק עשויות להיות חסרות. יש להפריד תקבולים ברוטו מהחזרים שנרשמו, לפי מטבע; אין הסקת המרת מטבע או סכום בנקאי נטו."
+          }
+        },
+        {
+          "id": "transaction-unavailable-allocation",
+          "title": {
+            "en": "Read an entry whose original order is unavailable",
+            "fr": "Lire une écriture dont la commande est indisponible",
+            "he": "צפייה ברשומה שההזמנה המקורית שלה אינה זמינה"
+          },
+          "instructions": {
+            "en": "A confirmed cash sale or return remains in the immutable cash ledger even when its operational order or check is no longer readable. Transactions retains the recorded amount, date, currency and original payment identity, and shows an unavailable-original warning. Missing or foreign order/check identifiers are hidden; no amount is assigned to a guessed replacement. This read never rewrites a payment, deletes cash evidence or enables a refund. In Admin, Details is read-only. In POS, an entry marked unavailable has no refund action. A retry reloads history only; it never charges a card or sends Deposit.",
+            "fr": "Une vente ou un retour espèces confirmé reste dans le journal immuable de caisse même si sa commande ou son addition opérationnelle n’est plus lisible. Transactions conserve montant, date, devise et identité du paiement enregistrés et signale l’indisponibilité de l’origine. Les identifiants de commandes ou additions absentes ou étrangères au restaurant sont masqués ; aucun montant n’est attribué à un remplacement supposé. Cette consultation ne réécrit aucun paiement, ne supprime aucune preuve de caisse et n’active aucun remboursement. Dans Admin, Détails est en lecture seule. Sur le POS, une écriture signalée indisponible ne propose pas de remboursement. Réessayer recharge seulement l’historique ; aucun débit carte ni Deposit n’est lancé.",
+            "he": "מכירה או החזר מזומן שאושרו נשארים ביומן הקופה גם אם ההזמנה או החשבון התפעוליים המקוריים אינם נגישים. עסקאות שומר את הסכום, התאריך, המטבע וזהות התשלום שנרשמו ומציג אזהרה שהמקור אינו זמין. מזהי הזמנות או חשבונות חסרים או ששייכים לעסק אחר מוסתרים; אין שיוך סכום למקור חלופי משוער. הצפייה אינה משנה תשלום, מוחקת ראיית קופה או מאפשרת החזר. ב-Admin הפרטים הם לקריאה בלבד. בקופה אין פעולת החזר לרשומה שסומנה כך. ניסיון חוזר טוען היסטוריה בלבד; הוא אינו מחייב כרטיס או מבצע Deposit."
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/transactions_cash.go"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/app/[restaurantId]/layout.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/app/[restaurantId]/transactions/page.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/components/Sidebar.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/lib/api.ts"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/lib/i18n.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/lib/route-permissions.ts"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/lib/transactions.ts"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/core/l10n/app_en.arb"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/core/l10n/app_fr.arb"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/core/l10n/app_he.arb"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/transactions/data/checkout_adjustment_repository.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/transactions/data/transaction_repository.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/transactions/domain/pos_transaction.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/transactions/presentation/transactions_page.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/transactions/providers/transaction_refresh_provider.dart"
         }
       ]
     }
@@ -75975,7 +76152,7 @@
       "service": "foodyadmin",
       "source": "src/app/[restaurantId]/layout.tsx",
       "features": [
-        "shared-runtime"
+        "payments-transactions"
       ],
       "kind": "ui-controls",
       "labels": [
@@ -80019,6 +80196,64 @@
       "line": 1
     },
     {
+      "id": "foodyadmin:src/app/[restaurantId]/transactions/page.tsx:next-page:1",
+      "service": "foodyadmin",
+      "source": "src/app/[restaurantId]/transactions/page.tsx",
+      "features": [
+        "pos-payments",
+        "payments-transactions"
+      ],
+      "kind": "next-page",
+      "route": "/[restaurantId]/transactions",
+      "line": 1
+    },
+    {
+      "id": "foodyadmin:src/app/[restaurantId]/transactions/page.tsx:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/app/[restaurantId]/transactions/page.tsx",
+      "features": [
+        "pos-payments",
+        "payments-transactions"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "loading",
+        "retry",
+        "transactionHistoryAllMethods",
+        "transactionHistoryAllSources",
+        "transactionHistoryAllocationUnavailable",
+        "transactionHistoryAmount",
+        "transactionHistoryCard",
+        "transactionHistoryCash",
+        "transactionHistoryDate",
+        "transactionHistoryDetails",
+        "transactionHistoryEmpty",
+        "transactionHistoryExternalCard",
+        "transactionHistoryFind",
+        "transactionHistoryGross",
+        "transactionHistoryIntro",
+        "transactionHistoryLoadError",
+        "transactionHistoryMethod",
+        "transactionHistoryNext",
+        "transactionHistoryOnline",
+        "transactionHistoryPos",
+        "transactionHistoryPrevious",
+        "transactionHistoryProcessor",
+        "transactionHistoryReadOnly",
+        "transactionHistoryRecordedReturns",
+        "transactionHistoryReference",
+        "transactionHistorySearch",
+        "transactionHistorySource",
+        "transactionHistoryTransfer",
+        "transactionHistoryType",
+        "transactionHistoryUnknown",
+        "transactionHistoryVicta",
+        "transactions"
+      ],
+      "actions": [],
+      "line": 1
+    },
+    {
       "id": "foodyadmin:src/app/[restaurantId]/website-v3/page.tsx:next-page:1",
       "service": "foodyadmin",
       "source": "src/app/[restaurantId]/website-v3/page.tsx",
@@ -80512,7 +80747,8 @@
       "source": "src/components/Sidebar.tsx",
       "features": [
         "pos-payments",
-        "global-search"
+        "global-search",
+        "payments-transactions"
       ],
       "kind": "ui-controls",
       "labels": [
@@ -91044,7 +91280,8 @@
         "menu-product-photos",
         "orders-internal-sumit-checkout",
         "stancer-cash-guarantee",
-        "orders-events"
+        "orders-events",
+        "payments-transactions"
       ],
       "kind": "ui-controls",
       "labels": [],
@@ -96549,7 +96786,8 @@
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
-        "pos-payments"
+        "pos-payments",
+        "payments-transactions"
       ],
       "kind": "flutter-route",
       "route": "/transactions",
@@ -99772,7 +100010,8 @@
       "service": "foodypos",
       "source": "lib/features/transactions/data/checkout_adjustment_repository.dart",
       "features": [
-        "pos-payments"
+        "pos-payments",
+        "payments-transactions"
       ],
       "kind": "ui-controls",
       "labels": [],
@@ -99786,7 +100025,8 @@
       "service": "foodypos",
       "source": "lib/features/transactions/presentation/transactions_page.dart",
       "features": [
-        "pos-payments"
+        "pos-payments",
+        "payments-transactions"
       ],
       "kind": "ui-controls",
       "labels": [
@@ -99800,6 +100040,7 @@
         "checkoutVoidAction",
         "navTransactions",
         "transactionsAll",
+        "transactionsAllocationUnavailable",
         "transactionsBankTransfer",
         "transactionsCard",
         "transactionsCash",
@@ -100826,11 +101067,11 @@
     }
   ],
   "coverage": {
-    "sharedRuntimeFiles": 401,
-    "features": 108,
-    "operations": 898,
-    "sourceFiles": 2355,
-    "surfaces": 2139,
+    "sharedRuntimeFiles": 400,
+    "features": 109,
+    "operations": 901,
+    "sourceFiles": 2357,
+    "surfaces": 2141,
     "unclassifiedRoutes": []
   }
 }

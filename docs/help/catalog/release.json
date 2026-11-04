@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": "07ce71fe479afd831cd1166f345878e39acd74a0891ad445e8d6456665fd7ff0",
+  "revision": "9df2c5505ae3a08d2af0a0e218feac0cb3d902a67a97610c488e43100a8599ef",
   "articles": {
     "getting-started/first-login": {
       "feature": "account-access",
@@ -1282,15 +1282,15 @@
       "translations": {
         "en": {
           "path": "src/content/help/en/payments/pos-checkout.mdx",
-          "sha256": "77c166c71887cdd44818b723ea14bff84daec88c34963e7abaeb3fc6c503dae2"
+          "sha256": "9808cfa50f1c1fc164e4087d77f7dd069843ade75b75fd7710ee9a7c181f0263"
         },
         "fr": {
           "path": "src/content/help/fr/payments/pos-checkout.mdx",
-          "sha256": "7d060e324c130a81feef951ec1e10ace372e8ce0a56b3d8327062bce10f35c11"
+          "sha256": "caa2f202ca4db44faaf43148f54d5224cc9279aff41d27320728306d2e7bbac5"
         },
         "he": {
           "path": "src/content/help/he/payments/pos-checkout.mdx",
-          "sha256": "72dd8da0c97525832f72179cf98d98eced69eb81c153e043ad320c1d9ee8d028"
+          "sha256": "01f37d406aa24c7f632c5bbe04a0d06cc1264351746a7be57f80c1e878ec2f8c"
         }
       }
     },
@@ -2053,9 +2053,28 @@
           "sha256": "328436dbbfd6ca38d4d9b3f24c5826f59bdb164de28210ebaf4cb53128a90c70"
         }
       }
+    },
+    "payments/transactions": {
+      "feature": "payments-transactions",
+      "audience": "public",
+      "status": "available",
+      "translations": {
+        "en": {
+          "path": "src/content/help/en/payments/transactions.mdx",
+          "sha256": "73ccfff61d133c4263fe160b8d8395cadf8b8518ceee2bcf9e32c8e406cd3cc3"
+        },
+        "fr": {
+          "path": "src/content/help/fr/payments/transactions.mdx",
+          "sha256": "e3c38d2b325bc1fd4628da4f8ab68efb3354a616ec8166c84568a3b6e2e36d7c"
+        },
+        "he": {
+          "path": "src/content/help/he/payments/transactions.mdx",
+          "sha256": "bfbbb70635f52e585bbec506a13da887afbaa954dbae3231f991dbec5efbde77"
+        }
+      }
     }
   },
-  "publicArticleCount": 99,
+  "publicArticleCount": 100,
   "features": [
     {
       "id": "account-access",
@@ -3301,11 +3320,6 @@
         "cash-report-unconfirmed",
         "cash-drawer-report",
         "card",
-        "transaction-history",
-        "transaction-payment-origin",
-        "transaction-items-and-retry",
-        "transaction-recorded-returns",
-        "transaction-gross-total",
         "terminal-deposit",
         "terminal-reports-advanced",
         "saved-qr-payment-scope",
@@ -3318,7 +3332,8 @@
         "prepared-sumit-checkout-integration",
         "victa-mini-connection",
         "physical-card-destination",
-        "unified-cash-workspace"
+        "unified-cash-workspace",
+        "transaction-history"
       ]
     },
     {
@@ -3925,6 +3940,22 @@
         "edit",
         "hold-management",
         "manual-order-steps"
+      ]
+    },
+    {
+      "id": "payments-transactions",
+      "article": "payments/transactions",
+      "module": "payments",
+      "audience": "public",
+      "status": "available",
+      "operations": [
+        "transaction-history",
+        "transaction-payment-origin",
+        "transaction-items-and-retry",
+        "transaction-recorded-returns",
+        "transaction-gross-total",
+        "transaction-central-history",
+        "transaction-unavailable-allocation"
       ]
     }
   ]
