@@ -275,3 +275,9 @@ On compatible API and Backoffice versions, a Foody superadmin opens Backoffice â
 ## Prepare configurable fulfillment contracts
 
 Local preparation: nullable dated/revisioned shelf stock and optional zone deadlines configure no restaurant automatically. Private APIs verify restaurant ownership and existing permissions. Public calendars and submission remain authoritative; private quantities are not added to the public item contract. Historical series leftovers use the operational service series for display and reservation, independently of the next preorder series. Verify defaults, reservation races, pre-production releases, older editors and translations; retain payment providers and existing orders. Migration 288/API precede Admin/Web. Export the identical corpus after runtime validation and pin the reviewed immutable Landing commit before CI. Verify the develop artifacts, then promote those exact artifacts under the approved release workflow; source review alone does not attest production availability.
+
+<span id="current-pos-financial-context" />
+
+## Authenticate the current POS financial context
+
+Compatible clients send X-Foody-POS-Token only to the trusted authenticated orders API and their own shift-end/preflight endpoints, never public or redirected destinations. The API retains only a hash in a request-scoped service copy, validates restaurant ownership, expiry, revocation and installation, then locks the employee interval and original/current credentials in stable order. Attendance never moves. Missing proof keeps the legacy original-device rule; explicit invalid proof fails closed. Cash, EOD, card reservations and financial portions share this identity. Logout retains original and current cash duties. Deploy API before clients; no migration or environment change.

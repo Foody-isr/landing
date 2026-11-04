@@ -76,3 +76,9 @@ Avec payments.manage et une API compatible, Solde en caisse est l’entrée comm
 Clôturer la session ouvre la vérification des espèces et des terminaux inclus. Annuler à ce stade ne réserve pas la caisse et ne transmet rien. Valider Commencer la clôture fige le comptage et bloque les nouvelles opérations jusqu’à la fin. Les étapes de transmission, reprise et finalisation restent dans Solde en caisse. Chaque terminal inclus exige sa confirmation explicite de transmission, une seule fois ; un changement d’employé ne déclenche aucun dépôt. Une clôture déjà commencée réapparaît directement dans ce même espace jusqu’à son rapport Z confirmé. Aucun effacement de journal ni seconde transmission ne sert à la contourner.
 
 Historique de caisse liste les vingt entrées récentes : rapports Z finalisés et sessions espèces closes hors rapport Z. Une caisse déjà incluse dans un rapport Z n’apparaît pas une seconde fois. Ouvrir une entrée affiche ses données en lecture seule, sans remplacer la session courante. Les anciennes API et les droits restreints conservent les écrans autorisés ; la consultation des espèces n’accorde pas le droit de transmettre un terminal. Les essais matériels restent distincts de la validation logicielle.
+
+<span id="current-register-scope" />
+
+## Clôturer l’appareil courant
+
+Avec les versions compatibles, la caisse et la journée sont celles de l’appareil enrôlé utilisé, même quand votre pointage a commencé sur un autre POS. Changer d’appareil ne déplace aucun rapport, dépôt ni résultat en attente. Reprenez chaque opération sur son appareil et avec son identité d’origine ; une lecture non confirmée continue de bloquer un nouveau paiement.

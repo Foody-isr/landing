@@ -76,3 +76,9 @@ With payments.manage and a compatible API, Current drawer is the common entry po
 Close drawer opens the review of cash and included terminals. Cancelling at this stage neither reserves the drawer nor transmits anything. Confirming Start end of day freezes the count and blocks new operations until completion. Transmission, recovery and finalization remain inside Current drawer. Each included terminal needs one explicit transmission confirmation; changing employees never triggers a deposit. An already-started close reappears directly in this workspace until its Z report is confirmed. Erasing journals or retransmitting is never a workaround.
 
 Drawer history lists twenty recent entries: finalized Z reports and closed standalone cash sessions. Cash already included in a Z report is not shown a second time. Opening an entry is read only and does not replace the current session. Older APIs and restricted permissions retain their authorized screens; viewing cash grants no terminal-transmission permission. Hardware acceptance remains separate from software validation.
+
+<span id="current-register-scope" />
+
+## Close the current register
+
+With compatible versions, the drawer and day belong to the enrolled device in use, even when attendance started on another POS. Switching devices moves no report, deposit or pending result. Resume each operation on its original device with its original identity; an unconfirmed read continues to block a new payment.

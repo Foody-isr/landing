@@ -608,12 +608,25 @@
           "en": "This flow needs compatible API and POS versions; this guide does not confirm installation. After Sign out, Shift already ended means that no active period was found for your account in this restaurant. It is not inferred from a cash-access error. Cancel keeps you signed in. Lock terminal requires explicit confirmation and rereads the state before returning to PIN, without sending another shift-end request.\n\nIf a period appears meanwhile, the sign-in or restaurant changes, the read fails or a local cash operation is pending, locking is not confirmed. Preserve the data, resolve the operation through its own flow, then retry. Terminal payment journals are retained. Locking closes no drawer, creates no period and reactivates no device authorization.",
           "he": "המסלול דורש גרסאות API וקופה תואמות; המדריך אינו מאשר שהן הותקנו. לאחר התנתקות, המשמרת כבר הסתיימה פירושה שלא נמצאה תקופה פעילה לחשבון שלכם במסעדה זו. הדבר אינו מוסק משגיאת גישה לקופה. ביטול משאיר את החיבור פעיל. נעילת המסוף מחייבת אישור מפורש וקוראת שוב את המצב לפני החזרה לקוד, בלי לשלוח בקשת סיום נוספת.\n\nאם בינתיים מופיעה תקופה, הכניסה או המסעדה משתנות, הקריאה נכשלת או פעולת מזומן מקומית ממתינה, הנעילה אינה מאושרת. שמרו את הנתונים, פתרו את הפעולה במסלול שלה ואז נסו שוב. יומני תשלום של המסוף נשמרים. הנעילה אינה סוגרת מגירה, יוצרת תקופה או מפעילה מחדש הרשאת מכשיר."
         }
+      },
+      {
+        "id": "current-pos-cash-context",
+        "title": {
+          "fr": "Utiliser plusieurs caisses sans déplacer le pointage",
+          "en": "Use multiple registers without moving attendance",
+          "he": "שימוש בכמה קופות בלי להעביר את המשמרת"
+        },
+        "instructions": {
+          "fr": "Avec l’API et le POS compatibles, un même employé peut reprendre sa période sur un autre appareil enrôlé du même restaurant : Solde en caisse et la clôture utilisent l’autorisation propre à cet appareil. La période garde son début et son appareil d’origine ; aucune caisse ni opération n’est transférée. Avant la déconnexion, les caisses ouvertes de l’appareil d’origine et de l’appareil courant doivent être résolues. Une autorisation absente, expirée, révoquée ou étrangère ne permet aucun contournement.",
+          "en": "With compatible API and POS versions, an employee can resume attendance on another enrolled device in the same restaurant: Drawer balance and closing use that device’s own authorization. Attendance retains its start and original device; no drawer or operation moves. Before signing out, open drawers on both the original and current device must be resolved. Missing, expired, revoked or foreign authorization never permits a bypass.",
+          "he": "בגרסאות API וקופה תואמות, עובד יכול להמשיך משמרת במכשיר רשום אחר של אותה מסעדה: יתרת הקופה והסגירה משתמשות בהרשאה של המכשיר הנוכחי. מועד ההתחלה והמכשיר המקורי של המשמרת נשמרים; קופה או פעולה אינן מועברות. לפני התנתקות יש להשלים קופות פתוחות במכשיר המקורי ובמכשיר הנוכחי. הרשאה חסרה, שפג תוקפה, שבוטלה או ששייכת למסעדה אחרת אינה מאפשרת עקיפה."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-28"
+    "procedureUpdatedAt": "2026-11-04"
   },
   {
     "id": "customers-profiles",
@@ -11385,6 +11398,19 @@
           "en": "In Hardware → Payment terminals, a manager can inspect the last transaction on the connected terminal. This read changes no payment. See [the procedure and its limits](/en/help/payments/ashrait-terminal-inspection).",
           "he": "בחומרה ← מסופי תשלום מנהל יכול לצפות בעסקה האחרונה במסוף המחובר. הקריאה אינה משנה תשלום. ראו [הוראות ומגבלות](/he/help/payments/ashrait-terminal-inspection)."
         }
+      },
+      {
+        "id": "current-register-access",
+        "title": {
+          "fr": "Vérifier la caisse de l’appareil utilisé",
+          "en": "Verify the register in use",
+          "he": "בדיקת הקופה שבשימוש"
+        },
+        "instructions": {
+          "fr": "Sur les versions compatibles, payer depuis le Portable utilise son enrôlement, même si le pointage a commencé sur iPad. Les permissions et le contrôle de clôture restent obligatoires. Si la vérification échoue avant la demande de carte, vérifiez Solde en caisse et l’autorisation de cet appareil ; ne terminez pas le pointage pour contourner le blocage.",
+          "en": "On compatible versions, paying from the Portable uses its own enrollment even when attendance began on an iPad. Permissions and the closing check remain mandatory. If verification fails before the card prompt, check Drawer balance and this device’s authorization; do not end attendance to bypass the block.",
+          "he": "בגרסאות תואמות, תשלום מה-Portable משתמש ברישום שלו גם כשהמשמרת החלה ב-iPad. ההרשאות ובדיקת הסגירה נשארות חובה. אם הבדיקה נכשלת לפני בקשת הכרטיס, בדקו את יתרת הקופה ואת הרשאת המכשיר הזה; אין לסיים משמרת כדי לעקוף את החסימה."
+        }
       }
     ],
     "audience": "public",
@@ -11527,12 +11553,25 @@
           "en": "On a compatible POS, a Terminal deposits confirmation belongs to the restaurant, staff sign-in and terminal configuration shown when it opened. If any changes before confirmation, the old dialog must not launch an action in the new context. Reopen Terminal deposits, check the terminal and its available capabilities, then explicitly confirm the intended action. Old results are not a confirmed state for the new context. If a command had already been transmitted, changing screens or restaurants does not cancel it: check the original terminal or provider before repeating anything and preserve pending operations. This protection closes neither physical cash nor the staff period and does not certify a physical deposit on a particular device.",
           "he": "בקופה תואמת, אישור בהפקדות מסוף שייך למסעדה, לכניסת איש הצוות ולהגדרת המסוף שהוצגו בעת פתיחתו. אם אחד מהם משתנה לפני האישור, החלון הישן אינו אמור להפעיל פעולה בהקשר החדש. פתחו מחדש הפקדות מסוף, בדקו את המסוף והפעולות הזמינות בו ואשרו במפורש את הפעולה הרצויה. תוצאות ישנות אינן מצב מאומת של ההקשר החדש. אם פקודה כבר נשלחה, מעבר מסך או מסעדה אינו מבטל אותה: בדקו את המסוף המקורי או את הספק לפני ניסיון נוסף ושמרו פעולות ממתינות. ההגנה אינה סוגרת מזומן או משמרת ואינה מאשרת הפקדה פיזית במכשיר מסוים."
         }
+      },
+      {
+        "id": "current-device-proof",
+        "title": {
+          "fr": "Vérifier l’accès depuis un autre POS",
+          "en": "Check access from another POS",
+          "he": "בדיקת גישה מקופה אחרת"
+        },
+        "instructions": {
+          "fr": "Le POS et l’API compatibles vérifient séparément votre période et l’enrôlement de l’appareil courant. Une période commencée sur iPad ne doit pas empêcher à elle seule la lecture sur un Portable autorisé du même restaurant. Si le refus persiste, conservez la période et les journaux et faites vérifier l’autorisation de ce Portable ; ne remplacez pas une opération incertaine.",
+          "en": "Compatible POS and API versions check attendance separately from the current device’s enrollment. Attendance started on an iPad must not by itself prevent reading an authorized Portable in the same restaurant. If access still fails, preserve attendance and journals and have that Portable’s authorization checked; do not replace an uncertain operation.",
+          "he": "גרסאות קופה ו-API תואמות בודקות את המשמרת בנפרד מרישום המכשיר הנוכחי. משמרת שהתחילה ב-iPad אינה אמורה לבדה למנוע קריאה מ-Portable מורשה באותה מסעדה. אם הסירוב נמשך, שמרו את המשמרת והיומנים ובקשו לבדוק את הרשאת אותו Portable; אין להחליף פעולה שתוצאתה אינה ודאית."
+        }
       }
     ],
     "audience": "public",
     "status": "local-release-unverified",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-28"
+    "procedureUpdatedAt": "2026-11-04"
   },
   {
     "id": "pos-workspace",
@@ -11555,7 +11594,8 @@
         "lib/features/settings/**",
         "lib/features/tables/providers/table_providers.dart",
         "lib/features/tables/providers/seating_providers.dart",
-        "lib/features/orders/providers/order_providers.dart"
+        "lib/features/orders/providers/order_providers.dart",
+        "lib/features/orders/presentation/widgets/check_panel.dart"
       ]
     },
     "operations": [
@@ -11780,6 +11820,19 @@
           "fr": "Dans Matériel → Terminaux de paiement, un responsable peut consulter la dernière transaction du terminal connecté. Cette lecture ne modifie aucun paiement. Voir [la procédure et ses limites](/fr/help/payments/ashrait-terminal-inspection).",
           "en": "In Hardware → Payment terminals, a manager can inspect the last transaction on the connected terminal. This read changes no payment. See [the procedure and its limits](/en/help/payments/ashrait-terminal-inspection).",
           "he": "בחומרה ← מסופי תשלום מנהל יכול לצפות בעסקה האחרונה במסוף המחובר. הקריאה אינה משנה תשלום. ראו [הוראות ומגבלות](/he/help/payments/ashrait-terminal-inspection)."
+        }
+      },
+      {
+        "id": "compact-actions-navigation",
+        "title": {
+          "fr": "Revenir à une addition sur un appareil compact",
+          "en": "Return to a check on a compact device",
+          "he": "חזרה לחשבון במכשיר קומפקטי"
+        },
+        "instructions": {
+          "fr": "Dans le Menu compact compatible, ouvrez Actions en bas pour accéder à Envoyer, Enregistrer ou Payer selon l’état de l’addition. Choisir une action ferme cette fenêtre avant la suite du parcours. Revenir ensuite à l’addition affiche ses commandes actuelles, sans ancienne fenêtre superposée. Fermer la fenêtre seule ne paie ni n’envoie rien.",
+          "en": "In the compatible compact Menu, open Actions at the bottom to reach Send, Save or Pay according to the check’s state. Selecting an action closes this sheet before the next step. Returning to the check shows its current controls without an old sheet on top. Closing the sheet alone never pays or sends anything.",
+          "he": "בתפריט הקומפקטי התואם, פתחו פעולות בתחתית כדי לגשת לשליחה, שמירה או תשלום בהתאם למצב החשבון. בחירת פעולה סוגרת את החלון לפני השלב הבא. חזרה לחשבון מציגה את הפעולות העדכניות בלי חלון ישן מעליהן. סגירת החלון בלבד אינה משלמת ואינה שולחת דבר."
         }
       }
     ],
@@ -14659,6 +14712,19 @@
           "en": "Local preparation: nullable dated/revisioned shelf stock and optional zone deadlines configure no restaurant automatically. Private APIs verify restaurant ownership and existing permissions. Public calendars and submission remain authoritative; private quantities are not added to the public item contract. Historical series leftovers use the operational service series for display and reservation, independently of the next preorder series. Verify defaults, reservation races, pre-production releases, older editors and translations; retain payment providers and existing orders. Migration 288/API precede Admin/Web. Export the identical corpus after runtime validation and pin the reviewed immutable Landing commit before CI. Verify the develop artifacts, then promote those exact artifacts under the approved release workflow; source review alone does not attest production availability.",
           "he": "הכנה מקומית: מלאי מוכן אופציונלי עם תאריך וגרסה, ומועדי סגירה אופציונליים לפי אזור, אינם מגדירים אף מסעדה אוטומטית. API פרטיים בודקים בעלות במסעדה והרשאות קיימות. לוחות ציבוריים והגשת הזמנה נשארים סמכותיים; כמויות פרטיות אינן נוספות לחוזה הפריט הציבורי. שאריות היסטוריות לפי סדרה משתמשות בסדרת השירות התפעולית להצגה ולשריון, בנפרד מסדרת ההזמנה מראש הבאה. בדקו ברירות מחדל, התנגשויות שריון, שחרור לפני ייצור, עורכים ישנים ותרגומים; שמרו על ספקי תשלום והזמנות קיימות. מיגרציה 288 וה־API קודמים לניהול ולאתר. יצאו קורפוס זהה אחרי בדיקות ריצה וקבעו את קומיט Landing הבלתי משתנה שנבדק לפני CI. בדקו את תוצרי develop ואז קדמו את אותם תוצרים לפי תהליך ההפצה המאושר; סקירת מקורות בלבד אינה מאשרת זמינות בייצור."
         }
+      },
+      {
+        "id": "current-pos-financial-context",
+        "title": {
+          "en": "Authenticate the current POS financial context",
+          "fr": "Authentifier le contexte financier du POS courant",
+          "he": "אימות ההקשר הכספי של הקופה הנוכחית"
+        },
+        "instructions": {
+          "en": "Compatible clients send X-Foody-POS-Token only to the trusted authenticated orders API and their own shift-end/preflight endpoints, never public or redirected destinations. The API retains only a hash in a request-scoped service copy, validates restaurant ownership, expiry, revocation and installation, then locks the employee interval and original/current credentials in stable order. Attendance never moves. Missing proof keeps the legacy original-device rule; explicit invalid proof fails closed. Cash, EOD, card reservations and financial portions share this identity. Logout retains original and current cash duties. Deploy API before clients; no migration or environment change.",
+          "fr": "Les clients compatibles envoient X-Foody-POS-Token uniquement à l’API de commandes authentifiée de confiance et à leurs routes de fin de période/précontrôle, jamais aux destinations publiques ou redirigées. L’API ne conserve que l’empreinte dans une copie de service propre à la requête, vérifie restaurant, expiration, révocation et installation, puis verrouille la période et les autorisations d’origine/courante dans un ordre stable. Le pointage ne change pas. Sans preuve, la règle historique reste appliquée ; une preuve explicite invalide est refusée. Espèces, clôture, réservations carte et portions financières partagent cette identité. La déconnexion conserve les obligations des deux caisses. Déployer l’API avant les clients ; aucune migration ni configuration d’environnement.",
+          "he": "לקוחות תואמים שולחים X-Foody-POS-Token רק ל-API ההזמנות המאומת והמהימן ולנתיבי סיום המשמרת והבדיקה המקדימה של המסעדה שלהם, לעולם לא ליעדים ציבוריים או להפניות. ה-API שומר רק גיבוב בעותק שירות של הבקשה, בודק בעלות מסעדה, תפוגה, ביטול והתקנה, ונועל את המשמרת וההרשאות המקורית והנוכחית בסדר קבוע. המשמרת אינה מועברת. ללא הוכחה נשמר הכלל הישן; הוכחה מפורשת לא תקינה נדחית. מזומן, סגירה, שריוני כרטיס וחלקי חשבון משתמשים באותה זהות. התנתקות שומרת את חובות שתי הקופות. יש לפרוס את ה-API לפני הלקוחות; אין מיגרציה או שינוי הגדרת סביבה."
+        }
       }
     ],
     "audience": "internal",
@@ -16063,6 +16129,19 @@
           "fr": "Avec payments.manage et une API compatible, Solde en caisse est l’entrée commune. Ouvrir une session espèces demande le fonds initial, qui peut être zéro ; cette ouverture ne connecte aucun terminal et ne transmet rien. Pendant le service, les mouvements restent dans ce même espace. Les cartes sont présentées séparément par terminal et pour la période indiquée, sans être ajoutées aux espèces physiques attendues.\n\nClôturer la session ouvre la vérification des espèces et des terminaux inclus. Annuler à ce stade ne réserve pas la caisse et ne transmet rien. Valider Commencer la clôture fige le comptage et bloque les nouvelles opérations jusqu’à la fin. Les étapes de transmission, reprise et finalisation restent dans Solde en caisse. Chaque terminal inclus exige sa confirmation explicite de transmission, une seule fois ; un changement d’employé ne déclenche aucun dépôt. Une clôture déjà commencée réapparaît directement dans ce même espace jusqu’à son rapport Z confirmé. Aucun effacement de journal ni seconde transmission ne sert à la contourner.\n\nHistorique de caisse liste les vingt entrées récentes : rapports Z finalisés et sessions espèces closes hors rapport Z. Une caisse déjà incluse dans un rapport Z n’apparaît pas une seconde fois. Ouvrir une entrée affiche ses données en lecture seule, sans remplacer la session courante. Les anciennes API et les droits restreints conservent les écrans autorisés ; la consultation des espèces n’accorde pas le droit de transmettre un terminal. Les essais matériels restent distincts de la validation logicielle.",
           "en": "With payments.manage and a compatible API, Current drawer is the common entry point. Opening a cash session asks for starting cash, which may be zero; opening does not connect a terminal or transmit anything. During service, cash movements stay in this workspace. Cards are shown separately by terminal and for the displayed period, without adding them to expected physical cash.\n\nClose drawer opens the review of cash and included terminals. Cancelling at this stage neither reserves the drawer nor transmits anything. Confirming Start end of day freezes the count and blocks new operations until completion. Transmission, recovery and finalization remain inside Current drawer. Each included terminal needs one explicit transmission confirmation; changing employees never triggers a deposit. An already-started close reappears directly in this workspace until its Z report is confirmed. Erasing journals or retransmitting is never a workaround.\n\nDrawer history lists twenty recent entries: finalized Z reports and closed standalone cash sessions. Cash already included in a Z report is not shown a second time. Opening an entry is read only and does not replace the current session. Older APIs and restricted permissions retain their authorized screens; viewing cash grants no terminal-transmission permission. Hardware acceptance remains separate from software validation.",
           "he": "עם payments.manage ו-API תואם, יתרת קופה היא נקודת הכניסה המשותפת. פתיחת משמרת מזומן מבקשת סכום התחלתי, שיכול להיות אפס; הפתיחה אינה מחברת מסוף ואינה משדרת דבר. במהלך השירות תנועות המזומן נשארות באותו מרחב. הכרטיסים מוצגים בנפרד לפי מסוף ולפי התקופה המוצגת, בלי להוסיפם למזומן הפיזי הצפוי.\n\nסגירת קופה פותחת בדיקה של המזומן והמסופים הכלולים. ביטול בשלב זה אינו שומר את המגירה ואינו משדר דבר. אישור תחילת הסגירה מקפיא את הספירה וחוסם פעולות חדשות עד להשלמה. השידור, השחזור וההשלמה נשארים בתוך יתרת קופה. כל מסוף כלול מחייב אישור שידור מפורש פעם אחת; החלפת עובד אינה מפעילה הפקדה. סגירה שכבר התחילה מוצגת שוב באותו מרחב עד לאישור דוח Z. מחיקת יומנים או שידור חוזר אינם דרך לעקוף אותה.\n\nהיסטוריית קופה מציגה עשרים רשומות אחרונות: דוחות Z שהושלמו ומשמרות מזומן סגורות עצמאיות. מגירה שכבר נכללה בדוח Z אינה מופיעה שוב. פתיחת רשומה היא לקריאה בלבד ואינה מחליפה את המשמרת הנוכחית. API ישן והרשאות מוגבלות שומרים על המסכים המורשים; צפייה במזומן אינה מעניקה הרשאת שידור מסוף. בדיקות חומרה נשארות נפרדות מבדיקות התוכנה."
+        }
+      },
+      {
+        "id": "current-register-scope",
+        "title": {
+          "fr": "Clôturer l’appareil courant",
+          "en": "Close the current register",
+          "he": "סגירת הקופה הנוכחית"
+        },
+        "instructions": {
+          "fr": "Avec les versions compatibles, la caisse et la journée sont celles de l’appareil enrôlé utilisé, même quand votre pointage a commencé sur un autre POS. Changer d’appareil ne déplace aucun rapport, dépôt ni résultat en attente. Reprenez chaque opération sur son appareil et avec son identité d’origine ; une lecture non confirmée continue de bloquer un nouveau paiement.",
+          "en": "With compatible versions, the drawer and day belong to the enrolled device in use, even when attendance started on another POS. Switching devices moves no report, deposit or pending result. Resume each operation on its original device with its original identity; an unconfirmed read continues to block a new payment.",
+          "he": "בגרסאות תואמות, הקופה ויום העבודה שייכים למכשיר הרשום שבשימוש, גם אם המשמרת התחילה בקופה אחרת. מעבר למכשיר אחר אינו מעביר דוח, הפקדה או תוצאה ממתינה. יש להמשיך כל פעולה במכשיר ובזהות המקוריים שלה; קריאה שלא אושרה ממשיכה לחסום תשלום חדש."
         }
       }
     ],

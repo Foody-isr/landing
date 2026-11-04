@@ -1,5 +1,19 @@
 # Help ownership, evidence and releases
 
+## Current POS financial identity and compact actions (4 November 2026)
+
+The API validates the current enrolled device independently from the original
+employee attendance interval. Invalid explicit proofs fail closed; missing proofs
+keep the strict legacy rule. Cash/EOD/reservations and split-payment handlers
+share the scoped service. Shift-end guards retain original cash duty and add the
+proven current device. Updated POS sends no proof to public, external or redirected
+destinations. Compact footer actions dismiss their sheet before navigation.
+FR/HE/EN procedures distinguish these scopes and preserve uncertain operations.
+No schema migration, environment edit or Admin/Web UI change is required.
+Synthetic regression tests precede API-first development verification, immutable
+production promotion and compatible client installation. Physical CST payment,
+SHVA report paper and certification remain separate acceptance steps.
+
 ## Combined transactions, receipts and terminal inventory (4 November 2026)
 
 This coordinated release retains current develop stock/fulfillment procedures,
