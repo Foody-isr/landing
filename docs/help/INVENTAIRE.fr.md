@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-11-04.
+Révision du relevé : 2026-11-05.
 
-108 fiches de fonctionnalités, 909 procédures/sous-fonctionnalités, dont 99 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2364 fichiers applicatifs et 2142 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+110 fiches de fonctionnalités, 931 procédures/sous-fonctionnalités, dont 101 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2385 fichiers applicatifs et 2152 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 635 | 902 | 71e64dac93d7 ; versioned |
-| foodyadmin | 793 | 816 | d69a4a301aa7 ; versioned |
-| foodyweb | 354 | 173 | 8a91cbad3aa0 ; versioned |
-| foodylanding | 156 | 31 | 9d0437c23eb6 ; versioned |
-| foodypos | 382 | 170 | 63c69f697390 ; versioned |
-| foodybackoffice | 44 | 50 | 8b4929d31bc4 ; versioned |
+| foodyserver | 644 | 907 | 7511a9d5e408 ; versioned |
+| foodyadmin | 795 | 818 | be4e03e157ae ; versioned |
+| foodyweb | 354 | 173 | cc94ae9e583f ; versioned |
+| foodylanding | 156 | 31 | 3500967b7bab ; versioned |
+| foodypos | 391 | 171 | a5bb8ffadaf4 ; versioned |
+| foodybackoffice | 45 | 52 | ca09fd0d4837 ; versioned |
 
 ## getting-started
 
@@ -148,6 +148,7 @@ Identifiant : `staff-devices-shifts`. Public : public. Disponibilité : availabl
 - [Terminer un shift avec une caisse ouverte](../../src/content/help/fr/staff/devices-and-shifts.mdx#finish-with-cash-drawer)
 - [Lire le rapport du tiroir sur un terminal portable](../../src/content/help/fr/staff/devices-and-shifts.mdx#mobile-terminal-pages)
 - [Confirmer le verrouillage après une période déjà terminée](../../src/content/help/fr/staff/devices-and-shifts.mdx#no-active-shift-sign-out)
+- [Utiliser plusieurs caisses sans déplacer le pointage](../../src/content/help/fr/staff/devices-and-shifts.mdx#current-pos-cash-context)
 
 ## customers
 
@@ -773,13 +774,7 @@ Identifiant : `pos-payments`. Public : public. Disponibilité : available. Servi
 - [Réessayer une lecture de caisse non confirmée](../../src/content/help/fr/payments/pos-checkout.mdx#cash-report-unconfirmed)
 - [Compter et clôturer la caisse](../../src/content/help/fr/payments/pos-checkout.mdx#cash-drawer-report)
 - [Encaisser un paiement connecté](../../src/content/help/fr/payments/pos-checkout.mdx#card)
-- [Retrouver un paiement confirmé dans Transactions](../../src/content/help/fr/payments/pos-checkout.mdx#transaction-history)
-- [Comprendre l’origine du paiement](../../src/content/help/fr/payments/pos-checkout.mdx#transaction-payment-origin)
-- [Rechercher tous les articles et reprendre l’historique](../../src/content/help/fr/payments/pos-checkout.mdx#transaction-items-and-retry)
-- [Lire les remboursements et annulations dans Transactions](../../src/content/help/fr/payments/pos-checkout.mdx#transaction-recorded-returns)
-- [Lire correctement le total des transactions](../../src/content/help/fr/payments/pos-checkout.mdx#transaction-gross-total)
 - [Clôturer et déposer un lot du terminal Verifone](../../src/content/help/fr/payments/pos-checkout.mdx#terminal-deposit)
-- [Consulter les totaux ou utiliser les actions avancées du terminal](../../src/content/help/fr/payments/pos-checkout.mdx#terminal-reports-advanced)
 - [Vérifier le paiement d’une seule commande QR](../../src/content/help/fr/payments/pos-checkout.mdx#saved-qr-payment-scope)
 - [Vérifier pourboire et reçu](../../src/content/help/fr/payments/pos-checkout.mdx#receipt-tip)
 - [Vérifier une facture Invoice4U détaillée](../../src/content/help/fr/payments/pos-checkout.mdx#invoice4u-order-lines)
@@ -791,6 +786,9 @@ Identifiant : `pos-payments`. Public : public. Disponibilité : available. Servi
 - [Connecter et retrouver le Victa Mini sur iPad](../../src/content/help/fr/payments/pos-checkout.mdx#victa-mini-connection)
 - [Choisir le terminal](../../src/content/help/fr/payments/pos-checkout.mdx#physical-card-destination)
 - [Utiliser le suivi de caisse commun](../../src/content/help/fr/payments/pos-checkout.mdx#unified-cash-workspace)
+- [Consulter les paiements confirmés](../../src/content/help/fr/payments/pos-checkout.mdx#transaction-history)
+- [Consulter la dernière transaction du terminal](../../src/content/help/fr/payments/pos-checkout.mdx#ashrait-last-transaction-inspection)
+- [Vérifier la caisse de l’appareil utilisé](../../src/content/help/fr/payments/pos-checkout.mdx#current-register-access)
 
 ### [Connecter et retrouver le Victa Mini sur iPad](../../src/content/help/fr/payments/victa-mini.mdx)
 
@@ -798,6 +796,7 @@ Identifiant : `pos-victa-mini`. Public : public. Disponibilité : available. Ser
 
 - [Connecter et retrouver le Victa Mini sur iPad](../../src/content/help/fr/payments/victa-mini.mdx#connection)
 - [Choisir Mini ou Portable pour cet encaissement](../../src/content/help/fr/payments/victa-mini.mdx#explicit-terminal-selection)
+- [Consulter la dernière transaction du terminal](../../src/content/help/fr/payments/victa-mini.mdx#ashrait-last-transaction-inspection)
 
 ### [Comprendre un refus d’accès à la caisse](../../src/content/help/fr/payments/cash-access.mdx)
 
@@ -806,6 +805,7 @@ Identifiant : `pos-cash-access-diagnostics`. Public : public. Disponibilité : l
 - [Vérifier le refus sans remplacer la période ou la caisse](../../src/content/help/fr/payments/cash-access.mdx#cash-access-refusal)
 - [Distinguer la caisse espèces du terminal Verifone](../../src/content/help/fr/payments/cash-access.mdx#cash-versus-terminal)
 - [Reconfirmer le bon contexte avant un dépôt du terminal](../../src/content/help/fr/payments/cash-access.mdx#terminal-report-context)
+- [Vérifier l’accès depuis un autre POS](../../src/content/help/fr/payments/cash-access.mdx#current-device-proof)
 
 ### [Prestataires, moyens enregistrés et Cibus](../../src/content/help/fr/payments/providers-and-cibus.mdx)
 
@@ -845,6 +845,27 @@ Identifiant : `pos-end-of-day`. Public : public. Disponibilité : local-release-
 - [Comprendre le blocage des cartes et la période](../../src/content/help/fr/payments/end-of-day.mdx#end-of-day-steps-and-period)
 - [Consulter les cartes enregistrées et les rapports précédents](../../src/content/help/fr/payments/end-of-day.mdx#end-of-day-recorded-cards-and-history)
 - [Suivre et clôturer depuis Solde en caisse](../../src/content/help/fr/payments/end-of-day.mdx#unified-cash-workspace)
+- [Clôturer l’appareil courant](../../src/content/help/fr/payments/end-of-day.mdx#current-register-scope)
+
+### [Consulter les transactions](../../src/content/help/fr/payments/transactions.mdx)
+
+Identifiant : `payments-transactions`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodypos.
+
+- [Retrouver un paiement confirmé dans Transactions](../../src/content/help/fr/payments/transactions.mdx#transaction-history)
+- [Comprendre l’origine du paiement](../../src/content/help/fr/payments/transactions.mdx#transaction-payment-origin)
+- [Rechercher tous les articles et reprendre l’historique](../../src/content/help/fr/payments/transactions.mdx#transaction-items-and-retry)
+- [Lire les remboursements et annulations dans Transactions](../../src/content/help/fr/payments/transactions.mdx#transaction-recorded-returns)
+- [Lire correctement le total des transactions](../../src/content/help/fr/payments/transactions.mdx#transaction-gross-total)
+- [Comprendre les prestataires et la couverture](../../src/content/help/fr/payments/transactions.mdx#transaction-central-history)
+- [Lire une écriture dont la commande est indisponible](../../src/content/help/fr/payments/transactions.mdx#transaction-unavailable-allocation)
+
+### [Consulter la dernière transaction du terminal](../../src/content/help/fr/payments/ashrait-terminal-inspection.mdx)
+
+Identifiant : `pos-ashrait-terminal-inspection`. Public : public. Disponibilité : available. Services : foodypos.
+
+- [Consulter la dernière transaction du terminal](../../src/content/help/fr/payments/ashrait-terminal-inspection.mdx#ashrait-last-transaction-inspection)
+- [Capacités des rapports Ashrait en Israël](../../src/content/help/fr/payments/ashrait-terminal-inspection.mdx#terminal-reports-advanced)
+- [Reprendre un paiement Ashrait interrompu](../../src/content/help/fr/payments/ashrait-terminal-inspection.mdx#ashrait-last-transaction-recovery)
 
 ## printers
 
@@ -869,16 +890,18 @@ Identifiant : `printers-epson-tm-u220iib`. Public : public. Disponibilité : ava
 - [Documentation constructeur](../../src/content/help/fr/printers/epson-tm-u220iib.mdx#section-15)
 - [Distinguer le PDF WhatsApp des travaux d’impression](../../src/content/help/fr/printers/epson-tm-u220iib.mdx#whatsapp-pdf)
 - [Vérifier les positions de variante imprimées](../../src/content/help/fr/printers/epson-tm-u220iib.mdx#variant-position-labels)
+- [Choisir le reçu depuis chaque poste](../../src/content/help/fr/printers/epson-tm-u220iib.mdx#device-receipt-destinations)
 
 ### [Profils d’impression et routage](../../src/content/help/fr/printers/profiles-and-routing.mdx)
 
-Identifiant : `printer-profiles`. Public : public. Disponibilité : available. Services : foodyadmin, foodypos.
+Identifiant : `printer-profiles`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodypos.
 
 - [Trouver une imprimante Epson sur le réseau local](../../src/content/help/fr/printers/profiles-and-routing.mdx#discover-epson)
 - [Créer ou modifier un profil partagé](../../src/content/help/fr/printers/profiles-and-routing.mdx#profile)
 - [Régler les options des tickets](../../src/content/help/fr/printers/profiles-and-routing.mdx#ticket-options)
 - [Affecter la bonne imprimante](../../src/content/help/fr/printers/profiles-and-routing.mdx#assign)
 - [Modifier un profil depuis un terminal mobile](../../src/content/help/fr/printers/profiles-and-routing.mdx#mobile-terminal-pages)
+- [Choisir les reçus de chaque appareil](../../src/content/help/fr/printers/profiles-and-routing.mdx#device-receipt-destinations)
 
 ### [Statut et historique d’impression](../../src/content/help/fr/printers/status-and-history.mdx)
 
@@ -889,6 +912,7 @@ Identifiant : `printer-diagnostics`. Public : public. Disponibilité : available
 - [Distinguer le PDF WhatsApp des travaux d’impression](../../src/content/help/fr/printers/status-and-history.mdx#whatsapp-pdf)
 - [Vérifier les positions de variante imprimées](../../src/content/help/fr/printers/status-and-history.mdx#variant-position-labels)
 - [Consulter l’historique sur mobile](../../src/content/help/fr/printers/status-and-history.mdx#mobile-terminal-pages)
+- [Reprendre seulement l’imprimante en échec](../../src/content/help/fr/printers/status-and-history.mdx#independent-receipt-results)
 
 ## website-qr
 
@@ -959,6 +983,7 @@ Identifiant : `website-order-design`. Public : public. Disponibilité : availabl
 Identifiant : `website-journey`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb.
 
 - [Prévisualiser paiement et confirmation](../../src/content/help/fr/website-qr/checkout-and-receipt.mdx#checkout)
+- [Choisir les champs que le client doit remplir](../../src/content/help/fr/website-qr/checkout-and-receipt.mdx#contact-fields)
 - [Régler contenu et actions du reçu](../../src/content/help/fr/website-qr/checkout-and-receipt.mdx#receipt)
 - [Vérifier l’aperçu des liens de reçu et de confirmation](../../src/content/help/fr/website-qr/checkout-and-receipt.mdx#link-preview)
 - [Choisir si la connexion est proposée avant la commande](../../src/content/help/fr/website-qr/checkout-and-receipt.mdx#optional-entry-sign-in)
@@ -1075,6 +1100,7 @@ Identifiant : `pos-behavior`. Public : public. Disponibilité : available. Servi
 - [Connecter et retrouver le Victa Mini sur iPad](../../src/content/help/fr/settings/pos-behavior.mdx#victa-mini-hardware)
 - [Vérifier la destination physique du paiement carte](../../src/content/help/fr/settings/pos-behavior.mdx#physical-card-destination)
 - [Utiliser le suivi de caisse commun](../../src/content/help/fr/settings/pos-behavior.mdx#unified-cash-workspace)
+- [Consulter la dernière transaction du terminal](../../src/content/help/fr/settings/pos-behavior.mdx#ashrait-last-transaction-inspection)
 
 ### [Appareils et écrans cuisine](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx)
 
@@ -1119,6 +1145,8 @@ Identifiant : `pos-workspace`. Public : public. Disponibilité : available. Serv
 - [Connecter et retrouver le Victa Mini sur iPad](../../src/content/help/fr/settings/pos-workspace.mdx#victa-mini-hardware)
 - [Vérifier la destination physique du paiement carte](../../src/content/help/fr/settings/pos-workspace.mdx#physical-card-destination)
 - [Utiliser le suivi de caisse commun](../../src/content/help/fr/settings/pos-workspace.mdx#unified-cash-workspace)
+- [Consulter la dernière transaction du terminal](../../src/content/help/fr/settings/pos-workspace.mdx#ashrait-last-transaction-inspection)
+- [Revenir à une addition sur un appareil compact](../../src/content/help/fr/settings/pos-workspace.mdx#compact-actions-navigation)
 
 ### [Consommation et quotas des services externes](../../src/content/help/fr/settings/api-usage-and-quotas.mdx)
 
@@ -1343,6 +1371,7 @@ Identifiant : `guest-ordering`. Public : public. Disponibilité : available. Ser
 - [Vérifier les confirmations indépendantes](../../src/content/help/fr/guest/online-ordering.mdx#independent-lifecycle-confirmations)
 - [Événements et empreintes bancaires](../../src/content/help/fr/guest/online-ordering.mdx#event-orders)
 - [Comprendre les produits prêts et les échéances](../../src/content/help/fr/guest/online-ordering.mdx#ready-products-and-cutoffs)
+- [Renseigner les coordonnées de livraison](../../src/content/help/fr/guest/online-ordering.mdx#delivery-contact-details)
 
 ### [Suivi, reçus et moyens enregistrés](../../src/content/help/fr/guest/tracking-and-account.mdx)
 
@@ -1432,7 +1461,7 @@ Identifiant : `backoffice-operations`. Public : internal. Disponibilité : avail
 
 ### [Contrats API et opérations de livraison](internal/fr/api-and-release.md)
 
-Identifiant : `platform-api`. Public : internal. Disponibilité : available. Services : foodyserver, foodyweb.
+Identifiant : `platform-api`. Public : internal. Disponibilité : available. Services : foodyserver, foodyweb, foodybackoffice.
 
 - [Rembourser ou annuler un paiement en ligne Verifone](internal/fr/api-and-release.md#verifone-admin-money-operations)
 - [Garder la page de paiement lisible](internal/fr/api-and-release.md#verifone-readable-hosted-theme)
@@ -1473,7 +1502,10 @@ Identifiant : `platform-api`. Public : internal. Disponibilité : available. Ser
 - [Réserver l’encaissement physique avant l’envoi natif](internal/fr/api-and-release.md#pos-terminal-collection-contract)
 - [Lire les références des rapports POS finalisés](internal/fr/api-and-release.md#scoped-end-of-day-report-history)
 - [Choix staff du plan de production](internal/fr/api-and-release.md#manual-production-plan-choice)
+- [Déployer la demande de reçu par appareil](internal/fr/api-and-release.md#device-receipt-contract)
+- [Déclarations du parc de terminaux](internal/fr/api-and-release.md#terminal-fleet-declarations)
 - [Préparer les contrats de disponibilité configurables](internal/fr/api-and-release.md#configurable-fulfillment-compatibility)
+- [Authentifier le contexte financier du POS courant](internal/fr/api-and-release.md#current-pos-financial-context)
 
 ### [Aperçus internes et alias de routes](internal/fr/design-previews.md)
 
