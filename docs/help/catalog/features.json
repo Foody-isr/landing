@@ -9148,7 +9148,8 @@
         "lib/orderLinkMetadata.ts",
         "app/order/confirmation/**",
         "components/website-v3/WebsiteFulfillmentDialog.tsx",
-        "components/website-v3/SiteHeader.tsx"
+        "components/website-v3/SiteHeader.tsx",
+        "app/order/checkout/CheckoutScheduleCalendar.tsx"
       ],
       "foodyserver": [
         "internal/website/**",
@@ -9165,9 +9166,9 @@
           "he": "בדיקת סיום הזמנה ואישור"
         },
         "instructions": {
-          "en": "Select checkout then confirmation, adjust available colors and text, and inspect mobile readability. Required customer, fulfillment and payment fields come from restaurant policy. A preview does not place an order or verify a live payment connection.",
-          "fr": "Sélectionnez paiement puis confirmation, réglez couleurs et textes proposés, puis vérifiez la lisibilité mobile. Les champs client, remise et paiement obligatoires dépendent des règles du restaurant. Un aperçu ne passe pas de commande et ne vérifie pas une connexion de paiement réelle.",
-          "he": "בחרו סיום הזמנה ואישור, ערכו צבעים וטקסטים זמינים ובדקו קריאות בנייד. שדות לקוח, מסירה ותשלום מחויבים לפי מדיניות העסק. תצוגה מקדימה אינה יוצרת הזמנה או מאמתת חיבור תשלום."
+          "en": "Select checkout then confirmation, adjust available colors and text, and inspect mobile readability. Required customer, fulfillment and payment fields come from restaurant policy. A preview does not place an order or verify a live payment connection. When the checkout calendar is shown, use the month menu to jump to another month, pick an available day and choose its time.",
+          "fr": "Sélectionnez paiement puis confirmation, réglez couleurs et textes proposés, puis vérifiez la lisibilité mobile. Les champs client, remise et paiement obligatoires dépendent des règles du restaurant. Un aperçu ne passe pas de commande et ne vérifie pas une connexion de paiement réelle. Lorsque le calendrier s’affiche au paiement, utilisez le menu des mois pour aller directement à un autre mois, puis choisissez un jour disponible et son horaire.",
+          "he": "בחרו סיום הזמנה ואישור, ערכו צבעים וטקסטים זמינים ובדקו קריאות בנייד. שדות לקוח, מסירה ותשלום מחויבים לפי מדיניות העסק. תצוגה מקדימה אינה יוצרת הזמנה או מאמתת חיבור תשלום. כשלוח השנה מוצג בסיום ההזמנה, אפשר לעבור לחודש אחר בתפריט החודשים, לבחור יום זמין ולבחור שעה."
         }
       },
       {
@@ -13088,6 +13089,19 @@
           "en": "Enter the requested contact details, address or pickup time. For delivery check zone, fee and offered slot; for preorder/tour links follow their specific deadline/date. The final checkout revalidates current rules and prices. Once the address is checked, review the displayed delivery fee and choose Date and Time using the same controls as pickup. The zone limits weekdays; restaurant settings supply slot times and duration. Automatic mode assigns the next slot. When time needs restaurant confirmation, no time picker appears and tracking will show the confirmed time. Changing the address or basket rechecks availability; wait for the check before confirming. With compatible versions, delivery same-day days, transport and time confirmation are configured inside each zone. Restaurant hours and product preparation remain mandatory. Scheduled orders can include today. Staff can test saved basket/address calendars in Orders & availability → Simulate an order; this creates no order or message.",
           "fr": "Saisissez coordonnées, adresse ou heure de retrait. En livraison vérifiez zone, frais et créneau ; pour précommande/tournée, suivez échéance/date spécifiques. Le paiement revalide règles et prix actuels. Après vérification de l’adresse, consultez les frais de livraison affichés et choisissez Date et Heure comme pour le retrait. Les jours proposés dépendent de la zone ; les heures et la durée des créneaux viennent du restaurant. En mode automatique, le prochain créneau est attribué. Si l’heure doit être confirmée, aucun sélecteur d’heure n’apparaît et le suivi affichera la confirmation. Changer l’adresse ou le panier relance la vérification ; attendez sa fin avant de confirmer. Avec les versions compatibles, les jours du jour même, le transport et la confirmation de l’horaire se règlent dans chaque zone. Les horaires du restaurant et la préparation des produits restent obligatoires. Une commande planifiée peut être prévue aujourd’hui. L’équipe peut vérifier les calendriers enregistrés avec un panier et une adresse dans Commandes et disponibilité → Simuler une commande, sans créer de commande ni message.",
           "he": "הזינו קשר, כתובת או זמן איסוף. במשלוח בדקו אזור, עלות ומועד; בהזמנה מראש או סבב בדקו מועד סגירה ותאריך. בסיום נבדקים שוב כללים ומחירים. לאחר בדיקת הכתובת בדקו את דמי המשלוח המוצגים ובחרו תאריך ושעה כמו באיסוף. האזור מגביל את הימים; הגדרות המסעדה קובעות את השעות ואת משך החלון. במצב אוטומטי מוקצה החלון הבא. כשנדרש אישור שעה מהמסעדה אין בורר שעה, והמעקב יציג את האישור. שינוי כתובת או סל מפעיל בדיקה מחדש; המתינו לסיומה לפני האישור. בגרסאות תואמות, ימי אותו יום, הנסיעה ואישור השעה מוגדרים בכל אזור. שעות המסעדה והכנת המוצרים עדיין חובה. הזמנה מתוזמנת יכולה להיות להיום. הצוות יכול לבדוק לוחות זמנים שמורים עם סל וכתובת בהזמנות וזמינות → הדמיית הזמנה, בלי ליצור הזמנה או הודעה."
+        }
+      },
+      {
+        "id": "checkout-calendar",
+        "title": {
+          "en": "Choose a future date at checkout",
+          "fr": "Choisir une date à l’avance au paiement",
+          "he": "בחירת תאריך עתידי בסיום ההזמנה"
+        },
+        "instructions": {
+          "en": "When a calendar appears in Contact and payment, choose a month from the menu to view its days. Only available days can be selected. Choose a day, then use Time to pick one of its slots. Browsing a different month keeps the current choice until you select a new day. If a day or time is unavailable, choose another option offered for your basket. The restaurant’s booking period determines how far ahead you can order.",
+          "fr": "Quand un calendrier apparaît dans Coordonnées et paiement, choisissez un mois dans le menu pour voir ses jours. Seuls les jours disponibles sont sélectionnables. Choisissez un jour, puis ouvrez Heure pour choisir un de ses créneaux. Consulter un autre mois conserve votre choix jusqu’à la sélection d’un nouveau jour. Si un jour ou un horaire est indisponible, choisissez une autre option proposée pour votre panier. La période de réservation du restaurant détermine jusqu’à quand vous pouvez commander.",
+          "he": "כשלוח שנה מופיע בפרטים ותשלום, בחרו חודש בתפריט כדי לראות את הימים שלו. אפשר לבחור רק ימים זמינים. בחרו יום, ואז בחרו חלון זמן בתפריט שעה. מעבר לחודש אחר שומר את הבחירה עד שבוחרים יום חדש. אם יום או שעה אינם זמינים, בחרו אפשרות אחרת המוצעת לסל שלכם. תקופת ההזמנה של העסק קובעת כמה זמן מראש ניתן להזמין."
         }
       },
       {

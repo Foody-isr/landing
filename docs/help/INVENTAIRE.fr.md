@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-11-05.
 
-110 fiches de fonctionnalités, 931 procédures/sous-fonctionnalités, dont 101 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2385 fichiers applicatifs et 2152 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+110 fiches de fonctionnalités, 932 procédures/sous-fonctionnalités, dont 101 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2386 fichiers applicatifs et 2153 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,10 +10,10 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 644 | 907 | 7511a9d5e408 ; versioned |
+| foodyserver | 644 | 907 | fa9a0d9da45a ; versioned |
 | foodyadmin | 795 | 818 | be4e03e157ae ; versioned |
-| foodyweb | 354 | 173 | cc94ae9e583f ; versioned |
-| foodylanding | 156 | 31 | 3500967b7bab ; versioned |
+| foodyweb | 355 | 174 | 5399d60559de ; versioned |
+| foodylanding | 156 | 31 | 416eebeb3be4 ; versioned |
 | foodypos | 391 | 171 | a5bb8ffadaf4 ; versioned |
 | foodybackoffice | 45 | 52 | ca09fd0d4837 ; versioned |
 
@@ -1358,6 +1358,7 @@ Identifiant : `guest-ordering`. Public : public. Disponibilité : available. Ser
 - [Composer le panier](../../src/content/help/fr/guest/online-ordering.mdx#basket)
 - [Choisir une adresse sur téléphone](../../src/content/help/fr/guest/online-ordering.mdx#mobile-fulfillment)
 - [Choisir coordonnées et remise](../../src/content/help/fr/guest/online-ordering.mdx#fulfillment)
+- [Choisir une date à l’avance au paiement](../../src/content/help/fr/guest/online-ordering.mdx#checkout-calendar)
 - [Payer et vérifier la confirmation](../../src/content/help/fr/guest/online-ordering.mdx#payment)
 - [Se connecter avant de commander](../../src/content/help/fr/guest/online-ordering.mdx#customer-sign-in-methods)
 - [Accès aux nouveaux réglages](../../src/content/help/fr/guest/online-ordering.mdx#related-service-controls)

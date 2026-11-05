@@ -4,9 +4,9 @@
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "7511a9d5e40812540486cbac7dee22c81c7f6148",
+      "sourceCommit": "fa9a0d9da45a6df6d67d24e998a7e230b2d38eb3",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "f4f707df104126510746bd5984a24c6830b2bc26eef55cf3efe068d5c1fb53c2",
+      "sourceSnapshot": "afb1d94b895bf8a5a8531ba542a02d205a72fdaeeeb22a51bc491ea32c2e36e6",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -4894,7 +4894,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "fa21522b1502c34d574a6d6238ba81603e667565ee3752ef732cff39a34c0a0a",
+          "sha256": "8fc37102b85a20e8abd4841ad804a2b66df9faa313ee58253bc5c7e602fb11ec",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -10956,9 +10956,9 @@
     },
     "foodyweb": {
       "repository": "https://github.com/Foody-isr/web",
-      "sourceCommit": "cc94ae9e583fd479a9ab36fa9f7579c9f7c70a15",
+      "sourceCommit": "5399d60559de5759ce2267aab7467b4b0b2de06d",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "17b419dc89953b8317d0bdf8f23509c9e49338a82ecf09ea0371801e3c7f55ed",
+      "sourceSnapshot": "0bed65d9ae64363baeebd5dc73de53e8205726633202b7699730b019c3725356",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "app/@cart/(.)order/cart/page.tsx": {
@@ -11076,12 +11076,19 @@
           ]
         },
         "app/order/checkout/CheckoutFlow.tsx": {
-          "sha256": "685a3f032938b3513ebcf921a1b49291ae4eb90086df97480d52c201139b25d2",
+          "sha256": "6a1c151dd50937b41dfdb3c9493ed54bf7cf08068e1605c720879f3c9d42557d",
           "features": [
             "guest-ordering",
             "orders-internal-sumit-checkout",
             "stancer-cash-guarantee",
             "orders-events"
+          ]
+        },
+        "app/order/checkout/CheckoutScheduleCalendar.tsx": {
+          "sha256": "662f4e2108c9e6fe1eac05eae6916714b71351e93200fbffaea652fd6ffdd5e7",
+          "features": [
+            "website-journey",
+            "guest-ordering"
           ]
         },
         "app/order/checkout/page.tsx": {
@@ -12641,7 +12648,7 @@
           ]
         },
         "lib/i18n.tsx": {
-          "sha256": "f96eec4c9085898050375da351170f6c413b4061d39e0bcb65069b9d09a44a6a",
+          "sha256": "b17f02c53ed662d63d9023acd0ef05f949ae8c30458151acdf5ac3e2c5444fd7",
           "features": [
             "menu-variants-and-sizes",
             "payments-how-payments-work",
@@ -13294,7 +13301,7 @@
     },
     "foodylanding": {
       "repository": "https://github.com/Foody-isr/landing",
-      "sourceCommit": "3500967b7bab5323f5f43a943f24ba7e9fa20c6b",
+      "sourceCommit": "416eebeb3be4dd5bdb120801af50942e827b6bb3",
       "releaseStatus": "versioned",
       "sourceSnapshot": "2ad1243e2d8226fd59e918c2b209f11957034ba55d71be2ae61b6f68e42bb31f",
       "workingTreeHasChanges": true,
@@ -37538,7 +37545,8 @@
           "lib/orderLinkMetadata.ts",
           "app/order/confirmation/**",
           "components/website-v3/WebsiteFulfillmentDialog.tsx",
-          "components/website-v3/SiteHeader.tsx"
+          "components/website-v3/SiteHeader.tsx",
+          "app/order/checkout/CheckoutScheduleCalendar.tsx"
         ],
         "foodyserver": [
           "internal/website/**",
@@ -37555,9 +37563,9 @@
             "he": "בדיקת סיום הזמנה ואישור"
           },
           "instructions": {
-            "en": "Select checkout then confirmation, adjust available colors and text, and inspect mobile readability. Required customer, fulfillment and payment fields come from restaurant policy. A preview does not place an order or verify a live payment connection.",
-            "fr": "Sélectionnez paiement puis confirmation, réglez couleurs et textes proposés, puis vérifiez la lisibilité mobile. Les champs client, remise et paiement obligatoires dépendent des règles du restaurant. Un aperçu ne passe pas de commande et ne vérifie pas une connexion de paiement réelle.",
-            "he": "בחרו סיום הזמנה ואישור, ערכו צבעים וטקסטים זמינים ובדקו קריאות בנייד. שדות לקוח, מסירה ותשלום מחויבים לפי מדיניות העסק. תצוגה מקדימה אינה יוצרת הזמנה או מאמתת חיבור תשלום."
+            "en": "Select checkout then confirmation, adjust available colors and text, and inspect mobile readability. Required customer, fulfillment and payment fields come from restaurant policy. A preview does not place an order or verify a live payment connection. When the checkout calendar is shown, use the month menu to jump to another month, pick an available day and choose its time.",
+            "fr": "Sélectionnez paiement puis confirmation, réglez couleurs et textes proposés, puis vérifiez la lisibilité mobile. Les champs client, remise et paiement obligatoires dépendent des règles du restaurant. Un aperçu ne passe pas de commande et ne vérifie pas une connexion de paiement réelle. Lorsque le calendrier s’affiche au paiement, utilisez le menu des mois pour aller directement à un autre mois, puis choisissez un jour disponible et son horaire.",
+            "he": "בחרו סיום הזמנה ואישור, ערכו צבעים וטקסטים זמינים ובדקו קריאות בנייד. שדות לקוח, מסירה ותשלום מחויבים לפי מדיניות העסק. תצוגה מקדימה אינה יוצרת הזמנה או מאמתת חיבור תשלום. כשלוח השנה מוצג בסיום ההזמנה, אפשר לעבור לחודש אחר בתפריט החודשים, לבחור יום זמין ולבחור שעה."
           }
         },
         {
@@ -37681,6 +37689,10 @@
         {
           "service": "foodyweb",
           "file": "lib/orderLinkMetadata.ts"
+        },
+        {
+          "service": "foodyweb",
+          "file": "app/order/checkout/CheckoutScheduleCalendar.tsx"
         }
       ]
     },
@@ -44849,6 +44861,19 @@
           }
         },
         {
+          "id": "checkout-calendar",
+          "title": {
+            "en": "Choose a future date at checkout",
+            "fr": "Choisir une date à l’avance au paiement",
+            "he": "בחירת תאריך עתידי בסיום ההזמנה"
+          },
+          "instructions": {
+            "en": "When a calendar appears in Contact and payment, choose a month from the menu to view its days. Only available days can be selected. Choose a day, then use Time to pick one of its slots. Browsing a different month keeps the current choice until you select a new day. If a day or time is unavailable, choose another option offered for your basket. The restaurant’s booking period determines how far ahead you can order.",
+            "fr": "Quand un calendrier apparaît dans Coordonnées et paiement, choisissez un mois dans le menu pour voir ses jours. Seuls les jours disponibles sont sélectionnables. Choisissez un jour, puis ouvrez Heure pour choisir un de ses créneaux. Consulter un autre mois conserve votre choix jusqu’à la sélection d’un nouveau jour. Si un jour ou un horaire est indisponible, choisissez une autre option proposée pour votre panier. La période de réservation du restaurant détermine jusqu’à quand vous pouvez commander.",
+            "he": "כשלוח שנה מופיע בפרטים ותשלום, בחרו חודש בתפריט כדי לראות את הימים שלו. אפשר לבחור רק ימים זמינים. בחרו יום, ואז בחרו חלון זמן בתפריט שעה. מעבר לחודש אחר שומר את הבחירה עד שבוחרים יום חדש. אם יום או שעה אינם זמינים, בחרו אפשרות אחרת המוצעת לסל שלכם. תקופת ההזמנה של העסק קובעת כמה זמן מראש ניתן להזמין."
+          }
+        },
+        {
           "id": "payment",
           "title": {
             "en": "Pay and verify confirmation",
@@ -45295,6 +45320,10 @@
         {
           "service": "foodyweb",
           "file": "store/useWebsiteOrderStore.ts"
+        },
+        {
+          "service": "foodyweb",
+          "file": "app/order/checkout/CheckoutScheduleCalendar.tsx"
         }
       ]
     },
@@ -93753,7 +93782,6 @@
         "continueShopping",
         "continueToPayment",
         "creditCard",
-        "day",
         "delivery",
         "deliveryAddress",
         "deliveryCalendarUnavailable",
@@ -93799,7 +93827,6 @@
         "name",
         "noAvailableSlots",
         "noSlotsForPreparation",
-        "noSlotsThisDay",
         "orderSummary",
         "payLater",
         "phone",
@@ -93832,7 +93859,6 @@
         "selectDateAndSlot",
         "selectVerifiedAddress",
         "soldOut",
-        "time",
         "tooManyAttempts",
         "tooManyOtpRequests",
         "tourAddressOutside",
@@ -93876,6 +93902,23 @@
         "submitting",
         "updateQuantity"
       ],
+      "line": 1
+    },
+    {
+      "id": "foodyweb:app/order/checkout/CheckoutScheduleCalendar.tsx:ui-controls:1",
+      "service": "foodyweb",
+      "source": "app/order/checkout/CheckoutScheduleCalendar.tsx",
+      "features": [
+        "website-journey",
+        "guest-ordering"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "checkoutScheduleMonth",
+        "chooseATime",
+        "time"
+      ],
+      "actions": [],
       "line": 1
     },
     {
@@ -102340,9 +102383,9 @@
   "coverage": {
     "sharedRuntimeFiles": 401,
     "features": 110,
-    "operations": 931,
-    "sourceFiles": 2385,
-    "surfaces": 2152,
+    "operations": 932,
+    "sourceFiles": 2386,
+    "surfaces": 2153,
     "unclassifiedRoutes": []
   }
 }
