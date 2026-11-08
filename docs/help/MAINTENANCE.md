@@ -1,5 +1,15 @@
 # Help ownership, evidence and releases
 
+## Compact order header and mobile item list (8 November 2026)
+
+Review the order page, site editor and guest ordering guides in French, English
+and Hebrew. The order page can use a compact header when customers choose their
+order method before the menu. The mobile layout selector and carousel apply to
+the product list independently. The guest flow uses the existing order method,
+location and time panels. The API embeds the matching public help corpus.
+Verify the editor and the storefront at phone widths before publishing. Keep the
+consolidated counter closing guides in the shared corpus.
+
 ## Current POS financial identity and compact actions (4 November 2026)
 
 The API validates the current enrolled device independently from the original
