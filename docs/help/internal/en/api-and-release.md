@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-11-04'
+updatedAt: '2026-11-08'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -223,6 +223,12 @@ The lifecycle v1 field is retained. Capability order_lifecycle_v2 advertises lif
 ## Release the EOD contract before the POS
 
 The end-of-day v1 contract and additive migration 285 add begin, current, ID read, terminal-result and finalize under /orders/end-of-day. Writes retain UUIDs and check restaurant, actor, physical authorization and installation. The end_of_day capability declares support without granting payment permission. The server transaction reserves the count and terminal identities; it contacts no provider. Dispatched precedes the native call, and an unknown outcome never becomes permission to transmit again. A durable confirmation may be recorded again with the same identity. Finalize atomically creates the immutable operational report and closes its reserved drawer without attendance or commercial closure. Release the API before the POS, validate development and promote the same artifacts. Current Ashrait callbacks justify no invented totals, batch number or fiscal certificate. Preserve old journals and permission/provenance checks. See docs/contracts/end-of-day-v1.json and public payments/end-of-day guidance.
+
+<span id="end-of-day-shva-counts" />
+
+## Verify SHVA counts in the Z report
+
+Deploy the API that advertises end_of_day_ashrait_counts, then restart the compatible POS. After a confirmed CST Ashrait deposit, compare the debit and credit counts with the terminal report. Finalize and reopen the Z report in Drawer history. It retains both counts, including an explicit zero. An earlier Z report retains the data recorded at closing. To verify the paper copy, use Reprint SHVA report on the original POS and compare the reference and totals.
 
 <span id="ordering-simulation-clock" />
 

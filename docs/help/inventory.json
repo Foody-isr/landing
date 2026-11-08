@@ -4,10 +4,10 @@
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "2f629a4e2d8da5dd13ce917067da117568097133",
+      "sourceCommit": "10fad01a997e8eec848a63ebd6ff3c9843e0d2f4",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "4dfa9d8d0d533517d888b08b1f4310c2e97e17e293447d708747c50c5bcfd881",
-      "workingTreeHasChanges": true,
+      "sourceSnapshot": "ee3cac6ff8aeac767eee77961d56339a0e6050a29e212d7f3a8e46322bd36ce7",
+      "workingTreeHasChanges": false,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
           "sha256": "33cf30b683837b76977ed47c14d5d91ccb1b34bd60e9f62d124b8cc1079231aa",
@@ -2662,7 +2662,7 @@
           ]
         },
         "internal/orders/end_of_day.go": {
-          "sha256": "5f3e6bfcf094dde2ee3e0c0155d6b543fbd5ba795c77e46c5b409f1cff6281d9",
+          "sha256": "7f38e7844f990a86d50c440e61ac85aa449a9bdd4060f2413d6da0917600549d",
           "features": [
             "pos-end-of-day"
           ]
@@ -2680,7 +2680,7 @@
           ]
         },
         "internal/orders/end_of_day_types.go": {
-          "sha256": "9bc12328e53136a76130b5203531840cf88ad236b5210045555270be58b255d3",
+          "sha256": "322c104cb458c4db1af60edae5b3d5702503cea15db2a84c4d0aa3d4549bb2ae",
           "features": [
             "pos-end-of-day"
           ]
@@ -2928,7 +2928,7 @@
           ]
         },
         "internal/orders/full_service_handler.go": {
-          "sha256": "7d9559dcf2e397a419686e525b03fcef5edfb10060ca646d570921955a12820c",
+          "sha256": "3d5bbd8e39b089877b6afec7c5cefe13b918428a83f1b46dfc56387904637e5d",
           "features": [
             "orders-managing-orders",
             "order-types",
@@ -4894,7 +4894,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "b295072e2058efb2f39aed2b7e0b33d58df2eccc305ccef1cdc7b78f25ac7909",
+          "sha256": "53a7977deeb60290aaaa7c367ea2945e2709c2a0bf2d7157706e8a7f00e94be6",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -47783,6 +47783,19 @@
           }
         },
         {
+          "id": "end-of-day-shva-counts",
+          "title": {
+            "fr": "Vérifier les compteurs SHVA dans le Z",
+            "en": "Verify SHVA counts in the Z report",
+            "he": "אימות מוני שב״א בדוח Z"
+          },
+          "instructions": {
+            "fr": "Déployez l’API qui annonce end_of_day_ashrait_counts, puis relancez le POS compatible. Après un dépôt Ashrait CST confirmé, comparez les nombres de débits et de crédits avec le rapport du terminal. Finalisez et rouvrez le Z dans Historique de caisse. Il conserve les deux compteurs, y compris un zéro transmis. Un Z antérieur conserve les données enregistrées lors de sa clôture. Pour vérifier la copie papier, utilisez Réimprimer le rapport SHVA sur le POS d’origine et comparez la référence et les totaux.",
+            "en": "Deploy the API that advertises end_of_day_ashrait_counts, then restart the compatible POS. After a confirmed CST Ashrait deposit, compare the debit and credit counts with the terminal report. Finalize and reopen the Z report in Drawer history. It retains both counts, including an explicit zero. An earlier Z report retains the data recorded at closing. To verify the paper copy, use Reprint SHVA report on the original POS and compare the reference and totals.",
+            "he": "פרסו את ה־API שמצהיר על end_of_day_ashrait_counts והפעילו מחדש את הקופה התואמת. לאחר הפקדת אשראית מאושרת ב־CST, השוו את מספר החיובים והזיכויים לדוח המסוף. השלימו את הסגירה ופתחו שוב את דוח Z בהיסטוריית הקופה. הדוח שומר את שני המונים, כולל אפס שהתקבל מהמסוף. דוח Z קודם שומר את הנתונים שנרשמו בעת הסגירה. כדי לבדוק את עותק הנייר, הדפיסו שוב את דוח שב״א בקופה המקורית והשוו את אסמכתת השידור והסכומים."
+          }
+        },
+        {
           "id": "ordering-simulation-clock",
           "title": {
             "fr": "Évaluer un panier avec une heure simulée privée",
@@ -47903,7 +47916,7 @@
       "audience": "internal",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-11-04",
+      "procedureUpdatedAt": "2026-11-08",
       "updatedAt": "2026-10-28",
       "evidence": [
         {
@@ -102570,7 +102583,7 @@
   "coverage": {
     "sharedRuntimeFiles": 401,
     "features": 110,
-    "operations": 935,
+    "operations": 936,
     "sourceFiles": 2390,
     "surfaces": 2157,
     "unclassifiedRoutes": []
