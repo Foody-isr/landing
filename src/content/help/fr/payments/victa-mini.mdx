@@ -5,7 +5,7 @@ apps: foodypos
 tags:
   - payments
   - pos-victa-mini
-updatedAt: '2026-11-04'
+updatedAt: '2026-11-07'
 featureId: pos-victa-mini
 audience: public
 releaseStatus: available
@@ -24,14 +24,24 @@ La reconnexion automatique n’envoie ni paiement, ni recherche de transaction, 
 
 <span id="explicit-terminal-selection" />
 
-## Choisir Mini ou Portable pour cet encaissement
+## Encaisser sur le terminal par défaut
 
-Sur iPad, choisissez Carte sur la commande ou l’addition financière existante, vérifiez la fenêtre du terminal de paiement puis confirmez explicitement Mini ou Portable. Le terminal configuré par défaut est présélectionné ; aucun autre appareil connecté ne le remplace automatiquement. Annuler n’envoie aucun paiement. Sur un Victa Portable exécutant FoodyPOS, ouvrez cette même commande ou addition enregistrée et utilisez son lecteur intégré. Ne recréez pas la vente. Une réservation serveur protège le terminal physique et les commandes sélectionnées pendant l’encaissement. Un autre appareil ou moyen de paiement doit attendre. Les commandes QR conservent leurs identifiants et paiements séparés.
-
-Si le résultat est inconnu, conservez le POS et le terminal d’origine puis reprenez l’opération existante. Ni le temps écoulé ni un redémarrage n’autorisent un nouveau débit. Un refus ou une annulation définitive permet un nouvel essai revu. Une approbation confirmée doit être enregistrée avec sa réservation d’origine avant libération. Ce changement concerne le choix de destination, sans modifier les réglages d’impression existants ; validez le matériel, le contrôle distant du Portable et l’impression intégrée avec Verifone.
+Sur iPad, Carte envoie le paiement au terminal par défaut. Pour passer du Mini au Portable, ouvrez Plus → Paramètres → Matériel → Terminaux de paiement, sélectionnez et vérifiez l’appareil, puis cochez Terminal par défaut avant d’enregistrer. Si le terminal par défaut est indisponible, rétablissez sa connexion ou changez le réglage après avoir résolu les opérations en attente. Sur un Portable qui exécute FoodyPOS, ouvrez la même addition et utilisez son lecteur intégré. Pour un paiement interrompu, reprenez l’opération sur sa caisse et son terminal d’origine.
 
 <span id="ashrait-last-transaction-inspection" />
 
 ## Consulter la dernière transaction du terminal
 
 Dans Matériel → Terminaux de paiement, un responsable peut consulter la dernière transaction du terminal connecté. Cette lecture ne modifie aucun paiement. Voir [la procédure et ses limites](/fr/help/payments/ashrait-terminal-inspection).
+
+<span id="ashrait-checkout-card-copy" />
+
+## Demander une copie du reçu carte
+
+Pour demander une copie carte Ashrait, ouvrez Plus → Paramètres → Matériel → Terminaux de paiement → Dernière transaction du terminal. Comparez la référence avec la vente. Lorsque le terminal a fourni le document, imprimez la copie client ou commerçant sur l’imprimante intégrée du Portable ou l’Epson de reçus sélectionnée sur l’iPad. Pour le reçu de vente Foody, ouvrez [Transactions → Nouveau reçu](/fr/help/payments/transactions#new-pos-receipt).
+
+<span id="ashrait-terminal-installment-selection" />
+
+## Proposer le paiement en plusieurs fois
+
+Avec le droit de gérer les paiements, ouvrez Plus → Paramètres → Matériel → Terminaux de paiement → Paiement en plusieurs fois. Vérifiez que le bon terminal est actif et saisissez en shekels la plage configurée dans VHQ. Si l’acquéreur autorise la saisie dans Foody, renseignez aussi son plafond d’échéances. Pour un paiement carte dans la plage, vous pouvez demander au client de choisir ses échéances sur le terminal. Si un plafond est configuré, Définir les échéances dans Foody permet de saisir le nombre autorisé et, facultativement, le montant du premier versement. Confirmez le plan avant de présenter la carte. Si le premier versement est vide, le terminal calcule la répartition. Foody enregistre le total après confirmation. Pour retirer le choix, utilisez Désactiver. Le réglage est local à cette caisse et ce terminal.

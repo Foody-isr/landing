@@ -5,7 +5,7 @@ apps: both
 tags:
   - staff
   - staff-roles
-updatedAt: '2026-10-30'
+updatedAt: '2026-11-08'
 featureId: staff-roles
 audience: public
 releaseStatus: available
@@ -50,4 +50,4 @@ L’activation du personnel vérifie les permissions affectées dans ce restaura
 
 ## Autoriser une clôture de journée
 
-Clôture de journée nécessite payments.manage sur le POS déjà autorisé, avec la connexion personnelle PIN active. Inclure une caisse espèces nécessite aussi orders.manage. Ces droits sont vérifiés de nouveau avant chaque écriture ; ouvrir un écran ou lire une capacité ne les accorde pas. Les étapes de transmission et de finalisation restent liées à l’auteur d’origine et au POS concerné. Changer de rôle ou se reconnecter sur un autre appareil ne transfère pas une opération. Voir [les étapes et la reprise](/fr/help/payments/end-of-day).
+Une session personnelle active et payments.manage sont requis sur chaque POS qui participe à la clôture. Inclure le tiroir exige aussi orders.manage. Définir l’iPad principal exige settings.edit sur cet appareil enrôlé. L’API vérifie le terminal et l’appareil affectés avant chaque transmission. Consultez [la clôture et sa reprise](/fr/help/payments/end-of-day).

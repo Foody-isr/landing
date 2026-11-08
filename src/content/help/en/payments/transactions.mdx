@@ -7,7 +7,7 @@ apps: both
 tags:
   - payments
   - payments-transactions
-updatedAt: '2026-11-04'
+updatedAt: '2026-11-07'
 featureId: payments-transactions
 audience: public
 releaseStatus: available
@@ -18,7 +18,7 @@ Read the restaurant’s confirmed Foody payment history from Transactions in the
 
 ## Find a completed payment in Transactions
 
-Open Transactions in the iPad POS navigation, in More on compact terminals, or in the Admin sidebar, with payments.view or payments.manage. All three screens read the same restaurant-scoped confirmed payment history. In Admin choose a date range, source and method; search by item, reference or order number, then select a payment for its amount, method and linked orders. On the POS, selecting a linked order opens its saved read-only detail without leaving Transactions; if it cannot load, refresh and retry. The source follows the linked order: a provider-processed payment for a POS-created order appears under POS, not Online. Totals cover all matching payments, not just the visible page, and keep currencies separate. One order can have several tenders and one tender can cover several orders; Orders remains the place to follow fulfillment. Pending terminal attempts are not completed sales. History does not issue new receipts. Authorized owners and managers may see server-verified cash refunds or Verifone Checkout original-card returns for eligible payments; see the refund procedure before acting. If a result is missing, check restaurant, date and filters, then reconcile uncertain terminal payments before another charge.
+Open Transactions in the iPad POS navigation, in More on compact terminals, or in the Admin sidebar, with payments.view or payments.manage. All three screens read the same restaurant-scoped confirmed payment history. In Admin choose a date range, source and method; search by item, reference or order number, then select a payment for its amount, method and linked orders. On the POS, selecting a linked order opens its saved read-only detail without leaving Transactions; if it cannot load, refresh and retry. The source follows the linked order: a provider-processed payment for a POS-created order appears under POS, not Online. Totals cover all matching payments, not just the visible page, and keep currencies separate. One order can have several tenders and one tender can cover several orders; Orders remains the place to follow fulfillment. Pending terminal attempts are not completed sales. Authorized owners and managers may see server-verified cash refunds or Verifone Checkout original-card returns for eligible payments; see the refund procedure before acting. If a result is missing, check restaurant, date and filters, then reconcile uncertain terminal payments before another charge. On a compatible Portable, find Transactions in More, even if it is assigned to the tablet’s primary bar.
 
 <span id="transaction-payment-origin" />
 
@@ -55,3 +55,9 @@ Transactions reads Foody’s central history, not a list downloaded from Ashrait
 ## Read an entry whose original order is unavailable
 
 A confirmed cash sale or return remains in the immutable cash ledger even when its operational order or check is no longer readable. Transactions retains the recorded amount, date, currency and original payment identity, and shows an unavailable-original warning. Missing or foreign order/check identifiers are hidden; no amount is assigned to a guessed replacement. This read never rewrites a payment, deletes cash evidence or enables a refund. In Admin, Details is read-only. In POS, an entry marked unavailable has no refund action. A retry reloads history only; it never charges a card or sends Deposit.
+
+<span id="new-pos-receipt" />
+
+## Print or share a new receipt from FoodyPOS
+
+On iPad, open Transactions. On Portable, open More → Transactions. Select a completed sale, then New receipt. Print receipt uses this POS’s default printers. Other printers… lets you select an eligible destination for this copy. Share receipt prepares an image and opens the device’s share menu. Choose email or another available app, then confirm sending there. Done or No receipt closes the page. Payment read and order management permissions govern the available actions. The receipt shows the selected transaction’s amount. For a partial payment or unavailable original items, it uses the available payment details. Check the paper before requesting a copy if printing is uncertain.

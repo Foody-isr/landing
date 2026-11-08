@@ -8,7 +8,7 @@ apps: both
 tags:
   - payments
   - payments-transactions
-updatedAt: '2026-11-04'
+updatedAt: '2026-11-07'
 featureId: payments-transactions
 audience: public
 releaseStatus: available
@@ -19,7 +19,7 @@ Consultez les paiements confirmés enregistrés dans Foody depuis Transactions s
 
 ## Retrouver un paiement confirmé dans Transactions
 
-Ouvrez Transactions dans la navigation de la caisse iPad, dans Plus sur un terminal compact ou dans le menu latéral Admin, avec payments.view ou payments.manage. Ces trois écrans lisent le même historique des paiements confirmés du restaurant. Dans Admin, choisissez période, source et mode ; recherchez par article, référence ou numéro de commande, puis sélectionnez un paiement pour son montant, son moyen et les commandes liées. Sur la caisse, sélectionner une commande liée ouvre son détail enregistré en lecture seule sans quitter Transactions ; si le chargement échoue, actualisez et réessayez. La source suit la commande liée : un paiement traité par un prestataire pour une commande créée en caisse apparaît sous Caisse, pas En ligne. Les totaux couvrent tous les paiements correspondant aux filtres, pas seulement la page visible, et séparent les devises. Une commande peut avoir plusieurs encaissements et un encaissement couvrir plusieurs commandes ; Commandes reste l’espace de suivi du service. Les tentatives terminal en attente ne sont pas des ventes finalisées. L’historique ne crée pas de nouveau reçu. Les propriétaires et responsables autorisés peuvent voir des remboursements d’espèces ou des retours Verifone Checkout sur la carte d’origine lorsque le serveur confirme l’éligibilité ; lisez la procédure de remboursement avant d’agir. Si un paiement manque, vérifiez restaurant, période et filtres, puis rapprochez les résultats incertains avant un nouveau débit.
+Ouvrez Transactions dans la navigation de la caisse iPad, dans Plus sur un terminal compact ou dans le menu latéral Admin, avec payments.view ou payments.manage. Ces trois écrans lisent le même historique des paiements confirmés du restaurant. Dans Admin, choisissez période, source et mode ; recherchez par article, référence ou numéro de commande, puis sélectionnez un paiement pour son montant, son moyen et les commandes liées. Sur la caisse, sélectionner une commande liée ouvre son détail enregistré en lecture seule sans quitter Transactions ; si le chargement échoue, actualisez et réessayez. La source suit la commande liée : un paiement traité par un prestataire pour une commande créée en caisse apparaît sous Caisse, pas En ligne. Les totaux couvrent tous les paiements correspondant aux filtres, pas seulement la page visible, et séparent les devises. Une commande peut avoir plusieurs encaissements et un encaissement couvrir plusieurs commandes ; Commandes reste l’espace de suivi du service. Les tentatives terminal en attente ne sont pas des ventes finalisées. Les propriétaires et responsables autorisés peuvent voir des remboursements d’espèces ou des retours Verifone Checkout sur la carte d’origine lorsque le serveur confirme l’éligibilité ; lisez la procédure de remboursement avant d’agir. Si un paiement manque, vérifiez restaurant, période et filtres, puis rapprochez les résultats incertains avant un nouveau débit. Sur le Portable compatible, ouvrez Plus pour retrouver Transactions, même si l’onglet est dans la barre d’une tablette.
 
 <span id="transaction-payment-origin" />
 
@@ -56,3 +56,9 @@ Transactions lit l’historique central de Foody, pas une liste téléchargée d
 ## Lire une écriture dont la commande est indisponible
 
 Une vente ou un retour espèces confirmé reste dans le journal immuable de caisse même si sa commande ou son addition opérationnelle n’est plus lisible. Transactions conserve montant, date, devise et identité du paiement enregistrés et signale l’indisponibilité de l’origine. Les identifiants de commandes ou additions absentes ou étrangères au restaurant sont masqués ; aucun montant n’est attribué à un remplacement supposé. Cette consultation ne réécrit aucun paiement, ne supprime aucune preuve de caisse et n’active aucun remboursement. Dans Admin, Détails est en lecture seule. Sur le POS, une écriture signalée indisponible ne propose pas de remboursement. Réessayer recharge seulement l’historique ; aucun débit carte ni Deposit n’est lancé.
+
+<span id="new-pos-receipt" />
+
+## Imprimer ou partager un nouveau reçu depuis FoodyPOS
+
+Sur iPad, ouvrez Transactions. Sur le Portable, ouvrez Plus → Transactions. Sélectionnez une vente confirmée, puis Nouveau reçu. Imprimer le reçu utilise les imprimantes par défaut de cette caisse. Autres imprimantes… permet de choisir une destination compatible pour cette copie. Partager le reçu prépare une image et ouvre le menu de partage de l’appareil. Choisissez E-mail ou une autre application disponible, puis confirmez l’envoi dans celle-ci. Terminé ou Aucun reçu ferme la page. Les autorisations de lecture des paiements et de gestion des commandes déterminent les actions disponibles. Le reçu reprend le montant de la transaction sélectionnée. Pour un paiement partiel ou des articles d’origine indisponibles, il reprend les données de paiement disponibles. Vérifiez le papier avant de demander une copie si l’impression est incertaine.
