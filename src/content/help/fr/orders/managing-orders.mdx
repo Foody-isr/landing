@@ -15,7 +15,7 @@ tags:
   - web
   - qr
   - caisse
-updatedAt: '2026-11-04'
+updatedAt: '2026-11-07'
 featureId: orders-managing-orders
 audience: public
 releaseStatus: available
@@ -124,7 +124,7 @@ Avec la permission orders.manage, ouvrez Nouvelle commande ou modifiez une comma
 
 ## Attendre le paiement au comptoir avant la cuisine
 
-Pour une nouvelle commande à emporter encaissée par carte au comptoir, choisissez Payer, puis Payer par carte. Attendez l’accord du terminal et l’enregistrement du paiement dans Foody avant le départ en préparation et l’impression du bon cuisine. Pendant l’encaissement, le paiement reste en attente et n’apparaît pas dans la liste des commandes en direct. Après un refus ou une annulation, reprenez le même encaissement ; ne l’envoyez pas en cuisine pour contourner le paiement. Si le terminal a accepté mais que la synchronisation a échoué, rapprochez le paiement existant avant tout nouveau débit. Les commandes volontairement envoyées pour un service à table avant encaissement conservent leur déroulement habituel.
+Pour une nouvelle commande à emporter au comptoir, choisissez Payer → Payer par carte. Attendez l’accord du terminal et l’enregistrement dans Foody avant la préparation et l’impression du bon cuisine. Le paiement en attente reste hors de la liste des commandes en direct. Après un refus ou une annulation, reprenez le paiement de la même commande. Si le terminal a accepté mais que la synchronisation a échoué, rapprochez le paiement existant avant tout nouveau débit. Le service à table peut envoyer les plats avant encaissement. Pour une copie du reçu de vente, ouvrez [Transactions → Nouveau reçu](/fr/help/payments/transactions#new-pos-receipt).
 
 <span id="carte-series-stock" />
 
@@ -166,7 +166,7 @@ Ouvrez FoodyPOS → Commandes → Toutes, ou FoodyAdmin → Commandes → Tous p
 
 ## Retrouver une vente caisse après paiement
 
-Une vente à emporter payée et envoyée en cuisine se trouve dans Commandes → Actives pendant la préparation, pas dans Terminées du seul fait du paiement. Choisissez le filtre À emporter et effacez les autres filtres si nécessaire. Transactions enregistre l’encaissement séparément et s’actualise à l’ouverture. Sur le portable mis à jour, un encaissement confirmé et enregistré ouvre le choix du reçu, puis Nouvelle vente termine explicitement le parcours. La tablette conserve la confirmation brève Paiement enregistré et le retour automatique. Vider l’addition courante ne supprime pas la commande enregistrée ; Commandes → Toutes permet toujours le suivi multicanal. Sans papier, vérifiez profil, association imprimante/POS actuel et historique avant de réimprimer ou d’encaisser un autre paiement. Voir [encaissement au comptoir](/fr/help/payments/pos-checkout#counter-completion). L’onglet Client utilise le nom/téléphone enregistrés sur la commande, pas un client déduit d’une autre addition. La collecte facultative se configure [par mode de traitement](/fr/help/settings/pos-behavior#fulfillment-customer). Les envois cuisine suivants conservent des coordonnées cohérentes sans nouvelle confirmation de création par service ; les notifications de statut restent distinctes.
+Une vente à emporter payée et envoyée en cuisine se trouve dans Commandes → Actives pendant la préparation, pas dans Terminées du seul fait du paiement. Choisissez le filtre À emporter et effacez les autres filtres si nécessaire. Transactions enregistre l’encaissement séparément et s’actualise à l’ouverture. Sur iPad et sur Portable, la confirmation Paiement enregistré se ferme automatiquement. Pour une copie, ouvrez [Transactions → Nouveau reçu](/fr/help/payments/transactions#new-pos-receipt). Vider l’addition courante ne supprime pas la commande enregistrée ; Commandes → Toutes permet toujours le suivi multicanal. Sans papier, vérifiez profil, association imprimante/POS actuel et historique avant de réimprimer ou d’encaisser un autre paiement. Voir [encaissement au comptoir](/fr/help/payments/pos-checkout#counter-completion). L’onglet Client utilise le nom/téléphone enregistrés sur la commande, pas un client déduit d’une autre addition. La collecte facultative se configure [par mode de traitement](/fr/help/settings/pos-behavior#fulfillment-customer). Les envois cuisine suivants conservent des coordonnées cohérentes sans nouvelle confirmation de création par service ; les notifications de statut restent distinctes.
 
 <span id="unified-order-whatsapp-selection" />
 
@@ -234,6 +234,6 @@ Pour modifier un événement enregistré, l’ajouter en production et régler a
 
 <span id="physical-card-destination" />
 
-## Choisir le terminal
+## Terminal carte par défaut
 
-Pour payer par carte sur iPad, voir le [choix Mini/Portable](/fr/help/payments/victa-mini#explicit-terminal-selection).
+Sur iPad, Carte utilise le [terminal par défaut configuré dans Matériel](/fr/help/payments/victa-mini#explicit-terminal-selection). Pour une tentative en attente, reprenez le paiement d’origine.
