@@ -4,9 +4,9 @@
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "9fdc06af1d5b2f923c0fd2da129ce414df61bf7a",
+      "sourceCommit": "0476df460dd4797a8722981e6c0b7c7a49a1f34a",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "b2621a3872b06acad8524a62871fa2632293cef28f0c491eb5a44d46214261e6",
+      "sourceSnapshot": "07aee0b27daf18a7ce41449a6938e6bb159996839faec83ed9e863e74fd057b1",
       "workingTreeHasChanges": false,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -4907,7 +4907,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "581ef2424e5081c16bd8e3b602dd3d6f7b3a38ba9f273bed6753fb744cd57900",
+          "sha256": "9c89b3477d00a4baea3948bc8a4e31dd10eac12b4515d9fd47d91925bc4eb82c",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -14350,13 +14350,13 @@
     },
     "foodypos": {
       "repository": "https://github.com/Foody-isr/pos",
-      "sourceCommit": "489ed1adee2ccb765c569e02ab0783a5c134d3b0",
+      "sourceCommit": "a75032cf2beffc9a5d2c7ee1c367a14b0c3abe15",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "15b5e50a2f59546312565b6d8963eca0f61f74bf5b70ef6a90c6caff1978e7f0",
+      "sourceSnapshot": "0669ba503bbe35e5609a608624231df797245a6e5f4c5a683fe8c23b38a2c32d",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "android/app/src/main/kotlin/com/foodypos/app/AshraitProtocol.kt": {
-          "sha256": "5d0eb1dffea06c5ed9fe92ced59c51ef175efa79f8d3a0039b21d7e757f61002",
+          "sha256": "69ee0a7c83d15edd8526b6250bfe61aa845f111f54c36dc1642095c827b73a90",
           "features": [
             "pos-payments",
             "pos-ashrait-terminal-inspection"
@@ -14375,7 +14375,7 @@
           ]
         },
         "android/app/src/main/kotlin/com/foodypos/app/VerifonePaymentBridge.kt": {
-          "sha256": "f068ed8cedb218c47e092a609cd523d8513cf8b0182734978953fdbd1e98f979",
+          "sha256": "b426bbf959075afa2239dd6c1f14992fefd5ce4e50b50d473ca93d3e71d160be",
           "features": [
             "pos-payments",
             "pos-ashrait-terminal-inspection"
@@ -14394,9 +14394,10 @@
           ]
         },
         "ios/Runner/AshraitProtocol.h": {
-          "sha256": "95d3a6d86b6a0f9bb1fc2cae597e35d4ad9144666a8bd2425fefafec0aa23b26",
+          "sha256": "687cb22e623f3745ecaf26bb403eb129f03c9a27f7e2ab9a2ff4667d4774331c",
           "features": [
-            "pos-payments"
+            "pos-payments",
+            "pos-ashrait-terminal-inspection"
           ]
         },
         "ios/Runner/AshraitReceipt.h": {
@@ -14466,7 +14467,7 @@
           ]
         },
         "ios/Runner/VerifonePaymentBridge.m": {
-          "sha256": "bd9125c88457bfe0fca587e833d623ad7ef07c4c73ea50c3717ea89eeb5ac65e",
+          "sha256": "9373c063f8f43691b3a3967832f417aa93a93ad6f724edda2b676b3e519f194f",
           "features": [
             "pos-payments",
             "pos-ashrait-terminal-inspection"
@@ -16970,7 +16971,7 @@
           ]
         },
         "lib/services/payments/ashrait_last_transaction.dart": {
-          "sha256": "f8a5e557707a9ab859ccb93ec4fcd1742a721b7ef5934126b09ef2a6cae5f138",
+          "sha256": "5537c459f7f9a9b79aa3ec756c5641a3453c29afc17f84a3b00444431039272e",
           "features": [
             "pos-payments",
             "pos-ashrait-terminal-inspection"
@@ -56167,6 +56168,7 @@
           "lib/features/settings/presentation/ashrait_last_transaction_tile.dart",
           "lib/services/payments/terminal_payment_service.dart",
           "ios/Runner/VerifonePaymentBridge.m",
+          "ios/Runner/AshraitProtocol.h",
           "android/app/src/main/kotlin/com/foodypos/app/VerifonePaymentBridge.kt",
           "lib/services/payments/pos_card_collection_repository.dart",
           "lib/features/orders/presentation/payment_terminal_picker.dart",
@@ -56178,7 +56180,7 @@
       },
       "audience": "public",
       "status": "available",
-      "procedureUpdatedAt": "2026-11-05",
+      "procedureUpdatedAt": "2026-11-08",
       "operations": [
         {
           "id": "ashrait-last-transaction-inspection",
@@ -56188,9 +56190,9 @@
             "he": "צפייה בעסקה האחרונה במסוף"
           },
           "instructions": {
-            "fr": "Sur la version compatible, ouvrez Plus → Paramètres → Matériel → Terminaux de paiement. Sur iPad, la consultation concerne le terminal associé actuellement actif ; sur un Victa Portable reconnu dans l’inventaire, elle concerne cet appareil. Le terminal doit déjà être connecté. Avec le droit de gérer les paiements, ouvrez Dernière transaction du terminal puis appuyez sur Consulter la dernière transaction. Ouvrir la fenêtre ne lance aucune requête. La consultation affiche uniquement la référence, le type, le résultat communiqué et le montant lorsqu’ils sont disponibles. Une préautorisation reste distincte d’un achat ; aucun paiement ni aucune addition n’est modifié. Aucun reçu ni donnée de carte n’est affiché. Une réponse vide, notamment après redémarrage, ne prouve pas l’absence d’un paiement. Si un paiement ou dépôt doit être vérifié, reprenez son parcours d’origine : la consultation ne lève aucun verrou et ne relance aucune opération. Après un changement de compte, de restaurant, de droit ou de terminal, consultez à nouveau ; l’ancien résultat n’est pas réutilisé. Quand le type ou le montant manque, un statut issu du SDK reste « Non confirmé ». Comparez la référence à celle de la vente dans Transactions ; ne relancez pas un paiement sur la seule base de cet écran.\n\nLorsqu’un paiement carte est en attente dans Foody, le responsable peut consulter le terminal d’origine s’il est connecté, identifié et disponible. L’écran affiche la dernière transaction connue de ce terminal. Faites confirmer le résultat de la tentative d’origine si cette lecture est vide ou concerne une autre vente. Après avoir résolu la tentative, les copies sont proposées selon les données disponibles.",
-            "en": "In the compatible version, open More → Settings → Hardware → Payment terminals. On iPad, inspection concerns the currently active paired terminal; on a Victa Portable recognized in the inventory, it concerns that device. The terminal must already be connected. With permission to manage payments, open Last terminal transaction and press Read last transaction. Opening the dialog does not send a query. Inspection shows only the reference, type, reported result and amount when available. A preauthorization stays distinct from a purchase; no payment or check is changed. No receipt or card details are displayed. An empty response, including after restart, does not prove that no payment occurred. For a pending payment or deposit, return to its original verification flow: inspection clears no lock and replays no operation. After changing account, restaurant, permission or terminal, read again; the old result is not reused. When the type or amount is missing, the SDK result remains unconfirmed. Compare the reference with the sale in Transactions. Do not retry a payment based on this view alone.\n\nWhen Foody has a pending card payment, a manager can inspect the original terminal if it is connected, identified and ready. The screen shows that terminal’s latest known transaction. Have the original attempt verified if the result is empty or concerns a different sale. Once the attempt is resolved, available copies can be requested.",
-            "he": "בגרסה התואמת פתחו עוד ← הגדרות ← חומרה ← מסופי תשלום. ב-iPad הבירור מתייחס למסוף המשויך הפעיל כרגע; ב-Victa Portable המזוהה במלאי המכשירים הוא מתייחס לאותו מכשיר. המסוף צריך להיות מחובר מראש. עם הרשאה לניהול תשלומים פתחו העסקה האחרונה במסוף ולחצו הצגת העסקה האחרונה. פתיחת החלון אינה שולחת שאילתה. מוצגים רק האסמכתה, הסוג, התוצאה שדווחה והסכום, כאשר הם זמינים. אישור מוקדם נפרד מרכישה; אין שינוי בתשלום או בחשבון. אין הצגה של קבלה או פרטי כרטיס. תשובה ריקה, לרבות לאחר אתחול, אינה מוכיחה שלא בוצע תשלום. לבירור תשלום או הפקדה ממתינים חזרו לתהליך הבדיקה המקורי: הצפייה אינה מסירה חסימה ואינה חוזרת על פעולה. אחרי שינוי חשבון, מסעדה, הרשאה או מסוף יש לבצע קריאה חדשה; אין שימוש חוזר בתוצאה הישנה. כאשר סוג העסקה או הסכום חסר, תוצאת ה־SDK נותרת לא מאומתת. השוו את האסמכתה לעסקה במסך עסקאות. אל תחזרו על תשלום רק על סמך מסך זה.\n\nכאשר תשלום בכרטיס ממתין לאישור ב־Foody, מנהל יכול לבדוק את המסוף המקורי אם הוא מחובר, מזוהה ומוכן. המסך מציג את העסקה האחרונה הידועה של המסוף. אם התוצאה ריקה או שייכת למכירה אחרת, בקשו לאמת את תוצאת הניסיון המקורי. לאחר סיום הבירור ניתן לבקש עותקים בהתאם למידע הזמין."
+            "fr": "Sur la version compatible, ouvrez Plus → Paramètres → Matériel → Terminaux de paiement. Sur iPad, la consultation concerne le terminal associé actuellement actif ; sur un Victa Portable reconnu dans l’inventaire, elle concerne cet appareil. Le terminal doit déjà être connecté. Avec le droit de gérer les paiements, ouvrez Dernière transaction du terminal puis appuyez sur Consulter la dernière transaction. Ouvrir la fenêtre ne lance aucune requête. La consultation affiche uniquement la référence, le type, le résultat communiqué et le montant lorsqu’ils sont disponibles. Une préautorisation reste distincte d’un achat ; aucun paiement ni aucune addition n’est modifié. Aucun reçu ni donnée de carte n’est affiché. Une réponse vide, notamment après redémarrage, ne prouve pas l’absence d’un paiement. Si un paiement ou dépôt doit être vérifié, reprenez son parcours d’origine : la consultation ne lève aucun verrou et ne relance aucune opération. Après un changement de compte, de restaurant, de droit ou de terminal, consultez à nouveau ; l’ancien résultat n’est pas réutilisé. Si les champs du terminal sont incomplets, Foody lit les détails disponibles sur le reçu Ashrait portant la même référence. Une information manquante ou contradictoire reste « Non confirmé ». Comparez la référence à celle de la vente dans Transactions ; ne relancez pas un paiement sur la seule base de cet écran.\n\nLorsqu’un paiement carte est en attente dans Foody, le responsable peut consulter le terminal d’origine s’il est connecté, identifié et disponible. L’écran affiche la dernière transaction connue de ce terminal. Faites confirmer le résultat de la tentative d’origine si cette lecture est vide ou concerne une autre vente. Après avoir résolu la tentative, les copies sont proposées selon les données disponibles.",
+            "en": "In the compatible version, open More → Settings → Hardware → Payment terminals. On iPad, inspection concerns the currently active paired terminal; on a Victa Portable recognized in the inventory, it concerns that device. The terminal must already be connected. With permission to manage payments, open Last terminal transaction and press Read last transaction. Opening the dialog does not send a query. Inspection shows only the reference, type, reported result and amount when available. A preauthorization stays distinct from a purchase; no payment or check is changed. No receipt or card details are displayed. An empty response, including after restart, does not prove that no payment occurred. For a pending payment or deposit, return to its original verification flow: inspection clears no lock and replays no operation. After changing account, restaurant, permission or terminal, read again; the old result is not reused. If the terminal fields are incomplete, Foody reads available details from the Ashrait receipt with the same reference. Missing or conflicting information stays Unconfirmed. Compare the reference with the sale in Transactions. Do not retry a payment based on this view alone.\n\nWhen Foody has a pending card payment, a manager can inspect the original terminal if it is connected, identified and ready. The screen shows that terminal’s latest known transaction. Have the original attempt verified if the result is empty or concerns a different sale. Once the attempt is resolved, available copies can be requested.",
+            "he": "בגרסה התואמת פתחו עוד ← הגדרות ← חומרה ← מסופי תשלום. ב-iPad הבירור מתייחס למסוף המשויך הפעיל כרגע; ב-Victa Portable המזוהה במלאי המכשירים הוא מתייחס לאותו מכשיר. המסוף צריך להיות מחובר מראש. עם הרשאה לניהול תשלומים פתחו העסקה האחרונה במסוף ולחצו הצגת העסקה האחרונה. פתיחת החלון אינה שולחת שאילתה. מוצגים רק האסמכתה, הסוג, התוצאה שדווחה והסכום, כאשר הם זמינים. אישור מוקדם נפרד מרכישה; אין שינוי בתשלום או בחשבון. אין הצגה של קבלה או פרטי כרטיס. תשובה ריקה, לרבות לאחר אתחול, אינה מוכיחה שלא בוצע תשלום. לבירור תשלום או הפקדה ממתינים חזרו לתהליך הבדיקה המקורי: הצפייה אינה מסירה חסימה ואינה חוזרת על פעולה. אחרי שינוי חשבון, מסעדה, הרשאה או מסוף יש לבצע קריאה חדשה; אין שימוש חוזר בתוצאה הישנה. אם פרטי העסקה חלקיים, Foody משלימה את המידע הזמין מהשובר של Ashrait עם אותה אסמכתה. מידע חסר או סותר נשאר לא מאומת. השוו את האסמכתה לעסקה במסך עסקאות. אל תחזרו על תשלום רק על סמך מסך זה.\n\nכאשר תשלום בכרטיס ממתין לאישור ב־Foody, מנהל יכול לבדוק את המסוף המקורי אם הוא מחובר, מזוהה ומוכן. המסך מציג את העסקה האחרונה הידועה של המסוף. אם התוצאה ריקה או שייכת למכירה אחרת, בקשו לאמת את תוצאת הניסיון המקורי. לאחר סיום הבירור ניתן לבקש עותקים בהתאם למידע הזמין."
           }
         },
         {
@@ -56245,6 +56247,10 @@
         {
           "service": "foodypos",
           "file": "android/app/src/main/kotlin/com/foodypos/app/VerifonePrinterBridge.kt"
+        },
+        {
+          "service": "foodypos",
+          "file": "ios/Runner/AshraitProtocol.h"
         },
         {
           "service": "foodypos",

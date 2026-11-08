@@ -5,7 +5,7 @@ apps: foodypos
 tags:
   - payments
   - pos-ashrait-terminal-inspection
-updatedAt: '2026-11-05'
+updatedAt: '2026-11-08'
 featureId: pos-ashrait-terminal-inspection
 audience: public
 releaseStatus: available
@@ -16,7 +16,7 @@ POS → More → Settings → Hardware → Payment terminals
 
 ## Inspect the last terminal transaction
 
-In the compatible version, open More → Settings → Hardware → Payment terminals. On iPad, inspection concerns the currently active paired terminal; on a Victa Portable recognized in the inventory, it concerns that device. The terminal must already be connected. With permission to manage payments, open Last terminal transaction and press Read last transaction. Opening the dialog does not send a query. Inspection shows only the reference, type, reported result and amount when available. A preauthorization stays distinct from a purchase; no payment or check is changed. No receipt or card details are displayed. An empty response, including after restart, does not prove that no payment occurred. For a pending payment or deposit, return to its original verification flow: inspection clears no lock and replays no operation. After changing account, restaurant, permission or terminal, read again; the old result is not reused. When the type or amount is missing, the SDK result remains unconfirmed. Compare the reference with the sale in Transactions. Do not retry a payment based on this view alone.
+In the compatible version, open More → Settings → Hardware → Payment terminals. On iPad, inspection concerns the currently active paired terminal; on a Victa Portable recognized in the inventory, it concerns that device. The terminal must already be connected. With permission to manage payments, open Last terminal transaction and press Read last transaction. Opening the dialog does not send a query. Inspection shows only the reference, type, reported result and amount when available. A preauthorization stays distinct from a purchase; no payment or check is changed. No receipt or card details are displayed. An empty response, including after restart, does not prove that no payment occurred. For a pending payment or deposit, return to its original verification flow: inspection clears no lock and replays no operation. After changing account, restaurant, permission or terminal, read again; the old result is not reused. If the terminal fields are incomplete, Foody reads available details from the Ashrait receipt with the same reference. Missing or conflicting information stays Unconfirmed. Compare the reference with the sale in Transactions. Do not retry a payment based on this view alone.
 
 When Foody has a pending card payment, a manager can inspect the original terminal if it is connected, identified and ready. The screen shows that terminal’s latest known transaction. Have the original attempt verified if the result is empty or concerns a different sale. Once the attempt is resolved, available copies can be requested.
 
