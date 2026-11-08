@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-11-04'
+updatedAt: '2026-11-08'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -223,6 +223,12 @@ Le champ lifecycle v1 est conservé. La capacité order_lifecycle_v2 annonce lif
 ## Publier le contrat EOD avant le POS
 
 Le contrat end-of-day v1 et la migration additive 285 introduisent begin, current, lecture par ID, terminal-result et finalize sous /orders/end-of-day. Les écritures conservent leurs UUID et vérifient restaurant, acteur, autorisation physique et installation. La capacité end_of_day est une déclaration de support, sans permission de paiement. La transaction serveur réserve le comptage et les identités de terminal ; elle ne contacte aucun prestataire. Dispatched précède l’appel natif et un résultat inconnu ne redevient pas une autorisation de transmettre. Une confirmation durable peut être réenregistrée avec la même identité. Finalize crée le rapport opérationnel immuable et ferme la caisse réservée atomiquement, sans pointage ni clôture commerciale. Publier l’API avant le POS, valider en développement puis promouvoir les mêmes artefacts. Les callbacks Ashrait actuels ne justifient aucun total, numéro de lot ni certificat fiscal inventé. Conserver les anciens journaux et les vérifications de droits et de provenance. Voir docs/contracts/end-of-day-v1.json et le guide public payments/end-of-day.
+
+<span id="end-of-day-shva-counts" />
+
+## Vérifier les compteurs SHVA dans le Z
+
+Déployez l’API qui annonce end_of_day_ashrait_counts, puis relancez le POS compatible. Après un dépôt Ashrait CST confirmé, comparez les nombres de débits et de crédits avec le rapport du terminal. Finalisez et rouvrez le Z dans Historique de caisse. Il conserve les deux compteurs, y compris un zéro transmis. Un Z antérieur conserve les données enregistrées lors de sa clôture. Pour vérifier la copie papier, utilisez Réimprimer le rapport SHVA sur le POS d’origine et comparez la référence et les totaux.
 
 <span id="ordering-simulation-clock" />
 
