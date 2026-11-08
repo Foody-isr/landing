@@ -8847,7 +8847,8 @@
         "lib/preview/editorInteractions.ts",
         "app/globals.css",
         "lib/i18n.tsx",
-        "lib/websiteFeaturedItems.ts"
+        "lib/websiteFeaturedItems.ts",
+        "components/ItemModal.tsx"
       ],
       "foodyserver": [
         "internal/support/corpus.json"
@@ -8914,9 +8915,22 @@
           "he": "פתיחת הקרוסלה בנגן Web Stories"
         },
         "instructions": {
-          "en": "In the video carousel appearance, turn on Use the Web Stories player. In preview, open a portrait card. Swipe sideways on a phone or use the arrows to browse the stories. The progress bar tracks the current video and the player advances when it ends. Use the controls to pause, mute or close the player. An active item linked using its Foody order link shows its catalogue name, price and photo when available. Check that the order button opens the item's options before publishing. If the setting is disabled, update the public website renderer first.",
-          "fr": "Dans l’apparence du carrousel vidéo, activez Utiliser le lecteur Web Stories. En aperçu, ouvrez une carte verticale. Faites glisser la vidéo sur le côté sur mobile ou utilisez les flèches pour parcourir les stories. La barre indique l’avancement et le lecteur passe à la vidéo suivante à la fin. Les commandes permettent de faire une pause, de couper le son ou de fermer le lecteur. Un article actif associé avec son lien de commande Foody affiche son nom, son prix et sa photo si elle existe. Vérifiez que le bouton de commande ouvre les options de l’article avant de publier. Si le réglage est indisponible, mettez d’abord le site public à jour.",
-          "he": "במראה של קרוסלת הסרטונים הפעילו שימוש בנגן Web Stories. בתצוגה המקדימה פתחו כרטיס אנכי. החליקו הצידה בנייד או השתמשו בחצים כדי לעבור בין הסרטונים. הפס מציג את ההתקדמות, ובסוף הסרטון הנגן עובר לסרטון הבא. השתמשו בפקדים כדי להשהות, להשתיק או לסגור את הנגן. קישור הזמנה של Foody לפריט פעיל מציג את שמו, מחירו ותמונתו אם היא קיימת. לפני הפרסום ודאו שכפתור ההזמנה פותח את אפשרויות הפריט. אם ההגדרה אינה זמינה, עדכנו תחילה את האתר הציבורי."
+          "en": "In the video carousel appearance, turn on Use the Web Stories player. In preview, open a portrait card. Swipe sideways on a phone or use the arrows to browse the stories. The progress bar tracks the current video and the player advances when it ends. Use the controls to pause, mute or close the player. If the setting is disabled, update the public website renderer first.",
+          "fr": "Dans l’apparence du carrousel vidéo, activez Utiliser le lecteur Web Stories. En aperçu, ouvrez une carte verticale. Faites glisser la vidéo sur le côté sur mobile ou utilisez les flèches pour parcourir les stories. La barre indique l’avancement et le lecteur passe à la vidéo suivante à la fin. Les commandes permettent de faire une pause, de couper le son ou de fermer le lecteur. Si le réglage est indisponible, mettez d’abord le site public à jour.",
+          "he": "במראה של קרוסלת הסרטונים הפעילו שימוש בנגן Web Stories. בתצוגה המקדימה פתחו כרטיס אנכי. החליקו הצידה בנייד או השתמשו בחצים כדי לעבור בין הסרטונים. הפס מציג את ההתקדמות, ובסוף הסרטון הנגן עובר לסרטון הבא. השתמשו בפקדים כדי להשהות, להשתיק או לסגור את הנגן. אם ההגדרה אינה זמינה, עדכנו תחילה את האתר הציבורי."
+        }
+      },
+      {
+        "id": "web-story-cart",
+        "title": {
+          "en": "Add items to the cart from a Web Story",
+          "fr": "Ajouter un article au panier depuis une Web Story",
+          "he": "הוספת פריט לעגלה מתוך Web Story"
+        },
+        "instructions": {
+          "en": "In Video cards, paste the item's shared Foody order link and enable Use the Web Stories player. The published player shows the catalogue name and available photo and price. Add to cart adds one simple item and keeps the story open. Choose options opens a panel over the video with quantities, sizes and required choices from the item. The video pauses until the panel closes. Confirm Add to cart in the panel. Check the choices in editor preview and verify the cart action on the published site. Combo items use the ordering page. An unavailable item cannot be added. The original Instagram link is only used by the standard carousel player.",
+          "fr": "Dans Vidéos du carrousel, collez le lien de partage de la fiche de commande Foody de l’article et activez Utiliser le lecteur Web Stories. Le lecteur publié affiche le nom de l’article, ainsi que son prix et sa photo quand ils sont disponibles. Ajouter au panier ajoute un article simple et garde la story ouverte. Choisir les options ouvre un panneau sur la vidéo avec la quantité, les formats et les choix obligatoires de l’article. La vidéo se met en pause jusqu’à la fermeture du panneau. Confirmez avec Ajouter au panier dans le panneau. Vérifiez les choix en aperçu et testez l’ajout sur le site publié. Les formules passent par la page de commande. Un article indisponible ne peut pas être ajouté. Le lien Instagram d’origine sert uniquement au lecteur de carrousel standard.",
+          "he": "בכרטיסי הסרטונים הדביקו את קישור השיתוף של דף ההזמנה לפריט ב-Foody והפעילו שימוש בנגן Web Stories. בנגן באתר מופיעים שם הפריט ותמונתו ומחירו כשהם זמינים. הוספה לעגלה מוסיפה יחידה מפריט פשוט והסטורי נשאר פתוח. בחירת אפשרויות פותחת חלונית מעל הסרטון עם הכמות, הגדלים ובחירות החובה. הסרטון מושהה עד לסגירת החלונית. אשרו הוספה לעגלה בחלונית. בדקו את הבחירות בתצוגה המקדימה ובדקו את ההוספה באתר שפורסם. ארוחות משולבות עוברות לדף ההזמנה. פריט שאינו זמין לא ניתן להוסיף. הקישור המקורי לאינסטגרם משמש רק בנגן הקרוסלה הרגיל."
         }
       },
       {
