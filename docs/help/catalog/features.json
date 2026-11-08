@@ -8847,7 +8847,8 @@
         "lib/preview/editorInteractions.ts",
         "app/globals.css",
         "lib/i18n.tsx",
-        "lib/websiteFeaturedItems.ts"
+        "lib/websiteFeaturedItems.ts",
+        "components/ItemModal.tsx"
       ],
       "foodyserver": [
         "internal/support/corpus.json"
@@ -8914,9 +8915,22 @@
           "he": "פתיחת הקרוסלה בנגן Web Stories"
         },
         "instructions": {
-          "en": "In the video carousel appearance, turn on Use the Web Stories player. In preview, open a portrait card. Swipe sideways on a phone or use the arrows to browse the stories. The progress bar tracks the current video and the player advances when it ends. Use the controls to pause, mute or close the player. An active item linked using its Foody order link shows its catalogue name, price and photo when available. Check that the order button opens the item's options before publishing. If the setting is disabled, update the public website renderer first.",
-          "fr": "Dans l’apparence du carrousel vidéo, activez Utiliser le lecteur Web Stories. En aperçu, ouvrez une carte verticale. Faites glisser la vidéo sur le côté sur mobile ou utilisez les flèches pour parcourir les stories. La barre indique l’avancement et le lecteur passe à la vidéo suivante à la fin. Les commandes permettent de faire une pause, de couper le son ou de fermer le lecteur. Un article actif associé avec son lien de commande Foody affiche son nom, son prix et sa photo si elle existe. Vérifiez que le bouton de commande ouvre les options de l’article avant de publier. Si le réglage est indisponible, mettez d’abord le site public à jour.",
-          "he": "במראה של קרוסלת הסרטונים הפעילו שימוש בנגן Web Stories. בתצוגה המקדימה פתחו כרטיס אנכי. החליקו הצידה בנייד או השתמשו בחצים כדי לעבור בין הסרטונים. הפס מציג את ההתקדמות, ובסוף הסרטון הנגן עובר לסרטון הבא. השתמשו בפקדים כדי להשהות, להשתיק או לסגור את הנגן. קישור הזמנה של Foody לפריט פעיל מציג את שמו, מחירו ותמונתו אם היא קיימת. לפני הפרסום ודאו שכפתור ההזמנה פותח את אפשרויות הפריט. אם ההגדרה אינה זמינה, עדכנו תחילה את האתר הציבורי."
+          "en": "In the video carousel appearance, turn on Use the Web Stories player. In preview, open a portrait card. Swipe sideways on a phone or use the arrows to browse the stories. The progress bar tracks the current video and the player advances when it ends. Use the controls to pause, mute or close the player. If the setting is disabled, update the public website renderer first.",
+          "fr": "Dans l’apparence du carrousel vidéo, activez Utiliser le lecteur Web Stories. En aperçu, ouvrez une carte verticale. Faites glisser la vidéo sur le côté sur mobile ou utilisez les flèches pour parcourir les stories. La barre indique l’avancement et le lecteur passe à la vidéo suivante à la fin. Les commandes permettent de faire une pause, de couper le son ou de fermer le lecteur. Si le réglage est indisponible, mettez d’abord le site public à jour.",
+          "he": "במראה של קרוסלת הסרטונים הפעילו שימוש בנגן Web Stories. בתצוגה המקדימה פתחו כרטיס אנכי. החליקו הצידה בנייד או השתמשו בחצים כדי לעבור בין הסרטונים. הפס מציג את ההתקדמות, ובסוף הסרטון הנגן עובר לסרטון הבא. השתמשו בפקדים כדי להשהות, להשתיק או לסגור את הנגן. אם ההגדרה אינה זמינה, עדכנו תחילה את האתר הציבורי."
+        }
+      },
+      {
+        "id": "web-story-cart",
+        "title": {
+          "en": "Add items to the cart from a Web Story",
+          "fr": "Ajouter un article au panier depuis une Web Story",
+          "he": "הוספת פריט לעגלה מתוך Web Story"
+        },
+        "instructions": {
+          "en": "In Video cards, paste the item's shared Foody order link and enable Use the Web Stories player. The published player shows the catalogue name and available photo and price. Add to cart adds one simple item and keeps the story open. Choose options opens a panel over the video with quantities, sizes and required choices from the item. The video pauses until the panel closes. Confirm Add to cart in the panel. Check the choices in editor preview and verify the cart action on the published site. Combo items use the ordering page. An unavailable item cannot be added. The original Instagram link is only used by the standard carousel player.",
+          "fr": "Dans Vidéos du carrousel, collez le lien de partage de la fiche de commande Foody de l’article et activez Utiliser le lecteur Web Stories. Le lecteur publié affiche le nom de l’article, ainsi que son prix et sa photo quand ils sont disponibles. Ajouter au panier ajoute un article simple et garde la story ouverte. Choisir les options ouvre un panneau sur la vidéo avec la quantité, les formats et les choix obligatoires de l’article. La vidéo se met en pause jusqu’à la fermeture du panneau. Confirmez avec Ajouter au panier dans le panneau. Vérifiez les choix en aperçu et testez l’ajout sur le site publié. Les formules passent par la page de commande. Un article indisponible ne peut pas être ajouté. Le lien Instagram d’origine sert uniquement au lecteur de carrousel standard.",
+          "he": "בכרטיסי הסרטונים הדביקו את קישור השיתוף של דף ההזמנה לפריט ב-Foody והפעילו שימוש בנגן Web Stories. בנגן באתר מופיעים שם הפריט ותמונתו ומחירו כשהם זמינים. הוספה לעגלה מוסיפה יחידה מפריט פשוט והסטורי נשאר פתוח. בחירת אפשרויות פותחת חלונית מעל הסרטון עם הכמות, הגדלים ובחירות החובה. הסרטון מושהה עד לסגירת החלונית. אשרו הוספה לעגלה בחלונית. בדקו את הבחירות בתצוגה המקדימה ובדקו את ההוספה באתר שפורסם. ארוחות משולבות עוברות לדף ההזמנה. פריט שאינו זמין לא ניתן להוסיף. הקישור המקורי לאינסטגרם משמש רק בנגן הקרוסלה הרגיל."
         }
       },
       {
@@ -9052,13 +9066,30 @@
         "lib/websiteOrderColors.ts",
         "components/ItemModal.tsx",
         "components/ShareButton.tsx",
-        "lib/websiteOrder.ts"
+        "lib/websiteOrder.ts",
+        "components/OrderDetailsModal.tsx",
+        "lib/useWebsitePanelAnchor.ts",
+        "components/WebsiteOrderEntry.tsx",
+        "components/WebsitePickupBranches.tsx"
       ],
       "foodyserver": [
         "internal/support/corpus.json"
       ]
     },
     "operations": [
+      {
+        "id": "service-before-menu",
+        "title": {
+          "en": "Choose the order mode before the menu",
+          "fr": "Faire choisir le mode avant la carte",
+          "he": "בחירת אופן ההזמנה לפני התפריט"
+        },
+        "instructions": {
+          "en": "1. In Website, select the order page, then Fulfillment. Turn on Choose the order mode before the menu. This applies to that page when pickup and delivery are both enabled and can be selected before checkout. A page used as the homepage opens directly on the two choices. Leave the option off to keep the existing entry flow.\n2. Independently choose Compact time and location panels and Show a reminder for scheduled orders. On desktop the controls open beside the time or location. On mobile the panels fit the screen. Select a date and an available time, or choose an address or pickup location where applicable. The reminder shows the confirmed scheduled date and returns when the slot changes.\n3. With a shared header, use Order page header actions to move search, store info or language into the main menu, or hide the cart icon. The order button is available after adding an item. For larger images, use Item list → Layout and colors → Photo gallery. Mobile can use a separate group carousel. In Item images, the round plus opens the product details.\n4. In interactive Preview, choose a service and confirm it. From the menu use Back to order options to switch services. Verify pickup, delivery address coverage and scheduled ordering on desktop and mobile, then publish the page.",
+          "fr": "1. Dans Site web, sélectionnez la page de commande puis Mode de commande. Activez Choisir le mode avant la carte. L’option concerne cette page lorsque le retrait et la livraison sont activés et que le choix est permis avant le paiement. Si la page sert d’accueil, le client arrive directement sur les deux choix. Laissez l’option désactivée pour garder le parcours existant.\n2. Activez séparément Panneaux compacts pour l’horaire et le lieu et Afficher un rappel pour les commandes planifiées. Sur ordinateur, le panneau s’ouvre près du bouton. Sur mobile, il s’adapte à l’écran. Choisissez la date et un créneau disponible, ou l’adresse ou le point de retrait selon le cas. Le rappel affiche la date planifiée et réapparaît si le créneau change.\n3. Avec un en-tête partagé, ouvrez Actions dans l’en-tête de commande pour déplacer recherche, infos pratiques ou langue dans le menu principal, ou masquer l’icône du panier. Le bouton de commande est disponible après un ajout. Pour agrandir les photos, choisissez Liste des articles → Disposition et couleurs → Galerie photo. Le mobile peut afficher un carrousel par groupe. Dans Images des articles, le plus rond ouvre la fiche produit.\n4. En aperçu interactif, choisissez un service et confirmez. Depuis la carte, utilisez Retour au choix du mode pour changer. Vérifiez retrait, zone de livraison et commande planifiée sur ordinateur et mobile avant de publier.",
+          "he": "1. באתר בחרו את דף ההזמנה ופתחו אפשרויות הזמנה. הפעילו בחירת אופן ההזמנה לפני הצגת התפריט. ההגדרה חלה על הדף הזה כאשר איסוף ומשלוח פעילים וזמינים לבחירה לפני התשלום. אם הדף הוא דף הבית, הוא נפתח בשתי האפשרויות. השאירו את ההגדרה כבויה כדי להמשיך במסלול הקיים.\n2. אפשר להפעיל בנפרד חלוניות קומפקטיות לבחירת שעה ומיקום ותזכורת להזמנות מתוזמנות. במחשב החלונית נפתחת ליד הכפתור ובנייד היא מותאמת למסך. בחרו תאריך ושעה זמינה, כתובת או נקודת איסוף לפי הצורך. התזכורת מציגה את המועד שנבחר ומופיעה מחדש לאחר שינוי המועד.\n3. בכותרת משותפת, פתחו פעולות בכותרת עמוד ההזמנה כדי להעביר את החיפוש, פרטי המסעדה או השפה לתפריט הראשי, או להסתיר את סמל הסל. כפתור ההזמנה זמין אחרי הוספת פריט. תחת רשימת פריטים, פריסה וצבעים אפשר לבחור גלריית תמונות וקרוסלה נפרדת לנייד. כפתור הפלוס העגול פותח את פרטי הפריט.\n4. בתצוגה המקדימה בחרו ואשרו שירות. מהתפריט חזרו לבחירת אופן ההזמנה כדי לשנות. בדקו איסוף, אזור משלוח והזמנה מראש במחשב ובנייד לפני הפרסום."
+        }
+      },
       {
         "id": "menu-layout",
         "title": {
@@ -9154,7 +9185,7 @@
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-29"
+    "procedureUpdatedAt": "2026-11-08"
   },
   {
     "id": "website-journey",
@@ -9205,9 +9236,9 @@
           "he": "בדיקת סיום הזמנה ואישור"
         },
         "instructions": {
-          "en": "Select checkout then confirmation, adjust available colors and text, and inspect mobile readability. Required customer, fulfillment and payment fields come from restaurant policy. A preview does not place an order or verify a live payment connection. When the checkout calendar is shown, use the month menu to jump to another month, pick an available day and choose its time.",
-          "fr": "Sélectionnez paiement puis confirmation, réglez couleurs et textes proposés, puis vérifiez la lisibilité mobile. Les champs client, remise et paiement obligatoires dépendent des règles du restaurant. Un aperçu ne passe pas de commande et ne vérifie pas une connexion de paiement réelle. Lorsque le calendrier s’affiche au paiement, utilisez le menu des mois pour aller directement à un autre mois, puis choisissez un jour disponible et son horaire.",
-          "he": "בחרו סיום הזמנה ואישור, ערכו צבעים וטקסטים זמינים ובדקו קריאות בנייד. שדות לקוח, מסירה ותשלום מחויבים לפי מדיניות העסק. תצוגה מקדימה אינה יוצרת הזמנה או מאמתת חיבור תשלום. כשלוח השנה מוצג בסיום ההזמנה, אפשר לעבור לחודש אחר בתפריט החודשים, לבחור יום זמין ולבחור שעה."
+          "en": "Select checkout then confirmation, adjust available colors and text, and inspect mobile readability. Required customer, fulfillment and payment fields come from restaurant policy. A preview does not place an order or verify a live payment connection. When the checkout calendar is shown, use the month menu to jump to another month, pick an available day and choose its time. If the order page requires a service choice first, cart and checkout retain the selected service. Return to the menu and use Back to order options to switch.",
+          "fr": "Sélectionnez paiement puis confirmation, réglez couleurs et textes proposés, puis vérifiez la lisibilité mobile. Les champs client, remise et paiement obligatoires dépendent des règles du restaurant. Un aperçu ne passe pas de commande et ne vérifie pas une connexion de paiement réelle. Lorsque le calendrier s’affiche au paiement, utilisez le menu des mois pour aller directement à un autre mois, puis choisissez un jour disponible et son horaire. Si la page impose de choisir le mode avant la carte, le panier et la finalisation gardent ce mode. Revenez à la carte puis choisissez Retour au choix du mode pour le changer.",
+          "he": "בחרו סיום הזמנה ואישור, ערכו צבעים וטקסטים זמינים ובדקו קריאות בנייד. שדות לקוח, מסירה ותשלום מחויבים לפי מדיניות העסק. תצוגה מקדימה אינה יוצרת הזמנה או מאמתת חיבור תשלום. כשלוח השנה מוצג בסיום ההזמנה, אפשר לעבור לחודש אחר בתפריט החודשים, לבחור יום זמין ולבחור שעה. אם דף ההזמנה מחייב בחירת שירות מראש, הסל וסיום ההזמנה שומרים על השירות שנבחר. חזרו לתפריט ואז לבחירת אופן ההזמנה כדי לשנות."
         }
       },
       {
@@ -9266,7 +9297,7 @@
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-27"
+    "procedureUpdatedAt": "2026-11-08"
   },
   {
     "id": "website-commerce-pages",
@@ -13324,12 +13355,25 @@
           "fr": "Dans Coordonnées pour une livraison, remplissez les champs marqués d’un astérisque. Vous pouvez laisser les champs facultatifs vides. Selon le restaurant, l’étage, l’appartement, le code immeuble et les notes de livraison sont visibles avant le choix de la ville. Si les suggestions d’adresse sont activées, choisissez une adresse complète dans la liste. Si le formulaire vous renvoie à un champ, complétez-le ou corrigez-le, puis réessayez. Ces informations de livraison ne sont pas demandées pour un retrait.",
           "he": "בפרטי הקשר למשלוח מלאו את השדות המסומנים בכוכבית. אפשר להשאיר שדות רשות ריקים. בהתאם להגדרות העסק, שדות הקומה, הדירה, קוד הכניסה והערות המשלוח מוצגים עוד לפני בחירת העיר. אם הצעות כתובת פעילות, בחרו כתובת מלאה מהרשימה. אם הטופס מחזיר אתכם לשדה מסוים, מלאו או תקנו אותו ונסו שוב. פרטי משלוח אינם נדרשים באיסוף."
         }
+      },
+      {
+        "id": "service-first",
+        "title": {
+          "en": "Change pickup or delivery when the store asks first",
+          "fr": "Changer de mode quand la boutique demande de choisir d’abord",
+          "he": "שינוי איסוף או משלוח כשהחנות מבקשת לבחור תחילה"
+        },
+        "instructions": {
+          "en": "Choose pickup or delivery and confirm the required details before browsing. You can edit the time or address for that service. To switch, return to the menu and select Back to order options. Review the available times, fees and items for the new service before ordering.",
+          "fr": "Choisissez retrait ou livraison et confirmez les détails requis avant de parcourir la carte. Vous pouvez modifier l’horaire ou l’adresse de ce service. Pour changer de mode, revenez à la carte et utilisez Retour au choix du mode. Vérifiez les créneaux, les frais et les articles du nouveau mode avant de commander.",
+          "he": "בחרו איסוף או משלוח ואשרו את הפרטים הנדרשים לפני הצגת התפריט. אפשר לערוך את השעה או הכתובת באותו שירות. כדי לשנות שירות חזרו לתפריט ולבחירת אופן ההזמנה. בדקו מחדש את הזמנים, דמי המשלוח והפריטים לפני ההזמנה."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-11-04"
+    "procedureUpdatedAt": "2026-11-08"
   },
   {
     "id": "guest-account-tracking",
