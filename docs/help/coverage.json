@@ -167,6 +167,26 @@
       }
     },
     {
+      "id": "foody-billing-sandbox",
+      "article": "internal/foody-billing-sandbox",
+      "audience": "internal",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/billing/PrivateBilling.tsx"
+        ],
+        "foodybackoffice": [
+          "src/app/dashboard/foody-billing/**",
+          "src/components/FoodyPrivateOffer.tsx"
+        ],
+        "foodyserver": [
+          "internal/subscription/foody_billing*.go",
+          "internal/payment/verifone_foody_billing.go",
+          "internal/common/observed_usage.go",
+          "migrations/292_foody_billing_sandbox.sql"
+        ]
+      }
+    },
+    {
       "id": "analytics-dashboard",
       "article": "analytics/dashboard",
       "audience": "public",

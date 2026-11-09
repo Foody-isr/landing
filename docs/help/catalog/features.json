@@ -908,6 +908,117 @@
     "preserveExisting": false
   },
   {
+    "id": "foody-billing-sandbox",
+    "module": "account",
+    "article": "internal/foody-billing-sandbox",
+    "title": {
+      "en": "Foody software billing pilot",
+      "fr": "Pilote de facturation Foody",
+      "he": "פיילוט חיוב תוכנת Foody"
+    },
+    "entry": {
+      "en": "Development Backoffice → Foody billing · sandbox; restaurant Admin → Account → Billing.",
+      "fr": "Backoffice de développement → Foody billing · sandbox ; Admin du restaurant → Compte → Facturation.",
+      "he": "משרד אחורי בסביבת הפיתוח ← Foody billing · sandbox; ניהול המסעדה ← חשבון ← חיוב."
+    },
+    "access": {
+      "en": "This procedure is for a coordinated sandbox test. A Foody superadmin configures the merchant and publishes the offer. Only a current owner of that restaurant can accept it or start a checkout. Sandbox transactions do not alter operating access or issue fiscal documents.",
+      "fr": "Cette procédure concerne un test coordonné en sandbox. Un superadmin Foody configure le marchand et publie l’offre. Seul un propriétaire actuel du restaurant peut l’accepter et lancer le paiement. Les transactions de test ne modifient pas l’accès opérationnel et n’émettent aucun document fiscal.",
+      "he": "הנוהל מיועד לבדיקה מתואמת בסביבת הבדיקות. מנהל על של Foody מגדיר את בית העסק ומפרסם את ההצעה. רק בעלים נוכחי של המסעדה יכול לאשר אותה ולהתחיל תשלום. תשלומי בדיקה אינם משנים גישה תפעולית ואינם מפיקים מסמך מס."
+    },
+    "selectors": {
+      "foodyadmin": [
+        "src/app/[restaurantId]/billing/PrivateBilling.tsx"
+      ],
+      "foodybackoffice": [
+        "src/app/dashboard/foody-billing/**",
+        "src/components/FoodyPrivateOffer.tsx"
+      ],
+      "foodyserver": [
+        "internal/subscription/foody_billing*.go",
+        "internal/payment/verifone_foody_billing.go",
+        "internal/common/observed_usage.go",
+        "migrations/292_foody_billing_sandbox.sql"
+      ]
+    },
+    "operations": [
+      {
+        "id": "merchant",
+        "title": {
+          "en": "Configure Foody’s own Verifone merchant",
+          "fr": "Configurer le marchand Verifone de Foody",
+          "he": "הגדרת בית העסק של Foody ב־Verifone"
+        },
+        "instructions": {
+          "en": "In the development Backoffice open **Foody billing · sandbox**. Enter the sandbox user ID, API key, Foody entity ID and hosted Checkout contract. For monthly tests, also enter the No-CVV recurring contract and token scope, then enable monthly enrollment after Verifone confirms the contract. Enable sandbox payments and save. Saved credentials stay hidden; an empty field preserves its value.",
+          "fr": "Dans le Backoffice de développement, ouvrez **Foody billing · sandbox**. Saisissez l’identifiant utilisateur sandbox, la clé API, l’identifiant de l’entité Foody et le contrat Checkout hébergé. Pour tester le mensuel, ajoutez le contrat récurrent sans CVV et le périmètre de token, puis activez le mensuel après confirmation de Verifone. Activez les paiements de test et enregistrez. Les identifiants restent masqués ; un champ vide conserve la valeur enregistrée.",
+          "he": "במשרד האחורי בסביבת הפיתוח פתחו **Foody billing · sandbox**. הזינו מזהה משתמש, מפתח API, מזהה הישות של Foody וחוזה Checkout לסביבת הבדיקות. לבדיקה חודשית הזינו גם חוזה חיוב חוזר ללא CVV ותחום אסימון, והפעילו חיוב חודשי לאחר אישור מ־Verifone. הפעילו תשלומי בדיקה ושמרו. פרטים שמורים מוסתרים; שדה ריק משאיר את הערך הקיים."
+        }
+      },
+      {
+        "id": "offer",
+        "title": {
+          "en": "Publish or revise a private offer",
+          "fr": "Publier ou modifier une offre privée",
+          "he": "פרסום או עדכון הצעה פרטית"
+        },
+        "instructions": {
+          "en": "Open **Restaurants → selected restaurant → Billing → Foody private offer**. Enter the modules and licences, terms, monthly and annual ILS amounts, agreed VAT treatment and first payment date. Publish, then open the owner billing page. To edit, change the fields and publish a new version. An open checkout keeps its original price; a new offer needs owner consent for the next period.",
+          "fr": "Ouvrez **Restaurants → restaurant choisi → Billing → Foody private offer**. Indiquez les modules et licences, les conditions, les montants mensuel et annuel en ₪, la convention de TVA et la date du premier paiement. Publiez, puis ouvrez la page de facturation du propriétaire. Pour modifier l’offre, éditez les champs et publiez une nouvelle version. Un paiement déjà ouvert garde son prix initial ; la nouvelle offre exige l’accord du propriétaire pour la prochaine période.",
+          "he": "פתחו **Restaurants ← המסעדה הנבחרת ← Billing ← Foody private offer**. הזינו מודולים ורישיונות, תנאים, סכומים חודשיים ושנתיים בשקלים, אופן חישוב המע״מ ותאריך התשלום הראשון. פרסמו ופתחו את דף החיוב של הבעלים. לשינוי ערכו את השדות ופרסמו גרסה חדשה. תשלום שכבר נפתח שומר על המחיר המקורי; להצעה החדשה נדרש אישור הבעלים לתקופה הבאה."
+        }
+      },
+      {
+        "id": "pay",
+        "title": {
+          "en": "Pay and verify in sandbox",
+          "fr": "Payer et vérifier en sandbox",
+          "he": "תשלום ואימות בסביבת הבדיקות"
+        },
+        "instructions": {
+          "en": "Sign in as the restaurant owner and open **Account → Billing**. Check the total including VAT, select monthly or annual, and accept the offer. For monthly, also authorize future test debits. Continue to Verifone using its test card details. After returning, wait for confirmation or use **Verify payment status**. Annual renewal requires another checkout. To stop future monthly debits, choose **Stop automatic renewal** and confirm.",
+          "fr": "Connectez-vous comme propriétaire et ouvrez **Compte → Facturation**. Vérifiez le total TTC, choisissez mensuel ou annuel, puis acceptez l’offre. Pour le mensuel, autorisez aussi les futurs débits de test. Continuez vers Verifone avec ses données de carte de test. Au retour, attendez la confirmation ou utilisez **Vérifier le statut du paiement**. Le renouvellement annuel demande un nouveau paiement. Pour arrêter les prochains débits mensuels, choisissez **Arrêter le renouvellement automatique** et confirmez.",
+          "he": "היכנסו כבעלים ופתחו **חשבון ← חיוב**. בדקו את הסכום כולל מע״מ, בחרו חודשי או שנתי ואשרו את ההצעה. במסלול החודשי אשרו גם חיובי בדיקה עתידיים. המשיכו ל־Verifone עם פרטי כרטיס הבדיקה שלה. בחזרה המתינו לאישור או בחרו **אימות סטטוס התשלום**. חידוש שנתי מצריך תשלום חדש. לעצירת חיובים חודשיים עתידיים בחרו **הפסקת החידוש האוטומטי** ואשרו."
+        }
+      },
+      {
+        "id": "renewal",
+        "title": {
+          "en": "Test the first monthly renewal",
+          "fr": "Tester le premier renouvellement mensuel",
+          "he": "בדיקת החידוש החודשי הראשון"
+        },
+        "instructions": {
+          "en": "After a confirmed monthly test payment, return to **Foody private offer** in the development Backoffice and choose **Test first monthly renewal**. Confirm to send the next authorized monthly test debit to Verifone. A confirmed renewal covers the next period. Foody allows this test once per mandate, without waiting for the due date. If the result is uncertain, verify the current payment before taking another action.",
+          "fr": "Après confirmation du premier paiement mensuel de test, revenez à **Foody private offer** dans le Backoffice de développement et choisissez **Test first monthly renewal**. Confirmez pour envoyer le prochain débit mensuel autorisé à Verifone. Un renouvellement confirmé couvre la période suivante. Ce test est possible une fois par mandat, sans attendre l’échéance. Si le résultat est incertain, vérifiez le paiement en cours avant toute autre action.",
+          "he": "לאחר אימות תשלום הבדיקה החודשי הראשון, חזרו אל **Foody private offer** במשרד האחורי בסביבת הפיתוח ובחרו **Test first monthly renewal**. אשרו כדי לשלוח את חיוב הבדיקה החודשי הבא שאושר ל־Verifone. חידוש שאומת מכסה את התקופה הבאה. הבדיקה אפשרית פעם אחת לכל הרשאה, ללא המתנה למועד החיוב. אם התוצאה אינה ודאית, אמתו את התשלום הנוכחי לפני פעולה נוספת."
+        }
+      },
+      {
+        "id": "measure",
+        "title": {
+          "en": "Read observed usage",
+          "fr": "Lire l’usage mesuré",
+          "he": "קריאת נתוני שימוש"
+        },
+        "instructions": {
+          "en": "Open the observed usage section in Billing. It shows selected monthly UTC counters for Maps and Geoapify, SMS verification requests, WhatsApp order messages and supported OpenAI and Claude activity. The counters are partial and create no charge.",
+          "fr": "Ouvrez la section d’usage mesuré dans Facturation. Elle affiche certains compteurs du mois UTC pour Maps et Geoapify, les demandes de vérification SMS, les messages WhatsApp de commande et les usages OpenAI et Claude suivis. Les compteurs sont partiels et ne déclenchent aucun débit.",
+          "he": "פתחו את סעיף מדידת השימוש בחיוב. הוא מציג מונים נבחרים לפי חודש UTC עבור Maps ו־Geoapify, בקשות אימות ב־SMS, הודעות WhatsApp להזמנות ופעילות OpenAI ו־Claude שנמדדת. הכיסוי חלקי ולא נוצר חיוב."
+        }
+      }
+    ],
+    "recovery": {
+      "en": "Use the displayed reference in Verifone Central if a payment requires review. Backoffice can verify a matching transaction by ID for an uncertain renewal. Verification does not initiate a new charge. A failed or expired attempt can be followed by a new checkout when eligible.",
+      "fr": "Si un paiement est à vérifier, recherchez sa référence dans Verifone Central. Pour un renouvellement incertain, le Backoffice peut vérifier l’identifiant de la transaction correspondante. La vérification ne lance aucun débit. Après un refus ou une expiration confirmés, un nouveau paiement peut être lancé quand l’offre est payable.",
+      "he": "אם תשלום דורש בדיקה, חפשו את האסמכתה המוצגת ב־Verifone Central. בחידוש שתוצאתו אינה ודאית ניתן לאמת את מזהה העסקה המתאימה במשרד האחורי. האימות לא יוצר חיוב. אחרי כשל או תפוגה שאומתו, אפשר להתחיל תשלום חדש כשההצעה זמינה."
+    },
+    "audience": "internal",
+    "status": "local-release-unverified",
+    "procedureUpdatedAt": "2026-11-09",
+    "preserveExisting": false
+  },
+  {
     "id": "analytics-dashboard",
     "module": "analytics",
     "article": "analytics/dashboard",
