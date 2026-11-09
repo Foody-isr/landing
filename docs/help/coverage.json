@@ -2485,6 +2485,39 @@
           "lib/services/printing/ashrait_card_receipt_actions.dart"
         ]
       }
+    },
+    {
+      "id": "customers-loyalty-program",
+      "article": "customers/loyalty-program",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/loyalty/program/page.tsx",
+          "src/components/Sidebar.tsx",
+          "src/components/loyalty/LoyaltyProgramWorkspace.tsx",
+          "src/lib/loyalty-program.ts",
+          "src/lib/i18n.tsx",
+          "src/lib/help/context.ts"
+        ],
+        "foodyserver": [
+          "cmd/server/main.go",
+          "config/config.go",
+          "internal/loyalty/handler.go",
+          "internal/support/corpus.json"
+        ],
+        "foodyweb": [
+          "app/r/[restaurantId]/account/loyalty/page.tsx",
+          "components/LoyaltyCustomerContent.tsx",
+          "components/LoyaltyWalletPanel.tsx",
+          "components/LoyaltyCheckout.tsx",
+          "components/ConfirmationPageClient.tsx",
+          "lib/customer-api-proxy.ts",
+          "lib/loyalty.ts",
+          "lib/server/loyalty-wallet-proxy.ts",
+          "services/api.ts",
+          "components/website-v3/MobileExperience.tsx"
+        ]
+      }
     }
   ]
 }
