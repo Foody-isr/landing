@@ -77,7 +77,10 @@ for (const [service, configuredRoot] of Object.entries(roots)) {
       'src/components/MenuGroupPicker.tsx', 'src/components/menu-item/ItemMenuSaveNotice.tsx',
       'src/lib/item-menu-assignments.ts', 'src/lib/itemDraft.ts',
     ].includes(file);
-    let ids = itemMenuAssignmentModule ? ['menu-categories-and-items', 'menu-creating-a-menu-item', 'menu-menus-and-groups'] : eventModule ? ['orders-events'] : endOfDayModule ? ['pos-end-of-day'] : guardedCash ? ['pos-payments', 'pos-end-of-day'] : cashGuaranteeModule ? ['stancer-cash-guarantee'] : service === 'foodyserver' && file === 'internal/orders/cash_drawer_context.go'
+    const sandboxBillingModule = matched.includes('foody-billing-sandbox');
+    // Standalone sandbox subscription files do not implement operational or
+    // production payments even when shared selectors cover the same directories.
+    let ids = sandboxBillingModule ? ['foody-billing-sandbox'] : itemMenuAssignmentModule ? ['menu-categories-and-items', 'menu-creating-a-menu-item', 'menu-menus-and-groups'] : eventModule ? ['orders-events'] : endOfDayModule ? ['pos-end-of-day'] : guardedCash ? ['pos-payments', 'pos-end-of-day'] : cashGuaranteeModule ? ['stancer-cash-guarantee'] : service === 'foodyserver' && file === 'internal/orders/cash_drawer_context.go'
       ? ['pos-payments', 'pos-cash-access-diagnostics']
       : service === 'foodyserver' && /^internal\/orders\/transactions(?:_handler|_adjustments)?\.go$/.test(file)
         ? ['pos-payments'] : service === 'foodyserver' && file === 'internal/menu/item_photos.go'

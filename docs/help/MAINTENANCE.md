@@ -1708,3 +1708,18 @@ still-open API/Admin/Web PRs. Production promotion waits for this correction.
 Compatibility regressions also retain historical counted-stock future receiving
 appointments; the new dated pool does not impose its expiry on that existing
 mechanism. A ready product still cannot waive a zone intake deadline.
+
+## Foody private billing pilot (9 November 2026)
+
+The private offer, standalone merchant, hosted payment and usage counters are
+documented in the internal sandbox procedure in FR, HE and EN. The normal public
+subscription guide still describes the existing production screen. The pilot is
+disabled by the API outside development, local and test, has no live credentials,
+uses a distinct payment ledger and does not issue fiscal documents or send renewal
+messages. Verify an annual checkout and the monthly enrollment and renewal with
+Foody's approved CST contracts before relying on the provider path.
+
+No public procedure or assistant article content changes. Copy the regenerated
+public corpus, which carries the catalogue revision, into the API. Preserve
+unaffected service evidence and use the local WORKSPACE references until the
+reviewed Landing documentation is committed with authorization.
