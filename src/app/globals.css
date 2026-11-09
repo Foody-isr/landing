@@ -5697,6 +5697,64 @@ html[dir="rtl"] .help-breadcrumb-sep {
 .pricing-payment-list .cost-amount span {
   margin-block-start: 1px;
 }
+.pricing-payment-list > div[data-pricing-payment-included] {
+  margin-inline-start: 12px;
+  padding-block: 7px;
+}
+.pricing-payment-list .cost-amount .pricing-included-label {
+  display: inline-block;
+  padding: 2px 8px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 700;
+}
+.pricing-service-help > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-block-size: 28px;
+  max-inline-size: 100%;
+  border-radius: 3px;
+  list-style: none;
+  cursor: pointer;
+}
+.pricing-service-help > summary::-webkit-details-marker {
+  display: none;
+}
+.pricing-service-help > summary:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+}
+.pricing-help-icon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  inline-size: 18px;
+  block-size: 18px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1;
+}
+.pricing-service-help > summary:hover .pricing-help-icon,
+.pricing-service-help[open] > summary .pricing-help-icon {
+  background: var(--text);
+  border-color: var(--text);
+  color: var(--surface);
+}
+.pricing-service-help > p {
+  margin-block: 4px 8px;
+  padding-inline-start: 9px;
+  border-inline-start: 2px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
 
 @media (max-width: 820px) {
   .pricing-overview .plans,
@@ -5741,15 +5799,18 @@ html[dir="rtl"] .help-breadcrumb-sep {
 .pricing-delivery-heading header {
   flex: 1 1 35ch;
 }
-.pricing-delivery-details {
+.pricing-delivery-details,
+.pricing-payment-options {
   margin-block-start: 18px;
   padding-block-start: 14px;
   border-block-start: 1px solid var(--border);
 }
-.pricing-delivery-details summary {
+.pricing-delivery-details summary,
+.pricing-payment-options summary {
   cursor: pointer;
   font-weight: 700;
 }
-.pricing-delivery-details .pricing-cost-list {
+.pricing-delivery-details .pricing-cost-list,
+.pricing-payment-options .pricing-payment-list {
   margin-block-start: 15px;
 }

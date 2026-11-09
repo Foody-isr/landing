@@ -9,6 +9,7 @@ export const paymentRates = offerGrid.payments;
 
 type ModuleKey = keyof typeof offerGrid.plans;
 type SetupKey = "setup" | "orderingSetup" | "training" | "kitchenSetup";
+type PaymentServiceCopy = { title: string; help: string; detail?: string };
 type PricingCopy = {
   title: string;
   intro: string;
@@ -30,18 +31,33 @@ type PricingCopy = {
     text: string;
     physical: string;
     online: string;
-    victa: string;
+    portableDetail: string;
+    mobileDetail: string;
+    miniDetail: string;
     deviceUnit: string;
-    physicalService: string;
+    physicalService: PaymentServiceCopy;
+    shvaLicense: PaymentServiceCopy;
+    vhqManagement: PaymentServiceCopy;
+    includedLabel: string;
+    explanationLabel: string;
+    activeTerminalMonthly: string;
     terminalMonthly: string;
-    virtualSetup: string;
+    optionsTitle: string;
+    labRepair: PaymentServiceCopy;
+    gateway: PaymentServiceCopy;
+    simData: PaymentServiceCopy;
+    accessories: PaymentServiceCopy;
+    replacement: PaymentServiceCopy;
+    transport: PaymentServiceCopy;
+    virtualSetup: PaymentServiceCopy;
     activation: string;
-    virtualService: string;
+    virtualService: PaymentServiceCopy;
     included: string;
-    overage: string;
+    overage: PaymentServiceCopy;
     transactionUnit: string;
-    secure: string;
+    secure: PaymentServiceCopy;
     operationUnit: string;
+    additionalVirtual: PaymentServiceCopy;
     options: string;
   };
   projects: string;
@@ -92,19 +108,38 @@ export const pricing: Record<Lang, PricingCopy> = {
       text: "Prix HT applicables aux équipements et services de paiement que vous choisissez.",
       physical: "Paiement en salle",
       online: "Paiement en ligne",
-      victa: "Verifone Victa Portable",
+      portableDetail: "Terminal mobile avec imprimante intégrée pour les reçus.",
+      mobileDetail: "Terminal pour encaisser à table, sans imprimante intégrée.",
+      miniDetail: "Terminal compact pour le comptoir.",
       deviceUnit: "à l’achat, par appareil",
-      physicalService: "Service de paiement EMV",
+      physicalService: {
+        title: "Service mensuel du terminal EMV",
+        detail: "Requis pour chaque terminal actif.",
+        help: "Ce forfait couvre la licence de paiement et la gestion à distance du terminal.",
+      },
+      shvaLicense: { title: "Licence SHVA", help: "Licence du logiciel qui permet au terminal d’accepter les paiements par carte en Israël, avec les mises à jour requises." },
+      vhqManagement: { title: "Gestion à distance (VHQ)", help: "Verifone peut superviser le terminal à distance et y installer les mises à jour logicielles et de sécurité." },
+      includedLabel: "Inclus",
+      explanationLabel: "Détails sur {service}",
+      activeTerminalMonthly: "/ mois par terminal actif",
       terminalMonthly: "/ mois par terminal",
-      virtualSetup: "Activation du terminal virtuel",
+      optionsTitle: "Options et accessoires",
+      labRepair: { title: "Réparation EMV en laboratoire", help: "Prise en charge des réparations et du remplacement de pièces selon la couverture. Le transport est proposé sur devis." },
+      gateway: { title: "Passerelle de paiement (GW)", help: "Achemine les transactions vers SHVA si votre configuration d’encaissement utilise cette passerelle." },
+      simData: { title: "Carte SIM Data", help: "Permet à un terminal compatible de se connecter au réseau mobile pour encaisser sans Wi-Fi." },
+      accessories: { title: "Dock de recharge et support de comptoir", help: "Le dock recharge le terminal. Le support le maintient en place au comptoir. Le choix dépend du modèle." },
+      replacement: { title: "Terminal de secours ou remplacement", help: "Un appareil de secours ou de remplacement peut être proposé selon le modèle, la disponibilité et votre couverture." },
+      transport: { title: "Collecte et retour du terminal", help: "Sur demande, le terminal est collecté pour la réparation en laboratoire, puis rapporté." },
+      virtualSetup: { title: "Activation du terminal virtuel", help: "Mise en service, payée une fois, pour activer l’encaissement par carte sur votre site." },
       activation: "à l’activation",
-      virtualService: "Service du terminal virtuel",
+      virtualService: { title: "Service du terminal virtuel", help: "Forfait mensuel qui permet d’encaisser les paiements par carte sur votre site, avec un volume de transactions inclus." },
       included: "{n} transactions incluses par mois",
-      overage: "Au-delà du forfait mensuel",
+      overage: { title: "Au-delà du forfait mensuel", help: "Frais appliqués à chaque transaction supplémentaire une fois la limite mensuelle atteinte." },
       transactionUnit: "/ transaction supplémentaire",
-      secure: "3D Secure, si activé",
+      secure: { title: "3D Secure, en option", help: "Vérification de l’identité du client lors du paiement en ligne, par exemple dans son application bancaire. L’activation et chaque vérification sont facturées séparément." },
       operationUnit: "/ opération 3D Secure",
-      options: "Autres terminaux, accessoires, SIM et services optionnels sur devis. Les commissions d’encaissement dépendent de votre contrat avec l’acquéreur.",
+      additionalVirtual: { title: "Terminal virtuel supplémentaire", help: "Peut être nécessaire si vous enregistrez des cartes ou utilisez un contrôle du code de sécurité de la carte (CVV), selon votre configuration." },
+      options: "Autres terminaux sur devis. Les commissions d’encaissement dépendent de votre contrat avec l’acquéreur.",
     },
     projects: "Bornes Kiosk, impression des bons en cuisine, SMS, intégrations et projets multi-établissements sur devis.",
     faq: [
@@ -155,19 +190,38 @@ export const pricing: Record<Lang, PricingCopy> = {
       text: "Prices exclude VAT and apply to the equipment and payment services you choose.",
       physical: "In-person payments",
       online: "Online payments",
-      victa: "Verifone Victa Portable",
+      portableDetail: "Mobile terminal with a built-in receipt printer.",
+      mobileDetail: "Tableside payment terminal without a built-in printer.",
+      miniDetail: "Compact terminal for the counter.",
       deviceUnit: "purchase price per device",
-      physicalService: "EMV payment service",
+      physicalService: {
+        title: "Monthly EMV terminal service",
+        detail: "Required for each active terminal.",
+        help: "This plan covers the payment licence and remote management for the terminal.",
+      },
+      shvaLicense: { title: "SHVA licence", help: "Licences the software that lets the terminal accept card payments in Israel and covers required updates." },
+      vhqManagement: { title: "Remote management (VHQ)", help: "Verifone can monitor the terminal remotely and install software and security updates." },
+      includedLabel: "Included",
+      explanationLabel: "About {service}",
+      activeTerminalMonthly: "/ month per active terminal",
       terminalMonthly: "/ month per terminal",
-      virtualSetup: "Virtual terminal activation",
+      optionsTitle: "Options and accessories",
+      labRepair: { title: "EMV lab repair", help: "Covers repairs and replacement parts subject to your coverage. Transport is quoted separately." },
+      gateway: { title: "Payment gateway (GW)", help: "Routes transactions to SHVA if your payment setup uses this gateway." },
+      simData: { title: "Data SIM card", help: "Connects a compatible terminal to the mobile network so it can take payments without Wi-Fi." },
+      accessories: { title: "Charging dock and counter stand", help: "The dock charges the terminal. The stand holds it in place at the counter. Options depend on your model." },
+      replacement: { title: "Spare or replacement terminal", help: "A spare or replacement device may be available depending on the model, stock and your coverage." },
+      transport: { title: "Terminal collection and return", help: "On request, the terminal is collected for lab repair and returned afterwards." },
+      virtualSetup: { title: "Virtual terminal activation", help: "One-time setup to enable online card payments on your site." },
       activation: "at activation",
-      virtualService: "Virtual terminal service",
+      virtualService: { title: "Virtual terminal service", help: "Monthly service that processes online card payments on your site and includes a set number of transactions." },
       included: "{n} transactions included per month",
-      overage: "Above the monthly allowance",
+      overage: { title: "Above the monthly allowance", help: "Applies to each additional transaction once you reach your monthly limit." },
       transactionUnit: "/ additional transaction",
-      secure: "3D Secure, if enabled",
+      secure: { title: "Optional 3D Secure", help: "Verifies the customer’s identity during online checkout, for example in their banking app. Activation and each verification are billed separately." },
       operationUnit: "/ 3D Secure operation",
-      options: "Other terminals, accessories, SIM plans and optional services are quoted separately. Card processing fees depend on your acquiring agreement.",
+      additionalVirtual: { title: "Additional virtual terminal", help: "May be required if your payment setup uses saved cards or checks the card security code (CVV)." },
+      options: "Other terminals are quoted separately. Card processing fees depend on your acquiring agreement.",
     },
     projects: "Kiosks, kitchen ticket printing, SMS, integrations and multi-location projects are quoted separately.",
     faq: [
@@ -218,19 +272,38 @@ export const pricing: Record<Lang, PricingCopy> = {
       text: "המחירים לפני מע״מ וחלים על הציוד ושירותי התשלום שבחרתם.",
       physical: "תשלומים בבית העסק",
       online: "תשלומים אונליין",
-      victa: "Verifone Victa Portable",
+      portableDetail: "מסוף נייד עם מדפסת קבלות מובנית.",
+      mobileDetail: "מסוף לתשלום בשולחן ללא מדפסת מובנית.",
+      miniDetail: "מסוף קומפקטי לדלפק.",
       deviceUnit: "מחיר רכישה למכשיר",
-      physicalService: "שירות תשלומים EMV",
+      physicalService: {
+        title: "שירות חודשי למסוף EMV",
+        detail: "נדרש לכל מסוף פעיל.",
+        help: "השירות כולל את רישיון התשלומים ואת ניהול המסוף מרחוק.",
+      },
+      shvaLicense: { title: "רישיון שב״א", help: "רישיון לתוכנה שמאפשרת למסוף לקבל תשלומי כרטיס בישראל, כולל עדכוני תוכנה נדרשים." },
+      vhqManagement: { title: "ניהול מסוף מרחוק (VHQ)", help: "Verifone יכולה לנטר את המסוף מרחוק ולהתקין בו עדכוני תוכנה ואבטחה." },
+      includedLabel: "כלול",
+      explanationLabel: "מידע על {service}",
+      activeTerminalMonthly: "לחודש למסוף פעיל",
       terminalMonthly: "לחודש למסוף",
-      virtualSetup: "הפעלת מסוף וירטואלי",
+      optionsTitle: "שירותים אופציונליים ואביזרים",
+      labRepair: { title: "תיקון מסופי EMV במעבדה", help: "השירות מכסה תיקונים והחלפת רכיבים בהתאם לכיסוי. השינוע מתומחר בנפרד בהצעת מחיר." },
+      gateway: { title: "מתג סליקה (GW)", help: "מנתב את העסקאות לשב״א כאשר תצורת הסליקה שלכם משתמשת במתג זה." },
+      simData: { title: "כרטיס SIM לגלישה", help: "מחבר מסוף תואם לרשת סלולרית כדי לקבל תשלומים גם בלי Wi-Fi." },
+      accessories: { title: "תחנת טעינה ומעמד לדלפק", help: "תחנת הטעינה מטעינה את המסוף. המעמד מקבע אותו על הדלפק. האפשרויות תלויות בדגם." },
+      replacement: { title: "מסוף חלופי או לגיבוי", help: "ניתן להציע מסוף חלופי או לגיבוי בהתאם לדגם, לזמינות ולכיסוי שלכם." },
+      transport: { title: "איסוף והחזרת המסוף", help: "לפי בקשה, המסוף נאסף לתיקון במעבדה ומוחזר לאחר מכן." },
+      virtualSetup: { title: "הפעלת מסוף וירטואלי", help: "הקמה בתשלום חד-פעמי שמאפשרת לקבל תשלומי כרטיס באתר שלכם." },
       activation: "בעת ההפעלה",
-      virtualService: "שירות מסוף וירטואלי",
+      virtualService: { title: "שירות מסוף וירטואלי", help: "שירות חודשי לקבלת תשלומי כרטיס באתר. השירות כולל מכסת עסקאות חודשית." },
       included: "{n} עסקאות כלולות בחודש",
-      overage: "מעבר למכסה החודשית",
+      overage: { title: "מעבר למכסה החודשית", help: "תשלום על כל עסקה נוספת לאחר ניצול המכסה החודשית." },
       transactionUnit: "לכל עסקה נוספת",
-      secure: "3D Secure, אם הופעל",
+      secure: { title: "3D Secure, לפי בחירה", help: "אימות זהות הלקוח בתשלום אונליין, למשל באפליקציית הבנק. ההפעלה וכל אימות מחויבים בנפרד." },
       operationUnit: "לכל פעולת 3D Secure",
-      options: "מסופים אחרים, אביזרים, SIM ושירותים לפי בחירה מתומחרים בהצעת המחיר. עמלות הסליקה נקבעות בהסכם מול הסולק.",
+      additionalVirtual: { title: "מסוף וירטואלי נוסף", help: "עשוי להידרש בתצורת תשלום עם כרטיסים שמורים או בדיקת קוד האבטחה של הכרטיס (CVV)." },
+      options: "מסופים אחרים מתומחרים בהצעת מחיר. עמלות הסליקה נקבעות בהסכם מול הסולק.",
     },
     projects: "עמדות קיוסק, הדפסת בוני מטבח, הודעות SMS, אינטגרציות ופרויקטים מרובי סניפים מתומחרים בהצעת מחיר.",
     faq: [
