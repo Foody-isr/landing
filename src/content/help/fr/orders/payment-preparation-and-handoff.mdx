@@ -38,6 +38,8 @@ Un lot retenu reste en attente jusqu’à son envoi explicite. Avec plusieurs po
 
 Dans les actions de la commande enregistrée, ouvrez la revue de remise. Vérifiez la commande ou l’addition concernée, les articles, variantes et quantités physiques. Sélectionnez seulement les unités réellement servies ou retirées, puis confirmez l’action proposée. Les unités restantes gardent leur état. Le partage d’une addition ne multiplie pas les plats et une remise sur une commande QR ne remet pas celles des autres clients. La confirmation enregistre la remise ; elle n’encaisse pas d’argent, ne renvoie rien en cuisine et ne libère pas la table.
 
+Ce parcours concerne les commandes dont la vue de traitement propose une remise. Pour une addition ouverte de table, nommée ou fractionnée dans Menu, vérifiez l’envoi dans Addition et l’avancement au KDS du passe.
+
 <span id="courier-handoff-and-delivery" />
 
 ## Séparer la remise au livreur et la livraison
@@ -67,3 +69,9 @@ Après une réponse perdue ou une erreur de connexion lors d’une remise ou cl�
 ## Accepter une commande programmée avant sa date
 
 Pour une commande programmée, Accepter reste une action explicite disponible avant le créneau, sous réserve des droits et blocages. Le workflow du restaurant décide si elle est seulement acceptée ou envoyée en cuisine. Le paiement, la date et le créneau restent enregistrés séparément ; une remise totale n’est pas un encaissement. Voir [accepter une commande programmée](/fr/help/orders/managing-orders#accept-scheduled-order).
+
+<span id="sumit-event-reservations" />
+
+## Empreintes Sumit pour les événements
+
+L’empreinte événement nécessite la clé publique de vérification Sumit en plus de l’identifiant société et de la clé API existants. Sans cette configuration, l’option reste indisponible. Vérifiez le support J5 du compte auprès de Sumit. Les fonds réservés restent distincts des paiements reçus et ne terminent ni préparation ni remise. Capture et libération se gèrent dans Sumit. Voir [conditions et récupération](/fr/help/orders/event-orders).

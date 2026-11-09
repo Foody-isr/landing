@@ -5,7 +5,7 @@ apps: both
 tags:
   - orders
   - production
-updatedAt: '2026-10-29'
+updatedAt: '2026-11-02'
 featureId: production
 audience: public
 releaseStatus: available
@@ -29,3 +29,15 @@ Vérifiez articles agrégés, variantes, portions et notes avant d’organiser l
 ## Préparer les colis clients
 
 Utilisez le détail client/commande pour organiser colis et remise retrait/livraison. Confirmez la préparation dans les contrôles proposés ; elle ne confirme pas le paiement.
+
+<span id="event-orders" />
+
+## Commandes événement depuis le parcours habituel
+
+Ouvrez Production sur la date de remise, même pour cuisiner avant. Par carte affiche des tableaux et quantités distincts avec des liens rapides vers les sections. Une commande de plusieurs cartes contribue seulement avec les lignes correspondantes dans chaque section. Les lignes historiques ou de bibliothèque sans carte unique restent dans Autres cartes au lieu d’être dupliquées. Le repère apparaît aussi dans le détail staff, le POS et les tickets cuisine compatibles. Gardez les sections et totaux Bassari et Halavi séparés. Avec kitchen.manage et orders.manage, utilisez Actions → Ajouter au tableau de production sur l’événement enregistré, même avant paiement. Le retirer du plan n’annule pas la commande et ne change pas son paiement. Le plan déjà ouvert s’actualise lors des changements ; utilisez Actualiser si nécessaire sans changer la date de remise sélectionnée.
+
+<span id="manual-order-production-choice" />
+
+## Choisir la production lors d’une commande manuelle
+
+À la dernière étape Paiement et confirmation, répondez à Ajouter au plan de production : Oui ou Non. Aucun choix n’est présélectionné. Valider sans réponse encadre les deux options en rouge et place le focus sur le choix. Oui demande l’inclusion selon les conditions de confirmation de la commande ; un lien Sumit ordinaire attend le paiement confirmé et un événement conserve ses conditions de validation. Non exclut la commande du plan, même après programmation ou paiement. Le choix est conservé lors des retours et changements de règlement. Il n’y a pas de bannière production aux étapes précédentes. Un échec de création conserve le formulaire ; vérifiez une commande enregistrée avant de réessayer un résultat incertain. Une action staff autorisée Ajouter au tableau de production sur la commande enregistrée peut remplacer Non. Retirer cet ajout manuel rétablit les règles automatiques, sans annuler la commande ni modifier le paiement.

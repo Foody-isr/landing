@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - orders
   - order-detail
-updatedAt: '2026-10-29'
+updatedAt: '2026-11-04'
 featureId: order-detail
 audience: public
 releaseStatus: available
@@ -34,7 +34,7 @@ Choose order/date basis, status and fulfillment filters. Open the order and veri
 
 ## Create a staff order
 
-Build the ticket in New order, then select Continue. Complete order opens inside the ticket panel. Choose pickup or delivery and its date, then explicitly choose how the order will be paid. Payment link and Charge a card appear only for an eligible Sumit restaurant; card entry also requires payments.manage. Record a received payment records cash or a card already collected elsewhere: select the method and confirm the displayed received amount. Changing the amount or recorded method clears that confirmation. Pay later creates an unpaid order. No payment is marked received by default. Enter the customer name and phone for a received payment, later payment or card charge; delivery also requires an address. A payment link lets the recipient supply these details. Expand Apply discount or Production options only when needed. Hosted Sumit orders enter production after payment confirmation. Review the fixed total and use the action matching your choice once. Back to items keeps the customer and date; recheck discounts and delivery fees after editing the ticket. Removing a line offers Undo for ten seconds. Clear all discards both the ticket and customer details. Sales mode collapses the existing navigation; select it again to restore it. If creation fails, the draft stays available. Check a saved order before retrying an uncertain result.
+Build the ticket in New order, then select Continue. Complete order opens inside the ticket panel. Choose pickup or delivery and its date, then explicitly choose how the order will be paid. Payment link and Charge a card appear only for an eligible Sumit restaurant; card entry also requires payments.manage. Record a received payment records cash or a card already collected elsewhere: select the method and confirm the displayed received amount. Changing the amount or recorded method clears that confirmation. Pay later creates an unpaid order. No payment is marked received by default. Enter the customer name and phone for a received payment, later payment or card charge; delivery also requires an address. A payment link lets the recipient supply these details. Expand Apply discount when needed. The final step requires an explicit Yes or No for Add to production plan, with neither option preselected. No excludes the order even after payment. With Yes selected, hosted Sumit orders retain their confirmation requirements before inclusion. Review the fixed total and use the action matching your choice once. Back to items keeps the customer and date; recheck discounts and delivery fees after editing the ticket. Removing a line offers Undo for ten seconds. Clear all discards both the ticket and customer details. Sales mode collapses the existing navigation; select it again to restore it. If creation fails, the draft stays available. Check a saved order before retrying an uncertain result. For ordinary deliveries, fees are calculated automatically from the current customer address, including free zones. Enter the delivery address or select an existing customer, then wait for the displayed calculation. Changing the address recalculates the fee. If calculation fails, use Retry; an unknown tariff is never silently treated as free delivery. Set a fixed delivery fee is an optional explicit exception; enter zero or a positive amount with at most two decimal places. Calculate from the address restores automatic pricing. Event / Catering keeps its editable fee field. With a payment link, the recipient address determines fees by default; only an explicitly entered fixed quote is retained. Returning to items preserves the current draft; reloading a local draft requires reviewing financial exceptions again.
 
 <span id="edit" />
 
@@ -153,3 +153,21 @@ When adding an item from the Admin library, complete required positions. A posit
 ## Review independent confirmations
 
 In a saved order’s actions, review preparation and handoff separately from payment. Handoff review selects the actual physical units; financial splitting does not multiply them. Before closure, review the exact check or financial portion and its confirmed balance. A closed scope refuses new commercial changes; another open batch is not closed by that action. See [tracking and confirmations](/en/help/orders/payment-preparation-and-handoff).
+
+<span id="event-orders" />
+
+## Event orders from the existing order workflow
+
+For saved-event edits, explicit production inclusion, private links, deposits and Sumit authorizations kept separate from received money, see [Event / Catering](/en/help/orders/event-orders).
+
+<span id="manual-order-steps" />
+
+## Move between checkout steps
+
+With the compatible Admin version, add items and choose Continue. Checkout contains Handover and customer, then Payment and confirmation; Event / Catering adds an Event step between them. In Handover and customer, choose pickup or delivery, its date and window, then enter customer details and an address when needed. For an eligible Sumit restaurant, select The customer will complete their details through the Foody link when the recipient should provide those answers: missing contact and event answers then do not block link creation. In Event, enter guests, date and time; other fields are under Additional information. Date, address and contact reuse buttons copy values only after your click; review them after changes. Information to request from the customer groups requirements and permission to change the event date and time. In Payment and confirmation, explicitly choose payment, review any deposit/authorization terms, discount, items and total, then use the final action. Navigating between steps never confirms receipt of money.
+
+Previous and visited step titles let you go back. Continue validates required fields before advancing; selecting a previously visited later step repeats that validation. Entered details, payment choice, fees and discounts remain in memory on return, including Back to items. An applied percentage discount is recalculated for the current items. Changing the received-payment method or amount requires acknowledging receipt again. Reloading a saved local draft does not restore financial exceptions: review them again.
+
+When a step has errors, all affected fields have a red outline and a specific message. The panel focuses the first field; the correction list opens other fields, including collapsed sections or earlier steps. Correct the fields and choose Continue. A time window needs both start and end, with end strictly after start; 12:00–12:00 is rejected. Event time can equal the handover end. A window ending after the event starts shows a warning to review, without imposing an installation delay. Switching from a link to manual payment may require completing customer and event answers.
+
+On the final Payment and confirmation step, answer Add to production plan: Yes or No. Neither option is selected initially. Submitting without an answer outlines both options in red and focuses the choice. Yes requests inclusion subject to the order’s confirmation conditions; an ordinary Sumit link waits for confirmed payment and events retain their validation requirements. No excludes the order from the plan, including after scheduling or payment. The choice survives earlier steps and payment changes. Earlier steps have no production banner. Failed creation preserves the form; check a saved order before retrying an uncertain result.

@@ -29,3 +29,5 @@ Retrouvez l’utilisateur, vérifiez restaurant/rôle et appliquez uniquement le
 ## Accès aux nouveaux réglages
 
 Usage and quotas ouvre la comparaison des consommations par service et par restaurant. Review allocation et le lien de la fiche restaurant ouvrent les plafonds mensuels ; leur enregistrement exige un motif et conserve tous les compteurs. Ces contrôles sont réservés au superadmin, distincts du choix de connexion du site.
+
+Le parc global permet de déclarer un terminal en réparation ou retourné et de renseigner ses identifiants commerciaux. Cela ne réaffecte pas l’appareil et ne configure pas un nouveau prestataire de paiement ; suivez la procédure régionale confirmée avec Verifone avant sa remise en service.

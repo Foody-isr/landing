@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-11-02'
+updatedAt: '2026-11-04'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -235,3 +235,49 @@ Les endpoints authentifiés GET/POST /api/v1/delivery/ordering-simulation partag
 ## Compatibilité de l’acceptation programmée
 
 Le descripteur lifecycle_v2.actions autorise accept pour scheduled comme pour pending_review, avec orders.manage et sans settlement held. Les blocages de checkout préparé restent appliqués ensuite. Aucun nouveau writer : POST /orders/:id/accept appelle toujours AcceptOrderWithWorkflow et setStatus, qui gardent les contrôles, notifications et raccourcis propres au restaurant. Aucun envoi automatique avant date n’est ajouté ; seule une action explicite peut avancer la commande. Date, créneau et paiement restent inchangés. Déployer l’API corrigée en développement et vérifier les workflows séparé et guidé avant toute promotion approuvée. Aucun changement de schéma ou de client n’est requis pour les clients qui suivent déjà les capacités. La documentation de cette correction doit être publiée avec sa version API. Pour scheduled uniquement, payment_status=pending garde accept non autorisé ; pending_review conserve son comportement existant.
+
+<span id="pos-terminal-collection-contract" />
+
+## Réserver l’encaissement physique avant l’envoi natif
+
+Sur iPad, choisissez Carte sur la commande ou l’addition financière existante, vérifiez la fenêtre du terminal de paiement puis confirmez explicitement Mini ou Portable. Le terminal configuré par défaut est présélectionné ; aucun autre appareil connecté ne le remplace automatiquement. Annuler n’envoie aucun paiement. Sur un Victa Portable exécutant FoodyPOS, ouvrez cette même commande ou addition enregistrée et utilisez son lecteur intégré. Ne recréez pas la vente. Une réservation serveur protège le terminal physique et les commandes sélectionnées pendant l’encaissement. Un autre appareil ou moyen de paiement doit attendre. Les commandes QR conservent leurs identifiants et paiements séparés.
+
+Si le résultat est inconnu, conservez le POS et le terminal d’origine puis reprenez l’opération existante. Ni le temps écoulé ni un redémarrage n’autorisent un nouveau débit. Un refus ou une annulation définitive permet un nouvel essai revu. Une approbation confirmée doit être enregistrée avec sa réservation d’origine avant libération. Ce changement concerne le choix de destination, sans modifier les réglages d’impression existants ; validez le matériel, le contrôle distant du Portable et l’impression intégrée avec Verifone.
+
+<span id="scoped-end-of-day-report-history" />
+
+## Lire les références des rapports POS finalisés
+
+GET /orders/end-of-day/history exige payments.manage et une installation POS enrôlée courante. Il retourne au plus vingt références de rapports finalisés et leurs périodes figées pour ce POS, des plus récents aux plus anciens. GET /orders/end-of-day/:id lit le rapport exact dans ce périmètre. Ces lectures ne libèrent aucune clôture active et ne transmettent aucune opération terminal. La capacité end_of_day_history protège la compatibilité. Les nouveaux instantanés carte conservent une devise seulement avec les preuves concordantes de la vente originale ; les rapports archivés ne sont pas réécrits avec la devise actuelle du restaurant.
+
+GET /orders/end-of-day/preview lit la période et les encaissements carte attribuables du POS sans réservation. end_of_day_preview annonce cette capacité. L’historique commun retourne kind=cash ou end_of_day, exclut les doublons de tiroirs inclus dans un Z et reste limité au POS authentifié.
+
+<span id="manual-production-plan-choice" />
+
+## Choix staff du plan de production
+
+POST /api/v1/orders accepte le booléen staff facultatif production_plan. Son absence conserve les règles antérieures. False exclut la commande du tableau de production et du comptage des jours, y compris après paiement, programmation ou changement automatique de force_production. True ajoute une commande manuelle sans paiement hébergé ; un lien préparé ordinaire attend encore un paiement collecté et un événement conserve ses conditions de confirmation. Le serveur possède external_metadata.production_plan et refuse son injection directe. La création publique efface le champ et un appel de service invité ne peut pas le fournir. Les actions staff explicites d’ajout/retrait manuel remplacent le choix initial et rétablissent les règles existantes d’ajout manuel/automatique. Aucun modèle de réponse partagé ni migration ne change ; les anciens clients POS et invités peuvent omettre ce champ optionnel.
+
+<span id="device-receipt-contract" />
+
+## Déployer la demande de reçu par appareil
+
+Préparation locale : appliquer la migration 289 et déployer l’API compatible avant le POS. La capacité receipt-capabilities annonce device_receipts_version=1 ; les clients mis à jour transmettent receipt_on_request=true aux règlements ordinaires simples ou groupés. Le paiement est enregistré avec ses journaux existants, sans reçu automatique supplémentaire. Le POST staff /restaurants/:id/printing/spooler/receipts exige orders.manage et un contexte restaurant identique. Il lie request_id, spooler_id, order_ids payés, printer_ids affectés et locale à une demande immuable ; une reprise exacte retourne les travaux initiaux et une intention différente renvoie 409. La preuve d’appartenance du terminal intégré reste exigée. Le GET de statut est en lecture seule et n’envoie aucun document. Les anciens clients et les partages financiers conservent leurs contrats ; la cuisine reste séparée. Les tests synthétiques ne certifient pas l’installation physique ni une livraison en production. Valider en développement avant promotion approuvée du même artefact.
+
+<span id="terminal-fleet-declarations" />
+
+## Déclarations du parc de terminaux
+
+Sur les versions compatibles de l’API et du Backoffice, un superadmin Foody ouvre Backoffice → Terminal fleet pour rechercher les terminaux de tous les restaurants et modifier la série, le DID, le numéro SHVA, le fournisseur, l’acquéreur et le cycle de vie déclarés. Enregistrer vérifie la révision et crée une trace d’audit. Ces valeurs restent déclarées, non appliquées : la sauvegarde ne réattribue pas le matériel, ne change pas ses paramètres bancaires et ne lance aucune commande Ashrait. Un libellé Retourné ou Réparation n’autorise pas sa réutilisation. La configuration bancaire distante et sa vérification restent indisponibles en attendant le contrat régional Verifone. L’Admin conserve son périmètre restaurant. Ne saisissez aucun secret ni donnée de carte dans ces champs.
+
+<span id="configurable-fulfillment-compatibility" />
+
+## Préparer les contrats de disponibilité configurables
+
+Préparation locale : le stock prêt nullable, daté et révisionné et les échéances facultatives par zone ne configurent aucun restaurant automatiquement. Les API privées vérifient le restaurant et les permissions existantes. Les calendriers publics et la soumission de commande restent autoritaires ; les quantités privées ne sont pas ajoutées au contrat public des articles. Les reliquats historiques par série utilisent la série opérationnelle pour affichage et réservation, indépendamment de la série suivante en précommande. Vérifier les valeurs par défaut, courses de réservation, libérations avant production, anciennes interfaces et traductions ; ne changer ni les fournisseurs de paiement, ni les commandes existantes. La migration 288 et l’API doivent précéder Admin/Web. Exporter le corpus identique après validation et épingler le commit Landing immuable revu avant la CI. Vérifier les artefacts develop, puis promouvoir ces mêmes artefacts selon le processus de livraison autorisé ; la revue des sources seule n’atteste pas la disponibilité en production.
+
+<span id="current-pos-financial-context" />
+
+## Authentifier le contexte financier du POS courant
+
+Les clients compatibles envoient X-Foody-POS-Token uniquement à l’API de commandes authentifiée de confiance et à leurs routes de fin de période/précontrôle, jamais aux destinations publiques ou redirigées. L’API ne conserve que l’empreinte dans une copie de service propre à la requête, vérifie restaurant, expiration, révocation et installation, puis verrouille la période et les autorisations d’origine/courante dans un ordre stable. Le pointage ne change pas. Sans preuve, la règle historique reste appliquée ; une preuve explicite invalide est refusée. Espèces, clôture, réservations carte et portions financières partagent cette identité. La déconnexion conserve les obligations des deux caisses. Déployer l’API avant les clients ; aucune migration ni configuration d’environnement.

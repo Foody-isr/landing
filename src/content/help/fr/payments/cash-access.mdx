@@ -7,7 +7,7 @@ apps: foodypos
 tags:
   - payments
   - pos-cash-access-diagnostics
-updatedAt: '2026-10-28'
+updatedAt: '2026-11-04'
 featureId: pos-cash-access-diagnostics
 audience: public
 releaseStatus: local-release-unverified
@@ -42,3 +42,9 @@ Pour réunir les étapes de fin de journée, utilisez [la clôture commune](/fr/
 ## Reconfirmer le bon contexte avant un dépôt du terminal
 
 Sur le POS compatible, une confirmation de Dépôts du terminal appartient à l’établissement, à la connexion du personnel et à la configuration du terminal affichés à son ouverture. Si l’un change avant la confirmation, l’ancien dialogue ne doit pas lancer l’action dans le nouveau contexte. Rouvrez Dépôts du terminal, vérifiez le terminal et ses fonctions disponibles, puis confirmez explicitement l’action voulue. Les anciens résultats ne constituent pas un état confirmé du nouveau contexte. Si une commande avait déjà été transmise, changer d’écran ou d’établissement ne l’annule pas : vérifiez le terminal d’origine ou le prestataire avant toute répétition et conservez les opérations en attente. Cette protection ne clôture pas les espèces ni la période de travail et ne certifie pas un dépôt physique sur un appareil donné.
+
+<span id="current-device-proof" />
+
+## Vérifier l’accès depuis un autre POS
+
+Le POS et l’API compatibles vérifient séparément votre période et l’enrôlement de l’appareil courant. Une période commencée sur iPad ne doit pas empêcher à elle seule la lecture sur un Portable autorisé du même restaurant. Si le refus persiste, conservez la période et les journaux et faites vérifier l’autorisation de ce Portable ; ne remplacez pas une opération incertaine.

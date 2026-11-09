@@ -7,7 +7,7 @@ apps: foodypos
 tags:
   - payments
   - pos-cash-access-diagnostics
-updatedAt: '2026-10-28'
+updatedAt: '2026-11-04'
 featureId: pos-cash-access-diagnostics
 audience: public
 releaseStatus: local-release-unverified
@@ -42,3 +42,9 @@ To bring together the end-of-day steps, use [the combined closing flow](/en/help
 ## Reconfirm the context before a terminal deposit
 
 On a compatible POS, a Terminal deposits confirmation belongs to the restaurant, staff sign-in and terminal configuration shown when it opened. If any changes before confirmation, the old dialog must not launch an action in the new context. Reopen Terminal deposits, check the terminal and its available capabilities, then explicitly confirm the intended action. Old results are not a confirmed state for the new context. If a command had already been transmitted, changing screens or restaurants does not cancel it: check the original terminal or provider before repeating anything and preserve pending operations. This protection closes neither physical cash nor the staff period and does not certify a physical deposit on a particular device.
+
+<span id="current-device-proof" />
+
+## Check access from another POS
+
+Compatible POS and API versions check attendance separately from the current device’s enrollment. Attendance started on an iPad must not by itself prevent reading an authorized Portable in the same restaurant. If access still fails, preserve attendance and journals and have that Portable’s authorization checked; do not replace an uncertain operation.

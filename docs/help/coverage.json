@@ -234,13 +234,18 @@
       "audience": "public",
       "selectors": {
         "foodyadmin": [
-          "src/app/[restaurantId]/kitchen/**"
+          "src/app/[restaurantId]/kitchen/**",
+          "src/components/menu-item/PreparedStockEditor.tsx"
         ],
         "foodyserver": [
           "internal/stock/**",
           "internal/prep/**",
           "internal/availability/**",
-          "internal/recipes/**"
+          "internal/recipes/**",
+          "internal/common/prepared_stock.go",
+          "internal/salesstock/prepared_stock.go",
+          "internal/menu/prepared_stock.go",
+          "migrations/288_prepared_product_stock.sql"
         ],
         "foodypos": [
           "lib/features/kitchen/**"
@@ -339,7 +344,10 @@
       "selectors": {
         "foodyadmin": [
           "src/app/[restaurantId]/menu/**",
-          "src/components/menu-item/**"
+          "src/components/menu-item/**",
+          "src/components/MenuGroupPicker.tsx",
+          "src/lib/item-menu-assignments.ts",
+          "src/lib/itemDraft.ts"
         ],
         "foodyserver": [
           "internal/menu/**"
@@ -359,7 +367,10 @@
       "selectors": {
         "foodyadmin": [
           "src/app/[restaurantId]/menu/**",
-          "src/components/menu-item/**"
+          "src/components/menu-item/**",
+          "src/components/MenuGroupPicker.tsx",
+          "src/lib/item-menu-assignments.ts",
+          "src/lib/itemDraft.ts"
         ],
         "foodyserver": [
           "internal/menu/**"
@@ -404,9 +415,10 @@
           "src/components/MenuGroupPicker.tsx",
           "src/lib/menu/**",
           "src/lib/carte-editor.ts",
-          "src/components/MenuGroupPicker.tsx",
           "src/lib/i18n.tsx",
-          "src/lib/sale-stock-input.ts"
+          "src/lib/sale-stock-input.ts",
+          "src/lib/item-menu-assignments.ts",
+          "src/lib/itemDraft.ts"
         ],
         "foodyserver": [
           "internal/menu/**",
@@ -731,7 +743,8 @@
         ],
         "foodyserver": [
           "internal/orders/intake*",
-          "internal/delivery/ordering_simulation.go"
+          "internal/delivery/ordering_simulation.go",
+          "internal/restaurants/fulfillment_stock.go"
         ],
         "foodyweb": [
           "lib/websiteFulfillment*"
@@ -791,7 +804,8 @@
           "internal/common/settings_merge.go",
           "internal/restaurants/delivery_same_day*.go",
           "internal/delivery/same_day_policy.go",
-          "migrations/283_delivery_same_day_policy.sql"
+          "migrations/283_delivery_same_day_policy.sql",
+          "internal/common/ordering_deadline.go"
         ]
       }
     },
@@ -1092,7 +1106,8 @@
           "lib/preview/editorInteractions.ts",
           "app/globals.css",
           "lib/i18n.tsx",
-          "lib/websiteFeaturedItems.ts"
+          "lib/websiteFeaturedItems.ts",
+          "components/ItemModal.tsx"
         ],
         "foodyserver": [
           "internal/support/corpus.json"
@@ -1125,7 +1140,11 @@
           "lib/websiteOrderColors.ts",
           "components/ItemModal.tsx",
           "components/ShareButton.tsx",
-          "lib/websiteOrder.ts"
+          "lib/websiteOrder.ts",
+          "components/OrderDetailsModal.tsx",
+          "lib/useWebsitePanelAnchor.ts",
+          "components/WebsiteOrderEntry.tsx",
+          "components/WebsitePickupBranches.tsx"
         ],
         "foodyserver": [
           "internal/support/corpus.json"
@@ -1141,7 +1160,10 @@
           "src/components/website-v3/OrderJourneyEditor.tsx",
           "src/components/website-v3/ReceiptEditor.tsx",
           "src/lib/website-v3/order-journey.ts",
-          "src/components/website/**"
+          "src/components/website/**",
+          "src/components/website-v3/editor.css",
+          "src/lib/website/checkout-field-conflicts.ts",
+          "src/lib/i18n.tsx"
         ],
         "foodyweb": [
           "app/checkout/**",
@@ -1150,11 +1172,13 @@
           "lib/orderLinkMetadata.ts",
           "app/order/confirmation/**",
           "components/website-v3/WebsiteFulfillmentDialog.tsx",
-          "components/website-v3/SiteHeader.tsx"
+          "components/website-v3/SiteHeader.tsx",
+          "app/order/checkout/CheckoutScheduleCalendar.tsx"
         ],
         "foodyserver": [
           "internal/website/**",
-          "internal/restaurants/checkout_config.go"
+          "internal/restaurants/checkout_config.go",
+          "internal/support/corpus.json"
         ]
       }
     },
@@ -1418,19 +1442,54 @@
           "ios/Runner/VerifonePaymentBridge.m",
           "android/app/src/main/kotlin/com/foodypos/app/VerifonePaymentBridge.kt",
           "lib/features/orders/domain/checkout_review.dart",
-          "lib/features/orders/presentation/terminal_checkout_pages.dart"
+          "lib/features/orders/presentation/terminal_checkout_pages.dart",
+          "lib/main.dart",
+          "lib/features/orders/presentation/payment_terminal_picker.dart",
+          "ios/Runner/AshraitProtocol.h",
+          "android/app/src/main/kotlin/com/foodypos/app/AshraitProtocol.kt",
+          "lib/core/ui/terminal_payment_error.dart",
+          "lib/features/settings/presentation/ashrait_last_transaction_tile.dart",
+          "lib/features/settings/presentation/victa_mini_settings_card.dart",
+          "lib/features/settings/presentation/hardware_settings_page.dart",
+          "lib/services/printing/receipt_delivery*.dart",
+          "lib/features/orders/data/order_api.dart",
+          "lib/features/orders/data/order_repository.dart",
+          "lib/features/orders/providers/order_providers.dart",
+          "lib/services/printing/ashrait_card_receipt_actions.dart",
+          "lib/features/orders/presentation/financial_check_page.dart",
+          "lib/features/orders/online/presentation/order_details_page.dart",
+          "lib/features/settings/presentation/terminal_installments_tile.dart"
         ],
         "foodyserver": [
           "internal/payment/**",
           "internal/orders/payment*.go",
           "internal/orders/cash_drawer*.go",
-          "internal/orders/transactions*.go"
+          "internal/orders/transactions*.go",
+          "internal/common/pos_card_collection.go",
+          "internal/orders/pos_card_collection*.go",
+          "migrations/287_pos_card_collections.sql",
+          "internal/orders/handler.go",
+          "internal/orders/service.go"
         ],
         "foodyadmin": [
           "src/app/[restaurantId]/transactions/**",
           "src/lib/api.ts",
           "src/components/Sidebar.tsx",
           "src/lib/route-permissions.ts"
+        ]
+      }
+    },
+    {
+      "id": "pos-victa-mini",
+      "article": "payments/victa-mini",
+      "audience": "public",
+      "selectors": {
+        "foodypos": [
+          "lib/services/payments/terminal_connection_provider.dart",
+          "lib/services/payments/terminal_configuration.dart",
+          "lib/features/settings/presentation/victa_mini_settings_card.dart",
+          "lib/main.dart",
+          "lib/features/settings/presentation/terminal_installments_tile.dart"
         ]
       }
     },
@@ -1463,7 +1522,8 @@
           "lib/features/settings/**",
           "lib/features/tables/providers/table_providers.dart",
           "lib/features/tables/providers/seating_providers.dart",
-          "lib/features/orders/providers/order_providers.dart"
+          "lib/features/orders/providers/order_providers.dart",
+          "lib/features/orders/presentation/widgets/check_panel.dart"
         ]
       }
     },
@@ -1474,14 +1534,18 @@
       "selectors": {
         "foodypos": [
           "lib/features/settings/presentation/printer_settings_page.dart",
-          "lib/features/settings/presentation/printer*.dart"
+          "lib/features/settings/presentation/printer*.dart",
+          "lib/services/printing/receipt_delivery*.dart"
         ],
         "foodyadmin": [
           "src/app/[restaurantId]/settings/printers/**",
           "src/lib/printer-profile-state.ts"
         ],
         "foodyserver": [
-          "internal/foodyspooler/**"
+          "internal/foodyspooler/**",
+          "internal/printing/customer_receipts.go",
+          "internal/common/receipt_print_request.go",
+          "migrations/289_device_receipt_requests.sql"
         ]
       }
     },
@@ -1491,7 +1555,11 @@
       "audience": "public",
       "selectors": {
         "foodypos": [
-          "lib/features/settings/presentation/printer_history_page.dart"
+          "lib/features/settings/presentation/printer_history_page.dart",
+          "lib/services/printing/print_spooler_fleet.dart",
+          "lib/services/printing/foody_print_spooler.dart",
+          "lib/services/printing/print_spooler_repository.dart",
+          "lib/services/printing/print_spooler_provider.dart"
         ],
         "foodyserver": [
           "internal/foodyspooler/**",
@@ -1716,7 +1784,8 @@
           "services/api.ts",
           "lib/i18n.tsx",
           "components/CheckoutBuilderFields.tsx",
-          "components/ItemModal.tsx"
+          "components/ItemModal.tsx",
+          "app/globals.css"
         ],
         "foodyserver": [
           "internal/common/phone.go",
@@ -1928,11 +1997,19 @@
           "internal/**",
           "cmd/**",
           "config/**",
-          "migrations/280_check_submission_recovery_scope.sql"
+          "migrations/280_check_submission_recovery_scope.sql",
+          "internal/admin/terminal_fleet*.go",
+          "internal/common/terminal_fleet.go",
+          "migrations/290_terminal_fleet_metadata.sql"
         ],
         "foodyweb": [
           "app/api/**",
           "app/sw.js/**"
+        ],
+        "foodybackoffice": [
+          "src/app/dashboard/terminals/**",
+          "src/lib/api.ts",
+          "src/components/Sidebar.tsx"
         ]
       }
     },
@@ -2248,7 +2325,132 @@
           "migrations/285_end_of_day.sql",
           "internal/common/financial_check.go",
           "internal/orders/financial_check_payment.go",
-          "internal/orders/cash_drawer.go"
+          "internal/orders/cash_drawer.go",
+          "migrations/291_counter_end_of_day.sql"
+        ]
+      }
+    },
+    {
+      "id": "orders-events",
+      "article": "orders/event-orders",
+      "audience": "public",
+      "selectors": {
+        "foodyserver": [
+          "internal/common/order_event.go",
+          "internal/orders/event_orders.go",
+          "internal/payment/event_checkout.go",
+          "internal/menu/event_settings.go",
+          "migrations/286_internal_event_orders.sql",
+          "cmd/server/main.go",
+          "internal/common/models.go",
+          "internal/orders/internal_checkout.go",
+          "internal/orders/kitchen_checks.go",
+          "internal/orders/production_sheet.go",
+          "internal/orders/service.go",
+          "internal/payment/handler.go",
+          "internal/payment/internal_checkout.go",
+          "internal/payment/reconcile.go",
+          "internal/payment/resolver.go",
+          "internal/printing/kitchen_release.go",
+          "internal/printing/render.go",
+          "internal/printing/service.go",
+          "internal/printing/ticket.go",
+          "internal/orders/handler.go",
+          "internal/support/corpus.json"
+        ],
+        "foodyadmin": [
+          "src/components/orders/EventOrder*.tsx",
+          "src/lib/orders/event-order-copy.ts",
+          "src/app/[restaurantId]/orders/new/page.tsx",
+          "src/app/[restaurantId]/orders/production/page.tsx",
+          "src/components/menu/publication/CarteEditor.tsx",
+          "src/components/orders/NewOrderCheckoutPanel.tsx",
+          "src/components/orders/NewOrderItemModal.tsx",
+          "src/components/orders/detail/OrderDetailHead.tsx",
+          "src/components/orders/detail/OrderDetailModal.tsx",
+          "src/lib/api.ts",
+          "src/lib/orders/draftLines.ts",
+          "src/lib/orders/orderDraft.ts",
+          "src/lib/orders/table-columns.tsx",
+          "src/components/orders/InternalOrderPayment.tsx",
+          "src/components/production/ProductionMatrix.tsx",
+          "src/components/production/ProductionMobile.tsx",
+          "src/components/orders/EventOrderBadge.tsx",
+          "src/components/orders/EventOrderFields.tsx",
+          "src/components/orders/EventOrderSummary.tsx"
+        ],
+        "foodyweb": [
+          "components/EventCheckoutFields.tsx",
+          "lib/event-order-copy.ts",
+          "app/order/checkout/CheckoutFlow.tsx",
+          "services/api.ts",
+          "components/ConfirmationPageClient.tsx",
+          "lib/types.ts",
+          "components/OrderExperience.tsx",
+          "store/useCartStore.ts"
+        ],
+        "foodypos": [
+          "lib/core/ui/event_order_badge.dart",
+          "lib/core/l10n/app_en.arb",
+          "lib/core/l10n/app_fr.arb",
+          "lib/core/l10n/app_he.arb",
+          "lib/features/kitchen/presentation/kitchen_ticket_card.dart",
+          "lib/features/orders/domain/order.dart",
+          "lib/features/orders/domain/order_item.dart",
+          "lib/features/orders/online/presentation/order_card_widget.dart",
+          "lib/features/orders/online/presentation/order_details_page.dart",
+          "lib/services/printing/receipt_bitmap_renderer.dart",
+          "lib/features/orders/presentation/widgets/order_manager_row.dart"
+        ]
+      }
+    },
+    {
+      "id": "payments-transactions",
+      "article": "payments/transactions",
+      "audience": "public",
+      "selectors": {
+        "foodyserver": [
+          "internal/orders/transactions*.go",
+          "internal/printing/transaction_receipt.go",
+          "internal/printing/customer_receipts.go"
+        ],
+        "foodypos": [
+          "lib/features/transactions/**",
+          "lib/core/l10n/app_en.arb",
+          "lib/core/l10n/app_fr.arb",
+          "lib/core/l10n/app_he.arb",
+          "lib/services/printing/receipt_delivery.dart",
+          "lib/services/printing/receipt_delivery_view.dart"
+        ],
+        "foodyadmin": [
+          "src/app/[restaurantId]/transactions/**",
+          "src/lib/transactions.ts",
+          "src/lib/api.ts",
+          "src/lib/route-permissions.ts",
+          "src/components/Sidebar.tsx",
+          "src/app/[restaurantId]/layout.tsx",
+          "src/lib/i18n.tsx"
+        ]
+      }
+    },
+    {
+      "id": "pos-ashrait-terminal-inspection",
+      "article": "payments/ashrait-terminal-inspection",
+      "audience": "public",
+      "selectors": {
+        "foodypos": [
+          "lib/services/payments/ashrait_last_transaction.dart",
+          "lib/features/settings/presentation/ashrait_last_transaction_tile.dart",
+          "lib/services/payments/terminal_payment_service.dart",
+          "ios/Runner/VerifonePaymentBridge.m",
+          "ios/Runner/AshraitProtocol.h",
+          "android/app/src/main/kotlin/com/foodypos/app/VerifonePaymentBridge.kt",
+          "lib/services/payments/pos_card_collection_repository.dart",
+          "lib/features/orders/presentation/payment_terminal_picker.dart",
+          "lib/core/ui/terminal_payment_error.dart",
+          "android/app/src/main/kotlin/com/foodypos/app/AshraitProtocol.kt",
+          "android/app/src/main/kotlin/com/foodypos/app/VerifonePrinterBridge.kt",
+          "lib/services/printing/ashrait_card_receipt_actions.dart"
         ]
       }
     }

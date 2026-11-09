@@ -1,0 +1,63 @@
+---
+title: Review transaction history
+description: >-
+  Read the restaurant’s confirmed Foody payment history from Transactions in the POS or Admin. The same restaurant and
+  payment-view permission apply. This procedure requires the matching API, Admin and installed POS release.
+apps: both
+tags:
+  - payments
+  - payments-transactions
+updatedAt: '2026-11-07'
+featureId: payments-transactions
+audience: public
+releaseStatus: available
+---
+Read the restaurant’s confirmed Foody payment history from Transactions in the POS or Admin. The same restaurant and payment-view permission apply. This procedure requires the matching API, Admin and installed POS release.
+
+<span id="transaction-history" />
+
+## Find a completed payment in Transactions
+
+Open Transactions in the iPad POS navigation, in More on compact terminals, or in the Admin sidebar, with payments.view or payments.manage. All three screens read the same restaurant-scoped confirmed payment history. In Admin choose a date range, source and method; search by item, reference or order number, then select a payment for its amount, method and linked orders. On the POS, selecting a linked order opens its saved read-only detail without leaving Transactions; if it cannot load, refresh and retry. The source follows the linked order: a provider-processed payment for a POS-created order appears under POS, not Online. Totals cover all matching payments, not just the visible page, and keep currencies separate. One order can have several tenders and one tender can cover several orders; Orders remains the place to follow fulfillment. Pending terminal attempts are not completed sales. Authorized owners and managers may see server-verified cash refunds or Verifone Checkout original-card returns for eligible payments; see the refund procedure before acting. If a result is missing, check restaurant, date and filters, then reconcile uncertain terminal payments before another charge. On a compatible Portable, find Transactions in More, even if it is assigned to the tablet’s primary bar.
+
+<span id="transaction-payment-origin" />
+
+## Understand payment origin
+
+Open a transaction on POS or Admin and read Payment origin separately from Source. Source identifies where the linked order was created; origin identifies cash, Verifone Checkout, another provider, or a recorded card payment. Victa (recorded payment) and Card (origin unverified) mean Foody recorded a result; they do not prove that a refund can be sent to the terminal. Older grouped payments can show Origin not attributed. For a return, confirm the original tender and use its authorized refund workflow; never substitute cash for a card payment.
+
+<span id="transaction-items-and-retry" />
+
+## Search every item and retry the history
+
+Search Transactions by any item in a linked order, including items after the first four. Open a payment to review the available linked item names. On the POS, if loading more results fails, the payments already shown remain visible; choose Try again under the list to continue. This retries only the history request, not a card charge.
+
+<span id="transaction-recorded-returns" />
+
+## Read refunds and payment voids in Transactions
+
+A successful Verifone Checkout refund or void initiated in Foody appears as its own return transaction, linked to the original payment. A confirmed cash return also appears separately, linked to its original cash tender. On the POS, an owner or manager with payments.manage can open an eligible payment in Transactions. For a journaled cash sale, choose Issue refund only when the server confirms an exact refundable portion and an open enrolled drawer. Select the order or check portion, enter an amount within the limit and a reason, then hand over cash only after Foody confirms. For one captured Verifone Checkout card payment linked to one exact order allocation, choose Refund to original card or Cancel card payment if offered. Enter a reason and, for a refund, an amount within the displayed limit. Foody sends the return to the original card, never to the cash drawer. An uncertain card result must be rechecked using the same saved request before another return; do not issue cash instead. Legacy unattributed, split/multi-order and Victa card payments do not offer this card action. Admin shows gross collections separately from returns recorded in Foody; neither figure is net revenue. Returns made directly in Verifone Central or on Victa are not included automatically. Also review [recorded net and balance](/en/help/orders/payment-preparation-and-handoff#recorded-money-summary).
+
+<span id="transaction-gross-total" />
+
+## Read the transaction total correctly
+
+The Admin date range and displayed times use the restaurant’s timezone. The total sums all confirmed payment records matching the selected filters, even across several pages. Currencies remain separate. It is a gross payment total, not net sales: refunds, processing fees, cash-drawer movements and terminal end-of-day deposits are not subtracted here. Use the appropriate provider and accounting reports before reconciling a day.
+
+<span id="transaction-central-history" />
+
+## Understand providers and history coverage
+
+Transactions reads Foody’s central history, not a list downloaded from Ashrait. It includes confirmed recorded cash, POS card and QR/website payments, including Verifone, Sumit and Stancer. The online provider remains the payment’s actual processor; displaying it does not connect a new provider to POS hardware. Card-present terminal operations remain Verifone-only. getLastTransaction reads only a terminal’s latest operation and cannot reconstruct a restaurant’s history. Provider actions performed outside Foody may be absent. Keep gross collections and locally recorded returns separate, by currency; no currency conversion or bank-net total is inferred.
+
+<span id="transaction-unavailable-allocation" />
+
+## Read an entry whose original order is unavailable
+
+A confirmed cash sale or return remains in the immutable cash ledger even when its operational order or check is no longer readable. Transactions retains the recorded amount, date, currency and original payment identity, and shows an unavailable-original warning. Missing or foreign order/check identifiers are hidden; no amount is assigned to a guessed replacement. This read never rewrites a payment, deletes cash evidence or enables a refund. In Admin, Details is read-only. In POS, an entry marked unavailable has no refund action. A retry reloads history only; it never charges a card or sends Deposit.
+
+<span id="new-pos-receipt" />
+
+## Print or share a new receipt from FoodyPOS
+
+On iPad, open Transactions. On Portable, open More → Transactions. Select a completed sale, then New receipt. Print receipt uses this POS’s default printers. Other printers… lets you select an eligible destination for this copy. Share receipt prepares an image and opens the device’s share menu. Choose email or another available app, then confirm sending there. Done or No receipt closes the page. Payment read and order management permissions govern the available actions. The receipt shows the selected transaction’s amount. For a partial payment or unavailable original items, it uses the available payment details. Check the paper before requesting a copy if printing is uncertain.

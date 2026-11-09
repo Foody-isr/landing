@@ -5,7 +5,7 @@ apps: both
 tags:
   - orders
   - production
-updatedAt: '2026-10-29'
+updatedAt: '2026-11-02'
 featureId: production
 audience: public
 releaseStatus: available
@@ -29,3 +29,15 @@ Review aggregated items, variants, portions and notes before assigning preparati
 ## Prepare customer packing
 
 Use the customer/order breakdown to organize packing and pickup/delivery handover. Confirm completed preparation with the offered controls; preparation does not confirm payment.
+
+<span id="event-orders" />
+
+## Event orders from the existing order workflow
+
+Open Production on the handover date, even if cooking earlier. By carte shows separate sheets and quantities with quick links to each section. A mixed-carte order contributes only its matching lines to each section. Historical or library lines without a unique carte appear under Other cartes instead of being duplicated. The order marker is also visible in staff order details, POS and compatible kitchen tickets. Keep Bassari and Halavi sections and their totals separate. With kitchen.manage and orders.manage, use the saved event’s Actions → Add to production, even before payment. Removing it from the plan does not cancel the order or change its payment. An already-open plan refreshes on changes; use Refresh if necessary without changing the selected handover date.
+
+<span id="manual-order-production-choice" />
+
+## Choose production for a manual order
+
+On the final Payment and confirmation step, answer Add to production plan: Yes or No. Neither option is selected initially. Submitting without an answer outlines both options in red and focuses the choice. Yes requests inclusion subject to the order’s confirmation conditions; an ordinary Sumit link waits for confirmed payment and events retain their validation requirements. No excludes the order from the plan, including after scheduling or payment. The choice survives earlier steps and payment changes. Earlier steps have no production banner. Failed creation preserves the form; check a saved order before retrying an uncertain result. An authorized Add to production plan action on the saved order can supersede No. Removing that manual override restores automatic admission rules without cancelling the order or changing payment.

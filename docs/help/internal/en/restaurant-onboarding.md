@@ -29,3 +29,5 @@ Find the intended user, verify restaurant/role and apply only the requested acco
 ## Access the new controls
 
 Usage and quotas compares service consumption across restaurants. Review allocation and the restaurant-detail link open monthly limits; saving requires a reason and preserves all counters. These controls are superadmin-only and separate from the storefront sign-in preference.
+
+The global fleet can record a terminal as under repair or returned and maintain its declared commercial identifiers. This neither reassigns hardware nor configures a new payment supplier; follow the confirmed regional Verifone procedure before returning it to service.

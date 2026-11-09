@@ -6,7 +6,7 @@ tags:
   - payments
   - payments-how-payments-work
   - how-payments-work
-updatedAt: '2026-10-29'
+updatedAt: '2026-11-02'
 featureId: payments-how-payments-work
 audience: public
 releaseStatus: available
@@ -119,3 +119,15 @@ Conditions d’activation et reprise : [garantie bancaire pour les espèces](/fr
 ## Vérifier les confirmations indépendantes
 
 Le récapitulatif distingue les encaissements et remboursements enregistrés, le net reçu et le reste dû. Une valeur inconnue n’est pas zéro ; un remboursement ne recrée pas automatiquement une dette. Ce récapitulatif n’autorise aucun nouveau débit et les parcours financiers existants restent nécessaires. Voir [les montants enregistrés](/fr/help/orders/payment-preparation-and-handoff#recorded-money-summary).
+
+<span id="event-orders" />
+
+## Événements et empreintes bancaires
+
+Pour modifier un événement enregistré, l’ajouter en production, partager son lien et distinguer acompte encaissé et empreinte Sumit, consultez [Event / Catering](/fr/help/orders/event-orders).
+
+<span id="physical-card-destination" />
+
+## Vérifier la destination physique du paiement carte
+
+Avec les versions POS/API compatibles, vérifiez la destination physique avant l’encaissement carte : consultez le [choix Mini/Portable](/fr/help/payments/victa-mini#explicit-terminal-selection) et la [configuration vérifiée du matériel](/fr/help/payments/victa-mini#connection). Les identifiants existants, la séparation QR, la préparation et les réglages de libération des tables restent indépendants. Une réservation terminal non résolue bloque un autre encaissement ; reprenez l’opération d’origine plutôt que de créer une vente de remplacement.

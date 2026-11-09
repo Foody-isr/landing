@@ -29,3 +29,5 @@ Consultez totaux puis dossier restaurant/utilisateur pour enquête. Les agrégat
 ## Accès aux nouveaux réglages
 
 Usage and quotas ouvre la comparaison des consommations par service et par restaurant. Review allocation et le lien de la fiche restaurant ouvrent les plafonds mensuels ; leur enregistrement exige un motif et conserve tous les compteurs. Ces contrôles sont réservés au superadmin, distincts du choix de connexion du site.
+
+Sur les versions compatibles, Parc des terminaux est également réservé aux superadmins Foody. Il liste les appareils entre restaurants ; les numéros DID/SHVA et le fournisseur saisis restent des déclarations auditées, pas une configuration bancaire appliquée.

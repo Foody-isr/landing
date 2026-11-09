@@ -5,7 +5,7 @@ apps: both
 tags:
   - staff
   - staff-devices-shifts
-updatedAt: '2026-10-28'
+updatedAt: '2026-11-04'
 featureId: staff-devices-shifts
 audience: public
 releaseStatus: available
@@ -111,3 +111,9 @@ More → Reports → Cash drawer uses a vertical page on a handheld terminal. Am
 This flow needs compatible API and POS versions; this guide does not confirm installation. After Sign out, Shift already ended means that no active period was found for your account in this restaurant. It is not inferred from a cash-access error. Cancel keeps you signed in. Lock terminal requires explicit confirmation and rereads the state before returning to PIN, without sending another shift-end request.
 
 If a period appears meanwhile, the sign-in or restaurant changes, the read fails or a local cash operation is pending, locking is not confirmed. Preserve the data, resolve the operation through its own flow, then retry. Terminal payment journals are retained. Locking closes no drawer, creates no period and reactivates no device authorization.
+
+<span id="current-pos-cash-context" />
+
+## Use multiple registers without moving attendance
+
+With compatible API and POS versions, an employee can resume attendance on another enrolled device in the same restaurant: Drawer balance and closing use that device’s own authorization. Attendance retains its start and original device; no drawer or operation moves. Before signing out, open drawers on both the original and current device must be resolved. Missing, expired, revoked or foreign authorization never permits a bypass.

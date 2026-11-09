@@ -13,7 +13,7 @@ const workspace = path.dirname(landing);
 const features = JSON.parse(fs.readFileSync(path.join(landing, 'docs/help/catalog/features.json'), 'utf8'));
 const languages = ['en', 'fr', 'he'];
 const digest = value => crypto.createHash('sha256').update(value).digest('hex');
-const sourceExtension = /\.(?:tsx?|jsx?|mjs|css|go|dart|swift|kt|json|arb)$/;
+const sourceExtension = /\.(?:tsx?|jsx?|mjs|css|go|dart|swift|kt|m|h|json|arb)$/;
 const sourceRoots = /^(?:src|app|components|lib|services|store|internal|config|cmd|ios\/Runner|ios\/AppIntents|android\/app\/src)\//;
 const excluded = /(?:^|\/)(?:__tests__|test|tests|node_modules|build|Pods|\.dart_tool|generated|l10n\/app_localizations[^/]*)(?:\/|$)|(?:\.test|\.spec|_test|\.g|\.freezed)\./;
 const glob = value => new RegExp('^' + value.split('**').map(part => part.split('*').map(x => x.replace(/[.+?^${}()|[\]\\]/g, '\\$&')).join('[^/]*')).join('.*') + '$');
@@ -70,11 +70,33 @@ for (const [service, configuredRoot] of Object.entries(roots)) {
     // order handling or offering/void procedures.
     const endOfDayModule = service === 'foodyserver' && /^internal\/(?:orders|common)\/end_of_day[^/]*\.go$/.test(file);
     const guardedCash = service === 'foodypos' && file === 'lib/features/orders/presentation/cash_collection_guard.dart';
-    const ids = endOfDayModule ? ['pos-end-of-day'] : guardedCash ? ['pos-payments', 'pos-end-of-day'] : cashGuaranteeModule ? ['stancer-cash-guarantee'] : service === 'foodyserver' && file === 'internal/orders/cash_drawer_context.go'
+    const eventModule = (service === 'foodyserver' && ['internal/common/order_event.go','internal/orders/event_orders.go','internal/orders/event_edit.go','internal/payment/event_hold.go','internal/payment/event_checkout.go','internal/menu/event_settings.go','migrations/286_internal_event_orders.sql'].includes(file)) || (service === 'foodyadmin' && (/src\/components\/orders\/EventOrder[^/]*\.tsx$/.test(file) || file === 'src/lib/orders/event-order-copy.ts')) || (service === 'foodyweb' && ['components/EventCheckoutFields.tsx','lib/event-order-copy.ts'].includes(file)) || (service === 'foodypos' && file === 'lib/core/ui/event_order_badge.dart');
+    // These dedicated item-to-carte modules do not configure variants, recipes,
+    // modifiers or other features covered by the broad menu-item selectors.
+    const itemMenuAssignmentModule = service === 'foodyadmin' && [
+      'src/components/MenuGroupPicker.tsx', 'src/components/menu-item/ItemMenuSaveNotice.tsx',
+      'src/lib/item-menu-assignments.ts', 'src/lib/itemDraft.ts',
+    ].includes(file);
+    let ids = itemMenuAssignmentModule ? ['menu-categories-and-items', 'menu-creating-a-menu-item', 'menu-menus-and-groups'] : eventModule ? ['orders-events'] : endOfDayModule ? ['pos-end-of-day'] : guardedCash ? ['pos-payments', 'pos-end-of-day'] : cashGuaranteeModule ? ['stancer-cash-guarantee'] : service === 'foodyserver' && file === 'internal/orders/cash_drawer_context.go'
       ? ['pos-payments', 'pos-cash-access-diagnostics']
       : service === 'foodyserver' && /^internal\/orders\/transactions(?:_handler|_adjustments)?\.go$/.test(file)
         ? ['pos-payments'] : service === 'foodyserver' && file === 'internal/menu/item_photos.go'
           ? ['menu-product-photos'] : matched.length ? matched : ['shared-runtime'];
+    // Dedicated shelf-stock modules do not implement modifier, combo, variant
+    // or payment procedures merely because those guides share broad domain globs.
+    const focusedStockOwnership = {
+      'foodyserver:internal/menu/prepared_stock.go': ['kitchen-availability', 'menu-creating-a-menu-item'],
+      'foodyserver:internal/orders/prepared_stock.go': ['kitchen-availability', 'preorders', 'guest-ordering'],
+      'foodyserver:internal/restaurants/fulfillment_stock.go': ['kitchen-availability', 'preorders', 'guest-ordering'],
+      'foodyserver:internal/salesstock/prepared_stock.go': ['kitchen-availability', 'menu-creating-a-menu-item', 'preorders'],
+      'foodyadmin:src/components/menu-item/PreparedStockEditor.tsx': ['kitchen-availability', 'menu-creating-a-menu-item'],
+    };
+    const currentPOSProofOwnership = {
+      'foodyserver:internal/devices/pos_device_proof.go': ['staff-devices-shifts', 'pos-payments', 'pos-end-of-day'],
+      'foodyserver:internal/orders/pos_device_context.go': ['pos-payments', 'pos-end-of-day'],
+      'foodyserver:internal/shifts/pos_device_context.go': ['staff-devices-shifts', 'platform-api'],
+    };
+    ids = currentPOSProofOwnership[`${service}:${file}`] ?? focusedStockOwnership[`${service}:${file}`] ?? ids;
     sources[file] = { sha256: digest(bytes), features: ids };
     const found = [];
     if (/(?:^|\/)app\/.*\/(?:page|route)\.[jt]sx?$/.test(file)) found.push({ kind: file.includes('/route.') ? 'next-api-route' : 'next-page', route: routePath(file), line: 1 });

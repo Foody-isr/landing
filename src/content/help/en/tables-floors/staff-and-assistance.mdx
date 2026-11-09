@@ -5,7 +5,7 @@ apps: both
 tags:
   - tables-floors
   - table-service-policy
-updatedAt: '2026-10-28'
+updatedAt: '2026-11-04'
 featureId: table-service-policy
 audience: public
 releaseStatus: available
@@ -53,3 +53,11 @@ In Table assistance enable the supported requests and staff notifications approp
 ## Find service tools on mobile
 
 In Checks on the updated terminal, the radio selector connects All checks with available floor plans. Open + then Actions for the staff filter, To do and Refresh. Assignment restrictions and permissions still limit accessible tables and checks. The plan can pan on screen; neither panning nor switching views saves new geometry, assigns staff or releases a table. The active user’s name supplies the initials at the lower left; that button opens More without changing service assignment.
+
+<span id="paid-table-close-recovery" />
+
+## Close the correct service after an approved payment
+
+On compatible server and POS versions, an older order linked to a confirmed expired session no longer blocks closing or releasing the next visit at the same table. That older order remains in Orders with its payment state; it is not collected, cancelled or attached to the next guests. Amounts still due in the current session and unconfirmed legacy links must still be resolved before closure.
+
+If the terminal approved the card but closing failed, do not pay again. Refresh the check and verify that Foody shows it paid; then retry only Close order. If Foody has not confirmed payment, verify the original operation or ask a manager. On the compatible POS, a rejected close displays a message while preserving the confirmed floor and occupancy. Closing does not finish food in the kitchen or perform a deposit or banking end of day.

@@ -6,7 +6,7 @@ tags:
   - payments
   - payments-how-payments-work
   - how-payments-work
-updatedAt: '2026-10-29'
+updatedAt: '2026-11-02'
 featureId: payments-how-payments-work
 audience: public
 releaseStatus: available
@@ -119,3 +119,15 @@ Acceptance and recovery: [cash card guarantees](/en/help/payments/cash-card-guar
 ## Review independent confirmations
 
 The summary distinguishes recorded collections and refunds, net received and the remaining balance. An unknown value is not zero; a refund does not automatically recreate debt. The summary authorizes no new charge and existing financial flows remain required. See [recorded amounts](/en/help/orders/payment-preparation-and-handoff#recorded-money-summary).
+
+<span id="event-orders" />
+
+## Event orders and bank reservations
+
+For saved-event edits, explicit production inclusion, private links, deposits and Sumit authorizations kept separate from received money, see [Event / Catering](/en/help/orders/event-orders).
+
+<span id="physical-card-destination" />
+
+## Review the physical card destination
+
+With the compatible POS/API, review the physical card destination before collection: see [Mini/Portable selection](/en/help/payments/victa-mini#explicit-terminal-selection) and [verified hardware setup](/en/help/payments/victa-mini#connection). Existing order IDs, QR separation, kitchen progression and table-release settings remain independent. An unresolved terminal reservation blocks another collection; recover the original operation rather than creating a replacement sale.

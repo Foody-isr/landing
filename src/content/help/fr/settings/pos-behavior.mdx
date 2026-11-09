@@ -7,7 +7,7 @@ apps: both
 tags:
   - settings
   - pos-behavior
-updatedAt: '2026-10-30'
+updatedAt: '2026-11-08'
 featureId: pos-behavior
 audience: public
 releaseStatus: available
@@ -37,6 +37,8 @@ Si la caisse affiche l’avertissement d’actualisation des réglages, vérifie
 ## Configurer les services de cuisine
 
 Ouvrez Services et maintenez les noms et l’ordre des services du restaurant. Activez leur gestion et les options autorisées d’attente/lancement ou Envoyer et rester dans le mode affecté à l’appareil POS. Dans Envoi immédiat, sélectionnez les catégories de bibliothèque voulues, appliquez puis enregistrez. Cette association utilise la catégorie de bibliothèque globale de chaque article, pas son groupe d’affichage/menu ni un nom de groupe identique. Un article d’une catégorie immédiate rejoint Envoi immédiat lors de son ajout à une vente sur place, même si un service nommé est sélectionné. Les autres nouveaux articles utilisent le service choisi. Vérifiez une ligne fraîchement ajoutée après une modification du catalogue ; les lignes déjà enregistrées ne sont pas déplacées rétroactivement. Envoi immédiat signifie que le prochain Envoyer explicite lance ces lignes en attente immédiatement : le simple ajout de l’article n’envoie ni n’imprime rien. Attente/Lancer des services nommés restent provisoires jusqu’à la réussite d’Envoyer/Continuer. Continuer est disponible seulement si le mode affecté le permet et conserve l’addition ouverte ; il ne lance pas automatiquement le service suivant. Les services organisent le lancement cuisine et restent distincts des partages financiers, des paiements propres aux clients QR et des groupes de menu publics. Vérifiez [la synchronisation du mode partagé](#shared-mode-sync) si Admin et POS montrent des activations différentes.
+
+Pour une addition ouverte, vérifiez l’envoi dans Addition et l’avancement au KDS du passe. Consultez [le suivi d’un plat à table](/fr/help/orders/taking-an-order-pos#open-check-kitchen-progress).
 
 <span id="adjustments" />
 
@@ -104,4 +106,28 @@ Le terminal portable utilise trois boutons sans libellé : les initiales de l’
 
 ## Retrouver le dépôt dans le parcours de fin de journée
 
-Lorsque l’API compatible propose Clôture de journée, Dépôts du terminal ouvre ce parcours commun avant toute transmission. Sur une API antérieure, l’écran de dépôt séparé reste disponible selon les capacités réelles du terminal. Un changement de configuration après affichage exige une nouvelle vérification avant de réserver la caisse. Une ancienne approbation de carte sans provenance vérifiable reste à rapprocher : elle n’autorise ni un nouvel encaissement ni son adoption par un autre restaurant. Consultez [la clôture et sa reprise](/fr/help/payments/end-of-day).
+Avec les versions compatibles, ouvrez Plus → Rapports → Solde en caisse sur l’iPad du comptoir. Le responsable peut y définir la caisse principale et y piloter le tiroir et les transmissions des terminaux. Historique de caisse donne accès au Z finalisé et aux copies SHVA disponibles. Sur les versions antérieures, les actions restent accessibles selon les capacités de l’appareil. Consultez [la procédure de clôture](/fr/help/payments/end-of-day).
+
+<span id="victa-mini-hardware" />
+
+## Connecter et retrouver le Victa Mini sur iPad
+
+Sur iPad, Matériel → Terminaux de paiement propose Connecter un Victa Mini, puis le terminal enregistré et son état de connexion. La configuration et la reconnexion automatique sont décrites dans [Connexion du Victa Mini](/fr/help/payments/victa-mini#connection). Ce parcours ne change ni les profils d’imprimante, ni les réglages du mode de caisse, ni les opérations de paiement en attente.
+
+<span id="physical-card-destination" />
+
+## Vérifier la destination physique du paiement carte
+
+Avec les versions POS/API compatibles, vérifiez la destination physique avant l’encaissement carte : consultez le [choix Mini/Portable](/fr/help/payments/victa-mini#explicit-terminal-selection) et la [configuration vérifiée du matériel](/fr/help/payments/victa-mini#connection). Les identifiants existants, la séparation QR, la préparation et les réglages de libération des tables restent indépendants. Une réservation terminal non résolue bloque un autre encaissement ; reprenez l’opération d’origine plutôt que de créer une vente de remplacement.
+
+<span id="unified-cash-workspace" />
+
+## Utiliser le suivi de caisse commun
+
+Avec les droits de paiement et les versions compatibles, ouvrez Plus → Rapports → Solde en caisse. Le même espace présente le tiroir espèces, les encaissements carte enregistrés par terminal et la clôture guidée. Historique de caisse réunit les sessions espèces closes et les rapports Z finalisés. Les anciennes adresses de clôture et de dépôt rejoignent cet espace ; les API plus anciennes conservent leur parcours précédent. Consultez [le parcours de caisse commun](/fr/help/payments/end-of-day#unified-cash-workspace).
+
+<span id="ashrait-last-transaction-inspection" />
+
+## Consulter la dernière transaction du terminal
+
+Dans Matériel → Terminaux de paiement, un responsable peut consulter la dernière transaction du terminal connecté. Cette lecture ne modifie aucun paiement. Voir [la procédure et ses limites](/fr/help/payments/ashrait-terminal-inspection).

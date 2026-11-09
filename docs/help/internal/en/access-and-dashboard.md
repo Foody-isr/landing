@@ -31,3 +31,5 @@ Review dashboard totals and navigate to the specific restaurant/user record for 
 ## Access the new controls
 
 Usage and quotas compares service consumption across restaurants. Review allocation and the restaurant-detail link open monthly limits; saving requires a reason and preserves all counters. These controls are superadmin-only and separate from the storefront sign-in preference.
+
+On compatible versions, Terminal fleet is also restricted to Foody superadmins. It lists devices across restaurants; entered DID/SHVA numbers and supplier remain audited declarations, not applied bank configuration.

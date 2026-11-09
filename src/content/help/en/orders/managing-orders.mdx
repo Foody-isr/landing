@@ -14,7 +14,7 @@ tags:
   - web
   - qr
   - pos
-updatedAt: '2026-11-02'
+updatedAt: '2026-11-07'
 featureId: orders-managing-orders
 audience: public
 releaseStatus: available
@@ -25,7 +25,7 @@ Open the corresponding Foody workspace described below. The cross-channel All vi
 
 ## Review open checks on iPad
 
-On a compatible iPad, open Orders, then Checks in the landscape sidebar or portrait view picker. Menu → Actions → Open tickets opens this same view, not another list above Menu. It brings together open manual table, named and financial checks. Tap the intended row to reopen its Menu; a table with separate bills requires an explicit bill choice. QR/web orders retain their own numbers and payments in the other views. Use All, rather than Checks, to find every recorded order.
+On a compatible iPad, open Orders, then Checks in the landscape sidebar or portrait view picker. It brings together open manual table, named and financial checks. Tap the intended row to reopen its Menu; a table with separate bills requires an explicit bill choice. QR/web orders retain their own numbers and payments in the other views. Use All, rather than Checks, to find every recorded order.
 
 With orders.manage and open checks enabled in the effective mode, + opens New ticket. Review the preselected service type, then choose an available name or Custom check; see [tableless creation](/en/help/orders/order-types#pos-tableless-dine-in). Viewing never creates, pays, sends or closes a check. If loading fails, retry without creating a replacement. A changed restaurant, employee or context stops an obsolete opening. Phones and compact handhelds retain their existing Open tickets workflow.
 
@@ -51,7 +51,7 @@ In POS Transactions, select a confirmed payment and open a linked order to view 
 
 ## Refund or void a Verifone online payment
 
-In order details, verify the Verifone payment before voiding or refunding. Verify an uncertain outcome before starting another operation. Follow the [complete procedure](/en/help/orders/order-details#verifone-admin-money-operations).
+For eligible online payments, follow the [Verifone refund/VOID procedure](/en/help/payments/how-payments-work#verifone-admin-refund-void). Never repeat an uncertain operation.
 
 <span id="weight-hold-margin" />
 
@@ -75,6 +75,7 @@ the kitchen.
 - Admin **Orders → All** uses the same restaurant-owned records; its selected dates and filters still apply.
 - Payment and preparation are independent: a paid takeaway being prepared remains active.
 - On a compatible POS, authorized actionable orders open in Menu; completed records remain historical. See [saved-order navigation](#open-saved-order-in-menu).
+- In Admin, This week includes all seven calendar days from the restaurant’s configured first weekday, including future days.
 
 <span id="section-3" />
 
@@ -123,7 +124,7 @@ With orders.manage permission, open New order or edit a saved order in Admin and
 
 ## Wait for counter card payment before kitchen preparation
 
-For a new counter pickup order paid by card, choose Pay, then Pay by card. Wait for terminal approval and for Foody to record the payment before preparation and the kitchen ticket start. During collection the payment remains pending and is excluded from the live order board. After a refusal or cancellation, keep the same checkout and retry there; do not send it to the kitchen to bypass payment. If approval succeeded but synchronization failed, reconcile the existing payment before starting another charge. Orders deliberately sent for table service before collection keep their existing send-then-pay flow.
+For a new counter pickup order paid by card, choose Pay, then Pay by card. Wait for terminal approval and for Foody to record the payment before preparation and the kitchen ticket start. During collection the payment remains pending and is excluded from the live order board. After a refusal or cancellation, keep the same checkout and retry there; do not send it to the kitchen to bypass payment. If approval succeeded but synchronization failed, reconcile the existing payment before starting another charge. Orders deliberately sent for table service before collection keep their existing send-then-pay flow. For a sales receipt copy, open [Transactions → New receipt](/en/help/payments/transactions#new-pos-receipt).
 
 <span id="carte-series-stock" />
 
@@ -165,7 +166,7 @@ Open POS → Orders → All, or Admin → Orders → All for the same restaurant
 
 ## Find a counter sale after payment
 
-A paid takeaway sale sent to the kitchen belongs in Orders → Active while food is being prepared, not Completed merely because payment succeeded. Open the correct takeaway filter and clear other filters if needed. Transactions records the collection separately and refreshes on entry. On the updated handheld, a confirmed recorded collection opens receipt choice, then New sale completes the flow explicitly. Tablets retain the brief Payment recorded confirmation and automatic return. Clearing the current POS bill does not delete the saved order; Orders → All remains available for cross-channel tracking. If paper is missing, verify the profile, current POS/printer association and printer history before reprinting or collecting any additional payment. See [counter checkout](/en/help/payments/pos-checkout#counter-completion). The Client tab uses the order's saved name/phone, not a guessed customer from another bill. Optional contact collection is configured [per fulfillment method](/en/help/settings/pos-behavior#fulfillment-customer). Additional kitchen batches retain coherent contact details without sending a new order-created confirmation for each course; status notifications remain separate.
+A paid takeaway sale sent to the kitchen belongs in Orders → Active while food is being prepared, not Completed merely because payment succeeded. Open the correct takeaway filter and clear other filters if needed. Transactions records the collection separately and refreshes on entry. On iPad and Portable, the Payment recorded confirmation closes automatically. For a copy, open [Transactions → New receipt](/en/help/payments/transactions#new-pos-receipt). Clearing the current POS bill does not delete the saved order; Orders → All remains available for cross-channel tracking. If paper is missing, verify the profile, current POS/printer association and printer history before reprinting or collecting any additional payment. See [counter checkout](/en/help/payments/pos-checkout#counter-completion). The Client tab uses the order's saved name/phone, not a guessed customer from another bill. Optional contact collection is configured [per fulfillment method](/en/help/settings/pos-behavior#fulfillment-customer). Additional kitchen batches retain coherent contact details without sending a new order-created confirmation for each course; status notifications remain separate.
 
 <span id="unified-order-whatsapp-selection" />
 
@@ -211,16 +212,28 @@ See [check, payment, preparation and handoff](/en/help/orders/payment-preparatio
 
 ## Finalize an internal order
 
-In New order, choose Continue to finalize inside the ticket. Explicitly choose a link, Sumit card, received payment or later payment according to your permissions. Nothing is marked received by default. See [the full procedure](/en/help/orders/order-details#create).
+The compatible Admin version completes ordinary orders in two steps and events in three. Previous and visited titles retain entered details; Continue checks fields and focuses errors. The final step requires choosing Yes or No for Add to production plan. See [checkout steps](/en/help/orders/order-details#manual-order-steps) for customer links, times and corrections.
 
 <span id="independent-lifecycle-confirmations" />
 
 ## Review independent confirmations
 
-Before quantity handoff or closure, review the exact scope and facts separately from payment. See [the full procedure](/en/help/orders/payment-preparation-and-handoff).
+For open checks, verify dispatch in Check and preparation at the expo KDS. See [checking a dish for an open table](/en/help/orders/taking-an-order-pos#open-check-kitchen-progress).
 
 <span id="accept-scheduled-order" />
 
 ## Accept a scheduled order before its date
 
 In Admin → Orders, open the scheduled order and review its date, slot and payment. With orders.manage, choose Accept. The restaurant workflow determines the result: acceptance only followed by a separate Send to kitchen action, or kitchen dispatch and production-plan inclusion when those shortcuts are configured. This explicit action preserves the pickup or delivery date and slot; it does not mark the order paid or prove readiness or handoff. A manual order discounted to 0 ₪ can follow this path without recording a fictitious collection. Unconfirmed prepared payments and pending weight settlement keep their holds. Production-plan inclusion and preparation status remain separate. If Accept is still missing, reload the detail and have permissions, holds and the API version checked; do not change the slot or payment to work around a missing button. For a scheduled order whose payment is Pending, Accept stays hidden until confirmation. Unpaid for a manual or cash order is a separate state.
+
+<span id="event-orders" />
+
+## Event orders from the existing order workflow
+
+For saved event edits, production planning and Sumit deposit/authorization terms, see [Event / Catering](/en/help/orders/event-orders).
+
+<span id="physical-card-destination" />
+
+## Default card terminal
+
+On iPad, Card uses the [default terminal set in Hardware](/en/help/payments/victa-mini#explicit-terminal-selection). For a pending attempt, resume the original payment.

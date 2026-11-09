@@ -5,7 +5,7 @@ apps: both
 tags:
   - settings
   - pos-behavior
-updatedAt: '2026-10-30'
+updatedAt: '2026-11-08'
 featureId: pos-behavior
 audience: public
 releaseStatus: available
@@ -35,6 +35,8 @@ If the POS shows the settings refresh warning, check the connection and use Retr
 ## Configure service courses
 
 Open Services and maintain the restaurant’s course names and order. Enable course management and any permitted hold/fire or Send and stay options in the POS device’s assigned mode. In Straight fire, select the intended library categories, apply and save. This mapping uses each item’s restaurant-wide library category, not its display/menu group or a matching group name. An item in an immediate-send category enters Straight fire when added to an onsite sale, even while a named course is selected. Ordinary new items use the selected course. Check a freshly added line after a catalogue change; existing saved lines are not moved retroactively. Straight fire means the next explicit Send dispatches those pending lines immediately: simply adding the article does not send or print it. Named course Hold/Fire choices remain provisional until Send/Continue succeeds. Continue is available only when the assigned mode permits it and stays on the check; it does not automatically fire the next course. Courses organize kitchen release; they are distinct from financial splits, QR payment ownership and customer-facing menu groups. Check [shared-mode synchronization](#shared-mode-sync) if Admin and POS show different activation states.
+
+For an open check, verify dispatch in Check and preparation at the expo KDS. See [checking a dish for an open table](/en/help/orders/taking-an-order-pos#open-check-kitchen-progress).
 
 <span id="adjustments" />
 
@@ -102,4 +104,28 @@ The handheld terminal has three unlabeled buttons: the signed-in user’s initia
 
 ## Find terminal deposit in the end-of-day flow
 
-When the compatible API offers End of day, Terminal deposits opens that combined flow before any transmission. With an older API, the separate deposit screen remains available according to actual terminal capabilities. A provisioning change after display requires another review before reserving cash. An old card approval without verifiable provenance remains pending reconciliation: it permits neither another collection nor adoption by another restaurant. See [closing and recovery](/en/help/payments/end-of-day).
+With compatible versions, open More → Reports → Current drawer on the counter iPad. A manager can set the main register there and manage the drawer and terminal transmissions. Drawer history provides access to the finalized Z and available SHVA copies. On older versions, actions remain available according to the device’s capabilities. See [the closing procedure](/en/help/payments/end-of-day).
+
+<span id="victa-mini-hardware" />
+
+## Connect and restore the Victa Mini on iPad
+
+On iPad, Hardware → Payment terminals offers Connect a Victa Mini, then the saved terminal and its connection state. Configuration and automatic restoration are explained in [Victa Mini connection](/en/help/payments/victa-mini#connection). This flow does not change printer profiles, POS mode policy or pending payment operations.
+
+<span id="physical-card-destination" />
+
+## Review the physical card destination
+
+With the compatible POS/API, review the physical card destination before collection: see [Mini/Portable selection](/en/help/payments/victa-mini#explicit-terminal-selection) and [verified hardware setup](/en/help/payments/victa-mini#connection). Existing order IDs, QR separation, kitchen progression and table-release settings remain independent. An unresolved terminal reservation blocks another collection; recover the original operation rather than creating a replacement sale.
+
+<span id="unified-cash-workspace" />
+
+## Use the unified cash workspace
+
+With payment permissions and compatible versions, open More → Reports → Current drawer. The same workspace shows the cash drawer, recorded card collections by terminal and guided closing. Drawer history combines closed cash sessions and finalized Z reports. Older closing and deposit addresses open this workspace; older APIs retain their previous workflow. See [the unified cash workflow](/en/help/payments/end-of-day#unified-cash-workspace).
+
+<span id="ashrait-last-transaction-inspection" />
+
+## Inspect the last terminal transaction
+
+In Hardware → Payment terminals, a manager can inspect the last transaction on the connected terminal. This read changes no payment. See [the procedure and its limits](/en/help/payments/ashrait-terminal-inspection).

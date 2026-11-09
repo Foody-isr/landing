@@ -7,7 +7,7 @@ apps: foodyadmin
 tags:
   - website-qr
   - website-journey
-updatedAt: '2026-10-27'
+updatedAt: '2026-11-08'
 featureId: website-journey
 audience: public
 releaseStatus: available
@@ -18,7 +18,13 @@ Dans Site web, ouvrez les écrans du parcours de commande. Leur apparence est di
 
 ## Prévisualiser paiement et confirmation
 
-Sélectionnez paiement puis confirmation, réglez couleurs et textes proposés, puis vérifiez la lisibilité mobile. Les champs client, remise et paiement obligatoires dépendent des règles du restaurant. Un aperçu ne passe pas de commande et ne vérifie pas une connexion de paiement réelle.
+Sélectionnez paiement puis confirmation, réglez couleurs et textes proposés, puis vérifiez la lisibilité mobile. Les champs client, remise et paiement obligatoires dépendent des règles du restaurant. Un aperçu ne passe pas de commande et ne vérifie pas une connexion de paiement réelle. Lorsque le calendrier s’affiche au paiement, utilisez le menu des mois pour aller directement à un autre mois, puis choisissez un jour disponible et son horaire. Si la page impose de choisir le mode avant la carte, le panier et la finalisation gardent ce mode. Revenez à la carte puis choisissez Retour au choix du mode pour le changer. L’ajout depuis une story et la reprise des achats depuis le panier ouvrent directement la carte. Si le mode reste à choisir, sélectionnez retrait ou livraison sur la carte ou dans le panier avant le paiement.
+
+<span id="contact-fields" />
+
+## Choisir les champs que le client doit remplir
+
+Avec l’accès à la modification du site, ouvrez Site web → Parcours de commande → Coordonnées et paiement. Choisissez Livraison ou Retrait dans Mode de l’aperçu. Dans Champs du formulaire, utilisez l’interrupteur pour afficher ou masquer un champ. Ouvrez sa ligne, puis choisissez Obligatoire ou Facultatif. Pour une livraison, affichez Étage, Appartement, Code immeuble ou Notes de livraison selon vos besoins. Si un champ manque dans un ancien formulaire, sélectionnez-le sous Ajouter un champ intégré pour enregistrer la réponse dans les informations de livraison. Le téléphone reste obligatoire. Si les suggestions d’adresse sont activées, le client doit sélectionner une adresse de livraison. Cliquez sur Vérifier les champs dans l’aperçu pour tester un champ obligatoire vide sans passer de commande. Attendez l’enregistrement du brouillon, puis cliquez sur Publier et rouvrez le formulaire public pour vérifier. Tant que le brouillon n’est pas publié, le client voit les réglages précédents.
 
 <span id="receipt" />
 
@@ -36,4 +42,4 @@ Vérifiez que le restaurant possède un nom et un logo configurés, puis partage
 
 ## Choisir si la connexion est proposée avant la commande
 
-Dans Site web → Parcours de commande, réglez Afficher l’invitation à se connecter à l’arrivée. Désactivé : le client accède directement aux informations de retrait ou de livraison. Activé : Commander sans compte est immédiatement visible, avec la connexion en option. Vérifiez l’aperçu, enregistrez le brouillon puis publiez le site pour appliquer le réglage. Le brouillon seul ne modifie pas le site public. L’aperçu ne connecte aucun compte réel. Ce choix ne désactive ni la connexion disponible au paiement ni une vérification de téléphone obligatoire. Une configuration existante sans ce réglage conserve l’invitation ; désactivez-la explicitement et publiez si vous souhaitez le parcours direct. Les quotas de services sont gérés séparément dans Paramètres → Consommation et quotas. Lorsque l’invitation est désactivée, un lien discret Se connecter reste disponible dans la fenêtre de retrait ou de livraison. Il ouvre la connexion uniquement à la demande ; fermer cette fenêtre conserve les informations déjà saisies et permet de poursuivre sans compte.
+Dans Site web → Page de commande → Mode de commande, réglez Afficher l’invitation à se connecter à l’arrivée. Le réglage s’applique à tout le site, dans la fenêtre classique et sur les écrans À emporter et Livraison. Oui affiche Me connecter et Commander sans compte. Non ouvre directement les détails avec un lien Se connecter. Fermer la connexion conserve les informations déjà saisies. Dans le format Choix du mode, sélectionnez À emporter ou Livraison sous Écran à personnaliser pour vérifier le résultat. Choisissez Fenêtre classique pour prévisualiser ce format. L’aperçu simule un client déconnecté. Sur le site publié, un client déjà connecté voit son statut et peut se déconnecter pour commander sans compte, même lorsque l’invitation est désactivée. Publiez le brouillon pour appliquer le changement au site. Sans choix explicite, l’invitation est activée. Les vérifications obligatoires au paiement suivent les règles du restaurant.
