@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-10-18",
+  "reviewedAt": "2026-11-09",
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
       "sourceCommit": "097b643680add684b58e3dd663ce56bd8d42fe7d",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "96d96eec4d1b791975488ede599ac85251ca1adb3033345dda0a39eeda59146e",
-      "workingTreeHasChanges": false,
+      "sourceSnapshot": "4612cad1f722b5f198e66482b16a634796836a3d284b793d7b726551a4dd5f10",
+      "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
           "sha256": "33cf30b683837b76977ed47c14d5d91ccb1b34bd60e9f62d124b8cc1079231aa",
@@ -103,7 +103,7 @@
           ]
         },
         "config/config.go": {
-          "sha256": "e38ffe6a10d5887f03c38f2c2c8fb4c2644534289995adbdf7f978b490c3c48d",
+          "sha256": "a5793f6ae86bd00dabc061c42a82d9e40e1dd1584c45792690c45c449394d5aa",
           "features": [
             "google-account-setup",
             "platform-api"
@@ -640,7 +640,7 @@
           ]
         },
         "internal/common/financial_check.go": {
-          "sha256": "bc908eb48ec3dbbc1348245b216d6dbed0ec219aa297253222d5172b61f3136a",
+          "sha256": "99b8bbd676f1a8fbc32ce4099585f07548d8e0ad2de26861695a6670d5b8685a",
           "features": [
             "platform-api",
             "pos-end-of-day"
@@ -702,6 +702,24 @@
             "platform-api"
           ]
         },
+        "internal/common/loyalty_pos_counter_preparation.go": {
+          "sha256": "35a37fc8c17b8ae82c9de95d080d89e3e3e765ad30fbdcf8c1afc939dd23722a",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/common/loyalty_pos_counter_recovery.go": {
+          "sha256": "c77487bdf85f678d68ab14e38bb3e30c4bbe08d134b4de06fd4bc1abb87a3d44",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/common/loyalty_pos_sale.go": {
+          "sha256": "652831cc02901a415bf2718cca1ec64ad1e2bf1771ea74304f62a4695ee05b6b",
+          "features": [
+            "platform-api"
+          ]
+        },
         "internal/common/menu_publication.go": {
           "sha256": "5c0f877898b7dd8312298383fa9dce79955ef445be0af1d75842780910b3d261",
           "features": [
@@ -716,7 +734,7 @@
           ]
         },
         "internal/common/models.go": {
-          "sha256": "b7e076a9eee1919b18e2c52344f7d36ed3927f27eadea7b579547ccbe720bd31",
+          "sha256": "7903aafe20657191e1d0197b533ba8e8717907cb1c5217d7b4d15df23ae785f3",
           "features": [
             "delivery-zones",
             "platform-api",
@@ -1784,6 +1802,216 @@
             "platform-api"
           ]
         },
+        "internal/loyalty/cash_refunds.go": {
+          "sha256": "1a134369f7ea7921e7cdfe5e590dfb520427f0a91c6e5186aee6177203dbcb26",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyalty/checkout.go": {
+          "sha256": "788d2602cf4c2d00ddf0c973b8d837dd8279afdfe0c63b3dbd0dece07496eafd",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyalty/customer_rewards.go": {
+          "sha256": "917d7687dd0f78c57e1ecd4bff99ca11ab692a57d226f2b0e242af3945618ee4",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyalty/financial_capture.go": {
+          "sha256": "83185ba2db45620e024d69c57c4b19990f3794060df0948d60f92153b9e7cbf7",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyalty/financial_enrollment.go": {
+          "sha256": "43211afdd3fadf60117dc57ceeb08131be4d928389bc1c2c8e20ef9da7b8d99e",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyalty/financial_partition.go": {
+          "sha256": "f56b5df58c46df56b367a4ce2c130ca1acc9a3a30c05f0f3a624e34bcb9e1a80",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyalty/financial_worker.go": {
+          "sha256": "15ee84392aecc2909c93bc399e6902977751c9df7d1df8ac96dd5d21714dfd4f",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyalty/handler.go": {
+          "sha256": "b767003b9a44cb7f75cb3b326768c14f87ef5f904484a628f93a02e4cd2537fe",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyalty/ledger.go": {
+          "sha256": "013d93dac46d176c21cff87568849c8c9a86f5af3b53ea4b5feedc697d91b036",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyalty/membership.go": {
+          "sha256": "564df32444c80d6d27ab15f6756b4807e8f222000dc20d2d038e767842e7a969",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyalty/no_charge_abort.go": {
+          "sha256": "020f2b908cdcf2c75279ef743d965b2651233822ab02be86e2f992582c4bccd0",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyalty/no_charge_void.go": {
+          "sha256": "11aa98262c88fee10b076597fd5e013f5b90a49c746744d30a6294458c420638",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyalty/order_reward.go": {
+          "sha256": "c8e296b82bca1d1d82b32e9202f5c23b2fc7b5cdc853bd537e3801956ba4d7d0",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyalty/pos_capture.go": {
+          "sha256": "d4ef9fbb09a4ea52b904aefc91aaa3a965224aad43d279b668606d5d471968e5",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyalty/pos_context.go": {
+          "sha256": "bfc064b6a49195df4cb9a7e6a6d4d3038a4607805351c6a690dd2b5e1b1fc5a4",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyalty/pos_reward.go": {
+          "sha256": "561122ddda167f718e1d9efe14b69c938b055a8cdaf157e91fdd031cae71ea1a",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyalty/pricing.go": {
+          "sha256": "20883d67f91248df19928281abdabc15810fb62a8a778b7568c2d6da78dc966e",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyalty/program.go": {
+          "sha256": "178055fcc6aec9ca1852f89a627a63fb6dc8540471de07fe7c44cd483ec63955",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyalty/provider_checkout.go": {
+          "sha256": "eccdc07b617ee4926b3a1a290547810e271f2479d9f58de5a726dd93ca7c756a",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyalty/purchase.go": {
+          "sha256": "f1ba8dc3bdfcf31f8339f43eb06091737362f58dced9b4e91cc4a33d66fdba31",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyalty/rewards.go": {
+          "sha256": "794bcaaffd395d483fb50052cbe40cbc12fa167b7c1295bf8b8abe416b72d932",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyalty/rules.go": {
+          "sha256": "181d801b5927bb4f45aff454e311ff8b6e9e488b144523f9b26ea431b8455f65",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyalty/service.go": {
+          "sha256": "05c9f4c19090202de0532df19b6a526df20dcb188c97b1227176c4031b1f834c",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyalty/staff_access.go": {
+          "sha256": "bee5c8b8f0fb65c5e8f0e4a8585d8fc4743a7221851fd21d2470ec45d786474f",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyaltywallet/apple.go": {
+          "sha256": "901e0b0648671ae33489ee650ef04855d85476b6c8a6b789b8a1ce26befd0320",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyaltywallet/google.go": {
+          "sha256": "7f0457acd6992314e463fd57c4697c5e69169e8e8593962271699907abac35c2",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyaltywallet/handler.go": {
+          "sha256": "f690c3617ad5c630277f020ab0b5802739679794e2b2a0da155aca14790b9216",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyaltywallet/localization.go": {
+          "sha256": "1c6efee05b1a36b933b17b1a22cdea37192f6e56c7cb73195410704f0a8db62e",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyaltywallet/mounted_config.go": {
+          "sha256": "6eb94e83fcc1b8d68606b6f66520e5bb8c876b68fb0c06ed7380bd1640a318ed",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyaltywallet/pos_handler.go": {
+          "sha256": "87f383ed02c6246577198bd9de925bcf0e8f47dfff5fd0ddd5de5cd848993b17",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyaltywallet/pos_lookup.go": {
+          "sha256": "a7d08f33ed0d626822f5c5dd5f860780b6eeeedc17e828c07294a189e813b5fd",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyaltywallet/registration.go": {
+          "sha256": "a3e2ec8ff3feb41eb6737a1c6527933e8c6ba3aaadab65dce578e6f27293f342",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyaltywallet/service.go": {
+          "sha256": "9576c5bb42623826b148e389820e692eea5b38b918aafe2f88f9a428f1a21814",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyaltywallet/types.go": {
+          "sha256": "56f1c3482b227c3749d6d62e448bb1e8311f474c52586d605989e7a55f155aae",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "internal/loyaltywallet/worker.go": {
+          "sha256": "d4fe8dcb0c79156a0cabbdbc1b972a2c4c89ae24099a9342724c48f3d4dde0c4",
+          "features": [
+            "platform-api"
+          ]
+        },
         "internal/market/handler.go": {
           "sha256": "6e2b2e782e3c89246a04d77b22368145b1eaa44070385929ebdf0c12fc0e741a",
           "features": [
@@ -2404,7 +2632,7 @@
           ]
         },
         "internal/orders/billing.go": {
-          "sha256": "1af671771da3d4f9f8c0b4041083916144ce588e600ba15bf421aa847bd4250d",
+          "sha256": "d93aafa6e35975b188d6905b87fba3b34cec23d95a30755e3b327112e687a211",
           "features": [
             "orders-managing-orders",
             "order-types",
@@ -2451,7 +2679,7 @@
           ]
         },
         "internal/orders/cash_refund.go": {
-          "sha256": "1944b138bef9b0ea96b340d269ceeb11d9bf2d399e21e067fea4d68214130966",
+          "sha256": "20f29f1737f0b56bdcc1b4fc4b9af0e553cba5b131e6144b18c434c7f4ad862d",
           "features": [
             "orders-managing-orders",
             "order-types",
@@ -2564,7 +2792,7 @@
           ]
         },
         "internal/orders/check_split_snapshot.go": {
-          "sha256": "2b7d7eaf7adba51a5427e0cac062a796f7ddf6469c14565b992e42ec1d10559f",
+          "sha256": "5455c01f74c6d774337e0691fe2174e86817796fa1fc61af3fc622dcbee13802",
           "features": [
             "orders-managing-orders",
             "order-types",
@@ -2726,7 +2954,7 @@
           ]
         },
         "internal/orders/financial_bill.go": {
-          "sha256": "516020a4c8f61a038e220c878d5f2dec2a577b5f32b025a8631fb76dc5879613",
+          "sha256": "917fb2e758867bf459df093faed50813aa92a1534eb242bbae4f9948f034e42f",
           "features": [
             "orders-managing-orders",
             "order-types",
@@ -2740,7 +2968,7 @@
           ]
         },
         "internal/orders/financial_check_adjustment.go": {
-          "sha256": "6868fd16c7a7378b68a6780e619c519c7820db73c5a8995ff12d22d0fc087743",
+          "sha256": "65d9d2bcb614c4341da109b0515cea4ddb2e8d804bf7275b3ae4d05bb2d622f1",
           "features": [
             "orders-managing-orders",
             "order-types",
@@ -2754,7 +2982,7 @@
           ]
         },
         "internal/orders/financial_check_combine.go": {
-          "sha256": "2ab64f78c1345cbef09f38224e9e8ab3eb6c40021c247137dc6bd6f597d49a97",
+          "sha256": "febd899761ca2b1cd904ea4fd3cd74c9f8fee81ffb43df18de6b0adcd8e48ad0",
           "features": [
             "orders-managing-orders",
             "order-types",
@@ -2796,7 +3024,7 @@
           ]
         },
         "internal/orders/financial_check_merge.go": {
-          "sha256": "9e42378c5d9f63b08e3781ac66c673880b35aa63cb6d253505615f86860049e8",
+          "sha256": "585b84f0c71724630a08cbbf9c2817ce5b9565735a9e2b2107f6db68757475af",
           "features": [
             "orders-managing-orders",
             "order-types",
@@ -2824,7 +3052,7 @@
           ]
         },
         "internal/orders/financial_check_payment.go": {
-          "sha256": "50ed4d7dd710cc05bc339dda51feb3c613cb1a937736727e2c2d376217561176",
+          "sha256": "21f998d3bf5cdabd5dbc3fb18f045a95db49806eb085cae241c0d1443ea3479c",
           "features": [
             "orders-managing-orders",
             "order-types",
@@ -2853,7 +3081,7 @@
           ]
         },
         "internal/orders/financial_check_split.go": {
-          "sha256": "7a05b47bab41a62166fc32a8387ee7bfef1df18747b0834de99a0cbd501d8039",
+          "sha256": "8e707757084442c5aac56ba75a33cffe754c5dad5294f969408cc81d4eea1fc8",
           "features": [
             "orders-managing-orders",
             "order-types",
@@ -2881,7 +3109,7 @@
           ]
         },
         "internal/orders/financial_check_view.go": {
-          "sha256": "97e0373a7ec05fccb3f487b0994e731c6fe85987479fcce5f89bbf1e228cf429",
+          "sha256": "722747d6e09d957a1545aa910c49e03a9efc0ba40a6738d5977839fbceef5455",
           "features": [
             "orders-managing-orders",
             "order-types",
@@ -2895,7 +3123,7 @@
           ]
         },
         "internal/orders/financial_checks.go": {
-          "sha256": "f3dcbd4dec246098c850f598efc666621bc4c4bd5ff14b0eb8791339f55c3c81",
+          "sha256": "d09c812a6d1758cd1b93a365bf831e8589fefbfe4a6a48c41261d504ff8aaf7c",
           "features": [
             "orders-managing-orders",
             "order-types",
@@ -2909,7 +3137,7 @@
           ]
         },
         "internal/orders/financial_course.go": {
-          "sha256": "9ac84a67ee1040590a64277c20da2685edc0564c694f3a183b4c3c93bea7ac3e",
+          "sha256": "861e26b32b01d0a50a2b3663f2d53ba9d3b2f3f9ef831f4c7457485d38c1beb4",
           "features": [
             "orders-managing-orders",
             "order-types",
@@ -2922,7 +3150,7 @@
           ]
         },
         "internal/orders/financial_item_transfer.go": {
-          "sha256": "13f3fe7bccb70bd6ef24bbe225f5991fcb4a2bc60097477c2f4b9181ee5656c0",
+          "sha256": "2cfddd88945176433ae242cefd7175b51987c1613b99b2778681579e676947d9",
           "features": [
             "orders-managing-orders",
             "order-types",
@@ -2956,7 +3184,7 @@
           ]
         },
         "internal/orders/handler.go": {
-          "sha256": "e46b75d6f55a5965308dfb10478fa885654a25e9068328c57baddcf1a33c8111",
+          "sha256": "725111d591d672657d677bb44b23a6390e3505f789aa0f5b328cbdb22e16af6b",
           "features": [
             "orders-managing-orders",
             "order-types",
@@ -2971,7 +3199,7 @@
           ]
         },
         "internal/orders/internal_checkout.go": {
-          "sha256": "b3c6fbacfa7332923be0aec198a8df9c4bc7e3108a20abc542d1c70c70f60432",
+          "sha256": "e253bd106f9440bce5dae3cf54f4bb7b0902d5c37d527208e548aa72fec091c4",
           "features": [
             "orders-managing-orders",
             "order-types",
@@ -3045,6 +3273,236 @@
             "pos-order-entry",
             "fulfillment-policy",
             "pos-courses",
+            "platform-api"
+          ]
+        },
+        "internal/orders/loyalty_attachment.go": {
+          "sha256": "0046185b46d93936814d9577938aca66c3db9d020f3826d0980b5c73fab767bb",
+          "features": [
+            "orders-managing-orders",
+            "order-types",
+            "pos-order-entry",
+            "fulfillment-policy",
+            "platform-api"
+          ]
+        },
+        "internal/orders/loyalty_checkout.go": {
+          "sha256": "26ae62724f2f23c7fac8cbe67ebf62cd7c9123c9cae334f8e6a7d000d653bd60",
+          "features": [
+            "orders-managing-orders",
+            "order-types",
+            "pos-order-entry",
+            "fulfillment-policy",
+            "platform-api"
+          ]
+        },
+        "internal/orders/loyalty_customer_checkout.go": {
+          "sha256": "172c5ff28020aa1d2ea3aa296e01919e494f231d181d0a7586cb6ef67e2946ea",
+          "features": [
+            "orders-managing-orders",
+            "order-types",
+            "pos-order-entry",
+            "fulfillment-policy",
+            "platform-api"
+          ]
+        },
+        "internal/orders/loyalty_customer_http.go": {
+          "sha256": "223fa109907713873d09699cd7c9982a1905a09713e3866711f1d9f9247dc73e",
+          "features": [
+            "orders-managing-orders",
+            "order-types",
+            "pos-order-entry",
+            "fulfillment-policy",
+            "platform-api"
+          ]
+        },
+        "internal/orders/loyalty_no_charge.go": {
+          "sha256": "20d6bf395c24eaa6208b56da9d75d946582cae4d5caa7e95fe6435561f292648",
+          "features": [
+            "orders-managing-orders",
+            "order-types",
+            "pos-order-entry",
+            "fulfillment-policy",
+            "platform-api"
+          ]
+        },
+        "internal/orders/loyalty_no_charge_abort.go": {
+          "sha256": "e8d5c8e9be6088937bc2e32d1d7acfff54e30701a2558b1b8d7ed23657a8e37d",
+          "features": [
+            "orders-managing-orders",
+            "order-types",
+            "pos-order-entry",
+            "fulfillment-policy",
+            "platform-api"
+          ]
+        },
+        "internal/orders/loyalty_no_charge_void.go": {
+          "sha256": "a8b2826547eb7ea797d68a328676506e0589e737301bca63866ccad5c82bc6fa",
+          "features": [
+            "orders-managing-orders",
+            "order-types",
+            "pos-order-entry",
+            "fulfillment-policy",
+            "platform-api"
+          ]
+        },
+        "internal/orders/loyalty_pos_counter.go": {
+          "sha256": "9670bc0f8f8c494e4262752bc459d030a792e52c7d54ed1e8d4f16f8959df422",
+          "features": [
+            "orders-managing-orders",
+            "order-types",
+            "pos-order-entry",
+            "fulfillment-policy",
+            "platform-api"
+          ]
+        },
+        "internal/orders/loyalty_pos_counter_http.go": {
+          "sha256": "33e222b33a76d10127b4588ba703a198627bb775906c0d9d73d492ea03bc4aeb",
+          "features": [
+            "orders-managing-orders",
+            "order-types",
+            "pos-order-entry",
+            "fulfillment-policy",
+            "platform-api"
+          ]
+        },
+        "internal/orders/loyalty_pos_counter_preparation.go": {
+          "sha256": "ef576ada2eee17961ea20c1f38ad2d75f22b615e445065538270edc8b5dd884a",
+          "features": [
+            "orders-managing-orders",
+            "order-types",
+            "pos-order-entry",
+            "fulfillment-policy",
+            "platform-api"
+          ]
+        },
+        "internal/orders/loyalty_pos_counter_preparation_finish.go": {
+          "sha256": "c6ccb91e8631f5d012821b78cf40c284ffa91b26595af086fe1c83a4272ba4a3",
+          "features": [
+            "orders-managing-orders",
+            "order-types",
+            "pos-order-entry",
+            "fulfillment-policy",
+            "platform-api"
+          ]
+        },
+        "internal/orders/loyalty_pos_counter_preparation_http.go": {
+          "sha256": "102ce9bdb9ef7d8eaaf1578ef987420ef0a261c1489c16558cf7026ba5724733",
+          "features": [
+            "orders-managing-orders",
+            "order-types",
+            "pos-order-entry",
+            "fulfillment-policy",
+            "platform-api"
+          ]
+        },
+        "internal/orders/loyalty_pos_counter_recovery.go": {
+          "sha256": "b8c46e88de80e0fdd5400879c6ccd9f3a46885af0c357712e571178c25c687e7",
+          "features": [
+            "orders-managing-orders",
+            "order-types",
+            "pos-order-entry",
+            "fulfillment-policy",
+            "platform-api"
+          ]
+        },
+        "internal/orders/loyalty_pos_counter_recovery_authority.go": {
+          "sha256": "39258f65aa08b92f430b39cb55c3849ec2e4bd271395287c8337fd0c2fa73692",
+          "features": [
+            "orders-managing-orders",
+            "order-types",
+            "pos-order-entry",
+            "fulfillment-policy",
+            "platform-api"
+          ]
+        },
+        "internal/orders/loyalty_pos_counter_recovery_http.go": {
+          "sha256": "e20a0db41b60b3ed6838a2ad27a5489602e5e9da0e1063b7c2f099db8acffb0b",
+          "features": [
+            "orders-managing-orders",
+            "order-types",
+            "pos-order-entry",
+            "fulfillment-policy",
+            "platform-api"
+          ]
+        },
+        "internal/orders/loyalty_pos_counter_recovery_view.go": {
+          "sha256": "06cc880e23baeb54973d107e9ee1276be4882e5003cdacad16efdcc065c0e3f4",
+          "features": [
+            "orders-managing-orders",
+            "order-types",
+            "pos-order-entry",
+            "fulfillment-policy",
+            "platform-api"
+          ]
+        },
+        "internal/orders/loyalty_pos_resolution.go": {
+          "sha256": "7bd9f607ab0226dd7eab8e321636683fff010ea41db9fac927ab913d46b1a16a",
+          "features": [
+            "orders-managing-orders",
+            "order-types",
+            "pos-order-entry",
+            "fulfillment-policy",
+            "platform-api"
+          ]
+        },
+        "internal/orders/loyalty_pos_resolution_http.go": {
+          "sha256": "56df31a68bd517cab43275eeac50781e596258d904b1f7a039838d9bc281d7dc",
+          "features": [
+            "orders-managing-orders",
+            "order-types",
+            "pos-order-entry",
+            "fulfillment-policy",
+            "platform-api"
+          ]
+        },
+        "internal/orders/loyalty_pos_resolution_view.go": {
+          "sha256": "ac78399d1a3ae76f68b026db51521f1210904fd4bdb0d85e28e1d044af271df5",
+          "features": [
+            "orders-managing-orders",
+            "order-types",
+            "pos-order-entry",
+            "fulfillment-policy",
+            "platform-api"
+          ]
+        },
+        "internal/orders/loyalty_pos_reward.go": {
+          "sha256": "94f327c17cba3f4f141ec8fe2a2403035e46f9166bf6248a7726aed190270d60",
+          "features": [
+            "orders-managing-orders",
+            "order-types",
+            "pos-order-entry",
+            "fulfillment-policy",
+            "platform-api"
+          ]
+        },
+        "internal/orders/loyalty_pos_sale.go": {
+          "sha256": "23b0846aab435f03d4dce6271f80574174059499be586c90f9ffca7981f249b6",
+          "features": [
+            "orders-managing-orders",
+            "order-types",
+            "pos-order-entry",
+            "fulfillment-policy",
+            "platform-api"
+          ]
+        },
+        "internal/orders/loyalty_pos_sale_http.go": {
+          "sha256": "1733eb82769a9cb2f2a6b1939779a0ade2d037302b2d5f8f336dfa6fdd3499d5",
+          "features": [
+            "orders-managing-orders",
+            "order-types",
+            "pos-order-entry",
+            "fulfillment-policy",
+            "platform-api"
+          ]
+        },
+        "internal/orders/loyalty_pos_sale_view.go": {
+          "sha256": "26aeb58317f3bec4c04f0cf01a1671bdc4f134662c7a3cc582ee82796dce94f2",
+          "features": [
+            "orders-managing-orders",
+            "order-types",
+            "pos-order-entry",
+            "fulfillment-policy",
             "platform-api"
           ]
         },
@@ -3156,7 +3614,7 @@
           ]
         },
         "internal/orders/order_lifecycle_v2_financial_list.go": {
-          "sha256": "b52319e4afd062ef9b89ab372951b9322d67101d3aa4dcae68c6c4a680b02b4f",
+          "sha256": "0b012ee6de16af8e38f10b3e8b72b702d32771b99fa7b8eea8117f9cf1552c1d",
           "features": [
             "orders-managing-orders",
             "order-types",
@@ -3419,7 +3877,7 @@
           ]
         },
         "internal/orders/service.go": {
-          "sha256": "a5c33f4fa72d68ed130154099df1706f1b30e6800956609745af28a91b794dd6",
+          "sha256": "13f3de2268932df527e3f7e52c78d497917ed1e4e86f9f42768799dc1315c0e3",
           "features": [
             "orders-managing-orders",
             "order-types",
@@ -3535,7 +3993,7 @@
           ]
         },
         "internal/payment/cash_guarantee.go": {
-          "sha256": "3383fa0848d4d4215e04742f5fbdbd123f18ef226e67392870640955dbfdc070",
+          "sha256": "f0b7bde49eb94c3efa65f30704b5459e2f94e074630de52902facbe0eed15e1e",
           "features": [
             "stancer-cash-guarantee"
           ]
@@ -3559,7 +4017,7 @@
           ]
         },
         "internal/payment/check_payment_claim.go": {
-          "sha256": "87374e464c567f561d51e1514c4440ae91ffe4978070b1f04758c94e6e35c1af",
+          "sha256": "1d3422c58d2908353fc8537a65f5a5d5e7bc2aee9dd7696c66861d358eaf7df8",
           "features": [
             "payments-how-payments-work",
             "pos-payments",
@@ -3590,7 +4048,7 @@
           ]
         },
         "internal/payment/handler.go": {
-          "sha256": "7a92da1cd751fb84dd50b991574d83024a87a21e06836d550080854ec417af81",
+          "sha256": "c31e1e6ec71ba6e342507a8855d4df284d25e76b04f7e1015d027035312bca0c",
           "features": [
             "payments-how-payments-work",
             "pos-payments",
@@ -3629,8 +4087,44 @@
             "platform-api"
           ]
         },
+        "internal/payment/loyalty_checkout_http.go": {
+          "sha256": "50e81e7cf3a6e67e2e755ad624dd2d4bf0b5abb92f1e37c25bec0a16c6e30c38",
+          "features": [
+            "payments-how-payments-work",
+            "pos-payments",
+            "backoffice-entitlements",
+            "platform-api"
+          ]
+        },
+        "internal/payment/loyalty_checkout_resolution.go": {
+          "sha256": "7d04a7feaa729ccc19776261dce3990275ee0da0f64979da5b1fb8f98f3b7942",
+          "features": [
+            "payments-how-payments-work",
+            "pos-payments",
+            "backoffice-entitlements",
+            "platform-api"
+          ]
+        },
+        "internal/payment/loyalty_stancer_checkout.go": {
+          "sha256": "9e6685d6b7d0abd58cff8613fe07fd14c05fad9dc4fcf55bd777f5db54a9caef",
+          "features": [
+            "payments-how-payments-work",
+            "pos-payments",
+            "backoffice-entitlements",
+            "platform-api"
+          ]
+        },
+        "internal/payment/loyalty_sumit_verification.go": {
+          "sha256": "5dc7faa49a2cb76ade6b92c070defb26b992571036e597b338844accbeb7fff1",
+          "features": [
+            "payments-how-payments-work",
+            "pos-payments",
+            "backoffice-entitlements",
+            "platform-api"
+          ]
+        },
         "internal/payment/order_adjustments.go": {
-          "sha256": "775f1e1d45e2ba97a86dcf8ae838a0055dddbb613abfdaf1df20baf579f48a24",
+          "sha256": "ac01652ee8b03daf1e6aaaa77ef897abade25ad199996ec54934b7c454962403",
           "features": [
             "payments-how-payments-work",
             "pos-payments",
@@ -3667,7 +4161,7 @@
           ]
         },
         "internal/payment/reconcile.go": {
-          "sha256": "8d492ecf46221d785765579431e71ab489e9c9e11f44536d7dc3b56052eccfd6",
+          "sha256": "5160e61008a3091008ce2c8a5e3807e15f4760ce59a9073065163e32d10f33b4",
           "features": [
             "payments-how-payments-work",
             "pos-payments",
@@ -3677,7 +4171,7 @@
           ]
         },
         "internal/payment/resolver.go": {
-          "sha256": "e32fef5319b1ae64b587b33ba2618b803f90db581d37d423f21e59a8c3bcd908",
+          "sha256": "0f9db2ba1bdf33dc2c3eef585d64959417fbfb46219dd64a4cfe1fcc3fd3b451",
           "features": [
             "payments-how-payments-work",
             "pos-payments",
@@ -3709,7 +4203,7 @@
           ]
         },
         "internal/payment/stancer.go": {
-          "sha256": "a230eb2fa3743e90c69c78abf09eb09cc0e374e33dbf9a1e2bff9fe2cc4a6b69",
+          "sha256": "b25cfa21341a94e0e3211e84b1dafc402326f06434b1f3855496c87b89c97c36",
           "features": [
             "payments-how-payments-work",
             "pos-payments",
@@ -3719,7 +4213,7 @@
           ]
         },
         "internal/payment/stancer_reconcile.go": {
-          "sha256": "36da22d1ed75f3688f368e6b7879f12542487bf89fec3c2b5c7935ed8e14c680",
+          "sha256": "55050791492d4f7c036f1d431d6963b378eef9a535095bdee2cda0dae3703f65",
           "features": [
             "payments-how-payments-work",
             "pos-payments",
@@ -3757,7 +4251,7 @@
           ]
         },
         "internal/payment/sumit_saved.go": {
-          "sha256": "18c583cd563bfb7494c1e9b6dc3a294b10446d603de214e08780f6deb2fc3119",
+          "sha256": "a1b7c18bda9bf811330479e9a0cd7057b1a0e80eafc76d52698b9fb0b2677470",
           "features": [
             "payments-how-payments-work",
             "pos-payments",
@@ -3808,7 +4302,7 @@
           ]
         },
         "internal/payment/verifone_handler.go": {
-          "sha256": "3d8fb364c752f20c7fba11528f15f496fd36aa215a0a93511f68e278d6065f35",
+          "sha256": "e21ea644f4dfa2627c316790547283ec03deb1d93b48d2288426a9d692693abd",
           "features": [
             "payments-how-payments-work",
             "pos-payments",
@@ -4043,7 +4537,7 @@
           ]
         },
         "internal/printing/render.go": {
-          "sha256": "db138b6d4c83f4aaa6240d182ce2e3163f63f23997bcbff4133bf75471246f6f",
+          "sha256": "e0b4406c34a42103e5e0f8ab4d6eef3d27553fb0bc77ef602f7a65080db052bf",
           "features": [
             "printers-epson-tm-u220iib",
             "printer-diagnostics",
@@ -4052,7 +4546,7 @@
           ]
         },
         "internal/printing/service.go": {
-          "sha256": "37bb31fd2353da47ee6fa59b08f5c0c3bc4c8a79adbcafc81bd59ad24746159d",
+          "sha256": "1057830499dbefccb6db392cbeec8a18547dd91f8a5530f121613b90b63f8b49",
           "features": [
             "menu-variants-and-sizes",
             "printers-epson-tm-u220iib",
@@ -5037,6 +5531,12 @@
             "platform-api"
           ]
         },
+        "internal/testutil/loyalty.go": {
+          "sha256": "8c25bdc30aaf81559ad995f46ee5bcedc2100e9740663142b4ba65e06088193b",
+          "features": [
+            "platform-api"
+          ]
+        },
         "internal/testutil/seed.go": {
           "sha256": "7fef883b81e872a3b7bc2db3e9806990db8571e6a086595037fdbf9fa8baf0b8",
           "features": [
@@ -5044,7 +5544,7 @@
           ]
         },
         "internal/testutil/testutil.go": {
-          "sha256": "f7af0e2077003cef918c6b6f97bcaef2d1cda16c1ec9e86da02940001d3a0d72",
+          "sha256": "aa0dab9658c1a1c5ce558dbda2b7f7d9866d3bb5d59ac89af1d89ec4c2d780c8",
           "features": [
             "platform-api"
           ]
@@ -5332,6 +5832,102 @@
           "features": [
             "foody-billing-sandbox"
           ]
+        },
+        "migrations/292_wallet_loyalty_foundation.sql": {
+          "sha256": "0575667d2401782d2ddc445d35e4df6be6b9d5a7a51f3f2c8031a3eb28e21f2d",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "migrations/293_loyalty_reward_reservation.sql": {
+          "sha256": "cd1dba55cf4877ce3a383e7959a7b70d91f66db4c79b22fe07c3c898583bd896",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "migrations/294_loyalty_order_financial_outbox.sql": {
+          "sha256": "a0bc86da83b118d2e1953b0bde2e6bec5b89bba8ab418de1adbd14e41061cb83",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "migrations/295_loyalty_pos_financial_allocations.sql": {
+          "sha256": "dbf290d20c4a9c69bdf5b5ca65225cb2baad128e240432bd405f557ccde89b4d",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "migrations/296_loyalty_order_reward_price.sql": {
+          "sha256": "61bd64ca11b5233fe987683802ec36fba0f2dafe4593281d66bab22436536f79",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "migrations/297_loyalty_pos_reward_price.sql": {
+          "sha256": "ca7f8c404fe14b97d571e2b538c1338d145569e747ac6c40bbc6852ff53b1aa9",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "migrations/298_loyalty_checkout_lifecycle.sql": {
+          "sha256": "b355edd0b2f273fbc5145e02823085868b3166ca70986f4981ea740b8582ff63",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "migrations/299_loyalty_no_charge_void.sql": {
+          "sha256": "7b45f31c5f5b1d601d93380b46b44e85259d171a5ed133b068d23a6db4630993",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "migrations/300_loyalty_checkout_resolution.sql": {
+          "sha256": "041e1f462eaa388d13254f60fd8e4f37e14cbaf5e73b1384323752b08487be14",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "migrations/301_loyalty_program_configuration.sql": {
+          "sha256": "bc542c493afe408c0ed74c82575477a0c29164b834c9da04482c4868a45734e3",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "migrations/302_loyalty_customer_checkout_request.sql": {
+          "sha256": "00b2035efabf707b644e9ad3d70f97c31432daf1583d38e2f95d7db89f6253b0",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "migrations/303_loyalty_wallet_passes.sql": {
+          "sha256": "7f7890a71f8da4ccae515180d206e0b150a6df8ac2dd02bb80fe5d50d5445ede",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "migrations/304_loyalty_pos_sale_commands.sql": {
+          "sha256": "2b0e49f8e700b5036cd6868c622b3e5717d760522d6db1e14303df345abb1b53",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "migrations/305_loyalty_pos_resolution_commands.sql": {
+          "sha256": "787161b9a5709ca494b69dd03fc426c354ffced54fb54b783a1a86961fc0a2a7",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "migrations/306_loyalty_pos_counter_preparations.sql": {
+          "sha256": "c7b977eb5d1e9c41d5e1f893c09f77d8762cc5e49d377e2dae5a3df294e5711e",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "migrations/307_loyalty_pos_counter_recovery_commands.sql": {
+          "sha256": "bfc6cf6a5282ff01e33aa5fab1f8b0f306c937baa81b7426f2a6783a9c3abc85",
+          "features": [
+            "shared-runtime"
+          ]
         }
       }
     },
@@ -5339,8 +5935,8 @@
       "repository": "https://github.com/Foody-isr/admin",
       "sourceCommit": "44b3e5e0e5fb7aaa0ac6c09aeacf2528e1a1862e",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "f70246ce163c9ea38d05fbf3a181b88c87f90b131da4b3ba3ce828d353e018ef",
-      "workingTreeHasChanges": false,
+      "sourceSnapshot": "11d551ea4d35fe7f793d0da88b4a97f64d4526ed72879fe80a2d7c223819b4a0",
+      "workingTreeHasChanges": true,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
           "sha256": "13c58bc11284d66c7fb9c4d79c1b3e92c6e05539164f2147a5e966d9c17ac275",
@@ -5990,9 +6586,21 @@
           ]
         },
         "src/app/[restaurantId]/layout.tsx": {
-          "sha256": "415869a600fe445826b155e837a6a7d122c5a60d6db16c0292ff3f1d0db11122",
+          "sha256": "9ad09b9050cfb20330bce10c002f6c053d167b5048aca2408ba653e5f2bbc394",
           "features": [
             "payments-transactions"
+          ]
+        },
+        "src/app/[restaurantId]/loyalty/checkouts/page.tsx": {
+          "sha256": "3b15bfc5836031685ad49b8972de950bd2038ecf9bfbe7cc9a24eee3328b7e62",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/app/[restaurantId]/loyalty/program/page.tsx": {
+          "sha256": "53bab5bdb0fb329aeabb830994ef3a95af3a5f4c02b78dd3ca17f1aabf38c8c6",
+          "features": [
+            "shared-runtime"
           ]
         },
         "src/app/[restaurantId]/marketing/discounts/page.tsx": {
@@ -7009,7 +7617,7 @@
           ]
         },
         "src/components/Sidebar.tsx": {
-          "sha256": "ae61688a629131a8513d3859e4f0629baef69655b539ec77a5185780ad3ba61a",
+          "sha256": "45d72c855571449e61aacbe0657a852aba2264b57992d726a78bca6e0d304c45",
           "features": [
             "pos-payments",
             "global-search",
@@ -7654,6 +8262,30 @@
           "sha256": "4172a429523cc5ebca3376980d3a875a9c1493be66f5a902966952d974057926",
           "features": [
             "kitchen-daily-operations"
+          ]
+        },
+        "src/components/loyalty/LoyaltyCheckoutDetailDrawer.tsx": {
+          "sha256": "1be04a8a029974b7d2c4030cab493d9e7184ae4eac7c28af58eee389afb33c96",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/components/loyalty/LoyaltyCheckoutWorkspace.tsx": {
+          "sha256": "8f67b6f21077c5e7f374b89ad439dadbdf370b2bccb35f718fc27ffd9f57571b",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/components/loyalty/LoyaltyProgramWorkspace.tsx": {
+          "sha256": "95398f6646e768955fc46905664af7a801233b3731b9dc1206e45a171f3752b5",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/components/loyalty/display.ts": {
+          "sha256": "cfd691ac4fe38dc27a6a1d624e4476e7f3901371c5633b2d3c8f3ef5a7826316",
+          "features": [
+            "shared-runtime"
           ]
         },
         "src/components/marketing/DiscountEditModal.tsx": {
@@ -10010,6 +10642,18 @@
             "shared-runtime"
           ]
         },
+        "src/lib/loyalty-checkout.ts": {
+          "sha256": "61109f5dac68a9624a22edde313b58729b0bbad3ea2f4916f75e610b30b2d71e",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/lib/loyalty-program.ts": {
+          "sha256": "d08c5e2929237270e4abbe3af690bf0fbf330a99c8808dce286fc8d4b0d7e55a",
+          "features": [
+            "shared-runtime"
+          ]
+        },
         "src/lib/membership.ts": {
           "sha256": "f55f54aeac611336423f22be6c4d05c69636d26eb84413fb5f95bd5684671e7d",
           "features": [
@@ -10515,7 +11159,7 @@
           ]
         },
         "src/lib/route-permissions.ts": {
-          "sha256": "dd6c85c411a1d895b062664ea47a217618ec123326969f9f2108fd6dea440d6c",
+          "sha256": "4225af7234a6282d9d733eb53b8511a2517862fbac4b6d267131696d9244b05f",
           "features": [
             "staff-roles",
             "pos-payments",
@@ -11037,9 +11681,9 @@
     },
     "foodyweb": {
       "repository": "https://github.com/Foody-isr/web",
-      "sourceCommit": "84547bf8c4c8091086f29616745ca04b44cc8ce7",
+      "sourceCommit": "c161251ba9ac8fbc4d33e1fc17c28e65b377b7bc",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "b038598af5092b24739f918124d9e5438e98c0a26a24adde9b6b479f773da98e",
+      "sourceSnapshot": "8871c087247cfaa04fd2519638228b6f3b9830e6ca50359e2d7ba7b892fa9099",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "app/@cart/(.)order/cart/page.tsx": {
@@ -11061,7 +11705,7 @@
           ]
         },
         "app/api/customer-api/[...path]/route.ts": {
-          "sha256": "beb2ebf41d8d5fd6a11792421ee52f1a2830636e00921cd26effecbb2a647448",
+          "sha256": "85f015949dd17ee0e6e6c57aaa9929cf325cacd16ced7cac962895e7884eaff7",
           "features": [
             "platform-api"
           ]
@@ -11081,6 +11725,12 @@
         },
         "app/api/font/route.ts": {
           "sha256": "6e589589d1f37152b95ee8d24ae7b99fb25abc3f74f771acbc76799d80e9736a",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "app/api/loyalty-wallet/apple/route.ts": {
+          "sha256": "0c559bddd18493bacde3bbb7e2f804612f0cd1551c6a7a4ce8c2f0df6aedc65f",
           "features": [
             "platform-api"
           ]
@@ -11157,7 +11807,7 @@
           ]
         },
         "app/order/checkout/CheckoutFlow.tsx": {
-          "sha256": "4f7330e08cf9d8a308847e8767eee4bab4b5265cd7795b5f79037860ec72763e",
+          "sha256": "e69095b1d1e0aded043f7b8441039d9441d765233262378be294c7247bf2c6e4",
           "features": [
             "guest-ordering",
             "orders-internal-sumit-checkout",
@@ -11247,6 +11897,12 @@
             "website-pages"
           ]
         },
+        "app/r/[restaurantId]/account/loyalty/page.tsx": {
+          "sha256": "aafd9356911445dc7402f02d9f9d048f62127a4bb6547d25b6260204249706c8",
+          "features": [
+            "shared-runtime"
+          ]
+        },
         "app/r/[restaurantId]/catering/[serviceSlug]/[itemSlug]/page.tsx": {
           "sha256": "d941fb94bd9c0038c912880469f02b01e6ea884adebda882ed0db0931cd0cb2f",
           "features": [
@@ -11302,7 +11958,7 @@
           ]
         },
         "app/r/[restaurantId]/orders/OrderHistoryContent.tsx": {
-          "sha256": "d98650f4aee8e93819e3051b98b748487d00b0e0f2fdf86afb76441af8e64e5b",
+          "sha256": "c7d976d1e8bce2da031c84e4670cdf4e79bf666b7ce2aa723fd7c3dbc76965f7",
           "features": [
             "guest-account-tracking"
           ]
@@ -11619,7 +12275,7 @@
           ]
         },
         "components/ConfirmationPageClient.tsx": {
-          "sha256": "a24c95c35d166654169a191e103dbe5b48b1a493b958c798292b2ccc0124f21b",
+          "sha256": "55301cdfb6ad0db3c2658847496153c8bc7895f799260615b5e3e106fa4ed991",
           "features": [
             "guest-account-tracking",
             "orders-events"
@@ -11750,6 +12406,36 @@
         },
         "components/LanguageToggle.tsx": {
           "sha256": "c2c4b5a42301c72757cc4c0942e63b6a80023453c551d32ca9d343fb320580a4",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "components/LoyaltyCheckout.tsx": {
+          "sha256": "fd1bcb75725b8af4901a60fd29fd3f2f4c7d7a601fc9902a4c30a21b3082903b",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "components/LoyaltyCustomerContent.tsx": {
+          "sha256": "172fcb90c52147f8a9376ed9aada149d786396007ec4c00cb4090dcf83cd4871",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "components/LoyaltyPaymentResume.tsx": {
+          "sha256": "25fccb5b9235bf17d1d48d730d4da107da54f0acb81e7e552fc2bb2ac7c620cb",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "components/LoyaltyRewardsPanel.tsx": {
+          "sha256": "3d944ef179b70a3f1c05502d07637c85992e9fb1b59aefc687563f4a8a260aaa",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "components/LoyaltyWalletPanel.tsx": {
+          "sha256": "1a455c905e351c36e30c66743187698b7cb6e92febb5fc409b1507e46950e4af",
           "features": [
             "shared-runtime"
           ]
@@ -12682,7 +13368,7 @@
           ]
         },
         "lib/customer-api-proxy.ts": {
-          "sha256": "8509830afce57ddf66d0b361478278a25ccd80cc929a422feb1bcce5e0c120c8",
+          "sha256": "88e9a68da3b9680d837dd3ff41ece656429e4796000ba2c631c4e0dd89d3c614",
           "features": [
             "guest-account-tracking",
             "shared-runtime"
@@ -12755,7 +13441,7 @@
           ]
         },
         "lib/i18n.tsx": {
-          "sha256": "a4d835224712af9449e28b936032bdb6fdb7f8c6408559b88ffd7bf7a2272254",
+          "sha256": "3e8938c5e9982ea93130901c47daeb9892a98034d3bf5ff3127294613242832f",
           "features": [
             "menu-variants-and-sizes",
             "payments-how-payments-work",
@@ -12785,6 +13471,24 @@
           "features": [
             "shared-runtime",
             "orders-internal-sumit-checkout"
+          ]
+        },
+        "lib/loyalty-checkout.ts": {
+          "sha256": "150c06639a4d065f412b712ff94f9e60efa6c4a8b757eda151d249eab0d7f20c",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "lib/loyalty-wallet.ts": {
+          "sha256": "abc96e4218df51ff09602cb8d28e78e6c57b78be1943e1a4c90c27fbfbf29809",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "lib/loyalty.ts": {
+          "sha256": "4d8954b609471a41754b2fb114c6d05a042d4700d4a89fb15c211d0f1d00ba82",
+          "features": [
+            "shared-runtime"
           ]
         },
         "lib/menu-language.tsx": {
@@ -13052,6 +13756,18 @@
             "shared-runtime"
           ]
         },
+        "lib/server/loyalty-proxy.ts": {
+          "sha256": "6a16d9f46c15ec198a03279c641674618ab48027d92632c5d53bd166234dc58e",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "lib/server/loyalty-wallet-proxy.ts": {
+          "sha256": "d66629b79c313cea9c0102fd16e3787a76b0c6c5363df674f92d4cd963493564",
+          "features": [
+            "shared-runtime"
+          ]
+        },
         "lib/server/ordering-test-proxy.ts": {
           "sha256": "fc167328de6feaf041ea39ebca98c4e8333be174279203f8626ce9bca2f24db3",
           "features": [
@@ -13173,7 +13889,7 @@
           ]
         },
         "lib/themes/useResolvedTheme.tsx": {
-          "sha256": "3ed06650f42069383b3a00b99442318a323dc95281abeaa6ba1545c1e871ff0d",
+          "sha256": "ff2ba32a1ae79b64a98587ee37087ff7717e88ad75ab8a71f38ca081abf58654",
           "features": [
             "website-sections",
             "shared-runtime"
@@ -13193,7 +13909,7 @@
           ]
         },
         "lib/types.ts": {
-          "sha256": "47065dade91d3963cca252613fe1f9f3eeff2b626ef0d37da1ea2934adc1e0f3",
+          "sha256": "e6b1cb04891d0b0d03bd8d7583db89b05921f80eb61450de4866e49c0fccda9f",
           "features": [
             "menu-variants-and-sizes",
             "shared-runtime",
@@ -13370,7 +14086,7 @@
           ]
         },
         "services/api.ts": {
-          "sha256": "2b76511ae1e55a3b540d8ee25fd29cd22eecfadadd9c65b3798225f03ac7d712",
+          "sha256": "9c980172839c263c3563c4a466430295a6dc98146d07f6027642b38db3395f20",
           "features": [
             "guest-ordering",
             "guest-catering",
@@ -14398,9 +15114,9 @@
     },
     "foodypos": {
       "repository": "https://github.com/Foody-isr/pos",
-      "sourceCommit": "f17d6884990fb24efbd1ecf69377b0e0dac775a6",
+      "sourceCommit": "0c9c28c005e5310f249b7cd8048710b71c235934",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "2277ed9a52a76ad1d2d0906a512464968f4d4a468a4170c3fcf357355415131a",
+      "sourceSnapshot": "bc6603f9f2e9474bec6d810b3488ec8aa6e6e23d38a5ccd5580bd2aed1cd45b2",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "android/app/src/main/kotlin/com/foodypos/app/AshraitProtocol.kt": {
@@ -14530,7 +15246,7 @@
           ]
         },
         "lib/core/auth/route_permissions.dart": {
-          "sha256": "02d00800667c3cf58a93474d5eb47dcb45d8862940569f0943f1abef126b0365",
+          "sha256": "34eff0c6953d8cea17e9d77f48005ea9fd61b7ae7780e7d7e4dc6f8916110402",
           "features": [
             "staff-roles",
             "shared-runtime"
@@ -14567,7 +15283,7 @@
           ]
         },
         "lib/core/l10n/app_en.arb": {
-          "sha256": "b915d343bcfa3ac209a7ea4da59e54bbfed1293bc7894ae44a249011057c9667",
+          "sha256": "a1274eb9a4093714bfecfdf56000968c7c39fb2d310d1a37dd14017c91af760e",
           "features": [
             "pos-behavior",
             "pos-cash-access-diagnostics",
@@ -14577,7 +15293,7 @@
           ]
         },
         "lib/core/l10n/app_fr.arb": {
-          "sha256": "3233b5cd88f3bc3b39f565d8c60353777c32604db6952302179dfe7d8034c267",
+          "sha256": "015e5d56bd85612285b8ca84c0fbe03ea3bda08f0410b65812f1545927638fb5",
           "features": [
             "pos-behavior",
             "pos-cash-access-diagnostics",
@@ -14587,7 +15303,7 @@
           ]
         },
         "lib/core/l10n/app_he.arb": {
-          "sha256": "47ad48b5e9d7e0ff6f597287fc53b42dedd29ba01045104ef18a61b488b8535a",
+          "sha256": "867b1e6b85c27edc0a6b2aaece6337d9bd7160bddf03e265e9ea69090d387ddf",
           "features": [
             "pos-behavior",
             "pos-cash-access-diagnostics",
@@ -14609,7 +15325,7 @@
           ]
         },
         "lib/core/routing/app_router.dart": {
-          "sha256": "ded946fd8db6adf8f279068f82618b75ed6a59b4a36f2bf8e27fa2d16592fe94",
+          "sha256": "451acf7881b8e3252434b83c43cf4ce42b1a2f72f04e0845c2ae6e42c14c4b45",
           "features": [
             "pos-payments",
             "shared-runtime"
@@ -15304,6 +16020,144 @@
             "kitchen-data"
           ]
         },
+        "lib/features/loyalty/data/counter_preparation_presence.dart": {
+          "sha256": "ba6d091ababb7132b2f8535e753e66869a0cb577ef769d9e96e247d4e42115eb",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "lib/features/loyalty/data/loyalty_counter_preparation_repository.dart": {
+          "sha256": "889f7f16049e9269c12e8184aeba6bbeee420098fc59a88a64d110a7d8c5c5a6",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "lib/features/loyalty/data/loyalty_counter_recovery_repository.dart": {
+          "sha256": "e46706117f213b8a4cf9fc81c3a4f1e1528dcf9cb9791395bd85ac770f3844b0",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "lib/features/loyalty/data/loyalty_lookup_repository.dart": {
+          "sha256": "afaf09866eac11ad15393af10026144495491e98f270522c0081a3c4b8a3972b",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "lib/features/loyalty/data/loyalty_resolution_repository.dart": {
+          "sha256": "ebe1ec04ae510c38ca9cf76f128f489996bed8f1046d4284346a6acac2c199a8",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "lib/features/loyalty/data/loyalty_sale_repository.dart": {
+          "sha256": "3702113403cec87d49844dcb93eec25a00040659885d5d0a04b08b250a752e66",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "lib/features/loyalty/domain/loyalty_counter_preparation.dart": {
+          "sha256": "1ae9c756d632f51b8420bc47ce1a7bdb095cf848d2a9f98eead9844120e403f1",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "lib/features/loyalty/domain/loyalty_counter_recovery.dart": {
+          "sha256": "086bd48ac84e6e4e3a40ef4171140cd964a2122d7a380a90b42420a294971cc9",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "lib/features/loyalty/domain/loyalty_member.dart": {
+          "sha256": "b2e07a31db25d6e167920b897863181038e0f09e626d09809f295a0e165fb730",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "lib/features/loyalty/domain/loyalty_resolution.dart": {
+          "sha256": "a1fb01526b86d8a5c98c55c9d2e3feb386d8a38bdc64994e559d6764dafaba9b",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "lib/features/loyalty/domain/loyalty_sale.dart": {
+          "sha256": "b0d0f164187a2e4d920d361b1b6d7bc94c2b9beeeadbfba5f7317cf057e9e161",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "lib/features/loyalty/presentation/loyalty_counter_page.dart": {
+          "sha256": "e1394552136542917bf5c7b51271964b2b27729846ed6597a387b4624ad6380c",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "lib/features/loyalty/presentation/loyalty_counter_preparation_page.dart": {
+          "sha256": "f8a45b97ee1ea296e9dd8d592c117282d53b8d43578bb65712cbaebc454c1f7b",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "lib/features/loyalty/presentation/loyalty_counter_recovery_page.dart": {
+          "sha256": "8e545add779300e26ff278387a17639fadb6c3b496184eed97da56b8fe293b36",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "lib/features/loyalty/presentation/loyalty_lookup_page.dart": {
+          "sha256": "aa76a635f8c074877640a60fc5c57b80d5e7f43a08df7d02486ada83a827aa9d",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "lib/features/loyalty/presentation/loyalty_resolution_panel.dart": {
+          "sha256": "791fbfdb0e5595eaab5ffbfdb45cbb1de118fe2f5e78570a2c4b28c5e4db36f7",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "lib/features/loyalty/presentation/loyalty_sale_actions.dart": {
+          "sha256": "32162f8e96f089c3bbf56e63cf900d4d27e16c2d8235cd41dab05bdf53d3b8c9",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "lib/features/loyalty/presentation/loyalty_sale_page.dart": {
+          "sha256": "f0eb5a8cfbdf02d79aaab8af89cf8ea10a88b8eb7550d17dffe2fb593848637f",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "lib/features/loyalty/providers/loyalty_counter_preparation_provider.dart": {
+          "sha256": "0321c6549e93b2cc8287f52c94a83dfe53d47c8f729e80d81f4b60ac144f8ec7",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "lib/features/loyalty/providers/loyalty_counter_recovery_provider.dart": {
+          "sha256": "fd1fe2fd511542deed4400ab1ed07615f40a5569a2981463559a4664e9fbd5f9",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "lib/features/loyalty/providers/loyalty_lookup_provider.dart": {
+          "sha256": "7156bd2a5c8c116a2a761e80a57bda4c5849e772a7309a130e2f553354016277",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "lib/features/loyalty/providers/loyalty_resolution_provider.dart": {
+          "sha256": "9ec82bfff49d8ae8f01f5744fd9563fec41ae578046153191f02b8dcdde583a0",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "lib/features/loyalty/providers/loyalty_sale_provider.dart": {
+          "sha256": "cf00dc99961ff0fc56a502c76dec3045f82b3f57368ef2aadbbed37ae7999b28",
+          "features": [
+            "shared-runtime"
+          ]
+        },
         "lib/features/menu/data/menu_repository.dart": {
           "sha256": "4a93a5e163ae680e8685f4c87ee9f8cf3ae7fb265500c0d56b73a344e15f190a",
           "features": [
@@ -15568,7 +16422,7 @@
           ]
         },
         "lib/features/more/presentation/more_page.dart": {
-          "sha256": "f98948de1e0f606cf8cfe8d4b3bdf7a60bb2b661bad893abcccb38219c01c898",
+          "sha256": "1812dca454e9105d06600e012bc94e94aa814fd4fd6f8142016cd0cf1b6abd0d",
           "features": [
             "pos-workspace"
           ]
@@ -15642,7 +16496,7 @@
           ]
         },
         "lib/features/orders/data/financial_check_repository.dart": {
-          "sha256": "b4a434c020c327a9c74374aa7562c15d8d386a6f0c6ea8ce0a9c0156d950ecc1",
+          "sha256": "8095bd9fa54bf8a0d5f004f83e9d19fe48e28566d2beb7e499fb934e47f5be1c",
           "features": [
             "orders-managing-orders",
             "pos-comp-void",
@@ -15698,7 +16552,7 @@
           ]
         },
         "lib/features/orders/data/order_repository.dart": {
-          "sha256": "9010eaba3b04fe09c8daeb6849c51472f803fb50e09a0d62f0c854a6bb047f38",
+          "sha256": "2a70d0f68d74c94857d93f9afae8caa315ac1748c5cbaf45a48014c14f868f19",
           "features": [
             "orders-managing-orders",
             "pos-comp-void",
@@ -16045,8 +16899,15 @@
             "pos-comp-void"
           ]
         },
+        "lib/features/orders/presentation/financial_check_collector.dart": {
+          "sha256": "3a8b726cb317e5f7e48f8f2c9f3b3a2f274571d0cf5a874bf611fcae4f2749c1",
+          "features": [
+            "orders-managing-orders",
+            "pos-comp-void"
+          ]
+        },
         "lib/features/orders/presentation/financial_check_page.dart": {
-          "sha256": "252e03d4c17070f1a57d5a9225f840bb12f0a3c3f72a9ec185435ce4df743f54",
+          "sha256": "954795fbeb4cac745bcf0ec17ec091f5c3ee74b75411e0837f7fb0550c67f9e5",
           "features": [
             "orders-managing-orders",
             "pos-comp-void",
@@ -16156,7 +17017,7 @@
           ]
         },
         "lib/features/orders/presentation/orders_page.dart": {
-          "sha256": "107cda4f37ac1e3fd1ff1a2370aa83bfee1fb825a1e2b0c246df9b95fe6ae591",
+          "sha256": "3a92c50533c3a71f6054f37cf4cdbe6cc5cf12d2991d99477bb18085c742d28e",
           "features": [
             "orders-managing-orders",
             "pos-comp-void"
@@ -16180,7 +17041,7 @@
           ]
         },
         "lib/features/orders/presentation/pos_page.dart": {
-          "sha256": "08052d6f72a70285ac5db40159ac44a52d5cf016894b343e529c76c9feb22fd0",
+          "sha256": "55be6603502861775137077b46f6e42e31a61e706af930fe70099b1a4c93c027",
           "features": [
             "orders-managing-orders",
             "pos-order-entry",
@@ -16211,7 +17072,7 @@
           ]
         },
         "lib/features/orders/presentation/saved_order_workspace_page.dart": {
-          "sha256": "dbd9bc7c5799f2a41ec474e63ed6e9ab9ee72b4cdc74a5488b4815136cbfcebd",
+          "sha256": "dc6ceea8269a07302337fa4b90b6492ed9394e73aeecabed7562fbc617ad09ba",
           "features": [
             "orders-managing-orders",
             "pos-comp-void"
@@ -16284,7 +17145,7 @@
           ]
         },
         "lib/features/orders/presentation/widgets/check_panel.dart": {
-          "sha256": "c8146927121331969a143cd19771fd89d0aea6804857f57b89163c98d4aa5b0d",
+          "sha256": "b5b5e086a5c243a8611d3a26fc95242d700ca2bde7a816b6b9e333013fde2e7c",
           "features": [
             "menu-variants-and-sizes",
             "orders-managing-orders",
@@ -16988,7 +17849,7 @@
           ]
         },
         "lib/services/network/api_service.dart": {
-          "sha256": "344146d68aa33d243f555e51bcdf102ad824bf71fdd101874b74873206e2b4a6",
+          "sha256": "238f5e7f162f05ecf40f316ce3825ff06fa20654cc9f9b80acfa9fdd2981fabb",
           "features": [
             "account-access",
             "staff-devices-shifts"
@@ -27746,6 +28607,98 @@
         },
         {
           "service": "foodyserver",
+          "file": "internal/orders/loyalty_attachment.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_checkout.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_customer_checkout.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_customer_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_no_charge.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_no_charge_abort.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_no_charge_void.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_preparation.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_preparation_finish.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_preparation_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_recovery.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_recovery_authority.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_recovery_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_recovery_view.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_resolution.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_resolution_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_resolution_view.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_reward.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_sale.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_sale_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_sale_view.go"
+        },
+        {
+          "service": "foodyserver",
           "file": "internal/orders/modifier_selection.go"
         },
         {
@@ -28394,6 +29347,10 @@
         },
         {
           "service": "foodypos",
+          "file": "lib/features/orders/presentation/financial_check_collector.dart"
+        },
+        {
+          "service": "foodypos",
           "file": "lib/features/orders/presentation/financial_check_page.dart"
         },
         {
@@ -28925,6 +29882,22 @@
         {
           "service": "foodyserver",
           "file": "internal/payment/invoice_lines.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/payment/loyalty_checkout_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/payment/loyalty_checkout_resolution.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/payment/loyalty_stancer_checkout.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/payment/loyalty_sumit_verification.go"
         },
         {
           "service": "foodyserver",
@@ -31207,6 +32180,98 @@
         },
         {
           "service": "foodyserver",
+          "file": "internal/orders/loyalty_attachment.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_checkout.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_customer_checkout.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_customer_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_no_charge.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_no_charge_abort.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_no_charge_void.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_preparation.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_preparation_finish.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_preparation_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_recovery.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_recovery_authority.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_recovery_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_recovery_view.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_resolution.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_resolution_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_resolution_view.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_reward.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_sale.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_sale_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_sale_view.go"
+        },
+        {
+          "service": "foodyserver",
           "file": "internal/orders/modifier_selection.go"
         },
         {
@@ -32007,6 +33072,98 @@
         {
           "service": "foodyserver",
           "file": "internal/orders/kitchen_stations.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_attachment.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_checkout.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_customer_checkout.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_customer_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_no_charge.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_no_charge_abort.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_no_charge_void.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_preparation.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_preparation_finish.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_preparation_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_recovery.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_recovery_authority.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_recovery_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_recovery_view.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_resolution.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_resolution_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_resolution_view.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_reward.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_sale.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_sale_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_sale_view.go"
         },
         {
           "service": "foodyserver",
@@ -39266,6 +40423,98 @@
         },
         {
           "service": "foodyserver",
+          "file": "internal/orders/loyalty_attachment.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_checkout.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_customer_checkout.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_customer_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_no_charge.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_no_charge_abort.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_no_charge_void.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_preparation.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_preparation_finish.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_preparation_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_recovery.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_recovery_authority.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_recovery_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_recovery_view.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_resolution.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_resolution_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_resolution_view.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_reward.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_sale.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_sale_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_sale_view.go"
+        },
+        {
+          "service": "foodyserver",
           "file": "internal/orders/modifier_selection.go"
         },
         {
@@ -41923,6 +43172,10 @@
         },
         {
           "service": "foodypos",
+          "file": "lib/features/orders/presentation/financial_check_collector.dart"
+        },
+        {
+          "service": "foodypos",
           "file": "lib/features/orders/presentation/financial_check_page.dart"
         },
         {
@@ -42630,6 +43883,22 @@
         {
           "service": "foodyserver",
           "file": "internal/payment/invoice_lines.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/payment/loyalty_checkout_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/payment/loyalty_checkout_resolution.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/payment/loyalty_stancer_checkout.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/payment/loyalty_sumit_verification.go"
         },
         {
           "service": "foodyserver",
@@ -47403,6 +48672,22 @@
         },
         {
           "service": "foodyserver",
+          "file": "internal/payment/loyalty_checkout_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/payment/loyalty_checkout_resolution.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/payment/loyalty_stancer_checkout.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/payment/loyalty_sumit_verification.go"
+        },
+        {
+          "service": "foodyserver",
           "file": "internal/payment/order_adjustments.go"
         },
         {
@@ -48847,6 +50132,18 @@
         },
         {
           "service": "foodyserver",
+          "file": "internal/common/loyalty_pos_counter_preparation.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/common/loyalty_pos_counter_recovery.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/common/loyalty_pos_sale.go"
+        },
+        {
+          "service": "foodyserver",
           "file": "internal/common/menu_publication.go"
         },
         {
@@ -49459,6 +50756,146 @@
         },
         {
           "service": "foodyserver",
+          "file": "internal/loyalty/cash_refunds.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyalty/checkout.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyalty/customer_rewards.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyalty/financial_capture.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyalty/financial_enrollment.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyalty/financial_partition.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyalty/financial_worker.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyalty/handler.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyalty/ledger.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyalty/membership.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyalty/no_charge_abort.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyalty/no_charge_void.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyalty/order_reward.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyalty/pos_capture.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyalty/pos_context.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyalty/pos_reward.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyalty/pricing.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyalty/program.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyalty/provider_checkout.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyalty/purchase.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyalty/rewards.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyalty/rules.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyalty/service.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyalty/staff_access.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyaltywallet/apple.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyaltywallet/google.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyaltywallet/handler.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyaltywallet/localization.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyaltywallet/mounted_config.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyaltywallet/pos_handler.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyaltywallet/pos_lookup.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyaltywallet/registration.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyaltywallet/service.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyaltywallet/types.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyaltywallet/worker.go"
+        },
+        {
+          "service": "foodyserver",
           "file": "internal/market/handler.go"
         },
         {
@@ -49899,6 +51336,98 @@
         },
         {
           "service": "foodyserver",
+          "file": "internal/orders/loyalty_attachment.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_checkout.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_customer_checkout.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_customer_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_no_charge.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_no_charge_abort.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_no_charge_void.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_preparation.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_preparation_finish.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_preparation_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_recovery.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_recovery_authority.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_recovery_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_counter_recovery_view.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_resolution.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_resolution_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_resolution_view.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_reward.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_sale.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_sale_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/orders/loyalty_pos_sale_view.go"
+        },
+        {
+          "service": "foodyserver",
           "file": "internal/orders/modifier_selection.go"
         },
         {
@@ -50100,6 +51629,22 @@
         {
           "service": "foodyserver",
           "file": "internal/payment/invoice_lines.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/payment/loyalty_checkout_http.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/payment/loyalty_checkout_resolution.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/payment/loyalty_stancer_checkout.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/payment/loyalty_sumit_verification.go"
         },
         {
           "service": "foodyserver",
@@ -50751,6 +52296,10 @@
         },
         {
           "service": "foodyserver",
+          "file": "internal/testutil/loyalty.go"
+        },
+        {
+          "service": "foodyserver",
           "file": "internal/testutil/seed.go"
         },
         {
@@ -50911,6 +52460,10 @@
         },
         {
           "service": "foodyweb",
+          "file": "app/api/loyalty-wallet/apple/route.ts"
+        },
+        {
+          "service": "foodyweb",
           "file": "app/api/manifest/[slug]/route.ts"
         },
         {
@@ -51037,13 +52590,17 @@
           "app/globals.css"
         ],
         "foodypos": [
-          "lib/core/**"
+          "lib/core/**",
+          "lib/features/loyalty/**"
         ],
         "foodybackoffice": [
           "src/lib/**"
         ],
         "foodylanding": [
           "src/lib/**"
+        ],
+        "foodyserver": [
+          "migrations/*loyalty*.sql"
         ]
       },
       "operations": [
@@ -51315,6 +52872,78 @@
       "procedureUpdatedAt": "2026-11-04",
       "evidence": [
         {
+          "service": "foodyserver",
+          "file": "migrations/292_wallet_loyalty_foundation.sql"
+        },
+        {
+          "service": "foodyserver",
+          "file": "migrations/293_loyalty_reward_reservation.sql"
+        },
+        {
+          "service": "foodyserver",
+          "file": "migrations/294_loyalty_order_financial_outbox.sql"
+        },
+        {
+          "service": "foodyserver",
+          "file": "migrations/295_loyalty_pos_financial_allocations.sql"
+        },
+        {
+          "service": "foodyserver",
+          "file": "migrations/296_loyalty_order_reward_price.sql"
+        },
+        {
+          "service": "foodyserver",
+          "file": "migrations/297_loyalty_pos_reward_price.sql"
+        },
+        {
+          "service": "foodyserver",
+          "file": "migrations/298_loyalty_checkout_lifecycle.sql"
+        },
+        {
+          "service": "foodyserver",
+          "file": "migrations/299_loyalty_no_charge_void.sql"
+        },
+        {
+          "service": "foodyserver",
+          "file": "migrations/300_loyalty_checkout_resolution.sql"
+        },
+        {
+          "service": "foodyserver",
+          "file": "migrations/301_loyalty_program_configuration.sql"
+        },
+        {
+          "service": "foodyserver",
+          "file": "migrations/302_loyalty_customer_checkout_request.sql"
+        },
+        {
+          "service": "foodyserver",
+          "file": "migrations/303_loyalty_wallet_passes.sql"
+        },
+        {
+          "service": "foodyserver",
+          "file": "migrations/304_loyalty_pos_sale_commands.sql"
+        },
+        {
+          "service": "foodyserver",
+          "file": "migrations/305_loyalty_pos_resolution_commands.sql"
+        },
+        {
+          "service": "foodyserver",
+          "file": "migrations/306_loyalty_pos_counter_preparations.sql"
+        },
+        {
+          "service": "foodyserver",
+          "file": "migrations/307_loyalty_pos_counter_recovery_commands.sql"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/app/[restaurantId]/loyalty/checkouts/page.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/app/[restaurantId]/loyalty/program/page.tsx"
+        },
+        {
           "service": "foodyadmin",
           "file": "src/app/[restaurantId]/settings/layout.tsx"
         },
@@ -51529,6 +53158,22 @@
         {
           "service": "foodyadmin",
           "file": "src/components/i18n/LocalizedOrderNameField.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/components/loyalty/LoyaltyCheckoutDetailDrawer.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/components/loyalty/LoyaltyCheckoutWorkspace.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/components/loyalty/LoyaltyProgramWorkspace.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/components/loyalty/display.ts"
         },
         {
           "service": "foodyadmin",
@@ -51873,6 +53518,14 @@
         {
           "service": "foodyadmin",
           "file": "src/lib/kitchen-service-plan.ts"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/lib/loyalty-checkout.ts"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/lib/loyalty-program.ts"
         },
         {
           "service": "foodyadmin",
@@ -52488,6 +54141,10 @@
         },
         {
           "service": "foodyweb",
+          "file": "app/r/[restaurantId]/account/loyalty/page.tsx"
+        },
+        {
+          "service": "foodyweb",
           "file": "app/r/[restaurantId]/layout.tsx"
         },
         {
@@ -52525,6 +54182,26 @@
         {
           "service": "foodyweb",
           "file": "components/LanguageToggle.tsx"
+        },
+        {
+          "service": "foodyweb",
+          "file": "components/LoyaltyCheckout.tsx"
+        },
+        {
+          "service": "foodyweb",
+          "file": "components/LoyaltyCustomerContent.tsx"
+        },
+        {
+          "service": "foodyweb",
+          "file": "components/LoyaltyPaymentResume.tsx"
+        },
+        {
+          "service": "foodyweb",
+          "file": "components/LoyaltyRewardsPanel.tsx"
+        },
+        {
+          "service": "foodyweb",
+          "file": "components/LoyaltyWalletPanel.tsx"
         },
         {
           "service": "foodyweb",
@@ -52756,6 +54433,18 @@
         },
         {
           "service": "foodyweb",
+          "file": "lib/loyalty-checkout.ts"
+        },
+        {
+          "service": "foodyweb",
+          "file": "lib/loyalty-wallet.ts"
+        },
+        {
+          "service": "foodyweb",
+          "file": "lib/loyalty.ts"
+        },
+        {
+          "service": "foodyweb",
           "file": "lib/menu-language.tsx"
         },
         {
@@ -52917,6 +54606,14 @@
         {
           "service": "foodyweb",
           "file": "lib/server/customer-session.ts"
+        },
+        {
+          "service": "foodyweb",
+          "file": "lib/server/loyalty-proxy.ts"
+        },
+        {
+          "service": "foodyweb",
+          "file": "lib/server/loyalty-wallet-proxy.ts"
         },
         {
           "service": "foodyweb",
@@ -53705,6 +55402,98 @@
         {
           "service": "foodypos",
           "file": "lib/core/ui/tour_badge.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/loyalty/data/counter_preparation_presence.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/loyalty/data/loyalty_counter_preparation_repository.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/loyalty/data/loyalty_counter_recovery_repository.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/loyalty/data/loyalty_lookup_repository.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/loyalty/data/loyalty_resolution_repository.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/loyalty/data/loyalty_sale_repository.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/loyalty/domain/loyalty_counter_preparation.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/loyalty/domain/loyalty_counter_recovery.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/loyalty/domain/loyalty_member.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/loyalty/domain/loyalty_resolution.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/loyalty/domain/loyalty_sale.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/loyalty/presentation/loyalty_counter_page.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/loyalty/presentation/loyalty_counter_preparation_page.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/loyalty/presentation/loyalty_counter_recovery_page.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/loyalty/presentation/loyalty_lookup_page.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/loyalty/presentation/loyalty_resolution_panel.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/loyalty/presentation/loyalty_sale_actions.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/loyalty/presentation/loyalty_sale_page.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/loyalty/providers/loyalty_counter_preparation_provider.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/loyalty/providers/loyalty_counter_recovery_provider.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/loyalty/providers/loyalty_lookup_provider.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/loyalty/providers/loyalty_resolution_provider.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/features/loyalty/providers/loyalty_sale_provider.dart"
         },
         {
           "service": "foodypos",
@@ -74637,6 +76426,683 @@
       "resolution": "router-group-relative"
     },
     {
+      "id": "foodyserver:internal/loyalty/handler.go:api-registration:41",
+      "service": "foodyserver",
+      "source": "internal/loyalty/handler.go",
+      "features": [
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "GET",
+      "receiver": "staff",
+      "routeFragment": "/program",
+      "handler": "h.GetProgram",
+      "line": 41,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/loyalty/handler.go:api-registration:42",
+      "service": "foodyserver",
+      "source": "internal/loyalty/handler.go",
+      "features": [
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "PUT",
+      "receiver": "staff",
+      "routeFragment": "/program",
+      "handler": "h.SaveProgram",
+      "line": 42,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/loyalty/handler.go:api-registration:44",
+      "service": "foodyserver",
+      "source": "internal/loyalty/handler.go",
+      "features": [
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "GET",
+      "receiver": "customer",
+      "routeFragment": "/loyalty/program",
+      "handler": "h.GetPublicProgram",
+      "line": 44,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/loyalty/handler.go:api-registration:45",
+      "service": "foodyserver",
+      "source": "internal/loyalty/handler.go",
+      "features": [
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "GET",
+      "receiver": "customer",
+      "routeFragment": "/me/loyalty-rewards",
+      "handler": "h.GetMyRewards",
+      "line": 45,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/loyalty/handler.go:api-registration:46",
+      "service": "foodyserver",
+      "source": "internal/loyalty/handler.go",
+      "features": [
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "GET",
+      "receiver": "customer",
+      "routeFragment": "/me/loyalty-membership",
+      "handler": "h.GetMyMembership",
+      "line": 46,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/loyalty/handler.go:api-registration:47",
+      "service": "foodyserver",
+      "source": "internal/loyalty/handler.go",
+      "features": [
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "POST",
+      "receiver": "customer",
+      "routeFragment": "/me/loyalty-membership",
+      "handler": "h.JoinProgram",
+      "line": 47,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/loyaltywallet/handler.go:api-registration:50",
+      "service": "foodyserver",
+      "source": "internal/loyaltywallet/handler.go",
+      "features": [
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "GET",
+      "receiver": "owned",
+      "routeFragment": "",
+      "handler": "",
+      "line": 50,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/loyaltywallet/handler.go:api-registration:58",
+      "service": "foodyserver",
+      "source": "internal/loyaltywallet/handler.go",
+      "features": [
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "POST",
+      "receiver": "owned",
+      "routeFragment": "/cards/:platform",
+      "handler": "",
+      "line": 58,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/loyaltywallet/handler.go:api-registration:82",
+      "service": "foodyserver",
+      "source": "internal/loyaltywallet/handler.go",
+      "features": [
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "POST",
+      "receiver": "owned",
+      "routeFragment": "/cards/:platform/:serialNumber/revoke",
+      "handler": "",
+      "line": 82,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/loyaltywallet/handler.go:api-registration:107",
+      "service": "foodyserver",
+      "source": "internal/loyaltywallet/handler.go",
+      "features": [
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "POST",
+      "receiver": "apple",
+      "routeFragment": "/devices/:deviceLibraryIdentifier/registrations/:passTypeIdentifier/:serialNumber",
+      "handler": "",
+      "line": 107,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/loyaltywallet/handler.go:api-registration:133",
+      "service": "foodyserver",
+      "source": "internal/loyaltywallet/handler.go",
+      "features": [
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "DELETE",
+      "receiver": "apple",
+      "routeFragment": "/devices/:deviceLibraryIdentifier/registrations/:passTypeIdentifier/:serialNumber",
+      "handler": "",
+      "line": 133,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/loyaltywallet/handler.go:api-registration:147",
+      "service": "foodyserver",
+      "source": "internal/loyaltywallet/handler.go",
+      "features": [
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "GET",
+      "receiver": "apple",
+      "routeFragment": "/devices/:deviceLibraryIdentifier/registrations/:passTypeIdentifier",
+      "handler": "",
+      "line": 147,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/loyaltywallet/handler.go:api-registration:164",
+      "service": "foodyserver",
+      "source": "internal/loyaltywallet/handler.go",
+      "features": [
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "GET",
+      "receiver": "apple",
+      "routeFragment": "/passes/:passTypeIdentifier/:serialNumber",
+      "handler": "",
+      "line": 164,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/loyaltywallet/handler.go:api-registration:179",
+      "service": "foodyserver",
+      "source": "internal/loyaltywallet/handler.go",
+      "features": [
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "POST",
+      "receiver": "apple",
+      "routeFragment": "/log",
+      "handler": "",
+      "line": 179,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/loyaltywallet/pos_handler.go:api-registration:40",
+      "service": "foodyserver",
+      "source": "internal/loyaltywallet/pos_handler.go",
+      "features": [
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "GET",
+      "receiver": "group",
+      "routeFragment": "/capabilities",
+      "handler": "",
+      "line": 40,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/loyaltywallet/pos_handler.go:api-registration:50",
+      "service": "foodyserver",
+      "source": "internal/loyaltywallet/pos_handler.go",
+      "features": [
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "POST",
+      "receiver": "group",
+      "routeFragment": "/lookup",
+      "handler": "",
+      "line": 50,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/orders/loyalty_customer_http.go:api-registration:81",
+      "service": "foodyserver",
+      "source": "internal/orders/loyalty_customer_http.go",
+      "features": [
+        "orders-managing-orders",
+        "order-types",
+        "pos-order-entry",
+        "fulfillment-policy",
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "POST",
+      "receiver": "group",
+      "routeFragment": "",
+      "handler": "h.CreateGuestOrder",
+      "line": 81,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/orders/loyalty_customer_http.go:api-registration:82",
+      "service": "foodyserver",
+      "source": "internal/orders/loyalty_customer_http.go",
+      "features": [
+        "orders-managing-orders",
+        "order-types",
+        "pos-order-entry",
+        "fulfillment-policy",
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "GET",
+      "receiver": "group",
+      "routeFragment": "/:requestId",
+      "handler": "h.GetCustomerLoyaltyCheckout",
+      "line": 82,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/orders/loyalty_customer_http.go:api-registration:83",
+      "service": "foodyserver",
+      "source": "internal/orders/loyalty_customer_http.go",
+      "features": [
+        "orders-managing-orders",
+        "order-types",
+        "pos-order-entry",
+        "fulfillment-policy",
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "POST",
+      "receiver": "group",
+      "routeFragment": "/:requestId/cancel",
+      "handler": "h.CancelCustomerLoyaltyCheckout",
+      "line": 83,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/orders/loyalty_pos_counter_http.go:api-registration:18",
+      "service": "foodyserver",
+      "source": "internal/orders/loyalty_pos_counter_http.go",
+      "features": [
+        "orders-managing-orders",
+        "order-types",
+        "pos-order-entry",
+        "fulfillment-policy",
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "GET",
+      "receiver": "group",
+      "routeFragment": "/financial",
+      "handler": "",
+      "line": 18,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/orders/loyalty_pos_counter_http.go:api-registration:26",
+      "service": "foodyserver",
+      "source": "internal/orders/loyalty_pos_counter_http.go",
+      "features": [
+        "orders-managing-orders",
+        "order-types",
+        "pos-order-entry",
+        "fulfillment-policy",
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "POST",
+      "receiver": "group",
+      "routeFragment": "/payment/claim",
+      "handler": "",
+      "line": 26,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/orders/loyalty_pos_counter_http.go:api-registration:42",
+      "service": "foodyserver",
+      "source": "internal/orders/loyalty_pos_counter_http.go",
+      "features": [
+        "orders-managing-orders",
+        "order-types",
+        "pos-order-entry",
+        "fulfillment-policy",
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "POST",
+      "receiver": "group",
+      "routeFragment": "/payment/finish",
+      "handler": "",
+      "line": 42,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/orders/loyalty_pos_counter_preparation_http.go:api-registration:29",
+      "service": "foodyserver",
+      "source": "internal/orders/loyalty_pos_counter_preparation_http.go",
+      "features": [
+        "orders-managing-orders",
+        "order-types",
+        "pos-order-entry",
+        "fulfillment-policy",
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "GET",
+      "receiver": "group",
+      "routeFragment": "",
+      "handler": "",
+      "line": 29,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/orders/loyalty_pos_counter_preparation_http.go:api-registration:34",
+      "service": "foodyserver",
+      "source": "internal/orders/loyalty_pos_counter_preparation_http.go",
+      "features": [
+        "orders-managing-orders",
+        "order-types",
+        "pos-order-entry",
+        "fulfillment-policy",
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "POST",
+      "receiver": "group",
+      "routeFragment": "",
+      "handler": "",
+      "line": 34,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/orders/loyalty_pos_counter_preparation_http.go:api-registration:43",
+      "service": "foodyserver",
+      "source": "internal/orders/loyalty_pos_counter_preparation_http.go",
+      "features": [
+        "orders-managing-orders",
+        "order-types",
+        "pos-order-entry",
+        "fulfillment-policy",
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "POST",
+      "receiver": "group",
+      "routeFragment": "/abandon",
+      "handler": "",
+      "line": 43,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/orders/loyalty_pos_counter_preparation_http.go:api-registration:51",
+      "service": "foodyserver",
+      "source": "internal/orders/loyalty_pos_counter_preparation_http.go",
+      "features": [
+        "orders-managing-orders",
+        "order-types",
+        "pos-order-entry",
+        "fulfillment-policy",
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "POST",
+      "receiver": "group",
+      "routeFragment": "/release",
+      "handler": "",
+      "line": 51,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/orders/loyalty_pos_counter_recovery_http.go:api-registration:30",
+      "service": "foodyserver",
+      "source": "internal/orders/loyalty_pos_counter_recovery_http.go",
+      "features": [
+        "orders-managing-orders",
+        "order-types",
+        "pos-order-entry",
+        "fulfillment-policy",
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "GET",
+      "receiver": "group",
+      "routeFragment": "",
+      "handler": "",
+      "line": 30,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/orders/loyalty_pos_counter_recovery_http.go:api-registration:34",
+      "service": "foodyserver",
+      "source": "internal/orders/loyalty_pos_counter_recovery_http.go",
+      "features": [
+        "orders-managing-orders",
+        "order-types",
+        "pos-order-entry",
+        "fulfillment-policy",
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "POST",
+      "receiver": "group",
+      "routeFragment": "/commands",
+      "handler": "",
+      "line": 34,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/orders/loyalty_pos_counter_recovery_http.go:api-registration:42",
+      "service": "foodyserver",
+      "source": "internal/orders/loyalty_pos_counter_recovery_http.go",
+      "features": [
+        "orders-managing-orders",
+        "order-types",
+        "pos-order-entry",
+        "fulfillment-policy",
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "POST",
+      "receiver": "group",
+      "routeFragment": "/commands/abandon",
+      "handler": "",
+      "line": 42,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/orders/loyalty_pos_counter_recovery_http.go:api-registration:50",
+      "service": "foodyserver",
+      "source": "internal/orders/loyalty_pos_counter_recovery_http.go",
+      "features": [
+        "orders-managing-orders",
+        "order-types",
+        "pos-order-entry",
+        "fulfillment-policy",
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "GET",
+      "receiver": "group",
+      "routeFragment": "/commands/:requestId",
+      "handler": "",
+      "line": 50,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/orders/loyalty_pos_counter_recovery_http.go:api-registration:68",
+      "service": "foodyserver",
+      "source": "internal/orders/loyalty_pos_counter_recovery_http.go",
+      "features": [
+        "orders-managing-orders",
+        "order-types",
+        "pos-order-entry",
+        "fulfillment-policy",
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "GET",
+      "receiver": "list",
+      "routeFragment": "",
+      "handler": "",
+      "line": 68,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/orders/loyalty_pos_resolution_http.go:api-registration:17",
+      "service": "foodyserver",
+      "source": "internal/orders/loyalty_pos_resolution_http.go",
+      "features": [
+        "orders-managing-orders",
+        "order-types",
+        "pos-order-entry",
+        "fulfillment-policy",
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "GET",
+      "receiver": "group",
+      "routeFragment": "",
+      "handler": "",
+      "line": 17,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/orders/loyalty_pos_resolution_http.go:api-registration:27",
+      "service": "foodyserver",
+      "source": "internal/orders/loyalty_pos_resolution_http.go",
+      "features": [
+        "orders-managing-orders",
+        "order-types",
+        "pos-order-entry",
+        "fulfillment-policy",
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "GET",
+      "receiver": "group",
+      "routeFragment": "/commands/:requestId",
+      "handler": "",
+      "line": 27,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/orders/loyalty_pos_sale_http.go:api-registration:32",
+      "service": "foodyserver",
+      "source": "internal/orders/loyalty_pos_sale_http.go",
+      "features": [
+        "orders-managing-orders",
+        "order-types",
+        "pos-order-entry",
+        "fulfillment-policy",
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "GET",
+      "receiver": "group",
+      "routeFragment": "",
+      "handler": "",
+      "line": 32,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/orders/loyalty_pos_sale_http.go:api-registration:44",
+      "service": "foodyserver",
+      "source": "internal/orders/loyalty_pos_sale_http.go",
+      "features": [
+        "orders-managing-orders",
+        "order-types",
+        "pos-order-entry",
+        "fulfillment-policy",
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "POST",
+      "receiver": "group",
+      "routeFragment": "/rewards",
+      "handler": "",
+      "line": 44,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/orders/loyalty_pos_sale_http.go:api-registration:60",
+      "service": "foodyserver",
+      "source": "internal/orders/loyalty_pos_sale_http.go",
+      "features": [
+        "orders-managing-orders",
+        "order-types",
+        "pos-order-entry",
+        "fulfillment-policy",
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "POST",
+      "receiver": "group",
+      "routeFragment": "/quote",
+      "handler": "",
+      "line": 60,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/orders/loyalty_pos_sale_http.go:api-registration:76",
+      "service": "foodyserver",
+      "source": "internal/orders/loyalty_pos_sale_http.go",
+      "features": [
+        "orders-managing-orders",
+        "order-types",
+        "pos-order-entry",
+        "fulfillment-policy",
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "GET",
+      "receiver": "group",
+      "routeFragment": "/commands/:requestId",
+      "handler": "",
+      "line": 76,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/orders/loyalty_pos_sale_http.go:api-registration:90",
+      "service": "foodyserver",
+      "source": "internal/orders/loyalty_pos_sale_http.go",
+      "features": [
+        "orders-managing-orders",
+        "order-types",
+        "pos-order-entry",
+        "fulfillment-policy",
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "POST",
+      "receiver": "group",
+      "routeFragment": "/commands",
+      "handler": "",
+      "line": 90,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/orders/loyalty_pos_sale_http.go:api-registration:107",
+      "service": "foodyserver",
+      "source": "internal/orders/loyalty_pos_sale_http.go",
+      "features": [
+        "orders-managing-orders",
+        "order-types",
+        "pos-order-entry",
+        "fulfillment-policy",
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "POST",
+      "receiver": "group",
+      "routeFragment": "/commands/abandon",
+      "handler": "",
+      "line": 107,
+      "resolution": "router-group-relative"
+    },
+    {
       "id": "foodyserver:internal/otp/handler.go:api-registration:171",
       "service": "foodyserver",
       "source": "internal/otp/handler.go",
@@ -74667,7 +77133,7 @@
       "resolution": "router-group-relative"
     },
     {
-      "id": "foodyserver:internal/payment/handler.go:api-registration:1606",
+      "id": "foodyserver:internal/payment/handler.go:api-registration:1659",
       "service": "foodyserver",
       "source": "internal/payment/handler.go",
       "features": [
@@ -74683,11 +77149,11 @@
       "receiver": "public",
       "routeFragment": "/internal-checkout-capabilities",
       "handler": "h.InternalCheckoutCapabilities",
-      "line": 1606,
+      "line": 1659,
       "resolution": "router-group-relative"
     },
     {
-      "id": "foodyserver:internal/payment/handler.go:api-registration:1607",
+      "id": "foodyserver:internal/payment/handler.go:api-registration:1660",
       "service": "foodyserver",
       "source": "internal/payment/handler.go",
       "features": [
@@ -74703,11 +77169,11 @@
       "receiver": "public",
       "routeFragment": "/orders/:id/internal-checkout",
       "handler": "h.GetInternalCheckout",
-      "line": 1607,
+      "line": 1660,
       "resolution": "router-group-relative"
     },
     {
-      "id": "foodyserver:internal/payment/handler.go:api-registration:1608",
+      "id": "foodyserver:internal/payment/handler.go:api-registration:1661",
       "service": "foodyserver",
       "source": "internal/payment/handler.go",
       "features": [
@@ -74723,11 +77189,11 @@
       "receiver": "public",
       "routeFragment": "/orders/:id/internal-checkout",
       "handler": "h.PayInternalCheckout",
-      "line": 1608,
+      "line": 1661,
       "resolution": "router-group-relative"
     },
     {
-      "id": "foodyserver:internal/payment/handler.go:api-registration:1609",
+      "id": "foodyserver:internal/payment/handler.go:api-registration:1662",
       "service": "foodyserver",
       "source": "internal/payment/handler.go",
       "features": [
@@ -74743,11 +77209,11 @@
       "receiver": "public",
       "routeFragment": "/orders/:id/internal-checkout/quote",
       "handler": "h.QuoteInternalCheckout",
-      "line": 1609,
+      "line": 1662,
       "resolution": "router-group-relative"
     },
     {
-      "id": "foodyserver:internal/payment/handler.go:api-registration:1610",
+      "id": "foodyserver:internal/payment/handler.go:api-registration:1663",
       "service": "foodyserver",
       "source": "internal/payment/handler.go",
       "features": [
@@ -74763,11 +77229,11 @@
       "receiver": "public",
       "routeFragment": "/orders/:id/payment/init",
       "handler": "h.InitPayment",
-      "line": 1610,
+      "line": 1663,
       "resolution": "router-group-relative"
     },
     {
-      "id": "foodyserver:internal/payment/handler.go:api-registration:1611",
+      "id": "foodyserver:internal/payment/handler.go:api-registration:1664",
       "service": "foodyserver",
       "source": "internal/payment/handler.go",
       "features": [
@@ -74783,11 +77249,11 @@
       "receiver": "public",
       "routeFragment": "/orders/:id/payment/saved-method",
       "handler": "h.ChargeSavedPaymentMethod",
-      "line": 1611,
+      "line": 1664,
       "resolution": "router-group-relative"
     },
     {
-      "id": "foodyserver:internal/payment/handler.go:api-registration:1612",
+      "id": "foodyserver:internal/payment/handler.go:api-registration:1665",
       "service": "foodyserver",
       "source": "internal/payment/handler.go",
       "features": [
@@ -74803,11 +77269,11 @@
       "receiver": "public",
       "routeFragment": "/orders/:id/payment/signup/confirm",
       "handler": "h.ConfirmCSTSignup",
-      "line": 1612,
+      "line": 1665,
       "resolution": "router-group-relative"
     },
     {
-      "id": "foodyserver:internal/payment/handler.go:api-registration:1613",
+      "id": "foodyserver:internal/payment/handler.go:api-registration:1666",
       "service": "foodyserver",
       "source": "internal/payment/handler.go",
       "features": [
@@ -74823,11 +77289,11 @@
       "receiver": "public",
       "routeFragment": "/orders/:id/payment/encrypted-card",
       "handler": "h.ChargeEncryptedCard",
-      "line": 1613,
+      "line": 1666,
       "resolution": "router-group-relative"
     },
     {
-      "id": "foodyserver:internal/payment/handler.go:api-registration:1614",
+      "id": "foodyserver:internal/payment/handler.go:api-registration:1667",
       "service": "foodyserver",
       "source": "internal/payment/handler.go",
       "features": [
@@ -74843,11 +77309,11 @@
       "receiver": "public",
       "routeFragment": "/payment-methods/capture-key",
       "handler": "h.GetCardCaptureKey",
-      "line": 1614,
+      "line": 1667,
       "resolution": "router-group-relative"
     },
     {
-      "id": "foodyserver:internal/payment/handler.go:api-registration:1615",
+      "id": "foodyserver:internal/payment/handler.go:api-registration:1668",
       "service": "foodyserver",
       "source": "internal/payment/handler.go",
       "features": [
@@ -74863,11 +77329,11 @@
       "receiver": "public",
       "routeFragment": "/payment-methods",
       "handler": "h.ListSavedPaymentMethods",
-      "line": 1615,
+      "line": 1668,
       "resolution": "router-group-relative"
     },
     {
-      "id": "foodyserver:internal/payment/handler.go:api-registration:1616",
+      "id": "foodyserver:internal/payment/handler.go:api-registration:1669",
       "service": "foodyserver",
       "source": "internal/payment/handler.go",
       "features": [
@@ -74883,11 +77349,11 @@
       "receiver": "public",
       "routeFragment": "/payment-capabilities",
       "handler": "h.PaymentCapabilities",
-      "line": 1616,
+      "line": 1669,
       "resolution": "router-group-relative"
     },
     {
-      "id": "foodyserver:internal/payment/handler.go:api-registration:1617",
+      "id": "foodyserver:internal/payment/handler.go:api-registration:1670",
       "service": "foodyserver",
       "source": "internal/payment/handler.go",
       "features": [
@@ -74903,11 +77369,11 @@
       "receiver": "public",
       "routeFragment": "/payment-methods/:id",
       "handler": "h.RevokeSavedPaymentMethod",
-      "line": 1617,
+      "line": 1670,
       "resolution": "router-group-relative"
     },
     {
-      "id": "foodyserver:internal/payment/handler.go:api-registration:1618",
+      "id": "foodyserver:internal/payment/handler.go:api-registration:1671",
       "service": "foodyserver",
       "source": "internal/payment/handler.go",
       "features": [
@@ -74923,11 +77389,11 @@
       "receiver": "public",
       "routeFragment": "/orders/:id/payment/cibus",
       "handler": "h.ChargeCibus",
-      "line": 1618,
+      "line": 1671,
       "resolution": "router-group-relative"
     },
     {
-      "id": "foodyserver:internal/payment/handler.go:api-registration:1619",
+      "id": "foodyserver:internal/payment/handler.go:api-registration:1672",
       "service": "foodyserver",
       "source": "internal/payment/handler.go",
       "features": [
@@ -74943,11 +77409,11 @@
       "receiver": "public",
       "routeFragment": "/sessions/:id/pay",
       "handler": "h.InitSessionPayment",
-      "line": 1619,
+      "line": 1672,
       "resolution": "router-group-relative"
     },
     {
-      "id": "foodyserver:internal/payment/handler.go:api-registration:1624",
+      "id": "foodyserver:internal/payment/handler.go:api-registration:1677",
       "service": "foodyserver",
       "source": "internal/payment/handler.go",
       "features": [
@@ -74963,11 +77429,11 @@
       "receiver": "api",
       "routeFragment": "/webhooks/verifone/:restaurantId",
       "handler": "h.WebhookVerifone",
-      "line": 1624,
+      "line": 1677,
       "resolution": "router-group-relative"
     },
     {
-      "id": "foodyserver:internal/payment/handler.go:api-registration:1625",
+      "id": "foodyserver:internal/payment/handler.go:api-registration:1678",
       "service": "foodyserver",
       "source": "internal/payment/handler.go",
       "features": [
@@ -74983,11 +77449,11 @@
       "receiver": "api",
       "routeFragment": "/webhooks/sumit/event-hold",
       "handler": "h.SumitEventHoldCallback",
-      "line": 1625,
+      "line": 1678,
       "resolution": "router-group-relative"
     },
     {
-      "id": "foodyserver:internal/payment/handler.go:api-registration:1626",
+      "id": "foodyserver:internal/payment/handler.go:api-registration:1679",
       "service": "foodyserver",
       "source": "internal/payment/handler.go",
       "features": [
@@ -75003,11 +77469,11 @@
       "receiver": "api",
       "routeFragment": "/webhooks/sumit/callback",
       "handler": "",
-      "line": 1626,
+      "line": 1679,
       "resolution": "router-group-relative"
     },
     {
-      "id": "foodyserver:internal/payment/handler.go:api-registration:1627",
+      "id": "foodyserver:internal/payment/handler.go:api-registration:1680",
       "service": "foodyserver",
       "source": "internal/payment/handler.go",
       "features": [
@@ -75023,11 +77489,11 @@
       "receiver": "api",
       "routeFragment": "/webhooks/stancer",
       "handler": "h.WebhookStancer",
-      "line": 1627,
+      "line": 1680,
       "resolution": "router-group-relative"
     },
     {
-      "id": "foodyserver:internal/payment/handler.go:api-registration:1630",
+      "id": "foodyserver:internal/payment/handler.go:api-registration:1683",
       "service": "foodyserver",
       "source": "internal/payment/handler.go",
       "features": [
@@ -75043,7 +77509,61 @@
       "receiver": "api",
       "routeFragment": "/webhooks/stancer/return",
       "handler": "h.StancerReturn",
-      "line": 1630,
+      "line": 1683,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/payment/loyalty_checkout_http.go:api-registration:40",
+      "service": "foodyserver",
+      "source": "internal/payment/loyalty_checkout_http.go",
+      "features": [
+        "payments-how-payments-work",
+        "pos-payments",
+        "backoffice-entitlements",
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "GET",
+      "receiver": "group",
+      "routeFragment": "",
+      "handler": "h.ListLoyaltyCheckoutResolutionsHTTP",
+      "line": 40,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/payment/loyalty_checkout_http.go:api-registration:41",
+      "service": "foodyserver",
+      "source": "internal/payment/loyalty_checkout_http.go",
+      "features": [
+        "payments-how-payments-work",
+        "pos-payments",
+        "backoffice-entitlements",
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "GET",
+      "receiver": "group",
+      "routeFragment": "/:orderId",
+      "handler": "h.GetLoyaltyCheckoutResolutionHTTP",
+      "line": 41,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/payment/loyalty_checkout_http.go:api-registration:42",
+      "service": "foodyserver",
+      "source": "internal/payment/loyalty_checkout_http.go",
+      "features": [
+        "payments-how-payments-work",
+        "pos-payments",
+        "backoffice-entitlements",
+        "platform-api"
+      ],
+      "kind": "api-registration",
+      "method": "POST",
+      "receiver": "group",
+      "routeFragment": "/:orderId/close",
+      "handler": "h.ResolveLoyaltyCheckoutHTTP",
+      "line": 42,
       "resolution": "router-group-relative"
     },
     {
@@ -78430,6 +80950,28 @@
       "actions": [
         "closeSidebar"
       ],
+      "line": 1
+    },
+    {
+      "id": "foodyadmin:src/app/[restaurantId]/loyalty/checkouts/page.tsx:next-page:1",
+      "service": "foodyadmin",
+      "source": "src/app/[restaurantId]/loyalty/checkouts/page.tsx",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "next-page",
+      "route": "/[restaurantId]/loyalty/checkouts",
+      "line": 1
+    },
+    {
+      "id": "foodyadmin:src/app/[restaurantId]/loyalty/program/page.tsx:next-page:1",
+      "service": "foodyadmin",
+      "source": "src/app/[restaurantId]/loyalty/program/page.tsx",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "next-page",
+      "route": "/[restaurantId]/loyalty/program",
       "line": 1
     },
     {
@@ -84969,6 +87511,127 @@
       ],
       "actions": [
         "close"
+      ],
+      "line": 1
+    },
+    {
+      "id": "foodyadmin:src/components/loyalty/LoyaltyCheckoutDetailDrawer.tsx:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/components/loyalty/LoyaltyCheckoutDetailDrawer.tsx",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "cancel",
+        "loading",
+        "loyaltyCheckoutAmount",
+        "loyaltyCheckoutConfirmBody",
+        "loyaltyCheckoutConfirmTitle",
+        "loyaltyCheckoutDetail",
+        "loyaltyCheckoutOtherRequest",
+        "loyaltyCheckoutPayment",
+        "loyaltyCheckoutReadOnly",
+        "loyaltyCheckoutReason",
+        "loyaltyCheckoutReasonHint",
+        "loyaltyCheckoutRefresh",
+        "loyaltyCheckoutReward",
+        "loyaltyCheckoutStorageError",
+        "loyaltyCheckoutStored",
+        "loyaltyCheckoutTitle",
+        "loyaltyCheckoutUnknownAmount"
+      ],
+      "actions": [
+        "load",
+        "submit"
+      ],
+      "line": 1
+    },
+    {
+      "id": "foodyadmin:src/components/loyalty/LoyaltyCheckoutWorkspace.tsx:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/components/loyalty/LoyaltyCheckoutWorkspace.tsx",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "loading",
+        "loyaltyCheckoutAmount",
+        "loyaltyCheckoutEmpty",
+        "loyaltyCheckoutEmptyBody",
+        "loyaltyCheckoutForbidden",
+        "loyaltyCheckoutInspect",
+        "loyaltyCheckoutIntro",
+        "loyaltyCheckoutOrder",
+        "loyaltyCheckoutPayment",
+        "loyaltyCheckoutRefresh",
+        "loyaltyCheckoutReward",
+        "loyaltyCheckoutTitle",
+        "loyaltyCheckoutUnavailable",
+        "loyaltyCheckoutUnknownAmount"
+      ],
+      "actions": [
+        "load"
+      ],
+      "line": 1
+    },
+    {
+      "id": "foodyadmin:src/components/loyalty/LoyaltyProgramWorkspace.tsx:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/components/loyalty/LoyaltyProgramWorkspace.tsx",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "cancel",
+        "loading",
+        "loyaltyCheckoutRefresh",
+        "loyaltyProgramAmount",
+        "loyaltyProgramCatalogError",
+        "loyaltyProgramChoose",
+        "loyaltyProgramContent",
+        "loyaltyProgramCurrencyChanged",
+        "loyaltyProgramEarn",
+        "loyaltyProgramEnabled",
+        "loyaltyProgramEnabledHint",
+        "loyaltyProgramExtras",
+        "loyaltyProgramFixed",
+        "loyaltyProgramForbidden",
+        "loyaltyProgramIdentityLocked",
+        "loyaltyProgramIncomplete",
+        "loyaltyProgramIntro",
+        "loyaltyProgramItem",
+        "loyaltyProgramMinimum",
+        "loyaltyProgramMinimumHint",
+        "loyaltyProgramMode",
+        "loyaltyProgramName",
+        "loyaltyProgramPending",
+        "loyaltyProgramPoints",
+        "loyaltyProgramProduct",
+        "loyaltyProgramReadOnly",
+        "loyaltyProgramReward",
+        "loyaltyProgramRewardType",
+        "loyaltyProgramSpend",
+        "loyaltyProgramStorage",
+        "loyaltyProgramTerms",
+        "loyaltyProgramTermsHint",
+        "loyaltyProgramTermsVersion",
+        "loyaltyProgramThreshold",
+        "loyaltyProgramTitle",
+        "loyaltyProgramUnavailable",
+        "loyaltyProgramUnavailableItem",
+        "loyaltyProgramUnits",
+        "loyaltyProgramValidity",
+        "loyaltyProgramValidityHint",
+        "loyaltyProgramVariant",
+        "loyaltyProgramVisits"
+      ],
+      "actions": [
+        "load",
+        "loadError",
+        "submit"
       ],
       "line": 1
     },
@@ -94036,6 +96699,21 @@
       "line": 1
     },
     {
+      "id": "foodyadmin:src/lib/loyalty-checkout.ts:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/lib/loyalty-checkout.ts",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "ui-controls",
+      "labels": [],
+      "actions": [
+        "saveLoyaltyCommand",
+        "saved"
+      ],
+      "line": 1
+    },
+    {
       "id": "foodyadmin:src/lib/menu/item-table-columns.ts:ui-controls:1",
       "service": "foodyadmin",
       "source": "src/lib/menu/item-table-columns.ts",
@@ -94815,6 +97493,17 @@
       "line": 1
     },
     {
+      "id": "foodyweb:app/api/loyalty-wallet/apple/route.ts:next-api-route:1",
+      "service": "foodyweb",
+      "source": "app/api/loyalty-wallet/apple/route.ts",
+      "features": [
+        "platform-api"
+      ],
+      "kind": "next-api-route",
+      "route": "/api/loyalty-wallet/apple",
+      "line": 1
+    },
+    {
       "id": "foodyweb:app/api/manifest/[slug]/route.ts:next-api-route:1",
       "service": "foodyweb",
       "source": "app/api/manifest/[slug]/route.ts",
@@ -95221,6 +97910,17 @@
       ],
       "kind": "next-page",
       "route": "/r/[restaurantId]/[page]",
+      "line": 1
+    },
+    {
+      "id": "foodyweb:app/r/[restaurantId]/account/loyalty/page.tsx:next-page:1",
+      "service": "foodyweb",
+      "source": "app/r/[restaurantId]/account/loyalty/page.tsx",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "next-page",
+      "route": "/r/[restaurantId]/account/loyalty",
       "line": 1
     },
     {
@@ -96739,6 +99439,165 @@
       "line": 1
     },
     {
+      "id": "foodyweb:components/LoyaltyCheckout.tsx:ui-controls:1",
+      "service": "foodyweb",
+      "source": "components/LoyaltyCheckout.tsx",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "loading",
+        "loyaltyCheckoutAbandon",
+        "loyaltyCheckoutCheck",
+        "loyaltyCheckoutCompatible",
+        "loyaltyCheckoutCovered",
+        "loyaltyCheckoutEstimate",
+        "loyaltyCheckoutNoApplicable",
+        "loyaltyCheckoutNone",
+        "loyaltyCheckoutPending",
+        "loyaltyCheckoutReview",
+        "loyaltyCheckoutStorage",
+        "loyaltyCheckoutTitle",
+        "loyaltyReadError",
+        "loyaltyRefresh",
+        "loyaltyRewardFixed",
+        "loyaltyRewardItem",
+        "loyaltyRewardsMore",
+        "loyaltySessionChanged"
+      ],
+      "actions": [
+        "refresh",
+        "saved"
+      ],
+      "line": 1
+    },
+    {
+      "id": "foodyweb:components/LoyaltyCustomerContent.tsx:ui-controls:1",
+      "service": "foodyweb",
+      "source": "components/LoyaltyCustomerContent.tsx",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "loading",
+        "loyaltyAccept",
+        "loyaltyBack",
+        "loyaltyCheckingSession",
+        "loyaltyDebt",
+        "loyaltyExistingMember",
+        "loyaltyFixed",
+        "loyaltyHow",
+        "loyaltyItem",
+        "loyaltyMarketing",
+        "loyaltyMinimum",
+        "loyaltyPaidOnly",
+        "loyaltyPending",
+        "loyaltyPointRule",
+        "loyaltyProgress",
+        "loyaltyProgressHint",
+        "loyaltyReadError",
+        "loyaltyRefresh",
+        "loyaltyRewardAt",
+        "loyaltySessionChanged",
+        "loyaltySignInHint",
+        "loyaltyStorage",
+        "loyaltyTerms",
+        "loyaltyThreshold",
+        "loyaltyTitle",
+        "loyaltyUnavailable",
+        "loyaltyValidity",
+        "loyaltyVisitRule"
+      ],
+      "actions": [
+        "refresh",
+        "send"
+      ],
+      "line": 1
+    },
+    {
+      "id": "foodyweb:components/LoyaltyPaymentResume.tsx:ui-controls:1",
+      "service": "foodyweb",
+      "source": "components/LoyaltyPaymentResume.tsx",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "loading",
+        "loyaltyCheckoutPaid",
+        "loyaltyCheckoutPaymentReview",
+        "loyaltyCheckoutResumePayment",
+        "loyaltyReadError",
+        "loyaltyRefresh",
+        "loyaltySignInHint"
+      ],
+      "actions": [],
+      "line": 1
+    },
+    {
+      "id": "foodyweb:components/LoyaltyRewardsPanel.tsx:ui-controls:1",
+      "service": "foodyweb",
+      "source": "components/LoyaltyRewardsPanel.tsx",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "loading",
+        "loyaltyReadError",
+        "loyaltyRefresh",
+        "loyaltyRewardExpires",
+        "loyaltyRewardFixed",
+        "loyaltyRewardItem",
+        "loyaltyRewardItemDetails",
+        "loyaltyRewardPendingPayment",
+        "loyaltyRewards",
+        "loyaltyRewardsAsOf",
+        "loyaltyRewardsChanged",
+        "loyaltyRewardsEmpty",
+        "loyaltyRewardsHint"
+      ],
+      "actions": [
+        "refresh"
+      ],
+      "line": 1
+    },
+    {
+      "id": "foodyweb:components/LoyaltyWalletPanel.tsx:ui-controls:1",
+      "service": "foodyweb",
+      "source": "components/LoyaltyWalletPanel.tsx",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "loading",
+        "loyaltyRefresh",
+        "walletAddApple",
+        "walletAddGoogle",
+        "walletAppleDevice",
+        "walletAppleHint",
+        "walletCancel",
+        "walletConfirmRevoke",
+        "walletDismiss",
+        "walletIntro",
+        "walletPreparedHint",
+        "walletPrivacy",
+        "walletReadError",
+        "walletRevoke",
+        "walletRevokeHint",
+        "walletRevokeTitle",
+        "walletTitle",
+        "walletWorking"
+      ],
+      "actions": [
+        "handleFailure"
+      ],
+      "line": 1
+    },
+    {
       "id": "foodyweb:components/MenuItemCard.tsx:ui-controls:1",
       "service": "foodyweb",
       "source": "components/MenuItemCard.tsx",
@@ -98097,6 +100956,34 @@
       "line": 1
     },
     {
+      "id": "foodyweb:lib/loyalty-checkout.ts:ui-controls:1",
+      "service": "foodyweb",
+      "source": "lib/loyalty-checkout.ts",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "ui-controls",
+      "labels": [],
+      "actions": [
+        "saveLoyaltyCheckout"
+      ],
+      "line": 1
+    },
+    {
+      "id": "foodyweb:lib/loyalty.ts:ui-controls:1",
+      "service": "foodyweb",
+      "source": "lib/loyalty.ts",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "ui-controls",
+      "labels": [],
+      "actions": [
+        "saveLoyaltyEnrollment"
+      ],
+      "line": 1
+    },
+    {
       "id": "foodyweb:lib/option-selection.ts:ui-controls:1",
       "service": "foodyweb",
       "source": "lib/option-selection.ts",
@@ -98210,6 +101097,20 @@
       "actions": [
         "acceptWebsiteV3StateMessage",
         "deletedPageIDs"
+      ],
+      "line": 1
+    },
+    {
+      "id": "foodyweb:lib/server/loyalty-proxy.ts:ui-controls:1",
+      "service": "foodyweb",
+      "source": "lib/server/loyalty-proxy.ts",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "ui-controls",
+      "labels": [],
+      "actions": [
+        "cancellation"
       ],
       "line": 1
     },
@@ -98412,9 +101313,11 @@
       "kind": "ui-controls",
       "labels": [],
       "actions": [
+        "cancelLoyaltyCheckout",
         "confirmHostedSignup",
         "createCateringDeposit",
         "createCateringQuote",
+        "createGoogleLoyaltyWallet",
         "createOrder",
         "createTableAssistanceRequest",
         "saveCustomerCheckoutProfile",
@@ -98837,7 +101740,7 @@
       "line": 1
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:91",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:95",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -98846,14 +101749,14 @@
       ],
       "kind": "flutter-route",
       "route": "end-of-day",
-      "line": 91,
+      "line": 95,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/more/presentation/end_of_day_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:97",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:101",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -98861,14 +101764,14 @@
       ],
       "kind": "flutter-route",
       "route": "reports",
-      "line": 97,
+      "line": 101,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/more/presentation/reports_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:102",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:106",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -98877,14 +101780,14 @@
       ],
       "kind": "flutter-route",
       "route": "cash-drawer",
-      "line": 102,
+      "line": 106,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/more/presentation/end_of_day_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:107",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:111",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -98893,14 +101796,14 @@
       ],
       "kind": "flutter-route",
       "route": "cash-drawer/history",
-      "line": 107,
+      "line": 111,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/more/presentation/end_of_day_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:113",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:117",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -98912,14 +101815,14 @@
       ],
       "kind": "flutter-route",
       "route": "cash-drawer/movements",
-      "line": 113,
+      "line": 117,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/more/presentation/cash_drawer_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:119",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:123",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -98927,14 +101830,14 @@
       ],
       "kind": "flutter-route",
       "route": "analytics",
-      "line": 119,
+      "line": 123,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/analytics/presentation/analytics_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:124",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:128",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -98947,7 +101850,7 @@
       ],
       "kind": "flutter-route",
       "route": "terminal-reports",
-      "line": 124,
+      "line": 128,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/more/presentation/end_of_day_page.dart",
@@ -98956,7 +101859,7 @@
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:292",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:296",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -98964,14 +101867,14 @@
       ],
       "kind": "flutter-route",
       "route": "/",
-      "line": 292,
+      "line": 296,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/splash/presentation/splash_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:297",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:301",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -98979,14 +101882,14 @@
       ],
       "kind": "flutter-route",
       "route": "/login",
-      "line": 297,
+      "line": 301,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/auth/presentation/login_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:302",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:306",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -98995,14 +101898,14 @@
       ],
       "kind": "flutter-route",
       "route": "/pin",
-      "line": 302,
+      "line": 306,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/auth/presentation/pin_login_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:307",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:311",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99010,14 +101913,14 @@
       ],
       "kind": "flutter-route",
       "route": "/setup-device",
-      "line": 307,
+      "line": 311,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/auth/presentation/device_setup_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:312",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:316",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99025,14 +101928,14 @@
       ],
       "kind": "flutter-route",
       "route": "/setup-pin",
-      "line": 312,
+      "line": 316,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/auth/presentation/pin_setup_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:317",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:321",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99040,14 +101943,14 @@
       ],
       "kind": "flutter-route",
       "route": "/select-restaurant",
-      "line": 317,
+      "line": 321,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/auth/presentation/restaurant_picker_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:322",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:326",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99055,14 +101958,14 @@
       ],
       "kind": "flutter-route",
       "route": "/scan-delivery",
-      "line": 322,
+      "line": 326,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/delivery_scan/presentation/scan_delivery_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:328",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:332",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99070,14 +101973,14 @@
       ],
       "kind": "flutter-route",
       "route": "/scan-delivery/pending",
-      "line": 328,
+      "line": 332,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/delivery_scan/presentation/pending_vouchers_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:334",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:338",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99088,7 +101991,7 @@
       ],
       "kind": "flutter-route",
       "route": "/settings/notifications",
-      "line": 334,
+      "line": 338,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/settings/presentation/notification_preferences_page.dart",
@@ -99096,7 +101999,7 @@
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:350",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:354",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99105,7 +102008,7 @@
       ],
       "kind": "flutter-route",
       "route": "/home",
-      "line": 350,
+      "line": 354,
       "resolution": "absolute",
       "componentSources": [
         "lib/core/ui/responsive.dart",
@@ -99114,7 +102017,7 @@
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:358",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:362",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99122,14 +102025,14 @@
       ],
       "kind": "flutter-route",
       "route": "availability",
-      "line": 358,
+      "line": 362,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/home/presentation/phone_home_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:369",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:373",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99139,14 +102042,14 @@
       ],
       "kind": "flutter-route",
       "route": "/tables",
-      "line": 369,
+      "line": 373,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/tables/presentation/table_list_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:378",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:382",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99158,14 +102061,14 @@
       ],
       "kind": "flutter-route",
       "route": "/menu",
-      "line": 378,
+      "line": 382,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/menu/presentation/library_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:387",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:391",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99175,14 +102078,14 @@
       ],
       "kind": "flutter-route",
       "route": "/pos",
-      "line": 387,
+      "line": 391,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/orders/presentation/pos_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:392",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:396",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99193,7 +102096,7 @@
       ],
       "kind": "flutter-route",
       "route": "tickets",
-      "line": 392,
+      "line": 396,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/orders/presentation/open_tickets_page.dart",
@@ -99201,7 +102104,7 @@
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:401",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:405",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99210,14 +102113,14 @@
       ],
       "kind": "flutter-route",
       "route": "/pos/order/:id",
-      "line": 401,
+      "line": 405,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/orders/presentation/saved_order_workspace_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:415",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:419",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99226,14 +102129,14 @@
       ],
       "kind": "flutter-route",
       "route": "/orders",
-      "line": 415,
+      "line": 419,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/orders/presentation/orders_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:424",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:428",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99242,14 +102145,14 @@
       ],
       "kind": "flutter-route",
       "route": "live",
-      "line": 424,
+      "line": 428,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/orders/online/presentation/online_orders_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:432",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:436",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99259,14 +102162,14 @@
       ],
       "kind": "flutter-route",
       "route": "scheduled-calendar",
-      "line": 432,
+      "line": 436,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/orders/presentation/scheduled_calendar_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:438",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:442",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99278,14 +102181,14 @@
       ],
       "kind": "flutter-route",
       "route": "kitchen-plan-matrix/:date",
-      "line": 438,
+      "line": 442,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/kitchen/presentation/kitchen_plan_matrix_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:448",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:452",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99294,14 +102197,14 @@
       ],
       "kind": "flutter-route",
       "route": "history",
-      "line": 448,
+      "line": 452,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/orders/online/presentation/orders_history_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:454",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:458",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99314,14 +102217,14 @@
       ],
       "kind": "flutter-route",
       "route": ":id",
-      "line": 454,
+      "line": 458,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/orders/online/presentation/order_details_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:469",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:473",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99330,14 +102233,14 @@
       ],
       "kind": "flutter-route",
       "route": "/transactions",
-      "line": 469,
+      "line": 473,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/transactions/presentation/transactions_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:479",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:483",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99345,14 +102248,14 @@
       ],
       "kind": "flutter-route",
       "route": "/more",
-      "line": 479,
+      "line": 483,
       "resolution": "absolute",
       "componentSources": [
         "lib/features/more/presentation/more_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:485",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:489",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99360,12 +102263,12 @@
       ],
       "kind": "flutter-route",
       "route": "kitchen-companion",
-      "line": 485,
+      "line": 489,
       "resolution": "relative-to-parent",
       "componentSources": []
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:490",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:494",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99373,14 +102276,14 @@
       ],
       "kind": "flutter-route",
       "route": "food-cost",
-      "line": 490,
+      "line": 494,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/food_cost/presentation/food_cost_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:496",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:500",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99388,14 +102291,44 @@
       ],
       "kind": "flutter-route",
       "route": "staff",
-      "line": 496,
+      "line": 500,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/staff/presentation/staff_list_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:503",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:507",
+      "service": "foodypos",
+      "source": "lib/core/routing/app_router.dart",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "flutter-route",
+      "route": "loyalty-recovery",
+      "line": 507,
+      "resolution": "relative-to-parent",
+      "componentSources": [
+        "lib/features/loyalty/presentation/loyalty_counter_recovery_page.dart"
+      ]
+    },
+    {
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:518",
+      "service": "foodypos",
+      "source": "lib/core/routing/app_router.dart",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "flutter-route",
+      "route": "loyalty",
+      "line": 518,
+      "resolution": "relative-to-parent",
+      "componentSources": [
+        "lib/features/loyalty/presentation/loyalty_lookup_page.dart"
+      ]
+    },
+    {
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:527",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99404,14 +102337,14 @@
       ],
       "kind": "flutter-route",
       "route": "settings",
-      "line": 503,
+      "line": 527,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/settings/presentation/settings_hub_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:509",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:533",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99423,14 +102356,14 @@
       ],
       "kind": "flutter-route",
       "route": "kitchen/service",
-      "line": 509,
+      "line": 533,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/kitchen/presentation/service_kitchen_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:515",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:539",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99438,14 +102371,14 @@
       ],
       "kind": "flutter-route",
       "route": "kitchen/assistant",
-      "line": 515,
+      "line": 539,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/kitchen_assistant/presentation/kitchen_assistant_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:524",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:548",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99453,14 +102386,14 @@
       ],
       "kind": "flutter-route",
       "route": "kitchen/data",
-      "line": 524,
+      "line": 548,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/kitchen_data/presentation/kitchen_data_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:532",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:556",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99471,14 +102404,14 @@
       ],
       "kind": "flutter-route",
       "route": "kitchen",
-      "line": 532,
+      "line": 556,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/kitchen/presentation/kitchen_hub_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:541",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:565",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99486,12 +102419,12 @@
       ],
       "kind": "flutter-route",
       "route": "pos-settings",
-      "line": 541,
+      "line": 565,
       "resolution": "relative-to-parent",
       "componentSources": []
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:547",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:571",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99500,14 +102433,14 @@
       ],
       "kind": "flutter-route",
       "route": "checkout",
-      "line": 547,
+      "line": 571,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/settings/presentation/checkout_settings_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:556",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:580",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99516,14 +102449,14 @@
       ],
       "kind": "flutter-route",
       "route": "appearance",
-      "line": 556,
+      "line": 580,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/settings/presentation/appearance_settings_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:565",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:589",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99533,14 +102466,14 @@
       ],
       "kind": "flutter-route",
       "route": "hardware",
-      "line": 565,
+      "line": 589,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/settings/presentation/hardware_settings_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:574",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:598",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99549,14 +102482,14 @@
       ],
       "kind": "flutter-route",
       "route": "shortcuts",
-      "line": 574,
+      "line": 598,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/settings/presentation/shortcuts_settings_page.dart"
       ]
     },
     {
-      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:584",
+      "id": "foodypos:lib/core/routing/app_router.dart:flutter-route:608",
       "service": "foodypos",
       "source": "lib/core/routing/app_router.dart",
       "features": [
@@ -99567,7 +102500,7 @@
       ],
       "kind": "flutter-route",
       "route": "account",
-      "line": 584,
+      "line": 608,
       "resolution": "relative-to-parent",
       "componentSources": [
         "lib/features/settings/presentation/account_settings_page.dart",
@@ -100337,6 +103270,135 @@
       "line": 1
     },
     {
+      "id": "foodypos:lib/features/loyalty/data/loyalty_counter_preparation_repository.dart:ui-controls:1",
+      "service": "foodypos",
+      "source": "lib/features/loyalty/data/loyalty_counter_preparation_repository.dart",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "ui-controls",
+      "labels": [],
+      "actions": [
+        "loadSource"
+      ],
+      "line": 1
+    },
+    {
+      "id": "foodypos:lib/features/loyalty/data/loyalty_counter_recovery_repository.dart:ui-controls:1",
+      "service": "foodypos",
+      "source": "lib/features/loyalty/data/loyalty_counter_recovery_repository.dart",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "ui-controls",
+      "labels": [],
+      "actions": [
+        "load"
+      ],
+      "line": 1
+    },
+    {
+      "id": "foodypos:lib/features/loyalty/data/loyalty_resolution_repository.dart:ui-controls:1",
+      "service": "foodypos",
+      "source": "lib/features/loyalty/data/loyalty_resolution_repository.dart",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "ui-controls",
+      "labels": [],
+      "actions": [
+        "load"
+      ],
+      "line": 1
+    },
+    {
+      "id": "foodypos:lib/features/loyalty/data/loyalty_sale_repository.dart:ui-controls:1",
+      "service": "foodypos",
+      "source": "lib/features/loyalty/data/loyalty_sale_repository.dart",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "ui-controls",
+      "labels": [],
+      "actions": [
+        "load"
+      ],
+      "line": 1
+    },
+    {
+      "id": "foodypos:lib/features/loyalty/presentation/loyalty_counter_preparation_page.dart:ui-controls:1",
+      "service": "foodypos",
+      "source": "lib/features/loyalty/presentation/loyalty_counter_preparation_page.dart",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "ui-controls",
+      "labels": [],
+      "actions": [
+        "openSale",
+        "refresh"
+      ],
+      "line": 1
+    },
+    {
+      "id": "foodypos:lib/features/loyalty/presentation/loyalty_counter_recovery_page.dart:ui-controls:1",
+      "service": "foodypos",
+      "source": "lib/features/loyalty/presentation/loyalty_counter_recovery_page.dart",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "ui-controls",
+      "labels": [],
+      "actions": [
+        "confirm",
+        "refresh"
+      ],
+      "line": 1
+    },
+    {
+      "id": "foodypos:lib/features/loyalty/providers/loyalty_lookup_provider.dart:ui-controls:1",
+      "service": "foodypos",
+      "source": "lib/features/loyalty/providers/loyalty_lookup_provider.dart",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "ui-controls",
+      "labels": [],
+      "actions": [
+        "refresh"
+      ],
+      "line": 1
+    },
+    {
+      "id": "foodypos:lib/features/loyalty/providers/loyalty_resolution_provider.dart:ui-controls:1",
+      "service": "foodypos",
+      "source": "lib/features/loyalty/providers/loyalty_resolution_provider.dart",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "ui-controls",
+      "labels": [],
+      "actions": [
+        "refresh"
+      ],
+      "line": 1
+    },
+    {
+      "id": "foodypos:lib/features/loyalty/providers/loyalty_sale_provider.dart:ui-controls:1",
+      "service": "foodypos",
+      "source": "lib/features/loyalty/providers/loyalty_sale_provider.dart",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "ui-controls",
+      "labels": [],
+      "actions": [
+        "confirmNoCharge",
+        "refresh"
+      ],
+      "line": 1
+    },
+    {
       "id": "foodypos:lib/features/menu/data/menu_repository.dart:ui-controls:1",
       "service": "foodypos",
       "source": "lib/features/menu/data/menu_repository.dart",
@@ -100584,6 +103646,8 @@
         "navPos",
         "navTables",
         "navTransactions",
+        "posLoyaltyRecoveryTitle",
+        "posLoyaltyTitle",
         "reportsTitle",
         "settingsAppearance",
         "settingsTitle",
@@ -103739,11 +106803,11 @@
     }
   ],
   "coverage": {
-    "sharedRuntimeFiles": 400,
+    "sharedRuntimeFiles": 458,
     "features": 111,
     "operations": 957,
-    "sourceFiles": 2411,
-    "surfaces": 2183,
+    "sourceFiles": 2537,
+    "surfaces": 2252,
     "unclassifiedRoutes": []
   }
 }

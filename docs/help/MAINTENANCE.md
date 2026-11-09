@@ -1720,6 +1720,8 @@ messages. Verify an annual checkout and the monthly enrollment and renewal with
 Foody's approved CST contracts before relying on the provider path.
 
 No public procedure or assistant article content changes. Copy the regenerated
-public corpus, which carries the catalogue revision, into the API. Preserve
-unaffected service evidence and use the local WORKSPACE references until the
-reviewed Landing documentation is committed with authorization.
+public corpus, which carries the catalogue revision, into the API. The three
+application contracts pin the same immutable Landing review. The combined
+inventory also retains the pre-existing wallet evidence. API and Admin entries
+use the deployed pilot hashes on shared paths; refresh the combined source
+inventory when the wallet application sources are integrated.
