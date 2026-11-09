@@ -117,8 +117,8 @@ for (const lang of ["he", "fr", "en"]) {
       const article = [...main.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(match => JSON.parse(match[1])).find(schema => schema["@type"] === "Article");
       assert.equal(article?.inLanguage, lang, `Guide Article language: ${url}`);
       assert.equal(article?.mainEntityOfPage, `${canonicalBase}/${lang}${path}`, `Guide canonical entity: ${url}`);
-      assert.ok(main.includes(new Intl.NumberFormat(`${lang}-IL`).format(989)), `Three-device monthly subscription: ${url}`);
-      assert.ok(main.includes(new Intl.NumberFormat(`${lang}-IL`).format(13358)), `First-year subscription and setup arithmetic: ${url}`);
+      assert.ok(main.includes(new Intl.NumberFormat(`${lang}-IL`).format(739)), `Monthly subscription for two employees: ${url}`);
+      assert.ok(main.includes(new Intl.NumberFormat(`${lang}-IL`).format(10158)), `First-year subscription and setup arithmetic: ${url}`);
       for (const target of ["/pricing", "/solutions/kitchen", "/solutions/online-ordering", "/compare/tabit"]) assert.ok(main.includes(`href="/${lang}${target}"`), `Guide product/source link: ${target}`);
     }
     if (path === "/tools/food-cost-calculator") {
@@ -148,7 +148,7 @@ for (const lang of ["he", "fr", "en"]) {
       assert.equal(software?.offers.price, 890, `Standalone Kitchen offer retains its approved rate: ${url}`);
       const questions = schemas.find(schema => schema["@type"] === "FAQPage")?.mainEntity;
       assert.equal(questions?.length, 6, `Kitchen scope and purchasing answers are localized: ${url}`);
-      assert.ok(questions.some(question => question.acceptedAnswer.text.includes("890") && question.acceptedAnswer.text.includes("1490")), `Kitchen and combined plans remain distinct in visible answers: ${url}`);
+      assert.ok(questions.some(question => question.acceptedAnswer.text.includes("890") && question.acceptedAnswer.text.includes(navigationTitles.kitchen)), `Kitchen standalone pricing is visible: ${url}`);
       for (const target of ["/help/kitchen/stock-management", "/help/kitchen/data-and-sales-links"]) assert.ok(main.includes(`href="/${lang}${target}"`), `Kitchen inventory and sales claims link to their procedures: ${target}`);
     }
     if (path === "/tools/food-cost-calculator") assert.ok(main.includes('id="recipe-versus-actual"'), `Recipe estimate and actual consumption are distinguished without JavaScript: ${url}`);
@@ -179,13 +179,13 @@ for (const lang of ["he", "fr", "en"]) {
       const schemas = [...main.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(match => JSON.parse(match[1]));
       const software = schemas.find(schema => schema["@type"] === "SoftwareApplication");
       assert.equal(software?.url, `${canonicalBase}/${lang}/solutions/pos`, `POS software describes its own page: ${url}`);
-      assert.equal(software?.offers.price, 590, `POS price is distinct from Restaurant: ${url}`);
-      assert.equal(software?.offers.url, `${canonicalBase}/${lang}/pricing#plan-pos`, `POS offer links to its own plan: ${url}`);
+      assert.equal(software?.offers.price, 590, `POS is priced through Restaurant: ${url}`);
+      assert.equal(software?.offers.url, `${canonicalBase}/${lang}/pricing#plan-restaurant`, `POS offer links to Restaurant: ${url}`);
       assert.equal(software?.offers.priceCurrency, "ILS");
       assert.deepEqual(software?.sameAs, ["https://apps.apple.com/il/app/foody-pos/id6758894756"], `POS software identifies its verified App Store listing: ${url}`);
       assert.equal(software?.offers.priceSpecification.valueAddedTaxIncluded, false);
       assert.equal(software?.offers.priceSpecification.unitText, "month");
-      assert.ok(main.includes("590") && main.includes("99") && main.includes("890"), `Visible licence prices and offer distinctions: ${url}`);
+      assert.ok(main.includes("590") && main.includes("149"), `Visible licence prices and offer distinctions: ${url}`);
       assert.equal(schemas.find(schema => schema["@type"] === "FAQPage")?.mainEntity.length, 5, `POS FAQ has complete localized answers: ${url}`);
       for (const target of ["/help/orders/taking-an-order-pos", "/help/orders/courses-and-kitchen-release", "/help/payments/pos-checkout", "/sectors/food-beverage/restaurants"]) assert.ok(main.includes(`href="/${lang}${target}"`), `POS source or offering link: ${target}`);
       const heading = main.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)?.[1] || "";
@@ -284,8 +284,8 @@ for (const lang of ["he", "fr", "en"]) {
           [...markup.matchAll(/data-product="([^"]+)"/g)].map(
             (match) => match[1],
           ),
-          ["pos", "ordering", "restaurant", "kitchen", "complete"],
-          `Five product families in ${landmark}: ${url}`,
+          ["pos", "ordering", "restaurant", "kitchen"],
+          `Four product links in ${landmark}: ${url}`,
         );
         for (const [plan, route, detail] of [
           ["pos", "/solutions/pos", null],
@@ -296,7 +296,6 @@ for (const lang of ["he", "fr", "en"]) {
             null,
           ],
           ["kitchen", "/solutions/kitchen", "/solutions/kitchen-companion"],
-          ["complete", "/pricing#plan-complete", null],
         ]) {
           const item = markup.match(
             new RegExp(`data-product="${plan}"[\\s\\S]*?</li>`),
@@ -323,199 +322,81 @@ for (const lang of ["he", "fr", "en"]) {
       }
     }
     if (path === "/pricing") {
-      assert.ok(html.includes('data-maps-offer-status="planned"'), `Maps extension remains explicitly planned: ${url}`);
+      const delivery = main.match(/<section\b[^>]*id="plan-delivery"[\s\S]*?<\/section>/)?.[0];
+      assert.ok(delivery?.includes('data-maps-offer-status="planned"'), "Planned maps extension belongs to the delivery module: " + url);
+      assert.ok(delivery.includes({ fr: "Foody Livraison", en: "Foody Delivery", he: "Foody משלוחים" }[lang]));
+      const deliveryDetails = delivery.match(/<details\b[^>]*>[\s\S]*?<\/details>/)?.[0];
+      assert.ok(deliveryDetails, "Delivery mapping details are expandable: " + url);
+      assert.deepEqual(
+        [...deliveryDetails.matchAll(/data-pricing-maps="([^"]+)"/g)].map(match => match[1]),
+        ["included", "plus", "custom"],
+        "Shared usage, Cartes Plus and higher volumes are grouped together: " + url,
+      );
       assert.equal(mapsOffer.automatic_billing, false);
-      const mapsPlus = html.match(/data-pricing-maps="plus"([\s\S]*?)<\/dd>\s*<\/div>/)?.[1];
-      assert.ok(mapsPlus, `Maps Plus pricing is present: ${url}`);
-      assert.ok(mapsPlus.includes(String(mapsOffer.monthly_price)), `Maps price matches the offer contract: ${url}`);
-      assert.ok(mapsPlus.includes(`href="/${lang}/contact"`), `Maps activation uses contact only: ${url}`);
-      assert.ok(!mapsPlus.includes('<form'), `No maps checkout is published: ${url}`);
-      const licenceNote = html.match(
+      const mapsPlus = deliveryDetails.match(/data-pricing-maps="plus"([\s\S]*?)<\/dd>\s*<\/div>/)?.[1];
+      assert.ok(mapsPlus?.includes(String(mapsOffer.monthly_price)), "Maps Plus price matches the offer contract: " + url);
+      assert.ok(mapsPlus.includes('href="/' + lang + '/contact"'), "Maps activation uses contact only: " + url);
+      assert.ok(!delivery.includes("<form"), "Delivery has no maps checkout: " + url);
+      const licenceNote = main.match(
         /<p\b[^>]*data-pricing-licences[^>]*>([\s\S]*?)<\/p>/,
       )?.[1];
       assert.ok(
         licenceNote?.includes({
-          he: "כמה עובדים יכולים להתחלף באותה עמדה",
-          fr: "Plusieurs salariés peuvent se relayer sur le même poste",
-          en: "Several staff members can take turns on the same device",
+          he: "לכל עובד שמקבל הזמנות או תשלומים",
+          fr: "Chaque employé qui prend des commandes ou encaisse",
+          en: "Every employee who takes orders or accepts payments",
         }[lang]),
-        `Pricing distinguishes device licences from staff accounts: ${url}`,
+        "POS licences are named per employee: " + url,
       );
-      const visibleText = (markup) =>
-        markup.replace(/<[^>]*>/g, "").replace(/[\s,\u00a0\u202f]/g, "");
-      for (const [plan, amount] of Object.entries({
-        pos: 590,
-        restaurant: 890,
-        complete: 1490,
-        kitchen: 890,
+      const visibleText = (markup) => markup.replace(/<[^>]*>/g, "").replace(/\s/g, "");
+      const amountText = (amount) => visibleText(new Intl.NumberFormat(lang === "he" ? "he-IL" : lang).format(amount) + " ₪");
+      const moduleKeys = [...main.matchAll(/data-pricing-plan="([^"]+)"/g)].map(match => match[1]);
+      assert.deepEqual(moduleKeys, ["restaurant", "ordering", "kitchen"], "Three independent modules: " + url);
+      for (const [key, amount, route] of [
+        ["restaurant", 590, "/sectors/food-beverage/restaurants"],
+        ["ordering", 590, "/solutions/online-ordering"],
+        ["kitchen", 890, "/solutions/kitchen"],
+      ]) {
+        const card = main.match(new RegExp('data-pricing-plan="' + key + '"[\\s\\S]*?</article>'))?.[0];
+        assert.ok(card?.includes(navigationTitles[key]), "Module matches product navigation: " + key + " " + url);
+        assert.ok(main.includes('id="plan-' + key + '"'), "Module anchor: " + key + " " + url);
+        assert.ok(card.includes('href="/' + lang + route + '"'), "Module links to its product: " + key + " " + url);
+        assert.ok(visibleText(card).includes(amountText(amount)), "Module monthly price: " + key + " " + url);
+        assert.equal(card.includes("QR"), key === "restaurant", "Table QR belongs to Restaurant: " + url);
+        assert.equal(card.includes(lang === "fr" ? "Foody Compagnon" : "Foody Companion"), key === "kitchen");
+        assert.doesNotMatch(card, /hébergement|hosting|אחסון/i, "Module does not claim site hosting: " + url);
+      }
+      assert.equal((main.match(/\bQR\b/g) || []).length, 1, "QR is listed once: " + url);
+      assert.doesNotMatch(main, /data-quote-total|quote-summary|type="checkbox"/, "Pricing has no interactive quote: " + url);
+
+      for (const [key, amount] of Object.entries({extraPos: 149, setup: 1290, orderingSetup: 1090, training: 990})) {
+        const row = main.match(new RegExp('data-pricing-cost="' + key + '"[\\s\\S]*?</div>'))?.[0];
+        assert.ok(row && visibleText(row).includes(amountText(amount)), "Separate " + key + " price: " + url);
+      }
+      const setupPosition = main.indexOf('id="setup-fees"');
+      const paymentsPosition = main.indexOf('id="hardware-and-payments"');
+      assert.ok(setupPosition >= 0 && paymentsPosition > setupPosition, "Payment fees follow setup fees: " + url);
+      for (const [key, amounts] of Object.entries({
+        "victa-portable": [1390],
+        "emv-service": [49],
+        "virtual-activation": [199],
+        "virtual-service": [49],
+        "virtual-overage": [0.05],
+        "3d-secure": [150, 0.65],
       })) {
-        const card = html.match(
-          new RegExp(`data-pricing-plan="${plan}"[\\s\\S]*?</article>`),
-        )?.[0];
-        assert.ok(card, `Public ${plan} offer: ${url}`);
-        assert.ok(
-          html.includes(`id="plan-${plan}"`),
-          `Pricing anchor exists: ${plan}/${lang}`,
-        );
-        assert.ok(
-          card.includes(navigationTitles[plan]),
-          `Offer name matches product navigation: ${plan}/${lang}`,
-        );
-        assert.ok(
-          visibleText(card).includes(`${amount}₪`),
-          `Approved ${plan} monthly price: ${url}`,
-        );
-        assert.equal(
-          card.includes(lang === "fr" ? "Foody Compagnon" : "Foody Companion"),
-          plan === "complete" || plan === "kitchen",
-          `Companion belongs to the kitchen offers: ${url} (${plan})`,
-        );
-        if (plan === "restaurant") {
-          assert.ok(
-            card.includes(navigationTitles.ordering),
-            `Restaurant explicitly includes the ordering product: ${url}`,
-          );
-          for (const route of ["/solutions/pos", "/solutions/online-ordering"]) {
-            const features = card.match(/<ul\b[\s\S]*?<\/ul>/)?.[0];
-            assert.ok(
-              features?.includes(`href="/${lang}${route}"`),
-              `Included product is linked in Restaurant: ${route}/${lang}`,
-            );
-          }
-        }
-        if (plan === "complete") {
-          const productLinks = card.match(
-            /class="plan-product-links"[\s\S]*?<\/div>/,
-          )?.[0];
-          for (const route of [
-            "/sectors/food-beverage/restaurants",
-            "/solutions/kitchen",
-          ]) {
-            assert.ok(
-              productLinks?.includes(`href="/${lang}${route}"`),
-              `Combined offer links to each product: ${route}/${lang}`,
-            );
-          }
-        } else {
-          const route = {
-            pos: "/solutions/pos",
-            restaurant: "/sectors/food-beverage/restaurants",
-            kitchen: "/solutions/kitchen",
-          }[plan];
-          const title = card.match(/<h2\b[\s\S]*?<\/h2>/)?.[0];
-          assert.ok(
-            title?.includes(`href="/${lang}${route}"`),
-            `Pricing title links to its product page: ${plan}/${lang}`,
-          );
+        const row = main.match(new RegExp('data-pricing-payment="' + key + '"[\\s\\S]*?</div>'))?.[0];
+        assert.ok(row && amounts.every(amount => visibleText(row).includes(amountText(amount))), "Separate " + key + " payment charges: " + url);
+        if (key === "virtual-service") {
+          const allowance = new Intl.NumberFormat(lang === "he" ? "he-IL" : lang).format(1000);
+          assert.ok(row.includes(allowance), "Virtual terminal includes 1,000 monthly transactions: " + url);
         }
       }
-      const orderingCard = html.match(
-        /data-pricing-plan="ordering"[\s\S]*?<\/article>/,
-      )?.[0];
-      assert.ok(
-        orderingCard?.includes(navigationTitles.ordering) &&
-          visibleText(orderingCard).includes("590₪") &&
-          !orderingCard.includes('class="specialist-quote"'),
-        `Standalone ordering offer displays its public monthly rate: ${url}`,
-      );
-      assert.ok(
-        orderingCard.includes({
-          he: "לפני מע״מ, לכל סניף",
-          fr: "HT par établissement",
-          en: "Excl. VAT per location",
-        }[lang]) &&
-          orderingCard.includes({ he: "/ חודש", fr: "/ mois", en: "/ month" }[lang]),
-        `Ordering price specifies monthly billing, VAT and location basis: ${url}`,
-      );
-      assert.ok(
-        orderingCard.includes(`href="/${lang}/solutions/online-ordering"`) &&
-          html.includes('id="plan-ordering"') &&
-          html.includes('href="#plan-ordering"'),
-        `Ordering offer is reachable from pricing and links to its shared product page: ${url}`,
-      );
-      assert.ok(
-        orderingCard.match(/<h2\b[\s\S]*?<\/h2>/)?.[0]
-          .includes(`href="/${lang}/solutions/online-ordering"`),
-        `Orders pricing title links to its product: ${url}`,
-      );
-      for (const [cost, amount] of Object.entries({
-        extraPos: 99,
-        setup: 1490,
-        training: 1200,
-      })) {
-        const row = html.match(
-          new RegExp(`data-pricing-cost="${cost}"[\\s\\S]*?</div>`),
-        )?.[0];
-        assert.ok(row, `Separate ${cost} charge: ${url}`);
-        assert.ok(
-          visibleText(row).includes(`${amount}₪`),
-          `Correct ${cost} price: ${url}`,
-        );
-      }
-      assert.ok(
-        html.includes(
-          {
-            he: "לפני מע״מ",
-            fr: "HT par établissement",
-            en: "Excl. VAT per location",
-          }[lang],
-        ),
-        `VAT and location basis: ${url}`,
-      );
-      assert.ok(
-        html.includes({ he: "30 יום", fr: "30 jours", en: "30 days" }[lang]),
-        `Cancellation notice: ${url}`,
-      );
-      assert.ok(
-        html.includes(
-          {
-            he: "עמלות תשלום בכרטיס",
-            fr: "Les frais de paiement carte restent applicables",
-            en: "Card processing fees still apply",
-          }[lang],
-        ),
-        `Zero commission does not hide processing fees: ${url}`,
-      );
-      const faq = [
-        ...html.matchAll(
-          /<script type="application\/ld\+json">([\s\S]*?)<\/script>/g,
-        ),
-      ]
-        .map((match) => JSON.parse(match[1]))
-        .find((data) => data["@type"] === "FAQPage");
-      assert.equal(
-        faq?.mainEntity.length,
-        10,
-        `Localized pricing FAQ schema: ${url}`,
-      );
-      assert.ok(
-        faq.mainEntity.every(({ acceptedAnswer }) => !acceptedAnswer.text.includes("<a")),
-        `FAQ metadata remains plain text: ${url}`,
-      );
-      const answers = main.match(
-        /class="shell section-space faq-section"[\s\S]*?<\/section>/,
-      )?.[0];
-      assert.ok(
-        answers?.includes(`class="product-mention" href="/${lang}/solutions/online-ordering"`),
-        `FAQ answer links to the ordering product: ${url}`,
-      );
-      const startBudget = faq.mainEntity.find(question => question.acceptedAnswer.text.includes("2380"))?.acceptedAnswer.text;
-      assert.ok(startBudget?.includes("890") && startBudget.includes("1490") && startBudget.includes("1200"), `First-month Restaurant/setup example separates optional training: ${url}`);
-      const orderingQuestion = {
-        he: "מסלול Foody קופה כולל הזמנות אונליין?",
-        fr: "Foody Caisse inclut-il les commandes en ligne ?",
-        en: "Does Foody POS include online orders?",
-      }[lang];
-      const orderingAnswer = faq.mainEntity.find(
-        (item) => item.name === orderingQuestion,
-      )?.acceptedAnswer.text;
-      assert.ok(
-        orderingAnswer?.startsWith(
-          { he: "לא.", fr: "Non.", en: "No." }[lang],
-        ) && orderingAnswer.includes("890") && orderingAnswer.includes("590") &&
-          orderingAnswer.includes(navigationTitles.ordering),
-        `Ordering is standalone or included in Restaurant, outside POS-only: ${url}`,
-      );
+      const faq = [...main.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+        .map(match => JSON.parse(match[1]))
+        .find(schema => schema["@type"] === "FAQPage");
+      assert.equal(faq?.mainEntity.length, 3, "Localized pricing FAQ: " + url);
+      assert.ok(faq.mainEntity.every(({ acceptedAnswer }) => !acceptedAnswer.text.includes("<a")));
+      assert.ok(main.includes({he: "30 יום", fr: "30 jours", en: "30 days"}[lang]), "Cancellation notice: " + url);
       if (lang === "fr") {
         const main = html.match(/<main[\s\S]*?<\/main>/)?.[0];
         assert.ok(
@@ -538,7 +419,7 @@ for (const lang of ["he", "fr", "en"]) {
       );
     }
     const pagePlan = {
-      "/solutions/pos": "pos",
+      "/solutions/pos": "restaurant",
       "/sectors/food-beverage/restaurants": "restaurant",
       "/solutions/kitchen": "kitchen",
       "/solutions/online-ordering": "ordering",
@@ -600,10 +481,6 @@ for (const lang of ["he", "fr", "en"]) {
         inclusion?.includes(`href="/${lang}/sectors/food-beverage/restaurants"`),
         `Shared ordering page links back to the Restaurant offer: ${url}`,
       );
-      assert.ok(
-        inclusion.includes(`href="/${lang}/pricing#plan-complete">${navigationTitles.complete}</a>`),
-        `Combined offer name links as a whole to the correct plan: ${url}`,
-      );
       const printingOption = html.match(
         /<aside\b[^>]*data-ordering-printing[^>]*>([\s\S]*?)<\/aside>/,
       )?.[1];
@@ -635,15 +512,15 @@ for (const lang of ["he", "fr", "en"]) {
       const setupFaq = schemas.find((schema) => schema["@type"] === "FAQPage")?.mainEntity;
       assert.equal(setupFaq?.length, 6, `Restaurant buying FAQ includes on-site installation: ${url}`);
       const setupAnswer = setupFaq[5].acceptedAnswer.text;
-      assert.ok(setupAnswer.includes("1490") && setupAnswer.includes("1200"), `Setup and optional training retain the approved shared prices: ${url}`);
+      assert.ok(setupAnswer.includes("1290") && setupAnswer.includes("990"), `Setup and optional training retain the approved shared prices: ${url}`);
       const software = schemas.find((schema) => schema["@type"] === "SoftwareApplication");
       assert.ok(software, `Restaurant product is described as software: ${url}`);
-      assert.equal(software.offers.price, 890, `Approved Restaurant price: ${url}`);
+      assert.equal(software.offers.price, 590, `Approved Restaurant price: ${url}`);
       assert.equal(software.offers.priceCurrency, "ILS");
       assert.equal(software.offers.priceSpecification.valueAddedTaxIncluded, false);
       assert.equal(software.offers.priceSpecification.unitText, "month");
-      assert.ok(software.offers.description.includes("890"));
-      assert.ok(main.includes("890"), `Structured price is also visible: ${url}`);
+      assert.ok(software.offers.description.includes("590"));
+      assert.ok(main.includes("590"), `Structured price is also visible: ${url}`);
       assert.ok(main.includes(`href="/${lang}/compare/tabit"`));
       assert.ok(main.includes(`href="/${lang}/help/orders/taking-an-order-pos"`));
       assert.ok(main.includes(`href="/${lang}/solutions/pos"`), `Restaurant content links directly to the POS product: ${url}`);
@@ -660,7 +537,7 @@ for (const lang of ["he", "fr", "en"]) {
       assert.ok(reasons, `Concrete Foody buying reasons are visible: ${url}`);
       assert.equal((reasons.match(/<h3>/g) || []).length, 3, `Three substantiated Foody benefits: ${url}`);
       const moduleScope = main.match(/<p[^>]*data-kitchen-scope[^>]*>([\s\S]*?)<\/p>/)?.[1];
-      for (const amount of ["890", "590", "1490"]) assert.ok(moduleScope?.includes(amount), `Kitchen and Restaurant module prices remain distinct: ${amount}/${url}`);
+      for (const amount of ["890", "590"]) assert.ok(moduleScope?.includes(amount), `Kitchen and Restaurant module prices remain distinct: ${amount}/${url}`);
       assert.ok(reasons.includes(`href="/${lang}/solutions/pos"`));
       assert.ok(reasons.includes(`href="/${lang}/help/kitchen/preparations"`));
       assert.ok(reasons.includes(`href="/${lang}/help/kitchen/daily-operations"`));
@@ -695,14 +572,14 @@ for (const lang of ["he", "fr", "en"]) {
       }
     }
     const contextualRoutes = {
-      "": ["/solutions/kitchen", "/pricing#plan-complete"],
+      "": ["/solutions/kitchen"],
       "/sectors/food-beverage/restaurants": [
         "/solutions/online-ordering",
         "/solutions/kitchen",
         "/solutions/kitchen-companion",
       ],
       "/solutions/kitchen": ["/solutions/kitchen-companion"],
-      "/solutions/kitchen-companion": ["/solutions/kitchen", "/pricing#plan-complete"],
+      "/solutions/kitchen-companion": ["/solutions/kitchen"],
     }[path];
     for (const route of contextualRoutes || []) {
       assert.ok(
