@@ -71,7 +71,7 @@ export const ecosystem = {
     companionText:
       "Avant, pendant et après le service, Foody Compagnon accompagne le chef et son équipe : préparations à lancer, priorités, stocks à vérifier et besoins fournisseurs pour demain.",
     companionIncluded:
-      "Inclus sans supplément dans Foody Cuisine et Foody Restaurant & Cuisine.",
+      "Inclus sans supplément dans Foody Cuisine.",
     companionScopeQuestion: "Foody Compagnon remplace-t-il Foody Cuisine ?",
     companionScopeAnswer:
       "Foody Cuisine regroupe les recettes, le food cost, les stocks, les fournisseurs et la gestion des préparations. Foody Compagnon en est l’assistant du quotidien : il aide le chef et son équipe à organiser la mise en place, suivre le service et préparer la journée suivante. Il est inclus dans le module Cuisine, seul ou avec Foody Restaurant.",
@@ -121,7 +121,7 @@ export const ecosystem = {
     voiceLabel: "Exemple de briefing vocal",
     routeTitle: "Du téléphone de votre client\nau bon poste en cuisine.",
     orderingIncluded:
-      "Disponible seul, sans caisse POS obligatoire. Inclus dans Foody Restaurant et Foody Restaurant & Cuisine.",
+      "Utilisez Foody Commandes seul ou associez-le à Foody Restaurant pour réunir les commandes du site et de la salle.",
     routeText:
       "Un parcours de commande à votre marque, avec le menu, les options et les modes de service que vous avez choisis. Le statut du paiement accompagne la commande jusqu’à votre équipe.",
     routeSteps: [
@@ -242,7 +242,7 @@ export const ecosystem = {
     companionText:
       "Before, during and after service, Foody Companion guides the chef and team through preparations to start, priorities, stock to check and supplier needs for tomorrow.",
     companionIncluded:
-      "Included at no extra charge in Foody Kitchen and Foody Restaurant & Kitchen.",
+      "Included at no extra charge in Foody Kitchen.",
     companionScopeQuestion: "Does Foody Companion replace Foody Kitchen?",
     companionScopeAnswer:
       "Foody Kitchen brings together recipes, food cost, stock, suppliers and preparation management. Foody Companion is its everyday assistant: it helps the chef and team organise prep, follow service and get ready for the next day. It is included in the Kitchen module, on its own or with Foody Restaurant.",
@@ -296,7 +296,7 @@ export const ecosystem = {
     voiceLabel: "Illustrative voice briefing",
     routeTitle: "From your customer’s phone\nto the right kitchen station.",
     orderingIncluded:
-      "Available on its own, without a required POS. Included in Foody Restaurant and Foody Restaurant & Kitchen.",
+      "Use Foody Orders on its own or pair it with Foody Restaurant to bring web and table orders together.",
     routeText:
       "A branded ordering journey with your menu, options and service types. Payment status follows the order through to your team.",
     routeSteps: [
@@ -413,7 +413,7 @@ export const ecosystem = {
     companionText:
       "לפני, בזמן ואחרי השירות, Foody Companion מלווה את השף והצוות: מה להכין, במה להתמקד, איזה מלאי לבדוק ומה נדרש מהספקים למחר.",
     companionIncluded:
-      "כלול ללא תוספת תשלום ב־Foody Kitchen ובמסלול Foody מסעדה ומטבח.",
+      "כלול ללא תוספת תשלום ב־Foody Kitchen.",
     companionScopeQuestion: "האם Foody Companion מחליף את Foody Kitchen?",
     companionScopeAnswer:
       "Foody Kitchen מרכז מתכונים, Food Cost, מלאי, ספקים וניהול הכנות. Foody Companion הוא העוזר היומיומי שלו: הוא מסייע לשף ולצוות לארגן הכנות, לעקוב אחרי השירות ולהיערך ליום הבא. הוא כלול במודול המטבח, כמסלול עצמאי או יחד עם Foody מסעדה.",
@@ -461,7 +461,7 @@ export const ecosystem = {
     routeText:
       "תהליך הזמנה ממותג עם התפריט, האפשרויות וסוגי השירות שבחרתם. סטטוס התשלום מלווה את ההזמנה עד לצוות.",
     orderingIncluded:
-      "זמין כמסלול עצמאי, ללא צורך בקופת POS. כלול ב־Foody מסעדה וב־Foody מסעדה ומטבח.",
+      "אפשר להשתמש ב־Foody הזמנות בנפרד או לשלב אותו עם Foody מסעדה לניהול הזמנות מהאתר ומהשולחנות יחד.",
     routeSteps: ["הלקוח מזמין", "התשלום מאושר", "הצוות מכין"],
     printingLabel: "תוספת בתשלום",
     printingTitle: "פתקי ההזמנה מגיעים למטבח.",

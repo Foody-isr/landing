@@ -184,7 +184,7 @@ export default function SolutionPage({
   const softwareOffer = page === "restaurants"
     ? { plan: "restaurant", entity: "restaurant-software", rate: pricingRates.restaurant, description: t.faq[1].a, operatingSystem: "iPadOS, Android" }
     : page === "pos"
-      ? { plan: "pos", entity: "pos-software", rate: pricingRates.pos, description: t.faq[2].a, operatingSystem: "iPadOS, Android" }
+      ? { plan: "restaurant", entity: "pos-software", rate: pricingRates.restaurant, description: t.faq[2].a, operatingSystem: "iPadOS, Android" }
       : page === "ordering"
         ? { plan: "ordering", entity: "ordering-software", rate: pricingRates.ordering, description: t.faq[4].a, operatingSystem: "Web browser" }
         : page === "kitchen"
@@ -265,10 +265,10 @@ export default function SolutionPage({
               {u.demo}
               <Icon name="arrow" className="directional" />
             </Link>
-            {product && (
+            {softwareOffer && (
               <Link
                 className="text-link"
-                href={`/${lang}/pricing#plan-${product.plan}`}
+                href={`/${lang}/pricing#plan-${softwareOffer.plan}`}
               >
                 {u.viewPlan}
               </Link>
