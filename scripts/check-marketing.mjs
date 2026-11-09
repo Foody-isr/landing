@@ -349,7 +349,11 @@ for (const lang of ["he", "fr", "en"]) {
         "POS licences are named per employee: " + url,
       );
       const visibleText = (markup) => markup.replace(/<[^>]*>/g, "").replace(/\s/g, "");
-      const amountText = (amount) => visibleText(new Intl.NumberFormat(lang === "he" ? "he-IL" : lang).format(amount) + " ₪");
+      const amountText = (amount) => visibleText(
+        new Intl.NumberFormat(lang === "he" ? "he-IL" : lang, {
+          minimumFractionDigits: Number.isInteger(amount) ? 0 : 2,
+        }).format(amount) + " ₪",
+      );
       const moduleKeys = [...main.matchAll(/data-pricing-plan="([^"]+)"/g)].map(match => match[1]);
       assert.deepEqual(moduleKeys, ["restaurant", "ordering", "kitchen"], "Three independent modules: " + url);
       for (const [key, amount, route] of [
@@ -376,20 +380,57 @@ for (const lang of ["he", "fr", "en"]) {
       const setupPosition = main.indexOf('id="setup-fees"');
       const paymentsPosition = main.indexOf('id="hardware-and-payments"');
       assert.ok(setupPosition >= 0 && paymentsPosition > setupPosition, "Payment fees follow setup fees: " + url);
+      const paymentRow = (key) => main.match(
+        new RegExp('data-pricing-payment="' + key + '"[\\s\\S]*?</div>'),
+      )?.[0];
       for (const [key, amounts] of Object.entries({
-        "victa-portable": [1390],
+        "victa-portable": [1290],
+        "victa-mobile": [1210],
+        "victa-mini": [1190],
         "emv-service": [49],
+        "emv-lab-repair": [15],
+        "payment-gateway": [20],
+        "sim-data": [10],
         "virtual-activation": [199],
         "virtual-service": [49],
         "virtual-overage": [0.05],
-        "3d-secure": [150, 0.65],
+        "3d-secure": [249, 0.90],
       })) {
-        const row = main.match(new RegExp('data-pricing-payment="' + key + '"[\\s\\S]*?</div>'))?.[0];
+        const row = paymentRow(key);
         assert.ok(row && amounts.every(amount => visibleText(row).includes(amountText(amount))), "Separate " + key + " payment charges: " + url);
         if (key === "virtual-service") {
           const allowance = new Intl.NumberFormat(lang === "he" ? "he-IL" : lang).format(1000);
           assert.ok(row.includes(allowance), "Virtual terminal includes 1,000 monthly transactions: " + url);
         }
+      }
+      const includedServices = ["shva-license", "vhq-management"];
+      const terminalOptions = main.match(/<details class="pricing-payment-options">[\s\S]*?<\/article>/)?.[0];
+      const terminalOptionKeys = ["emv-lab-repair", "payment-gateway", "sim-data", "dock-and-stand", "terminal-replacement", "terminal-transport"];
+      for (const key of terminalOptionKeys) {
+        assert.ok(terminalOptions?.includes('data-pricing-payment="' + key + '"'), "Terminal option " + key + " is separate from the monthly service: " + url);
+      }
+      for (const key of includedServices) {
+        const row = paymentRow(key);
+        assert.ok(row?.includes('data-pricing-payment-included="true"'), key + " is included in the EMV service: " + url);
+        assert.ok(row.includes({ fr: "Inclus", he: "כלול", en: "Included" }[lang]));
+        assert.doesNotMatch(visibleText(row), /₪/);
+      }
+      for (const key of ["emv-service", ...includedServices]) {
+        assert.ok(!terminalOptions.includes('data-pricing-payment="' + key + '"'));
+      }
+      for (const key of ["dock-and-stand", "terminal-replacement", "terminal-transport", "additional-virtual-terminal"]) {
+        const row = paymentRow(key);
+        assert.ok(row?.includes({fr: "Sur devis", he: "בהצעת מחיר", en: "On request"}[lang]), key + " requires a quote: " + url);
+      }
+      for (const key of [
+        "emv-service", ...includedServices, ...terminalOptionKeys,
+        "virtual-activation", "virtual-service", "virtual-overage", "3d-secure", "additional-virtual-terminal",
+      ]) {
+        assert.match(
+          paymentRow(key) ?? "",
+          /<details class="pricing-service-help"><summary[^>]*>[\s\S]*?<\/summary><p>[^<]+<\/p><\/details>/,
+          key + " explains the service in a disclosure: " + url,
+        );
       }
       const faq = [...main.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
         .map(match => JSON.parse(match[1]))

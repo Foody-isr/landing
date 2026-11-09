@@ -16,6 +16,15 @@ const modules = [
   { key: "kitchen", label: "kitchen", href: routes.kitchen },
 ] as const;
 
+type PaymentRow = {
+  id: string;
+  title: string;
+  detail?: string;
+  help?: string;
+  included?: true;
+  charges?: { amount: number; unit: string }[];
+};
+
 /** Shows the independent Foody modules and their setup, equipment and payment fees. */
 export default async function PricingPage({
   params,
@@ -27,19 +36,20 @@ export default async function PricingPage({
   const u = ui[lang];
   const payments = t.payments;
   const maps = mapsPricing[lang];
-  const format = new Intl.NumberFormat(lang === "he" ? "he-IL" : lang);
+  const locale = lang === "he" ? "he-IL" : lang;
+  const format = new Intl.NumberFormat(locale);
+  const formatDecimal = new Intl.NumberFormat(locale, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
   const price = (amount: number) => (
-    <bdi dir="ltr">{format.format(amount)} ₪</bdi>
+    <bdi dir="ltr">{(Number.isInteger(amount) ? format : formatDecimal).format(amount)} ₪</bdi>
   );
   const paymentGroups: {
     id: string;
     title: string;
-    rows: {
-      id: string;
-      title: string;
-      detail?: string;
-      charges: { amount: number; unit: string }[];
-    }[];
+    rows: PaymentRow[];
+    options?: PaymentRow[];
   }[] = [
     {
       id: "physical",
@@ -47,14 +57,49 @@ export default async function PricingPage({
       rows: [
         {
           id: "victa-portable",
-          title: payments.victa,
+          title: "Verifone Victa Portable",
+          detail: payments.portableDetail,
           charges: [{ amount: paymentRates.victaPortable, unit: payments.deviceUnit }],
         },
         {
-          id: "emv-service",
-          title: payments.physicalService,
-          charges: [{ amount: paymentRates.physicalMonthly, unit: payments.terminalMonthly }],
+          id: "victa-mobile",
+          title: "Verifone Victa Mobile",
+          detail: payments.mobileDetail,
+          charges: [{ amount: paymentRates.victaMobile, unit: payments.deviceUnit }],
         },
+        {
+          id: "victa-mini",
+          title: "Verifone Victa Mini",
+          detail: payments.miniDetail,
+          charges: [{ amount: paymentRates.victaMini, unit: payments.deviceUnit }],
+        },
+        {
+          id: "emv-service",
+          ...payments.physicalService,
+          charges: [{ amount: paymentRates.physicalMonthly, unit: payments.activeTerminalMonthly }],
+        },
+        { id: "shva-license", ...payments.shvaLicense, included: true },
+        { id: "vhq-management", ...payments.vhqManagement, included: true },
+      ],
+      options: [
+        {
+          id: "emv-lab-repair",
+          ...payments.labRepair,
+          charges: [{ amount: paymentRates.labRepairMonthly, unit: payments.terminalMonthly }],
+        },
+        {
+          id: "payment-gateway",
+          ...payments.gateway,
+          charges: [{ amount: paymentRates.gatewayMonthly, unit: payments.terminalMonthly }],
+        },
+        {
+          id: "sim-data",
+          ...payments.simData,
+          charges: [{ amount: paymentRates.simDataMonthly, unit: payments.terminalMonthly }],
+        },
+        { id: "dock-and-stand", ...payments.accessories },
+        { id: "terminal-replacement", ...payments.replacement },
+        { id: "terminal-transport", ...payments.transport },
       ],
     },
     {
@@ -63,31 +108,63 @@ export default async function PricingPage({
       rows: [
         {
           id: "virtual-activation",
-          title: payments.virtualSetup,
+          ...payments.virtualSetup,
           charges: [{ amount: paymentRates.virtualSetup, unit: payments.activation }],
         },
         {
           id: "virtual-service",
-          title: payments.virtualService,
+          ...payments.virtualService,
           detail: payments.included.replace("{n}", format.format(paymentRates.virtualIncludedTransactions)),
           charges: [{ amount: paymentRates.virtualMonthly, unit: payments.terminalMonthly }],
         },
         {
           id: "virtual-overage",
-          title: payments.overage,
+          ...payments.overage,
           charges: [{ amount: paymentRates.virtualOverage, unit: payments.transactionUnit }],
         },
         {
           id: "3d-secure",
-          title: payments.secure,
+          ...payments.secure,
           charges: [
             { amount: paymentRates.secureSetup, unit: payments.activation },
             { amount: paymentRates.secureOperation, unit: payments.operationUnit },
           ],
         },
+        { id: "additional-virtual-terminal", ...payments.additionalVirtual },
       ],
     },
   ];
+
+  const paymentList = (rows: PaymentRow[]) => (
+    <dl className="pricing-payment-list">
+      {rows.map((row) => (
+        <div key={row.id} data-pricing-payment={row.id} data-pricing-payment-included={row.included}>
+          <dt>
+            {row.help ? (
+              <details className="pricing-service-help">
+                <summary aria-label={payments.explanationLabel.replace("{service}", row.title)}>
+                  <span>{row.title}</span>
+                  <span className="pricing-help-icon" aria-hidden="true">?</span>
+                </summary>
+                <p>{row.help}</p>
+              </details>
+            ) : row.title}
+            {row.detail && <span className="cost-description">{row.detail}</span>}
+          </dt>
+          <dd className="cost-amount">
+            {row.charges ? row.charges.map((charge) => (
+              <p key={charge.unit}>
+                <strong>{price(charge.amount)}</strong>
+                <span>{charge.unit}</span>
+              </p>
+            )) : row.included ? (
+              <span className="pricing-included-label">{payments.includedLabel}</span>
+            ) : <strong>{t.quote}</strong>}
+          </dd>
+        </div>
+      ))}
+    </dl>
+  );
 
   return (
     <>
@@ -231,24 +308,13 @@ export default async function PricingPage({
             {paymentGroups.map((group) => (
               <article className="pricing-payment-card" key={group.id}>
                 <h3>{group.title}</h3>
-                <dl className="pricing-payment-list">
-                  {group.rows.map((row) => (
-                    <div key={row.id} data-pricing-payment={row.id}>
-                      <dt>
-                        {row.title}
-                        {row.detail && <span className="cost-description">{row.detail}</span>}
-                      </dt>
-                      <dd className="cost-amount">
-                        {row.charges.map((charge) => (
-                          <p key={charge.unit}>
-                            <strong>{price(charge.amount)}</strong>
-                            <span>{charge.unit}</span>
-                          </p>
-                        ))}
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
+                {paymentList(group.rows)}
+                {group.options && (
+                  <details className="pricing-payment-options">
+                    <summary>{payments.optionsTitle}</summary>
+                    {paymentList(group.options)}
+                  </details>
+                )}
               </article>
             ))}
           </div>
