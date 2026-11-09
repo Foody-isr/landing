@@ -1,5 +1,13 @@
 # Help ownership, evidence and releases
 
+## Restaurant loyalty program configuration
+
+Publish the FR, HE and EN loyalty program guide with compatible API, Admin and
+Web releases. The settings permissions govern Admin access. A restaurant
+explicitly enables its program, and existing members can still view a paused
+program. The separate Apple and Google Wallet controls and financial pilots are
+not part of this guide. Use synthetic data for acceptance.
+
 ## Compact order header and mobile item list (8 November 2026)
 
 Review the order page, site editor and guest ordering guides in French, English
