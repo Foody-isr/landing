@@ -5933,10 +5933,10 @@
     },
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "44b3e5e0e5fb7aaa0ac6c09aeacf2528e1a1862e",
+      "sourceCommit": "3eb19e7d8a9e550361087ac7f29088ad6e956a72",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "f70246ce163c9ea38d05fbf3a181b88c87f90b131da4b3ba3ce828d353e018ef",
-      "workingTreeHasChanges": false,
+      "sourceSnapshot": "acfd6426f07948a5fe5cfa027e12e78c3b0e3d847d1392b3f934e643acdcb496",
+      "workingTreeHasChanges": true,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
           "sha256": "13c58bc11284d66c7fb9c4d79c1b3e92c6e05539164f2147a5e966d9c17ac275",
@@ -6586,9 +6586,21 @@
           ]
         },
         "src/app/[restaurantId]/layout.tsx": {
-          "sha256": "415869a600fe445826b155e837a6a7d122c5a60d6db16c0292ff3f1d0db11122",
+          "sha256": "9ad09b9050cfb20330bce10c002f6c053d167b5048aca2408ba653e5f2bbc394",
           "features": [
             "payments-transactions"
+          ]
+        },
+        "src/app/[restaurantId]/loyalty/checkouts/page.tsx": {
+          "sha256": "3b15bfc5836031685ad49b8972de950bd2038ecf9bfbe7cc9a24eee3328b7e62",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/app/[restaurantId]/loyalty/program/page.tsx": {
+          "sha256": "53bab5bdb0fb329aeabb830994ef3a95af3a5f4c02b78dd3ca17f1aabf38c8c6",
+          "features": [
+            "shared-runtime"
           ]
         },
         "src/app/[restaurantId]/marketing/discounts/page.tsx": {
@@ -7605,7 +7617,7 @@
           ]
         },
         "src/components/Sidebar.tsx": {
-          "sha256": "ae61688a629131a8513d3859e4f0629baef69655b539ec77a5185780ad3ba61a",
+          "sha256": "45d72c855571449e61aacbe0657a852aba2264b57992d726a78bca6e0d304c45",
           "features": [
             "pos-payments",
             "global-search",
@@ -8250,6 +8262,30 @@
           "sha256": "4172a429523cc5ebca3376980d3a875a9c1493be66f5a902966952d974057926",
           "features": [
             "kitchen-daily-operations"
+          ]
+        },
+        "src/components/loyalty/LoyaltyCheckoutDetailDrawer.tsx": {
+          "sha256": "1be04a8a029974b7d2c4030cab493d9e7184ae4eac7c28af58eee389afb33c96",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/components/loyalty/LoyaltyCheckoutWorkspace.tsx": {
+          "sha256": "8f67b6f21077c5e7f374b89ad439dadbdf370b2bccb35f718fc27ffd9f57571b",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/components/loyalty/LoyaltyProgramWorkspace.tsx": {
+          "sha256": "95398f6646e768955fc46905664af7a801233b3731b9dc1206e45a171f3752b5",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/components/loyalty/display.ts": {
+          "sha256": "cfd691ac4fe38dc27a6a1d624e4476e7f3901371c5633b2d3c8f3ef5a7826316",
+          "features": [
+            "shared-runtime"
           ]
         },
         "src/components/marketing/DiscountEditModal.tsx": {
@@ -10331,7 +10367,7 @@
           ]
         },
         "src/lib/api.ts": {
-          "sha256": "8e10054941a7f2cd92806dd86e9a69115773cec628729206b1660f6b87f4b884",
+          "sha256": "ecf46093e9eef8fdad6f563c3d8a589cff27a3bcb587aa9f526f9cbc932d3a9e",
           "features": [
             "customers-profiles",
             "menu-variants-and-sizes",
@@ -10526,7 +10562,7 @@
           ]
         },
         "src/lib/i18n.tsx": {
-          "sha256": "249e194f4c4a4570650dc84ffd0c442c7f9231c2e7f7ebfe6eaacccc8b3cc5f6",
+          "sha256": "084aedd8be62e4bb16dae57ea3bbb2dc2793777bb9dd0b05b45cff7962c570a4",
           "features": [
             "customers-profiles",
             "menu-menus-and-groups",
@@ -10602,6 +10638,18 @@
         },
         "src/lib/kitchen-service-plan.ts": {
           "sha256": "5df55ab64390ce317e406fe2e936231ac00600cfff7c51d73a8ace0b16dd3c77",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/lib/loyalty-checkout.ts": {
+          "sha256": "61109f5dac68a9624a22edde313b58729b0bbad3ea2f4916f75e610b30b2d71e",
+          "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/lib/loyalty-program.ts": {
+          "sha256": "d08c5e2929237270e4abbe3af690bf0fbf330a99c8808dce286fc8d4b0d7e55a",
           "features": [
             "shared-runtime"
           ]
@@ -11111,7 +11159,7 @@
           ]
         },
         "src/lib/route-permissions.ts": {
-          "sha256": "dd6c85c411a1d895b062664ea47a217618ec123326969f9f2108fd6dea440d6c",
+          "sha256": "4225af7234a6282d9d733eb53b8511a2517862fbac4b6d267131696d9244b05f",
           "features": [
             "staff-roles",
             "pos-payments",
@@ -52659,6 +52707,14 @@
         },
         {
           "service": "foodyadmin",
+          "file": "src/app/[restaurantId]/loyalty/checkouts/page.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/app/[restaurantId]/loyalty/program/page.tsx"
+        },
+        {
+          "service": "foodyadmin",
           "file": "src/app/[restaurantId]/settings/layout.tsx"
         },
         {
@@ -52872,6 +52928,22 @@
         {
           "service": "foodyadmin",
           "file": "src/components/i18n/LocalizedOrderNameField.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/components/loyalty/LoyaltyCheckoutDetailDrawer.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/components/loyalty/LoyaltyCheckoutWorkspace.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/components/loyalty/LoyaltyProgramWorkspace.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/components/loyalty/display.ts"
         },
         {
           "service": "foodyadmin",
@@ -53216,6 +53288,14 @@
         {
           "service": "foodyadmin",
           "file": "src/lib/kitchen-service-plan.ts"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/lib/loyalty-checkout.ts"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/lib/loyalty-program.ts"
         },
         {
           "service": "foodyadmin",
@@ -80507,6 +80587,28 @@
       "line": 1
     },
     {
+      "id": "foodyadmin:src/app/[restaurantId]/loyalty/checkouts/page.tsx:next-page:1",
+      "service": "foodyadmin",
+      "source": "src/app/[restaurantId]/loyalty/checkouts/page.tsx",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "next-page",
+      "route": "/[restaurantId]/loyalty/checkouts",
+      "line": 1
+    },
+    {
+      "id": "foodyadmin:src/app/[restaurantId]/loyalty/program/page.tsx:next-page:1",
+      "service": "foodyadmin",
+      "source": "src/app/[restaurantId]/loyalty/program/page.tsx",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "next-page",
+      "route": "/[restaurantId]/loyalty/program",
+      "line": 1
+    },
+    {
       "id": "foodyadmin:src/app/[restaurantId]/marketing/discounts/page.tsx:next-page:1",
       "service": "foodyadmin",
       "source": "src/app/[restaurantId]/marketing/discounts/page.tsx",
@@ -87043,6 +87145,127 @@
       ],
       "actions": [
         "close"
+      ],
+      "line": 1
+    },
+    {
+      "id": "foodyadmin:src/components/loyalty/LoyaltyCheckoutDetailDrawer.tsx:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/components/loyalty/LoyaltyCheckoutDetailDrawer.tsx",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "cancel",
+        "loading",
+        "loyaltyCheckoutAmount",
+        "loyaltyCheckoutConfirmBody",
+        "loyaltyCheckoutConfirmTitle",
+        "loyaltyCheckoutDetail",
+        "loyaltyCheckoutOtherRequest",
+        "loyaltyCheckoutPayment",
+        "loyaltyCheckoutReadOnly",
+        "loyaltyCheckoutReason",
+        "loyaltyCheckoutReasonHint",
+        "loyaltyCheckoutRefresh",
+        "loyaltyCheckoutReward",
+        "loyaltyCheckoutStorageError",
+        "loyaltyCheckoutStored",
+        "loyaltyCheckoutTitle",
+        "loyaltyCheckoutUnknownAmount"
+      ],
+      "actions": [
+        "load",
+        "submit"
+      ],
+      "line": 1
+    },
+    {
+      "id": "foodyadmin:src/components/loyalty/LoyaltyCheckoutWorkspace.tsx:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/components/loyalty/LoyaltyCheckoutWorkspace.tsx",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "loading",
+        "loyaltyCheckoutAmount",
+        "loyaltyCheckoutEmpty",
+        "loyaltyCheckoutEmptyBody",
+        "loyaltyCheckoutForbidden",
+        "loyaltyCheckoutInspect",
+        "loyaltyCheckoutIntro",
+        "loyaltyCheckoutOrder",
+        "loyaltyCheckoutPayment",
+        "loyaltyCheckoutRefresh",
+        "loyaltyCheckoutReward",
+        "loyaltyCheckoutTitle",
+        "loyaltyCheckoutUnavailable",
+        "loyaltyCheckoutUnknownAmount"
+      ],
+      "actions": [
+        "load"
+      ],
+      "line": 1
+    },
+    {
+      "id": "foodyadmin:src/components/loyalty/LoyaltyProgramWorkspace.tsx:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/components/loyalty/LoyaltyProgramWorkspace.tsx",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "cancel",
+        "loading",
+        "loyaltyCheckoutRefresh",
+        "loyaltyProgramAmount",
+        "loyaltyProgramCatalogError",
+        "loyaltyProgramChoose",
+        "loyaltyProgramContent",
+        "loyaltyProgramCurrencyChanged",
+        "loyaltyProgramEarn",
+        "loyaltyProgramEnabled",
+        "loyaltyProgramEnabledHint",
+        "loyaltyProgramExtras",
+        "loyaltyProgramFixed",
+        "loyaltyProgramForbidden",
+        "loyaltyProgramIdentityLocked",
+        "loyaltyProgramIncomplete",
+        "loyaltyProgramIntro",
+        "loyaltyProgramItem",
+        "loyaltyProgramMinimum",
+        "loyaltyProgramMinimumHint",
+        "loyaltyProgramMode",
+        "loyaltyProgramName",
+        "loyaltyProgramPending",
+        "loyaltyProgramPoints",
+        "loyaltyProgramProduct",
+        "loyaltyProgramReadOnly",
+        "loyaltyProgramReward",
+        "loyaltyProgramRewardType",
+        "loyaltyProgramSpend",
+        "loyaltyProgramStorage",
+        "loyaltyProgramTerms",
+        "loyaltyProgramTermsHint",
+        "loyaltyProgramTermsVersion",
+        "loyaltyProgramThreshold",
+        "loyaltyProgramTitle",
+        "loyaltyProgramUnavailable",
+        "loyaltyProgramUnavailableItem",
+        "loyaltyProgramUnits",
+        "loyaltyProgramValidity",
+        "loyaltyProgramValidityHint",
+        "loyaltyProgramVariant",
+        "loyaltyProgramVisits"
+      ],
+      "actions": [
+        "load",
+        "loadError",
+        "submit"
       ],
       "line": 1
     },
@@ -95754,6 +95977,7 @@
         "acceptOrder",
         "cancelPendingPrintJobs",
         "closeFoodCostReport",
+        "closeLoyaltyCheckout",
         "confirmDelivery",
         "confirmMenuImport",
         "confirmMenuItemImage",
@@ -95872,6 +96096,7 @@
         "saveCarteDraft",
         "saveFloorPlanLayout",
         "saveKitchenStation",
+        "saveLoyaltyProgram",
         "saveMessageTemplate",
         "saveOrdersTableConfig",
         "savePOSDiscount",
@@ -96106,6 +96331,21 @@
       "actions": [
         "loadItemDraft",
         "saveItemDraft"
+      ],
+      "line": 1
+    },
+    {
+      "id": "foodyadmin:src/lib/loyalty-checkout.ts:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/lib/loyalty-checkout.ts",
+      "features": [
+        "shared-runtime"
+      ],
+      "kind": "ui-controls",
+      "labels": [],
+      "actions": [
+        "saveLoyaltyCommand",
+        "saved"
       ],
       "line": 1
     },
@@ -105813,11 +106053,11 @@
     }
   ],
   "coverage": {
-    "sharedRuntimeFiles": 416,
+    "sharedRuntimeFiles": 424,
     "features": 111,
     "operations": 957,
-    "sourceFiles": 2493,
-    "surfaces": 2225,
+    "sourceFiles": 2501,
+    "surfaces": 2231,
     "unclassifiedRoutes": []
   }
 }
