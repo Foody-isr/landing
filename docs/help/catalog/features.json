@@ -17000,5 +17000,89 @@
         }
       }
     ]
+  },
+  {
+    "id": "customers-loyalty-program",
+    "module": "customers",
+    "article": "customers/loyalty-program",
+    "title": {
+      "en": "Set up a restaurant loyalty program",
+      "fr": "Configurer un programme de fidélité",
+      "he": "הגדרת תוכנית מועדון למסעדה"
+    },
+    "entry": {
+      "en": "In the compatible Foody Admin, select the restaurant and open **Loyalty program** in the sidebar.",
+      "fr": "Dans la version compatible de Foody Admin, sélectionnez le restaurant et ouvrez **Programme de fidélité** dans le menu latéral.",
+      "he": "בגרסה התואמת של Foody Admin, בחרו את המסעדה ופתחו **תוכנית מועדון** בתפריט הצד."
+    },
+    "access": {
+      "en": "Use a restaurant account with permission to view settings. Changing the program requires settings edit permission for that restaurant.",
+      "fr": "Utilisez un compte qui peut consulter les paramètres du restaurant. La modification exige le droit de modifier les paramètres de ce restaurant.",
+      "he": "השתמשו בחשבון עם הרשאה לצפייה בהגדרות המסעדה. עריכת התוכנית דורשת הרשאה לעריכת ההגדרות של אותה מסעדה."
+    },
+    "selectors": {
+      "foodyadmin": [
+        "src/app/[restaurantId]/loyalty/program/page.tsx",
+        "src/components/Sidebar.tsx",
+        "src/components/loyalty/LoyaltyProgramWorkspace.tsx",
+        "src/lib/loyalty-program.ts",
+        "src/lib/i18n.tsx",
+        "src/lib/help/context.ts"
+      ],
+      "foodyserver": [
+        "cmd/server/main.go",
+        "config/config.go",
+        "internal/loyalty/handler.go",
+        "internal/support/corpus.json"
+      ],
+      "foodyweb": [
+        "app/r/[restaurantId]/account/loyalty/page.tsx",
+        "components/LoyaltyCustomerContent.tsx",
+        "components/LoyaltyWalletPanel.tsx",
+        "components/LoyaltyCheckout.tsx",
+        "components/ConfirmationPageClient.tsx",
+        "lib/customer-api-proxy.ts",
+        "lib/loyalty.ts",
+        "lib/server/loyalty-wallet-proxy.ts",
+        "services/api.ts"
+      ]
+    },
+    "operations": [
+      {
+        "id": "configure",
+        "title": {
+          "en": "Prepare the program",
+          "fr": "Préparer le programme",
+          "he": "הכנת התוכנית"
+        },
+        "instructions": {
+          "en": "Choose **Points** or **Visits**, the reward threshold and minimum eligible purchase. Choose a fixed discount or a free product. Add the name and terms in English, French and Hebrew and give the terms a version. Save and confirm with **Program active** off to keep it paused.",
+          "fr": "Choisissez **Points** ou **Visites**, le seuil de récompense et le montant minimum éligible. Choisissez une remise fixe ou un produit offert. Saisissez le nom et les conditions en français, hébreu et anglais, puis indiquez une version des conditions. Enregistrez et confirmez en laissant **Programme actif** désactivé pour garder le programme en pause.",
+          "he": "בחרו **נקודות** או **ביקורים**, את סף ההטבה ואת סכום הקנייה המזכה המינימלי. בחרו הנחה קבועה או מוצר במתנה. הזינו שם ותנאים בעברית, בצרפתית ובאנגלית וקבעו גרסה לתנאים. שמרו ואשרו כשהאפשרות **התוכנית פעילה** כבויה כדי להשאיר את התוכנית בהשהיה."
+        }
+      },
+      {
+        "id": "activate",
+        "title": {
+          "en": "Activate or pause enrollment",
+          "fr": "Activer ou suspendre les adhésions",
+          "he": "הפעלת הצטרפות או השהייתה"
+        },
+        "instructions": {
+          "en": "Turn on **Program active**, save and confirm. On the restaurant’s ordering site, customers can open Loyalty from order history and explicitly accept the terms to join. To pause new enrollment and earning, turn the switch off, save and confirm. Existing members can still view their balance and earned rewards. Apple Wallet and Google Wallet availability is managed separately.",
+          "fr": "Activez **Programme actif**, puis enregistrez et confirmez. Sur le site de commande du restaurant, les clients peuvent ouvrir Fidélité depuis leur historique et accepter explicitement les conditions pour adhérer. Pour suspendre les nouvelles adhésions et la collecte de points ou de visites, désactivez le réglage, enregistrez et confirmez. Les membres existants peuvent toujours consulter leur solde et leurs récompenses obtenues. La disponibilité d’Apple Wallet et de Google Wallet se règle séparément.",
+          "he": "הפעילו את **התוכנית פעילה**, שמרו ואשרו. באתר ההזמנות של המסעדה לקוחות יכולים לפתוח את המועדון מהיסטוריית ההזמנות ולאשר במפורש את התנאים כדי להצטרף. כדי להשהות הצטרפות וצבירה, כבו את המתג, שמרו ואשרו. חברי מועדון קיימים עדיין יכולים לראות יתרה והטבות שנצברו. הזמינות של Apple Wallet ושל Google Wallet מנוהלת בנפרד."
+        }
+      }
+    ],
+    "recovery": {
+      "en": "If a save has an unknown outcome, use **Resume original request**. If Foody rejects an outdated edit, reload the current program and review it before saving again. After the first enrollment, the earning mode and accepted terms are locked.",
+      "fr": "Si le résultat d’un enregistrement est inconnu, utilisez **Reprendre la demande d’origine**. Si Foody refuse une modification devenue obsolète, rechargez le programme et vérifiez-le avant de réenregistrer. Après la première adhésion, le mode d’acquisition et les conditions acceptées sont verrouillés.",
+      "he": "אם תוצאת השמירה לא ידועה, השתמשו באפשרות להמשך הבקשה המקורית. אם Foody דוחה עריכה שהתיישנה, טענו מחדש את התוכנית ובדקו אותה לפני שמירה נוספת. לאחר ההצטרפות הראשונה, שיטת הצבירה והתנאים שאושרו ננעלים."
+    },
+    "audience": "public",
+    "status": "available",
+    "procedureUpdatedAt": "2026-11-09",
+    "preserveExisting": false
   }
 ]
