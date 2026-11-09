@@ -19,13 +19,13 @@ const entries: Record<
   he: {
     restaurants: [
       "קופה למסעדה בישראל באייפד ובאנדרואיד",
-      "קופה למסעדה ולבית קפה: Foody POS באייפד ובאנדרואיד מחבר שולחנות, הזמנות מלצרים ותשלומים. מסלול Foody מסעדה כולל גם אתר הזמנות ו־QR.",
+      "קופה למסעדה ולבית קפה: Foody POS באייפד ובאנדרואיד מחבר שולחנות, הזמנות מלצרים ותשלומים. Foody מסעדה כולל הזמנות ב־QR בשולחן.",
       "קופה למסעדה בישראל.\nבאייפד ובאנדרואיד.",
-      "Foody מסעדה מרכז קופה בדלפק, הזמנות מהטאבלט של המלצר, שולחנות והזמנות מהאתר באותה פלטפורמה. הקופה והמשרד האחורי זמינים בעברית, בצרפתית ובאנגלית. לניהול מתכונים, מלאי חומרי גלם ופוד קוסט מוסיפים את Foody Kitchen.",
+      "Foody מסעדה מרכז קופה בדלפק, הזמנות מהטאבלט של המלצר, ניהול שולחנות והזמנות ב־QR באותה פלטפורמה. הקופה והמשרד האחורי זמינים בעברית, בצרפתית ובאנגלית. לניהול מתכונים, מלאי חומרי גלם ופוד קוסט מוסיפים את Foody Kitchen.",
       [
         [
-          "Foody הזמנות כלול.",
-          "אתר הזמנות, הזמנות להיום והזמנות מראש, איסוף ומשלוחים: Foody הזמנות כלול לצד הקופה והשירות בשולחן. הצוות מרכז את ההכנה במשרד האחורי.",
+          "הוסיפו את Foody הזמנות.",
+          "שלבו את הקופה עם מודול Foody הזמנות כדי למכור באתר משלכם, עם הזמנות להיום, הזמנות מראש, איסוף ומשלוחים. הצוות מרכז את ההכנה במשרד האחורי.",
         ],
         [
           "הזמנה ותשלום בשולחן.",
@@ -43,11 +43,11 @@ const entries: Record<
         ],
         [
           "כמה עולה Foody מסעדה ומה כלול?",
-          `Foody מסעדה עולה ${pricingRates.restaurant} ₪ לחודש לעסק, לפני מע״מ, וכולל שני רישיונות קופה, ענן, משרד אחורי, Foody הזמנות והזמנה ב־QR. רישיון קופה נוסף עולה ${pricingRates.extraPos} ₪ לחודש לפני מע״מ. הרישיון הוא למכשיר, לא לעובד. חומרה, הקמה, הדרכה, שירות EMV וסליקה מתומחרים בנפרד; פירוט התנאים מופיע במחירון.`,
+          `Foody מסעדה עולה ${pricingRates.restaurant} ₪ לחודש לסניף לפני מע״מ, כולל קופה, מפת שולחנות, הזמנות ב־QR ורישיון קופה אישי אחד. כל רישיון נוסף עולה ${pricingRates.extraPos} ₪ לחודש לפני מע״מ. אפשר להוסיף את Foody הזמנות ואת Foody Kitchen בנפרד. הקמה, חומרה ושירותי תשלום מפורטים במחירון.`,
         ],
         [
           "איך ההזמנות מגיעות למטבח?",
-          "הצוות שולח את ההזמנה למסלול ההכנה שהוגדר למסעדה. הדפסת בוני מטבח היא תוספת בתשלום, בכפוף להצעת מחיר ובדיקת ציוד והגדרות. Foody Kitchen הוא מודול נפרד למתכונים, food cost, מלאי והכנות; הוא כלול בחבילת Foody מסעדה ומטבח.",
+          "הצוות שולח את ההזמנה למסלול ההכנה שהוגדר למסעדה. הדפסת בוני מטבח היא תוספת בתשלום, בכפוף להצעת מחיר ובדיקת ציוד והגדרות. Foody Kitchen הוא מודול נפרד למתכונים, food cost, מלאי והכנות שאפשר לשלב עם Foody מסעדה.",
         ],
         [
           "מתאים גם לבית קפה או למזון מהיר?",
@@ -125,7 +125,7 @@ const entries: Record<
     ],
     pos: [
       "קופת ענן ל־iPad ול־Android בישראל",
-      "Foody קופה מרכז מכירות, קטלוג, שולחנות וניהול בענן על iPad או Android. להזמנות אונליין הוסיפו Foody הזמנות או בחרו ב־Foody מסעדה, שכולל גם הזמנה ב־QR.",
+      "Foody קופה מרכז מכירות, קטלוג, שולחנות וניהול בענן על iPad או Android. הקופה היא חלק מ־Foody מסעדה. למכירה באתר אפשר להוסיף את Foody הזמנות.",
       "הקופה שלכם,\nב־iPad או ב־Android.",
       "הקופה פועלת על iPad או Android. העסק מנוהל בענן. Foody מחברת הזמנות, קטלוג, צוות ותשלומים, בדלפק וגם מרחוק.",
       [
@@ -153,7 +153,7 @@ const entries: Record<
         ],
         [
           "כמה עולה מסלול Foody קופה?",
-          `המסלול עולה ${pricingRates.pos} ₪ לחודש לעסק לפני מע״מ, עם רישיון מכשיר אחד. רישיון נוסף עולה ${pricingRates.extraPos} ₪ לחודש לפני מע״מ; הרישיון הוא למכשיר, לא לעובד. חומרה, הקמה, הדרכה, EMV, סליקה והדפסת בוני מטבח בנפרד. להזמנות אונליין ו־QR, מסלול Foody מסעדה עולה ${pricingRates.restaurant} ₪ לחודש לפני מע״מ וכולל שני רישיונות מכשיר.`,
+          `הקופה כלולה ב־Foody מסעדה במחיר ${pricingRates.restaurant} ₪ לחודש לסניף לפני מע״מ. רישיון קופה אישי אחד כלול. כל עובד נוסף שמשתמש בקופה צריך רישיון ב־${pricingRates.extraPos} ₪ לחודש לפני מע״מ. במחירון מופיעים דמי הקמה, הדרכה, ציוד ותשלומים.`,
         ],
         [
           "האם כל טאבלט יכול לגבות תשלום בכרטיס?",
@@ -199,7 +199,7 @@ const entries: Record<
         ],
         [
           "כמה עולה Foody Kitchen והאם צריך קופת Foody?",
-          `Foody Kitchen עצמאי עולה ${pricingRates.kitchen} ₪ לחודש לסניף לפני מע״מ, כולל Foody Companion, ללא צורך ברכישת מסלול קופת Foody. סנכרון עם קופה חיצונית מותנה בבדיקת התאמה ובהצעת מחיר נפרדת. Foody מסעדה ומטבח עולה ${pricingRates.complete} ₪ לחודש לפני מע״מ. הקמה, הדרכה, חומרה וסליקה בנפרד.`,
+          `Foody Kitchen עולה ${pricingRates.kitchen} ₪ לחודש לסניף לפני מע״מ, כולל Foody Companion. אפשר לרכוש אותו בנפרד או לשלב אותו עם מודולים אחרים של Foody. חיבור לקופה חיצונית דורש בדיקת התאמה והצעת מחיר.`,
         ],
         [
           "מה ההבדל בין food cost תיאורטי לאמיתי?",
@@ -241,7 +241,7 @@ const entries: Record<
         ],
         [
           "צריך קופת Foody כדי להשתמש ב־Foody הזמנות?",
-          "לא. אפשר להשתמש ב־Foody הזמנות כמסלול עצמאי ולנהל הזמנות, הכנות ומשלוחים מהמשרד האחורי. הוא כלול גם ב־Foody מסעדה וב־Foody מסעדה ומטבח. הדפסת פתקים במטבח היא תוספת בתשלום.",
+          "לא. אפשר להשתמש ב־Foody הזמנות כמסלול עצמאי ולנהל הזמנות, הכנות ומשלוחים מהמשרד האחורי. אפשר לשלב אותו עם Foody מסעדה. הדפסת פתקים במטבח היא תוספת בתשלום.",
         ],
         [
           "מה ההבדל בין מעקב ההכנות ל־Foody Kitchen?",
@@ -249,7 +249,7 @@ const entries: Record<
         ],
         [
           "כמה עולה Foody הזמנות?",
-          `המסלול העצמאי עולה ${pricingRates.ordering} ₪ לחודש לעסק לפני מע״מ, ללא חובה להשתמש בקופת Foody. הוא כלול גם ב־Foody מסעדה, במחיר ${pricingRates.restaurant} ₪ לחודש לפני מע״מ, וב־Foody מסעדה ומטבח. חומרה, הקמה, הדרכה, EMV, סליקה והדפסת בוני מטבח בנפרד. התנאים המלאים מפורטים במחירון.`,
+          `Foody הזמנות עולה ${pricingRates.ordering} ₪ לחודש לסניף לפני מע״מ. אפשר לרכוש אותו בנפרד או לשלב אותו עם Foody מסעדה. הקמת האתר, שירותי תשלום והדפסת בוני מטבח מתומחרים בנפרד.`,
         ],
         [
           "האם Foody גובה אחוז מההזמנות הישירות?",
@@ -321,13 +321,13 @@ const entries: Record<
   fr: {
     restaurants: [
       "Caisse restaurant en Israël, sur iPad et Android",
-      "Une caisse pour restaurant et café : Foody POS sur iPad et Android réunit tables, commandes des serveurs et paiements. L’offre Restaurant inclut le site de commande et le QR.",
+      "Une caisse pour restaurant et café : Foody POS sur iPad et Android réunit tables, commandes des serveurs et paiements. Foody Restaurant inclut les commandes par QR à table.",
       "Caisse restaurant en Israël.\nSur iPad et Android.",
-      "Foody Restaurant réunit caisse au comptoir, commandes sur tablette serveur, tables et commandes du site dans une même plateforme. La caisse et le back-office sont disponibles en français, hébreu et anglais. Ajoutez Foody Cuisine pour les recettes, les stocks d’ingrédients et le food cost.",
+      "Foody Restaurant réunit caisse au comptoir, commandes sur tablette serveur, tables et commandes par QR dans une même plateforme. La caisse et le back-office sont disponibles en français, hébreu et anglais. Ajoutez Foody Cuisine pour les recettes, les stocks d’ingrédients et le food cost.",
       [
         [
-          "Foody Commandes est inclus.",
-          "Site de commande, ventes du jour, précommandes, retrait et livraison : Foody Commandes est inclus aux côtés de la caisse et du service en salle. Votre équipe centralise la préparation dans le back-office.",
+          "Ajoutez Foody Commandes.",
+          "Associez la caisse au module Foody Commandes pour vendre sur votre site, en retrait ou en livraison. Votre équipe centralise les ventes du jour et les précommandes dans le back-office.",
         ],
         [
           "Commander et payer à table.",
@@ -345,11 +345,11 @@ const entries: Record<
         ],
         [
           "Combien coûte Foody Restaurant et que comprend l’offre ?",
-          `Foody Restaurant coûte ${pricingRates.restaurant} ₪ HT par mois et par établissement. L’offre comprend deux licences de caisse, le cloud, le back-office, Foody Commandes et la commande QR. Chaque licence de caisse supplémentaire coûte ${pricingRates.extraPos} ₪ HT par mois. La licence concerne l’appareil, pas le salarié. Le matériel, l’installation, la formation, le service EMV et la slika sont facturés séparément ; les conditions détaillées figurent sur la page tarifs.`,
+          `Foody Restaurant coûte ${pricingRates.restaurant} ₪ HT par mois et par établissement, avec la caisse, le plan de salle, les commandes par QR à table et une licence de caisse nominative. Chaque employé supplémentaire qui utilise la caisse coûte ${pricingRates.extraPos} ₪ HT par mois. Foody Commandes et Foody Cuisine s’ajoutent séparément. La mise en service, le matériel et les paiements sont détaillés dans les tarifs.`,
         ],
         [
           "Comment les commandes arrivent-elles en cuisine ?",
-          "L’équipe envoie la commande dans le parcours de préparation configuré pour le restaurant. L’impression des bons de cuisine est une option payante, sur devis et après vérification du matériel et du paramétrage. Foody Cuisine est le module distinct pour les recettes, le food cost, les stocks et les préparations ; il est inclus dans Foody Restaurant & Cuisine.",
+          "L’équipe envoie la commande dans le parcours de préparation configuré pour le restaurant. L’impression des bons de cuisine est une option payante, sur devis et après vérification du matériel et du paramétrage. Foody Cuisine est le module distinct pour les recettes, le food cost, les stocks et les préparations que vous pouvez associer à Foody Restaurant.",
         ],
         [
           "Et pour un café ou un comptoir ?",
@@ -427,7 +427,7 @@ const entries: Record<
     ],
     pos: [
       "Caisse cloud sur iPad et Android en Israël",
-      "Foody Caisse réunit encaissement, catalogue, tables et gestion dans le cloud sur iPad ou Android. Pour vendre en ligne, ajoutez Foody Commandes ou choisissez Foody Restaurant, qui inclut aussi la commande QR.",
+      "Foody Caisse réunit encaissement, catalogue, tables et gestion dans le cloud sur iPad ou Android. La caisse est incluse dans Foody Restaurant. Ajoutez Foody Commandes pour vendre sur votre site.",
       "Votre caisse,\nsur iPad ou Android.",
       "Votre caisse tourne sur iPad ou Android. Votre activité se pilote dans le cloud. Foody relie les commandes, le catalogue, les équipes et les paiements, au comptoir comme à distance.",
       [
@@ -455,7 +455,7 @@ const entries: Record<
         ],
         [
           "Combien coûte Foody Caisse ?",
-          `L’offre coûte ${pricingRates.pos} ₪ HT par établissement et par mois, avec une licence appareil. Une licence supplémentaire coûte ${pricingRates.extraPos} ₪ HT par mois ; elle concerne l’appareil, pas le salarié. Matériel, installation, formation, EMV, slika et impression des bons cuisine sont séparés. Pour les commandes en ligne et le QR, Foody Restaurant coûte ${pricingRates.restaurant} ₪ HT par mois avec deux licences appareil.`,
+          `La caisse fait partie de Foody Restaurant à ${pricingRates.restaurant} ₪ HT par mois et par établissement. Une licence nominative est incluse. Chaque employé supplémentaire qui utilise la caisse coûte ${pricingRates.extraPos} ₪ HT par mois. La page Tarifs détaille la mise en service, la formation, le matériel et les paiements.`,
         ],
         [
           "Une tablette peut-elle encaisser une carte bancaire ?",
@@ -501,7 +501,7 @@ const entries: Record<
         ],
         [
           "Combien coûte Foody Cuisine et faut-il une caisse Foody ?",
-          `Foody Cuisine seul coûte ${pricingRates.kitchen} ₪ HT par établissement et par mois, avec Foody Compagnon, sans achat obligatoire d’un abonnement Foody Caisse. La synchronisation avec une caisse externe dépend d’une validation technique et d’un devis séparé. Foody Restaurant & Cuisine coûte ${pricingRates.complete} ₪ HT par mois. Installation, formation, matériel et slika séparés.`,
+          `Foody Cuisine coûte ${pricingRates.kitchen} ₪ HT par mois et par établissement, avec Foody Compagnon. Vous pouvez le prendre seul ou avec les autres modules Foody. La synchronisation avec une caisse externe dépend d’une validation technique et d’un devis.`,
         ],
         [
           "Théorique et réel : quelle différence ?",
@@ -543,7 +543,7 @@ const entries: Record<
         ],
         [
           "Faut-il une caisse Foody pour utiliser Foody Commandes ?",
-          "Non. Foody Commandes peut être utilisé seul pour gérer les commandes, la préparation et les livraisons depuis le back-office. Il est aussi inclus dans Foody Restaurant et Foody Restaurant & Cuisine. L’impression des bons en cuisine est une option payante.",
+          "Non. Foody Commandes peut être utilisé seul pour gérer les commandes, la préparation et les livraisons depuis le back-office. Vous pouvez aussi l’associer à Foody Restaurant. L’impression des bons en cuisine est une option payante.",
         ],
         [
           "Quelle différence entre le suivi des préparations et Foody Cuisine ?",
@@ -551,7 +551,7 @@ const entries: Record<
         ],
         [
           "Combien coûte Foody Commandes ?",
-          `L’offre autonome coûte ${pricingRates.ordering} ₪ HT par établissement et par mois, sans caisse Foody obligatoire. Elle est aussi incluse dans Foody Restaurant, à ${pricingRates.restaurant} ₪ HT par mois, et Foody Restaurant & Cuisine. Matériel, installation, formation, EMV, slika et impression des bons cuisine sont séparés. Les conditions complètes figurent dans les tarifs.`,
+          `Foody Commandes coûte ${pricingRates.ordering} ₪ HT par mois et par établissement. Vous pouvez le prendre seul ou l’associer à Foody Restaurant. La création du site, les paiements et l’impression des bons en cuisine sont chiffrés séparément.`,
         ],
         [
           "Foody prend-il un pourcentage sur les commandes directes ?",
@@ -623,13 +623,13 @@ const entries: Record<
   en: {
     restaurants: [
       "Restaurant POS in Israel on iPad and Android",
-      "A POS for restaurants and cafés: Foody POS on iPad and Android connects tables, waiter orders and payments. The Restaurant plan includes your ordering website and QR ordering.",
+      "A POS for restaurants and cafés: Foody POS on iPad and Android connects tables, waiter orders and payments. Foody Restaurant includes QR ordering at the table.",
       "Restaurant POS in Israel.\nOn iPad and Android.",
-      "Foody Restaurant brings counter sales, waiter tablet orders, tables and website orders into one platform. Both POS and back office support English, Hebrew and French. Add Foody Kitchen for recipes, ingredient inventory and food cost.",
+      "Foody Restaurant brings counter sales, waiter tablet orders, tables and QR orders into one platform. Both POS and back office support English, Hebrew and French. Add Foody Kitchen for recipes, ingredient inventory and food cost.",
       [
         [
-          "Foody Orders is included.",
-          "Your ordering website, same-day orders, preorders, pickup and delivery: Foody Orders is included alongside POS and table service. Your team coordinates preparation in the back office.",
+          "Add Foody Orders.",
+          "Pair your POS with Foody Orders to sell through your own site for pickup or delivery. Your team manages same-day orders and preorders in the back office.",
         ],
         [
           "Ordering and payment at the table.",
@@ -647,11 +647,11 @@ const entries: Record<
         ],
         [
           "How much is Foody Restaurant and what is included?",
-          `Foody Restaurant costs ILS ${pricingRates.restaurant} per establishment per month, excluding VAT. It includes two POS licences, cloud, back office, Foody Orders and QR ordering. Each additional POS licence costs ILS ${pricingRates.extraPos} per month, excluding VAT. Licences cover devices, not employees. Hardware, setup, training, EMV service and payment processing are separate; see the pricing page for the full terms.`,
+          `Foody Restaurant costs ILS ${pricingRates.restaurant} per location/month excluding VAT, with POS, floor plans, table QR ordering and one named POS licence. Each additional employee who uses the POS costs ILS ${pricingRates.extraPos} per month excluding VAT. Foody Orders and Foody Kitchen are available separately. Setup, hardware and payment fees are listed on the pricing page.`,
         ],
         [
           "How do orders reach the kitchen?",
-          "Staff send orders into the preparation workflow configured for the restaurant. Kitchen ticket printing is a paid add-on, quoted separately after checking equipment and configuration. Foody Kitchen is the separate module for recipes, food cost, stock and preparations; it is included in Foody Restaurant & Kitchen.",
+          "Staff send orders into the preparation workflow configured for the restaurant. Kitchen ticket printing is a paid add-on, quoted separately after checking equipment and configuration. Foody Kitchen is the separate module for recipes, food cost, stock and preparations and can be paired with Foody Restaurant.",
         ],
         [
           "Does it work for cafés and quick service?",
@@ -729,7 +729,7 @@ const entries: Record<
     ],
     pos: [
       "Cloud POS for iPad and Android in Israel",
-      "Foody POS brings sales, catalogues, tables and cloud management to iPad or Android. Add Foody Orders to sell online, or choose Foody Restaurant, which also includes QR ordering.",
+      "Foody POS brings sales, catalogues, tables and cloud management to iPad or Android. POS is part of Foody Restaurant. Add Foody Orders to sell through your website.",
       "Your POS,\non iPad or Android.",
       "Your POS runs on iPad or Android. Your business is managed in the cloud. Foody connects orders, catalogues, teams and payments, at the counter and remotely.",
       [
@@ -757,7 +757,7 @@ const entries: Record<
         ],
         [
           "How much does Foody POS cost?",
-          `The plan costs ILS ${pricingRates.pos} per location/month excluding VAT, with one device licence. An extra licence costs ILS ${pricingRates.extraPos} per month excluding VAT; licences cover devices, not employees. Hardware, setup, training, EMV, processing and kitchen ticket printing are separate. For online and QR ordering, Foody Restaurant costs ILS ${pricingRates.restaurant} per month excluding VAT with two device licences.`,
+          `POS is part of Foody Restaurant at ILS ${pricingRates.restaurant} per location/month excluding VAT. It includes one named licence. Each additional employee who uses the POS costs ILS ${pricingRates.extraPos} per month excluding VAT. The pricing page details setup, training, hardware and payment fees.`,
         ],
         [
           "Can any tablet accept a card payment?",
@@ -803,7 +803,7 @@ const entries: Record<
         ],
         [
           "How much does Foody Kitchen cost, and do I need Foody POS?",
-          `Standalone Foody Kitchen costs ILS ${pricingRates.kitchen} per location/month, excluding VAT, including Foody Companion, without a required Foody POS subscription. Synchronisation with an external POS depends on technical validation and a separate quote. Foody Restaurant & Kitchen costs ILS ${pricingRates.complete} per month, excluding VAT. Setup, training, hardware and processing are separate.`,
+          `Foody Kitchen costs ILS ${pricingRates.kitchen} per location/month excluding VAT, including Foody Companion. Buy it on its own or combine it with other Foody modules. Connecting an external POS requires a compatibility check and a quote.`,
         ],
         [
           "What is theoretical versus actual food cost?",
@@ -845,7 +845,7 @@ const entries: Record<
         ],
         [
           "Do I need a Foody POS to use Foody Orders?",
-          "No. Foody Orders can be used on its own to manage orders, preparation and deliveries from the back office. It is also included in Foody Restaurant and Foody Restaurant & Kitchen. Kitchen ticket printing is a paid add-on.",
+          "No. Foody Orders can be used on its own to manage orders, preparation and deliveries from the back office. You can also pair it with Foody Restaurant. Kitchen ticket printing is a paid add-on.",
         ],
         [
           "How does preparation tracking differ from Foody Kitchen?",
@@ -853,7 +853,7 @@ const entries: Record<
         ],
         [
           "How much does Foody Orders cost?",
-          `The standalone plan costs ILS ${pricingRates.ordering} per location/month excluding VAT, without a required Foody POS. It is also included in Foody Restaurant at ILS ${pricingRates.restaurant} per month excluding VAT, and Foody Restaurant & Kitchen. Hardware, setup, training, EMV, processing and kitchen ticket printing are separate. See pricing for the full terms.`,
+          `Foody Orders costs ILS ${pricingRates.ordering} per location/month excluding VAT. Buy it on its own or pair it with Foody Restaurant. Website setup, payment services and kitchen ticket printing are priced separately.`,
         ],
         [
           "Does Foody take a percentage of direct orders?",

@@ -16,7 +16,6 @@ export default function ProductMentions({
     ...productNavigation.map(({ key, href }) => ({ name: ui[lang][key], href })),
     { name: ui[lang].companion, href: routes.companion },
   ].sort((a, b) => b.name.length - a.name.length);
-  // Match the complete bundle name before its Restaurant prefix, in every locale.
   const names = products.map(({ name }) =>
     name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"),
   );
