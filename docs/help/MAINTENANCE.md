@@ -1744,3 +1744,13 @@ application contracts pin the same immutable Landing review. The combined
 inventory also retains the pre-existing wallet evidence. API and Admin entries
 use the deployed pilot hashes on shared paths; refresh the combined source
 inventory when the wallet application sources are integrated.
+
+### Admin navigation for the billing pilot (10 November 2026)
+
+In development, a restaurant owner can open the published private offer from
+**Settings → Account → Billing**. The sidebar waits for the existing scoped
+billing endpoint to confirm the offer. Verify the link from the Admin dashboard,
+including after switching to a restaurant with no private offer. The three
+internal guides describe this path. This update changes only internal pilot
+documentation and Admin source evidence. The published public guides and the
+assistant's article content are unchanged.

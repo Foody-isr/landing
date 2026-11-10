@@ -5,12 +5,12 @@ apps: foodyadmin
 tags:
   - account
   - foody-billing-sandbox
-updatedAt: '2026-11-09'
+updatedAt: '2026-11-10'
 featureId: foody-billing-sandbox
 audience: internal
 releaseStatus: local-release-unverified
 ---
-Development Backoffice → Foody billing · sandbox; restaurant Admin → Account → Billing.
+Development Backoffice → Foody billing · sandbox. restaurant Admin → Settings → Account → Billing.
 
 > **Release availability must be confirmed**
 > This application exists in the source workspace. This guide does not confirm public distribution or availability in your installed release.
@@ -35,7 +35,7 @@ Open **Restaurants → selected restaurant → Billing → Foody private offer**
 
 ## Pay and verify in sandbox
 
-Sign in as the restaurant owner and open **Account → Billing**. Check the total including VAT, select monthly or annual, and accept the offer. For monthly, also authorize future test debits. Continue to Verifone using its test card details. After returning, wait for confirmation or use **Verify payment status**. Annual renewal requires another checkout. To stop future monthly debits, choose **Stop automatic renewal** and confirm.
+Sign in as the restaurant owner and open **Settings → Account → Billing**. The link appears for the restaurant owner after Foody publishes a private offer. Check the total including VAT, select monthly or annual, and accept the offer. For monthly, also authorize future test debits. Continue to Verifone using its test card details. After returning, wait for confirmation or use **Verify payment status**. Annual renewal requires another checkout. To stop future monthly debits, choose **Stop automatic renewal** and confirm.
 
 <span id="renewal" />
 

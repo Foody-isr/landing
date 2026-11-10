@@ -5,12 +5,12 @@ apps: foodyadmin
 tags:
   - account
   - foody-billing-sandbox
-updatedAt: '2026-11-09'
+updatedAt: '2026-11-10'
 featureId: foody-billing-sandbox
 audience: internal
 releaseStatus: local-release-unverified
 ---
-Backoffice de développement → Foody billing · sandbox ; Admin du restaurant → Compte → Facturation.
+Backoffice de développement → Foody billing · sandbox. Admin du restaurant → Paramètres → Compte → Facturation.
 
 > **Disponibilité à confirmer**
 > Cette application existe dans les sources. Ce guide ne confirme ni sa distribution publique ni sa disponibilité dans votre version installée.
@@ -35,7 +35,7 @@ Ouvrez **Restaurants → restaurant choisi → Billing → Foody private offer**
 
 ## Payer et vérifier en sandbox
 
-Connectez-vous comme propriétaire et ouvrez **Compte → Facturation**. Vérifiez le total TTC, choisissez mensuel ou annuel, puis acceptez l’offre. Pour le mensuel, autorisez aussi les futurs débits de test. Continuez vers Verifone avec ses données de carte de test. Au retour, attendez la confirmation ou utilisez **Vérifier le statut du paiement**. Le renouvellement annuel demande un nouveau paiement. Pour arrêter les prochains débits mensuels, choisissez **Arrêter le renouvellement automatique** et confirmez.
+Connectez-vous comme propriétaire et ouvrez **Paramètres → Compte → Facturation**. Le lien apparaît pour le propriétaire du restaurant après la publication de l’offre privée par Foody. Vérifiez le total TTC, choisissez mensuel ou annuel, puis acceptez l’offre. Pour le mensuel, autorisez aussi les futurs débits de test. Continuez vers Verifone avec ses données de carte de test. Au retour, attendez la confirmation ou utilisez **Vérifier le statut du paiement**. Le renouvellement annuel demande un nouveau paiement. Pour arrêter les prochains débits mensuels, choisissez **Arrêter le renouvellement automatique** et confirmez.
 
 <span id="renewal" />
 
