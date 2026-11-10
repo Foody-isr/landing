@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-11-04'
+updatedAt: '2026-11-09'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -268,7 +268,23 @@ Local preparation: apply migration 289 and deploy the compatible API before POS.
 
 ## Global terminal declarations
 
-On compatible API and Backoffice versions, a Foody superadmin opens Backoffice → Terminal fleet to search terminals across restaurants and edit declared serial, DID, SHVA terminal number, supplier, acquirer and lifecycle. Save checks the current revision and records an audit event. These values remain declared, not applied: saving does not reassign hardware, alter banking parameters or start an Ashrait command. A returned/repair label alone does not authorize reuse. Remote bank configuration and its verified readback remain unavailable pending the regional Verifone contract. Restaurant Admin retains its restaurant scope. Never enter credentials or card data in these fields.
+On compatible API and Backoffice versions, a Foody superadmin opens Backoffice → Terminal fleet to search terminals across restaurants by name or identifier. Registered Portables appear through the existing inventory. For a Mini configured only on the iPad, select Register a Mini, choose the restaurant and enter its physical serial number and name. It appears as Unconfigured. In Edit inventory, declare the DID, VHQ deviceUid, SHVA terminal number, Ashrait provisioning ID, supplier number, acquirer and lifecycle. A save checks the revision and records an audit event. Use the physical serial on the device and keep each identifier in its own field. Restaurant Admin keeps its own restaurant scope. Keep credentials and card data out of these fields.
+
+<span id="terminal-fleet-change-requests" />
+
+## Prepare a terminal change
+
+Open Change requests on the original device. Choose a bank configuration change, a replacement in the same restaurant, or a transfer to another restaurant for a device declared Returned. Select the destination when required, enter the requested identifiers and choose Prepare change. Review the saved target declaration and requested values in the history. The record includes the serials, actor, time and revisions. If the declaration changes before saving, refresh the inventory and review the request again. Open the original terminal’s history to cancel an unused request. Prepared status records the proposed change in Foody. Applying it and verifying the bank configuration require the regional Verifone procedure and CST validation.
+
+<span id="terminal-fleet-cst-maintenance" />
+
+## Test Ashrait maintenance on one CST terminal
+
+Internal CST procedure. Allowlist the physical serial keys in the development API with migrations 309–312. Configure the Verifone CST tenant, API credentials, application IDs and exact SHVA parameter names for the Mini and Portable. Use the compatible diagnostic POS build. Resolve any open payment and close the previous batch. In Backoffice → Terminal fleet → Change requests, review the current identifiers and prepare a same-device, same-restaurant change. For first enrollment, leave the original DID blank and retain the current Ashrait provisioning login. Keep the enrolled POS open with the reviewed terminal connected. Authorize DID assignment if it changes, then refresh the request to verify the acknowledgement. If the SHVA number changes, choose Save SHVA number in VHQ. Check parameter synchronization in VHQ, then authorize the download. Confirm the values actually applied on the terminal with Verifone and record the observed identifiers and check reference in Backoffice. If a VHQ reply is lost, Check VHQ status reads the existing value. For an interrupted native command, record its retained result or verify with Verifone. Replacement and transfer requests remain in preparation.
+
+On the Mini and Portable, verify recovery from an interrupted CST sale on its original check. A matched debit triggers Void 400. Wait for confirmation before collecting again. From Transactions on the originating POS, verify a full or partial refund and check 53 / MTI 100 in the CST trace.
+
+On the designated iPad, close CST sales with both devices active. Compare cases where they share a SHVA number and where the numbers differ. Verify one transmission per number and one parameter refresh per device. Check the amounts and operation counts in the Z and reprint each SHVA report from history.
 
 <span id="configurable-fulfillment-compatibility" />
 

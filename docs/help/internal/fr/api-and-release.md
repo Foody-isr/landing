@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-11-04'
+updatedAt: '2026-11-09'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -268,7 +268,23 @@ Préparation locale : appliquer la migration 289 et déployer l’API compatible
 
 ## Déclarations du parc de terminaux
 
-Sur les versions compatibles de l’API et du Backoffice, un superadmin Foody ouvre Backoffice → Terminal fleet pour rechercher les terminaux de tous les restaurants et modifier la série, le DID, le numéro SHVA, le fournisseur, l’acquéreur et le cycle de vie déclarés. Enregistrer vérifie la révision et crée une trace d’audit. Ces valeurs restent déclarées, non appliquées : la sauvegarde ne réattribue pas le matériel, ne change pas ses paramètres bancaires et ne lance aucune commande Ashrait. Un libellé Retourné ou Réparation n’autorise pas sa réutilisation. La configuration bancaire distante et sa vérification restent indisponibles en attendant le contrat régional Verifone. L’Admin conserve son périmètre restaurant. Ne saisissez aucun secret ni donnée de carte dans ces champs.
+Sur les versions compatibles de l’API et du Backoffice, un superadmin Foody ouvre Backoffice → Terminal fleet pour rechercher les terminaux de tous les restaurants par nom ou identifiant. Les Portables enregistrés remontent via l’inventaire existant. Pour un Mini configuré uniquement sur l’iPad, choisissez Register a Mini, sélectionnez le restaurant et saisissez le numéro de série physique et le nom. Le Mini apparaît comme Unconfigured. Dans Edit inventory, déclarez le DID, le deviceUid VHQ, le numéro de terminal SHVA, l’identifiant de provisionnement Ashrait, le numéro fournisseur, l’acquéreur et l’état du matériel. La sauvegarde vérifie la révision et crée une trace d’audit. Lisez le numéro de série sur l’appareil et placez chaque identifiant dans son propre champ. L’Admin reste limité à son restaurant. Gardez les secrets et données de carte hors de ces champs.
+
+<span id="terminal-fleet-change-requests" />
+
+## Préparer un changement de terminal
+
+Ouvrez Change requests sur le terminal d’origine. Choisissez un changement de configuration bancaire, un remplacement dans le même restaurant ou le transfert vers un autre restaurant pour un appareil déclaré Returned. Sélectionnez la destination si nécessaire, saisissez les identifiants demandés et choisissez Prepare change. Comparez dans l’historique la déclaration du terminal cible et les valeurs demandées. Le dossier conserve les numéros de série, l’auteur, l’heure et les révisions. Si une déclaration change avant l’enregistrement, actualisez l’inventaire puis revérifiez la demande. Pour annuler une demande inutilisée, ouvrez l’historique du terminal d’origine. Le statut Prepared enregistre le changement proposé dans Foody. Son application et la vérification de la configuration bancaire nécessitent la procédure régionale Verifone et une validation CST.
+
+<span id="terminal-fleet-cst-maintenance" />
+
+## Tester la maintenance Ashrait sur un terminal CST
+
+Procédure CST interne. Autorisez les clés des séries physiques dans l’API de développement avec les migrations 309 à 312. Configurez le tenant VHQ CST, l’accès API, les identifiants d’application et le nom exact du paramètre SHVA pour le Mini et le Portable. Utilisez le build de diagnostic FoodyPOS. Résolvez les paiements en attente et clôturez le lot précédent. Dans Backoffice → Terminal fleet → Change requests, vérifiez les identifiants et préparez une modification pour le même appareil et le même restaurant. Au premier enrôlement, laissez le DID d’origine vide et conservez l’identifiant de connexion Ashrait courant. Gardez le POS enrôlé ouvert avec le terminal vérifié connecté. Autorisez le DID s’il change, puis actualisez la demande pour voir l’accusé de réception. Si le numéro SHVA change, choisissez Save SHVA number in VHQ. Vérifiez la synchronisation des paramètres dans VHQ, puis autorisez leur téléchargement. Vérifiez les valeurs appliquées sur le terminal avec Verifone et consignez les identifiants observés et la référence du contrôle dans Backoffice. Après une réponse VHQ perdue, Check VHQ status relit la valeur existante. Après une commande native interrompue, enregistrez le résultat conservé ou vérifiez auprès de Verifone. Les demandes de remplacement et de transfert restent en préparation.
+
+Sur le Mini et le Portable, vérifiez la reprise d’une vente CST interrompue depuis l’addition d’origine. Un débit corrélé déclenche un Void 400. Attendez sa confirmation avant un nouvel encaissement. Depuis Transactions sur le POS d’origine, vérifiez aussi un remboursement total ou partiel et contrôlez le couple 53 / MTI 100 dans la trace CST.
+
+Depuis l’iPad désigné, clôturez les ventes CST avec les deux appareils actifs. Comparez les cas où ils partagent le même numéro SHVA et où les numéros diffèrent. Comptez une transmission par numéro et une actualisation des paramètres par appareil. Vérifiez les montants et le nombre d’opérations dans le Z et réimprimez chaque rapport SHVA depuis l’historique.
 
 <span id="configurable-fulfillment-compatibility" />
 
