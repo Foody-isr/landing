@@ -99,7 +99,17 @@ for (const [service, configuredRoot] of Object.entries(roots)) {
       'foodyserver:internal/orders/pos_device_context.go': ['pos-payments', 'pos-end-of-day'],
       'foodyserver:internal/shifts/pos_device_context.go': ['staff-devices-shifts', 'platform-api'],
     };
-    ids = currentPOSProofOwnership[`${service}:${file}`] ?? focusedStockOwnership[`${service}:${file}`] ?? ids;
+    // Dedicated fleet requests and registrations do not change onboarding or access.
+    const terminalFleetModule = (service === 'foodyserver' && (
+      /^internal\/admin\/terminal_fleet_(?:changes|mini|vhq)\.go$/.test(file) || file === 'internal/admin/vhq_client.go' ||
+      /^internal\/(?:admin|orders|common)\/terminal_fleet_maintenance\.go$/.test(file)
+    )) || (service === 'foodypos' && /\/ashrait_maintenance(?:_repository|_tile|_worker)?\.dart$/.test(file));
+    const ashraitCSTModule = (service === 'foodyserver' && (
+      /^internal\/(?:orders|common)\/ashrait_adjustment\.go$/.test(file) ||
+      file === 'internal/orders/transactions_ashrait.go'
+    )) || (service === 'foodypos' && file === 'lib/services/payments/ashrait_adjustment_repository.dart');
+    ids = terminalFleetModule || ashraitCSTModule ? ['platform-api']
+      : currentPOSProofOwnership[`${service}:${file}`] ?? focusedStockOwnership[`${service}:${file}`] ?? ids;
     sources[file] = { sha256: digest(bytes), features: ids };
     const found = [];
     if (/(?:^|\/)app\/.*\/(?:page|route)\.[jt]sx?$/.test(file)) found.push({ kind: file.includes('/route.') ? 'next-api-route' : 'next-page', route: routePath(file), line: 1 });

@@ -1,5 +1,16 @@
 # Help ownership, evidence and releases
 
+## CST terminal fleet and payment operations (9 November 2026)
+
+The restricted internal guide covers the API, Backoffice and opt-in POS
+diagnostic build in FR/HE/EN. Release builds and production API cannot execute
+the CST procedures. The guide covers first DID enrollment, confirmation of the
+applied VHQ values, one Deposit per verified SHVA number, parameter refresh
+on each device, interrupted-payment Void, and Refund 53. The public guides
+cover the released behavior. The CST trace confirms the refund's MTI during
+hardware acceptance. Refresh the affected source inventory and public corpus
+and pin the reviewed Landing commit before remote CI.
+
 ## Restaurant loyalty program configuration
 
 Publish the FR, HE and EN loyalty program guide with compatible API, Admin and
