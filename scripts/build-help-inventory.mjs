@@ -118,7 +118,10 @@ for (const [service, configuredRoot] of Object.entries(roots)) {
     };
     const mobileHomeOwnership = service === 'foodyserver' && file === 'internal/restaurants/website_mobile_home.go'
       ? ['website-navigation', 'website-qr-customize-your-site'] : undefined;
+    const saleReceiptLayoutModule = service === 'foodyserver' &&
+      /^internal\/printing\/(?:sale_receipt_\w+|epson_receipt)\.go$/.test(file);
     ids = terminalFleetModule || ashraitCSTModule ? ['platform-api']
+      : saleReceiptLayoutModule ? ['printer-profiles']
       : ashraitReceiptOwnership[`${service}:${file}`] ?? currentPOSProofOwnership[`${service}:${file}`]
         ?? focusedStockOwnership[`${service}:${file}`] ?? mobileHomeOwnership ?? ids;
     sources[file] = { sha256: digest(bytes), features: ids };
