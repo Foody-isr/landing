@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-11-09'
+updatedAt: '2026-11-11'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -269,6 +269,8 @@ POST /api/v1/orders מקבל את השדה הבוליאני האופציונלי
 ## הצהרות במלאי המסופים
 
 בגרסאות תואמות של ה-API וה-Backoffice, סופר-אדמין של Foody פותח Backoffice → Terminal fleet ומחפש מסופים בכל המסעדות לפי שם או מזהה. מסופי Portable רשומים מופיעים במלאי הקיים. למסוף Mini שהוגדר רק ב-iPad, בחרו Register a Mini, בחרו מסעדה והזינו את המספר הסידורי הפיזי ואת השם. המסוף יופיע במצב Unconfigured. ב-Edit inventory הצהירו על DID, על deviceUid של VHQ, על מספר מסוף שב״א, על מזהה ההגדרה של Ashrait, על מספר ספק, על הסולק ועל מצב המכשיר. השמירה בודקת את הגרסה ורושמת אירוע ביקורת. קראו את המספר הסידורי מהמכשיר והזינו כל מזהה בשדה שלו. ניהול המסעדה מוגבל למסעדה שלה. אין להזין סודות או נתוני כרטיס בשדות האלה.
+
+מלאי המכשירים לצוות יכול לכלול רכיב payment_terminal עם מפתח physical_key הנגזר מהמספר הסידורי בצי. גרסאות POS תואמות משתמשות בו כדי לשייך פרופיל רשת מאומת לפרטי אותו מכשיר. המלאי מחזיר לצורך זה את המפתח הנגזר בלבד.
 
 <span id="terminal-fleet-change-requests" />
 

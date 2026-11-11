@@ -1488,7 +1488,7 @@
           "android/app/src/main/kotlin/com/foodypos/app/AshraitProtocol.kt",
           "lib/core/ui/terminal_payment_error.dart",
           "lib/features/settings/presentation/ashrait_last_transaction_tile.dart",
-          "lib/features/settings/presentation/victa_mini_settings_card.dart",
+          "lib/features/settings/presentation/payment_terminal_settings.dart",
           "lib/features/settings/presentation/hardware_settings_page.dart",
           "lib/services/printing/receipt_delivery*.dart",
           "lib/features/orders/data/order_api.dart",
@@ -1526,7 +1526,7 @@
         "foodypos": [
           "lib/services/payments/terminal_connection_provider.dart",
           "lib/services/payments/terminal_configuration.dart",
-          "lib/features/settings/presentation/victa_mini_settings_card.dart",
+          "lib/features/settings/presentation/payment_terminal_settings.dart",
           "lib/main.dart",
           "lib/features/settings/presentation/terminal_installments_tile.dart"
         ]
@@ -2457,7 +2457,10 @@
         "foodyserver": [
           "internal/orders/transactions*.go",
           "internal/printing/transaction_receipt.go",
-          "internal/printing/customer_receipts.go"
+          "internal/printing/customer_receipts.go",
+          "internal/common/ashrait_receipt.go",
+          "internal/orders/ashrait_receipt*.go",
+          "migrations/313_pos_ashrait_card_receipts.sql"
         ],
         "foodypos": [
           "lib/features/transactions/**",
@@ -2465,7 +2468,9 @@
           "lib/core/l10n/app_fr.arb",
           "lib/core/l10n/app_he.arb",
           "lib/services/printing/receipt_delivery.dart",
-          "lib/services/printing/receipt_delivery_view.dart"
+          "lib/services/printing/receipt_delivery_view.dart",
+          "lib/services/payments/ashrait_receipt_*.dart",
+          "lib/services/printing/ashrait_receipt_fields.dart"
         ],
         "foodyadmin": [
           "src/app/[restaurantId]/transactions/**",
@@ -2474,7 +2479,8 @@
           "src/lib/route-permissions.ts",
           "src/components/Sidebar.tsx",
           "src/app/[restaurantId]/layout.tsx",
-          "src/lib/i18n.tsx"
+          "src/lib/i18n.tsx",
+          "src/lib/ashrait-card-receipt.ts"
         ]
       }
     },
@@ -2489,13 +2495,16 @@
           "lib/services/payments/terminal_payment_service.dart",
           "ios/Runner/VerifonePaymentBridge.m",
           "ios/Runner/AshraitProtocol.h",
+          "ios/Runner/AshraitReceipt.h",
           "android/app/src/main/kotlin/com/foodypos/app/VerifonePaymentBridge.kt",
           "lib/services/payments/pos_card_collection_repository.dart",
           "lib/features/orders/presentation/payment_terminal_picker.dart",
           "lib/core/ui/terminal_payment_error.dart",
           "android/app/src/main/kotlin/com/foodypos/app/AshraitProtocol.kt",
           "android/app/src/main/kotlin/com/foodypos/app/VerifonePrinterBridge.kt",
-          "lib/services/printing/ashrait_card_receipt_actions.dart"
+          "lib/services/printing/ashrait_card_receipt_actions.dart",
+          "lib/services/payments/ashrait_receipt_details.dart",
+          "lib/services/printing/ashrait_receipt_fields.dart"
         ]
       }
     },

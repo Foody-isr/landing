@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-11-09'
+updatedAt: '2026-11-11'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -269,6 +269,8 @@ Local preparation: apply migration 289 and deploy the compatible API before POS.
 ## Global terminal declarations
 
 On compatible API and Backoffice versions, a Foody superadmin opens Backoffice → Terminal fleet to search terminals across restaurants by name or identifier. Registered Portables appear through the existing inventory. For a Mini configured only on the iPad, select Register a Mini, choose the restaurant and enter its physical serial number and name. It appears as Unconfigured. In Edit inventory, declare the DID, VHQ deviceUid, SHVA terminal number, Ashrait provisioning ID, supplier number, acquirer and lifecycle. A save checks the revision and records an audit event. Use the physical serial on the device and keep each identifier in its own field. Restaurant Admin keeps its own restaurant scope. Keep credentials and card data out of these fields.
+
+The staff-scoped device inventory can include a payment_terminal component with a physical_key derived from the fleet serial. Compatible POS builds use it to link a verified LAN profile to the same device. Inventory returns only the derived key for this purpose.
 
 <span id="terminal-fleet-change-requests" />
 

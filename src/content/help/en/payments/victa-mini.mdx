@@ -5,7 +5,7 @@ apps: foodypos
 tags:
   - payments
   - pos-victa-mini
-updatedAt: '2026-11-07'
+updatedAt: '2026-11-11'
 featureId: pos-victa-mini
 audience: public
 releaseStatus: available
@@ -16,9 +16,9 @@ iPad POS → More → Settings → Hardware → Payment terminals
 
 ## Connect and restore the Victa Mini on iPad
 
-With payments.manage, open More → Settings → Hardware → Payment terminals. Configure the saved terminal or choose Add a payment terminal. Give it a recognizable name, select Mini or Portable, and enter its local IPv4 address and the 10-digit Ashrait ID supplied by Verifone. Choose Verify terminal identity: this reads the connected model and serial number without login, payment or Deposit. Check them against the intended physical device and explicitly confirm the identity before Save. A name or saved address alone does not prove which device is connected. A legacy configuration also requires this one-time verification. The ID stays masked and the catalogue is stored securely for this restaurant and API environment on this iPad. An unavailable or different physical identity blocks collection instead of selecting another terminal.
+With payments.manage, open More → Settings → Hardware → Payment terminals. Open an existing terminal’s details and choose Edit, or choose Add a terminal from the list. A saved terminal shares a row with its inventory entry when the hardware identities match. Give it a recognizable name, select Mini or Portable, and enter its local IPv4 address and the 10-digit Ashrait ID supplied by Verifone. Choose Identify the terminal. FoodyPOS reads the connected model and serial number without login, payment or Deposit. Check them against the intended physical device and explicitly confirm the identity before Save. A name or saved address alone does not prove which device is connected. A legacy configuration also requires this one-time verification. The ID stays masked and the catalogue is stored securely for this restaurant and API environment on this iPad. An unavailable or different physical identity blocks collection instead of selecting another terminal.
 
-The first saved terminal becomes the default. The Default terminal option can change it; choosing another terminal for one payment keeps that default. Keep each device switched on and reachable on the local network. When the restaurant and permissions are restored, opening FoodyPOS or returning to the foreground retries the same idle saved connection; Test connection retries a failed attempt. An idle verified destination can change without restarting the application. An ongoing initialization, payment or uncertain deposit prevents changes.
+The first saved terminal becomes the default. The Default terminal option can change it; choosing another terminal for one payment keeps that default. Keep each device switched on and reachable on the local network. When the restaurant and permissions are restored, opening FoodyPOS or returning to the foreground retries the same idle saved connection. To test a verified LAN terminal, open its details and choose Test connection. An idle verified destination can change without restarting the application. An ongoing initialization, payment or uncertain deposit prevents changes.
 
 Automatic reconnection sends no charge, transaction lookup or Deposit. Preserve the original device, configuration and journals when a payment or deposit is unresolved; do not erase data or downgrade to bypass a lock. Use the compatible POS and API on every device sharing a terminal. Physical Mini/Portable acceptance and availability of remote control on a Portable also running FoodyPOS must be checked with Verifone; these instructions do not certify that hardware scenario.
 
@@ -32,16 +32,16 @@ On iPad, Card sends the payment to the default terminal. To switch between Mini 
 
 ## Inspect the last terminal transaction
 
-In Hardware → Payment terminals, a manager can inspect the last transaction on the connected terminal. This read changes no payment. See [the procedure and its limits](/en/help/payments/ashrait-terminal-inspection).
+With the compatible version and permission to manage payments, open Hardware → Payment terminals, select the terminal’s details, then open Last terminal transaction. Choose Read last transaction to query that device. See [the procedure and its limits](/en/help/payments/ashrait-terminal-inspection).
 
 <span id="ashrait-checkout-card-copy" />
 
 ## Request a card receipt copy
 
-To request an Ashrait card copy, open More → Settings → Hardware → Payment terminals → Last terminal transaction. Compare its reference with the sale. When the terminal returned the document, print the customer or merchant copy on the Portable’s integrated printer or the Epson receipt printer selected on iPad. For the Foody sales receipt, open [Transactions → New receipt](/en/help/payments/transactions#new-pos-receipt).
+To request an Ashrait card copy, open More → Settings → Hardware → Payment terminals, open the details for the terminal used for the sale, then choose Last terminal transaction → Read last transaction. Compare its reference with the sale. When the terminal returned the document, print the customer or merchant copy on the Portable’s integrated printer or the Epson receipt printer selected on iPad. For the Foody sales receipt, open [Transactions → New receipt](/en/help/payments/transactions#new-pos-receipt).
 
 <span id="ashrait-terminal-installment-selection" />
 
 ## Offer installment payments
 
-With permission to manage payments, open More → Settings → Hardware → Payment terminals → Installment payments. Verify that the right terminal is active and enter the shekel range configured in VHQ. If the acquirer allows entering plans in Foody, enter its permitted maximum count as well. For a card payment within the range, you can ask the customer to choose installments on the terminal. When a maximum count is configured, Set installments in Foody lets you enter a permitted count and optionally a first payment amount. Confirm the plan before presenting the card. If the first payment field is blank, the terminal calculates the amounts. Foody records the full total after confirmation. Select Disable to remove the choice. The setting is local to this POS and terminal.
+With permission to manage payments, open More → Settings → Hardware → Payment terminals, open the active terminal’s details, then select Installment payments. Enter the shekel range configured in VHQ. If the acquirer allows entering plans in Foody, enter its permitted maximum count as well. For a card payment within the range, you can ask the customer to choose installments on the terminal. When a maximum count is configured, Set installments in Foody lets you enter a permitted count and optionally a first payment amount. Confirm the plan before presenting the card. If the first payment field is blank, the terminal calculates the amounts. Foody records the full total after confirmation. Select Disable to remove the choice. The setting is local to this POS and terminal.

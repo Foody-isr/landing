@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-11-05.
+Révision du relevé : 2026-11-11.
 
-110 fiches de fonctionnalités, 932 procédures/sous-fonctionnalités, dont 101 guides publics en trois langues et 9 fiches opérateur internes. Le relevé machine contient 2386 fichiers applicatifs et 2153 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+112 fiches de fonctionnalités, 963 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 10 fiches opérateur internes. Le relevé machine contient 2578 fichiers applicatifs et 2274 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 644 | 907 | fa9a0d9da45a ; versioned |
-| foodyadmin | 795 | 818 | be4e03e157ae ; versioned |
-| foodyweb | 355 | 174 | 5399d60559de ; versioned |
-| foodylanding | 156 | 31 | 416eebeb3be4 ; versioned |
-| foodypos | 391 | 171 | a5bb8ffadaf4 ; versioned |
-| foodybackoffice | 45 | 52 | ca09fd0d4837 ; versioned |
+| foodyserver | 755 | 979 | dbf66c10f653 ; versioned |
+| foodyadmin | 810 | 831 | f777d8e1c2e3 ; versioned |
+| foodyweb | 379 | 193 | 813734b6d249 ; versioned |
+| foodylanding | 157 | 31 | 665ba5edb3e4 ; versioned |
+| foodypos | 429 | 184 | 7496b13fe389 ; versioned |
+| foodybackoffice | 48 | 56 | fb9e53200f66 ; versioned |
 
 ## getting-started
 
@@ -108,6 +108,16 @@ Identifiant : `billing`. Public : public. Disponibilité : available. Services :
 - [Vérifier un changement de formule](../../src/content/help/fr/account/subscription.mdx#change)
 - [Consulter les événements de facturation](../../src/content/help/fr/account/subscription.mdx#events)
 
+### [Pilote de facturation Foody](internal/fr/foody-billing-sandbox.md)
+
+Identifiant : `foody-billing-sandbox`. Public : internal. Disponibilité : local-release-unverified. Services : foodyserver, foodyadmin, foodybackoffice.
+
+- [Configurer le marchand Verifone de Foody](internal/fr/foody-billing-sandbox.md#merchant)
+- [Publier ou modifier une offre privée](internal/fr/foody-billing-sandbox.md#offer)
+- [Payer et vérifier en sandbox](internal/fr/foody-billing-sandbox.md#pay)
+- [Tester le premier renouvellement mensuel](internal/fr/foody-billing-sandbox.md#renewal)
+- [Lire l’usage mesuré](internal/fr/foody-billing-sandbox.md#measure)
+
 ## staff
 
 ### [Employés et invitations](../../src/content/help/fr/staff/invite-staff.mdx)
@@ -163,6 +173,13 @@ Identifiant : `customers-profiles`. Public : public. Disponibilité : available.
 - [Gérer les téléphones et choisir le numéro WhatsApp](../../src/content/help/fr/customers/managing-customers.mdx#phone-corrections)
 - [Utiliser les espèces avec garantie bancaire facultative](../../src/content/help/fr/customers/managing-customers.mdx#stancer-cash-guarantee)
 - [Résoudre un enregistrement bloqué par un téléphone](../../src/content/help/fr/customers/managing-customers.mdx#save-validation)
+
+### [Configurer un programme de fidélité](../../src/content/help/fr/customers/loyalty-program.mdx)
+
+Identifiant : `customers-loyalty-program`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb.
+
+- [Préparer le programme](../../src/content/help/fr/customers/loyalty-program.mdx#configure)
+- [Activer ou suspendre les adhésions](../../src/content/help/fr/customers/loyalty-program.mdx#activate)
 
 ## marketing
 
@@ -368,6 +385,7 @@ Identifiant : `menu-creating-a-menu-item`. Public : public. Disponibilité : ava
 - [Statut, Catégories et Cartes](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-6)
 - [Prix et variantes](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-7)
 - [Personnalisations et autres sections](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-10)
+- [Autoriser une note du client](../../src/content/help/fr/menu/creating-a-menu-item.mdx#item-customer-note)
 - [Enregistrer, puis compléter la recette](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-11)
 - [Vérifier l’affichage et résoudre une absence](../../src/content/help/fr/menu/creating-a-menu-item.mdx#section-12)
 - [Ajouter un article enregistré à une carte publiée](../../src/content/help/fr/menu/creating-a-menu-item.mdx#carte-series-stock)
@@ -529,7 +547,7 @@ Identifiant : `orders-managing-orders`. Public : public. Disponibilité : availa
 - [Vérifier les confirmations indépendantes](../../src/content/help/fr/orders/managing-orders.mdx#independent-lifecycle-confirmations)
 - [Accepter une commande programmée avant sa date](../../src/content/help/fr/orders/managing-orders.mdx#accept-scheduled-order)
 - [Commandes événement depuis le parcours habituel](../../src/content/help/fr/orders/managing-orders.mdx#event-orders)
-- [Choisir le terminal](../../src/content/help/fr/orders/managing-orders.mdx#physical-card-destination)
+- [Terminal carte par défaut](../../src/content/help/fr/orders/managing-orders.mdx#physical-card-destination)
 
 ### [Types de commandes et remise](../../src/content/help/fr/orders/order-types.mdx)
 
@@ -573,6 +591,7 @@ Identifiant : `pos-order-entry`. Public : public. Disponibilité : available. Se
 - [Ajouter et personnaliser les articles](../../src/content/help/fr/orders/taking-an-order-pos.mdx#add)
 - [Affecter places et services](../../src/content/help/fr/orders/taking-an-order-pos.mdx#seat-course)
 - [Envoyer et vérifier la préparation](../../src/content/help/fr/orders/taking-an-order-pos.mdx#send)
+- [Vérifier où en est un plat à table](../../src/content/help/fr/orders/taking-an-order-pos.mdx#open-check-kitchen-progress)
 - [Reprendre ou encaisser](../../src/content/help/fr/orders/taking-an-order-pos.mdx#resume)
 - [Choisir la pièce jointe d’une étape](../../src/content/help/fr/orders/taking-an-order-pos.mdx#whatsapp-stage-attachment)
 - [Suivre le départ d’une livraison affectée](../../src/content/help/fr/orders/taking-an-order-pos.mdx#courier-departure-sync)
@@ -784,19 +803,23 @@ Identifiant : `pos-payments`. Public : public. Disponibilité : available. Servi
 - [Lire les transactions et rapports sur mobile](../../src/content/help/fr/payments/pos-checkout.mdx#mobile-terminal-pages)
 - [Sumit dans Admin](../../src/content/help/fr/payments/pos-checkout.mdx#prepared-sumit-checkout-integration)
 - [Connecter et retrouver le Victa Mini sur iPad](../../src/content/help/fr/payments/pos-checkout.mdx#victa-mini-connection)
-- [Choisir le terminal](../../src/content/help/fr/payments/pos-checkout.mdx#physical-card-destination)
+- [Terminal carte par défaut](../../src/content/help/fr/payments/pos-checkout.mdx#physical-card-destination)
 - [Utiliser le suivi de caisse commun](../../src/content/help/fr/payments/pos-checkout.mdx#unified-cash-workspace)
 - [Consulter les paiements confirmés](../../src/content/help/fr/payments/pos-checkout.mdx#transaction-history)
 - [Consulter la dernière transaction du terminal](../../src/content/help/fr/payments/pos-checkout.mdx#ashrait-last-transaction-inspection)
 - [Vérifier la caisse de l’appareil utilisé](../../src/content/help/fr/payments/pos-checkout.mdx#current-register-access)
+- [Demander une copie du reçu carte](../../src/content/help/fr/payments/pos-checkout.mdx#ashrait-checkout-card-copy)
+- [Proposer le paiement en plusieurs fois](../../src/content/help/fr/payments/pos-checkout.mdx#ashrait-terminal-installment-selection)
 
 ### [Connecter et retrouver le Victa Mini sur iPad](../../src/content/help/fr/payments/victa-mini.mdx)
 
 Identifiant : `pos-victa-mini`. Public : public. Disponibilité : available. Services : foodypos.
 
 - [Connecter et retrouver le Victa Mini sur iPad](../../src/content/help/fr/payments/victa-mini.mdx#connection)
-- [Choisir Mini ou Portable pour cet encaissement](../../src/content/help/fr/payments/victa-mini.mdx#explicit-terminal-selection)
+- [Encaisser sur le terminal par défaut](../../src/content/help/fr/payments/victa-mini.mdx#explicit-terminal-selection)
 - [Consulter la dernière transaction du terminal](../../src/content/help/fr/payments/victa-mini.mdx#ashrait-last-transaction-inspection)
+- [Demander une copie du reçu carte](../../src/content/help/fr/payments/victa-mini.mdx#ashrait-checkout-card-copy)
+- [Proposer le paiement en plusieurs fois](../../src/content/help/fr/payments/victa-mini.mdx#ashrait-terminal-installment-selection)
 
 ### [Comprendre un refus d’accès à la caisse](../../src/content/help/fr/payments/cash-access.mdx)
 
@@ -846,6 +869,8 @@ Identifiant : `pos-end-of-day`. Public : public. Disponibilité : local-release-
 - [Consulter les cartes enregistrées et les rapports précédents](../../src/content/help/fr/payments/end-of-day.mdx#end-of-day-recorded-cards-and-history)
 - [Suivre et clôturer depuis Solde en caisse](../../src/content/help/fr/payments/end-of-day.mdx#unified-cash-workspace)
 - [Clôturer l’appareil courant](../../src/content/help/fr/payments/end-of-day.mdx#current-register-scope)
+- [Définir la caisse principale](../../src/content/help/fr/payments/end-of-day.mdx#designate-main-register)
+- [Réimprimer un rapport de transmission SHVA](../../src/content/help/fr/payments/end-of-day.mdx#reprint-consolidated-shva)
 
 ### [Consulter les transactions](../../src/content/help/fr/payments/transactions.mdx)
 
@@ -858,6 +883,8 @@ Identifiant : `payments-transactions`. Public : public. Disponibilité : availab
 - [Lire correctement le total des transactions](../../src/content/help/fr/payments/transactions.mdx#transaction-gross-total)
 - [Comprendre les prestataires et la couverture](../../src/content/help/fr/payments/transactions.mdx#transaction-central-history)
 - [Lire une écriture dont la commande est indisponible](../../src/content/help/fr/payments/transactions.mdx#transaction-unavailable-allocation)
+- [Imprimer ou partager un nouveau reçu depuis FoodyPOS](../../src/content/help/fr/payments/transactions.mdx#new-pos-receipt)
+- [Consulter ou imprimer le reçu carte Verifone](../../src/content/help/fr/payments/transactions.mdx#transaction-ashrait-card-receipt)
 
 ### [Consulter la dernière transaction du terminal](../../src/content/help/fr/payments/ashrait-terminal-inspection.mdx)
 
@@ -866,6 +893,7 @@ Identifiant : `pos-ashrait-terminal-inspection`. Public : public. Disponibilité
 - [Consulter la dernière transaction du terminal](../../src/content/help/fr/payments/ashrait-terminal-inspection.mdx#ashrait-last-transaction-inspection)
 - [Capacités des rapports Ashrait en Israël](../../src/content/help/fr/payments/ashrait-terminal-inspection.mdx#terminal-reports-advanced)
 - [Reprendre un paiement Ashrait interrompu](../../src/content/help/fr/payments/ashrait-terminal-inspection.mdx#ashrait-last-transaction-recovery)
+- [Imprimer le reçu carte du terminal](../../src/content/help/fr/payments/ashrait-terminal-inspection.mdx#ashrait-portable-card-copy)
 
 ## printers
 
@@ -922,6 +950,7 @@ Identifiant : `website-qr-customize-your-site`. Public : public. Disponibilité 
 
 - [Ouvrir l’éditeur](../../src/content/help/fr/website-qr/customize-your-site.mdx#section-1)
 - [Enregistrer et publier sont deux actions différentes](../../src/content/help/fr/website-qr/customize-your-site.mdx#section-2)
+- [Récupérer les modifications après un changement dans un autre onglet](../../src/content/help/fr/website-qr/customize-your-site.mdx#recover-concurrent-draft)
 - [Vérifier la disponibilité des présentations de campagne](../../src/content/help/fr/website-qr/customize-your-site.mdx#campaign-compatibility)
 - [Menu et commandes](../../src/content/help/fr/website-qr/customize-your-site.mdx#section-3)
 - [Vérifier l’entrée de commande sur mobile](../../src/content/help/fr/website-qr/customize-your-site.mdx#mobile-fulfillment-review)
@@ -947,9 +976,11 @@ Identifiant : `website-navigation`. Public : public. Disponibilité : available.
 
 - [Configurer l’en-tête](../../src/content/help/fr/website-qr/navigation-and-footer.mdx#header)
 - [Gérer les liens et le bouton principal](../../src/content/help/fr/website-qr/navigation-and-footer.mdx#links)
+- [Personnaliser le menu latéral](../../src/content/help/fr/website-qr/navigation-and-footer.mdx#side-menu)
 - [Configurer le contenu du pied de page](../../src/content/help/fr/website-qr/navigation-and-footer.mdx#footer)
 - [Vérifier l’entrée de commande sur mobile](../../src/content/help/fr/website-qr/navigation-and-footer.mdx#mobile-fulfillment-review)
 - [Accès aux nouveaux réglages](../../src/content/help/fr/website-qr/navigation-and-footer.mdx#related-service-controls)
+- [Configurer l’expérience mobile](../../src/content/help/fr/website-qr/navigation-and-footer.mdx#mobile-experience)
 
 ### [Sections, médias et animations](../../src/content/help/fr/website-qr/sections-and-media.mdx)
 
@@ -958,6 +989,9 @@ Identifiant : `website-sections`. Public : public. Disponibilité : available. S
 - [Ajouter, déplacer et masquer les sections](../../src/content/help/fr/website-qr/sections-and-media.mdx#structure)
 - [Rédiger et sélectionner le contenu](../../src/content/help/fr/website-qr/sections-and-media.mdx#content)
 - [Régler images et vidéo](../../src/content/help/fr/website-qr/sections-and-media.mdx#media)
+- [Ajouter un carrousel vidéo avec des liens de commande](../../src/content/help/fr/website-qr/sections-and-media.mdx#video-carousel)
+- [Ouvrir le carrousel en Web Stories](../../src/content/help/fr/website-qr/sections-and-media.mdx#web-story-player)
+- [Ajouter un article au panier depuis une Web Story](../../src/content/help/fr/website-qr/sections-and-media.mdx#web-story-cart)
 - [Créer une bannière de campagne en carrousel](../../src/content/help/fr/website-qr/sections-and-media.mdx#campaign-hero)
 - [Régler les panneaux et les commandes du carrousel](../../src/content/help/fr/website-qr/sections-and-media.mdx#campaign-layout-controls)
 - [Régler la grille des articles mis en avant](../../src/content/help/fr/website-qr/sections-and-media.mdx#campaign-featured-grid)
@@ -970,6 +1004,9 @@ Identifiant : `website-sections`. Public : public. Disponibilité : available. S
 
 Identifiant : `website-order-design`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb.
 
+- [Faire choisir le mode avant la carte](../../src/content/help/fr/website-qr/order-page.mdx#service-before-menu)
+- [Personnaliser les écrans de choix, de retrait et de livraison](../../src/content/help/fr/website-qr/order-page.mdx#order-mode-screen-appearance)
+- [Configurer l’en-tête mobile de la carte](../../src/content/help/fr/website-qr/order-page.mdx#mobile-menu-header)
 - [Choisir disposition et navigation du menu](../../src/content/help/fr/website-qr/order-page.mdx#menu-layout)
 - [Distinguer les cartes et leurs groupes](../../src/content/help/fr/website-qr/order-page.mdx#menu-tabs-and-groups)
 - [Personnaliser la fiche article](../../src/content/help/fr/website-qr/order-page.mdx#item-surface)
@@ -1373,12 +1410,14 @@ Identifiant : `guest-ordering`. Public : public. Disponibilité : available. Ser
 - [Événements et empreintes bancaires](../../src/content/help/fr/guest/online-ordering.mdx#event-orders)
 - [Comprendre les produits prêts et les échéances](../../src/content/help/fr/guest/online-ordering.mdx#ready-products-and-cutoffs)
 - [Renseigner les coordonnées de livraison](../../src/content/help/fr/guest/online-ordering.mdx#delivery-contact-details)
+- [Changer de mode quand la boutique demande de choisir d’abord](../../src/content/help/fr/guest/online-ordering.mdx#service-first)
 
 ### [Suivi, reçus et moyens enregistrés](../../src/content/help/fr/guest/tracking-and-account.mdx)
 
 Identifiant : `guest-account-tracking`. Public : public. Disponibilité : available. Services : foodyserver, foodyweb, foodylanding.
 
 - [Se connecter avant de commander](../../src/content/help/fr/guest/tracking-and-account.mdx#entry-sign-in)
+- [Se déconnecter pour commander sans compte](../../src/content/help/fr/guest/tracking-and-account.mdx#order-as-guest-after-sign-out)
 - [Lire l’état de commande](../../src/content/help/fr/guest/tracking-and-account.mdx#tracking)
 - [Accéder à l’historique et aux reçus](../../src/content/help/fr/guest/tracking-and-account.mdx#history)
 - [Gérer l’enregistrement d’un moyen](../../src/content/help/fr/guest/tracking-and-account.mdx#methods)
@@ -1462,7 +1501,7 @@ Identifiant : `backoffice-operations`. Public : internal. Disponibilité : avail
 
 ### [Contrats API et opérations de livraison](internal/fr/api-and-release.md)
 
-Identifiant : `platform-api`. Public : internal. Disponibilité : available. Services : foodyserver, foodyweb, foodybackoffice.
+Identifiant : `platform-api`. Public : internal. Disponibilité : available. Services : foodyserver, foodyweb, foodypos, foodybackoffice.
 
 - [Rembourser ou annuler un paiement en ligne Verifone](internal/fr/api-and-release.md#verifone-admin-money-operations)
 - [Garder la page de paiement lisible](internal/fr/api-and-release.md#verifone-readable-hosted-theme)
@@ -1505,6 +1544,8 @@ Identifiant : `platform-api`. Public : internal. Disponibilité : available. Ser
 - [Choix staff du plan de production](internal/fr/api-and-release.md#manual-production-plan-choice)
 - [Déployer la demande de reçu par appareil](internal/fr/api-and-release.md#device-receipt-contract)
 - [Déclarations du parc de terminaux](internal/fr/api-and-release.md#terminal-fleet-declarations)
+- [Préparer un changement de terminal](internal/fr/api-and-release.md#terminal-fleet-change-requests)
+- [Tester la maintenance Ashrait sur un terminal CST](internal/fr/api-and-release.md#terminal-fleet-cst-maintenance)
 - [Préparer les contrats de disponibilité configurables](internal/fr/api-and-release.md#configurable-fulfillment-compatibility)
 - [Authentifier le contexte financier du POS courant](internal/fr/api-and-release.md#current-pos-financial-context)
 
@@ -1516,7 +1557,7 @@ Identifiant : `design-sandboxes`. Public : internal. Disponibilité : available.
 
 ### [Socle applicatif partagé](internal/fr/shared-runtime.md)
 
-Identifiant : `shared-runtime`. Public : internal. Disponibilité : available. Services : foodyadmin, foodyweb, foodylanding, foodypos, foodybackoffice.
+Identifiant : `shared-runtime`. Public : internal. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb, foodylanding, foodypos, foodybackoffice.
 
 - [Distinguer rapports, espèces et dépôt carte](internal/fr/shared-runtime.md#pos-reports-navigation)
 - [Rembourser ou annuler un paiement en ligne Verifone](internal/fr/shared-runtime.md#verifone-admin-money-operations)
