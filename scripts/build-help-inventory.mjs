@@ -116,9 +116,11 @@ for (const [service, configuredRoot] of Object.entries(roots)) {
       'foodyserver:internal/orders/ashrait_receipt_handler.go': ['payments-transactions'],
       'foodypos:lib/services/printing/ashrait_receipt_fields.dart': ['payments-transactions', 'pos-ashrait-terminal-inspection'],
     };
+    const mobileHomeOwnership = service === 'foodyserver' && file === 'internal/restaurants/website_mobile_home.go'
+      ? ['website-navigation', 'website-qr-customize-your-site'] : undefined;
     ids = terminalFleetModule || ashraitCSTModule ? ['platform-api']
       : ashraitReceiptOwnership[`${service}:${file}`] ?? currentPOSProofOwnership[`${service}:${file}`]
-        ?? focusedStockOwnership[`${service}:${file}`] ?? ids;
+        ?? focusedStockOwnership[`${service}:${file}`] ?? mobileHomeOwnership ?? ids;
     sources[file] = { sha256: digest(bytes), features: ids };
     const found = [];
     if (/(?:^|\/)app\/.*\/(?:page|route)\.[jt]sx?$/.test(file)) found.push({ kind: file.includes('/route.') ? 'next-api-route' : 'next-page', route: routePath(file), line: 1 });
