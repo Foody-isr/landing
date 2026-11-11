@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-11-09'
+updatedAt: '2026-11-11'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -297,3 +297,9 @@ Préparation locale : le stock prêt nullable, daté et révisionné et les éch
 ## Authentifier le contexte financier du POS courant
 
 Les clients compatibles envoient X-Foody-POS-Token uniquement à l’API de commandes authentifiée de confiance et à leurs routes de fin de période/précontrôle, jamais aux destinations publiques ou redirigées. L’API ne conserve que l’empreinte dans une copie de service propre à la requête, vérifie restaurant, expiration, révocation et installation, puis verrouille la période et les autorisations d’origine/courante dans un ordre stable. Le pointage ne change pas. Sans preuve, la règle historique reste appliquée ; une preuve explicite invalide est refusée. Espèces, clôture, réservations carte et portions financières partagent cette identité. La déconnexion conserve les obligations des deux caisses. Déployer l’API avant les clients ; aucune migration ni configuration d’environnement.
+
+<span id="courier-stop-results" />
+
+## Contrat de navigation et de résultat livreur
+
+Déployez la migration 313 avant l’API et l’Admin compatibles. Les actions de navigation et de signalement contrôlent le restaurant, la tournée active et le livreur affecté. La navigation enregistre l’arrêt dont le résultat est attendu. Une tournée ne peut avoir qu’un seul arrêt en attente de ce résultat. Un signalement conserve une tentative infructueuse dans le journal sans terminer la commande. Celle-ci sort de la sélection automatique du livreur et du suivi GPS côté client jusqu’au départ d’une nouvelle tournée. Un responsable peut envoyer un rappel push aux appareils enregistrés du livreur affecté.
