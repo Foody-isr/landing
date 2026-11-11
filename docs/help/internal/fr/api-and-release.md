@@ -270,6 +270,8 @@ Préparation locale : appliquer la migration 289 et déployer l’API compatible
 
 Sur les versions compatibles de l’API et du Backoffice, un superadmin Foody ouvre Backoffice → Terminal fleet pour rechercher les terminaux de tous les restaurants par nom ou identifiant. Les Portables enregistrés remontent via l’inventaire existant. Pour un Mini configuré uniquement sur l’iPad, choisissez Register a Mini, sélectionnez le restaurant et saisissez le numéro de série physique et le nom. Le Mini apparaît comme Unconfigured. Dans Edit inventory, déclarez le DID, le deviceUid VHQ, le numéro de terminal SHVA, l’identifiant de provisionnement Ashrait, le numéro fournisseur, l’acquéreur et l’état du matériel. La sauvegarde vérifie la révision et crée une trace d’audit. Lisez le numéro de série sur l’appareil et placez chaque identifiant dans son propre champ. L’Admin reste limité à son restaurant. Gardez les secrets et données de carte hors de ces champs.
 
+L’inventaire réservé au personnel peut inclure un composant payment_terminal avec une clé physical_key dérivée du numéro de série du parc. Les versions POS compatibles l’utilisent pour rapprocher un profil réseau vérifié de la fiche du même appareil. L’inventaire renvoie uniquement la clé dérivée pour cette opération.
+
 <span id="terminal-fleet-change-requests" />
 
 ## Préparer un changement de terminal

@@ -7,7 +7,7 @@ apps: both
 tags:
   - payments
   - pos-payments
-updatedAt: '2026-11-08'
+updatedAt: '2026-11-11'
 featureId: pos-payments
 audience: public
 releaseStatus: available
@@ -146,7 +146,7 @@ Open Transactions to review recorded cash, POS card and online payments. Follow 
 
 ## Inspect the last terminal transaction
 
-In Hardware → Payment terminals, a manager can inspect the last transaction on the connected terminal. This read changes no payment. See [the procedure and its limits](/en/help/payments/ashrait-terminal-inspection). On a compatible Portable, the guide also explains how to print the customer copy when Ashrait returns it.
+With the compatible version and permission to manage payments, open Hardware → Payment terminals, select the terminal’s details, then open Last terminal transaction. Choose Read last transaction to query that device. See [the procedure and its limits](/en/help/payments/ashrait-terminal-inspection).
 
 <span id="current-register-access" />
 
@@ -158,10 +158,10 @@ On compatible versions, paying from the Portable uses its own enrollment even wh
 
 ## Request a card receipt copy
 
-To request an Ashrait card copy, open More → Settings → Hardware → Payment terminals → Last terminal transaction. Compare its reference with the sale. When the terminal returned the document, print the customer or merchant copy on the Portable’s integrated printer or the Epson receipt printer selected on iPad. For the Foody sales receipt, open [Transactions → New receipt](/en/help/payments/transactions#new-pos-receipt).
+After a Verifone sale or refund is recorded, open it in Transactions and expand Verifone card receipt. Choose the customer or merchant copy to see its fields and print it. To read the latest result directly from a terminal, open More → Settings → Hardware → Payment terminals, select the terminal used for the sale, and choose Last terminal transaction → Read last transaction. Compare the reference with the sale before printing.
 
 <span id="ashrait-terminal-installment-selection" />
 
 ## Offer installment payments
 
-With permission to manage payments, open More → Settings → Hardware → Payment terminals → Installment payments. Verify that the right terminal is active and enter the shekel range configured in VHQ. If the acquirer allows entering plans in Foody, enter its permitted maximum count as well. For a card payment within the range, you can ask the customer to choose installments on the terminal. When a maximum count is configured, Set installments in Foody lets you enter a permitted count and optionally a first payment amount. Confirm the plan before presenting the card. If the first payment field is blank, the terminal calculates the amounts. Foody records the full total after confirmation. Select Disable to remove the choice. The setting is local to this POS and terminal.
+With permission to manage payments, open More → Settings → Hardware → Payment terminals, open the active terminal’s details, then select Installment payments. Enter the shekel range configured in VHQ. If the acquirer allows entering plans in Foody, enter its permitted maximum count as well. For a card payment within the range, you can ask the customer to choose installments on the terminal. When a maximum count is configured, Set installments in Foody lets you enter a permitted count and optionally a first payment amount. Confirm the plan before presenting the card. If the first payment field is blank, the terminal calculates the amounts. Foody records the full total after confirmation. Select Disable to remove the choice. The setting is local to this POS and terminal.

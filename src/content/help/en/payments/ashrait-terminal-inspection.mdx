@@ -5,7 +5,7 @@ apps: foodypos
 tags:
   - payments
   - pos-ashrait-terminal-inspection
-updatedAt: '2026-11-08'
+updatedAt: '2026-11-11'
 featureId: pos-ashrait-terminal-inspection
 audience: public
 releaseStatus: available
@@ -16,7 +16,7 @@ POS → More → Settings → Hardware → Payment terminals
 
 ## Inspect the last terminal transaction
 
-In the compatible version, open More → Settings → Hardware → Payment terminals. On iPad, inspection concerns the currently active paired terminal; on a Victa Portable recognized in the inventory, it concerns that device. The terminal must already be connected. With permission to manage payments, open Last terminal transaction and press Read last transaction. Opening the dialog does not send a query. Inspection shows only the reference, type, reported result and amount when available. A preauthorization stays distinct from a purchase; no payment or check is changed. No receipt or card details are displayed. An empty response, including after restart, does not prove that no payment occurred. For a pending payment or deposit, return to its original verification flow: inspection clears no lock and replays no operation. After changing account, restaurant, permission or terminal, read again; the old result is not reused. If the terminal fields are incomplete, Foody reads available details from the Ashrait receipt with the same reference. Missing or conflicting information stays Unconfirmed. Compare the reference with the sale in Transactions. Do not retry a payment based on this view alone.
+With a compatible version and permission to manage payments, open More → Settings → Hardware → Payment terminals. Open the details of the intended terminal, choose Last terminal transaction, then press Read last transaction. On iPad, FoodyPOS can connect to that verified terminal when it is reachable on the local network. For a Portable listed in inventory only, open its details in FoodyPOS on the Portable itself. Opening the dialog sends no query. If the connection fails or the identity cannot be confirmed, use Test connection on the same screen and verify the pairing. The payment default stays as configured. Inspection shows only the reference, type, reported result and amount when available. A preauthorization stays distinct from a purchase; no payment or check is changed. When the response includes a card receipt, expand Customer copy or Merchant copy to see its printable fields and the masked card number. An empty response, including after restart, does not prove that no payment occurred. For a pending payment or deposit, return to its original verification flow: inspection clears no lock and replays no operation. After changing account, restaurant, permission or terminal, read again; the old result is not reused. If the terminal fields are incomplete, Foody reads available details from the Ashrait receipt with the same reference. Missing or conflicting information stays Unconfirmed. Compare the reference with the sale in Transactions. Do not retry a payment based on this view alone.
 
 When Foody has a pending card payment, a manager can inspect the original terminal if it is connected, identified and ready. The screen shows that terminal’s latest known transaction. Have the original attempt verified if the result is empty or concerns a different sale. Once the attempt is resolved, available copies can be requested.
 
@@ -36,4 +36,4 @@ If the terminal response is lost, open the check on the original register with t
 
 ## Print the terminal card receipt
 
-Read the last transaction and compare its reference with the sale. If the terminal supplied a printable copy, choose Print card receipt for the customer or Print merchant card receipt. Foody uses the integrated printer on Victa Portable and the selected Epson receipt printer on the iPad paired with Victa Mini. The card number is masked. After printing is confirmed, Print another copy prints the same document. If printing is unconfirmed, check the paper before requesting another copy. These actions print a copy of the inspected transaction without a new payment or SHVA transmission.
+In Last terminal transaction, choose View last transaction, then expand Customer copy or Merchant copy if available. The details include the printable fields Ashrait returned for that copy. Select the corresponding card receipt print action. On the Portable it prints on the integrated printer. On the iPad it uses the configured Epson receipt printer. After a confirmed print, use Print another copy if requested. When paper status is uncertain, check the printer before attempting a new copy. For an earlier recorded payment or refund, open its card receipt in Transactions.

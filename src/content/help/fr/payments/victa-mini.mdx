@@ -5,7 +5,7 @@ apps: foodypos
 tags:
   - payments
   - pos-victa-mini
-updatedAt: '2026-11-07'
+updatedAt: '2026-11-11'
 featureId: pos-victa-mini
 audience: public
 releaseStatus: available
@@ -16,9 +16,9 @@ POS iPad → Plus → Paramètres → Matériel → Terminaux de paiement
 
 ## Connecter et retrouver le Victa Mini sur iPad
 
-Avec payments.manage, ouvrez Plus → Paramètres → Matériel → Terminaux de paiement. Configurez le terminal enregistré ou choisissez Ajouter un terminal de paiement. Donnez-lui un nom reconnaissable, choisissez Mini ou Portable puis saisissez son adresse IPv4 locale et l’identifiant Ashrait à 10 chiffres fourni par Verifone. Choisissez Vérifier l’identité du terminal : cette lecture relève le modèle et le numéro de série, sans connexion bancaire, paiement ni Deposit. Comparez-les au matériel voulu et confirmez explicitement cette identité avant Enregistrer. Un nom ou une adresse enregistrée ne prouve pas quel appareil est connecté. Une ancienne configuration nécessite aussi cette vérification unique. L’identifiant reste masqué et le catalogue est conservé de manière sécurisée pour ce restaurant et cet environnement API sur cet iPad. Un appareil indisponible ou différent bloque l’encaissement au lieu de sélectionner un autre terminal.
+Avec payments.manage, ouvrez Plus → Paramètres → Matériel → Terminaux de paiement. Ouvrez la fiche d’un terminal et choisissez Modifier, ou choisissez Ajouter un terminal depuis la liste. Une seule fiche réunit le terminal enregistré et son entrée d’inventaire lorsque l’identité matérielle correspond. Donnez-lui un nom reconnaissable, choisissez Mini ou Portable puis saisissez son adresse IPv4 locale et l’identifiant Ashrait à 10 chiffres fourni par Verifone. Choisissez Identifier le terminal. FoodyPOS relève le modèle et le numéro de série, sans connexion bancaire, paiement ni Deposit. Comparez-les au matériel voulu et confirmez explicitement cette identité avant Enregistrer. Un nom ou une adresse enregistrée ne prouve pas quel appareil est connecté. Une ancienne configuration nécessite aussi cette vérification unique. L’identifiant reste masqué et le catalogue est conservé de manière sécurisée pour ce restaurant et cet environnement API sur cet iPad. Un appareil indisponible ou différent bloque l’encaissement au lieu de sélectionner un autre terminal.
 
-Le premier terminal enregistré devient celui par défaut. L’option Terminal par défaut permet de le modifier ; choisir un autre terminal pour un paiement conserve ce défaut. Gardez chaque appareil allumé et joignable sur le réseau local. Après restauration du restaurant et des droits, l’ouverture de FoodyPOS ou le retour au premier plan retente la même connexion enregistrée si elle est libre ; Tester la connexion relance un essai échoué. Une destination vérifiée et libre peut changer sans redémarrer l’application. Une initialisation, un paiement ou un dépôt incertain bloque les modifications.
+Le premier terminal enregistré devient celui par défaut. L’option Terminal par défaut permet de le modifier ; choisir un autre terminal pour un paiement conserve ce défaut. Gardez chaque appareil allumé et joignable sur le réseau local. Après restauration du restaurant et des droits, l’ouverture de FoodyPOS ou le retour au premier plan retente la même connexion enregistrée si elle est libre. Pour tester un terminal réseau vérifié, ouvrez sa fiche et choisissez Tester la connexion. Une destination vérifiée et libre peut changer sans redémarrer l’application. Une initialisation, un paiement ou un dépôt incertain bloque les modifications.
 
 La reconnexion automatique n’envoie ni paiement, ni recherche de transaction, ni Deposit. Conservez l’appareil, la configuration et les journaux d’origine lorsqu’un paiement ou dépôt reste à résoudre ; n’effacez pas les données et ne rétrogradez pas pour contourner un blocage. Installez les versions POS et API compatibles sur chaque appareil partageant un terminal. L’acceptation matérielle Mini/Portable et le contrôle distant d’un Portable exécutant aussi FoodyPOS restent à vérifier avec Verifone ; cette procédure ne certifie pas ce scénario matériel.
 
@@ -32,16 +32,16 @@ Sur iPad, Carte envoie le paiement au terminal par défaut. Pour passer du Mini 
 
 ## Consulter la dernière transaction du terminal
 
-Dans Matériel → Terminaux de paiement, un responsable peut consulter la dernière transaction du terminal connecté. Cette lecture ne modifie aucun paiement. Voir [la procédure et ses limites](/fr/help/payments/ashrait-terminal-inspection).
+Avec la version compatible et le droit de gérer les paiements, ouvrez Matériel → Terminaux de paiement, puis la fiche du terminal voulu et Dernière transaction du terminal. Choisissez Consulter la dernière transaction pour interroger cet appareil. Voir [la procédure et ses limites](/fr/help/payments/ashrait-terminal-inspection).
 
 <span id="ashrait-checkout-card-copy" />
 
 ## Demander une copie du reçu carte
 
-Pour demander une copie carte Ashrait, ouvrez Plus → Paramètres → Matériel → Terminaux de paiement → Dernière transaction du terminal. Comparez la référence avec la vente. Lorsque le terminal a fourni le document, imprimez la copie client ou commerçant sur l’imprimante intégrée du Portable ou l’Epson de reçus sélectionnée sur l’iPad. Pour le reçu de vente Foody, ouvrez [Transactions → Nouveau reçu](/fr/help/payments/transactions#new-pos-receipt).
+Pour demander une copie carte Ashrait, ouvrez Plus → Paramètres → Matériel → Terminaux de paiement, ouvrez la fiche du terminal de la vente, puis choisissez Dernière transaction du terminal → Consulter la dernière transaction. Comparez la référence avec la vente. Lorsque le terminal a fourni le document, imprimez la copie client ou commerçant sur l’imprimante intégrée du Portable ou l’Epson de reçus sélectionnée sur l’iPad. Pour le reçu de vente Foody, ouvrez [Transactions → Nouveau reçu](/fr/help/payments/transactions#new-pos-receipt).
 
 <span id="ashrait-terminal-installment-selection" />
 
 ## Proposer le paiement en plusieurs fois
 
-Avec le droit de gérer les paiements, ouvrez Plus → Paramètres → Matériel → Terminaux de paiement → Paiement en plusieurs fois. Vérifiez que le bon terminal est actif et saisissez en shekels la plage configurée dans VHQ. Si l’acquéreur autorise la saisie dans Foody, renseignez aussi son plafond d’échéances. Pour un paiement carte dans la plage, vous pouvez demander au client de choisir ses échéances sur le terminal. Si un plafond est configuré, Définir les échéances dans Foody permet de saisir le nombre autorisé et, facultativement, le montant du premier versement. Confirmez le plan avant de présenter la carte. Si le premier versement est vide, le terminal calcule la répartition. Foody enregistre le total après confirmation. Pour retirer le choix, utilisez Désactiver. Le réglage est local à cette caisse et ce terminal.
+Avec le droit de gérer les paiements, ouvrez Plus → Paramètres → Matériel → Terminaux de paiement, ouvrez la fiche du terminal actif, puis choisissez Paiement en plusieurs fois. Saisissez en shekels la plage configurée dans VHQ. Si l’acquéreur autorise la saisie dans Foody, renseignez aussi son plafond d’échéances. Pour un paiement carte dans la plage, vous pouvez demander au client de choisir ses échéances sur le terminal. Si un plafond est configuré, Définir les échéances dans Foody permet de saisir le nombre autorisé et, facultativement, le montant du premier versement. Confirmez le plan avant de présenter la carte. Si le premier versement est vide, le terminal calcule la répartition. Foody enregistre le total après confirmation. Pour retirer le choix, utilisez Désactiver. Le réglage est local à cette caisse et ce terminal.

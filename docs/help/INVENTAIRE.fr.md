@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-10-18.
+Révision du relevé : 2026-11-11.
 
-112 fiches de fonctionnalités, 965 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 10 fiches opérateur internes. Le relevé machine contient 2570 fichiers applicatifs et 2274 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+112 fiches de fonctionnalités, 966 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 10 fiches opérateur internes. Le relevé machine contient 2580 fichiers applicatifs et 2277 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,11 +10,11 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 753 | 980 | dbf66c10f653 ; versioned |
-| foodyadmin | 808 | 830 | ee0bb49fa44c ; versioned |
+| foodyserver | 757 | 982 | dbf66c10f653 ; versioned |
+| foodyadmin | 810 | 831 | 40c54b70066f ; versioned |
 | foodyweb | 379 | 193 | 813734b6d249 ; versioned |
-| foodylanding | 157 | 31 | 665ba5edb3e4 ; versioned |
-| foodypos | 425 | 184 | eb30b09432c0 ; versioned |
+| foodylanding | 157 | 31 | 7d53f0f87e1b ; versioned |
+| foodypos | 429 | 184 | 322c2e75f59d ; versioned |
 | foodybackoffice | 48 | 56 | fb9e53200f66 ; versioned |
 
 ## getting-started
@@ -884,6 +884,7 @@ Identifiant : `payments-transactions`. Public : public. Disponibilité : availab
 - [Comprendre les prestataires et la couverture](../../src/content/help/fr/payments/transactions.mdx#transaction-central-history)
 - [Lire une écriture dont la commande est indisponible](../../src/content/help/fr/payments/transactions.mdx#transaction-unavailable-allocation)
 - [Imprimer ou partager un nouveau reçu depuis FoodyPOS](../../src/content/help/fr/payments/transactions.mdx#new-pos-receipt)
+- [Consulter ou imprimer le reçu carte Verifone](../../src/content/help/fr/payments/transactions.mdx#transaction-ashrait-card-receipt)
 
 ### [Consulter la dernière transaction du terminal](../../src/content/help/fr/payments/ashrait-terminal-inspection.mdx)
 
