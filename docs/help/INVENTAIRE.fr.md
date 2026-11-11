@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-11-11.
 
-112 fiches de fonctionnalités, 963 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 10 fiches opérateur internes. Le relevé machine contient 2578 fichiers applicatifs et 2274 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+112 fiches de fonctionnalités, 966 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 10 fiches opérateur internes. Le relevé machine contient 2580 fichiers applicatifs et 2277 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,11 +10,11 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 755 | 979 | dbf66c10f653 ; versioned |
-| foodyadmin | 810 | 831 | f777d8e1c2e3 ; versioned |
+| foodyserver | 757 | 982 | dbf66c10f653 ; versioned |
+| foodyadmin | 810 | 831 | 40c54b70066f ; versioned |
 | foodyweb | 379 | 193 | 813734b6d249 ; versioned |
-| foodylanding | 157 | 31 | 665ba5edb3e4 ; versioned |
-| foodypos | 429 | 184 | 7496b13fe389 ; versioned |
+| foodylanding | 157 | 31 | 7d53f0f87e1b ; versioned |
+| foodypos | 429 | 184 | 322c2e75f59d ; versioned |
 | foodybackoffice | 48 | 56 | fb9e53200f66 ; versioned |
 
 ## getting-started
@@ -1269,6 +1269,7 @@ Identifiant : `delivery-dispatch`. Public : public. Disponibilité : available. 
 - [Lire la dernière position reçue](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#courier-position)
 - [Vérifier les confirmations indépendantes](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#independent-lifecycle-confirmations)
 - [Tester la date de passage d’une commande](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#ordering-simulation-clock)
+- [Suivre les départs et les résultats](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#courier-results-and-reminders)
 
 ### [Parcours coursier et confirmation des livraisons](../../src/content/help/fr/delivery/courier-workspace.mdx)
 
@@ -1283,6 +1284,7 @@ Identifiant : `courier`. Public : public. Disponibilité : available. Services :
 - [Corriger un démarrage de test](../../src/content/help/fr/delivery/courier-workspace.mdx#accidental-departure)
 - [Consulter le mode d’un autre livreur](../../src/content/help/fr/delivery/courier-workspace.mdx#superadmin-courier-selection)
 - [Vérifier le suivi de position du livreur](../../src/content/help/fr/delivery/courier-workspace.mdx#live-location)
+- [Activer les rappels de tournée](../../src/content/help/fr/delivery/courier-workspace.mdx#route-reminders)
 
 ### [Fournisseurs de cartes et usages](../../src/content/help/fr/delivery/maps-and-usage.mdx)
 
@@ -1548,6 +1550,7 @@ Identifiant : `platform-api`. Public : internal. Disponibilité : available. Ser
 - [Tester la maintenance Ashrait sur un terminal CST](internal/fr/api-and-release.md#terminal-fleet-cst-maintenance)
 - [Préparer les contrats de disponibilité configurables](internal/fr/api-and-release.md#configurable-fulfillment-compatibility)
 - [Authentifier le contexte financier du POS courant](internal/fr/api-and-release.md#current-pos-financial-context)
+- [Contrat de navigation et de résultat livreur](internal/fr/api-and-release.md#courier-stop-results)
 
 ### [Aperçus internes et alias de routes](internal/fr/design-previews.md)
 

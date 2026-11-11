@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "Foody-isr/admin",
-  "ref": "4312c58242d0656d5ecf34e8bfa6331d35e6910f",
+  "ref": "ee0bb49fa44c38f0d66aa47f0ba9e4a98725839c",
   "observations": [
     {
       "id": "table-status-descriptions-source-contract",
@@ -624,6 +624,25 @@
       "required": [
         "calendar?.prepared_stock_applied",
         "t('orderingSimulationReadyStock')"
+      ]
+    },
+    {
+      "id": "courier-stop-result-gate",
+      "source": "src/components/delivery/CourierItineraryView.tsx",
+      "required": [
+        "await beginStopNavigation",
+        "const actionStop = awaitingResult ??",
+        "onClick={onReportIssue}",
+        "courierStartAndNavigate"
+      ]
+    },
+    {
+      "id": "dispatcher-courier-reminder",
+      "source": "src/components/delivery/DispatcherView.tsx",
+      "required": [
+        "await remindRouteCourier(rid, routeId)",
+        "courierResultPending",
+        "courierReportedIssues"
       ]
     }
   ],
@@ -1316,6 +1335,26 @@
           "קבלת ההזמנה ופרטי לקוח",
           "הקודם",
           "מסגרת אדומה"
+        ]
+      }
+    },
+    {
+      "article": "delivery/courier-workspace",
+      "required": {
+        "en": [
+          "Start and open Waze",
+          "Report a problem",
+          "Enable route reminders"
+        ],
+        "fr": [
+          "Démarrer et ouvrir Waze",
+          "Signaler un problème",
+          "Activer les rappels de tournée"
+        ],
+        "he": [
+          "התחלת מסלול ופתיחת Waze",
+          "דיווח על בעיה",
+          "הפעלת תזכורות למסלול"
         ]
       }
     }

@@ -299,3 +299,9 @@ Local preparation: nullable dated/revisioned shelf stock and optional zone deadl
 ## Authenticate the current POS financial context
 
 Compatible clients send X-Foody-POS-Token only to the trusted authenticated orders API and their own shift-end/preflight endpoints, never public or redirected destinations. The API retains only a hash in a request-scoped service copy, validates restaurant ownership, expiry, revocation and installation, then locks the employee interval and original/current credentials in stable order. Attendance never moves. Missing proof keeps the legacy original-device rule; explicit invalid proof fails closed. Cash, EOD, card reservations and financial portions share this identity. Logout retains original and current cash duties. Deploy API before clients; no migration or environment change.
+
+<span id="courier-stop-results" />
+
+## Courier navigation and result contract
+
+Deploy migration 313 before the matching API and Admin. The restaurant-scoped courier navigate and issue routes require an active route and its assigned courier context. Navigation records the stop awaiting a result. Only one pending stop may reserve navigation per route. An issue preserves an audited unsuccessful attempt without completing the order. It removes the order from automatic courier selection and guest GPS tracking until a new route starts. Order managers can send a push reminder to the assigned courier’s registered devices.
