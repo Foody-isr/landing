@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - delivery
   - delivery-dispatch
-updatedAt: '2026-10-30'
+updatedAt: '2026-11-11'
 featureId: delivery-dispatch
 audience: public
 releaseStatus: available
@@ -58,7 +58,7 @@ Enregistrez la tournée vérifiée puis utilisez le dispatch. Suivez coursier et
 
 Dans la vue livreur, le montant de la commande est affiché uniquement pour un paiement en espèces. Les paiements par carte, les autres moyens de paiement et les commandes dont le moyen de paiement est inconnu n’affichent pas de montant.
 
-Dans l’espace livreur, les boutons fixes Naviguer et Marquer livrée ciblent l’arrêt sélectionné dans la liste ou sur la carte ; son numéro et son adresse sont affichés au-dessus. Une ancienne page ne peut pas valider une livraison depuis une tournée annulée ou inactive, ni après réaffectation de la commande à un autre livreur. En cas de refus, actualisez les tournées et sélectionnez l’affectation actuelle.
+La barre fixe affiche l’arrêt sélectionné ou, dès que la navigation est lancée, l’arrêt dont le résultat est attendu. Une affectation obsolète ne peut pas être validée. Actualisez pour vérifier la tournée actuelle.
 
 <span id="endpoints" />
 
@@ -130,7 +130,7 @@ Dans le panneau Aide et assistance de FoodyAdmin, ouvrez **Guide du compte Googl
 
 ## Annuler un départ lancé par erreur
 
-Avec la permission de gestion des commandes, ouvrez Commandes → Livraisons, sélectionnez la date de la tournée et cliquez sur Annuler le départ. Cette action est proposée seulement sur une tournée en cours dont tous les arrêts sont encore en attente. Confirmez : la tournée revient en brouillon et les commandes En livraison repassent En préparation. Les commandes déjà corrigées en Acceptée, En préparation ou Prête pour livraison gardent leur statut. Le livreur reste affecté ; utilisez ensuite Désassigner, puis répartissez les commandes au bon livreur. La date, les adresses, l’ordre des arrêts et les paiements sont conservés. Aucun message client ni ticket de cuisine n’est envoyé par cette annulation ; les messages déjà envoyés et leur historique ne sont pas effacés. Si une arrivée, une livraison ou un arrêt ignoré a été enregistré, ou si la tournée a changé entre-temps, l’annulation est refusée : actualisez et vérifiez l’avancement avant une autre correction. Ne marquez pas les commandes livrées pour débloquer une affectation. Les modifications de planification sont réservées aux responsables autorisés dans Livraisons ; elles ne sont pas accessibles aux comptes livreur ni depuis le mode livreur du propriétaire ou du superadmin.
+Avec la permission de gestion des commandes, ouvrez Commandes → Livraisons, sélectionnez la date de la tournée et cliquez sur Annuler le départ. Cette action est proposée seulement sur une tournée en cours dont tous les arrêts sont encore en attente. Confirmez : la tournée revient en brouillon et les commandes En livraison repassent En préparation. Les commandes déjà corrigées en Acceptée, En préparation ou Prête pour livraison gardent leur statut. Le livreur reste affecté ; utilisez ensuite Désassigner, puis répartissez les commandes au bon livreur. La date, les adresses, l’ordre des arrêts et les paiements sont conservés. Aucun message client ni ticket de cuisine n’est envoyé par cette annulation ; les messages déjà envoyés et leur historique ne sont pas effacés. Si une arrivée, une livraison ou un arrêt ignoré a été enregistré, ou si la tournée a changé entre-temps, l’annulation est refusée : actualisez et vérifiez l’avancement avant une autre correction. Ne marquez pas les commandes livrées pour débloquer une affectation. Les modifications de planification sont réservées aux responsables autorisés dans Livraisons ; elles ne sont pas accessibles aux comptes livreur ni depuis le mode livreur du propriétaire ou du superadmin. L’annulation du départ est également indisponible dès qu’une navigation vers un arrêt est enregistrée.
 
 <span id="superadmin-courier-mode" />
 
@@ -157,3 +157,9 @@ Une remise partielle conserve les unités restantes. Terminer un seul poste KDS 
 ## Tester la date de passage d’une commande
 
 Dans Commandes et disponibilité → Simuler une commande, choisissez Date et heure de la commande dans le fuseau affiché, puis la date de réception et le panier. Maintenant recharge l’heure du serveur. La préparation et les règles du jour même sont évaluées à cette référence, avec les réglages enregistrés et les quantités prêtes actuelles. Une date passée ne reconstitue pas l’historique ; le test ne réserve pas de livreur et ne crée aucune commande. Les commandes clientes gardent l’heure réelle du serveur. Voir [la procédure de simulation](/fr/help/orders/preorders-and-batches#simulate-order). La simulation concerne la livraison classique ; les tournées publiées gardent leurs propres règles.
+
+<span id="courier-results-and-reminders" />
+
+## Suivre les départs et les résultats
+
+Dans Commandes → Livraisons, sélectionnez la date de la tournée. Départ à confirmer indique une tournée qui attend son départ. Résultat à confirmer indique que le livreur a lancé la navigation vers cet arrêt et doit encore enregistrer le résultat. Choisissez Rappeler le livreur sur une tournée ouverte pour envoyer une notification aux appareils enregistrés du livreur affecté. L’acceptation confirme la soumission du rappel et le livreur doit avoir activé ses notifications. Ouvrez la commande liée à un incident pour la traiter. Vérifiez le résultat réel et utilisez les actions de correction ou de remise proposées pour la commande. Dans Corriger le statut, ajoutez une note explicative.

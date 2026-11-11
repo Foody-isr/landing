@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - delivery
   - courier
-updatedAt: '2026-10-30'
+updatedAt: '2026-11-11'
 featureId: courier
 audience: public
 releaseStatus: available
@@ -24,13 +24,13 @@ Le mode livreur exécute la tournée enregistrée par le restaurant. Il ne perme
 
 ## Naviguer et contacter
 
-Touchez une adresse dans la chronologie ou son repère sur la carte pour sélectionner cet arrêt et afficher ses actions. Le repère fait défiler la liste sans valider de livraison ni changer l’ordre enregistré. Les boutons fixes Naviguer et Marquer livrée concernent le même arrêt sélectionné, dont le numéro et l’adresse apparaissent au-dessus sous Arrêt sélectionné. Vérifiez cette destination avant toute action. Touchez le téléphone pour appeler ou WhatsApp pour préparer un message. Les adresses non vérifiées restent signalées avant une recherche de navigation. Pour une adresse incorrecte ou un changement d’itinéraire, contactez le responsable : le livreur ne peut ni corriger l’adresse ni déplacer un arrêt.
+Après avoir démarré votre tournée, touchez une adresse ou un repère sur la carte, puis choisissez Naviguer dans la barre fixe et sélectionnez Waze ou Google Maps. Vérifiez le numéro et l’adresse affichés. Foody enregistre l’arrêt en cours avant d’ouvrir l’application de navigation. À votre retour dans Foody, cet arrêt reste sélectionné jusqu’à l’enregistrement de son résultat, même si vous rouvrez la page. Vous pouvez appeler le client avant le départ et ouvrir WhatsApp depuis la fiche de l’arrêt. Si Foody signale une adresse non vérifiée, vérifiez-la avec le restaurant avant de confirmer la recherche.
 
 <span id="complete" />
 
 ## Confirmer le résultat réel
 
-Après Démarrer, sélectionnez la livraison réellement remise dans la liste ou sur la carte, vérifiez son numéro et son adresse dans Arrêt sélectionné, puis touchez Marquer livrée. Sans sélection explicite, le prochain arrêt non terminé est proposé. Après une validation réussie, le prochain arrêt restant est proposé, mais aucune autre commande n’est livrée automatiquement. Marquer arrivé reste facultatif. Un arrêt déjà terminé ne peut pas être validé à nouveau depuis le bouton fixe. Si la tournée a été annulée, n’est plus active ou si la commande a changé de livreur, le serveur refuse la validation sans terminer la commande ni l’autre tournée : actualisez ou rouvrez vos tournées et sélectionnez l’affectation actuelle. Un échec affiche une erreur et conserve les livraisons restantes. La confirmation de livraison n’encaisse pas seule un solde impayé.
+Une fois la commande remise, vérifiez le numéro et l’adresse de l’arrêt dans la barre fixe puis choisissez Marquer livrée. Si la remise échoue, choisissez Signaler un problème, sélectionnez un motif et enregistrez. Le restaurant pourra traiter la commande. L’arrêt suivant est proposé dès que l’un de ces résultats est enregistré. La tournée se clôture quand tous les arrêts ont un résultat. Marquer arrivé reste facultatif et confirmer la livraison n’encaisse pas un solde impayé. Si Foody refuse l’enregistrement parce que la tournée ou l’affectation a changé, actualisez et vérifiez l’affectation actuelle avant de réessayer.
 
 <span id="departure-settings" />
 
@@ -39,6 +39,8 @@ Après Démarrer, sélectionnez la livraison réellement remise dans la liste ou
 Avant de partir, vérifiez la tournée enregistrée par le restaurant. Le mode livreur ne propose plus Ajuster, les réglages de tournée, Réoptimiser, la correction d’adresse ou le déplacement d’un arrêt. Le départ prévu, les points de départ et d’arrivée, les temps de remise, les créneaux et la composition de la tournée se modifient uniquement par un responsable autorisé dans Commandes → Livraisons. Cette règle vaut aussi pour un propriétaire ou superadmin qui consulte le mode livreur ; pour planifier, retournez dans Livraisons. Une ancienne interface ne peut pas enregistrer ces changements depuis les actions livreur.
 
 Démarrer la tournée confirme le départ réel des livraisons affectées non terminées et fait passer ensemble les commandes acceptées, en préparation ou prêtes en En livraison. Les commandes terminées ou annulées ne sont pas rouvertes. Une préparation retenue ou une commande au poids non finalisée doit être résolue auparavant. En cas d’échec, aucun changement partiel n’est enregistré. Un livreur ne peut avoir qu’une tournée active ; terminez-la avant de démarrer la suivante. Si une destination n’a pas pu être vérifiée, demandez au responsable de vérifier son adresse ou son point GPS avant de confirmer le départ.
+
+Au départ, choisissez Démarrer et ouvrir Waze pour enregistrer le départ puis naviguer vers le premier arrêt. Choisissez Démarrer pour enregistrer le départ et utiliser le menu de navigation plus tard.
 
 <span id="routing-service-limits" />
 
@@ -56,7 +58,7 @@ Sur mobile, faites glisser la poignée en haut de la liste pour choisir une vue 
 
 ## Corriger un démarrage de test
 
-Si vous avez démarré une tournée par erreur, prévenez un responsable avant d’enregistrer une arrivée ou une livraison. Dans Commandes → Livraisons, un utilisateur autorisé à gérer les commandes peut choisir Annuler le départ tant que tous les arrêts restent en attente, puis désassigner et réaffecter la tournée. Les commandes En livraison reviennent En préparation et le nouveau livreur pourra démarrer après réaffectation. Le mode livreur ne propose pas cette correction de gestion. Les messages déjà envoyés restent dans l’historique.
+Si vous avez démarré une tournée par erreur, prévenez un responsable avant d’enregistrer une arrivée ou une livraison. Dans Commandes → Livraisons, un utilisateur autorisé à gérer les commandes peut choisir Annuler le départ tant que tous les arrêts restent en attente, puis désassigner et réaffecter la tournée. Les commandes En livraison reviennent En préparation et le nouveau livreur pourra démarrer après réaffectation. Le mode livreur ne propose pas cette correction de gestion. Les messages déjà envoyés restent dans l’historique. L’annulation du départ est également indisponible dès qu’une navigation vers un arrêt est enregistrée.
 
 <span id="superadmin-courier-selection" />
 
@@ -71,3 +73,9 @@ Avec les versions compatibles de l’API et de l’Admin, connectez-vous comme p
 Le livreur doit ouvrir Foody sur son téléphone avec son propre compte, démarrer sa tournée et autoriser la localisation. Gardez Foody affiché avec une connexion Internet. Les positions GPS reçues sont transmises à Foody au maximum une fois toutes les dix secondes, selon le navigateur ; cette fréquence n’est pas garantie. Le point intitulé Position du livreur indique la dernière position reçue dans Livraisons et Mode livreur. Le triangle vert reste le départ prévu. L’heure affichée indique la réception de la position ; après plus d’une minute, la position est signalée ancienne et le point s’atténue. Sans position, un message le précise. Le mode livreur distingue l’attente du GPS, le refus de permission, un GPS indisponible et un échec de transmission. Corrigez les autorisations ou la connexion puis utilisez Réessayer. Ces états ne valident aucune livraison. Ouvrir Waze, changer d’application ou verrouiller le téléphone peut interrompre le suivi web : revenez dans Foody pour reprendre. Consulter un autre livreur avec Voir comme livreur affiche sa position reçue et n’envoie jamais celle du responsable. Le partage du GPS et le déplacement du point ne déclenchent aucun appel Google ; le chargement du fond de carte et les recalculs d’itinéraire gardent leur propre consommation.
 
 Le livreur est représenté par un avatar rond, au-dessus des repères de livraison, avec un libellé toujours visible. Une position ancienne conserve son avatar et le libellé Position ancienne du livreur. Le cadrage initial inclut la dernière position reçue ; dans Mode livreur, Afficher toute la tournée la remet dans le cadre avec les arrêts. Les mises à jour GPS déplacent l’avatar sans recentrer automatiquement la carte.
+
+<span id="route-reminders" />
+
+## Activer les rappels de tournée
+
+Dans le menu de l’espace livreur, ouvrez Rappels de tournée puis Activer les notifications sur le téléphone utilisé pour livrer. Sur iPhone, ouvrez Foody depuis son icône sur l’écran d’accueil avant l’activation. Si l’autorisation est bloquée, autorisez les notifications dans les réglages du téléphone. Un rappel envoyé par votre restaurant ouvre l’espace de livraison pour vous permettre de renseigner le résultat réel.
