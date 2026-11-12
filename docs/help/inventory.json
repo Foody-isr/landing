@@ -4,9 +4,9 @@
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "c9a555510aa7832ea4911b0827e5a2187fb16112",
+      "sourceCommit": "061c4e024c9a65e766b1f8ee75b5c5dbe40d6850",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "cfb88b3deca40d5e5357df63eb220ee74a18d199a43c6dba1aaa723e4d26157d",
+      "sourceSnapshot": "b96fc2669bba7677d0e0b794dda3ec5d0cc2668215a9c5fa4c4f0fadd3f05f6b",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -46,7 +46,7 @@
           ]
         },
         "cmd/server/boot_models.go": {
-          "sha256": "a34d5811ecf026cd31d90b337b249f58cfeac6d4435016159b0549783536b472",
+          "sha256": "0addcb5516aa3f3e3022fe62f76798cd992d81466fa43ff44ecdd903c68fdac6",
           "features": [
             "staff-invitations",
             "customers-profiles",
@@ -74,7 +74,7 @@
           ]
         },
         "cmd/server/main.go": {
-          "sha256": "ac09b2b6c1caf793335f6b29e2eb035eec1e2a4f71587d1fce713ffd1b395eec",
+          "sha256": "18594689de713d0db0bf82a74098300cd43ce5e27c70980371f8d53d1150a0e7",
           "features": [
             "staff-invitations",
             "customers-profiles",
@@ -96,6 +96,12 @@
           "sha256": "ad1806149ded06c0f42e25ffb03155c4fc591d81d805efcd3611ff32322a787c",
           "features": [
             "platform-api"
+          ]
+        },
+        "cmd/server/wallet_studio.go": {
+          "sha256": "5f3457c02a65426fb5d6fa165c06e35663449b8bfeea04dbe793a4abbcc4a17b",
+          "features": [
+            "customers-wallet-studio"
           ]
         },
         "cmd/websitev3seed/main.go": {
@@ -772,6 +778,12 @@
             "platform-api"
           ]
         },
+        "internal/common/loyalty_wallet_design.go": {
+          "sha256": "36d870c67ab5c9c14db3b93ae8b2f9d46a8587f740a3880f563ca5ae382615d7",
+          "features": [
+            "customers-wallet-studio"
+          ]
+        },
         "internal/common/menu_publication.go": {
           "sha256": "5c0f877898b7dd8312298383fa9dce79955ef445be0af1d75842780910b3d261",
           "features": [
@@ -950,6 +962,13 @@
           "sha256": "41a938b69374d556116be05ca8538bc4b4d68e5a2f9c48bbbfaf110c543bd727",
           "features": [
             "menu-menus-and-groups",
+            "platform-api"
+          ]
+        },
+        "internal/common/receipt_locale.go": {
+          "sha256": "c0b1027592db105356f9f485bb80e819fed36b8e6f14ea42a79191375ce8a925",
+          "features": [
+            "printer-profiles",
             "platform-api"
           ]
         },
@@ -2019,10 +2038,34 @@
             "platform-api"
           ]
         },
+        "internal/loyalty/wallet_studio.go": {
+          "sha256": "90e4046b757aba1098ec57f760704ef53dd7a15359c45cbf45b87ab1bd8d1a6d",
+          "features": [
+            "customers-wallet-studio"
+          ]
+        },
+        "internal/loyalty/wallet_studio_artwork.go": {
+          "sha256": "7c70a020435a3f7c51df583407cf3d92f4a1ecb82911cc793e866d996d13c364",
+          "features": [
+            "customers-wallet-studio"
+          ]
+        },
+        "internal/loyalty/wallet_studio_handler.go": {
+          "sha256": "b7adf3edd3368204de9febb4f1a79d8a1f3c998391ad045eb7676d271c2df8f5",
+          "features": [
+            "customers-wallet-studio"
+          ]
+        },
         "internal/loyaltywallet/apple.go": {
-          "sha256": "901e0b0648671ae33489ee650ef04855d85476b6c8a6b789b8a1ce26befd0320",
+          "sha256": "39dc17c3fba830320ca043608ae8d1d03f53f04ff943c41f92ab7b2286861aed",
           "features": [
             "platform-api",
+            "customers-wallet-studio"
+          ]
+        },
+        "internal/loyaltywallet/apple_studio.go": {
+          "sha256": "b762131ec31111732a14deaf094a72e690db7d11658d4623112f5c182998e530",
+          "features": [
             "customers-wallet-studio"
           ]
         },
@@ -4542,7 +4585,7 @@
           ]
         },
         "internal/printing/customer_receipts.go": {
-          "sha256": "b0f071583363fd1df109db6af92e708a99c7fc01099809a4b921a304c08dd8a2",
+          "sha256": "db7b7c67d4a9298bf3ad8688ddd0ec5567dc387102fb52a9425c2d638b81815f",
           "features": [
             "printers-epson-tm-u220iib",
             "printer-profiles",
@@ -4560,15 +4603,13 @@
           ]
         },
         "internal/printing/epson_receipt.go": {
-          "sha256": "c794985033b32f73207ccbffc68b325f1fb4d2d551a0e276e2373e61b4689c33",
+          "sha256": "79afd23afa8f43733cce7be19beb6357572d24d0ebcb87a5bb640cbcafeaccb4",
           "features": [
-            "printers-epson-tm-u220iib",
-            "printer-diagnostics",
-            "platform-api"
+            "printer-profiles"
           ]
         },
         "internal/printing/financial_receipt.go": {
-          "sha256": "98fa7e6e3a65c73359138dd421cdc9dea7d3bc7a01da7f6fd6c3349c74f668a5",
+          "sha256": "875c555b41cab8fd4d9fefccfde07bbe6d68f8fc7390384bfa6030ed8737bfdc",
           "features": [
             "printers-epson-tm-u220iib",
             "printer-diagnostics",
@@ -4579,6 +4620,7 @@
           "sha256": "67510f8f28879aeda746fe7e4886c917e25faba84c5da56bfc45c69ff3c33011",
           "features": [
             "printers-epson-tm-u220iib",
+            "printer-profiles",
             "printer-diagnostics",
             "platform-api"
           ]
@@ -4650,9 +4692,10 @@
           ]
         },
         "internal/printing/render.go": {
-          "sha256": "8f616d2fe5089a54882bc316b3fcc5bac53a39b72b22a5237b94f48f893cc5ed",
+          "sha256": "46a1699941ff2614eaeb478621067ddd087a81f2b0529541182c6d1bf5422bc3",
           "features": [
             "printers-epson-tm-u220iib",
+            "printer-profiles",
             "printer-diagnostics",
             "platform-api",
             "orders-events"
@@ -4661,32 +4704,27 @@
         "internal/printing/sale_receipt_layout.go": {
           "sha256": "9ef0a4a6718e82080923fc45bb0e36790cc488f0840a6a6aba45f6c6c7126cd4",
           "features": [
-            "printers-epson-tm-u220iib",
-            "printer-diagnostics",
-            "platform-api"
+            "printer-profiles"
           ]
         },
         "internal/printing/sale_receipt_logo.go": {
           "sha256": "3ea07cf921b7a98181a7b26ca3dd981bd5150135e5800eecc57eb78af3af5103",
           "features": [
-            "printers-epson-tm-u220iib",
-            "printer-diagnostics",
-            "platform-api"
+            "printer-profiles"
           ]
         },
         "internal/printing/sale_receipt_raster.go": {
-          "sha256": "6098b168d6d7e48251d25157fe1e2d365219a0de22a25835561a1df327524c2e",
+          "sha256": "03174ef49b6301a4b7b9d43efc076355b12ac7441fead5fc7a9585f4f5f7851f",
           "features": [
-            "printers-epson-tm-u220iib",
-            "printer-diagnostics",
-            "platform-api"
+            "printer-profiles"
           ]
         },
         "internal/printing/service.go": {
-          "sha256": "e851aaeca3e49808abc92330cbab53fd99252e23f49210cb94781ad3f31df74a",
+          "sha256": "afebfda5281492a7f0afc5eded094dff874f4445f6a8d1cc495218fb9a83a6b8",
           "features": [
             "menu-variants-and-sizes",
             "printers-epson-tm-u220iib",
+            "printer-profiles",
             "printer-diagnostics",
             "platform-api",
             "orders-events"
@@ -4696,6 +4734,7 @@
           "sha256": "e713fbc305193ad53697bbfc2f91cc988e2bf854da27fb1f5f023fb7504f3004",
           "features": [
             "printers-epson-tm-u220iib",
+            "printer-profiles",
             "printer-diagnostics",
             "platform-api",
             "orders-events"
@@ -4936,7 +4975,7 @@
           ]
         },
         "internal/restaurants/handler.go": {
-          "sha256": "a532955e11da3ff4be5c329e4aee29cca628acb550e7f6aea72b1b502928cbc5",
+          "sha256": "80d35ed1a1fe65f007b0a9ec21f7ee99b5b86cbe5adfbf31b7608ee0d9933648",
           "features": [
             "restaurant-profile",
             "fulfillment-policy",
@@ -5591,7 +5630,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "75ee4f0cf0dd1f1ec953ea2c1ae93da41c8ec8f82f69b18932344717097e6f32",
+          "sha256": "cc690e09a22355fbd1a24980ebf82c7caddcdb1188ca500658c5c97fbdf0507a",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -5699,7 +5738,7 @@
           ]
         },
         "internal/testutil/testutil.go": {
-          "sha256": "dc18469bb0f23ce17dd575642248da43b5d82bd3a4b5b2a68b7387ec9b37f02e",
+          "sha256": "4fbb0e32f9465397a9468dbed397b6b7eaed35b87f8e14d9ece9fa4b076428ec",
           "features": [
             "platform-api"
           ]
@@ -5880,6 +5919,7 @@
         "internal/upload/service.go": {
           "sha256": "56fd01a907693ca150d2e4a8c8c4fba477a5910edf3af24c6803306494988d9a",
           "features": [
+            "printer-profiles",
             "platform-api"
           ]
         },
@@ -6118,6 +6158,12 @@
           "sha256": "80c8393ad67c0aa55cd72886ac5398d739410fbc8ddc7a82061b7dfd62218e0a",
           "features": [
             "payments-transactions"
+          ]
+        },
+        "migrations/315_loyalty_wallet_designs.sql": {
+          "sha256": "869f572a12a852ba4840c535c85009f39a65d8652665d3d959b6fade52db3891",
+          "features": [
+            "customers-wallet-studio"
           ]
         }
       }
@@ -14448,10 +14494,10 @@
     },
     "foodylanding": {
       "repository": "https://github.com/Foody-isr/landing",
-      "sourceCommit": "07e741558581b47b2ec91f08811408b4d853c039",
+      "sourceCommit": "2988e0b653a98b35f0eb83a93269265a20eebfc0",
       "releaseStatus": "versioned",
       "sourceSnapshot": "8b4b17f71cf9b0d89ce88526685ae1cf1e46c76362233b6a0cbc072bb695291a",
-      "workingTreeHasChanges": true,
+      "workingTreeHasChanges": false,
       "sourceFiles": {
         "src/app/[lang]/about/page.tsx": {
           "sha256": "ed592053bdc8472e8d3fede74c08fe0cda7ebf2aa6226350676b16fa07ef2c39",
@@ -15438,9 +15484,9 @@
     },
     "foodypos": {
       "repository": "https://github.com/Foody-isr/pos",
-      "sourceCommit": "322c2e75f59dd104ae4068901e32afa8f1dc5018",
+      "sourceCommit": "a8b73ad6fa964f1655918e58f5eac176699b503f",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "4cae20cd5e24f738aa4822d6af96cd6aad84954b9f65923adc7507b5a1a65d9f",
+      "sourceSnapshot": "90115a814d7d38a72f899bd27ff211f64b2ebb871a351828240638a62ae208f7",
       "workingTreeHasChanges": false,
       "sourceFiles": {
         "android/app/src/main/kotlin/com/foodypos/app/AshraitProtocol.kt": {
@@ -15513,9 +15559,9 @@
           ]
         },
         "ios/Runner/EpsonPrinterBridge.m": {
-          "sha256": "ad0bd4396ff5097b171f18afc4c7d199a477b9be12a5d3d20de5c3568dbcf740",
+          "sha256": "6d47c0f3afa73d837fbe07eea6a0b2ed8be3fc915cb4bdb77fe7dae8638652eb",
           "features": [
-            "shared-runtime"
+            "printer-profiles"
           ]
         },
         "ios/Runner/KitchenAssistantAPI.swift": {
@@ -16008,7 +16054,7 @@
           ]
         },
         "lib/features/home/presentation/home_page.dart": {
-          "sha256": "a1e1e39720204b7fad93704bc23f7014f5ba21dc6dc5deca9431242a5ee5bee1",
+          "sha256": "094e5db681081ef6122bc6743227b2d9e603408d4bb43666e16904013de35841",
           "features": [
             "pos-workspace"
           ]
@@ -17469,7 +17515,7 @@
           ]
         },
         "lib/features/orders/presentation/widgets/check_panel.dart": {
-          "sha256": "b5b5e086a5c243a8611d3a26fc95242d700ca2bde7a816b6b9e333013fde2e7c",
+          "sha256": "ed2efc7d429ebcac58ee5eaf3eb9f22506e4525242264a114ffffe52adf8520b",
           "features": [
             "menu-variants-and-sizes",
             "orders-managing-orders",
@@ -17872,7 +17918,7 @@
           ]
         },
         "lib/features/settings/providers/settings_providers.dart": {
-          "sha256": "3929f4390c0402b09d5c28e61e94aaf485ed37a2269490ec355586237d4077fc",
+          "sha256": "20ab99984e1594079054ae479cd4644f08dfc89b7c4ee4438b3a2140da94473f",
           "features": [
             "pos-behavior",
             "pos-workspace"
@@ -18343,9 +18389,10 @@
           ]
         },
         "lib/services/printing/epson_native_printer_driver.dart": {
-          "sha256": "7ac37390ce70b0e00afa7ae0ca70e6ddf8655832340fbffb1c5ee409ba647197",
+          "sha256": "2b16cdf5f8eaf4b92ba8f072f8866ddf3e04b1bf3103375d6a9458e2f396263a",
           "features": [
-            "printers-epson-tm-u220iib"
+            "printers-epson-tm-u220iib",
+            "printer-profiles"
           ]
         },
         "lib/services/printing/epson_printer_driver.dart": {
@@ -18367,16 +18414,18 @@
           ]
         },
         "lib/services/printing/foody_print_spooler.dart": {
-          "sha256": "d219eb8d364430b3da0dcf6a478e66087f7835fd559b67bab09c68fe6d4b0c64",
+          "sha256": "37bc934480f521f03d770dca2c21570db813e82f54530c9678e44f31c0742e68",
           "features": [
             "printers-epson-tm-u220iib",
+            "printer-profiles",
             "printer-diagnostics"
           ]
         },
         "lib/services/printing/print_document.dart": {
-          "sha256": "ecc323b64f58e2feeeeeef44d6c9630207b96d4239890a89a198038836311214",
+          "sha256": "9565c18f59b7bdd8acf96ed7190a744ccc77f80f4ee6d64b755a7a62376cf43b",
           "features": [
-            "printers-epson-tm-u220iib"
+            "printers-epson-tm-u220iib",
+            "printer-profiles"
           ]
         },
         "lib/services/printing/print_spooler_fleet.dart": {
@@ -18400,9 +18449,10 @@
           ]
         },
         "lib/services/printing/print_spooler_repository.dart": {
-          "sha256": "9142c5cbc80e51c2f10104766249fdaec8bd49338008b759281dff025c29d093",
+          "sha256": "52d8231c6ec2171c73a3ac425e8df8d9326c07a8e19dcf39c47d77968858d9f7",
           "features": [
             "printers-epson-tm-u220iib",
+            "printer-profiles",
             "printer-diagnostics"
           ]
         },
@@ -18425,10 +18475,11 @@
           ]
         },
         "lib/services/printing/printer_fleet_service.dart": {
-          "sha256": "e7685006fda68afd895b6275f218f5b3e26fc75a5bc0828e2ba3afc8ba48e77e",
+          "sha256": "028e87c33a0dc8ce2d3abb32ea85462f4d9e9973baad6b40dfe1586d7c9067df",
           "features": [
             "menu-variants-and-sizes",
-            "printers-epson-tm-u220iib"
+            "printers-epson-tm-u220iib",
+            "printer-profiles"
           ]
         },
         "lib/services/printing/printer_service.dart": {
@@ -18444,9 +18495,10 @@
           ]
         },
         "lib/services/printing/receipt_bitmap_renderer.dart": {
-          "sha256": "8730b44b56d20f772cd1a2e9a886971931fb7a35c45d52c4c13ba2f4979c2921",
+          "sha256": "15808fad83353b6d4c3952d80d578177771f9c75469df37a50e13b7ca71ce59a",
           "features": [
             "printers-epson-tm-u220iib",
+            "printer-profiles",
             "orders-events"
           ]
         },
@@ -30741,10 +30793,6 @@
         },
         {
           "service": "foodyserver",
-          "file": "internal/printing/epson_receipt.go"
-        },
-        {
-          "service": "foodyserver",
           "file": "internal/printing/financial_receipt.go"
         },
         {
@@ -30786,18 +30834,6 @@
         {
           "service": "foodyserver",
           "file": "internal/printing/render.go"
-        },
-        {
-          "service": "foodyserver",
-          "file": "internal/printing/sale_receipt_layout.go"
-        },
-        {
-          "service": "foodyserver",
-          "file": "internal/printing/sale_receipt_logo.go"
-        },
-        {
-          "service": "foodyserver",
-          "file": "internal/printing/sale_receipt_raster.go"
         },
         {
           "service": "foodyserver",
@@ -45608,7 +45644,14 @@
         "foodypos": [
           "lib/features/settings/presentation/printer_settings_page.dart",
           "lib/features/settings/presentation/printer*.dart",
-          "lib/services/printing/receipt_delivery*.dart"
+          "lib/services/printing/receipt_delivery*.dart",
+          "lib/services/printing/epson_native_printer_driver.dart",
+          "lib/services/printing/foody_print_spooler.dart",
+          "lib/services/printing/print_document.dart",
+          "lib/services/printing/print_spooler_repository.dart",
+          "ios/Runner/EpsonPrinterBridge.m",
+          "lib/services/printing/receipt_bitmap_renderer.dart",
+          "lib/services/printing/printer_fleet_service.dart"
         ],
         "foodyadmin": [
           "src/app/[restaurantId]/settings/printers/**",
@@ -45618,7 +45661,16 @@
           "internal/foodyspooler/**",
           "internal/printing/customer_receipts.go",
           "internal/common/receipt_print_request.go",
-          "migrations/289_device_receipt_requests.sql"
+          "migrations/289_device_receipt_requests.sql",
+          "internal/printing/epson_receipt.go",
+          "internal/printing/sale_receipt_*.go",
+          "internal/printing/handler.go",
+          "internal/printing/render.go",
+          "internal/printing/service.go",
+          "internal/printing/ticket.go",
+          "internal/upload/service.go",
+          "internal/common/receipt_locale.go",
+          "internal/printing/sale_receipt_raster.go"
         ]
       },
       "operations": [
@@ -45695,17 +45747,21 @@
             "he": "בחירת יעדי קבלות לכל מכשיר"
           },
           "instructions": {
-            "fr": "Sur une version compatible de l’API et de FoodyPOS, ouvrez Plus → Paramètres → Imprimantes → Reçus de cet appareil. Avec la permission de gestion des imprimantes, sélectionnez une ou plusieurs imprimantes déjà affectées à un profil Reçus, puis Enregistrer. Sur le Victa Portable, l’imprimante intégrée est choisie par défaut. Sur iPad, l’Epson TM-m30III affectée aux reçus est privilégiée. Si aucune destination attendue n’est disponible, configurez son profil ou choisissez explicitement une autre imprimante. Une destination enregistrée devenue indisponible n’est jamais remplacée automatiquement. Le choix est conservé pour cette installation, ce restaurant et cet environnement ; il ne modifie ni l’iPad, ni un autre Victa, ni le profil partagé.\n\nAprès enregistrement du paiement, Foody envoie le reçu à ces destinations. Pour une autre imprimante, ouvrez [Transactions → Nouveau reçu](/fr/help/payments/transactions#new-pos-receipt), puis Autres imprimantes… et confirmez avec Imprimer le reçu. Le choix de cette copie conserve le réglage de la caisse.",
-            "en": "With compatible API and FoodyPOS versions, open More → Settings → Printers → Receipts from this device. With printer-management permission, select one or more printers already assigned a Receipts profile, then Save. Victa Portable defaults to its integrated printer. On iPad, an assigned Epson TM-m30III receipt printer is preferred. If the expected destination is unavailable, configure its profile or explicitly choose another printer. A saved destination that becomes unavailable is never automatically substituted. The choice belongs to this installation, restaurant and environment; it changes neither another iPad or Victa nor the shared profile.\n\nAfter payment is recorded, Foody sends the receipt to these destinations. For another printer, open [Transactions → New receipt](/en/help/payments/transactions#new-pos-receipt), then Other printers… and confirm with Print receipt. The one-off copy keeps the POS setting.",
-            "he": "בגרסאות תואמות של ה-API ושל FoodyPOS, פתחו עוד → הגדרות → מדפסות → קבלות ממכשיר זה. עם הרשאת ניהול מדפסות, בחרו מדפסת אחת או יותר שכבר משויכות לפרופיל קבלות ולחצו שמירה. ב-Victa Portable ברירת המחדל היא המדפסת המובנית. ב-iPad ניתנת עדיפות ל-Epson TM-m30III המשויכת לקבלות. אם היעד הצפוי אינו זמין, הגדירו את הפרופיל שלו או בחרו במפורש מדפסת אחרת. יעד שמור שהפך ללא זמין אינו מוחלף אוטומטית. הבחירה נשמרת להתקנה, למסעדה ולסביבה האלה בלבד; היא אינה משנה iPad או Victa אחרים או את הפרופיל המשותף.\n\nלאחר רישום התשלום, Foody שולחת את הקבלה ליעדים אלה. למדפסת אחרת, פתחו [עסקאות ← קבלה חדשה](/he/help/payments/transactions#new-pos-receipt), בחרו מדפסות אחרות… ואשרו בהדפסת קבלה. בחירת העותק שומרת על הגדרת הקופה."
+            "fr": "Sur une version compatible de l’API et de FoodyPOS, ouvrez Plus → Paramètres → Imprimantes → Reçus de cet appareil. Avec la permission de gestion des imprimantes, sélectionnez une ou plusieurs imprimantes déjà affectées à un profil Reçus, puis Enregistrer. Sur le Victa Portable, l’imprimante intégrée est choisie par défaut. Sur iPad, l’Epson TM-m30III affectée aux reçus est privilégiée. Si aucune destination attendue n’est disponible, configurez son profil ou choisissez explicitement une autre imprimante. Une destination enregistrée devenue indisponible n’est jamais remplacée automatiquement. Le choix est conservé pour cette installation, ce restaurant et cet environnement ; il ne modifie ni l’iPad, ni un autre Victa, ni le profil partagé.\n\nAprès enregistrement du paiement, Foody envoie le reçu à ces destinations. Si la transaction propose [Nouveau reçu](/fr/help/payments/transactions#new-pos-receipt), vous pouvez choisir Autres imprimantes… et confirmer avec Imprimer le reçu. Le choix de cette copie conserve le réglage de la caisse.\n\nLe reçu de vente imprimé après paiement affiche le logo importé dans FoodyAdmin. Si aucun logo n’est disponible, le nom du restaurant s’imprime en gras. Les montants sont alignés en colonne et les reçus en hébreu se lisent de droite à gauche. Sur iPad, une Epson TM-m30III en configuration standard 80 mm et 48 colonnes utilise sa police intégrée pour les lignes compatibles. Le Victa Portable avance le papier pour laisser une marge sous le reçu.\n\nLa langue des libellés du reçu de vente suit le pays enregistré pour le restaurant. En Israël, le reçu est en hébreu, même avec une caisse affichée en français. La France utilise le français. Foody utilise l’anglais si la langue du pays est indisponible. Les noms des articles utilisent les traductions disponibles dans le menu.",
+            "en": "With compatible API and FoodyPOS versions, open More → Settings → Printers → Receipts from this device. With printer-management permission, select one or more printers already assigned a Receipts profile, then Save. Victa Portable defaults to its integrated printer. On iPad, an assigned Epson TM-m30III receipt printer is preferred. If the expected destination is unavailable, configure its profile or explicitly choose another printer. A saved destination that becomes unavailable is never automatically substituted. The choice belongs to this installation, restaurant and environment; it changes neither another iPad or Victa nor the shared profile.\n\nAfter payment is recorded, Foody sends the receipt to these destinations. When the transaction offers [New receipt](/en/help/payments/transactions#new-pos-receipt), choose Other printers… and confirm with Print receipt. The one-off copy keeps the POS setting.\n\nThe sale receipt printed after payment includes the logo uploaded in FoodyAdmin. When no logo is available, the restaurant name prints in bold. Amounts are aligned in a column and Hebrew receipts read right to left. On iPad, an Epson TM-m30III in the standard 80 mm, 48-column configuration uses its built-in font for supported lines. Victa Portable advances the paper to leave room below the receipt.\n\nSale receipt labels follow the country configured for the restaurant. In Israel, receipts are in Hebrew even when the POS interface is in English. France uses French. Foody uses English when the country's language is unavailable. Item names use available menu translations.",
+            "he": "בגרסאות תואמות של ה-API ושל FoodyPOS, פתחו עוד → הגדרות → מדפסות → קבלות ממכשיר זה. עם הרשאת ניהול מדפסות, בחרו מדפסת אחת או יותר שכבר משויכות לפרופיל קבלות ולחצו שמירה. ב-Victa Portable ברירת המחדל היא המדפסת המובנית. ב-iPad ניתנת עדיפות ל-Epson TM-m30III המשויכת לקבלות. אם היעד הצפוי אינו זמין, הגדירו את הפרופיל שלו או בחרו במפורש מדפסת אחרת. יעד שמור שהפך ללא זמין אינו מוחלף אוטומטית. הבחירה נשמרת להתקנה, למסעדה ולסביבה האלה בלבד; היא אינה משנה iPad או Victa אחרים או את הפרופיל המשותף.\n\nלאחר רישום התשלום, Foody שולחת את הקבלה ליעדים אלה. אם מופיעה בעסקה האפשרות [קבלה חדשה](/he/help/payments/transactions#new-pos-receipt), בחרו מדפסות אחרות… ואשרו בהדפסת קבלה. בחירת העותק שומרת על הגדרת הקופה.\n\nקבלת המכירה המודפסת לאחר התשלום כוללת את הלוגו שהועלה ל-FoodyAdmin. כשאין לוגו זמין, שם המסעדה מודפס בהדגשה. הסכומים מיושרים בעמודה וקבלות בעברית נקראות מימין לשמאל. ב-iPad, מדפסת Epson TM-m30III בתצורה הרגילה של 80 מ״מ ו-48 עמודות משתמשת בגופן המובנה שלה לשורות נתמכות. ה-Victa Portable מקדם את הנייר ומשאיר שוליים מתחת לקבלה.\n\nשפת הכותרות בקבלת המכירה נקבעת לפי המדינה שמוגדרת למסעדה. בישראל הקבלה מודפסת בעברית גם אם ממשק הקופה מוצג בשפה אחרת. בצרפת הקבלה מודפסת בצרפתית. כששפת המדינה אינה נתמכת, Foody משתמשת באנגלית. שמות הפריטים מופיעים בתרגום הקיים בתפריט."
           }
         }
       ],
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-11-07",
+      "procedureUpdatedAt": "2026-11-12",
       "evidence": [
+        {
+          "service": "foodyserver",
+          "file": "internal/common/receipt_locale.go"
+        },
         {
           "service": "foodyserver",
           "file": "internal/common/receipt_print_request.go"
@@ -45713,6 +45769,42 @@
         {
           "service": "foodyserver",
           "file": "internal/printing/customer_receipts.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/printing/epson_receipt.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/printing/handler.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/printing/render.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/printing/sale_receipt_layout.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/printing/sale_receipt_logo.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/printing/sale_receipt_raster.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/printing/service.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/printing/ticket.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/upload/service.go"
         },
         {
           "service": "foodyserver",
@@ -45736,11 +45828,39 @@
         },
         {
           "service": "foodypos",
+          "file": "ios/Runner/EpsonPrinterBridge.m"
+        },
+        {
+          "service": "foodypos",
           "file": "lib/features/settings/presentation/printer_history_page.dart"
         },
         {
           "service": "foodypos",
           "file": "lib/features/settings/presentation/printer_settings_page.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/services/printing/epson_native_printer_driver.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/services/printing/foody_print_spooler.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/services/printing/print_document.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/services/printing/print_spooler_repository.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/services/printing/printer_fleet_service.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/services/printing/receipt_bitmap_renderer.dart"
         },
         {
           "service": "foodypos",
@@ -45882,10 +46002,6 @@
         },
         {
           "service": "foodyserver",
-          "file": "internal/printing/epson_receipt.go"
-        },
-        {
-          "service": "foodyserver",
           "file": "internal/printing/financial_receipt.go"
         },
         {
@@ -45927,18 +46043,6 @@
         {
           "service": "foodyserver",
           "file": "internal/printing/render.go"
-        },
-        {
-          "service": "foodyserver",
-          "file": "internal/printing/sale_receipt_layout.go"
-        },
-        {
-          "service": "foodyserver",
-          "file": "internal/printing/sale_receipt_logo.go"
-        },
-        {
-          "service": "foodyserver",
-          "file": "internal/printing/sale_receipt_raster.go"
         },
         {
           "service": "foodyserver",
@@ -51013,6 +51117,10 @@
         },
         {
           "service": "foodyserver",
+          "file": "internal/common/receipt_locale.go"
+        },
+        {
+          "service": "foodyserver",
           "file": "internal/common/receipt_print_request.go"
         },
         {
@@ -52581,10 +52689,6 @@
         },
         {
           "service": "foodyserver",
-          "file": "internal/printing/epson_receipt.go"
-        },
-        {
-          "service": "foodyserver",
           "file": "internal/printing/financial_receipt.go"
         },
         {
@@ -52626,18 +52730,6 @@
         {
           "service": "foodyserver",
           "file": "internal/printing/render.go"
-        },
-        {
-          "service": "foodyserver",
-          "file": "internal/printing/sale_receipt_layout.go"
-        },
-        {
-          "service": "foodyserver",
-          "file": "internal/printing/sale_receipt_logo.go"
-        },
-        {
-          "service": "foodyserver",
-          "file": "internal/printing/sale_receipt_raster.go"
         },
         {
           "service": "foodyserver",
@@ -56066,10 +56158,6 @@
         },
         {
           "service": "foodypos",
-          "file": "ios/Runner/EpsonPrinterBridge.m"
-        },
-        {
-          "service": "foodypos",
           "file": "ios/Runner/KitchenAssistantAPI.swift"
         },
         {
@@ -59472,7 +59560,35 @@
         },
         {
           "service": "foodyserver",
+          "file": "cmd/server/wallet_studio.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/common/loyalty_wallet_design.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyalty/wallet_studio.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyalty/wallet_studio_artwork.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyalty/wallet_studio_handler.go"
+        },
+        {
+          "service": "foodyserver",
           "file": "internal/loyaltywallet/apple.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyaltywallet/apple_studio.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "migrations/315_loyalty_wallet_designs.sql"
         },
         {
           "service": "foodyadmin",
@@ -78787,6 +78903,51 @@
       "routeFragment": "/me/loyalty-membership",
       "handler": "h.JoinProgram",
       "line": 44,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/loyalty/wallet_studio_handler.go:api-registration:28",
+      "service": "foodyserver",
+      "source": "internal/loyalty/wallet_studio_handler.go",
+      "features": [
+        "customers-wallet-studio"
+      ],
+      "kind": "api-registration",
+      "method": "GET",
+      "receiver": "group",
+      "routeFragment": "",
+      "handler": "studio.get",
+      "line": 28,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/loyalty/wallet_studio_handler.go:api-registration:29",
+      "service": "foodyserver",
+      "source": "internal/loyalty/wallet_studio_handler.go",
+      "features": [
+        "customers-wallet-studio"
+      ],
+      "kind": "api-registration",
+      "method": "PUT",
+      "receiver": "group",
+      "routeFragment": "",
+      "handler": "studio.put",
+      "line": 29,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/loyalty/wallet_studio_handler.go:api-registration:30",
+      "service": "foodyserver",
+      "source": "internal/loyalty/wallet_studio_handler.go",
+      "features": [
+        "customers-wallet-studio"
+      ],
+      "kind": "api-registration",
+      "method": "POST",
+      "receiver": "group",
+      "routeFragment": "/apple-test",
+      "handler": "studio.postAppleTest",
+      "line": 30,
       "resolution": "router-group-relative"
     },
     {
@@ -108552,7 +108713,8 @@
       "service": "foodypos",
       "source": "lib/services/printing/epson_native_printer_driver.dart",
       "features": [
-        "printers-epson-tm-u220iib"
+        "printers-epson-tm-u220iib",
+        "printer-profiles"
       ],
       "kind": "ui-controls",
       "labels": [],
@@ -108585,6 +108747,7 @@
       "source": "lib/services/printing/print_spooler_repository.dart",
       "features": [
         "printers-epson-tm-u220iib",
+        "printer-profiles",
         "printer-diagnostics"
       ],
       "kind": "ui-controls",
@@ -108618,7 +108781,8 @@
       "source": "lib/services/printing/printer_fleet_service.dart",
       "features": [
         "menu-variants-and-sizes",
-        "printers-epson-tm-u220iib"
+        "printers-epson-tm-u220iib",
+        "printer-profiles"
       ],
       "kind": "ui-controls",
       "labels": [],
@@ -109506,11 +109670,11 @@
     }
   ],
   "coverage": {
-    "sharedRuntimeFiles": 444,
+    "sharedRuntimeFiles": 443,
     "features": 113,
     "operations": 969,
-    "sourceFiles": 2591,
-    "surfaces": 2281,
+    "sourceFiles": 2599,
+    "surfaces": 2284,
     "unclassifiedRoutes": []
   }
 }
