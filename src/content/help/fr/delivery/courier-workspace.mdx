@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - delivery
   - courier
-updatedAt: '2026-11-11'
+updatedAt: '2026-11-12'
 featureId: courier
 audience: public
 releaseStatus: available
@@ -16,15 +16,17 @@ Admin → Commandes → Mode coursier, ou espace coursier affecté
 
 ## Ouvrir la tournée affectée
 
-Dans le mode livreur de Foody Admin, choisissez votre tournée dans la liste en haut, y compris les affectations à venir. La tournée active est proposée à l’ouverture. La carte et ses repères numérotés sont visibles dès le départ ; sur ordinateur, la chronologie est placée à côté. Vérifiez la date, les adresses, les horaires calculés, les contacts et les consignes. La fin, la distance et la durée sont des estimations du plan ; un calcul incomplet les masque. Ouvrez Durée totale pour consulter le détail disponible sans modifier le plan. Le menu rond donne accès au compte, au restaurant, à la langue et au thème.
+Dans le mode livreur de Foody Admin, choisissez votre tournée dans la liste en haut. La tournée active est proposée à l’ouverture. Avant le départ, la liste affiche les numéros de commande et les horaires calculés disponibles. Les adresses, les coordonnées des clients, les consignes et les repères clients restent masqués. La fin, la distance et la durée sont des estimations du plan. Ouvrez Durée totale pour consulter le détail disponible.
 
-Le mode livreur exécute la tournée enregistrée par le restaurant. Il ne permet pas de changer les paramètres, les adresses ou l’ordre des arrêts. Le montant de la commande est affiché uniquement pour un paiement en espèces ; il est masqué pour les autres moyens de paiement et lorsqu’il est inconnu.
+Le mode livreur exécute la tournée enregistrée par le restaurant. Le montant de la commande apparaît pour l’arrêt ouvert si le paiement est en espèces et si le montant est connu.
 
 <span id="navigate" />
 
 ## Naviguer et contacter
 
-Après avoir démarré votre tournée, touchez une adresse ou un repère sur la carte, puis choisissez Naviguer dans la barre fixe et sélectionnez Waze ou Google Maps. Vérifiez le numéro et l’adresse affichés. Foody enregistre l’arrêt en cours avant d’ouvrir l’application de navigation. À votre retour dans Foody, cet arrêt reste sélectionné jusqu’à l’enregistrement de son résultat, même si vous rouvrez la page. Vous pouvez appeler le client avant le départ et ouvrir WhatsApp depuis la fiche de l’arrêt. Si Foody signale une adresse non vérifiée, vérifiez-la avec le restaurant avant de confirmer la recherche.
+Après le départ, sélectionnez un arrêt par son numéro de commande, puis choisissez Ouvrir cet arrêt. Foody enregistre l’arrêt en cours et affiche son adresse, son repère si disponible, son téléphone et ses consignes. Vous pouvez appeler le client, ouvrir WhatsApp ou choisir Waze ou Google Maps dans la barre d’actions. Si Foody signale une adresse non vérifiée, vérifiez-la avec le restaurant avant de confirmer la recherche.
+
+À votre retour de la navigation, l’arrêt en cours reste accessible, même après un rechargement. Enregistrez Marquer livrée ou Signaler un problème pour fermer cet arrêt et pouvoir ouvrir le suivant.
 
 <span id="complete" />
 
@@ -40,19 +42,19 @@ Avant de partir, vérifiez la tournée enregistrée par le restaurant. Le mode l
 
 Démarrer la tournée confirme le départ réel des livraisons affectées non terminées et fait passer ensemble les commandes acceptées, en préparation ou prêtes en En livraison. Les commandes terminées ou annulées ne sont pas rouvertes. Une préparation retenue ou une commande au poids non finalisée doit être résolue auparavant. En cas d’échec, aucun changement partiel n’est enregistré. Un livreur ne peut avoir qu’une tournée active ; terminez-la avant de démarrer la suivante. Si une destination n’a pas pu être vérifiée, demandez au responsable de vérifier son adresse ou son point GPS avant de confirmer le départ.
 
-Au départ, choisissez Démarrer et ouvrir Waze pour enregistrer le départ puis naviguer vers le premier arrêt. Choisissez Démarrer pour enregistrer le départ et utiliser le menu de navigation plus tard.
+Au départ, choisissez Démarrer et ouvrir Waze pour enregistrer le départ, ouvrir le premier arrêt et lancer Waze. Si vous choisissez Démarrer, les adresses restent masquées jusqu’à l’action Ouvrir cet arrêt.
 
 <span id="routing-service-limits" />
 
 ## Réagir à une limite du service cartographique
 
-Un avertissement de quota atteint ou de service indisponible ne signifie pas que l’adresse du client est fausse. Les positions Google connues restent affichées sur la carte Google tant que leur cache est valide ; les positions non vérifiées sont signalées temporairement indisponibles. Le tracé et les arrivées impossibles à calculer restent masqués. Prévenez le responsable afin qu’il vérifie Consommation et quotas, puis actualisez au retour du service. Réessayer dans le mode livreur recharge les informations sans recalculer ni modifier la tournée. Un recalcul nécessaire se fait par le responsable dans Livraisons. Les commandes et leurs adresses sont conservées. Vérifiez les horaires actualisés avant de contacter les clients.
+Un avertissement de quota atteint ou de service indisponible ne signifie pas que l’adresse du client est fausse. La position connue de l’arrêt ouvert reste affichée sur la carte Google tant que son cache est valide ; les positions non vérifiées sont signalées temporairement indisponibles. Le tracé et les arrivées impossibles à calculer restent masqués. Prévenez le responsable afin qu’il vérifie Consommation et quotas, puis actualisez au retour du service. Réessayer dans le mode livreur recharge les informations sans recalculer ni modifier la tournée. Un recalcul nécessaire se fait par le responsable dans Livraisons. Les commandes et leurs adresses sont conservées. Vérifiez les horaires actualisés avant de contacter les clients.
 
 <span id="map-timeline-panel" />
 
 ## Ajuster la carte et retrouver un arrêt
 
-Sur mobile, faites glisser la poignée en haut de la liste pour choisir une vue compacte, équilibrée ou étendue. Au clavier, les flèches haut/bas et Début/Fin font le même réglage. La liste défile indépendamment des actions fixes. Rechercher un arrêt filtre par adresse, ville, client, téléphone, numéro de commande ou consigne sans changer l’itinéraire ; effacez le champ ou fermez la recherche pour retrouver tous les arrêts. Toucher un repère efface le filtre et révèle son arrêt. « Afficher toute la tournée » recadre la carte ; + et − règlent le zoom. Changer la tournée consultée n’interrompt pas le partage de position de la tournée active si le téléphone l’autorise.
+Sur mobile, faites glisser la poignée en haut de la liste pour choisir une vue compacte, équilibrée ou étendue. Au clavier, les flèches haut/bas et Début/Fin font le même réglage. La liste défile indépendamment des actions fixes. Recherchez un arrêt masqué par numéro de commande. La recherche par adresse ou contact s’applique à l’arrêt ouvert. Touchez son repère pour le retrouver dans la liste. « Afficher toute la tournée » recadre la carte ; + et − règlent le zoom. Changer la tournée consultée n’interrompt pas le partage de position de la tournée active si le téléphone l’autorise.
 
 <span id="accidental-departure" />
 
@@ -72,7 +74,7 @@ Avec les versions compatibles de l’API et de l’Admin, connectez-vous comme p
 
 Le livreur doit ouvrir Foody sur son téléphone avec son propre compte, démarrer sa tournée et autoriser la localisation. Gardez Foody affiché avec une connexion Internet. Les positions GPS reçues sont transmises à Foody au maximum une fois toutes les dix secondes, selon le navigateur ; cette fréquence n’est pas garantie. Le point intitulé Position du livreur indique la dernière position reçue dans Livraisons et Mode livreur. Le triangle vert reste le départ prévu. L’heure affichée indique la réception de la position ; après plus d’une minute, la position est signalée ancienne et le point s’atténue. Sans position, un message le précise. Le mode livreur distingue l’attente du GPS, le refus de permission, un GPS indisponible et un échec de transmission. Corrigez les autorisations ou la connexion puis utilisez Réessayer. Ces états ne valident aucune livraison. Ouvrir Waze, changer d’application ou verrouiller le téléphone peut interrompre le suivi web : revenez dans Foody pour reprendre. Consulter un autre livreur avec Voir comme livreur affiche sa position reçue et n’envoie jamais celle du responsable. Le partage du GPS et le déplacement du point ne déclenchent aucun appel Google ; le chargement du fond de carte et les recalculs d’itinéraire gardent leur propre consommation.
 
-Le livreur est représenté par un avatar rond, au-dessus des repères de livraison, avec un libellé toujours visible. Une position ancienne conserve son avatar et le libellé Position ancienne du livreur. Le cadrage initial inclut la dernière position reçue ; dans Mode livreur, Afficher toute la tournée la remet dans le cadre avec les arrêts. Les mises à jour GPS déplacent l’avatar sans recentrer automatiquement la carte.
+Le livreur est représenté par un avatar rond, au-dessus des repères de livraison, avec un libellé toujours visible. Une position ancienne conserve son avatar et le libellé Position ancienne du livreur. Le cadrage initial inclut la dernière position reçue ; dans Mode livreur, Afficher toute la tournée la remet dans le cadre avec l’arrêt ouvert. Les mises à jour GPS déplacent l’avatar sans recentrer automatiquement la carte.
 
 <span id="route-reminders" />
 

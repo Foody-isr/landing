@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - delivery
   - courier
-updatedAt: '2026-11-11'
+updatedAt: '2026-11-12'
 featureId: courier
 audience: public
 releaseStatus: available
@@ -16,15 +16,17 @@ Admin → Orders → Courier mode, or assigned courier workspace
 
 ## Open the assigned itinerary
 
-In Foody Admin courier mode, choose your assigned route from the top list, including upcoming assignments. The active route is selected on opening. The map and numbered pins are visible before departure; the timeline sits alongside it on desktop. Check the date, addresses, calculated times, contacts and instructions. Finish time, distance and duration are plan estimates; an incomplete calculation hides them. Open Total duration to read the available breakdown without changing the plan. The round menu provides account, restaurant, language and theme controls.
+In Foody Admin courier mode, choose your assigned route from the top list. The active route is selected on opening. Before departure the list shows order numbers and any calculated times. Customer addresses, contact details, instructions and map pins stay hidden. Finish time, distance and duration are plan estimates. Open Total duration for the available breakdown.
 
-Courier mode executes the itinerary saved by the restaurant. It cannot change settings, addresses or stop order. The order amount appears only for cash payments; other or unknown payment methods hide it.
+Courier mode follows the itinerary saved by the restaurant. The order amount appears for the open stop when the payment is in cash and the amount is known.
 
 <span id="navigate" />
 
 ## Navigate and contact
 
-After starting your route, tap an address or map pin, then choose Navigate in the fixed action bar and pick Waze or Google Maps. Check the displayed stop number and address. Foody records the stop in progress before opening the navigation app. When you return to Foody, the current stop remains selected until you save its result, even after reopening the page. You can call the customer before starting and use WhatsApp from the stop details. If Foody warns about an unverified address, check it with the restaurant before confirming the search.
+After departure, select a stop by order number and choose Open this stop. Foody records the current stop and shows its address, pin when available, phone number and instructions. You can call the customer, open WhatsApp or choose Waze or Google Maps from the action bar. If Foody warns about an unverified address, check it with the restaurant before confirming the search.
+
+When you return from navigation, the open stop remains available, including after a reload. Save Mark delivered or Report a problem to close this stop and open the next one.
 
 <span id="complete" />
 
@@ -40,19 +42,19 @@ Before leaving, check the itinerary saved by the restaurant. Courier mode no lon
 
 Start route confirms the actual departure of unfinished assigned deliveries and moves accepted, preparing or ready orders together to Out for delivery. Finished or cancelled orders are not reopened. A preparation hold or an unfinalized weighted order must be resolved first. Failure makes no partial change. A courier can have only one active route; finish it before starting another. If a destination could not be verified, ask the dispatcher to check its address or GPS point before confirming departure.
 
-At departure choose Start and open Waze to record departure and navigate to the first stop. Choose Start to record departure and use the navigation menu later.
+At departure choose Start and open Waze to record departure, open the first stop and launch Waze. If you choose Start, addresses stay hidden until you choose Open this stop.
 
 <span id="routing-service-limits" />
 
 ## Respond to a mapping service limit
 
-A quota or service-unavailable warning does not mean the customer address is wrong. Known Google points remain on the Google map while their cache is valid; unverified positions are flagged as temporarily unavailable. Unavailable geometry and arrival calculations stay hidden. Ask the dispatcher to review Usage and quotas, then refresh when service returns. Retry in courier mode reloads information without recalculating or changing the itinerary. Any necessary recalculation is performed by the dispatcher in Deliveries. Orders and their addresses are preserved. Check updated times before contacting customers.
+A quota or service-unavailable warning does not mean the customer address is wrong. The open stop’s known point remains on the Google map while its cache is valid; unverified positions are flagged as temporarily unavailable. Unavailable geometry and arrival calculations stay hidden. Ask the dispatcher to review Usage and quotas, then refresh when service returns. Retry in courier mode reloads information without recalculating or changing the itinerary. Any necessary recalculation is performed by the dispatcher in Deliveries. Orders and their addresses are preserved. Check updated times before contacting customers.
 
 <span id="map-timeline-panel" />
 
 ## Adjust the map and find a stop
 
-On mobile, drag the handle above the list to choose a compact, balanced or expanded view. Keyboard Up/Down and Home/End provide the same adjustment. The list scrolls independently of the fixed actions. Search stops filters by address, city, customer, phone, order number or instructions without changing the route; clear or close search to restore all stops. Selecting a pin clears the filter and reveals its stop. Fit the whole route reframes the map; + and − control zoom. Viewing another route does not stop active-route location sharing when the phone permits it.
+On mobile, drag the handle above the list to choose a compact, balanced or expanded view. Keyboard Up/Down and Home/End provide the same adjustment. The list scrolls independently of the fixed actions. Search for hidden stops by order number. Address and contact search applies to the open stop. Select its pin to find it in the list. Fit the whole route reframes the map; + and − control zoom. Viewing another route does not stop active-route location sharing when the phone permits it.
 
 <span id="accidental-departure" />
 
@@ -72,7 +74,7 @@ With compatible API and Admin versions, sign in as the relevant restaurant’s o
 
 The courier must open Foody on their phone with their own account, start their route and allow location access. Keep Foody visible with an Internet connection. GPS readings are sent to Foody at most once every ten seconds, subject to browser updates; this frequency is not guaranteed. The marker titled Courier position shows the last received location in Deliveries and Courier mode. The green triangle remains the planned departure point. The displayed time is when the position was received; after more than one minute, it is labelled old and the marker fades. A message identifies a missing position. Courier mode distinguishes waiting for GPS, denied permission, unavailable GPS and transmission failure. Correct permissions or connectivity, then choose Retry. These states never confirm a delivery. Opening Waze, switching apps or locking the phone can interrupt web tracking: return to Foody to resume. View as courier displays the selected courier’s received position and never sends the manager’s location. Sharing GPS and moving the marker make no Google calls; map background loads and route recalculations retain their own usage.
 
-The courier is represented by a round avatar above delivery pins, with an always-visible label. An old position retains its avatar and the Old courier position label. Initial framing includes the last received position; in Courier mode, Fit the whole route brings it back into view with the stops. GPS updates move the avatar without automatically recentering the map.
+The courier is represented by a round avatar above delivery pins, with an always-visible label. An old position retains its avatar and the Old courier position label. Initial framing includes the last received position; in Courier mode, Fit the whole route brings it back into view with the open stop. GPS updates move the avatar without automatically recentering the map.
 
 <span id="route-reminders" />
 
