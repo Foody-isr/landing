@@ -1,5 +1,14 @@
 # Help ownership, evidence and releases
 
+## Verifone Central Checkout themes (12 November 2026)
+
+Deploy API migration 316 before enabling the Backoffice action. The FR/HE/EN
+operator procedure covers linking by exact name or UUID in the restaurant's
+Verifone organization and environment. The public payment guides describe the
+appearance of a synchronized Foody theme and of a theme managed in the portal.
+The public search corpus and the API's embedded corpus must match. Verify a new
+Checkout page in CST before publishing the matching guides.
+
 ## Wallet Studio
 
 The Admin stores a private Wallet design draft for each restaurant and

@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - backoffice-entitlements
-updatedAt: '2026-10-28'
+updatedAt: '2026-11-12'
 featureId: backoffice-entitlements
 audience: internal
 releaseStatus: available
@@ -26,7 +26,13 @@ Après une restitution totale vérifiée dans l’historique lié de Verifone, l
 
 ## Garder la page de paiement lisible
 
-Un superadmin ouvre Restaurant > Payment > Verifone dans Backoffice et enregistre les réglages de paiement avant de choisir Synchronize published logo and colors. La synchronisation utilise uniquement le logo publié et la couleur de marque ou du bouton sélectionné. HPP utilise toujours une page claire, des panneaux blancs et du texte foncé ; les couleurs trop pâles sont assombries pour atteindre au moins 4,5:1 de contraste sur la page et les panneaux. Après installation de la version API avec cette règle de contraste, resynchronisez les restaurants déjà activés dans l’environnement autorisé ; l’ancien thème est signalé comme obsolète. Vérifiez le logo, les chiffres saisis, les labels, les erreurs et les icônes, sur mobile et en français, hébreu et anglais, sans soumettre de transaction non autorisée. Les couleurs du site et les fenêtres natives des wallets restent inchangées. Le nouveau thème propre au restaurant ne devient pas le thème par défaut de l’organisation et ne concerne que les nouveaux liens Checkout. Les liens existants et l’état financier sont conservés ; vérifiez le paiement avant toute nouvelle tentative. Aucune mise à jour groupée de production sans autorisation.
+Un superadmin ouvre Restaurant > Payment > Verifone dans Backoffice et enregistre les réglages de paiement avant de choisir Synchronize published logo and colors. La synchronisation utilise uniquement le logo publié et la couleur de marque ou du bouton sélectionné. Le thème HPP synchronisé utilise une page claire, des panneaux blancs et du texte foncé ; les couleurs trop pâles sont assombries pour atteindre au moins 4,5:1 de contraste sur la page et les panneaux. Après installation de la version API avec cette règle de contraste, resynchronisez les restaurants déjà activés dans l’environnement autorisé ; l’ancien thème est signalé comme obsolète. Vérifiez le logo, les chiffres saisis, les labels, les erreurs et les icônes, sur mobile et en français, hébreu et anglais, sans soumettre de transaction non autorisée. Les couleurs du site et les fenêtres natives des wallets restent inchangées. Le nouveau thème propre au restaurant ne devient pas le thème par défaut de l’organisation et ne concerne que les nouveaux liens Checkout. Les liens existants et l’état financier sont conservés ; vérifiez le paiement avant toute nouvelle tentative. Aucune mise à jour groupée de production sans autorisation.
+
+<span id="link-verifone-central-theme" />
+
+## Rattacher un thème Checkout créé dans Verifone Central
+
+Dans Verifone Central, ouvrez Administration > Checkout Themes et enregistrez un thème dans l’organisation et l’environnement Verifone du restaurant (CST ou production). Dans le Backoffice, ouvrez Restaurant > Payment > Verifone en tant que superadmin et enregistrez la configuration de paiement. Sous Hosted payment page appearance, saisissez le nom exact ou l’UUID dans Verifone theme name or ID, puis cliquez sur Link Verifone theme. Si plusieurs thèmes portent le même nom, saisissez l’UUID. Foody vérifie l’organisation et l’environnement et applique le thème sélectionné aux nouveaux liens Checkout. Pour modifier le thème, enregistrez vos changements dans Verifone Central et vérifiez le rendu sur un nouveau lien de test dans l’environnement autorisé. Pour utiliser le thème par défaut du compte Verifone, décochez Use the selected Checkout theme et enregistrez la configuration de paiement.
 
 <span id="entitlements" />
 
