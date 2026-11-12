@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-11-11'
+updatedAt: '2026-11-12'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -305,3 +305,5 @@ Les clients compatibles envoient X-Foody-POS-Token uniquement à l’API de comm
 ## Contrat de navigation et de résultat livreur
 
 Déployez la migration 313 avant l’API et l’Admin compatibles. Les actions de navigation et de signalement contrôlent le restaurant, la tournée active et le livreur affecté. La navigation enregistre l’arrêt dont le résultat est attendu. Une tournée ne peut avoir qu’un seul arrêt en attente de ce résultat. Un signalement conserve une tentative infructueuse dans le journal sans terminer la commande. Celle-ci sort de la sélection automatique du livreur et du suivi GPS côté client jusqu’au départ d’une nouvelle tournée. Un responsable peut envoyer un rappel push aux appareils enregistrés du livreur affecté.
+
+Les réponses du mode livreur masquent le tracé et les données client hors de l’arrêt ouvert. Les comptes livreur reçoivent des signaux de rafraîchissement sans données de commande sur le canal temps réel. Cette correction réutilise la migration 313 déjà appliquée.

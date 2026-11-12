@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-11-11'
+updatedAt: '2026-11-12'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -305,3 +305,5 @@ Compatible clients send X-Foody-POS-Token only to the trusted authenticated orde
 ## Courier navigation and result contract
 
 Deploy migration 313 before the matching API and Admin. The restaurant-scoped courier navigate and issue routes require an active route and its assigned courier context. Navigation records the stop awaiting a result. Only one pending stop may reserve navigation per route. An issue preserves an audited unsuccessful attempt without completing the order. It removes the order from automatic courier selection and guest GPS tracking until a new route starts. Order managers can send a push reminder to the assigned courier’s registered devices.
+
+Courier responses omit the route line and hide customer data outside the open stop. Courier accounts receive refresh events without order details on the live connection. This correction uses the existing migration 313.
