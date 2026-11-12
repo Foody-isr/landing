@@ -1,5 +1,13 @@
 # Help ownership, evidence and releases
 
+## Wallet Studio
+
+The Admin stores a private Wallet design draft for each restaurant and
+renders Apple and Google previews. The signed Apple test pass requires the
+Pass Type ID certificate and matching key for the selected environment. Keep
+the FR, HE and EN test procedures in internal help. Verify installation on a
+physical iPhone before documenting an accepted device test.
+
 ## CST terminal fleet and payment operations (9 November 2026)
 
 The restricted internal guide covers the API, Backoffice and opt-in POS

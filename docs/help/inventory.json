@@ -4,9 +4,9 @@
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "9c803688b3c6664a50031f4b4c2d88274516e745",
+      "sourceCommit": "402576cbbca2225b756cc20795e8b5fd2cbc5963",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "49dacfbf3555558e7e72112dbae618b450303d07533cb90066e2d8296331fd45",
+      "sourceSnapshot": "e17066244ce4afaa55861a4411972d20aa7c21b84a9796c1e8677104d86cd287",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -46,11 +46,12 @@
           ]
         },
         "cmd/server/boot_models.go": {
-          "sha256": "a34d5811ecf026cd31d90b337b249f58cfeac6d4435016159b0549783536b472",
+          "sha256": "0addcb5516aa3f3e3022fe62f76798cd992d81466fa43ff44ecdd903c68fdac6",
           "features": [
             "staff-invitations",
             "customers-profiles",
-            "platform-api"
+            "platform-api",
+            "customers-wallet-studio"
           ]
         },
         "cmd/server/device_schema.go": {
@@ -73,7 +74,7 @@
           ]
         },
         "cmd/server/main.go": {
-          "sha256": "bc81973672db7c22aa945488e5db969c47e7bf1f2c5dcac09a915b2a65921c32",
+          "sha256": "db55c2cc7cffe9fc465fbbb8ebf0fad6876432916b50f7b7f44f79b51f8301a9",
           "features": [
             "staff-invitations",
             "customers-profiles",
@@ -95,6 +96,12 @@
           "sha256": "ad1806149ded06c0f42e25ffb03155c4fc591d81d805efcd3611ff32322a787c",
           "features": [
             "platform-api"
+          ]
+        },
+        "cmd/server/wallet_studio.go": {
+          "sha256": "5f3457c02a65426fb5d6fa165c06e35663449b8bfeea04dbe793a4abbcc4a17b",
+          "features": [
+            "customers-wallet-studio"
           ]
         },
         "cmd/websitev3seed/main.go": {
@@ -762,6 +769,12 @@
           "sha256": "652831cc02901a415bf2718cca1ec64ad1e2bf1771ea74304f62a4695ee05b6b",
           "features": [
             "platform-api"
+          ]
+        },
+        "internal/common/loyalty_wallet_design.go": {
+          "sha256": "36d870c67ab5c9c14db3b93ae8b2f9d46a8587f740a3880f563ca5ae382615d7",
+          "features": [
+            "customers-wallet-studio"
           ]
         },
         "internal/common/menu_publication.go": {
@@ -2011,10 +2024,35 @@
             "platform-api"
           ]
         },
-        "internal/loyaltywallet/apple.go": {
-          "sha256": "901e0b0648671ae33489ee650ef04855d85476b6c8a6b789b8a1ce26befd0320",
+        "internal/loyalty/wallet_studio.go": {
+          "sha256": "90e4046b757aba1098ec57f760704ef53dd7a15359c45cbf45b87ab1bd8d1a6d",
           "features": [
-            "platform-api"
+            "customers-wallet-studio"
+          ]
+        },
+        "internal/loyalty/wallet_studio_artwork.go": {
+          "sha256": "7c70a020435a3f7c51df583407cf3d92f4a1ecb82911cc793e866d996d13c364",
+          "features": [
+            "customers-wallet-studio"
+          ]
+        },
+        "internal/loyalty/wallet_studio_handler.go": {
+          "sha256": "b7adf3edd3368204de9febb4f1a79d8a1f3c998391ad045eb7676d271c2df8f5",
+          "features": [
+            "customers-wallet-studio"
+          ]
+        },
+        "internal/loyaltywallet/apple.go": {
+          "sha256": "39dc17c3fba830320ca043608ae8d1d03f53f04ff943c41f92ab7b2286861aed",
+          "features": [
+            "platform-api",
+            "customers-wallet-studio"
+          ]
+        },
+        "internal/loyaltywallet/apple_studio.go": {
+          "sha256": "b762131ec31111732a14deaf094a72e690db7d11658d4623112f5c182998e530",
+          "features": [
+            "customers-wallet-studio"
           ]
         },
         "internal/loyaltywallet/google.go": {
@@ -5578,7 +5616,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "0f2cd2b7523df4a1f516e6b3801a5cfbf6cc5f96c855344ec9e9df29f435ce9f",
+          "sha256": "cc690e09a22355fbd1a24980ebf82c7caddcdb1188ca500658c5c97fbdf0507a",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -5686,7 +5724,7 @@
           ]
         },
         "internal/testutil/testutil.go": {
-          "sha256": "dc18469bb0f23ce17dd575642248da43b5d82bd3a4b5b2a68b7387ec9b37f02e",
+          "sha256": "4fbb0e32f9465397a9468dbed397b6b7eaed35b87f8e14d9ece9fa4b076428ec",
           "features": [
             "platform-api"
           ]
@@ -6107,14 +6145,20 @@
           "features": [
             "payments-transactions"
           ]
+        },
+        "migrations/315_loyalty_wallet_designs.sql": {
+          "sha256": "869f572a12a852ba4840c535c85009f39a65d8652665d3d959b6fade52db3891",
+          "features": [
+            "customers-wallet-studio"
+          ]
         }
       }
     },
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "cc277c9e9363523c78af38947b1e3ef016cebd50",
+      "sourceCommit": "17226551b925b149ae4bb0382a3d7a92157d1786",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "f22debadd6dd9d3ccb206e917cde9a377aa483d4932ed18b43e6e69e4c82eb4d",
+      "sourceSnapshot": "92b99ee9646714ac2d24b8ce704fac9fc485a5dd41a0764a7116efb5712307e0",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
@@ -6765,7 +6809,7 @@
           ]
         },
         "src/app/[restaurantId]/layout.tsx": {
-          "sha256": "9ad09b9050cfb20330bce10c002f6c053d167b5048aca2408ba653e5f2bbc394",
+          "sha256": "f0342c209eb9f9c7b11a42c1cd1b4183b369473cd2e3bdbef78428d59ed3bf92",
           "features": [
             "payments-transactions"
           ]
@@ -6780,6 +6824,12 @@
           "sha256": "1462c9d92798062b148471b2ce7ce5df5ca997baa4f044f6450242b5ad6e0e1c",
           "features": [
             "customers-loyalty-program"
+          ]
+        },
+        "src/app/[restaurantId]/loyalty/program/wallet/page.tsx": {
+          "sha256": "9db628c41272f10259f5e460677269a43de219ebd55049eecf1772db431a51e7",
+          "features": [
+            "customers-wallet-studio"
           ]
         },
         "src/app/[restaurantId]/marketing/discounts/page.tsx": {
@@ -8070,7 +8120,7 @@
           ]
         },
         "src/components/delivery/CourierItineraryView.tsx": {
-          "sha256": "f0cb6b58e600f5e7262641fa12a5c1fa30f86da5c8880eb1e950d1098af62357",
+          "sha256": "75365af95473829080e4ff93239bf8e53db33c7d154208495b4a00171b1531b3",
           "features": [
             "delivery-dispatch",
             "courier"
@@ -8464,9 +8514,16 @@
           ]
         },
         "src/components/loyalty/LoyaltyProgramWorkspace.tsx": {
-          "sha256": "ed4ab949cc204782877bf359da544b643ce3a9c5045a542e4f7e6cdf480b1aa1",
+          "sha256": "85df81d58617a06f318cb38ab68dedbeb220cd158f157118c01b0a4cda60a80c",
           "features": [
-            "customers-loyalty-program"
+            "customers-loyalty-program",
+            "customers-wallet-studio"
+          ]
+        },
+        "src/components/loyalty/WalletStudioWorkspace.tsx": {
+          "sha256": "3a21b95cebca787045e164a654602f5f8ceef14af5f2540e59fea55581e5b3bd",
+          "features": [
+            "customers-wallet-studio"
           ]
         },
         "src/components/loyalty/display.ts": {
@@ -10568,7 +10625,7 @@
           ]
         },
         "src/lib/api.ts": {
-          "sha256": "f08bbd5cc4a600b0fe8eaa58516b9999edf6f61a1b3fea5fbb901537967e82dd",
+          "sha256": "6723ed8d65d0f7a629a3d0aff3a5678e0d38b6ebd9e0338afcd028438e2aaaad",
           "features": [
             "customers-profiles",
             "menu-variants-and-sizes",
@@ -10580,7 +10637,8 @@
             "orders-internal-sumit-checkout",
             "stancer-cash-guarantee",
             "orders-events",
-            "payments-transactions"
+            "payments-transactions",
+            "customers-wallet-studio"
           ]
         },
         "src/lib/ashrait-card-receipt.ts": {
@@ -10713,7 +10771,7 @@
           ]
         },
         "src/lib/delivery.ts": {
-          "sha256": "8632dd1ee8e181c26d5c05bbdec1a107bbd067deb300d24262a5f5b7052da1c4",
+          "sha256": "7f0c821997de985d02576e6b738c4155de5beed2a30af1b1a7585928c197f794",
           "features": [
             "delivery-dispatch",
             "shared-runtime"
@@ -10771,7 +10829,7 @@
           ]
         },
         "src/lib/i18n.tsx": {
-          "sha256": "e8ff1f75328c294e01122272230a1db68c5d45b70e44129493ff90aa030e9580",
+          "sha256": "0a7a32a2c634d03636522d72e2bb62d6c994768df779a2723a9707fa478df8ff",
           "features": [
             "customers-profiles",
             "menu-menus-and-groups",
@@ -10789,7 +10847,8 @@
             "orders-internal-sumit-checkout",
             "stancer-cash-guarantee",
             "payments-transactions",
-            "customers-loyalty-program"
+            "customers-loyalty-program",
+            "customers-wallet-studio"
           ]
         },
         "src/lib/israel-cities.ts": {
@@ -14421,7 +14480,7 @@
     },
     "foodylanding": {
       "repository": "https://github.com/Foody-isr/landing",
-      "sourceCommit": "f848a6a9d2edfde68dd73a04a76cd078235bf943",
+      "sourceCommit": "0a5c7e7484ad33c863fef30e81a0a265cc086cd4",
       "releaseStatus": "versioned",
       "sourceSnapshot": "8b4b17f71cf9b0d89ce88526685ae1cf1e46c76362233b6a0cbc072bb695291a",
       "workingTreeHasChanges": true,
@@ -15411,10 +15470,10 @@
     },
     "foodypos": {
       "repository": "https://github.com/Foody-isr/pos",
-      "sourceCommit": "360661feb7421e5d7a7d417b93bda3766506c6ca",
+      "sourceCommit": "a8b73ad6fa964f1655918e58f5eac176699b503f",
       "releaseStatus": "versioned",
       "sourceSnapshot": "90115a814d7d38a72f899bd27ff211f64b2ebb871a351828240638a62ae208f7",
-      "workingTreeHasChanges": true,
+      "workingTreeHasChanges": false,
       "sourceFiles": {
         "android/app/src/main/kotlin/com/foodypos/app/AshraitProtocol.kt": {
           "sha256": "1f739f195b3f7fa154a56a8b8ac4e7ef1002b62445b16803b81d165b3ecdf152",
@@ -18839,9 +18898,9 @@
             "he": "בחירת המסעדה"
           },
           "instructions": {
-            "en": "Sign in with your own account, then choose an authorized restaurant. Check its name before editing or exporting data.",
-            "fr": "Connectez-vous avec votre compte puis choisissez un restaurant autorisé. Vérifiez son nom avant toute modification ou export.",
-            "he": "התחברו לחשבון האישי ובחרו מסעדה מורשית. בדקו את שמה לפני שינוי או ייצוא נתונים."
+            "en": "Sign in with your own account, then choose an authorized restaurant. Check its name before editing or exporting data.\n\nA courier account opens its assigned routes in Courier mode. Customer details become visible only for the stop opened after departure.",
+            "fr": "Connectez-vous avec votre compte puis choisissez un restaurant autorisé. Vérifiez son nom avant toute modification ou export.\n\nUn compte livreur accède à ses tournées affectées dans le mode livreur. Les coordonnées du client apparaissent pour l’arrêt ouvert après le départ.",
+            "he": "התחברו לחשבון האישי ובחרו מסעדה מורשית. בדקו את שמה לפני שינוי או ייצוא נתונים.\n\nחשבון שליח ניגש למסלולים המשויכים אליו במצב שליח. פרטי הלקוח מופיעים בעצירה שנפתחה לאחר היציאה."
           }
         },
         {
@@ -18887,7 +18946,7 @@
       "audience": "public",
       "status": "available",
       "preserveExisting": true,
-      "procedureUpdatedAt": "2026-10-28",
+      "procedureUpdatedAt": "2026-11-12",
       "evidence": [
         {
           "service": "foodyserver",
@@ -19794,9 +19853,9 @@
             "he": "איתור לקוח"
           },
           "instructions": {
-            "en": "Search the customer list and inspect name, phone, address, order count and last order. Check the intended person before editing.",
-            "fr": "Recherchez dans la liste et vérifiez nom, téléphone, adresse, nombre de commandes et dernière commande. Confirmez la bonne personne avant modification.",
-            "he": "חפשו ברשימה ובדקו שם, טלפון, כתובת, מספר הזמנות והזמנה אחרונה. ודאו שמדובר באדם הנכון לפני עריכה."
+            "en": "Search the customer list and inspect name, phone, address, order count and last order. Check the intended person before editing.\n\nCustomer profiles and address history require staff access outside Courier mode. Couriers see contact details for the stop they have opened.",
+            "fr": "Recherchez dans la liste et vérifiez nom, téléphone, adresse, nombre de commandes et dernière commande. Confirmez la bonne personne avant modification.\n\nLes fiches clients et leur historique d’adresses sont réservés au personnel autorisé hors du rôle livreur. Le livreur consulte les coordonnées de l’arrêt qu’il a ouvert.",
+            "he": "חפשו ברשימה ובדקו שם, טלפון, כתובת, מספר הזמנות והזמנה אחרונה. ודאו שמדובר באדם הנכון לפני עריכה.\n\nפרופילי לקוחות והיסטוריית כתובות זמינים לצוות מורשה מחוץ לתפקיד שליח. השליח רואה את פרטי הקשר של העצירה שפתח."
           }
         },
         {
@@ -19886,7 +19945,7 @@
         "fr": "La modification et la fusion nécessitent la permission de gestion des clients.",
         "he": "עריכה ואיחוד דורשים הרשאת ניהול לקוחות."
       },
-      "procedureUpdatedAt": "2026-11-01",
+      "procedureUpdatedAt": "2026-11-12",
       "evidence": [
         {
           "service": "foodyserver",
@@ -20475,9 +20534,9 @@
             "he": "דוחות מפורטים"
           },
           "instructions": {
-            "en": "Open **Reports** for the reporting pages your role permits. Select the date range and review the applied filters. The overview provides an export action; export the selected scope and check that its dates and calculation match your intended analysis.",
-            "fr": "Ouvrez **Rapports** pour accéder aux pages autorisées par votre rôle. Choisissez la période et vérifiez les filtres. La vue d’ensemble propose une action d’export ; contrôlez que la période et le calcul exportés correspondent à votre analyse.",
-            "he": "פתחו **דוחות** כדי להציג את המסכים המותרים לתפקיד שלכם. בחרו תקופה ובדקו את המסננים. בסקירה קיימת פעולת ייצוא; ודאו שהתאריכים ושיטת החישוב תואמים לניתוח הרצוי."
+            "en": "Open **Reports** for the reporting pages your role permits. Select the date range and review the applied filters. The overview provides an export action; export the selected scope and check that its dates and calculation match your intended analysis.\n\nAccess to customer reports and address history is checked separately for each restaurant. Courier assignments give access to the open stop through Courier mode.",
+            "fr": "Ouvrez **Rapports** pour accéder aux pages autorisées par votre rôle. Choisissez la période et vérifiez les filtres. La vue d’ensemble propose une action d’export ; contrôlez que la période et le calcul exportés correspondent à votre analyse.\n\nL’accès aux rapports clients et à l’historique d’adresses est vérifié pour chaque restaurant. Les affectations de livraison donnent accès à l’arrêt ouvert dans le mode livreur.",
+            "he": "פתחו **דוחות** כדי להציג את המסכים המותרים לתפקיד שלכם. בחרו תקופה ובדקו את המסננים. בסקירה קיימת פעולת ייצוא; ודאו שהתאריכים ושיטת החישוב תואמים לניתוח הרצוי.\n\nהגישה לדוחות לקוחות ולהיסטוריית כתובות נבדקת לכל מסעדה. שיוך משלוח מאפשר לראות את העצירה הפתוחה במצב שליח."
           }
         },
         {
@@ -20497,7 +20556,7 @@
       "audience": "public",
       "status": "available",
       "preserveExisting": true,
-      "procedureUpdatedAt": "2026-11-02",
+      "procedureUpdatedAt": "2026-11-12",
       "evidence": [
         {
           "service": "foodyserver",
@@ -35777,9 +35836,9 @@
             "he": "בחירת משלוחים לתאריך אחד"
           },
           "instructions": {
-            "en": "Choose the route date and review available delivery orders. Do not combine scheduled deliveries from another service date into the route. Orders retain the calendar verified for their address: postal groups with the same fee and identical options can combine weekdays without changing saved zones or opening another day. A new address can reduce those days even when one zone remains shared; choose a still-eligible window. This eligibility precedes route planning and does not change stop order. See [postal weekday groups](/en/help/delivery/zones-and-schedules#postal-day-groups).",
-            "fr": "Choisissez la date de tournée et vérifiez les commandes disponibles. Ne mélangez pas les livraisons planifiées d’un autre jour de service. Les commandes restent soumises au calendrier validé pour leur adresse : des groupes de codes postaux au même tarif et aux options identiques peuvent cumuler leurs jours, sans changer les zones enregistrées ni ouvrir un autre jour. Une nouvelle adresse peut réduire ces jours même si une zone reste commune ; choisissez un créneau encore autorisé. Cette éligibilité précède la planification de la tournée et ne modifie pas son ordre d’arrêts. Voir [les groupes de jours par code postal](/fr/help/delivery/zones-and-schedules#postal-day-groups).",
-            "he": "בחרו תאריך מסלול ובדקו הזמנות משלוח זמינות. אין לצרף משלוחים מתוזמנים מתאריך שירות אחר. ההזמנות נשארות כפופות ללוח שאומת לכתובת: קבוצות מיקוד באותו תעריף ועם אפשרויות זהות יכולות לצרף ימים בלי לשנות אזורים שמורים או לפתוח יום נוסף. כתובת חדשה יכולה לצמצם ימים גם כשאזור אחד נשאר משותף; בחרו חלון שעדיין מותר. בדיקת הזכאות קודמת לתכנון הסבב ואינה משנה סדר עצירות. ראו [קבוצות ימים לפי מיקוד](/he/help/delivery/zones-and-schedules#postal-day-groups)."
+            "en": "Choose the route date and review available delivery orders. Do not combine scheduled deliveries from another service date into the route. Orders retain the calendar verified for their address: postal groups with the same fee and identical options can combine weekdays without changing saved zones or opening another day. A new address can reduce those days even when one zone remains shared; choose a still-eligible window. This eligibility precedes route planning and does not change stop order. See [postal weekday groups](/en/help/delivery/zones-and-schedules#postal-day-groups).\n\nTo review addresses before departure, open Orders → Deliveries. View as courier follows the same rule as the courier account and shows details only for the open stop.",
+            "fr": "Choisissez la date de tournée et vérifiez les commandes disponibles. Ne mélangez pas les livraisons planifiées d’un autre jour de service. Les commandes restent soumises au calendrier validé pour leur adresse : des groupes de codes postaux au même tarif et aux options identiques peuvent cumuler leurs jours, sans changer les zones enregistrées ni ouvrir un autre jour. Une nouvelle adresse peut réduire ces jours même si une zone reste commune ; choisissez un créneau encore autorisé. Cette éligibilité précède la planification de la tournée et ne modifie pas son ordre d’arrêts. Voir [les groupes de jours par code postal](/fr/help/delivery/zones-and-schedules#postal-day-groups).\n\nPour consulter les adresses avant le départ, ouvrez Commandes → Livraisons. L’aperçu Voir comme livreur suit la même règle que le compte livreur : seuls les détails de l’arrêt ouvert sont visibles.",
+            "he": "בחרו תאריך מסלול ובדקו הזמנות משלוח זמינות. אין לצרף משלוחים מתוזמנים מתאריך שירות אחר. ההזמנות נשארות כפופות ללוח שאומת לכתובת: קבוצות מיקוד באותו תעריף ועם אפשרויות זהות יכולות לצרף ימים בלי לשנות אזורים שמורים או לפתוח יום נוסף. כתובת חדשה יכולה לצמצם ימים גם כשאזור אחד נשאר משותף; בחרו חלון שעדיין מותר. בדיקת הזכאות קודמת לתכנון הסבב ואינה משנה סדר עצירות. ראו [קבוצות ימים לפי מיקוד](/he/help/delivery/zones-and-schedules#postal-day-groups).\n\nלעיון בכתובות לפני היציאה פתחו הזמנות ← משלוחים. צפייה בתור שליח פועלת כמו חשבון שליח ומציגה פרטים של העצירה הפתוחה בלבד."
           }
         },
         {
@@ -36059,7 +36118,7 @@
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-11-11",
+      "procedureUpdatedAt": "2026-11-12",
       "updatedAt": "2026-10-20",
       "evidence": [
         {
@@ -36370,9 +36429,9 @@
             "he": "פתיחת מסלול משויך"
           },
           "instructions": {
-            "fr": "Dans le mode livreur de Foody Admin, choisissez votre tournée dans la liste en haut, y compris les affectations à venir. La tournée active est proposée à l’ouverture. La carte et ses repères numérotés sont visibles dès le départ ; sur ordinateur, la chronologie est placée à côté. Vérifiez la date, les adresses, les horaires calculés, les contacts et les consignes. La fin, la distance et la durée sont des estimations du plan ; un calcul incomplet les masque. Ouvrez Durée totale pour consulter le détail disponible sans modifier le plan. Le menu rond donne accès au compte, au restaurant, à la langue et au thème.\n\nLe mode livreur exécute la tournée enregistrée par le restaurant. Il ne permet pas de changer les paramètres, les adresses ou l’ordre des arrêts. Le montant de la commande est affiché uniquement pour un paiement en espèces ; il est masqué pour les autres moyens de paiement et lorsqu’il est inconnu.",
-            "en": "In Foody Admin courier mode, choose your assigned route from the top list, including upcoming assignments. The active route is selected on opening. The map and numbered pins are visible before departure; the timeline sits alongside it on desktop. Check the date, addresses, calculated times, contacts and instructions. Finish time, distance and duration are plan estimates; an incomplete calculation hides them. Open Total duration to read the available breakdown without changing the plan. The round menu provides account, restaurant, language and theme controls.\n\nCourier mode executes the itinerary saved by the restaurant. It cannot change settings, addresses or stop order. The order amount appears only for cash payments; other or unknown payment methods hide it.",
-            "he": "במצב שליח ב־Foody Admin בחרו את המסלול שהוקצה לכם ברשימה העליונה, כולל הקצאות עתידיות. המסלול הפעיל נבחר בפתיחה. המפה והסיכות הממוספרות זמינות לפני היציאה; במחשב ציר הזמן מופיע לצדה. בדקו תאריך, כתובות, שעות מחושבות, אנשי קשר והנחיות. שעת הסיום, המרחק והמשך הם הערכות של התוכנית; חישוב חסר מסתיר אותם. פתחו את משך כולל כדי לעיין בפירוט הזמין ללא שינוי התוכנית. התפריט העגול מאפשר גישה לחשבון, למסעדה, לשפה ולערכת הנושא.\n\nמצב שליח מיועד לביצוע המסלול שהמסעדה שמרה. אין בו שינוי הגדרות, כתובות או סדר עצירות. סכום ההזמנה מוצג רק בתשלום מזומן; הוא מוסתר באמצעי תשלום אחרים או לא ידועים."
+            "fr": "Dans le mode livreur de Foody Admin, choisissez votre tournée dans la liste en haut. La tournée active est proposée à l’ouverture. Avant le départ, la liste affiche les numéros de commande et les horaires calculés disponibles. Les adresses, les coordonnées des clients, les consignes et les repères clients restent masqués. La fin, la distance et la durée sont des estimations du plan. Ouvrez Durée totale pour consulter le détail disponible.\n\nLe mode livreur exécute la tournée enregistrée par le restaurant. Le montant de la commande apparaît pour l’arrêt ouvert si le paiement est en espèces et si le montant est connu.",
+            "en": "In Foody Admin courier mode, choose your assigned route from the top list. The active route is selected on opening. Before departure the list shows order numbers and any calculated times. Customer addresses, contact details, instructions and map pins stay hidden. Finish time, distance and duration are plan estimates. Open Total duration for the available breakdown.\n\nCourier mode follows the itinerary saved by the restaurant. The order amount appears for the open stop when the payment is in cash and the amount is known.",
+            "he": "במצב שליח ב־Foody Admin בחרו את המסלול שהוקצה לכם מהרשימה למעלה. המסלול הפעיל נבחר בפתיחה. לפני היציאה הרשימה מציגה מספרי הזמנות ושעות שחושבו, אם ישנן. כתובות הלקוחות, פרטי הקשר, ההנחיות והסיכות שלהם במפה מוסתרים. שעת הסיום, המרחק ומשך המסלול הם הערכות. לחצו על משך כולל לפירוט הזמין.\n\nמצב שליח מיועד לביצוע המסלול שהמסעדה שמרה. סכום ההזמנה מופיע בעצירה הפתוחה כשהתשלום במזומן והסכום ידוע."
           }
         },
         {
@@ -36383,9 +36442,9 @@
             "he": "ניווט ויצירת קשר"
           },
           "instructions": {
-            "fr": "Après avoir démarré votre tournée, touchez une adresse ou un repère sur la carte, puis choisissez Naviguer dans la barre fixe et sélectionnez Waze ou Google Maps. Vérifiez le numéro et l’adresse affichés. Foody enregistre l’arrêt en cours avant d’ouvrir l’application de navigation. À votre retour dans Foody, cet arrêt reste sélectionné jusqu’à l’enregistrement de son résultat, même si vous rouvrez la page. Vous pouvez appeler le client avant le départ et ouvrir WhatsApp depuis la fiche de l’arrêt. Si Foody signale une adresse non vérifiée, vérifiez-la avec le restaurant avant de confirmer la recherche.",
-            "en": "After starting your route, tap an address or map pin, then choose Navigate in the fixed action bar and pick Waze or Google Maps. Check the displayed stop number and address. Foody records the stop in progress before opening the navigation app. When you return to Foody, the current stop remains selected until you save its result, even after reopening the page. You can call the customer before starting and use WhatsApp from the stop details. If Foody warns about an unverified address, check it with the restaurant before confirming the search.",
-            "he": "לאחר התחלת המסלול, בחרו כתובת או סיכה במפה, לחצו על ניווט בסרגל הפעולות ובחרו Waze או Google Maps. בדקו את מספר העצירה ואת הכתובת שמופיעים על המסך. Foody שומר את העצירה הנוכחית לפני פתיחת אפליקציית הניווט. כשחוזרים ל־Foody, העצירה נשארת נבחרת עד לשמירת התוצאה, גם לאחר פתיחה מחדש של הדף. ניתן להתקשר ללקוח לפני היציאה ולפתוח WhatsApp מפרטי העצירה. אם מוצגת אזהרה לגבי כתובת שלא אומתה, בדקו אותה מול המסעדה לפני אישור החיפוש."
+            "fr": "Après le départ, sélectionnez un arrêt par son numéro de commande, puis choisissez Ouvrir cet arrêt. Foody enregistre l’arrêt en cours et affiche son adresse, son repère si disponible, son téléphone et ses consignes. Vous pouvez appeler le client, ouvrir WhatsApp ou choisir Waze ou Google Maps dans la barre d’actions. Si Foody signale une adresse non vérifiée, vérifiez-la avec le restaurant avant de confirmer la recherche.\n\nÀ votre retour de la navigation, l’arrêt en cours reste accessible, même après un rechargement. Enregistrez Marquer livrée ou Signaler un problème pour fermer cet arrêt et pouvoir ouvrir le suivant.",
+            "en": "After departure, select a stop by order number and choose Open this stop. Foody records the current stop and shows its address, pin when available, phone number and instructions. You can call the customer, open WhatsApp or choose Waze or Google Maps from the action bar. If Foody warns about an unverified address, check it with the restaurant before confirming the search.\n\nWhen you return from navigation, the open stop remains available, including after a reload. Save Mark delivered or Report a problem to close this stop and open the next one.",
+            "he": "לאחר היציאה, בחרו עצירה לפי מספר ההזמנה ולחצו על פתחו את העצירה. Foody מתעד את העצירה הנוכחית ומציג את הכתובת, הסיכה במפה אם זמינה, הטלפון וההנחיות. אפשר להתקשר ללקוח, לפתוח WhatsApp או לבחור Waze או Google Maps מסרגל הפעולות. אם הכתובת לא אומתה, בדקו אותה מול המסעדה לפני אישור החיפוש.\n\nבחזרה מהניווט העצירה נשארת פתוחה גם לאחר רענון. לחצו על סמן נמסר או שמרו דיווח על בעיה כדי לסגור אותה ולפתוח את העצירה הבאה."
           }
         },
         {
@@ -36409,9 +36468,9 @@
             "he": "בדיקת התוכנית והתחלת מסלול"
           },
           "instructions": {
-            "fr": "Avant de partir, vérifiez la tournée enregistrée par le restaurant. Le mode livreur ne propose plus Ajuster, les réglages de tournée, Réoptimiser, la correction d’adresse ou le déplacement d’un arrêt. Le départ prévu, les points de départ et d’arrivée, les temps de remise, les créneaux et la composition de la tournée se modifient uniquement par un responsable autorisé dans Commandes → Livraisons. Cette règle vaut aussi pour un propriétaire ou superadmin qui consulte le mode livreur ; pour planifier, retournez dans Livraisons. Une ancienne interface ne peut pas enregistrer ces changements depuis les actions livreur.\n\nDémarrer la tournée confirme le départ réel des livraisons affectées non terminées et fait passer ensemble les commandes acceptées, en préparation ou prêtes en En livraison. Les commandes terminées ou annulées ne sont pas rouvertes. Une préparation retenue ou une commande au poids non finalisée doit être résolue auparavant. En cas d’échec, aucun changement partiel n’est enregistré. Un livreur ne peut avoir qu’une tournée active ; terminez-la avant de démarrer la suivante. Si une destination n’a pas pu être vérifiée, demandez au responsable de vérifier son adresse ou son point GPS avant de confirmer le départ.\n\nAu départ, choisissez Démarrer et ouvrir Waze pour enregistrer le départ puis naviguer vers le premier arrêt. Choisissez Démarrer pour enregistrer le départ et utiliser le menu de navigation plus tard.",
-            "en": "Before leaving, check the itinerary saved by the restaurant. Courier mode no longer offers Refine, route settings, Reoptimize, address correction or stop reordering. Planned departure, start and end points, handover times, customer windows and route composition can only be changed by an authorized dispatcher in Orders → Deliveries. This also applies to an owner or superadmin viewing courier mode; return to Deliveries to plan. An old interface cannot save these changes through courier actions.\n\nStart route confirms the actual departure of unfinished assigned deliveries and moves accepted, preparing or ready orders together to Out for delivery. Finished or cancelled orders are not reopened. A preparation hold or an unfinalized weighted order must be resolved first. Failure makes no partial change. A courier can have only one active route; finish it before starting another. If a destination could not be verified, ask the dispatcher to check its address or GPS point before confirming departure.\n\nAt departure choose Start and open Waze to record departure and navigate to the first stop. Choose Start to record departure and use the navigation menu later.",
-            "he": "לפני היציאה בדקו את המסלול שהמסעדה שמרה. מצב שליח אינו מציע עוד התאמה, הגדרות מסלול, מיטוב מחדש, תיקון כתובת או שינוי סדר עצירות. רק אחראי מורשה יכול לשנות יציאה מתוכננת, נקודות התחלה וסיום, זמני מסירה, חלונות ללקוח והרכב מסלול דרך הזמנות ← משלוחים. הכלל חל גם על בעל מסעדה או מנהל מערכת שצופה במצב שליח; לתכנון חוזרים למשלוחים. גם ממשק ישן אינו יכול לשמור שינויים אלה דרך פעולות השליח.\n\nהתחלת מסלול מאשרת יציאה בפועל של המשלוחים המשויכים שטרם הסתיימו ומעבירה יחד הזמנות שאושרו, בהכנה או מוכנות למצב בדרך. הזמנות שהסתיימו או בוטלו אינן נפתחות מחדש. יש לפתור קודם עיכוב הכנה או הזמנה במשקל שלא סוכמה. כשל אינו שומר שינוי חלקי. לשליח יכול להיות מסלול פעיל אחד בלבד; סיימו אותו לפני התחלת הבא. אם יעד לא אומת, בקשו מהאחראי לבדוק את כתובתו או נקודת ה־GPS לפני אישור היציאה.\n\nבעת היציאה בחרו התחלת מסלול ופתיחת Waze כדי לשמור את היציאה ולנווט לעצירה הראשונה. בחרו יציאה כדי לשמור את היציאה ולהשתמש בתפריט הניווט מאוחר יותר."
+            "fr": "Avant de partir, vérifiez la tournée enregistrée par le restaurant. Le mode livreur ne propose plus Ajuster, les réglages de tournée, Réoptimiser, la correction d’adresse ou le déplacement d’un arrêt. Le départ prévu, les points de départ et d’arrivée, les temps de remise, les créneaux et la composition de la tournée se modifient uniquement par un responsable autorisé dans Commandes → Livraisons. Cette règle vaut aussi pour un propriétaire ou superadmin qui consulte le mode livreur ; pour planifier, retournez dans Livraisons. Une ancienne interface ne peut pas enregistrer ces changements depuis les actions livreur.\n\nDémarrer la tournée confirme le départ réel des livraisons affectées non terminées et fait passer ensemble les commandes acceptées, en préparation ou prêtes en En livraison. Les commandes terminées ou annulées ne sont pas rouvertes. Une préparation retenue ou une commande au poids non finalisée doit être résolue auparavant. En cas d’échec, aucun changement partiel n’est enregistré. Un livreur ne peut avoir qu’une tournée active ; terminez-la avant de démarrer la suivante. Si une destination n’a pas pu être vérifiée, demandez au responsable de vérifier son adresse ou son point GPS avant de confirmer le départ.\n\nAu départ, choisissez Démarrer et ouvrir Waze pour enregistrer le départ, ouvrir le premier arrêt et lancer Waze. Si vous choisissez Démarrer, les adresses restent masquées jusqu’à l’action Ouvrir cet arrêt.",
+            "en": "Before leaving, check the itinerary saved by the restaurant. Courier mode no longer offers Refine, route settings, Reoptimize, address correction or stop reordering. Planned departure, start and end points, handover times, customer windows and route composition can only be changed by an authorized dispatcher in Orders → Deliveries. This also applies to an owner or superadmin viewing courier mode; return to Deliveries to plan. An old interface cannot save these changes through courier actions.\n\nStart route confirms the actual departure of unfinished assigned deliveries and moves accepted, preparing or ready orders together to Out for delivery. Finished or cancelled orders are not reopened. A preparation hold or an unfinalized weighted order must be resolved first. Failure makes no partial change. A courier can have only one active route; finish it before starting another. If a destination could not be verified, ask the dispatcher to check its address or GPS point before confirming departure.\n\nAt departure choose Start and open Waze to record departure, open the first stop and launch Waze. If you choose Start, addresses stay hidden until you choose Open this stop.",
+            "he": "לפני היציאה בדקו את המסלול שהמסעדה שמרה. מצב שליח אינו מציע עוד התאמה, הגדרות מסלול, מיטוב מחדש, תיקון כתובת או שינוי סדר עצירות. רק אחראי מורשה יכול לשנות יציאה מתוכננת, נקודות התחלה וסיום, זמני מסירה, חלונות ללקוח והרכב מסלול דרך הזמנות ← משלוחים. הכלל חל גם על בעל מסעדה או מנהל מערכת שצופה במצב שליח; לתכנון חוזרים למשלוחים. גם ממשק ישן אינו יכול לשמור שינויים אלה דרך פעולות השליח.\n\nהתחלת מסלול מאשרת יציאה בפועל של המשלוחים המשויכים שטרם הסתיימו ומעבירה יחד הזמנות שאושרו, בהכנה או מוכנות למצב בדרך. הזמנות שהסתיימו או בוטלו אינן נפתחות מחדש. יש לפתור קודם עיכוב הכנה או הזמנה במשקל שלא סוכמה. כשל אינו שומר שינוי חלקי. לשליח יכול להיות מסלול פעיל אחד בלבד; סיימו אותו לפני התחלת הבא. אם יעד לא אומת, בקשו מהאחראי לבדוק את כתובתו או נקודת ה־GPS לפני אישור היציאה.\n\nבעת היציאה לחצו על התחלת מסלול ופתיחת Waze כדי לתעד יציאה, לפתוח את העצירה הראשונה ולהפעיל את Waze. אם בחרתם התחלה, הכתובות יישארו מוסתרות עד שתבחרו פתחו את העצירה."
           }
         },
         {
@@ -36422,9 +36481,9 @@
             "he": "טיפול במגבלת שירות המפות"
           },
           "instructions": {
-            "fr": "Un avertissement de quota atteint ou de service indisponible ne signifie pas que l’adresse du client est fausse. Les positions Google connues restent affichées sur la carte Google tant que leur cache est valide ; les positions non vérifiées sont signalées temporairement indisponibles. Le tracé et les arrivées impossibles à calculer restent masqués. Prévenez le responsable afin qu’il vérifie Consommation et quotas, puis actualisez au retour du service. Réessayer dans le mode livreur recharge les informations sans recalculer ni modifier la tournée. Un recalcul nécessaire se fait par le responsable dans Livraisons. Les commandes et leurs adresses sont conservées. Vérifiez les horaires actualisés avant de contacter les clients.",
-            "en": "A quota or service-unavailable warning does not mean the customer address is wrong. Known Google points remain on the Google map while their cache is valid; unverified positions are flagged as temporarily unavailable. Unavailable geometry and arrival calculations stay hidden. Ask the dispatcher to review Usage and quotas, then refresh when service returns. Retry in courier mode reloads information without recalculating or changing the itinerary. Any necessary recalculation is performed by the dispatcher in Deliveries. Orders and their addresses are preserved. Check updated times before contacting customers.",
-            "he": "אזהרת מכסה או שירות לא זמין אינה אומרת שכתובת הלקוח שגויה. נקודות Google מוכרות נשארות במפת Google כל עוד המטמון תקף; נקודות לא מאומתות מסומנות כלא זמינות זמנית. תוואי ושעות הגעה שלא ניתן לחשב נשארים מוסתרים. בקשו מהאחראי לבדוק שימוש ומכסות ורעננו לאחר חזרת השירות. ניסיון חוזר במצב שליח טוען מידע ללא חישוב מחדש או שינוי המסלול. חישוב מחדש נדרש מבוצע בידי האחראי במשלוחים. ההזמנות וכתובותיהן נשמרות. בדקו שעות מעודכנות לפני פנייה ללקוחות."
+            "fr": "Un avertissement de quota atteint ou de service indisponible ne signifie pas que l’adresse du client est fausse. La position connue de l’arrêt ouvert reste affichée sur la carte Google tant que son cache est valide ; les positions non vérifiées sont signalées temporairement indisponibles. Le tracé et les arrivées impossibles à calculer restent masqués. Prévenez le responsable afin qu’il vérifie Consommation et quotas, puis actualisez au retour du service. Réessayer dans le mode livreur recharge les informations sans recalculer ni modifier la tournée. Un recalcul nécessaire se fait par le responsable dans Livraisons. Les commandes et leurs adresses sont conservées. Vérifiez les horaires actualisés avant de contacter les clients.",
+            "en": "A quota or service-unavailable warning does not mean the customer address is wrong. The open stop’s known point remains on the Google map while its cache is valid; unverified positions are flagged as temporarily unavailable. Unavailable geometry and arrival calculations stay hidden. Ask the dispatcher to review Usage and quotas, then refresh when service returns. Retry in courier mode reloads information without recalculating or changing the itinerary. Any necessary recalculation is performed by the dispatcher in Deliveries. Orders and their addresses are preserved. Check updated times before contacting customers.",
+            "he": "אזהרת מכסה או שירות לא זמין אינה אומרת שכתובת הלקוח שגויה. נקודת המיקום הידועה של העצירה הפתוחה נשארת במפת Google כל עוד המטמון תקף; נקודות לא מאומתות מסומנות כלא זמינות זמנית. תוואי ושעות הגעה שלא ניתן לחשב נשארים מוסתרים. בקשו מהאחראי לבדוק שימוש ומכסות ורעננו לאחר חזרת השירות. ניסיון חוזר במצב שליח טוען מידע ללא חישוב מחדש או שינוי המסלול. חישוב מחדש נדרש מבוצע בידי האחראי במשלוחים. ההזמנות וכתובותיהן נשמרות. בדקו שעות מעודכנות לפני פנייה ללקוחות."
           }
         },
         {
@@ -36435,9 +36494,9 @@
             "he": "התאמת המפה ואיתור עצירה"
           },
           "instructions": {
-            "fr": "Sur mobile, faites glisser la poignée en haut de la liste pour choisir une vue compacte, équilibrée ou étendue. Au clavier, les flèches haut/bas et Début/Fin font le même réglage. La liste défile indépendamment des actions fixes. Rechercher un arrêt filtre par adresse, ville, client, téléphone, numéro de commande ou consigne sans changer l’itinéraire ; effacez le champ ou fermez la recherche pour retrouver tous les arrêts. Toucher un repère efface le filtre et révèle son arrêt. « Afficher toute la tournée » recadre la carte ; + et − règlent le zoom. Changer la tournée consultée n’interrompt pas le partage de position de la tournée active si le téléphone l’autorise.",
-            "en": "On mobile, drag the handle above the list to choose a compact, balanced or expanded view. Keyboard Up/Down and Home/End provide the same adjustment. The list scrolls independently of the fixed actions. Search stops filters by address, city, customer, phone, order number or instructions without changing the route; clear or close search to restore all stops. Selecting a pin clears the filter and reveals its stop. Fit the whole route reframes the map; + and − control zoom. Viewing another route does not stop active-route location sharing when the phone permits it.",
-            "he": "בנייד גררו את הידית מעל הרשימה לבחירת תצוגה מצומצמת, מאוזנת או מורחבת. במקלדת השתמשו בחצים למעלה ולמטה או Home ו־End. הרשימה נגללת בנפרד מהפעולות הקבועות. חיפוש עצירות מסנן לפי כתובת, עיר, לקוח, טלפון, מספר הזמנה או הנחיות ואינו משנה את המסלול; נקו או סגרו את החיפוש להצגת כל העצירות. בחירת סמן מנקה את הסינון ומציגה את העצירה. הצגת כל המסלול מתאימה את המפה; + ו־− משנים את הזום. מעבר לצפייה במסלול אחר אינו עוצר את שיתוף המיקום של המסלול הפעיל אם הטלפון מתיר זאת."
+            "fr": "Sur mobile, faites glisser la poignée en haut de la liste pour choisir une vue compacte, équilibrée ou étendue. Au clavier, les flèches haut/bas et Début/Fin font le même réglage. La liste défile indépendamment des actions fixes. Recherchez un arrêt masqué par numéro de commande. La recherche par adresse ou contact s’applique à l’arrêt ouvert. Touchez son repère pour le retrouver dans la liste. « Afficher toute la tournée » recadre la carte ; + et − règlent le zoom. Changer la tournée consultée n’interrompt pas le partage de position de la tournée active si le téléphone l’autorise.",
+            "en": "On mobile, drag the handle above the list to choose a compact, balanced or expanded view. Keyboard Up/Down and Home/End provide the same adjustment. The list scrolls independently of the fixed actions. Search for hidden stops by order number. Address and contact search applies to the open stop. Select its pin to find it in the list. Fit the whole route reframes the map; + and − control zoom. Viewing another route does not stop active-route location sharing when the phone permits it.",
+            "he": "בנייד גררו את הידית מעל הרשימה לבחירת תצוגה מצומצמת, מאוזנת או מורחבת. במקלדת השתמשו בחצים למעלה ולמטה או Home ו־End. הרשימה נגללת בנפרד מהפעולות הקבועות. חפשו עצירות מוסתרות לפי מספר הזמנה. חיפוש כתובת או איש קשר חל על העצירה הפתוחה. בחרו את הסיכה שלה כדי לאתר אותה ברשימה. הצגת כל המסלול ממסגרת את המפה, והלחצנים + ו־− משנים את המרחק. מעבר בין מסלולים אינו עוצר את שיתוף המיקום של המסלול הפעיל כאשר הטלפון מאפשר זאת."
           }
         },
         {
@@ -36474,9 +36533,9 @@
             "he": "בדיקת מעקב מיקום השליח"
           },
           "instructions": {
-            "fr": "Le livreur doit ouvrir Foody sur son téléphone avec son propre compte, démarrer sa tournée et autoriser la localisation. Gardez Foody affiché avec une connexion Internet. Les positions GPS reçues sont transmises à Foody au maximum une fois toutes les dix secondes, selon le navigateur ; cette fréquence n’est pas garantie. Le point intitulé Position du livreur indique la dernière position reçue dans Livraisons et Mode livreur. Le triangle vert reste le départ prévu. L’heure affichée indique la réception de la position ; après plus d’une minute, la position est signalée ancienne et le point s’atténue. Sans position, un message le précise. Le mode livreur distingue l’attente du GPS, le refus de permission, un GPS indisponible et un échec de transmission. Corrigez les autorisations ou la connexion puis utilisez Réessayer. Ces états ne valident aucune livraison. Ouvrir Waze, changer d’application ou verrouiller le téléphone peut interrompre le suivi web : revenez dans Foody pour reprendre. Consulter un autre livreur avec Voir comme livreur affiche sa position reçue et n’envoie jamais celle du responsable. Le partage du GPS et le déplacement du point ne déclenchent aucun appel Google ; le chargement du fond de carte et les recalculs d’itinéraire gardent leur propre consommation.\n\nLe livreur est représenté par un avatar rond, au-dessus des repères de livraison, avec un libellé toujours visible. Une position ancienne conserve son avatar et le libellé Position ancienne du livreur. Le cadrage initial inclut la dernière position reçue ; dans Mode livreur, Afficher toute la tournée la remet dans le cadre avec les arrêts. Les mises à jour GPS déplacent l’avatar sans recentrer automatiquement la carte.",
-            "en": "The courier must open Foody on their phone with their own account, start their route and allow location access. Keep Foody visible with an Internet connection. GPS readings are sent to Foody at most once every ten seconds, subject to browser updates; this frequency is not guaranteed. The marker titled Courier position shows the last received location in Deliveries and Courier mode. The green triangle remains the planned departure point. The displayed time is when the position was received; after more than one minute, it is labelled old and the marker fades. A message identifies a missing position. Courier mode distinguishes waiting for GPS, denied permission, unavailable GPS and transmission failure. Correct permissions or connectivity, then choose Retry. These states never confirm a delivery. Opening Waze, switching apps or locking the phone can interrupt web tracking: return to Foody to resume. View as courier displays the selected courier’s received position and never sends the manager’s location. Sharing GPS and moving the marker make no Google calls; map background loads and route recalculations retain their own usage.\n\nThe courier is represented by a round avatar above delivery pins, with an always-visible label. An old position retains its avatar and the Old courier position label. Initial framing includes the last received position; in Courier mode, Fit the whole route brings it back into view with the stops. GPS updates move the avatar without automatically recentering the map.",
-            "he": "על השליח לפתוח את Foody בטלפון שלו עם החשבון שלו, להתחיל מסלול ולאשר גישה למיקום. השאירו את Foody גלוי עם חיבור לאינטרנט. קריאות GPS נשלחות ל-Foody לכל היותר פעם בעשר שניות, בהתאם לעדכוני הדפדפן; תדירות זו אינה מובטחת. הסמן שכותרתו מיקום השליח מציג את המיקום האחרון שהתקבל במשלוחים ובמצב שליח. המשולש הירוק נשאר נקודת היציאה המתוכננת. השעה המוצגת היא שעת קבלת המיקום; לאחר יותר מדקה המיקום מסומן כישן והסמן דוהה. הודעה מציינת שלא התקבל מיקום. מצב שליח מבחין בין המתנה ל-GPS, הרשאה שנדחתה, GPS שאינו זמין וכשל בשליחה. תקנו הרשאות או חיבור ואז בחרו נסו שוב. מצבים אלה אינם מאשרים מסירה. פתיחת Waze, מעבר לאפליקציה אחרת או נעילת הטלפון עלולים להפסיק מעקב בדפדפן: חזרו ל-Foody כדי לחדש אותו. צפייה בתור שליח מציגה את המיקום שהתקבל מהשליח הנבחר ואינה שולחת את מיקום המנהל. שיתוף GPS והזזת הסמן אינם מפעילים קריאות ל-Google; טעינת רקע המפה וחישובי מסלול שומרים על צריכה נפרדת.\n\nהשליח מוצג באווטאר עגול מעל סמני המשלוחים, עם תווית שמוצגת תמיד. מיקום ישן שומר על האווטאר ועל התווית מיקום ישן של השליח. המסגור הראשוני כולל את המיקום האחרון שהתקבל; במצב שליח, הצגת כל המסלול מחזירה אותו לתצוגה יחד עם העצירות. עדכוני GPS מזיזים את האווטאר בלי למרכז מחדש את המפה אוטומטית."
+            "fr": "Le livreur doit ouvrir Foody sur son téléphone avec son propre compte, démarrer sa tournée et autoriser la localisation. Gardez Foody affiché avec une connexion Internet. Les positions GPS reçues sont transmises à Foody au maximum une fois toutes les dix secondes, selon le navigateur ; cette fréquence n’est pas garantie. Le point intitulé Position du livreur indique la dernière position reçue dans Livraisons et Mode livreur. Le triangle vert reste le départ prévu. L’heure affichée indique la réception de la position ; après plus d’une minute, la position est signalée ancienne et le point s’atténue. Sans position, un message le précise. Le mode livreur distingue l’attente du GPS, le refus de permission, un GPS indisponible et un échec de transmission. Corrigez les autorisations ou la connexion puis utilisez Réessayer. Ces états ne valident aucune livraison. Ouvrir Waze, changer d’application ou verrouiller le téléphone peut interrompre le suivi web : revenez dans Foody pour reprendre. Consulter un autre livreur avec Voir comme livreur affiche sa position reçue et n’envoie jamais celle du responsable. Le partage du GPS et le déplacement du point ne déclenchent aucun appel Google ; le chargement du fond de carte et les recalculs d’itinéraire gardent leur propre consommation.\n\nLe livreur est représenté par un avatar rond, au-dessus des repères de livraison, avec un libellé toujours visible. Une position ancienne conserve son avatar et le libellé Position ancienne du livreur. Le cadrage initial inclut la dernière position reçue ; dans Mode livreur, Afficher toute la tournée la remet dans le cadre avec l’arrêt ouvert. Les mises à jour GPS déplacent l’avatar sans recentrer automatiquement la carte.",
+            "en": "The courier must open Foody on their phone with their own account, start their route and allow location access. Keep Foody visible with an Internet connection. GPS readings are sent to Foody at most once every ten seconds, subject to browser updates; this frequency is not guaranteed. The marker titled Courier position shows the last received location in Deliveries and Courier mode. The green triangle remains the planned departure point. The displayed time is when the position was received; after more than one minute, it is labelled old and the marker fades. A message identifies a missing position. Courier mode distinguishes waiting for GPS, denied permission, unavailable GPS and transmission failure. Correct permissions or connectivity, then choose Retry. These states never confirm a delivery. Opening Waze, switching apps or locking the phone can interrupt web tracking: return to Foody to resume. View as courier displays the selected courier’s received position and never sends the manager’s location. Sharing GPS and moving the marker make no Google calls; map background loads and route recalculations retain their own usage.\n\nThe courier is represented by a round avatar above delivery pins, with an always-visible label. An old position retains its avatar and the Old courier position label. Initial framing includes the last received position; in Courier mode, Fit the whole route brings it back into view with the open stop. GPS updates move the avatar without automatically recentering the map.",
+            "he": "על השליח לפתוח את Foody בטלפון שלו עם החשבון שלו, להתחיל מסלול ולאשר גישה למיקום. השאירו את Foody גלוי עם חיבור לאינטרנט. קריאות GPS נשלחות ל-Foody לכל היותר פעם בעשר שניות, בהתאם לעדכוני הדפדפן; תדירות זו אינה מובטחת. הסמן שכותרתו מיקום השליח מציג את המיקום האחרון שהתקבל במשלוחים ובמצב שליח. המשולש הירוק נשאר נקודת היציאה המתוכננת. השעה המוצגת היא שעת קבלת המיקום; לאחר יותר מדקה המיקום מסומן כישן והסמן דוהה. הודעה מציינת שלא התקבל מיקום. מצב שליח מבחין בין המתנה ל-GPS, הרשאה שנדחתה, GPS שאינו זמין וכשל בשליחה. תקנו הרשאות או חיבור ואז בחרו נסו שוב. מצבים אלה אינם מאשרים מסירה. פתיחת Waze, מעבר לאפליקציה אחרת או נעילת הטלפון עלולים להפסיק מעקב בדפדפן: חזרו ל-Foody כדי לחדש אותו. צפייה בתור שליח מציגה את המיקום שהתקבל מהשליח הנבחר ואינה שולחת את מיקום המנהל. שיתוף GPS והזזת הסמן אינם מפעילים קריאות ל-Google; טעינת רקע המפה וחישובי מסלול שומרים על צריכה נפרדת.\n\nהשליח מוצג באווטאר עגול מעל סמני המשלוחים, עם תווית שמוצגת תמיד. מיקום ישן שומר על האווטאר ועל התווית מיקום ישן של השליח. המסגור הראשוני כולל את המיקום האחרון שהתקבל; במצב שליח, הצגת כל המסלול מחזירה אותו לתצוגה יחד עם העצירה הפתוחה. עדכוני GPS מזיזים את האווטאר בלי למרכז מחדש את המפה אוטומטית."
           }
         },
         {
@@ -36496,7 +36555,7 @@
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-11-11",
+      "procedureUpdatedAt": "2026-11-12",
       "evidence": [
         {
           "service": "foodyadmin",
@@ -46787,9 +46846,9 @@
             "he": "קריאת היסטוריית הודעות"
           },
           "instructions": {
-            "en": "In the order’s communication panel inspect sent, delivered, read, failed and blocked-before-send records. A blocked automation is not proof of delivery. For a reviewed courier reminder use its explicit action only when eligible. Unknown provider outcomes are not automatically replayed; investigate before another send.",
-            "fr": "Dans la communication de commande, consultez envoyé, livré, lu, échec et blocage avant envoi. Un blocage ne prouve pas une livraison. Le rappel livreur relu se déclenche par son action éligible. Un résultat prestataire inconnu n’est pas rejoué automatiquement ; vérifiez avant renvoi.",
-            "he": "בתקשורת הזמנה בדקו נשלח, נמסר, נקרא, נכשל וחסום לפני שליחה. חסימה אינה הוכחת מסירה. תזכורת שליח נשלחת בפעולה מפורשת כשהיא זכאית. תוצאה לא ידועה אינה משוחזרת אוטומטית; בררו לפני שליחה נוספת."
+            "en": "In the order’s communication panel inspect sent, delivered, read, failed and blocked-before-send records. A blocked automation is not proof of delivery. For a reviewed courier reminder use its explicit action only when eligible. Unknown provider outcomes are not automatically replayed; investigate before another send.\n\nStaff with access to the order workspace can read this history. Couriers can open WhatsApp for the current stop from Courier mode.",
+            "fr": "Dans la communication de commande, consultez envoyé, livré, lu, échec et blocage avant envoi. Un blocage ne prouve pas une livraison. Le rappel livreur relu se déclenche par son action éligible. Un résultat prestataire inconnu n’est pas rejoué automatiquement ; vérifiez avant renvoi.\n\nLe personnel ayant accès à l’espace de gestion des commandes peut consulter cet historique. Le livreur peut ouvrir WhatsApp depuis l’arrêt en cours dans le mode livreur.",
+            "he": "בתקשורת הזמנה בדקו נשלח, נמסר, נקרא, נכשל וחסום לפני שליחה. חסימה אינה הוכחת מסירה. תזכורת שליח נשלחת בפעולה מפורשת כשהיא זכאית. תוצאה לא ידועה אינה משוחזרת אוטומטית; בררו לפני שליחה נוספת.\n\nצוות עם גישה לניהול ההזמנות יכול לעיין בהיסטוריה. שליח יכול לפתוח WhatsApp עבור העצירה הנוכחית במצב שליח."
           }
         },
         {
@@ -46887,7 +46946,7 @@
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-10-25",
+      "procedureUpdatedAt": "2026-11-12",
       "evidence": [
         {
           "service": "foodyserver",
@@ -50486,16 +50545,16 @@
             "he": "חוזה ניווט ותוצאות לשליחים"
           },
           "instructions": {
-            "en": "Deploy migration 313 before the matching API and Admin. The restaurant-scoped courier navigate and issue routes require an active route and its assigned courier context. Navigation records the stop awaiting a result. Only one pending stop may reserve navigation per route. An issue preserves an audited unsuccessful attempt without completing the order. It removes the order from automatic courier selection and guest GPS tracking until a new route starts. Order managers can send a push reminder to the assigned courier’s registered devices.",
-            "fr": "Déployez la migration 313 avant l’API et l’Admin compatibles. Les actions de navigation et de signalement contrôlent le restaurant, la tournée active et le livreur affecté. La navigation enregistre l’arrêt dont le résultat est attendu. Une tournée ne peut avoir qu’un seul arrêt en attente de ce résultat. Un signalement conserve une tentative infructueuse dans le journal sans terminer la commande. Celle-ci sort de la sélection automatique du livreur et du suivi GPS côté client jusqu’au départ d’une nouvelle tournée. Un responsable peut envoyer un rappel push aux appareils enregistrés du livreur affecté.",
-            "he": "החילו את מיגרציה 313 לפני ה־API וממשק הניהול התואמים. פעולות ניווט ודיווח בודקות את המסעדה, המסלול הפעיל והשליח המשויך. הניווט שומר את העצירה שממתינה לתוצאה. בכל מסלול עצירה אחת יכולה להמתין לתוצאה זו. דיווח שומר ניסיון מסירה כושל ביומן מבלי לסיים את ההזמנה. ההזמנה מוסרת מהבחירה האוטומטית של השליח וממעקב המיקום של הלקוח עד להתחלת מסלול חדש. אחראי הזמנות יכול לשלוח תזכורת למכשירים הרשומים של השליח המשויך."
+            "en": "Deploy migration 313 before the matching API and Admin. The restaurant-scoped courier navigate and issue routes require an active route and its assigned courier context. Navigation records the stop awaiting a result. Only one pending stop may reserve navigation per route. An issue preserves an audited unsuccessful attempt without completing the order. It removes the order from automatic courier selection and guest GPS tracking until a new route starts. Order managers can send a push reminder to the assigned courier’s registered devices.\n\nCourier responses omit the route line and hide customer data outside the open stop. Courier accounts receive refresh events without order details on the live connection. This correction uses the existing migration 313.",
+            "fr": "Déployez la migration 313 avant l’API et l’Admin compatibles. Les actions de navigation et de signalement contrôlent le restaurant, la tournée active et le livreur affecté. La navigation enregistre l’arrêt dont le résultat est attendu. Une tournée ne peut avoir qu’un seul arrêt en attente de ce résultat. Un signalement conserve une tentative infructueuse dans le journal sans terminer la commande. Celle-ci sort de la sélection automatique du livreur et du suivi GPS côté client jusqu’au départ d’une nouvelle tournée. Un responsable peut envoyer un rappel push aux appareils enregistrés du livreur affecté.\n\nLes réponses du mode livreur masquent le tracé et les données client hors de l’arrêt ouvert. Les comptes livreur reçoivent des signaux de rafraîchissement sans données de commande sur le canal temps réel. Cette correction réutilise la migration 313 déjà appliquée.",
+            "he": "החילו את מיגרציה 313 לפני ה־API וממשק הניהול התואמים. פעולות ניווט ודיווח בודקות את המסעדה, המסלול הפעיל והשליח המשויך. הניווט שומר את העצירה שממתינה לתוצאה. בכל מסלול עצירה אחת יכולה להמתין לתוצאה זו. דיווח שומר ניסיון מסירה כושל ביומן מבלי לסיים את ההזמנה. ההזמנה מוסרת מהבחירה האוטומטית של השליח וממעקב המיקום של הלקוח עד להתחלת מסלול חדש. אחראי הזמנות יכול לשלוח תזכורת למכשירים הרשומים של השליח המשויך.\n\nתגובות מצב השליח מסתירות את תוואי המסלול ופרטי הלקוחות מלבד העצירה הפתוחה. חשבון שליח מקבל אירועי רענון ללא פרטי הזמנה בחיבור בזמן אמת. התיקון משתמש במיגרציה 313 הקיימת."
           }
         }
       ],
       "audience": "internal",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-11-11",
+      "procedureUpdatedAt": "2026-11-12",
       "updatedAt": "2026-10-28",
       "evidence": [
         {
@@ -59390,6 +59449,136 @@
         {
           "service": "foodyweb",
           "file": "services/api.ts"
+        }
+      ]
+    },
+    {
+      "id": "customers-wallet-studio",
+      "module": "customers",
+      "article": "internal/wallet-studio",
+      "title": {
+        "en": "Prepare a Wallet design and test it on iPhone",
+        "fr": "Préparer un visuel Wallet et le tester sur iPhone",
+        "he": "הכנת עיצוב Wallet ובדיקתו ב־iPhone"
+      },
+      "entry": {
+        "en": "In Foody Admin, select the restaurant and open **Loyalty program → Wallet Studio**.",
+        "fr": "Dans Foody Admin, sélectionnez le restaurant et ouvrez **Programme de fidélité → Studio Wallet**.",
+        "he": "ב־Foody Admin, בחרו את המסעדה ופתחו **תוכנית מועדון → סטודיו Wallet**."
+      },
+      "access": {
+        "en": "Use an account with restaurant settings access. Saving a draft and generating an Apple test card require permission to edit settings. The iPhone test requires a loyalty program and an Apple Pass Type ID certificate with its matching key configured on the server.",
+        "fr": "Utilisez un compte avec accès aux paramètres du restaurant. Enregistrer le brouillon et générer une carte de test Apple exige le droit de modifier ces paramètres. L’essai sur iPhone exige un programme de fidélité et un certificat Apple Pass Type ID avec sa clé configurés sur le serveur.",
+        "he": "השתמשו בחשבון עם גישה להגדרות המסעדה. שמירת הטיוטה ויצירת כרטיס בדיקה של Apple דורשות הרשאת עריכה. הבדיקה ב־iPhone דורשת תוכנית מועדון ותעודת Apple Pass Type ID עם מפתח תואם שמוגדרים בשרת."
+      },
+      "selectors": {
+        "foodyadmin": [
+          "src/app/[restaurantId]/loyalty/program/wallet/page.tsx",
+          "src/components/loyalty/WalletStudioWorkspace.tsx",
+          "src/components/loyalty/LoyaltyProgramWorkspace.tsx",
+          "src/lib/api.ts",
+          "src/lib/i18n.tsx"
+        ],
+        "foodyserver": [
+          "cmd/server/wallet_studio.go",
+          "cmd/server/boot_models.go",
+          "internal/common/loyalty_wallet_design.go",
+          "internal/loyalty/wallet_studio.go",
+          "internal/loyalty/wallet_studio_handler.go",
+          "internal/loyalty/wallet_studio_artwork.go",
+          "internal/loyaltywallet/apple_studio.go",
+          "internal/loyaltywallet/apple.go",
+          "migrations/315_loyalty_wallet_designs.sql"
+        ]
+      },
+      "operations": [
+        {
+          "id": "save-design",
+          "title": {
+            "en": "Save a private design",
+            "fr": "Enregistrer un visuel privé",
+            "he": "שמירת עיצוב פרטי"
+          },
+          "instructions": {
+            "en": "Set the background color and the Apple text color. Choose a logo and a banner in PNG or JPEG, up to 1 MB each. Switch between Apple Wallet and Google Wallet to check the cropping. Select **Save draft**. If another editor saved a newer draft, reload it before retrying.",
+            "fr": "Choisissez la couleur du fond et celle du texte Apple. Importez un logo et une bannière en PNG ou JPEG, de 1 Mo maximum chacun. Basculez entre Apple Wallet et Google Wallet pour vérifier le cadrage. Cliquez sur **Enregistrer le brouillon**. Si une autre personne a enregistré une version plus récente, rechargez-la avant de réessayer.",
+            "he": "בחרו צבע רקע וצבע טקסט ל־Apple. בחרו לוגו ותמונת כותרת בפורמט PNG או JPEG, עד 1 מ״ב לקובץ. עברו בין Apple Wallet ל־Google Wallet כדי לבדוק את החיתוך. בחרו **שמירת טיוטה**. אם נשמרה גרסה עדכנית יותר, טענו אותה מחדש לפני ניסיון נוסף."
+          }
+        },
+        {
+          "id": "apple-test",
+          "title": {
+            "en": "Add a test card on iPhone",
+            "fr": "Ajouter une carte de test sur iPhone",
+            "he": "הוספת כרטיס בדיקה ל־iPhone"
+          },
+          "instructions": {
+            "en": "On the saved design, select **Generate an Apple test card**, then **Download .pkpass**. Open the file on an iPhone and select **Add**. Check the logo, banner, colors and Test card label. The pass shows sample progress and a demonstration QR. If signing is unavailable, check the Apple signing configuration for the environment. The Google tab previews the artwork.",
+            "fr": "Sur le visuel enregistré, cliquez sur **Générer une carte de test Apple**, puis sur **Télécharger le .pkpass**. Ouvrez le fichier sur un iPhone et touchez **Ajouter**. Vérifiez le logo, la bannière, les couleurs et la mention Carte de test. Le pass utilise une progression fictive et un QR de démonstration. Si la signature est indisponible, vérifiez la configuration Apple de l’environnement. L’onglet Google affiche l’aperçu du visuel.",
+            "he": "בעיצוב השמור בחרו **יצירת כרטיס בדיקה של Apple** ואז **הורדת קובץ ‎.pkpass**. פתחו את הקובץ ב־iPhone ובחרו **הוספה**. בדקו את הלוגו, תמונת הכותרת, הצבעים ואת הכיתוב כרטיס בדיקה. הכרטיס מציג התקדמות להמחשה וקוד QR לדוגמה. אם החתימה אינה זמינה, בדקו את הגדרות החתימה של Apple בסביבה הנוכחית. הלשונית Google מציגה את העיצוב בתצוגה מקדימה."
+          }
+        }
+      ],
+      "audience": "internal",
+      "status": "local-release-unverified",
+      "procedureUpdatedAt": "2026-11-12",
+      "preserveExisting": false,
+      "evidence": [
+        {
+          "service": "foodyserver",
+          "file": "cmd/server/boot_models.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "cmd/server/wallet_studio.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/common/loyalty_wallet_design.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyalty/wallet_studio.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyalty/wallet_studio_artwork.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyalty/wallet_studio_handler.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyaltywallet/apple.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyaltywallet/apple_studio.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "migrations/315_loyalty_wallet_designs.sql"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/app/[restaurantId]/loyalty/program/wallet/page.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/components/loyalty/LoyaltyProgramWorkspace.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/components/loyalty/WalletStudioWorkspace.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/lib/api.ts"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/lib/i18n.tsx"
         }
       ]
     }
@@ -78687,6 +78876,51 @@
       "resolution": "router-group-relative"
     },
     {
+      "id": "foodyserver:internal/loyalty/wallet_studio_handler.go:api-registration:28",
+      "service": "foodyserver",
+      "source": "internal/loyalty/wallet_studio_handler.go",
+      "features": [
+        "customers-wallet-studio"
+      ],
+      "kind": "api-registration",
+      "method": "GET",
+      "receiver": "group",
+      "routeFragment": "",
+      "handler": "studio.get",
+      "line": 28,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/loyalty/wallet_studio_handler.go:api-registration:29",
+      "service": "foodyserver",
+      "source": "internal/loyalty/wallet_studio_handler.go",
+      "features": [
+        "customers-wallet-studio"
+      ],
+      "kind": "api-registration",
+      "method": "PUT",
+      "receiver": "group",
+      "routeFragment": "",
+      "handler": "studio.put",
+      "line": 29,
+      "resolution": "router-group-relative"
+    },
+    {
+      "id": "foodyserver:internal/loyalty/wallet_studio_handler.go:api-registration:30",
+      "service": "foodyserver",
+      "source": "internal/loyalty/wallet_studio_handler.go",
+      "features": [
+        "customers-wallet-studio"
+      ],
+      "kind": "api-registration",
+      "method": "POST",
+      "receiver": "group",
+      "routeFragment": "/apple-test",
+      "handler": "studio.postAppleTest",
+      "line": 30,
+      "resolution": "router-group-relative"
+    },
+    {
       "id": "foodyserver:internal/loyaltywallet/handler.go:api-registration:50",
       "service": "foodyserver",
       "source": "internal/loyaltywallet/handler.go",
@@ -83200,6 +83434,17 @@
       ],
       "kind": "next-page",
       "route": "/[restaurantId]/loyalty/program",
+      "line": 1
+    },
+    {
+      "id": "foodyadmin:src/app/[restaurantId]/loyalty/program/wallet/page.tsx:next-page:1",
+      "service": "foodyadmin",
+      "source": "src/app/[restaurantId]/loyalty/program/wallet/page.tsx",
+      "features": [
+        "customers-wallet-studio"
+      ],
+      "kind": "next-page",
+      "route": "/[restaurantId]/loyalty/program/wallet",
       "line": 1
     },
     {
@@ -88672,11 +88917,13 @@
         "courierAwaitingResult",
         "courierChooseIssue",
         "courierDeliveryProgress",
+        "courierDestinationLocked",
         "courierEstimatedFinish",
         "courierFinishCurrentRoute",
         "courierIssueExplanation",
         "courierIssueReason",
         "courierLocationLocating",
+        "courierOpenStop",
         "courierReportIssue",
         "courierResizePanel",
         "courierRouteMap",
@@ -88714,6 +88961,7 @@
         "onArrived",
         "onDelivered",
         "onNavigate",
+        "onOpenStop",
         "onReload",
         "onReportIssue",
         "onStart",
@@ -89853,7 +90101,8 @@
       "service": "foodyadmin",
       "source": "src/components/loyalty/LoyaltyProgramWorkspace.tsx",
       "features": [
-        "customers-loyalty-program"
+        "customers-loyalty-program",
+        "customers-wallet-studio"
       ],
       "kind": "ui-controls",
       "labels": [
@@ -89898,12 +90147,56 @@
         "loyaltyProgramValidity",
         "loyaltyProgramValidityHint",
         "loyaltyProgramVariant",
-        "loyaltyProgramVisits"
+        "loyaltyProgramVisits",
+        "walletStudioTitle"
       ],
       "actions": [
         "load",
         "loadError",
         "submit"
+      ],
+      "line": 1
+    },
+    {
+      "id": "foodyadmin:src/components/loyalty/WalletStudioWorkspace.tsx:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/components/loyalty/WalletStudioWorkspace.tsx",
+      "features": [
+        "customers-wallet-studio"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "loading",
+        "loyaltyProgramForbidden",
+        "loyaltyProgramTitle",
+        "walletStudioAppearance",
+        "walletStudioAppleText",
+        "walletStudioBack",
+        "walletStudioBackground",
+        "walletStudioBanner",
+        "walletStudioDownload",
+        "walletStudioDraft",
+        "walletStudioForeground",
+        "walletStudioImageHint",
+        "walletStudioIntro",
+        "walletStudioLogo",
+        "walletStudioNeedsProgram",
+        "walletStudioPicker",
+        "walletStudioPreview",
+        "walletStudioPreviewHint",
+        "walletStudioReadOnly",
+        "walletStudioRemove",
+        "walletStudioSave",
+        "walletStudioSaveFirst",
+        "walletStudioSigningOff",
+        "walletStudioTestCard",
+        "walletStudioTestHint",
+        "walletStudioThreshold",
+        "walletStudioTitle"
+      ],
+      "actions": [
+        "save",
+        "saved"
       ],
       "line": 1
     },
@@ -98705,7 +98998,8 @@
         "orders-internal-sumit-checkout",
         "stancer-cash-guarantee",
         "orders-events",
-        "payments-transactions"
+        "payments-transactions",
+        "customers-wallet-studio"
       ],
       "kind": "ui-controls",
       "labels": [],
@@ -98840,6 +99134,7 @@
         "saveProductionColumnOrder",
         "saveProductionPortioning",
         "saveRestaurantCalendarEvent",
+        "saveWalletStudio",
         "saveWebsiteDraft",
         "saved",
         "sendOrderEmail",
@@ -109346,10 +109641,10 @@
   ],
   "coverage": {
     "sharedRuntimeFiles": 443,
-    "features": 112,
-    "operations": 967,
-    "sourceFiles": 2588,
-    "surfaces": 2279,
+    "features": 113,
+    "operations": 969,
+    "sourceFiles": 2597,
+    "surfaces": 2284,
     "unclassifiedRoutes": []
   }
 }

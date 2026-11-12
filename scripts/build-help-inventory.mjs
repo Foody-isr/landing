@@ -78,6 +78,8 @@ for (const [service, configuredRoot] of Object.entries(roots)) {
       'src/lib/item-menu-assignments.ts', 'src/lib/itemDraft.ts',
     ].includes(file);
     const sandboxBillingModule = matched.includes('foody-billing-sandbox');
+    const walletStudioModule = service === 'foodyserver' && matched.includes('customers-wallet-studio') &&
+      /^(?:cmd\/server\/wallet_studio\.go|internal\/common\/loyalty_wallet_design\.go|internal\/loyalty\/wallet_studio(?:_artwork|_handler)?\.go|internal\/loyaltywallet\/apple_studio\.go|migrations\/315_loyalty_wallet_designs\.sql)$/.test(file);
     // Standalone sandbox subscription files do not implement operational or
     // production payments even when shared selectors cover the same directories.
     let ids = sandboxBillingModule ? ['foody-billing-sandbox'] : itemMenuAssignmentModule ? ['menu-categories-and-items', 'menu-creating-a-menu-item', 'menu-menus-and-groups'] : eventModule ? ['orders-events'] : endOfDayModule ? ['pos-end-of-day'] : guardedCash ? ['pos-payments', 'pos-end-of-day'] : cashGuaranteeModule ? ['stancer-cash-guarantee'] : service === 'foodyserver' && file === 'internal/orders/cash_drawer_context.go'
@@ -124,6 +126,7 @@ for (const [service, configuredRoot] of Object.entries(roots)) {
       : saleReceiptLayoutModule ? ['printer-profiles']
       : ashraitReceiptOwnership[`${service}:${file}`] ?? currentPOSProofOwnership[`${service}:${file}`]
         ?? focusedStockOwnership[`${service}:${file}`] ?? mobileHomeOwnership ?? ids;
+    if (walletStudioModule) ids = ['customers-wallet-studio'];
     sources[file] = { sha256: digest(bytes), features: ids };
     const found = [];
     if (/(?:^|\/)app\/.*\/(?:page|route)\.[jt]sx?$/.test(file)) found.push({ kind: file.includes('/route.') ? 'next-api-route' : 'next-page', route: routePath(file), line: 1 });
