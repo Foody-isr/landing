@@ -6170,9 +6170,9 @@
     },
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "eea05be6f209874d1af0f5676d131d5c82afb745",
+      "sourceCommit": "f37675d92cca8af91b5770ce2472698d7cbc0049",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "e794025b2e75346bec75c54429a6a398617181b2fc1e8742315edd4b26bc78cf",
+      "sourceSnapshot": "f6c5e4c7dd3c7ded7a55b9eeadc80099bfd2dacf6c64f5b38a0b047e5d5fe209",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
@@ -8185,7 +8185,7 @@
           ]
         },
         "src/components/delivery/DispatcherView.tsx": {
-          "sha256": "eda1961077f1537b8ffea0f6705b9358843dc6aa7e5008d29157b9f56753840e",
+          "sha256": "379183625a3236c6eb1434b8ec55acd8732014296a07cba29f1ba17be34055b1",
           "features": [
             "delivery-dispatch"
           ]
@@ -9283,7 +9283,7 @@
           ]
         },
         "src/components/orders/EditCustomerDialog.tsx": {
-          "sha256": "cb896b9d97062716535f19516d5e11e00e3208f1f72989db4d62ea2b2e1d198e",
+          "sha256": "28bc862299371fe5c91c80d342c68f9b5db65842e81e743bdcd49e4baf3de7b1",
           "features": [
             "orders-managing-orders",
             "order-detail"
@@ -10843,7 +10843,7 @@
           ]
         },
         "src/lib/i18n.tsx": {
-          "sha256": "06b0d4b5799a0addb29fb022c72f886d4b9bcb5847d21b8f80a0e41eaf8ee776",
+          "sha256": "b6d72ccaec1f82ed5a650ceccba4775499e8c3e827cc8a12bfb815cc8089adb0",
           "features": [
             "customers-profiles",
             "menu-menus-and-groups",
@@ -35932,9 +35932,9 @@
             "he": "תיקון כתובת משלוח של תחנה"
           },
           "instructions": {
-            "fr": "Dans Commandes → Livraisons, sélectionnez l’arrêt, puis Corriger l’adresse. Dans Adresse de livraison, saisissez la rue, le numéro et la ville et sélectionnez une suggestion Google complète. Saisir l’adresse manuellement affiche les champs rue et ville. Enregistrez pour localiser l’arrêt et recalculer la tournée. Si l’adresse reste introuvable, vérifiez le numéro et la ville. Si l’adresse est enregistrée et que le recalcul échoue, choisissez Recalculer sur la tournée.",
-            "en": "In Orders → Deliveries, select the stop and choose Correct address. In Delivery address, enter the street, number and city and select a complete Google suggestion. Choose Enter the address manually to edit the street and city separately. Save to locate the stop and recalculate the route. If the address cannot be located, check the number and city. If the address saves and recalculation fails, choose Recalculate on the route.",
-            "he": "בהזמנות ← משלוחים בחרו את התחנה ואז תיקון כתובת. בשדה כתובת למשלוח הזינו רחוב, מספר בית ועיר ובחרו כתובת מלאה מההצעות של Google. הזנת כתובת ידנית מציגה שדות נפרדים לרחוב ולעיר. שמרו כדי לאתר את התחנה ולחשב את המסלול מחדש. אם הכתובת לא נמצאה, בדקו את מספר הבית והעיר. אם הכתובת נשמרה והחישוב נכשל, בחרו חשב מסלול מחדש במסלול."
+            "fr": "Dans Commandes → Livraisons, sélectionnez l’arrêt, puis Corriger l’adresse. Dans Adresse de livraison, saisissez la rue, le numéro et la ville et sélectionnez une suggestion Google complète. Saisir l’adresse manuellement affiche les champs rue et ville. Enregistrez. L’Admin recalcule la tournée si le point a pu être vérifié. Si le point d’une adresse sélectionnée reste introuvable, l’adresse est enregistrée et un message vous indique de vérifier le point. Vérifiez le numéro et la ville, puis essayez une autre suggestion ou la saisie manuelle pour localiser l’arrêt. Si le recalcul échoue après la vérification, choisissez Recalculer sur la tournée.",
+            "en": "In Orders → Deliveries, select the stop and choose Correct address. In Delivery address, enter the street, number and city and select a complete Google suggestion. Choose Enter the address manually to edit the street and city separately. Save the changes. Admin recalculates the route when the point is verified. When the map position of a selected address is unavailable, the address saves and a message asks you to verify the point. Check the number and city, then try another suggestion or enter the address manually to locate the stop. If recalculation fails after verification, choose Recalculate on the route.",
+            "he": "בהזמנות ← משלוחים בחרו את התחנה ואז תיקון כתובת. בשדה כתובת למשלוח הזינו רחוב, מספר בית ועיר ובחרו כתובת מלאה מההצעות של Google. הזנת כתובת ידנית מציגה שדות נפרדים לרחוב ולעיר. שמרו את השינויים. המסלול מחושב מחדש לאחר אימות המיקום. אם המיקום של כתובת שנבחרה אינו זמין, הכתובת נשמרת ומוצגת הודעה לאימות המיקום. בדקו את מספר הבית והעיר ונסו הצעה אחרת או הזנה ידנית כדי לאתר את התחנה. אם החישוב נכשל לאחר האימות, בחרו חשב מסלול מחדש במסלול."
           }
         },
         {
@@ -89197,6 +89197,7 @@
         "courierSendReminder",
         "customer",
         "deliveries",
+        "deliveryAddressSavedUnlocated",
         "deliveryExpectedArrival",
         "deliveryNotes",
         "deliveryPlanAvailableCount",
@@ -89260,8 +89261,8 @@
         "loadRequestId",
         "openAddressEditor",
         "openRouteByOrderId",
+        "saveAddressCorrection",
         "saveRouteSettings",
-        "saveVerifiedAddress",
         "saved",
         "savedCourierEndpoints",
         "sendCourierReminder",
