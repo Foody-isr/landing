@@ -4,9 +4,9 @@
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "402576cbbca2225b756cc20795e8b5fd2cbc5963",
+      "sourceCommit": "061c4e024c9a65e766b1f8ee75b5c5dbe40d6850",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "e17066244ce4afaa55861a4411972d20aa7c21b84a9796c1e8677104d86cd287",
+      "sourceSnapshot": "b96fc2669bba7677d0e0b794dda3ec5d0cc2668215a9c5fa4c4f0fadd3f05f6b",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -74,7 +74,7 @@
           ]
         },
         "cmd/server/main.go": {
-          "sha256": "db55c2cc7cffe9fc465fbbb8ebf0fad6876432916b50f7b7f44f79b51f8301a9",
+          "sha256": "18594689de713d0db0bf82a74098300cd43ce5e27c70980371f8d53d1150a0e7",
           "features": [
             "staff-invitations",
             "customers-profiles",
@@ -308,7 +308,7 @@
           ]
         },
         "internal/analytics/handler.go": {
-          "sha256": "a7673bfeb7c4fa04afcc4e8e317fce5dffbe3d0129fafbe35f241fbf1debc711",
+          "sha256": "033e0274e40f8441d3c63dc325b4246208258bcff908dee10172427e1cccad43",
           "features": [
             "analytics-dashboard",
             "platform-api"
@@ -346,6 +346,13 @@
         "internal/audit/audit.go": {
           "sha256": "f5a3149f25694bde94b3b3d9f79dc884ededa881a27b03214588f55d42581d74",
           "features": [
+            "platform-api"
+          ]
+        },
+        "internal/auth/courier_access.go": {
+          "sha256": "f899be771519bc4c894f6d879ec177d0387b945bb3c2b19cc90c8f1539236668",
+          "features": [
+            "account-access",
             "platform-api"
           ]
         },
@@ -1137,21 +1144,28 @@
           ]
         },
         "internal/delivery/courier_context.go": {
-          "sha256": "71d1cacfc9b61c4b418f603622f63e0f1b170d277a27b5956ff9935f30a94111",
+          "sha256": "fde67184a283b9b05c8a09f627b055054a8475a003d4fbe24cb00ef51df848fe",
           "features": [
             "delivery-dispatch",
             "platform-api"
           ]
         },
         "internal/delivery/courier_read_only.go": {
-          "sha256": "2221c9d26fd864c4bcb37a9e1f73b0cc4481ecc7ba84a395f2b3a77b77ea4953",
+          "sha256": "613c040b177f04e7cdd1532980b917be57ece3d4cd5b2313f24450df5a56a0bf",
           "features": [
             "delivery-dispatch",
             "platform-api"
           ]
         },
         "internal/delivery/courier_stop_flow.go": {
-          "sha256": "650cd0380504cd8f0092068c5fd11b5be7fa9ac0d6585dd275a75ff15d334055",
+          "sha256": "e1523b590a22f1c3e8db7c12b2c31790fc1418fc70c010468fb32f3ca749b0ef",
+          "features": [
+            "delivery-dispatch",
+            "platform-api"
+          ]
+        },
+        "internal/delivery/courier_view.go": {
+          "sha256": "61576aa6aa73a21ab4ea7343f89e7841bdf05d669ab6f0b91ca297852e3f2c47",
           "features": [
             "delivery-dispatch",
             "platform-api"
@@ -1233,7 +1247,7 @@
           ]
         },
         "internal/delivery/handler.go": {
-          "sha256": "eab330047fc9a16be1fbb4927b02315f1f0978f3ad10a2518434673bf56dc1cb",
+          "sha256": "2a4c020e3479a57e04da8c48d24fd9208151ee0bc34f4b2256086902bedf48df",
           "features": [
             "delivery-dispatch",
             "platform-api"
@@ -1358,7 +1372,7 @@
           ]
         },
         "internal/delivery/service.go": {
-          "sha256": "e209dfbccba8dbe44a695308de9fd549273589637d7f39f609e7bce4b3f70019",
+          "sha256": "233635428aa55f880bbf58ea951f5fedaeb6af65b5b92d1c24b02c0f671c22b8",
           "features": [
             "delivery-dispatch",
             "platform-api"
@@ -5916,13 +5930,13 @@
           ]
         },
         "internal/websocket/handler.go": {
-          "sha256": "fe7eceffa5fb475cffdf4e0469e9191e0ebc748dd12e2ff2d78fd770080e182b",
+          "sha256": "9d78cf80e1f20556ec66fe5e26817fdca0394c443c2338ac156547f690e5175c",
           "features": [
             "platform-api"
           ]
         },
         "internal/websocket/hub.go": {
-          "sha256": "9a3891a6186ee15743f35199331e44ddc0cf0097ac20e7f39ecc15fc5f04b335",
+          "sha256": "44cc43701072d2ae3ed89c26c60373f933811944723a3e3b7f4b489e64e68a51",
           "features": [
             "platform-api"
           ]
@@ -14480,10 +14494,10 @@
     },
     "foodylanding": {
       "repository": "https://github.com/Foody-isr/landing",
-      "sourceCommit": "0a5c7e7484ad33c863fef30e81a0a265cc086cd4",
+      "sourceCommit": "2988e0b653a98b35f0eb83a93269265a20eebfc0",
       "releaseStatus": "versioned",
       "sourceSnapshot": "8b4b17f71cf9b0d89ce88526685ae1cf1e46c76362233b6a0cbc072bb695291a",
-      "workingTreeHasChanges": true,
+      "workingTreeHasChanges": false,
       "sourceFiles": {
         "src/app/[lang]/about/page.tsx": {
           "sha256": "ed592053bdc8472e8d3fede74c08fe0cda7ebf2aa6226350676b16fa07ef2c39",
@@ -18948,6 +18962,10 @@
       "preserveExisting": true,
       "procedureUpdatedAt": "2026-11-12",
       "evidence": [
+        {
+          "service": "foodyserver",
+          "file": "internal/auth/courier_access.go"
+        },
         {
           "service": "foodyserver",
           "file": "internal/auth/feature.go"
@@ -36139,6 +36157,10 @@
         },
         {
           "service": "foodyserver",
+          "file": "internal/delivery/courier_view.go"
+        },
+        {
+          "service": "foodyserver",
           "file": "internal/delivery/customer_window.go"
         },
         {
@@ -50755,6 +50777,10 @@
         },
         {
           "service": "foodyserver",
+          "file": "internal/auth/courier_access.go"
+        },
+        {
+          "service": "foodyserver",
           "file": "internal/auth/feature.go"
         },
         {
@@ -51208,6 +51234,10 @@
         {
           "service": "foodyserver",
           "file": "internal/delivery/courier_stop_flow.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/delivery/courier_view.go"
         },
         {
           "service": "foodyserver",
@@ -109643,7 +109673,7 @@
     "sharedRuntimeFiles": 443,
     "features": 113,
     "operations": 969,
-    "sourceFiles": 2597,
+    "sourceFiles": 2599,
     "surfaces": 2284,
     "unclassifiedRoutes": []
   }
