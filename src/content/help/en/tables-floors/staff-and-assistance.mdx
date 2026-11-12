@@ -5,7 +5,7 @@ apps: both
 tags:
   - tables-floors
   - table-service-policy
-updatedAt: '2026-10-27'
+updatedAt: '2026-11-04'
 featureId: table-service-policy
 audience: public
 releaseStatus: available
@@ -24,6 +24,8 @@ Choose free, collaborative or strict assignment mode, read its displayed access 
 
 Review the available status labels and table/session controls. An occupied table can have multiple bills: check the active session and covers before seating, moving or closing. Changing a visual status is not proof that a bill was paid. Changing an unsent draft's fulfillment method does not move or merge an existing bill or replace its lifecycle. Choosing a table with a financial check cancels the pending draft transfer and leaves the source intact; follow [the draft-service procedure](/en/help/orders/order-types#pos-change-draft).
 
+A financial summary does not prove that food is in the kitchen: review the check’s recorded progress. Unknown preparation does not reset the table timer or confirm that the table was released.
+
 <span id="resume-confirmed-table-service" />
 
 ## Resume the correct table service
@@ -31,6 +33,8 @@ Review the available status labels and table/session controls. An occupied table
 On a compatible updated POS, opening an occupied table resumes only its confirmed current session without restarting its service or asking for its covers again. Its timer is not reset. Configured cover prompts still apply when starting a new occupancy. If the table closes or changes session while loading or transferring a draft, navigation into the old context stops. Return to the floor plan and reopen the current table; do not force food onto the next party’s service. Verify an unconfirmed transfer before sending an order again. Older outstanding orders remain separate and viewable by number in [Orders](/en/help/settings/pos-workspace#previous-table-service-orders). Opening the table neither settles nor closes those older orders.
 
 After changing restaurants, [select the table again in the current context](/en/help/settings/pos-workspace#restaurant-context-selection). The previous screen selection is cleared; saved checks are neither moved nor deleted.
+
+If another POS starts service at the table while you are choosing covers, opening stops without replacing its covers or attaching your draft. Return to the floor plan, refresh, then reopen the table to review the current visit’s check. The previous draft stays in its original context: do not attach it to the next guests. If the state cannot be verified or an update is required, have the POS and server versions checked before trying again.
 
 <span id="timer-settings-and-close" />
 
@@ -49,3 +53,11 @@ In Table assistance enable the supported requests and staff notifications approp
 ## Find service tools on mobile
 
 In Checks on the updated terminal, the radio selector connects All checks with available floor plans. Open + then Actions for the staff filter, To do and Refresh. Assignment restrictions and permissions still limit accessible tables and checks. The plan can pan on screen; neither panning nor switching views saves new geometry, assigns staff or releases a table. The active user’s name supplies the initials at the lower left; that button opens More without changing service assignment.
+
+<span id="paid-table-close-recovery" />
+
+## Close the correct service after an approved payment
+
+On compatible server and POS versions, an older order linked to a confirmed expired session no longer blocks closing or releasing the next visit at the same table. That older order remains in Orders with its payment state; it is not collected, cancelled or attached to the next guests. Amounts still due in the current session and unconfirmed legacy links must still be resolved before closure.
+
+If the terminal approved the card but closing failed, do not pay again. Refresh the check and verify that Foody shows it paid; then retry only Close order. If Foody has not confirmed payment, verify the original operation or ask a manager. On the compatible POS, a rejected close displays a message while preserving the confirmed floor and occupancy. Closing does not finish food in the kitchen or perform a deposit or banking end of day.

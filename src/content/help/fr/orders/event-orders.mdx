@@ -1,0 +1,77 @@
+---
+title: Commandes événement depuis le parcours habituel
+description: >-
+  Admin → Commandes → Nouvelle commande. Nécessite le schéma événement de l’API et les versions Admin, Web client et POS
+  compatibles. Le checkout privé préparé nécessite actuellement un compte Sumit configuré.
+apps: both
+tags:
+  - orders
+  - orders-events
+updatedAt: '2026-11-11'
+featureId: orders-events
+audience: public
+releaseStatus: available
+---
+Admin → Commandes → Nouvelle commande. Nécessite le schéma événement de l’API et les versions Admin, Web client et POS compatibles. Le checkout privé préparé nécessite actuellement un compte Sumit configuré.
+
+<span id="setup" />
+
+## Identifier les cartes catering
+
+Dans Articles et cartes → Cartes → paramètres de la carte, activez Carte catering (usage interne). Ce réglage immédiat classe la carte sans la publier ni activer son canal web. Seule la permission menu.edit permet de le modifier. Les articles choisis depuis cette carte présélectionnent Événement / Catering dans une nouvelle commande interne. Vérifiez ou activez explicitement ce repère pour une composition depuis la bibliothèque.
+
+<span id="create" />
+
+## Préparer la commande événement
+
+À la première étape, activez Événement / Catering et choisissez retrait ou livraison avec une date de remise planifiée. Renseignez les détails dans l’étape Événement et ses Informations complémentaires. Pour un lien privé, Informations à demander au client regroupe les exigences et les changements de date autorisés. Le plan de production suit la remise, indépendamment de la date de l’événement et de la série de la carte. Le nombre de personnes ne change pas automatiquement les quantités ni le prix. Changer retrait/livraison ou revenir aux articles conserve la date et son créneau. Une commande ordinaire conserve le choix des séries configurées. Suivez la procédure de navigation ci-dessous.
+
+<span id="payment" />
+
+## Choisir les conditions de règlement
+
+Choisissez le lien de paiement Foody ou la carte hébergée Sumit, puis aucun paiement en ligne, paiement intégral, acompte, empreinte bancaire ou acompte avec empreinte. L’acompte est fixe ou en pourcentage du total ; l’empreinte est fixe ou en pourcentage du solde non encaissé. Les montants doivent être positifs et respecter leurs soldes respectifs. L’empreinte nécessite un compte Sumit configuré compatible. Vérifiez séparément montant à payer maintenant, solde et somme réservée. Acompte avec empreinte comporte deux étapes bancaires explicites : payer l’acompte, puis accepter la réservation affichée. Pour la livraison, saisissez les frais dans Réception de la commande : vide utilise l’adresse client, 0 offre la livraison, un montant saisi reste fixe. Enregistrez comme paiement uniquement l’argent réellement reçu.
+
+<span id="client" />
+
+## Finaliser par le lien client privé
+
+Partagez le lien privé Foody au client concerné. Il vérifie le panier actuel et complète les coordonnées et réponses événement requises. Pour une empreinte, il accepte explicitement le montant exact affiché avant de saisir sa carte chez Sumit. Une réservation ne paie pas la commande ; un acompte ne règle que son montant encaissé. Acompte avec empreinte revient au même lien Foody pour la seconde étape bancaire. Le staff peut ajouter indépendamment un événement impayé en production ; cela ne valide jamais son paiement. Les lectures anonymes ne révèlent pas les consignes personnelles.
+
+<span id="production" />
+
+## Planifier par carte et échéance
+
+Ouvrez Production sur la date de remise, même pour cuisiner avant. Par carte affiche des tableaux et quantités distincts avec des liens rapides vers les sections. Une commande de plusieurs cartes contribue seulement avec les lignes correspondantes dans chaque section. Les lignes historiques ou de bibliothèque sans carte unique restent dans Autres cartes au lieu d’être dupliquées. Le repère apparaît aussi dans le détail staff, le POS et les tickets cuisine compatibles. Gardez les sections et totaux Bassari et Halavi séparés. Avec kitchen.manage et orders.manage, utilisez Actions → Ajouter au tableau de production sur l’événement enregistré, même avant paiement. Le retirer du plan n’annule pas la commande et ne change pas son paiement. Le plan déjà ouvert s’actualise lors des changements ; utilisez Actualiser si nécessaire sans changer la date de remise sélectionnée. Une action staff autorisée Ajouter au tableau de production sur la commande enregistrée peut remplacer Non. Retirer cet ajout manuel rétablit les règles automatiques, sans annuler la commande ni modifier le paiement.
+
+<span id="recovery" />
+
+## Vérifier le paiement et encaisser le solde
+
+Une nouvelle tentative reprend la même page hébergée sans créer un autre débit. Pour récupérer un retour Sumit manquant, ouvrez la commande événement enregistrée avec payments.manage, développez Vérifier un paiement Sumit, saisissez le numéro de transaction lu dans Sumit puis vérifiez. Foody contrôle référence exacte, montant et devise sans débiter ; une divergence reste bloquée. Utilisez l’action existante d’encaissement du solde pour le reste vérifié. Les tentatives en cours ou incertaines bloquent les modifications et encaissements manuels concurrents. Actualisez la commande après vérification. Une commande expirée ou annulée nécessite une revue staff ; ne créez pas de paiement de remplacement avant de connaître le résultat existant.
+
+<span id="edit" />
+
+## Modifier un événement enregistré
+
+Ouvrez l’événement enregistré dans Commandes → Actions → Modifier avec orders.manage. Avant le début du traitement bancaire, ajustez articles, quantités, date/créneau de remise, frais, réponses événement et conditions de règlement, puis enregistrez une fois. Le lien privé reste identique et lit le nouveau panier ; repartagez-le si nécessaire. Pour un article ajouté, choisissez sa carte d’origine si applicable. Si une autre personne ou le client commence un paiement entre-temps, l’enregistrement est bloqué : conservez votre brouillon, rouvrez la commande actuelle et vérifiez-la. Une tentative bancaire active ou des fonds réservés bloquent les changements commerciaux. Après un acompte confirmé, les conditions de règlement sont figées et le total ne peut pas devenir inférieur à l’argent reçu. Une commande annulée ou déjà remise ne se modifie pas par cette action.
+
+<span id="hold-management" />
+
+## Consulter une empreinte Sumit
+
+Le détail événement affiche la réservation vérifiée séparément de l’argent encaissé, avec l’heure de vérification et sa référence bancaire. Avec payments.manage, Vérifier l’empreinte relit la tentative existante sans opération bancaire supplémentaire. Une réponse incertaine ne crée pas une autre empreinte ; un refus définitif permet une nouvelle tentative explicite. Gérez capture, libération et validité bancaire dans Sumit avec la référence affichée. Foody ne capture ni ne libère automatiquement ces empreintes et ne promet pas leur durée. Un solde réservé ne peut pas générer en parallèle un lien d’encaissement automatique. Après encaissement externe, enregistrez l’argent effectivement reçu via l’action staff existante.
+
+<span id="manual-order-steps" />
+
+## Avancer et revenir dans la finalisation
+
+Avec la version Admin compatible, ajoutez les articles puis choisissez Continuer. La finalisation comporte Réception et client, puis Paiement et confirmation ; Événement / Catering ajoute une étape Événement entre les deux. Dans Réception et client, choisissez retrait ou livraison, la date et le créneau, puis renseignez le client et l’adresse si nécessaire. Pour un restaurant Sumit éligible, cochez Le client complétera ses informations via le lien Foody si ces réponses doivent être demandées au destinataire : les coordonnées et réponses événement manquantes ne bloquent alors pas la création du lien. Dans Événement, indiquez personnes, date et heure ; les autres champs sont dans Informations complémentaires. Les boutons de reprise de date, adresse et contact copient les valeurs uniquement après votre clic ; vérifiez-les après un changement. Informations à demander au client regroupe les exigences et l’autorisation de modifier la date et l’heure. Dans Paiement et confirmation, choisissez explicitement le règlement, vérifiez les éventuelles conditions d’acompte/empreinte, la réduction, les articles et le total, puis utilisez l’action finale. Aucun encaissement n’est confirmé par la navigation entre étapes.
+
+Dans Réception et client, saisissez la rue, le numéro et la ville dans Adresse de livraison. Choisissez une adresse complète dans les suggestions Google. La zone de livraison détermine les frais automatiques. Si aucune suggestion ne convient, choisissez Saisir l’adresse manuellement et renseignez la rue et la ville. Après toute modification, attendez le nouveau tarif automatique. Si le calcul échoue, vérifiez l’adresse et choisissez Réessayer, ou définissez les frais fixes convenus.
+
+Précédent et les titres des étapes déjà visitées permettent de revenir. Continuer contrôle les champs requis avant d’avancer ; cliquer sur une étape ultérieure déjà visitée refait ce contrôle. Les saisies, le règlement choisi, les frais et réductions restent en mémoire lors des retours, y compris Retour aux articles. Une réduction en pourcentage appliquée est recalculée selon les articles actuels. Un changement du montant ou du moyen de paiement reçu demande de confirmer à nouveau le montant encaissé. Le brouillon rechargé après actualisation ne restaure pas les exceptions financières : revérifiez-les.
+
+Si une étape contient des erreurs, tous les champs concernés ont une bordure rouge et un message précis. Le panneau rejoint le premier champ ; la liste des points à corriger permet d’ouvrir les autres, y compris une section repliée ou une étape précédente. Corrigez puis choisissez Continuer. Le début et la fin d’un créneau doivent être tous deux renseignés et la fin strictement postérieure au début ; 12:00–12:00 est refusé. L’heure de l’événement peut être égale à la fin de remise. Un créneau se terminant après le début de l’événement affiche un avertissement à vérifier, sans créer un délai d’installation obligatoire. Passer d’un lien à un paiement manuel peut demander de compléter les coordonnées et réponses événement.
+
+À la dernière étape Paiement et confirmation, répondez à Ajouter au plan de production : Oui ou Non. Aucun choix n’est présélectionné. Valider sans réponse encadre les deux options en rouge et place le focus sur le choix. Oui demande l’inclusion selon les conditions de confirmation de la commande ; un lien Sumit ordinaire attend le paiement confirmé et un événement conserve ses conditions de validation. Non exclut la commande du plan, même après programmation ou paiement. Le choix est conservé lors des retours et changements de règlement. Il n’y a pas de bannière production aux étapes précédentes. Un échec de création conserve le formulaire ; vérifiez une commande enregistrée avant de réessayer un résultat incertain.

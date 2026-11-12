@@ -1,0 +1,39 @@
+---
+title: Consulter la dernière transaction du terminal
+description: POS → Plus → Paramètres → Matériel → Terminaux de paiement
+apps: foodypos
+tags:
+  - payments
+  - pos-ashrait-terminal-inspection
+updatedAt: '2026-11-11'
+featureId: pos-ashrait-terminal-inspection
+audience: public
+releaseStatus: available
+---
+POS → Plus → Paramètres → Matériel → Terminaux de paiement
+
+<span id="ashrait-last-transaction-inspection" />
+
+## Consulter la dernière transaction du terminal
+
+Avec la version compatible et le droit de gérer les paiements, ouvrez Plus → Paramètres → Matériel → Terminaux de paiement. Ouvrez la fiche du terminal voulu, choisissez Dernière transaction du terminal, puis Consulter la dernière transaction. Sur iPad, FoodyPOS peut se connecter à ce terminal vérifié s’il est joignable sur le réseau local. Pour un Portable qui figure uniquement dans l’inventaire, ouvrez sa fiche dans FoodyPOS sur le Portable. L’ouverture de la fenêtre n’envoie aucune requête. Si la connexion échoue ou si l’identité reste à vérifier, utilisez Tester la connexion sur la même fiche et vérifiez l’association. Le terminal par défaut reste celui configuré. La consultation affiche uniquement la référence, le type, le résultat communiqué et le montant lorsqu’ils sont disponibles. Une préautorisation reste distincte d’un achat ; aucun paiement ni aucune addition n’est modifié. Lorsque la réponse contient un reçu carte, développez Copie client ou Copie commerçant pour consulter ses champs imprimables et le numéro de carte masqué. Une réponse vide, notamment après redémarrage, ne prouve pas l’absence d’un paiement. Si un paiement ou dépôt doit être vérifié, reprenez son parcours d’origine : la consultation ne lève aucun verrou et ne relance aucune opération. Après un changement de compte, de restaurant, de droit ou de terminal, consultez à nouveau ; l’ancien résultat n’est pas réutilisé. Si les champs du terminal sont incomplets, Foody lit les détails disponibles sur le reçu Ashrait portant la même référence. Une information manquante ou contradictoire reste « Non confirmé ». Comparez la référence à celle de la vente dans Transactions ; ne relancez pas un paiement sur la seule base de cet écran.
+
+Lorsqu’un paiement carte est en attente dans Foody, le responsable peut consulter le terminal d’origine s’il est connecté, identifié et disponible. L’écran affiche la dernière transaction connue de ce terminal. Faites confirmer le résultat de la tentative d’origine si cette lecture est vide ou concerne une autre vente. Après avoir résolu la tentative, les copies sont proposées selon les données disponibles.
+
+<span id="terminal-reports-advanced" />
+
+## Capacités des rapports Ashrait en Israël
+
+Sur la version compatible avec Ashrait Israël, les anciennes actions génériques Consulter les totaux, Clôturer uniquement et Transmettre uniquement sont retirées. Pour la fin de journée, utilisez le parcours Solde en caisse et sa transmission explicite du terminal. Les ventes enregistrées dans Foody ne sont pas les totaux bancaires du terminal. Si Ashrait confirme le dépôt sans fournir de chiffres ou de référence de lot, ces informations restent indisponibles : elles ne valent pas zéro. Les autres commandes décrites dans une documentation prestataire ne sont pas nécessairement proposées dans Foody. Faites vérifier leur disponibilité et la procédure par un responsable et Verifone avant toute opération de maintenance ou financière avancée.
+
+<span id="ashrait-last-transaction-recovery" />
+
+## Reprendre un paiement Ashrait interrompu
+
+Si la réponse du terminal est perdue, ouvrez l’addition sur la caisse d’origine avec le même terminal connecté. Choisissez Payer, Carte puis Vérifier le paiement carte. Cette action reprend la tentative existante sans débiter à nouveau. Si Foody confirme que la tentative s’est arrêtée avant l’encaissement, qu’elle a été refusée ou annulée, vous pouvez recommencer. Une autorisation correspondante est enregistrée sur l’addition d’origine. Si le terminal renvoie une réponse vide ou différente, communiquez la référence affichée à un responsable pour consulter le journal Verifone. Le résultat reste à confirmer avant un nouvel encaissement de cette addition. Une autre caisse équipée d’un autre terminal peut encaisser une autre addition.
+
+<span id="ashrait-portable-card-copy" />
+
+## Imprimer le reçu carte du terminal
+
+Dans Dernière transaction du terminal, choisissez Consulter la dernière transaction puis développez Copie client ou Copie commerçant si elle est disponible. Les détails reprennent les champs imprimables renvoyés par Ashrait pour cette copie. Touchez le bouton d’impression correspondant. Le Portable utilise son imprimante intégrée. L’iPad utilise l’imprimante de reçus Epson configurée. Après confirmation de l’impression, choisissez Imprimer une autre copie si nécessaire. Si la sortie papier est incertaine, vérifiez l’imprimante avant de demander une copie. Pour un paiement ou remboursement précédent, ouvrez son reçu carte dans Transactions.

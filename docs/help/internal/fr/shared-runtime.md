@@ -7,7 +7,7 @@ apps: both
 tags:
   - internal
   - shared-runtime
-updatedAt: '2026-10-26'
+updatedAt: '2026-11-04'
 featureId: shared-runtime
 audience: internal
 releaseStatus: available
@@ -117,3 +117,21 @@ Le thème compact et PosAppFrame protègent routes, dialogues et actions avec Sa
 ## Vérifier la série courante sans commande
 
 GET /api/v1/orders/series conserve les dates de remise triées et les agrégats existants, puis ajoute les jours du lot courant sans inventer de commande. Le champ facultatif is_current identifie une seule date par défaut : le premier jour de remise non passé du lot opérationnel. Le lot reste courant jusqu’à la fin de son dernier jour dans le fuseau du restaurant. Le choix de la carte et les règles publiques de prise de commande conservent leur propre résolution. Le client recharge la liste toutes les minutes visibles et au retour sur l’onglet ; Accueil et Commandes suivent le lot courant, mais préservent une sélection historique effectuée sur la page et les liens explicites de suivi des paiements. Valider les limites de clôture, minuit local, changement d’heure, plusieurs jours de remise, isolation restaurant, zéro commande et agrégats existants. Déployer API avant Admin et publier les procédures ensemble.
+
+<span id="prepared-sumit-checkout-integration" />
+
+## Intégration du panier préparé Sumit
+
+Le récapitulatif du panier préparé compatible conserve les prix figés de l’API et compte une fois les suppléments fixes des formules. Les devis de livraison restent calculés au serveur et sont vérifiés avant le paiement Sumit hébergé. La nouvelle route privée ne charge pas de profil client et ne conserve pas les coordonnées dans le stockage du navigateur.
+
+<span id="zone-same-day-contract" />
+
+## Contrat du jour même par zone et simulation de calendrier
+
+L’objet same_day facultatif de DeliverySchedule contient days, transit_minutes et time_mode inherit/restaurant. L’API refuse les jours hors calendrier, valeurs ambiguës, coexistence avec une règle globale historique active et suppression par un ancien éditeur. La capacité de liste des zones et l’état historique contrôlent Admin. L’instant de calcul et le fuseau des calendriers sont des champs additifs. La simulation utilise les résolveurs publics géographiques et de calendrier sous périmètre restaurant sans muter commande, stock, paiements ou notifications. Le corpus embarqué de support doit être identique à cette version publiée FR/HE/EN ; les lecteurs Web, POS et Backoffice restent compatibles sans nouveaux champs applicatifs.
+
+<span id="configurable-fulfillment-compatibility" />
+
+## Préparer les contrats de disponibilité configurables
+
+Préparation locale : le stock prêt nullable, daté et révisionné et les échéances facultatives par zone ne configurent aucun restaurant automatiquement. Les API privées vérifient le restaurant et les permissions existantes. Les calendriers publics et la soumission de commande restent autoritaires ; les quantités privées ne sont pas ajoutées au contrat public des articles. Les reliquats historiques par série utilisent la série opérationnelle pour affichage et réservation, indépendamment de la série suivante en précommande. Vérifier les valeurs par défaut, courses de réservation, libérations avant production, anciennes interfaces et traductions ; ne changer ni les fournisseurs de paiement, ni les commandes existantes. La migration 288 et l’API doivent précéder Admin/Web. Exporter le corpus identique après validation et conserver une référence locale WORKSPACE tant que les commits ne sont pas autorisés ; aucune disponibilité en production n’est attestée.

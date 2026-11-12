@@ -1,0 +1,84 @@
+---
+title: 'Current drawer, closing and Z report'
+description: >-
+  More → Reports → End of day, on the relevant POS. Requires matching POS and API versions; this guide does not confirm
+  installation.
+apps: foodypos
+tags:
+  - payments
+  - pos-end-of-day
+updatedAt: '2026-11-08'
+featureId: pos-end-of-day
+audience: public
+releaseStatus: local-release-unverified
+---
+On iPad, open More → Reports → Current drawer. Compatible POS and API versions show the restaurant’s card payments and support closing from the main register.
+
+> **Release availability must be confirmed**
+> This application exists in the source workspace. This guide does not confirm public distribution or availability in your installed release.
+
+<span id="end-of-day-scope" />
+
+## Check the closing scope
+
+At the main register, the Z includes the counter drawer and the terminals included in the restaurant close. It records the cash count, Foody-recorded payments and SHVA confirmations separately. Depending on the equipment in use, the close can cover cash, cards or both. An open iPad drawer must be included. Web payments, GBX, attendance and table release follow their usual workflows. With older software, or before a main register is set, closing covers the drawer and terminals of the device in use.
+
+<span id="end-of-day-run" />
+
+## Count, transmit and archive
+
+With payments.manage, choose Close drawer session on the main iPad. An open cash drawer also requires orders.manage. Review the terminals, count any open drawer, enter the actual amount, then choose Start closing. This freezes the count and pauses new card payments until the Z is finalized. Use Transmit end of day on the iPad for each included Mini in the displayed order. Portables transmit in turn when FoodyPOS is open and connected. Wait for each terminal’s confirmation, then choose Finalize and create Z report. On a setup without a main register, confirm the current device’s transmissions in its own closing flow.
+
+<span id="end-of-day-recovery" />
+
+## Recover without transmitting twice
+
+If a Portable is waiting to transmit, open FoodyPOS on that Portable with an authorized personal session and check its connection. If it already has a confirmation, it resumes recording the same operation. For a Mini, Resume recording on the iPad checks the retained proof. If the result still needs review, retain the configuration and journals and confirm the outcome with Verifone before any further transmission. Resume the same closing reference on the main iPad.
+
+<span id="end-of-day-cash-reservation" />
+
+## Resolve pending cash operations
+
+Before starting, recover any pending cash operation: follow the link to Cash balance for a drawer operation, or to Orders to find the affected collection. Its identity is retained while the result is uncertain; do not create a second operation to replace it. Once the drawer is reserved for closing, its report remains readable, but cash collections, movements and separate closing actions are blocked. The drawer and personal context are checked again at confirmation, before any drawer opening or collection confirmation. A current drawer check also precedes the cash tender dialog; if that read fails, do not collect cash through this dialog. With the required permissions, the reservation notice links to End of day. Only an explicit server-confirmed rejection releases a rejected request; a network error does not. Resume the existing closing instead of bypassing its reservation.
+
+<span id="multiple-terminal-closing" />
+
+## Review several physical terminals
+
+On iPad, verify the Mini profiles in Hardware. Open FoodyPOS on the restaurant’s enrolled Portables with an authorized session to verify their identities. The closing review lists them with the iPad’s verified terminals. A Portable also saved in the iPad profiles receives a single request, executed on that Portable. Confirmations are collected in the displayed order. If the next terminal is unavailable, subsequent ones wait for its confirmation.
+
+<span id="end-of-day-steps-and-period" />
+
+## Understand the card block and report period
+
+The period ends when closing starts. After the first consolidated Z, the next period starts at that cutoff. When moving to the main register, card payments already archived in local Z reports are excluded from the current statement. Card payments resume after finalization. Awaiting transmission identifies work still to be sent. A transmission marked for review needs its outcome confirmed before any retry.
+
+<span id="end-of-day-recorded-cards-and-history" />
+
+## View recorded card collections and previous reports
+
+In Current drawer on iPad, Card payments for the restaurant shows the period, count and recorded amounts overall and by terminal. Amounts are shown by original currency. These Foody card collections exclude refunds. SHVA totals and financial payments are shown separately because some entries cover the same payments. In Drawer history on the main iPad, open a finalized Z to see the count, confirmations and available SHVA copies. An older archive may contain only the transmission confirmation.
+
+<span id="unified-cash-workspace" />
+
+## Track and close from Current drawer
+
+With payments.manage, use Current drawer to open a drawer with its starting cash, record paid in and paid out, and review collections. Opening a drawer is a cash operation. Close drawer session first opens the count and transmission review. You can go back before starting the close. Drawer history lists the latest twenty finalized entries, including Z reports and separately closed cash sessions.
+
+<span id="current-register-scope" />
+
+## Close the current register
+
+Before a main register is set, a close belongs to the enrolled device that started it. Finish any earlier open closing before setting the counter iPad. After setup, run closing and access its consolidated Z on this iPad. Terminal evidence stays attached to the original operation.
+
+<span id="designate-main-register" />
+
+## Set the main register
+
+On the enrolled counter iPad, open More → Reports → Current drawer with an active personal session and payments.manage and settings.edit. Choose Set this iPad as the main register and confirm. Update the iPad and Portables before the first shared close. Open FoodyPOS with payment access on each Portable to register its identity.
+
+<span id="reprint-consolidated-shva" />
+
+## Reprint a SHVA transmission report
+
+On the main iPad, open Drawer history and the day’s Z. The Z consolidates debits, credits, operation counts and net amounts where the SHVA responses provide them. Under the terminal, choose Reprint SHVA report to use the iPad’s configured Epson receipt printer. An archived copy can be printed with the terminal switched off. This action prints the existing report. If the copy or totals are unavailable, review the confirmations and reports available for each terminal.

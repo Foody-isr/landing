@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - website-qr
   - website-journey
-updatedAt: '2026-10-21'
+updatedAt: '2026-11-09'
 featureId: website-journey
 audience: public
 releaseStatus: available
@@ -16,13 +16,19 @@ In Website open the order journey screens. Their appearance is separate from pay
 
 ## Preview checkout and confirmation
 
-Select checkout then confirmation, adjust available colors and text, and inspect mobile readability. Required customer, fulfillment and payment fields come from restaurant policy. A preview does not place an order or verify a live payment connection.
+Select checkout then confirmation, adjust available colors and text, and inspect mobile readability. Required customer, fulfillment and payment fields come from restaurant policy. A preview does not place an order or verify a live payment connection. When the checkout calendar is shown, use the month menu to jump to another month, pick an available day and choose its time. If the order page requires a service choice first, cart and checkout retain the selected service. Return to the menu and use Back to order options to switch. Adding from a Web Story or continuing shopping from the cart opens the menu directly. If you have yet to choose, select pickup or delivery on the menu or in the cart before payment.
+
+<span id="contact-fields" />
+
+## Choose the fields customers fill in
+
+With access to edit the site, open Website → Order journey → Contact and payment. Choose Delivery or Pickup in Preview order type. In Form fields, use the switch to show or hide a field. Open its row and choose Required or Optional. For delivery, show Floor, Apartment / unit, Building code or Delivery notes as needed. If a field is missing from an older form, select it under Add a built-in field so its answer is recorded with the delivery details. The phone remains required. If address suggestions are enabled, the customer must select a delivery address. Use Check fields in the live preview to test an empty required field without placing an order. Wait for the draft to save, then Publish and reopen the public checkout to verify. If the draft has not been published, customers still see the previous settings.
 
 <span id="receipt" />
 
 ## Set receipt content and actions
 
-On the receipt screen set localized title/message and compact or comfortable layout. Toggle logo, address, phone, status and customer information, then print, share, order history and new-order actions. Preview each language; publish to make the settings public. These controls do not alter the recorded transaction or fiscal document.
+On the receipt screen set localized title/message and compact or comfortable layout. Toggle logo, address, phone, status and customer information, then print, share, order history and new-order actions. Preview each language; publish to make the settings public. These controls do not alter the recorded transaction or fiscal document. Payment labels distinguish partial payment from an unpaid order; a recorded handoff remains separate from payment. In Website → Mobile experience, select Order confirmation and open Installation to configure the restaurant’s home-screen invitation. On iPhone, the button in the card shows the steps.
 
 <span id="link-preview" />
 
@@ -34,4 +40,4 @@ Check that the restaurant has a name and logo configured, then share a valid rec
 
 ## Choose whether entry offers sign-in
 
-In Website → Order journey, set Show the sign-in invitation on arrival. Off: customers go directly to pickup or delivery details. On: Order without an account is immediately visible, with optional sign-in alongside it. Check the preview, save the draft and publish the site to apply the setting. Saving a draft does not change the public site. Preview does not sign in a real account. This preference does not remove checkout sign-in or mandatory phone verification. Existing configurations without this field retain the invitation; explicitly turn it off and publish for direct ordering. Service allowances are separate under Settings → Usage and quotas. When the invitation is off, a discreet Sign in link remains available in the pickup or delivery dialog. It opens authentication only when selected; dismissing authentication retains entered details and allows ordering without an account.
+In Website → Order page → Fulfillment, set Show the sign-in invitation on arrival. This site-wide choice applies in the classic window and on the dedicated Pickup and Delivery screens. On offers Sign in and Order without an account. Off goes directly to the details with a Sign in link. Closing sign-in keeps the details already entered. In the Order method format, select Pickup or Delivery under Screen to edit to check the result. Select Classic window to preview that format. The preview simulates a signed-out customer. On the published site, signed-in customers see their status and can sign out to order without an account, including when the invitation is off. A saved draft applies to the public site after publishing. Existing settings with no explicit choice keep the invitation. Required checkout verification still follows the restaurant’s rules.

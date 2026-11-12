@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - orders
   - order-detail
-updatedAt: '2026-10-25'
+updatedAt: '2026-11-11'
 featureId: order-detail
 audience: public
 releaseStatus: available
@@ -34,7 +34,7 @@ Choisissez base de date, statut et mode de remise. Ouvrez la commande et vérifi
 
 ## Créer une commande du personnel
 
-Utilisez Nouvelle commande, choisissez articles/options et renseignez contact et remise obligatoires. Vérifiez le total et envoyez une fois ; contrôlez la commande avant de réessayer un résultat incertain.
+Composez le ticket dans Nouvelle commande puis choisissez Continuer. Finaliser la commande s’ouvre dans le panneau du ticket. Choisissez retrait ou livraison et la date, puis sélectionnez explicitement comment régler la commande. Lien de paiement et Encaisser par carte apparaissent seulement pour un restaurant Sumit éligible ; la saisie de carte exige aussi payments.manage. Enregistrer un paiement reçu consigne des espèces ou une carte déjà encaissée ailleurs : choisissez le moyen puis confirmez le montant reçu affiché. Changer le montant ou le moyen enregistré efface cette confirmation. Payer plus tard crée une commande impayée. Aucun paiement n’est considéré reçu par défaut. Renseignez nom et téléphone pour un paiement reçu, ultérieur ou une carte à encaisser ; la livraison demande aussi une adresse. Le lien de paiement laisse le destinataire fournir ces détails. Dépliez Appliquer une réduction si nécessaire. À la dernière étape, Ajouter au plan de production exige un choix explicite Oui ou Non, sans valeur présélectionnée. Non exclut la commande même après paiement. Avec Oui, les commandes Sumit restent soumises à leur confirmation avant inclusion. Vérifiez le total fixe et utilisez une seule fois l’action correspondant au choix. Retour aux articles conserve client et date ; revérifiez réductions et frais après modification du ticket. Supprimer une ligne propose Annuler la suppression pendant dix secondes. Tout effacer abandonne ticket et coordonnées. Mode vente réduit la navigation existante ; sélectionnez-le à nouveau pour la rétablir. Un échec de création conserve le brouillon. Vérifiez la commande enregistrée avant de réessayer un résultat incertain. Pour une livraison ordinaire, les frais sont calculés automatiquement selon l’adresse actuelle du client, y compris pour une zone gratuite. Renseignez l’adresse ou sélectionnez un client existant, puis attendez le tarif affiché. Changer l’adresse recalcule les frais. Si le calcul échoue, utilisez Réessayer ; un tarif inconnu ne devient jamais implicitement une livraison gratuite. Définir des frais de livraison fixes est une exception facultative et explicite : saisissez zéro ou un montant positif avec deux décimales maximum. Calculer selon l’adresse rétablit le tarif automatique. Événement / Catering conserve son champ de frais modifiable. Avec un lien de paiement, l’adresse du destinataire détermine les frais par défaut ; seul un tarif fixe explicitement saisi est conservé. Retour aux articles conserve le brouillon actuel ; après rechargement d’un brouillon local, revérifiez les exceptions financières.
 
 <span id="edit" />
 
@@ -42,11 +42,13 @@ Utilisez Nouvelle commande, choisissez articles/options et renseignez contact et
 
 Utilisez l’action de modification pour client, adresse ou remise. Enregistrez et relisez la commande ; vérifiez préparation, frais et contraintes avant de changer une planification existante.
 
+Pour corriger une livraison, ouvrez Modifier le client dans le panneau Client. Saisissez la rue, le numéro et la ville dans Adresse de livraison, puis choisissez une suggestion Google complète. Si nécessaire, choisissez Saisir l’adresse manuellement et renseignez la rue et la ville. Enregistrez. Si la commande porte un numéro de téléphone, l’adresse est aussi enregistrée dans la fiche client.
+
 <span id="status" />
 
 ## Accepter, préparer et remettre
 
-Utilisez les actions de statut proposées. Vérifiez acceptation, cuisine, prêt et remise séparément du paiement. Contrôlez les conséquences avant refus ou annulation.
+Utilisez les actions proposées pour la commande avec orders.manage. « Confirmer le service », « Confirmer la remise au client » et « Confirmer la livraison » enregistrent l’action opérationnelle indiquée : ces boutons ne constituent pas une clôture financière ni un dépôt bancaire. Vérifiez la remise réelle avant confirmation et gardez l’état de paiement séparé. Contrôlez les conséquences avant un refus ou une annulation ; ne confirmez pas le service uniquement pour faire disparaître une commande payée.
 
 <span id="communications" />
 
@@ -121,3 +123,55 @@ Les modèles WhatsApp Utility approuvés avec une photo utilisent automatiquemen
 ## Choisir le destinataire WhatsApp du client
 
 Si le client utilise un autre numéro pour WhatsApp, ouvrez Clients → sa fiche et choisissez Utiliser pour WhatsApp dans Numéros de téléphone, puis enregistrez. Ce numéro est utilisé pour les messages Meta et Twilio et pour l’ouverture de WhatsApp depuis la commande, y compris les partages de liens et documents. Le téléphone de la commande reste celui des coordonnées et de la vérification SMS. Vérifiez le destinataire affiché dans l’aperçu ; une modification du numéro WhatsApp impose de revoir un nouvel aperçu avant un envoi API. Aucun message de test n’est envoyé lors de l’enregistrement de la fiche.
+
+<span id="prepared-sumit-internal-orders" />
+
+## Commandes préparées avec Sumit
+
+Les versions compatibles proposent un lien de panier Foody réservé à Sumit et la saisie de carte hébergée depuis Admin. Le choix du lien permet au destinataire de compléter ses coordonnées. Le panier préparé reste figé en attente du paiement ; vérifiez la commande enregistrée avant de reprendre. Voir [la procédure Sumit complète](/fr/help/orders/internal-sumit-checkout). Publiez cette procédure avec les versions API, Admin et Web client correspondantes.
+
+<span id="stancer-cash-guarantee" />
+
+## Utiliser les espèces avec garantie bancaire facultative
+
+Dans le détail de commande, le panneau Garantie bancaire distingue montant réservé, validité et état des sommes reçues. Enregistrez le montant total en espèces uniquement après réception physique, par le parcours d’encaissement autorisé existant ; une caisse physique ouverte exige toujours le contexte POS correspondant. Cet enregistrement empêche un encaissement carte concurrent et demande la libération. Une libération à confirmer n’annule pas les espèces reçues. Les paiements partiels et le remplacement de la garantie par une carte externe ou un virement sont refusés tant qu’elle est active. Si aucune espèce n’a été reçue, un personnel avec payments.manage peut choisir Encaisser la carte en garantie et confirmer explicitement le débit total. Aucun impayé ne déclenche un débit automatique. La vente devient payée par carte après confirmation de l’encaissement par Stancer. N’utilisez pas une correction manuelle de statut pour simuler ce paiement.
+
+Conditions d’activation et reprise : [garantie bancaire pour les espèces](/fr/help/payments/cash-card-guarantee).
+
+<span id="confirm-zone-delivery-time" />
+
+## Confirmer l’horaire d’une livraison de zone
+
+ Avec la permission de gérer les commandes, ouvrez le détail de la livraison puis Horaire de livraison à confirmer ou Confirmer le créneau de livraison. Les nouvelles zones rappellent leurs jours desservis ; les commandes historiques peuvent encore afficher leurs anciennes plages promises. Saisissez la date, le début et la fin dans les créneaux autorisés. Un changement de jour exige un motif. Confirmez puis vérifiez la date et l’heure dans la commande et son suivi client. Une heure hors du calendrier vérifié est refusée : contrôlez les paramètres Livraison ou gardez le créneau promis avant de réessayer. Le panier déjà réservé ne reçoit pas un nouveau délai de préparation. Cette confirmation conserve l’adresse et les frais et n’envoie aucun message ; les communications client se font par leur action dédiée.
+
+<span id="option-choice-requirement" />
+
+## Laisser une option facultative vide
+
+À l’ajout d’un article depuis la bibliothèque Admin, remplissez les positions obligatoires. Une position rendue facultative sur la fiche article peut rester sur Choisir une option ; revenez à cette valeur pour retirer un choix avant Ajouter à la commande. Seules les positions effectivement choisies sont conservées. Le prix absolu du format reste inchangé et les modificateurs gardent leurs suppléments propres. Pour la livraison facultative du jour même, consultez le guide Zones et créneaux de livraison avec des versions compatibles de l’API, d’Admin et du site client : le client peut choisir uniquement le jour, voir une estimation avant paiement puis recevoir un horaire confirmé par le restaurant. Les précommandes conservent leur mode configuré. La date locale du restaurant détermine les règles du jour même.
+
+<span id="independent-lifecycle-confirmations" />
+
+## Vérifier les confirmations indépendantes
+
+Dans les actions d’une commande enregistrée, vérifiez les faits de préparation et de remise séparément du paiement. La revue de remise sélectionne les unités physiques réellement concernées ; le partage financier ne les multiplie pas. Avant une clôture, revoyez l’addition ou la part exacte et son solde confirmé. Une portée clôturée refuse de nouvelles modifications commerciales ; un autre lot ouvert n’est pas clôturé par cette action. Voir [le suivi et les confirmations](/fr/help/orders/payment-preparation-and-handoff).
+
+<span id="event-orders" />
+
+## Commandes événement depuis le parcours habituel
+
+Pour modifier un événement enregistré, l’ajouter en production, partager son lien et distinguer acompte encaissé et empreinte Sumit, consultez [Event / Catering](/fr/help/orders/event-orders).
+
+<span id="manual-order-steps" />
+
+## Avancer et revenir dans la finalisation
+
+Avec la version Admin compatible, ajoutez les articles puis choisissez Continuer. La finalisation comporte Réception et client, puis Paiement et confirmation ; Événement / Catering ajoute une étape Événement entre les deux. Dans Réception et client, choisissez retrait ou livraison, la date et le créneau, puis renseignez le client et l’adresse si nécessaire. Pour un restaurant Sumit éligible, cochez Le client complétera ses informations via le lien Foody si ces réponses doivent être demandées au destinataire : les coordonnées et réponses événement manquantes ne bloquent alors pas la création du lien. Dans Événement, indiquez personnes, date et heure ; les autres champs sont dans Informations complémentaires. Les boutons de reprise de date, adresse et contact copient les valeurs uniquement après votre clic ; vérifiez-les après un changement. Informations à demander au client regroupe les exigences et l’autorisation de modifier la date et l’heure. Dans Paiement et confirmation, choisissez explicitement le règlement, vérifiez les éventuelles conditions d’acompte/empreinte, la réduction, les articles et le total, puis utilisez l’action finale. Aucun encaissement n’est confirmé par la navigation entre étapes.
+
+Dans Réception et client, saisissez la rue, le numéro et la ville dans Adresse de livraison. Choisissez une adresse complète dans les suggestions Google. La zone de livraison détermine les frais automatiques. Si aucune suggestion ne convient, choisissez Saisir l’adresse manuellement et renseignez la rue et la ville. Après toute modification, attendez le nouveau tarif automatique. Si le calcul échoue, vérifiez l’adresse et choisissez Réessayer, ou définissez les frais fixes convenus.
+
+Précédent et les titres des étapes déjà visitées permettent de revenir. Continuer contrôle les champs requis avant d’avancer ; cliquer sur une étape ultérieure déjà visitée refait ce contrôle. Les saisies, le règlement choisi, les frais et réductions restent en mémoire lors des retours, y compris Retour aux articles. Une réduction en pourcentage appliquée est recalculée selon les articles actuels. Un changement du montant ou du moyen de paiement reçu demande de confirmer à nouveau le montant encaissé. Le brouillon rechargé après actualisation ne restaure pas les exceptions financières : revérifiez-les.
+
+Si une étape contient des erreurs, tous les champs concernés ont une bordure rouge et un message précis. Le panneau rejoint le premier champ ; la liste des points à corriger permet d’ouvrir les autres, y compris une section repliée ou une étape précédente. Corrigez puis choisissez Continuer. Le début et la fin d’un créneau doivent être tous deux renseignés et la fin strictement postérieure au début ; 12:00–12:00 est refusé. L’heure de l’événement peut être égale à la fin de remise. Un créneau se terminant après le début de l’événement affiche un avertissement à vérifier, sans créer un délai d’installation obligatoire. Passer d’un lien à un paiement manuel peut demander de compléter les coordonnées et réponses événement.
+
+À la dernière étape Paiement et confirmation, répondez à Ajouter au plan de production : Oui ou Non. Aucun choix n’est présélectionné. Valider sans réponse encadre les deux options en rouge et place le focus sur le choix. Oui demande l’inclusion selon les conditions de confirmation de la commande ; un lien Sumit ordinaire attend le paiement confirmé et un événement conserve ses conditions de validation. Non exclut la commande du plan, même après programmation ou paiement. Le choix est conservé lors des retours et changements de règlement. Il n’y a pas de bannière production aux étapes précédentes. Un échec de création conserve le formulaire ; vérifiez une commande enregistrée avant de réessayer un résultat incertain.

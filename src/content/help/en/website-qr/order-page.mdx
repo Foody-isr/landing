@@ -7,18 +7,47 @@ apps: foodyadmin
 tags:
   - website-qr
   - website-order-design
-updatedAt: '2026-10-25'
+updatedAt: '2026-11-12'
 featureId: website-order-design
 audience: public
 releaseStatus: available
 ---
 In Website choose the order page and switch between page and item-detail surfaces. Catalog data remains managed in Menu.
 
+<span id="service-before-menu" />
+
+## Choose the order mode before the menu
+
+1. In Website → Order page → Fulfillment, choose Order method under How customers choose. It opens a dedicated screen before the menu when both pickup and delivery are available. If the order page is the homepage, customers see the two choices on arrival. Select Classic window to show the choice in a window over the menu.
+2. Choose Pickup or Delivery. When the sign-in invitation is on, customers can sign in or order without an account on either screen. They confirm the pickup location or delivery address and can choose a time when scheduled orders are available. Confirm to open the menu. To switch, use Change order method in the compact mobile header’s side menu, or select the current method in the standard header. The basket stays with you.
+3. Use the controls above the menu to change the time or location. Compact panels open next to the control on desktop and fit the screen on mobile. The reminder appears after a scheduled time is confirmed and returns after a change of slot.
+4. By default, this flow uses a photo gallery on desktop and a horizontal carousel on mobile. The order header uses the restaurant logo and colors. Saved settings for header actions and product layout take precedence. Review the preview on desktop and mobile before publishing.
+5. Use [Screen appearance](/en/help/website-qr/order-page#order-mode-screen-appearance) to preview and style the dedicated screens. Use Header → Navigation to edit the side menu across these steps.
+6. Adding from a Web Story or continuing shopping from the cart opens the menu directly. If you have yet to choose, select pickup or delivery on the menu or in the cart before payment.
+
+<span id="order-mode-screen-appearance" />
+
+## Style the order method, pickup and delivery screens
+
+In Website → Order page → Fulfillment, select the Order method format, then open Screen appearance. Under Screen to edit, select Order method screen, Delivery or Pickup. The preview shows that screen without changing the format. Choose a shared color style to set its background, text, headings and buttons. Set the font, size and weight under Screen title. The first screen also has Service card labels. Pickup and Delivery inherit the service panel colors until you assign their own style. Select Classic window to preview the window and edit its colors, cover or logo. Switching formats retains the dedicated screen settings. Select the format you want, review desktop and mobile, then publish.
+
+<span id="mobile-menu-header" />
+
+## Set the mobile order header
+
+In Website → Order page → Order method, open Mobile menu header. Compact is the default when customers choose pickup or delivery before the menu. Select Standard to use the regular header on that page. Choose a color style for the header and order fields, and set the title font, size and weight. In Phone view, select Preview the header. When scrolling the menu on a phone, the title row stays at the top. The time and location fields scroll with the page. If the category bar is set to stay visible, it sits below the title. On the storefront, the back arrow returns to the order method choice and the menu icon opens the site links and Change order method. The time and location fields show the confirmed choice. To edit either, select the field when it is available as a button. When the bottom bar is active, check in the Installed app preview that the basket button sits above the tabs.
+
+In a compatible installed app with the bottom bar enabled, the order title stays visible as you scroll, including with the Standard header setting. The time and location fields scroll with the menu. If categories are sticky, they sit below the title. Check this in the Installed app preview, and use the back arrow to return to the service choice when it is shown.
+
 <span id="menu-layout" />
 
 ## Choose menu layout and navigation
 
-Select the displayed menu and desktop/mobile layout. Configure group banners, category navigation, prices and descriptions with the available controls. Menu groups control public ordering structure; internal categories do not create public sections.
+In Website → Item list → Layout and colors, select a layout to apply it on desktop and mobile. List with images shows one item per row on phones, with the photo beside the text. To set the side, open Item images → Photo position. For a horizontal carousel on phones, select Product layout on mobile → Horizontal carousel by group. Select a layout again or choose Follow the selected layout to leave the carousel. Use the phone preview to check the result. Desktop columns are set separately. Use menu groups to organize the public menu and the available controls to adjust navigation, prices and descriptions.
+
+Text using Site style follows the size and weight from [Site design → Fonts](/en/help/website-qr/design-and-branding#fonts). A size or weight set on the menu text takes priority.
+
+Sticky categories appear below the order page’s pinned pickup, delivery and scheduling bar. Select a category in the preview to check that its heading appears below both bars. The two settings are independent. See [Set how the fulfillment bar scrolls](/en/help/website-qr/navigation-and-footer#fulfillment-scroll).
 
 <span id="menu-tabs-and-groups" />
 
@@ -30,7 +59,7 @@ In Website → Item list, menus available on this page (for example BASSARI and 
 
 ## Customize item details
 
-Select the item-detail preview to edit cover image and display options. Test a real configured item with variants, required modifiers, quantities and notes. Design changes do not change its base price, modifier deltas, stock or ordering eligibility. Combos also use this style for their sheet, variant picker and step panel. During Build your combo, the catalogue keeps its colors, photos and layout. Check a configurable and a fixed combo on mobile and desktop; see [building combos](/en/help/menu/combos#website-composition).
+In Website → Item list, open Item view. Compact presentation applies a 16:9 photo, compact width and rounded corners while preserving the assigned color style and saved framing. You can still choose the width, corners, image ratio and fit separately. An existing explicit ratio stays in effect until you change it; unconfigured photos default to 16:9. Full screen on mobile and Photo cover retain their mobile sheet shapes. The product photo starts at the top with a close button over it; items without photos reserve space for the same close control. Name, configured portion, price and description precede options. Quantity and Add to cart remain together at the bottom while the details scroll. The title and close control remain accessible after scrolling past the photo. Item colors come from its selected shared style: background, title, description, price, options, selections, footer and button remain independently editable in Site design. The quantity control uses the option surface and text colors. Preview shows the button colors without adding to a real cart. Verify variants, required choices, stock limits and notes, reload the draft, then publish and check the public page on desktop and mobile. Design does not change prices or ordering eligibility. Combos keep the same assigned item style; see [building combos](/en/help/menu/combos#website-composition).
 
 <span id="discovery" />
 
@@ -38,17 +67,19 @@ Select the item-detail preview to edit cover image and display options. Test a r
 
 Edit discovery heading, image position, card height/radius and panel colors. Choose its placement relative to the menu/group or after a number of items where supported. Preview empty and populated groups on mobile before publication.
 
+The order button on the dedicated app home opens the published order page. Use the carousel and product controls in [Mobile experience → App home](/en/help/website-qr/navigation-and-footer#app-home) to edit that screen.
+
 <span id="mobile-fulfillment-review" />
 
 ## Review mobile order entry
 
-When the invitation is enabled, on mobile and desktop, verify that Order without an account is immediately visible and usable, with Sign in as an option. No address field or confirmation should appear before choosing. Check opening/closing sign-in and guest access: address entry for Delivery, collection details without a delivery address for Pickup. Back must retain the draft; switching services or reopening the dialog must not repeat the guest choice. Also check a signed-in customer’s validated address card and Edit. In a 360 px visual viewport with at least four results, four whole 44 px suggestions must remain visible. The title, tabs, Back and input keep their positions when the keyboard opens or closes. Check 320 px screens, desktop and French, Hebrew and English. Sign in opens Google and the email/password form. Facebook and Apple appear only when configured by the service. Standalone email-code sign-in is no longer offered. Account creation, address verification and password-recovery codes remain separate. Check dismissal and resumption without losing the draft on mobile and desktop; four whole suggestions with the keyboard open retain the same geometry. Sign-in choices must not reintroduce moving tabs or input.
+When the invitation is enabled, check on mobile and desktop in a signed-out session that the account benefits follow Sign in and Order without an account appears below that block. No address field or confirmation should appear before choosing. Check opening/closing sign-in and guest access: address entry for Delivery, collection details without a delivery address for Pickup. Back must retain the draft; switching services or reopening the dialog must not repeat the guest choice. Also check a signed-in customer’s validated address card and Edit. In a 360 px visual viewport with at least four results, four whole 44 px suggestions must remain visible. The title, tabs, Back and input keep their positions when the keyboard opens or closes. Check 320 px screens, desktop and French, Hebrew and English. Sign in opens Google and the email/password form. Facebook and Apple appear only when configured by the service. Standalone email-code sign-in is no longer offered. Account creation, address verification and password-recovery codes remain separate. Check dismissal and resumption without losing the draft on mobile and desktop; four whole suggestions with the keyboard open retain the same geometry. Sign-in choices must not reintroduce moving tabs or input. After choosing a deliverable address, verify the same Date/Time presentation as pickup and the fee calculated for that address. Test zero and paid fees in the restaurant currency. Automatic and time-pending modes retain their display without time selection. Then test with an active customer session. In both formats, check the Signed in status and the Sign out and order without an account link for pickup and delivery. After sign-out, the method and cart are kept and the delivery address must be entered again.
 
 <span id="related-service-controls" />
 
 ## Access the new controls
 
-The entry sign-in invitation is controlled in Website → Order journey → Show the sign-in invitation on arrival. Off goes directly to pickup/delivery details; when on, Order without an account remains immediately visible. Save the draft and publish to apply this choice. See [the journey setting](/en/help/website-qr/checkout-and-receipt#optional-entry-sign-in). When the invitation is off, a discreet Sign in link remains available in the pickup or delivery dialog. It opens authentication only when selected; dismissing authentication retains entered details and allows ordering without an account.
+With the Order method format selected, customers go directly from their service choice to a separate pickup or delivery screen. The sign-in invitation applies on the Pickup and Delivery screens and in the classic window. The entry sign-in invitation is controlled in Website → Order page → Fulfillment → Show the sign-in invitation on arrival. Off goes directly to pickup/delivery details; when on, Order without an account remains immediately visible. Save the draft and publish to apply this choice. See [the journey setting](/en/help/website-qr/checkout-and-receipt#optional-entry-sign-in). When the invitation is off, a discreet Sign in link remains available on the Pickup and Delivery screens and in the classic window. It opens authentication only when selected; dismissing authentication retains entered details and allows ordering without an account.
 
 <span id="menu-and-category-text-colors" />
 

@@ -21,6 +21,7 @@ import {
 import { marketing } from "@/lib/marketing/content";
 import { routes, ui } from "@/lib/marketing/ui";
 import { getMarketingMetadata, resolveLang, SITE_URL } from "@/lib/seo";
+import { publicContact } from "@/lib/marketing/resources";
 
 /** Localized homepage metadata for the Israeli acquisition site. */
 export async function generateMetadata({
@@ -50,18 +51,24 @@ export default async function Home({
             "@context": "https://schema.org",
             "@type": "Organization",
             "@id": `${SITE_URL}/#organization`,
-            name: "Foody",
+            name: "Foody POS",
+            alternateName: "Foody",
+            description: t.description,
             url: SITE_URL,
             logo: `${SITE_URL}/assets/logo.svg`,
+            email: publicContact.email,
+            telephone: publicContact.phone,
             areaServed: { "@type": "Country", name: "Israel" },
             contactPoint: {
               "@type": "ContactPoint",
               contactType: "sales",
-              email: "mickael@foody-pos.co.il",
+              email: publicContact.email,
+              telephone: publicContact.phone,
               availableLanguage: ["Hebrew", "English", "French"],
             },
           }}
         />
+        <JsonLd data={{ "@context": "https://schema.org", "@type": "WebSite", "@id": `${SITE_URL}/#website`, name: "Foody POS", alternateName: "Foody", url: `${SITE_URL}/`, inLanguage: ["he", "fr", "en"], publisher: { "@id": `${SITE_URL}/#organization` } }} />
         <section className="shell home-hero">
           <div className="hero-heading">
             <h1>{t.title}</h1>
@@ -71,10 +78,10 @@ export default async function Home({
                 <Link className="button button-dark" href={`/${lang}/contact`}>
                   {u.demo}
                 </Link>
-                <a className="text-link" href="#solutions">
+                <Link className="text-link" href={`/${lang}${routes.restaurants}`} data-home-restaurant-link>
                   {t.secondary}
                   <Icon name="arrow" className="directional" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>

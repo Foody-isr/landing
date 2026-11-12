@@ -5,7 +5,7 @@ apps: both
 tags:
   - staff
   - staff-roles
-updatedAt: '2026-10-21'
+updatedAt: '2026-11-08'
 featureId: staff-roles
 audience: public
 releaseStatus: available
@@ -45,3 +45,9 @@ Paramètres → Consommation et quotas affiche les plafonds et consommations Goo
 ## Code caisse à l’activation du personnel
 
 L’activation du personnel vérifie les permissions affectées dans ce restaurant, y compris les rôles personnalisés : orders.manage ou payments.manage impose un code caisse personnel. Les livreurs en consultation et les rôles limités à la cuisine n’en ont pas besoin. Les invitations existantes encore inutilisées appliquent la même règle actuelle. Modifier le nom du rôle, l’adresse du livreur ou la destination d’une tournée n’accorde aucun droit caisse. Voir [l’activation et la reprise](/fr/help/getting-started/first-login#activate).
+
+<span id="end-of-day-permissions" />
+
+## Autoriser une clôture de journée
+
+Une session personnelle active et payments.manage sont requis sur chaque POS qui participe à la clôture. Inclure le tiroir exige aussi orders.manage. Définir l’iPad principal exige settings.edit sur cet appareil enrôlé. L’API vérifie le terminal et l’appareil affectés avant chaque transmission. Consultez [la clôture et sa reprise](/fr/help/payments/end-of-day).

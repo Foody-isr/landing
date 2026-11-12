@@ -9,7 +9,7 @@ tags:
   - pickup
   - delivery
   - scheduled
-updatedAt: '2026-10-27'
+updatedAt: '2026-11-02'
 featureId: order-types
 audience: public
 releaseStatus: available
@@ -50,7 +50,9 @@ Require a usable delivery address and check zone, fee and fulfillment window. A 
 
 ## Scheduled and batch orders
 
-Review ordering windows, cutoff and fulfillment dates. With a batch calendar, use the restaurant-defined cycle instead of inventing a free date.
+Review ordering windows, cutoff and fulfillment dates. With a batch calendar, use the restaurant-defined cycle instead of inventing a free date. Scheduled orders require a date, including today; the label does not mean future dates only. Restaurant service/preparation rules remain common. Each delivery zone separately defines advance-order and same-day time choice. Staff may test the saved basket, address and receiving date in Orders & availability → Simulate an order without creating a new order.
+
+Authorized staff can explicitly accept a scheduled order before its slot. The restaurant workflow retains its stages; the date and slot stay unchanged. See [the acceptance procedure](/en/help/orders/managing-orders#accept-scheduled-order).
 
 <span id="whatsapp-stage-attachment" />
 
@@ -104,7 +106,7 @@ An item configured with repeated positions requires one separate choice per posi
 
 ## Open a dine-in check without a table
 
-Requires compatible API/POS versions, orders.manage and open checks enabled for this POS mode. Select Dine-In for a new unassigned sale; this does not yet open a table or check. Complete any customer prompt and enter the items. At Send/Continue, choose Save check → New check → Custom check once: the name form opens directly, including when predefined names are enabled without a configured group. Enter the name, then Save. Back returns to destination selection without creating a check and preserves the source basket. The explicit Send then continues once with the fresh lines. A destination change during Pay does not automatically collect money: review and initiate payment explicitly. Cancel preserves the source basket. You can also create the empty check first from Actions → Open tickets → New ticket, select Dine-In, then choose its group/name or custom name. This standalone flow retains configured groups and available names: choosing a name creates the check, while a custom name needs Save. This is real onsite consumption, not renamed pickup. Further sends keep one bill and create separate kitchen batches. Payment, preparation and closing remain separate; close only with no unsent items or unpaid live batches. Saved orders remain in Orders on POS and Admin. No artificial table/session, covers or numbered seats are created. Financial splitting or moving this named check to a table is not supported here. An uncertain creation keeps its request identity: Retry the same request instead of creating another check.
+Requires compatible API/POS versions, orders.manage and open checks enabled for this POS mode. Select Dine-In for a new unassigned sale; this does not yet open a table or check. Complete any customer prompt and enter the items. At Send/Continue, choose Save check → New check → Custom check once: the name form opens directly, including when predefined names are enabled without a configured group. Enter the name, then Save. Back returns to destination selection without creating a check and preserves the source basket. The explicit Send then continues once with the fresh lines. A destination change during Pay does not automatically collect money: review and initiate payment explicitly. Cancel preserves the source basket. To create an empty check first on a compatible iPad, open Orders → Checks, then +. On a compact terminal, open Checks from the navigation, then New ticket. The preselected service type follows the current sale’s still-valid method, otherwise the restaurant’s enabled default; it is not forced to Takeaway. Review it and select Dine-In for this sale where offered. Then choose a group/name or Custom check. Configured groups and available names are retained: choosing a name creates the check, while a custom name needs Save. Without confirmed settings, an eligible method or loaded group, wait or retry; do not create another check to bypass the block. This is real onsite consumption, not renamed pickup. Further sends keep one bill and create separate kitchen batches. Payment, preparation and closing remain separate; close only with no unsent items or unpaid live batches. Saved orders remain in Orders on POS and Admin. No artificial table/session, covers or numbered seats are created. Financial splitting or moving this named check to a table is not supported here. An uncertain creation keeps its request identity: Retry the same request instead of creating another check.
 
 <span id="pos-whole-check" />
 
@@ -141,3 +143,33 @@ In the customer screen offered after fulfillment selection, first name, last nam
 ## Control weekly ordering manually
 
 Weekly batch restaurants can choose Manual opening under Settings → Ordering & delivery → Orders & availability, with settings.edit. Save, then explicitly open or pause online orders using the pause control. Automatic opening/cutoff times do not control intake in this mode. Delivery days/windows, the restaurant timezone, preparation and stock rules remain in effect; existing orders are untouched. The website stays browsable during a pause. Active temporary test access must be disabled before reopening publicly. See the fulfillment settings guide for the complete procedure.
+
+<span id="operational-progress-by-type" />
+
+## Check operational progress for each order type
+
+For dine-in, pickup or delivery, review preparation and the actual recorded service, pickup or delivery separately from payment. A prepaid order can still be held or in preparation. Do not confirm handoff to settle a payment. QR customers at one table retain separate orders and payments. See [the four order axes](/en/help/orders/payment-preparation-and-handoff).
+
+<span id="prepared-sumit-checkout-integration" />
+
+## Prepared Sumit checkout integration
+
+With compatible Sumit internal checkout, staff choose pickup or delivery and the service date before creating the private basket link. The recipient completes contacts; delivery checks the address, fee, minimum and date before payment. See [Sumit prepared orders](/en/help/orders/internal-sumit-checkout).
+
+<span id="independent-lifecycle-confirmations" />
+
+## Review independent confirmations
+
+In a saved order’s actions, review preparation and handoff separately from payment. Handoff review selects the actual physical units; financial splitting does not multiply them. Before closure, review the exact check or financial portion and its confirmed balance. A closed scope refuses new commercial changes; another open batch is not closed by that action. See [tracking and confirmations](/en/help/orders/payment-preparation-and-handoff).
+
+<span id="ordering-simulation-clock" />
+
+## Test when an order is placed
+
+In Orders & availability → Simulate an order, select Order date and time in the displayed timezone, then the receiving date and basket. Now reloads the server time. Preparation and same-day rules are evaluated at this reference using current saved settings and ready stock. A past date does not reconstruct history; this test neither reserves a courier nor creates an order. Customer orders retain the real server clock. See [the simulation procedure](/en/help/orders/preorders-and-batches#simulate-order).
+
+<span id="card-collection-recovery" />
+
+## Respect a pending card collection
+
+An unresolved native card collection keeps its original order and terminal reserved. Do not change its financial contents or start another tender; kitchen progression and fulfillment settings remain independent. See [Mini/Portable selection and recovery](/en/help/payments/victa-mini#explicit-terminal-selection).

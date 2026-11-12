@@ -14,12 +14,20 @@ tags:
   - web
   - qr
   - pos
-updatedAt: '2026-10-26'
+updatedAt: '2026-11-11'
 featureId: orders-managing-orders
 audience: public
 releaseStatus: available
 ---
 Open the corresponding Foody workspace described below. The cross-channel All view on the POS requires compatible POS and API versions; updating the API alone does not update the installed POS.
+
+<span id="ipad-open-checks" />
+
+## Review open checks on iPad
+
+On a compatible iPad, open Orders, then Checks in the landscape sidebar or portrait view picker. It brings together open manual table, named and financial checks. Tap the intended row to reopen its Menu; a table with separate bills requires an explicit bill choice. QR/web orders retain their own numbers and payments in the other views. Use All, rather than Checks, to find every recorded order.
+
+With orders.manage and open checks enabled in the effective mode, + opens New ticket. Review the preselected service type, then choose an available name or Custom check; see [tableless creation](/en/help/orders/order-types#pos-tableless-dine-in). Viewing never creates, pays, sends or closes a check. If loading fails, retry without creating a replacement. A changed restaurant, employee or context stops an obsolete opening. Phones and compact handhelds retain their existing Open tickets workflow.
 
 <span id="open-saved-order-in-menu" />
 
@@ -43,15 +51,13 @@ In POS Transactions, select a confirmed payment and open a linked order to view 
 
 ## Refund or void a Verifone online payment
 
-The Admin order payment section supports total or partial matched refunds and total VOID for an eligible single Verifone online payment, for owners/managers with payments.manage. Provider state, captured amount and verified history govern eligibility, not a fixed 24-hour rule. This does not cancel preparation or fulfillment and does not add a POS terminal refund button. Unknown results stay reserved and must be checked, never resubmitted. Invoice4U credit/cancellation documents require a separate check. See [the online payment procedure](/en/help/payments/how-payments-work#verifone-admin-refund-void).
-
-A captured ABS sale still AUTHORISED/AUTHORIZED or SETTLEMENT_REQUESTED is not settled: Admin shows Available to void and only Void entire payment, with no prior refund. Refund payment and Available to refund require an explicit settled state or verified partially-refunded history. Generic APPROVED/COMPLETED, contradictory states or missing evidence offer neither action. A state change before confirmation rejects the stale action; it never switches VOID to REFUND automatically. Request rejected by Verifone means no return of funds is confirmed, not necessarily an issuer decline.
+For eligible online payments, follow the [Verifone refund/VOID procedure](/en/help/payments/how-payments-work#verifone-admin-refund-void). Never repeat an uncertain operation.
 
 <span id="weight-hold-margin" />
 
 ## Review the by-weight authorization ceiling
 
-For online by-weight orders, open Settings → Payments & VAT with settings.edit. Set Weight hold buffer % from 0 to 100 and save; the default for new restaurants is 20. A failed save keeps the draft. Zero still authorizes the estimate. Only the weight-priced subtotal gets a margin: 100 weighted + 50 fixed at 20% authorizes 170; delivery has no extra margin. Checkout shows the estimate, temporary ceiling and Confirm and authorize, in the restaurant theme. A changed ceiling requires customer review and another confirmation before payment; unknown policy blocks authorization. Existing reviewed checkouts and holds keep their ceiling. Staff confirm measured weights before capture and progression; excess beyond the hold is flagged for a separate payment, never automatically charged. Cash/pay-later makes no hold promise. Requires a configured authorize/capture provider, with partial capture, release and expiry validated before production. This neither changes the catering deposit/balance policy nor enables new-card saving with a CST weighted hold.
+For weighed items, check the preauthorization limit and confirm measured weights before capture. See limits and recovery in [the payment procedure](/en/help/payments/how-payments-work#weight-hold-margin).
 
 <span id="section-1" />
 
@@ -69,18 +75,18 @@ the kitchen.
 - Admin **Orders → All** uses the same restaurant-owned records; its selected dates and filters still apply.
 - Payment and preparation are independent: a paid takeaway being prepared remains active.
 - On a compatible POS, authorized actionable orders open in Menu; completed records remain historical. See [saved-order navigation](#open-saved-order-in-menu).
+- In Admin, This week includes all seven calendar days from the restaurant’s configured first weekday, including future days.
 
 <span id="section-3" />
 
 ## Order flow
 
-1. **Placed** — a paid web/QR order, or a POS order, arrives.
-2. **Accepted** — you accept it (or it auto-accepts, depending on your workflow settings).
-3. **In kitchen** — sent to preparation; a kitchen ticket can print automatically.
-4. **Ready / Completed** — handed to the customer.
+1. The order is saved; visibility and acceptance depend on its channel and payment policy.
+2. Acceptance and kitchen dispatch follow the configured workflow. A send can print a ticket according to the printer profile.
+3. Preparation progresses by batch or station; one ready batch does not make every other batch ready.
+4. Service, pickup or delivery is confirmed separately.
 
-> Tip: workflow behavior (auto-accept, auto-send-to-kitchen, auto-print) is configured in
-> **Settings**. See [Workflow settings](/en/help/settings/workflow-settings).
+Payment is tracked separately and may precede preparation. See [workflow settings](/en/help/settings/workflow-settings). To confirm a zone time, follow [delivery details](/en/help/orders/order-details#confirm-zone-delivery-time).
 
 <span id="section-4" />
 
@@ -100,13 +106,13 @@ In an order, the preview of a configured Meta photo/PDF message shows the filena
 
 ## Review a route-based delivery reminder
 
-For an assigned delivery with a saved customer-window setting, reminders use the route arrival plus the configured duration, rather than the order’s broad scheduled slot. For example, arrival at 08:30 and 90 minutes produces 08:30–10:00. Configure it in Orders → Deliveries → allocation, beside the time at each stop, and review the manual or approved WhatsApp preview before sending. The same range supplies Twilio, Meta and stage reminders; existing template variables and J-1 eligibility remain in effect. Unconfigured historic routes keep the original saved slot. If the range cannot be verified, recalculate the route and reopen the reminder. A changed approved preview must be reviewed again before sending. Editing a template alone does not calculate a route or change its margin.
+Review the recalculated customer window before sending its delivery reminder. The margin does not replace the order’s scheduling constraints. See [reminder settings](/en/help/orders/order-details#route-delivery-window).
 
 <span id="staff-order-library" />
 
 ## Add items from the article library
 
-With orders.manage access, open New order. Select a carte or Article library above the search field. The library includes all active restaurant items, including items outside any menu or the selected rotating series, and is available even when there is no POS carte. Search by item name and select an item; choose its size, modifiers or combo contents when prompted. Sold-out items remain disabled and inactive items are absent. Switching between a carte and the library preserves the ticket. Complete contact and fulfillment details, review the total and submit once. Adding an item here does not publish it on a menu or the guest website. If an item is missing, check its active status in Items; for a sold-out item, check its stock and availability before retrying.
+With orders.manage access, open New order. Select a carte or Article library above the search field. The library includes all active restaurant items, including items outside any menu or the selected rotating series, and is available even when there is no POS carte. Search by item name and select an item; choose its size, modifiers or combo contents when prompted. Sold-out items remain disabled and inactive items are absent. Switching between a carte and the library preserves the ticket. Complete contact and fulfillment details, review the total and submit once. Adding an item here does not publish it on a menu or the guest website. If an item is missing, check its active status in Items; for a sold-out item, check its stock and availability before retrying. For a Sumit basket link without customer details, see [Sumit checkout](/en/help/orders/internal-sumit-checkout).
 
 <span id="internal-combo-substitution" />
 
@@ -118,7 +124,7 @@ With orders.manage permission, open New order or edit a saved order in Admin and
 
 ## Wait for counter card payment before kitchen preparation
 
-For a new counter pickup order paid by card, choose Pay, then Pay by card. Wait for terminal approval and for Foody to record the payment before preparation and the kitchen ticket start. During collection the payment remains pending and is excluded from the live order board. After a refusal or cancellation, keep the same checkout and retry there; do not send it to the kitchen to bypass payment. If approval succeeded but synchronization failed, reconcile the existing payment before starting another charge. Orders deliberately sent for table service before collection keep their existing send-then-pay flow.
+For a new counter pickup order paid by card, choose Pay, then Pay by card. Wait for terminal approval and for Foody to record the payment before preparation and the kitchen ticket start. During collection the payment remains pending and is excluded from the live order board. After a refusal or cancellation, keep the same checkout and retry there; do not send it to the kitchen to bypass payment. If approval succeeded but synchronization failed, reconcile the existing payment before starting another charge. Orders deliberately sent for table service before collection keep their existing send-then-pay flow. For a sales receipt copy, open [Transactions → New receipt](/en/help/payments/transactions#new-pos-receipt).
 
 <span id="carte-series-stock" />
 
@@ -142,13 +148,13 @@ Courier assignments use the contact name and phone saved for this establishment 
 
 ## Recover a delivery after a test departure
 
-Starting courier mode marks assigned orders Out for delivery. If this was a test departure, a user with order-management permission can open Orders → Deliveries, select the date and choose Undo departure while no arrival, delivery or skipped stop has been recorded. Out for delivery orders return to In preparation; the route returns to draft and can be unassigned and reallocated. This is a delivery correction, not a new order, refund or reprint. Payments and previously sent messages are preserved. See [the dispatch procedure](/en/help/delivery/dispatch-and-routes#undo-departure).
+In Orders → Deliveries, managers can undo a mistaken departure before any stop begins. See [dispatch](/en/help/delivery/dispatch-and-routes#undo-departure). After an issue or a forgotten confirmation, open the order from the delivery workspace and verify the result. Use the correction or handover action available for the order and add an explanatory note when correcting status.
 
 <span id="conditional-item-choices" />
 
 ## Check conditional item choices
 
-An item configured with repeated positions requires one separate choice per position according to the selected format. For example, a two-character Number Cake accepts 11, AB or A7. The format price replaces the base price; modifiers add only their configured surcharges. Reducing the position count removes newly hidden choices. Positions remain distinct in the cart, orders and kitchen ticket; review them before confirming. These customizations do not change delivery, availability, recipe, discount or cancellation rules. Configuration requires compatible versions and menu editing permission. See [Variants and sizes](/en/help/menu/variants-and-sizes#conditional-positions) for setup and recovery after a rejected selection.
+The selected format determines visible positions. A two-character Number Cake accepts 11, AB or A7. Complete required positions; optional ones may remain empty. Reducing the count removes hidden choices. Review positions in the cart, order and kitchen ticket. The format price replaces the base price; only modifiers add their configured deltas. Delivery, stock, recipes, discounts and cancellation keep their rules. Configuration needs compatible versions and menu editing permission. See [Variants and sizes](/en/help/menu/variants-and-sizes#option-choice-requirement) for setup and error recovery.
 
 <span id="all-channel-order-tracking" />
 
@@ -160,7 +166,7 @@ Open POS → Orders → All, or Admin → Orders → All for the same restaurant
 
 ## Find a counter sale after payment
 
-A paid takeaway sale sent to the kitchen belongs in Orders → Active while food is being prepared, not Completed merely because payment succeeded. Open the correct takeaway filter and clear other filters if needed. Transactions records the collection separately and refreshes on entry. On the updated handheld, a confirmed recorded collection opens receipt choice, then New sale completes the flow explicitly. Tablets retain the brief Payment recorded confirmation and automatic return. Clearing the current POS bill does not delete the saved order; Orders → All remains available for cross-channel tracking. If paper is missing, verify the profile, current POS/printer association and printer history before reprinting or collecting any additional payment. See [counter checkout](/en/help/payments/pos-checkout#counter-completion). The Client tab uses the order's saved name/phone, not a guessed customer from another bill. Optional contact collection is configured [per fulfillment method](/en/help/settings/pos-behavior#fulfillment-customer). Additional kitchen batches retain coherent contact details without sending a new order-created confirmation for each course; status notifications remain separate.
+A paid takeaway sale sent to the kitchen belongs in Orders → Active while food is being prepared, not Completed merely because payment succeeded. Open the correct takeaway filter and clear other filters if needed. Transactions records the collection separately and refreshes on entry. On iPad and Portable, the Payment recorded confirmation closes automatically. For a copy, open [Transactions → New receipt](/en/help/payments/transactions#new-pos-receipt). Clearing the current POS bill does not delete the saved order; Orders → All remains available for cross-channel tracking. If paper is missing, verify the profile, current POS/printer association and printer history before reprinting or collecting any additional payment. See [counter checkout](/en/help/payments/pos-checkout#counter-completion). The Client tab uses the order's saved name/phone, not a guessed customer from another bill. Optional contact collection is configured [per fulfillment method](/en/help/settings/pos-behavior#fulfillment-customer). Additional kitchen batches retain coherent contact details without sending a new order-created confirmation for each course; status notifications remain separate.
 
 <span id="unified-order-whatsapp-selection" />
 
@@ -174,7 +180,7 @@ Choose **WhatsApp Business** for the configured approved global confirmation, re
 
 ## Navigate a mobile sale
 
-In the updated mobile version, use Menu to add items, Check to review lines and courses, and Actions for check operations. The badge shows item quantity. The top button follows the permitted workflow action; on an empty check, View checks returns to the floor. Actions → Details → Guest displays saved contact information. See [mobile order entry](/en/help/orders/taking-an-order-pos#mobile-terminal) for this presentation. The Orders list and kitchen statuses remain independent of settlement. In the handheld Checks list, All checks and floor plans share one radio sheet. Filters retain authorized custom checks, groups and sections; Refresh reloads the data. Search matches visible names within the accessible scope, without opening another restaurant. Tables are grouped into Your checks and Other checks, followed by named checks. Closing a named check remains a separate confirmed action for authorized staff; a check with unsent items or an unpaid balance must not be closed merely to remove it from the list. Inside a menu group, use the single Back arrow to go up. Compact photo tiles keep the item name centered on up to two lines; iPad navigation and presentation retain their existing behavior.
+In the updated mobile version, use Menu to add items, Check to review lines and courses, and Actions for check operations. The badge shows item quantity. The top button follows the permitted workflow action; on an empty check, View checks returns to the floor. Actions → Details → Guest displays saved contact information. See [mobile order entry](/en/help/orders/taking-an-order-pos#mobile-terminal) for this presentation. The Orders list and kitchen statuses remain independent of settlement. In the handheld Checks list, All checks and floor plans share one radio sheet. Filters retain authorized custom checks, groups and sections; Refresh reloads the data. Search matches visible names within the accessible scope, without opening another restaurant. Tables are grouped into Your checks and Other checks, followed by named checks. Closing a named check remains a separate confirmed action for authorized staff; a check with unsent items or an unpaid balance must not be closed merely to remove it from the list. Inside a menu group, use the single Back arrow to go up. Compact photo tiles keep the item name centered on up to two lines; this remains the mobile workflow. On a compatible iPad, see [the Checks view](#ipad-open-checks).
 
 <span id="meta-template-image-preview" />
 
@@ -195,3 +201,45 @@ If the customer uses a different WhatsApp number, open Clients → their profile
 For a restaurant configured for weekly batches, open **Home** or **Orders** using the **Série** date basis. The current batch is selected by default even without orders; its totals then stay at zero. It advances after the previous batch’s final fulfillment day in the restaurant timezone, without waiting for the first order or for ordering to open. An open page follows this change on the next automatic refresh (about one minute) or when you return to the tab.
 
 You can select an older service in the calendar; that selection stays in place while the page is open. An order for a later week does not replace the current batch as the default. A payment-attention link keeps its explicit period. If the date looks incorrect, check the configured fulfillment days and restaurant timezone, then reload. Rollover does not create an order or publish a menu.
+
+<span id="order-lifecycle-guide" />
+
+## Separate payment from preparation and handoff
+
+See [check, payment, preparation and handoff](/en/help/orders/payment-preparation-and-handoff).
+
+<span id="internal-order-finalization" />
+
+## Finalize an internal order
+
+The compatible Admin version completes ordinary orders in two steps and events in three. Previous and visited titles retain entered details; Continue checks fields and focuses errors. The final step requires choosing Yes or No for Add to production plan. See [checkout steps](/en/help/orders/order-details#manual-order-steps) for Google addresses, links and times.
+
+<span id="correct-delivery-address" />
+
+## Correct the delivery address on an existing order
+
+Open the order and choose Edit customer. Follow the [address correction steps](/en/help/orders/order-details#edit) to select a complete Google suggestion or enter the address manually.
+
+<span id="independent-lifecycle-confirmations" />
+
+## Review independent confirmations
+
+For open checks, verify dispatch in Check and preparation at the expo KDS. See [checking a dish for an open table](/en/help/orders/taking-an-order-pos#open-check-kitchen-progress).
+
+<span id="accept-scheduled-order" />
+
+## Accept a scheduled order before its date
+
+In Admin → Orders, open the scheduled order and review its date, slot and payment. With orders.manage, choose Accept. The restaurant workflow determines the result: acceptance only followed by a separate Send to kitchen action, or kitchen dispatch and production-plan inclusion when those shortcuts are configured. This explicit action preserves the pickup or delivery date and slot; it does not mark the order paid or prove readiness or handoff. A manual order discounted to 0 ₪ can follow this path without recording a fictitious collection. Unconfirmed prepared payments and pending weight settlement keep their holds. Production-plan inclusion and preparation status remain separate. If Accept is still missing, reload the detail and have permissions, holds and the API version checked; do not change the slot or payment to work around a missing button. For a scheduled order whose payment is Pending, Accept stays hidden until confirmation. Unpaid for a manual or cash order is a separate state.
+
+<span id="event-orders" />
+
+## Event orders from the existing order workflow
+
+For saved event edits, production planning and Sumit deposit/authorization terms, see [Event / Catering](/en/help/orders/event-orders).
+
+<span id="physical-card-destination" />
+
+## Default card terminal
+
+On iPad, Card uses the [default terminal set in Hardware](/en/help/payments/victa-mini#explicit-terminal-selection). For a pending attempt, resume the original payment.

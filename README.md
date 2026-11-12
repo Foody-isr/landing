@@ -24,11 +24,41 @@ npm run test:marketing
 
 ## Advertising measurement
 
-Production builds include Meta Pixel `1059276727609296` on every landing route and language. `src/components/MetaPixel.tsx` initializes it after hydration and sends `PageView` with `trackSingle` for the initial page and subsequent pathname changes, including browser back/forward. This supports repeated page views for this Pixel; global `track` deduplicates them. Meta's automatic history tracking is disabled to prevent duplicate events. A direct `noscript` image covers visits without JavaScript. `next dev` does not load the Pixel; local production previews do. No custom conversion events are added.
+Production builds include Meta Pixel `1059276727609296` on every landing route and language. `src/components/MetaPixel.tsx` initializes it after hydration and sends `PageView` with `trackSingle` for the initial page and subsequent pathname changes, including browser back/forward. This supports repeated page views for this Pixel; global `track` deduplicates them. Meta's automatic history tracking is disabled to prevent duplicate events. A direct `noscript` image covers visits without JavaScript. `next dev` does not load the Pixel; local production previews do.
+
+`src/lib/marketing/measurement.ts` captures finite acquisition categories in tab-scoped session storage. Only after the public contact API returns HTTP success and `{ "ok": true }`, the form emits Meta `Lead` and a `foody_demo_submitted` data-layer event, with form language, entry language, source and channel categories. It never accepts form values, arbitrary URLs, UTM text or click identifiers as event parameters. Attribution is indicative, can be lost when referrers/storage are blocked, and is not a server-side lead ledger. Analytics failures cannot invalidate the confirmed form receipt. Google Analytics is configured separately through the consent-aware integration below. Run `npm run test:analytics` for attribution and privacy regression checks.
 
 The CSP permits the Meta script/configuration origin (`connect.facebook.net`) and event endpoint (`www.facebook.com`); other security directives remain in place. The privacy page discloses this marketing-site tracking. When testing a production preview in an automated browser, intercept Meta requests to avoid sending synthetic visits to the live Pixel.
 
 ## Content and routes
+
+The independent public supplier worksheet lives at
+`/{he,fr,en}/tools/supplier-variance-calculator`. It is linked from Kitchen, the
+inventory guide and the footer, with its own localized metadata, sharing images
+and sitemap entries. Three fictional cases show agreed price, delivery-note
+quantity, a separate physical receiving check and the invoice. Editable values
+update the illustrative documents and the signed reconciliation locally; no
+document is uploaded, no invoice analysed and no restaurant record accessed.
+The common-unit calculation excludes VAT and requires prior pack conversion.
+Line amounts are rounded to agorot, then decomposed into price and quantity
+differences that sum exactly to billed amount minus received value at the agreed
+price. Favourable differences stay signed, including offsetting components.
+The first fictional case uses salmon at an applicable agreed price of 70 ILS/kg
+and an invoiced price of 100 ILS/kg: 300 ILS to review for 10 kg. The page explains
+customer-specific price lists and agreement validity without claiming all Israeli
+restaurants have annual contracts. Its external invoice-mismatch statistic links
+to the vendor's primary report and distinguishes platform data from an Israel
+estimate or proof of error. The unsupported “three restaurants in four” claim is
+not published.
+The result is an amount to review, never a promised saving or automatic credit.
+The print view retains the fictional labels and current values. All three static
+worked examples, formulas, limits, validation messages and source links are
+available in French, Hebrew and English. The existing food-cost worksheet is a
+separate route and its calculations are unchanged. Run
+`npm run test:supplier-variance` for arithmetic and reconciliation regressions.
+Exact marketing-only support impact is recorded in
+`docs/help/reviews/supplier-variance-calculator.json`; existing operational
+articles and the support corpus are retained.
 
 - `src/lib/marketing/content.ts`: Hebrew, French and English homepage, pricing, demo and contact copy.
 - `src/lib/marketing/pricing.ts`: approved public launch prices and localized plan, setup, payment and cancellation details.
@@ -38,10 +68,63 @@ The CSP permits the Meta script/configuration origin (`connect.facebook.net`) an
 - `src/lib/marketing/ui.ts`: navigation labels and shared route map.
 - `src/components/marketing/`: reusable product illustrations, page sections, accessible tabs and contact form.
 - `src/lib/seo.ts`: localized metadata, canonical URLs and language alternates.
+- `src/lib/marketing/acquisition.ts`: FR/HE/EN restaurant, kitchen and ordering workflows linked to reviewed help.
+- `src/lib/marketing/buying-guide.ts`: the Israel restaurant-POS buying guide; price calculations use the shared rate grid.
+- `src/components/marketing/ProductScreenshots.tsx`: real Admin test captures with synthetic data; provenance in `docs/marketing/israel-growth/product-evidence.md`.
 - `src/app/[lang]/layout.tsx`: the root document. Language and RTL are rendered on the server, without waiting for JavaScript.
 - `src/content/help/`: existing help articles. Their URLs and content are retained, with resource-specific metadata; untranslated article fallbacks canonicalize to their original English version.
 
 Commercial pages are rendered statically. New products belong under `/[lang]/solutions/[slug]`; sector pages preserve existing URLs. Previously empty beauty/services routes redirect permanently to the general business offering. The full-screen intro and unused older landing components were retired. Historical public assets and help content remain available.
+
+The existing Restaurant sector page is the commercial destination for restaurant-POS
+searches, including Hebrew `קופה למסעדה` and `קופות למסעדות`. Its localized title,
+primary heading and opening describe table service, devices and the included ordering
+offer. Homepage category cards and both restaurant guides link to that same page;
+no keyword-variant URL is created. Order, table, checkout and recipe-mapping claims
+link to the published help corpus. The 890 ILS Restaurant plan and separate Kitchen
+scope remain unchanged. `audit:discovery` checks Restaurant among 24 localized
+priority targets. These HTTP and content checks do not establish Google indexing,
+organic position or LLM recommendation gains. Editorial impact evidence is recorded
+in `docs/help/reviews/restaurant-search-intent.json`.
+
+The 2 November organic-search update makes Israel explicit in the visible home
+and Restaurant headings in all three languages. The home hero now links directly
+to the existing Restaurant destination. Its buying FAQ describes on-site setup
+and optional training with the shared approved prices and separate hardware and
+payment costs. No customer testimonial or ranking gain is fabricated.
+Only these six updated URLs receive a fixed, reviewed `lastmod` date in the
+sitemap. Do not replace it with build time or date untouched guides. Update this
+small date map after a significant change to those pages, and extend it only
+when another page receives a documented main-content review. Google's date hint
+does not guarantee a crawl or position; existing URLs, alternates and help dates
+remain intact. Exact support impact is in
+`docs/help/reviews/organic-search-core-pages.json`.
+
+The Restaurant hero photograph uses explicit high fetch priority on both the image
+and Next's responsive preload. This addresses the missing-priority insight from a
+1 November 2026 mobile PageSpeed run (79 performance, 5.1 s simulated LCP). Only
+this measured LCP image receives the additional hint; dimensions, responsive sizes,
+content, analytics and other image loading policies are retained. The marketing
+smoke verifies server-rendered discovery, matching high-priority preload and absence
+of lazy loading. A laboratory measurement does not establish field Core Web Vitals
+or a Google ranking improvement. Exact editorial/no-procedure-impact evidence is
+in `docs/help/reviews/restaurant-hero-priority.json`.
+
+The existing Pricing, Kitchen, inventory guide and food-cost calculator pages answer
+distinct Hebrew searches for restaurant POS prices, kitchen software, ingredient
+inventory and food cost. French and English carry the same scope explanations.
+Pricing answers use the shared approved rates, including a first-month Restaurant
+and standard-setup example with hardware and optional training separated. Kitchen
+answers distinguish order displays, configured recipe consumption, supplier receipts
+and standalone versus combined offers, with direct links to their procedures.
+Kitchen's structured software offer describes the same visible standalone plan
+and its VAT-exclusive monthly rate, using the existing POS/Restaurant/Orders pattern.
+The inventory guide links its purchasing scope to pricing; the free calculator
+distinguishes a recipe estimate from actual restaurant consumption. No new keyword
+URLs, operational capability, rate or calculator behavior is introduced. The adjacent
+HTTP smoke checks visible text, structured offers, examples and localized evidence
+links. Search Console inspections and indexing requests remain separate observations;
+neither HTTP success nor these editorial changes establish a ranking gain.
 
 The pricing page also distinguishes included shared map usage from the planned
 Maps Plus extension: 149 ILS excluding VAT per establishment/month, with 500 Foody
@@ -56,21 +139,32 @@ and included delivery management remain unchanged.
 
 ## Design and editorial decisions
 
+The homepage uses the full Foody POS name in its localized search title, primary
+heading, introduction and Organization entity, consistently with the existing
+WebSite name and official publisher page. Its restaurant category and Israeli
+service context stay explicit; the wider retail offering is retained in the
+introduction. Apple's verified iPad listing (6758894756) links to this domain;
+the publisher page links back and the POS SoftwareApplication identifies that
+same listing. The app is not an unrelated business profile or an Android download.
+These identity signals address the observed homonym confusion without asserting
+a Google position, Knowledge Panel, review rating or recommendation gain. The
+unchanged approved logo, sharing images, locale URLs, prices, procedures and
+analytics remain authoritative. Exact editorial impact evidence is recorded in
+`docs/help/reviews/official-brand-home.json`.
+
 Square-inspired navigation by business and product, large merchant photography, real hardware images, specific use cases and a consistent demo CTA. Palette: white `#ffffff`, ink `#171717`, Foody orange `#eb5204`, campaign orange `#ff7b45`, light blue `#dceaff`, navy `#153b5b`. Heebo serves Hebrew; Manrope serves French and English. Both are self-hosted with their OFL licenses.
 
 The official Verifone partner/reseller status is supplied by Foody's owner in the redesign brief. No external certification, customer endorsement, revenue statistic, testimonial or guaranteed saving is invented. Software capabilities were checked against the workspace's payment resolver and kitchen/help implementation. Illustrative product panels are labelled as sample data; they are not screenshots or customer performance claims. Food cost examples exclude VAT consistently and do not present ingredient margin as net profit.
 
-Pricing uses the launch grid approved on 4 October 2026: POS ₪590 (1 device licence), standalone Orders ₪590 (no POS required), Restaurant ₪890 (2 licences, QR and online orders), Restaurant & Kitchen ₪1,490 (2 licences), and standalone Kitchen ₪890 per month per establishment, excluding VAT. Cloud is included. Additional POS licences cost ₪99/month; standard setup is ₪1,490 once and on-site training is ₪1,200/day. Software is billed monthly with 30 days’ cancellation notice and a launch price fixed for the first 12 months. The subscription wording on the terms page reflects these approved conditions; other legal wording is preserved.
+The public price grid is defined in `src/lib/marketing/offer-grid.json`. Software is billed monthly with 30 days’ cancellation notice and a launch price fixed for the first 12 months.
 
-Foody Cuisine (French) / Foody Kitchen (English and Hebrew) remains the kitchen management module: recipes, food cost, stock, suppliers and preparations. Foody Compagnon (French) / Foody Companion (English and Hebrew, with localized descriptions) is its daily kitchen assistant, included without a surcharge in standalone Kitchen and Restaurant & Kitchen. The dedicated companion page explains prep, service, closing and compatible Siri access; it is not a separate subscription. These names and inclusions are shared across homepage, navigation, restaurant, kitchen, companion and pricing pages. Foody Commandes (French), Foody Orders (English) and Foody הזמנות (Hebrew) is the shared online-ordering product. It is available standalone without a required POS and included in Restaurant and Restaurant & Kitchen. The standalone Orders subscription costs ₪590 per month per establishment, excluding VAT. The POS-only plan does not include online ordering.
+The pricing page presents three independent modules per establishment: Foody Restaurant for POS and table service, Foody Orders for a branded ordering site, and Foody Kitchen for recipes, costs, stock, suppliers and prep. Companion is included in Kitchen. Each module can be purchased on its own or combined with the others. Connecting an external POS or website requires a compatibility check and a quote.
 
-Navigation and footer expose five product offers: POS, Orders, Restaurant, Kitchen, and Restaurant & Kitchen. Companion remains nested under Kitchen. Orders has one shared page at the existing `/solutions/online-ordering` URL, whether purchased standalone or included in Restaurant. Its hero explains both uses and links to Restaurant; Restaurant links back to the same page and names the included product. Pricing has a standalone Orders card and direct anchors to all five offers. Hardware and payments have their own group; business-sector navigation remains available. The existing POS, restaurant and kitchen pages are reused with stable URLs and links to their matching pricing anchors. The combined offer links directly to its pricing card rather than duplicating those product pages. Product names and the shared navigation map live in `ui.ts`; `ProductLinks.tsx` renders the same hierarchy in both menus. `ProductMentions.tsx` uses those same localized names and routes for contextual links in offer inclusions, product copy and FAQ answers. It links each product once per text block, recognizes the complete bundle before its Restaurant prefix, and skips links back to the current product page. Pricing titles link to their product pages; the combined card links to both Restaurant and Kitchen. FAQ structured data remains plain text.
+Navigation and the footer expose POS, Orders, Restaurant and Kitchen. Companion sits under Kitchen. The POS product links to the Restaurant pricing card. The three cards link to their product pages, and Foody Orders keeps its shared URL at `/solutions/online-ordering`.
 
-Hardware, EMV services, processing, SMS, external courier services, kiosks and third-party integrations remain separate; no provisional supplier rate is published. Zero Foody order commission is distinct from card processing and external platform fees. A Victa used as a Foody POS consumes one device licence without double billing. Standalone Kitchen connections to third-party POS systems require technical validation and a separate quote. Groups, central production, catering and logistics receive a scoped proposal. No competitor quote, invented saving, artificial discount, free trial or unverified 24/7 support promise is published. The homepage links to pricing from its existing closing section without adding another pricing grid.
+Restaurant includes one named POS licence. Each additional employee who takes orders or accepts payments uses an additional licence, including when staff share a device. The page lists one-time setup and optional on-site training separately. Its hardware and payments section distinguishes the Victa purchase, monthly physical EMV service, virtual terminal activation and monthly allowance, and 3D Secure when enabled. Card processing fees depend on the acquiring agreement.
 
-A POS station means one device running Foody, whether a counter POS, a waiter tablet or a Victa used for orders and payments. Staff accounts and permissions are distinct: several employees can take turns on the same station with their own access. Pricing cards, the note below them and the FAQ clarify that the included licences cover software per device, not the physical hardware or a charge per employee. This is the commercial pricing definition; the landing does not implement subscription enforcement.
-
-The online-ordering page covers same-day pickup/delivery and batch preorders with an ordering window, cutoff and fulfilment date. The weekly Sunday-to-Wednesday/Friday example is illustrative, not a fixed product schedule. Preparation quantities, portions and customer packing belong to this order-fulfilment workflow. Kitchen ticket printing is explicitly a paid add-on, with hardware and configuration quoted separately and compatibility checked; no unapproved amount or recurring billing period is implied. The standard preparation step uses a kitchen icon, with printing presented separately. Order fulfilment includes delivery management, distinct from external courier charges. Back-office access, preparation tracking and delivery management are not POS device licences. The Orders card displays its public ₪590 monthly rate, consistent with the localized pricing FAQ; there is no duplicate Orders page for Restaurant customers.
+The online-ordering page covers same-day pickup/delivery and batch preorders with an ordering window, cutoff and fulfilment date. The weekly Sunday-to-Wednesday/Friday example is illustrative, not a fixed product schedule. Preparation quantities, portions and customer packing belong to this order-fulfilment workflow. Kitchen ticket printing is explicitly a paid add-on, with hardware and configuration quoted separately and compatibility checked; no unapproved amount or recurring billing period is implied. The standard preparation step uses a kitchen icon, with printing presented separately. Order fulfilment includes delivery management, distinct from external courier charges. POS licences apply to employees who take orders or accept payments through the POS. The Orders card displays its public ₪590 monthly rate, consistent with the localized pricing FAQ; there is no duplicate Orders page for Restaurant customers.
 
 Product section headings use concise editorial copy separate from search titles via `sectionTitle`. Search titles retain local product terms and Israel where relevant. Avoid em dashes in commercial copy; write natural sentences instead of combining a product name with an SEO keyword list.
 
@@ -83,10 +177,20 @@ Verifone, PayPlus and SUMIT integrations are presented with market/contract qual
 - `victa-mini-v2.webp`: optimized manufacturer asset from the same family page, source `https://cdn.prod.website-files.com/69dff366f2242bfb12942d5a/6aac33796034f3715a4064d4_ID%20Render_Victa%20Mini_r0035_1024x1024_300dpi%20(1).png`.
 - Hardware copy checked against [Victa Portable](https://www.verifone.com/hardware-product/verifone-victa-portable) and [Victa Mini](https://www.verifone.com/hardware-product/verifone-victa-mini). No speculative PCI version, biometric availability, Israeli certification or universal processor compatibility is claimed.
 - Integration references: [PayPlus](https://www.payplus.co.il/), [SUMIT](https://www.sumit.co.il/), [Stancer](https://www.stancer.com/), and the Foody server's existing provider integrations.
-- `social-card-{fr,he,en}-v1.png`: localized sharing cards generated with `npm run social:generate`, using the approved C2 symbol/wordmark and bundled Manrope/Heebo fonts. Logo and headlines stay inside the central 630 px square of the 1200 × 630 image for centered compact crops. `src/lib/marketing/social.json` supplies the image copy and concise homepage Open Graph/Twitter titles and descriptions; search titles remain separate. Supporting and product pages retain their own titles with a localized image. `scripts/social-fonts.conf` makes text rendering independent of system fonts. Versioned filenames distinguish the new cards from cached previews; the historical `social-card.png` is retained for existing references. Actual messaging-app layouts and cache refresh timing remain platform-controlled.
+- `social-card-{fr,he,en}-v1.png`: localized sharing cards generated with `npm run social:generate`, using the approved C2 symbol/wordmark and bundled Manrope/Heebo fonts. Logo and headlines stay inside the central 630 px square of the 1200 × 630 image for centered compact crops. `src/lib/marketing/social.json` supplies the image copy and concise homepage Open Graph/Twitter titles and descriptions; search titles remain separate. Supporting and product pages retain their own search titles and receive resource-specific sharing imagery. `scripts/social-fonts.conf` makes text rendering independent of system fonts. Versioned filenames distinguish the new cards from cached previews; the historical `social-card.png` is retained for existing references. Actual messaging-app layouts and cache refresh timing remain platform-controlled.
 - Approved C2 Foody identity: shared path-based `FoodyLogo` component, with the monochrome symbol and wordmark together in both the header and footer. Header dimensions keep the symbol-to-wordmark proportions measured on Square France, scaled for the thinner Foody lettering: a 30 px symbol, 24.8 px full wordmark height and 8 px gap, on desktop and mobile. Both drawings keep their own aspect ratios without stretching. The header and footer share an optical alignment: the wordmark is lowered by 2.5 px to center the letter body with the symbol while allowing the y descender below it. Product demos retain the compact color lockup. That lockup shares one vertical center across symbol and full wordmark, including the descender; the cloud diagram uses a white monochrome symbol above the white wordmark. The browser favicon uses the monochrome C2 symbol: black in light mode and white in dark mode, with a black-on-white PNG fallback. Its versioned URL refreshes cached favicons. Orange remains the accent for product-demo lockups, application/home-screen icons and campaign assets. Landing sharing cards use the black symbol to continue the site’s monochrome identity. The sharing-card generator consumes `public/assets/brand/foody-symbol-black.svg`, copied from the approved black-symbol master. Masters, export commands, archived originals and usage rules: `../brand/foody/identity/v1/README.md`. Device photographs retain the manufacturer's own example currency and interface.
 
 Never commit/push or deploy production without the authorization required by the workspace `AGENTS.md`.
+
+## Israel search growth follow-up
+
+The buying guide lives at `/{he,fr,en}/guides/restaurant-pos-israel` and is linked from the three relevant product pages, the footer and sitemap. Public identity consistently distinguishes Foody POS, the restaurant software, while preserving the Foody brand. `npm run audit:discovery -- --output <file.json>` checks direct HTTP accessibility, metadata, language alternates, robots and sitemap; it does not establish search-engine indexing. Search Console verification, Bing access, local business eligibility, external corrections and the measurement protocol are tracked in `docs/marketing/israel-growth/README.md`.
+
+The companion guide `/{he,fr,en}/guides/restaurant-inventory-israel` explains ingredient inventory, recipes, counts, supplier receipts and food cost with a synthetic reconciliation example. Restaurant, Kitchen, comparison and calculator pages link to it within their main content. The discovery audit verifies same-language contextual incoming links for the priority acquisition resources. See `docs/marketing/inventory-guide.md` for the evidence and limits.
+
+The existing POS page includes the reviewed order → kitchen → payment journey, five localized buying questions and software metadata for the Restaurant module’s 590 ILS monthly offer. It cross-links with Restaurant without duplicating a new iPad acquisition URL and is included among discovery priorities. See `docs/marketing/pos-acquisition-evidence.md`.
+
+Orders has matching browser-software metadata, standalone pricing and qualified zero-commission answers. Marketing proof links are checked against the published help corpus and fetched during `test:marketing`; `test:marketing-links` covers invalid paths, language mistakes and English fallbacks. The former delivery-guide URL redirects permanently to the published procedure in each locale. Discovery now checks 21 priority targets across the same 36 pages. See `docs/marketing/ordering-evidence-links.md`.
 
 ## Cloud, equipment and companion update
 
@@ -111,3 +215,31 @@ preview questions proxy to development with a shared egress quota.
 Run `npm run render:help`, `npm run check:help`, `npm run test:help`, lint, TypeScript
 and build. See [maintenance and CI rules](docs/help/MAINTENANCE.md), the full
 [inventory](docs/help/inventory.json) and [French inventory index](docs/help/INVENTAIRE.fr.md).
+
+## Verified visibility resources and GA4
+
+The recipe worksheet at `/{he,fr,en}/tools/food-cost-calculator` runs locally in the visitor’s browser. It handles grams, millilitres, pieces and usable yield, uses prices excluding VAT and distinguishes ingredient margin from net profit. It neither saves nor submits recipe inputs. `npm run test:food-cost` verifies unit conversions, arithmetic and invalid inputs. Its formulas and worked example are readable without JavaScript.
+
+`/{he,fr,en}/demos/kitchen` presents three documented workflows with actual, dated synthetic Admin captures and separately labelled worked examples. `/{he,fr,en}/about` identifies the official Foody POS website and the owner-approved professional phone, email, service area and contact hours. The private Google verification address is never public. Product claims and Tabit sources are reviewed in `docs/marketing/verified-visibility-tools.md`.
+
+GA4 property 561799404, stream 16247446109 and public measurement ID `G-31GLDB1C55` belong to the owner-approved Foody POS account 414297109. `src/lib/marketing/analytics-config.ts` contains this public identifier, not a secret or environment variable. Loading is restricted to production builds on the canonical Foody hosts after explicit Google consent; localhost and Vercel previews never load the tag. The visitor can decline or reopen the choice from the footer. The local preference is `foody-google-analytics-consent-v1`; withdrawal disables this property and clears its first-party cookies. This choice controls Google only; the existing Meta integration and its disclosure remain separate.
+
+`GoogleAnalytics.tsx` sends manual sanitized `page_view` events and `generate_lead` only after the contact API confirms success. Enhanced measurement is off in the GA4 stream, so no generic form capture or duplicate automatic SPA page views are added. Google Signals, ad storage, ad user data and ad personalization are disabled in the client configuration. Page addresses omit queries/fragments and use an allowlist; help pages are aggregated to the localized help index. Referrers are reduced to known provider roots. Lead parameters are closed categories: `language`, `acquisition_source`, `acquisition_channel`, `landing_language`. Recipe and contact values are never passed to this integration. No Measurement Protocol secret, Google Ads link or Tag Manager container is created. Blocked analytics cannot break a confirmed form receipt.
+
+CSP adds only `www.googletagmanager.com` for scripts and `www.google-analytics.com` / `region1.google-analytics.com` for connections. Check deployment receipt and a consenting production visit before reporting data collection as active. The property’s existence alone does not mean the new tag is published or collecting.
+
+## Resource-specific sharing images
+
+`npm run social:generate` retains the three approved homepage cards and derives
+411 resource/language PNGs from the marketing copy and published help corpus.
+`predev` and `prebuild` run it automatically. `public/assets/sharing/` is generated
+and ignored by Git; the deployment artifact includes these static assets.
+`src/lib/marketing/share-cards.ts` supplies page-specific editorial image copy,
+subject, alt text and versioned addresses. English fallback guides retain their
+source-language image. No search title or guide procedure is rewritten for a card.
+
+Run `npm run social:generate && npm run test:social`. The `postbuild` hook validates
+sharing images referenced by the actual prerendered HTML, including every help
+page; missing assets or unrelated canonical pages sharing one image fail the build.
+Bump the style version when the renderer, logo or fonts change. See
+`docs/marketing/page-sharing-previews.md` for provenance, caching and review scope.

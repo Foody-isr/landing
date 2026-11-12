@@ -5,7 +5,7 @@ apps: foodypos
 tags:
   - settings
   - pos-workspace
-updatedAt: '2026-10-27'
+updatedAt: '2026-11-11'
 featureId: pos-workspace
 audience: public
 releaseStatus: available
@@ -26,11 +26,15 @@ On a compatible updated POS, with orders.manage, an older manual order that is s
 
 A table may therefore have an empty current session and older outstanding orders: these are not the same check. Opening the view never merges, closes, archives or settles anything. Eligible saved-order actions remain limited to its number and the required permissions. If the session changes while loading, return to Orders or reopen the current table; do not recreate the order or retry a payment to bypass the error. Updating the API alone does not update the installed POS.
 
+After an approved payment, a closing error does not authorize another collection. Follow [the table-service closing check](/en/help/tables-floors/staff-and-assistance#paid-table-close-recovery).
+
 <span id="saved-order-workspace" />
 
 ## Distinguish the selected order from the table check
 
 With orders.manage, an active QR or web order opens Menu with its own saved check on the right on tablets. The catalogue remains browsable without changing saved lines or a local draft. Actions manages only that order; Guest shows its own contact. View table separately opens the verified current session and, when needed, a bill choice. The frame, tabs and cards use the standard Menu presentation without an extra back toolbar. Orders in the main navigation returns to the list. Refresh and order statuses are in Actions. A failed read shows Retry rather than an empty basket. Historical records and view-only roles remain read-only. See [the full workflow](/en/help/orders/managing-orders#open-saved-order-in-menu).
+
+On a compatible iPad, Orders’ Checks view reviews open manual checks, including table and named checks; QR/web orders remain separate in the other views. See [open checks on iPad](/en/help/orders/managing-orders#ipad-open-checks). The mobile viewing workflow is unchanged.
 
 <span id="cash-report-unconfirmed" />
 
@@ -58,6 +62,8 @@ If the restaurant, sign-in or terminal changes, [reopen confirmation in the corr
 
 Use Home shortcuts or More for Analytics, Kitchen, Staff and Settings. Orders contains live and historical order workflows. Transactions is separate and lists completed payments for staff with payments.view or payments.manage; on a compact terminal it is in More. Reports in More contains Verifone Terminal deposits for payment managers (payments.manage). A missing destination can reflect permission or activation, so check the account/profile before reinstalling.
 
+In Settings → Account → Profile, check the name and email of the employee signed into the POS. FoodyAdmin has a separate sign-in: changing the account or restaurant in Admin does not change the employee on the iPad. To use another employee’s passcode, finish the current shift normally, then sign that employee in with their personal code. An unconfirmed cash-drawer report must be resolved before leaving the session; Profile is read-only and provides no account-switch control.
+
 <span id="preferences" />
 
 ## Customize the device
@@ -81,3 +87,47 @@ On the handheld terminal, the initials at the lower left open More; they come fr
 ## View terminal overview and item availability
 
 On a handheld terminal, tap the house to open Overview. The restaurant name and collapsible cards show the availability, new/in-kitchen/ready orders and table state allowed by your role. Open View all item availability to search active items in menus available at the POS. The list uses the same catalogue as POS order entry; it does not depend on a general menu state separate from its POS availability. States are Available, Low stock, Unavailable or Not provided; a quantity appears only when supplied. Unknown availability does not mean available. Hidden groups, their descendants and combo-only components are excluded. Refresh reloads the reads; a failure displays a message and retry. Card buttons open orders or checks according to permissions. Overview reads data without changing stock or orders.
+
+<span id="local-draft-and-lifecycle" />
+
+## Resume work after an interruption
+
+The local unsent basket and the server-saved check are separate. On a compatible version, [reopen the draft with the same account and installation](/en/help/orders/taking-an-order-pos#resume-local-draft); an uncertain send requires verification or explicit resumption of its original identity. Payment, preparation and handoff remain separate, including for a split bill. Switching screens never automatically resends food.
+
+For an open check, verify dispatch in Check and preparation at the expo KDS. See [checking a dish for an open table](/en/help/orders/taking-an-order-pos#open-check-kitchen-progress).
+
+<span id="end-of-day-navigation" />
+
+## Open end-of-day closing
+
+With compatible versions, open More → Reports → Current drawer on the counter iPad. A manager can set the main register there and manage the drawer and terminal transmissions. Drawer history provides access to the finalized Z and available SHVA copies. On older versions, actions remain available according to the device’s capabilities. See [the closing procedure](/en/help/payments/end-of-day).
+
+<span id="victa-mini-hardware" />
+
+## Connect and restore the Victa Mini on iPad
+
+In the compatible version, Hardware → Payment terminals lists the terminals saved on this iPad alongside the restaurant’s inventory. A terminal appears once when both sources identify the same device. Open its details to find Test connection. For a legacy pairing, verify the serial number through Edit. See [Victa Mini connection](/en/help/payments/victa-mini#connection).
+
+<span id="physical-card-destination" />
+
+## Review the physical card destination
+
+With the compatible POS/API, review the physical card destination before collection: see [Mini/Portable selection](/en/help/payments/victa-mini#explicit-terminal-selection) and [verified hardware setup](/en/help/payments/victa-mini#connection). Existing order IDs, QR separation, kitchen progression and table-release settings remain independent. An unresolved terminal reservation blocks another collection; recover the original operation rather than creating a replacement sale.
+
+<span id="unified-cash-workspace" />
+
+## Use the unified cash workspace
+
+With payment permissions and compatible versions, open More → Reports → Current drawer. The same workspace shows the cash drawer, recorded card collections by terminal and guided closing. Drawer history combines closed cash sessions and finalized Z reports. Older closing and deposit addresses open this workspace; older APIs retain their previous workflow. See [the unified cash workflow](/en/help/payments/end-of-day#unified-cash-workspace).
+
+<span id="ashrait-last-transaction-inspection" />
+
+## Inspect the last terminal transaction
+
+With the compatible version and permission to manage payments, open Hardware → Payment terminals, select the terminal’s details, then open Last terminal transaction. Choose Read last transaction to query that device. See [the procedure and its limits](/en/help/payments/ashrait-terminal-inspection).
+
+<span id="compact-actions-navigation" />
+
+## Return to a check on a compact device
+
+In the compatible compact Menu, open Actions at the bottom to reach Send, Save or Pay according to the check’s state. Selecting an action closes this sheet before the next step. Returning to the check shows its current controls without an old sheet on top. Closing the sheet alone never pays or sends anything.

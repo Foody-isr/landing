@@ -4,6 +4,7 @@ import Link from "next/link";
 import type { marketing } from "@/lib/marketing/content";
 import type { Lang } from "@/lib/seo";
 import Icon from "./Icon";
+import { recordDemoSubmission } from "@/lib/marketing/measurement";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
 type ContactCopy = (typeof marketing)["en"]["contact"];
@@ -61,6 +62,7 @@ export default function ContactForm({
       if (result.ok !== true) throw new Error("Contact request not confirmed");
       setStatus("success");
       form.reset();
+      recordDemoSubmission(lang);
     } catch {
       setStatus("error");
     } finally {

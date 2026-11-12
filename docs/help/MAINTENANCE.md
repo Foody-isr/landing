@@ -1,5 +1,427 @@
 # Help ownership, evidence and releases
 
+## Verifone Central Checkout themes (12 November 2026)
+
+Deploy API migration 316 before enabling the Backoffice action. The FR/HE/EN
+operator procedure covers linking by exact name or UUID in the restaurant's
+Verifone organization and environment. The public payment guides describe the
+appearance of a synchronized Foody theme and of a theme managed in the portal.
+The public search corpus and the API's embedded corpus must match. Verify a new
+Checkout page in CST before publishing the matching guides.
+
+## Wallet Studio
+
+The Admin stores a private Wallet design draft for each restaurant and
+renders Apple and Google previews. The signed Apple test pass requires the
+Pass Type ID certificate and matching key for the selected environment. Keep
+the FR, HE and EN test procedures in internal help. Verify installation on a
+physical iPhone before documenting an accepted device test.
+
+## CST terminal fleet and payment operations (9 November 2026)
+
+The restricted internal guide covers the API, Backoffice and opt-in POS
+diagnostic build in FR/HE/EN. Release builds and production API cannot execute
+the CST procedures. The guide covers first DID enrollment, confirmation of the
+applied VHQ values, one Deposit per verified SHVA number, parameter refresh
+on each device, interrupted-payment Void, and Refund 53. The public guides
+cover the released behavior. The CST trace confirms the refund's MTI during
+hardware acceptance. Refresh the affected source inventory and public corpus
+and pin the reviewed Landing commit before remote CI.
+
+## Restaurant loyalty program configuration
+
+Publish the FR, HE and EN loyalty program guide with compatible API, Admin and
+Web releases. The settings permissions govern Admin access. A restaurant
+explicitly enables its program, and existing members can still view a paused
+program. The separate Apple and Google Wallet controls and financial pilots are
+not part of this guide. Use synthetic data for acceptance.
+
+## Compact order header and mobile item list (8 November 2026)
+
+Review the order page, site editor and guest ordering guides in French, English
+and Hebrew. The order page can use a compact header when customers choose their
+order method before the menu. The mobile layout selector and carousel apply to
+the product list independently. The guest flow uses the existing order method,
+location and time panels. The API embeds the matching public help corpus.
+Verify the editor and the storefront at phone widths before publishing. Keep the
+consolidated counter closing guides in the shared corpus.
+
+## Current POS financial identity and compact actions (4 November 2026)
+
+The API validates the current enrolled device independently from the original
+employee attendance interval. Invalid explicit proofs fail closed; missing proofs
+keep the strict legacy rule. Cash/EOD/reservations and split-payment handlers
+share the scoped service. Shift-end guards retain original cash duty and add the
+proven current device. Updated POS sends no proof to public, external or redirected
+destinations. Compact footer actions dismiss their sheet before navigation.
+FR/HE/EN procedures distinguish these scopes and preserve uncertain operations.
+No schema migration, environment edit or Admin/Web UI change is required.
+Synthetic regression tests precede API-first development verification, immutable
+production promotion and compatible client installation. Physical CST payment,
+SHVA report paper and certification remain separate acceptance steps.
+
+## Combined transactions, receipts and terminal inventory (4 November 2026)
+
+This coordinated release retains current develop stock/fulfillment procedures,
+adds the scoped transaction history correction, and combines Ashrait inspection
+with explicit ordinary POS receipt destinations. Receipt migration 289 and fleet
+declaration migration 290 follow the already integrated prepared-stock migration
+288. Deploy API before Backoffice, Admin and POS. The independent web checkout
+and provider resolver are unchanged. Update all affected FR/HE/EN procedures,
+refresh exact source evidence and embed the identical public corpus in the API.
+Pin an immutable Landing commit before PR readiness; verify development and
+promote its exact successful artifacts under the user's release authorization.
+
+On the Mini CST connected to the production Foody API, one normal coordinated
+Deposit completed and finalized successfully. Its first payment contained a
+non-JSON string; no documented totals or batch reference were inferred and no
+PrintEvent arrived. Later reads after transmission and SDK restarts returned
+zero payments; both the profile build and the operator confirmed the empty UI.
+The Objective-C Boolean boxing defect and duplicate Xcode object ID are fixed.
+No repeat Deposit, card charge, refund, reset or remote reprovisioning was run.
+Temporary probe code is removed from the product source. These observations do
+not establish the cause of an empty cache, receipt/report paper acceptance,
+Portable acceptance or certification. The regional report format, safe reprint,
+advanced enum mappings and live remote provisioning still need Verifone's
+contract. The fleet editor records audited declarations only and clearly says
+they are not applied. No public guide claims these outstanding capabilities.
+
+Native iOS PrintEvent now acknowledges actual configured Epson delivery instead
+of success without printing. Bank data remains native; a missing/uncertain print
+is not acknowledged as confirmed. Printer discovery is deferred until payment
+or report preflight, preserving independent terminal reconnection. The internal
+structured receipt-copy primitive has no public UI yet. Existing Android
+integrated printing remains unchanged. No screenshots occur in these revised
+procedures; synthetic UI/native fixtures contain no real bank/customer data.
+
+## Ashrait read-only terminal inspection (4 November 2026)
+
+The compatible POS adds explicit latest-transaction inspection to Hardware for
+paired iPad terminals and inventory-recognized Portable devices. Opening the
+dialog sends nothing. The existing connection must already be ready; the read
+does not initialize/download parameters, collect, settle, clear recovery, print
+or replay a bank operation. Native query IDs and physical/tenant/actor scope
+reject foreign or late results. Only allowlisted reference, effect, authorization
+and exact known money reach Flutter; receipt/card JSON stays native. Empty after
+restart does not mean no debit. Corrupt native recovery remains a lock. The iOS
+ordinary-charge guard is corrected at dispatch entry.
+
+Review pos-checkout, victa-mini, pos-workspace and pos-behavior in FR/HE/EN. The
+new display has synthetic iPad/French and compact/Hebrew fixtures; no real bank
+data, hardware payment or transmission is used. The other advanced PDF methods
+remain unactivated pending regional mapping, maintenance/accounting and receipt
+contracts; the public guides must not claim full implementation or certification.
+API runtime, Admin, Web and Backoffice remain unchanged; API receives the exact
+updated public corpus. Preserve all unrelated inventory/source evidence and pin
+an immutable documentation commit. Publish procedures only with the matching POS.
+
+## Ashrait Israel protocol checkpoint (4 November 2026)
+
+The compatible POS replaces generic last-transaction lookup with the regional
+getLastTransaction query and parses first-payment paymentBrand JSON natively.
+Unknown/empty/mismatched recovery retains the original debit lock; restart is
+not evidence of no charge. Purchase capture, server reservation and guided
+Deposit/Z remain separate from advanced financial effects. Generic totals,
+close-only and reconcile-only controls and dead global reconciliation parsing
+are removed. Legacy deposit journal UUIDs remain readable without retransmission.
+
+FR/HE/EN pos-checkout removes the obsolete procedures and adds recovery guidance.
+The supplied document does not specify bank totals/Deposit response fields or
+all PSDK mappings. New typed contracts are preparation, not activated advanced
+payment/maintenance features; public help must not claim them available. See POS
+docs/ashrait-israel-integration.md for the full matrix and remaining vendor/device
+acceptance. Raw card/receipt JSON stays native. No hardware debit, Deposit, erase
+or VHQ reassignment was performed. This checkpoint is not a production release.
+
+API runtime/accounting, Admin and Guest Web are unchanged. Embed the identical
+public help corpus in API, refresh only API/POS source inventory and preserve
+other services’ reviewed evidence. Pin immutable Landing documentation before
+release; do not advertise a certification or deploy unconfirmed advanced flows.
+No screenshots occur in the revised procedures.
+
+## Unified current-drawer workspace (4 November 2026)
+
+Compatible POS/API versions group cash, recorded card collections by physical
+terminal, closing review, explicit transmissions, recovery and final Z in Current
+drawer. Drawer history combines up to twenty finalized Z and standalone closed
+cash sessions; a drawer included in a Z is represented once. Archive dialogs stay
+read only and never replace the active close. Older APIs/restricted roles retain
+existing authorized screens. No native dispatch or bank attestation changes.
+
+The read-only preview uses the same original-currency and period rules as the
+closing snapshot, batches policy reads and creates no reservation. Opening the
+close review and cancelling do nothing; only the existing Begin action freezes
+the count. Transmit remains explicit per included terminal; successful native
+receipts and uncertain journals retain their exact recovery behavior. Counts and
+Foody recorded gross card subtotals are distinct from unavailable bank totals.
+No actual hardware payment or Deposit was run for this change. FR/HE/EN and
+compact/tablet regressions cover navigation, cancellation, history and existing
+cash/terminal safeguards. No screenshots occur in the changed procedures.
+
+
+## Manual order steps (4 November 2026, coordinated release)
+
+The compatible Admin finalization uses two steps for ordinary orders and inserts
+Event for catering. Visited-step navigation and Back to items preserve in-memory
+contact, scheduling and financial choices. Per-field validation opens the correct
+step/optional section and focuses the first issue; a summary links every error.
+Private links still defer recipient answers. Equal window boundaries receive a
+specific error; an event at handover end is valid and a later window produces a
+nonblocking scheduling warning. Production date/conditions remain visible and its
+authorized inclusion control appears on the final step. Existing server production,
+payment and confirmation gates remain authoritative.
+
+FR/HE/EN order-details, event-orders, internal-sumit-checkout and managing-orders
+are updated and the identical public corpus is embedded in API. Their existing
+procedures have no screenshots to replace. Synthetic local screenshots use fixture
+data only. Other customer-profile callers receive no new behavior from optional
+accessibility props; that exact source exemption is recorded in Admin. API runtime
+code, Web, POS and Backoffice behavior is unchanged. Their evidence is preserved
+from Landing base f2e371ae; only the API corpus digest is refreshed against its
+6b5cb5b develop integration base. The owner authorized commits, pushes, PRs into
+develop and production promotion on 4 November 2026. Freeze reviewed source
+checkpoints and pin the immutable Landing documentation commit before CI. Verify
+development and promote the same successful artifacts to production.
+Publish these qualified procedures with the compatible Admin version.
+
+## Ordinary internal delivery fee regression (4 November 2026)
+
+Ordinary deliveries default to a quote for the current customer address. The
+fixed-fee editor requires an explicit action; catering retains its visible fee
+field. Free zones and absent fees are valid zeroes, while pending/failed or stale
+address lookups cannot silently create a free delivery. Retry and return to
+automatic pricing preserve the staff draft. Explicit fixed quotes, including
+zero on private links, keep their existing semantics. Review order-details and
+internal-sumit-checkout in FR/HE/EN. No procedure screenshots need updating.
+No API, Web, POS or Backoffice runtime behavior changes; the API receives only
+the identical published support corpus. Preserve their existing source evidence
+from Landing develop `fed70e9791cc92071ed37b35b184c409b912fe89` except for that corpus digest.
+The API evidence also retains the already reviewed public-carte visibility fix
+from develop `3d0a2cab946dd25a7c68ebf0e76ae99ec1934fd7`; this release changes
+only its support corpus relative to that integration baseline.
+Pin immutable reviewed documentation and verify dev before promoting the same
+artifacts. Synthetic browser tests submit no customer order or real payment.
+## End-of-day consultation and next steps (4 November 2026)
+
+The API adds a payments.manage-protected, enrolled-POS-scoped list of the twenty
+latest finalized report identities. Reads leave active operations, leases,
+attendance, payments, cash and immutable reports untouched. New card snapshots
+retain currency only from every original order policy or a matching financial
+payment currency snapshot. Missing, mixed or unproven currency remains unknown;
+archived reports are never backfilled with current restaurant settings.
+
+The POS now parses archived ordinary card collections instead of silently showing
+only financial payment rows. It keeps those overlapping lists separate and shows
+a recorded gross card subtotal only with complete matching currency evidence.
+This is never a terminal total, refund/net ledger or bank settlement attestation.
+The existing Ashrait Deposit callback still provides no numerical totals or batch
+reference. No native dispatch, payment guard or finalization rule changes.
+
+The report displays its frozen period, appropriate next step and cash inclusion.
+Archived report dialogs are read only and hide data on personal-context changes;
+reading never replaces or finalizes an active close. FR/HE/EN and 320/1210 layouts
+are tested. No screenshots occur in the updated guide. The matching API must be
+published before the POS, and hardware acceptance remains separate. Preserve
+unrelated source inventory, synchronize the support corpus and pin immutable
+reviewed documentation before publication.
+
+
+## Paid table closure after an earlier expired occupation (4 November 2026)
+
+Compatible API table close/release guards exclude only positively identified
+expired sessions of the same restaurant and table. Earlier ordinary/QR tickets
+and separate financial bills retain their balances and kitchen states. Unknown
+legacy links and current unpaid balances still block release. No schema, payment
+initiation, bank result, terminal journal or EOD behavior changes.
+
+The compatible POS propagates a failed status write to the initiating action,
+retaining its confirmed table list and selection; Menu and the floor action show
+the existing localized close error. Read failures still expose unavailable data.
+FR/HE/EN table, floor, workspace and payment procedures explain recorded
+payment versus closure and warn against another charge. No screenshots occur
+in these updated procedures. Synthetic regressions do not attest a bank debit.
+Preserve unrelated service evidence from Landing d416d716defde81960ec95379975e88feb39781a,
+export the identical support corpus and pin immutable reviewed documentation.
+Validate development before promoting the exact artifact and shipping the POS.
+
+## Explicit physical terminal selection (3 November 2026)
+
+This reviewed slice adds an iPad secure terminal catalogue, an explicit card
+payment destination, and model/serial verification before Login or payment.
+The Portable keeps its own integrated reader and existing order/check identity.
+There is no automatic fallback. Local durable evidence and API reservations
+protect the terminal and overlapping ordinary check batches; financial bills
+retain their existing allocation claim. Reserved attempts have no timeout.
+Definitive no-charge outcomes release the claim; recorded approvals release it
+atomically. Unknown native results never authorize another debit.
+
+EOD reviews all verified iPad profiles and requires terminals used by the current
+POS's recorded card collections. Each Deposit needs its own explicit action.
+A server-confirmed terminal checkpoint permits switching to the next idle target;
+the server day reservation remains until final Z. Unknown results keep locks.
+The additional card collection list overlaps financial references and is not an
+extra sales total. Legacy and other-device attribution remains partial.
+
+FR/HE/EN procedures cover setup, selection, order recovery and closing. There are
+no screenshots in these procedures to update. The API must precede the POS;
+all devices sharing hardware need compatible versions. Synthetic tests do not
+certify actual Mini/Portable payments, simultaneous remote/local Portable use,
+printer acceptance, or bank settlement; those remain Verifone hardware checks.
+Preserve unrelated source inventory and surfaces from Landing baseline
+415dd7009aa3d4a5f017eab95bd24d064dec9d38. Export the identical support corpus and
+pin immutable reviewed documentation. The saved-connection notes below describe
+the preceding release; its restart requirement is superseded by idle verified
+selection in this slice. Native Objective-C is now included in source evidence.
+
+## Saved Victa Mini connections (3 November 2026)
+
+The compatible iPad client uses the existing neutral hardware setup theme for
+Connect a Victa Mini, the saved terminal row, connection state and diagnostics.
+It retains the secure API/restaurant-scoped address and masked Ashrait ID.
+Startup waits for configuration and payments.manage instead of trying once
+before authentication finishes. Foreground return attempts the same idle
+connection. Connection restoration checks local financial journals and the
+native recovery lock, sends no charge, lookup or Deposit, and discards obsolete
+context results. Targeted tests cover delayed restaurant/permission restore, a
+new provider container using saved secure settings, foreground return, native
+locks, corrupt approval evidence, tenant changes during preflight, request
+coalescing and the unchanged Android path. UI tests cover FR/HE/EN at 320 and
+1210 logical pixels. Hardware acceptance still requires the configured Mini. Changing an already connected terminal still requires the
+existing explicit application restart; no native banking sequence is changed.
+
+The dedicated payments/victa-mini procedure has complete French, Hebrew and
+English versions, with links from POS checkout, behavior and workspace guides.
+They require a compatible installed client and do not claim hardware/banking
+acceptance. The support corpus is copied byte-for-byte to the API. This local
+preparation does not itself publish, install or operate a terminal.
+
+## Saved catering management (2 November 2026)
+
+Compatible API/Admin/Web add atomic saved-event edits before bank processing,
+explicit unpaid production inclusion and live plan invalidation. Source carte
+snapshots remain frozen per item. Sumit event terms expose deposit, authorization
+or both; the combined flow has two reviewed bank steps and exact amount consent.
+Reservations never attest received money. Capture/release and bank validity are
+managed in Sumit; Foody shows a historical verified reference and read-only
+recovery. No bank duration, live terminal acceptance or capture API is promised.
+See orders/event-orders and the related production, order and private-link guides
+in FR/HE/EN. No screenshots occur in these procedures. The POS dynamic JSON
+contract accepts the optional fields; no native build or POS workflow changes.
+Preserve POS and Backoffice inventory blocks/surfaces from Landing develop
+`8c6bcd57e74b1293fc08d81ad7924a40ea7197f2`. Export identical API support corpus,
+freeze immutable documentation and verify dev before exact artifact promotion.
+Synthetic tests do not submit real cards, orders or customer details.
+
+## Full Admin calendar week (2 November 2026)
+
+Admin This week now includes all seven calendar days using the restaurant’s
+configured first weekday, including upcoming days. The shared picker, dashboard
+and reports persistence use the same boundaries. Last 7 days remains rolling.
+The Friday series default and native POS reports keep their existing behavior.
+Review dashboard/reports, order-list filters and navigation instructions in
+FR/HE/EN. These operations have no screenshots. Preserve all unrelated service
+inventory blocks and surfaces from Landing develop
+`305007e72ec2275e025328418181e4a21dda0c78`.
+Export identical public/support corpora and pin the reviewed Landing commit in
+Admin/API. Verify development before promoting the same artifacts.
+
+## Internal event handover and delivery fees (2 November 2026)
+
+The event calendar retains its independent handover date instead of reconciling
+it against weekly carte targets. Delivery fees are editable in Fulfillment before
+payment selection. Explicit staff quotes, including zero, survive private-link
+address validation; an omitted quote retains existing zone pricing. Coverage,
+minimum, calendar, discount and exact payment-total checks remain authoritative.
+The ordinary series selector is unchanged. Local return to articles retains the
+fee; persisted drafts deliberately require reviewing financial inputs again.
+
+Review event-orders, order-details and internal-sumit-checkout in FR/HE/EN with
+the compatible API and Admin. No screenshots exist in these procedures. Preserve
+all other service inventory blocks and source surfaces from Landing develop
+`6533c9f703a1801b3d1dbeca0a6acdbdcce24ffa`. Export the identical API support corpus
+and pin the immutable reviewed documentation before release. Verify development
+before promoting its artifacts. Synthetic tests create no real payment or order.
+
+## Item-to-carte groups (2 November 2026)
+
+The item editor can select existing publication-managed groups and stage a new
+root group under an existing carte without leaving the article. Save applies
+only this item's memberships to freshly read private drafts. Explicit series
+keys, existing editorial work and stock preparation are retained. Publication
+remains a separate action. Cancellation before Save creates no group; uncertain
+or partial saves retain editable group choices, including corrective removals.
+Synthetic browser regressions cover desktop French and mobile Hebrew without
+restaurant-data access. The reviewed procedures are in creating-a-menu-item,
+categories-and-items, menus-and-groups and using-support, in FR/HE/EN.
+
+This release refreshes Admin and Landing source evidence and the API's embedded
+public corpus. Web, POS and Backoffice retain the reviewed inventory blocks and
+surfaces from Landing develop `923ae7ae012ed7d2f2d90f32ac9ca50631380a9a`. Independently integrated internal-event sources and procedures are
+preserved. Freeze this documentation and pin its immutable commit in Admin/API
+before PR readiness. Coordinate help and support-corpus publication with the
+matching Admin artifact. The owner explicitly authorized pushes and development
+and production deployment; normal development verification and immutable artifact
+promotion still apply.
+
+## Internal event orders preparation (2 November 2026)
+
+API migration 286 precedes Admin, guest Web and POS. Orders retain their handover
+date as the production reference. The private prepared Sumit link collects event
+answers and optionally a fixed/percentage deposit; the remaining amount stays due.
+This initial version did not yet expose Sumit event reservations; the management release below supersedes that limitation. Lost browser callbacks require exact
+transaction verification from the saved order, never invoice-total inference.
+New FR/HE/EN event procedures and the four related order/production guides ship
+with the product. Synthetic tests do not certify a real provider account, payment
+or physical printer. Consuming services pin the immutable reviewed Landing commit
+before remote CI or release. Backoffice
+source evidence is retained from this branch baseline and is not revalidated.
+
+
+## iPad open-check workspace preparation (2 November 2026)
+
+The compatible iPad places open manual table, named and financial checks in
+Orders → Checks. Landscape uses the existing view sidebar; portrait uses the
+view picker. Menu → Actions → Open tickets and the existing named-check home
+return reach this same workspace. The compact handheld keeps its existing
+Open tickets route. Viewing, changing views and reopening a check do not merge
+QR orders, collect payment, send food or close a check.
+
+Save check during a Menu send remains a destination dialog. Its new tablet empty
+panel distinguishes the absence of eligible onsite checks from loading failure;
+new-check creation and cancellation keep their existing authority. A separately
+created ticket preselects the service type from the current valid method or
+effective enabled default instead of forcing pickup. Staff still review that
+choice. Missing settings, eligibility or group reads do not authorize creation.
+
+The five affected procedures are reviewed in French, Hebrew and English under
+orders/managing-orders, orders/order-types, orders/taking-an-order-pos,
+settings/service-mode and settings/pos-workspace. None of these guides contains
+an embedded screenshot to update. Preserve the source inventories of services
+outside the reviewed POS and API documentation-corpus footprints from Landing
+develop 1b469b8097e7fc34bf16d92058f6bca4e9f9f29b; do not rescan unrelated worktrees.
+The API executable behavior, schema, payments and environment contract do not
+change. Export the reviewed public corpus, copy it to internal/support/corpus.json
+in the isolated API branch, then freeze its documentation source before final
+inventory and immutable pins. Do not publish these procedures before the
+compatible installed POS and matching support corpus are coordinated. Local
+documentation preparation does not certify an installation or physical test.
+
+## Customer profile save feedback preparation (1 November 2026)
+
+The Admin customer form identifies missing, invalid and duplicate phone numbers
+inline and in a persistent blocked-save summary. Its correction link focuses and
+scrolls to the affected contact. Add and Remove keep contact edits local until
+Save; delivery edits remain in the draft throughout recovery. The
+customers-profiles/save-validation procedure covers this recovery in FR/HE/EN.
+Synthetic browser regressions exercise saved invalid contacts and normalized
+duplicates from the delivery section, then verify one atomic successful save.
+
+This preparation refreshes Admin, Landing and the API's embedded public corpus.
+Web, POS and Backoffice inventory blocks and source surfaces retain the evidence
+from Landing develop `bf2140f109b7a3d8cfe88fe7ca54fe8685e37f3e`.
+Admin and API pin the reviewed immutable Landing commit before remote CI. Publish these guides
+and the synchronized support corpus with the matching Admin release.
+
 The public help center lives on `foody-pos.co.il/{fr,he,en}/help`. Admin provides
 contextual access and an assistant drawer. It does not host the public knowledge
 base. `docs/help/catalog/features.json` is the authored feature/procedure source;
@@ -7,6 +429,237 @@ base. `docs/help/catalog/features.json` is the authored feature/procedure source
 `src/content/help`. Imported detailed chapters and stable URLs are retained. References to absent historical screenshots are removed; missing local illustration assets fail publication validation.
 Internal operator procedures render separately to `docs/help/internal` and never
 enter public browsing, search or the AI corpus.
+
+## End of day and terminal transmission (30 October 2026)
+
+The compatible POS/API add one explicit current-POS closing workflow. Cash and
+terminal evidence remain separate ledgers, but the operational report is frozen
+only after the counted drawer and every declared terminal transmission are
+confirmed. A day may contain only cash or only a configured terminal. The API
+reserves the drawer and terminal operations; payment and physical-cash changes
+cannot silently reuse a reserved scope. The UI retains the measured report rail
+on tablets and a single-column compact route, with French, Hebrew and English.
+This workflow neither ends attendance nor closes orders or tables.
+
+Existing cash journals must be resolved before reserving an EOD, including after
+an asynchronous native readiness check. The reserved drawer remains readable;
+its separate mutation controls and every cash-tender entry point are guarded.
+A positive, typed definitive rejection releases only its rejected cash intent;
+network uncertainty retains the original identity. The cash dialog keeps its existing rendering and reusable default behavior, with
+an optional current-context guard before confirmation and drawer opening.
+
+The native Ashrait Deposit TransactionQuery remains the existing vendor command
+on Mini and Portable. The available typed callback does not expose trustworthy
+numerical totals or a batch ID; missing values stay unknown. A durable successful
+local receipt permits recording recovery without retransmission. A crash before
+that receipt is durable remains unknown and requires provider review; no manual
+acknowledgement fabricates automatic provider proof. No live payment or deposit
+is part of local validation. GBX automation is described as vendor-supplied
+behavior, not a new integration or transmission command implemented here.
+
+The immutable digital Foody Z is an operational report, not a certified fiscal
+artifact or bank-settlement guarantee. Cash coverage is the current reserved
+drawer. Financial-payment rows require durable installation/credential provenance;
+unattributed card records, other POS and hosted web tenders are not silently
+included. Recorded references distinguish Foody traces from received payment
+references; neither is promoted to an acquirer transaction number by inference.
+No new print job or physical-paper success is promised.
+
+Review and release payments/end-of-day and the related checkout/cash-access
+links in all three languages with the API first and then the POS. Preserve
+unaffected service runtime inventories. Refresh affected source contracts and
+embed the same public corpus in API, then pin the reviewed Landing commit.
+Local validation does not assert deployment, installed-device acceptance,
+terminal compatibility or legal certification.
+
+## Zone delivery rules and shared restaurant settings (30 October 2026)
+
+The [coordinated review](reviews/zone-delivery-rules.md) moves explicit same-day
+rules into each zone, keeps restaurant service/preparation rules common and adds
+a read-only saved-basket/address calendar simulation. Publish the four affected
+guides in FR/HE/EN with compatible API/Admin artifacts and the API corpus. Refresh
+API/Admin source evidence only; preserve unchanged Web/POS/Backoffice/Landing
+application inventories exactly. The owner authorized the joint implementation
+and dev/prod promotion. Lovely's separately approved behavior is converted by a
+scoped guarded maintenance transaction after API verification, with all 560
+calendar/geography/price comparisons equal. No production test orders or messages.
+
+## Same-day delivery and settings audit (29 October 2026)
+
+The optional delivery policy and stale-save protections are reviewed in
+[scope and release requirements](reviews/same-day-delivery.md). Update the
+three-language delivery-zones, preorders, order-detail and guest-ordering guides
+with compatible API, guest and Admin artifacts. The API audit records legacy
+calendar precedence and missing zone calendars without changing live settings.
+Preserve the existing POS, Backoffice and Landing application-source inventory
+blocks; freeze current API/Admin/Web sources and pin this documentation commit
+before release. The owner has requested dev and production deployment; no live
+restaurant policy is automatically enabled and no real message is sent in tests.
+
+## Pink Coffee coordinated release
+
+The reviewed Website/Admin change adds the Pink Coffee template, campaign hero
+carousel, campaign product cards and display headings. The website editor, design
+and sections guides describe the controls in French, Hebrew and English and
+require compatible versions. The owner authorized commits, pushes, PRs,
+development deployment and production promotion on 29 October 2026. Exact Admin,
+Web and API corpus source checkpoints are recorded before this documentation
+freeze. POS and Backoffice retain their baseline evidence. Consumers resolve
+Landing's self reference to this immutable documentation commit before CI.
+Verify Web before Admin and publish the guides with the compatible release;
+promote only the exact successful development artifacts. See
+[scope, compatibility and pin workflow](reviews/pink-coffee-template-local-preparation.md).
+
+### Pink Coffee field-contract evidence follow-up
+
+Admin checkpoint `312fe721588d56495ca665368ec2a0751cdf4e2b` completes eight
+static test-registry descriptors for the already documented campaign and display
+controls. The registry has no product runtime importer. Editor controls, saved
+payloads and publication behavior are unchanged. Preserve the article bytes,
+dates and public corpus from Landing `1f97f2f0e1e9e3fd3773f8ee98e6b35fe4f70ca6`.
+Refresh only the Admin registry digest, source checkpoint and configuration-field
+surfaces; retain all five other service blocks and surfaces exactly from Landing
+develop `035923bdbca6958560550fdab57f1401a97c069d`.
+
+Pin this follow-up's immutable Landing commit in Admin only. API and guest Web
+keep their independently reviewed `1f97f2f0e1e9e3fd3773f8ee98e6b35fe4f70ca6` pins
+and the identical corpus revision. This evidence change requires no public guide
+publication or API/Web rebuild. The root coordinates PRs, required checks and
+Admin artifact verification before production promotion. See the
+[exact scoped review](reviews/pink-coffee-field-contracts.md).
+
+### Pink Coffee layout-controls coordinated release
+
+This follow-up reviews editable hero geometry and navigation controls, menu-icon
+style/size/stroke, and a multirow featured-product grid with per-item backgrounds.
+French, Hebrew and English procedures are reviewed together in the existing
+customize, design, sections and navigation guides. The additive optional Website
+capability `campaign_layout_controls: 1` gates the new settings independently of
+the existing campaign presentations. Autoplay must retain an accessible pause
+control even when its display preference is off. The manual Pink Coffee preset
+hides the counter/playback control and header cart icon without changing checkout.
+
+The API validates the optional header presentation fields before draft saving
+and publication. No migration, operational ordering rule, payment behavior or
+tenant catalogue mutation is introduced. Run full Go validation after API code
+freeze, then export and synchronize the final public corpus before its final
+artifact build/support tests and source inventory. Roll out the compatible API,
+then Website, before Admin exposes the new controls; publish the matching help
+release with its support corpus. Verify development before promoting those exact
+artifacts under the owner's existing authorization.
+
+API, Admin and Website source checkpoints are frozen and recorded in the
+[release evidence](reviews/pink-coffee-layout-controls-release.json); their 1,708
+source hashes match the actual committed Git objects. POS, Backoffice and unchanged
+Landing application-source blocks/surfaces retain the exact Landing develop
+`2cd01f46f75b8a4f6d7bac7cddadead728abb23b` baseline; those checkouts are not rescanned.
+All three consumer contracts resolve this documentation commit's self-reference
+to its immutable SHA before remote CI. Local validation is not production
+acceptance: the root owns PRs, required checks and artifact promotion. See the
+[review scope](reviews/pink-coffee-layout-controls-preparation.md).
+
+## Internal order finalization (29 October 2026)
+
+New order now finalizes inside the ticket after Continue. Explicit payment intents
+replace the ambiguous default-paid switch. Received cash/external card requires a
+fresh acknowledgement of the displayed amount; pay later stays unpaid. Sumit links
+allow optional contact details and recipient delivery calculation; hosted card entry
+opens after creation and trusts only existing API settlement. Provider capabilities,
+tenant permissions, production gates and the guest storefront theme/cart are retained.
+Back preserves customer/date, not stale discounts or delivery quotes. Ten-second Undo
+restores a line with its draft-price warning and checkout block. Compact item tiles,
+collapsed secondary controls, a fixed action footer and the existing navigation
+collapse are covered by synthetic desktop/mobile, RTL and dark-theme browser checks.
+No real payment, production order or customer message is used for UI acceptance.
+
+Review and publish the managing-orders, order-details and internal-sumit-checkout
+procedures in French, Hebrew and English together with Admin. API changes only its
+embedded public corpus; no payment endpoint, schema or payment lifecycle changes.
+The shared native radio styling now leaves an unselected group visibly empty; this
+corrects presentation without changing checked values, keyboard use or form payloads.
+Scoped source reviews cover only unchanged feature classifications on shared files,
+not the changed order workflow documented in those three guides. Refresh Admin/API
+source evidence and retain all other service inventories/surfaces exactly from Landing
+develop `34d74115133fcb7c29eb1af68685d25178bffa0b`. Pin an immutable Landing commit in
+both affected services. Verify development, then promote those exact artifacts.
+
+## Restaurant PIN scope and provisional fulfillment (28 October 2026)
+
+The personal code is unique among configured accounts within one restaurant;
+the same complete code may be configured in another restaurant. PIN sign-in and
+personal time tracking require exactly one configured matching code, then check
+the account's current access. A collision remains a generic refusal even when a
+matching historical row no longer has access. It consumes the existing shared
+attempt budget and creates no new sales session or attendance. Do not expose the
+matching accounts or infer that a particular restaurant has duplicate codes.
+
+The first-login and devices/shifts guides clarify that scope, the expected
+personal profile, and recovery without inventing an Admin repair control.
+French, Hebrew and English retain the existing distinction between the account
+which authorized the physical terminal and the employee selected by PIN.
+Changing a code and completing an invitation use the same restaurant lock before
+checking and saving salted codes. Setup takes restaurant locks in stable order
+before user writes, including owner onboarding; rejected setup remains atomic
+with its password and invitation. Publish API before a client which relies on
+the corrected behavior, and retain the existing data and financial journals.
+
+The separate Flutter correction invalidates only provisional fulfillment state
+and the Menu entry gate when its restaurant, personal actor or sign-in session
+changes, including a rapid return to the same IDs. A normal refresh or same-user
+profile hydration keeps the provisional intent. A saved explicit method and
+its customer details remain in their actor-bound draft. This restores the
+existing three-language procedures in order-types, local draft recovery and
+personal PIN guidance; do not add a new procedure, date or guide paragraph for
+that correction alone. Exact scoped reviews acknowledge the visible bug fix and
+retain the unchanged saved-order, discount, comp and void procedures.
+
+Refresh API and POS source evidence for this correction. Retain the unchanged
+Landing application-source block and surfaces, together with Admin, guest Web
+and Backoffice, exactly from Landing develop
+`f7f7259deb52dcd223426f8b2eef3fb5963c5934`; those source checkpoints are retained,
+not recertified from a documentation worktree with pending changes. The reviewed
+French, Hebrew and English article bytes are attested separately by the new
+public corpus, release revision and Landing self contract. Do not copy the final
+public corpus into API during its full validation. Final source references and
+documentation pins require the validated clean checkpoints; local preparation is
+not remote CI readiness, production publication or physical acceptance.
+
+## Personal-session integrity review (28 October 2026)
+
+This correction separates physical-terminal authorization from the personal staff
+session selected by PIN. The account used to authorize a terminal is not evidence
+that the same person is currently using it. The first-login and devices/shifts
+guides clarify that distinction in French, Hebrew and English. PIN length,
+explicit submission, enrollment, attendance and cash-report procedures are kept.
+
+API refresh requires the signed token version to match the current user's
+version before issuing a replacement. A revoked or unexpected version receives
+the existing generic unauthorized response without internal details. A matching
+version and the existing expiration grace remain supported; refreshing cannot
+substitute the restaurant owner for the personal token's subject.
+
+POS refresh belongs to its originating session and restaurant generation. A late
+refresh, profile or response cannot restore a previous actor, clear the next
+actor's session or replay their request. Personal-token writes and logout cache
+cleanup are serialized before a newer login. Offline permission caches are
+versioned and bound to backend, restaurant and user; unowned legacy entries are
+not adopted. The guides explain that an online profile read can therefore be
+needed after an update or an employee change. No new refresh button is promised.
+
+Order mutations require a confirmed, non-loading personal context, including
+during login and restaurant selection. A request already sent before a context
+change may have an unknown result; its original journal and identity remain the
+recovery authority. This correction adds no charge, automatic clock-out, cash
+closing, provider retry or data-reset procedure. Synthetic tests and source
+review are not a claim that all physical device or payment flows were exercised.
+
+Refresh API, POS and Landing source evidence for this correction only. Preserve
+the Admin, guest Web and Backoffice service inventories and surfaces exactly from
+Landing develop `0c914570bd4f08e5dbb3d8262f976148fa749c4e`; those sources are
+retained evidence, not recertified here. Export the final public corpus into API
+after its full runtime validation and before inventory generation. Local source
+references remain provisional until clean source checkpoints and an immutable
+documentation commit are coordinated; never mark a WORKSPACE pin ready for CI.
 
 ## Explicit stock sources and immediate modal settings (28 October 2026)
 
@@ -158,6 +811,21 @@ standalone URLs. The inventory is evidence for review, not proof that every runt
 state, permission or physical device was exercised.
 
 ## CI enforcement in every versioned service
+
+### Local scheduled-acceptance correction (2 November 2026)
+
+This preparation reviews the API's restored scheduled-order acceptance descriptor,
+the unchanged Admin consumer with an added contract regression, and the FR/HE/EN
+order guides. API, Admin and Landing source footprints are checked; the Web, POS
+and Backoffice inventory snapshots remain their previously recorded evidence.
+The existing acceptance writer, restaurant workflow, scheduler, payment guards and
+fulfillment dates are retained. The API's embedded corpus matches the same public
+release. No payment-provider or shared-model change is introduced.
+
+Local preparation used `WORKSPACE`; release contracts pin the reviewed immutable
+Landing commit before remote CI or PR readiness. Then
+verify the corrected API in development and publish the guides with its approved
+promotion. This local review does not confirm production deployment.
 
 ### Cross-session release review (25 October 2026)
 
@@ -635,3 +1303,471 @@ matching embedded support corpus with the compatible UI. Pin immutable Admin and
 Landing source references before remote CI. Validate and deploy API before Admin,
 then promote the exact verified development artifacts under the authorized release
 workflow. Synthetic regressions never mutate real restaurant stock or orders.
+
+### Local order lifecycle alignment (27 October 2026)
+
+This local preparation refreshes the API, Admin, guest Web, POS and Landing
+source evidence for independent order lifecycle facts and durable unsent POS
+drafts. Backoffice service metadata and surfaces are retained exactly from the
+previous inventory: they are historical evidence, not a fresh Backoffice runtime
+validation. Feature evidence is rebuilt from the combined source inventory.
+The retained Backoffice source commit is `8b4929d31bc4aaa9b85e4effa74192476b9e2624`
+with source snapshot `bfcc994d8c35d3e174520b4c2e225b6376561c51cd00770aaeada3067f02d441`.
+The scan uses an isolated detached checkout of that baseline; it does not read
+private or untracked files in the primary Backoffice checkout. Its original service
+block and surfaces are restored byte-for-byte before rebuilding combined feature
+evidence and coverage.
+
+The six remaining audit priorities are retained in the internal API alignment
+reference. Earlier physical passes do not accept this later source. Only an iPad
+is currently available; physical phone/Portable and Verifone acceptance remain
+separate. Cash access requires resolving the original owned shift/authorization
+context; no automatic rebind, attendance rewrite or cash mutation is implied.
+
+Local contracts may use WORKSPACE while preparing the coordinated changes.
+Before CI or publication they must pin the reviewed immutable Landing commit.
+Publish the FR/HE/EN corpus with the matching API and clients, after validating
+the additive API and its migration before client rollout. Do not claim a unified
+net-refund ledger, quantity-level partial handoff, universal commercial closure
+or a different table-release policy: those are not provided by this projection.
+
+Local contract comparisons use each candidate’s immutable starting commit, not
+a moving remote branch updated by another session. They prove concordance of the
+reviewed working sources and guides only. A later integration must refresh the
+comparison against its actual PR base, and the WORKSPACE documentation references
+remain unsuitable for remote CI or publication until an immutable reviewed Landing
+commit is authorized. No source validation replaces native hardware acceptance.
+
+Canonical payment `pending` is an expected payment state, not proof that a provider
+attempt or claim is active. Existing eligible payment actions remain available;
+actual provider claims, authorizations and unresolved journals retain their guards.
+The lifecycle projection adds no cross-device payment lock or new authority to
+collect. Preserve the former type, status, permission and provider conditions.
+
+## Guarded free-table admission follow-up (28 October 2026)
+
+A physical iPad pass found that a newly opened free table could reach Menu with
+an obsolete restore context. The candidate now preloads the verified table/order
+context before navigation and retains the previous draft on failure. The matching
+API advertises boolean `table_service_start_if_free`; the new POS requests
+`start_if_free:true` for a new occupation without a canonical session. A known
+inactive QR session retains its existing ID and covers under the legacy resume
+path; it is not silently replaced by a new occupation. Under the table lock, a concurrently occupied table returns
+409 `table_service_changed` before covers or session writes. Verification storage
+failure remains 503 `table_service_unavailable`; a missing table remains 404.
+Legacy callers without the flag or with false retain their earlier contract.
+
+The FR/HE/EN opening procedures explain returning to the floor, refreshing and
+reviewing the current visit without attaching an old draft. Product flows do not
+expose the protocol fields. Older APIs cannot provide the new protected admission;
+deploy API before the compatible POS. This changes no cash report, attendance
+identity, provider or table-layout geometry. Preserve all unrelated source evidence
+and the exact retained Backoffice block/surfaces. Re-export the public corpus
+before API final validation; refresh API/POS hashes after both sources are frozen.
+The WORKSPACE/self pins still require an authorized immutable Landing commit
+before remote CI or publication, and physical iPad acceptance must be repeated
+on the final compatible build.
+
+
+### Current POS profile identity follow-up (28 October 2026)
+
+The POS profile read must follow the signed-in staff actor and authentication
+context even when the restaurant and API repository stay the same. A late response
+for the previous employee must not replace the next employee’s profile. This
+corrects the read projection only: shift end, cash-report guards, device enrollment,
+authentication mutations and the existing PIN sign-in flow remain unchanged.
+The existing staff PIN and workspace procedures now clarify in French, Hebrew and
+English that the displayed POS employee is independent of an Admin browser session,
+and that the supported handover is normal shift end followed by a personal PIN.
+No new account-switch control or credential recovery is advertised. Regenerate
+source inventory and exact scoped reviews only after the final provider/test freeze;
+retain WORKSPACE pins until an immutable documentation commit is authorized.
+
+
+### Personal shift-end preflight follow-up (28 October 2026)
+
+The compatible POS uses the version1 personal end-preflight before normal
+sign-out. Historical access expiry/revocation or a removed hardware link is
+independent of a legitimate period end when the original scoped reference still
+exists and its cash duty is closed. Missing/foreign references and unknown reads
+remain refusals. Cash access, enrollment and credential bindings are unchanged.
+The guarded end names the reviewed expected_shift_id; a replacement/disappeared
+period cannot inherit an old confirmation. An already-ended state has a separate
+explicit lock confirmation and fresh read, without another clock-out. Pending
+local cash and uncertain end journals keep their existing resolution authority;
+Verifone journals stay separate. The public account, staff and cash-access guides
+explain these distinctions in French, Hebrew and English; protocol/version/error
+details stay in the internal API guide. Deploy and verify the API first.
+Regenerate inventory and scoped shared-source reviews only after API/POS freeze.
+WORKSPACE documentation references remain local preparation and are not CI-ready
+or publication-ready until an immutable documentation commit is authorized.
+
+
+### Integrated delivery bases and migration evidence (28 October 2026)
+
+The unpublished lifecycle feature is rebased onto the reviewed stock-source
+Admin develop c7cc558411f01fa9aefc066d32c907cab5f5986a and Landing develop
+e534cd316d55f0c67db9d6fd5f7b9d2aa7be94a2. Preserve immediate Apply, explicit
+recipe stock and all prior stock procedures alongside lifecycle, guarded table
+admission, personal profile and shift-end guidance. Source-contract reviews must
+compare with these actual PR bases, not the earlier local preparation baselines.
+The additive submission recovery migration is now280_check_submission_recovery_scope.sql;
+279 remains the upstream explicit recipe-stock migration. No applied migration is
+modified. The inventory admits only SQL migrations explicitly selected by authored
+features, and has a synthetic regression that excludes unselected/compressed files.
+The new migration is evidence for POS order-entry recovery and the internal API
+contract; it adds no guest handoff or payment authority. Derived conflict stages
+were preserved outside repositories and temporary WORKSPACE placeholders are not
+release-ready. Regenerate the combined inventory/contracts after all integrated
+source checkpoints and the final API corpus commit, then coordinate the immutable
+Landing pin before remote CI. No immutable pin is created by this local integration.
+
+
+## Local exact-postal delivery coverage (28 October 2026)
+
+This preparation reviews API, Admin and Landing only. Migration 281 adds optional
+postal_codes metadata without converting existing city or department zones. Exact
+postal rules precede other zone types; provider-verified French five-digit codes,
+including leading zeros, determine eligibility, fee, minimum and calendar.
+Client city strings and coordinates cannot supply this metadata. Tests exercise
+75016 versus 75015, missing/provider-failure metadata, overlapping zones, updates,
+restaurant isolation, tour guards and the three geocoding adapters. FR/HE/EN
+browser fixtures verify create, readback, edits and invalid department input.
+
+Retain Web, POS and Backoffice inventory blocks and surfaces exactly from the
+Landing develop baseline e79a046cc2689308687896e9ed4a70d4f429f357; these consumers receive delivery decisions
+through existing server contracts and have no zone-authoring model to update.
+Copy the regenerated public corpus into API before scanning. WORKSPACE references
+support local preparation only; immutable documentation pins require an explicitly
+authorized commit before remote CI. Deploy API/migration before Admin and publish
+the qualified guides with the compatible product release. No production mutation,
+real delivery order, paid provider call or deployment is part of these tests.
+
+
+The postal-list follow-up accepts spaces, commas, semicolons and real line breaks
+in a multiline editor, preserves leading zeros and deduplicates within each list.
+A shared postal code combines compatible zones' weekly windows without writing
+any saved zone. Fee, nullable minimum, booking mode and pickup alternative must
+all agree; existing priority remains for incompatible or overlapping promises.
+No supplied business lists, restaurant configuration or default fees are seeded.
+A changed order address compares both the zone anchor and effective calendar, so
+losing one shared day group cannot retain the previous address's extra weekdays.
+API tests exercise public calendar output, all three booking modes, Saturday
+exclusion, isolated code/rate groups and existing-order address revalidation.
+Admin fixtures verify three manually authored groups and multiline round trips.
+
+## Owner courier-mode local preparation (28 October 2026)
+
+This preparation extends the existing scoped courier selector to the active
+restaurant owner. API ownership is authoritative; a global owner role in a
+different restaurant grants no access. FR/HE/EN procedures retain their stable
+anchors and qualify the owner flow by compatible API and Admin versions.
+Deploy API before Admin and publish these guides with the behavior. No production
+mutation or deployment is part of local validation.
+
+Refresh API, Admin and Landing evidence only. Preserve the guest Web, POS and
+Backoffice service blocks and source surfaces from the current Landing develop
+baseline without claiming to revalidate them. Application source checkpoints are committed separately from generated help
+contracts; every inventoried source digest is verified against its immutable
+checkpoint. Service contracts pin the reviewed immutable Landing commit before
+remote CI or release. Synchronize the exported support corpus before scanning API sources.
+
+## Sumit internal checkout release (28 October 2026)
+
+This preparation changes API, Admin, guest Web and the matching FR/HE/EN guides.
+Only the active, configured Sumit provider enables staff-created private basket
+links and hosted card entry. Recipient delivery addresses resolve through the
+existing restaurant-scoped zone rules; the recipient reviews server-calculated
+fees, the applicable minimum and the final total before payment. A changed total
+must be reviewed again. Admin-entered card orders retain their staff delivery quote.
+The prepared order remains pending and immutable until provider confirmation;
+retries resume one durable hosted page, and uncertain creation remains blocked.
+A 24-hour expiry uses the existing cancellation/stock-release path. No schema or
+environment change is required. Cards are entered in Sumit's hosted form and are
+not saved for later use by either new flow.
+
+Retain POS, Backoffice and unchanged Landing application sources from the current
+Landing develop inventory, rather than revalidating unrelated worktrees. Refresh
+only API/Admin/Web source inventories, render all translations, export the public
+corpus and copy it into API before its final source scan. Publish the new guide with the compatible API/Admin/Web release. Pin the final
+reviewed Landing commit in each product contract before PR readiness. The owner
+authorized development deployment followed by production promotion on 28 October.
+Verify development first, then promote those exact successful artifacts without
+rebuilding. Provider acceptance is verified separately from the browser regressions,
+which use synthetic orders and stub Sumit; no production test charge is needed.
+
+## Independent order lifecycle confirmations (29 October 2026)
+
+This delivery retains the strict v1 field and adds lifecycle_v2 with its explicit
+capability, exact commercial scopes, nullable recorded monetary amounts, physical
+unit handoff operations and creation-time tracking policy. Paid, ready, handed
+over and commercially closed remain separate facts. QR guest identities and
+payments remain separate; financial shares never duplicate physical food.
+
+Preparation and handoff policies are global fulfillment-method settings, frozen
+on each new Order. They do not reinstate an iPad override or reinterpret old
+history. KDS visibility, routing, role and completion scope retain the current
+profile behavior. Required-station observations are recorded at an actual
+new dispatch or explicit KDS completion/recall, never during a read or a profile
+save. A single completed station does not imply all required work is ready.
+Explicit handoff can precede Ready in an existing custom workflow; no intermediate
+Ready fact is fabricated. Existing validated courier departures retain their
+special route authority without manufacturing dispatch or customer receipt.
+
+Handoff and exact-scope closure share an immutable request journal with explicit
+UUID recovery. A missing response or absent lookup is not conclusive failure.
+Confirmed historical results still require the current actor and table access;
+clients refetch current facts before offering another action. A correction such
+as Undo departure appends a causal event instead of deleting history. Commercial
+closure does not collect money, complete food or release a table. Existing table
+release rules and dedicated metadata/comp/void/payment writers retain their own
+guards. Refunds and recorded net receipts do not silently create fresh debt.
+
+The lifecycle, order, fulfillment, payment and guest tracking guides were reviewed
+and updated in French, Hebrew and English, including removal of the obsolete
+claim that method tracking cannot be disabled. Exact scoped reviews cover only
+unrelated features on shared source files. The unchanged Backoffice inventory and
+surfaces are retained from Landing develop, not recertified from a different
+checkout. Preserve corpus equality and selected migration284 evidence. Export
+the final public corpus into API after full runtime validation and before final
+source inventory generation; pin an immutable documentation commit before PR
+readiness. Local source snapshots or a WORKSPACE pin do not constitute publication.
+
+Automated API, browser and widget checks are distinct from physical acceptance.
+The manual recipe supplement remains entirely untested by a human. No installed
+build, TestFlight availability, real payment, terminal deposit, personal PIN
+repair or cash/attendance mutation is certified by these synthetic results.
+
+
+## Courier execution-only itinerary (28 October 2026)
+
+Courier mode no longer exposes Refine, route settings, address correction, stop
+reordering or reoptimization. Owners and superadmins viewing a courier use the
+same execution-only screen. Start, navigation, contacts, arrival and delivery
+confirmation remain available. Read-only total-duration details remain visible.
+Retry on a plan warning reloads saved information without optimizing the route.
+An authorized dispatcher changes plans in Orders → Deliveries. Legacy courier
+planning aliases return 403; delivery planning writes reject Courier memberships
+even when a historical orders.manage grant remains, and reject explicit
+courier_id selections. Current restaurant ownership and explicit superadmin
+access remain valid for dispatcher planning. Restaurant boundaries are preserved.
+
+Review courier, dispatch and Google verification procedures in FR/HE/EN. No
+customer windows, route order, live estimates or order states are rewritten by
+this release. Synthetic tests cover rejected writes and preserved delivery actions;
+production verification reads controls without changing real orders. Refresh only
+API, Admin and Landing evidence. Retain Web, POS and Backoffice service blocks
+and surfaces exactly from Landing develop 7c60f5a31a7e4cf58b84ad4d4adcf73907f320a9;
+those services are not revalidated. Export and copy the identical public corpus
+before scanning API evidence, pin immutable source and documentation commits,
+validate API before clients, then promote the exact development-tested artifacts
+under the authorized courier correction release workflow.
+
+## Stancer cash guarantee release (29 October 2026)
+
+The user authorized commits, pushes, development deployment and production
+promotion on 29 October 2026. API, Admin, guest Web and Landing are integrated
+with their current develop bases. POS and Backoffice retain the exact source
+blocks and surfaces from Landing develop cf656d64; they are not revalidated.
+Existing POS cash drawer rules remain authoritative.
+
+The separate Stancer sandbox hosted-card/3DS flow authorized 0.50 EUR with
+capture=false. DELETE then an independent GET confirmed cancellation of that
+same intent, amount and currency. No capture, Foody order, customer or tenant
+setting was created. This proves the provider sandbox path; real bank release
+timing and merchant fees remain account-specific. Guarantees remain off by
+default, and deployment does not change Lovely's saved cash settings.
+
+Source checkpoints and the final reviewed Landing documentation commit are
+immutable before remote CI. Roll out migration 282/API before Admin/Web, verify
+development, then promote the exact same artifacts without rebuilding. Publish
+the three-language procedures with the compatible product release. No production
+test payment is required or authorized merely by this deployment.
+
+
+## Compact item sheet local preparation (29 October 2026)
+
+This preparation reviews Web, Admin, Landing and the API's synchronized public
+help corpus on isolated develop-based branches. Product-sheet layout changes and
+Admin's Compact presentation action are documented in FR/HE/EN under
+website-order-design/item-surface and guest-ordering/basket. Authored theme roles,
+fonts, ratios, fit and framing remain the source of truth; only a missing photo
+ratio defaults to 16:9. The isolated editor test publishes only to an in-memory
+fixture. Existing public websites and production settings are never mutated.
+
+POS and Backoffice inventory blocks/surfaces retain their exact evidence from
+Landing develop 359e59e0 and are not revalidated here. Copy the exported public
+corpus to API before scanning. The user authorized commits, development and production deployment on 29 October
+2026. Contracts pin the reviewed immutable Landing commit before remote CI;
+Landing retains its self-reference. Publish the guides with the verified Web/Admin rollout
+and matching support corpus. Source and synthetic browser checks do not certify
+a live order or production deployment.
+
+## Local delivery weekday scheduling preparation (29 October 2026)
+
+This preparation reviews API, Admin, guest Web and Landing from develop. Zone
+weekdays restrict the restaurant delivery calendar; legacy zone windows supply
+only weekdays for new bookings. Existing orders retain their frozen availability.
+The prepared-checkout quote shares the restaurant calendar without reapplying a
+production delay. Fees, minimums, tenant checks and payment authorization keep
+their separate server checks. No schema or production-data migration is required.
+
+POS and Backoffice inventory entries and surfaces retain their exact baseline
+from Landing develop `359e59e030e4a686224a3ff520f1799534fb3d67`; those clients are
+not revalidated here. POS retains delivery policy snapshots as an opaque map.
+Export FR/HE/EN procedures and synchronize the API corpus before the source scan.
+Service contracts pin the reviewed immutable Landing documentation commit for
+remote CI and release. Deploy the API before compatible Admin/Web, verify development, and
+publish the guides with the product. This local preparation deploys nothing.
+
+
+## Capability-based cash controls correction (29 October 2026)
+
+For a provider whose full cash-guarantee flow is supported, the Admin cash
+selector offers Yes for all customers or No for everyone. Card guarantee remains
+a separate opt-in as clarified by the owner. Existing trusted-only policies are
+shown as a retained prior value until an explicit global choice; unrelated VAT
+or tips saves do not widen cash eligibility. Unsupported providers keep their
+existing controls. The UI reads the server capability, never a provider-name list.
+No new provider is certified by this correction.
+
+The shared private settings response now includes online_payment_only explicitly
+for both boolean values on GET and PUT. An omitted false value previously made
+Admin report an unknown policy and disabled its cash controls. The authoritative
+online-only restriction and unknown-policy fail-closed behavior remain intact.
+Public checkout already honors the all/disabled policies without a trust gate.
+No guest Web, POS or Backoffice source is changed or recertified; retain their
+exact inventory blocks and surfaces from this correction's Landing develop base.
+Update and render the activation procedure in FR/HE/EN, export the identical API
+corpus, verify source checkpoints, and pin immutable documentation before CI.
+The existing authorization covers publishing this correction through development
+and production, with the same verified immutable artifacts. No tenant cash policy
+or provider configuration is changed during deployment.
+
+The production sheet and its day counts now admit accepted scheduled cash orders
+without a trust requirement. Required bank guarantees must be confirmed first;
+pending, unknown and malformed snapshots cannot bypass this gate through VIP
+status. The existing explicit staff override remains separate. Accepted orders
+remain planned if cash is subsequently disabled. This changes no received-payment
+status, debit, notification or tenant setting. The production-planning guide is
+reviewed in FR/HE/EN, with exact API source evidence; other order-entry and API
+procedures on the shared production source retain their scoped reviews.
+The full race-validation job has a 60-minute budget because the prior cold run
+exhausted 25 minutes during compilation; its test commands are unchanged.
+
+
+## Ordering simulation address suggestions (31 October 2026)
+
+The simulation delivery-address input reuses the existing scoped address search
+and selection field already used by route and staff editors. The three-language
+preorders simulation procedure now explains the three-character search, keyboard
+or pointer selection, waiting for resolution and manual entry when suggestions
+are unavailable. Receiving dates, service calendars, coverage validation, stock,
+orders, payments and restaurant settings retain their existing behavior.
+
+Only Admin application source changes. API embeds the identical reviewed public
+corpus; its executable code and provider contracts are unchanged. Preserve Web,
+POS, Backoffice and Landing application-source blocks and surfaces exactly from
+Landing develop 295b432dc934040e6e7b9c7d06e9fb25d3071c68. The exact
+[source review](reviews/ordering-simulation-address.json) records clean immutable
+source checkpoints; pin this documentation commit in Admin and API before CI.
+Verify the development artifacts, then promote those same artifacts under the
+ongoing authorized delivery correction. Publish the matching help and support
+corpus together. No real order, message or tenant configuration is changed.
+
+## Unified transaction history correction (4 November 2026)
+
+Transactions reads confirmed Foody records across cash, card-present Verifone and online providers. The read-only Admin destination now exists with payments.view/manage gates, date/channel/tender/search filters and per-currency gross/recorded-return figures. Stancer keeps its explicit processor label. A restaurant-owned immutable cash sale/return survives an unavailable original order: only its display allocations are hidden and flagged, without rewriting the journal or granting refund authority. Corrupt amounts, refund relationships, actor/session checks and financial mutation guards retain their checks. No bank, Deposit, credential, provider-routing or schema mutation is introduced.
+
+Review the dedicated transactions guide in FR/HE/EN with the matching API/POS/Admin release; move the existing history sections without changing their public scope. Preserve the unrelated Web, Backoffice and Landing application-source inventory from this develop base. Refresh only API, POS and Admin source evidence, embed the identical support corpus and pin an immutable Landing commit. All browser fixtures use synthetic data and block provider requests. Production diagnosis reads only aggregate linkage metadata; no payment, cash movement or real business record is modified.
+
+
+## Optional prepared products and delivery intake deadlines (4 November 2026, local)
+
+This uncommitted preparation changes API, Admin and guest Web. It configures no
+restaurant and performs no deployment, live order, payment or customer message.
+Nullable prepared stock and absent zone deadlines preserve prior behavior. Public
+FR/HE/EN procedures qualify compatible release availability and distinguish shelf
+stock, dated validity, production deadlines, receiving weekdays and service/zone
+constraints. The original Available now channel is retained and repaired for slot
+scheduling and page-selected cartes; no article is automatically reconfigured.
+No screenshots occur in the updated procedures. Preserve unaffected POS and
+Backoffice source evidence. Export the identical support corpus after runtime
+validation, refresh these source contracts and retain WORKSPACE references until
+an immutable documentation commit is authorized. This is not PR or release
+readiness, and production is explicitly outside the user's requested scope.
+
+## Explicit manual-order production choice (4 November 2026)
+
+This review refreshes Admin, API and Landing only. Web, POS and Backoffice source
+blocks and surfaces retain the exact Landing develop 5119de2e evidence; those
+clients are not revalidated or republished. Existing clients omit the optional
+staff-only production_plan input and retain their admission rules. The shared
+Order response model is unchanged, so no Flutter model or release is required.
+The final Admin step requires Yes/No without a default and earlier production
+banners are removed. No is persisted as server-owned metadata and excludes both
+sheet rows and day counts even after scheduling/payment/automatic pinning. Yes
+retains prepared-checkout and event confirmation gates. Existing authorized manual
+pin/unpin actions supersede the creation decision. Public creation cannot set it.
+Publish the updated three-language procedures and exact support corpus with this
+release. Verify and promote the immutable API artifact before the matching Admin;
+no schema migration, real financial operation or production data repair is needed.
+
+
+### Authorized fulfillment delivery (4 November 2026)
+
+The user authorized commits, branch pushes, four PRs into develop and production
+promotion. The coordinated candidate preserves the manual-production choices
+already integrated in develop, including their three-language procedures. Pin
+the immutable reviewed Landing commit in API/Admin/Web before CI. Run complete
+validations against the combined sources, merge only green PRs, verify development
+and promote those exact artifacts: API first, then compatible clients and guides.
+This authorization does not claim a deployment has completed or configure a real
+restaurant automatically. Google-backed production checks use read-only simulation
+and synthetic/public address data; no real order or payment is needed. Preserve
+unaffected POS/Backoffice evidence and existing Google provider protections.
+
+
+### Historical immediate-stock simulation correction (4 November 2026)
+
+After documentation PR 178 merged, the user explicitly requested verification
+of the original predefined-count plus immediate-sale channel. A failing HTTP
+regression reproduced ready delivery at 11:00 but pickup at 14:30 due to four
+hours of production being reapplied. The corrected shared stock exception gives
+pickup 10:30, preserves insufficient-quantity and mixed-basket preparation, and
+is rechecked at checkout. Ordinary article defaults and the separate dated pool
+remain unchanged. The Admin result explains ready stock; no stock is reserved by
+simulation. This focused follow-up documentation PR preserves the first release
+guidance, updates its source evidence and provides a new immutable pin for the
+still-open API/Admin/Web PRs. Production promotion waits for this correction.
+
+Compatibility regressions also retain historical counted-stock future receiving
+appointments; the new dated pool does not impose its expiry on that existing
+mechanism. A ready product still cannot waive a zone intake deadline.
+
+## Foody private billing pilot (9 November 2026)
+
+The private offer, standalone merchant, hosted payment and usage counters are
+documented in the internal sandbox procedure in FR, HE and EN. The normal public
+subscription guide still describes the existing production screen. The pilot is
+disabled by the API outside development, local and test, has no live credentials,
+uses a distinct payment ledger and does not issue fiscal documents or send renewal
+messages. Verify an annual checkout and the monthly enrollment and renewal with
+Foody's approved CST contracts before relying on the provider path.
+
+No public procedure or assistant article content changes. Copy the regenerated
+public corpus, which carries the catalogue revision, into the API. The three
+application contracts pin the same immutable Landing review. The combined
+inventory also retains the pre-existing wallet evidence. API and Admin entries
+use the deployed pilot hashes on shared paths; refresh the combined source
+inventory when the wallet application sources are integrated.
+
+### Admin navigation for the billing pilot (10 November 2026)
+
+In development, a restaurant owner can open the published private offer from
+**Settings → Account → Billing**. The sidebar waits for the existing scoped
+billing endpoint to confirm the offer. Verify the link from the Admin dashboard,
+including after switching to a restaurant with no private offer. The three
+internal guides describe this path. This update changes only internal pilot
+documentation and Admin source evidence. The published public guides and the
+assistant's article content are unchanged.

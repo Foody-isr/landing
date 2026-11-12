@@ -3,8 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Script from "next/script";
+import { captureAcquisition, META_PIXEL_ID } from "@/lib/marketing/measurement";
 
-const PIXEL_ID = "1059276727609296";
+const PIXEL_ID = META_PIXEL_ID;
 type PixelWindow = Window & {
   fbq?: (command: "trackSingle", pixelId: string, event: "PageView") => void;
 };
@@ -14,6 +15,8 @@ export default function MetaPixel() {
   const pathname = usePathname();
   const [ready, setReady] = useState(false);
   const lastTrackedPath = useRef<string | null>(null);
+
+  useEffect(() => { captureAcquisition(); }, []);
 
   useEffect(() => {
     const fbq = (window as PixelWindow).fbq;

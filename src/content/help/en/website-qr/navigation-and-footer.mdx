@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - website-qr
   - website-navigation
-updatedAt: '2026-10-21'
+updatedAt: '2026-11-12'
 featureId: website-navigation
 audience: public
 releaseStatus: available
@@ -16,13 +16,25 @@ Select the header or footer in the Website editor. These site-wide regions are d
 
 ## Configure the header
 
-Choose logo, name visibility, logo size/position and link alignment. Compare transparent/overlay and scrolled/solid states, including their separate text colors and optional scrolled logo. Preview the mobile hamburger menu.
+Choose logo, name visibility, logo size/position and link alignment. Compare transparent/overlay and scrolled/solid states, including their separate text colors and optional scrolled logo. Preview the mobile hamburger menu. On a compatible release, under header navigation, Menu icon style offers Standard lines or Staggered lines. Set Menu icon size from 16 to 40 px and Menu line thickness from 1 to 4 px. The cart setting controls only the header icon; it does not remove the basket or ordering flow. Check the open and closed menu, logo and main button on desktop and mobile, then wait for draft saving before publishing.
+
+<span id="fulfillment-scroll" />
+
+## Set how the fulfillment bar scrolls
+
+In the Website editor, select the order page you want to edit. Open **Header → Fulfillment and Scheduling → Fulfillment bar scrolling**. The options are available in the custom order header and when the order page uses the shared site header. Choose **Keep visible while scrolling** to pin the bar above the menu categories, **Scroll with the page** to let the bar scroll out of view, or **Follow the header** to use the header’s scroll behavior. The choice applies to this order page when opened in a browser on desktop or phone. Check the spacing and tap a category in the phone preview, wait for the draft to save, then publish.
 
 <span id="links" />
 
 ## Manage links and the main button
 
 Add or edit a navigation link, choose its destination and order. Enable the main button if needed; set its label, link, shape, size and appearance in both header states. Open each destination in preview. A link alone does not publish an unpublished page.
+
+<span id="side-menu" />
+
+## Style the side menu
+
+In Header → Navigation, use Side menu typography to set the links’ font, size and weight. Edit their text color and capitalization in Navigation and the menu’s color style in Header. The compact ordering header opens the left drawer on desktop and mobile, including on the order mode and service details screens. The links and main button come from the shared site header.
 
 <span id="footer" />
 
@@ -40,4 +52,31 @@ When the invitation is enabled, on mobile and desktop, verify that Order without
 
 ## Access the new controls
 
-The entry sign-in invitation is controlled in Website → Order journey → Show the sign-in invitation on arrival. Off goes directly to pickup/delivery details; when on, Order without an account remains immediately visible. Save the draft and publish to apply this choice. See [the journey setting](/en/help/website-qr/checkout-and-receipt#optional-entry-sign-in). When the invitation is off, a discreet Sign in link remains available in the pickup or delivery dialog. It opens authentication only when selected; dismissing authentication retains entered details and allows ordering without an account.
+With the Order method format selected, customers go directly from their service choice to a separate pickup or delivery screen. The sign-in invitation applies on the Pickup and Delivery screens and in the classic window. On this flow, a compact order header uses the restaurant logo and colors. You can adjust its actions and the product presentation from the order page settings. The entry sign-in invitation is controlled in Website → Order page → Fulfillment → Show the sign-in invitation on arrival. Off goes directly to pickup/delivery details; when on, Order without an account remains immediately visible. Save the draft and publish to apply this choice. See [the journey setting](/en/help/website-qr/checkout-and-receipt#optional-entry-sign-in). When the invitation is off, a discreet Sign in link remains available on the Pickup and Delivery screens and in the classic window. It opens authentication only when selected; dismissing authentication retains entered details and allows ordering without an account.
+
+<span id="mobile-experience" />
+
+## Configure the mobile experience
+
+In Website, open Mobile experience. Use the page picker to select the homepage, another website page, Order confirmation or More page. Open a section from the list and use Done to return to the sections. From the homepage, confirmation or More page, open Installation to choose where to show the invitation and customize its title, subtitle and button in each language. The shared message provides the default. In Browser preview, click the button in the card to show the three iPhone steps. If you highlight loyalty and it is available for the order flow, the benefit appears below the subtitle. On a website page or More page, open Navigation and turn on the bar and choose Floating capsule or Full width. The bar appears when customers open the app from its home-screen icon. Add up to five links to the bar and choose their icons. Open Bar colors to adjust the background and outline, the label and icon colors, the active tab background and colors, and the animation accent. Restore default colors clears custom colors. In Installed app preview, tap a tab to check the sliding selection. Assign secondary links to More and choose their section. On More page, open Header, Main banner or Sections to edit each part. Check Browser and Installed app in preview, then publish. If a linked page was removed, select another page or hide the link. On iPhone, the guide shows the Share menu steps. On supported Android browsers, the button opens the browser confirmation.
+
+In the installed app, the bottom bar stays visible when you switch tabs. When this navigation is on, the site header and footer are hidden on the restaurant pages. Use Browser preview to check the site header and footer.
+
+In a compatible installed version, open the Order tab and scroll the menu. The order title stays at the top, with the category bar below it when sticky categories are enabled. Open More and check the heading, any enabled banner and the links under each section.
+
+To change the typefaces, open Site design → Fonts. In a compatible version, the More page and bottom navigation use the site typography. Compare the browser and installed app previews after changing fonts.
+
+During the same session, visited tabs reopen at their saved scroll position. The menu restores the search text, selected menu and availability filter. Menu data can refresh while the page stays visible.
+
+Use the same Fonts panel to adjust the size and weight of headings and paragraphs. Review the new type settings on More and on the bottom navigation in the Installed app preview before publishing.
+
+<span id="app-home" />
+
+## Customize the installed app home
+
+In a compatible Website editor, open **Mobile experience → App home** and turn on **Use a dedicated app home**. This screen opens from the installed app icon and from its Home tab. The browser home keeps the content published under Website.
+
+1. Open **Home carousel**. Add up to six photos or videos and set their order, text, framing and playback. Choose the height on screen. Each slide has an order button. You can set its label per slide or use the shared label.
+2. Open **Featured products**. Edit the title and description. Use automatic selection to show products from the published menu, or choose and order up to twelve products yourself. Set the optional start and end dates. Both dates are inclusive in the restaurant’s time zone. The preview shows the selection even outside these dates.
+3. Set the shared order button label and choose whether it stays visible as the customer scrolls. The app home uses the site design and typography.
+4. Compare **Installed app** and **Browser** in preview, then publish. Check the installed app from its icon. To return to the site home in the app, turn off the dedicated home and publish again.

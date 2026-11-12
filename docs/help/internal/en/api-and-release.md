@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-28'
+updatedAt: '2026-11-12'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -26,7 +26,13 @@ After a full return verified against matched Verifone history, the summary keeps
 
 ## Keep the hosted payment form readable
 
-A superadmin opens Restaurant > Payment > Verifone in Backoffice and saves payment settings before choosing Synchronize published logo and colors. Synchronization uses only the published logo and selected button/brand accent. HPP always uses a light page, white panels and dark text; pale accents are darkened for at least 4.5:1 contrast on the page and panels. After the contrast-policy API release is installed, resynchronize previously enabled restaurants in the approved environment; the old snapshot is marked outdated. Verify logo, entered digits, labels, errors and payment icons, including mobile and French/Hebrew/English, without submitting an unapproved transaction. Website colors and native wallet sheets are unchanged. The new restaurant-specific theme is not the organization default and applies only to newly issued Checkout links. Existing links and financial state are unchanged; verify payment status before any retry. Never bulk-update production without approval.
+A superadmin opens Restaurant > Payment > Verifone in Backoffice and saves payment settings before choosing Synchronize published logo and colors. Synchronization uses only the published logo and selected button/brand accent. The synchronized HPP theme uses a light page, white panels and dark text; pale accents are darkened for at least 4.5:1 contrast on the page and panels. After the contrast-policy API release is installed, resynchronize previously enabled restaurants in the approved environment; the old snapshot is marked outdated. Verify logo, entered digits, labels, errors and payment icons, including mobile and French/Hebrew/English, without submitting an unapproved transaction. Website colors and native wallet sheets are unchanged. The new restaurant-specific theme is not the organization default and applies only to newly issued Checkout links. Existing links and financial state are unchanged; verify payment status before any retry. Never bulk-update production without approval.
+
+<span id="link-verifone-central-theme" />
+
+## Link a Checkout theme from Verifone Central
+
+In Verifone Central, open Administration > Checkout Themes and save a theme for the restaurant’s Verifone organization and environment (CST or production). As a superadmin, open Restaurant > Payment > Verifone in Backoffice and save the payment configuration. Under Hosted payment page appearance, enter the exact name or UUID in Verifone theme name or ID, then choose Link Verifone theme. If several themes have the same name, enter the UUID. Foody verifies the organization and environment and applies the selected theme to new Checkout links. To edit the theme, save your changes in Verifone Central and check the appearance on a new test link in the approved environment. To use the Verifone account default, clear Use the selected Checkout theme and save the payment configuration.
 
 <span id="weight-hold-margin" />
 
@@ -171,3 +177,139 @@ Staff POST /api/v1/menu/items/:id/sales-stock/availability and POST /api/v1/menu
 ## Explicit stock source and reservations
 
 Migration 279 adds stock_from_recipe to menu_items and item_stock_series, default false: existing configurations retain their behavior. POST /api/v1/menu/items/:id/sales-stock/restock with stock_source=recipe, empty mode and unit, null quantity and expected_revision actually selects recipe calculation. Optional availability_rule_id can commit in the same transaction under the stock/order lock. A conflict, foreign/deleted rule or error rolls back everything. Dormant manual counters and order snapshots are retained; new calculations and reservations ignore their limit. Returning to manual stock reactivates counters and adopts new orders without losing ingredient/preparation draws. Existing series conversions remain revision-checked and atomic. A global-counter conversion that cannot be proven from historical draws fails with stock_conversion_unavailable rather than reinterpreting them. Ready-stock sale must be disabled before selecting recipe stock. Public responses normalize inactive manual fields; staff receive stored_mode/stored_unit and recipe_configured for the editor. Other clients ignore added fields and retain their contracts. No permission or environment change. Deploy API before Admin, then promote the same development-verified artifacts. GET /api/v1/availability/items/:id/preview accepts optional serie_date to explain the displayed series; an invalid date returns 400. Details and status use the same active source and counters without mutation.
+
+<span id="order-lifecycle-scoped-contract" />
+
+## Scoped lifecycle and recovery contract
+
+Lifecycle schema_version 1 keeps four independent axes, explicit scope and matching identities. Public reads contain only the requested Order. Check/session views are actual aggregates, not a representative batch copied across the scope. An absent field on an old server allows explicit legacy behavior; invalid or unavailable advertised data requires unknown/retry without a financial fallback. pending means payment is expected, not proof of an active attempt, and retains existing eligibility. A card authorization, actual active claim or uncertain operation journal retains its existing guards and resolution flow. Paid preparation does not reopen payment or the table. Drafts use secure storage isolated by account, restaurant, backend and installation. Deploy additive migration 280_check_submission_recovery_scope.sql before clients; retain the reference and food for explicit idempotent resumption, never automatic replay after restart. A financial merge requires reviewing the entire canonical bill before firing its food.
+
+Admission of a new occupation without a canonical session sends start_if_free:true only after the boolean table_service_start_if_free capability. Verification and opening are atomic: if another visit appears after covers are chosen, 409 details.code=table_service_changed preserves the existing covers and session. An unavailable verification returns 503 table_service_unavailable; an unknown table remains 404. POS retains the draft, restores its prior selection and returns to floor-plan review instead of forcing the old context. Without the capability on an older API, the new guarded admission remains unavailable. The legacy contract without this flag or with false retains its behavior; it does not retroactively protect old clients. Deploy the API before the compatible POS.
+
+<span id="personal-shift-end-preflight" />
+
+## Verify the personal period before sign-out
+
+Deploy the API before POS. GET /restaurants/:id/shifts/end-preflight is a personal JWT/restaurant-scoped read: direct schema_version:1 DTO with state ready/report_required/no_active_shift. shift_id is a required positive integer for ready/report_required and must be absent for no_active_shift. No contact, cash amount or device authorization is exposed. A historical reference may be expired/revoked/unlinked if it exists in the restaurant; this restores no cash access. Missing/foreign numeric reference returns409 shift_pos_reference_invalid; errors or ambiguity return503 shift_end_preflight_unavailable. A non-POS period with a nil reference retains its legitimate end.
+
+The new client confirms ready then POSTs end with expected_shift_id; omitting the field preserves the legacy contract. Mutation relocks and rechecks the period and drawer: replacement/disappearance gives409 shift_changed, an open drawer409 cash_drawer_open, and an unconfirmed storage result on the new path503 shift_end_unavailable. Legacy errors expose no SQL detail. no_active_shift requires separate confirmation, a fresh personal GET and the same sign-in before local locking, without POST end. The local restaurant/backend cash journal retains priority; uncertain shift end keeps its dedicated GET current verification before another intent. Verifone journals remain separate. A missing route, unknown version/shape/state or error blocks without a financial fallback. No migration, enrollment or cash-binding change; no preliminary result bypasses mutation guards.
+
+<span id="prepared-sumit-checkout-integration" />
+
+## Prepared Sumit checkout integration
+
+Local Sumit internal-checkout preparation adds restaurant-scoped capability, basket GET/POST and delivery-quote endpoints under /api/v1/public. The private receipt token is required for basket access. Staff creation requires orders.manage; hosted Admin card entry also requires payments.manage. The active provider and configured Sumit credentials are checked again before initiation. Recipient delivery quotes use server-resolved zones, fee, minimum and the retained service date; payment compares expected_total_minor to a fresh server total. One durable claim binds contacts and the provider URL. Uncertain creation stays blocked; expiry cancels through existing stock release. Deploy compatible API before Admin/Web and publish the coordinated guides. See the Sumit procedure.
+
+<span id="prepared-order-existing-cart" />
+
+## Prepared basket and restaurant presentation
+
+A private Sumit prepared-order link enters the restaurant’s existing cart, then its checkout with the published colors, fonts and fields. The personal browser basket is retained; prepared items, prices and date stay fixed. Contact details and requested answers belong to this order, without loading an account or saved card. Custom answers bind when payment first opens. Delivery fees are recalculated and reviewed before payment. See the [Sumit procedure](/en/help/orders/internal-sumit-checkout).
+
+<span id="delivery-weekday-contract" />
+
+## Delivery weekday calendars
+
+ Zone calendars accept days (one or more distinct weekdays 0–6) or legacy windows, without mixing both. New slots use restaurant hours and settings filtered by zone weekdays. Legacy windows supply only their weekdays for new bookings. Order creation rechecks the calendar, items and restaurant ownership; existing assignments use the order’s frozen availability. Prepared-basket quotes recheck weekdays and slots without a new production delay; fees, minimums and authorization remain separate checks. No schema change or data migration is required. Deploy the API before compatible clients and publish help with the product after development verification. This local preparation confirms no deployment.
+
+<span id="option-choice-requirement" />
+
+## Optional descriptive option contract
+
+selection_config.required is an optional boolean on the descriptive item/group link. Absent or null preserves one required choice per position; false allows empty positions without fabricating a selection. Submitted choices still enforce restaurant/item/group ownership, activity, visible positions, uniqueness and required notes. Priced groups and modifiers cannot use this field to bypass their rules. Existing JSON storage needs no migration. Validate API, web, POS and Admin together; deploy the API and compatible consumers before exposing the Admin setting. Preserve existing catalogs and publish all three translations with the release.
+
+<span id="order-lifecycle-v2-contract" />
+
+## Additive order confirmation contract
+
+The lifecycle v1 field is retained. Capability order_lifecycle_v2 advertises lifecycle_v2: explicit scoped reads, nullable amounts with currency/exponent and frozen policies. Handoff and closure operations recheck actor, restaurant, assignment, revision and units under locks and atomically journal the same request_id. GET operation confirms the original journal; absence remains unconfirmed and does not justify a new ID. Public responses contain only the own order, without parent scopes, private units or staff actions. Existing payment journals remain the sole monetary authority.
+
+<span id="end-of-day-protocol" />
+
+## Release the EOD contract before the POS
+
+The end-of-day v1 contract and additive migration 285 add begin, current, ID read, terminal-result and finalize under /orders/end-of-day. Writes retain UUIDs and check restaurant, actor, physical authorization and installation. The end_of_day capability declares support without granting payment permission. The server transaction reserves the count and terminal identities; it contacts no provider. Dispatched precedes the native call, and an unknown outcome never becomes permission to transmit again. A durable confirmation may be recorded again with the same identity. Finalize atomically creates the immutable operational report and closes its reserved drawer without attendance or commercial closure. Release the API before the POS, validate development and promote the same artifacts. Current Ashrait callbacks justify no invented totals, batch number or fiscal certificate. Preserve old journals and permission/provenance checks. See docs/contracts/end-of-day-v1.json and public payments/end-of-day guidance.
+
+<span id="ordering-simulation-clock" />
+
+## Evaluate a basket with a private simulated clock
+
+The authenticated GET/POST /api/v1/delivery/ordering-simulation endpoints share existing coverage and calendar resolvers. GET returns the effective restaurant timezone and current server instant without caching; POST accepts a restaurant-local ordered_at minute and current basket. Settings access, menu view and order management are required under restaurant scope; item ownership, payload/quantity bounds and service activation are validated. Nonexistent or repeated daylight-saving minutes are rejected. Public delivery/scheduling queries and real checkout never accept this clock override. Current rules and ready stock are hypothetical inputs, not historical reconstruction; no order, stock reservation, payment or notification is created.
+
+<span id="scheduled-acceptance-capability" />
+
+## Scheduled acceptance compatibility
+
+The lifecycle_v2.actions descriptor permits accept for scheduled as well as pending_review, with orders.manage and without held settlement. Prepared-checkout holds still apply afterward. No new writer is introduced: POST /orders/:id/accept still calls AcceptOrderWithWorkflow and setStatus, retaining restaurant-specific guards, notifications and shortcuts. No automatic early dispatch is added; only explicit staff action can advance the order. Date, slot and payment stay unchanged. Deploy the corrected API to development and verify separate and guided workflows before an approved promotion. No schema or client change is needed for clients already following capabilities. Publish the correction guides with that API release. For scheduled only, payment_status=pending keeps accept denied; pending_review retains its existing behavior.
+
+<span id="pos-terminal-collection-contract" />
+
+## Reserve physical card collection before native dispatch
+
+On iPad, choose Card on the existing order or financial bill, review the payment-terminal dialog, and explicitly confirm Mini or Portable. The configured default is initially selected; there is no automatic fallback to another connected device. Cancelling sends no payment. On a Victa Portable running FoodyPOS, open that same saved order/check and use its integrated reader. Do not recreate the sale. A server reservation protects the physical terminal and the selected orders while collection is in progress. Another device or tender must wait. QR orders keep their separate IDs and payments.
+
+If the result is unknown, preserve the original POS and terminal and recover the existing operation. Neither elapsed time nor restarting the app authorizes another debit. A definitive refusal or cancellation permits a new reviewed attempt. A confirmed approval must be recorded with its original reservation before it is released. This changes the destination review, not the existing receipt-printing settings; validate hardware, remote Portable operation and integrated printing with Verifone.
+
+<span id="scoped-end-of-day-report-history" />
+
+## Read finalized POS report identities
+
+GET /orders/end-of-day/history requires payments.manage and a current enrolled POS installation. It returns at most twenty finalized report IDs and frozen periods for that POS, newest first. GET /orders/end-of-day/:id reads the exact scoped report. Both are read only and never release an active close or dispatch a terminal operation. The capability end_of_day_history gates older clients. New recorded card snapshots carry currency only with original matching sale evidence; archived reports are not rewritten using current restaurant currency.
+
+GET /orders/end-of-day/preview reads the current POS period and attributable card collections without reserving anything. end_of_day_preview advertises the capability. Common history returns kind=cash or end_of_day, excludes duplicate drawers already included in a Z report and remains scoped to the authenticated POS.
+
+<span id="manual-production-plan-choice" />
+
+## Staff production-plan intent
+
+POST /api/v1/orders accepts the optional staff-only boolean production_plan. Omission retains legacy behavior. False excludes the order from the production sheet and its date counts, including after payment, scheduling or automatic force_production changes. True pins a manual non-hosted order; an ordinary prepared link still waits for collected payment and events retain their confirmation gates. The server owns the persisted external_metadata.production_plan value and rejects direct metadata injection. Guest creation strips the input, and service-level guest calls cannot supply it. Explicit staff pin/unpin actions supersede the creation choice and restore the existing manual-override/automatic rules. No shared response model or schema migration changes; older POS and guest clients can omit the optional input.
+
+<span id="device-receipt-contract" />
+
+## Release device-scoped receipt requests
+
+Local preparation: apply migration 289 and deploy the compatible API before POS. Receipt capabilities advertise device_receipts_version=1; updated clients send receipt_on_request=true for ordinary single/batch settlements. Payment uses its existing journals without an additional automatic receipt. Staff POST /restaurants/:id/printing/spooler/receipts requires orders.manage and identical restaurant context. It binds request_id, spooler_id, paid order_ids, assigned printer_ids and locale to one immutable request; an exact replay returns the original jobs and a changed intent returns 409. Integrated-terminal ownership proof remains required. The status GET is read-only and sends no document. Older clients and financial shares retain their contracts; kitchen dispatch remains separate. Synthetic tests do not certify physical installation or production delivery. Validate development before approved promotion of the same artifact.
+
+<span id="terminal-fleet-declarations" />
+
+## Global terminal declarations
+
+On compatible API and Backoffice versions, a Foody superadmin opens Backoffice → Terminal fleet to search terminals across restaurants by name or identifier. Registered Portables appear through the existing inventory. For a Mini configured only on the iPad, select Register a Mini, choose the restaurant and enter its physical serial number and name. It appears as Unconfigured. In Edit inventory, declare the DID, VHQ deviceUid, SHVA terminal number, Ashrait provisioning ID, supplier number, acquirer and lifecycle. A save checks the revision and records an audit event. Use the physical serial on the device and keep each identifier in its own field. Restaurant Admin keeps its own restaurant scope. Keep credentials and card data out of these fields.
+
+The staff-scoped device inventory can include a payment_terminal component with a physical_key derived from the fleet serial. Compatible POS builds use it to link a verified LAN profile to the same device. Inventory returns only the derived key for this purpose.
+
+<span id="terminal-fleet-change-requests" />
+
+## Prepare a terminal change
+
+Open Change requests on the original device. Choose a bank configuration change, a replacement in the same restaurant, or a transfer to another restaurant for a device declared Returned. Select the destination when required, enter the requested identifiers and choose Prepare change. Review the saved target declaration and requested values in the history. The record includes the serials, actor, time and revisions. If the declaration changes before saving, refresh the inventory and review the request again. Open the original terminal’s history to cancel an unused request. Prepared status records the proposed change in Foody. Applying it and verifying the bank configuration require the regional Verifone procedure and CST validation.
+
+<span id="terminal-fleet-cst-maintenance" />
+
+## Test Ashrait maintenance on one CST terminal
+
+Internal CST procedure. Allowlist the physical serial keys in the development API with migrations 309–312. Configure the Verifone CST tenant, API credentials, application IDs and exact SHVA parameter names for the Mini and Portable. Use the compatible diagnostic POS build. Resolve any open payment and close the previous batch. In Backoffice → Terminal fleet → Change requests, review the current identifiers and prepare a same-device, same-restaurant change. For first enrollment, leave the original DID blank and retain the current Ashrait provisioning login. Keep the enrolled POS open with the reviewed terminal connected. Authorize DID assignment if it changes, then refresh the request to verify the acknowledgement. If the SHVA number changes, choose Save SHVA number in VHQ. Check parameter synchronization in VHQ, then authorize the download. Confirm the values actually applied on the terminal with Verifone and record the observed identifiers and check reference in Backoffice. If a VHQ reply is lost, Check VHQ status reads the existing value. For an interrupted native command, record its retained result or verify with Verifone. Replacement and transfer requests remain in preparation.
+
+On the Mini and Portable, verify recovery from an interrupted CST sale on its original check. A matched debit triggers Void 400. Wait for confirmation before collecting again. From Transactions on the originating POS, verify a full or partial refund and check 53 / MTI 100 in the CST trace.
+
+On the designated iPad, close CST sales with both devices active. Compare cases where they share a SHVA number and where the numbers differ. Verify one transmission per number and one parameter refresh per device. Check the amounts and operation counts in the Z and reprint each SHVA report from history.
+
+<span id="configurable-fulfillment-compatibility" />
+
+## Prepare configurable fulfillment contracts
+
+Local preparation: nullable dated/revisioned shelf stock and optional zone deadlines configure no restaurant automatically. Private APIs verify restaurant ownership and existing permissions. Public calendars and submission remain authoritative; private quantities are not added to the public item contract. Historical series leftovers use the operational service series for display and reservation, independently of the next preorder series. Verify defaults, reservation races, pre-production releases, older editors and translations; retain payment providers and existing orders. Migration 288/API precede Admin/Web. Export the identical corpus after runtime validation and pin the reviewed immutable Landing commit before CI. Verify the develop artifacts, then promote those exact artifacts under the approved release workflow; source review alone does not attest production availability.
+
+<span id="current-pos-financial-context" />
+
+## Authenticate the current POS financial context
+
+Compatible clients send X-Foody-POS-Token only to the trusted authenticated orders API and their own shift-end/preflight endpoints, never public or redirected destinations. The API retains only a hash in a request-scoped service copy, validates restaurant ownership, expiry, revocation and installation, then locks the employee interval and original/current credentials in stable order. Attendance never moves. Missing proof keeps the legacy original-device rule; explicit invalid proof fails closed. Cash, EOD, card reservations and financial portions share this identity. Logout retains original and current cash duties. Deploy API before clients; no migration or environment change.
+
+<span id="courier-stop-results" />
+
+## Courier navigation and result contract
+
+Deploy migration 313 before the matching API and Admin. The restaurant-scoped courier navigate and issue routes require an active route and its assigned courier context. Navigation records the stop awaiting a result. Only one pending stop may reserve navigation per route. An issue preserves an audited unsuccessful attempt without completing the order. It removes the order from automatic courier selection and guest GPS tracking until a new route starts. Order managers can send a push reminder to the assigned courier’s registered devices.
+
+Courier responses omit the route line and hide customer data outside the open stop. Courier accounts receive refresh events without order details on the live connection. This correction uses the existing migration 313.

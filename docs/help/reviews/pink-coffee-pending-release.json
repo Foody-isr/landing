@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "release": "pink-coffee",
+  "status": "source-checkpoints-frozen-documentation-commit-target-is-self",
+  "documentationRef": "self",
+  "documentationRevision": "c4a1fa02f04bc29db914caeaa58335e80b7461dd3ed83b21ffaddcededcdaa02",
+  "authorization": {
+    "date": "2026-10-29",
+    "scope": [
+      "commits",
+      "pushes",
+      "pull requests into develop",
+      "development deployment",
+      "production promotion of the exact development-tested artifacts"
+    ],
+    "stageControl": "Root coordinates release stages. A source/documentation commit is not evidence that remote CI, deployment or production verification has completed."
+  },
+  "sourceCheckpoints": {
+    "foodyadmin": {
+      "commit": "b469b9ba27cb8a714c22a5edfa47f9350dd894ea",
+      "sourceSnapshot": "1db3baccf1f86920e031073bc5f09aec4da7268738541ee3bbcee45be297149f",
+      "inventoriedSourceCount": 774
+    },
+    "foodyweb": {
+      "commit": "4fab33aa2b5695eec2d3fdba941bada48a611f91",
+      "sourceSnapshot": "b6c267eb53c48964055327348c45165336b7640ece58399db3e242d3a0ac7d0f",
+      "inventoriedSourceCount": 348
+    },
+    "foodyserver": {
+      "commit": "6f71829f5a5eb39c6b1fc07812cd45b64fc7a997",
+      "sourceSnapshot": "9ee6ed2ca5beecc799a040405b3fe1a6e5a46c3071d566dde18d4423fadbddaf",
+      "inventoriedSourceCount": 584
+    }
+  },
+  "retainedEvidence": {
+    "inventoryBase": "086993b0cc258deee3ff030688713cdcf36a188a",
+    "services": [
+      "foodypos",
+      "foodybackoffice"
+    ]
+  },
+  "supportCorpus": {
+    "source": "docs/help/catalog/public-corpus.json",
+    "embeddedCopy": "foodyserver/internal/support/corpus.json",
+    "sha256": "4397c2e41c2180f545cdc811cdea7a9312b8d84a20c508e2e7f6053b5d64419f",
+    "sourceCheckpoint": "6f71829f5a5eb39c6b1fc07812cd45b64fc7a997",
+    "changedTranslations": 9,
+    "changedGuides": [
+      "website-qr/customize-your-site",
+      "website-qr/design-and-branding",
+      "website-qr/sections-and-media"
+    ],
+    "unrelatedArticleChanges": 0
+  },
+  "consumerPinInstructions": {
+    "services": [
+      "foodyserver",
+      "foodyadmin",
+      "foodyweb"
+    ],
+    "target": "Resolve self to the immutable SHA of the Landing commit containing this evidence. Put that exact 40-character SHA in each consumer docs/help/contract.json.",
+    "expectedDocumentationRevision": "c4a1fa02f04bc29db914caeaa58335e80b7461dd3ed83b21ffaddcededcdaa02",
+    "noSelfReferenceCycle": "Do not rewrite this Landing commit merely to insert its own SHA. Consumer contracts are the evidence of their final pin; Landing retains self."
+  },
+  "requiredReleaseGates": [
+    "Exact runtime source bytes must match the three recorded checkpoints.",
+    "API full validation must succeed before PR readiness; root owns the independent Go suite and its evidence.",
+    "All affected service help contracts must pass against the actual pinned Landing commit, not only a mutable workspace.",
+    "Make the Admin source checkpoint reachable on GitHub before Landing CI checks its ui-evidence.ref.",
+    "Keep one PR into develop per affected repository; no routine main synchronization.",
+    "Verify development API support revision, Web campaign capabilities and Admin behavior; publish the three-language guides with the compatible UI.",
+    "Promote the exact successful development artifacts without rebuilding, then verify production and the public support/documentation revision."
+  ]
+}

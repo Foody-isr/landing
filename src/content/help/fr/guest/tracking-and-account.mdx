@@ -5,7 +5,7 @@ apps: foodyweb
 tags:
   - guest
   - guest-account-tracking
-updatedAt: '2026-10-25'
+updatedAt: '2026-11-11'
 featureId: guest-account-tracking
 audience: public
 releaseStatus: available
@@ -16,19 +16,25 @@ Utilisez le lien confirmation/suivi ou l’accès historique/compte du restauran
 
 ## Se connecter avant de commander
 
-Au début de la fenêtre Retrait/Livraison, choisissez Me connecter ou, en dessous, Continuer en tant qu’invité. Ce sont des actions textuelles, sans bouton de connexion rempli. Aucun champ d’adresse ni bouton de confirmation n’est affiché avant ce choix. Me connecter ouvre Google et le formulaire e-mail + mot de passe. Facebook et Apple apparaissent seulement si le service les a configurés. La connexion par e-mail + code seul n’est plus proposée. Les codes de création, de vérification d’adresse et de récupération de mot de passe restent distincts. Le bénéfice indiqué concerne l’adresse et les moyens de paiement enregistrés et les commandes en Livraison, ou les informations, moyens de paiement et commandes en Retrait. Continuer en tant qu’invité ouvre la saisie en Livraison ; en Retrait, les informations de retrait et l’accès au menu apparaissent sans adresse de livraison à demander. Le lien Retour permet de revenir au choix sans effacer le brouillon. Le choix invité est conservé lors des changements Retrait/Livraison et de la fermeture/réouverture de cette fenêtre. Les clients déjà connectés accèdent directement aux informations : une adresse enregistrée avec sélection validée dispose de Utiliser cette adresse et Modifier. Une adresse incomplète reste à compléter. Une connexion après le début de saisie conserve le brouillon. L’enregistrement d’un moyen de paiement reste un choix distinct au paiement.
+Lorsque le site propose une connexion en retrait ou en livraison, Me connecter est suivi des avantages du compte. Choisissez Commander sans compte juste en dessous pour passer directement aux détails. En livraison, vous saisissez l’adresse. En retrait, vous confirmez les informations de retrait. Me connecter ouvre le formulaire e-mail et mot de passe et les fournisseurs disponibles. Facebook et Apple apparaissent uniquement si le service les a configurés. La connexion par code e-mail seul a été retirée. Les codes de création, de vérification d’adresse et de récupération de mot de passe restent distincts. Fermer la connexion conserve le brouillon. Dans la fenêtre classique, Retour permet de retrouver les deux options et le choix invité est conservé lorsque vous changez de service ou rouvrez la fenêtre. L’enregistrement d’un moyen de paiement reste un choix distinct au paiement.
+
+<span id="order-as-guest-after-sign-out" />
+
+## Se déconnecter pour commander sans compte
+
+Si vous avez déjà une session, Connecté et votre compte s’affichent au-dessus des détails en retrait et en livraison, dans la fenêtre classique comme dans le parcours Choix du mode. Sélectionnez Se déconnecter et commander sans compte pour poursuivre dans le même mode. Le panier est conservé. En livraison, saisissez à nouveau l’adresse de cette commande. Si Foody ne peut pas confirmer la déconnexion, réessayez depuis le même lien. Pour continuer avec votre compte, confirmez les détails ou sélectionnez Utiliser cette adresse si votre adresse enregistrée est validée. Une adresse incomplète peut être modifiée.
 
 <span id="tracking" />
 
 ## Lire l’état de commande
 
-Ouvrez le suivi et vérifiez dernier statut et remise. Contactez le restaurant pour modifier l’opération ; l’assistant d’aide Foody ne peut pas éditer la commande. Gardez liens privés de suivi/reçu hors des messages publics.
+Ouvrez le suivi pour consulter la dernière progression enregistrée et, séparément, l’état du paiement. Une commande prépayée peut encore être en préparation ; le paiement ne coche pas les étapes de préparation ou de remise. Un remboursement seul ne permet pas de reconstituer le service : les faits opérationnels connus sont conservés, sinon la progression reste inconnue. Lorsqu’une actualisation échoue, utilisez Réessayer ; ne lancez pas un second paiement pour résoudre une information non confirmée. Contactez le restaurant pour une modification opérationnelle ; l’assistant d’aide Foody ne peut pas éditer la commande. Gardez les liens privés de suivi et de reçu hors des messages publics. Si le livreur signale un problème de livraison, sa position n’est plus disponible jusqu’au démarrage d’une nouvelle tournée. Contactez le restaurant pour connaître la suite.
 
 <span id="history" />
 
 ## Accéder à l’historique et aux reçus
 
-Terminez l’authentification/vérification client, puis ouvrez l’historique du bon restaurant. Sélectionnez une commande pour reçu et actions impression/partage/nouvelle commande. Rouvrir le reçu ne crée ni commande ni paiement.
+Terminez l’authentification/vérification client, puis ouvrez l’historique du bon restaurant. Sélectionnez une commande pour reçu et actions impression/partage/nouvelle commande. Rouvrir le reçu ne crée ni commande ni paiement. Si le restaurant a placé Historique dans sa barre mobile ou dans Plus, vous pouvez aussi ouvrir vos commandes depuis ce lien.
 
 <span id="methods" />
 
@@ -58,10 +64,28 @@ Les fournisseurs configurés peuvent charger leur bibliothèque lorsque leurs ch
 
 ## Se connecter pendant la commande
 
-Lorsque l’invitation est désactivée, un lien discret Se connecter reste disponible dans la fenêtre de retrait ou de livraison. Il ouvre la connexion uniquement à la demande ; fermer cette fenêtre conserve les informations déjà saisies et permet de poursuivre sans compte.
+Avec le format Choix du mode, le client passe du choix du service à un écran dédié au retrait ou à la livraison. L’invitation à se connecter s’applique aux écrans À emporter et Livraison ainsi qu’à la fenêtre classique. Lorsque l’invitation est désactivée, un lien discret Se connecter reste disponible sur les écrans À emporter et Livraison ainsi que dans la fenêtre classique. Il ouvre la connexion uniquement à la demande ; fermer cette fenêtre conserve les informations déjà saisies et permet de poursuivre sans compte.
 
 <span id="saved-phone-validation" />
 
 ## Corriger un téléphone mémorisé
 
 Un numéro mémorisé ou déjà vérifié reprend son propre indicatif, même si son pays diffère de celui du restaurant. Un champ vierge utilise le pays du restaurant. Au checkout, un téléphone mémorisé doit passer la même validation qu’un nouveau numéro. S’il est invalide, les coordonnées restent ouvertes pour correction. Choisissez le bon indicatif pays ou saisissez le numéro international avec +, puis vérifiez la commande avant de confirmer. Le format enregistré est international et compatible avec les envois WhatsApp. Ce contrôle ne prouve ni la possession du numéro ni l’inscription à WhatsApp et ne change pas votre méthode de connexion. Pour enregistrer les coordonnées corrigées dans le compte, utilisez la préférence de mémorisation proposée au checkout.
+
+<span id="prepared-sumit-basket" />
+
+## Ouvrir un panier préparé pour Sumit
+
+Un lien Foody privé préparé par le restaurant ouvre son panier sans charger de profil de compte ni d’adresses enregistrées. Renseignez vos coordonnées, vérifiez le total de livraison calculé selon l’adresse puis continuez vers Sumit. Après confirmation du paiement par l’API, les pages habituelles de confirmation et de suivi utilisent le jeton privé de commande. Voir [le parcours Sumit préparé](/fr/help/orders/internal-sumit-checkout).
+
+<span id="independent-lifecycle-confirmations" />
+
+## Vérifier les confirmations indépendantes
+
+Le suivi de votre commande distingue le paiement, la préparation et la remise réellement enregistrée, y compris partielle. « Non suivi » est distinct d’une information inconnue. Une valeur monétaire inconnue n’est pas zéro et ne propose pas un paiement à deviner. Les commandes QR des autres clients d’une même table restent distinctes et ne sont pas exposées par cette vue. Voir [les états de commande](/fr/help/orders/payment-preparation-and-handoff).
+
+<span id="prepared-order-existing-cart" />
+
+## Panier préparé et présentation du restaurant
+
+Un lien privé de commande préparée Sumit rejoint le panier habituel du restaurant, puis son formulaire de paiement avec les couleurs, polices et champs publiés. Le panier personnel du navigateur reste conservé ; les articles, prix et date préparés sont figés. Les coordonnées et réponses demandées concernent cette commande, sans chargement d’un compte ou d’une carte enregistrée. Les réponses personnalisées sont liées lors de la première ouverture du paiement. Les frais de livraison sont recalculés puis vérifiés avant paiement. Voir la [procédure Sumit](/fr/help/orders/internal-sumit-checkout).

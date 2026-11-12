@@ -7,7 +7,7 @@ apps: both
 tags:
   - tables-floors
   - table-service-policy
-updatedAt: '2026-10-27'
+updatedAt: '2026-11-04'
 featureId: table-service-policy
 audience: public
 releaseStatus: available
@@ -26,6 +26,8 @@ Choisissez affectation libre, collaborative ou stricte, lisez sa règle affiché
 
 Vérifiez libellés de statuts et contrôles table/session. Une table occupée peut avoir plusieurs additions : contrôlez session et couverts avant placement, déplacement ou fermeture. Un statut visuel ne prouve pas le paiement d’une addition. Changer le traitement d’un brouillon non envoyé ne déplace ni ne fusionne une addition existante et ne remplace pas son cycle de service. Choisir une table avec une addition financière annule le transfert du brouillon en attente et conserve la source intacte ; suivez [la procédure de changement de service](/fr/help/orders/order-types#pos-change-draft).
 
+Une synthèse financière ne prouve pas que les plats sont en cuisine : consultez la progression enregistrée de l’addition. Un état de préparation inconnu ne remet pas à zéro le temps de table et ne confirme pas sa libération.
+
 <span id="resume-confirmed-table-service" />
 
 ## Reprendre la bonne occupation d’une table
@@ -33,6 +35,8 @@ Vérifiez libellés de statuts et contrôles table/session. Une table occupée p
 Sur le POS compatible mis à jour, ouvrir une table déjà occupée reprend uniquement sa session actuelle confirmée, sans recommencer son service ni redemander ses couverts. Son chronomètre n’est pas remis à zéro. Les demandes de couverts configurées restent réservées au démarrage d’une nouvelle occupation. Si la table ferme ou change de session pendant le chargement ou le transfert d’un brouillon, la navigation vers l’ancien contexte s’arrête. Revenez au plan et rouvrez la table actuelle ; ne forcez pas le rattachement des plats aux clients suivants. Un transfert non confirmé doit être vérifié avant de renvoyer une commande. Les anciennes commandes encore dues restent distinctes et consultables par leur numéro dans [Commandes](/fr/help/settings/pos-workspace#previous-table-service-orders). Ouvrir la table ne règle ni ne clôture ces anciennes commandes.
 
 Après un changement d’établissement, [rechoisissez la table dans le contexte actuel](/fr/help/settings/pos-workspace#restaurant-context-selection). La sélection précédente est effacée à l’écran ; les additions enregistrées ne sont ni déplacées ni supprimées.
+
+Si une autre caisse prend en charge la table pendant votre choix des couverts, l’ouverture s’arrête sans remplacer ses couverts ni rattacher votre brouillon. Revenez au plan, actualisez, puis rouvrez la table pour vérifier l’addition de l’occupation actuelle. Le brouillon précédent reste conservé dans son contexte d’origine : ne le rattachez pas aux nouveaux clients. Si l’état ne peut pas être vérifié ou si une mise à jour est demandée, faites vérifier les versions de la caisse et du serveur avant de réessayer.
 
 <span id="timer-settings-and-close" />
 
@@ -51,3 +55,11 @@ Dans Assistance à table, activez les demandes et notifications adaptées. Véri
 ## Retrouver les outils de service sur mobile
 
 Dans Additions sur le terminal mis à jour, le sélecteur à radios relie Toutes les additions aux plans de salle disponibles. Ouvrez + puis Actions pour le filtre de personnel, À faire et Actualiser. Les restrictions d’affectation et permissions continuent de limiter les tables et additions accessibles. Le plan peut se déplacer à l’écran ; ni ce déplacement ni un changement de vue n’enregistrent de nouvelle géométrie, n’affectent un employé ou ne libèrent une table. Le nom de l’utilisateur actif sert aux initiales en bas à gauche ; ce bouton ouvre Plus, sans changer l’affectation du service.
+
+<span id="paid-table-close-recovery" />
+
+## Fermer la bonne session après un paiement accepté
+
+Sur les versions compatibles du serveur et du POS, une ancienne commande rattachée à une session confirmée expirée ne bloque plus la fermeture ou la libération de la nouvelle occupation de la même table. Cette ancienne commande reste dans Commandes avec son état de paiement ; elle n’est ni encaissée, ni annulée, ni rattachée aux nouveaux clients. Les sommes encore dues dans la session actuelle et les anciens rattachements non confirmés restent à résoudre avant fermeture.
+
+Si le terminal a accepté la carte mais que la fermeture échoue, ne relancez pas le paiement. Actualisez l’addition et vérifiez que Foody l’affiche payée ; réessayez ensuite uniquement Fermer la commande. Si le paiement n’est pas confirmé dans Foody, utilisez la vérification de l’opération d’origine ou demandez un responsable. Dans le POS compatible, un refus de fermeture affiche un message et conserve le plan et l’occupation confirmés. La fermeture ne termine pas les plats en cuisine et ne réalise aucun dépôt ou fin de journée bancaire.

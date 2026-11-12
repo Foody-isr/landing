@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "Foody-isr/admin",
-  "ref": "a0dd487b6c8a721f4ab5ae06c17cb21f9a7b9148",
+  "ref": "fda43266449ccc1c37b860462eb78b83692fc61f",
   "observations": [
     {
       "id": "table-status-descriptions-source-contract",
@@ -353,6 +353,302 @@
         "row?.managed ? date : \"\""
       ],
       "forbidden": []
+    },
+    {
+      "id": "zone-weekdays-use-restaurant-slots",
+      "source": "src/components/delivery/ZoneScheduleFields.tsx",
+      "required": [
+        "deliveryScheduleWeekdays",
+        "zoneDeliveryDays",
+        "days, offer_pickup: value?.offer_pickup"
+      ],
+      "forbidden": [
+        "deliveryAddWindow"
+      ]
+    },
+    {
+      "id": "cash-eligibility-uses-provider-capability",
+      "source": "src/app/[restaurantId]/settings/payments/page.tsx",
+      "required": [
+        "guaranteeSupported ? 'cashAllCustomersEnabled' : 'cashPaymentEligibility'",
+        "<option value=\"all\">{t('yes')}</option><option value=\"disabled\">{t('no')}</option>",
+        "!guaranteeSupported && draft.cash_payment_policy === 'trusted_only'",
+        "cash_card_guarantee_required: event.target.checked"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "pink-coffee-template-control",
+      "source": "src/lib/website-v3/restaurant-themes.ts",
+      "required": [
+        "id: \"pink-coffee\", name: \"Pink Coffee\""
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "campaign-slide-controls",
+      "source": "src/components/website-v3/CampaignSlidesEditor.tsx",
+      "required": [
+        "t(\"campaignSlides\")",
+        "t(\"campaignAutoplay\")",
+        "min={5} max={30}",
+        "MAX_CAMPAIGN_SLIDES"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "campaign-compatible-renderer-controls",
+      "source": "src/components/website-v3/SiteDesign.tsx",
+      "required": [
+        "useCampaignCapability(\"campaign_hero\")",
+        "useCampaignCapability(\"campaign_products\")",
+        "useCampaignCapability(\"display_typography\")",
+        "disabled={theme.id === \"pink-coffee\" && !campaignSupported}"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "campaign-layout-panel-controls",
+      "source": "src/components/website-v3/CampaignSlidesEditor.tsx",
+      "required": [
+        "useCampaignCapability(\"campaign_layout_controls\")",
+        "t(\"campaignLayoutControls\")",
+        "data-field-id=\"section.settings.controls_alignment\"",
+        "fieldId=\"section.settings.show_counter\"",
+        "fieldId=\"section.settings.show_playback_control\"",
+        "\"card_width_percent_mobile\"",
+        "\"card_gap\"",
+        "t(\"campaignPlaybackSafeguard\")",
+        "t(\"campaignResetGap\")"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "header-menu-icon-presentation-controls",
+      "source": "src/components/website-v3/HeaderInspector.tsx",
+      "required": [
+        "useCampaignCapability(\"campaign_layout_controls\")",
+        "data-field-id=\"site.header.navigation.hamburger_style\"",
+        "fieldId=\"site.header.navigation.hamburger_size\"",
+        "fieldId=\"site.header.navigation.hamburger_stroke\"",
+        "min={16} max={40}",
+        "min={1} max={4}"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "featured-grid-product-controls",
+      "source": "src/components/website-v3/FeaturedItemsEditor.tsx",
+      "required": [
+        "fieldId=\"section.settings.content_max_width\"",
+        "fieldId=\"section.settings.row_spacing\"",
+        "t(\"featuredSelectAllVisible\")",
+        "t(\"featuredClearSelection\")",
+        "selectAllFeaturedItems(current, visibleItems)",
+        "<ItemImageBackgroundEditor"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "individual-product-background-reset",
+      "source": "src/components/website-v3/ItemImageBackgroundEditor.tsx",
+      "required": [
+        "normalizeFeaturedImageBackgrounds(value)",
+        "data-field-id=\"section.settings.item_image_backgrounds\"",
+        "data-field-id=\"section.featured.reset_item_background\"",
+        "t(\"featuredResetItemBackground\")"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "campaign-layout-compatible-renderer",
+      "source": "src/lib/website-v3/runtime-capabilities.ts",
+      "required": [
+        "campaign_layout_controls?: 1",
+        "capabilities?.campaign_layout_controls !== 1",
+        "navigation.hamburger_stroke !== 1.5",
+        "campaignUnsupportedLayoutControls"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "campaign-layout-translated-control-labels",
+      "source": "src/lib/i18n.tsx",
+      "required": [
+        "Disposition du carrousel",
+        "Carousel layout",
+        "פריסת הקרוסלה",
+        "Traits décalés",
+        "Staggered lines",
+        "קווים מדורגים",
+        "Utiliser le fond commun ou alterné",
+        "Use shared or alternating background",
+        "שימוש ברקע המשותף או המתחלף"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "bounded-layout-number-input",
+      "source": "src/components/website-v3/BoundedNumberInput.tsx",
+      "required": [
+        "data-field-id={fieldId}",
+        "number>=min && number<=max",
+        "onBlur=",
+        "onChange(bounded(number))"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "zone-same-day-calendar",
+      "source": "src/components/delivery/ZoneScheduleFields.tsx",
+      "required": [
+        "sameDaySupported",
+        "t('zoneFutureTimeChoice')",
+        "same_day:",
+        "rule.days.filter(d => next.includes(d))",
+        "t('zoneSameDayTransit')"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "saved-ordering-simulation",
+      "source": "src/app/[restaurantId]/settings/orders/OrderingSimulation.tsx",
+      "required": [
+        "simulateOrderingAvailability(rid, input)",
+        "t('orderingSimulationTitle')",
+        "result?.signature === signature",
+        "disabled={busy || (input.service === 'delivery' && addressResolving) || !valid || dirty}",
+        "<RouteAddressField key={rid} restaurantId={rid} locale={locale}",
+        "onResolvingChange={setAddressResolving}"
+      ],
+      "forbidden": [
+        "createOrder("
+      ]
+    },
+    {
+      "id": "delivery-workspace-legacy-visibility",
+      "source": "src/app/[restaurantId]/settings/delivery/page.tsx",
+      "required": [
+        "legacySameDay&&<SameDayDeliverySettings",
+        "sameDaySupported={zoneRulesSupported&&!legacySameDay}"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "ordering-simulation-reference-clock",
+      "source": "src/app/[restaurantId]/settings/orders/OrderingSimulation.tsx",
+      "required": [
+        "getOrderingSimulationClock(rid)",
+        "t('orderingSimulationOrderedAt')",
+        "t('orderingSimulationNow')",
+        "type=\"datetime-local\"",
+        "input.date >= input.orderedAt.slice(0, 10)"
+      ],
+      "forbidden": [
+        "timeZone: 'UTC', year: 'numeric'"
+      ]
+    },
+    {
+      "id": "manual-order-step-navigation",
+      "source": "src/components/orders/NewOrderCheckoutPanel.tsx",
+      "required": [
+        "const steps: CheckoutStep[] = eventConfig ? ['reception', 'event', 'payment'] : ['reception', 'payment'];",
+        "function goToStep(target: CheckoutStep)",
+        "setFocusRequest",
+        "name=\"production-plan\"",
+        "addToProduction === true",
+        "addToProduction === false"
+      ],
+      "forbidden": [
+        "disabled={!canConfirm}",
+        "data-production-summary"
+      ]
+    },
+    {
+      "id": "manual-order-invalid-control-outline",
+      "source": "src/components/orders/order-checkout.module.css",
+      "required": [
+        "[aria-invalid='true']",
+        "outline: 2px solid var(--danger-500)"
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "configurable-prepared-stock-and-zone-deadline-controls",
+      "source": "src/lib/i18n.tsx",
+      "required": [
+        "preparedStockUntil: \"Prepared stock usable through\",",
+        "zoneDeadlineTitle: \"Order deadlines\",",
+        "preparedStockTitle: \"Products already prepared\",",
+        "preparedStockEnable: \"Use an independent shelf counter\",",
+        "preparedStockUntil: \"ניתן להשתמש במלאי המוכן עד\",",
+        "zoneDeadlineTitle: \"מועדי סגירת הזמנות\",",
+        "preparedStockTitle: \"מוצרים שכבר הוכנו\",",
+        "preparedStockEnable: \"שימוש במונה נפרד למלאי מוכן\",",
+        "preparedStockUntil: \"Stock prêt utilisable jusqu’au\",",
+        "zoneDeadlineTitle: \"Échéances de commande\",",
+        "preparedStockTitle: \"Produits déjà préparés\",",
+        "preparedStockEnable: \"Utiliser un compteur de stock prêt indépendant\","
+      ]
+    },
+    {
+      "id": "prepared-pool-independent-save-and-revision",
+      "source": "src/components/menu-item/PreparedStockEditor.tsx",
+      "required": [
+        "setPreparedStock(rid,itemId,next,saved.revision,until)",
+        "hasAnyPermission('menu.edit')",
+        "type=\"date\""
+      ]
+    },
+    {
+      "id": "zone-ordering-deadline-capability-and-fields",
+      "source": "src/components/delivery/ZoneScheduleFields.tsx",
+      "required": [
+        "{deadlinesSupported && <fieldset",
+        "order_deadlines",
+        "days_before"
+      ]
+    },
+    {
+      "id": "simulation-ready-stock-explanation",
+      "source": "src/lib/i18n.tsx",
+      "required": [
+        "orderingSimulationReadyStock: \"The calculation includes already available stock. Basket quantities, service hours and delivery rules still apply.\",",
+        "orderingSimulationReadyStock: \"החישוב כולל מלאי שכבר זמין. כמויות הסל, שעות השירות וכללי המשלוח עדיין חלים.\",",
+        "orderingSimulationReadyStock: \"Le calcul tient compte du stock déjà disponible. Les quantités du panier, les horaires et les règles de livraison restent applicables.\","
+      ]
+    },
+    {
+      "id": "simulation-stock-exception-response",
+      "source": "src/app/[restaurantId]/settings/orders/OrderingSimulation.tsx",
+      "required": [
+        "calendar?.prepared_stock_applied",
+        "t('orderingSimulationReadyStock')"
+      ]
+    },
+    {
+      "id": "courier-stop-result-gate",
+      "source": "src/components/delivery/CourierItineraryView.tsx",
+      "required": [
+        "await beginStopNavigation",
+        "const actionStop = awaitingResult ??",
+        "onClick={onReportIssue}",
+        "courierStartAndNavigate",
+        "t('courierOpenStop')",
+        "t('courierViewPlannedStops')",
+        "t(kind === 'start' ? 'courierPlannedDeparture' : 'routeTimelineTerminus')",
+        "awaitingResult && !awaitingResult.destination_locked",
+        "{openStop && ("
+      ]
+    },
+    {
+      "id": "dispatcher-courier-reminder",
+      "source": "src/components/delivery/DispatcherView.tsx",
+      "required": [
+        "await remindRouteCourier(rid, routeId)",
+        "courierResultPending",
+        "courierReportedIssues"
+      ]
     }
   ],
   "guides": [
@@ -804,6 +1100,273 @@
         "fr": [],
         "en": [],
         "he": []
+      }
+    },
+    {
+      "article": "delivery/zones-and-schedules",
+      "required": {
+        "fr": [
+          "Aucune heure ne se saisit dans la zone.",
+          "Commandes et disponibilité",
+          "Livraison le jour même"
+        ],
+        "en": [
+          "Zone settings no longer ask for hours.",
+          "Orders & availability",
+          "Same-day delivery"
+        ],
+        "he": [
+          "אין להזין שעות באזור.",
+          "הזמנות וזמינות",
+          "משלוח באותו יום"
+        ]
+      }
+    },
+    {
+      "article": "payments/cash-card-guarantee",
+      "required": {
+        "fr": [
+          "Accepter les espèces pour tous les clients",
+          "Le réglage Exiger une garantie par carte pour les espèces reste indépendant",
+          "modifier la TVA ou les pourboires ne le remplace pas"
+        ],
+        "en": [
+          "Accept cash from all customers",
+          "Require a card guarantee for cash remains independent",
+          "changing VAT or tips does not replace it"
+        ],
+        "he": [
+          "קבלת מזומן מכל הלקוחות",
+          "דרישת ערבות בכרטיס למזומן נשארת הגדרה נפרדת",
+          "שינוי מע״מ או טיפים אינו מחליף אותה"
+        ]
+      },
+      "forbidden": {
+        "fr": [],
+        "en": [],
+        "he": []
+      }
+    },
+    {
+      "article": "website-qr/design-and-branding",
+      "required": {
+        "en": [
+          "Pink Coffee requires the compatible Website and Admin release.",
+          "Applying a template changes the draft only."
+        ],
+        "fr": [
+          "Pink Coffee nécessite les versions compatibles du site client et de l’Admin.",
+          "Appliquer un modèle modifie uniquement le brouillon."
+        ],
+        "he": [
+          "Pink Coffee דורשת גרסאות תואמות של אתר הלקוחות ושל Admin.",
+          "החלת תבנית משנה רק את הטיוטה."
+        ]
+      },
+      "forbidden": {}
+    },
+    {
+      "article": "website-qr/sections-and-media",
+      "required": {
+        "en": [
+          "add up to six slides",
+          "Autoplay is off by default",
+          "5 to 30 seconds",
+          "campaign-layout-controls",
+          "Carousel layout",
+          "Navigation controls alignment",
+          "Individual product backgrounds",
+          "Select all visible products",
+          "Use shared or alternating background"
+        ],
+        "fr": [
+          "ajoutez jusqu’à six diapositives",
+          "La lecture automatique est désactivée par défaut",
+          "5 à 30 secondes",
+          "campaign-layout-controls",
+          "Disposition du carrousel",
+          "Alignement des commandes",
+          "Fonds individuels des produits",
+          "Sélectionner tous les produits affichés",
+          "Utiliser le fond commun ou alterné"
+        ],
+        "he": [
+          "הוסיפו עד שש שקופיות",
+          "ההפעלה האוטומטית כבויה כברירת מחדל",
+          "5 עד 30 שניות",
+          "campaign-layout-controls",
+          "פריסת הקרוסלה",
+          "יישור פקדי הניווט",
+          "רקע נפרד לכל מוצר",
+          "בחירת כל המוצרים המוצגים",
+          "שימוש ברקע המשותף או המתחלף"
+        ]
+      },
+      "forbidden": {}
+    },
+    {
+      "article": "website-qr/customize-your-site",
+      "required": {
+        "en": [
+          "before Admin enables their controls",
+          "Existing presentations retain their normal editing and publication flow."
+        ],
+        "fr": [
+          "avant l’activation de leurs contrôles dans l’Admin",
+          "Les présentations existantes conservent leur parcours habituel de modification et publication."
+        ],
+        "he": [
+          "לפני הפעלת הפקדים ב-Admin",
+          "תצוגות קיימות שומרות על מסלול העריכה והפרסום הרגיל."
+        ]
+      },
+      "forbidden": {}
+    },
+    {
+      "article": "website-qr/navigation-and-footer",
+      "required": {
+        "fr": [
+          "Style de l’icône menu",
+          "Traits classiques",
+          "Traits décalés",
+          "Taille de l’icône menu",
+          "Épaisseur des traits du menu"
+        ],
+        "en": [
+          "Menu icon style",
+          "Standard lines",
+          "Staggered lines",
+          "Menu icon size",
+          "Menu line thickness"
+        ],
+        "he": [
+          "סגנון סמל התפריט",
+          "קווים רגילים",
+          "קווים מדורגים",
+          "גודל סמל התפריט",
+          "עובי קווי התפריט"
+        ]
+      },
+      "forbidden": {}
+    },
+    {
+      "article": "orders/preorders-and-batches",
+      "required": {
+        "fr": [
+          "Date et heure de la commande",
+          "Maintenant recharge l’heure courante du serveur",
+          "stock historique",
+          "Les suggestions d’adresse apparaissent après trois caractères"
+        ],
+        "en": [
+          "Order date and time",
+          "Now reloads the current server time",
+          "historical stock",
+          "Address suggestions appear after three characters"
+        ],
+        "he": [
+          "תאריך ושעת ההזמנה",
+          "עכשיו טוען מחדש את השעה הנוכחית מהשרת",
+          "מלאי היסטורי",
+          "הצעות כתובת מופיעות אחרי שלושה תווים"
+        ]
+      },
+      "forbidden": {
+        "fr": [
+          "les règles enregistrées pour une commande passée maintenant"
+        ],
+        "en": [
+          "saved rules for an order placed now"
+        ],
+        "he": [
+          "בכללים השמורים להזמנה שתבוצע עכשיו"
+        ]
+      }
+    },
+    {
+      "article": "orders/order-details",
+      "required": {
+        "fr": [
+          "Réception et client",
+          "Précédent",
+          "bordure rouge"
+        ],
+        "en": [
+          "Handover and customer",
+          "Previous",
+          "red outline"
+        ],
+        "he": [
+          "קבלת ההזמנה ופרטי לקוח",
+          "הקודם",
+          "מסגרת אדומה"
+        ]
+      }
+    },
+    {
+      "article": "orders/internal-sumit-checkout",
+      "required": {
+        "fr": [
+          "Réception et client",
+          "Précédent",
+          "bordure rouge"
+        ],
+        "en": [
+          "Handover and customer",
+          "Previous",
+          "red outline"
+        ],
+        "he": [
+          "קבלת ההזמנה ופרטי לקוח",
+          "הקודם",
+          "מסגרת אדומה"
+        ]
+      }
+    },
+    {
+      "article": "orders/event-orders",
+      "required": {
+        "fr": [
+          "Réception et client",
+          "Précédent",
+          "bordure rouge"
+        ],
+        "en": [
+          "Handover and customer",
+          "Previous",
+          "red outline"
+        ],
+        "he": [
+          "קבלת ההזמנה ופרטי לקוח",
+          "הקודם",
+          "מסגרת אדומה"
+        ]
+      }
+    },
+    {
+      "article": "delivery/courier-workspace",
+      "required": {
+        "en": [
+          "Start and open Waze",
+          "Open this stop",
+          "Report a problem",
+          "Enable route reminders",
+          "View planned stops"
+        ],
+        "fr": [
+          "Démarrer et ouvrir Waze",
+          "Ouvrir cet arrêt",
+          "Signaler un problème",
+          "Activer les rappels de tournée",
+          "Voir les arrêts prévus"
+        ],
+        "he": [
+          "התחלת מסלול ופתיחת Waze",
+          "פתחו את העצירה",
+          "דיווח על בעיה",
+          "הפעלת תזכורות למסלול",
+          "הצגת העצירות המתוכננות"
+        ]
       }
     }
   ]

@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - delivery
   - delivery-zones
-updatedAt: '2026-10-18'
+updatedAt: '2026-11-04'
 featureId: delivery-zones
 audience: public
 releaseStatus: available
@@ -16,7 +16,19 @@ Admin → Settings → Delivery
 
 ## Create a delivery zone
 
-Create or edit a named zone using the map/address controls. Review its area, active state and ordering eligibility before saving.
+Create or edit a named zone using the map/address controls. Review its area, active state and ordering eligibility before saving. Zone changes, including same-day rules, require orders.manage. Shared restaurant availability and the global minimum use settings.edit; viewing those settings requires the existing settings access.
+
+<span id="postal-codes" />
+
+## Target an exact French postal code
+
+This option requires compatible API and Admin versions; its inclusion in this guide does not confirm deployment. With permission to manage orders and a restaurant located in France, open Settings → Delivery → Add zone. Name the zone, choose Postal codes (France), and enter 75016 to cover that exact postal code only. Paste multiple five-digit codes separated by spaces, commas or line breaks (up to 1,000); keep leading zeros, for example 01000. Set the fee, minimum, calendar and active state, then Save. Reopen the zone to verify the codes and test addresses on both sides of its boundary before enabling it. 75016 is a postal code; 75 is the Paris department. Departments (France) also accepts 2A, 2B and three-digit overseas codes such as 971, but covers the entire department. Postal zones take precedence over other zones for fees, minimums and calendars; another active zone can still cover an address whose postal code does not match. The geocoding service verifies postal metadata from the address; city text or coordinates alone are insufficient. If a postal code cannot be verified, refine the address and try again. Invalid input is not saved; after an uncertain save response, use Verify saved data before retrying.
+
+<span id="postal-day-groups" />
+
+## Group postal codes by delivery days and fee
+
+Prefer distinct geographic areas, each with its own fee and calendar, instead of repeating a postcode across competing zones. The editor warns when codes also belong to another active postal zone. For example, a local area may deliver Monday–Friday and Sunday with same-day delivery Monday–Friday, while two extended areas deliver Friday/Sunday at different fees with no same-day orders. These are examples to configure, never automatic restaurant presets. When old postal zones overlap, weekdays combine only when fees, minimum, booking mode, pickup alternative and explicit same-day policy agree. Otherwise the oldest matching zone retains priority. A changed order address rechecks the effective calendar. A new explicit same-day rule is refused when overlapping postal areas have conflicting fees, minimums or booking rules. The saved calendar and draft are retained. Separate the areas or make those rules identical before saving, so configuring today cannot remove another zone’s advance-order weekdays.
 
 <span id="fees" />
 
@@ -28,4 +40,36 @@ Set the offered fee and minimum-order rules for the zone. Test an address and ba
 
 ## Configure delivery days and windows
 
-Set the zone schedule and offered delivery windows. Where final times are pending, keep that pending state and confirm the real window later from order planning.
+With compatible API, Admin and guest-site versions, open Settings → Ordering & delivery → Delivery zones, then create or edit a zone. Choose the booking mode and select only the weekdays served, for example Friday and Sunday for 94000. Set the fee and minimum, then save. Zone settings no longer ask for hours. In Orders & availability, configure Delivery service hours, preparation time and its clock, slot duration and booking horizon. Guests see only restaurant slots on covered weekdays that satisfy their basket and exceptional closures. Ready products do not make other weekdays deliverable. Legacy zones retain the weekdays of saved windows, while their hours no longer define new bookings. Existing orders retain their promised calendar. Weekly preorders keep their batch receiving windows and cutoff. Automatic mode assigns the next slot; restaurant confirmation announces the next eligible day and leaves its time pending. Verify the address, fee and a slot before enabling delivery. If no slot is available, check Delivery hours and preparation in Orders & availability first. The advance-order time choice is configured separately from Same-day delivery inside the zone.
+
+<span id="same-day" />
+
+## Configure optional same-day delivery
+
+Open an individual zone in Delivery zones. Keep Delivery days as its usual receiving calendar. When no explicit rule exists, select Configure same-day delivery for this zone. Then in Same-day delivery, select only days when an order placed today may arrive today; these must already be delivery days. No selected days means advance orders only, without closing those days to preorders. Configure the same-day time choice and transport allowance here. Restaurant confirms the time lets the customer choose the date and review an estimate. Use the advance-order time choice retains the zone usual mode. The allowance affects today’s estimate, not future slots; weekly batches retain their own windows. Same-day means the restaurant local date, not the next 24 hours. Existing orders retain their frozen promises. A zone without an explicit same-day rule follows the restaurant calendar until configured; creating a zone does not silently activate a booking calendar. A historical global block appears only for an enabled old policy and must be migrated before zone rules can be saved; the two systems cannot be activated together.
+
+<span id="estimate" />
+
+## Understand the estimate and confirm the time
+
+In a customer-choice zone with restaurant confirmation for same-day delivery, the customer chooses an available date and sees estimated arrival ranges plus the zone fee before paying. Without a basket the estimate is provisional. Product preparation, the configured preparation clock, actual ready quantities and the transport margin determine the earliest arrival inside delivery opening hours and exceptional closures. Ready stock never opens another zone or a closed day. For example, a ready roll at 11:30 with 60 minutes transport gives an earliest arrival of 12:30; four hours preparation from 09:30 plus transport gives 14:30 when the clock and opening hours allow it. The estimate is not a confirmed appointment or live courier-capacity reservation. Staff reviews the order, checks courier availability and confirms a valid range in Order details. The placement estimate remains frozen; the customer’s receipt/tracking displays the confirmed range once assigned. Payment requirements and configured messages remain the existing ones; enabling this block does not add a WhatsApp automation. Day-before route reminders do not cover a new order placed today.
+
+<span id="precedence" />
+
+## Review priorities and safe saves
+
+A zone controls coverage, price/minimum and receiving days. Restaurant service hours and exceptional closures still limit receipt. Product-specific preparation replaces the default; actual ready stock can shorten preparation but cannot open another day or area. The same-day policy is saved with its zone and is not combined with a global override. Custom booking hours still replace service hours when configured, while batches keep their own windows. The global delivery minimum is used only when a zone has no minimum; explicit zero remains zero. Historical unconfigured coverage can allow all addresses if every classic zone is inactive: use the service/pause control to pause deliveries. Explicit same-day zones fail closed when inactive; deleting the last such zone requires other active classic coverage. Concurrent zone edits return a conflict and retain the draft. Reload and review the current version; after an uncertain network save, verify saved data before writing again.
+
+<span id="ordering-simulation-clock" />
+
+## Test when an order is placed
+
+In Orders & availability → Simulate an order, select Order date and time in the displayed timezone, then the receiving date and basket. Now reloads the server time. Preparation and same-day rules are evaluated at this reference using current saved settings and ready stock. A past date does not reconstruct history; this test neither reserves a courier nor creates an order. Customer orders retain the real server clock. See [the simulation procedure](/en/help/orders/preorders-and-batches#simulate-order). The simulation covers classic delivery; published tours retain their own rules.
+
+<span id="order-deadlines" />
+
+## Close orders before a delivery
+
+With compatible API and Admin versions, open Settings → Ordering & delivery → Delivery zones and edit a zone. Under Order deadlines, choose the day offset and cutoff time for each receiving weekday. Nothing is enabled automatically. For Friday delivery bookable until Friday 13:00, select Friday, Same day, 13:00. To accept Sunday deliveries only before Saturday starts, select Sunday, Previous day, 00:00. The deadline is exclusive and uses the restaurant timezone: at the cutoff, the receiving date disappears from new-booking calendars. Save the zone. Delivery slots remain separate from ordering deadlines; pickup and recorded orders retain their rules. Even already prepared products cannot bypass this deadline. For Friday same-day delivery only in the west, also allow Friday in that zone’s Same-day delivery rule and disable it in other zones; advance bookings retain their own calendar. Errors retain input. Reload competing edits and review before saving again.
+
+Disabling every zone with ordering deadlines keeps delivery closed; it does not restore unrestricted coverage. Before deleting the last zone, explicitly clear its ordering deadlines and save.

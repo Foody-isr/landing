@@ -1,6 +1,7 @@
 import type { Lang } from "@/lib/seo";
 import type { Solution, SolutionKey } from "./content";
 import { additionalSolutions } from "./ecosystem";
+import { pricingRates } from "./pricing";
 
 type Entry = [
   title: string,
@@ -17,17 +18,17 @@ const entries: Record<
 > = {
   he: {
     restaurants: [
-      "קופה למסעדות ולבתי קפה בישראל",
-      "Foody מסעדה מחבר קופה, ניהול שולחנות, אתר הזמנות, QR ותשלומים. השירות במקום וההזמנות אונליין עובדים יחד.",
-      "מהשולחן הראשון\nועד לסגירת היום.",
-      "בין הסרוויס, ההזמנות שמגיעות מהאתר והמטבח שעובד במרץ, אתם צריכים שכל הצוות יראה את אותה תמונה. Foody מחבר את נקודות המגע של המסעדה.",
+      "קופה למסעדה בישראל באייפד ובאנדרואיד",
+      "קופה למסעדה ולבית קפה: Foody POS באייפד ובאנדרואיד מחבר שולחנות, הזמנות מלצרים ותשלומים. Foody מסעדה כולל הזמנות ב־QR בשולחן.",
+      "קופה למסעדה בישראל.\nבאייפד ובאנדרואיד.",
+      "Foody מסעדה מרכז קופה בדלפק, הזמנות מהטאבלט של המלצר, ניהול שולחנות והזמנות ב־QR באותה פלטפורמה. הקופה והמשרד האחורי זמינים בעברית, בצרפתית ובאנגלית. לניהול מתכונים, מלאי חומרי גלם ופוד קוסט מוסיפים את Foody Kitchen.",
       [
         [
-          "Foody הזמנות כלול.",
-          "אתר הזמנות, הזמנות להיום והזמנות מראש, איסוף ומשלוחים: Foody הזמנות כלול לצד הקופה והשירות בשולחן. הצוות מרכז את ההכנה במשרד האחורי.",
+          "הוסיפו את Foody הזמנות.",
+          "שלבו את הקופה עם מודול Foody הזמנות כדי למכור באתר משלכם, עם הזמנות להיום, הזמנות מראש, איסוף ומשלוחים. הצוות מרכז את ההכנה במשרד האחורי.",
         ],
         [
-          "שירות שזורם מההתחלה.",
+          "הזמנה ותשלום בשולחן.",
           "אפליקציית Foody הרשמית על Victa Portable מחברת קבלת הזמנה, תשלום בשולחן וקבלה מודפסת במכשיר אחד, עם מסך 6.7 אינץ׳ ומדפסת מובנית.",
         ],
         [
@@ -37,12 +38,28 @@ const entries: Record<
       ],
       [
         [
+          "אפשר לקחת הזמנה מהטאבלט של המלצר?",
+          "כן. המלצר יכול לפתוח שולחן, לבחור מנות ותוספות ולשלוח את ההזמנה להכנה ממכשיר תואם. ממשקי הקופה והמשרד האחורי זמינים בעברית, בצרפתית ובאנגלית. שירותי הענן והתשלומים המחוברים דורשים אינטרנט. לפני התקנה בודקים את דגם המכשיר, גרסת המערכת, המדפסות וספק הסליקה.",
+        ],
+        [
+          "כמה עולה Foody מסעדה ומה כלול?",
+          `Foody מסעדה עולה ${pricingRates.restaurant} ₪ לחודש לסניף לפני מע״מ, כולל קופה, מפת שולחנות, הזמנות ב־QR ורישיון קופה אישי אחד. כל רישיון נוסף עולה ${pricingRates.extraPos} ₪ לחודש לפני מע״מ. אפשר להוסיף את Foody הזמנות ואת Foody Kitchen בנפרד. הקמה, חומרה ושירותי תשלום מפורטים במחירון.`,
+        ],
+        [
+          "איך ההזמנות מגיעות למטבח?",
+          "הצוות שולח את ההזמנה למסלול ההכנה שהוגדר למסעדה. הדפסת בוני מטבח היא תוספת בתשלום, בכפוף להצעת מחיר ובדיקת ציוד והגדרות. Foody Kitchen הוא מודול נפרד למתכונים, food cost, מלאי והכנות שאפשר לשלב עם Foody מסעדה.",
+        ],
+        [
           "מתאים גם לבית קפה או למזון מהיר?",
           "כן. אפשר להתאים את תהליך העבודה לשירות בדלפק, לישיבה במקום, לאיסוף ולמשלוחים. בהקמה בוחרים את המצבים והציוד הנחוצים לעסק.",
         ],
         [
           "האם אתר ההזמנות מחובר לקופה?",
           "כן. אתר Foody, ה־QR והקופה משתמשים באותה פלטפורמה. התפריטים, זמינות המנות ותהליך ההזמנה מנוהלים בהתאם להגדרות המסעדה.",
+        ],
+        [
+          "האם יש התקנה והדרכה במסעדה בישראל?",
+          `כן. Foody מגיעים למסעדה להתקנה ולהדרכת הצוות. לפני ההפעלה בודקים מכשירים תואמים, חיבור אינטרנט, מדפסות וספק סליקה. הקמה סטנדרטית עולה ${pricingRates.setup} ₪ חד־פעמי; הדרכה במקום, אם נבחרה, עולה ${pricingRates.training} ₪ ליום. המחירים לפני מע״מ. חומרה ושירותי תשלום מתומחרים בנפרד.`,
         ],
       ],
     ],
@@ -108,8 +125,8 @@ const entries: Record<
     ],
     pos: [
       "קופת ענן ל־iPad ול־Android בישראל",
-      "Foody קופה מרכז מכירות, קטלוג, שולחנות וניהול בענן על iPad או Android. להזמנות אונליין הוסיפו Foody הזמנות או בחרו ב־Foody מסעדה, שכולל גם הזמנה ב־QR.",
-      "פחות לחיצות.\nיותר זמן ללקוחות.",
+      "Foody קופה מרכז מכירות, קטלוג, שולחנות וניהול בענן על iPad או Android. הקופה היא חלק מ־Foody מסעדה. למכירה באתר אפשר להוסיף את Foody הזמנות.",
+      "הקופה שלכם,\nב־iPad או ב־Android.",
       "הקופה פועלת על iPad או Android. העסק מנוהל בענן. Foody מחברת הזמנות, קטלוג, צוות ותשלומים, בדלפק וגם מרחוק.",
       [
         [
@@ -131,16 +148,28 @@ const entries: Record<
           "Foody POS פועל על iPad ועל Android, כולל Victa Portable שמוגדר עם Foody. מדפסות Star Micronics ו־Epson והאביזרים נבחרים בהתאם להתקנה שלכם.",
         ],
         [
-          "האם הממשק בעברית?",
-          "כן. הממשק תומך בעברית ובתצוגה מימין לשמאל, לצד אנגלית וצרפתית.",
+          "באילו שפות זמינים הקופה והמשרד האחורי?",
+          "ממשק קופת Foody וממשק הניהול זמינים בעברית, בצרפתית ובאנגלית, עם תצוגה מימין לשמאל בעברית. מדובר בשפת כלי העבודה של הצוות, בנוסף לתוכן התפריט ללקוחות.",
+        ],
+        [
+          "כמה עולה מסלול Foody קופה?",
+          `הקופה כלולה ב־Foody מסעדה במחיר ${pricingRates.restaurant} ₪ לחודש לסניף לפני מע״מ. רישיון קופה אישי אחד כלול. כל עובד נוסף שמשתמש בקופה צריך רישיון ב־${pricingRates.extraPos} ₪ לחודש לפני מע״מ. במחירון מופיעים דמי הקמה, הדרכה, ציוד ותשלומים.`,
+        ],
+        [
+          "האם כל טאבלט יכול לגבות תשלום בכרטיס?",
+          "לא. אפליקציית הקופה אינה הופכת טאבלט למסוף כרטיסים. בודקים ספק סליקה, דגם מסוף וחיבור תואמים. Victa Portable שמוגדר עם Foody יכול לשלב הזמנה, תשלום והדפסת קבלה באותו מכשיר; אין בכך הבטחת תאימות לכל מכשיר Android או לכל הסכם סליקה.",
+        ],
+        [
+          "האם נדרש חיבור לאינטרנט?",
+          "שירותי הענן, הסנכרון והתשלומים המחוברים דורשים אינטרנט. לפני ההתקנה בודקים את הרשת, דגמי המכשירים, גרסאות המערכת, המדפסות וספק הסליקה. במקרה של תקלה, בודקים את מצב ההזמנה או העסקה לפני ניסיון חוזר.",
         ],
       ],
     ],
     kitchen: [
-      "ניהול מטבח, מלאי ו־Food Cost למסעדות בישראל",
-      "חברו מתכונים, הכנות, מחירי קנייה, מלאי וספקים. ראו עלות מנה ופערים בין הצריכה הצפויה לצריכה בפועל.",
-      "כל מנה מתחילה במתכון.\nכל החלטה מתחילה בנתונים.",
-      "עלות חומרי הגלם משתנה. כמויות הייצור משתנות. חברו את המידע במקום אחד כדי לדעת מה להכין, מה להזמין ומה כדאי לבדוק.",
+      "תוכנה לניהול מטבח ומלאי למסעדות בישראל",
+      "Foody Kitchen לניהול מטבח: מתכונים, פוד קוסט למנה, מלאי חומרי גלם, ספקים והכנות. עם Foody Companion לתכנון ולמעקב לפני הסרוויס, במהלכו ובסגירה.",
+      "תוכנה לניהול מטבח.\nמההכנות ועד הסגירה.",
+      "Foody Kitchen מחבר מתכונים, מחירי רכישה, מלאי והכנות במסעדה. בדקו עלות למנה, קבלות ספקים והפרשים, ועקבו אחר הצריכה כשהמתכונים והמכירות מקושרים. Foody Companion כלול לליווי העבודה היומית.",
       [
         [
           "מהמתכון לעלות המנה.",
@@ -156,6 +185,22 @@ const entries: Record<
         ],
       ],
       [
+        [
+          "מה ההבדל בין תוכנה לניהול מטבח למסך הזמנות?",
+          "מסך הזמנות מציג לצוות מה להכין. Foody Kitchen מטפל גם במתכונים, יחידות חומרי גלם, עלות למנה, מלאי, קבלות ספקים והכנות. תצוגת הזמנות, מכסות מנות ומעקב חומרי גלם הם צרכים נפרדים; בהדגמה בדקו את התהליך שאתם צריכים.",
+        ],
+        [
+          "מתי ניהול המלאי מתעדכן לפי המכירות?",
+          "עם Foody POS, מתכונים, כמויות וקישורי מכירות שהוגדרו מאפשרים רישום צריכת חומרי גלם בתהליך ההזמנה. בסגירה אין לנכות שוב צריכה שכבר נרשמה. מכירה לא מקושרת או מתכון חסר מצביעים על כיסוי חלקי, לא על צריכה אפס. קופה חיצונית דורשת בדיקת חיבור נפרדת.",
+        ],
+        [
+          "איך בודקים פערים מול ספק?",
+          "משווים את הזמנת הרכש לכמות שהגיעה בפועל. במסמך מיובא בודקים התאמת חומרי גלם, יחידות, כמויות ומחירים לפני אישור קבלה. ניתוח מסמך אינו מאשר את הקבלה; אין לזכות אותה אספקה פעמיים.",
+        ],
+        [
+          "כמה עולה Foody Kitchen והאם צריך קופת Foody?",
+          `Foody Kitchen עולה ${pricingRates.kitchen} ₪ לחודש לסניף לפני מע״מ, כולל Foody Companion. אפשר לרכוש אותו בנפרד או לשלב אותו עם מודולים אחרים של Foody. חיבור לקופה חיצונית דורש בדיקת התאמה והצעת מחיר.`,
+        ],
         [
           "מה ההבדל בין food cost תיאורטי לאמיתי?",
           "העלות התיאורטית מבוססת על המתכון ועל מחירי חומרי הגלם. העלות בפועל תלויה גם בספירות מלאי, אספקות ופחת. ההשוואה מסייעת לזהות חריגות.",
@@ -188,7 +233,7 @@ const entries: Record<
       [
         [
           "צריך אפליקציה כדי להזמין?",
-          "לא. הלקוחות פותחים את אתר המסעדה או סורקים QR ומשתמשים בדפדפן בטלפון.",
+          "לא. הלקוחות פותחים את אתר המסעדה ומזמינים בדפדפן בטלפון. הזמנה ב־QR כלולה במסלול Foody מסעדה.",
         ],
         [
           "אפשר להפעיל רק איסוף?",
@@ -196,11 +241,19 @@ const entries: Record<
         ],
         [
           "צריך קופת Foody כדי להשתמש ב־Foody הזמנות?",
-          "לא. אפשר להשתמש ב־Foody הזמנות כמסלול עצמאי ולנהל הזמנות, הכנות ומשלוחים מהמשרד האחורי. הוא כלול גם ב־Foody מסעדה וב־Foody מסעדה ומטבח. הדפסת פתקים במטבח היא תוספת בתשלום.",
+          "לא. אפשר להשתמש ב־Foody הזמנות כמסלול עצמאי ולנהל הזמנות, הכנות ומשלוחים מהמשרד האחורי. אפשר לשלב אותו עם Foody מסעדה. הדפסת פתקים במטבח היא תוספת בתשלום.",
         ],
         [
           "מה ההבדל בין מעקב ההכנות ל־Foody Kitchen?",
           "Foody הזמנות מרכז כמויות להכנה ואריזה לפי ההזמנות שהתקבלו. Foody Kitchen מוסיף מתכונים, Food Cost, מלאי, ספקים ו־Foody Companion. ניתן להוסיף אותו למסלול לפי הצורך.",
+        ],
+        [
+          "כמה עולה Foody הזמנות?",
+          `Foody הזמנות עולה ${pricingRates.ordering} ₪ לחודש לסניף לפני מע״מ. אפשר לרכוש אותו בנפרד או לשלב אותו עם Foody מסעדה. הקמת האתר, שירותי תשלום והדפסת בוני מטבח מתומחרים בנפרד.`,
+        ],
+        [
+          "האם Foody גובה אחוז מההזמנות הישירות?",
+          "עמלת Foody באחוזים על הזמנות ישירות היא 0%. דמי המנוי עדיין חלים. סליקה, SMS, שירותי משלוחים חיצוניים ושירותי צד שלישי מתומחרים בנפרד לפי השימוש וההסכם. 0% עמלת Foody אינו אומר שכל עלויות ההזמנה מתבטלות.",
         ],
       ],
     ],
@@ -267,17 +320,17 @@ const entries: Record<
   },
   fr: {
     restaurants: [
-      "Logiciel de caisse pour restaurants et cafés en Israël",
-      "Foody Restaurant réunit caisse, gestion des tables, site de commande, QR et paiements. Votre salle et vos commandes en ligne avancent ensemble.",
-      "De la première table\nà la dernière commande.",
-      "Le service en salle, les commandes du site et la cuisine doivent avancer ensemble. Foody relie les équipes et les étapes du parcours de vos clients.",
+      "Caisse restaurant en Israël, sur iPad et Android",
+      "Une caisse pour restaurant et café : Foody POS sur iPad et Android réunit tables, commandes des serveurs et paiements. Foody Restaurant inclut les commandes par QR à table.",
+      "Caisse restaurant en Israël.\nSur iPad et Android.",
+      "Foody Restaurant réunit caisse au comptoir, commandes sur tablette serveur, tables et commandes par QR dans une même plateforme. La caisse et le back-office sont disponibles en français, hébreu et anglais. Ajoutez Foody Cuisine pour les recettes, les stocks d’ingrédients et le food cost.",
       [
         [
-          "Foody Commandes est inclus.",
-          "Site de commande, ventes du jour, précommandes, retrait et livraison : Foody Commandes est inclus aux côtés de la caisse et du service en salle. Votre équipe centralise la préparation dans le back-office.",
+          "Ajoutez Foody Commandes.",
+          "Associez la caisse au module Foody Commandes pour vendre sur votre site, en retrait ou en livraison. Votre équipe centralise les ventes du jour et les précommandes dans le back-office.",
         ],
         [
-          "Un service qui garde le rythme.",
+          "Commander et payer à table.",
           "L’application officielle Foody sur Victa Portable réunit prise de commande, paiement à table et reçu imprimé sur un seul appareil, avec un écran de 6,7 pouces et une imprimante intégrée.",
         ],
         [
@@ -287,12 +340,28 @@ const entries: Record<
       ],
       [
         [
+          "Les serveurs peuvent-ils prendre les commandes sur tablette ?",
+          "Oui. Le serveur peut ouvrir une table, choisir les plats et suppléments, puis envoyer la commande en préparation depuis un appareil compatible. La caisse et le back-office sont disponibles en hébreu, français et anglais. Les services cloud et paiements connectés nécessitent Internet. Le modèle de l’appareil, sa version système, les imprimantes et le prestataire de paiement sont vérifiés avant l’installation.",
+        ],
+        [
+          "Combien coûte Foody Restaurant et que comprend l’offre ?",
+          `Foody Restaurant coûte ${pricingRates.restaurant} ₪ HT par mois et par établissement, avec la caisse, le plan de salle, les commandes par QR à table et une licence de caisse nominative. Chaque employé supplémentaire qui utilise la caisse coûte ${pricingRates.extraPos} ₪ HT par mois. Foody Commandes et Foody Cuisine s’ajoutent séparément. La mise en service, le matériel et les paiements sont détaillés dans les tarifs.`,
+        ],
+        [
+          "Comment les commandes arrivent-elles en cuisine ?",
+          "L’équipe envoie la commande dans le parcours de préparation configuré pour le restaurant. L’impression des bons de cuisine est une option payante, sur devis et après vérification du matériel et du paramétrage. Foody Cuisine est le module distinct pour les recettes, le food cost, les stocks et les préparations que vous pouvez associer à Foody Restaurant.",
+        ],
+        [
           "Et pour un café ou un comptoir ?",
           "Oui. Le fonctionnement peut être adapté au service au comptoir, à table, au retrait et à la livraison. Les modes et le matériel sont choisis lors de la configuration.",
         ],
         [
           "Le site est-il relié à la caisse ?",
           "Oui. Le site Foody, le QR et la caisse utilisent la même plateforme. Menus, disponibilités et commandes suivent les paramètres de votre établissement.",
+        ],
+        [
+          "L’installation et la formation sont-elles proposées en Israël ?",
+          `Oui. Foody intervient sur place pour l’installation et la formation de l’équipe. Avant la mise en service, nous vérifions les appareils compatibles, la connexion Internet, les imprimantes et le prestataire de slika. L’installation standard coûte ${pricingRates.setup} ₪ HT une fois ; la formation sur place, si retenue, ${pricingRates.training} ₪ HT par jour. Le matériel et les services de paiement sont chiffrés séparément.`,
         ],
       ],
     ],
@@ -358,8 +427,8 @@ const entries: Record<
     ],
     pos: [
       "Caisse cloud sur iPad et Android en Israël",
-      "Foody Caisse réunit encaissement, catalogue, tables et gestion dans le cloud sur iPad ou Android. Pour vendre en ligne, ajoutez Foody Commandes ou choisissez Foody Restaurant, qui inclut aussi la commande QR.",
-      "Moins de manipulations.\nPlus de temps pour vos clients.",
+      "Foody Caisse réunit encaissement, catalogue, tables et gestion dans le cloud sur iPad ou Android. La caisse est incluse dans Foody Restaurant. Ajoutez Foody Commandes pour vendre sur votre site.",
+      "Votre caisse,\nsur iPad ou Android.",
       "Votre caisse tourne sur iPad ou Android. Votre activité se pilote dans le cloud. Foody relie les commandes, le catalogue, les équipes et les paiements, au comptoir comme à distance.",
       [
         [
@@ -381,16 +450,28 @@ const entries: Record<
           "Foody POS fonctionne sur iPad et Android, y compris sur les Victa Portable configurés avec Foody. Les imprimantes Star Micronics et Epson et les accessoires sont sélectionnés selon votre installation.",
         ],
         [
-          "L’interface est-elle en hébreu ?",
-          "Oui, avec une présentation de droite à gauche. Le français et l’anglais sont également disponibles.",
+          "Dans quelles langues fonctionnent la caisse et le back-office ?",
+          "Les interfaces de la caisse Foody et de l’administration sont disponibles en français, hébreu et anglais, avec un affichage de droite à gauche en hébreu. Il s’agit de la langue des outils du personnel, en complément du contenu du menu client.",
+        ],
+        [
+          "Combien coûte Foody Caisse ?",
+          `La caisse fait partie de Foody Restaurant à ${pricingRates.restaurant} ₪ HT par mois et par établissement. Une licence nominative est incluse. Chaque employé supplémentaire qui utilise la caisse coûte ${pricingRates.extraPos} ₪ HT par mois. La page Tarifs détaille la mise en service, la formation, le matériel et les paiements.`,
+        ],
+        [
+          "Une tablette peut-elle encaisser une carte bancaire ?",
+          "L’application de caisse ne transforme pas une tablette en terminal carte. Le prestataire, le modèle du terminal et la connexion doivent être compatibles. Un Victa Portable configuré avec Foody peut réunir commande, paiement et reçu imprimé sur un appareil ; cela ne garantit pas la compatibilité de tout appareil Android ou de tout contrat de slika.",
+        ],
+        [
+          "Faut-il une connexion Internet ?",
+          "Les services cloud, la synchronisation et les paiements connectés nécessitent Internet. Avant installation, nous vérifions le réseau, les modèles et versions des appareils, les imprimantes et le prestataire de slika. En cas d’incident, vérifiez l’état de la commande ou de la transaction avant de recommencer.",
         ],
       ],
     ],
     kitchen: [
-      "Gestion de cuisine, stocks et food cost en Israël",
-      "Reliez recettes, préparations, prix d’achat et fournisseurs. Comparez le coût matière théorique à la consommation réelle.",
-      "Chaque plat a sa recette.\nChaque décision, ses données.",
-      "Les prix d’achat évoluent. Les quantités à préparer aussi. Réunissez l’information pour savoir quoi produire, quoi commander et où agir.",
+      "Logiciel de gestion de cuisine et des stocks en Israël",
+      "Foody Cuisine relie recettes, food cost par plat, stocks d’ingrédients, fournisseurs et préparations. Foody Compagnon accompagne le travail avant, pendant et après le service.",
+      "Un logiciel de gestion de cuisine.\nDes préparations à la clôture.",
+      "Foody Cuisine réunit recettes, prix d’achat, stocks et préparations du restaurant. Vérifiez coûts par plat, réceptions fournisseurs et écarts, puis suivez les consommations avec les recettes et ventes rapprochées. Foody Compagnon est inclus pour accompagner le travail quotidien.",
       [
         [
           "De la recette au coût matière.",
@@ -406,6 +487,22 @@ const entries: Record<
         ],
       ],
       [
+        [
+          "Quelle différence entre un logiciel de cuisine et un écran de commandes ?",
+          "Un écran de commandes indique à l’équipe quoi préparer. Foody Cuisine couvre aussi recettes, unités des ingrédients, coût par plat, stocks, réceptions fournisseurs et préparations. Affichage des commandes, quotas de plats et suivi des ingrédients répondent à des besoins distincts ; testez votre parcours en démonstration.",
+        ],
+        [
+          "Quand les ventes mettent-elles les stocks à jour ?",
+          "Avec Foody Caisse, les recettes, quantités et correspondances de ventes configurées permettent d’enregistrer les consommations dans le parcours de commande. La clôture ne doit pas déduire à nouveau une consommation déjà enregistrée. Une vente non rapprochée ou une recette manquante signale une couverture partielle, pas une consommation nulle. Une caisse externe demande une validation de connexion distincte.",
+        ],
+        [
+          "Comment contrôler un écart fournisseur ?",
+          "Comparez la commande fournisseur aux quantités réellement reçues. Pour un document importé, contrôlez correspondances des ingrédients, unités, quantités et prix avant de confirmer la réception. L’analyse du document ne valide pas la réception ; ne créditez pas la même livraison deux fois.",
+        ],
+        [
+          "Combien coûte Foody Cuisine et faut-il une caisse Foody ?",
+          `Foody Cuisine coûte ${pricingRates.kitchen} ₪ HT par mois et par établissement, avec Foody Compagnon. Vous pouvez le prendre seul ou avec les autres modules Foody. La synchronisation avec une caisse externe dépend d’une validation technique et d’un devis.`,
+        ],
         [
           "Théorique et réel : quelle différence ?",
           "Le coût théorique vient des recettes et prix des ingrédients. Le réel s’appuie aussi sur les inventaires, réceptions et pertes. La comparaison permet de repérer des écarts.",
@@ -438,7 +535,7 @@ const entries: Record<
       [
         [
           "Faut-il télécharger une application ?",
-          "Non. Les clients ouvrent votre site ou scannent un QR et commandent directement dans le navigateur de leur téléphone.",
+          "Non. Les clients ouvrent votre site et commandent dans le navigateur de leur téléphone. La commande QR est incluse dans Foody Restaurant.",
         ],
         [
           "Puis-je proposer seulement du retrait ?",
@@ -446,11 +543,19 @@ const entries: Record<
         ],
         [
           "Faut-il une caisse Foody pour utiliser Foody Commandes ?",
-          "Non. Foody Commandes peut être utilisé seul pour gérer les commandes, la préparation et les livraisons depuis le back-office. Il est aussi inclus dans Foody Restaurant et Foody Restaurant & Cuisine. L’impression des bons en cuisine est une option payante.",
+          "Non. Foody Commandes peut être utilisé seul pour gérer les commandes, la préparation et les livraisons depuis le back-office. Vous pouvez aussi l’associer à Foody Restaurant. L’impression des bons en cuisine est une option payante.",
         ],
         [
           "Quelle différence entre le suivi des préparations et Foody Cuisine ?",
           "Foody Commandes regroupe les quantités à préparer et à emballer à partir des commandes reçues. Foody Cuisine ajoute les recettes, le food cost, les stocks, les fournisseurs et Foody Compagnon. Ce module peut compléter votre offre selon vos besoins.",
+        ],
+        [
+          "Combien coûte Foody Commandes ?",
+          `Foody Commandes coûte ${pricingRates.ordering} ₪ HT par mois et par établissement. Vous pouvez le prendre seul ou l’associer à Foody Restaurant. La création du site, les paiements et l’impression des bons en cuisine sont chiffrés séparément.`,
+        ],
+        [
+          "Foody prend-il un pourcentage sur les commandes directes ?",
+          "La commission Foody en pourcentage sur les commandes directes est de 0 %. L’abonnement reste dû. Slika, SMS, livraison externe et services tiers sont facturés séparément selon l’usage et le contrat. Une commission Foody de 0 % ne supprime pas tous les coûts de la commande.",
         ],
       ],
     ],
@@ -517,17 +622,17 @@ const entries: Record<
   },
   en: {
     restaurants: [
-      "Restaurant and café POS in Israel",
-      "Foody Restaurant brings together POS, table management, an ordering website, QR and payments. Table service and online orders work together.",
-      "From your first table\nto your final order.",
-      "Front of house, online orders and a busy kitchen need to move together. Foody connects the people and steps that make your restaurant work.",
+      "Restaurant POS in Israel on iPad and Android",
+      "A POS for restaurants and cafés: Foody POS on iPad and Android connects tables, waiter orders and payments. Foody Restaurant includes QR ordering at the table.",
+      "Restaurant POS in Israel.\nOn iPad and Android.",
+      "Foody Restaurant brings counter sales, waiter tablet orders, tables and QR orders into one platform. Both POS and back office support English, Hebrew and French. Add Foody Kitchen for recipes, ingredient inventory and food cost.",
       [
         [
-          "Foody Orders is included.",
-          "Your ordering website, same-day orders, preorders, pickup and delivery: Foody Orders is included alongside POS and table service. Your team coordinates preparation in the back office.",
+          "Add Foody Orders.",
+          "Pair your POS with Foody Orders to sell through your own site for pickup or delivery. Your team manages same-day orders and preorders in the back office.",
         ],
         [
-          "Keep service moving.",
+          "Ordering and payment at the table.",
           "The official Foody app on Victa Portable brings ordering, payment at the table and printed receipts into one device, with a 6.7-inch screen and integrated printer.",
         ],
         [
@@ -537,12 +642,28 @@ const entries: Record<
       ],
       [
         [
+          "Can waiters take orders on a tablet?",
+          "Yes. A waiter can open a table, select dishes and modifiers, and send the order for preparation from a compatible device. Both POS and back office support Hebrew, French and English. Cloud services and connected payments require Internet access. Device model, operating system version, printers and payment provider are checked before installation.",
+        ],
+        [
+          "How much is Foody Restaurant and what is included?",
+          `Foody Restaurant costs ILS ${pricingRates.restaurant} per location/month excluding VAT, with POS, floor plans, table QR ordering and one named POS licence. Each additional employee who uses the POS costs ILS ${pricingRates.extraPos} per month excluding VAT. Foody Orders and Foody Kitchen are available separately. Setup, hardware and payment fees are listed on the pricing page.`,
+        ],
+        [
+          "How do orders reach the kitchen?",
+          "Staff send orders into the preparation workflow configured for the restaurant. Kitchen ticket printing is a paid add-on, quoted separately after checking equipment and configuration. Foody Kitchen is the separate module for recipes, food cost, stock and preparations and can be paired with Foody Restaurant.",
+        ],
+        [
           "Does it work for cafés and quick service?",
           "Yes. Workflows can be adapted for counter service, dine-in, pickup and delivery. Modes and equipment are selected during setup.",
         ],
         [
           "Is the website connected to the POS?",
           "Yes. Your Foody website, QR and POS use the same platform. Menus, availability and order workflows follow your restaurant settings.",
+        ],
+        [
+          "Can Foody install the system and train my team in Israel?",
+          `Yes. Foody visits the restaurant for installation and staff training. Before launch, we check compatible devices, Internet access, printers and the payment provider. Standard setup costs ILS ${pricingRates.setup} once; on-site training, if selected, costs ILS ${pricingRates.training} per day. Prices exclude VAT. Hardware and payment services are quoted separately.`,
         ],
       ],
     ],
@@ -608,8 +729,8 @@ const entries: Record<
     ],
     pos: [
       "Cloud POS for iPad and Android in Israel",
-      "Foody POS brings sales, catalogues, tables and cloud management to iPad or Android. Add Foody Orders to sell online, or choose Foody Restaurant, which also includes QR ordering.",
-      "Fewer steps.\nMore time for customers.",
+      "Foody POS brings sales, catalogues, tables and cloud management to iPad or Android. POS is part of Foody Restaurant. Add Foody Orders to sell through your website.",
+      "Your POS,\non iPad or Android.",
       "Your POS runs on iPad or Android. Your business is managed in the cloud. Foody connects orders, catalogues, teams and payments, at the counter and remotely.",
       [
         [
@@ -631,16 +752,28 @@ const entries: Record<
           "Foody POS runs on iPad and Android, including Victa Portable devices configured with Foody. Star Micronics and Epson printers and accessories are selected for your setup.",
         ],
         [
-          "Does the interface support Hebrew?",
-          "Yes, including right-to-left layouts. English and French are also available.",
+          "Which languages do the POS and back office support?",
+          "Foody POS and management interfaces are available in French, Hebrew and English, with right-to-left display for Hebrew. These are staff interface languages, in addition to guest menu content.",
+        ],
+        [
+          "How much does Foody POS cost?",
+          `POS is part of Foody Restaurant at ILS ${pricingRates.restaurant} per location/month excluding VAT. It includes one named licence. Each additional employee who uses the POS costs ILS ${pricingRates.extraPos} per month excluding VAT. The pricing page details setup, training, hardware and payment fees.`,
+        ],
+        [
+          "Can any tablet accept a card payment?",
+          "The POS app does not turn a tablet into a card terminal. The provider, terminal model and connection must be compatible. A Victa Portable configured with Foody can combine ordering, payment and printed receipts on one device; that does not establish compatibility with every Android device or processing contract.",
+        ],
+        [
+          "Is an Internet connection required?",
+          "Cloud services, synchronisation and connected payments require Internet access. Before installation, check the network, device models and OS versions, printers and processing provider. If an operation fails, check the order or transaction status before trying again.",
         ],
       ],
     ],
     kitchen: [
-      "Kitchen management, stock and food cost in Israel",
-      "Connect recipes, preparations, purchasing prices and suppliers. Compare theoretical ingredient cost with real consumption.",
-      "Every dish starts with a recipe.\nEvery decision, with data.",
-      "Ingredient prices change. Production quantities do, too. Bring the information together to know what to prepare, what to order and what needs attention.",
+      "Restaurant kitchen and inventory management software in Israel",
+      "Foody Kitchen connects recipes, food cost per dish, ingredient inventory, suppliers and preparations. Foody Companion supports your team before, during and after service.",
+      "Kitchen management software.\nFrom prep to closing.",
+      "Foody Kitchen brings together restaurant recipes, purchase prices, stock and preparations. Check cost per dish, supplier receipts and variances, then follow consumption with mapped recipes and sales. Foody Companion is included for daily operations.",
       [
         [
           "From recipe to ingredient cost.",
@@ -656,6 +789,22 @@ const entries: Record<
         ],
       ],
       [
+        [
+          "How does kitchen management software differ from an order display?",
+          "An order display tells staff what to prepare. Foody Kitchen also covers recipes, ingredient units, cost per dish, inventory, supplier receipts and preparations. Displaying orders, limiting available dishes and tracking ingredients serve different needs; test your required workflow in a demonstration.",
+        ],
+        [
+          "When do sales update ingredient stock?",
+          "With Foody POS, configured recipes, quantities and sales mappings allow ingredient consumption to be recorded in the order workflow. Closing must not deduct previously recorded consumption again. An unmatched sale or missing recipe means partial coverage, not zero consumption. An external POS requires a separate connection review.",
+        ],
+        [
+          "How can I check a supplier discrepancy?",
+          "Compare the purchase order with quantities actually received. For an imported document, check ingredient matches, units, quantities and prices before confirming receipt. Document analysis does not confirm receipt; do not credit the same delivery twice.",
+        ],
+        [
+          "How much does Foody Kitchen cost, and do I need Foody POS?",
+          `Foody Kitchen costs ILS ${pricingRates.kitchen} per location/month excluding VAT, including Foody Companion. Buy it on its own or combine it with other Foody modules. Connecting an external POS requires a compatibility check and a quote.`,
+        ],
         [
           "What is theoretical versus actual food cost?",
           "Theoretical cost uses recipes and ingredient prices. Actual consumption also depends on counts, deliveries and waste. Comparing them helps identify discrepancies.",
@@ -688,7 +837,7 @@ const entries: Record<
       [
         [
           "Do customers need an app?",
-          "No. They open your website or scan a QR code and use the browser on their phone.",
+          "No. They open your website and order in their phone’s browser. QR ordering is included in Foody Restaurant.",
         ],
         [
           "Can I offer pickup only?",
@@ -696,11 +845,19 @@ const entries: Record<
         ],
         [
           "Do I need a Foody POS to use Foody Orders?",
-          "No. Foody Orders can be used on its own to manage orders, preparation and deliveries from the back office. It is also included in Foody Restaurant and Foody Restaurant & Kitchen. Kitchen ticket printing is a paid add-on.",
+          "No. Foody Orders can be used on its own to manage orders, preparation and deliveries from the back office. You can also pair it with Foody Restaurant. Kitchen ticket printing is a paid add-on.",
         ],
         [
           "How does preparation tracking differ from Foody Kitchen?",
           "Foody Orders brings together preparation and packing quantities from received orders. Foody Kitchen adds recipes, food cost, stock, suppliers and Foody Companion. You can add this module to your plan as needed.",
+        ],
+        [
+          "How much does Foody Orders cost?",
+          `Foody Orders costs ILS ${pricingRates.ordering} per location/month excluding VAT. Buy it on its own or pair it with Foody Restaurant. Website setup, payment services and kitchen ticket printing are priced separately.`,
+        ],
+        [
+          "Does Foody take a percentage of direct orders?",
+          "Foody’s percentage commission on direct orders is 0%. Subscription charges still apply. Processing, SMS, external couriers and third-party services are charged separately according to usage and contract. A 0% Foody commission does not remove every order cost.",
         ],
       ],
     ],

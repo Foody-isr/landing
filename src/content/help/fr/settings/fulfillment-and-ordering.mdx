@@ -7,7 +7,7 @@ apps: foodyadmin
 tags:
   - settings
   - fulfillment-policy
-updatedAt: '2026-10-25'
+updatedAt: '2026-11-09'
 featureId: fulfillment-policy
 audience: public
 releaseStatus: available
@@ -36,13 +36,13 @@ Pour les commandes en ligne au poids, ouvrez Réglages → Paiements & TVA avec 
 
 ## Choisir les canaux de commande
 
-Vérifiez retrait, livraison et commande à table activés, minimums, frais et préparation. Modifiez une règle à la fois et son explication publique. Les commandes publiques peuvent être suspendues indépendamment des horaires du restaurant.
+Vérifiez retrait, livraison et commande à table activés, minimums, frais et préparation. Modifiez une règle à la fois et son explication publique. Les commandes publiques peuvent être suspendues indépendamment des horaires du restaurant. Un lien Traiteur configuré dans la navigation mobile apparaît quand le service Traiteur est actif.
 
 <span id="schedule" />
 
 ## Régler les limites de planification
 
-Vérifiez commande immédiate/planifiée, délai minimal, horizon et créneaux. Les clôtures des lots de précommandes et dates de tournées se configurent séparément. Un créneau doit respecter toutes les règles applicables.
+Vérifiez commande immédiate/planifiée, délai minimal, horizon et créneaux. Les clôtures des lots de précommandes et dates de tournées se configurent séparément. Un créneau doit respecter toutes les règles applicables. Pour une livraison classique avec calendrier de zone, définissez les horaires dans l’onglet Livraison et la durée des créneaux ici ; la zone ne conserve que les jours desservis, le mode de choix et le tarif. Le délai du panier, son mode de calcul et les fermetures filtrent ces créneaux. Les anciennes heures de zone ne s’appliquent plus aux nouvelles réservations ; les commandes déjà enregistrées gardent leur promesse. Avec les versions compatibles, les jours du jour même, le transport et la confirmation de l’horaire se règlent dans chaque zone. Les horaires du restaurant et la préparation des produits restent obligatoires. Une commande planifiée peut être prévue aujourd’hui. L’équipe peut vérifier les calendriers enregistrés avec un panier et une adresse dans Commandes et disponibilité → Simuler une commande, sans créer de commande ni message.
 
 <span id="test-access" />
 
@@ -135,3 +135,49 @@ Vous pouvez sélectionner une ancienne série dans le calendrier ; cette consult
 ## Piloter manuellement les commandes hebdomadaires
 
 Dans Admin → Paramètres → Commandes et livraison → Commandes et disponibilité → Lot hebdomadaire, avec settings.edit, choisissez Ouverture manuelle ou Selon un calendrier, puis Enregistrer les modifications. Le mode manuel conserve la pause en cours ; sélectionner ce mode ne rouvre pas les commandes. Utilisez Mettre en pause les commandes en ligne → Non pour ouvrir, ou Oui pour fermer. Le mode manuel n’a ni ouverture, ni clôture, ni reprise automatique programmée. Les jours et créneaux de livraison/retrait, règles de préparation, stocks et commandes existantes sont conservés. Les nouvelles commandes rejoignent la série de livraison en cours même après l’ancienne clôture, jusqu’à la fin de son dernier jour de service dans le fuseau du restaurant. Vérifiez la date proposée avant confirmation. Revenir au calendrier restaure les horaires conservés. En cas d’échec, gardez le brouillon et relisez le statut confirmé avant de réessayer. Désactivez l’Accès de test temporaire actif avant de rouvrir au public ; son expiration ou sa désactivation seule laisse les commandes en pause. Déployez l’API compatible avant ce choix ; une API ancienne le rend indisponible.
+
+<span id="recorded-lifecycle-and-policy" />
+
+## Distinguer réglage actuel et progression enregistrée
+
+Le réglage du mode ou du flux détermine les actions disponibles pour les nouvelles opérations ; il ne reconstitue pas l’historique d’une ancienne commande. Consultez préparation, remise et paiement séparément. Une information inconnue n’est ni une remise confirmée ni un paiement dû. Après une lecture indisponible, réessayez avant toute nouvelle opération financière. Voir [addition, paiement, préparation et remise](/fr/help/orders/payment-preparation-and-handoff).
+
+<span id="prepared-sumit-checkout-integration" />
+
+## Intégration du panier préparé Sumit
+
+Pour un lien de panier interne Sumit compatible, l’adresse du destinataire est vérifiée selon zone, frais et minimum actuels. La date choisie est conservée et doit respecter le calendrier de la zone correspondante. Le total final est vérifié avant paiement. Voir [le parcours Sumit](/fr/help/orders/internal-sumit-checkout).
+
+<span id="stancer-cash-guarantee" />
+
+## Utiliser les espèces avec garantie bancaire facultative
+
+Dans Admin → Paramètres → Paiements, avec la permission settings.edit, choisissez Autres moyens autorisés pour accepter les espèces. Pour un prestataire compatible, Paiements en espèces propose Accepter les espèces pour tous les clients : Oui autorise tous les clients, sans condition de confiance ; Non refuse les espèces pour tous. Le réglage Exiger une garantie par carte pour les espèces reste indépendant : activez-le uniquement si vous souhaitez réserver 100 % du total sur la carte, puis enregistrez et vérifiez les valeurs. La garantie est désactivée par défaut. Elle est disponible aujourd’hui pour Stancer configuré en EUR ; les autres intégrations utilisent ce même affichage lorsque leur parcours de garantie espèces est pris en charge. Les prestataires incompatibles conservent leurs réglages espèces sans proposer cette garantie. Un ancien réglage limité aux clients de confiance reste conservé jusqu’à votre choix explicite Oui ou Non ; modifier la TVA ou les pourboires ne le remplace pas. Le paiement exclusivement en ligne exclut toujours les espèces. Avant une utilisation réelle de la garantie, vérifiez avec votre compte Stancer l’annulation d’une réservation autorisée en sandbox, les délais de libération et les frais.
+
+Conditions d’activation et reprise : [garantie bancaire pour les espèces](/fr/help/payments/cash-card-guarantee). Vérifiez le bloc facultatif Livraison le jour même dans Zones de livraison séparément des réglages ordinaires de créneaux et de lots. Il limite uniquement les nouvelles commandes pour aujourd’hui dans le fuseau du restaurant ; les précommandes conservent leurs règles de zone. L’estimation avec confirmation par le restaurant ajoute le transport à la préparation dans les horaires de livraison, sans remplacer les plages des lots hebdomadaires. Les horaires personnalisés des créneaux restent prioritaires sur les horaires du service. Ne désactivez pas toutes les zones pour arrêter les commandes : utilisez le service ou la pause.
+
+<span id="independent-lifecycle-confirmations" />
+
+## Vérifier les confirmations indépendantes
+
+Les modes de traitement du système de caisse proposent deux suivis distincts : préparation et remise. Enregistrez la politique du mode dans le catalogue global. Elle s’applique aux nouvelles ventes et reste figée avec elles ; une modification ultérieure ne réécrit pas l’historique. Les modules partagés du mode d’appareil restent distincts de cette politique globale. Voir [les réglages de suivi](/fr/help/orders/payment-preparation-and-handoff#frozen-tracking-policy).
+
+<span id="ordering-simulation-clock" />
+
+## Tester la date de passage d’une commande
+
+Dans Commandes et disponibilité → Simuler une commande, choisissez Date et heure de la commande dans le fuseau affiché, puis la date de réception et le panier. Maintenant recharge l’heure du serveur. La préparation et les règles du jour même sont évaluées à cette référence, avec les réglages enregistrés et les quantités prêtes actuelles. Une date passée ne reconstitue pas l’historique ; le test ne réserve pas de livreur et ne crée aucune commande. Les commandes clientes gardent l’heure réelle du serveur. Voir [la procédure de simulation](/fr/help/orders/preorders-and-batches#simulate-order).
+
+Le simulateur utilise aussi le réglage historique stock prédéfini compté + vente immédiate. Quand toute la quantité demandée d’un article est prête, ses créneaux de retrait du jour évitent la fabrication, comme le calcul de livraison. Un panier mixte conserve la préparation des articles à fabriquer ; une quantité supérieure au stock prêt perd cette exception. Le résultat explique quand le stock prêt participe au calendrier. Le stock prédéfini historique conserve ses règles existantes de réception future ; seul le compteur indépendant daté utilise la nouvelle date de validité. Un restaurant en commandes planifiées exige toujours un créneau. La simulation ne crée aucune commande et ne réserve aucun stock ; la validation finale contrôle encore les limites de vente, les ingrédients et la commande complète.
+
+<span id="card-collection-recovery" />
+
+## Respecter un encaissement carte en cours
+
+Un encaissement carte natif non résolu réserve sa commande et son terminal d’origine. Ne modifiez pas son contenu financier et ne lancez pas un autre paiement ; la préparation et les réglages de traitement restent indépendants. Consultez le [choix Mini/Portable et la reprise](/fr/help/payments/victa-mini#explicit-terminal-selection).
+
+<span id="configurable-production-exceptions" />
+
+## Vérifier les exceptions de préparation
+
+Les versions compatibles ajoutent des échéances par zone de livraison et un stock de produits préparés par article, chacun activé explicitement pour le restaurant. Ils conservent le retrait, les limites de vente et les autres restaurants. Le délai général sert avant la sélection des produits ; le calendrier est recalculé avec le panier. Consultez [la combinaison des règles](/fr/help/orders/preorders-and-batches#product-stock-and-zone-deadlines) avant de configurer ou simuler une commande.

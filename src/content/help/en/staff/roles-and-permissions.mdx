@@ -5,7 +5,7 @@ apps: both
 tags:
   - staff
   - staff-roles
-updatedAt: '2026-10-21'
+updatedAt: '2026-11-08'
 featureId: staff-roles
 audience: public
 releaseStatus: available
@@ -45,3 +45,9 @@ Settings → Usage and quotas displays this restaurant’s Google/Geoapify allow
 ## POS code at staff activation
 
 Staff activation checks the permissions assigned in this restaurant, including custom roles: orders.manage or payments.manage requires a private POS code. Read-only couriers and kitchen-only roles do not need one. Existing unused invitation links apply the same current rule. Changing a role label, courier address or route destination does not grant POS permissions. See [activation and recovery](/en/help/getting-started/first-login#activate).
+
+<span id="end-of-day-permissions" />
+
+## Authorize end-of-day closing
+
+Each POS participating in closing needs an active personal session and payments.manage. Including the drawer also requires orders.manage. Setting the main iPad requires settings.edit on that enrolled device. The API verifies the assigned device and terminal before each transmission. See [closing and recovery](/en/help/payments/end-of-day).

@@ -5,7 +5,7 @@ apps: foodypos
 tags:
   - settings
   - pos-workspace
-updatedAt: '2026-10-27'
+updatedAt: '2026-11-11'
 featureId: pos-workspace
 audience: public
 releaseStatus: available
@@ -26,11 +26,15 @@ Sur un POS compatible mis à jour, avec orders.manage, une ancienne commande man
 
 Une table peut donc avoir une session actuelle vide et des commandes antérieures encore dues : ce ne sont pas la même addition. L’ouverture ne fusionne, ne clôture, n’archive et ne règle rien. Les actions admissibles d’une commande sauvegardée restent limitées à son numéro et aux droits requis. Si la session change pendant le chargement, revenez à Commandes ou rouvrez la table actuelle ; ne recréez pas la commande et ne relancez pas un paiement pour contourner l’erreur. La mise à jour de l’API seule ne met pas à jour le POS installé.
 
+Après un paiement accepté, une erreur de fermeture ne justifie pas un nouvel encaissement. Suivez [la vérification de fermeture de la session](/fr/help/tables-floors/staff-and-assistance#paid-table-close-recovery).
+
 <span id="saved-order-workspace" />
 
 ## Distinguer la commande sélectionnée de l’addition de table
 
 Avec orders.manage, une commande active QR ou web ouvre Menu avec sa propre addition enregistrée à droite sur tablette. Le catalogue reste consultable sans modifier les lignes ou un brouillon local. Actions gère uniquement cette commande ; Client montre son propre contact. Afficher la table ouvre séparément la session actuelle vérifiée et, si nécessaire, un choix d’addition. Le cadre, les onglets et les cartes sont ceux du Menu habituel, sans barre de retour supplémentaire. Commandes dans la navigation principale revient à la liste. Actualiser et les états de la commande sont dans Actions. Une erreur de lecture affiche Réessayer, pas un panier vide. Les historiques et rôles de consultation restent en lecture seule. Voir [le parcours détaillé](/fr/help/orders/managing-orders#open-saved-order-in-menu).
+
+Sur iPad compatible, la vue Additions de Commandes sert à consulter les additions manuelles ouvertes, y compris celles de table et nommées ; les commandes QR/web restent séparées dans les autres vues. Voir [les additions ouvertes sur iPad](/fr/help/orders/managing-orders#ipad-open-checks). Le parcours de consultation mobile reste inchangé.
 
 <span id="cash-report-unconfirmed" />
 
@@ -58,6 +62,8 @@ Si l’établissement, la connexion ou le terminal change, [rouvrez la confirmat
 
 Utilisez les raccourcis Accueil ou Plus pour Analyses, Cuisine, Personnel et Paramètres. Commandes regroupe les parcours de commande actifs et historiques. Transactions est distinct et liste les paiements confirmés pour payments.view ou payments.manage ; sur un terminal compact, il se trouve dans Plus. Rapports dans Plus contient les Dépôts du terminal Verifone pour les responsables des paiements (payments.manage). Une destination absente peut dépendre des droits ou de l’activation ; vérifiez le compte et le profil avant réinstallation.
 
+Dans Paramètres → Compte → Profil, vérifiez le nom et l’e-mail de l’employé connecté au POS. La connexion à FoodyAdmin est distincte : changer le compte ou le restaurant dans Admin ne change pas l’employé sur l’iPad. Pour utiliser le code d’un autre employé, terminez normalement le service actuel puis connectez cet employé avec son code personnel. Un rapport de caisse non confirmé doit être résolu avant de quitter la session ; le profil est une consultation et ne propose pas de changement de compte.
+
 <span id="preferences" />
 
 ## Personnaliser l’appareil
@@ -81,3 +87,47 @@ Sur le terminal portable, les initiales en bas à gauche ouvrent Plus ; elles vi
 ## Consulter l’aperçu et les disponibilités du terminal
 
 Sur un terminal portable, touchez la maison pour ouvrir l’Aperçu. Le nom du restaurant et les cartes repliables présentent les disponibilités, les commandes nouvelles/en cuisine/prêtes et l’état des tables autorisés pour votre rôle. Ouvrez Voir la disponibilité de tous les articles pour rechercher les articles actifs des menus disponibles en caisse. La liste reprend le même catalogue que la prise de commande POS ; elle ne dépend pas d’un état général du menu différent de sa disponibilité en caisse. Les états sont Disponible, Stock faible, Indisponible ou Non renseignée ; une quantité apparaît seulement si elle est fournie. Une disponibilité inconnue ne vaut pas disponibilité. Les groupes masqués, leurs descendants et les composants réservés aux formules ne sont pas inclus. Actualiser recharge les lectures ; un échec affiche un message avec nouvelle tentative. Les boutons des cartes ouvrent les commandes ou les additions selon vos droits. L’Aperçu lit les données sans changer le stock ni les commandes.
+
+<span id="local-draft-and-lifecycle" />
+
+## Reprendre le travail après une interruption
+
+Le panier local non envoyé et l’addition enregistrée sur le serveur sont distincts. Sur une version compatible, [rouvrez le brouillon du même compte et de la même installation](/fr/help/orders/taking-an-order-pos#resume-local-draft) ; un envoi incertain demande une vérification ou une reprise explicite de son identité d’origine. Les états de paiement, de préparation et de remise restent séparés, y compris pour une addition partagée. Changer d’écran ne renvoie pas automatiquement les articles.
+
+Pour une addition ouverte, vérifiez l’envoi dans Addition et l’avancement au KDS du passe. Consultez [le suivi d’un plat à table](/fr/help/orders/taking-an-order-pos#open-check-kitchen-progress).
+
+<span id="end-of-day-navigation" />
+
+## Ouvrir la clôture de journée
+
+Avec les versions compatibles, ouvrez Plus → Rapports → Solde en caisse sur l’iPad du comptoir. Le responsable peut y définir la caisse principale et y piloter le tiroir et les transmissions des terminaux. Historique de caisse donne accès au Z finalisé et aux copies SHVA disponibles. Sur les versions antérieures, les actions restent accessibles selon les capacités de l’appareil. Consultez [la procédure de clôture](/fr/help/payments/end-of-day).
+
+<span id="victa-mini-hardware" />
+
+## Connecter et retrouver le Victa Mini sur iPad
+
+Dans la version compatible, Matériel → Terminaux de paiement réunit les terminaux enregistrés sur cet iPad et ceux de l’inventaire du restaurant. Un terminal apparaît une fois lorsque les deux sources identifient le même appareil. Ouvrez sa fiche pour accéder à Tester la connexion. Pour une ancienne association, vérifiez le numéro de série dans Modifier. Voir [la connexion du Victa Mini](/fr/help/payments/victa-mini#connection).
+
+<span id="physical-card-destination" />
+
+## Vérifier la destination physique du paiement carte
+
+Avec les versions POS/API compatibles, vérifiez la destination physique avant l’encaissement carte : consultez le [choix Mini/Portable](/fr/help/payments/victa-mini#explicit-terminal-selection) et la [configuration vérifiée du matériel](/fr/help/payments/victa-mini#connection). Les identifiants existants, la séparation QR, la préparation et les réglages de libération des tables restent indépendants. Une réservation terminal non résolue bloque un autre encaissement ; reprenez l’opération d’origine plutôt que de créer une vente de remplacement.
+
+<span id="unified-cash-workspace" />
+
+## Utiliser le suivi de caisse commun
+
+Avec les droits de paiement et les versions compatibles, ouvrez Plus → Rapports → Solde en caisse. Le même espace présente le tiroir espèces, les encaissements carte enregistrés par terminal et la clôture guidée. Historique de caisse réunit les sessions espèces closes et les rapports Z finalisés. Les anciennes adresses de clôture et de dépôt rejoignent cet espace ; les API plus anciennes conservent leur parcours précédent. Consultez [le parcours de caisse commun](/fr/help/payments/end-of-day#unified-cash-workspace).
+
+<span id="ashrait-last-transaction-inspection" />
+
+## Consulter la dernière transaction du terminal
+
+Avec la version compatible et le droit de gérer les paiements, ouvrez Matériel → Terminaux de paiement, puis la fiche du terminal voulu et Dernière transaction du terminal. Choisissez Consulter la dernière transaction pour interroger cet appareil. Voir [la procédure et ses limites](/fr/help/payments/ashrait-terminal-inspection).
+
+<span id="compact-actions-navigation" />
+
+## Revenir à une addition sur un appareil compact
+
+Dans le Menu compact compatible, ouvrez Actions en bas pour accéder à Envoyer, Enregistrer ou Payer selon l’état de l’addition. Choisir une action ferme cette fenêtre avant la suite du parcours. Revenir ensuite à l’addition affiche ses commandes actuelles, sans ancienne fenêtre superposée. Fermer la fenêtre seule ne paie ni n’envoie rien.

@@ -7,7 +7,7 @@ apps: foodypos
 tags:
   - orders
   - pos-comp-void
-updatedAt: '2026-10-26'
+updatedAt: '2026-10-29'
 featureId: pos-comp-void
 audience: public
 releaseStatus: available
@@ -48,6 +48,8 @@ Choisissez Offert et le motif requis, puis vérifiez le titre et le périmètre 
 
 Utilisez Annuler uniquement pour les plats impayés éligibles et indiquez le motif. Plat préparé/terminé ou fraction payée/réservée peut bloquer. Pour un plat envoyé, vérifiez résultat et ticket d’annulation au lieu de supprimer une ligne de brouillon. Annuler n’est pas rembourser un paiement.
 
+Dans Menu → Actions, Annuler l’addition concerne l’addition ouverte admissible. Pour une ligne déjà envoyée, ouvrez les options de cette ligne. Effacer les articles retire uniquement les lignes locales non envoyées après confirmation.
+
 <span id="counter-terminal-payment-before-kitchen" />
 
 ## Attendre le paiement au comptoir avant la cuisine
@@ -65,3 +67,23 @@ Un article configuré avec des positions répétées demande un choix distinct p
 ## Accéder aux options sur mobile
 
 Sur le POS mobile mis à jour, ouvrez la ligne puis ⋯ en haut de la fiche article pour retrouver les options autorisées, dont Offrir ou Supprimer pour un brouillon admissible. Le panneau reste soumis aux motifs configurés et aux droits existants. Fermez-le avec Terminé pour revenir à la fiche. Les remises et opérations de toute l’addition restent dans Actions. Le changement de présentation ne rend pas une ligne envoyée modifiable et ne débloque pas un remboursement.
+
+<span id="uncertain-intent-and-operational-facts" />
+
+## Vérifier l’addition avant une correction
+
+Rouvrez l’addition ou la commande visée et vérifiez son état enregistré avant une réduction, une offre ou une annulation. Le paiement reste distinct de la préparation ; un remboursement ne prouve pas que le travail cuisine a été annulé. Ne modifiez pas le panier pour contourner un envoi non confirmé : [vérifiez d’abord son résultat enregistré](/fr/help/orders/taking-an-order-pos#resume-local-draft). Utilisez uniquement les corrections proposées avec vos permissions. Cette vérification ne crée ni avoir, ni nouvelle collecte, ni annulation cuisine automatique.
+
+<span id="independent-lifecycle-confirmations" />
+
+## Vérifier les confirmations indépendantes
+
+Dans les actions d’une commande enregistrée, vérifiez les faits de préparation et de remise séparément du paiement. La revue de remise sélectionne les unités physiques réellement concernées ; le partage financier ne les multiplie pas. Avant une clôture, revoyez l’addition ou la part exacte et son solde confirmé. Une portée clôturée refuse de nouvelles modifications commerciales ; un autre lot ouvert n’est pas clôturé par cette action. Voir [le suivi et les confirmations](/fr/help/orders/payment-preparation-and-handoff).
+
+Ce parcours concerne les commandes dont la vue de traitement propose une remise. Pour une addition ouverte de table, nommée ou fractionnée dans Menu, vérifiez l’envoi dans Addition et l’avancement au KDS du passe.
+
+<span id="card-collection-recovery" />
+
+## Respecter un encaissement carte en cours
+
+Un encaissement carte natif non résolu réserve sa commande et son terminal d’origine. Ne modifiez pas son contenu financier et ne lancez pas un autre paiement ; la préparation et les réglages de traitement restent indépendants. Consultez le [choix Mini/Portable et la reprise](/fr/help/payments/victa-mini#explicit-terminal-selection).

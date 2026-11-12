@@ -5,7 +5,7 @@ apps: foodyweb
 tags:
   - guest
   - guest-account-tracking
-updatedAt: '2026-10-25'
+updatedAt: '2026-11-11'
 featureId: guest-account-tracking
 audience: public
 releaseStatus: available
@@ -16,19 +16,25 @@ Use the confirmation/tracking link or the restaurant’s order-history/account e
 
 ## Sign in before ordering
 
-At the start of the Pickup/Delivery dialog, choose Sign in or Continue as a guest below it. Both are text actions, without a filled sign-in button. No address field or confirmation button appears before this choice. Sign-in offers Google or email verification; closing it returns to the choices. The benefit text covers saved address/payment methods/orders for Delivery and saved details/payment methods/orders for Pickup. Continue as a guest reveals address entry for Delivery; Pickup shows collection details and menu access without asking for a delivery address. Back returns to the choices without clearing the draft. The guest choice is retained when switching services and closing/reopening this dialog. Signed-in customers proceed directly: a saved address with a validated selection offers Use this address and Edit. Incomplete addresses still require completion. Signing in after starting an address retains the draft. Saving a payment method remains a separate checkout choice. Sign in opens Google and the email/password form. Facebook and Apple appear only when configured by the service. Standalone email-code sign-in is no longer offered. Account creation, address verification and password-recovery codes remain separate.
+When the site offers sign-in for pickup or delivery, Sign in is followed by the benefits of using an account. Select Order without an account just below to go straight to the details. For delivery, enter the address. For pickup, confirm the collection details. Sign in opens the email and password form and any available providers. Facebook and Apple appear only when configured by the service. Standalone email-code sign-in has been removed. Account creation, address verification and password recovery use separate codes. Closing sign-in preserves the draft. In the classic window, Back returns to the two choices and the guest choice is kept when you change service or reopen the window. Saving a payment method remains a separate choice at checkout.
+
+<span id="order-as-guest-after-sign-out" />
+
+## Sign out to order without an account
+
+If you already have a session, Signed in and your account appear above the pickup or delivery details in both the classic window and the Order method flow. Select Sign out and order without an account to continue with the same method. Your cart is kept. For delivery, enter the address for this order again. If Foody cannot confirm sign-out, try the same link again. To continue with your account, confirm the details or select Use this address if your saved address is validated. You can edit an incomplete address.
 
 <span id="tracking" />
 
 ## Read the current order state
 
-Open tracking and review the latest saved status and fulfillment information. Contact the restaurant for an operational change; the Foody help assistant cannot edit the order. Keep private tracking/receipt links out of public messages.
+Open tracking to review the latest saved operational progress and the separate payment state. A prepaid order may still be in preparation; payment does not complete preparation or handoff milestones. A refund alone cannot reconstruct service: known operational facts are retained, otherwise progress remains unknown. If a refresh fails, use Retry; do not start a second payment to resolve unconfirmed information. Contact the restaurant for an operational change; the Foody help assistant cannot edit the order. Keep private tracking and receipt links out of public messages. If the courier reports a delivery problem, the live courier location is unavailable until a new route starts. Contact the restaurant to check what happens next.
 
 <span id="history" />
 
 ## Access history and receipts
 
-Complete the offered customer authentication/verification, then open the correct restaurant’s history. Select an order to view its digital receipt and available print/share/new-order actions. Reopening a receipt does not create a new order or payment.
+Complete the offered customer authentication/verification, then open the correct restaurant’s history. Select an order to view its digital receipt and available print/share/new-order actions. Reopening a receipt does not create a new order or payment. If the restaurant has placed Order history in its mobile bar or in More, you can also open your orders from that link.
 
 <span id="methods" />
 
@@ -58,10 +64,28 @@ Configured providers may load their library when their choices are displayed and
 
 ## Sign in while ordering
 
-When the invitation is off, a discreet Sign in link remains available in the pickup or delivery dialog. It opens authentication only when selected; dismissing authentication retains entered details and allows ordering without an account.
+With the Order method format selected, customers go directly from their service choice to a separate pickup or delivery screen. The sign-in invitation applies on the Pickup and Delivery screens and in the classic window. When the invitation is off, a discreet Sign in link remains available on the Pickup and Delivery screens and in the classic window. It opens authentication only when selected; dismissing authentication retains entered details and allows ordering without an account.
 
 <span id="saved-phone-validation" />
 
 ## Correct a saved phone number
 
 A saved or previously verified number restores its own calling code, even when its country differs from the restaurant. An empty field defaults to the restaurant country. At checkout, a saved phone must pass the same validation as a new number. If it is invalid, contact details stay open for correction. Choose the correct country code or enter the international number with +, then review the order before confirming. The saved format is international and compatible with WhatsApp messaging. This does not prove ownership or WhatsApp registration and does not change your sign-in method. To save the corrected contact details in your account, use the remember-details preference offered at checkout.
+
+<span id="prepared-sumit-basket" />
+
+## Open a prepared Sumit basket
+
+A private Foody link prepared by the restaurant opens its basket without loading an account profile or saved addresses. Enter your details, review any address-based delivery total and continue to Sumit. After API-confirmed payment, the usual confirmation and tracking pages open with the private order token. See [prepared Sumit checkout](/en/help/orders/internal-sumit-checkout).
+
+<span id="independent-lifecycle-confirmations" />
+
+## Review independent confirmations
+
+Your order tracking distinguishes payment, preparation and recorded handoff, including partial handoff. Not tracked differs from unknown evidence. An unknown monetary value is not zero and does not offer a guessed payment. Other guests’ QR orders at the same table remain separate and are not exposed by this view. See [order states](/en/help/orders/payment-preparation-and-handoff).
+
+<span id="prepared-order-existing-cart" />
+
+## Prepared basket and restaurant presentation
+
+A private Sumit prepared-order link enters the restaurant’s existing cart, then its checkout with the published colors, fonts and fields. The personal browser basket is retained; prepared items, prices and date stay fixed. Contact details and requested answers belong to this order, without loading an account or saved card. Custom answers bind when payment first opens. Delivery fees are recalculated and reviewed before payment. See the [Sumit procedure](/en/help/orders/internal-sumit-checkout).

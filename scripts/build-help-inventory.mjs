@@ -13,7 +13,7 @@ const workspace = path.dirname(landing);
 const features = JSON.parse(fs.readFileSync(path.join(landing, 'docs/help/catalog/features.json'), 'utf8'));
 const languages = ['en', 'fr', 'he'];
 const digest = value => crypto.createHash('sha256').update(value).digest('hex');
-const sourceExtension = /\.(?:tsx?|jsx?|mjs|css|go|dart|swift|kt|json|arb)$/;
+const sourceExtension = /\.(?:tsx?|jsx?|mjs|css|go|dart|swift|kt|m|h|json|arb)$/;
 const sourceRoots = /^(?:src|app|components|lib|services|store|internal|config|cmd|ios\/Runner|ios\/AppIntents|android\/app\/src)\//;
 const excluded = /(?:^|\/)(?:__tests__|test|tests|node_modules|build|Pods|\.dart_tool|generated|l10n\/app_localizations[^/]*)(?:\/|$)|(?:\.test|\.spec|_test|\.g|\.freezed)\./;
 const glob = value => new RegExp('^' + value.split('**').map(part => part.split('*').map(x => x.replace(/[.+?^${}()|[\]\\]/g, '\\$&')).join('[^/]*')).join('.*') + '$');
@@ -48,7 +48,12 @@ for (const [service, configuredRoot] of Object.entries(roots)) {
   const root = path.resolve(workspace, configuredRoot);
   const hasGit = !!git(root, 'rev-parse', '--show-toplevel') && git(root, 'rev-parse', '--show-toplevel') === root;
   const listed = hasGit ? [...new Set((git(root, 'ls-files') + '\n' + git(root, 'ls-files', '--others', '--exclude-standard')).split('\n').filter(Boolean))] : walk(root);
-  const files = listed.filter(file => sourceRoots.test(file) && sourceExtension.test(file) && !excluded.test(file) && fs.existsSync(path.join(root, file))).sort();
+  // Only authored migration selectors opt SQL into evidence. Do not expand the
+  // review to every historical migration or to compressed/database data files.
+  const explicitMigration = file => service === 'foodyserver'
+    && /^migrations\/[^/]+\.sql$/.test(file)
+    && selectors.some(feature => feature.compiled[service]?.some(pattern => pattern.test(file)));
+  const files = listed.filter(file => ((sourceRoots.test(file) && sourceExtension.test(file)) || explicitMigration(file)) && !excluded.test(file) && fs.existsSync(path.join(root, file))).sort();
   const classes = new Map();
   for (const file of files.filter(f => f.endsWith('.dart'))) for (const match of fs.readFileSync(path.join(root, file), 'utf8').matchAll(/\bclass\s+(\w+)/g)) classes.set(match[1], [...(classes.get(match[1]) || []), file]);
   const sources = {};
@@ -60,11 +65,68 @@ for (const [service, configuredRoot] of Object.entries(roots)) {
     // access, but it does not change order creation, types or fulfillment.
     // This extracted resolver classifies cash POS access failures only; it does
     // not introduce order creation, fulfillment or order-type procedures.
-    const ids = service === 'foodyserver' && file === 'internal/orders/cash_drawer_context.go'
+    const cashGuaranteeModule = (service === 'foodyserver' && ['internal/common/cash_guarantee.go','internal/orders/cash_guarantee.go','internal/payment/cash_guarantee.go'].includes(file)) || (service === 'foodyadmin' && file === 'src/components/orders/CashGuaranteePanel.tsx');
+    // Dedicated EOD and guarded cash presentation do not change ordinary
+    // order handling or offering/void procedures.
+    const endOfDayModule = service === 'foodyserver' && /^internal\/(?:orders|common)\/end_of_day[^/]*\.go$/.test(file);
+    const guardedCash = service === 'foodypos' && file === 'lib/features/orders/presentation/cash_collection_guard.dart';
+    const eventModule = (service === 'foodyserver' && ['internal/common/order_event.go','internal/orders/event_orders.go','internal/orders/event_edit.go','internal/payment/event_hold.go','internal/payment/event_checkout.go','internal/menu/event_settings.go','migrations/286_internal_event_orders.sql'].includes(file)) || (service === 'foodyadmin' && (/src\/components\/orders\/EventOrder[^/]*\.tsx$/.test(file) || file === 'src/lib/orders/event-order-copy.ts')) || (service === 'foodyweb' && ['components/EventCheckoutFields.tsx','lib/event-order-copy.ts'].includes(file)) || (service === 'foodypos' && file === 'lib/core/ui/event_order_badge.dart');
+    // These dedicated item-to-carte modules do not configure variants, recipes,
+    // modifiers or other features covered by the broad menu-item selectors.
+    const itemMenuAssignmentModule = service === 'foodyadmin' && [
+      'src/components/MenuGroupPicker.tsx', 'src/components/menu-item/ItemMenuSaveNotice.tsx',
+      'src/lib/item-menu-assignments.ts', 'src/lib/itemDraft.ts',
+    ].includes(file);
+    const sandboxBillingModule = matched.includes('foody-billing-sandbox');
+    const walletStudioModule = service === 'foodyserver' && matched.includes('customers-wallet-studio') &&
+      /^(?:cmd\/server\/wallet_studio\.go|internal\/common\/loyalty_wallet_design\.go|internal\/loyalty\/wallet_studio(?:_artwork|_handler)?\.go|internal\/loyaltywallet\/apple_studio\.go|migrations\/315_loyalty_wallet_designs\.sql)$/.test(file);
+    // Standalone sandbox subscription files do not implement operational or
+    // production payments even when shared selectors cover the same directories.
+    let ids = sandboxBillingModule ? ['foody-billing-sandbox'] : itemMenuAssignmentModule ? ['menu-categories-and-items', 'menu-creating-a-menu-item', 'menu-menus-and-groups'] : eventModule ? ['orders-events'] : endOfDayModule ? ['pos-end-of-day'] : guardedCash ? ['pos-payments', 'pos-end-of-day'] : cashGuaranteeModule ? ['stancer-cash-guarantee'] : service === 'foodyserver' && file === 'internal/orders/cash_drawer_context.go'
       ? ['pos-payments', 'pos-cash-access-diagnostics']
       : service === 'foodyserver' && /^internal\/orders\/transactions(?:_handler|_adjustments)?\.go$/.test(file)
         ? ['pos-payments'] : service === 'foodyserver' && file === 'internal/menu/item_photos.go'
           ? ['menu-product-photos'] : matched.length ? matched : ['shared-runtime'];
+    // Dedicated shelf-stock modules do not implement modifier, combo, variant
+    // or payment procedures merely because those guides share broad domain globs.
+    const focusedStockOwnership = {
+      'foodyserver:internal/menu/prepared_stock.go': ['kitchen-availability', 'menu-creating-a-menu-item'],
+      'foodyserver:internal/orders/prepared_stock.go': ['kitchen-availability', 'preorders', 'guest-ordering'],
+      'foodyserver:internal/restaurants/fulfillment_stock.go': ['kitchen-availability', 'preorders', 'guest-ordering'],
+      'foodyserver:internal/salesstock/prepared_stock.go': ['kitchen-availability', 'menu-creating-a-menu-item', 'preorders'],
+      'foodyadmin:src/components/menu-item/PreparedStockEditor.tsx': ['kitchen-availability', 'menu-creating-a-menu-item'],
+    };
+    const currentPOSProofOwnership = {
+      'foodyserver:internal/devices/pos_device_proof.go': ['staff-devices-shifts', 'pos-payments', 'pos-end-of-day'],
+      'foodyserver:internal/orders/pos_device_context.go': ['pos-payments', 'pos-end-of-day'],
+      'foodyserver:internal/shifts/pos_device_context.go': ['staff-devices-shifts', 'platform-api'],
+    };
+    // Dedicated fleet requests and registrations do not change onboarding or access.
+    const terminalFleetModule = (service === 'foodyserver' && (
+      /^internal\/admin\/terminal_fleet_(?:changes|mini|vhq)\.go$/.test(file) || file === 'internal/admin/vhq_client.go' ||
+      /^internal\/(?:admin|orders|common)\/terminal_fleet_maintenance\.go$/.test(file)
+    )) || (service === 'foodypos' && /\/ashrait_maintenance(?:_repository|_tile|_worker)?\.dart$/.test(file));
+    const ashraitCSTModule = (service === 'foodyserver' && (
+      /^internal\/(?:orders|common)\/ashrait_adjustment\.go$/.test(file) ||
+      file === 'internal/orders/transactions_ashrait.go'
+    )) || (service === 'foodypos' && file === 'lib/services/payments/ashrait_adjustment_repository.dart');
+    // Receipt archives use the order database and shared printer transport.
+    // Their contracts cover the payment details and receipt copies only.
+    const ashraitReceiptOwnership = {
+      'foodyserver:internal/common/ashrait_receipt.go': ['payments-transactions'],
+      'foodyserver:internal/orders/ashrait_receipt.go': ['payments-transactions'],
+      'foodyserver:internal/orders/ashrait_receipt_handler.go': ['payments-transactions'],
+      'foodypos:lib/services/printing/ashrait_receipt_fields.dart': ['payments-transactions', 'pos-ashrait-terminal-inspection'],
+    };
+    const mobileHomeOwnership = service === 'foodyserver' && file === 'internal/restaurants/website_mobile_home.go'
+      ? ['website-navigation', 'website-qr-customize-your-site'] : undefined;
+    const saleReceiptLayoutModule = service === 'foodyserver' &&
+      /^internal\/printing\/(?:sale_receipt_\w+|epson_receipt)\.go$/.test(file);
+    ids = terminalFleetModule || ashraitCSTModule ? ['platform-api']
+      : saleReceiptLayoutModule ? ['printer-profiles']
+      : ashraitReceiptOwnership[`${service}:${file}`] ?? currentPOSProofOwnership[`${service}:${file}`]
+        ?? focusedStockOwnership[`${service}:${file}`] ?? mobileHomeOwnership ?? ids;
+    if (walletStudioModule) ids = ['customers-wallet-studio'];
     sources[file] = { sha256: digest(bytes), features: ids };
     const found = [];
     if (/(?:^|\/)app\/.*\/(?:page|route)\.[jt]sx?$/.test(file)) found.push({ kind: file.includes('/route.') ? 'next-api-route' : 'next-page', route: routePath(file), line: 1 });

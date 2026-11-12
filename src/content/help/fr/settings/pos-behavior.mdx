@@ -7,7 +7,7 @@ apps: both
 tags:
   - settings
   - pos-behavior
-updatedAt: '2026-10-27'
+updatedAt: '2026-11-11'
 featureId: pos-behavior
 audience: public
 releaseStatus: available
@@ -38,6 +38,8 @@ Si la caisse affiche l’avertissement d’actualisation des réglages, vérifie
 
 Ouvrez Services et maintenez les noms et l’ordre des services du restaurant. Activez leur gestion et les options autorisées d’attente/lancement ou Envoyer et rester dans le mode affecté à l’appareil POS. Dans Envoi immédiat, sélectionnez les catégories de bibliothèque voulues, appliquez puis enregistrez. Cette association utilise la catégorie de bibliothèque globale de chaque article, pas son groupe d’affichage/menu ni un nom de groupe identique. Un article d’une catégorie immédiate rejoint Envoi immédiat lors de son ajout à une vente sur place, même si un service nommé est sélectionné. Les autres nouveaux articles utilisent le service choisi. Vérifiez une ligne fraîchement ajoutée après une modification du catalogue ; les lignes déjà enregistrées ne sont pas déplacées rétroactivement. Envoi immédiat signifie que le prochain Envoyer explicite lance ces lignes en attente immédiatement : le simple ajout de l’article n’envoie ni n’imprime rien. Attente/Lancer des services nommés restent provisoires jusqu’à la réussite d’Envoyer/Continuer. Continuer est disponible seulement si le mode affecté le permet et conserve l’addition ouverte ; il ne lance pas automatiquement le service suivant. Les services organisent le lancement cuisine et restent distincts des partages financiers, des paiements propres aux clients QR et des groupes de menu publics. Vérifiez [la synchronisation du mode partagé](#shared-mode-sync) si Admin et POS montrent des activations différentes.
 
+Pour une addition ouverte, vérifiez l’envoi dans Addition et l’avancement au KDS du passe. Consultez [le suivi d’un plat à table](/fr/help/orders/taking-an-order-pos#open-check-kitchen-progress).
+
 <span id="adjustments" />
 
 ## Vérifier les ajustements autorisés
@@ -62,7 +64,7 @@ Si l’établissement, la connexion ou le terminal change, [rouvrez la confirmat
 
 ## Configurer les modes de traitement de la caisse
 
-Avec le droit de modifier les paramètres, ouvrez Paramètres → Modes de traitement → Système de caisse. Le catalogue présente tous les modes en cartes, y compris ceux masqués. Ouvrez une carte pour modifier le texte affiché, le type et la fiche client facultative, puis Enregistrer explicitement. Un échec ou une réponse non confirmée conserve la fenêtre et les valeurs. Gérer par point de vente règle la disponibilité, l’ordre/défaut et le moment de la demande pour le restaurant, pas un catalogue par appareil. Dans cette fenêtre imbriquée, Enregistrer sur un mode le prépare seulement : enregistrez aussi dans Gérer par point de vente pour sauvegarder l’ensemble. Fermer un éditeur modifié demande de confirmer l’abandon. Gardez au moins un mode actif et dix au maximum ; réordonnez avec flèches ou poignée. Le premier actif devient le défaut. Supprimer demande confirmation et ne peut pas retirer le dernier mode actif. Foody suit toujours les commandes enregistrées, sans interrupteur de suivi par mode. Les commandes existantes gardent leur mode. Une API incompatible désactive la modification non prise en charge.
+Avec le droit de modifier les paramètres, ouvrez Paramètres → Modes de traitement → Système de caisse. Le catalogue présente tous les modes en cartes, y compris ceux masqués. Ouvrez une carte pour modifier le texte affiché, le type et la fiche client facultative, puis Enregistrer explicitement. Un échec ou une réponse non confirmée conserve la fenêtre et les valeurs. Gérer par point de vente règle la disponibilité, l’ordre/défaut et le moment de la demande pour le restaurant, pas un catalogue par appareil. Dans cette fenêtre imbriquée, Enregistrer sur un mode le prépare seulement : enregistrez aussi dans Gérer par point de vente pour sauvegarder l’ensemble. Fermer un éditeur modifié demande de confirmer l’abandon. Gardez au moins un mode actif et dix au maximum ; réordonnez avec flèches ou poignée. Le premier actif devient le défaut. Supprimer demande confirmation et ne peut pas retirer le dernier mode actif. Pour les nouvelles ventes, réglez séparément le suivi de préparation et de remise de chaque mode. La politique enregistrée reste attachée à la commande ; une ancienne commande sans cette preuve reste inconnue. Les commandes existantes gardent leur mode. Une API incompatible désactive la modification non prise en charge.
 
 <span id="fulfillment-prompt" />
 
@@ -99,3 +101,33 @@ Sur mobile, les réglages utilisent une seule pile de pages. Le retour quitte d�
 ## Se déplacer sur le terminal
 
 Le terminal portable utilise trois boutons sans libellé : les initiales de l’utilisateur ouvrent Plus, la maison ouvre l’Aperçu et le ticket ouvre les Additions, selon vos droits. La navigation iPad conserve ses destinations configurées. Dans Additions, le sélecteur propose Toutes les additions et les plans de salle disponibles ; choisir un bouton radio change directement la vue. Le plan se déplace par glissement quand il dépasse l’écran. L’Aperçu présente des cartes repliables de disponibilités, commandes et tables autorisées. La liste complète permet de rechercher un article ; Non renseignée indique une disponibilité absente, pas un article disponible. Actualiser permet de reprendre une lecture en échec. Ces vues ne modifient ni le mode de caisse affecté ni les profils d’impression. La barre reste au-dessus de la navigation Android et se masque pendant la saisie. Dans une vente, Menu/Addition/Actions et le retour vers les additions gardent leur place propre.
+
+<span id="end-of-day-terminal-navigation" />
+
+## Retrouver le dépôt dans le parcours de fin de journée
+
+Avec les versions compatibles, ouvrez Plus → Rapports → Solde en caisse sur l’iPad du comptoir. Le responsable peut y définir la caisse principale et y piloter le tiroir et les transmissions des terminaux. Historique de caisse donne accès au Z finalisé et aux copies SHVA disponibles. Sur les versions antérieures, les actions restent accessibles selon les capacités de l’appareil. Consultez [la procédure de clôture](/fr/help/payments/end-of-day).
+
+<span id="victa-mini-hardware" />
+
+## Connecter et retrouver le Victa Mini sur iPad
+
+Dans la version compatible, Matériel → Terminaux de paiement réunit les terminaux enregistrés sur cet iPad et ceux de l’inventaire du restaurant. Un terminal apparaît une fois lorsque les deux sources identifient le même appareil. Ouvrez sa fiche pour accéder à Tester la connexion. Pour une ancienne association, vérifiez le numéro de série dans Modifier. Voir [la connexion du Victa Mini](/fr/help/payments/victa-mini#connection).
+
+<span id="physical-card-destination" />
+
+## Vérifier la destination physique du paiement carte
+
+Avec les versions POS/API compatibles, vérifiez la destination physique avant l’encaissement carte : consultez le [choix Mini/Portable](/fr/help/payments/victa-mini#explicit-terminal-selection) et la [configuration vérifiée du matériel](/fr/help/payments/victa-mini#connection). Les identifiants existants, la séparation QR, la préparation et les réglages de libération des tables restent indépendants. Une réservation terminal non résolue bloque un autre encaissement ; reprenez l’opération d’origine plutôt que de créer une vente de remplacement.
+
+<span id="unified-cash-workspace" />
+
+## Utiliser le suivi de caisse commun
+
+Avec les droits de paiement et les versions compatibles, ouvrez Plus → Rapports → Solde en caisse. Le même espace présente le tiroir espèces, les encaissements carte enregistrés par terminal et la clôture guidée. Historique de caisse réunit les sessions espèces closes et les rapports Z finalisés. Les anciennes adresses de clôture et de dépôt rejoignent cet espace ; les API plus anciennes conservent leur parcours précédent. Consultez [le parcours de caisse commun](/fr/help/payments/end-of-day#unified-cash-workspace).
+
+<span id="ashrait-last-transaction-inspection" />
+
+## Consulter la dernière transaction du terminal
+
+Avec la version compatible et le droit de gérer les paiements, ouvrez Matériel → Terminaux de paiement, puis la fiche du terminal voulu et Dernière transaction du terminal. Choisissez Consulter la dernière transaction pour interroger cet appareil. Voir [la procédure et ses limites](/fr/help/payments/ashrait-terminal-inspection).

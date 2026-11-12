@@ -1,5 +1,9 @@
 import type { MetadataRoute } from "next";
 import { getAllArticlePaths, getTopics } from "@/lib/help/content";
+import { ABOUT_PATH, FOOD_COST_PATH, PRODUCT_DEMOS_PATH, SUPPLIER_VARIANCE_PATH } from "@/lib/marketing/resources";
+import { TABIT_COMPARISON_PATH } from "@/lib/marketing/comparison";
+import { BUYING_GUIDE_PATH } from "@/lib/marketing/acquisition";
+import { INVENTORY_GUIDE_PATH } from "@/lib/marketing/inventory-guide";
 import {
   getMarketingPath,
   languageAlternates,
@@ -25,11 +29,19 @@ const PAGES: MarketingPage[] = [
   "companion",
 ];
 
+// These two pages received main-content edits in all three languages on this date.
+// Update only after a meaningful content change; never use build time as freshness.
+const CONTENT_MODIFIED: Partial<Record<MarketingPage, string>> = {
+  home: "2026-11-02",
+  restaurants: "2026-11-02",
+};
+
 /** Lists acquisition routes and existing help content without fictitious update dates. */
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages = PAGES.flatMap((page) =>
     SUPPORTED_LANGS.map((lang) => ({
       url: `${SITE_URL}/${lang}${getMarketingPath(page)}`,
+      lastModified: CONTENT_MODIFIED[page],
       changeFrequency: "monthly" as const,
       priority: page === "home" ? 1 : 0.8,
       alternates: { languages: languageAlternates(getMarketingPath(page)) },
@@ -46,5 +58,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     })),
   ]);
-  return [...pages, ...help];
+  const comparisons = SUPPORTED_LANGS.map((lang) => ({
+    url: `${SITE_URL}/${lang}${TABIT_COMPARISON_PATH}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+    alternates: { languages: languageAlternates(TABIT_COMPARISON_PATH) },
+  }));
+  const guides = [BUYING_GUIDE_PATH, INVENTORY_GUIDE_PATH].flatMap(path => SUPPORTED_LANGS.map(lang => ({ url: `${SITE_URL}/${lang}${path}`, priority: 0.7, alternates: { languages: languageAlternates(path) } })));
+  const resources = [ABOUT_PATH, FOOD_COST_PATH, SUPPLIER_VARIANCE_PATH, PRODUCT_DEMOS_PATH].flatMap(path => SUPPORTED_LANGS.map(lang => ({ url: `${SITE_URL}/${lang}${path}`, priority: 0.7, alternates: { languages: languageAlternates(path) } })));
+  return [...pages, ...comparisons, ...guides, ...resources, ...help];
 }

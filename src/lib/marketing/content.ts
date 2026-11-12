@@ -26,10 +26,10 @@ export type Solution = {
 
 const he = {
   home: {
-    title: "העסק שלכם.\nכל האפשרויות.",
+    title: "Foody POS\nקופה וניהול למסעדות בישראל.",
     description:
-      "קופת ענן ב־iPad וב־Android, תשלומים וניהול עסק שעובדים יחד. מהקפה השכונתי ועד לרשת המסעדות הבאה של ישראל.",
-    secondary: "למצוא את הפתרון שלי",
+      "Foody POS היא פלטפורמת קופה וניהול בענן למסעדות, בתי קפה וחנויות בישראל. חברו קופה ב־iPad וב־Android, שולחנות, הזמנות אונליין ומטבח, עם ממשקי עבודה בעברית, בצרפתית ובאנגלית. בחרו את המוצרים שמתאימים לפעילות שלכם.",
+    secondary: "לגלות את הקופה למסעדה",
     photoAlt: "בעלת בית קפה מגישה קפה ללקוח ליד קופה על הדלפק",
     photoLabel: "פחות להתעסק. יותר לארח.",
     intro: "כל מה שצריך כדי\nלעשות עסק טוב.",
@@ -168,10 +168,10 @@ type Copy = typeof he;
 
 const fr: Copy = {
   home: {
-    title: "Votre commerce.\nToutes les possibilités.",
+    title: "Foody POS\nCaisse et gestion de restaurant en Israël.",
     description:
-      "La caisse cloud sur iPad et Android, les paiements et la gestion qui travaillent ensemble. Du café de quartier au prochain réseau de restaurants en Israël.",
-    secondary: "Trouver ma solution",
+      "Foody POS est la plateforme de caisse et de gestion cloud pour les restaurants, cafés et commerces en Israël. Reliez caisse iPad et Android, tables, commandes en ligne et cuisine, avec des interfaces en français, hébreu et anglais. Choisissez les produits adaptés à votre activité.",
+    secondary: "Découvrir la caisse restaurant",
     photoAlt:
       "Une gérante de café sert un client au comptoir, à côté de sa caisse",
     photoLabel: "Moins de gestion. Plus de liens.",
@@ -322,10 +322,10 @@ const fr: Copy = {
 
 const en: Copy = {
   home: {
-    title: "Your business.\nAll the possibilities.",
+    title: "Foody POS\nRestaurant POS and management in Israel.",
     description:
-      "Cloud POS on iPad and Android, payments and business tools that work together. From the neighborhood café to Israel’s next restaurant group.",
-    secondary: "Find my solution",
+      "Foody POS is the cloud POS and management platform for restaurants, cafés and shops in Israel. Connect iPad and Android POS, tables, online ordering and kitchen work, with Hebrew, French and English interfaces. Choose the products that fit your operation.",
+    secondary: "Explore restaurant POS",
     photoAlt:
       "A café owner serving a customer at the counter beside her point of sale",
     photoLabel: "Less admin. More connection.",

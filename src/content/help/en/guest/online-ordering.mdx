@@ -5,7 +5,7 @@ apps: foodyweb
 tags:
   - guest
   - guest-ordering
-updatedAt: '2026-10-27'
+updatedAt: '2026-11-12'
 featureId: guest-ordering
 audience: public
 releaseStatus: available
@@ -22,13 +22,17 @@ For online by-weight orders, open Settings → Payments & VAT with settings.edit
 
 ## Choose a menu, then a group
 
-If the restaurant offers several menus on the page, select their tab, such as BASSARI or HALAVI. Only the selected menu’s groups and items appear. Pills or links underneath navigate to its groups, such as Sandwiches or Drinks. Search and the availability filter apply to this menu. A search with no results keeps menu tabs visible; switching menus clears the search. Browsing another menu keeps the basket. If an item is missing, try another menu or clear the search; visibility also depends on availability and publication. For a combo, open its sheet and choose Build your combo: the menu keeps its theme while selecting items. Use the counter and − button to review or remove a pick, then complete the steps before adding to the cart. See [website combos](/en/help/menu/combos#website-composition).
+If the restaurant offers several menus on the page, select their tab, such as BASSARI or HALAVI. Only the selected menu’s groups and items appear. Pills or links underneath navigate to its groups, such as Sandwiches or Drinks. Search and the availability filter apply to this menu. A search with no results keeps menu tabs visible; switching menus clears the search. Browsing another menu keeps the basket. If an item is missing, try another menu or clear the search; visibility also depends on availability and publication. For a combo, open its sheet and choose Build your combo: the menu keeps its theme while selecting items. Use the counter and − button to review or remove a pick, then complete the steps before adding to the cart. See [website combos](/en/help/menu/combos#website-composition). On a phone, swipe across the products in a horizontal carousel to see the rest of that group.
+
+When the restaurant enables a dedicated installed-app home, open the app from its icon to see the carousel and the current featured selection. Tap the order button to open the menu, or tap a featured product to view its details.
+
+On an order page in the browser, the pickup, delivery and time controls may stay visible as you scroll. Selecting a category brings its heading into view below the pinned bars. To return to the restaurant’s home page, use the site navigation or its linked logo when available.
 
 <span id="basket" />
 
 ## Build a basket
 
-Choose pickup, delivery or table ordering when offered, select the active menu and open an item. Choose a variant, required modifiers, quantity and allowed notes, then add it. Review and edit the basket before checkout. A customer assistant suggestion still needs the same required choices and availability checks.
+Choose pickup, delivery or table ordering when offered, select the active menu and open an item. Its sheet shows the configured portion, price, description and available photos. Choose a variant and any required modifiers. When the restaurant enables a general note for an item, use Add a note. Quantity and Add to cart stay together at the bottom while you scroll through the details; the total follows your quantity and choices. The title and close control remain available after the photo scrolls away. Close without adding to discard the current selection. If adding is unavailable, complete the required choices or review the displayed availability. Review and edit the basket before checkout. A customer assistant suggestion needs the same required choices and availability checks. If the restaurant asks you to choose Pickup or Delivery first, confirm the details for that service to see the menu. Open Menu for the site links and, when offered, the language setting. On the menu, select the current mode to change it. Confirm the applicable address or time. The basket stays with you. If the restaurant offers a home-screen shortcut, you can follow the guide before filling your basket or go straight to ordering. On iPhone, tap the button in the installation card to see the Share, Add to Home Screen and Add steps.
 
 <span id="mobile-fulfillment" />
 
@@ -40,7 +44,15 @@ In the ordering dialog, choose Delivery and enter the street, house number and c
 
 ## Choose contact and fulfillment
 
-Enter the requested contact details, address or pickup time. For delivery check zone, fee and offered slot; for preorder/tour links follow their specific deadline/date. The final checkout revalidates current rules and prices.
+For a delivery order on the restaurant website, if no address is confirmed, select Enter delivery address in the cart. If suggestions are enabled, choose a complete address from the list and select Confirm address. If delivery is unavailable, check the displayed reason and correct the address or try confirming it again. After confirmation, check the delivery fee and the minimum for your address. If the cart shows an amount still needed, add items before choosing Continue to payment.
+
+Enter the requested contact details, address or pickup time. For delivery check zone, fee and offered slot; for preorder/tour links follow their specific deadline/date. The final checkout revalidates current rules and prices. Once the address is checked, review the displayed delivery fee and choose Date and Time using the same controls as pickup. The zone limits weekdays; restaurant settings supply slot times and duration. Automatic mode assigns the next slot. When time needs restaurant confirmation, no time picker appears and tracking will show the confirmed time. Changing the address or basket rechecks availability; wait for the check before confirming. With compatible versions, delivery same-day days, transport and time confirmation are configured inside each zone. Restaurant hours and product preparation remain mandatory. Scheduled orders can include today. Staff can test saved basket/address calendars in Orders & availability → Simulate an order; this creates no order or message.
+
+<span id="checkout-calendar" />
+
+## Choose a future date at checkout
+
+When a calendar appears in Contact and payment, choose a month from the menu to view its days. Only available days can be selected. Choose a day, then use Time to pick one of its slots. Browsing a different month keeps the current choice until you select a new day. If a day or time is unavailable, choose another option offered for your basket. The restaurant’s booking period determines how far ahead you can order.
 
 <span id="payment" />
 
@@ -58,7 +70,7 @@ Under Sign in, use Google or your email and password. Facebook and Apple appear 
 
 ## Access the new controls
 
-The entry sign-in invitation is controlled in Website → Order journey → Show the sign-in invitation on arrival. Off goes directly to pickup/delivery details; when on, Order without an account remains immediately visible. Save the draft and publish to apply this choice. See [the journey setting](/en/help/website-qr/checkout-and-receipt#optional-entry-sign-in). When the invitation is off, a discreet Sign in link remains available in the pickup or delivery dialog. It opens authentication only when selected; dismissing authentication retains entered details and allows ordering without an account.
+The entry sign-in invitation is controlled in Website → Order page → Fulfillment → Show the sign-in invitation on arrival. Off goes directly to pickup/delivery details; when on, Order without an account remains immediately visible. Save the draft and publish to apply this choice. See [the journey setting](/en/help/website-qr/checkout-and-receipt#optional-entry-sign-in). When the invitation is off, a discreet Sign in link remains available on the pickup or delivery screen and in the classic window. It opens authentication only when selected; dismissing authentication retains entered details and allows ordering without an account.
 
 <span id="conditional-item-choices" />
 
@@ -83,3 +95,55 @@ When a restaurant manages weekly ordering manually, its team opens and pauses or
 ## Product photos
 
 An item can show several photos. See [Product photos](/en/help/menu/product-photos) for adding photos, selecting the cover and using the dots, arrows or horizontal swipe in product details. A single photo has no gallery controls.
+
+<span id="prepared-order-existing-cart" />
+
+## Prepared basket and restaurant presentation
+
+A private Sumit prepared-order link enters the restaurant’s existing cart, then its checkout with the published colors, fonts and fields. The personal browser basket is retained; prepared items, prices and date stay fixed. Contact details and requested answers belong to this order, without loading an account or saved card. Custom answers bind when payment first opens. Delivery fees are recalculated and reviewed before payment. See the [Sumit procedure](/en/help/orders/internal-sumit-checkout).
+
+<span id="stancer-cash-guarantee" />
+
+## Use cash with an optional card guarantee
+
+For pickup or delivery, an eligible customer selects Cash payment with card guarantee, reviews the exact reservation amount and explicitly accepts its reservation and collection if the order remains unpaid in cash. The customer enters the card on the hosted Stancer page and completes any bank authentication. Foody confirms the order only after checking the authorization with Stancer. The sale remains unpaid: the card reservation is not cash received or a completed card sale. This version supports fixed-price orders for service within six days. Weight-priced orders and later service dates must use another payment method. If the amount changes, review the updated basket and agree to the new amount. Stancer documents seven days for an uncaptured authorization; a Payment Intent’s lifetime is a different concept.
+
+Acceptance and recovery: [cash card guarantees](/en/help/payments/cash-card-guarantee).
+
+<span id="option-choice-requirement" />
+
+## Leave an optional choice empty
+
+In a compatible product sheet, Required needs a choice in every visible position before Add to cart. A group marked Optional may remain empty. After selection, Clear choice removes only that position and its associated note; other positions and the format price remain intact. A required note attached to a selected option must still be completed. Review the choices in the cart before confirming. For optional same-day delivery, review the Delivery zones and schedules guide with compatible API, Admin and guest versions: the customer may choose only the day, see an estimate before payment and receive a restaurant-confirmed time later. Future bookings retain their configured mode. The restaurant’s local date determines same-day rules.
+
+<span id="independent-lifecycle-confirmations" />
+
+## Review independent confirmations
+
+Your order tracking distinguishes payment, preparation and recorded handoff, including partial handoff. Not tracked differs from unknown evidence. An unknown monetary value is not zero and does not offer a guessed payment. Other guests’ QR orders at the same table remain separate and are not exposed by this view. See [order states](/en/help/orders/payment-preparation-and-handoff).
+
+<span id="event-orders" />
+
+## Event orders and bank reservations
+
+For saved-event edits, explicit production inclusion, private links, deposits and Sumit authorizations kept separate from received money, see [Event / Catering](/en/help/orders/event-orders).
+
+<span id="ready-products-and-cutoffs" />
+
+## Understand ready products and deadlines
+
+With compatible versions, Available now remains on the first carte selected for this website page, even when it is not the catalogue’s first carte. Published products with an independent shelf pool can also appear while valid. The basket checks total quantities, dates and slots; adding a product does not reserve stock. If stock changes before confirmation, refresh the slots and choose an available proposal. A delivery deadline may exclude Friday after 13:00 or Sunday booked on Saturday, even for a ready cake; pickup uses its own calendar. Before choosing an article, the suggested slot uses the restaurant default production time. After adding products it is checked against the whole basket: a quick roll must not inherit the delay of a cake absent from the basket.
+
+<span id="delivery-contact-details" />
+
+## Enter delivery details
+
+In Contact details for delivery, fill in the fields marked with an asterisk. Optional fields may be left blank. Depending on the restaurant, floor, apartment, building code and delivery notes are visible before you choose a city. If address suggestions are enabled, choose a complete address from the list. If the form stops on a field, complete or correct it, then try again. Pickup does not ask for the delivery details.
+
+<span id="service-first" />
+
+## Change pickup or delivery when the store asks first
+
+If the site asks you to choose a method when you start, select Pickup or Delivery and confirm the location, address or time shown. If the pickup or delivery screen invites you to sign in, you can also select Order without an account. If Signed in appears, you can also [sign out and continue without an account](/en/help/guest/tracking-and-account#order-as-guest-after-sign-out). In the compact mobile header, the title and menu icon stay visible as you scroll. Open the side menu and select Change order method. In the standard header, select the current method. Confirm the applicable address or time. The basket stays with you. Adding from a Web Story or continuing shopping from the cart opens the menu directly. If you have yet to choose, select pickup or delivery on the menu or in the cart before payment.
+
+In a compatible installed app, open the Order tab. The order title stays at the top while you scroll. Tap its back arrow, when shown, to return to the service choice. Scroll back to the top to see the time and location again.

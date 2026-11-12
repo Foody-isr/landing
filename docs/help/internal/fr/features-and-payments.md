@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - backoffice-entitlements
-updatedAt: '2026-10-21'
+updatedAt: '2026-11-12'
 featureId: backoffice-entitlements
 audience: internal
 releaseStatus: available
@@ -26,7 +26,13 @@ Après une restitution totale vérifiée dans l’historique lié de Verifone, l
 
 ## Garder la page de paiement lisible
 
-Un superadmin ouvre Restaurant > Payment > Verifone dans Backoffice et enregistre les réglages de paiement avant de choisir Synchronize published logo and colors. La synchronisation utilise uniquement le logo publié et la couleur de marque ou du bouton sélectionné. HPP utilise toujours une page claire, des panneaux blancs et du texte foncé ; les couleurs trop pâles sont assombries pour atteindre au moins 4,5:1 de contraste sur la page et les panneaux. Après installation de la version API avec cette règle de contraste, resynchronisez les restaurants déjà activés dans l’environnement autorisé ; l’ancien thème est signalé comme obsolète. Vérifiez le logo, les chiffres saisis, les labels, les erreurs et les icônes, sur mobile et en français, hébreu et anglais, sans soumettre de transaction non autorisée. Les couleurs du site et les fenêtres natives des wallets restent inchangées. Le nouveau thème propre au restaurant ne devient pas le thème par défaut de l’organisation et ne concerne que les nouveaux liens Checkout. Les liens existants et l’état financier sont conservés ; vérifiez le paiement avant toute nouvelle tentative. Aucune mise à jour groupée de production sans autorisation.
+Un superadmin ouvre Restaurant > Payment > Verifone dans Backoffice et enregistre les réglages de paiement avant de choisir Synchronize published logo and colors. La synchronisation utilise uniquement le logo publié et la couleur de marque ou du bouton sélectionné. Le thème HPP synchronisé utilise une page claire, des panneaux blancs et du texte foncé ; les couleurs trop pâles sont assombries pour atteindre au moins 4,5:1 de contraste sur la page et les panneaux. Après installation de la version API avec cette règle de contraste, resynchronisez les restaurants déjà activés dans l’environnement autorisé ; l’ancien thème est signalé comme obsolète. Vérifiez le logo, les chiffres saisis, les labels, les erreurs et les icônes, sur mobile et en français, hébreu et anglais, sans soumettre de transaction non autorisée. Les couleurs du site et les fenêtres natives des wallets restent inchangées. Le nouveau thème propre au restaurant ne devient pas le thème par défaut de l’organisation et ne concerne que les nouveaux liens Checkout. Les liens existants et l’état financier sont conservés ; vérifiez le paiement avant toute nouvelle tentative. Aucune mise à jour groupée de production sans autorisation.
+
+<span id="link-verifone-central-theme" />
+
+## Rattacher un thème Checkout créé dans Verifone Central
+
+Dans Verifone Central, ouvrez Administration > Checkout Themes et enregistrez un thème dans l’organisation et l’environnement Verifone du restaurant (CST ou production). Dans le Backoffice, ouvrez Restaurant > Payment > Verifone en tant que superadmin et enregistrez la configuration de paiement. Sous Hosted payment page appearance, saisissez le nom exact ou l’UUID dans Verifone theme name or ID, puis cliquez sur Link Verifone theme. Si plusieurs thèmes portent le même nom, saisissez l’UUID. Foody vérifie l’organisation et l’environnement et applique le thème sélectionné aux nouveaux liens Checkout. Pour modifier le thème, enregistrez vos changements dans Verifone Central et vérifiez le rendu sur un nouveau lien de test dans l’environnement autorisé. Pour utiliser le thème par défaut du compte Verifone, décochez Use the selected Checkout theme et enregistrez la configuration de paiement.
 
 <span id="entitlements" />
 
@@ -45,3 +51,9 @@ Utilisez réglages prestataire/Cibus/portefeuille pour environnement et marchand
 ## Attribuer les quotas des services externes
 
 En superadmin, ouvrez Usage and quotas pour comparer les restaurants, choisissez un service puis Review allocation. Le même accès existe depuis la fiche restaurant. Saisissez les plafonds mensuels entiers ; zéro suspend un service. Indiquez un motif puis Save allocation. Use default allowances prépare les valeurs initiales dans le formulaire et nécessite aussi un enregistrement. Une modification ne remet jamais les compteurs à zéro et ne contourne pas les protections fournisseur. Les changements sont historisés avec leur auteur et leur motif. En cas d’enregistrement non confirmé ou de conflit, rechargez explicitement l’allocation avant de réessayer ; les saisies restent présentes tant que vous ne rechargez pas. La sortie avec des modifications avertit de leur abandon. Les environnements ont leurs compteurs restaurant propres ; le budget Google partagé continue de protéger le compte global.
+
+<span id="prepared-sumit-checkout-integration" />
+
+## Intégration du panier préparé Sumit
+
+La capacité Sumit des commandes internes préparées dépend du fournisseur actif et des identifiants configurés valides du restaurant. Aucun bouton de formule ni contrôle d’onboarding n’est ajouté. Changer de fournisseur désactive l’ouverture de ces paiements en attente, sans les transférer silencieusement à un autre prestataire. Coordonnez API, Admin, Web et le guide Sumit.

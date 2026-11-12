@@ -27,6 +27,11 @@ import Experience from "./Experience";
 import ProductDemo from "./ProductDemo";
 import Icon from "./Icon";
 import ProductMentions from "./ProductMentions";
+import { comparisonCopy, TABIT_COMPARISON_PATH } from "@/lib/marketing/comparison";
+import { pricingRates } from "@/lib/marketing/pricing";
+import { POS_APP_STORE_URL } from "@/lib/marketing/resources";
+import AcquisitionWorkflow from "./AcquisitionWorkflow";
+import ProductScreenshots from "./ProductScreenshots";
 
 function HeroVisual({ lang, page }: { lang: Lang; page: SolutionKey }) {
   if (page === "hardware") return <HardwareDisplay lang={lang} />;
@@ -39,6 +44,7 @@ function HeroVisual({ lang, page }: { lang: Lang; page: SolutionKey }) {
         width={1536}
         height={1024}
         priority
+        fetchPriority="high"
         sizes="(max-width:800px) 92vw, 50vw"
       />
     );
@@ -150,10 +156,10 @@ function PageStory({ lang, page }: { lang: Lang; page: SolutionKey }) {
 }
 
 const related: Record<SolutionKey, SolutionKey[]> = {
-  restaurants: ["ordering", "hardware", "kitchen"],
+  restaurants: ["pos", "ordering", "hardware", "kitchen"],
   chains: ["kitchen", "companion", "equipment"],
   retail: ["pos", "payments", "equipment"],
-  pos: ["hardware", "equipment", "ordering"],
+  pos: ["restaurants", "hardware", "equipment", "ordering"],
   kitchen: ["companion", "chains", "equipment"],
   ordering: ["kitchen", "equipment", "payments"],
   payments: ["hardware", "pos", "ordering"],
@@ -175,8 +181,38 @@ export default function SolutionPage({
   const e = ecosystem[lang];
   const product = productNavigation.find((item) => item.href === routes[page]);
   const pageLabel = product ? u[product.key] : u[page];
+  const softwareOffer = page === "restaurants"
+    ? { plan: "restaurant", entity: "restaurant-software", rate: pricingRates.restaurant, description: t.faq[1].a, operatingSystem: "iPadOS, Android" }
+    : page === "pos"
+      ? { plan: "restaurant", entity: "pos-software", rate: pricingRates.restaurant, description: t.faq[2].a, operatingSystem: "iPadOS, Android" }
+      : page === "ordering"
+        ? { plan: "ordering", entity: "ordering-software", rate: pricingRates.ordering, description: t.faq[4].a, operatingSystem: "Web browser" }
+        : page === "kitchen"
+          ? { plan: "kitchen", entity: "kitchen-software", rate: pricingRates.kitchen, description: t.faq[3].a, operatingSystem: "Web browser" }
+          : null;
   return (
     <main id="main-content">
+      {softwareOffer && <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "@id": `${SITE_URL}/#${softwareOffer.entity}`,
+        name: pageLabel,
+        url: `${SITE_URL}/${lang}${routes[page]}`,
+        description: t.description,
+        applicationCategory: "BusinessApplication",
+        operatingSystem: softwareOffer.operatingSystem,
+        inLanguage: ["he", "fr", "en"],
+        ...(page === "pos" ? { sameAs: [POS_APP_STORE_URL] } : {}),
+        publisher: { "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: "Foody POS", url: SITE_URL },
+        offers: {
+          "@type": "Offer",
+          url: `${SITE_URL}/${lang}/pricing#plan-${softwareOffer.plan}`,
+          price: softwareOffer.rate,
+          priceCurrency: "ILS",
+          description: softwareOffer.description,
+          priceSpecification: { "@type": "UnitPriceSpecification", price: softwareOffer.rate, priceCurrency: "ILS", valueAddedTaxIncluded: false, unitText: "month" },
+        },
+      }} />}
       <JsonLd
         data={{
           "@context": "https://schema.org",
@@ -229,10 +265,10 @@ export default function SolutionPage({
               {u.demo}
               <Icon name="arrow" className="directional" />
             </Link>
-            {product && (
+            {softwareOffer && (
               <Link
                 className="text-link"
-                href={`/${lang}/pricing#plan-${product.plan}`}
+                href={`/${lang}/pricing#plan-${softwareOffer.plan}`}
               >
                 {u.viewPlan}
               </Link>
@@ -290,7 +326,17 @@ export default function SolutionPage({
         </div>
       </section>
       <PageStory lang={lang} page={page} />
+      {(page === "restaurants" || page === "kitchen" || page === "ordering" || page === "pos") && <AcquisitionWorkflow lang={lang} page={page} />}
+      {page === "kitchen" && <ProductScreenshots lang={lang} />}
       <FaqSection lang={lang} items={t.faq} currentHref={routes[page]} />
+      {page === "restaurants" && <section className="shell related-section">
+        <h2>{comparisonCopy[lang].linksTitle}</h2>
+        <div>
+          <Link href={`/${lang}${TABIT_COMPARISON_PATH}`}>{comparisonCopy[lang].compareLink}</Link>
+          <Link href={`/${lang}/help/orders/taking-an-order-pos`}>{comparisonCopy[lang].orderGuide}</Link>
+          <Link href={`/${lang}/help/tables-floors/floor-plans`}>{comparisonCopy[lang].tableGuide}</Link>
+        </div>
+      </section>}
       <section className="shell related-section">
         <h2>{u.related}</h2>
         <div>

@@ -5,7 +5,7 @@ apps: both
 tags:
   - orders
   - order-types
-updatedAt: '2026-10-27'
+updatedAt: '2026-11-02'
 featureId: order-types
 audience: public
 releaseStatus: available
@@ -46,7 +46,9 @@ Exigez une adresse exploitable et vérifiez zone, frais et créneau. Un jour de 
 
 ## Commandes planifiées et séries
 
-Vérifiez ouverture des commandes, clôture et dates de remise. Avec un calendrier par séries, utilisez le cycle défini par le restaurant plutôt qu’une date libre.
+Vérifiez ouverture des commandes, clôture et dates de remise. Avec un calendrier par séries, utilisez le cycle défini par le restaurant plutôt qu’une date libre. Une commande planifiée impose une date, y compris aujourd’hui : ce terme ne signifie pas seulement une date future. Les règles de service et de préparation du restaurant restent communes. Chaque zone de livraison définit séparément le choix de l’horaire à l’avance et le jour même. L’équipe peut tester panier, adresse et date de réception avec les réglages enregistrés dans Commandes et disponibilité → Simuler une commande, sans créer de commande.
+
+Une commande programmée peut être acceptée explicitement avant son créneau par le personnel autorisé. Le workflow du restaurant conserve ses étapes ; la date et le créneau restent inchangés. Voir [la procédure d’acceptation](/fr/help/orders/managing-orders#accept-scheduled-order).
 
 <span id="whatsapp-stage-attachment" />
 
@@ -100,7 +102,7 @@ Un article configuré avec des positions répétées demande un choix distinct p
 
 ## Ouvrir une addition sur place sans table
 
-Nécessite des versions API/POS compatibles, orders.manage et les additions ouvertes activées pour ce mode de caisse. Choisissez Sur place pour une nouvelle vente non affectée ; cela n’ouvre encore ni table ni addition. Complétez la fiche client éventuelle et saisissez les articles. À Envoyer/Continuer, choisissez Enregistrer l’addition → Nouvelle addition → Addition personnalisée une seule fois : le formulaire du nom s’ouvre directement, même si les noms prédéfinis sont activés sans groupe configuré. Saisissez le nom puis Enregistrer. Retour revient au choix de destination sans créer d’addition et conserve le panier source. L’envoi explicite se poursuit alors une seule fois avec les nouvelles lignes. Changer de destination pendant Payer n’encaisse pas automatiquement : vérifiez puis engagez le paiement explicitement. Annuler conserve le panier source. Vous pouvez aussi créer d’abord l’addition vide depuis Actions → Tickets ouverts → Nouveau ticket, choisir Sur place puis groupe/nom ou nom personnalisé. Ce parcours autonome conserve les groupes configurés et les noms disponibles : choisir un nom crée l’addition, tandis qu’un nom personnalisé demande Enregistrer. Il s’agit d’une consommation sur place réelle, pas d’un retrait renommé. Les envois suivants gardent une même addition et créent des bons cuisine distincts. Paiement, préparation et fermeture restent séparés ; fermez seulement sans articles non envoyés ni lots actifs impayés. Les commandes enregistrées restent dans Commandes sur POS et Admin. Aucune table/session artificielle, aucun couvert ni place numérotée ne sont créés. Le partage financier ou le déplacement de cette addition vers une table ne sont pas pris en charge ici. Une création incertaine conserve son identité : Réessayer la même demande au lieu de créer une autre addition.
+Nécessite des versions API/POS compatibles, orders.manage et les additions ouvertes activées pour ce mode de caisse. Choisissez Sur place pour une nouvelle vente non affectée ; cela n’ouvre encore ni table ni addition. Complétez la fiche client éventuelle et saisissez les articles. À Envoyer/Continuer, choisissez Enregistrer l’addition → Nouvelle addition → Addition personnalisée une seule fois : le formulaire du nom s’ouvre directement, même si les noms prédéfinis sont activés sans groupe configuré. Saisissez le nom puis Enregistrer. Retour revient au choix de destination sans créer d’addition et conserve le panier source. L’envoi explicite se poursuit alors une seule fois avec les nouvelles lignes. Changer de destination pendant Payer n’encaisse pas automatiquement : vérifiez puis engagez le paiement explicitement. Annuler conserve le panier source. Pour créer d’abord une addition vide sur iPad compatible, ouvrez Commandes → Additions puis +. Sur terminal compact, ouvrez Additions depuis la navigation, puis Nouveau ticket. Le type de service prérempli vient du traitement actif encore valide de la vente courante, sinon du défaut actif du restaurant ; À emporter n’est pas imposé. Vérifiez-le et choisissez Sur place pour cette vente, si proposé. Choisissez ensuite groupe/nom ou Addition personnalisée. Les groupes configurés et noms disponibles sont conservés : choisir un nom crée l’addition, tandis qu’un nom personnalisé demande Enregistrer. Sans réglages confirmés, traitement admissible ou groupe chargé, attendez ou réessayez ; ne créez pas une autre addition pour contourner le blocage. Il s’agit d’une consommation sur place réelle, pas d’un retrait renommé. Les envois suivants gardent une même addition et créent des bons cuisine distincts. Paiement, préparation et fermeture restent séparés ; fermez seulement sans articles non envoyés ni lots actifs impayés. Les commandes enregistrées restent dans Commandes sur POS et Admin. Aucune table/session artificielle, aucun couvert ni place numérotée ne sont créés. Le partage financier ou le déplacement de cette addition vers une table ne sont pas pris en charge ici. Une création incertaine conserve son identité : Réessayer la même demande au lieu de créer une autre addition.
 
 <span id="pos-whole-check" />
 
@@ -137,3 +139,33 @@ Dans la fiche client proposée après le choix du mode de traitement, prénom, n
 ## Piloter manuellement les commandes hebdomadaires
 
 Les restaurants en lot hebdomadaire peuvent choisir Ouverture manuelle dans Paramètres → Commandes et livraison → Commandes et disponibilité, avec settings.edit. Enregistrez, puis ouvrez ou fermez explicitement les commandes avec le bouton de pause. Les heures d’ouverture/clôture automatiques ne pilotent plus la prise de commandes dans ce mode. Jours et créneaux de livraison, fuseau du restaurant, règles de préparation et stocks restent applicables ; les commandes existantes sont conservées. Le site reste consultable pendant la pause. Désactivez l’accès de test temporaire actif avant toute réouverture publique. Voir le guide des réglages des commandes pour la procédure complète.
+
+<span id="operational-progress-by-type" />
+
+## Vérifier l’avancement selon le type de commande
+
+Pour Sur place, Retrait ou Livraison, vérifiez la préparation puis le service, le retrait ou la livraison réellement enregistrés, séparément du paiement. Une commande prépayée peut encore être retenue ou en cuisine. Ne confirmez pas la remise pour solder un paiement. Les clients QR à une même table gardent des commandes et paiements distincts. Voir [les quatre axes de la commande](/fr/help/orders/payment-preparation-and-handoff).
+
+<span id="prepared-sumit-checkout-integration" />
+
+## Intégration du panier préparé Sumit
+
+Le parcours interne Sumit compatible conserve retrait/livraison et date choisis par l’admin. Le destinataire complète ses coordonnées ; la livraison vérifie adresse, frais, minimum et date avant paiement. Voir [les commandes préparées Sumit](/fr/help/orders/internal-sumit-checkout).
+
+<span id="independent-lifecycle-confirmations" />
+
+## Vérifier les confirmations indépendantes
+
+Dans les actions d’une commande enregistrée, vérifiez les faits de préparation et de remise séparément du paiement. La revue de remise sélectionne les unités physiques réellement concernées ; le partage financier ne les multiplie pas. Avant une clôture, revoyez l’addition ou la part exacte et son solde confirmé. Une portée clôturée refuse de nouvelles modifications commerciales ; un autre lot ouvert n’est pas clôturé par cette action. Voir [le suivi et les confirmations](/fr/help/orders/payment-preparation-and-handoff).
+
+<span id="ordering-simulation-clock" />
+
+## Tester la date de passage d’une commande
+
+Dans Commandes et disponibilité → Simuler une commande, choisissez Date et heure de la commande dans le fuseau affiché, puis la date de réception et le panier. Maintenant recharge l’heure du serveur. La préparation et les règles du jour même sont évaluées à cette référence, avec les réglages enregistrés et les quantités prêtes actuelles. Une date passée ne reconstitue pas l’historique ; le test ne réserve pas de livreur et ne crée aucune commande. Les commandes clientes gardent l’heure réelle du serveur. Voir [la procédure de simulation](/fr/help/orders/preorders-and-batches#simulate-order).
+
+<span id="card-collection-recovery" />
+
+## Respecter un encaissement carte en cours
+
+Un encaissement carte natif non résolu réserve sa commande et son terminal d’origine. Ne modifiez pas son contenu financier et ne lancez pas un autre paiement ; la préparation et les réglages de traitement restent indépendants. Consultez le [choix Mini/Portable et la reprise](/fr/help/payments/victa-mini#explicit-terminal-selection).
