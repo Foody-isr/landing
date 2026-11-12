@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-11-12.
 
-113 fiches de fonctionnalités, 969 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 11 fiches opérateur internes. Le relevé machine contient 2599 fichiers applicatifs et 2284 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+113 fiches de fonctionnalités, 971 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 11 fiches opérateur internes. Le relevé machine contient 2599 fichiers applicatifs et 2284 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,10 +10,10 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 772 | 985 | 061c4e024c9a ; versioned |
-| foodyadmin | 813 | 834 | 17226551b925 ; versioned |
+| foodyserver | 772 | 985 | c8808bdc8d11 ; versioned |
+| foodyadmin | 813 | 834 | 6445257549fe ; versioned |
 | foodyweb | 380 | 194 | b966ce64fc8f ; versioned |
-| foodylanding | 157 | 31 | 2988e0b653a9 ; versioned |
+| foodylanding | 157 | 31 | a7008b0564a0 ; versioned |
 | foodypos | 429 | 184 | a8b73ad6fa96 ; versioned |
 | foodybackoffice | 48 | 56 | fb9e53200f66 ; versioned |
 
@@ -551,6 +551,7 @@ Identifiant : `orders-managing-orders`. Public : public. Disponibilité : availa
 - [Afficher automatiquement la série actuelle](../../src/content/help/fr/orders/managing-orders.mdx#weekly-series-rollover)
 - [Séparer paiement, préparation et remise](../../src/content/help/fr/orders/managing-orders.mdx#order-lifecycle-guide)
 - [Finaliser une commande interne](../../src/content/help/fr/orders/managing-orders.mdx#internal-order-finalization)
+- [Corriger l’adresse d’une commande existante](../../src/content/help/fr/orders/managing-orders.mdx#correct-delivery-address)
 - [Vérifier les confirmations indépendantes](../../src/content/help/fr/orders/managing-orders.mdx#independent-lifecycle-confirmations)
 - [Accepter une commande programmée avant sa date](../../src/content/help/fr/orders/managing-orders.mdx#accept-scheduled-order)
 - [Commandes événement depuis le parcours habituel](../../src/content/help/fr/orders/managing-orders.mdx#event-orders)
@@ -1261,6 +1262,7 @@ Identifiant : `delivery-dispatch`. Public : public. Disponibilité : available. 
 - [Vérifier une tournée calculée](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#optimize)
 - [Choisir les contraintes horaires de la tournée](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#order-time-windows)
 - [Enregistrer et suivre l’avancement](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#dispatch)
+- [Corriger l’adresse d’un arrêt](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#correct-delivery-address)
 - [Définir le départ et l’arrivée de chaque livreur](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#endpoints)
 - [Régler le créneau communiqué au client](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#customer-window)
 - [Joindre un fichier au rappel WhatsApp](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#whatsapp-media)

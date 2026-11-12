@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "Foody-isr/admin",
-  "ref": "17226551b925b149ae4bb0382a3d7a92157d1786",
+  "ref": "fda43266449ccc1c37b860462eb78b83692fc61f",
   "observations": [
     {
       "id": "table-status-descriptions-source-contract",
@@ -635,7 +635,10 @@
         "onClick={onReportIssue}",
         "courierStartAndNavigate",
         "t('courierOpenStop')",
-        "t('courierDestinationLocked')"
+        "t('courierViewPlannedStops')",
+        "t(kind === 'start' ? 'courierPlannedDeparture' : 'routeTimelineTerminus')",
+        "awaitingResult && !awaitingResult.destination_locked",
+        "{openStop && ("
       ]
     },
     {
@@ -1347,19 +1350,22 @@
           "Start and open Waze",
           "Open this stop",
           "Report a problem",
-          "Enable route reminders"
+          "Enable route reminders",
+          "View planned stops"
         ],
         "fr": [
           "Démarrer et ouvrir Waze",
           "Ouvrir cet arrêt",
           "Signaler un problème",
-          "Activer les rappels de tournée"
+          "Activer les rappels de tournée",
+          "Voir les arrêts prévus"
         ],
         "he": [
           "התחלת מסלול ופתיחת Waze",
           "פתחו את העצירה",
           "דיווח על בעיה",
-          "הפעלת תזכורות למסלול"
+          "הפעלת תזכורות למסלול",
+          "הצגת העצירות המתוכננות"
         ]
       }
     }
