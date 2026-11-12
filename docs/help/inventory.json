@@ -4,9 +4,9 @@
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "c9a555510aa7832ea4911b0827e5a2187fb16112",
+      "sourceCommit": "9c803688b3c6664a50031f4b4c2d88274516e745",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "d0b24625948a0687577a659eb44452b676980ad3f9d213064d6dd090a9cc3aa8",
+      "sourceSnapshot": "49dacfbf3555558e7e72112dbae618b450303d07533cb90066e2d8296331fd45",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -4551,7 +4551,7 @@
           ]
         },
         "internal/printing/epson_receipt.go": {
-          "sha256": "c794985033b32f73207ccbffc68b325f1fb4d2d551a0e276e2373e61b4689c33",
+          "sha256": "79afd23afa8f43733cce7be19beb6357572d24d0ebcb87a5bb640cbcafeaccb4",
           "features": [
             "printer-profiles"
           ]
@@ -4640,7 +4640,7 @@
           ]
         },
         "internal/printing/render.go": {
-          "sha256": "8f616d2fe5089a54882bc316b3fcc5bac53a39b72b22a5237b94f48f893cc5ed",
+          "sha256": "46a1699941ff2614eaeb478621067ddd087a81f2b0529541182c6d1bf5422bc3",
           "features": [
             "printers-epson-tm-u220iib",
             "printer-profiles",
@@ -4662,13 +4662,13 @@
           ]
         },
         "internal/printing/sale_receipt_raster.go": {
-          "sha256": "6098b168d6d7e48251d25157fe1e2d365219a0de22a25835561a1df327524c2e",
+          "sha256": "03174ef49b6301a4b7b9d43efc076355b12ac7441fead5fc7a9585f4f5f7851f",
           "features": [
             "printer-profiles"
           ]
         },
         "internal/printing/service.go": {
-          "sha256": "903901e19e1a9bdbda526102464201cfba6ad3725a7d3fe98398f935a4463897",
+          "sha256": "afebfda5281492a7f0afc5eded094dff874f4445f6a8d1cc495218fb9a83a6b8",
           "features": [
             "menu-variants-and-sizes",
             "printers-epson-tm-u220iib",
@@ -5578,7 +5578,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "7b7bb46179616059a7eccb71359b29c5944928e3c54e675673a2d08b62e66ff4",
+          "sha256": "0f2cd2b7523df4a1f516e6b3801a5cfbf6cc5f96c855344ec9e9df29f435ce9f",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -14421,7 +14421,7 @@
     },
     "foodylanding": {
       "repository": "https://github.com/Foody-isr/landing",
-      "sourceCommit": "4982c17445c73c208e00ebef4e42d61d538627d4",
+      "sourceCommit": "f848a6a9d2edfde68dd73a04a76cd078235bf943",
       "releaseStatus": "versioned",
       "sourceSnapshot": "8b4b17f71cf9b0d89ce88526685ae1cf1e46c76362233b6a0cbc072bb695291a",
       "workingTreeHasChanges": true,
@@ -15411,9 +15411,9 @@
     },
     "foodypos": {
       "repository": "https://github.com/Foody-isr/pos",
-      "sourceCommit": "29b3f544d315120ef21e726c20c45bb36a29e95b",
+      "sourceCommit": "360661feb7421e5d7a7d417b93bda3766506c6ca",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "2d9f8f264b838253b087a7eaffeacf63025f18c522b0ccc348a650ad4210ab25",
+      "sourceSnapshot": "90115a814d7d38a72f899bd27ff211f64b2ebb871a351828240638a62ae208f7",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "android/app/src/main/kotlin/com/foodypos/app/AshraitProtocol.kt": {
@@ -18402,10 +18402,11 @@
           ]
         },
         "lib/services/printing/printer_fleet_service.dart": {
-          "sha256": "e7685006fda68afd895b6275f218f5b3e26fc75a5bc0828e2ba3afc8ba48e77e",
+          "sha256": "028e87c33a0dc8ce2d3abb32ea85462f4d9e9973baad6b40dfe1586d7c9067df",
           "features": [
             "menu-variants-and-sizes",
-            "printers-epson-tm-u220iib"
+            "printers-epson-tm-u220iib",
+            "printer-profiles"
           ]
         },
         "lib/services/printing/printer_service.dart": {
@@ -18421,7 +18422,7 @@
           ]
         },
         "lib/services/printing/receipt_bitmap_renderer.dart": {
-          "sha256": "75d6daddf37adf8fa0989f3ad54b21664113da8b5f28f69ce59e2e7690762d64",
+          "sha256": "15808fad83353b6d4c3952d80d578177771f9c75469df37a50e13b7ca71ce59a",
           "features": [
             "printers-epson-tm-u220iib",
             "printer-profiles",
@@ -45568,7 +45569,8 @@
           "lib/services/printing/print_document.dart",
           "lib/services/printing/print_spooler_repository.dart",
           "ios/Runner/EpsonPrinterBridge.m",
-          "lib/services/printing/receipt_bitmap_renderer.dart"
+          "lib/services/printing/receipt_bitmap_renderer.dart",
+          "lib/services/printing/printer_fleet_service.dart"
         ],
         "foodyadmin": [
           "src/app/[restaurantId]/settings/printers/**",
@@ -45586,7 +45588,8 @@
           "internal/printing/service.go",
           "internal/printing/ticket.go",
           "internal/upload/service.go",
-          "internal/common/receipt_locale.go"
+          "internal/common/receipt_locale.go",
+          "internal/printing/sale_receipt_raster.go"
         ]
       },
       "operations": [
@@ -45663,9 +45666,9 @@
             "he": "בחירת יעדי קבלות לכל מכשיר"
           },
           "instructions": {
-            "fr": "Sur une version compatible de l’API et de FoodyPOS, ouvrez Plus → Paramètres → Imprimantes → Reçus de cet appareil. Avec la permission de gestion des imprimantes, sélectionnez une ou plusieurs imprimantes déjà affectées à un profil Reçus, puis Enregistrer. Sur le Victa Portable, l’imprimante intégrée est choisie par défaut. Sur iPad, l’Epson TM-m30III affectée aux reçus est privilégiée. Si aucune destination attendue n’est disponible, configurez son profil ou choisissez explicitement une autre imprimante. Une destination enregistrée devenue indisponible n’est jamais remplacée automatiquement. Le choix est conservé pour cette installation, ce restaurant et cet environnement ; il ne modifie ni l’iPad, ni un autre Victa, ni le profil partagé.\n\nAprès enregistrement du paiement, Foody envoie le reçu à ces destinations. Si la transaction propose [Nouveau reçu](/fr/help/payments/transactions#new-pos-receipt), vous pouvez choisir Autres imprimantes… et confirmer avec Imprimer le reçu. Le choix de cette copie conserve le réglage de la caisse.\n\nLe reçu de vente imprimé après paiement affiche le logo importé dans FoodyAdmin. Si aucun logo n’est disponible, le nom du restaurant sert d’en-tête. Les montants sont alignés en colonne et les reçus en hébreu se lisent de droite à gauche. Sur iPad, une Epson TM-m30III en configuration standard 80 mm et 48 colonnes utilise sa police intégrée pour les lignes compatibles.\n\nLa langue des libellés du reçu de vente suit le pays enregistré pour le restaurant. En Israël, le reçu est en hébreu, même avec une caisse affichée en français. La France utilise le français. Foody utilise l’anglais si la langue du pays est indisponible. Les noms des articles utilisent les traductions disponibles dans le menu.",
-            "en": "With compatible API and FoodyPOS versions, open More → Settings → Printers → Receipts from this device. With printer-management permission, select one or more printers already assigned a Receipts profile, then Save. Victa Portable defaults to its integrated printer. On iPad, an assigned Epson TM-m30III receipt printer is preferred. If the expected destination is unavailable, configure its profile or explicitly choose another printer. A saved destination that becomes unavailable is never automatically substituted. The choice belongs to this installation, restaurant and environment; it changes neither another iPad or Victa nor the shared profile.\n\nAfter payment is recorded, Foody sends the receipt to these destinations. When the transaction offers [New receipt](/en/help/payments/transactions#new-pos-receipt), choose Other printers… and confirm with Print receipt. The one-off copy keeps the POS setting.\n\nThe sale receipt printed after payment includes the logo uploaded in FoodyAdmin. When no logo is available, the restaurant name serves as the heading. Amounts are aligned in a column and Hebrew receipts read right to left. On iPad, an Epson TM-m30III in the standard 80 mm, 48-column configuration uses its built-in font for supported lines.\n\nSale receipt labels follow the country configured for the restaurant. In Israel, receipts are in Hebrew even when the POS interface is in English. France uses French. Foody uses English when the country's language is unavailable. Item names use available menu translations.",
-            "he": "בגרסאות תואמות של ה-API ושל FoodyPOS, פתחו עוד → הגדרות → מדפסות → קבלות ממכשיר זה. עם הרשאת ניהול מדפסות, בחרו מדפסת אחת או יותר שכבר משויכות לפרופיל קבלות ולחצו שמירה. ב-Victa Portable ברירת המחדל היא המדפסת המובנית. ב-iPad ניתנת עדיפות ל-Epson TM-m30III המשויכת לקבלות. אם היעד הצפוי אינו זמין, הגדירו את הפרופיל שלו או בחרו במפורש מדפסת אחרת. יעד שמור שהפך ללא זמין אינו מוחלף אוטומטית. הבחירה נשמרת להתקנה, למסעדה ולסביבה האלה בלבד; היא אינה משנה iPad או Victa אחרים או את הפרופיל המשותף.\n\nלאחר רישום התשלום, Foody שולחת את הקבלה ליעדים אלה. אם מופיעה בעסקה האפשרות [קבלה חדשה](/he/help/payments/transactions#new-pos-receipt), בחרו מדפסות אחרות… ואשרו בהדפסת קבלה. בחירת העותק שומרת על הגדרת הקופה.\n\nקבלת המכירה המודפסת לאחר התשלום כוללת את הלוגו שהועלה ל-FoodyAdmin. כשאין לוגו זמין, שם המסעדה משמש ככותרת. הסכומים מיושרים בעמודה וקבלות בעברית נקראות מימין לשמאל. ב-iPad, מדפסת Epson TM-m30III בתצורה הרגילה של 80 מ״מ ו-48 עמודות משתמשת בגופן המובנה שלה לשורות נתמכות.\n\nשפת הכותרות בקבלת המכירה נקבעת לפי המדינה שמוגדרת למסעדה. בישראל הקבלה מודפסת בעברית גם אם ממשק הקופה מוצג בשפה אחרת. בצרפת הקבלה מודפסת בצרפתית. כששפת המדינה אינה נתמכת, Foody משתמשת באנגלית. שמות הפריטים מופיעים בתרגום הקיים בתפריט."
+            "fr": "Sur une version compatible de l’API et de FoodyPOS, ouvrez Plus → Paramètres → Imprimantes → Reçus de cet appareil. Avec la permission de gestion des imprimantes, sélectionnez une ou plusieurs imprimantes déjà affectées à un profil Reçus, puis Enregistrer. Sur le Victa Portable, l’imprimante intégrée est choisie par défaut. Sur iPad, l’Epson TM-m30III affectée aux reçus est privilégiée. Si aucune destination attendue n’est disponible, configurez son profil ou choisissez explicitement une autre imprimante. Une destination enregistrée devenue indisponible n’est jamais remplacée automatiquement. Le choix est conservé pour cette installation, ce restaurant et cet environnement ; il ne modifie ni l’iPad, ni un autre Victa, ni le profil partagé.\n\nAprès enregistrement du paiement, Foody envoie le reçu à ces destinations. Si la transaction propose [Nouveau reçu](/fr/help/payments/transactions#new-pos-receipt), vous pouvez choisir Autres imprimantes… et confirmer avec Imprimer le reçu. Le choix de cette copie conserve le réglage de la caisse.\n\nLe reçu de vente imprimé après paiement affiche le logo importé dans FoodyAdmin. Si aucun logo n’est disponible, le nom du restaurant s’imprime en gras. Les montants sont alignés en colonne et les reçus en hébreu se lisent de droite à gauche. Sur iPad, une Epson TM-m30III en configuration standard 80 mm et 48 colonnes utilise sa police intégrée pour les lignes compatibles. Le Victa Portable avance le papier pour laisser une marge sous le reçu.\n\nLa langue des libellés du reçu de vente suit le pays enregistré pour le restaurant. En Israël, le reçu est en hébreu, même avec une caisse affichée en français. La France utilise le français. Foody utilise l’anglais si la langue du pays est indisponible. Les noms des articles utilisent les traductions disponibles dans le menu.",
+            "en": "With compatible API and FoodyPOS versions, open More → Settings → Printers → Receipts from this device. With printer-management permission, select one or more printers already assigned a Receipts profile, then Save. Victa Portable defaults to its integrated printer. On iPad, an assigned Epson TM-m30III receipt printer is preferred. If the expected destination is unavailable, configure its profile or explicitly choose another printer. A saved destination that becomes unavailable is never automatically substituted. The choice belongs to this installation, restaurant and environment; it changes neither another iPad or Victa nor the shared profile.\n\nAfter payment is recorded, Foody sends the receipt to these destinations. When the transaction offers [New receipt](/en/help/payments/transactions#new-pos-receipt), choose Other printers… and confirm with Print receipt. The one-off copy keeps the POS setting.\n\nThe sale receipt printed after payment includes the logo uploaded in FoodyAdmin. When no logo is available, the restaurant name prints in bold. Amounts are aligned in a column and Hebrew receipts read right to left. On iPad, an Epson TM-m30III in the standard 80 mm, 48-column configuration uses its built-in font for supported lines. Victa Portable advances the paper to leave room below the receipt.\n\nSale receipt labels follow the country configured for the restaurant. In Israel, receipts are in Hebrew even when the POS interface is in English. France uses French. Foody uses English when the country's language is unavailable. Item names use available menu translations.",
+            "he": "בגרסאות תואמות של ה-API ושל FoodyPOS, פתחו עוד → הגדרות → מדפסות → קבלות ממכשיר זה. עם הרשאת ניהול מדפסות, בחרו מדפסת אחת או יותר שכבר משויכות לפרופיל קבלות ולחצו שמירה. ב-Victa Portable ברירת המחדל היא המדפסת המובנית. ב-iPad ניתנת עדיפות ל-Epson TM-m30III המשויכת לקבלות. אם היעד הצפוי אינו זמין, הגדירו את הפרופיל שלו או בחרו במפורש מדפסת אחרת. יעד שמור שהפך ללא זמין אינו מוחלף אוטומטית. הבחירה נשמרת להתקנה, למסעדה ולסביבה האלה בלבד; היא אינה משנה iPad או Victa אחרים או את הפרופיל המשותף.\n\nלאחר רישום התשלום, Foody שולחת את הקבלה ליעדים אלה. אם מופיעה בעסקה האפשרות [קבלה חדשה](/he/help/payments/transactions#new-pos-receipt), בחרו מדפסות אחרות… ואשרו בהדפסת קבלה. בחירת העותק שומרת על הגדרת הקופה.\n\nקבלת המכירה המודפסת לאחר התשלום כוללת את הלוגו שהועלה ל-FoodyAdmin. כשאין לוגו זמין, שם המסעדה מודפס בהדגשה. הסכומים מיושרים בעמודה וקבלות בעברית נקראות מימין לשמאל. ב-iPad, מדפסת Epson TM-m30III בתצורה הרגילה של 80 מ״מ ו-48 עמודות משתמשת בגופן המובנה שלה לשורות נתמכות. ה-Victa Portable מקדם את הנייר ומשאיר שוליים מתחת לקבלה.\n\nשפת הכותרות בקבלת המכירה נקבעת לפי המדינה שמוגדרת למסעדה. בישראל הקבלה מודפסת בעברית גם אם ממשק הקופה מוצג בשפה אחרת. בצרפת הקבלה מודפסת בצרפתית. כששפת המדינה אינה נתמכת, Foody משתמשת באנגלית. שמות הפריטים מופיעים בתרגום הקיים בתפריט."
           }
         }
       ],
@@ -45769,6 +45772,10 @@
         {
           "service": "foodypos",
           "file": "lib/services/printing/print_spooler_repository.dart"
+        },
+        {
+          "service": "foodypos",
+          "file": "lib/services/printing/printer_fleet_service.dart"
         },
         {
           "service": "foodypos",
@@ -108449,7 +108456,8 @@
       "source": "lib/services/printing/printer_fleet_service.dart",
       "features": [
         "menu-variants-and-sizes",
-        "printers-epson-tm-u220iib"
+        "printers-epson-tm-u220iib",
+        "printer-profiles"
       ],
       "kind": "ui-controls",
       "labels": [],
