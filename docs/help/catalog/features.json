@@ -17228,5 +17228,77 @@
     "status": "available",
     "procedureUpdatedAt": "2026-11-09",
     "preserveExisting": false
+  },
+  {
+    "id": "customers-wallet-studio",
+    "module": "customers",
+    "article": "internal/wallet-studio",
+    "title": {
+      "en": "Prepare a Wallet design and test it on iPhone",
+      "fr": "Préparer un visuel Wallet et le tester sur iPhone",
+      "he": "הכנת עיצוב Wallet ובדיקתו ב־iPhone"
+    },
+    "entry": {
+      "en": "In Foody Admin, select the restaurant and open **Loyalty program → Wallet Studio**.",
+      "fr": "Dans Foody Admin, sélectionnez le restaurant et ouvrez **Programme de fidélité → Studio Wallet**.",
+      "he": "ב־Foody Admin, בחרו את המסעדה ופתחו **תוכנית מועדון → סטודיו Wallet**."
+    },
+    "access": {
+      "en": "Use an account with restaurant settings access. Saving a draft and generating an Apple test card require permission to edit settings. The iPhone test requires a loyalty program and an Apple Pass Type ID certificate with its matching key configured on the server.",
+      "fr": "Utilisez un compte avec accès aux paramètres du restaurant. Enregistrer le brouillon et générer une carte de test Apple exige le droit de modifier ces paramètres. L’essai sur iPhone exige un programme de fidélité et un certificat Apple Pass Type ID avec sa clé configurés sur le serveur.",
+      "he": "השתמשו בחשבון עם גישה להגדרות המסעדה. שמירת הטיוטה ויצירת כרטיס בדיקה של Apple דורשות הרשאת עריכה. הבדיקה ב־iPhone דורשת תוכנית מועדון ותעודת Apple Pass Type ID עם מפתח תואם שמוגדרים בשרת."
+    },
+    "selectors": {
+      "foodyadmin": [
+        "src/app/[restaurantId]/loyalty/program/wallet/page.tsx",
+        "src/components/loyalty/WalletStudioWorkspace.tsx",
+        "src/components/loyalty/LoyaltyProgramWorkspace.tsx",
+        "src/lib/api.ts",
+        "src/lib/i18n.tsx"
+      ],
+      "foodyserver": [
+        "cmd/server/wallet_studio.go",
+        "cmd/server/boot_models.go",
+        "internal/common/loyalty_wallet_design.go",
+        "internal/loyalty/wallet_studio.go",
+        "internal/loyalty/wallet_studio_handler.go",
+        "internal/loyalty/wallet_studio_artwork.go",
+        "internal/loyaltywallet/apple_studio.go",
+        "internal/loyaltywallet/apple.go",
+        "migrations/315_loyalty_wallet_designs.sql"
+      ]
+    },
+    "operations": [
+      {
+        "id": "save-design",
+        "title": {
+          "en": "Save a private design",
+          "fr": "Enregistrer un visuel privé",
+          "he": "שמירת עיצוב פרטי"
+        },
+        "instructions": {
+          "en": "Set the background color and the Apple text color. Choose a logo and a banner in PNG or JPEG, up to 1 MB each. Switch between Apple Wallet and Google Wallet to check the cropping. Select **Save draft**. If another editor saved a newer draft, reload it before retrying.",
+          "fr": "Choisissez la couleur du fond et celle du texte Apple. Importez un logo et une bannière en PNG ou JPEG, de 1 Mo maximum chacun. Basculez entre Apple Wallet et Google Wallet pour vérifier le cadrage. Cliquez sur **Enregistrer le brouillon**. Si une autre personne a enregistré une version plus récente, rechargez-la avant de réessayer.",
+          "he": "בחרו צבע רקע וצבע טקסט ל־Apple. בחרו לוגו ותמונת כותרת בפורמט PNG או JPEG, עד 1 מ״ב לקובץ. עברו בין Apple Wallet ל־Google Wallet כדי לבדוק את החיתוך. בחרו **שמירת טיוטה**. אם נשמרה גרסה עדכנית יותר, טענו אותה מחדש לפני ניסיון נוסף."
+        }
+      },
+      {
+        "id": "apple-test",
+        "title": {
+          "en": "Add a test card on iPhone",
+          "fr": "Ajouter une carte de test sur iPhone",
+          "he": "הוספת כרטיס בדיקה ל־iPhone"
+        },
+        "instructions": {
+          "en": "On the saved design, select **Generate an Apple test card**, then **Download .pkpass**. Open the file on an iPhone and select **Add**. Check the logo, banner, colors and Test card label. The pass shows sample progress and a demonstration QR. If signing is unavailable, check the Apple signing configuration for the environment. The Google tab previews the artwork.",
+          "fr": "Sur le visuel enregistré, cliquez sur **Générer une carte de test Apple**, puis sur **Télécharger le .pkpass**. Ouvrez le fichier sur un iPhone et touchez **Ajouter**. Vérifiez le logo, la bannière, les couleurs et la mention Carte de test. Le pass utilise une progression fictive et un QR de démonstration. Si la signature est indisponible, vérifiez la configuration Apple de l’environnement. L’onglet Google affiche l’aperçu du visuel.",
+          "he": "בעיצוב השמור בחרו **יצירת כרטיס בדיקה של Apple** ואז **הורדת קובץ ‎.pkpass**. פתחו את הקובץ ב־iPhone ובחרו **הוספה**. בדקו את הלוגו, תמונת הכותרת, הצבעים ואת הכיתוב כרטיס בדיקה. הכרטיס מציג התקדמות להמחשה וקוד QR לדוגמה. אם החתימה אינה זמינה, בדקו את הגדרות החתימה של Apple בסביבה הנוכחית. הלשונית Google מציגה את העיצוב בתצוגה מקדימה."
+        }
+      }
+    ],
+    "audience": "internal",
+    "status": "local-release-unverified",
+    "procedureUpdatedAt": "2026-11-12",
+    "preserveExisting": false
   }
 ]
