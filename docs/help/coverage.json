@@ -1844,12 +1844,16 @@
           "lib/i18n.tsx",
           "components/CheckoutBuilderFields.tsx",
           "components/ItemModal.tsx",
-          "app/globals.css"
+          "app/globals.css",
+          "components/VerifoneCardCapture.tsx",
+          "components/VerifoneOrderPayment.tsx",
+          "lib/verifone-wallet.ts"
         ],
         "foodyserver": [
           "internal/common/phone.go",
           "internal/orders/handler.go",
-          "internal/support/corpus.json"
+          "internal/support/corpus.json",
+          "internal/payment/verifone_wallet.go"
         ]
       }
     },
@@ -2067,11 +2071,16 @@
           "migrations/310_terminal_fleet_maintenance.sql",
           "migrations/311_shva_grouped_end_of_day.sql",
           "migrations/312_pos_ashrait_adjustments.sql",
-          "migrations/316_verifone_checkout_theme_source.sql"
+          "migrations/316_verifone_checkout_theme_source.sql",
+          "migrations/317_verifone_direct_card.sql",
+          "internal/payment/verifone_wallet.go",
+          "migrations/318_verifone_direct_wallets.sql"
         ],
         "foodyweb": [
           "app/api/**",
-          "app/sw.js/**"
+          "app/sw.js/**",
+          "app/.well-known/apple-developer-merchantid-domain-association/route.ts",
+          "app/.well-known/apple-developer-merchantid-domain-association.txt/route.ts"
         ],
         "foodybackoffice": [
           "src/app/dashboard/terminals/**",

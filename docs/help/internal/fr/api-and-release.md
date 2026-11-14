@@ -46,6 +46,18 @@ Le champ public expected_hold_amount_minor est vérifié contre les lignes serve
 
 Déployez et validez les migrations et routes API liées au restaurant avant d'activer Transactions et les rapports de tiroir-caisse sur le POS. Le registre distingue chaque paiement initial de sa commande : une commande peut avoir plusieurs paiements et un paiement couvrir plusieurs commandes. L'admissibilité au remboursement repose sur l'identifiant du paiement initial sélectionné, son mode, son montant et l'état fournisseur vérifié ; ne la déduisez jamais du seul statut de commande. Un remboursement en espèces concerne uniquement un paiement initial en espèces et est enregistré dans une session de caisse ouverte avec une clé d'idempotence. Un résultat fournisseur inconnu reste en attente de rapprochement ; ne le convertissez pas silencieusement en réussite et ne relancez pas un nouveau remboursement.
 
+<span id="verifone-cst-card-form-contract" />
+
+## Vérifier les paiements ponctuels Verifone.js dans CST
+
+Appliquez la migration 317 avant d’utiliser les réglages Backoffice du formulaire carte. La capacité publique et la clé de chiffrement sont liées au restaurant. Une tentative exige un accès vérifié à la commande et la configuration CST de ce restaurant. Foody enregistre le montant et une clé d’idempotence unique avant la vente. Relisez la transaction et vérifiez l’opération, le montant, la devise et la référence avant de contrôler la préparation. Si la réponse se perd, rapprochez la transaction par son identifiant ou attendez la confirmation de l’annulation technique. Vérifiez les exigences ABS de CVV et d’identité avec une carte CST Verifone, ainsi que l’émission Invoice4U si elle est configurée. L’activation en production nécessite les clés et contrats de production, la validation des exigences 3DS avec Verifone et l’évaluation des obligations SAQ A-EP décrites dans la documentation Verifone.js.
+
+<span id="verifone-direct-wallet-contract" />
+
+## Valider les wallets Verifone en intégration directe
+
+Appliquez la migration 318 avec l’API avant d’activer les wallets. La validation marchande Apple utilise le nom d’hôte exact configuré et le point d’entrée Apple fixé par Verifone pour cet environnement. Le domaine de commande sert le fichier d’association public sous /.well-known/. Foody envoie le jeton de passerelle Google pour Verifone ou le champ paymentData d’Apple à l’API wallet Verifone. Vérifiez le montant fixe en ILS, la propriété de la commande, la politique SCA wallet et la lecture de la vente auprès de Verifone. Testez l’annulation, le refus et les confirmations différées en attendant l’issue d’un débit incertain. Les wallets concernent les commandes web à emporter ou en livraison payées immédiatement. Vérifiez une autorisation CST réelle et l’émission du reçu pour chaque contrat avant d’activer l’option correspondante en production.
+
 <span id="contracts" />
 
 ## Maintenir les contrats API contextualisés
