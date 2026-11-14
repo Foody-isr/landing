@@ -34,6 +34,18 @@ Un superadmin ouvre Restaurant > Payment > Verifone dans Backoffice et enregistr
 
 Dans Verifone Central, ouvrez Administration > Checkout Themes et enregistrez un thème dans l’organisation et l’environnement Verifone du restaurant (CST ou production). Dans le Backoffice, ouvrez Restaurant > Payment > Verifone en tant que superadmin et enregistrez la configuration de paiement. Sous Hosted payment page appearance, saisissez le nom exact ou l’UUID dans Verifone theme name or ID, puis cliquez sur Link Verifone theme. Si plusieurs thèmes portent le même nom, saisissez l’UUID. Foody vérifie l’organisation et l’environnement et applique le thème sélectionné aux nouveaux liens Checkout. Pour modifier le thème, enregistrez vos changements dans Verifone Central et vérifiez le rendu sur un nouveau lien de test dans l’environnement autorisé. Pour utiliser le thème par défaut du compte Verifone, décochez Use the selected Checkout theme et enregistrez la configuration de paiement.
 
+<span id="configure-verifone-cst-card-form" />
+
+## Configurer le formulaire carte Foody pour CST
+
+Pour un test CST autorisé, ouvrez la fiche du restaurant dans le Backoffice en tant que superadmin. Choisissez Payment, Verifone puis CST Sandbox. Dans Card form in Foody, renseignez Public key alias et collez la Public key fournie pour cette organisation Verifone. Activez le formulaire et enregistrez. Dans la caisse en ligne du restaurant, choisissez une commande à montant fixe en ILS, prépayée, à emporter ou en livraison. Saisissez une carte de test Verifone dans Foody. La confirmation affiche l’état du paiement et permet de saisir une nouvelle carte après un refus vérifié. Attendez la vérification si le paiement est en cours. Désactivez le formulaire avant de quitter CST. Renseignez la paire correspondante si vous changez d’organisation, d’environnement ou d’alias. Pour supprimer une clé publique existante, cochez Remove the saved public key on save. Le formulaire est réservé aux tests CST.
+
+<span id="configure-verifone-direct-wallets" />
+
+## Configurer Apple Pay et Google Pay dans Foody
+
+Dans le Backoffice, ouvrez les réglages Payment du restaurant en tant que superadmin. Sélectionnez Verifone et l’environnement voulu. Dans Wallets in the Foody checkout, renseignez les contrats fournis par Verifone pour les wallets via eComm. Pour Apple Pay, activez Apple Pay for Web via direct API dans Verifone Central. Enregistrez le nom exact de l’hôte HTTPS et le fichier d’association avec l’option Foody désactivée. Faites vérifier le domaine dans Verifone Central avant d’activer Apple Pay dans Foody. Pour Google Pay, renseignez l’identifiant marchand de passerelle fourni par Verifone et l’identifiant marchand Google approuvé pour la production. Activez et enregistrez chaque wallet séparément. Testez une commande éligible d’un montant fixe en ILS, à emporter ou en livraison, puis vérifiez son état sur la page de confirmation. Si Invoice4U est actif, vérifiez l’émission du reçu complet pendant la recette. Les factures détaillées Invoice4U passent par les moyens de paiement existants. Désactivez les wallets avant de changer d’environnement ou d’organisation et enregistrez les paramètres du nouveau marchand.
+
 <span id="entitlements" />
 
 ## Vérifier affectations de fonctions et plans

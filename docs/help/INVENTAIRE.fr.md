@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-11-12.
+Révision du relevé : 2026-10-18.
 
-113 fiches de fonctionnalités, 971 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 11 fiches opérateur internes. Le relevé machine contient 2599 fichiers applicatifs et 2284 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+113 fiches de fonctionnalités, 979 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 11 fiches opérateur internes. Le relevé machine contient 2609 fichiers applicatifs et 2294 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 772 | 985 | c8808bdc8d11 ; versioned |
-| foodyadmin | 813 | 834 | 6445257549fe ; versioned |
-| foodyweb | 380 | 194 | b966ce64fc8f ; versioned |
-| foodylanding | 157 | 31 | a7008b0564a0 ; versioned |
+| foodyserver | 777 | 990 | 9df20ebbf661 ; versioned |
+| foodyadmin | 813 | 834 | 04bb50eeed7b ; versioned |
+| foodyweb | 385 | 199 | 80454cce2456 ; versioned |
+| foodylanding | 157 | 31 | e4efbc5b46ed ; versioned |
 | foodypos | 429 | 184 | a8b73ad6fa96 ; versioned |
-| foodybackoffice | 48 | 56 | fb9e53200f66 ; versioned |
+| foodybackoffice | 48 | 56 | 87779b14d3d9 ; versioned |
 
 ## getting-started
 
@@ -983,6 +983,7 @@ Identifiant : `website-design`. Public : public. Disponibilité : available. Ser
 Identifiant : `website-navigation`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb.
 
 - [Configurer l’en-tête](../../src/content/help/fr/website-qr/navigation-and-footer.mdx#header)
+- [Fixer la barre de commande au défilement](../../src/content/help/fr/website-qr/navigation-and-footer.mdx#fulfillment-scroll)
 - [Gérer les liens et le bouton principal](../../src/content/help/fr/website-qr/navigation-and-footer.mdx#links)
 - [Personnaliser le menu latéral](../../src/content/help/fr/website-qr/navigation-and-footer.mdx#side-menu)
 - [Configurer le contenu du pied de page](../../src/content/help/fr/website-qr/navigation-and-footer.mdx#footer)
@@ -1403,6 +1404,7 @@ Identifiant : `message-templates`. Public : public. Disponibilité : available. 
 Identifiant : `guest-ordering`. Public : public. Disponibilité : available. Services : foodyserver, foodyweb.
 
 - [Vérifier le plafond de préautorisation au poids](../../src/content/help/fr/guest/online-ordering.mdx#weight-hold-margin)
+- [Payer en ligne avec Apple Pay ou Google Pay](../../src/content/help/fr/guest/online-ordering.mdx#verifone-wallet-checkout)
 - [Choisir une carte puis un groupe](../../src/content/help/fr/guest/online-ordering.mdx#choose-menu-and-group)
 - [Composer le panier](../../src/content/help/fr/guest/online-ordering.mdx#basket)
 - [Choisir une adresse sur téléphone](../../src/content/help/fr/guest/online-ordering.mdx#mobile-fulfillment)
@@ -1483,6 +1485,9 @@ Identifiant : `backoffice-entitlements`. Public : internal. Disponibilité : ava
 
 - [Rembourser ou annuler un paiement en ligne Verifone](internal/fr/features-and-payments.md#verifone-admin-money-operations)
 - [Garder la page de paiement lisible](internal/fr/features-and-payments.md#verifone-readable-hosted-theme)
+- [Rattacher un thème Checkout créé dans Verifone Central](internal/fr/features-and-payments.md#link-verifone-central-theme)
+- [Configurer le formulaire carte Foody pour CST](internal/fr/features-and-payments.md#configure-verifone-cst-card-form)
+- [Configurer Apple Pay et Google Pay dans Foody](internal/fr/features-and-payments.md#configure-verifone-direct-wallets)
 - [Vérifier affectations de fonctions et plans](internal/fr/features-and-payments.md#entitlements)
 - [Configurer l’infrastructure de paiement](internal/fr/features-and-payments.md#providers)
 - [Attribuer les quotas des services externes](internal/fr/features-and-payments.md#external-api-allocation)
@@ -1517,8 +1522,11 @@ Identifiant : `platform-api`. Public : internal. Disponibilité : available. Ser
 
 - [Rembourser ou annuler un paiement en ligne Verifone](internal/fr/api-and-release.md#verifone-admin-money-operations)
 - [Garder la page de paiement lisible](internal/fr/api-and-release.md#verifone-readable-hosted-theme)
+- [Rattacher un thème Checkout créé dans Verifone Central](internal/fr/api-and-release.md#link-verifone-central-theme)
 - [Vérifier le plafond de préautorisation au poids](internal/fr/api-and-release.md#weight-hold-margin)
 - [Vérifier les contrats des transactions et du tiroir-caisse POS](internal/fr/api-and-release.md#pos-ledger-cash-drawer-contract)
+- [Vérifier les paiements ponctuels Verifone.js dans CST](internal/fr/api-and-release.md#verifone-cst-card-form-contract)
+- [Valider les wallets Verifone en intégration directe](internal/fr/api-and-release.md#verifone-direct-wallet-contract)
 - [Maintenir les contrats API contextualisés](internal/fr/api-and-release.md#contracts)
 - [Valider et promouvoir le même artefact](internal/fr/api-and-release.md#release)
 - [Vérifier l’impact documentaire](internal/fr/api-and-release.md#help)

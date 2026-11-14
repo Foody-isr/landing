@@ -34,6 +34,18 @@ A superadmin opens Restaurant > Payment > Verifone in Backoffice and saves payme
 
 In Verifone Central, open Administration > Checkout Themes and save a theme for the restaurant’s Verifone organization and environment (CST or production). As a superadmin, open Restaurant > Payment > Verifone in Backoffice and save the payment configuration. Under Hosted payment page appearance, enter the exact name or UUID in Verifone theme name or ID, then choose Link Verifone theme. If several themes have the same name, enter the UUID. Foody verifies the organization and environment and applies the selected theme to new Checkout links. To edit the theme, save your changes in Verifone Central and check the appearance on a new test link in the approved environment. To use the Verifone account default, clear Use the selected Checkout theme and save the payment configuration.
 
+<span id="configure-verifone-cst-card-form" />
+
+## Configure the Foody card form for CST
+
+For an approved CST test, open the restaurant in Backoffice as a superadmin and select Payment, Verifone and CST Sandbox. In Card form in Foody, enter the Public key alias and paste the Public key issued for that Verifone organization. Enable the form and save. Use the restaurant’s pickup or delivery checkout for a prepaid, fixed-price order in ILS. Enter a Verifone test card in Foody. The order confirmation shows the payment status and offers a new card entry after a verified decline. Wait for verification if the status is pending. Switch the form off before leaving CST. Enter the matching pair when changing the organization, environment or alias. To discard a saved public key, select Remove the saved public key on save. The form is currently available for CST tests.
+
+<span id="configure-verifone-direct-wallets" />
+
+## Configure Apple Pay and Google Pay in Foody
+
+In Backoffice, open the restaurant’s Payment settings as a superadmin and select Verifone and the correct environment. In Wallets in the Foody checkout, enter the contracts Verifone assigned for eComm wallet payments. For Apple Pay, enable Apple Pay for Web via direct API in Verifone Central. Save the exact HTTPS checkout hostname and the association file with the Foody switch off. Verify the domain in Verifone Central before switching on direct Apple Pay. For Google Pay, enter the gateway merchant ID given by Verifone and the Google merchant ID approved for production. Enable each wallet independently and save. Use an eligible fixed-price ILS pickup or delivery order and confirm payment status on the order page. For Invoice4U, verify the full receipt in acceptance testing. Detailed Invoice4U invoices use the existing payment methods. Switch the wallets off before changing environment or organization and save the new merchant’s settings.
+
 <span id="entitlements" />
 
 ## Review feature and plan assignments

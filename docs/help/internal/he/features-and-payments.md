@@ -34,6 +34,18 @@ releaseStatus: available
 
 ב-Verifone Central פתחו Administration > Checkout Themes ושמרו ערכה בארגון ובסביבה של המסעדה ב-Verifone (CST או ייצור). כמנהלי superadmin, פתחו ב-Backoffice את Restaurant > Payment > Verifone ושמרו את הגדרות התשלום. תחת Hosted payment page appearance, הזינו את השם המדויק או ה-UUID בשדה Verifone theme name or ID ובחרו Link Verifone theme. אם לכמה ערכות יש אותו שם, הזינו את ה-UUID. Foody מאמתת את הארגון והסביבה ומחילה את הערכה על קישורי Checkout חדשים. כדי לערוך את הערכה, שמרו את השינויים ב-Verifone Central ובדקו את התצוגה בקישור בדיקה חדש בסביבה שאושרה. כדי להשתמש בברירת המחדל של חשבון Verifone, בטלו את הסימון של Use the selected Checkout theme ושמרו את הגדרות התשלום.
 
+<span id="configure-verifone-cst-card-form" />
+
+## הגדרת טופס הכרטיס של Foody לסביבת CST
+
+לבדיקת CST מאושרת, פתחו את מסך המסעדה ב-Backoffice כמנהלי superadmin ובחרו Payment, Verifone ו-CST Sandbox. באזור Card form in Foody הזינו Public key alias והדביקו את ה-Public key שהונפק לארגון ב-Verifone. הפעילו את הטופס ושמרו. באתר המסעדה בחרו הזמנה בתשלום מראש, במחיר קבוע בשקלים, באיסוף עצמי או במשלוח. הזינו כרטיס בדיקה של Verifone ב-Foody. אישור ההזמנה מציג את מצב התשלום ומאפשר להזין כרטיס חדש אחרי דחייה מאומתת. כשהתשלום ממתין, המתינו לאימות. כבו את הטופס לפני היציאה מ-CST. בעת שינוי הארגון, הסביבה או הכינוי הזינו את זוג הערכים המתאים. להסרת מפתח ציבורי שמור סמנו Remove the saved public key on save. הטופס זמין לבדיקות CST.
+
+<span id="configure-verifone-direct-wallets" />
+
+## הגדרת Apple Pay ו-Google Pay ב-Foody
+
+ב-Backoffice פתחו את הגדרות Payment של המסעדה כמנהלי superadmin ובחרו Verifone ואת הסביבה המתאימה. באזור Wallets in the Foody checkout הזינו את החוזים שהוקצו ב-Verifone לארנקים דרך eComm. עבור Apple Pay הפעילו Apple Pay for Web via direct API ב-Verifone Central. שמרו את שם המארח המדויק של קופת HTTPS ואת קובץ השיוך כשהמתג של Foody כבוי. אמתו את הדומיין ב-Verifone Central לפני הפעלת Apple Pay ב-Foody. עבור Google Pay הזינו את מזהה הסוחר מהשער של Verifone ואת מזהה הסוחר של Google שאושר לייצור. הפעילו כל ארנק בנפרד ושמרו. בדקו הזמנת איסוף או משלוח זכאית בסכום קבוע בשקלים ובדקו את מצב התשלום בדף אישור ההזמנה. אם Invoice4U פעיל, בדקו את הנפקת הקבלה המלאה בבדיקות הקבלה. חשבוניות מפורטות ב-Invoice4U משתמשות באמצעי התשלום הקיימים. כבו את הארנקים לפני החלפת סביבה או ארגון ושמרו את הגדרות הסוחר החדש.
+
 <span id="entitlements" />
 
 ## בדיקת שיוך יכולות ומסלולים

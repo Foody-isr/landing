@@ -46,6 +46,18 @@ Public expected_hold_amount_minor is checked against server-priced lines and the
 
 Deploy and validate the restaurant-scoped API migrations and routes before enabling POS Transactions and cash-drawer reports. The transaction ledger identifies each original payment separately from its order: an order may have multiple payments, and a payment may cover multiple orders. Refund eligibility uses the selected original payment ID, its tender rail, amount and verified provider state; never infer it from order status alone. Cash refunds affect only original cash payments and are recorded against an open drawer session with an idempotency key. Unknown provider outcomes stay pending for reconciliation; do not silently convert them into success or retry as a new refund.
 
+<span id="verifone-cst-card-form-contract" />
+
+## Verify one-time Verifone.js sales in CST
+
+Apply migration 317 before using the Backoffice card form settings. The public capability and capture key are restaurant-scoped. A payment attempt requires ownership of the order and the keyed CST configuration. Foody records the amount and a unique idempotency key before calling card SALE. Verify the operation, amount, currency and merchant reference through transaction readback before checking fulfillment. If the response is lost, reconcile by transaction ID or by confirmed technical reversal. Check the ABS identity and CVV rules with a Verifone CST card, and verify Invoice4U issuance where configured. Live use needs a production key and contract, approval of the 3DS requirements with Verifone, and an assessment of the SAQ A-EP obligations described in the Verifone.js documentation.
+
+<span id="verifone-direct-wallet-contract" />
+
+## Validate the Verifone direct wallet checkout
+
+Apply migration 318 with the API before enabling the wallet settings. Apple merchant validation uses the configured merchant’s exact checkout hostname and Verifone’s environment-specific Apple endpoint. The checkout domain serves the public association file under /.well-known/. Foody sends Google’s Verifone gateway token or Apple paymentData to the Verifone wallet API. Confirm the fixed ILS amount, order ownership, SCA wallet policy and authoritative sale readback. Test cancellation, declines and delayed confirmation without resubmitting an uncertain charge. The wallets apply to immediate payment for website pickup and delivery. Verify genuine CST wallet authorization and receipt issuance for each provisioned contract before enabling the corresponding production option.
+
 <span id="contracts" />
 
 ## Maintain scoped API contracts
