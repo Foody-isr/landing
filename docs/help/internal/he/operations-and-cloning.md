@@ -1,22 +1,22 @@
 ---
 title: 'תפעול, תשתית ושכפול פנימיים'
-description: 'מפעילים: תפעול, מדריך, שרתים ושכפול. קראו מצב לפני שינוי.'
+description: 'ב־Backoffice, פתחו Platform ואז Operations, Servers או Clone data. בדקו את מצב השירותים לפני פעולה.'
 apps: both
 tags:
   - internal
   - backoffice-operations
-updatedAt: '2026-10-18'
+updatedAt: '2026-11-15'
 featureId: backoffice-operations
 audience: internal
 releaseStatus: available
 ---
-מפעילים: תפעול, מדריך, שרתים ושכפול. קראו מצב לפני שינוי.
+ב־Backoffice, פתחו Platform ואז Operations, Servers או Clone data. בדקו את מצב השירותים לפני פעולה.
 
 <span id="status" />
 
 ## בדיקת מצב שירותים
 
-בחרו פיתוח או ייצור ובדקו זמן, תקין, מוגבל או מושבת ושגיאות. רענון אינו פריסה או תיקון. הצלחה ישנה אינה הוכחת תקינות עכשווית.
+בחרו פיתוח או ייצור ובדקו זמן, תקין, מוגבל או מושבת ושגיאות. רענון אינו פריסה או תיקון. הצלחה ישנה אינה הוכחת תקינות עכשווית. אם בדיקת המצב נכשלה, הסיכום מציג **Status checks unavailable**. לחצו על **Check now** לבדיקה חוזרת.
 
 <span id="infra" />
 

@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - shared-runtime
-updatedAt: '2026-11-04'
+updatedAt: '2026-11-15'
 featureId: shared-runtime
 audience: internal
 releaseStatus: available
@@ -37,6 +37,8 @@ releaseStatus: available
 ## בדיקת שינויי תשתית
 
 לכל קובץ גיבוב מדויק. קבצים ללא שיוך עסקי מסווגים במפורש כתשתית ולא כיכולת לקוח. שינוי עדיין דורש הסבר מדויק ללא השפעה או עדכון מדריכים. שייכו מסכים ובקרות חדשים ליכולת לפני פריסה.
+
+הכיתוב ב־Backoffice נגזר מאותה בחירת כתובת API שמשמשת לבקשות. עבור API מותאם, הכיתוב הוא Custom API ובעמוד ההפניה לקטלוג מופיעות הנחיות.
 
 <span id="whatsapp-media-client" />
 

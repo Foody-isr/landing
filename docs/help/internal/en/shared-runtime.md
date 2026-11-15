@@ -7,7 +7,7 @@ apps: both
 tags:
   - internal
   - shared-runtime
-updatedAt: '2026-11-04'
+updatedAt: '2026-11-15'
 featureId: shared-runtime
 audience: internal
 releaseStatus: available
@@ -39,6 +39,8 @@ Public expected_hold_amount_minor is checked against server-priced lines and the
 ## Review shared source changes
 
 Every source file is inventoried by exact digest. Files without a specific business selector are explicitly classified as shared runtime, not silently called customer features. A source change still requires an exact no-user-impact explanation or updated procedures. New screens and controls must be assigned to their business feature before release.
+
+Backoffice derives the API label from the same endpoint selection it uses for requests. A custom API configuration displays Custom API and the catalog handoff gives written directions.
 
 <span id="whatsapp-media-client" />
 

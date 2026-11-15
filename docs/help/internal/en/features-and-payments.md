@@ -1,16 +1,28 @@
 ---
 title: 'Internal features, subscriptions and payment settings'
-description: 'Internal Foody operators: open Features or the restaurant’s subscription/payment controls.'
+description: 'Open the restaurant’s Features, Billing or Payment tab. Find the shared Cibus settings under Payments & devices.'
 apps: both
 tags:
   - internal
   - backoffice-entitlements
-updatedAt: '2026-11-12'
+updatedAt: '2026-11-15'
 featureId: backoffice-entitlements
 audience: internal
 releaseStatus: available
 ---
-Internal Foody operators: open Features or the restaurant’s subscription/payment controls.
+In Foody Backoffice, open Payments & devices → Plans & modules for public rates or select a restaurant to see Billing & modules and Features & access.
+
+<span id="backoffice-software-catalogue" />
+
+## Check public rates and module features
+
+As a Foody superadmin, open **Plans & modules**. The page shows the monthly software price excluding VAT per location, the included licences and the additional named POS licence. Use the feature table to see which module grants each listed flag. Staff roles and restaurant settings still apply. Select **View public pricing** for setup, hardware and payment service prices.
+
+<span id="backoffice-restaurant-subscription" />
+
+## Find a restaurant’s subscription and current access
+
+Open **Restaurants** and select the restaurant. **Billing & modules** opens first. In the development modular pilot, check the offer, billing status, modules in the offer, active modules, licences and trial date or paid period when available. Choose **Features & access** to see the active and locked flags. For an existing restaurant, check the **Legacy subscription** and any **Private sandbox offer**. **Features & access** shows its existing toggles and tier settings.
 
 <span id="verifone-admin-money-operations" />
 
@@ -50,7 +62,7 @@ In Backoffice, open the restaurant’s Payment settings as a superadmin and sele
 
 ## Review feature and plan assignments
 
-Compare technical feature/plan identifiers with the approved customer contract. Legacy technical names and internal price fields are not authoritative public offers. Confirm the target restaurant before an authorized entitlement change.
+Open the restaurant’s **Billing & modules** to review the agreed terms and current scope. For legacy contracts, compare the tier and manual flags in **Features & access** with the customer agreement before making an authorized change. For a modular sandbox restaurant, the trial or verified agreement controls the displayed flags.
 
 <span id="providers" />
 
@@ -69,3 +81,9 @@ As superadmin open Usage and quotas to compare restaurants, select a service, th
 ## Prepared Sumit checkout integration
 
 The prepared internal-order Sumit capability derives from the restaurant’s active provider and valid configured credentials. It adds no plan switch or onboarding control. A provider change disables opening these pending checkouts; it never silently sends them to another processor. Coordinate the API/Admin/Web rollout and the new Sumit guide.
+
+<span id="cibus-platform-settings" />
+
+## Review shared Cibus settings
+
+Confirm the API label, then open **Payments & devices → Cibus (Pluxee)**. Use **Retry** if the current settings fail to load. For an approved update, verify the Cibus environment and endpoint, enter any new integrator credentials supplied by Cibus, and choose **Save Cibus settings**. Check the saved confirmation. Maintain each restaurant’s terminal identifiers in Foody Admin.

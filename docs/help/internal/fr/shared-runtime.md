@@ -7,7 +7,7 @@ apps: both
 tags:
   - internal
   - shared-runtime
-updatedAt: '2026-11-04'
+updatedAt: '2026-11-15'
 featureId: shared-runtime
 audience: internal
 releaseStatus: available
@@ -39,6 +39,8 @@ Le champ public expected_hold_amount_minor est vérifié contre les lignes serve
 ## Vérifier les changements du socle
 
 Chaque fichier a une empreinte exacte. Les fichiers sans sélecteur métier sont classés explicitement comme socle, sans devenir des fonctions client. Un changement exige une justification exacte sans impact ou des procédures mises à jour. Affectez nouveaux écrans et contrôles à leur fonction avant livraison.
+
+Le Backoffice déduit le libellé de l’API de la même sélection d’endpoint que celle qui sert aux requêtes. Avec une API personnalisée, il affiche Custom API et la page de réorientation vers le catalogue fournit le parcours à suivre.
 
 <span id="whatsapp-media-client" />
 

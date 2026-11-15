@@ -1,22 +1,22 @@
 ---
 title: Internal shared catalog and assets
-description: 'Internal Foody operators: Menu, Combos, Ingredient icons and POS login screen.'
+description: Backoffice → POS content → Ingredient icons or POS login screen. Menus and combos are managed in Foody Admin.
 apps: both
 tags:
   - internal
   - backoffice-assets
-updatedAt: '2026-10-18'
+updatedAt: '2026-11-15'
 featureId: backoffice-assets
 audience: internal
 releaseStatus: available
 ---
-Internal Foody operators: Menu, Combos, Ingredient icons and POS login screen.
+Backoffice → POS content → Ingredient icons or POS login screen. Menus and combos are managed in Foody Admin.
 
 <span id="catalog" />
 
-## Maintain shared catalog resources
+## Manage a restaurant catalog
 
-Review global versus restaurant-owned context before editing a catalog or combo resource. Confirm references before deletion. Shared library changes can affect many restaurants and require explicit impact review.
+Sign in to Foody Admin with access to the restaurant. Open **Items & menus → Item library** to manage items and combos. Use **Menus** in the same section to manage menus. Old Backoffice Menu Manager and Combo Menus bookmarks show these directions.
 
 <span id="icons" />
 

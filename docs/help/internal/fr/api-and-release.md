@@ -286,7 +286,7 @@ Préparation locale : appliquer la migration 289 et déployer l’API compatible
 
 ## Déclarations du parc de terminaux
 
-Dans Backoffice → Terminal fleet, recherchez par restaurant, nom ou identifiant. Activez **Show forgotten terminals** pour afficher les entrées oubliées. Pour inventorier un Mini configuré sur un iPad, choisissez Register a Mini et saisissez le restaurant, le nom et le numéro de série physique. Dans Edit inventory, renseignez le DID (VHQ Device ID) et le numéro de terminal SHVA (Mispar Masof). Chaque terminal en production a son propre numéro SHVA. Saisissez un identifiant de connexion Ashrait distinct si Verifone en a fourni un. L’enregistrement consigne la révision et un événement d’audit. Utilisez Change requests pour appliquer un changement de provisionnement au terminal physique.
+Dans Backoffice → Payments & devices → Terminal fleet, recherchez par restaurant, nom ou identifiant. Activez **Show forgotten terminals** pour afficher les entrées oubliées. Pour inventorier un Mini configuré sur un iPad, choisissez Register a Mini et saisissez le restaurant, le nom et le numéro de série physique. Dans Edit inventory, renseignez le DID (VHQ Device ID) et le numéro de terminal SHVA (Mispar Masof). Chaque terminal en production a son propre numéro SHVA. Saisissez un identifiant de connexion Ashrait distinct si Verifone en a fourni un. L’enregistrement consigne la révision et un événement d’audit. Utilisez Change requests pour appliquer un changement de provisionnement au terminal physique.
 
 L’inventaire réservé au personnel peut inclure un composant payment_terminal avec une clé physical_key dérivée du numéro de série du parc. Les versions POS compatibles l’utilisent pour rapprocher un profil réseau vérifié de la fiche du même appareil. L’inventaire renvoie uniquement la clé dérivée pour cette opération.
 
@@ -333,6 +333,12 @@ Les réponses du mode livreur masquent le tracé et les données client hors de 
 ## Réinitialiser les données de commande et de caisse d’un restaurant de test
 
 Depuis le dépôt API, lancez scripts/cleanup_orders.sh avec --yes et --restaurant-id pour le restaurant de test voulu. Vérifiez l’adresse de la base et le restaurant avant l’exécution. Le script supprime les commandes, les additions ouvertes, les paiements POS et l’historique des clôtures, puis libère les tables. La transaction s’interrompt si un paiement, un retour ou une transmission attend encore un résultat. Vérifiez la procédure sur des données synthétiques.
+
+<span id="backoffice-module-access-contract" />
+
+## Vérifier le catalogue logiciel et les droits côté Backoffice
+
+Comme superadmin Foody, chargez le catalogue de fonctions. Vérifiez que le catalogue logiciel correspond à Foody Landing et que l’API fournit encore les définitions d’offres historiques. En développement, ouvrez le détail d’un restaurant du pilote modulaire et vérifiez que ses fonctions correspondent à l’essai en cours ou à l’abonnement vérifié. Pour un restaurant existant, vérifiez que la réponse renvoie son offre enregistrée et ses réglages manuels.
 
 <span id="forget-device-inventory" />
 

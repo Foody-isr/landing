@@ -1,22 +1,22 @@
 ---
 title: 'Opérations, infrastructure et clonage internes'
-description: 'Opérateurs : Opérations, son guide, Serveurs et Clonage. Lisez les statuts avant toute mutation.'
+description: 'Backoffice → Platform → Operations, Servers ou Clone data. Consultez l’état des services avant toute intervention.'
 apps: both
 tags:
   - internal
   - backoffice-operations
-updatedAt: '2026-10-18'
+updatedAt: '2026-11-15'
 featureId: backoffice-operations
 audience: internal
 releaseStatus: available
 ---
-Opérateurs : Opérations, son guide, Serveurs et Clonage. Lisez les statuts avant toute mutation.
+Backoffice → Platform → Operations, Servers ou Clone data. Consultez l’état des services avant toute intervention.
 
 <span id="status" />
 
 ## Examiner les statuts
 
-Choisissez dev/prod et examinez horodatage, état opérationnel/dégradé/indisponible et erreurs. Actualiser ne déploie ni ne répare. Un ancien succès ne prouve pas la santé actuelle.
+Choisissez dev/prod et examinez horodatage, état opérationnel/dégradé/indisponible et erreurs. Actualiser ne déploie ni ne répare. Un ancien succès ne prouve pas la santé actuelle. Si le contrôle échoue, le récapitulatif affiche **Status checks unavailable**. Utilisez **Check now** pour relancer le contrôle.
 
 <span id="infra" />
 
