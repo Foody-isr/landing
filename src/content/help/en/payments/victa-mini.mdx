@@ -5,7 +5,7 @@ apps: foodypos
 tags:
   - payments
   - pos-victa-mini
-updatedAt: '2026-11-11'
+updatedAt: '2026-11-15'
 featureId: pos-victa-mini
 audience: public
 releaseStatus: available
@@ -16,17 +16,19 @@ iPad POS → More → Settings → Hardware → Payment terminals
 
 ## Connect and restore the Victa Mini on iPad
 
-With payments.manage, open More → Settings → Hardware → Payment terminals. Open an existing terminal’s details and choose Edit, or choose Add a terminal from the list. A saved terminal shares a row with its inventory entry when the hardware identities match. Give it a recognizable name, select Mini or Portable, and enter its local IPv4 address and the 10-digit Ashrait ID supplied by Verifone. Choose Identify the terminal. FoodyPOS reads the connected model and serial number without login, payment or Deposit. Check them against the intended physical device and explicitly confirm the identity before Save. A name or saved address alone does not prove which device is connected. A legacy configuration also requires this one-time verification. The ID stays masked and the catalogue is stored securely for this restaurant and API environment on this iPad. An unavailable or different physical identity blocks collection instead of selecting another terminal.
+In a compatible version of FoodyPOS, open More → Settings → Hardware → Payment terminals with the payments.manage permission. Choose **Add a terminal**, or open a saved terminal and choose **Edit**. A saved terminal shares a row with its inventory entry when the hardware identities match. Enter a recognizable name, choose Mini or Portable, then enter the local IPv4 address and the 10-digit Ashrait ID supplied by Verifone.
 
-The first saved terminal becomes the default. The Default terminal option can change it; choosing another terminal for one payment keeps that default. Keep each device switched on and reachable on the local network. When the restaurant and permissions are restored, opening FoodyPOS or returning to the foreground retries the same idle saved connection. To test a verified LAN terminal, open its details and choose Test connection. An idle verified destination can change without restarting the application. An ongoing initialization, payment or uncertain deposit prevents changes.
+Tap **Save**. When adding a terminal, changing its IP address, Ashrait ID or type, or updating an older unverified profile, FoodyPOS identifies the device and shows its model and serial number in a confirmation window. Compare them with the physical terminal, then tap **Confirm** to save. You can also use **Identify the terminal**, confirm the identity, then tap **Save**. For a verified profile, changes to the name or default setting can be saved directly. The ID stays masked and the catalogue is stored securely for this restaurant and API environment on this iPad.
 
-Automatic reconnection sends no charge, transaction lookup or Deposit. Preserve the original device, configuration and journals when a payment or deposit is unresolved; do not erase data or downgrade to bypass a lock. Use the compatible POS and API on every device sharing a terminal. Physical Mini/Portable acceptance and availability of remote control on a Portable also running FoodyPOS must be checked with Verifone; these instructions do not certify that hardware scenario.
+The first saved terminal becomes the default. Select **Default terminal** before saving to change it. If identification fails, check the IP address and make sure the terminal is powered on and connected to the same local network as the iPad. FoodyPOS waits for any ongoing reconnection to finish. If FoodyPOS asks you to restart the app, close and reopen it before trying again.
+
+After restaurant access and permissions are restored, opening FoodyPOS or returning to the foreground retries the same idle saved connection. To test a verified LAN terminal, open its details and choose **Test connection**. An unavailable or different physical identity blocks collection. Identification and automatic reconnection do not send a charge, transaction lookup or Deposit. Preserve the original device, configuration and journals while a payment or deposit is unresolved. Use compatible POS and API versions on each device sharing a terminal and verify remote access to a Portable running FoodyPOS with Verifone.
 
 <span id="explicit-terminal-selection" />
 
 ## Collect on the default terminal
 
-On iPad, Card sends the payment to the default terminal. To switch between Mini and Portable, open More → Settings → Hardware → Payment terminals, select and verify the device, then enable Default terminal before saving. If the default is unavailable, restore its connection or change the setting after resolving pending operations. On a Portable running FoodyPOS, open the same check and use its integrated reader. Resume interrupted payments on their original POS and terminal.
+On iPad, Card sends the payment to the default terminal. To switch between Mini and Portable, open More → Settings → Hardware → Payment terminals, open the terminal’s details and choose **Edit**. Select **Default terminal**, then tap **Save**. If FoodyPOS asks for confirmation, check the displayed model and serial number. If the default is unavailable, restore its connection or change the setting after resolving pending operations. On a Portable running FoodyPOS, open the same check and use its integrated reader. Resume interrupted payments on their original POS and terminal.
 
 <span id="ashrait-last-transaction-inspection" />
 
