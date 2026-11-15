@@ -131,6 +131,8 @@ for (const [service, configuredRoot] of Object.entries(roots)) {
       : ashraitReceiptOwnership[`${service}:${file}`] ?? currentPOSProofOwnership[`${service}:${file}`]
         ?? focusedStockOwnership[`${service}:${file}`] ?? mobileHomeOwnership ?? ids;
     if (walletStudioModule) ids = ['customers-wallet-studio'];
+    // This confirmation only removes hardware from the device inventory.
+    if (service === 'foodypos' && file === 'lib/features/settings/presentation/device_forget_confirmation.dart') ids = ['device-kds'];
     sources[file] = { sha256: digest(bytes), features: ids };
     const found = [];
     if (/(?:^|\/)app\/.*\/(?:page|route)\.[jt]sx?$/.test(file)) found.push({ kind: file.includes('/route.') ? 'next-api-route' : 'next-page', route: routePath(file), line: 1 });
