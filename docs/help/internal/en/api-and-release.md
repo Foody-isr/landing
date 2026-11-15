@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-11-12'
+updatedAt: '2026-11-15'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -286,9 +286,11 @@ Local preparation: apply migration 289 and deploy the compatible API before POS.
 
 ## Global terminal declarations
 
-On compatible API and Backoffice versions, a Foody superadmin opens Backoffice → Terminal fleet to search terminals across restaurants by name or identifier. Registered Portables appear through the existing inventory. For a Mini configured only on the iPad, select Register a Mini, choose the restaurant and enter its physical serial number and name. It appears as Unconfigured. In Edit inventory, declare the DID, VHQ deviceUid, SHVA terminal number, Ashrait provisioning ID, supplier number, acquirer and lifecycle. A save checks the revision and records an audit event. Use the physical serial on the device and keep each identifier in its own field. Restaurant Admin keeps its own restaurant scope. Keep credentials and card data out of these fields.
+In Backoffice → Terminal fleet, search by restaurant, device name or identifier. Use **Show forgotten terminals** to include archived entries in the list. To inventory a Mini that is managed on an iPad, choose Register a Mini and enter its restaurant, name and physical serial. In Edit inventory, enter the DID (VHQ Device ID) and the SHVA terminal number (Mispar Masof). Each live terminal requires its own SHVA number. Enter a legacy Ashrait login only when Verifone supplies a distinct login. Save records the revision and an audit event. Use Change requests to apply a provisioned change to a physical terminal.
 
 The staff-scoped device inventory can include a payment_terminal component with a physical_key derived from the fleet serial. Compatible POS builds use it to link a verified LAN profile to the same device. Inventory returns only the derived key for this purpose.
+
+The inventory entry is shared with FoodyPOS. POS reads and edits the declared serial number, DID and SHVA number within the restaurant and with permission to manage payments. The operation lookup returns only the identified terminal’s SHVA number. A payment or closing reservation protects the configuration in use against a concurrent change.
 
 <span id="terminal-fleet-change-requests" />
 
@@ -300,7 +302,7 @@ Open Change requests on the original device. Choose a bank configuration change,
 
 ## Test Ashrait maintenance on one CST terminal
 
-Internal CST procedure. Allowlist the physical serial keys in the development API with migrations 309–312. Configure the Verifone CST tenant, API credentials, application IDs and exact SHVA parameter names for the Mini and Portable. Use the compatible diagnostic POS build. Resolve any open payment and close the previous batch. In Backoffice → Terminal fleet → Change requests, review the current identifiers and prepare a same-device, same-restaurant change. For first enrollment, leave the original DID blank and retain the current Ashrait provisioning login. Keep the enrolled POS open with the reviewed terminal connected. Authorize DID assignment if it changes, then refresh the request to verify the acknowledgement. If the SHVA number changes, choose Save SHVA number in VHQ. Check parameter synchronization in VHQ, then authorize the download. Confirm the values actually applied on the terminal with Verifone and record the observed identifiers and check reference in Backoffice. If a VHQ reply is lost, Check VHQ status reads the existing value. For an interrupted native command, record its retained result or verify with Verifone. Replacement and transfer requests remain in preparation.
+Internal CST procedure. Allowlist the verified physical terminals on the API with migrations 309–312 and use a compatible diagnostic POS build. Resolve pending payments and the previous batch. In Backoffice → Terminal fleet → Change requests, prepare a change for the same device and restaurant with values assigned by Verifone. Keep the existing login as the starting configuration. Authorize DID assignment only if it changes; FoodyPOS sends SetVhqDeviceId with the requested DID. After acknowledgement, or directly for a SHVA-only change, authorize the parameter download. The POS uses the new SHVA number for DownloadAshraitParameters when it changes. No direct VHQ API account is needed. Read the applied values on the intended terminal and record the verification in Backoffice. Only then does the new configuration become active for normal POS synchronization. If an outcome is unknown, record a saved result or verify the state on the original terminal before authorizing another command. Replacement and transfer remain separate procedures.
 
 On the Mini and Portable, verify recovery from an interrupted CST sale on its original check. A matched debit triggers Void 400. Wait for confirmation before collecting again. From Transactions on the originating POS, verify a full or partial refund and check 53 / MTI 100 in the CST trace.
 
@@ -325,3 +327,9 @@ Compatible clients send X-Foody-POS-Token only to the trusted authenticated orde
 Deploy migration 313 before the matching API and Admin. The restaurant-scoped courier navigate and issue routes require an active route and its assigned courier context. Navigation records the stop awaiting a result. Only one pending stop may reserve navigation per route. An issue preserves an audited unsuccessful attempt without completing the order. It removes the order from automatic courier selection and guest GPS tracking until a new route starts. Order managers can send a push reminder to the assigned courier’s registered devices.
 
 Courier responses omit the route line and hide customer data outside the open stop. Courier accounts receive refresh events without order details on the live connection. This correction uses the existing migration 313.
+
+<span id="reset-order-and-cash-test-data" />
+
+## Reset order and cash test data for a restaurant
+
+From the API repository, use scripts/cleanup_orders.sh with --yes and --restaurant-id for the intended test restaurant. Confirm the database address and restaurant before running the script. It deletes orders, open tickets, POS payments and closing history and frees the tables. The transaction aborts if a payment, return or transmission still requires a result. Verify the procedure with synthetic data.
