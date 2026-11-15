@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-11-12'
+updatedAt: '2026-11-15'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -286,9 +286,11 @@ Préparation locale : appliquer la migration 289 et déployer l’API compatible
 
 ## Déclarations du parc de terminaux
 
-Sur les versions compatibles de l’API et du Backoffice, un superadmin Foody ouvre Backoffice → Terminal fleet pour rechercher les terminaux de tous les restaurants par nom ou identifiant. Les Portables enregistrés remontent via l’inventaire existant. Pour un Mini configuré uniquement sur l’iPad, choisissez Register a Mini, sélectionnez le restaurant et saisissez le numéro de série physique et le nom. Le Mini apparaît comme Unconfigured. Dans Edit inventory, déclarez le DID, le deviceUid VHQ, le numéro de terminal SHVA, l’identifiant de provisionnement Ashrait, le numéro fournisseur, l’acquéreur et l’état du matériel. La sauvegarde vérifie la révision et crée une trace d’audit. Lisez le numéro de série sur l’appareil et placez chaque identifiant dans son propre champ. L’Admin reste limité à son restaurant. Gardez les secrets et données de carte hors de ces champs.
+Dans Backoffice → Terminal fleet, recherchez par restaurant, nom ou identifiant. Activez **Show forgotten terminals** pour afficher les entrées oubliées. Pour inventorier un Mini configuré sur un iPad, choisissez Register a Mini et saisissez le restaurant, le nom et le numéro de série physique. Dans Edit inventory, renseignez le DID (VHQ Device ID) et le numéro de terminal SHVA (Mispar Masof). Chaque terminal en production a son propre numéro SHVA. Saisissez un identifiant de connexion Ashrait distinct si Verifone en a fourni un. L’enregistrement consigne la révision et un événement d’audit. Utilisez Change requests pour appliquer un changement de provisionnement au terminal physique.
 
 L’inventaire réservé au personnel peut inclure un composant payment_terminal avec une clé physical_key dérivée du numéro de série du parc. Les versions POS compatibles l’utilisent pour rapprocher un profil réseau vérifié de la fiche du même appareil. L’inventaire renvoie uniquement la clé dérivée pour cette opération.
+
+La fiche est partagée avec FoodyPOS. Le POS lit et modifie le numéro de série déclaré, le DID et le numéro SHVA dans le périmètre du restaurant et avec le droit de gérer les paiements. La recherche opérationnelle renvoie uniquement le numéro SHVA du terminal identifié. La réservation d’un paiement ou d’une clôture protège la configuration utilisée contre une modification concurrente.
 
 <span id="terminal-fleet-change-requests" />
 
@@ -300,7 +302,7 @@ Ouvrez Change requests sur le terminal d’origine. Choisissez un changement de 
 
 ## Tester la maintenance Ashrait sur un terminal CST
 
-Procédure CST interne. Autorisez les clés des séries physiques dans l’API de développement avec les migrations 309 à 312. Configurez le tenant VHQ CST, l’accès API, les identifiants d’application et le nom exact du paramètre SHVA pour le Mini et le Portable. Utilisez le build de diagnostic FoodyPOS. Résolvez les paiements en attente et clôturez le lot précédent. Dans Backoffice → Terminal fleet → Change requests, vérifiez les identifiants et préparez une modification pour le même appareil et le même restaurant. Au premier enrôlement, laissez le DID d’origine vide et conservez l’identifiant de connexion Ashrait courant. Gardez le POS enrôlé ouvert avec le terminal vérifié connecté. Autorisez le DID s’il change, puis actualisez la demande pour voir l’accusé de réception. Si le numéro SHVA change, choisissez Save SHVA number in VHQ. Vérifiez la synchronisation des paramètres dans VHQ, puis autorisez leur téléchargement. Vérifiez les valeurs appliquées sur le terminal avec Verifone et consignez les identifiants observés et la référence du contrôle dans Backoffice. Après une réponse VHQ perdue, Check VHQ status relit la valeur existante. Après une commande native interrompue, enregistrez le résultat conservé ou vérifiez auprès de Verifone. Les demandes de remplacement et de transfert restent en préparation.
+Procédure CST interne. Autorisez les terminaux physiques vérifiés sur l’API avec les migrations 309 à 312 et utilisez un build POS de diagnostic compatible. Résolvez les paiements en attente et le lot précédent. Dans Backoffice → Terminal fleet → Change requests, préparez un changement sur le même appareil et le même restaurant avec les valeurs attribuées par Verifone. Gardez l’identifiant de connexion courant comme configuration de départ. Autorisez le DID uniquement s’il change ; FoodyPOS envoie SetVhqDeviceId avec le DID demandé. Après l’accusé de réception, ou directement pour un changement SHVA seul, autorisez le téléchargement des paramètres. Si le numéro SHVA change, le POS utilise le nouveau numéro pour DownloadAshraitParameters. Aucun compte API VHQ direct n’est nécessaire. Lisez les valeurs appliquées sur le bon terminal et enregistrez la vérification dans Backoffice. La nouvelle configuration devient alors disponible pour la synchronisation normale du POS. Si le résultat est inconnu, enregistrez le résultat conservé ou vérifiez l’état sur le terminal d’origine avant toute nouvelle autorisation. Le remplacement et le transfert restent des procédures distinctes.
 
 Sur le Mini et le Portable, vérifiez la reprise d’une vente CST interrompue depuis l’addition d’origine. Un débit corrélé déclenche un Void 400. Attendez sa confirmation avant un nouvel encaissement. Depuis Transactions sur le POS d’origine, vérifiez aussi un remboursement total ou partiel et contrôlez le couple 53 / MTI 100 dans la trace CST.
 
@@ -325,3 +327,9 @@ Les clients compatibles envoient X-Foody-POS-Token uniquement à l’API de comm
 Déployez la migration 313 avant l’API et l’Admin compatibles. Les actions de navigation et de signalement contrôlent le restaurant, la tournée active et le livreur affecté. La navigation enregistre l’arrêt dont le résultat est attendu. Une tournée ne peut avoir qu’un seul arrêt en attente de ce résultat. Un signalement conserve une tentative infructueuse dans le journal sans terminer la commande. Celle-ci sort de la sélection automatique du livreur et du suivi GPS côté client jusqu’au départ d’une nouvelle tournée. Un responsable peut envoyer un rappel push aux appareils enregistrés du livreur affecté.
 
 Les réponses du mode livreur masquent le tracé et les données client hors de l’arrêt ouvert. Les comptes livreur reçoivent des signaux de rafraîchissement sans données de commande sur le canal temps réel. Cette correction réutilise la migration 313 déjà appliquée.
+
+<span id="reset-order-and-cash-test-data" />
+
+## Réinitialiser les données de commande et de caisse d’un restaurant de test
+
+Depuis le dépôt API, lancez scripts/cleanup_orders.sh avec --yes et --restaurant-id pour le restaurant de test voulu. Vérifiez l’adresse de la base et le restaurant avant l’exécution. Le script supprime les commandes, les additions ouvertes, les paiements POS et l’historique des clôtures, puis libère les tables. La transaction s’interrompt si un paiement, un retour ou une transmission attend encore un résultat. Vérifiez la procédure sur des données synthétiques.

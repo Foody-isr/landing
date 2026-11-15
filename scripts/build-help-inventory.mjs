@@ -106,6 +106,9 @@ for (const [service, configuredRoot] of Object.entries(roots)) {
       /^internal\/admin\/terminal_fleet_(?:changes|mini|vhq)\.go$/.test(file) || file === 'internal/admin/vhq_client.go' ||
       /^internal\/(?:admin|orders|common)\/terminal_fleet_maintenance\.go$/.test(file)
     )) || (service === 'foodypos' && /\/ashrait_maintenance(?:_repository|_tile|_worker)?\.dart$/.test(file));
+    const terminalIdentifiersModule = (service === 'foodyserver' &&
+      /^internal\/devices\/payment_terminal(?:s|_handler)\.go$/.test(file)) ||
+      (service === 'foodypos' && file === 'lib/services/devices/payment_terminal_identifiers.dart');
     const ashraitCSTModule = (service === 'foodyserver' && (
       /^internal\/(?:orders|common)\/ashrait_adjustment\.go$/.test(file) ||
       file === 'internal/orders/transactions_ashrait.go'
@@ -122,7 +125,8 @@ for (const [service, configuredRoot] of Object.entries(roots)) {
       ? ['website-navigation', 'website-qr-customize-your-site'] : undefined;
     const saleReceiptLayoutModule = service === 'foodyserver' &&
       /^internal\/printing\/(?:sale_receipt_\w+|epson_receipt)\.go$/.test(file);
-    ids = terminalFleetModule || ashraitCSTModule ? ['platform-api']
+    ids = terminalIdentifiersModule ? ['pos-victa-mini']
+      : terminalFleetModule || ashraitCSTModule ? ['platform-api']
       : saleReceiptLayoutModule ? ['printer-profiles']
       : ashraitReceiptOwnership[`${service}:${file}`] ?? currentPOSProofOwnership[`${service}:${file}`]
         ?? focusedStockOwnership[`${service}:${file}`] ?? mobileHomeOwnership ?? ids;

@@ -1532,7 +1532,17 @@
           "lib/services/payments/terminal_configuration.dart",
           "lib/features/settings/presentation/payment_terminal_settings.dart",
           "lib/main.dart",
-          "lib/features/settings/presentation/terminal_installments_tile.dart"
+          "lib/features/settings/presentation/terminal_installments_tile.dart",
+          "lib/features/settings/presentation/payment_terminal_identifiers.dart",
+          "lib/services/devices/device_inventory_repository.dart",
+          "lib/services/devices/payment_terminal_identifiers.dart",
+          "lib/services/payments/terminal_payment_service.dart"
+        ],
+        "foodyserver": [
+          "internal/devices/payment_terminal_handler.go",
+          "internal/devices/payment_terminals.go",
+          "internal/common/terminal_fleet.go",
+          "internal/common/terminal_fleet_maintenance.go"
         ]
       }
     },
@@ -2074,7 +2084,9 @@
           "migrations/316_verifone_checkout_theme_source.sql",
           "migrations/317_verifone_direct_card.sql",
           "internal/payment/verifone_wallet.go",
-          "migrations/318_verifone_direct_wallets.sql"
+          "migrations/318_verifone_direct_wallets.sql",
+          "internal/common/terminal_fleet_maintenance.go",
+          "scripts/cleanup_orders.sh"
         ],
         "foodyweb": [
           "app/api/**",
