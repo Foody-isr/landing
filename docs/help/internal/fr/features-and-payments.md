@@ -1,16 +1,30 @@
 ---
 title: 'Fonctions, abonnements et paiements internes'
-description: 'Opérateurs Foody : ouvrez Fonctions ou les contrôles abonnement/paiement du restaurant.'
+description: >-
+  Ouvrez l’onglet Features, Billing ou Payment de la fiche restaurant. Les réglages Cibus partagés se trouvent dans
+  Payments & devices.
 apps: both
 tags:
   - internal
   - backoffice-entitlements
-updatedAt: '2026-11-12'
+updatedAt: '2026-11-15'
 featureId: backoffice-entitlements
 audience: internal
 releaseStatus: available
 ---
-Opérateurs Foody : ouvrez Fonctions ou les contrôles abonnement/paiement du restaurant.
+Dans Foody Backoffice, ouvrez Payments & devices → Plans & modules pour consulter les tarifs publics ou choisissez un restaurant pour afficher Billing & modules et Features & access.
+
+<span id="backoffice-software-catalogue" />
+
+## Consulter les tarifs publics et les fonctions par module
+
+Comme superadmin Foody, ouvrez **Plans & modules**. La page affiche le prix logiciel mensuel HT par établissement, les licences incluses et le prix d’une licence de caisse nominative supplémentaire. Consultez le tableau pour savoir quel module ouvre chaque fonction affichée. Les rôles et les réglages du restaurant continuent de s’appliquer. Sélectionnez **View public pricing** pour voir les prix de mise en service, du matériel et des services de paiement.
+
+<span id="backoffice-restaurant-subscription" />
+
+## Retrouver la souscription et les accès d’un restaurant
+
+Ouvrez **Restaurants** et choisissez le restaurant. **Billing & modules** s’ouvre en premier. Dans le pilote modulaire en développement, vérifiez l’offre, le statut, les modules proposés et actifs, les licences et la date de fin d’essai ou de période payée lorsqu’elles sont disponibles. Ouvrez **Features & access** pour voir les fonctions actives et verrouillées. Pour un restaurant existant, consultez **Legacy subscription** et, si elle existe, **Private sandbox offer**. Ses interrupteurs et réglages d’offre historique sont dans **Features & access**.
 
 <span id="verifone-admin-money-operations" />
 
@@ -50,7 +64,7 @@ Dans le Backoffice, ouvrez les réglages Payment du restaurant en tant que super
 
 ## Vérifier affectations de fonctions et plans
 
-Comparez identifiants techniques au contrat approuvé. Noms hérités et prix internes ne sont pas les offres publiques de référence. Vérifiez restaurant avant modification autorisée des droits.
+Ouvrez **Billing & modules** sur la fiche du restaurant pour lire les conditions convenues et le périmètre actuel. Pour un contrat historique, vérifiez l’offre et les réglages de **Features & access** avec le contrat du client avant une modification autorisée. Dans le pilote modulaire, les fonctions affichées suivent l’essai ou l’abonnement vérifié.
 
 <span id="providers" />
 
@@ -69,3 +83,9 @@ En superadmin, ouvrez Usage and quotas pour comparer les restaurants, choisissez
 ## Intégration du panier préparé Sumit
 
 La capacité Sumit des commandes internes préparées dépend du fournisseur actif et des identifiants configurés valides du restaurant. Aucun bouton de formule ni contrôle d’onboarding n’est ajouté. Changer de fournisseur désactive l’ouverture de ces paiements en attente, sans les transférer silencieusement à un autre prestataire. Coordonnez API, Admin, Web et le guide Sumit.
+
+<span id="cibus-platform-settings" />
+
+## Consulter les réglages Cibus partagés
+
+Vérifiez le libellé de l’API, puis ouvrez **Payments & devices → Cibus (Pluxee)**. Cliquez sur **Retry** si les réglages ne se chargent pas. Pour une mise à jour approuvée, vérifiez l’environnement et l’URL Cibus, saisissez les éventuels nouveaux identifiants fournis par Cibus et cliquez sur **Save Cibus settings**. Vérifiez la confirmation. Les identifiants du terminal de chaque restaurant se gèrent dans Foody Admin.

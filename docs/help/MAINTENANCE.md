@@ -1,5 +1,22 @@
 # Help ownership, evidence and releases
 
+## Modular onboarding in sandbox
+
+Apply API migrations 292 and 319 in the development environment before opening
+the modular wizard. Compare Landing's `src/lib/marketing/offer-grid.json` with
+the API's `internal/entitlements/offer-grid.json` before accepting a new catalogue
+revision. The sandbox enrolment applies to new Backoffice records. Existing
+restaurant contracts keep their legacy provisioning and billing data.
+
+The internal FR, HE and EN billing procedures cover public and custom offers
+with and without an explicit trial. For a hosted test payment, the Foody sandbox
+merchant must have the matching checkout contract. Monthly billing also requires
+the recurring contract. Test invitation setup, the trial boundary, and an
+unconfirmed and confirmed payment using synthetic data. The displayed quantities
+describe included licences. The pilot does not provision individual licence
+assignments or issue fiscal documents. The regenerated public support corpus
+must be copied into the API with the same release revision.
+
 ## Verifone Central Checkout themes (12 November 2026)
 
 Deploy API migration 316 before enabling the Backoffice action. The FR/HE/EN

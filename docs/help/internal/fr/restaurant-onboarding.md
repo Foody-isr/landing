@@ -1,22 +1,22 @@
 ---
 title: Création interne de restaurants et utilisateurs
-description: 'Opérateurs Foody : Backoffice → Restaurants, Création et Utilisateurs.'
+description: Backoffice → Management → Restaurants ou Users. Lancez Onboard New depuis Restaurants.
 apps: both
 tags:
   - internal
   - backoffice-onboarding
-updatedAt: '2026-10-21'
+updatedAt: '2026-11-15'
 featureId: backoffice-onboarding
 audience: internal
 releaseStatus: available
 ---
-Opérateurs Foody : Backoffice → Restaurants, Création et Utilisateurs.
+Backoffice → Management → Restaurants ou Users. Lancez Onboard New depuis Restaurants.
 
 <span id="create" />
 
 ## Préparer une création de restaurant
 
-Vérifiez invitation ou création manuelle, identité, langue, devise et propriétaire avant envoi. Répétez en dev. Création et invitations prod sont des mutations réelles soumises à autorisation humaine applicable.
+Vérifiez invitation ou création manuelle, identité, langue, devise et propriétaire avant envoi. Répétez en dev. Création et invitations prod sont des mutations réelles soumises à autorisation humaine applicable. Dans le pilote de développement, ce même assistant publie l’offre sandbox et ses réglages d’essai avant l’invitation. Consultez la procédure interne de facturation sandbox.
 
 <span id="users" />
 
@@ -31,3 +31,9 @@ Retrouvez l’utilisateur, vérifiez restaurant/rôle et appliquez uniquement le
 Usage and quotas ouvre la comparaison des consommations par service et par restaurant. Review allocation et le lien de la fiche restaurant ouvrent les plafonds mensuels ; leur enregistrement exige un motif et conserve tous les compteurs. Ces contrôles sont réservés au superadmin, distincts du choix de connexion du site.
 
 Le parc global permet de déclarer un terminal en réparation ou retourné et de renseigner ses identifiants commerciaux. Cela ne réaffecte pas l’appareil et ne configure pas un nouveau prestataire de paiement ; suivez la procédure régionale confirmée avec Verifone avant sa remise en service.
+
+<span id="search" />
+
+## Rechercher des restaurants et des utilisateurs
+
+Dans Restaurants, recherchez par nom ou par slug. Dans Users, recherchez par nom, e-mail ou téléphone et choisissez un rôle si nécessaire. Utilisez **Clear search** ou **Clear filters** pour retrouver la liste complète. En cas d’échec, **Retry** relance la dernière recherche.

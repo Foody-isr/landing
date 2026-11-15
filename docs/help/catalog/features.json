@@ -917,28 +917,38 @@
       "he": "פיילוט חיוב תוכנת Foody"
     },
     "entry": {
-      "en": "Development Backoffice → Foody billing · sandbox. restaurant Admin → Settings → Account → Billing.",
-      "fr": "Backoffice de développement → Foody billing · sandbox. Admin du restaurant → Paramètres → Compte → Facturation.",
-      "he": "משרד אחורי בסביבת הפיתוח ← Foody billing · sandbox. ניהול המסעדה ← הגדרות ← חשבון ← חיוב."
+      "en": "Development Backoffice → Payments & devices → Foody billing (sandbox). restaurant Admin → Settings → Account → Billing.",
+      "fr": "Backoffice de développement → Payments & devices → Foody billing (sandbox). Admin du restaurant → Paramètres → Compte → Facturation.",
+      "he": "משרד אחורי בסביבת הפיתוח ← Payments & devices → Foody billing (sandbox). ניהול המסעדה ← הגדרות ← חשבון ← חיוב."
     },
     "access": {
-      "en": "This procedure is for a coordinated sandbox test. A Foody superadmin configures the merchant and publishes the offer. Only a current owner of that restaurant can accept it or start a checkout. Sandbox transactions do not alter operating access or issue fiscal documents.",
-      "fr": "Cette procédure concerne un test coordonné en sandbox. Un superadmin Foody configure le marchand et publie l’offre. Seul un propriétaire actuel du restaurant peut l’accepter et lancer le paiement. Les transactions de test ne modifient pas l’accès opérationnel et n’émettent aucun document fiscal.",
-      "he": "הנוהל מיועד לבדיקה מתואמת בסביבת הבדיקות. מנהל על של Foody מגדיר את בית העסק ומפרסם את ההצעה. רק בעלים נוכחי של המסעדה יכול לאשר אותה ולהתחיל תשלום. תשלומי בדיקה אינם משנים גישה תפעולית ואינם מפיקים מסמך מס."
+      "en": "This procedure is for a coordinated sandbox test. A Foody superadmin configures the merchant and the offer. Only a current owner of that restaurant can accept it or start a checkout. A verified payment grants access to purchased modules for restaurants enrolled in modular billing. Existing restaurants keep their operating access. Sandbox payments issue no fiscal documents.",
+      "fr": "Cette procédure concerne un test en sandbox. Un superadmin Foody configure le marchand et l’offre. Seul un propriétaire actuel du restaurant peut accepter l’offre ou lancer le paiement. Un paiement vérifié ouvre les modules achetés pour les restaurants inscrits au pilote modulaire. Les restaurants existants conservent leurs accès opérationnels. Les paiements sandbox ne produisent aucun document fiscal.",
+      "he": "הנוהל מיועד לבדיקה מתואמת בסביבת הבדיקות. מנהל על של Foody מגדיר את בית העסק ואת ההצעה. רק בעלים נוכחי של המסעדה יכול לאשר אותה או להתחיל תשלום. תשלום שאומת פותח את המודולים שנרכשו למסעדות שנרשמו לחיוב המודולרי. הגישה התפעולית של מסעדות קיימות נשמרת. תשלומי בדיקה אינם מפיקים מסמך מס."
     },
     "selectors": {
       "foodyadmin": [
-        "src/app/[restaurantId]/billing/PrivateBilling.tsx"
+        "src/app/[restaurantId]/billing/PrivateBilling.tsx",
+        "src/lib/module-navigation.ts",
+        "src/app/[restaurantId]/billing/ModuleOnboarding.tsx"
       ],
       "foodybackoffice": [
         "src/app/dashboard/foody-billing/**",
-        "src/components/FoodyPrivateOffer.tsx"
+        "src/components/FoodyPrivateOffer.tsx",
+        "src/app/dashboard/onboard/ModularBillingFields.tsx",
+        "src/components/FoodySubscriptionSummary.tsx",
+        "src/lib/foody-modules.ts"
       ],
       "foodyserver": [
         "internal/subscription/foody_billing*.go",
         "internal/payment/verifone_foody_billing.go",
         "internal/common/observed_usage.go",
-        "migrations/292_foody_billing_sandbox.sql"
+        "migrations/292_foody_billing_sandbox.sql",
+        "internal/entitlements/**",
+        "internal/subscription/foody_onboarding.go",
+        "internal/auth/modular_access.go",
+        "internal/admin/modular_onboarding.go",
+        "migrations/319_foody_modular_billing_sandbox.sql"
       ]
     },
     "operations": [
@@ -950,9 +960,9 @@
           "he": "הגדרת בית העסק של Foody ב־Verifone"
         },
         "instructions": {
-          "en": "In the development Backoffice open **Foody billing · sandbox**. Enter the sandbox user ID, API key, Foody entity ID and hosted Checkout contract. For monthly tests, also enter the No-CVV recurring contract and token scope, then enable monthly enrollment after Verifone confirms the contract. Enable sandbox payments and save. Saved credentials stay hidden; an empty field preserves its value.",
-          "fr": "Dans le Backoffice de développement, ouvrez **Foody billing · sandbox**. Saisissez l’identifiant utilisateur sandbox, la clé API, l’identifiant de l’entité Foody et le contrat Checkout hébergé. Pour tester le mensuel, ajoutez le contrat récurrent sans CVV et le périmètre de token, puis activez le mensuel après confirmation de Verifone. Activez les paiements de test et enregistrez. Les identifiants restent masqués ; un champ vide conserve la valeur enregistrée.",
-          "he": "במשרד האחורי בסביבת הפיתוח פתחו **Foody billing · sandbox**. הזינו מזהה משתמש, מפתח API, מזהה הישות של Foody וחוזה Checkout לסביבת הבדיקות. לבדיקה חודשית הזינו גם חוזה חיוב חוזר ללא CVV ותחום אסימון, והפעילו חיוב חודשי לאחר אישור מ־Verifone. הפעילו תשלומי בדיקה ושמרו. פרטים שמורים מוסתרים; שדה ריק משאיר את הערך הקיים."
+          "en": "In the development Backoffice open **Payments & devices → Foody billing (sandbox)**. Enter the sandbox user ID, API key, Foody entity ID and hosted Checkout contract. For monthly tests, also enter the No-CVV recurring contract and token scope, then enable monthly enrollment after Verifone confirms the contract. Enable sandbox payments and save. Saved credentials stay hidden; an empty field preserves its value.",
+          "fr": "Dans le Backoffice de développement, ouvrez **Payments & devices → Foody billing (sandbox)**. Saisissez l’identifiant utilisateur sandbox, la clé API, l’identifiant de l’entité Foody et le contrat Checkout hébergé. Pour tester le mensuel, ajoutez le contrat récurrent sans CVV et le périmètre de token, puis activez le mensuel après confirmation de Verifone. Activez les paiements de test et enregistrez. Les identifiants restent masqués ; un champ vide conserve la valeur enregistrée.",
+          "he": "במשרד האחורי בסביבת הפיתוח פתחו **Payments & devices → Foody billing (sandbox)**. הזינו מזהה משתמש, מפתח API, מזהה הישות של Foody וחוזה Checkout לסביבת הבדיקות. לבדיקה חודשית הזינו גם חוזה חיוב חוזר ללא CVV ותחום אסימון, והפעילו חיוב חודשי לאחר אישור מ־Verifone. הפעילו תשלומי בדיקה ושמרו. פרטים שמורים מוסתרים; שדה ריק משאיר את הערך הקיים."
         }
       },
       {
@@ -963,9 +973,9 @@
           "he": "פרסום או עדכון הצעה פרטית"
         },
         "instructions": {
-          "en": "Open **Restaurants → selected restaurant → Billing → Foody private offer**. Enter the modules and licences, terms, monthly and annual ILS amounts, agreed VAT treatment and first payment date. Publish, then open the owner billing page. To edit, change the fields and publish a new version. An open checkout keeps its original price; a new offer needs owner consent for the next period.",
-          "fr": "Ouvrez **Restaurants → restaurant choisi → Billing → Foody private offer**. Indiquez les modules et licences, les conditions, les montants mensuel et annuel en ₪, la convention de TVA et la date du premier paiement. Publiez, puis ouvrez la page de facturation du propriétaire. Pour modifier l’offre, éditez les champs et publiez une nouvelle version. Un paiement déjà ouvert garde son prix initial ; la nouvelle offre exige l’accord du propriétaire pour la prochaine période.",
-          "he": "פתחו **Restaurants ← המסעדה הנבחרת ← Billing ← Foody private offer**. הזינו מודולים ורישיונות, תנאים, סכומים חודשיים ושנתיים בשקלים, אופן חישוב המע״מ ותאריך התשלום הראשון. פרסמו ופתחו את דף החיוב של הבעלים. לשינוי ערכו את השדות ופרסמו גרסה חדשה. תשלום שכבר נפתח שומר על המחיר המקורי; להצעה החדשה נדרש אישור הבעלים לתקופה הבאה."
+          "en": "For an existing restaurant, open **Restaurants → selected restaurant → Billing & modules → Private sandbox offer**. Enter an offer description, terms, monthly and annual ILS amounts, agreed VAT treatment and the first payment date. Publish, then open the owner billing page. To change the offer, edit the fields and publish a new version. A checkout already in progress keeps its original price. The new offer requires the owner’s agreement for the next period.",
+          "fr": "Pour un restaurant existant, ouvrez **Restaurants → restaurant choisi → Billing & modules → Private sandbox offer**. Renseignez la description de l’offre, les conditions, les montants mensuel et annuel en ₪, la convention de TVA et la date du premier paiement. Publiez, puis ouvrez la page de facturation du propriétaire. Pour modifier l’offre, éditez les champs et publiez une nouvelle version. Un paiement déjà ouvert garde son prix initial. La nouvelle offre exige l’accord du propriétaire pour la période suivante.",
+          "he": "למסעדה קיימת פתחו **Restaurants ← המסעדה הנבחרת ← Billing & modules ← Private sandbox offer**. הזינו תיאור להצעה, תנאים, סכומים חודשיים ושנתיים בשקלים, את אופן חישוב המע״מ ואת מועד תחילת התשלום. פרסמו ופתחו את דף החיוב של הבעלים. לשינוי ערכו את השדות ופרסמו גרסה חדשה. תשלום שכבר נפתח שומר על המחיר המקורי. ההצעה החדשה דורשת את הסכמת הבעלים לתקופה הבאה."
         }
       },
       {
@@ -989,9 +999,9 @@
           "he": "בדיקת החידוש החודשי הראשון"
         },
         "instructions": {
-          "en": "After a confirmed monthly test payment, return to **Foody private offer** in the development Backoffice and choose **Test first monthly renewal**. Confirm to send the next authorized monthly test debit to Verifone. A confirmed renewal covers the next period. Foody allows this test once per mandate, without waiting for the due date. If the result is uncertain, verify the current payment before taking another action.",
-          "fr": "Après confirmation du premier paiement mensuel de test, revenez à **Foody private offer** dans le Backoffice de développement et choisissez **Test first monthly renewal**. Confirmez pour envoyer le prochain débit mensuel autorisé à Verifone. Un renouvellement confirmé couvre la période suivante. Ce test est possible une fois par mandat, sans attendre l’échéance. Si le résultat est incertain, vérifiez le paiement en cours avant toute autre action.",
-          "he": "לאחר אימות תשלום הבדיקה החודשי הראשון, חזרו אל **Foody private offer** במשרד האחורי בסביבת הפיתוח ובחרו **Test first monthly renewal**. אשרו כדי לשלוח את חיוב הבדיקה החודשי הבא שאושר ל־Verifone. חידוש שאומת מכסה את התקופה הבאה. הבדיקה אפשרית פעם אחת לכל הרשאה, ללא המתנה למועד החיוב. אם התוצאה אינה ודאית, אמתו את התשלום הנוכחי לפני פעולה נוספת."
+          "en": "After a confirmed monthly test payment, return to **Private sandbox offer** in the development Backoffice and choose **Test first monthly renewal**. Confirm to send the next authorized monthly test debit to Verifone. A confirmed renewal covers the next period. Foody allows this test once per mandate, without waiting for the due date. If the result is uncertain, verify the current payment before taking another action.",
+          "fr": "Après confirmation du premier paiement mensuel de test, revenez à **Private sandbox offer** dans le Backoffice de développement et choisissez **Test first monthly renewal**. Confirmez pour envoyer le prochain débit mensuel autorisé à Verifone. Un renouvellement confirmé couvre la période suivante. Ce test est possible une fois par mandat, sans attendre l’échéance. Si le résultat est incertain, vérifiez le paiement en cours avant toute autre action.",
+          "he": "לאחר אימות תשלום הבדיקה החודשי הראשון, חזרו אל **Private sandbox offer** במשרד האחורי בסביבת הפיתוח ובחרו **Test first monthly renewal**. אשרו כדי לשלוח את חיוב הבדיקה החודשי הבא שאושר ל־Verifone. חידוש שאומת מכסה את התקופה הבאה. הבדיקה אפשרית פעם אחת לכל הרשאה, ללא המתנה למועד החיוב. אם התוצאה אינה ודאית, אמתו את התשלום הנוכחי לפני פעולה נוספת."
         }
       },
       {
@@ -1006,6 +1016,45 @@
           "fr": "Ouvrez la section d’usage mesuré dans Facturation. Elle affiche certains compteurs du mois UTC pour Maps et Geoapify, les demandes de vérification SMS, les messages WhatsApp de commande et les usages OpenAI et Claude suivis. Les compteurs sont partiels et ne déclenchent aucun débit.",
           "he": "פתחו את סעיף מדידת השימוש בחיוב. הוא מציג מונים נבחרים לפי חודש UTC עבור Maps ו־Geoapify, בקשות אימות ב־SMS, הודעות WhatsApp להזמנות ופעילות OpenAI ו־Claude שנמדדת. הכיסוי חלקי ולא נוצר חיוב."
         }
+      },
+      {
+        "id": "modular-provisioning",
+        "title": {
+          "en": "Invite a new sandbox restaurant",
+          "fr": "Inviter un nouveau restaurant en sandbox",
+          "he": "הזמנת מסעדה חדשה בסביבת בדיקות"
+        },
+        "instructions": {
+          "en": "In the development Backoffice open **Restaurants → Onboard New**. Enter the restaurant name, owner email, menu language and restaurant currency. Choose **Public catalogue** or **Custom offer**. The public catalogue uses the software rates published by Foody Landing in ILS per location per month excluding VAT. A custom offer records selected modules and extra named POS licences, the monthly price, optional annual price, VAT treatment and terms. Enable Trial, enter at least 14 days and select the modules the owner may test, or leave Trial disabled for payment during account setup. Send the invitation. Use **Resend invitation** if delivery fails.",
+          "fr": "Dans le Backoffice de développement, ouvrez **Restaurants → Onboard New**. Renseignez le nom du restaurant, l’e-mail du propriétaire, la langue du menu et la devise du restaurant. Choisissez **Public catalogue** ou **Custom offer**. Le catalogue reprend les tarifs logiciels de Foody Landing en shekels par établissement et par mois, hors TVA. L’offre personnalisée enregistre les modules, les licences de caisse nominatives supplémentaires, le prix mensuel, le prix annuel facultatif, le traitement de la TVA et les conditions. Activez l’essai, indiquez au moins 14 jours et choisissez les modules testables, ou désactivez l’essai pour un règlement à l’inscription. Envoyez l’invitation. En cas d’échec de remise, choisissez **Resend invitation**.",
+          "he": "ב־Backoffice בסביבת הפיתוח פתחו **Restaurants** ואז **Onboard New**. הזינו שם מסעדה, כתובת דוא״ל של הבעלים, שפת תפריט ומטבע. בחרו **Public catalogue** או **Custom offer**. המחירון משתמש במחירי התוכנה של Foody Landing בשקלים לחודש ולסניף לפני מע״מ. בהצעה אישית בחרו מודולים ורישיונות קופה אישיים נוספים, והזינו מחיר חודשי, מחיר שנתי לפי הצורך, טיפול במע״מ ותנאים. לניסיון הפעילו את האפשרות, הזינו 14 ימים לפחות ובחרו מודולים מותרים. אפשר לבטל את הניסיון לתשלום בעת ההרשמה. שלחו את ההזמנה. אם המשלוח נכשל, בחרו **Resend invitation**."
+        }
+      },
+      {
+        "id": "modular-owner",
+        "title": {
+          "en": "Activate a trial or pay from the invitation",
+          "fr": "Activer l’essai ou payer depuis l’invitation",
+          "he": "הפעלת ניסיון או תשלום מההזמנה"
+        },
+        "instructions": {
+          "en": "Follow the invitation to confirm the account and open Billing for the specified restaurant. For a public offer, choose modules and review the monthly amount. For a private offer, review the agreed terms. Choose **Start my trial** when offered; the displayed end date starts from that confirmation and a retry keeps the original date. Billing remains available after expiry. Without a trial, the owner confirms the available payment cycle and terms to open hosted sandbox checkout. The application activates the paid scope after server verification. If the payment is pending, use the existing verification action. Monthly checkout requires the sandbox merchant’s recurring contract. Setup and equipment are quoted separately.",
+          "fr": "Suivez l’invitation pour confirmer le compte et ouvrir Facturation pour le restaurant concerné. Avec le catalogue public, choisissez les modules et vérifiez le montant mensuel. Avec une offre personnalisée, vérifiez les conditions convenues. Choisissez **Démarrer mon essai** si proposé. La date de fin est calculée à cette confirmation et reste la même après une nouvelle tentative. Facturation reste accessible après expiration. Sans essai, confirmez la périodicité disponible et les conditions pour ouvrir le paiement hébergé en sandbox. L’application active les modules payés après vérification serveur. Si un règlement est en attente, utilisez l’action de vérification. Le paiement mensuel requiert le contrat récurrent du marchand sandbox. La mise en service et le matériel sont chiffrés séparément.",
+          "he": "פתחו את ההזמנה כדי לאשר את החשבון ולעבור לעמוד החיוב של המסעדה שבקישור. בהצעה ציבורית בחרו מודולים ובדקו את הסכום החודשי. בהצעה אישית בדקו את התנאים שסוכמו. בחרו להתחיל ניסיון כאשר האפשרות זמינה. תאריך הסיום מחושב בעת האישור ונשמר גם לאחר ניסיון חוזר. הגישה לחיוב זמינה לאחר פקיעת התוקף. ללא ניסיון, אשרו מחזור חיוב ותנאים לפתיחת עמוד התשלום בסביבת הבדיקות. המודולים בתשלום מופעלים לאחר אימות בשרת. אם התשלום ממתין, השתמשו בפעולת האימות. תשלום חודשי דורש חוזה חיוב חוזר של סוחר הבדיקות. הקמה וציוד מתומחרים בנפרד."
+        }
+      },
+      {
+        "id": "modular-access",
+        "title": {
+          "en": "Review module access",
+          "fr": "Vérifier les accès par module",
+          "he": "בדיקת גישה לפי מודול"
+        },
+        "instructions": {
+          "en": "Restaurant grants access to POS and table service including table QR. Orders grants the online ordering website, pickup and delivery. Kitchen grants stock, recipes, suppliers and preparation tools. The available features still require the staff member’s restaurant role. Billing shows the licences included in the selected offer and the current trial or paid scope. Existing restaurants without a sandbox enrolment stay on their existing contract.",
+          "fr": "Restaurant ouvre la caisse et le service en salle, dont le QR à table. Commandes ouvre le site de commande, le retrait et la livraison. Cuisine ouvre les stocks, les recettes, les fournisseurs et les préparations. Les actions disponibles exigent les droits du rôle dans le restaurant. Facturation affiche les licences de l’offre sélectionnée et le périmètre de l’essai ou de l’abonnement payé. Les restaurants sans inscription au pilote conservent leur contrat.",
+          "he": "Restaurant פותח קופה ושירות שולחנות, כולל QR בשולחן. Orders פותח אתר הזמנות, איסוף ומשלוחים. Kitchen פותח מלאי, מתכונים, ספקים וכלי הכנה. כל פעולה דורשת גם את הרשאת התפקיד במסעדה. חיוב מציג את הרישיונות שבהצעה ואת היקף הניסיון או המנוי ששולם. מסעדות שלא נרשמו לפיילוט ממשיכות בחוזה שלהן."
+        }
       }
     ],
     "recovery": {
@@ -1015,8 +1064,13 @@
     },
     "audience": "internal",
     "status": "local-release-unverified",
-    "procedureUpdatedAt": "2026-11-10",
-    "preserveExisting": false
+    "procedureUpdatedAt": "2026-11-15",
+    "preserveExisting": false,
+    "description": {
+      "en": "Development Backoffice → Payments & devices → Foody billing (sandbox). restaurant Admin → Settings → Account → Billing.",
+      "fr": "Backoffice de développement → Payments & devices → Foody billing (sandbox). Admin du restaurant → Paramètres → Compte → Facturation.",
+      "he": "משרד אחורי בסביבת הפיתוח ← Payments & devices → Foody billing (sandbox). ניהול המסעדה ← הגדרות ← חשבון ← חיוב."
+    }
   },
   {
     "id": "analytics-dashboard",
@@ -11884,9 +11938,9 @@
           "he": "חיבור ושחזור החיבור ל־Victa Mini ב־iPad"
         },
         "instructions": {
-          "en": "With the payments.manage permission, open More → Settings → Hardware → Payment terminals. Choose **Add a terminal**, or open a saved terminal and choose **Edit**. Enter the name, terminal type and local IPv4 address. The serial number, DID and SHVA terminal number are optional inventory fields. An existing profile can also retain its previous Ashrait login.\n\nTap **Save**. When adding a terminal, changing its connection details or updating an older unverified profile, FoodyPOS displays the detected model and serial number for confirmation. Compare them with the physical terminal, then tap **Confirm**. You can also choose **Identify the terminal** before saving. Once the connection is verified, you can save a name or default change directly.\n\nThe first saved terminal becomes the default. Select **Default terminal** before saving to change it. Keep the terminal on the same local network as the iPad. To check connectivity, choose **Test connection** in its details. FoodyPOS retries the saved connection at launch and when returning to the foreground after it restores restaurant access. If the app asks you to restart, close and reopen it before retrying. For a pending payment or Deposit, use the original POS and terminal to resume the operation.",
-          "fr": "Avec l’autorisation payments.manage, ouvrez Plus → Paramètres → Matériel → Terminaux de paiement. Choisissez **Ajouter un terminal** ou ouvrez un terminal enregistré et choisissez **Modifier**. Saisissez son nom, son type et son adresse IPv4 locale. Le numéro de série, le DID et le numéro de terminal SHVA sont facultatifs dans l’inventaire. Un profil existant peut aussi conserver son ancien identifiant de connexion Ashrait.\n\nAppuyez sur **Enregistrer**. À l’ajout, après modification des paramètres de connexion ou sur un ancien profil non vérifié, FoodyPOS affiche le modèle et le numéro de série détectés pour confirmation. Comparez-les au terminal physique, puis appuyez sur **Confirmer**. Vous pouvez aussi choisir **Identifier le terminal** avant d’enregistrer. Une fois la connexion vérifiée, le nom et le choix du terminal par défaut peuvent être enregistrés directement.\n\nLe premier terminal enregistré devient celui par défaut. Pour en changer, sélectionnez **Terminal par défaut** avant d’enregistrer. Gardez le terminal sur le même réseau local que l’iPad. Pour vérifier la connexion, ouvrez sa fiche et choisissez **Tester la connexion**. FoodyPOS retente la connexion enregistrée au démarrage et au retour au premier plan, après avoir retrouvé l’accès au restaurant. Si l’application demande un redémarrage, fermez-la et rouvrez-la avant de réessayer. Reprenez tout paiement ou dépôt en attente depuis sa caisse et son terminal d’origine.",
-          "he": "עם ההרשאה payments.manage, פתחו עוד ← הגדרות ← חומרה ← מסופי תשלום. בחרו **הוספת מסוף**, או פתחו מסוף שמור ובחרו **ערוך**. הזינו שם, סוג מסוף וכתובת IPv4 מקומית. המספר הסידורי, ה־DID ומספר מסוף שב״א הם שדות רשות במלאי. הגדרה קיימת יכולה גם לשמור את מזהה ההתחברות הקודם ל־Ashrait.\n\nלחצו על **שמור**. בהוספת מסוף, בשינוי פרטי החיבור או בעדכון הגדרה ישנה שטרם אומתה, FoodyPOS מציגה את הדגם והמספר הסידורי שזוהו. השוו אותם למסוף הפיזי ולחצו על **אישור**. אפשר גם לבחור **זיהוי המסוף** לפני השמירה. לאחר שהחיבור אומת, אפשר לשמור ישירות שינוי שם או ברירת מחדל.\n\nהמסוף הראשון שנשמר הופך לברירת המחדל. לשינוי, בחרו **מסוף ברירת מחדל** לפני השמירה. השאירו את המסוף באותה רשת מקומית כמו ה־iPad. לבדיקת החיבור, פתחו את פרטי המסוף ובחרו **בדיקת חיבור**. FoodyPOS מנסה שוב את החיבור השמור בפתיחה ובחזרה לקדמת המסך, אחרי שחזור הגישה למסעדה. אם נדרשת הפעלה מחדש, סגרו ופתחו את האפליקציה לפני ניסיון נוסף. לתשלום או הפקדה שממתינים לבירור, חזרו לקופה ולמסוף המקוריים."
+          "en": "With the payments.manage permission, open More → Settings → Hardware → Payment terminals. Choose **Add a terminal**, or open a saved terminal and choose **Edit**. Enter the name, terminal type and local IPv4 address. The serial number, DID and SHVA terminal number are optional inventory fields. An existing profile can also retain its previous Ashrait login.\n\nTap **Save**. When adding a terminal, changing its connection details or updating an older unverified profile, FoodyPOS displays the detected model and serial number for confirmation. Compare them with the physical terminal, then tap **Confirm**. Once the connection is verified, you can save a name or default change directly.\n\nThe first saved terminal becomes the default. Select **Default terminal** before saving to change it. Keep the terminal on the same local network as the iPad. To check connectivity, choose **Test connection** in its details. FoodyPOS retries the saved connection at launch and when returning to the foreground after it restores restaurant access. If the app asks you to restart, close and reopen it before retrying. For a pending payment or Deposit, use the original POS and terminal to resume the operation.",
+          "fr": "Avec l’autorisation payments.manage, ouvrez Plus → Paramètres → Matériel → Terminaux de paiement. Choisissez **Ajouter un terminal** ou ouvrez un terminal enregistré et choisissez **Modifier**. Saisissez son nom, son type et son adresse IPv4 locale. Le numéro de série, le DID et le numéro de terminal SHVA sont facultatifs dans l’inventaire. Un profil existant peut aussi conserver son ancien identifiant de connexion Ashrait.\n\nAppuyez sur **Enregistrer**. À l’ajout, après modification des paramètres de connexion ou sur un ancien profil non vérifié, FoodyPOS affiche le modèle et le numéro de série détectés pour confirmation. Comparez-les au terminal physique, puis appuyez sur **Confirmer**. Une fois la connexion vérifiée, le nom et le choix du terminal par défaut peuvent être enregistrés directement.\n\nLe premier terminal enregistré devient celui par défaut. Pour en changer, sélectionnez **Terminal par défaut** avant d’enregistrer. Gardez le terminal sur le même réseau local que l’iPad. Pour vérifier la connexion, ouvrez sa fiche et choisissez **Tester la connexion**. FoodyPOS retente la connexion enregistrée au démarrage et au retour au premier plan, après avoir retrouvé l’accès au restaurant. Si l’application demande un redémarrage, fermez-la et rouvrez-la avant de réessayer. Reprenez tout paiement ou dépôt en attente depuis sa caisse et son terminal d’origine.",
+          "he": "עם ההרשאה payments.manage, פתחו עוד ← הגדרות ← חומרה ← מסופי תשלום. בחרו **הוספת מסוף**, או פתחו מסוף שמור ובחרו **ערוך**. הזינו שם, סוג מסוף וכתובת IPv4 מקומית. המספר הסידורי, ה־DID ומספר מסוף שב״א הם שדות רשות במלאי. הגדרה קיימת יכולה גם לשמור את מזהה ההתחברות הקודם ל־Ashrait.\n\nלחצו על **שמור**. בהוספת מסוף, בשינוי פרטי החיבור או בעדכון הגדרה ישנה שטרם אומתה, FoodyPOS מציגה את הדגם והמספר הסידורי שזוהו. השוו אותם למסוף הפיזי ולחצו על **אישור**. לאחר שהחיבור אומת, אפשר לשמור ישירות שינוי שם או ברירת מחדל.\n\nהמסוף הראשון שנשמר הופך לברירת המחדל. לשינוי, בחרו **מסוף ברירת מחדל** לפני השמירה. השאירו את המסוף באותה רשת מקומית כמו ה־iPad. לבדיקת החיבור, פתחו את פרטי המסוף ובחרו **בדיקת חיבור**. FoodyPOS מנסה שוב את החיבור השמור בפתיחה ובחזרה לקדמת המסך, אחרי שחזור הגישה למסעדה. אם נדרשת הפעלה מחדש, סגרו ופתחו את האפליקציה לפני ניסיון נוסף. לתשלום או הפקדה שממתינים לבירור, חזרו לקופה ולמסוף המקוריים."
         }
       },
       {
@@ -11962,9 +12016,9 @@
           "he": "הסרת מסוף תשלום"
         },
         "instructions": {
-          "en": "On a compatible build, select the terminal in **More → Settings → Hardware → Payment terminals** and choose **Forget device**. Verify the name before confirming. An iPad removes its matching saved connection when Hardware is refreshed after removal in Backoffice. A terminal saved only on this iPad can be removed from its local settings. If the default terminal is removed, review the remaining default before the next payment. Finish any pending payment or closing on the original device before forgetting it.",
-          "fr": "Sur une version compatible, sélectionnez le terminal dans **Plus → Paramètres → Matériel → Terminaux de paiement**, puis choisissez **Oublier l’appareil**. Vérifiez son nom avant de confirmer. Après un retrait depuis Backoffice, actualisez le matériel sur l’iPad : la connexion enregistrée pour ce terminal est retirée. Un terminal enregistré uniquement sur cet iPad peut être retiré depuis ses réglages locaux. Si vous retirez le terminal par défaut, vérifiez le nouveau choix avant le prochain paiement. Terminez tout paiement ou clôture en attente sur l’appareil d’origine avant de le retirer.",
-          "he": "בגרסה תואמת, בחרו את המסוף ב־**עוד ← הגדרות ← חומרה ← מסופי תשלום**, ולחצו על **הסרת מכשיר**. בדקו את השם לפני האישור. לאחר הסרה ב־Backoffice, רעננו את מסך החומרה ב־iPad כדי להסיר את החיבור השמור לאותו מסוף. מסוף שנשמר רק ב־iPad ניתן להסיר מההגדרות המקומיות. אם הוסר מסוף ברירת המחדל, בדקו את הבחירה החדשה לפני התשלום הבא. סיימו תשלום או סגירה שממתינים במכשיר המקורי לפני הסרתו."
+          "en": "On a compatible build, select the terminal in **More → Settings → Hardware → Payment terminals** and choose **Forget device**. Verify the name before confirming. An iPad removes its matching saved connection when Hardware is refreshed after removal in Backoffice. A terminal saved only on this iPad can be removed from its local settings. If the default terminal is removed, review the remaining default before the next payment. Finish any pending payment or closing on the original device before forgetting it. To pair the same forgotten Mini again with this restaurant, choose **Add a terminal**, enter its current IP address and tap **Save**. Compare the detected serial number and tap **Confirm**. Foody reuses its original device record.",
+          "fr": "Sur une version compatible, sélectionnez le terminal dans **Plus → Paramètres → Matériel → Terminaux de paiement**, puis choisissez **Oublier l’appareil**. Vérifiez son nom avant de confirmer. Après un retrait depuis Backoffice, actualisez le matériel sur l’iPad : la connexion enregistrée pour ce terminal est retirée. Un terminal enregistré uniquement sur cet iPad peut être retiré depuis ses réglages locaux. Si vous retirez le terminal par défaut, vérifiez le nouveau choix avant le prochain paiement. Terminez tout paiement ou clôture en attente sur l’appareil d’origine avant de le retirer. Pour réassocier le même Mini oublié à ce restaurant, choisissez **Ajouter un terminal**, saisissez son adresse IP actuelle et touchez **Enregistrer**. Vérifiez le numéro de série détecté, puis touchez **Confirmer**. Foody réutilise sa fiche d’origine.",
+          "he": "בגרסה תואמת, בחרו את המסוף ב־**עוד ← הגדרות ← חומרה ← מסופי תשלום**, ולחצו על **הסרת מכשיר**. בדקו את השם לפני האישור. לאחר הסרה ב־Backoffice, רעננו את מסך החומרה ב־iPad כדי להסיר את החיבור השמור לאותו מסוף. מסוף שנשמר רק ב־iPad ניתן להסיר מההגדרות המקומיות. אם הוסר מסוף ברירת המחדל, בדקו את הבחירה החדשה לפני התשלום הבא. סיימו תשלום או סגירה שממתינים במכשיר המקורי לפני הסרתו. כדי לשייך מחדש את אותו Mini שהוסר למסעדה זו, בחרו **הוספת מסוף**, הזינו את כתובת ה-IP הנוכחית שלו ולחצו על **שמור**. בדקו את המספר הסידורי שזוהה ולחצו על **אישור**. Foody משתמשת שוב ברשומת המכשיר המקורית."
         }
       }
     ],
@@ -14286,7 +14340,9 @@
         "src/app/dashboard/page.tsx",
         "src/app/dashboard/layout.tsx",
         "src/lib/auth*",
-        "src/components/**"
+        "src/components/**",
+        "src/app/globals.css",
+        "src/app/layout.tsx"
       ],
       "foodyserver": [
         "internal/admin/**"
@@ -14314,9 +14370,9 @@
           "he": "קריאת נתוני פלטפורמה"
         },
         "instructions": {
-          "en": "Review dashboard totals and navigate to the specific restaurant/user record for investigation. Treat aggregates as operational observations, not as customer testimonials or proof of individual payment settlement.",
-          "fr": "Consultez totaux puis dossier restaurant/utilisateur pour enquête. Les agrégats sont des observations opérationnelles, pas des témoignages ni une preuve de règlement individuel.",
-          "he": "עיינו בסיכומים ופתחו רשומת עסק או משתמש לבדיקה. נתונים מצטברים אינם המלצת לקוח או הוכחת סליקת עסקה."
+          "en": "Review dashboard totals and navigate to the specific restaurant/user record for investigation. Treat aggregates as operational observations, not as customer testimonials or proof of individual payment settlement. Use **Retry subscriptions** if the overdue subscriptions report cannot load.",
+          "fr": "Consultez totaux puis dossier restaurant/utilisateur pour enquête. Les agrégats sont des observations opérationnelles, pas des témoignages ni une preuve de règlement individuel. Si le relevé des abonnements en retard ne se charge pas, cliquez sur **Retry subscriptions**.",
+          "he": "עיינו בסיכומים ופתחו רשומת עסק או משתמש לבדיקה. נתונים מצטברים אינם המלצת לקוח או הוכחת סליקת עסקה. אם דוח המנויים בפיגור לא נטען, לחצו על **Retry subscriptions**."
         }
       },
       {
@@ -14327,16 +14383,29 @@
           "he": "גישה להגדרות החדשות"
         },
         "instructions": {
-          "fr": "Usage and quotas ouvre la comparaison des consommations par service et par restaurant. Review allocation et le lien de la fiche restaurant ouvrent les plafonds mensuels ; leur enregistrement exige un motif et conserve tous les compteurs. Ces contrôles sont réservés au superadmin, distincts du choix de connexion du site.\n\nSur les versions compatibles, Parc des terminaux est également réservé aux superadmins Foody. Il liste les appareils entre restaurants ; les numéros DID/SHVA et le fournisseur saisis restent des déclarations auditées, pas une configuration bancaire appliquée.",
-          "en": "Usage and quotas compares service consumption across restaurants. Review allocation and the restaurant-detail link open monthly limits; saving requires a reason and preserves all counters. These controls are superadmin-only and separate from the storefront sign-in preference.\n\nOn compatible versions, Terminal fleet is also restricted to Foody superadmins. It lists devices across restaurants; entered DID/SHVA numbers and supplier remain audited declarations, not applied bank configuration.",
-          "he": "Usage and quotas מציג השוואת צריכה לפי שירות ומסעדה. Review allocation והקישור בכרטיס המסעדה פותחים תקרות חודשיות; שמירה מחייבת סיבה ושומרת את כל המונים. הכלים למנהל־על בלבד ונפרדים מהעדפת ההתחברות באתר.\n\nבגרסאות תואמות, צי המסופים מוגבל גם הוא למנהלי־על של Foody. הוא מציג מכשירים בין מסעדות; מספרי DID/שב״א והספק שהוזנו נשארים הצהרות מתועדות, ולא הגדרת בנק שהוחלה."
+          "fr": "Usage and quotas ouvre la comparaison des consommations par service et par restaurant. Review allocation et le lien de la fiche restaurant ouvrent les plafonds mensuels ; leur enregistrement exige un motif et conserve tous les compteurs. Ces contrôles sont réservés au superadmin, distincts du choix de connexion du site.\n\nSur les versions compatibles, Parc des terminaux est également réservé aux superadmins Foody. Il liste les appareils entre restaurants ; les numéros DID/SHVA et le fournisseur saisis restent des déclarations auditées, pas une configuration bancaire appliquée.\n\nPour une question d’abonnement, ouvrez **Plans & modules** dans le menu pour consulter le catalogue logiciel public. Ouvrez la fiche d’un restaurant pour accéder à **Billing & modules** et **Features & access**.",
+          "en": "Usage and quotas compares service consumption across restaurants. Review allocation and the restaurant-detail link open monthly limits; saving requires a reason and preserves all counters. These controls are superadmin-only and separate from the storefront sign-in preference.\n\nOn compatible versions, Terminal fleet is also restricted to Foody superadmins. It lists devices across restaurants; entered DID/SHVA numbers and supplier remain audited declarations, not applied bank configuration.\n\nFor subscription support, open **Plans & modules** in the sidebar for the public software catalogue. Open a restaurant to find **Billing & modules** and **Features & access**.",
+          "he": "Usage and quotas מציג השוואת צריכה לפי שירות ומסעדה. Review allocation והקישור בכרטיס המסעדה פותחים תקרות חודשיות; שמירה מחייבת סיבה ושומרת את כל המונים. הכלים למנהל־על בלבד ונפרדים מהעדפת ההתחברות באתר.\n\nבגרסאות תואמות, צי המסופים מוגבל גם הוא למנהלי־על של Foody. הוא מציג מכשירים בין מסעדות; מספרי DID/שב״א והספק שהוזנו נשארים הצהרות מתועדות, ולא הגדרת בנק שהוחלה.\n\nלשאלות מנוי, פתחו **Plans & modules** בסרגל הצד כדי לראות את מחירון התוכנה הציבורי. פתחו מסעדה כדי להגיע אל **Billing & modules** ואל **Features & access**."
+        }
+      },
+      {
+        "id": "navigation",
+        "title": {
+          "en": "Find a Backoffice tool",
+          "fr": "Retrouver un outil du Backoffice",
+          "he": "מציאת כלי ב־Backoffice"
+        },
+        "instructions": {
+          "en": "Check the API label below Foody Backoffice, then use **Management** for restaurants and users, **Payments & devices** for billing tests, terminal fleet and Cibus, **POS content** for ingredient icons and the POS sign-in screen, or **Platform** for usage, operations, servers and cloning. On smaller screens, choose **Open navigation**. Wide tables scroll horizontally.",
+          "fr": "Vérifiez le libellé de l’API sous Foody Backoffice. Ouvrez **Management** pour les restaurants et utilisateurs, **Payments & devices** pour les tests de facturation, le parc de terminaux et Cibus, **POS content** pour les icônes d’ingrédients et l’écran de connexion POS, ou **Platform** pour les quotas, les opérations, les serveurs et la copie de données. Sur petit écran, choisissez **Open navigation**. Les tableaux larges défilent horizontalement.",
+          "he": "בדקו את שם ה־API מתחת ל־Foody Backoffice. בחרו **Management** למסעדות ולמשתמשים, **Payments & devices** לבדיקות חיוב, לצי המסופים ול־Cibus, **POS content** לאייקוני מרכיבים ולמסך כניסת הקופה, או **Platform** למכסות, לתפעול, לשרתים ולהעתקת נתונים. במסך קטן בחרו **Open navigation**. אפשר לגלול טבלאות רחבות בציר האופקי."
         }
       }
     ],
     "audience": "internal",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-21"
+    "procedureUpdatedAt": "2026-11-15"
   },
   {
     "id": "backoffice-onboarding",
@@ -14348,9 +14417,9 @@
       "he": "פתיחת עסק ומשתמשים פנימית"
     },
     "entry": {
-      "en": "Internal Foody operators: Backoffice → Restaurants, Onboard and Users.",
-      "fr": "Opérateurs Foody : Backoffice → Restaurants, Création et Utilisateurs.",
-      "he": "מפעילי Foody: עסקים, פתיחת עסק ומשתמשים."
+      "en": "Backoffice → Management → Restaurants or Users. Open Onboard New from Restaurants.",
+      "fr": "Backoffice → Management → Restaurants ou Users. Lancez Onboard New depuis Restaurants.",
+      "he": "ב־Backoffice, פתחו Management ואז Restaurants או Users. הפעילו את Onboard New מתוך Restaurants."
     },
     "selectors": {
       "foodybackoffice": [
@@ -14372,9 +14441,9 @@
           "he": "הכנת פתיחת עסק"
         },
         "instructions": {
-          "en": "Review invite versus manual setup, restaurant identity, locale, currency and owner details before submission. Use development for rehearsal. Production creation and outbound invitations are real mutations and require the applicable human authorization.",
-          "fr": "Vérifiez invitation ou création manuelle, identité, langue, devise et propriétaire avant envoi. Répétez en dev. Création et invitations prod sont des mutations réelles soumises à autorisation humaine applicable.",
-          "he": "בדקו הזמנה או הגדרה ידנית, זהות, שפה, מטבע ובעלים לפני שליחה. תרגלו בפיתוח. יצירה והזמנות בייצור הן שינויים אמיתיים ודורשות אישור מתאים."
+          "en": "Review invite versus manual setup, restaurant identity, locale, currency and owner details before submission. Use development for rehearsal. Production creation and outbound invitations are real mutations and require the applicable human authorization. In the development billing pilot, the same wizard publishes the sandbox offer and its trial settings before inviting the owner. Consult the internal sandbox billing procedure.",
+          "fr": "Vérifiez invitation ou création manuelle, identité, langue, devise et propriétaire avant envoi. Répétez en dev. Création et invitations prod sont des mutations réelles soumises à autorisation humaine applicable. Dans le pilote de développement, ce même assistant publie l’offre sandbox et ses réglages d’essai avant l’invitation. Consultez la procédure interne de facturation sandbox.",
+          "he": "בדקו הזמנה או הגדרה ידנית, זהות, שפה, מטבע ובעלים לפני שליחה. תרגלו בפיתוח. יצירה והזמנות בייצור הן שינויים אמיתיים ודורשות אישור מתאים. בפיילוט הפיתוח אותו אשף שומר את ההצעה ואת הגדרות הניסיון לפני ההזמנה. עיינו בנוהל החיוב בסביבת הבדיקות."
         }
       },
       {
@@ -14402,12 +14471,30 @@
           "en": "Usage and quotas compares service consumption across restaurants. Review allocation and the restaurant-detail link open monthly limits; saving requires a reason and preserves all counters. These controls are superadmin-only and separate from the storefront sign-in preference.\n\nThe global fleet can record a terminal as under repair or returned and maintain its declared commercial identifiers. This neither reassigns hardware nor configures a new payment supplier; follow the confirmed regional Verifone procedure before returning it to service.",
           "he": "Usage and quotas מציג השוואת צריכה לפי שירות ומסעדה. Review allocation והקישור בכרטיס המסעדה פותחים תקרות חודשיות; שמירה מחייבת סיבה ושומרת את כל המונים. הכלים למנהל־על בלבד ונפרדים מהעדפת ההתחברות באתר.\n\nבצי הגלובלי אפשר לתעד מסוף בתיקון או מסוף שהוחזר ולתחזק את המזהים המסחריים המוצהרים שלו. הדבר אינו משייך מחדש חומרה ואינו מגדיר ספק תשלומים חדש; לפני החזרה לשירות יש לפעול לפי הנוהל האזורי שאושר עם Verifone."
         }
+      },
+      {
+        "id": "search",
+        "title": {
+          "en": "Search restaurants and users",
+          "fr": "Rechercher des restaurants et des utilisateurs",
+          "he": "חיפוש מסעדות ומשתמשים"
+        },
+        "instructions": {
+          "en": "In Restaurants, search by name or slug. In Users, search by name, email or phone and select a role if needed. Use **Clear search** or **Clear filters** to return to the full list. If the request fails, **Retry** repeats the last search.",
+          "fr": "Dans Restaurants, recherchez par nom ou par slug. Dans Users, recherchez par nom, e-mail ou téléphone et choisissez un rôle si nécessaire. Utilisez **Clear search** ou **Clear filters** pour retrouver la liste complète. En cas d’échec, **Retry** relance la dernière recherche.",
+          "he": "ב־Restaurants אפשר לחפש לפי שם או מזהה כתובת. ב־Users אפשר לחפש לפי שם, דוא״ל או טלפון ולסנן לפי תפקיד. בחרו **Clear search** או **Clear filters** כדי לחזור לרשימה המלאה. אם הבקשה נכשלה, **Retry** מפעיל מחדש את החיפוש האחרון."
+        }
       }
     ],
     "audience": "internal",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-21"
+    "procedureUpdatedAt": "2026-11-15",
+    "description": {
+      "en": "Backoffice → Management → Restaurants or Users. Open Onboard New from Restaurants.",
+      "fr": "Backoffice → Management → Restaurants ou Users. Lancez Onboard New depuis Restaurants.",
+      "he": "ב־Backoffice, פתחו Management ואז Restaurants או Users. הפעילו את Onboard New מתוך Restaurants."
+    }
   },
   {
     "id": "backoffice-entitlements",
@@ -14419,9 +14506,9 @@
       "he": "יכולות, מנויים ותשלומים פנימיים"
     },
     "entry": {
-      "en": "Internal Foody operators: open Features or the restaurant’s subscription/payment controls.",
-      "fr": "Opérateurs Foody : ouvrez Fonctions ou les contrôles abonnement/paiement du restaurant.",
-      "he": "מפעילי Foody: פתחו יכולות או בקרות מנוי ותשלום של העסק."
+      "en": "In Foody Backoffice, open Payments & devices → Plans & modules for public rates or select a restaurant to see Billing & modules and Features & access.",
+      "fr": "Dans Foody Backoffice, ouvrez Payments & devices → Plans & modules pour consulter les tarifs publics ou choisissez un restaurant pour afficher Billing & modules et Features & access.",
+      "he": "ב־Foody Backoffice פתחו Payments & devices ואז Plans & modules למחירון הציבורי, או בחרו מסעדה כדי לראות את Billing & modules ואת Features & access."
     },
     "selectors": {
       "foodybackoffice": [
@@ -14430,14 +14517,47 @@
         "src/lib/api.ts",
         "src/app/dashboard/api-usage/**",
         "src/app/dashboard/restaurants/[id]/usage/**",
-        "src/app/dashboard/restaurants/[id]/page.tsx"
+        "src/app/dashboard/restaurants/[id]/page.tsx",
+        "src/components/Sidebar.tsx",
+        "src/components/RestaurantFeatureAccess.tsx",
+        "src/components/FoodySubscriptionSummary.tsx",
+        "src/lib/foody-modules.ts"
       ],
       "foodyserver": [
         "internal/subscription/**",
-        "internal/payment/**"
+        "internal/payment/**",
+        "internal/admin/handler.go",
+        "internal/admin/service.go",
+        "internal/entitlements/catalog.go"
       ]
     },
     "operations": [
+      {
+        "id": "backoffice-software-catalogue",
+        "title": {
+          "en": "Check public rates and module features",
+          "fr": "Consulter les tarifs publics et les fonctions par module",
+          "he": "בדיקת מחירים ציבוריים ויכולות לפי מודול"
+        },
+        "instructions": {
+          "en": "As a Foody superadmin, open **Plans & modules**. The page shows the monthly software price excluding VAT per location, the included licences and the additional named POS licence. Use the feature table to see which module grants each listed flag. Staff roles and restaurant settings still apply. Select **View public pricing** for setup, hardware and payment service prices.",
+          "fr": "Comme superadmin Foody, ouvrez **Plans & modules**. La page affiche le prix logiciel mensuel HT par établissement, les licences incluses et le prix d’une licence de caisse nominative supplémentaire. Consultez le tableau pour savoir quel module ouvre chaque fonction affichée. Les rôles et les réglages du restaurant continuent de s’appliquer. Sélectionnez **View public pricing** pour voir les prix de mise en service, du matériel et des services de paiement.",
+          "he": "כמנהל על של Foody פתחו **Plans & modules**. העמוד מציג את מחיר התוכנה החודשי לפני מע״מ לכל סניף, את הרישיונות הכלולים ואת המחיר של רישיון קופה אישי נוסף. בטבלה אפשר לראות איזה מודול מאפשר כל יכולת שמוצגת. ההרשאות של הצוות והגדרות המסעדה ממשיכות לחול. בחרו **View public pricing** למחירי התקנה, ציוד ושירותי תשלום."
+        }
+      },
+      {
+        "id": "backoffice-restaurant-subscription",
+        "title": {
+          "en": "Find a restaurant’s subscription and current access",
+          "fr": "Retrouver la souscription et les accès d’un restaurant",
+          "he": "איתור המנוי והגישה הנוכחית של מסעדה"
+        },
+        "instructions": {
+          "en": "Open **Restaurants** and select the restaurant. **Billing & modules** opens first. In the development modular pilot, check the offer, billing status, modules in the offer, active modules, licences and trial date or paid period when available. Choose **Features & access** to see the active and locked flags. For an existing restaurant, check the **Legacy subscription** and any **Private sandbox offer**. **Features & access** shows its existing toggles and tier settings.",
+          "fr": "Ouvrez **Restaurants** et choisissez le restaurant. **Billing & modules** s’ouvre en premier. Dans le pilote modulaire en développement, vérifiez l’offre, le statut, les modules proposés et actifs, les licences et la date de fin d’essai ou de période payée lorsqu’elles sont disponibles. Ouvrez **Features & access** pour voir les fonctions actives et verrouillées. Pour un restaurant existant, consultez **Legacy subscription** et, si elle existe, **Private sandbox offer**. Ses interrupteurs et réglages d’offre historique sont dans **Features & access**.",
+          "he": "פתחו **Restaurants** ובחרו את המסעדה. **Billing & modules** נפתח ראשון. בפיילוט המודולרי בסביבת הפיתוח בדקו את ההצעה, מצב החיוב, המודולים בהצעה והמודולים הפעילים, הרישיונות ותאריך הסיום של תקופת הניסיון או התקופה ששולמה, כאשר קיים. בחרו **Features & access** כדי לראות יכולות פעילות ונעולות. למסעדה קיימת בדקו את **Legacy subscription** ואת **Private sandbox offer** אם קיימת. המתגים והגדרות המסלול הקיים מופיעים ב־**Features & access**."
+        }
+      },
       {
         "id": "verifone-admin-money-operations",
         "title": {
@@ -14511,9 +14631,9 @@
           "he": "בדיקת שיוך יכולות ומסלולים"
         },
         "instructions": {
-          "en": "Compare technical feature/plan identifiers with the approved customer contract. Legacy technical names and internal price fields are not authoritative public offers. Confirm the target restaurant before an authorized entitlement change.",
-          "fr": "Comparez identifiants techniques au contrat approuvé. Noms hérités et prix internes ne sont pas les offres publiques de référence. Vérifiez restaurant avant modification autorisée des droits.",
-          "he": "השוו מזהים טכניים לחוזה מאושר. שמות ישנים ומחירים פנימיים אינם מחירון ציבורי מחייב. בדקו עסק לפני שינוי הרשאה מאושר."
+          "en": "Open the restaurant’s **Billing & modules** to review the agreed terms and current scope. For legacy contracts, compare the tier and manual flags in **Features & access** with the customer agreement before making an authorized change. For a modular sandbox restaurant, the trial or verified agreement controls the displayed flags.",
+          "fr": "Ouvrez **Billing & modules** sur la fiche du restaurant pour lire les conditions convenues et le périmètre actuel. Pour un contrat historique, vérifiez l’offre et les réglages de **Features & access** avec le contrat du client avant une modification autorisée. Dans le pilote modulaire, les fonctions affichées suivent l’essai ou l’abonnement vérifié.",
+          "he": "פתחו **Billing & modules** במסעדה כדי לעיין בתנאים שסוכמו ובהרשאות הקיימות. לפני שינוי מאושר בחוזה קיים השוו את המסלול ואת המתגים ב־**Features & access** לחוזה הלקוח. בפיילוט המודולרי תקופת הניסיון או המנוי שאומת קובעים את היכולות שמוצגות."
         }
       },
       {
@@ -14554,26 +14674,44 @@
           "fr": "La capacité Sumit des commandes internes préparées dépend du fournisseur actif et des identifiants configurés valides du restaurant. Aucun bouton de formule ni contrôle d’onboarding n’est ajouté. Changer de fournisseur désactive l’ouverture de ces paiements en attente, sans les transférer silencieusement à un autre prestataire. Coordonnez API, Admin, Web et le guide Sumit.",
           "he": "יכולת Sumit להזמנות פנימיות מוכנות נגזרת מהספק הפעיל ומפרטי חיבור תקינים של המסעדה. אין מתג חבילה או בקרת הצטרפות חדשים. שינוי ספק חוסם פתיחת תשלומים ממתינים אלה ואינו מעביר אותם אוטומטית לספק אחר. יש לתאם API, ניהול, אתר לקוחות ומדריך Sumit."
         }
+      },
+      {
+        "id": "cibus-platform-settings",
+        "title": {
+          "en": "Review shared Cibus settings",
+          "fr": "Consulter les réglages Cibus partagés",
+          "he": "בדיקת הגדרות Cibus המשותפות"
+        },
+        "instructions": {
+          "en": "Confirm the API label, then open **Payments & devices → Cibus (Pluxee)**. Use **Retry** if the current settings fail to load. For an approved update, verify the Cibus environment and endpoint, enter any new integrator credentials supplied by Cibus, and choose **Save Cibus settings**. Check the saved confirmation. Maintain each restaurant’s terminal identifiers in Foody Admin.",
+          "fr": "Vérifiez le libellé de l’API, puis ouvrez **Payments & devices → Cibus (Pluxee)**. Cliquez sur **Retry** si les réglages ne se chargent pas. Pour une mise à jour approuvée, vérifiez l’environnement et l’URL Cibus, saisissez les éventuels nouveaux identifiants fournis par Cibus et cliquez sur **Save Cibus settings**. Vérifiez la confirmation. Les identifiants du terminal de chaque restaurant se gèrent dans Foody Admin.",
+          "he": "בדקו את שם ה־API ופתחו את **Payments & devices** ואז את **Cibus (Pluxee)**. אם ההגדרות לא נטענו, לחצו על **Retry**. לעדכון מאושר בדקו את סביבת Cibus ואת כתובת השירות, הזינו פרטי אינטגרציה חדשים אם Cibus סיפקה אותם ולחצו על **Save Cibus settings**. בדקו את אישור השמירה. את מזהי המסוף של כל מסעדה מנהלים ב־Foody Admin."
+        }
       }
     ],
     "audience": "internal",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-11-12"
+    "procedureUpdatedAt": "2026-11-15",
+    "description": {
+      "en": "Open the restaurant’s Features, Billing or Payment tab. Find the shared Cibus settings under Payments & devices.",
+      "fr": "Ouvrez l’onglet Features, Billing ou Payment de la fiche restaurant. Les réglages Cibus partagés se trouvent dans Payments & devices.",
+      "he": "פתחו את הלשונית Features, Billing או Payment בפרטי המסעדה. הגדרות Cibus המשותפות נמצאות תחת Payments & devices."
+    }
   },
   {
     "id": "backoffice-market",
     "module": "internal",
     "article": "internal/market-and-prospects",
     "title": {
-      "en": "Internal market segments and prospects",
-      "fr": "Segments et prospects internes",
-      "he": "פלחי שוק ולידים פנימיים"
+      "en": "Retired Market screen",
+      "fr": "Retrait de l’écran Market",
+      "he": "מסך Market שהוסר"
     },
     "entry": {
-      "en": "Internal Foody operators: Backoffice → Market, Segments and Prospects.",
-      "fr": "Opérateurs Foody : Backoffice → Marché, Segments et Prospects.",
-      "he": "מפעילי Foody: שוק, פלחים ולידים."
+      "en": "The Backoffice Market interface has been retired. Old Backoffice Market links return to Dashboard.",
+      "fr": "L’interface Market a été retirée du Backoffice. Ses anciens liens ouvrent le Dashboard.",
+      "he": "ממשק Market הוסר מה־Backoffice. הקישורים הקודמים פותחים את Dashboard."
     },
     "selectors": {
       "foodybackoffice": [
@@ -14588,33 +14726,39 @@
       {
         "id": "segments",
         "title": {
-          "en": "Maintain market segments",
-          "fr": "Maintenir les segments",
-          "he": "תחזוקת פלחים"
+          "en": "Existing segments",
+          "fr": "Segments existants",
+          "he": "סגמנטים קיימים"
         },
         "instructions": {
-          "en": "Create/edit the segment’s name, description and offered fields, then open its detail to verify assigned prospects. Avoid deleting a segment until its references and intended replacement have been reviewed.",
-          "fr": "Créez/modifiez nom, description et champs proposés, puis vérifiez prospects affectés dans le détail. Examinez références et remplacement avant suppression.",
-          "he": "ערכו שם, תיאור ושדות ובדקו לידים משויכים בפרטים. בדקו תלות והחלפה לפני מחיקה."
+          "en": "Segment records are retained in the API. Their operations are no longer exposed by the Backoffice.",
+          "fr": "Les segments existants sont conservés dans l’API. Le Backoffice a retiré leurs écrans de gestion.",
+          "he": "רשומות הסגמנטים נשמרות ב־API. מסכי הניהול שלהן הוסרו מה־Backoffice."
         }
       },
       {
         "id": "prospects",
         "title": {
-          "en": "Maintain prospect records",
-          "fr": "Maintenir les prospects",
-          "he": "תחזוקת לידים"
+          "en": "Existing prospects",
+          "fr": "Prospects existants",
+          "he": "לקוחות פוטנציאליים קיימים"
         },
         "instructions": {
-          "en": "Search/filter prospects and update only verified business details, segment and follow-up state. This inventory does not authorize contacting prospects. Keep personal contact data out of public documentation and AI support context.",
-          "fr": "Recherchez/filtrez et modifiez uniquement informations professionnelles vérifiées, segment et suivi. L’inventaire n’autorise pas à contacter les prospects. Excluez données de contact personnelles des documents publics et de l’IA.",
-          "he": "חפשו וסננו ועדכנו פרטים עסקיים מאומתים, פלח ומעקב. המלאי אינו הרשאה לפנות ללידים. אין להכניס פרטי קשר אישיים לעזרה ציבורית או ל-AI."
+          "en": "Prospect records are retained in the API. For access to historical records, contact the internal Foody team. Keep contact details out of public guides and AI support.",
+          "fr": "Les fiches prospects sont conservées dans l’API. Pour accéder à l’historique, contactez l’équipe interne Foody. Gardez les coordonnées hors de l’aide publique et de l’assistant.",
+          "he": "רשומות הלקוחות הפוטנציאליים נשמרות ב־API. לגישה להיסטוריה פנו לצוות הפנימי של Foody. שמרו את פרטי הקשר מחוץ למדריכים הציבוריים ולשיחות עם העוזר."
         }
       }
     ],
     "audience": "internal",
-    "status": "available",
-    "preserveExisting": false
+    "status": "retired",
+    "preserveExisting": false,
+    "description": {
+      "en": "The Backoffice Market interface has been retired. Old Backoffice Market links return to Dashboard.",
+      "fr": "L’interface Market a été retirée du Backoffice. Ses anciens liens ouvrent le Dashboard.",
+      "he": "ממשק Market הוסר מה־Backoffice. הקישורים הקודמים פותחים את Dashboard."
+    },
+    "procedureUpdatedAt": "2026-11-15"
   },
   {
     "id": "backoffice-assets",
@@ -14626,9 +14770,9 @@
       "he": "קטלוג ונכסים פנימיים"
     },
     "entry": {
-      "en": "Internal Foody operators: Menu, Combos, Ingredient icons and POS login screen.",
-      "fr": "Opérateurs Foody : Menu, Formules, Icônes ingrédients et Écran de connexion POS.",
-      "he": "מפעילי Foody: תפריט, חבילות, אייקוני מרכיבים ומסך כניסת קופה."
+      "en": "Backoffice → POS content → Ingredient icons or POS login screen. Menus and combos are managed in Foody Admin.",
+      "fr": "Backoffice → POS content → Ingredient icons ou POS login screen. Les cartes et les formules se gèrent dans Foody Admin.",
+      "he": "ב־Backoffice, פתחו POS content ואז Ingredient icons או POS login screen. את התפריטים והחבילות מנהלים ב־Foody Admin."
     },
     "selectors": {
       "foodybackoffice": [
@@ -14646,14 +14790,14 @@
       {
         "id": "catalog",
         "title": {
-          "en": "Maintain shared catalog resources",
-          "fr": "Maintenir les ressources de catalogue",
-          "he": "תחזוקת משאבי קטלוג"
+          "en": "Manage a restaurant catalog",
+          "fr": "Gérer le catalogue d’un restaurant",
+          "he": "ניהול קטלוג של מסעדה"
         },
         "instructions": {
-          "en": "Review global versus restaurant-owned context before editing a catalog or combo resource. Confirm references before deletion. Shared library changes can affect many restaurants and require explicit impact review.",
-          "fr": "Vérifiez contexte global ou restaurant avant modification de catalogue/formule. Contrôlez références avant suppression. Une bibliothèque partagée peut toucher plusieurs restaurants et exige une revue d’impact explicite.",
-          "he": "בדקו הקשר גלובלי או עסק לפני עריכת קטלוג או חבילה. בדקו תלות לפני מחיקה. שינוי ספרייה משותפת עשוי להשפיע על עסקים רבים ודורש סקירת השפעה."
+          "en": "Sign in to Foody Admin with access to the restaurant. Open **Items & menus → Item library** to manage items and combos. Use **Menus** in the same section to manage menus. Old Backoffice Menu Manager and Combo Menus bookmarks show these directions.",
+          "fr": "Connectez-vous à Foody Admin avec un compte autorisé pour le restaurant. Ouvrez **Articles et cartes → Articles** pour gérer les articles et les formules. Dans la même section, ouvrez **Cartes** pour gérer les cartes. Les anciens liens Menu Manager et Combo Menus du Backoffice affichent ce parcours.",
+          "he": "היכנסו ל־Foody Admin עם הרשאת גישה למסעדה. פתחו את **פריטים ותפריטים** ואז את **ספריית פריטים** לניהול פריטים וחבילות. באותו אזור פתחו את **תפריטים** לניהול התפריטים. הקישורים הקודמים ל־Menu Manager ול־Combo Menus מציגים את ההנחיות האלה."
         }
       },
       {
@@ -14685,7 +14829,13 @@
     ],
     "audience": "internal",
     "status": "available",
-    "preserveExisting": false
+    "preserveExisting": false,
+    "description": {
+      "en": "Backoffice → POS content → Ingredient icons or POS login screen. Menus and combos are managed in Foody Admin.",
+      "fr": "Backoffice → POS content → Ingredient icons ou POS login screen. Les cartes et les formules se gèrent dans Foody Admin.",
+      "he": "ב־Backoffice, פתחו POS content ואז Ingredient icons או POS login screen. את התפריטים והחבילות מנהלים ב־Foody Admin."
+    },
+    "procedureUpdatedAt": "2026-11-15"
   },
   {
     "id": "backoffice-operations",
@@ -14697,9 +14847,9 @@
       "he": "תפעול, תשתית ושכפול פנימיים"
     },
     "entry": {
-      "en": "Internal operators: Operations, its guide, Servers and Clone. Read status before choosing a mutation.",
-      "fr": "Opérateurs : Opérations, son guide, Serveurs et Clonage. Lisez les statuts avant toute mutation.",
-      "he": "מפעילים: תפעול, מדריך, שרתים ושכפול. קראו מצב לפני שינוי."
+      "en": "Backoffice → Platform → Operations, Servers or Clone data. Check service status before taking action.",
+      "fr": "Backoffice → Platform → Operations, Servers ou Clone data. Consultez l’état des services avant toute intervention.",
+      "he": "ב־Backoffice, פתחו Platform ואז Operations, Servers או Clone data. בדקו את מצב השירותים לפני פעולה."
     },
     "selectors": {
       "foodybackoffice": [
@@ -14722,9 +14872,9 @@
           "he": "בדיקת מצב שירותים"
         },
         "instructions": {
-          "en": "Choose development or production and inspect checked-at timestamps, operational/degraded/down status and errors. Read-only refresh does not deploy or repair a service. Do not interpret an old successful check as current health.",
-          "fr": "Choisissez dev/prod et examinez horodatage, état opérationnel/dégradé/indisponible et erreurs. Actualiser ne déploie ni ne répare. Un ancien succès ne prouve pas la santé actuelle.",
-          "he": "בחרו פיתוח או ייצור ובדקו זמן, תקין, מוגבל או מושבת ושגיאות. רענון אינו פריסה או תיקון. הצלחה ישנה אינה הוכחת תקינות עכשווית."
+          "en": "Choose development or production and inspect checked-at timestamps, operational/degraded/down status and errors. Read-only refresh does not deploy or repair a service. Do not interpret an old successful check as current health. If the status endpoint fails, the summary shows **Status checks unavailable**. Use **Check now** to retry.",
+          "fr": "Choisissez dev/prod et examinez horodatage, état opérationnel/dégradé/indisponible et erreurs. Actualiser ne déploie ni ne répare. Un ancien succès ne prouve pas la santé actuelle. Si le contrôle échoue, le récapitulatif affiche **Status checks unavailable**. Utilisez **Check now** pour relancer le contrôle.",
+          "he": "בחרו פיתוח או ייצור ובדקו זמן, תקין, מוגבל או מושבת ושגיאות. רענון אינו פריסה או תיקון. הצלחה ישנה אינה הוכחת תקינות עכשווית. אם בדיקת המצב נכשלה, הסיכום מציג **Status checks unavailable**. לחצו על **Check now** לבדיקה חוזרת."
         }
       },
       {
@@ -14756,7 +14906,13 @@
     ],
     "audience": "internal",
     "status": "available",
-    "preserveExisting": false
+    "preserveExisting": false,
+    "description": {
+      "en": "Backoffice → Platform → Operations, Servers or Clone data. Check service status before taking action.",
+      "fr": "Backoffice → Platform → Operations, Servers ou Clone data. Consultez l’état des services avant toute intervention.",
+      "he": "ב־Backoffice, פתחו Platform ואז Operations, Servers או Clone data. בדקו את מצב השירותים לפני פעולה."
+    },
+    "procedureUpdatedAt": "2026-11-15"
   },
   {
     "id": "platform-api",
@@ -15376,9 +15532,9 @@
           "he": "הצהרות במלאי המסופים"
         },
         "instructions": {
-          "en": "In Backoffice → Terminal fleet, search by restaurant, device name or identifier. Use **Show forgotten terminals** to include archived entries in the list. To inventory a Mini that is managed on an iPad, choose Register a Mini and enter its restaurant, name and physical serial. In Edit inventory, enter the DID (VHQ Device ID) and the SHVA terminal number (Mispar Masof). Each live terminal requires its own SHVA number. Enter a legacy Ashrait login only when Verifone supplies a distinct login. Save records the revision and an audit event. Use Change requests to apply a provisioned change to a physical terminal.\n\nThe staff-scoped device inventory can include a payment_terminal component with a physical_key derived from the fleet serial. Compatible POS builds use it to link a verified LAN profile to the same device. Inventory returns only the derived key for this purpose.\n\nThe inventory entry is shared with FoodyPOS. POS reads and edits the declared serial number, DID and SHVA number within the restaurant and with permission to manage payments. The operation lookup returns only the identified terminal’s SHVA number. A payment or closing reservation protects the configuration in use against a concurrent change.",
-          "fr": "Dans Backoffice → Terminal fleet, recherchez par restaurant, nom ou identifiant. Activez **Show forgotten terminals** pour afficher les entrées oubliées. Pour inventorier un Mini configuré sur un iPad, choisissez Register a Mini et saisissez le restaurant, le nom et le numéro de série physique. Dans Edit inventory, renseignez le DID (VHQ Device ID) et le numéro de terminal SHVA (Mispar Masof). Chaque terminal en production a son propre numéro SHVA. Saisissez un identifiant de connexion Ashrait distinct si Verifone en a fourni un. L’enregistrement consigne la révision et un événement d’audit. Utilisez Change requests pour appliquer un changement de provisionnement au terminal physique.\n\nL’inventaire réservé au personnel peut inclure un composant payment_terminal avec une clé physical_key dérivée du numéro de série du parc. Les versions POS compatibles l’utilisent pour rapprocher un profil réseau vérifié de la fiche du même appareil. L’inventaire renvoie uniquement la clé dérivée pour cette opération.\n\nLa fiche est partagée avec FoodyPOS. Le POS lit et modifie le numéro de série déclaré, le DID et le numéro SHVA dans le périmètre du restaurant et avec le droit de gérer les paiements. La recherche opérationnelle renvoie uniquement le numéro SHVA du terminal identifié. La réservation d’un paiement ou d’une clôture protège la configuration utilisée contre une modification concurrente.",
-          "he": "ב־Backoffice ← Terminal fleet, חפשו לפי מסעדה, שם או מזהה. הפעילו את **Show forgotten terminals** כדי לכלול רשומות שנשכחו. כדי לרשום Mini שמוגדר ב־iPad, בחרו Register a Mini והזינו מסעדה, שם ומספר סידורי פיזי. ב־Edit inventory הזינו DID‏ (VHQ Device ID) ואת מספר מסוף שב״א. לכל מסוף בייצור מספר שב״א משלו. הזינו מזהה התחברות Ashrait נפרד רק אם Verifone סיפקה כזה. השמירה מתעדת גרסה ואירוע ביקורת. השתמשו ב־Change requests כדי להחיל שינוי הקצאה במסוף הפיזי.\n\nמלאי המכשירים לצוות יכול לכלול רכיב payment_terminal עם מפתח physical_key הנגזר מהמספר הסידורי בצי. גרסאות POS תואמות משתמשות בו כדי לשייך פרופיל רשת מאומת לפרטי אותו מכשיר. המלאי מחזיר לצורך זה את המפתח הנגזר בלבד.\n\nרישום המלאי משותף עם FoodyPOS. הקופה קוראת ועורכת מספר סידורי מוצהר, DID ומספר שב״א בתחומי המסעדה ועם הרשאה לניהול תשלומים. קריאה בזמן פעולה מחזירה רק את מספר שב״א של המסוף המזוהה. שמירה לתשלום או לסגירה מגינה על ההגדרה שנמצאת בשימוש מפני שינוי במקביל."
+          "en": "In Backoffice → Payments & devices → Terminal fleet, search by restaurant, device name or identifier. Use **Show forgotten terminals** to include archived entries in the list. To inventory a Mini that is managed on an iPad, choose Register a Mini and enter its restaurant, name and physical serial. In Edit inventory, enter the DID (VHQ Device ID) and the SHVA terminal number (Mispar Masof). Each live terminal requires its own SHVA number. Enter a legacy Ashrait login only when Verifone supplies a distinct login. Save records the revision and an audit event. Use Change requests to apply a provisioned change to a physical terminal.\n\nThe staff-scoped device inventory can include a payment_terminal component with a physical_key derived from the fleet serial. Compatible POS builds use it to link a verified LAN profile to the same device. Inventory returns only the derived key for this purpose.\n\nThe inventory entry is shared with FoodyPOS. POS reads and edits the declared serial number, DID and SHVA number within the restaurant and with permission to manage payments. The operation lookup returns only the identified terminal’s SHVA number. A payment or closing reservation protects the configuration in use against a concurrent change.",
+          "fr": "Dans Backoffice → Payments & devices → Terminal fleet, recherchez par restaurant, nom ou identifiant. Activez **Show forgotten terminals** pour afficher les entrées oubliées. Pour inventorier un Mini configuré sur un iPad, choisissez Register a Mini et saisissez le restaurant, le nom et le numéro de série physique. Dans Edit inventory, renseignez le DID (VHQ Device ID) et le numéro de terminal SHVA (Mispar Masof). Chaque terminal en production a son propre numéro SHVA. Saisissez un identifiant de connexion Ashrait distinct si Verifone en a fourni un. L’enregistrement consigne la révision et un événement d’audit. Utilisez Change requests pour appliquer un changement de provisionnement au terminal physique.\n\nL’inventaire réservé au personnel peut inclure un composant payment_terminal avec une clé physical_key dérivée du numéro de série du parc. Les versions POS compatibles l’utilisent pour rapprocher un profil réseau vérifié de la fiche du même appareil. L’inventaire renvoie uniquement la clé dérivée pour cette opération.\n\nLa fiche est partagée avec FoodyPOS. Le POS lit et modifie le numéro de série déclaré, le DID et le numéro SHVA dans le périmètre du restaurant et avec le droit de gérer les paiements. La recherche opérationnelle renvoie uniquement le numéro SHVA du terminal identifié. La réservation d’un paiement ou d’une clôture protège la configuration utilisée contre une modification concurrente.",
+          "he": "ב־Backoffice ← Payments & devices → Terminal fleet, חפשו לפי מסעדה, שם או מזהה. הפעילו את **Show forgotten terminals** כדי לכלול רשומות שנשכחו. כדי לרשום Mini שמוגדר ב־iPad, בחרו Register a Mini והזינו מסעדה, שם ומספר סידורי פיזי. ב־Edit inventory הזינו DID‏ (VHQ Device ID) ואת מספר מסוף שב״א. לכל מסוף בייצור מספר שב״א משלו. הזינו מזהה התחברות Ashrait נפרד רק אם Verifone סיפקה כזה. השמירה מתעדת גרסה ואירוע ביקורת. השתמשו ב־Change requests כדי להחיל שינוי הקצאה במסוף הפיזי.\n\nמלאי המכשירים לצוות יכול לכלול רכיב payment_terminal עם מפתח physical_key הנגזר מהמספר הסידורי בצי. גרסאות POS תואמות משתמשות בו כדי לשייך פרופיל רשת מאומת לפרטי אותו מכשיר. המלאי מחזיר לצורך זה את המפתח הנגזר בלבד.\n\nרישום המלאי משותף עם FoodyPOS. הקופה קוראת ועורכת מספר סידורי מוצהר, DID ומספר שב״א בתחומי המסעדה ועם הרשאה לניהול תשלומים. קריאה בזמן פעולה מחזירה רק את מספר שב״א של המסוף המזוהה. שמירה לתשלום או לסגירה מגינה על ההגדרה שנמצאת בשימוש מפני שינוי במקביל."
         }
       },
       {
@@ -15457,6 +15613,19 @@
           "en": "From the API repository, use scripts/cleanup_orders.sh with --yes and --restaurant-id for the intended test restaurant. Confirm the database address and restaurant before running the script. It deletes orders, open tickets, POS payments and closing history and frees the tables. The transaction aborts if a payment, return or transmission still requires a result. Verify the procedure with synthetic data.",
           "fr": "Depuis le dépôt API, lancez scripts/cleanup_orders.sh avec --yes et --restaurant-id pour le restaurant de test voulu. Vérifiez l’adresse de la base et le restaurant avant l’exécution. Le script supprime les commandes, les additions ouvertes, les paiements POS et l’historique des clôtures, puis libère les tables. La transaction s’interrompt si un paiement, un retour ou une transmission attend encore un résultat. Vérifiez la procédure sur des données synthétiques.",
           "he": "ממאגר ה־API הפעילו scripts/cleanup_orders.sh עם ‎--yes ו־‎--restaurant-id עבור מסעדת הבדיקה הרצויה. אמתו את כתובת מסד הנתונים ואת המסעדה לפני ההפעלה. התסריט מוחק הזמנות, חשבונות פתוחים, תשלומי POS והיסטוריית סגירה ומשחרר את השולחנות. הפעולה נעצרת אם תשלום, החזר או שידור עדיין ממתינים לתוצאה. אמתו את התהליך בעזרת נתונים סינתטיים."
+        }
+      },
+      {
+        "id": "backoffice-module-access-contract",
+        "title": {
+          "en": "Verify the Backoffice software and access responses",
+          "fr": "Vérifier le catalogue logiciel et les droits côté Backoffice",
+          "he": "אימות תגובות מחירון התוכנה והגישה ב־Backoffice"
+        },
+        "instructions": {
+          "en": "As a Foody superadmin, load the feature catalogue and verify that the software catalogue matches Foody Landing and that the legacy plan definitions are still present in the API. On development, request the restaurant detail for a modular pilot restaurant and check that its feature flags match the current trial or verified agreement. For an existing restaurant, check that the response continues to use its stored plan and manual flags.",
+          "fr": "Comme superadmin Foody, chargez le catalogue de fonctions. Vérifiez que le catalogue logiciel correspond à Foody Landing et que l’API fournit encore les définitions d’offres historiques. En développement, ouvrez le détail d’un restaurant du pilote modulaire et vérifiez que ses fonctions correspondent à l’essai en cours ou à l’abonnement vérifié. Pour un restaurant existant, vérifiez que la réponse renvoie son offre enregistrée et ses réglages manuels.",
+          "he": "כמנהל על של Foody טענו את קטלוג היכולות. ודאו שמחירון התוכנה תואם ל־Foody Landing ושה־API עדיין מספק את הגדרות המסלולים הקיימים. בסביבת הפיתוח בקשו את פרטי מסעדה המשתתפת בפיילוט המודולרי ובדקו שהיכולות משקפות את תקופת הניסיון הפעילה או את המנוי שתשלומו אומת. למסעדה קיימת ודאו שהתשובה כוללת את המסלול השמור ואת ההגדרות הידניות שלה."
         }
       },
       {
@@ -15605,9 +15774,9 @@
           "he": "בדיקת שינויי תשתית"
         },
         "instructions": {
-          "en": "Every source file is inventoried by exact digest. Files without a specific business selector are explicitly classified as shared runtime, not silently called customer features. A source change still requires an exact no-user-impact explanation or updated procedures. New screens and controls must be assigned to their business feature before release.",
-          "fr": "Chaque fichier a une empreinte exacte. Les fichiers sans sélecteur métier sont classés explicitement comme socle, sans devenir des fonctions client. Un changement exige une justification exacte sans impact ou des procédures mises à jour. Affectez nouveaux écrans et contrôles à leur fonction avant livraison.",
-          "he": "לכל קובץ גיבוב מדויק. קבצים ללא שיוך עסקי מסווגים במפורש כתשתית ולא כיכולת לקוח. שינוי עדיין דורש הסבר מדויק ללא השפעה או עדכון מדריכים. שייכו מסכים ובקרות חדשים ליכולת לפני פריסה."
+          "en": "Every source file is inventoried by exact digest. Files without a specific business selector are explicitly classified as shared runtime, not silently called customer features. A source change still requires an exact no-user-impact explanation or updated procedures. New screens and controls must be assigned to their business feature before release.\n\nBackoffice derives the API label from the same endpoint selection it uses for requests. A custom API configuration displays Custom API and the catalog handoff gives written directions.",
+          "fr": "Chaque fichier a une empreinte exacte. Les fichiers sans sélecteur métier sont classés explicitement comme socle, sans devenir des fonctions client. Un changement exige une justification exacte sans impact ou des procédures mises à jour. Affectez nouveaux écrans et contrôles à leur fonction avant livraison.\n\nLe Backoffice déduit le libellé de l’API de la même sélection d’endpoint que celle qui sert aux requêtes. Avec une API personnalisée, il affiche Custom API et la page de réorientation vers le catalogue fournit le parcours à suivre.",
+          "he": "לכל קובץ גיבוב מדויק. קבצים ללא שיוך עסקי מסווגים במפורש כתשתית ולא כיכולת לקוח. שינוי עדיין דורש הסבר מדויק ללא השפעה או עדכון מדריכים. שייכו מסכים ובקרות חדשים ליכולת לפני פריסה.\n\nהכיתוב ב־Backoffice נגזר מאותה בחירת כתובת API שמשמשת לבקשות. עבור API מותאם, הכיתוב הוא Custom API ובעמוד ההפניה לקטלוג מופיעות הנחיות."
         }
       },
       {
@@ -15822,7 +15991,7 @@
     "audience": "internal",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-11-04"
+    "procedureUpdatedAt": "2026-11-15"
   },
   {
     "id": "global-search",

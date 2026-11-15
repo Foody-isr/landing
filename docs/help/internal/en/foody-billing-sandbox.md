@@ -1,35 +1,37 @@
 ---
 title: Foody software billing pilot
-description: Development Backoffice → Foody billing · sandbox; restaurant Admin → Account → Billing.
+description: >-
+  Development Backoffice → Payments & devices → Foody billing (sandbox). restaurant Admin → Settings → Account →
+  Billing.
 apps: foodyadmin
 tags:
   - account
   - foody-billing-sandbox
-updatedAt: '2026-11-10'
+updatedAt: '2026-11-15'
 featureId: foody-billing-sandbox
 audience: internal
 releaseStatus: local-release-unverified
 ---
-Development Backoffice → Foody billing · sandbox. restaurant Admin → Settings → Account → Billing.
+Development Backoffice → Payments & devices → Foody billing (sandbox). restaurant Admin → Settings → Account → Billing.
 
 > **Release availability must be confirmed**
 > This application exists in the source workspace. This guide does not confirm public distribution or availability in your installed release.
 
 ## Availability and access
 
-This procedure is for a coordinated sandbox test. A Foody superadmin configures the merchant and publishes the offer. Only a current owner of that restaurant can accept it or start a checkout. Sandbox transactions do not alter operating access or issue fiscal documents.
+This procedure is for a coordinated sandbox test. A Foody superadmin configures the merchant and the offer. Only a current owner of that restaurant can accept it or start a checkout. A verified payment grants access to purchased modules for restaurants enrolled in modular billing. Existing restaurants keep their operating access. Sandbox payments issue no fiscal documents.
 
 <span id="merchant" />
 
 ## Configure Foody’s own Verifone merchant
 
-In the development Backoffice open **Foody billing · sandbox**. Enter the sandbox user ID, API key, Foody entity ID and hosted Checkout contract. For monthly tests, also enter the No-CVV recurring contract and token scope, then enable monthly enrollment after Verifone confirms the contract. Enable sandbox payments and save. Saved credentials stay hidden; an empty field preserves its value.
+In the development Backoffice open **Payments & devices → Foody billing (sandbox)**. Enter the sandbox user ID, API key, Foody entity ID and hosted Checkout contract. For monthly tests, also enter the No-CVV recurring contract and token scope, then enable monthly enrollment after Verifone confirms the contract. Enable sandbox payments and save. Saved credentials stay hidden; an empty field preserves its value.
 
 <span id="offer" />
 
 ## Publish or revise a private offer
 
-Open **Restaurants → selected restaurant → Billing → Foody private offer**. Enter the modules and licences, terms, monthly and annual ILS amounts, agreed VAT treatment and first payment date. Publish, then open the owner billing page. To edit, change the fields and publish a new version. An open checkout keeps its original price; a new offer needs owner consent for the next period.
+For an existing restaurant, open **Restaurants → selected restaurant → Billing & modules → Private sandbox offer**. Enter an offer description, terms, monthly and annual ILS amounts, agreed VAT treatment and the first payment date. Publish, then open the owner billing page. To change the offer, edit the fields and publish a new version. A checkout already in progress keeps its original price. The new offer requires the owner’s agreement for the next period.
 
 <span id="pay" />
 
@@ -41,13 +43,31 @@ Sign in as the restaurant owner and open **Settings → Account → Billing**. T
 
 ## Test the first monthly renewal
 
-After a confirmed monthly test payment, return to **Foody private offer** in the development Backoffice and choose **Test first monthly renewal**. Confirm to send the next authorized monthly test debit to Verifone. A confirmed renewal covers the next period. Foody allows this test once per mandate, without waiting for the due date. If the result is uncertain, verify the current payment before taking another action.
+After a confirmed monthly test payment, return to **Private sandbox offer** in the development Backoffice and choose **Test first monthly renewal**. Confirm to send the next authorized monthly test debit to Verifone. A confirmed renewal covers the next period. Foody allows this test once per mandate, without waiting for the due date. If the result is uncertain, verify the current payment before taking another action.
 
 <span id="measure" />
 
 ## Read observed usage
 
 Open the observed usage section in Billing. It shows selected monthly UTC counters for Maps and Geoapify, SMS verification requests, WhatsApp order messages and supported OpenAI and Claude activity. The counters are partial and create no charge.
+
+<span id="modular-provisioning" />
+
+## Invite a new sandbox restaurant
+
+In the development Backoffice open **Restaurants → Onboard New**. Enter the restaurant name, owner email, menu language and restaurant currency. Choose **Public catalogue** or **Custom offer**. The public catalogue uses the software rates published by Foody Landing in ILS per location per month excluding VAT. A custom offer records selected modules and extra named POS licences, the monthly price, optional annual price, VAT treatment and terms. Enable Trial, enter at least 14 days and select the modules the owner may test, or leave Trial disabled for payment during account setup. Send the invitation. Use **Resend invitation** if delivery fails.
+
+<span id="modular-owner" />
+
+## Activate a trial or pay from the invitation
+
+Follow the invitation to confirm the account and open Billing for the specified restaurant. For a public offer, choose modules and review the monthly amount. For a private offer, review the agreed terms. Choose **Start my trial** when offered; the displayed end date starts from that confirmation and a retry keeps the original date. Billing remains available after expiry. Without a trial, the owner confirms the available payment cycle and terms to open hosted sandbox checkout. The application activates the paid scope after server verification. If the payment is pending, use the existing verification action. Monthly checkout requires the sandbox merchant’s recurring contract. Setup and equipment are quoted separately.
+
+<span id="modular-access" />
+
+## Review module access
+
+Restaurant grants access to POS and table service including table QR. Orders grants the online ordering website, pickup and delivery. Kitchen grants stock, recipes, suppliers and preparation tools. The available features still require the staff member’s restaurant role. Billing shows the licences included in the selected offer and the current trial or paid scope. Existing restaurants without a sandbox enrolment stay on their existing contract.
 
 ## If the operation fails
 

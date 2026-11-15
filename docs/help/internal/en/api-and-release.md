@@ -286,7 +286,7 @@ Local preparation: apply migration 289 and deploy the compatible API before POS.
 
 ## Global terminal declarations
 
-In Backoffice → Terminal fleet, search by restaurant, device name or identifier. Use **Show forgotten terminals** to include archived entries in the list. To inventory a Mini that is managed on an iPad, choose Register a Mini and enter its restaurant, name and physical serial. In Edit inventory, enter the DID (VHQ Device ID) and the SHVA terminal number (Mispar Masof). Each live terminal requires its own SHVA number. Enter a legacy Ashrait login only when Verifone supplies a distinct login. Save records the revision and an audit event. Use Change requests to apply a provisioned change to a physical terminal.
+In Backoffice → Payments & devices → Terminal fleet, search by restaurant, device name or identifier. Use **Show forgotten terminals** to include archived entries in the list. To inventory a Mini that is managed on an iPad, choose Register a Mini and enter its restaurant, name and physical serial. In Edit inventory, enter the DID (VHQ Device ID) and the SHVA terminal number (Mispar Masof). Each live terminal requires its own SHVA number. Enter a legacy Ashrait login only when Verifone supplies a distinct login. Save records the revision and an audit event. Use Change requests to apply a provisioned change to a physical terminal.
 
 The staff-scoped device inventory can include a payment_terminal component with a physical_key derived from the fleet serial. Compatible POS builds use it to link a verified LAN profile to the same device. Inventory returns only the derived key for this purpose.
 
@@ -333,6 +333,12 @@ Courier responses omit the route line and hide customer data outside the open st
 ## Reset order and cash test data for a restaurant
 
 From the API repository, use scripts/cleanup_orders.sh with --yes and --restaurant-id for the intended test restaurant. Confirm the database address and restaurant before running the script. It deletes orders, open tickets, POS payments and closing history and frees the tables. The transaction aborts if a payment, return or transmission still requires a result. Verify the procedure with synthetic data.
+
+<span id="backoffice-module-access-contract" />
+
+## Verify the Backoffice software and access responses
+
+As a Foody superadmin, load the feature catalogue and verify that the software catalogue matches Foody Landing and that the legacy plan definitions are still present in the API. On development, request the restaurant detail for a modular pilot restaurant and check that its feature flags match the current trial or verified agreement. For an existing restaurant, check that the response continues to use its stored plan and manual flags.
 
 <span id="forget-device-inventory" />
 

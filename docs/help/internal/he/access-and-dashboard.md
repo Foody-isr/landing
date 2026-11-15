@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - backoffice-access
-updatedAt: '2026-10-21'
+updatedAt: '2026-11-15'
 featureId: backoffice-access
 audience: internal
 releaseStatus: available
@@ -22,7 +22,7 @@ releaseStatus: available
 
 ## קריאת נתוני פלטפורמה
 
-עיינו בסיכומים ופתחו רשומת עסק או משתמש לבדיקה. נתונים מצטברים אינם המלצת לקוח או הוכחת סליקת עסקה.
+עיינו בסיכומים ופתחו רשומת עסק או משתמש לבדיקה. נתונים מצטברים אינם המלצת לקוח או הוכחת סליקת עסקה. אם דוח המנויים בפיגור לא נטען, לחצו על **Retry subscriptions**.
 
 <span id="related-service-controls" />
 
@@ -31,3 +31,11 @@ releaseStatus: available
 Usage and quotas מציג השוואת צריכה לפי שירות ומסעדה. Review allocation והקישור בכרטיס המסעדה פותחים תקרות חודשיות; שמירה מחייבת סיבה ושומרת את כל המונים. הכלים למנהל־על בלבד ונפרדים מהעדפת ההתחברות באתר.
 
 בגרסאות תואמות, צי המסופים מוגבל גם הוא למנהלי־על של Foody. הוא מציג מכשירים בין מסעדות; מספרי DID/שב״א והספק שהוזנו נשארים הצהרות מתועדות, ולא הגדרת בנק שהוחלה.
+
+לשאלות מנוי, פתחו **Plans & modules** בסרגל הצד כדי לראות את מחירון התוכנה הציבורי. פתחו מסעדה כדי להגיע אל **Billing & modules** ואל **Features & access**.
+
+<span id="navigation" />
+
+## מציאת כלי ב־Backoffice
+
+בדקו את שם ה־API מתחת ל־Foody Backoffice. בחרו **Management** למסעדות ולמשתמשים, **Payments & devices** לבדיקות חיוב, לצי המסופים ול־Cibus, **POS content** לאייקוני מרכיבים ולמסך כניסת הקופה, או **Platform** למכסות, לתפעול, לשרתים ולהעתקת נתונים. במסך קטן בחרו **Open navigation**. אפשר לגלול טבלאות רחבות בציר האופקי.

@@ -172,17 +172,27 @@
       "audience": "internal",
       "selectors": {
         "foodyadmin": [
-          "src/app/[restaurantId]/billing/PrivateBilling.tsx"
+          "src/app/[restaurantId]/billing/PrivateBilling.tsx",
+          "src/lib/module-navigation.ts",
+          "src/app/[restaurantId]/billing/ModuleOnboarding.tsx"
         ],
         "foodybackoffice": [
           "src/app/dashboard/foody-billing/**",
-          "src/components/FoodyPrivateOffer.tsx"
+          "src/components/FoodyPrivateOffer.tsx",
+          "src/app/dashboard/onboard/ModularBillingFields.tsx",
+          "src/components/FoodySubscriptionSummary.tsx",
+          "src/lib/foody-modules.ts"
         ],
         "foodyserver": [
           "internal/subscription/foody_billing*.go",
           "internal/payment/verifone_foody_billing.go",
           "internal/common/observed_usage.go",
-          "migrations/292_foody_billing_sandbox.sql"
+          "migrations/292_foody_billing_sandbox.sql",
+          "internal/entitlements/**",
+          "internal/subscription/foody_onboarding.go",
+          "internal/auth/modular_access.go",
+          "internal/admin/modular_onboarding.go",
+          "migrations/319_foody_modular_billing_sandbox.sql"
         ]
       }
     },
@@ -1974,7 +1984,9 @@
           "src/app/dashboard/page.tsx",
           "src/app/dashboard/layout.tsx",
           "src/lib/auth*",
-          "src/components/**"
+          "src/components/**",
+          "src/app/globals.css",
+          "src/app/layout.tsx"
         ],
         "foodyserver": [
           "internal/admin/**"
@@ -2008,11 +2020,18 @@
           "src/lib/api.ts",
           "src/app/dashboard/api-usage/**",
           "src/app/dashboard/restaurants/[id]/usage/**",
-          "src/app/dashboard/restaurants/[id]/page.tsx"
+          "src/app/dashboard/restaurants/[id]/page.tsx",
+          "src/components/Sidebar.tsx",
+          "src/components/RestaurantFeatureAccess.tsx",
+          "src/components/FoodySubscriptionSummary.tsx",
+          "src/lib/foody-modules.ts"
         ],
         "foodyserver": [
           "internal/subscription/**",
-          "internal/payment/**"
+          "internal/payment/**",
+          "internal/admin/handler.go",
+          "internal/admin/service.go",
+          "internal/entitlements/catalog.go"
         ]
       }
     },
