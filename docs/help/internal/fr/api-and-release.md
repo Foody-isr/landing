@@ -333,3 +333,11 @@ Les réponses du mode livreur masquent le tracé et les données client hors de 
 ## Réinitialiser les données de commande et de caisse d’un restaurant de test
 
 Depuis le dépôt API, lancez scripts/cleanup_orders.sh avec --yes et --restaurant-id pour le restaurant de test voulu. Vérifiez l’adresse de la base et le restaurant avant l’exécution. Le script supprime les commandes, les additions ouvertes, les paiements POS et l’historique des clôtures, puis libère les tables. La transaction s’interrompt si un paiement, un retour ou une transmission attend encore un résultat. Vérifiez la procédure sur des données synthétiques.
+
+<span id="forget-device-inventory" />
+
+## Retirer du matériel depuis Backoffice
+
+Dans une version compatible de Backoffice, ouvrez **Terminal fleet → All devices**. Recherchez le restaurant ou le nom de l’appareil. Sur la bonne ligne, choisissez **Forget device**, vérifiez le restaurant et confirmez. Les appareils retirés sont masqués par défaut. Cochez **Show forgotten devices** pour les consulter. Pour les terminaux de paiement, la même action est accessible dans **Payment terminals**.
+
+Le retrait est le même que dans FoodyPOS et reste limité au restaurant. L’historique des opérations terminées est conservé et les connexions existantes ne réinscrivent pas l’appareil automatiquement. Ce parcours ne réinitialise pas la configuration bancaire. Résolvez les opérations terminal et les dépendances d’impression en attente avant de réessayer. Terminez ou annulez toute modification de terminal préparée avant de retirer ce terminal.

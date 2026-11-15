@@ -333,3 +333,11 @@ Courier responses omit the route line and hide customer data outside the open st
 ## Reset order and cash test data for a restaurant
 
 From the API repository, use scripts/cleanup_orders.sh with --yes and --restaurant-id for the intended test restaurant. Confirm the database address and restaurant before running the script. It deletes orders, open tickets, POS payments and closing history and frees the tables. The transaction aborts if a payment, return or transmission still requires a result. Verify the procedure with synthetic data.
+
+<span id="forget-device-inventory" />
+
+## Remove hardware from Backoffice
+
+In a compatible Backoffice build, open **Terminal fleet → All devices**. Search by restaurant or device name. On the row for the correct restaurant and device, select **Forget device** and confirm. Removed entries are hidden by default. Enable **Show forgotten devices** to review them. For payment terminals, the same action is available in **Payment terminals**.
+
+This uses the same restaurant-scoped removal as FoodyPOS. It preserves completed business records and blocks automatic re-registration by existing connections. It does not reset bank settings. Resolve pending terminal operations and printing dependencies before trying again. Finish or cancel any prepared terminal change before removing the terminal.

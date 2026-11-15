@@ -10658,7 +10658,9 @@
       ],
       "foodypos": [
         "lib/features/kitchen_display/**",
-        "lib/services/devices/**"
+        "lib/services/devices/**",
+        "lib/features/settings/presentation/device_forget_confirmation.dart",
+        "lib/features/settings/presentation/hardware_settings_page.dart"
       ]
     },
     "operations": [
@@ -10713,11 +10715,25 @@
           "fr": "Ouvrez le KDS affecté, vérifiez les tickets lancés et avancez ou terminez-les avec les actions autorisées. Un plat en attente n’est pas un ticket lancé. Rappel/priorité ciblent le ticket affiché ; ne renvoyez pas une commande uniquement parce que le poste est hors ligne.",
           "he": "פתחו מסך מטבח משויך, בדקו כרטיסים ששוגרו וקדמו או סיימו בהרשאה. מזון מושהה אינו כרטיס משוגר. אחזור ועדיפות מיועדים לכרטיס המוצג; אין לשגר שוב הזמנה רק משום שהתחנה לא מחוברת."
         }
+      },
+      {
+        "id": "forget-hardware",
+        "title": {
+          "en": "Forget a device in FoodyPOS",
+          "fr": "Oublier un appareil dans FoodyPOS",
+          "he": "הסרת מכשיר מ־FoodyPOS"
+        },
+        "instructions": {
+          "en": "On a compatible version of FoodyPOS, open **More → Settings → Hardware**. Select the device, choose **Forget device**, then confirm its name. For a standalone printer, open **Printers**, select it, and use the **…** menu. For a Verifone terminal, open **Payment terminals** and select the terminal. You need permission to manage all of the selected device’s functions.\n\nThe device’s Foody connections and assignments are removed. A POS that you remove must be authorized again to use its device access. Payments, closed cash reports and completed print jobs stay in history. Close any open cash drawer session before removing its POS. If you remove the main register, designate a replacement in Reports.",
+          "fr": "Sur une version compatible de FoodyPOS, ouvrez **Plus → Paramètres → Matériel**. Ouvrez la fiche voulue, choisissez **Oublier l’appareil**, puis confirmez son nom. Pour une imprimante autonome, ouvrez **Imprimantes**, sélectionnez-la et utilisez le menu **…**. Pour un terminal Verifone, ouvrez **Terminaux de paiement** et sélectionnez le terminal. Vous devez avoir le droit de gérer toutes les fonctions de l’appareil sélectionné.\n\nLes connexions et affectations Foody liées à l’appareil sont retirées. Pour réutiliser une caisse retirée, autorisez à nouveau l’appareil. Les paiements, rapports de caisse clôturés et impressions terminées restent dans l’historique. Clôturez la session de caisse ouverte avant de retirer sa caisse. Si vous retirez la caisse principale, désignez sa remplaçante dans Rapports.",
+          "he": "בגרסה תואמת של FoodyPOS, פתחו **עוד ← הגדרות ← חומרה**. בחרו את המכשיר, לחצו על **הסרת מכשיר** ואשרו את שמו. למדפסת עצמאית, פתחו **מדפסות**, בחרו בה והשתמשו בתפריט **…**. למסוף Verifone, פתחו **מסופי תשלום** ובחרו את המסוף. נדרשת הרשאה לניהול כל היכולות של המכשיר שנבחר.\n\nהחיבורים והשיוכים של המכשיר ב־Foody מוסרים. כדי להשתמש בגישת קופה שהוסרה יש לאשר מחדש את המכשיר. תשלומים, דוחות קופה סגורים והדפסות שהושלמו נשארים בהיסטוריה. סגרו משמרת מגירת מזומן פתוחה לפני הסרת הקופה שלה. אם הסרתם את הקופה הראשית, הגדירו קופה מחליפה במסך הדוחות."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
-    "preserveExisting": false
+    "preserveExisting": false,
+    "procedureUpdatedAt": "2026-11-15"
   },
   {
     "id": "stock-units-policy",
@@ -11937,6 +11953,19 @@
           "en": "With permission to manage payments, open More → Settings → Hardware → Payment terminals, open the active terminal’s details, then select Installment payments. Enter the shekel range configured in VHQ. If the acquirer allows entering plans in Foody, enter its permitted maximum count as well. For a card payment within the range, you can ask the customer to choose installments on the terminal. When a maximum count is configured, Set installments in Foody lets you enter a permitted count and optionally a first payment amount. Confirm the plan before presenting the card. If the first payment field is blank, the terminal calculates the amounts. Foody records the full total after confirmation. Select Disable to remove the choice. The setting is local to this POS and terminal.",
           "he": "עם הרשאה לניהול תשלומים פתחו עוד ← הגדרות ← חומרה ← מסופי תשלום, פתחו את פרטי המסוף הפעיל ובחרו תשלום בתשלומים. הזינו בשקלים את הטווח שהוגדר ב־VHQ. אם הסולק מאפשר להזין תשלומים ב־Foody, הזינו גם את המספר המרבי המותר. בתשלום בכרטיס בטווח הזה אפשר לתת ללקוח לבחור את התשלומים במסוף. אם הוגדר מספר מרבי, באפשרות הגדרת תשלומים ב־Foody הזינו מספר מותר ובמידת הצורך גם את סכום התשלום הראשון. אשרו את התוכנית לפני הצגת הכרטיס. אם סכום התשלום הראשון נשאר ריק, המסוף מחשב את החלוקה. לאחר האישור Foody רושמת את הסכום המלא. להסרת האפשרות בחרו השבתה. ההגדרה מקומית לקופה ולמסוף אלה."
         }
+      },
+      {
+        "id": "forget-payment-terminal",
+        "title": {
+          "en": "Remove a payment terminal",
+          "fr": "Retirer un terminal de paiement",
+          "he": "הסרת מסוף תשלום"
+        },
+        "instructions": {
+          "en": "On a compatible build, select the terminal in **More → Settings → Hardware → Payment terminals** and choose **Forget device**. Verify the name before confirming. An iPad removes its matching saved connection when Hardware is refreshed after removal in Backoffice. A terminal saved only on this iPad can be removed from its local settings. If the default terminal is removed, review the remaining default before the next payment. Finish any pending payment or closing on the original device before forgetting it.",
+          "fr": "Sur une version compatible, sélectionnez le terminal dans **Plus → Paramètres → Matériel → Terminaux de paiement**, puis choisissez **Oublier l’appareil**. Vérifiez son nom avant de confirmer. Après un retrait depuis Backoffice, actualisez le matériel sur l’iPad : la connexion enregistrée pour ce terminal est retirée. Un terminal enregistré uniquement sur cet iPad peut être retiré depuis ses réglages locaux. Si vous retirez le terminal par défaut, vérifiez le nouveau choix avant le prochain paiement. Terminez tout paiement ou clôture en attente sur l’appareil d’origine avant de le retirer.",
+          "he": "בגרסה תואמת, בחרו את המסוף ב־**עוד ← הגדרות ← חומרה ← מסופי תשלום**, ולחצו על **הסרת מכשיר**. בדקו את השם לפני האישור. לאחר הסרה ב־Backoffice, רעננו את מסך החומרה ב־iPad כדי להסיר את החיבור השמור לאותו מסוף. מסוף שנשמר רק ב־iPad ניתן להסיר מההגדרות המקומיות. אם הוסר מסוף ברירת המחדל, בדקו את הבחירה החדשה לפני התשלום הבא. סיימו תשלום או סגירה שממתינים במכשיר המקורי לפני הסרתו."
+        }
       }
     ],
     "audience": "public",
@@ -12424,12 +12453,25 @@
           "en": "With compatible API and FoodyPOS versions, open More → Settings → Printers → Receipts from this device. With printer-management permission, select one or more printers already assigned a Receipts profile, then Save. Victa Portable defaults to its integrated printer. On iPad, an assigned Epson TM-m30III receipt printer is preferred. If the expected destination is unavailable, configure its profile or explicitly choose another printer. A saved destination that becomes unavailable is never automatically substituted. The choice belongs to this installation, restaurant and environment; it changes neither another iPad or Victa nor the shared profile.\n\nAfter payment is recorded, Foody sends the receipt to these destinations. When the transaction offers [New receipt](/en/help/payments/transactions#new-pos-receipt), choose Other printers… and confirm with Print receipt. The one-off copy keeps the POS setting.\n\nThe sale receipt printed after payment includes the logo uploaded in FoodyAdmin. When no logo is available, the restaurant name prints in bold. Amounts are aligned in a column and Hebrew receipts read right to left. On iPad, an Epson TM-m30III in the standard 80 mm, 48-column configuration uses its built-in font for supported lines. Victa Portable advances the paper to leave room below the receipt.\n\nSale receipt labels follow the country configured for the restaurant. In Israel, receipts are in Hebrew even when the POS interface is in English. France uses French. Foody uses English when the country's language is unavailable. Item names use available menu translations.",
           "he": "בגרסאות תואמות של ה-API ושל FoodyPOS, פתחו עוד → הגדרות → מדפסות → קבלות ממכשיר זה. עם הרשאת ניהול מדפסות, בחרו מדפסת אחת או יותר שכבר משויכות לפרופיל קבלות ולחצו שמירה. ב-Victa Portable ברירת המחדל היא המדפסת המובנית. ב-iPad ניתנת עדיפות ל-Epson TM-m30III המשויכת לקבלות. אם היעד הצפוי אינו זמין, הגדירו את הפרופיל שלו או בחרו במפורש מדפסת אחרת. יעד שמור שהפך ללא זמין אינו מוחלף אוטומטית. הבחירה נשמרת להתקנה, למסעדה ולסביבה האלה בלבד; היא אינה משנה iPad או Victa אחרים או את הפרופיל המשותף.\n\nלאחר רישום התשלום, Foody שולחת את הקבלה ליעדים אלה. אם מופיעה בעסקה האפשרות [קבלה חדשה](/he/help/payments/transactions#new-pos-receipt), בחרו מדפסות אחרות… ואשרו בהדפסת קבלה. בחירת העותק שומרת על הגדרת הקופה.\n\nקבלת המכירה המודפסת לאחר התשלום כוללת את הלוגו שהועלה ל-FoodyAdmin. כשאין לוגו זמין, שם המסעדה מודפס בהדגשה. הסכומים מיושרים בעמודה וקבלות בעברית נקראות מימין לשמאל. ב-iPad, מדפסת Epson TM-m30III בתצורה הרגילה של 80 מ״מ ו-48 עמודות משתמשת בגופן המובנה שלה לשורות נתמכות. ה-Victa Portable מקדם את הנייר ומשאיר שוליים מתחת לקבלה.\n\nשפת הכותרות בקבלת המכירה נקבעת לפי המדינה שמוגדרת למסעדה. בישראל הקבלה מודפסת בעברית גם אם ממשק הקופה מוצג בשפה אחרת. בצרפת הקבלה מודפסת בצרפתית. כששפת המדינה אינה נתמכת, Foody משתמשת באנגלית. שמות הפריטים מופיעים בתרגום הקיים בתפריט."
         }
+      },
+      {
+        "id": "forget-printer",
+        "title": {
+          "en": "Remove a standalone printer",
+          "fr": "Retirer une imprimante autonome",
+          "he": "הסרת מדפסת עצמאית"
+        },
+        "instructions": {
+          "en": "On a compatible version of FoodyPOS, open **More → Settings → Hardware → Printers**, select the printer, open **…**, then choose **Forget device**. Pending jobs or use as a printing gateway must be resolved before you can remove it. After removal, review the routing and receipt destinations for the remaining printers. A network scan does not automatically add a forgotten printer back to the restaurant inventory. The built-in Victa printer appears with its host terminal in the hardware inventory.",
+          "fr": "Sur une version compatible de FoodyPOS, ouvrez **Plus → Paramètres → Matériel → Imprimantes**, choisissez l’imprimante, ouvrez **…**, puis sélectionnez **Oublier l’appareil**. Terminez les impressions en attente et retirez les affectations qui utilisent cette imprimante comme passerelle avant le retrait. Ensuite, vérifiez les profils et la destination des reçus des imprimantes restantes. L’analyse du réseau ne réinscrit pas automatiquement une imprimante oubliée. L’imprimante intégrée au Victa apparaît avec son terminal dans le matériel.",
+          "he": "בגרסה תואמת של FoodyPOS, פתחו **עוד ← הגדרות ← חומרה ← מדפסות**, בחרו את המדפסת, פתחו **…** ובחרו **הסרת מכשיר**. סיימו משימות הדפסה ממתינות ובטלו שיוכים המשתמשים במדפסת כשער לפני הסרתה. לאחר מכן בדקו את הפרופילים ואת יעדי הקבלות במדפסות שנותרו. סריקת רשת אינה רושמת מחדש אוטומטית מדפסת שהוסרה. המדפסת המובנית ב־Victa מופיעה במלאי עם המסוף שלה."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-11-12"
+    "procedureUpdatedAt": "2026-11-15"
   },
   {
     "id": "printer-diagnostics",
@@ -15415,6 +15457,19 @@
           "en": "From the API repository, use scripts/cleanup_orders.sh with --yes and --restaurant-id for the intended test restaurant. Confirm the database address and restaurant before running the script. It deletes orders, open tickets, POS payments and closing history and frees the tables. The transaction aborts if a payment, return or transmission still requires a result. Verify the procedure with synthetic data.",
           "fr": "Depuis le dépôt API, lancez scripts/cleanup_orders.sh avec --yes et --restaurant-id pour le restaurant de test voulu. Vérifiez l’adresse de la base et le restaurant avant l’exécution. Le script supprime les commandes, les additions ouvertes, les paiements POS et l’historique des clôtures, puis libère les tables. La transaction s’interrompt si un paiement, un retour ou une transmission attend encore un résultat. Vérifiez la procédure sur des données synthétiques.",
           "he": "ממאגר ה־API הפעילו scripts/cleanup_orders.sh עם ‎--yes ו־‎--restaurant-id עבור מסעדת הבדיקה הרצויה. אמתו את כתובת מסד הנתונים ואת המסעדה לפני ההפעלה. התסריט מוחק הזמנות, חשבונות פתוחים, תשלומי POS והיסטוריית סגירה ומשחרר את השולחנות. הפעולה נעצרת אם תשלום, החזר או שידור עדיין ממתינים לתוצאה. אמתו את התהליך בעזרת נתונים סינתטיים."
+        }
+      },
+      {
+        "id": "forget-device-inventory",
+        "title": {
+          "en": "Remove hardware from Backoffice",
+          "fr": "Retirer du matériel depuis Backoffice",
+          "he": "הסרת חומרה מ־Backoffice"
+        },
+        "instructions": {
+          "en": "In a compatible Backoffice build, open **Terminal fleet → All devices**. Search by restaurant or device name. On the row for the correct restaurant and device, select **Forget device** and confirm. Removed entries are hidden by default. Enable **Show forgotten devices** to review them. For payment terminals, the same action is available in **Payment terminals**.\n\nThis uses the same restaurant-scoped removal as FoodyPOS. It preserves completed business records and blocks automatic re-registration by existing connections. It does not reset bank settings. Resolve pending terminal operations and printing dependencies before trying again. Finish or cancel any prepared terminal change before removing the terminal.",
+          "fr": "Dans une version compatible de Backoffice, ouvrez **Terminal fleet → All devices**. Recherchez le restaurant ou le nom de l’appareil. Sur la bonne ligne, choisissez **Forget device**, vérifiez le restaurant et confirmez. Les appareils retirés sont masqués par défaut. Cochez **Show forgotten devices** pour les consulter. Pour les terminaux de paiement, la même action est accessible dans **Payment terminals**.\n\nLe retrait est le même que dans FoodyPOS et reste limité au restaurant. L’historique des opérations terminées est conservé et les connexions existantes ne réinscrivent pas l’appareil automatiquement. Ce parcours ne réinitialise pas la configuration bancaire. Résolvez les opérations terminal et les dépendances d’impression en attente avant de réessayer. Terminez ou annulez toute modification de terminal préparée avant de retirer ce terminal.",
+          "he": "בגרסה תואמת של Backoffice, פתחו **Terminal fleet ← All devices**. חפשו לפי שם המסעדה או המכשיר. בשורה הנכונה לחצו על **Forget device**, בדקו את המסעדה ואשרו. המכשירים שהוסרו מוסתרים כברירת מחדל. סמנו **Show forgotten devices** לצפייה בהם. ההסרה של מסוף תשלום זמינה גם ב־**Payment terminals**.\n\nזוהי אותה הסרה לפי מסעדה כמו ב־FoodyPOS. ההיסטוריה של פעולות שהושלמו נשמרת והחיבורים הקיימים אינם רושמים את המכשיר מחדש אוטומטית. ההסרה אינה מאפסת את הגדרות הסליקה. טפלו בפעולות מסוף ממתינות ובתלויות הדפסה לפני ניסיון נוסף. סיימו או בטלו שינוי מסוף שהוכן לפני הסרת המסוף."
         }
       }
     ],

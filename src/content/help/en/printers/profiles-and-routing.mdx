@@ -5,7 +5,7 @@ apps: both
 tags:
   - printers
   - printer-profiles
-updatedAt: '2026-11-12'
+updatedAt: '2026-11-15'
 featureId: printer-profiles
 audience: public
 releaseStatus: available
@@ -59,3 +59,9 @@ After payment is recorded, Foody sends the receipt to these destinations. When t
 The sale receipt printed after payment includes the logo uploaded in FoodyAdmin. When no logo is available, the restaurant name prints in bold. Amounts are aligned in a column and Hebrew receipts read right to left. On iPad, an Epson TM-m30III in the standard 80 mm, 48-column configuration uses its built-in font for supported lines. Victa Portable advances the paper to leave room below the receipt.
 
 Sale receipt labels follow the country configured for the restaurant. In Israel, receipts are in Hebrew even when the POS interface is in English. France uses French. Foody uses English when the country's language is unavailable. Item names use available menu translations.
+
+<span id="forget-printer" />
+
+## Remove a standalone printer
+
+On a compatible version of FoodyPOS, open **More → Settings → Hardware → Printers**, select the printer, open **…**, then choose **Forget device**. Pending jobs or use as a printing gateway must be resolved before you can remove it. After removal, review the routing and receipt destinations for the remaining printers. A network scan does not automatically add a forgotten printer back to the restaurant inventory. The built-in Victa printer appears with its host terminal in the hardware inventory.
