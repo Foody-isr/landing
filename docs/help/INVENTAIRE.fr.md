@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-18.
 
-113 fiches de fonctionnalités, 979 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 11 fiches opérateur internes. Le relevé machine contient 2609 fichiers applicatifs et 2294 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+113 fiches de fonctionnalités, 981 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 11 fiches opérateur internes. Le relevé machine contient 2613 fichiers applicatifs et 2301 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 777 | 990 | 888e036a27d1 ; versioned |
-| foodyadmin | 813 | 834 | 04bb50eeed7b ; versioned |
-| foodyweb | 385 | 199 | f54484310b68 ; versioned |
-| foodylanding | 157 | 31 | e4efbc5b46ed ; versioned |
-| foodypos | 429 | 184 | a8b73ad6fa96 ; versioned |
-| foodybackoffice | 48 | 56 | 87779b14d3d9 ; versioned |
+| foodyserver | 779 | 995 | c45b364710c5 ; versioned |
+| foodyadmin | 813 | 834 | 7f8714130ccc ; versioned |
+| foodyweb | 385 | 200 | 714435da4953 ; versioned |
+| foodylanding | 157 | 31 | 571c56bbe800 ; versioned |
+| foodypos | 431 | 185 | c3dc97570216 ; versioned |
+| foodybackoffice | 48 | 56 | 32713771f88a ; versioned |
 
 ## getting-started
 
@@ -821,9 +821,10 @@ Identifiant : `pos-payments`. Public : public. Disponibilité : available. Servi
 
 ### [Connecter et retrouver le Victa Mini sur iPad](../../src/content/help/fr/payments/victa-mini.mdx)
 
-Identifiant : `pos-victa-mini`. Public : public. Disponibilité : available. Services : foodypos.
+Identifiant : `pos-victa-mini`. Public : public. Disponibilité : available. Services : foodyserver, foodypos.
 
 - [Connecter et retrouver le Victa Mini sur iPad](../../src/content/help/fr/payments/victa-mini.mdx#connection)
+- [Renseigner ou modifier les identifiants du terminal](../../src/content/help/fr/payments/victa-mini.mdx#terminal-identifiers)
 - [Encaisser sur le terminal par défaut](../../src/content/help/fr/payments/victa-mini.mdx#explicit-terminal-selection)
 - [Consulter la dernière transaction du terminal](../../src/content/help/fr/payments/victa-mini.mdx#ashrait-last-transaction-inspection)
 - [Demander une copie du reçu carte](../../src/content/help/fr/payments/victa-mini.mdx#ashrait-checkout-card-copy)
@@ -1569,6 +1570,7 @@ Identifiant : `platform-api`. Public : internal. Disponibilité : available. Ser
 - [Préparer les contrats de disponibilité configurables](internal/fr/api-and-release.md#configurable-fulfillment-compatibility)
 - [Authentifier le contexte financier du POS courant](internal/fr/api-and-release.md#current-pos-financial-context)
 - [Contrat de navigation et de résultat livreur](internal/fr/api-and-release.md#courier-stop-results)
+- [Réinitialiser les données de commande et de caisse d’un restaurant de test](internal/fr/api-and-release.md#reset-order-and-cash-test-data)
 
 ### [Aperçus internes et alias de routes](internal/fr/design-previews.md)
 
