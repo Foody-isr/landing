@@ -11154,7 +11154,7 @@
     },
     "entry": {
       "en": "Open the saved table bill → Actions → Split. Choose by cover, item or equal parts where available.",
-      "fr": "Ouvrez l’addition enregistrée → Actions → Partager. Choisissez par couvert, article ou parts égales selon disponibilité.",
+      "fr": "Ouvrez l’addition de table enregistrée → Actions → Fractionner l’addition (Fractionner sur un écran compact). Choisissez par couvert, article ou parts égales selon disponibilité.",
       "he": "פתחו חשבון שולחן שמור → פעולות → פיצול. בחרו לפי סועד, פריט או חלקים שווים כשהאפשרות זמינה."
     },
     "selectors": {
@@ -11168,6 +11168,19 @@
       ]
     },
     "operations": [
+      {
+        "id": "pending-payment-recovery",
+        "title": {
+          "fr": "Débloquer un fractionnement après un paiement non confirmé",
+          "en": "Resolve a payment blocking a split",
+          "he": "טיפול בתשלום שחוסם פיצול חשבון"
+        },
+        "instructions": {
+          "fr": "Un paiement commencé sur cette caisse peut bloquer l’enregistrement d’un nouveau fractionnement, même sur une autre addition. Dans la version compatible, « Paiement à vérifier » explique le blocage dès l’ouverture de Fractionner. Rouvrez l’addition concernée et touchez Payer pour reprendre la tentative d’origine. Si la caisse ou la session de l’équipier est refusée, faites vérifier son accès puis reprenez cette même tentative. Seul un refus confirmé par le serveur comme n’ayant créé aucune réservation peut libérer la tentative locale. Un résultat réseau incertain reste à vérifier ; ne créez pas un autre paiement et n’effacez pas les données de l’application. Revenez ensuite au fractionnement et enregistrez la répartition. Fractionner ne lance aucun paiement.",
+          "en": "A payment started on this POS can block saving a new split, including on another check. In the compatible version, Check payment explains this before opening Split. Reopen the affected check and select Pay to resume the original attempt. If the POS or staff session is refused, have its access checked and resume that same attempt. Only a server-confirmed rejection with no reservation created can release the local attempt. An uncertain network result still needs verification; do not create another payment or erase app data. Then return to Split and save the allocation. Splitting never starts a payment.",
+          "he": "תשלום שהתחיל בקופה זו יכול לחסום שמירת פיצול חדש, גם בחשבון אחר. בגרסה התואמת, ההודעה בדיקת תשלום מסבירה זאת לפני פתיחת הפיצול. פתחו מחדש את החשבון המתאים ובחרו בתשלום כדי להמשיך את הניסיון המקורי. אם הקופה או משמרת העובד נדחו, בקשו לבדוק את ההרשאה ואז המשיכו את אותו ניסיון. רק דחייה מאושרת של השרת, שלא יצרה הזמנת תשלום, מאפשרת לשחרר את הניסיון המקומי. תוצאת רשת לא ודאית עדיין דורשת בדיקה; אין ליצור תשלום נוסף או למחוק את נתוני האפליקציה. לאחר מכן חזרו לפיצול ושמרו את החלוקה. הפיצול אינו מפעיל תשלום."
+        }
+      },
       {
         "id": "split-cash-collection",
         "title": {
@@ -11255,7 +11268,12 @@
       "fr": "Les actions avancées apparaissent si la caisse et l’API installées annoncent la capacité requise et si votre rôle l’autorise. Actualisez une addition modifiée avant de réessayer ; ne créez jamais un second débit pour résoudre un résultat incertain.",
       "he": "פעולות מתקדמות זמינות רק כשהקופה והשרת תומכים וההרשאה מתאימה. רעננו חשבון שהשתנה לפני ניסיון חוזר; אין ליצור חיוב נוסף לפתרון תוצאה לא ודאית."
     },
-    "procedureUpdatedAt": "2026-10-29"
+    "procedureUpdatedAt": "2026-11-16",
+    "description": {
+      "en": "Open the saved table bill → Actions → Split. Choose by cover, item or equal parts where available.",
+      "fr": "Ouvrez l’addition enregistrée → Actions → Fractionner l’addition. Choisissez par couvert, article ou parts égales selon disponibilité.",
+      "he": "פתחו חשבון שולחן שמור → פעולות → פיצול. בחרו לפי סועד, פריט או חלקים שווים כשהאפשרות זמינה."
+    }
   },
   {
     "id": "pos-check-move",

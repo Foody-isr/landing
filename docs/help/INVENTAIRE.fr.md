@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-10-18.
+Révision du relevé : 2026-11-16.
 
-114 fiches de fonctionnalités, 1019 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2639 fichiers applicatifs et 2317 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+114 fiches de fonctionnalités, 1020 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2639 fichiers applicatifs et 2317 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,11 +10,11 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 798 | 1015 | 713aed9ece21 ; versioned |
+| foodyserver | 798 | 1015 | 8425251147ab ; versioned |
 | foodyadmin | 819 | 837 | e642f988f15f ; versioned |
 | foodyweb | 385 | 200 | 714435da4953 ; versioned |
 | foodylanding | 158 | 31 | 4098f4d0e7ff ; versioned |
-| foodypos | 432 | 186 | e9d66082aeb3 ; versioned |
+| foodypos | 432 | 186 | cb0e5b5fe754 ; versioned |
 | foodybackoffice | 47 | 48 | 68d0c8ea6d55 ; versioned |
 
 ## getting-started
@@ -693,6 +693,7 @@ Identifiant : `production`. Public : public. Disponibilité : available. Service
 
 Identifiant : `pos-check-split`. Public : public. Disponibilité : available. Services : foodyserver, foodypos.
 
+- [Débloquer un fractionnement après un paiement non confirmé](../../src/content/help/fr/orders/split-bills.mdx#pending-payment-recovery)
 - [Encaisser une addition partagée en espèces](../../src/content/help/fr/orders/split-bills.mdx#split-cash-collection)
 - [Répartir couverts ou articles](../../src/content/help/fr/orders/split-bills.mdx#allocation)
 - [Partager les articles sélectionnés](../../src/content/help/fr/orders/split-bills.mdx#share)

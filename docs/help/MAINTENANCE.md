@@ -1,3 +1,38 @@
+## Split-save payment recovery (local preparation, 16 November 2026)
+
+The FR/HE/EN split-bill guide explains the retained-payment guard and the existing
+original-check Pay recovery path. The new POS copy is qualified by compatible
+release availability. The API acknowledges the installation on successful claims
+and distinguishes a confirmed refusal with no reservation from uncertain storage
+or an existing claim. Allocation rules and bank dispatch are unchanged. Publish
+the guide only with the API-first compatible rollout; no production mutation or
+device recovery is performed by this local preparation.
+
+Refresh only API/POS source evidence and synchronize the exact public corpus in
+the API. Preserve Admin, Web, Backoffice and Landing application-source evidence
+from Landing develop aab1e0f9. Scoped reviews in the affected services cover
+unchanged features selected by broad source patterns; the split procedure itself
+is updated in all three languages. The user authorized commits and development
+then production on 16 November. Pin the final immutable documentation commit
+before PR readiness and promote only the verified development artifact.
+Synthetic tests cover retained journals, explicit no-reservation rejection,
+matching installation acknowledgements and an unchanged existing claim.
+
+The local POS run passes 113 tests plus analyzer/formatting. Landing passes
+48 help tests, help contracts, lint, type checking and its complete build. The
+validation follow-up compares loyalty column definitions independently of physical
+order, with a regression for real definition drift. The disposable local checkout
+fixture and grouped-closing indexes were brought into line with existing migrations
+303 and 311. Both formerly failing scenarios pass. These test/fixture repairs add
+no user-facing procedure, runtime schema or migration change; the published guide
+content remains the reviewed FR/HE/EN split recovery guidance.
+The full API follow-up passes with the existing CI settings (`-p 1 -race -timeout 20m`)
+on a fresh isolated synthetic database: 80 packages and 5,248 tests/subtests,
+with no failures. Formatting, build and vet checks pass. The French guide summary
+now uses the same Fractionner label as the procedure; the 48 help tests and
+embedded API support tests pass after regeneration. Publication requires the
+immutable documentation pin and the coordinated API-first release.
+
 ## Editable commercial catalogue and separate licence quotas (development)
 
 Migration 320 and matching API must precede these clients. Backoffice publishes
