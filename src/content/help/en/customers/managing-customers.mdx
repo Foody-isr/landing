@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - customers
   - customers-profiles
-updatedAt: '2026-11-12'
+updatedAt: '2026-11-16'
 featureId: customers-profiles
 audience: public
 releaseStatus: available
@@ -61,3 +61,9 @@ Acceptance and recovery: [cash card guarantees](/en/help/payments/cash-card-guar
 ## Resolve a save blocked by a phone number
 
 An invalid number already on the profile is highlighted when the profile opens. New input is checked when you leave the field and when saving. Each error explains whether the primary number is missing, an additional line is empty, a number is incomplete or invalid, or a number is already listed. If Save is blocked, Changes could not be saved remains visible beside the button and names the first number to correct. The form returns to that field; Go to the phone number to correct lets you return after scrolling. Correct the digits and country code, or choose Remove if that additional number should no longer belong to this customer. Add a phone number and Remove only edit the form. Your name, address, building-code and floor changes are kept. Correct all highlighted fields, then choose Save again to save everything together. No changes are sent while validation blocks saving. If the server cannot save, the message retains the draft and asks you to retry; after a confirmed save with a failed refresh, Retry reloads the list without repeating the save.
+
+<span id="clipboard-phone-format" />
+
+## Paste a number without formatting errors
+
+With compatible Admin and API versions, phone validation automatically ignores non-breaking spaces and invisible writing-direction or zero-width marks introduced by copy and paste. An existing number with valid digits and country code should no longer show Invalid phone solely because of those marks. Opening the profile writes nothing; Save validates the whole number and saves its international form. Letters, extensions, incomplete numbers, duplicates and conflicts between profiles still block saving. Check the digits and country code before saving: cleanup does not verify ownership or WhatsApp registration.

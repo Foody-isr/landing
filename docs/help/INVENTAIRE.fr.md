@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-11-16.
 
-114 fiches de fonctionnalités, 1016 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2638 fichiers applicatifs et 2317 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+114 fiches de fonctionnalités, 1020 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2639 fichiers applicatifs et 2317 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,11 +10,11 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 798 | 1015 | 7934dd7052b9 ; versioned |
-| foodyadmin | 818 | 837 | 5209dd9a65e1 ; versioned |
+| foodyserver | 798 | 1015 | 3cdf6208d48d ; versioned |
+| foodyadmin | 819 | 837 | e642f988f15f ; versioned |
 | foodyweb | 385 | 200 | 714435da4953 ; versioned |
-| foodylanding | 158 | 31 | a8bccfc13a0e ; versioned |
-| foodypos | 432 | 186 | 0a299d1e08df ; versioned |
+| foodylanding | 158 | 31 | 4098f4d0e7ff ; versioned |
+| foodypos | 432 | 186 | b819888033b1 ; versioned |
 | foodybackoffice | 47 | 48 | 68d0c8ea6d55 ; versioned |
 
 ## getting-started
@@ -183,6 +183,7 @@ Identifiant : `customers-profiles`. Public : public. Disponibilité : available.
 - [Gérer les téléphones et choisir le numéro WhatsApp](../../src/content/help/fr/customers/managing-customers.mdx#phone-corrections)
 - [Utiliser les espèces avec garantie bancaire facultative](../../src/content/help/fr/customers/managing-customers.mdx#stancer-cash-guarantee)
 - [Résoudre un enregistrement bloqué par un téléphone](../../src/content/help/fr/customers/managing-customers.mdx#save-validation)
+- [Coller un numéro sans faux refus de format](../../src/content/help/fr/customers/managing-customers.mdx#clipboard-phone-format)
 
 ### [Configurer un programme de fidélité](../../src/content/help/fr/customers/loyalty-program.mdx)
 
@@ -1406,6 +1407,7 @@ Identifiant : `whatsapp`. Public : public. Disponibilité : available. Services 
 - [Envoyer un message WhatsApp pour une ou plusieurs commandes](../../src/content/help/fr/communications/whatsapp.mdx#unified-order-whatsapp)
 - [Récupérer automatiquement l’image du modèle Meta](../../src/content/help/fr/communications/whatsapp.mdx#meta-template-image-sync)
 - [Choisir le destinataire WhatsApp du client](../../src/content/help/fr/communications/whatsapp.mdx#customer-whatsapp-recipient)
+- [Débloquer un aperçu avec un numéro invalide](../../src/content/help/fr/communications/whatsapp.mdx#invalid-recipient-recovery)
 
 ### [Modèles et automatisations de messages](../../src/content/help/fr/communications/templates-and-automation.mdx)
 
@@ -1447,6 +1449,7 @@ Identifiant : `guest-ordering`. Public : public. Disponibilité : available. Ser
 - [Renseigner les coordonnées de livraison](../../src/content/help/fr/guest/online-ordering.mdx#delivery-contact-details)
 - [Changer de mode quand la boutique demande de choisir d’abord](../../src/content/help/fr/guest/online-ordering.mdx#service-first)
 - [Accès commercial en développement](../../src/content/help/fr/guest/online-ordering.mdx#versioned-commercial-access)
+- [Vérifier le téléphone de contact](../../src/content/help/fr/guest/online-ordering.mdx#contact-phone-format)
 
 ### [Suivi, reçus et moyens enregistrés](../../src/content/help/fr/guest/tracking-and-account.mdx)
 
@@ -1482,6 +1485,7 @@ Identifiant : `guest-catering`. Public : public. Disponibilité : available. Ser
 - [Compléter le parcours catering](../../src/content/help/fr/guest/catering-request.mdx#request)
 - [Commander pour une tournée précise](../../src/content/help/fr/guest/catering-request.mdx#tour)
 - [Renseigner un téléphone valide](../../src/content/help/fr/guest/catering-request.mdx#contact-phone)
+- [Vérifier le téléphone de contact](../../src/content/help/fr/guest/catering-request.mdx#contact-phone-format)
 
 ## internal
 

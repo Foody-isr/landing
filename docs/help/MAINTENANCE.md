@@ -10,7 +10,7 @@ device recovery is performed by this local preparation.
 
 Refresh only API/POS source evidence and synchronize the exact public corpus in
 the API. Preserve Admin, Web, Backoffice and Landing application-source evidence
-from Landing develop eb4b63f4. Scoped reviews in the affected services cover
+from Landing develop aab1e0f9. Scoped reviews in the affected services cover
 unchanged features selected by broad source patterns; the split procedure itself
 is updated in all three languages. The user authorized commits and development
 then production on 16 November. Pin the final immutable documentation commit
@@ -27,7 +27,7 @@ fixture and grouped-closing indexes were brought into line with existing migrati
 no user-facing procedure, runtime schema or migration change; the published guide
 content remains the reviewed FR/HE/EN split recovery guidance.
 The full API follow-up passes with the existing CI settings (`-p 1 -race -timeout 20m`)
-on a fresh isolated synthetic database: 79 packages and 5,221 tests/subtests,
+on a fresh isolated synthetic database: 80 packages and 5,248 tests/subtests,
 with no failures. Formatting, build and vet checks pass. The French guide summary
 now uses the same Fractionner label as the procedure; the 48 help tests and
 embedded API support tests pass after regeneration. Publication requires the
@@ -1841,3 +1841,24 @@ including after switching to a restaurant with no private offer. The three
 internal guides describe this path. This update changes only internal pilot
 documentation and Admin source evidence. The published public guides and the
 assistant's article content are unchanged.
+
+## WhatsApp clipboard-phone correction (16 November 2026)
+
+This release reviews API, Admin and Landing from develop. Phone validation
+removes only whitespace and an explicit allowlist of invisible clipboard marks,
+then preserves the existing validation rules. Meta and Twilio previews normalize
+saved destinations without rewriting restaurant records. An invalid destination
+returns the safe `whatsapp_recipient_invalid` code; the composer explains recovery
+in FR/HE/EN in both Business and app modes. Other failures keep their existing
+classification. No migration, real message, production data repair or provider
+configuration change is required.
+
+Synthetic regression covers the French international clipboard format, Hebrew
+and Arabic direction marks, preserved significant zeros, rejected visible text,
+selected-recipient failures, dispatch deduplication and customer-profile saving.
+Publish the translated guides with the compatible API and Admin, API first.
+Unaffected service inventories retain this checkout's develop baseline evidence;
+they are not revalidated here. Export and copy the support corpus before scanning
+sources. Pin the reviewed immutable Landing commit in both service contracts
+before PR readiness. Validate development first, then promote those same API,
+Admin and Landing artifacts under the user's production-release authorization.
