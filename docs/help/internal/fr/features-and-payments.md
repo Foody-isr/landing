@@ -7,7 +7,7 @@ apps: both
 tags:
   - internal
   - backoffice-entitlements
-updatedAt: '2026-11-15'
+updatedAt: '2026-11-16'
 featureId: backoffice-entitlements
 audience: internal
 releaseStatus: available
@@ -89,3 +89,9 @@ Vérifiez le libellé de l’API, puis ouvrez **Payments & devices → Cibus (Pl
 ## Modifier les formules, modules et tarifs
 
 Dans le Backoffice de développement, ouvrez **Plans & modules**. Dans **Modules**, choisissez un module et modifiez son prix mensuel HT, ses quantités incluses et les fonctionnalités cochées. Les fonctionnalités sont classées par catégorie ; la recherche retrouve chaque ligne. Respectez les dépendances indiquées. Dans **Plans**, créez une formule, choisissez ses modules, son prix, ses quotas propres, les fonctionnalités ajoutées ou exclues et sa visibilité publique. Renseignez les noms français, anglais et hébreu. **All prices** contient les tarifs de mise en service, matériel, licences et services : un montant vide signifie sur devis, zéro signifie inclus ; une ligne de quantité représente une allocation, pas un prix. **Review changes**, puis **Publish new version** publient une nouvelle version. Un conflit de version conserve le brouillon ; rechargez puis réappliquez les changements. La page Tarifs utilise le catalogue de son environnement, avec un cache pouvant durer une minute. Les contrats acceptés, paiements en cours, invitations et essais déjà configurés gardent leur version.
+
+<span id="commercial-documents-entry" />
+
+## Préparer les documents commerciaux
+
+Dans la version sandbox du module **Plans & modules**, ouvrez **Quotes & orders** pour composer des devis et bons de commande PDF à partir des formules, modules, matériels et frais. Ce parcours conserve les contrats existants. Consultez la procédure interne Devis et bons de commande Foody pour la configuration de l’émetteur, les échéanciers, les totaux séparés et la finalisation du PDF.

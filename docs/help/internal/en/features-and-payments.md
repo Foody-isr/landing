@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - backoffice-entitlements
-updatedAt: '2026-11-15'
+updatedAt: '2026-11-16'
 featureId: backoffice-entitlements
 audience: internal
 releaseStatus: available
@@ -87,3 +87,9 @@ Confirm the API label, then open **Payments & devices → Cibus (Pluxee)**. Use 
 ## Edit plans, modules and prices
 
 In the development Backoffice open **Plans & modules**. In **Modules**, select a module and edit its monthly price excluding VAT, included quantities and checked features. Features are categorized and individually searchable. Respect the displayed dependencies. In **Plans**, create a plan and choose its modules, price, own quotas, added or excluded features and public visibility. Enter French, English and Hebrew names. **All prices** contains setup, equipment, licence and service rates: blank means quotation, zero means included; a quantity row represents an allowance, not a price. **Review changes**, then **Publish new version** publish a new revision. A version conflict retains the draft; reload and reapply your changes. Pricing reads its environment’s catalogue and may cache it for one minute. Accepted contracts, pending payments, existing invitations and configured trials keep their version.
+
+<span id="commercial-documents-entry" />
+
+## Prepare commercial documents
+
+In the sandbox version of **Plans & modules**, open **Quotes & orders** to compose PDF quotations and orders using plans, modules, equipment and fees. This flow preserves existing contracts. Consult the internal Foody quotations and sales orders procedure for issuer setup, schedules, separate totals and PDF finalization.

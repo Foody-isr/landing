@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-11-16.
 
-113 fiches de fonctionnalités, 1010 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 11 fiches opérateur internes. Le relevé machine contient 2630 fichiers applicatifs et 2304 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+114 fiches de fonctionnalités, 1016 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2638 fichiers applicatifs et 2317 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 792 | 1004 | d278d483acd2 ; versioned |
+| foodyserver | 798 | 1015 | 7934dd7052b9 ; versioned |
 | foodyadmin | 818 | 837 | 5209dd9a65e1 ; versioned |
 | foodyweb | 385 | 200 | 714435da4953 ; versioned |
-| foodylanding | 158 | 31 | 7555c179adf0 ; versioned |
-| foodypos | 432 | 186 | b1cf59266b2d ; versioned |
-| foodybackoffice | 45 | 46 | b51271eab45b ; versioned |
+| foodylanding | 158 | 31 | a8bccfc13a0e ; versioned |
+| foodypos | 432 | 186 | 0a299d1e08df ; versioned |
+| foodybackoffice | 47 | 48 | 68d0c8ea6d55 ; versioned |
 
 ## getting-started
 
@@ -1520,6 +1520,7 @@ Identifiant : `backoffice-entitlements`. Public : internal. Disponibilité : ava
 - [Intégration du panier préparé Sumit](internal/fr/features-and-payments.md#prepared-sumit-checkout-integration)
 - [Consulter les réglages Cibus partagés](internal/fr/features-and-payments.md#cibus-platform-settings)
 - [Modifier les formules, modules et tarifs](internal/fr/features-and-payments.md#backoffice-software-catalogue)
+- [Préparer les documents commerciaux](internal/fr/features-and-payments.md#commercial-documents-entry)
 
 ### [Retrait de l’écran Market](internal/fr/market-and-prospects.md)
 
@@ -1631,6 +1632,16 @@ Identifiant : `shared-runtime`. Public : internal. Disponibilité : available. S
 - [Intégration du panier préparé Sumit](internal/fr/shared-runtime.md#prepared-sumit-checkout-integration)
 - [Contrat du jour même par zone et simulation de calendrier](internal/fr/shared-runtime.md#zone-same-day-contract)
 - [Préparer les contrats de disponibilité configurables](internal/fr/shared-runtime.md#configurable-fulfillment-compatibility)
+
+### [Devis et bons de commande Foody](internal/fr/commercial-documents.md)
+
+Identifiant : `backoffice-commercial-documents`. Public : internal. Disponibilité : available. Services : foodyserver, foodybackoffice.
+
+- [Renseigner l’émetteur](internal/fr/commercial-documents.md#issuer)
+- [Composer un devis ou une commande](internal/fr/commercial-documents.md#compose)
+- [Distinguer paiement unique, mensualités et prépaiement](internal/fr/commercial-documents.md#schedule)
+- [Vérifier et sauvegarder](internal/fr/commercial-documents.md#review)
+- [Finaliser le PDF et préparer la commande](internal/fr/commercial-documents.md#finalize)
 
 ## Traçabilité détaillée
 

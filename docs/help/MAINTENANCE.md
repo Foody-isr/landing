@@ -10,10 +10,11 @@ device recovery is performed by this local preparation.
 
 Refresh only API/POS source evidence and synchronize the exact public corpus in
 the API. Preserve Admin, Web, Backoffice and Landing application-source evidence
-from Landing develop a8bccfc1. Scoped reviews in the affected services cover
+from Landing develop eb4b63f4. Scoped reviews in the affected services cover
 unchanged features selected by broad source patterns; the split procedure itself
-is updated in all three languages. Keep WORKSPACE references until a documentation
-commit is authorized, then pin that immutable commit before PR readiness.
+is updated in all three languages. The user authorized commits and development
+then production on 16 November. Pin the final immutable documentation commit
+before PR readiness and promote only the verified development artifact.
 Synthetic tests cover retained journals, explicit no-reservation rejection,
 matching installation acknowledgements and an unchanged existing claim.
 
@@ -29,8 +30,8 @@ The full API follow-up passes with the existing CI settings (`-p 1 -race -timeou
 on a fresh isolated synthetic database: 79 packages and 5,221 tests/subtests,
 with no failures. Formatting, build and vet checks pass. The French guide summary
 now uses the same Fractionner label as the procedure; the 48 help tests and
-embedded API support tests pass after regeneration. Publication still requires
-an authorized immutable documentation commit and the coordinated release.
+embedded API support tests pass after regeneration. Publication requires the
+immutable documentation pin and the coordinated API-first release.
 
 ## Editable commercial catalogue and separate licence quotas (development)
 
