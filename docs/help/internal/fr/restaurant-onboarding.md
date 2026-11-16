@@ -37,3 +37,9 @@ Le parc global permet de déclarer un terminal en réparation ou retourné et de
 ## Rechercher des restaurants et des utilisateurs
 
 Dans Restaurants, recherchez par nom ou par slug. Dans Users, recherchez par nom, e-mail ou téléphone et choisissez un rôle si nécessaire. Utilisez **Clear search** ou **Clear filters** pour retrouver la liste complète. En cas d’échec, **Retry** relance la dernière recherche.
+
+<span id="versioned-commercial-access" />
+
+## Accès commercial en développement
+
+Pour un restaurant inscrit au catalogue versionné de développement, cette fonction doit être incluse dans son offre ou dans son essai actif, en plus des autorisations du rôle. Une fonctionnalité retirée est refusée côté serveur. Consultez Facturation pour voir les modules et les licences, puis faites examiner un ajout par le propriétaire. Les quotas de comptes et de postes POS sont distincts ; un dépassement nécessite les licences correspondantes. Les contrats historiques ne sont pas modifiés automatiquement.

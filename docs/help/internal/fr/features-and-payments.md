@@ -14,12 +14,6 @@ releaseStatus: available
 ---
 Dans Foody Backoffice, ouvrez Payments & devices → Plans & modules pour consulter les tarifs publics ou choisissez un restaurant pour afficher Billing & modules et Features & access.
 
-<span id="backoffice-software-catalogue" />
-
-## Consulter les tarifs publics et les fonctions par module
-
-Comme superadmin Foody, ouvrez **Plans & modules**. La page affiche le prix logiciel mensuel HT par établissement, les licences incluses et le prix d’une licence de caisse nominative supplémentaire. Consultez le tableau pour savoir quel module ouvre chaque fonction affichée. Les rôles et les réglages du restaurant continuent de s’appliquer. Sélectionnez **View public pricing** pour voir les prix de mise en service, du matériel et des services de paiement.
-
 <span id="backoffice-restaurant-subscription" />
 
 ## Retrouver la souscription et les accès d’un restaurant
@@ -89,3 +83,9 @@ La capacité Sumit des commandes internes préparées dépend du fournisseur act
 ## Consulter les réglages Cibus partagés
 
 Vérifiez le libellé de l’API, puis ouvrez **Payments & devices → Cibus (Pluxee)**. Cliquez sur **Retry** si les réglages ne se chargent pas. Pour une mise à jour approuvée, vérifiez l’environnement et l’URL Cibus, saisissez les éventuels nouveaux identifiants fournis par Cibus et cliquez sur **Save Cibus settings**. Vérifiez la confirmation. Les identifiants du terminal de chaque restaurant se gèrent dans Foody Admin.
+
+<span id="backoffice-software-catalogue" />
+
+## Modifier les formules, modules et tarifs
+
+Dans le Backoffice de développement, ouvrez **Plans & modules**. Dans **Modules**, choisissez un module et modifiez son prix mensuel HT, ses quantités incluses et les fonctionnalités cochées. Les fonctionnalités sont classées par catégorie ; la recherche retrouve chaque ligne. Respectez les dépendances indiquées. Dans **Plans**, créez une formule, choisissez ses modules, son prix, ses quotas propres, les fonctionnalités ajoutées ou exclues et sa visibilité publique. Renseignez les noms français, anglais et hébreu. **All prices** contient les tarifs de mise en service, matériel, licences et services : un montant vide signifie sur devis, zéro signifie inclus ; une ligne de quantité représente une allocation, pas un prix. **Review changes**, puis **Publish new version** publient une nouvelle version. Un conflit de version conserve le brouillon ; rechargez puis réappliquez les changements. La page Tarifs utilise le catalogue de son environnement, avec un cache pouvant durer une minute. Les contrats acceptés, paiements en cours, invitations et essais déjà configurés gardent leur version.

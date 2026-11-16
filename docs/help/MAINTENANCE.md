@@ -1,3 +1,21 @@
+## Editable commercial catalogue and separate licence quotas (development)
+
+Migration 320 and matching API must precede these clients. Backoffice publishes
+immutable versions for new public/custom offers. Accepted contracts, invitations,
+trials and pending payments remain frozen. The FR/HE/EN procedures distinguish
+employee accounts from physical POS devices and explain named POS/chef access,
+pending invitations, rejected growth and paid additions. Owner-approved additions
+retain the paid period end and require server-confirmed payment before new rights.
+No public production availability, automatic legacy migration, fiscal invoice or
+provider overage charge is claimed. Quotation-only employee/device rates remain
+unpriced until explicitly set. Null account/device limits mean unlimited.
+
+Verify publication conflicts, full tariff rendering in all locales, configured
+quota rejection, physical identity reuse, direct API denials, role edits and
+unconfirmed/confirmed upgrade payments using synthetic data. Publish guides with
+the matching development release, refresh only the four changed service inventories,
+retain unaffected Web/POS evidence and pin immutable documentation before PR readiness.
+
 # Help ownership, evidence and releases
 
 ## Modular onboarding in sandbox
@@ -12,9 +30,9 @@ The internal FR, HE and EN billing procedures cover public and custom offers
 with and without an explicit trial. For a hosted test payment, the Foody sandbox
 merchant must have the matching checkout contract. Monthly billing also requires
 the recurring contract. Test invitation setup, the trial boundary, and an
-unconfirmed and confirmed payment using synthetic data. The displayed quantities
-describe included licences. The pilot does not provision individual licence
-assignments or issue fiscal documents. The regenerated public support corpus
+unconfirmed and confirmed payment using synthetic data. Unversioned pilot offers retain their descriptive licence quantities. New versioned
+offers enforce explicit quotas through role permissions and physical identities,
+as described above. The pilot does not issue fiscal documents. The regenerated public support corpus
 must be copied into the API with the same release revision.
 
 ## Verifone Central Checkout themes (12 November 2026)

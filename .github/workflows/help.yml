@@ -48,14 +48,20 @@ jobs:
       - run: npx tsc --noEmit
       # prebuild validates MDX metadata/links and regenerates the search and AI index.
       - run: npm run build
+        env:
+          NEXT_PUBLIC_API_URL: http://127.0.0.1:3109
       - name: Check public marketing routes
         env:
           MARKETING_BASE_URL: http://127.0.0.1:3108
+          NEXT_PUBLIC_API_URL: http://127.0.0.1:3109
+          MARKETING_CATALOGUE_URL: http://127.0.0.1:3109/api/v1/public/foody-catalog
         run: |
           set -euo pipefail
+          node scripts/marketing-catalogue-fixture.mjs &
+          foody_catalogue_pid=$!
           node node_modules/next/dist/bin/next start --hostname 127.0.0.1 --port 3108 > "$RUNNER_TEMP/foody-marketing-preview.log" 2>&1 &
           foody_preview_pid=$!
-          trap 'kill "$foody_preview_pid" 2>/dev/null || true' EXIT
+          trap 'kill "$foody_preview_pid" "$foody_catalogue_pid" 2>/dev/null || true' EXIT
           for attempt in {1..30}; do
             if curl --fail --silent --output /dev/null "$MARKETING_BASE_URL/fr"; then break; fi
             sleep 1

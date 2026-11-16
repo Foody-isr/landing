@@ -74,7 +74,8 @@
           "src/lib/route-permissions.ts"
         ],
         "foodyserver": [
-          "internal/rbac/**"
+          "internal/rbac/**",
+          "internal/rbac/licences.go"
         ],
         "foodypos": [
           "lib/core/auth/**"
@@ -156,7 +157,8 @@
       "audience": "public",
       "selectors": {
         "foodyadmin": [
-          "src/app/[restaurantId]/billing/**"
+          "src/app/[restaurantId]/billing/**",
+          "src/components/billing/**"
         ],
         "foodyserver": [
           "internal/subscription/**"
@@ -174,7 +176,9 @@
         "foodyadmin": [
           "src/app/[restaurantId]/billing/PrivateBilling.tsx",
           "src/lib/module-navigation.ts",
-          "src/app/[restaurantId]/billing/ModuleOnboarding.tsx"
+          "src/app/[restaurantId]/billing/ModuleOnboarding.tsx",
+          "src/app/[restaurantId]/billing/SubscriptionAdditions.tsx",
+          "src/lib/commercial-catalog.ts"
         ],
         "foodybackoffice": [
           "src/app/dashboard/foody-billing/**",
@@ -192,7 +196,9 @@
           "internal/subscription/foody_onboarding.go",
           "internal/auth/modular_access.go",
           "internal/admin/modular_onboarding.go",
-          "migrations/319_foody_modular_billing_sandbox.sql"
+          "migrations/319_foody_modular_billing_sandbox.sql",
+          "internal/subscription/foody_upgrade.go",
+          "migrations/320_editable_commercial_catalog.sql"
         ]
       }
     },

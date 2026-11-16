@@ -5,7 +5,7 @@ apps: both
 tags:
   - staff
   - staff-roles
-updatedAt: '2026-11-08'
+updatedAt: '2026-11-15'
 featureId: staff-roles
 audience: public
 releaseStatus: available
@@ -51,3 +51,9 @@ L’activation du personnel vérifie les permissions affectées dans ce restaura
 ## Autoriser une clôture de journée
 
 Une session personnelle active et payments.manage sont requis sur chaque POS qui participe à la clôture. Inclure le tiroir exige aussi orders.manage. Définir l’iPad principal exige settings.edit sur cet appareil enrôlé. L’API vérifie le terminal et l’appareil affectés avant chaque transmission. Consultez [la clôture et sa reprise](/fr/help/payments/end-of-day).
+
+<span id="commercial-capacity" />
+
+## Vérifier les licences avant un nouvel accès
+
+Pour les offres versionnées de développement, consultez les compteurs **Licences et postes** avant une invitation ou un changement de rôle. Les comptes employés et les postes POS physiques ont des quotas distincts. Le propriétaire et les invitations en attente sont comptés ; les permissions de caisse ou de cuisine réservent aussi les accès nominatifs correspondants. Une invitation ou un élargissement de rôle dépassant un quota est refusé sans modifier les accès. Le message permet au propriétaire d’aller en Facturation pour ajouter les licences nécessaires, puis de recommencer. Modifier un rôle personnalisé ne contourne pas la limite. Les permissions du rôle et les fonctionnalités achetées sont deux conditions distinctes. Les contrats historiques ne reçoivent pas automatiquement ces nouveaux quotas.

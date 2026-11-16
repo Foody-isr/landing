@@ -5,10 +5,14 @@ import Icon from "@/components/marketing/Icon";
 import ProductMentions from "@/components/marketing/ProductMentions";
 import { CallToAction, FaqSection } from "@/components/marketing/Shared";
 import { marketing } from "@/lib/marketing/content";
-import { paymentRates, pricingRates } from "@/lib/marketing/pricing";
+import { paymentRates as initialPaymentRates, pricingRates as initialPricingRates } from "@/lib/marketing/pricing";
 import { mapsOffer, mapsPricing } from "@/lib/marketing/maps-pricing";
 import { routes, ui } from "@/lib/marketing/ui";
 import { resolveLang } from "@/lib/seo";
+
+import { publicCatalogue, catalogueCopy, type PublicCatalogue, type PublicLimits } from "@/lib/marketing/public-catalogue";
+
+export const dynamic = "force-dynamic";
 
 const modules = [
   { key: "restaurant", label: "restaurantPlan", href: routes.restaurants },
@@ -22,7 +26,7 @@ type PaymentRow = {
   detail?: string;
   help?: string;
   included?: true;
-  charges?: { amount: number; unit: string }[];
+  charges?: { amount: number | null; unit: string }[];
 };
 
 /** Shows the independent Foody modules and their setup, equipment and payment fees. */
@@ -32,6 +36,16 @@ export default async function PricingPage({
   params: Promise<{ lang: string }>;
 }) {
   const lang = resolveLang((await params).lang);
+  let catalog: PublicCatalogue | null;
+  try { catalog = await publicCatalogue(); }
+  catch { return <><Navbar /><main id="main-content" className="shell py-20"><h1>{catalogueCopy[lang].unavailable}</h1><Link href={`/${lang}/contact`}>{ui[lang].contact}</Link></main><Footer /></>; }
+  const editable = catalog && catalog.revision > 0 ? catalog : null;
+  const rate = (id: string, initial: number | null): number | null => {
+    const row = catalog?.tariffs.find(t => t.id === id);
+    return row ? row.amount_minor === null ? null : row.amount_minor / 100 : initial;
+  };
+  const pricingRates = { ...initialPricingRates, ...Object.fromEntries(catalog?.products.map(p => [p.id, p.monthly_minor / 100]) ?? []), extraPos: rate('extraPos', initialPricingRates.extraPos)! };
+  const paymentRates = { ...initialPaymentRates, ...Object.fromEntries(Object.entries(initialPaymentRates).map(([key, value]) => [key, key === 'virtualIncludedTransactions' ? catalog?.tariffs.find(r => r.id === key)?.quantity ?? value : rate(key, value)])) } as Record<keyof typeof initialPaymentRates, number | null>;
   const t = marketing[lang].pricing;
   const u = ui[lang];
   const payments = t.payments;
@@ -42,9 +56,19 @@ export default async function PricingPage({
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   });
-  const price = (amount: number) => (
+  const price = (amount: number | null) => amount === null ? t.quote : (
     <bdi dir="ltr">{(Number.isInteger(amount) ? format : formatDecimal).format(amount)} ₪</bdi>
   );
+  const included = (limits: PublicLimits) => (Object.entries(limits) as [keyof PublicLimits, number | null][])
+    .filter(([key, n]) => key === 'employees' || key === 'pos_devices' || n !== null && n > 0)
+    .map(([key, n]) => `${n === null ? catalogueCopy[lang].unlimited : n} ${catalogueCopy[lang][key]}`).join(' · ');
+  const featureList = (keys: string[], module?: string) => {
+    const primary: Record<string, string[]> = { restaurant: ['pos', 'tables', 'qr_dine_in', 'receipt_printing', 'cash_management', 'payment_terminals'], ordering: ['website', 'pickup_flow', 'delivery_flow', 'scheduled_orders', 'order_management', 'online_payments'], kitchen: ['recipes', 'stock_management', 'food_cost', 'suppliers', 'preparation', 'kds'] };
+    const priority = primary[module ?? ''] ?? [];
+    const ordered = [...priority.filter(key => keys.includes(key)), ...keys.filter(key => !priority.includes(key))];
+    const rows = (items: string[]) => <ul className="check-list">{items.map(key => <li key={key}><Icon name="check" />{editable?.capabilities.find(feature => feature.key === key)?.name[lang] ?? key}</li>)}</ul>;
+    return <>{rows(ordered.slice(0, 6))}{ordered.length > 6 && <details className="pricing-payment-options"><summary>{catalogueCopy[lang].details} ({ordered.length})</summary>{rows(ordered.slice(6))}</details>}</>;
+  };
   const paymentGroups: {
     id: string;
     title: string;
@@ -78,8 +102,8 @@ export default async function PricingPage({
           ...payments.physicalService,
           charges: [{ amount: paymentRates.physicalMonthly, unit: payments.activeTerminalMonthly }],
         },
-        { id: "shva-license", ...payments.shvaLicense, included: true },
-        { id: "vhq-management", ...payments.vhqManagement, included: true },
+        { id: "shva-license", ...payments.shvaLicense, ...(rate("shvaLicense", 0) === 0 ? { included: true as const } : { charges: [{ amount: rate("shvaLicense", 0), unit: payments.terminalMonthly }] }) },
+        { id: "vhq-management", ...payments.vhqManagement, ...(rate("vhqManagement", 0) === 0 ? { included: true as const } : { charges: [{ amount: rate("vhqManagement", 0), unit: payments.terminalMonthly }] }) },
       ],
       options: [
         {
@@ -97,9 +121,9 @@ export default async function PricingPage({
           ...payments.simData,
           charges: [{ amount: paymentRates.simDataMonthly, unit: payments.terminalMonthly }],
         },
-        { id: "dock-and-stand", ...payments.accessories },
-        { id: "terminal-replacement", ...payments.replacement },
-        { id: "terminal-transport", ...payments.transport },
+        { id: "dock-and-stand", ...payments.accessories, charges: [{ amount: rate("accessories", null), unit: payments.deviceUnit }] },
+        { id: "terminal-replacement", ...payments.replacement, charges: [{ amount: rate("replacement", null), unit: payments.deviceUnit }] },
+        { id: "terminal-transport", ...payments.transport, charges: [{ amount: rate("transport", null), unit: payments.deviceUnit }] },
       ],
     },
     {
@@ -114,7 +138,7 @@ export default async function PricingPage({
         {
           id: "virtual-service",
           ...payments.virtualService,
-          detail: payments.included.replace("{n}", format.format(paymentRates.virtualIncludedTransactions)),
+          detail: payments.included.replace("{n}", format.format(paymentRates.virtualIncludedTransactions ?? 0)),
           charges: [{ amount: paymentRates.virtualMonthly, unit: payments.terminalMonthly }],
         },
         {
@@ -130,7 +154,7 @@ export default async function PricingPage({
             { amount: paymentRates.secureOperation, unit: payments.operationUnit },
           ],
         },
-        { id: "additional-virtual-terminal", ...payments.additionalVirtual },
+        { id: "additional-virtual-terminal", ...payments.additionalVirtual, charges: [{ amount: rate("additionalVirtual", null), unit: payments.deviceUnit }] },
       ],
     },
   ];
@@ -180,32 +204,35 @@ export default async function PricingPage({
           <div className="plans">
             {modules.map(({ key, label, href }) => {
               const plan = t.plans[key];
+ const commercial = editable?.products.find(p => p.id === key);
+
               return (
                 <article key={key} id={`plan-${key}`} data-pricing-plan={key} className="plan">
                   {key === "restaurant" && <span id="plan-pos" className="pricing-anchor" aria-hidden="true" />}
-                  <h2><Link href={`/${lang}${href}`}>{u[label]}</Link></h2>
+                  <h2><Link href={`/${lang}${href}`}>{commercial?.name[lang] ?? u[label]}</Link></h2>
                   <p className="pricing-module-intro">{plan.text}</p>
                   <div className="plan-price">
                     <strong>{price(pricingRates[key])}</strong>
                     <span>{t.monthly}</span>
                   </div>
-                  <ul className="check-list">
+                  {commercial?.capabilities ? featureList(commercial.capabilities, key) : <ul className="check-list">
                     {plan.items.map((item) => (
                       <li key={item}>
                         <Icon name="check" />
                         <ProductMentions lang={lang}>{item}</ProductMentions>
                       </li>
                     ))}
-                  </ul>
-                  <p className="pricing-module-note">{plan.note}</p>
+                  </ul>}
+                  <p className="pricing-module-note">{commercial ? included(commercial.included) : plan.note}</p>
                 </article>
               );
             })}
           </div>
+          {editable && editable.plans.some(plan => plan.published) && <><h2>{catalogueCopy[lang].plans}</h2><div className="plans">{editable.plans.filter(plan => plan.published).map(plan => <article className="plan" key={plan.id}><h3>{plan.name[lang]}</h3><div className="plan-price"><strong>{price(plan.monthly_minor / 100)}</strong><span>{t.monthly}</span></div><p className="pricing-module-note">{included(plan.included)}</p>{featureList(plan.capabilities)}</article>)}</div></>}
           <div className="pricing-licence-strip">
             <div>
               <h2>{t.licenceTitle}</h2>
-              <p data-pricing-licences>{t.licences}</p>
+              <p data-pricing-licences>{editable ? catalogueCopy[lang].licences : t.licences}</p>
             </div>
             <div className="cost-amount" data-pricing-cost="extraPos">
               <strong>{price(pricingRates.extraPos)}</strong>
@@ -213,6 +240,8 @@ export default async function PricingPage({
             </div>
           </div>
         </section>
+
+        {editable && <section className="shell pricing-content-section"><h2>{catalogueCopy[lang].licencesTitle}</h2><p>{catalogueCopy[lang].licences}</p><dl className="pricing-setup-list">{editable.tariffs.filter(row=>['extraEmployee','extraChef','extraPOSDevice','extraKDS'].includes(row.id)).map(row=><div key={row.id}><dt>{row.name[lang]}</dt><dd className="cost-amount"><strong>{price(row.amount_minor===null?null:row.amount_minor/100)}</strong><span>{t.monthly}</span></dd></div>)}</dl></section>}
 
         <section
           id="plan-delivery"
@@ -237,7 +266,7 @@ export default async function PricingPage({
                 <div data-pricing-maps="included">
                   <dt>{maps.included}</dt>
                   <dd className="cost-amount">
-                    <strong>{price(0)}</strong>
+                    <strong>{price(rate("mapsIncluded", 0))}</strong>
                     <span>{maps.includedUnit}</span>
                   </dd>
                   <dd className="cost-description">{maps.includedText}</dd>
@@ -245,7 +274,7 @@ export default async function PricingPage({
                 <div data-pricing-maps="plus">
                   <dt>{maps.plus}<p className="fine-print">{maps.planned}</p></dt>
                   <dd className="cost-amount">
-                    <strong>{price(mapsOffer.monthly_price)}</strong>
+                    <strong>{price(rate("mapsPlus", mapsOffer.monthly_price))}</strong>
                     <span>{maps.monthly}</span>
                   </dd>
                   <dd className="cost-description">
@@ -271,7 +300,7 @@ export default async function PricingPage({
                 </div>
                 <div data-pricing-maps="custom">
                   <dt>{maps.custom}</dt>
-                  <dd className="cost-amount"><strong>{t.quote}</strong></dd>
+                  <dd className="cost-amount"><strong>{price(rate("mapsCustom", null))}</strong></dd>
                   <dd className="cost-description">{maps.customText}</dd>
                 </div>
               </dl>
@@ -290,7 +319,7 @@ export default async function PricingPage({
               <div key={cost.key} data-pricing-cost={cost.key}>
                 <dt>{cost.title}<span className="cost-description">{cost.text}</span></dt>
                 <dd className="cost-amount">
-                  <strong>{cost.key === "kitchenSetup" ? t.quote : price(pricingRates[cost.key])}</strong>
+                  <strong>{price(rate(cost.key, cost.key === "kitchenSetup" ? null : initialPricingRates[cost.key]))}</strong>
                   {cost.unit && <span>{cost.unit}</span>}
                 </dd>
               </div>
@@ -322,7 +351,15 @@ export default async function PricingPage({
           <p className="pricing-detail">{t.projects}</p>
         </section>
 
-        <FaqSection lang={lang} items={t.faq} />
+        {editable && <section className="shell pricing-content-section"><h2>{catalogueCopy[lang].services}</h2><dl className="pricing-setup-list">
+          {editable.tariffs.filter(row => ['deliveryService', 'kitchenPrinting'].includes(row.id)).map(row => <div key={row.id} data-pricing-cost={row.id}><dt>{row.name[lang]}</dt><dd className="cost-amount"><strong>{price(row.amount_minor === null ? null : row.amount_minor / 100)}</strong></dd></div>)}
+        </dl></section>}
+
+        <FaqSection lang={lang} items={editable ? [
+ {q:catalogueCopy[lang].faqPrice,a:editable.products.map(p=>`${p.name[lang]} ${new Intl.NumberFormat(locale).format(p.monthly_minor/100)} ₪ ${t.monthly}.`).join(' ')},
+ {q:catalogueCopy[lang].faqExtras,a:catalogueCopy[lang].faqExtraAnswer},
+ {q:catalogueCopy[lang].faqContract,a:catalogueCopy[lang].faqContractAnswer},
+ ] : t.faq} />
         <CallToAction lang={lang} />
       </main>
       <Footer />
