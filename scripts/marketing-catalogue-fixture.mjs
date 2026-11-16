@@ -19,7 +19,7 @@ const products = Object.entries(grid.plans).map(([id, product]) => ({
   capabilities: id === 'restaurant' ? ['pos', 'qr_dine_in'] : [id === 'ordering' ? 'website' : 'kitchen_workspace'],
 }));
 const tariffs = Object.entries({ ...grid.rates, ...grid.payments })
-  .filter(([id]) => !products.some(product => product.id === id))
+  .filter(([id]) => id !== 'extraPOSDevice' && !products.some(product => product.id === id))
   .map(([id, value]) => ({
     id, name: name(id, id, id), unit: id === 'virtualIncludedTransactions' ? 'quantity' : 'once',
     amount_minor: id === 'virtualIncludedTransactions' ? null : Math.round(value * 100),

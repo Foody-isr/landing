@@ -2,11 +2,11 @@ import { headers } from 'next/headers';
 import type { Lang } from '@/lib/seo';
 
 type Name = Record<Lang, string>;
-export type PublicLimits = {pos:number;chef:number;kds:number;employees:number|null;pos_devices:number|null};
+export type PublicLimits = {pos_users_unlimited?:boolean;pos:number;chef:number;kds:number;employees:number|null;pos_devices:number|null};
 export type PublicCatalogue = {
  version:string; revision:number; currency:'ILS';
  products:{id:'restaurant'|'ordering'|'kitchen';name:Name;monthly_minor:number;included:PublicLimits;capabilities?:string[]}[];
- plans:{id:string;name:Name;monthly_minor:number;included:PublicLimits;capabilities:string[];published:boolean}[];
+ plans:{id:string;name:Name;monthly_minor:number;included:PublicLimits;capabilities:string[];published:boolean;modules?:string[];automatic?:boolean;recommended?:boolean}[];
  tariffs:{id:string;name:Name;amount_minor:number|null;quantity?:number;unit:string}[];
  capabilities:{key:string;name:Name}[];
 };

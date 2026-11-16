@@ -77,13 +77,13 @@ export const pricing: Record<Lang, PricingCopy> = {
     plans: {
       restaurant: {
         text: "Gérez la caisse et le service en salle.",
-        items: ["Caisse sur iPad ou terminal compatible", "Plan de salle, tables et additions", "Commandes par QR à table"],
-        note: "1 licence de caisse nominative incluse",
+        items: ["Caisse sur iPad ou terminal compatible", "Plan de salle, tables et additions", "Commande QR à table, interface web incluse"],
+        note: "2 postes de caisse inclus · comptes personnels pour votre équipe",
       },
       ordering: {
         text: "Vendez en ligne sur un site à votre image.",
         items: ["Site de commande personnalisé", "Commandes à emporter et en livraison", "Suivi des commandes et fiches clients"],
-        note: "0 % de commission Foody sur vos commandes directes",
+        note: "Sans caisse ni imprimante imposée · 0 % de commission Foody",
       },
       kitchen: {
         text: "Pilotez vos préparations, vos achats et vos marges.",
@@ -91,9 +91,9 @@ export const pricing: Record<Lang, PricingCopy> = {
         note: "1 accès chef et 1 licence écran cuisine (KDS) inclus",
       },
     },
-    licenceTitle: "Une licence de caisse par employé",
-    licences: "Chaque employé qui prend des commandes ou encaisse a son propre accès, même si l’équipe partage un iPad. Le premier accès est inclus avec Foody Restaurant.",
-    licenceUnit: "HT par mois et par employé supplémentaire",
+    licenceTitle: "Des licences par poste, pas par employé",
+    licences: "2 postes actifs inclus avec Restaurant, 3 avec Intégral. Chaque employé garde son compte personnel et peut travailler sur un poste disponible. Un iPad ou un Victa utilisé comme caisse compte pour un poste ; un terminal réservé au paiement ne compte pas.",
+    licenceUnit: "HT par mois et par poste supplémentaire",
     costsTitle: "Frais de mise en service",
     costsText: "Ces frais s’appliquent une seule fois aux modules et prestations que vous choisissez.",
     costs: [
@@ -159,13 +159,13 @@ export const pricing: Record<Lang, PricingCopy> = {
     plans: {
       restaurant: {
         text: "Run your POS and table service.",
-        items: ["POS on an iPad or compatible terminal", "Floor plan, tables and bills", "QR ordering at the table"],
-        note: "1 named POS licence included",
+        items: ["POS on an iPad or compatible terminal", "Floor plan, tables and bills", "Table QR ordering, web interface included"],
+        note: "2 active POS devices included · personal staff accounts",
       },
       ordering: {
         text: "Sell online through a site designed for your restaurant.",
         items: ["Custom ordering website", "Pickup and delivery orders", "Order tracking and customer profiles"],
-        note: "0% Foody commission on direct orders",
+        note: "No mandatory POS or printer · 0% Foody commission",
       },
       kitchen: {
         text: "Manage prep, purchasing and margins.",
@@ -173,9 +173,9 @@ export const pricing: Record<Lang, PricingCopy> = {
         note: "1 chef account and 1 kitchen display (KDS) licence included",
       },
     },
-    licenceTitle: "One POS licence per employee",
-    licences: "Every employee who takes orders or accepts payments has their own login, even when the team shares an iPad. Foody Restaurant includes the first licence.",
-    licenceUnit: "per additional employee/month, excl. VAT",
+    licenceTitle: "Licences per device, not per employee",
+    licences: "Restaurant includes 2 active POS devices; Integral includes 3. Each employee keeps a personal account and can use an available device. An iPad or Victa running POS counts as one device; a payment-only terminal does not.",
+    licenceUnit: "per additional POS device/month, excl. VAT",
     costsTitle: "One-time setup fees",
     costsText: "These fees apply to the modules and services you choose.",
     costs: [
@@ -241,8 +241,8 @@ export const pricing: Record<Lang, PricingCopy> = {
     plans: {
       restaurant: {
         text: "ניהול הקופה והשירות בשולחנות.",
-        items: ["קופה ב־iPad או במסוף תואם", "מפת שולחנות וניהול חשבונות", "הזמנות ב־QR בשולחן"],
-        note: "רישיון קופה אישי אחד כלול",
+        items: ["קופה ב־iPad או במסוף תואם", "מפת שולחנות וניהול חשבונות", "הזמנות QR בשולחן, כולל ממשק אינטרנט"],
+        note: "2 עמדות קופה כלולות · חשבונות אישיים לצוות",
       },
       ordering: {
         text: "מכירה אונליין מאתר בעיצוב העסק שלכם.",
@@ -255,9 +255,9 @@ export const pricing: Record<Lang, PricingCopy> = {
         note: "גישה אחת לשף ורישיון אחד למסך מטבח (KDS)",
       },
     },
-    licenceTitle: "רישיון קופה אחד לכל עובד",
-    licences: "לכל עובד שמקבל הזמנות או תשלומים יש גישה אישית, גם כשהצוות חולק iPad. הרישיון הראשון כלול ב־Foody מסעדה.",
-    licenceUnit: "לחודש לכל עובד נוסף, לפני מע״מ",
+    licenceTitle: "רישיונות לפי עמדה, לא לפי עובד",
+    licences: "2 עמדות קופה פעילות כלולות ב־Foody מסעדה, ו־3 ב־Integral. לכל עובד חשבון אישי והוא יכול לעבוד בעמדה זמינה. iPad או Victa המשמש כקופה נחשב עמדה; מסוף לתשלום בלבד אינו נחשב עמדה.",
+    licenceUnit: "לחודש לכל עמדת קופה נוספת, לפני מע״מ",
     costsTitle: "דמי הקמה חד־פעמיים",
     costsText: "דמי ההקמה חלים על המודולים והשירותים שתבחרו.",
     costs: [
@@ -312,4 +312,11 @@ export const pricing: Record<Lang, PricingCopy> = {
       { q: "מהי תקופת ההתחייבות?", a: "מנויי התוכנה מחויבים מדי חודש ואפשר לבטל אותם בהודעה של 30 יום מראש. מחיר ההשקה של המנוי נשמר ב־12 החודשים הראשונים. לציוד ולשירותי התשלומים תנאים נפרדים." },
     ],
   },
+};
+
+/** Short copy for software bundles, separate from setup, equipment and processing fees. */
+export const bundleCopy = {
+  fr: { title: 'Combinez vos modules', recommended: 'Notre offre recommandée', integral: 'La salle, les commandes et la cuisine, dans un même système.', duo: 'La caisse et votre site de commande réunis.', cta: 'Composer mon Foody', excluded: 'Abonnements logiciels uniquement. Mise en service, matériel, formation, options et services de paiement en supplément.', accounts: 'Chaque employé garde son compte personnel.', devices: 'postes de caisse actifs', qr: 'Le parcours web nécessaire au QR à table est compris dans Restaurant. Commandes ajoute la vente à distance : retrait, livraison et précommandes.', printing: 'Foody Commandes fonctionne seul, sans caisse ni imprimante imposée. Pour imprimer les bons sur place, nous prévoyons le matériel ou le relais compatible.' },
+  en: { title: 'Combine your modules', recommended: 'Our recommended offer', integral: 'Dining room, online orders and kitchen in one system.', duo: 'Your POS and ordering website together.', cta: 'Build my Foody', excluded: 'Software subscriptions only. Setup, equipment, training, options and payment services are charged separately.', accounts: 'Each employee keeps a personal account.', devices: 'active POS devices', qr: 'Restaurant includes the web interface needed for table QR ordering. Orders adds remote sales: pickup, delivery and preorders.', printing: 'Foody Orders works independently, without a mandatory POS or printer. Printing tickets on site requires compatible equipment or a relay.' },
+  he: { title: 'משלבים מודולים', recommended: 'ההצעה המומלצת שלנו', integral: 'אולם המסעדה, ההזמנות והמטבח במערכת אחת.', duo: 'הקופה ואתר ההזמנות יחד.', cta: 'מרכיבים את ה־Foody שלי', excluded: 'מנויי תוכנה בלבד. הקמה, ציוד, הדרכה, אפשרויות נוספות ושירותי תשלום מחויבים בנפרד.', accounts: 'לכל עובד נשאר חשבון אישי.', devices: 'עמדות קופה פעילות', qr: 'מודול המסעדה כולל את ממשק האינטרנט הדרוש להזמנת QR בשולחן. מודול ההזמנות מוסיף מכירה מרחוק: איסוף, משלוחים והזמנות מראש.', printing: 'Foody הזמנות פועל באופן עצמאי, ללא קופה או מדפסת חובה. להדפסת הזמנות במקום נדרש ציוד תואם או רכיב קישור.' },
 };

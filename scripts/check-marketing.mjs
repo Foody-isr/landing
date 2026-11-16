@@ -342,16 +342,9 @@ for (const lang of ["he", "fr", "en"]) {
       const licenceNote = main.match(
         /<p\b[^>]*data-pricing-licences[^>]*>([\s\S]*?)<\/p>/,
       )?.[1];
-      assert.ok(
-        licenceNote?.includes(pricingCatalogue ? {
-          he: "מכסות נפרדות", fr: "quotas distincts", en: "separate quotas",
-        }[lang] : {
-          he: "לכל עובד שמקבל הזמנות או תשלומים",
-          fr: "Chaque employé qui prend des commandes ou encaisse",
-          en: "Every employee who takes orders or accepts payments",
-        }[lang]),
-        "Licence policy is explicit: " + url,
-      );
+      const deviceBased = pricingCatalogue?.products.find(p => p.id === 'restaurant')?.included.pos_users_unlimited ?? !pricingCatalogue;
+      const policy = deviceBased ? {he: 'עמדות', fr: 'postes actifs', en: 'active POS devices'} : {he: 'מכסות נפרדות', fr: 'quotas distincts', en: 'separate quotas'};
+      assert.ok(licenceNote?.includes(policy[lang]), 'Licence policy is explicit: ' + url);
       const visibleText = (markup) => markup.replace(/<[^>]*>/g, "").replace(/\s/g, "");
       const amountText = (amount) => visibleText(
         new Intl.NumberFormat(lang === "he" ? "he-IL" : lang, {
@@ -379,10 +372,12 @@ for (const lang of ["he", "fr", "en"]) {
         }
         assert.doesNotMatch(card, /hébergement|hosting|אחסון/i, "Module does not claim site hosting: " + url);
       }
-      if (!pricingCatalogue) assert.equal((main.match(/\bQR\b/g) || []).length, 1, "QR is listed once: " + url);
-      else {
+      if (!pricingCatalogue) {
+        assert.ok(main.includes('data-pricing-bundle="integral"'), "Recommended all-module offer: " + url);
+        assert.ok(main.includes('data-pricing-bundle="restaurant-orders"'), "Restaurant and ordering bundle: " + url);
+      } else {
         for (const plan of pricingCatalogue.plans) assert.ok(main.includes(plan.name[lang]), "Published composed plan is displayed: " + url);
-        for (const tariff of pricingCatalogue.tariffs.filter(row => ['extraEmployee', 'extraPOSDevice'].includes(row.id))) assert.ok(main.includes(tariff.name[lang]), "Separate licence tariff is displayed: " + url);
+        for (const tariff of pricingCatalogue.tariffs.filter(row => (deviceBased ? ['extraChef','extraKDS'] : ['extraEmployee','extraPOSDevice']).includes(row.id))) assert.ok(main.includes(tariff.name[lang]), "Separate licence tariff is displayed: " + url);
       }
       assert.doesNotMatch(main, /data-quote-total|quote-summary|type="checkbox"/, "Pricing has no interactive quote: " + url);
 
@@ -448,7 +443,7 @@ for (const lang of ["he", "fr", "en"]) {
       const faq = [...main.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
         .map(match => JSON.parse(match[1]))
         .find(schema => schema["@type"] === "FAQPage");
-      assert.equal(faq?.mainEntity.length, 3, "Localized pricing FAQ: " + url);
+      assert.equal(faq?.mainEntity.length, pricingCatalogue ? 5 : 3, "Localized pricing FAQ: " + url);
       assert.ok(faq.mainEntity.every(({ acceptedAnswer }) => !acceptedAnswer.text.includes("<a")));
       assert.ok(main.includes(pricingCatalogue
         ? { he: "המחירים והזכויות שאושרו נשמרים", fr: "Vos prix et droits acceptés sont conservés", en: "Your accepted prices and included rights remain unchanged" }[lang]

@@ -5,7 +5,8 @@ import Icon from "@/components/marketing/Icon";
 import ProductMentions from "@/components/marketing/ProductMentions";
 import { CallToAction, FaqSection } from "@/components/marketing/Shared";
 import { marketing } from "@/lib/marketing/content";
-import { paymentRates as initialPaymentRates, pricingRates as initialPricingRates } from "@/lib/marketing/pricing";
+import { paymentRates as initialPaymentRates, pricingRates as initialPricingRates, bundleCopy } from "@/lib/marketing/pricing";
+import offerGrid from "@/lib/marketing/offer-grid.json";
 import { mapsOffer, mapsPricing } from "@/lib/marketing/maps-pricing";
 import { routes, ui } from "@/lib/marketing/ui";
 import { resolveLang } from "@/lib/seo";
@@ -39,12 +40,15 @@ export default async function PricingPage({
   let catalog: PublicCatalogue | null;
   try { catalog = await publicCatalogue(); }
   catch { return <><Navbar /><main id="main-content" className="shell py-20"><h1>{catalogueCopy[lang].unavailable}</h1><Link href={`/${lang}/contact`}>{ui[lang].contact}</Link></main><Footer /></>; }
-  const editable = catalog && catalog.revision > 0 ? catalog : null;
+  const editable = catalog;
+  const deviceBased = catalog?.products.find(p => p.id === "restaurant")?.included.pos_users_unlimited ?? !catalog;
+  const bundles = (catalog?.plans ?? offerGrid.bundles).filter(p => p.published);
+  const b = bundleCopy[lang];
   const rate = (id: string, initial: number | null): number | null => {
     const row = catalog?.tariffs.find(t => t.id === id);
     return row ? row.amount_minor === null ? null : row.amount_minor / 100 : initial;
   };
-  const pricingRates = { ...initialPricingRates, ...Object.fromEntries(catalog?.products.map(p => [p.id, p.monthly_minor / 100]) ?? []), extraPos: rate('extraPos', initialPricingRates.extraPos)! };
+  const pricingRates = { ...initialPricingRates, ...Object.fromEntries(catalog?.products.map(p => [p.id, p.monthly_minor / 100]) ?? []), extraPos: rate(deviceBased ? 'extraPOSDevice' : 'extraPos', initialPricingRates.extraPOSDevice)! };
   const paymentRates = { ...initialPaymentRates, ...Object.fromEntries(Object.entries(initialPaymentRates).map(([key, value]) => [key, key === 'virtualIncludedTransactions' ? catalog?.tariffs.find(r => r.id === key)?.quantity ?? value : rate(key, value)])) } as Record<keyof typeof initialPaymentRates, number | null>;
   const t = marketing[lang].pricing;
   const u = ui[lang];
@@ -59,9 +63,15 @@ export default async function PricingPage({
   const price = (amount: number | null) => amount === null ? t.quote : (
     <bdi dir="ltr">{(Number.isInteger(amount) ? format : formatDecimal).format(amount)} ₪</bdi>
   );
-  const included = (limits: PublicLimits) => (Object.entries(limits) as [keyof PublicLimits, number | null][])
-    .filter(([key, n]) => key === 'employees' || key === 'pos_devices' || n !== null && n > 0)
-    .map(([key, n]) => `${n === null ? catalogueCopy[lang].unlimited : n} ${catalogueCopy[lang][key]}`).join(' · ');
+  const included = (limits: PublicLimits) => {
+    const entries: [number | null, string][] = [];
+    if (limits.pos_users_unlimited) entries.push([limits.pos_devices, b.devices]);
+    else if (limits.pos > 0) entries.push([limits.pos, catalogueCopy[lang].pos]);
+    if (limits.chef > 0) entries.push([limits.chef, catalogueCopy[lang].chef]);
+    if (limits.kds > 0) entries.push([limits.kds, 'KDS']);
+    if (!limits.pos_users_unlimited && limits.pos_devices !== null && limits.pos_devices > 0) entries.push([limits.pos_devices, catalogueCopy[lang].pos_devices]);
+    return entries.map(([n, label]) => `${n === null ? catalogueCopy[lang].unlimited : n} ${label}`).join(' · ');
+  };
   const featureList = (keys: string[], module?: string) => {
     const primary: Record<string, string[]> = { restaurant: ['pos', 'tables', 'qr_dine_in', 'receipt_printing', 'cash_management', 'payment_terminals'], ordering: ['website', 'pickup_flow', 'delivery_flow', 'scheduled_orders', 'order_management', 'online_payments'], kitchen: ['recipes', 'stock_management', 'food_cost', 'suppliers', 'preparation', 'kds'] };
     const priority = primary[module ?? ''] ?? [];
@@ -223,25 +233,40 @@ export default async function PricingPage({
                       </li>
                     ))}
                   </ul>}
-                  <p className="pricing-module-note">{commercial ? included(commercial.included) : plan.note}</p>
+                  <p className="pricing-module-note">{commercial && key !== "ordering" ? included(commercial.included) : plan.note}</p>
                 </article>
               );
             })}
           </div>
-          {editable && editable.plans.some(plan => plan.published) && <><h2>{catalogueCopy[lang].plans}</h2><div className="plans">{editable.plans.filter(plan => plan.published).map(plan => <article className="plan" key={plan.id}><h3>{plan.name[lang]}</h3><div className="plan-price"><strong>{price(plan.monthly_minor / 100)}</strong><span>{t.monthly}</span></div><p className="pricing-module-note">{included(plan.included)}</p>{featureList(plan.capabilities)}</article>)}</div></>}
+          {bundles.length > 0 && <section className="pricing-bundles" aria-labelledby="bundle-title">
+            <h2 id="bundle-title">{b.title}</h2>
+            <div className="pricing-bundle-grid">
+              {[...bundles].sort((a, b) => Number(!!b.recommended) - Number(!!a.recommended)).map(plan => <article key={plan.id} data-pricing-bundle={plan.id} className={`pricing-bundle${plan.recommended ? ' pricing-bundle-recommended' : ''}`}>
+                {plan.recommended && <p className="pricing-bundle-badge">{b.recommended}</p>}
+                <h3>{plan.name[lang]}</h3>
+                <p>{plan.id === 'integral' ? b.integral : plan.id === 'restaurant-orders' ? b.duo : plan.modules?.map(id => catalog?.products.find(p => p.id === id)?.name[lang] ?? id).join(' + ')}</p>
+                <div className="plan-price"><strong>{price(plan.monthly_minor / 100)}</strong><span>{t.monthly}</span></div>
+                <p className="pricing-bundle-inclusions">{included(plan.included)}</p>
+                {'capabilities' in plan && !['integral', 'restaurant-orders'].includes(plan.id) && featureList(plan.capabilities)}
+                {plan.included.pos_users_unlimited && <p>{b.accounts}</p>}
+                <Link className="pricing-bundle-cta" href={`/${lang}/contact?offer=${encodeURIComponent(plan.id)}`}>{b.cta}</Link>
+              </article>)}
+            </div>
+            <p className="pricing-detail">{b.excluded}</p>
+          </section>}
           <div className="pricing-licence-strip">
             <div>
-              <h2>{t.licenceTitle}</h2>
-              <p data-pricing-licences>{editable ? catalogueCopy[lang].licences : t.licences}</p>
+              <h2>{deviceBased ? t.licenceTitle : catalogueCopy[lang].pos}</h2>
+              <p data-pricing-licences>{deviceBased ? t.licences : catalogueCopy[lang].licences}</p>
             </div>
             <div className="cost-amount" data-pricing-cost="extraPos">
               <strong>{price(pricingRates.extraPos)}</strong>
-              <span>{t.licenceUnit}</span>
+              <span>{deviceBased ? t.licenceUnit : t.monthly}</span>
             </div>
           </div>
         </section>
 
-        {editable && <section className="shell pricing-content-section"><h2>{catalogueCopy[lang].licencesTitle}</h2><p>{catalogueCopy[lang].licences}</p><dl className="pricing-setup-list">{editable.tariffs.filter(row=>['extraEmployee','extraChef','extraPOSDevice','extraKDS'].includes(row.id)).map(row=><div key={row.id}><dt>{row.name[lang]}</dt><dd className="cost-amount"><strong>{price(row.amount_minor===null?null:row.amount_minor/100)}</strong><span>{t.monthly}</span></dd></div>)}</dl></section>}
+        {editable && <section className="shell pricing-content-section"><h2>{catalogueCopy[lang].licencesTitle}</h2><dl className="pricing-setup-list">{editable.tariffs.filter(row=>(deviceBased ? ['extraChef','extraKDS'] : ['extraEmployee','extraChef','extraPOSDevice','extraKDS']).includes(row.id)).map(row=><div key={row.id}><dt>{row.name[lang]}</dt><dd className="cost-amount"><strong>{price(row.amount_minor===null?null:row.amount_minor/100)}</strong><span>{t.monthly}</span></dd></div>)}</dl></section>}
 
         <section
           id="plan-delivery"
@@ -356,6 +381,8 @@ export default async function PricingPage({
         </dl></section>}
 
         <FaqSection lang={lang} items={editable ? [
+ {q: lang === "fr" ? "Le QR à table exige-t-il Foody Commandes ?" : lang === "he" ? "האם QR בשולחן דורש את מודול ההזמנות?" : "Does table QR ordering require Foody Orders?", a:b.qr},
+ {q:lang === "fr" ? "Peut-on vendre en ligne sans caisse ?" : lang === "he" ? "אפשר למכור אונליין בלי קופה?" : "Can I sell online without a POS?", a:b.printing},
  {q:catalogueCopy[lang].faqPrice,a:editable.products.map(p=>`${p.name[lang]} ${new Intl.NumberFormat(locale).format(p.monthly_minor/100)} ₪ ${t.monthly}.`).join(' ')},
  {q:catalogueCopy[lang].faqExtras,a:catalogueCopy[lang].faqExtraAnswer},
  {q:catalogueCopy[lang].faqContract,a:catalogueCopy[lang].faqContractAnswer},

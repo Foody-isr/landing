@@ -1862,3 +1862,16 @@ they are not revalidated here. Export and copy the support corpus before scannin
 sources. Pin the reviewed immutable Landing commit in both service contracts
 before PR readiness. Validate development first, then promote those same API,
 Admin and Landing artifacts under the user's production-release authorization.
+
+### Reviewed software offers (16 November 2026, local preparation)
+
+Reviewed Landing pricing and acquisition copy, the versioned API catalogue,
+Backoffice draft loading and quote selection, and Admin onboarding, additions
+and licence displays. Updated offers, billing, staff quotas and internal
+catalogue/quotation procedures in FR/HE/EN. The new software seed does not
+rewrite existing catalogue revisions or frozen commercial documents. The pilot
+publication and checkout guards remain development/sandbox only. Web and Flutter
+source inventories are preserved from the existing Landing baseline: no source
+changes in those services. Shared API/translation/corpus files receive scoped
+no-impact reviews for features whose procedures are unchanged. WORKSPACE pins
+are local preparation only; pin the reviewed immutable Landing commit before CI.
