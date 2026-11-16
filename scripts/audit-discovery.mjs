@@ -4,7 +4,10 @@ const base = (process.env.DISCOVERY_BASE_URL || "https://foody-pos.co.il").repla
 const canonicalBase = (process.env.NEXT_PUBLIC_SITE_URL || "https://foody-pos.co.il").replace(/\/$/, "");
 const paths = ["", "/sectors/food-beverage/restaurants", "/solutions/pos", "/solutions/kitchen", "/solutions/online-ordering", "/pricing", "/compare/tabit", "/guides/restaurant-pos-israel", "/guides/restaurant-inventory-israel", "/tools/food-cost-calculator", "/tools/supplier-variance-calculator", "/demos/kitchen", "/about"];
 const priorities = ["/sectors/food-beverage/restaurants", "/solutions/pos", "/solutions/kitchen", "/solutions/online-ordering", "/pricing", "/guides/restaurant-pos-israel", "/guides/restaurant-inventory-israel", "/tools/food-cost-calculator", "/tools/supplier-variance-calculator"];
-const headers = { "User-Agent": "FoodyDiscoveryAudit/1.0" };
+// This audit does not execute JavaScript. Request Next's HTML-limited rendering
+// so dynamic pages deliver their metadata in <head>, as they do for preview bots.
+// https://nextjs.org/docs/15/app/api-reference/functions/generate-metadata#streaming-metadata
+const headers = { "User-Agent": "FoodyDiscoveryAudit/1.0 (compatible; Twitterbot/1.0)" };
 const report = { checkedAt: new Date().toISOString(), base, limitations: ["HTTP and HTML checks do not prove Google/Bing indexing or requests from real crawler IPs.", "No Search Console, Bing performance or LLM ranking data is inferred from this report."], pages: [], infrastructure: {} };
 for (const lang of ["he", "fr", "en"]) for (const path of paths) {
   const url = `${base}/${lang}${path}`;

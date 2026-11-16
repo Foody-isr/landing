@@ -67,7 +67,13 @@ Follow the invitation to confirm the account and open Billing for the specified 
 
 ## Review module access
 
-Restaurant grants access to POS and table service including table QR. Orders grants the online ordering website, pickup and delivery. Kitchen grants stock, recipes, suppliers and preparation tools. The available features still require the staff member’s restaurant role. Billing shows the licences included in the selected offer and the current trial or paid scope. Existing restaurants without a sandbox enrolment stay on their existing contract.
+Initial modules follow the public grid: Restaurant for POS and table service, Orders for the website and delivery, Kitchen for inventory and preparation. For a versioned offer, the published and then accepted composition defines accessible capabilities and quotas precisely. Role permissions remain necessary. A locked Admin page explains which offer includes the feature and invites the owner to Billing. Editing the catalogue does not rewrite accepted rights. Restaurants outside versioned onboarding keep their contract and existing checks.
+
+<span id="commercial-licences" />
+
+## Configure separate quotas and custom offers
+
+For new versioned sandbox offers, distinguish **Total accounts, including owner** from **Physical POS devices**. An employee account is not a device. A blank limit for these two fields means unlimited; a number imposes a quota. Named POS users, chef access and kitchen displays also have explicit quantities. The owner counts once and pending invitations reserve capacity. The role determines whether an account consumes POS or chef access. In **Custom offer**, choose a base plan or modules, then additional licences included in the agreed amount. The custom price covers the whole composition, including normally quoted licences. Choose the trial duration and modules separately; the minimum remains 14 days. Existing contracts are never migrated automatically.
 
 ## If the operation fails
 

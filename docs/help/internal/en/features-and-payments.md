@@ -12,12 +12,6 @@ releaseStatus: available
 ---
 In Foody Backoffice, open Payments & devices → Plans & modules for public rates or select a restaurant to see Billing & modules and Features & access.
 
-<span id="backoffice-software-catalogue" />
-
-## Check public rates and module features
-
-As a Foody superadmin, open **Plans & modules**. The page shows the monthly software price excluding VAT per location, the included licences and the additional named POS licence. Use the feature table to see which module grants each listed flag. Staff roles and restaurant settings still apply. Select **View public pricing** for setup, hardware and payment service prices.
-
 <span id="backoffice-restaurant-subscription" />
 
 ## Find a restaurant’s subscription and current access
@@ -87,3 +81,9 @@ The prepared internal-order Sumit capability derives from the restaurant’s act
 ## Review shared Cibus settings
 
 Confirm the API label, then open **Payments & devices → Cibus (Pluxee)**. Use **Retry** if the current settings fail to load. For an approved update, verify the Cibus environment and endpoint, enter any new integrator credentials supplied by Cibus, and choose **Save Cibus settings**. Check the saved confirmation. Maintain each restaurant’s terminal identifiers in Foody Admin.
+
+<span id="backoffice-software-catalogue" />
+
+## Edit plans, modules and prices
+
+In the development Backoffice open **Plans & modules**. In **Modules**, select a module and edit its monthly price excluding VAT, included quantities and checked features. Features are categorized and individually searchable. Respect the displayed dependencies. In **Plans**, create a plan and choose its modules, price, own quotas, added or excluded features and public visibility. Enter French, English and Hebrew names. **All prices** contains setup, equipment, licence and service rates: blank means quotation, zero means included; a quantity row represents an allowance, not a price. **Review changes**, then **Publish new version** publish a new revision. A version conflict retains the draft; reload and reapply your changes. Pricing reads its environment’s catalogue and may cache it for one minute. Accepted contracts, pending payments, existing invitations and configured trials keep their version.

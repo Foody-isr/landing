@@ -243,3 +243,20 @@ sharing images referenced by the actual prerendered HTML, including every help
 page; missing assets or unrelated canonical pages sharing one image fail the build.
 Bump the style version when the renderer, logo or fonts change. See
 `docs/marketing/page-sharing-previews.md` for provenance, caching and review scope.
+
+## Versioned plans and licence quotas (development)
+
+The matching migration 320/API provides editable public modules, composed plans,
+prices and categorized capabilities. Backoffice publishes a revision; Landing
+Pricing reads the same environment; Admin reviews purchased rights and paid
+additions. Employee accounts and physical POS devices use separate quotas.
+Accepted contracts and invitations retain their version. See the synchronized
+FR/HE/EN billing, staff and catalogue help for the sandbox test procedures.
+
+Marketing CI starts `scripts/marketing-catalogue-fixture.mjs` on loopback port
+3109 and passes that API to the Next build. The fixture deliberately changes the
+three module prices and supplies a composed plan, named accounts and physical
+devices. `MARKETING_CATALOGUE_URL` makes `check-marketing.mjs` verify that published
+contract instead of assuming the initial grid. Discovery requests the HTML-only
+bot rendering to check metadata on dynamic Pricing without executing JavaScript.
+No real catalogue, restaurant, lead or payment is changed by these checks.

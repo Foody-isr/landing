@@ -98,12 +98,25 @@
           "en": "On a compatible version, use Sign out in navigation or End shift in More. Foody checks your personal work period before offering confirmation. If a cash report or local operation remains pending, Cash drawer report pending keeps you signed in. Cancel changes nothing; Finish report opens Cash drawer balance without closing anything or signing out. Resolve the operation, physically count and close cash on its original POS, then request shift end again. Without report permissions, ask an authorized manager. See [the pending report](/en/help/staff/devices-and-shifts#pending-cash-sign-out).\n\nIf no period is active, Shift already ended offers Lock terminal. Explicit confirmation and another verification are required before returning to PIN; no new clock-out is recorded. See [an already ended period](/en/help/staff/devices-and-shifts#no-active-shift-sign-out). An expired or revoked historical device authorization that is still found may permit a shift end when its drawer is confirmed closed; it does not reactivate cash access.\n\nA missing or foreign reference, failed verification or incompatible server keeps you signed in and offers Retry. If a shift-end response is uncertain, [verify it before another action](/en/help/staff/devices-and-shifts#uncertain-shift-end). Never erase journals or local data to bypass a refusal. Shift end keeps the device enrolled for the next PIN. A Verifone deposit remains separate and never starts automatically.",
           "he": "בגרסה תואמת השתמשו בהתנתקות בניווט או בסיום משמרת בתפריט עוד. Foody בודק את תקופת העבודה האישית לפני הצעת אישור. אם דוח מזומן או פעולה מקומית עדיין ממתינים, דוח מגירת מזומנים ממתין משאיר אתכם מחוברים. ביטול אינו משנה דבר; השלמת הדוח פותחת יתרת קופה ללא סגירה או התנתקות. פתרו את הפעולה, ספרו פיזית וסגרו את המזומן בקופה המקורית, ואז בקשו שוב סיום משמרת. ללא הרשאת דוח פנו למנהל מורשה. ראו [דוח ממתין](/he/help/staff/devices-and-shifts#pending-cash-sign-out).\n\nאם אין תקופה פעילה, המשמרת כבר הסתיימה מציעה נעילת המסוף. נדרשים אישור מפורש ובדיקה נוספת לפני חזרה לקוד; לא נרשמת יציאה חדשה. ראו [משמרת שכבר הסתיימה](/he/help/staff/devices-and-shifts#no-active-shift-sign-out). הרשאת מכשיר היסטורית שפגה או בוטלה ועדיין נמצאה עשויה לאפשר סיום משמרת כאשר המגירה שלה אושרה כסגורה; היא אינה מפעילה מחדש גישה למזומן.\n\nאסמכתה חסרה או של מסעדה אחרת, כשל באימות או שרת לא תואם משאירים את החיבור פעיל ומציעים ניסיון חוזר. אם תוצאת סיום משמרת אינה ודאית, [בדקו אותה לפני פעולה נוספת](/he/help/staff/devices-and-shifts#uncertain-shift-end). אין למחוק יומנים או נתונים מקומיים כדי לעקוף דחייה. סיום משמרת שומר את רישום המכשיר לקוד הבא. הפקדת Verifone נשארת נפרדת ואינה מתחילה אוטומטית."
         }
+      },
+      {
+        "id": "versioned-commercial-access",
+        "title": {
+          "fr": "Accès commercial en développement",
+          "en": "Commercial access in development",
+          "he": "גישה מסחרית בסביבת הפיתוח"
+        },
+        "instructions": {
+          "fr": "Pour un restaurant inscrit au catalogue versionné de développement, cette fonction doit être incluse dans son offre ou dans son essai actif, en plus des autorisations du rôle. Une fonctionnalité retirée est refusée côté serveur. Consultez Facturation pour voir les modules et les licences, puis faites examiner un ajout par le propriétaire. Les quotas de comptes et de postes POS sont distincts ; un dépassement nécessite les licences correspondantes. Les contrats historiques ne sont pas modifiés automatiquement.",
+          "en": "For a restaurant enrolled in the versioned development catalogue, this function must be included in its offer or active trial as well as permitted by the staff role. An excluded feature is rejected by the server. Check Billing for modules and licences, then ask the owner to review an addition. Account and physical POS quotas are separate; exceeding a quota requires the corresponding licences. Historical contracts are not automatically changed.",
+          "he": "במסעדה הרשומה לקטלוג עם גרסה בסביבת הפיתוח, היכולת חייבת להיות כלולה בהצעה או בניסיון הפעיל וכן מותרת לפי תפקיד העובד. יכולת מוחרגת נדחית בשרת. בחיוב אפשר לבדוק מודולים ורישיונות ולבקש מהבעלים לבחון תוספת. מכסות חשבונות ועמדות קופה נפרדות; חריגה דורשת את הרישיונות המתאימים. חוזים היסטוריים אינם משתנים אוטומטית."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": true,
-    "procedureUpdatedAt": "2026-11-12"
+    "procedureUpdatedAt": "2026-11-15"
   },
   {
     "id": "account-security",
@@ -288,6 +301,19 @@
           "en": "The POS Staff page remains read-only, with a centered header, Back and Refresh on mobile. Invitations and permission edits still belong to an authorized account in Admin.",
           "he": "עמוד הצוות בקופה נשאר לקריאה בלבד, עם כותרת ממורכזת, חזרה ורענון בנייד. הזמנות ושינוי הרשאות עדיין נעשים בממשק הניהול באמצעות חשבון מורשה."
         }
+      },
+      {
+        "id": "commercial-capacity",
+        "title": {
+          "fr": "Vérifier les licences avant un nouvel accès",
+          "en": "Check licences before adding access",
+          "he": "בדיקת רישיונות לפני הוספת גישה"
+        },
+        "instructions": {
+          "fr": "Pour les offres versionnées de développement, consultez les compteurs **Licences et postes** avant une invitation ou un changement de rôle. Les comptes employés et les postes POS physiques ont des quotas distincts. Le propriétaire et les invitations en attente sont comptés ; les permissions de caisse ou de cuisine réservent aussi les accès nominatifs correspondants. Une invitation ou un élargissement de rôle dépassant un quota est refusé sans modifier les accès. Le message permet au propriétaire d’aller en Facturation pour ajouter les licences nécessaires, puis de recommencer. Modifier un rôle personnalisé ne contourne pas la limite. Les permissions du rôle et les fonctionnalités achetées sont deux conditions distinctes. Les contrats historiques ne reçoivent pas automatiquement ces nouveaux quotas.",
+          "en": "For versioned development offers, check **Licences and devices** before an invitation or role change. Employee accounts and physical POS devices have separate quotas. The owner and pending invitations count; POS or kitchen permissions also reserve the corresponding named access. An invitation or role expansion exceeding capacity is rejected without changing access. The message lets the owner go to Billing, add the necessary licences, and retry. Editing a custom role does not bypass the limit. Role permissions and purchased features are separate conditions. Historical contracts do not automatically receive these new quotas.",
+          "he": "בהצעות עם גרסה בסביבת הפיתוח בדקו את מוני **רישיונות ומכשירים** לפני הזמנה או שינוי תפקיד. לחשבונות עובדים ולעמדות קופה יש מכסות נפרדות. הבעלים והזמנות ממתינות נספרים; הרשאות קופה או מטבח שומרות גם גישה אישית מתאימה. הזמנה או הרחבת תפקיד מעבר למכסה נדחית בלי לשנות גישה. ההודעה מאפשרת לבעלים לעבור לחיוב, להוסיף את הרישיונות הדרושים ולנסות שוב. עריכת תפקיד מותאם אינה עוקפת את המגבלה. הרשאות התפקיד והיכולות שנרכשו הן תנאים נפרדים. חוזים היסטוריים אינם מקבלים את המכסות החדשות אוטומטית."
+        }
       }
     ],
     "audience": "public",
@@ -298,7 +324,7 @@
       "fr": "Les invitations et modifications nécessitent la permission de gestion de l’équipe.",
       "he": "הזמנות ושינויים דורשים הרשאת ניהול צוות."
     },
-    "procedureUpdatedAt": "2026-10-21"
+    "procedureUpdatedAt": "2026-11-15"
   },
   {
     "id": "staff-roles",
@@ -320,7 +346,8 @@
         "src/lib/route-permissions.ts"
       ],
       "foodyserver": [
-        "internal/rbac/**"
+        "internal/rbac/**",
+        "internal/rbac/licences.go"
       ],
       "foodypos": [
         "lib/core/auth/**"
@@ -404,6 +431,19 @@
           "en": "Each POS participating in closing needs an active personal session and payments.manage. Including the drawer also requires orders.manage. Setting the main iPad requires settings.edit on that enrolled device. The API verifies the assigned device and terminal before each transmission. See [closing and recovery](/en/help/payments/end-of-day).",
           "he": "כל קופה שמשתתפת בסגירה דורשת חיבור אישי פעיל והרשאת payments.manage. הכללת מגירת המזומן דורשת גם orders.manage. הגדרת האייפד הראשי דורשת settings.edit במכשיר הרשום. ה-API מאמת את המכשיר והמסוף שהוקצו לפני כל שידור. ראו [סגירה ושחזור](/he/help/payments/end-of-day)."
         }
+      },
+      {
+        "id": "commercial-capacity",
+        "title": {
+          "fr": "Vérifier les licences avant un nouvel accès",
+          "en": "Check licences before adding access",
+          "he": "בדיקת רישיונות לפני הוספת גישה"
+        },
+        "instructions": {
+          "fr": "Pour les offres versionnées de développement, consultez les compteurs **Licences et postes** avant une invitation ou un changement de rôle. Les comptes employés et les postes POS physiques ont des quotas distincts. Le propriétaire et les invitations en attente sont comptés ; les permissions de caisse ou de cuisine réservent aussi les accès nominatifs correspondants. Une invitation ou un élargissement de rôle dépassant un quota est refusé sans modifier les accès. Le message permet au propriétaire d’aller en Facturation pour ajouter les licences nécessaires, puis de recommencer. Modifier un rôle personnalisé ne contourne pas la limite. Les permissions du rôle et les fonctionnalités achetées sont deux conditions distinctes. Les contrats historiques ne reçoivent pas automatiquement ces nouveaux quotas.",
+          "en": "For versioned development offers, check **Licences and devices** before an invitation or role change. Employee accounts and physical POS devices have separate quotas. The owner and pending invitations count; POS or kitchen permissions also reserve the corresponding named access. An invitation or role expansion exceeding capacity is rejected without changing access. The message lets the owner go to Billing, add the necessary licences, and retry. Editing a custom role does not bypass the limit. Role permissions and purchased features are separate conditions. Historical contracts do not automatically receive these new quotas.",
+          "he": "בהצעות עם גרסה בסביבת הפיתוח בדקו את מוני **רישיונות ומכשירים** לפני הזמנה או שינוי תפקיד. לחשבונות עובדים ולעמדות קופה יש מכסות נפרדות. הבעלים והזמנות ממתינות נספרים; הרשאות קופה או מטבח שומרות גם גישה אישית מתאימה. הזמנה או הרחבת תפקיד מעבר למכסה נדחית בלי לשנות גישה. ההודעה מאפשרת לבעלים לעבור לחיוב, להוסיף את הרישיונות הדרושים ולנסות שוב. עריכת תפקיד מותאם אינה עוקפת את המגבלה. הרשאות התפקיד והיכולות שנרכשו הן תנאים נפרדים. חוזים היסטוריים אינם מקבלים את המכסות החדשות אוטומטית."
+        }
       }
     ],
     "audience": "public",
@@ -414,7 +454,7 @@
       "fr": "Nécessite la permission de gestion des rôles ; le périmètre du restaurant s’applique toujours.",
       "he": "נדרשת הרשאת ניהול תפקידים; ההרשאות תמיד תחומות למסעדה."
     },
-    "procedureUpdatedAt": "2026-11-08"
+    "procedureUpdatedAt": "2026-11-15"
   },
   {
     "id": "staff-devices-shifts",
@@ -621,12 +661,25 @@
           "en": "With compatible API and POS versions, an employee can resume attendance on another enrolled device in the same restaurant: Drawer balance and closing use that device’s own authorization. Attendance retains its start and original device; no drawer or operation moves. Before signing out, open drawers on both the original and current device must be resolved. Missing, expired, revoked or foreign authorization never permits a bypass.",
           "he": "בגרסאות API וקופה תואמות, עובד יכול להמשיך משמרת במכשיר רשום אחר של אותה מסעדה: יתרת הקופה והסגירה משתמשות בהרשאה של המכשיר הנוכחי. מועד ההתחלה והמכשיר המקורי של המשמרת נשמרים; קופה או פעולה אינן מועברות. לפני התנתקות יש להשלים קופות פתוחות במכשיר המקורי ובמכשיר הנוכחי. הרשאה חסרה, שפג תוקפה, שבוטלה או ששייכת למסעדה אחרת אינה מאפשרת עקיפה."
         }
+      },
+      {
+        "id": "versioned-commercial-access",
+        "title": {
+          "fr": "Accès commercial en développement",
+          "en": "Commercial access in development",
+          "he": "גישה מסחרית בסביבת הפיתוח"
+        },
+        "instructions": {
+          "fr": "Pour un restaurant inscrit au catalogue versionné de développement, cette fonction doit être incluse dans son offre ou dans son essai actif, en plus des autorisations du rôle. Une fonctionnalité retirée est refusée côté serveur. Consultez Facturation pour voir les modules et les licences, puis faites examiner un ajout par le propriétaire. Les quotas de comptes et de postes POS sont distincts ; un dépassement nécessite les licences correspondantes. Les contrats historiques ne sont pas modifiés automatiquement. Réautoriser un même poste identifié ne consomme pas une nouvelle licence. Une autorisation révoquée ou expirée libère sa place.",
+          "en": "For a restaurant enrolled in the versioned development catalogue, this function must be included in its offer or active trial as well as permitted by the staff role. An excluded feature is rejected by the server. Check Billing for modules and licences, then ask the owner to review an addition. Account and physical POS quotas are separate; exceeding a quota requires the corresponding licences. Historical contracts are not automatically changed. Reauthorizing the same identified device does not consume another licence. A revoked or expired authorization frees its place.",
+          "he": "במסעדה הרשומה לקטלוג עם גרסה בסביבת הפיתוח, היכולת חייבת להיות כלולה בהצעה או בניסיון הפעיל וכן מותרת לפי תפקיד העובד. יכולת מוחרגת נדחית בשרת. בחיוב אפשר לבדוק מודולים ורישיונות ולבקש מהבעלים לבחון תוספת. מכסות חשבונות ועמדות קופה נפרדות; חריגה דורשת את הרישיונות המתאימים. חוזים היסטוריים אינם משתנים אוטומטית. אישור חוזר של אותו מכשיר מזוהה אינו צורך רישיון נוסף. הרשאה שבוטלה או פגה מפנה את המקום."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-11-04"
+    "procedureUpdatedAt": "2026-11-15"
   },
   {
     "id": "customers-profiles",
@@ -853,7 +906,8 @@
     },
     "selectors": {
       "foodyadmin": [
-        "src/app/[restaurantId]/billing/**"
+        "src/app/[restaurantId]/billing/**",
+        "src/components/billing/**"
       ],
       "foodyserver": [
         "internal/subscription/**"
@@ -901,11 +955,25 @@
           "fr": "Consultez type, date, montant et devise des événements. Contactez le support pour un échec inexpliqué ou abonnement bloqué ; les paiements de commandes sont distincts de l’abonnement logiciel.",
           "he": "בדקו סוג אירוע, תאריך, סכום ומטבע. פנו לתמיכה על חיוב כושל לא מוסבר או מנוי חסום; תשלום הזמנה נפרד ממנוי התוכנה."
         }
+      },
+      {
+        "id": "versioned-sandbox-additions",
+        "title": {
+          "fr": "Ajouter un module ou des licences en sandbox",
+          "en": "Add modules or licences in sandbox",
+          "he": "הוספת מודולים או רישיונות בסביבת הבדיקות"
+        },
+        "instructions": {
+          "fr": "Pour un nouveau restaurant inscrit aux offres versionnées de développement, **Facturation** affiche les modules actifs et les quotas séparés de comptes et de postes POS. Avec une période payée active, le propriétaire peut ouvrir **Ajouter des modules ou licences**, choisir un module supplémentaire, une formule composée de modules non encore souscrits ou des quantités de licences, puis examiner l’offre. Une ligne sur devis nécessite une offre Foody. Vérifiez le supplément dû maintenant au prorata de la période restante, le nouveau montant au renouvellement et les quantités obtenues. La préparation seule ne donne aucun droit. Acceptez les conditions, puis terminez le paiement sandbox et vérifiez son statut. Les droits supplémentaires apparaissent après confirmation serveur ; la date de fin de période déjà payée reste inchangée. Un ajout gratuit exige aussi une acceptation explicite. Les droits du contrat initial sont conservés ; les contrats historiques restent sur leur parcours actuel. Une fonctionnalité absente affiche les offres qui la proposent ; si aucune n’est proposée, contactez Foody. Un employé demande au propriétaire de gérer l’abonnement.",
+          "en": "For a new restaurant enrolled in versioned development offers, **Billing** shows active modules and separate account and physical POS quotas. During an active paid period, the owner can open **Add modules or licences**, choose an additional module, a plan composed of modules not already purchased, or licence quantities, and review the offer. A quotation-only row requires a Foody offer. Check the amount due now for the remaining period, the new renewal amount and resulting quantities. Preparing an offer grants no rights. Accept its terms, complete the sandbox payment and verify the status. Added rights appear after server confirmation; the already-paid period keeps its end date. A free addition still requires explicit acceptance. The original contracted rights are retained; historical contracts keep their existing flow. A missing feature displays offers that include it; contact Foody if none is listed. Employees ask the owner to manage the subscription.",
+          "he": "למסעדה חדשה הרשומה להצעות עם גרסה בסביבת הפיתוח, **חיוב** מציג מודולים פעילים ומכסות נפרדות לחשבונות ולעמדות קופה. בתקופה משולמת פעילה הבעלים יכולים לפתוח **הוספת מודולים או רישיונות**, לבחור מודול נוסף, מסלול המורכב ממודולים שלא נרכשו, או כמויות רישיונות, ולעיין בהצעה. שורה בהצעת מחיר מצריכה הצעה מ־Foody. בדקו את התוספת היחסית לתקופה שנותרה, את הסכום החדש לחידוש ואת הכמויות שיתקבלו. הכנת הצעה אינה מעניקה גישה. אשרו את התנאים, השלימו תשלום בדיקה ואמתו את הסטטוס. זכויות נוספות נפתחות לאחר אישור השרת; תאריך סיום התקופה שכבר שולמה אינו משתנה. גם תוספת ללא עלות דורשת אישור מפורש. הזכויות המקוריות נשמרות; חוזים היסטוריים נשארים במסלול הקיים. יכולת חסרה מציגה הצעות הכוללות אותה; אם אין הצעה פנו ל־Foody. עובדים מבקשים מהבעלים לנהל את המנוי."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
-    "preserveExisting": false
+    "preserveExisting": false,
+    "procedureUpdatedAt": "2026-11-15"
   },
   {
     "id": "foody-billing-sandbox",
@@ -930,7 +998,9 @@
       "foodyadmin": [
         "src/app/[restaurantId]/billing/PrivateBilling.tsx",
         "src/lib/module-navigation.ts",
-        "src/app/[restaurantId]/billing/ModuleOnboarding.tsx"
+        "src/app/[restaurantId]/billing/ModuleOnboarding.tsx",
+        "src/app/[restaurantId]/billing/SubscriptionAdditions.tsx",
+        "src/lib/commercial-catalog.ts"
       ],
       "foodybackoffice": [
         "src/app/dashboard/foody-billing/**",
@@ -948,7 +1018,9 @@
         "internal/subscription/foody_onboarding.go",
         "internal/auth/modular_access.go",
         "internal/admin/modular_onboarding.go",
-        "migrations/319_foody_modular_billing_sandbox.sql"
+        "migrations/319_foody_modular_billing_sandbox.sql",
+        "internal/subscription/foody_upgrade.go",
+        "migrations/320_editable_commercial_catalog.sql"
       ]
     },
     "operations": [
@@ -1051,9 +1123,22 @@
           "he": "בדיקת גישה לפי מודול"
         },
         "instructions": {
-          "en": "Restaurant grants access to POS and table service including table QR. Orders grants the online ordering website, pickup and delivery. Kitchen grants stock, recipes, suppliers and preparation tools. The available features still require the staff member’s restaurant role. Billing shows the licences included in the selected offer and the current trial or paid scope. Existing restaurants without a sandbox enrolment stay on their existing contract.",
-          "fr": "Restaurant ouvre la caisse et le service en salle, dont le QR à table. Commandes ouvre le site de commande, le retrait et la livraison. Cuisine ouvre les stocks, les recettes, les fournisseurs et les préparations. Les actions disponibles exigent les droits du rôle dans le restaurant. Facturation affiche les licences de l’offre sélectionnée et le périmètre de l’essai ou de l’abonnement payé. Les restaurants sans inscription au pilote conservent leur contrat.",
-          "he": "Restaurant פותח קופה ושירות שולחנות, כולל QR בשולחן. Orders פותח אתר הזמנות, איסוף ומשלוחים. Kitchen פותח מלאי, מתכונים, ספקים וכלי הכנה. כל פעולה דורשת גם את הרשאת התפקיד במסעדה. חיוב מציג את הרישיונות שבהצעה ואת היקף הניסיון או המנוי ששולם. מסעדות שלא נרשמו לפיילוט ממשיכות בחוזה שלהן."
+          "fr": "Les modules de départ suivent la grille publique : Restaurant pour la caisse et la salle, Commandes pour le site et la livraison, Cuisine pour les stocks et la préparation. Pour une offre versionnée, la composition publiée puis acceptée fixe précisément les fonctionnalités et quotas accessibles. Les droits du rôle restent nécessaires. Une page verrouillée dans Admin explique quelle offre inclut la fonctionnalité et invite le propriétaire à ouvrir Facturation. Une modification du catalogue ne réécrit pas les droits acceptés. Les restaurants sans inscription au catalogue versionné gardent leur contrat et leurs contrôles existants.",
+          "en": "Initial modules follow the public grid: Restaurant for POS and table service, Orders for the website and delivery, Kitchen for inventory and preparation. For a versioned offer, the published and then accepted composition defines accessible capabilities and quotas precisely. Role permissions remain necessary. A locked Admin page explains which offer includes the feature and invites the owner to Billing. Editing the catalogue does not rewrite accepted rights. Restaurants outside versioned onboarding keep their contract and existing checks.",
+          "he": "מודולי הפתיחה תואמים למחירון הציבורי: מסעדה לקופה ולשירות בשולחן, הזמנות לאתר ולמשלוחים, ומטבח למלאי ולהכנות. בהצעה עם גרסה, ההרכב שפורסם ואושר מגדיר בדיוק את היכולות והמכסות הזמינות. הרשאות התפקיד עדיין נדרשות. דף נעול בניהול מסביר איזו הצעה כוללת את היכולת ומפנה את הבעלים לחיוב. עריכת הקטלוג אינה משנה זכויות שאושרו. מסעדות שאינן רשומות לקטלוג עם גרסאות שומרות על החוזה והבדיקות הקיימים."
+        }
+      },
+      {
+        "id": "commercial-licences",
+        "title": {
+          "fr": "Configurer les deux quotas et les offres personnalisées",
+          "en": "Configure separate quotas and custom offers",
+          "he": "הגדרת מכסות נפרדות והצעות מותאמות"
+        },
+        "instructions": {
+          "fr": "Pour les nouvelles offres versionnées en sandbox, distinguez **Total accounts, including owner** et **Physical POS devices**. Un compte employé n’est pas un appareil. Une limite vide dans ces deux champs signifie illimité ; un nombre fixe impose un quota. Les utilisateurs caisse nominatifs, accès chef et écrans cuisine ont aussi leurs quantités explicites. Le propriétaire compte une fois et les invitations en attente réservent une place. Le rôle détermine si le compte consomme un accès caisse ou chef. Dans **Custom offer**, choisissez un plan de base ou des modules, puis les licences supplémentaires incluses dans le prix convenu. Le prix personnalisé couvre l’ensemble de cette composition, y compris des licences normalement sur devis. Choisissez séparément la durée et les modules de l’essai ; la durée minimale reste 14 jours. Aucun contrat existant n’est migré automatiquement.",
+          "en": "For new versioned sandbox offers, distinguish **Total accounts, including owner** from **Physical POS devices**. An employee account is not a device. A blank limit for these two fields means unlimited; a number imposes a quota. Named POS users, chef access and kitchen displays also have explicit quantities. The owner counts once and pending invitations reserve capacity. The role determines whether an account consumes POS or chef access. In **Custom offer**, choose a base plan or modules, then additional licences included in the agreed amount. The custom price covers the whole composition, including normally quoted licences. Choose the trial duration and modules separately; the minimum remains 14 days. Existing contracts are never migrated automatically.",
+          "he": "בהצעות חדשות עם גרסה בסביבת הבדיקות הבחינו בין **Total accounts, including owner** לבין **Physical POS devices**. חשבון עובד אינו מכשיר. שדה מכסה ריק בשני שדות אלה פירושו ללא הגבלה; מספר מגדיר מגבלה. גם למשתמשי קופה אישיים, גישות שף ומסכי מטבח יש כמויות מפורשות. הבעלים נספר פעם אחת והזמנות ממתינות שומרות מקום. התפקיד קובע אם החשבון צורך גישת קופה או שף. ב־**Custom offer** בחרו מסלול בסיס או מודולים ואז רישיונות נוספים הכלולים במחיר המוסכם. המחיר המותאם מכסה את כל ההרכב, כולל רישיונות שבדרך כלל דורשים הצעת מחיר. בחרו בנפרד משך ומודולים לניסיון; המינימום נשאר 14 יום. חוזים קיימים אינם מועברים אוטומטית."
         }
       }
     ],
@@ -4530,12 +4615,25 @@
           "en": "On iPad, Card uses the [default terminal set in Hardware](/en/help/payments/victa-mini#explicit-terminal-selection). For a pending attempt, resume the original payment.",
           "he": "ב־iPad, בחירה בכרטיס משתמשת ב[מסוף ברירת המחדל שהוגדר בחומרה](/he/help/payments/victa-mini#explicit-terminal-selection). אם ניסיון תשלום עדיין ממתין, חזרו לתשלום המקורי."
         }
+      },
+      {
+        "id": "versioned-commercial-access",
+        "title": {
+          "fr": "Accès commercial en développement",
+          "en": "Commercial access in development",
+          "he": "גישה מסחרית בסביבת הפיתוח"
+        },
+        "instructions": {
+          "fr": "Dans les nouvelles offres de développement, l’accès dépend aussi des fonctions et licences souscrites. Voir [Facturation](/fr/help/account/subscription#versioned-sandbox-additions). Les contrats existants sont conservés.",
+          "en": "New development offers also require purchased features and licences. See [Billing](/en/help/account/subscription#versioned-sandbox-additions). Existing contracts remain unchanged.",
+          "he": "בהצעות חדשות בסביבת הפיתוח נדרשות גם יכולות ורישיונות שנרכשו. ראו [חיוב](/he/help/account/subscription#versioned-sandbox-additions). חוזים קיימים נשמרים."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": true,
-    "procedureUpdatedAt": "2026-11-11",
+    "procedureUpdatedAt": "2026-11-15",
     "updatedAt": "2026-11-12"
   },
   {
@@ -5785,12 +5883,25 @@
           "fr": "Un encaissement carte natif non résolu réserve sa commande et son terminal d’origine. Ne modifiez pas son contenu financier et ne lancez pas un autre paiement ; la préparation et les réglages de traitement restent indépendants. Consultez le [choix Mini/Portable et la reprise](/fr/help/payments/victa-mini#explicit-terminal-selection).",
           "he": "גביית כרטיס מקומית שלא הוכרעה שומרת על ההזמנה ועל המסוף המקוריים משוריינים. אין לשנות את תוכנה הכספי או להתחיל גבייה אחרת; התקדמות המטבח והגדרות הטיפול נשארות עצמאיות. ראו [בחירת Mini/Portable ושחזור](/he/help/payments/victa-mini#explicit-terminal-selection)."
         }
+      },
+      {
+        "id": "versioned-commercial-access",
+        "title": {
+          "fr": "Accès commercial en développement",
+          "en": "Commercial access in development",
+          "he": "גישה מסחרית בסביבת הפיתוח"
+        },
+        "instructions": {
+          "fr": "Pour un restaurant inscrit au catalogue versionné de développement, cette fonction doit être incluse dans son offre ou dans son essai actif, en plus des autorisations du rôle. Une fonctionnalité retirée est refusée côté serveur. Consultez Facturation pour voir les modules et les licences, puis faites examiner un ajout par le propriétaire. Les quotas de comptes et de postes POS sont distincts ; un dépassement nécessite les licences correspondantes. Les contrats historiques ne sont pas modifiés automatiquement.",
+          "en": "For a restaurant enrolled in the versioned development catalogue, this function must be included in its offer or active trial as well as permitted by the staff role. An excluded feature is rejected by the server. Check Billing for modules and licences, then ask the owner to review an addition. Account and physical POS quotas are separate; exceeding a quota requires the corresponding licences. Historical contracts are not automatically changed.",
+          "he": "במסעדה הרשומה לקטלוג עם גרסה בסביבת הפיתוח, היכולת חייבת להיות כלולה בהצעה או בניסיון הפעיל וכן מותרת לפי תפקיד העובד. יכולת מוחרגת נדחית בשרת. בחיוב אפשר לבדוק מודולים ורישיונות ולבקש מהבעלים לבחון תוספת. מכסות חשבונות ועמדות קופה נפרדות; חריגה דורשת את הרישיונות המתאימים. חוזים היסטוריים אינם משתנים אוטומטית."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-11-02",
+    "procedureUpdatedAt": "2026-11-15",
     "updatedAt": "2026-10-20"
   },
   {
@@ -6122,12 +6233,25 @@
           "fr": "Un encaissement carte natif non résolu réserve sa commande et son terminal d’origine. Ne modifiez pas son contenu financier et ne lancez pas un autre paiement ; la préparation et les réglages de traitement restent indépendants. Consultez le [choix Mini/Portable et la reprise](/fr/help/payments/victa-mini#explicit-terminal-selection).",
           "he": "גביית כרטיס מקומית שלא הוכרעה שומרת על ההזמנה ועל המסוף המקוריים משוריינים. אין לשנות את תוכנה הכספי או להתחיל גבייה אחרת; התקדמות המטבח והגדרות הטיפול נשארות עצמאיות. ראו [בחירת Mini/Portable ושחזור](/he/help/payments/victa-mini#explicit-terminal-selection)."
         }
+      },
+      {
+        "id": "versioned-commercial-access",
+        "title": {
+          "fr": "Accès commercial en développement",
+          "en": "Commercial access in development",
+          "he": "גישה מסחרית בסביבת הפיתוח"
+        },
+        "instructions": {
+          "fr": "Pour un restaurant inscrit au catalogue versionné de développement, cette fonction doit être incluse dans son offre ou dans son essai actif, en plus des autorisations du rôle. Une fonctionnalité retirée est refusée côté serveur. Consultez Facturation pour voir les modules et les licences, puis faites examiner un ajout par le propriétaire. Les quotas de comptes et de postes POS sont distincts ; un dépassement nécessite les licences correspondantes. Les contrats historiques ne sont pas modifiés automatiquement.",
+          "en": "For a restaurant enrolled in the versioned development catalogue, this function must be included in its offer or active trial as well as permitted by the staff role. An excluded feature is rejected by the server. Check Billing for modules and licences, then ask the owner to review an addition. Account and physical POS quotas are separate; exceeding a quota requires the corresponding licences. Historical contracts are not automatically changed.",
+          "he": "במסעדה הרשומה לקטלוג עם גרסה בסביבת הפיתוח, היכולת חייבת להיות כלולה בהצעה או בניסיון הפעיל וכן מותרת לפי תפקיד העובד. יכולת מוחרגת נדחית בשרת. בחיוב אפשר לבדוק מודולים ורישיונות ולבקש מהבעלים לבחון תוספת. מכסות חשבונות ועמדות קופה נפרדות; חריגה דורשת את הרישיונות המתאימים. חוזים היסטוריים אינם משתנים אוטומטית."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-11-02",
+    "procedureUpdatedAt": "2026-11-15",
     "updatedAt": "2026-10-20"
   },
   {
@@ -10255,12 +10379,25 @@
           "en": "Compatible versions add delivery-zone ordering deadlines and prepared-product stock per article, each explicitly enabled for the restaurant. They preserve pickup, sale limits and other restaurants. The default preparation promise applies before products are selected; the calendar is recalculated with the basket. Read [combined rules](/en/help/orders/preorders-and-batches#product-stock-and-zone-deadlines) before configuring or simulating an order.",
           "he": "גרסאות תואמות מוסיפות מועדי הזמנה לפי אזור משלוח ומלאי מוצרים מוכנים לפי פריט, כל אחד מופעל במפורש במסעדה. הם משמרים איסוף עצמי, מגבלות מכירה ומסעדות אחרות. ברירת המחדל להכנה חלה לפני בחירת מוצרים; לוח הזמנים מחושב מחדש עם הסל. קראו על [שילוב הכללים](/he/help/orders/preorders-and-batches#product-stock-and-zone-deadlines) לפני הגדרה או סימולציה של הזמנה."
         }
+      },
+      {
+        "id": "versioned-commercial-access",
+        "title": {
+          "fr": "Accès commercial en développement",
+          "en": "Commercial access in development",
+          "he": "גישה מסחרית בסביבת הפיתוח"
+        },
+        "instructions": {
+          "fr": "Pour un restaurant inscrit au catalogue versionné de développement, cette fonction doit être incluse dans son offre ou dans son essai actif, en plus des autorisations du rôle. Une fonctionnalité retirée est refusée côté serveur. Consultez Facturation pour voir les modules et les licences, puis faites examiner un ajout par le propriétaire. Les quotas de comptes et de postes POS sont distincts ; un dépassement nécessite les licences correspondantes. Les contrats historiques ne sont pas modifiés automatiquement.",
+          "en": "For a restaurant enrolled in the versioned development catalogue, this function must be included in its offer or active trial as well as permitted by the staff role. An excluded feature is rejected by the server. Check Billing for modules and licences, then ask the owner to review an addition. Account and physical POS quotas are separate; exceeding a quota requires the corresponding licences. Historical contracts are not automatically changed.",
+          "he": "במסעדה הרשומה לקטלוג עם גרסה בסביבת הפיתוח, היכולת חייבת להיות כלולה בהצעה או בניסיון הפעיל וכן מותרת לפי תפקיד העובד. יכולת מוחרגת נדחית בשרת. בחיוב אפשר לבדוק מודולים ורישיונות ולבקש מהבעלים לבחון תוספת. מכסות חשבונות ועמדות קופה נפרדות; חריגה דורשת את הרישיונות המתאימים. חוזים היסטוריים אינם משתנים אוטומטית."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-11-09",
+    "procedureUpdatedAt": "2026-11-15",
     "updatedAt": "2026-10-20"
   },
   {
@@ -10781,6 +10918,19 @@
           "en": "On a compatible version of FoodyPOS, open **More → Settings → Hardware**. Select the device, choose **Forget device**, then confirm its name. For a standalone printer, open **Printers**, select it, and use the **…** menu. For a Verifone terminal, open **Payment terminals** and select the terminal. You need permission to manage all of the selected device’s functions.\n\nThe device’s Foody connections and assignments are removed. A POS that you remove must be authorized again to use its device access. Payments, closed cash reports and completed print jobs stay in history. Close any open cash drawer session before removing its POS. If you remove the main register, designate a replacement in Reports.",
           "fr": "Sur une version compatible de FoodyPOS, ouvrez **Plus → Paramètres → Matériel**. Ouvrez la fiche voulue, choisissez **Oublier l’appareil**, puis confirmez son nom. Pour une imprimante autonome, ouvrez **Imprimantes**, sélectionnez-la et utilisez le menu **…**. Pour un terminal Verifone, ouvrez **Terminaux de paiement** et sélectionnez le terminal. Vous devez avoir le droit de gérer toutes les fonctions de l’appareil sélectionné.\n\nLes connexions et affectations Foody liées à l’appareil sont retirées. Pour réutiliser une caisse retirée, autorisez à nouveau l’appareil. Les paiements, rapports de caisse clôturés et impressions terminées restent dans l’historique. Clôturez la session de caisse ouverte avant de retirer sa caisse. Si vous retirez la caisse principale, désignez sa remplaçante dans Rapports.",
           "he": "בגרסה תואמת של FoodyPOS, פתחו **עוד ← הגדרות ← חומרה**. בחרו את המכשיר, לחצו על **הסרת מכשיר** ואשרו את שמו. למדפסת עצמאית, פתחו **מדפסות**, בחרו בה והשתמשו בתפריט **…**. למסוף Verifone, פתחו **מסופי תשלום** ובחרו את המסוף. נדרשת הרשאה לניהול כל היכולות של המכשיר שנבחר.\n\nהחיבורים והשיוכים של המכשיר ב־Foody מוסרים. כדי להשתמש בגישת קופה שהוסרה יש לאשר מחדש את המכשיר. תשלומים, דוחות קופה סגורים והדפסות שהושלמו נשארים בהיסטוריה. סגרו משמרת מגירת מזומן פתוחה לפני הסרת הקופה שלה. אם הסרתם את הקופה הראשית, הגדירו קופה מחליפה במסך הדוחות."
+        }
+      },
+      {
+        "id": "commercial-device-capacity",
+        "title": {
+          "fr": "Distinguer comptes et postes autorisés",
+          "en": "Distinguish accounts and authorized devices",
+          "he": "הפרדה בין חשבונות למכשירים מאושרים"
+        },
+        "instructions": {
+          "fr": "Pour les offres versionnées de développement, Personnel → Appareils affiche la capacité de postes POS séparément des comptes employés. Réautoriser le même appareil identifié ne consomme pas une nouvelle place ; un second appareil au-delà du quota est refusé et le propriétaire doit ajouter une licence depuis Facturation. Une autorisation révoquée ou expirée ne compte plus dans les postes actifs. Les écrans cuisine ont leur propre quantité contractuelle ; la création d’une nouvelle station est refusée lorsque celle-ci est atteinte. Les contrats historiques gardent leurs droits.",
+          "en": "For versioned development offers, Staff → Devices shows physical POS capacity separately from employee accounts. Reauthorizing the same identified device does not consume another slot; a second device above the limit is rejected and the owner must add a licence in Billing. Revoked or expired credentials no longer count as active POS devices. Kitchen displays have their own contracted quantity; adding a new station is rejected at that limit. Historical contracts keep their rights.",
+          "he": "בהצעות עם גרסה בסביבת הפיתוח, צוות ← מכשירים מציג מכסת עמדות קופה בנפרד מחשבונות עובדים. אישור חוזר של אותו מכשיר מזוהה אינו צורך מקום נוסף; מכשיר שני מעבר למכסה נדחה והבעלים צריכים להוסיף רישיון בחיוב. הרשאה שבוטלה או פגה אינה נספרת כעמדה פעילה. למסכי מטבח יש כמות חוזית נפרדת; יצירת תחנה נוספת נדחית כשהכמות נוצלה. חוזים היסטוריים שומרים על זכויותיהם."
         }
       }
     ],
@@ -13869,12 +14019,25 @@
           "fr": "Si le site vous demande de choisir un mode au départ, sélectionnez Retrait ou Livraison et confirmez le lieu, l’adresse ou le créneau demandé. Si l’étape Retrait ou Livraison propose de vous connecter, vous pouvez aussi choisir Commander sans compte. Si le statut Connecté apparaît, vous pouvez aussi [vous déconnecter et poursuivre sans compte](/fr/help/guest/tracking-and-account#order-as-guest-after-sign-out). Dans l’en-tête mobile compact, le titre et l’icône du menu restent visibles pendant le défilement. Ouvrez le menu latéral puis sélectionnez Changer de mode. Dans l’en-tête standard, cliquez sur le mode affiché. Confirmez l’adresse ou le créneau applicable. Votre panier vous suit. L’ajout depuis une story et la reprise des achats depuis le panier ouvrent directement la carte. Si le mode reste à choisir, sélectionnez retrait ou livraison sur la carte ou dans le panier avant le paiement.\n\nDans une version compatible de l’app installée, ouvrez l’onglet Commander. Le titre de commande reste en haut pendant le défilement. Touchez sa flèche de retour lorsqu’elle est affichée pour revenir au choix du mode. Remontez en haut de la carte pour retrouver le créneau et le lieu.",
           "he": "אם האתר מבקש לבחור אופן הזמנה בהתחלה, בחרו איסוף או משלוח ואשרו את המיקום, הכתובת או השעה המבוקשים. אם מופיעה הצעת התחברות במסך האיסוף או המשלוח, אפשר לבחור גם להזמין ללא חשבון. בכותרת הקומפקטית בנייד, הכותרת וסמל התפריט נשארים גלויים בזמן הגלילה. פתחו את תפריט הצד ובחרו שינוי אופן ההזמנה. בכותרת הרגילה לחצו על אופן ההזמנה המוצג. אשרו את הכתובת או השעה לפי הצורך. העגלה נשמרת. הוספה מסטורי או המשך קנייה מהעגלה פותחים את התפריט ישירות. אם טרם בחרתם, בחרו איסוף או משלוח בתפריט או בעגלה לפני התשלום. אם מופיע הסטטוס מחובר/ת לחשבון, אפשר גם [להתנתק ולהמשיך ללא חשבון](/he/help/guest/tracking-and-account#order-as-guest-after-sign-out).\n\nבגרסה תואמת של האפליקציה המותקנת, פתחו את לשונית ההזמנה. כותרת ההזמנה נשארת בראש המסך בגלילה. אם מופיע חץ חזרה, לחצו עליו כדי לחזור לבחירת אופן ההזמנה. גללו בחזרה לראש התפריט כדי לראות שוב את המועד והמיקום."
         }
+      },
+      {
+        "id": "versioned-commercial-access",
+        "title": {
+          "fr": "Accès commercial en développement",
+          "en": "Commercial access in development",
+          "he": "גישה מסחרית בסביבת הפיתוח"
+        },
+        "instructions": {
+          "fr": "Pour un restaurant inscrit au catalogue versionné de développement, cette fonction doit être incluse dans son offre ou dans son essai actif, en plus des autorisations du rôle. Une fonctionnalité retirée est refusée côté serveur. Consultez Facturation pour voir les modules et les licences, puis faites examiner un ajout par le propriétaire. Les quotas de comptes et de postes POS sont distincts ; un dépassement nécessite les licences correspondantes. Les contrats historiques ne sont pas modifiés automatiquement.",
+          "en": "For a restaurant enrolled in the versioned development catalogue, this function must be included in its offer or active trial as well as permitted by the staff role. An excluded feature is rejected by the server. Check Billing for modules and licences, then ask the owner to review an addition. Account and physical POS quotas are separate; exceeding a quota requires the corresponding licences. Historical contracts are not automatically changed.",
+          "he": "במסעדה הרשומה לקטלוג עם גרסה בסביבת הפיתוח, היכולת חייבת להיות כלולה בהצעה או בניסיון הפעיל וכן מותרת לפי תפקיד העובד. יכולת מוחרגת נדחית בשרת. בחיוב אפשר לבדוק מודולים ורישיונות ולבקש מהבעלים לבחון תוספת. מכסות חשבונות ועמדות קופה נפרדות; חריגה דורשת את הרישיונות המתאימים. חוזים היסטוריים אינם משתנים אוטומטית."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-11-12"
+    "procedureUpdatedAt": "2026-11-15"
   },
   {
     "id": "guest-account-tracking",
@@ -14314,11 +14477,25 @@
           "fr": "Utilisez Démonstration/Contact avec les coordonnées professionnelles demandées et attendez la confirmation. Le centre d’aide public est à /fr/help, /he/help et /en/help. L’assistant explique les procédures publiées sans accès ni modification de compte. N’envoyez ni secrets ni données de carte.",
           "he": "השתמשו בהדגמה או קשר עם פרטי עסק והמתינו לאישור. מרכז העזרה ציבורי ב-/fr/help, /he/help ו-/en/help. העוזר מסביר מדריכים ללא גישה או שינוי בחשבון. אין לשלוח סודות או פרטי כרטיס."
         }
+      },
+      {
+        "id": "published-catalogue",
+        "title": {
+          "fr": "Consulter la grille publiée",
+          "en": "Read the published catalogue",
+          "he": "עיון במחירון שפורסם"
+        },
+        "instructions": {
+          "fr": "Dans la version reliée au catalogue commercial, la page Tarifs affiche les modules, les formules publiques, leurs fonctionnalités et leurs quantités incluses. Les prix sont en shekels, hors TVA. Les licences de comptes et de postes physiques sont distinctes. Sur devis signifie qu’un montant doit être convenu avec Foody. Les tarifs affichés correspondent à l’environnement consulté et peuvent prendre une minute à s’actualiser après publication. Un catalogue indisponible affiche un message de contact. Modifier le catalogue ne réécrit pas une offre déjà acceptée ; consulter la page ne déclenche aucun paiement. Maps Plus reste en préparation.",
+          "en": "In the version connected to the commercial catalogue, Pricing displays modules, public plans, their features and included quantities. Prices are in shekels excluding VAT. Account and physical-device licences are separate. Quotation means an amount must be agreed with Foody. Displayed rates belong to the environment being viewed and can take one minute to update after publication. An unavailable catalogue displays a contact message. Catalogue edits do not rewrite an accepted offer; viewing the page starts no payment. Maps Plus remains in preparation.",
+          "he": "בגרסה המחוברת לקטלוג המסחרי, דף המחירים מציג מודולים, מסלולים ציבוריים, יכולות וכמויות כלולות. המחירים בשקלים לפני מע״מ. רישיונות לחשבונות ולמכשירים פיזיים נפרדים. הצעת מחיר פירושה שיש להסכים על הסכום עם Foody. המחירים שייכים לסביבה הנצפית ועשויים להתעדכן עד דקה לאחר הפרסום. קטלוג שאינו זמין מציג הודעת יצירת קשר. עריכת קטלוג אינה משנה הצעה שכבר אושרה; צפייה בדף אינה מתחילה תשלום. Maps Plus עדיין בהכנה."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
-    "preserveExisting": false
+    "preserveExisting": false,
+    "procedureUpdatedAt": "2026-11-15"
   },
   {
     "id": "backoffice-access",
@@ -14484,6 +14661,19 @@
           "fr": "Dans Restaurants, recherchez par nom ou par slug. Dans Users, recherchez par nom, e-mail ou téléphone et choisissez un rôle si nécessaire. Utilisez **Clear search** ou **Clear filters** pour retrouver la liste complète. En cas d’échec, **Retry** relance la dernière recherche.",
           "he": "ב־Restaurants אפשר לחפש לפי שם או מזהה כתובת. ב־Users אפשר לחפש לפי שם, דוא״ל או טלפון ולסנן לפי תפקיד. בחרו **Clear search** או **Clear filters** כדי לחזור לרשימה המלאה. אם הבקשה נכשלה, **Retry** מפעיל מחדש את החיפוש האחרון."
         }
+      },
+      {
+        "id": "versioned-commercial-access",
+        "title": {
+          "fr": "Accès commercial en développement",
+          "en": "Commercial access in development",
+          "he": "גישה מסחרית בסביבת הפיתוח"
+        },
+        "instructions": {
+          "fr": "Pour un restaurant inscrit au catalogue versionné de développement, cette fonction doit être incluse dans son offre ou dans son essai actif, en plus des autorisations du rôle. Une fonctionnalité retirée est refusée côté serveur. Consultez Facturation pour voir les modules et les licences, puis faites examiner un ajout par le propriétaire. Les quotas de comptes et de postes POS sont distincts ; un dépassement nécessite les licences correspondantes. Les contrats historiques ne sont pas modifiés automatiquement.",
+          "en": "For a restaurant enrolled in the versioned development catalogue, this function must be included in its offer or active trial as well as permitted by the staff role. An excluded feature is rejected by the server. Check Billing for modules and licences, then ask the owner to review an addition. Account and physical POS quotas are separate; exceeding a quota requires the corresponding licences. Historical contracts are not automatically changed.",
+          "he": "במסעדה הרשומה לקטלוג עם גרסה בסביבת הפיתוח, היכולת חייבת להיות כלולה בהצעה או בניסיון הפעיל וכן מותרת לפי תפקיד העובד. יכולת מוחרגת נדחית בשרת. בחיוב אפשר לבדוק מודולים ורישיונות ולבקש מהבעלים לבחון תוספת. מכסות חשבונות ועמדות קופה נפרדות; חריגה דורשת את הרישיונות המתאימים. חוזים היסטוריים אינם משתנים אוטומטית."
+        }
       }
     ],
     "audience": "internal",
@@ -14532,19 +14722,6 @@
       ]
     },
     "operations": [
-      {
-        "id": "backoffice-software-catalogue",
-        "title": {
-          "en": "Check public rates and module features",
-          "fr": "Consulter les tarifs publics et les fonctions par module",
-          "he": "בדיקת מחירים ציבוריים ויכולות לפי מודול"
-        },
-        "instructions": {
-          "en": "As a Foody superadmin, open **Plans & modules**. The page shows the monthly software price excluding VAT per location, the included licences and the additional named POS licence. Use the feature table to see which module grants each listed flag. Staff roles and restaurant settings still apply. Select **View public pricing** for setup, hardware and payment service prices.",
-          "fr": "Comme superadmin Foody, ouvrez **Plans & modules**. La page affiche le prix logiciel mensuel HT par établissement, les licences incluses et le prix d’une licence de caisse nominative supplémentaire. Consultez le tableau pour savoir quel module ouvre chaque fonction affichée. Les rôles et les réglages du restaurant continuent de s’appliquer. Sélectionnez **View public pricing** pour voir les prix de mise en service, du matériel et des services de paiement.",
-          "he": "כמנהל על של Foody פתחו **Plans & modules**. העמוד מציג את מחיר התוכנה החודשי לפני מע״מ לכל סניף, את הרישיונות הכלולים ואת המחיר של רישיון קופה אישי נוסף. בטבלה אפשר לראות איזה מודול מאפשר כל יכולת שמוצגת. ההרשאות של הצוות והגדרות המסעדה ממשיכות לחול. בחרו **View public pricing** למחירי התקנה, ציוד ושירותי תשלום."
-        }
-      },
       {
         "id": "backoffice-restaurant-subscription",
         "title": {
@@ -14686,6 +14863,19 @@
           "en": "Confirm the API label, then open **Payments & devices → Cibus (Pluxee)**. Use **Retry** if the current settings fail to load. For an approved update, verify the Cibus environment and endpoint, enter any new integrator credentials supplied by Cibus, and choose **Save Cibus settings**. Check the saved confirmation. Maintain each restaurant’s terminal identifiers in Foody Admin.",
           "fr": "Vérifiez le libellé de l’API, puis ouvrez **Payments & devices → Cibus (Pluxee)**. Cliquez sur **Retry** si les réglages ne se chargent pas. Pour une mise à jour approuvée, vérifiez l’environnement et l’URL Cibus, saisissez les éventuels nouveaux identifiants fournis par Cibus et cliquez sur **Save Cibus settings**. Vérifiez la confirmation. Les identifiants du terminal de chaque restaurant se gèrent dans Foody Admin.",
           "he": "בדקו את שם ה־API ופתחו את **Payments & devices** ואז את **Cibus (Pluxee)**. אם ההגדרות לא נטענו, לחצו על **Retry**. לעדכון מאושר בדקו את סביבת Cibus ואת כתובת השירות, הזינו פרטי אינטגרציה חדשים אם Cibus סיפקה אותם ולחצו על **Save Cibus settings**. בדקו את אישור השמירה. את מזהי המסוף של כל מסעדה מנהלים ב־Foody Admin."
+        }
+      },
+      {
+        "id": "backoffice-software-catalogue",
+        "title": {
+          "fr": "Modifier les formules, modules et tarifs",
+          "en": "Edit plans, modules and prices",
+          "he": "עריכת מסלולים, מודולים ומחירים"
+        },
+        "instructions": {
+          "fr": "Dans le Backoffice de développement, ouvrez **Plans & modules**. Dans **Modules**, choisissez un module et modifiez son prix mensuel HT, ses quantités incluses et les fonctionnalités cochées. Les fonctionnalités sont classées par catégorie ; la recherche retrouve chaque ligne. Respectez les dépendances indiquées. Dans **Plans**, créez une formule, choisissez ses modules, son prix, ses quotas propres, les fonctionnalités ajoutées ou exclues et sa visibilité publique. Renseignez les noms français, anglais et hébreu. **All prices** contient les tarifs de mise en service, matériel, licences et services : un montant vide signifie sur devis, zéro signifie inclus ; une ligne de quantité représente une allocation, pas un prix. **Review changes**, puis **Publish new version** publient une nouvelle version. Un conflit de version conserve le brouillon ; rechargez puis réappliquez les changements. La page Tarifs utilise le catalogue de son environnement, avec un cache pouvant durer une minute. Les contrats acceptés, paiements en cours, invitations et essais déjà configurés gardent leur version.",
+          "en": "In the development Backoffice open **Plans & modules**. In **Modules**, select a module and edit its monthly price excluding VAT, included quantities and checked features. Features are categorized and individually searchable. Respect the displayed dependencies. In **Plans**, create a plan and choose its modules, price, own quotas, added or excluded features and public visibility. Enter French, English and Hebrew names. **All prices** contains setup, equipment, licence and service rates: blank means quotation, zero means included; a quantity row represents an allowance, not a price. **Review changes**, then **Publish new version** publish a new revision. A version conflict retains the draft; reload and reapply your changes. Pricing reads its environment’s catalogue and may cache it for one minute. Accepted contracts, pending payments, existing invitations and configured trials keep their version.",
+          "he": "ב־Backoffice בסביבת הפיתוח פתחו **Plans & modules**. בלשונית **Modules** בחרו מודול וערכו מחיר חודשי לפני מע״מ, כמויות כלולות ויכולות מסומנות. היכולות מחולקות לקטגוריות וניתנות לחיפוש בנפרד. הקפידו על התלויות המוצגות. בלשונית **Plans** צרו מסלול ובחרו מודולים, מחיר, מכסות נפרדות, יכולות נוספות או מוחרגות ונראות ציבורית. הזינו שמות בעברית, באנגלית ובצרפתית. **All prices** כוללת מחירי הקמה, ציוד, רישיונות ושירותים: סכום ריק פירושו הצעת מחיר, אפס פירושו כלול; שורת כמות היא הקצאה ולא מחיר. בחרו **Review changes** ואז **Publish new version** לפרסום גרסה. בהתנגשות גרסאות הטיוטה נשמרת; טענו מחדש והחילו את השינויים. דף המחירים קורא את הקטלוג של אותה סביבה ועשוי לשמור אותו במטמון למשך דקה. חוזים שאושרו, תשלומים בתהליך, הזמנות קיימות ותקופות ניסיון שהוגדרו שומרים על גרסתם."
         }
       }
     ],
@@ -17297,12 +17487,25 @@
           "en": "With the compatible Admin version, add items and choose Continue. Checkout contains Handover and customer, then Payment and confirmation; Event / Catering adds an Event step between them. In Handover and customer, choose pickup or delivery, its date and window, then enter customer details and an address when needed. For an eligible Sumit restaurant, select The customer will complete their details through the Foody link when the recipient should provide those answers: missing contact and event answers then do not block link creation. In Event, enter guests, date and time; other fields are under Additional information. Date, address and contact reuse buttons copy values only after your click; review them after changes. Information to request from the customer groups requirements and permission to change the event date and time. In Payment and confirmation, explicitly choose payment, review any deposit/authorization terms, discount, items and total, then use the final action. Navigating between steps never confirms receipt of money.\n\nUnder Handover and customer, enter the street, number and city in Delivery address. Select a complete address from the Google suggestions. The delivery zone determines the automatic fee. If none of the suggestions match, choose Enter the address manually and enter the street and city. After editing the address, wait for the new automatic fee. If the check fails, review the address and select Retry, or set the agreed fixed fee.\n\nPrevious and visited step titles let you go back. Continue validates required fields before advancing; selecting a previously visited later step repeats that validation. Entered details, payment choice, fees and discounts remain in memory on return, including Back to items. An applied percentage discount is recalculated for the current items. Changing the received-payment method or amount requires acknowledging receipt again. Reloading a saved local draft does not restore financial exceptions: review them again.\n\nWhen a step has errors, all affected fields have a red outline and a specific message. The panel focuses the first field; the correction list opens other fields, including collapsed sections or earlier steps. Correct the fields and choose Continue. A time window needs both start and end, with end strictly after start; 12:00–12:00 is rejected. Event time can equal the handover end. A window ending after the event starts shows a warning to review, without imposing an installation delay. Switching from a link to manual payment may require completing customer and event answers.\n\nOn the final Payment and confirmation step, answer Add to production plan: Yes or No. Neither option is selected initially. Submitting without an answer outlines both options in red and focuses the choice. Yes requests inclusion subject to the order’s confirmation conditions; an ordinary Sumit link waits for confirmed payment and events retain their validation requirements. No excludes the order from the plan, including after scheduling or payment. The choice survives earlier steps and payment changes. Earlier steps have no production banner. Failed creation preserves the form; check a saved order before retrying an uncertain result.",
           "he": "בגרסת Admin התואמת, הוסיפו פריטים ובחרו המשך. הסיום כולל קבלת ההזמנה ופרטי לקוח ואז תשלום ואישור; אירוע / קייטרינג מוסיף שלב אירוע ביניהם. בקבלת ההזמנה ופרטי לקוח בחרו איסוף או משלוח, תאריך וחלון זמן, והזינו פרטי לקוח וכתובת לפי הצורך. במסעדה זכאית עם Sumit סמנו הלקוח ישלים את הפרטים דרך קישור Foody כאשר הנמען אמור לענות: פרטי קשר ואירוע חסרים לא יחסמו אז את יצירת הקישור. באירוע הזינו אורחים, תאריך ושעה; שאר השדות נמצאים במידע נוסף. כפתורי העתקת תאריך, כתובת ופרטי קשר מעתיקים ערכים רק לאחר לחיצה; בדקו אותם לאחר שינוי. פרטים לבקשה מהלקוח מרכז את דרישות החובה ואת ההרשאה לשנות תאריך ושעת אירוע. בתשלום ואישור בחרו תשלום במפורש, בדקו תנאי מקדמה ותפיסת מסגרת אם קיימים, הנחה, פריטים וסכום, והפעילו את הפעולה הסופית. מעבר בין שלבים אינו מאשר קבלת כסף.\n\nבשלב קבלת ההזמנה ופרטי לקוח הזינו רחוב, מספר בית ועיר בשדה כתובת למשלוח. בחרו כתובת מלאה מההצעות של Google. דמי המשלוח האוטומטיים נקבעים לפי אזור המשלוח. אם אין הצעה מתאימה, בחרו הזנת כתובת ידנית ומלאו רחוב ועיר. לאחר שינוי הכתובת המתינו לחישוב דמי המשלוח מחדש. אם הבדיקה נכשלת, בדקו את הכתובת ובחרו ניסיון חוזר, או קבעו את דמי המשלוח הקבועים שסוכמו.\n\nהקודם וכותרות שלבים שכבר בוקרו מאפשרים לחזור. המשך בודק שדות נדרשים לפני התקדמות; בחירת שלב מאוחר שכבר בוקר בודקת אותם שוב. הפרטים, בחירת התשלום, דמי המשלוח וההנחות נשמרים בזיכרון בחזרה, גם בחזרה לפריטים. הנחה באחוזים שהוחלה מחושבת מחדש לפי הפריטים הנוכחיים. שינוי סכום או אמצעי תשלום שהתקבל דורש אישור קבלה מחדש. טעינה מחדש של טיוטה מקומית אינה משחזרת חריגות כספיות: בדקו אותן שוב.\n\nכשיש שגיאות, כל השדות הרלוונטיים מסומנים במסגרת אדומה ובהודעה מפורטת. המיקוד עובר לשדה הראשון; רשימת התיקונים מאפשרת לפתוח שדות אחרים, גם באזור סגור או בשלב קודם. תקנו ובחרו המשך. חלון זמן דורש התחלה וסיום, ושעת הסיום חייבת להיות מאוחרת מההתחלה; 12:00–12:00 נדחה. שעת האירוע יכולה להיות זהה לסוף חלון המסירה. חלון שמסתיים אחרי תחילת האירוע מציג אזהרה לבדיקה, בלי להחיל זמן התקנה מחייב. מעבר מקישור לתשלום ידני עשוי לדרוש השלמת פרטי לקוח ואירוע.\n\nבשלב האחרון תשלום ואישור בחרו הוסף לתוכנית הייצור: כן או לא. אין בחירה מראש. ניסיון לאשר ללא תשובה מסמן את שתי האפשרויות באדום ומעביר אליהן את המיקוד. כן מבקש הכללה לפי תנאי אישור ההזמנה; קישור Sumit רגיל ממתין לאישור התשלום ואירוע שומר על דרישות האישור שלו. בחירה ב״לא״ משאירה את ההזמנה מחוץ לתוכנית, גם לאחר תזמון או תשלום. הבחירה נשמרת בחזרה לשלבים קודמים ובהחלפת אופן התשלום. בשלבים הקודמים אין באנר ייצור. כשל ביצירה שומר על הטופס; בדקו הזמנה שנשמרה לפני ניסיון חוזר בעקבות תוצאה לא ודאית."
         }
+      },
+      {
+        "id": "versioned-commercial-access",
+        "title": {
+          "fr": "Accès commercial en développement",
+          "en": "Commercial access in development",
+          "he": "גישה מסחרית בסביבת הפיתוח"
+        },
+        "instructions": {
+          "fr": "Pour un restaurant inscrit au catalogue versionné de développement, cette fonction doit être incluse dans son offre ou dans son essai actif, en plus des autorisations du rôle. Une fonctionnalité retirée est refusée côté serveur. Consultez Facturation pour voir les modules et les licences, puis faites examiner un ajout par le propriétaire. Les quotas de comptes et de postes POS sont distincts ; un dépassement nécessite les licences correspondantes. Les contrats historiques ne sont pas modifiés automatiquement.",
+          "en": "For a restaurant enrolled in the versioned development catalogue, this function must be included in its offer or active trial as well as permitted by the staff role. An excluded feature is rejected by the server. Check Billing for modules and licences, then ask the owner to review an addition. Account and physical POS quotas are separate; exceeding a quota requires the corresponding licences. Historical contracts are not automatically changed.",
+          "he": "במסעדה הרשומה לקטלוג עם גרסה בסביבת הפיתוח, היכולת חייבת להיות כלולה בהצעה או בניסיון הפעיל וכן מותרת לפי תפקיד העובד. יכולת מוחרגת נדחית בשרת. בחיוב אפשר לבדוק מודולים ורישיונות ולבקש מהבעלים לבחון תוספת. מכסות חשבונות ועמדות קופה נפרדות; חריגה דורשת את הרישיונות המתאימים. חוזים היסטוריים אינם משתנים אוטומטית."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-11-11",
+    "procedureUpdatedAt": "2026-11-15",
     "updatedAt": "2026-11-04"
   },
   {

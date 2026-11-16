@@ -7,7 +7,7 @@ apps: both
 tags:
   - orders
   - orders-events
-updatedAt: '2026-11-11'
+updatedAt: '2026-11-15'
 featureId: orders-events
 audience: public
 releaseStatus: available
@@ -75,3 +75,9 @@ Précédent et les titres des étapes déjà visitées permettent de revenir. Co
 Si une étape contient des erreurs, tous les champs concernés ont une bordure rouge et un message précis. Le panneau rejoint le premier champ ; la liste des points à corriger permet d’ouvrir les autres, y compris une section repliée ou une étape précédente. Corrigez puis choisissez Continuer. Le début et la fin d’un créneau doivent être tous deux renseignés et la fin strictement postérieure au début ; 12:00–12:00 est refusé. L’heure de l’événement peut être égale à la fin de remise. Un créneau se terminant après le début de l’événement affiche un avertissement à vérifier, sans créer un délai d’installation obligatoire. Passer d’un lien à un paiement manuel peut demander de compléter les coordonnées et réponses événement.
 
 À la dernière étape Paiement et confirmation, répondez à Ajouter au plan de production : Oui ou Non. Aucun choix n’est présélectionné. Valider sans réponse encadre les deux options en rouge et place le focus sur le choix. Oui demande l’inclusion selon les conditions de confirmation de la commande ; un lien Sumit ordinaire attend le paiement confirmé et un événement conserve ses conditions de validation. Non exclut la commande du plan, même après programmation ou paiement. Le choix est conservé lors des retours et changements de règlement. Il n’y a pas de bannière production aux étapes précédentes. Un échec de création conserve le formulaire ; vérifiez une commande enregistrée avant de réessayer un résultat incertain.
+
+<span id="versioned-commercial-access" />
+
+## Accès commercial en développement
+
+Pour un restaurant inscrit au catalogue versionné de développement, cette fonction doit être incluse dans son offre ou dans son essai actif, en plus des autorisations du rôle. Une fonctionnalité retirée est refusée côté serveur. Consultez Facturation pour voir les modules et les licences, puis faites examiner un ajout par le propriétaire. Les quotas de comptes et de postes POS sont distincts ; un dépassement nécessite les licences correspondantes. Les contrats historiques ne sont pas modifiés automatiquement.

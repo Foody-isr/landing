@@ -67,7 +67,13 @@ Suivez l’invitation pour confirmer le compte et ouvrir Facturation pour le res
 
 ## Vérifier les accès par module
 
-Restaurant ouvre la caisse et le service en salle, dont le QR à table. Commandes ouvre le site de commande, le retrait et la livraison. Cuisine ouvre les stocks, les recettes, les fournisseurs et les préparations. Les actions disponibles exigent les droits du rôle dans le restaurant. Facturation affiche les licences de l’offre sélectionnée et le périmètre de l’essai ou de l’abonnement payé. Les restaurants sans inscription au pilote conservent leur contrat.
+Les modules de départ suivent la grille publique : Restaurant pour la caisse et la salle, Commandes pour le site et la livraison, Cuisine pour les stocks et la préparation. Pour une offre versionnée, la composition publiée puis acceptée fixe précisément les fonctionnalités et quotas accessibles. Les droits du rôle restent nécessaires. Une page verrouillée dans Admin explique quelle offre inclut la fonctionnalité et invite le propriétaire à ouvrir Facturation. Une modification du catalogue ne réécrit pas les droits acceptés. Les restaurants sans inscription au catalogue versionné gardent leur contrat et leurs contrôles existants.
+
+<span id="commercial-licences" />
+
+## Configurer les deux quotas et les offres personnalisées
+
+Pour les nouvelles offres versionnées en sandbox, distinguez **Total accounts, including owner** et **Physical POS devices**. Un compte employé n’est pas un appareil. Une limite vide dans ces deux champs signifie illimité ; un nombre fixe impose un quota. Les utilisateurs caisse nominatifs, accès chef et écrans cuisine ont aussi leurs quantités explicites. Le propriétaire compte une fois et les invitations en attente réservent une place. Le rôle détermine si le compte consomme un accès caisse ou chef. Dans **Custom offer**, choisissez un plan de base ou des modules, puis les licences supplémentaires incluses dans le prix convenu. Le prix personnalisé couvre l’ensemble de cette composition, y compris des licences normalement sur devis. Choisissez séparément la durée et les modules de l’essai ; la durée minimale reste 14 jours. Aucun contrat existant n’est migré automatiquement.
 
 ## En cas d’échec
 

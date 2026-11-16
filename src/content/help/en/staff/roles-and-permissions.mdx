@@ -5,7 +5,7 @@ apps: both
 tags:
   - staff
   - staff-roles
-updatedAt: '2026-11-08'
+updatedAt: '2026-11-15'
 featureId: staff-roles
 audience: public
 releaseStatus: available
@@ -51,3 +51,9 @@ Staff activation checks the permissions assigned in this restaurant, including c
 ## Authorize end-of-day closing
 
 Each POS participating in closing needs an active personal session and payments.manage. Including the drawer also requires orders.manage. Setting the main iPad requires settings.edit on that enrolled device. The API verifies the assigned device and terminal before each transmission. See [closing and recovery](/en/help/payments/end-of-day).
+
+<span id="commercial-capacity" />
+
+## Check licences before adding access
+
+For versioned development offers, check **Licences and devices** before an invitation or role change. Employee accounts and physical POS devices have separate quotas. The owner and pending invitations count; POS or kitchen permissions also reserve the corresponding named access. An invitation or role expansion exceeding capacity is rejected without changing access. The message lets the owner go to Billing, add the necessary licences, and retry. Editing a custom role does not bypass the limit. Role permissions and purchased features are separate conditions. Historical contracts do not automatically receive these new quotas.

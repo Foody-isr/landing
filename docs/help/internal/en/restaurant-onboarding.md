@@ -37,3 +37,9 @@ The global fleet can record a terminal as under repair or returned and maintain 
 ## Search restaurants and users
 
 In Restaurants, search by name or slug. In Users, search by name, email or phone and select a role if needed. Use **Clear search** or **Clear filters** to return to the full list. If the request fails, **Retry** repeats the last search.
+
+<span id="versioned-commercial-access" />
+
+## Commercial access in development
+
+For a restaurant enrolled in the versioned development catalogue, this function must be included in its offer or active trial as well as permitted by the staff role. An excluded feature is rejected by the server. Check Billing for modules and licences, then ask the owner to review an addition. Account and physical POS quotas are separate; exceeding a quota requires the corresponding licences. Historical contracts are not automatically changed.

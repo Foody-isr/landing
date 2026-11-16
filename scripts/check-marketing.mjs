@@ -10,6 +10,8 @@ const mapsOffer = JSON.parse(await readFile(new URL('../src/lib/marketing/maps-o
 
 // Read-only smoke checks against a running Next server; never submit leads or payments.
 const base = process.env.MARKETING_BASE_URL || "http://localhost:3001";
+const pricingCatalogue = process.env.MARKETING_CATALOGUE_URL
+  ? await fetch(process.env.MARKETING_CATALOGUE_URL).then(response => { assert.equal(response.status, 200); return response.json(); }) : null;
 const canonicalBase = (
   process.env.NEXT_PUBLIC_SITE_URL || "https://foody-pos.co.il"
 ).replace(/\/$/, "");
@@ -341,12 +343,14 @@ for (const lang of ["he", "fr", "en"]) {
         /<p\b[^>]*data-pricing-licences[^>]*>([\s\S]*?)<\/p>/,
       )?.[1];
       assert.ok(
-        licenceNote?.includes({
+        licenceNote?.includes(pricingCatalogue ? {
+          he: "מכסות נפרדות", fr: "quotas distincts", en: "separate quotas",
+        }[lang] : {
           he: "לכל עובד שמקבל הזמנות או תשלומים",
           fr: "Chaque employé qui prend des commandes ou encaisse",
           en: "Every employee who takes orders or accepts payments",
         }[lang]),
-        "POS licences are named per employee: " + url,
+        "Licence policy is explicit: " + url,
       );
       const visibleText = (markup) => markup.replace(/<[^>]*>/g, "").replace(/\s/g, "");
       const amountText = (amount) => visibleText(
@@ -365,12 +369,21 @@ for (const lang of ["he", "fr", "en"]) {
         assert.ok(card?.includes(navigationTitles[key]), "Module matches product navigation: " + key + " " + url);
         assert.ok(main.includes('id="plan-' + key + '"'), "Module anchor: " + key + " " + url);
         assert.ok(card.includes('href="/' + lang + route + '"'), "Module links to its product: " + key + " " + url);
-        assert.ok(visibleText(card).includes(amountText(amount)), "Module monthly price: " + key + " " + url);
-        assert.equal(card.includes("QR"), key === "restaurant", "Table QR belongs to Restaurant: " + url);
-        assert.equal(card.includes(lang === "fr" ? "Foody Compagnon" : "Foody Companion"), key === "kitchen");
+        const published = pricingCatalogue?.products.find(product => product.id === key);
+        assert.ok(visibleText(card).includes(amountText(published ? published.monthly_minor / 100 : amount)), "Module monthly price: " + key + " " + url);
+        if (published) {
+          for (const feature of published.capabilities) assert.ok(card.includes(pricingCatalogue.capabilities.find(row => row.key === feature).name[lang]), "Published capability is displayed: " + feature);
+        } else {
+          assert.equal(card.includes("QR"), key === "restaurant", "Table QR belongs to Restaurant: " + url);
+          assert.equal(card.includes(lang === "fr" ? "Foody Compagnon" : "Foody Companion"), key === "kitchen");
+        }
         assert.doesNotMatch(card, /hébergement|hosting|אחסון/i, "Module does not claim site hosting: " + url);
       }
-      assert.equal((main.match(/\bQR\b/g) || []).length, 1, "QR is listed once: " + url);
+      if (!pricingCatalogue) assert.equal((main.match(/\bQR\b/g) || []).length, 1, "QR is listed once: " + url);
+      else {
+        for (const plan of pricingCatalogue.plans) assert.ok(main.includes(plan.name[lang]), "Published composed plan is displayed: " + url);
+        for (const tariff of pricingCatalogue.tariffs.filter(row => ['extraEmployee', 'extraPOSDevice'].includes(row.id))) assert.ok(main.includes(tariff.name[lang]), "Separate licence tariff is displayed: " + url);
+      }
       assert.doesNotMatch(main, /data-quote-total|quote-summary|type="checkbox"/, "Pricing has no interactive quote: " + url);
 
       for (const [key, amount] of Object.entries({extraPos: 149, setup: 1290, orderingSetup: 1090, training: 990})) {
@@ -404,7 +417,7 @@ for (const lang of ["he", "fr", "en"]) {
         }
       }
       const includedServices = ["shva-license", "vhq-management"];
-      const terminalOptions = main.match(/<details class="pricing-payment-options">[\s\S]*?<\/article>/)?.[0];
+      const terminalOptions = main.slice(paymentsPosition).match(/<details class="pricing-payment-options">[\s\S]*?<\/article>/)?.[0];
       const terminalOptionKeys = ["emv-lab-repair", "payment-gateway", "sim-data", "dock-and-stand", "terminal-replacement", "terminal-transport"];
       for (const key of terminalOptionKeys) {
         assert.ok(terminalOptions?.includes('data-pricing-payment="' + key + '"'), "Terminal option " + key + " is separate from the monthly service: " + url);
@@ -437,7 +450,9 @@ for (const lang of ["he", "fr", "en"]) {
         .find(schema => schema["@type"] === "FAQPage");
       assert.equal(faq?.mainEntity.length, 3, "Localized pricing FAQ: " + url);
       assert.ok(faq.mainEntity.every(({ acceptedAnswer }) => !acceptedAnswer.text.includes("<a")));
-      assert.ok(main.includes({he: "30 יום", fr: "30 jours", en: "30 days"}[lang]), "Cancellation notice: " + url);
+      assert.ok(main.includes(pricingCatalogue
+        ? { he: "המחירים והזכויות שאושרו נשמרים", fr: "Vos prix et droits acceptés sont conservés", en: "Your accepted prices and included rights remain unchanged" }[lang]
+        : {he: "30 יום", fr: "30 jours", en: "30 days"}[lang]), "Contract terms: " + url);
       if (lang === "fr") {
         const main = html.match(/<main[\s\S]*?<\/main>/)?.[0];
         assert.ok(

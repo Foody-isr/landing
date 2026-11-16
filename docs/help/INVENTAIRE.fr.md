@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-18.
 
-113 fiches de fonctionnalités, 981 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 11 fiches opérateur internes. Le relevé machine contient 2613 fichiers applicatifs et 2301 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+113 fiches de fonctionnalités, 1009 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 11 fiches opérateur internes. Le relevé machine contient 2630 fichiers applicatifs et 2304 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 779 | 995 | c45b364710c5 ; versioned |
-| foodyadmin | 813 | 834 | 7f8714130ccc ; versioned |
+| foodyserver | 792 | 1004 | 2dc90a5e631e ; versioned |
+| foodyadmin | 818 | 837 | 5209dd9a65e1 ; versioned |
 | foodyweb | 385 | 200 | 714435da4953 ; versioned |
-| foodylanding | 157 | 31 | 571c56bbe800 ; versioned |
-| foodypos | 431 | 185 | c3dc97570216 ; versioned |
-| foodybackoffice | 48 | 56 | 32713771f88a ; versioned |
+| foodylanding | 158 | 31 | 7555c179adf0 ; versioned |
+| foodypos | 432 | 186 | e9d66082aeb3 ; versioned |
+| foodybackoffice | 45 | 46 | b51271eab45b ; versioned |
 
 ## getting-started
 
@@ -28,6 +28,7 @@ Identifiant : `account-access`. Public : public. Disponibilité : available. Ser
 - [Récupérer l’accès](../../src/content/help/fr/getting-started/first-login.mdx#recover)
 - [Entrer en service sur le terminal](../../src/content/help/fr/getting-started/first-login.mdx#terminal-pin-sign-in)
 - [Terminer un shift de caisse en sécurité](../../src/content/help/fr/getting-started/first-login.mdx#end-pos-shift)
+- [Accès commercial en développement](../../src/content/help/fr/getting-started/first-login.mdx#versioned-commercial-access)
 
 ### [Configurer votre restaurant avec Foody](../../src/content/help/fr/getting-started/complete-setup-guide.mdx)
 
@@ -81,6 +82,7 @@ Identifiant : `landing-offers`. Public : public. Disponibilité : available. Ser
 
 - [Comparer les offres publiques](../../src/content/help/fr/getting-started/offers-and-contact.mdx#offers)
 - [Demander une démonstration ou de l’aide](../../src/content/help/fr/getting-started/offers-and-contact.mdx#contact)
+- [Consulter la grille publiée](../../src/content/help/fr/getting-started/offers-and-contact.mdx#published-catalogue)
 
 ### [Rechercher et naviguer dans FoodyAdmin](../../src/content/help/fr/getting-started/search-and-navigation.mdx)
 
@@ -107,6 +109,7 @@ Identifiant : `billing`. Public : public. Disponibilité : available. Services :
 - [Lire l’abonnement actuel](../../src/content/help/fr/account/subscription.mdx#read)
 - [Vérifier un changement de formule](../../src/content/help/fr/account/subscription.mdx#change)
 - [Consulter les événements de facturation](../../src/content/help/fr/account/subscription.mdx#events)
+- [Ajouter un module ou des licences en sandbox](../../src/content/help/fr/account/subscription.mdx#versioned-sandbox-additions)
 
 ### [Pilote de facturation Foody](internal/fr/foody-billing-sandbox.md)
 
@@ -117,6 +120,10 @@ Identifiant : `foody-billing-sandbox`. Public : internal. Disponibilité : local
 - [Payer et vérifier en sandbox](internal/fr/foody-billing-sandbox.md#pay)
 - [Tester le premier renouvellement mensuel](internal/fr/foody-billing-sandbox.md#renewal)
 - [Lire l’usage mesuré](internal/fr/foody-billing-sandbox.md#measure)
+- [Inviter un nouveau restaurant en sandbox](internal/fr/foody-billing-sandbox.md#modular-provisioning)
+- [Activer l’essai ou payer depuis l’invitation](internal/fr/foody-billing-sandbox.md#modular-owner)
+- [Vérifier les accès par module](internal/fr/foody-billing-sandbox.md#modular-access)
+- [Configurer les deux quotas et les offres personnalisées](internal/fr/foody-billing-sandbox.md#commercial-licences)
 
 ## staff
 
@@ -130,6 +137,7 @@ Identifiant : `staff-invitations`. Public : public. Disponibilité : available. 
 - [Modifier les coordonnées et la destination du livreur](../../src/content/help/fr/staff/invite-staff.mdx#edit-staff-contacts)
 - [Reprendre une livraison après un départ de test](../../src/content/help/fr/staff/invite-staff.mdx#delivery-test-departure-recovery)
 - [Consulter le personnel depuis le POS mobile](../../src/content/help/fr/staff/invite-staff.mdx#mobile-terminal-pages)
+- [Vérifier les licences avant un nouvel accès](../../src/content/help/fr/staff/invite-staff.mdx#commercial-capacity)
 
 ### [Rôles et permissions](../../src/content/help/fr/staff/roles-and-permissions.mdx)
 
@@ -141,6 +149,7 @@ Identifiant : `staff-roles`. Public : public. Disponibilité : available. Servic
 - [Accès aux nouveaux réglages](../../src/content/help/fr/staff/roles-and-permissions.mdx#related-service-controls)
 - [Code caisse à l’activation du personnel](../../src/content/help/fr/staff/roles-and-permissions.mdx#staff-activation-pos-code)
 - [Autoriser une clôture de journée](../../src/content/help/fr/staff/roles-and-permissions.mdx#end-of-day-permissions)
+- [Vérifier les licences avant un nouvel accès](../../src/content/help/fr/staff/roles-and-permissions.mdx#commercial-capacity)
 
 ### [Accès POS, appareils et shifts](../../src/content/help/fr/staff/devices-and-shifts.mdx)
 
@@ -159,6 +168,7 @@ Identifiant : `staff-devices-shifts`. Public : public. Disponibilité : availabl
 - [Lire le rapport du tiroir sur un terminal portable](../../src/content/help/fr/staff/devices-and-shifts.mdx#mobile-terminal-pages)
 - [Confirmer le verrouillage après une période déjà terminée](../../src/content/help/fr/staff/devices-and-shifts.mdx#no-active-shift-sign-out)
 - [Utiliser plusieurs caisses sans déplacer le pointage](../../src/content/help/fr/staff/devices-and-shifts.mdx#current-pos-cash-context)
+- [Accès commercial en développement](../../src/content/help/fr/staff/devices-and-shifts.mdx#versioned-commercial-access)
 
 ## customers
 
@@ -556,6 +566,7 @@ Identifiant : `orders-managing-orders`. Public : public. Disponibilité : availa
 - [Accepter une commande programmée avant sa date](../../src/content/help/fr/orders/managing-orders.mdx#accept-scheduled-order)
 - [Commandes événement depuis le parcours habituel](../../src/content/help/fr/orders/managing-orders.mdx#event-orders)
 - [Terminal carte par défaut](../../src/content/help/fr/orders/managing-orders.mdx#physical-card-destination)
+- [Accès commercial en développement](../../src/content/help/fr/orders/managing-orders.mdx#versioned-commercial-access)
 
 ### [Types de commandes et remise](../../src/content/help/fr/orders/order-types.mdx)
 
@@ -587,6 +598,7 @@ Identifiant : `order-types`. Public : public. Disponibilité : available. Servic
 - [Vérifier les confirmations indépendantes](../../src/content/help/fr/orders/order-types.mdx#independent-lifecycle-confirmations)
 - [Tester la date de passage d’une commande](../../src/content/help/fr/orders/order-types.mdx#ordering-simulation-clock)
 - [Respecter un encaissement carte en cours](../../src/content/help/fr/orders/order-types.mdx#card-collection-recovery)
+- [Accès commercial en développement](../../src/content/help/fr/orders/order-types.mdx#versioned-commercial-access)
 
 ### [Prendre une commande sur la caisse](../../src/content/help/fr/orders/taking-an-order-pos.mdx)
 
@@ -615,6 +627,7 @@ Identifiant : `pos-order-entry`. Public : public. Disponibilité : available. Se
 - [Laisser une option facultative vide](../../src/content/help/fr/orders/taking-an-order-pos.mdx#option-choice-requirement)
 - [Vérifier les confirmations indépendantes](../../src/content/help/fr/orders/taking-an-order-pos.mdx#independent-lifecycle-confirmations)
 - [Respecter un encaissement carte en cours](../../src/content/help/fr/orders/taking-an-order-pos.mdx#card-collection-recovery)
+- [Accès commercial en développement](../../src/content/help/fr/orders/taking-an-order-pos.mdx#versioned-commercial-access)
 
 ### [Consulter et modifier une commande](../../src/content/help/fr/orders/order-details.mdx)
 
@@ -765,6 +778,7 @@ Identifiant : `orders-events`. Public : public. Disponibilité : available. Serv
 - [Modifier un événement enregistré](../../src/content/help/fr/orders/event-orders.mdx#edit)
 - [Consulter une empreinte Sumit](../../src/content/help/fr/orders/event-orders.mdx#hold-management)
 - [Avancer et revenir dans la finalisation](../../src/content/help/fr/orders/event-orders.mdx#manual-order-steps)
+- [Accès commercial en développement](../../src/content/help/fr/orders/event-orders.mdx#versioned-commercial-access)
 
 ## payments
 
@@ -829,6 +843,7 @@ Identifiant : `pos-victa-mini`. Public : public. Disponibilité : available. Ser
 - [Consulter la dernière transaction du terminal](../../src/content/help/fr/payments/victa-mini.mdx#ashrait-last-transaction-inspection)
 - [Demander une copie du reçu carte](../../src/content/help/fr/payments/victa-mini.mdx#ashrait-checkout-card-copy)
 - [Proposer le paiement en plusieurs fois](../../src/content/help/fr/payments/victa-mini.mdx#ashrait-terminal-installment-selection)
+- [Retirer un terminal de paiement](../../src/content/help/fr/payments/victa-mini.mdx#forget-payment-terminal)
 
 ### [Comprendre un refus d’accès à la caisse](../../src/content/help/fr/payments/cash-access.mdx)
 
@@ -939,6 +954,7 @@ Identifiant : `printer-profiles`. Public : public. Disponibilité : available. S
 - [Affecter la bonne imprimante](../../src/content/help/fr/printers/profiles-and-routing.mdx#assign)
 - [Modifier un profil depuis un terminal mobile](../../src/content/help/fr/printers/profiles-and-routing.mdx#mobile-terminal-pages)
 - [Choisir les reçus de chaque appareil](../../src/content/help/fr/printers/profiles-and-routing.mdx#device-receipt-destinations)
+- [Retirer une imprimante autonome](../../src/content/help/fr/printers/profiles-and-routing.mdx#forget-printer)
 
 ### [Statut et historique d’impression](../../src/content/help/fr/printers/status-and-history.mdx)
 
@@ -1125,6 +1141,7 @@ Identifiant : `fulfillment-policy`. Public : public. Disponibilité : available.
 - [Tester la date de passage d’une commande](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#ordering-simulation-clock)
 - [Respecter un encaissement carte en cours](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#card-collection-recovery)
 - [Vérifier les exceptions de préparation](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#configurable-production-exceptions)
+- [Accès commercial en développement](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx#versioned-commercial-access)
 
 ### [Comportement POS, services et ajustements](../../src/content/help/fr/settings/pos-behavior.mdx)
 
@@ -1158,6 +1175,8 @@ Identifiant : `device-kds`. Public : public. Disponibilité : available. Service
 - [Configurer les appareils](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#devices)
 - [Régler les postes cuisine](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#stations)
 - [Traiter les tickets cuisine](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#service)
+- [Oublier un appareil dans FoodyPOS](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#forget-hardware)
+- [Distinguer comptes et postes autorisés](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#commercial-device-capacity)
 
 ### [Configurer l’assistant de commande client](../../src/content/help/fr/settings/guest-order-assistant.mdx)
 
@@ -1426,6 +1445,7 @@ Identifiant : `guest-ordering`. Public : public. Disponibilité : available. Ser
 - [Comprendre les produits prêts et les échéances](../../src/content/help/fr/guest/online-ordering.mdx#ready-products-and-cutoffs)
 - [Renseigner les coordonnées de livraison](../../src/content/help/fr/guest/online-ordering.mdx#delivery-contact-details)
 - [Changer de mode quand la boutique demande de choisir d’abord](../../src/content/help/fr/guest/online-ordering.mdx#service-first)
+- [Accès commercial en développement](../../src/content/help/fr/guest/online-ordering.mdx#versioned-commercial-access)
 
 ### [Suivi, reçus et moyens enregistrés](../../src/content/help/fr/guest/tracking-and-account.mdx)
 
@@ -1471,6 +1491,7 @@ Identifiant : `backoffice-access`. Public : internal. Disponibilité : available
 - [Vérifier le périmètre opérateur](internal/fr/access-and-dashboard.md#access)
 - [Lire les indicateurs plateforme](internal/fr/access-and-dashboard.md#dashboard)
 - [Accès aux nouveaux réglages](internal/fr/access-and-dashboard.md#related-service-controls)
+- [Retrouver un outil du Backoffice](internal/fr/access-and-dashboard.md#navigation)
 
 ### [Création interne de restaurants et utilisateurs](internal/fr/restaurant-onboarding.md)
 
@@ -1479,11 +1500,14 @@ Identifiant : `backoffice-onboarding`. Public : internal. Disponibilité : avail
 - [Préparer une création de restaurant](internal/fr/restaurant-onboarding.md#create)
 - [Gérer les utilisateurs autorisés](internal/fr/restaurant-onboarding.md#users)
 - [Accès aux nouveaux réglages](internal/fr/restaurant-onboarding.md#related-service-controls)
+- [Rechercher des restaurants et des utilisateurs](internal/fr/restaurant-onboarding.md#search)
+- [Accès commercial en développement](internal/fr/restaurant-onboarding.md#versioned-commercial-access)
 
 ### [Fonctions, abonnements et paiements internes](internal/fr/features-and-payments.md)
 
 Identifiant : `backoffice-entitlements`. Public : internal. Disponibilité : available. Services : foodyserver, foodybackoffice.
 
+- [Retrouver la souscription et les accès d’un restaurant](internal/fr/features-and-payments.md#backoffice-restaurant-subscription)
 - [Rembourser ou annuler un paiement en ligne Verifone](internal/fr/features-and-payments.md#verifone-admin-money-operations)
 - [Garder la page de paiement lisible](internal/fr/features-and-payments.md#verifone-readable-hosted-theme)
 - [Rattacher un thème Checkout créé dans Verifone Central](internal/fr/features-and-payments.md#link-verifone-central-theme)
@@ -1493,19 +1517,21 @@ Identifiant : `backoffice-entitlements`. Public : internal. Disponibilité : ava
 - [Configurer l’infrastructure de paiement](internal/fr/features-and-payments.md#providers)
 - [Attribuer les quotas des services externes](internal/fr/features-and-payments.md#external-api-allocation)
 - [Intégration du panier préparé Sumit](internal/fr/features-and-payments.md#prepared-sumit-checkout-integration)
+- [Consulter les réglages Cibus partagés](internal/fr/features-and-payments.md#cibus-platform-settings)
+- [Modifier les formules, modules et tarifs](internal/fr/features-and-payments.md#backoffice-software-catalogue)
 
-### [Segments et prospects internes](internal/fr/market-and-prospects.md)
+### [Retrait de l’écran Market](internal/fr/market-and-prospects.md)
 
-Identifiant : `backoffice-market`. Public : internal. Disponibilité : available. Services : foodyserver, foodybackoffice.
+Identifiant : `backoffice-market`. Public : internal. Disponibilité : retired. Services : foodyserver, foodybackoffice.
 
-- [Maintenir les segments](internal/fr/market-and-prospects.md#segments)
-- [Maintenir les prospects](internal/fr/market-and-prospects.md#prospects)
+- [Segments existants](internal/fr/market-and-prospects.md#segments)
+- [Prospects existants](internal/fr/market-and-prospects.md#prospects)
 
 ### [Catalogue et médias internes partagés](internal/fr/catalog-and-assets.md)
 
 Identifiant : `backoffice-assets`. Public : internal. Disponibilité : available. Services : foodyserver, foodybackoffice.
 
-- [Maintenir les ressources de catalogue](internal/fr/catalog-and-assets.md#catalog)
+- [Gérer le catalogue d’un restaurant](internal/fr/catalog-and-assets.md#catalog)
 - [Générer et vérifier les icônes](internal/fr/catalog-and-assets.md#icons)
 - [Maintenir les diapositives de connexion](internal/fr/catalog-and-assets.md#login-slides)
 
@@ -1571,6 +1597,8 @@ Identifiant : `platform-api`. Public : internal. Disponibilité : available. Ser
 - [Authentifier le contexte financier du POS courant](internal/fr/api-and-release.md#current-pos-financial-context)
 - [Contrat de navigation et de résultat livreur](internal/fr/api-and-release.md#courier-stop-results)
 - [Réinitialiser les données de commande et de caisse d’un restaurant de test](internal/fr/api-and-release.md#reset-order-and-cash-test-data)
+- [Vérifier le catalogue logiciel et les droits côté Backoffice](internal/fr/api-and-release.md#backoffice-module-access-contract)
+- [Retirer du matériel depuis Backoffice](internal/fr/api-and-release.md#forget-device-inventory)
 
 ### [Aperçus internes et alias de routes](internal/fr/design-previews.md)
 
