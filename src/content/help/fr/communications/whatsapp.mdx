@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - communications
   - whatsapp
-updatedAt: '2026-11-12'
+updatedAt: '2026-11-16'
 featureId: whatsapp
 audience: public
 releaseStatus: available
@@ -81,3 +81,9 @@ Prérequis : un modèle Utility approuvé avec une en-tête Photo dans le compte
 ## Choisir le destinataire WhatsApp du client
 
 Si le client utilise un autre numéro pour WhatsApp, ouvrez Clients → sa fiche et choisissez Utiliser pour WhatsApp dans Numéros de téléphone, puis enregistrez. Ce numéro est utilisé pour les messages Meta et Twilio et pour l’ouverture de WhatsApp depuis la commande, y compris les partages de liens et documents. Le téléphone de la commande reste celui des coordonnées et de la vérification SMS. Vérifiez le destinataire affiché dans l’aperçu ; une modification du numéro WhatsApp impose de revoir un nouvel aperçu avant un envoi API. Aucun message de test n’est envoyé lors de l’enregistrement de la fiche.
+
+<span id="invalid-recipient-recovery" />
+
+## Débloquer un aperçu avec un numéro invalide
+
+Avec les versions compatibles de l’API et de l’Admin, les modes WhatsApp Business et Application WhatsApp retirent automatiquement les espaces insécables et les marqueurs invisibles de copier-coller avant de vérifier le destinataire. Cela fonctionne aussi pour un ancien numéro enregistré ; la préparation ne réécrit pas la fiche client. Si le numéro reste manquant ou invalide, le destinataire et l’aperçu affichent Numéro de téléphone invalide et l’envoi reste bloqué. Dans Clients → fiche du client → Numéros de téléphone, saisissez le numéro complet avec son indicatif pays, choisissez Utiliser pour WhatsApp et enregistrez. Revenez à la commande, cliquez sur Actualiser et relisez le destinataire et le message avant l’envoi. Un échec de lecture de la fiche ou de configuration conserve son erreur générale et ne doit pas être présenté comme un numéro invalide. Le nettoyage ne confirme pas l’existence du compte WhatsApp ; l’envoi demande toujours votre action explicite.

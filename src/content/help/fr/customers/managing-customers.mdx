@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - customers
   - customers-profiles
-updatedAt: '2026-11-12'
+updatedAt: '2026-11-16'
 featureId: customers-profiles
 audience: public
 releaseStatus: available
@@ -61,3 +61,9 @@ Conditions d’activation et reprise : [garantie bancaire pour les espèces](/fr
 ## Résoudre un enregistrement bloqué par un téléphone
 
 Un ancien numéro invalide est signalé dès l’ouverture de la fiche. Les nouvelles saisies sont vérifiées en quittant le champ et lors de l’enregistrement. Chaque erreur précise si le numéro principal manque, si une ligne supplémentaire est vide, si le numéro est incomplet ou invalide, ou s’il figure déjà dans la liste. Si Enregistrer est bloqué, l’encart Enregistrement bloqué reste visible près du bouton et nomme le premier numéro à corriger. Le formulaire revient à ce champ ; Voir le numéro à corriger permet d’y retourner après avoir fait défiler la fiche. Corrigez les chiffres et l’indicatif pays, ou choisissez Retirer si ce numéro supplémentaire ne doit plus être associé au client. Ajouter un numéro et Retirer modifient seulement le formulaire. Vos changements de nom, d’adresse, de code immeuble et d’étage sont conservés. Corrigez tous les champs signalés puis cliquez à nouveau sur Enregistrer pour sauvegarder l’ensemble. Aucune modification n’est envoyée tant que la validation bloque la sauvegarde. Si le serveur ne peut pas enregistrer, le message conserve le brouillon et vous invite à réessayer ; après un enregistrement confirmé dont le rechargement échoue, Réessayer recharge la liste sans répéter la sauvegarde.
+
+<span id="clipboard-phone-format" />
+
+## Coller un numéro sans faux refus de format
+
+Avec les versions compatibles de l’Admin et de l’API, la validation des téléphones ignore automatiquement les espaces insécables et les marqueurs invisibles de sens d’écriture ou de largeur nulle provenant d’un copier-coller. Un numéro existant dont les chiffres et l’indicatif sont valides ne doit plus afficher Téléphone invalide pour ces seuls caractères. Ouvrir la fiche ne réécrit rien ; Enregistrer valide le numéro complet et sauvegarde sa forme internationale. Les lettres, extensions, numéros incomplets, doublons et conflits entre fiches restent bloquants. Vérifiez toujours les chiffres et l’indicatif avant de sauvegarder : le nettoyage ne vérifie ni le propriétaire du numéro ni son inscription à WhatsApp.
