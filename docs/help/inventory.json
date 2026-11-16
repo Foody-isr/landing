@@ -4,9 +4,9 @@
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "d278d483acd2d0d210bd0b461811d877f164f8b9",
+      "sourceCommit": "713aed9ece216ff4167ccccb29e639c80c93ed2b",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "559f17d75f4774a3e0e8c2e32215b9c7b849f260d98df710f2fef260126fcd29",
+      "sourceSnapshot": "c5a41b943062d6396367ee3426a9a94d4a9e1ddb254a4e9133907feb8f0af362",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -945,9 +945,12 @@
           ]
         },
         "internal/common/phone.go": {
-          "sha256": "893528e9cd9492a2a1a1e472294f364b666124d6535d8c93524674a04fa43903",
+          "sha256": "d7bff8c04be41adf111a9eef9cb542237b1a5e25e6231294776879a48950c198",
           "features": [
+            "customers-profiles",
+            "whatsapp",
             "guest-ordering",
+            "guest-catering",
             "platform-api"
           ]
         },
@@ -5761,7 +5764,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "ce521be2b641efc2859df3d791825317531d6395d8b34008c0add68d6167829e",
+          "sha256": "a96ea9059e930ca5fc84d3d6cb31b394b329e603f0a1a0bdb32615a2dc74eea9",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -5772,6 +5775,7 @@
             "website-sections",
             "website-order-design",
             "website-journey",
+            "whatsapp",
             "guest-ordering",
             "guest-catering",
             "platform-api",
@@ -5958,7 +5962,7 @@
           ]
         },
         "internal/twilio/order_message_handler.go": {
-          "sha256": "5d7d79d7ff94c7a51e67fdc3b605705459df1fd3e6957908240ef68bb0741819",
+          "sha256": "3b566d0157ee22a56119514e11d0c6856beddea4f1d1bb93c1583382ca03c5b0",
           "features": [
             "whatsapp",
             "platform-api"
@@ -6073,8 +6077,9 @@
           ]
         },
         "internal/whatsappmessage/contracts.go": {
-          "sha256": "ceabcdb8bfe8f2b5e7c314eee01216fc0b1a4c5e91e4beabc3c8d33d72f45b49",
+          "sha256": "2584e1694c9a43de9416ff89cf19b98b3c0cf156729ea3d2cf7f147f991ed4bc",
           "features": [
+            "whatsapp",
             "message-templates",
             "platform-api"
           ]
@@ -6082,6 +6087,7 @@
         "internal/whatsappmessage/delivery_reminder.go": {
           "sha256": "d7c60de8cfaa9a4aeef51e125abaf489d43c4eca87b67ab2a94c119496763673",
           "features": [
+            "whatsapp",
             "message-templates",
             "platform-api"
           ]
@@ -6337,10 +6343,10 @@
     },
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "5209dd9a65e11e65f21dad74c0c631d4258e6b32",
+      "sourceCommit": "e642f988f15f54d667b9fee12d64b6e5117abde9",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "8cb1aac2aafc54b822d25b50766b92d620286ff635c75f02f86972d8d20d301d",
-      "workingTreeHasChanges": true,
+      "sourceSnapshot": "28ccd7beb0f10dd8a86a52ce8bf3e719d397fe112295753037b04ac298cb0d88",
+      "workingTreeHasChanges": false,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
           "sha256": "13c58bc11284d66c7fb9c4d79c1b3e92c6e05539164f2147a5e966d9c17ac275",
@@ -9550,7 +9556,7 @@
           ]
         },
         "src/components/orders/OrderWhatsAppComposer.tsx": {
-          "sha256": "b2da0b70a9cc3c2dc3cf6d4a64d8da9e6a05f7212b62b8c138b210a0e0025dda",
+          "sha256": "d537b2181524f67d6e036fb958cfcaeffb13cf6991d132220e91c939b7707170",
           "features": [
             "orders-managing-orders",
             "order-detail",
@@ -10921,7 +10927,7 @@
           ]
         },
         "src/lib/customer-phone.ts": {
-          "sha256": "7b467568201d228c66ed3df8dcf93b63e522f825f84a11ad99a72dc931778103",
+          "sha256": "4da2b589bfee90fa1028e0d29badced2b60ddf2932121676f370cd26c2380184",
           "features": [
             "customers-profiles",
             "shared-runtime"
@@ -11034,7 +11040,7 @@
           ]
         },
         "src/lib/i18n.tsx": {
-          "sha256": "a6335cc2be8ab72fd93139e74a0b56624c2c6de584282ad0a0d9ba4ed82e9458",
+          "sha256": "a810713d1aecf05b78be1e15d37c21ef60d9423ef1c674a4e8b8984e8d16164d",
           "features": [
             "customers-profiles",
             "menu-menus-and-groups",
@@ -11470,7 +11476,7 @@
           ]
         },
         "src/lib/orders/whatsapp-composer.ts": {
-          "sha256": "ebeab26b35bcecbf061878199755fbf1cc0afa01c6d3a2434873204a522494cc",
+          "sha256": "81bf093ecb48750b3180190f2ada1c45624e54ce9555ea5555961c75044b26b9",
           "features": [
             "order-detail",
             "whatsapp",
@@ -11513,6 +11519,14 @@
         "src/lib/permissions-context.tsx": {
           "sha256": "f5938a0368e419b4728be9437ec03d87dc22734cad2f72b1b3af720b0faba6b7",
           "features": [
+            "shared-runtime"
+          ]
+        },
+        "src/lib/phone-format.ts": {
+          "sha256": "a470e314d78b52d3e870b09fd7213cbe0a8398fd18087ce08bd2ad1642cb67cd",
+          "features": [
+            "customers-profiles",
+            "whatsapp",
             "shared-runtime"
           ]
         },
@@ -14722,7 +14736,7 @@
     },
     "foodylanding": {
       "repository": "https://github.com/Foody-isr/landing",
-      "sourceCommit": "a8bccfc13a0edef398e090c41fe95fc81910cc72",
+      "sourceCommit": "4098f4d0e7ff31014e1da7c0faa04d1a10e22ef7",
       "releaseStatus": "versioned",
       "sourceSnapshot": "f423e78e8e45eb0663e13bd7c6dc2be67c8a74826f122243465a69a2356d8a73",
       "workingTreeHasChanges": true,
@@ -20159,7 +20173,8 @@
           "src/components/customers/**",
           "src/lib/customer-phone.ts",
           "src/lib/api.ts",
-          "src/lib/i18n.tsx"
+          "src/lib/i18n.tsx",
+          "src/lib/phone-format.ts"
         ],
         "foodyserver": [
           "internal/customers/**",
@@ -20168,7 +20183,8 @@
           "internal/common/customer_phones.go",
           "internal/common/customer_identity.go",
           "internal/analytics/service.go",
-          "cmd/server/boot_models.go"
+          "cmd/server/boot_models.go",
+          "internal/common/phone.go"
         ],
         "foodypos": [
           "lib/features/trusted_customers/**"
@@ -20265,6 +20281,19 @@
             "en": "An invalid number already on the profile is highlighted when the profile opens. New input is checked when you leave the field and when saving. Each error explains whether the primary number is missing, an additional line is empty, a number is incomplete or invalid, or a number is already listed. If Save is blocked, Changes could not be saved remains visible beside the button and names the first number to correct. The form returns to that field; Go to the phone number to correct lets you return after scrolling. Correct the digits and country code, or choose Remove if that additional number should no longer belong to this customer. Add a phone number and Remove only edit the form. Your name, address, building-code and floor changes are kept. Correct all highlighted fields, then choose Save again to save everything together. No changes are sent while validation blocks saving. If the server cannot save, the message retains the draft and asks you to retry; after a confirmed save with a failed refresh, Retry reloads the list without repeating the save.",
             "he": "מספר לא תקין שכבר קיים בכרטיס מסומן עם פתיחת הכרטיס. הקלדה חדשה נבדקת ביציאה מהשדה ובשמירה. כל שגיאה מסבירה אם המספר הראשי חסר, שורה נוספת ריקה, המספר אינו מלא או אינו תקין, או שהוא כבר מופיע ברשימה. אם השמירה חסומה, ההודעה לא ניתן לשמור את השינויים נשארת ליד הכפתור ומציינת את המספר הראשון שצריך לתקן. הטופס חוזר לשדה הזה; מעבר למספר הטלפון שצריך לתקן מאפשר לחזור אליו אחרי גלילה. תקנו את הספרות ואת קידומת המדינה, או בחרו הסרה אם המספר הנוסף אינו אמור להיות משויך ללקוח. הוספת מספר טלפון והסרה משנות רק את הטופס. השינויים בשם, בכתובת, בקוד הכניסה ובקומה נשמרים בטופס. תקנו את כל השדות המסומנים ולחצו שוב על שמור כדי לשמור הכול יחד. שום שינוי אינו נשלח כל עוד הבדיקה חוסמת את השמירה. אם השרת אינו יכול לשמור, ההודעה משאירה את הטיוטה ומנחה לנסות שוב; לאחר שמירה שאושרה אך הרענון נכשל, נסה שוב טוען את הרשימה בלי לשלוח שוב את השמירה."
           }
+        },
+        {
+          "id": "clipboard-phone-format",
+          "title": {
+            "fr": "Coller un numéro sans faux refus de format",
+            "en": "Paste a number without formatting errors",
+            "he": "הדבקת מספר ללא שגיאות עיצוב"
+          },
+          "instructions": {
+            "fr": "Avec les versions compatibles de l’Admin et de l’API, la validation des téléphones ignore automatiquement les espaces insécables et les marqueurs invisibles de sens d’écriture ou de largeur nulle provenant d’un copier-coller. Un numéro existant dont les chiffres et l’indicatif sont valides ne doit plus afficher Téléphone invalide pour ces seuls caractères. Ouvrir la fiche ne réécrit rien ; Enregistrer valide le numéro complet et sauvegarde sa forme internationale. Les lettres, extensions, numéros incomplets, doublons et conflits entre fiches restent bloquants. Vérifiez toujours les chiffres et l’indicatif avant de sauvegarder : le nettoyage ne vérifie ni le propriétaire du numéro ni son inscription à WhatsApp.",
+            "en": "With compatible Admin and API versions, phone validation automatically ignores non-breaking spaces and invisible writing-direction or zero-width marks introduced by copy and paste. An existing number with valid digits and country code should no longer show Invalid phone solely because of those marks. Opening the profile writes nothing; Save validates the whole number and saves its international form. Letters, extensions, incomplete numbers, duplicates and conflicts between profiles still block saving. Check the digits and country code before saving: cleanup does not verify ownership or WhatsApp registration.",
+            "he": "בגרסאות תואמות של Admin ושל API, בדיקת הטלפון מתעלמת אוטומטית מרווחים קשיחים ומתווים בלתי נראים של כיוון כתיבה או רוחב אפס שנוספו בהעתקה ובהדבקה. מספר קיים שהספרות וקידומת המדינה שלו תקינות לא יסומן עוד כטלפון לא תקין רק בגלל תווים אלה. פתיחת הכרטיס אינה כותבת נתונים; שמירה בודקת את המספר המלא ושומרת אותו בפורמט בינלאומי. אותיות, שלוחות, מספרים חסרים, כפילויות והתנגשויות בין כרטיסים עדיין חוסמים שמירה. בדקו את הספרות ואת קידומת המדינה לפני השמירה: הניקוי אינו מאמת בעלות או רישום ל-WhatsApp."
+          }
         }
       ],
       "audience": "public",
@@ -20275,7 +20304,7 @@
         "fr": "La modification et la fusion nécessitent la permission de gestion des clients.",
         "he": "עריכה ואיחוד דורשים הרשאת ניהול לקוחות."
       },
-      "procedureUpdatedAt": "2026-11-12",
+      "procedureUpdatedAt": "2026-11-16",
       "evidence": [
         {
           "service": "foodyserver",
@@ -20296,6 +20325,10 @@
         {
           "service": "foodyserver",
           "file": "internal/common/customer_phones.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/common/phone.go"
         },
         {
           "service": "foodyserver",
@@ -20368,6 +20401,10 @@
         {
           "service": "foodyadmin",
           "file": "src/lib/i18n.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/lib/phone-format.ts"
         },
         {
           "service": "foodypos",
@@ -29221,9 +29258,9 @@
             "he": "בחירת נמען WhatsApp ללקוח"
           },
           "instructions": {
-            "fr": "Si le client utilise un autre numéro pour WhatsApp, ouvrez Clients → sa fiche et choisissez Utiliser pour WhatsApp dans Numéros de téléphone, puis enregistrez. Ce numéro est utilisé pour les messages Meta et Twilio et pour l’ouverture de WhatsApp depuis la commande, y compris les partages de liens et documents. Le téléphone de la commande reste celui des coordonnées et de la vérification SMS. Vérifiez le destinataire affiché dans l’aperçu ; une modification du numéro WhatsApp impose de revoir un nouvel aperçu avant un envoi API. Aucun message de test n’est envoyé lors de l’enregistrement de la fiche.",
-            "en": "If the customer uses a different WhatsApp number, open Clients → their profile, select Use for WhatsApp under Phone numbers and save. That number is used by Meta and Twilio messages and by WhatsApp app handoffs from the order, including link and document sharing. The order phone remains its contact and SMS-verification number. Check the preview recipient; changing the WhatsApp selection requires a new reviewed preview before an API send. Saving the customer profile sends no test message.",
-            "he": "אם ללקוח מספר WhatsApp אחר, פתחו לקוחות → כרטיס הלקוח, בחרו לשימוש ב-WhatsApp תחת מספרי טלפון ושמרו. המספר משמש הודעות Meta ו-Twilio ופתיחת WhatsApp מההזמנה, כולל שיתוף קישורים ומסמכים. טלפון ההזמנה נשאר מספר הקשר ולאימות SMS. בדקו את הנמען בתצוגה המקדימה; שינוי המספר מחייב בדיקה של תצוגה חדשה לפני שליחה דרך API. שמירת הכרטיס אינה שולחת הודעת בדיקה."
+            "fr": "Si le client utilise un autre numéro pour WhatsApp, ouvrez Clients → sa fiche et choisissez Utiliser pour WhatsApp dans Numéros de téléphone, puis enregistrez. Ce numéro sert aux messages Meta/Twilio et à l’ouverture de WhatsApp depuis la commande, liens et documents inclus. Le téléphone de commande reste le contact et la référence SMS. Vérifiez le destinataire de l’aperçu ; une modification du numéro WhatsApp impose de revoir un nouvel aperçu avant un envoi API. Enregistrer la fiche n’envoie aucun message de test. Numéro invalide : corrigez la fiche client, puis actualisez l’aperçu.",
+            "en": "If the customer uses a different WhatsApp number, open Clients → their profile, select Use for WhatsApp under Phone numbers and save. That number is used by Meta and Twilio messages and by WhatsApp app handoffs from the order, including link and document sharing. The order phone remains its contact and SMS-verification number. Check the preview recipient; changing the WhatsApp selection requires a new reviewed preview before an API send. Saving the customer profile sends no test message. Invalid number: correct the customer profile, then refresh the preview.",
+            "he": "אם ללקוח מספר WhatsApp אחר, פתחו לקוחות → כרטיס הלקוח, בחרו לשימוש ב-WhatsApp תחת מספרי טלפון ושמרו. המספר משמש הודעות Meta ו-Twilio ופתיחת WhatsApp מההזמנה, כולל שיתוף קישורים ומסמכים. טלפון ההזמנה נשאר מספר הקשר ולאימות SMS. בדקו את הנמען בתצוגה המקדימה; שינוי המספר מחייב בדיקה של תצוגה חדשה לפני שליחה דרך API. שמירת הכרטיס אינה שולחת הודעת בדיקה. מספר לא תקין: תקנו את כרטיס הלקוח ואז רעננו את התצוגה המקדימה."
           }
         },
         {
@@ -29347,7 +29384,7 @@
       "audience": "public",
       "status": "available",
       "preserveExisting": true,
-      "procedureUpdatedAt": "2026-11-15",
+      "procedureUpdatedAt": "2026-11-16",
       "updatedAt": "2026-11-12",
       "evidence": [
         {
@@ -35123,9 +35160,9 @@
             "he": "בחירת נמען WhatsApp ללקוח"
           },
           "instructions": {
-            "fr": "Si le client utilise un autre numéro pour WhatsApp, ouvrez Clients → sa fiche et choisissez Utiliser pour WhatsApp dans Numéros de téléphone, puis enregistrez. Ce numéro est utilisé pour les messages Meta et Twilio et pour l’ouverture de WhatsApp depuis la commande, y compris les partages de liens et documents. Le téléphone de la commande reste celui des coordonnées et de la vérification SMS. Vérifiez le destinataire affiché dans l’aperçu ; une modification du numéro WhatsApp impose de revoir un nouvel aperçu avant un envoi API. Aucun message de test n’est envoyé lors de l’enregistrement de la fiche.",
-            "en": "If the customer uses a different WhatsApp number, open Clients → their profile, select Use for WhatsApp under Phone numbers and save. That number is used by Meta and Twilio messages and by WhatsApp app handoffs from the order, including link and document sharing. The order phone remains its contact and SMS-verification number. Check the preview recipient; changing the WhatsApp selection requires a new reviewed preview before an API send. Saving the customer profile sends no test message.",
-            "he": "אם ללקוח מספר WhatsApp אחר, פתחו לקוחות → כרטיס הלקוח, בחרו לשימוש ב-WhatsApp תחת מספרי טלפון ושמרו. המספר משמש הודעות Meta ו-Twilio ופתיחת WhatsApp מההזמנה, כולל שיתוף קישורים ומסמכים. טלפון ההזמנה נשאר מספר הקשר ולאימות SMS. בדקו את הנמען בתצוגה המקדימה; שינוי המספר מחייב בדיקה של תצוגה חדשה לפני שליחה דרך API. שמירת הכרטיס אינה שולחת הודעת בדיקה."
+            "fr": "Si le client utilise un autre numéro pour WhatsApp, ouvrez Clients → sa fiche et choisissez Utiliser pour WhatsApp dans Numéros de téléphone, puis enregistrez. Ce numéro sert aux messages Meta/Twilio et à l’ouverture de WhatsApp depuis la commande, liens et documents inclus. Le téléphone de commande reste le contact et la référence SMS. Vérifiez le destinataire de l’aperçu ; une modification du numéro WhatsApp impose de revoir un nouvel aperçu avant un envoi API. Enregistrer la fiche n’envoie aucun message de test. Numéro invalide : corrigez la fiche client, puis actualisez l’aperçu.",
+            "en": "If the customer uses a different WhatsApp number, open Clients → their profile, select Use for WhatsApp under Phone numbers and save. That number is used by Meta and Twilio messages and by WhatsApp app handoffs from the order, including link and document sharing. The order phone remains its contact and SMS-verification number. Check the preview recipient; changing the WhatsApp selection requires a new reviewed preview before an API send. Saving the customer profile sends no test message. Invalid number: correct the customer profile, then refresh the preview.",
+            "he": "אם ללקוח מספר WhatsApp אחר, פתחו לקוחות → כרטיס הלקוח, בחרו לשימוש ב-WhatsApp תחת מספרי טלפון ושמרו. המספר משמש הודעות Meta ו-Twilio ופתיחת WhatsApp מההזמנה, כולל שיתוף קישורים ומסמכים. טלפון ההזמנה נשאר מספר הקשר ולאימות SMS. בדקו את הנמען בתצוגה המקדימה; שינוי המספר מחייב בדיקה של תצוגה חדשה לפני שליחה דרך API. שמירת הכרטיס אינה שולחת הודעת בדיקה. מספר לא תקין: תקנו את כרטיס הלקוח ואז רעננו את התצוגה המקדימה."
           }
         },
         {
@@ -35228,7 +35265,7 @@
         "fr": "Les modifications nécessitent orders.manage ; la lecture ne donne pas le droit de modifier.",
         "he": "שינוי הזמנות דורש orders.manage; הרשאת צפייה אינה הרשאת עריכה."
       },
-      "procedureUpdatedAt": "2026-11-11",
+      "procedureUpdatedAt": "2026-11-16",
       "updatedAt": "2026-11-12",
       "evidence": [
         {
@@ -47530,14 +47567,18 @@
           "src/components/orders/OrderWhatsAppComposer.tsx",
           "src/components/orders/order-whatsapp.module.css",
           "src/lib/orders/whatsapp-composer.ts",
-          "src/lib/i18n.tsx"
+          "src/lib/i18n.tsx",
+          "src/lib/phone-format.ts"
         ],
         "foodyserver": [
           "internal/twilio/**",
           "internal/metawhatsapp/**",
           "internal/printing/receipt_pdf.go",
           "cmd/server/main.go",
-          "internal/common/customer_phones.go"
+          "internal/common/customer_phones.go",
+          "internal/common/phone.go",
+          "internal/whatsappmessage/**",
+          "internal/support/corpus.json"
         ]
       },
       "operations": [
@@ -47670,12 +47711,25 @@
             "en": "If the customer uses a different WhatsApp number, open Clients → their profile, select Use for WhatsApp under Phone numbers and save. That number is used by Meta and Twilio messages and by WhatsApp app handoffs from the order, including link and document sharing. The order phone remains its contact and SMS-verification number. Check the preview recipient; changing the WhatsApp selection requires a new reviewed preview before an API send. Saving the customer profile sends no test message.",
             "he": "אם ללקוח מספר WhatsApp אחר, פתחו לקוחות → כרטיס הלקוח, בחרו לשימוש ב-WhatsApp תחת מספרי טלפון ושמרו. המספר משמש הודעות Meta ו-Twilio ופתיחת WhatsApp מההזמנה, כולל שיתוף קישורים ומסמכים. טלפון ההזמנה נשאר מספר הקשר ולאימות SMS. בדקו את הנמען בתצוגה המקדימה; שינוי המספר מחייב בדיקה של תצוגה חדשה לפני שליחה דרך API. שמירת הכרטיס אינה שולחת הודעת בדיקה."
           }
+        },
+        {
+          "id": "invalid-recipient-recovery",
+          "title": {
+            "fr": "Débloquer un aperçu avec un numéro invalide",
+            "en": "Resolve an invalid-number preview",
+            "he": "פתרון תצוגה מקדימה עם מספר לא תקין"
+          },
+          "instructions": {
+            "fr": "Avec les versions compatibles de l’API et de l’Admin, les modes WhatsApp Business et Application WhatsApp retirent automatiquement les espaces insécables et les marqueurs invisibles de copier-coller avant de vérifier le destinataire. Cela fonctionne aussi pour un ancien numéro enregistré ; la préparation ne réécrit pas la fiche client. Si le numéro reste manquant ou invalide, le destinataire et l’aperçu affichent Numéro de téléphone invalide et l’envoi reste bloqué. Dans Clients → fiche du client → Numéros de téléphone, saisissez le numéro complet avec son indicatif pays, choisissez Utiliser pour WhatsApp et enregistrez. Revenez à la commande, cliquez sur Actualiser et relisez le destinataire et le message avant l’envoi. Un échec de lecture de la fiche ou de configuration conserve son erreur générale et ne doit pas être présenté comme un numéro invalide. Le nettoyage ne confirme pas l’existence du compte WhatsApp ; l’envoi demande toujours votre action explicite.",
+            "en": "With compatible API and Admin versions, WhatsApp Business and WhatsApp app modes automatically remove non-breaking spaces and invisible clipboard marks before checking the recipient. This also works for a previously saved number; preparation does not rewrite the customer profile. If the number is still missing or invalid, the recipient and preview show Invalid phone number and sending remains blocked. In Customers → customer profile → Phone numbers, enter the complete number with its country code, select Use for WhatsApp and save. Return to the order, choose Refresh and review the recipient and message before sending. A profile-read or configuration failure keeps its general error and must not be presented as an invalid number. Cleanup does not confirm that a WhatsApp account exists; sending still requires your explicit action.",
+            "he": "בגרסאות תואמות של API ושל Admin, המצבים WhatsApp Business ואפליקציית WhatsApp מסירים אוטומטית רווחים קשיחים ותווי הדבקה בלתי נראים לפני בדיקת הנמען. הפעולה חלה גם על מספר שנשמר בעבר; הכנת ההודעה אינה משכתבת את כרטיס הלקוח. אם המספר עדיין חסר או לא תקין, הנמען והתצוגה המקדימה מציגים מספר טלפון לא תקין והשליחה נשארת חסומה. בלקוחות → כרטיס הלקוח → מספרי טלפון, הזינו מספר מלא עם קידומת מדינה, בחרו שימוש ב-WhatsApp ושמרו. חזרו להזמנה, בחרו רענון ובדקו את הנמען ואת ההודעה לפני השליחה. כשל בקריאת הכרטיס או בהגדרות שומר על הודעת השגיאה הכללית ולא יוצג כמספר לא תקין. הניקוי אינו מאשר שקיים חשבון WhatsApp; השליחה עדיין מחייבת פעולה מפורשת שלכם."
+          }
         }
       ],
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-11-12",
+      "procedureUpdatedAt": "2026-11-16",
       "evidence": [
         {
           "service": "foodyserver",
@@ -47684,6 +47738,10 @@
         {
           "service": "foodyserver",
           "file": "internal/common/customer_phones.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/common/phone.go"
         },
         {
           "service": "foodyserver",
@@ -47736,6 +47794,10 @@
         {
           "service": "foodyserver",
           "file": "internal/printing/receipt_pdf.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/support/corpus.json"
         },
         {
           "service": "foodyserver",
@@ -47798,6 +47860,14 @@
           "file": "internal/twilio/whatsapp_handler.go"
         },
         {
+          "service": "foodyserver",
+          "file": "internal/whatsappmessage/contracts.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/whatsappmessage/delivery_reminder.go"
+        },
+        {
           "service": "foodyadmin",
           "file": "src/app/[restaurantId]/settings/whatsapp/page.tsx"
         },
@@ -47840,6 +47910,10 @@
         {
           "service": "foodyadmin",
           "file": "src/lib/orders/whatsapp-composer.ts"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/lib/phone-format.ts"
         }
       ]
     },
@@ -48472,12 +48546,25 @@
             "en": "For a restaurant enrolled in the versioned development catalogue, this function must be included in its offer or active trial as well as permitted by the staff role. An excluded feature is rejected by the server. Check Billing for modules and licences, then ask the owner to review an addition. Account and physical POS quotas are separate; exceeding a quota requires the corresponding licences. Historical contracts are not automatically changed.",
             "he": "במסעדה הרשומה לקטלוג עם גרסה בסביבת הפיתוח, היכולת חייבת להיות כלולה בהצעה או בניסיון הפעיל וכן מותרת לפי תפקיד העובד. יכולת מוחרגת נדחית בשרת. בחיוב אפשר לבדוק מודולים ורישיונות ולבקש מהבעלים לבחון תוספת. מכסות חשבונות ועמדות קופה נפרדות; חריגה דורשת את הרישיונות המתאימים. חוזים היסטוריים אינם משתנים אוטומטית."
           }
+        },
+        {
+          "id": "contact-phone-format",
+          "title": {
+            "fr": "Vérifier le téléphone de contact",
+            "en": "Check the contact phone number",
+            "he": "בדיקת מספר הטלפון ליצירת קשר"
+          },
+          "instructions": {
+            "fr": "Saisissez un numéro complet avec son indicatif pays. Le contrôle de numéro de Foody retire les espaces et les marques invisibles de mise en forme issus d’un copier-coller avant validation ; il ne corrige pas les chiffres et n’accepte pas les lettres ou les extensions. Si votre formulaire refuse encore un numéro collé, ressaisissez-le au format international et vérifiez les chiffres avant de continuer. Un format accepté ne confirme ni la possession du numéro ni l’existence d’un compte WhatsApp. Les éventuelles vérifications SMS et les autres conditions de commande restent applicables.",
+            "en": "Enter a complete number with its country code. Foody’s phone check removes spaces and invisible clipboard formatting before validation; it does not correct digits or accept letters or extensions. If your form still rejects a pasted number, retype it in international format and check the digits before continuing. An accepted format does not confirm ownership or the existence of a WhatsApp account. Any SMS verification and other order requirements still apply.",
+            "he": "הזינו מספר מלא עם קידומת מדינה. בדיקת הטלפון של Foody מסירה רווחים ותווי עיצוב בלתי נראים מהעתקה והדבקה לפני האימות; היא אינה מתקנת ספרות ואינה מקבלת אותיות או שלוחות. אם הטופס עדיין דוחה מספר שהודבק, הקלידו אותו מחדש בפורמט בינלאומי ובדקו את הספרות לפני ההמשך. פורמט שאושר אינו מאמת בעלות או קיום של חשבון WhatsApp. אימות SMS ככל שנדרש ושאר תנאי ההזמנה עדיין חלים."
+          }
         }
       ],
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-11-15",
+      "procedureUpdatedAt": "2026-11-16",
       "evidence": [
         {
           "service": "foodyserver",
@@ -49346,7 +49433,8 @@
         ],
         "foodyserver": [
           "internal/catering/public*.go",
-          "internal/support/corpus.json"
+          "internal/support/corpus.json",
+          "internal/common/phone.go"
         ]
       },
       "operations": [
@@ -49388,16 +49476,33 @@
             "en": "Before submitting an order or catering request, enter a complete phone number. In checkout Contact and payment, the initial calling code follows the restaurant country: +33 for France, +972 for Israel, and so on. Choose another calling code for a foreign number, or paste an international number starting with +. Catering assumes Israel for local numbers; foreign numbers need + and their country code. Spaces, dashes and parentheses are accepted; the saved value is international, for example +972502345678. Incomplete numbers, invalid prefixes, letters and extensions block submission and require correction. Phone remains optional for table orders where the form permits it; a supplied number must be valid. Format validation does not check WhatsApp registration. Any SMS verification code still follows the restaurant setting.",
             "he": "לפני שליחת הזמנה או בקשת קייטרינג הזינו מספר מלא. בסיום הזמנה, בפרטי הקשר והתשלום, קידומת הטלפון הראשונית נקבעת לפי מדינת המסעדה: ‎+33 לצרפת, ‎+972 לישראל וכן הלאה. אפשר לבחור קידומת אחרת למספר זר או להדביק מספר בינלאומי המתחיל ב-+. בקייטרינג מספר מקומי נחשב ישראלי; מספר זר דורש + וקידומת מדינה. רווחים, מקפים וסוגריים מותרים; המספר נשמר בפורמט בינלאומי, למשל ‎+972502345678. מספר חסר, קידומת לא תקינה, אותיות או שלוחה חוסמים שליחה ודורשים תיקון. בהזמנת שולחן הטלפון נשאר אופציונלי כשהטופס מאפשר זאת; מספר שהוזן חייב להיות תקין. בדיקת פורמט אינה בודקת רישום ל-WhatsApp. קוד SMS אם נדרש עדיין כפוף להגדרות העסק."
           }
+        },
+        {
+          "id": "contact-phone-format",
+          "title": {
+            "fr": "Vérifier le téléphone de contact",
+            "en": "Check the contact phone number",
+            "he": "בדיקת מספר הטלפון ליצירת קשר"
+          },
+          "instructions": {
+            "fr": "Saisissez un numéro complet avec son indicatif pays. Le contrôle de numéro de Foody retire les espaces et les marques invisibles de mise en forme issus d’un copier-coller avant validation ; il ne corrige pas les chiffres et n’accepte pas les lettres ou les extensions. Si votre formulaire refuse encore un numéro collé, ressaisissez-le au format international et vérifiez les chiffres avant de continuer. Un format accepté ne confirme ni la possession du numéro ni l’existence d’un compte WhatsApp. Les éventuelles vérifications SMS et les autres conditions de commande restent applicables.",
+            "en": "Enter a complete number with its country code. Foody’s phone check removes spaces and invisible clipboard formatting before validation; it does not correct digits or accept letters or extensions. If your form still rejects a pasted number, retype it in international format and check the digits before continuing. An accepted format does not confirm ownership or the existence of a WhatsApp account. Any SMS verification and other order requirements still apply.",
+            "he": "הזינו מספר מלא עם קידומת מדינה. בדיקת הטלפון של Foody מסירה רווחים ותווי עיצוב בלתי נראים מהעתקה והדבקה לפני האימות; היא אינה מתקנת ספרות ואינה מקבלת אותיות או שלוחות. אם הטופס עדיין דוחה מספר שהודבק, הקלידו אותו מחדש בפורמט בינלאומי ובדקו את הספרות לפני ההמשך. פורמט שאושר אינו מאמת בעלות או קיום של חשבון WhatsApp. אימות SMS ככל שנדרש ושאר תנאי ההזמנה עדיין חלים."
+          }
         }
       ],
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-10-25",
+      "procedureUpdatedAt": "2026-11-16",
       "evidence": [
         {
           "service": "foodyserver",
           "file": "internal/catering/public_handler.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/common/phone.go"
         },
         {
           "service": "foodyserver",
@@ -55753,6 +55858,10 @@
         {
           "service": "foodyadmin",
           "file": "src/lib/permissions-context.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/lib/phone-format.ts"
         },
         {
           "service": "foodyadmin",
@@ -94695,7 +94804,6 @@
         "wcSingleOrder",
         "wcSummary",
         "wcTitle",
-        "wcUnavailable",
         "whatsappRecapLanguage",
         "whatsappRecapSend"
       ],
@@ -111586,8 +111694,8 @@
   "coverage": {
     "sharedRuntimeFiles": 440,
     "features": 114,
-    "operations": 1015,
-    "sourceFiles": 2638,
+    "operations": 1019,
+    "sourceFiles": 2639,
     "surfaces": 2317,
     "unclassifiedRoutes": []
   }
