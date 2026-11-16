@@ -5,7 +5,7 @@ apps: foodypos
 tags:
   - orders
   - pos-check-split
-updatedAt: '2026-10-29'
+updatedAt: '2026-11-16'
 featureId: pos-check-split
 audience: public
 releaseStatus: available
@@ -15,6 +15,12 @@ Open the saved table bill → Actions → Split. Choose by cover, item or equal 
 ## Availability and access
 
 Advanced actions appear only when the installed POS and API advertise the required capability and your role permits them. Refresh a changed bill before retrying; never create another charge to resolve an uncertain result.
+
+<span id="pending-payment-recovery" />
+
+## Resolve a payment blocking a split
+
+A payment started on this POS can block saving a new split, including on another check. In the compatible version, Check payment explains this before opening Split. Reopen the affected check and select Pay to resume the original attempt. If the POS or staff session is refused, have its access checked and resume that same attempt. Only a server-confirmed rejection with no reservation created can release the local attempt. An uncertain network result still needs verification; do not create another payment or erase app data. Then return to Split and save the allocation. Splitting never starts a payment.
 
 <span id="split-cash-collection" />
 
