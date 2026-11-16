@@ -14877,12 +14877,25 @@
           "en": "In the development Backoffice open **Plans & modules**. In **Modules**, select a module and edit its monthly price excluding VAT, included quantities and checked features. Features are categorized and individually searchable. Respect the displayed dependencies. In **Plans**, create a plan and choose its modules, price, own quotas, added or excluded features and public visibility. Enter French, English and Hebrew names. **All prices** contains setup, equipment, licence and service rates: blank means quotation, zero means included; a quantity row represents an allowance, not a price. **Review changes**, then **Publish new version** publish a new revision. A version conflict retains the draft; reload and reapply your changes. Pricing reads its environment’s catalogue and may cache it for one minute. Accepted contracts, pending payments, existing invitations and configured trials keep their version.",
           "he": "ב־Backoffice בסביבת הפיתוח פתחו **Plans & modules**. בלשונית **Modules** בחרו מודול וערכו מחיר חודשי לפני מע״מ, כמויות כלולות ויכולות מסומנות. היכולות מחולקות לקטגוריות וניתנות לחיפוש בנפרד. הקפידו על התלויות המוצגות. בלשונית **Plans** צרו מסלול ובחרו מודולים, מחיר, מכסות נפרדות, יכולות נוספות או מוחרגות ונראות ציבורית. הזינו שמות בעברית, באנגלית ובצרפתית. **All prices** כוללת מחירי הקמה, ציוד, רישיונות ושירותים: סכום ריק פירושו הצעת מחיר, אפס פירושו כלול; שורת כמות היא הקצאה ולא מחיר. בחרו **Review changes** ואז **Publish new version** לפרסום גרסה. בהתנגשות גרסאות הטיוטה נשמרת; טענו מחדש והחילו את השינויים. דף המחירים קורא את הקטלוג של אותה סביבה ועשוי לשמור אותו במטמון למשך דקה. חוזים שאושרו, תשלומים בתהליך, הזמנות קיימות ותקופות ניסיון שהוגדרו שומרים על גרסתם."
         }
+      },
+      {
+        "id": "commercial-documents-entry",
+        "title": {
+          "fr": "Préparer les documents commerciaux",
+          "en": "Prepare commercial documents",
+          "he": "הכנת מסמכים מסחריים"
+        },
+        "instructions": {
+          "fr": "Dans la version sandbox du module **Plans & modules**, ouvrez **Quotes & orders** pour composer des devis et bons de commande PDF à partir des formules, modules, matériels et frais. Ce parcours conserve les contrats existants. Consultez la procédure interne Devis et bons de commande Foody pour la configuration de l’émetteur, les échéanciers, les totaux séparés et la finalisation du PDF.",
+          "en": "In the sandbox version of **Plans & modules**, open **Quotes & orders** to compose PDF quotations and orders using plans, modules, equipment and fees. This flow preserves existing contracts. Consult the internal Foody quotations and sales orders procedure for issuer setup, schedules, separate totals and PDF finalization.",
+          "he": "בגרסת סביבת הבדיקות של **Plans & modules** פתחו **Quotes & orders** ליצירת הצעות מחיר והזמנות PDF ממסלולים, מודולים, ציוד ועמלות. המסלול שומר על חוזים קיימים. עיינו בנוהל הפנימי להצעות מחיר והזמנות של Foody להגדרת הספק, מועדי התשלום, סכומים נפרדים וסגירת PDF."
+        }
       }
     ],
     "audience": "internal",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-11-15",
+    "procedureUpdatedAt": "2026-11-16",
     "description": {
       "en": "Open the restaurant’s Features, Billing or Payment tab. Find the shared Cibus settings under Payments & devices.",
       "fr": "Ouvrez l’onglet Features, Billing ou Payment de la fiche restaurant. Les réglages Cibus partagés se trouvent dans Payments & devices.",
@@ -17923,5 +17936,106 @@
     "status": "local-release-unverified",
     "procedureUpdatedAt": "2026-11-12",
     "preserveExisting": false
+  },
+  {
+    "id": "backoffice-commercial-documents",
+    "module": "internal",
+    "article": "internal/commercial-documents",
+    "audience": "internal",
+    "status": "available",
+    "preserveExisting": false,
+    "procedureUpdatedAt": "2026-11-16",
+    "title": {
+      "fr": "Devis et bons de commande Foody",
+      "en": "Foody quotations and sales orders",
+      "he": "הצעות מחיר והזמנות רכש של Foody"
+    },
+    "entry": {
+      "fr": "Backoffice de développement → Payments & devices → Plans & modules → Quotes & orders.",
+      "en": "Development Backoffice → Payments & devices → Plans & modules → Quotes & orders.",
+      "he": "Backoffice בסביבת הפיתוח ← Payments & devices ← Plans & modules ← Quotes & orders."
+    },
+    "access": {
+      "fr": "Réservé aux superadmins Foody dans la version sandbox qui contient ce module. La migration API 321 ajoute les documents commerciaux. Les PDF sont des devis ou bons de commande, sans encaissement, émission de facture fiscale ni activation automatique de droits. Les contrats existants restent inchangés.",
+      "en": "Foody superadmins only, in the sandbox version containing this module. API migration 321 adds commercial documents. PDFs are quotations or sales orders; they do not collect payment, issue tax invoices or activate access. Existing subscription contracts remain unchanged.",
+      "he": "למנהלי על של Foody בלבד בגרסת סביבת הבדיקות הכוללת מודול זה. מיגרציית API מספר 321 מוסיפה מסמכים מסחריים. המסמכים הם הצעות מחיר או הזמנות רכש; אין גביית תשלום, הפקת חשבונית מס או פתיחת הרשאות אוטומטית. חוזי מנוי קיימים אינם משתנים."
+    },
+    "selectors": {
+      "foodybackoffice": [
+        "src/components/CommercialDocuments.tsx",
+        "src/lib/commercial-documents.ts"
+      ],
+      "foodyserver": [
+        "internal/commercial/**",
+        "migrations/321_foody_commercial_documents.sql"
+      ]
+    },
+    "operations": [
+      {
+        "id": "issuer",
+        "title": {
+          "fr": "Renseigner l’émetteur",
+          "en": "Set the issuer details",
+          "he": "הגדרת פרטי הספק"
+        },
+        "instructions": {
+          "fr": "Ouvrez **Issuer settings**. Saisissez la raison sociale, l’identifiant d’entreprise, l’adresse et les coordonnées de Foody. Choisissez la langue PDF par défaut, la saisie des prix HT ou TTC, ou **No VAT charged** selon le traitement applicable, puis le taux de TVA et les conditions commerciales. Enregistrez avec **Save issuer settings**. Ces valeurs sont copiées dans les nouveaux documents uniquement. Les coordonnées du PDF de démonstration ne sont jamais reprises. En cas de conflit, rechargez les réglages enregistrés avant de recommencer.",
+          "en": "Open **Issuer settings**. Enter Foody’s legal name, company ID, address and contact details. Choose the default PDF language, prices excluding or including VAT, or **No VAT charged** as applicable, then the VAT rate and commercial terms. Select **Save issuer settings**. Defaults are copied into new documents only. Demonstration PDF identities are never reused. After a conflict, reload the saved settings before trying again.",
+          "he": "פתחו **Issuer settings**. הזינו את השם המשפטי של Foody, מספר העוסק או החברה, הכתובת ופרטי הקשר. בחרו שפת PDF כברירת מחדל, הזנת מחירים לפני מע״מ או כולל מע״מ, או **No VAT charged** לפי הטיפול המתאים, ואז את שיעור המע״מ והתנאים המסחריים. שמרו באמצעות **Save issuer settings**. ברירות המחדל מועתקות למסמכים חדשים בלבד. פרטי הדוגמה אינם מועתקים. במקרה של התנגשות, טענו מחדש את ההגדרות השמורות לפני ניסיון נוסף."
+        }
+      },
+      {
+        "id": "compose",
+        "title": {
+          "fr": "Composer un devis ou une commande",
+          "en": "Compose a quotation or order",
+          "he": "יצירת הצעת מחיר או הזמנה"
+        },
+        "instructions": {
+          "fr": "Choisissez **New quotation** ou **New order**. Renseignez le titre, la date, la validité du devis et le client. Le client peut être un prospect ; la recherche permet aussi de rattacher un restaurant existant. Relisez ses coordonnées. Choisissez le PDF en hébreu, français ou anglais ; les descriptions et conditions saisies ne sont pas traduites automatiquement. Cherchez puis ajoutez une formule, un module, du matériel, des licences ou des frais du catalogue. **Custom item** ajoute une ligne libre. Ajustez les quantités, descriptions, détails et prix convenus. Une ligne sur devis exige un prix explicite. La première sauvegarde fige la version du catalogue pour ce document ; les publications ultérieures ne recalculent pas ses tarifs ou inclusions.",
+          "en": "Choose **New quotation** or **New order**. Enter the title, date, quotation validity and customer. A customer can be a prospect; search can also link an existing restaurant. Review its contact details. Select Hebrew, French or English PDF output; entered descriptions and terms are not translated automatically. Search for and add catalogue plans, modules, hardware, licences or fees. **Custom item** adds a free-form line. Adjust quantities, descriptions, details and agreed prices. Quotation-only items need an explicit price. The first save freezes the catalogue version for this document; later publications do not recalculate its prices or inclusions.",
+          "he": "בחרו **New quotation** או **New order**. הזינו כותרת, תאריך, תוקף הצעת המחיר ולקוח. הלקוח יכול להיות לקוח פוטנציאלי; החיפוש מאפשר גם קישור למסעדה קיימת. בדקו את פרטי הקשר. בחרו PDF בעברית, בצרפתית או באנגלית; תיאורים ותנאים שהוזנו אינם מתורגמים אוטומטית. חפשו והוסיפו מסלולים, מודולים, ציוד, רישיונות או עמלות מהקטלוג. **Custom item** מוסיף שורה חופשית. התאימו כמויות, תיאורים, פרטים ומחירים מוסכמים. לפריט בהצעת מחיר יש להזין מחיר מפורש. השמירה הראשונה מקבעת את גרסת הקטלוג למסמך; פרסומים מאוחרים אינם מחשבים מחדש את מחיריו או ההרשאות הכלולות."
+        }
+      },
+      {
+        "id": "schedule",
+        "title": {
+          "fr": "Distinguer paiement unique, mensualités et prépaiement",
+          "en": "Separate one-time, monthly and prepaid charges",
+          "he": "הפרדה בין תשלום חד־פעמי, חודשי ומראש"
+        },
+        "instructions": {
+          "fr": "Pour le matériel ou la mise en service, utilisez **One-time payment**. Pour un abonnement ou des frais de terminal, utilisez **Monthly** et indiquez l’engagement minimum en mois ; 0 signifie sans engagement minimum. **Prepaid period** couvre 12, 24 ou une durée libre de 1 à 120 mois en un seul paiement. Son champ prix est le prix unitaire de toute la période. Passer de mensuel à prépayé propose 12 mensualités ; changer ensuite la durée conserve le prix négocié. Vérifiez-le ou utilisez **Use catalogue price** pour recalculer la référence sur la durée. Chaque ligne indique une échéance à la commande, à l’activation ou à une date. **By usage** affiche un tarif unitaire hors totaux fixes. **Included** indique une prestation à zéro. Les quotas des plans et modules sont indiqués par unité ; activez la liste détaillée des fonctionnalités si nécessaire.",
+          "en": "Use **One-time payment** for equipment or setup. For a subscription or terminal fees, select **Monthly** and enter the minimum commitment in months; 0 means no minimum commitment. **Prepaid period** covers 12, 24 or any duration from 1 to 120 months in one payment. Its price field is the unit price for the whole period. Switching from monthly to prepaid proposes 12 monthly payments; subsequently changing the duration preserves the negotiated price. Review it or use **Use catalogue price** to recalculate the period reference. Every line specifies payment on order, on activation or on a date. **By usage** discloses a unit rate outside fixed totals. **Included** records a zero-price service. Plan and module quotas are shown per unit; enable the detailed feature list if needed.",
+          "he": "לציוד או הקמה בחרו **One-time payment**. למנוי או לדמי מסוף בחרו **Monthly** והזינו התחייבות מינימלית בחודשים; 0 פירושו ללא התחייבות מינימלית. **Prepaid period** מכסה 12, 24 או תקופה חופשית של 1 עד 120 חודשים בתשלום אחד. שדה המחיר הוא המחיר ליחידה לכל התקופה. מעבר מחודשי לתשלום מראש מציע 12 תשלומים חודשיים; שינוי משך התקופה לאחר מכן שומר על המחיר המוסכם. בדקו אותו או בחרו **Use catalogue price** לחישוב מחיר הייחוס לתקופה. לכל שורה מגדירים תשלום בהזמנה, בהפעלה או בתאריך. **By usage** מציג מחיר ליחידת שימוש מחוץ לסכומים הקבועים. **Included** מציין שירות ללא תשלום. מכסות המסלול והמודול מוצגות ליחידה; אפשר להוסיף רשימת יכולות מפורטת."
+        }
+      },
+      {
+        "id": "review",
+        "title": {
+          "fr": "Vérifier et sauvegarder",
+          "en": "Review and save",
+          "he": "בדיקה ושמירה"
+        },
+        "instructions": {
+          "fr": "Choisissez le mode HT/TTC et le taux de TVA. Changer le mode conserve les prix négociés HT, avec arrondi à l’agora. Complétez les conditions de livraison, activation, renouvellement et résiliation utiles à l’offre. **Calculate totals** affiche séparément paiements uniques et prépayés, mensualités et frais variables. Les mensualités engagées affichent aussi leur total sur la durée. **Preview PDF** prépare un brouillon marqué comme tel, avec logo Foody sombre et mise en page A4. Relisez les tableaux et téléchargez le PDF depuis l’aperçu. **Save draft** sauvegarde le document privé. Une erreur conserve les saisies ; corrigez le champ indiqué. En cas de sauvegarde incertaine, vérifiez **Saved documents** avant de créer un autre document.",
+          "en": "Choose the price tax basis and VAT rate. Changing the basis preserves negotiated net prices, rounded to the nearest agora. Enter relevant delivery, activation, renewal and cancellation terms. **Calculate totals** separates one-time and prepaid amounts, monthly charges and usage rates. Committed monthly lines also show their total over the commitment. **Preview PDF** prepares a marked draft with the dark Foody logo and A4 layout. Review the tables and download from the preview. **Save draft** saves the private document. Errors retain your entries; correct the indicated field. After an uncertain save, check **Saved documents** before creating another document.",
+          "he": "בחרו מחיר לפני או כולל מע״מ ואת שיעור המע״מ. שינוי בסיס המס שומר על המחירים המוסכמים לפני מע״מ בעיגול לאגורה. הזינו תנאי אספקה, הפעלה, חידוש וביטול רלוונטיים. **Calculate totals** מפריד בין תשלום חד־פעמי ומראש, חיובים חודשיים ותעריפי שימוש. שורות חודשיות עם התחייבות מציגות גם סכום לכל תקופת ההתחייבות. **Preview PDF** יוצר טיוטה מסומנת עם הלוגו הכהה של Foody בפריסת A4. בדקו את הטבלאות והורידו מהתצוגה המקדימה. **Save draft** שומר את המסמך הפרטי. שגיאה שומרת את ההזנה; תקנו את השדה המצוין. לאחר שמירה שתוצאתה אינה ודאית, בדקו **Saved documents** לפני יצירת מסמך נוסף."
+        }
+      },
+      {
+        "id": "finalize",
+        "title": {
+          "fr": "Finaliser le PDF et préparer la commande",
+          "en": "Finalize the PDF and prepare the order",
+          "he": "סגירת PDF והכנת הזמנה"
+        },
+        "instructions": {
+          "fr": "Après sauvegarde, ouvrez **Review & finalize**, vérifiez l’aperçu puis **Finalize document**. Le document reçoit un numéro FQ pour un devis ou FO pour une commande ; ses tarifs, inclusions et PDF sont figés. Une erreur de génération ne finalise pas le document. Un devis expiré doit être corrigé avant finalisation. **View archived PDF** permet de consulter et télécharger les octets archivés. Pour un devis finalisé, **Create order draft** ouvre un unique brouillon de commande qui conserve ses prix et inclusions. Relisez puis finalisez cette commande séparément. Cette conversion ne vaut ni acceptation du client ni encaissement et n’envoie aucun email. Retrouvez les documents par type et statut dans **Saved documents**. Un conflit d’édition exige de rouvrir la version enregistrée ; les modifications locales ne l’écrasent pas.",
+          "en": "After saving, open **Review & finalize**, review the PDF, then choose **Finalize document**. The document receives an FQ quotation or FO order number; its prices, inclusions and PDF become immutable. A rendering failure leaves it as a draft. Correct an expired quotation before finalization. **View archived PDF** displays and downloads the archived bytes. For a finalized quotation, **Create order draft** opens a single order draft retaining its prices and inclusions. Review and finalize the order separately. Conversion does not record customer acceptance, collect payment or send email. Find documents by type and status in **Saved documents**. An edit conflict requires reopening the saved version; local changes do not overwrite it.",
+          "he": "לאחר שמירה פתחו **Review & finalize**, בדקו את ה־PDF ובחרו **Finalize document**. המסמך מקבל מספר FQ להצעת מחיר או FO להזמנה; המחירים, התכולה וה־PDF נעשים בלתי ניתנים לעריכה. כשל בהפקה משאיר טיוטה. יש לתקן הצעת מחיר שפג תוקפה לפני סגירה. **View archived PDF** מציג ומוריד את הקובץ שנשמר בארכיון. בהצעת מחיר סופית, **Create order draft** פותח טיוטת הזמנה יחידה השומרת את המחירים והתכולה. בדקו וסגרו את ההזמנה בנפרד. ההמרה אינה מתעדת אישור לקוח, גובה תשלום או שולחת דוא״ל. מצאו מסמכים לפי סוג וסטטוס ב־**Saved documents**. התנגשות עריכה מחייבת פתיחה מחדש של הגרסה השמורה; השינויים המקומיים אינם דורסים אותה."
+        }
+      }
+    ]
   }
 ]
