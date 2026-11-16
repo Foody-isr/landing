@@ -7,7 +7,7 @@ apps: foodyadmin
 tags:
   - account
   - foody-billing-sandbox
-updatedAt: '2026-11-15'
+updatedAt: '2026-11-16'
 featureId: foody-billing-sandbox
 audience: internal
 releaseStatus: local-release-unverified
@@ -73,7 +73,7 @@ Initial modules follow the public grid: Restaurant for POS and table service, Or
 
 ## Configure separate quotas and custom offers
 
-For new versioned sandbox offers, distinguish **Total accounts, including owner** from **Physical POS devices**. An employee account is not a device. A blank limit for these two fields means unlimited; a number imposes a quota. Named POS users, chef access and kitchen displays also have explicit quantities. The owner counts once and pending invitations reserve capacity. The role determines whether an account consumes POS or chef access. In **Custom offer**, choose a base plan or modules, then additional licences included in the agreed amount. The custom price covers the whole composition, including normally quoted licences. Choose the trial duration and modules separately; the minimum remains 14 days. Existing contracts are never migrated automatically.
+In the reviewed grid, **Active POS devices** counts authorized order-taking devices: an iPad or a terminal running the POS. Restaurant and Restaurant + Orders include 2 devices, Integral 3. Each employee keeps a personal account; **Personal POS accounts without a per-employee charge** removes the named POS limit and surcharge, while retaining chef, KDS and permission controls. A payment-only Mini does not consume a POS device; its EMV service is billed separately. Kitchen includes 1 chef and 1 KDS. In **Custom offer**, an explicit or automatic plan supplies its allowances; added licences are included in the entered custom amount. Total accounts and devices remain separate: blank means unlimited, zero means none. Existing trials and contracts retain their rights; there is no automatic migration.
 
 ## If the operation fails
 

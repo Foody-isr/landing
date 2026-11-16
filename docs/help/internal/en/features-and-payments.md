@@ -88,6 +88,8 @@ Confirm the API label, then open **Payments & devices → Cibus (Pluxee)**. Use 
 
 In the development Backoffice open **Plans & modules**. In **Modules**, select a module and edit its monthly price excluding VAT, included quantities and checked features. Features are categorized and individually searchable. Respect the displayed dependencies. In **Plans**, create a plan and choose its modules, price, own quotas, added or excluded features and public visibility. Enter French, English and Hebrew names. **All prices** contains setup, equipment, licence and service rates: blank means quotation, zero means included; a quantity row represents an allowance, not a price. **Review changes**, then **Publish new version** publish a new revision. A version conflict retains the draft; reload and reapply your changes. Pricing reads its environment’s catalogue and may cache it for one minute. Accepted contracts, pending payments, existing invitations and configured trials keep their version.
 
+To prepare the November 16 grid, choose **Load reviewed software offers**. This loads the three modules, duo and Integral into the draft and opens review; it does not publish. Existing equipment, setup and payment rates and other custom plans are retained. Check ILS 590 / 590 / 890, 990 for the duo, 1,790 for Integral and 149 per additional device. **Personal POS accounts without a per-employee charge** distinguishes these offers from historical named licences. **Automatic** allows a cheaper plan for exactly the same modules without reducing features or quotas; **Recommended** highlights it. Review changes before publishing. Publication changes no existing contract or saved quotation.
+
 <span id="commercial-documents-entry" />
 
 ## Prepare commercial documents

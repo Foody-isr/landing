@@ -28,6 +28,8 @@ Open **Issuer settings**. Enter Foody’s legal name, company ID, address and co
 
 Choose **New quotation** or **New order**. Enter the title, date, quotation validity and customer. A customer can be a prospect; search can also link an existing restaurant. Review its contact details. Select Hebrew, French or English PDF output; entered descriptions and terms are not translated automatically. Search for and add catalogue plans, modules, hardware, licences or fees. **Custom item** adds a free-form line. Adjust quantities, descriptions, details and agreed prices. Quotation-only items need an explicit price. The first save freezes the catalogue version for this document; later publications do not recalculate its prices or inclusions.
 
+For the reviewed grid, add **Foody Integral** or **Restaurant + Orders** directly when selling that plan: the document does not automatically replace separate lines with a bundle. Do not add the bundle and its modules twice. Additional POS licences are active devices at ILS 149; EMV at ILS 49 per active terminal remains a separate line. One-time fees, options and equipment stay separate. Existing lines and negotiated prices are not rewritten.
+
 <span id="schedule" />
 
 ## Separate one-time, monthly and prepaid charges

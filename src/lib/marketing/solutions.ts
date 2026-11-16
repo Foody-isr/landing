@@ -43,7 +43,7 @@ const entries: Record<
         ],
         [
           "כמה עולה Foody מסעדה ומה כלול?",
-          `Foody מסעדה עולה ${pricingRates.restaurant} ₪ לחודש לסניף לפני מע״מ, כולל קופה, מפת שולחנות, הזמנות ב־QR ורישיון קופה אישי אחד. כל רישיון נוסף עולה ${pricingRates.extraPos} ₪ לחודש לפני מע״מ. אפשר להוסיף את Foody הזמנות ואת Foody Kitchen בנפרד. הקמה, חומרה ושירותי תשלום מפורטים במחירון.`,
+          `Foody מסעדה עולה ${pricingRates.restaurant} ₪ לחודש לסניף לפני מע״מ, כולל קופה, מפת שולחנות, הזמנות ב־QR ו2 עמדות קופה פעילות. כל עמדה נוספת עולה ${pricingRates.extraPos} ₪ לחודש לפני מע״מ. אפשר להוסיף את Foody הזמנות ואת Foody Kitchen בנפרד. הקמה, חומרה ושירותי תשלום מפורטים במחירון.`,
         ],
         [
           "איך ההזמנות מגיעות למטבח?",
@@ -345,7 +345,7 @@ const entries: Record<
         ],
         [
           "Combien coûte Foody Restaurant et que comprend l’offre ?",
-          `Foody Restaurant coûte ${pricingRates.restaurant} ₪ HT par mois et par établissement, avec la caisse, le plan de salle, les commandes par QR à table et une licence de caisse nominative. Chaque employé supplémentaire qui utilise la caisse coûte ${pricingRates.extraPos} ₪ HT par mois. Foody Commandes et Foody Cuisine s’ajoutent séparément. La mise en service, le matériel et les paiements sont détaillés dans les tarifs.`,
+          `Foody Restaurant coûte ${pricingRates.restaurant} ₪ HT par mois et par établissement, avec la caisse, le plan de salle, les commandes par QR à table et 2 postes de caisse actifs. Chaque poste supplémentaire coûte ${pricingRates.extraPos} ₪ HT par mois. Foody Commandes et Foody Cuisine s’ajoutent séparément. La mise en service, le matériel et les paiements sont détaillés dans les tarifs.`,
         ],
         [
           "Comment les commandes arrivent-elles en cuisine ?",
@@ -455,7 +455,7 @@ const entries: Record<
         ],
         [
           "Combien coûte Foody Caisse ?",
-          `La caisse fait partie de Foody Restaurant à ${pricingRates.restaurant} ₪ HT par mois et par établissement. Une licence nominative est incluse. Chaque employé supplémentaire qui utilise la caisse coûte ${pricingRates.extraPos} ₪ HT par mois. La page Tarifs détaille la mise en service, la formation, le matériel et les paiements.`,
+          `La caisse fait partie de Foody Restaurant à ${pricingRates.restaurant} ₪ HT par mois et par établissement. 2 postes de caisse actifs sont inclus, avec un compte personnel par employé. Chaque poste supplémentaire coûte ${pricingRates.extraPos} ₪ HT par mois. La page Tarifs détaille la mise en service, la formation, le matériel et les paiements.`,
         ],
         [
           "Une tablette peut-elle encaisser une carte bancaire ?",
@@ -647,7 +647,7 @@ const entries: Record<
         ],
         [
           "How much is Foody Restaurant and what is included?",
-          `Foody Restaurant costs ILS ${pricingRates.restaurant} per location/month excluding VAT, with POS, floor plans, table QR ordering and one named POS licence. Each additional employee who uses the POS costs ILS ${pricingRates.extraPos} per month excluding VAT. Foody Orders and Foody Kitchen are available separately. Setup, hardware and payment fees are listed on the pricing page.`,
+          `Foody Restaurant costs ILS ${pricingRates.restaurant} per location/month excluding VAT, with POS, floor plans, table QR ordering and 2 active POS devices. Each additional device costs ILS ${pricingRates.extraPos} per month excluding VAT. Foody Orders and Foody Kitchen are available separately. Setup, hardware and payment fees are listed on the pricing page.`,
         ],
         [
           "How do orders reach the kitchen?",
@@ -757,7 +757,7 @@ const entries: Record<
         ],
         [
           "How much does Foody POS cost?",
-          `POS is part of Foody Restaurant at ILS ${pricingRates.restaurant} per location/month excluding VAT. It includes one named licence. Each additional employee who uses the POS costs ILS ${pricingRates.extraPos} per month excluding VAT. The pricing page details setup, training, hardware and payment fees.`,
+          `POS is part of Foody Restaurant at ILS ${pricingRates.restaurant} per location/month excluding VAT. It includes 2 active POS devices with personal staff accounts. Each additional device costs ILS ${pricingRates.extraPos} per month excluding VAT. The pricing page details setup, training, hardware and payment fees.`,
         ],
         [
           "Can any tablet accept a card payment?",

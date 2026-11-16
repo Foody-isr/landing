@@ -25,7 +25,7 @@ export const acquisitionContent: Record<Lang, {
           { title: "שולחים לפי קצב השירות", text: "כשהפרופיל והגרסאות התואמות מאפשרים זאת, משייכים מנות לשירות ושולחים או משחררים אותן במפורש. הוספת מנה לסל אינה משגרת או מדפיסה אותה. הדפסת בוני מטבח היא אפשרות בתשלום, עם מדפסת ופרופיל מוגדרים.", guide: "/help/orders/courses-and-kitchen-release" },
           { title: "בודקים את החשבון ואת אישור התשלום", text: "בחרו את החשבון והסכום הנכונים ושלמו באמצעות ההגדרה התואמת. טאבלט עם Foody אינו הופך בעצמו למסוף כרטיסים. תוצאה לא ברורה דורשת בדיקת העסקה הקיימת לפני ניסיון נוסף; אישור תשלום אינו אישור שהקבלה הודפסה.", guide: "/help/payments/pos-checkout" },
         ],
-        offer: `Foody מסעדה כולל את הקופה ורישיון קופה אישי אחד ב־${pricingRates.restaurant} ₪ לחודש לסניף לפני מע״מ. רישיון לכל עובד נוסף שמשתמש בקופה עולה ${pricingRates.extraPos} ₪ לחודש לפני מע״מ. ציוד, הקמה ושירותי תשלום מתומחרים בנפרד.`,
+        offer: `Foody מסעדה כולל את הקופה ו־2 עמדות קופה פעילות ב־${pricingRates.restaurant} ₪ לחודש לסניף לפני מע״מ. כל עמדת קופה נוספת עולה ${pricingRates.extraPos} ₪ לחודש לפני מע״מ. ציוד, הקמה ושירותי תשלום מתומחרים בנפרד.`,
       },
       restaurants: {
         title: "קופה למסעדה: בדקו הזמנה, שירות ותשלום",
@@ -35,7 +35,7 @@ export const acquisitionContent: Record<Lang, {
           { title: "מארגנים את השירות והתשלום", text: "שולחים את המנות לפי הגדרות ההכנה ומנהלים את החשבון בשולחן. בודקים מראש התאמה למדפסות ולספק הסליקה; הדפסת בוני מטבח היא אפשרות בתשלום.", guide: "/help/orders/courses-and-kitchen-release" },
           { title: "מחברים למתכונים ולמלאי עם מודול המטבח", text: "עם Foody Kitchen, מתכונים וקישורי מכירות שהוגדרו מאפשרים לעקוב אחר צריכת חומרי הגלם. בסיכום היום בודקים פערים בלי לנכות שוב צריכה שכבר נרשמה.", guide: "/help/kitchen/data-and-sales-links" },
         ],
-        offer: `Foody מסעדה עולה ${pricingRates.restaurant} ₪ לחודש לסניף לפני מע״מ, כולל קופה, הזמנות ב־QR בשולחן ורישיון אישי אחד. אפשר להוסיף את Foody הזמנות ואת Foody Kitchen לפי הצורך.`,
+        offer: `Foody מסעדה עולה ${pricingRates.restaurant} ₪ לחודש לסניף לפני מע״מ, כולל קופה, הזמנות ב־QR בשולחן ו־2 עמדות קופה פעילות. אפשר להוסיף את Foody הזמנות ואת Foody Kitchen לפי הצורך.`,
       },
       kitchen: {
         title: "ניהול מלאי למסעדות וחישוב פוד קוסט בתהליך אחד",
@@ -75,7 +75,7 @@ export const acquisitionContent: Record<Lang, {
           { title: "Envoyer au rythme du service", text: "Avec un profil et des versions compatibles, affectez les plats aux services, puis envoyez ou lancez-les explicitement. Ajouter un plat au panier ne l’envoie ni ne l’imprime. L’impression des bons cuisine est une option payante, avec imprimante et profil configurés.", guide: "/help/orders/courses-and-kitchen-release" },
           { title: "Vérifier l’addition et le paiement confirmé", text: "Sélectionnez la bonne addition et son montant, puis utilisez le parcours de paiement compatible. Une tablette avec Foody ne devient pas elle-même un terminal carte. Un résultat incertain demande de vérifier la transaction existante avant toute nouvelle tentative ; un paiement confirmé ne prouve pas la sortie du reçu papier.", guide: "/help/payments/pos-checkout" },
         ],
-        offer: `Foody Restaurant comprend la caisse et une licence nominative pour ${pricingRates.restaurant} ₪ HT par mois et par établissement. Chaque employé supplémentaire qui utilise la caisse coûte ${pricingRates.extraPos} ₪ HT par mois. Matériel, mise en service et paiements sont chiffrés séparément.`,
+        offer: `Foody Restaurant comprend la caisse et 2 postes actifs pour ${pricingRates.restaurant} ₪ HT par mois et par établissement. Chaque poste de caisse supplémentaire coûte ${pricingRates.extraPos} ₪ HT par mois. Matériel, mise en service et paiements sont chiffrés séparément.`,
       },
       restaurants: {
         title: "Caisse restaurant : vérifiez commande, service et paiement",
@@ -85,7 +85,7 @@ export const acquisitionContent: Record<Lang, {
           { title: "Organiser le service et le paiement", text: "Envoyez les plats selon les règles de préparation et gérez l’addition à table. La compatibilité des imprimantes et du prestataire de slika se vérifie avant installation ; l’impression des bons en cuisine est une option payante.", guide: "/help/orders/courses-and-kitchen-release" },
           { title: "Relier recettes et stocks avec le module Cuisine", text: "Avec Foody Cuisine, les recettes et les correspondances de ventes configurées permettent de suivre la consommation des ingrédients. La clôture rapproche les écarts sans déduire une seconde fois les consommations déjà enregistrées.", guide: "/help/kitchen/data-and-sales-links" },
         ],
-        offer: `Foody Restaurant coûte ${pricingRates.restaurant} ₪ HT par mois et par établissement, avec la caisse, le QR à table et une licence nominative. Foody Commandes et Foody Cuisine peuvent s’ajouter selon vos besoins.`,
+        offer: `Foody Restaurant coûte ${pricingRates.restaurant} ₪ HT par mois et par établissement, avec la caisse, le QR à table et 2 postes de caisse actifs. Foody Commandes et Foody Cuisine peuvent s’ajouter selon vos besoins.`,
       },
       kitchen: {
         title: "Recettes, stocks et food cost dans le même parcours",
@@ -125,7 +125,7 @@ export const acquisitionContent: Record<Lang, {
           { title: "Send dishes at the service’s pace", text: "With a compatible profile and versions, assign courses and explicitly send or release dishes. Adding a dish to the basket does not send or print it. Kitchen ticket printing is a paid option requiring a configured printer and profile.", guide: "/help/orders/courses-and-kitchen-release" },
           { title: "Check the bill and confirmed payment", text: "Select the correct bill and amount, then use the compatible payment flow. A tablet running Foody does not itself become a card terminal. An uncertain result requires checking the existing transaction before another attempt; confirmed payment does not prove a paper receipt was printed.", guide: "/help/payments/pos-checkout" },
         ],
-        offer: `Foody Restaurant includes POS and one named licence for ILS ${pricingRates.restaurant} per location/month excluding VAT. Each additional employee using the POS costs ILS ${pricingRates.extraPos} per month excluding VAT. Hardware, setup and payment services are priced separately.`,
+        offer: `Foody Restaurant includes POS and 2 active devices for ILS ${pricingRates.restaurant} per location/month excluding VAT. Each additional POS device costs ILS ${pricingRates.extraPos} per month excluding VAT. Hardware, setup and payment services are priced separately.`,
       },
       restaurants: {
         title: "Restaurant POS: check ordering, service and payment",
@@ -135,7 +135,7 @@ export const acquisitionContent: Record<Lang, {
           { title: "Organise service and payment", text: "Send dishes according to the preparation rules and manage the table’s bill. Check printer and processor compatibility before installation; kitchen ticket printing is a paid option.", guide: "/help/orders/courses-and-kitchen-release" },
           { title: "Connect recipes and stock with Kitchen", text: "With Foody Kitchen, configured recipes and sales mappings support ingredient consumption tracking. Day closing reconciles variances without deducting previously recorded consumption twice.", guide: "/help/kitchen/data-and-sales-links" },
         ],
-        offer: `Foody Restaurant costs ILS ${pricingRates.restaurant} per location/month excluding VAT, with POS, table QR ordering and one named licence. Add Foody Orders or Foody Kitchen as needed.`,
+        offer: `Foody Restaurant costs ILS ${pricingRates.restaurant} per location/month excluding VAT, with POS, table QR ordering and 2 active POS devices. Add Foody Orders or Foody Kitchen as needed.`,
       },
       kitchen: {
         title: "Recipes, inventory and food cost in one workflow",

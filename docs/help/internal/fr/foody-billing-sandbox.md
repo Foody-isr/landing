@@ -7,7 +7,7 @@ apps: foodyadmin
 tags:
   - account
   - foody-billing-sandbox
-updatedAt: '2026-11-15'
+updatedAt: '2026-11-16'
 featureId: foody-billing-sandbox
 audience: internal
 releaseStatus: local-release-unverified
@@ -55,7 +55,7 @@ Ouvrez la section d’usage mesuré dans Facturation. Elle affiche certains comp
 
 ## Inviter un nouveau restaurant en sandbox
 
-Dans le Backoffice de développement, ouvrez **Restaurants → Onboard New**. Renseignez le nom du restaurant, l’e-mail du propriétaire, la langue du menu et la devise du restaurant. Choisissez **Public catalogue** ou **Custom offer**. Le catalogue reprend les tarifs logiciels de Foody Landing en shekels par établissement et par mois, hors TVA. L’offre personnalisée enregistre les modules, les licences de caisse nominatives supplémentaires, le prix mensuel, le prix annuel facultatif, le traitement de la TVA et les conditions. Activez l’essai, indiquez au moins 14 jours et choisissez les modules testables, ou désactivez l’essai pour un règlement à l’inscription. Envoyez l’invitation. En cas d’échec de remise, choisissez **Resend invitation**.
+Dans le Backoffice de développement, ouvrez **Restaurants → Onboard New**. Renseignez le nom du restaurant, l’e-mail du propriétaire, la langue du menu et la devise du restaurant. Choisissez **Public catalogue** ou **Custom offer**. Le catalogue reprend les tarifs logiciels de Foody Landing en shekels par établissement et par mois, hors TVA. L’offre personnalisée enregistre les modules, les licences supplémentaires selon l’offre (postes actifs pour la nouvelle grille), le prix mensuel, le prix annuel facultatif, le traitement de la TVA et les conditions. Activez l’essai, indiquez au moins 14 jours et choisissez les modules testables, ou désactivez l’essai pour un règlement à l’inscription. Envoyez l’invitation. En cas d’échec de remise, choisissez **Resend invitation**.
 
 <span id="modular-owner" />
 
@@ -73,7 +73,7 @@ Les modules de départ suivent la grille publique : Restaurant pour la caisse et
 
 ## Configurer les deux quotas et les offres personnalisées
 
-Pour les nouvelles offres versionnées en sandbox, distinguez **Total accounts, including owner** et **Physical POS devices**. Un compte employé n’est pas un appareil. Une limite vide dans ces deux champs signifie illimité ; un nombre fixe impose un quota. Les utilisateurs caisse nominatifs, accès chef et écrans cuisine ont aussi leurs quantités explicites. Le propriétaire compte une fois et les invitations en attente réservent une place. Le rôle détermine si le compte consomme un accès caisse ou chef. Dans **Custom offer**, choisissez un plan de base ou des modules, puis les licences supplémentaires incluses dans le prix convenu. Le prix personnalisé couvre l’ensemble de cette composition, y compris des licences normalement sur devis. Choisissez séparément la durée et les modules de l’essai ; la durée minimale reste 14 jours. Aucun contrat existant n’est migré automatiquement.
+Dans la grille révisée, **Active POS devices** compte les postes autorisés à prendre des commandes : iPad ou terminal exécutant la caisse. Restaurant et Restaurant + Commandes comprennent 2 postes, Intégral 3. Chaque employé garde son compte personnel ; cocher **Personal POS accounts without a per-employee charge** supprime le quota caisse nominatif et son supplément, sans supprimer les quotas chef, KDS ou les permissions. Un Mini utilisé uniquement pour le paiement ne consomme pas un poste caisse ; son service EMV reste facturé séparément. Cuisine comprend 1 accès chef et 1 KDS. Dans **Custom offer**, un plan ou une sélection automatique reprend ses quantités ; les licences ajoutées font partie du prix personnalisé saisi. Les comptes totaux et postes restent distincts : une limite vide signifie illimité, zéro signifie aucun. Les essais et contrats déjà enregistrés gardent leurs droits ; aucune migration automatique.
 
 ## En cas d’échec
 
