@@ -19,7 +19,7 @@ Development Backoffice → Payments & devices → Foody billing (sandbox). resta
 
 ## Availability and access
 
-This procedure is for a coordinated sandbox test. A Foody superadmin configures the merchant and the offer. Only a current owner of that restaurant can accept it or start a checkout. A verified payment grants access to purchased modules for restaurants enrolled in modular billing. Existing restaurants keep their operating access. Sandbox payments issue no fiscal documents.
+This procedure is for a coordinated sandbox test. A Foody superadmin configures the merchant and the offer. Only a current owner of that restaurant can accept it or start a checkout. A verified payment grants access to purchased modules for restaurants enrolled in modular billing. Existing restaurants keep their operating access. Sandbox payments issue no fiscal documents. Offer and price management in **Plans & modules** is also available in production, separately from this pilot. Publishing the catalogue does not enable payments, recurring charges or modular onboarding in production. Legacy onboarding remains available.
 
 <span id="merchant" />
 

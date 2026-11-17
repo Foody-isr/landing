@@ -33,7 +33,7 @@ now uses the same Fractionner label as the procedure; the 48 help tests and
 embedded API support tests pass after regeneration. Publication requires the
 immutable documentation pin and the coordinated API-first release.
 
-## Editable commercial catalogue and separate licence quotas (development)
+## Editable commercial catalogue and separate licence quotas
 
 Migration 320 and matching API must precede these clients. Backoffice publishes
 immutable versions for new public/custom offers. Accepted contracts, invitations,
@@ -41,8 +41,12 @@ trials and pending payments remain frozen. The FR/HE/EN procedures distinguish
 employee accounts from physical POS devices and explain named POS/chef access,
 pending invitations, rejected growth and paid additions. Owner-approved additions
 retain the paid period end and require server-confirmed payment before new rights.
-No public production availability, automatic legacy migration, fiscal invoice or
-provider overage charge is claimed. Quotation-only employee/device rates remain
+Catalogue editing and publication are available to superadmins in production
+and development. Publication updates that environment’s public prices after the
+website cache refresh, without charges or modifications to accepted contracts.
+Modular onboarding, merchant settings, subscription checkouts, additions and
+commercial PDFs remain sandbox-only. No automatic legacy migration, fiscal
+invoice or provider overage charge is claimed. Quotation-only employee/device rates remain
 unpriced until explicitly set. Null account/device limits mean unlimited.
 
 Verify publication conflicts, full tariff rendering in all locales, configured

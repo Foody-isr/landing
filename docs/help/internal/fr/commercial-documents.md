@@ -14,7 +14,7 @@ Backoffice de développement → Payments & devices → Plans & modules → Quot
 
 ## Disponibilité et accès
 
-Réservé aux superadmins Foody dans la version sandbox qui contient ce module. La migration API 321 ajoute les documents commerciaux. Les PDF sont des devis ou bons de commande, sans encaissement, émission de facture fiscale ni activation automatique de droits. Les contrats existants restent inchangés.
+Réservé aux superadmins Foody dans la version sandbox qui contient ce module. La migration API 321 ajoute les documents commerciaux. Les PDF sont des devis ou bons de commande, sans encaissement, émission de facture fiscale ni activation automatique de droits. Les contrats existants restent inchangés. L’onglet **Quotes & orders** est masqué en production : la gestion du catalogue y est disponible indépendamment du pilote de devis et de facturation.
 
 <span id="issuer" />
 

@@ -19,7 +19,7 @@ Backoffice de développement → Payments & devices → Foody billing (sandbox).
 
 ## Disponibilité et accès
 
-Cette procédure concerne un test en sandbox. Un superadmin Foody configure le marchand et l’offre. Seul un propriétaire actuel du restaurant peut accepter l’offre ou lancer le paiement. Un paiement vérifié ouvre les modules achetés pour les restaurants inscrits au pilote modulaire. Les restaurants existants conservent leurs accès opérationnels. Les paiements sandbox ne produisent aucun document fiscal.
+Cette procédure concerne un test en sandbox. Un superadmin Foody configure le marchand et l’offre. Seul un propriétaire actuel du restaurant peut accepter l’offre ou lancer le paiement. Un paiement vérifié ouvre les modules achetés pour les restaurants inscrits au pilote modulaire. Les restaurants existants conservent leurs accès opérationnels. Les paiements sandbox ne produisent aucun document fiscal. La gestion des offres et tarifs dans **Plans & modules** est disponible aussi en production, séparément de ce pilote. Publier le catalogue n’active pas le paiement, les prélèvements ni l’inscription modulaire en production. Le parcours d’inscription historique reste disponible.
 
 <span id="merchant" />
 
