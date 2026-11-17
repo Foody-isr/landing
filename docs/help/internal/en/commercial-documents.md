@@ -14,7 +14,7 @@ Development Backoffice → Payments & devices → Plans & modules → Quotes & o
 
 ## Availability and access
 
-Foody superadmins only, in the sandbox version containing this module. API migration 321 adds commercial documents. PDFs are quotations or sales orders; they do not collect payment, issue tax invoices or activate access. Existing subscription contracts remain unchanged.
+Foody superadmins only, in the sandbox version containing this module. API migration 321 adds commercial documents. PDFs are quotations or sales orders; they do not collect payment, issue tax invoices or activate access. Existing subscription contracts remain unchanged. The **Quotes & orders** tab is hidden in production: catalogue management is available independently of the quotation and billing pilot.
 
 <span id="issuer" />
 
