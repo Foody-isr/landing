@@ -6574,7 +6574,7 @@
       "repository": "https://github.com/Foody-isr/admin",
       "sourceCommit": "9beb9a9cc03207fc0517d7df6ceccd259347573b",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "cc7667d33871319734b45ad32b9f85d4237a20c16fe9a38aba2b404fb464ac04",
+      "sourceSnapshot": "8651782e3ad314cf4ca2a5955e8d7f3677647dee60c3f98bca0ea5e5b5e9bd7c",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
@@ -8961,14 +8961,14 @@
           ]
         },
         "src/components/loyalty/LoyaltyProgramWorkspace.tsx": {
-          "sha256": "85df81d58617a06f318cb38ab68dedbeb220cd158f157118c01b0a4cda60a80c",
+          "sha256": "842b1c2286d7a28dd80cb065be66773e0488482d978ec538779d3dd943d11bdc",
           "features": [
             "customers-loyalty-program",
             "customers-wallet-studio"
           ]
         },
         "src/components/loyalty/WalletStudioWorkspace.tsx": {
-          "sha256": "8998118c5b803247de4d649a87085ef5882f24eb909843a6c3ce3ce984d9c794",
+          "sha256": "ed83ec57014432588719082a03678f25c8f9a2cbe20127867e7afa8f3250ede7",
           "features": [
             "customers-wallet-studio"
           ]
@@ -11371,7 +11371,7 @@
           ]
         },
         "src/lib/loyalty-program.ts": {
-          "sha256": "c82596cad91917c78f858d5c06d7fb05f8f7b9ec7a01565e3dae8178744aca2b",
+          "sha256": "ec226d2b797ce98859d07a9def7feb148cbc0bed6573db152a71965323433b2a",
           "features": [
             "shared-runtime",
             "customers-loyalty-program"
@@ -12427,6 +12427,12 @@
           "sha256": "e53675673dd468cea83dbc85967047163e6db706fd9f4250f8df4c87f59f7578",
           "features": [
             "shared-runtime"
+          ]
+        },
+        "src/components/loyalty/LoyaltyProgramOverview.tsx": {
+          "sha256": "9f554e8eb22dc8c9166d42c486b9ee3c49709e4e3aefe3731d73a4831f4c0c28",
+          "features": [
+            "customers-loyalty-program"
           ]
         }
       }
@@ -61471,6 +61477,10 @@
           "file": "src/lib/loyalty-program.ts"
         },
         {
+          "service": "foodyadmin",
+          "file": "src/components/loyalty/LoyaltyProgramOverview.tsx"
+        },
+        {
           "service": "foodyweb",
           "file": "app/r/[restaurantId]/account/loyalty/page.tsx"
         },
@@ -93531,6 +93541,38 @@
       "line": 1
     },
     {
+      "id": "foodyadmin:src/components/loyalty/LoyaltyProgramOverview.tsx:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/components/loyalty/LoyaltyProgramOverview.tsx",
+      "features": [
+        "customers-loyalty-program"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "loyaltyProgramAfter",
+        "loyaltyProgramCard",
+        "loyaltyProgramContent",
+        "loyaltyProgramDiscountValue",
+        "loyaltyProgramEarnSpend",
+        "loyaltyProgramEarnVisit",
+        "loyaltyProgramItem",
+        "loyaltyProgramMinimum",
+        "loyaltyProgramNoExpiry",
+        "loyaltyProgramNoMinimum",
+        "loyaltyProgramNotConfigured",
+        "loyaltyProgramOverview",
+        "loyaltyProgramRewardValidity",
+        "loyaltyProgramRules",
+        "loyaltyProgramStartHint",
+        "loyaltyProgramStudioHint",
+        "loyaltyProgramTitle",
+        "walletStudioOpenCustomerPage",
+        "walletStudioTitle"
+      ],
+      "actions": [],
+      "line": 1
+    },
+    {
       "id": "foodyadmin:src/components/loyalty/LoyaltyProgramWorkspace.tsx:ui-controls:1",
       "service": "foodyadmin",
       "source": "src/components/loyalty/LoyaltyProgramWorkspace.tsx",
@@ -93546,48 +93588,54 @@
         "loyaltyProgramAmount",
         "loyaltyProgramCatalogError",
         "loyaltyProgramChoose",
+        "loyaltyProgramCompleteTexts",
         "loyaltyProgramContent",
         "loyaltyProgramCurrencyChanged",
         "loyaltyProgramEarn",
+        "loyaltyProgramEarnVisit",
         "loyaltyProgramEnabled",
         "loyaltyProgramEnabledHint",
         "loyaltyProgramExtras",
         "loyaltyProgramFixed",
         "loyaltyProgramForbidden",
         "loyaltyProgramIdentityLocked",
-        "loyaltyProgramIncomplete",
-        "loyaltyProgramIntro",
         "loyaltyProgramItem",
+        "loyaltyProgramLanguagesFilled",
         "loyaltyProgramMinimum",
         "loyaltyProgramMinimumHint",
         "loyaltyProgramMode",
         "loyaltyProgramName",
-        "loyaltyProgramNotConfigured",
+        "loyaltyProgramOverview",
         "loyaltyProgramPending",
         "loyaltyProgramPoints",
+        "loyaltyProgramPointsHint",
         "loyaltyProgramProduct",
+        "loyaltyProgramPromoHint",
         "loyaltyProgramReadOnly",
         "loyaltyProgramReward",
         "loyaltyProgramRewardType",
+        "loyaltyProgramRules",
         "loyaltyProgramSpend",
         "loyaltyProgramStorage",
         "loyaltyProgramTerms",
         "loyaltyProgramTermsHint",
+        "loyaltyProgramTermsTab",
         "loyaltyProgramTermsVersion",
-        "loyaltyProgramThreshold",
         "loyaltyProgramTitle",
         "loyaltyProgramUnavailableItem",
         "loyaltyProgramUnits",
         "loyaltyProgramValidity",
         "loyaltyProgramValidityHint",
         "loyaltyProgramVariant",
-        "loyaltyProgramVisits",
-        "walletStudioTitle"
+        "loyaltyProgramVisits"
       ],
       "actions": [
         "load",
         "loadError",
-        "submit"
+        "openOverview",
+        "refreshed",
+        "submit",
+        "updateContent"
       ],
       "line": 1
     },
@@ -113230,7 +113278,7 @@
     "features": 114,
     "operations": 1039,
     "sourceFiles": 2688,
-    "surfaces": 2349,
+    "surfaces": 2350,
     "unclassifiedRoutes": []
   }
 }
