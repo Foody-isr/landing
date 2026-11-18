@@ -456,7 +456,7 @@ for (const lang of ["he", "fr", "en"]) {
       if (lang === "fr") {
         const main = html.match(/<main[\s\S]*?<\/main>/)?.[0];
         assert.ok(
-          main?.includes("Foody Cuisine") && !main.includes("Foody Kitchen"),
+          main?.includes("Foody Kitchen") && !main.includes("Foody Kitchen"),
           `French kitchen branding is consistent: ${url}`,
         );
       }
@@ -499,7 +499,7 @@ for (const lang of ["he", "fr", "en"]) {
         main.replace(/<[^>]*>/g, "").includes(
           {
             he: "כלול ללא תוספת תשלום ב־Foody Kitchen",
-            fr: "Inclus sans supplément dans Foody Cuisine",
+            fr: "Inclus sans supplément dans Foody Kitchen",
             en: "Included at no extra charge in Foody Kitchen",
           }[lang],
         ),
