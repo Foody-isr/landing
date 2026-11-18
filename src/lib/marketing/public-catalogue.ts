@@ -2,9 +2,11 @@ import { headers } from 'next/headers';
 import type { Lang } from '@/lib/seo';
 
 type Name = Record<Lang, string>;
+export type BillingPolicy = { version:string; monthly_commitment_months:number; annual_period_months:number; annual_billed_months:number };
 export type PublicLimits = {pos_users_unlimited?:boolean;pos:number;chef:number;kds:number;employees:number|null;pos_devices:number|null};
 export type PublicCatalogue = {
  version:string; revision:number; currency:'ILS';
+ billing_policy?:BillingPolicy;
  products:{id:'restaurant'|'ordering'|'kitchen';name:Name;monthly_minor:number;included:PublicLimits;capabilities?:string[]}[];
  plans:{id:string;name:Name;monthly_minor:number;included:PublicLimits;capabilities:string[];published:boolean;modules?:string[];automatic?:boolean;recommended?:boolean}[];
  tariffs:{id:string;name:Name;amount_minor:number|null;quantity?:number;unit:string}[];
@@ -24,6 +26,7 @@ export async function publicCatalogue():Promise<PublicCatalogue|null> {
  if(!response.ok)throw new Error('pricing_unavailable');
  const c=await response.json() as PublicCatalogue;
  if(c.currency!=='ILS'||!Array.isArray(c.products)||c.products.length!==3||!Array.isArray(c.tariffs)||!Array.isArray(c.capabilities)||!Array.isArray(c.plans))throw new Error('pricing_invalid');
+ if(c.billing_policy&&(c.billing_policy.monthly_commitment_months!==0||c.billing_policy.annual_period_months!==12||c.billing_policy.annual_billed_months!==11))throw new Error('pricing_policy_invalid');
  for(const p of c.products){if(!Number.isSafeInteger(p.monthly_minor)||p.monthly_minor<1||!p.name?.fr||!p.name?.en||!p.name?.he)throw new Error('pricing_invalid');}
  for(const r of c.tariffs){if(r.amount_minor!==null&&(!Number.isSafeInteger(r.amount_minor)||r.amount_minor<0))throw new Error('pricing_invalid');}
  return c;

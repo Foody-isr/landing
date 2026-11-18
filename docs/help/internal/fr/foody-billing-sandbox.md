@@ -7,7 +7,7 @@ apps: foodyadmin
 tags:
   - account
   - foody-billing-sandbox
-updatedAt: '2026-11-16'
+updatedAt: '2026-11-18'
 featureId: foody-billing-sandbox
 audience: internal
 releaseStatus: local-release-unverified
@@ -32,6 +32,8 @@ Dans le Backoffice de développement, ouvrez **Payments & devices → Foody bill
 ## Publier ou modifier une offre privée
 
 Pour un restaurant existant, ouvrez **Restaurants → restaurant choisi → Billing & modules → Private sandbox offer**. Renseignez la description de l’offre, les conditions, les montants mensuel et annuel en ₪, la convention de TVA et la date du premier paiement. Publiez, puis ouvrez la page de facturation du propriétaire. Pour modifier l’offre, éditez les champs et publiez une nouvelle version. Un paiement déjà ouvert garde son prix initial. La nouvelle offre exige l’accord du propriétaire pour la période suivante.
+
+Le tarif standard mensuel est sans engagement minimum. Le prépaiement annuel couvre 12 mois au prix de 11 pour les modules et formules logicielles : 590 ₪ par mois devient 6 490 ₪ HT par an, soit 590 ₪ économisés. Les licences supplémentaires, matériels, options et services de paiement ne bénéficient pas de cette remise. Les offres déjà acceptées, invitations enregistrées et prix négociés gardent leurs conditions.
 
 <span id="pay" />
 
@@ -63,6 +65,8 @@ Dans le Backoffice de développement, ouvrez **Restaurants → Onboard New**. Re
 
 Suivez l’invitation pour confirmer le compte et ouvrir Facturation pour le restaurant concerné. Avec le catalogue public, choisissez les modules et vérifiez le montant mensuel. Avec une offre personnalisée, vérifiez les conditions convenues. Choisissez **Démarrer mon essai** si proposé. La date de fin est calculée à cette confirmation et reste la même après une nouvelle tentative. Facturation reste accessible après expiration. Sans essai, confirmez la périodicité disponible et les conditions pour ouvrir le paiement hébergé en sandbox. L’application active les modules payés après vérification serveur. Si un règlement est en attente, utilisez l’action de vérification. Le paiement mensuel requiert le contrat récurrent du marchand sandbox. La mise en service et le matériel sont chiffrés séparément.
 
+Le tarif standard mensuel est sans engagement minimum. Le prépaiement annuel couvre 12 mois au prix de 11 pour les modules et formules logicielles : 590 ₪ par mois devient 6 490 ₪ HT par an, soit 590 ₪ économisés. Les licences supplémentaires, matériels, options et services de paiement ne bénéficient pas de cette remise. Les offres déjà acceptées, invitations enregistrées et prix négociés gardent leurs conditions.
+
 <span id="modular-access" />
 
 ## Vérifier les accès par module
@@ -74,6 +78,8 @@ Les modules de départ suivent la grille publique : Restaurant pour la caisse et
 ## Configurer les deux quotas et les offres personnalisées
 
 Dans la grille révisée, **Active POS devices** compte les postes autorisés à prendre des commandes : iPad ou terminal exécutant la caisse. Restaurant et Restaurant + Commandes comprennent 2 postes, Intégral 3. Chaque employé garde son compte personnel ; cocher **Personal POS accounts without a per-employee charge** supprime le quota caisse nominatif et son supplément, sans supprimer les quotas chef, KDS ou les permissions. Un Mini utilisé uniquement pour le paiement ne consomme pas un poste caisse ; son service EMV reste facturé séparément. Cuisine comprend 1 accès chef et 1 KDS. Dans **Custom offer**, un plan ou une sélection automatique reprend ses quantités ; les licences ajoutées font partie du prix personnalisé saisi. Les comptes totaux et postes restent distincts : une limite vide signifie illimité, zéro signifie aucun. Les essais et contrats déjà enregistrés gardent leurs droits ; aucune migration automatique.
+
+Le catalogue affiche aussi un aperçu annuel calculé sur 11 mois pour chaque module ou formule. Modifier le tarif mensuel met à jour cet aperçu ; la règle annuelle n’est pas un second tarif à saisir. Dans une offre personnalisée, renseignez explicitement les montants convenus : aucune offre privée existante n’est recalculée.
 
 ## En cas d’échec
 

@@ -3,6 +3,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Icon from "@/components/marketing/Icon";
 import ProductMentions from "@/components/marketing/ProductMentions";
+import { PricingBilling, SoftwarePrice } from "@/components/marketing/PricingBilling";
+import { billingCopy } from "@/lib/marketing/pricing-billing";
 import { CallToAction, FaqSection } from "@/components/marketing/Shared";
 import { marketing } from "@/lib/marketing/content";
 import { paymentRates as initialPaymentRates, pricingRates as initialPricingRates, bundleCopy } from "@/lib/marketing/pricing";
@@ -210,6 +212,7 @@ export default async function PricingPage({
             <h1 id="pricing-title">{t.title}</h1>
             <p className="pricing-intro">{t.intro}</p>
           </header>
+          <PricingBilling lang={lang} policy={editable?.billing_policy}>
           <p className="pricing-unit">{t.unit}</p>
           <div className="plans">
             {modules.map(({ key, label, href }) => {
@@ -221,10 +224,7 @@ export default async function PricingPage({
                   {key === "restaurant" && <span id="plan-pos" className="pricing-anchor" aria-hidden="true" />}
                   <h2><Link href={`/${lang}${href}`}>{commercial?.name[lang] ?? u[label]}</Link></h2>
                   <p className="pricing-module-intro">{plan.text}</p>
-                  <div className="plan-price">
-                    <strong>{price(pricingRates[key])}</strong>
-                    <span>{t.monthly}</span>
-                  </div>
+                  <SoftwarePrice lang={lang} monthlyMinor={commercial?.monthly_minor ?? Math.round(pricingRates[key] * 100)} />
                   {commercial?.capabilities ? featureList(commercial.capabilities, key) : <ul className="check-list">
                     {plan.items.map((item) => (
                       <li key={item}>
@@ -245,15 +245,15 @@ export default async function PricingPage({
                 {plan.recommended && <p className="pricing-bundle-badge">{b.recommended}</p>}
                 <h3>{plan.name[lang]}</h3>
                 <p>{plan.id === 'integral' ? b.integral : plan.id === 'restaurant-orders' ? b.duo : plan.modules?.map(id => catalog?.products.find(p => p.id === id)?.name[lang] ?? id).join(' + ')}</p>
-                <div className="plan-price"><strong>{price(plan.monthly_minor / 100)}</strong><span>{t.monthly}</span></div>
+                <SoftwarePrice lang={lang} monthlyMinor={plan.monthly_minor} />
                 <p className="pricing-bundle-inclusions">{included(plan.included)}</p>
                 {'capabilities' in plan && !['integral', 'restaurant-orders'].includes(plan.id) && featureList(plan.capabilities)}
                 {plan.included.pos_users_unlimited && <p>{b.accounts}</p>}
                 <Link className="pricing-bundle-cta" href={`/${lang}/contact?offer=${encodeURIComponent(plan.id)}`}>{b.cta}</Link>
               </article>)}
             </div>
-            <p className="pricing-detail">{b.excluded}</p>
           </section>}
+          </PricingBilling>
           <div className="pricing-licence-strip">
             <div>
               <h2>{deviceBased ? t.licenceTitle : catalogueCopy[lang].pos}</h2>
@@ -381,6 +381,7 @@ export default async function PricingPage({
         </dl></section>}
 
         <FaqSection lang={lang} items={editable ? [
+ {q:billingCopy[lang].faqQuestion,a:billingCopy[lang].faqAnswer},
  {q: lang === "fr" ? "Le QR à table exige-t-il Foody Commandes ?" : lang === "he" ? "האם QR בשולחן דורש את מודול ההזמנות?" : "Does table QR ordering require Foody Orders?", a:b.qr},
  {q:lang === "fr" ? "Peut-on vendre en ligne sans caisse ?" : lang === "he" ? "אפשר למכור אונליין בלי קופה?" : "Can I sell online without a POS?", a:b.printing},
  {q:catalogueCopy[lang].faqPrice,a:editable.products.map(p=>`${p.name[lang]} ${new Intl.NumberFormat(locale).format(p.monthly_minor/100)} ₪ ${t.monthly}.`).join(' ')},

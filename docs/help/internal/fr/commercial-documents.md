@@ -5,16 +5,16 @@ apps: both
 tags:
   - internal
   - backoffice-commercial-documents
-updatedAt: '2026-11-16'
+updatedAt: '2026-11-18'
 featureId: backoffice-commercial-documents
 audience: internal
 releaseStatus: available
 ---
-Backoffice de développement → Payments & devices → Plans & modules → Quotes & orders.
+Backoffice de production ou de développement → Payments & devices → Plans & modules → Quotes & orders.
 
 ## Disponibilité et accès
 
-Réservé aux superadmins Foody dans la version sandbox qui contient ce module. La migration API 321 ajoute les documents commerciaux. Les PDF sont des devis ou bons de commande, sans encaissement, émission de facture fiscale ni activation automatique de droits. Les contrats existants restent inchangés. L’onglet **Quotes & orders** est masqué en production : la gestion du catalogue y est disponible indépendamment du pilote de devis et de facturation.
+Réservé aux superadmins Foody en développement et en production dans la version compatible avec la migration API 321. Les PDF sont des devis ou bons de commande privés ; leur création ne collecte aucun paiement, ne produit pas de facture fiscale et n’active aucun abonnement. Les paiements et prélèvements du pilote restent réservés à la sandbox. Les anciens documents et contrats conservent leurs conditions.
 
 <span id="issuer" />
 
@@ -34,13 +34,15 @@ Pour la grille révisée, ajoutez directement la ligne **Foody Intégral** ou **
 
 ## Distinguer paiement unique, mensualités et prépaiement
 
-Pour le matériel ou la mise en service, utilisez **One-time payment**. Pour un abonnement ou des frais de terminal, utilisez **Monthly** et indiquez l’engagement minimum en mois ; 0 signifie sans engagement minimum. **Prepaid period** couvre 12, 24 ou une durée libre de 1 à 120 mois en un seul paiement. Son champ prix est le prix unitaire de toute la période. Passer de mensuel à prépayé propose 12 mensualités ; changer ensuite la durée conserve le prix négocié. Vérifiez-le ou utilisez **Use catalogue price** pour recalculer la référence sur la durée. Chaque ligne indique une échéance à la commande, à l’activation ou à une date. **By usage** affiche un tarif unitaire hors totaux fixes. **Included** indique une prestation à zéro. Les quotas des plans et modules sont indiqués par unité ; activez la liste détaillée des fonctionnalités si nécessaire.
+Utilisez **Monthly** avec un engagement de 0 mois pour le mensuel standard sans engagement. **Prepaid period** affiche un prix pour toute la période : 12 mois au prix de 11 pour les modules et formules ; 24 mois au prix de 22. Les licences supplémentaires et frais récurrents restent calculés sur 12 ou 24 mois complets. Les autres durées de 1 à 120 mois n’ont pas de remise automatique. Passer une ligne au tarif catalogue de mensuel à prépayé applique la règle annuelle ; un prix négocié est conservé proportionnellement. Changer la durée d’une ligne prépayée conserve le montant convenu : relisez-le ou cliquez **Use catalogue price** pour recalculer. Les anciens documents sans règle annuelle gardent leur référence historique. **One-time payment** couvre matériel et mise en service. **By usage** affiche un tarif hors totaux fixes. **Included** ajoute une prestation offerte à zéro. Chaque ligne précise son échéance. Les quotas sont affichés par unité.
 
 <span id="review" />
 
 ## Vérifier et sauvegarder
 
 Choisissez le mode HT/TTC et le taux de TVA. Changer le mode conserve les prix négociés HT, avec arrondi à l’agora. Complétez les conditions de livraison, activation, renouvellement et résiliation utiles à l’offre. **Calculate totals** affiche séparément paiements uniques et prépayés, mensualités et frais variables. Les mensualités engagées affichent aussi leur total sur la durée. **Preview PDF** prépare un brouillon marqué comme tel, avec logo Foody sombre et mise en page A4. Relisez les tableaux et téléchargez le PDF depuis l’aperçu. **Save draft** sauvegarde le document privé. Une erreur conserve les saisies ; corrigez le champ indiqué. En cas de sauvegarde incertaine, vérifiez **Saved documents** avant de créer un autre document.
+
+L’économie logiciel HT apparaît dans le récapitulatif et dans le PDF lorsque le tarif annuel standard est appliqué. Elle n’est pas annoncée pour un montant négocié différent. Les offres commerciales prépayées cumulent cette remise avec les prestations offertes : pour 12 mois, création du site Commandes ou mise en service Restaurant selon le module souscrit (une seule au choix pour une formule combinée) ; pour 24 mois, ces deux prestations et une journée de formation selon les modules souscrits. Ajoutez explicitement les prestations retenues en **Included**, avec le périmètre et la durée prépayée dans les conditions ; elles ne sont pas insérées automatiquement. Cuisine : accompagnement à convenir au devis. Matériel, paiements et options restent payants.
 
 <span id="finalize" />
 

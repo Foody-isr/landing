@@ -5,16 +5,16 @@ apps: both
 tags:
   - internal
   - backoffice-commercial-documents
-updatedAt: '2026-11-16'
+updatedAt: '2026-11-18'
 featureId: backoffice-commercial-documents
 audience: internal
 releaseStatus: available
 ---
-Development Backoffice → Payments & devices → Plans & modules → Quotes & orders.
+Production or development Backoffice → Payments & devices → Plans & modules → Quotes & orders.
 
 ## Availability and access
 
-Foody superadmins only, in the sandbox version containing this module. API migration 321 adds commercial documents. PDFs are quotations or sales orders; they do not collect payment, issue tax invoices or activate access. Existing subscription contracts remain unchanged. The **Quotes & orders** tab is hidden in production: catalogue management is available independently of the quotation and billing pilot.
+Available only to Foody superadmins in development and production with the release supporting API migration 321. PDFs are private quotations or sales orders; creating them does not collect payments, issue tax invoices or activate subscriptions. Pilot checkouts and recurring charges remain sandbox-only. Existing documents and contracts retain their terms.
 
 <span id="issuer" />
 
@@ -34,13 +34,15 @@ For the reviewed grid, add **Foody Integral** or **Restaurant + Orders** directl
 
 ## Separate one-time, monthly and prepaid charges
 
-Use **One-time payment** for equipment or setup. For a subscription or terminal fees, select **Monthly** and enter the minimum commitment in months; 0 means no minimum commitment. **Prepaid period** covers 12, 24 or any duration from 1 to 120 months in one payment. Its price field is the unit price for the whole period. Switching from monthly to prepaid proposes 12 monthly payments; subsequently changing the duration preserves the negotiated price. Review it or use **Use catalogue price** to recalculate the period reference. Every line specifies payment on order, on activation or on a date. **By usage** discloses a unit rate outside fixed totals. **Included** records a zero-price service. Plan and module quotas are shown per unit; enable the detailed feature list if needed.
+Use **Monthly** with a 0-month commitment for standard monthly billing with no minimum term. **Prepaid period** shows the price for the whole period: 12 months for the price of 11 on modules and plans; 24 months for 22. Additional licences and recurring services still use all 12 or 24 months. Other durations from 1 to 120 months receive no automatic discount. Switching a catalogue-priced monthly line to prepaid applies the annual rule; a negotiated price is scaled without repricing it. Changing an existing prepaid duration retains its agreed amount: review it or select **Use catalogue price** to recalculate. Historical documents without an annual policy keep their historical reference. **One-time payment** covers hardware and setup. **By usage** discloses a rate outside fixed totals. **Included** records a complimentary service at zero. Each line specifies its due date. Quotas are shown per unit.
 
 <span id="review" />
 
 ## Review and save
 
 Choose the price tax basis and VAT rate. Changing the basis preserves negotiated net prices, rounded to the nearest agora. Enter relevant delivery, activation, renewal and cancellation terms. **Calculate totals** separates one-time and prepaid amounts, monthly charges and usage rates. Committed monthly lines also show their total over the commitment. **Preview PDF** prepares a marked draft with the dark Foody logo and A4 layout. Review the tables and download from the preview. **Save draft** saves the private document. Errors retain your entries; correct the indicated field. After an uncertain save, check **Saved documents** before creating another document.
+
+Software savings excluding VAT appear in the totals and PDF when the standard annual rate is used. They are not claimed for a different negotiated amount. Prepaid commercial benefits stack with this discount: for 12 months, Orders website creation or Restaurant setup according to the subscribed module (choose one for a combined plan); for 24 months, both services and one training day according to the subscribed modules. Explicitly add selected services as **Included**, recording their scope and prepaid duration in the terms; they are not inserted automatically. Kitchen onboarding is quoted separately. Hardware, payments and options remain payable.
 
 <span id="finalize" />
 

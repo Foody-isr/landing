@@ -1,3 +1,20 @@
+## Monthly and annual commercial terms (18 November 2026)
+
+Review API, Backoffice and Landing as one release. Standard monthly software has
+no minimum term. Twelve months prepaid cost eleven; complete subsequent years
+follow the same rule. Additional licences and services keep their full price.
+The API policy is snapshotted with new quotes and invitations, and drives new
+sandbox offers. Existing agreements and negotiated prices are preserved.
+Production superadmins can manage private quotations and sales orders without
+enabling live checkouts, recurring payments, fiscal invoices or customer access.
+FR/HE/EN public billing and offers guides and internal document/billing guides
+cover the new terms, savings, production access and explicit Included gift lines.
+Annual software savings stack with the 12/24-month setup benefits. The brochure
+uses the same prices and commissions calculated on collected software revenue.
+Refresh only API, Backoffice and Landing evidence; preserve Admin, guest Web and
+POS service inventories and surfaces from develop. Pin the immutable Landing
+commit in consumer contracts and export the identical public support corpus.
+
 ## Split-save payment recovery (local preparation, 16 November 2026)
 
 The FR/HE/EN split-bill guide explains the retained-payment guard and the existing

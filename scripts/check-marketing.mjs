@@ -443,11 +443,16 @@ for (const lang of ["he", "fr", "en"]) {
       const faq = [...main.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
         .map(match => JSON.parse(match[1]))
         .find(schema => schema["@type"] === "FAQPage");
-      assert.equal(faq?.mainEntity.length, pricingCatalogue ? 5 : 3, "Localized pricing FAQ: " + url);
+      assert.equal(faq?.mainEntity.length, pricingCatalogue ? 6 : 3, "Localized pricing FAQ: " + url);
       assert.ok(faq.mainEntity.every(({ acceptedAnswer }) => !acceptedAnswer.text.includes("<a")));
       assert.ok(main.includes(pricingCatalogue
         ? { he: "המחירים והזכויות שאושרו נשמרים", fr: "Vos prix et droits acceptés sont conservés", en: "Your accepted prices and included rights remain unchanged" }[lang]
-        : {he: "30 יום", fr: "30 jours", en: "30 days"}[lang]), "Contract terms: " + url);
+        : {he: "ללא התחייבות", fr: "sans engagement", en: "no minimum term"}[lang]), "Contract terms: " + url);
+      assert.ok(main.includes('data-billing-period="monthly"'), "Monthly pricing is the server-rendered default: " + url);
+      assert.ok(main.includes({he: "חודש במתנה", fr: "1 mois offert", en: "1 month free"}[lang]), "Annual benefit is visible before interaction: " + url);
+      assert.ok(main.includes('aria-pressed="true"') && main.includes('aria-pressed="false"'), "Payment-frequency buttons expose their selected state: " + url);
+      assert.ok(main.includes({he: "ללא התחייבות", fr: "Sans engagement", en: "No commitment"}[lang]), "Monthly offer has no minimum commitment: " + url);
+      assert.doesNotMatch(main, /Engagement de 12 mois, dans les deux cas|A 12-month commitment with either option|התחייבות ל־12 חודשים בשתי האפשרויות/, "Monthly billing must not imply an annual commitment: " + url);
       if (lang === "fr") {
         const main = html.match(/<main[\s\S]*?<\/main>/)?.[0];
         assert.ok(
