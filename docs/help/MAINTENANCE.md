@@ -1898,3 +1898,14 @@ source inventories are preserved from the existing Landing baseline: no source
 changes in those services. Shared API/translation/corpus files receive scoped
 no-impact reviews for features whose procedures are unchanged. WORKSPACE pins
 are local preparation only; pin the reviewed immutable Landing commit before CI.
+
+
+## Forgotten personal POS code (18 November 2026)
+
+The compatible POS exposes an explicit personal-code replacement option after
+email/password and any required MFA. Device authorization completes before PIN
+setup; the existing scoped API confirms the password again. The default still
+uses the existing code, and no shift starts before PIN sign-in. The FR/HE/EN
+first-login and staff-device guides distinguish saved codes from creation and
+development data from production. Publish with the compatible POS artifact.
+No password, PIN, production account or device record is copied between environments.
