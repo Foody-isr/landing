@@ -6572,9 +6572,9 @@
     },
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "3c2432dff8ee40f65a3a2df36dad92f48e219ea2",
+      "sourceCommit": "9beb9a9cc03207fc0517d7df6ceccd259347573b",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "ca0d484b8cfef7250b85e08e1e0e3762d3f687d9ce014b0b265077166abe645a",
+      "sourceSnapshot": "cc7667d33871319734b45ad32b9f85d4237a20c16fe9a38aba2b404fb464ac04",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
@@ -8293,8 +8293,9 @@
           ]
         },
         "src/components/Sidebar.tsx": {
-          "sha256": "b6351013ea39c0d55f5e682654deff9b8205d2215ff16c6cc1251babf06cd5b3",
+          "sha256": "da2693b60973265d5a850b70f536da4f24a3d0053dd135e72eef42d0496ffeb2",
           "features": [
+            "billing",
             "pos-payments",
             "global-search",
             "payments-transactions",
@@ -20989,7 +20990,8 @@
       "selectors": {
         "foodyadmin": [
           "src/app/[restaurantId]/billing/**",
-          "src/components/billing/**"
+          "src/components/billing/**",
+          "src/components/Sidebar.tsx"
         ],
         "foodyserver": [
           "internal/subscription/**"
@@ -21093,6 +21095,10 @@
         {
           "service": "foodyadmin",
           "file": "src/app/[restaurantId]/billing/page.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/components/Sidebar.tsx"
         },
         {
           "service": "foodyadmin",
@@ -91443,6 +91449,7 @@
       "service": "foodyadmin",
       "source": "src/components/Sidebar.tsx",
       "features": [
+        "billing",
         "pos-payments",
         "global-search",
         "payments-transactions",
