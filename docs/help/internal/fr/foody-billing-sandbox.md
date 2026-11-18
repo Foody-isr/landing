@@ -1,8 +1,6 @@
 ---
 title: Pilote de facturation Foody
-description: >-
-  Backoffice de développement → Payments & devices → Foody billing (sandbox). Admin du restaurant → Paramètres → Compte
-  → Facturation.
+description: Backoffice → Payments & devices → Foody billing (sandbox). Admin du restaurant → Paramètres → Compte → Facturation.
 apps: foodyadmin
 tags:
   - account
@@ -12,7 +10,7 @@ featureId: foody-billing-sandbox
 audience: internal
 releaseStatus: local-release-unverified
 ---
-Backoffice de développement → Payments & devices → Foody billing (sandbox). Admin du restaurant → Paramètres → Compte → Facturation.
+Backoffice → Payments & devices → Foody billing (sandbox). Admin du restaurant → Paramètres → Compte → Facturation.
 
 > **Disponibilité à confirmer**
 > Cette application existe dans les sources. Ce guide ne confirme ni sa distribution publique ni sa disponibilité dans votre version installée.
@@ -25,7 +23,7 @@ Cette procédure concerne un test en sandbox. Un superadmin Foody configure le m
 
 ## Configurer le marchand Verifone de Foody
 
-Dans le Backoffice de développement, ouvrez **Payments & devices → Foody billing (sandbox)**. Saisissez l’identifiant utilisateur sandbox, la clé API, l’identifiant de l’entité Foody et le contrat Checkout hébergé. Pour tester le mensuel, ajoutez le contrat récurrent sans CVV et le périmètre de token, puis activez le mensuel après confirmation de Verifone. Activez les paiements de test et enregistrez. Les identifiants restent masqués ; un champ vide conserve la valeur enregistrée.
+Dans **Foody billing (sandbox)**, saisissez l’identifiant utilisateur CST de Foody, la clé API, l’entité et le contrat Checkout. Pour les paiements récurrents, ajoutez le contrat sans CVV et le token scope. Activez les paiements de test et les renouvellements mensuels et annuels, puis enregistrez. Sur le site de production, choisissez un seul **CST test restaurant** sans inscription à la facturation modulaire. **None** désactive le test. Avant de changer de restaurant, vérifiez tout paiement en attente et arrêtez le renouvellement actif dans l’Admin du restaurant sélectionné. Un champ d’identification laissé vide conserve sa valeur.
 
 <span id="offer" />
 
@@ -39,13 +37,13 @@ Le tarif standard mensuel est sans engagement minimum. Le prépaiement annuel co
 
 ## Payer et vérifier en sandbox
 
-Connectez-vous comme propriétaire et ouvrez **Paramètres → Compte → Facturation**. Le lien apparaît pour le propriétaire du restaurant après la publication de l’offre privée par Foody. Vérifiez le total TTC, choisissez mensuel ou annuel, puis acceptez l’offre. Pour le mensuel, autorisez aussi les futurs débits de test. Continuez vers Verifone avec ses données de carte de test. Au retour, attendez la confirmation ou utilisez **Vérifier le statut du paiement**. Le renouvellement annuel demande un nouveau paiement. Pour arrêter les prochains débits mensuels, choisissez **Arrêter le renouvellement automatique** et confirmez.
+En tant que propriétaire, ouvrez **Paramètres → Compte → Facturation**. Choisissez l’offre et vérifiez le total TTC. En mensuel, autorisez le débit mensuel affiché. En annuel, cochez l’autorisation séparée pour renouveler à ce montant tous les 12 mois, ou laissez-la vide pour payer une seule année. Acceptez les conditions, continuez vers Verifone avec une carte de test CST, puis vérifiez le paiement au retour. La facturation affiche la date et le montant du prochain débit pour un mandat confirmé. **Arrêter le renouvellement automatique** permet d’arrêter les prélèvements futurs.
 
 <span id="renewal" />
 
 ## Tester le premier renouvellement mensuel
 
-Après confirmation du premier paiement mensuel de test, revenez à **Private sandbox offer** dans le Backoffice de développement et choisissez **Test first monthly renewal**. Confirmez pour envoyer le prochain débit mensuel autorisé à Verifone. Un renouvellement confirmé couvre la période suivante. Ce test est possible une fois par mandat, sans attendre l’échéance. Si le résultat est incertain, vérifiez le paiement en cours avant toute autre action.
+Après confirmation du premier paiement et du mandat, ouvrez **Restaurants → restaurant choisi → Billing & modules**. Selon la formule acceptée, cliquez sur **Test first monthly renewal** ou **Tester le premier renouvellement annuel**. Vérifiez le montant CST et la date de début de la prochaine période, puis confirmez. Un renouvellement accepté ajoute un mois ou douze mois à partir de la fin de la période payée. Le test anticipé est disponible une fois par mandat. Si le résultat est en attente ou incertain, utilisez **Verify payment**.
 
 <span id="measure" />
 

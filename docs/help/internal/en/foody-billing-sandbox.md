@@ -1,8 +1,6 @@
 ---
 title: Foody software billing pilot
-description: >-
-  Development Backoffice → Payments & devices → Foody billing (sandbox). restaurant Admin → Settings → Account →
-  Billing.
+description: Backoffice → Payments & devices → Foody billing (sandbox). Restaurant Admin → Settings → Account → Billing.
 apps: foodyadmin
 tags:
   - account
@@ -12,7 +10,7 @@ featureId: foody-billing-sandbox
 audience: internal
 releaseStatus: local-release-unverified
 ---
-Development Backoffice → Payments & devices → Foody billing (sandbox). restaurant Admin → Settings → Account → Billing.
+Backoffice → Payments & devices → Foody billing (sandbox). Restaurant Admin → Settings → Account → Billing.
 
 > **Release availability must be confirmed**
 > This application exists in the source workspace. This guide does not confirm public distribution or availability in your installed release.
@@ -25,7 +23,7 @@ This procedure is for a coordinated sandbox test. A Foody superadmin configures 
 
 ## Configure Foody’s own Verifone merchant
 
-In the development Backoffice open **Payments & devices → Foody billing (sandbox)**. Enter the sandbox user ID, API key, Foody entity ID and hosted Checkout contract. For monthly tests, also enter the No-CVV recurring contract and token scope, then enable monthly enrollment after Verifone confirms the contract. Enable sandbox payments and save. Saved credentials stay hidden; an empty field preserves its value.
+In **Foody billing (sandbox)** enter the Foody CST user ID, API key, entity and hosted Checkout contract. To test recurring payments, enter the No-CVV contract and reuse token scope. Enable sandbox checkout and monthly and annual recurring payments, then save. On the production site, select one **CST test restaurant** without modular billing enrollment. Selecting **None** disables testing there. Before switching restaurants, verify any pending payment and stop the active mandate in the current restaurant’s Admin. Saved credentials can be kept by leaving those fields blank.
 
 <span id="offer" />
 
@@ -39,13 +37,13 @@ Standard monthly software has no minimum term. Annual prepayment covers 12 month
 
 ## Pay and verify in sandbox
 
-Sign in as the restaurant owner and open **Settings → Account → Billing**. The link appears for the restaurant owner after Foody publishes a private offer. Check the total including VAT, select monthly or annual, and accept the offer. For monthly, also authorize future test debits. Continue to Verifone using its test card details. After returning, wait for confirmation or use **Verify payment status**. Annual renewal requires another checkout. To stop future monthly debits, choose **Stop automatic renewal** and confirm.
+As the restaurant owner open **Settings → Account → Billing**. Select the offer and review the total including VAT. Monthly billing requires authorizing the displayed monthly debit. For annual billing, select the separate authorization to pay that amount every 12 months, or leave it unchecked to prepay just one year. Accept the terms, continue to Verifone with a CST test card, and verify the payment on return. Billing shows the next debit amount and date for a confirmed mandate. Use **Stop automatic renewal** to end future debits.
 
 <span id="renewal" />
 
 ## Test the first monthly renewal
 
-After a confirmed monthly test payment, return to **Private sandbox offer** in the development Backoffice and choose **Test first monthly renewal**. Confirm to send the next authorized monthly test debit to Verifone. A confirmed renewal covers the next period. Foody allows this test once per mandate, without waiting for the due date. If the result is uncertain, verify the current payment before taking another action.
+After the initial payment and mandate are confirmed, open **Restaurants → selected restaurant → Billing & modules**. Choose **Test first monthly renewal** or **Tester le premier renouvellement annuel**, depending on the agreed cycle. Check the CST amount and period start, then confirm. A successful renewal adds one month or 12 months from the existing paid-through date. The early test is available once per mandate. If the result is pending or uncertain, use **Verify payment**.
 
 <span id="measure" />
 

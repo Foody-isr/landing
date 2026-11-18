@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-18.
 
-114 fiches de fonctionnalités, 1038 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2688 fichiers applicatifs et 2349 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+114 fiches de fonctionnalités, 1039 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2688 fichiers applicatifs et 2350 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,9 +10,9 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 832 | 1040 | f2c677f36733 ; versioned |
-| foodyadmin | 823 | 840 | ada15aa3845f ; versioned |
-| foodybackoffice | 54 | 51 | b617a6884216 ; versioned |
+| foodyserver | 833 | 1041 | a4d1cc34896e ; versioned |
+| foodyadmin | 823 | 840 | cbbcce277f21 ; versioned |
+| foodybackoffice | 54 | 51 | 537b8a77f5cb ; versioned |
 | foodypos | 433 | 187 | b0ac266bf08d ; versioned |
 | foodylanding | 160 | 31 | 315f2660cd23 ; versioned |
 | foodyweb | 386 | 200 | f5c79c68a0f0 ; versioned |
@@ -114,6 +114,7 @@ Identifiant : `billing`. Public : public. Disponibilité : available. Services :
 - [Vérifier un changement de formule](../../src/content/help/fr/account/subscription.mdx#change)
 - [Consulter les événements de facturation](../../src/content/help/fr/account/subscription.mdx#events)
 - [Ajouter un module ou des licences en sandbox](../../src/content/help/fr/account/subscription.mdx#versioned-sandbox-additions)
+- [Choisir le renouvellement annuel lors d’un test d’abonnement Foody](../../src/content/help/fr/account/subscription.mdx#sandbox-annual-renewal)
 
 ### [Pilote de facturation Foody](internal/fr/foody-billing-sandbox.md)
 
