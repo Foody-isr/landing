@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-11-18'
+updatedAt: '2026-11-19'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -38,7 +38,7 @@ releaseStatus: available
 
 ## קישור ערכת Checkout מ-Verifone Central
 
-ב-Verifone Central פתחו Administration > Checkout Themes ושמרו ערכה בארגון ובסביבה של המסעדה ב-Verifone (CST או ייצור). כמנהלי superadmin, פתחו ב-Backoffice את Restaurant > Payment > Verifone ושמרו את הגדרות התשלום. תחת Hosted payment page appearance, הזינו את השם המדויק או ה-UUID בשדה Verifone theme name or ID ובחרו Link Verifone theme. אם לכמה ערכות יש אותו שם, הזינו את ה-UUID. Foody מאמתת את הארגון והסביבה ומחילה את הערכה על קישורי Checkout חדשים. כדי לערוך את הערכה, שמרו את השינויים ב-Verifone Central ובדקו את התצוגה בקישור בדיקה חדש בסביבה שאושרה. כדי להשתמש בברירת המחדל של חשבון Verifone, בטלו את הסימון של Use the selected Checkout theme ושמרו את הגדרות התשלום.
+ב-Verifone Central פתחו Administration > Checkout Themes ושמרו ערכה בארגון ובסביבה של המסעדה ב-Verifone (CST או ייצור). כמנהלי superadmin, פתחו ב-Backoffice את Restaurant > Payment > Verifone ושמרו את הגדרות התשלום. תחת Hosted payment page appearance, הזינו את השם המדויק או ה-UUID בשדה Verifone theme name or ID ובחרו Link Verifone theme. אם לכמה ערכות יש אותו שם, הזינו את ה-UUID. Foody מאמתת את הארגון והסביבה ומחילה את הערכה על קישורי Checkout חדשים. כדי לערוך את הערכה, שמרו את השינויים ב-Verifone Central ובדקו את התצוגה בקישור בדיקה חדש בסביבה שאושרה. כדי להשתמש בברירת המחדל של חשבון Verifone, בטלו את הסימון של Use the selected Checkout theme ושמרו את הגדרות התשלום. אם ערכת העיצוב שנבחרה נמחקה ב-CST, קשרו ערכה זמינה או בחרו בברירת המחדל של החשבון. לערכה שנוצרה מאתר המסעדה, הפעולה Synchronize published logo and colors בודקת את קיומה אצל Verifone ויוצרת אותה מחדש בעת הצורך.
 
 <span id="weight-hold-margin" />
 
@@ -56,7 +56,7 @@ releaseStatus: available
 
 ## אימות תשלומים חד-פעמיים עם Verifone.js ב-CST
 
-החילו את מיגרציה 317 לפני השימוש בהגדרות טופס הכרטיס ב-Backoffice. יכולת התשלום והמפתח הציבורי משויכים למסעדה. ניסיון תשלום מחייב הוכחת גישה להזמנה והגדרות CST של המסעדה. Foody שומרת את הסכום ומפתח אידמפוטנטיות ייחודי לפני עסקת מכירה. קראו את פרטי העסקה ואמתו את סוג הפעולה, הסכום, המטבע והאסמכתה לפני בדיקת העברת ההזמנה להכנה. אם התשובה אבדה, בצעו התאמה לפי מזהה העסקה או המתינו לאישור הביטול הטכני. בדקו את דרישות ABS ל-CVV ולתעודת זהות בכרטיס CST של Verifone ואת הפקת Invoice4U כשהיא מוגדרת. הפעלה בייצור דורשת מפתח וחוזה ייצור, אימות דרישות 3DS מול Verifone ובחינת דרישות SAQ A-EP המתוארות בתיעוד Verifone.js. בגרסה הכוללת Card payment flow, בדקו הזמנה שנייה לאחר בחירת Verifone Checkout. ודאו ש-Foody פותחת את קישור התשלום ושהבחירה של מסעדה אחרת נשמרת.
+החילו את מיגרציה 317 לפני השימוש בהגדרות טופס הכרטיס ב-Backoffice. יכולת התשלום והמפתח הציבורי משויכים למסעדה. ניסיון תשלום מחייב הוכחת גישה להזמנה והגדרות CST של המסעדה. Foody שומרת את הסכום ומפתח אידמפוטנטיות ייחודי לפני עסקת מכירה. קראו את פרטי העסקה ואמתו את סוג הפעולה, הסכום, המטבע והאסמכתה לפני בדיקת העברת ההזמנה להכנה. אם התשובה אבדה, בצעו התאמה לפי מזהה העסקה או המתינו לאישור הביטול הטכני. בדקו את דרישות ABS ל-CVV ולתעודת זהות בכרטיס CST של Verifone ואת הפקת Invoice4U כשהיא מוגדרת. הפעלה בייצור דורשת מפתח וחוזה ייצור, אימות דרישות 3DS מול Verifone ובחינת דרישות SAQ A-EP המתוארות בתיעוד Verifone.js. בגרסה הכוללת Card payment flow, בדקו הזמנה שנייה לאחר בחירת Verifone Checkout. ודאו ש-Foody פותחת את קישור התשלום ושהבחירה של מסעדה אחרת נשמרת. ללקוח מחובר שבחר לשמור את הכרטיס, ודאו שנשלחת עסקת מכירה אחת בסכום המלא עם token_preference ותחום האסימונים של המסעדה. האסימון לשימוש חוזר משויך ללקוח ולמסעדה לאחר אימות העסקה מול Verifone. בדקו שעיבוד חוזר של אותה הודעת בדיקה משאיר תשלום אחד וכרטיס שמור אחד.
 
 <span id="verifone-direct-wallet-contract" />
 
