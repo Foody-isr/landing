@@ -1,22 +1,22 @@
 ---
 title: Courier itinerary and delivery completion
-description: 'Admin → Orders → Courier mode, or assigned courier workspace'
+description: Foody Admin → Deliveries → Courier mode
 apps: foodyadmin
 tags:
   - delivery
   - courier
-updatedAt: '2026-11-12'
+updatedAt: '2026-11-18'
 featureId: courier
 audience: public
 releaseStatus: available
 ---
-Admin → Orders → Courier mode, or assigned courier workspace
+Foody Admin → Deliveries → Courier mode
 
 <span id="itinerary" />
 
 ## Open the assigned itinerary
 
-In Foody Admin courier mode, choose your assigned route from the top list. The active route is selected on opening. Before starting, the departure card shows the start address and planned time when configured. Expand “View planned stops” for order numbers and any available arrival estimates. Customer addresses, contact details, instructions and map pins stay hidden. Finish time, distance and duration are plan estimates. Open Total duration for the available breakdown.
+In Foody Admin courier mode, choose your assigned route from the top list. The active route is selected on opening. Before starting, the departure card shows the start address and planned time when configured. The service day, order numbers and available arrival estimates appear on opening. Use “View planned stops” to collapse or reopen the list. Customer addresses, contact details, instructions and map pins stay hidden. Finish time, distance and duration are plan estimates. Open Total duration for the available breakdown.
 
 Courier mode follows the itinerary saved by the restaurant. The order amount appears for the open stop when the payment is in cash and the amount is known.
 
@@ -38,7 +38,7 @@ When the order has been handed over, check the stop number and address on the op
 
 ## Check the plan and start the route
 
-Before leaving, check the itinerary saved by the restaurant. Courier mode no longer offers Refine, route settings, Reoptimize, address correction or stop reordering. Planned departure, start and end points, handover times, customer windows and route composition can only be changed by an authorized dispatcher in Orders → Deliveries. This also applies to an owner or superadmin viewing courier mode; return to Deliveries to plan. An old interface cannot save these changes through courier actions.
+Before leaving, check the itinerary saved by the restaurant. Courier mode no longer offers Refine, route settings, Reoptimize, address correction or stop reordering. Planned departure, start and end points, handover times, customer windows and route composition can only be changed by an authorized dispatcher in Deliveries → Dispatch. This also applies to an owner or superadmin viewing courier mode; return to Deliveries to plan. An old interface cannot save these changes through courier actions.
 
 Start route confirms the actual departure of unfinished assigned deliveries and moves accepted, preparing or ready orders together to Out for delivery. Finished or cancelled orders are not reopened. A preparation hold or an unfinalized weighted order must be resolved first. Failure makes no partial change. A courier can have only one active route; finish it before starting another. If a destination could not be verified, ask the dispatcher to check its address or GPS point before confirming departure.
 
@@ -56,17 +56,19 @@ A quota or service-unavailable warning does not mean the customer address is wro
 
 On mobile, drag the handle above the list to choose a compact, balanced or expanded view. Keyboard Up/Down and Home/End provide the same adjustment. The list scrolls independently of the fixed actions. Use the search icon to expand the planned stops and filter them by order number. Select the open stop’s pin to find its card. Fit the whole route reframes the map; + and − control zoom. Viewing another route does not stop active-route location sharing when the phone permits it.
 
+Before departure, the phone opens the itinerary first. Map displays the map and resize handle. List brings back the full itinerary. A future route shows its first available departure day.
+
 <span id="accidental-departure" />
 
 ## Correct a test departure
 
-If you start a route accidentally, tell a manager before recording any arrival or delivery. In Orders → Deliveries, a user with order-management permission can choose Undo departure while every stop is pending, then unassign and reallocate the route. Out for delivery orders return to In preparation and the replacement courier can start after reassignment. Courier mode does not offer this management correction. Previously sent messages remain in the history. Undo departure is also unavailable once navigation to a stop has been recorded.
+To review your route before its service day, open View planned stops. You can see order numbers and available arrival estimates. Departure is available from the scheduled date in the restaurant timezone. On that day, Start and Start and open Waze both ask you to confirm the actual departure. If you confirm by mistake, tell a manager before recording an arrival, delivery or issue. They can undo departure even if navigation was opened. You keep the same route for the scheduled day.
 
 <span id="superadmin-courier-selection" />
 
 ## View another courier’s workspace
 
-With compatible API and Admin versions, sign in as the relevant restaurant’s owner or as a superadmin, then open Orders → Courier mode. Under View as courier, select a courier from that restaurant; the first in the list is selected initially. You see the same map, unfinished routes and stops as that courier. Change the selection to display the new courier’s routes; the previous selected stop, search and panels are reset. Displayed actions, including Start route and Mark delivered, really change that courier’s deliveries: use them only to record work that has taken place. The signed-in account keeps its identity and its GPS position is not reported as the courier’s. Owning another restaurant does not grant this selector here; other accounts keep their own routes. If no couriers are configured, check the team roles. If loading fails, choose Retry; a removed membership or a courier from another restaurant is rejected by the server. If the owner has no selector, have both compatible versions checked, deploying API before Admin. This workspace remains for execution: itinerary settings are unavailable even for an owner or superadmin. Return to Orders → Deliveries to change the plan.
+With compatible API and Admin versions, sign in as the relevant restaurant’s owner or as a superadmin, then open Deliveries → Courier mode. Under View as courier, select a courier from that restaurant; the first in the list is selected initially. You see the same map, unfinished routes and stops as that courier. Change the selection to display the new courier’s routes; the previous selected stop, search and panels are reset. Displayed actions, including Start route and Mark delivered, really change that courier’s deliveries: use them only to record work that has taken place. The signed-in account keeps its identity and its GPS position is not reported as the courier’s. Owning another restaurant does not grant this selector here; other accounts keep their own routes. If no couriers are configured, check the team roles. If loading fails, choose Retry; a removed membership or a courier from another restaurant is rejected by the server. If the owner has no selector, have both compatible versions checked, deploying API before Admin. This workspace remains for execution: itinerary settings are unavailable even for an owner or superadmin. Return to Deliveries → Dispatch to change the plan.
 
 <span id="live-location" />
 

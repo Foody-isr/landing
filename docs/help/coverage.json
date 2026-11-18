@@ -848,7 +848,6 @@
           "internal/delivery/google_geocode.go",
           "internal/delivery/geoapify.go",
           "internal/delivery/optimizer.go",
-          "internal/delivery/tours.go",
           "internal/delivery/postal_calendars.go",
           "internal/orders/delivery_schedule.go",
           "internal/restaurants/delivery_schedule.go",
@@ -868,12 +867,17 @@
       "selectors": {
         "foodyadmin": [
           "src/app/[restaurantId]/orders/deliveries/**",
-          "src/app/[restaurantId]/delivery/tours/**",
           "src/components/delivery/DispatcherView.tsx",
           "src/components/delivery/RouteSettingsEditor.tsx",
           "src/components/delivery/**",
           "src/lib/delivery*.ts",
-          "src/lib/i18n.tsx"
+          "src/lib/i18n.tsx",
+          "src/lib/route-address.ts",
+          "src/components/orders/EditCustomerDialog.tsx",
+          "src/lib/api.ts",
+          "src/app/[restaurantId]/layout.tsx",
+          "src/lib/delivery-navigation.ts",
+          "src/components/delivery/DeliveryNavigation.tsx"
         ],
         "foodyserver": [
           "internal/delivery/**",
@@ -881,7 +885,21 @@
           "internal/orders/delivery_departure.go",
           "internal/orders/service.go",
           "migrations/313_courier_stop_results.sql",
-          "internal/orders/delivery_routes.go"
+          "internal/orders/delivery_routes.go",
+          "cmd/server/main.go",
+          "internal/common/models.go",
+          "internal/common/order_lifecycle_v2_models.go",
+          "internal/testutil/testutil.go",
+          "internal/support/corpus.json",
+          "migrations/331_delivery_route_recovery.sql"
+        ],
+        "foodyweb": [
+          "store/useCartStore.ts",
+          "app/order/checkout/page.tsx"
+        ],
+        "foodypos": [
+          "lib/features/orders/online/presentation/online_orders_page.dart",
+          "lib/features/orders/presentation/orders_page.dart"
         ]
       }
     },
@@ -895,9 +913,6 @@
           "src/components/delivery/Courier*",
           "src/components/delivery/NavigationAppMenu.tsx",
           "src/lib/useLocationReporter.ts"
-        ],
-        "foodyweb": [
-          "app/r/[restaurantId]/tournee/**"
         ]
       }
     },
@@ -1976,7 +1991,6 @@
       "selectors": {
         "foodyweb": [
           "app/r/[restaurantId]/catering/**",
-          "app/r/[restaurantId]/tournee/**",
           "components/catering/**",
           "components/Catering*.tsx",
           "lib/catering*.ts",
