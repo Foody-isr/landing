@@ -81,11 +81,16 @@ for (const [service, configuredRoot] of Object.entries(roots)) {
     // Private Foody sales documents have their own internal procedure; broad
     // API/runtime/component selectors do not make them customer API workflows.
     const commercialDocumentModule = matched.includes('backoffice-commercial-documents');
+    // These helpers belong only to the internal second-factor workflow. They
+    // do not change the generic runtime merely because src/lib/* also matches.
+    const backofficeMFA = service === 'foodybackoffice' && [
+      'src/lib/mfa.ts', 'src/lib/mfa-strings.ts', 'src/lib/use-mfa-copy.ts',
+    ].includes(file);
     const walletStudioModule = service === 'foodyserver' && matched.includes('customers-wallet-studio') &&
       /^(?:cmd\/server\/wallet_studio\.go|internal\/common\/loyalty_wallet_design\.go|internal\/loyalty\/wallet_studio(?:_artwork|_handler)?\.go|internal\/loyaltywallet\/apple_studio\.go|migrations\/315_loyalty_wallet_designs\.sql)$/.test(file);
     // Standalone sandbox subscription files do not implement operational or
     // production payments even when shared selectors cover the same directories.
-    let ids = commercialDocumentModule ? ['backoffice-commercial-documents'] : sandboxBillingModule ? ['foody-billing-sandbox'] : itemMenuAssignmentModule ? ['menu-categories-and-items', 'menu-creating-a-menu-item', 'menu-menus-and-groups'] : eventModule ? ['orders-events'] : endOfDayModule ? ['pos-end-of-day'] : guardedCash ? ['pos-payments', 'pos-end-of-day'] : cashGuaranteeModule ? ['stancer-cash-guarantee'] : service === 'foodyserver' && file === 'internal/orders/cash_drawer_context.go'
+    let ids = backofficeMFA ? ['backoffice-access'] : commercialDocumentModule ? ['backoffice-commercial-documents'] : sandboxBillingModule ? ['foody-billing-sandbox'] : itemMenuAssignmentModule ? ['menu-categories-and-items', 'menu-creating-a-menu-item', 'menu-menus-and-groups'] : eventModule ? ['orders-events'] : endOfDayModule ? ['pos-end-of-day'] : guardedCash ? ['pos-payments', 'pos-end-of-day'] : cashGuaranteeModule ? ['stancer-cash-guarantee'] : service === 'foodyserver' && file === 'internal/orders/cash_drawer_context.go'
       ? ['pos-payments', 'pos-cash-access-diagnostics']
       : service === 'foodyserver' && /^internal\/orders\/transactions(?:_handler|_adjustments)?\.go$/.test(file)
         ? ['pos-payments'] : service === 'foodyserver' && file === 'internal/menu/item_photos.go'

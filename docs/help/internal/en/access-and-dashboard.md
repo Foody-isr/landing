@@ -7,7 +7,7 @@ apps: both
 tags:
   - internal
   - backoffice-access
-updatedAt: '2026-11-15'
+updatedAt: '2026-11-18'
 featureId: backoffice-access
 audience: internal
 releaseStatus: available
@@ -41,3 +41,9 @@ For subscription support, open **Plans & modules** in the sidebar for the public
 ## Find a Backoffice tool
 
 Check the API label below Foody Backoffice, then use **Management** for restaurants and users, **Payments & devices** for billing tests, terminal fleet and Cibus, **POS content** for ingredient icons and the POS sign-in screen, or **Platform** for usage, operations, servers and cloning. On smaller screens, choose **Open navigation**. Wide tables scroll horizontally.
+
+<span id="connection-security" />
+
+## Authenticator and connection journal
+
+After coordinated activation, superadmins must complete the authenticator prompt for Backoffice and for a separate development-environment sign-in during cloning. Account security allows replacement after a fresh sign-in and current password. The connection journal requires a superadmin session verified with MFA, a time interval of at most 31 days and at most 1,000 entries; narrow the interval if asked. Viewing records is itself audited. Data are decrypted only for this authorized display; never paste records into support chat. Retention is at least 12 calendar months. Production keys, backups and alert delivery must be provisioned and tested before claiming operational compliance.

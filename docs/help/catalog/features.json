@@ -111,12 +111,25 @@
           "en": "For a restaurant enrolled in the versioned development catalogue, this function must be included in its offer or active trial as well as permitted by the staff role. An excluded feature is rejected by the server. Check Billing for modules and licences, then ask the owner to review an addition. Account and physical POS quotas are separate; exceeding a quota requires the corresponding licences. Historical contracts are not automatically changed.",
           "he": "במסעדה הרשומה לקטלוג עם גרסה בסביבת הפיתוח, היכולת חייבת להיות כלולה בהצעה או בניסיון הפעיל וכן מותרת לפי תפקיד העובד. יכולת מוחרגת נדחית בשרת. בחיוב אפשר לבדוק מודולים ורישיונות ולבקש מהבעלים לבחון תוספת. מכסות חשבונות ועמדות קופה נפרדות; חריגה דורשת את הרישיונות המתאימים. חוזים היסטוריים אינם משתנים אוטומטית."
         }
+      },
+      {
+        "id": "second-factor",
+        "title": {
+          "en": "Complete protected sign-in",
+          "fr": "Terminer une connexion protégée",
+          "he": "השלמת התחברות מוגנת"
+        },
+        "instructions": {
+          "en": "If a second-factor screen appears, follow the authenticator and recovery instructions in [Account security](/en/help/account/security#authenticator). Password, passkey and invitation flows must complete this step before opening the workspace. If you cancel after confirming an invitation password, return to sign-in using that password to finish enrollment. Closing the dialog does not sign you in.",
+          "fr": "Si un écran de second facteur apparaît, suivez [la procédure de sécurité du compte](/fr/help/account/security#authenticator). Les connexions par mot de passe, clé d’accès ou invitation doivent terminer cette étape avant d’ouvrir l’espace. Si vous annulez après avoir confirmé le mot de passe d’une invitation, revenez à la connexion avec ce mot de passe pour finir la configuration. Fermer la fenêtre ne vous connecte pas.",
+          "he": "אם מופיע מסך גורם נוסף, פעלו לפי [הוראות אבטחת החשבון](/he/help/account/security#authenticator). כניסה בסיסמה, במפתח גישה או בהזמנה מחייבת השלמת שלב זה לפני פתיחת סביבת העבודה. אם ביטלתם לאחר אישור סיסמה בהזמנה, חזרו להתחברות עם אותה סיסמה להשלמת ההגדרה. סגירת החלון אינה משלימה התחברות."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": true,
-    "procedureUpdatedAt": "2026-11-15"
+    "procedureUpdatedAt": "2026-11-18"
   },
   {
     "id": "account-security",
@@ -135,10 +148,21 @@
     "selectors": {
       "foodyadmin": [
         "src/app/[restaurantId]/settings/security/**",
-        "src/components/settings/*Passkey*"
+        "src/components/settings/*Passkey*",
+        "src/components/MFA*.tsx",
+        "src/lib/mfa*.ts"
       ],
       "foodyserver": [
-        "internal/auth/webauthn*"
+        "internal/auth/webauthn*",
+        "internal/auth/mfa.go",
+        "internal/auth/security_journal.go",
+        "internal/common/auth_security.go",
+        "internal/crypto/keyring.go",
+        "migrations/329_auth_security.sql",
+        "config/auth_security_file.go"
+      ],
+      "foodypos": [
+        "lib/features/auth/presentation/mfa_dialog.dart"
       ]
     },
     "operations": [
@@ -180,6 +204,32 @@
           "fr": "Sélectionnez une clé inutilisée dans la sécurité et confirmez sa suppression. Conservez une méthode de connexion utilisable avant de retirer la dernière clé.",
           "he": "בחרו מפתח שאינו בשימוש בהגדרות האבטחה ואשרו הסרה. שמרו דרך התחברות תקינה לפני הסרת המפתח האחרון."
         }
+      },
+      {
+        "id": "authenticator",
+        "title": {
+          "en": "Use an authenticator app",
+          "fr": "Utiliser une application d’authentification",
+          "he": "שימוש באפליקציית אימות"
+        },
+        "instructions": {
+          "en": "When Foody has enabled this protection for your environment, owners, managers and accounts with administration or fiscal permissions must verify a second factor. Sign in with your password or passkey. On first use, add the displayed setup key to your authenticator app (the POS also displays a QR code), enter its six-digit code, and save the ten recovery codes privately before continuing. Each recovery code works once. Never send setup keys or codes to support. The setup prompt expires after five minutes. After five refused factors, wait 15 minutes and restart sign-in. Wait for a new app code if one was already used. Cashiers without these responsibilities keep their existing sign-in. An existing session may require sign-in again when this protection is activated or permissions change; protected sessions last at most 12 hours.",
+          "fr": "Lorsque Foody a activé cette protection dans votre environnement, les propriétaires, responsables et comptes disposant de permissions d’administration ou fiscales doivent confirmer un second facteur. Connectez-vous avec votre mot de passe ou votre clé d’accès. À la première connexion, ajoutez la clé affichée à votre application d’authentification (la caisse affiche aussi un QR code), saisissez son code à six chiffres et conservez les dix codes de secours en privé avant de continuer. Chaque code de secours sert une seule fois. Ne transmettez jamais ces clés ou codes au support. La demande expire après cinq minutes. Après cinq codes refusés, attendez 15 minutes puis recommencez la connexion. Attendez un nouveau code de l’application si le précédent a déjà servi. Les caissiers sans ces responsabilités conservent leur connexion habituelle. Une activation ou un changement de permissions peut imposer une nouvelle connexion ; les sessions protégées durent au plus 12 heures.",
+          "he": "כאשר Foody הפעילה את ההגנה בסביבה שלכם, בעלים, מנהלים ובעלי הרשאות ניהול או מס נדרשים לאמת גורם נוסף. התחברו עם סיסמה או מפתח גישה. בשימוש הראשון הוסיפו לאפליקציית האימות את מפתח ההגדרה המוצג (בקופה מוצג גם קוד QR), הזינו את הקוד בן שש הספרות ושמרו באופן פרטי את עשרת קודי הגיבוי לפני ההמשך. כל קוד גיבוי תקף פעם אחת. אין לשלוח מפתחות או קודים לתמיכה. הבקשה פגה אחרי חמש דקות. לאחר חמישה קודים שנדחו המתינו 15 דקות והתחילו מחדש. אם קוד כבר שימש, המתינו לקוד חדש באפליקציה. קופאים ללא אחריות זו ממשיכים להתחבר כרגיל. הפעלה או שינוי הרשאות עשויים לחייב התחברות מחדש; חיבור מוגן תקף עד 12 שעות."
+        }
+      },
+      {
+        "id": "replace-authenticator",
+        "title": {
+          "en": "Replace a lost authenticator",
+          "fr": "Remplacer une application perdue",
+          "he": "החלפת אפליקציית אימות שאבדה"
+        },
+        "instructions": {
+          "en": "If the authenticator is lost, sign in with a recovery code, then within five minutes open Admin → Settings → Security → Authenticator app. Enter your current password and choose Replace my authenticator. Configure the new app, confirm its code and save the new recovery codes. Confirmation revokes the old authenticator, old recovery codes and other sessions; cancellation before confirmation leaves the old app active. If every factor is lost, contact your authorized Foody administrator for verified account recovery. A password reset alone does not remove the second factor. This section is usable only after activation; an unavailable message means the current session cannot manage an authenticator.",
+          "fr": "Si l’application est perdue, connectez-vous avec un code de secours puis, dans les cinq minutes, ouvrez Admin → Paramètres → Sécurité → Application d’authentification. Saisissez votre mot de passe actuel et choisissez Remplacer mon application. Configurez la nouvelle application, confirmez son code et gardez les nouveaux codes de secours. La confirmation révoque l’ancienne application, les anciens codes et les autres sessions ; une annulation avant confirmation conserve l’ancienne application. Si tous les facteurs sont perdus, contactez l’administrateur Foody habilité pour une récupération avec contrôle d’identité. Réinitialiser le mot de passe ne supprime pas le second facteur. Cette section est utilisable après activation ; un message d’indisponibilité signifie que la session ne permet pas de gérer l’application.",
+          "he": "אם האפליקציה אבדה, התחברו באמצעות קוד גיבוי ובתוך חמש דקות פתחו ניהול → הגדרות → אבטחה → אפליקציית אימות. הזינו את הסיסמה הנוכחית ובחרו החלפת אפליקציית האימות. הגדירו אפליקציה חדשה, אשרו קוד ושמרו את קודי הגיבוי החדשים. האישור מבטל את האפליקציה הישנה, את הקודים הישנים ואת יתר החיבורים; ביטול לפני האישור משאיר את האפליקציה הישנה פעילה. אם אבדו כל אמצעי האימות, פנו למנהל Foody מורשה לשחזור לאחר בדיקת זהות. איפוס סיסמה אינו מסיר את הגורם הנוסף. הסעיף זמין לאחר הפעלה; הודעת אי־זמינות מציינת שלא ניתן לנהל אפליקציה בחיבור הנוכחי."
+        }
       }
     ],
     "audience": "public",
@@ -189,7 +239,8 @@
       "en": "If the device prompt fails, keep the existing key and use another configured sign-in method.",
       "fr": "Si la vérification de l’appareil échoue, conservez la clé existante et utilisez une autre méthode configurée.",
       "he": "אם אימות המכשיר נכשל, שמרו את המפתח הקיים והשתמשו בדרך התחברות אחרת שהוגדרה."
-    }
+    },
+    "procedureUpdatedAt": "2026-11-18"
   },
   {
     "id": "staff-invitations",
@@ -674,12 +725,25 @@
           "en": "For a restaurant enrolled in the versioned development catalogue, this function must be included in its offer or active trial as well as permitted by the staff role. An excluded feature is rejected by the server. Check Billing for modules and licences, then ask the owner to review an addition. Account and physical POS quotas are separate; exceeding a quota requires the corresponding licences. Historical contracts are not automatically changed. Reauthorizing the same identified device does not consume another licence. A revoked or expired authorization frees its place.",
           "he": "במסעדה הרשומה לקטלוג עם גרסה בסביבת הפיתוח, היכולת חייבת להיות כלולה בהצעה או בניסיון הפעיל וכן מותרת לפי תפקיד העובד. יכולת מוחרגת נדחית בשרת. בחיוב אפשר לבדוק מודולים ורישיונות ולבקש מהבעלים לבחון תוספת. מכסות חשבונות ועמדות קופה נפרדות; חריגה דורשת את הרישיונות המתאימים. חוזים היסטוריים אינם משתנים אוטומטית. אישור חוזר של אותו מכשיר מזוהה אינו צורך רישיון נוסף. הרשאה שבוטלה או פגה מפנה את המקום."
         }
+      },
+      {
+        "id": "manager-factor",
+        "title": {
+          "en": "Managers signing in by POS code",
+          "fr": "Responsables utilisant leur code de caisse",
+          "he": "מנהלים שמתחברים באמצעות קוד קופה"
+        },
+        "instructions": {
+          "en": "When authenticator protection is enabled, a responsible account must also supply an app code or recovery code after its personal POS code. Set up the authenticator first using email and password if the POS asks you to do so. The protected PIN sign-in starts no session or shift before the factor succeeds. The limited attendance-only time clock does not grant a POS session or fiscal access. Ordinary cashier accounts keep the existing PIN flow. See [Account security](/en/help/account/security#authenticator).",
+          "fr": "Lorsque la protection est activée, un compte responsable doit aussi saisir un code de l’application ou un code de secours après son code personnel de caisse. Configurez d’abord l’application par e-mail et mot de passe si la caisse vous le demande. Cette connexion protégée ne crée ni session ni prise de service avant validation du facteur. Le pointage limité à la présence ne donne aucune session de caisse ni aucun accès fiscal. Les comptes caissiers ordinaires conservent le parcours PIN habituel. Voir [Sécurité du compte](/fr/help/account/security#authenticator).",
+          "he": "כאשר ההגנה פעילה, חשבון אחראי נדרש להזין קוד מאפליקציית האימות או קוד גיבוי לאחר קוד הקופה האישי. הגדירו תחילה את האפליקציה באמצעות דוא״ל וסיסמה אם הקופה מבקשת זאת. התחברות מוגנת זו אינה יוצרת חיבור או תחילת משמרת לפני אימות הגורם. שעון הנוכחות המוגבל אינו מעניק חיבור לקופה או גישה לשירותי מס. חשבונות קופאי רגילים ממשיכים בתהליך הקוד הרגיל. ראו [אבטחת החשבון](/he/help/account/security#authenticator)."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-11-15"
+    "procedureUpdatedAt": "2026-11-18"
   },
   {
     "id": "customers-profiles",
@@ -14652,7 +14716,10 @@
         "src/lib/auth*",
         "src/components/**",
         "src/app/globals.css",
-        "src/app/layout.tsx"
+        "src/app/layout.tsx",
+        "src/lib/mfa*.ts",
+        "src/app/dashboard/security/*",
+        "src/lib/use-mfa-copy.ts"
       ],
       "foodyserver": [
         "internal/admin/**"
@@ -14710,12 +14777,25 @@
           "fr": "Vérifiez le libellé de l’API sous Foody Backoffice. Ouvrez **Management** pour les restaurants et utilisateurs, **Payments & devices** pour les tests de facturation, le parc de terminaux et Cibus, **POS content** pour les icônes d’ingrédients et l’écran de connexion POS, ou **Platform** pour les quotas, les opérations, les serveurs et la copie de données. Sur petit écran, choisissez **Open navigation**. Les tableaux larges défilent horizontalement.",
           "he": "בדקו את שם ה־API מתחת ל־Foody Backoffice. בחרו **Management** למסעדות ולמשתמשים, **Payments & devices** לבדיקות חיוב, לצי המסופים ול־Cibus, **POS content** לאייקוני מרכיבים ולמסך כניסת הקופה, או **Platform** למכסות, לתפעול, לשרתים ולהעתקת נתונים. במסך קטן בחרו **Open navigation**. אפשר לגלול טבלאות רחבות בציר האופקי."
         }
+      },
+      {
+        "id": "connection-security",
+        "title": {
+          "en": "Authenticator and connection journal",
+          "fr": "Application et journal de connexion",
+          "he": "אפליקציית אימות ויומן התחברות"
+        },
+        "instructions": {
+          "en": "After coordinated activation, superadmins must complete the authenticator prompt for Backoffice and for a separate development-environment sign-in during cloning. Account security allows replacement after a fresh sign-in and current password. The connection journal requires a superadmin session verified with MFA, a time interval of at most 31 days and at most 1,000 entries; narrow the interval if asked. Viewing records is itself audited. Data are decrypted only for this authorized display; never paste records into support chat. Retention is at least 12 calendar months. Production keys, backups and alert delivery must be provisioned and tested before claiming operational compliance.",
+          "fr": "Après activation coordonnée, les superadministrateurs doivent confirmer l’application pour le Backoffice et pour la connexion distincte à l’environnement de développement lors d’un clonage. Account security permet un remplacement après une connexion récente et confirmation du mot de passe. Le journal exige une session superadministrateur avec MFA, une période maximale de 31 jours et au plus 1 000 entrées ; réduisez la période si demandé. La consultation est elle-même journalisée. Les données sont déchiffrées uniquement pour cet affichage autorisé ; ne les copiez pas dans le support. La conservation est d’au moins 12 mois calendaires. Les clés, sauvegardes et alertes de production doivent être configurées et testées avant de déclarer la conformité opérationnelle.",
+          "he": "לאחר הפעלה מתואמת, מנהלי מערכת משלימים אימות באפליקציה בכניסה ל־Backoffice וגם בכניסה הנפרדת לסביבת פיתוח לצורך שכפול. Account security מאפשר החלפה לאחר התחברות טרייה ואישור הסיסמה. היומן דורש חיבור מנהל מערכת מאומת ב־MFA, טווח של עד 31 ימים ועד 1,000 רשומות; צמצמו את הטווח לפי הצורך. גם הצפייה מתועדת. הנתונים מפוענחים לתצוגה מורשית בלבד; אין להעתיקם לצ׳אט תמיכה. השמירה היא לפחות 12 חודשים קלנדריים. יש להגדיר ולבדוק מפתחות, גיבויים והתראות בייצור לפני הצהרה על תאימות תפעולית."
+        }
       }
     ],
     "audience": "internal",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-11-15"
+    "procedureUpdatedAt": "2026-11-18"
   },
   {
     "id": "backoffice-onboarding",
@@ -15989,13 +16069,38 @@
           "fr": "Dans une version compatible de Backoffice, ouvrez **Terminal fleet → All devices**. Recherchez le restaurant ou le nom de l’appareil. Sur la bonne ligne, choisissez **Forget device**, vérifiez le restaurant et confirmez. Les appareils retirés sont masqués par défaut. Cochez **Show forgotten devices** pour les consulter. Pour les terminaux de paiement, la même action est accessible dans **Payment terminals**.\n\nLe retrait est le même que dans FoodyPOS et reste limité au restaurant. L’historique des opérations terminées est conservé et les connexions existantes ne réinscrivent pas l’appareil automatiquement. Ce parcours ne réinitialise pas la configuration bancaire. Résolvez les opérations terminal et les dépendances d’impression en attente avant de réessayer. Terminez ou annulez toute modification de terminal préparée avant de retirer ce terminal.",
           "he": "בגרסה תואמת של Backoffice, פתחו **Terminal fleet ← All devices**. חפשו לפי שם המסעדה או המכשיר. בשורה הנכונה לחצו על **Forget device**, בדקו את המסעדה ואשרו. המכשירים שהוסרו מוסתרים כברירת מחדל. סמנו **Show forgotten devices** לצפייה בהם. ההסרה של מסוף תשלום זמינה גם ב־**Payment terminals**.\n\nזוהי אותה הסרה לפי מסעדה כמו ב־FoodyPOS. ההיסטוריה של פעולות שהושלמו נשמרת והחיבורים הקיימים אינם רושמים את המכשיר מחדש אוטומטית. ההסרה אינה מאפסת את הגדרות הסליקה. טפלו בפעולות מסוף ממתינות ובתלויות הדפסה לפני ניסיון נוסף. סיימו או בטלו שינוי מסוף שהוכן לפני הסרת המסוף."
         }
+      },
+      {
+        "id": "authentication-security-rollout",
+        "title": {
+          "fr": "Déployer la protection des accès en développement",
+          "en": "Deploy development access protection",
+          "he": "פריסת הגנת גישה בסביבת הפיתוח"
+        },
+        "instructions": {
+          "fr": "Déployez d’abord l’API compatible avec la protection désactivée, puis Admin, Backoffice et les caisses. Vérifiez l’inscription à l’application d’authentification, les codes de secours, les invitations et les connexions des responsables avant activation. Les employés ordinaires conservent le PIN ; un responsable ne peut pas démarrer sa première inscription avec son seul PIN. Les tables d’authentification et les journaux de sécurité sont exclus des copies entre environnements. Configurez les clés privées, la sauvegarde indépendante et les alertes, confirmez les abonnements puis testez la restauration et les notifications. Après activation, utilisez une version compatible : le retour à une ancienne version dépourvue de cette protection est bloqué. Ces essais ne constituent ni une certification fiscale ni une autorisation de mise en production.",
+          "en": "Deploy the compatible API with protection disabled, then Admin, Backoffice and POS clients. Verify authenticator enrollment, recovery codes, invitations and manager sign-in before activation. Ordinary staff retain PIN access; a manager cannot start initial enrollment with a PIN alone. Authentication tables and security journals are excluded from environment copies. Configure private keys, independent backups and alerts, confirm subscriptions, then test restoration and notification delivery. After activation, use a compatible version: rollback to an older version without this protection is blocked. These checks are not tax certification or production release approval.",
+          "he": "פרסו תחילה את ה־API התואם כשההגנה כבויה, ולאחר מכן את Admin, Backoffice והקופות. לפני הפעלה בדקו רישום לאפליקציית אימות, קודי גיבוי, הזמנות וכניסת מנהלים. עובדים רגילים ממשיכים להשתמש בקוד PIN; מנהל אינו יכול להתחיל רישום ראשון באמצעות PIN בלבד. טבלאות האימות ויומני האבטחה אינם נכללים בהעתקות בין סביבות. הגדירו מפתחות פרטיים, גיבוי עצמאי והתראות, אשרו את המינויים ובדקו שחזור ומסירת התראות. לאחר הפעלה השתמשו בגרסה תואמת: חזרה לגרסה ישנה ללא ההגנה חסומה. בדיקות אלה אינן אישור מס או הרשאה לפריסה בייצור."
+        }
+      },
+      {
+        "id": "native-fiscal-test-scope",
+        "title": {
+          "fr": "Limiter les documents fiscaux natifs aux essais",
+          "en": "Keep native fiscal documents within the test scope",
+          "he": "הגבלת מסמכים פיסקליים מובנים לבדיקות"
+        },
+        "instructions": {
+          "fr": "Les reçus, factures, avoirs et exports natifs du module fiscal restent réservés aux essais hors production, à un administrateur habilité et aux restaurants de démonstration explicitement configurés. Ils sont désactivés par défaut. Les documents portent la mention TEST et suivent leurs séries de numérotation propres. Vérifiez les archives, l’intégrité, la restauration et le simulateur d’export avant toute évolution du périmètre. Le succès du simulateur ne constitue pas l’enregistrement du logiciel ; Invoice4U reste l’émetteur opérationnel tant que la mise en service fiscale n’a pas été validée.",
+          "en": "Native receipts, invoices, credits and exports remain limited to nonproduction tests, an authorized administrator and explicitly configured demonstration restaurants. They are disabled by default. Documents are marked TEST and use their own numbering series. Verify archives, integrity, restoration and the export simulator before changing the scope. Simulator acceptance is not software registration; Invoice4U remains the operational issuer until fiscal commissioning is approved.",
+          "he": "קבלות, חשבוניות, זיכויים ויצוא מובנים מוגבלים לבדיקות מחוץ לייצור, למנהל מורשה ולמסעדות הדגמה שהוגדרו במפורש. ברירת המחדל כבויה. המסמכים מסומנים TEST ומשתמשים בסדרות מספור נפרדות. לפני הרחבת השימוש בדקו את הארכיון, השלמות, השחזור וסימולטור היצוא. הצלחה בסימולטור אינה רישום תוכנה; Invoice4U נשאר מפיק המסמכים התפעולי עד לאישור ההפעלה הפיסקלית."
+        }
       }
     ],
     "audience": "internal",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-11-18",
-    "updatedAt": "2026-10-28"
+    "procedureUpdatedAt": "2026-11-18"
   },
   {
     "id": "design-sandboxes",
