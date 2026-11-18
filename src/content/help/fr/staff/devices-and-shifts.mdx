@@ -5,7 +5,7 @@ apps: both
 tags:
   - staff
   - staff-devices-shifts
-updatedAt: '2026-11-15'
+updatedAt: '2026-11-18'
 featureId: staff-devices-shifts
 audience: public
 releaseStatus: available
@@ -123,3 +123,9 @@ Avec l’API et le POS compatibles, un même employé peut reprendre sa période
 ## Accès commercial en développement
 
 Pour un restaurant inscrit au catalogue versionné de développement, cette fonction doit être incluse dans son offre ou dans son essai actif, en plus des autorisations du rôle. Une fonctionnalité retirée est refusée côté serveur. Consultez Facturation pour voir les modules et les licences, puis faites examiner un ajout par le propriétaire. Les quotas de comptes et de postes POS sont distincts ; un dépassement nécessite les licences correspondantes. Les contrats historiques ne sont pas modifiés automatiquement. Réautoriser un même poste identifié ne consomme pas une nouvelle licence. Une autorisation révoquée ou expirée libère sa place.
+
+<span id="manager-factor" />
+
+## Responsables utilisant leur code de caisse
+
+Lorsque la protection est activée, un compte responsable doit aussi saisir un code de l’application ou un code de secours après son code personnel de caisse. Configurez d’abord l’application par e-mail et mot de passe si la caisse vous le demande. Cette connexion protégée ne crée ni session ni prise de service avant validation du facteur. Le pointage limité à la présence ne donne aucune session de caisse ni aucun accès fiscal. Les comptes caissiers ordinaires conservent le parcours PIN habituel. Voir [Sécurité du compte](/fr/help/account/security#authenticator).

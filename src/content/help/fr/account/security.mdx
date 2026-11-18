@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - account
   - account-security
-updatedAt: '2026-10-18'
+updatedAt: '2026-11-18'
 featureId: account-security
 audience: public
 releaseStatus: available
@@ -29,6 +29,18 @@ Choisissez la connexion par clé d’accès et terminez la vérification du navi
 ## Retirer une clé inutilisée
 
 Sélectionnez une clé inutilisée dans la sécurité et confirmez sa suppression. Conservez une méthode de connexion utilisable avant de retirer la dernière clé.
+
+<span id="authenticator" />
+
+## Utiliser une application d’authentification
+
+Lorsque Foody a activé cette protection dans votre environnement, les propriétaires, responsables et comptes disposant de permissions d’administration ou fiscales doivent confirmer un second facteur. Connectez-vous avec votre mot de passe ou votre clé d’accès. À la première connexion, ajoutez la clé affichée à votre application d’authentification (la caisse affiche aussi un QR code), saisissez son code à six chiffres et conservez les dix codes de secours en privé avant de continuer. Chaque code de secours sert une seule fois. Ne transmettez jamais ces clés ou codes au support. La demande expire après cinq minutes. Après cinq codes refusés, attendez 15 minutes puis recommencez la connexion. Attendez un nouveau code de l’application si le précédent a déjà servi. Les caissiers sans ces responsabilités conservent leur connexion habituelle. Une activation ou un changement de permissions peut imposer une nouvelle connexion ; les sessions protégées durent au plus 12 heures.
+
+<span id="replace-authenticator" />
+
+## Remplacer une application perdue
+
+Si l’application est perdue, connectez-vous avec un code de secours puis, dans les cinq minutes, ouvrez Admin → Paramètres → Sécurité → Application d’authentification. Saisissez votre mot de passe actuel et choisissez Remplacer mon application. Configurez la nouvelle application, confirmez son code et gardez les nouveaux codes de secours. La confirmation révoque l’ancienne application, les anciens codes et les autres sessions ; une annulation avant confirmation conserve l’ancienne application. Si tous les facteurs sont perdus, contactez l’administrateur Foody habilité pour une récupération avec contrôle d’identité. Réinitialiser le mot de passe ne supprime pas le second facteur. Cette section est utilisable après activation ; un message d’indisponibilité signifie que la session ne permet pas de gérer l’application.
 
 ## En cas d’échec
 

@@ -353,3 +353,15 @@ Comme superadmin Foody, chargez le catalogue de fonctions. Vérifiez que le cata
 Dans une version compatible de Backoffice, ouvrez **Terminal fleet → All devices**. Recherchez le restaurant ou le nom de l’appareil. Sur la bonne ligne, choisissez **Forget device**, vérifiez le restaurant et confirmez. Les appareils retirés sont masqués par défaut. Cochez **Show forgotten devices** pour les consulter. Pour les terminaux de paiement, la même action est accessible dans **Payment terminals**.
 
 Le retrait est le même que dans FoodyPOS et reste limité au restaurant. L’historique des opérations terminées est conservé et les connexions existantes ne réinscrivent pas l’appareil automatiquement. Ce parcours ne réinitialise pas la configuration bancaire. Résolvez les opérations terminal et les dépendances d’impression en attente avant de réessayer. Terminez ou annulez toute modification de terminal préparée avant de retirer ce terminal.
+
+<span id="authentication-security-rollout" />
+
+## Déployer la protection des accès en développement
+
+Déployez d’abord l’API compatible avec la protection désactivée, puis Admin, Backoffice et les caisses. Vérifiez l’inscription à l’application d’authentification, les codes de secours, les invitations et les connexions des responsables avant activation. Les employés ordinaires conservent le PIN ; un responsable ne peut pas démarrer sa première inscription avec son seul PIN. Les tables d’authentification et les journaux de sécurité sont exclus des copies entre environnements. Configurez les clés privées, la sauvegarde indépendante et les alertes, confirmez les abonnements puis testez la restauration et les notifications. Après activation, utilisez une version compatible : le retour à une ancienne version dépourvue de cette protection est bloqué. Ces essais ne constituent ni une certification fiscale ni une autorisation de mise en production.
+
+<span id="native-fiscal-test-scope" />
+
+## Limiter les documents fiscaux natifs aux essais
+
+Les reçus, factures, avoirs et exports natifs du module fiscal restent réservés aux essais hors production, à un administrateur habilité et aux restaurants de démonstration explicitement configurés. Ils sont désactivés par défaut. Les documents portent la mention TEST et suivent leurs séries de numérotation propres. Vérifiez les archives, l’intégrité, la restauration et le simulateur d’export avant toute évolution du périmètre. Le succès du simulateur ne constitue pas l’enregistrement du logiciel ; Invoice4U reste l’émetteur opérationnel tant que la mise en service fiscale n’a pas été validée.
