@@ -1,28 +1,30 @@
 ---
 title: 'Zones, frais et calendriers de livraison'
-description: Admin → Paramètres → Livraison
+description: Foody Admin → Livraisons → Zones
 apps: foodyadmin
 tags:
   - delivery
   - delivery-zones
-updatedAt: '2026-11-04'
+updatedAt: '2026-11-18'
 featureId: delivery-zones
 audience: public
 releaseStatus: available
 ---
-Admin → Paramètres → Livraison
+Foody Admin → Livraisons → Zones
 
 <span id="zone" />
 
 ## Créer une zone de livraison
 
-Créez ou modifiez une zone nommée avec les contrôles carte/adresse. Vérifiez périmètre, état actif et éligibilité des commandes avant enregistrement. Les modifications de zone, y compris les règles du jour même, nécessitent orders.manage. La disponibilité commune du restaurant et le minimum global utilisent settings.edit ; leur consultation conserve les accès aux paramètres existants.
+Créez ou modifiez une zone nommée avec les contrôles carte/adresse. Vérifiez périmètre, état actif et éligibilité des commandes avant enregistrement. Les modifications de zone, y compris les règles du jour même, nécessitent orders.manage. La disponibilité commune du restaurant et le minimum global utilisent settings.edit ; leur consultation conserve les accès aux paramètres existants. Pour une zone définie par ville, Tel Aviv, Tel-Aviv, Tel Aviv-Yaffo et תל אביב-יפו désignent la même ville.
+
+Recherchez un nom de zone, une ville ou un code postal, puis filtrez par état. Chaque ligne affiche le tarif et le type de zone. Cliquez sur son nom pour la modifier ou sur Couverture et horaires pour consulter les villes, le calendrier et le minimum. Sur téléphone, Carte et Liste permettent de changer de vue.
 
 <span id="postal-codes" />
 
 ## Cibler un code postal français précis
 
-Cette option nécessite les versions compatibles de l’API et d’Admin ; sa présence dans ce guide ne confirme pas son déploiement. Avec l’autorisation de gérer les commandes et un établissement situé en France, ouvrez Paramètres → Livraison → Ajouter une zone. Nommez la zone, choisissez Codes postaux (France), puis saisissez 75016 pour ce seul code postal. Pour plusieurs secteurs, collez les codes à 5 chiffres séparés par des espaces, des virgules ou des retours à la ligne (1 000 maximum) ; conservez les zéros initiaux, par exemple 01000. Réglez les frais, le minimum, les créneaux et l’état actif, puis Enregistrer. Rouvrez la zone pour vérifier les codes et testez des adresses de part et d’autre de sa limite avant la mise en service. 75016 est un code postal ; 75 est le département de Paris. Départements (France) accepte aussi 2A, 2B et les codes ultramarins à trois chiffres comme 971, mais couvre le département entier. Une zone par code postal est prioritaire sur les autres zones pour ses frais, son minimum et son calendrier ; si le code ne correspond pas, une autre zone active peut toujours couvrir l’adresse. Le code postal est vérifié à partir de l’adresse par le service de géocodage : un texte de ville ou des coordonnées saisis seuls ne suffisent pas. Sans code postal vérifiable, précisez l’adresse et réessayez. Une saisie invalide ne s’enregistre pas ; après une réponse d’enregistrement incertaine, utilisez Vérifier les données enregistrées avant de réessayer.
+Cette option nécessite les versions compatibles de l’API et d’Admin ; sa présence dans ce guide ne confirme pas son déploiement. Avec l’autorisation de gérer les commandes et un établissement situé en France, ouvrez Livraisons → Zones → Ajouter une zone. Nommez la zone, choisissez Codes postaux (France), puis saisissez 75016 pour ce seul code postal. Pour plusieurs secteurs, collez les codes à 5 chiffres séparés par des espaces, des virgules ou des retours à la ligne (1 000 maximum) ; conservez les zéros initiaux, par exemple 01000. Réglez les frais, le minimum, les créneaux et l’état actif, puis Enregistrer. Rouvrez la zone pour vérifier les codes et testez des adresses de part et d’autre de sa limite avant la mise en service. 75016 est un code postal ; 75 est le département de Paris. Départements (France) accepte aussi 2A, 2B et les codes ultramarins à trois chiffres comme 971, mais couvre le département entier. Une zone par code postal est prioritaire sur les autres zones pour ses frais, son minimum et son calendrier ; si le code ne correspond pas, une autre zone active peut toujours couvrir l’adresse. Le code postal est vérifié à partir de l’adresse par le service de géocodage : un texte de ville ou des coordonnées saisis seuls ne suffisent pas. Sans code postal vérifiable, précisez l’adresse et réessayez. Une saisie invalide ne s’enregistre pas ; après une réponse d’enregistrement incertaine, utilisez Vérifier les données enregistrées avant de réessayer.
 
 <span id="postal-day-groups" />
 
@@ -58,13 +60,13 @@ Dans une zone avec choix par le client et confirmation par le restaurant pour le
 
 ## Vérifier les priorités et les sauvegardes
 
-La zone définit périmètre, frais/minimum et jours de réception. Les horaires et fermetures du restaurant limitent toujours la réception. Le délai propre au produit remplace le défaut ; le stock réellement prêt peut raccourcir la préparation mais n’ouvre aucun autre jour ni secteur. Les règles du jour même sont enregistrées avec la zone, sans cumul avec une surcharge globale. Des plages personnalisées remplacent encore les horaires du service si elles existent ; les lots gardent leurs fenêtres propres. Le minimum global sert seulement si la zone n’en définit pas ; zéro explicite reste zéro. Historiquement, un périmètre sans règles explicites peut autoriser toutes les adresses si toutes les zones classiques sont désactivées : utilisez le service ou la pause pour arrêter les livraisons. Les zones avec règle explicite du jour même ferment leur périmètre lorsqu’elles sont désactivées ; supprimer la dernière nécessite une autre zone classique active. Un conflit de modification conserve la saisie. Rechargez et vérifiez la version actuelle ; après une sauvegarde réseau incertaine, vérifiez les données enregistrées avant une nouvelle écriture.
+La zone définit périmètre, frais/minimum et jours de réception. Les horaires et fermetures du restaurant limitent toujours la réception. Le délai propre au produit remplace le défaut ; le stock réellement prêt peut raccourcir la préparation mais n’ouvre aucun autre jour ni secteur. Les règles du jour même sont enregistrées avec la zone, sans cumul avec une surcharge globale. Des plages personnalisées remplacent encore les horaires du service si elles existent ; les lots gardent leurs fenêtres propres. Le minimum global sert seulement si la zone n’en définit pas ; zéro explicite reste zéro. Historiquement, un périmètre sans règles explicites peut autoriser toutes les adresses si toutes les zones de livraison sont désactivées : utilisez le service ou la pause pour arrêter les livraisons. Les zones avec règle explicite du jour même ferment leur périmètre lorsqu’elles sont désactivées ; supprimer la dernière nécessite une autre zone de livraison active. Un conflit de modification conserve la saisie. Rechargez et vérifiez la version actuelle ; après une sauvegarde réseau incertaine, vérifiez les données enregistrées avant une nouvelle écriture.
 
 <span id="ordering-simulation-clock" />
 
 ## Tester la date de passage d’une commande
 
-Dans Commandes et disponibilité → Simuler une commande, choisissez Date et heure de la commande dans le fuseau affiché, puis la date de réception et le panier. Maintenant recharge l’heure du serveur. La préparation et les règles du jour même sont évaluées à cette référence, avec les réglages enregistrés et les quantités prêtes actuelles. Une date passée ne reconstitue pas l’historique ; le test ne réserve pas de livreur et ne crée aucune commande. Les commandes clientes gardent l’heure réelle du serveur. Voir [la procédure de simulation](/fr/help/orders/preorders-and-batches#simulate-order). La simulation concerne la livraison classique ; les tournées publiées gardent leurs propres règles.
+Dans Commandes et disponibilité → Simuler une commande, choisissez Date et heure de la commande dans le fuseau affiché, puis la date de réception et le panier. Maintenant recharge l’heure du serveur. La préparation et les règles du jour même sont évaluées à cette référence, avec les réglages enregistrés et les quantités prêtes actuelles. Une date passée ne reconstitue pas l’historique ; le test ne réserve pas de livreur et ne crée aucune commande. Les commandes clientes gardent l’heure réelle du serveur. Voir [la procédure de simulation](/fr/help/orders/preorders-and-batches#simulate-order).
 
 <span id="order-deadlines" />
 

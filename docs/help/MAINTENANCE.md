@@ -1,3 +1,18 @@
+## Delivery planning and departure recovery (19 November 2026)
+
+Publish the dispatch, courier and delivery-zone guides with the API and Admin versions
+that accept a confirmed map point, insert a stop into a saved draft, and enforce the
+restaurant service day. Migration 331 preserves earlier handoff events and permits
+a second departure after a manager reverses the first. Apply the API migration and
+verify a start, reversal and restart in development before publishing the guides.
+The embedded support corpus uses this same three-language release. Pin the immutable
+Landing documentation revision in the service contracts before submitting the PRs.
+
+The four delivery guides cover the day board, the courier's itinerary, the zone
+directory and the provider usage table. The separate sales-tour prototype and
+its dedicated checkout links are retired. Publish these guide revisions with
+the matching API, Admin, guest web and POS releases.
+
 ## Monthly and annual commercial terms (18 November 2026)
 
 Review API, Backoffice and Landing as one release. Standard monthly software has
