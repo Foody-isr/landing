@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-18.
 
-114 fiches de fonctionnalités, 1028 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2647 fichiers applicatifs et 2321 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+114 fiches de fonctionnalités, 1032 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2649 fichiers applicatifs et 2324 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 802 | 1019 | e8ca3b7d6751 ; versioned |
-| foodyadmin | 819 | 837 | b915682b7f5f ; versioned |
+| foodyserver | 803 | 1021 | c1da5e29d607 ; versioned |
+| foodyadmin | 820 | 838 | 963bef7d3479 ; versioned |
 | foodyweb | 386 | 200 | f5c79c68a0f0 ; versioned |
 | foodylanding | 160 | 31 | c434ca0ff191 ; versioned |
 | foodypos | 432 | 186 | 4561d8ae05c9 ; versioned |
-| foodybackoffice | 48 | 48 | 727e8e4b2a4d ; versioned |
+| foodybackoffice | 48 | 48 | ab4a30d3833b ; versioned |
 
 ## getting-started
 
@@ -111,6 +111,7 @@ Identifiant : `billing`. Public : public. Disponibilité : available. Services :
 - [Vérifier un changement de formule](../../src/content/help/fr/account/subscription.mdx#change)
 - [Consulter les événements de facturation](../../src/content/help/fr/account/subscription.mdx#events)
 - [Ajouter un module ou des licences en sandbox](../../src/content/help/fr/account/subscription.mdx#versioned-sandbox-additions)
+- [Choisir le renouvellement annuel lors d’un test d’abonnement Foody](../../src/content/help/fr/account/subscription.mdx#sandbox-annual-renewal)
 
 ### [Pilote de facturation Foody](internal/fr/foody-billing-sandbox.md)
 
@@ -190,6 +191,7 @@ Identifiant : `customers-profiles`. Public : public. Disponibilité : available.
 
 Identifiant : `customers-loyalty-program`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb.
 
+- [Lire la vue d’ensemble](../../src/content/help/fr/customers/loyalty-program.mdx#overview)
 - [Préparer le programme](../../src/content/help/fr/customers/loyalty-program.mdx#configure)
 - [Activer ou suspendre les adhésions](../../src/content/help/fr/customers/loyalty-program.mdx#activate)
 - [Ouvrir et ajouter sa carte de fidélité personnelle](../../src/content/help/fr/customers/loyalty-program.mdx#open-loyalty-card)
@@ -800,6 +802,7 @@ Identifiant : `payments-how-payments-work`. Public : public. Disponibilité : av
 - [Configuration](../../src/content/help/fr/payments/how-payments-work.mdx#section-1)
 - [Vérifier un paiement en ligne](../../src/content/help/fr/payments/how-payments-work.mdx#section-2)
 - [Résultat en échec ou incertain](../../src/content/help/fr/payments/how-payments-work.mdx#section-3)
+- [Où le client saisit une nouvelle carte](../../src/content/help/fr/payments/how-payments-work.mdx#verifone-new-card-checkout)
 - [Enregistrer une carte pendant le premier paiement (CST)](../../src/content/help/fr/payments/how-payments-work.mdx#verifone-cst-card-saving)
 - [Vérifier une facture Invoice4U détaillée](../../src/content/help/fr/payments/how-payments-work.mdx#invoice4u-order-lines)
 - [Réservations après paiement tardif](../../src/content/help/fr/payments/how-payments-work.mdx#carte-series-stock)
@@ -872,6 +875,7 @@ Identifiant : `payment-configuration`. Public : public. Disponibilité : availab
 - [Comprendre les moyens enregistrés](../../src/content/help/fr/payments/providers-and-cibus.mdx#saved-methods)
 - [Configurer et utiliser Cibus](../../src/content/help/fr/payments/providers-and-cibus.mdx#cibus)
 - [Régler politique de paiement, TVA et pourboires](../../src/content/help/fr/payments/providers-and-cibus.mdx#policy-vat-tips)
+- [Où le client saisit une nouvelle carte](../../src/content/help/fr/payments/providers-and-cibus.mdx#verifone-new-card-checkout)
 - [Enregistrer une carte pendant le premier paiement (CST)](../../src/content/help/fr/payments/providers-and-cibus.mdx#verifone-cst-card-saving)
 - [Vérifier une facture Invoice4U détaillée](../../src/content/help/fr/payments/providers-and-cibus.mdx#invoice4u-order-lines)
 - [Utiliser les espèces avec garantie bancaire facultative](../../src/content/help/fr/payments/providers-and-cibus.mdx#stancer-cash-guarantee)
@@ -1522,7 +1526,7 @@ Identifiant : `backoffice-entitlements`. Public : internal. Disponibilité : ava
 - [Rembourser ou annuler un paiement en ligne Verifone](internal/fr/features-and-payments.md#verifone-admin-money-operations)
 - [Garder la page de paiement lisible](internal/fr/features-and-payments.md#verifone-readable-hosted-theme)
 - [Rattacher un thème Checkout créé dans Verifone Central](internal/fr/features-and-payments.md#link-verifone-central-theme)
-- [Configurer le formulaire carte Foody pour CST](internal/fr/features-and-payments.md#configure-verifone-cst-card-form)
+- [Choisir le parcours carte Verifone d’un restaurant](internal/fr/features-and-payments.md#configure-verifone-cst-card-form)
 - [Configurer Apple Pay et Google Pay dans Foody](internal/fr/features-and-payments.md#configure-verifone-direct-wallets)
 - [Vérifier affectations de fonctions et plans](internal/fr/features-and-payments.md#entitlements)
 - [Configurer l’infrastructure de paiement](internal/fr/features-and-payments.md#providers)

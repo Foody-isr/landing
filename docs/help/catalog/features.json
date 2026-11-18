@@ -844,9 +844,9 @@
       "he": "מבצעים מקוונים וקודי הנחה"
     },
     "entry": {
-      "en": "Admin → Clients → Promotions",
-      "fr": "Admin → Clients → Promotions",
-      "he": "ניהול → לקוחות → מבצעים"
+      "en": "In Foody Admin, open **Customers → Discounts** to manage promotional codes. If customers earn a reward after reaching a visits or points threshold, open **Customers → Loyalty program**.",
+      "fr": "Dans Foody Admin, ouvrez **Clients → Remises** pour gérer les codes promo. Si la récompense se gagne après un nombre de visites ou de points, ouvrez **Clients → Programme de fidélité**.",
+      "he": "ב־Foody Admin פתחו **לקוחות ← הנחות** לניהול קודי קופון. אם הלקוחות מקבלים הטבה לאחר שצברו ביקורים או נקודות, פתחו **לקוחות ← תוכנית מועדון**."
     },
     "selectors": {
       "foodyadmin": [
@@ -903,7 +903,8 @@
     ],
     "audience": "public",
     "status": "available",
-    "preserveExisting": false
+    "preserveExisting": false,
+    "procedureUpdatedAt": "2026-11-18"
   },
   {
     "id": "billing",
@@ -17964,9 +17965,9 @@
       "he": "הגדרת תוכנית מועדון למסעדה"
     },
     "entry": {
-      "en": "In the compatible Foody Admin, select the restaurant and open **Loyalty program** in the sidebar.",
-      "fr": "Dans la version compatible de Foody Admin, sélectionnez le restaurant et ouvrez **Programme de fidélité** dans le menu latéral.",
-      "he": "בגרסה התואמת של Foody Admin, בחרו את המסעדה ופתחו **תוכנית מועדון** בתפריט הצד."
+      "en": "In Foody Admin, select the restaurant and open **Customers → Loyalty program**. The overview shows the saved status, how customers earn, and the reward they unlock.",
+      "fr": "Dans Foody Admin, sélectionnez le restaurant et ouvrez **Clients → Programme de fidélité**. La vue d’ensemble présente le statut enregistré, la règle de cumul et la récompense que les clients peuvent gagner.",
+      "he": "ב־Foody Admin בחרו את המסעדה ופתחו **לקוחות ← תוכנית מועדון**. בסקירה מוצגים מצב התוכנית שנשמר, אופן הצבירה וההטבה שהלקוחות יכולים לקבל."
     },
     "access": {
       "en": "Use a restaurant account with permission to view settings. Changing the program requires settings edit permission for that restaurant.",
@@ -17978,6 +17979,7 @@
         "src/app/[restaurantId]/loyalty/program/page.tsx",
         "src/components/Sidebar.tsx",
         "src/components/loyalty/LoyaltyProgramWorkspace.tsx",
+        "src/components/loyalty/LoyaltyProgramOverview.tsx",
         "src/lib/loyalty-program.ts",
         "src/lib/i18n.tsx",
         "src/lib/help/context.ts"
@@ -18005,6 +18007,19 @@
     },
     "operations": [
       {
+        "id": "overview",
+        "title": {
+          "en": "Read the overview",
+          "fr": "Lire la vue d’ensemble",
+          "he": "קריאת סקירת התוכנית"
+        },
+        "instructions": {
+          "en": "Read the saved reward and when it is earned, for example a free coffee after five visits. Check the minimum purchase, reward validity and enrollment status. **Wallet Studio** opens the card design. **Open the customer loyalty page** opens the restaurant’s storefront. For a promotional code such as LUNCH10, open **Customers → Discounts**.",
+          "fr": "Lisez la récompense et son seuil, par exemple un café offert après cinq visites. Vérifiez le minimum d’achat, la validité de la récompense et le statut des adhésions. **Studio Wallet** ouvre l’éditeur de la carte. **Ouvrir la page Fidélité client** mène au site du restaurant. Pour gérer un code promo comme MIDI10, ouvrez **Clients → Remises**.",
+          "he": "בדקו איזו הטבה מקבלים ובאיזה שלב, למשל קפה במתנה אחרי חמישה ביקורים. בדקו גם את סכום הקנייה המינימלי, תוקף ההטבה ומצב ההצטרפות. **סטודיו Wallet** פותח את עורך הכרטיס. **פתיחת דף המועדון ללקוחות** מוביל לאתר המסעדה. לניהול קוד קופון כגון LUNCH10 פתחו **לקוחות ← הנחות**."
+        }
+      },
+      {
         "id": "configure",
         "title": {
           "en": "Prepare the program",
@@ -18012,9 +18027,9 @@
           "he": "הכנת התוכנית"
         },
         "instructions": {
-          "en": "Choose **Points** or **Visits**, the reward threshold and minimum eligible purchase. Choose a fixed discount or a free product. Add the name and terms in English, French and Hebrew and give the terms a version. Save and confirm with **Program active** off to keep it paused.",
-          "fr": "Choisissez **Points** ou **Visites**, le seuil de récompense et le montant minimum éligible. Choisissez une remise fixe ou un produit offert. Saisissez le nom et les conditions en français, hébreu et anglais, puis indiquez une version des conditions. Enregistrez et confirmez en laissant **Programme actif** désactivé pour garder le programme en pause.",
-          "he": "בחרו **נקודות** או **ביקורים**, את סף ההטבה ואת סכום הקנייה המזכה המינימלי. בחרו הנחה קבועה או מוצר במתנה. הזינו שם ותנאים בעברית, בצרפתית ובאנגלית וקבעו גרסה לתנאים. שמרו ואשרו כשהאפשרות **התוכנית פעילה** כבויה כדי להשאיר את התוכנית בהשהיה."
+          "en": "Select **Create program** or **Edit program**. Under **Program rules**, choose visits or points, a minimum eligible purchase and the threshold for a fixed discount or a free product. Under **Enrollment texts**, select each language to enter the name and terms in English, French and Hebrew and enter a terms version. To save a paused program, leave **Program active** off, save and confirm.",
+          "fr": "Sélectionnez **Créer le programme** ou **Modifier le programme**. Dans **Règles du programme**, choisissez le cumul par visites ou par points, l’achat minimum et le seuil pour gagner une remise fixe ou un produit offert. Dans **Textes d’adhésion**, sélectionnez chaque langue pour saisir le nom et les conditions en français, anglais et hébreu, puis indiquez la version des conditions. Pour enregistrer un programme suspendu, laissez **Programme actif** sur **Non**, enregistrez et confirmez.",
+          "he": "בחרו **יצירת תוכנית** או **עריכת התוכנית**. תחת **כללי התוכנית** בחרו צבירה לפי ביקורים או נקודות, סכום קנייה מינימלי ואת הסף לקבלת הנחה בסכום קבוע או מוצר במתנה. תחת **פרטי ההצטרפות** עברו בין השפות והזינו שם ותנאים בעברית, באנגלית ובצרפתית, וכן גרסה לתנאים. לשמירת תוכנית מושהית השאירו את מתג ההפעלה כבוי, שמרו ואשרו."
         }
       },
       {
@@ -18077,9 +18092,9 @@
       "he": "הכנה, בדיקה ופרסום של כרטיס מועדון"
     },
     "entry": {
-      "en": "In Foody Admin, select the restaurant and open **Loyalty program → Wallet Studio**.",
-      "fr": "Dans Foody Admin, sélectionnez le restaurant et ouvrez **Programme de fidélité → Studio Wallet**.",
-      "he": "ב־Foody Admin, בחרו את המסעדה ופתחו **תוכנית מועדון → סטודיו Wallet**."
+      "en": "In Foody Admin, choose the restaurant and open **Customers → Loyalty program → Wallet Studio**.",
+      "fr": "Dans Foody Admin, sélectionnez le restaurant et ouvrez **Clients → Programme de fidélité → Studio Wallet**.",
+      "he": "ב־Foody Admin בחרו את המסעדה ופתחו **לקוחות ← תוכנית מועדון ← סטודיו Wallet**."
     },
     "access": {
       "en": "Use an account with access to restaurant settings. Saving, testing and publishing require permission to edit settings. The Apple test requires a loyalty program and a configured Apple Pass Type ID certificate and key. For the customer pilot, also enable the Wallet API and the intended provider in the test environment.",
