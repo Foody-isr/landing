@@ -102,11 +102,13 @@ Checkout page in CST before publishing the matching guides.
 
 ## Wallet Studio
 
-The Admin stores a private Wallet design draft for each restaurant and
-renders Apple and Google previews. The signed Apple test pass requires the
-Pass Type ID certificate and matching key for the selected environment. Keep
-the FR, HE and EN test procedures in internal help. Verify installation on a
-physical iPhone before documenting an accepted device test.
+The Admin stores a private Wallet design draft for each restaurant and renders
+Apple and Google previews. A publication saves a version for the customer pass.
+New members add their personal card from the restaurant’s loyalty page after
+joining an active program. Issuance requires the Wallet API and the relevant
+provider. Keep publication, rollout and device procedures in FR, HE and EN
+internal help. Verify installation and progress updates on physical devices.
+Release the API with migration 322 before the matching Admin and guest Web.
 
 ## CST terminal fleet and payment operations (9 November 2026)
 

@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-18.
 
-114 fiches de fonctionnalités, 1021 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2644 fichiers applicatifs et 2320 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+114 fiches de fonctionnalités, 1028 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2647 fichiers applicatifs et 2321 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,9 +10,9 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyserver | 800 | 1018 | cda0af467681 ; versioned |
-| foodyadmin | 819 | 837 | 4c76a261b685 ; versioned |
-| foodyweb | 385 | 200 | 714435da4953 ; versioned |
+| foodyserver | 802 | 1019 | e8ca3b7d6751 ; versioned |
+| foodyadmin | 819 | 837 | b915682b7f5f ; versioned |
+| foodyweb | 386 | 200 | f5c79c68a0f0 ; versioned |
 | foodylanding | 160 | 31 | c434ca0ff191 ; versioned |
 | foodypos | 432 | 186 | 4561d8ae05c9 ; versioned |
 | foodybackoffice | 48 | 48 | 727e8e4b2a4d ; versioned |
@@ -192,13 +192,17 @@ Identifiant : `customers-loyalty-program`. Public : public. Disponibilité : ava
 
 - [Préparer le programme](../../src/content/help/fr/customers/loyalty-program.mdx#configure)
 - [Activer ou suspendre les adhésions](../../src/content/help/fr/customers/loyalty-program.mdx#activate)
+- [Ouvrir et ajouter sa carte de fidélité personnelle](../../src/content/help/fr/customers/loyalty-program.mdx#open-loyalty-card)
+- [Cumuler sur le site de commande du restaurant](../../src/content/help/fr/customers/loyalty-program.mdx#member-purchase)
 
-### [Préparer un visuel Wallet et le tester sur iPhone](internal/fr/wallet-studio.md)
+### [Préparer, tester et publier une carte de fidélité](internal/fr/wallet-studio.md)
 
-Identifiant : `customers-wallet-studio`. Public : internal. Disponibilité : local-release-unverified. Services : foodyserver, foodyadmin.
+Identifiant : `customers-wallet-studio`. Public : internal. Disponibilité : local-release-unverified. Services : foodyserver, foodyadmin, foodyweb.
 
 - [Enregistrer un visuel privé](internal/fr/wallet-studio.md#save-design)
 - [Ajouter une carte de test sur iPhone](internal/fr/wallet-studio.md#apple-test)
+- [Publier le visuel et partager le lien d’adhésion](internal/fr/wallet-studio.md#publish-design)
+- [Adhérer, ajouter sa carte et vérifier le cumul](internal/fr/wallet-studio.md#member-card)
 
 ## marketing
 
@@ -1003,6 +1007,7 @@ Identifiant : `website-design`. Public : public. Disponibilité : available. Ser
 Identifiant : `website-navigation`. Public : public. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb.
 
 - [Configurer l’en-tête](../../src/content/help/fr/website-qr/navigation-and-footer.mdx#header)
+- [Trouver la carte de fidélité sur le site du restaurant](../../src/content/help/fr/website-qr/navigation-and-footer.mdx#loyalty-card-link)
 - [Fixer la barre de commande au défilement](../../src/content/help/fr/website-qr/navigation-and-footer.mdx#fulfillment-scroll)
 - [Gérer les liens et le bouton principal](../../src/content/help/fr/website-qr/navigation-and-footer.mdx#links)
 - [Personnaliser le menu latéral](../../src/content/help/fr/website-qr/navigation-and-footer.mdx#side-menu)
@@ -1554,6 +1559,7 @@ Identifiant : `backoffice-operations`. Public : internal. Disponibilité : avail
 
 Identifiant : `platform-api`. Public : internal. Disponibilité : available. Services : foodyserver, foodyweb, foodypos, foodybackoffice.
 
+- [Vérifier l’émission des cartes de fidélité personnelles](internal/fr/api-and-release.md#loyalty-wallet-customer-issuance)
 - [Rembourser ou annuler un paiement en ligne Verifone](internal/fr/api-and-release.md#verifone-admin-money-operations)
 - [Garder la page de paiement lisible](internal/fr/api-and-release.md#verifone-readable-hosted-theme)
 - [Rattacher un thème Checkout créé dans Verifone Central](internal/fr/api-and-release.md#link-verifone-central-theme)
@@ -1617,6 +1623,7 @@ Identifiant : `design-sandboxes`. Public : internal. Disponibilité : available.
 
 Identifiant : `shared-runtime`. Public : internal. Disponibilité : available. Services : foodyserver, foodyadmin, foodyweb, foodylanding, foodypos, foodybackoffice.
 
+- [Vérifier la disponibilité de Wallet sur le site client](internal/fr/shared-runtime.md#loyalty-wallet-web-capabilities)
 - [Distinguer rapports, espèces et dépôt carte](internal/fr/shared-runtime.md#pos-reports-navigation)
 - [Rembourser ou annuler un paiement en ligne Verifone](internal/fr/shared-runtime.md#verifone-admin-money-operations)
 - [Vérifier le plafond de préautorisation au poids](internal/fr/shared-runtime.md#weight-hold-margin)

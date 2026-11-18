@@ -12,6 +12,12 @@ releaseStatus: available
 ---
 Engineering operators: use the closest service AGENTS.md, README, API contract and deployment workflow.
 
+<span id="loyalty-wallet-customer-issuance" />
+
+## Verify personalized loyalty pass issuance
+
+Apply migration 322 with the API release. Publish a saved Wallet design for the test restaurant and enable its loyalty program. Enable the Wallet API and the intended provider for the environment. Test issuance with an authenticated member and repeat it to verify stable card identity. With Google enabled, verify that the API serves only published, versioned artwork. Check Apple iPhone and Google device acceptance with their respective provider credentials.
+
 <span id="verifone-admin-money-operations" />
 
 ## Refund or void a Verifone online payment
