@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - backoffice-entitlements
-updatedAt: '2026-11-18'
+updatedAt: '2026-11-19'
 featureId: backoffice-entitlements
 audience: internal
 releaseStatus: available
@@ -38,13 +38,13 @@ releaseStatus: available
 
 ## קישור ערכת Checkout מ-Verifone Central
 
-ב-Verifone Central פתחו Administration > Checkout Themes ושמרו ערכה בארגון ובסביבה של המסעדה ב-Verifone (CST או ייצור). כמנהלי superadmin, פתחו ב-Backoffice את Restaurant > Payment > Verifone ושמרו את הגדרות התשלום. תחת Hosted payment page appearance, הזינו את השם המדויק או ה-UUID בשדה Verifone theme name or ID ובחרו Link Verifone theme. אם לכמה ערכות יש אותו שם, הזינו את ה-UUID. Foody מאמתת את הארגון והסביבה ומחילה את הערכה על קישורי Checkout חדשים. כדי לערוך את הערכה, שמרו את השינויים ב-Verifone Central ובדקו את התצוגה בקישור בדיקה חדש בסביבה שאושרה. כדי להשתמש בברירת המחדל של חשבון Verifone, בטלו את הסימון של Use the selected Checkout theme ושמרו את הגדרות התשלום.
+ב-Verifone Central פתחו Administration > Checkout Themes ושמרו ערכה בארגון ובסביבה של המסעדה ב-Verifone (CST או ייצור). כמנהלי superadmin, פתחו ב-Backoffice את Restaurant > Payment > Verifone ושמרו את הגדרות התשלום. תחת Hosted payment page appearance, הזינו את השם המדויק או ה-UUID בשדה Verifone theme name or ID ובחרו Link Verifone theme. אם לכמה ערכות יש אותו שם, הזינו את ה-UUID. Foody מאמתת את הארגון והסביבה ומחילה את הערכה על קישורי Checkout חדשים. כדי לערוך את הערכה, שמרו את השינויים ב-Verifone Central ובדקו את התצוגה בקישור בדיקה חדש בסביבה שאושרה. כדי להשתמש בברירת המחדל של חשבון Verifone, בטלו את הסימון של Use the selected Checkout theme ושמרו את הגדרות התשלום. אם ערכת העיצוב שנבחרה נמחקה ב-CST, קשרו ערכה זמינה או בחרו בברירת המחדל של החשבון. לערכה שנוצרה מאתר המסעדה, הפעולה Synchronize published logo and colors בודקת את קיומה אצל Verifone ויוצרת אותה מחדש בעת הצורך.
 
 <span id="configure-verifone-cst-card-form" />
 
 ## בחירת מסלול תשלום בכרטיס של Verifone למסעדה
 
-ב-Backoffice פתחו Restaurants, בחרו את המסעדה ופתחו את הלשונית Payment. להשוואת המסלולים בחרו Verifone Cloud (GreenBox) ואת CST Sandbox. תחת Verifone.js encryption key הזינו פעם אחת את ה-Public key ואת ה-Public key alias של הארגון ושמרו באמצעות Save Payment Config. תחת Card payment flow בחרו **Foody · Verifone.js**. הבחירה נשמרת מיד למסעדה זו. פתחו הזמנה חדשה לאיסוף או למשלוח, בתשלום מראש ובמחיר קבוע בשקלים. השתמשו בכרטיס בדיקה חדש של CST והשאירו את האפשרות לשמירת הכרטיס ריקה. הזינו את הכרטיס ב-Foody ובדקו את אישור התשלום. לאחר מכן בחרו **Verifone Checkout** ופתחו הזמנה שנייה. אישור הסל יפתח את קישור התשלום של Verifone. שני המסלולים משתמשים בפרטי החיבור ובחוזים שכבר נשמרו. לארנקים ולכרטיסים שמורים יש הגדרות נפרדות. לפני החלפת סביבה או הסרת מפתח, בחרו Verifone Checkout, החליפו או הסירו את המפתח ושמרו.
+ב-Backoffice פתחו Restaurants, בחרו את המסעדה ופתחו את הלשונית Payment. להשוואת המסלולים בחרו Verifone Cloud (GreenBox) ואת CST Sandbox. תחת Verifone.js encryption key הזינו פעם אחת את ה-Public key ואת ה-Public key alias של הארגון ושמרו באמצעות Save Payment Config. תחת Card payment flow בחרו **Foody · Verifone.js**. הבחירה נשמרת מיד למסעדה זו. פתחו הזמנה חדשה לאיסוף או למשלוח, בתשלום מראש ובמחיר קבוע בשקלים. השתמשו בכרטיס בדיקה חדש של CST. בחשבון לקוח מחובר בדקו גם את בחירת האפשרות לשמור את הכרטיס לאחר הזנת פרטיו. אשרו ובדקו ב-Foody שבוצע תשלום אחד בסכום המלא. לאחר מכן בחרו **Verifone Checkout** ופתחו הזמנה שנייה. אישור הסל יפתח את קישור התשלום של Verifone. שני המסלולים משתמשים בפרטי החיבור ובחוזים שכבר נשמרו. לארנקים ולכרטיסים שמורים יש הגדרות נפרדות. לפני החלפת סביבה או הסרת מפתח, בחרו Verifone Checkout, החליפו או הסירו את המפתח ושמרו.
 
 <span id="configure-verifone-direct-wallets" />
 
