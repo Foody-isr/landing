@@ -14,6 +14,12 @@ releaseStatus: available
 ---
 Engineering only: shared authentication clients, state, localization, styling, proxies and platform bootstrap support the documented business modules.
 
+<span id="loyalty-wallet-web-capabilities" />
+
+## Check Wallet availability from the customer site
+
+Deploy the compatible API first. The website reads provider availability for the signed-in member at runtime. Verify that Wallet actions appear on the loyalty page after the program is activated and a design is published for an enabled provider. On iPhone, confirm that the signed archive with the published artwork opens in Wallet.
+
 <span id="pos-reports-navigation" />
 
 ## Distinguish reports, cash and card deposits

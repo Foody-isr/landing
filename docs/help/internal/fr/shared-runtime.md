@@ -14,6 +14,12 @@ releaseStatus: available
 ---
 Équipe technique : clients, état, traduction, styles, proxies et démarrage communs soutiennent les modules métier documentés.
 
+<span id="loyalty-wallet-web-capabilities" />
+
+## Vérifier la disponibilité de Wallet sur le site client
+
+Déployez d’abord l’API compatible. Le site lit à l’exécution les fournisseurs disponibles pour le membre connecté. Vérifiez que les actions Wallet apparaissent sur la page Fidélité après activation du programme et publication d’un visuel, pour un fournisseur activé. Sur iPhone, confirmez que le fichier signé avec le visuel publié s’ouvre dans Wallet.
+
 <span id="pos-reports-navigation" />
 
 ## Distinguer rapports, espèces et dépôt carte

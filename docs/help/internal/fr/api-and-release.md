@@ -12,6 +12,12 @@ releaseStatus: available
 ---
 Équipe technique : consultez AGENTS.md, README, contrat API et workflow du service.
 
+<span id="loyalty-wallet-customer-issuance" />
+
+## Vérifier l’émission des cartes de fidélité personnelles
+
+Appliquez la migration 322 avec la livraison de l’API. Publiez un visuel Wallet enregistré pour le restaurant de test et activez son programme de fidélité. Activez l’API Wallet et le fournisseur prévu pour l’environnement. Demandez une carte avec un compte membre authentifié et répétez l’opération pour vérifier la stabilité de son identifiant. Lorsque Google est activé, vérifiez que l’API sert uniquement les images des versions publiées. Vérifiez l’ajout sur les appareils Apple et Google avec la configuration de chaque fournisseur.
+
 <span id="verifone-admin-money-operations" />
 
 ## Rembourser ou annuler un paiement en ligne Verifone

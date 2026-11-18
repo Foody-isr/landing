@@ -9112,6 +9112,8 @@
         "components/InstallPrompt.tsx",
         "components/PwaHead.tsx",
         "lib/mobileExperience.ts",
+        "components/SiteNavbar.tsx",
+        "lib/useRestaurantLoyalty.ts",
         "app/api/manifest/[slug]/route.ts",
         "app/layout.tsx",
         "app/r/[restaurantId]/account/loyalty/page.tsx",
@@ -9143,6 +9145,19 @@
           "en": "Choose logo, name visibility, logo size/position and link alignment. Compare transparent/overlay and scrolled/solid states, including their separate text colors and optional scrolled logo. Preview the mobile hamburger menu. On a compatible release, under header navigation, Menu icon style offers Standard lines or Staggered lines. Set Menu icon size from 16 to 40 px and Menu line thickness from 1 to 4 px. The cart setting controls only the header icon; it does not remove the basket or ordering flow. Check the open and closed menu, logo and main button on desktop and mobile, then wait for draft saving before publishing.",
           "fr": "Choisissez logo, visibilité du nom, taille, position et alignement des liens. Comparez état transparent/superposé et état défilé/opaque, avec leurs couleurs et éventuel logo distinct. Prévisualisez le menu mobile. Sur une version compatible, dans la navigation de l’en-tête, Style de l’icône menu propose Traits classiques ou Traits décalés. Réglez Taille de l’icône menu de 16 à 40 px et Épaisseur des traits du menu de 1 à 4 px. Le réglage de panier contrôle uniquement l’icône de l’en-tête ; il ne supprime pas le panier ni le parcours de commande. Contrôlez menu ouvert et fermé, logo et bouton principal sur ordinateur et mobile, puis attendez l’enregistrement du brouillon avant publication.",
           "he": "הגדירו לוגו, הצגת שם, גודל, מיקום ויישור קישורים. השוו מצב שקוף ומצב בגלילה, כולל צבעי טקסט ולוגו חלופי. בדקו את תפריט הנייד. בגרסה תואמת, בניווט הכותרת העליונה, סגנון סמל התפריט מציע קווים רגילים או קווים מדורגים. הגדירו גודל סמל התפריט מ-16 עד 40 פיקסלים ועובי קווי התפריט מ-1 עד 4 פיקסלים. הגדרת הסל שולטת רק בסמל שבכותרת העליונה; היא אינה מסירה את הסל או את מסלול ההזמנה. בדקו תפריט פתוח וסגור, לוגו וכפתור ראשי במחשב ובנייד, והמתינו לשמירת הטיוטה לפני פרסום."
+        }
+      },
+      {
+        "id": "loyalty-card-link",
+        "title": {
+          "en": "Find the loyalty card on the restaurant website",
+          "fr": "Trouver la carte de fidélité sur le site du restaurant",
+          "he": "מציאת כרטיס המועדון באתר המסעדה"
+        },
+        "instructions": {
+          "en": "With a compatible website and an active loyalty program, open **Loyalty card** from the site’s navigation or its menu button on mobile. Check the link on the published website. The loyalty page shows the program rules and offers **Sign in** or **Create an account** before the customer joins.",
+          "fr": "Avec un site compatible et un programme de fidélité actif, ouvrez **Carte de fidélité** depuis la navigation du site ou son menu sur téléphone. Vérifiez le lien sur le site publié. La page affiche les règles du programme et les actions **Me connecter** et **Créer un compte** avant l’adhésion.",
+          "he": "באתר תואם עם תוכנית מועדון פעילה, פתחו **כרטיס מועדון** מתוך ניווט האתר או דרך כפתור התפריט בנייד. בדקו את הקישור באתר שפורסם. הדף מציג את כללי התוכנית ואת האפשרויות **התחברות** ו־**יצירת חשבון** לפני ההצטרפות."
         }
       },
       {
@@ -9253,7 +9268,7 @@
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-11-12"
+    "procedureUpdatedAt": "2026-11-18"
   },
   {
     "id": "website-sections",
@@ -15259,6 +15274,19 @@
     },
     "operations": [
       {
+        "id": "loyalty-wallet-customer-issuance",
+        "title": {
+          "en": "Verify personalized loyalty pass issuance",
+          "fr": "Vérifier l’émission des cartes de fidélité personnelles",
+          "he": "בדיקת הנפקה של כרטיסי מועדון אישיים"
+        },
+        "instructions": {
+          "en": "Apply migration 322 with the API release. Publish a saved Wallet design for the test restaurant and enable its loyalty program. Enable the Wallet API and the intended provider for the environment. Test issuance with an authenticated member and repeat it to verify stable card identity. With Google enabled, verify that the API serves only published, versioned artwork. Check Apple iPhone and Google device acceptance with their respective provider credentials.",
+          "fr": "Appliquez la migration 322 avec la livraison de l’API. Publiez un visuel Wallet enregistré pour le restaurant de test et activez son programme de fidélité. Activez l’API Wallet et le fournisseur prévu pour l’environnement. Demandez une carte avec un compte membre authentifié et répétez l’opération pour vérifier la stabilité de son identifiant. Lorsque Google est activé, vérifiez que l’API sert uniquement les images des versions publiées. Vérifiez l’ajout sur les appareils Apple et Google avec la configuration de chaque fournisseur.",
+          "he": "החילו את מיגרציה 322 עם פריסת ה־API. פרסמו עיצוב Wallet שמור למסעדת הבדיקה והפעילו את תוכנית המועדון שלה. הפעילו את ה־API של Wallet ואת הספק המתאים לסביבה. בקשו כרטיס מחשבון חבר מאומת וחזרו על הפעולה כדי לבדוק שמזהה הכרטיס נשאר קבוע. כאשר Google מופעל, ודאו שה־API מגיש רק תמונות בגרסאות שפורסמו. בדקו הוספה במכשירי Apple ו־Google עם ההגדרות של כל ספק."
+        }
+      },
+      {
         "id": "verifone-admin-money-operations",
         "title": {
           "en": "Refund or void a Verifone online payment",
@@ -16021,6 +16049,19 @@
       ]
     },
     "operations": [
+      {
+        "id": "loyalty-wallet-web-capabilities",
+        "title": {
+          "en": "Check Wallet availability from the customer site",
+          "fr": "Vérifier la disponibilité de Wallet sur le site client",
+          "he": "בדיקת זמינות Wallet באתר הלקוחות"
+        },
+        "instructions": {
+          "en": "Deploy the compatible API first. The website reads provider availability for the signed-in member at runtime. Verify that Wallet actions appear on the loyalty page after the program is activated and a design is published for an enabled provider. On iPhone, confirm that the signed archive with the published artwork opens in Wallet.",
+          "fr": "Déployez d’abord l’API compatible. Le site lit à l’exécution les fournisseurs disponibles pour le membre connecté. Vérifiez que les actions Wallet apparaissent sur la page Fidélité après activation du programme et publication d’un visuel, pour un fournisseur activé. Sur iPhone, confirmez que le fichier signé avec le visuel publié s’ouvre dans Wallet.",
+          "he": "פרסו תחילה את ה־API התואם. האתר קורא בזמן הריצה אילו ספקים זמינים לחבר המחובר. ודאו שפעולות Wallet מוצגות בדף המועדון לאחר הפעלת התוכנית ופרסום העיצוב עבור ספק שהופעל. ב־iPhone בדקו שהקובץ החתום עם העיצוב שפורסם נפתח ב־Wallet."
+        }
+      },
       {
         "id": "pos-reports-navigation",
         "title": {
@@ -17908,12 +17949,14 @@
       ],
       "foodyweb": [
         "app/r/[restaurantId]/account/loyalty/page.tsx",
+        "components/CustomerSignIn.tsx",
         "components/LoyaltyCustomerContent.tsx",
         "components/LoyaltyWalletPanel.tsx",
         "components/LoyaltyCheckout.tsx",
         "components/ConfirmationPageClient.tsx",
         "lib/customer-api-proxy.ts",
         "lib/loyalty.ts",
+        "lib/useRestaurantLoyalty.ts",
         "lib/server/loyalty-wallet-proxy.ts",
         "services/api.ts",
         "components/website-v3/MobileExperience.tsx"
@@ -17945,6 +17988,32 @@
           "fr": "Activez **Programme actif**, puis enregistrez et confirmez. Sur le site de commande du restaurant, les clients peuvent ouvrir Fidélité depuis leur historique et accepter explicitement les conditions pour adhérer. Pour suspendre les nouvelles adhésions et la collecte de points ou de visites, désactivez le réglage, enregistrez et confirmez. Les membres existants peuvent toujours consulter leur solde et leurs récompenses obtenues. La disponibilité d’Apple Wallet et de Google Wallet se règle séparément.",
           "he": "הפעילו את **התוכנית פעילה**, שמרו ואשרו. באתר ההזמנות של המסעדה לקוחות יכולים לפתוח את המועדון מהיסטוריית ההזמנות ולאשר במפורש את התנאים כדי להצטרף. כדי להשהות הצטרפות וצבירה, כבו את המתג, שמרו ואשרו. חברי מועדון קיימים עדיין יכולים לראות יתרה והטבות שנצברו. הזמינות של Apple Wallet ושל Google Wallet מנוהלת בנפרד."
         }
+      },
+      {
+        "id": "open-loyalty-card",
+        "title": {
+          "en": "Open and add your personal loyalty card",
+          "fr": "Ouvrir et ajouter sa carte de fidélité personnelle",
+          "he": "פתיחה והוספה של כרטיס מועדון אישי"
+        },
+        "instructions": {
+          "en": "Use **Loyalty card** in the navigation of the compatible restaurant website. Sign in or create an account, then accept the program terms and join. When an add-to-Wallet button is available, select it from your phone and confirm in Wallet. Sign in with the same account to use your earned rewards in an eligible checkout.",
+          "fr": "Ouvrez **Carte de fidélité** depuis la navigation du site compatible du restaurant. Connectez-vous ou créez un compte, puis acceptez les conditions et adhérez. Quand un bouton d’ajout à Wallet s’affiche, sélectionnez-le sur votre téléphone et confirmez dans Wallet. Connectez-vous avec le même compte pour utiliser vos récompenses lors d’une commande éligible.",
+          "he": "פתחו **כרטיס מועדון** מניווט האתר התואם של המסעדה. התחברו או צרו חשבון, אשרו את תנאי התוכנית והצטרפו. אם מוצג כפתור הוספה ל־Wallet, בחרו אותו בטלפון ואשרו ב־Wallet. התחברו לאותו חשבון כדי לממש הטבות בהזמנה מזכה."
+        }
+      },
+      {
+        "id": "member-purchase",
+        "title": {
+          "en": "Earn on the restaurant’s ordering site",
+          "fr": "Cumuler sur le site de commande du restaurant",
+          "he": "צבירה באתר ההזמנות של המסעדה"
+        },
+        "instructions": {
+          "en": "After joining, sign in to the same account before placing an order. Eligible orders count after payment is confirmed, under the restaurant’s rules. Open **Loyalty** to see your progress and any earned rewards.",
+          "fr": "Après avoir adhéré, connectez-vous au même compte avant de commander. Les commandes éligibles comptent une fois le paiement confirmé, selon les règles du restaurant. Ouvrez **Fidélité** pour consulter votre progression et vos récompenses acquises.",
+          "he": "לאחר ההצטרפות, התחברו לאותו חשבון לפני ביצוע ההזמנה. הזמנות מזכות נספרות לאחר אישור התשלום, לפי כללי המסעדה. פתחו את **מועדון הלקוחות** כדי לראות את ההתקדמות ואת ההטבות שנצברו."
+        }
       }
     ],
     "recovery": {
@@ -17954,7 +18023,7 @@
     },
     "audience": "public",
     "status": "available",
-    "procedureUpdatedAt": "2026-11-09",
+    "procedureUpdatedAt": "2026-11-18",
     "preserveExisting": false
   },
   {
@@ -17962,9 +18031,9 @@
     "module": "customers",
     "article": "internal/wallet-studio",
     "title": {
-      "en": "Prepare a Wallet design and test it on iPhone",
-      "fr": "Préparer un visuel Wallet et le tester sur iPhone",
-      "he": "הכנת עיצוב Wallet ובדיקתו ב־iPhone"
+      "en": "Prepare, test and publish a loyalty card",
+      "fr": "Préparer, tester et publier une carte de fidélité",
+      "he": "הכנה, בדיקה ופרסום של כרטיס מועדון"
     },
     "entry": {
       "en": "In Foody Admin, select the restaurant and open **Loyalty program → Wallet Studio**.",
@@ -17972,9 +18041,9 @@
       "he": "ב־Foody Admin, בחרו את המסעדה ופתחו **תוכנית מועדון → סטודיו Wallet**."
     },
     "access": {
-      "en": "Use an account with restaurant settings access. Saving a draft and generating an Apple test card require permission to edit settings. The iPhone test requires a loyalty program and an Apple Pass Type ID certificate with its matching key configured on the server.",
-      "fr": "Utilisez un compte avec accès aux paramètres du restaurant. Enregistrer le brouillon et générer une carte de test Apple exige le droit de modifier ces paramètres. L’essai sur iPhone exige un programme de fidélité et un certificat Apple Pass Type ID avec sa clé configurés sur le serveur.",
-      "he": "השתמשו בחשבון עם גישה להגדרות המסעדה. שמירת הטיוטה ויצירת כרטיס בדיקה של Apple דורשות הרשאת עריכה. הבדיקה ב־iPhone דורשת תוכנית מועדון ותעודת Apple Pass Type ID עם מפתח תואם שמוגדרים בשרת."
+      "en": "Use an account with access to restaurant settings. Saving, testing and publishing require permission to edit settings. The Apple test requires a loyalty program and a configured Apple Pass Type ID certificate and key. For the customer pilot, also enable the Wallet API and the intended provider in the test environment.",
+      "fr": "Utilisez un compte ayant accès aux paramètres du restaurant. Enregistrer, tester et publier exige le droit de modifier ces paramètres. Le test Apple exige un programme de fidélité et la configuration du certificat Apple Pass Type ID et de sa clé. Pour le pilote client, activez aussi l’API Wallet et le fournisseur choisi dans l’environnement de test.",
+      "he": "השתמשו בחשבון עם גישה להגדרות המסעדה. שמירה, בדיקה ופרסום דורשים הרשאת עריכה. בדיקת Apple דורשת תוכנית מועדון ותעודת Apple Pass Type ID עם מפתח תואם. בפיילוט ללקוחות יש להפעיל גם את ה־API של Wallet ואת הספק שנבחר בסביבת הבדיקה."
     },
     "selectors": {
       "foodyadmin": [
@@ -17991,9 +18060,19 @@
         "internal/loyalty/wallet_studio.go",
         "internal/loyalty/wallet_studio_handler.go",
         "internal/loyalty/wallet_studio_artwork.go",
-        "internal/loyaltywallet/apple_studio.go",
-        "internal/loyaltywallet/apple.go",
-        "migrations/315_loyalty_wallet_designs.sql"
+        "internal/loyaltywallet/**",
+        "migrations/315_loyalty_wallet_designs.sql",
+        "migrations/322_loyalty_wallet_publications.sql"
+      ],
+      "foodyweb": [
+        "app/api/loyalty-wallet/apple/route.ts",
+        "components/LoyaltyCustomerContent.tsx",
+        "components/LoyaltyWalletPanel.tsx",
+        "lib/customer-api-proxy.ts",
+        "lib/i18n.tsx",
+        "lib/loyalty-wallet.ts",
+        "lib/server/loyalty-wallet-proxy.ts",
+        "services/api.ts"
       ]
     },
     "operations": [
@@ -18022,11 +18101,37 @@
           "fr": "Sur le visuel enregistré, cliquez sur **Générer une carte de test Apple**, puis sur **Télécharger le .pkpass**. Ouvrez le fichier sur un iPhone et touchez **Ajouter**. Vérifiez le logo, la bannière, les couleurs et la mention Carte de test. Le pass utilise une progression fictive et un QR de démonstration. Si la signature est indisponible, vérifiez la configuration Apple de l’environnement. L’onglet Google affiche l’aperçu du visuel.",
           "he": "בעיצוב השמור בחרו **יצירת כרטיס בדיקה של Apple** ואז **הורדת קובץ ‎.pkpass**. פתחו את הקובץ ב־iPhone ובחרו **הוספה**. בדקו את הלוגו, תמונת הכותרת, הצבעים ואת הכיתוב כרטיס בדיקה. הכרטיס מציג התקדמות להמחשה וקוד QR לדוגמה. אם החתימה אינה זמינה, בדקו את הגדרות החתימה של Apple בסביבה הנוכחית. הלשונית Google מציגה את העיצוב בתצוגה מקדימה."
         }
+      },
+      {
+        "id": "publish-design",
+        "title": {
+          "en": "Publish the card design and share enrollment",
+          "fr": "Publier le visuel et partager le lien d’adhésion",
+          "he": "פרסום עיצוב הכרטיס ושיתוף קישור הצטרפות"
+        },
+        "instructions": {
+          "en": "Activate the loyalty program for the pilot restaurant. Under **Customer card**, select **Publish card design** to apply the saved artwork. A later draft must be published separately. Select **Copy enrollment link** to share the restaurant’s loyalty page. If publication reports a conflict, reload the Studio and review the saved design.",
+          "fr": "Activez le programme de fidélité du restaurant pilote. Dans **Carte client**, cliquez sur **Publier le visuel** pour appliquer le brouillon enregistré. Publiez aussi les modifications ultérieures lorsqu’elles sont prêtes. Cliquez sur **Copier le lien d’adhésion** pour partager la page Fidélité du restaurant. En cas de conflit de publication, rechargez le Studio et vérifiez le visuel enregistré.",
+          "he": "הפעילו את תוכנית המועדון של מסעדת הפיילוט. תחת **כרטיס ללקוחות**, בחרו **פרסום עיצוב הכרטיס** כדי להחיל את העיצוב השמור. פרסמו שינויים נוספים כשהם מוכנים. בחרו **העתקת קישור להצטרפות** כדי לשתף את דף המועדון של המסעדה. אם יש התנגשות, טענו מחדש את הסטודיו ובדקו את העיצוב השמור."
+        }
+      },
+      {
+        "id": "member-card",
+        "title": {
+          "en": "Join, add the personal card and test earning",
+          "fr": "Adhérer, ajouter sa carte et vérifier le cumul",
+          "he": "הצטרפות, הוספת כרטיס אישי ובדיקת צבירה"
+        },
+        "instructions": {
+          "en": "On a phone, open the enrollment link, sign in, accept the terms and join. On an iPhone, select **Add your card to Apple Wallet**, then **Add** in Wallet. An enabled Google provider offers an **Add to Google Wallet** button and opens Google for confirmation. Repeat the download from the same account and check the QR and progress. Place an eligible paid test order with that account and check that the Wallet card and the loyalty page reflect the same progress. For a POS pilot with lookup and loyalty sales enabled, scan the personal QR and attach the member before confirming payment. At the threshold, check the reward in the member’s loyalty account and try applying it on an enabled checkout.",
+          "fr": "Sur le téléphone, ouvrez le lien d’adhésion, connectez-vous, acceptez les conditions et adhérez. Sur iPhone, touchez **Ajouter la carte à Apple Wallet**, puis **Ajouter** dans Wallet. Quand Google est disponible, **Ajouter à Google Wallet** ouvre Google pour la confirmation. Téléchargez la carte à nouveau avec le même compte et vérifiez le QR et la progression. Passez une commande de test éligible et payée avec ce compte, puis vérifiez que la carte et la page Fidélité affichent la même progression. Si le pilote caisse autorise l’identification et les ventes fidélité, scannez le QR personnel et rattachez le membre avant de confirmer le paiement. Au seuil, vérifiez la récompense dans l’espace Fidélité et essayez de l’appliquer sur un parcours de paiement activé.",
+          "he": "בטלפון, פתחו את קישור ההצטרפות, התחברו, אשרו את התנאים והצטרפו. ב־iPhone בחרו **הוספת הכרטיס ל־Apple Wallet** ואז **הוספה** ב־Wallet. כאשר Google זמין, כפתור **הוספה ל־Google Wallet** פותח את Google לצורך אישור. הורידו שוב מהחשבון ובדקו את קוד ה־QR ואת ההתקדמות. בצעו הזמנת בדיקה מזכה ושלמו מאותו חשבון. בדקו שההתקדמות בכרטיס תואמת לדף המועדון. בפיילוט קופה שבו מופעלים זיהוי ומכירות מועדון, סרקו את קוד ה־QR האישי ושייכו את החבר לפני אישור התשלום. בהגעה לסף, בדקו את ההטבה באזור המועדון ונסו לממש אותה בתהליך תשלום שהופעל."
+        }
       }
     ],
     "audience": "internal",
     "status": "local-release-unverified",
-    "procedureUpdatedAt": "2026-11-12",
+    "procedureUpdatedAt": "2026-11-18",
     "preserveExisting": false
   },
   {
