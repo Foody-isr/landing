@@ -10,7 +10,7 @@ featureId: customers-wallet-studio
 audience: internal
 releaseStatus: local-release-unverified
 ---
-Dans Foody Admin, sélectionnez le restaurant et ouvrez **Programme de fidélité → Studio Wallet**.
+Dans Foody Admin, sélectionnez le restaurant et ouvrez **Clients → Programme de fidélité → Studio Wallet**.
 
 > **Disponibilité à confirmer**
 > Cette application existe dans les sources. Ce guide ne confirme ni sa distribution publique ni sa disponibilité dans votre version installée.

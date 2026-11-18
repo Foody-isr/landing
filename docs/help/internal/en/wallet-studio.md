@@ -10,7 +10,7 @@ featureId: customers-wallet-studio
 audience: internal
 releaseStatus: local-release-unverified
 ---
-In Foody Admin, select the restaurant and open **Loyalty program → Wallet Studio**.
+In Foody Admin, choose the restaurant and open **Customers → Loyalty program → Wallet Studio**.
 
 > **Release availability must be confirmed**
 > This application exists in the source workspace. This guide does not confirm public distribution or availability in your installed release.
