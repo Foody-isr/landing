@@ -20,7 +20,7 @@ export const foodCostCopy = {
     exampleNote: "Exemple fictif à rendement de 100 %. Ce ne sont ni les achats ni les résultats d’un restaurant client.",
     periodTitle: "Le coût d’une recette suffit-il pour suivre tout le restaurant ?", periodText: "Le food cost d’une recette est une estimation fondée sur les quantités et prix saisis. La consommation réelle sur une période se vérifie avec les comptages, réceptions, mouvements et ventes de cette même période. Ce calculateur gratuit n’importe pas les ventes et ne tient pas le stock : utilisez-le pour chiffrer un plat, puis rapprochez les données opérationnelles pour comprendre les écarts.",
     foodyTitle: "Dans Foody Kitchen, reliez le coût à votre fonctionnement", foodyText: "Le calculateur est une fiche indépendante. Dans Foody Kitchen, les recettes, coûts de stock, préparations et consommations doivent être configurés pour suivre le coût matière dans l’activité du restaurant.",
-    kitchenLink: "Découvrir Foody Cuisine", guideLink: "Lire la procédure de food cost", demoLink: "Voir les démonstrations de cuisine", noScript: "Activez JavaScript pour modifier le calcul. L’exemple et les formules restent lisibles ci-dessous.",
+    kitchenLink: "Découvrir Foody Kitchen", guideLink: "Lire la procédure de food cost", demoLink: "Voir les démonstrations de cuisine", noScript: "Activez JavaScript pour modifier le calcul. L’exemple et les formules restent lisibles ci-dessous.",
   },
   en: {
     title: "Restaurant food-cost calculator",

@@ -71,10 +71,10 @@ export const ecosystem = {
     companionText:
       "Avant, pendant et après le service, Foody Compagnon accompagne le chef et son équipe : préparations à lancer, priorités, stocks à vérifier et besoins fournisseurs pour demain.",
     companionIncluded:
-      "Inclus sans supplément dans Foody Cuisine.",
-    companionScopeQuestion: "Foody Compagnon remplace-t-il Foody Cuisine ?",
+      "Inclus sans supplément dans Foody Kitchen.",
+    companionScopeQuestion: "Foody Compagnon remplace-t-il Foody Kitchen ?",
     companionScopeAnswer:
-      "Foody Cuisine regroupe les recettes, le food cost, les stocks, les fournisseurs et la gestion des préparations. Foody Compagnon en est l’assistant du quotidien : il aide le chef et son équipe à organiser la mise en place, suivre le service et préparer la journée suivante. Il est inclus dans le module Cuisine, seul ou avec Foody Restaurant.",
+      "Foody Kitchen regroupe les recettes, le food cost, les stocks, les fournisseurs et la gestion des préparations. Foody Compagnon en est l’assistant du quotidien : il aide le chef et son équipe à organiser la mise en place, suivre le service et préparer la journée suivante. Il est inclus dans le module Cuisine, seul ou avec Foody Restaurant.",
     companionLink: "Découvrir Foody Compagnon",
     phases: ["Avant le service", "Pendant le service", "Après le service"],
     phaseDescriptions: [
@@ -121,7 +121,7 @@ export const ecosystem = {
     voiceLabel: "Exemple de briefing vocal",
     routeTitle: "Du téléphone de votre client\nau bon poste en cuisine.",
     orderingIncluded:
-      "Utilisez Foody Commandes seul ou associez-le à Foody Restaurant pour réunir les commandes du site et de la salle.",
+      "Utilisez Foody Online seul ou associez-le à Foody Restaurant pour réunir les commandes du site et de la salle.",
     routeText:
       "Un parcours de commande à votre marque, avec le menu, les options et les modes de service que vous avez choisis. Le statut du paiement accompagne la commande jusqu’à votre équipe.",
     routeSteps: [
@@ -165,7 +165,7 @@ export const ecosystem = {
     supplierItems: ["Maraîcher", "Crémier", "Épicerie"],
     recipeTitle: "Une recette.\nUne vue précise du coût.",
     recipeText:
-      "Reliez chaque ingrédient à son prix d’achat, puis comparez le coût de la recette au prix de vente dans Foody Cuisine. Foody Compagnon, inclus, vous accompagne dans le suivi des préparations au quotidien.",
+      "Reliez chaque ingrédient à son prix d’achat, puis comparez le coût de la recette au prix de vente dans Foody Kitchen. Foody Compagnon, inclus, vous accompagne dans le suivi des préparations au quotidien.",
     recipe: "Fiche recette",
     ingredients: ["Légumes et herbes", "Fromage", "Assaisonnement"],
     foodcost: "Coût matière",
@@ -296,7 +296,7 @@ export const ecosystem = {
     voiceLabel: "Illustrative voice briefing",
     routeTitle: "From your customer’s phone\nto the right kitchen station.",
     orderingIncluded:
-      "Use Foody Orders on its own or pair it with Foody Restaurant to bring web and table orders together.",
+      "Use Foody Online on its own or pair it with Foody Restaurant to bring web and table orders together.",
     routeText:
       "A branded ordering journey with your menu, options and service types. Payment status follows the order through to your team.",
     routeSteps: [
@@ -416,7 +416,7 @@ export const ecosystem = {
       "כלול ללא תוספת תשלום ב־Foody Kitchen.",
     companionScopeQuestion: "האם Foody Companion מחליף את Foody Kitchen?",
     companionScopeAnswer:
-      "Foody Kitchen מרכז מתכונים, Food Cost, מלאי, ספקים וניהול הכנות. Foody Companion הוא העוזר היומיומי שלו: הוא מסייע לשף ולצוות לארגן הכנות, לעקוב אחרי השירות ולהיערך ליום הבא. הוא כלול במודול המטבח, כמסלול עצמאי או יחד עם Foody מסעדה.",
+      "Foody Kitchen מרכז מתכונים, Food Cost, מלאי, ספקים וניהול הכנות. Foody Companion הוא העוזר היומיומי שלו: הוא מסייע לשף ולצוות לארגן הכנות, לעקוב אחרי השירות ולהיערך ליום הבא. הוא כלול במודול המטבח, כמסלול עצמאי או יחד עם Foody Restaurant.",
     companionLink: "להכיר את Foody Companion",
     phases: ["לפני השירות", "בזמן השירות", "אחרי השירות"],
     phaseDescriptions: [
@@ -461,7 +461,7 @@ export const ecosystem = {
     routeText:
       "תהליך הזמנה ממותג עם התפריט, האפשרויות וסוגי השירות שבחרתם. סטטוס התשלום מלווה את ההזמנה עד לצוות.",
     orderingIncluded:
-      "אפשר להשתמש ב־Foody הזמנות בנפרד או לשלב אותו עם Foody מסעדה לניהול הזמנות מהאתר ומהשולחנות יחד.",
+      "אפשר להשתמש ב־Foody Online בנפרד או לשלב אותו עם Foody Restaurant לניהול הזמנות מהאתר ומהשולחנות יחד.",
     routeSteps: ["הלקוח מזמין", "התשלום מאושר", "הצוות מכין"],
     printingLabel: "תוספת בתשלום",
     printingTitle: "פתקי ההזמנה מגיעים למטבח.",

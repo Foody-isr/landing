@@ -64,7 +64,7 @@ export const comparisonCopy: Record<Lang, ComparisonCopy> = {
     productionSource: "Planification des produits finis chez Tabit (juin 2026)",
     attributionNote: "Les lignes « À confirmer » reprennent un signalement d’absence fourni par Foody, sans confirmation indépendante. Elles ne constituent pas une absence vérifiée. Pour comparer, confirmez le périmètre natif, les logiciels tiers, le pays, la version et le contrat. La liste d’intégrations liée provient de la documentation US et ne garantit pas la disponibilité en Israël.",
     foodySource: "Détails",
-    moduleNote: `Foody Cuisine, Foody Restaurant et Foody Commandes sont trois modules indépendants à ${pricingRates.kitchen}, ${pricingRates.restaurant} et ${pricingRates.ordering} ₪ HT par mois et par établissement. Mise en service, matériel et paiements sont chiffrés séparément.`,
+    moduleNote: `Foody Kitchen, Foody Restaurant et Foody Online sont trois modules indépendants à ${pricingRates.kitchen}, ${pricingRates.restaurant} et ${pricingRates.ordering} ₪ HT par mois et par établissement. Mise en service, matériel et paiements sont chiffrés séparément.`,
     source: "Intégrations Tabit documentées aux États-Unis",
     reasonsTitle: "Choisissez Foody pour ces besoins précis.",
     reasons: [
@@ -109,7 +109,7 @@ export const comparisonCopy: Record<Lang, ComparisonCopy> = {
     productionSource: "Tabit finished-item planning (June 2026)",
     attributionNote: "“To confirm” rows reflect absence reports supplied by Foody without independent confirmation; they are not verified absences. Confirm native scope, third-party software, country, version and contract. The linked integration list is US documentation and does not establish availability in Israel.",
     foodySource: "Details",
-    moduleNote: `Foody Kitchen, Foody Restaurant and Foody Orders are independent modules at ILS ${pricingRates.kitchen}, ${pricingRates.restaurant} and ${pricingRates.ordering} per location/month excluding VAT. Setup, hardware and payment services are priced separately.`,
+    moduleNote: `Foody Kitchen, Foody Restaurant and Foody Online are independent modules at ILS ${pricingRates.kitchen}, ${pricingRates.restaurant} and ${pricingRates.ordering} per location/month excluding VAT. Setup, hardware and payment services are priced separately.`,
     source: "Tabit integrations documented in the US",
     reasonsTitle: "Choose Foody for these specific needs.",
     reasons: [
@@ -154,7 +154,7 @@ export const comparisonCopy: Record<Lang, ComparisonCopy> = {
     productionSource: "תכנון מוצרים מוגמרים ב־Tabit (יוני 2026)",
     attributionNote: "השורות ״דורש אישור״ מבוססות על דיווחי היעדר יכולת שמסר Foody ללא אימות עצמאי, ואינן הוכחה להיעדר היכולת. יש לאשר תכולה מובנית, תוכנות חיצוניות, מדינה, גרסה וחוזה. רשימת החיבורים המקושרת היא מתיעוד ארה״ב ואינה מוכיחה זמינות בישראל.",
     foodySource: "פרטים",
-    moduleNote: `Foody Kitchen, Foody מסעדה ו־Foody הזמנות הם מודולים עצמאיים במחיר ${pricingRates.kitchen}, ${pricingRates.restaurant} ו־${pricingRates.ordering} ₪ לחודש לסניף לפני מע״מ. הקמה, ציוד וסליקה מתומחרים בנפרד.`,
+    moduleNote: `Foody Kitchen, Foody Restaurant ו־Foody Online הם מודולים עצמאיים במחיר ${pricingRates.kitchen}, ${pricingRates.restaurant} ו־${pricingRates.ordering} ₪ לחודש לסניף לפני מע״מ. הקמה, ציוד וסליקה מתומחרים בנפרד.`,
     source: "חיבורי Tabit המתועדים בארה״ב",
     reasonsTitle: "בחרו ב־Foody לצרכים האלה.",
     reasons: [
@@ -175,7 +175,7 @@ export const comparisonCopy: Record<Lang, ComparisonCopy> = {
       { id: "supplier-discrepancies", label: "קבלת סחורה והפרשי ספקים", foody: "בדקו כמויות שהגיעו, יחידות ומחירי קנייה.", proof: "/help/kitchen/suppliers-and-purchases" },
     ],
     linksTitle: "לבדוק את Foody לעומק",
-    restaurantLink: "להכיר את Foody מסעדה",
+    restaurantLink: "להכיר את Foody Restaurant",
     pricingLink: "לראות חבילות וכל העלויות",
     orderGuide: "איך לוקחים הזמנה",
     tableGuide: "איך מנהלים שולחנות",

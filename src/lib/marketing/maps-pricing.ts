@@ -17,7 +17,7 @@ export const mapsPricing: Record<Lang, MapsPricingCopy> = {
   fr: {
     title: 'Foody Livraison',
     description: 'Affectez les commandes aux livreurs, suivez les remises et organisez les tournées avec les cartes et l’optimisation des itinéraires.',
-    shared: 'Avec Foody Commandes, l’usage partagé est inclus dans les quotas disponibles. Les volumes supérieurs et l’accompagnement se chiffrent sur devis.',
+    shared: 'Avec Foody Online, l’usage partagé est inclus dans les quotas disponibles. Les volumes supérieurs et l’accompagnement se chiffrent sur devis.',
     details: 'Voir les quotas et l’extension Cartes Plus',
     included: 'Usage partagé inclus', includedUnit: 'de supplément Foody',
     includedText: 'Gestion des tournées et utilisation protégée dans les quotas disponibles de Google et Geoapify. Ces quotas sont partagés par les restaurants Foody ; aucun volume fournisseur individuel n’est réservé.',
@@ -30,7 +30,7 @@ export const mapsPricing: Record<Lang, MapsPricingCopy> = {
   en: {
     title: 'Foody Delivery',
     description: 'Assign orders to couriers, track handoffs and plan deliveries with maps and route optimization.',
-    shared: 'Foody Orders includes shared usage within available allowances. Higher volumes and additional support are quoted separately.',
+    shared: 'Foody Online includes shared usage within available allowances. Higher volumes and additional support are quoted separately.',
     details: 'View allowances and the Maps Plus extension',
     included: 'Included shared usage', includedUnit: 'additional Foody charge',
     includedText: 'Route management and protected usage within available Google and Geoapify allowances. These are shared across Foody restaurants; no individual supplier allowance is reserved.',
@@ -43,7 +43,7 @@ export const mapsPricing: Record<Lang, MapsPricingCopy> = {
   he: {
     title: 'Foody משלוחים',
     description: 'שבצו הזמנות לשליחים, עקבו אחר המסירה ותכננו סבבי משלוחים בעזרת מפות ואופטימיזציה של מסלולים.',
-    shared: 'Foody הזמנות כולל שימוש משותף במסגרת המכסות הזמינות. נפחים גבוהים יותר וליווי מתומחרים בהצעת מחיר.',
+    shared: 'Foody Online כולל שימוש משותף במסגרת המכסות הזמינות. נפחים גבוהים יותר וליווי מתומחרים בהצעת מחיר.',
     details: 'למכסות השימוש ולהרחבת מפות Plus',
     included: 'שימוש משותף כלול', includedUnit: 'תוספת תשלום ל-Foody',
     includedText: 'ניהול סבבי משלוחים ושימוש מוגן במסגרת המכסות הזמינות של Google ו-Geoapify. המכסות משותפות למסעדות Foody; לא נשמרת מכסת ספק נפרדת לכל עסק.',

@@ -6,7 +6,7 @@ const STYLE_VERSION = "v2";
 type Copy = Record<Lang, [string, string]>;
 const copy: Record<string, Copy> = {
   "/tools/supplier-variance-calculator": { fr: ["Écarts fournisseurs.\nVérifiez vos réceptions.", "Prix, quantités et documents."], he: ["הפרשי ספקים.\nבדקו את קבלת הסחורה", "מחירים, כמויות ומסמכים"], en: ["Supplier discrepancies.\nCheck your receipts.", "Prices, quantities and documents."] },
-  "/demos/kitchen": { fr: ["Foody Cuisine\nen pratique.", "Stocks, fournisseurs et service."], he: ["Foody Kitchen\nהלכה למעשה", "מלאי, ספקים ועבודה בשירות"], en: ["Foody Kitchen\nin practice.", "Stock, suppliers and service."] },
+  "/demos/kitchen": { fr: ["Foody Kitchen\nen pratique.", "Stocks, fournisseurs et service."], he: ["Foody Kitchen\nהלכה למעשה", "מלאי, ספקים ועבודה בשירות"], en: ["Foody Kitchen\nin practice.", "Stock, suppliers and service."] },
   "/tools/food-cost-calculator": { fr: ["Calculez votre\nfood cost.", "Le coût matière de chaque portion."], he: ["מחשבון פוד קוסט\nלמסעדה שלכם", "עלות חומרי הגלם לכל מנה"], en: ["Calculate your\nfood cost.", "Ingredient cost for every portion."] },
   "/solutions/kitchen": { fr: ["Votre cuisine,\nbien organisée.", "Recettes, stocks et préparations."], he: ["המטבח שלכם,\nמסודר ומחובר", "מתכונים, מלאי והכנות"], en: ["Your kitchen,\nworking together.", "Recipes, stock and preparations."] },
   "/solutions/pos": { fr: ["La caisse de\nvotre restaurant.", "Tables, commandes et encaissement."], he: ["הקופה של\nהמסעדה שלכם", "שולחנות, הזמנות ותשלומים"], en: ["The POS for\nyour restaurant.", "Tables, orders and payments."] },

@@ -382,7 +382,7 @@ export default async function PricingPage({
 
         <FaqSection lang={lang} items={editable ? [
  {q:billingCopy[lang].faqQuestion,a:billingCopy[lang].faqAnswer},
- {q: lang === "fr" ? "Le QR à table exige-t-il Foody Commandes ?" : lang === "he" ? "האם QR בשולחן דורש את מודול ההזמנות?" : "Does table QR ordering require Foody Orders?", a:b.qr},
+ {q: lang === "fr" ? "Le QR à table exige-t-il Foody Online ?" : lang === "he" ? "האם QR בשולחן דורש את מודול ההזמנות?" : "Does table QR ordering require Foody Online?", a:b.qr},
  {q:lang === "fr" ? "Peut-on vendre en ligne sans caisse ?" : lang === "he" ? "אפשר למכור אונליין בלי קופה?" : "Can I sell online without a POS?", a:b.printing},
  {q:catalogueCopy[lang].faqPrice,a:editable.products.map(p=>`${p.name[lang]} ${new Intl.NumberFormat(locale).format(p.monthly_minor/100)} ₪ ${t.monthly}.`).join(' ')},
  {q:catalogueCopy[lang].faqExtras,a:catalogueCopy[lang].faqExtraAnswer},

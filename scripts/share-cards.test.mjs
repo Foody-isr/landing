@@ -13,7 +13,7 @@ const resources = sharingResources();
 test('sharing images distinguish resources and languages while retaining the actual page subject', () => {
   const cards = ['fr','he','en'].flatMap(lang=>['/demos/kitchen','/tools/food-cost-calculator','/solutions/online-ordering'].map(route=>getShareCard(lang,route,'Page title')));
   assert.equal(new Set(cards.map(card=>card.image)).size,9);
-  assert.equal(getShareCard('fr','/demos/kitchen','Ignored search title').title,'Foody Cuisine\nen pratique.');
+  assert.equal(getShareCard('fr','/demos/kitchen','Ignored search title').title,'Foody Kitchen\nen pratique.');
   for (const card of cards) { assert.ok(card.image.startsWith(`/assets/sharing/${card.lang}/`)); assert.match(card.image,/-v2-[a-f0-9]{8}\.png$/); assert.ok(card.alt.includes(card.title.replace(/\s+/g,' '))); }
 });
 
