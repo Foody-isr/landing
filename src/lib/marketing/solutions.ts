@@ -24,8 +24,8 @@ const entries: Record<
       "Foody מסעדה מרכז קופה בדלפק, הזמנות מהטאבלט של המלצר, ניהול שולחנות והזמנות ב־QR באותה פלטפורמה. הקופה והמשרד האחורי זמינים בעברית, בצרפתית ובאנגלית. לניהול מתכונים, מלאי חומרי גלם ופוד קוסט מוסיפים את Foody Kitchen.",
       [
         [
-          "הוסיפו את Foody הזמנות.",
-          "שלבו את הקופה עם מודול Foody הזמנות כדי למכור באתר משלכם, עם הזמנות להיום, הזמנות מראש, איסוף ומשלוחים. הצוות מרכז את ההכנה במשרד האחורי.",
+          "הוסיפו את Foody Online.",
+          "שלבו את הקופה עם מודול Foody Online כדי למכור באתר משלכם, עם הזמנות להיום, הזמנות מראש, איסוף ומשלוחים. הצוות מרכז את ההכנה במשרד האחורי.",
         ],
         [
           "הזמנה ותשלום בשולחן.",
@@ -43,7 +43,7 @@ const entries: Record<
         ],
         [
           "כמה עולה Foody מסעדה ומה כלול?",
-          `Foody מסעדה עולה ${pricingRates.restaurant} ₪ לחודש לסניף לפני מע״מ, כולל קופה, מפת שולחנות, הזמנות ב־QR ו2 עמדות קופה פעילות. כל עמדה נוספת עולה ${pricingRates.extraPos} ₪ לחודש לפני מע״מ. אפשר להוסיף את Foody הזמנות ואת Foody Kitchen בנפרד. הקמה, חומרה ושירותי תשלום מפורטים במחירון.`,
+          `Foody מסעדה עולה ${pricingRates.restaurant} ₪ לחודש לסניף לפני מע״מ, כולל קופה, מפת שולחנות, הזמנות ב־QR ו2 עמדות קופה פעילות. כל עמדה נוספת עולה ${pricingRates.extraPos} ₪ לחודש לפני מע״מ. אפשר להוסיף את Foody Online ואת Foody Kitchen בנפרד. הקמה, חומרה ושירותי תשלום מפורטים במחירון.`,
         ],
         [
           "איך ההזמנות מגיעות למטבח?",
@@ -125,7 +125,7 @@ const entries: Record<
     ],
     pos: [
       "קופת ענן ל־iPad ול־Android בישראל",
-      "Foody קופה מרכז מכירות, קטלוג, שולחנות וניהול בענן על iPad או Android. הקופה היא חלק מ־Foody מסעדה. למכירה באתר אפשר להוסיף את Foody הזמנות.",
+      "Foody קופה מרכז מכירות, קטלוג, שולחנות וניהול בענן על iPad או Android. הקופה היא חלק מ־Foody מסעדה. למכירה באתר אפשר להוסיף את Foody Online.",
       "הקופה שלכם,\nב־iPad או ב־Android.",
       "הקופה פועלת על iPad או Android. העסק מנוהל בענן. Foody מחברת הזמנות, קטלוג, צוות ותשלומים, בדלפק וגם מרחוק.",
       [
@@ -214,7 +214,7 @@ const entries: Record<
     ordering: [
       "הזמנות אונליין למטבחי משלוחים ולמסעדות בישראל",
       "אתר ממותג להזמנות להיום ולהזמנות מראש. נהלו איסוף, משלוחים, כמויות להכנה ואריזה לכל לקוח דרך Foody.",
-      "Foody הזמנות\nמהאתר ועד המשלוח.",
+      "Foody Online\nמהאתר ועד המשלוח.",
       "מטבח משלוחים שעובד לאורך היום, קייטרינג או עסק שמרכז הזמנות לסוף השבוע: הלקוחות מזמינים באתר שלכם והצוות עוקב אחרי ההזמנות והתשלומים במשרד האחורי, גם ללא שירות בשולחן.",
       [
         [
@@ -240,16 +240,16 @@ const entries: Record<
           "כן. סוגי השירות נקבעים לפי הגדרות העסק. ניתן להתאים את תהליך ההזמנה לאיסוף, למשלוח או לשירות במקום.",
         ],
         [
-          "צריך קופת Foody כדי להשתמש ב־Foody הזמנות?",
-          "לא. אפשר להשתמש ב־Foody הזמנות כמסלול עצמאי ולנהל הזמנות, הכנות ומשלוחים מהמשרד האחורי. אפשר לשלב אותו עם Foody מסעדה. הדפסת פתקים במטבח היא תוספת בתשלום.",
+          "צריך קופת Foody כדי להשתמש ב־Foody Online?",
+          "לא. אפשר להשתמש ב־Foody Online כמסלול עצמאי ולנהל הזמנות, הכנות ומשלוחים מהמשרד האחורי. אפשר לשלב אותו עם Foody מסעדה. הדפסת פתקים במטבח היא תוספת בתשלום.",
         ],
         [
           "מה ההבדל בין מעקב ההכנות ל־Foody Kitchen?",
-          "Foody הזמנות מרכז כמויות להכנה ואריזה לפי ההזמנות שהתקבלו. Foody Kitchen מוסיף מתכונים, Food Cost, מלאי, ספקים ו־Foody Companion. ניתן להוסיף אותו למסלול לפי הצורך.",
+          "Foody Online מרכז כמויות להכנה ואריזה לפי ההזמנות שהתקבלו. Foody Kitchen מוסיף מתכונים, Food Cost, מלאי, ספקים ו־Foody Companion. ניתן להוסיף אותו למסלול לפי הצורך.",
         ],
         [
-          "כמה עולה Foody הזמנות?",
-          `Foody הזמנות עולה ${pricingRates.ordering} ₪ לחודש לסניף לפני מע״מ. אפשר לרכוש אותו בנפרד או לשלב אותו עם Foody מסעדה. הקמת האתר, שירותי תשלום והדפסת בוני מטבח מתומחרים בנפרד.`,
+          "כמה עולה Foody Online?",
+          `Foody Online עולה ${pricingRates.ordering} ₪ לחודש לסניף לפני מע״מ. אפשר לרכוש אותו בנפרד או לשלב אותו עם Foody מסעדה. הקמת האתר, שירותי תשלום והדפסת בוני מטבח מתומחרים בנפרד.`,
         ],
         [
           "האם Foody גובה אחוז מההזמנות הישירות?",
@@ -326,8 +326,8 @@ const entries: Record<
       "Foody Restaurant réunit caisse au comptoir, commandes sur tablette serveur, tables et commandes par QR dans une même plateforme. La caisse et le back-office sont disponibles en français, hébreu et anglais. Ajoutez Foody Cuisine pour les recettes, les stocks d’ingrédients et le food cost.",
       [
         [
-          "Ajoutez Foody Commandes.",
-          "Associez la caisse au module Foody Commandes pour vendre sur votre site, en retrait ou en livraison. Votre équipe centralise les ventes du jour et les précommandes dans le back-office.",
+          "Ajoutez Foody Online.",
+          "Associez la caisse au module Foody Online pour vendre sur votre site, en retrait ou en livraison. Votre équipe centralise les ventes du jour et les précommandes dans le back-office.",
         ],
         [
           "Commander et payer à table.",
@@ -345,7 +345,7 @@ const entries: Record<
         ],
         [
           "Combien coûte Foody Restaurant et que comprend l’offre ?",
-          `Foody Restaurant coûte ${pricingRates.restaurant} ₪ HT par mois et par établissement, avec la caisse, le plan de salle, les commandes par QR à table et 2 postes de caisse actifs. Chaque poste supplémentaire coûte ${pricingRates.extraPos} ₪ HT par mois. Foody Commandes et Foody Cuisine s’ajoutent séparément. La mise en service, le matériel et les paiements sont détaillés dans les tarifs.`,
+          `Foody Restaurant coûte ${pricingRates.restaurant} ₪ HT par mois et par établissement, avec la caisse, le plan de salle, les commandes par QR à table et 2 postes de caisse actifs. Chaque poste supplémentaire coûte ${pricingRates.extraPos} ₪ HT par mois. Foody Online et Foody Cuisine s’ajoutent séparément. La mise en service, le matériel et les paiements sont détaillés dans les tarifs.`,
         ],
         [
           "Comment les commandes arrivent-elles en cuisine ?",
@@ -427,7 +427,7 @@ const entries: Record<
     ],
     pos: [
       "Caisse cloud sur iPad et Android en Israël",
-      "Foody Caisse réunit encaissement, catalogue, tables et gestion dans le cloud sur iPad ou Android. La caisse est incluse dans Foody Restaurant. Ajoutez Foody Commandes pour vendre sur votre site.",
+      "Foody Caisse réunit encaissement, catalogue, tables et gestion dans le cloud sur iPad ou Android. La caisse est incluse dans Foody Restaurant. Ajoutez Foody Online pour vendre sur votre site.",
       "Votre caisse,\nsur iPad ou Android.",
       "Votre caisse tourne sur iPad ou Android. Votre activité se pilote dans le cloud. Foody relie les commandes, le catalogue, les équipes et les paiements, au comptoir comme à distance.",
       [
@@ -516,7 +516,7 @@ const entries: Record<
     ordering: [
       "Commandes en ligne pour dark kitchens et restaurants en Israël",
       "Votre site de commande pour les ventes du jour et les précommandes. Gérez le retrait, la livraison, les quantités à préparer et l’emballage par client depuis Foody.",
-      "Foody Commandes.\nDu site à la livraison.",
+      "Foody Online.\nDu site à la livraison.",
       "Dark kitchen qui travaille en continu, traiteur ou cuisine qui regroupe les commandes de la semaine : vos clients commandent sur votre site et votre équipe suit les commandes et les paiements dans le back-office, même sans service à table.",
       [
         [
@@ -542,16 +542,16 @@ const entries: Record<
           "Oui. Les modes de service sont définis dans les paramètres du restaurant : retrait, livraison ou consommation sur place.",
         ],
         [
-          "Faut-il une caisse Foody pour utiliser Foody Commandes ?",
-          "Non. Foody Commandes peut être utilisé seul pour gérer les commandes, la préparation et les livraisons depuis le back-office. Vous pouvez aussi l’associer à Foody Restaurant. L’impression des bons en cuisine est une option payante.",
+          "Faut-il une caisse Foody pour utiliser Foody Online ?",
+          "Non. Foody Online peut être utilisé seul pour gérer les commandes, la préparation et les livraisons depuis le back-office. Vous pouvez aussi l’associer à Foody Restaurant. L’impression des bons en cuisine est une option payante.",
         ],
         [
           "Quelle différence entre le suivi des préparations et Foody Cuisine ?",
-          "Foody Commandes regroupe les quantités à préparer et à emballer à partir des commandes reçues. Foody Cuisine ajoute les recettes, le food cost, les stocks, les fournisseurs et Foody Compagnon. Ce module peut compléter votre offre selon vos besoins.",
+          "Foody Online regroupe les quantités à préparer et à emballer à partir des commandes reçues. Foody Cuisine ajoute les recettes, le food cost, les stocks, les fournisseurs et Foody Compagnon. Ce module peut compléter votre offre selon vos besoins.",
         ],
         [
-          "Combien coûte Foody Commandes ?",
-          `Foody Commandes coûte ${pricingRates.ordering} ₪ HT par mois et par établissement. Vous pouvez le prendre seul ou l’associer à Foody Restaurant. La création du site, les paiements et l’impression des bons en cuisine sont chiffrés séparément.`,
+          "Combien coûte Foody Online ?",
+          `Foody Online coûte ${pricingRates.ordering} ₪ HT par mois et par établissement. Vous pouvez le prendre seul ou l’associer à Foody Restaurant. La création du site, les paiements et l’impression des bons en cuisine sont chiffrés séparément.`,
         ],
         [
           "Foody prend-il un pourcentage sur les commandes directes ?",
@@ -628,8 +628,8 @@ const entries: Record<
       "Foody Restaurant brings counter sales, waiter tablet orders, tables and QR orders into one platform. Both POS and back office support English, Hebrew and French. Add Foody Kitchen for recipes, ingredient inventory and food cost.",
       [
         [
-          "Add Foody Orders.",
-          "Pair your POS with Foody Orders to sell through your own site for pickup or delivery. Your team manages same-day orders and preorders in the back office.",
+          "Add Foody Online.",
+          "Pair your POS with Foody Online to sell through your own site for pickup or delivery. Your team manages same-day orders and preorders in the back office.",
         ],
         [
           "Ordering and payment at the table.",
@@ -647,7 +647,7 @@ const entries: Record<
         ],
         [
           "How much is Foody Restaurant and what is included?",
-          `Foody Restaurant costs ILS ${pricingRates.restaurant} per location/month excluding VAT, with POS, floor plans, table QR ordering and 2 active POS devices. Each additional device costs ILS ${pricingRates.extraPos} per month excluding VAT. Foody Orders and Foody Kitchen are available separately. Setup, hardware and payment fees are listed on the pricing page.`,
+          `Foody Restaurant costs ILS ${pricingRates.restaurant} per location/month excluding VAT, with POS, floor plans, table QR ordering and 2 active POS devices. Each additional device costs ILS ${pricingRates.extraPos} per month excluding VAT. Foody Online and Foody Kitchen are available separately. Setup, hardware and payment fees are listed on the pricing page.`,
         ],
         [
           "How do orders reach the kitchen?",
@@ -729,7 +729,7 @@ const entries: Record<
     ],
     pos: [
       "Cloud POS for iPad and Android in Israel",
-      "Foody POS brings sales, catalogues, tables and cloud management to iPad or Android. POS is part of Foody Restaurant. Add Foody Orders to sell through your website.",
+      "Foody POS brings sales, catalogues, tables and cloud management to iPad or Android. POS is part of Foody Restaurant. Add Foody Online to sell through your website.",
       "Your POS,\non iPad or Android.",
       "Your POS runs on iPad or Android. Your business is managed in the cloud. Foody connects orders, catalogues, teams and payments, at the counter and remotely.",
       [
@@ -818,7 +818,7 @@ const entries: Record<
     ordering: [
       "Online ordering for dark kitchens and restaurants in Israel",
       "A branded ordering website for same-day sales and preorders. Manage pickup, delivery, preparation quantities and packing for each customer in Foody.",
-      "Foody Orders.\nFrom website to delivery.",
+      "Foody Online.\nFrom website to delivery.",
       "Whether you run a dark kitchen taking orders throughout the day, a catering business or a kitchen collecting weekly preorders, customers order on your website and your team tracks orders and payments in the back office, even without table service.",
       [
         [
@@ -844,16 +844,16 @@ const entries: Record<
           "Yes. Service types are configured for the business. The ordering flow can be adapted to pickup, delivery or dine-in.",
         ],
         [
-          "Do I need a Foody POS to use Foody Orders?",
-          "No. Foody Orders can be used on its own to manage orders, preparation and deliveries from the back office. You can also pair it with Foody Restaurant. Kitchen ticket printing is a paid add-on.",
+          "Do I need a Foody POS to use Foody Online?",
+          "No. Foody Online can be used on its own to manage orders, preparation and deliveries from the back office. You can also pair it with Foody Restaurant. Kitchen ticket printing is a paid add-on.",
         ],
         [
           "How does preparation tracking differ from Foody Kitchen?",
-          "Foody Orders brings together preparation and packing quantities from received orders. Foody Kitchen adds recipes, food cost, stock, suppliers and Foody Companion. You can add this module to your plan as needed.",
+          "Foody Online brings together preparation and packing quantities from received orders. Foody Kitchen adds recipes, food cost, stock, suppliers and Foody Companion. You can add this module to your plan as needed.",
         ],
         [
-          "How much does Foody Orders cost?",
-          `Foody Orders costs ILS ${pricingRates.ordering} per location/month excluding VAT. Buy it on its own or pair it with Foody Restaurant. Website setup, payment services and kitchen ticket printing are priced separately.`,
+          "How much does Foody Online cost?",
+          `Foody Online costs ILS ${pricingRates.ordering} per location/month excluding VAT. Buy it on its own or pair it with Foody Restaurant. Website setup, payment services and kitchen ticket printing are priced separately.`,
         ],
         [
           "Does Foody take a percentage of direct orders?",

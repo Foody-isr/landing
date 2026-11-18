@@ -145,7 +145,7 @@ export const pricing: Record<Lang, PricingCopy> = {
     projects: "Bornes Kiosk, impression des bons en cuisine, SMS, intégrations et projets multi-établissements sur devis.",
     faq: [
       { q: "Puis-je garder ma caisse ou mon site actuel ?", a: "Oui. Chaque module s’achète séparément. Si vous souhaitez connecter une caisse ou un site existant à Foody, nous vérifions la compatibilité et chiffrons l’intégration." },
-      { q: "Que signifie 0 % de commission Foody ?", a: "Foody Commandes fonctionne au forfait mensuel. Foody ne prélève pas de pourcentage sur vos commandes directes. Les frais de paiement et les prestations externes se chiffrent séparément." },
+      { q: "Que signifie 0 % de commission Foody ?", a: "Foody Online fonctionne au forfait mensuel. Foody ne prélève pas de pourcentage sur vos commandes directes. Les frais de paiement et les prestations externes se chiffrent séparément." },
       { q: billingCopy.fr.faqQuestion, a: billingCopy.fr.faqAnswer },
     ],
   },
@@ -227,7 +227,7 @@ export const pricing: Record<Lang, PricingCopy> = {
     projects: "Kiosks, kitchen ticket printing, SMS, integrations and multi-location projects are quoted separately.",
     faq: [
       { q: "Can I keep my existing POS or website?", a: "Yes. You can buy each module separately. If you want to connect an existing POS or website to Foody, we check compatibility and quote the integration." },
-      { q: "What does 0% Foody commission mean?", a: "Foody Orders has a fixed monthly subscription. Foody charges no percentage on your direct orders. Payment fees and external services are priced separately." },
+      { q: "What does 0% Foody commission mean?", a: "Foody Online has a fixed monthly subscription. Foody charges no percentage on your direct orders. Payment fees and external services are priced separately." },
       { q: billingCopy.en.faqQuestion, a: billingCopy.en.faqAnswer },
     ],
   },
@@ -267,7 +267,7 @@ export const pricing: Record<Lang, PricingCopy> = {
       { key: "training", title: "הדרכה בבית העסק, לפי בחירה", text: "יום הדרכה אחד לצוות שלכם.", unit: "ליום, לפני מע״מ" },
       { key: "kitchenSetup", title: "ליווי בהקמת המטבח לפי הצורך", text: "עזרה בהעברת מתכונים, מלאי וספקים." },
     ],
-    menuNote: "ההקמה של Foody מסעדה או Foody הזמנות כוללת קליטת התפריט שתספקו. אם בחרתם בשני המודולים, קולטים את התפריט המשותף פעם אחת.",
+    menuNote: "ההקמה של Foody מסעדה או Foody Online כוללת קליטת התפריט שתספקו. אם בחרתם בשני המודולים, קולטים את התפריט המשותף פעם אחת.",
     payments: {
       title: "ציוד ותשלומים",
       text: "המחירים לפני מע״מ וחלים על הציוד ושירותי התשלום שבחרתם.",
@@ -309,7 +309,7 @@ export const pricing: Record<Lang, PricingCopy> = {
     projects: "עמדות קיוסק, הדפסת בוני מטבח, הודעות SMS, אינטגרציות ופרויקטים מרובי סניפים מתומחרים בהצעת מחיר.",
     faq: [
       { q: "אפשר להישאר עם הקופה או האתר הקיימים?", a: "כן. אפשר לרכוש כל מודול בנפרד. אם תרצו לחבר קופה או אתר קיימים ל־Foody, נבדוק תאימות ונתמחר את החיבור." },
-      { q: "מה המשמעות של 0% עמלת Foody?", a: "Foody הזמנות מחויב במנוי חודשי קבוע. Foody לא גובה אחוז מההזמנות הישירות שלכם. דמי תשלום ושירותים חיצוניים מתומחרים בנפרד." },
+      { q: "מה המשמעות של 0% עמלת Foody?", a: "Foody Online מחויב במנוי חודשי קבוע. Foody לא גובה אחוז מההזמנות הישירות שלכם. דמי תשלום ושירותים חיצוניים מתומחרים בנפרד." },
       { q: billingCopy.he.faqQuestion, a: billingCopy.he.faqAnswer },
     ],
   },
@@ -317,7 +317,7 @@ export const pricing: Record<Lang, PricingCopy> = {
 
 /** Short copy for software bundles, separate from setup, equipment and processing fees. */
 export const bundleCopy = {
-  fr: { title: 'Combinez vos modules', recommended: 'Notre offre recommandée', integral: 'La salle, les commandes et la cuisine, dans un même système.', duo: 'La caisse et votre site de commande réunis.', cta: 'Composer mon Foody', excluded: 'Abonnements logiciels uniquement. Mise en service, matériel, formation, options et services de paiement en supplément.', accounts: 'Chaque employé garde son compte personnel.', devices: 'postes de caisse actifs', qr: 'Le parcours web nécessaire au QR à table est compris dans Restaurant. Commandes ajoute la vente à distance : retrait, livraison et précommandes.', printing: 'Foody Commandes fonctionne seul, sans caisse ni imprimante imposée. Pour imprimer les bons sur place, nous prévoyons le matériel ou le relais compatible.' },
-  en: { title: 'Combine your modules', recommended: 'Our recommended offer', integral: 'Dining room, online orders and kitchen in one system.', duo: 'Your POS and ordering website together.', cta: 'Build my Foody', excluded: 'Software subscriptions only. Setup, equipment, training, options and payment services are charged separately.', accounts: 'Each employee keeps a personal account.', devices: 'active POS devices', qr: 'Restaurant includes the web interface needed for table QR ordering. Orders adds remote sales: pickup, delivery and preorders.', printing: 'Foody Orders works independently, without a mandatory POS or printer. Printing tickets on site requires compatible equipment or a relay.' },
-  he: { title: 'משלבים מודולים', recommended: 'ההצעה המומלצת שלנו', integral: 'אולם המסעדה, ההזמנות והמטבח במערכת אחת.', duo: 'הקופה ואתר ההזמנות יחד.', cta: 'מרכיבים את ה־Foody שלי', excluded: 'מנויי תוכנה בלבד. הקמה, ציוד, הדרכה, אפשרויות נוספות ושירותי תשלום מחויבים בנפרד.', accounts: 'לכל עובד נשאר חשבון אישי.', devices: 'עמדות קופה פעילות', qr: 'מודול המסעדה כולל את ממשק האינטרנט הדרוש להזמנת QR בשולחן. מודול ההזמנות מוסיף מכירה מרחוק: איסוף, משלוחים והזמנות מראש.', printing: 'Foody הזמנות פועל באופן עצמאי, ללא קופה או מדפסת חובה. להדפסת הזמנות במקום נדרש ציוד תואם או רכיב קישור.' },
+  fr: { title: 'Combinez vos modules', recommended: 'Notre offre recommandée', integral: 'La salle, les commandes et la cuisine, dans un même système.', duo: 'La caisse et votre site de commande réunis.', cta: 'Composer mon Foody', excluded: 'Abonnements logiciels uniquement. Mise en service, matériel, formation, options et services de paiement en supplément.', accounts: 'Chaque employé garde son compte personnel.', devices: 'postes de caisse actifs', qr: 'Le parcours web nécessaire au QR à table est compris dans Restaurant. Commandes ajoute la vente à distance : retrait, livraison et précommandes.', printing: 'Foody Online fonctionne seul, sans caisse ni imprimante imposée. Pour imprimer les bons sur place, nous prévoyons le matériel ou le relais compatible.' },
+  en: { title: 'Combine your modules', recommended: 'Our recommended offer', integral: 'Dining room, online orders and kitchen in one system.', duo: 'Your POS and ordering website together.', cta: 'Build my Foody', excluded: 'Software subscriptions only. Setup, equipment, training, options and payment services are charged separately.', accounts: 'Each employee keeps a personal account.', devices: 'active POS devices', qr: 'Restaurant includes the web interface needed for table QR ordering. Orders adds remote sales: pickup, delivery and preorders.', printing: 'Foody Online works independently, without a mandatory POS or printer. Printing tickets on site requires compatible equipment or a relay.' },
+  he: { title: 'משלבים מודולים', recommended: 'ההצעה המומלצת שלנו', integral: 'אולם המסעדה, ההזמנות והמטבח במערכת אחת.', duo: 'הקופה ואתר ההזמנות יחד.', cta: 'מרכיבים את ה־Foody שלי', excluded: 'מנויי תוכנה בלבד. הקמה, ציוד, הדרכה, אפשרויות נוספות ושירותי תשלום מחויבים בנפרד.', accounts: 'לכל עובד נשאר חשבון אישי.', devices: 'עמדות קופה פעילות', qr: 'מודול המסעדה כולל את ממשק האינטרנט הדרוש להזמנת QR בשולחן. מודול ההזמנות מוסיף מכירה מרחוק: איסוף, משלוחים והזמנות מראש.', printing: 'Foody Online פועל באופן עצמאי, ללא קופה או מדפסת חובה. להדפסת הזמנות במקום נדרש ציוד תואם או רכיב קישור.' },
 };

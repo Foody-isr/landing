@@ -158,9 +158,9 @@ The official Verifone partner/reseller status is supplied by Foody's owner in th
 
 The public price grid is defined in `src/lib/marketing/offer-grid.json` and overridden by the published API catalogue on Pricing. The Monthly/Annual selector compares monthly billing with no minimum term against twelve months paid upfront. Monthly cards explicitly say No commitment and do not display a twelve-month total as an amount owed. Annual payment is upfront for 12 months at the price of 11; it displays the full yearly amount and the exact saving against twelve monthly payments. `src/lib/marketing/pricing-billing.ts` performs integer-agorot calculations from the current catalogue, without applying the rounded 8.33% label as a formula. Additional licences, optional services, hardware, setup, training and payments remain separately priced. Existing accepted contracts are unchanged. The API billing policy provides the same rule to Landing, new Backoffice quotes and new sandbox onboarding offers. Existing contracts and negotiated amounts retain their snapshots. Commercial documents are available to superadmins in production; live subscription charging is not activated. Run `npm run test:pricing-billing` for the calculation checks; confirm the commercial terms and coordinate the help corpus before publication.
 
-The pricing page presents three independent modules per establishment: Foody Restaurant for POS and table service, Foody Orders for a branded ordering site, and Foody Kitchen for recipes, costs, stock, suppliers and prep. Companion is included in Kitchen. Each module can be purchased on its own or combined with the others. Connecting an external POS or website requires a compatibility check and a quote.
+The pricing page presents three independent modules per establishment: Foody Restaurant for POS and table service, Foody Online for a branded ordering site, and Foody Kitchen for recipes, costs, stock, suppliers and prep. Companion is included in Kitchen. Each module can be purchased on its own or combined with the others. Connecting an external POS or website requires a compatibility check and a quote.
 
-Navigation and the footer expose POS, Orders, Restaurant and Kitchen. Companion sits under Kitchen. The POS product links to the Restaurant pricing card. The three cards link to their product pages, and Foody Orders keeps its shared URL at `/solutions/online-ordering`.
+Navigation and the footer expose POS, Orders, Restaurant and Kitchen. Companion sits under Kitchen. The POS product links to the Restaurant pricing card. The three cards link to their product pages, and Foody Online keeps its shared URL at `/solutions/online-ordering`.
 
 Restaurant includes one named POS licence. Each additional employee who takes orders or accepts payments uses an additional licence, including when staff share a device. The page lists one-time setup and optional on-site training separately. Its hardware and payments section distinguishes the Victa purchase, monthly physical EMV service, virtual terminal activation and monthly allowance, and 3D Secure when enabled. Card processing fees depend on the acquiring agreement.
 
@@ -265,7 +265,7 @@ No real catalogue, restaurant, lead or payment is changed by these checks.
 
 The software catalogue uses three independent modules: Restaurant 590 ILS/month
 with 2 active POS devices, Orders 590 standalone, and Kitchen 890 with 1 chef and
-1 KDS. Restaurant + Orders is 990 with 2 devices; recommended Foody Integral is
+1 KDS. Restaurant + Online is 990 with 2 devices; recommended Foody Integral is
 1,790 with 3 devices, 1 chef and 1 KDS. Additional active POS devices cost 149.
 All prices exclude VAT and are per site. Personal POS accounts are not charged
 per employee on these offers; historical named-user grants keep their rules.

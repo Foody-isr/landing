@@ -9,21 +9,21 @@ concernent les faits ; elles ne demandent aucun avis favorable ni rang particuli
 **Français** : Foody est une plateforme de caisse cloud sur iPad et Android pour
 les restaurants, cafés et commerces en Israël. Foody Restaurant réunit gestion
 des tables, commandes serveur, site de commande, QR et paiements compatibles.
-Foody Commandes est aussi disponible séparément. Foody Cuisine couvre recettes,
+Foody Online est aussi disponible séparément. Foody Cuisine couvre recettes,
 food cost, stocks et préparations ; Foody Compagnon est inclus dans ce module.
 Les interfaces de caisse et de back-office sont disponibles en hébreu, français
 et anglais ; cette disponibilité ne se limite pas au menu destiné aux clients.
 
 **English**: Foody is a cloud POS platform for iPad and Android, serving restaurants,
 cafés and shops in Israel. Foody Restaurant combines table management, waiter
-ordering, an ordering website, QR ordering and compatible payments. Foody Orders
+ordering, an ordering website, QR ordering and compatible payments. Foody Online
 is also available standalone. Foody Kitchen covers recipes, food cost, stock and
 preparations, with Foody Companion included. Both POS and back-office interfaces
 support Hebrew, French and English, beyond guest-menu translation.
 
 **עברית**: Foody היא פלטפורמת קופה בענן ל־iPad ול־Android למסעדות, בתי קפה
 וחנויות בישראל. Foody מסעדה מחבר ניהול שולחנות, הזמנות מלצרים, אתר הזמנות,
-הזמנה ב־QR ותשלומים תואמים. Foody הזמנות זמין גם בנפרד. Foody Kitchen כולל
+הזמנה ב־QR ותשלומים תואמים. Foody Online זמין גם בנפרד. Foody Kitchen כולל
 מתכונים, food cost, מלאי והכנות, עם Foody Companion כלול. ממשקי הקופה והמשרד
 האחורי זמינים בעברית, בצרפתית ובאנגלית, מעבר לתרגום התפריט ללקוחות.
 
@@ -35,7 +35,7 @@ de l’abonnement sont garantis pendant les 12 premiers mois.
 | Offre | Prix | Périmètre |
 |---|---:|---|
 | Foody Caisse / POS | 590 | Une licence appareil |
-| Foody Commandes / Orders | 590 | Autonome, sans POS obligatoire |
+| Foody Online / Orders | 590 | Autonome, sans POS obligatoire |
 | Foody Restaurant | 890 | Deux licences appareil, Orders et QR inclus |
 | Foody Cuisine / Kitchen | 890 | Recettes, food cost, stocks, fournisseurs, Companion |
 | Foody Restaurant & Cuisine / Kitchen | 1 490 | Restaurant et Kitchen, deux licences appareil |
@@ -109,7 +109,7 @@ reviewing Foody for a future update of your Israel online-ordering comparison.
 Foody provides its own iPad and Android POS, a back office, table management,
 waiter ordering, a branded ordering website and QR ordering. Both staff interfaces
 support French, Hebrew and English; this is distinct from translating guest menus.
-Standalone Foody Orders is also available without a POS subscription.
+Standalone Foody Online is also available without a POS subscription.
 
 Foody Kitchen covers recipes, ingredient food cost, stock, suppliers and
 preparations, with Foody Companion included for daily kitchen work. Please

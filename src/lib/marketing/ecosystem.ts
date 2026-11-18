@@ -121,7 +121,7 @@ export const ecosystem = {
     voiceLabel: "Exemple de briefing vocal",
     routeTitle: "Du téléphone de votre client\nau bon poste en cuisine.",
     orderingIncluded:
-      "Utilisez Foody Commandes seul ou associez-le à Foody Restaurant pour réunir les commandes du site et de la salle.",
+      "Utilisez Foody Online seul ou associez-le à Foody Restaurant pour réunir les commandes du site et de la salle.",
     routeText:
       "Un parcours de commande à votre marque, avec le menu, les options et les modes de service que vous avez choisis. Le statut du paiement accompagne la commande jusqu’à votre équipe.",
     routeSteps: [
@@ -296,7 +296,7 @@ export const ecosystem = {
     voiceLabel: "Illustrative voice briefing",
     routeTitle: "From your customer’s phone\nto the right kitchen station.",
     orderingIncluded:
-      "Use Foody Orders on its own or pair it with Foody Restaurant to bring web and table orders together.",
+      "Use Foody Online on its own or pair it with Foody Restaurant to bring web and table orders together.",
     routeText:
       "A branded ordering journey with your menu, options and service types. Payment status follows the order through to your team.",
     routeSteps: [
@@ -461,7 +461,7 @@ export const ecosystem = {
     routeText:
       "תהליך הזמנה ממותג עם התפריט, האפשרויות וסוגי השירות שבחרתם. סטטוס התשלום מלווה את ההזמנה עד לצוות.",
     orderingIncluded:
-      "אפשר להשתמש ב־Foody הזמנות בנפרד או לשלב אותו עם Foody מסעדה לניהול הזמנות מהאתר ומהשולחנות יחד.",
+      "אפשר להשתמש ב־Foody Online בנפרד או לשלב אותו עם Foody מסעדה לניהול הזמנות מהאתר ומהשולחנות יחד.",
     routeSteps: ["הלקוח מזמין", "התשלום מאושר", "הצוות מכין"],
     printingLabel: "תוספת בתשלום",
     printingTitle: "פתקי ההזמנה מגיעים למטבח.",
