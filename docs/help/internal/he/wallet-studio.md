@@ -10,7 +10,7 @@ featureId: customers-wallet-studio
 audience: internal
 releaseStatus: local-release-unverified
 ---
-ב־Foody Admin, בחרו את המסעדה ופתחו **תוכנית מועדון → סטודיו Wallet**.
+ב־Foody Admin בחרו את המסעדה ופתחו **לקוחות ← תוכנית מועדון ← סטודיו Wallet**.
 
 > **יש לאשר זמינות גרסה**
 > האפליקציה קיימת במקורות. המדריך אינו מאשר הפצה ציבורית או זמינות בגרסה המותקנת.

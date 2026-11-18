@@ -4,9 +4,9 @@
   "services": {
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "64c58cbecc5d09580d41d7723c63d040b312adf0",
+      "sourceCommit": "f2c677f367335a435988354f98da349139c7f319",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "b2bf1c1f4b68fe1bc9cdd0803959a5e35ac202346a5641a4426d41a42fb49701",
+      "sourceSnapshot": "6f8704e63ccc8d3fce2e87cf31d82a6754dc54f607db089fd8e75b879c097612",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -5793,7 +5793,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "b93d90fd7e632dd4d62dc43027262f272a107325b301796139ebd18ec8ad950f",
+          "sha256": "9fec9e8872c3c7b449c9da12c9868169984baab28c5b6e126534b7d722d95f84",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -6379,9 +6379,9 @@
     },
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "b915682b7f5f448a9a5a57500c24e623a114f6bb",
+      "sourceCommit": "ada15aa3845f09f722a6843dcaddc5cf160d1777",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "53225e4ab00e11afcf9012456957a85ab608f9e4266b5a938146c51f0547b9a3",
+      "sourceSnapshot": "06f4e827ab5e90c5c48c51af514c2e12c1cb84575839627affbbc79056ddbbf4",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
@@ -8088,7 +8088,7 @@
           ]
         },
         "src/components/Sidebar.tsx": {
-          "sha256": "b6351013ea39c0d55f5e682654deff9b8205d2215ff16c6cc1251babf06cd5b3",
+          "sha256": "7ef6c6e1b5815b0c3c0b865419d48808e747215cbe404aedcd747672d6b5f61a",
           "features": [
             "pos-payments",
             "global-search",
@@ -8754,15 +8754,21 @@
             "shared-runtime"
           ]
         },
+        "src/components/loyalty/LoyaltyProgramOverview.tsx": {
+          "sha256": "9f554e8eb22dc8c9166d42c486b9ee3c49709e4e3aefe3731d73a4831f4c0c28",
+          "features": [
+            "customers-loyalty-program"
+          ]
+        },
         "src/components/loyalty/LoyaltyProgramWorkspace.tsx": {
-          "sha256": "85df81d58617a06f318cb38ab68dedbeb220cd158f157118c01b0a4cda60a80c",
+          "sha256": "842b1c2286d7a28dd80cb065be66773e0488482d978ec538779d3dd943d11bdc",
           "features": [
             "customers-loyalty-program",
             "customers-wallet-studio"
           ]
         },
         "src/components/loyalty/WalletStudioWorkspace.tsx": {
-          "sha256": "8998118c5b803247de4d649a87085ef5882f24eb909843a6c3ce3ce984d9c794",
+          "sha256": "ed83ec57014432588719082a03678f25c8f9a2cbe20127867e7afa8f3250ede7",
           "features": [
             "customers-wallet-studio"
           ]
@@ -11076,7 +11082,7 @@
           ]
         },
         "src/lib/i18n.tsx": {
-          "sha256": "00cd48ac9a57d7b404e190731f0b91b43797465f9fa2ac302301574bfa8dcd35",
+          "sha256": "e5aed64b0f727f74d76f854b831bffa78eac89148ccf8cb3ac04ecbc4efcd893",
           "features": [
             "customers-profiles",
             "menu-menus-and-groups",
@@ -11165,7 +11171,7 @@
           ]
         },
         "src/lib/loyalty-program.ts": {
-          "sha256": "c82596cad91917c78f858d5c06d7fb05f8f7b9ec7a01565e3dae8178744aca2b",
+          "sha256": "ec226d2b797ce98859d07a9def7feb148cbc0bed6573db152a71965323433b2a",
           "features": [
             "shared-runtime",
             "customers-loyalty-program"
@@ -20505,9 +20511,9 @@
         "he": "מבצעים מקוונים וקודי הנחה"
       },
       "entry": {
-        "en": "Admin → Clients → Promotions",
-        "fr": "Admin → Clients → Promotions",
-        "he": "ניהול → לקוחות → מבצעים"
+        "en": "In Foody Admin, open **Customers → Discounts** to manage promotional codes. If customers earn a reward after reaching a visits or points threshold, open **Customers → Loyalty program**.",
+        "fr": "Dans Foody Admin, ouvrez **Clients → Remises** pour gérer les codes promo. Si la récompense se gagne après un nombre de visites ou de points, ouvrez **Clients → Programme de fidélité**.",
+        "he": "ב־Foody Admin פתחו **לקוחות ← הנחות** לניהול קודי קופון. אם הלקוחות מקבלים הטבה לאחר שצברו ביקורים או נקודות, פתחו **לקוחות ← תוכנית מועדון**."
       },
       "selectors": {
         "foodyadmin": [
@@ -20565,6 +20571,7 @@
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
+      "procedureUpdatedAt": "2026-11-18",
       "evidence": [
         {
           "service": "foodyserver",
@@ -60732,9 +60739,9 @@
         "he": "הגדרת תוכנית מועדון למסעדה"
       },
       "entry": {
-        "en": "In the compatible Foody Admin, select the restaurant and open **Loyalty program** in the sidebar.",
-        "fr": "Dans la version compatible de Foody Admin, sélectionnez le restaurant et ouvrez **Programme de fidélité** dans le menu latéral.",
-        "he": "בגרסה התואמת של Foody Admin, בחרו את המסעדה ופתחו **תוכנית מועדון** בתפריט הצד."
+        "en": "In Foody Admin, select the restaurant and open **Customers → Loyalty program**. The overview shows the saved status, how customers earn, and the reward they unlock.",
+        "fr": "Dans Foody Admin, sélectionnez le restaurant et ouvrez **Clients → Programme de fidélité**. La vue d’ensemble présente le statut enregistré, la règle de cumul et la récompense que les clients peuvent gagner.",
+        "he": "ב־Foody Admin בחרו את המסעדה ופתחו **לקוחות ← תוכנית מועדון**. בסקירה מוצגים מצב התוכנית שנשמר, אופן הצבירה וההטבה שהלקוחות יכולים לקבל."
       },
       "access": {
         "en": "Use a restaurant account with permission to view settings. Changing the program requires settings edit permission for that restaurant.",
@@ -60746,6 +60753,7 @@
           "src/app/[restaurantId]/loyalty/program/page.tsx",
           "src/components/Sidebar.tsx",
           "src/components/loyalty/LoyaltyProgramWorkspace.tsx",
+          "src/components/loyalty/LoyaltyProgramOverview.tsx",
           "src/lib/loyalty-program.ts",
           "src/lib/i18n.tsx",
           "src/lib/help/context.ts"
@@ -60773,6 +60781,19 @@
       },
       "operations": [
         {
+          "id": "overview",
+          "title": {
+            "en": "Read the overview",
+            "fr": "Lire la vue d’ensemble",
+            "he": "קריאת סקירת התוכנית"
+          },
+          "instructions": {
+            "en": "Read the saved reward and when it is earned, for example a free coffee after five visits. Check the minimum purchase, reward validity and enrollment status. **Wallet Studio** opens the card design. **Open the customer loyalty page** opens the restaurant’s storefront. For a promotional code such as LUNCH10, open **Customers → Discounts**.",
+            "fr": "Lisez la récompense et son seuil, par exemple un café offert après cinq visites. Vérifiez le minimum d’achat, la validité de la récompense et le statut des adhésions. **Studio Wallet** ouvre l’éditeur de la carte. **Ouvrir la page Fidélité client** mène au site du restaurant. Pour gérer un code promo comme MIDI10, ouvrez **Clients → Remises**.",
+            "he": "בדקו איזו הטבה מקבלים ובאיזה שלב, למשל קפה במתנה אחרי חמישה ביקורים. בדקו גם את סכום הקנייה המינימלי, תוקף ההטבה ומצב ההצטרפות. **סטודיו Wallet** פותח את עורך הכרטיס. **פתיחת דף המועדון ללקוחות** מוביל לאתר המסעדה. לניהול קוד קופון כגון LUNCH10 פתחו **לקוחות ← הנחות**."
+          }
+        },
+        {
           "id": "configure",
           "title": {
             "en": "Prepare the program",
@@ -60780,9 +60801,9 @@
             "he": "הכנת התוכנית"
           },
           "instructions": {
-            "en": "Choose **Points** or **Visits**, the reward threshold and minimum eligible purchase. Choose a fixed discount or a free product. Add the name and terms in English, French and Hebrew and give the terms a version. Save and confirm with **Program active** off to keep it paused.",
-            "fr": "Choisissez **Points** ou **Visites**, le seuil de récompense et le montant minimum éligible. Choisissez une remise fixe ou un produit offert. Saisissez le nom et les conditions en français, hébreu et anglais, puis indiquez une version des conditions. Enregistrez et confirmez en laissant **Programme actif** désactivé pour garder le programme en pause.",
-            "he": "בחרו **נקודות** או **ביקורים**, את סף ההטבה ואת סכום הקנייה המזכה המינימלי. בחרו הנחה קבועה או מוצר במתנה. הזינו שם ותנאים בעברית, בצרפתית ובאנגלית וקבעו גרסה לתנאים. שמרו ואשרו כשהאפשרות **התוכנית פעילה** כבויה כדי להשאיר את התוכנית בהשהיה."
+            "en": "Select **Create program** or **Edit program**. Under **Program rules**, choose visits or points, a minimum eligible purchase and the threshold for a fixed discount or a free product. Under **Enrollment texts**, select each language to enter the name and terms in English, French and Hebrew and enter a terms version. To save a paused program, leave **Program active** off, save and confirm.",
+            "fr": "Sélectionnez **Créer le programme** ou **Modifier le programme**. Dans **Règles du programme**, choisissez le cumul par visites ou par points, l’achat minimum et le seuil pour gagner une remise fixe ou un produit offert. Dans **Textes d’adhésion**, sélectionnez chaque langue pour saisir le nom et les conditions en français, anglais et hébreu, puis indiquez la version des conditions. Pour enregistrer un programme suspendu, laissez **Programme actif** sur **Non**, enregistrez et confirmez.",
+            "he": "בחרו **יצירת תוכנית** או **עריכת התוכנית**. תחת **כללי התוכנית** בחרו צבירה לפי ביקורים או נקודות, סכום קנייה מינימלי ואת הסף לקבלת הנחה בסכום קבוע או מוצר במתנה. תחת **פרטי ההצטרפות** עברו בין השפות והזינו שם ותנאים בעברית, באנגלית ובצרפתית, וכן גרסה לתנאים. לשמירת תוכנית מושהית השאירו את מתג ההפעלה כבוי, שמרו ואשרו."
           }
         },
         {
@@ -60861,6 +60882,10 @@
         },
         {
           "service": "foodyadmin",
+          "file": "src/components/loyalty/LoyaltyProgramOverview.tsx"
+        },
+        {
+          "service": "foodyadmin",
           "file": "src/components/loyalty/LoyaltyProgramWorkspace.tsx"
         },
         {
@@ -60935,9 +60960,9 @@
         "he": "הכנה, בדיקה ופרסום של כרטיס מועדון"
       },
       "entry": {
-        "en": "In Foody Admin, select the restaurant and open **Loyalty program → Wallet Studio**.",
-        "fr": "Dans Foody Admin, sélectionnez le restaurant et ouvrez **Programme de fidélité → Studio Wallet**.",
-        "he": "ב־Foody Admin, בחרו את המסעדה ופתחו **תוכנית מועדון → סטודיו Wallet**."
+        "en": "In Foody Admin, choose the restaurant and open **Customers → Loyalty program → Wallet Studio**.",
+        "fr": "Dans Foody Admin, sélectionnez le restaurant et ouvrez **Clients → Programme de fidélité → Studio Wallet**.",
+        "he": "ב־Foody Admin בחרו את המסעדה ופתחו **לקוחות ← תוכנית מועדון ← סטודיו Wallet**."
       },
       "access": {
         "en": "Use an account with access to restaurant settings. Saving, testing and publishing require permission to edit settings. The Apple test requires a loyalty program and a configured Apple Pass Type ID certificate and key. For the customer pilot, also enable the Wallet API and the intended provider in the test environment.",
@@ -92553,6 +92578,38 @@
       "line": 1
     },
     {
+      "id": "foodyadmin:src/components/loyalty/LoyaltyProgramOverview.tsx:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/components/loyalty/LoyaltyProgramOverview.tsx",
+      "features": [
+        "customers-loyalty-program"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "loyaltyProgramAfter",
+        "loyaltyProgramCard",
+        "loyaltyProgramContent",
+        "loyaltyProgramDiscountValue",
+        "loyaltyProgramEarnSpend",
+        "loyaltyProgramEarnVisit",
+        "loyaltyProgramItem",
+        "loyaltyProgramMinimum",
+        "loyaltyProgramNoExpiry",
+        "loyaltyProgramNoMinimum",
+        "loyaltyProgramNotConfigured",
+        "loyaltyProgramOverview",
+        "loyaltyProgramRewardValidity",
+        "loyaltyProgramRules",
+        "loyaltyProgramStartHint",
+        "loyaltyProgramStudioHint",
+        "loyaltyProgramTitle",
+        "walletStudioOpenCustomerPage",
+        "walletStudioTitle"
+      ],
+      "actions": [],
+      "line": 1
+    },
+    {
       "id": "foodyadmin:src/components/loyalty/LoyaltyProgramWorkspace.tsx:ui-controls:1",
       "service": "foodyadmin",
       "source": "src/components/loyalty/LoyaltyProgramWorkspace.tsx",
@@ -92568,48 +92625,54 @@
         "loyaltyProgramAmount",
         "loyaltyProgramCatalogError",
         "loyaltyProgramChoose",
+        "loyaltyProgramCompleteTexts",
         "loyaltyProgramContent",
         "loyaltyProgramCurrencyChanged",
         "loyaltyProgramEarn",
+        "loyaltyProgramEarnVisit",
         "loyaltyProgramEnabled",
         "loyaltyProgramEnabledHint",
         "loyaltyProgramExtras",
         "loyaltyProgramFixed",
         "loyaltyProgramForbidden",
         "loyaltyProgramIdentityLocked",
-        "loyaltyProgramIncomplete",
-        "loyaltyProgramIntro",
         "loyaltyProgramItem",
+        "loyaltyProgramLanguagesFilled",
         "loyaltyProgramMinimum",
         "loyaltyProgramMinimumHint",
         "loyaltyProgramMode",
         "loyaltyProgramName",
-        "loyaltyProgramNotConfigured",
+        "loyaltyProgramOverview",
         "loyaltyProgramPending",
         "loyaltyProgramPoints",
+        "loyaltyProgramPointsHint",
         "loyaltyProgramProduct",
+        "loyaltyProgramPromoHint",
         "loyaltyProgramReadOnly",
         "loyaltyProgramReward",
         "loyaltyProgramRewardType",
+        "loyaltyProgramRules",
         "loyaltyProgramSpend",
         "loyaltyProgramStorage",
         "loyaltyProgramTerms",
         "loyaltyProgramTermsHint",
+        "loyaltyProgramTermsTab",
         "loyaltyProgramTermsVersion",
-        "loyaltyProgramThreshold",
         "loyaltyProgramTitle",
         "loyaltyProgramUnavailableItem",
         "loyaltyProgramUnits",
         "loyaltyProgramValidity",
         "loyaltyProgramValidityHint",
         "loyaltyProgramVariant",
-        "loyaltyProgramVisits",
-        "walletStudioTitle"
+        "loyaltyProgramVisits"
       ],
       "actions": [
         "load",
         "loadError",
-        "submit"
+        "openOverview",
+        "refreshed",
+        "submit",
+        "updateContent"
       ],
       "line": 1
     },
@@ -98835,17 +98898,6 @@
       "line": 1
     },
     {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:147",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "section.is_visible",
-      "line": 147
-    },
-    {
       "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:694",
       "service": "foodyadmin",
       "source": "src/components/website-v3/field-contracts.ts",
@@ -101374,6 +101426,17 @@
       "kind": "configuration-field",
       "field": "section.delete",
       "line": 1086
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:147",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.is_visible",
+      "line": 147
     },
     {
       "id": "foodyadmin:src/components/website/CheckoutEditor.tsx:ui-controls:1",
@@ -112173,9 +112236,9 @@
   "coverage": {
     "sharedRuntimeFiles": 439,
     "features": 114,
-    "operations": 1030,
-    "sourceFiles": 2647,
-    "surfaces": 2322,
+    "operations": 1031,
+    "sourceFiles": 2648,
+    "surfaces": 2323,
     "unclassifiedRoutes": []
   }
 }
