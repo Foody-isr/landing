@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - backoffice-access
-updatedAt: '2026-11-15'
+updatedAt: '2026-11-18'
 featureId: backoffice-access
 audience: internal
 releaseStatus: available
@@ -39,3 +39,9 @@ Pour une question d’abonnement, ouvrez **Plans & modules** dans le menu pour c
 ## Retrouver un outil du Backoffice
 
 Vérifiez le libellé de l’API sous Foody Backoffice. Ouvrez **Management** pour les restaurants et utilisateurs, **Payments & devices** pour les tests de facturation, le parc de terminaux et Cibus, **POS content** pour les icônes d’ingrédients et l’écran de connexion POS, ou **Platform** pour les quotas, les opérations, les serveurs et la copie de données. Sur petit écran, choisissez **Open navigation**. Les tableaux larges défilent horizontalement.
+
+<span id="connection-security" />
+
+## Application et journal de connexion
+
+Après activation coordonnée, les superadministrateurs doivent confirmer l’application pour le Backoffice et pour la connexion distincte à l’environnement de développement lors d’un clonage. Account security permet un remplacement après une connexion récente et confirmation du mot de passe. Le journal exige une session superadministrateur avec MFA, une période maximale de 31 jours et au plus 1 000 entrées ; réduisez la période si demandé. La consultation est elle-même journalisée. Les données sont déchiffrées uniquement pour cet affichage autorisé ; ne les copiez pas dans le support. La conservation est d’au moins 12 mois calendaires. Les clés, sauvegardes et alertes de production doivent être configurées et testées avant de déclarer la conformité opérationnelle.

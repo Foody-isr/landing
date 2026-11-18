@@ -34,10 +34,21 @@
       "selectors": {
         "foodyadmin": [
           "src/app/[restaurantId]/settings/security/**",
-          "src/components/settings/*Passkey*"
+          "src/components/settings/*Passkey*",
+          "src/components/MFA*.tsx",
+          "src/lib/mfa*.ts"
         ],
         "foodyserver": [
-          "internal/auth/webauthn*"
+          "internal/auth/webauthn*",
+          "internal/auth/mfa.go",
+          "internal/auth/security_journal.go",
+          "internal/common/auth_security.go",
+          "internal/crypto/keyring.go",
+          "migrations/329_auth_security.sql",
+          "config/auth_security_file.go"
+        ],
+        "foodypos": [
+          "lib/features/auth/presentation/mfa_dialog.dart"
         ]
       }
     },
@@ -2003,7 +2014,10 @@
           "src/lib/auth*",
           "src/components/**",
           "src/app/globals.css",
-          "src/app/layout.tsx"
+          "src/app/layout.tsx",
+          "src/lib/mfa*.ts",
+          "src/app/dashboard/security/*",
+          "src/lib/use-mfa-copy.ts"
         ],
         "foodyserver": [
           "internal/admin/**"

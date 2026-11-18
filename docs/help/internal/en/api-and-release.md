@@ -353,3 +353,15 @@ As a Foody superadmin, load the feature catalogue and verify that the software c
 In a compatible Backoffice build, open **Terminal fleet → All devices**. Search by restaurant or device name. On the row for the correct restaurant and device, select **Forget device** and confirm. Removed entries are hidden by default. Enable **Show forgotten devices** to review them. For payment terminals, the same action is available in **Payment terminals**.
 
 This uses the same restaurant-scoped removal as FoodyPOS. It preserves completed business records and blocks automatic re-registration by existing connections. It does not reset bank settings. Resolve pending terminal operations and printing dependencies before trying again. Finish or cancel any prepared terminal change before removing the terminal.
+
+<span id="authentication-security-rollout" />
+
+## Deploy development access protection
+
+Deploy the compatible API with protection disabled, then Admin, Backoffice and POS clients. Verify authenticator enrollment, recovery codes, invitations and manager sign-in before activation. Ordinary staff retain PIN access; a manager cannot start initial enrollment with a PIN alone. Authentication tables and security journals are excluded from environment copies. Configure private keys, independent backups and alerts, confirm subscriptions, then test restoration and notification delivery. After activation, use a compatible version: rollback to an older version without this protection is blocked. These checks are not tax certification or production release approval.
+
+<span id="native-fiscal-test-scope" />
+
+## Keep native fiscal documents within the test scope
+
+Native receipts, invoices, credits and exports remain limited to nonproduction tests, an authorized administrator and explicitly configured demonstration restaurants. They are disabled by default. Documents are marked TEST and use their own numbering series. Verify archives, integrity, restoration and the export simulator before changing the scope. Simulator acceptance is not software registration; Invoice4U remains the operational issuer until fiscal commissioning is approved.
