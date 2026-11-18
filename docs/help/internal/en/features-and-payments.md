@@ -42,9 +42,9 @@ In Verifone Central, open Administration > Checkout Themes and save a theme for 
 
 <span id="configure-verifone-cst-card-form" />
 
-## Configure the Foody card form for CST
+## Choose a restaurant’s Verifone card payment flow
 
-For an approved CST test, open the restaurant in Backoffice as a superadmin and select Payment, Verifone and CST Sandbox. In Card form in Foody, enter the Public key alias and paste the Public key issued for that Verifone organization. Enable the form and save. Use the restaurant’s pickup or delivery checkout for a prepaid, fixed-price order in ILS. Enter a Verifone test card in Foody. The order confirmation shows the payment status and offers a new card entry after a verified decline. Wait for verification if the status is pending. Switch the form off before leaving CST. Enter the matching pair when changing the organization, environment or alias. To discard a saved public key, select Remove the saved public key on save. The form is currently available for CST tests.
+In Backoffice open Restaurants → restaurant → Payment. To compare both flows choose Verifone Cloud (GreenBox) and CST Sandbox. Under Verifone.js encryption key, save the organization’s Public key and Public key alias once using Save Payment Config. Under Card payment flow select **Foody · Verifone.js**. The selection saves immediately for this restaurant. Open a new prepaid, fixed-price pickup or delivery order in ILS. Use a new CST test card and leave card saving unchecked. Enter the card in Foody and verify confirmation. Next select **Verifone Checkout** and open a second order. Confirming the basket opens the Verifone payment link. Both flows reuse the saved credentials and contracts. Wallets and saved cards have separate settings. Before changing environment or removing the key, select Verifone Checkout, then replace or remove the key and save the settings.
 
 <span id="configure-verifone-direct-wallets" />
 

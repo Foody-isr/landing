@@ -7,7 +7,7 @@ apps: foodyadmin
 tags:
   - payments
   - payment-configuration
-updatedAt: '2026-11-12'
+updatedAt: '2026-11-18'
 featureId: payment-configuration
 audience: public
 releaseStatus: available
@@ -59,6 +59,12 @@ In Cibus check whether the integration is enabled. With settings permission, rep
 ## Set payment policy, VAT and tips
 
 In Settings → Payments review online-payment-only policy, default VAT and tips enablement. Only permitted, changed fields are saved. An unknown policy remains unknown until explicitly chosen; editing VAT must not silently choose it. The weight authorization margin has its own editable field, explained below. Fixed suggested tips and rounding remain outside this form's edit contract. Verify saved values after success; retain edits on a failed save.
+
+<span id="verifone-new-card-checkout" />
+
+## Where a customer enters a new card
+
+Foody sets the card payment flow for each restaurant. With Verifone Checkout, confirming the order opens a secure Verifone page for card entry. With the integrated CST form, a customer enters a new test card directly in Foody for a prepaid, fixed-price pickup or delivery order in ILS. To compare these flows, start a new order for each and leave card saving unchecked.
 
 <span id="verifone-cst-card-saving" />
 

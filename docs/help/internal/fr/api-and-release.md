@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-11-15'
+updatedAt: '2026-11-18'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -56,7 +56,7 @@ Déployez et validez les migrations et routes API liées au restaurant avant d'a
 
 ## Vérifier les paiements ponctuels Verifone.js dans CST
 
-Appliquez la migration 317 avant d’utiliser les réglages Backoffice du formulaire carte. La capacité publique et la clé de chiffrement sont liées au restaurant. Une tentative exige un accès vérifié à la commande et la configuration CST de ce restaurant. Foody enregistre le montant et une clé d’idempotence unique avant la vente. Relisez la transaction et vérifiez l’opération, le montant, la devise et la référence avant de contrôler la préparation. Si la réponse se perd, rapprochez la transaction par son identifiant ou attendez la confirmation de l’annulation technique. Vérifiez les exigences ABS de CVV et d’identité avec une carte CST Verifone, ainsi que l’émission Invoice4U si elle est configurée. L’activation en production nécessite les clés et contrats de production, la validation des exigences 3DS avec Verifone et l’évaluation des obligations SAQ A-EP décrites dans la documentation Verifone.js.
+Appliquez la migration 317 avant d’utiliser les réglages Backoffice du formulaire carte. La capacité publique et la clé de chiffrement sont liées au restaurant. Une tentative exige un accès vérifié à la commande et la configuration CST de ce restaurant. Foody enregistre le montant et une clé d’idempotence unique avant la vente. Relisez la transaction et vérifiez l’opération, le montant, la devise et la référence avant de contrôler la préparation. Si la réponse se perd, rapprochez la transaction par son identifiant ou attendez la confirmation de l’annulation technique. Vérifiez les exigences ABS de CVV et d’identité avec une carte CST Verifone, ainsi que l’émission Invoice4U si elle est configurée. L’activation en production nécessite les clés et contrats de production, la validation des exigences 3DS avec Verifone et l’évaluation des obligations SAQ A-EP décrites dans la documentation Verifone.js. Dans les versions proposant Card payment flow, testez aussi une seconde commande après avoir sélectionné Verifone Checkout. Vérifiez que Foody ouvre le lien hébergé et que le choix du second restaurant reste identique.
 
 <span id="verifone-direct-wallet-contract" />
 
