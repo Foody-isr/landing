@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - orders
   - order-detail
-updatedAt: '2026-11-16'
+updatedAt: '2026-11-18'
 featureId: order-detail
 audience: public
 releaseStatus: available
@@ -40,9 +40,9 @@ Composez le ticket dans Nouvelle commande puis choisissez Continuer. Finaliser l
 
 ## Modifier les informations enregistrées
 
-Utilisez l’action de modification pour client, adresse ou remise. Enregistrez et relisez la commande ; vérifiez préparation, frais et contraintes avant de changer une planification existante.
+Modifiez le client, l’adresse ou la remise. Enregistrez et relisez la commande. Vérifiez préparation, frais et contraintes avant de changer sa planification.
 
-Pour corriger une livraison, ouvrez Modifier le client dans le panneau Client. Saisissez la rue, le numéro et la ville dans Adresse de livraison, puis choisissez une suggestion Google complète. Si nécessaire, choisissez Saisir l’adresse manuellement et renseignez la rue et la ville. Enregistrez. Si la commande porte un numéro de téléphone, l’adresse est aussi enregistrée dans la fiche client.
+Dans Client → Modifier le client, saisissez rue, numéro et ville. Choisissez une suggestion Google complète ou Saisir l’adresse manuellement, puis enregistrez. Si la commande comporte un téléphone, la fiche client reçoit aussi l’adresse. Si la rue reste introuvable, [confirmez le point GPS dans Livraisons](/fr/help/delivery/dispatch-and-routes#correct-delivery-address).
 
 <span id="status" />
 
@@ -72,7 +72,7 @@ Avec la permission orders.manage, ouvrez Nouvelle commande. Sélectionnez une ca
 
 ## Vérifier le rappel de livraison calculé
 
-Pour une livraison affectée à une tournée avec une marge client enregistrée, les rappels utilisent l’arrivée calculée plus cette durée, au lieu du large créneau planifié de la commande. Exemple : arrivée à 08:30 et marge de 90 minutes → 08:30–10:00. Réglez-la dans Commandes → Livraisons → répartition, à côté du temps à chaque arrêt, puis vérifiez l’aperçu WhatsApp manuel ou approuvé avant envoi. Le même créneau alimente Twilio, Meta et les rappels par étape ; les variables des modèles et la règle J-1 existantes restent applicables. Les anciennes tournées sans réglage conservent le créneau enregistré. Si le créneau ne peut être vérifié, recalculez puis rouvrez le rappel. Un aperçu approuvé qui a changé doit être revérifié avant envoi. Modifier un modèle seul ne calcule pas de tournée et ne change pas sa marge.
+Pour une livraison affectée à une tournée avec une marge client enregistrée, les rappels utilisent l’arrivée calculée plus cette durée, au lieu du large créneau planifié de la commande. Exemple : arrivée à 08:30 et marge de 90 minutes → 08:30–10:00. Réglez-la dans Livraisons → Répartition → répartition, à côté du temps à chaque arrêt, puis vérifiez l’aperçu WhatsApp manuel ou approuvé avant envoi. Le même créneau alimente Twilio, Meta et les rappels par étape ; les variables des modèles et la règle J-1 existantes restent applicables. Les anciennes tournées sans réglage conservent le créneau enregistré. Si le créneau ne peut être vérifié, recalculez puis rouvrez le rappel. Un aperçu approuvé qui a changé doit être revérifié avant envoi. Modifier un modèle seul ne calcule pas de tournée et ne change pas sa marge.
 
 <span id="internal-combo-substitution" />
 
@@ -90,7 +90,7 @@ Les stocks prédéfinis des articles disposent d’un journal dans Articles et c
 
 ## Choisir le mode d’envoi du rappel
 
-Les rappels WhatsApp approuvés peuvent être prévisualisés avant la veille, mais les boutons manuels restent bloqués jusqu’à la veille selon le fuseau du restaurant. Commandes → Livraisons → Rappels WhatsApp permet de vérifier et confirmer les rappels de toutes les tournées de la date choisie ; WhatsApp au client et Envoyer ce rappel traitent un seul client. Le message utilise le créneau d’arrivée calculé de la tournée enregistrée et le livreur affecté. Les boutons manuels utilisent le modèle de rappel global ; une étape automatique conserve le modèle et l’horaire explicitement configurés dans Parcours de commande. Pour envoyer uniquement la veille, choisissez ce timing sur l’étape, par exemple Prête. Aucun déclencheur n’est activé en ouvrant un aperçu. Un rappel déjà soumis, incertain ou échoué n’est jamais renvoyé par un autre mode, même si son texte ou son fournisseur change. Une modification avant envoi demande un aperçu actualisé. L’acceptation ne prouve pas la réception ; consultez Messages au client de la commande. Le texte de l’aperçu représente le calcul actuel, pas un ancien message enregistré.
+Les rappels WhatsApp approuvés peuvent être prévisualisés avant la veille, mais les boutons manuels restent bloqués jusqu’à la veille selon le fuseau du restaurant. Livraisons → Répartition → Rappels WhatsApp permet de vérifier et confirmer les rappels de toutes les tournées de la date choisie ; WhatsApp au client et Envoyer ce rappel traitent un seul client. Le message utilise le créneau d’arrivée calculé de la tournée enregistrée et le livreur affecté. Les boutons manuels utilisent le modèle de rappel global ; une étape automatique conserve le modèle et l’horaire explicitement configurés dans Parcours de commande. Pour envoyer uniquement la veille, choisissez ce timing sur l’étape, par exemple Prête. Aucun déclencheur n’est activé en ouvrant un aperçu. Un rappel déjà soumis, incertain ou échoué n’est jamais renvoyé par un autre mode, même si son texte ou son fournisseur change. Une modification avant envoi demande un aperçu actualisé. L’acceptation ne prouve pas la réception ; consultez Messages au client de la commande. Le texte de l’aperçu représente le calcul actuel, pas un ancien message enregistré.
 
 <span id="variant-position-order" />
 

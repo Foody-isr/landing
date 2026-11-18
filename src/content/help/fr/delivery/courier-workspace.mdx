@@ -1,22 +1,22 @@
 ---
 title: Parcours coursier et confirmation des livraisons
-description: 'Admin → Commandes → Mode coursier, ou espace coursier affecté'
+description: Foody Admin → Livraisons → Mode livreur
 apps: foodyadmin
 tags:
   - delivery
   - courier
-updatedAt: '2026-11-12'
+updatedAt: '2026-11-18'
 featureId: courier
 audience: public
 releaseStatus: available
 ---
-Admin → Commandes → Mode coursier, ou espace coursier affecté
+Foody Admin → Livraisons → Mode livreur
 
 <span id="itinerary" />
 
 ## Ouvrir la tournée affectée
 
-Dans le mode livreur de Foody Admin, choisissez votre tournée dans la liste en haut. La tournée active est proposée à l’ouverture. Avant de démarrer, la fiche de départ affiche l’adresse de départ et l’heure prévue si elles ont été renseignées. Ouvrez « Voir les arrêts prévus » pour consulter les numéros de commande et les heures d’arrivée estimées disponibles. Les adresses, les coordonnées des clients, les consignes et les repères clients restent masqués. La fin, la distance et la durée sont des estimations du plan. Ouvrez Durée totale pour consulter le détail disponible.
+Dans le mode livreur de Foody Admin, choisissez votre tournée dans la liste en haut. La tournée active est proposée à l’ouverture. Avant de démarrer, la fiche de départ affiche l’adresse de départ et l’heure prévue si elles ont été renseignées. Le jour de service et les numéros de commande sont visibles dès l’ouverture, avec les heures d’arrivée estimées disponibles. Touchez « Voir les arrêts prévus » pour replier ou rouvrir la liste. Les adresses, les coordonnées des clients, les consignes et les repères clients restent masqués. La fin, la distance et la durée sont des estimations du plan. Ouvrez Durée totale pour consulter le détail disponible.
 
 Le mode livreur exécute la tournée enregistrée par le restaurant. Le montant de la commande apparaît pour l’arrêt ouvert si le paiement est en espèces et si le montant est connu.
 
@@ -38,7 +38,7 @@ Une fois la commande remise, vérifiez le numéro et l’adresse de l’arrêt d
 
 ## Vérifier le plan et démarrer la tournée
 
-Avant de partir, vérifiez la tournée enregistrée par le restaurant. Le mode livreur ne propose plus Ajuster, les réglages de tournée, Réoptimiser, la correction d’adresse ou le déplacement d’un arrêt. Le départ prévu, les points de départ et d’arrivée, les temps de remise, les créneaux et la composition de la tournée se modifient uniquement par un responsable autorisé dans Commandes → Livraisons. Cette règle vaut aussi pour un propriétaire ou superadmin qui consulte le mode livreur ; pour planifier, retournez dans Livraisons. Une ancienne interface ne peut pas enregistrer ces changements depuis les actions livreur.
+Avant de partir, vérifiez la tournée enregistrée par le restaurant. Le mode livreur ne propose plus Ajuster, les réglages de tournée, Réoptimiser, la correction d’adresse ou le déplacement d’un arrêt. Le départ prévu, les points de départ et d’arrivée, les temps de remise, les créneaux et la composition de la tournée se modifient uniquement par un responsable autorisé dans Livraisons → Répartition. Cette règle vaut aussi pour un propriétaire ou superadmin qui consulte le mode livreur ; pour planifier, retournez dans Livraisons. Une ancienne interface ne peut pas enregistrer ces changements depuis les actions livreur.
 
 Démarrer la tournée confirme le départ réel des livraisons affectées non terminées et fait passer ensemble les commandes acceptées, en préparation ou prêtes en En livraison. Les commandes terminées ou annulées ne sont pas rouvertes. Une préparation retenue ou une commande au poids non finalisée doit être résolue auparavant. En cas d’échec, aucun changement partiel n’est enregistré. Un livreur ne peut avoir qu’une tournée active ; terminez-la avant de démarrer la suivante. Si une destination n’a pas pu être vérifiée, demandez au responsable de vérifier son adresse ou son point GPS avant de confirmer le départ.
 
@@ -56,17 +56,19 @@ Un avertissement de quota atteint ou de service indisponible ne signifie pas que
 
 Sur mobile, faites glisser la poignée en haut de la liste pour choisir une vue compacte, équilibrée ou étendue. Au clavier, les flèches haut/bas et Début/Fin font le même réglage. La liste défile indépendamment des actions fixes. La loupe ouvre les arrêts prévus et permet de les filtrer par numéro de commande. Touchez le repère de l’arrêt ouvert pour retrouver sa fiche. « Afficher toute la tournée » recadre la carte ; + et − règlent le zoom. Changer la tournée consultée n’interrompt pas le partage de position de la tournée active si le téléphone l’autorise.
 
+Avant le départ, la liste s’ouvre en premier sur téléphone. Carte affiche le plan et sa poignée, Liste revient à la feuille de route. Une tournée future indique le jour où le départ sera disponible.
+
 <span id="accidental-departure" />
 
 ## Corriger un démarrage de test
 
-Si vous avez démarré une tournée par erreur, prévenez un responsable avant d’enregistrer une arrivée ou une livraison. Dans Commandes → Livraisons, un utilisateur autorisé à gérer les commandes peut choisir Annuler le départ tant que tous les arrêts restent en attente, puis désassigner et réaffecter la tournée. Les commandes En livraison reviennent En préparation et le nouveau livreur pourra démarrer après réaffectation. Le mode livreur ne propose pas cette correction de gestion. Les messages déjà envoyés restent dans l’historique. L’annulation du départ est également indisponible dès qu’une navigation vers un arrêt est enregistrée.
+Pour consulter votre tournée à l’avance, ouvrez Voir les arrêts prévus. Vous y trouverez les numéros de commande et les heures estimées disponibles. Le départ s’ouvre le jour prévu dans le fuseau du restaurant. Ce jour-là, Démarrer et Démarrer et ouvrir Waze demandent de confirmer le départ réel. En cas d’erreur, prévenez le responsable avant d’enregistrer une arrivée, une livraison ou un incident. Il peut annuler le départ même si la navigation a été ouverte. Vous retrouverez la même tournée pour le jour prévu.
 
 <span id="superadmin-courier-selection" />
 
 ## Consulter le mode d’un autre livreur
 
-Avec les versions compatibles de l’API et de l’Admin, connectez-vous comme propriétaire du restaurant concerné ou comme superadmin, puis ouvrez Commandes → Mode livreur. Dans Voir comme livreur, choisissez un livreur du restaurant ; le premier de la liste est sélectionné à l’ouverture. Vous consultez le même écran de carte, de tournées non terminées et d’arrêts que ce livreur. Changez ce choix pour afficher les tournées du nouveau livreur ; l’arrêt sélectionné, la recherche et les panneaux précédents sont réinitialisés. Les actions affichées, dont Démarrer la tournée et Marquer livrée, agissent réellement sur ses livraisons : utilisez-les uniquement pour enregistrer une opération effectuée. Le compte connecté conserve son identité et sa position GPS n’est pas envoyée comme celle du livreur. Être propriétaire d’un autre restaurant ne donne pas accès à ce sélecteur ici ; les autres comptes conservent leurs propres tournées. Si aucun livreur n’est configuré, vérifiez les rôles de l’équipe. En cas d’échec de chargement, utilisez Réessayer ; une affectation supprimée ou un livreur d’un autre restaurant est refusé par le serveur. Si le sélecteur manque pour le propriétaire, faites vérifier le déploiement des deux versions compatibles, API puis Admin. La consultation reste limitée à l’exécution : aucun réglage d’itinéraire n’est proposé, même pour le propriétaire ou le superadmin. Pour modifier le plan, retournez dans Commandes → Livraisons.
+Avec les versions compatibles de l’API et de l’Admin, connectez-vous comme propriétaire du restaurant concerné ou comme superadmin, puis ouvrez Livraisons → Mode livreur. Dans Voir comme livreur, choisissez un livreur du restaurant ; le premier de la liste est sélectionné à l’ouverture. Vous consultez le même écran de carte, de tournées non terminées et d’arrêts que ce livreur. Changez ce choix pour afficher les tournées du nouveau livreur ; l’arrêt sélectionné, la recherche et les panneaux précédents sont réinitialisés. Les actions affichées, dont Démarrer la tournée et Marquer livrée, agissent réellement sur ses livraisons : utilisez-les uniquement pour enregistrer une opération effectuée. Le compte connecté conserve son identité et sa position GPS n’est pas envoyée comme celle du livreur. Être propriétaire d’un autre restaurant ne donne pas accès à ce sélecteur ici ; les autres comptes conservent leurs propres tournées. Si aucun livreur n’est configuré, vérifiez les rôles de l’équipe. En cas d’échec de chargement, utilisez Réessayer ; une affectation supprimée ou un livreur d’un autre restaurant est refusé par le serveur. Si le sélecteur manque pour le propriétaire, faites vérifier le déploiement des deux versions compatibles, API puis Admin. La consultation reste limitée à l’exécution : aucun réglage d’itinéraire n’est proposé, même pour le propriétaire ou le superadmin. Pour modifier le plan, retournez dans Livraisons → Répartition.
 
 <span id="live-location" />
 

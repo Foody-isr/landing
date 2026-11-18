@@ -1,28 +1,30 @@
 ---
 title: 'Delivery zones, fees and calendars'
-description: Admin → Settings → Delivery
+description: Foody Admin → Deliveries → Zones
 apps: foodyadmin
 tags:
   - delivery
   - delivery-zones
-updatedAt: '2026-11-04'
+updatedAt: '2026-11-18'
 featureId: delivery-zones
 audience: public
 releaseStatus: available
 ---
-Admin → Settings → Delivery
+Foody Admin → Deliveries → Zones
 
 <span id="zone" />
 
 ## Create a delivery zone
 
-Create or edit a named zone using the map/address controls. Review its area, active state and ordering eligibility before saving. Zone changes, including same-day rules, require orders.manage. Shared restaurant availability and the global minimum use settings.edit; viewing those settings requires the existing settings access.
+Create or edit a named zone using the map/address controls. Review its area, active state and ordering eligibility before saving. Zone changes, including same-day rules, require orders.manage. Shared restaurant availability and the global minimum use settings.edit; viewing those settings requires the existing settings access. In city-based zones, Tel Aviv, Tel-Aviv, Tel Aviv-Yaffo and תל אביב-יפו match the same city.
+
+Search by zone name, city or postal code and filter by status. Each row shows the fee and zone type. Select its name to edit it or expand Delivery area and schedule to inspect coverage, hours and minimum. Use Map and List on a phone to switch views.
 
 <span id="postal-codes" />
 
 ## Target an exact French postal code
 
-This option requires compatible API and Admin versions; its inclusion in this guide does not confirm deployment. With permission to manage orders and a restaurant located in France, open Settings → Delivery → Add zone. Name the zone, choose Postal codes (France), and enter 75016 to cover that exact postal code only. Paste multiple five-digit codes separated by spaces, commas or line breaks (up to 1,000); keep leading zeros, for example 01000. Set the fee, minimum, calendar and active state, then Save. Reopen the zone to verify the codes and test addresses on both sides of its boundary before enabling it. 75016 is a postal code; 75 is the Paris department. Departments (France) also accepts 2A, 2B and three-digit overseas codes such as 971, but covers the entire department. Postal zones take precedence over other zones for fees, minimums and calendars; another active zone can still cover an address whose postal code does not match. The geocoding service verifies postal metadata from the address; city text or coordinates alone are insufficient. If a postal code cannot be verified, refine the address and try again. Invalid input is not saved; after an uncertain save response, use Verify saved data before retrying.
+This option requires compatible API and Admin versions; its inclusion in this guide does not confirm deployment. With permission to manage orders and a restaurant located in France, open Deliveries → Zones → Add zone. Name the zone, choose Postal codes (France), and enter 75016 to cover that exact postal code only. Paste multiple five-digit codes separated by spaces, commas or line breaks (up to 1,000); keep leading zeros, for example 01000. Set the fee, minimum, calendar and active state, then Save. Reopen the zone to verify the codes and test addresses on both sides of its boundary before enabling it. 75016 is a postal code; 75 is the Paris department. Departments (France) also accepts 2A, 2B and three-digit overseas codes such as 971, but covers the entire department. Postal zones take precedence over other zones for fees, minimums and calendars; another active zone can still cover an address whose postal code does not match. The geocoding service verifies postal metadata from the address; city text or coordinates alone are insufficient. If a postal code cannot be verified, refine the address and try again. Invalid input is not saved; after an uncertain save response, use Verify saved data before retrying.
 
 <span id="postal-day-groups" />
 
@@ -58,13 +60,13 @@ In a customer-choice zone with restaurant confirmation for same-day delivery, th
 
 ## Review priorities and safe saves
 
-A zone controls coverage, price/minimum and receiving days. Restaurant service hours and exceptional closures still limit receipt. Product-specific preparation replaces the default; actual ready stock can shorten preparation but cannot open another day or area. The same-day policy is saved with its zone and is not combined with a global override. Custom booking hours still replace service hours when configured, while batches keep their own windows. The global delivery minimum is used only when a zone has no minimum; explicit zero remains zero. Historical unconfigured coverage can allow all addresses if every classic zone is inactive: use the service/pause control to pause deliveries. Explicit same-day zones fail closed when inactive; deleting the last such zone requires other active classic coverage. Concurrent zone edits return a conflict and retain the draft. Reload and review the current version; after an uncertain network save, verify saved data before writing again.
+A zone controls coverage, price/minimum and receiving days. Restaurant service hours and exceptional closures still limit receipt. Product-specific preparation replaces the default; actual ready stock can shorten preparation but cannot open another day or area. The same-day policy is saved with its zone and is not combined with a global override. Custom booking hours still replace service hours when configured, while batches keep their own windows. The global delivery minimum is used only when a zone has no minimum; explicit zero remains zero. Historical unconfigured coverage can allow all addresses if every delivery zone is inactive: use the service/pause control to pause deliveries. Explicit same-day zones fail closed when inactive; deleting the last such zone requires another active delivery zone. Concurrent zone edits return a conflict and retain the draft. Reload and review the current version; after an uncertain network save, verify saved data before writing again.
 
 <span id="ordering-simulation-clock" />
 
 ## Test when an order is placed
 
-In Orders & availability → Simulate an order, select Order date and time in the displayed timezone, then the receiving date and basket. Now reloads the server time. Preparation and same-day rules are evaluated at this reference using current saved settings and ready stock. A past date does not reconstruct history; this test neither reserves a courier nor creates an order. Customer orders retain the real server clock. See [the simulation procedure](/en/help/orders/preorders-and-batches#simulate-order). The simulation covers classic delivery; published tours retain their own rules.
+In Orders & availability → Simulate an order, select Order date and time in the displayed timezone, then the receiving date and basket. Now reloads the server time. Preparation and same-day rules are evaluated at this reference using current saved settings and ready stock. A past date does not reconstruct history; this test neither reserves a courier nor creates an order. Customer orders retain the real server clock. See [the simulation procedure](/en/help/orders/preorders-and-batches#simulate-order).
 
 <span id="order-deadlines" />
 
