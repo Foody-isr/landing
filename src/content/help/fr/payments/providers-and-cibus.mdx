@@ -7,7 +7,7 @@ apps: foodyadmin
 tags:
   - payments
   - payment-configuration
-updatedAt: '2026-11-12'
+updatedAt: '2026-11-18'
 featureId: payment-configuration
 audience: public
 releaseStatus: available
@@ -59,6 +59,12 @@ Dans Cibus, vérifiez l’activation. Avec les droits, remplacez ensemble identi
 ## Régler politique de paiement, TVA et pourboires
 
 Dans Paramètres → Paiements, vérifiez paiement en ligne obligatoire, TVA par défaut et activation des pourboires. Seuls les champs autorisés modifiés sont enregistrés. Une politique inconnue reste inconnue avant choix explicite ; modifier la TVA ne doit pas la choisir. La marge de préautorisation au poids dispose de son champ modifiable expliqué ci-dessous. Suggestions fixes et arrondi restent hors de ce formulaire. Vérifiez les valeurs après succès et gardez les saisies après échec.
+
+<span id="verifone-new-card-checkout" />
+
+## Où le client saisit une nouvelle carte
+
+Foody règle le parcours de paiement par carte pour chaque restaurant. Avec Verifone Checkout, la confirmation du panier ouvre la page sécurisée de Verifone pour la saisie de la carte. Avec le formulaire intégré CST, le client saisit sa carte de test dans Foody pour une commande prépayée en ILS, à montant fixe, en retrait ou en livraison. Pour comparer les parcours, ouvrez une nouvelle commande pour chacun et laissez la case d’enregistrement de la carte décochée.
 
 <span id="verifone-cst-card-saving" />
 

@@ -44,9 +44,9 @@ Dans Verifone Central, ouvrez Administration > Checkout Themes et enregistrez un
 
 <span id="configure-verifone-cst-card-form" />
 
-## Configurer le formulaire carte Foody pour CST
+## Choisir le parcours carte Verifone d’un restaurant
 
-Pour un test CST autorisé, ouvrez la fiche du restaurant dans le Backoffice en tant que superadmin. Choisissez Payment, Verifone puis CST Sandbox. Dans Card form in Foody, renseignez Public key alias et collez la Public key fournie pour cette organisation Verifone. Activez le formulaire et enregistrez. Dans la caisse en ligne du restaurant, choisissez une commande à montant fixe en ILS, prépayée, à emporter ou en livraison. Saisissez une carte de test Verifone dans Foody. La confirmation affiche l’état du paiement et permet de saisir une nouvelle carte après un refus vérifié. Attendez la vérification si le paiement est en cours. Désactivez le formulaire avant de quitter CST. Renseignez la paire correspondante si vous changez d’organisation, d’environnement ou d’alias. Pour supprimer une clé publique existante, cochez Remove the saved public key on save. Le formulaire est réservé aux tests CST.
+Dans le Backoffice, ouvrez Restaurants → fiche du restaurant → Payment. Pour comparer les parcours, choisissez Verifone Cloud (GreenBox) et CST Sandbox. Sous Verifone.js encryption key, enregistrez une fois la Public key et son Public key alias pour cette organisation avec Save Payment Config. Sous Card payment flow, sélectionnez **Foody · Verifone.js**. Le choix est enregistré immédiatement pour ce restaurant. Ouvrez une nouvelle commande prépayée en ILS, à montant fixe, en retrait ou en livraison. Utilisez une nouvelle carte de test CST et laissez la case d’enregistrement décochée. Saisissez la carte dans Foody et vérifiez la confirmation. Sélectionnez ensuite **Verifone Checkout** et ouvrez une deuxième commande. Après confirmation du panier, Foody ouvre le lien vers la page de paiement Verifone. Les deux parcours réutilisent les identifiants et contrats enregistrés. Les wallets et les cartes enregistrées ont leurs propres réglages. Pour changer d’environnement ou retirer la clé, sélectionnez d’abord Verifone Checkout, puis remplacez ou retirez la clé et enregistrez les réglages.
 
 <span id="configure-verifone-direct-wallets" />
 

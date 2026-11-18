@@ -42,9 +42,9 @@ releaseStatus: available
 
 <span id="configure-verifone-cst-card-form" />
 
-## הגדרת טופס הכרטיס של Foody לסביבת CST
+## בחירת מסלול תשלום בכרטיס של Verifone למסעדה
 
-לבדיקת CST מאושרת, פתחו את מסך המסעדה ב-Backoffice כמנהלי superadmin ובחרו Payment, Verifone ו-CST Sandbox. באזור Card form in Foody הזינו Public key alias והדביקו את ה-Public key שהונפק לארגון ב-Verifone. הפעילו את הטופס ושמרו. באתר המסעדה בחרו הזמנה בתשלום מראש, במחיר קבוע בשקלים, באיסוף עצמי או במשלוח. הזינו כרטיס בדיקה של Verifone ב-Foody. אישור ההזמנה מציג את מצב התשלום ומאפשר להזין כרטיס חדש אחרי דחייה מאומתת. כשהתשלום ממתין, המתינו לאימות. כבו את הטופס לפני היציאה מ-CST. בעת שינוי הארגון, הסביבה או הכינוי הזינו את זוג הערכים המתאים. להסרת מפתח ציבורי שמור סמנו Remove the saved public key on save. הטופס זמין לבדיקות CST.
+ב-Backoffice פתחו Restaurants, בחרו את המסעדה ופתחו את הלשונית Payment. להשוואת המסלולים בחרו Verifone Cloud (GreenBox) ואת CST Sandbox. תחת Verifone.js encryption key הזינו פעם אחת את ה-Public key ואת ה-Public key alias של הארגון ושמרו באמצעות Save Payment Config. תחת Card payment flow בחרו **Foody · Verifone.js**. הבחירה נשמרת מיד למסעדה זו. פתחו הזמנה חדשה לאיסוף או למשלוח, בתשלום מראש ובמחיר קבוע בשקלים. השתמשו בכרטיס בדיקה חדש של CST והשאירו את האפשרות לשמירת הכרטיס ריקה. הזינו את הכרטיס ב-Foody ובדקו את אישור התשלום. לאחר מכן בחרו **Verifone Checkout** ופתחו הזמנה שנייה. אישור הסל יפתח את קישור התשלום של Verifone. שני המסלולים משתמשים בפרטי החיבור ובחוזים שכבר נשמרו. לארנקים ולכרטיסים שמורים יש הגדרות נפרדות. לפני החלפת סביבה או הסרת מפתח, בחרו Verifone Checkout, החליפו או הסירו את המפתח ושמרו.
 
 <span id="configure-verifone-direct-wallets" />
 

@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-11-15'
+updatedAt: '2026-11-18'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -56,7 +56,7 @@ Deploy and validate the restaurant-scoped API migrations and routes before enabl
 
 ## Verify one-time Verifone.js sales in CST
 
-Apply migration 317 before using the Backoffice card form settings. The public capability and capture key are restaurant-scoped. A payment attempt requires ownership of the order and the keyed CST configuration. Foody records the amount and a unique idempotency key before calling card SALE. Verify the operation, amount, currency and merchant reference through transaction readback before checking fulfillment. If the response is lost, reconcile by transaction ID or by confirmed technical reversal. Check the ABS identity and CVV rules with a Verifone CST card, and verify Invoice4U issuance where configured. Live use needs a production key and contract, approval of the 3DS requirements with Verifone, and an assessment of the SAQ A-EP obligations described in the Verifone.js documentation.
+Apply migration 317 before using the Backoffice card form settings. The public capability and capture key are restaurant-scoped. A payment attempt requires ownership of the order and the keyed CST configuration. Foody records the amount and a unique idempotency key before calling card SALE. Verify the operation, amount, currency and merchant reference through transaction readback before checking fulfillment. If the response is lost, reconcile by transaction ID or by confirmed technical reversal. Check the ABS identity and CVV rules with a Verifone CST card, and verify Invoice4U issuance where configured. Live use needs a production key and contract, approval of the 3DS requirements with Verifone, and an assessment of the SAQ A-EP obligations described in the Verifone.js documentation. In versions offering Card payment flow, test a second order after selecting Verifone Checkout. Verify that Foody opens the hosted link and that the selection for another restaurant stays the same.
 
 <span id="verifone-direct-wallet-contract" />
 
