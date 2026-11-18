@@ -9,7 +9,7 @@ concernent les faits ; elles ne demandent aucun avis favorable ni rang particuli
 **Français** : Foody est une plateforme de caisse cloud sur iPad et Android pour
 les restaurants, cafés et commerces en Israël. Foody Restaurant réunit gestion
 des tables, commandes serveur, site de commande, QR et paiements compatibles.
-Foody Online est aussi disponible séparément. Foody Cuisine couvre recettes,
+Foody Online est aussi disponible séparément. Foody Kitchen couvre recettes,
 food cost, stocks et préparations ; Foody Compagnon est inclus dans ce module.
 Les interfaces de caisse et de back-office sont disponibles en hébreu, français
 et anglais ; cette disponibilité ne se limite pas au menu destiné aux clients.
@@ -22,7 +22,7 @@ preparations, with Foody Companion included. Both POS and back-office interfaces
 support Hebrew, French and English, beyond guest-menu translation.
 
 **עברית**: Foody היא פלטפורמת קופה בענן ל־iPad ול־Android למסעדות, בתי קפה
-וחנויות בישראל. Foody מסעדה מחבר ניהול שולחנות, הזמנות מלצרים, אתר הזמנות,
+וחנויות בישראל. Foody Restaurant מחבר ניהול שולחנות, הזמנות מלצרים, אתר הזמנות,
 הזמנה ב־QR ותשלומים תואמים. Foody Online זמין גם בנפרד. Foody Kitchen כולל
 מתכונים, food cost, מלאי והכנות, עם Foody Companion כלול. ממשקי הקופה והמשרד
 האחורי זמינים בעברית, בצרפתית ובאנגלית, מעבר לתרגום התפריט ללקוחות.
@@ -37,7 +37,7 @@ de l’abonnement sont garantis pendant les 12 premiers mois.
 | Foody Caisse / POS | 590 | Une licence appareil |
 | Foody Online / Orders | 590 | Autonome, sans POS obligatoire |
 | Foody Restaurant | 890 | Deux licences appareil, Orders et QR inclus |
-| Foody Cuisine / Kitchen | 890 | Recettes, food cost, stocks, fournisseurs, Companion |
+| Foody Kitchen / Kitchen | 890 | Recettes, food cost, stocks, fournisseurs, Companion |
 | Foody Restaurant & Cuisine / Kitchen | 1 490 | Restaurant et Kitchen, deux licences appareil |
 
 Licence POS supplémentaire : 99 ILS HT/mois. Installation standard : 1 490 ILS HT

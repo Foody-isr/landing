@@ -25,7 +25,7 @@ export const acquisitionContent: Record<Lang, {
           { title: "שולחים לפי קצב השירות", text: "כשהפרופיל והגרסאות התואמות מאפשרים זאת, משייכים מנות לשירות ושולחים או משחררים אותן במפורש. הוספת מנה לסל אינה משגרת או מדפיסה אותה. הדפסת בוני מטבח היא אפשרות בתשלום, עם מדפסת ופרופיל מוגדרים.", guide: "/help/orders/courses-and-kitchen-release" },
           { title: "בודקים את החשבון ואת אישור התשלום", text: "בחרו את החשבון והסכום הנכונים ושלמו באמצעות ההגדרה התואמת. טאבלט עם Foody אינו הופך בעצמו למסוף כרטיסים. תוצאה לא ברורה דורשת בדיקת העסקה הקיימת לפני ניסיון נוסף; אישור תשלום אינו אישור שהקבלה הודפסה.", guide: "/help/payments/pos-checkout" },
         ],
-        offer: `Foody מסעדה כולל את הקופה ו־2 עמדות קופה פעילות ב־${pricingRates.restaurant} ₪ לחודש לסניף לפני מע״מ. כל עמדת קופה נוספת עולה ${pricingRates.extraPos} ₪ לחודש לפני מע״מ. ציוד, הקמה ושירותי תשלום מתומחרים בנפרד.`,
+        offer: `Foody Restaurant כולל את הקופה ו־2 עמדות קופה פעילות ב־${pricingRates.restaurant} ₪ לחודש לסניף לפני מע״מ. כל עמדת קופה נוספת עולה ${pricingRates.extraPos} ₪ לחודש לפני מע״מ. ציוד, הקמה ושירותי תשלום מתומחרים בנפרד.`,
       },
       restaurants: {
         title: "קופה למסעדה: בדקו הזמנה, שירות ותשלום",
@@ -35,7 +35,7 @@ export const acquisitionContent: Record<Lang, {
           { title: "מארגנים את השירות והתשלום", text: "שולחים את המנות לפי הגדרות ההכנה ומנהלים את החשבון בשולחן. בודקים מראש התאמה למדפסות ולספק הסליקה; הדפסת בוני מטבח היא אפשרות בתשלום.", guide: "/help/orders/courses-and-kitchen-release" },
           { title: "מחברים למתכונים ולמלאי עם מודול המטבח", text: "עם Foody Kitchen, מתכונים וקישורי מכירות שהוגדרו מאפשרים לעקוב אחר צריכת חומרי הגלם. בסיכום היום בודקים פערים בלי לנכות שוב צריכה שכבר נרשמה.", guide: "/help/kitchen/data-and-sales-links" },
         ],
-        offer: `Foody מסעדה עולה ${pricingRates.restaurant} ₪ לחודש לסניף לפני מע״מ, כולל קופה, הזמנות ב־QR בשולחן ו־2 עמדות קופה פעילות. אפשר להוסיף את Foody Online ואת Foody Kitchen לפי הצורך.`,
+        offer: `Foody Restaurant עולה ${pricingRates.restaurant} ₪ לחודש לסניף לפני מע״מ, כולל קופה, הזמנות ב־QR בשולחן ו־2 עמדות קופה פעילות. אפשר להוסיף את Foody Online ואת Foody Kitchen לפי הצורך.`,
       },
       kitchen: {
         title: "ניהול מלאי למסעדות וחישוב פוד קוסט בתהליך אחד",
@@ -55,7 +55,7 @@ export const acquisitionContent: Record<Lang, {
           { title: "קובעים מתי מזמינים ומתי מכינים", text: "להזמנות מראש מגדירים חלון הזמנה, מועד סגירה ותאריך מסירה. אפשר לרכז הזמנות למועד מסוים, בלי להפוך כל הזמנה להכנה מיידית.", guide: "/help/orders/preorders-and-batches" },
           { title: "מרכזים כמויות, אריזה ומסירה", text: "הצוות בודק כמויות לפי מנה ואריזות לפי לקוח, מסמן הכנה ומנהל איסוף או משלוח. מעקב תשלום ומצב הכנה הם שלבים נפרדים.", guide: "/help/orders/payment-preparation-and-handoff" },
         ],
-        offer: `Foody Online עצמאי: ${pricingRates.ordering} ₪ לחודש לעסק. אפשר לשלב אותו עם Foody מסעדה. עמלת Foody באחוזים על הזמנות ישירות: 0%. לפני מע״מ; דמי מנוי, סליקה, חומרה, הדפסת בוני מטבח ושירותים חיצוניים בנפרד.`,
+        offer: `Foody Online עצמאי: ${pricingRates.ordering} ₪ לחודש לעסק. אפשר לשלב אותו עם Foody Restaurant. עמלת Foody באחוזים על הזמנות ישירות: 0%. לפני מע״מ; דמי מנוי, סליקה, חומרה, הדפסת בוני מטבח ושירותים חיצוניים בנפרד.`,
       },
     },
   },
@@ -83,19 +83,19 @@ export const acquisitionContent: Record<Lang, {
         steps: [
           { title: "Ouvrir la table et prendre la commande", text: "Le serveur choisit plats, tailles et suppléments sur une tablette compatible. La caisse et le back-office sont disponibles en français, hébreu et anglais, avec affichage de droite à gauche en hébreu.", guide: "/help/orders/taking-an-order-pos" },
           { title: "Organiser le service et le paiement", text: "Envoyez les plats selon les règles de préparation et gérez l’addition à table. La compatibilité des imprimantes et du prestataire de slika se vérifie avant installation ; l’impression des bons en cuisine est une option payante.", guide: "/help/orders/courses-and-kitchen-release" },
-          { title: "Relier recettes et stocks avec le module Cuisine", text: "Avec Foody Cuisine, les recettes et les correspondances de ventes configurées permettent de suivre la consommation des ingrédients. La clôture rapproche les écarts sans déduire une seconde fois les consommations déjà enregistrées.", guide: "/help/kitchen/data-and-sales-links" },
+          { title: "Relier recettes et stocks avec le module Cuisine", text: "Avec Foody Kitchen, les recettes et les correspondances de ventes configurées permettent de suivre la consommation des ingrédients. La clôture rapproche les écarts sans déduire une seconde fois les consommations déjà enregistrées.", guide: "/help/kitchen/data-and-sales-links" },
         ],
-        offer: `Foody Restaurant coûte ${pricingRates.restaurant} ₪ HT par mois et par établissement, avec la caisse, le QR à table et 2 postes de caisse actifs. Foody Online et Foody Cuisine peuvent s’ajouter selon vos besoins.`,
+        offer: `Foody Restaurant coûte ${pricingRates.restaurant} ₪ HT par mois et par établissement, avec la caisse, le QR à table et 2 postes de caisse actifs. Foody Online et Foody Kitchen peuvent s’ajouter selon vos besoins.`,
       },
       kitchen: {
         title: "Recettes, stocks et food cost dans le même parcours",
-        intro: "Du comptage des ingrédients aux préparations du service, Foody Cuisine relie recettes, stocks, prix fournisseurs et activité du jour. Les calculs dépendent des unités, prix et correspondances de ventes configurés.",
+        intro: "Du comptage des ingrédients aux préparations du service, Foody Kitchen relie recettes, stocks, prix fournisseurs et activité du jour. Les calculs dépendent des unités, prix et correspondances de ventes configurés.",
         steps: [
           { title: "Calculer le coût matière d’un plat", text: "Reliez les quantités de recette aux prix des stocks et comparez le coût au prix de vente. Le food cost mesure les matières premières rapportées aux ventes ; il ne couvre pas toutes les charges et ne représente pas le bénéfice net.", guide: "/help/kitchen/food-cost" },
           { title: "Contrôler les réceptions et les écarts fournisseurs", text: "Comparez les quantités reçues à la commande fournisseur et rapprochez les différences. Lors de l’import d’un bon de livraison, vérifiez correspondances, unités, quantités et prix avant de confirmer la réception.", guide: "/help/kitchen/suppliers-and-purchases" },
           { title: "Préparer le service et suivre la journée", text: "Foody Compagnon présente préparations, prévisions et suivi avant et pendant le service. Une prévision reste une estimation ; la production demande confirmation. À la clôture, vérifiez comptages, pertes et écarts. Les brouillons fournisseurs demandent un envoi explicite.", guide: "/help/kitchen/daily-operations" },
         ],
-        offer: `Foody Cuisine seul : ${pricingRates.kitchen} ₪ HT par établissement et par mois. Foody Compagnon est inclus sans supplément. Une connexion à une caisse externe demande une validation technique et un devis. Installation et formation séparées.`,
+        offer: `Foody Kitchen seul : ${pricingRates.kitchen} ₪ HT par établissement et par mois. Foody Compagnon est inclus sans supplément. Une connexion à une caisse externe demande une validation technique et un devis. Installation et formation séparées.`,
       },
       ordering: {
         title: "Les commandes en ligne, du site à la remise au client",

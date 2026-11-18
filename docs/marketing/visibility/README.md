@@ -18,7 +18,7 @@ vérification en développement. Aucun classement ni délai d’apparition n’e
   signalées comme non confirmées indépendamment. Les devis concurrents,
   performances et certifications ne sont pas inventés.
   Son ouverture met en avant commandes directes sans commission Foody, coût
-  matière/stocks/fournisseurs et écarts dans Foody Cuisine, puis Compagnon pour
+  matière/stocks/fournisseurs et écarts dans Foody Kitchen, puis Compagnon pour
   les préparations, le service et la clôture. L’exemple de commission à 3 % est
   explicitement hypothétique et sans attribution à Tabit. Le tableau distingue
   écran de préparation, gestion économique de cuisine et assistant ; les
