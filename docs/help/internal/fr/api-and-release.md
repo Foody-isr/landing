@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-11-18'
+updatedAt: '2026-11-19'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -38,7 +38,7 @@ Un superadmin ouvre Restaurant > Payment > Verifone dans Backoffice et enregistr
 
 ## Rattacher un thème Checkout créé dans Verifone Central
 
-Dans Verifone Central, ouvrez Administration > Checkout Themes et enregistrez un thème dans l’organisation et l’environnement Verifone du restaurant (CST ou production). Dans le Backoffice, ouvrez Restaurant > Payment > Verifone en tant que superadmin et enregistrez la configuration de paiement. Sous Hosted payment page appearance, saisissez le nom exact ou l’UUID dans Verifone theme name or ID, puis cliquez sur Link Verifone theme. Si plusieurs thèmes portent le même nom, saisissez l’UUID. Foody vérifie l’organisation et l’environnement et applique le thème sélectionné aux nouveaux liens Checkout. Pour modifier le thème, enregistrez vos changements dans Verifone Central et vérifiez le rendu sur un nouveau lien de test dans l’environnement autorisé. Pour utiliser le thème par défaut du compte Verifone, décochez Use the selected Checkout theme et enregistrez la configuration de paiement.
+Dans Verifone Central, ouvrez Administration > Checkout Themes et enregistrez un thème dans l’organisation et l’environnement Verifone du restaurant (CST ou production). Dans le Backoffice, ouvrez Restaurant > Payment > Verifone en tant que superadmin et enregistrez la configuration de paiement. Sous Hosted payment page appearance, saisissez le nom exact ou l’UUID dans Verifone theme name or ID, puis cliquez sur Link Verifone theme. Si plusieurs thèmes portent le même nom, saisissez l’UUID. Foody vérifie l’organisation et l’environnement et applique le thème sélectionné aux nouveaux liens Checkout. Pour modifier le thème, enregistrez vos changements dans Verifone Central et vérifiez le rendu sur un nouveau lien de test dans l’environnement autorisé. Pour utiliser le thème par défaut du compte Verifone, décochez Use the selected Checkout theme et enregistrez la configuration de paiement. Si le thème sélectionné a été supprimé dans CST, rattachez un thème disponible ou utilisez celui du compte. Pour un thème créé depuis le site du restaurant, Synchronize published logo and colors vérifie sa présence chez Verifone et le recrée si nécessaire.
 
 <span id="weight-hold-margin" />
 
@@ -56,7 +56,7 @@ Déployez et validez les migrations et routes API liées au restaurant avant d'a
 
 ## Vérifier les paiements ponctuels Verifone.js dans CST
 
-Appliquez la migration 317 avant d’utiliser les réglages Backoffice du formulaire carte. La capacité publique et la clé de chiffrement sont liées au restaurant. Une tentative exige un accès vérifié à la commande et la configuration CST de ce restaurant. Foody enregistre le montant et une clé d’idempotence unique avant la vente. Relisez la transaction et vérifiez l’opération, le montant, la devise et la référence avant de contrôler la préparation. Si la réponse se perd, rapprochez la transaction par son identifiant ou attendez la confirmation de l’annulation technique. Vérifiez les exigences ABS de CVV et d’identité avec une carte CST Verifone, ainsi que l’émission Invoice4U si elle est configurée. L’activation en production nécessite les clés et contrats de production, la validation des exigences 3DS avec Verifone et l’évaluation des obligations SAQ A-EP décrites dans la documentation Verifone.js. Dans les versions proposant Card payment flow, testez aussi une seconde commande après avoir sélectionné Verifone Checkout. Vérifiez que Foody ouvre le lien hébergé et que le choix du second restaurant reste identique.
+Appliquez la migration 317 avant d’utiliser les réglages Backoffice du formulaire carte. La capacité publique et la clé de chiffrement sont liées au restaurant. Une tentative exige un accès vérifié à la commande et la configuration CST de ce restaurant. Foody enregistre le montant et une clé d’idempotence unique avant la vente. Relisez la transaction et vérifiez l’opération, le montant, la devise et la référence avant de contrôler la préparation. Si la réponse se perd, rapprochez la transaction par son identifiant ou attendez la confirmation de l’annulation technique. Vérifiez les exigences ABS de CVV et d’identité avec une carte CST Verifone, ainsi que l’émission Invoice4U si elle est configurée. L’activation en production nécessite les clés et contrats de production, la validation des exigences 3DS avec Verifone et l’évaluation des obligations SAQ A-EP décrites dans la documentation Verifone.js. Dans les versions proposant Card payment flow, testez aussi une seconde commande après avoir sélectionné Verifone Checkout. Vérifiez que Foody ouvre le lien hébergé et que le choix du second restaurant reste identique. Pour un client connecté qui choisit d’enregistrer sa carte, vérifiez une seule vente du montant total avec token_preference et le token scope du restaurant. Après vérification de la vente auprès de Verifone, le jeton réutilisable est lié au compte client et au restaurant. Rejouez la notification de test et vérifiez qu’il existe toujours un seul paiement et une seule carte enregistrée.
 
 <span id="verifone-direct-wallet-contract" />
 

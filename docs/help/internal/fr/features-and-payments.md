@@ -7,7 +7,7 @@ apps: both
 tags:
   - internal
   - backoffice-entitlements
-updatedAt: '2026-11-18'
+updatedAt: '2026-11-19'
 featureId: backoffice-entitlements
 audience: internal
 releaseStatus: available
@@ -40,13 +40,13 @@ Un superadmin ouvre Restaurant > Payment > Verifone dans Backoffice et enregistr
 
 ## Rattacher un thème Checkout créé dans Verifone Central
 
-Dans Verifone Central, ouvrez Administration > Checkout Themes et enregistrez un thème dans l’organisation et l’environnement Verifone du restaurant (CST ou production). Dans le Backoffice, ouvrez Restaurant > Payment > Verifone en tant que superadmin et enregistrez la configuration de paiement. Sous Hosted payment page appearance, saisissez le nom exact ou l’UUID dans Verifone theme name or ID, puis cliquez sur Link Verifone theme. Si plusieurs thèmes portent le même nom, saisissez l’UUID. Foody vérifie l’organisation et l’environnement et applique le thème sélectionné aux nouveaux liens Checkout. Pour modifier le thème, enregistrez vos changements dans Verifone Central et vérifiez le rendu sur un nouveau lien de test dans l’environnement autorisé. Pour utiliser le thème par défaut du compte Verifone, décochez Use the selected Checkout theme et enregistrez la configuration de paiement.
+Dans Verifone Central, ouvrez Administration > Checkout Themes et enregistrez un thème dans l’organisation et l’environnement Verifone du restaurant (CST ou production). Dans le Backoffice, ouvrez Restaurant > Payment > Verifone en tant que superadmin et enregistrez la configuration de paiement. Sous Hosted payment page appearance, saisissez le nom exact ou l’UUID dans Verifone theme name or ID, puis cliquez sur Link Verifone theme. Si plusieurs thèmes portent le même nom, saisissez l’UUID. Foody vérifie l’organisation et l’environnement et applique le thème sélectionné aux nouveaux liens Checkout. Pour modifier le thème, enregistrez vos changements dans Verifone Central et vérifiez le rendu sur un nouveau lien de test dans l’environnement autorisé. Pour utiliser le thème par défaut du compte Verifone, décochez Use the selected Checkout theme et enregistrez la configuration de paiement. Si le thème sélectionné a été supprimé dans CST, rattachez un thème disponible ou utilisez celui du compte. Pour un thème créé depuis le site du restaurant, Synchronize published logo and colors vérifie sa présence chez Verifone et le recrée si nécessaire.
 
 <span id="configure-verifone-cst-card-form" />
 
 ## Choisir le parcours carte Verifone d’un restaurant
 
-Dans le Backoffice, ouvrez Restaurants → fiche du restaurant → Payment. Pour comparer les parcours, choisissez Verifone Cloud (GreenBox) et CST Sandbox. Sous Verifone.js encryption key, enregistrez une fois la Public key et son Public key alias pour cette organisation avec Save Payment Config. Sous Card payment flow, sélectionnez **Foody · Verifone.js**. Le choix est enregistré immédiatement pour ce restaurant. Ouvrez une nouvelle commande prépayée en ILS, à montant fixe, en retrait ou en livraison. Utilisez une nouvelle carte de test CST et laissez la case d’enregistrement décochée. Saisissez la carte dans Foody et vérifiez la confirmation. Sélectionnez ensuite **Verifone Checkout** et ouvrez une deuxième commande. Après confirmation du panier, Foody ouvre le lien vers la page de paiement Verifone. Les deux parcours réutilisent les identifiants et contrats enregistrés. Les wallets et les cartes enregistrées ont leurs propres réglages. Pour changer d’environnement ou retirer la clé, sélectionnez d’abord Verifone Checkout, puis remplacez ou retirez la clé et enregistrez les réglages.
+Dans le Backoffice, ouvrez Restaurants → fiche du restaurant → Payment. Pour comparer les parcours, choisissez Verifone Cloud (GreenBox) et CST Sandbox. Sous Verifone.js encryption key, enregistrez une fois la Public key et son Public key alias pour cette organisation avec Save Payment Config. Sous Card payment flow, sélectionnez **Foody · Verifone.js**. Le choix est enregistré immédiatement pour ce restaurant. Ouvrez une nouvelle commande prépayée en ILS, à montant fixe, en retrait ou en livraison. Utilisez une nouvelle carte de test CST. Avec un compte client connecté, testez également l’enregistrement de la carte après avoir saisi ses coordonnées. Confirmez et vérifiez un seul paiement du montant total dans Foody. Sélectionnez ensuite **Verifone Checkout** et ouvrez une deuxième commande. Après confirmation du panier, Foody ouvre le lien vers la page de paiement Verifone. Les deux parcours réutilisent les identifiants et contrats enregistrés. Les wallets et les cartes enregistrées ont leurs propres réglages. Pour changer d’environnement ou retirer la clé, sélectionnez d’abord Verifone Checkout, puis remplacez ou retirez la clé et enregistrez les réglages.
 
 <span id="configure-verifone-direct-wallets" />
 

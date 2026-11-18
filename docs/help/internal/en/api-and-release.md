@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-11-18'
+updatedAt: '2026-11-19'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -38,7 +38,7 @@ A superadmin opens Restaurant > Payment > Verifone in Backoffice and saves payme
 
 ## Link a Checkout theme from Verifone Central
 
-In Verifone Central, open Administration > Checkout Themes and save a theme for the restaurant’s Verifone organization and environment (CST or production). As a superadmin, open Restaurant > Payment > Verifone in Backoffice and save the payment configuration. Under Hosted payment page appearance, enter the exact name or UUID in Verifone theme name or ID, then choose Link Verifone theme. If several themes have the same name, enter the UUID. Foody verifies the organization and environment and applies the selected theme to new Checkout links. To edit the theme, save your changes in Verifone Central and check the appearance on a new test link in the approved environment. To use the Verifone account default, clear Use the selected Checkout theme and save the payment configuration.
+In Verifone Central, open Administration > Checkout Themes and save a theme for the restaurant’s Verifone organization and environment (CST or production). As a superadmin, open Restaurant > Payment > Verifone in Backoffice and save the payment configuration. Under Hosted payment page appearance, enter the exact name or UUID in Verifone theme name or ID, then choose Link Verifone theme. If several themes have the same name, enter the UUID. Foody verifies the organization and environment and applies the selected theme to new Checkout links. To edit the theme, save your changes in Verifone Central and check the appearance on a new test link in the approved environment. To use the Verifone account default, clear Use the selected Checkout theme and save the payment configuration. If an assigned theme was deleted in CST, link an available theme or use the account default. For a theme created from the restaurant website, Synchronize published logo and colors checks the remote theme and recreates it when missing.
 
 <span id="weight-hold-margin" />
 
@@ -56,7 +56,7 @@ Deploy and validate the restaurant-scoped API migrations and routes before enabl
 
 ## Verify one-time Verifone.js sales in CST
 
-Apply migration 317 before using the Backoffice card form settings. The public capability and capture key are restaurant-scoped. A payment attempt requires ownership of the order and the keyed CST configuration. Foody records the amount and a unique idempotency key before calling card SALE. Verify the operation, amount, currency and merchant reference through transaction readback before checking fulfillment. If the response is lost, reconcile by transaction ID or by confirmed technical reversal. Check the ABS identity and CVV rules with a Verifone CST card, and verify Invoice4U issuance where configured. Live use needs a production key and contract, approval of the 3DS requirements with Verifone, and an assessment of the SAQ A-EP obligations described in the Verifone.js documentation. In versions offering Card payment flow, test a second order after selecting Verifone Checkout. Verify that Foody opens the hosted link and that the selection for another restaurant stays the same.
+Apply migration 317 before using the Backoffice card form settings. The public capability and capture key are restaurant-scoped. A payment attempt requires ownership of the order and the keyed CST configuration. Foody records the amount and a unique idempotency key before calling card SALE. Verify the operation, amount, currency and merchant reference through transaction readback before checking fulfillment. If the response is lost, reconcile by transaction ID or by confirmed technical reversal. Check the ABS identity and CVV rules with a Verifone CST card, and verify Invoice4U issuance where configured. Live use needs a production key and contract, approval of the 3DS requirements with Verifone, and an assessment of the SAQ A-EP obligations described in the Verifone.js documentation. In versions offering Card payment flow, test a second order after selecting Verifone Checkout. Verify that Foody opens the hosted link and that the selection for another restaurant stays the same. For a signed-in customer who selects card saving, verify one full-amount card sale with token_preference and the restaurant’s token scope. The reuse token is bound to the customer and restaurant after authoritative sale verification. Check that retrying the same notification preserves a single payment and saved card.
 
 <span id="verifone-direct-wallet-contract" />
 

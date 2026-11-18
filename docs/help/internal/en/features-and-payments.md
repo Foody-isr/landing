@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - backoffice-entitlements
-updatedAt: '2026-11-18'
+updatedAt: '2026-11-19'
 featureId: backoffice-entitlements
 audience: internal
 releaseStatus: available
@@ -38,13 +38,13 @@ A superadmin opens Restaurant > Payment > Verifone in Backoffice and saves payme
 
 ## Link a Checkout theme from Verifone Central
 
-In Verifone Central, open Administration > Checkout Themes and save a theme for the restaurant’s Verifone organization and environment (CST or production). As a superadmin, open Restaurant > Payment > Verifone in Backoffice and save the payment configuration. Under Hosted payment page appearance, enter the exact name or UUID in Verifone theme name or ID, then choose Link Verifone theme. If several themes have the same name, enter the UUID. Foody verifies the organization and environment and applies the selected theme to new Checkout links. To edit the theme, save your changes in Verifone Central and check the appearance on a new test link in the approved environment. To use the Verifone account default, clear Use the selected Checkout theme and save the payment configuration.
+In Verifone Central, open Administration > Checkout Themes and save a theme for the restaurant’s Verifone organization and environment (CST or production). As a superadmin, open Restaurant > Payment > Verifone in Backoffice and save the payment configuration. Under Hosted payment page appearance, enter the exact name or UUID in Verifone theme name or ID, then choose Link Verifone theme. If several themes have the same name, enter the UUID. Foody verifies the organization and environment and applies the selected theme to new Checkout links. To edit the theme, save your changes in Verifone Central and check the appearance on a new test link in the approved environment. To use the Verifone account default, clear Use the selected Checkout theme and save the payment configuration. If an assigned theme was deleted in CST, link an available theme or use the account default. For a theme created from the restaurant website, Synchronize published logo and colors checks the remote theme and recreates it when missing.
 
 <span id="configure-verifone-cst-card-form" />
 
 ## Choose a restaurant’s Verifone card payment flow
 
-In Backoffice open Restaurants → restaurant → Payment. To compare both flows choose Verifone Cloud (GreenBox) and CST Sandbox. Under Verifone.js encryption key, save the organization’s Public key and Public key alias once using Save Payment Config. Under Card payment flow select **Foody · Verifone.js**. The selection saves immediately for this restaurant. Open a new prepaid, fixed-price pickup or delivery order in ILS. Use a new CST test card and leave card saving unchecked. Enter the card in Foody and verify confirmation. Next select **Verifone Checkout** and open a second order. Confirming the basket opens the Verifone payment link. Both flows reuse the saved credentials and contracts. Wallets and saved cards have separate settings. Before changing environment or removing the key, select Verifone Checkout, then replace or remove the key and save the settings.
+In Backoffice open Restaurants → restaurant → Payment. To compare both flows choose Verifone Cloud (GreenBox) and CST Sandbox. Under Verifone.js encryption key, save the organization’s Public key and Public key alias once using Save Payment Config. Under Card payment flow select **Foody · Verifone.js**. The selection saves immediately for this restaurant. Open a new prepaid, fixed-price pickup or delivery order in ILS. Use a new CST test card. For a signed-in customer, also test selecting Save this card after entering its details. Confirm and verify a single full-amount payment in Foody. Next select **Verifone Checkout** and open a second order. Confirming the basket opens the Verifone payment link. Both flows reuse the saved credentials and contracts. Wallets and saved cards have separate settings. Before changing environment or removing the key, select Verifone Checkout, then replace or remove the key and save the settings.
 
 <span id="configure-verifone-direct-wallets" />
 
