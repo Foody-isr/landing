@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - backoffice-entitlements
-updatedAt: '2026-11-16'
+updatedAt: '2026-11-18'
 featureId: backoffice-entitlements
 audience: internal
 releaseStatus: available
@@ -92,8 +92,10 @@ To prepare the November 16 grid, choose **Load reviewed software offers**. This 
 
 Production publication updates public prices and new offers after the website cache refreshes, about one minute. It does not charge a customer, issue an invoice or alter the prices or rights of accepted contracts. Review and publication remain separate actions; a concurrent revision blocks a stale save.
 
+Standard monthly prices have no minimum term. Each module or plan automatically previews an annual amount of 11 monthly prices for 12 months paid upfront. Additional licences and services keep their full cost. New quotes use this rule; historical documents and negotiated prices are not changed.
+
 <span id="commercial-documents-entry" />
 
 ## Prepare commercial documents
 
-In the sandbox version of **Plans & modules**, open **Quotes & orders** to compose PDF quotations and orders using plans, modules, equipment and fees. This flow preserves existing contracts. Consult the internal Foody quotations and sales orders procedure for issuer setup, schedules, separate totals and PDF finalization. The **Quotes & orders** tab is hidden in production: catalogue management is available independently of the quotation and billing pilot.
+In **Plans & modules**, open **Quotes & orders** as a superadmin in development or production. Compose quotation and sales-order PDFs using catalogue modules, hardware and fees. Existing contracts are preserved. See the internal Foody quotations and orders guide for schedules, cumulative prepaid benefits, separate totals and finalization. These documents do not collect payment or activate subscriptions.

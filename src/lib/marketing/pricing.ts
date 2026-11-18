@@ -1,5 +1,6 @@
 import type { Lang } from "@/lib/seo";
 import offerGrid from "./offer-grid.json";
+import { billingCopy } from "./pricing-billing";
 
 /** Software and setup prices in ILS, excluding VAT. */
 export const pricingRates = offerGrid.rates;
@@ -145,7 +146,7 @@ export const pricing: Record<Lang, PricingCopy> = {
     faq: [
       { q: "Puis-je garder ma caisse ou mon site actuel ?", a: "Oui. Chaque module s’achète séparément. Si vous souhaitez connecter une caisse ou un site existant à Foody, nous vérifions la compatibilité et chiffrons l’intégration." },
       { q: "Que signifie 0 % de commission Foody ?", a: "Foody Commandes fonctionne au forfait mensuel. Foody ne prélève pas de pourcentage sur vos commandes directes. Les frais de paiement et les prestations externes se chiffrent séparément." },
-      { q: "Quel est l’engagement ?", a: "Les abonnements logiciels sont facturés chaque mois et résiliables avec un préavis de 30 jours. Le tarif de lancement de votre abonnement est garanti pendant les 12 premiers mois. Le matériel et les contrats de paiement ont leurs propres conditions." },
+      { q: billingCopy.fr.faqQuestion, a: billingCopy.fr.faqAnswer },
     ],
   },
   en: {
@@ -227,7 +228,7 @@ export const pricing: Record<Lang, PricingCopy> = {
     faq: [
       { q: "Can I keep my existing POS or website?", a: "Yes. You can buy each module separately. If you want to connect an existing POS or website to Foody, we check compatibility and quote the integration." },
       { q: "What does 0% Foody commission mean?", a: "Foody Orders has a fixed monthly subscription. Foody charges no percentage on your direct orders. Payment fees and external services are priced separately." },
-      { q: "What is the commitment?", a: "Software subscriptions are billed monthly and can be cancelled with 30 days’ notice. Your launch subscription price is guaranteed for the first 12 months. Hardware and payment services have separate terms." },
+      { q: billingCopy.en.faqQuestion, a: billingCopy.en.faqAnswer },
     ],
   },
   he: {
@@ -309,7 +310,7 @@ export const pricing: Record<Lang, PricingCopy> = {
     faq: [
       { q: "אפשר להישאר עם הקופה או האתר הקיימים?", a: "כן. אפשר לרכוש כל מודול בנפרד. אם תרצו לחבר קופה או אתר קיימים ל־Foody, נבדוק תאימות ונתמחר את החיבור." },
       { q: "מה המשמעות של 0% עמלת Foody?", a: "Foody הזמנות מחויב במנוי חודשי קבוע. Foody לא גובה אחוז מההזמנות הישירות שלכם. דמי תשלום ושירותים חיצוניים מתומחרים בנפרד." },
-      { q: "מהי תקופת ההתחייבות?", a: "מנויי התוכנה מחויבים מדי חודש ואפשר לבטל אותם בהודעה של 30 יום מראש. מחיר ההשקה של המנוי נשמר ב־12 החודשים הראשונים. לציוד ולשירותי התשלומים תנאים נפרדים." },
+      { q: billingCopy.he.faqQuestion, a: billingCopy.he.faqAnswer },
     ],
   },
 };

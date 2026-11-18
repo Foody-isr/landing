@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-11-16.
+Révision du relevé : 2026-11-18.
 
-114 fiches de fonctionnalités, 1020 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2640 fichiers applicatifs et 2319 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+114 fiches de fonctionnalités, 1021 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2642 fichiers applicatifs et 2319 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -13,7 +13,7 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 | foodyserver | 798 | 1017 | 4580500d4568 ; versioned |
 | foodyadmin | 819 | 837 | 4c76a261b685 ; versioned |
 | foodyweb | 385 | 200 | 714435da4953 ; versioned |
-| foodylanding | 158 | 31 | 3cf984d161b7 ; versioned |
+| foodylanding | 160 | 31 | b5c714dd98a6 ; versioned |
 | foodypos | 432 | 186 | cb0e5b5fe754 ; versioned |
 | foodybackoffice | 48 | 48 | c5f21ee1d14f ; versioned |
 
@@ -81,6 +81,7 @@ Identifiant : `getting-started-using-support`. Public : public. Disponibilité :
 Identifiant : `landing-offers`. Public : public. Disponibilité : available. Services : foodylanding.
 
 - [Comparer les offres publiques](../../src/content/help/fr/getting-started/offers-and-contact.mdx#offers)
+- [Comparer le paiement mensuel et annuel](../../src/content/help/fr/getting-started/offers-and-contact.mdx#billing-frequency)
 - [Demander une démonstration ou de l’aide](../../src/content/help/fr/getting-started/offers-and-contact.mdx#contact)
 - [Consulter la grille publiée](../../src/content/help/fr/getting-started/offers-and-contact.mdx#published-catalogue)
 

@@ -7,7 +7,7 @@ apps: both
 tags:
   - internal
   - backoffice-entitlements
-updatedAt: '2026-11-16'
+updatedAt: '2026-11-18'
 featureId: backoffice-entitlements
 audience: internal
 releaseStatus: available
@@ -94,8 +94,10 @@ Pour préparer la grille du 16 novembre, choisissez **Load reviewed software off
 
 La publication en production met à jour les tarifs publics et les nouvelles offres après renouvellement du cache du site, environ une minute. Elle ne débite aucun client, ne crée aucune facture et ne modifie ni les prix ni les droits des contrats déjà acceptés. La revue et la publication restent deux actions distinctes ; une version concurrente bloque la sauvegarde obsolète.
 
+Le prix mensuel standard est sans engagement minimum. L’aperçu annuel du module ou de la formule est calculé automatiquement à 11 mensualités pour 12 mois payés d’avance. Les licences supplémentaires et services restent au tarif complet. Cette règle figure dans les nouveaux devis ; les anciens documents et prix négociés ne sont pas modifiés.
+
 <span id="commercial-documents-entry" />
 
 ## Préparer les documents commerciaux
 
-Dans la version sandbox du module **Plans & modules**, ouvrez **Quotes & orders** pour composer des devis et bons de commande PDF à partir des formules, modules, matériels et frais. Ce parcours conserve les contrats existants. Consultez la procédure interne Devis et bons de commande Foody pour la configuration de l’émetteur, les échéanciers, les totaux séparés et la finalisation du PDF. L’onglet **Quotes & orders** est masqué en production : la gestion du catalogue y est disponible indépendamment du pilote de devis et de facturation.
+Dans **Plans & modules**, ouvrez **Quotes & orders** avec un compte superadmin en développement ou en production. Composez devis et commandes PDF avec les modules, matériels et frais du catalogue. Les contrats existants sont conservés. Consultez la procédure interne Devis et bons de commande Foody pour les échéances, les avantages prépayés cumulables, les totaux séparés et la finalisation. Ces documents ne prélèvent aucun paiement et n’activent aucun abonnement.
