@@ -456,7 +456,7 @@ for (const lang of ["he", "fr", "en"]) {
       if (lang === "fr") {
         const main = html.match(/<main[\s\S]*?<\/main>/)?.[0];
         assert.ok(
-          main?.includes("Foody Kitchen") && !main.includes("Foody Kitchen"),
+          main?.includes("Foody Kitchen") && !main.includes("Foody Cuisine"),
           `French kitchen branding is consistent: ${url}`,
         );
       }
