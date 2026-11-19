@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-11-19.
 
-114 fiches de fonctionnalités, 1039 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2691 fichiers applicatifs et 2338 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+114 fiches de fonctionnalités, 1040 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2692 fichiers applicatifs et 2338 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,11 +10,11 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyadmin | 824 | 835 | 7a5a533b7e6e ; versioned |
+| foodyadmin | 824 | 835 | 378f8b1b99ae ; versioned |
 | foodybackoffice | 54 | 49 | 619aa5734755 ; versioned |
 | foodylanding | 158 | 31 | bfba9b12634f ; versioned |
 | foodypos | 432 | 186 | 2e3b48d8f7ef ; versioned |
-| foodyserver | 836 | 1038 | 67fe7b1c6f05 ; versioned |
+| foodyserver | 837 | 1038 | 76b4b3f5667f ; versioned |
 | foodyweb | 387 | 199 | 937e7218a2de ; versioned |
 
 ## getting-started
@@ -199,6 +199,7 @@ Identifiant : `customers-loyalty-program`. Public : public. Disponibilité : ava
 - [Lire la vue d’ensemble](../../src/content/help/fr/customers/loyalty-program.mdx#overview)
 - [Préparer le programme](../../src/content/help/fr/customers/loyalty-program.mdx#configure)
 - [Activer ou suspendre les adhésions](../../src/content/help/fr/customers/loyalty-program.mdx#activate)
+- [Personnaliser la carte Wallet](../../src/content/help/fr/customers/loyalty-program.mdx#wallet-appearance)
 - [Ouvrir et ajouter sa carte de fidélité personnelle](../../src/content/help/fr/customers/loyalty-program.mdx#open-loyalty-card)
 - [Cumuler sur le site de commande du restaurant](../../src/content/help/fr/customers/loyalty-program.mdx#member-purchase)
 
