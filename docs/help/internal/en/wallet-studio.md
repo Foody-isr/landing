@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - customers
   - customers-wallet-studio
-updatedAt: '2026-11-18'
+updatedAt: '2026-11-19'
 featureId: customers-wallet-studio
 audience: internal
 releaseStatus: local-release-unverified
@@ -23,13 +23,13 @@ Use an account with access to restaurant settings. Saving, testing and publishin
 
 ## Save a private design
 
-Set the background color and the Apple text color. Choose a logo and a banner in PNG or JPEG, up to 1 MB each. Switch between Apple Wallet and Google Wallet to check the cropping. Select **Save draft**. If another editor saved a newer draft, reload it before retrying.
+Set the background and Apple text colors. Choose a PNG, JPEG or WebP logo and banner, each up to 10 MB. The Studio resizes them before saving. Keep the main subject near the center and check its crop in both previews. Turn off **Show restaurant name** to remove the name beside the Apple logo. Google keeps the program title. If an image cannot be opened, the message under the picker explains what to change. Select **Save draft**. If another editor saved a newer draft, reload it before retrying.
 
 <span id="apple-test" />
 
 ## Add a test card on iPhone
 
-On the saved design, select **Generate an Apple test card**, then **Download .pkpass**. Open the file on an iPhone and select **Add**. Check the logo, banner, colors and Test card label. The pass shows sample progress and a demonstration QR. If signing is unavailable, check the Apple signing configuration for the environment. The Google tab previews the artwork.
+On the saved design, select **Generate an Apple test card**, then **Download .pkpass**. Open the file on an iPhone and select **Add**. Check the logo, banner, colors and Test card label. The pass shows sample progress and a demonstration QR. If signing is unavailable, check the Apple signing configuration for the environment. The Google tab previews the artwork. Check the Powered by Foody caption near the QR code. Open the card details to follow the Foody link.
 
 <span id="publish-design" />
 
