@@ -1,39 +1,31 @@
 ---
-title: Fournisseurs de cartes et usages
-description: Foody Admin → Livraisons → Cartographie
+title: Adresses et cartes Google pour les livraisons
+description: 'Choisissez une suggestion Google, vérifiez le numéro et retrouvez l’arrêt sur la carte de la tournée.'
 apps: foodyadmin
 tags:
   - delivery
   - maps-usage
-updatedAt: '2026-11-18'
+updatedAt: '2026-11-19'
 featureId: maps-usage
 audience: public
 releaseStatus: available
 ---
-Foody Admin → Livraisons → Cartographie
+Livraisons et formulaire de livraison dans l’éditeur du site.
 
-<span id="provider" />
+<span id="storefront" />
 
-## Vérifier le fournisseur configuré
+## Régler les suggestions du site
 
-Consultez fournisseur actif et usages disponibles. Conservez les identifiants dans la configuration sécurisée prévue ; ne les collez jamais dans le chat. Lorsque Google est actif dans Cartes et itinéraires, les adresses de départ et de fin peuvent utiliser un point précis trouvé par Google même si Geoapify ne les localise pas. Enregistrez les paramètres avant le départ puis vérifiez le dernier trajet recalculé. Si Google est indisponible ou que son quota protégé est atteint et que l’autre fournisseur ne trouve pas un point, l’enregistrement ou le recalcul est bloqué et le plan précédent est conservé ; la destination finale n’est jamais omise silencieusement. Les points connus uniquement de Google sont affichés sur la carte Google et masqués lorsque la carte change de fournisseur. Choisissez une autre adresse précisément localisée ou réessayez au retour de Google.
+Dans l’éditeur du site, ouvrez le formulaire de commande en livraison. Activez ou désactivez l’autocomplétion des adresses, puis publiez le site. Lorsque le réglage est activé, la cliente peut choisir une suggestion Google. Elle peut aussi confirmer son numéro et sa ville manuellement. Les zones, tarifs et créneaux du restaurant s’appliquent.
 
-<span id="limits" />
+<span id="address" />
 
-## Respecter les limites d’usage
+## Corriger un arrêt
 
-Vérifiez limites de cartes, recherche d’adresses et itinéraires/optimisation avant une grande planification. Une offre commerciale n’active pas automatiquement un quota ni ne contourne une limite fournisseur.
+Dans Livraisons, ouvrez l’arrêt puis modifiez son adresse. Choisissez la suggestion Google dans la bonne ville. Si Google renvoie seulement la rue, vérifiez le numéro avant d’enregistrer. Vous pouvez enregistrer l’adresse même si le bâtiment reste à localiser. L’arrêt garde son affectation et la tournée indique que sa position est à préciser.
 
-Le tableau Google affiche les unités utilisées, le plafond mensuel et l’état de chaque service. L’onglet Geoapify présente ses propres compteurs. Changer de service ouvre les préférences ; choisissez un fournisseur et enregistrez si votre rôle le permet.
+<span id="route" />
 
-<span id="related-service-controls" />
+## Retrouver les arrêts sur la carte
 
-## Accès aux nouveaux réglages
-
-Paramètres → Consommation et quotas affiche les plafonds et consommations Google/Geoapify du restaurant, accessibles avec la permission de consulter ou modifier les paramètres. Les crédits de remplacement et les livraisons soumises à l’optimisation sont comptés séparément des requêtes. Foody ajuste les plafonds ; un changement ne remet pas les compteurs à zéro. Voir [les règles et le renouvellement](/fr/help/settings/api-usage-and-quotas).
-
-<span id="own-google-project" />
-
-## Préparer votre propre projet Google
-
-Pour préparer votre compte, votre facturation et les clés d’adresses, cartes et itinéraires, suivez le [guide Google étape par étape](/fr/help/delivery/google-account-and-api-keys). Le raccordement individuel nécessite une confirmation de Foody : cet écran ne permet pas de saisir des clés propres à l’établissement. Contactez d’abord Foody sans secret pour convenir du périmètre et d’un canal de remise sécurisé.
+Dans Livraisons, ouvrez la carte de la tournée pour voir les arrêts et le trajet routier. Si Google trouve la rue mais pas le bâtiment, vérifiez le numéro et la ville. Le calcul peut intégrer l’arrêt dès que le bâtiment ou son entrée confirmée est localisé.
