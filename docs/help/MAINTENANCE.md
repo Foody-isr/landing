@@ -1913,3 +1913,7 @@ source inventories are preserved from the existing Landing baseline: no source
 changes in those services. Shared API/translation/corpus files receive scoped
 no-impact reviews for features whose procedures are unchanged. WORKSPACE pins
 are local preparation only; pin the reviewed immutable Landing commit before CI.
+
+## Dispatch dates and correction of mistaken delivery reports (19 November 2026)
+
+The dispatch and linked staff, order and courier procedures cover the restaurant-local default date, access to upcoming plans and explicit review of each mistaken incident before a departure reset. Publish the three languages with the compatible API and Admin. Original reports remain in the audit history.
