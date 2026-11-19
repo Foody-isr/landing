@@ -51,7 +51,7 @@ releaseStatus: local-release-unverified
 
 ## קריאת נתוני שימוש
 
-פתחו את סעיף מדידת השימוש בחיוב. הוא מציג מונים נבחרים לפי חודש UTC עבור Maps ו־Geoapify, בקשות אימות ב־SMS, הודעות WhatsApp להזמנות ופעילות OpenAI ו־Claude שנמדדת. הכיסוי חלקי ולא נוצר חיוב.
+בחיוב פתחו את הצריכה שנמדדה כדי לראות בקשות אימות SMS, הודעות הזמנה ב־WhatsApp ופעילות נתמכת ב־OpenAI וב־Claude בחודש לפי UTC.
 
 <span id="modular-provisioning" />
 

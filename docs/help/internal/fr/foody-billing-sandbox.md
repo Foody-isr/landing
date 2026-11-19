@@ -51,7 +51,7 @@ Après confirmation du premier paiement et du mandat, ouvrez **Restaurants → r
 
 ## Lire l’usage mesuré
 
-Ouvrez la section d’usage mesuré dans Facturation. Elle affiche certains compteurs du mois UTC pour Maps et Geoapify, les demandes de vérification SMS, les messages WhatsApp de commande et les usages OpenAI et Claude suivis. Les compteurs sont partiels et ne déclenchent aucun débit.
+Dans Facturation, ouvrez la consommation observée pour consulter les demandes de vérification SMS, les messages de commande WhatsApp et l’activité OpenAI et Claude prise en charge pour le mois UTC.
 
 <span id="modular-provisioning" />
 
