@@ -23,7 +23,7 @@ Use an account with access to restaurant settings. Saving, testing and publishin
 
 ## Save a private design
 
-Set the background and Apple text colors. Choose a PNG, JPEG or WebP logo and banner, each up to 10 MB. The Studio resizes them before saving. Keep the main subject near the center and check its crop in both previews. Turn off **Show restaurant name** to remove the name beside the Apple logo. Google keeps the program title. If an image cannot be opened, the message under the picker explains what to change. Select **Save draft**. If another editor saved a newer draft, reload it before retrying.
+Set the background and Apple text colors. Choose a PNG, JPEG or WebP logo and banner, each up to 10 MB. Open **Frame banner** and choose **Entire image** to keep every edge visible or **Fill the frame** to crop. Adjust the zoom and drag in the preview, or use the horizontal and vertical sliders. Apple and Google share the settings until you enable **Use a separate Google frame** in the Google preview. On Apple, place the counter **Below the banner** or **On the banner**. New uploads retain their original file in the private draft. For an older banner, upload the original again if you need its full resolution. Turn off **Show restaurant name** to remove the name beside the Apple logo. Google keeps the program title. If an image cannot be opened, the message under the picker explains what to change. Select **Save draft**. If another editor saved a newer draft, reload it before retrying.
 
 <span id="apple-test" />
 

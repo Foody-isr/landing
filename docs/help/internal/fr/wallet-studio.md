@@ -23,7 +23,7 @@ Utilisez un compte ayant accès aux paramètres du restaurant. Enregistrer, test
 
 ## Enregistrer un visuel privé
 
-Choisissez la couleur de fond et la couleur du texte Apple. Importez un logo et une bannière en PNG, JPEG ou WebP, jusqu’à 10 Mo chacun. Le Studio les redimensionne avant l’enregistrement. Centrez le sujet principal et vérifiez le cadrage dans les deux aperçus. Désactivez **Afficher le nom du restaurant** pour retirer le nom à côté du logo Apple. Google conserve le titre du programme. Si une image est refusée, consultez le message sous le champ. Cliquez sur **Enregistrer le brouillon**. Si une autre personne a enregistré une version plus récente, rechargez-la avant de réessayer.
+Choisissez la couleur de fond et la couleur du texte Apple. Importez un logo et une bannière en PNG, JPEG ou WebP, jusqu’à 10 Mo chacun. Ouvrez **Cadrer la bannière**. Choisissez **Image entière** pour voir tous les bords ou **Remplir le cadre** pour recadrer. Réglez le zoom et déplacez l’image dans l’aperçu ou utilisez les curseurs de position. Apple et Google partagent les réglages. Pour les ajuster séparément, activez **Cadrage propre à Google** dans l’aperçu Google. Sur Apple, placez le compteur **Sous la bannière** ou **Sur la bannière**. Le brouillon privé conserve le fichier original des nouveaux imports. Pour retrouver la pleine résolution d’une ancienne bannière, importez à nouveau son original. Désactivez **Afficher le nom du restaurant** pour retirer le nom à côté du logo Apple. Google conserve le titre du programme. Si une image est refusée, consultez le message sous le champ. Cliquez sur **Enregistrer le brouillon**. Si une autre personne a enregistré une version plus récente, rechargez-la avant de réessayer.
 
 <span id="apple-test" />
 

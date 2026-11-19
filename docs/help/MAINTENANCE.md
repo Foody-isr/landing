@@ -131,6 +131,9 @@ Release the API with migration 322 before the matching Admin and guest Web.
 For the restaurant name setting, apply migration 334 with the API before
 releasing the matching Studio. Check a banner, the name setting and the Foody
 attribution on a test pass before publishing the restaurant's design.
+Release migration 335 and the API before the banner framing controls. Verify
+the private original, independent Wallet images and Apple counter position
+on an isolated draft and its test pass before promoting the Studio.
 
 ## CST terminal fleet and payment operations (9 November 2026)
 
