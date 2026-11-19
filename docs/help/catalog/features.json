@@ -15383,9 +15383,9 @@
           "he": "בדיקת הנפקה של כרטיסי מועדון אישיים"
         },
         "instructions": {
-          "en": "Apply migration 322 with the API release. Publish a saved Wallet design for the test restaurant and enable its loyalty program. Enable the Wallet API and the intended provider for the environment. Test issuance with an authenticated member and repeat it to verify stable card identity. With Google enabled, verify that the API serves only published, versioned artwork. Check Apple iPhone and Google device acceptance with their respective provider credentials.",
-          "fr": "Appliquez la migration 322 avec la livraison de l’API. Publiez un visuel Wallet enregistré pour le restaurant de test et activez son programme de fidélité. Activez l’API Wallet et le fournisseur prévu pour l’environnement. Demandez une carte avec un compte membre authentifié et répétez l’opération pour vérifier la stabilité de son identifiant. Lorsque Google est activé, vérifiez que l’API sert uniquement les images des versions publiées. Vérifiez l’ajout sur les appareils Apple et Google avec la configuration de chaque fournisseur.",
-          "he": "החילו את מיגרציה 322 עם פריסת ה־API. פרסמו עיצוב Wallet שמור למסעדת הבדיקה והפעילו את תוכנית המועדון שלה. הפעילו את ה־API של Wallet ואת הספק המתאים לסביבה. בקשו כרטיס מחשבון חבר מאומת וחזרו על הפעולה כדי לבדוק שמזהה הכרטיס נשאר קבוע. כאשר Google מופעל, ודאו שה־API מגיש רק תמונות בגרסאות שפורסמו. בדקו הוספה במכשירי Apple ו־Google עם ההגדרות של כל ספק."
+          "en": "Apply migrations 322 and 334 with the API release. Publish a saved Wallet design for the test restaurant and enable its loyalty program. Enable the Wallet API and the intended provider for the environment. Test issuance with an authenticated member and repeat it to verify stable card identity. With Google enabled, verify that the API serves only published, versioned artwork. Hide the restaurant name, save the banner, then publish. On the member pass verify the banner, the Foody attribution by the QR code and the link in the details. Check Apple iPhone and Google device acceptance with their respective provider credentials.",
+          "fr": "Appliquez les migrations 322 et 334 avec la livraison de l’API. Publiez un visuel Wallet enregistré pour le restaurant de test et activez son programme de fidélité. Activez l’API Wallet et le fournisseur prévu pour l’environnement. Demandez une carte avec un compte membre authentifié et répétez l’opération pour vérifier la stabilité de son identifiant. Lorsque Google est activé, vérifiez que l’API sert uniquement les images des versions publiées. Masquez le nom du restaurant, enregistrez la bannière puis publiez le visuel. Sur la carte d’un membre, vérifiez la bannière, la mention Foody près du QR et le lien dans les détails. Vérifiez l’ajout sur les appareils Apple et Google avec la configuration de chaque fournisseur.",
+          "he": "החילו את מיגרציות 322 ו־334 עם פריסת ה־API. פרסמו עיצוב Wallet שמור למסעדת הבדיקה והפעילו את תוכנית המועדון שלה. הפעילו את ה־API של Wallet ואת הספק המתאים לסביבה. בקשו כרטיס מחשבון חבר מאומת וחזרו על הפעולה כדי לבדוק שמזהה הכרטיס נשאר קבוע. כאשר Google מופעל, ודאו שה־API מגיש רק תמונות בגרסאות שפורסמו. הסתירו את שם המסעדה, שמרו את תמונת הכותרת ופרסמו את העיצוב. בכרטיס של חבר מועדון ודאו שמוצגים הבאנר, הכיתוב של Foody ליד קוד ה־QR והקישור בפרטי הכרטיס. בדקו הוספה במכשירי Apple ו־Google עם ההגדרות של כל ספק."
         }
       },
       {
@@ -18013,7 +18013,8 @@
         "src/components/loyalty/LoyaltyProgramOverview.tsx",
         "src/lib/loyalty-program.ts",
         "src/lib/i18n.tsx",
-        "src/lib/help/context.ts"
+        "src/lib/help/context.ts",
+        "src/components/loyalty/WalletStudioWorkspace.tsx"
       ],
       "foodyserver": [
         "cmd/server/main.go",
@@ -18077,6 +18078,19 @@
         }
       },
       {
+        "id": "wallet-appearance",
+        "title": {
+          "en": "Customize the Wallet card",
+          "fr": "Personnaliser la carte Wallet",
+          "he": "התאמת כרטיס ה־Wallet"
+        },
+        "instructions": {
+          "en": "Open **Wallet Studio**. Choose a logo and a banner in PNG, JPEG or WebP, up to 10 MB per file. The Studio resizes the image and shows it in the Apple and Google previews. Turn off **Show restaurant name** if the logo already includes the name. Google keeps the program title. **Save draft** lets you generate an Apple test card. Select **Publish card design** to apply the saved artwork to customer cards. The card displays **Powered by Foody** near the QR code and includes a Foody link in its details.",
+          "fr": "Ouvrez **Studio Wallet**. Choisissez un logo et une bannière en PNG, JPEG ou WebP, jusqu’à 10 Mo par fichier. Le Studio redimensionne l’image et l’affiche dans les aperçus Apple et Google. Si le logo contient déjà le nom, désactivez **Afficher le nom du restaurant**. Google conserve le titre du programme. **Enregistrer le brouillon** permet de générer une carte de test Apple. Cliquez sur **Publier le visuel** pour appliquer le visuel enregistré aux cartes clients. La mention **Propulsé par Foody** apparaît près du QR et un lien vers Foody figure dans les détails de la carte.",
+          "he": "פתחו את **סטודיו Wallet**. בחרו לוגו ובאנר בפורמט PNG, JPEG או WebP, עד 10 מ״ב לקובץ. הסטודיו מתאים את גודל התמונה ומציג אותה בתצוגות המקדימות של Apple ושל Google. אם הלוגו כבר כולל את השם, כבו את **הצגת שם המסעדה**. ב־Google שם התוכנית ממשיך להופיע. לאחר **שמירת טיוטה** אפשר ליצור כרטיס בדיקה של Apple. בחרו **פרסום עיצוב הכרטיס** כדי להחיל את העיצוב השמור על כרטיסי הלקוחות. הכיתוב **מופעל על ידי Foody** מופיע ליד קוד ה־QR וקישור ל־Foody נמצא בפרטי הכרטיס."
+        }
+      },
+      {
         "id": "open-loyalty-card",
         "title": {
           "en": "Open and add your personal loyalty card",
@@ -18110,7 +18124,7 @@
     },
     "audience": "public",
     "status": "available",
-    "procedureUpdatedAt": "2026-11-18",
+    "procedureUpdatedAt": "2026-11-19",
     "preserveExisting": false
   },
   {
@@ -18149,7 +18163,8 @@
         "internal/loyalty/wallet_studio_artwork.go",
         "internal/loyaltywallet/**",
         "migrations/315_loyalty_wallet_designs.sql",
-        "migrations/322_loyalty_wallet_publications.sql"
+        "migrations/322_loyalty_wallet_publications.sql",
+        "migrations/334_wallet_restaurant_name.sql"
       ],
       "foodyweb": [
         "app/api/loyalty-wallet/apple/route.ts",
@@ -18171,9 +18186,9 @@
           "he": "שמירת עיצוב פרטי"
         },
         "instructions": {
-          "en": "Set the background color and the Apple text color. Choose a logo and a banner in PNG or JPEG, up to 1 MB each. Switch between Apple Wallet and Google Wallet to check the cropping. Select **Save draft**. If another editor saved a newer draft, reload it before retrying.",
-          "fr": "Choisissez la couleur du fond et celle du texte Apple. Importez un logo et une bannière en PNG ou JPEG, de 1 Mo maximum chacun. Basculez entre Apple Wallet et Google Wallet pour vérifier le cadrage. Cliquez sur **Enregistrer le brouillon**. Si une autre personne a enregistré une version plus récente, rechargez-la avant de réessayer.",
-          "he": "בחרו צבע רקע וצבע טקסט ל־Apple. בחרו לוגו ותמונת כותרת בפורמט PNG או JPEG, עד 1 מ״ב לקובץ. עברו בין Apple Wallet ל־Google Wallet כדי לבדוק את החיתוך. בחרו **שמירת טיוטה**. אם נשמרה גרסה עדכנית יותר, טענו אותה מחדש לפני ניסיון נוסף."
+          "en": "Set the background and Apple text colors. Choose a PNG, JPEG or WebP logo and banner, each up to 10 MB. The Studio resizes them before saving. Keep the main subject near the center and check its crop in both previews. Turn off **Show restaurant name** to remove the name beside the Apple logo. Google keeps the program title. If an image cannot be opened, the message under the picker explains what to change. Select **Save draft**. If another editor saved a newer draft, reload it before retrying.",
+          "fr": "Choisissez la couleur de fond et la couleur du texte Apple. Importez un logo et une bannière en PNG, JPEG ou WebP, jusqu’à 10 Mo chacun. Le Studio les redimensionne avant l’enregistrement. Centrez le sujet principal et vérifiez le cadrage dans les deux aperçus. Désactivez **Afficher le nom du restaurant** pour retirer le nom à côté du logo Apple. Google conserve le titre du programme. Si une image est refusée, consultez le message sous le champ. Cliquez sur **Enregistrer le brouillon**. Si une autre personne a enregistré une version plus récente, rechargez-la avant de réessayer.",
+          "he": "בחרו צבע רקע וצבע טקסט ל־Apple. העלו לוגו ובאנר בפורמט PNG, JPEG או WebP, עד 10 מ״ב לקובץ. הסטודיו מתאים את גודל התמונות לפני השמירה. מקמו את הנושא העיקרי במרכז ובדקו את החיתוך בשתי התצוגות המקדימות. כבו את **הצגת שם המסעדה** כדי להסתיר את השם לצד הלוגו ב־Apple. ב־Google שם התוכנית ממשיך להופיע. אם בחירת התמונה נכשלה, קראו את ההודעה שמתחת לשדה. בחרו **שמירת טיוטה**. אם עורך אחר שמר גרסה חדשה יותר, טענו אותה מחדש לפני ניסיון נוסף."
         }
       },
       {
@@ -18184,9 +18199,9 @@
           "he": "הוספת כרטיס בדיקה ל־iPhone"
         },
         "instructions": {
-          "en": "On the saved design, select **Generate an Apple test card**, then **Download .pkpass**. Open the file on an iPhone and select **Add**. Check the logo, banner, colors and Test card label. The pass shows sample progress and a demonstration QR. If signing is unavailable, check the Apple signing configuration for the environment. The Google tab previews the artwork.",
-          "fr": "Sur le visuel enregistré, cliquez sur **Générer une carte de test Apple**, puis sur **Télécharger le .pkpass**. Ouvrez le fichier sur un iPhone et touchez **Ajouter**. Vérifiez le logo, la bannière, les couleurs et la mention Carte de test. Le pass utilise une progression fictive et un QR de démonstration. Si la signature est indisponible, vérifiez la configuration Apple de l’environnement. L’onglet Google affiche l’aperçu du visuel.",
-          "he": "בעיצוב השמור בחרו **יצירת כרטיס בדיקה של Apple** ואז **הורדת קובץ ‎.pkpass**. פתחו את הקובץ ב־iPhone ובחרו **הוספה**. בדקו את הלוגו, תמונת הכותרת, הצבעים ואת הכיתוב כרטיס בדיקה. הכרטיס מציג התקדמות להמחשה וקוד QR לדוגמה. אם החתימה אינה זמינה, בדקו את הגדרות החתימה של Apple בסביבה הנוכחית. הלשונית Google מציגה את העיצוב בתצוגה מקדימה."
+          "en": "On the saved design, select **Generate an Apple test card**, then **Download .pkpass**. Open the file on an iPhone and select **Add**. Check the logo, banner, colors and Test card label. The pass shows sample progress and a demonstration QR. If signing is unavailable, check the Apple signing configuration for the environment. The Google tab previews the artwork. Check the Powered by Foody caption near the QR code. Open the card details to follow the Foody link.",
+          "fr": "Sur le visuel enregistré, cliquez sur **Générer une carte de test Apple**, puis sur **Télécharger le .pkpass**. Ouvrez le fichier sur un iPhone et touchez **Ajouter**. Vérifiez le logo, la bannière, les couleurs et la mention Carte de test. Le pass utilise une progression fictive et un QR de démonstration. Si la signature est indisponible, vérifiez la configuration Apple de l’environnement. L’onglet Google affiche l’aperçu du visuel. Vérifiez la mention Propulsé par Foody près du QR. Ouvrez les détails de la carte pour suivre le lien vers Foody.",
+          "he": "בעיצוב השמור בחרו **יצירת כרטיס בדיקה של Apple** ואז **הורדת קובץ ‎.pkpass**. פתחו את הקובץ ב־iPhone ובחרו **הוספה**. בדקו את הלוגו, תמונת הכותרת, הצבעים ואת הכיתוב כרטיס בדיקה. הכרטיס מציג התקדמות להמחשה וקוד QR לדוגמה. אם החתימה אינה זמינה, בדקו את הגדרות החתימה של Apple בסביבה הנוכחית. הלשונית Google מציגה את העיצוב בתצוגה מקדימה. בדקו שהכיתוב מופעל על ידי Foody מופיע ליד קוד ה־QR. פתחו את פרטי הכרטיס כדי לעבור לקישור ל־Foody."
         }
       },
       {
@@ -18218,7 +18233,7 @@
     ],
     "audience": "internal",
     "status": "local-release-unverified",
-    "procedureUpdatedAt": "2026-11-18",
+    "procedureUpdatedAt": "2026-11-19",
     "preserveExisting": false
   },
   {
