@@ -126,16 +126,7 @@ HTTP smoke checks visible text, structured offers, examples and localized eviden
 links. Search Console inspections and indexing requests remain separate observations;
 neither HTTP success nor these editorial changes establish a ranking gain.
 
-The pricing page also distinguishes included shared map usage from the planned
-Maps Plus extension: 149 ILS excluding VAT per establishment/month, with 500 Foody
-optimization credits (one per single-courier stop, three per fleet-allocation stop),
-10,000 Google tiles, 500 address searches and 500 route calls. Recalculations count
-again; higher volumes require a quote. The owner delegated these future rates on
-15 October 2026. The offer is explicitly in preparation, with contact only and no
-automatic charge or relaxation of current provider caps. The mirrored
-`src/lib/marketing/maps-offers.json` must equal the API's canonical
-`internal/delivery/maps_offers.json` before release. Existing software launch prices
-and included delivery management remain unchanged.
+The delivery section describes dispatch and route planning with Google Maps.
 
 ## Design and editorial decisions
 
