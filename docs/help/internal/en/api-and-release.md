@@ -16,7 +16,7 @@ Engineering operators: use the closest service AGENTS.md, README, API contract a
 
 ## Verify personalized loyalty pass issuance
 
-Apply migration 322 with the API release. Publish a saved Wallet design for the test restaurant and enable its loyalty program. Enable the Wallet API and the intended provider for the environment. Test issuance with an authenticated member and repeat it to verify stable card identity. With Google enabled, verify that the API serves only published, versioned artwork. Check Apple iPhone and Google device acceptance with their respective provider credentials.
+Apply migrations 322 and 334 with the API release. Publish a saved Wallet design for the test restaurant and enable its loyalty program. Enable the Wallet API and the intended provider for the environment. Test issuance with an authenticated member and repeat it to verify stable card identity. With Google enabled, verify that the API serves only published, versioned artwork. Hide the restaurant name, save the banner, then publish. On the member pass verify the banner, the Foody attribution by the QR code and the link in the details. Check Apple iPhone and Google device acceptance with their respective provider credentials. Apply migration 335 before releasing the Studio banner editor. Save a new photo in a private draft, reopen it and adjust each Wallet. Verify the Apple test card uses the selected counter position and check each published Wallet image against its own preview.
 
 <span id="verifone-admin-money-operations" />
 
@@ -110,9 +110,9 @@ The native-keyboard follow-up must release the compact entry procedures and embe
 
 ## Resolve Google street refinements
 
-Google can return a different canonical ID for a route segment. Accept this difference only for a street without a house number, after validating the country and provider response. This refinement receives neither delivery proof nor coordinates: the customer must still choose a complete address. Preserve exact place-ID matching for complete addresses, restaurant and visitor bound signatures, session limits and budgets. Test canonical streets, foreign countries, missing or invalid IDs and rejection of complete addresses for another place. Verify a street search and an address with a house number after promotion. Provider reference: https://developers.google.com/maps/documentation/places/web-service/place-id#obsolete
+A numbered Google suggestion resolving to a street can be confirmed as postal text when the street and municipality match. Keep the selected number and validate coverage at order time. A street segment supplies no entrance coordinates. When Places is unavailable or returns no results, numbered searches can suggest buildings from Google Geocoding with a matching country and number, a street and a city. A signed selection is bound to the restaurant and its address text.
 
-When a numbered prediction returns only a street or search is unavailable, the guest can confirm a postal address and optionally mark the entrance. [See the phone procedure](/en/help/guest/online-ordering#mobile-fulfillment).
+[See the phone procedure](/en/help/guest/online-ordering#mobile-fulfillment).
 
 <span id="customer-social-sign-in" />
 

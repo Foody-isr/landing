@@ -4,10 +4,10 @@
   "services": {
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "7a5a533b7e6e7498244d0869cfc38bcbbdf76dfd",
+      "sourceCommit": "5c34b7059a33fff751d0808a5d5cbd8287881991",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "3b2dbefff2bafe09c942d75a883d08f44fa777e5f222e6dcd6db6979962fbb1f",
-      "workingTreeHasChanges": true,
+      "sourceSnapshot": "12f605a82af64a594e3365ff0fa66922f4ddda514e8835afa669c7aa23f424b8",
+      "workingTreeHasChanges": false,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
           "sha256": "13c58bc11284d66c7fb9c4d79c1b3e92c6e05539164f2147a5e966d9c17ac275",
@@ -2394,9 +2394,17 @@
             "customers-wallet-studio"
           ]
         },
-        "src/components/loyalty/WalletStudioWorkspace.tsx": {
-          "sha256": "ed83ec57014432588719082a03678f25c8f9a2cbe20127867e7afa8f3250ede7",
+        "src/components/loyalty/WalletBannerFraming.tsx": {
+          "sha256": "47899ee588131351c71de756c7ae9bd32831fa520a8eda093a5f427585a69968",
           "features": [
+            "customers-loyalty-program",
+            "customers-wallet-studio"
+          ]
+        },
+        "src/components/loyalty/WalletStudioWorkspace.tsx": {
+          "sha256": "0c4b4e379ffca2ed7a639837e9ac8b8d8b55c1242efc4c7a66be8932ab4d2b21",
+          "features": [
+            "customers-loyalty-program",
             "customers-wallet-studio"
           ]
         },
@@ -4502,7 +4510,7 @@
           ]
         },
         "src/lib/api.ts": {
-          "sha256": "e5375880c3ffcbe6f1d6d7705e1a874a27c33271ddf560551a8def3c1a2eaa3a",
+          "sha256": "89839bb0e7d82905d0c6ab778c3598743bced951c602842193a43a0fd8c6510c",
           "features": [
             "customers-profiles",
             "menu-variants-and-sizes",
@@ -4720,7 +4728,7 @@
           ]
         },
         "src/lib/i18n.tsx": {
-          "sha256": "749dc37664f77463f9e8daefb957ce9ee25050863e26dcbcaf54451d9caf1d35",
+          "sha256": "c9c6f361f28510b89aebf2003779dfb763f0911a2ac90e3db40b26060d928e51",
           "features": [
             "customers-profiles",
             "menu-menus-and-groups",
@@ -5528,6 +5536,14 @@
             "shared-runtime"
           ]
         },
+        "src/lib/wallet-banner.ts": {
+          "sha256": "8557f99fb0d6ae791d888a3a36ba6a21dabf4b42d15ffa20539f631909b13e61",
+          "features": [
+            "shared-runtime",
+            "customers-loyalty-program",
+            "customers-wallet-studio"
+          ]
+        },
         "src/lib/website-fonts.ts": {
           "sha256": "4f18b08e29f3ae61aadf999325e509219d6a56a3fcfe6b9355a71df72c8fd544",
           "features": [
@@ -6227,7 +6243,7 @@
     },
     "foodylanding": {
       "repository": "https://github.com/Foody-isr/landing",
-      "sourceCommit": "bfba9b12634f62adb142da5d9b8f69143e0a86de",
+      "sourceCommit": "0941241ac72aae401b920773261e64659734abd8",
       "releaseStatus": "versioned",
       "sourceSnapshot": "7872182414e2c2bc08e3f0e2b65e52d1f5419988d4e77ebd46afb77180470947",
       "workingTreeHasChanges": true,
@@ -7223,13 +7239,13 @@
     },
     "foodypos": {
       "repository": "https://github.com/Foody-isr/pos",
-      "sourceCommit": "d76016999076e2a71b13cbedff0c6d53214a6a3d",
+      "sourceCommit": "f7f6b206a73d45b3d597b83bdd82713b05966ac8",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "0f890bb2bd3c122eb22dcfe524730637f72741e9fa68408773fe42bf4f91f681",
+      "sourceSnapshot": "297c46707529e0ec64084fe53801c19a343f31fc0439f5679fa3742568221fbd",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "android/app/src/main/kotlin/com/foodypos/app/AshraitProtocol.kt": {
-          "sha256": "6748d493ac50e40bc48c1392d7841f95bd17b6cb8b3e463d5990b8278540bb09",
+          "sha256": "ec872935d1bed5fa1cd6fd93131633e9c9ced5c9f07747ea521842e68a43426a",
           "features": [
             "pos-payments",
             "pos-ashrait-terminal-inspection"
@@ -7248,7 +7264,7 @@
           ]
         },
         "android/app/src/main/kotlin/com/foodypos/app/VerifonePaymentBridge.kt": {
-          "sha256": "03de5bc6ed2e3beb255ef16980cb3e19b5be279a5454e3734ff8167569b9a8e4",
+          "sha256": "4b9f874d90cb8da66a60936a2ab4d89f34a2ee1774c3baa9bb17b05daef5f6f4",
           "features": [
             "pos-payments",
             "pos-ashrait-terminal-inspection"
@@ -7340,7 +7356,7 @@
           ]
         },
         "ios/Runner/VerifonePaymentBridge.m": {
-          "sha256": "16ea08a77c80c6a657f05b76e2aa2125622786fe34ea4d7bba22e1e978a4a782",
+          "sha256": "81a5ff7b5d75d0a777b9ead694758ec35971f424688b3461baf3ad4f5c798e26",
           "features": [
             "pos-payments",
             "pos-ashrait-terminal-inspection"
@@ -7392,7 +7408,7 @@
           ]
         },
         "lib/core/l10n/app_en.arb": {
-          "sha256": "bab14543a8f5ff1cf6ddde29bdc0342e3d4d72fc07d202d480a8b1a5e84cdfc7",
+          "sha256": "9834e09f9e6dd84a17f10cae52f9c2c19a3599182195d6b5d4c48deb0cf6d458",
           "features": [
             "pos-behavior",
             "pos-cash-access-diagnostics",
@@ -7402,7 +7418,7 @@
           ]
         },
         "lib/core/l10n/app_fr.arb": {
-          "sha256": "42a05e38c1b916cbeac2506925e6bf8109fcfce573c661aa72911e21d0fe678a",
+          "sha256": "d58adc47c7d3df98c4dd5f414ece25df62b666cb37ea594247771b1c5f773828",
           "features": [
             "pos-behavior",
             "pos-cash-access-diagnostics",
@@ -7412,7 +7428,7 @@
           ]
         },
         "lib/core/l10n/app_he.arb": {
-          "sha256": "85bbb14e1fcdc7b64562ff6f3e56f6810f264421aabfad5e4600350152852b2d",
+          "sha256": "8e73f55cfc7807530b2c0f446170368fa8d77453c42724d6044617f71be8fb32",
           "features": [
             "pos-behavior",
             "pos-cash-access-diagnostics",
@@ -8495,14 +8511,14 @@
           ]
         },
         "lib/features/more/data/end_of_day_repository.dart": {
-          "sha256": "99575e1e530a0524525fdee05e592a7e86f67c00a35d1b9f2d2fac29ac7e9a58",
+          "sha256": "c8daa702f8b8334fdccb469613b9701c8651f2eba3daf90c982e65c40cce515d",
           "features": [
             "pos-workspace",
             "pos-end-of-day"
           ]
         },
         "lib/features/more/domain/end_of_day.dart": {
-          "sha256": "a8ebab7d3a52d4699a74c4a0b3ac660900d639abf71e8aa6ae84c1a16c901416",
+          "sha256": "e1873baf1a3299da2188caa8784ec5167fe5194152e82acce5f22ee4890e240c",
           "features": [
             "pos-workspace",
             "pos-end-of-day"
@@ -8525,7 +8541,7 @@
           ]
         },
         "lib/features/more/presentation/end_of_day_page.dart": {
-          "sha256": "78e0485d2f4243232ce29ddf2d694d587bdeb56f22765c9c8b670c21c048e47e",
+          "sha256": "6afd1e882958a47f48317c5cfd2caa122a2efaf308631cd8f2002e7ebd30c8c8",
           "features": [
             "pos-workspace",
             "pos-end-of-day"
@@ -9905,14 +9921,14 @@
           ]
         },
         "lib/features/transactions/domain/pos_transaction.dart": {
-          "sha256": "58a42755508ee67cd226807d31207c683aa5cd5b8d1b46ba485a5448cc7862b7",
+          "sha256": "080aabb09c725cb1d8fe0ee734f982d3f8acd9a0254725106690d77a3fef9521",
           "features": [
             "pos-payments",
             "payments-transactions"
           ]
         },
         "lib/features/transactions/presentation/transaction_ashrait_receipt.dart": {
-          "sha256": "09d04b2bab2ad0c5ae2593b64e530cca1b8d500c95eeb7a0e606332a95704f4e",
+          "sha256": "c38d82c629dcc1dc0e38a4af27a6058a95441ead5a9eb48f027c2ef81a99cf54",
           "features": [
             "pos-payments",
             "payments-transactions"
@@ -9926,7 +9942,7 @@
           ]
         },
         "lib/features/transactions/presentation/transactions_page.dart": {
-          "sha256": "afa02956c0cfe9f7250f20190fb15289f9a6cff1859d6dd00d844a8751576047",
+          "sha256": "2cc76103f1198d26ff0b7180346a1b229c41ec9e06344651fefc9482b5a36dd6",
           "features": [
             "pos-payments",
             "payments-transactions"
@@ -10021,7 +10037,7 @@
           ]
         },
         "lib/services/payments/ashrait_adjustment_repository.dart": {
-          "sha256": "ea3aad835c7077512ef410c9a5df06a48d1cce6730dfa69e3dabb1705aeae6a6",
+          "sha256": "9bbab7d09bf0d893a87fec1eca3bd86d1b9f91f816ebfd3a7622831776a864a2",
           "features": [
             "platform-api"
           ]
@@ -10040,7 +10056,7 @@
           ]
         },
         "lib/services/payments/ashrait_maintenance.dart": {
-          "sha256": "1f9eec4a35a9facf95500b804d2bffe0564a413546b468759ac561c4d8eae9dc",
+          "sha256": "47eadaa867f8b4da54d408fc96e4ec8cf5d3b78cb6f9091d9304e73c2d170202",
           "features": [
             "platform-api"
           ]
@@ -10100,7 +10116,7 @@
           ]
         },
         "lib/services/payments/terminal_payment_service.dart": {
-          "sha256": "662f93f7ec5a3f61e4abd5e285f16394bfb9abc3cb2215219be050f3f9d939a3",
+          "sha256": "a5053ae3f94c6979b2ae70e93e21ed2eb3e2d955118d7d2047f6d5bba97dc349",
           "features": [
             "pos-payments",
             "pos-victa-mini",
@@ -10319,9 +10335,9 @@
     },
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "67fe7b1c6f05cdb663f93f9123bf1b38509a873b",
+      "sourceCommit": "593ffe8f0b2a6b952244d190b012ca8aa9deaa6c",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "5cddcedbef2724297356b72adc84e200f70dc482fbf71ad3a069e6aa94b214df",
+      "sourceSnapshot": "891a6cb8d6a86337c6284f7f276728c2a97c4a6175b846e3aa52ef0d5ca9f1ea",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -10355,7 +10371,7 @@
           ]
         },
         "cmd/server/boot_models.go": {
-          "sha256": "c67cac57b14cb037380d85dd1411d182eb10c635534bb2c9aea693b5dd4dc2b3",
+          "sha256": "b6ec5540156294c5bd077c454e74c12a4bec3d60534f6e619ece7832304c5fe9",
           "features": [
             "staff-invitations",
             "customers-profiles",
@@ -10383,7 +10399,7 @@
           ]
         },
         "cmd/server/main.go": {
-          "sha256": "ebd0c5f18ec02fdb7743f806581532f26682514a3e51541f9c5470fb8bf42742",
+          "sha256": "984a8d5b33d097a0e118b5fab3904e50db390c19b268077c22a529fa55d8b606",
           "features": [
             "staff-invitations",
             "customers-profiles",
@@ -10474,7 +10490,7 @@
           ]
         },
         "internal/addresslookup/service.go": {
-          "sha256": "a9421d0b6c5059bdd9f7f08bea15e8bd3657c3a49ee4adf01f1f439910a4c6d1",
+          "sha256": "f0854f55990c111314429a807875ef654791d0c3acd0a93e7deeb35cdc9505a6",
           "features": [
             "maps-usage",
             "google-account-setup",
@@ -10963,7 +10979,7 @@
           ]
         },
         "internal/common/building_address.go": {
-          "sha256": "a0c313a983976110d9fc800731c2d668a1a999a5993b3eec51823e975c1af51b",
+          "sha256": "a50c91f26f6e72e1200129324496bce1ef6e340efaa357e7eaa2d8282c63d87b",
           "features": [
             "guest-ordering",
             "platform-api"
@@ -11090,7 +11106,7 @@
           ]
         },
         "internal/common/end_of_day.go": {
-          "sha256": "426da779f01f5e19a50f400f97fa70ab36671236eb37ac0199fa28a71a9c87f0",
+          "sha256": "fc4901451dd9af784d2fb4c6eebf6aca0d30ab0b1b866fa9cdf37e2b25824220",
           "features": [
             "pos-end-of-day"
           ]
@@ -11177,7 +11193,7 @@
           ]
         },
         "internal/common/loyalty_wallet_design.go": {
-          "sha256": "5bae45a1adbd81ca958ab181e17f2ac709fab2ffd501ac2b5f3796cd3fe44d05",
+          "sha256": "3227727a26fda9a87cd3983c970d44abd96dcd6fd56e98441d1cb9c3ab4f3008",
           "features": [
             "customers-wallet-studio"
           ]
@@ -11630,10 +11646,11 @@
           ]
         },
         "internal/delivery/google_address.go": {
-          "sha256": "0e12a8075235c4bb809340864277b18da9786fbac587381ae3cd0d5e5e63fe32",
+          "sha256": "ce48e0c0d6fbbdfff436e244530466a9317bd3d48e3e4fb9ea0c87f8e5be4296",
           "features": [
             "delivery-dispatch",
             "maps-usage",
+            "guest-ordering",
             "platform-api"
           ]
         },
@@ -11646,7 +11663,7 @@
           ]
         },
         "internal/delivery/google_provider.go": {
-          "sha256": "83ae30d7a7388224c95cf4d5696e4fbce9f32bafdd09b90aa12af844ae5cb567",
+          "sha256": "5fb8970fcd3f78ecd44844030a05649270895edcc93fa9eaf38fe54c9cb44141",
           "features": [
             "delivery-dispatch",
             "maps-usage",
@@ -12631,32 +12648,32 @@
           ]
         },
         "internal/loyalty/wallet_studio.go": {
-          "sha256": "0e2ea81350d1256309a2dfe9c9be7f86f6499360263a7ae4dee14493d9b8d571",
+          "sha256": "466030160631092b70a9d27b2f285d52d7f14c532da10f25483a5896d6baa056",
           "features": [
             "customers-wallet-studio"
           ]
         },
         "internal/loyalty/wallet_studio_artwork.go": {
-          "sha256": "7c70a020435a3f7c51df583407cf3d92f4a1ecb82911cc793e866d996d13c364",
+          "sha256": "d3e815f18d07f74c90f96f84516668814a4ffac6ae43f97e4a60d9fb2b1b6b36",
           "features": [
             "customers-wallet-studio"
           ]
         },
         "internal/loyalty/wallet_studio_handler.go": {
-          "sha256": "eb271b5c8f5ca475c5b9764021d4d2a0c17c11c137fcf7768fd4486758def11c",
+          "sha256": "69725b624b121354fabbb2ea57bc9f4da4ee7164b93ecaae7f1ea1fa07d5e394",
           "features": [
             "customers-wallet-studio"
           ]
         },
         "internal/loyaltywallet/apple.go": {
-          "sha256": "87dfa6dc7e2fbe6ef7fcc6ad8c2cc3d1081e948fa43e97f1f3fd89e4a3e7baf6",
+          "sha256": "fe55564f167ce39136140df9d479985ab6e093377ccf3d361e47c5391655b7c4",
           "features": [
             "platform-api",
             "customers-wallet-studio"
           ]
         },
         "internal/loyaltywallet/apple_studio.go": {
-          "sha256": "3b57a5101c773d5b636f347b1005495379f395b5aef62ed3079f593c00159c34",
+          "sha256": "8fd53a4cf855abef5b7d305fbdce3b3795289445de07e42f097c48ad68840dc0",
           "features": [
             "customers-wallet-studio"
           ]
@@ -12669,7 +12686,7 @@
           ]
         },
         "internal/loyaltywallet/google.go": {
-          "sha256": "8384e33f7535b9a4d432afec494854e8dfc087ab21ab1b5f8f95eccdc2606cbb",
+          "sha256": "296ba59efb2fcb67689f5ec3b272a52f67cfc73ead997309574b895ff7ec102c",
           "features": [
             "platform-api",
             "customers-wallet-studio"
@@ -12683,7 +12700,7 @@
           ]
         },
         "internal/loyaltywallet/localization.go": {
-          "sha256": "1c6efee05b1a36b933b17b1a22cdea37192f6e56c7cb73195410704f0a8db62e",
+          "sha256": "6d527f22960ce633a0432266a172ea89c4e72253e1fe3dcd48b11e52fc5d9e83",
           "features": [
             "platform-api",
             "customers-wallet-studio"
@@ -12718,14 +12735,14 @@
           ]
         },
         "internal/loyaltywallet/service.go": {
-          "sha256": "4ef5f999271130ac46d626cf05fb27e88e818f8592ada338acb3dfa79a1d0011",
+          "sha256": "8f160c73d495ce3ecad891bbf692972aa5af3df19a69608c5adf94db9804ee8e",
           "features": [
             "platform-api",
             "customers-wallet-studio"
           ]
         },
         "internal/loyaltywallet/types.go": {
-          "sha256": "52cac6df6d125090b4922f8989c01410574f10c65242390faa981e417e5f73da",
+          "sha256": "9a458cf60dcb91dd37a594c313529eef77b8e265e8e9aaa4caf7533cd89c1aca",
           "features": [
             "platform-api",
             "customers-wallet-studio"
@@ -13354,7 +13371,7 @@
           ]
         },
         "internal/orders/ashrait_adjustment.go": {
-          "sha256": "cf6a4a04f49a48139aaa8902422b4325063c3f9278c7f45d85a86473e2997d9d",
+          "sha256": "5011845d10f0a9b44df155f1b9eff478e30e3f1f0713a3ebdf4434be13ca718c",
           "features": [
             "platform-api"
           ]
@@ -13647,13 +13664,13 @@
           ]
         },
         "internal/orders/end_of_day.go": {
-          "sha256": "cf776bfed71117ce79ae0b921ebd1cac554452ae04b1fd64fa9fd4d373101bad",
+          "sha256": "2df24f27301a057d06793fd2c0d62d166217b6e60bbd71cfafda4d08c0bbebdb",
           "features": [
             "pos-end-of-day"
           ]
         },
         "internal/orders/end_of_day_counter.go": {
-          "sha256": "be3bb1eac5e4ff27c06ccf957c6bce04b893b1b3a79a450d1627128c65a84632",
+          "sha256": "0f229e5c299410ec8d6f9613f3ef385f8b82050fd97485ff49764a57224df6d7",
           "features": [
             "pos-end-of-day"
           ]
@@ -13671,7 +13688,7 @@
           ]
         },
         "internal/orders/end_of_day_recovery.go": {
-          "sha256": "e5961e85b409342f977d2515906e1ad85f41f504b9ecf7ae3f76baca20b7c0bd",
+          "sha256": "887a989864c51bace01c59b2927270e80b1bc9cb33cdbcdcac4f18b1795733d1",
           "features": [
             "pos-end-of-day"
           ]
@@ -14665,7 +14682,7 @@
           ]
         },
         "internal/orders/transactions.go": {
-          "sha256": "d697fb91a176b798eb69516e3de339cfee01ac9b014a7b4440b646fb0b0f747d",
+          "sha256": "bf26f8898533b4d48b2fe39d497929e44e63539ea1ac4128889dfdf30f2996a6",
           "features": [
             "pos-payments"
           ]
@@ -14677,7 +14694,7 @@
           ]
         },
         "internal/orders/transactions_ashrait.go": {
-          "sha256": "474e214ad97670f1273edde64272f6f12a0912b89577fe2c3e96f4b10959245b",
+          "sha256": "bbdc7251de30047ef706966fcfd9788b214bce28d6adcd6f6f0c8fc1e803f75e",
           "features": [
             "platform-api"
           ]
@@ -16307,7 +16324,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "c9a8a65e337d415616d33618424ea073b64f1ebf05bb10c73c6bd28e2e5075e2",
+          "sha256": "3e8b46be0724f060f410a6dc59fadba2f284a161cb23bf3b5bf2710c8a098cfa",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -16417,7 +16434,7 @@
           ]
         },
         "internal/testutil/testutil.go": {
-          "sha256": "9790305b688d2271deecc8a9f41d8adcdefc853def4f002cbe834e857544c780",
+          "sha256": "b6e428b706e461f42562685a705991e3be8cf6def893585875f4e60963fef61a",
           "features": [
             "delivery-dispatch",
             "platform-api"
@@ -16921,8 +16938,26 @@
             "foody-billing-sandbox"
           ]
         },
-        "migrations/335_ashrait_service_recovery.sql": {
+        "migrations/334_wallet_restaurant_name.sql": {
+          "sha256": "37b23b2a7d56cdaa8acef38f5eb79aeb79d7c45b3a21972e3b8215e188a76df9",
+          "features": [
+            "customers-wallet-studio"
+          ]
+        },
+        "migrations/335_wallet_banner_framing.sql": {
+          "sha256": "3544a4c14da5d2c810ee8712ef339bc7c1f3a599c6fb56ac20130a5cff24bd2c",
+          "features": [
+            "customers-wallet-studio"
+          ]
+        },
+        "migrations/336_ashrait_service_recovery.sql": {
           "sha256": "2ae143c818ff683b9e043f3bbee762347751c3f4e51833f93d88de43a3f0e28f",
+          "features": [
+            "pos-end-of-day"
+          ]
+        },
+        "migrations/337_end_of_day_handoffs.sql": {
+          "sha256": "18844f3e7895e11eba8c35d28a1396e25b28c8dec450877acf32c6852112a5a1",
           "features": [
             "pos-end-of-day"
           ]
@@ -16931,9 +16966,9 @@
     },
     "foodyweb": {
       "repository": "https://github.com/Foody-isr/web",
-      "sourceCommit": "fdb8211120e40dd6f8695bf62d7c3bb22366af2a",
+      "sourceCommit": "937e7218a2de474f1c81ab3003d0cfd87ca9eb65",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "49dd23c4637262720e8e23aeb18030f5f62f7bba3251347acb32972146f30876",
+      "sourceSnapshot": "6c2f492fa7e3cae3a213fca0e9b277ef8df935ad3f7792887e9554eb9bf1faeb",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "app/.well-known/apple-developer-merchantid-domain-association.txt/route.ts": {
@@ -17606,14 +17641,14 @@
           ]
         },
         "components/DeliveryAddressAutocomplete.tsx": {
-          "sha256": "46cd531293f4e73d0f7c21063ada66d0d3f52dffab2e43eba15792b1ba8cd0b4",
+          "sha256": "460862b1f717f526623e88bef28ff1a29d92789875363c7040299ce7de1714c2",
           "features": [
             "maps-usage",
             "guest-ordering"
           ]
         },
         "components/DeliveryAddressConfirmation.tsx": {
-          "sha256": "9c3c91189fd2b71647857c211f40b7b23cda41c4b137d67152dfb2eae05ef988",
+          "sha256": "f2534a48623135b7bd4ad7b43e6ebb1be2eacd6840d72a217f9905f5dacda692",
           "features": [
             "guest-ordering"
           ]
@@ -18739,6 +18774,13 @@
             "shared-runtime"
           ]
         },
+        "lib/delivery-address-input.ts": {
+          "sha256": "ad017c8996e6ce133c5161a6a9f699d3ad72e4427791d852282ca2de6a27d92c",
+          "features": [
+            "guest-ordering",
+            "shared-runtime"
+          ]
+        },
         "lib/editorialSections.ts": {
           "sha256": "22e41ee333fc8dcc0c817c9d37f95d2a2f5c0b24ed328974b58b98cfd98e2bf6",
           "features": [
@@ -19455,7 +19497,7 @@
           ]
         },
         "services/api.ts": {
-          "sha256": "453e5c888918915d765502b4e5f689e486ceb143f55438eb36bcd8a79a0eaba6",
+          "sha256": "de1ce017080bc8408dd672cd11e274bdb3ece76e58dc7c33bea14055e97c437e",
           "features": [
             "guest-ordering",
             "guest-catering",
@@ -22267,9 +22309,9 @@
             "he": "מציאת הוראות לכתובת בנייד"
           },
           "instructions": {
-            "fr": "Pour une difficulté de saisie ou de sélection d’adresse sur téléphone, recherchez adresse ou livraison dans le centre d’aide et ouvrez Commander en ligne côté client. L’assistant cite ce même guide dans la langue disponible. Vérifiez sa source et la version du site ; si la procédure manque ou ne correspond pas à votre écran, contactez le restaurant sans transmettre de coordonnées client ou de données de paiement à l’assistant. Sur mobile, les onglets Retrait et Livraison, le champ et le lien Se connecter en haut gardent leur position à l’ouverture et à la fermeture du clavier. Les suggestions compactes affichent l’adresse et la ville sur deux lignes dans une liste défilante plus grande. Pendant la recherche, la confirmation laisse la place aux suggestions ; elle apparaît après le choix d’une adresse complète. La couverture est réservée aux grands écrans. La mention Google Maps et les erreurs restent visibles. Pour une suggestion de rue sans numéro, consultez la procédure qui explique comment ajouter le numéro puis choisir l’adresse complète ; une rue seule ne confirme pas une livraison.\n\nSi une suggestion numérotée ne renvoie que la rue ou si la recherche est indisponible, le site permet au client de confirmer son adresse postale et de préciser l’entrée. [Consulter la procédure sur téléphone](/fr/help/guest/online-ordering#mobile-fulfillment).",
-            "en": "For trouble entering or choosing an address on a phone, search for address or delivery in Help and open Order online as a customer. The assistant cites the same guide in an available language. Check its source and the site release; if the procedure is missing or differs from your screen, contact the restaurant without sharing customer details or payment data with the assistant. On mobile, Pickup and Delivery tabs, the field and the Sign in link at the top keep their positions when the keyboard opens or closes. Compact suggestions show the address and city on two lines in a larger scrolling list. During search, confirmation leaves room for suggestions; it appears after choosing a complete address. The cover is reserved for larger screens. Google Maps attribution and errors stay visible. For a street suggestion without a house number, follow the guide to add the number and choose the complete address; a street alone does not confirm delivery.\n\nWhen a numbered prediction returns only a street or search is unavailable, the guest can confirm a postal address and optionally mark the entrance. [See the phone procedure](/en/help/guest/online-ordering#mobile-fulfillment).",
-            "he": "לקושי בהקלדה או בבחירת כתובת בטלפון חפשו כתובת או משלוח במרכז העזרה ופתחו הזמנה מקוונת כלקוח. העוזר מצטט את אותו מדריך בשפה זמינה. בדקו מקור וגרסת אתר; אם ההוראות חסרות או אינן תואמות למסך, פנו למסעדה בלי לשלוח פרטי לקוחות או תשלום לעוזר. בנייד, לשוניות איסוף ומשלוח, השדה וקישור ההתחברות למעלה שומרים על מיקומם בפתיחת המקלדת ובסגירתה. הצעות קומפקטיות מציגות כתובת ועיר בשתי שורות ברשימה נגללת גדולה יותר. בזמן החיפוש האישור מפנה מקום להצעות ומופיע לאחר בחירת כתובת מלאה. תמונת הכיסוי מוצגת במסכים גדולים בלבד. הייחוס ל-Google Maps והודעות שגיאה נשארים גלויים. בהצעת רחוב ללא מספר בית, עיינו בהוראות להוספת המספר ולבחירת כתובת מלאה; רחוב בלבד אינו מאשר משלוח.\n\nכשהצעה עם מספר בית מחזירה רחוב בלבד או כשהחיפוש אינו זמין, הלקוח יכול לאשר את הכתובת ולסמן את הכניסה. [למדריך בטלפון](/he/help/guest/online-ordering#mobile-fulfillment)."
+            "fr": "Pour une difficulté de saisie ou de sélection d’adresse sur téléphone, recherchez adresse ou livraison dans le centre d’aide et ouvrez Commander en ligne côté client. L’assistant cite ce même guide dans la langue disponible. Vérifiez sa source et la version du site ; si la procédure manque ou ne correspond pas à votre écran, contactez le restaurant sans transmettre de coordonnées client ou de données de paiement à l’assistant. Sur mobile, les onglets Retrait et Livraison, le champ et le lien Se connecter en haut gardent leur position à l’ouverture et à la fermeture du clavier. Les suggestions compactes affichent l’adresse et la ville sur deux lignes dans une liste défilante plus grande. Pendant la recherche, la confirmation laisse la place aux suggestions ; elle apparaît après le choix d’une adresse complète. La couverture est réservée aux grands écrans. La mention Google Maps et les erreurs restent visibles. Pour une suggestion de rue sans numéro, consultez la procédure qui explique comment ajouter le numéro puis choisir l’adresse complète ; une rue seule ne confirme pas une livraison.\n\nLa sélection d’une adresse numérotée suffit pour vérifier la livraison. Si Google retrouve seulement la rue, la sélection conserve le numéro. [Consulter la procédure sur téléphone](/fr/help/guest/online-ordering#mobile-fulfillment).",
+            "en": "For trouble entering or choosing an address on a phone, search for address or delivery in Help and open Order online as a customer. The assistant cites the same guide in an available language. Check its source and the site release; if the procedure is missing or differs from your screen, contact the restaurant without sharing customer details or payment data with the assistant. On mobile, Pickup and Delivery tabs, the field and the Sign in link at the top keep their positions when the keyboard opens or closes. Compact suggestions show the address and city on two lines in a larger scrolling list. During search, confirmation leaves room for suggestions; it appears after choosing a complete address. The cover is reserved for larger screens. Google Maps attribution and errors stay visible. For a street suggestion without a house number, follow the guide to add the number and choose the complete address; a street alone does not confirm delivery.\n\nChoosing a numbered address is enough to check delivery. If Google returns only the street, the selection keeps the house number. [See the phone procedure](/en/help/guest/online-ordering#mobile-fulfillment).",
+            "he": "לקושי בהקלדה או בבחירת כתובת בטלפון חפשו כתובת או משלוח במרכז העזרה ופתחו הזמנה מקוונת כלקוח. העוזר מצטט את אותו מדריך בשפה זמינה. בדקו מקור וגרסת אתר; אם ההוראות חסרות או אינן תואמות למסך, פנו למסעדה בלי לשלוח פרטי לקוחות או תשלום לעוזר. בנייד, לשוניות איסוף ומשלוח, השדה וקישור ההתחברות למעלה שומרים על מיקומם בפתיחת המקלדת ובסגירתה. הצעות קומפקטיות מציגות כתובת ועיר בשתי שורות ברשימה נגללת גדולה יותר. בזמן החיפוש האישור מפנה מקום להצעות ומופיע לאחר בחירת כתובת מלאה. תמונת הכיסוי מוצגת במסכים גדולים בלבד. הייחוס ל-Google Maps והודעות שגיאה נשארים גלויים. בהצעת רחוב ללא מספר בית, עיינו בהוראות להוספת המספר ולבחירת כתובת מלאה; רחוב בלבד אינו מאשר משלוח.\n\nבחירה בכתובת עם מספר בית מספיקה לבדיקת המשלוח. אם Google מחזירה רק רחוב, המספר נשמר בבחירה. [למדריך בטלפון](/he/help/guest/online-ordering#mobile-fulfillment)."
           }
         },
         {
@@ -37943,9 +37985,9 @@
             "he": "הגדרת הצעות הכתובת באתר"
           },
           "instructions": {
-            "en": "In the website editor, open the delivery checkout. Turn address autocomplete on or off, then publish the website. When enabled, guests can select a Google suggestion. They can also confirm their building and city manually. The restaurant’s delivery zones, prices and schedules apply.",
-            "fr": "Dans l’éditeur du site, ouvrez le formulaire de commande en livraison. Activez ou désactivez l’autocomplétion des adresses, puis publiez le site. Lorsque le réglage est activé, la cliente peut choisir une suggestion Google. Elle peut aussi confirmer son numéro et sa ville manuellement. Les zones, tarifs et créneaux du restaurant s’appliquent.",
-            "he": "בעורך האתר פתחו את טופס ההזמנה למשלוח. הפעילו או כבו השלמה אוטומטית של כתובות ופרסמו את האתר. כשהאפשרות פעילה אפשר לבחור הצעה של Google או לאשר ידנית את מספר הבית והעיר. אזורי המשלוח, המחירים והמועדים של המסעדה חלים על ההזמנה."
+            "en": "In the website editor, open the delivery checkout. Turn address autocomplete on or off, then publish the website. When enabled, guests can select a Google suggestion. They can also confirm their building and city manually. The restaurant’s delivery zones, prices and schedules apply. Choosing a numbered address is enough to check delivery. If Google returns only the street, the selection keeps the house number.",
+            "fr": "Dans l’éditeur du site, ouvrez le formulaire de commande en livraison. Activez ou désactivez l’autocomplétion des adresses, puis publiez le site. Lorsque le réglage est activé, la cliente peut choisir une suggestion Google. Elle peut aussi confirmer son numéro et sa ville manuellement. Les zones, tarifs et créneaux du restaurant s’appliquent. La sélection d’une adresse numérotée suffit pour vérifier la livraison. Si Google retrouve seulement la rue, la sélection conserve le numéro.",
+            "he": "בעורך האתר פתחו את טופס ההזמנה למשלוח. הפעילו או כבו השלמה אוטומטית של כתובות ופרסמו את האתר. כשהאפשרות פעילה אפשר לבחור הצעה של Google או לאשר ידנית את מספר הבית והעיר. אזורי המשלוח, המחירים והמועדים של המסעדה חלים על ההזמנה. בחירה בכתובת עם מספר בית מספיקה לבדיקת המשלוח. אם Google מחזירה רק רחוב, המספר נשמר בבחירה."
           }
         },
         {
@@ -49041,7 +49083,8 @@
           "app/globals.css",
           "components/VerifoneCardCapture.tsx",
           "components/VerifoneOrderPayment.tsx",
-          "lib/verifone-wallet.ts"
+          "lib/verifone-wallet.ts",
+          "lib/delivery-address-input.ts"
         ],
         "foodyserver": [
           "internal/common/phone.go",
@@ -49053,7 +49096,8 @@
           "internal/addresslookup/handler.go",
           "internal/addresslookup/service.go",
           "internal/delivery/guest_entrance.go",
-          "internal/addresslookup/checkout_profile.go"
+          "internal/addresslookup/checkout_profile.go",
+          "internal/delivery/google_address.go"
         ]
       },
       "operations": [
@@ -49119,9 +49163,9 @@
             "he": "בחירת כתובת בטלפון"
           },
           "instructions": {
-            "fr": "Choisissez Livraison, saisissez la rue, le numéro et la ville, puis touchez la suggestion complète dans la bonne ville. Après vérification de la zone, consultez les frais et les créneaux proposés, puis confirmez la livraison. Sur téléphone, les suggestions défilent même lorsque le clavier est ouvert. La croix en haut permet de revenir au panier.\n\nChoisissez **Saisir l’adresse manuellement** si la recherche est indisponible ou si les suggestions ne trouvent pas votre bâtiment. Le formulaire conserve votre saisie. Vérifiez **Rue et numéro** et **Ville**, puis touchez **Confirmer cette adresse**. Si une suggestion numérotée renvoie à la rue entière, ces champs s’ouvrent avec le numéro choisi. Pour préciser l’entrée, touchez **Indiquer l’entrée sur la carte**, zoomez sur le bâtiment et touchez son entrée. Si vous êtes sur place, **Centrer sur ma position** rapproche la carte. **Continuer avec l’adresse seule** utilise l’adresse postale. Le restaurant vérifie ensuite la zone, les frais, le minimum et les créneaux. Si la zone exige une position précise, le site peut vous demander de corriger l’adresse.",
-            "en": "Choose Delivery and enter the street, number and city. Tap the complete suggestion for the correct city. After the coverage check, review the fee and any offered times, then confirm delivery. On a phone you can scroll suggestions while the keyboard is visible. Use the close button to return to your basket.\n\nChoose **Enter address manually** if suggestions are unavailable or do not include your building. The form keeps your entry. Check **Street and house number** and **City**, then choose **Confirm this address**. When a numbered suggestion identifies only a street, these fields open with the number you selected. To mark the entrance, choose **Mark the entrance on the map**, zoom in and tap the entrance. **Centre on my location** moves the map when you are there. **Continue with the address only** uses the postal address. The restaurant then checks its delivery area, fee, minimum and available times. A zone that needs a verified location can still ask you to correct the address.",
-            "he": "בחרו משלוח, הזינו רחוב, מספר בית ועיר והקישו על ההצעה המלאה בעיר הנכונה. לאחר בדיקת האזור, בדקו את דמי המשלוח ואת המועדים ואשרו את המשלוח. בטלפון אפשר לגלול בהצעות כשהמקלדת פתוחה. כפתור הסגירה מחזיר לסל.\n\nאם החיפוש אינו זמין או שההצעות אינן כוללות את הבניין, בחרו **הזנה ידנית של כתובת**. הפרטים שהקלדתם נשמרים. בדקו את **רחוב ומספר בית** ואת **עיר**, ואז לחצו על **אישור הכתובת**. אם הצעה עם מספר בית מזוהה כרחוב בלבד, השדות נפתחים עם המספר שבחרתם. אפשר לבחור **סימון הכניסה במפה**, להגדיל את הבניין ולהקיש על הכניסה. אם אתם במקום, **מרכוז לפי המיקום שלי** מזיז את המפה. **המשך עם הכתובת בלבד** משתמש בכתובת שהזנתם. לאחר מכן נבדקים אזור המשלוח, התשלום, המינימום והמועדים של המסעדה. באזור שדורש מיקום מדויק ייתכן שתתבקשו לתקן את הכתובת."
+            "fr": "Saisissez la rue, le numéro et la ville dans le champ de livraison, puis touchez la bonne adresse. Ce choix valide l’adresse. Si Google retrouve seulement la rue, le site conserve le numéro de la suggestion ou celui que vous avez saisi pour cette rue et cette ville. La vérification de la zone, des frais, du minimum et des créneaux se fait automatiquement. Vous pouvez ensuite poursuivre votre commande. Sur téléphone, la liste défile lorsque le clavier est ouvert. La croix vous ramène au panier.\n\nSi la première recherche Google échoue, Foody essaie de retrouver le bâtiment avec la géolocalisation d’adresses de Google. Si la recherche ne propose aucune adresse, saisissez la rue et le numéro, une virgule, puis la ville. Touchez **Utiliser l’adresse saisie** dans la liste. Le restaurant vérifie la couverture de cette adresse. Vous pouvez également ouvrir **Saisir l’adresse manuellement** si vous souhaitez préciser une entrée.",
+            "en": "Enter the street, house number and city in the delivery field, then choose the matching address. Choosing it confirms the address. If Google finds only the street, the site keeps the selected number or the one entered for that street and city. The delivery area, fee, minimum and available times are checked automatically. You can then continue ordering. On a phone the list scrolls with the keyboard open. Close returns to the cart.\n\nIf the initial Google search fails, Foody also searches for the building using Google Geocoding. If the search returns no addresses, type the street and number, a comma, and the city. Choose **Use the address you entered** in the list to check delivery coverage. **Enter address manually** is also available if you wish to mark an entrance.",
+            "he": "הקלידו בשדה המשלוח רחוב, מספר בית ועיר ובחרו בכתובת המתאימה. הבחירה מאשרת את הכתובת. אם Google מזהה רק את הרחוב, האתר שומר את המספר שבהצעה או את המספר שהקלדתם לאותו רחוב באותה עיר. אזור המשלוח, דמי המשלוח, המינימום והמועדים נבדקים אוטומטית. לאחר מכן אפשר להמשיך בהזמנה. בטלפון אפשר לגלול בהצעות כשהמקלדת פתוחה. כפתור הסגירה מחזיר לסל.\n\nאם החיפוש הראשון של Google נכשל, האתר מחפש את הבניין גם בשירות האיתור של Google. אם החיפוש לא מציג כתובות, הקלידו רחוב ומספר, פסיק ועיר. בחרו **שימוש בכתובת שהוקלדה** כדי לבדוק אם הכתובת באזור המשלוח. אם תרצו לסמן כניסה, אפשר גם לבחור **הזנה ידנית של כתובת**."
           }
         },
         {
@@ -49132,9 +49176,9 @@
             "he": "בחירת קשר ומסירה"
           },
           "instructions": {
-            "en": "For a delivery order on the restaurant website, if no address is confirmed, select Enter delivery address in the cart. If suggestions are enabled, choose a complete address from the list and select Confirm address. If delivery is unavailable, check the displayed reason and correct the address or try confirming it again. After confirmation, check the delivery fee and the minimum for your address. If the cart shows an amount still needed, add items before choosing Continue to payment.\n\nEnter the requested contact details, address or pickup time. For delivery check zone, fee and offered slot; for preorders follow their specific deadline/date. The final checkout revalidates current rules and prices. Once the address is checked, review the displayed delivery fee and choose Date and Time using the same controls as pickup. The zone limits weekdays; restaurant settings supply slot times and duration. Automatic mode assigns the next slot. When time needs restaurant confirmation, no time picker appears and tracking will show the confirmed time. Changing the address or basket rechecks availability; wait for the check before confirming. With compatible versions, delivery same-day days, transport and time confirmation are configured inside each zone. Restaurant hours and product preparation remain mandatory. Scheduled orders can include today. Staff can test saved basket/address calendars in Orders & availability → Simulate an order; this creates no order or message.\n\nYou can also confirm the street, house number and city using **Enter address manually**.",
-            "fr": "Pour une livraison sur le site du restaurant, si aucune adresse n’est confirmée, choisissez Saisir l’adresse de livraison dans le panier. Si des suggestions sont activées, sélectionnez une adresse complète dans la liste, puis Confirmer l’adresse. Si la livraison est indisponible, lisez le motif affiché et corrigez l’adresse ou confirmez-la de nouveau. Après confirmation, vérifiez les frais et le minimum pour cette adresse. Si le panier indique un montant manquant, ajoutez des articles avant de choisir Continuer vers le paiement.\n\nSaisissez coordonnées, adresse ou heure de retrait. En livraison vérifiez zone, frais et créneau ; pour une précommande, vérifiez sa date et son échéance. Le paiement revalide règles et prix actuels. Après vérification de l’adresse, consultez les frais de livraison affichés et choisissez Date et Heure comme pour le retrait. Les jours proposés dépendent de la zone ; les heures et la durée des créneaux viennent du restaurant. En mode automatique, le prochain créneau est attribué. Si l’heure doit être confirmée, aucun sélecteur d’heure n’apparaît et le suivi affichera la confirmation. Changer l’adresse ou le panier relance la vérification ; attendez sa fin avant de confirmer. Avec les versions compatibles, les jours du jour même, le transport et la confirmation de l’horaire se règlent dans chaque zone. Les horaires du restaurant et la préparation des produits restent obligatoires. Une commande planifiée peut être prévue aujourd’hui. L’équipe peut vérifier les calendriers enregistrés avec un panier et une adresse dans Commandes et disponibilité → Simuler une commande, sans créer de commande ni message.\n\nVous pouvez aussi confirmer la rue, le numéro et la ville avec **Saisir l’adresse manuellement**.",
-            "he": "בהזמנת משלוח באתר המסעדה, אם עדיין לא אושרה כתובת, בחרו בסל הזינו כתובת למשלוח. אם מוצגות הצעות, בחרו כתובת מלאה מהרשימה ולחצו על אישור הכתובת. אם המשלוח אינו זמין, קראו את הסיבה המוצגת ותקנו את הכתובת או נסו לאשר אותה שוב. לאחר האישור בדקו את דמי המשלוח ואת סכום המינימום לכתובת. אם מוצג סכום חסר, הוסיפו פריטים לפני שתבחרו להמשיך לתשלום.\n\nהזינו קשר, כתובת או זמן איסוף. במשלוח בדקו אזור, עלות ומועד; בהזמנה מראש בדקו מועד סגירה ותאריך. בסיום נבדקים שוב כללים ומחירים. לאחר בדיקת הכתובת בדקו את דמי המשלוח המוצגים ובחרו תאריך ושעה כמו באיסוף. האזור מגביל את הימים; הגדרות המסעדה קובעות את השעות ואת משך החלון. במצב אוטומטי מוקצה החלון הבא. כשנדרש אישור שעה מהמסעדה אין בורר שעה, והמעקב יציג את האישור. שינוי כתובת או סל מפעיל בדיקה מחדש; המתינו לסיומה לפני האישור. בגרסאות תואמות, ימי אותו יום, הנסיעה ואישור השעה מוגדרים בכל אזור. שעות המסעדה והכנת המוצרים עדיין חובה. הזמנה מתוזמנת יכולה להיות להיום. הצוות יכול לבדוק לוחות זמנים שמורים עם סל וכתובת בהזמנות וזמינות → הדמיית הזמנה, בלי ליצור הזמנה או הודעה.\n\nאפשר גם לאשר רחוב, מספר בית ועיר באמצעות **הזנה ידנית של כתובת**."
+            "en": "In the cart, open **Enter delivery address**. Type the street, house number and city, then choose the address in the list. Review the fee and minimum shown. If delivery is unavailable, read the reason. If the cart shows an amount still needed, add items before continuing to payment.\n\nEnter the requested contact details, address or pickup time. For delivery check zone, fee and offered slot; for preorders follow their specific deadline/date. The final checkout revalidates current rules and prices. Once the address is checked, review the displayed delivery fee and choose Date and Time using the same controls as pickup. The zone limits weekdays; restaurant settings supply slot times and duration. Automatic mode assigns the next slot. When time needs restaurant confirmation, no time picker appears and tracking will show the confirmed time. Changing the address or basket rechecks availability; wait for the check before confirming. With compatible versions, delivery same-day days, transport and time confirmation are configured inside each zone. Restaurant hours and product preparation remain mandatory. Scheduled orders can include today. Staff can test saved basket/address calendars in Orders & availability → Simulate an order; this creates no order or message.\n\nYou can also confirm the street, house number and city using **Enter address manually**.",
+            "fr": "Dans le panier, ouvrez **Saisir l’adresse de livraison**. Tapez la rue, le numéro et la ville, puis choisissez l’adresse dans la liste. Vérifiez les frais et le minimum affichés. Si la livraison est indisponible, consultez le motif. Si le panier indique un montant manquant, ajoutez des articles avant de continuer vers le paiement.\n\nSaisissez coordonnées, adresse ou heure de retrait. En livraison vérifiez zone, frais et créneau ; pour une précommande, vérifiez sa date et son échéance. Le paiement revalide règles et prix actuels. Après vérification de l’adresse, consultez les frais de livraison affichés et choisissez Date et Heure comme pour le retrait. Les jours proposés dépendent de la zone ; les heures et la durée des créneaux viennent du restaurant. En mode automatique, le prochain créneau est attribué. Si l’heure doit être confirmée, aucun sélecteur d’heure n’apparaît et le suivi affichera la confirmation. Changer l’adresse ou le panier relance la vérification ; attendez sa fin avant de confirmer. Avec les versions compatibles, les jours du jour même, le transport et la confirmation de l’horaire se règlent dans chaque zone. Les horaires du restaurant et la préparation des produits restent obligatoires. Une commande planifiée peut être prévue aujourd’hui. L’équipe peut vérifier les calendriers enregistrés avec un panier et une adresse dans Commandes et disponibilité → Simuler une commande, sans créer de commande ni message.\n\nVous pouvez aussi confirmer la rue, le numéro et la ville avec **Saisir l’adresse manuellement**.",
+            "he": "בסל פתחו את **הזינו כתובת למשלוח**. הקלידו רחוב, מספר בית ועיר ובחרו בהצעה המתאימה. בדקו את דמי המשלוח ואת סכום המינימום שמוצגים. אם המשלוח אינו זמין מוצגת הסיבה. אם חסר סכום להזמנה, הוסיפו פריטים לפני שתמשיכו לתשלום.\n\nהזינו קשר, כתובת או זמן איסוף. במשלוח בדקו אזור, עלות ומועד; בהזמנה מראש בדקו מועד סגירה ותאריך. בסיום נבדקים שוב כללים ומחירים. לאחר בדיקת הכתובת בדקו את דמי המשלוח המוצגים ובחרו תאריך ושעה כמו באיסוף. האזור מגביל את הימים; הגדרות המסעדה קובעות את השעות ואת משך החלון. במצב אוטומטי מוקצה החלון הבא. כשנדרש אישור שעה מהמסעדה אין בורר שעה, והמעקב יציג את האישור. שינוי כתובת או סל מפעיל בדיקה מחדש; המתינו לסיומה לפני האישור. בגרסאות תואמות, ימי אותו יום, הנסיעה ואישור השעה מוגדרים בכל אזור. שעות המסעדה והכנת המוצרים עדיין חובה. הזמנה מתוזמנת יכולה להיות להיום. הצוות יכול לבדוק לוחות זמנים שמורים עם סל וכתובת בהזמנות וזמינות → הדמיית הזמנה, בלי ליצור הזמנה או הודעה.\n\nאפשר גם לאשר רחוב, מספר בית ועיר באמצעות **הזנה ידנית של כתובת**."
           }
         },
         {
@@ -49404,6 +49448,10 @@
         },
         {
           "service": "foodyserver",
+          "file": "internal/delivery/google_address.go"
+        },
+        {
+          "service": "foodyserver",
           "file": "internal/delivery/guest_entrance.go"
         },
         {
@@ -49657,6 +49705,10 @@
         {
           "service": "foodyweb",
           "file": "lib/customer-phone.ts"
+        },
+        {
+          "service": "foodyweb",
+          "file": "lib/delivery-address-input.ts"
         },
         {
           "service": "foodyweb",
@@ -51920,9 +51972,9 @@
             "he": "בדיקת הנפקה של כרטיסי מועדון אישיים"
           },
           "instructions": {
-            "en": "Apply migration 322 with the API release. Publish a saved Wallet design for the test restaurant and enable its loyalty program. Enable the Wallet API and the intended provider for the environment. Test issuance with an authenticated member and repeat it to verify stable card identity. With Google enabled, verify that the API serves only published, versioned artwork. Check Apple iPhone and Google device acceptance with their respective provider credentials.",
-            "fr": "Appliquez la migration 322 avec la livraison de l’API. Publiez un visuel Wallet enregistré pour le restaurant de test et activez son programme de fidélité. Activez l’API Wallet et le fournisseur prévu pour l’environnement. Demandez une carte avec un compte membre authentifié et répétez l’opération pour vérifier la stabilité de son identifiant. Lorsque Google est activé, vérifiez que l’API sert uniquement les images des versions publiées. Vérifiez l’ajout sur les appareils Apple et Google avec la configuration de chaque fournisseur.",
-            "he": "החילו את מיגרציה 322 עם פריסת ה־API. פרסמו עיצוב Wallet שמור למסעדת הבדיקה והפעילו את תוכנית המועדון שלה. הפעילו את ה־API של Wallet ואת הספק המתאים לסביבה. בקשו כרטיס מחשבון חבר מאומת וחזרו על הפעולה כדי לבדוק שמזהה הכרטיס נשאר קבוע. כאשר Google מופעל, ודאו שה־API מגיש רק תמונות בגרסאות שפורסמו. בדקו הוספה במכשירי Apple ו־Google עם ההגדרות של כל ספק."
+            "en": "Apply migrations 322 and 334 with the API release. Publish a saved Wallet design for the test restaurant and enable its loyalty program. Enable the Wallet API and the intended provider for the environment. Test issuance with an authenticated member and repeat it to verify stable card identity. With Google enabled, verify that the API serves only published, versioned artwork. Hide the restaurant name, save the banner, then publish. On the member pass verify the banner, the Foody attribution by the QR code and the link in the details. Check Apple iPhone and Google device acceptance with their respective provider credentials. Apply migration 335 before releasing the Studio banner editor. Save a new photo in a private draft, reopen it and adjust each Wallet. Verify the Apple test card uses the selected counter position and check each published Wallet image against its own preview.",
+            "fr": "Appliquez les migrations 322 et 334 avec la livraison de l’API. Publiez un visuel Wallet enregistré pour le restaurant de test et activez son programme de fidélité. Activez l’API Wallet et le fournisseur prévu pour l’environnement. Demandez une carte avec un compte membre authentifié et répétez l’opération pour vérifier la stabilité de son identifiant. Lorsque Google est activé, vérifiez que l’API sert uniquement les images des versions publiées. Masquez le nom du restaurant, enregistrez la bannière puis publiez le visuel. Sur la carte d’un membre, vérifiez la bannière, la mention Foody près du QR et le lien dans les détails. Vérifiez l’ajout sur les appareils Apple et Google avec la configuration de chaque fournisseur. Appliquez la migration 335 avant de déployer l’éditeur de cadrage. Enregistrez une nouvelle photo dans le brouillon privé, rouvrez-la et ajustez chaque Wallet. Vérifiez la position choisie du compteur sur la carte Apple de test et comparez chaque image publiée à son aperçu.",
+            "he": "החילו את מיגרציות 322 ו־334 עם פריסת ה־API. פרסמו עיצוב Wallet שמור למסעדת הבדיקה והפעילו את תוכנית המועדון שלה. הפעילו את ה־API של Wallet ואת הספק המתאים לסביבה. בקשו כרטיס מחשבון חבר מאומת וחזרו על הפעולה כדי לבדוק שמזהה הכרטיס נשאר קבוע. כאשר Google מופעל, ודאו שה־API מגיש רק תמונות בגרסאות שפורסמו. הסתירו את שם המסעדה, שמרו את תמונת הכותרת ופרסמו את העיצוב. בכרטיס של חבר מועדון ודאו שמוצגים הבאנר, הכיתוב של Foody ליד קוד ה־QR והקישור בפרטי הכרטיס. בדקו הוספה במכשירי Apple ו־Google עם ההגדרות של כל ספק. הפעילו את מיגרציה 335 לפני הפצת עורך מסגור הבאנר. שמרו תמונה חדשה בטיוטה הפרטית, פתחו אותה שוב והתאימו את המסגור בכל ארנק. בדקו את מיקום המונה בכרטיס הבדיקה של Apple והשוו את התמונה שפורסמה בכל ארנק לתצוגה המקדימה שלו."
           }
         },
         {
@@ -52117,9 +52169,9 @@
             "he": "בירור הצעות רחוב של Google"
           },
           "instructions": {
-            "fr": "Google peut renvoyer un identifiant canonique différent pour un segment de rue. Accepter cette différence uniquement pour une rue sans numéro, après validation du pays et de la réponse du fournisseur. Cette précision ne reçoit ni preuve de livraison ni coordonnées : le client doit encore sélectionner une adresse complète. Conserver la correspondance exacte d’identifiant pour les adresses complètes, les signatures liées au restaurant et au visiteur, les limites de session et les budgets. Tester les rues canoniques, les pays étrangers, les identifiants absents ou invalides et le rejet des adresses complètes d’un autre lieu. Vérifier une recherche de rue et une adresse avec numéro après promotion. Référence fournisseur : https://developers.google.com/maps/documentation/places/web-service/place-id#obsolete\n\nSi une suggestion numérotée ne renvoie que la rue ou si la recherche est indisponible, le site permet au client de confirmer son adresse postale et de préciser l’entrée. [Consulter la procédure sur téléphone](/fr/help/guest/online-ordering#mobile-fulfillment).",
-            "en": "Google can return a different canonical ID for a route segment. Accept this difference only for a street without a house number, after validating the country and provider response. This refinement receives neither delivery proof nor coordinates: the customer must still choose a complete address. Preserve exact place-ID matching for complete addresses, restaurant and visitor bound signatures, session limits and budgets. Test canonical streets, foreign countries, missing or invalid IDs and rejection of complete addresses for another place. Verify a street search and an address with a house number after promotion. Provider reference: https://developers.google.com/maps/documentation/places/web-service/place-id#obsolete\n\nWhen a numbered prediction returns only a street or search is unavailable, the guest can confirm a postal address and optionally mark the entrance. [See the phone procedure](/en/help/guest/online-ordering#mobile-fulfillment).",
-            "he": "Google עשויה להחזיר מזהה קנוני שונה למקטע רחוב. יש לקבל הבדל זה רק לרחוב ללא מספר בית, לאחר בדיקת המדינה ותשובת הספק. ההשלמה אינה מקבלת הוכחת משלוח או קואורדינטות: הלקוח עדיין חייב לבחור כתובת מלאה. יש לשמור על התאמה מדויקת של מזהה המקום לכתובות מלאות, חתימות הקשורות למסעדה ולמבקר, מגבלות הפעלה ותקציבים. יש לבדוק רחובות קנוניים, מדינות זרות, מזהים חסרים או לא תקינים ודחיית כתובת מלאה של מקום אחר. לאחר קידום יש לבדוק חיפוש רחוב וכתובת עם מספר בית. מקור הספק: https://developers.google.com/maps/documentation/places/web-service/place-id#obsolete\n\nכשהצעה עם מספר בית מחזירה רחוב בלבד או כשהחיפוש אינו זמין, הלקוח יכול לאשר את הכתובת ולסמן את הכניסה. [למדריך בטלפון](/he/help/guest/online-ordering#mobile-fulfillment)."
+            "fr": "Une suggestion Google numérotée qui se résout en rue peut servir de preuve postale après rapprochement de la rue et de la ville. Conserver le numéro sélectionné et vérifier la zone à chaque commande. Un segment de rue ne fournit aucune position d’entrée. En cas d’indisponibilité de Places ou de liste vide, une recherche numérotée peut proposer des bâtiments avec rue, numéro, ville et pays concordants issus du géocodage Google. Une sélection reste liée au restaurant et au texte par sa signature.\n\n[Consulter la procédure sur téléphone](/fr/help/guest/online-ordering#mobile-fulfillment).",
+            "en": "A numbered Google suggestion resolving to a street can be confirmed as postal text when the street and municipality match. Keep the selected number and validate coverage at order time. A street segment supplies no entrance coordinates. When Places is unavailable or returns no results, numbered searches can suggest buildings from Google Geocoding with a matching country and number, a street and a city. A signed selection is bound to the restaurant and its address text.\n\n[See the phone procedure](/en/help/guest/online-ordering#mobile-fulfillment).",
+            "he": "אם בחירה בהצעה ממוספרת של Google מחזירה רק רחוב, ניתן לאשר אותה ככתובת דואר כאשר הרחוב והעיר תואמים. שומרים את המספר שנבחר ובודקים את אזור המשלוח בהזמנה. מקטע רחוב אינו מספק מיקום כניסה. אם Places אינו זמין או שהרשימה ריקה, בחיפוש ממוספר ניתן להציע בניינים משירות האיתור של Google עם מדינה ומספר תואמים ושם רחוב ועיר. החתימה קושרת את הבחירה למסעדה ולכתובת.\n\n[למדריך בטלפון](/he/help/guest/online-ordering#mobile-fulfillment)."
           }
         },
         {
@@ -57019,6 +57071,10 @@
         },
         {
           "service": "foodyadmin",
+          "file": "src/lib/wallet-banner.ts"
+        },
+        {
+          "service": "foodyadmin",
           "file": "src/lib/website-fonts.ts"
         },
         {
@@ -58276,6 +58332,10 @@
         {
           "service": "foodyweb",
           "file": "lib/customer-social-flow.ts"
+        },
+        {
+          "service": "foodyweb",
+          "file": "lib/delivery-address-input.ts"
         },
         {
           "service": "foodyweb",
@@ -60337,7 +60397,8 @@
           "internal/orders/financial_check_payment.go",
           "internal/orders/cash_drawer.go",
           "migrations/291_counter_end_of_day.sql",
-          "migrations/335_ashrait_service_recovery.sql"
+          "migrations/336_ashrait_service_recovery.sql",
+          "migrations/337_end_of_day_handoffs.sql"
         ]
       },
       "operations": [
@@ -60375,9 +60436,9 @@
             "he": "שחזור ללא שידור כפול"
           },
           "instructions": {
-            "fr": "Sur l’iPad principal, ouvrez Plus → Rapports → Solde en caisse. Après une coupure, touchez **Reprendre l’enregistrement**. Foody recherche la confirmation d’origine. Sur un Mini compatible, il compare aussi les rapports SHVA conservés par le terminal. Pour un Portable, rouvrez FoodyPOS sur cet appareil avec une session personnelle autorisée. Conservez la même demande jusqu’au résultat.\n\nAvec la version compatible et les droits de gestion des paiements et de modification des paramètres, le responsable peut choisir **Annuler la clôture non transmise** tant qu’aucun terminal n’a commencé sa transmission. Le tiroir réservé est alors libéré. Après un premier envoi, choisissez **Reprendre sur les terminaux disponibles**. Vérifiez la connexion du terminal. Foody conserve le dépôt à vérifier et autorise les nouvelles ventes sur les terminaux admissibles quand la passerelle donne son accord. Les encaissements suivants appartiennent à la période suivante. Finalisez le Z après réception des confirmations.\n\nSi vous avez le justificatif papier, choisissez **Vérifier un rapport SHVA** sur la ligne du terminal et saisissez sa référence de transmission (אסמכתת שידור). Foody recherche ce numéro dans les dix derniers rapports du terminal et vérifie le numéro SHVA, la date et les totaux avant de le rattacher. Sur un Portable, laissez FoodyPOS ouvert. Un dépôt bancaire tardif peut contenir des ventes de la période Foody suivante. Si le terminal renvoie un statut de passerelle vide, vérifiez la version Ashrait avec Verifone.",
-            "en": "On the main iPad, open More → Reports → Current drawer. After a connection loss, choose **Resume recording**. Foody looks for the original confirmation. On a compatible Mini it also compares the SHVA reports retained by the terminal. For a Portable, open FoodyPOS on that device with an authorized personal session. Keep the original request while its result is uncertain.\n\nWith the compatible release and permission to manage payments and edit settings, a manager can choose **Cancel unsent closing** while all transmissions are pending. This releases the reserved drawer. After a transmission has started, choose **Resume on available terminals** and check the terminal connection. Foody retains the unresolved deposit and permits new sales on eligible terminals when the gateway reports readiness. Later sales belong to the next period. Finalize the Z after the confirmations arrive.\n\nIf you have the original paper report, choose **Verify a SHVA report** on that terminal and enter the transmission reference (אסמכתת שידור). Foody searches the ten most recent terminal reports and checks the SHVA number, time and totals before attaching it. Keep FoodyPOS open on a Portable. A late bank deposit can include sales in the next Foody period. If the terminal returns an empty gateway status, check the Ashrait version with Verifone.",
-            "he": "באייפד הראשי פתחו עוד ← דוחות ← יתרת קופה. לאחר ניתוק בחרו **המשך רישום**. Foody מחפשת את האישור של השידור המקורי. במסוף Mini תואם היא משווה גם את דוחות שב״א שנשמרו במסוף. במסוף נייד פתחו את FoodyPOS במכשיר עצמו והיכנסו עם משתמש מורשה. שמרו על אותה בקשה כל עוד התוצאה בבדיקה.\n\nבגרסה התואמת, מנהל עם הרשאות לניהול תשלומים ולעריכת הגדרות יכול לבטל סגירה שטרם שודרה כל עוד לא התחיל שידור באף מסוף. הביטול משחרר את המגירה. לאחר תחילת השידור בחרו בחידוש הגבייה במסופים הזמינים ובדקו את החיבור. השידור המקורי נשאר בבדיקה. ניתן לבצע עסקאות חדשות במסופים הזכאים כאשר השער מדווח שהוא מוכן. הגביות החדשות שייכות לתקופה הבאה. השלימו את דוח Z אחרי קבלת האישורים.\n\nאם הדוח המקורי בידיכם, בחרו **אימות דוח שב״א** בשורת המסוף והזינו את אסמכתת השידור. Foody מחפשת אותה בעשרת הדוחות האחרונים במסוף ובודקת את מספר המסוף, המועד והסכומים לפני השיוך. במסוף נייד יש להשאיר את FoodyPOS פתוחה. שידור בנקאי מאוחר עשוי לכלול מכירות מתקופת Foody הבאה. אם מתקבלת תשובה ללא מצב שער, בדקו את גרסת אשראית מול וריפון."
+            "fr": "Sur l’iPad principal, ouvrez Plus → Rapports → Solde en caisse. Après une coupure, touchez **Reprendre l’enregistrement**. Foody recherche la confirmation d’origine. Sur un Mini compatible, il compare aussi les rapports SHVA conservés par le terminal. Pour un Portable, rouvrez FoodyPOS sur cet appareil avec une session personnelle autorisée. Conservez la même demande jusqu’au résultat.\n\nAvec la version compatible et les droits de gestion des paiements et de modification des paramètres, le responsable peut choisir **Annuler la clôture non transmise** tant qu’aucun terminal n’a commencé sa transmission. Le tiroir réservé est alors libéré. Après un premier envoi, choisissez **Reprendre sur les terminaux disponibles**. Vérifiez la connexion du terminal. Foody conserve le dépôt à vérifier et autorise les nouvelles ventes sur les terminaux admissibles quand la passerelle donne son accord. Les encaissements suivants appartiennent à la période suivante. Finalisez le Z après réception des confirmations.\n\nSi vous avez le justificatif papier, choisissez **Vérifier un rapport SHVA** sur la ligne du terminal et saisissez sa référence de transmission (אסמכתת שידור). Foody recherche ce numéro dans les dix derniers rapports du terminal et vérifie le numéro SHVA, la date et les totaux avant de le rattacher. Sur un Portable, laissez FoodyPOS ouvert. Un dépôt bancaire tardif peut contenir des ventes de la période Foody suivante. Si le terminal renvoie un statut de passerelle vide, vérifiez la version Ashrait avec Verifone.\n\nSur un iPad de remplacement déjà enrôlé au restaurant, connectez-vous avec votre compte responsable, ouvrez Solde en caisse et choisissez **Reprendre la clôture sur cet iPad**. Vérifiez sa date avant de confirmer. Cet iPad devient la caisse principale. Le tiroir, les montants et les demandes de transmission d’origine restent rattachés à la même clôture. Pour un dépôt déjà envoyé, ouvrez la vérification du rapport archivé et saisissez sa référence imprimée. Vous pouvez reprendre les encaissements sur les terminaux disponibles pendant la vérification.",
+            "en": "On the main iPad, open More → Reports → Current drawer. After a connection loss, choose **Resume recording**. Foody looks for the original confirmation. On a compatible Mini it also compares the SHVA reports retained by the terminal. For a Portable, open FoodyPOS on that device with an authorized personal session. Keep the original request while its result is uncertain.\n\nWith the compatible release and permission to manage payments and edit settings, a manager can choose **Cancel unsent closing** while all transmissions are pending. This releases the reserved drawer. After a transmission has started, choose **Resume on available terminals** and check the terminal connection. Foody retains the unresolved deposit and permits new sales on eligible terminals when the gateway reports readiness. Later sales belong to the next period. Finalize the Z after the confirmations arrive.\n\nIf you have the original paper report, choose **Verify a SHVA report** on that terminal and enter the transmission reference (אסמכתת שידור). Foody searches the ten most recent terminal reports and checks the SHVA number, time and totals before attaching it. Keep FoodyPOS open on a Portable. A late bank deposit can include sales in the next Foody period. If the terminal returns an empty gateway status, check the Ashrait version with Verifone.\n\nOn a replacement iPad enrolled at the restaurant, sign in as a manager, open Cash balance and choose **Take over this closing**. Review the closing time and confirm. This iPad becomes the main register. The original cash drawer, amounts and transmission requests stay with the same closing. For an already dispatched deposit, open the archived report review and enter its printed reference. Available terminals can resume taking payments while the deposit is being checked.",
+            "he": "באייפד הראשי פתחו עוד ← דוחות ← יתרת קופה. לאחר ניתוק בחרו **המשך רישום**. Foody מחפשת את האישור של השידור המקורי. במסוף Mini תואם היא משווה גם את דוחות שב״א שנשמרו במסוף. במסוף נייד פתחו את FoodyPOS במכשיר עצמו והיכנסו עם משתמש מורשה. שמרו על אותה בקשה כל עוד התוצאה בבדיקה.\n\nבגרסה התואמת, מנהל עם הרשאות לניהול תשלומים ולעריכת הגדרות יכול לבטל סגירה שטרם שודרה כל עוד לא התחיל שידור באף מסוף. הביטול משחרר את המגירה. לאחר תחילת השידור בחרו בחידוש הגבייה במסופים הזמינים ובדקו את החיבור. השידור המקורי נשאר בבדיקה. ניתן לבצע עסקאות חדשות במסופים הזכאים כאשר השער מדווח שהוא מוכן. הגביות החדשות שייכות לתקופה הבאה. השלימו את דוח Z אחרי קבלת האישורים.\n\nאם הדוח המקורי בידיכם, בחרו **אימות דוח שב״א** בשורת המסוף והזינו את אסמכתת השידור. Foody מחפשת אותה בעשרת הדוחות האחרונים במסוף ובודקת את מספר המסוף, המועד והסכומים לפני השיוך. במסוף נייד יש להשאיר את FoodyPOS פתוחה. שידור בנקאי מאוחר עשוי לכלול מכירות מתקופת Foody הבאה. אם מתקבלת תשובה ללא מצב שער, בדקו את גרסת אשראית מול וריפון.\n\nבאייפד חלופי שכבר רשום במסעדה, התחברו בחשבון מנהל, פתחו את יתרת הקופה ובחרו **העברת הסגירה לאייפד הזה**. בדקו את שעת הסגירה ואשרו. אייפד זה יהפוך לקופה הראשית. המגירה המקורית, הסכומים ובקשות השידור נשמרים באותה סגירה. לשידור שכבר נשלח, פתחו את בדיקת הדוח השמור והזינו את האסמכתה המודפסת. ניתן לחדש קבלת תשלומים במסופים הזמינים בזמן הבדיקה."
           }
         },
         {
@@ -60612,7 +60673,11 @@
         },
         {
           "service": "foodyserver",
-          "file": "migrations/335_ashrait_service_recovery.sql"
+          "file": "migrations/336_ashrait_service_recovery.sql"
+        },
+        {
+          "service": "foodyserver",
+          "file": "migrations/337_end_of_day_handoffs.sql"
         }
       ]
     },
@@ -61175,9 +61240,9 @@
             "he": "צפייה בהחזרים ובביטולי תשלום בעסקאות"
           },
           "instructions": {
-            "en": "A successful Verifone Checkout refund or void initiated in Foody appears as its own return transaction, linked to the original payment. A confirmed cash return also appears separately, linked to its original cash tender. On the POS, an owner or manager with payments.manage can open an eligible payment in Transactions. For a journaled cash sale, choose Issue refund only when the server confirms an exact refundable portion and an open enrolled drawer. Select the order or check portion, enter an amount within the limit and a reason, then hand over cash only after Foody confirms. For one captured Verifone Checkout card payment linked to one exact order allocation, choose Refund to original card or Cancel card payment if offered. Enter a reason and, for a refund, an amount within the displayed limit. Foody sends the return to the original card, never to the cash drawer. An uncertain card result must be rechecked using the same saved request before another return; do not issue cash instead. Legacy unattributed, split/multi-order and Victa card payments do not offer this card action. Admin shows gross collections separately from returns recorded in Foody; neither figure is net revenue. Returns made directly in Verifone Central or on Victa are not included automatically. Also review [recorded net and balance](/en/help/orders/payment-preparation-and-handoff#recorded-money-summary).\n\nDuring a Verifone CST rehearsal, a manager using the diagnostic POS can choose **Refund card · CST** for a test sale made on the authorized terminal after its fleet verification. Open the sale on the same POS, review the refundable amount and confirm once. If the reply is interrupted, reopen that sale to check the saved refund. Once confirmed, open the credit entry to print its customer card slip.",
-            "fr": "Un remboursement ou une annulation Verifone Checkout réussi depuis Foody apparaît comme une transaction de retour distincte, liée au paiement d’origine. Un remboursement en espèces confirmé apparaît lui aussi séparément, lié à l’encaissement d’origine. Sur la caisse, un propriétaire ou responsable avec payments.manage peut ouvrir un paiement éligible dans Transactions. Pour une vente espèces enregistrée, choisissez Émettre un remboursement seulement si le serveur confirme la part exacte remboursable et une caisse autorisée ouverte. Sélectionnez la part de commande ou d’addition, indiquez un montant dans la limite et un motif, puis remettez l’argent seulement après confirmation de Foody. Pour un seul paiement carte Verifone Checkout capturé et lié exactement à une commande, choisissez Rembourser sur la carte d’origine ou Annuler le paiement carte si proposé. Indiquez un motif et, pour un remboursement, un montant dans la limite affichée. Foody renvoie l’argent sur la carte d’origine, jamais dans la caisse espèces. Un résultat carte incertain doit être vérifié avec la même requête enregistrée avant un autre retour ; ne remboursez pas en espèces à la place. Les paiements anciens non attribués, partagés ou liés à plusieurs commandes et les cartes Victa ne proposent pas cette action. Admin distingue encaissements bruts et retours enregistrés dans Foody ; aucun ne représente le chiffre d’affaires net. Les retours réalisés directement dans Verifone Central ou sur Victa ne sont pas inclus automatiquement. [Récapitulatif](/fr/help/orders/payment-preparation-and-handoff#recorded-money-summary).\n\nLors d’une recette Verifone CST, un responsable utilisant la version de diagnostic peut choisir **Rembourser la carte · CST** pour une vente de test effectuée sur le terminal autorisé après sa vérification dans le parc. Rouvrez la vente sur la caisse d’origine, vérifiez le montant remboursable et confirmez une fois. Si la réponse est interrompue, rouvrez cette vente pour vérifier le remboursement enregistré. Après confirmation, ouvrez l’opération de crédit pour imprimer son propre ticket carte client.",
-            "he": "החזר או ביטול של Verifone Checkout שהושלם מתוך Foody מופיע כעסקת החזר נפרדת המקושרת לתשלום המקורי. גם החזר מזומן מאושר מופיע בנפרד ומקושר לתשלום המזומן המקורי. בקופה, בעלים או מנהל עם הרשאת payments.manage יכולים לפתוח תשלום זכאי בעסקאות. למכירת מזומן מתועדת בחרו החזר רק כאשר השרת מאשר חלק מדויק שניתן להחזיר וקופה מורשית פתוחה. בחרו את חלק ההזמנה או החשבון, הזינו סכום עד לתקרה וסיבה, ומסרו מזומן רק לאחר אישור Foody. לתשלום כרטיס Verifone Checkout יחיד שנקלט ומשויך בדיוק להזמנה אחת, בחרו החזר לכרטיס המקורי או ביטול תשלום בכרטיס אם האפשרות מוצגת. הזינו סיבה, ובהחזר גם סכום שאינו עולה על התקרה המוצגת. Foody מחזיר לכרטיס המקורי בלבד, לא לקופת המזומן. תוצאה לא ודאית בכרטיס מחייבת בדיקה של אותה בקשה שמורה לפני החזר נוסף; אין להחזיר מזומן במקום. תשלומים ישנים ללא שיוך, תשלומים מפוצלים או מרובי הזמנות ותשלומי כרטיס ב-Victa אינם מציעים פעולה זו. ב-Admin מוצגים בנפרד תקבולים ברוטו והחזרים שנרשמו ב-Foody; אף אחד מהם אינו הכנסה נטו. החזרים שבוצעו ישירות ב-Verifone Central או ב-Victa אינם נכללים אוטומטית. ראו גם [נטו ויתרה שנרשמו](/he/help/orders/payment-preparation-and-handoff#recorded-money-summary).\n\nבבדיקת CST של Verifone, מנהל המשתמש בגרסת הבדיקה של הקופה יכול לבחור **זיכוי כרטיס · CST** עבור עסקת בדיקה שבוצעה במסוף המורשה אחרי אימותו במערכת ניהול המסופים. פתחו את העסקה בקופה המקורית, בדקו את הסכום הזמין לזיכוי ואשרו פעם אחת. אם התקשורת נקטעה, פתחו שוב את אותה עסקה ובדקו את בקשת הזיכוי שנשמרה. לאחר האישור פתחו את פעולת הזיכוי והדפיסו ממנה את שובר האשראי ללקוח."
+            "en": "A successful Verifone Checkout refund or void initiated in Foody appears as its own return transaction, linked to the original payment. A confirmed cash return also appears separately, linked to its original cash tender. On the POS, an owner or manager with payments.manage can open an eligible payment in Transactions. For a journaled cash sale, choose Issue refund only when the server confirms an exact refundable portion and an open enrolled drawer. Select the order or check portion, enter an amount within the limit and a reason, then hand over cash only after Foody confirms. For one captured Verifone Checkout card payment linked to one exact order allocation, choose Refund to original card or Cancel card payment if offered. Enter a reason and, for a refund, an amount within the displayed limit. Foody sends the return to the original card, never to the cash drawer. An uncertain card result must be rechecked using the same saved request before another return; do not issue cash instead. Legacy unattributed, split/multi-order and Victa card payments do not offer this card action. Admin shows gross collections separately from returns recorded in Foody; neither figure is net revenue. Returns made directly in Verifone Central or on Victa are not included automatically. Also review [recorded net and balance](/en/help/orders/payment-preparation-and-handoff#recorded-money-summary).\n\nDuring a Verifone CST rehearsal, a manager using the diagnostic POS can choose **Refund card · CST** for a test sale made on the authorized terminal after its fleet verification. Open the sale on the same POS, review the refundable amount and confirm once. If the reply is interrupted, reopen that sale to check the saved refund. Once confirmed, open the credit entry to print its customer card slip.\n\nThe authorized pilot build lets a manager refund on a verified CST terminal and the cashier void a matched interrupted sale. If a refund is confirmed and its card receipt is pending, open that refund in Transactions and select **Retrieve the refund receipt** on the original terminal. Foody matches the credit reference. Once the receipt is available, select the copy to print. Retrieval and reprinting do not charge or credit the card.",
+            "fr": "Un remboursement ou une annulation Verifone Checkout réussi depuis Foody apparaît comme une transaction de retour distincte, liée au paiement d’origine. Un remboursement en espèces confirmé apparaît lui aussi séparément, lié à l’encaissement d’origine. Sur la caisse, un propriétaire ou responsable avec payments.manage peut ouvrir un paiement éligible dans Transactions. Pour une vente espèces enregistrée, choisissez Émettre un remboursement seulement si le serveur confirme la part exacte remboursable et une caisse autorisée ouverte. Sélectionnez la part de commande ou d’addition, indiquez un montant dans la limite et un motif, puis remettez l’argent seulement après confirmation de Foody. Pour un seul paiement carte Verifone Checkout capturé et lié exactement à une commande, choisissez Rembourser sur la carte d’origine ou Annuler le paiement carte si proposé. Indiquez un motif et, pour un remboursement, un montant dans la limite affichée. Foody renvoie l’argent sur la carte d’origine, jamais dans la caisse espèces. Un résultat carte incertain doit être vérifié avec la même requête enregistrée avant un autre retour ; ne remboursez pas en espèces à la place. Les paiements anciens non attribués, partagés ou liés à plusieurs commandes et les cartes Victa ne proposent pas cette action. Admin distingue encaissements bruts et retours enregistrés dans Foody ; aucun ne représente le chiffre d’affaires net. Les retours réalisés directement dans Verifone Central ou sur Victa ne sont pas inclus automatiquement. [Récapitulatif](/fr/help/orders/payment-preparation-and-handoff#recorded-money-summary).\n\nLors d’une recette Verifone CST, un responsable utilisant la version de diagnostic peut choisir **Rembourser la carte · CST** pour une vente de test effectuée sur le terminal autorisé après sa vérification dans le parc. Rouvrez la vente sur la caisse d’origine, vérifiez le montant remboursable et confirmez une fois. Si la réponse est interrompue, rouvrez cette vente pour vérifier le remboursement enregistré. Après confirmation, ouvrez l’opération de crédit pour imprimer son propre ticket carte client.\n\nLe build pilote autorisé permet au responsable de rembourser sur un terminal CST vérifié et à l’opérateur d’annuler une vente interrompue après rapprochement. Si le remboursement est confirmé et son ticket indisponible, ouvrez ce remboursement dans Transactions et choisissez **Récupérer le ticket de remboursement** sur le terminal d’origine. Foody vérifie la référence du crédit. Une fois le ticket disponible, sélectionnez la copie à imprimer. La récupération et la réimpression ne débitent ni ne créditent la carte.",
+            "he": "החזר או ביטול של Verifone Checkout שהושלם מתוך Foody מופיע כעסקת החזר נפרדת המקושרת לתשלום המקורי. גם החזר מזומן מאושר מופיע בנפרד ומקושר לתשלום המזומן המקורי. בקופה, בעלים או מנהל עם הרשאת payments.manage יכולים לפתוח תשלום זכאי בעסקאות. למכירת מזומן מתועדת בחרו החזר רק כאשר השרת מאשר חלק מדויק שניתן להחזיר וקופה מורשית פתוחה. בחרו את חלק ההזמנה או החשבון, הזינו סכום עד לתקרה וסיבה, ומסרו מזומן רק לאחר אישור Foody. לתשלום כרטיס Verifone Checkout יחיד שנקלט ומשויך בדיוק להזמנה אחת, בחרו החזר לכרטיס המקורי או ביטול תשלום בכרטיס אם האפשרות מוצגת. הזינו סיבה, ובהחזר גם סכום שאינו עולה על התקרה המוצגת. Foody מחזיר לכרטיס המקורי בלבד, לא לקופת המזומן. תוצאה לא ודאית בכרטיס מחייבת בדיקה של אותה בקשה שמורה לפני החזר נוסף; אין להחזיר מזומן במקום. תשלומים ישנים ללא שיוך, תשלומים מפוצלים או מרובי הזמנות ותשלומי כרטיס ב-Victa אינם מציעים פעולה זו. ב-Admin מוצגים בנפרד תקבולים ברוטו והחזרים שנרשמו ב-Foody; אף אחד מהם אינו הכנסה נטו. החזרים שבוצעו ישירות ב-Verifone Central או ב-Victa אינם נכללים אוטומטית. ראו גם [נטו ויתרה שנרשמו](/he/help/orders/payment-preparation-and-handoff#recorded-money-summary).\n\nבבדיקת CST של Verifone, מנהל המשתמש בגרסת הבדיקה של הקופה יכול לבחור **זיכוי כרטיס · CST** עבור עסקת בדיקה שבוצעה במסוף המורשה אחרי אימותו במערכת ניהול המסופים. פתחו את העסקה בקופה המקורית, בדקו את הסכום הזמין לזיכוי ואשרו פעם אחת. אם התקשורת נקטעה, פתחו שוב את אותה עסקה ובדקו את בקשת הזיכוי שנשמרה. לאחר האישור פתחו את פעולת הזיכוי והדפיסו ממנה את שובר האשראי ללקוח.\n\nגרסת הפיילוט המאושרת מאפשרת למנהל לבצע זיכוי במסוף CST מאומת ולקופאי לבטל עסקה שנקטעה לאחר התאמה. אם הזיכוי אושר והשובר ממתין לשחזור, פתחו את הזיכוי בעסקאות ובחרו **שחזור שובר הזיכוי** במסוף המקורי. המערכת בודקת את אסמכתת הזיכוי. לאחר שהשובר זמין בחרו את העותק להדפסה. פעולות השחזור וההדפסה החוזרת אינן מחייבות או מזכות את הכרטיס."
           }
         },
         {
@@ -61549,7 +61614,10 @@
           "src/components/loyalty/LoyaltyProgramOverview.tsx",
           "src/lib/loyalty-program.ts",
           "src/lib/i18n.tsx",
-          "src/lib/help/context.ts"
+          "src/lib/help/context.ts",
+          "src/components/loyalty/WalletStudioWorkspace.tsx",
+          "src/components/loyalty/WalletBannerFraming.tsx",
+          "src/lib/wallet-banner.ts"
         ],
         "foodyserver": [
           "cmd/server/main.go",
@@ -61613,6 +61681,19 @@
           }
         },
         {
+          "id": "wallet-appearance",
+          "title": {
+            "en": "Customize the Wallet card",
+            "fr": "Personnaliser la carte Wallet",
+            "he": "התאמת כרטיס ה־Wallet"
+          },
+          "instructions": {
+            "en": "Open **Wallet Studio**. Choose a logo and a banner in PNG, JPEG or WebP, up to 10 MB per file. Open **Frame banner** and choose **Entire image** to keep every edge visible or **Fill the frame** to crop. Adjust the zoom and drag in the preview, or use the horizontal and vertical sliders. Apple and Google share the settings until you enable **Use a separate Google frame** in the Google preview. On Apple, place the counter **Below the banner** or **On the banner**. New uploads retain their original file in the private draft. For an older banner, upload the original again if you need its full resolution. Turn off **Show restaurant name** if the logo already includes the name. Google keeps the program title. **Save draft** lets you generate an Apple test card. Select **Publish card design** to apply the saved artwork to customer cards. The card displays **Powered by Foody** near the QR code and includes a Foody link in its details.",
+            "fr": "Ouvrez **Studio Wallet**. Choisissez un logo et une bannière en PNG, JPEG ou WebP, jusqu’à 10 Mo par fichier. Ouvrez **Cadrer la bannière**. Choisissez **Image entière** pour voir tous les bords ou **Remplir le cadre** pour recadrer. Réglez le zoom et déplacez l’image dans l’aperçu ou utilisez les curseurs de position. Apple et Google partagent les réglages. Pour les ajuster séparément, activez **Cadrage propre à Google** dans l’aperçu Google. Sur Apple, placez le compteur **Sous la bannière** ou **Sur la bannière**. Le brouillon privé conserve le fichier original des nouveaux imports. Pour retrouver la pleine résolution d’une ancienne bannière, importez à nouveau son original. Si le logo contient déjà le nom, désactivez **Afficher le nom du restaurant**. Google conserve le titre du programme. **Enregistrer le brouillon** permet de générer une carte de test Apple. Cliquez sur **Publier le visuel** pour appliquer le visuel enregistré aux cartes clients. La mention **Propulsé par Foody** apparaît près du QR et un lien vers Foody figure dans les détails de la carte.",
+            "he": "פתחו את **סטודיו Wallet**. בחרו לוגו ובאנר בפורמט PNG, JPEG או WebP, עד 10 מ״ב לקובץ. פתחו **מסגור הבאנר**. בחרו **התמונה כולה** כדי להציג את כל השוליים או **מילוי המסגרת** כדי לחתוך את התמונה. כוונו את הזום וגררו את התמונה בתצוגה המקדימה, או השתמשו במחוונים למיקום אופקי ואנכי. Apple ו-Google חולקים את הגדרות המסגור. כדי לכוון אותם בנפרד, הפעילו **מסגור נפרד ל-Google** בתצוגת Google. ב-Apple אפשר למקם את המונה **מתחת לבאנר** או **על הבאנר**. הטיוטה הפרטית שומרת את קובץ המקור של העלאות חדשות. לבאנר ישן אפשר להעלות מחדש את המקור כדי לערוך ברזולוציה המלאה. אם הלוגו כבר כולל את השם, כבו את **הצגת שם המסעדה**. ב־Google שם התוכנית ממשיך להופיע. לאחר **שמירת טיוטה** אפשר ליצור כרטיס בדיקה של Apple. בחרו **פרסום עיצוב הכרטיס** כדי להחיל את העיצוב השמור על כרטיסי הלקוחות. הכיתוב **מופעל על ידי Foody** מופיע ליד קוד ה־QR וקישור ל־Foody נמצא בפרטי הכרטיס."
+          }
+        },
+        {
           "id": "open-loyalty-card",
           "title": {
             "en": "Open and add your personal loyalty card",
@@ -61646,7 +61727,7 @@
       },
       "audience": "public",
       "status": "available",
-      "procedureUpdatedAt": "2026-11-18",
+      "procedureUpdatedAt": "2026-11-19",
       "preserveExisting": false,
       "evidence": [
         {
@@ -61667,6 +61748,14 @@
         },
         {
           "service": "foodyadmin",
+          "file": "src/components/loyalty/WalletBannerFraming.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/components/loyalty/WalletStudioWorkspace.tsx"
+        },
+        {
+          "service": "foodyadmin",
           "file": "src/lib/help/context.ts"
         },
         {
@@ -61676,6 +61765,10 @@
         {
           "service": "foodyadmin",
           "file": "src/lib/loyalty-program.ts"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/lib/wallet-banner.ts"
         },
         {
           "service": "foodyserver",
@@ -61768,7 +61861,9 @@
           "src/components/loyalty/WalletStudioWorkspace.tsx",
           "src/components/loyalty/LoyaltyProgramWorkspace.tsx",
           "src/lib/api.ts",
-          "src/lib/i18n.tsx"
+          "src/lib/i18n.tsx",
+          "src/components/loyalty/WalletBannerFraming.tsx",
+          "src/lib/wallet-banner.ts"
         ],
         "foodyserver": [
           "cmd/server/wallet_studio.go",
@@ -61779,7 +61874,9 @@
           "internal/loyalty/wallet_studio_artwork.go",
           "internal/loyaltywallet/**",
           "migrations/315_loyalty_wallet_designs.sql",
-          "migrations/322_loyalty_wallet_publications.sql"
+          "migrations/322_loyalty_wallet_publications.sql",
+          "migrations/334_wallet_restaurant_name.sql",
+          "migrations/335_wallet_banner_framing.sql"
         ],
         "foodyweb": [
           "app/api/loyalty-wallet/apple/route.ts",
@@ -61801,9 +61898,9 @@
             "he": "שמירת עיצוב פרטי"
           },
           "instructions": {
-            "en": "Set the background color and the Apple text color. Choose a logo and a banner in PNG or JPEG, up to 1 MB each. Switch between Apple Wallet and Google Wallet to check the cropping. Select **Save draft**. If another editor saved a newer draft, reload it before retrying.",
-            "fr": "Choisissez la couleur du fond et celle du texte Apple. Importez un logo et une bannière en PNG ou JPEG, de 1 Mo maximum chacun. Basculez entre Apple Wallet et Google Wallet pour vérifier le cadrage. Cliquez sur **Enregistrer le brouillon**. Si une autre personne a enregistré une version plus récente, rechargez-la avant de réessayer.",
-            "he": "בחרו צבע רקע וצבע טקסט ל־Apple. בחרו לוגו ותמונת כותרת בפורמט PNG או JPEG, עד 1 מ״ב לקובץ. עברו בין Apple Wallet ל־Google Wallet כדי לבדוק את החיתוך. בחרו **שמירת טיוטה**. אם נשמרה גרסה עדכנית יותר, טענו אותה מחדש לפני ניסיון נוסף."
+            "en": "Set the background and Apple text colors. Choose a PNG, JPEG or WebP logo and banner, each up to 10 MB. Open **Frame banner** and choose **Entire image** to keep every edge visible or **Fill the frame** to crop. Adjust the zoom and drag in the preview, or use the horizontal and vertical sliders. Apple and Google share the settings until you enable **Use a separate Google frame** in the Google preview. On Apple, place the counter **Below the banner** or **On the banner**. New uploads retain their original file in the private draft. For an older banner, upload the original again if you need its full resolution. Turn off **Show restaurant name** to remove the name beside the Apple logo. Google keeps the program title. If an image cannot be opened, the message under the picker explains what to change. Select **Save draft**. If another editor saved a newer draft, reload it before retrying.",
+            "fr": "Choisissez la couleur de fond et la couleur du texte Apple. Importez un logo et une bannière en PNG, JPEG ou WebP, jusqu’à 10 Mo chacun. Ouvrez **Cadrer la bannière**. Choisissez **Image entière** pour voir tous les bords ou **Remplir le cadre** pour recadrer. Réglez le zoom et déplacez l’image dans l’aperçu ou utilisez les curseurs de position. Apple et Google partagent les réglages. Pour les ajuster séparément, activez **Cadrage propre à Google** dans l’aperçu Google. Sur Apple, placez le compteur **Sous la bannière** ou **Sur la bannière**. Le brouillon privé conserve le fichier original des nouveaux imports. Pour retrouver la pleine résolution d’une ancienne bannière, importez à nouveau son original. Désactivez **Afficher le nom du restaurant** pour retirer le nom à côté du logo Apple. Google conserve le titre du programme. Si une image est refusée, consultez le message sous le champ. Cliquez sur **Enregistrer le brouillon**. Si une autre personne a enregistré une version plus récente, rechargez-la avant de réessayer.",
+            "he": "בחרו צבע רקע וצבע טקסט ל־Apple. העלו לוגו ובאנר בפורמט PNG, JPEG או WebP, עד 10 מ״ב לקובץ. פתחו **מסגור הבאנר**. בחרו **התמונה כולה** כדי להציג את כל השוליים או **מילוי המסגרת** כדי לחתוך את התמונה. כוונו את הזום וגררו את התמונה בתצוגה המקדימה, או השתמשו במחוונים למיקום אופקי ואנכי. Apple ו-Google חולקים את הגדרות המסגור. כדי לכוון אותם בנפרד, הפעילו **מסגור נפרד ל-Google** בתצוגת Google. ב-Apple אפשר למקם את המונה **מתחת לבאנר** או **על הבאנר**. הטיוטה הפרטית שומרת את קובץ המקור של העלאות חדשות. לבאנר ישן אפשר להעלות מחדש את המקור כדי לערוך ברזולוציה המלאה. כבו את **הצגת שם המסעדה** כדי להסתיר את השם לצד הלוגו ב־Apple. ב־Google שם התוכנית ממשיך להופיע. אם בחירת התמונה נכשלה, קראו את ההודעה שמתחת לשדה. בחרו **שמירת טיוטה**. אם עורך אחר שמר גרסה חדשה יותר, טענו אותה מחדש לפני ניסיון נוסף."
           }
         },
         {
@@ -61814,9 +61911,9 @@
             "he": "הוספת כרטיס בדיקה ל־iPhone"
           },
           "instructions": {
-            "en": "On the saved design, select **Generate an Apple test card**, then **Download .pkpass**. Open the file on an iPhone and select **Add**. Check the logo, banner, colors and Test card label. The pass shows sample progress and a demonstration QR. If signing is unavailable, check the Apple signing configuration for the environment. The Google tab previews the artwork.",
-            "fr": "Sur le visuel enregistré, cliquez sur **Générer une carte de test Apple**, puis sur **Télécharger le .pkpass**. Ouvrez le fichier sur un iPhone et touchez **Ajouter**. Vérifiez le logo, la bannière, les couleurs et la mention Carte de test. Le pass utilise une progression fictive et un QR de démonstration. Si la signature est indisponible, vérifiez la configuration Apple de l’environnement. L’onglet Google affiche l’aperçu du visuel.",
-            "he": "בעיצוב השמור בחרו **יצירת כרטיס בדיקה של Apple** ואז **הורדת קובץ ‎.pkpass**. פתחו את הקובץ ב־iPhone ובחרו **הוספה**. בדקו את הלוגו, תמונת הכותרת, הצבעים ואת הכיתוב כרטיס בדיקה. הכרטיס מציג התקדמות להמחשה וקוד QR לדוגמה. אם החתימה אינה זמינה, בדקו את הגדרות החתימה של Apple בסביבה הנוכחית. הלשונית Google מציגה את העיצוב בתצוגה מקדימה."
+            "en": "On the saved design, select **Generate an Apple test card**, then **Download .pkpass**. Open the file on an iPhone and select **Add**. Check the logo, banner, colors and Test card label. The pass shows sample progress and a demonstration QR. If signing is unavailable, check the Apple signing configuration for the environment. The Google tab previews the artwork. Check the Powered by Foody caption near the QR code. Open the card details to follow the Foody link.",
+            "fr": "Sur le visuel enregistré, cliquez sur **Générer une carte de test Apple**, puis sur **Télécharger le .pkpass**. Ouvrez le fichier sur un iPhone et touchez **Ajouter**. Vérifiez le logo, la bannière, les couleurs et la mention Carte de test. Le pass utilise une progression fictive et un QR de démonstration. Si la signature est indisponible, vérifiez la configuration Apple de l’environnement. L’onglet Google affiche l’aperçu du visuel. Vérifiez la mention Propulsé par Foody près du QR. Ouvrez les détails de la carte pour suivre le lien vers Foody.",
+            "he": "בעיצוב השמור בחרו **יצירת כרטיס בדיקה של Apple** ואז **הורדת קובץ ‎.pkpass**. פתחו את הקובץ ב־iPhone ובחרו **הוספה**. בדקו את הלוגו, תמונת הכותרת, הצבעים ואת הכיתוב כרטיס בדיקה. הכרטיס מציג התקדמות להמחשה וקוד QR לדוגמה. אם החתימה אינה זמינה, בדקו את הגדרות החתימה של Apple בסביבה הנוכחית. הלשונית Google מציגה את העיצוב בתצוגה מקדימה. בדקו שהכיתוב מופעל על ידי Foody מופיע ליד קוד ה־QR. פתחו את פרטי הכרטיס כדי לעבור לקישור ל־Foody."
           }
         },
         {
@@ -61848,7 +61945,7 @@
       ],
       "audience": "internal",
       "status": "local-release-unverified",
-      "procedureUpdatedAt": "2026-11-18",
+      "procedureUpdatedAt": "2026-11-19",
       "preserveExisting": false,
       "evidence": [
         {
@@ -61861,6 +61958,10 @@
         },
         {
           "service": "foodyadmin",
+          "file": "src/components/loyalty/WalletBannerFraming.tsx"
+        },
+        {
+          "service": "foodyadmin",
           "file": "src/components/loyalty/WalletStudioWorkspace.tsx"
         },
         {
@@ -61870,6 +61971,10 @@
         {
           "service": "foodyadmin",
           "file": "src/lib/i18n.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/lib/wallet-banner.ts"
         },
         {
           "service": "foodyserver",
@@ -61954,6 +62059,14 @@
         {
           "service": "foodyserver",
           "file": "migrations/322_loyalty_wallet_publications.sql"
+        },
+        {
+          "service": "foodyserver",
+          "file": "migrations/334_wallet_restaurant_name.sql"
+        },
+        {
+          "service": "foodyserver",
+          "file": "migrations/335_wallet_banner_framing.sql"
         },
         {
           "service": "foodyweb",
@@ -71933,10 +72046,36 @@
       "line": 1
     },
     {
+      "id": "foodyadmin:src/components/loyalty/WalletBannerFraming.tsx:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/components/loyalty/WalletBannerFraming.tsx",
+      "features": [
+        "customers-loyalty-program",
+        "customers-wallet-studio"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "walletFrameBelow",
+        "walletFrameContain",
+        "walletFrameCounter",
+        "walletFrameCover",
+        "walletFrameDevice",
+        "walletFrameHint",
+        "walletFrameMode",
+        "walletFrameOverlay",
+        "walletFrameReset",
+        "walletFrameSeparate",
+        "walletStudioBanner"
+      ],
+      "actions": [],
+      "line": 1
+    },
+    {
       "id": "foodyadmin:src/components/loyalty/WalletStudioWorkspace.tsx:ui-controls:1",
       "service": "foodyadmin",
       "source": "src/components/loyalty/WalletStudioWorkspace.tsx",
       "features": [
+        "customers-loyalty-program",
         "customers-wallet-studio"
       ],
       "kind": "ui-controls",
@@ -71944,9 +72083,11 @@
         "loading",
         "loyaltyProgramForbidden",
         "loyaltyProgramTitle",
+        "walletFrameTitle",
         "walletStudioActiveRequired",
         "walletStudioAppearance",
         "walletStudioAppleText",
+        "walletStudioAttribution",
         "walletStudioBack",
         "walletStudioBackground",
         "walletStudioBanner",
@@ -71967,6 +72108,7 @@
         "walletStudioRemove",
         "walletStudioSave",
         "walletStudioSaveFirst",
+        "walletStudioShowRestaurantName",
         "walletStudioSigningOff",
         "walletStudioTestCard",
         "walletStudioTestHint",
@@ -98187,7 +98329,7 @@
       "resolution": "router-group-relative"
     },
     {
-      "id": "foodyserver:cmd/server/main.go:api-registration:2116",
+      "id": "foodyserver:cmd/server/main.go:api-registration:2117",
       "service": "foodyserver",
       "source": "cmd/server/main.go",
       "features": [
@@ -98206,7 +98348,7 @@
       "receiver": "public",
       "routeFragment": "/delivery/map-viewport",
       "handler": "deliveryHandler.MapViewport",
-      "line": 2116,
+      "line": 2117,
       "resolution": "router-group-relative"
     },
     {
@@ -114095,9 +114237,9 @@
   "coverage": {
     "sharedRuntimeFiles": 437,
     "features": 114,
-    "operations": 1039,
-    "sourceFiles": 2692,
-    "surfaces": 2340,
+    "operations": 1040,
+    "sourceFiles": 2698,
+    "surfaces": 2341,
     "unclassifiedRoutes": []
   }
 }

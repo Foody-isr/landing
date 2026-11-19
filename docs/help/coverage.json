@@ -1926,7 +1926,8 @@
           "app/globals.css",
           "components/VerifoneCardCapture.tsx",
           "components/VerifoneOrderPayment.tsx",
-          "lib/verifone-wallet.ts"
+          "lib/verifone-wallet.ts",
+          "lib/delivery-address-input.ts"
         ],
         "foodyserver": [
           "internal/common/phone.go",
@@ -1938,7 +1939,8 @@
           "internal/addresslookup/handler.go",
           "internal/addresslookup/service.go",
           "internal/delivery/guest_entrance.go",
-          "internal/addresslookup/checkout_profile.go"
+          "internal/addresslookup/checkout_profile.go",
+          "internal/delivery/google_address.go"
         ]
       }
     },
@@ -2498,7 +2500,8 @@
           "internal/orders/financial_check_payment.go",
           "internal/orders/cash_drawer.go",
           "migrations/291_counter_end_of_day.sql",
-          "migrations/335_ashrait_service_recovery.sql"
+          "migrations/336_ashrait_service_recovery.sql",
+          "migrations/337_end_of_day_handoffs.sql"
         ]
       }
     },
@@ -2647,7 +2650,10 @@
           "src/components/loyalty/LoyaltyProgramOverview.tsx",
           "src/lib/loyalty-program.ts",
           "src/lib/i18n.tsx",
-          "src/lib/help/context.ts"
+          "src/lib/help/context.ts",
+          "src/components/loyalty/WalletStudioWorkspace.tsx",
+          "src/components/loyalty/WalletBannerFraming.tsx",
+          "src/lib/wallet-banner.ts"
         ],
         "foodyserver": [
           "cmd/server/main.go",
@@ -2681,7 +2687,9 @@
           "src/components/loyalty/WalletStudioWorkspace.tsx",
           "src/components/loyalty/LoyaltyProgramWorkspace.tsx",
           "src/lib/api.ts",
-          "src/lib/i18n.tsx"
+          "src/lib/i18n.tsx",
+          "src/components/loyalty/WalletBannerFraming.tsx",
+          "src/lib/wallet-banner.ts"
         ],
         "foodyserver": [
           "cmd/server/wallet_studio.go",
@@ -2692,7 +2700,9 @@
           "internal/loyalty/wallet_studio_artwork.go",
           "internal/loyaltywallet/**",
           "migrations/315_loyalty_wallet_designs.sql",
-          "migrations/322_loyalty_wallet_publications.sql"
+          "migrations/322_loyalty_wallet_publications.sql",
+          "migrations/334_wallet_restaurant_name.sql",
+          "migrations/335_wallet_banner_framing.sql"
         ],
         "foodyweb": [
           "app/api/loyalty-wallet/apple/route.ts",

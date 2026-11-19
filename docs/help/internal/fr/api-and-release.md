@@ -16,7 +16,7 @@ releaseStatus: available
 
 ## Vérifier l’émission des cartes de fidélité personnelles
 
-Appliquez la migration 322 avec la livraison de l’API. Publiez un visuel Wallet enregistré pour le restaurant de test et activez son programme de fidélité. Activez l’API Wallet et le fournisseur prévu pour l’environnement. Demandez une carte avec un compte membre authentifié et répétez l’opération pour vérifier la stabilité de son identifiant. Lorsque Google est activé, vérifiez que l’API sert uniquement les images des versions publiées. Vérifiez l’ajout sur les appareils Apple et Google avec la configuration de chaque fournisseur.
+Appliquez les migrations 322 et 334 avec la livraison de l’API. Publiez un visuel Wallet enregistré pour le restaurant de test et activez son programme de fidélité. Activez l’API Wallet et le fournisseur prévu pour l’environnement. Demandez une carte avec un compte membre authentifié et répétez l’opération pour vérifier la stabilité de son identifiant. Lorsque Google est activé, vérifiez que l’API sert uniquement les images des versions publiées. Masquez le nom du restaurant, enregistrez la bannière puis publiez le visuel. Sur la carte d’un membre, vérifiez la bannière, la mention Foody près du QR et le lien dans les détails. Vérifiez l’ajout sur les appareils Apple et Google avec la configuration de chaque fournisseur. Appliquez la migration 335 avant de déployer l’éditeur de cadrage. Enregistrez une nouvelle photo dans le brouillon privé, rouvrez-la et ajustez chaque Wallet. Vérifiez la position choisie du compteur sur la carte Apple de test et comparez chaque image publiée à son aperçu.
 
 <span id="verifone-admin-money-operations" />
 
@@ -110,9 +110,9 @@ Le suivi du correctif de clavier natif doit publier les procédures de saisie co
 
 ## Résoudre les suggestions de rue Google
 
-Google peut renvoyer un identifiant canonique différent pour un segment de rue. Accepter cette différence uniquement pour une rue sans numéro, après validation du pays et de la réponse du fournisseur. Cette précision ne reçoit ni preuve de livraison ni coordonnées : le client doit encore sélectionner une adresse complète. Conserver la correspondance exacte d’identifiant pour les adresses complètes, les signatures liées au restaurant et au visiteur, les limites de session et les budgets. Tester les rues canoniques, les pays étrangers, les identifiants absents ou invalides et le rejet des adresses complètes d’un autre lieu. Vérifier une recherche de rue et une adresse avec numéro après promotion. Référence fournisseur : https://developers.google.com/maps/documentation/places/web-service/place-id#obsolete
+Une suggestion Google numérotée qui se résout en rue peut servir de preuve postale après rapprochement de la rue et de la ville. Conserver le numéro sélectionné et vérifier la zone à chaque commande. Un segment de rue ne fournit aucune position d’entrée. En cas d’indisponibilité de Places ou de liste vide, une recherche numérotée peut proposer des bâtiments avec rue, numéro, ville et pays concordants issus du géocodage Google. Une sélection reste liée au restaurant et au texte par sa signature.
 
-Si une suggestion numérotée ne renvoie que la rue ou si la recherche est indisponible, le site permet au client de confirmer son adresse postale et de préciser l’entrée. [Consulter la procédure sur téléphone](/fr/help/guest/online-ordering#mobile-fulfillment).
+[Consulter la procédure sur téléphone](/fr/help/guest/online-ordering#mobile-fulfillment).
 
 <span id="customer-social-sign-in" />
 
