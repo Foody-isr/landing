@@ -41,6 +41,12 @@ As the restaurant owner open **Settings → Account → Billing**. Select the of
 
 The hosted checkout uses the Foody CST merchant for subscription tests. In production, open the billing page for the test restaurant selected in Backoffice. A checkout that fails to open can appear as an incomplete payment. Check for a confirmed payment or a pending verification before starting again.
 
+<span id="registered-card" />
+
+## Pay the first instalment after card verification
+
+Verifone CST can authorize ₪0.01 to register the card for a recurring subscription. Back in **Billing**, choose **Verify payment status**. Once Foody shows **Test card verified**, review the amount and choose **Pay … with the verified card** to pay the instalment. Foody starts the paid period after verifying a sale for the full amount. If verification is pending after you pay, use the status button. For a payment under review, give Foody the support reference. In Verifone Central, the card registration uses that merchant reference and the separate subscription sale uses the same reference with the suffix `-P1`.
+
 <span id="renewal" />
 
 ## Test the first monthly renewal
