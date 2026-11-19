@@ -1,3 +1,7 @@
+## Quotation-based subscription offers (19 November 2026)
+
+Publish the subscription, private sandbox billing and commercial document guides with API migration 332 and the Backoffice and Admin releases. Verify quoted recurring amounts, VAT rounding, owner consent and the CST checkout URL. Equipment and metered usage keep their own billing schedules. The production test uses the selected restaurant and the Foody CST merchant.
+
 ## Delivery planning and departure recovery (19 November 2026)
 
 Publish the dispatch, courier and delivery-zone guides with the API and Admin versions
