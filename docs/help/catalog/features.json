@@ -22,7 +22,8 @@
         "src/components/RestaurantAccountMenu.tsx",
         "src/components/RestaurantRedirect.tsx",
         "src/components/IdleModal.tsx",
-        "src/components/brand/AccessShell.tsx"
+        "src/components/brand/AccessShell.tsx",
+        "src/lib/portal-session.ts"
       ],
       "foodyserver": [
         "internal/auth/**"
@@ -120,9 +121,9 @@
           "he": "השלמת התחברות מוגנת"
         },
         "instructions": {
-          "en": "If a second-factor screen appears, follow the authenticator and recovery instructions in [Account security](/en/help/account/security#authenticator). Password, passkey and invitation flows must complete this step before opening the workspace. If you cancel after confirming an invitation password, return to sign-in using that password to finish enrollment. Closing the dialog does not sign you in.",
-          "fr": "Si un écran de second facteur apparaît, suivez [la procédure de sécurité du compte](/fr/help/account/security#authenticator). Les connexions par mot de passe, clé d’accès ou invitation doivent terminer cette étape avant d’ouvrir l’espace. Si vous annulez après avoir confirmé le mot de passe d’une invitation, revenez à la connexion avec ce mot de passe pour finir la configuration. Fermer la fenêtre ne vous connecte pas.",
-          "he": "אם מופיע מסך גורם נוסף, פעלו לפי [הוראות אבטחת החשבון](/he/help/account/security#authenticator). כניסה בסיסמה, במפתח גישה או בהזמנה מחייבת השלמת שלב זה לפני פתיחת סביבת העבודה. אם ביטלתם לאחר אישור סיסמה בהזמנה, חזרו להתחברות עם אותה סיסמה להשלמת ההגדרה. סגירת החלון אינה משלימה התחברות."
+          "en": "If a second-factor screen appears, follow the authenticator and recovery instructions in [Account security](/en/help/account/security#authenticator). Password, passkey and invitation flows must complete this step before opening the workspace. If you cancel after confirming an invitation password, return to sign-in using that password to finish enrollment. Closing the dialog does not sign you in. After the browser session security update, sign in again on this device and complete Authenticator if prompted. Allow cookies for the Foody portal and API. On a shared device, leave Keep me signed in unchecked and use Sign out when finished.",
+          "fr": "Si un écran de second facteur apparaît, suivez [la procédure de sécurité du compte](/fr/help/account/security#authenticator). Les connexions par mot de passe, clé d’accès ou invitation doivent terminer cette étape avant d’ouvrir l’espace. Si vous annulez après avoir confirmé le mot de passe d’une invitation, revenez à la connexion avec ce mot de passe pour finir la configuration. Fermer la fenêtre ne vous connecte pas. Après la mise à jour de sécurité des sessions, reconnectez-vous sur cet appareil et saisissez le code Authenticator si le portail le demande. Autorisez les cookies du portail et de l’API Foody. Sur un appareil partagé, décochez « Rester connecté » et utilisez « Se déconnecter » en fin de session.",
+          "he": "אם מופיע מסך גורם נוסף, פעלו לפי [הוראות אבטחת החשבון](/he/help/account/security#authenticator). כניסה בסיסמה, במפתח גישה או בהזמנה מחייבת השלמת שלב זה לפני פתיחת סביבת העבודה. אם ביטלתם לאחר אישור סיסמה בהזמנה, חזרו להתחברות עם אותה סיסמה להשלמת ההגדרה. סגירת החלון אינה משלימה התחברות. לאחר עדכון אבטחת החיבור, התחברו מחדש במכשיר והזינו קוד מאפליקציית האימות אם תתבקשו. יש לאפשר עוגיות של הפורטל ושל ממשק ה־API של Foody. במכשיר משותף השאירו את אפשרות שמירת החיבור כבויה ובחרו בהתנתקות בסיום."
         }
       },
       {
@@ -142,7 +143,7 @@
     "audience": "public",
     "status": "available",
     "preserveExisting": true,
-    "procedureUpdatedAt": "2026-11-18"
+    "procedureUpdatedAt": "2026-11-19"
   },
   {
     "id": "account-security",
@@ -14818,7 +14819,8 @@
         "src/app/layout.tsx",
         "src/lib/mfa*.ts",
         "src/app/dashboard/security/*",
-        "src/lib/use-mfa-copy.ts"
+        "src/lib/use-mfa-copy.ts",
+        "src/lib/portal-session.ts"
       ],
       "foodyserver": [
         "internal/admin/**"
@@ -14833,9 +14835,9 @@
           "he": "בדיקת הרשאת מפעיל"
         },
         "instructions": {
-          "en": "Confirm environment and operator role before accessing restaurant data. Do not use a restaurant owner account as an implicit superadmin. Log out from shared devices and never copy credentials or customer records into the help catalogue.",
-          "fr": "Vérifiez environnement et rôle avant accès aux restaurants. Un propriétaire n’est pas implicitement superadmin. Déconnectez les appareils partagés et ne copiez identifiants ni données client dans le catalogue.",
-          "he": "בדקו סביבה ותפקיד לפני גישה לנתונים. בעל עסק אינו מנהל על אוטומטי. התנתקו ממכשיר משותף ואל תעתיקו סודות או נתוני לקוחות לקטלוג."
+          "en": "Confirm environment and operator role before accessing restaurant data. Do not use a restaurant owner account as an implicit superadmin. Log out from shared devices and never copy credentials or customer records into the help catalogue. Sign in again after the browser session update. Allow cookies for Backoffice and the Foody API, complete the requested second factor, and sign out when finished. An account for another environment must authenticate there separately.",
+          "fr": "Vérifiez environnement et rôle avant accès aux restaurants. Un propriétaire n’est pas implicitement superadmin. Déconnectez les appareils partagés et ne copiez identifiants ni données client dans le catalogue. Reconnectez-vous après la mise à jour des sessions. Autorisez les cookies du Backoffice et de l’API Foody, saisissez le second facteur demandé et déconnectez-vous en fin de session. Un autre environnement demande une authentification distincte.",
+          "he": "בדקו סביבה ותפקיד לפני גישה לנתונים. בעל עסק אינו מנהל על אוטומטי. התנתקו ממכשיר משותף ואל תעתיקו סודות או נתוני לקוחות לקטלוג. לאחר עדכון החיבור התחברו מחדש. אפשרו עוגיות של Backoffice ושל ממשק ה־API של Foody, השלימו את האימות הנוסף והתנתקו בסיום. נדרשת הזדהות נפרדת לכל סביבה."
         }
       },
       {
@@ -14894,7 +14896,7 @@
     "audience": "internal",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-11-18"
+    "procedureUpdatedAt": "2026-11-19"
   },
   {
     "id": "backoffice-onboarding",
