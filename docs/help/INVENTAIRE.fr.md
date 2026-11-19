@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-11-19.
 
-114 fiches de fonctionnalités, 1034 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2661 fichiers applicatifs et 2321 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+113 fiches de fonctionnalités, 1029 procédures/sous-fonctionnalités, dont 101 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2643 fichiers applicatifs et 2309 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyadmin | 824 | 838 | 21878ab639a5 ; versioned |
-| foodybackoffice | 49 | 49 | ab4a30d3833b ; versioned |
-| foodylanding | 160 | 31 | ed78c0f4b33d ; versioned |
+| foodyadmin | 820 | 833 | a29b1588252f ; versioned |
+| foodybackoffice | 47 | 46 | 88ea0db8875b ; versioned |
+| foodylanding | 158 | 31 | 5d773059efcc ; versioned |
 | foodypos | 431 | 185 | 0494899063d1 ; versioned |
-| foodyserver | 811 | 1019 | 86b214e890c7 ; versioned |
-| foodyweb | 386 | 199 | 52e7663c0f12 ; versioned |
+| foodyserver | 801 | 1015 | ae674aa433ef ; versioned |
+| foodyweb | 386 | 199 | 9d931fd06626 ; versioned |
 
 ## getting-started
 
@@ -148,7 +148,6 @@ Identifiant : `staff-roles`. Public : public. Disponibilité : available. Servic
 - [Créer un rôle](../../src/content/help/fr/staff/roles-and-permissions.mdx#create)
 - [Affecter et vérifier](../../src/content/help/fr/staff/roles-and-permissions.mdx#assign)
 - [Modifier ou retirer un rôle](../../src/content/help/fr/staff/roles-and-permissions.mdx#change)
-- [Accès aux nouveaux réglages](../../src/content/help/fr/staff/roles-and-permissions.mdx#related-service-controls)
 - [Code caisse à l’activation du personnel](../../src/content/help/fr/staff/roles-and-permissions.mdx#staff-activation-pos-code)
 - [Autoriser une clôture de journée](../../src/content/help/fr/staff/roles-and-permissions.mdx#end-of-day-permissions)
 - [Vérifier les licences avant un nouvel accès](../../src/content/help/fr/staff/roles-and-permissions.mdx#commercial-capacity)
@@ -1228,13 +1227,6 @@ Identifiant : `pos-workspace`. Public : public. Disponibilité : available. Serv
 - [Consulter la dernière transaction du terminal](../../src/content/help/fr/settings/pos-workspace.mdx#ashrait-last-transaction-inspection)
 - [Revenir à une addition sur un appareil compact](../../src/content/help/fr/settings/pos-workspace.mdx#compact-actions-navigation)
 
-### [Consommation et quotas des services externes](../../src/content/help/fr/settings/api-usage-and-quotas.mdx)
-
-Identifiant : `external-api-quotas`. Public : public. Disponibilité : available. Services : foodyadmin, foodyserver.
-
-- [Consulter les consommations de votre restaurant](../../src/content/help/fr/settings/api-usage-and-quotas.mdx#read-usage)
-- [Comprendre les plafonds et leur renouvellement](../../src/content/help/fr/settings/api-usage-and-quotas.mdx#limits-and-renewal)
-
 ## tables-floors
 
 ### [Plans de salle, tables et QR codes](../../src/content/help/fr/tables-floors/floor-plans.mdx)
@@ -1332,14 +1324,13 @@ Identifiant : `courier`. Public : public. Disponibilité : available. Services :
 - [Vérifier le suivi de position du livreur](../../src/content/help/fr/delivery/courier-workspace.mdx#live-location)
 - [Activer les rappels de tournée](../../src/content/help/fr/delivery/courier-workspace.mdx#route-reminders)
 
-### [Fournisseurs de cartes et usages](../../src/content/help/fr/delivery/maps-and-usage.mdx)
+### [Adresses et cartes Google pour les livraisons](../../src/content/help/fr/delivery/maps-and-usage.mdx)
 
-Identifiant : `maps-usage`. Public : public. Disponibilité : available. Services : foodyadmin, foodyserver.
+Identifiant : `maps-usage`. Public : public. Disponibilité : available. Services : foodyadmin, foodyserver, foodyweb.
 
-- [Vérifier le fournisseur configuré](../../src/content/help/fr/delivery/maps-and-usage.mdx#provider)
-- [Respecter les limites d’usage](../../src/content/help/fr/delivery/maps-and-usage.mdx#limits)
-- [Accès aux nouveaux réglages](../../src/content/help/fr/delivery/maps-and-usage.mdx#related-service-controls)
-- [Préparer votre propre projet Google](../../src/content/help/fr/delivery/maps-and-usage.mdx#own-google-project)
+- [Régler les suggestions du site](../../src/content/help/fr/delivery/maps-and-usage.mdx#storefront)
+- [Corriger un arrêt](../../src/content/help/fr/delivery/maps-and-usage.mdx#address)
+- [Retrouver les arrêts sur la carte](../../src/content/help/fr/delivery/maps-and-usage.mdx#route)
 
 ### [Créer son compte Google et préparer ses clés API pour Foody](../../src/content/help/fr/delivery/google-account-and-api-keys.mdx)
 
@@ -1639,7 +1630,6 @@ Identifiant : `shared-runtime`. Public : internal. Disponibilité : available. S
 - [Valider le clavier dans le sélecteur de remise](internal/fr/shared-runtime.md#mobile-fulfillment-viewport)
 - [Contrôler les choix de connexion client](internal/fr/shared-runtime.md#customer-social-choice)
 - [Conserver le journal des stocks en lecture seule](internal/fr/shared-runtime.md#sale-stock-history-read-only)
-- [Accès aux nouveaux réglages](internal/fr/shared-runtime.md#related-service-controls)
 - [Vérifier l’accès discret à la connexion](internal/fr/shared-runtime.md#optional-entry-access)
 - [Contrat des modificateurs conditionnels](internal/fr/shared-runtime.md#modifier-position-contract)
 - [Contrat des dimensions de variante](internal/fr/shared-runtime.md#descriptive-variant-contract)
