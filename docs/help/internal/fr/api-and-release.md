@@ -110,9 +110,9 @@ Le suivi du correctif de clavier natif doit publier les procédures de saisie co
 
 ## Résoudre les suggestions de rue Google
 
-Google peut renvoyer un identifiant canonique différent pour un segment de rue. Accepter cette différence uniquement pour une rue sans numéro, après validation du pays et de la réponse du fournisseur. Cette précision ne reçoit ni preuve de livraison ni coordonnées : le client doit encore sélectionner une adresse complète. Conserver la correspondance exacte d’identifiant pour les adresses complètes, les signatures liées au restaurant et au visiteur, les limites de session et les budgets. Tester les rues canoniques, les pays étrangers, les identifiants absents ou invalides et le rejet des adresses complètes d’un autre lieu. Vérifier une recherche de rue et une adresse avec numéro après promotion. Référence fournisseur : https://developers.google.com/maps/documentation/places/web-service/place-id#obsolete
+Une suggestion Google numérotée qui se résout en rue peut servir de preuve postale après rapprochement de la rue et de la ville. Conserver le numéro sélectionné et vérifier la zone à chaque commande. Un segment de rue ne fournit aucune position d’entrée. En cas d’indisponibilité de Places ou de liste vide, une recherche numérotée peut proposer des bâtiments avec rue, numéro, ville et pays concordants issus du géocodage Google. Une sélection reste liée au restaurant et au texte par sa signature.
 
-Si une suggestion numérotée ne renvoie que la rue ou si la recherche est indisponible, le site permet au client de confirmer son adresse postale et de préciser l’entrée. [Consulter la procédure sur téléphone](/fr/help/guest/online-ordering#mobile-fulfillment).
+[Consulter la procédure sur téléphone](/fr/help/guest/online-ordering#mobile-fulfillment).
 
 <span id="customer-social-sign-in" />
 

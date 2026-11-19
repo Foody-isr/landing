@@ -110,9 +110,9 @@ The native-keyboard follow-up must release the compact entry procedures and embe
 
 ## Resolve Google street refinements
 
-Google can return a different canonical ID for a route segment. Accept this difference only for a street without a house number, after validating the country and provider response. This refinement receives neither delivery proof nor coordinates: the customer must still choose a complete address. Preserve exact place-ID matching for complete addresses, restaurant and visitor bound signatures, session limits and budgets. Test canonical streets, foreign countries, missing or invalid IDs and rejection of complete addresses for another place. Verify a street search and an address with a house number after promotion. Provider reference: https://developers.google.com/maps/documentation/places/web-service/place-id#obsolete
+A numbered Google suggestion resolving to a street can be confirmed as postal text when the street and municipality match. Keep the selected number and validate coverage at order time. A street segment supplies no entrance coordinates. When Places is unavailable or returns no results, numbered searches can suggest buildings from Google Geocoding with a matching country and number, a street and a city. A signed selection is bound to the restaurant and its address text.
 
-When a numbered prediction returns only a street or search is unavailable, the guest can confirm a postal address and optionally mark the entrance. [See the phone procedure](/en/help/guest/online-ordering#mobile-fulfillment).
+[See the phone procedure](/en/help/guest/online-ordering#mobile-fulfillment).
 
 <span id="customer-social-sign-in" />
 
