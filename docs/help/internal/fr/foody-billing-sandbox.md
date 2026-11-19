@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - account
   - foody-billing-sandbox
-updatedAt: '2026-11-18'
+updatedAt: '2026-11-19'
 featureId: foody-billing-sandbox
 audience: internal
 releaseStatus: local-release-unverified
@@ -29,7 +29,7 @@ Dans **Foody billing (sandbox)**, saisissez l’identifiant utilisateur CST de F
 
 ## Publier ou modifier une offre privée
 
-Pour un restaurant existant, ouvrez **Restaurants → restaurant choisi → Billing & modules → Private sandbox offer**. Renseignez la description de l’offre, les conditions, les montants mensuel et annuel en ₪, la convention de TVA et la date du premier paiement. Publiez, puis ouvrez la page de facturation du propriétaire. Pour modifier l’offre, éditez les champs et publiez une nouvelle version. Un paiement déjà ouvert garde son prix initial. La nouvelle offre exige l’accord du propriétaire pour la période suivante.
+Dans **Restaurants → restaurant choisi → Billing & modules → Private sandbox offer**, choisissez une source dans **Offer source**. **Foody catalogue** reprend les formules et modules de **Quotes & orders**. Sélectionnez-en un pour voir ses prix mensuel et annuel TTC. **Finalized quotation** liste les devis finalisés rattachés à ce restaurant. Choisissez un devis pour reprendre ses montants récurrents, sa TVA, ses conditions et sa date limite d’acceptation. Vérifiez la date du premier paiement puis cliquez sur **Publish offer**. Le propriétaire peut alors accepter et payer dans Foody Admin. **Custom offer** permet de saisir des montants négociés et le traitement de la TVA. **Customize this offer** ouvre un brouillon personnalisé à partir de l’aperçu. Vérifiez les deux prix avant publication.
 
 Le tarif standard mensuel est sans engagement minimum. Le prépaiement annuel couvre 12 mois au prix de 11 pour les modules et formules logicielles : 590 ₪ par mois devient 6 490 ₪ HT par an, soit 590 ₪ économisés. Les licences supplémentaires, matériels, options et services de paiement ne bénéficient pas de cette remise. Les offres déjà acceptées, invitations enregistrées et prix négociés gardent leurs conditions.
 
@@ -38,6 +38,8 @@ Le tarif standard mensuel est sans engagement minimum. Le prépaiement annuel co
 ## Payer et vérifier en sandbox
 
 En tant que propriétaire, ouvrez **Paramètres → Compte → Facturation**. Choisissez l’offre et vérifiez le total TTC. En mensuel, autorisez le débit mensuel affiché. En annuel, cochez l’autorisation séparée pour renouveler à ce montant tous les 12 mois, ou laissez-la vide pour payer une seule année. Acceptez les conditions, continuez vers Verifone avec une carte de test CST, puis vérifiez le paiement au retour. La facturation affiche la date et le montant du prochain débit pour un mandat confirmé. **Arrêter le renouvellement automatique** permet d’arrêter les prélèvements futurs.
+
+Le paiement hébergé utilise le marchand CST de Foody pour les tests d’abonnement. En production, ouvrez la facturation du restaurant de test sélectionné dans le Backoffice. Si la page de paiement ne s’ouvre pas, la tentative peut apparaître comme non aboutie. Vérifiez si un paiement est confirmé ou en attente de vérification avant de recommencer.
 
 <span id="renewal" />
 

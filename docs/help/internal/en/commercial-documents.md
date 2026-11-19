@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - backoffice-commercial-documents
-updatedAt: '2026-11-18'
+updatedAt: '2026-11-19'
 featureId: backoffice-commercial-documents
 audience: internal
 releaseStatus: available
@@ -49,3 +49,5 @@ Software savings excluding VAT appear in the totals and PDF when the standard an
 ## Finalize the PDF and prepare the order
 
 After saving, open **Review & finalize**, review the PDF, then choose **Finalize document**. The document receives an FQ quotation or FO order number; its prices, inclusions and PDF become immutable. A rendering failure leaves it as a draft. Correct an expired quotation before finalization. **View archived PDF** displays and downloads the archived bytes. For a finalized quotation, **Create order draft** opens a single order draft retaining its prices and inclusions. Review and finalize the order separately. Conversion does not record customer acceptance, collect payment or send email. Find documents by type and status in **Saved documents**. An edit conflict requires reopening the saved version; local changes do not overwrite it.
+
+To make the subscription payable, link the quotation to the restaurant before finalizing it. Open the finalized quotation and select **Prepare subscription offer**. The restaurant’s private offer opens with the recurring lines, their quoted VAT and the quotation number. These lines must share one schedule and start, either monthly or prepaid for 12 months. The subscription excludes one-time amounts and metered usage. Review the preview, select **Publish offer**, then open the owner billing page. The owner authorizes the first payment and any renewal in Foody Admin.
