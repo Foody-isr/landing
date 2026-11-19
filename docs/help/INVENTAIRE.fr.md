@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-11-19.
 
-114 fiches de fonctionnalités, 1043 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2708 fichiers applicatifs et 2350 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+114 fiches de fonctionnalités, 1039 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2690 fichiers applicatifs et 2338 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyadmin | 828 | 840 | ff265ef6558c ; versioned |
-| foodybackoffice | 56 | 52 | d7d4c714292c ; versioned |
-| foodylanding | 160 | 31 | 13c4b1b12d2b ; versioned |
+| foodyadmin | 824 | 835 | 7a5a533b7e6e ; versioned |
+| foodybackoffice | 54 | 49 | 619aa5734755 ; versioned |
+| foodylanding | 158 | 31 | 1afb44ca3c8e ; versioned |
 | foodypos | 432 | 186 | 2e3b48d8f7ef ; versioned |
-| foodyserver | 846 | 1042 | 6f112d0108c5 ; versioned |
-| foodyweb | 386 | 199 | c13cd0318d39 ; versioned |
+| foodyserver | 836 | 1038 | abc43237b933 ; versioned |
+| foodyweb | 386 | 199 | fdb8211120e4 ; versioned |
 
 ## getting-started
 
@@ -153,7 +153,6 @@ Identifiant : `staff-roles`. Public : public. Disponibilité : available. Servic
 - [Créer un rôle](../../src/content/help/fr/staff/roles-and-permissions.mdx#create)
 - [Affecter et vérifier](../../src/content/help/fr/staff/roles-and-permissions.mdx#assign)
 - [Modifier ou retirer un rôle](../../src/content/help/fr/staff/roles-and-permissions.mdx#change)
-- [Accès aux nouveaux réglages](../../src/content/help/fr/staff/roles-and-permissions.mdx#related-service-controls)
 - [Code caisse à l’activation du personnel](../../src/content/help/fr/staff/roles-and-permissions.mdx#staff-activation-pos-code)
 - [Autoriser une clôture de journée](../../src/content/help/fr/staff/roles-and-permissions.mdx#end-of-day-permissions)
 - [Vérifier les licences avant un nouvel accès](../../src/content/help/fr/staff/roles-and-permissions.mdx#commercial-capacity)
@@ -1234,12 +1233,11 @@ Identifiant : `pos-workspace`. Public : public. Disponibilité : available. Serv
 - [Consulter la dernière transaction du terminal](../../src/content/help/fr/settings/pos-workspace.mdx#ashrait-last-transaction-inspection)
 - [Revenir à une addition sur un appareil compact](../../src/content/help/fr/settings/pos-workspace.mdx#compact-actions-navigation)
 
-### [Consommation et quotas des services externes](../../src/content/help/fr/settings/api-usage-and-quotas.mdx)
+### [Activer ou désactiver les suggestions d’adresse](../../src/content/help/fr/settings/api-usage-and-quotas.mdx)
 
 Identifiant : `external-api-quotas`. Public : public. Disponibilité : available. Services : foodyadmin, foodyserver.
 
-- [Consulter les consommations de votre restaurant](../../src/content/help/fr/settings/api-usage-and-quotas.mdx#read-usage)
-- [Comprendre les plafonds et leur renouvellement](../../src/content/help/fr/settings/api-usage-and-quotas.mdx#limits-and-renewal)
+- [Modifier la recherche sur le site](../../src/content/help/fr/settings/api-usage-and-quotas.mdx#publish-address-search)
 
 ## tables-floors
 
@@ -1338,14 +1336,13 @@ Identifiant : `courier`. Public : public. Disponibilité : available. Services :
 - [Vérifier le suivi de position du livreur](../../src/content/help/fr/delivery/courier-workspace.mdx#live-location)
 - [Activer les rappels de tournée](../../src/content/help/fr/delivery/courier-workspace.mdx#route-reminders)
 
-### [Fournisseurs de cartes et usages](../../src/content/help/fr/delivery/maps-and-usage.mdx)
+### [Adresses et cartes Google pour les livraisons](../../src/content/help/fr/delivery/maps-and-usage.mdx)
 
-Identifiant : `maps-usage`. Public : public. Disponibilité : available. Services : foodyadmin, foodyserver.
+Identifiant : `maps-usage`. Public : public. Disponibilité : available. Services : foodyadmin, foodyserver, foodyweb.
 
-- [Vérifier le fournisseur configuré](../../src/content/help/fr/delivery/maps-and-usage.mdx#provider)
-- [Respecter les limites d’usage](../../src/content/help/fr/delivery/maps-and-usage.mdx#limits)
-- [Accès aux nouveaux réglages](../../src/content/help/fr/delivery/maps-and-usage.mdx#related-service-controls)
-- [Préparer votre propre projet Google](../../src/content/help/fr/delivery/maps-and-usage.mdx#own-google-project)
+- [Régler les suggestions du site](../../src/content/help/fr/delivery/maps-and-usage.mdx#storefront)
+- [Corriger un arrêt](../../src/content/help/fr/delivery/maps-and-usage.mdx#address)
+- [Retrouver les arrêts sur la carte](../../src/content/help/fr/delivery/maps-and-usage.mdx#route)
 
 ### [Créer son compte Google et préparer ses clés API pour Foody](../../src/content/help/fr/delivery/google-account-and-api-keys.mdx)
 
@@ -1648,7 +1645,6 @@ Identifiant : `shared-runtime`. Public : internal. Disponibilité : available. S
 - [Valider le clavier dans le sélecteur de remise](internal/fr/shared-runtime.md#mobile-fulfillment-viewport)
 - [Contrôler les choix de connexion client](internal/fr/shared-runtime.md#customer-social-choice)
 - [Conserver le journal des stocks en lecture seule](internal/fr/shared-runtime.md#sale-stock-history-read-only)
-- [Accès aux nouveaux réglages](internal/fr/shared-runtime.md#related-service-controls)
 - [Vérifier l’accès discret à la connexion](internal/fr/shared-runtime.md#optional-entry-access)
 - [Contrat des modificateurs conditionnels](internal/fr/shared-runtime.md#modifier-position-contract)
 - [Contrat des dimensions de variante](internal/fr/shared-runtime.md#descriptive-variant-contract)

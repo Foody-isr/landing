@@ -9,7 +9,11 @@ import { CallToAction, FaqSection } from "@/components/marketing/Shared";
 import { marketing } from "@/lib/marketing/content";
 import { paymentRates as initialPaymentRates, pricingRates as initialPricingRates, bundleCopy } from "@/lib/marketing/pricing";
 import offerGrid from "@/lib/marketing/offer-grid.json";
-import { mapsOffer, mapsPricing } from "@/lib/marketing/maps-pricing";
+const deliveryCopy = {
+  en: { title: 'Foody Delivery', description: 'Assign orders to couriers and plan delivery routes with Google Maps.' },
+  fr: { title: 'Foody Livraison', description: 'Affectez les commandes aux livreurs et planifiez leurs tournées avec Google Maps.' },
+  he: { title: 'Foody משלוחים', description: 'שבצו הזמנות לשליחים ותכננו מסלולי משלוח בעזרת Google Maps.' },
+};
 import { routes, ui } from "@/lib/marketing/ui";
 import { resolveLang } from "@/lib/seo";
 
@@ -55,7 +59,7 @@ export default async function PricingPage({
   const t = marketing[lang].pricing;
   const u = ui[lang];
   const payments = t.payments;
-  const maps = mapsPricing[lang];
+  const delivery = deliveryCopy[lang];
   const locale = lang === "he" ? "he-IL" : lang;
   const format = new Intl.NumberFormat(locale);
   const formatDecimal = new Intl.NumberFormat(locale, {
@@ -268,70 +272,11 @@ export default async function PricingPage({
 
         {editable && <section className="shell pricing-content-section"><h2>{catalogueCopy[lang].licencesTitle}</h2><dl className="pricing-setup-list">{editable.tariffs.filter(row=>(deviceBased ? ['extraChef','extraKDS'] : ['extraEmployee','extraChef','extraPOSDevice','extraKDS']).includes(row.id)).map(row=><div key={row.id}><dt>{row.name[lang]}</dt><dd className="cost-amount"><strong>{price(row.amount_minor===null?null:row.amount_minor/100)}</strong><span>{t.monthly}</span></dd></div>)}</dl></section>}
 
-        <section
-          id="plan-delivery"
-          className="shell pricing-content-section"
-          aria-labelledby="maps-and-routes"
-          data-maps-offer-status={mapsOffer.status}
-        >
-          <div className="pricing-delivery">
-            <div className="pricing-delivery-heading">
-              <header className="pricing-block-heading">
-                <h2 id="maps-and-routes">{maps.title}</h2>
-                <p>{maps.description}</p>
-              </header>
-              <Link className="button button-outline" href={`/${lang}/contact`}>{maps.contact}</Link>
-            </div>
-            <p className="pricing-detail">
-              <ProductMentions lang={lang}>{maps.shared}</ProductMentions>
-            </p>
-            <details className="pricing-delivery-details">
-              <summary>{maps.details}</summary>
-              <dl className="pricing-cost-list">
-                <div data-pricing-maps="included">
-                  <dt>{maps.included}</dt>
-                  <dd className="cost-amount">
-                    <strong>{price(rate("mapsIncluded", 0))}</strong>
-                    <span>{maps.includedUnit}</span>
-                  </dd>
-                  <dd className="cost-description">{maps.includedText}</dd>
-                </div>
-                <div data-pricing-maps="plus">
-                  <dt>{maps.plus}<p className="fine-print">{maps.planned}</p></dt>
-                  <dd className="cost-amount">
-                    <strong>{price(rate("mapsPlus", mapsOffer.monthly_price))}</strong>
-                    <span>{maps.monthly}</span>
-                  </dd>
-                  <dd className="cost-description">
-                    <ul className="check-list">
-                      {[
-                        [maps.optimization, mapsOffer.optimization_credits],
-                        [maps.tiles, mapsOffer.map_tiles],
-                        [maps.geocoding, mapsOffer.geocoding_requests],
-                        [maps.routes, mapsOffer.route_requests],
-                      ].map(([label, amount]) => (
-                        <li key={String(label)}>
-                          <Icon name="check" />
-                          {String(label).replace("{n}", format.format(Number(amount)))}
-                        </li>
-                      ))}
-                    </ul>
-                    <p>{maps.creditRules
-                      .replace("{single}", format.format(mapsOffer.single_stop_credits))
-                      .replace("{fleet}", format.format(mapsOffer.fleet_stop_credits))}</p>
-                    <p className="fine-print">{maps.activation}</p>
-                    <Link className="text-link" href={`/${lang}/contact`}>{maps.contact}</Link>
-                  </dd>
-                </div>
-                <div data-pricing-maps="custom">
-                  <dt>{maps.custom}</dt>
-                  <dd className="cost-amount"><strong>{price(rate("mapsCustom", null))}</strong></dd>
-                  <dd className="cost-description">{maps.customText}</dd>
-                </div>
-              </dl>
-              <p className="pricing-detail">{maps.noOverage}</p>
-            </details>
-          </div>
+        <section id="plan-delivery" className="shell pricing-content-section" aria-labelledby="maps-and-routes">
+          <header className="pricing-block-heading">
+            <h2 id="maps-and-routes">{delivery.title}</h2>
+            <p>{delivery.description}</p>
+          </header>
         </section>
 
         <section id="setup-fees" className="shell pricing-content-section" aria-labelledby="setup-fees-title">

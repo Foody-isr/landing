@@ -57,7 +57,7 @@ After the initial payment and mandate are confirmed, open **Restaurants → sele
 
 ## Read observed usage
 
-Open the observed usage section in Billing. It shows selected monthly UTC counters for Maps and Geoapify, SMS verification requests, WhatsApp order messages and supported OpenAI and Claude activity. The counters are partial and create no charge.
+Open observed usage in Billing to view recorded SMS verification requests, WhatsApp order messages and supported OpenAI and Claude activity for the UTC month.
 
 <span id="modular-provisioning" />
 

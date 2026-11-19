@@ -852,7 +852,6 @@
           "internal/common/models.go",
           "internal/delivery/geocode.go",
           "internal/delivery/google_geocode.go",
-          "internal/delivery/geoapify.go",
           "internal/delivery/optimizer.go",
           "internal/delivery/postal_calendars.go",
           "internal/orders/delivery_schedule.go",
@@ -929,11 +928,19 @@
       "audience": "public",
       "selectors": {
         "foodyadmin": [
-          "src/app/[restaurantId]/settings/delivery/maps/**",
-          "src/components/delivery/MapsProviderDetails.tsx"
+          "src/components/delivery/DeliveryTiles.tsx",
+          "src/components/delivery/RouteAddressField.tsx",
+          "src/components/website/CheckoutEditor.tsx"
         ],
         "foodyserver": [
-          "internal/delivery/maps*"
+          "internal/addresslookup/**",
+          "internal/delivery/google*.go",
+          "internal/delivery/map_tiles.go",
+          "internal/delivery/road*.go"
+        ],
+        "foodyweb": [
+          "components/DeliveryTiles.tsx",
+          "components/DeliveryAddressAutocomplete.tsx"
         ]
       }
     },
@@ -943,7 +950,6 @@
       "audience": "public",
       "selectors": {
         "foodyadmin": [
-          "src/app/[restaurantId]/settings/delivery/maps/page.tsx",
           "src/components/help/SupportLauncher.tsx",
           "src/lib/help/context.ts",
           "src/lib/i18n.tsx"
@@ -2079,8 +2085,6 @@
           "src/app/dashboard/features/**",
           "src/app/dashboard/payments/**",
           "src/lib/api.ts",
-          "src/app/dashboard/api-usage/**",
-          "src/app/dashboard/restaurants/[id]/usage/**",
           "src/app/dashboard/restaurants/[id]/page.tsx",
           "src/components/Sidebar.tsx",
           "src/components/RestaurantFeatureAccess.tsx",
@@ -2294,13 +2298,10 @@
       "audience": "public",
       "selectors": {
         "foodyadmin": [
-          "src/app/[restaurantId]/settings/usage/**"
+          "src/components/website/CheckoutEditor.tsx"
         ],
         "foodyserver": [
-          "internal/apiquota/**",
-          "internal/addresslookup/budget.go",
-          "internal/addresslookup/maps_budget.go",
-          "internal/geoapify/usage.go"
+          "internal/addresslookup/handler.go"
         ]
       }
     },
