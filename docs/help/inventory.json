@@ -4,10 +4,10 @@
   "services": {
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "378f8b1b99ae3ed5fd5afff57f5126e2deb39e87",
+      "sourceCommit": "ef86d94c43ed741d2895d8112c6fdfef4e894f5a",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "5e8f63f1571ac9ad5cc6df701e352b2fc8306fee7ae455319c87323d8e70e8a2",
-      "workingTreeHasChanges": true,
+      "sourceSnapshot": "33ffbf08a7e364112ee496334b9e6beb3057afbb78703347d5662c6be6146b9b",
+      "workingTreeHasChanges": false,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
           "sha256": "13c58bc11284d66c7fb9c4d79c1b3e92c6e05539164f2147a5e966d9c17ac275",
@@ -2394,8 +2394,15 @@
             "customers-wallet-studio"
           ]
         },
+        "src/components/loyalty/WalletBannerFraming.tsx": {
+          "sha256": "508009ac7b751b888fdc071c6f934eddc64cce433ec70eb77b28264aa5bda498",
+          "features": [
+            "customers-loyalty-program",
+            "customers-wallet-studio"
+          ]
+        },
         "src/components/loyalty/WalletStudioWorkspace.tsx": {
-          "sha256": "3f188685316b89c8dc622d2117e2b9b6098443b09ec6a8d6cc25816b4f56e414",
+          "sha256": "0ca231306492dd1919e3729ff4f4f4cc67786408525728f2a1d2a5717dabfe53",
           "features": [
             "customers-loyalty-program",
             "customers-wallet-studio"
@@ -4503,7 +4510,7 @@
           ]
         },
         "src/lib/api.ts": {
-          "sha256": "a84f6863e0f0caddf46b464ad8768dc890f20902bbc179c9db5d0983cf885528",
+          "sha256": "89839bb0e7d82905d0c6ab778c3598743bced951c602842193a43a0fd8c6510c",
           "features": [
             "customers-profiles",
             "menu-variants-and-sizes",
@@ -4721,7 +4728,7 @@
           ]
         },
         "src/lib/i18n.tsx": {
-          "sha256": "0cd7c7afa4e2eae51e67b3d31f0984add4d992449d134e70bd0b765748f6214c",
+          "sha256": "c9c6f361f28510b89aebf2003779dfb763f0911a2ac90e3db40b26060d928e51",
           "features": [
             "customers-profiles",
             "menu-menus-and-groups",
@@ -5527,6 +5534,14 @@
           "sha256": "24c63b941a7136780e896a913103deccaf250e0528af00ce48850f1d27470bcc",
           "features": [
             "shared-runtime"
+          ]
+        },
+        "src/lib/wallet-banner.ts": {
+          "sha256": "8557f99fb0d6ae791d888a3a36ba6a21dabf4b42d15ffa20539f631909b13e61",
+          "features": [
+            "shared-runtime",
+            "customers-loyalty-program",
+            "customers-wallet-studio"
           ]
         },
         "src/lib/website-fonts.ts": {
@@ -10320,9 +10335,9 @@
     },
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "76b4b3f5667f61a5b24c178076f3c0cfe04fee02",
+      "sourceCommit": "01d059fa8fb45c9739c43e465755b265f9723360",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "8e038b32909cca128c1f63c02424d93e08211e04f3dedf22d9493ff985d0704a",
+      "sourceSnapshot": "c2cb27ae38ea35a66e7c1c39c98d3d2300c1bf003d8b328c4a61d2edfa5a46a0",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -11178,7 +11193,7 @@
           ]
         },
         "internal/common/loyalty_wallet_design.go": {
-          "sha256": "5a4e2234bf68a32806c95915ef704746436a8c13b93f35036989c7f85eccd45a",
+          "sha256": "3227727a26fda9a87cd3983c970d44abd96dcd6fd56e98441d1cb9c3ab4f3008",
           "features": [
             "customers-wallet-studio"
           ]
@@ -12633,32 +12648,32 @@
           ]
         },
         "internal/loyalty/wallet_studio.go": {
-          "sha256": "220fde2c662e54853c809584607c2ee38a71b946f35f6899e57509957802105e",
+          "sha256": "71b6d59bdf857f71db23acb307bb2aa238521f9ae2c29de81fd1a12f77ab5343",
           "features": [
             "customers-wallet-studio"
           ]
         },
         "internal/loyalty/wallet_studio_artwork.go": {
-          "sha256": "7c70a020435a3f7c51df583407cf3d92f4a1ecb82911cc793e866d996d13c364",
+          "sha256": "d3e815f18d07f74c90f96f84516668814a4ffac6ae43f97e4a60d9fb2b1b6b36",
           "features": [
             "customers-wallet-studio"
           ]
         },
         "internal/loyalty/wallet_studio_handler.go": {
-          "sha256": "ede1c961cf83e32ea84bf0a01d4f20b15185ecd7f043c3b8e08fea91ee903f27",
+          "sha256": "69725b624b121354fabbb2ea57bc9f4da4ee7164b93ecaae7f1ea1fa07d5e394",
           "features": [
             "customers-wallet-studio"
           ]
         },
         "internal/loyaltywallet/apple.go": {
-          "sha256": "f9272e5bbfd372743fd5c3fda248cf4211a61e424a914a2443a19e740119d0bb",
+          "sha256": "fe55564f167ce39136140df9d479985ab6e093377ccf3d361e47c5391655b7c4",
           "features": [
             "platform-api",
             "customers-wallet-studio"
           ]
         },
         "internal/loyaltywallet/apple_studio.go": {
-          "sha256": "7dd9a9823b62b198e0270bb93f77a7f6eb635a253ea9527effd1565424e7e03d",
+          "sha256": "8fd53a4cf855abef5b7d305fbdce3b3795289445de07e42f097c48ad68840dc0",
           "features": [
             "customers-wallet-studio"
           ]
@@ -16303,7 +16318,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "3e20cba35b0dab1f05628b48b9bd4484417d9e6bd8fa2b34a37a0fe847fe0cb2",
+          "sha256": "4acbffd64a30467c4c3ea4797c000311cc3d5222cbb5bd9755f480bb2af9fb00",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -16919,6 +16934,12 @@
         },
         "migrations/334_wallet_restaurant_name.sql": {
           "sha256": "37b23b2a7d56cdaa8acef38f5eb79aeb79d7c45b3a21972e3b8215e188a76df9",
+          "features": [
+            "customers-wallet-studio"
+          ]
+        },
+        "migrations/335_wallet_banner_framing.sql": {
+          "sha256": "3544a4c14da5d2c810ee8712ef339bc7c1f3a599c6fb56ac20130a5cff24bd2c",
           "features": [
             "customers-wallet-studio"
           ]
@@ -51933,9 +51954,9 @@
             "he": "בדיקת הנפקה של כרטיסי מועדון אישיים"
           },
           "instructions": {
-            "en": "Apply migrations 322 and 334 with the API release. Publish a saved Wallet design for the test restaurant and enable its loyalty program. Enable the Wallet API and the intended provider for the environment. Test issuance with an authenticated member and repeat it to verify stable card identity. With Google enabled, verify that the API serves only published, versioned artwork. Hide the restaurant name, save the banner, then publish. On the member pass verify the banner, the Foody attribution by the QR code and the link in the details. Check Apple iPhone and Google device acceptance with their respective provider credentials.",
-            "fr": "Appliquez les migrations 322 et 334 avec la livraison de l’API. Publiez un visuel Wallet enregistré pour le restaurant de test et activez son programme de fidélité. Activez l’API Wallet et le fournisseur prévu pour l’environnement. Demandez une carte avec un compte membre authentifié et répétez l’opération pour vérifier la stabilité de son identifiant. Lorsque Google est activé, vérifiez que l’API sert uniquement les images des versions publiées. Masquez le nom du restaurant, enregistrez la bannière puis publiez le visuel. Sur la carte d’un membre, vérifiez la bannière, la mention Foody près du QR et le lien dans les détails. Vérifiez l’ajout sur les appareils Apple et Google avec la configuration de chaque fournisseur.",
-            "he": "החילו את מיגרציות 322 ו־334 עם פריסת ה־API. פרסמו עיצוב Wallet שמור למסעדת הבדיקה והפעילו את תוכנית המועדון שלה. הפעילו את ה־API של Wallet ואת הספק המתאים לסביבה. בקשו כרטיס מחשבון חבר מאומת וחזרו על הפעולה כדי לבדוק שמזהה הכרטיס נשאר קבוע. כאשר Google מופעל, ודאו שה־API מגיש רק תמונות בגרסאות שפורסמו. הסתירו את שם המסעדה, שמרו את תמונת הכותרת ופרסמו את העיצוב. בכרטיס של חבר מועדון ודאו שמוצגים הבאנר, הכיתוב של Foody ליד קוד ה־QR והקישור בפרטי הכרטיס. בדקו הוספה במכשירי Apple ו־Google עם ההגדרות של כל ספק."
+            "en": "Apply migrations 322 and 334 with the API release. Publish a saved Wallet design for the test restaurant and enable its loyalty program. Enable the Wallet API and the intended provider for the environment. Test issuance with an authenticated member and repeat it to verify stable card identity. With Google enabled, verify that the API serves only published, versioned artwork. Hide the restaurant name, save the banner, then publish. On the member pass verify the banner, the Foody attribution by the QR code and the link in the details. Check Apple iPhone and Google device acceptance with their respective provider credentials. Apply migration 335 before releasing the Studio banner editor. Save a new photo in a private draft, reopen it and adjust each Wallet. Verify the Apple test card uses the selected counter position and check each published Wallet image against its own preview.",
+            "fr": "Appliquez les migrations 322 et 334 avec la livraison de l’API. Publiez un visuel Wallet enregistré pour le restaurant de test et activez son programme de fidélité. Activez l’API Wallet et le fournisseur prévu pour l’environnement. Demandez une carte avec un compte membre authentifié et répétez l’opération pour vérifier la stabilité de son identifiant. Lorsque Google est activé, vérifiez que l’API sert uniquement les images des versions publiées. Masquez le nom du restaurant, enregistrez la bannière puis publiez le visuel. Sur la carte d’un membre, vérifiez la bannière, la mention Foody près du QR et le lien dans les détails. Vérifiez l’ajout sur les appareils Apple et Google avec la configuration de chaque fournisseur. Appliquez la migration 335 avant de déployer l’éditeur de cadrage. Enregistrez une nouvelle photo dans le brouillon privé, rouvrez-la et ajustez chaque Wallet. Vérifiez la position choisie du compteur sur la carte Apple de test et comparez chaque image publiée à son aperçu.",
+            "he": "החילו את מיגרציות 322 ו־334 עם פריסת ה־API. פרסמו עיצוב Wallet שמור למסעדת הבדיקה והפעילו את תוכנית המועדון שלה. הפעילו את ה־API של Wallet ואת הספק המתאים לסביבה. בקשו כרטיס מחשבון חבר מאומת וחזרו על הפעולה כדי לבדוק שמזהה הכרטיס נשאר קבוע. כאשר Google מופעל, ודאו שה־API מגיש רק תמונות בגרסאות שפורסמו. הסתירו את שם המסעדה, שמרו את תמונת הכותרת ופרסמו את העיצוב. בכרטיס של חבר מועדון ודאו שמוצגים הבאנר, הכיתוב של Foody ליד קוד ה־QR והקישור בפרטי הכרטיס. בדקו הוספה במכשירי Apple ו־Google עם ההגדרות של כל ספק. הפעילו את מיגרציה 335 לפני הפצת עורך מסגור הבאנר. שמרו תמונה חדשה בטיוטה הפרטית, פתחו אותה שוב והתאימו את המסגור בכל ארנק. בדקו את מיקום המונה בכרטיס הבדיקה של Apple והשוו את התמונה שפורסמה בכל ארנק לתצוגה המקדימה שלו."
           }
         },
         {
@@ -57032,6 +57053,10 @@
         },
         {
           "service": "foodyadmin",
+          "file": "src/lib/wallet-banner.ts"
+        },
+        {
+          "service": "foodyadmin",
           "file": "src/lib/website-fonts.ts"
         },
         {
@@ -61558,7 +61583,9 @@
           "src/lib/loyalty-program.ts",
           "src/lib/i18n.tsx",
           "src/lib/help/context.ts",
-          "src/components/loyalty/WalletStudioWorkspace.tsx"
+          "src/components/loyalty/WalletStudioWorkspace.tsx",
+          "src/components/loyalty/WalletBannerFraming.tsx",
+          "src/lib/wallet-banner.ts"
         ],
         "foodyserver": [
           "cmd/server/main.go",
@@ -61629,9 +61656,9 @@
             "he": "התאמת כרטיס ה־Wallet"
           },
           "instructions": {
-            "en": "Open **Wallet Studio**. Choose a logo and a banner in PNG, JPEG or WebP, up to 10 MB per file. The Studio resizes the image and shows it in the Apple and Google previews. Turn off **Show restaurant name** if the logo already includes the name. Google keeps the program title. **Save draft** lets you generate an Apple test card. Select **Publish card design** to apply the saved artwork to customer cards. The card displays **Powered by Foody** near the QR code and includes a Foody link in its details.",
-            "fr": "Ouvrez **Studio Wallet**. Choisissez un logo et une bannière en PNG, JPEG ou WebP, jusqu’à 10 Mo par fichier. Le Studio redimensionne l’image et l’affiche dans les aperçus Apple et Google. Si le logo contient déjà le nom, désactivez **Afficher le nom du restaurant**. Google conserve le titre du programme. **Enregistrer le brouillon** permet de générer une carte de test Apple. Cliquez sur **Publier le visuel** pour appliquer le visuel enregistré aux cartes clients. La mention **Propulsé par Foody** apparaît près du QR et un lien vers Foody figure dans les détails de la carte.",
-            "he": "פתחו את **סטודיו Wallet**. בחרו לוגו ובאנר בפורמט PNG, JPEG או WebP, עד 10 מ״ב לקובץ. הסטודיו מתאים את גודל התמונה ומציג אותה בתצוגות המקדימות של Apple ושל Google. אם הלוגו כבר כולל את השם, כבו את **הצגת שם המסעדה**. ב־Google שם התוכנית ממשיך להופיע. לאחר **שמירת טיוטה** אפשר ליצור כרטיס בדיקה של Apple. בחרו **פרסום עיצוב הכרטיס** כדי להחיל את העיצוב השמור על כרטיסי הלקוחות. הכיתוב **מופעל על ידי Foody** מופיע ליד קוד ה־QR וקישור ל־Foody נמצא בפרטי הכרטיס."
+            "en": "Open **Wallet Studio**. Choose a logo and a banner in PNG, JPEG or WebP, up to 10 MB per file. Open **Frame banner** and choose **Entire image** to keep every edge visible or **Fill the frame** to crop. Adjust the zoom and drag in the preview, or use the horizontal and vertical sliders. Apple and Google share the settings until you enable **Use a separate Google frame** in the Google preview. On Apple, place the counter **Below the banner** or **On the banner**. New uploads retain their original file in the private draft. For an older banner, upload the original again if you need its full resolution. Turn off **Show restaurant name** if the logo already includes the name. Google keeps the program title. **Save draft** lets you generate an Apple test card. Select **Publish card design** to apply the saved artwork to customer cards. The card displays **Powered by Foody** near the QR code and includes a Foody link in its details.",
+            "fr": "Ouvrez **Studio Wallet**. Choisissez un logo et une bannière en PNG, JPEG ou WebP, jusqu’à 10 Mo par fichier. Ouvrez **Cadrer la bannière**. Choisissez **Image entière** pour voir tous les bords ou **Remplir le cadre** pour recadrer. Réglez le zoom et déplacez l’image dans l’aperçu ou utilisez les curseurs de position. Apple et Google partagent les réglages. Pour les ajuster séparément, activez **Cadrage propre à Google** dans l’aperçu Google. Sur Apple, placez le compteur **Sous la bannière** ou **Sur la bannière**. Le brouillon privé conserve le fichier original des nouveaux imports. Pour retrouver la pleine résolution d’une ancienne bannière, importez à nouveau son original. Si le logo contient déjà le nom, désactivez **Afficher le nom du restaurant**. Google conserve le titre du programme. **Enregistrer le brouillon** permet de générer une carte de test Apple. Cliquez sur **Publier le visuel** pour appliquer le visuel enregistré aux cartes clients. La mention **Propulsé par Foody** apparaît près du QR et un lien vers Foody figure dans les détails de la carte.",
+            "he": "פתחו את **סטודיו Wallet**. בחרו לוגו ובאנר בפורמט PNG, JPEG או WebP, עד 10 מ״ב לקובץ. פתחו **מסגור הבאנר**. בחרו **התמונה כולה** כדי להציג את כל השוליים או **מילוי המסגרת** כדי לחתוך את התמונה. כוונו את הזום וגררו את התמונה בתצוגה המקדימה, או השתמשו במחוונים למיקום אופקי ואנכי. Apple ו-Google חולקים את הגדרות המסגור. כדי לכוון אותם בנפרד, הפעילו **מסגור נפרד ל-Google** בתצוגת Google. ב-Apple אפשר למקם את המונה **מתחת לבאנר** או **על הבאנר**. הטיוטה הפרטית שומרת את קובץ המקור של העלאות חדשות. לבאנר ישן אפשר להעלות מחדש את המקור כדי לערוך ברזולוציה המלאה. אם הלוגו כבר כולל את השם, כבו את **הצגת שם המסעדה**. ב־Google שם התוכנית ממשיך להופיע. לאחר **שמירת טיוטה** אפשר ליצור כרטיס בדיקה של Apple. בחרו **פרסום עיצוב הכרטיס** כדי להחיל את העיצוב השמור על כרטיסי הלקוחות. הכיתוב **מופעל על ידי Foody** מופיע ליד קוד ה־QR וקישור ל־Foody נמצא בפרטי הכרטיס."
           }
         },
         {
@@ -61689,6 +61716,10 @@
         },
         {
           "service": "foodyadmin",
+          "file": "src/components/loyalty/WalletBannerFraming.tsx"
+        },
+        {
+          "service": "foodyadmin",
           "file": "src/components/loyalty/WalletStudioWorkspace.tsx"
         },
         {
@@ -61702,6 +61733,10 @@
         {
           "service": "foodyadmin",
           "file": "src/lib/loyalty-program.ts"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/lib/wallet-banner.ts"
         },
         {
           "service": "foodyserver",
@@ -61794,7 +61829,9 @@
           "src/components/loyalty/WalletStudioWorkspace.tsx",
           "src/components/loyalty/LoyaltyProgramWorkspace.tsx",
           "src/lib/api.ts",
-          "src/lib/i18n.tsx"
+          "src/lib/i18n.tsx",
+          "src/components/loyalty/WalletBannerFraming.tsx",
+          "src/lib/wallet-banner.ts"
         ],
         "foodyserver": [
           "cmd/server/wallet_studio.go",
@@ -61806,7 +61843,8 @@
           "internal/loyaltywallet/**",
           "migrations/315_loyalty_wallet_designs.sql",
           "migrations/322_loyalty_wallet_publications.sql",
-          "migrations/334_wallet_restaurant_name.sql"
+          "migrations/334_wallet_restaurant_name.sql",
+          "migrations/335_wallet_banner_framing.sql"
         ],
         "foodyweb": [
           "app/api/loyalty-wallet/apple/route.ts",
@@ -61828,9 +61866,9 @@
             "he": "שמירת עיצוב פרטי"
           },
           "instructions": {
-            "en": "Set the background and Apple text colors. Choose a PNG, JPEG or WebP logo and banner, each up to 10 MB. The Studio resizes them before saving. Keep the main subject near the center and check its crop in both previews. Turn off **Show restaurant name** to remove the name beside the Apple logo. Google keeps the program title. If an image cannot be opened, the message under the picker explains what to change. Select **Save draft**. If another editor saved a newer draft, reload it before retrying.",
-            "fr": "Choisissez la couleur de fond et la couleur du texte Apple. Importez un logo et une bannière en PNG, JPEG ou WebP, jusqu’à 10 Mo chacun. Le Studio les redimensionne avant l’enregistrement. Centrez le sujet principal et vérifiez le cadrage dans les deux aperçus. Désactivez **Afficher le nom du restaurant** pour retirer le nom à côté du logo Apple. Google conserve le titre du programme. Si une image est refusée, consultez le message sous le champ. Cliquez sur **Enregistrer le brouillon**. Si une autre personne a enregistré une version plus récente, rechargez-la avant de réessayer.",
-            "he": "בחרו צבע רקע וצבע טקסט ל־Apple. העלו לוגו ובאנר בפורמט PNG, JPEG או WebP, עד 10 מ״ב לקובץ. הסטודיו מתאים את גודל התמונות לפני השמירה. מקמו את הנושא העיקרי במרכז ובדקו את החיתוך בשתי התצוגות המקדימות. כבו את **הצגת שם המסעדה** כדי להסתיר את השם לצד הלוגו ב־Apple. ב־Google שם התוכנית ממשיך להופיע. אם בחירת התמונה נכשלה, קראו את ההודעה שמתחת לשדה. בחרו **שמירת טיוטה**. אם עורך אחר שמר גרסה חדשה יותר, טענו אותה מחדש לפני ניסיון נוסף."
+            "en": "Set the background and Apple text colors. Choose a PNG, JPEG or WebP logo and banner, each up to 10 MB. Open **Frame banner** and choose **Entire image** to keep every edge visible or **Fill the frame** to crop. Adjust the zoom and drag in the preview, or use the horizontal and vertical sliders. Apple and Google share the settings until you enable **Use a separate Google frame** in the Google preview. On Apple, place the counter **Below the banner** or **On the banner**. New uploads retain their original file in the private draft. For an older banner, upload the original again if you need its full resolution. Turn off **Show restaurant name** to remove the name beside the Apple logo. Google keeps the program title. If an image cannot be opened, the message under the picker explains what to change. Select **Save draft**. If another editor saved a newer draft, reload it before retrying.",
+            "fr": "Choisissez la couleur de fond et la couleur du texte Apple. Importez un logo et une bannière en PNG, JPEG ou WebP, jusqu’à 10 Mo chacun. Ouvrez **Cadrer la bannière**. Choisissez **Image entière** pour voir tous les bords ou **Remplir le cadre** pour recadrer. Réglez le zoom et déplacez l’image dans l’aperçu ou utilisez les curseurs de position. Apple et Google partagent les réglages. Pour les ajuster séparément, activez **Cadrage propre à Google** dans l’aperçu Google. Sur Apple, placez le compteur **Sous la bannière** ou **Sur la bannière**. Le brouillon privé conserve le fichier original des nouveaux imports. Pour retrouver la pleine résolution d’une ancienne bannière, importez à nouveau son original. Désactivez **Afficher le nom du restaurant** pour retirer le nom à côté du logo Apple. Google conserve le titre du programme. Si une image est refusée, consultez le message sous le champ. Cliquez sur **Enregistrer le brouillon**. Si une autre personne a enregistré une version plus récente, rechargez-la avant de réessayer.",
+            "he": "בחרו צבע רקע וצבע טקסט ל־Apple. העלו לוגו ובאנר בפורמט PNG, JPEG או WebP, עד 10 מ״ב לקובץ. פתחו **מסגור הבאנר**. בחרו **התמונה כולה** כדי להציג את כל השוליים או **מילוי המסגרת** כדי לחתוך את התמונה. כוונו את הזום וגררו את התמונה בתצוגה המקדימה, או השתמשו במחוונים למיקום אופקי ואנכי. Apple ו-Google חולקים את הגדרות המסגור. כדי לכוון אותם בנפרד, הפעילו **מסגור נפרד ל-Google** בתצוגת Google. ב-Apple אפשר למקם את המונה **מתחת לבאנר** או **על הבאנר**. הטיוטה הפרטית שומרת את קובץ המקור של העלאות חדשות. לבאנר ישן אפשר להעלות מחדש את המקור כדי לערוך ברזולוציה המלאה. כבו את **הצגת שם המסעדה** כדי להסתיר את השם לצד הלוגו ב־Apple. ב־Google שם התוכנית ממשיך להופיע. אם בחירת התמונה נכשלה, קראו את ההודעה שמתחת לשדה. בחרו **שמירת טיוטה**. אם עורך אחר שמר גרסה חדשה יותר, טענו אותה מחדש לפני ניסיון נוסף."
           }
         },
         {
@@ -61888,6 +61926,10 @@
         },
         {
           "service": "foodyadmin",
+          "file": "src/components/loyalty/WalletBannerFraming.tsx"
+        },
+        {
+          "service": "foodyadmin",
           "file": "src/components/loyalty/WalletStudioWorkspace.tsx"
         },
         {
@@ -61897,6 +61939,10 @@
         {
           "service": "foodyadmin",
           "file": "src/lib/i18n.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/lib/wallet-banner.ts"
         },
         {
           "service": "foodyserver",
@@ -61985,6 +62031,10 @@
         {
           "service": "foodyserver",
           "file": "migrations/334_wallet_restaurant_name.sql"
+        },
+        {
+          "service": "foodyserver",
+          "file": "migrations/335_wallet_banner_framing.sql"
         },
         {
           "service": "foodyweb",
@@ -71964,6 +72014,31 @@
       "line": 1
     },
     {
+      "id": "foodyadmin:src/components/loyalty/WalletBannerFraming.tsx:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/components/loyalty/WalletBannerFraming.tsx",
+      "features": [
+        "customers-loyalty-program",
+        "customers-wallet-studio"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "walletFrameBelow",
+        "walletFrameContain",
+        "walletFrameCounter",
+        "walletFrameCover",
+        "walletFrameDevice",
+        "walletFrameHint",
+        "walletFrameMode",
+        "walletFrameOverlay",
+        "walletFrameReset",
+        "walletFrameSeparate",
+        "walletStudioBanner"
+      ],
+      "actions": [],
+      "line": 1
+    },
+    {
       "id": "foodyadmin:src/components/loyalty/WalletStudioWorkspace.tsx:ui-controls:1",
       "service": "foodyadmin",
       "source": "src/components/loyalty/WalletStudioWorkspace.tsx",
@@ -71976,6 +72051,7 @@
         "loading",
         "loyaltyProgramForbidden",
         "loyaltyProgramTitle",
+        "walletFrameTitle",
         "walletStudioActiveRequired",
         "walletStudioAppearance",
         "walletStudioAppleText",
@@ -114076,8 +114152,8 @@
     "sharedRuntimeFiles": 437,
     "features": 114,
     "operations": 1040,
-    "sourceFiles": 2692,
-    "surfaces": 2338,
+    "sourceFiles": 2695,
+    "surfaces": 2339,
     "unclassifiedRoutes": []
   }
 }
