@@ -1928,3 +1928,11 @@ No password, PIN, production account or device record is copied between environm
 ## Dispatch dates and correction of mistaken delivery reports (19 November 2026)
 
 The dispatch and linked staff, order and courier procedures cover the restaurant-local default date, access to upcoming plans and explicit review of each mistaken incident before a departure reset. Publish the three languages with the compatible API and Admin. Original reports remain in the audit history.
+
+## Browser session protection and development database roles (19 November 2026)
+
+The first-login guide covers the one-time sign-in after the browser session update,
+cookie access on Admin and the API, and sign-out on shared devices. The internal
+Backoffice guide covers its browser binding and separate environment sign-in.
+The development deployment runs PostgreSQL migrations as a short-lived owner
+process and verifies the serving role before replacing the API container.

@@ -7,7 +7,7 @@ apps: both
 tags:
   - internal
   - backoffice-access
-updatedAt: '2026-11-18'
+updatedAt: '2026-11-19'
 featureId: backoffice-access
 audience: internal
 releaseStatus: available
@@ -18,7 +18,7 @@ Internal Foody operators only. Open Backoffice in the intended environment and a
 
 ## Verify operator scope
 
-Confirm environment and operator role before accessing restaurant data. Do not use a restaurant owner account as an implicit superadmin. Log out from shared devices and never copy credentials or customer records into the help catalogue.
+Confirm environment and operator role before accessing restaurant data. Do not use a restaurant owner account as an implicit superadmin. Log out from shared devices and never copy credentials or customer records into the help catalogue. Sign in again after the browser session update. Allow cookies for Backoffice and the Foody API, complete the requested second factor, and sign out when finished. An account for another environment must authenticate there separately.
 
 <span id="dashboard" />
 

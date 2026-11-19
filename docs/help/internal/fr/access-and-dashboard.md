@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - backoffice-access
-updatedAt: '2026-11-18'
+updatedAt: '2026-11-19'
 featureId: backoffice-access
 audience: internal
 releaseStatus: available
@@ -16,7 +16,7 @@ Opérateurs internes Foody uniquement. Ouvrez Backoffice dans le bon environneme
 
 ## Vérifier le périmètre opérateur
 
-Vérifiez environnement et rôle avant accès aux restaurants. Un propriétaire n’est pas implicitement superadmin. Déconnectez les appareils partagés et ne copiez identifiants ni données client dans le catalogue.
+Vérifiez environnement et rôle avant accès aux restaurants. Un propriétaire n’est pas implicitement superadmin. Déconnectez les appareils partagés et ne copiez identifiants ni données client dans le catalogue. Reconnectez-vous après la mise à jour des sessions. Autorisez les cookies du Backoffice et de l’API Foody, saisissez le second facteur demandé et déconnectez-vous en fin de session. Un autre environnement demande une authentification distincte.
 
 <span id="dashboard" />
 
