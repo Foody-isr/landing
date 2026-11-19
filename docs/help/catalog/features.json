@@ -1056,7 +1056,8 @@
         "migrations/330_foody_annual_renewal.sql",
         "internal/subscription/foody_offer_source.go",
         "internal/commercial/subscription.go",
-        "migrations/332_foody_offer_commercial_source.sql"
+        "migrations/332_foody_offer_commercial_source.sql",
+        "migrations/333_foody_billing_card_signup.sql"
       ]
     },
     "operations": [
@@ -1097,6 +1098,19 @@
           "en": "As the restaurant owner open **Settings → Account → Billing**. Select the offer and review the total including VAT. Monthly billing requires authorizing the displayed monthly debit. For annual billing, select the separate authorization to pay that amount every 12 months, or leave it unchecked to prepay just one year. Accept the terms, continue to Verifone with a CST test card, and verify the payment on return. Billing shows the next debit amount and date for a confirmed mandate. Use **Stop automatic renewal** to end future debits.\n\nThe hosted checkout uses the Foody CST merchant for subscription tests. In production, open the billing page for the test restaurant selected in Backoffice. A checkout that fails to open can appear as an incomplete payment. Check for a confirmed payment or a pending verification before starting again.",
           "fr": "En tant que propriétaire, ouvrez **Paramètres → Compte → Facturation**. Choisissez l’offre et vérifiez le total TTC. En mensuel, autorisez le débit mensuel affiché. En annuel, cochez l’autorisation séparée pour renouveler à ce montant tous les 12 mois, ou laissez-la vide pour payer une seule année. Acceptez les conditions, continuez vers Verifone avec une carte de test CST, puis vérifiez le paiement au retour. La facturation affiche la date et le montant du prochain débit pour un mandat confirmé. **Arrêter le renouvellement automatique** permet d’arrêter les prélèvements futurs.\n\nLe paiement hébergé utilise le marchand CST de Foody pour les tests d’abonnement. En production, ouvrez la facturation du restaurant de test sélectionné dans le Backoffice. Si la page de paiement ne s’ouvre pas, la tentative peut apparaître comme non aboutie. Vérifiez si un paiement est confirmé ou en attente de vérification avant de recommencer.",
           "he": "כבעלי המסעדה פותחים **הגדרות ← חשבון ← חיוב**, בוחרים את ההצעה ובודקים את הסכום כולל מע״מ. במסלול חודשי מאשרים את החיוב החודשי המוצג. במסלול שנתי מסמנים את ההרשאה הנפרדת לחיוב בסכום זה בכל 12 חודשים, או משאירים אותה ריקה לתשלום על שנה אחת בלבד. מאשרים את התנאים, ממשיכים ל־Verifone עם כרטיס בדיקה של CST ומאמתים את התשלום בחזרה. במסך החיוב מוצגים הסכום והמועד של החיוב הבא בהרשאה שאושרה. בוחרים בהפסקת החידוש האוטומטי כדי לעצור חיובים עתידיים.\n\nדף התשלום עבור בדיקות המנוי משתמש בחשבון CST של Foody. בסביבת הייצור פתחו את מסך החיוב של מסעדת הבדיקה שנבחרה ב־Backoffice. אם דף התשלום לא נפתח, הניסיון עשוי להופיע כתשלום שלא הושלם. לפני ניסיון נוסף בדקו אם קיים תשלום שאושר או ממתין לאימות."
+        }
+      },
+      {
+        "id": "registered-card",
+        "title": {
+          "en": "Pay the first instalment after card verification",
+          "fr": "Payer la première échéance après vérification de la carte",
+          "he": "תשלום ראשון לאחר אימות הכרטיס"
+        },
+        "instructions": {
+          "en": "Verifone CST can authorize ₪0.01 to register the card for a recurring subscription. Back in **Billing**, choose **Verify payment status**. Once Foody shows **Test card verified**, review the amount and choose **Pay … with the verified card** to pay the instalment. Foody starts the paid period after verifying a sale for the full amount. If verification is pending after you pay, use the status button. For a payment under review, give Foody the support reference. In Verifone Central, the card registration uses that merchant reference and the separate subscription sale uses the same reference with the suffix `-P1`.",
+          "fr": "Verifone CST peut autoriser 0,01 ₪ pour enregistrer la carte d’un abonnement avec renouvellement. De retour dans **Facturation**, cliquez sur **Vérifier le statut du paiement**. Quand Foody affiche **Carte de test vérifiée**, vérifiez le montant puis choisissez **Payer … avec la carte vérifiée** pour régler l’échéance. La période payée commence après vérification d’une vente du montant total. Si le paiement reste en attente après ce clic, utilisez le bouton de vérification. Si une vérification par Foody est nécessaire, communiquez la référence affichée au support. Dans Verifone Central, l’enregistrement de la carte porte cette référence marchand et la vente de l’abonnement porte la même référence suivie de `-P1`.",
+          "he": "Verifone CST עשויה לאשר עסקה של 0.01 ₪ לרישום הכרטיס למינוי עם חידוש אוטומטי. בחזרה למסך **חיוב** בודקים את מצב התשלום. כאשר מופיעה ההודעה **כרטיס הבדיקה אומת**, בודקים את הסכום ובוחרים בתשלום הסכום המוצג **בכרטיס שאומת**. תקופת המינוי בתשלום מתחילה לאחר ש־Foody אימתה עסקה במלוא הסכום. אם התשלום עדיין ממתין לאחר הלחיצה, בוחרים בבדיקת מצב התשלום. אם נדרשת בדיקה של Foody, מוסרים לתמיכה את האסמכתה המוצגת. ב־Verifone Central רישום הכרטיס מופיע עם אסמכתת בית העסק, ותשלום המינוי מופיע עם אותה אסמכתה בתוספת `-P1`."
         }
       },
       {
