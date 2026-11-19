@@ -1,3 +1,9 @@
+## Reprise des encaissements pendant une clôture Ashrait (19 novembre 2026)
+
+Publier les trois traductions du guide de clôture avec l’API portant les migrations 336 et 337 et les clients FoodyPOS compatibles. Vérifier en CST les commandes de lecture, la reprise après perte de réponse et la fermeture de session sur chaque modèle. Les états et totaux bancaires proviennent du terminal. Épingler la révision Landing revue lors de la publication. Le remboursement et le Void de démonstration sur l’API prod utilisent une autorisation dédiée au terminal physique et au restaurant CST. Vérifier la reprise sur un iPad de remplacement et le remboursement avec réimpression dans le build pilote signé, puis publier le guide Transactions avec le client et l’API compatibles.
+
+Pour la recette Verifone, filmer le remboursement d’une vente CST et son propre reçu. Pour la reprise, conserver l’addition ouverte sur la caisse d’origine. Utiliser une carte CST à puce avec saisie du code hors champ et couper l’alimentation du Mini après l’envoi à SHVA, avant la réponse à l’iPad. Après redémarrage, vérifier la tentative d’origine et son résultat comptabilisé, ou la confirmation du Void si l’annulation a été choisie. Rapprocher la référence et le montant du journal avec le justificatif. Une réponse indéterminée reste à vérifier. Effectuer la clôture de preuve après cette reprise. Filmer l’impression, puis photographier le même rapport SHVA à l’écran avec sa référence de transmission.
+
 ## Quotation-based subscription offers (19 November 2026)
 
 Publish the subscription, private sandbox billing and commercial document guides with API migration 332 and the Backoffice and Admin releases. Verify quoted recurring amounts, VAT rounding, owner consent and the CST checkout URL. Equipment and metered usage keep their own billing schedules. The production test uses the selected restaurant and the Foody CST merchant.

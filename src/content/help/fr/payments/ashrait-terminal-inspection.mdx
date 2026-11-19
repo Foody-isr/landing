@@ -34,6 +34,10 @@ Sur la version compatible avec Ashrait Israël, les anciennes actions génériqu
 
 Si la réponse du terminal est perdue, ouvrez l’addition sur la caisse d’origine avec le même terminal connecté. Choisissez Payer, Carte puis Vérifier le paiement carte. Cette action reprend la tentative existante sans débiter à nouveau. Si Foody confirme que la tentative s’est arrêtée avant l’encaissement, qu’elle a été refusée ou annulée, vous pouvez recommencer. Une autorisation correspondante est enregistrée sur l’addition d’origine. Si le terminal renvoie une réponse vide ou différente, communiquez la référence affichée à un responsable pour consulter le journal Verifone. Le résultat reste à confirmer avant un nouvel encaissement de cette addition. Une autre caisse équipée d’un autre terminal peut encaisser une autre addition.
 
+Si la passerelle bloque la demande avant l’envoi à la banque, consultez **Vérifier la passerelle Ashrait** sur la fiche du terminal actif. Après une coupure survenue pendant un paiement, utilisez **Vérifier le paiement carte** sur l’addition d’origine. Le statut de la passerelle indique si elle accepte une nouvelle demande. Le résultat de la tentative précédente se vérifie sur l’addition.
+
+Ashrait conserve la dernière transaction enregistrée après un redémarrage du terminal. Reprenez le paiement de l’addition avant toute nouvelle vente ou clôture EOD sur ce terminal. Une nouvelle vente peut devenir la dernière transaction et la clôture efface les transactions enregistrées sur le terminal. Foody compare les identifiants portés par le paiement d’origine, le type, le montant et la devise. Une réponse vide ou un identifiant contradictoire laisse la tentative à vérifier.
+
 <span id="ashrait-portable-card-copy" />
 
 ## Imprimer le reçu carte du terminal

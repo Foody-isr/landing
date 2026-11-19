@@ -27,13 +27,17 @@ At the main register, the Z includes the counter drawer and the terminals includ
 
 ## Count, transmit and archive
 
-With payments.manage, choose Close drawer session on the main iPad. An open cash drawer also requires orders.manage. Review the terminals, count any open drawer, enter the actual amount, then choose Start closing. This freezes the count and pauses new card payments until the Z is finalized. Use Transmit end of day on the iPad for each included Mini in the displayed order. Portables transmit in turn when FoodyPOS is open and connected. Wait for each terminal’s confirmation, then choose Finalize and create Z report. On a setup without a main register, confirm the current device’s transmissions in its own closing flow.
+With payments.manage, choose Close drawer session on the main iPad. An open cash drawer also requires orders.manage. Review the terminals, count any open drawer, enter the actual amount, then choose Start closing. This freezes the count and pauses new card payments during closing. Use Transmit end of day on the iPad for each included Mini in the displayed order. Portables transmit in turn when FoodyPOS is open and connected. Wait for each terminal’s confirmation, then choose Finalize and create Z report. On a setup without a main register, confirm the current device’s transmissions in its own closing flow.
 
 <span id="end-of-day-recovery" />
 
 ## Recover without transmitting twice
 
-If a Portable is waiting to transmit, open FoodyPOS on that Portable with an authorized personal session and check its connection. If it already has a confirmation, it resumes recording the same operation. For a Mini, Resume recording on the iPad checks the retained proof. If the result still needs review, retain the configuration and journals and confirm the outcome with Verifone before any further transmission. Resume the same closing reference on the main iPad.
+On the main iPad, open More → Reports → Current drawer. After a connection loss, choose **Resume recording**. Foody looks for the original confirmation. On a compatible Mini it also compares the SHVA reports retained by the terminal. For a Portable, open FoodyPOS on that device with an authorized personal session. Keep the original request while its result is uncertain.
+
+With the compatible release and permission to manage payments and edit settings, a manager can choose **Cancel unsent closing** while all transmissions are pending. This releases the reserved drawer. After a transmission has started, choose **Resume on available terminals** and check the terminal connection. Foody retains the unresolved deposit and permits new sales on eligible terminals when the gateway reports readiness. Later sales belong to the next period. Finalize the Z after the confirmations arrive.
+
+If you have the original paper report, choose **Verify a SHVA report** on that terminal and enter the transmission reference (אסמכתת שידור). Foody searches the ten most recent terminal reports and checks the SHVA number, time and totals before attaching it. Keep FoodyPOS open on a Portable. A late bank deposit can include sales in the next Foody period. If the terminal returns an empty gateway status, check the Ashrait version with Verifone.
 
 <span id="end-of-day-cash-reservation" />
 
@@ -45,7 +49,7 @@ Before starting, recover any pending cash operation: follow the link to Cash bal
 
 ## Review several physical terminals
 
-On iPad, verify the Mini profiles in Hardware. Open FoodyPOS on the restaurant’s enrolled Portables with an authorized session to verify their identities. The closing review lists them with the iPad’s verified terminals. A Portable also saved in the iPad profiles receives a single request, executed on that Portable. Confirmations are collected in the displayed order. If the next terminal is unavailable, subsequent ones wait for its confirmation.
+On iPad, verify the Mini profiles in Hardware. Open FoodyPOS on the restaurant’s enrolled Portables with an authorized session to verify their identities. The closing review lists them with the iPad’s verified terminals. A Portable also saved in the iPad profiles receives a single request, executed on that Portable. On the compatible release, terminals in different identified SHVA batches can transmit independently. Foody coordinates operations sharing one batch.
 
 Before a new transmission, FoodyPOS reads the SHVA number stored on that terminal’s inventory entry.
 
@@ -53,7 +57,7 @@ Before a new transmission, FoodyPOS reads the SHVA number stored on that termina
 
 ## Understand the card block and report period
 
-The period ends when closing starts. After the first consolidated Z, the next period starts at that cutoff. When moving to the main register, card payments already archived in local Z reports are excluded from the current statement. Card payments resume after finalization. Awaiting transmission identifies work still to be sent. A transmission marked for review needs its outcome confirmed before any retry.
+The period ends when closing starts. After the first consolidated Z, the next period starts at that cutoff. When moving to the main register, card payments already archived in local Z reports are excluded from the current statement. Finalization reopens card payments. A manager can also resume sales on available terminals while a batch is being checked. Awaiting transmission identifies work still to be sent. A transmission marked for review needs its outcome confirmed before any retry.
 
 <span id="end-of-day-recorded-cards-and-history" />
 
@@ -84,3 +88,5 @@ On the enrolled counter iPad, open More → Reports → Current drawer with an a
 ## Reprint a SHVA transmission report
 
 On the main iPad, open Drawer history and the day’s Z. The Z consolidates debits, credits, operation counts and net amounts where the SHVA responses provide them. Under the terminal, choose Reprint SHVA report to use the iPad’s configured Epson receipt printer. An archived copy can be printed with the terminal switched off. This action prints the existing report. If the copy or totals are unavailable, review the confirmations and reports available for each terminal.
+
+Under the selected terminal, choose **View SHVA report** to read the bank’s copy in Hebrew. Printing uses the same archived report. You can compare the transmission reference on screen and on paper.
