@@ -41,6 +41,12 @@ En tant que propriétaire, ouvrez **Paramètres → Compte → Facturation**. Ch
 
 Le paiement hébergé utilise le marchand CST de Foody pour les tests d’abonnement. En production, ouvrez la facturation du restaurant de test sélectionné dans le Backoffice. Si la page de paiement ne s’ouvre pas, la tentative peut apparaître comme non aboutie. Vérifiez si un paiement est confirmé ou en attente de vérification avant de recommencer.
 
+<span id="registered-card" />
+
+## Payer la première échéance après vérification de la carte
+
+Verifone CST peut autoriser 0,01 ₪ pour enregistrer la carte d’un abonnement avec renouvellement. De retour dans **Facturation**, cliquez sur **Vérifier le statut du paiement**. Quand Foody affiche **Carte de test vérifiée**, vérifiez le montant puis choisissez **Payer … avec la carte vérifiée** pour régler l’échéance. La période payée commence après vérification d’une vente du montant total. Si le paiement reste en attente après ce clic, utilisez le bouton de vérification. Si une vérification par Foody est nécessaire, communiquez la référence affichée au support. Dans Verifone Central, l’enregistrement de la carte porte cette référence marchand et la vente de l’abonnement porte la même référence suivie de `-P1`.
+
 <span id="renewal" />
 
 ## Tester le premier renouvellement mensuel
