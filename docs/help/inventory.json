@@ -6,7 +6,7 @@
       "repository": "https://github.com/Foody-isr/admin",
       "sourceCommit": "8df0310e2f6d82570a563cc9957cde50c4a6a601",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "89062b3cbb0157905c43579cacefc598d760ad9446c1070d864247c6549549c8",
+      "sourceSnapshot": "d938355a8656421f12133c0683001029909ed4be5a491d3e2408dfe1fbaeb286",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
@@ -4472,7 +4472,8 @@
           "sha256": "3b1dfd6c6f9c680aa8b53d456a8c23723c12aab52e4ce08fa772ffdf4733493b",
           "features": [
             "maps-usage",
-            "website-journey"
+            "website-journey",
+            "external-api-quotas"
           ]
         },
         "src/components/website/ConfirmationEditor.tsx": {
@@ -6226,7 +6227,7 @@
     },
     "foodylanding": {
       "repository": "https://github.com/Foody-isr/landing",
-      "sourceCommit": "03b91dfeebdcb1ff21cf2eb1bd07c510d43918c1",
+      "sourceCommit": "6cf65aa5e3c16963fcc75f605be14a918fd863d0",
       "releaseStatus": "versioned",
       "sourceSnapshot": "7872182414e2c2bc08e3f0e2b65e52d1f5419988d4e77ebd46afb77180470947",
       "workingTreeHasChanges": true,
@@ -10320,7 +10321,7 @@
       "repository": "https://github.com/Foody-isr/server",
       "sourceCommit": "5201fc8c52ce764b3b46a017bd0fd4882363c32c",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "ee0f995b22e0dff2c0fa2e73c22e3201f105de44cd963ce2efca32ff46037800",
+      "sourceSnapshot": "64777da5726b41cd9f7784ca9b106f7d6ff29a34be88ddc5a01fcbc1c675d57b",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -10460,7 +10461,8 @@
           "features": [
             "maps-usage",
             "guest-ordering",
-            "platform-api"
+            "platform-api",
+            "external-api-quotas"
           ]
         },
         "internal/addresslookup/manual.go": {
@@ -16293,7 +16295,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "78f6be06fff6ac093e6b38aca144666e3b81e09b1c92274bd036beb802fdcf00",
+          "sha256": "caa459f1b2165bea48f470a0335ce3c555559f0821783c1dfc780668d4f72cbe",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -59107,6 +59109,58 @@
       ]
     },
     {
+      "id": "external-api-quotas",
+      "module": "settings",
+      "article": "settings/api-usage-and-quotas",
+      "title": {
+        "fr": "Activer ou désactiver les suggestions d’adresse",
+        "en": "Turn delivery address suggestions on or off",
+        "he": "הפעלה וכיבוי של הצעות כתובת למשלוח"
+      },
+      "entry": {
+        "fr": "Éditeur du site en ligne, formulaire de commande en livraison.",
+        "en": "Online site editor, delivery checkout form.",
+        "he": "עורך אתר ההזמנות, טופס ההזמנה למשלוח."
+      },
+      "selectors": {
+        "foodyadmin": [
+          "src/components/website/CheckoutEditor.tsx"
+        ],
+        "foodyserver": [
+          "internal/addresslookup/handler.go"
+        ]
+      },
+      "operations": [
+        {
+          "id": "publish-address-search",
+          "title": {
+            "fr": "Modifier la recherche sur le site",
+            "en": "Change search on the ordering site",
+            "he": "שינוי החיפוש באתר ההזמנות"
+          },
+          "instructions": {
+            "fr": "Dans l’éditeur du site, ouvrez le formulaire de livraison. Activez **Autocomplétion des adresses** pour proposer les adresses Google, ou désactivez-la pour laisser les clients saisir leur adresse. Publiez la modification pour l’appliquer au site de commande. Vos zones de livraison et leurs tarifs restent ceux configurés dans Livraisons.",
+            "en": "Open the delivery checkout form in the site editor. Enable **Address autocomplete** to offer Google suggestions, or turn it off to let customers enter their address. Publish your change to apply it to the ordering site. Delivery zones and their fees come from your delivery settings.",
+            "he": "בעורך האתר פתחו את טופס ההזמנה למשלוח. הפעילו **השלמה אוטומטית של כתובות** כדי להציג הצעות של Google או כבו אותה כדי לאפשר הזנה ידנית. פרסמו את השינוי כדי להחיל אותו באתר ההזמנות. אזורי המשלוח והמחירים שלהם נקבעים בהגדרות המשלוחים."
+          }
+        }
+      ],
+      "audience": "public",
+      "status": "available",
+      "preserveExisting": false,
+      "procedureUpdatedAt": "2026-11-19",
+      "evidence": [
+        {
+          "service": "foodyadmin",
+          "file": "src/components/website/CheckoutEditor.tsx"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/addresslookup/handler.go"
+        }
+      ]
+    },
+    {
       "id": "menu-product-photos",
       "module": "menu",
       "article": "menu/product-photos",
@@ -80598,7 +80652,8 @@
       "source": "src/components/website/CheckoutEditor.tsx",
       "features": [
         "maps-usage",
-        "website-journey"
+        "website-journey",
+        "external-api-quotas"
       ],
       "kind": "ui-controls",
       "labels": [
@@ -113915,8 +113970,8 @@
   ],
   "coverage": {
     "sharedRuntimeFiles": 437,
-    "features": 113,
-    "operations": 1037,
+    "features": 114,
+    "operations": 1038,
     "sourceFiles": 2688,
     "surfaces": 2337,
     "unclassifiedRoutes": []

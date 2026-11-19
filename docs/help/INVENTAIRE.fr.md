@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-11-19.
 
-113 fiches de fonctionnalités, 1037 procédures/sous-fonctionnalités, dont 101 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2688 fichiers applicatifs et 2337 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+114 fiches de fonctionnalités, 1038 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2688 fichiers applicatifs et 2337 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -12,7 +12,7 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 |---|---:|---:|---|
 | foodyadmin | 824 | 835 | 8df0310e2f6d ; versioned |
 | foodybackoffice | 54 | 49 | 619aa5734755 ; versioned |
-| foodylanding | 158 | 31 | 03b91dfeebdc ; versioned |
+| foodylanding | 158 | 31 | 6cf65aa5e3c1 ; versioned |
 | foodypos | 432 | 186 | 2e3b48d8f7ef ; versioned |
 | foodyserver | 834 | 1037 | 5201fc8c52ce ; versioned |
 | foodyweb | 386 | 199 | fdb8211120e4 ; versioned |
@@ -1231,6 +1231,12 @@ Identifiant : `pos-workspace`. Public : public. Disponibilité : available. Serv
 - [Utiliser le suivi de caisse commun](../../src/content/help/fr/settings/pos-workspace.mdx#unified-cash-workspace)
 - [Consulter la dernière transaction du terminal](../../src/content/help/fr/settings/pos-workspace.mdx#ashrait-last-transaction-inspection)
 - [Revenir à une addition sur un appareil compact](../../src/content/help/fr/settings/pos-workspace.mdx#compact-actions-navigation)
+
+### [Activer ou désactiver les suggestions d’adresse](../../src/content/help/fr/settings/api-usage-and-quotas.mdx)
+
+Identifiant : `external-api-quotas`. Public : public. Disponibilité : available. Services : foodyadmin, foodyserver.
+
+- [Modifier la recherche sur le site](../../src/content/help/fr/settings/api-usage-and-quotas.mdx#publish-address-search)
 
 ## tables-floors
 
