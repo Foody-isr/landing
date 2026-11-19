@@ -1924,3 +1924,7 @@ uses the existing code, and no shift starts before PIN sign-in. The FR/HE/EN
 first-login and staff-device guides distinguish saved codes from creation and
 development data from production. Publish with the compatible POS artifact.
 No password, PIN, production account or device record is copied between environments.
+
+## Dispatch dates and correction of mistaken delivery reports (19 November 2026)
+
+The dispatch and linked staff, order and courier procedures cover the restaurant-local default date, access to upcoming plans and explicit review of each mistaken incident before a departure reset. Publish the three languages with the compatible API and Admin. Original reports remain in the audit history.
