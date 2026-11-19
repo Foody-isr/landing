@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-11-19.
 
-114 fiches de fonctionnalités, 1034 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2656 fichiers applicatifs et 2319 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+114 fiches de fonctionnalités, 1035 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2663 fichiers applicatifs et 2322 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyadmin | 824 | 838 | f5937653ea4d ; versioned |
+| foodyadmin | 824 | 838 | 45a62e4219c3 ; versioned |
 | foodybackoffice | 49 | 49 | ab4a30d3833b ; versioned |
-| foodylanding | 160 | 31 | 4e72aa00c707 ; versioned |
+| foodylanding | 160 | 31 | 27c6e390aa37 ; versioned |
 | foodypos | 431 | 185 | 0494899063d1 ; versioned |
-| foodyserver | 808 | 1018 | 26f7f2428ae1 ; versioned |
-| foodyweb | 384 | 198 | b30404e80074 ; versioned |
+| foodyserver | 813 | 1020 | 3cb39d162b79 ; versioned |
+| foodyweb | 386 | 199 | 52e7663c0f12 ; versioned |
 
 ## getting-started
 
@@ -120,6 +120,7 @@ Identifiant : `foody-billing-sandbox`. Public : internal. Disponibilité : local
 - [Configurer le marchand Verifone de Foody](internal/fr/foody-billing-sandbox.md#merchant)
 - [Publier ou modifier une offre privée](internal/fr/foody-billing-sandbox.md#offer)
 - [Payer et vérifier en sandbox](internal/fr/foody-billing-sandbox.md#pay)
+- [Payer la première échéance après vérification de la carte](internal/fr/foody-billing-sandbox.md#registered-card)
 - [Tester le premier renouvellement mensuel](internal/fr/foody-billing-sandbox.md#renewal)
 - [Lire l’usage mesuré](internal/fr/foody-billing-sandbox.md#measure)
 - [Inviter un nouveau restaurant en sandbox](internal/fr/foody-billing-sandbox.md#modular-provisioning)

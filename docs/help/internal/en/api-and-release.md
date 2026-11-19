@@ -112,6 +112,8 @@ The native-keyboard follow-up must release the compact entry procedures and embe
 
 Google can return a different canonical ID for a route segment. Accept this difference only for a street without a house number, after validating the country and provider response. This refinement receives neither delivery proof nor coordinates: the customer must still choose a complete address. Preserve exact place-ID matching for complete addresses, restaurant and visitor bound signatures, session limits and budgets. Test canonical streets, foreign countries, missing or invalid IDs and rejection of complete addresses for another place. Verify a street search and an address with a house number after promotion. Provider reference: https://developers.google.com/maps/documentation/places/web-service/place-id#obsolete
 
+When a numbered prediction returns only a street or search is unavailable, the guest can confirm a postal address and optionally mark the entrance. [See the phone procedure](/en/help/guest/online-ordering#mobile-fulfillment).
+
 <span id="customer-social-sign-in" />
 
 ## Enable customer Facebook and Apple sign-in
