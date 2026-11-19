@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - backoffice-commercial-documents
-updatedAt: '2026-11-18'
+updatedAt: '2026-11-19'
 featureId: backoffice-commercial-documents
 audience: internal
 releaseStatus: available
@@ -49,3 +49,5 @@ L’économie logiciel HT apparaît dans le récapitulatif et dans le PDF lorsqu
 ## Finaliser le PDF et préparer la commande
 
 Après sauvegarde, ouvrez **Review & finalize**, vérifiez l’aperçu puis **Finalize document**. Le document reçoit un numéro FQ pour un devis ou FO pour une commande ; ses tarifs, inclusions et PDF sont figés. Une erreur de génération ne finalise pas le document. Un devis expiré doit être corrigé avant finalisation. **View archived PDF** permet de consulter et télécharger les octets archivés. Pour un devis finalisé, **Create order draft** ouvre un unique brouillon de commande qui conserve ses prix et inclusions. Relisez puis finalisez cette commande séparément. Cette conversion ne vaut ni acceptation du client ni encaissement et n’envoie aucun email. Retrouvez les documents par type et statut dans **Saved documents**. Un conflit d’édition exige de rouvrir la version enregistrée ; les modifications locales ne l’écrasent pas.
+
+Pour rendre l’abonnement payable, rattachez le devis au restaurant avant de le finaliser. Ouvrez le devis finalisé et cliquez sur **Prepare subscription offer**. L’offre privée du restaurant s’ouvre avec le numéro du devis, ses lignes récurrentes et leur TVA. Ces lignes doivent avoir la même date de début et la même fréquence, mensuelle ou prépayée pour 12 mois. Les montants ponctuels et l’usage mesuré sont exclus du renouvellement. Vérifiez l’aperçu, cliquez sur **Publish offer** puis ouvrez la facturation du propriétaire. Le propriétaire autorise le premier paiement et tout renouvellement dans Foody Admin.

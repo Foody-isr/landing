@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - account
   - foody-billing-sandbox
-updatedAt: '2026-11-18'
+updatedAt: '2026-11-19'
 featureId: foody-billing-sandbox
 audience: internal
 releaseStatus: local-release-unverified
@@ -29,7 +29,7 @@ In **Foody billing (sandbox)** enter the Foody CST user ID, API key, entity and 
 
 ## Publish or revise a private offer
 
-For an existing restaurant, open **Restaurants → selected restaurant → Billing & modules → Private sandbox offer**. Enter an offer description, terms, monthly and annual ILS amounts, agreed VAT treatment and the first payment date. Publish, then open the owner billing page. To change the offer, edit the fields and publish a new version. A checkout already in progress keeps its original price. The new offer requires the owner’s agreement for the next period.
+In **Restaurants → selected restaurant → Billing & modules → Private sandbox offer**, choose an **Offer source**. **Foody catalogue** lists the plans and modules used by **Quotes & orders**. Select one to preview its monthly and annual prices including VAT. **Finalized quotation** lists issued quotations linked to this restaurant. Select one to copy the agreed recurring amounts, VAT, terms and acceptance deadline. Review the first payment date, then choose **Publish offer**. The owner can now accept and pay in Foody Admin. **Custom offer** lets you enter negotiated amounts and VAT treatment. **Customize this offer** starts a custom draft from the current preview. Review both prices before publishing.
 
 Standard monthly software has no minimum term. Annual prepayment covers 12 months for the price of 11 on software modules and plans: ILS 590/month becomes ILS 6,490/year excluding VAT, saving ILS 590. Additional licences, hardware, options and payment services do not receive this discount. Accepted offers, saved invitations and negotiated prices retain their agreed terms.
 
@@ -38,6 +38,8 @@ Standard monthly software has no minimum term. Annual prepayment covers 12 month
 ## Pay and verify in sandbox
 
 As the restaurant owner open **Settings → Account → Billing**. Select the offer and review the total including VAT. Monthly billing requires authorizing the displayed monthly debit. For annual billing, select the separate authorization to pay that amount every 12 months, or leave it unchecked to prepay just one year. Accept the terms, continue to Verifone with a CST test card, and verify the payment on return. Billing shows the next debit amount and date for a confirmed mandate. Use **Stop automatic renewal** to end future debits.
+
+The hosted checkout uses the Foody CST merchant for subscription tests. In production, open the billing page for the test restaurant selected in Backoffice. A checkout that fails to open can appear as an incomplete payment. Check for a confirmed payment or a pending verification before starting again.
 
 <span id="renewal" />
 
