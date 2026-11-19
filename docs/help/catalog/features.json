@@ -16688,6 +16688,48 @@
     "procedureUpdatedAt": "2026-11-11"
   },
   {
+    "id": "external-api-quotas",
+    "module": "settings",
+    "article": "settings/api-usage-and-quotas",
+    "title": {
+      "fr": "Activer ou désactiver les suggestions d’adresse",
+      "en": "Turn delivery address suggestions on or off",
+      "he": "הפעלה וכיבוי של הצעות כתובת למשלוח"
+    },
+    "entry": {
+      "fr": "Éditeur du site en ligne, formulaire de commande en livraison.",
+      "en": "Online site editor, delivery checkout form.",
+      "he": "עורך אתר ההזמנות, טופס ההזמנה למשלוח."
+    },
+    "selectors": {
+      "foodyadmin": [
+        "src/components/website/CheckoutEditor.tsx"
+      ],
+      "foodyserver": [
+        "internal/addresslookup/handler.go"
+      ]
+    },
+    "operations": [
+      {
+        "id": "publish-address-search",
+        "title": {
+          "fr": "Modifier la recherche sur le site",
+          "en": "Change search on the ordering site",
+          "he": "שינוי החיפוש באתר ההזמנות"
+        },
+        "instructions": {
+          "fr": "Dans l’éditeur du site, ouvrez le formulaire de livraison. Activez **Autocomplétion des adresses** pour proposer les adresses Google, ou désactivez-la pour laisser les clients saisir leur adresse. Publiez la modification pour l’appliquer au site de commande. Vos zones de livraison et leurs tarifs restent ceux configurés dans Livraisons.",
+          "en": "Open the delivery checkout form in the site editor. Enable **Address autocomplete** to offer Google suggestions, or turn it off to let customers enter their address. Publish your change to apply it to the ordering site. Delivery zones and their fees come from your delivery settings.",
+          "he": "בעורך האתר פתחו את טופס ההזמנה למשלוח. הפעילו **השלמה אוטומטית של כתובות** כדי להציג הצעות של Google או כבו אותה כדי לאפשר הזנה ידנית. פרסמו את השינוי כדי להחיל אותו באתר ההזמנות. אזורי המשלוח והמחירים שלהם נקבעים בהגדרות המשלוחים."
+        }
+      }
+    ],
+    "audience": "public",
+    "status": "available",
+    "preserveExisting": false,
+    "procedureUpdatedAt": "2026-11-19"
+  },
+  {
     "id": "menu-product-photos",
     "module": "menu",
     "article": "menu/product-photos",
