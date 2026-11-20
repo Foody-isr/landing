@@ -774,6 +774,13 @@
           "src/components/orders/**",
           "src/app/[restaurantId]/orders/new/**",
           "src/lib/orders/**"
+        ],
+        "foodyweb": [
+          "components/CustomerInfoEditor.tsx"
+        ],
+        "foodyserver": [
+          "internal/orders/delivery_schedule.go",
+          "internal/common/customer_override.go"
         ]
       }
     },
@@ -900,7 +907,12 @@
           "internal/common/order_lifecycle_v2_models.go",
           "internal/testutil/testutil.go",
           "internal/support/corpus.json",
-          "migrations/331_delivery_route_recovery.sql"
+          "migrations/331_delivery_route_recovery.sql",
+          "internal/common/delivery_recalculation.go",
+          "internal/common/delivery_entrance.go",
+          "internal/orders/delivery_route_date.go",
+          "migrations/340_delivery_route_recalculation.sql",
+          "migrations/341_delivery_entrance_confirmations.sql"
         ],
         "foodyweb": [
           "store/useCartStore.ts",
@@ -1931,6 +1943,7 @@
           "components/VerifoneOrderPayment.tsx",
           "lib/verifone-wallet.ts",
           "lib/delivery-address-input.ts",
+          "store/useWebsiteOrderStore.ts",
           "lib/payment-return.ts",
           "components/ConfirmationPageClient.tsx",
           "app/r/[restaurantId]/payment/failed/page.tsx"
@@ -2407,7 +2420,9 @@
           "src/lib/i18n.tsx",
           "src/lib/orders/order-actions.ts",
           "src/lib/help/registry.ts",
-          "src/lib/orders/internal-order-payment.ts"
+          "src/lib/orders/internal-order-payment.ts",
+          "src/lib/orders/orderDraft.ts",
+          "src/lib/route-address.ts"
         ],
         "foodyserver": [
           "internal/common/internal_checkout.go",

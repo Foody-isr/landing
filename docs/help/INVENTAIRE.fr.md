@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-11-20.
 
-114 fiches de fonctionnalités, 1042 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2705 fichiers applicatifs et 2348 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+114 fiches de fonctionnalités, 1042 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2706 fichiers applicatifs et 2346 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyadmin | 827 | 837 | 9d709f4c9feb ; versioned |
+| foodyadmin | 822 | 834 | cfd16a4c4891 ; versioned |
 | foodybackoffice | 54 | 49 | 619aa5734755 ; versioned |
-| foodylanding | 158 | 31 | 376766a66851 ; versioned |
+| foodylanding | 158 | 31 | 985f4af0642a ; versioned |
 | foodypos | 432 | 186 | a0b63f890a82 ; versioned |
-| foodyserver | 847 | 1045 | cb36de43c232 ; versioned |
-| foodyweb | 387 | 200 | 937e7218a2de ; versioned |
+| foodyserver | 853 | 1045 | dbc8431e5075 ; versioned |
+| foodyweb | 387 | 201 | c34553ace736 ; versioned |
 
 ## getting-started
 
@@ -648,7 +648,7 @@ Identifiant : `pos-order-entry`. Public : public. Disponibilité : available. Se
 
 ### [Consulter et modifier une commande](../../src/content/help/fr/orders/order-details.mdx)
 
-Identifiant : `order-detail`. Public : public. Disponibilité : available. Services : foodyadmin.
+Identifiant : `order-detail`. Public : public. Disponibilité : available. Services : foodyadmin, foodyserver, foodyweb.
 
 - [Rembourser ou annuler un paiement en ligne Verifone](../../src/content/help/fr/orders/order-details.mdx#verifone-admin-money-operations)
 - [Retrouver la bonne commande](../../src/content/help/fr/orders/order-details.mdx#filter)
@@ -1310,7 +1310,7 @@ Identifiant : `delivery-dispatch`. Public : public. Disponibilité : available. 
 - [Joindre un fichier au rappel WhatsApp](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#whatsapp-media)
 - [Faire une exception de formule sur une commande](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#internal-combo-substitution)
 - [Conserver l’origine du stock lors d’un déplacement](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#carte-series-stock)
-- [Distinguer un quota atteint d’une adresse introuvable](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#routing-service-limits)
+- [Comprendre un calcul en attente](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#routing-service-limits)
 - [Accès aux nouveaux réglages](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#related-service-controls)
 - [Prévisualiser et envoyer les rappels de la date](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#delivery-whatsapp-dispatch)
 - [Utiliser la destination enregistrée du livreur](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#courier-profile-destination)
@@ -1332,7 +1332,7 @@ Identifiant : `courier`. Public : public. Disponibilité : available. Services :
 - [Naviguer et contacter](../../src/content/help/fr/delivery/courier-workspace.mdx#navigate)
 - [Confirmer le résultat réel](../../src/content/help/fr/delivery/courier-workspace.mdx#complete)
 - [Vérifier le plan et démarrer la tournée](../../src/content/help/fr/delivery/courier-workspace.mdx#departure-settings)
-- [Réagir à une limite du service cartographique](../../src/content/help/fr/delivery/courier-workspace.mdx#routing-service-limits)
+- [Consulter un arrêt en attente de calcul](../../src/content/help/fr/delivery/courier-workspace.mdx#routing-service-limits)
 - [Ajuster la carte et retrouver un arrêt](../../src/content/help/fr/delivery/courier-workspace.mdx#map-timeline-panel)
 - [Corriger un démarrage de test](../../src/content/help/fr/delivery/courier-workspace.mdx#accidental-departure)
 - [Consulter le mode d’un autre livreur](../../src/content/help/fr/delivery/courier-workspace.mdx#superadmin-courier-selection)
