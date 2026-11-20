@@ -44,7 +44,7 @@ Select the intended courier, depot and orders, then review stop addresses, servi
 
 ## Add a late order to a route
 
-Select the delivery date. On the accepted, unassigned delivery, choose Add to a route and select the saved draft. Choose the end of the route or the stop it should precede, review the adjacent stops in the preview and choose Add delivery. The other stops keep their order and the estimates update. If the route has started or the order has moved, review the refreshed plan. When distributing by city, Tel Aviv, Tel-Aviv, Tel Aviv Yafo and תל אביב-יפו share one group.
+On the delivery date, open an accepted, unassigned order. Choose **Add to a route**, the planned route and the insertion position. Confirm. The order appears in that position and the other stops keep their order. If the location is missing or Google is slow, check the calculation status. If the response was interrupted, reopen the plan to see the assignment. If the driver has started, check the updated route before choosing another one.
 
 <span id="optimize" />
 
@@ -72,7 +72,7 @@ The fixed action bar shows the selected stop or, once navigation has started, th
 
 ## Correct a stop’s delivery address
 
-In Deliveries → Dispatch, select the stop and choose Correct address. Select the Google suggestion. If it identifies a street, you can save it immediately, add the house number or reuse the number on the order. Foody recalculates the route. If the entrance is still missing, paste its coordinates into Delivery GPS point and save to calculate the time window. Customers can also mark their entrance at checkout.
+In Deliveries → Dispatch, open the stop and choose **Correct address**. Select the result in the intended city. If Google identifies only the street, you can save it and keep or enter the house number in the form. You can also type a numbered address as “street and number, city”. Saving updates the order and queues the route calculation. For a delivery to someone else, clear the customer profile checkbox. If you know the precise entrance, you can save its coordinates and allow reuse for this building.
 
 <span id="endpoints" />
 
@@ -106,9 +106,9 @@ Predefined item stocks now have a journal under Items & menus → Stock history 
 
 <span id="routing-service-limits" />
 
-## Distinguish a service limit from an unlocated address
+## Understand a pending calculation
 
-If a route reports an exhausted quota or an unavailable mapping service, open Settings → Usage and quotas with settings view or edit permission. Google routes, geocoding and tiles have separate counters: the map can still display while road calculation is blocked. Road displays and recalculations also consume allowance; the counter is not simply the number of routes created. Previously known Google positions remain visible on the Google map while their cache is valid. A position that cannot be checked is marked temporarily unavailable; this does not prove the address is wrong. Foody hides unavailable paths and arrival estimates. A new assignment requiring these positions is rejected before changing orders if a complete calculation is impossible. Fallback is available only when every included point is independently located without Google. Do not unassign deliveries to resolve a quota: contact Foody to review the limit or wait for the displayed renewal, then refresh and recalculate if needed. Review arrivals and reminder previews before sending. A quota does not delete orders or their addresses.
+A saved correction or insertion may show a pending route calculation. The orders remain visible. If a single stop shows an unknown position, open it and check its street, house number and city. If the mapping service is temporarily unavailable, Foody retries the pending calculation. Review the updated arrival windows before contacting customers.
 
 <span id="related-service-controls" />
 

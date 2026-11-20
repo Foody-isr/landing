@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - delivery
   - courier
-updatedAt: '2026-11-18'
+updatedAt: '2026-11-19'
 featureId: courier
 audience: public
 releaseStatus: available
@@ -28,6 +28,8 @@ After departure, the next stop is already selected. To choose another one, expan
 
 When you return from navigation, the open stop remains available, including after a reload. Save Mark delivered or Report a problem to close this stop and open the next one.
 
+When you open navigation, Foody checks the current destination. If staff changed the stop or address, review the updated destination before opening your navigation app.
+
 <span id="complete" />
 
 ## Confirm the actual result
@@ -46,9 +48,9 @@ At departure choose Start and open Waze to record departure, open the first stop
 
 <span id="routing-service-limits" />
 
-## Respond to a mapping service limit
+## Check a stop awaiting calculation
 
-A quota or service-unavailable warning does not mean the customer address is wrong. The open stop’s known point remains on the Google map while its cache is valid; unverified positions are flagged as temporarily unavailable. Unavailable geometry and arrival calculations stay hidden. Ask the dispatcher to review Usage and quotas, then refresh when service returns. Retry in courier mode reloads information without recalculating or changing the itinerary. Any necessary recalculation is performed by the dispatcher in Deliveries. Orders and their addresses are preserved. Check updated times before contacting customers.
+If a position or arrival time is missing, open the stop to see the address and instructions. A staff correction can trigger a new calculation. Refresh the route to see the updated times and check an uncertain address with the restaurant before setting out.
 
 <span id="map-timeline-panel" />
 

@@ -1956,3 +1956,7 @@ cookie access on Admin and the API, and sign-out on shared devices. The internal
 Backoffice guide covers its browser binding and separate environment sign-in.
 The development deployment runs PostgreSQL migrations as a short-lived owner
 process and verifies the serving role before replacing the API container.
+
+## Delivery address recovery and route updates (20 November 2026)
+
+The guest, internal ordering, dispatch and courier guides cover retrying address searches, keeping the selected building number, updating one order, reusing a confirmed entrance and adding stops to a planned route. Publish the French, Hebrew and English guides with the matching API, Admin and guest website.
