@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-11-20",
+  "reviewedAt": "2026-11-19",
   "services": {
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
@@ -6249,7 +6249,7 @@
     },
     "foodylanding": {
       "repository": "https://github.com/Foody-isr/landing",
-      "sourceCommit": "2bd0f06d0f99ce621dffd7d8d428790be492f207",
+      "sourceCommit": "376766a66851d7535a2a0b68e6a0475c4b485e89",
       "releaseStatus": "versioned",
       "sourceSnapshot": "7872182414e2c2bc08e3f0e2b65e52d1f5419988d4e77ebd46afb77180470947",
       "workingTreeHasChanges": true,
@@ -7245,9 +7245,9 @@
     },
     "foodypos": {
       "repository": "https://github.com/Foody-isr/pos",
-      "sourceCommit": "3177a37f2055a8d7c88d9ab1fe0bd280f7a54023",
+      "sourceCommit": "a0b63f890a822884d3a435c450e2934be2464dbe",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "e0ac267b9db7560c57f5b0fa070691c828632b2b2e5e50dbe36b5b49f14917f5",
+      "sourceSnapshot": "3a1b2cdceca5497a64b98b04276e085713e5f1c73e2ed4dc7d6e539d46ddc41c",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "android/app/src/main/kotlin/com/foodypos/app/AshraitProtocol.kt": {
@@ -9166,7 +9166,7 @@
           ]
         },
         "lib/features/orders/presentation/payment_terminal_picker.dart": {
-          "sha256": "7ff38fdf6f9da478a30f794546dfb4674858fababb429e638d56333e14c37f5a",
+          "sha256": "4d5a56662d3939c43bf8fb0f9a9fca6098a7fa1e78e1623c5d1eec343844c7b1",
           "features": [
             "orders-managing-orders",
             "pos-comp-void",
@@ -10341,9 +10341,9 @@
     },
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "926e53ae85b78fff1f9330703ad45a408d476487",
+      "sourceCommit": "cb36de43c232c77a949134de737d2217959d9469",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "391cb2f095839a5afbd21228b8b7bfcf1664d2fecee9ce11c7c471970a2b1af2",
+      "sourceSnapshot": "6e74f3a87e8638d2841df736c17c1410b090ae6b62e8f612d0f5e3828969f754",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -10377,7 +10377,7 @@
           ]
         },
         "cmd/server/boot_models.go": {
-          "sha256": "a5561436cd91c006ba9ce696143568f01fe91c6cc074f9f1b407aff28419f6d1",
+          "sha256": "0386c47c0a27a5520134c64d6bb69d5b9f6033261f654d2c1e61c2138b41b423",
           "features": [
             "staff-invitations",
             "customers-profiles",
@@ -10387,6 +10387,12 @@
         },
         "cmd/server/device_schema.go": {
           "sha256": "346bb72e6efa8f08cc9e1ff1e507552827aeab6f83176d40f617eb4d7ca40cee",
+          "features": [
+            "platform-api"
+          ]
+        },
+        "cmd/server/end_of_day_schema.go": {
+          "sha256": "b916434b26e2ea557631984f911218ff83e175c7b7dee487939748f6f1920216",
           "features": [
             "platform-api"
           ]
@@ -10405,7 +10411,7 @@
           ]
         },
         "cmd/server/main.go": {
-          "sha256": "d1211757d83c3187c62270cdc49496934916bd6c6061b78e5cfc82e6255324ba",
+          "sha256": "ddbfbd46d0b39d7091c6aca1079929159835d4ae76d1cff0e173bcec0edbc4e8",
           "features": [
             "staff-invitations",
             "customers-profiles",
@@ -52840,6 +52846,10 @@
         {
           "service": "foodyserver",
           "file": "cmd/server/device_schema.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "cmd/server/end_of_day_schema.go"
         },
         {
           "service": "foodyserver",
@@ -114416,7 +114426,7 @@
     "sharedRuntimeFiles": 437,
     "features": 114,
     "operations": 1042,
-    "sourceFiles": 2704,
+    "sourceFiles": 2705,
     "surfaces": 2347,
     "unclassifiedRoutes": []
   }
