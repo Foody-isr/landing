@@ -1,3 +1,7 @@
+## Factures d’abonnement via Verifone CST (20 novembre 2026)
+
+Les guides Facturation et Foody billing (sandbox) accompagnent la migration 339 et le suivi des originaux dans Foody Admin. En développement, sélectionner le restaurant pilote et sa boîte de test. Vérifier séparément l’enregistrement de la carte, le premier débit, le renouvellement et le paiement annuel sans renouvellement. Un seul émetteur traite chaque vente. Contrôler le numéro de la facture-reçu, la TVA, le montant, le PDF et sa réception avant de déclarer l’émission validée chez le prestataire.
+
 ## Reprise des encaissements pendant une clôture Ashrait (19 novembre 2026)
 
 Publier les trois traductions du guide de clôture avec l’API portant les migrations 337 et 338 et les clients FoodyPOS compatibles. Vérifier en CST les commandes de lecture, la reprise après perte de réponse et la fermeture de session sur chaque modèle. Les états et totaux bancaires proviennent du terminal. Épingler la révision Landing revue lors de la publication. Le remboursement et le Void de démonstration sur l’API prod utilisent une autorisation dédiée au terminal physique et au restaurant CST. Vérifier la reprise sur un iPad de remplacement et le remboursement avec réimpression dans le build pilote signé, puis publier le guide Transactions avec le client et l’API compatibles.

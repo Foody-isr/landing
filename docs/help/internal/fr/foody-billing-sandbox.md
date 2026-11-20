@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - account
   - foody-billing-sandbox
-updatedAt: '2026-11-19'
+updatedAt: '2026-11-20'
 featureId: foody-billing-sandbox
 audience: internal
 releaseStatus: local-release-unverified
@@ -92,6 +92,8 @@ Le catalogue affiche aussi un aperçu annuel calculé sur 11 mois pour chaque mo
 ## Vérifier l’émission Invoice4U et la remise
 
 Pour le pilote CST, configurez dans le service API le dossier QA Invoice4U de Foody, un client fictif de ce dossier et une boîte de test contrôlée. Dans l’Admin du restaurant test, le propriétaire active la remise par e-mail. Vérifiez une échéance mensuelle ou annuelle encaissée, son montant et son PDF dans **Factures d’abonnement**, puis le message dans la boîte de test. Une vérification de carte ou un refus ne crée aucune pièce. Si la réponse d’émission se perd, le serveur recherche la référence d’origine dans Invoice4U. Un état **À vérifier par Foody** demande une vérification comptable du document. En cas d’incertitude sur l’e-mail, vérifiez la boîte avant de demander un renvoi.
+
+Pour tester l’émission via Verifone, sélectionnez le restaurant de développement et configurez sa boîte de test autorisée. Vérifiez que l’organisation du marchand Foody possède un contrat de reçus Invoice4U. Une vente Checkout annuelle sans renouvellement, le premier débit confirmé après enregistrement de la carte et chaque renouvellement demandent une facture-reçu avec les lignes TTC. L’Admin affiche la demande jusqu’au rapprochement avec l’original. Vérifiez le type fiscal, la référence de vente, le restaurant, le numéro, la TVA, le TTC et la réception dans la boîte autorisée. Si l’original manque, recherchez la vente existante avant toute intervention comptable.
 
 ## En cas d’échec
 
