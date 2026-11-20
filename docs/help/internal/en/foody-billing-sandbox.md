@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - account
   - foody-billing-sandbox
-updatedAt: '2026-11-19'
+updatedAt: '2026-11-20'
 featureId: foody-billing-sandbox
 audience: internal
 releaseStatus: local-release-unverified
@@ -92,6 +92,8 @@ The catalogue also previews an annual amount of 11 months for each module or pla
 ## Verify Invoice4U issuance and delivery
 
 For the CST pilot, configure the API with Foody’s Invoice4U QA organization, a synthetic customer in that organization and a controlled test inbox. The owner enables email delivery in the test restaurant’s Admin. Verify a collected monthly or annual installment, its amount and PDF under **Subscription invoices**, then check the message in the test inbox. Card registration and declines create no document. After an uncertain issue response, the server looks up the original reference in Invoice4U. **Foody review needed** requires checking the accounting record. If email delivery is uncertain, check the inbox before requesting a resend.
+
+For Verifone issuance, select the development restaurant and configure its authorized test inbox. Verify that the Foody merchant organization has an Invoice4U receipt contract. An annual hosted sale without renewal, the first confirmed debit after card registration, and each renewal request an invoice-receipt with tax-inclusive lines. Admin shows the request until the original is matched. Check the fiscal document type, sale reference, buyer, document number, VAT, total and delivery to the authorized inbox. If the original is missing, locate the existing sale before taking accounting action.
 
 ## If the operation fails
 
