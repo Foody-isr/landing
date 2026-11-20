@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-11-19.
 
-114 fiches de fonctionnalités, 1040 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2695 fichiers applicatifs et 2339 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+114 fiches de fonctionnalités, 1042 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2701 fichiers applicatifs et 2345 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,11 +10,11 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyadmin | 826 | 836 | 5c34b7059a33 ; versioned |
+| foodyadmin | 827 | 837 | 9d709f4c9feb ; versioned |
 | foodybackoffice | 54 | 49 | 619aa5734755 ; versioned |
-| foodylanding | 158 | 31 | bfba9b12634f ; versioned |
+| foodylanding | 158 | 31 | 382f604ac982 ; versioned |
 | foodypos | 432 | 186 | 2e3b48d8f7ef ; versioned |
-| foodyserver | 838 | 1038 | e6d60b5d25ef ; versioned |
+| foodyserver | 843 | 1043 | 9fb3c94b8e8c ; versioned |
 | foodyweb | 387 | 199 | 937e7218a2de ; versioned |
 
 ## getting-started
@@ -116,6 +116,7 @@ Identifiant : `billing`. Public : public. Disponibilité : available. Services :
 - [Consulter les événements de facturation](../../src/content/help/fr/account/subscription.mdx#events)
 - [Ajouter un module ou des licences en sandbox](../../src/content/help/fr/account/subscription.mdx#versioned-sandbox-additions)
 - [Choisir le renouvellement annuel lors d’un test d’abonnement Foody](../../src/content/help/fr/account/subscription.mdx#sandbox-annual-renewal)
+- [Retrouver une facture d’abonnement de test](../../src/content/help/fr/account/subscription.mdx#subscription-test-invoices)
 
 ### [Pilote de facturation Foody](internal/fr/foody-billing-sandbox.md)
 
@@ -131,6 +132,7 @@ Identifiant : `foody-billing-sandbox`. Public : internal. Disponibilité : local
 - [Activer l’essai ou payer depuis l’invitation](internal/fr/foody-billing-sandbox.md#modular-owner)
 - [Vérifier les accès par module](internal/fr/foody-billing-sandbox.md#modular-access)
 - [Configurer les deux quotas et les offres personnalisées](internal/fr/foody-billing-sandbox.md#commercial-licences)
+- [Vérifier l’émission Invoice4U et la remise](internal/fr/foody-billing-sandbox.md#invoice4u-qa)
 
 ## staff
 

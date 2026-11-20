@@ -87,6 +87,12 @@ Dans la grille révisée, **Active POS devices** compte les postes autorisés à
 
 Le catalogue affiche aussi un aperçu annuel calculé sur 11 mois pour chaque module ou formule. Modifier le tarif mensuel met à jour cet aperçu ; la règle annuelle n’est pas un second tarif à saisir. Dans une offre personnalisée, renseignez explicitement les montants convenus : aucune offre privée existante n’est recalculée.
 
+<span id="invoice4u-qa" />
+
+## Vérifier l’émission Invoice4U et la remise
+
+Pour le pilote CST, configurez dans le service API le dossier QA Invoice4U de Foody, un client fictif de ce dossier et une boîte de test contrôlée. Dans l’Admin du restaurant test, le propriétaire active la remise par e-mail. Vérifiez une échéance mensuelle ou annuelle encaissée, son montant et son PDF dans **Factures d’abonnement**, puis le message dans la boîte de test. Une vérification de carte ou un refus ne crée aucune pièce. Si la réponse d’émission se perd, le serveur recherche la référence d’origine dans Invoice4U. Un état **À vérifier par Foody** demande une vérification comptable du document. En cas d’incertitude sur l’e-mail, vérifiez la boîte avant de demander un renvoi.
+
 ## En cas d’échec
 
 Si un paiement est à vérifier, recherchez sa référence dans Verifone Central. Pour un renouvellement incertain, le Backoffice peut vérifier l’identifiant de la transaction correspondante. La vérification ne lance aucun débit. Après un refus ou une expiration confirmés, un nouveau paiement peut être lancé quand l’offre est payable.

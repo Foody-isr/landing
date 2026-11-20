@@ -87,6 +87,12 @@ In the reviewed grid, **Active POS devices** counts authorized order-taking devi
 
 The catalogue also previews an annual amount of 11 months for each module or plan. Editing a monthly price updates this preview; the annual rule is not a second price to enter. Enter agreed amounts explicitly in custom offers: existing private offers are never recalculated.
 
+<span id="invoice4u-qa" />
+
+## Verify Invoice4U issuance and delivery
+
+For the CST pilot, configure the API with Foody’s Invoice4U QA organization, a synthetic customer in that organization and a controlled test inbox. The owner enables email delivery in the test restaurant’s Admin. Verify a collected monthly or annual installment, its amount and PDF under **Subscription invoices**, then check the message in the test inbox. Card registration and declines create no document. After an uncertain issue response, the server looks up the original reference in Invoice4U. **Foody review needed** requires checking the accounting record. If email delivery is uncertain, check the inbox before requesting a resend.
+
 ## If the operation fails
 
 Use the displayed reference in Verifone Central if a payment requires review. Backoffice can verify a matching transaction by ID for an uncertain renewal. Verification does not initiate a new charge. A failed or expired attempt can be followed by a new checkout when eligible.

@@ -1063,6 +1063,19 @@
           "fr": "Si Foody a activé une offre de test CST pour votre restaurant, ouvrez **Paramètres → Compte → Facturation** avec le compte propriétaire. En **Annuel**, l’autorisation séparée indique le montant du renouvellement tous les 12 mois. Laissez-la décochée pour prépayer une seule année. Après confirmation du paiement avec renouvellement, retrouvez le prochain montant et sa date dans Facturation. Vous pouvez y arrêter le renouvellement automatique.\n\nSi l’offre provient d’un devis finalisé, vérifiez son numéro, la date limite d’acceptation et le total TTC. La facturation propose la fréquence prévue au devis. Le matériel facturé une seule fois et les frais à l’usage sont traités séparément. À l’ouverture du paiement, saisissez la carte de test CST chez Verifone. Si un paiement de test apparaît comme non abouti, vérifiez son statut avant de réessayer. Un paiement confirmé affiche la période couverte.",
           "he": "אם Foody הפעילה הצעת בדיקה ב־CST למסעדה שלכם, היכנסו כבעלים אל **הגדרות ← חשבון ← חיוב**. במסלול שנתי תיבת ההרשאה הנפרדת מציגה את סכום החיוב בכל 12 חודשים. השאירו אותה ריקה לתשלום מראש עבור שנה אחת. לאחר אישור התשלום עם חידוש אפשר לראות במסך החיוב את המועד והסכום הבאים או להפסיק את החידוש האוטומטי.\n\nאם ההצעה מבוססת על הצעת מחיר סופית, בדקו את מספרה, את המועד האחרון לאישור ואת הסכום כולל מע״מ. במסך החיוב מופיעה תדירות התשלום שסוכמה בהצעה. ציוד בתשלום חד־פעמי וחיובים לפי שימוש מטופלים בנפרד. כשדף Verifone נפתח, הזינו בו כרטיס בדיקה של CST. אם התשלום מסומן ככזה שלא הושלם, בדקו את מצבו לפני ניסיון נוסף. לאחר אישור התשלום מוצגת התקופה ששולמה."
         }
+      },
+      {
+        "id": "subscription-test-invoices",
+        "title": {
+          "fr": "Retrouver une facture d’abonnement de test",
+          "en": "Find a test subscription invoice",
+          "he": "איתור חשבונית בדיקה של המינוי"
+        },
+        "instructions": {
+          "fr": "Dans **Facturation → Factures d’abonnement**, choisissez le mois ou saisissez le numéro de facture. Une échéance encaissée ouvre une ligne avec la période, le HT, la TVA et le TTC. Lorsque la facture-reçu Invoice4U affiche **Disponible**, ouvrez le PDF, téléchargez-le ou téléchargez le mois en ZIP. Pour recevoir les confirmations et les PDF du pilote, activez l’option de boîte de test. Si la pièce est en préparation, elle apparaît après émission. **Renvoyer par e-mail** reprend le PDF archivé. Un paiement antérieur à l’archive reste visible avec son statut. Ces pièces de sandbox ont uniquement valeur de test.",
+          "en": "In **Billing → Subscription invoices**, select a month or enter the invoice number. Each collected payment shows the service period, net, VAT and gross amount. When the Invoice4U invoice-receipt is **Available**, open or download its PDF, or download the month as a ZIP. Enable delivery to the test inbox to receive pilot confirmations and PDFs. A pending document becomes available after issuance. **Resend by email** sends the archived PDF. Earlier payments remain visible with their archive status. Sandbox documents are for testing.",
+          "he": "במסך **חיוב ← חשבוניות המינוי** בוחרים חודש או מקלידים מספר חשבונית. לכל תשלום שנגבה מוצגים תקופת השירות, הסכום לפני מע״מ, המע״מ והסכום הכולל. כשהחשבונית מס/קבלה של Invoice4U במצב **זמין**, אפשר להציג או להוריד את ה־PDF, או להוריד את מסמכי החודש בקובץ ZIP. מפעילים שליחה לתיבת הבדיקה כדי לקבל אישורים ומסמכים של הפיילוט. מסמך בהכנה יופיע לאחר ההפקה. **שליחה חוזרת בדוא״ל** שולחת את המסמך השמור. תשלומים ישנים מוצגים עם מצב הארכיון שלהם. מסמכי סביבת הבדיקה מיועדים לבדיקות בלבד."
+        }
       }
     ],
     "audience": "public",
@@ -1095,7 +1108,8 @@
         "src/lib/module-navigation.ts",
         "src/app/[restaurantId]/billing/ModuleOnboarding.tsx",
         "src/app/[restaurantId]/billing/SubscriptionAdditions.tsx",
-        "src/lib/commercial-catalog.ts"
+        "src/lib/commercial-catalog.ts",
+        "src/app/[restaurantId]/billing/SubscriptionDocuments.tsx"
       ],
       "foodybackoffice": [
         "src/app/dashboard/foody-billing/**",
@@ -1122,7 +1136,9 @@
         "internal/subscription/foody_offer_source.go",
         "internal/commercial/subscription.go",
         "migrations/332_foody_offer_commercial_source.sql",
-        "migrations/333_foody_billing_card_signup.sql"
+        "migrations/333_foody_billing_card_signup.sql",
+        "internal/subscription/foody_invoice4u.go",
+        "migrations/336_foody_subscription_documents.sql"
       ]
     },
     "operations": [
@@ -1254,6 +1270,19 @@
           "fr": "Dans la grille révisée, **Active POS devices** compte les postes autorisés à prendre des commandes : iPad ou terminal exécutant la caisse. Restaurant et Restaurant + Online comprennent 2 postes, Intégral 3. Chaque employé garde son compte personnel ; cocher **Personal POS accounts without a per-employee charge** supprime le quota caisse nominatif et son supplément, sans supprimer les quotas chef, KDS ou les permissions. Un Mini utilisé uniquement pour le paiement ne consomme pas un poste caisse ; son service EMV reste facturé séparément. Cuisine comprend 1 accès chef et 1 KDS. Dans **Custom offer**, un plan ou une sélection automatique reprend ses quantités ; les licences ajoutées font partie du prix personnalisé saisi. Les comptes totaux et postes restent distincts : une limite vide signifie illimité, zéro signifie aucun. Les essais et contrats déjà enregistrés gardent leurs droits ; aucune migration automatique.\n\nLe catalogue affiche aussi un aperçu annuel calculé sur 11 mois pour chaque module ou formule. Modifier le tarif mensuel met à jour cet aperçu ; la règle annuelle n’est pas un second tarif à saisir. Dans une offre personnalisée, renseignez explicitement les montants convenus : aucune offre privée existante n’est recalculée.",
           "en": "In the reviewed grid, **Active POS devices** counts authorized order-taking devices: an iPad or a terminal running the POS. Restaurant and Restaurant + Online include 2 devices, Integral 3. Each employee keeps a personal account; **Personal POS accounts without a per-employee charge** removes the named POS limit and surcharge, while retaining chef, KDS and permission controls. A payment-only Mini does not consume a POS device; its EMV service is billed separately. Kitchen includes 1 chef and 1 KDS. In **Custom offer**, an explicit or automatic plan supplies its allowances; added licences are included in the entered custom amount. Total accounts and devices remain separate: blank means unlimited, zero means none. Existing trials and contracts retain their rights; there is no automatic migration.\n\nThe catalogue also previews an annual amount of 11 months for each module or plan. Editing a monthly price updates this preview; the annual rule is not a second price to enter. Enter agreed amounts explicitly in custom offers: existing private offers are never recalculated.",
           "he": "במחירון המעודכן, **Active POS devices** סופר מכשירים מורשים לקבלת הזמנות: iPad או מסוף שמריץ את הקופה. Restaurant ו־Restaurant + Online כוללים 2 עמדות, Integral כוללת 3. לכל עובד חשבון אישי; **Personal POS accounts without a per-employee charge** מבטל את מכסת משתמשי הקופה האישיים ואת התוספת עבורם, בלי לבטל מכסות שף, KDS או הרשאות. Mini המשמש רק לתשלום אינו תופס עמדת קופה; שירות EMV מחויב בנפרד. Kitchen כוללת גישת שף אחת ו־KDS אחד. ב־**Custom offer**, מסלול שנבחר או הותאם אוטומטית מספק את המכסות; רישיונות נוספים נכללים במחיר האישי שהוזן. חשבונות ועמדות נשארים נפרדים: ריק פירושו ללא הגבלה, אפס פירושו ללא הקצאה. תקופות ניסיון וחוזים קיימים שומרים על זכויותיהם; אין המרה אוטומטית.\n\nהקטלוג מציג גם תצוגה שנתית המחושבת לפי 11 חודשים לכל מודול או חבילה. שינוי המחיר החודשי מעדכן אותה; אין להזין מחיר שנתי נוסף. בהצעה מותאמת הזינו במפורש את הסכומים שסוכמו: הצעות פרטיות קיימות אינן מחושבות מחדש."
+        }
+      },
+      {
+        "id": "invoice4u-qa",
+        "title": {
+          "fr": "Vérifier l’émission Invoice4U et la remise",
+          "en": "Verify Invoice4U issuance and delivery",
+          "he": "אימות ההפקה והמסירה ב־Invoice4U"
+        },
+        "instructions": {
+          "fr": "Pour le pilote CST, configurez dans le service API le dossier QA Invoice4U de Foody, un client fictif de ce dossier et une boîte de test contrôlée. Dans l’Admin du restaurant test, le propriétaire active la remise par e-mail. Vérifiez une échéance mensuelle ou annuelle encaissée, son montant et son PDF dans **Factures d’abonnement**, puis le message dans la boîte de test. Une vérification de carte ou un refus ne crée aucune pièce. Si la réponse d’émission se perd, le serveur recherche la référence d’origine dans Invoice4U. Un état **À vérifier par Foody** demande une vérification comptable du document. En cas d’incertitude sur l’e-mail, vérifiez la boîte avant de demander un renvoi.",
+          "en": "For the CST pilot, configure the API with Foody’s Invoice4U QA organization, a synthetic customer in that organization and a controlled test inbox. The owner enables email delivery in the test restaurant’s Admin. Verify a collected monthly or annual installment, its amount and PDF under **Subscription invoices**, then check the message in the test inbox. Card registration and declines create no document. After an uncertain issue response, the server looks up the original reference in Invoice4U. **Foody review needed** requires checking the accounting record. If email delivery is uncertain, check the inbox before requesting a resend.",
+          "he": "בפיילוט CST מגדירים בשרת ה־API את ארגון הבדיקה של Foody ב־Invoice4U, לקוח בדוי באותו ארגון ותיבת דוא״ל מבוקרת לבדיקה. בעל העסק מפעיל משלוח בדוא״ל במסך הניהול של מסעדת הבדיקה. מאמתים תשלום חודשי או שנתי שנגבה, את הסכום ואת מסמך ה־PDF תחת **חשבוניות המינוי**, ובודקים את המייל בתיבת הבדיקה. אימות כרטיס או סירוב אינם יוצרים מסמך. במקרה שתשובת ההפקה אבדה, השרת מחפש את האסמכתה המקורית ב־Invoice4U. במצב **נדרשת בדיקה של Foody** יש לבדוק את הרישום החשבונאי. אם קבלת המייל לא ודאית, בודקים בתיבה לפני בקשת שליחה חוזרת."
         }
       }
     ],
