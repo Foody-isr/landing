@@ -129,6 +129,9 @@ for (const [service, configuredRoot] of Object.entries(roots)) {
       'foodyserver:internal/orders/ashrait_receipt_handler.go': ['payments-transactions'],
       'foodypos:lib/services/printing/ashrait_receipt_fields.dart': ['payments-transactions', 'pos-ashrait-terminal-inspection'],
     };
+    // This helper moves one assigned delivery when a staff order is rescheduled.
+    const rescheduledDelivery = service === 'foodyserver' && file === 'internal/orders/delivery_route_date.go'
+      ? ['delivery-dispatch', 'order-detail', 'orders-managing-orders', 'fulfillment-policy', 'order-types'] : undefined;
     const mobileHomeOwnership = service === 'foodyserver' && file === 'internal/restaurants/website_mobile_home.go'
       ? ['website-navigation', 'website-qr-customize-your-site'] : undefined;
     const saleReceiptLayoutModule = service === 'foodyserver' &&
@@ -137,7 +140,7 @@ for (const [service, configuredRoot] of Object.entries(roots)) {
       : terminalFleetModule || ashraitCSTModule ? ['platform-api']
       : saleReceiptLayoutModule ? ['printer-profiles']
       : ashraitReceiptOwnership[`${service}:${file}`] ?? currentPOSProofOwnership[`${service}:${file}`]
-        ?? focusedStockOwnership[`${service}:${file}`] ?? mobileHomeOwnership ?? ids;
+        ?? focusedStockOwnership[`${service}:${file}`] ?? rescheduledDelivery ?? mobileHomeOwnership ?? ids;
     if (walletStudioModule) ids = ['customers-wallet-studio'];
     // This confirmation only removes hardware from the device inventory.
     if (service === 'foodypos' && file === 'lib/features/settings/presentation/device_forget_confirmation.dart') ids = ['device-kds'];

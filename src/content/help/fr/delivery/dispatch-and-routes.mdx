@@ -44,7 +44,7 @@ Choisissez coursier, dépôt et commandes, puis vérifiez adresses, temps de rem
 
 ## Insérer une nouvelle commande dans une tournée
 
-Choisissez la date de livraison. Sur la commande acceptée à affecter, cliquez sur Ajouter à une tournée. Choisissez la tournée planifiée et la position, en fin de tournée ou avant un arrêt, vérifiez les arrêts voisins dans l’aperçu puis choisissez Ajouter la livraison. Les autres arrêts gardent leur ordre et les horaires sont recalculés. Si le livreur est parti ou si la commande a été affectée entre-temps, vérifiez le plan actualisé. La répartition par ville regroupe Tel Aviv, Tel-Aviv, Tel Aviv Yafo et תל אביב-יפו.
+Sur la date de livraison, ouvrez une commande acceptée et non affectée. Choisissez **Ajouter à une tournée**, la tournée planifiée et la position souhaitée. Confirmez l’ajout. La commande apparaît au rang choisi et les autres arrêts gardent leur ordre. Si le point manque ou si Google tarde, vérifiez le calcul indiqué sur la tournée. En cas de réponse interrompue, rouvrez le plan pour retrouver l’affectation. Si la tournée est partie, consultez son nouvel état avant de choisir une autre tournée.
 
 <span id="optimize" />
 
@@ -72,7 +72,7 @@ La barre fixe affiche l’arrêt sélectionné ou, dès que la navigation est la
 
 ## Corriger l’adresse d’un arrêt
 
-Dans Livraisons → Répartition, ouvrez l’arrêt puis Corriger l’adresse. Choisissez la suggestion Google. Si elle désigne une rue, vous pouvez l’enregistrer, ajouter le numéro ou reprendre celui de la commande. Foody recalcule la tournée. Pour obtenir un créneau si l’entrée reste introuvable, collez ses coordonnées dans Point GPS de livraison puis enregistrez. Le client peut aussi marquer son entrée lors de la commande.
+Dans Livraisons → Répartition, ouvrez l’arrêt puis **Corriger l’adresse**. Choisissez le résultat dans la bonne ville. Si Google indique seulement la rue, vous pouvez l’enregistrer et conserver ou compléter le numéro dans le formulaire. Une adresse numérotée peut aussi être saisie sous la forme « rue et numéro, ville ». L’adresse est enregistrée sur la commande et le calcul reprend en arrière-plan. Pour une livraison chez un tiers, décochez la mise à jour de la fiche client. Si vous connaissez une entrée précise, vous pouvez enregistrer son point GPS et autoriser sa réutilisation pour ce bâtiment.
 
 <span id="endpoints" />
 
@@ -106,9 +106,9 @@ Les stocks prédéfinis des articles disposent d’un journal dans Articles et c
 
 <span id="routing-service-limits" />
 
-## Distinguer un quota atteint d’une adresse introuvable
+## Comprendre un calcul en attente
 
-Si une tournée indique un quota atteint ou un service cartographique indisponible, consultez Paramètres → Consommation et quotas avec la permission de consulter ou modifier les paramètres. Les itinéraires, les positions et les tuiles Google ont des compteurs distincts : une carte peut encore s’afficher alors que le calcul routier est bloqué. Les affichages routiers et les recalculs consomment aussi le quota ; le compteur ne représente pas seulement les tournées créées. Les positions Google déjà connues restent visibles sur la carte Google tant que leur cache est valide. Une position impossible à vérifier est signalée temporairement indisponible ; cela ne prouve pas que l’adresse est erronée. Foody masque le tracé et les horaires devenus indisponibles. Une nouvelle affectation nécessitant ces positions est refusée avant de modifier les commandes si le calcul complet est impossible. Le fournisseur de remplacement est utilisable seulement si tous les points inclus sont localisés indépendamment de Google. Ne désassignez pas les commandes pour résoudre un quota : contactez Foody pour examiner le plafond ou attendez le renouvellement indiqué, puis actualisez et recalculez si nécessaire. Vérifiez les arrivées et les rappels avant tout envoi. Un quota ne supprime ni les commandes ni leurs adresses.
+Quand une correction ou un ajout est enregistré, la tournée peut afficher un calcul en attente. Les commandes restent visibles. Si un seul arrêt indique une position introuvable, ouvrez sa fiche et vérifiez sa rue, son numéro et sa ville. Si le service cartographique est temporairement indisponible, Foody reprend le calcul en attente. Vérifiez les créneaux actualisés avant de prévenir les clients.
 
 <span id="related-service-controls" />
 
