@@ -34,6 +34,10 @@ In the compatible Israeli Ashrait version, the old generic View current totals, 
 
 If the terminal response is lost, open the check on the original register with the same terminal connected. Choose Pay, Card, then Review the card payment. This checks the existing attempt without starting another debit. You can start again if Foody confirms the attempt stopped before collection, was declined, or was cancelled. A matching authorization is recorded against the original check. If the terminal returns an empty or different result, give the displayed reference to a manager to check the Verifone journal. The result needs confirmation before taking another payment on this check. A separate register with a different terminal can collect a different check.
 
+If the gateway blocks a request before it reaches the bank, select **Check Ashrait gateway** in the active terminal’s details. For a connection lost during payment, use **Review the card payment** on the original check. Gateway readiness tells you whether a new request can start. Review the earlier attempt on its check.
+
+Ashrait retains the last stored transaction across a terminal restart. Review the payment on its original check before starting a new sale or running End of Day on that terminal. A new sale can become the last transaction, and End of Day clears the transactions stored on the terminal. Foody checks the identifiers on the original payment, its type, amount and currency. An empty response or conflicting identifier leaves the attempt pending review.
+
 <span id="ashrait-portable-card-copy" />
 
 ## Print the terminal card receipt

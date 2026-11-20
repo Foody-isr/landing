@@ -27,13 +27,19 @@ Sur la caisse principale, le Z inclut le tiroir du comptoir et les terminaux inc
 
 ## Compter, transmettre et archiver
 
-Avec payments.manage, choisissez Clôturer la session de caisse sur l’iPad principal. Une caisse espèces ouverte exige aussi orders.manage. Vérifiez la liste des terminaux, comptez le tiroir s’il est ouvert, saisissez le montant réel puis touchez Commencer la clôture. Cette action fige le comptage et suspend les nouveaux paiements carte jusqu’au Z. Sur l’iPad, utilisez Transmettre la fin de journée pour chaque Mini inclus dans l’ordre affiché. Les Portables exécutent leur transmission à leur tour quand FoodyPOS est ouvert et connecté. Attendez la confirmation de chaque terminal, puis touchez Finaliser et générer le rapport Z. Sur une installation sans caisse principale, confirmez les transmissions de l’appareil utilisé dans son propre parcours.
+Avec payments.manage, choisissez Clôturer la session de caisse sur l’iPad principal. Une caisse espèces ouverte exige aussi orders.manage. Vérifiez la liste des terminaux, comptez le tiroir s’il est ouvert, saisissez le montant réel puis touchez Commencer la clôture. Cette action fige le comptage et suspend les nouveaux paiements carte pendant la clôture. Sur l’iPad, utilisez Transmettre la fin de journée pour chaque Mini inclus dans l’ordre affiché. Les Portables exécutent leur transmission à leur tour quand FoodyPOS est ouvert et connecté. Attendez la confirmation de chaque terminal, puis touchez Finaliser et générer le rapport Z. Sur une installation sans caisse principale, confirmez les transmissions de l’appareil utilisé dans son propre parcours.
 
 <span id="end-of-day-recovery" />
 
 ## Reprendre sans transmettre deux fois
 
-Si un Portable est en attente de transmission, ouvrez FoodyPOS sur ce Portable avec une session personnelle autorisée et vérifiez sa connexion. S’il possède déjà la confirmation, il reprend l’enregistrement de la même opération. Pour un Mini, Reprendre l’enregistrement sur l’iPad consulte la preuve conservée. Si le résultat reste à vérifier, conservez la configuration et les journaux et faites confirmer l’issue auprès de Verifone avant toute nouvelle transmission. La clôture reprend sur l’iPad principal, avec la même référence.
+Sur l’iPad principal, ouvrez Plus → Rapports → Solde en caisse. Après une coupure, touchez **Reprendre l’enregistrement**. Foody recherche la confirmation d’origine. Sur un Mini compatible, il compare aussi les rapports SHVA conservés par le terminal. Pour un Portable, rouvrez FoodyPOS sur cet appareil avec une session personnelle autorisée. Conservez la même demande jusqu’au résultat.
+
+Avec la version compatible et les droits de gestion des paiements et de modification des paramètres, le responsable peut choisir **Annuler la clôture non transmise** tant qu’aucun terminal n’a commencé sa transmission. Le tiroir réservé est alors libéré. Après un premier envoi, choisissez **Reprendre sur les terminaux disponibles**. Vérifiez la connexion du terminal. Foody conserve le dépôt à vérifier et autorise les nouvelles ventes sur les terminaux admissibles quand la passerelle donne son accord. Les encaissements suivants appartiennent à la période suivante. Finalisez le Z après réception des confirmations.
+
+Si vous avez le justificatif papier, choisissez **Vérifier un rapport SHVA** sur la ligne du terminal et saisissez sa référence de transmission (אסמכתת שידור). Foody recherche ce numéro dans les dix derniers rapports du terminal et vérifie le numéro SHVA, la date et les totaux avant de le rattacher. Sur un Portable, laissez FoodyPOS ouvert. Un dépôt bancaire tardif peut contenir des ventes de la période Foody suivante. Si le terminal renvoie un statut de passerelle vide, vérifiez la version Ashrait avec Verifone.
+
+Sur un iPad de remplacement déjà enrôlé au restaurant, connectez-vous avec votre compte responsable, ouvrez Solde en caisse et choisissez **Reprendre la clôture sur cet iPad**. Vérifiez sa date avant de confirmer. Cet iPad devient la caisse principale. Le tiroir, les montants et les demandes de transmission d’origine restent rattachés à la même clôture. Pour un dépôt déjà envoyé, ouvrez la vérification du rapport archivé et saisissez sa référence imprimée. Vous pouvez reprendre les encaissements sur les terminaux disponibles pendant la vérification.
 
 <span id="end-of-day-cash-reservation" />
 
@@ -45,7 +51,7 @@ Avant de commencer, reprenez toute opération espèces encore en attente : suive
 
 ## Vérifier plusieurs terminaux physiques
 
-Sur l’iPad, vérifiez les profils du Mini dans Matériel. Ouvrez FoodyPOS sur les Portables enrôlés du restaurant avec une session autorisée pour vérifier leurs identités. La préparation de clôture les liste avec les terminaux vérifiés de l’iPad. Un Portable présent aussi dans les profils de l’iPad reçoit une seule demande, exécutée sur le Portable. Les confirmations sont recueillies dans l’ordre affiché. Si le premier terminal de la file est indisponible, les suivants attendent sa confirmation.
+Sur l’iPad, vérifiez les profils du Mini dans Matériel. Ouvrez FoodyPOS sur les Portables enrôlés du restaurant avec une session autorisée pour vérifier leurs identités. La préparation de clôture les liste avec les terminaux vérifiés de l’iPad. Un Portable présent aussi dans les profils de l’iPad reçoit une seule demande, exécutée sur le Portable. Sur la version compatible, deux lots SHVA identifiés et distincts peuvent transmettre indépendamment. Foody coordonne les opérations qui partagent le même lot.
 
 Avant une nouvelle transmission, FoodyPOS lit le numéro SHVA enregistré dans la fiche du terminal concerné.
 
@@ -53,7 +59,7 @@ Avant une nouvelle transmission, FoodyPOS lit le numéro SHVA enregistré dans l
 
 ## Comprendre le blocage des cartes et la période
 
-La période s’arrête au début de la clôture. Après un premier Z consolidé, la période suivante reprend à cette limite. Lors du passage à la caisse principale, les encaissements déjà archivés dans des Z locaux sont écartés du relevé en cours. Les cartes redeviennent disponibles après la finalisation. Transmission en attente désigne une opération à effectuer. Transmission à vérifier désigne une opération dont l’issue doit être confirmée avant toute répétition.
+La période s’arrête au début de la clôture. Après un premier Z consolidé, la période suivante reprend à cette limite. Lors du passage à la caisse principale, les encaissements déjà archivés dans des Z locaux sont écartés du relevé en cours. La finalisation rétablit les paiements carte. Le responsable peut aussi reprendre les encaissements sur les terminaux disponibles pendant la vérification d’un lot. Transmission en attente désigne une opération à effectuer. Transmission à vérifier désigne une opération dont l’issue doit être confirmée avant toute répétition.
 
 <span id="end-of-day-recorded-cards-and-history" />
 
@@ -84,3 +90,5 @@ Sur l’iPad du comptoir enrôlé dans le restaurant, ouvrez Plus → Rapports �
 ## Réimprimer un rapport de transmission SHVA
 
 Sur l’iPad principal, ouvrez Historique de caisse puis le Z de la journée. Le Z réunit les débits, crédits, nombres d’opérations et total net quand les réponses SHVA le permettent. Sous le terminal concerné, touchez Réimprimer le rapport SHVA pour utiliser l’imprimante Epson de reçus configurée sur l’iPad. La copie archivée peut être imprimée avec le terminal éteint. Cette action imprime le rapport déjà enregistré. Si la copie ou les totaux manquent, consultez les confirmations et rapports disponibles par terminal.
+
+Sous le terminal concerné, choisissez **Afficher le rapport SHVA** pour lire la copie bancaire en hébreu. Le bouton d’impression utilise le même rapport archivé. Vous pouvez ainsi comparer la référence de transmission à l’écran et sur le papier.

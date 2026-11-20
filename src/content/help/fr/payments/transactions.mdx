@@ -8,7 +8,7 @@ apps: both
 tags:
   - payments
   - payments-transactions
-updatedAt: '2026-11-18'
+updatedAt: '2026-11-19'
 featureId: payments-transactions
 audience: public
 releaseStatus: available
@@ -38,6 +38,10 @@ Recherchez une transaction par n’importe quel article d’une commande liée, 
 ## Lire les remboursements et annulations dans Transactions
 
 Un remboursement ou une annulation Verifone Checkout réussi depuis Foody apparaît comme une transaction de retour distincte, liée au paiement d’origine. Un remboursement en espèces confirmé apparaît lui aussi séparément, lié à l’encaissement d’origine. Sur la caisse, un propriétaire ou responsable avec payments.manage peut ouvrir un paiement éligible dans Transactions. Pour une vente espèces enregistrée, choisissez Émettre un remboursement seulement si le serveur confirme la part exacte remboursable et une caisse autorisée ouverte. Sélectionnez la part de commande ou d’addition, indiquez un montant dans la limite et un motif, puis remettez l’argent seulement après confirmation de Foody. Pour un seul paiement carte Verifone Checkout capturé et lié exactement à une commande, choisissez Rembourser sur la carte d’origine ou Annuler le paiement carte si proposé. Indiquez un motif et, pour un remboursement, un montant dans la limite affichée. Foody renvoie l’argent sur la carte d’origine, jamais dans la caisse espèces. Un résultat carte incertain doit être vérifié avec la même requête enregistrée avant un autre retour ; ne remboursez pas en espèces à la place. Les paiements anciens non attribués, partagés ou liés à plusieurs commandes et les cartes Victa ne proposent pas cette action. Admin distingue encaissements bruts et retours enregistrés dans Foody ; aucun ne représente le chiffre d’affaires net. Les retours réalisés directement dans Verifone Central ou sur Victa ne sont pas inclus automatiquement. [Récapitulatif](/fr/help/orders/payment-preparation-and-handoff#recorded-money-summary).
+
+Lors d’une recette Verifone CST, un responsable utilisant la version de diagnostic peut choisir **Rembourser la carte · CST** pour une vente de test effectuée sur le terminal autorisé après sa vérification dans le parc. Rouvrez la vente sur la caisse d’origine, vérifiez le montant remboursable et confirmez une fois. Si la réponse est interrompue, rouvrez cette vente pour vérifier le remboursement enregistré. Après confirmation, ouvrez l’opération de crédit pour imprimer son propre ticket carte client.
+
+Le build pilote autorisé permet au responsable de rembourser sur un terminal CST vérifié et à l’opérateur d’annuler une vente interrompue après rapprochement. Si le remboursement est confirmé et son ticket indisponible, ouvrez ce remboursement dans Transactions et choisissez **Récupérer le ticket de remboursement** sur le terminal d’origine. Foody vérifie la référence du crédit. Une fois le ticket disponible, sélectionnez la copie à imprimer. La récupération et la réimpression ne débitent ni ne créditent la carte.
 
 <span id="transaction-gross-total" />
 
