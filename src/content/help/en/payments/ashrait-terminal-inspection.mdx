@@ -5,7 +5,7 @@ apps: foodypos
 tags:
   - payments
   - pos-ashrait-terminal-inspection
-updatedAt: '2026-11-18'
+updatedAt: '2026-11-21'
 featureId: pos-ashrait-terminal-inspection
 audience: public
 releaseStatus: available
@@ -37,6 +37,8 @@ If the terminal response is lost, open the check on the original register with t
 If the gateway blocks a request before it reaches the bank, select **Check Ashrait gateway** in the active terminal’s details. For a connection lost during payment, use **Review the card payment** on the original check. Gateway readiness tells you whether a new request can start. Review the earlier attempt on its check.
 
 Ashrait retains the last stored transaction across a terminal restart. Review the payment on its original check before starting a new sale or running End of Day on that terminal. A new sale can become the last transaction, and End of Day clears the transactions stored on the terminal. Foody checks the identifiers on the original payment, its type, amount and currency. An empty response or conflicting identifier leaves the attempt pending review.
+
+On a compatible iPad build, if the Mini was switched off, turn it back on and open More → Settings → Hardware → Payment terminals → the saved Mini. Tap Check Ashrait gateway. FoodyPOS reconnects to the verified Mini and reads its status. When the gateway is ready, return to the check. If a card was already presented for that check, use Review the card payment to recover the original attempt. If the POS cannot reach the Mini, check that both devices are on the same local network and that the saved IP matches the address on the terminal.
 
 <span id="ashrait-portable-card-copy" />
 

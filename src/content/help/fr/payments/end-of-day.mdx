@@ -7,7 +7,7 @@ apps: foodypos
 tags:
   - payments
   - pos-end-of-day
-updatedAt: '2026-11-15'
+updatedAt: '2026-11-21'
 featureId: pos-end-of-day
 audience: public
 releaseStatus: local-release-unverified
@@ -40,6 +40,16 @@ Avec la version compatible et les droits de gestion des paiements et de modifica
 Si vous avez le justificatif papier, choisissez **Vérifier un rapport SHVA** sur la ligne du terminal et saisissez sa référence de transmission (אסמכתת שידור). Foody recherche ce numéro dans les dix derniers rapports du terminal et vérifie le numéro SHVA, la date et les totaux avant de le rattacher. Sur un Portable, laissez FoodyPOS ouvert. Un dépôt bancaire tardif peut contenir des ventes de la période Foody suivante. Si le terminal renvoie un statut de passerelle vide, vérifiez la version Ashrait avec Verifone.
 
 Sur un iPad de remplacement déjà enrôlé au restaurant, connectez-vous avec votre compte responsable, ouvrez Solde en caisse et choisissez **Reprendre la clôture sur cet iPad**. Vérifiez sa date avant de confirmer. Cet iPad devient la caisse principale. Le tiroir, les montants et les demandes de transmission d’origine restent rattachés à la même clôture. Pour un dépôt déjà envoyé, ouvrez la vérification du rapport archivé et saisissez sa référence imprimée. Vous pouvez reprendre les encaissements sur les terminaux disponibles pendant la vérification.
+
+Si l’écran indique déjà que la transmission d’origine reste à vérifier et qu’un terminal identifié peut reprendre les paiements, le responsable a déjà autorisé la reprise. Après le redémarrage d’un Mini, ouvrez sa fiche dans Matériel et choisissez Vérifier la passerelle Ashrait. Une passerelle prête permet une nouvelle vente sur un terminal autorisé. Le dépôt d’origine reste disponible pour le rapprochement. Pour le rapprocher, utilisez Vérifier un rapport SHVA avec la référence de transmission inscrite sur le rapport bancaire.
+
+Sur l’iPad principal compatible, sous **Victa Mini → Transmission à vérifier**, un responsable peut choisir **Rechercher le rapport sur le terminal**. Foody lit les dix emplacements du Mini et recherche le numéro de terminal et l’heure de cet envoi dans les archives bancaires. Si un seul rapport correspond, lisez-le, touchez **Utiliser cette référence de transmission**, puis confirmez pour que Foody vérifie et rattache le rapport. Si la recherche ne trouve aucun rapport, échoue ou trouve plusieurs correspondances, la transmission reste à vérifier. Avec le justificatif bancaire d’origine, vous pouvez toujours saisir sa référence dans **Vérifier un rapport SHVA**.
+
+Sur l’iPad qui gère la clôture, ouvrez **Rapports → Solde en caisse** et trouvez le Mini. Un responsable ayant les droits de gestion des paiements et des réglages peut choisir **Clôturer ce terminal et reprendre les paiements** pour un lot en attente. Après confirmation, Foody lit l’état d’Ashrait. Si une clôture est demandée et que le lot n’a jamais été transmis, Foody l’envoie une seule fois et relit l’état du Mini. Vérifiez d’abord toute vente carte interrompue. Une clôture réussie d’un lot vide peut ne produire aucun ticket SHVA.
+
+Si un dépôt antérieur est **à vérifier**, choisissez **Vérifier et reprendre les paiements**. Pour une demande de paramètres, Foody peut télécharger les paramètres seuls et relire la passerelle. Quand Ashrait répond **OK** et que Foody autorise la reprise, vous pouvez encaisser sur le Mini. Le dépôt antérieur conserve son état. Si Ashrait exige toujours un règlement du lot, rapprochez le rapport de la transmission en attente avant tout nouvel envoi. Si une clôture confirmée laisse la passerelle bloquée, communiquez le numéro du terminal à Verifone.
+
+Sur l’iPad principal, vérifiez d’abord toute vente interrompue. Si Ashrait demande encore une clôture, un responsable qui gère les réglages et les paiements peut sélectionner **Clôturer le lot courant du Mini**. Lisez la confirmation : le Mini transmet toutes les ventes encore présentes, y compris celles de la période précédente si elles figurent toujours dans son lot. Confirmez une seule fois. Foody conserve une ligne distincte pour le nouvel envoi et la référence précédente reste à vérifier. Après la réponse OK d’Ashrait, reprenez les encaissements. En cas de coupure, utilisez **Reprendre l’enregistrement** pour rechercher le résultat. Le rapport SHVA du nouveau lot est consultable et imprimable lorsque le Mini le fournit.
 
 <span id="end-of-day-cash-reservation" />
 
