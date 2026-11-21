@@ -4,9 +4,9 @@
   "services": {
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "47ca7fa50f8647a11f3f983415107ce8501d7b5e",
+      "sourceCommit": "0ef91997a4725f1c08a0725b70a75de1b31a932c",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "04a088ea3d9e518e9f838917debe5348b0e9410fda7e29743ca61cf52cdccec7",
+      "sourceSnapshot": "460ebe3f0d7de02d3320982474f5ad4a92579ff99515157668957dcad928ff27",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
@@ -681,7 +681,7 @@
           ]
         },
         "src/app/[restaurantId]/layout.tsx": {
-          "sha256": "b407181fab9746fefe978ed7110fdf5005f0de58cb78906fd8bb3da76ad4790c",
+          "sha256": "1cd872147a1fe9119769a623b315d6fde22c764e0527f6ec9ecec6184103db7b",
           "features": [
             "delivery-dispatch",
             "payments-transactions"
@@ -2032,13 +2032,13 @@
           ]
         },
         "src/components/delivery/DeliveryMap.tsx": {
-          "sha256": "59c5c831a35012187926a6dee6276251faed6371055472a18373b046f5f63da3",
+          "sha256": "a4657e11779abf1c832ee777189f1adc6244b6dc1da585dde0a3a8932ae3d767",
           "features": [
             "delivery-dispatch"
           ]
         },
         "src/components/delivery/DeliveryNavigation.tsx": {
-          "sha256": "c58214b132f182272e1af8bab2e45e776af1d3d6c4676cd40a9c1e42622c1479",
+          "sha256": "a265bf4cae70471bc72c0d7be88d1e4fe0b23d0b9a89eb21cfe473ade05df083",
           "features": [
             "delivery-dispatch"
           ]
@@ -2056,8 +2056,14 @@
             "delivery-dispatch"
           ]
         },
+        "src/components/delivery/DispatchWorkspace.module.css": {
+          "sha256": "26b4ffe9dce0aabe51bd27f1edd3ec65218181c32766b6ed82e28b7e3f3199bf",
+          "features": [
+            "delivery-dispatch"
+          ]
+        },
         "src/components/delivery/DispatcherView.tsx": {
-          "sha256": "6225a24d02f6f05d9c421640ac84b86bc08aeb36253864de83fa66657fd178fe",
+          "sha256": "0182e8ac9119ce5a4150c6470c115bd042988336b4000e25ed1c28165ba007ee",
           "features": [
             "delivery-dispatch"
           ]
@@ -4746,7 +4752,7 @@
           ]
         },
         "src/lib/i18n.tsx": {
-          "sha256": "6709b6e08c4e40faf6df5c5adab2d173b89b610c5bda64c8b47ed029f3b6d7ad",
+          "sha256": "733f969beff1a7838a29b1b4071c5df4c6438b2808fa337f0b181659fe0a69c4",
           "features": [
             "customers-profiles",
             "menu-menus-and-groups",
@@ -6263,7 +6269,7 @@
     },
     "foodylanding": {
       "repository": "https://github.com/Foody-isr/landing",
-      "sourceCommit": "a9bde70ab2ca04fae86f4b5db63f7e08703439a5",
+      "sourceCommit": "faaac81a0acb1d28583ec71cc639bc3b69b6fab0",
       "releaseStatus": "versioned",
       "sourceSnapshot": "7872182414e2c2bc08e3f0e2b65e52d1f5419988d4e77ebd46afb77180470947",
       "workingTreeHasChanges": true,
@@ -37702,6 +37708,10 @@
         },
         {
           "service": "foodyadmin",
+          "file": "src/components/delivery/DispatchWorkspace.module.css"
+        },
+        {
+          "service": "foodyadmin",
           "file": "src/components/delivery/DispatcherView.tsx"
         },
         {
@@ -65590,6 +65600,8 @@
       "kind": "ui-controls",
       "labels": [
         "billing",
+        "dashboard",
+        "deliveries",
         "foodyModulePaymentAccess",
         "foodyModuleStatus_",
         "retry",
@@ -71345,7 +71357,6 @@
         "deliveryFiltersClear",
         "deliveryInsertSaved",
         "deliveryInsertTitle",
-        "deliveryNavDispatch",
         "deliveryNextPlannedDay",
         "deliveryNotes",
         "deliveryPlanAvailableCount",
@@ -71370,10 +71381,8 @@
         "deliveryPlanReturnConfirmBody",
         "deliveryPlanReturnConfirmTitle",
         "deliveryPlanReturnToPool",
-        "deliveryPlanShowMap",
         "deliveryPlanStepTwo",
         "deliveryPlanStepTwoHint",
-        "deliveryPlanStops",
         "deliveryPlanUnassignConfirmBody",
         "deliveryPlanUnassignConfirmTitle",
         "deliveryPlanUnassignRoute",
@@ -71385,16 +71394,23 @@
         "deliveryRouteDateMismatch",
         "deliveryWhatsAppTitle",
         "dispatchAddDelivery",
+        "dispatchDisplayedCount",
         "dispatchMapDetail",
+        "dispatchMapFor",
         "dispatchOrder",
+        "dispatchPointCount",
         "dispatchQueue",
+        "dispatchRouteFor",
         "dispatchRouteSettings",
         "dispatchSavedAddress",
         "dispatchSearch",
         "dispatchStop",
+        "dispatchStopCount",
         "dispatchStopDetail",
+        "dispatchStopOf",
         "dispatchWindow",
-        "dispatchWithWindow",
+        "dispatchWindowCount",
+        "dispatchWorkspaceTitle",
         "mapsAllRoutes",
         "mapsRoute",
         "nextDay",
@@ -114719,7 +114735,7 @@
     "sharedRuntimeFiles": 437,
     "features": 114,
     "operations": 1043,
-    "sourceFiles": 2715,
+    "sourceFiles": 2716,
     "surfaces": 2350,
     "unclassifiedRoutes": []
   }
