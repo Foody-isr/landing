@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - account
   - foody-billing-sandbox
-updatedAt: '2026-11-20'
+updatedAt: '2026-11-21'
 featureId: foody-billing-sandbox
 audience: internal
 releaseStatus: local-release-unverified
@@ -57,7 +57,7 @@ Verifone CST עשויה לאשר עסקה של 0.01 ₪ לרישום הכרטי�
 
 ## קריאת נתוני שימוש
 
-בחיוב פתחו את הצריכה שנמדדה כדי לראות בקשות אימות SMS, הודעות הזמנה ב־WhatsApp ופעילות נתמכת ב־OpenAI וב־Claude בחודש לפי UTC.
+פתחו את **חיוב ← שימוש** כדי לראות בקשות אימות SMS, הודעות הזמנה ב־WhatsApp ופעילות נתמכת ב־OpenAI וב־Claude בחודש לפי UTC.
 
 <span id="modular-provisioning" />
 

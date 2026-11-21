@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - account
   - foody-billing-sandbox
-updatedAt: '2026-11-20'
+updatedAt: '2026-11-21'
 featureId: foody-billing-sandbox
 audience: internal
 releaseStatus: local-release-unverified
@@ -57,7 +57,7 @@ After the initial payment and mandate are confirmed, open **Restaurants → sele
 
 ## Read observed usage
 
-Open observed usage in Billing to view recorded SMS verification requests, WhatsApp order messages and supported OpenAI and Claude activity for the UTC month.
+Open **Billing → Usage** to view recorded SMS verification requests, WhatsApp order messages and supported OpenAI and Claude activity for the UTC month.
 
 <span id="modular-provisioning" />
 

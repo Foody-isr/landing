@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - account
   - foody-billing-sandbox
-updatedAt: '2026-11-20'
+updatedAt: '2026-11-21'
 featureId: foody-billing-sandbox
 audience: internal
 releaseStatus: local-release-unverified
@@ -57,7 +57,7 @@ Après confirmation du premier paiement et du mandat, ouvrez **Restaurants → r
 
 ## Lire l’usage mesuré
 
-Dans Facturation, ouvrez la consommation observée pour consulter les demandes de vérification SMS, les messages de commande WhatsApp et l’activité OpenAI et Claude prise en charge pour le mois UTC.
+Ouvrez **Facturation → Utilisation** pour consulter les demandes de vérification SMS, les messages de commande WhatsApp et l’activité OpenAI et Claude prise en charge pour le mois UTC.
 
 <span id="modular-provisioning" />
 

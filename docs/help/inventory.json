@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-11-20",
+  "reviewedAt": "2026-10-18",
   "services": {
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "11ec0f42913464a7e13cdf278bffadac658fcc74",
+      "sourceCommit": "47ca7fa50f8647a11f3f983415107ce8501d7b5e",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "bb3fd63a597a2f079341e3321506b35a985a36a21f8036b4e0d7eeffe15dab45",
+      "sourceSnapshot": "86607b3a207a728ec61f260a87477ece7c97b1ab984ca9a079d5c52d55e400e8",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
@@ -63,14 +63,20 @@
             "analytics-dashboard"
           ]
         },
+        "src/app/[restaurantId]/billing/BillingPortal.tsx": {
+          "sha256": "ca24da0844e192af5548bebf1e5af04c6eef6a4c0b166716938f8cb0633135bd",
+          "features": [
+            "foody-billing-sandbox"
+          ]
+        },
         "src/app/[restaurantId]/billing/ModuleOnboarding.tsx": {
-          "sha256": "0eebcbf25e32e8a2a80ed410f37c46442752d742f8c69f17b669d697307ac884",
+          "sha256": "170b13235d6e1ca300ee694fcedfead037c59c8d0fd52bcc2be5460352d2ed2f",
           "features": [
             "foody-billing-sandbox"
           ]
         },
         "src/app/[restaurantId]/billing/PrivateBilling.tsx": {
-          "sha256": "f027654252bc97dade4fc34d6db320164dd71dac315172c7d77c2e1b7cb945d0",
+          "sha256": "2c993777da08c6d8130182fd0e9730cd1479e718976112ee8f9cad15b301b0e8",
           "features": [
             "foody-billing-sandbox"
           ]
@@ -82,7 +88,13 @@
           ]
         },
         "src/app/[restaurantId]/billing/SubscriptionDocuments.tsx": {
-          "sha256": "a1991f4fbd4a6c206a656634b74b9cde2dcc4b2465ff3a3089ebb6d7f655957c",
+          "sha256": "bb327a54e0e30b44a38bc0e1c1b2f4fbdbcc83b3125b607639bb98518da36382",
+          "features": [
+            "foody-billing-sandbox"
+          ]
+        },
+        "src/app/[restaurantId]/billing/billing-portal.module.css": {
+          "sha256": "4a50b18872c2902b0f9e8876b496c35bea3d1464fea4a18c97ce3cf52a1d5aa0",
           "features": [
             "foody-billing-sandbox"
           ]
@@ -94,7 +106,7 @@
           ]
         },
         "src/app/[restaurantId]/billing/page.tsx": {
-          "sha256": "81bc79b1fdd85005ba6d3e88a6ac5118503c8b04c70901afb082c643d3a55867",
+          "sha256": "1ddfe93f232c2e09edc474715a3fe7b479cdaa9c9b8d9d861ff517e42f91732b",
           "features": [
             "billing"
           ]
@@ -10343,9 +10355,9 @@
     },
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "1ddfa45811e3d077342f005c5a538c03d8414b19",
+      "sourceCommit": "b1b066bd232949dc9b8894da966ad1fbcf0d4db0",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "aa2684b7bfa9d3dd8824ffcf8a731442c13f73bc3f06cfe0fe280bf7602a7377",
+      "sourceSnapshot": "1cea0d5df8125748b4556eeabe01d06efd2fb30ae20103e2142c26ae8b2634d3",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -16401,7 +16413,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "b0f87c9252f1c55b215b148c89210d8effb12540d4815d559c36df3a430e40a1",
+          "sha256": "5024891d93b202b3537950851171b26d654f78776aa071e931e25be20d853d3a",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -21216,9 +21228,9 @@
             "he": "קריאת המנוי הנוכחי"
           },
           "instructions": {
-            "en": "Check the recorded plan, subscription status and relevant trial/renewal/grace date. Confirm commercial terms with Foody; technical plan labels can differ from current offers.",
-            "fr": "Vérifiez formule enregistrée, statut et date d’essai, renouvellement ou grâce pertinente. Confirmez les conditions commerciales avec Foody ; les libellés techniques peuvent différer des offres actuelles.",
-            "he": "בדקו מסלול רשום, סטטוס ותאריך ניסיון, חידוש או תקופת חסד. אשרו תנאים מסחריים עם Foody; שמות טכניים עשויים להיות שונים מההצעות הנוכחיות."
+            "en": "Check the recorded plan, subscription status and relevant trial/renewal/grace date. Confirm commercial terms with Foody; technical plan labels can differ from current offers.\n\nIn the test billing portal, open **Subscription** for the accepted plan, billing frequency, next charge including VAT and its date. When automatic renewal is off, the card shows the end of the paid period. Open **Subscription details** to read the accepted terms, or **Manage renewal** to review the period end and confirm a stop. A new offer awaiting acceptance has its own summary.",
+            "fr": "Vérifiez formule enregistrée, statut et date d’essai, renouvellement ou grâce pertinente. Confirmez les conditions commerciales avec Foody ; les libellés techniques peuvent différer des offres actuelles.\n\nDans l’espace de facturation de test, ouvrez **Abonnement** pour voir la formule acceptée, sa fréquence et le montant TTC du prochain prélèvement avec sa date. Si le renouvellement est arrêté, la carte indique la fin de la période payée. Ouvrez **Détails de votre abonnement** pour relire les conditions acceptées ou **Gérer le renouvellement** pour consulter la date de fin et confirmer un arrêt. Une nouvelle offre à accepter a son propre récapitulatif.",
+            "he": "בדקו מסלול רשום, סטטוס ותאריך ניסיון, חידוש או תקופת חסד. אשרו תנאים מסחריים עם Foody; שמות טכניים עשויים להיות שונים מההצעות הנוכחיות.\n\nבפורטל החיוב בסביבת הבדיקה פתחו את **מנוי** כדי לראות את המסלול שאושר, תדירות החיוב, סכום החיוב הבא כולל מע״מ והתאריך שלו. כאשר החידוש האוטומטי כבוי מופיע מועד סיום התקופה ששולמה. פתחו את **פרטי המנוי** לקריאת התנאים שאישרתם או את **ניהול החידוש** לבדיקת תאריך הסיום ולאישור עצירת החידוש. להצעה חדשה הממתינה לאישור יש סיכום משלה."
           }
         },
         {
@@ -21281,16 +21293,16 @@
             "he": "איתור חשבונית בדיקה של המינוי"
           },
           "instructions": {
-            "fr": "Dans **Facturation → Factures d’abonnement**, choisissez le mois ou saisissez le numéro de facture. Une échéance encaissée ouvre une ligne avec la période, le HT, la TVA et le TTC. Lorsque la facture-reçu Invoice4U affiche **Disponible**, ouvrez le PDF, téléchargez-le ou téléchargez le mois en ZIP. Pour recevoir les confirmations et les PDF du pilote, activez l’option de boîte de test. Si la pièce est en préparation, elle apparaît après émission. **Renvoyer par e-mail** reprend le PDF archivé. Un paiement antérieur à l’archive reste visible avec son statut. Ces pièces de sandbox ont uniquement valeur de test.\n\nLorsque Foody a activé la facturation via Verifone pour votre restaurant de test, une souscription avec renouvellement commence par une vérification de carte de 0,01 ₪. De retour dans Foody, confirmez le montant de l’abonnement. La rubrique **Factures d’abonnement** indique quand la facture a été demandée à Verifone. Le PDF devient disponible après vérification de l’original Invoice4U. L’option de boîte de test transmet cette adresse pour les prochains paiements.",
-            "en": "In **Billing → Subscription invoices**, select a month or enter the invoice number. Each collected payment shows the service period, net, VAT and gross amount. When the Invoice4U invoice-receipt is **Available**, open or download its PDF, or download the month as a ZIP. Enable delivery to the test inbox to receive pilot confirmations and PDFs. A pending document becomes available after issuance. **Resend by email** sends the archived PDF. Earlier payments remain visible with their archive status. Sandbox documents are for testing.\n\nWhen Foody enables invoicing through Verifone for your test restaurant, a subscription with renewal starts with a ₪0.01 card check. Return to Foody to confirm the subscription amount. **Subscription invoices** shows when the invoice has been requested from Verifone. The PDF becomes available after Foody verifies the Invoice4U original. The test inbox option shares that address for future payments.",
-            "he": "במסך **חיוב ← חשבוניות המינוי** בוחרים חודש או מקלידים מספר חשבונית. לכל תשלום שנגבה מוצגים תקופת השירות, הסכום לפני מע״מ, המע״מ והסכום הכולל. כשהחשבונית מס/קבלה של Invoice4U במצב **זמין**, אפשר להציג או להוריד את ה־PDF, או להוריד את מסמכי החודש בקובץ ZIP. מפעילים שליחה לתיבת הבדיקה כדי לקבל אישורים ומסמכים של הפיילוט. מסמך בהכנה יופיע לאחר ההפקה. **שליחה חוזרת בדוא״ל** שולחת את המסמך השמור. תשלומים ישנים מוצגים עם מצב הארכיון שלהם. מסמכי סביבת הבדיקה מיועדים לבדיקות בלבד.\n\nכאשר Foody מפעילה הפקת חשבוניות דרך Verifone למסעדת הבדיקה, מינוי עם חידוש מתחיל באימות כרטיס בסך 0.01 ₪. לאחר החזרה ל־Foody מאשרים את סכום המינוי. במסך **חשבוניות המינוי** אפשר לראות שהוגשה בקשה לחשבונית דרך Verifone. ה־PDF זמין לאחר אימות מסמך המקור של Invoice4U. בחירה באפשרות תיבת הבדיקה מעבירה את כתובת הדוא״ל עבור התשלומים הבאים."
+            "fr": "Ouvrez **Facturation → Factures**. Chaque ligne affiche le paiement, le statut de la pièce et le montant TTC. Ouvrez **Détails du paiement** pour lire la période, le HT et la TVA. Utilisez **Filtres** pour rechercher par mois, numéro ou état du document. Sélectionnez un mois pour télécharger ses PDF disponibles en ZIP. Une facture **Disponible** peut être consultée ou téléchargée. Activez la boîte de test dans **Envoi par e-mail** pour recevoir les confirmations et les pièces. Lorsque **Renvoyer par e-mail** est proposé, il envoie le PDF archivé. Les paiements antérieurs à l’archive restent visibles. Ces documents du pilote ont uniquement valeur de test.\n\nLorsque Foody a activé la facturation via Verifone pour votre restaurant de test, une souscription avec renouvellement commence par une vérification de carte de 0,01 ₪. De retour dans Foody, confirmez le montant de l’abonnement. La rubrique **Factures d’abonnement** indique quand la facture a été demandée à Verifone. Le PDF devient disponible après vérification de l’original Invoice4U. L’option de boîte de test transmet cette adresse pour les prochains paiements.",
+            "en": "Open **Billing → Invoices**. Each row shows a payment, document status and amount including VAT. Open **Payment details** for the service period, net amount and VAT. Choose **Filters** to search by month, invoice number or document status. Select a month to download its available PDFs as a ZIP. An **Available** invoice can be viewed or downloaded. Enable the test inbox under **Email delivery** to receive confirmations and documents. When offered, **Resend by email** sends the archived PDF. Earlier payments remain visible with their archive status. Pilot documents are for testing.\n\nWhen Foody enables invoicing through Verifone for your test restaurant, a subscription with renewal starts with a ₪0.01 card check. Return to Foody to confirm the subscription amount. **Subscription invoices** shows when the invoice has been requested from Verifone. The PDF becomes available after Foody verifies the Invoice4U original. The test inbox option shares that address for future payments.",
+            "he": "פתחו **חיוב ← חשבוניות**. כל שורה מציגה תשלום, מצב מסמך וסכום כולל מע״מ. פתחו **פרטי התשלום** כדי לראות את תקופת השירות, הסכום לפני מע״מ והמע״מ. לחצו על **מסננים** לחיפוש לפי חודש, מספר חשבונית או מצב המסמך. בחרו חודש כדי להוריד את קובצי ה־PDF הזמינים שלו בקובץ ZIP. ניתן לצפות בחשבונית במצב **זמין** או להוריד אותה. תחת **שליחה בדוא״ל** הפעילו את תיבת הבדיקה כדי לקבל אישורים ומסמכים. כאשר האפשרות **שליחה חוזרת בדוא״ל** זמינה, היא שולחת את ה־PDF השמור. תשלומים שקדמו לארכיון נשארים ברשימה. מסמכי הפיילוט מיועדים לבדיקות בלבד.\n\nכאשר Foody מפעילה הפקת חשבוניות דרך Verifone למסעדת הבדיקה, מינוי עם חידוש מתחיל באימות כרטיס בסך 0.01 ₪. לאחר החזרה ל־Foody מאשרים את סכום המינוי. במסך **חשבוניות המינוי** אפשר לראות שהוגשה בקשה לחשבונית דרך Verifone. ה־PDF זמין לאחר אימות מסמך המקור של Invoice4U. בחירה באפשרות תיבת הבדיקה מעבירה את כתובת הדוא״ל עבור התשלומים הבאים."
           }
         }
       ],
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-11-20",
+      "procedureUpdatedAt": "2026-11-21",
       "evidence": [
         {
           "service": "foodyadmin",
@@ -21368,7 +21380,9 @@
           "src/app/[restaurantId]/billing/ModuleOnboarding.tsx",
           "src/app/[restaurantId]/billing/SubscriptionAdditions.tsx",
           "src/lib/commercial-catalog.ts",
-          "src/app/[restaurantId]/billing/SubscriptionDocuments.tsx"
+          "src/app/[restaurantId]/billing/SubscriptionDocuments.tsx",
+          "src/app/[restaurantId]/billing/BillingPortal.tsx",
+          "src/app/[restaurantId]/billing/billing-portal.module.css"
         ],
         "foodybackoffice": [
           "src/app/dashboard/foody-billing/**",
@@ -21476,9 +21490,9 @@
             "he": "קריאת נתוני שימוש"
           },
           "instructions": {
-            "en": "Open observed usage in Billing to view recorded SMS verification requests, WhatsApp order messages and supported OpenAI and Claude activity for the UTC month.",
-            "fr": "Dans Facturation, ouvrez la consommation observée pour consulter les demandes de vérification SMS, les messages de commande WhatsApp et l’activité OpenAI et Claude prise en charge pour le mois UTC.",
-            "he": "בחיוב פתחו את הצריכה שנמדדה כדי לראות בקשות אימות SMS, הודעות הזמנה ב־WhatsApp ופעילות נתמכת ב־OpenAI וב־Claude בחודש לפי UTC."
+            "en": "Open **Billing → Usage** to view recorded SMS verification requests, WhatsApp order messages and supported OpenAI and Claude activity for the UTC month.",
+            "fr": "Ouvrez **Facturation → Utilisation** pour consulter les demandes de vérification SMS, les messages de commande WhatsApp et l’activité OpenAI et Claude prise en charge pour le mois UTC.",
+            "he": "פתחו את **חיוב ← שימוש** כדי לראות בקשות אימות SMS, הודעות הזמנה ב־WhatsApp ופעילות נתמכת ב־OpenAI וב־Claude בחודש לפי UTC."
           }
         },
         {
@@ -21554,7 +21568,7 @@
       },
       "audience": "internal",
       "status": "local-release-unverified",
-      "procedureUpdatedAt": "2026-11-20",
+      "procedureUpdatedAt": "2026-11-21",
       "preserveExisting": false,
       "description": {
         "en": "Backoffice → Payments & devices → Foody billing (sandbox). Restaurant Admin → Settings → Account → Billing.",
@@ -21562,6 +21576,10 @@
         "he": "ב־Backoffice פותחים Payments & devices ← Foody billing (sandbox). בניהול המסעדה פותחים הגדרות ← חשבון ← חיוב."
       },
       "evidence": [
+        {
+          "service": "foodyadmin",
+          "file": "src/app/[restaurantId]/billing/BillingPortal.tsx"
+        },
         {
           "service": "foodyadmin",
           "file": "src/app/[restaurantId]/billing/ModuleOnboarding.tsx"
@@ -21577,6 +21595,10 @@
         {
           "service": "foodyadmin",
           "file": "src/app/[restaurantId]/billing/SubscriptionDocuments.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/app/[restaurantId]/billing/billing-portal.module.css"
         },
         {
           "service": "foodyadmin",
@@ -62848,6 +62870,23 @@
       "line": 1
     },
     {
+      "id": "foodyadmin:src/app/[restaurantId]/billing/BillingPortal.tsx:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/app/[restaurantId]/billing/BillingPortal.tsx",
+      "features": [
+        "foody-billing-sandbox"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "billing",
+        "foodyPilotGross",
+        "foodyPilotSandbox",
+        "subscription"
+      ],
+      "actions": [],
+      "line": 1
+    },
+    {
       "id": "foodyadmin:src/app/[restaurantId]/billing/ModuleOnboarding.tsx:ui-controls:1",
       "service": "foodyadmin",
       "source": "src/app/[restaurantId]/billing/ModuleOnboarding.tsx",
@@ -62893,13 +62932,11 @@
       ],
       "kind": "ui-controls",
       "labels": [
-        "billing",
         "billingLoadError",
         "cancel",
         "foodyLicence_",
         "foodyModulePublicTerms",
         "foodyPilotAccept",
-        "foodyPilotAcceptedTerms",
         "foodyPilotAvailable",
         "foodyPilotCheckoutDisabled",
         "foodyPilotChoose",
@@ -62907,17 +62944,15 @@
         "foodyPilotIncludes",
         "foodyPilotMonthlyDisabled",
         "foodyPilotNet",
-        "foodyPilotNextDebit",
         "foodyPilotNoRenewal",
         "foodyPilotOffer",
         "foodyPilotPaidUntil",
-        "foodyPilotPay",
         "foodyPilotPayRegistered",
         "foodyPilotQuoteUntil",
         "foodyPilotRef",
         "foodyPilotRegistrationAmount",
         "foodyPilotResume",
-        "foodyPilotSandbox",
+        "foodyPilotStatus_paid",
         "foodyPilotStop",
         "foodyPilotStopHint",
         "foodyPilotTerms",
@@ -62935,6 +62970,7 @@
         "retry"
       ],
       "actions": [
+        "accepted",
         "open",
         "openStatus",
         "updated"
@@ -78602,17 +78638,6 @@
       "line": 1
     },
     {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:147",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "section.is_visible",
-      "line": 147
-    },
-    {
       "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:694",
       "service": "foodyadmin",
       "source": "src/components/website-v3/field-contracts.ts",
@@ -81141,6 +81166,17 @@
       "kind": "configuration-field",
       "field": "section.delete",
       "line": 1086
+    },
+    {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:147",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.is_visible",
+      "line": 147
     },
     {
       "id": "foodyadmin:src/components/website/CheckoutEditor.tsx:ui-controls:1",
@@ -114662,8 +114698,8 @@
     "sharedRuntimeFiles": 437,
     "features": 114,
     "operations": 1042,
-    "sourceFiles": 2713,
-    "surfaces": 2349,
+    "sourceFiles": 2715,
+    "surfaces": 2350,
     "unclassifiedRoutes": []
   }
 }
