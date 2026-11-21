@@ -1960,3 +1960,6 @@ process and verifies the serving role before replacing the API container.
 ## Delivery address recovery and route updates (20 November 2026)
 
 The guest, internal ordering, dispatch and courier guides cover retrying address searches, keeping the selected building number, updating one order, reusing a confirmed entrance and adding stops to a planned route. Publish the French, Hebrew and English guides with the matching API, Admin and guest website.
+## Development portal sign-in verification (21 November 2026)
+
+Reviewed the French, Hebrew and English first-login and internal Backoffice access procedures. They already cover signing in again after a session update and completing the authenticator step. The development routing change restores that documented flow. An open sign-in form checks the deployed version before submitting credentials and can reload the entry page. Restaurant membership, operator permissions, authenticator setup and recovery follow the existing procedures. The two service READMEs document how to publish and verify the development artifact.
