@@ -4,9 +4,9 @@
   "services": {
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "588318db93d9447833b571c8368328b48fb32938",
+      "sourceCommit": "0ef91997a4725f1c08a0725b70a75de1b31a932c",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "b2f3df24479299d1aa7ed4c0124a5100a0ea843f7532a46b928a497d3d7e5fc6",
+      "sourceSnapshot": "460ebe3f0d7de02d3320982474f5ad4a92579ff99515157668957dcad928ff27",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
@@ -63,14 +63,20 @@
             "analytics-dashboard"
           ]
         },
+        "src/app/[restaurantId]/billing/BillingPortal.tsx": {
+          "sha256": "ca24da0844e192af5548bebf1e5af04c6eef6a4c0b166716938f8cb0633135bd",
+          "features": [
+            "foody-billing-sandbox"
+          ]
+        },
         "src/app/[restaurantId]/billing/ModuleOnboarding.tsx": {
-          "sha256": "0eebcbf25e32e8a2a80ed410f37c46442752d742f8c69f17b669d697307ac884",
+          "sha256": "170b13235d6e1ca300ee694fcedfead037c59c8d0fd52bcc2be5460352d2ed2f",
           "features": [
             "foody-billing-sandbox"
           ]
         },
         "src/app/[restaurantId]/billing/PrivateBilling.tsx": {
-          "sha256": "f027654252bc97dade4fc34d6db320164dd71dac315172c7d77c2e1b7cb945d0",
+          "sha256": "2c993777da08c6d8130182fd0e9730cd1479e718976112ee8f9cad15b301b0e8",
           "features": [
             "foody-billing-sandbox"
           ]
@@ -82,7 +88,13 @@
           ]
         },
         "src/app/[restaurantId]/billing/SubscriptionDocuments.tsx": {
-          "sha256": "a1991f4fbd4a6c206a656634b74b9cde2dcc4b2465ff3a3089ebb6d7f655957c",
+          "sha256": "bb327a54e0e30b44a38bc0e1c1b2f4fbdbcc83b3125b607639bb98518da36382",
+          "features": [
+            "foody-billing-sandbox"
+          ]
+        },
+        "src/app/[restaurantId]/billing/billing-portal.module.css": {
+          "sha256": "4a50b18872c2902b0f9e8876b496c35bea3d1464fea4a18c97ce3cf52a1d5aa0",
           "features": [
             "foody-billing-sandbox"
           ]
@@ -94,7 +106,7 @@
           ]
         },
         "src/app/[restaurantId]/billing/page.tsx": {
-          "sha256": "81bc79b1fdd85005ba6d3e88a6ac5118503c8b04c70901afb082c643d3a55867",
+          "sha256": "1ddfe93f232c2e09edc474715a3fe7b479cdaa9c9b8d9d861ff517e42f91732b",
           "features": [
             "billing"
           ]
@@ -6257,7 +6269,7 @@
     },
     "foodylanding": {
       "repository": "https://github.com/Foody-isr/landing",
-      "sourceCommit": "ecc6c1302d7c8284f19a14af0dae09d564490493",
+      "sourceCommit": "faaac81a0acb1d28583ec71cc639bc3b69b6fab0",
       "releaseStatus": "versioned",
       "sourceSnapshot": "7872182414e2c2bc08e3f0e2b65e52d1f5419988d4e77ebd46afb77180470947",
       "workingTreeHasChanges": true,
@@ -21572,6 +21584,10 @@
       "evidence": [
         {
           "service": "foodyadmin",
+          "file": "src/app/[restaurantId]/billing/BillingPortal.tsx"
+        },
+        {
+          "service": "foodyadmin",
           "file": "src/app/[restaurantId]/billing/ModuleOnboarding.tsx"
         },
         {
@@ -21585,6 +21601,10 @@
         {
           "service": "foodyadmin",
           "file": "src/app/[restaurantId]/billing/SubscriptionDocuments.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/app/[restaurantId]/billing/billing-portal.module.css"
         },
         {
           "service": "foodyadmin",
@@ -62873,6 +62893,23 @@
       "line": 1
     },
     {
+      "id": "foodyadmin:src/app/[restaurantId]/billing/BillingPortal.tsx:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/app/[restaurantId]/billing/BillingPortal.tsx",
+      "features": [
+        "foody-billing-sandbox"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "billing",
+        "foodyPilotGross",
+        "foodyPilotSandbox",
+        "subscription"
+      ],
+      "actions": [],
+      "line": 1
+    },
+    {
       "id": "foodyadmin:src/app/[restaurantId]/billing/ModuleOnboarding.tsx:ui-controls:1",
       "service": "foodyadmin",
       "source": "src/app/[restaurantId]/billing/ModuleOnboarding.tsx",
@@ -62910,22 +62947,19 @@
       "line": 1
     },
     {
-      "service": "foodyadmin",
       "id": "foodyadmin:src/app/[restaurantId]/billing/PrivateBilling.tsx:ui-controls:1",
-      "kind": "ui-controls",
+      "service": "foodyadmin",
       "source": "src/app/[restaurantId]/billing/PrivateBilling.tsx",
-      "line": 1,
       "features": [
         "foody-billing-sandbox"
       ],
+      "kind": "ui-controls",
       "labels": [
-        "billing",
         "billingLoadError",
         "cancel",
         "foodyLicence_",
         "foodyModulePublicTerms",
         "foodyPilotAccept",
-        "foodyPilotAcceptedTerms",
         "foodyPilotAvailable",
         "foodyPilotCheckoutDisabled",
         "foodyPilotChoose",
@@ -62933,17 +62967,15 @@
         "foodyPilotIncludes",
         "foodyPilotMonthlyDisabled",
         "foodyPilotNet",
-        "foodyPilotNextDebit",
         "foodyPilotNoRenewal",
         "foodyPilotOffer",
         "foodyPilotPaidUntil",
-        "foodyPilotPay",
         "foodyPilotPayRegistered",
         "foodyPilotQuoteUntil",
         "foodyPilotRef",
         "foodyPilotRegistrationAmount",
         "foodyPilotResume",
-        "foodyPilotSandbox",
+        "foodyPilotStatus_paid",
         "foodyPilotStop",
         "foodyPilotStopHint",
         "foodyPilotTerms",
@@ -62961,10 +62993,12 @@
         "retry"
       ],
       "actions": [
+        "accepted",
         "open",
         "openStatus",
         "updated"
-      ]
+      ],
+      "line": 1
     },
     {
       "id": "foodyadmin:src/app/[restaurantId]/billing/SubscriptionAdditions.tsx:ui-controls:1",
@@ -114701,8 +114735,8 @@
     "sharedRuntimeFiles": 437,
     "features": 114,
     "operations": 1043,
-    "sourceFiles": 2714,
-    "surfaces": 2349,
+    "sourceFiles": 2716,
+    "surfaces": 2350,
     "unclassifiedRoutes": []
   }
 }
