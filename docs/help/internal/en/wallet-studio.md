@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - customers
   - customers-wallet-studio
-updatedAt: '2026-11-19'
+updatedAt: '2026-11-21'
 featureId: customers-wallet-studio
 audience: internal
 releaseStatus: local-release-unverified
@@ -24,6 +24,18 @@ Use an account with access to restaurant settings. Saving, testing and publishin
 ## Save a private design
 
 Set the background and Apple text colors. Choose a PNG, JPEG or WebP logo and banner, each up to 10 MB. Open **Frame banner** and choose **Entire image** to keep every edge visible or **Fill the frame** to crop. Adjust the zoom and drag in the preview, or use the horizontal and vertical sliders. Apple and Google share the settings until you enable **Use a separate Google frame** in the Google preview. On Apple, place the counter **Below the banner** or **On the banner**. New uploads retain their original file in the private draft. For an older banner, upload the original again if you need its full resolution. Turn off **Show restaurant name** to remove the name beside the Apple logo. Google keeps the program title. If an image cannot be opened, the message under the picker explains what to change. Select **Save draft**. If another editor saved a newer draft, reload it before retrying.
+
+<span id="generate-wallet-from-website" />
+
+## Use the website design on the Wallet card
+
+In **Customers → Loyalty program → Wallet Studio**, click **Generate with AI**. Foody uses your published website colors, logo and one photo for the banner. It tries the homepage hero first, then the cover or a photo from a visible section. When the site has no color, Foody can extract one from the logo or photo. The crop adapts to each Wallet. Check the Apple and Google previews. You can undo the suggestion immediately, change the colors or reframe the banner. An unavailable element keeps its current value. **Save draft** keeps the design for the restaurant. **Publish design** applies it to customer cards.
+
+<span id="try-card-layouts" />
+
+## Compare layouts with the restaurant’s banner
+
+In **Wallet Studio**, choose a palette or adjust the two colors. After adding a banner, try **Full product**, **Panorama** or **Balance on image**. Each layout uses your image. You can fine-tune the Apple and Google frames afterwards. Move **Sample balance** to check readability in both previews. The slider changes only the simulation. Save the draft, check a test card, then publish the design when ready.
 
 <span id="apple-test" />
 
