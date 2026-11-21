@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-11-20.
+Révision du relevé : 2026-11-21.
 
-114 fiches de fonctionnalités, 1042 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2713 fichiers applicatifs et 2349 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+114 fiches de fonctionnalités, 1043 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2713 fichiers applicatifs et 2349 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,11 +10,11 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyadmin | 827 | 837 | 11ec0f429134 ; versioned |
+| foodyadmin | 827 | 837 | 47ca7fa50f86 ; versioned |
 | foodybackoffice | 54 | 49 | 619aa5734755 ; versioned |
-| foodylanding | 158 | 31 | 23025c8908f9 ; versioned |
+| foodylanding | 158 | 31 | 5a6e94c6c1b4 ; versioned |
 | foodypos | 432 | 186 | a0b63f890a82 ; versioned |
-| foodyserver | 855 | 1045 | 1ddfa45811e3 ; versioned |
+| foodyserver | 855 | 1045 | b1b066bd2329 ; versioned |
 | foodyweb | 387 | 201 | c34553ace736 ; versioned |
 
 ## getting-started
@@ -1299,6 +1299,7 @@ Identifiant : `delivery-dispatch`. Public : public. Disponibilité : available. 
 - [Rembourser ou annuler un paiement en ligne Verifone](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#verifone-admin-money-operations)
 - [Vérifier le plafond de préautorisation au poids](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#weight-hold-margin)
 - [Choisir les livraisons d’une date](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#date)
+- [Lire le tableau de répartition](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#dispatch-workspace)
 - [Affecter coursiers et arrêts](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#assign)
 - [Insérer une nouvelle commande dans une tournée](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#insert-planned-delivery)
 - [Vérifier une tournée calculée](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#optimize)
