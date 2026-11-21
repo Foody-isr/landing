@@ -45,7 +45,9 @@ When the closing already says that the original transmission is under review and
 
 On a compatible main iPad, a manager can open the Mini’s unconfirmed transmission and choose **Find the report on the terminal**. Foody reads the ten archive slots and matches the bank terminal number and the time of that dispatch. If one report matches, read it, tap **Use this transmission reference**, then confirm so Foody can validate and attach the report. An empty, failed or ambiguous search leaves the transmission open for review. If you have the original bank report, you can enter its reference in **Verify a SHVA report**.
 
-When none of the ten reports matches, FoodyPOS also checks the gateway on that Mini. If the gateway requests end of day to load parameters or settle the batch, give the provider the terminal number and original dispatch time. Ask whether the host received that batch and which recovery procedure to follow before transmitting again.
+On the iPad managing the closing, open **Reports → Cash balance** and find the Mini. A manager with payment and settings permissions can select **Close this terminal and resume payments** for a pending batch. After confirmation Foody reads the Ashrait status. If closing is required and the batch has never been sent, Foody transmits it once and checks the Mini again. Resolve any interrupted card sale first. A confirmed empty batch may have no SHVA printout.
+
+For an earlier **transmission to verify**, select **Check and resume payments**. If parameters are required, Foody can download them separately and recheck the gateway. Once Ashrait returns **OK** and Foody admits the terminal, you can take a payment. The earlier deposit stays under review. If Ashrait still requires settlement, reconcile the outstanding transmission before another deposit. If the gateway remains blocked after a confirmed closing, give Verifone the terminal number.
 
 <span id="end-of-day-cash-reservation" />
 
