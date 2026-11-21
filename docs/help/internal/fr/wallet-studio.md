@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - customers
   - customers-wallet-studio
-updatedAt: '2026-11-19'
+updatedAt: '2026-11-21'
 featureId: customers-wallet-studio
 audience: internal
 releaseStatus: local-release-unverified
@@ -24,6 +24,18 @@ Utilisez un compte ayant accès aux paramètres du restaurant. Enregistrer, test
 ## Enregistrer un visuel privé
 
 Choisissez la couleur de fond et la couleur du texte Apple. Importez un logo et une bannière en PNG, JPEG ou WebP, jusqu’à 10 Mo chacun. Ouvrez **Cadrer la bannière**. Choisissez **Image entière** pour voir tous les bords ou **Remplir le cadre** pour recadrer. Réglez le zoom et déplacez l’image dans l’aperçu ou utilisez les curseurs de position. Apple et Google partagent les réglages. Pour les ajuster séparément, activez **Cadrage propre à Google** dans l’aperçu Google. Sur Apple, placez le compteur **Sous la bannière** ou **Sur la bannière**. Le brouillon privé conserve le fichier original des nouveaux imports. Pour retrouver la pleine résolution d’une ancienne bannière, importez à nouveau son original. Désactivez **Afficher le nom du restaurant** pour retirer le nom à côté du logo Apple. Google conserve le titre du programme. Si une image est refusée, consultez le message sous le champ. Cliquez sur **Enregistrer le brouillon**. Si une autre personne a enregistré une version plus récente, rechargez-la avant de réessayer.
+
+<span id="generate-wallet-from-website" />
+
+## Reprendre le design du site dans la carte Wallet
+
+Dans **Clients → Programme de fidélité → Studio Wallet**, cliquez sur **Générer avec l’IA**. Foody reprend les couleurs du site publié, le logo et une photo pour la bannière. La photo d’accueil est prioritaire, puis la couverture ou une photo d’une section visible. Si le site ne définit aucune couleur, Foody peut en extraire une du logo ou de la photo. Le cadrage s’adapte à chaque Wallet. Vérifiez les aperçus Apple et Google. Vous pouvez annuler la proposition immédiatement, changer les couleurs ou recadrer la bannière. Un élément indisponible conserve sa valeur actuelle. **Enregistrer le brouillon** garde le design pour le restaurant. **Publier le visuel** l’applique aux cartes clients.
+
+<span id="try-card-layouts" />
+
+## Comparer des modèles avec la bannière du restaurant
+
+Dans **Studio Wallet**, sélectionnez une palette ou ajustez les deux couleurs. Une fois la bannière ajoutée, testez **Produit entier**, **Panorama** ou **Compteur sur l’image**. Chaque modèle utilise votre image. Vous pouvez ensuite affiner le cadrage Apple et Google. Déplacez **Solde de démonstration** pour comparer la lisibilité des deux aperçus. Ce curseur modifie uniquement la simulation. Enregistrez le brouillon, vérifiez une carte de test, puis publiez le visuel quand il est prêt.
 
 <span id="apple-test" />
 
