@@ -7,7 +7,7 @@ apps: both
 tags:
   - payments
   - pos-payments
-updatedAt: '2026-11-18'
+updatedAt: '2026-11-21'
 featureId: pos-payments
 audience: public
 releaseStatus: available
@@ -61,6 +61,8 @@ To bring together the end-of-day steps, use [the combined closing flow](/en/help
 On an ordinary counter or table check on the updated handheld terminal, Pay opens a black customer review with the selected check’s lines, modifiers and confirmed amount. Review it before Confirm and pay. The ⋯ menu offers cash; the language selector changes only this review, without changing the device language. Dismissing the review collects nothing. Tablets retain the full-screen Card/Cash tender choice. Choose Pay by card. Foody keeps a full-screen progress view during preparation, terminal connection, reported login/session/parameter stages, the terminal instructions, payment recording and the counter order's kitchen send. Only stages actually reported are shown; not every payment needs every stage. Card reading and PIN entry remain on the secure Verifone terminal. The displayed kitchen send confirms order submission, not physical paper output: only categories selected in the assigned kitchen profile print. The screen closes on refusal or cancellation without marking the bill paid; review the displayed error before retrying. Wait for Foody’s verified final status; browser return alone is insufficient. If the result is pending/uncertain, refresh and review the provider transaction with an authorized operator before any retry. Never ask the help assistant to inspect card details. Before collection, Foody checks the bill data again. A change to lines, amount, paid state or restaurant/account context stops the flow: reopen Pay and confirm the updated review. The same check protects cash confirmation. An interrupted review does not establish a charge; if the provider has already returned an uncertain result, use the reconciliation procedure below. A new item or kitchen batch added to the check during review or cash entry also requires fresh confirmation; it must not be ignored when collecting. This Victa checkout uses ILS; changing language does not convert currency.
 
 If checkout directs you to a pending close, follow [recovery in Current drawer](/en/help/payments/end-of-day#end-of-day-recovery). For an interrupted card attempt, follow [the original payment verification steps](/en/help/payments/ashrait-terminal-inspection#ashrait-last-transaction-recovery).
+
+If the Mini restarted after service was resumed, open its device details in **Hardware → Payment terminals** and tap **Check Ashrait gateway**. When the gateway is ready, reopen the check. If a card was already presented for this attempt, use **Review the card payment**.
 
 <span id="terminal-deposit" />
 

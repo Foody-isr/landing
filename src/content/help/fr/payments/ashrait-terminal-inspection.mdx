@@ -5,7 +5,7 @@ apps: foodypos
 tags:
   - payments
   - pos-ashrait-terminal-inspection
-updatedAt: '2026-11-18'
+updatedAt: '2026-11-21'
 featureId: pos-ashrait-terminal-inspection
 audience: public
 releaseStatus: available
@@ -37,6 +37,8 @@ Si la réponse du terminal est perdue, ouvrez l’addition sur la caisse d’ori
 Si la passerelle bloque la demande avant l’envoi à la banque, consultez **Vérifier la passerelle Ashrait** sur la fiche du terminal actif. Après une coupure survenue pendant un paiement, utilisez **Vérifier le paiement carte** sur l’addition d’origine. Le statut de la passerelle indique si elle accepte une nouvelle demande. Le résultat de la tentative précédente se vérifie sur l’addition.
 
 Ashrait conserve la dernière transaction enregistrée après un redémarrage du terminal. Reprenez le paiement de l’addition avant toute nouvelle vente ou clôture EOD sur ce terminal. Une nouvelle vente peut devenir la dernière transaction et la clôture efface les transactions enregistrées sur le terminal. Foody compare les identifiants portés par le paiement d’origine, le type, le montant et la devise. Une réponse vide ou un identifiant contradictoire laisse la tentative à vérifier.
+
+Sur la version iPad compatible, si le Mini a été éteint, rallumez-le et ouvrez Plus → Paramètres → Matériel → Terminaux de paiement → le Mini enregistré. Touchez Vérifier la passerelle Ashrait. FoodyPOS se reconnecte au Mini identifié et lit son état. Quand la passerelle est prête, rouvrez l’addition. Si une carte avait déjà été présentée pour cette addition, choisissez Vérifier le paiement carte pour reprendre la tentative d’origine. Si la caisse ne joint pas le Mini, vérifiez que les deux appareils sont sur le même réseau local et que l’adresse IP enregistrée correspond à celle du terminal.
 
 <span id="ashrait-portable-card-copy" />
 

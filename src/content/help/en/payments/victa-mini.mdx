@@ -5,7 +5,7 @@ apps: foodypos
 tags:
   - payments
   - pos-victa-mini
-updatedAt: '2026-11-15'
+updatedAt: '2026-11-21'
 featureId: pos-victa-mini
 audience: public
 releaseStatus: available
@@ -23,6 +23,8 @@ Tap **Save**. When adding a terminal, changing its connection details or updatin
 The first saved terminal becomes the default. Select **Default terminal** before saving to change it. Keep the terminal on the same local network as the iPad. To check connectivity, choose **Test connection** in its details. FoodyPOS retries the saved connection at launch and when returning to the foreground after it restores restaurant access. If the app asks you to restart, close and reopen it before retrying. For a pending payment or Deposit, use the original POS and terminal to resume the operation.
 
 On the active terminal’s detail screen, select **Check Ashrait gateway** to see whether the Mini or Portable is ready to take a payment. The network connection and bank readiness have separate checks. If Ashrait requests parameters or settlement, open **Reports → Cash balance**. Review any outstanding transmission first. Check the gateway again after closing. If the status is empty, verify the payment application version with Verifone.
+
+After turning a Mini back on, open its device details and tap **Check Ashrait gateway**. On a compatible build, FoodyPOS reconnects to the identified Mini. If service has already been resumed, the original deposit remains available for review during this check. The gateway message tells you when the Mini is ready for a new sale.
 
 <span id="terminal-identifiers" />
 

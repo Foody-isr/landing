@@ -7,7 +7,7 @@ apps: foodypos
 tags:
   - payments
   - pos-end-of-day
-updatedAt: '2026-11-15'
+updatedAt: '2026-11-21'
 featureId: pos-end-of-day
 audience: public
 releaseStatus: local-release-unverified
@@ -40,6 +40,10 @@ With the compatible release and permission to manage payments and edit settings,
 If you have the original paper report, choose **Verify a SHVA report** on that terminal and enter the transmission reference (אסמכתת שידור). Foody searches the ten most recent terminal reports and checks the SHVA number, time and totals before attaching it. Keep FoodyPOS open on a Portable. A late bank deposit can include sales in the next Foody period. If the terminal returns an empty gateway status, check the Ashrait version with Verifone.
 
 On a replacement iPad enrolled at the restaurant, sign in as a manager, open Cash balance and choose **Take over this closing**. Review the closing time and confirm. This iPad becomes the main register. The original cash drawer, amounts and transmission requests stay with the same closing. For an already dispatched deposit, open the archived report review and enter its printed reference. Available terminals can resume taking payments while the deposit is being checked.
+
+When the closing already says that the original transmission is under review and an identified terminal can resume payments, the manager has already resumed service. After a Mini restart, use Check Ashrait gateway on its Hardware page. A ready gateway allows a new sale on an eligible terminal. Keep the original deposit open for reconciliation. Use Verify a SHVA report with the transmission reference from the bank report to reconcile that deposit.
+
+On a compatible main iPad, a manager can open the Mini’s unconfirmed transmission and choose **Find the report on the terminal**. Foody reads the ten archive slots and matches the bank terminal number and the time of that dispatch. If one report matches, read it, tap **Use this transmission reference**, then confirm so Foody can validate and attach the report. An empty, failed or ambiguous search leaves the transmission open for review. If you have the original bank report, you can enter its reference in **Verify a SHVA report**.
 
 <span id="end-of-day-cash-reservation" />
 

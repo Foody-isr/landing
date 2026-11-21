@@ -7,7 +7,7 @@ apps: both
 tags:
   - payments
   - pos-payments
-updatedAt: '2026-11-18'
+updatedAt: '2026-11-21'
 featureId: pos-payments
 audience: public
 releaseStatus: available
@@ -61,6 +61,8 @@ Pour réunir les étapes de fin de journée, utilisez [la clôture commune](/fr/
 Sur une addition ordinaire de table ou de comptoir sur le terminal portable mis à jour, Payer ouvre un récapitulatif client noir avec les lignes et modificateurs de l’addition sélectionnée et son montant confirmé. Vérifiez-le avant Confirmer et payer. Le menu ⋯ permet de choisir les espèces ; le sélecteur de langue ne change que ce récapitulatif, sans modifier la langue de l’appareil. Fermer ce récapitulatif ne débite rien. Sur tablette, le choix plein écran Carte/Espèces reste disponible. Choisissez Payer par carte. Foody conserve un écran de suivi pendant la préparation, la connexion au terminal, les étapes d’identification/session/paramètres signalées, les instructions du terminal, l’enregistrement du paiement et l’envoi en cuisine d’une commande au comptoir. Seules les étapes réellement signalées apparaissent ; chaque paiement ne passe pas nécessairement par toutes. Lecture de carte et saisie du PIN restent sur le terminal sécurisé Verifone. L’envoi cuisine affiché confirme la soumission de la commande, pas la sortie papier : seules les catégories sélectionnées dans le profil cuisine affecté s’impriment. En cas de refus ou d’annulation, l’écran se ferme sans marquer l’addition payée ; vérifiez l’erreur affichée avant de réessayer. Attendez le statut final vérifié Foody ; le retour navigateur seul ne suffit pas. En attente/incertain, actualisez puis faites vérifier la transaction par un opérateur autorisé avant nouvelle tentative. Ne transmettez pas les données de carte à l’assistant. Avant de lancer la collecte, Foody vérifie à nouveau les données à encaisser. Un changement de lignes, montant, état payé ou contexte de restaurant/compte interrompt le parcours : rouvrez Payer et faites confirmer le récapitulatif actualisé. Le même contrôle protège la confirmation espèces. Une vérification interrompue n’autorise pas à supposer qu’un débit a eu lieu ; si le fournisseur a déjà répondu par un résultat incertain, suivez la procédure de rapprochement ci-dessous. Un nouvel article ou un nouvel envoi cuisine ajouté à l’addition pendant le récapitulatif ou la saisie espèces exige aussi une nouvelle confirmation ; il ne doit pas être ignoré au moment d’encaisser. Ce parcours Victa utilise les ILS ; changer de langue ne convertit pas la devise.
 
 Si la caisse vous renvoie à une clôture en attente, utilisez [la reprise dans Solde en caisse](/fr/help/payments/end-of-day#end-of-day-recovery). Pour une tentative carte interrompue, suivez [la vérification du paiement d’origine](/fr/help/payments/ashrait-terminal-inspection#ashrait-last-transaction-recovery).
+
+Si le Mini a redémarré après une reprise du service, ouvrez sa fiche dans **Matériel → Terminaux de paiement** et touchez **Vérifier la passerelle Ashrait**. Quand la passerelle est prête, rouvrez l’addition. Si vous avez déjà présenté une carte pour cette tentative, utilisez **Vérifier le paiement carte**.
 
 <span id="terminal-deposit" />
 
