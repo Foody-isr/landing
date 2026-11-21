@@ -3,6 +3,7 @@ import { marketing, type SolutionKey } from "./marketing/content";
 import { getSolution } from "./marketing/solutions";
 import { routes } from "./marketing/ui";
 import social from "./marketing/social.json";
+import { getShareCard } from "./marketing/share-cards";
 
 export type Lang = "en" | "fr" | "he";
 export type MarketingPage =
@@ -24,38 +25,39 @@ const PATHS: Record<MarketingPage, string> = {
 };
 const TITLES = {
   he: {
-    home: "קופה ממוחשבת בענן למסעדות ולעסקים בישראל | Foody",
-    pricing: "מחירי קופה ומערכת לניהול מסעדה בישראל | Foody",
+    home: "Foody POS | קופה וניהול מסעדות בישראל",
+    pricing: "מחיר קופה למסעדה בישראל | מסלולי Foody POS",
     contact: "תיאום הדגמה והצעת מחיר לקופה וסליקה | Foody",
     food: "פתרונות למסעדות, בתי קפה ורשתות בישראל | Foody",
   },
   fr: {
-    home: "Caisse cloud iPad et Android en Israël | Foody",
-    pricing: "Tarifs caisse et gestion restaurant en Israël | Foody",
+    home: "Foody POS | Caisse et gestion de restaurant en Israël",
+    pricing: "Prix d’une caisse restaurant en Israël | Foody POS",
     contact: "Démo et devis caisse et slika en Israël | Foody",
     food: "Solutions pour restaurants et cafés en Israël | Foody",
   },
   en: {
-    home: "Cloud POS for iPad & Android in Israel | Foody",
-    pricing: "POS & Restaurant Software Pricing in Israel | Foody",
+    home: "Foody POS | Restaurant POS and Management in Israel",
+    pricing: "Restaurant POS Pricing in Israel | Foody POS",
     contact: "Book a POS & Payments Demo in Israel | Foody",
     food: "Restaurant & Café Solutions in Israel | Foody",
   },
 };
 const HOME_DESCRIPTIONS = {
-  he: "קופת ענן ב־iPad וב־Android למסעדות ולעסקים בישראל. שותף Verifone, סליקה, Epson ו־Star Micronics. ניהול מטבח עם Foody Kitchen ו־Foody Companion.",
-  fr: "Caisse cloud iPad et Android en Israël. Partenaire Verifone, intégrateur Epson et Star Micronics. Gérez votre cuisine avec Foody Cuisine et Foody Compagnon.",
-  en: "Cloud POS for iPad and Android in Israel. Verifone partner, Epson and Star Micronics integrator. Run your kitchen with Foody Kitchen and Foody Companion.",
+  he: "האתר הרשמי של Foody POS בישראל. קופה ל־iPad ולאנדרואיד, שולחנות, הזמנות אונליין וניהול מטבח. ממשקי עבודה בעברית, בצרפתית ובאנגלית, והתקנה והדרכה בבית העסק.",
+  fr: "Site officiel de Foody POS en Israël. Caisse iPad et Android, tables, commandes en ligne et gestion de cuisine. Interfaces en français, hébreu et anglais, installation et formation sur place.",
+  en: "Official Foody POS website in Israel. iPad and Android POS, tables, online ordering and kitchen management. Hebrew, French and English interfaces, with on-site setup and training.",
 };
 
 /** Returns the localized, versioned sharing image and its accessible description. */
-function socialImage(lang: Lang) {
+function socialImage(lang: Lang, path = "", title = "") {
+  const card = path ? getShareCard(lang, path, title) : null;
   return {
-    url: social[lang].image,
+    url: card?.image || social[lang].image,
     width: 1200,
     height: 630,
     type: "image/png",
-    alt: social[lang].alt,
+    alt: card?.alt || social[lang].alt,
   };
 }
 
@@ -96,11 +98,11 @@ export function getMarketingMetadata(
         : HOME_DESCRIPTIONS[lang];
   } else {
     const content = getSolution(lang, page);
-    title = `${content.title} | Foody`;
+    title = `${content.title} | ${page === "restaurants" ? "Foody POS" : "Foody"}`;
     description = content.description;
   }
   const canonical = `${SITE_URL}/${lang}${path}`;
-  const image = socialImage(lang);
+  const image = socialImage(lang, path, title);
   const shareTitle = page === "home" ? social[lang].title : title;
   const shareDescription = page === "home" ? social[lang].description : description;
   return {
@@ -110,7 +112,7 @@ export function getMarketingMetadata(
     openGraph: {
       title: shareTitle,
       description: shareDescription,
-      siteName: "Foody",
+      siteName: "Foody POS",
       type: "website",
       url: canonical,
       locale: `${lang}_IL`,
@@ -143,7 +145,7 @@ export function getContentMetadata(
   translatedLanguages: Lang[] = [lang],
 ): Metadata {
   const canonical = `${SITE_URL}/${lang}${path}`;
-  const image = socialImage(lang);
+  const image = socialImage(lang, path, title);
   return {
     title: `${title} | Foody`,
     description,
@@ -156,6 +158,7 @@ export function getContentMetadata(
     openGraph: {
       title: `${title} | Foody`,
       description,
+      siteName: "Foody POS",
       url: canonical,
       type: "website",
       locale: `${lang}_IL`,

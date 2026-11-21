@@ -7,7 +7,7 @@ apps: foodyadmin
 tags:
   - website-qr
   - website-sections
-updatedAt: '2026-10-21'
+updatedAt: '2026-11-11'
 featureId: website-sections
 audience: public
 releaseStatus: available
@@ -18,7 +18,7 @@ Open a content or landing page, select a section in the canvas or sidebar, and u
 
 ## Add, move and hide sections
 
-Add an available section type, edit it, and reorder it on the page. Visibility hides the section without deleting its content. Moving a section to another page changes its location. Review the draft before confirming deletion.
+Add an available section type, edit it, and reorder it on the page. Visibility hides the section without deleting its content. Moving a section to another page changes its location. Review the draft before confirming deletion. On a home page with sections, the pre-order installation invitation can appear after the first section. Configure it in Mobile experience.
 
 <span id="content" />
 
@@ -26,11 +26,51 @@ Add an available section type, edit it, and reorder it on the page. Visibility h
 
 Edit headings, subtitle, body and button links for text/image, hero, feature cards and supporting content. Choose the items or menu groups for menu highlights and featured items. Contact sections can show address, phone, hours and social links. Check each language rather than embedding untranslated text in pictures.
 
+Section text uses the site’s typography by default. A size or weight set on the text itself takes priority. Use [Site design → Fonts](/en/help/website-qr/design-and-branding#fonts) to edit the site defaults.
+
 <span id="media" />
 
 ## Set images and video
 
-Upload or select media, adjust fit, overlay, background, width, height and spacing where available. For video choose controls, autoplay, loop and muted state. Browsers can restrict autoplay; check the actual mobile page and retain readable text while media loads.
+Upload or select media, adjust fit, overlay, background, width, height and spacing where available. For video choose controls, autoplay, loop and muted state. Browsers can restrict autoplay; check the actual mobile page and retain readable text while media loads. A standard video banner starts muted once it is in view. The play and pause button remains available if the device blocks autoplay or reduced motion is enabled. For a split banner, enable Show the media before the text on mobile to place its media first on phones. When Hide the video play/pause button is enabled, select the video itself to play or pause it.
+
+<span id="video-carousel" />
+
+## Add a video carousel with order links
+
+Add a Video section and choose Carousel. In Video cards, add a title, upload an MP4 or WebM file, and choose a portrait cover. To link to an item, enter the button text and paste its shared order link. You can also link to a relevant site page and add the original Instagram link. Use the arrows to order the cards. In preview, check that the cards can be swiped on a phone, each video opens with the button visible below it, and the item link opens the correct item. Wait for the draft to save before publishing. If Carousel is disabled, the public website needs the compatible release. In the carousel appearance, enable Move the carousel below the other sections on mobile to change its order on phones. Play muted previews when scrolling starts the most visible card on phones and the first card on desktop. The preview stops after a few seconds, offscreen or when the full player opens. The reduced-motion preference keeps the covers still.
+
+<span id="web-story-player" />
+
+## Play a carousel as Web Stories
+
+In the video carousel appearance, turn on Use the Web Stories player. In preview, open a portrait card. Swipe sideways on a phone or use the arrows to browse the stories. The progress bar tracks the current video and the player advances when it ends. Use the controls to pause, mute or close the player. If the setting is disabled, update the public website renderer first.
+
+<span id="web-story-cart" />
+
+## Add items to the cart from a Web Story
+
+In Video cards, paste the item's shared Foody order link and enable Use the Web Stories player. The published player shows the catalogue name and available photo and price. Add to cart saves the item and opens the menu. Choose options opens a panel over the paused video for quantities, sizes and required options. Confirm Add to cart there to open the menu with those choices saved. Check the choices in editor preview and verify the cart action on the published site. Combo items use the ordering page. An unavailable item cannot be added. The original Instagram link is only used by the standard carousel player. The general note appears only when the item allows it.
+
+<span id="campaign-hero" />
+
+## Create a campaign hero carousel
+
+This layout requires the compatible Website and Admin release. Select a Hero section and choose Campaign under Layout. Open Slides, add up to six slides and use the up/down controls to set their order. For each slide, select a photo or video, add image alternative text and edit the title, subtitle, button text/link and background. Choose Show the whole image to keep a whole cup or product, or Fill the panel; check the resulting crop on both screen sizes. The rounded panels can show a glimpse of the next slide. Autoplay is off by default; if enabled, set the slide duration from 5 to 30 seconds. Previous/next remain available; play/pause stays visible when autoplay is enabled. To adjust panels and hide controls for a manual presentation, see [carousel layout controls](/en/help/website-qr/sections-and-media#campaign-layout-controls). Editor preview stays static. Automatic progression and video pause during hover, focus, dragging, when the section is offscreen or the tab is hidden. Reduced motion prevents automation until an explicit play action. Review keyboard use and both motion preferences. Browser restrictions can prevent automatic video playback. Keep essential information and the order link readable without motion. Wait for draft saving and publish only after checking every slide; if the public view is unsupported, confirm the matching Website release before publishing.
+
+For an installed-app home carousel, open [Mobile experience → App home](/en/help/website-qr/navigation-and-footer#app-home). Use its media and featured product controls to edit that screen.
+
+<span id="campaign-layout-controls" />
+
+## Adjust carousel panels and controls
+
+These controls require compatible Website and Admin versions. In the Campaign hero, open Carousel layout, then set panel width separately for desktop and mobile, from 70 to 100%, then set panel spacing from 0 to 64 px. The active slide stays centered; the selected width determines how much of neighboring slides is visible. Use Navigation controls alignment to choose left, center or right. Use responsive default spacing restores spacing suited to each screen size. You can hide the counter and playback control for a manual presentation. When autoplay is enabled, play/pause remains visible even if its display is switched off. With both autoplay and playback controls off, videos stay on their poster image; the arrows still change slides. Review both screen sizes, keyboard use, reduced motion and every medium before publication.
+
+<span id="campaign-featured-grid" />
+
+## Set the featured product grid
+
+On a compatible release, select the featured-items section, open Layout and color, and choose Campaign under Card presentation. Set the desktop columns and Mobile columns separately; Pink Coffee starts with four columns on desktop and two on mobile. Set the image background and optional alternating image background, then review the rounded image cards, names, descriptions, prices and order buttons. Choose actual catalogue items; the presentation does not create menu visibility or bypass availability, required sizes and modifiers. Check that selecting an item opens the correct item and retains its choices. If an item is absent, review its active status, menu-group membership and channel before changing the design. In manual selection, Select all visible products adds the current filtered results; review the selection and order, then confirm. Clear selection empties that list in the picker. The grid places items across multiple rows. Grid content width sets its maximum width from 640 to 1,800 px; Space between rows sets vertical spacing from 0 to 100 px. Under Individual product backgrounds, choose Product and its Image background: it overrides the shared or alternating background for that product only. Use shared or alternating background restores that background for the selected product only. Each image’s framing and zoom remain editable. Names, descriptions, prices and buttons stay independently configurable. These settings do not change catalogue items, prices or options.
 
 <span id="motion" />
 
@@ -48,7 +88,7 @@ When the invitation is enabled, on mobile and desktop, verify that Order without
 
 ## Access the new controls
 
-The entry sign-in invitation is controlled in Website → Order journey → Show the sign-in invitation on arrival. Off goes directly to pickup/delivery details; when on, Order without an account remains immediately visible. Save the draft and publish to apply this choice. See [the journey setting](/en/help/website-qr/checkout-and-receipt#optional-entry-sign-in). When the invitation is off, a discreet Sign in link remains available in the pickup or delivery dialog. It opens authentication only when selected; dismissing authentication retains entered details and allows ordering without an account.
+With the Order method format selected, customers go directly from their service choice to a separate pickup or delivery screen. The sign-in invitation applies on the Pickup and Delivery screens and in the classic window. On this flow, a compact order header uses the restaurant logo and colors. You can adjust its actions and the product presentation from the order page settings. The entry sign-in invitation is controlled in Website → Order page → Fulfillment → Show the sign-in invitation on arrival. Off goes directly to pickup/delivery details; when on, Order without an account remains immediately visible. Save the draft and publish to apply this choice. See [the journey setting](/en/help/website-qr/checkout-and-receipt#optional-entry-sign-in). When the invitation is off, a discreet Sign in link remains available on the Pickup and Delivery screens and in the classic window. It opens authentication only when selected; dismissing authentication retains entered details and allows ordering without an account.
 
 <span id="featured-variant-choices" />
 

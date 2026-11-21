@@ -5,7 +5,7 @@ apps: both
 tags:
   - staff
   - staff-roles
-updatedAt: '2026-10-21'
+updatedAt: '2026-11-19'
 featureId: staff-roles
 audience: public
 releaseStatus: available
@@ -34,14 +34,20 @@ Affectez le rôle depuis la fiche employé. Vérifiez les pages et actions permi
 
 Vérifiez les employés affectés avant de modifier les permissions ou supprimer un rôle. Respectez les rôles système/propriétaire protégés et contrôlez les accès après enregistrement.
 
-<span id="related-service-controls" />
-
-## Accès aux nouveaux réglages
-
-Paramètres → Consommation et quotas affiche les plafonds et consommations Google/Geoapify du restaurant, accessibles avec la permission de consulter ou modifier les paramètres. Les crédits de remplacement et les livraisons soumises à l’optimisation sont comptés séparément des requêtes. Foody ajuste les plafonds ; un changement ne remet pas les compteurs à zéro. Voir [les règles et le renouvellement](/fr/help/settings/api-usage-and-quotas).
-
 <span id="staff-activation-pos-code" />
 
 ## Code caisse à l’activation du personnel
 
 L’activation du personnel vérifie les permissions affectées dans ce restaurant, y compris les rôles personnalisés : orders.manage ou payments.manage impose un code caisse personnel. Les livreurs en consultation et les rôles limités à la cuisine n’en ont pas besoin. Les invitations existantes encore inutilisées appliquent la même règle actuelle. Modifier le nom du rôle, l’adresse du livreur ou la destination d’une tournée n’accorde aucun droit caisse. Voir [l’activation et la reprise](/fr/help/getting-started/first-login#activate).
+
+<span id="end-of-day-permissions" />
+
+## Autoriser une clôture de journée
+
+Une session personnelle active et payments.manage sont requis sur chaque POS qui participe à la clôture. Inclure le tiroir exige aussi orders.manage. Définir l’iPad principal exige settings.edit sur cet appareil enrôlé. L’API vérifie le terminal et l’appareil affectés avant chaque transmission. Consultez [la clôture et sa reprise](/fr/help/payments/end-of-day).
+
+<span id="commercial-capacity" />
+
+## Vérifier les licences avant un nouvel accès
+
+Pour les offres versionnées de développement, consultez **Licences et postes** avant une invitation ou un changement de rôle. Les nouvelles offres Restaurant comprennent 2 postes POS actifs ; Intégral en comprend 3. Les employés conservent chacun leur compte et peuvent se relayer sur ces postes sans licence caisse nominative supplémentaire. Les accès chef et KDS restent distincts. Un terminal utilisé uniquement pour encaisser ne devient pas un poste de caisse. Les offres historiques ou personnalisées peuvent conserver des quotas nominatifs ou de comptes : le propriétaire et les invitations en attente comptent alors selon ces limites. Une opération dépassant une limite est refusée sans modifier les accès ; le propriétaire examine un ajout dans Facturation puis réessaie. Modifier un rôle ne contourne aucune limite. Consultez les droits réellement accordés, pas seulement le nom de la formule.

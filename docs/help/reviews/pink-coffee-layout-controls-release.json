@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "release": "pink-coffee-layout-controls",
+  "status": "reviewed-source-checkpoints-frozen",
+  "documentationRef": "self",
+  "documentationRevision": "c5ef5fdcb87e46a098fe8bce14fa1f76ed654f76fb80bd7b2ba6e78e3c1593ab",
+  "authorization": {
+    "date": "2026-10-29",
+    "scope": [
+      "commits",
+      "pushes",
+      "one pull request per service into develop",
+      "development deployment",
+      "production promotion of exact development-tested artifacts"
+    ],
+    "stageControl": "Root opens PRs and owns merges/deployment. All source checkpoints, pins and tests must be complete first."
+  },
+  "sourceCheckpoints": {
+    "foodyserver": {
+      "commit": "2992eb6f2dad5e80420212c61ade9e0704115dc2",
+      "sourceSnapshot": "c0af246ca83ab5845e5402b4218fa1be6507e4f133d4539b05ec051653b26cbb",
+      "inventoriedSourceCount": 584,
+      "gitObjectHashErrors": 0
+    },
+    "foodyadmin": {
+      "commit": "e5bc17932f42d73ec96a313cc4b484e083276ea6",
+      "sourceSnapshot": "780e86944a0950f23a95cf4fee63314555d6f7d46a9695ac9f51e2b5f9baa220",
+      "inventoriedSourceCount": 776,
+      "gitObjectHashErrors": 0
+    },
+    "foodyweb": {
+      "commit": "3695bb4a2dc7c2f23705cdce43f9b23e7836653a",
+      "sourceSnapshot": "ddd11f221319331564eb906b10f936e33f22590d8ca249237683f34909bd74f5",
+      "inventoriedSourceCount": 348,
+      "gitObjectHashErrors": 0
+    }
+  },
+  "retainedEvidence": {
+    "inventoryBase": "2cd01f46f75b8a4f6d7bac7cddadead728abb23b",
+    "services": [
+      "foodypos",
+      "foodybackoffice",
+      "foodylanding"
+    ],
+    "scope": "Exact service blocks and surfaces retained; application checkouts are not rescanned."
+  },
+  "supportCorpus": {
+    "source": "docs/help/catalog/public-corpus.json",
+    "embeddedCopy": "foodyserver/internal/support/corpus.json",
+    "sha256": "746f038e948a55e8aff871293804ad121a2b155af5f74b3691abfc0f873bc7cb",
+    "changedTranslations": 12,
+    "changedGuides": [
+      "website-qr/customize-your-site",
+      "website-qr/design-and-branding",
+      "website-qr/navigation-and-footer",
+      "website-qr/sections-and-media"
+    ],
+    "unrelatedArticleChanges": 0
+  },
+  "newRendererCapability": {
+    "campaign_layout_controls": 1,
+    "legacyProtocolAndCampaignFlagsUnchanged": true
+  },
+  "uiEvidenceRef": "e5bc17932f42d73ec96a313cc4b484e083276ea6",
+  "localValidation": {
+    "api": "Complete gofmt/build/vet/race passed after final corpus copy",
+    "admin": "874 tests, lint/types/build and UI save/reload/publication test passed",
+    "website": "608 tests, lint/types/build and 32 Chromium/WebKit cases passed",
+    "landing": "check:help, 47 tests, lint, TypeScript and production build passed",
+    "landingBuildId": "i0FVGTWthkaS_YLKes-dm"
+  },
+  "consumerPinInstructions": {
+    "services": [
+      "foodyserver",
+      "foodyadmin",
+      "foodyweb"
+    ],
+    "target": "Resolve self to this immutable Landing commit SHA before remote CI. Landing keeps self; do not create a self-reference commit cycle."
+  },
+  "releaseGates": [
+    "All help contracts agree with the actual immutable documentation snapshot.",
+    "All required PR checks pass before merging.",
+    "Deploy API, then compatible Website before Admin.",
+    "Match the public help corpus and API support revision before promotion.",
+    "Verify development and promote those exact artifacts without rebuilding."
+  ]
+}

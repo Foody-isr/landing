@@ -7,7 +7,7 @@ apps: foodypos
 tags:
   - orders
   - pos-comp-void
-updatedAt: '2026-10-26'
+updatedAt: '2026-10-29'
 featureId: pos-comp-void
 audience: public
 releaseStatus: available
@@ -48,6 +48,8 @@ Choose Comp/Offer and the required reason, then review the title and scope befor
 
 Use Void only for eligible unpaid food and supply its reason. Prepared/completed food or a paid/claimed fraction can prevent cancellation. For sent food, verify the cancellation result and kitchen ticket rather than deleting a draft line. Void is not a payment refund.
 
+In Menu → Actions, Void check applies to the eligible open check. For an item already sent, open that line’s options. Clear items removes only local unsent lines after confirmation.
+
 <span id="counter-terminal-payment-before-kitchen" />
 
 ## Wait for counter card payment before kitchen preparation
@@ -65,3 +67,23 @@ An item configured with repeated positions requires one separate choice per posi
 ## Access item options on mobile
 
 On the updated mobile POS, open the line and use ⋯ at the top of the item summary for permitted options, including Comp or Delete for an eligible draft. Existing reasons and permissions still apply. Done closes the panel and returns to the summary. Whole-check discounts and operations remain under Actions. The presentation change does not make sent lines editable or enable refunds.
+
+<span id="uncertain-intent-and-operational-facts" />
+
+## Verify the check before a correction
+
+Reopen the intended check or order and verify its recorded state before a discount, comp or void. Payment remains separate from preparation; a refund does not prove kitchen work was cancelled. Do not edit a basket to bypass an unconfirmed send: [verify its saved result first](/en/help/orders/taking-an-order-pos#resume-local-draft). Use only corrections offered under your permissions. This verification creates no credit note, collection or automatic kitchen cancellation.
+
+<span id="independent-lifecycle-confirmations" />
+
+## Review independent confirmations
+
+In a saved order’s actions, review preparation and handoff separately from payment. Handoff review selects the actual physical units; financial splitting does not multiply them. Before closure, review the exact check or financial portion and its confirmed balance. A closed scope refuses new commercial changes; another open batch is not closed by that action. See [tracking and confirmations](/en/help/orders/payment-preparation-and-handoff).
+
+Use this workflow when the saved order’s fulfillment view offers handoff. For an open table, named or split check in Menu, verify dispatch in Check and preparation at the expo KDS.
+
+<span id="card-collection-recovery" />
+
+## Respect a pending card collection
+
+An unresolved native card collection keeps its original order and terminal reserved. Do not change its financial contents or start another tender; kitchen progression and fulfillment settings remain independent. See [Mini/Portable selection and recovery](/en/help/payments/victa-mini#explicit-terminal-selection).

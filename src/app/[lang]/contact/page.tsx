@@ -4,6 +4,8 @@ import ContactForm from "@/components/marketing/ContactForm";
 import Icon from "@/components/marketing/Icon";
 import { marketing } from "@/lib/marketing/content";
 import { ui } from "@/lib/marketing/ui";
+import { companyCopy } from "@/lib/marketing/company";
+import { publicContact } from "@/lib/marketing/resources";
 import { resolveLang } from "@/lib/seo";
 
 /** Lead acquisition page for restaurant, chain and retail enquiries. */
@@ -33,6 +35,7 @@ export default async function ContactPage({
             <span className="partner-dot" />
             <span>{ui[lang].partner}</span>
           </div>
+          <div className="contact-official-details"><h2>{companyCopy[lang].phone}</h2><a href={`tel:${publicContact.phone}`} dir="ltr">{publicContact.displayPhone}</a><h2>{companyCopy[lang].hoursTitle}</h2><p>{companyCopy[lang].hours}</p><p className="fine-print">{companyCopy[lang].hoursNote}</p></div>
           <div className="contact-email">
             <span>{t.emailLink}</span>
             <a href="mailto:mickael@foody-pos.co.il">mickael@foody-pos.co.il</a>

@@ -5,12 +5,18 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-10-28'
+updatedAt: '2026-11-19'
 featureId: platform-api
 audience: internal
 releaseStatus: available
 ---
 Équipe technique : consultez AGENTS.md, README, contrat API et workflow du service.
+
+<span id="loyalty-wallet-customer-issuance" />
+
+## Vérifier l’émission des cartes de fidélité personnelles
+
+Appliquez les migrations 322 et 334 avec la livraison de l’API. Publiez un visuel Wallet enregistré pour le restaurant de test et activez son programme de fidélité. Activez l’API Wallet et le fournisseur prévu pour l’environnement. Demandez une carte avec un compte membre authentifié et répétez l’opération pour vérifier la stabilité de son identifiant. Lorsque Google est activé, vérifiez que l’API sert uniquement les images des versions publiées. Masquez le nom du restaurant, enregistrez la bannière puis publiez le visuel. Sur la carte d’un membre, vérifiez la bannière, la mention Foody près du QR et le lien dans les détails. Vérifiez l’ajout sur les appareils Apple et Google avec la configuration de chaque fournisseur. Appliquez la migration 335 avant de déployer l’éditeur de cadrage. Enregistrez une nouvelle photo dans le brouillon privé, rouvrez-la et ajustez chaque Wallet. Vérifiez la position choisie du compteur sur la carte Apple de test et comparez chaque image publiée à son aperçu.
 
 <span id="verifone-admin-money-operations" />
 
@@ -26,7 +32,13 @@ Après une restitution totale vérifiée dans l’historique lié de Verifone, l
 
 ## Garder la page de paiement lisible
 
-Un superadmin ouvre Restaurant > Payment > Verifone dans Backoffice et enregistre les réglages de paiement avant de choisir Synchronize published logo and colors. La synchronisation utilise uniquement le logo publié et la couleur de marque ou du bouton sélectionné. HPP utilise toujours une page claire, des panneaux blancs et du texte foncé ; les couleurs trop pâles sont assombries pour atteindre au moins 4,5:1 de contraste sur la page et les panneaux. Après installation de la version API avec cette règle de contraste, resynchronisez les restaurants déjà activés dans l’environnement autorisé ; l’ancien thème est signalé comme obsolète. Vérifiez le logo, les chiffres saisis, les labels, les erreurs et les icônes, sur mobile et en français, hébreu et anglais, sans soumettre de transaction non autorisée. Les couleurs du site et les fenêtres natives des wallets restent inchangées. Le nouveau thème propre au restaurant ne devient pas le thème par défaut de l’organisation et ne concerne que les nouveaux liens Checkout. Les liens existants et l’état financier sont conservés ; vérifiez le paiement avant toute nouvelle tentative. Aucune mise à jour groupée de production sans autorisation.
+Un superadmin ouvre Restaurant > Payment > Verifone dans Backoffice et enregistre les réglages de paiement avant de choisir Synchronize published logo and colors. La synchronisation utilise uniquement le logo publié et la couleur de marque ou du bouton sélectionné. Le thème HPP synchronisé utilise une page claire, des panneaux blancs et du texte foncé ; les couleurs trop pâles sont assombries pour atteindre au moins 4,5:1 de contraste sur la page et les panneaux. Après installation de la version API avec cette règle de contraste, resynchronisez les restaurants déjà activés dans l’environnement autorisé ; l’ancien thème est signalé comme obsolète. Vérifiez le logo, les chiffres saisis, les labels, les erreurs et les icônes, sur mobile et en français, hébreu et anglais, sans soumettre de transaction non autorisée. Les couleurs du site et les fenêtres natives des wallets restent inchangées. Le nouveau thème propre au restaurant ne devient pas le thème par défaut de l’organisation et ne concerne que les nouveaux liens Checkout. Les liens existants et l’état financier sont conservés ; vérifiez le paiement avant toute nouvelle tentative. Aucune mise à jour groupée de production sans autorisation.
+
+<span id="link-verifone-central-theme" />
+
+## Rattacher un thème Checkout créé dans Verifone Central
+
+Dans Verifone Central, ouvrez Administration > Checkout Themes et enregistrez un thème dans l’organisation et l’environnement Verifone du restaurant (CST ou production). Dans le Backoffice, ouvrez Restaurant > Payment > Verifone en tant que superadmin et enregistrez la configuration de paiement. Sous Hosted payment page appearance, saisissez le nom exact ou l’UUID dans Verifone theme name or ID, puis cliquez sur Link Verifone theme. Si plusieurs thèmes portent le même nom, saisissez l’UUID. Foody vérifie l’organisation et l’environnement et applique le thème sélectionné aux nouveaux liens Checkout. Pour modifier le thème, enregistrez vos changements dans Verifone Central et vérifiez le rendu sur un nouveau lien de test dans l’environnement autorisé. Pour utiliser le thème par défaut du compte Verifone, décochez Use the selected Checkout theme et enregistrez la configuration de paiement. Si le thème sélectionné a été supprimé dans CST, rattachez un thème disponible ou utilisez celui du compte. Pour un thème créé depuis le site du restaurant, Synchronize published logo and colors vérifie sa présence chez Verifone et le recrée si nécessaire.
 
 <span id="weight-hold-margin" />
 
@@ -39,6 +51,18 @@ Le champ public expected_hold_amount_minor est vérifié contre les lignes serve
 ## Vérifier les contrats des transactions et du tiroir-caisse POS
 
 Déployez et validez les migrations et routes API liées au restaurant avant d'activer Transactions et les rapports de tiroir-caisse sur le POS. Le registre distingue chaque paiement initial de sa commande : une commande peut avoir plusieurs paiements et un paiement couvrir plusieurs commandes. L'admissibilité au remboursement repose sur l'identifiant du paiement initial sélectionné, son mode, son montant et l'état fournisseur vérifié ; ne la déduisez jamais du seul statut de commande. Un remboursement en espèces concerne uniquement un paiement initial en espèces et est enregistré dans une session de caisse ouverte avec une clé d'idempotence. Un résultat fournisseur inconnu reste en attente de rapprochement ; ne le convertissez pas silencieusement en réussite et ne relancez pas un nouveau remboursement.
+
+<span id="verifone-cst-card-form-contract" />
+
+## Vérifier les paiements ponctuels Verifone.js dans CST
+
+Appliquez la migration 317 avant d’utiliser les réglages Backoffice du formulaire carte. La capacité publique et la clé de chiffrement sont liées au restaurant. Une tentative exige un accès vérifié à la commande et la configuration CST de ce restaurant. Foody enregistre le montant et une clé d’idempotence unique avant la vente. Relisez la transaction et vérifiez l’opération, le montant, la devise et la référence avant de contrôler la préparation. Si la réponse se perd, rapprochez la transaction par son identifiant ou attendez la confirmation de l’annulation technique. Vérifiez les exigences ABS de CVV et d’identité avec une carte CST Verifone, ainsi que l’émission Invoice4U si elle est configurée. L’activation en production nécessite les clés et contrats de production, la validation des exigences 3DS avec Verifone et l’évaluation des obligations SAQ A-EP décrites dans la documentation Verifone.js. Dans les versions proposant Card payment flow, testez aussi une seconde commande après avoir sélectionné Verifone Checkout. Vérifiez que Foody ouvre le lien hébergé et que le choix du second restaurant reste identique. Pour un client connecté qui choisit d’enregistrer sa carte, vérifiez une seule vente du montant total avec token_preference et le token scope du restaurant. Après vérification de la vente auprès de Verifone, le jeton réutilisable est lié au compte client et au restaurant. Rejouez la notification de test et vérifiez qu’il existe toujours un seul paiement et une seule carte enregistrée.
+
+<span id="verifone-direct-wallet-contract" />
+
+## Valider les wallets Verifone en intégration directe
+
+Appliquez la migration 318 avec l’API avant d’activer les wallets. La validation marchande Apple utilise le nom d’hôte exact configuré et le point d’entrée Apple fixé par Verifone pour cet environnement. Le domaine de commande sert le fichier d’association public sous /.well-known/. Foody envoie le jeton de passerelle Google pour Verifone ou le champ paymentData d’Apple à l’API wallet Verifone. Vérifiez le montant fixe en ILS, la propriété de la commande, la politique SCA wallet et la lecture de la vente auprès de Verifone. Testez l’annulation, le refus et les confirmations différées en attendant l’issue d’un débit incertain. Les wallets concernent les commandes web à emporter ou en livraison payées immédiatement. Vérifiez une autorisation CST réelle et l’émission du reçu pour chaque contrat avant d’activer l’option correspondante en production.
 
 <span id="contracts" />
 
@@ -86,7 +110,9 @@ Le suivi du correctif de clavier natif doit publier les procédures de saisie co
 
 ## Résoudre les suggestions de rue Google
 
-Google peut renvoyer un identifiant canonique différent pour un segment de rue. Accepter cette différence uniquement pour une rue sans numéro, après validation du pays et de la réponse du fournisseur. Cette précision ne reçoit ni preuve de livraison ni coordonnées : le client doit encore sélectionner une adresse complète. Conserver la correspondance exacte d’identifiant pour les adresses complètes, les signatures liées au restaurant et au visiteur, les limites de session et les budgets. Tester les rues canoniques, les pays étrangers, les identifiants absents ou invalides et le rejet des adresses complètes d’un autre lieu. Vérifier une recherche de rue et une adresse avec numéro après promotion. Référence fournisseur : https://developers.google.com/maps/documentation/places/web-service/place-id#obsolete
+Une suggestion Google numérotée qui se résout en rue peut servir de preuve postale après rapprochement de la rue et de la ville. Conserver le numéro sélectionné et vérifier la zone à chaque commande. Un segment de rue ne fournit aucune position d’entrée. En cas d’indisponibilité de Places ou de liste vide, une recherche numérotée peut proposer des bâtiments avec rue, numéro, ville et pays concordants issus du géocodage Google. Une sélection reste liée au restaurant et au texte par sa signature.
+
+[Consulter la procédure sur téléphone](/fr/help/guest/online-ordering#mobile-fulfillment).
 
 <span id="customer-social-sign-in" />
 
@@ -171,3 +197,173 @@ Les routes staff POST /api/v1/menu/items/:id/sales-stock/availability et POST /a
 ## Source explicite du stock et réservations
 
 La migration 279 ajoute stock_from_recipe à menu_items et item_stock_series, false par défaut : les configurations existantes gardent leur logique. POST /api/v1/menu/items/:id/sales-stock/restock avec stock_source=recipe, mode vide, unité vide, quantité null et expected_revision sélectionne réellement la recette. Le champ optionnel availability_rule_id peut être confirmé dans la même transaction sous verrou stock/commandes. Un conflit, une règle étrangère/supprimée ou une erreur annule tout. Les compteurs manuels dormants et les snapshots des commandes sont conservés ; les nouveaux calculs et réservations ignorent leur limite. Revenir à un mode manuel réactive les compteurs et adopte les nouvelles commandes sans perdre leurs prélèvements d’ingrédients/préparations. Les conversions de série existantes restent révisées et atomiques. Une conversion de compteur global non prouvable depuis des prélèvements historiques échoue avec stock_conversion_unavailable, sans les réinterpréter. La vente de stock déjà préparé doit être désactivée avant de sélectionner la recette. Les réponses publiques normalisent les champs manuels inactifs ; le staff reçoit stored_mode/stored_unit et recipe_configured pour l’éditeur. Les autres clients ignorent les champs ajoutés et conservent leurs contrats. Aucun changement de droits ni d’environnement. Déployer API avant Admin puis promouvoir les mêmes artefacts vérifiés en développement. GET /api/v1/availability/items/:id/preview accepte serie_date en option pour expliquer la série affichée ; une date invalide renvoie 400. Le détail et le statut utilisent la même source active et les mêmes compteurs, sans mutation.
+
+<span id="order-lifecycle-scoped-contract" />
+
+## Contrat borné de progression et de reprise
+
+La projection lifecycle schema_version 1 conserve quatre axes indépendants, un scope explicite et ses identités. Une lecture publique contient seulement l’Order demandé. Les vues addition/session sont de vrais agrégats, pas la copie d’un lot représentatif. Absent sur un ancien serveur permet le mode historique explicite ; présent invalide ou indisponible exige inconnu/réessayer sans repli financier. pending signifie paiement attendu et ne prouve pas un attempt actif ; il conserve l’éligibilité existante. Une autorisation bancaire, un claim réellement actif ou un journal au résultat incertain conserve ses protections et son parcours de résolution. Les faits de préparation payée ne rouvrent ni paiement ni table. Les brouillons restent dans le stockage sécurisé par compte, restaurant, serveur et installation. Déployer la migration additive 280_check_submission_recovery_scope.sql avant les clients ; conserver la référence et les articles pour une reprise idempotente explicite, jamais un renvoi automatique après redémarrage. Une fusion financière exige de consulter l’ensemble de l’addition canonique avant de lancer ses plats.
+
+L’admission d’une nouvelle occupation sans session canonique utilise start_if_free:true uniquement après la capacité booléenne table_service_start_if_free. La vérification et l’ouverture sont atomiques : si une occupation apparaît après le choix des couverts, la réponse 409 details.code=table_service_changed ne modifie pas les couverts ni la session existants. Une vérification indisponible retourne 503 table_service_unavailable ; une table inconnue reste 404. Le POS conserve son brouillon, restaure sa sélection antérieure et revient à la revue du plan ; il ne force pas l’ancien contexte. Sans capacité sur une ancienne API, la nouvelle admission protégée reste indisponible. Le contrat historique sans ce flag ou avec false conserve son comportement ; ce n’est pas une protection nouvelle appliquée rétroactivement aux anciens clients. Déployer l’API avant le POS compatible.
+
+<span id="personal-shift-end-preflight" />
+
+## Vérifier la période personnelle avant déconnexion
+
+Déployer l’API avant le POS. GET /restaurants/:id/shifts/end-preflight est une lecture personnelle liée au JWT et au restaurant : DTO direct schema_version:1, state ready/report_required/no_active_shift. shift_id est un entier positif requis pour ready/report_required et doit être absent pour no_active_shift. Aucune donnée de contact, montant ou autorisation d’appareil n’est exposée. La référence historique peut être expirée/révoquée/sans liaison matérielle si elle existe dans le restaurant ; cela ne rétablit aucun accès caisse. Référence numérique manquante/étrangère : 409 shift_pos_reference_invalid ; erreur ou ambiguïté : 503 shift_end_preflight_unavailable. Une période non-POS avec référence nil conserve sa fin légitime.
+
+Le nouveau client confirme ready puis POST end avec expected_shift_id ; absence du champ conserve le contrat historique. La mutation reverrouille et revérifie la période et sa caisse : remplacement/disparition donne 409 shift_changed, caisse ouverte 409 cash_drawer_open, résultat de stockage non confirmé de la nouvelle voie 503 shift_end_unavailable. Les erreurs héritées ne renvoient aucun détail SQL. no_active_shift exige une confirmation distincte, un nouveau GET personnel et la même connexion avant verrouillage local, sans POST end. Le journal espèces local du restaurant/serveur reste prioritaire ; une fin incertaine conserve sa vérification dédiée GET current avant toute nouvelle intention. Les journaux Verifone restent séparés. Route absente, version/forme/état inconnus ou erreur bloquent sans repli financier. Aucun changement de migration, d’enrôlement ou de liaison caisse ; aucun résultat préliminaire ne remplace les protections de mutation.
+
+<span id="prepared-sumit-checkout-integration" />
+
+## Intégration du panier préparé Sumit
+
+La préparation locale des commandes internes Sumit ajoute capacité, panier GET/POST et devis de livraison sous /api/v1/public, avec restaurant explicite et jeton privé de reçu. La création exige orders.manage ; la saisie hébergée dans Admin exige aussi payments.manage. Le fournisseur actif et les identifiants Sumit configurés sont revérifiés avant ouverture. Le devis destinataire utilise zone résolue au serveur, frais, minimum et date conservée ; le paiement compare expected_total_minor à un nouveau total serveur. Une réservation durable lie coordonnées et URL fournisseur. Une création incertaine reste bloquée ; l’expiration utilise l’annulation avec libération du stock. Déployez l’API compatible avant Admin/Web et publiez les guides coordonnés. Voir le parcours Sumit.
+
+<span id="prepared-order-existing-cart" />
+
+## Panier préparé et présentation du restaurant
+
+Un lien privé de commande préparée Sumit rejoint le panier habituel du restaurant, puis son formulaire de paiement avec les couleurs, polices et champs publiés. Le panier personnel du navigateur reste conservé ; les articles, prix et date préparés sont figés. Les coordonnées et réponses demandées concernent cette commande, sans chargement d’un compte ou d’une carte enregistrée. Les réponses personnalisées sont liées lors de la première ouverture du paiement. Les frais de livraison sont recalculés puis vérifiés avant paiement. Voir la [procédure Sumit](/fr/help/orders/internal-sumit-checkout).
+
+<span id="delivery-weekday-contract" />
+
+## Calendriers de livraison par jours
+
+ Le calendrier de zone accepte days (jours 0–6 uniques, au moins un) ou le format historique windows, sans mélange des deux. Les nouveaux créneaux utilisent les horaires et réglages du restaurant, filtrés par les jours de zone. Les windows historiques fournissent uniquement leurs jours pour les nouvelles réservations. Le serveur vérifie à nouveau le calendrier, les articles et leur restaurant à la création ; les affectations existantes utilisent la disponibilité figée de la commande. Le devis d’un panier préparé recontrôle jours et créneaux sans nouveau délai de production ; frais, minimum et autorisation restent contrôlés séparément. Aucun changement de schéma ni migration de données n’est requis. Déployez l’API avant les clients compatibles et publiez l’aide avec le produit après vérification en développement. Cette préparation locale ne confirme aucun déploiement.
+
+<span id="option-choice-requirement" />
+
+## Contrat des choix de variante facultatifs
+
+selection_config.required est un booléen facultatif propre au lien article/groupe descriptif. Absent ou null, il conserve un choix obligatoire par position ; false autorise les positions vides sans fabriquer de sélection. Les choix fournis restent soumis à la propriété restaurant/article/groupe, à l’activité, aux positions visibles, à l’unicité et aux précisions requises. Les groupes tarifés et modificateurs ne peuvent pas utiliser ce champ pour contourner leurs règles. Le JSON existant est conservé sans migration. Validez API, web, POS et Admin ensemble ; déployez l’API puis les consommateurs compatibles avant d’exposer le réglage Admin. Conservez les catalogues existants et publiez les trois traductions avec la version.
+
+<span id="order-lifecycle-v2-contract" />
+
+## Contrat additif des confirmations de commande
+
+Le champ lifecycle v1 est conservé. La capacité order_lifecycle_v2 annonce lifecycle_v2 : lecture explicite par portée, montants nullable avec devise/exposant et politiques figées. Les opérations de remise et clôture revalident acteur, restaurant, affectation, révision et unités sous verrous et enregistrent le même request_id atomiquement. GET operation confirme le journal original ; une absence reste non confirmée et ne justifie pas un nouvel identifiant. Les réponses publiques contiennent seulement la propre commande, sans portées parentes, unités privées ou actions staff. Les journaux de paiement existants restent seuls compétents pour l’argent.
+
+<span id="end-of-day-protocol" />
+
+## Publier le contrat EOD avant le POS
+
+Le contrat end-of-day v1 et la migration additive 285 introduisent begin, current, lecture par ID, terminal-result et finalize sous /orders/end-of-day. Les écritures conservent leurs UUID et vérifient restaurant, acteur, autorisation physique et installation. La capacité end_of_day est une déclaration de support, sans permission de paiement. La transaction serveur réserve le comptage et les identités de terminal ; elle ne contacte aucun prestataire. Dispatched précède l’appel natif et un résultat inconnu ne redevient pas une autorisation de transmettre. Une confirmation durable peut être réenregistrée avec la même identité. Finalize crée le rapport opérationnel immuable et ferme la caisse réservée atomiquement, sans pointage ni clôture commerciale. Publier l’API avant le POS, valider en développement puis promouvoir les mêmes artefacts. Les callbacks Ashrait actuels ne justifient aucun total, numéro de lot ni certificat fiscal inventé. Conserver les anciens journaux et les vérifications de droits et de provenance. Voir docs/contracts/end-of-day-v1.json et le guide public payments/end-of-day.
+
+<span id="ordering-simulation-clock" />
+
+## Évaluer un panier avec une heure simulée privée
+
+Les endpoints authentifiés GET/POST /api/v1/delivery/ordering-simulation partagent les résolveurs de couverture et de calendrier existants. GET retourne le fuseau effectif du restaurant et l’instant serveur sans cache ; POST reçoit une minute locale ordered_at et le panier actuel. Les accès aux réglages, au menu et à la gestion des commandes sont requis dans le périmètre du restaurant ; appartenance des articles, limites de requête/quantités et activation du service sont vérifiées. Les minutes inexistantes ou répétées au changement d’heure sont refusées. Les requêtes publiques de livraison/calendrier et les commandes réelles n’acceptent jamais cette heure forcée. Les règles et le stock prêt actuels servent d’hypothèses sans reconstituer l’historique ; le test ne crée aucune commande, réservation de stock, opération de paiement ou notification.
+
+<span id="scheduled-acceptance-capability" />
+
+## Compatibilité de l’acceptation programmée
+
+Le descripteur lifecycle_v2.actions autorise accept pour scheduled comme pour pending_review, avec orders.manage et sans settlement held. Les blocages de checkout préparé restent appliqués ensuite. Aucun nouveau writer : POST /orders/:id/accept appelle toujours AcceptOrderWithWorkflow et setStatus, qui gardent les contrôles, notifications et raccourcis propres au restaurant. Aucun envoi automatique avant date n’est ajouté ; seule une action explicite peut avancer la commande. Date, créneau et paiement restent inchangés. Déployer l’API corrigée en développement et vérifier les workflows séparé et guidé avant toute promotion approuvée. Aucun changement de schéma ou de client n’est requis pour les clients qui suivent déjà les capacités. La documentation de cette correction doit être publiée avec sa version API. Pour scheduled uniquement, payment_status=pending garde accept non autorisé ; pending_review conserve son comportement existant.
+
+<span id="pos-terminal-collection-contract" />
+
+## Réserver l’encaissement physique avant l’envoi natif
+
+Sur iPad, choisissez Carte sur la commande ou l’addition financière existante, vérifiez la fenêtre du terminal de paiement puis confirmez explicitement Mini ou Portable. Le terminal configuré par défaut est présélectionné ; aucun autre appareil connecté ne le remplace automatiquement. Annuler n’envoie aucun paiement. Sur un Victa Portable exécutant FoodyPOS, ouvrez cette même commande ou addition enregistrée et utilisez son lecteur intégré. Ne recréez pas la vente. Une réservation serveur protège le terminal physique et les commandes sélectionnées pendant l’encaissement. Un autre appareil ou moyen de paiement doit attendre. Les commandes QR conservent leurs identifiants et paiements séparés.
+
+Si le résultat est inconnu, conservez le POS et le terminal d’origine puis reprenez l’opération existante. Ni le temps écoulé ni un redémarrage n’autorisent un nouveau débit. Un refus ou une annulation définitive permet un nouvel essai revu. Une approbation confirmée doit être enregistrée avec sa réservation d’origine avant libération. Ce changement concerne le choix de destination, sans modifier les réglages d’impression existants ; validez le matériel, le contrôle distant du Portable et l’impression intégrée avec Verifone.
+
+<span id="scoped-end-of-day-report-history" />
+
+## Lire les références des rapports POS finalisés
+
+GET /orders/end-of-day/history exige payments.manage et une installation POS enrôlée courante. Il retourne au plus vingt références de rapports finalisés et leurs périodes figées pour ce POS, des plus récents aux plus anciens. GET /orders/end-of-day/:id lit le rapport exact dans ce périmètre. Ces lectures ne libèrent aucune clôture active et ne transmettent aucune opération terminal. La capacité end_of_day_history protège la compatibilité. Les nouveaux instantanés carte conservent une devise seulement avec les preuves concordantes de la vente originale ; les rapports archivés ne sont pas réécrits avec la devise actuelle du restaurant.
+
+GET /orders/end-of-day/preview lit la période et les encaissements carte attribuables du POS sans réservation. end_of_day_preview annonce cette capacité. L’historique commun retourne kind=cash ou end_of_day, exclut les doublons de tiroirs inclus dans un Z et reste limité au POS authentifié.
+
+<span id="manual-production-plan-choice" />
+
+## Choix staff du plan de production
+
+POST /api/v1/orders accepte le booléen staff facultatif production_plan. Son absence conserve les règles antérieures. False exclut la commande du tableau de production et du comptage des jours, y compris après paiement, programmation ou changement automatique de force_production. True ajoute une commande manuelle sans paiement hébergé ; un lien préparé ordinaire attend encore un paiement collecté et un événement conserve ses conditions de confirmation. Le serveur possède external_metadata.production_plan et refuse son injection directe. La création publique efface le champ et un appel de service invité ne peut pas le fournir. Les actions staff explicites d’ajout/retrait manuel remplacent le choix initial et rétablissent les règles existantes d’ajout manuel/automatique. Aucun modèle de réponse partagé ni migration ne change ; les anciens clients POS et invités peuvent omettre ce champ optionnel.
+
+<span id="device-receipt-contract" />
+
+## Déployer la demande de reçu par appareil
+
+Préparation locale : appliquer la migration 289 et déployer l’API compatible avant le POS. La capacité receipt-capabilities annonce device_receipts_version=1 ; les clients mis à jour transmettent receipt_on_request=true aux règlements ordinaires simples ou groupés. Le paiement est enregistré avec ses journaux existants, sans reçu automatique supplémentaire. Le POST staff /restaurants/:id/printing/spooler/receipts exige orders.manage et un contexte restaurant identique. Il lie request_id, spooler_id, order_ids payés, printer_ids affectés et locale à une demande immuable ; une reprise exacte retourne les travaux initiaux et une intention différente renvoie 409. La preuve d’appartenance du terminal intégré reste exigée. Le GET de statut est en lecture seule et n’envoie aucun document. Les anciens clients et les partages financiers conservent leurs contrats ; la cuisine reste séparée. Les tests synthétiques ne certifient pas l’installation physique ni une livraison en production. Valider en développement avant promotion approuvée du même artefact.
+
+<span id="terminal-fleet-declarations" />
+
+## Déclarations du parc de terminaux
+
+Dans Backoffice → Payments & devices → Terminal fleet, recherchez par restaurant, nom ou identifiant. Activez **Show forgotten terminals** pour afficher les entrées oubliées. Pour inventorier un Mini configuré sur un iPad, choisissez Register a Mini et saisissez le restaurant, le nom et le numéro de série physique. Dans Edit inventory, renseignez le DID (VHQ Device ID) et le numéro de terminal SHVA (Mispar Masof). Chaque terminal en production a son propre numéro SHVA. Saisissez un identifiant de connexion Ashrait distinct si Verifone en a fourni un. L’enregistrement consigne la révision et un événement d’audit. Utilisez Change requests pour appliquer un changement de provisionnement au terminal physique.
+
+L’inventaire réservé au personnel peut inclure un composant payment_terminal avec une clé physical_key dérivée du numéro de série du parc. Les versions POS compatibles l’utilisent pour rapprocher un profil réseau vérifié de la fiche du même appareil. L’inventaire renvoie uniquement la clé dérivée pour cette opération.
+
+La fiche est partagée avec FoodyPOS. Le POS lit et modifie le numéro de série déclaré, le DID et le numéro SHVA dans le périmètre du restaurant et avec le droit de gérer les paiements. La recherche opérationnelle renvoie uniquement le numéro SHVA du terminal identifié. La réservation d’un paiement ou d’une clôture protège la configuration utilisée contre une modification concurrente.
+
+<span id="terminal-fleet-change-requests" />
+
+## Préparer un changement de terminal
+
+Ouvrez Change requests sur le terminal d’origine. Choisissez un changement de configuration bancaire, un remplacement dans le même restaurant ou le transfert vers un autre restaurant pour un appareil déclaré Returned. Sélectionnez la destination si nécessaire, saisissez les identifiants demandés et choisissez Prepare change. Comparez dans l’historique la déclaration du terminal cible et les valeurs demandées. Le dossier conserve les numéros de série, l’auteur, l’heure et les révisions. Si une déclaration change avant l’enregistrement, actualisez l’inventaire puis revérifiez la demande. Pour annuler une demande inutilisée, ouvrez l’historique du terminal d’origine. Le statut Prepared enregistre le changement proposé dans Foody. Son application et la vérification de la configuration bancaire nécessitent la procédure régionale Verifone et une validation CST.
+
+<span id="terminal-fleet-cst-maintenance" />
+
+## Tester la maintenance Ashrait sur un terminal CST
+
+Procédure CST interne. Autorisez les terminaux physiques vérifiés sur l’API avec les migrations 309 à 312 et utilisez un build POS de diagnostic compatible. Résolvez les paiements en attente et le lot précédent. Dans Backoffice → Terminal fleet → Change requests, préparez un changement sur le même appareil et le même restaurant avec les valeurs attribuées par Verifone. Gardez l’identifiant de connexion courant comme configuration de départ. Autorisez le DID uniquement s’il change ; FoodyPOS envoie SetVhqDeviceId avec le DID demandé. Après l’accusé de réception, ou directement pour un changement SHVA seul, autorisez le téléchargement des paramètres. Si le numéro SHVA change, le POS utilise le nouveau numéro pour DownloadAshraitParameters. Aucun compte API VHQ direct n’est nécessaire. Lisez les valeurs appliquées sur le bon terminal et enregistrez la vérification dans Backoffice. La nouvelle configuration devient alors disponible pour la synchronisation normale du POS. Si le résultat est inconnu, enregistrez le résultat conservé ou vérifiez l’état sur le terminal d’origine avant toute nouvelle autorisation. Le remplacement et le transfert restent des procédures distinctes.
+
+Sur le Mini et le Portable, vérifiez la reprise d’une vente CST interrompue depuis l’addition d’origine. Un débit corrélé déclenche un Void 400. Attendez sa confirmation avant un nouvel encaissement. Depuis Transactions sur le POS d’origine, vérifiez aussi un remboursement total ou partiel et contrôlez le couple 53 / MTI 100 dans la trace CST.
+
+Depuis l’iPad désigné, clôturez les ventes CST avec les deux appareils actifs. Comparez les cas où ils partagent le même numéro SHVA et où les numéros diffèrent. Comptez une transmission par numéro et une actualisation des paramètres par appareil. Vérifiez les montants et le nombre d’opérations dans le Z et réimprimez chaque rapport SHVA depuis l’historique.
+
+<span id="configurable-fulfillment-compatibility" />
+
+## Préparer les contrats de disponibilité configurables
+
+Préparation locale : le stock prêt nullable, daté et révisionné et les échéances facultatives par zone ne configurent aucun restaurant automatiquement. Les API privées vérifient le restaurant et les permissions existantes. Les calendriers publics et la soumission de commande restent autoritaires ; les quantités privées ne sont pas ajoutées au contrat public des articles. Les reliquats historiques par série utilisent la série opérationnelle pour affichage et réservation, indépendamment de la série suivante en précommande. Vérifier les valeurs par défaut, courses de réservation, libérations avant production, anciennes interfaces et traductions ; ne changer ni les fournisseurs de paiement, ni les commandes existantes. La migration 288 et l’API doivent précéder Admin/Web. Exporter le corpus identique après validation et épingler le commit Landing immuable revu avant la CI. Vérifier les artefacts develop, puis promouvoir ces mêmes artefacts selon le processus de livraison autorisé ; la revue des sources seule n’atteste pas la disponibilité en production.
+
+<span id="current-pos-financial-context" />
+
+## Authentifier le contexte financier du POS courant
+
+Les clients compatibles envoient X-Foody-POS-Token uniquement à l’API de commandes authentifiée de confiance et à leurs routes de fin de période/précontrôle, jamais aux destinations publiques ou redirigées. L’API ne conserve que l’empreinte dans une copie de service propre à la requête, vérifie restaurant, expiration, révocation et installation, puis verrouille la période et les autorisations d’origine/courante dans un ordre stable. Le pointage ne change pas. Sans preuve, la règle historique reste appliquée ; une preuve explicite invalide est refusée. Espèces, clôture, réservations carte et portions financières partagent cette identité. La déconnexion conserve les obligations des deux caisses. Déployer l’API avant les clients ; aucune migration ni configuration d’environnement.
+
+<span id="courier-stop-results" />
+
+## Contrat de navigation et de résultat livreur
+
+Déployez la migration 313 avant l’API et l’Admin compatibles. Les actions de navigation et de signalement contrôlent le restaurant, la tournée active et le livreur affecté. La navigation enregistre l’arrêt dont le résultat est attendu. Une tournée ne peut avoir qu’un seul arrêt en attente de ce résultat. Un signalement conserve une tentative infructueuse dans le journal sans terminer la commande. Celle-ci sort de la sélection automatique du livreur et du suivi GPS côté client jusqu’au départ d’une nouvelle tournée. Un responsable peut envoyer un rappel push aux appareils enregistrés du livreur affecté.
+
+Les réponses du mode livreur masquent le tracé et les données client hors de l’arrêt ouvert. Les comptes livreur reçoivent des signaux de rafraîchissement sans données de commande sur le canal temps réel. Cette correction réutilise la migration 313 déjà appliquée.
+
+<span id="reset-order-and-cash-test-data" />
+
+## Réinitialiser les données de commande et de caisse d’un restaurant de test
+
+Depuis le dépôt API, lancez scripts/cleanup_orders.sh avec --yes et --restaurant-id pour le restaurant de test voulu. Vérifiez l’adresse de la base et le restaurant avant l’exécution. Le script supprime les commandes, les additions ouvertes, les paiements POS et l’historique des clôtures, puis libère les tables. La transaction s’interrompt si un paiement, un retour ou une transmission attend encore un résultat. Vérifiez la procédure sur des données synthétiques.
+
+<span id="backoffice-module-access-contract" />
+
+## Vérifier le catalogue logiciel et les droits côté Backoffice
+
+Comme superadmin Foody, chargez le catalogue de fonctions. Vérifiez que le catalogue logiciel correspond à Foody Landing et que l’API fournit encore les définitions d’offres historiques. En développement, ouvrez le détail d’un restaurant du pilote modulaire et vérifiez que ses fonctions correspondent à l’essai en cours ou à l’abonnement vérifié. Pour un restaurant existant, vérifiez que la réponse renvoie son offre enregistrée et ses réglages manuels.
+
+<span id="forget-device-inventory" />
+
+## Retirer du matériel depuis Backoffice
+
+Dans une version compatible de Backoffice, ouvrez **Terminal fleet → All devices**. Recherchez le restaurant ou le nom de l’appareil. Sur la bonne ligne, choisissez **Forget device**, vérifiez le restaurant et confirmez. Les appareils retirés sont masqués par défaut. Cochez **Show forgotten devices** pour les consulter. Pour les terminaux de paiement, la même action est accessible dans **Payment terminals**.
+
+Le retrait est le même que dans FoodyPOS et reste limité au restaurant. L’historique des opérations terminées est conservé et les connexions existantes ne réinscrivent pas l’appareil automatiquement. Ce parcours ne réinitialise pas la configuration bancaire. Résolvez les opérations terminal et les dépendances d’impression en attente avant de réessayer. Terminez ou annulez toute modification de terminal préparée avant de retirer ce terminal.
+
+<span id="authentication-security-rollout" />
+
+## Déployer la protection des accès en développement
+
+Déployez d’abord l’API compatible avec la protection désactivée, puis Admin, Backoffice et les caisses. Vérifiez l’inscription à l’application d’authentification, les codes de secours, les invitations et les connexions des responsables avant activation. Les employés ordinaires conservent le PIN ; un responsable ne peut pas démarrer sa première inscription avec son seul PIN. Les tables d’authentification et les journaux de sécurité sont exclus des copies entre environnements. Configurez les clés privées, la sauvegarde indépendante et les alertes, confirmez les abonnements puis testez la restauration et les notifications. Après activation, utilisez une version compatible : le retour à une ancienne version dépourvue de cette protection est bloqué. Ces essais ne constituent ni une certification fiscale ni une autorisation de mise en production.
+
+<span id="native-fiscal-test-scope" />
+
+## Limiter les documents fiscaux natifs aux essais
+
+Les reçus, factures, avoirs et exports natifs du module fiscal restent réservés aux essais hors production, à un administrateur habilité et aux restaurants de démonstration explicitement configurés. Ils sont désactivés par défaut. Les documents portent la mention TEST et suivent leurs séries de numérotation propres. Vérifiez les archives, l’intégrité, la restauration et le simulateur d’export avant toute évolution du périmètre. Le succès du simulateur ne constitue pas l’enregistrement du logiciel ; Invoice4U reste l’émetteur opérationnel tant que la mise en service fiscale n’a pas été validée.

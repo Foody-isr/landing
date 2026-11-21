@@ -1,22 +1,22 @@
 ---
 title: 'Internal operations, infrastructure and cloning'
-description: 'Internal operators: Operations, its guide, Servers and Clone. Read status before choosing a mutation.'
+description: 'Backoffice → Platform → Operations, Servers or Clone data. Check service status before taking action.'
 apps: both
 tags:
   - internal
   - backoffice-operations
-updatedAt: '2026-10-18'
+updatedAt: '2026-11-15'
 featureId: backoffice-operations
 audience: internal
 releaseStatus: available
 ---
-Internal operators: Operations, its guide, Servers and Clone. Read status before choosing a mutation.
+Backoffice → Platform → Operations, Servers or Clone data. Check service status before taking action.
 
 <span id="status" />
 
 ## Inspect service status
 
-Choose development or production and inspect checked-at timestamps, operational/degraded/down status and errors. Read-only refresh does not deploy or repair a service. Do not interpret an old successful check as current health.
+Choose development or production and inspect checked-at timestamps, operational/degraded/down status and errors. Read-only refresh does not deploy or repair a service. Do not interpret an old successful check as current health. If the status endpoint fails, the summary shows **Status checks unavailable**. Use **Check now** to retry.
 
 <span id="infra" />
 

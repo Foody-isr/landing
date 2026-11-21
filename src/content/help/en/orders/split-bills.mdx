@@ -5,7 +5,7 @@ apps: foodypos
 tags:
   - orders
   - pos-check-split
-updatedAt: '2026-10-18'
+updatedAt: '2026-11-16'
 featureId: pos-check-split
 audience: public
 releaseStatus: available
@@ -15,6 +15,12 @@ Open the saved table bill → Actions → Split. Choose by cover, item or equal 
 ## Availability and access
 
 Advanced actions appear only when the installed POS and API advertise the required capability and your role permits them. Refresh a changed bill before retrying; never create another charge to resolve an uncertain result.
+
+<span id="pending-payment-recovery" />
+
+## Resolve a payment blocking a split
+
+A payment started on this POS can block saving a new split, including on another check. In the compatible version, Check payment explains this before opening Split. Reopen the affected check and select Pay to resume the original attempt. If the POS or staff session is refused, have its access checked and resume that same attempt. Only a server-confirmed rejection with no reservation created can release the local attempt. An uncertain network result still needs verification; do not create another payment or erase app data. Then return to Split and save the allocation. Splitting never starts a payment.
 
 <span id="split-cash-collection" />
 
@@ -45,3 +51,11 @@ Return every unpaid part of the same original unit to its original bill/ledger a
 ## Check variant details before allocating
 
 An item’s allocation details retain its variant choices by position. Check the characters and their order before allocating; they add no surcharge to the already recorded amount. Sharing rules and production quantities remain unchanged.
+
+<span id="independent-lifecycle-confirmations" />
+
+## Review independent confirmations
+
+In a saved order’s actions, review preparation and handoff separately from payment. Handoff review selects the actual physical units; financial splitting does not multiply them. Before closure, review the exact check or financial portion and its confirmed balance. A closed scope refuses new commercial changes; another open batch is not closed by that action. See [tracking and confirmations](/en/help/orders/payment-preparation-and-handoff).
+
+Use this workflow when the saved order’s fulfillment view offers handoff. For an open table, named or split check in Menu, verify dispatch in Check and preparation at the expo KDS.

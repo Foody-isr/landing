@@ -1,25 +1,25 @@
 ---
-title: Segments et prospects internes
-description: 'Opérateurs Foody : Backoffice → Marché, Segments et Prospects.'
+title: Retrait de l’écran Market
+description: L’interface Market a été retirée du Backoffice. Ses anciens liens ouvrent le Dashboard.
 apps: both
 tags:
   - internal
   - backoffice-market
-updatedAt: '2026-10-18'
+updatedAt: '2026-11-15'
 featureId: backoffice-market
 audience: internal
-releaseStatus: available
+releaseStatus: retired
 ---
-Opérateurs Foody : Backoffice → Marché, Segments et Prospects.
+L’interface Market a été retirée du Backoffice. Ses anciens liens ouvrent le Dashboard.
 
 <span id="segments" />
 
-## Maintenir les segments
+## Segments existants
 
-Créez/modifiez nom, description et champs proposés, puis vérifiez prospects affectés dans le détail. Examinez références et remplacement avant suppression.
+Les segments existants sont conservés dans l’API. Le Backoffice a retiré leurs écrans de gestion.
 
 <span id="prospects" />
 
-## Maintenir les prospects
+## Prospects existants
 
-Recherchez/filtrez et modifiez uniquement informations professionnelles vérifiées, segment et suivi. L’inventaire n’autorise pas à contacter les prospects. Excluez données de contact personnelles des documents publics et de l’IA.
+Les fiches prospects sont conservées dans l’API. Pour accéder à l’historique, contactez l’équipe interne Foody. Gardez les coordonnées hors de l’aide publique et de l’assistant.

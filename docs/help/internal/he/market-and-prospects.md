@@ -1,25 +1,25 @@
 ---
-title: פלחי שוק ולידים פנימיים
-description: 'מפעילי Foody: שוק, פלחים ולידים.'
+title: מסך Market שהוסר
+description: ממשק Market הוסר מה־Backoffice. הקישורים הקודמים פותחים את Dashboard.
 apps: both
 tags:
   - internal
   - backoffice-market
-updatedAt: '2026-10-18'
+updatedAt: '2026-11-15'
 featureId: backoffice-market
 audience: internal
-releaseStatus: available
+releaseStatus: retired
 ---
-מפעילי Foody: שוק, פלחים ולידים.
+ממשק Market הוסר מה־Backoffice. הקישורים הקודמים פותחים את Dashboard.
 
 <span id="segments" />
 
-## תחזוקת פלחים
+## סגמנטים קיימים
 
-ערכו שם, תיאור ושדות ובדקו לידים משויכים בפרטים. בדקו תלות והחלפה לפני מחיקה.
+רשומות הסגמנטים נשמרות ב־API. מסכי הניהול שלהן הוסרו מה־Backoffice.
 
 <span id="prospects" />
 
-## תחזוקת לידים
+## לקוחות פוטנציאליים קיימים
 
-חפשו וסננו ועדכנו פרטים עסקיים מאומתים, פלח ומעקב. המלאי אינו הרשאה לפנות ללידים. אין להכניס פרטי קשר אישיים לעזרה ציבורית או ל-AI.
+רשומות הלקוחות הפוטנציאליים נשמרות ב־API. לגישה להיסטוריה פנו לצוות הפנימי של Foody. שמרו את פרטי הקשר מחוץ למדריכים הציבוריים ולשיחות עם העוזר.

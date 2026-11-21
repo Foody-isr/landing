@@ -1,25 +1,25 @@
 ---
-title: Internal market segments and prospects
-description: 'Internal Foody operators: Backoffice → Market, Segments and Prospects.'
+title: Retired Market screen
+description: The Backoffice Market interface has been retired. Old Backoffice Market links return to Dashboard.
 apps: both
 tags:
   - internal
   - backoffice-market
-updatedAt: '2026-10-18'
+updatedAt: '2026-11-15'
 featureId: backoffice-market
 audience: internal
-releaseStatus: available
+releaseStatus: retired
 ---
-Internal Foody operators: Backoffice → Market, Segments and Prospects.
+The Backoffice Market interface has been retired. Old Backoffice Market links return to Dashboard.
 
 <span id="segments" />
 
-## Maintain market segments
+## Existing segments
 
-Create/edit the segment’s name, description and offered fields, then open its detail to verify assigned prospects. Avoid deleting a segment until its references and intended replacement have been reviewed.
+Segment records are retained in the API. Their operations are no longer exposed by the Backoffice.
 
 <span id="prospects" />
 
-## Maintain prospect records
+## Existing prospects
 
-Search/filter prospects and update only verified business details, segment and follow-up state. This inventory does not authorize contacting prospects. Keep personal contact data out of public documentation and AI support context.
+Prospect records are retained in the API. For access to historical records, contact the internal Foody team. Keep contact details out of public guides and AI support.
