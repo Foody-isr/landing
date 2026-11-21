@@ -7,7 +7,7 @@ apps: both
 tags:
   - payments
   - pos-payments
-updatedAt: '2026-11-18'
+updatedAt: '2026-11-21'
 featureId: pos-payments
 audience: public
 releaseStatus: available
@@ -61,6 +61,8 @@ Pour réunir les étapes de fin de journée, utilisez [la clôture commune](/fr/
 Sur une addition ordinaire de table ou de comptoir sur le terminal portable mis à jour, Payer ouvre un récapitulatif client noir avec les lignes et modificateurs de l’addition sélectionnée et son montant confirmé. Vérifiez-le avant Confirmer et payer. Le menu ⋯ permet de choisir les espèces ; le sélecteur de langue ne change que ce récapitulatif, sans modifier la langue de l’appareil. Fermer ce récapitulatif ne débite rien. Sur tablette, le choix plein écran Carte/Espèces reste disponible. Choisissez Payer par carte. Foody conserve un écran de suivi pendant la préparation, la connexion au terminal, les étapes d’identification/session/paramètres signalées, les instructions du terminal, l’enregistrement du paiement et l’envoi en cuisine d’une commande au comptoir. Seules les étapes réellement signalées apparaissent ; chaque paiement ne passe pas nécessairement par toutes. Lecture de carte et saisie du PIN restent sur le terminal sécurisé Verifone. L’envoi cuisine affiché confirme la soumission de la commande, pas la sortie papier : seules les catégories sélectionnées dans le profil cuisine affecté s’impriment. En cas de refus ou d’annulation, l’écran se ferme sans marquer l’addition payée ; vérifiez l’erreur affichée avant de réessayer. Attendez le statut final vérifié Foody ; le retour navigateur seul ne suffit pas. En attente/incertain, actualisez puis faites vérifier la transaction par un opérateur autorisé avant nouvelle tentative. Ne transmettez pas les données de carte à l’assistant. Avant de lancer la collecte, Foody vérifie à nouveau les données à encaisser. Un changement de lignes, montant, état payé ou contexte de restaurant/compte interrompt le parcours : rouvrez Payer et faites confirmer le récapitulatif actualisé. Le même contrôle protège la confirmation espèces. Une vérification interrompue n’autorise pas à supposer qu’un débit a eu lieu ; si le fournisseur a déjà répondu par un résultat incertain, suivez la procédure de rapprochement ci-dessous. Un nouvel article ou un nouvel envoi cuisine ajouté à l’addition pendant le récapitulatif ou la saisie espèces exige aussi une nouvelle confirmation ; il ne doit pas être ignoré au moment d’encaisser. Ce parcours Victa utilise les ILS ; changer de langue ne convertit pas la devise.
 
 Si la caisse vous renvoie à une clôture en attente, utilisez [la reprise dans Solde en caisse](/fr/help/payments/end-of-day#end-of-day-recovery). Pour une tentative carte interrompue, suivez [la vérification du paiement d’origine](/fr/help/payments/ashrait-terminal-inspection#ashrait-last-transaction-recovery).
+
+Si le Mini a redémarré après une reprise du service, ouvrez sa fiche dans **Matériel → Terminaux de paiement** et touchez **Vérifier la passerelle Ashrait**. Quand la passerelle est prête, rouvrez l’addition. Si vous avez déjà présenté une carte pour cette tentative, utilisez **Vérifier le paiement carte**.
 
 <span id="terminal-deposit" />
 
@@ -125,6 +127,12 @@ Paiement Sumit dans Admin : [procédure](/fr/help/orders/internal-sumit-checkout
 Sur iPad, ouvrez Plus → Paramètres → Matériel → Terminaux de paiement. Pour ajouter un terminal ou changer son IP dans la version compatible, appuyez sur **Enregistrer** puis confirmez le modèle et le numéro de série. Consultez [Connexion du Victa Mini](/fr/help/payments/victa-mini#connection) pour les réglages sécurisés et la reconnexion automatique.
 
 FoodyPOS lit le numéro SHVA du terminal sélectionné dans Foody avant une nouvelle opération carte. Pour le modifier, ouvrez la fiche du terminal puis **Identifiants du terminal**.
+
+Si FoodyPOS indique qu’il ne peut pas vérifier si la caisse autorise le paiement, vérifiez sa connexion à Foody. Si le Mini affiche « paramètres demandés », consultez le suivi de la transmission du Mini dans Solde en caisse.
+
+Après **Vérifier la passerelle Ashrait**, si le Mini actif demande ses paramètres ou une clôture, un responsable peut toucher **Ouvrir la clôture du Mini**. Dans Solde en caisse, utilisez l’action affichée sous ce Mini.
+
+Sur l’iPad principal, vérifiez d’abord toute vente interrompue. Si Ashrait demande encore une clôture, un responsable qui gère les réglages et les paiements peut sélectionner **Clôturer le lot courant du Mini**. Lisez la confirmation : le Mini transmet toutes les ventes encore présentes, y compris celles de la période précédente si elles figurent toujours dans son lot. Confirmez une seule fois. Foody conserve une ligne distincte pour le nouvel envoi et la référence précédente reste à vérifier. Après la réponse OK d’Ashrait, reprenez les encaissements. En cas de coupure, utilisez **Reprendre l’enregistrement** pour rechercher le résultat. Le rapport SHVA du nouveau lot est consultable et imprimable lorsque le Mini le fournit.
 
 <span id="physical-card-destination" />
 
