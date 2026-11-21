@@ -95,6 +95,12 @@ For the CST pilot, configure the API with Foody’s Invoice4U QA organization, a
 
 For Verifone issuance, select the development restaurant and configure its authorized test inbox. Verify that the Foody merchant organization has an Invoice4U receipt contract. An annual hosted sale without renewal, the first confirmed debit after card registration, and each renewal request an invoice-receipt with tax-inclusive lines. Admin shows the request until the original is matched. Check the fiscal document type, sale reference, buyer, document number, VAT, total and delivery to the authorized inbox. If the original is missing, locate the existing sale before taking accounting action.
 
+<span id="manage-trial" />
+
+## Manage a restaurant trial and reset sandbox billing
+
+Open **Restaurants → the restaurant → Billing & modules → Trial management** in the development Backoffice. To start a trial, choose at least 14 days and click **Start a new trial**. If prompted, select the modules to include. During an active trial, enter the number of days to add and click **Extend trial**. **End trial now** asks for confirmation and ends access immediately. The owner can still open Billing. A paid subscription or a payment being processed can restrict these actions. **Reset sandbox billing** retires the offer and stops its renewals after confirmation. Trial dates stay as recorded. The owner keeps the payment and invoice history and can choose from the published catalogue. Operators can reconcile uncertain archived payments using the matching transaction ID in Verifone Central. Verification updates the archived payment independently of the current subscription.
+
 ## If the operation fails
 
 Use the displayed reference in Verifone Central if a payment requires review. Backoffice can verify a matching transaction by ID for an uncertain renewal. Verification does not initiate a new charge. A failed or expired attempt can be followed by a new checkout when eligible.

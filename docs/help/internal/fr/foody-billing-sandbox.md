@@ -95,6 +95,12 @@ Pour le pilote CST, configurez dans le service API le dossier QA Invoice4U de Fo
 
 Pour tester l’émission via Verifone, sélectionnez le restaurant de développement et configurez sa boîte de test autorisée. Vérifiez que l’organisation du marchand Foody possède un contrat de reçus Invoice4U. Une vente Checkout annuelle sans renouvellement, le premier débit confirmé après enregistrement de la carte et chaque renouvellement demandent une facture-reçu avec les lignes TTC. L’Admin affiche la demande jusqu’au rapprochement avec l’original. Vérifiez le type fiscal, la référence de vente, le restaurant, le numéro, la TVA, le TTC et la réception dans la boîte autorisée. Si l’original manque, recherchez la vente existante avant toute intervention comptable.
 
+<span id="manage-trial" />
+
+## Gérer l’essai et réinitialiser la facturation de test
+
+En Backoffice dev, ouvrez **Restaurants → le restaurant → Billing & modules → Trial management**. Pour démarrer un essai, indiquez au moins 14 jours et cliquez sur **Start a new trial**. Si demandé, choisissez les modules inclus. Pendant un essai, saisissez le nombre de jours à ajouter et cliquez sur **Extend trial**. **End trial now** demande confirmation et met fin immédiatement à l’accès d’essai. Le propriétaire garde accès à Facturation. Un abonnement payé ou un paiement en cours peut limiter ces actions. Après confirmation, **Reset sandbox billing** archive l’offre et arrête son renouvellement. Les dates d’essai restent celles enregistrées. Le propriétaire conserve son historique de paiements et de factures et peut choisir dans le catalogue publié. L’opérateur peut vérifier une tentative archivée avec l’identifiant de la transaction correspondante dans Verifone Central. Cette vérification met à jour le paiement historique indépendamment de l’abonnement en cours.
+
 ## En cas d’échec
 
 Si un paiement est à vérifier, recherchez sa référence dans Verifone Central. Pour un renouvellement incertain, le Backoffice peut vérifier l’identifiant de la transaction correspondante. La vérification ne lance aucun débit. Après un refus ou une expiration confirmés, un nouveau paiement peut être lancé quand l’offre est payable.
