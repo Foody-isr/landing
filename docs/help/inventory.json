@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-11-20",
+  "reviewedAt": "2026-11-21",
   "services": {
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "cfd16a4c4891d102c9b42444f8c35659141f59c5",
+      "sourceCommit": "a4168d656b15d723575cfbdd3a1af718bf7f45cb",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "e0cea334275e42f13c6892f0884035de2ed57b4baa0784fb46220e56468da476",
+      "sourceSnapshot": "8653232b8c7e497da0028152c708e15009625aec79a2cfa8edbc3f79c1522a32",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
@@ -2002,7 +2002,7 @@
           ]
         },
         "src/components/delivery/DeliveryMap.tsx": {
-          "sha256": "d64b0989dc543ed01da1b2888c28b76c099d87c953c46cc9471eda2c54b05f54",
+          "sha256": "59c5c831a35012187926a6dee6276251faed6371055472a18373b046f5f63da3",
           "features": [
             "delivery-dispatch"
           ]
@@ -2027,13 +2027,13 @@
           ]
         },
         "src/components/delivery/DispatcherView.tsx": {
-          "sha256": "92c89a49171aa775a0eff1f4d8a3ea1c877db18b38b2a33ee10d6d82fc015464",
+          "sha256": "9773c077bc5ce13eb8bb34c6cecb2cfa60ca043884ef9238384aa6010e04c2c3",
           "features": [
             "delivery-dispatch"
           ]
         },
         "src/components/delivery/InsertDeliveryDrawer.tsx": {
-          "sha256": "6aaadd8c854d7642f54aa9eb0807faa08117ee301b406c8c9e44b094ecc8aa42",
+          "sha256": "b84e191785e8ad0527c7e0de5c4658973006165716f63d2478f38e1fd9cce233",
           "features": [
             "delivery-dispatch"
           ]
@@ -4716,7 +4716,7 @@
           ]
         },
         "src/lib/i18n.tsx": {
-          "sha256": "2e802dbca3099553a4f2cfc8d09ed883e35ecadfc35448b8bffdff81f2c00097",
+          "sha256": "b70ebaacdbf0fd724bf58d1c8fa72d40be9f7c1ffbc7e35dc135fd930c08dc21",
           "features": [
             "customers-profiles",
             "menu-menus-and-groups",
@@ -5332,7 +5332,7 @@
           ]
         },
         "src/lib/route-address.ts": {
-          "sha256": "8a9bcde3f3c1ac1609995fa233f9434a4e3a13cd6f90a2dfa9ad99b3b6b51c51",
+          "sha256": "d56217281dcfd2d33951c14a8a40a379e8336981004ed24d112fa8ce05609319",
           "features": [
             "delivery-dispatch",
             "shared-runtime",
@@ -6219,7 +6219,7 @@
     },
     "foodylanding": {
       "repository": "https://github.com/Foody-isr/landing",
-      "sourceCommit": "985f4af0642adab123f74997935a2b82833b1a8c",
+      "sourceCommit": "0dfdd37d4139c9bd604ff00e8160b0704025fe24",
       "releaseStatus": "versioned",
       "sourceSnapshot": "7872182414e2c2bc08e3f0e2b65e52d1f5419988d4e77ebd46afb77180470947",
       "workingTreeHasChanges": true,
@@ -10311,9 +10311,9 @@
     },
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "dbc8431e50752bc761ac6bd4964200513ec2504a",
+      "sourceCommit": "e08599800625f1c33d4dde62dbc080ea7b59dd1f",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "ae692fa91a008c09c5441426e22b4409cb6565fe1f743d70bb8d5c4b65bb5a35",
+      "sourceSnapshot": "8b126b1d42b212be08912937815b82d8cd3f3351675028bd472d4524862d44fd",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -16363,7 +16363,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "d2c60f444e091de31dbeb9a7b81013ca83d953c1ac63dd5b293cde4b5d1c5c06",
+          "sha256": "15d62e7def39a306509480ed6d56c6a45bb69af02f4844c2c51117ca6e260625",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -37220,6 +37220,19 @@
           }
         },
         {
+          "id": "dispatch-workspace",
+          "title": {
+            "fr": "Lire le tableau de répartition",
+            "en": "Read the dispatch board",
+            "he": "עבודה בלוח השיבוץ"
+          },
+          "instructions": {
+            "fr": "Choisissez le jour de service. **Tournée** affiche les arrêts à livrer, **À affecter** les commandes disponibles et **Adresses à préciser** les entrées à vérifier. Une entrée à préciser reste affectée au livreur. Recherchez un numéro de commande, un nom, une rue ou une ville. Le tableau affiche le rang et le créneau de chaque arrêt. Cliquez sur son adresse ou son point sur la carte pour ouvrir sa fiche avec les indications et **Corriger l’adresse**. Le filtre et la sélection restent actifs quand vous masquez la carte. Un arrêt dont la position manque est accessible depuis le tableau.",
+            "en": "Choose the service day. **Route** lists remaining stops, **Unassigned** shows available orders and **Addresses to review** lists entrances that need attention. These stops stay assigned to their drivers. Search an order number, customer, street or city. The table shows each stop’s position and arrival window. Select its address or its map marker for access instructions and **Correct address**. Hiding the map keeps your filter and selection. Open a stop with missing coordinates from its table row.",
+            "he": "בחרו את יום המשלוח. **מסלול** מציג את התחנות שנותרו, **ממתינים לשיבוץ** את ההזמנות הזמינות ו־**כתובות לבדיקה** את הכניסות הטעונות בדיקה. התחנה נשארת משויכת לשליח. אפשר לחפש מספר הזמנה, שם לקוח, רחוב או עיר. בטבלה מוצגים סדר התחנות וחלונות ההגעה. לחצו על הכתובת או על הסמן במפה כדי לראות את פרטי הכניסה ולתקן את הכתובת. הסתרת המפה שומרת על הסינון והבחירה. תחנה ללא מיקום זמינה דרך השורה שלה בטבלה."
+          }
+        },
+        {
           "id": "assign",
           "title": {
             "en": "Assign couriers and stops",
@@ -37240,9 +37253,9 @@
             "he": "הוספת הזמנה למסלול שכבר תוכנן"
           },
           "instructions": {
-            "en": "On the delivery date, open an accepted, unassigned order. Choose **Add to a route**, the planned route and the insertion position. Confirm. The order appears in that position and the other stops keep their order. If the location is missing or Google is slow, check the calculation status. If the response was interrupted, reopen the plan to see the assignment. If the driver has started, check the updated route before choosing another one.",
-            "fr": "Sur la date de livraison, ouvrez une commande acceptée et non affectée. Choisissez **Ajouter à une tournée**, la tournée planifiée et la position souhaitée. Confirmez l’ajout. La commande apparaît au rang choisi et les autres arrêts gardent leur ordre. Si le point manque ou si Google tarde, vérifiez le calcul indiqué sur la tournée. En cas de réponse interrompue, rouvrez le plan pour retrouver l’affectation. Si la tournée est partie, consultez son nouvel état avant de choisir une autre tournée.",
-            "he": "בתאריך המשלוח פתחו הזמנה שאושרה ועדיין לא שובצה. בחרו **הוספה למסלול**, את המסלול המתוכנן ואת המיקום ברצף ואשרו. התחנה מתווספת במקום שנבחר ושאר התחנות שומרות על הסדר. אם המיקום חסר או שיש עיכוב ב-Google, בדקו את מצב החישוב. אם החיבור נקטע, פתחו שוב את התכנון כדי לראות את השיבוץ. אם השליח כבר יצא, בדקו את מצב המסלול לפני בחירת מסלול אחר."
+            "en": "In **Dispatch**, choose the day and **Add a delivery**. When several orders are available, choose **Add to a route** on the order you need. Choose a planned route and a position at the start, after a stop or at the end. Check the adjacent stops in the preview and confirm. The order appears in that position and the other stops keep their order. If the location is missing or Google is slow, check the calculation status. If the response was interrupted, reopen the plan to see the assignment. If the driver has started, check the updated route before choosing another one.",
+            "fr": "Dans **Répartition**, choisissez le jour puis **Ajouter une livraison**. Si plusieurs commandes sont disponibles, choisissez **Ajouter à une tournée** sur la ligne souhaitée. Sélectionnez la tournée et la position **Au départ**, **Après l’arrêt…** ou **En fin de tournée**. Vérifiez les arrêts voisins dans l’aperçu et confirmez. La commande apparaît au rang choisi et les autres arrêts gardent leur ordre. Si le point manque ou si Google tarde, vérifiez le calcul indiqué sur la tournée. En cas de réponse interrompue, rouvrez le plan pour retrouver l’affectation. Si la tournée est partie, consultez son nouvel état avant de choisir une autre tournée.",
+            "he": "בלוח השיבוץ בחרו את היום ולחצו על **הוספת משלוח**. כאשר מופיעות מספר הזמנות, לחצו על **הוספה למסלול** בשורה הרצויה. בחרו מסלול מתוכנן ומיקום בתחילת המסלול, אחרי תחנה מסוימת או בסוף המסלול. בדקו את התחנות הסמוכות בתצוגה המקדימה ואשרו. התחנה מתווספת במקום שנבחר ושאר התחנות שומרות על הסדר. אם המיקום חסר או שיש עיכוב ב-Google, בדקו את מצב החישוב. אם החיבור נקטע, פתחו שוב את התכנון כדי לראות את השיבוץ. אם השליח כבר יצא, בדקו את מצב המסלול לפני בחירת מסלול אחר."
           }
         },
         {
@@ -37535,8 +37548,8 @@
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-11-19",
-      "updatedAt": "2026-11-19",
+      "procedureUpdatedAt": "2026-11-21",
+      "updatedAt": "2026-11-21",
       "description": {
         "en": "Foody Admin → Deliveries → Dispatch",
         "fr": "Foody Admin → Livraisons → Répartition",
@@ -71044,8 +71057,10 @@
       "kind": "ui-controls",
       "labels": [
         "courierFitRoute",
+        "deliveryEstimatedEntrance",
         "deliveryZoneZoomIn",
         "deliveryZoneZoomOut",
+        "dispatchNoPins",
         "mapsAllRoutes",
         "mapsLegend",
         "mapsRoute"
@@ -71134,13 +71149,13 @@
       ],
       "kind": "ui-controls",
       "labels": [
+        "address",
         "cancel",
         "close",
         "correctAddress",
         "couldNotLoad",
         "couldNotSave",
         "courier",
-        "courierDeparturePending",
         "courierReportedIssues",
         "courierResultPending",
         "courierReviewOrder",
@@ -71182,8 +71197,10 @@
         "deliveryPlanReturnConfirmBody",
         "deliveryPlanReturnConfirmTitle",
         "deliveryPlanReturnToPool",
+        "deliveryPlanShowMap",
         "deliveryPlanStepTwo",
         "deliveryPlanStepTwoHint",
+        "deliveryPlanStops",
         "deliveryPlanUnassignConfirmBody",
         "deliveryPlanUnassignConfirmTitle",
         "deliveryPlanUnassignRoute",
@@ -71191,19 +71208,24 @@
         "deliveryPlanUnplanned",
         "deliveryPlanWhatsApp",
         "deliveryPlanZoneCount",
-        "deliveryQueueSearch",
-        "deliveryQueueSearchShort",
         "deliveryRouteApproximate",
         "deliveryRouteDateMismatch",
-        "deliveryRouteSearch",
-        "deliveryRouteSearchShort",
         "deliveryWhatsAppTitle",
+        "dispatchAddDelivery",
+        "dispatchMapDetail",
+        "dispatchOrder",
+        "dispatchQueue",
         "dispatchRouteSettings",
+        "dispatchSavedAddress",
+        "dispatchSearch",
+        "dispatchStop",
+        "dispatchStopDetail",
+        "dispatchWindow",
+        "dispatchWithWindow",
         "mapsRoute",
         "nextDay",
         "noAddress",
         "noCouriersHint",
-        "noResults",
         "previousDay",
         "refresh",
         "retry",
@@ -71213,11 +71235,8 @@
         "routeSettingsSaveFailed",
         "routeSettingsStartAddress",
         "routeSettingsStartPlaceholder",
-        "routeStatusActive",
-        "routeStatusCompleted",
         "selectAll",
         "selectCourier",
-        "stopStatusDelivered",
         "today"
       ],
       "actions": [
@@ -71248,7 +71267,7 @@
       "kind": "ui-controls",
       "labels": [
         "courier",
-        "deliveryInsertBefore",
+        "deliveryInsertAfter",
         "deliveryInsertChoose",
         "deliveryInsertConfirm",
         "deliveryInsertFailed",
@@ -71260,6 +71279,7 @@
         "deliveryInsertRoute",
         "deliveryInsertTitle",
         "deliveryInsertionChanged",
+        "dispatchFirst",
         "mapsRoute"
       ],
       "actions": [],
@@ -114524,7 +114544,7 @@
   "coverage": {
     "sharedRuntimeFiles": 437,
     "features": 114,
-    "operations": 1042,
+    "operations": 1043,
     "sourceFiles": 2706,
     "surfaces": 2346,
     "unclassifiedRoutes": []
