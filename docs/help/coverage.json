@@ -2681,13 +2681,32 @@
           "src/lib/help/context.ts",
           "src/components/loyalty/WalletStudioWorkspace.tsx",
           "src/components/loyalty/WalletBannerFraming.tsx",
-          "src/lib/wallet-banner.ts"
+          "src/lib/wallet-banner.ts",
+          "src/components/loyalty/LoyaltyEarningEditor.tsx",
+          "src/lib/api.ts",
+          "src/lib/wallet-website-design.ts"
         ],
         "foodyserver": [
           "cmd/server/main.go",
           "config/config.go",
           "internal/loyalty/handler.go",
-          "internal/support/corpus.json"
+          "internal/support/corpus.json",
+          "internal/common/loyalty_earning.go",
+          "internal/common/models.go",
+          "internal/loyalty/activities.go",
+          "internal/loyalty/earning.go",
+          "internal/loyalty/financial_capture.go",
+          "internal/loyalty/ledger.go",
+          "internal/loyalty/membership.go",
+          "internal/loyalty/pos_capture.go",
+          "internal/loyalty/program.go",
+          "internal/loyalty/purchase.go",
+          "internal/loyalty/rules.go",
+          "migrations/342_loyalty_earning_activities.sql",
+          "internal/loyalty/wallet_website_design.go",
+          "internal/publicimage/client.go",
+          "internal/loyalty/wallet_studio_handler.go",
+          "cmd/server/wallet_studio.go"
         ],
         "foodyweb": [
           "app/r/[restaurantId]/account/loyalty/page.tsx",
@@ -2701,7 +2720,11 @@
           "lib/useRestaurantLoyalty.ts",
           "lib/server/loyalty-wallet-proxy.ts",
           "services/api.ts",
-          "components/website-v3/MobileExperience.tsx"
+          "components/website-v3/MobileExperience.tsx",
+          "components/LoyaltyEarningActivities.tsx",
+          "lib/types.ts",
+          "lib/i18n.tsx",
+          "lib/server/loyalty-proxy.ts"
         ]
       }
     },
@@ -2717,7 +2740,8 @@
           "src/lib/api.ts",
           "src/lib/i18n.tsx",
           "src/components/loyalty/WalletBannerFraming.tsx",
-          "src/lib/wallet-banner.ts"
+          "src/lib/wallet-banner.ts",
+          "src/lib/wallet-website-design.ts"
         ],
         "foodyserver": [
           "cmd/server/wallet_studio.go",
@@ -2730,7 +2754,9 @@
           "migrations/315_loyalty_wallet_designs.sql",
           "migrations/322_loyalty_wallet_publications.sql",
           "migrations/334_wallet_restaurant_name.sql",
-          "migrations/335_wallet_banner_framing.sql"
+          "migrations/335_wallet_banner_framing.sql",
+          "internal/loyalty/wallet_website_design.go",
+          "internal/publicimage/client.go"
         ],
         "foodyweb": [
           "app/api/loyalty-wallet/apple/route.ts",
