@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-11-22.
 
-114 fiches de fonctionnalités, 1060 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2746 fichiers applicatifs et 2373 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+114 fiches de fonctionnalités, 1060 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2746 fichiers applicatifs et 2374 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyadmin | 837 | 845 | a8df0a6dadf1 ; versioned |
+| foodyadmin | 837 | 845 | 59034b7e6ec0 ; versioned |
 | foodybackoffice | 55 | 51 | 82cde2439a24 ; versioned |
-| foodylanding | 158 | 31 | dbefb9df60ff ; versioned |
+| foodylanding | 158 | 31 | 7ad24b24572f ; versioned |
 | foodypos | 432 | 187 | 9e0ec2f0e188 ; versioned |
-| foodyserver | 872 | 1055 | 262b76320b62 ; versioned |
-| foodyweb | 392 | 204 | e4435446545f ; versioned |
+| foodyserver | 872 | 1055 | c1b4a5720edb ; versioned |
+| foodyweb | 392 | 205 | c07fd912f9e7 ; versioned |
 
 ## getting-started
 
