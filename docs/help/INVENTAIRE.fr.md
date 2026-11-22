@@ -12,7 +12,7 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 |---|---:|---:|---|
 | foodyadmin | 827 | 836 | ed00979f7c06 ; versioned |
 | foodybackoffice | 54 | 49 | 619aa5734755 ; versioned |
-| foodylanding | 158 | 31 | 90168e5b4942 ; versioned |
+| foodylanding | 158 | 31 | ceb3163d8a27 ; versioned |
 | foodypos | 432 | 187 | b5d22c10422e ; versioned |
 | foodyserver | 862 | 1052 | 68b12880957c ; versioned |
 | foodyweb | 388 | 202 | d312905f2b28 ; versioned |
