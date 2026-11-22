@@ -7,7 +7,7 @@ apps: both
 tags:
   - internal
   - backoffice-entitlements
-updatedAt: '2026-11-19'
+updatedAt: '2026-11-22'
 featureId: backoffice-entitlements
 audience: internal
 releaseStatus: available
@@ -47,6 +47,12 @@ Dans Verifone Central, ouvrez Administration > Checkout Themes et enregistrez un
 ## Choisir le parcours carte Verifone d’un restaurant
 
 Dans le Backoffice, ouvrez Restaurants → fiche du restaurant → Payment. Pour comparer les parcours, choisissez Verifone Cloud (GreenBox) et CST Sandbox. Sous Verifone.js encryption key, enregistrez une fois la Public key et son Public key alias pour cette organisation avec Save Payment Config. Sous Card payment flow, sélectionnez **Foody · Verifone.js**. Le choix est enregistré immédiatement pour ce restaurant. Ouvrez une nouvelle commande prépayée en ILS, à montant fixe, en retrait ou en livraison. Utilisez une nouvelle carte de test CST. Avec un compte client connecté, testez également l’enregistrement de la carte après avoir saisi ses coordonnées. Confirmez et vérifiez un seul paiement du montant total dans Foody. Sélectionnez ensuite **Verifone Checkout** et ouvrez une deuxième commande. Après confirmation du panier, Foody ouvre le lien vers la page de paiement Verifone. Les deux parcours réutilisent les identifiants et contrats enregistrés. Les wallets et les cartes enregistrées ont leurs propres réglages. Pour changer d’environnement ou retirer la clé, sélectionnez d’abord Verifone Checkout, puis remplacez ou retirez la clé et enregistrez les réglages.
+
+<span id="configure-verifone-iframe" />
+
+## Activer Verifone iframe pour un restaurant
+
+Dans le Backoffice, ouvrez Restaurants → fiche du restaurant → Payment. Enregistrez la configuration Verifone Cloud (GreenBox) Checkout du restaurant qui facture en ILS. Sous Card payment flow, choisissez Verifone iframe. Le choix est enregistré immédiatement. Si nécessaire, utilisez Verifone Checkout appearance pour lier ou synchroniser le thème du restaurant. Dans CST Sandbox, testez une nouvelle commande prépayée en retrait ou en livraison sur le site du restaurant. Vérifiez l’affichage sur ordinateur et mobile, un seul paiement du montant exact et l’arrivée de la commande payée au POS. Vérifiez qu’un rechargement ou une confirmation lente conserve la même commande. Sélectionnez Verifone Checkout dans le même réglage pour ouvrir les futurs paiements sur la page externe. Validez l’éligibilité auprès de Verifone et de l’acquéreur avant d’utiliser l’iframe en production.
 
 <span id="configure-verifone-direct-wallets" />
 

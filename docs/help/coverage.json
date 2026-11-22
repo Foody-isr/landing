@@ -591,11 +591,14 @@
         ],
         "foodyserver": [
           "internal/payment/**",
-          "internal/common/payment_adjustment.go"
+          "internal/common/payment_adjustment.go",
+          "migrations/345_verifone_checkout_iframe.sql"
         ],
         "foodyweb": [
           "app/r/[restaurantId]/payment/**",
-          "lib/i18n.tsx"
+          "lib/i18n.tsx",
+          "app/order/payment/**",
+          "lib/verifone-iframe.ts"
         ],
         "foodypos": [
           "lib/features/payment/**"
@@ -1954,7 +1957,10 @@
           "store/useWebsiteOrderStore.ts",
           "lib/payment-return.ts",
           "components/ConfirmationPageClient.tsx",
-          "app/r/[restaurantId]/payment/failed/page.tsx"
+          "app/r/[restaurantId]/payment/failed/page.tsx",
+          "app/order/payment/**",
+          "lib/verifone-iframe.ts",
+          "lib/customer-api-proxy.ts"
         ],
         "foodyserver": [
           "internal/common/phone.go",
@@ -1967,7 +1973,8 @@
           "internal/addresslookup/service.go",
           "internal/delivery/guest_entrance.go",
           "internal/addresslookup/checkout_profile.go",
-          "internal/delivery/google_address.go"
+          "internal/delivery/google_address.go",
+          "internal/payment/verifone_iframe.go"
         ]
       }
     },
