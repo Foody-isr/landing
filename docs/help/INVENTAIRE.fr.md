@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-11-22.
 
-114 fiches de fonctionnalités, 1058 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2738 fichiers applicatifs et 2369 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+114 fiches de fonctionnalités, 1060 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2746 fichiers applicatifs et 2373 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,11 +10,11 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyadmin | 834 | 842 | 0322a285621f ; versioned |
+| foodyadmin | 837 | 845 | a8df0a6dadf1 ; versioned |
 | foodybackoffice | 55 | 51 | 82cde2439a24 ; versioned |
 | foodylanding | 158 | 31 | dbefb9df60ff ; versioned |
 | foodypos | 432 | 187 | 9e0ec2f0e188 ; versioned |
-| foodyserver | 867 | 1054 | ecb652351fb1 ; versioned |
+| foodyserver | 872 | 1055 | c6eaa6002fa2 ; versioned |
 | foodyweb | 392 | 204 | e4435446545f ; versioned |
 
 ## getting-started
@@ -210,6 +210,7 @@ Identifiant : `customers-loyalty-program`. Public : public. Disponibilité : ava
 - [Cumuler sur le site de commande du restaurant](../../src/content/help/fr/customers/loyalty-program.mdx#member-purchase)
 - [Reprendre le design du site dans la carte Wallet](../../src/content/help/fr/customers/loyalty-program.mdx#generate-wallet-from-website)
 - [Comparer des modèles avec la bannière du restaurant](../../src/content/help/fr/customers/loyalty-program.mdx#preview-card-layouts)
+- [Composer une carte à la main](../../src/content/help/fr/customers/loyalty-program.mdx#compose-wallet-manually)
 
 ### [Préparer, tester et publier une carte de fidélité](internal/fr/wallet-studio.md)
 
@@ -221,6 +222,7 @@ Identifiant : `customers-wallet-studio`. Public : internal. Disponibilité : loc
 - [Ajouter une carte de test sur iPhone](internal/fr/wallet-studio.md#apple-test)
 - [Publier le visuel et partager le lien d’adhésion](internal/fr/wallet-studio.md#publish-design)
 - [Adhérer, ajouter sa carte et vérifier le cumul](internal/fr/wallet-studio.md#member-card)
+- [Composer une carte à la main](internal/fr/wallet-studio.md#compose-wallet-manually)
 
 ## marketing
 

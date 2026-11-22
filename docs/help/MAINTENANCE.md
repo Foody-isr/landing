@@ -1971,3 +1971,7 @@ Reviewed the French, Hebrew and English first-login and internal Backoffice acce
 ## Owner billing navigation after a sandbox reset (22 November 2026)
 
 The English, French and Hebrew subscription guides already direct owners to **Settings → Account → Billing** to choose a public plan and read invoices before subscribing. The sidebar now follows the same availability check as the billing page. To verify this procedure, start on **Branches** with a restaurant that has only a public catalog, open **Billing** from the account menu and navigate to **Invoices**.
+
+## Composition manuelle des cartes Wallet (22 novembre 2026)
+
+Les procédures publiques de fidélité et le guide interne du Studio décrivent les modèles Carnet de table et Affiche café en français, anglais et hébreu. Publier ces traductions avec l’Admin et l’API compatibles, après la migration 346. Vérifier la réouverture du brouillon, les trois rendus et la publication d’une révision de test. Contrôler le format Affiche sur un iPhone sous iOS 27 ou ultérieur et le rendu de la bannière sur Google Wallet. La photo source reste privée. La carte porte le solde, l’avantage et le QR du membre.

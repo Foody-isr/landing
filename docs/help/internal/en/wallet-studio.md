@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - customers
   - customers-wallet-studio
-updatedAt: '2026-11-21'
+updatedAt: '2026-11-22'
 featureId: customers-wallet-studio
 audience: internal
 releaseStatus: local-release-unverified
@@ -54,3 +54,9 @@ Activate the loyalty program for the pilot restaurant. Under **Customer card**, 
 ## Join, add the personal card and test earning
 
 On a phone, open the enrollment link, sign in, accept the terms and join. On an iPhone, select **Add your card to Apple Wallet**, then **Add** in Wallet. An enabled Google provider offers an **Add to Google Wallet** button and opens Google for confirmation. Repeat the download from the same account and check the QR and progress. Place an eligible paid test order with that account and check that the Wallet card and the loyalty page reflect the same progress. For a POS pilot with lookup and loyalty sales enabled, scan the personal QR and attach the member before confirming payment. At the threshold, check the reward in the member’s loyalty account and try applying it on an enabled checkout.
+
+<span id="compose-wallet-manually" />
+
+## Design a card manually
+
+In **Wallet Studio → Card layout**, choose **Table journal** for a photo with a gingham band or **Coffee poster** for a cutout in front of a wave. Upload your logo and photo, or choose **Use website logo** and **Use website photo** to select those assets from the published site. Open **Artwork title** to edit the text, typeface, size, position and angle. **Pattern and background** sets the colors, pattern and divider position. **Photo placement** lets you move the image, trim transparent margins and place it in front of the title. Under **Logo and member information**, choose the balance alone or with its target, then the remaining progress or the program benefit. Compare the **Poster** and **Classic card** Apple previews and open **Google Wallet**. iPhone uses the poster format from iOS 27. Use the sample balance to simulate progress. Select **Save draft**, test the Apple pass, then **Publish design** to release it to customer cards.
