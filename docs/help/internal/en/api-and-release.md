@@ -124,7 +124,7 @@ Deploy migration 266 and the API before Web. Configure CUSTOMER_FACEBOOK_APP_ID,
 
 ## Carte publication and sale-stock transactions
 
-API migration 267 adds private carte/series drafts, immutable publication snapshots and item-stock series/counters/events. Draft and stock history endpoints require scoped menu.view; changes require menu.edit. Publication checks draft/source and stock revisions in one transaction, preserves order commitments and rejects invalid tenant references. Deploy the API before Admin. Retain old global counters for older orders; the first series activation imports current remaining stock explicitly. Verify concurrent reservations, stock releases, future-series isolation and rollback in development before promoting the artifacts.
+API migration 267 adds private carte/series drafts, immutable publication snapshots and item-stock series/counters/events. Draft and stock history endpoints require scoped menu.view; changes require menu.edit. Publication checks draft/source and stock revisions in one transaction, preserves order commitments and rejects invalid tenant references. Deploy the API before Admin. Retain old global counters for older orders; the first series activation imports current remaining stock explicitly. Verify concurrent reservations, stock releases, future-series isolation and rollback in development before promoting the artifacts. The scoped staff menu read at GET /api/v1/menu/ accepts serie_date in YYYY-MM-DD format. Pass an available fulfillment day from the staff batch configuration, then verify the response echoes it. The API resolves that day to the first day of its series for publication and stock. Deploy this API before the Admin catalogue.
 
 <span id="stock-history-only-corpus" />
 
