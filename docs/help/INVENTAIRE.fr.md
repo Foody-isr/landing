@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-11-22.
 
-114 fiches de fonctionnalités, 1054 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2735 fichiers applicatifs et 2366 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+114 fiches de fonctionnalités, 1058 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2738 fichiers applicatifs et 2369 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyadmin | 834 | 842 | e6997a4fe5b1 ; versioned |
-| foodybackoffice | 55 | 50 | 1ef26c985c41 ; versioned |
-| foodylanding | 158 | 31 | cd1be31a4700 ; versioned |
+| foodyadmin | 834 | 842 | 0322a285621f ; versioned |
+| foodybackoffice | 55 | 51 | 82cde2439a24 ; versioned |
+| foodylanding | 158 | 31 | dbefb9df60ff ; versioned |
 | foodypos | 432 | 187 | 9e0ec2f0e188 ; versioned |
-| foodyserver | 867 | 1054 | 5a7da36ecb19 ; versioned |
-| foodyweb | 389 | 202 | d312905f2b28 ; versioned |
+| foodyserver | 867 | 1054 | ecb652351fb1 ; versioned |
+| foodyweb | 392 | 204 | e4435446545f ; versioned |
 
 ## getting-started
 
@@ -821,6 +821,7 @@ Identifiant : `payments-how-payments-work`. Public : public. Disponibilité : av
 - [Vérifier un paiement en ligne](../../src/content/help/fr/payments/how-payments-work.mdx#section-2)
 - [Résultat en échec ou incertain](../../src/content/help/fr/payments/how-payments-work.mdx#section-3)
 - [Où le client saisit une nouvelle carte](../../src/content/help/fr/payments/how-payments-work.mdx#verifone-new-card-checkout)
+- [Encaisser en ligne avec Verifone iframe](../../src/content/help/fr/payments/how-payments-work.mdx#verifone-iframe-payment)
 - [Enregistrer une carte pendant le premier paiement (CST)](../../src/content/help/fr/payments/how-payments-work.mdx#verifone-cst-card-saving)
 - [Vérifier une facture Invoice4U détaillée](../../src/content/help/fr/payments/how-payments-work.mdx#invoice4u-order-lines)
 - [Réservations après paiement tardif](../../src/content/help/fr/payments/how-payments-work.mdx#carte-series-stock)
@@ -894,6 +895,7 @@ Identifiant : `payment-configuration`. Public : public. Disponibilité : availab
 - [Configurer et utiliser Cibus](../../src/content/help/fr/payments/providers-and-cibus.mdx#cibus)
 - [Régler politique de paiement, TVA et pourboires](../../src/content/help/fr/payments/providers-and-cibus.mdx#policy-vat-tips)
 - [Où le client saisit une nouvelle carte](../../src/content/help/fr/payments/providers-and-cibus.mdx#verifone-new-card-checkout)
+- [Encaisser en ligne avec Verifone iframe](../../src/content/help/fr/payments/providers-and-cibus.mdx#verifone-iframe-payment)
 - [Enregistrer une carte pendant le premier paiement (CST)](../../src/content/help/fr/payments/providers-and-cibus.mdx#verifone-cst-card-saving)
 - [Vérifier une facture Invoice4U détaillée](../../src/content/help/fr/payments/providers-and-cibus.mdx#invoice4u-order-lines)
 - [Utiliser les espèces avec garantie bancaire facultative](../../src/content/help/fr/payments/providers-and-cibus.mdx#stancer-cash-guarantee)
@@ -1465,6 +1467,7 @@ Identifiant : `guest-ordering`. Public : public. Disponibilité : available. Ser
 - [Choisir coordonnées et remise](../../src/content/help/fr/guest/online-ordering.mdx#fulfillment)
 - [Choisir une date à l’avance au paiement](../../src/content/help/fr/guest/online-ordering.mdx#checkout-calendar)
 - [Payer et vérifier la confirmation](../../src/content/help/fr/guest/online-ordering.mdx#payment)
+- [Payer par carte sur le site du restaurant](../../src/content/help/fr/guest/online-ordering.mdx#verifone-iframe-payment)
 - [Se connecter avant de commander](../../src/content/help/fr/guest/online-ordering.mdx#customer-sign-in-methods)
 - [Accès aux nouveaux réglages](../../src/content/help/fr/guest/online-ordering.mdx#related-service-controls)
 - [Vérifier les choix conditionnels d’un article](../../src/content/help/fr/guest/online-ordering.mdx#conditional-item-choices)
@@ -1548,6 +1551,7 @@ Identifiant : `backoffice-entitlements`. Public : internal. Disponibilité : ava
 - [Garder la page de paiement lisible](internal/fr/features-and-payments.md#verifone-readable-hosted-theme)
 - [Rattacher un thème Checkout créé dans Verifone Central](internal/fr/features-and-payments.md#link-verifone-central-theme)
 - [Choisir le parcours carte Verifone d’un restaurant](internal/fr/features-and-payments.md#configure-verifone-cst-card-form)
+- [Activer Verifone iframe pour un restaurant](internal/fr/features-and-payments.md#configure-verifone-iframe)
 - [Configurer Apple Pay et Google Pay dans Foody](internal/fr/features-and-payments.md#configure-verifone-direct-wallets)
 - [Vérifier affectations de fonctions et plans](internal/fr/features-and-payments.md#entitlements)
 - [Configurer l’infrastructure de paiement](internal/fr/features-and-payments.md#providers)

@@ -4865,11 +4865,14 @@
       ],
       "foodyserver": [
         "internal/payment/**",
-        "internal/common/payment_adjustment.go"
+        "internal/common/payment_adjustment.go",
+        "migrations/345_verifone_checkout_iframe.sql"
       ],
       "foodyweb": [
         "app/r/[restaurantId]/payment/**",
-        "lib/i18n.tsx"
+        "lib/i18n.tsx",
+        "app/order/payment/**",
+        "lib/verifone-iframe.ts"
       ],
       "foodypos": [
         "lib/features/payment/**"
@@ -4979,9 +4982,22 @@
           "he": "היכן הלקוח מזין כרטיס חדש"
         },
         "instructions": {
-          "en": "Foody sets the card payment flow for each restaurant. With Verifone Checkout, confirm the basket, then enter the new card once on the secure Verifone page. With the integrated CST form, enter the test card in Foody for a fixed-price, prepaid pickup or delivery order in ILS. When card saving is available, a signed-in customer can select it in either flow. The card is saved during that same payment. Use a new order to test each flow. A guest who goes back from the hosted form can reopen the same order. After a provider failure, View order shows its items and contact details. Foody checks the order’s payment status before reopening payment.",
-          "fr": "Foody règle le parcours carte par restaurant. Avec Verifone Checkout, confirmez le panier puis saisissez la nouvelle carte une seule fois sur la page sécurisée de Verifone. Avec le formulaire intégré CST, saisissez la carte de test dans Foody pour une commande prépayée en ILS, à montant fixe, en retrait ou en livraison. Lorsque l’enregistrement est proposé, le client connecté peut le choisir dans les deux parcours. La carte est enregistrée lors de ce même paiement. Pour tester chaque parcours, ouvrez une nouvelle commande. Une cliente qui revient du formulaire hébergé retrouve sa commande. Après un échec chez le prestataire, Voir ma commande affiche les articles et les coordonnées. Foody vérifie l’état du paiement avant de proposer sa reprise.",
-          "he": "Foody מגדירה לכל מסעדה את מסלול התשלום בכרטיס. ב-Verifone Checkout מאשרים את הסל ומזינים כרטיס חדש פעם אחת בעמוד המאובטח של Verifone. בטופס CST המשולב מזינים את כרטיס הבדיקה בתוך Foody להזמנה באיסוף או במשלוח, בתשלום מראש במחיר קבוע בשקלים. כששמירת כרטיס זמינה, לקוחות מחוברים יכולים לבחור בה בשני המסלולים. הכרטיס נשמר במסגרת אותו תשלום. לבדיקת כל מסלול פותחים הזמנה חדשה. חזרה מטופס התשלום של הספק מובילה לאותה הזמנה. אחרי כשל בעמוד הספק, צפייה בהזמנה מציגה את הפריטים ואת פרטי הקשר. Foody בודקת את מצב התשלום לפני פתיחת עמוד התשלום מחדש."
+          "en": "Foody sets the card payment flow for each restaurant. With Verifone Checkout, confirm the basket, then enter the new card once on the secure Verifone page. With the integrated CST form, enter the test card in Foody for a fixed-price, prepaid pickup or delivery order in ILS. When card saving is available, a signed-in customer can select it. The card is saved during that same payment. Use a new order to test each flow. A guest who goes back from the hosted form can reopen the same order. After a provider failure, View order shows its items and contact details. Foody checks the order’s payment status before reopening payment.",
+          "fr": "Foody règle le parcours carte par restaurant. Avec Verifone Checkout, confirmez le panier puis saisissez la nouvelle carte une seule fois sur la page sécurisée de Verifone. Avec le formulaire intégré CST, saisissez la carte de test dans Foody pour une commande prépayée en ILS, à montant fixe, en retrait ou en livraison. Lorsque l’enregistrement est proposé, le client connecté peut le choisir. La carte est enregistrée lors de ce même paiement. Pour tester chaque parcours, ouvrez une nouvelle commande. Une cliente qui revient du formulaire hébergé retrouve sa commande. Après un échec chez le prestataire, Voir ma commande affiche les articles et les coordonnées. Foody vérifie l’état du paiement avant de proposer sa reprise.",
+          "he": "Foody מגדירה לכל מסעדה את מסלול התשלום בכרטיס. ב-Verifone Checkout מאשרים את הסל ומזינים כרטיס חדש פעם אחת בעמוד המאובטח של Verifone. בטופס CST המשולב מזינים את כרטיס הבדיקה בתוך Foody להזמנה באיסוף או במשלוח, בתשלום מראש במחיר קבוע בשקלים. כששמירת כרטיס זמינה, לקוחות מחוברים יכולים לבחור בה. הכרטיס נשמר במסגרת אותו תשלום. לבדיקת כל מסלול פותחים הזמנה חדשה. חזרה מטופס התשלום של הספק מובילה לאותה הזמנה. אחרי כשל בעמוד הספק, צפייה בהזמנה מציגה את הפריטים ואת פרטי הקשר. Foody בודקת את מצב התשלום לפני פתיחת עמוד התשלום מחדש."
+        }
+      },
+      {
+        "id": "verifone-iframe-payment",
+        "title": {
+          "en": "Take online card payments with Verifone iframe",
+          "fr": "Encaisser en ligne avec Verifone iframe",
+          "he": "קבלת תשלומים מקוונים בכרטיס באמצעות Verifone iframe"
+        },
+        "instructions": {
+          "en": "The Foody team can select Verifone iframe with the restaurant’s saved Verifone Checkout settings. It applies to new card checkouts for pickup or delivery orders in ILS placed on the restaurant website. The customer completes the Verifone form within the restaurant’s checkout. The selected Verifone Checkout theme applies to the form. Foody verifies the payment before sending the paid order to the POS. Customers who need to check or resume payment can open their original order.",
+          "fr": "L’équipe Foody peut sélectionner Verifone iframe avec la configuration Verifone Checkout enregistrée pour le restaurant. Ce mode s’applique aux nouveaux paiements par carte en ILS des commandes en retrait ou en livraison passées sur le site du restaurant. Le client remplit le formulaire Verifone dans le parcours du restaurant. Le thème Verifone Checkout sélectionné s’applique au formulaire. Foody vérifie le paiement avant de transmettre la commande payée au POS. Le client peut ouvrir sa commande pour vérifier ou reprendre le paiement.",
+          "he": "צוות Foody יכול לבחור ב-Verifone iframe עם הגדרות Verifone Checkout שנשמרו למסעדה. המסלול חל על תשלומים חדשים בכרטיס בשקלים להזמנות באיסוף או במשלוח שבוצעו באתר המסעדה. הלקוח משלים את טופס Verifone בתוך תהליך ההזמנה של המסעדה. ערכת העיצוב שנבחרה ל-Verifone Checkout משמשת בטופס. Foody מאמתת את התשלום לפני העברת ההזמנה ששולמה לקופה. הלקוח יכול לפתוח את ההזמנה המקורית כדי לבדוק את התשלום או להמשיך בו."
         }
       },
       {
@@ -5120,7 +5136,7 @@
     "audience": "public",
     "status": "available",
     "preserveExisting": true,
-    "procedureUpdatedAt": "2026-11-20",
+    "procedureUpdatedAt": "2026-11-22",
     "updatedAt": "2026-11-20"
   },
   {
@@ -13636,9 +13652,22 @@
           "he": "היכן הלקוח מזין כרטיס חדש"
         },
         "instructions": {
-          "en": "Foody sets the card payment flow for each restaurant. With Verifone Checkout, confirm the basket, then enter the new card once on the secure Verifone page. With the integrated CST form, enter the test card in Foody for a fixed-price, prepaid pickup or delivery order in ILS. When card saving is available, a signed-in customer can select it in either flow. The card is saved during that same payment. Use a new order to test each flow.",
-          "fr": "Foody règle le parcours carte par restaurant. Avec Verifone Checkout, confirmez le panier puis saisissez la nouvelle carte une seule fois sur la page sécurisée de Verifone. Avec le formulaire intégré CST, saisissez la carte de test dans Foody pour une commande prépayée en ILS, à montant fixe, en retrait ou en livraison. Lorsque l’enregistrement est proposé, le client connecté peut le choisir dans les deux parcours. La carte est enregistrée lors de ce même paiement. Pour tester chaque parcours, ouvrez une nouvelle commande.",
-          "he": "Foody מגדירה לכל מסעדה את מסלול התשלום בכרטיס. ב-Verifone Checkout מאשרים את הסל ומזינים כרטיס חדש פעם אחת בעמוד המאובטח של Verifone. בטופס CST המשולב מזינים את כרטיס הבדיקה בתוך Foody להזמנה באיסוף או במשלוח, בתשלום מראש במחיר קבוע בשקלים. כששמירת כרטיס זמינה, לקוחות מחוברים יכולים לבחור בה בשני המסלולים. הכרטיס נשמר במסגרת אותו תשלום. לבדיקת כל מסלול פותחים הזמנה חדשה."
+          "en": "Foody sets the card payment flow for each restaurant. With Verifone Checkout, confirm the basket, then enter the new card once on the secure Verifone page. With the integrated CST form, enter the test card in Foody for a fixed-price, prepaid pickup or delivery order in ILS. When card saving is available, a signed-in customer can select it. The card is saved during that same payment. Use a new order to test each flow.",
+          "fr": "Foody règle le parcours carte par restaurant. Avec Verifone Checkout, confirmez le panier puis saisissez la nouvelle carte une seule fois sur la page sécurisée de Verifone. Avec le formulaire intégré CST, saisissez la carte de test dans Foody pour une commande prépayée en ILS, à montant fixe, en retrait ou en livraison. Lorsque l’enregistrement est proposé, le client connecté peut le choisir. La carte est enregistrée lors de ce même paiement. Pour tester chaque parcours, ouvrez une nouvelle commande.",
+          "he": "Foody מגדירה לכל מסעדה את מסלול התשלום בכרטיס. ב-Verifone Checkout מאשרים את הסל ומזינים כרטיס חדש פעם אחת בעמוד המאובטח של Verifone. בטופס CST המשולב מזינים את כרטיס הבדיקה בתוך Foody להזמנה באיסוף או במשלוח, בתשלום מראש במחיר קבוע בשקלים. כששמירת כרטיס זמינה, לקוחות מחוברים יכולים לבחור בה. הכרטיס נשמר במסגרת אותו תשלום. לבדיקת כל מסלול פותחים הזמנה חדשה."
+        }
+      },
+      {
+        "id": "verifone-iframe-payment",
+        "title": {
+          "en": "Take online card payments with Verifone iframe",
+          "fr": "Encaisser en ligne avec Verifone iframe",
+          "he": "קבלת תשלומים מקוונים בכרטיס באמצעות Verifone iframe"
+        },
+        "instructions": {
+          "en": "The Foody team can select Verifone iframe with the restaurant’s saved Verifone Checkout settings. It applies to new card checkouts for pickup or delivery orders in ILS placed on the restaurant website. The customer completes the Verifone form within the restaurant’s checkout. The selected Verifone Checkout theme applies to the form. Foody verifies the payment before sending the paid order to the POS. Customers who need to check or resume payment can open their original order.",
+          "fr": "L’équipe Foody peut sélectionner Verifone iframe avec la configuration Verifone Checkout enregistrée pour le restaurant. Ce mode s’applique aux nouveaux paiements par carte en ILS des commandes en retrait ou en livraison passées sur le site du restaurant. Le client remplit le formulaire Verifone dans le parcours du restaurant. Le thème Verifone Checkout sélectionné s’applique au formulaire. Foody vérifie le paiement avant de transmettre la commande payée au POS. Le client peut ouvrir sa commande pour vérifier ou reprendre le paiement.",
+          "he": "צוות Foody יכול לבחור ב-Verifone iframe עם הגדרות Verifone Checkout שנשמרו למסעדה. המסלול חל על תשלומים חדשים בכרטיס בשקלים להזמנות באיסוף או במשלוח שבוצעו באתר המסעדה. הלקוח משלים את טופס Verifone בתוך תהליך ההזמנה של המסעדה. ערכת העיצוב שנבחרה ל-Verifone Checkout משמשת בטופס. Foody מאמתת את התשלום לפני העברת ההזמנה ששולמה לקופה. הלקוח יכול לפתוח את ההזמנה המקורית כדי לבדוק את התשלום או להמשיך בו."
         }
       },
       {
@@ -13699,7 +13728,7 @@
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-11-19"
+    "procedureUpdatedAt": "2026-11-22"
   },
   {
     "id": "whatsapp",
@@ -14118,7 +14147,10 @@
         "store/useWebsiteOrderStore.ts",
         "lib/payment-return.ts",
         "components/ConfirmationPageClient.tsx",
-        "app/r/[restaurantId]/payment/failed/page.tsx"
+        "app/r/[restaurantId]/payment/failed/page.tsx",
+        "app/order/payment/**",
+        "lib/verifone-iframe.ts",
+        "lib/customer-api-proxy.ts"
       ],
       "foodyserver": [
         "internal/common/phone.go",
@@ -14131,7 +14163,8 @@
         "internal/addresslookup/service.go",
         "internal/delivery/guest_entrance.go",
         "internal/addresslookup/checkout_profile.go",
-        "internal/delivery/google_address.go"
+        "internal/delivery/google_address.go",
+        "internal/payment/verifone_iframe.go"
       ]
     },
     "operations": [
@@ -14239,6 +14272,19 @@
           "en": "Check the total and enter the card where the Payment section indicates. When offered, you can save the card during the payment. With the integrated Verifone form, enter the card once in Foody. If the restaurant changes forms while the basket is open, review Payment and confirm again. For prepaid orders, “Order awaiting payment” means Foody recorded the order and is waiting for the payment result. If the payment page could not open, keep the order number and retry from that same order when offered. If Foody is checking a payment, wait for its status before trying again. Use Back on the hosted payment page to return to your order. The items, contact details and delivery address are on the order even if you checked out as a guest. If payment is still due, choose Pay now to continue with the same order. If the provider returns you to the payment failure page, choose View order to open that summary.",
           "fr": "Vérifiez le total et saisissez la carte à l’endroit indiqué dans la section Paiement. Si l’option est proposée, vous pouvez enregistrer la carte lors du paiement. Avec le formulaire Verifone intégré, vous saisissez la carte une seule fois dans Foody. Si le restaurant change de formulaire pendant votre commande, vérifiez la section Paiement puis confirmez de nouveau. Pour une commande prépayée, « Commande en attente de paiement » signifie que Foody a enregistré la commande et attend le résultat du paiement. Si la page de paiement n’a pas pu s’ouvrir, gardez le numéro de commande et réessayez depuis cette commande lorsque le bouton apparaît. Si Foody vérifie le paiement, attendez le résultat avant toute nouvelle tentative. Sur la page du prestataire, utilisez Retour pour retrouver votre commande, même si vous avez commandé sans compte. Le récapitulatif contient vos articles, vos coordonnées et votre adresse de livraison. Si le paiement reste dû, choisissez Payer maintenant pour le reprendre sur cette commande. Si le prestataire vous renvoie à l’écran d’échec du paiement, choisissez Voir ma commande pour ouvrir ce récapitulatif.",
           "he": "בדקו את הסכום והזינו את הכרטיס במקום שמצוין באזור התשלום. כשאפשרות השמירה מוצגת, אפשר לשמור את הכרטיס במהלך התשלום. בטופס Verifone המשולב מזינים את הכרטיס פעם אחת בתוך Foody. אם המסעדה מחליפה טופס בזמן שהסל פתוח, בדקו את אזור התשלום ואשרו שוב. בהזמנה בתשלום מראש ההודעה ״ההזמנה ממתינה לתשלום״ מציינת שההזמנה נרשמה ו-Foody ממתינה לתוצאת התשלום. אם עמוד התשלום לא נפתח, שמרו את מספר ההזמנה ונסו שוב מתוך אותה הזמנה כשהאפשרות מופיעה. אם Foody בודקת את מצב התשלום, המתינו לתוצאה לפני ניסיון נוסף. בעמוד התשלום של הספק, לחצו על חזרה כדי לשוב להזמנה, גם אם הזמנתם כאורחים. בסיכום יופיעו הפריטים, פרטי הקשר וכתובת המשלוח. אם נותר סכום לתשלום, לחצו על תשלום עכשיו כדי להמשיך באותה הזמנה. אם הספק החזיר אתכם לעמוד שבו התשלום נכשל, בחרו בצפייה בהזמנה כדי לפתוח את הסיכום."
+        }
+      },
+      {
+        "id": "verifone-iframe-payment",
+        "title": {
+          "en": "Pay by card on the restaurant website",
+          "fr": "Payer par carte sur le site du restaurant",
+          "he": "תשלום בכרטיס באתר המסעדה"
+        },
+        "instructions": {
+          "en": "If the restaurant uses Verifone iframe for pickup or delivery, choose Continue to payment. Check the amount, then enter your card in the Verifone form on the restaurant website. Foody opens the order confirmation once it verifies the payment. If the form does not display, choose Open the form in a new tab and return to the payment step to check the status. If verification takes longer or the form expires, choose View order to recover the same order.",
+          "fr": "Si le restaurant utilise Verifone iframe pour le retrait ou la livraison, choisissez Continuer vers le paiement. Vérifiez le montant, puis saisissez votre carte dans le formulaire Verifone affiché sur le site du restaurant. Foody ouvre la confirmation après vérification du paiement. Si le formulaire ne s’affiche pas, choisissez Ouvrir le formulaire dans un nouvel onglet, puis revenez à l’étape de paiement pour vérifier son statut. Si la vérification prend du temps ou si le formulaire expire, choisissez Voir ma commande pour retrouver la même commande.",
+          "he": "אם המסעדה משתמשת ב-Verifone iframe לאיסוף או למשלוח, בחרו ״המשך לתשלום״. בדקו את הסכום והזינו את פרטי הכרטיס בטופס Verifone שמופיע באתר המסעדה. Foody תפתח את אישור ההזמנה לאחר אימות התשלום. אם הטופס אינו מוצג, בחרו ״פתיחת הטופס בכרטיסייה חדשה״ וחזרו לשלב התשלום כדי לבדוק את הסטטוס. אם האימות מתעכב או שתוקף הטופס פג, בחרו ״צפייה בהזמנה״ כדי לחזור לאותה הזמנה."
         }
       },
       {
@@ -14453,7 +14499,7 @@
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-11-20",
+    "procedureUpdatedAt": "2026-11-22",
     "updatedAt": "2026-11-20"
   },
   {
@@ -15238,6 +15284,19 @@
         }
       },
       {
+        "id": "configure-verifone-iframe",
+        "title": {
+          "en": "Enable Verifone iframe for a restaurant",
+          "fr": "Activer Verifone iframe pour un restaurant",
+          "he": "הפעלת Verifone iframe למסעדה"
+        },
+        "instructions": {
+          "en": "In Backoffice, open Restaurants → restaurant → Payment. Save the Verifone Cloud (GreenBox) Checkout settings for the ILS restaurant. Under Card payment flow, choose Verifone iframe. The choice saves immediately. Use Verifone Checkout appearance to link or synchronize the restaurant’s theme if needed. In CST Sandbox, test a new prepaid pickup or delivery order on the restaurant website. Confirm that the form displays on desktop and mobile, the exact amount is paid once, and the paid order arrives in POS. Check that a reload and a slow confirmation both keep the same order. Use Verifone Checkout in the same selector to switch future sessions to the external page. Confirm eligibility with Verifone and the acquirer before using the iframe in production.",
+          "fr": "Dans le Backoffice, ouvrez Restaurants → fiche du restaurant → Payment. Enregistrez la configuration Verifone Cloud (GreenBox) Checkout du restaurant qui facture en ILS. Sous Card payment flow, choisissez Verifone iframe. Le choix est enregistré immédiatement. Si nécessaire, utilisez Verifone Checkout appearance pour lier ou synchroniser le thème du restaurant. Dans CST Sandbox, testez une nouvelle commande prépayée en retrait ou en livraison sur le site du restaurant. Vérifiez l’affichage sur ordinateur et mobile, un seul paiement du montant exact et l’arrivée de la commande payée au POS. Vérifiez qu’un rechargement ou une confirmation lente conserve la même commande. Sélectionnez Verifone Checkout dans le même réglage pour ouvrir les futurs paiements sur la page externe. Validez l’éligibilité auprès de Verifone et de l’acquéreur avant d’utiliser l’iframe en production.",
+          "he": "ב-Backoffice פתחו Restaurants, בחרו את המסעדה ופתחו את Payment. שמרו את הגדרות Verifone Cloud (GreenBox) Checkout למסעדה שמחייבת בשקלים. תחת Card payment flow בחרו Verifone iframe. הבחירה נשמרת מיד. אם צריך, השתמשו ב-Verifone Checkout appearance כדי לקשר או לסנכרן את ערכת העיצוב של המסעדה. ב-CST Sandbox בדקו הזמנה חדשה בתשלום מראש לאיסוף או למשלוח באתר המסעדה. ודאו שהטופס מוצג במחשב ובנייד, שהסכום המדויק חויב פעם אחת ושההזמנה ששולמה מופיעה בקופה. ודאו גם שטעינה מחדש או אישור שמתעכב משאירים את אותה הזמנה. כדי לפתוח תשלומים עתידיים בעמוד החיצוני, בחרו Verifone Checkout באותה הגדרה. לפני שימוש בייצור, אשרו את ההתאמה עם Verifone והסולק."
+        }
+      },
+      {
         "id": "configure-verifone-direct-wallets",
         "title": {
           "en": "Configure Apple Pay and Google Pay in Foody",
@@ -15345,7 +15404,7 @@
     "audience": "internal",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-11-19",
+    "procedureUpdatedAt": "2026-11-22",
     "description": {
       "en": "Open the restaurant’s Features, Billing or Payment tab. Find the shared Cibus settings under Payments & devices.",
       "fr": "Ouvrez l’onglet Features, Billing ou Payment de la fiche restaurant. Les réglages Cibus partagés se trouvent dans Payments & devices.",

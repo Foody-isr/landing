@@ -95,6 +95,9 @@ for (const [service, configuredRoot] of Object.entries(roots)) {
       : service === 'foodyserver' && /^internal\/orders\/transactions(?:_handler|_adjustments)?\.go$/.test(file)
         ? ['pos-payments'] : service === 'foodyserver' && file === 'internal/menu/item_photos.go'
           ? ['menu-product-photos'] : matched.length ? matched : ['shared-runtime'];
+    if (service === 'foodyserver' && file === 'internal/payment/verifone_iframe.go') {
+      ids = ['guest-ordering', 'payments-how-payments-work', 'backoffice-entitlements'];
+    }
     // Dedicated shelf-stock modules do not implement modifier, combo, variant
     // or payment procedures merely because those guides share broad domain globs.
     const focusedStockOwnership = {

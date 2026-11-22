@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - backoffice-entitlements
-updatedAt: '2026-11-19'
+updatedAt: '2026-11-22'
 featureId: backoffice-entitlements
 audience: internal
 releaseStatus: available
@@ -45,6 +45,12 @@ In Verifone Central, open Administration > Checkout Themes and save a theme for 
 ## Choose a restaurant’s Verifone card payment flow
 
 In Backoffice open Restaurants → restaurant → Payment. To compare both flows choose Verifone Cloud (GreenBox) and CST Sandbox. Under Verifone.js encryption key, save the organization’s Public key and Public key alias once using Save Payment Config. Under Card payment flow select **Foody · Verifone.js**. The selection saves immediately for this restaurant. Open a new prepaid, fixed-price pickup or delivery order in ILS. Use a new CST test card. For a signed-in customer, also test selecting Save this card after entering its details. Confirm and verify a single full-amount payment in Foody. Next select **Verifone Checkout** and open a second order. Confirming the basket opens the Verifone payment link. Both flows reuse the saved credentials and contracts. Wallets and saved cards have separate settings. Before changing environment or removing the key, select Verifone Checkout, then replace or remove the key and save the settings.
+
+<span id="configure-verifone-iframe" />
+
+## Enable Verifone iframe for a restaurant
+
+In Backoffice, open Restaurants → restaurant → Payment. Save the Verifone Cloud (GreenBox) Checkout settings for the ILS restaurant. Under Card payment flow, choose Verifone iframe. The choice saves immediately. Use Verifone Checkout appearance to link or synchronize the restaurant’s theme if needed. In CST Sandbox, test a new prepaid pickup or delivery order on the restaurant website. Confirm that the form displays on desktop and mobile, the exact amount is paid once, and the paid order arrives in POS. Check that a reload and a slow confirmation both keep the same order. Use Verifone Checkout in the same selector to switch future sessions to the external page. Confirm eligibility with Verifone and the acquirer before using the iframe in production.
 
 <span id="configure-verifone-direct-wallets" />
 

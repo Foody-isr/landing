@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - backoffice-entitlements
-updatedAt: '2026-11-19'
+updatedAt: '2026-11-22'
 featureId: backoffice-entitlements
 audience: internal
 releaseStatus: available
@@ -45,6 +45,12 @@ releaseStatus: available
 ## בחירת מסלול תשלום בכרטיס של Verifone למסעדה
 
 ב-Backoffice פתחו Restaurants, בחרו את המסעדה ופתחו את הלשונית Payment. להשוואת המסלולים בחרו Verifone Cloud (GreenBox) ואת CST Sandbox. תחת Verifone.js encryption key הזינו פעם אחת את ה-Public key ואת ה-Public key alias של הארגון ושמרו באמצעות Save Payment Config. תחת Card payment flow בחרו **Foody · Verifone.js**. הבחירה נשמרת מיד למסעדה זו. פתחו הזמנה חדשה לאיסוף או למשלוח, בתשלום מראש ובמחיר קבוע בשקלים. השתמשו בכרטיס בדיקה חדש של CST. בחשבון לקוח מחובר בדקו גם את בחירת האפשרות לשמור את הכרטיס לאחר הזנת פרטיו. אשרו ובדקו ב-Foody שבוצע תשלום אחד בסכום המלא. לאחר מכן בחרו **Verifone Checkout** ופתחו הזמנה שנייה. אישור הסל יפתח את קישור התשלום של Verifone. שני המסלולים משתמשים בפרטי החיבור ובחוזים שכבר נשמרו. לארנקים ולכרטיסים שמורים יש הגדרות נפרדות. לפני החלפת סביבה או הסרת מפתח, בחרו Verifone Checkout, החליפו או הסירו את המפתח ושמרו.
+
+<span id="configure-verifone-iframe" />
+
+## הפעלת Verifone iframe למסעדה
+
+ב-Backoffice פתחו Restaurants, בחרו את המסעדה ופתחו את Payment. שמרו את הגדרות Verifone Cloud (GreenBox) Checkout למסעדה שמחייבת בשקלים. תחת Card payment flow בחרו Verifone iframe. הבחירה נשמרת מיד. אם צריך, השתמשו ב-Verifone Checkout appearance כדי לקשר או לסנכרן את ערכת העיצוב של המסעדה. ב-CST Sandbox בדקו הזמנה חדשה בתשלום מראש לאיסוף או למשלוח באתר המסעדה. ודאו שהטופס מוצג במחשב ובנייד, שהסכום המדויק חויב פעם אחת ושההזמנה ששולמה מופיעה בקופה. ודאו גם שטעינה מחדש או אישור שמתעכב משאירים את אותה הזמנה. כדי לפתוח תשלומים עתידיים בעמוד החיצוני, בחרו Verifone Checkout באותה הגדרה. לפני שימוש בייצור, אשרו את ההתאמה עם Verifone והסולק.
 
 <span id="configure-verifone-direct-wallets" />
 
