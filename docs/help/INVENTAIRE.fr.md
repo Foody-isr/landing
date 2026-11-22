@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-11-22.
 
-114 fiches de fonctionnalités, 1050 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2721 fichiers applicatifs et 2357 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+114 fiches de fonctionnalités, 1051 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2721 fichiers applicatifs et 2357 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,11 +10,11 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyadmin | 827 | 836 | ed00979f7c06 ; versioned |
+| foodyadmin | 827 | 836 | 5d1bb9fe558c ; versioned |
 | foodybackoffice | 54 | 49 | 619aa5734755 ; versioned |
 | foodylanding | 158 | 31 | ceb3163d8a27 ; versioned |
-| foodypos | 432 | 187 | 9e0ec2f0e188 ; versioned |
-| foodyserver | 862 | 1052 | 1502dfc11de1 ; versioned |
+| foodypos | 432 | 187 | 9a730f6928d4 ; versioned |
+| foodyserver | 862 | 1052 | 798893ad8061 ; versioned |
 | foodyweb | 388 | 202 | d312905f2b28 ; versioned |
 
 ## getting-started
@@ -465,6 +465,7 @@ Identifiant : `menu-menus-and-groups`. Public : public. Disponibilité : availab
 - [Quand ça se vend : horaires de disponibilité](../../src/content/help/fr/menu/menus-and-groups.mdx#section-5)
 - [Le lien avec la disponibilité](../../src/content/help/fr/menu/menus-and-groups.mdx#section-6)
 - [Contrôler la publication](../../src/content/help/fr/menu/menus-and-groups.mdx#section-7)
+- [Publier la même carte pour une nouvelle série](../../src/content/help/fr/menu/menus-and-groups.mdx#publish-unchanged-series)
 - [Quitter et résoudre un conflit](../../src/content/help/fr/menu/menus-and-groups.mdx#draft-leave-and-conflict)
 - [Préparer le stock d’une nouvelle série](../../src/content/help/fr/menu/menus-and-groups.mdx#series-sale-stock)
 - [Utiliser le tableau et les actions des articles](../../src/content/help/fr/menu/menus-and-groups.mdx#table-actions)
