@@ -1963,3 +1963,7 @@ The guest, internal ordering, dispatch and courier guides cover retrying address
 ## Development portal sign-in verification (21 November 2026)
 
 Reviewed the French, Hebrew and English first-login and internal Backoffice access procedures. They already cover signing in again after a session update and completing the authenticator step. The development routing change restores that documented flow. An open sign-in form checks the deployed version before submitting credentials and can reload the entry page. Restaurant membership, operator permissions, authenticator setup and recovery follow the existing procedures. The two service READMEs document how to publish and verify the development artifact.
+
+## Owner billing navigation after a sandbox reset (22 November 2026)
+
+The English, French and Hebrew subscription guides already direct owners to **Settings → Account → Billing** to choose a public plan and read invoices before subscribing. The sidebar now follows the same availability check as the billing page. To verify this procedure, start on **Branches** with a restaurant that has only a public catalog, open **Billing** from the account menu and navigate to **Invoices**.
