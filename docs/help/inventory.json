@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-10-18",
+  "reviewedAt": "2026-11-22",
   "services": {
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "a8df0a6dadf14ce5c148577855ac86808a6833c4",
+      "sourceCommit": "fe760e9d9ef9fede05e7949864006a9710200bf6",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "d547e72ca68347c48e1c1ec645e48bed3b453b4472d3fcf1318250e049fde310",
+      "sourceSnapshot": "def13057b9d760aab8f9ec8bc9a3cefa5ed03fdef027809b652b8dc93e6948c2",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
@@ -2432,14 +2432,28 @@
           ]
         },
         "src/components/loyalty/WalletBannerFraming.tsx": {
-          "sha256": "47899ee588131351c71de756c7ae9bd32831fa520a8eda093a5f427585a69968",
+          "sha256": "7419962f7ce1e8abf5d47774dab15d1b56bfdfe745f873071b42773595e76c12",
+          "features": [
+            "customers-loyalty-program",
+            "customers-wallet-studio"
+          ]
+        },
+        "src/components/loyalty/WalletCompositionEditor.tsx": {
+          "sha256": "ce4ffb8993fa31f409526ebfe037d2140ba768ecdd478f0a15578b898d5bbec0",
+          "features": [
+            "customers-loyalty-program",
+            "customers-wallet-studio"
+          ]
+        },
+        "src/components/loyalty/WalletCompositionPreview.tsx": {
+          "sha256": "54164f4e9880f87b2b2897941ecb33ac82750ceebcaf449cd7f459ba299c0bf3",
           "features": [
             "customers-loyalty-program",
             "customers-wallet-studio"
           ]
         },
         "src/components/loyalty/WalletStudioWorkspace.tsx": {
-          "sha256": "0b9b58c4c561964447b2110594c9aeb163b5931d839374b7dc571e34914e615a",
+          "sha256": "a47979f3bef6a71d5f4a9175abd04a315c019d58631028a714848818761508f2",
           "features": [
             "customers-loyalty-program",
             "customers-wallet-studio"
@@ -4556,7 +4570,7 @@
           ]
         },
         "src/lib/api.ts": {
-          "sha256": "c42657a7b3e25b6d3a0df786cbaeee91979bc5d35190fc007941863bd1a0f6c8",
+          "sha256": "e1b3ef2a03b03ea0fb5ec99241ba140d4bd6d9a53700dcd78d42eb8b47742981",
           "features": [
             "customers-profiles",
             "menu-variants-and-sizes",
@@ -4776,7 +4790,7 @@
           ]
         },
         "src/lib/i18n.tsx": {
-          "sha256": "c3d861064639af6ba8e3c4d8f73f97fe4ff921356293a3c4749a9311bde77301",
+          "sha256": "ba3043d534326a7354fe42a9d82990152128326401ab6c4905ef3b5673a714b0",
           "features": [
             "customers-profiles",
             "menu-menus-and-groups",
@@ -5590,6 +5604,14 @@
         },
         "src/lib/wallet-banner.ts": {
           "sha256": "0ac24ff6fd681a94b4c1bf28aa71b742e0bc19d3890e645ea41144b6be0f445e",
+          "features": [
+            "shared-runtime",
+            "customers-loyalty-program",
+            "customers-wallet-studio"
+          ]
+        },
+        "src/lib/wallet-composition.ts": {
+          "sha256": "81ce372f227f93c58538afbed06f56e274077fa8ae4da4ff103cbbd9d11eac81",
           "features": [
             "shared-runtime",
             "customers-loyalty-program",
@@ -10404,9 +10426,9 @@
     },
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "87b1daee6b99dfd4356e790d10e9bb549291309d",
+      "sourceCommit": "3d12030813f410690cde560008ed9efc934b2f8f",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "10ba90c562610d9d80353490d0eb600a1b7d5e6de85228fd1a89271446c19a22",
+      "sourceSnapshot": "23f4e21a921b7b4e0201d3949824faa0c67a78ebff13e9b31201a7ee3410ce7d",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -11290,7 +11312,7 @@
           ]
         },
         "internal/common/loyalty_wallet_design.go": {
-          "sha256": "3227727a26fda9a87cd3983c970d44abd96dcd6fd56e98441d1cb9c3ab4f3008",
+          "sha256": "d5831be985b0cf1f32bdbfce8ecb1f745f2991c111678435439e68c48dd64dac",
           "features": [
             "customers-wallet-studio"
           ]
@@ -12742,7 +12764,7 @@
           ]
         },
         "internal/loyalty/program.go": {
-          "sha256": "8041376896ef5a9eca167f70a84a0603e644e139ed9d09d68fb8e0e5decc7cf8",
+          "sha256": "96f462a4d7cae9dec61832d8a2ee33a1eb1896226b73fbbe4cd28f5b80de618b",
           "features": [
             "platform-api",
             "customers-loyalty-program"
@@ -12786,20 +12808,28 @@
             "platform-api"
           ]
         },
+        "internal/loyalty/wallet_composition.go": {
+          "sha256": "f26a800c21e503591b0e4506f4e1ec0122dd7738f11a771fafe0fbdb7fb382ba",
+          "features": [
+            "platform-api",
+            "customers-loyalty-program",
+            "customers-wallet-studio"
+          ]
+        },
         "internal/loyalty/wallet_studio.go": {
-          "sha256": "3be04b27d8dc221756863dae5da2099f8bbdc13929f7129d368fbccddf0e2e11",
+          "sha256": "750cb2a0cc6b751bd946c5d40410c3ff3c9f26b7462a35613a6837967fd3e5f7",
           "features": [
             "customers-wallet-studio"
           ]
         },
         "internal/loyalty/wallet_studio_artwork.go": {
-          "sha256": "d3e815f18d07f74c90f96f84516668814a4ffac6ae43f97e4a60d9fb2b1b6b36",
+          "sha256": "5da55e55f2aa360ac0974ea89cd5bb0375b7ed3ab46c971adbc35ed853726912",
           "features": [
             "customers-wallet-studio"
           ]
         },
         "internal/loyalty/wallet_studio_handler.go": {
-          "sha256": "cc9b579f68a736dae0f1a463dc777784709b2a0ebb4d73015efeaef2ca2cba7d",
+          "sha256": "dfb992f3bf0502f876caf8a6271e253607827f43a3644e477a700b3569d09e07",
           "features": [
             "customers-wallet-studio"
           ]
@@ -12813,14 +12843,15 @@
           ]
         },
         "internal/loyaltywallet/apple.go": {
-          "sha256": "fe55564f167ce39136140df9d479985ab6e093377ccf3d361e47c5391655b7c4",
+          "sha256": "ff9f70aaedb36dae5d72d291940a16af89ae3294aa326007e0677f5f950b37a7",
           "features": [
             "platform-api",
+            "customers-loyalty-program",
             "customers-wallet-studio"
           ]
         },
         "internal/loyaltywallet/apple_studio.go": {
-          "sha256": "0947ead72849df37d518ae5495151934646fbc48f489bccb4678f88619baa4c9",
+          "sha256": "bc309fcca0fab00dd6cf0d7b758ef05419d3a1ad56e4beffa9ef4f253936a0bd",
           "features": [
             "customers-wallet-studio"
           ]
@@ -12833,9 +12864,10 @@
           ]
         },
         "internal/loyaltywallet/google.go": {
-          "sha256": "296ba59efb2fcb67689f5ec3b272a52f67cfc73ead997309574b895ff7ec102c",
+          "sha256": "3ffe4f3176772d59263c24f7aac1250296b7f37567783afc0bcfe068bbae0422",
           "features": [
             "platform-api",
+            "customers-loyalty-program",
             "customers-wallet-studio"
           ]
         },
@@ -12874,6 +12906,14 @@
             "customers-wallet-studio"
           ]
         },
+        "internal/loyaltywallet/poster.go": {
+          "sha256": "8922ad6d0412dcb4125e4cc3b503323edcf076d3b8954974e3f6e7c35244db40",
+          "features": [
+            "platform-api",
+            "customers-loyalty-program",
+            "customers-wallet-studio"
+          ]
+        },
         "internal/loyaltywallet/registration.go": {
           "sha256": "a3e2ec8ff3feb41eb6737a1c6527933e8c6ba3aaadab65dce578e6f27293f342",
           "features": [
@@ -12882,16 +12922,18 @@
           ]
         },
         "internal/loyaltywallet/service.go": {
-          "sha256": "60821eed4d7386b354066f3cffadbec564b5ff35dde2a74b9f141a8dbc86e941",
+          "sha256": "9336baf987e09a5ce3daf256c46631f48b093f704ccc0864552e4c7c143d7484",
           "features": [
             "platform-api",
+            "customers-loyalty-program",
             "customers-wallet-studio"
           ]
         },
         "internal/loyaltywallet/types.go": {
-          "sha256": "9a458cf60dcb91dd37a594c313529eef77b8e265e8e9aaa4caf7533cd89c1aca",
+          "sha256": "8b8d6e070c5643676587ba5335ee17d3aa109abe217fcd48dd949c8aeb146b56",
           "features": [
             "platform-api",
+            "customers-loyalty-program",
             "customers-wallet-studio"
           ]
         },
@@ -16542,7 +16584,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "b4abf5123a336bb9097aa34785131ed0938d32d492bf20883d930eb8a8b68b25",
+          "sha256": "fb4cc7bf4f90ec5d204608e327e2462f8169109fb788209b11b61881b3e4162a",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -17227,6 +17269,13 @@
           "sha256": "199af79f3b75cb28ba1af028204cac19e3c9d55d9adeb7e857e44fc6220cc507",
           "features": [
             "payments-how-payments-work"
+          ]
+        },
+        "migrations/346_wallet_manual_composition.sql": {
+          "sha256": "be1e365d101f6d8c5c7e0490081f63dc81b4812503aa9bd5ab5d335ce44b1d93",
+          "features": [
+            "customers-loyalty-program",
+            "customers-wallet-studio"
           ]
         }
       }
@@ -54848,6 +54897,10 @@
         },
         {
           "service": "foodyserver",
+          "file": "internal/loyalty/wallet_composition.go"
+        },
+        {
+          "service": "foodyserver",
           "file": "internal/loyalty/wallet_website_design.go"
         },
         {
@@ -54881,6 +54934,10 @@
         {
           "service": "foodyserver",
           "file": "internal/loyaltywallet/pos_lookup.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyaltywallet/poster.go"
         },
         {
           "service": "foodyserver",
@@ -57946,6 +58003,10 @@
         {
           "service": "foodyadmin",
           "file": "src/lib/wallet-banner.ts"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/lib/wallet-composition.ts"
         },
         {
           "service": "foodyadmin",
@@ -62524,7 +62585,10 @@
           "src/lib/wallet-banner.ts",
           "src/components/loyalty/LoyaltyEarningEditor.tsx",
           "src/lib/api.ts",
-          "src/lib/wallet-website-design.ts"
+          "src/lib/wallet-website-design.ts",
+          "src/components/loyalty/WalletCompositionEditor.tsx",
+          "src/components/loyalty/WalletCompositionPreview.tsx",
+          "src/lib/wallet-composition.ts"
         ],
         "foodyserver": [
           "cmd/server/main.go",
@@ -62546,7 +62610,18 @@
           "internal/loyalty/wallet_website_design.go",
           "internal/publicimage/client.go",
           "internal/loyalty/wallet_studio_handler.go",
-          "cmd/server/wallet_studio.go"
+          "cmd/server/wallet_studio.go",
+          "internal/common/loyalty_wallet_design.go",
+          "internal/loyalty/wallet_composition.go",
+          "internal/loyalty/wallet_studio.go",
+          "internal/loyalty/wallet_studio_artwork.go",
+          "internal/loyaltywallet/apple.go",
+          "internal/loyaltywallet/apple_studio.go",
+          "internal/loyaltywallet/poster.go",
+          "internal/loyaltywallet/google.go",
+          "internal/loyaltywallet/service.go",
+          "internal/loyaltywallet/types.go",
+          "migrations/346_wallet_manual_composition.sql"
         ],
         "foodyweb": [
           "app/r/[restaurantId]/account/loyalty/page.tsx",
@@ -62697,6 +62772,19 @@
             "en": "In **Wallet Studio**, choose a palette or adjust the two colors. After adding a banner, try **Full product**, **Panorama** or **Balance on image**. Each layout uses your image. You can fine-tune the Apple and Google frames afterwards. Move **Sample balance** to check readability in both previews. The slider changes only the simulation. Save the draft, check a test card, then publish the design when ready.",
             "he": "בסטודיו Wallet בחרו פלטת צבעים או ערכו את שני הצבעים. לאחר הוספת באנר נסו תצוגת מוצר שלם, פנורמה או יתרה על התמונה. כל תבנית משתמשת בתמונה שלכם. לאחר מכן אפשר לדייק את המסגור ל־Apple ול־Google. הזיזו את מחוון היתרה לדוגמה כדי לבדוק את הקריאות בשתי התצוגות. המחוון משפיע רק על ההדמיה. שמרו טיוטה, בדקו כרטיס ניסיון ופרסמו את העיצוב כשהוא מוכן."
           }
+        },
+        {
+          "id": "compose-wallet-manually",
+          "title": {
+            "fr": "Composer une carte à la main",
+            "en": "Design a card manually",
+            "he": "עיצוב כרטיס ידני"
+          },
+          "instructions": {
+            "fr": "Dans **Studio Wallet → Composition de la carte**, choisissez **Carnet de table** pour une photo avec une bande vichy ou **Affiche café** pour un visuel détouré devant une vague. Importez votre logo et une photo, ou cliquez sur **Utiliser le logo du site** et **Utiliser la photo du site** pour reprendre ces éléments du site publié. Ouvrez **Titre du visuel** pour modifier le texte, la police, la taille, la position et l’inclinaison. **Motif et fond** règle les couleurs, le motif et la hauteur de la séparation. **Photo et cadrage** permet de positionner l’image, de rogner les marges transparentes et de la placer devant le titre. Sous **Logo et informations du membre**, choisissez le solde seul ou avec l’objectif, puis la progression ou l’avantage du programme. Comparez **Affiche** et **Carte classique** dans l’aperçu Apple, puis ouvrez **Google Wallet**. L’iPhone affiche le format Affiche à partir d’iOS 27. Ajustez **Solde de démonstration** pour simuler une visite ou des points. Cliquez sur **Enregistrer le brouillon**, puis testez la carte Apple avant de **Publier le visuel** pour les clients.",
+            "en": "In **Wallet Studio → Card layout**, choose **Table journal** for a photo with a gingham band or **Coffee poster** for a cutout in front of a wave. Upload your logo and photo, or choose **Use website logo** and **Use website photo** to select those assets from the published site. Open **Artwork title** to edit the text, typeface, size, position and angle. **Pattern and background** sets the colors, pattern and divider position. **Photo placement** lets you move the image, trim transparent margins and place it in front of the title. Under **Logo and member information**, choose the balance alone or with its target, then the remaining progress or the program benefit. Compare the **Poster** and **Classic card** Apple previews and open **Google Wallet**. iPhone uses the poster format from iOS 27. Use the sample balance to simulate progress. Select **Save draft**, test the Apple pass, then **Publish design** to release it to customer cards.",
+            "he": "ב־**סטודיו Wallet ← עיצוב הכרטיס** בחרו **מחברת שולחן** לתמונה עם רצועת משבצות או **כרזת קפה** לתמונה גזורה לפני גל. העלו לוגו ותמונה או בחרו **שימוש בלוגו האתר** ו־**שימוש בתמונת האתר** כדי לבחור אותם מהאתר שפורסם. פתחו **כותרת העיצוב** לעריכת הטקסט, הגופן, הגודל, המיקום והזווית. ב־**דוגמה ורקע** הגדירו צבעים, דוגמה ומיקום לקו ההפרדה. ב־**מיקום התמונה** אפשר להזיז את התמונה, לחתוך שוליים שקופים ולהציג אותה לפני הכותרת. ב־**לוגו ופרטי החברות** בחרו יתרה בלבד או יתרה ויעד, ואת היתרה לצבירה או ההטבה של התוכנית. השוו בין תצוגת הכרזה והכרטיס הקלאסי של Apple ופתחו את Google Wallet. באייפון תצוגת הכרזה זמינה מ־iOS 27. שנו את יתרת ההדגמה כדי לדמות התקדמות. שמרו טיוטה, בדקו את כרטיס Apple ופרסמו את העיצוב כדי להחיל אותו על כרטיסי הלקוחות."
+          }
         }
       ],
       "recovery": {
@@ -62706,7 +62794,7 @@
       },
       "audience": "public",
       "status": "available",
-      "procedureUpdatedAt": "2026-11-21",
+      "procedureUpdatedAt": "2026-11-22",
       "preserveExisting": false,
       "evidence": [
         {
@@ -62735,6 +62823,14 @@
         },
         {
           "service": "foodyadmin",
+          "file": "src/components/loyalty/WalletCompositionEditor.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/components/loyalty/WalletCompositionPreview.tsx"
+        },
+        {
+          "service": "foodyadmin",
           "file": "src/components/loyalty/WalletStudioWorkspace.tsx"
         },
         {
@@ -62756,6 +62852,10 @@
         {
           "service": "foodyadmin",
           "file": "src/lib/wallet-banner.ts"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/lib/wallet-composition.ts"
         },
         {
           "service": "foodyadmin",
@@ -62819,7 +62919,31 @@
         },
         {
           "service": "foodyserver",
+          "file": "internal/loyalty/wallet_composition.go"
+        },
+        {
+          "service": "foodyserver",
           "file": "internal/loyalty/wallet_website_design.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyaltywallet/apple.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyaltywallet/google.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyaltywallet/poster.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyaltywallet/service.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyaltywallet/types.go"
         },
         {
           "service": "foodyserver",
@@ -62832,6 +62956,10 @@
         {
           "service": "foodyserver",
           "file": "migrations/342_loyalty_earning_activities.sql"
+        },
+        {
+          "service": "foodyserver",
+          "file": "migrations/346_wallet_manual_composition.sql"
         },
         {
           "service": "foodyweb",
@@ -62927,7 +63055,10 @@
           "src/lib/i18n.tsx",
           "src/components/loyalty/WalletBannerFraming.tsx",
           "src/lib/wallet-banner.ts",
-          "src/lib/wallet-website-design.ts"
+          "src/lib/wallet-website-design.ts",
+          "src/components/loyalty/WalletCompositionEditor.tsx",
+          "src/components/loyalty/WalletCompositionPreview.tsx",
+          "src/lib/wallet-composition.ts"
         ],
         "foodyserver": [
           "cmd/server/wallet_studio.go",
@@ -62942,7 +63073,9 @@
           "migrations/334_wallet_restaurant_name.sql",
           "migrations/335_wallet_banner_framing.sql",
           "internal/loyalty/wallet_website_design.go",
-          "internal/publicimage/client.go"
+          "internal/publicimage/client.go",
+          "internal/loyalty/wallet_composition.go",
+          "migrations/346_wallet_manual_composition.sql"
         ],
         "foodyweb": [
           "app/api/loyalty-wallet/apple/route.ts",
@@ -63033,11 +63166,24 @@
             "fr": "Sur le téléphone, ouvrez le lien d’adhésion, connectez-vous, acceptez les conditions et adhérez. Sur iPhone, touchez **Ajouter la carte à Apple Wallet**, puis **Ajouter** dans Wallet. Quand Google est disponible, **Ajouter à Google Wallet** ouvre Google pour la confirmation. Téléchargez la carte à nouveau avec le même compte et vérifiez le QR et la progression. Passez une commande de test éligible et payée avec ce compte, puis vérifiez que la carte et la page Fidélité affichent la même progression. Si le pilote caisse autorise l’identification et les ventes fidélité, scannez le QR personnel et rattachez le membre avant de confirmer le paiement. Au seuil, vérifiez la récompense dans l’espace Fidélité et essayez de l’appliquer sur un parcours de paiement activé.",
             "he": "בטלפון, פתחו את קישור ההצטרפות, התחברו, אשרו את התנאים והצטרפו. ב־iPhone בחרו **הוספת הכרטיס ל־Apple Wallet** ואז **הוספה** ב־Wallet. כאשר Google זמין, כפתור **הוספה ל־Google Wallet** פותח את Google לצורך אישור. הורידו שוב מהחשבון ובדקו את קוד ה־QR ואת ההתקדמות. בצעו הזמנת בדיקה מזכה ושלמו מאותו חשבון. בדקו שההתקדמות בכרטיס תואמת לדף המועדון. בפיילוט קופה שבו מופעלים זיהוי ומכירות מועדון, סרקו את קוד ה־QR האישי ושייכו את החבר לפני אישור התשלום. בהגעה לסף, בדקו את ההטבה באזור המועדון ונסו לממש אותה בתהליך תשלום שהופעל."
           }
+        },
+        {
+          "id": "compose-wallet-manually",
+          "title": {
+            "fr": "Composer une carte à la main",
+            "en": "Design a card manually",
+            "he": "עיצוב כרטיס ידני"
+          },
+          "instructions": {
+            "fr": "Dans **Studio Wallet → Composition de la carte**, choisissez **Carnet de table** pour une photo avec une bande vichy ou **Affiche café** pour un visuel détouré devant une vague. Importez votre logo et une photo, ou cliquez sur **Utiliser le logo du site** et **Utiliser la photo du site** pour reprendre ces éléments du site publié. Ouvrez **Titre du visuel** pour modifier le texte, la police, la taille, la position et l’inclinaison. **Motif et fond** règle les couleurs, le motif et la hauteur de la séparation. **Photo et cadrage** permet de positionner l’image, de rogner les marges transparentes et de la placer devant le titre. Sous **Logo et informations du membre**, choisissez le solde seul ou avec l’objectif, puis la progression ou l’avantage du programme. Comparez **Affiche** et **Carte classique** dans l’aperçu Apple, puis ouvrez **Google Wallet**. L’iPhone affiche le format Affiche à partir d’iOS 27. Ajustez **Solde de démonstration** pour simuler une visite ou des points. Cliquez sur **Enregistrer le brouillon**, puis testez la carte Apple avant de **Publier le visuel** pour les clients.",
+            "en": "In **Wallet Studio → Card layout**, choose **Table journal** for a photo with a gingham band or **Coffee poster** for a cutout in front of a wave. Upload your logo and photo, or choose **Use website logo** and **Use website photo** to select those assets from the published site. Open **Artwork title** to edit the text, typeface, size, position and angle. **Pattern and background** sets the colors, pattern and divider position. **Photo placement** lets you move the image, trim transparent margins and place it in front of the title. Under **Logo and member information**, choose the balance alone or with its target, then the remaining progress or the program benefit. Compare the **Poster** and **Classic card** Apple previews and open **Google Wallet**. iPhone uses the poster format from iOS 27. Use the sample balance to simulate progress. Select **Save draft**, test the Apple pass, then **Publish design** to release it to customer cards.",
+            "he": "ב־**סטודיו Wallet ← עיצוב הכרטיס** בחרו **מחברת שולחן** לתמונה עם רצועת משבצות או **כרזת קפה** לתמונה גזורה לפני גל. העלו לוגו ותמונה או בחרו **שימוש בלוגו האתר** ו־**שימוש בתמונת האתר** כדי לבחור אותם מהאתר שפורסם. פתחו **כותרת העיצוב** לעריכת הטקסט, הגופן, הגודל, המיקום והזווית. ב־**דוגמה ורקע** הגדירו צבעים, דוגמה ומיקום לקו ההפרדה. ב־**מיקום התמונה** אפשר להזיז את התמונה, לחתוך שוליים שקופים ולהציג אותה לפני הכותרת. ב־**לוגו ופרטי החברות** בחרו יתרה בלבד או יתרה ויעד, ואת היתרה לצבירה או ההטבה של התוכנית. השוו בין תצוגת הכרזה והכרטיס הקלאסי של Apple ופתחו את Google Wallet. באייפון תצוגת הכרזה זמינה מ־iOS 27. שנו את יתרת ההדגמה כדי לדמות התקדמות. שמרו טיוטה, בדקו את כרטיס Apple ופרסמו את העיצוב כדי להחיל אותו על כרטיסי הלקוחות."
+          }
         }
       ],
       "audience": "internal",
       "status": "local-release-unverified",
-      "procedureUpdatedAt": "2026-11-21",
+      "procedureUpdatedAt": "2026-11-22",
       "preserveExisting": false,
       "evidence": [
         {
@@ -63051,6 +63197,14 @@
         {
           "service": "foodyadmin",
           "file": "src/components/loyalty/WalletBannerFraming.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/components/loyalty/WalletCompositionEditor.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/components/loyalty/WalletCompositionPreview.tsx"
         },
         {
           "service": "foodyadmin",
@@ -63070,6 +63224,10 @@
         },
         {
           "service": "foodyadmin",
+          "file": "src/lib/wallet-composition.ts"
+        },
+        {
+          "service": "foodyadmin",
           "file": "src/lib/wallet-website-design.ts"
         },
         {
@@ -63083,6 +63241,10 @@
         {
           "service": "foodyserver",
           "file": "internal/common/loyalty_wallet_design.go"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/loyalty/wallet_composition.go"
         },
         {
           "service": "foodyserver",
@@ -63138,6 +63300,10 @@
         },
         {
           "service": "foodyserver",
+          "file": "internal/loyaltywallet/poster.go"
+        },
+        {
+          "service": "foodyserver",
           "file": "internal/loyaltywallet/registration.go"
         },
         {
@@ -63171,6 +63337,10 @@
         {
           "service": "foodyserver",
           "file": "migrations/335_wallet_banner_framing.sql"
+        },
+        {
+          "service": "foodyserver",
+          "file": "migrations/346_wallet_manual_composition.sql"
         },
         {
           "service": "foodyweb",
@@ -73295,6 +73465,43 @@
       "line": 1
     },
     {
+      "id": "foodyadmin:src/components/loyalty/WalletCompositionEditor.tsx:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/components/loyalty/WalletCompositionEditor.tsx",
+      "features": [
+        "customers-loyalty-program",
+        "customers-wallet-studio"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "walletArtModel",
+        "walletArtTitleText"
+      ],
+      "actions": [],
+      "line": 1
+    },
+    {
+      "id": "foodyadmin:src/components/loyalty/WalletCompositionPreview.tsx:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/components/loyalty/WalletCompositionPreview.tsx",
+      "features": [
+        "customers-loyalty-program",
+        "customers-wallet-studio"
+      ],
+      "kind": "ui-controls",
+      "labels": [
+        "walletArtDecor",
+        "walletArtNext",
+        "walletArtRenderError",
+        "walletStudioAttribution",
+        "walletStudioLogo",
+        "walletStudioTestCard",
+        "walletStudioThreshold"
+      ],
+      "actions": [],
+      "line": 1
+    },
+    {
       "id": "foodyadmin:src/components/loyalty/WalletStudioWorkspace.tsx:ui-controls:1",
       "service": "foodyadmin",
       "source": "src/components/loyalty/WalletStudioWorkspace.tsx",
@@ -73310,6 +73517,12 @@
         "loading",
         "loyaltyProgramForbidden",
         "loyaltyProgramTitle",
+        "walletArtAppleFormat",
+        "walletArtOlderApple",
+        "walletArtPoster",
+        "walletArtSiteLogo",
+        "walletArtSitePhoto",
+        "walletArtUndoModel",
         "walletFrameTitle",
         "walletStudioActiveRequired",
         "walletStudioAppearance",
@@ -79541,6 +79754,17 @@
       "line": 1
     },
     {
+      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:147",
+      "service": "foodyadmin",
+      "source": "src/components/website-v3/field-contracts.ts",
+      "features": [
+        "website-qr-customize-your-site"
+      ],
+      "kind": "configuration-field",
+      "field": "section.is_visible",
+      "line": 147
+    },
+    {
       "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:694",
       "service": "foodyadmin",
       "source": "src/components/website-v3/field-contracts.ts",
@@ -82071,17 +82295,6 @@
       "line": 1086
     },
     {
-      "id": "foodyadmin:src/components/website-v3/field-contracts.ts:configuration-field:147",
-      "service": "foodyadmin",
-      "source": "src/components/website-v3/field-contracts.ts",
-      "features": [
-        "website-qr-customize-your-site"
-      ],
-      "kind": "configuration-field",
-      "field": "section.is_visible",
-      "line": 147
-    },
-    {
       "id": "foodyadmin:src/components/website/CheckoutEditor.tsx:ui-controls:1",
       "service": "foodyadmin",
       "source": "src/components/website/CheckoutEditor.tsx",
@@ -83124,6 +83337,22 @@
       "labels": [],
       "actions": [
         "merge"
+      ],
+      "line": 1
+    },
+    {
+      "id": "foodyadmin:src/lib/wallet-composition.ts:ui-controls:1",
+      "service": "foodyadmin",
+      "source": "src/lib/wallet-composition.ts",
+      "features": [
+        "shared-runtime",
+        "customers-loyalty-program",
+        "customers-wallet-studio"
+      ],
+      "kind": "ui-controls",
+      "labels": [],
+      "actions": [
+        "loadFont"
       ],
       "line": 1
     },
@@ -115977,9 +116206,9 @@
   "coverage": {
     "sharedRuntimeFiles": 436,
     "features": 115,
-    "operations": 1061,
-    "sourceFiles": 2740,
-    "surfaces": 2371,
+    "operations": 1063,
+    "sourceFiles": 2746,
+    "surfaces": 2374,
     "unclassifiedRoutes": []
   }
 }
