@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-10-18.
+Révision du relevé : 2026-11-22.
 
-114 fiches de fonctionnalités, 1053 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2735 fichiers applicatifs et 2365 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+114 fiches de fonctionnalités, 1054 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2735 fichiers applicatifs et 2366 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,11 +10,11 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyadmin | 834 | 841 | fd2e2c0e35f5 ; versioned |
+| foodyadmin | 834 | 842 | e6997a4fe5b1 ; versioned |
 | foodybackoffice | 55 | 50 | 1ef26c985c41 ; versioned |
-| foodylanding | 158 | 31 | d5b7d2dc9eff ; versioned |
+| foodylanding | 158 | 31 | cd1be31a4700 ; versioned |
 | foodypos | 432 | 187 | 9e0ec2f0e188 ; versioned |
-| foodyserver | 867 | 1054 | 6706c19a569b ; versioned |
+| foodyserver | 867 | 1054 | 5a7da36ecb19 ; versioned |
 | foodyweb | 389 | 202 | d312905f2b28 ; versioned |
 
 ## getting-started
@@ -1015,6 +1015,7 @@ Identifiant : `website-qr-customize-your-site`. Public : public. Disponibilité 
 
 Identifiant : `website-design`. Public : public. Disponibilité : available. Services : foodyadmin, foodyserver, foodyweb.
 
+- [Modifier le logo principal](../../src/content/help/fr/website-qr/design-and-branding.mdx#main-logo)
 - [Choisir un thème et les couleurs](../../src/content/help/fr/website-qr/design-and-branding.mdx#theme)
 - [Prévisualiser le modèle Pink Coffee](../../src/content/help/fr/website-qr/design-and-branding.mdx#pink-coffee-template)
 - [Utiliser un grand titre d’affichage](../../src/content/help/fr/website-qr/design-and-branding.mdx#display-headings)
