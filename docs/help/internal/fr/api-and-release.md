@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-11-19'
+updatedAt: '2026-11-22'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -125,6 +125,12 @@ Déployer la migration 266 et l’API avant le Web. Configurer ensemble CUSTOMER
 ## Transactions de publication de carte et de stock de vente
 
 La migration API 267 ajoute les brouillons privés par carte/série, les versions publiées et les séries, compteurs et événements de stock de vente. Les lectures et l’historique nécessitent menu.view sur le restaurant ; les changements nécessitent menu.edit. La publication vérifie dans une transaction les révisions du brouillon, de sa source et du stock, préserve les engagements de commande et refuse les références hors restaurant. Déployez l’API avant Admin. Conservez les anciens compteurs pour les anciennes commandes ; la première activation de série reprend explicitement le disponible actuel. Vérifiez réservations concurrentes, libérations, isolation des séries futures et rollback en développement avant promotion. La lecture des cartes du personnel via GET /api/v1/menu/ accepte serie_date au format AAAA-MM-JJ. Utilisez un jour de remise proposé par la configuration des séries du personnel et vérifiez que la réponse reprend cette date. L’API retrouve le premier jour de sa série pour lire sa publication et son stock. Déployez cette API avant le catalogue Admin.
+
+<span id="pos-display-group-hierarchy" />
+
+## Vérifier les grilles POS imbriquées
+
+Déployez l’API avant les clients Admin et POS mis à jour. Utilisez une carte de test publiée avec un groupe parent, un sous-groupe et un article direct. Vérifiez parent_id dans la carte renvoyée pour le canal. Une disposition de caisse automatique est construite à partir de cette carte. Enregistrez une tuile de groupe dans group_tiles pour la même carte et rechargez la grille. Vérifiez le rejet des liens cycliques et des références à une autre carte, puis le parcours de commande Web et la flèche de retour en caisse avant la promotion.
 
 <span id="stock-history-only-corpus" />
 

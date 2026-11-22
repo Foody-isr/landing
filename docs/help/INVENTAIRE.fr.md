@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-11-22.
 
-114 fiches de fonctionnalités, 1060 procédures/sous-fonctionnalités, dont 102 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2746 fichiers applicatifs et 2374 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+115 fiches de fonctionnalités, 1063 procédures/sous-fonctionnalités, dont 103 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2746 fichiers applicatifs et 2374 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyadmin | 837 | 845 | 59034b7e6ec0 ; versioned |
+| foodyadmin | 837 | 845 | fe760e9d9ef9 ; versioned |
 | foodybackoffice | 55 | 51 | 82cde2439a24 ; versioned |
-| foodylanding | 158 | 31 | 7ad24b24572f ; versioned |
-| foodypos | 432 | 187 | 9e0ec2f0e188 ; versioned |
-| foodyserver | 872 | 1055 | c1b4a5720edb ; versioned |
-| foodyweb | 392 | 205 | c07fd912f9e7 ; versioned |
+| foodylanding | 158 | 31 | 9f9132514604 ; versioned |
+| foodypos | 432 | 187 | 81b5391902fe ; versioned |
+| foodyserver | 872 | 1055 | 3d12030813f4 ; versioned |
+| foodyweb | 392 | 205 | d1c1c8e97354 ; versioned |
 
 ## getting-started
 
@@ -482,6 +482,13 @@ Identifiant : `menu-menus-and-groups`. Public : public. Disponibilité : availab
 - [Afficher et faire défiler l’éditeur de stock](../../src/content/help/fr/menu/menus-and-groups.mdx#stock-editor-layout)
 - [Choisir la source du stock et son profil](../../src/content/help/fr/menu/menus-and-groups.mdx#availability-rule-in-stock-modal)
 - [Créer et affecter un groupe depuis la fiche article](../../src/content/help/fr/menu/menus-and-groups.mdx#groups-from-item)
+
+### [Sous-groupes de carte](../../src/content/help/fr/menu/subgroups.mdx)
+
+Identifiant : `menu-subgroups`. Public : public. Disponibilité : available. Services : foodyadmin, foodypos, foodyserver, foodyweb.
+
+- [Créer et publier un sous-groupe](../../src/content/help/fr/menu/subgroups.mdx#group-hierarchy)
+- [Disposer les tuiles de sous-groupes en caisse](../../src/content/help/fr/menu/subgroups.mdx#pos-group-layout)
 
 ### [Variantes et tailles](../../src/content/help/fr/menu/variants-and-sizes.mdx)
 
@@ -1608,6 +1615,7 @@ Identifiant : `platform-api`. Public : internal. Disponibilité : available. Ser
 - [Résoudre les suggestions de rue Google](internal/fr/api-and-release.md#google-street-refinement)
 - [Activer Facebook et Apple pour les clients](internal/fr/api-and-release.md#customer-social-sign-in)
 - [Transactions de publication de carte et de stock de vente](internal/fr/api-and-release.md#carte-publication-stock-contract)
+- [Vérifier les grilles POS imbriquées](internal/fr/api-and-release.md#pos-display-group-hierarchy)
 - [Synchroniser la procédure du journal des stocks](internal/fr/api-and-release.md#stock-history-only-corpus)
 - [Sauvegarder les stocks hors série](internal/fr/api-and-release.md#library-restock)
 - [Code caisse à l’activation du personnel](internal/fr/api-and-release.md#staff-activation-pos-code)

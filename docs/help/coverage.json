@@ -487,7 +487,8 @@
           "src/lib/i18n.tsx",
           "src/lib/sale-stock-input.ts",
           "src/lib/item-menu-assignments.ts",
-          "src/lib/itemDraft.ts"
+          "src/lib/itemDraft.ts",
+          "src/lib/posDisplay.ts"
         ],
         "foodyserver": [
           "internal/menu/**",
@@ -498,10 +499,37 @@
           "internal/orders/sales_stock.go"
         ],
         "foodypos": [
-          "lib/features/menu/**"
+          "lib/features/menu/**",
+          "lib/features/orders/presentation/widgets/pos_display_grid.dart"
         ],
         "foodyweb": [
           "components/ItemModal*"
+        ]
+      }
+    },
+    {
+      "id": "menu-subgroups",
+      "article": "menu/subgroups",
+      "audience": "public",
+      "selectors": {
+        "foodyadmin": [
+          "src/components/menu/publication/CarteGroups.tsx",
+          "src/components/menu/publication/CarteEditor.tsx",
+          "src/lib/carte-editor.ts",
+          "src/lib/posDisplay.ts",
+          "src/components/menu/PosAddTileModal.tsx",
+          "src/app/[restaurantId]/menu/menus/[menuId]/pos-display/page.tsx"
+        ],
+        "foodyserver": [
+          "internal/menu/service.go",
+          "internal/menu/publication_view.go"
+        ],
+        "foodyweb": [
+          "components/website-v3/WebsiteOrderMenu.tsx",
+          "lib/websiteOrder.ts"
+        ],
+        "foodypos": [
+          "lib/features/orders/presentation/widgets/pos_display_grid.dart"
         ]
       }
     },
@@ -711,7 +739,8 @@
           "lib/features/orders/domain/pos_fulfillment_flow.dart",
           "lib/features/orders/presentation/item_customization_screen.dart",
           "lib/features/orders/data/local_order_draft_store.dart",
-          "lib/features/orders/providers/order_providers.dart"
+          "lib/features/orders/providers/order_providers.dart",
+          "lib/features/orders/presentation/widgets/pos_display_grid.dart"
         ],
         "foodyserver": [
           "internal/orders/**",
@@ -1275,7 +1304,8 @@
           "components/OrderDetailsModal.tsx",
           "lib/useWebsitePanelAnchor.ts",
           "components/WebsiteOrderEntry.tsx",
-          "components/WebsitePickupBranches.tsx"
+          "components/WebsitePickupBranches.tsx",
+          "lib/useOrderCategoryScroll.ts"
         ],
         "foodyserver": [
           "internal/support/corpus.json"

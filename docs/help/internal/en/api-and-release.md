@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-11-19'
+updatedAt: '2026-11-22'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -125,6 +125,12 @@ Deploy migration 266 and the API before Web. Configure CUSTOMER_FACEBOOK_APP_ID,
 ## Carte publication and sale-stock transactions
 
 API migration 267 adds private carte/series drafts, immutable publication snapshots and item-stock series/counters/events. Draft and stock history endpoints require scoped menu.view; changes require menu.edit. Publication checks draft/source and stock revisions in one transaction, preserves order commitments and rejects invalid tenant references. Deploy the API before Admin. Retain old global counters for older orders; the first series activation imports current remaining stock explicitly. Verify concurrent reservations, stock releases, future-series isolation and rollback in development before promoting the artifacts. The scoped staff menu read at GET /api/v1/menu/ accepts serie_date in YYYY-MM-DD format. Pass an available fulfillment day from the staff batch configuration, then verify the response echoes it. The API resolves that day to the first day of its series for publication and stock. Deploy this API before the Admin catalogue.
+
+<span id="pos-display-group-hierarchy" />
+
+## Verify nested POS grids
+
+Roll out the API before the updated Admin and POS clients. Use a published synthetic menu with a parent, a subgroup and a direct item. Verify the group parent_id in the channel-scoped menu. An automatic POS layout is derived from that menu. Save a group tile inside group_tiles on the same menu and reload the grid. Cyclic tile links and references to another menu must be rejected. Verify the public ordering groups and the staff back action before promotion.
 
 <span id="stock-history-only-corpus" />
 

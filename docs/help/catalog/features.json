@@ -3741,7 +3741,8 @@
         "src/lib/i18n.tsx",
         "src/lib/sale-stock-input.ts",
         "src/lib/item-menu-assignments.ts",
-        "src/lib/itemDraft.ts"
+        "src/lib/itemDraft.ts",
+        "src/lib/posDisplay.ts"
       ],
       "foodyserver": [
         "internal/menu/**",
@@ -3752,7 +3753,8 @@
         "internal/orders/sales_stock.go"
       ],
       "foodypos": [
-        "lib/features/menu/**"
+        "lib/features/menu/**",
+        "lib/features/orders/presentation/widgets/pos_display_grid.dart"
       ],
       "foodyweb": [
         "components/ItemModal*"
@@ -3795,9 +3797,9 @@
           "he": "בדיקת לשוניות התפריטים באתר"
         },
         "instructions": {
-          "fr": "Deux cartes, par exemple BASSARI et HALAVI, restent deux cartes distinctes. Sur une page de commande qui propose plusieurs cartes visibles, leurs onglets sélectionnent une carte à la fois. Les pastilles du Menu des catégories représentent les groupes à l’intérieur de cette carte, par exemple Sandwichs, et non les catégories internes de la bibliothèque. Activez le canal Web de chaque carte, sélectionnez-les dans les paramètres de la page de commande, puis vérifiez les deux niveaux dans l’aperçu et après publication. Le style de la navigation des groupes se règle dans Liste des articles. Voir [la procédure des cartes et groupes sur le site](/fr/help/website-qr/order-page#menu-tabs-and-groups).\n\nUne carte qui servait à une ancienne tournée de vente conserve sa visibilité actuelle. Pour la proposer aux clients, activez sa visibilité sur le site et publiez-la depuis l’éditeur de cartes.",
-          "en": "Two menus, such as BASSARI and HALAVI, remain separate menus. On an order page offering several visible menus, tabs select one menu at a time. Category menu pills represent groups within that menu, such as Sandwiches, rather than internal library categories. Enable each menu’s Web channel, select them in the order page settings, then check both navigation levels in preview and after publishing. Group navigation styling lives in Item list. See [website menu and group navigation](/en/help/website-qr/order-page#menu-tabs-and-groups).\n\nA menu previously linked to a sales tour keeps its existing visibility. To offer it to guests, enable website visibility and publish it in the menu editor.",
-          "he": "שני תפריטים, למשל BASSARI ו-HALAVI, נשארים תפריטים נפרדים. בעמוד הזמנה שמציע כמה תפריטים גלויים, הלשוניות בוחרות תפריט אחד בכל פעם. כפתורי תפריט הקטגוריות מייצגים קבוצות בתוך התפריט, למשל כריכים, ולא קטגוריות פנימיות בספרייה. הפעילו את ערוץ האינטרנט בכל תפריט, בחרו אותם בהגדרות עמוד ההזמנה ובדקו את שתי רמות הניווט בתצוגה המקדימה ואחרי הפרסום. סגנון ניווט הקבוצות מוגדר ברשימת הפריטים. ראו [ניווט בתפריטים ובקבוצות באתר](/he/help/website-qr/order-page#menu-tabs-and-groups).\n\nתפריט ששימש בעבר לסבב מכירה שומר על הגדרת הנראות שלו. להצגתו ללקוחות, הפעילו נראות באתר ופרסמו את התפריט בעורך."
+          "fr": "Deux cartes, par exemple BASSARI et HALAVI, restent deux cartes distinctes. Sur une page de commande qui propose plusieurs cartes visibles, leurs onglets sélectionnent une carte à la fois. Les pastilles du Menu des catégories représentent les groupes à l’intérieur de cette carte, par exemple Sandwichs, et non les catégories internes de la bibliothèque. Activez le canal Web de chaque carte, sélectionnez-les dans les paramètres de la page de commande, puis vérifiez les deux niveaux dans l’aperçu et après publication. Le style de la navigation des groupes se règle dans Liste des articles. Voir [la procédure des cartes et groupes sur le site](/fr/help/website-qr/order-page#menu-tabs-and-groups).\n\nUne carte qui servait à une ancienne tournée de vente conserve sa visibilité actuelle. Pour la proposer aux clients, activez sa visibilité sur le site et publiez-la depuis l’éditeur de cartes.\n\nVoir [Sous-groupes de carte](/fr/help/menu/subgroups).",
+          "en": "Two menus, such as BASSARI and HALAVI, remain separate menus. On an order page offering several visible menus, tabs select one menu at a time. Category menu pills represent groups within that menu, such as Sandwiches, rather than internal library categories. Enable each menu’s Web channel, select them in the order page settings, then check both navigation levels in preview and after publishing. Group navigation styling lives in Item list. See [website menu and group navigation](/en/help/website-qr/order-page#menu-tabs-and-groups).\n\nA menu previously linked to a sales tour keeps its existing visibility. To offer it to guests, enable website visibility and publish it in the menu editor.\n\nTo nest a group, see [Menu subgroups](/en/help/menu/subgroups).",
+          "he": "שני תפריטים, למשל BASSARI ו-HALAVI, נשארים תפריטים נפרדים. בעמוד הזמנה שמציע כמה תפריטים גלויים, הלשוניות בוחרות תפריט אחד בכל פעם. כפתורי תפריט הקטגוריות מייצגים קבוצות בתוך התפריט, למשל כריכים, ולא קטגוריות פנימיות בספרייה. הפעילו את ערוץ האינטרנט בכל תפריט, בחרו אותם בהגדרות עמוד ההזמנה ובדקו את שתי רמות הניווט בתצוגה המקדימה ואחרי הפרסום. סגנון ניווט הקבוצות מוגדר ברשימת הפריטים. ראו [ניווט בתפריטים ובקבוצות באתר](/he/help/website-qr/order-page#menu-tabs-and-groups).\n\nתפריט ששימש בעבר לסבב מכירה שומר על הגדרת הנראות שלו. להצגתו ללקוחות, הפעילו נראות באתר ופרסמו את התפריט בעורך.\n\nלשיוך קבוצה לקבוצת אב, ראו [קבוצות משנה בתפריט](/he/help/menu/subgroups)."
         }
       },
       {
@@ -4059,6 +4061,74 @@
     "preserveExisting": true,
     "procedureUpdatedAt": "2026-11-22",
     "updatedAt": "2026-10-28"
+  },
+  {
+    "id": "menu-subgroups",
+    "module": "menu",
+    "article": "menu/subgroups",
+    "title": {
+      "en": "Menu subgroups",
+      "fr": "Sous-groupes de carte",
+      "he": "קבוצות משנה בתפריט"
+    },
+    "entry": {
+      "en": "Organize related groups in a published menu and use them on the ordering page and the POS.",
+      "fr": "Organisez les groupes d’une carte publiée pour la page Commander et la caisse.",
+      "he": "ארגנו קבוצות קשורות בתפריט מפורסם והציגו אותן בעמוד ההזמנה ובקופה."
+    },
+    "selectors": {
+      "foodyadmin": [
+        "src/components/menu/publication/CarteGroups.tsx",
+        "src/components/menu/publication/CarteEditor.tsx",
+        "src/lib/carte-editor.ts",
+        "src/lib/posDisplay.ts",
+        "src/components/menu/PosAddTileModal.tsx",
+        "src/app/[restaurantId]/menu/menus/[menuId]/pos-display/page.tsx"
+      ],
+      "foodyserver": [
+        "internal/menu/service.go",
+        "internal/menu/publication_view.go"
+      ],
+      "foodyweb": [
+        "components/website-v3/WebsiteOrderMenu.tsx",
+        "lib/websiteOrder.ts"
+      ],
+      "foodypos": [
+        "lib/features/orders/presentation/widgets/pos_display_grid.dart"
+      ]
+    },
+    "operations": [
+      {
+        "id": "group-hierarchy",
+        "title": {
+          "en": "Create and publish a subgroup",
+          "fr": "Créer et publier un sous-groupe",
+          "he": "יצירה ופרסום של קבוצת משנה"
+        },
+        "instructions": {
+          "en": "Open a menu in Items & menus → Menus. Use the parent group’s actions and choose **Add a subgroup**, then name it and add its items. To nest an existing group, open **Edit group** and select its **Parent group**. Expand a parent to see its subgroups and use the move controls to reorder groups within the same level. Use **Preview** to review the arrangement, then save and publish the draft. To move a subgroup back to the top level, choose **None** as its parent and publish the change.",
+          "fr": "Ouvrez une carte dans Articles et cartes → Cartes. Dans les actions du groupe parent, choisissez **Ajouter un sous-groupe**, donnez-lui un nom et ajoutez ses articles. Pour rattacher un groupe existant, ouvrez **Modifier le groupe** et choisissez son **Groupe parent**. Dépliez le parent pour voir ses sous-groupes, puis utilisez les commandes de déplacement pour les réordonner au même niveau. Vérifiez le résultat dans **Aperçu**, puis enregistrez et publiez le brouillon. Pour remettre un sous-groupe au niveau principal, choisissez **Aucun** comme parent et publiez de nouveau.",
+          "he": "פתחו תפריט דרך פריטים ותפריטים ← תפריטים. בתפריט הפעולות של קבוצת האב בחרו **הוספת קבוצת משנה**, תנו לה שם והוסיפו פריטים. כדי לשייך קבוצה קיימת, פתחו **עריכת הקבוצה** ובחרו **קבוצת אב**. הרחיבו את קבוצת האב לצפייה בקבוצות המשנה והשתמשו בפקדי ההזזה לשינוי הסדר באותה רמה. בדקו את המבנה ב**תצוגה מקדימה**, שמרו את הטיוטה ופרסמו. להחזרת קבוצת משנה לרמה הראשית, בחרו **ללא** בשדה קבוצת האב ופרסמו מחדש."
+        }
+      },
+      {
+        "id": "pos-group-layout",
+        "title": {
+          "en": "Arrange subgroup tiles on the POS",
+          "fr": "Disposer les tuiles de sous-groupes en caisse",
+          "he": "סידור אריחי קבוצות משנה בקופה"
+        },
+        "instructions": {
+          "en": "The default POS grid opens at the top level. Tap a group to see its direct items and subgroup tiles, then tap Back to go up one level. For a custom layout, open **POS display** from the menu in Admin. Select a group tile and open the group, then arrange its tiles or use **Add a tile**. Save the layout and check it on the POS. A level with saved tiles uses those tiles. If an expected subgroup is missing there, add its tile and verify that the group is published and visible on the POS.",
+          "fr": "La grille par défaut de la caisse s’ouvre au niveau principal. Touchez un groupe pour voir ses articles et ses tuiles de sous-groupes. La flèche de retour remonte d’un niveau. Pour personnaliser la grille, ouvrez **Affichage caisse** depuis la carte dans FoodyAdmin. Sélectionnez la tuile du groupe et ouvrez-le, puis réorganisez ses tuiles ou utilisez **Ajouter une tuile**. Enregistrez la disposition et vérifiez-la en caisse. Un niveau personnalisé affiche les tuiles enregistrées. Si un sous-groupe manque à ce niveau, ajoutez sa tuile et vérifiez qu’il est publié et visible en caisse.",
+          "he": "רשת הקופה נפתחת ברמה הראשית כברירת מחדל. הקישו על קבוצה כדי לראות את הפריטים שלה ואת אריחי קבוצות המשנה. חץ החזרה עולה רמה אחת. להתאמה אישית פתחו **תצוגת קופה** מהתפריט בממשק הניהול. בחרו אריח קבוצה, פתחו את הקבוצה ואז סדרו את האריחים או בחרו **הוספת אריח**. שמרו את התצוגה ובדקו אותה בקופה. רמה שהוגדרה בהתאמה אישית מציגה את האריחים שנשמרו. אם קבוצת משנה חסרה ברמה זו, הוסיפו את האריח שלה ובדקו שהקבוצה פורסמה ומוצגת בקופה."
+        }
+      }
+    ],
+    "audience": "public",
+    "status": "available",
+    "preserveExisting": false,
+    "procedureUpdatedAt": "2026-11-22"
   },
   {
     "id": "menu-variants-and-sizes",
@@ -6160,7 +6230,8 @@
         "lib/features/orders/domain/pos_fulfillment_flow.dart",
         "lib/features/orders/presentation/item_customization_screen.dart",
         "lib/features/orders/data/local_order_draft_store.dart",
-        "lib/features/orders/providers/order_providers.dart"
+        "lib/features/orders/providers/order_providers.dart",
+        "lib/features/orders/presentation/widgets/pos_display_grid.dart"
       ],
       "foodyserver": [
         "internal/orders/**",
@@ -6229,9 +6300,9 @@
           "he": "הוספה והתאמה של פריטים"
         },
         "instructions": {
-          "en": "Choose a visible POS menu group, item, active variant and allowed modifiers. Review quantity, notes and price before adding. Required choices must be completed.",
-          "fr": "Choisissez groupe POS visible, article, variante active et modificateurs autorisés. Vérifiez quantité, notes et prix avant ajout. Complétez les choix obligatoires.",
-          "he": "בחרו קבוצה גלויה בקופה, פריט, וריאנט פעיל ותוספות מותרות. בדקו כמות, הערות ומחיר לפני ההוספה והשלימו בחירות חובה."
+          "en": "Choose a visible POS menu group, item, active variant and allowed modifiers. Review quantity, notes and price before adding. Required choices must be completed.\n\nTap a group tile such as Drinks to see its items and any subgroup tiles. Open the relevant subgroup and tap the product. Use the back arrow to go up one level. The POS search remains available when you want to find an item by name.",
+          "fr": "Choisissez groupe POS visible, article, variante active et modificateurs autorisés. Vérifiez quantité, notes et prix avant ajout. Complétez les choix obligatoires.\n\nTouchez une tuile de groupe comme Boissons pour voir ses articles et ses tuiles de sous-groupes. Ouvrez le sous-groupe voulu et touchez l’article. Utilisez la flèche de retour pour remonter d’un niveau. La recherche en caisse reste accessible pour retrouver un article par son nom.",
+          "he": "בחרו קבוצה גלויה בקופה, פריט, וריאנט פעיל ותוספות מותרות. בדקו כמות, הערות ומחיר לפני ההוספה והשלימו בחירות חובה.\n\nהקישו על אריח קבוצה, למשל משקאות, כדי לראות את הפריטים שלה ואת אריחי קבוצות המשנה. פתחו את קבוצת המשנה הרצויה והקישו על הפריט. השתמשו בחץ החזרה כדי לעלות רמה אחת. החיפוש בקופה זמין לאיתור פריט לפי השם."
         }
       },
       {
@@ -6486,7 +6557,7 @@
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-11-18",
+    "procedureUpdatedAt": "2026-11-22",
     "updatedAt": "2026-11-19"
   },
   {
@@ -9869,7 +9940,8 @@
         "components/OrderDetailsModal.tsx",
         "lib/useWebsitePanelAnchor.ts",
         "components/WebsiteOrderEntry.tsx",
-        "components/WebsitePickupBranches.tsx"
+        "components/WebsitePickupBranches.tsx",
+        "lib/useOrderCategoryScroll.ts"
       ],
       "foodyserver": [
         "internal/support/corpus.json"
@@ -9936,9 +10008,9 @@
           "he": "הבחנה בין תפריטים לקבוצות שלהם"
         },
         "instructions": {
-          "fr": "Dans Site web → Liste des articles, les cartes disponibles sur cette page (par exemple BASSARI et HALAVI) ont leurs propres onglets soulignés lorsqu’il y en a plusieurs. Un onglet affiche uniquement les articles et groupes de cette carte. Le réglage Menu des catégories concerne les groupes de la carte sélectionnée, par exemple Sandwichs et Boissons. Le réglage Style du menu des catégories applique Texte simple, Pastille, Arrondi ou Souligné aux groupes sur ordinateur et mobile. Les onglets des cartes restent soulignés. Les titres de groupes longs reviennent à la ligne sans élargir la page ; vérifiez aussi la lisibilité du groupe sélectionné dans le style de couleurs choisi. Masquer le Menu des catégories retire seulement les liens des groupes : les onglets des cartes restent accessibles. Titres des catégories contrôle les titres de groupes dans la liste. Vérifiez les deux cartes dans l’aperçu, puis publiez et contrôlez le lien public sur ordinateur et mobile. Si un onglet manque, vérifiez le canal Web, les cartes sélectionnées dans Paramètres de la page et la présence d’articles visibles dans leurs groupes.",
-          "en": "In Website → Item list, menus available on this page (for example BASSARI and HALAVI) have their own underlined tabs when more than one exists. A tab shows only that menu’s items and groups. Category menu controls groups within the selected menu, such as Sandwiches and Drinks. Category menu style applies Plain text, Pill, Rounded or Underlined to groups on desktop and mobile. Menu tabs remain underlined. Long group headings wrap without widening the page; also check that the selected group is readable in the chosen color style. Hiding Category menu removes only the group links: menu tabs stay available. Category titles controls group headings in the list. Check both menus in preview, then publish and review the public link on desktop and mobile. If a tab is missing, check the Web channel, menus selected in Page settings, and visible items inside their groups.",
-          "he": "באתר ← רשימת הפריטים, לתפריטים הזמינים בעמוד זה, למשל BASSARI ו-HALAVI, יש לשוניות נפרדות עם קו תחתון כשיש יותר מתפריט אחד. כל לשונית מציגה רק את הפריטים והקבוצות של אותו תפריט. תפריט הקטגוריות שולט בקבוצות בתוך התפריט שנבחר, למשל כריכים ומשקאות. ההגדרה סגנון תפריט הקטגוריות מחילה טקסט פשוט, גלולה, מעוגל או קו תחתון על הקבוצות במחשב ובנייד. לשוניות התפריטים נשארות עם קו תחתון. כותרות קבוצות ארוכות יורדות לשורה נוספת בלי להרחיב את העמוד; בדקו גם שהקבוצה שנבחרה קריאה בסגנון הצבעים שנבחר. הסתרת תפריט הקטגוריות מסירה רק את קישורי הקבוצות: לשוניות התפריטים נשארות זמינות. כותרות קטגוריות שולטת בכותרות הקבוצות ברשימה. בדקו את שני התפריטים בתצוגה המקדימה, פרסמו ובדקו את הקישור הציבורי במחשב ובנייד. אם חסרה לשונית, בדקו את ערוץ האינטרנט, את התפריטים שנבחרו בהגדרות העמוד ואת הפריטים הגלויים בקבוצות שלהם."
+          "fr": "Dans Site web → Liste des articles, les cartes disponibles sur cette page (par exemple BASSARI et HALAVI) ont leurs propres onglets soulignés lorsqu’il y en a plusieurs. Un onglet affiche uniquement les articles et groupes de cette carte. Le réglage Menu des catégories concerne les groupes de la carte sélectionnée, par exemple Sandwichs et Boissons. Le réglage Style du menu des catégories applique Texte simple, Pastille, Arrondi ou Souligné aux groupes sur ordinateur et mobile. Les onglets des cartes restent soulignés. Les titres de groupes longs reviennent à la ligne sans élargir la page ; vérifiez aussi la lisibilité du groupe sélectionné dans le style de couleurs choisi. Masquer le Menu des catégories retire seulement les liens des groupes : les onglets des cartes restent accessibles. Titres des catégories contrôle les titres de groupes dans la liste. Vérifiez les deux cartes dans l’aperçu, puis publiez et contrôlez le lien public sur ordinateur et mobile. Si un onglet manque, vérifiez le canal Web, les cartes sélectionnées dans Paramètres de la page et la présence d’articles visibles dans leurs groupes.\n\nQuand le menu des catégories est affiché, un groupe parent publié apparaît au premier niveau, y compris si tous ses articles sont dans des sous-groupes. Sélectionnez par exemple Boissons pour voir Bouteilles et Canettes sur la ligne du dessous. Le premier groupe contenant des articles est sélectionné à l’ouverture. Les articles rattachés directement au parent sont accessibles depuis son propre nom dans cette ligne. Chaque groupe suit ses réglages de visibilité Web et d’horaires. Si le parent est indisponible et que son sous-groupe est visible, celui-ci apparaît au premier niveau.",
+          "en": "In Website → Item list, menus available on this page (for example BASSARI and HALAVI) have their own underlined tabs when more than one exists. A tab shows only that menu’s items and groups. Category menu controls groups within the selected menu, such as Sandwiches and Drinks. Category menu style applies Plain text, Pill, Rounded or Underlined to groups on desktop and mobile. Menu tabs remain underlined. Long group headings wrap without widening the page; also check that the selected group is readable in the chosen color style. Hiding Category menu removes only the group links: menu tabs stay available. Category titles controls group headings in the list. Check both menus in preview, then publish and review the public link on desktop and mobile. If a tab is missing, check the Web channel, menus selected in Page settings, and visible items inside their groups.\n\nWith the category menu visible, a published parent group appears in the main row, even if its products are all in subgroups. Select Drinks, for example, to see Bottles and Cans in the row below. The first group with products is selected initially. Products assigned directly to the parent can be reached through its own option in that row. Group visibility still follows each group’s web channel and hours. If the parent is unavailable and its subgroup is visible, the subgroup appears in the main row.",
+          "he": "באתר ← רשימת הפריטים, לתפריטים הזמינים בעמוד זה, למשל BASSARI ו-HALAVI, יש לשוניות נפרדות עם קו תחתון כשיש יותר מתפריט אחד. כל לשונית מציגה רק את הפריטים והקבוצות של אותו תפריט. תפריט הקטגוריות שולט בקבוצות בתוך התפריט שנבחר, למשל כריכים ומשקאות. ההגדרה סגנון תפריט הקטגוריות מחילה טקסט פשוט, גלולה, מעוגל או קו תחתון על הקבוצות במחשב ובנייד. לשוניות התפריטים נשארות עם קו תחתון. כותרות קבוצות ארוכות יורדות לשורה נוספת בלי להרחיב את העמוד; בדקו גם שהקבוצה שנבחרה קריאה בסגנון הצבעים שנבחר. הסתרת תפריט הקטגוריות מסירה רק את קישורי הקבוצות: לשוניות התפריטים נשארות זמינות. כותרות קטגוריות שולטת בכותרות הקבוצות ברשימה. בדקו את שני התפריטים בתצוגה המקדימה, פרסמו ובדקו את הקישור הציבורי במחשב ובנייד. אם חסרה לשונית, בדקו את ערוץ האינטרנט, את התפריטים שנבחרו בהגדרות העמוד ואת הפריטים הגלויים בקבוצות שלהם.\n\nכשתפריט הקטגוריות מוצג, קבוצת אב שפורסמה מופיעה בשורה הראשית גם אם כל הפריטים נמצאים בקבוצות המשנה. לדוגמה, בחירה במשקאות מציגה בקבוקים ופחיות בשורה שמתחת. הקבוצה הראשונה שיש בה פריטים נבחרת בפתיחה. פריטים ששויכו ישירות לקבוצת האב זמינים דרך השם שלה בשורה זו. כל קבוצה מוצגת לפי הערוץ והשעות שלה. אם קבוצת האב אינה זמינה וקבוצת המשנה גלויה, קבוצת המשנה מופיעה בשורה הראשית."
         }
       },
       {
@@ -10010,7 +10082,7 @@
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-11-15"
+    "procedureUpdatedAt": "2026-11-22"
   },
   {
     "id": "website-journey",
@@ -14204,9 +14276,9 @@
           "he": "בחירת תפריט ואז קבוצה"
         },
         "instructions": {
-          "fr": "Si le restaurant propose plusieurs cartes sur la page, choisissez leur onglet, par exemple BASSARI ou HALAVI. Seuls les groupes et articles de la carte sélectionnée s’affichent. Les pastilles ou liens en dessous permettent d’atteindre ses groupes, comme Sandwichs ou Boissons. La recherche et le filtre de disponibilité s’appliquent à cette carte. Une recherche sans résultat ne retire pas les onglets ; changer de carte efface la recherche. Parcourir une autre carte conserve le panier. Si vous ne trouvez pas un article, essayez l’autre carte ou effacez la recherche ; sa présence dépend aussi de sa disponibilité et de sa publication. Pour une formule, ouvrez sa fiche puis Composer mon menu : la carte garde son thème pendant les choix. Le compteur et le bouton − permettent de vérifier ou retirer une sélection ; complétez les étapes avant l’ajout au panier. Voir [les formules sur le site](/fr/help/menu/combos#website-composition). Sur téléphone, balayez horizontalement les produits d’un carrousel pour voir la suite du groupe.\n\nQuand le restaurant active un accueil dédié, ouvrez l’app installée depuis son icône pour voir le carrousel et la sélection du moment. Touchez le bouton de commande pour ouvrir la carte ou un produit en vedette pour voir sa fiche.\n\nSur une page de commande ouverte dans le navigateur, les informations de retrait, de livraison et d’horaire peuvent rester visibles pendant le défilement. Choisissez une catégorie pour afficher son titre sous les barres fixes. Pour revenir à l’accueil du restaurant, utilisez la navigation du site ou son logo si celui-ci mène à l’accueil.",
-          "en": "If the restaurant offers several menus on the page, select their tab, such as BASSARI or HALAVI. Only the selected menu’s groups and items appear. Pills or links underneath navigate to its groups, such as Sandwiches or Drinks. Search and the availability filter apply to this menu. A search with no results keeps menu tabs visible; switching menus clears the search. Browsing another menu keeps the basket. If an item is missing, try another menu or clear the search; visibility also depends on availability and publication. For a combo, open its sheet and choose Build your combo: the menu keeps its theme while selecting items. Use the counter and − button to review or remove a pick, then complete the steps before adding to the cart. See [website combos](/en/help/menu/combos#website-composition). On a phone, swipe across the products in a horizontal carousel to see the rest of that group.\n\nWhen the restaurant enables a dedicated installed-app home, open the app from its icon to see the carousel and the current featured selection. Tap the order button to open the menu, or tap a featured product to view its details.\n\nOn an order page in the browser, the pickup, delivery and time controls may stay visible as you scroll. Selecting a category brings its heading into view below the pinned bars. To return to the restaurant’s home page, use the site navigation or its linked logo when available.",
-          "he": "אם העסק מציע כמה תפריטים בעמוד, בחרו לשונית כגון BASSARI או HALAVI. יוצגו רק הקבוצות והפריטים של התפריט שנבחר. הכפתורים או הקישורים שמתחת מאפשרים להגיע לקבוצות שלו, כגון כריכים ומשקאות. החיפוש ומסנן הזמינות חלים על התפריט הזה. חיפוש ללא תוצאות אינו מסתיר את לשוניות התפריטים; מעבר לתפריט אחר מנקה את החיפוש. צפייה בתפריט אחר שומרת על הסל. אם פריט חסר, נסו תפריט אחר או נקו את החיפוש; הנראות תלויה גם בזמינות ובפרסום. לארוחה בהרכבה פתחו את חלון הפרטים והתחילו להרכיב: התפריט שומר על העיצוב בזמן בחירת הפריטים. המונה וכפתור − מאפשרים לבדוק או להסיר בחירה. השלימו את השלבים לפני ההוספה לסל. ראו [ארוחות באתר](/he/help/menu/combos#website-composition). בטלפון החליקו אופקית על המוצרים בקרוסלה כדי לראות את שאר המוצרים בקבוצה.\n\nכשהמסעדה מפעילה מסך בית ייעודי, פתחו את האפליקציה המותקנת מהסמל שלה כדי לראות את הקרוסלה ואת הבחירה העדכנית. הקישו על כפתור ההזמנה כדי לפתוח את התפריט או על מוצר נבחר כדי לראות את פרטיו.\n\nבעמוד הזמנה שפתוח בדפדפן, פרטי האיסוף, המשלוח והשעה יכולים להישאר גלויים בזמן הגלילה. בחרו קטגוריה כדי להציג את הכותרת שלה מתחת לסרגלים הקבועים. כדי לחזור לדף הבית של המסעדה, השתמשו בניווט של האתר או בלוגו אם הוא מקשר לדף הבית."
+          "fr": "Si le restaurant propose plusieurs cartes sur la page, choisissez leur onglet, par exemple BASSARI ou HALAVI. Seuls les groupes et articles de la carte sélectionnée s’affichent. Les pastilles ou liens en dessous permettent d’atteindre ses groupes, comme Sandwichs ou Boissons. La recherche et le filtre de disponibilité s’appliquent à cette carte. Une recherche sans résultat ne retire pas les onglets ; changer de carte efface la recherche. Parcourir une autre carte conserve le panier. Si vous ne trouvez pas un article, essayez l’autre carte ou effacez la recherche ; sa présence dépend aussi de sa disponibilité et de sa publication. Pour une formule, ouvrez sa fiche puis Composer mon menu : la carte garde son thème pendant les choix. Le compteur et le bouton − permettent de vérifier ou retirer une sélection ; complétez les étapes avant l’ajout au panier. Voir [les formules sur le site](/fr/help/menu/combos#website-composition). Sur téléphone, balayez horizontalement les produits d’un carrousel pour voir la suite du groupe.\n\nQuand le restaurant active un accueil dédié, ouvrez l’app installée depuis son icône pour voir le carrousel et la sélection du moment. Touchez le bouton de commande pour ouvrir la carte ou un produit en vedette pour voir sa fiche.\n\nSur une page de commande ouverte dans le navigateur, les informations de retrait, de livraison et d’horaire peuvent rester visibles pendant le défilement. Choisissez une catégorie pour afficher son titre sous les barres fixes. Pour revenir à l’accueil du restaurant, utilisez la navigation du site ou son logo si celui-ci mène à l’accueil.\n\nSi un groupe contient des sous-groupes, sélectionnez-le pour afficher une deuxième ligne. Par exemple, choisissez **Boissons**, puis **Bouteilles** ou **Canettes** pour voir les articles correspondants. La recherche trouve les articles dans toute la carte sélectionnée, sous-groupes compris.",
+          "en": "If the restaurant offers several menus on the page, select their tab, such as BASSARI or HALAVI. Only the selected menu’s groups and items appear. Pills or links underneath navigate to its groups, such as Sandwiches or Drinks. Search and the availability filter apply to this menu. A search with no results keeps menu tabs visible; switching menus clears the search. Browsing another menu keeps the basket. If an item is missing, try another menu or clear the search; visibility also depends on availability and publication. For a combo, open its sheet and choose Build your combo: the menu keeps its theme while selecting items. Use the counter and − button to review or remove a pick, then complete the steps before adding to the cart. See [website combos](/en/help/menu/combos#website-composition). On a phone, swipe across the products in a horizontal carousel to see the rest of that group.\n\nWhen the restaurant enables a dedicated installed-app home, open the app from its icon to see the carousel and the current featured selection. Tap the order button to open the menu, or tap a featured product to view its details.\n\nOn an order page in the browser, the pickup, delivery and time controls may stay visible as you scroll. Selecting a category brings its heading into view below the pinned bars. To return to the restaurant’s home page, use the site navigation or its linked logo when available.\n\nIf a group contains subgroups, select it to see a second row. For example, select **Drinks**, then **Bottles** or **Cans** to see the products in that subgroup. Search finds matching products across the selected menu, including its subgroups.",
+          "he": "אם העסק מציע כמה תפריטים בעמוד, בחרו לשונית כגון BASSARI או HALAVI. יוצגו רק הקבוצות והפריטים של התפריט שנבחר. הכפתורים או הקישורים שמתחת מאפשרים להגיע לקבוצות שלו, כגון כריכים ומשקאות. החיפוש ומסנן הזמינות חלים על התפריט הזה. חיפוש ללא תוצאות אינו מסתיר את לשוניות התפריטים; מעבר לתפריט אחר מנקה את החיפוש. צפייה בתפריט אחר שומרת על הסל. אם פריט חסר, נסו תפריט אחר או נקו את החיפוש; הנראות תלויה גם בזמינות ובפרסום. לארוחה בהרכבה פתחו את חלון הפרטים והתחילו להרכיב: התפריט שומר על העיצוב בזמן בחירת הפריטים. המונה וכפתור − מאפשרים לבדוק או להסיר בחירה. השלימו את השלבים לפני ההוספה לסל. ראו [ארוחות באתר](/he/help/menu/combos#website-composition). בטלפון החליקו אופקית על המוצרים בקרוסלה כדי לראות את שאר המוצרים בקבוצה.\n\nכשהמסעדה מפעילה מסך בית ייעודי, פתחו את האפליקציה המותקנת מהסמל שלה כדי לראות את הקרוסלה ואת הבחירה העדכנית. הקישו על כפתור ההזמנה כדי לפתוח את התפריט או על מוצר נבחר כדי לראות את פרטיו.\n\nבעמוד הזמנה שפתוח בדפדפן, פרטי האיסוף, המשלוח והשעה יכולים להישאר גלויים בזמן הגלילה. בחרו קטגוריה כדי להציג את הכותרת שלה מתחת לסרגלים הקבועים. כדי לחזור לדף הבית של המסעדה, השתמשו בניווט של האתר או בלוגו אם הוא מקשר לדף הבית.\n\nאם לקבוצה יש קבוצות משנה, בחרו בה כדי להציג שורה נוספת. לדוגמה, בחרו **משקאות** ואז **בקבוקים** או **פחיות** כדי לראות את הפריטים המתאימים. החיפוש מוצא פריטים בכל התפריט שנבחר, כולל קבוצות משנה."
         }
       },
       {
@@ -15912,6 +15984,19 @@
         }
       },
       {
+        "id": "pos-display-group-hierarchy",
+        "title": {
+          "en": "Verify nested POS grids",
+          "fr": "Vérifier les grilles POS imbriquées",
+          "he": "אימות רשתות קופה מקוננות"
+        },
+        "instructions": {
+          "en": "Roll out the API before the updated Admin and POS clients. Use a published synthetic menu with a parent, a subgroup and a direct item. Verify the group parent_id in the channel-scoped menu. An automatic POS layout is derived from that menu. Save a group tile inside group_tiles on the same menu and reload the grid. Cyclic tile links and references to another menu must be rejected. Verify the public ordering groups and the staff back action before promotion.",
+          "fr": "Déployez l’API avant les clients Admin et POS mis à jour. Utilisez une carte de test publiée avec un groupe parent, un sous-groupe et un article direct. Vérifiez parent_id dans la carte renvoyée pour le canal. Une disposition de caisse automatique est construite à partir de cette carte. Enregistrez une tuile de groupe dans group_tiles pour la même carte et rechargez la grille. Vérifiez le rejet des liens cycliques et des références à une autre carte, puis le parcours de commande Web et la flèche de retour en caisse avant la promotion.",
+          "he": "הפיצו את ה-API לפני לקוחות הניהול והקופה המעודכנים. השתמשו בתפריט סינתטי מפורסם עם קבוצת אב, קבוצת משנה ופריט ישיר. בדקו את parent_id בתפריט שהוחזר לערוץ. תצוגה אוטומטית בקופה נגזרת מהתפריט. שמרו אריח קבוצה בתוך group_tiles באותו תפריט וטעינו מחדש. ודאו שקישורים מעגליים והפניות לתפריט אחר נדחים, ובדקו את ההזמנה באתר ואת חץ החזרה בקופה לפני קידום הגרסה."
+        }
+      },
+      {
         "id": "stock-history-only-corpus",
         "title": {
           "fr": "Synchroniser la procédure du journal des stocks",
@@ -16396,7 +16481,7 @@
     "audience": "internal",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-11-19",
+    "procedureUpdatedAt": "2026-11-22",
     "updatedAt": "2026-11-19"
   },
   {

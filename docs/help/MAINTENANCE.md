@@ -1,3 +1,7 @@
+## Sous-groupes de carte (22 novembre 2026)
+
+Publier ensemble les guides en français, hébreu et anglais avec l’API, les clients Admin et Web et la version POS compatibles. Vérifier une carte synthétique avec un parent vide, deux sous-groupes et un groupe simple. Contrôler la deuxième ligne sur Commander, le brouillon et son aperçu dans Admin, ainsi que l’ouverture des tuiles et le retour d’un niveau en caisse. Vérifier aussi une disposition de caisse personnalisée. Épingler la révision Landing immuable revue dans les contrats consommateurs avant la validation distante.
+
 ## Première échéance d’un abonnement Foody (22 novembre 2026)
 
 Pour les nouveaux checkouts de développement, contrôler le montant TTC du mois ou de l’année dans Verifone CST et la même référence dans la demande de facture. Vérifier le renouvellement à l’échéance convenue, puis son arrêt après résiliation. Les liens de vérification de carte émis avant la migration 344 conservent leur parcours de règlement. La récupération du PDF Invoice4U et la réception en boîte de test font chacune l’objet d’une vérification distincte.
