@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - account
   - foody-billing-sandbox
-updatedAt: '2026-11-21'
+updatedAt: '2026-11-22'
 featureId: foody-billing-sandbox
 audience: internal
 releaseStatus: local-release-unverified
@@ -43,9 +43,9 @@ Le paiement hébergé utilise le marchand CST de Foody pour les tests d’abonne
 
 <span id="registered-card" />
 
-## Payer la première échéance après vérification de la carte
+## Vérifier le premier paiement récurrent
 
-Verifone CST peut autoriser 0,01 ₪ pour enregistrer la carte d’un abonnement avec renouvellement. De retour dans **Facturation**, cliquez sur **Vérifier le statut du paiement**. Quand Foody affiche **Carte de test vérifiée**, vérifiez le montant puis choisissez **Payer … avec la carte vérifiée** pour régler l’échéance. La période payée commence après vérification d’une vente du montant total. Si le paiement reste en attente après ce clic, utilisez le bouton de vérification. Si une vérification par Foody est nécessaire, communiquez la référence affichée au support. Dans Verifone Central, l’enregistrement de la carte porte cette référence marchand et la vente de l’abonnement porte la même référence suivie de `-P1`.
+Pour un nouvel abonnement avec renouvellement, comparez le total du checkout au prix TTC mensuel ou annuel accepté. Le premier paiement enregistre la carte pour cette série de prélèvements. Vérifiez son montant et sa référence dans Verifone Central. Foody déclenche les échéances chaque mois ou tous les douze mois selon l’accord du propriétaire. Si le propriétaire arrête le renouvellement, la période payée court jusqu’à son terme. Pour un ancien lien déjà émis à 0,01 ₪, **Carte de test vérifiée** permet de confirmer séparément la vente au montant total. Seule cette vente utilise la référence terminée par `-P1`. Si le montant diffère sur un nouveau lien, vérifiez la tentative existante avant de lancer un autre paiement.
 
 <span id="renewal" />
 
@@ -93,7 +93,7 @@ Le catalogue affiche aussi un aperçu annuel calculé sur 11 mois pour chaque mo
 
 Pour le pilote CST, configurez dans le service API le dossier QA Invoice4U de Foody, un client fictif de ce dossier et une boîte de test contrôlée. Dans l’Admin du restaurant test, le propriétaire active la remise par e-mail. Vérifiez une échéance mensuelle ou annuelle encaissée, son montant et son PDF dans **Factures d’abonnement**, puis le message dans la boîte de test. Une vérification de carte ou un refus ne crée aucune pièce. Si la réponse d’émission se perd, le serveur recherche la référence d’origine dans Invoice4U. Un état **À vérifier par Foody** demande une vérification comptable du document. En cas d’incertitude sur l’e-mail, vérifiez la boîte avant de demander un renvoi.
 
-Pour tester l’émission via Verifone, sélectionnez le restaurant de développement et configurez sa boîte de test autorisée. Vérifiez que l’organisation du marchand Foody possède un contrat de reçus Invoice4U. Une vente Checkout annuelle sans renouvellement, le premier débit confirmé après enregistrement de la carte et chaque renouvellement demandent une facture-reçu avec les lignes TTC. L’Admin affiche la demande jusqu’au rapprochement avec l’original. Vérifiez le type fiscal, la référence de vente, le restaurant, le numéro, la TVA, le TTC et la réception dans la boîte autorisée. Si l’original manque, recherchez la vente existante avant toute intervention comptable.
+Pour tester l’émission via Verifone, sélectionnez le restaurant de développement et configurez sa boîte de test autorisée. Vérifiez que l’organisation du marchand Foody possède un contrat de reçus Invoice4U. La première vente Checkout demande une facture-reçu au prix TTC du mois ou de l’année. Chaque renouvellement demande sa propre facture-reçu. L’Admin affiche la demande jusqu’au rapprochement avec l’original. Vérifiez le type fiscal, la référence de vente, le restaurant, le numéro, la TVA, le TTC et la réception dans la boîte autorisée. Si l’original manque, recherchez la vente existante avant toute intervention comptable.
 
 <span id="manage-trial" />
 

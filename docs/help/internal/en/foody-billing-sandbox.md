@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - account
   - foody-billing-sandbox
-updatedAt: '2026-11-21'
+updatedAt: '2026-11-22'
 featureId: foody-billing-sandbox
 audience: internal
 releaseStatus: local-release-unverified
@@ -43,9 +43,9 @@ The hosted checkout uses the Foody CST merchant for subscription tests. In produ
 
 <span id="registered-card" />
 
-## Pay the first instalment after card verification
+## Verify the first recurring sale
 
-Verifone CST can authorize ₪0.01 to register the card for a recurring subscription. Back in **Billing**, choose **Verify payment status**. Once Foody shows **Test card verified**, review the amount and choose **Pay … with the verified card** to pay the instalment. Foody starts the paid period after verifying a sale for the full amount. If verification is pending after you pay, use the status button. For a payment under review, give Foody the support reference. In Verifone Central, the card registration uses that merchant reference and the separate subscription sale uses the same reference with the suffix `-P1`.
+For a new renewable subscription, compare the hosted checkout total with the accepted monthly or annual price including VAT. The first sale enrolls the card for that recurring series. Check its amount and merchant reference in Verifone Central. Foody schedules charges monthly or every twelve months, according to consent. After the owner stops renewal, the current paid period runs to its end. For an older link already issued for ₪0.01, **Test card verified** allows the owner to confirm the separate full sale. Only that legacy sale uses the merchant reference ending in `-P1`. If the amount differs on a new link, verify the existing attempt before starting another payment.
 
 <span id="renewal" />
 
@@ -93,7 +93,7 @@ The catalogue also previews an annual amount of 11 months for each module or pla
 
 For the CST pilot, configure the API with Foody’s Invoice4U QA organization, a synthetic customer in that organization and a controlled test inbox. The owner enables email delivery in the test restaurant’s Admin. Verify a collected monthly or annual installment, its amount and PDF under **Subscription invoices**, then check the message in the test inbox. Card registration and declines create no document. After an uncertain issue response, the server looks up the original reference in Invoice4U. **Foody review needed** requires checking the accounting record. If email delivery is uncertain, check the inbox before requesting a resend.
 
-For Verifone issuance, select the development restaurant and configure its authorized test inbox. Verify that the Foody merchant organization has an Invoice4U receipt contract. An annual hosted sale without renewal, the first confirmed debit after card registration, and each renewal request an invoice-receipt with tax-inclusive lines. Admin shows the request until the original is matched. Check the fiscal document type, sale reference, buyer, document number, VAT, total and delivery to the authorized inbox. If the original is missing, locate the existing sale before taking accounting action.
+For Verifone issuance, select the development restaurant and configure its authorized test inbox. Verify that the Foody merchant organization has an Invoice4U receipt contract. The first hosted sale requests an invoice-receipt for the full monthly or annual price including VAT. Each subsequent renewal requests its own invoice-receipt. Admin shows the request until the original is matched. Check the fiscal document type, sale reference, buyer, document number, VAT, total and delivery to the authorized inbox. If the original is missing, locate the existing sale before taking accounting action.
 
 <span id="manage-trial" />
 

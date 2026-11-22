@@ -1,3 +1,7 @@
+## Première échéance d’un abonnement Foody (22 novembre 2026)
+
+Pour les nouveaux checkouts de développement, contrôler le montant TTC du mois ou de l’année dans Verifone CST et la même référence dans la demande de facture. Vérifier le renouvellement à l’échéance convenue, puis son arrêt après résiliation. Les liens de vérification de carte émis avant la migration 344 conservent leur parcours de règlement. La récupération du PDF Invoice4U et la réception en boîte de test font chacune l’objet d’une vérification distincte.
+
 ## Factures d’abonnement via Verifone CST (20 novembre 2026)
 
 Les guides Facturation et Foody billing (sandbox) accompagnent la migration 339 et le suivi des originaux dans Foody Admin. En développement, sélectionner le restaurant pilote et sa boîte de test. Vérifier séparément l’enregistrement de la carte, le premier débit, le renouvellement et le paiement annuel sans renouvellement. Un seul émetteur traite chaque vente. Contrôler le numéro de la facture-reçu, la TVA, le montant, le PDF et sa réception avant de déclarer l’émission validée chez le prestataire.
