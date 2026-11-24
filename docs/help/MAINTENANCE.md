@@ -1980,6 +1980,10 @@ The English, French and Hebrew subscription guides already direct owners to **Se
 
 Les procédures publiques de fidélité et le guide interne du Studio décrivent les modèles Carnet de table et Affiche café en français, anglais et hébreu. Publier ces traductions avec l’Admin et l’API compatibles, après la migration 346. Vérifier la réouverture du brouillon, les trois rendus et la publication d’une révision de test. Contrôler le format Affiche sur un iPhone sous iOS 27 ou ultérieur et le rendu de la bannière sur Google Wallet. La photo source reste privée. La carte porte le solde, l’avantage et le QR du membre.
 
+## Visit stamps and member engagement (24 November 2026)
+
+Release the loyalty program and Wallet Studio guides in French, Hebrew and English with the compatible API, Admin, customer site and POS. The test flow uses one membership to scan, pay ten eligible visits and receive a reward. The Studio can sign sample stamp counts independently of member balances. A Wallet reward update and a restaurant Web Push subscription have separate delivery and consent paths. Validate messaging with synthetic subscriptions and review the export against restaurant-scoped order contacts. Use the restaurant time zone to verify the daily report and the evening review rule.
+
 ## Composition des combos et tailles du catalogue (24 novembre 2026)
 
 Publier les guides FR, HE et EN avec l’API et les clients compatibles. Tester

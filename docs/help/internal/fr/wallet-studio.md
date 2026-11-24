@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - customers
   - customers-wallet-studio
-updatedAt: '2026-11-22'
+updatedAt: '2026-11-24'
 featureId: customers-wallet-studio
 audience: internal
 releaseStatus: local-release-unverified
@@ -60,3 +60,15 @@ Sur le téléphone, ouvrez le lien d’adhésion, connectez-vous, acceptez les c
 ## Composer une carte à la main
 
 Dans **Studio Wallet → Composition de la carte**, choisissez **Carnet de table** pour une photo avec une bande vichy ou **Affiche café** pour un visuel détouré devant une vague. Importez votre logo et une photo, ou cliquez sur **Utiliser le logo du site** et **Utiliser la photo du site** pour reprendre ces éléments du site publié. Ouvrez **Titre du visuel** pour modifier le texte, la police, la taille, la position et l’inclinaison. **Motif et fond** règle les couleurs, le motif et la hauteur de la séparation. **Photo et cadrage** permet de positionner l’image, de rogner les marges transparentes et de la placer devant le titre. Sous **Logo et informations du membre**, choisissez le solde seul ou avec l’objectif, puis la progression ou l’avantage du programme. Comparez **Affiche** et **Carte classique** dans l’aperçu Apple, puis ouvrez **Google Wallet**. L’iPhone affiche le format Affiche à partir d’iOS 27. Ajustez **Solde de démonstration** pour simuler une visite ou des points. Cliquez sur **Enregistrer le brouillon**, puis testez la carte Apple avant de **Publier le visuel** pour les clients.
+
+<span id="visit-stamp-card" />
+
+## Créer une carte à tampons
+
+Dans **Clients → Programme de fidélité**, choisissez un programme en visites et réglez le nombre de visites donnant droit à la récompense. Dans le **Studio Wallet**, activez **Carte à tampons**. Sous **Motif des visites restantes**, choisissez une tasse de café, un croissant, un hamburger, une part de pizza, un sushi, une pita falafel, un bagel, une brochette, un bol de ramen, une salade, une glace, un cookie, un cocktail ou une étoile. Chaque visite acquise affiche une coche. Choisissez les couleurs du disque et du motif, puis réglez le nombre de tampons par rangée (de trois à six). Vous pouvez conserver la photo du restaurant en arrière-plan. Déplacez **Solde de démonstration** sur 7 pour vérifier une carte de dix visites dans les deux aperçus. Enregistrez le brouillon pour télécharger la carte de test Apple à ce solde. **Publier le visuel** applique ce design aux cartes membres. À la dixième visite éligible, Foody attribue la récompense et commence le cycle suivant sur la même carte. Pour un seuil élevé, les deux rangées présentent les visites du groupe en cours et le compteur indique la progression totale.
+
+<span id="distribute-and-scan" />
+
+## Partager le QR du restaurant et scanner la carte du membre
+
+Dans **Studio Wallet → Carte client**, ouvrez **QR code d’adhésion** et téléchargez le SVG pour le comptoir. Le client scanne ce QR, se connecte à son compte sur le site du restaurant, accepte les conditions et ajoute sa carte personnelle au Wallet disponible. Sur une commande en ligne ou en livraison liée à ce compte, le paiement éligible alimente la carte. En caisse, ouvrez la fidélité de l’addition avant le paiement puis **Scanner avec la caméra** sur iPhone, iPad ou Android, ou utilisez le lecteur 2D. Présentez le QR personnel d’un seul membre à la fois et vérifiez la carte avant de la rattacher à l’addition. La consultation seule affiche le solde. C’est le règlement éligible qui compte la visite.
