@@ -1340,7 +1340,10 @@
           "app/order/confirmation/**",
           "components/website-v3/WebsiteFulfillmentDialog.tsx",
           "components/website-v3/SiteHeader.tsx",
-          "app/order/checkout/CheckoutScheduleCalendar.tsx"
+          "app/order/checkout/CheckoutScheduleCalendar.tsx",
+          "lib/og.ts",
+          "lib/og-render.ts",
+          "app/api/og/route.tsx"
         ],
         "foodyserver": [
           "internal/website/**",
@@ -2050,10 +2053,14 @@
           "lib/order-lifecycle.ts",
           "lib/order-timeline.ts",
           "lib/order-tracking.ts",
-          "hooks/useOrderStatus.ts"
+          "hooks/useOrderStatus.ts",
+          "lib/og.ts",
+          "lib/og-render.ts",
+          "app/api/og/route.tsx"
         ],
         "foodyserver": [
-          "internal/guestauth/**"
+          "internal/guestauth/**",
+          "internal/support/corpus.json"
         ],
         "foodylanding": [
           "src/app/[lang]/privacy/page.tsx"
@@ -2360,13 +2367,25 @@
         "foodyadmin": [
           "src/components/website-v3/Page*.tsx",
           "src/components/website-v3/WebsiteV3Builder.tsx",
-          "src/components/website-v3/BuilderShell.tsx"
+          "src/components/website-v3/BuilderShell.tsx",
+          "src/components/website-v3/SiteInspector.tsx",
+          "src/components/website-v3/site-share-copy.ts"
         ],
         "foodyserver": [
-          "internal/websitev3/**"
+          "internal/websitev3/**",
+          "internal/support/corpus.json"
         ],
         "foodyweb": [
-          "app/r/[restaurantId]/[page]/**"
+          "app/r/[restaurantId]/[page]/**",
+          "lib/og.ts",
+          "lib/og-render.ts",
+          "app/api/og/route.tsx",
+          "lib/websiteV3Metadata.ts",
+          "lib/websiteV3PageContext.ts",
+          "lib/orderLinkMetadata.ts",
+          "app/r/[restaurantId]/layout.tsx",
+          "app/r/[restaurantId]/order/page.tsx",
+          "app/r/[restaurantId]/table/[tableId]/page.tsx"
         ]
       }
     },

@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - backoffice-access
-updatedAt: '2026-11-19'
+updatedAt: '2026-11-24'
 featureId: backoffice-access
 audience: internal
 releaseStatus: available
@@ -30,7 +30,7 @@ releaseStatus: available
 
 Usage and quotas מציג השוואת צריכה לפי שירות ומסעדה. Review allocation והקישור בכרטיס המסעדה פותחים תקרות חודשיות; שמירה מחייבת סיבה ושומרת את כל המונים. הכלים למנהל־על בלבד ונפרדים מהעדפת ההתחברות באתר.
 
-בגרסאות תואמות, צי המסופים מוגבל גם הוא למנהלי־על של Foody. הוא מציג מכשירים בין מסעדות; מספרי DID/שב״א והספק שהוזנו נשארים הצהרות מתועדות, ולא הגדרת בנק שהוחלה.
+מנהלי־על של Foody מנהלים את המזהים של FoodyPOS דרך **Terminal fleet → Terminal settings**. בחרו את המסוף של המסעדה, הזינו את מספר שב״א שהוקצה ולחצו על **Save**.
 
 לשאלות מנוי, פתחו **Plans & modules** בסרגל הצד כדי לראות את מחירון התוכנה הציבורי. פתחו מסעדה כדי להגיע אל **Billing & modules** ואל **Features & access**.
 

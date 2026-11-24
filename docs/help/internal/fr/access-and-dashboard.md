@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - backoffice-access
-updatedAt: '2026-11-19'
+updatedAt: '2026-11-24'
 featureId: backoffice-access
 audience: internal
 releaseStatus: available
@@ -30,7 +30,7 @@ Consultez totaux puis dossier restaurant/utilisateur pour enquête. Les agrégat
 
 Usage and quotas ouvre la comparaison des consommations par service et par restaurant. Review allocation et le lien de la fiche restaurant ouvrent les plafonds mensuels ; leur enregistrement exige un motif et conserve tous les compteurs. Ces contrôles sont réservés au superadmin, distincts du choix de connexion du site.
 
-Sur les versions compatibles, Parc des terminaux est également réservé aux superadmins Foody. Il liste les appareils entre restaurants ; les numéros DID/SHVA et le fournisseur saisis restent des déclarations auditées, pas une configuration bancaire appliquée.
+Les superadmins Foody gèrent les identifiants utilisés par FoodyPOS dans **Terminal fleet → Terminal settings**. Ouvrez la fiche du terminal du restaurant, saisissez le numéro SHVA attribué et cliquez sur **Save**.
 
 Pour une question d’abonnement, ouvrez **Plans & modules** dans le menu pour consulter le catalogue logiciel public. Ouvrez la fiche d’un restaurant pour accéder à **Billing & modules** et **Features & access**.
 
