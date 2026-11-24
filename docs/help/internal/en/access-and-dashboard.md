@@ -7,7 +7,7 @@ apps: both
 tags:
   - internal
   - backoffice-access
-updatedAt: '2026-11-19'
+updatedAt: '2026-11-24'
 featureId: backoffice-access
 audience: internal
 releaseStatus: available
@@ -32,7 +32,7 @@ Review dashboard totals and navigate to the specific restaurant/user record for 
 
 Usage and quotas compares service consumption across restaurants. Review allocation and the restaurant-detail link open monthly limits; saving requires a reason and preserves all counters. These controls are superadmin-only and separate from the storefront sign-in preference.
 
-On compatible versions, Terminal fleet is also restricted to Foody superadmins. It lists devices across restaurants; entered DID/SHVA numbers and supplier remain audited declarations, not applied bank configuration.
+Foody superadmins manage the identifiers used by FoodyPOS under **Terminal fleet → Terminal settings**. Select the restaurant’s terminal, enter the assigned SHVA number and choose **Save**.
 
 For subscription support, open **Plans & modules** in the sidebar for the public software catalogue. Open a restaurant to find **Billing & modules** and **Features & access**.
 
