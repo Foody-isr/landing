@@ -34,7 +34,7 @@ Choose source/target and allowed data clusters, export only the authorized scope
 
 ## Restore a reviewed production snapshot in development
 
-Have an operator stage an anonymized production snapshot compatible with the development schema. Sign in to development Backoffice as a superadmin with MFA. Open Clone data, choose Refresh status, and check the capture time and the restaurant, order, payment and website counts. Type REPLACE DEVELOPMENT DATA to confirm whole-database replacement. Expect a brief interruption while development switches databases. Reopen Clone data to check the result. If the worker is disabled or no reviewed snapshot is ready, ask the development operator to provision or stage it. The previous development database is retained for recovery.
+Have an operator stage an anonymized production snapshot compatible with the development schema. Sign in to development Backoffice as a superadmin with MFA. Under Clone data, find the Refresh all development data section, choose Refresh status, and check the capture time and the restaurant, order, payment and website counts. Type REPLACE DEVELOPMENT DATA and select Replace development database. The request enters a queue and the development API may be briefly unavailable during the switch. Reopen Clone data and wait for the restoration and API health check to succeed before reproducing the bug. If the worker is disabled or no reviewed snapshot is ready, ask the development operator to provision or stage it. The previous development database is retained for recovery.
 
 <span id="check-development-google-delivery" />
 
