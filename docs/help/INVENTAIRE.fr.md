@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-18.
 
-115 fiches de fonctionnalités, 1080 procédures/sous-fonctionnalités, dont 103 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2764 fichiers applicatifs et 2389 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+115 fiches de fonctionnalités, 1082 procédures/sous-fonctionnalités, dont 103 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2769 fichiers applicatifs et 2389 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyadmin | 843 | 849 | fdaf853355d3 ; versioned |
+| foodyadmin | 844 | 849 | 101de2cd4bd9 ; versioned |
 | foodybackoffice | 56 | 52 | 68b7b6c9b0fa ; versioned |
-| foodylanding | 158 | 31 | 1d76d92adc7f ; versioned |
-| foodypos | 432 | 186 | 63e7ab90b2e4 ; versioned |
-| foodyserver | 882 | 1064 | aa49007646a3 ; versioned |
-| foodyweb | 393 | 207 | ab902bda941c ; versioned |
+| foodylanding | 158 | 31 | 12f26e16428f ; versioned |
+| foodypos | 432 | 186 | 3ada43cfda03 ; versioned |
+| foodyserver | 886 | 1064 | 08061e9486ca ; versioned |
+| foodyweb | 393 | 207 | 24be5278a933 ; versioned |
 
 ## getting-started
 
@@ -549,6 +549,8 @@ Identifiant : `catalog-import`. Public : public. Disponibilité : available. Ser
 Identifiant : `combos`. Public : public. Disponibilité : available. Services : foodyadmin, foodypos, foodyserver, foodyweb.
 
 - [Définir les étapes de la formule](../../src/content/help/fr/menu/combos.mdx#steps)
+- [Réutiliser une taille du catalogue dans plusieurs articles](../../src/content/help/fr/menu/combos.mdx#shared-catalogue-sizes)
+- [Vérifier une étape sans choix disponible](../../src/content/help/fr/menu/combos.mdx#unavailable-choices)
 - [Vérifier le prix de la formule](../../src/content/help/fr/menu/combos.mdx#price)
 - [Prendre une commande combo](../../src/content/help/fr/menu/combos.mdx#order)
 - [Faire une exception de formule sur une commande](../../src/content/help/fr/menu/combos.mdx#internal-combo-substitution)

@@ -1047,11 +1047,29 @@
       "selectors": {
         "foodyadmin": [
           "src/components/menu-item/combo/**",
-          "src/components/orders/NewOrderComboModal.tsx"
+          "src/components/orders/NewOrderComboModal.tsx",
+          "src/lib/combo-size.ts",
+          "src/app/[restaurantId]/menu/items/[itemId]/page.tsx",
+          "src/app/[restaurantId]/menu/items/new/page.tsx",
+          "src/app/[restaurantId]/menu/options/[optionSetId]/page.tsx",
+          "src/components/menu-item/VariantsEditor.tsx"
         ],
         "foodyserver": [
           "internal/menu/*combo*",
-          "internal/support/corpus.json"
+          "internal/support/corpus.json",
+          "internal/combo/resolver.go",
+          "internal/menu/handler.go",
+          "internal/menu/service.go",
+          "internal/orders/combo_substitution.go",
+          "internal/orders/service.go",
+          "internal/common/catalog_size.go",
+          "internal/combo/catalog_size_backfill.go",
+          "internal/menu/catalog_sizes.go",
+          "migrations/348_combo_catalog_sizes.sql",
+          "cmd/server/boot_models.go",
+          "cmd/server/main.go",
+          "internal/common/models.go",
+          "internal/availability/service.go"
         ],
         "foodypos": [
           "lib/features/menu/presentation/combos_page.dart",
@@ -1061,7 +1079,11 @@
         "foodyweb": [
           "components/*Combo*",
           "components/website-v3/WebsiteOrderMenu.tsx",
-          "lib/websiteItemAppearance.ts"
+          "lib/websiteItemAppearance.ts",
+          "lib/combo/batch.ts",
+          "components/OrderExperience.tsx",
+          "lib/types.ts",
+          "services/api.ts"
         ]
       }
     },
@@ -2801,8 +2823,8 @@
           "internal/loyaltywallet/artwork.go",
           "internal/loyaltywallet/localization.go",
           "cmd/server/boot_models.go",
-          "migrations/348_wallet_visit_stamps.sql",
-          "migrations/349_loyalty_engagement.sql"
+          "migrations/349_wallet_visit_stamps.sql",
+          "migrations/350_loyalty_engagement.sql"
         ],
         "foodyweb": [
           "app/r/[restaurantId]/account/loyalty/page.tsx",
@@ -2870,7 +2892,7 @@
           "internal/publicimage/client.go",
           "internal/loyalty/wallet_composition.go",
           "migrations/346_wallet_manual_composition.sql",
-          "migrations/348_wallet_visit_stamps.sql"
+          "migrations/349_wallet_visit_stamps.sql"
         ],
         "foodyweb": [
           "app/api/loyalty-wallet/apple/route.ts",

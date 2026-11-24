@@ -1983,3 +1983,17 @@ Les procédures publiques de fidélité et le guide interne du Studio décrivent
 ## Visit stamps and member engagement (24 November 2026)
 
 Release the loyalty program and Wallet Studio guides in French, Hebrew and English with the compatible API, Admin, customer site and POS. The test flow uses one membership to scan, pay ten eligible visits and receive a reward. The Studio can sign sample stamp counts independently of member balances. A Wallet reward update and a restaurant Web Push subscription have separate delivery and consent paths. Validate messaging with synthetic subscriptions and review the export against restaurant-scoped order contacts. Use the restaurant time zone to verify the daily report and the evening review rule.
+
+## Composition des combos et tailles du catalogue (24 novembre 2026)
+
+Publier les guides FR, HE et EN avec l’API et les clients compatibles. Tester
+une formule sur données synthétiques, avec deux groupes d’options qui partagent
+la taille 250 g. Appliquer la reprise des configurations historiques et vérifier
+que le combo et les options portent le même identifiant de taille. Renommer
+la taille dans le catalogue et vérifier l’éditeur, l’aperçu et l’ajout au panier.
+Vérifier que chaque choix transmet l’identifiant de son option de vente, que
+la commande reprend ce choix et que les prix et stocks sont ceux de l’option.
+Revoir explicitement les configurations historiques dont la taille ne peut pas
+être déduite de la mesure. Tester aussi une étape sans choix et un article
+manuel hors carte avec supplément. Déployer l’API et sa migration avant les
+clients. Épingler la révision Landing revue avant la validation distante.

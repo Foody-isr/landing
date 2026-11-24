@@ -8822,11 +8822,29 @@
     "selectors": {
       "foodyadmin": [
         "src/components/menu-item/combo/**",
-        "src/components/orders/NewOrderComboModal.tsx"
+        "src/components/orders/NewOrderComboModal.tsx",
+        "src/lib/combo-size.ts",
+        "src/app/[restaurantId]/menu/items/[itemId]/page.tsx",
+        "src/app/[restaurantId]/menu/items/new/page.tsx",
+        "src/app/[restaurantId]/menu/options/[optionSetId]/page.tsx",
+        "src/components/menu-item/VariantsEditor.tsx"
       ],
       "foodyserver": [
         "internal/menu/*combo*",
-        "internal/support/corpus.json"
+        "internal/support/corpus.json",
+        "internal/combo/resolver.go",
+        "internal/menu/handler.go",
+        "internal/menu/service.go",
+        "internal/orders/combo_substitution.go",
+        "internal/orders/service.go",
+        "internal/common/catalog_size.go",
+        "internal/combo/catalog_size_backfill.go",
+        "internal/menu/catalog_sizes.go",
+        "migrations/348_combo_catalog_sizes.sql",
+        "cmd/server/boot_models.go",
+        "cmd/server/main.go",
+        "internal/common/models.go",
+        "internal/availability/service.go"
       ],
       "foodypos": [
         "lib/features/menu/presentation/combos_page.dart",
@@ -8836,7 +8854,11 @@
       "foodyweb": [
         "components/*Combo*",
         "components/website-v3/WebsiteOrderMenu.tsx",
-        "lib/websiteItemAppearance.ts"
+        "lib/websiteItemAppearance.ts",
+        "lib/combo/batch.ts",
+        "components/OrderExperience.tsx",
+        "lib/types.ts",
+        "services/api.ts"
       ]
     },
     "operations": [
@@ -8848,9 +8870,35 @@
           "he": "הגדרת שלבי הרכבה"
         },
         "instructions": {
-          "en": "Create the formula steps and eligible item choices. Set each step’s selection/quantity rules and review which variants/options can be configured.",
-          "fr": "Créez étapes et articles éligibles. Réglez les règles de choix/quantité de chaque étape et vérifiez variantes/options configurables.",
-          "he": "צרו שלבים ופריטים מתאימים. הגדירו כללי בחירה וכמות לכל שלב ובדקו וריאנטים ואפשרויות שניתן להתאים."
+          "en": "Open the combo item in Admin and go to Composition. Select New step and give it a name. Use Item list to choose specific items and eligible sizes, or Menu group to follow a group published on a carte. For a menu group, choose a shared catalogue size to impose it, or select All sizes and open Limits per size. Set the minimum and maximum picks, check the choices in the step and save the item. Use the step arrows to adjust the order.",
+          "fr": "Ouvrez l’article combo dans Admin et allez à Composition. Cliquez sur Nouvelle étape et donnez-lui un nom. Avec Liste d’articles, choisissez les articles et leurs tailles. Avec Groupe de carte, reprenez un groupe publié. Pour un groupe, choisissez une taille partagée du catalogue pour l’imposer, ou choisissez Toutes les tailles et ouvrez Limites par taille. Réglez le minimum et le maximum de choix, vérifiez les options proposées et enregistrez. Utilisez les flèches pour déplacer les étapes.",
+          "he": "פתחו את פריט הקומבו בניהול ועברו להרכב. בחרו שלב חדש ותנו לו שם. בחרו רשימת פריטים כדי לבחור פריטים וגדלים, או קבוצה בתפריט כדי להשתמש בקבוצה שפורסמה. בקבוצה תוכלו לחייב מידה משותפת מהקטלוג, או לבחור כל הגדלים ולפתוח מגבלות לפי גודל. הגדירו את מספר הבחירות המזערי והמרבי, בדקו את האפשרויות בשלב ושמרו את הפריט. השתמשו בחצים כדי לשנות את סדר השלבים."
+        }
+      },
+      {
+        "id": "shared-catalogue-sizes",
+        "title": {
+          "en": "Reuse a catalogue size across items",
+          "fr": "Réutiliser une taille du catalogue dans plusieurs articles",
+          "he": "שימוש חוזר במידה מהקטלוג במספר פריטים"
+        },
+        "instructions": {
+          "en": "In Admin, open Options and choose an option set. Expand Catalogue sizes. Choose New size, enter a name such as 250 g, and save. In each matching option row, select the shared size. In the combo, open a menu-group step and select the catalogue size. To rename it everywhere, select the existing size under Catalogue sizes, edit its name and save. Open the combo preview to check the choices. Different selling options can use the same size and keep their own prices and stock.",
+          "fr": "Dans Admin, ouvrez Options puis un groupe d’options. Dépliez Tailles du catalogue. Choisissez Nouvelle taille, saisissez un nom comme 250 g et enregistrez. Sélectionnez cette taille partagée sur chaque option concernée. Dans le combo, ouvrez une étape Groupe de carte et choisissez cette taille. Pour la renommer partout, sélectionnez la taille existante dans Tailles du catalogue, modifiez son nom et enregistrez. Vérifiez ensuite les choix dans l’aperçu du combo. Plusieurs options de vente peuvent partager une taille et conserver leurs prix et leurs stocks propres.",
+          "he": "בניהול פתחו אפשרויות ובחרו קבוצת אפשרויות. הרחיבו מידות בקטלוג. בחרו מידה חדשה, הזינו שם כמו 250 גרם ושמרו. בכל שורת אפשרות מתאימה בחרו את המידה המשותפת. בקומבו פתחו שלב שמבוסס על קבוצה בתפריט ובחרו את אותה מידה. כדי לשנות את שמה בכל מקום, בחרו את המידה הקיימת במידות בקטלוג, ערכו את שמה ושמרו. בדקו את האפשרויות בתצוגה המקדימה של הקומבו. אפשרויות מכירה שונות יכולות להשתמש באותה מידה ולשמור על מחיר ומלאי נפרדים."
+        }
+      },
+      {
+        "id": "unavailable-choices",
+        "title": {
+          "en": "Check a step with no available choices",
+          "fr": "Vérifier une étape sans choix disponible",
+          "he": "בדיקת שלב ללא אפשרויות זמינות"
+        },
+        "instructions": {
+          "en": "Open the affected step in Composition. For a menu group, check that the correct carte and group have been published, that the items belong to the current series and that they have stock in the required size. If the required size has changed, choose the current size and check the preview before saving. In an item list, check the selected items and sizes and whether a choice can be offered outside its carte. Open the combo on the ordering channel to confirm that the required step can be completed.",
+          "fr": "Ouvrez l’étape concernée dans Composition. Pour un groupe de carte, vérifiez que la bonne carte et le bon groupe sont publiés, que les articles font partie de la série en cours et qu’ils sont disponibles dans la taille demandée. Si la taille requise a changé, choisissez la taille actuelle et vérifiez l’aperçu avant d’enregistrer. Dans une liste d’articles, vérifiez les articles et tailles sélectionnés ainsi que la possibilité de proposer chaque choix hors carte. Ouvrez la formule sur le canal de commande pour vérifier que l’étape obligatoire peut être complétée.",
+          "he": "פתחו את השלב הרלוונטי בהרכב. בקבוצה בתפריט בדקו שפורסמו התפריט והקבוצה הנכונים, שהפריטים משויכים לסבב הנוכחי ושיש מלאי בגודל הנדרש. אם הגודל הנדרש השתנה, בחרו את הגודל העדכני ובדקו את התצוגה המקדימה לפני השמירה. ברשימת פריטים בדקו את הפריטים והגדלים שנבחרו ואם אפשר להציע כל בחירה מחוץ לתפריט שלה. פתחו את הקומבו בערוץ ההזמנה ובדקו שאפשר להשלים את שלב החובה."
         }
       },
       {
@@ -8909,7 +8957,7 @@
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-10-26"
+    "procedureUpdatedAt": "2026-11-24"
   },
   {
     "id": "pos-discount-library",
@@ -18630,8 +18678,8 @@
         "internal/loyaltywallet/artwork.go",
         "internal/loyaltywallet/localization.go",
         "cmd/server/boot_models.go",
-        "migrations/348_wallet_visit_stamps.sql",
-        "migrations/349_loyalty_engagement.sql"
+        "migrations/349_wallet_visit_stamps.sql",
+        "migrations/350_loyalty_engagement.sql"
       ],
       "foodyweb": [
         "app/r/[restaurantId]/account/loyalty/page.tsx",
@@ -18946,7 +18994,7 @@
         "internal/publicimage/client.go",
         "internal/loyalty/wallet_composition.go",
         "migrations/346_wallet_manual_composition.sql",
-        "migrations/348_wallet_visit_stamps.sql"
+        "migrations/349_wallet_visit_stamps.sql"
       ],
       "foodyweb": [
         "app/api/loyalty-wallet/apple/route.ts",
