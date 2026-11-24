@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-18.
 
-115 fiches de fonctionnalités, 1071 procédures/sous-fonctionnalités, dont 103 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2749 fichiers applicatifs et 2378 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+115 fiches de fonctionnalités, 1072 procédures/sous-fonctionnalités, dont 103 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2750 fichiers applicatifs et 2379 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyadmin | 838 | 846 | f60ffc6ecf4b ; versioned |
+| foodyadmin | 839 | 846 | 26c02e10e667 ; versioned |
 | foodybackoffice | 56 | 52 | 6d68cdff2ee8 ; versioned |
-| foodylanding | 158 | 31 | b3ea582f13f0 ; versioned |
+| foodylanding | 158 | 31 | 048b411874c0 ; versioned |
 | foodypos | 431 | 186 | a8618f0cacdf ; versioned |
-| foodyserver | 874 | 1058 | 997d8161a74f ; versioned |
-| foodyweb | 392 | 205 | 88736d71c6dd ; versioned |
+| foodyserver | 874 | 1058 | aa49007646a3 ; versioned |
+| foodyweb | 392 | 206 | 15f1370a38f5 ; versioned |
 
 ## getting-started
 
@@ -1096,7 +1096,7 @@ Identifiant : `website-journey`. Public : public. Disponibilité : available. Se
 - [Prévisualiser paiement et confirmation](../../src/content/help/fr/website-qr/checkout-and-receipt.mdx#checkout)
 - [Choisir les champs que le client doit remplir](../../src/content/help/fr/website-qr/checkout-and-receipt.mdx#contact-fields)
 - [Régler contenu et actions du reçu](../../src/content/help/fr/website-qr/checkout-and-receipt.mdx#receipt)
-- [Vérifier l’aperçu des liens de reçu et de confirmation](../../src/content/help/fr/website-qr/checkout-and-receipt.mdx#link-preview)
+- [Vérifier l’aperçu des liens de reçu, de confirmation et de suivi](../../src/content/help/fr/website-qr/checkout-and-receipt.mdx#link-preview)
 - [Choisir si la connexion est proposée avant la commande](../../src/content/help/fr/website-qr/checkout-and-receipt.mdx#optional-entry-sign-in)
 
 ### [Pages catering et entrée de chaîne](../../src/content/help/fr/website-qr/catering-and-chain-pages.mdx)
@@ -1108,11 +1108,12 @@ Identifiant : `website-commerce-pages`. Public : public. Disponibilité : availa
 
 ### [Pages du site, référencement et publication](../../src/content/help/fr/website-qr/pages-and-publication.mdx)
 
-Identifiant : `website-pages`. Public : public. Disponibilité : available. Services : foodyadmin, foodyweb.
+Identifiant : `website-pages`. Public : public. Disponibilité : available. Services : foodyadmin, foodyserver, foodyweb.
 
 - [Ajouter une page](../../src/content/help/fr/website-qr/pages-and-publication.mdx#create)
 - [Modifier identité et navigation de page](../../src/content/help/fr/website-qr/pages-and-publication.mdx#identity)
 - [Régler référencement et partage](../../src/content/help/fr/website-qr/pages-and-publication.mdx#seo)
+- [Régler l’image de partage du site pour WhatsApp](../../src/content/help/fr/website-qr/pages-and-publication.mdx#site-share-image)
 - [Publier et vérifier le brouillon](../../src/content/help/fr/website-qr/pages-and-publication.mdx#publish)
 
 ## settings
@@ -1508,7 +1509,7 @@ Identifiant : `guest-account-tracking`. Public : public. Disponibilité : availa
 - [Lire l’état de commande](../../src/content/help/fr/guest/tracking-and-account.mdx#tracking)
 - [Accéder à l’historique et aux reçus](../../src/content/help/fr/guest/tracking-and-account.mdx#history)
 - [Gérer l’enregistrement d’un moyen](../../src/content/help/fr/guest/tracking-and-account.mdx#methods)
-- [Vérifier l’aperçu des liens de reçu et de confirmation](../../src/content/help/fr/guest/tracking-and-account.mdx#link-preview)
+- [Vérifier l’aperçu des liens de reçu, de confirmation et de suivi](../../src/content/help/fr/guest/tracking-and-account.mdx#link-preview)
 - [Choisir sa méthode de connexion](../../src/content/help/fr/guest/tracking-and-account.mdx#social-and-password)
 - [Comprendre les données de connexion](../../src/content/help/fr/guest/tracking-and-account.mdx#sign-in-privacy)
 - [Se connecter pendant la commande](../../src/content/help/fr/guest/tracking-and-account.mdx#optional-entry-access)
