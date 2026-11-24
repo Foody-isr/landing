@@ -2737,7 +2737,10 @@
           "src/lib/wallet-website-design.ts",
           "src/components/loyalty/WalletCompositionEditor.tsx",
           "src/components/loyalty/WalletCompositionPreview.tsx",
-          "src/lib/wallet-composition.ts"
+          "src/lib/wallet-composition.ts",
+          "src/components/loyalty/WalletVisitStamps.tsx",
+          "src/components/loyalty/LoyaltyEngagement.tsx",
+          "src/app/[restaurantId]/loyalty/program/engagement/page.tsx"
         ],
         "foodyserver": [
           "cmd/server/main.go",
@@ -2770,7 +2773,16 @@
           "internal/loyaltywallet/google.go",
           "internal/loyaltywallet/service.go",
           "internal/loyaltywallet/types.go",
-          "migrations/346_wallet_manual_composition.sql"
+          "migrations/346_wallet_manual_composition.sql",
+          "internal/common/loyalty_engagement.go",
+          "internal/loyalty/engagement*.go",
+          "internal/push/webpush.go",
+          "internal/loyaltywallet/stamps.go",
+          "internal/loyaltywallet/artwork.go",
+          "internal/loyaltywallet/localization.go",
+          "cmd/server/boot_models.go",
+          "migrations/348_wallet_visit_stamps.sql",
+          "migrations/349_loyalty_engagement.sql"
         ],
         "foodyweb": [
           "app/r/[restaurantId]/account/loyalty/page.tsx",
@@ -2788,7 +2800,17 @@
           "components/LoyaltyEarningActivities.tsx",
           "lib/types.ts",
           "lib/i18n.tsx",
-          "lib/server/loyalty-proxy.ts"
+          "lib/server/loyalty-proxy.ts",
+          "components/LoyaltyNotifications.tsx",
+          "app/sw.js/route.ts"
+        ],
+        "foodypos": [
+          "lib/features/loyalty/presentation/loyalty_camera.dart",
+          "lib/features/loyalty/presentation/loyalty_lookup_page.dart",
+          "lib/features/loyalty/presentation/loyalty_sale_page.dart",
+          "lib/core/l10n/app_en.arb",
+          "lib/core/l10n/app_fr.arb",
+          "lib/core/l10n/app_he.arb"
         ]
       }
     },
@@ -2808,7 +2830,8 @@
           "src/lib/wallet-website-design.ts",
           "src/components/loyalty/WalletCompositionEditor.tsx",
           "src/components/loyalty/WalletCompositionPreview.tsx",
-          "src/lib/wallet-composition.ts"
+          "src/lib/wallet-composition.ts",
+          "src/components/loyalty/WalletVisitStamps.tsx"
         ],
         "foodyserver": [
           "cmd/server/wallet_studio.go",
@@ -2825,7 +2848,8 @@
           "internal/loyalty/wallet_website_design.go",
           "internal/publicimage/client.go",
           "internal/loyalty/wallet_composition.go",
-          "migrations/346_wallet_manual_composition.sql"
+          "migrations/346_wallet_manual_composition.sql",
+          "migrations/348_wallet_visit_stamps.sql"
         ],
         "foodyweb": [
           "app/api/loyalty-wallet/apple/route.ts",

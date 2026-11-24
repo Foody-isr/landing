@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - customers
   - customers-wallet-studio
-updatedAt: '2026-11-22'
+updatedAt: '2026-11-24'
 featureId: customers-wallet-studio
 audience: internal
 releaseStatus: local-release-unverified
@@ -60,3 +60,15 @@ On a phone, open the enrollment link, sign in, accept the terms and join. On an 
 ## Design a card manually
 
 In **Wallet Studio → Card layout**, choose **Table journal** for a photo with a gingham band or **Coffee poster** for a cutout in front of a wave. Upload your logo and photo, or choose **Use website logo** and **Use website photo** to select those assets from the published site. Open **Artwork title** to edit the text, typeface, size, position and angle. **Pattern and background** sets the colors, pattern and divider position. **Photo placement** lets you move the image, trim transparent margins and place it in front of the title. Under **Logo and member information**, choose the balance alone or with its target, then the remaining progress or the program benefit. Compare the **Poster** and **Classic card** Apple previews and open **Google Wallet**. iPhone uses the poster format from iOS 27. Use the sample balance to simulate progress. Select **Save draft**, test the Apple pass, then **Publish design** to release it to customer cards.
+
+<span id="visit-stamp-card" />
+
+## Create a visit stamp card
+
+In **Customers → Loyalty program**, choose visits and set the number needed for a reward. Open **Wallet Studio** and enable **Visit stamp card**. Choose a coffee cup, croissant or star for empty stamps, the disc and ink colors, and three to six stamps per row. You can use the restaurant’s photo behind the stamps. Move **Sample balance** to 7 to check a ten-visit card in both previews. Save the draft to download an Apple test card with that sample balance. **Publish design** applies it to member cards. The tenth eligible visit issues the reward and starts the next cycle on the same card. With a large goal, the two rows display the current group of visits and the counter shows overall progress.
+
+<span id="distribute-and-scan" />
+
+## Share the enrollment QR and scan the member’s card
+
+In **Wallet Studio → Customer card**, open **Enrollment QR code** and download the SVG for your counter. Scanning it opens the restaurant website. The customer signs in, accepts the program terms and adds their personal card to an available Wallet. Eligible paid online and delivery orders linked to that account count toward the same card. At the register, open loyalty on the bill before payment. On iPhone, iPad or Android, select **Scan with the camera**, or use a 2D reader. Present one member QR at a time and verify the card before attaching it to the bill. Member lookup displays the balance. An eligible payment credits the visit.

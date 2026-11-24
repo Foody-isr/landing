@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-18.
 
-115 fiches de fonctionnalités, 1071 procédures/sous-fonctionnalités, dont 103 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2749 fichiers applicatifs et 2378 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+115 fiches de fonctionnalités, 1079 procédures/sous-fonctionnalités, dont 103 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2762 fichiers applicatifs et 2388 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyadmin | 838 | 846 | f60ffc6ecf4b ; versioned |
+| foodyadmin | 841 | 849 | 26c02e10e667 ; versioned |
 | foodybackoffice | 56 | 52 | 6d68cdff2ee8 ; versioned |
 | foodylanding | 158 | 31 | b3ea582f13f0 ; versioned |
-| foodypos | 431 | 186 | a8618f0cacdf ; versioned |
-| foodyserver | 874 | 1058 | 997d8161a74f ; versioned |
-| foodyweb | 392 | 205 | 88736d71c6dd ; versioned |
+| foodypos | 432 | 186 | 8467bca19f06 ; versioned |
+| foodyserver | 882 | 1064 | 7947cec8a9db ; versioned |
+| foodyweb | 393 | 206 | 15f1370a38f5 ; versioned |
 
 ## getting-started
 
@@ -198,7 +198,7 @@ Identifiant : `customers-profiles`. Public : public. Disponibilité : available.
 
 ### [Configurer un programme de fidélité](../../src/content/help/fr/customers/loyalty-program.mdx)
 
-Identifiant : `customers-loyalty-program`. Public : public. Disponibilité : available. Services : foodyadmin, foodyserver, foodyweb.
+Identifiant : `customers-loyalty-program`. Public : public. Disponibilité : available. Services : foodyadmin, foodypos, foodyserver, foodyweb.
 
 - [Lire la vue d’ensemble](../../src/content/help/fr/customers/loyalty-program.mdx#overview)
 - [Préparer le programme](../../src/content/help/fr/customers/loyalty-program.mdx#configure)
@@ -211,6 +211,12 @@ Identifiant : `customers-loyalty-program`. Public : public. Disponibilité : ava
 - [Reprendre le design du site dans la carte Wallet](../../src/content/help/fr/customers/loyalty-program.mdx#generate-wallet-from-website)
 - [Comparer des modèles avec la bannière du restaurant](../../src/content/help/fr/customers/loyalty-program.mdx#preview-card-layouts)
 - [Composer une carte à la main](../../src/content/help/fr/customers/loyalty-program.mdx#compose-wallet-manually)
+- [Créer une carte à tampons](../../src/content/help/fr/customers/loyalty-program.mdx#visit-stamp-card)
+- [Partager le QR du restaurant et scanner la carte du membre](../../src/content/help/fr/customers/loyalty-program.mdx#distribute-and-scan)
+- [Offrir un coupon de première visite](../../src/content/help/fr/customers/loyalty-program.mdx#welcome-reward)
+- [Choisir ses notifications](../../src/content/help/fr/customers/loyalty-program.mdx#member-notification-preferences)
+- [Envoyer un message ou programmer une relance](../../src/content/help/fr/customers/loyalty-program.mdx#member-campaigns)
+- [Suivre les retours et exporter les membres](../../src/content/help/fr/customers/loyalty-program.mdx#member-engagement-reports)
 
 ### [Préparer, tester et publier une carte de fidélité](internal/fr/wallet-studio.md)
 
@@ -223,6 +229,8 @@ Identifiant : `customers-wallet-studio`. Public : internal. Disponibilité : loc
 - [Publier le visuel et partager le lien d’adhésion](internal/fr/wallet-studio.md#publish-design)
 - [Adhérer, ajouter sa carte et vérifier le cumul](internal/fr/wallet-studio.md#member-card)
 - [Composer une carte à la main](internal/fr/wallet-studio.md#compose-wallet-manually)
+- [Créer une carte à tampons](internal/fr/wallet-studio.md#visit-stamp-card)
+- [Partager le QR du restaurant et scanner la carte du membre](internal/fr/wallet-studio.md#distribute-and-scan)
 
 ## marketing
 
