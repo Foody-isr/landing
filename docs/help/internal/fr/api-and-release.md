@@ -12,6 +12,12 @@ releaseStatus: available
 ---
 Équipe technique : consultez AGENTS.md, README, contrat API et workflow du service.
 
+<span id="development-snapshot-restore" />
+
+## Vérifier la restauration d’un instantané dev
+
+Déployez l’API et le service de restauration en dev avant le contrôle Backoffice. Utilisez une archive de test sur le schéma dev courant. GET /api/v1/admin/env-clone/refresh affiche les volumes préparés et la dernière opération. Le POST exige un superadmin dev avec la MFA, l’identifiant de l’instantané et la confirmation explicite. Vérifiez le refus d’un instantané obsolète et d’une demande simultanée. Vérifiez la conservation de la base précédente et la récupération automatique si l’API échoue après la bascule.
+
 <span id="loyalty-wallet-customer-issuance" />
 
 ## Vérifier l’émission des cartes de fidélité personnelles
