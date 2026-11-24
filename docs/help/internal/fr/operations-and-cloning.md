@@ -34,7 +34,7 @@ Choisissez source/cible et groupes autorisés, exportez ce périmètre puis pré
 
 ## Restaurer un instantané de production validé en développement
 
-Faites préparer un instantané anonymisé de production compatible avec le schéma de développement. Connectez-vous au Backoffice dev avec un compte superadmin et la MFA. Ouvrez Clone data, choisissez Refresh status et vérifiez la date de capture ainsi que les nombres de restaurants, commandes, paiements et sites. Saisissez REPLACE DEVELOPMENT DATA pour confirmer le remplacement de toute la base. Prévoyez une brève interruption pendant la bascule. Rouvrez Clone data pour consulter le résultat. Si le service de restauration est désactivé ou qu’aucun instantané n’est prêt, contactez l’équipe qui administre dev. La base dev précédente est conservée pour la récupération.
+Faites préparer un instantané anonymisé de production compatible avec le schéma de développement. Connectez-vous au Backoffice dev avec un compte superadmin et la MFA. Dans Clone data, repérez la section Refresh all development data, choisissez Refresh status et vérifiez la date de capture ainsi que les nombres de restaurants, commandes, paiements et sites. Saisissez REPLACE DEVELOPMENT DATA et cliquez sur Replace development database. La demande est mise en file d’attente et l’API dev peut être brièvement indisponible pendant la bascule. Rouvrez Clone data et attendez la réussite de la restauration et du contrôle de l’API avant de reproduire le bug. Si le service de restauration est désactivé ou qu’aucun instantané n’est prêt, contactez l’équipe qui administre dev. La base dev précédente est conservée pour la récupération.
 
 <span id="check-development-google-delivery" />
 

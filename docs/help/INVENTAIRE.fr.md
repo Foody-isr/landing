@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-11-22.
+Révision du relevé : 2026-10-18.
 
-115 fiches de fonctionnalités, 1063 procédures/sous-fonctionnalités, dont 103 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2746 fichiers applicatifs et 2374 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+115 fiches de fonctionnalités, 1071 procédures/sous-fonctionnalités, dont 103 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2749 fichiers applicatifs et 2378 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyadmin | 837 | 845 | fe760e9d9ef9 ; versioned |
-| foodybackoffice | 55 | 51 | 82cde2439a24 ; versioned |
-| foodylanding | 158 | 31 | 9f9132514604 ; versioned |
-| foodypos | 432 | 187 | 81b5391902fe ; versioned |
-| foodyserver | 872 | 1055 | 3d12030813f4 ; versioned |
-| foodyweb | 392 | 205 | d1c1c8e97354 ; versioned |
+| foodyadmin | 838 | 846 | f60ffc6ecf4b ; versioned |
+| foodybackoffice | 56 | 52 | 6d68cdff2ee8 ; versioned |
+| foodylanding | 158 | 31 | b3ea582f13f0 ; versioned |
+| foodypos | 431 | 186 | a8618f0cacdf ; versioned |
+| foodyserver | 874 | 1058 | 997d8161a74f ; versioned |
+| foodyweb | 392 | 205 | 88736d71c6dd ; versioned |
 
 ## getting-started
 
@@ -488,7 +488,9 @@ Identifiant : `menu-menus-and-groups`. Public : public. Disponibilité : availab
 Identifiant : `menu-subgroups`. Public : public. Disponibilité : available. Services : foodyadmin, foodypos, foodyserver, foodyweb.
 
 - [Créer et publier un sous-groupe](../../src/content/help/fr/menu/subgroups.mdx#group-hierarchy)
+- [Parcourir les sous-groupes sur Commander](../../src/content/help/fr/menu/subgroups.mdx#order-page-subgroups)
 - [Disposer les tuiles de sous-groupes en caisse](../../src/content/help/fr/menu/subgroups.mdx#pos-group-layout)
+- [Importer une image de groupe ou de tuile caisse](../../src/content/help/fr/menu/subgroups.mdx#group-and-pos-images)
 
 ### [Variantes et tailles](../../src/content/help/fr/menu/variants-and-sizes.mdx)
 
@@ -719,6 +721,8 @@ Identifiant : `production`. Public : public. Disponibilité : available. Service
 
 - [Choisir la date de service](../../src/content/help/fr/orders/production-planning.mdx#scope)
 - [Vérifier quantités et portions](../../src/content/help/fr/orders/production-planning.mdx#quantities)
+- [Retrouver la dernière vue du plan](../../src/content/help/fr/orders/production-planning.mdx#production-views)
+- [Modifier la disponibilité d’un article depuis le plan](../../src/content/help/fr/orders/production-planning.mdx#production-item-availability)
 - [Préparer les colis clients](../../src/content/help/fr/orders/production-planning.mdx#packing)
 - [Commandes événement depuis le parcours habituel](../../src/content/help/fr/orders/production-planning.mdx#event-orders)
 - [Choisir la production lors d’une commande manuelle](../../src/content/help/fr/orders/production-planning.mdx#manual-order-production-choice)
@@ -873,10 +877,10 @@ Identifiant : `pos-payments`. Public : public. Disponibilité : available. Servi
 
 ### [Connecter et retrouver le Victa Mini sur iPad](../../src/content/help/fr/payments/victa-mini.mdx)
 
-Identifiant : `pos-victa-mini`. Public : public. Disponibilité : available. Services : foodypos, foodyserver.
+Identifiant : `pos-victa-mini`. Public : public. Disponibilité : available. Services : foodybackoffice, foodypos, foodyserver.
 
 - [Connecter et retrouver le Victa Mini sur iPad](../../src/content/help/fr/payments/victa-mini.mdx#connection)
-- [Renseigner ou modifier les identifiants du terminal](../../src/content/help/fr/payments/victa-mini.mdx#terminal-identifiers)
+- [Consulter les identifiants du terminal](../../src/content/help/fr/payments/victa-mini.mdx#terminal-identifiers)
 - [Encaisser sur le terminal par défaut](../../src/content/help/fr/payments/victa-mini.mdx#explicit-terminal-selection)
 - [Consulter la dernière transaction du terminal](../../src/content/help/fr/payments/victa-mini.mdx#ashrait-last-transaction-inspection)
 - [Demander une copie du reçu carte](../../src/content/help/fr/payments/victa-mini.mdx#ashrait-checkout-card-copy)
@@ -1077,6 +1081,7 @@ Identifiant : `website-order-design`. Public : public. Disponibilité : availabl
 - [Personnaliser les écrans de choix, de retrait et de livraison](../../src/content/help/fr/website-qr/order-page.mdx#order-mode-screen-appearance)
 - [Configurer l’en-tête mobile de la carte](../../src/content/help/fr/website-qr/order-page.mdx#mobile-menu-header)
 - [Choisir disposition et navigation du menu](../../src/content/help/fr/website-qr/order-page.mdx#menu-layout)
+- [Régler la largeur du menu](../../src/content/help/fr/website-qr/order-page.mdx#menu-width)
 - [Distinguer les cartes et leurs groupes](../../src/content/help/fr/website-qr/order-page.mdx#menu-tabs-and-groups)
 - [Personnaliser la fiche article](../../src/content/help/fr/website-qr/order-page.mdx#item-surface)
 - [Placer les contenus de découverte](../../src/content/help/fr/website-qr/order-page.mdx#discovery)
@@ -1592,11 +1597,14 @@ Identifiant : `backoffice-operations`. Public : internal. Disponibilité : avail
 - [Examiner les statuts](internal/fr/operations-and-cloning.md#status)
 - [Vérifier les contrôles d’infrastructure](internal/fr/operations-and-cloning.md#infra)
 - [Prévisualiser un clonage avant import](internal/fr/operations-and-cloning.md#clone)
+- [Restaurer un instantané de production validé en développement](internal/fr/operations-and-cloning.md#refresh-development-data)
+- [Vérifier Google Maps pour la livraison en développement](internal/fr/operations-and-cloning.md#check-development-google-delivery)
 
 ### [Contrats API et opérations de livraison](internal/fr/api-and-release.md)
 
 Identifiant : `platform-api`. Public : internal. Disponibilité : available. Services : foodybackoffice, foodypos, foodyserver, foodyweb.
 
+- [Vérifier la restauration d’un instantané dev](internal/fr/api-and-release.md#development-snapshot-restore)
 - [Vérifier l’émission des cartes de fidélité personnelles](internal/fr/api-and-release.md#loyalty-wallet-customer-issuance)
 - [Rembourser ou annuler un paiement en ligne Verifone](internal/fr/api-and-release.md#verifone-admin-money-operations)
 - [Garder la page de paiement lisible](internal/fr/api-and-release.md#verifone-readable-hosted-theme)

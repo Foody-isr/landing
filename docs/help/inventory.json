@@ -5994,9 +5994,9 @@
     },
     "foodybackoffice": {
       "repository": "https://github.com/Foody-isr/backoffice",
-      "sourceCommit": "71932885a3ed35868fb89bbc6e4776ca652423ab",
+      "sourceCommit": "6d68cdff2ee8757dca807c3c5af92cbfe7af93ca",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "eb08bd96c203dc8a8022c5090b4085a38eb4da21d5531505af43e8a671b84e8a",
+      "sourceSnapshot": "306ebb480e854c0667f6177bb5da599bc4240ce3b21a9a2091e365ab258bf473",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "src/app/api/operations/status/route.ts": {
@@ -6005,8 +6005,14 @@
             "backoffice-operations"
           ]
         },
+        "src/app/dashboard/clone/DevelopmentRefresh.tsx": {
+          "sha256": "60c0531a38560771e429739ac80aca6d68cc469482fc00b35ef6122abbbea7fe",
+          "features": [
+            "backoffice-operations"
+          ]
+        },
         "src/app/dashboard/clone/page.tsx": {
-          "sha256": "1e61a411749fe3e4fa04158ffd33458fe76cc46de43fff0bb2cb467f0ba8a661",
+          "sha256": "591329540442d9678b117c605546148153d45bd7d6cd1b7d95db1c20dfa3f0fa",
           "features": [
             "backoffice-operations"
           ]
@@ -6257,7 +6263,7 @@
           ]
         },
         "src/lib/api.ts": {
-          "sha256": "3112337795fee63945f60fd40e7da7067bbc399237b44b4d78c944edcb5d40b4",
+          "sha256": "2985a8ac3c5ce23f5ae4668be260473ac31e8a8d5f25cc004ec198fb0fe6796b",
           "features": [
             "backoffice-entitlements",
             "platform-api",
@@ -52863,9 +52869,9 @@
             "he": "שחזור עותק ייצור שנבדק בסביבת הפיתוח"
           },
           "instructions": {
-            "en": "Have an operator stage an anonymized production snapshot compatible with the development schema. Sign in to development Backoffice as a superadmin with MFA. Open Clone data, choose Refresh status, and check the capture time and the restaurant, order, payment and website counts. Type REPLACE DEVELOPMENT DATA to confirm whole-database replacement. Expect a brief interruption while development switches databases. Reopen Clone data to check the result. If the worker is disabled or no reviewed snapshot is ready, ask the development operator to provision or stage it. The previous development database is retained for recovery.",
-            "fr": "Faites préparer un instantané anonymisé de production compatible avec le schéma de développement. Connectez-vous au Backoffice dev avec un compte superadmin et la MFA. Ouvrez Clone data, choisissez Refresh status et vérifiez la date de capture ainsi que les nombres de restaurants, commandes, paiements et sites. Saisissez REPLACE DEVELOPMENT DATA pour confirmer le remplacement de toute la base. Prévoyez une brève interruption pendant la bascule. Rouvrez Clone data pour consulter le résultat. Si le service de restauration est désactivé ou qu’aucun instantané n’est prêt, contactez l’équipe qui administre dev. La base dev précédente est conservée pour la récupération.",
-            "he": "בקשו מצוות התפעול להכין עותק ייצור שעבר אנונימיזציה ותואם לסכמת הפיתוח. היכנסו ל־Backoffice של הפיתוח כמנהל־על עם אימות רב־שלבי. פתחו Clone data, לחצו על Refresh status ובדקו את מועד הצילום ואת מספר המסעדות, ההזמנות, התשלומים והאתרים. הקלידו REPLACE DEVELOPMENT DATA כדי לאשר החלפה של מסד הנתונים כולו. צפויה הפסקה קצרה בזמן המעבר. פתחו שוב את Clone data כדי לבדוק את התוצאה. אם שירות השחזור מושבת או אם אין עותק מוכן, פנו לצוות הפיתוח. המסד הקודם נשמר לצורך התאוששות."
+            "en": "Have an operator stage an anonymized production snapshot compatible with the development schema. Sign in to development Backoffice as a superadmin with MFA. Under Clone data, find the Refresh all development data section, choose Refresh status, and check the capture time and the restaurant, order, payment and website counts. Type REPLACE DEVELOPMENT DATA and select Replace development database. The request enters a queue and the development API may be briefly unavailable during the switch. Reopen Clone data and wait for the restoration and API health check to succeed before reproducing the bug. If the worker is disabled or no reviewed snapshot is ready, ask the development operator to provision or stage it. The previous development database is retained for recovery.",
+            "fr": "Faites préparer un instantané anonymisé de production compatible avec le schéma de développement. Connectez-vous au Backoffice dev avec un compte superadmin et la MFA. Dans Clone data, repérez la section Refresh all development data, choisissez Refresh status et vérifiez la date de capture ainsi que les nombres de restaurants, commandes, paiements et sites. Saisissez REPLACE DEVELOPMENT DATA et cliquez sur Replace development database. La demande est mise en file d’attente et l’API dev peut être brièvement indisponible pendant la bascule. Rouvrez Clone data et attendez la réussite de la restauration et du contrôle de l’API avant de reproduire le bug. Si le service de restauration est désactivé ou qu’aucun instantané n’est prêt, contactez l’équipe qui administre dev. La base dev précédente est conservée pour la récupération.",
+            "he": "בקשו מצוות התפעול להכין עותק ייצור שעבר אנונימיזציה ותואם לסכמת הפיתוח. היכנסו ל־Backoffice של הפיתוח כמנהל־על עם אימות רב־שלבי. במסך Clone data מצאו את המקטע Refresh all development data, לחצו על Refresh status ובדקו את מועד הצילום ואת מספר המסעדות, ההזמנות, התשלומים והאתרים. הקלידו REPLACE DEVELOPMENT DATA ולחצו על Replace development database. הבקשה נכנסת לתור וממשק ה־API של הפיתוח עשוי להיות לא זמין לזמן קצר בזמן המעבר. פתחו שוב את Clone data והמתינו לאישור שהשחזור ובדיקת התקינות של ה־API הצליחו לפני שחזור התקלה. אם שירות השחזור מושבת או אם אין עותק מוכן, פנו לצוות הפיתוח. המסד הקודם נשמר לצורך התאוששות."
           }
         },
         {
@@ -52895,6 +52901,10 @@
         {
           "service": "foodybackoffice",
           "file": "src/app/api/operations/status/route.ts"
+        },
+        {
+          "service": "foodybackoffice",
+          "file": "src/app/dashboard/clone/DevelopmentRefresh.tsx"
         },
         {
           "service": "foodybackoffice",
@@ -83743,6 +83753,20 @@
       ],
       "kind": "next-api-route",
       "route": "/api/operations/status",
+      "line": 1
+    },
+    {
+      "id": "foodybackoffice:src/app/dashboard/clone/DevelopmentRefresh.tsx:ui-controls:1",
+      "service": "foodybackoffice",
+      "source": "src/app/dashboard/clone/DevelopmentRefresh.tsx",
+      "features": [
+        "backoffice-operations"
+      ],
+      "kind": "ui-controls",
+      "labels": [],
+      "actions": [
+        "confirmationText"
+      ],
       "line": 1
     },
     {
@@ -116410,8 +116434,8 @@
     "sharedRuntimeFiles": 436,
     "features": 115,
     "operations": 1071,
-    "sourceFiles": 2748,
-    "surfaces": 2377,
+    "sourceFiles": 2749,
+    "surfaces": 2378,
     "unclassifiedRoutes": []
   }
 }
