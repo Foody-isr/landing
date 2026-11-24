@@ -7539,7 +7539,8 @@
       "foodyadmin": [
         "src/app/[restaurantId]/orders/production/**",
         "src/components/production/**",
-        "src/lib/production*.ts"
+        "src/lib/production*.ts",
+        "src/components/menu/ItemAvailabilityPopover.tsx"
       ],
       "foodypos": [
         "lib/features/kitchen/presentation/kitchen_plan_matrix_page.dart"
@@ -7574,6 +7575,32 @@
           "en": "Review aggregated items, variants, portions and notes before assigning preparation. Recheck the plan after a saved order change.",
           "fr": "Vérifiez articles agrégés, variantes, portions et notes avant d’organiser la préparation. Contrôlez à nouveau le plan après modification d’une commande.",
           "he": "בדקו פריטים מרוכזים, וריאנטים, מנות והערות לפני הקצאת הכנה. בדקו שוב את התוכנית לאחר שינוי הזמנה שמור."
+        }
+      },
+      {
+        "id": "production-views",
+        "title": {
+          "en": "Return to the last production view",
+          "fr": "Retrouver la dernière vue du plan",
+          "he": "חזרה לתצוגה האחרונה של תוכנית הייצור"
+        },
+        "instructions": {
+          "en": "In Admin → Orders → Production plan, switch between Clients, Items and Status on a computer or phone. Foody remembers your choice for this restaurant in the current browser when you leave the plan or reload it. Use Clients to assemble orders, Items to check the quantities to prepare, and Status to track preparation progress.",
+          "fr": "Dans Admin → Commandes → Plan de production, passez de Clients à Articles ou Statut sur ordinateur ou téléphone. Foody conserve votre choix pour ce restaurant dans le navigateur utilisé, même si vous quittez le plan ou rechargez la page. Ouvrez Clients pour préparer les colis, Articles pour vérifier les quantités et Statut pour suivre la préparation.",
+          "he": "בניהול → הזמנות → תוכנית הכנה, עברו בין לקוחות, פריטים וסטטוס במחשב או בטלפון. Foody שומרת את הבחירה למסעדה זו בדפדפן הנוכחי גם לאחר יציאה מהתוכנית או טעינה מחדש. השתמשו בלקוחות להרכבת ההזמנות, בפריטים לבדיקת הכמויות ובסטטוס למעקב אחר ההכנה."
+        }
+      },
+      {
+        "id": "production-item-availability",
+        "title": {
+          "en": "Change an item’s selling availability from the plan",
+          "fr": "Modifier la disponibilité d’un article depuis le plan",
+          "he": "שינוי זמינות פריט למכירה מתוך התוכנית"
+        },
+        "instructions": {
+          "en": "With permission to view and edit the menu, select the handover date, then choose Items and open Availability on an active item. For batch ordering, check the series in the panel. Its start date can precede the selected handover date. Choose Unavailable to stop new sales, or enter the remaining quantity under Manually defined quantity, then select Apply. The change takes effect immediately and accounts for quantities already committed to orders. The item stays in the plan for preparation. If the panel cannot load, select Reload stock. If the series no longer matches, refresh the plan and check the date before reopening the panel. Use [Items and menus](/en/help/menu/menus-and-groups#contextual-availability) for items outside the plan.",
+          "fr": "Avec les droits de consulter et de modifier le menu, sélectionnez la date de remise, ouvrez Articles, puis choisissez Disponibilité sur un article actif. Pour les commandes groupées par série, vérifiez la série affichée dans le panneau. Elle peut commencer avant la date de remise sélectionnée. Choisissez Indisponible pour arrêter les nouvelles ventes, ou saisissez le stock restant dans Quantité définie manuellement, puis choisissez Appliquer. La modification prend effet immédiatement et tient compte des quantités déjà engagées. L’article reste à préparer dans le plan. Si le panneau échoue au chargement, choisissez Recharger les stocks. Si la série a changé, actualisez le plan et vérifiez la date avant de rouvrir le panneau. Pour les articles hors du plan, utilisez [Articles et cartes](/fr/help/menu/menus-and-groups#contextual-availability).",
+          "he": "עם הרשאות לצפייה בתפריט ולעריכתו, בחרו את תאריך המסירה, פתחו פריטים ובחרו זמינות בפריט פעיל. בהזמנות לפי סדרה, בדקו את הסדרה שמופיעה בחלונית. תאריך ההתחלה שלה יכול להקדים את תאריך המסירה שנבחר. בחרו לא זמין כדי לעצור מכירות חדשות, או הזינו את יתרת המלאי תחת כמות מוגדרת ידנית, ואז בחרו החלה. השינוי נכנס לתוקף מיד ומתחשב בכמויות שכבר הוקצו להזמנות. הפריט ממשיך להופיע להכנה בתוכנית. אם החלונית לא נטענת, בחרו טעינת המלאי מחדש. אם הסדרה השתנתה, רעננו את התוכנית ובדקו את התאריך לפני פתיחת החלונית מחדש. לפריטים מחוץ לתוכנית, השתמשו ב[פריטים ותפריטים](/he/help/menu/menus-and-groups#contextual-availability)."
         }
       },
       {
@@ -7619,7 +7646,7 @@
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-11-02"
+    "procedureUpdatedAt": "2026-11-24"
   },
   {
     "id": "delivery-zones",
@@ -10321,7 +10348,8 @@
         "src/app/[restaurantId]/settings/opening-hours/**"
       ],
       "foodyserver": [
-        "internal/restaurants/**"
+        "internal/restaurants/**",
+        "internal/menu/translations_rekey.go"
       ]
     },
     "operations": [
@@ -10386,9 +10414,9 @@
           "he": "הגדרת שפות נתמכות"
         },
         "instructions": {
-          "en": "In Languages choose the restaurant languages and default language offered by the form. Translate catalog names and public website content separately. Changing the interface language alone does not translate every item or customer message.",
-          "fr": "Dans Langues, choisissez langues et langue par défaut proposées. Traduisez séparément noms du catalogue et contenus du site. Changer la langue d’interface ne traduit pas tous les articles ni les messages clients.",
-          "he": "בשפות בחרו שפות ושפת ברירת מחדל זמינות. תרגמו בנפרד שמות קטלוג ותוכן אתר. שינוי שפת ממשק אינו מתרגם אוטומטית כל פריט והודעה."
+          "en": "To change the language of the Admin interface, open the account menu and select Language for this browser. To change the original catalogue shown to guests, an authorized manager opens Settings → Language → Default menu language, chooses the language and saves. Foody uses the saved translations in that language as the original and keeps existing translations in the other languages, including explicitly translated older groups. Check item and group names in each published language after saving. Public website content and the visitor’s interface language have their own settings.",
+          "fr": "Pour changer la langue de l’interface Admin, ouvrez le menu du compte et choisissez Langue dans le navigateur utilisé. Pour changer la version originale du catalogue affichée aux clients, ouvrez Paramètres → Langue → Langue par défaut du menu avec le droit de modifier les paramètres, choisissez la langue et enregistrez. Foody utilise les traductions déjà saisies dans cette langue pour la version originale et conserve les autres traductions, y compris celles des anciens groupes traduits. Après l’enregistrement, vérifiez les intitulés des articles et des groupes dans chaque langue publiée. Le contenu du site et la langue d’interface du visiteur ont leurs propres réglages.",
+          "he": "כדי לשנות את שפת ממשק הניהול, פתחו את תפריט החשבון ובחרו שפה בדפדפן הנוכחי. כדי לשנות את גרסת המקור של הקטלוג המוצגת ללקוחות, פתחו הגדרות → שפה → שפת תפריט ברירת מחדל עם הרשאה לערוך הגדרות, בחרו שפה ושמרו. Foody משתמשת בתרגומים שנשמרו בשפה זו כגרסת המקור ושומרת את התרגומים הקיימים בשפות האחרות, כולל תרגומים קיימים של קבוצות ישנות. אחרי השמירה בדקו את שמות הפריטים והקבוצות בכל שפה שפורסמה. לתוכן האתר ולשפת הממשק של המבקר יש הגדרות משלהם."
         }
       },
       {
@@ -10473,7 +10501,7 @@
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-11-19"
+    "procedureUpdatedAt": "2026-11-24"
   },
   {
     "id": "fulfillment-policy",
