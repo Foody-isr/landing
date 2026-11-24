@@ -12,6 +12,12 @@ releaseStatus: available
 ---
 Engineering operators: use the closest service AGENTS.md, README, API contract and deployment workflow.
 
+<span id="development-snapshot-restore" />
+
+## Verify the development snapshot restore
+
+Deploy the development API and worker before the Backoffice control. Use a synthetic archive built on the current development schema. GET /api/v1/admin/env-clone/refresh shows the staged counts and recent job. POST on that route requires a development superadmin with MFA, the staged snapshot ID and explicit confirmation. Verify that a stale snapshot and a concurrent request are rejected. Check the retained database and verify automatic recovery if the API fails to start after the switch.
+
 <span id="loyalty-wallet-customer-issuance" />
 
 ## Verify personalized loyalty pass issuance

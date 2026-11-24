@@ -15688,7 +15688,8 @@
       ],
       "foodyserver": [
         "internal/infra/**",
-        "internal/clone/**"
+        "internal/clone/**",
+        "internal/envclone/refresh.go"
       ]
     },
     "operations": [
@@ -15730,6 +15731,32 @@
           "fr": "Choisissez source/cible et groupes autorisés, exportez ce périmètre puis prévisualisez fichier et rapport. Examinez conflits et effets destructifs avant validation explicite. Gardez données exportées hors du dépôt d’aide ; aucun clonage prod pour tester le guide.",
           "he": "בחרו מקור, יעד ואשכולות מורשים, יצאו היקף מאושר ובדקו קובץ ודוח לפני יבוא. בדקו התנגשויות והרס לפני אישור. אין לשמור נתוני עסק מיוצאים במאגר העזרה או לשכפל ייצור לבדיקה."
         }
+      },
+      {
+        "id": "refresh-development-data",
+        "title": {
+          "en": "Restore a reviewed production snapshot in development",
+          "fr": "Restaurer un instantané de production validé en développement",
+          "he": "שחזור עותק ייצור שנבדק בסביבת הפיתוח"
+        },
+        "instructions": {
+          "en": "Have an operator stage an anonymized production snapshot compatible with the development schema. Sign in to development Backoffice as a superadmin with MFA. Open Clone data, choose Refresh status, and check the capture time and the restaurant, order, payment and website counts. Type REPLACE DEVELOPMENT DATA to confirm whole-database replacement. Expect a brief interruption while development switches databases. Reopen Clone data to check the result. If the worker is disabled or no reviewed snapshot is ready, ask the development operator to provision or stage it. The previous development database is retained for recovery.",
+          "fr": "Faites préparer un instantané anonymisé de production compatible avec le schéma de développement. Connectez-vous au Backoffice dev avec un compte superadmin et la MFA. Ouvrez Clone data, choisissez Refresh status et vérifiez la date de capture ainsi que les nombres de restaurants, commandes, paiements et sites. Saisissez REPLACE DEVELOPMENT DATA pour confirmer le remplacement de toute la base. Prévoyez une brève interruption pendant la bascule. Rouvrez Clone data pour consulter le résultat. Si le service de restauration est désactivé ou qu’aucun instantané n’est prêt, contactez l’équipe qui administre dev. La base dev précédente est conservée pour la récupération.",
+          "he": "בקשו מצוות התפעול להכין עותק ייצור שעבר אנונימיזציה ותואם לסכמת הפיתוח. היכנסו ל־Backoffice של הפיתוח כמנהל־על עם אימות רב־שלבי. פתחו Clone data, לחצו על Refresh status ובדקו את מועד הצילום ואת מספר המסעדות, ההזמנות, התשלומים והאתרים. הקלידו REPLACE DEVELOPMENT DATA כדי לאשר החלפה של מסד הנתונים כולו. צפויה הפסקה קצרה בזמן המעבר. פתחו שוב את Clone data כדי לבדוק את התוצאה. אם שירות השחזור מושבת או אם אין עותק מוכן, פנו לצוות הפיתוח. המסד הקודם נשמר לצורך התאוששות."
+        }
+      },
+      {
+        "id": "check-development-google-delivery",
+        "title": {
+          "en": "Check Google Maps in development delivery",
+          "fr": "Vérifier Google Maps pour la livraison en développement",
+          "he": "בדיקת Google Maps במשלוחים בסביבת הפיתוח"
+        },
+        "instructions": {
+          "en": "After the operator enables the development server’s Google configuration, use a synthetic address in a test restaurant. Check suggestions, selecting a full address, a short route and the dispatch map. For guest checkout, publish Address autocomplete on the development website and verify a suggestion before placing any sandbox order. If suggestions or the map are unavailable, ask the operator to check the API restrictions and quota for the development credentials.",
+          "fr": "Après l’activation de la configuration Google du serveur dev, utilisez une adresse fictive dans un restaurant de test. Vérifiez les suggestions, la sélection d’une adresse complète, un trajet court et la carte de livraison. Pour le parcours client, publiez l’autocomplétion d’adresse sur le site dev et vérifiez une suggestion avant toute commande de test. Si les suggestions ou la carte sont indisponibles, faites vérifier les restrictions d’API et les quotas associés aux identifiants dev.",
+          "he": "לאחר שצוות התפעול מפעיל את הגדרות Google בשרת הפיתוח, השתמשו בכתובת לדוגמה במסעדת בדיקה. בדקו הצעות, בחירה של כתובת מלאה, מסלול קצר ומפת משלוחים. בקופה ללקוחות פרסמו את ההשלמה האוטומטית של כתובות באתר הפיתוח ובדקו הצעה לפני יצירת הזמנת בדיקה. אם ההצעות או המפה אינן זמינות, בקשו מצוות התפעול לבדוק את מגבלות ה־API ואת המכסות של מזהי הפיתוח."
+        }
       }
     ],
     "audience": "internal",
@@ -15740,7 +15767,7 @@
       "fr": "Backoffice → Platform → Operations, Servers ou Clone data. Consultez l’état des services avant toute intervention.",
       "he": "ב־Backoffice, פתחו Platform ואז Operations, Servers או Clone data. בדקו את מצב השירותים לפני פעולה."
     },
-    "procedureUpdatedAt": "2026-11-15"
+    "procedureUpdatedAt": "2026-11-24"
   },
   {
     "id": "platform-api",
@@ -15791,6 +15818,19 @@
       ]
     },
     "operations": [
+      {
+        "id": "development-snapshot-restore",
+        "title": {
+          "en": "Verify the development snapshot restore",
+          "fr": "Vérifier la restauration d’un instantané dev",
+          "he": "בדיקת שחזור עותק בסביבת הפיתוח"
+        },
+        "instructions": {
+          "en": "Deploy the development API and worker before the Backoffice control. Use a synthetic archive built on the current development schema. GET /api/v1/admin/env-clone/refresh shows the staged counts and recent job. POST on that route requires a development superadmin with MFA, the staged snapshot ID and explicit confirmation. Verify that a stale snapshot and a concurrent request are rejected. Check the retained database and verify automatic recovery if the API fails to start after the switch.",
+          "fr": "Déployez l’API et le service de restauration en dev avant le contrôle Backoffice. Utilisez une archive de test sur le schéma dev courant. GET /api/v1/admin/env-clone/refresh affiche les volumes préparés et la dernière opération. Le POST exige un superadmin dev avec la MFA, l’identifiant de l’instantané et la confirmation explicite. Vérifiez le refus d’un instantané obsolète et d’une demande simultanée. Vérifiez la conservation de la base précédente et la récupération automatique si l’API échoue après la bascule.",
+          "he": "פרסו את ה־API ואת שירות השחזור בפיתוח לפני הבקרה ב־Backoffice. השתמשו בארכיון בדיקה שנבנה על הסכמה העדכנית של הפיתוח. GET /api/v1/admin/env-clone/refresh מציג את הכמויות ואת הפעולה האחרונה. POST באותו נתיב דורש מנהל־על בפיתוח עם אימות רב־שלבי, מזהה העותק ואישור מפורש. ודאו ששליחת עותק מיושן ובקשה מקבילה נדחות. בדקו שהמסד הקודם נשמר ושהשחזור האוטומטי פועל אם ה־API אינו עולה לאחר המעבר."
+        }
+      },
       {
         "id": "loyalty-wallet-customer-issuance",
         "title": {
