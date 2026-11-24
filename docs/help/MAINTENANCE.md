@@ -1984,6 +1984,8 @@ Les procédures publiques de fidélité et le guide interne du Studio décrivent
 
 Release the loyalty program and Wallet Studio guides in French, Hebrew and English with the compatible API, Admin, customer site and POS. The test flow uses one membership to scan, pay ten eligible visits and receive a reward. The Studio can sign sample stamp counts independently of member balances. A Wallet reward update and a restaurant Web Push subscription have separate delivery and consent paths. Validate messaging with synthetic subscriptions and review the export against restaurant-scoped order contacts. Use the restaurant time zone to verify the daily report and the evening review rule.
 
+Pour combiner tampons et composition, publier les traductions avec les versions compatibles de l’API et de l’Admin. Enregistrer « Affiche café » avec quatre visites sur dix, activer les tampons, puis rouvrir le brouillon. Vérifier les deux rangées de cinq grands tampons sous le logo sur l’affiche Apple, puis en haut des visuels Apple classique et Google. Contrôler la lisibilité du titre incliné, de la vague et du QR code sur les trois formats. Comparer aussi un passage de quatre à dix visites dans deux cartes de test. L’inventaire de cette révision actualise les sources du Studio et du rendu Wallet sur leurs bases d’intégration. Les dossiers des terminaux de paiement conservent leur revue indépendante.
+
 ## Composition des combos et tailles du catalogue (24 novembre 2026)
 
 Publier les guides FR, HE et EN avec l’API et les clients compatibles. Tester
