@@ -4,9 +4,9 @@
   "services": {
     "foodyadmin": {
       "repository": "https://github.com/Foody-isr/admin",
-      "sourceCommit": "ebb3c70797970e06aa8d55a03dd52d7dce702764",
+      "sourceCommit": "f60ffc6ecf4bdaf382a8440747ef5198a4c6249e",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "3425b69ee8118f455362308ead61e7a8f69f8b9564c4384edcbaf44cf590524b",
+      "sourceSnapshot": "b35d7d1eefe65ab417ee5300f45f307077ff637dba5206949ed737b4392cd50e",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "src/app/[restaurantId]/analytics/customers/CustomerDetailPanel.tsx": {
@@ -1019,7 +1019,7 @@
           ]
         },
         "src/app/[restaurantId]/orders/production/page.tsx": {
-          "sha256": "becdc13166ca93a61b7815b74354400b616f789dbf852fefc3e7bdb9b8a6ea4d",
+          "sha256": "f576c52fc35ce042968b8417b3840995507904b60ace45ef00a023e3f961d7a2",
           "features": [
             "orders-managing-orders",
             "production",
@@ -3038,9 +3038,10 @@
           ]
         },
         "src/components/menu/ItemAvailabilityPopover.tsx": {
-          "sha256": "d9e2ac246214a48848fdf5aec347306af55ca8d076116d65105c5e49921c1340",
+          "sha256": "f9e5654882b954f70a5e236b5f32311c4016fd313c150a9e9dd09c42a63c98a3",
           "features": [
-            "menu-menus-and-groups"
+            "menu-menus-and-groups",
+            "production"
           ]
         },
         "src/components/menu/LibrarySetList.tsx": {
@@ -3605,7 +3606,7 @@
           ]
         },
         "src/components/production/ProductionMobile.tsx": {
-          "sha256": "7dcdcc49fb5d6ee94d48449c59ac56dbebf48cd70a98316697759618775d32bf",
+          "sha256": "337028a402bec6f416ba95623172c9b27b35c9a238e813ab8c07e09d7b4ff391",
           "features": [
             "production",
             "orders-events"
@@ -3624,7 +3625,7 @@
           ]
         },
         "src/components/production/ProductionToPrepare.tsx": {
-          "sha256": "b6cf927b904f322fa0a51e877aa507c230bb28397e09a45faa6628675b7c19bf",
+          "sha256": "29604a36192633118b0e46b8ff31c89a6de538697b12162c9b4fbfed14559986",
           "features": [
             "production"
           ]
@@ -4578,7 +4579,7 @@
           ]
         },
         "src/lib/api.ts": {
-          "sha256": "9defe067c4e3036a1ada4bea473247b4e671e7d68fe81002f249f70d6ef38b45",
+          "sha256": "4c833cdc1832c3764bd793cd86941466d38858c4d65ce81cdacde1297171b8af",
           "features": [
             "customers-profiles",
             "menu-subgroups",
@@ -6346,7 +6347,7 @@
     },
     "foodylanding": {
       "repository": "https://github.com/Foody-isr/landing",
-      "sourceCommit": "a52e52779644a87ef6a16ef949a1992853736cec",
+      "sourceCommit": "160e248a23b9a18e3e2fdf5d740b8a76665221ee",
       "releaseStatus": "versioned",
       "sourceSnapshot": "7872182414e2c2bc08e3f0e2b65e52d1f5419988d4e77ebd46afb77180470947",
       "workingTreeHasChanges": true,
@@ -10443,7 +10444,7 @@
       "repository": "https://github.com/Foody-isr/server",
       "sourceCommit": "ab83ca60b54eab5f62f3e85bb6db27a865e802da",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "195e3f04955214571250298e7f17eb9a58941fb9ab947e67a6a7008e46863a26",
+      "sourceSnapshot": "822c2da3ee911ad51f6681d5493b98d865fff49553ccda11b44dc34347d28198",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -13302,7 +13303,7 @@
           ]
         },
         "internal/menu/translations_rekey.go": {
-          "sha256": "9563a96115d74166b3d37acbc0659dec61af05b6556e484fa1a3ff19c00e17de",
+          "sha256": "10a8fa1e7fa0a3cee1916351773afe4af7ca3ec06f8e962eb6cb206e8b841ccc",
           "features": [
             "menu-categories-and-items",
             "menu-creating-a-menu-item",
@@ -13310,6 +13311,7 @@
             "menu-menus-and-groups",
             "menu-variants-and-sizes",
             "menu-modifiers",
+            "restaurant-profile",
             "platform-api"
           ]
         },
@@ -14828,7 +14830,7 @@
           ]
         },
         "internal/orders/production_sheet.go": {
-          "sha256": "4404211860ddf1571427d28ea49f80ca5d7d835616bdbb884d9bf4f471db2ff6",
+          "sha256": "9a651c8badbab1d7bae4871a958ee27c366b08500f9492dfc0f909d695a0ce2d",
           "features": [
             "orders-managing-orders",
             "order-types",
@@ -16606,7 +16608,7 @@
           ]
         },
         "internal/support/corpus.json": {
-          "sha256": "45f7d228e54dc3ddfa355764ab1fd32baa3791c03092642d8d6f86fd129f1f1b",
+          "sha256": "40c688c37e8e8935e30a10a9a5c4b09facbe2ac1dd0b3315a6627a2be0f06323",
           "features": [
             "customers-profiles",
             "getting-started-using-support",
@@ -37340,7 +37342,8 @@
         "foodyadmin": [
           "src/app/[restaurantId]/orders/production/**",
           "src/components/production/**",
-          "src/lib/production*.ts"
+          "src/lib/production*.ts",
+          "src/components/menu/ItemAvailabilityPopover.tsx"
         ],
         "foodypos": [
           "lib/features/kitchen/presentation/kitchen_plan_matrix_page.dart"
@@ -37375,6 +37378,32 @@
             "en": "Review aggregated items, variants, portions and notes before assigning preparation. Recheck the plan after a saved order change.",
             "fr": "Vérifiez articles agrégés, variantes, portions et notes avant d’organiser la préparation. Contrôlez à nouveau le plan après modification d’une commande.",
             "he": "בדקו פריטים מרוכזים, וריאנטים, מנות והערות לפני הקצאת הכנה. בדקו שוב את התוכנית לאחר שינוי הזמנה שמור."
+          }
+        },
+        {
+          "id": "production-views",
+          "title": {
+            "en": "Return to the last production view",
+            "fr": "Retrouver la dernière vue du plan",
+            "he": "חזרה לתצוגה האחרונה של תוכנית הייצור"
+          },
+          "instructions": {
+            "en": "In Admin → Orders → Production plan, switch between Clients, Items and Status on a computer or phone. Foody remembers your choice for this restaurant in the current browser when you leave the plan or reload it. Use Clients to assemble orders, Items to check the quantities to prepare, and Status to track preparation progress.",
+            "fr": "Dans Admin → Commandes → Plan de production, passez de Clients à Articles ou Statut sur ordinateur ou téléphone. Foody conserve votre choix pour ce restaurant dans le navigateur utilisé, même si vous quittez le plan ou rechargez la page. Ouvrez Clients pour préparer les colis, Articles pour vérifier les quantités et Statut pour suivre la préparation.",
+            "he": "בניהול → הזמנות → תוכנית הכנה, עברו בין לקוחות, פריטים וסטטוס במחשב או בטלפון. Foody שומרת את הבחירה למסעדה זו בדפדפן הנוכחי גם לאחר יציאה מהתוכנית או טעינה מחדש. השתמשו בלקוחות להרכבת ההזמנות, בפריטים לבדיקת הכמויות ובסטטוס למעקב אחר ההכנה."
+          }
+        },
+        {
+          "id": "production-item-availability",
+          "title": {
+            "en": "Change an item’s selling availability from the plan",
+            "fr": "Modifier la disponibilité d’un article depuis le plan",
+            "he": "שינוי זמינות פריט למכירה מתוך התוכנית"
+          },
+          "instructions": {
+            "en": "With permission to view and edit the menu, select the handover date, then choose Items and open Availability on an active item. For batch ordering, check the series in the panel. Its start date can precede the selected handover date. Choose Unavailable to stop new sales, or enter the remaining quantity under Manually defined quantity, then select Apply. The change takes effect immediately and accounts for quantities already committed to orders. The item stays in the plan for preparation. If the panel cannot load, select Reload stock. If the series no longer matches, refresh the plan and check the date before reopening the panel. Use [Items and menus](/en/help/menu/menus-and-groups#contextual-availability) for items outside the plan.",
+            "fr": "Avec les droits de consulter et de modifier le menu, sélectionnez la date de remise, ouvrez Articles, puis choisissez Disponibilité sur un article actif. Pour les commandes groupées par série, vérifiez la série affichée dans le panneau. Elle peut commencer avant la date de remise sélectionnée. Choisissez Indisponible pour arrêter les nouvelles ventes, ou saisissez le stock restant dans Quantité définie manuellement, puis choisissez Appliquer. La modification prend effet immédiatement et tient compte des quantités déjà engagées. L’article reste à préparer dans le plan. Si le panneau échoue au chargement, choisissez Recharger les stocks. Si la série a changé, actualisez le plan et vérifiez la date avant de rouvrir le panneau. Pour les articles hors du plan, utilisez [Articles et cartes](/fr/help/menu/menus-and-groups#contextual-availability).",
+            "he": "עם הרשאות לצפייה בתפריט ולעריכתו, בחרו את תאריך המסירה, פתחו פריטים ובחרו זמינות בפריט פעיל. בהזמנות לפי סדרה, בדקו את הסדרה שמופיעה בחלונית. תאריך ההתחלה שלה יכול להקדים את תאריך המסירה שנבחר. בחרו לא זמין כדי לעצור מכירות חדשות, או הזינו את יתרת המלאי תחת כמות מוגדרת ידנית, ואז בחרו החלה. השינוי נכנס לתוקף מיד ומתחשב בכמויות שכבר הוקצו להזמנות. הפריט ממשיך להופיע להכנה בתוכנית. אם החלונית לא נטענת, בחרו טעינת המלאי מחדש. אם הסדרה השתנתה, רעננו את התוכנית ובדקו את התאריך לפני פתיחת החלונית מחדש. לפריטים מחוץ לתוכנית, השתמשו ב[פריטים ותפריטים](/he/help/menu/menus-and-groups#contextual-availability)."
           }
         },
         {
@@ -37420,11 +37449,15 @@
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-11-02",
+      "procedureUpdatedAt": "2026-11-24",
       "evidence": [
         {
           "service": "foodyadmin",
           "file": "src/app/[restaurantId]/orders/production/page.tsx"
+        },
+        {
+          "service": "foodyadmin",
+          "file": "src/components/menu/ItemAvailabilityPopover.tsx"
         },
         {
           "service": "foodyadmin",
@@ -42426,7 +42459,8 @@
           "src/app/[restaurantId]/settings/opening-hours/**"
         ],
         "foodyserver": [
-          "internal/restaurants/**"
+          "internal/restaurants/**",
+          "internal/menu/translations_rekey.go"
         ]
       },
       "operations": [
@@ -42491,9 +42525,9 @@
             "he": "הגדרת שפות נתמכות"
           },
           "instructions": {
-            "en": "In Languages choose the restaurant languages and default language offered by the form. Translate catalog names and public website content separately. Changing the interface language alone does not translate every item or customer message.",
-            "fr": "Dans Langues, choisissez langues et langue par défaut proposées. Traduisez séparément noms du catalogue et contenus du site. Changer la langue d’interface ne traduit pas tous les articles ni les messages clients.",
-            "he": "בשפות בחרו שפות ושפת ברירת מחדל זמינות. תרגמו בנפרד שמות קטלוג ותוכן אתר. שינוי שפת ממשק אינו מתרגם אוטומטית כל פריט והודעה."
+            "en": "To change the language of the Admin interface, open the account menu and select Language for this browser. To change the original catalogue shown to guests, an authorized manager opens Settings → Language → Default menu language, chooses the language and saves. Foody uses the saved translations in that language as the original and keeps existing translations in the other languages, including explicitly translated older groups. Check item and group names in each published language after saving. Public website content and the visitor’s interface language have their own settings.",
+            "fr": "Pour changer la langue de l’interface Admin, ouvrez le menu du compte et choisissez Langue dans le navigateur utilisé. Pour changer la version originale du catalogue affichée aux clients, ouvrez Paramètres → Langue → Langue par défaut du menu avec le droit de modifier les paramètres, choisissez la langue et enregistrez. Foody utilise les traductions déjà saisies dans cette langue pour la version originale et conserve les autres traductions, y compris celles des anciens groupes traduits. Après l’enregistrement, vérifiez les intitulés des articles et des groupes dans chaque langue publiée. Le contenu du site et la langue d’interface du visiteur ont leurs propres réglages.",
+            "he": "כדי לשנות את שפת ממשק הניהול, פתחו את תפריט החשבון ובחרו שפה בדפדפן הנוכחי. כדי לשנות את גרסת המקור של הקטלוג המוצגת ללקוחות, פתחו הגדרות → שפה → שפת תפריט ברירת מחדל עם הרשאה לערוך הגדרות, בחרו שפה ושמרו. Foody משתמשת בתרגומים שנשמרו בשפה זו כגרסת המקור ושומרת את התרגומים הקיימים בשפות האחרות, כולל תרגומים קיימים של קבוצות ישנות. אחרי השמירה בדקו את שמות הפריטים והקבוצות בכל שפה שפורסמה. לתוכן האתר ולשפת הממשק של המבקר יש הגדרות משלהם."
           }
         },
         {
@@ -42578,7 +42612,7 @@
       "audience": "public",
       "status": "available",
       "preserveExisting": false,
-      "procedureUpdatedAt": "2026-11-19",
+      "procedureUpdatedAt": "2026-11-24",
       "evidence": [
         {
           "service": "foodyadmin",
@@ -42639,6 +42673,10 @@
         {
           "service": "foodyadmin",
           "file": "src/app/[restaurantId]/settings/page.tsx"
+        },
+        {
+          "service": "foodyserver",
+          "file": "internal/menu/translations_rekey.go"
         },
         {
           "service": "foodyserver",
@@ -68103,6 +68141,7 @@
       ],
       "kind": "ui-controls",
       "labels": [
+        "availability",
         "productionDisplay",
         "productionDisplayHint",
         "productionDisplayPortions",
@@ -68132,11 +68171,14 @@
         "productionSplitByCustomer",
         "productionTitle",
         "refresh",
+        "retry",
+        "saleStockError",
         "workspaceLoadError"
       ],
       "actions": [
         "handleRowClick",
-        "onFsChange"
+        "onFsChange",
+        "saved"
       ],
       "line": 1
     },
@@ -75287,7 +75329,8 @@
       "service": "foodyadmin",
       "source": "src/components/menu/ItemAvailabilityPopover.tsx",
       "features": [
-        "menu-menus-and-groups"
+        "menu-menus-and-groups",
+        "production"
       ],
       "kind": "ui-controls",
       "labels": [
@@ -75297,6 +75340,7 @@
         "saleStockSeries"
       ],
       "actions": [
+        "loadedStockScope",
         "refresh"
       ],
       "line": 1
@@ -77352,10 +77396,7 @@
         "productionMarkDone",
         "productionOpenOrder",
         "productionReady",
-        "productionToPrepare",
-        "productionViewClients",
-        "productionViewItems",
-        "productionViewStatus"
+        "productionToPrepare"
       ],
       "actions": [
         "open"
@@ -116437,7 +116478,7 @@
   "coverage": {
     "sharedRuntimeFiles": 436,
     "features": 115,
-    "operations": 1069,
+    "operations": 1071,
     "sourceFiles": 2749,
     "surfaces": 2379,
     "unclassifiedRoutes": []
