@@ -147,6 +147,8 @@ for (const [service, configuredRoot] of Object.entries(roots)) {
     if (walletStudioModule) ids = ['customers-wallet-studio'];
     // This confirmation only removes hardware from the device inventory.
     if (service === 'foodypos' && file === 'lib/features/settings/presentation/device_forget_confirmation.dart') ids = ['device-kds'];
+    if (service === 'foodyadmin' && file === 'src/lib/combo-size.ts') ids = ['combos'];
+    if (service === 'foodyserver' && ['internal/common/catalog_size.go', 'internal/combo/catalog_size_backfill.go', 'internal/menu/catalog_sizes.go'].includes(file)) ids = ['combos'];
     sources[file] = { sha256: digest(bytes), features: ids };
     const found = [];
     if (/(?:^|\/)app\/.*\/(?:page|route)\.[jt]sx?$/.test(file)) found.push({ kind: file.includes('/route.') ? 'next-api-route' : 'next-page', route: routePath(file), line: 1 });
