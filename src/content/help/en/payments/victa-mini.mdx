@@ -5,7 +5,7 @@ apps: foodypos
 tags:
   - payments
   - pos-victa-mini
-updatedAt: '2026-11-22'
+updatedAt: '2026-11-24'
 featureId: pos-victa-mini
 audience: public
 releaseStatus: available
@@ -16,11 +16,11 @@ iPad POS → More → Settings → Hardware → Payment terminals
 
 ## Connect and restore the Victa Mini on iPad
 
-With the payments.manage permission, open More → Settings → Hardware → Payment terminals. Choose **Add a terminal**, or open a saved terminal and choose **Edit**. Enter the name, terminal type and local IPv4 address. The serial number, DID and SHVA terminal number are optional inventory fields. An existing profile can also retain its previous Ashrait login.
+On the iPad, open **More → Settings → Hardware → Payment terminals** with permission to manage payments. Choose **Add a terminal**, or open the registered terminal and select **Terminal IP address**. Enter its local IPv4 address on the same network as the iPad.
 
-Tap **Save**. When adding a terminal, changing its connection details or updating an older unverified profile, FoodyPOS displays the detected model and serial number for confirmation. Compare them with the physical terminal, then tap **Confirm**. Once the connection is verified, you can save a name or default change directly.
+Tap **Save**. When FoodyPOS detects the terminal, compare the serial number on the screen with the device and confirm. If a different terminal answers, check its IP. If registration is missing or archived, ask Foody to check that terminal in Backoffice for this restaurant.
 
-The first saved terminal becomes the default. Select **Default terminal** before saving to change it. Keep the terminal on the same local network as the iPad. To check connectivity, choose **Test connection** in its details. FoodyPOS retries the saved connection at launch and when returning to the foreground after it restores restaurant access. If the app asks you to restart, close and reopen it before retrying. For a pending payment or Deposit, use the original POS and terminal to resume the operation.
+The first paired terminal is the default on this iPad. With multiple verified terminals and permission to manage payments, choose **More → Settings → Checkout → Default terminal** to select the reader for new sales on this register. Resume an interrupted payment or closing on its original register and terminal. A Portable running FoodyPOS uses its integrated reader.
 
 On the active terminal’s detail screen, select **Check Ashrait gateway** to see whether the Mini or Portable is ready to take a payment. The network connection and bank readiness have separate checks. If Ashrait requests parameters or settlement, open **Reports → Cash balance**. Review any outstanding transmission first. Check the gateway again after closing. If the status is empty, verify the payment application version with Verifone.
 
@@ -36,17 +36,15 @@ After a restart, the paired Mini opens its session. Both a parameter request and
 
 <span id="terminal-identifiers" />
 
-## Enter or edit terminal identifiers
+## View terminal identifiers
 
-With permission to manage payments, open More → Settings → Hardware → Payment terminals. Enter the identifiers when adding the terminal, or open its details, choose Terminal identifiers and select Save. Serial number, DID (VHQ) and SHVA terminal number are optional. Enter the ten-digit SHVA number supplied for this terminal, including leading zeros. The Mini serial is read during pairing. If you replace a Mini, add the new terminal and verify its identity. If a Portable is missing, first sign in to FoodyPOS on that restaurant’s Portable.
-
-These identifiers are shared with the Backoffice inventory. Saving the DID updates the inventory entry. To change the DID on the terminal itself, use the Verifone maintenance procedure. FoodyPOS reads the chosen terminal’s SHVA number before new Ashrait operations. If the entry has no number, an existing terminal can use its previous configuration when available. If the lookup fails, restore API access and try again. If saving reports a conflict, complete any pending operation shown by the POS, then reopen the terminal details before editing.
+With permission to manage payments, open **Terminal identifiers** in the device details to read the serial number, DID, ten-digit SHVA terminal number and installment settings. Foody manages these values in Backoffice. Keep leading zeros in the SHVA number. If the Mini has no active SHVA assignment, ask Foody to check its fleet record before starting a new card operation.
 
 <span id="explicit-terminal-selection" />
 
 ## Collect on the default terminal
 
-On iPad, Card sends the payment to the default terminal. To switch between Mini and Portable, open More → Settings → Hardware → Payment terminals, open the terminal’s details and choose **Edit**. Select **Default terminal**, then tap **Save**. If FoodyPOS asks for confirmation, check the displayed model and serial number. If the default is unavailable, restore its connection or change the setting after resolving pending operations. On a Portable running FoodyPOS, open the same check and use its integrated reader. Resume interrupted payments on their original POS and terminal.
+The first paired terminal is the default on this iPad. With multiple verified terminals and permission to manage payments, choose **More → Settings → Checkout → Default terminal** to select the reader for new sales on this register. Resume an interrupted payment or closing on its original register and terminal. A Portable running FoodyPOS uses its integrated reader.
 
 <span id="ashrait-last-transaction-inspection" />
 
@@ -64,10 +62,10 @@ To request an Ashrait card copy, open More → Settings → Hardware → Payment
 
 ## Offer installment payments
 
-With permission to manage payments, open More → Settings → Hardware → Payment terminals, open the active terminal’s details, then select Installment payments. Enter the shekel range configured in VHQ. If the acquirer allows entering plans in Foody, enter its permitted maximum count as well. For a card payment within the range, you can ask the customer to choose installments on the terminal. When a maximum count is configured, Set installments in Foody lets you enter a permitted count and optionally a first payment amount. Confirm the plan before presenting the card. If the first payment field is blank, the terminal calculates the amounts. Foody records the full total after confirmation. Select Disable to remove the choice. The setting is local to this POS and terminal.
+Foody sets the minimum and maximum sale amounts in ILS for each terminal in Backoffice, according to the acquirer’s terms. Ask Foody to enable or update the offer there. Previously saved iPad limits require configuration in Backoffice. In **Terminal identifiers**, you can read the current limits. At checkout, a sale within the range can be paid in one payment or installments. If Foody has set a maximum count, the cashier can enter a plan and an optional first payment. Otherwise the customer chooses the installments on the terminal. Foody records the full approved sale amount.
 
 <span id="forget-payment-terminal" />
 
 ## Remove a payment terminal
 
-On a compatible build, select the terminal in **More → Settings → Hardware → Payment terminals** and choose **Forget device**. Verify the name before confirming. An iPad removes its matching saved connection when Hardware is refreshed after removal in Backoffice. A terminal saved only on this iPad can be removed from its local settings. If the default terminal is removed, review the remaining default before the next payment. Finish any pending payment or closing on the original device before forgetting it. To pair the same forgotten Mini again with this restaurant, choose **Add a terminal**, enter its current IP address and tap **Save**. Compare the detected serial number and tap **Confirm**. Foody reuses its original device record.
+Ask Foody to remove a payment terminal from this restaurant in Backoffice. Finish any outstanding payment or closing on the original device first. Refresh Hardware on the iPad to remove the saved connection for that terminal. To pair the device again, Foody must first provide an active inventory record for this restaurant.

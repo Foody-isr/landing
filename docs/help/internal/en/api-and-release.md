@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-11-22'
+updatedAt: '2026-11-24'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -310,7 +310,7 @@ In Backoffice → Payments & devices → Terminal fleet, search by restaurant, d
 
 The staff-scoped device inventory can include a payment_terminal component with a physical_key derived from the fleet serial. Compatible POS builds use it to link a verified LAN profile to the same device. Inventory returns only the derived key for this purpose.
 
-The inventory entry is shared with FoodyPOS. POS reads and edits the declared serial number, DID and SHVA number within the restaurant and with permission to manage payments. The operation lookup returns only the identified terminal’s SHVA number. A payment or closing reservation protects the configuration in use against a concurrent change.
+FoodyPOS displays the fleet identifiers and installment rules in read-only mode. In **Terminal fleet → Edit inventory → Installment payments**, select **Offer installments on this terminal**, enter the minimum and maximum sale in ILS and optionally the maximum number of payments allowed at checkout (2–999). Leave the count blank for terminal selection. Save the declaration. To disable installments, clear the checkbox and save. The change takes effect when the POS reads the rules for the next sale. An active payment or closing can require reconciliation before saving a fleet change.
 
 <span id="terminal-fleet-change-requests" />
 
