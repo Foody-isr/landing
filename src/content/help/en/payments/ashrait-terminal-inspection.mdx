@@ -5,7 +5,7 @@ apps: foodypos
 tags:
   - payments
   - pos-ashrait-terminal-inspection
-updatedAt: '2026-11-21'
+updatedAt: '2026-11-24'
 featureId: pos-ashrait-terminal-inspection
 audience: public
 releaseStatus: available
@@ -27,6 +27,8 @@ A new lookup uses the SHVA number stored on the terminal’s inventory entry. Ch
 ## Israeli Ashrait report capabilities
 
 In the compatible Israeli Ashrait version, the old generic View current totals, Close only and Transmit only actions are removed. For end of day, use Current drawer and its explicit terminal transmission. Sales recorded by Foody are not the terminal’s bank totals. If Ashrait confirms a deposit without numeric results or a batch reference, those details remain unavailable; they are not zero. Other commands described in provider documentation are not necessarily available in Foody. Have a manager and Verifone confirm availability and the procedure before advanced financial or maintenance operations.
+
+For a new operation on a Mini connected by IP, FoodyPOS checks the SHVA number assigned to its physical serial in Backoffice. If there is no active assignment or SHVA number, ask Foody to check the fleet record. Use the original terminal and register to review an operation already started.
 
 <span id="ashrait-last-transaction-recovery" />
 

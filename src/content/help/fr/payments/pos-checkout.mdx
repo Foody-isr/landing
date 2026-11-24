@@ -7,7 +7,7 @@ apps: both
 tags:
   - payments
   - pos-payments
-updatedAt: '2026-11-21'
+updatedAt: '2026-11-24'
 featureId: pos-payments
 audience: public
 releaseStatus: available
@@ -124,9 +124,9 @@ Paiement Sumit dans Admin : [procédure](/fr/help/orders/internal-sumit-checkout
 
 ## Connecter et retrouver le Victa Mini sur iPad
 
-Sur iPad, ouvrez Plus → Paramètres → Matériel → Terminaux de paiement. Pour ajouter un terminal ou changer son IP dans la version compatible, appuyez sur **Enregistrer** puis confirmez le modèle et le numéro de série. Consultez [Connexion du Victa Mini](/fr/help/payments/victa-mini#connection) pour les réglages sécurisés et la reconnexion automatique.
+Sur l’iPad, avec le droit de gérer les paiements, ouvrez **Plus → Paramètres → Matériel → Terminaux de paiement**. Choisissez **Ajouter un terminal** ou ouvrez la fiche du terminal enregistré et touchez **Adresse IP du terminal**. Saisissez son adresse IPv4 sur le réseau local de l’iPad.
 
-FoodyPOS lit le numéro SHVA du terminal sélectionné dans Foody avant une nouvelle opération carte. Pour le modifier, ouvrez la fiche du terminal puis **Identifiants du terminal**.
+Avec le droit de gérer les paiements, ouvrez **Identifiants du terminal** dans sa fiche pour consulter le numéro de série, le DID, le numéro SHVA à dix chiffres et les règles de paiement en plusieurs fois. Foody gère ces valeurs dans le Backoffice. Conservez les zéros initiaux du numéro SHVA. Si le Mini n’a pas de numéro SHVA actif, demandez à Foody de vérifier sa fiche avant toute nouvelle opération carte.
 
 Si FoodyPOS indique qu’il ne peut pas vérifier si la caisse autorise le paiement, vérifiez sa connexion à Foody. Si le Mini affiche « paramètres demandés », consultez le suivi de la transmission du Mini dans Solde en caisse.
 
@@ -138,7 +138,7 @@ Sur l’iPad principal, vérifiez d’abord toute vente interrompue. Si Ashrait 
 
 ## Terminal carte par défaut
 
-Sur iPad, Carte utilise le [terminal par défaut configuré dans Matériel](/fr/help/payments/victa-mini#explicit-terminal-selection). Pour une tentative en attente, reprenez le paiement d’origine.
+Sur iPad, Carte utilise le [terminal par défaut choisi dans les paramètres de caisse](/fr/help/payments/victa-mini#explicit-terminal-selection). Pour une tentative en attente, reprenez le paiement d’origine.
 
 <span id="unified-cash-workspace" />
 
@@ -174,4 +174,4 @@ Après une vente par carte Verifone, le ticket automatique contient la copie cli
 
 ## Proposer le paiement en plusieurs fois
 
-Avec le droit de gérer les paiements, ouvrez Plus → Paramètres → Matériel → Terminaux de paiement, ouvrez la fiche du terminal actif, puis choisissez Paiement en plusieurs fois. Saisissez en shekels la plage configurée dans VHQ. Si l’acquéreur autorise la saisie dans Foody, renseignez aussi son plafond d’échéances. Pour un paiement carte dans la plage, vous pouvez demander au client de choisir ses échéances sur le terminal. Si un plafond est configuré, Définir les échéances dans Foody permet de saisir le nombre autorisé et, facultativement, le montant du premier versement. Confirmez le plan avant de présenter la carte. Si le premier versement est vide, le terminal calcule la répartition. Foody enregistre le total après confirmation. Pour retirer le choix, utilisez Désactiver. Le réglage est local à cette caisse et ce terminal.
+Foody règle dans le Backoffice les montants minimal et maximal en ILS de chaque terminal selon les conditions de l’acquéreur. Demandez à Foody d’y activer ou d’ajuster l’offre. Les anciens seuils saisis sur iPad doivent y être renseignés. Vous pouvez consulter les limites dans **Identifiants du terminal**. Pour une vente dans cette plage, la caisse propose de payer comptant ou en plusieurs fois. Si Foody a fixé un nombre maximal d’échéances, le caissier peut saisir le plan et un premier montant facultatif. Sinon, le client choisit les échéances sur le terminal. Foody enregistre le montant total approuvé.

@@ -7,7 +7,7 @@ apps: foodypos
 tags:
   - payments
   - pos-end-of-day
-updatedAt: '2026-11-22'
+updatedAt: '2026-11-24'
 featureId: pos-end-of-day
 audience: public
 releaseStatus: local-release-unverified
@@ -70,6 +70,8 @@ Before starting, recover any pending cash operation: follow the link to Cash bal
 On iPad, verify the Mini profiles in Hardware. Open FoodyPOS on the restaurant’s enrolled Portables with an authorized session to verify their identities. The closing review lists them with the iPad’s verified terminals. A Portable also saved in the iPad profiles receives a single request, executed on that Portable. On the compatible release, terminals in different identified SHVA batches can transmit independently. Foody coordinates operations sharing one batch.
 
 Before a new transmission, FoodyPOS reads the SHVA number stored on that terminal’s inventory entry.
+
+For a new operation on a Mini connected by IP, FoodyPOS checks the SHVA number assigned to its physical serial in Backoffice. If there is no active assignment or SHVA number, ask Foody to check the fleet record. Use the original terminal and register to review an operation already started.
 
 <span id="end-of-day-steps-and-period" />
 

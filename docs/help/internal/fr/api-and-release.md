@@ -5,7 +5,7 @@ apps: both
 tags:
   - internal
   - platform-api
-updatedAt: '2026-11-22'
+updatedAt: '2026-11-24'
 featureId: platform-api
 audience: internal
 releaseStatus: available
@@ -310,7 +310,7 @@ Dans Backoffice → Payments & devices → Terminal fleet, recherchez par restau
 
 L’inventaire réservé au personnel peut inclure un composant payment_terminal avec une clé physical_key dérivée du numéro de série du parc. Les versions POS compatibles l’utilisent pour rapprocher un profil réseau vérifié de la fiche du même appareil. L’inventaire renvoie uniquement la clé dérivée pour cette opération.
 
-La fiche est partagée avec FoodyPOS. Le POS lit et modifie le numéro de série déclaré, le DID et le numéro SHVA dans le périmètre du restaurant et avec le droit de gérer les paiements. La recherche opérationnelle renvoie uniquement le numéro SHVA du terminal identifié. La réservation d’un paiement ou d’une clôture protège la configuration utilisée contre une modification concurrente.
+FoodyPOS affiche les identifiants et les règles de paiement en plusieurs fois en lecture seule. Dans **Terminal fleet → Edit inventory → Installment payments**, cochez **Offer installments on this terminal**, saisissez le minimum et le maximum de la vente en ILS et, si nécessaire, le nombre maximal d’échéances autorisé à la caisse (2 à 999). Laissez ce nombre vide pour choisir les échéances sur le terminal. Enregistrez la déclaration. Pour désactiver l’offre, décochez la case et enregistrez. La caisse lit ces règles lors de la prochaine vente. Un paiement ou une clôture en cours peut nécessiter un rapprochement avant la modification de la fiche.
 
 <span id="terminal-fleet-change-requests" />
 

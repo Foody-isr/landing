@@ -7,7 +7,7 @@ apps: both
 tags:
   - payments
   - pos-payments
-updatedAt: '2026-11-21'
+updatedAt: '2026-11-24'
 featureId: pos-payments
 audience: public
 releaseStatus: available
@@ -124,9 +124,9 @@ For Admin Sumit payments, see [the dedicated procedure](/en/help/orders/internal
 
 ## Connect and restore the Victa Mini on iPad
 
-On iPad, open More → Settings → Hardware → Payment terminals. To add a terminal or change its IP in the compatible version, tap **Save** and confirm its model and serial number. See [Victa Mini connection](/en/help/payments/victa-mini#connection) for secure setup and automatic reconnection.
+On the iPad, open **More → Settings → Hardware → Payment terminals** with permission to manage payments. Choose **Add a terminal**, or open the registered terminal and select **Terminal IP address**. Enter its local IPv4 address on the same network as the iPad.
 
-FoodyPOS reads the selected terminal’s SHVA number from Foody before a new card operation. To update the number, open the terminal details and choose **Terminal identifiers**.
+With permission to manage payments, open **Terminal identifiers** in the device details to read the serial number, DID, ten-digit SHVA terminal number and installment settings. Foody manages these values in Backoffice. Keep leading zeros in the SHVA number. If the Mini has no active SHVA assignment, ask Foody to check its fleet record before starting a new card operation.
 
 If FoodyPOS cannot check whether the register allows the payment, check its connection to Foody. If the Mini reports that parameters are required, open its transmission in Cash balance.
 
@@ -138,7 +138,7 @@ On the main iPad, check any interrupted card payment first. If Ashrait still req
 
 ## Default card terminal
 
-On iPad, Card uses the [default terminal set in Hardware](/en/help/payments/victa-mini#explicit-terminal-selection). For a pending attempt, resume the original payment.
+On iPad, Card uses the [default terminal in Checkout settings](/en/help/payments/victa-mini#explicit-terminal-selection). For a pending attempt, resume the original payment.
 
 <span id="unified-cash-workspace" />
 
@@ -174,4 +174,4 @@ After a recorded Verifone card sale, the automatic sales receipt includes the cu
 
 ## Offer installment payments
 
-With permission to manage payments, open More → Settings → Hardware → Payment terminals, open the active terminal’s details, then select Installment payments. Enter the shekel range configured in VHQ. If the acquirer allows entering plans in Foody, enter its permitted maximum count as well. For a card payment within the range, you can ask the customer to choose installments on the terminal. When a maximum count is configured, Set installments in Foody lets you enter a permitted count and optionally a first payment amount. Confirm the plan before presenting the card. If the first payment field is blank, the terminal calculates the amounts. Foody records the full total after confirmation. Select Disable to remove the choice. The setting is local to this POS and terminal.
+Foody sets the minimum and maximum sale amounts in ILS for each terminal in Backoffice, according to the acquirer’s terms. Ask Foody to enable or update the offer there. Previously saved iPad limits require configuration in Backoffice. In **Terminal identifiers**, you can read the current limits. At checkout, a sale within the range can be paid in one payment or installments. If Foody has set a maximum count, the cashier can enter a plan and an optional first payment. Otherwise the customer chooses the installments on the terminal. Foody records the full approved sale amount.
