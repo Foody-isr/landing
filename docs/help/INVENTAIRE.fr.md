@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-18.
 
-115 fiches de fonctionnalités, 1082 procédures/sous-fonctionnalités, dont 103 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2769 fichiers applicatifs et 2392 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+115 fiches de fonctionnalités, 1097 procédures/sous-fonctionnalités, dont 103 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2777 fichiers applicatifs et 2396 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -13,8 +13,8 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 | foodyadmin | 844 | 849 | 2fc747827ddf ; versioned |
 | foodybackoffice | 56 | 52 | 68b7b6c9b0fa ; versioned |
 | foodylanding | 158 | 31 | 12f26e16428f ; versioned |
-| foodypos | 432 | 186 | d7523f1c1aa5 ; versioned |
-| foodyserver | 886 | 1067 | 9be2f49247cd ; versioned |
+| foodypos | 433 | 186 | 5de860d5afe0 ; versioned |
+| foodyserver | 892 | 1070 | fa732a5b1731 ; versioned |
 | foodyweb | 393 | 207 | cf60c22edb80 ; versioned |
 
 ## getting-started
@@ -941,6 +941,7 @@ Identifiant : `pos-end-of-day`. Public : public. Disponibilité : local-release-
 - [Vérifier ce que couvre la clôture](../../src/content/help/fr/payments/end-of-day.mdx#end-of-day-scope)
 - [Compter, transmettre et archiver](../../src/content/help/fr/payments/end-of-day.mdx#end-of-day-run)
 - [Reprendre sans transmettre deux fois](../../src/content/help/fr/payments/end-of-day.mdx#end-of-day-recovery)
+- [Relancer End of Day sur un Mini CST activé](../../src/content/help/fr/payments/end-of-day.mdx#manual-cst-mini)
 - [Résoudre les espèces en attente](../../src/content/help/fr/payments/end-of-day.mdx#end-of-day-cash-reservation)
 - [Vérifier plusieurs terminaux physiques](../../src/content/help/fr/payments/end-of-day.mdx#multiple-terminal-closing)
 - [Comprendre le blocage des cartes et la période](../../src/content/help/fr/payments/end-of-day.mdx#end-of-day-steps-and-period)
