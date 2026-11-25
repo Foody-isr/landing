@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - customers
   - customers-wallet-studio
-updatedAt: '2026-11-24'
+updatedAt: '2026-11-25'
 featureId: customers-wallet-studio
 audience: internal
 releaseStatus: local-release-unverified
@@ -59,7 +59,7 @@ Sur le téléphone, ouvrez le lien d’adhésion, connectez-vous, acceptez les c
 
 ## Composer une carte à la main
 
-Dans **Studio Wallet → Composition de la carte**, choisissez **Carnet de table** pour une photo avec une bande vichy ou **Affiche café** pour un visuel détouré devant une vague. Importez votre logo et une photo, ou cliquez sur **Utiliser le logo du site** et **Utiliser la photo du site** pour reprendre ces éléments du site publié. Ouvrez **Titre du visuel** pour modifier le texte, la police, la taille, la position et l’inclinaison. **Motif et fond** règle les couleurs, le motif et la hauteur de la séparation. **Photo et cadrage** permet de positionner l’image, de rogner les marges transparentes et de la placer devant le titre. Sous **Logo et informations du membre**, choisissez le solde seul ou avec l’objectif, puis la progression ou l’avantage du programme. Comparez **Affiche** et **Carte classique** dans l’aperçu Apple, puis ouvrez **Google Wallet**. L’iPhone affiche le format Affiche à partir d’iOS 27. Ajustez **Solde de démonstration** pour simuler une visite ou des points. Cliquez sur **Enregistrer le brouillon**, puis testez la carte Apple avant de **Publier le visuel** pour les clients.
+Dans **Studio Wallet → Composition de la carte**, choisissez **Carnet de table** pour une photo avec une bande vichy ou **Affiche café** pour un visuel détouré devant une vague. Importez votre logo et une photo, ou cliquez sur **Utiliser le logo du site** et **Utiliser la photo du site** pour reprendre ces éléments du site publié. Ouvrez **Titre du visuel** pour modifier le texte, la police, la taille, la position et l’inclinaison. **Motif et fond** règle les couleurs, le motif et la hauteur de la séparation. **Photo et cadrage** permet de positionner l’image, de rogner les marges transparentes et de la placer devant le titre. Sous **Logo et informations du membre**, choisissez le solde seul ou avec l’objectif, puis la progression ou l’avantage du programme. Comparez **Affiche** et **Carte classique** dans l’aperçu Apple, puis ouvrez **Google Wallet**. Sur l’iPhone, le format Affiche est disponible à partir d’iOS 27. Le QR code est centré par Wallet. Dans l’aperçu, décalez le titre ou la photo si le code les recouvre. Si la couleur de texte choisie se lit mal sur le pied de carte, Foody utilise un fond contrasté pour la récompense et la mention « Propulsé par Foody ». Ajustez **Solde de démonstration** pour simuler une visite ou des points. Cliquez sur **Enregistrer le brouillon**, puis testez la carte Apple avant de **Publier le visuel** pour les clients.
 
 <span id="visit-stamp-card" />
 
