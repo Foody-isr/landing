@@ -840,6 +840,9 @@
         ],
         "foodyserver": [
           "internal/calendar/**"
+        ],
+        "foodypos": [
+          "lib/core/time/restaurant_calendar.dart"
         ]
       }
     },
@@ -852,12 +855,17 @@
           "src/app/[restaurantId]/settings/orders/PreorderSettings.tsx",
           "src/app/[restaurantId]/settings/scheduled-orders/**",
           "src/app/[restaurantId]/settings/orders/OrderingSimulation.tsx",
-          "src/app/[restaurantId]/settings/orders/PreparationPreview.tsx"
+          "src/app/[restaurantId]/settings/orders/PreparationPreview.tsx",
+          "src/components/orders/SeriesDayEditor.tsx"
         ],
         "foodyserver": [
           "internal/orders/intake*",
           "internal/delivery/ordering_simulation.go",
-          "internal/restaurants/fulfillment_stock.go"
+          "internal/restaurants/fulfillment_stock.go",
+          "internal/common/fulfillment_series.go",
+          "internal/restaurants/fulfillment_series*.go",
+          "internal/orders/fulfillment_series.go",
+          "migrations/351_fulfillment_series.sql"
         ],
         "foodyweb": [
           "lib/websiteFulfillment*"

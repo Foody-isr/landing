@@ -40,9 +40,9 @@ Review the prepayment policy and product-specific exceptions. Save, reopen setti
 
 ## Open the current weekly batch automatically
 
-For a restaurant configured for weekly batches, open **Home** or **Orders** using the **Série** date basis. The current batch is selected by default even without orders; its totals then stay at zero. It advances after the previous batch’s final fulfillment day in the restaurant timezone, without waiting for the first order or for ordering to open. An open page follows this change on the next automatic refresh (about one minute) or when you return to the tab.
+In **Home**, **Orders**, or a report with a date filter, open **Series**. A weekly batch groups the pickup and delivery dates configured in ordering settings. Select a whole series, then select one of its fulfillment dates if needed. Use **Fulfillment date** for a free date range or an order outside a series.
 
-You can select an older service in the calendar; that selection stays in place while the page is open. An order for a later week does not replace the current batch as the default. A payment-attention link keeps its explicit period. If the date looks incorrect, check the configured fulfillment days and restaurant timezone, then reload. Rollover does not create an order or publish a menu.
+When Series is your default, Foody opens the current batch even when it is empty. It advances after the last scheduled service day in the restaurant timezone. The next automatic refresh or return to the tab applies the change. A historical series chosen manually stays selected during the visit.
 
 <span id="manual-weekly-ordering" />
 
@@ -63,3 +63,9 @@ The ordering simulation also uses the historical predefined counted stock plus i
 ## Combine preparation, shelf stock and delivery
 
 With compatible versions, set the restaurant production default in Orders & availability, article exceptions on each product, then receiving weekdays, same-day delivery and order deadlines per zone. Without a basket, the preview uses the restaurant default; simulation with articles and quantities checks that basket without reserving stock. Sufficient prepared stock within its validity can skip product production deadlines; delivery deadlines, closures and batch rules still apply. Do not restore an excluded date by artificially extending a slot. See [zone deadlines](/en/help/delivery/zones-and-schedules#order-deadlines) and [ready products](/en/help/kitchen/availability#prepared-product-stock). These settings belong to each restaurant; without activation, existing behavior is preserved.
+
+<span id="move-one-series-day" />
+
+## Move one day of a series
+
+In **Orders**, select an upcoming series and open **Move fulfillment day** with permission to edit settings. Choose the day to move and its new date. Check how many orders were already promised and open their list if needed. Save the new date. To move an existing order, agree on its new handover with the customer and edit that order. If the date is closed, overlaps another service day, or an order arrived in the meantime, reload and review before retrying.

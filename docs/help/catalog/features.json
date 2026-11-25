@@ -1455,9 +1455,22 @@
           "he": "הצגה אוטומטית של הסבב השבועי הנוכחי"
         },
         "instructions": {
-          "fr": "Pour un restaurant configuré en lots hebdomadaires, ouvrez **Accueil** ou **Commandes** avec la base de date **Série**. La série actuelle est sélectionnée par défaut, même sans commande : ses totaux restent alors à zéro. Elle avance après le dernier jour de remise de la série précédente, selon le fuseau horaire du restaurant, sans attendre la première commande ni l’ouverture des commandes. Sur une page restée ouverte, la sélection suit ce changement au prochain rafraîchissement automatique (environ une minute) ou au retour sur l’onglet.\n\nVous pouvez sélectionner une ancienne série dans le calendrier ; cette consultation reste en place pendant que la page est ouverte. Une commande déjà prise pour une semaine plus lointaine ne remplace pas la série actuelle par défaut. Un lien de suivi des paiements conserve la période qu’il indique. Si la date semble incorrecte, vérifiez les jours de remise et le fuseau horaire configurés, puis rechargez la page. Ce basculement ne crée aucune commande et ne publie pas une carte.",
-          "en": "For a restaurant configured for weekly batches, open **Home** or **Orders** using the **Série** date basis. The current batch is selected by default even without orders; its totals then stay at zero. It advances after the previous batch’s final fulfillment day in the restaurant timezone, without waiting for the first order or for ordering to open. An open page follows this change on the next automatic refresh (about one minute) or when you return to the tab.\n\nYou can select an older service in the calendar; that selection stays in place while the page is open. An order for a later week does not replace the current batch as the default. A payment-attention link keeps its explicit period. If the date looks incorrect, check the configured fulfillment days and restaurant timezone, then reload. Rollover does not create an order or publish a menu.",
-          "he": "במסעדה שמוגדרת לסבבים שבועיים, פתחו את **בית** או **הזמנות** עם בסיס התאריך **סדרה**. הסבב הנוכחי נבחר כברירת מחדל גם ללא הזמנות, ואז הסכומים שלו הם אפס. המעבר מתבצע לאחר יום המסירה האחרון של הסבב הקודם, לפי אזור הזמן של המסעדה, בלי להמתין להזמנה הראשונה או לפתיחת ההזמנות. דף שנשאר פתוח עוקב אחר המעבר ברענון האוטומטי הבא (בערך דקה) או בחזרה ללשונית.\n\nאפשר לבחור שירות קודם בלוח השנה; הבחירה נשמרת כל עוד הדף פתוח. הזמנה לשבוע מאוחר יותר אינה מחליפה את הסבב הנוכחי כברירת מחדל. קישור למעקב תשלומים שומר על התקופה המפורשת שלו. אם התאריך נראה שגוי, בדקו את ימי המסירה ואת אזור הזמן של המסעדה ואז טענו מחדש. המעבר אינו יוצר הזמנה ואינו מפרסם תפריט."
+          "fr": "Dans **Accueil**, **Commandes** ou les rapports qui proposent le filtre de dates, ouvrez **Séries**. Un lot hebdomadaire regroupe les jours de retrait et de livraison définis dans les réglages de commande. Sélectionnez une série entière puis, si nécessaire, un de ses jours de remise. Pour chercher une date libre ou une réservation hors série, choisissez **Date de remise**.\n\nQuand la base Série est votre défaut, Foody ouvre le lot actuel même s’il est encore vide. Il passe au suivant après le dernier service prévu, à l’heure du restaurant. Un rafraîchissement automatique ou un retour sur l’onglet applique le changement. Une série historique choisie manuellement reste sélectionnée pendant la visite.",
+          "en": "In **Home**, **Orders**, or a report with a date filter, open **Series**. A weekly batch groups the pickup and delivery dates configured in ordering settings. Select a whole series, then select one of its fulfillment dates if needed. Use **Fulfillment date** for a free date range or an order outside a series.\n\nWhen Series is your default, Foody opens the current batch even when it is empty. It advances after the last scheduled service day in the restaurant timezone. The next automatic refresh or return to the tab applies the change. A historical series chosen manually stays selected during the visit.",
+          "he": "במסך **בית**, **הזמנות** או בדוח עם מסנן תאריכים, פתחו את **סדרות**. סדרה שבועית מרכזת את ימי האיסוף והמשלוח שהוגדרו בהגדרות ההזמנות. בחרו סדרה מלאה, ובמידת הצורך בחרו אחד מימי המסירה שלה. לחיפוש בטווח חופשי או להזמנה מחוץ לסדרה, בחרו **תאריך מסירה**.\n\nכאשר סדרות היא ברירת המחדל, Foody פותחת את הסדרה הנוכחית גם כשהיא ריקה. המעבר מתבצע לאחר יום השירות האחרון לפי אזור הזמן של המסעדה. השינוי מופיע ברענון האוטומטי הבא או בחזרה ללשונית. סדרה קודמת שנבחרה ידנית נשארת מוצגת במהלך הביקור."
+        }
+      },
+      {
+        "id": "series-performance-and-live-work",
+        "title": {
+          "fr": "Lire les résultats d’une série",
+          "en": "Read series performance",
+          "he": "קריאת תוצאות סדרה"
+        },
+        "instructions": {
+          "fr": "Choisissez une série dans le filtre de l’**Accueil** ou d’un rapport. Les résultats suivent le lot entier, ou le jour choisi. Pour comparer deux séries, ouvrez une série entière terminée avec un lot précédent terminé. Sur l’Accueil, les paiements à traiter et les commandes prêtes restent visibles quel que soit le filtre des résultats. Pour mémoriser la base de date de l’Accueil, ouvrez **Personnaliser** dans son filtre.",
+          "en": "Choose a series in the **Home** or report date filter. Results follow the whole lot or the selected day. To compare series, open a completed whole series with an earlier completed lot. On Home, payments needing attention and ready orders remain visible across performance filters. Use **Customize** in the Home filter to save its date basis.",
+          "he": "בחרו סדרה במסנן של **בית** או בדוח. התוצאות מתייחסות לכל הסדרה או ליום שנבחר. להשוואת סדרות, פתחו סדרה מלאה שהסתיימה ויש לפניה סדרה נוספת שהסתיימה. במסך בית, תשלומים לטיפול והזמנות מוכנות מופיעים בכל טווח תוצאות. לשמירת בסיס התאריך של מסך בית, פתחו את **התאמה אישית** במסנן."
         }
       }
     ],
@@ -2202,6 +2215,19 @@
           "en": "With compatible versions and menu-edit permission, open a saved article → Stock & availability → Products already prepared. Enable Use an independent shelf counter, enter Remaining prepared units and Prepared stock usable through, then Apply. The API proposes today in the restaurant timezone. Explicitly choose Friday to offer Thursday-evening leftovers for Friday after production has closed. Units are shared across this article’s formats: use separate articles when formats require separate ready-stock pools. Apply saves this counter immediately; product Save still persists the preparation draft. Shelf stock does not replace sales limits, ingredients or a manually sold-out article. When it covers the whole article quantity in the basket and the receiving date is within its validity, production time and product deadlines may be skipped. Otherwise normal production time and deadlines apply: zero shelf stock alone does not close made-to-order sales. Service hours, closures, batches and delivery rules still apply. Units are reserved at order placement and released once on cancellation before production. The journal distinguishes these movements from sales allowances. After a conflict or uncertain response, keep your input, use Reload current stock and review before applying again. Disabling the pool does not change existing orders and a later release cannot re-enable it. Historical predefined-stock and immediate-sale settings remain available and are never converted or enabled automatically. Receiving weekdays excluded by the article remain excluded. For historical predefined stock managed by series, Available now reads the operational service series remaining stock, not the next preorder allowance.\n\nThe ordering simulation also uses the historical predefined counted stock plus immediate-sale setting. When the full requested quantity of an article is ready, its same-day pickup slots skip production notice just as its delivery calculation does. A mixed basket retains the preparation of articles that still need making; quantities above the ready count lose that exception. The result explains when ready stock contributes to the calendar. Historical predefined stock keeps its existing future receiving rules; only the independent dated pool uses the new validity date. Planned-only restaurants still require a service slot. The simulation creates no order and reserves no stock; final checkout still validates sale/ingredient availability and the full order.",
           "he": "בגרסאות תואמות ועם הרשאת עריכת תפריט, פתחו פריט שמור → מלאי וזמינות → מוצרים שכבר הוכנו. הפעילו שימוש במונה נפרד למלאי מוכן, הזינו יחידות מוכנות שנותרו ואת התאריך ניתן להשתמש במלאי המוכן עד, ולחצו החלה. ה־API מציע את היום לפי אזור הזמן של המסעדה. בחרו במפורש יום שישי כדי להציע ביום חמישי בערב שאריות מוכנות למסירה בשישי אחרי סגירת הייצור. היחידות משותפות לכל הגדלים של הפריט: השתמשו בפריטים נפרדים כאשר לגדלים נדרשים מאגרי מלאי מוכנים נפרדים. החלה שומרת את המונה מיד; שמירת המוצר עדיין שומרת את טיוטת ההכנה. מלאי מוכן אינו מחליף מגבלות מכירה, מרכיבים או פריט שסומן ידנית כאזול. כאשר הוא מכסה את כל כמות הפריט בסל ותאריך המסירה בתוך התוקף, ניתן לדלג על זמן ההכנה ומועדי הסגירה של המוצר. אחרת חלים זמן ההכנה והמועדים הרגילים: אפס במלאי המוכן אינו סוגר לבדו מכירה לפי הזמנה. שעות שירות, סגירות, סדרות וכללי משלוח עדיין חלים. היחידות משוריינות ביצירת ההזמנה ומשוחררות פעם אחת בביטול לפני ייצור. היומן מבדיל תנועות אלה ממכסות מכירה. אחרי התנגשות או תשובה לא ודאית, שמרו את הקלט, טענו את המלאי הנוכחי ובדקו לפני החלה נוספת. ביטול המונה אינו משנה הזמנות קיימות ושחרור מאוחר לא מפעיל אותו מחדש. הגדרות המלאי המוגדר מראש והמכירה המיידית ההיסטוריות נשארות זמינות ואינן מומרות או מופעלות אוטומטית. ימי מסירה שהפריט אינו מאפשר נשארים חסומים. במלאי מוגדר מראש היסטורי המנוהל לפי סדרות, זמין עכשיו קורא את יתרת סדרת השירות התפעולית ולא את מכסת ההזמנה מראש הבאה.\n\nהסימולטור משתמש גם בהגדרה ההיסטורית של מלאי מוגדר מראש לפי כמות עם מכירה מיידית. כאשר המלאי מכסה את כל הכמות המבוקשת של הפריט, זמני האיסוף של היום מדלגים על זמן הייצור, בדומה לחישוב המשלוח. בסל מעורב נשמר זמן ההכנה של פריטים שעדיין דורשים ייצור; כמות מעבר למלאי המוכן מאבדת את החריגה. התוצאה מסבירה מתי מלאי מוכן משתתף בחישוב הלוח. מלאי מוגדר מראש היסטורי שומר על כללי המסירה העתידית הקיימים שלו; רק המאגר הנפרד עם תאריך משתמש בתוקף החדש. מסעדה המקבלת הזמנות מתוזמנות בלבד עדיין דורשת חלון שירות. הסימולציה אינה יוצרת הזמנה או משריינת מלאי; האישור הסופי עדיין בודק מגבלות מכירה, מרכיבים ואת ההזמנה המלאה."
         }
+      },
+      {
+        "id": "series-stock-after-date-change",
+        "title": {
+          "fr": "Suivre la disponibilité d’un lot",
+          "en": "Follow availability for a series",
+          "he": "מעקב זמינות של סדרה"
+        },
+        "instructions": {
+          "fr": "Si une série comporte plusieurs jours de remise, ils partagent le stock du lot. Consultez le même lot après le report d’un jour pour retrouver les quantités.",
+          "en": "When a series has several handover days, they share its stock. View the same series after a day is moved to see the quantities.",
+          "he": "כאשר יש כמה ימי מסירה בסדרה, הם משתמשים במלאי משותף. לאחר העברת יום, הציגו שוב את אותה סדרה כדי לראות את הכמויות."
+        }
       }
     ],
     "audience": "public",
@@ -2496,6 +2522,19 @@
           "fr": "Pour un article avec des choix par position, contrôlez les caractères et leur ordre dans la commande et le ticket. Les compteurs cuisine distinguent les combinaisons de choix pour éviter de confondre deux produits de même format. Les disponibilités et mouvements de stock continuent d’utiliser l’article et son format tarifé ; un caractère descriptif ne crée pas un supplément ni un second débit de stock.",
           "en": "For an item with position choices, check the characters and their order on the order and ticket. Kitchen counters distinguish choice combinations so two products with the same format are not confused. Availability and stock movements continue to use the item and its priced format; a descriptive character creates no surcharge or second stock debit.",
           "he": "בפריט עם בחירות לפי מיקום בדקו את התווים וסדרם בהזמנה ובכרטיס. מוני המטבח מבחינים בין צירופי הבחירות כדי לא לבלבל בין שני מוצרים באותו גודל. הזמינות ותנועות המלאי ממשיכות להשתמש בפריט ובגודל המתומחר שלו. תו תיאורי אינו יוצר תוספת מחיר או חיוב מלאי שני."
+        }
+      },
+      {
+        "id": "local-day",
+        "title": {
+          "fr": "Ouvrir la journée de cuisine",
+          "en": "Open the kitchen day",
+          "he": "פתיחת יום המטבח"
+        },
+        "instructions": {
+          "fr": "Choisissez le jour à préparer. Aujourd’hui suit le fuseau du restaurant. Pour une série sur plusieurs jours, vérifiez le jour indiqué sur chaque commande à préparer.",
+          "en": "Select the day you are preparing. Today follows the restaurant’s timezone. For a series spanning several days, check the date of each order to prepare.",
+          "he": "בחרו את היום שעבורו מכינים. ״היום״ נקבע לפי אזור הזמן של המסעדה. לסדרה שנמשכת כמה ימים, בדקו את התאריך של כל הזמנה להכנה."
         }
       }
     ],
@@ -3920,9 +3959,9 @@
           "he": "הכנת מלאי לסדרה חדשה"
         },
         "instructions": {
-          "en": "With menu editing permission, open the rotating carte, select a series and open the “…” menu beside the title → Prepare stocks for this series. Enter INITIAL allowances including quantities already ordered: available = initial minus committed. Use shared units, compatible base measures (g/ml), counts per size, or no predefined limit. Copy previous initial quantities copies allowances, never previous remaining quantities or an old sold-out override. Quantities are shared by the same restaurant item across cartes for that series. Save draft keeps preparation private; Publish applies it atomically without restoring reservations made while editing. The first activation imports current available stock and existing scheduled orders, preserving current remaining quantities. Later series never inherit the old global counter. No predefined limit may still be constrained by a recipe, rule or manual status.",
-          "fr": "Avec la permission de modifier le menu, ouvrez la carte tournante, sélectionnez une série puis ouvrez le menu « … » à côté du titre → Préparer les stocks de cette série. Saisissez les quantités INITIALES, commandes déjà passées incluses : disponible = initial − engagé. Choisissez un compteur commun en unités, une mesure compatible en g/ml, un compteur par taille ou aucune limite prédéfinie. Reprendre les quantités initiales précédentes copie les quotas, jamais les reliquats ni un ancien statut épuisé. Le stock d’un même article du restaurant est commun aux cartes de cette série. Enregistrer le brouillon garde la préparation privée ; Publier l’applique atomiquement sans recréditer les réservations faites pendant l’édition. La première activation importe le disponible actuel et les commandes programmées existantes en préservant les quantités restantes. Les séries suivantes ne reprennent jamais l’ancien compteur global. Sans limite prédéfinie, une recette, une règle ou un statut manuel peut encore limiter la disponibilité.",
-          "he": "עם הרשאת עריכת תפריט פתחו תפריט מתחלף, בחרו סדרה ופתחו את תפריט ״…״ ליד הכותרת → הכנת מלאי לסדרה. הזינו כמויות התחלתיות כולל הזמנות שכבר התקבלו: זמין = התחלתי פחות מחויב. בחרו יחידות משותפות, מדידה תואמת בגרמים או במ״ל, כמות לכל גודל או ללא מגבלה מוגדרת. העתקת כמויות התחלתיות קודמות מעתיקה מכסות, ולא יתרות או מצב אזל ישן. מלאי אותו פריט במסעדה משותף בין תפריטים באותה סדרה. שמירת טיוטה משאירה את ההכנה פרטית; פרסום מחיל אותה יחד בלי לזכות הזמנות שנקלטו בזמן העריכה. בהפעלה הראשונה מיובאים המלאי הזמין וההזמנות המתוזמנות תוך שמירת היתרה הנוכחית. סדרות הבאות אינן יורשות את המונה הגלובלי הישן. גם ללא מגבלה מוגדרת, מתכון, כלל או מצב ידני עשויים להגביל זמינות."
+          "en": "With menu editing permission, open the rotating carte, select a series and open the “…” menu beside the title → Prepare stocks for this series. Enter INITIAL allowances including quantities already ordered: available = initial minus committed. Use shared units, compatible base measures (g/ml), counts per size, or no predefined limit. Copy previous initial quantities copies allowances, never previous remaining quantities or an old sold-out override. Quantities are shared by the same restaurant item across cartes for that series. Save draft keeps preparation private; Publish applies it atomically without restoring reservations made while editing. The first activation imports current available stock and existing scheduled orders, preserving current remaining quantities. Later series never inherit the old global counter. No predefined limit may still be constrained by a recipe, rule or manual status. Multiple days in a series share its counters after a service day changes.",
+          "fr": "Avec le droit de modifier le menu, ouvrez la carte tournante et choisissez la série. Dans « … », ouvrez Préparer les stocks de cette série. Saisissez le quota initial, commandes engagées incluses (disponible = initial − engagé). Choisissez unités, g/ml, compteurs par taille ou aucune limite prédéfinie. Reprendre les quotas copie le stock initial de la série passée. Les cartes et les jours de la même série partagent les compteurs même après un report. Enregistrer garde le stock en brouillon. Publier applique les compteurs et préserve les réservations. La première activation conserve le disponible et les commandes programmées du compteur global. Les séries suivantes utilisent leurs propres quotas. Une recette, une règle ou un statut manuel peut encore limiter la disponibilité.",
+          "he": "עם הרשאת עריכת תפריט פתחו תפריט מתחלף, בחרו סדרה ופתחו את תפריט ״…״ ליד הכותרת → הכנת מלאי לסדרה. הזינו כמויות התחלתיות כולל הזמנות שכבר התקבלו: זמין = התחלתי פחות מחויב. בחרו יחידות משותפות, מדידה תואמת בגרמים או במ״ל, כמות לכל גודל או ללא מגבלה מוגדרת. העתקת כמויות התחלתיות קודמות מעתיקה מכסות, ולא יתרות או מצב אזל ישן. מלאי אותו פריט במסעדה משותף בין תפריטים באותה סדרה. שמירת טיוטה משאירה את ההכנה פרטית; פרסום מחיל אותה יחד בלי לזכות הזמנות שנקלטו בזמן העריכה. בהפעלה הראשונה מיובאים המלאי הזמין וההזמנות המתוזמנות תוך שמירת היתרה הנוכחית. סדרות הבאות אינן יורשות את המונה הגלובלי הישן. גם ללא מגבלה מוגדרת, מתכון, כלל או מצב ידני עשויים להגביל זמינות. ימי המסירה של הסדרה משתמשים באותם מוני מלאי גם לאחר העברת יום."
         }
       },
       {
@@ -4814,9 +4853,9 @@
           "he": "הצגה אוטומטית של הסבב השבועי הנוכחי"
         },
         "instructions": {
-          "fr": "Pour un restaurant configuré en lots hebdomadaires, ouvrez **Accueil** ou **Commandes** avec la base de date **Série**. La série actuelle est sélectionnée par défaut, même sans commande : ses totaux restent alors à zéro. Elle avance après le dernier jour de remise de la série précédente, selon le fuseau horaire du restaurant, sans attendre la première commande ni l’ouverture des commandes. Sur une page restée ouverte, la sélection suit ce changement au prochain rafraîchissement automatique (environ une minute) ou au retour sur l’onglet.\n\nVous pouvez sélectionner une ancienne série dans le calendrier ; cette consultation reste en place pendant que la page est ouverte. Une commande déjà prise pour une semaine plus lointaine ne remplace pas la série actuelle par défaut. Un lien de suivi des paiements conserve la période qu’il indique. Si la date semble incorrecte, vérifiez les jours de remise et le fuseau horaire configurés, puis rechargez la page. Ce basculement ne crée aucune commande et ne publie pas une carte.",
-          "en": "For a restaurant configured for weekly batches, open **Home** or **Orders** using the **Série** date basis. The current batch is selected by default even without orders; its totals then stay at zero. It advances after the previous batch’s final fulfillment day in the restaurant timezone, without waiting for the first order or for ordering to open. An open page follows this change on the next automatic refresh (about one minute) or when you return to the tab.\n\nYou can select an older service in the calendar; that selection stays in place while the page is open. An order for a later week does not replace the current batch as the default. A payment-attention link keeps its explicit period. If the date looks incorrect, check the configured fulfillment days and restaurant timezone, then reload. Rollover does not create an order or publish a menu.",
-          "he": "במסעדה שמוגדרת לסבבים שבועיים, פתחו את **בית** או **הזמנות** עם בסיס התאריך **סדרה**. הסבב הנוכחי נבחר כברירת מחדל גם ללא הזמנות, ואז הסכומים שלו הם אפס. המעבר מתבצע לאחר יום המסירה האחרון של הסבב הקודם, לפי אזור הזמן של המסעדה, בלי להמתין להזמנה הראשונה או לפתיחת ההזמנות. דף שנשאר פתוח עוקב אחר המעבר ברענון האוטומטי הבא (בערך דקה) או בחזרה ללשונית.\n\nאפשר לבחור שירות קודם בלוח השנה; הבחירה נשמרת כל עוד הדף פתוח. הזמנה לשבוע מאוחר יותר אינה מחליפה את הסבב הנוכחי כברירת מחדל. קישור למעקב תשלומים שומר על התקופה המפורשת שלו. אם התאריך נראה שגוי, בדקו את ימי המסירה ואת אזור הזמן של המסעדה ואז טענו מחדש. המעבר אינו יוצר הזמנה ואינו מפרסם תפריט."
+          "fr": "Dans **Commandes**, **Tous** affiche les statuts de la période. Changer la date conserve l’onglet choisi. **Date de commande** suit la prise de commande. **Date de remise** suit le service prévu. Dans **Séries**, ouvrez un lot entier puis, si besoin, un de ses jours. Le défaut Série suit le lot actuel, même vide. Dans **Personnaliser**, mémorisez votre base de date ou rétablissez le réglage du restaurant.",
+          "en": "In **Orders**, **All** shows the statuses for the selected period. Changing the date keeps your tab. **Order date** follows when the order was placed. **Fulfillment date** follows its planned service. Under **Series**, open the whole lot or one service day. The Series default follows the current lot, even when empty. Use **Customize** to save your date basis or restore the restaurant’s default.",
+          "he": "במסך **הזמנות**, לשונית **הכול** מציגה את הסטטוסים בטווח שנבחר. שינוי תאריך שומר על הלשונית. **תאריך הזמנה** מתייחס לקבלת ההזמנה. **תאריך מסירה** מתייחס לשירות המתוכנן. תחת **סדרות**, בחרו סדרה מלאה או יום שירות אחד. כברירת מחדל, סדרות עוקבת אחר הסדרה הנוכחית גם כשהיא ריקה. תחת **התאמה אישית**, שמרו את בסיס התאריך או חזרו להגדרת המסעדה."
         }
       },
       {
@@ -6232,6 +6271,19 @@
           "en": "For a restaurant enrolled in the versioned development catalogue, this function must be included in its offer or active trial as well as permitted by the staff role. An excluded feature is rejected by the server. Check Billing for modules and licences, then ask the owner to review an addition. Account and physical POS quotas are separate; exceeding a quota requires the corresponding licences. Historical contracts are not automatically changed.",
           "he": "במסעדה הרשומה לקטלוג עם גרסה בסביבת הפיתוח, היכולת חייבת להיות כלולה בהצעה או בניסיון הפעיל וכן מותרת לפי תפקיד העובד. יכולת מוחרגת נדחית בשרת. בחיוב אפשר לבדוק מודולים ורישיונות ולבקש מהבעלים לבחון תוספת. מכסות חשבונות ועמדות קופה נפרדות; חריגה דורשת את הרישיונות המתאימים. חוזים היסטוריים אינם משתנים אוטומטית."
         }
+      },
+      {
+        "id": "order-and-handover-dates",
+        "title": {
+          "fr": "Identifier la date du service",
+          "en": "Identify the service date",
+          "he": "זיהוי תאריך השירות"
+        },
+        "instructions": {
+          "fr": "Pour une livraison ou un retrait planifié, utilisez la date de remise de la commande. Dans un restaurant en lots hebdomadaires, une commande prise pour une série porte aussi la référence de ce lot.",
+          "en": "For scheduled delivery or pickup, use the order’s fulfillment date. At a restaurant with weekly batches, orders taken for a series also carry that batch’s reference.",
+          "he": "לאיסוף או משלוח מתוכנן, השתמשו בתאריך המסירה של ההזמנה. במסעדה עם סדרות שבועיות, הזמנה שהתקבלה לסדרה שומרת גם על המזהה שלה."
+        }
       }
     ],
     "audience": "public",
@@ -6582,6 +6634,19 @@
           "fr": "Pour un restaurant inscrit au catalogue versionné de développement, cette fonction doit être incluse dans son offre ou dans son essai actif, en plus des autorisations du rôle. Une fonctionnalité retirée est refusée côté serveur. Consultez Facturation pour voir les modules et les licences, puis faites examiner un ajout par le propriétaire. Les quotas de comptes et de postes POS sont distincts ; un dépassement nécessite les licences correspondantes. Les contrats historiques ne sont pas modifiés automatiquement.",
           "en": "For a restaurant enrolled in the versioned development catalogue, this function must be included in its offer or active trial as well as permitted by the staff role. An excluded feature is rejected by the server. Check Billing for modules and licences, then ask the owner to review an addition. Account and physical POS quotas are separate; exceeding a quota requires the corresponding licences. Historical contracts are not automatically changed.",
           "he": "במסעדה הרשומה לקטלוג עם גרסה בסביבת הפיתוח, היכולת חייבת להיות כלולה בהצעה או בניסיון הפעיל וכן מותרת לפי תפקיד העובד. יכולת מוחרגת נדחית בשרת. בחיוב אפשר לבדוק מודולים ורישיונות ולבקש מהבעלים לבחון תוספת. מכסות חשבונות ועמדות קופה נפרדות; חריגה דורשת את הרישיונות המתאימים. חוזים היסטוריים אינם משתנים אוטומטית."
+        }
+      },
+      {
+        "id": "scheduled-local-week",
+        "title": {
+          "fr": "Retrouver une commande planifiée en caisse",
+          "en": "Find a scheduled order on POS",
+          "he": "איתור הזמנה מתוזמנת בקופה"
+        },
+        "instructions": {
+          "fr": "Dans le calendrier des commandes planifiées, choisissez la semaine puis le jour de remise. La date et le début de semaine suivent les réglages du restaurant.",
+          "en": "In the scheduled-orders calendar, select the week and the handover day. The date and first day of the week follow the restaurant settings.",
+          "he": "בלוח ההזמנות המתוזמנות, בחרו שבוע ואת יום המסירה. התאריך והיום הראשון של השבוע נקבעים לפי הגדרות המסעדה."
         }
       }
     ],
@@ -7045,9 +7110,9 @@
           "he": "עריכת פרטים שמורים"
         },
         "instructions": {
-          "en": "Choose **Edit customer** to correct the recipient or address. For a delivery to someone else, clear the customer profile checkbox. Save and review the order. If someone edited the order while the form was open, reopen the updated order before changing it. Guests can correct editable details on their receipt. If the new address changes the delivery terms, the restaurant needs to review the request. To specify an entrance, open the stop in Deliveries. Check preparation and scheduling before rescheduling an order.",
-          "fr": "Ouvrez **Modifier le client** pour corriger le destinataire ou l’adresse. Pour une livraison chez un tiers, décochez la mise à jour de la fiche client. Enregistrez puis relisez la commande. Si une autre personne a modifié la commande pendant la saisie, rouvrez la version actualisée avant de corriger. Depuis son reçu, le client peut corriger les informations modifiables. Si la nouvelle adresse change les conditions de livraison, le restaurant doit revoir la demande. Pour préciser une entrée, ouvrez l’arrêt dans Livraisons. Pour reporter une commande, vérifiez sa préparation et sa planification.",
-          "he": "בחרו **עריכת לקוח** כדי לתקן את הנמען או הכתובת. במשלוח לאדם אחר בטלו את סימון עדכון כרטיס הלקוח. שמרו ובדקו את ההזמנה. אם אדם נוסף שינה את ההזמנה בזמן העריכה, פתחו את הגרסה המעודכנת לפני התיקון. לקוחות יכולים לעדכן פרטים הניתנים לעריכה בקבלה. אם הכתובת משנה את תנאי המשלוח, יש לפנות למסעדה. לציון כניסה פתחו את התחנה במשלוחים. לפני שינוי מועד בדקו את מצב ההכנה והתכנון."
+          "en": "Choose **Edit customer** to correct the recipient or address. For a delivery to someone else, clear the customer profile checkbox. Save and review the order. If someone edited the order while the form was open, reopen the updated order before changing it. Guests can correct editable details on their receipt. If the new address changes the delivery terms, the restaurant needs to review the request. To specify an entrance, open the stop in Deliveries. Check preparation and scheduling before rescheduling an order. In Series, choose a day offered for pickup or delivery.",
+          "fr": "Ouvrez **Modifier le client** pour corriger le destinataire ou l’adresse. Pour un tiers, décochez la mise à jour de sa fiche. Si la commande a changé, rechargez-la. Le client peut corriger certains détails depuis son reçu. Si l’adresse change les conditions de livraison, vérifiez sa demande. Précisez l’entrée depuis l’arrêt dans Livraisons. Pour reporter une commande, vérifiez la préparation puis choisissez la nouvelle remise. Une série propose ses jours de retrait ou de livraison.",
+          "he": "בחרו **עריכת לקוח** כדי לתקן את הנמען או הכתובת. במשלוח לאדם אחר בטלו את סימון עדכון כרטיס הלקוח. שמרו ובדקו את ההזמנה. אם אדם נוסף שינה את ההזמנה בזמן העריכה, פתחו את הגרסה המעודכנת לפני התיקון. לקוחות יכולים לעדכן פרטים הניתנים לעריכה בקבלה. אם הכתובת משנה את תנאי המשלוח, יש לפנות למסעדה. לציון כניסה פתחו את התחנה במשלוחים. לפני שינוי מועד בדקו את מצב ההכנה והתכנון. בסדרה, בחרו יום שזמין לאיסוף או למשלוח."
         }
       },
       {
@@ -7330,6 +7395,9 @@
       ],
       "foodyserver": [
         "internal/calendar/**"
+      ],
+      "foodypos": [
+        "lib/core/time/restaurant_calendar.dart"
       ]
     },
     "operations": [
@@ -7371,6 +7439,19 @@
           "fr": "Vérifiez la date avant de retirer une exception. Confirmez le retour de la planification normale ; contrôlez séparément les commandes existantes dont la remise change.",
           "he": "בדקו את התאריך לפני הסרת חריג. ודאו שחוזר התזמון הרגיל; הזמנות קיימות שמסירתן השתנתה דורשות בדיקה בנפרד."
         }
+      },
+      {
+        "id": "restaurant-local-calendar",
+        "title": {
+          "fr": "Vérifier la date locale du restaurant",
+          "en": "Check the restaurant’s local date",
+          "he": "בדיקת התאריך המקומי של המסעדה"
+        },
+        "instructions": {
+          "fr": "Utilisez **Aujourd’hui** dans le calendrier pour revenir au jour local du restaurant. Sur une vue semaine, vérifiez son premier jour dans les réglages. Si un jour de remise d’un lot doit être déplacé, ouvrez la série dans **Commandes**. Le calendrier du restaurant reste l’endroit pour configurer une fermeture ou un horaire exceptionnel. Le lien **Série** d’un jour ouvre les commandes associées.",
+          "en": "Use **Today** in the calendar to return to the restaurant’s local day. In week view, check the configured first day of the week. To move a fulfillment day in a lot, open the series in **Orders**. Use the restaurant calendar to schedule a closure or special hours. A day’s **Series** link opens its assigned orders.",
+          "he": "לחצו על **היום** בלוח השנה כדי לחזור ליום המקומי של המסעדה. בתצוגת שבוע, בדקו את היום הראשון שהוגדר. להעברת יום מסירה של סדרה, פתחו אותה במסך **הזמנות**. השתמשו בלוח השנה של המסעדה לקביעת סגירה או שעות חריגות. הקישור **סדרה** של יום פותח את ההזמנות המשויכות."
+        }
       }
     ],
     "audience": "public",
@@ -7396,12 +7477,17 @@
         "src/app/[restaurantId]/settings/orders/PreorderSettings.tsx",
         "src/app/[restaurantId]/settings/scheduled-orders/**",
         "src/app/[restaurantId]/settings/orders/OrderingSimulation.tsx",
-        "src/app/[restaurantId]/settings/orders/PreparationPreview.tsx"
+        "src/app/[restaurantId]/settings/orders/PreparationPreview.tsx",
+        "src/components/orders/SeriesDayEditor.tsx"
       ],
       "foodyserver": [
         "internal/orders/intake*",
         "internal/delivery/ordering_simulation.go",
-        "internal/restaurants/fulfillment_stock.go"
+        "internal/restaurants/fulfillment_stock.go",
+        "internal/common/fulfillment_series.go",
+        "internal/restaurants/fulfillment_series*.go",
+        "internal/orders/fulfillment_series.go",
+        "migrations/351_fulfillment_series.sql"
       ],
       "foodyweb": [
         "lib/websiteFulfillment*"
@@ -7471,9 +7557,9 @@
           "he": "הצגה אוטומטית של הסבב השבועי הנוכחי"
         },
         "instructions": {
-          "fr": "Pour un restaurant configuré en lots hebdomadaires, ouvrez **Accueil** ou **Commandes** avec la base de date **Série**. La série actuelle est sélectionnée par défaut, même sans commande : ses totaux restent alors à zéro. Elle avance après le dernier jour de remise de la série précédente, selon le fuseau horaire du restaurant, sans attendre la première commande ni l’ouverture des commandes. Sur une page restée ouverte, la sélection suit ce changement au prochain rafraîchissement automatique (environ une minute) ou au retour sur l’onglet.\n\nVous pouvez sélectionner une ancienne série dans le calendrier ; cette consultation reste en place pendant que la page est ouverte. Une commande déjà prise pour une semaine plus lointaine ne remplace pas la série actuelle par défaut. Un lien de suivi des paiements conserve la période qu’il indique. Si la date semble incorrecte, vérifiez les jours de remise et le fuseau horaire configurés, puis rechargez la page. Ce basculement ne crée aucune commande et ne publie pas une carte.",
-          "en": "For a restaurant configured for weekly batches, open **Home** or **Orders** using the **Série** date basis. The current batch is selected by default even without orders; its totals then stay at zero. It advances after the previous batch’s final fulfillment day in the restaurant timezone, without waiting for the first order or for ordering to open. An open page follows this change on the next automatic refresh (about one minute) or when you return to the tab.\n\nYou can select an older service in the calendar; that selection stays in place while the page is open. An order for a later week does not replace the current batch as the default. A payment-attention link keeps its explicit period. If the date looks incorrect, check the configured fulfillment days and restaurant timezone, then reload. Rollover does not create an order or publish a menu.",
-          "he": "במסעדה שמוגדרת לסבבים שבועיים, פתחו את **בית** או **הזמנות** עם בסיס התאריך **סדרה**. הסבב הנוכחי נבחר כברירת מחדל גם ללא הזמנות, ואז הסכומים שלו הם אפס. המעבר מתבצע לאחר יום המסירה האחרון של הסבב הקודם, לפי אזור הזמן של המסעדה, בלי להמתין להזמנה הראשונה או לפתיחת ההזמנות. דף שנשאר פתוח עוקב אחר המעבר ברענון האוטומטי הבא (בערך דקה) או בחזרה ללשונית.\n\nאפשר לבחור שירות קודם בלוח השנה; הבחירה נשמרת כל עוד הדף פתוח. הזמנה לשבוע מאוחר יותר אינה מחליפה את הסבב הנוכחי כברירת מחדל. קישור למעקב תשלומים שומר על התקופה המפורשת שלו. אם התאריך נראה שגוי, בדקו את ימי המסירה ואת אזור הזמן של המסעדה ואז טענו מחדש. המעבר אינו יוצר הזמנה ואינו מפרסם תפריט."
+          "fr": "Dans **Accueil**, **Commandes** ou les rapports qui proposent le filtre de dates, ouvrez **Séries**. Un lot hebdomadaire regroupe les jours de retrait et de livraison définis dans les réglages de commande. Sélectionnez une série entière puis, si nécessaire, un de ses jours de remise. Pour chercher une date libre ou une réservation hors série, choisissez **Date de remise**.\n\nQuand la base Série est votre défaut, Foody ouvre le lot actuel même s’il est encore vide. Il passe au suivant après le dernier service prévu, à l’heure du restaurant. Un rafraîchissement automatique ou un retour sur l’onglet applique le changement. Une série historique choisie manuellement reste sélectionnée pendant la visite.",
+          "en": "In **Home**, **Orders**, or a report with a date filter, open **Series**. A weekly batch groups the pickup and delivery dates configured in ordering settings. Select a whole series, then select one of its fulfillment dates if needed. Use **Fulfillment date** for a free date range or an order outside a series.\n\nWhen Series is your default, Foody opens the current batch even when it is empty. It advances after the last scheduled service day in the restaurant timezone. The next automatic refresh or return to the tab applies the change. A historical series chosen manually stays selected during the visit.",
+          "he": "במסך **בית**, **הזמנות** או בדוח עם מסנן תאריכים, פתחו את **סדרות**. סדרה שבועית מרכזת את ימי האיסוף והמשלוח שהוגדרו בהגדרות ההזמנות. בחרו סדרה מלאה, ובמידת הצורך בחרו אחד מימי המסירה שלה. לחיפוש בטווח חופשי או להזמנה מחוץ לסדרה, בחרו **תאריך מסירה**.\n\nכאשר סדרות היא ברירת המחדל, Foody פותחת את הסדרה הנוכחית גם כשהיא ריקה. המעבר מתבצע לאחר יום השירות האחרון לפי אזור הזמן של המסעדה. השינוי מופיע ברענון האוטומטי הבא או בחזרה ללשונית. סדרה קודמת שנבחרה ידנית נשארת מוצגת במהלך הביקור."
         }
       },
       {
@@ -7513,6 +7599,19 @@
           "fr": "Avec les versions compatibles, réglez la préparation générale dans Commandes et disponibilité, les exceptions par article sur sa fiche, puis les jours, livraisons du jour même et échéances dans chaque zone. Sans panier, l’aperçu utilise le délai général ; la simulation avec articles et quantités vérifie le panier réel sans réserver de stock. Les échéances produit peuvent être évitées par un stock prêt suffisant dans sa validité ; les échéances de livraison, fermetures et règles de série restent applicables. Une date exclue ne doit pas être rétablie en allongeant artificiellement un créneau. Consultez [les échéances par zone](/fr/help/delivery/zones-and-schedules#order-deadlines) et [les produits prêts](/fr/help/kitchen/availability#prepared-product-stock). Ces réglages sont propres à chaque restaurant ; sans activation, le comportement existant est conservé.",
           "en": "With compatible versions, set the restaurant production default in Orders & availability, article exceptions on each product, then receiving weekdays, same-day delivery and order deadlines per zone. Without a basket, the preview uses the restaurant default; simulation with articles and quantities checks that basket without reserving stock. Sufficient prepared stock within its validity can skip product production deadlines; delivery deadlines, closures and batch rules still apply. Do not restore an excluded date by artificially extending a slot. See [zone deadlines](/en/help/delivery/zones-and-schedules#order-deadlines) and [ready products](/en/help/kitchen/availability#prepared-product-stock). These settings belong to each restaurant; without activation, existing behavior is preserved.",
           "he": "בגרסאות תואמות, הגדירו ברירת מחדל להכנה בהזמנות וזמינות, חריגים בכל פריט, ואז ימי מסירה, משלוח להיום ומועדי סגירה לכל אזור. ללא סל, התצוגה משתמשת בברירת המחדל; סימולציה עם פריטים וכמויות בודקת את הסל ללא שריון מלאי. מלאי מוכן מספיק ובתוקף יכול לדלג על מועדי ייצור של המוצר; מועדי משלוח, סגירות וכללי סדרה עדיין חלים. אין להחזיר תאריך חסום באמצעות הארכה מלאכותית של חלון. ראו [מועדים לפי אזור](/he/help/delivery/zones-and-schedules#order-deadlines) ו[מוצרים מוכנים](/he/help/kitchen/availability#prepared-product-stock). ההגדרות שייכות לכל מסעדה בנפרד; ללא הפעלה, ההתנהגות הקיימת נשמרת."
+        }
+      },
+      {
+        "id": "move-one-series-day",
+        "title": {
+          "fr": "Reporter un jour d’une série",
+          "en": "Move one day of a series",
+          "he": "העברת יום אחד בסדרה"
+        },
+        "instructions": {
+          "fr": "Dans **Commandes**, sélectionnez une série à venir et ouvrez **Reporter un jour de remise** avec le droit de modifier les réglages. Choisissez le jour à reporter et sa nouvelle date. Vérifiez le nombre de commandes déjà promises et ouvrez leur liste si nécessaire. Enregistrez la nouvelle date. Pour déplacer une commande existante, convenez de sa nouvelle remise avec le client puis modifiez cette commande. Si la date est fermée, occupée par un autre jour de la série ou si une commande a été ajoutée entre-temps, rechargez et vérifiez avant de réessayer.",
+          "en": "In **Orders**, select an upcoming series and open **Move fulfillment day** with permission to edit settings. Choose the day to move and its new date. Check how many orders were already promised and open their list if needed. Save the new date. To move an existing order, agree on its new handover with the customer and edit that order. If the date is closed, overlaps another service day, or an order arrived in the meantime, reload and review before retrying.",
+          "he": "במסך **הזמנות**, בחרו סדרה עתידית ופתחו את **העברת יום מסירה** עם הרשאה לעריכת הגדרות. בחרו את היום להעברה ואת התאריך החדש. בדקו כמה הזמנות כבר הובטחו ופתחו את הרשימה לפי הצורך. שמרו את התאריך החדש. להעברת הזמנה קיימת, תאמו עם הלקוח את המסירה החדשה ואז ערכו את ההזמנה. אם התאריך סגור, חופף ליום שירות אחר או שנוספה הזמנה בינתיים, רעננו ובדקו לפני ניסיון נוסף."
         }
       }
     ],
@@ -7640,6 +7739,19 @@
           "fr": "À la dernière étape Paiement et confirmation, répondez à Ajouter au plan de production : Oui ou Non. Aucun choix n’est présélectionné. Valider sans réponse encadre les deux options en rouge et place le focus sur le choix. Oui demande l’inclusion selon les conditions de confirmation de la commande ; un lien Sumit ordinaire attend le paiement confirmé et un événement conserve ses conditions de validation. Non exclut la commande du plan, même après programmation ou paiement. Le choix est conservé lors des retours et changements de règlement. Il n’y a pas de bannière production aux étapes précédentes. Un échec de création conserve le formulaire ; vérifiez une commande enregistrée avant de réessayer un résultat incertain. Une action staff autorisée Ajouter au tableau de production sur la commande enregistrée peut remplacer Non. Retirer cet ajout manuel rétablit les règles automatiques, sans annuler la commande ni modifier le paiement.",
           "en": "On the final Payment and confirmation step, answer Add to production plan: Yes or No. Neither option is selected initially. Submitting without an answer outlines both options in red and focuses the choice. Yes requests inclusion subject to the order’s confirmation conditions; an ordinary Sumit link waits for confirmed payment and events retain their validation requirements. No excludes the order from the plan, including after scheduling or payment. The choice survives earlier steps and payment changes. Earlier steps have no production banner. Failed creation preserves the form; check a saved order before retrying an uncertain result. An authorized Add to production plan action on the saved order can supersede No. Removing that manual override restores automatic admission rules without cancelling the order or changing payment.",
           "he": "בשלב האחרון תשלום ואישור בחרו הוסף לתוכנית הייצור: כן או לא. אין בחירה מראש. ניסיון לאשר ללא תשובה מסמן את שתי האפשרויות באדום ומעביר אליהן את המיקוד. כן מבקש הכללה לפי תנאי אישור ההזמנה; קישור Sumit רגיל ממתין לאישור התשלום ואירוע שומר על דרישות האישור שלו. בחירה ב״לא״ משאירה את ההזמנה מחוץ לתוכנית, גם לאחר תזמון או תשלום. הבחירה נשמרת בחזרה לשלבים קודמים ובהחלפת אופן התשלום. בשלבים הקודמים אין באנר ייצור. כשל ביצירה שומר על הטופס; בדקו הזמנה שנשמרה לפני ניסיון חוזר בעקבות תוצאה לא ודאית. פעולה מורשית להוספה לתוכנית הייצור בהזמנה השמורה יכולה להחליף בחירה ב״לא״. הסרת ההוספה הידנית מחזירה את כללי ההכללה האוטומטיים בלי לבטל את ההזמנה או לשנות תשלום."
+        }
+      },
+      {
+        "id": "production-handover-day",
+        "title": {
+          "fr": "Ouvrir la production d’un jour de remise",
+          "en": "Open production for a fulfillment day",
+          "he": "פתיחת הכנות לפי יום מסירה"
+        },
+        "instructions": {
+          "fr": "Depuis une série de l’**Accueil**, ouvrez **Plan de production**. Le planning applique le jour transmis et le lot associé. Vérifiez le jour affiché avant de préparer ou d’imprimer les quantités. Pour retrouver des commandes encore promises à un ancien jour après un report, consultez ce jour dans **Commandes**.",
+          "en": "From a series on **Home**, open **Production plan**. The plan applies the linked day and series. Check the displayed day before preparing or printing quantities. To find orders still promised for an earlier day after a change, review that date in **Orders**.",
+          "he": "מתוך סדרה במסך **בית**, פתחו את **תוכנית ההכנות**. התוכנית משתמשת ביום ובסדרה שהועברו בקישור. בדקו את היום המוצג לפני ההכנה או הדפסת הכמויות. להזמנות שעדיין הובטחו ליום הקודם לאחר שינוי, עיינו באותו יום במסך **הזמנות**."
         }
       }
     ],
@@ -7928,9 +8040,9 @@
           "he": "בחירת משלוחים לתאריך אחד"
         },
         "instructions": {
-          "en": "Use the date or arrows to choose the service day. Available orders follow the calendar for their address. Check the allowed slot again after an address change. Postal groups with the same fee and options can combine delivery days. See [postal day groups](/en/help/delivery/zones-and-schedules#postal-day-groups).\n\nIn the sidebar, open Deliveries. Dispatch shows orders waiting to be planned, planned departures, routes on the road and delivered orders. Search the queue by customer, city or order. Select all acts on visible results. Search the routes and history by courier. Open Map to locate stops and List to return to assignments.",
-          "fr": "Choisissez le jour de service avec la date ou les flèches. Les commandes proposées respectent le calendrier de leur adresse. Après un changement d’adresse, revérifiez le créneau autorisé. Des groupes postaux de mêmes tarif et options peuvent cumuler leurs jours. Voir [les groupes de jours](/fr/help/delivery/zones-and-schedules#postal-day-groups).\n\nDans la barre latérale, ouvrez Livraisons. Répartition affiche les commandes à planifier, les départs prévus, les tournées en cours et les commandes livrées. Recherchez un client, une ville ou une commande dans la file. Tout sélectionner porte sur les résultats visibles. Cherchez aussi par livreur dans les tournées et l’historique. Ouvrez Carte pour localiser les arrêts, puis Liste pour revenir aux affectations.",
-          "he": "בחרו יום שירות בתאריך או בחצים. ההזמנות הזמינות כפופות ללוח הזמנים של כתובת המשלוח. אחרי שינוי כתובת בדקו מחדש את החלון המותר. קבוצות מיקוד עם אותו תעריף ואותן אפשרויות יכולות לצרף ימי משלוח. ראו [קבוצות ימים](/he/help/delivery/zones-and-schedules#postal-day-groups).\n\nבסרגל הצד פתחו משלוחים. במסך השיבוץ מוצגים הזמנות לשיבוץ, יציאות מתוכננות, מסלולים בדרך והזמנות שנמסרו. חפשו בתור לפי לקוח, עיר או הזמנה. בחירה בכול חלה על התוצאות המוצגות. אפשר לחפש שליח גם במסלולים ובהיסטוריה. לחצו על מפה כדי לאתר עצירות ועל רשימה כדי לחזור לשיבוץ."
+          "fr": "Choisissez le jour de service avec la date, les flèches ou le raccourci de l’Accueil. Vérifiez la date de départ et le créneau autorisé après un changement d’adresse. Voir [les groupes de jours](/fr/help/delivery/zones-and-schedules).",
+          "en": "Use the date, arrows, or Home shortcut to open a service day. Check the departure date and recheck the allowed window after an address change. See [delivery day groups](/en/help/delivery/zones-and-schedules).",
+          "he": "בחרו יום שירות עם התאריך, החצים או הקיצור במסך בית. בדקו את תאריך היציאה ואת חלון הזמן המותר לאחר שינוי כתובת. ראו [קבוצות ימי משלוח](/he/help/delivery/zones-and-schedules)."
         }
       },
       {
@@ -10547,6 +10659,19 @@
           "en": "In Orders & availability → Simulate an order, select Order date and time in the displayed timezone, then the receiving date and basket. Now reloads the server time. Preparation and same-day rules are evaluated at this reference using current saved settings and ready stock. A past date does not reconstruct history; this test neither reserves a courier nor creates an order. Customer orders retain the real server clock. See [the simulation procedure](/en/help/orders/preorders-and-batches#simulate-order).",
           "he": "בהזמנות וזמינות → הדמיית הזמנה בחרו תאריך ושעת ההזמנה באזור הזמן המוצג, ואז תאריך קבלה וסל. עכשיו טוען מחדש את שעת השרת. ההכנה וכללי אותו יום נבדקים לפי מועד זה באמצעות ההגדרות והמלאי המוכן הנוכחיים. תאריך בעבר אינו משחזר היסטוריה; הבדיקה אינה שומרת שליח ואינה יוצרת הזמנה. הזמנות לקוח ממשיכות להשתמש בשעת השרת האמיתית. ראו [הנחיות ההדמיה](/he/help/orders/preorders-and-batches#simulate-order)."
         }
+      },
+      {
+        "id": "shared-date-defaults",
+        "title": {
+          "fr": "Choisir les bases de date du restaurant",
+          "en": "Set the restaurant’s date defaults",
+          "he": "קביעת בסיסי התאריך של המסעדה"
+        },
+        "instructions": {
+          "fr": "Dans les réglages du restaurant, choisissez les bases de date d’Accueil et de Commandes. Les membres de l’équipe peuvent garder ces réglages ou mémoriser leur propre base dans le filtre. Les créneaux hebdomadaires restent dans les réglages de commande. Pour déplacer un seul jour, ouvrez la série dans Commandes.",
+          "en": "In restaurant settings, choose the date defaults for Home and Orders. Staff can inherit them or save a personal basis in the date filter. Weekly service windows stay in ordering settings. To move one day, open its series in Orders.",
+          "he": "בהגדרות המסעדה בחרו בסיסי תאריך למסכי בית והזמנות. חברי הצוות יכולים להשתמש בהגדרות האלה או לשמור בסיס אישי במסנן התאריכים. חלונות השירות השבועיים נשארים בהגדרות ההזמנות. להעברת יום אחד, פתחו את הסדרה במסך הזמנות."
+        }
       }
     ],
     "audience": "public",
@@ -10824,9 +10949,9 @@
           "he": "הצגה אוטומטית של הסבב השבועי הנוכחי"
         },
         "instructions": {
-          "fr": "Pour un restaurant configuré en lots hebdomadaires, ouvrez **Accueil** ou **Commandes** avec la base de date **Série**. La série actuelle est sélectionnée par défaut, même sans commande : ses totaux restent alors à zéro. Elle avance après le dernier jour de remise de la série précédente, selon le fuseau horaire du restaurant, sans attendre la première commande ni l’ouverture des commandes. Sur une page restée ouverte, la sélection suit ce changement au prochain rafraîchissement automatique (environ une minute) ou au retour sur l’onglet.\n\nVous pouvez sélectionner une ancienne série dans le calendrier ; cette consultation reste en place pendant que la page est ouverte. Une commande déjà prise pour une semaine plus lointaine ne remplace pas la série actuelle par défaut. Un lien de suivi des paiements conserve la période qu’il indique. Si la date semble incorrecte, vérifiez les jours de remise et le fuseau horaire configurés, puis rechargez la page. Ce basculement ne crée aucune commande et ne publie pas une carte.",
-          "en": "For a restaurant configured for weekly batches, open **Home** or **Orders** using the **Série** date basis. The current batch is selected by default even without orders; its totals then stay at zero. It advances after the previous batch’s final fulfillment day in the restaurant timezone, without waiting for the first order or for ordering to open. An open page follows this change on the next automatic refresh (about one minute) or when you return to the tab.\n\nYou can select an older service in the calendar; that selection stays in place while the page is open. An order for a later week does not replace the current batch as the default. A payment-attention link keeps its explicit period. If the date looks incorrect, check the configured fulfillment days and restaurant timezone, then reload. Rollover does not create an order or publish a menu.",
-          "he": "במסעדה שמוגדרת לסבבים שבועיים, פתחו את **בית** או **הזמנות** עם בסיס התאריך **סדרה**. הסבב הנוכחי נבחר כברירת מחדל גם ללא הזמנות, ואז הסכומים שלו הם אפס. המעבר מתבצע לאחר יום המסירה האחרון של הסבב הקודם, לפי אזור הזמן של המסעדה, בלי להמתין להזמנה הראשונה או לפתיחת ההזמנות. דף שנשאר פתוח עוקב אחר המעבר ברענון האוטומטי הבא (בערך דקה) או בחזרה ללשונית.\n\nאפשר לבחור שירות קודם בלוח השנה; הבחירה נשמרת כל עוד הדף פתוח. הזמנה לשבוע מאוחר יותר אינה מחליפה את הסבב הנוכחי כברירת מחדל. קישור למעקב תשלומים שומר על התקופה המפורשת שלו. אם התאריך נראה שגוי, בדקו את ימי המסירה ואת אזור הזמן של המסעדה ואז טענו מחדש. המעבר אינו יוצר הזמנה ואינו מפרסם תפריט."
+          "fr": "Dans **Accueil**, **Commandes** ou les rapports qui proposent le filtre de dates, ouvrez **Séries**. Un lot hebdomadaire regroupe les jours de retrait et de livraison définis dans les réglages de commande. Sélectionnez une série entière puis, si nécessaire, un de ses jours de remise. Pour chercher une date libre ou une réservation hors série, choisissez **Date de remise**.\n\nQuand la base Série est votre défaut, Foody ouvre le lot actuel même s’il est encore vide. Il passe au suivant après le dernier service prévu, à l’heure du restaurant. Un rafraîchissement automatique ou un retour sur l’onglet applique le changement. Une série historique choisie manuellement reste sélectionnée pendant la visite.",
+          "en": "In **Home**, **Orders**, or a report with a date filter, open **Series**. A weekly batch groups the pickup and delivery dates configured in ordering settings. Select a whole series, then select one of its fulfillment dates if needed. Use **Fulfillment date** for a free date range or an order outside a series.\n\nWhen Series is your default, Foody opens the current batch even when it is empty. It advances after the last scheduled service day in the restaurant timezone. The next automatic refresh or return to the tab applies the change. A historical series chosen manually stays selected during the visit.",
+          "he": "במסך **בית**, **הזמנות** או בדוח עם מסנן תאריכים, פתחו את **סדרות**. סדרה שבועית מרכזת את ימי האיסוף והמשלוח שהוגדרו בהגדרות ההזמנות. בחרו סדרה מלאה, ובמידת הצורך בחרו אחד מימי המסירה שלה. לחיפוש בטווח חופשי או להזמנה מחוץ לסדרה, בחרו **תאריך מסירה**.\n\nכאשר סדרות היא ברירת המחדל, Foody פותחת את הסדרה הנוכחית גם כשהיא ריקה. המעבר מתבצע לאחר יום השירות האחרון לפי אזור הזמן של המסעדה. השינוי מופיע ברענון האוטומטי הבא או בחזרה ללשונית. סדרה קודמת שנבחרה ידנית נשארת מוצגת במהלך הביקור."
         }
       },
       {
@@ -12610,6 +12735,19 @@
           "fr": "Foody règle dans le Backoffice les montants minimal et maximal en ILS de chaque terminal selon les conditions de l’acquéreur. Demandez à Foody d’y activer ou d’ajuster l’offre. Les anciens seuils saisis sur iPad doivent y être renseignés. Vous pouvez consulter les limites dans **Identifiants du terminal**. Pour une vente dans cette plage, la caisse propose de payer comptant ou en plusieurs fois. Si Foody a fixé un nombre maximal d’échéances, le caissier peut saisir le plan et un premier montant facultatif. Sinon, le client choisit les échéances sur le terminal. Foody enregistre le montant total approuvé.",
           "en": "Foody sets the minimum and maximum sale amounts in ILS for each terminal in Backoffice, according to the acquirer’s terms. Ask Foody to enable or update the offer there. Previously saved iPad limits require configuration in Backoffice. In **Terminal identifiers**, you can read the current limits. At checkout, a sale within the range can be paid in one payment or installments. If Foody has set a maximum count, the cashier can enter a plan and an optional first payment. Otherwise the customer chooses the installments on the terminal. Foody records the full approved sale amount.",
           "he": "Foody מגדירה ב־Backoffice סכום עסקה מזערי ומרבי בשקלים לכל מסוף לפי תנאי הסולק. פנו ל־Foody להפעלה או לשינוי של ההצעה. יש להזין ב־Backoffice גם ספים שנשמרו בעבר ב־iPad. אפשר לראות אותם ב**מזהי המסוף**. בעסקה בטווח המאושר ניתן לשלם בתשלום אחד או בתשלומים. אם הוגדר מספר תשלומים מרבי, הקופאי יכול לבחור מספר תשלומים וסכום אופציונלי לתשלום הראשון. אחרת הלקוח בוחר במסוף. Foody רושמת את מלוא סכום העסקה שאושרה."
+        }
+      },
+      {
+        "id": "restaurant-local-pos-operations",
+        "title": {
+          "fr": "Vérifier le jour du restaurant en caisse",
+          "en": "Check the restaurant day on POS",
+          "he": "בדיקת יום המסעדה בקופה"
+        },
+        "instructions": {
+          "fr": "Vérifiez la date et les heures selon le fuseau du restaurant quand vous consultez les transactions ou la période de clôture. Après minuit, revenez au jour précédent pour rechercher une opération passée avant le changement de jour.",
+          "en": "Check the date and time in the restaurant timezone when viewing transactions or the closing period. After midnight, go back to the prior day to find activity before the date changed.",
+          "he": "בדקו את התאריך והשעות לפי אזור הזמן של המסעדה כאשר מציגים עסקאות או את תקופת הסגירה. אחרי חצות, חזרו ליום הקודם כדי למצוא פעולה שבוצעה לפני שינוי התאריך."
         }
       }
     ],
@@ -14693,6 +14831,19 @@
           "en": "Enter a complete number with its country code. Foody’s phone check removes spaces and invisible clipboard formatting before validation; it does not correct digits or accept letters or extensions. If your form still rejects a pasted number, retype it in international format and check the digits before continuing. An accepted format does not confirm ownership or the existence of a WhatsApp account. Any SMS verification and other order requirements still apply.",
           "he": "הזינו מספר מלא עם קידומת מדינה. בדיקת הטלפון של Foody מסירה רווחים ותווי עיצוב בלתי נראים מהעתקה והדבקה לפני האימות; היא אינה מתקנת ספרות ואינה מקבלת אותיות או שלוחות. אם הטופס עדיין דוחה מספר שהודבק, הקלידו אותו מחדש בפורמט בינלאומי ובדקו את הספרות לפני ההמשך. פורמט שאושר אינו מאמת בעלות או קיום של חשבון WhatsApp. אימות SMS ככל שנדרש ושאר תנאי ההזמנה עדיין חלים."
         }
+      },
+      {
+        "id": "series-service-days",
+        "title": {
+          "fr": "Choisir un jour servi",
+          "en": "Choose an available fulfillment day",
+          "he": "בחירת יום מסירה זמין"
+        },
+        "instructions": {
+          "fr": "Pour une précommande hebdomadaire, choisissez retrait ou livraison. La liste indique les jours de la série où ce service est disponible. Au paiement, vérifiez la date et le créneau récapitulés. Si un jour vient de changer, rechargez et sélectionnez un créneau proposé.",
+          "en": "For a weekly preorder, choose pickup or delivery. The list shows the series days on which that service is available. At checkout, check the date and time window in your summary. If a day has just changed, reload and select an offered time.",
+          "he": "בהזמנה שבועית מראש, בחרו איסוף או משלוח. הרשימה מציגה את ימי הסדרה שבהם השירות זמין. בתשלום, בדקו את התאריך ואת חלון הזמן שמופיעים בסיכום. אם היום השתנה, רעננו ובחרו מועד זמין."
+        }
       }
     ],
     "audience": "public",
@@ -16266,9 +16417,9 @@
           "he": "בדיקת הסבב הנוכחי ללא הזמנות"
         },
         "instructions": {
-          "fr": "GET /api/v1/orders/series conserve les dates de remise triées et les agrégats existants, puis ajoute les jours du lot courant sans inventer de commande. Le champ facultatif is_current identifie une seule date par défaut : le premier jour de remise non passé du lot opérationnel. Le lot reste courant jusqu’à la fin de son dernier jour dans le fuseau du restaurant. Le choix de la carte et les règles publiques de prise de commande conservent leur propre résolution. Le client recharge la liste toutes les minutes visibles et au retour sur l’onglet ; Accueil et Commandes suivent le lot courant, mais préservent une sélection historique effectuée sur la page et les liens explicites de suivi des paiements. Valider les limites de clôture, minuit local, changement d’heure, plusieurs jours de remise, isolation restaurant, zéro commande et agrégats existants. Déployer API avant Admin et publier les procédures ensemble.",
-          "en": "GET /api/v1/orders/series keeps the existing sorted fulfillment dates and aggregates, then includes the current batch’s service days without creating an order. Optional is_current marks one default date: the operational batch’s first fulfillment day that has not passed. The batch stays current through its final day in restaurant time. Menu selection and public ordering rules keep their separate resolution. The client refreshes every visible minute and on tab return; Home and Orders follow the current batch while preserving history chosen on the open page and explicit payment-attention links. Validate cutoff boundaries, local midnight, DST, multiple fulfillment days, tenant isolation, zero orders and existing aggregates. Deploy API before Admin and publish procedures with the feature.",
-          "he": "הנתיב GET /api/v1/orders/series שומר על תאריכי המסירה הממוינים ועל הסיכומים הקיימים ומוסיף את ימי הסבב הנוכחי בלי ליצור הזמנה. השדה האופציונלי is_current מסמן תאריך ברירת מחדל יחיד: יום המסירה הראשון בסבב התפעולי שטרם עבר. הסבב נשאר נוכחי עד סוף יומו האחרון באזור הזמן של המסעדה. בחירת התפריט וכללי ההזמנה הציבוריים שומרים על החישוב הנפרד שלהם. הלקוח מרענן בכל דקה כשהדף גלוי ובחזרה ללשונית; דף הבית וההזמנות עוקבים אחר הסבב, אך שומרים על בחירת היסטוריה בדף הפתוח ועל קישורי מעקב תשלומים מפורשים. יש לבדוק גבולות סגירה, חצות מקומי, שעון קיץ, מספר ימי מסירה, הפרדת מסעדות, אפס הזמנות וסיכומים קיימים. פרסו API לפני Admin ופרסמו את ההוראות יחד עם השינוי."
+          "fr": "Le filtre Séries charge les lots du restaurant et transmet leur référence aux commandes et aux rapports. Chaque lot conserve sa clé d’origine, ses jours et ses fenêtres locales. Une exception met à jour le calendrier à venir. Une commande existante garde son jour promis jusqu’à un report explicite. Les historiques sans rattachement prouvé restent accessibles par date de remise. Pour les dates civiles, utilisez l’intervalle allant du début local du premier jour au début local du lendemain du dernier jour, borne supérieure exclue.",
+          "en": "The Series filter loads the restaurant’s lots and sends their reference to orders and reports. Each lot keeps its original key, service days, and local windows. An exception updates the upcoming schedule. An existing order keeps its promised day until individually rescheduled. History with no proven assignment remains accessible by fulfillment date. A civil-date interval starts at the local beginning of the first day and ends immediately before the local beginning of the day following the last day.",
+          "he": "מסנן הסדרות טוען את סדרות המסעדה ומעביר את המזהה להזמנות ולדוחות. כל סדרה שומרת על המזהה המקורי, ימי השירות וחלונות הזמן המקומיים. חריגה מעדכנת את לוח הזמנים העתידי. הזמנה קיימת שומרת על היום שהובטח עד לשינוי פרטני. היסטוריה ללא שיוך מאומת זמינה לפי תאריך מסירה. טווח תאריכים מקומי מתחיל בתחילת היום הראשון ומסתיים לפני תחילת היום שאחרי היום האחרון."
         }
       },
       {
@@ -16950,9 +17101,9 @@
           "he": "בדיקת הסבב הנוכחי ללא הזמנות"
         },
         "instructions": {
-          "fr": "GET /api/v1/orders/series conserve les dates de remise triées et les agrégats existants, puis ajoute les jours du lot courant sans inventer de commande. Le champ facultatif is_current identifie une seule date par défaut : le premier jour de remise non passé du lot opérationnel. Le lot reste courant jusqu’à la fin de son dernier jour dans le fuseau du restaurant. Le choix de la carte et les règles publiques de prise de commande conservent leur propre résolution. Le client recharge la liste toutes les minutes visibles et au retour sur l’onglet ; Accueil et Commandes suivent le lot courant, mais préservent une sélection historique effectuée sur la page et les liens explicites de suivi des paiements. Valider les limites de clôture, minuit local, changement d’heure, plusieurs jours de remise, isolation restaurant, zéro commande et agrégats existants. Déployer API avant Admin et publier les procédures ensemble.",
-          "en": "GET /api/v1/orders/series keeps the existing sorted fulfillment dates and aggregates, then includes the current batch’s service days without creating an order. Optional is_current marks one default date: the operational batch’s first fulfillment day that has not passed. The batch stays current through its final day in restaurant time. Menu selection and public ordering rules keep their separate resolution. The client refreshes every visible minute and on tab return; Home and Orders follow the current batch while preserving history chosen on the open page and explicit payment-attention links. Validate cutoff boundaries, local midnight, DST, multiple fulfillment days, tenant isolation, zero orders and existing aggregates. Deploy API before Admin and publish procedures with the feature.",
-          "he": "הנתיב GET /api/v1/orders/series שומר על תאריכי המסירה הממוינים ועל הסיכומים הקיימים ומוסיף את ימי הסבב הנוכחי בלי ליצור הזמנה. השדה האופציונלי is_current מסמן תאריך ברירת מחדל יחיד: יום המסירה הראשון בסבב התפעולי שטרם עבר. הסבב נשאר נוכחי עד סוף יומו האחרון באזור הזמן של המסעדה. בחירת התפריט וכללי ההזמנה הציבוריים שומרים על החישוב הנפרד שלהם. הלקוח מרענן בכל דקה כשהדף גלוי ובחזרה ללשונית; דף הבית וההזמנות עוקבים אחר הסבב, אך שומרים על בחירת היסטוריה בדף הפתוח ועל קישורי מעקב תשלומים מפורשים. יש לבדוק גבולות סגירה, חצות מקומי, שעון קיץ, מספר ימי מסירה, הפרדת מסעדות, אפס הזמנות וסיכומים קיימים. פרסו API לפני Admin ופרסמו את ההוראות יחד עם השינוי."
+          "fr": "Le filtre Séries charge les lots du restaurant et transmet leur référence aux commandes et aux rapports. Chaque lot conserve sa clé d’origine, ses jours et ses fenêtres locales. Une exception met à jour le calendrier à venir. Une commande existante garde son jour promis jusqu’à un report explicite. Les historiques sans rattachement prouvé restent accessibles par date de remise. Pour les dates civiles, utilisez l’intervalle allant du début local du premier jour au début local du lendemain du dernier jour, borne supérieure exclue.",
+          "en": "The Series filter loads the restaurant’s lots and sends their reference to orders and reports. Each lot keeps its original key, service days, and local windows. An exception updates the upcoming schedule. An existing order keeps its promised day until individually rescheduled. History with no proven assignment remains accessible by fulfillment date. A civil-date interval starts at the local beginning of the first day and ends immediately before the local beginning of the day following the last day.",
+          "he": "מסנן הסדרות טוען את סדרות המסעדה ומעביר את המזהה להזמנות ולדוחות. כל סדרה שומרת על המזהה המקורי, ימי השירות וחלונות הזמן המקומיים. חריגה מעדכנת את לוח הזמנים העתידי. הזמנה קיימת שומרת על היום שהובטח עד לשינוי פרטני. היסטוריה ללא שיוך מאומת זמינה לפי תאריך מסירה. טווח תאריכים מקומי מתחיל בתחילת היום הראשון ומסתיים לפני תחילת היום שאחרי היום האחרון."
         }
       },
       {
@@ -18110,6 +18261,19 @@
           "en": "On the main iPad, open Drawer history and the day’s Z. The Z consolidates debits, credits, operation counts and net amounts where the SHVA responses provide them. Under the terminal, choose Reprint SHVA report to use the iPad’s configured Epson receipt printer. An archived copy can be printed with the terminal switched off. This action prints the existing report. If the copy or totals are unavailable, review the confirmations and reports available for each terminal.\n\nUnder the selected terminal, choose **View SHVA report** to read the bank’s copy in Hebrew. Printing uses the same archived report. You can compare the transmission reference on screen and on paper.",
           "he": "באייפד הראשי פתחו היסטוריית קופה ואת דוח Z של היום. הדוח מרכז חיובים, זיכויים, מספר פעולות וסכום נטו כשהתשובות משב״א מספקות את הנתונים. תחת המסוף המתאים בחרו הדפסה חוזרת של דוח שב״א כדי להשתמש במדפסת הקבלות Epson שהוגדרה באייפד. אפשר להדפיס עותק מהארכיון כשהמסוף כבוי. הפעולה מדפיסה את הדוח הקיים. אם העותק או הסכומים אינם זמינים, עיינו באישורים ובדוחות הזמינים לפי מסוף.\n\nתחת המסוף הרצוי בחרו **הצגת דוח שב״א** כדי לקרוא את הדוח הבנקאי בעברית. ההדפסה משתמשת באותו דוח שמור. אפשר להשוות את אסמכתת השידור במסך ובנייר."
         }
+      },
+      {
+        "id": "restaurant-local-pos-operations",
+        "title": {
+          "fr": "Vérifier le jour du restaurant en caisse",
+          "en": "Check the restaurant day on POS",
+          "he": "בדיקת יום המסעדה בקופה"
+        },
+        "instructions": {
+          "fr": "Vérifiez la date et les heures selon le fuseau du restaurant quand vous consultez les transactions ou la période de clôture. Après minuit, revenez au jour précédent pour rechercher une opération passée avant le changement de jour.",
+          "en": "Check the date and time in the restaurant timezone when viewing transactions or the closing period. After midnight, go back to the prior day to find activity before the date changed.",
+          "he": "בדקו את התאריך והשעות לפי אזור הזמן של המסעדה כאשר מציגים עסקאות או את תקופת הסגירה. אחרי חצות, חזרו ליום הקודם כדי למצוא פעולה שבוצעה לפני שינוי התאריך."
+        }
       }
     ],
     "audience": "public",
@@ -18330,6 +18494,19 @@
           "en": "For a restaurant enrolled in the versioned development catalogue, this function must be included in its offer or active trial as well as permitted by the staff role. An excluded feature is rejected by the server. Check Billing for modules and licences, then ask the owner to review an addition. Account and physical POS quotas are separate; exceeding a quota requires the corresponding licences. Historical contracts are not automatically changed.",
           "he": "במסעדה הרשומה לקטלוג עם גרסה בסביבת הפיתוח, היכולת חייבת להיות כלולה בהצעה או בניסיון הפעיל וכן מותרת לפי תפקיד העובד. יכולת מוחרגת נדחית בשרת. בחיוב אפשר לבדוק מודולים ורישיונות ולבקש מהבעלים לבחון תוספת. מכסות חשבונות ועמדות קופה נפרדות; חריגה דורשת את הרישיונות המתאימים. חוזים היסטוריים אינם משתנים אוטומטית."
         }
+      },
+      {
+        "id": "catering-handover-date",
+        "title": {
+          "fr": "Retrouver la date d’un événement",
+          "en": "Find an event’s handover date",
+          "he": "איתור תאריך המסירה של אירוע"
+        },
+        "instructions": {
+          "fr": "Pour retrouver une commande Événement, utilisez **Date de remise** dans Commandes. Le calendrier du restaurant affiche aussi les événements traiteur selon votre accès. En cuisine et dans les livraisons, ouvrez le jour promis sur la commande.",
+          "en": "To find an event order, use **Fulfillment date** in Orders. The restaurant calendar also shows catering events if you have access. In the kitchen and delivery workspaces, open the day promised on the order.",
+          "he": "לחיפוש הזמנת אירוע, השתמשו ב־**תאריך מסירה** במסך הזמנות. לוח המסעדה מציג גם אירועי קייטרינג בהתאם להרשאות. במטבח ובמשלוחים בחרו את היום שהובטח בהזמנה."
+        }
       }
     ],
     "audience": "public",
@@ -18502,6 +18679,19 @@
           "en": "To reprint the combined ticket, open the approved sale in Transactions, choose New receipt, select the receipt printer and print. The copy shows the original sale time and reference. A retry of the same print request reuses its job. For an older sale without a matching sales ticket, open Verifone card receipt to print the archived customer voucher separately. In Transactions, select the recorded Verifone payment or refund. Open Verifone card receipt and expand Customer copy or Merchant copy. The receipt shows the printable fields Ashrait returned for that copy, including the masked card number when supplied. On the POS, use the card print button for the desired copy. The iPad uses its configured Epson receipt printer and the Portable uses its integrated printer. In Admin, open the desired copy and choose Print to use the browser’s print dialog. A print request uses the archived receipt for this transaction. If a copy was not returned or saved when the transaction was recorded, it is unavailable in history.",
           "fr": "Pour réimprimer le ticket complet, ouvrez la vente approuvée dans Transactions, touchez Nouveau reçu, sélectionnez l’imprimante et imprimez. La copie reprend l’heure et la référence de la vente. Réessayer la même demande reprend son impression. Pour une ancienne vente dont le ticket ne peut pas être retrouvé, ouvrez Reçu carte Verifone et imprimez la copie client archivée. Dans Transactions, ouvrez le paiement ou le remboursement Verifone enregistré. Dans Reçu carte Verifone, développez Copie client ou Copie commerçant. La fiche affiche les champs imprimables renvoyés par Ashrait pour cette copie, avec le numéro de carte masqué lorsqu’il est fourni. Sur la caisse, utilisez le bouton d’impression de la copie voulue. L’iPad utilise son imprimante de reçus Epson configurée et le Portable utilise son imprimante intégrée. Dans FoodyAdmin, ouvrez la copie souhaitée puis choisissez Imprimer pour ouvrir la boîte d’impression du navigateur. L’impression utilise le reçu archivé pour cette transaction. Une copie absente de la réponse Ashrait ou de l’archive reste indisponible dans l’historique.",
           "he": "להדפסה חוזרת של התדפיס המשולב, פתחו את העסקה שאושרה במסך עסקאות, בחרו קבלה חדשה, בחרו מדפסת והדפיסו. בעותק מופיעות השעה והאסמכתה של המכירה המקורית. ניסיון חוזר של אותה בקשת הדפסה משתמש באותה משימה. בעסקה ישנה שלא נמצא עבורה תדפיס מכירה תואם, אפשר להדפיס את העותק ללקוח בנפרד מתוך שובר האשראי של Verifone. במסך עסקאות בחרו בתשלום או בהחזר של Verifone שנרשם. תחת קבלת אשראי של Verifone פתחו עותק לקוח או עותק בית עסק. מוצגים השדות ש-Ashrait החזירה להדפסה בעותק, כולל מספר כרטיס ממוסך אם הוחזר. בקופה לחצו על לחצן ההדפסה של העותק הרצוי. באייפד ההדפסה נשלחת למדפסת הקבלות Epson שהוגדרה, וב-Portable למדפסת המובנית. ב-FoodyAdmin פתחו את העותק ובחרו הדפסה כדי להשתמש בחלון ההדפסה של הדפדפן. ההדפסה משתמשת בקבלה שנשמרה לעסקה זו. עותק שלא הוחזר או לא נשמר אינו זמין בהיסטוריה."
+        }
+      },
+      {
+        "id": "restaurant-local-transaction-dates",
+        "title": {
+          "fr": "Lire une date de transaction",
+          "en": "Read a transaction date",
+          "he": "קריאת תאריך עסקה"
+        },
+        "instructions": {
+          "fr": "Dans **Transactions**, sélectionnez la période d’encaissement. Les jours et les heures suivent le fuseau du restaurant. Pour chercher la date de remise du client, ouvrez la commande associée.",
+          "en": "In **Transactions**, select the payment period. Dates and times follow the restaurant timezone. Open the associated order to find the customer’s fulfillment date.",
+          "he": "במסך **עסקאות**, בחרו את תקופת התשלום. התאריכים והשעות מוצגים לפי אזור הזמן של המסעדה. פתחו את ההזמנה המשויכת כדי לראות את תאריך המסירה."
         }
       }
     ]
