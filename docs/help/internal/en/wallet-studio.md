@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - customers
   - customers-wallet-studio
-updatedAt: '2026-11-24'
+updatedAt: '2026-11-25'
 featureId: customers-wallet-studio
 audience: internal
 releaseStatus: local-release-unverified
@@ -59,7 +59,7 @@ On a phone, open the enrollment link, sign in, accept the terms and join. On an 
 
 ## Design a card manually
 
-In **Wallet Studio → Card layout**, choose **Table journal** for a photo with a gingham band or **Coffee poster** for a cutout in front of a wave. Upload your logo and photo, or choose **Use website logo** and **Use website photo** to select those assets from the published site. Open **Artwork title** to edit the text, typeface, size, position and angle. **Pattern and background** sets the colors, pattern and divider position. **Photo placement** lets you move the image, trim transparent margins and place it in front of the title. Under **Logo and member information**, choose the balance alone or with its target, then the remaining progress or the program benefit. Compare the **Poster** and **Classic card** Apple previews and open **Google Wallet**. iPhone uses the poster format from iOS 27. Use the sample balance to simulate progress. Select **Save draft**, test the Apple pass, then **Publish design** to release it to customer cards.
+In **Wallet Studio → Card layout**, choose **Table journal** for a photo with a gingham band or **Coffee poster** for a cutout in front of a wave. Upload your logo and photo, or choose **Use website logo** and **Use website photo** to select those assets from the published site. Open **Artwork title** to edit the text, typeface, size, position and angle. **Pattern and background** sets the colors, pattern and divider position. **Photo placement** lets you move the image, trim transparent margins and place it in front of the title. Under **Logo and member information**, choose the balance alone or with its target, then the remaining progress or the program benefit. Compare the **Poster** and **Classic card** Apple previews and open **Google Wallet**. On iPhone, the poster format is available from iOS 27. Wallet centers the QR code. In the preview, move the title or photo if the code covers them. If your text color is hard to read on the footer, Foody uses a contrasting background for the reward and the “Powered by Foody” credit. Use the sample balance to simulate progress. Select **Save draft**, test the Apple pass, then **Publish design** to release it to customer cards.
 
 <span id="visit-stamp-card" />
 
