@@ -118,7 +118,7 @@ The compact theme and PosAppFrame protect routes, dialogs and actions with SafeA
 
 ## Verify the current batch without orders
 
-GET /api/v1/orders/series keeps the existing sorted fulfillment dates and aggregates, then includes the current batch’s service days without creating an order. Optional is_current marks one default date: the operational batch’s first fulfillment day that has not passed. The batch stays current through its final day in restaurant time. Menu selection and public ordering rules keep their separate resolution. The client refreshes every visible minute and on tab return; Home and Orders follow the current batch while preserving history chosen on the open page and explicit payment-attention links. Validate cutoff boundaries, local midnight, DST, multiple fulfillment days, tenant isolation, zero orders and existing aggregates. Deploy API before Admin and publish procedures with the feature.
+The Series filter loads the restaurant’s lots and sends their reference to orders and reports. Each lot keeps its original key, service days, and local windows. An exception updates the upcoming schedule. An existing order keeps its promised day until individually rescheduled. History with no proven assignment remains accessible by fulfillment date. A civil-date interval starts at the local beginning of the first day and ends immediately before the local beginning of the day following the last day.
 
 <span id="prepared-sumit-checkout-integration" />
 
