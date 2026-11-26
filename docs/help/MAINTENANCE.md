@@ -1,3 +1,9 @@
+## Pilote KDS sur iPad et Android (26 novembre 2026)
+
+Publier le guide Appareils et écrans cuisine dans les trois langues avec les versions compatibles de foodyserver (migration 354), FoodyAdmin et FoodyPOS pour Android et iPad. Les postes dédiés s'activent par restaurant et tablette. Vérifier sur données synthétiques Chaud et Passe, le toucher d'un article et d'un en-tête, la réconciliation, le changement de poste et la révocation. La recette physique du fournisseur comprend le maintien de l'identité, la relance sur coupure secteur et un service complet. Le guide technique et la matrice de recette se trouvent dans `foodypos/docs/android-kds.md`.
+
+Les contrats API, Admin et POS épinglent le commit Landing de cette recette. Publier les guides FR, HE et EN avec les versions compatibles des trois services.
+
 ## Sous-groupes de carte (22 novembre 2026)
 
 Publier ensemble les guides en français, hébreu et anglais avec l’API, les clients Admin et Web et la version POS compatibles. Vérifier une carte synthétique avec un parent vide, deux sous-groupes et un groupe simple. Contrôler la deuxième ligne sur Commander, le brouillon et son aperçu dans Admin, ainsi que l’ouverture des tuiles et le retour d’un niveau en caisse. Vérifier aussi une disposition de caisse personnalisée. Épingler la révision Landing immuable revue dans les contrats consommateurs avant la validation distante.

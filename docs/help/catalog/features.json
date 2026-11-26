@@ -11532,17 +11532,48 @@
       "foodyadmin": [
         "src/app/[restaurantId]/settings/devices/**",
         "src/app/[restaurantId]/settings/kitchen-displays/**",
-        "src/components/settings/KitchenStationSettings.tsx"
+        "src/components/settings/KitchenStationSettings.tsx",
+        "src/components/settings/KitchenTablets.tsx",
+        "src/lib/kds-tablets.ts",
+        "src/lib/i18n.tsx",
+        "src/lib/api.ts"
       ],
       "foodyserver": [
         "internal/devices/**",
-        "internal/kitchen/**"
+        "internal/kitchen/**",
+        "internal/kds/**",
+        "internal/orders/kitchen_*.go",
+        "internal/orders/device_kitchen.go",
+        "internal/orders/order_lifecycle_v2_kitchen.go",
+        "internal/common/kitchen_models.go",
+        "migrations/354_dedicated_kds_tablets.sql",
+        "cmd/server/boot_models.go",
+        "cmd/server/main.go",
+        "internal/auth/middleware.go",
+        "internal/auth/modular_access.go",
+        "internal/common/models.go",
+        "internal/entitlements/capabilities.json",
+        "internal/orders/full_service.go",
+        "internal/orders/full_service_handler.go",
+        "internal/orders/handler.go",
+        "internal/orders/service.go",
+        "internal/support/corpus.json"
       ],
       "foodypos": [
         "lib/features/kitchen_display/**",
         "lib/services/devices/**",
         "lib/features/settings/presentation/device_forget_confirmation.dart",
-        "lib/features/settings/presentation/hardware_settings_page.dart"
+        "lib/features/settings/presentation/hardware_settings_page.dart",
+        "lib/features/kitchen/domain/kitchen_station.dart",
+        "lib/features/kitchen/data/*kitchen*.dart",
+        "lib/features/kitchen/presentation/kitchen_*.dart",
+        "lib/features/kitchen/presentation/service_kitchen_page.dart",
+        "android/app/src/main/kotlin/com/foodypos/app/MainActivity.kt",
+        "ios/Runner/AppDelegate.swift",
+        "lib/core/l10n/app_*.arb",
+        "lib/features/auth/presentation/login_page.dart",
+        "lib/main.dart",
+        "lib/services/network/api_service.dart"
       ]
     },
     "operations": [
@@ -11596,6 +11627,45 @@
           "en": "Open the assigned KDS, inspect released tickets and advance or complete them using permitted controls. Held food is not a released ticket. Recall/priority actions must target the displayed ticket; do not re-send an order merely because its station is offline.",
           "fr": "Ouvrez le KDS affecté, vérifiez les tickets lancés et avancez ou terminez-les avec les actions autorisées. Un plat en attente n’est pas un ticket lancé. Rappel/priorité ciblent le ticket affiché ; ne renvoyez pas une commande uniquement parce que le poste est hors ligne.",
           "he": "פתחו מסך מטבח משויך, בדקו כרטיסים ששוגרו וקדמו או סיימו בהרשאה. מזון מושהה אינו כרטיס משוגר. אחזור ועדיפות מיועדים לכרטיס המוצג; אין לשגר שוב הזמנה רק משום שהתחנה לא מחוברת."
+        }
+      },
+      {
+        "id": "pair-android",
+        "title": {
+          "en": "Pair an iPad or Android kitchen display",
+          "fr": "Associer un iPad ou une tablette Android à la cuisine",
+          "he": "שיוך iPad או טאבלט Android למסך מטבח ייעודי"
+        },
+        "instructions": {
+          "en": "On the compatible pilot release, an owner or manager with permission to edit settings opens **Settings → Kitchen displays** in FoodyAdmin and enables dedicated kitchen tablets for the restaurant. Select the tablet in inventory, or register it with a recognisable name. Save a kitchen profile if the restaurant has none. Choose a default station and grant access to one, several or all stations in the restaurant, select whether the tablet can update tickets, then save its assignment. Generate an eight-character code. On the iPad or Android tablet, open **Dedicated kitchen display** on the FoodyPOS sign-in screen, enter the code within ten minutes and check the station name. A code activates one tablet. Issuing a replacement ends the previous identity.",
+          "fr": "Sur la version pilote compatible, le propriétaire ou un gestionnaire autorisé à modifier les réglages ouvre **Paramètres → Écrans cuisine** dans FoodyAdmin et active les tablettes cuisine dédiées du restaurant. Sélectionnez la tablette dans l’inventaire ou enregistrez-la avec un nom reconnaissable. Si le restaurant débute, enregistrez un profil cuisine. Choisissez le poste par défaut. Autorisez un poste, plusieurs postes ou tous les postes du restaurant. Choisissez le droit de modifier les tickets, puis enregistrez l’affectation. Générez le code à huit caractères. Sur l’iPad ou la tablette Android, ouvrez **Écran cuisine dédié** depuis l’écran de connexion de FoodyPOS, saisissez le code dans les dix minutes et vérifiez le nom du poste. Le code associe une seule tablette. Un code de remplacement met fin à l’identité précédente.",
+          "he": "בגרסת הפיילוט התואמת, בעלים או מנהל עם הרשאה לעריכת הגדרות פותח ב־FoodyAdmin את **הגדרות ← מסכי מטבח** ומפעיל את הטאבלטים הייעודיים למטבח במסעדה. בוחרים את הטאבלט מהמלאי או רושמים אותו בשם מזוהה. במסעדה חדשה שומרים תחילה פרופיל מטבח. בוחרים עמדת ברירת מחדל ומאפשרים גישה לעמדה אחת, לכמה עמדות או לכל עמדות המסעדה. בוחרים אם לאפשר עדכון כרטיסים ושומרים את השיוך. מפיקים קוד בן שמונה תווים. במסך הכניסה ל־FoodyPOS ב־iPad או בטאבלט Android בוחרים **מסך מטבח ייעודי**, מזינים את הקוד בתוך עשר דקות ובודקים את שם העמדה. הקוד חד־פעמי. הפקת קוד חלופי מבטלת את הזהות הקודמת."
+        }
+      },
+      {
+        "id": "station-selection",
+        "title": {
+          "en": "Switch stations or set up a pass overview",
+          "fr": "Changer de poste ou configurer une vue d’ensemble au passe",
+          "he": "מעבר בין עמדות ותצוגה כוללת בעמדת המסירה"
+        },
+        "instructions": {
+          "en": "A tablet opens one station at a time. An assigned list lets the cook switch among those stations from the station selector. All stations includes current and future profiles in this restaurant. A manager can change the assignment while the tablet stays paired. For a kitchen overview, create a pass profile with the required order sources, dining options and every category. An empty category or register selection includes future entries. Enable held courses to see upcoming items. Use view-only access on a display used for monitoring.",
+          "fr": "La tablette affiche un poste à la fois. Avec une sélection de postes, le cuisinier passe de l’un à l’autre depuis le sélecteur. « Tous les postes » inclut les profils actuels et futurs du restaurant. Le gestionnaire peut modifier l’affectation pendant que la tablette reste associée. Pour une vue d’ensemble, configurez un profil Passe couvrant les sources, modes de service et catégories souhaités. Une sélection vide de catégories ou de caisses les inclut toutes, y compris les futures. Activez les plats en attente pour voir ceux à venir. Choisissez la lecture seule pour un écran de suivi.",
+          "he": "הטאבלט מציג עמדה אחת בכל פעם. כשנבחרו כמה עמדות, הטבח יכול לעבור ביניהן בבורר העמדות. הבחירה בכל העמדות כוללת גם פרופילים שיתווספו במסעדה. מנהל יכול לעדכן את השיוך בלי לצמד שוב את הטאבלט. לתצוגה כוללת מגדירים פרופיל מסירה ובוחרים את מקורות ההזמנה, סוגי השירות והקטגוריות הרצויים. בחירה ריקה בקטגוריות או בקופות כוללת את כולן, גם בעתיד. מציגים מנות בהמתנה לפי הצורך ובוחרים הרשאת צפייה בלבד למסך מעקב."
+        }
+      },
+      {
+        "id": "touch-and-recovery",
+        "title": {
+          "en": "Complete by touch and recover after disconnection",
+          "fr": "Terminer au toucher et reprendre après une coupure",
+          "he": "השלמה בנגיעה וחזרה לעבודה אחרי ניתוק"
+        },
+        "instructions": {
+          "en": "Touch an item to mark that line, or the ticket header to complete the routed items at this station. Undo during the three-second delay to cancel the touch. The completed tab offers recall. At the pass, prep marks help coordinate the rest of the ticket. A held course or an advance preview of a scheduled pickup becomes actionable after kitchen release. Setting an alert time, priority or ticket completion affects kitchen work. Cash settlement and table occupancy use their respective FoodyPOS workflows. During a network outage the display shows the age of its last update and suspends actions. Reconnect, refresh and read the confirmed state before touching again. A normal app restart restores the association. For a lost or replaced device, check last contact in Admin, revoke its identity and pair the replacement.",
+          "fr": "Touchez une ligne pour marquer cet article, ou l’en-tête pour terminer les articles acheminés à ce poste. Vous disposez de trois secondes pour annuler le geste. Retrouvez un ticket dans les terminés pour le rappeler. Au passe, les marques de préparation montrent les articles déjà prêts. Un plat en attente ou un retrait programmé affiché à l’avance devient actionnable après son envoi en cuisine. Les alertes, la priorité et la complétion concernent la cuisine. L’encaissement et la libération de table ont leurs propres parcours dans FoodyPOS. Hors connexion, l’écran indique l’ancienneté du tableau et suspend les actions. Reconnectez la tablette, actualisez et lisez l’état confirmé avant un nouveau geste. Une relance ordinaire restaure l’association. Pour une tablette perdue ou remplacée, vérifiez le dernier contact dans Admin, révoquez son identité et associez la remplaçante.",
+          "he": "נוגעים בשורת פריט כדי לסמן אותו או בכותרת הכרטיס כדי להשלים את הפריטים המנותבים לעמדה. אפשר לבטל את הנגיעה בתוך שלוש שניות. בלשונית הכרטיסים שהושלמו אפשר להחזיר כרטיס לעבודה. בעמדת המסירה רואים אילו פריטים כבר הוכנו. מנה בהמתנה או הזמנת איסוף עתידית ניתנות לעדכון אחרי שליחתן למטבח. ההתראות, העדיפות וההשלמה מתייחסות לעבודת המטבח. גבייה ופינוי שולחן נעשים במסכים שלהם ב־FoodyPOS. בניתוק מוצג הזמן שחלף מאז העדכון והפעולות מושהות. מחברים מחדש, מרעננים ובודקים מה אושר לפני נגיעה נוספת. בפתיחה מחדש השיוך משוחזר. אם הטאבלט אבד או הוחלף, בודקים מתי התחבר לאחרונה בממשק הניהול, מבטלים את זהותו ומצמדים את המכשיר החלופי."
         }
       },
       {

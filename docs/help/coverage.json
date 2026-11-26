@@ -1493,17 +1493,48 @@
         "foodyadmin": [
           "src/app/[restaurantId]/settings/devices/**",
           "src/app/[restaurantId]/settings/kitchen-displays/**",
-          "src/components/settings/KitchenStationSettings.tsx"
+          "src/components/settings/KitchenStationSettings.tsx",
+          "src/components/settings/KitchenTablets.tsx",
+          "src/lib/kds-tablets.ts",
+          "src/lib/i18n.tsx",
+          "src/lib/api.ts"
         ],
         "foodyserver": [
           "internal/devices/**",
-          "internal/kitchen/**"
+          "internal/kitchen/**",
+          "internal/kds/**",
+          "internal/orders/kitchen_*.go",
+          "internal/orders/device_kitchen.go",
+          "internal/orders/order_lifecycle_v2_kitchen.go",
+          "internal/common/kitchen_models.go",
+          "migrations/353_android_kds_tablets.sql",
+          "cmd/server/boot_models.go",
+          "cmd/server/main.go",
+          "internal/auth/middleware.go",
+          "internal/auth/modular_access.go",
+          "internal/common/models.go",
+          "internal/entitlements/capabilities.json",
+          "internal/orders/full_service.go",
+          "internal/orders/full_service_handler.go",
+          "internal/orders/handler.go",
+          "internal/orders/service.go",
+          "internal/support/corpus.json"
         ],
         "foodypos": [
           "lib/features/kitchen_display/**",
           "lib/services/devices/**",
           "lib/features/settings/presentation/device_forget_confirmation.dart",
-          "lib/features/settings/presentation/hardware_settings_page.dart"
+          "lib/features/settings/presentation/hardware_settings_page.dart",
+          "lib/features/kitchen/domain/kitchen_station.dart",
+          "lib/features/kitchen/data/*kitchen*.dart",
+          "lib/features/kitchen/presentation/kitchen_*.dart",
+          "lib/features/kitchen/presentation/service_kitchen_page.dart",
+          "android/app/src/main/kotlin/com/foodypos/app/MainActivity.kt",
+          "ios/Runner/AppDelegate.swift",
+          "lib/core/l10n/app_*.arb",
+          "lib/features/auth/presentation/login_page.dart",
+          "lib/main.dart",
+          "lib/services/network/api_service.dart"
         ]
       }
     },
