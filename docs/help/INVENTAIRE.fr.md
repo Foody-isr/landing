@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-11-26.
 
-115 fiches de fonctionnalités, 1083 procédures/sous-fonctionnalités, dont 103 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2770 fichiers applicatifs et 2392 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+115 fiches de fonctionnalités, 1084 procédures/sous-fonctionnalités, dont 103 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2772 fichiers applicatifs et 2393 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,11 +10,11 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyadmin | 844 | 849 | 0d249481113d ; versioned |
+| foodyadmin | 845 | 850 | 05c29e08f4e6 ; versioned |
 | foodybackoffice | 56 | 52 | 68b7b6c9b0fa ; versioned |
-| foodylanding | 158 | 31 | e3b458e8d3f9 ; versioned |
-| foodypos | 432 | 186 | 968d88480d79 ; versioned |
-| foodyserver | 887 | 1067 | 50abe37185ba ; versioned |
+| foodylanding | 158 | 31 | fa40efba49e7 ; versioned |
+| foodypos | 433 | 186 | fd4e644e88ab ; versioned |
+| foodyserver | 887 | 1067 | ed767527dfe9 ; versioned |
 | foodyweb | 393 | 207 | cf60c22edb80 ; versioned |
 
 ## getting-started
@@ -706,7 +706,7 @@ Identifiant : `order-detail`. Public : public. Disponibilité : available. Servi
 
 ### [Calendrier du restaurant et exceptions](../../src/content/help/fr/orders/calendar.mdx)
 
-Identifiant : `calendar`. Public : public. Disponibilité : available. Services : foodyadmin.
+Identifiant : `calendar`. Public : public. Disponibilité : available. Services : foodyadmin, foodypos.
 
 - [Examiner une date](../../src/content/help/fr/orders/calendar.mdx#browse)
 - [Ajouter ou modifier une exception](../../src/content/help/fr/orders/calendar.mdx#exceptions)
@@ -1338,6 +1338,7 @@ Identifiant : `delivery-dispatch`. Public : public. Disponibilité : available. 
 - [Vérifier le plafond de préautorisation au poids](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#weight-hold-margin)
 - [Choisir les livraisons d’une date](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#date)
 - [Lire le tableau de répartition](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#dispatch-workspace)
+- [Parcourir une tournée en plein écran](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#fullscreen-route-map)
 - [Retrouver une tournée passée](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#route-history)
 - [Affecter coursiers et arrêts](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#assign)
 - [Insérer une nouvelle commande dans une tournée](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#insert-planned-delivery)
