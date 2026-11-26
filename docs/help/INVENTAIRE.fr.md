@@ -1,6 +1,6 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-10-18.
+Révision du relevé : 2026-11-26.
 
 115 fiches de fonctionnalités, 1083 procédures/sous-fonctionnalités, dont 103 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2770 fichiers applicatifs et 2392 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
@@ -10,11 +10,11 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyadmin | 844 | 849 | 7982ca03ea7a ; versioned |
+| foodyadmin | 844 | 849 | 0d249481113d ; versioned |
 | foodybackoffice | 56 | 52 | 68b7b6c9b0fa ; versioned |
-| foodylanding | 158 | 31 | 12f26e16428f ; versioned |
+| foodylanding | 158 | 31 | e3b458e8d3f9 ; versioned |
 | foodypos | 432 | 186 | 968d88480d79 ; versioned |
-| foodyserver | 887 | 1067 | 1c37b20ba00a ; versioned |
+| foodyserver | 887 | 1067 | 50abe37185ba ; versioned |
 | foodyweb | 393 | 207 | cf60c22edb80 ; versioned |
 
 ## getting-started
