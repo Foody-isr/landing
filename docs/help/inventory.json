@@ -6407,7 +6407,7 @@
     },
     "foodylanding": {
       "repository": "https://github.com/Foody-isr/landing",
-      "sourceCommit": "b27e0327c00d1f2110deb9092edd0062559961f5",
+      "sourceCommit": "33c92c3e1440f4b130ae6d81507208be033d0b79",
       "releaseStatus": "versioned",
       "sourceSnapshot": "7872182414e2c2bc08e3f0e2b65e52d1f5419988d4e77ebd46afb77180470947",
       "workingTreeHasChanges": true,
@@ -10516,9 +10516,9 @@
     },
     "foodyserver": {
       "repository": "https://github.com/Foody-isr/server",
-      "sourceCommit": "b7d0ea91d260920eae11dcc25845e53243671dd4",
+      "sourceCommit": "6d34b0284596872a55304609130ee68f7139dab7",
       "releaseStatus": "versioned",
-      "sourceSnapshot": "c5bb09c301bc49c254b5ab3ded29bebedd34981620ac0a88b0aca5bb90ddfd0a",
+      "sourceSnapshot": "483d59a2343adceeb3d9c86d3dfa91155162871599f2a919af19ae24504a5ef9",
       "workingTreeHasChanges": true,
       "sourceFiles": {
         "cmd/epson-sdp-sim/main.go": {
@@ -10552,7 +10552,7 @@
           ]
         },
         "cmd/server/boot_models.go": {
-          "sha256": "490d567768f18179630c16e9935a3a7386beb7cb5919eda3caf096dc17c81059",
+          "sha256": "d188836a9b95e72fe947d9721e4b0dd9eb93999f1d602aa201e297bfd6d0e89d",
           "features": [
             "staff-invitations",
             "customers-profiles",
@@ -11327,7 +11327,7 @@
           ]
         },
         "internal/common/end_of_day.go": {
-          "sha256": "6bcd753e069cfae1183751546fb334e9a20505bbb5442955baa368e85d7565b0",
+          "sha256": "0da9140619757f48a8cf94d44b4e55c7e66a0e5afeed704dff5e684435a23cf9",
           "features": [
             "pos-end-of-day"
           ]
@@ -14075,7 +14075,7 @@
           ]
         },
         "internal/orders/end_of_day_recovery.go": {
-          "sha256": "6ef08919072abfe89d40cd92a40bc33c963a8a12d62d5444a50b4d14f43a265f",
+          "sha256": "5bddfa7bfe577ac120e2b5c71ecc370524626f346ef09fb33c1ee709ac345cc6",
           "features": [
             "pos-end-of-day"
           ]
@@ -16907,7 +16907,7 @@
           ]
         },
         "internal/testutil/testutil.go": {
-          "sha256": "6af08fb1c9a54d51f8f8abb9ac9915f67adcafdb0eeb7bf54a8a8331548a732a",
+          "sha256": "af39a87d99b6b658c95ebf47a988e104d6f1cd0999dcd8756905bef4591aefd3",
           "features": [
             "delivery-dispatch",
             "platform-api"
@@ -17526,6 +17526,12 @@
         },
         "migrations/352_cst_manual_eod_attempts.sql": {
           "sha256": "5d3af834a452352cc2260b6a97dfbd2e80fe9a94c9978a0be66ba87c5e922ac4",
+          "features": [
+            "pos-end-of-day"
+          ]
+        },
+        "migrations/353_end_of_day_terminal_resets.sql": {
+          "sha256": "fd37321a342d96ad5f38465cef6293d488cc75184eeb162814cca40715458cb9",
           "features": [
             "pos-end-of-day"
           ]
@@ -62674,6 +62680,10 @@
         {
           "service": "foodyserver",
           "file": "migrations/352_cst_manual_eod_attempts.sql"
+        },
+        {
+          "service": "foodyserver",
+          "file": "migrations/353_end_of_day_terminal_resets.sql"
         }
       ]
     },
@@ -118855,7 +118865,7 @@
     "sharedRuntimeFiles": 432,
     "features": 115,
     "operations": 1098,
-    "sourceFiles": 2778,
+    "sourceFiles": 2779,
     "surfaces": 2397,
     "unclassifiedRoutes": []
   }
