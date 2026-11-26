@@ -1,8 +1,8 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-11-26.
+Révision du relevé : 2026-10-18.
 
-115 fiches de fonctionnalités, 1098 procédures/sous-fonctionnalités, dont 103 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2779 fichiers applicatifs et 2397 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+115 fiches de fonctionnalités, 1101 procédures/sous-fonctionnalités, dont 103 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2790 fichiers applicatifs et 2409 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,11 +10,11 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyadmin | 846 | 851 | 14077b0b18de ; versioned |
+| foodyadmin | 848 | 853 | b145f3632fd2 ; versioned |
 | foodybackoffice | 56 | 52 | 68b7b6c9b0fa ; versioned |
 | foodylanding | 158 | 31 | 33c92c3e1440 ; versioned |
-| foodypos | 433 | 186 | 8abecbe6f4cc ; versioned |
-| foodyserver | 893 | 1070 | 6d34b0284596 ; versioned |
+| foodypos | 437 | 186 | 421f449ed73a ; versioned |
+| foodyserver | 898 | 1080 | 629fe1332316 ; versioned |
 | foodyweb | 393 | 207 | 67fecae3d815 ; versioned |
 
 ## getting-started
@@ -1247,6 +1247,9 @@ Identifiant : `device-kds`. Public : public. Disponibilité : available. Service
 - [Configurer les appareils](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#devices)
 - [Régler les postes cuisine](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#stations)
 - [Traiter les tickets cuisine](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#service)
+- [Associer un iPad ou une tablette Android à la cuisine](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#pair-android)
+- [Changer de poste ou configurer une vue d’ensemble au passe](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#station-selection)
+- [Terminer au toucher et reprendre après une coupure](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#touch-and-recovery)
 - [Oublier un appareil dans FoodyPOS](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#forget-hardware)
 - [Distinguer comptes et postes autorisés](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#commercial-device-capacity)
 
