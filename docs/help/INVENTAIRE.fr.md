@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-11-26.
 
-115 fiches de fonctionnalités, 1097 procédures/sous-fonctionnalités, dont 103 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2778 fichiers applicatifs et 2396 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+115 fiches de fonctionnalités, 1098 procédures/sous-fonctionnalités, dont 103 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2778 fichiers applicatifs et 2397 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,11 +10,11 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyadmin | 845 | 850 | 441bb4eb59bc ; versioned |
+| foodyadmin | 846 | 851 | d07a41a44054 ; versioned |
 | foodybackoffice | 56 | 52 | 68b7b6c9b0fa ; versioned |
-| foodylanding | 158 | 31 | dce43afcb392 ; versioned |
+| foodylanding | 158 | 31 | b27e0327c00d ; versioned |
 | foodypos | 433 | 186 | 8abecbe6f4cc ; versioned |
-| foodyserver | 893 | 1070 | aa56bf369b78 ; versioned |
+| foodyserver | 892 | 1070 | b7d0ea91d260 ; versioned |
 | foodyweb | 393 | 207 | 67fecae3d815 ; versioned |
 
 ## getting-started
@@ -1351,6 +1351,7 @@ Identifiant : `delivery-dispatch`. Public : public. Disponibilité : available. 
 - [Vérifier le plafond de préautorisation au poids](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#weight-hold-margin)
 - [Choisir les livraisons d’une date](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#date)
 - [Lire le tableau de répartition](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#dispatch-workspace)
+- [Parcourir une tournée en plein écran](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#fullscreen-route-map)
 - [Retrouver une tournée passée](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#route-history)
 - [Affecter coursiers et arrêts](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#assign)
 - [Insérer une nouvelle commande dans une tournée](../../src/content/help/fr/delivery/dispatch-and-routes.mdx#insert-planned-delivery)
