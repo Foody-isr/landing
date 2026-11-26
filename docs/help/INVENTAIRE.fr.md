@@ -1,6 +1,6 @@
 # Inventaire fonctionnel Foody
 
-Révision du relevé : 2026-10-18.
+Révision du relevé : 2026-11-26.
 
 115 fiches de fonctionnalités, 1097 procédures/sous-fonctionnalités, dont 103 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2777 fichiers applicatifs et 2396 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
@@ -10,12 +10,12 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyadmin | 844 | 849 | 2fc747827ddf ; versioned |
+| foodyadmin | 845 | 850 | 441bb4eb59bc ; versioned |
 | foodybackoffice | 56 | 52 | 68b7b6c9b0fa ; versioned |
-| foodylanding | 158 | 31 | 12f26e16428f ; versioned |
+| foodylanding | 158 | 31 | dce43afcb392 ; versioned |
 | foodypos | 433 | 186 | 5de860d5afe0 ; versioned |
-| foodyserver | 892 | 1070 | fa732a5b1731 ; versioned |
-| foodyweb | 393 | 207 | cf60c22edb80 ; versioned |
+| foodyserver | 892 | 1070 | f036044fa2bf ; versioned |
+| foodyweb | 393 | 207 | 67fecae3d815 ; versioned |
 
 ## getting-started
 
@@ -262,6 +262,7 @@ Identifiant : `analytics-dashboard`. Public : public. Disponibilité : available
 - [Comparaisons et données indisponibles](../../src/content/help/fr/analytics/dashboard.mdx#section-3)
 - [Rapports détaillés](../../src/content/help/fr/analytics/dashboard.mdx#section-4)
 - [Afficher automatiquement la série actuelle](../../src/content/help/fr/analytics/dashboard.mdx#weekly-series-rollover)
+- [Lire les résultats d’une série](../../src/content/help/fr/analytics/dashboard.mdx#series-performance-and-live-work)
 
 ### [Assistant métier du restaurant](../../src/content/help/fr/analytics/business-assistant.mdx)
 
@@ -291,6 +292,7 @@ Identifiant : `kitchen-availability`. Public : public. Disponibilité : availabl
 - [Afficher et faire défiler l’éditeur de stock](../../src/content/help/fr/kitchen/availability.mdx#stock-editor-layout)
 - [Choisir la source du stock et son profil](../../src/content/help/fr/kitchen/availability.mdx#availability-rule-in-stock-modal)
 - [Gérer les produits déjà préparés](../../src/content/help/fr/kitchen/availability.mdx#prepared-product-stock)
+- [Suivre la disponibilité d’un lot](../../src/content/help/fr/kitchen/availability.mdx#series-stock-after-date-change)
 
 ### [Operations Quotidiennes](../../src/content/help/fr/kitchen/daily-operations.mdx)
 
@@ -313,6 +315,7 @@ Identifiant : `kitchen-daily-operations`. Public : public. Disponibilité : avai
 - [Parcours et guides liés](../../src/content/help/fr/kitchen/daily-operations.mdx#section-26)
 - [Contrôler le journal de stock de la série](../../src/content/help/fr/kitchen/daily-operations.mdx#carte-series-stock)
 - [Identifier les variantes à préparer](../../src/content/help/fr/kitchen/daily-operations.mdx#variant-position-preparation)
+- [Ouvrir la journée de cuisine](../../src/content/help/fr/kitchen/daily-operations.mdx#local-day)
 
 ### [Coût matière](../../src/content/help/fr/kitchen/food-cost.mdx)
 
@@ -646,6 +649,7 @@ Identifiant : `order-types`. Public : public. Disponibilité : available. Servic
 - [Tester la date de passage d’une commande](../../src/content/help/fr/orders/order-types.mdx#ordering-simulation-clock)
 - [Respecter un encaissement carte en cours](../../src/content/help/fr/orders/order-types.mdx#card-collection-recovery)
 - [Accès commercial en développement](../../src/content/help/fr/orders/order-types.mdx#versioned-commercial-access)
+- [Identifier la date du service](../../src/content/help/fr/orders/order-types.mdx#order-and-handover-dates)
 
 ### [Prendre une commande sur la caisse](../../src/content/help/fr/orders/taking-an-order-pos.mdx)
 
@@ -675,6 +679,7 @@ Identifiant : `pos-order-entry`. Public : public. Disponibilité : available. Se
 - [Vérifier les confirmations indépendantes](../../src/content/help/fr/orders/taking-an-order-pos.mdx#independent-lifecycle-confirmations)
 - [Respecter un encaissement carte en cours](../../src/content/help/fr/orders/taking-an-order-pos.mdx#card-collection-recovery)
 - [Accès commercial en développement](../../src/content/help/fr/orders/taking-an-order-pos.mdx#versioned-commercial-access)
+- [Retrouver une commande planifiée en caisse](../../src/content/help/fr/orders/taking-an-order-pos.mdx#scheduled-local-week)
 
 ### [Consulter et modifier une commande](../../src/content/help/fr/orders/order-details.mdx)
 
@@ -706,11 +711,12 @@ Identifiant : `order-detail`. Public : public. Disponibilité : available. Servi
 
 ### [Calendrier du restaurant et exceptions](../../src/content/help/fr/orders/calendar.mdx)
 
-Identifiant : `calendar`. Public : public. Disponibilité : available. Services : foodyadmin.
+Identifiant : `calendar`. Public : public. Disponibilité : available. Services : foodyadmin, foodypos.
 
 - [Examiner une date](../../src/content/help/fr/orders/calendar.mdx#browse)
 - [Ajouter ou modifier une exception](../../src/content/help/fr/orders/calendar.mdx#exceptions)
 - [Retirer une exception obsolète](../../src/content/help/fr/orders/calendar.mdx#remove)
+- [Vérifier la date locale du restaurant](../../src/content/help/fr/orders/calendar.mdx#restaurant-local-calendar)
 
 ### [Précommandes, créneaux et séries](../../src/content/help/fr/orders/preorders-and-batches.mdx)
 
@@ -724,6 +730,7 @@ Identifiant : `preorders`. Public : public. Disponibilité : available. Services
 - [Piloter manuellement les commandes hebdomadaires](../../src/content/help/fr/orders/preorders-and-batches.mdx#manual-weekly-ordering)
 - [Simuler une commande](../../src/content/help/fr/orders/preorders-and-batches.mdx#simulate-order)
 - [Combiner préparation, stock prêt et livraison](../../src/content/help/fr/orders/preorders-and-batches.mdx#product-stock-and-zone-deadlines)
+- [Reporter un jour d’une série](../../src/content/help/fr/orders/preorders-and-batches.mdx#move-one-series-day)
 
 ### [Quantités de production et préparation des colis](../../src/content/help/fr/orders/production-planning.mdx)
 
@@ -736,6 +743,7 @@ Identifiant : `production`. Public : public. Disponibilité : available. Service
 - [Préparer les colis clients](../../src/content/help/fr/orders/production-planning.mdx#packing)
 - [Commandes événement depuis le parcours habituel](../../src/content/help/fr/orders/production-planning.mdx#event-orders)
 - [Choisir la production lors d’une commande manuelle](../../src/content/help/fr/orders/production-planning.mdx#manual-order-production-choice)
+- [Ouvrir la production d’un jour de remise](../../src/content/help/fr/orders/production-planning.mdx#production-handover-day)
 
 ### [Partager et regrouper les additions](../../src/content/help/fr/orders/split-bills.mdx)
 
@@ -829,6 +837,7 @@ Identifiant : `orders-events`. Public : public. Disponibilité : available. Serv
 - [Consulter une empreinte Sumit](../../src/content/help/fr/orders/event-orders.mdx#hold-management)
 - [Avancer et revenir dans la finalisation](../../src/content/help/fr/orders/event-orders.mdx#manual-order-steps)
 - [Accès commercial en développement](../../src/content/help/fr/orders/event-orders.mdx#versioned-commercial-access)
+- [Retrouver la date d’un événement](../../src/content/help/fr/orders/event-orders.mdx#catering-handover-date)
 
 ## payments
 
@@ -884,6 +893,7 @@ Identifiant : `pos-payments`. Public : public. Disponibilité : available. Servi
 - [Vérifier la caisse de l’appareil utilisé](../../src/content/help/fr/payments/pos-checkout.mdx#current-register-access)
 - [Demander une copie du reçu carte](../../src/content/help/fr/payments/pos-checkout.mdx#ashrait-checkout-card-copy)
 - [Proposer le paiement en plusieurs fois](../../src/content/help/fr/payments/pos-checkout.mdx#ashrait-terminal-installment-selection)
+- [Vérifier le jour du restaurant en caisse](../../src/content/help/fr/payments/pos-checkout.mdx#restaurant-local-pos-operations)
 
 ### [Connecter et retrouver le Victa Mini sur iPad](../../src/content/help/fr/payments/victa-mini.mdx)
 
@@ -950,6 +960,7 @@ Identifiant : `pos-end-of-day`. Public : public. Disponibilité : local-release-
 - [Clôturer l’appareil courant](../../src/content/help/fr/payments/end-of-day.mdx#current-register-scope)
 - [Définir la caisse principale](../../src/content/help/fr/payments/end-of-day.mdx#designate-main-register)
 - [Réimprimer un rapport de transmission SHVA](../../src/content/help/fr/payments/end-of-day.mdx#reprint-consolidated-shva)
+- [Vérifier le jour du restaurant en caisse](../../src/content/help/fr/payments/end-of-day.mdx#restaurant-local-pos-operations)
 
 ### [Consulter les transactions](../../src/content/help/fr/payments/transactions.mdx)
 
@@ -964,6 +975,7 @@ Identifiant : `payments-transactions`. Public : public. Disponibilité : availab
 - [Lire une écriture dont la commande est indisponible](../../src/content/help/fr/payments/transactions.mdx#transaction-unavailable-allocation)
 - [Imprimer ou partager un nouveau reçu depuis FoodyPOS](../../src/content/help/fr/payments/transactions.mdx#new-pos-receipt)
 - [Consulter ou imprimer le reçu carte Verifone](../../src/content/help/fr/payments/transactions.mdx#transaction-ashrait-card-receipt)
+- [Lire une date de transaction](../../src/content/help/fr/payments/transactions.mdx#restaurant-local-transaction-dates)
 
 ### [Consulter la dernière transaction du terminal](../../src/content/help/fr/payments/ashrait-terminal-inspection.mdx)
 
@@ -1168,6 +1180,7 @@ Identifiant : `restaurant-profile`. Public : public. Disponibilité : available.
 - [Code caisse à l’activation du personnel](../../src/content/help/fr/settings/restaurant-profile.mdx#staff-activation-pos-code)
 - [Piloter manuellement les commandes hebdomadaires](../../src/content/help/fr/settings/restaurant-profile.mdx#manual-weekly-ordering)
 - [Tester la date de passage d’une commande](../../src/content/help/fr/settings/restaurant-profile.mdx#ordering-simulation-clock)
+- [Choisir les bases de date du restaurant](../../src/content/help/fr/settings/restaurant-profile.mdx#shared-date-defaults)
 
 ### [Règles de commande et de remise](../../src/content/help/fr/settings/fulfillment-and-ordering.mdx)
 
@@ -1510,6 +1523,7 @@ Identifiant : `guest-ordering`. Public : public. Disponibilité : available. Ser
 - [Changer de mode quand la boutique demande de choisir d’abord](../../src/content/help/fr/guest/online-ordering.mdx#service-first)
 - [Accès commercial en développement](../../src/content/help/fr/guest/online-ordering.mdx#versioned-commercial-access)
 - [Vérifier le téléphone de contact](../../src/content/help/fr/guest/online-ordering.mdx#contact-phone-format)
+- [Choisir un jour servi](../../src/content/help/fr/guest/online-ordering.mdx#series-service-days)
 
 ### [Suivi, reçus et moyens enregistrés](../../src/content/help/fr/guest/tracking-and-account.mdx)
 

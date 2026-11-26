@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - delivery
   - delivery-dispatch
-updatedAt: '2026-11-22'
+updatedAt: '2026-11-26'
 featureId: delivery-dispatch
 audience: public
 releaseStatus: available
@@ -38,7 +38,7 @@ Use the date, arrows, or Home shortcut to open a service day. Check the departur
 
 To return to the dashboard from Dispatch, choose **Home** in the Foody Admin sidebar. **Orders** opens the orders section for the same restaurant. On a phone, tap the menu button at the top of the screen to find these destinations. Use the delivery navigation above the board to open **Courier mode** or **Zones** when your role has access.
 
-Choose the service day. **Route** lists remaining stops, **Unassigned** shows available orders and **Addresses to review** lists entrances that need attention. These stops stay assigned to their drivers. Search an order number, customer, street or city. The table shows each stop’s position and arrival window. Select its address or its map marker for access instructions and **Correct address**. Hiding the map keeps your filter and selection. Open a stop with missing coordinates from its table row.
+Choose the service day. **Route** lists remaining stops, **Unassigned** shows available orders and **Addresses to review** lists entrances that need attention. These stops stay assigned to their drivers. Search an order number, customer, street or city. The columns show the stop number, customer name, address and arrival window, in that order. The order number appears below the customer name. Select its address or its map marker for access instructions and **Correct address**. Hiding the map keeps your filter and selection. Open a stop with missing coordinates from its table row.
 
 <span id="route-history" />
 
@@ -84,7 +84,7 @@ The fixed action bar shows the selected stop or, once navigation has started, th
 
 ## Correct a stop’s delivery address
 
-In Deliveries → Dispatch, open the stop and choose **Correct address**. Select the result in the intended city. If Google identifies only the street, you can save it and keep or enter the house number in the form. You can also type a numbered address as “street and number, city”. Saving updates the order and queues the route calculation. For a delivery to someone else, clear the customer profile checkbox. If you know the precise entrance, you can save its coordinates and allow reuse for this building.
+In Deliveries → Dispatch, open the stop and choose **Correct address**. Select the result in the intended city. If Google identifies only the street, you can save it and keep or enter the house number in the form. You can also type a numbered address as “street and number, city”. Saving updates the order and queues the route calculation. For a delivery to someone else, clear the customer profile checkbox. If you know the precise entrance, you can save its coordinates and allow reuse for this building. When two Israeli cities have a street with the same name, Foody checks the street, house number and city before calculating an arrival window. A correction can also use an entrance previously confirmed and shared for this building. If the building cannot be located, the stop stays assigned and appears under **Addresses to review**.
 
 <span id="endpoints" />
 

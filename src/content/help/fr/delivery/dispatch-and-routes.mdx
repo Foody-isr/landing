@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - delivery
   - delivery-dispatch
-updatedAt: '2026-11-22'
+updatedAt: '2026-11-26'
 featureId: delivery-dispatch
 audience: public
 releaseStatus: available
@@ -36,9 +36,9 @@ Choisissez le jour de service avec la date, les flèches ou le raccourci de l’
 
 ## Lire le tableau de répartition
 
-Pour revenir à l’accueil depuis Répartition, choisissez **Accueil** dans le menu latéral de Foody Admin. **Commandes** ouvre la rubrique des commandes du même restaurant. Sur téléphone, touchez le bouton de menu en haut de l’écran pour afficher ces destinations. Pour passer à **Mode livreur** ou **Zones**, utilisez la navigation des livraisons au-dessus du tableau. Les vues proposées dépendent de vos droits.
+Le menu latéral de Foody Admin donne accès à **Accueil** et aux **Commandes** du restaurant. Sur téléphone, ouvrez le menu en haut de l’écran. Les onglets **Mode livreur** et **Zones** apparaissent au-dessus du tableau selon vos droits.
 
-Choisissez le jour de service. **Tournée** affiche les arrêts à livrer, **À affecter** les commandes disponibles et **Adresses à préciser** les entrées à vérifier. Une entrée à préciser reste affectée au livreur. Recherchez un numéro de commande, un nom, une rue ou une ville. Le tableau affiche le rang et le créneau de chaque arrêt. Cliquez sur son adresse ou son point sur la carte pour ouvrir sa fiche avec les indications et **Corriger l’adresse**. Le filtre et la sélection restent actifs quand vous masquez la carte. Un arrêt dont la position manque est accessible depuis le tableau.
+Choisissez le jour. **Tournée** liste les arrêts du livreur, **À affecter** les commandes disponibles et **Adresses à préciser** les entrées à vérifier. Le tableau affiche le numéro d’arrêt, le nom du client, l’adresse et le créneau, dans cet ordre. Le numéro de commande figure sous le nom. Recherchez une commande, un client, une rue ou une ville. Cliquez sur une ligne ou un point de la carte pour voir les indications et **Corriger l’adresse**. Masquer la carte conserve le filtre et la sélection.
 
 <span id="route-history" />
 
@@ -84,7 +84,9 @@ La barre fixe affiche l’arrêt sélectionné ou, dès que la navigation est la
 
 ## Corriger l’adresse d’un arrêt
 
-Dans Livraisons → Répartition, ouvrez l’arrêt puis **Corriger l’adresse**. Choisissez le résultat dans la bonne ville. Si Google indique seulement la rue, vous pouvez l’enregistrer et conserver ou compléter le numéro dans le formulaire. Une adresse numérotée peut aussi être saisie sous la forme « rue et numéro, ville ». L’adresse est enregistrée sur la commande et le calcul reprend en arrière-plan. Pour une livraison chez un tiers, décochez la mise à jour de la fiche client. Si vous connaissez une entrée précise, vous pouvez enregistrer son point GPS et autoriser sa réutilisation pour ce bâtiment.
+Dans Livraisons → Répartition, ouvrez l’arrêt puis **Corriger l’adresse**. Choisissez la bonne ville. Si Google propose la rue seule, conservez ou ajoutez le numéro. Vous pouvez aussi saisir « rue et numéro, ville ». Enregistrez pour mettre à jour la commande et recalculer la tournée. Pour livrer chez un tiers, décochez la mise à jour de la fiche client.
+
+En Israël, si deux villes ont une rue homonyme, Foody vérifie la rue, le numéro et la ville. Vous pouvez enregistrer le point GPS d’une entrée et autoriser sa réutilisation pour ce bâtiment. Foody le reprend aussi lors d’une correction. Si le bâtiment reste introuvable, l’arrêt reste affecté et figure dans **Adresses à préciser**.
 
 <span id="endpoints" />
 
