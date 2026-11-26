@@ -7,12 +7,12 @@ apps: foodypos
 tags:
   - payments
   - pos-end-of-day
-updatedAt: '2026-11-25'
+updatedAt: '2026-11-26'
 featureId: pos-end-of-day
 audience: public
 releaseStatus: local-release-unverified
 ---
-Sur l’iPad, ouvrez Plus → Rapports → Solde en caisse. Les versions compatibles du POS et de l’API permettent de consulter les encaissements du restaurant et de clôturer depuis la caisse principale.
+Sur l’iPad, ouvrez Plus → Rapports → Clôture de journée. Les versions compatibles du POS et de l’API permettent de consulter les encaissements du restaurant et de clôturer depuis la caisse principale.
 
 > **Disponibilité à confirmer**
 > Cette application existe dans les sources. Ce guide ne confirme ni sa distribution publique ni sa disponibilité dans votre version installée.
@@ -27,13 +27,13 @@ Sur la caisse principale, le Z inclut le tiroir du comptoir et les terminaux inc
 
 ## Compter, transmettre et archiver
 
-Avec payments.manage, choisissez Clôturer la session de caisse sur l’iPad principal. Une caisse espèces ouverte exige aussi orders.manage. Vérifiez la liste des terminaux, comptez le tiroir s’il est ouvert, saisissez le montant réel puis touchez Commencer la clôture. Cette action fige le comptage et suspend les nouveaux paiements carte pendant la clôture. Sur l’iPad, utilisez Transmettre la fin de journée pour chaque Mini inclus dans l’ordre affiché. Les Portables exécutent leur transmission à leur tour quand FoodyPOS est ouvert et connecté. Attendez la confirmation de chaque terminal, puis touchez Finaliser et générer le rapport Z. Sur une installation sans caisse principale, confirmez les transmissions de l’appareil utilisé dans son propre parcours.
+Sur l’iPad principal, ouvrez Plus → Rapports → Clôture de journée avec le droit payments.manage. Une caisse espèces ouverte exige aussi orders.manage. Vérifiez la liste des terminaux, comptez le tiroir s’il est ouvert, saisissez le montant réel puis touchez Commencer la clôture. Cette action fige le comptage et suspend les nouveaux paiements carte pendant la clôture. Sur l’iPad, utilisez Transmettre la fin de journée pour chaque Mini inclus dans l’ordre affiché. Les Portables exécutent leur transmission à leur tour quand FoodyPOS est ouvert et connecté. Attendez la confirmation de chaque terminal, puis touchez Finaliser et générer le rapport Z. Sur une installation sans caisse principale, confirmez les transmissions de l’appareil utilisé dans son propre parcours.
 
 <span id="end-of-day-recovery" />
 
 ## Reprendre sans transmettre deux fois
 
-Sur l’iPad principal, ouvrez Plus → Rapports → Solde en caisse. Après une coupure, touchez **Reprendre l’enregistrement**. Foody recherche la confirmation d’origine. Sur un Mini compatible, il compare aussi les rapports SHVA conservés par le terminal. Pour un Portable, rouvrez FoodyPOS sur cet appareil avec une session personnelle autorisée. Conservez la même demande jusqu’au résultat.
+Sur l’iPad principal, ouvrez Plus → Rapports → Clôture de journée. Après une coupure, touchez **Reprendre l’enregistrement**. Foody recherche la confirmation d’origine. Sur un Mini compatible, il compare aussi les rapports SHVA conservés par le terminal. Pour un Portable, rouvrez FoodyPOS sur cet appareil avec une session personnelle autorisée. Conservez la même demande jusqu’au résultat.
 
 Avec la version compatible et les droits de gestion des paiements et de modification des paramètres, le responsable peut choisir **Annuler la clôture non transmise** tant qu’aucun terminal n’a commencé sa transmission. Le tiroir réservé est alors libéré. Après un premier envoi, choisissez **Reprendre sur les terminaux disponibles**. Vérifiez la connexion du terminal. Foody conserve le dépôt à vérifier et autorise les nouvelles ventes sur les terminaux admissibles quand la passerelle donne son accord. Les encaissements suivants appartiennent à la période suivante. Finalisez le Z après réception des confirmations.
 
@@ -61,7 +61,7 @@ Si le dernier essai CST a échoué et qu’un diagnostic a été autorisé pour 
 
 ## Relancer End of Day sur un Mini CST activé
 
-Sur l’iPad de caisse, ouvrez **Plus → Rapports → Solde en caisse**. Pour un Mini de test activé, le bouton **Relancer End of Day sur le Mini CST** reste affiché après une transmission confirmée ou à vérifier. Touchez-le puis confirmez pour transmettre le lot courant avec le numéro SHVA enregistré dans le Backoffice. Vous pouvez recommencer après chaque résultat, sans limite de six essais. Pendant un envoi, le bouton reste visible et attend la réponse du Mini. **Voir les essais** permet de consulter les dates, les résultats et les réponses Verifone disponibles. Chaque envoi conserve son numéro SHVA et son résultat. Si aucune clôture de caisse n’est ouverte, le bouton ouvre sa préparation. Ces actions nécessitent les permissions de gestion des paiements et des paramètres.
+Sur l’iPad de caisse, ouvrez **Plus → Rapports → Clôture de journée**. Pour un Mini de test activé, le bouton **Relancer End of Day sur le Mini CST** reste affiché après une transmission confirmée ou à vérifier. Touchez-le puis confirmez pour transmettre le lot courant avec le numéro SHVA enregistré dans le Backoffice. Vous pouvez recommencer après chaque résultat, sans limite de six essais. Pendant un envoi, le bouton reste visible et attend la réponse du Mini. **Voir les essais** permet de consulter les dates, les résultats et les réponses Verifone disponibles. Chaque envoi conserve son numéro SHVA et son résultat. Si aucune clôture de caisse n’est ouverte, le bouton ouvre sa préparation. Ces actions nécessitent les permissions de gestion des paiements et des paramètres.
 
 <span id="end-of-day-cash-reservation" />
 
@@ -91,13 +91,13 @@ La période s’arrête au début de la clôture. Après un premier Z consolidé
 
 ## Consulter les cartes enregistrées et les rapports précédents
 
-Dans Solde en caisse sur l’iPad, la section Encaissements carte du restaurant affiche la période, le nombre d’opérations et les montants enregistrés, au total et par terminal. Les montants sont présentés par devise d’origine. Ces encaissements Foody excluent les remboursements. Les totaux SHVA et les paiements financiers sont présentés séparément, car certaines lignes recouvrent les mêmes paiements. Dans Historique de caisse sur l’iPad principal, ouvrez le Z finalisé pour consulter le comptage, les confirmations et les copies SHVA disponibles. Une archive ancienne peut contenir seulement la confirmation de transmission.
+Dans Clôture de journée sur l’iPad, la section Encaissements carte du restaurant affiche la période, le nombre d’opérations et les montants enregistrés, au total et par terminal. Les montants sont présentés par devise d’origine. Ces encaissements Foody excluent les remboursements. Les totaux SHVA et les paiements financiers sont présentés séparément, car certaines lignes recouvrent les mêmes paiements. Dans Historique de caisse sur l’iPad principal, ouvrez le Z finalisé pour consulter le comptage, les confirmations et les copies SHVA disponibles. Une archive ancienne peut contenir seulement la confirmation de transmission.
 
 <span id="unified-cash-workspace" />
 
 ## Suivre et clôturer depuis Solde en caisse
 
-Avec payments.manage, utilisez Solde en caisse pour ouvrir un tiroir avec son fonds initial, enregistrer des entrées et sorties et consulter les encaissements. Ouvrir un tiroir est une opération espèces. Clôturer la session ouvre d’abord la préparation du comptage et des transmissions. Vous pouvez revenir en arrière avant Commencer la clôture. Historique de caisse affiche les vingt dernières entrées finalisées, dont les Z et les sessions espèces closes séparément.
+Dans Plus → Rapports → Solde en caisse, saisissez le fonds initial puis touchez Ouvrir la session de caisse. Une fois la session ouverte, consultez ses montants, utilisez Entrées/sorties avec les droits de paiement, ou touchez Clôturer la session de caisse pour préparer le comptage. Pour les encaissements carte et le Mini, ouvrez Rapports → Clôture de journée, même si le tiroir est fermé. Historique de caisse présente les sessions closes et les rapports Z finalisés.
 
 <span id="current-register-scope" />
 
@@ -109,7 +109,7 @@ Avant la désignation d’une caisse principale, une clôture appartient à l’
 
 ## Définir la caisse principale
 
-Sur l’iPad du comptoir enrôlé dans le restaurant, ouvrez Plus → Rapports → Solde en caisse avec une session personnelle active et les droits payments.manage et settings.edit. Choisissez Définir cet iPad comme caisse principale et confirmez. Mettez l’iPad et les Portables à jour avant la première clôture commune. Chaque Portable doit ouvrir FoodyPOS avec les droits de paiement pour enregistrer son identité.
+Sur l’iPad du comptoir enrôlé dans le restaurant, ouvrez Plus → Rapports → Clôture de journée avec une session personnelle active et les droits payments.manage et settings.edit. Choisissez Définir cet iPad comme caisse principale et confirmez. Mettez l’iPad et les Portables à jour avant la première clôture commune. Chaque Portable doit ouvrir FoodyPOS avec les droits de paiement pour enregistrer son identité.
 
 Si l’ancienne fiche de l’iPad principal a été oubliée pendant une clôture, un responsable habilité peut choisir **Reprendre la clôture sur cet iPad** sur l’iPad inscrit du restaurant. Foody conserve le tiroir et les transmissions de la clôture en cours.
 

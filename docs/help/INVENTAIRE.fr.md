@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-11-26.
 
-115 fiches de fonctionnalités, 1083 procédures/sous-fonctionnalités, dont 103 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2770 fichiers applicatifs et 2392 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+115 fiches de fonctionnalités, 1083 procédures/sous-fonctionnalités, dont 103 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2772 fichiers applicatifs et 2392 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -13,8 +13,8 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 | foodyadmin | 844 | 849 | 0d249481113d ; versioned |
 | foodybackoffice | 56 | 52 | 68b7b6c9b0fa ; versioned |
 | foodylanding | 158 | 31 | e3b458e8d3f9 ; versioned |
-| foodypos | 432 | 186 | 968d88480d79 ; versioned |
-| foodyserver | 887 | 1067 | 50abe37185ba ; versioned |
+| foodypos | 433 | 186 | 8abecbe6f4cc ; versioned |
+| foodyserver | 888 | 1067 | 42d0ae2b31ae ; versioned |
 | foodyweb | 393 | 207 | cf60c22edb80 ; versioned |
 
 ## getting-started
@@ -706,7 +706,7 @@ Identifiant : `order-detail`. Public : public. Disponibilité : available. Servi
 
 ### [Calendrier du restaurant et exceptions](../../src/content/help/fr/orders/calendar.mdx)
 
-Identifiant : `calendar`. Public : public. Disponibilité : available. Services : foodyadmin.
+Identifiant : `calendar`. Public : public. Disponibilité : available. Services : foodyadmin, foodypos.
 
 - [Examiner une date](../../src/content/help/fr/orders/calendar.mdx#browse)
 - [Ajouter ou modifier une exception](../../src/content/help/fr/orders/calendar.mdx#exceptions)

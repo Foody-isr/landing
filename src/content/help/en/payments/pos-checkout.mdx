@@ -7,7 +7,7 @@ apps: both
 tags:
   - payments
   - pos-payments
-updatedAt: '2026-11-24'
+updatedAt: '2026-11-26'
 featureId: pos-payments
 audience: public
 releaseStatus: available
@@ -50,6 +50,8 @@ If Cash drawer balance or Cash movements cannot be read, do not infer that no dr
 
 ## Count and close the cash drawer
 
+In More → Reports → Cash drawer balance, enter the starting cash and tap Open cash drawer session. With a session open, review its balances, use Paid in/out with payment permissions, or choose Close drawer session to prepare the count. Open Reports → End of day for card collections and the Mini, including on a card-only day.
+
 On the same enrolled POS with an active PIN shift, open More → Reports → Cash drawer balance. Review the opening float, cash sales and refunds, paid in/out and expected cash. The optional description is copied to the closing note, without automatic saving. With payments.manage, open Paid in/out, enter a positive amount and mandatory reason, then choose Pay in cash or Pay out cash. A payout cannot exceed the expected balance. With orders.manage, choose Close cash session, count physical cash, enter that amount and confirm; any discrepancy is preserved. Dismissing the modal without confirming records nothing. Cash movements lists only the session loaded on this device, not past sessions. Resume any uncertain operation using its existing identity before another action. Cards are excluded: closing cash does not start a Verifone deposit, and a Verifone deposit does not close cash. Never use a cash adjustment to disguise a card refund.
 
 To bring together the end-of-day steps, use [the combined closing flow](/en/help/payments/end-of-day).
@@ -68,7 +70,7 @@ If the Mini restarted after service was resumed, open its device details in **Ha
 
 ## Close and deposit a Verifone terminal batch
 
-At end of day, open [Current drawer and closing](/en/help/payments/end-of-day) on the main iPad. After confirming the count, use Transmit end of day for the Mini. Portables transmit in turn with FoodyPOS open. If a result needs review, verify the original transmission before sending again. After finalizing, print the available SHVA copy from Drawer history. On older software, follow the device’s deposit flow.
+At end of day, open [Reports → End of day](/en/help/payments/end-of-day) on the main iPad. After confirming the count, use Transmit end of day for the Mini. Portables transmit in turn with FoodyPOS open. If a result needs review, verify the original transmission before sending again. After finalizing, print the available SHVA copy from Drawer history. On older software, follow the device’s deposit flow.
 
 <span id="saved-qr-payment-scope" />
 
@@ -134,6 +136,8 @@ After **Check Ashrait gateway**, if the active Mini requests parameters or settl
 
 On the main iPad, check any interrupted card payment first. If Ashrait still requires an end of day, a manager with settings and payment permissions can choose **Close the Mini’s current batch**. Review the confirmation. The Mini sends all sales still in its batch, including earlier sales if they remain. Confirm once. Foody records a separate transmission and keeps the earlier one under review. Resume payments when Ashrait returns OK. If the connection drops, use **Resume recording** to check the result. You can view and print the new SHVA report when the Mini supplies it.
 
+After a CST test register is reset, open its Mini in Hardware and tap Test connection. When Foody confirms that the exact attempt stored on this iPad was removed, the connection test can proceed. Check Ashrait gateway then shows the Mini’s response.
+
 <span id="physical-card-destination" />
 
 ## Default card terminal
@@ -144,7 +148,7 @@ On iPad, Card uses the [default terminal in Checkout settings](/en/help/payments
 
 ## Use the unified cash workspace
 
-With payment permissions and compatible versions, open More → Reports → Current drawer. The same workspace shows the cash drawer, recorded card collections by terminal and guided closing. Drawer history combines closed cash sessions and finalized Z reports. Older closing and deposit addresses open this workspace; older APIs retain their previous workflow. See [the unified cash workflow](/en/help/payments/end-of-day#unified-cash-workspace).
+In More → Reports → Cash drawer balance, enter the starting cash and tap Open cash drawer session. With a session open, review its balances, use Paid in/out with payment permissions, or choose Close drawer session to prepare the count. Open Reports → End of day for card collections and the Mini, including on a card-only day. Drawer history lists closed sessions and finalized Z reports. [the unified cash workflow](/en/help/payments/end-of-day#unified-cash-workspace).
 
 <span id="transaction-history" />
 

@@ -7,7 +7,7 @@ apps: both
 tags:
   - payments
   - pos-payments
-updatedAt: '2026-11-24'
+updatedAt: '2026-11-26'
 featureId: pos-payments
 audience: public
 releaseStatus: available
@@ -50,6 +50,8 @@ Si la lecture de Solde en caisse ou Mouvements de caisse échoue, n’en déduis
 
 ## Compter et clôturer la caisse
 
+Dans Plus → Rapports → Solde en caisse, saisissez le fonds initial puis touchez Ouvrir la session de caisse. Une fois la session ouverte, consultez ses montants, utilisez Entrées/sorties avec les droits de paiement, ou touchez Clôturer la session de caisse pour préparer le comptage. Pour les encaissements carte et le Mini, ouvrez Rapports → Clôture de journée, même si le tiroir est fermé.
+
 Sur le même POS autorisé avec un shift PIN actif, ouvrez Plus → Rapports → Solde en caisse. Vérifiez fonds initial, ventes et remboursements en espèces, entrées/sorties et montant attendu. La description facultative est reprise dans la note de clôture, sans enregistrement automatique. Avec payments.manage, ouvrez Entrées/sorties, saisissez un montant positif et un motif obligatoire, puis choisissez Encaisser des espèces ou Décaisser des espèces. Une sortie ne peut dépasser le solde attendu. Avec orders.manage, choisissez Clôturer la session de caisse, comptez physiquement les espèces, saisissez ce montant et confirmez ; l’écart est conservé. Fermer la modale sans confirmer n’enregistre rien. Mouvements de caisse liste uniquement la session chargée sur cet appareil, pas les anciennes sessions. Reprenez toute opération incertaine avec son identité existante avant une autre action. Ce rapport n’inclut pas les cartes : la clôture espèces ne lance pas le dépôt Verifone, et le dépôt Verifone ne clôture pas les espèces. N’utilisez pas un ajustement espèces pour masquer un remboursement carte.
 
 Pour réunir les étapes de fin de journée, utilisez [la clôture commune](/fr/help/payments/end-of-day).
@@ -68,7 +70,7 @@ Si le Mini a redémarré après une reprise du service, ouvrez sa fiche dans **M
 
 ## Clôturer et déposer un lot du terminal Verifone
 
-En fin de journée, ouvrez [Solde en caisse et clôture](/fr/help/payments/end-of-day) sur l’iPad principal. Une fois le comptage confirmé, utilisez Transmettre la fin de journée pour le Mini. Les Portables transmettent à leur tour avec FoodyPOS ouvert. Un résultat à vérifier demande de confirmer la transmission d’origine avant tout nouvel envoi. Après finalisation, imprimez la copie SHVA disponible depuis Historique de caisse. Sur une version antérieure, suivez le parcours de dépôt proposé par l’appareil.
+En fin de journée, ouvrez [Rapports → Clôture de journée](/fr/help/payments/end-of-day) sur l’iPad principal. Une fois le comptage confirmé, utilisez Transmettre la fin de journée pour le Mini. Les Portables transmettent à leur tour avec FoodyPOS ouvert. Un résultat à vérifier demande de confirmer la transmission d’origine avant tout nouvel envoi. Après finalisation, imprimez la copie SHVA disponible depuis Historique de caisse. Sur une version antérieure, suivez le parcours de dépôt proposé par l’appareil.
 
 <span id="saved-qr-payment-scope" />
 
@@ -134,6 +136,8 @@ Après **Vérifier la passerelle Ashrait**, si le Mini actif demande ses paramè
 
 Sur l’iPad principal, vérifiez d’abord toute vente interrompue. Si Ashrait demande encore une clôture, un responsable qui gère les réglages et les paiements peut sélectionner **Clôturer le lot courant du Mini**. Lisez la confirmation : le Mini transmet toutes les ventes encore présentes, y compris celles de la période précédente si elles figurent toujours dans son lot. Confirmez une seule fois. Foody conserve une ligne distincte pour le nouvel envoi et la référence précédente reste à vérifier. Après la réponse OK d’Ashrait, reprenez les encaissements. En cas de coupure, utilisez **Reprendre l’enregistrement** pour rechercher le résultat. Le rapport SHVA du nouveau lot est consultable et imprimable lorsque le Mini le fournit.
 
+Après la remise à zéro d’un Mini CST de test, ouvrez sa fiche dans Matériel et touchez Tester la connexion. Si Foody confirme que l’essai mémorisé sur cet iPad a été supprimé, le test de connexion peut reprendre. Vérifier la passerelle Ashrait affiche ensuite la réponse du Mini.
+
 <span id="physical-card-destination" />
 
 ## Terminal carte par défaut
@@ -144,7 +148,7 @@ Sur iPad, Carte utilise le [terminal par défaut choisi dans les paramètres de 
 
 ## Utiliser le suivi de caisse commun
 
-Avec les droits de paiement et les versions compatibles, ouvrez Plus → Rapports → Solde en caisse. Le même espace présente le tiroir espèces, les encaissements carte enregistrés par terminal et la clôture guidée. Historique de caisse réunit les sessions espèces closes et les rapports Z finalisés. Les anciennes adresses de clôture et de dépôt rejoignent cet espace ; les API plus anciennes conservent leur parcours précédent. Consultez [le parcours de caisse commun](/fr/help/payments/end-of-day#unified-cash-workspace).
+Dans Plus → Rapports → Solde en caisse, saisissez le fonds initial puis touchez Ouvrir la session de caisse. Une fois la session ouverte, consultez ses montants, utilisez Entrées/sorties avec les droits de paiement, ou touchez Clôturer la session de caisse pour préparer le comptage. Pour les encaissements carte et le Mini, ouvrez Rapports → Clôture de journée, même si le tiroir est fermé. Historique de caisse présente les sessions closes et les rapports Z finalisés. [le parcours de caisse commun](/fr/help/payments/end-of-day#unified-cash-workspace).
 
 <span id="transaction-history" />
 
