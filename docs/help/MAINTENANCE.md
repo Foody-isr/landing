@@ -1,3 +1,13 @@
+## Tableau cuisine FoodyPOS du 27 novembre 2026
+
+Publier les procédures du tableau et du routage avec les versions compatibles de FoodyPOS, de FoodyAdmin et de l’API. Les choix explicites de routage, le rappel au Passe et les préférences visuelles concernent les sessions de caisse et les tablettes dédiées Android et iPad. Appliquer la migration 355 avec la version de l’API qui conserve la couleur de chaque supplément dans la commande. Vérifier avec une commande synthétique que la couleur et l’ordre des groupes apparaissent sur les tickets de la caisse et de la tablette dédiée. La migration 356 active la prise en charge de l’aperçu drive-thru. Activer l’aperçu sur une caisse de test et sur un seul de deux postes. Vérifier la modification d’une quantité, l’abandon du panier et le remplacement de l’aperçu par un seul ticket après l’envoi en cuisine. Les captures de vérification utilisent des commandes synthétiques. La procédure publique et le corpus d’assistance reprennent le même catalogue français, anglais et hébreu.
+
+## Pilote KDS sur iPad et Android (26 novembre 2026)
+
+Publier le guide Appareils et écrans cuisine dans les trois langues avec les versions compatibles de foodyserver (migration 354), FoodyAdmin et FoodyPOS pour Android et iPad. Les postes dédiés s'activent par restaurant et tablette. Vérifier sur données synthétiques Chaud et Passe, le toucher d'un article et d'un en-tête, la réconciliation, le changement de poste et la révocation. La recette physique du fournisseur comprend le maintien de l'identité, la relance sur coupure secteur et un service complet. Le guide technique et la matrice de recette se trouvent dans `foodypos/docs/android-kds.md`.
+
+Les contrats API, Admin et POS épinglent le commit Landing de cette recette. Publier les guides FR, HE et EN avec les versions compatibles des trois services.
+
 ## Sous-groupes de carte (22 novembre 2026)
 
 Publier ensemble les guides en français, hébreu et anglais avec l’API, les clients Admin et Web et la version POS compatibles. Vérifier une carte synthétique avec un parent vide, deux sous-groupes et un groupe simple. Contrôler la deuxième ligne sur Commander, le brouillon et son aperçu dans Admin, ainsi que l’ouverture des tuiles et le retour d’un niveau en caisse. Vérifier aussi une disposition de caisse personnalisée. Épingler la révision Landing immuable revue dans les contrats consommateurs avant la validation distante.

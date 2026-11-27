@@ -5,7 +5,7 @@ apps: both
 tags:
   - settings
   - device-kds
-updatedAt: '2026-11-26'
+updatedAt: '2026-11-27'
 featureId: device-kds
 audience: public
 releaseStatus: available
@@ -30,13 +30,37 @@ Retrouvez l’appareil, vérifiez identité, état actif et profil POS. Ne réut
 
 ## Régler les postes cuisine
 
-Créez ou modifiez le poste, affectez catégories d’articles et accès des appareils. Vérifiez priorité et fin de préparation. Un article suit son poste de production sans modifier son groupe de menu public.
+Dans FoodyPOS, ouvrez Plus → Écran cuisine, puis les réglages du poste dans le menu. Pour un premier poste, choisissez l’appareil, son rôle Préparation ou Passe et enregistrez. Si le pilote est actif, un gestionnaire peut ajouter une tablette depuis Général. Sous Routage, choisissez les caisses sources, les commandes en ligne, les modes de service et les catégories de cuisine. Dans chaque liste, la sélection des éléments actuels et l’inclusion des futurs éléments se règlent séparément. Pour ne recevoir aucun élément d’une liste, désactivez l’inclusion future et touchez Tout désélectionner. Une catégorie interne peut alimenter un poste sans changer le menu public.
 
 <span id="service" />
 
 ## Traiter les tickets cuisine
 
 Ouvrez le KDS affecté, vérifiez les tickets lancés et avancez ou terminez-les avec les actions autorisées. Un plat en attente n’est pas un ticket lancé. Rappel/priorité ciblent le ticket affiché ; ne renvoyez pas une commande uniquement parce que le poste est hors ligne.
+
+<span id="pair-android" />
+
+## Associer un iPad ou une tablette Android à la cuisine
+
+Sur la version pilote compatible, le propriétaire ou un gestionnaire autorisé à modifier les réglages ouvre **Paramètres → Écrans cuisine** dans FoodyAdmin et active les tablettes cuisine dédiées du restaurant. Sélectionnez la tablette dans l’inventaire ou enregistrez-la avec un nom reconnaissable. Si le restaurant débute, enregistrez un profil cuisine. Choisissez le poste par défaut. Autorisez un poste, plusieurs postes ou tous les postes du restaurant. Choisissez le droit de modifier les tickets, puis enregistrez l’affectation. Générez le code à huit caractères. Sur l’iPad ou la tablette Android, ouvrez **Écran cuisine dédié** depuis l’écran de connexion de FoodyPOS, saisissez le code dans les dix minutes et vérifiez le nom du poste. Le code associe une seule tablette. Un code de remplacement met fin à l’identité précédente.
+
+<span id="station-selection" />
+
+## Changer de poste ou configurer une vue d’ensemble au passe
+
+Le tableau affiche le nom et le rôle du poste. Le sélecteur permet de changer de poste parmi ceux autorisés. Un profil Passe peut regrouper les caisses et catégories de plusieurs postes. Sur une tablette dédiée, le gestionnaire choisit les postes autorisés, l’accès en lecture seule ou les actions en cuisine depuis FoodyAdmin. L’option Tous les postes comprend aussi les nouveaux postes du restaurant.
+
+<span id="board-display" />
+
+## Lire et régler le tableau cuisine
+
+Passez des tickets ouverts aux tickets terminés avec les deux onglets. Les flèches changent de page. Ouvrez le volet latéral pour consulter les quantités par article et la disponibilité des articles acheminés à ce poste. Dans les réglages, Disposition ajuste les rails, la mosaïque et le nombre de colonnes. Apparence propose un en-tête compact ou un bandeau de mode de service et ses couleurs. Minuteries et alertes règle les deux seuils et le son d’arrivée. En service par plats, affichez les plats en attente avec les plats lancés de la même addition, ou affichez chaque plat à son envoi. Sur une tablette dédiée, les réglages d’affichage sont mémorisés pour cette tablette et ce poste. Dans Tickets, classez les articles par saisie, siège, nom ou catégorie. Pour un ordre de catégories personnalisé ou pour classer les groupes de modificateurs, utilisez les flèches. L’échelonnement utilise les durées de préparation du catalogue pour afficher les articles courts plus tard sur ce poste. Un article sans durée apparaît dès l’envoi. Un toucher d’en-tête termine les lignes déjà affichées.
+
+<span id="touch-and-recovery" />
+
+## Terminer au toucher et reprendre après une coupure
+
+Touchez une ligne pour marquer cet article, ou l’en-tête pour terminer les articles acheminés à ce poste. Vous disposez de trois secondes pour annuler le geste. Retrouvez un ticket dans les terminés pour le rappeler. Au passe, les marques de préparation montrent les articles déjà prêts. Un plat en attente ou un retrait programmé affiché à l’avance devient actionnable après son envoi en cuisine. Les alertes, la priorité et la complétion concernent la cuisine. L’encaissement et la libération de table ont leurs propres parcours dans FoodyPOS. Hors connexion, l’écran indique l’ancienneté du tableau et suspend les actions. Reconnectez la tablette, actualisez et lisez l’état confirmé avant un nouveau geste. Une relance ordinaire restaure l’association. Pour une tablette perdue ou remplacée, vérifiez le dernier contact dans Admin, révoquez son identité et associez la remplaçante. Au Passe, le rappel peut cibler les postes de préparation, les postes de passe ou tous les postes selon les options proposées et la portée configurée.
 
 <span id="forget-hardware" />
 
@@ -51,3 +75,9 @@ Les connexions et affectations Foody liées à l’appareil sont retirées. Pour
 ## Distinguer comptes et postes autorisés
 
 Pour les offres versionnées de développement, Personnel → Appareils affiche la capacité de postes POS séparément des comptes employés. Réautoriser le même appareil identifié ne consomme pas une nouvelle place ; un second appareil au-delà du quota est refusé et le propriétaire doit ajouter une licence depuis Facturation. Une autorisation révoquée ou expirée ne compte plus dans les postes actifs. Les écrans cuisine ont leur propre quantité contractuelle ; la création d’une nouvelle station est refusée lorsque celle-ci est atteinte. Les contrats historiques gardent leurs droits.
+
+<span id="drive-thru-preview" />
+
+## Voir le panier en cuisine pendant la saisie au drive
+
+Sur la caisse associée, ouvrez Paramètres → Caisse → Saisie de commande rapide et activez « Afficher les paniers de cette caisse en cuisine ». Dans les réglages du poste cuisine, ouvrez Tickets et activez « Afficher les paniers en cours de saisie ». Sous Routage, autorisez les commandes de cette caisse, les modes de service et les catégories voulus. Saisissez deux articles puis changez une quantité. Le volet « En saisie » affiche la mise à jour et le nom de la caisse, quel que soit le mode de service admissible. L’aperçu est en lecture seule et le compteur de tickets ouverts reste stable. Vider le panier retire l’aperçu. Si la caisse perd la connexion, l’aperçu expire après une minute sans mise à jour. Quand la commande est envoyée en cuisine, traitez le ticket habituel.

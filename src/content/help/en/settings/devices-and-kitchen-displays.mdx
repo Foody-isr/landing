@@ -5,7 +5,7 @@ apps: both
 tags:
   - settings
   - device-kds
-updatedAt: '2026-11-26'
+updatedAt: '2026-11-27'
 featureId: device-kds
 audience: public
 releaseStatus: available
@@ -30,13 +30,37 @@ Find the correct device, review its identity, active state and selected POS prof
 
 ## Set kitchen stations
 
-Create or edit the station and assign its allowed item categories and device access. Review priority and completion behavior. An item can route to its configured production station while keeping its customer-facing menu group unchanged.
+In FoodyPOS, open More → Kitchen display and open the station settings from the menu. For a new station, select the device, choose Prep or Expo, and save. When the pilot is enabled, a manager can add a tablet from General. Under Routing, select source registers, online orders, dining options and kitchen categories. Each list controls its current choices and future additions separately. To receive nothing from a list, turn off future additions and choose Deselect all. Routing an internal category to a station keeps the public menu layout intact.
 
 <span id="service" />
 
 ## Work with kitchen tickets
 
 Open the assigned KDS, inspect released tickets and advance or complete them using permitted controls. Held food is not a released ticket. Recall/priority actions must target the displayed ticket; do not re-send an order merely because its station is offline.
+
+<span id="pair-android" />
+
+## Pair an iPad or Android kitchen display
+
+On the compatible pilot release, an owner or manager with permission to edit settings opens **Settings → Kitchen displays** in FoodyAdmin and enables dedicated kitchen tablets for the restaurant. Select the tablet in inventory, or register it with a recognisable name. Save a kitchen profile if the restaurant has none. Choose a default station and grant access to one, several or all stations in the restaurant, select whether the tablet can update tickets, then save its assignment. Generate an eight-character code. On the iPad or Android tablet, open **Dedicated kitchen display** on the FoodyPOS sign-in screen, enter the code within ten minutes and check the station name. A code activates one tablet. Issuing a replacement ends the previous identity.
+
+<span id="station-selection" />
+
+## Switch stations or set up a pass overview
+
+The board shows the active station name and role. Use the station selector to switch among allowed stations. An Expo profile can cover multiple registers and categories. For a dedicated tablet, a manager selects the allowed stations and read-only or kitchen-action access in FoodyAdmin. All stations includes future stations at this restaurant.
+
+<span id="board-display" />
+
+## Read and configure the kitchen board
+
+Switch between open and completed tickets using the two tabs. Use the arrows to change pages. Open the sidebar for item counts and availability for items routed to this station. In settings, Layout changes the rails, tiled layout and column count. Ticket appearance offers a compact header or a dining-option banner with configurable colors. Timers and alerts controls the two thresholds and the arrival sound. With coursing, show held courses with a fired course from the same check, or display courses as they fire. On a dedicated tablet, display preferences are saved for that tablet and station. In Tickets, sort items by entry, seat, name or category. Use the arrows to customize category or modifier set order. Staggered preparation uses catalog prep times to display shorter items later at this station. Items without a duration appear at dispatch. Completing the header finishes the lines already on display.
+
+<span id="touch-and-recovery" />
+
+## Complete by touch and recover after disconnection
+
+Touch an item to mark that line, or the ticket header to complete the routed items at this station. Undo during the three-second delay to cancel the touch. The completed tab offers recall. At the pass, prep marks help coordinate the rest of the ticket. A held course or an advance preview of a scheduled pickup becomes actionable after kitchen release. Setting an alert time, priority or ticket completion affects kitchen work. Cash settlement and table occupancy use their respective FoodyPOS workflows. During a network outage the display shows the age of its last update and suspends actions. Reconnect, refresh and read the confirmed state before touching again. A normal app restart restores the association. For a lost or replaced device, check last contact in Admin, revoke its identity and pair the replacement. At Expo, recall can target prep stations, expo stations or all stations, according to the available options and the configured completion scope.
 
 <span id="forget-hardware" />
 
@@ -51,3 +75,9 @@ The device’s Foody connections and assignments are removed. A POS that you rem
 ## Distinguish accounts and authorized devices
 
 For versioned development offers, Staff → Devices shows physical POS capacity separately from employee accounts. Reauthorizing the same identified device does not consume another slot; a second device above the limit is rejected and the owner must add a licence in Billing. Revoked or expired credentials no longer count as active POS devices. Kitchen displays have their own contracted quantity; adding a new station is rejected at that limit. Historical contracts keep their rights.
+
+<span id="drive-thru-preview" />
+
+## Preview a drive-thru cart as the cashier takes the order
+
+On the paired register, open Settings → Checkout → Fast order entry and enable “Preview this register’s carts in the kitchen”. In the kitchen station’s Tickets settings, enable “Show tickets for draft orders”. Under Routing, allow this register, the dining options and the categories for the station. Enter two items and change a quantity. The “In entry” panel shows the update and the register name for any eligible dining option. The preview is read-only and the open ticket count stays the same. Clearing the cart removes the preview. If the register loses its connection, the preview expires after one minute without an update. When the order is sent to the kitchen, work from the regular ticket.
