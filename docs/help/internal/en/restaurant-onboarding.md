@@ -1,22 +1,22 @@
 ---
 title: Internal restaurant onboarding and users
-description: 'Internal Foody operators: Backoffice → Restaurants, Onboard and Users.'
+description: Backoffice → Management → Restaurants or Users. Open Onboard New from Restaurants.
 apps: both
 tags:
   - internal
   - backoffice-onboarding
-updatedAt: '2026-10-21'
+updatedAt: '2026-11-15'
 featureId: backoffice-onboarding
 audience: internal
 releaseStatus: available
 ---
-Internal Foody operators: Backoffice → Restaurants, Onboard and Users.
+Backoffice → Management → Restaurants or Users. Open Onboard New from Restaurants.
 
 <span id="create" />
 
 ## Prepare an onboarding record
 
-Review invite versus manual setup, restaurant identity, locale, currency and owner details before submission. Use development for rehearsal. Production creation and outbound invitations are real mutations and require the applicable human authorization.
+Review invite versus manual setup, restaurant identity, locale, currency and owner details before submission. Use development for rehearsal. Production creation and outbound invitations are real mutations and require the applicable human authorization. In the development billing pilot, the same wizard publishes the sandbox offer and its trial settings before inviting the owner. Consult the internal sandbox billing procedure.
 
 <span id="users" />
 
@@ -29,3 +29,17 @@ Find the intended user, verify restaurant/role and apply only the requested acco
 ## Access the new controls
 
 Usage and quotas compares service consumption across restaurants. Review allocation and the restaurant-detail link open monthly limits; saving requires a reason and preserves all counters. These controls are superadmin-only and separate from the storefront sign-in preference.
+
+The global fleet can record a terminal as under repair or returned and maintain its declared commercial identifiers. This neither reassigns hardware nor configures a new payment supplier; follow the confirmed regional Verifone procedure before returning it to service.
+
+<span id="search" />
+
+## Search restaurants and users
+
+In Restaurants, search by name or slug. In Users, search by name, email or phone and select a role if needed. Use **Clear search** or **Clear filters** to return to the full list. If the request fails, **Retry** repeats the last search.
+
+<span id="versioned-commercial-access" />
+
+## Commercial access in development
+
+For a restaurant enrolled in the versioned development catalogue, this function must be included in its offer or active trial as well as permitted by the staff role. An excluded feature is rejected by the server. Check Billing for modules and licences, then ask the owner to review an addition. Account and physical POS quotas are separate; exceeding a quota requires the corresponding licences. Historical contracts are not automatically changed.

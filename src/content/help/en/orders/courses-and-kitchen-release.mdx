@@ -5,7 +5,7 @@ apps: foodypos
 tags:
   - orders
   - pos-courses
-updatedAt: '2026-10-27'
+updatedAt: '2026-10-29'
 featureId: pos-courses
 audience: public
 releaseStatus: available
@@ -22,6 +22,8 @@ Advanced actions appear only when the installed POS and API advertise the requir
 
 Holding or firing a course changes kitchen timing, not payment status. A table may be served before collection; do not count it as cash until the money is received and confirmed on an enrolled POS with an open drawer session. A pending cash payment must be resolved before closing the drawer. The card terminal deposit is a separate end-of-day action.
 
+For an open check, verify dispatch in Check and preparation at the expo KDS. See [checking a dish for an open table](/en/help/orders/taking-an-order-pos#open-check-kitchen-progress).
+
 <span id="seats" />
 
 ## Assign seats and courses
@@ -34,7 +36,9 @@ With compatible API and POS versions, editing a saved item’s places follows th
 
 ## Hold or fire a course
 
-Review the held course and use Fire to release the selected eligible food. Shared physical units launch once even when their price is split. Refresh after uncertainty rather than sending the same food as a new sale. A historical shared batch can block a partial release.
+Review the held course and use Fire to release the selected eligible food. Shared physical units launch once even when their price is split. Refresh after uncertainty rather than sending the same food as a new sale. A historical shared batch can block a partial release. With the matching API and POS capability, already committed held food can still be fired after its bill has been paid. This does not reopen the bill, reoccupy a released table or change any collection. An authorization, pending payment or refund can make release unavailable: review the displayed state rather than create a new sale.
+
+After merging bills, open and review the entire resulting bill before confirming Fire. An old batch must not silently fire food from other bills; shared pricing never multiplies physical quantities.
 
 <span id="repeat" />
 
@@ -47,3 +51,11 @@ Where Repeat is offered, review the copied food in the provisional cart and send
 ## Control courses on mobile
 
 On the updated mobile POS, the bottom Menu strip selects the course for the next items. In Check, each course retains its state and controls: fire to release, stop to hold and ⋯ for other permitted actions. Buttons are separate and compact; selecting the active course does not send it. Send at the top uses the existing Foody workflow and pending release selections. A course shared across bills retains one physical production. Permissions, timing, submitted states and repeat restrictions still apply.
+
+<span id="independent-lifecycle-confirmations" />
+
+## Review independent confirmations
+
+A partial handoff preserves remaining units. Completing one required KDS station does not complete all preparation. Courier handoff and customer receipt are separate confirmations; a route departure does not prove a customer receipt time. See [preparation and handoff](/en/help/orders/payment-preparation-and-handoff).
+
+Use this workflow when the saved order’s fulfillment view offers handoff. For an open table, named or split check in Menu, verify dispatch in Check and preparation at the expo KDS.

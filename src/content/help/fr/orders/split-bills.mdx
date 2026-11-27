@@ -1,22 +1,28 @@
 ---
 title: Partager et regrouper les additions
 description: >-
-  Ouvrez l’addition enregistrée → Actions → Partager. Choisissez par couvert, article ou parts égales selon
-  disponibilité.
+  Ouvrez l’addition enregistrée → Actions → Fractionner l’addition. Choisissez par couvert, article ou parts égales
+  selon disponibilité.
 apps: foodypos
 tags:
   - orders
   - pos-check-split
-updatedAt: '2026-10-18'
+updatedAt: '2026-11-16'
 featureId: pos-check-split
 audience: public
 releaseStatus: available
 ---
-Ouvrez l’addition enregistrée → Actions → Partager. Choisissez par couvert, article ou parts égales selon disponibilité.
+Ouvrez l’addition de table enregistrée → Actions → Fractionner l’addition (Fractionner sur un écran compact). Choisissez par couvert, article ou parts égales selon disponibilité.
 
 ## Disponibilité et accès
 
 Les actions avancées apparaissent si la caisse et l’API installées annoncent la capacité requise et si votre rôle l’autorise. Actualisez une addition modifiée avant de réessayer ; ne créez jamais un second débit pour résoudre un résultat incertain.
+
+<span id="pending-payment-recovery" />
+
+## Débloquer un fractionnement après un paiement non confirmé
+
+Un paiement commencé sur cette caisse peut bloquer l’enregistrement d’un nouveau fractionnement, même sur une autre addition. Dans la version compatible, « Paiement à vérifier » explique le blocage dès l’ouverture de Fractionner. Rouvrez l’addition concernée et touchez Payer pour reprendre la tentative d’origine. Si la caisse ou la session de l’équipier est refusée, faites vérifier son accès puis reprenez cette même tentative. Seul un refus confirmé par le serveur comme n’ayant créé aucune réservation peut libérer la tentative locale. Un résultat réseau incertain reste à vérifier ; ne créez pas un autre paiement et n’effacez pas les données de l’application. Revenez ensuite au fractionnement et enregistrez la répartition. Fractionner ne lance aucun paiement.
 
 <span id="split-cash-collection" />
 
@@ -47,3 +53,11 @@ Ramenez toutes les parts impayées de la même unité vers leur addition/ancrage
 ## Vérifier les variantes du détail à répartir
 
 Le détail d’un article à répartir conserve les choix de variante par position. Vérifiez les caractères et leur ordre avant la répartition ; ils n’ajoutent aucun supplément au montant déjà enregistré. Les règles de partage et les quantités de production restent identiques.
+
+<span id="independent-lifecycle-confirmations" />
+
+## Vérifier les confirmations indépendantes
+
+Dans les actions d’une commande enregistrée, vérifiez les faits de préparation et de remise séparément du paiement. La revue de remise sélectionne les unités physiques réellement concernées ; le partage financier ne les multiplie pas. Avant une clôture, revoyez l’addition ou la part exacte et son solde confirmé. Une portée clôturée refuse de nouvelles modifications commerciales ; un autre lot ouvert n’est pas clôturé par cette action. Voir [le suivi et les confirmations](/fr/help/orders/payment-preparation-and-handoff).
+
+Ce parcours concerne les commandes dont la vue de traitement propose une remise. Pour une addition ouverte de table, nommée ou fractionnée dans Menu, vérifiez l’envoi dans Addition et l’avancement au KDS du passe.

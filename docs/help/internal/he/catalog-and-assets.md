@@ -1,22 +1,22 @@
 ---
 title: קטלוג ונכסים פנימיים
-description: 'מפעילי Foody: תפריט, חבילות, אייקוני מרכיבים ומסך כניסת קופה.'
+description: 'ב־Backoffice, פתחו POS content ואז Ingredient icons או POS login screen. את התפריטים והחבילות מנהלים ב־Foody Admin.'
 apps: both
 tags:
   - internal
   - backoffice-assets
-updatedAt: '2026-10-18'
+updatedAt: '2026-11-15'
 featureId: backoffice-assets
 audience: internal
 releaseStatus: available
 ---
-מפעילי Foody: תפריט, חבילות, אייקוני מרכיבים ומסך כניסת קופה.
+ב־Backoffice, פתחו POS content ואז Ingredient icons או POS login screen. את התפריטים והחבילות מנהלים ב־Foody Admin.
 
 <span id="catalog" />
 
-## תחזוקת משאבי קטלוג
+## ניהול קטלוג של מסעדה
 
-בדקו הקשר גלובלי או עסק לפני עריכת קטלוג או חבילה. בדקו תלות לפני מחיקה. שינוי ספרייה משותפת עשוי להשפיע על עסקים רבים ודורש סקירת השפעה.
+היכנסו ל־Foody Admin עם הרשאת גישה למסעדה. פתחו את **פריטים ותפריטים** ואז את **ספריית פריטים** לניהול פריטים וחבילות. באותו אזור פתחו את **תפריטים** לניהול התפריטים. הקישורים הקודמים ל־Menu Manager ול־Combo Menus מציגים את ההנחיות האלה.
 
 <span id="icons" />
 

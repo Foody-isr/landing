@@ -5,7 +5,7 @@ apps: both
 tags:
   - account
   - billing
-updatedAt: '2026-10-18'
+updatedAt: '2026-11-22'
 featureId: billing
 audience: public
 releaseStatus: available
@@ -18,6 +18,8 @@ Admin → Compte → Facturation, si proposé
 
 Vérifiez formule enregistrée, statut et date d’essai, renouvellement ou grâce pertinente. Confirmez les conditions commerciales avec Foody ; les libellés techniques peuvent différer des offres actuelles.
 
+Dans l’espace de facturation de test, ouvrez **Abonnement** pour voir la formule acceptée, sa fréquence et le montant TTC du prochain prélèvement avec sa date. Si le renouvellement est arrêté, la carte indique la fin de la période payée. Ouvrez **Détails de votre abonnement** pour relire les conditions acceptées ou **Gérer le renouvellement** pour consulter la date de fin et confirmer un arrêt. Une nouvelle offre à accepter a son propre récapitulatif.
+
 <span id="change" />
 
 ## Vérifier un changement de formule
@@ -29,3 +31,35 @@ Le propriétaire autorisé vérifie puis confirme le changement proposé. Attend
 ## Consulter les événements de facturation
 
 Consultez type, date, montant et devise des événements. Contactez le support pour un échec inexpliqué ou abonnement bloqué ; les paiements de commandes sont distincts de l’abonnement logiciel.
+
+<span id="versioned-sandbox-additions" />
+
+## Ajouter un module ou des licences en sandbox
+
+Pour un nouveau restaurant inscrit aux offres versionnées de développement, **Facturation** affiche les modules actifs et les quotas séparés de comptes et de postes POS. Avec une période payée active, le propriétaire peut ouvrir **Ajouter des modules ou licences**, choisir un module supplémentaire, une formule composée de modules non encore souscrits ou des quantités de licences, puis examiner l’offre. Une ligne sur devis nécessite une offre Foody. Vérifiez le supplément dû maintenant au prorata de la période restante, le nouveau montant au renouvellement et les quantités obtenues. La préparation seule ne donne aucun droit. Acceptez les conditions, puis terminez le paiement sandbox et vérifiez son statut. Les droits supplémentaires apparaissent après confirmation serveur ; la date de fin de période déjà payée reste inchangée. Un ajout gratuit exige aussi une acceptation explicite. Les droits du contrat initial sont conservés ; les contrats historiques restent sur leur parcours actuel. Une fonctionnalité absente affiche les offres qui la proposent ; si aucune n’est proposée, contactez Foody. Un employé demande au propriétaire de gérer l’abonnement.
+
+Pour une nouvelle souscription au catalogue révisé, Restaurant et Online coûtent chacun 590 ₪ HT/mois, Cuisine 890 ₪, le duo Restaurant + Online 990 ₪ et Intégral 1 790 ₪ par établissement. Une sélection exacte des modules du duo ou d’Intégral applique automatiquement la formule publiée moins chère sans diminuer les droits inclus. Restaurant et le duo comprennent 2 postes actifs, Intégral 3 postes, 1 accès chef et 1 KDS. Chaque poste caisse supplémentaire coûte 149 ₪ HT/mois ; les comptes caisse personnels ne sont pas facturés à l’employé. Un appareil autorisé occupe un poste jusqu’à révocation de son autorisation ; une simple déconnexion d’employé ne le libère pas. Les contrats antérieurs et les ajouts à ces contrats ne sont pas recalculés automatiquement en Intégral. Demandez une offre si vous souhaitez changer de formule.
+
+Le tarif standard mensuel est sans engagement minimum. Le prépaiement annuel couvre 12 mois au prix de 11 pour les modules et formules logicielles : 590 ₪ par mois devient 6 490 ₪ HT par an, soit 590 ₪ économisés. Les licences supplémentaires, matériels, options et services de paiement ne bénéficient pas de cette remise. Les offres déjà acceptées, invitations enregistrées et prix négociés gardent leurs conditions.
+
+<span id="sandbox-annual-renewal" />
+
+## Choisir le renouvellement annuel lors d’un test d’abonnement Foody
+
+Si Foody a activé une offre de test CST pour votre restaurant, ouvrez **Paramètres → Compte → Facturation** avec le compte propriétaire. En **Annuel**, l’autorisation séparée indique le montant du renouvellement tous les 12 mois. Laissez-la décochée pour prépayer une seule année. Après confirmation du paiement avec renouvellement, retrouvez le prochain montant et sa date dans Facturation. Vous pouvez y arrêter le renouvellement automatique.
+
+Si l’offre provient d’un devis finalisé, vérifiez son numéro, la date limite d’acceptation et le total TTC. La facturation propose la fréquence prévue au devis. Le matériel facturé une seule fois et les frais à l’usage sont traités séparément. À l’ouverture du paiement, saisissez la carte de test CST chez Verifone. Si un paiement de test apparaît comme non abouti, vérifiez son statut avant de réessayer. Un paiement confirmé affiche la période couverte.
+
+<span id="subscription-test-invoices" />
+
+## Retrouver une facture d’abonnement de test
+
+Ouvrez **Facturation → Factures**. Chaque ligne affiche le paiement, le statut de la pièce et le montant TTC. Ouvrez **Détails du paiement** pour lire la période, le HT et la TVA. Utilisez **Filtres** pour rechercher par mois, numéro ou état du document. Sélectionnez un mois pour télécharger ses PDF disponibles en ZIP. Une facture **Disponible** peut être consultée ou téléchargée. Activez la boîte de test dans **Envoi par e-mail** pour recevoir les confirmations et les pièces. Lorsque **Renvoyer par e-mail** est proposé, il envoie le PDF archivé. Les paiements antérieurs à l’archive restent visibles. Ces documents du pilote ont uniquement valeur de test.
+
+Lors du premier paiement avec renouvellement, Verifone affiche le montant TTC de la formule choisie. Le mensuel règle un mois et l’annuel règle une année complète. Ce paiement autorise les prochains débits du même montant à la fréquence acceptée. Pour arrêter les échéances à venir, ouvrez **Facturation** et arrêtez le renouvellement automatique. Dans le pilote Invoice4U, la facture est demandée sur la vente. Son PDF devient disponible après vérification de l’original. Activez l’envoi par e-mail avant le paiement pour transmettre la boîte de test autorisée.
+
+<span id="self-service-trial" />
+
+## Choisir sa formule à la fin de l’essai
+
+En développement, ouvrez **Paramètres → Compte → Facturation → Abonnement** avec le compte propriétaire. Sans offre privée, les formules publiées et les modules individuels sont disponibles, y compris pour les restaurants partenaires. Si un essai est daté, sa date de fin apparaît. Choisissez la formule et les licences, puis **Vérifier mon abonnement** pour voir les montants mensuel et annuel. **Modifier mon choix** permet de revenir au catalogue avant le paiement. Sélectionnez la fréquence, vérifiez la TVA et le renouvellement, puis confirmez le paiement Verifone de test. Une offre privée publiée par Foody présente directement les conditions convenues. L’onglet **Factures** reste accessible avant de souscrire et après la réinitialisation d’un abonnement de test.

@@ -16,7 +16,7 @@ tags:
   - caisse
   - horaires
   - web
-updatedAt: '2026-10-28'
+updatedAt: '2026-11-22'
 featureId: menu-menus-and-groups
 audience: public
 releaseStatus: available
@@ -60,11 +60,15 @@ article peut figurer dans plusieurs groupes et menus.
 
 Deux cartes, par exemple BASSARI et HALAVI, restent deux cartes distinctes. Sur une page de commande qui propose plusieurs cartes visibles, leurs onglets sélectionnent une carte à la fois. Les pastilles du Menu des catégories représentent les groupes à l’intérieur de cette carte, par exemple Sandwichs, et non les catégories internes de la bibliothèque. Activez le canal Web de chaque carte, sélectionnez-les dans les paramètres de la page de commande, puis vérifiez les deux niveaux dans l’aperçu et après publication. Le style de la navigation des groupes se règle dans Liste des articles. Voir [la procédure des cartes et groupes sur le site](/fr/help/website-qr/order-page#menu-tabs-and-groups).
 
+Une carte qui servait à une ancienne tournée de vente conserve sa visibilité actuelle. Pour la proposer aux clients, activez sa visibilité sur le site et publiez-la depuis l’éditeur de cartes.
+
+Voir [Sous-groupes de carte](/fr/help/menu/subgroups).
+
 <span id="section-3" />
 
 ## Préparer, enregistrer et publier une carte
 
-Ouvrez Articles et cartes → Cartes puis la carte. Pour une carte tournante, sélectionnez sa série dans l’en-tête. Ajouter permet de choisir des articles pour un groupe ou de créer un groupe ; Ajouter un groupe de cartes est aussi disponible sous la liste. La flèche d’un groupe replie ou déplie son tableau sans modifier la carte. Le menu « … » du groupe contient Modifier le groupe et Choisir les articles. Le menu « … » à côté du titre contient Paramètres de la carte et Aperçu. Les modifications de groupes, canaux et horaires restent locales. Dès qu’une modification ou un brouillon existe, la barre inférieure propose Enregistrer le brouillon et Publier. Enregistrer conserve un brouillon privé ; Aperçu ouvre une liste privée sans prise de commande. Publier demande une confirmation et applique ensemble la carte et ses stocks préparés. Enregistrer seul ne modifie jamais le site ni la caisse. Modifier la mise en page du système de caisse ouvre l’éditeur de disposition distinct ; les modifications non enregistrées restent protégées avant cette navigation.
+Dans Articles et cartes → Cartes, ouvrez la carte. Pour une carte tournante, choisissez la série. Ajouter permet de choisir des articles ou de créer un groupe. Ajouter un groupe de cartes est aussi accessible sous la liste. La flèche replie ou déplie le groupe. Son menu … propose Modifier le groupe et Choisir les articles. Voir aussi [les images de groupe et de tuile](subgroups#group-and-pos-images). Le menu … du titre ouvre Paramètres de la carte et Aperçu. Les groupes, canaux et horaires se modifient dans l’éditeur. La barre inférieure apparaît dès qu’il y a un changement ou un brouillon. Enregistrer le brouillon garde les changements privés. Aperçu est sans prise de commande. Publier applique la carte et les stocks préparés après confirmation. Affichage caisse ouvre l’éditeur après vérification des modifications non enregistrées.
 
 <span id="draft-item-picker" />
 
@@ -102,7 +106,13 @@ Les canaux et horaires déterminent si le groupe peut être affiché. La disponi
 
 ## Contrôler la publication
 
-Créez et enregistrez d’abord les articles de la bibliothèque commune. Ajoutez-les au brouillon de carte, vérifiez la série sélectionnée, les canaux web/caisse, les horaires et le masquage des groupes, puis ouvrez l’aperçu et publiez. La série actuelle reste inchangée pendant la préparation d’une série future. Après activation de la publication, une série future sans publication n’est pas servie. Les noms, prix, recettes et statuts actif/inactif restent des modifications de la bibliothèque commune ; les disponibilités marquées immédiates s’appliquent immédiatement et sont historisées.
+Enregistrez les articles dans la bibliothèque puis ajoutez-les au brouillon. Vérifiez la série, les canaux web et caisse, les horaires et la visibilité des groupes, puis ouvrez l’aperçu et publiez. Chaque série a sa propre publication. Dès que ce mode est actif, seules les séries publiées sont proposées. Les noms, prix, recettes et statuts actif/inactif restent communs. Les changements de disponibilité marqués immédiats sont appliqués et historisés aussitôt.
+
+<span id="publish-unchanged-series" />
+
+## Publier la même carte pour une nouvelle série
+
+Avec le droit de modifier les cartes, choisissez la date. Si la carte indique « À publier », vérifiez les articles repris, cliquez sur Publier et confirmez. Dans Nouvelle commande, ouvrez la carte à la même date pour vérifier la série publiée. Les stocks sont propres à chaque date.
 
 <span id="draft-leave-and-conflict" />
 
@@ -114,7 +124,7 @@ Si vous quittez ou changez de série avec des modifications non enregistrées, c
 
 ## Préparer le stock d’une nouvelle série
 
-Avec la permission de modifier le menu, ouvrez la carte tournante, sélectionnez une série puis ouvrez le menu « … » à côté du titre → Préparer les stocks de cette série. Saisissez les quantités INITIALES, commandes déjà passées incluses : disponible = initial − engagé. Choisissez un compteur commun en unités, une mesure compatible en g/ml, un compteur par taille ou aucune limite prédéfinie. Reprendre les quantités initiales précédentes copie les quotas, jamais les reliquats ni un ancien statut épuisé. Le stock d’un même article du restaurant est commun aux cartes de cette série. Enregistrer le brouillon garde la préparation privée ; Publier l’applique atomiquement sans recréditer les réservations faites pendant l’édition. La première activation importe le disponible actuel et les commandes programmées existantes en préservant les quantités restantes. Les séries suivantes ne reprennent jamais l’ancien compteur global. Sans limite prédéfinie, une recette, une règle ou un statut manuel peut encore limiter la disponibilité.
+Avec le droit de modifier le menu, ouvrez la carte tournante et choisissez la série. Dans « … », ouvrez Préparer les stocks de cette série. Saisissez le quota initial, commandes engagées incluses (disponible = initial − engagé). Choisissez unités, g/ml, compteurs par taille ou aucune limite prédéfinie. Reprendre les quotas copie le stock initial de la série passée. Les cartes et les jours de la même série partagent les compteurs même après un report. Enregistrer garde le stock en brouillon. Publier applique les compteurs et préserve les réservations. La première activation conserve le disponible et les commandes programmées du compteur global. Les séries suivantes utilisent leurs propres quotas. Une recette, une règle ou un statut manuel peut encore limiter la disponibilité.
 
 <span id="table-actions" />
 
@@ -169,3 +179,9 @@ Depuis la fiche produit, Articles ou une Carte, l’éditeur de disponibilité s
 ## Choisir la source du stock et son profil
 
 Avec la permission de modifier le menu, ouvrez un produit enregistré → Stock & disponibilité → Modifier le stock et la disponibilité. Le badge Disponibilité d’Articles ou d’une Carte ouvre le même éditeur pour le stock courant. Une simple ouverture ne modifie rien. Choisissez Disponible sans limite, Indisponible, Quantité définie manuellement ou Quantité calculée depuis la recette. La quantité manuelle est un reliquat saisi en unités, en g/ml ou par taille ; les commandes déjà engagées restent réservées. Le calcul depuis la recette utilise les ingrédients et préparations disponibles et cesse d’appliquer le compteur manuel. Les anciens compteurs et réservations restent conservés pour les commandes existantes. Sans ingrédients dans la recette, aucune limite de quantité ne peut être calculée : un message vous invite à compléter la recette. Si la vente du stock déjà préparé est active, désactivez-la dans les réglages de préparation et enregistrez la fiche avant de choisir le calcul par recette. Les Réglages avancés du stock sont repliés au départ. Ouvrez-les pour choisir le Profil de stock. Utiliser le réglage par défaut hérite du profil de la catégorie, puis de celui du restaurant ; un profil nommé tel que Standard est un choix explicite. Le profil précise le suivi du stock, le seuil de stock faible, l’affichage du nombre restant et le choix de masquer le produit ou de l’afficher épuisé en rupture. Le résumé montre les réglages du profil sélectionné. Si le profil ne suit pas le stock, un message visible indique que les ventes ne sont pas limitées par le stock. Disponible sans limite et Indisponible restent prioritaires. Le profil appartient au produit pour toutes les séries ; les quantités et le choix de la source concernent la série affichée, ou le stock du produit hors séries. Appliquer enregistre directement tous les réglages de ce modal : disponibilité, source, mode de suivi, unité, quantités et profil. Cela fonctionne avec ou sans séries, sans cliquer sur Enregistrer dans la fiche. Le nom, les prix et les réglages de préparation encore en brouillon restent indépendants et ne sont pas enregistrés. Une modification de profil seule ne réécrit pas le stock ni les réservations, même si le stock est nul ou le produit inactif. Un ajustement de stock et un profil modifiés ensemble sont validés dans une transaction : un échec annule les deux et conserve les saisies. Les commandes du modal sont bloquées pendant l’enregistrement. Annuler ou Escape avant validation abandonne les choix ; après confirmation, quitter la fiche ne révoque pas les réglages appliqués. Si l’enregistrement réussit mais que l’actualisation échoue, Réessayer recharge uniquement les données sans rejouer l’ajustement. Les profils réutilisables se modifient dans Paramètres → Stock → Disponibilité.
+
+<span id="groups-from-item" />
+
+## Créer et affecter un groupe depuis la fiche article
+
+Depuis la fiche article, Cartes → Ajouter aux cartes permet de cocher des groupes ou de créer un groupe sous une carte existante. Le nouveau groupe est sélectionné automatiquement. Enregistrer l’article met à jour les brouillons ; chaque carte doit ensuite être publiée. Pour les séries, annulations et reprises après erreur, suivez [Créer un groupe depuis la fiche article](/fr/help/menu/creating-a-menu-item#groups-from-item).

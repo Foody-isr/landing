@@ -1,0 +1,49 @@
+---
+title: Inspect the last terminal transaction
+description: POS → More → Settings → Hardware → Payment terminals
+apps: foodypos
+tags:
+  - payments
+  - pos-ashrait-terminal-inspection
+updatedAt: '2026-11-24'
+featureId: pos-ashrait-terminal-inspection
+audience: public
+releaseStatus: available
+---
+POS → More → Settings → Hardware → Payment terminals
+
+<span id="ashrait-last-transaction-inspection" />
+
+## Inspect the last terminal transaction
+
+With a compatible version and permission to manage payments, open More → Settings → Hardware → Payment terminals. Open the details of the intended terminal, choose Last terminal transaction, then press Read last transaction. On iPad, FoodyPOS can connect to that verified terminal when it is reachable on the local network. For a Portable listed in inventory only, open its details in FoodyPOS on the Portable itself. Opening the dialog sends no query. If the connection fails or the identity cannot be confirmed, use Test connection on the same screen and verify the pairing. The payment default stays as configured. Inspection shows only the reference, type, reported result and amount when available. A preauthorization stays distinct from a purchase; no payment or check is changed. When the response includes a card receipt, expand Customer copy or Merchant copy to see its printable fields and the masked card number. An empty response, including after restart, does not prove that no payment occurred. For a pending payment or deposit, return to its original verification flow: inspection clears no lock and replays no operation. After changing account, restaurant, permission or terminal, read again; the old result is not reused. If the terminal fields are incomplete, Foody reads available details from the Ashrait receipt with the same reference. Missing or conflicting information stays Unconfirmed. Compare the reference with the sale in Transactions. Do not retry a payment based on this view alone.
+
+When Foody has a pending card payment, a manager can inspect the original terminal if it is connected, identified and ready. The screen shows that terminal’s latest known transaction. Have the original attempt verified if the result is empty or concerns a different sale. Once the attempt is resolved, available copies can be requested.
+
+A new lookup uses the SHVA number stored on the terminal’s inventory entry. Checking an interrupted payment uses the original attempt’s settings.
+
+<span id="terminal-reports-advanced" />
+
+## Israeli Ashrait report capabilities
+
+In the compatible Israeli Ashrait version, the old generic View current totals, Close only and Transmit only actions are removed. For end of day, use Current drawer and its explicit terminal transmission. Sales recorded by Foody are not the terminal’s bank totals. If Ashrait confirms a deposit without numeric results or a batch reference, those details remain unavailable; they are not zero. Other commands described in provider documentation are not necessarily available in Foody. Have a manager and Verifone confirm availability and the procedure before advanced financial or maintenance operations.
+
+For a new operation on a Mini connected by IP, FoodyPOS checks the SHVA number assigned to its physical serial in Backoffice. If there is no active assignment or SHVA number, ask Foody to check the fleet record. Use the original terminal and register to review an operation already started.
+
+<span id="ashrait-last-transaction-recovery" />
+
+## Recover an interrupted Ashrait payment
+
+If the terminal response is lost, open the check on the original register with the same terminal connected. Choose Pay, Card, then Review the card payment. This checks the existing attempt without starting another debit. You can start again if Foody confirms the attempt stopped before collection, was declined, or was cancelled. A matching authorization is recorded against the original check. If the terminal returns an empty or different result, give the displayed reference to a manager to check the Verifone journal. The result needs confirmation before taking another payment on this check. A separate register with a different terminal can collect a different check.
+
+If the gateway blocks a request before it reaches the bank, select **Check Ashrait gateway** in the active terminal’s details. For a connection lost during payment, use **Review the card payment** on the original check. Gateway readiness tells you whether a new request can start. Review the earlier attempt on its check.
+
+Ashrait retains the last stored transaction across a terminal restart. Review the payment on its original check before starting a new sale or running End of Day on that terminal. A new sale can become the last transaction, and End of Day clears the transactions stored on the terminal. Foody checks the identifiers on the original payment, its type, amount and currency. An empty response or conflicting identifier leaves the attempt pending review.
+
+On a compatible iPad build, if the Mini was switched off, turn it back on and open More → Settings → Hardware → Payment terminals → the saved Mini. Tap Check Ashrait gateway. FoodyPOS reconnects to the verified Mini and reads its status. When the gateway is ready, return to the check. If a card was already presented for that check, use Review the card payment to recover the original attempt. If the POS cannot reach the Mini, check that both devices are on the same local network and that the saved IP matches the address on the terminal.
+
+<span id="ashrait-portable-card-copy" />
+
+## Print the terminal card receipt
+
+In Last terminal transaction, choose View last transaction, then expand Customer copy or Merchant copy if available. The details include the printable fields Ashrait returned for that copy. Select the corresponding card receipt print action. On the Portable it prints on the integrated printer. On the iPad it uses the configured Epson receipt printer. After a confirmed print, use Print another copy if requested. When paper status is uncertain, check the printer before attempting a new copy. For an earlier recorded payment or refund, open its card receipt in Transactions. The archived customer voucher uses the restaurant’s receipt language and shows only the last four card digits. The merchant copy retains its own EMV fields.

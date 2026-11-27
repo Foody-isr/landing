@@ -13,12 +13,12 @@ const apiOrigin = (() => {
 
 const contentSecurityPolicy = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline' https://connect.facebook.net${isProduction ? '' : " 'unsafe-eval'"}`,
+  `script-src 'self' 'unsafe-inline' https://connect.facebook.net https://www.googletagmanager.com${isProduction ? '' : " 'unsafe-eval'"}`,
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "font-src 'self' data: https://fonts.gstatic.com",
   "img-src 'self' blob: data: https:",
   "media-src 'self'",
-  `connect-src 'self' ${apiOrigin} https://api.foody-pos.co.il https://dev-api.foody-pos.co.il https://connect.facebook.net https://www.facebook.com`,
+  `connect-src 'self' ${apiOrigin} https://api.foody-pos.co.il https://dev-api.foody-pos.co.il https://connect.facebook.net https://www.facebook.com https://www.google-analytics.com https://region1.google-analytics.com`,
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",
@@ -39,8 +39,19 @@ const config = {
   env: {
     NEXT_PUBLIC_API_URL: apiUrl,
   },
+  /** Retains previously shared delivery-guide links in their original language. */
+  async redirects() {
+    return ['he', 'fr', 'en'].map(lang => ({
+      source: `/${lang}/help/settings/delivery-zones`,
+      destination: `/${lang}/help/delivery/zones-and-schedules`,
+      permanent: true,
+    }));
+  },
   async headers() {
-    return [{ source: '/(.*)', headers: securityHeaders }];
+    return [
+      { source: '/(.*)', headers: securityHeaders },
+      { source: '/assets/sharing/:path*', headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }] },
+    ];
   },
 };
 export default config;

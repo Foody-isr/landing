@@ -1,0 +1,73 @@
+---
+title: Connecter et retrouver le Victa Mini sur iPad
+description: POS iPad → Plus → Paramètres → Matériel → Terminaux de paiement
+apps: foodypos
+tags:
+  - payments
+  - pos-victa-mini
+updatedAt: '2026-11-26'
+featureId: pos-victa-mini
+audience: public
+releaseStatus: available
+---
+POS iPad → Plus → Paramètres → Matériel → Terminaux de paiement
+
+<span id="connection" />
+
+## Connecter et retrouver le Victa Mini sur iPad
+
+Le Mini associé à cet iPad apparaît dans **Appareils du restaurant** et dans **Terminaux de paiement**. Ses deux lignes ouvrent la même fiche et affichent le même nom et le même état de connexion. **Connecté** indique que FoodyPOS a vérifié l’identité du terminal sur cette connexion.
+
+Sur l’iPad, avec le droit de gérer les paiements, ouvrez **Plus → Paramètres → Matériel → Terminaux de paiement**. Choisissez **Ajouter un terminal** ou ouvrez la fiche du terminal enregistré et touchez **Adresse IP du terminal**. Saisissez son adresse IPv4 sur le réseau local de l’iPad.
+
+Touchez **Enregistrer**. À la détection du terminal, comparez le numéro de série affiché avec celui de l’appareil et confirmez. Si un autre appareil répond, vérifiez son IP. Si sa fiche est absente ou archivée, demandez à Foody de vérifier son inscription pour ce restaurant dans le Backoffice.
+
+Le premier terminal associé devient celui par défaut sur cet iPad. Si plusieurs terminaux ont été vérifiés et que vous pouvez gérer les paiements, ouvrez **Plus → Paramètres → Caisse → Terminal par défaut** pour choisir le lecteur des prochaines ventes de cette caisse. Reprenez tout paiement ou clôture interrompu sur la caisse et le terminal d’origine. Le Portable qui exécute FoodyPOS utilise son lecteur intégré.
+
+Sur la fiche du terminal actif, touchez **Vérifier la passerelle Ashrait** pour savoir si le Mini ou le Portable peut accepter un paiement. La connexion réseau et la disponibilité bancaire sont vérifiées séparément. Si Ashrait demande des paramètres ou la clôture du lot, ouvrez **Rapports → Solde en caisse**. Vérifiez d’abord toute transmission en cours. Après la clôture, relisez l’état de la passerelle. Si le statut est vide, vérifiez la version de l’application de paiement avec Verifone.
+
+Après avoir rallumé un Mini, ouvrez sa fiche et touchez **Vérifier la passerelle Ashrait**. Sur la version compatible, FoodyPOS rouvre la connexion au Mini identifié. Si Foody a déjà autorisé la reprise du service, le dépôt d’origine reste consultable pendant cette vérification. Le message de la passerelle indique quand le Mini peut accepter une nouvelle vente.
+
+Si le Mini identifié est encore éteint à l’ouverture de FoodyPOS, laissez l’application au premier plan avec un compte autorisé à gérer les paiements. Dès que le Mini revient sur le Wi-Fi, FoodyPOS retente la connexion. La vérification de la passerelle indique si Ashrait est prêt à encaisser.
+
+Après **Vérifier la passerelle Ashrait**, si le Mini actif demande ses paramètres ou une clôture, un responsable peut toucher **Ouvrir la clôture du Mini**. Dans Solde en caisse, utilisez l’action affichée sous ce Mini.
+
+Sur l’iPad principal, vérifiez d’abord toute vente interrompue. Si Ashrait demande encore une clôture, un responsable qui gère les réglages et les paiements peut sélectionner **Clôturer le lot courant du Mini**. Lisez la confirmation : le Mini transmet toutes les ventes encore présentes, y compris celles de la période précédente si elles figurent toujours dans son lot. Confirmez une seule fois. Foody conserve une ligne distincte pour le nouvel envoi et la référence précédente reste à vérifier. Après la réponse OK d’Ashrait, reprenez les encaissements. En cas de coupure, utilisez **Reprendre l’enregistrement** pour rechercher le résultat. Le rapport SHVA du nouveau lot est consultable et imprimable lorsque le Mini le fournit.
+
+Au redémarrage, le Mini déjà appairé ouvre sa session. Une demande de paramètres ou de règlement se traite par la même clôture complète depuis l’iPad.
+
+<span id="terminal-identifiers" />
+
+## Consulter les identifiants du terminal
+
+Avec le droit de gérer les paiements, ouvrez **Identifiants du terminal** dans sa fiche pour consulter le numéro de série, le DID, le numéro SHVA à dix chiffres et les règles de paiement en plusieurs fois. Foody gère ces valeurs dans le Backoffice. Conservez les zéros initiaux du numéro SHVA. Si le Mini n’a pas de numéro SHVA actif, demandez à Foody de vérifier sa fiche avant toute nouvelle opération carte. Si Foody modifie le numéro SHVA pendant que l’iPad est connecté, rouvrez FoodyPOS pour lire le numéro enregistré. L’iPad l’utilise automatiquement pour se connecter.
+
+<span id="explicit-terminal-selection" />
+
+## Encaisser sur le terminal par défaut
+
+Le premier terminal associé devient celui par défaut sur cet iPad. Si plusieurs terminaux ont été vérifiés et que vous pouvez gérer les paiements, ouvrez **Plus → Paramètres → Caisse → Terminal par défaut** pour choisir le lecteur des prochaines ventes de cette caisse. Reprenez tout paiement ou clôture interrompu sur la caisse et le terminal d’origine. Le Portable qui exécute FoodyPOS utilise son lecteur intégré.
+
+<span id="ashrait-last-transaction-inspection" />
+
+## Consulter la dernière transaction du terminal
+
+Avec la version compatible et le droit de gérer les paiements, ouvrez Matériel → Terminaux de paiement, puis la fiche du terminal voulu et Dernière transaction du terminal. Choisissez Consulter la dernière transaction pour interroger cet appareil. Voir [la procédure et ses limites](/fr/help/payments/ashrait-terminal-inspection).
+
+<span id="ashrait-checkout-card-copy" />
+
+## Demander une copie du reçu carte
+
+Pour demander une copie carte Ashrait, ouvrez Plus → Paramètres → Matériel → Terminaux de paiement, ouvrez la fiche du terminal de la vente, puis choisissez Dernière transaction du terminal → Consulter la dernière transaction. Comparez la référence avec la vente. Lorsque le terminal a fourni le document, imprimez la copie client ou commerçant sur l’imprimante intégrée du Portable ou l’Epson de reçus sélectionnée sur l’iPad. Pour le reçu de vente Foody, ouvrez [Transactions → Nouveau reçu](/fr/help/payments/transactions#new-pos-receipt).
+
+<span id="ashrait-terminal-installment-selection" />
+
+## Proposer le paiement en plusieurs fois
+
+Foody règle dans le Backoffice les montants minimal et maximal en ILS de chaque terminal selon les conditions de l’acquéreur. Demandez à Foody d’y activer ou d’ajuster l’offre. Les anciens seuils saisis sur iPad doivent y être renseignés. Vous pouvez consulter les limites dans **Identifiants du terminal**. Pour une vente dans cette plage, la caisse propose de payer comptant ou en plusieurs fois. Si Foody a fixé un nombre maximal d’échéances, le caissier peut saisir le plan et un premier montant facultatif. Sinon, le client choisit les échéances sur le terminal. Foody enregistre le montant total approuvé.
+
+<span id="forget-payment-terminal" />
+
+## Retirer un terminal de paiement
+
+Pour retirer un terminal de paiement du restaurant, demandez à Foody de le retirer dans le Backoffice. Terminez d’abord tout paiement ou clôture en attente sur l’appareil d’origine. Actualisez **Matériel** sur l’iPad pour retirer la connexion correspondante. Pour associer à nouveau ce terminal, Foody doit d’abord disposer d’une fiche active pour ce restaurant.

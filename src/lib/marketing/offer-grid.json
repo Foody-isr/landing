@@ -1,0 +1,130 @@
+{
+  "rates": {
+    "restaurant": 590,
+    "ordering": 590,
+    "kitchen": 890,
+    "extraPos": 149,
+    "setup": 1290,
+    "orderingSetup": 1090,
+    "training": 990,
+    "extraPOSDevice": 149
+  },
+  "payments": {
+    "victaPortable": 1290,
+    "victaMobile": 1210,
+    "victaMini": 1190,
+    "physicalMonthly": 49,
+    "labRepairMonthly": 15,
+    "gatewayMonthly": 20,
+    "simDataMonthly": 10,
+    "virtualSetup": 199,
+    "virtualMonthly": 49,
+    "virtualIncludedTransactions": 1000,
+    "virtualOverage": 0.05,
+    "secureSetup": 249,
+    "secureOperation": 0.9
+  },
+  "plans": {
+    "restaurant": {
+      "name": {
+        "fr": "Foody Restaurant",
+        "en": "Foody Restaurant",
+        "he": "Foody Restaurant"
+      },
+      "included": {
+        "pos": 0,
+        "chef": 0,
+        "kds": 0,
+        "employees": null,
+        "pos_devices": 2,
+        "pos_users_unlimited": true
+      }
+    },
+    "ordering": {
+      "name": {
+        "fr": "Foody Online",
+        "en": "Foody Online",
+        "he": "Foody Online"
+      },
+      "included": {
+        "pos": 0,
+        "chef": 0,
+        "kds": 0,
+        "employees": null,
+        "pos_devices": 0,
+        "pos_users_unlimited": false
+      }
+    },
+    "kitchen": {
+      "name": {
+        "fr": "Foody Kitchen",
+        "en": "Foody Kitchen",
+        "he": "Foody Kitchen"
+      },
+      "included": {
+        "pos": 0,
+        "chef": 1,
+        "kds": 1,
+        "employees": null,
+        "pos_devices": 0,
+        "pos_users_unlimited": false
+      }
+    }
+  },
+  "version": "2026-11-16",
+  "bundles": [
+    {
+      "id": "restaurant-orders",
+      "name": {
+        "fr": "Foody Restaurant + Online",
+        "en": "Foody Restaurant + Online",
+        "he": "Foody Restaurant + Online"
+      },
+      "modules": [
+        "restaurant",
+        "ordering"
+      ],
+      "monthly_minor": 99000,
+      "included": {
+        "pos": 0,
+        "chef": 0,
+        "kds": 0,
+        "employees": null,
+        "pos_devices": 2,
+        "pos_users_unlimited": true
+      },
+      "add_features": [],
+      "remove_features": [],
+      "published": true,
+      "automatic": true,
+      "recommended": false
+    },
+    {
+      "id": "integral",
+      "name": {
+        "fr": "Foody Intégral",
+        "en": "Foody Integral",
+        "he": "Foody Integral"
+      },
+      "modules": [
+        "restaurant",
+        "ordering",
+        "kitchen"
+      ],
+      "monthly_minor": 179000,
+      "included": {
+        "pos": 0,
+        "chef": 1,
+        "kds": 1,
+        "employees": null,
+        "pos_devices": 3,
+        "pos_users_unlimited": true
+      },
+      "add_features": [],
+      "remove_features": [],
+      "published": true,
+      "automatic": true,
+      "recommended": true
+    }
+  ]
+}

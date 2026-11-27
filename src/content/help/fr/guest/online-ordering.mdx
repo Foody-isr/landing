@@ -5,7 +5,7 @@ apps: foodyweb
 tags:
   - guest
   - guest-ordering
-updatedAt: '2026-10-27'
+updatedAt: '2026-11-24'
 featureId: guest-ordering
 audience: public
 releaseStatus: available
@@ -18,47 +18,85 @@ Ouvrez le lien public du restaurant ou choisissez un établissement de la chaîn
 
 Pour les commandes en ligne au poids, ouvrez Réglages → Paiements & TVA avec settings.edit. Saisissez Marge d’empreinte au poids % de 0 à 100 puis enregistrez ; la valeur par défaut des nouveaux restaurants est 20. Un échec conserve la saisie. À 0 %, le montant estimé reste préautorisé. Seul le sous-total au poids reçoit une marge : 100 au poids + 50 fixes à 20 % donnent 170 préautorisés ; aucune marge sur la livraison. Le checkout affiche estimation, plafond temporaire et Confirmer et préautoriser, dans le thème du restaurant. Un plafond modifié exige une nouvelle revue et confirmation avant paiement ; une politique inconnue bloque l’autorisation. Les commandes déjà revues et empreintes existantes gardent leur plafond. Le personnel confirme les poids mesurés avant capture et progression ; un dépassement est signalé pour un paiement complémentaire, jamais débité automatiquement. Espèces/paiement ultérieur n’annoncent pas d’empreinte. Un prestataire autorisation/capture configuré est nécessaire ; validez capture partielle, libération et expiration avant production. Ce réglage ne change ni acompte/solde traiteur ni la restriction de sauvegarde d’une nouvelle carte pour une empreinte CST au poids.
 
+<span id="verifone-wallet-checkout" />
+
+## Payer en ligne avec Apple Pay ou Google Pay
+
+Au moment de commander à emporter ou en livraison, sélectionnez Payer maintenant et vérifiez le total, frais de livraison compris. Si le restaurant propose un wallet et que votre navigateur le prend en charge, choisissez Apple Pay ou Google Pay et confirmez le montant affiché. Si vous fermez le wallet avant d’autoriser le paiement, votre panier reste disponible. Si Foody vérifie encore le paiement, consultez son état sur la page de confirmation. Si cette page indique un refus et propose à nouveau le wallet, réessayez depuis la même commande. Si le wallet est indisponible, choisissez l’un des autres moyens de paiement proposés à la caisse.
+
 <span id="choose-menu-and-group" />
 
 ## Choisir une carte puis un groupe
 
-Si le restaurant propose plusieurs cartes sur la page, choisissez leur onglet, par exemple BASSARI ou HALAVI. Seuls les groupes et articles de la carte sélectionnée s’affichent. Les pastilles ou liens en dessous permettent d’atteindre ses groupes, comme Sandwichs ou Boissons. La recherche et le filtre de disponibilité s’appliquent à cette carte. Une recherche sans résultat ne retire pas les onglets ; changer de carte efface la recherche. Parcourir une autre carte conserve le panier. Si vous ne trouvez pas un article, essayez l’autre carte ou effacez la recherche ; sa présence dépend aussi de sa disponibilité et de sa publication. Pour une formule, ouvrez sa fiche puis Composer mon menu : la carte garde son thème pendant les choix. Le compteur et le bouton − permettent de vérifier ou retirer une sélection ; complétez les étapes avant l’ajout au panier. Voir [les formules sur le site](/fr/help/menu/combos#website-composition).
+Si le restaurant propose plusieurs cartes sur la page, choisissez leur onglet, par exemple BASSARI ou HALAVI. Seuls les groupes et articles de la carte sélectionnée s’affichent. Les pastilles ou liens en dessous permettent d’atteindre ses groupes, comme Sandwichs ou Boissons. La recherche et le filtre de disponibilité s’appliquent à cette carte. Une recherche sans résultat ne retire pas les onglets ; changer de carte efface la recherche. Parcourir une autre carte conserve le panier. Si vous ne trouvez pas un article, essayez l’autre carte ou effacez la recherche ; sa présence dépend aussi de sa disponibilité et de sa publication. Pour une formule, ouvrez sa fiche puis Composer mon menu : la carte garde son thème pendant les choix. Le compteur et le bouton − permettent de vérifier ou retirer une sélection ; complétez les étapes avant l’ajout au panier. Voir [les formules sur le site](/fr/help/menu/combos#website-composition). Sur téléphone, balayez horizontalement les produits d’un carrousel pour voir la suite du groupe.
+
+Quand le restaurant active un accueil dédié, ouvrez l’app installée depuis son icône pour voir le carrousel et la sélection du moment. Touchez le bouton de commande pour ouvrir la carte ou un produit en vedette pour voir sa fiche.
+
+Sur une page de commande ouverte dans le navigateur, les informations de retrait, de livraison et d’horaire peuvent rester visibles pendant le défilement. Choisissez une catégorie pour afficher son titre sous les barres fixes. Pour revenir à l’accueil du restaurant, utilisez la navigation du site ou son logo si celui-ci mène à l’accueil.
+
+Si un groupe contient des sous-groupes, faites défiler la carte pour les parcourir les uns après les autres. Les liens sous **Boissons**, par exemple **Bouteilles** et **Canettes**, mènent directement à leur section. La recherche trouve les articles dans toute la carte sélectionnée, sous-groupes compris.
+
+Sur la page **Commander**, un bord estompé dans la barre des catégories indique que d’autres groupes sont disponibles. Faites défiler la rangée horizontalement pour y accéder. Si la place manque, la recherche et le choix de langue apparaissent sur une ligne distincte.
+
+Quand le restaurant a publié une image de partage, l’aperçu du lien d’un article reprend cette image.
 
 <span id="basket" />
 
 ## Composer le panier
 
-Choisissez retrait, livraison ou table si proposé, le menu actif puis un article. Choisissez variante, options obligatoires, quantité et notes autorisées, puis ajoutez. Vérifiez le panier avant paiement. Une suggestion d’assistant suit les mêmes choix et contrôles de disponibilité.
+Choisissez retrait, livraison ou table si proposé, le menu actif puis un article. Sa fiche montre la portion renseignée, le prix, la description et les photos disponibles. Choisissez une variante et les options obligatoires. Lorsque le restaurant autorise la note générale pour cet article, utilisez Ajouter une note. La quantité et Ajouter au panier restent ensemble en bas pendant le défilement ; le total suit la quantité et les choix. Le titre et la fermeture restent accessibles après la photo. Fermer sans ajouter abandonne la sélection en cours. Si l’ajout est indisponible, complétez les choix obligatoires ou vérifiez la disponibilité indiquée. Vérifiez et modifiez le panier avant paiement. Une suggestion d’assistant suit les mêmes choix et contrôles de disponibilité. Si le restaurant vous demande de choisir d’abord Retrait ou Livraison, confirmez les détails du service pour accéder à la carte. Ouvrez Menu pour retrouver les liens du site et, s’il est proposé, le changement de langue. Sur la carte, cliquez sur le mode affiché pour en changer, puis confirmez l’adresse ou le créneau applicable. Votre panier vous suit. Si le restaurant propose d’ajouter le site à l’écran d’accueil, vous pouvez suivre l’aide avant de remplir le panier ou passer directement à la commande. Sur iPhone, touchez le bouton de la carte d’installation pour voir les étapes Partager, Sur l’écran d’accueil et Ajouter.
+
+Si vous aviez un ancien lien de tournée de vente, ouvrez le site du restaurant et choisissez les articles dans sa carte publiée. Les paniers ordinaires sont conservés lors de la mise à jour.
 
 <span id="mobile-fulfillment" />
 
 ## Choisir une adresse sur téléphone
 
-Dans la fenêtre de commande, choisissez Livraison et saisissez la rue, le numéro et la ville. Si la recherche d’adresses est activée, faites défiler les suggestions puis touchez l’adresse complète. Une rue seule demande encore le numéro et conserve le clavier. Une adresse complète ferme le clavier ; vérifiez ensuite les créneaux proposés et touchez Confirmer l’adresse. Le bouton reste désactivé pendant les vérifications ou si la livraison est impossible. Pour le retrait, choisissez Retrait puis Confirmer le retrait. La croix en haut ferme la fenêtre. La connexion au compte reste facultative. Si aucune adresse ne convient, précisez le numéro ou la ville ; en cas d’échec du service, réessayez ou contactez le restaurant. Sur mobile, les onglets Retrait et Livraison, le champ et le lien Se connecter en haut gardent leur position à l’ouverture et à la fermeture du clavier. Les suggestions compactes affichent l’adresse et la ville sur deux lignes dans une liste défilante plus grande. Pendant la recherche, la confirmation laisse la place aux suggestions ; elle apparaît après le choix d’une adresse complète. La couverture est réservée aux grands écrans. La mention Google Maps et les erreurs restent visibles. Après avoir choisi une rue, ajoutez le numéro dans le même champ et choisissez la suggestion d’adresse complète. La rue seule ne suffit pas à confirmer la livraison.
+Saisissez la rue, le numéro et la ville dans le champ de livraison, puis touchez la bonne adresse. Ce choix valide l’adresse. Si Google retrouve seulement la rue, le site conserve le numéro de la suggestion ou celui que vous avez saisi pour cette rue et cette ville. La vérification de la zone, des frais, du minimum et des créneaux se fait automatiquement. Vous pouvez ensuite poursuivre votre commande. Sur téléphone, la liste défile lorsque le clavier est ouvert. La croix vous ramène au panier.
+
+Si la première recherche Google échoue, Foody essaie de retrouver le bâtiment avec la géolocalisation d’adresses de Google. Si la recherche ne propose aucune adresse, saisissez la rue et le numéro, une virgule, puis la ville. Touchez **Utiliser l’adresse saisie** dans la liste. Le restaurant vérifie la couverture de cette adresse. Vous pouvez également ouvrir **Saisir l’adresse manuellement** si vous souhaitez préciser une entrée.
+
+En cas de coupure, la recherche reprend dans le champ. Touchez **Réessayer** pour relancer la même saisie. En revenant à ce panier dans le même onglet, vous retrouvez votre adresse sélectionnée. Si vous changez de bâtiment, vérifiez les consignes d’accès de la nouvelle adresse.
 
 <span id="fulfillment" />
 
 ## Choisir coordonnées et remise
 
-Saisissez coordonnées, adresse ou heure de retrait. En livraison vérifiez zone, frais et créneau ; pour précommande/tournée, suivez échéance/date spécifiques. Le paiement revalide règles et prix actuels.
+Dans le panier, ouvrez **Saisir l’adresse de livraison**. Tapez la rue, le numéro et la ville, puis choisissez l’adresse dans la liste. Vérifiez les frais et le minimum affichés. Si la livraison est indisponible, consultez le motif. Si le panier indique un montant manquant, ajoutez des articles avant de continuer vers le paiement.
+
+Saisissez coordonnées, adresse ou heure de retrait. En livraison vérifiez zone, frais et créneau ; pour une précommande, vérifiez sa date et son échéance. Le paiement revalide règles et prix actuels. Après vérification de l’adresse, consultez les frais de livraison affichés et choisissez Date et Heure comme pour le retrait. Les jours proposés dépendent de la zone ; les heures et la durée des créneaux viennent du restaurant. En mode automatique, le prochain créneau est attribué. Si l’heure doit être confirmée, aucun sélecteur d’heure n’apparaît et le suivi affichera la confirmation. Changer l’adresse ou le panier relance la vérification ; attendez sa fin avant de confirmer. Avec les versions compatibles, les jours du jour même, le transport et la confirmation de l’horaire se règlent dans chaque zone. Les horaires du restaurant et la préparation des produits restent obligatoires. Une commande planifiée peut être prévue aujourd’hui. L’équipe peut vérifier les calendriers enregistrés avec un panier et une adresse dans Commandes et disponibilité → Simuler une commande, sans créer de commande ni message.
+
+Vous pouvez aussi confirmer la rue, le numéro et la ville avec **Saisir l’adresse manuellement**.
+
+<span id="checkout-calendar" />
+
+## Choisir une date à l’avance au paiement
+
+Quand un calendrier apparaît dans Coordonnées et paiement, choisissez un mois dans le menu pour voir ses jours. Seuls les jours disponibles sont sélectionnables. Choisissez un jour, puis ouvrez Heure pour choisir un de ses créneaux. Consulter un autre mois conserve votre choix jusqu’à la sélection d’un nouveau jour. Si un jour ou un horaire est indisponible, choisissez une autre option proposée pour votre panier. La période de réservation du restaurant détermine jusqu’à quand vous pouvez commander.
 
 <span id="payment" />
 
 ## Payer et vérifier la confirmation
 
-Choisissez un moyen proposé, vérifiez total et suivez le paiement sécurisé. Attendez le résultat vérifié. Un paiement rejeté/en attente n’est pas une commande payée confirmée ; conservez la référence et contactez le restaurant avant de payer deux fois.
+Vérifiez le total et saisissez la carte à l’endroit indiqué dans la section Paiement. Si l’option est proposée, vous pouvez enregistrer la carte lors du paiement. Avec le formulaire Verifone intégré, vous saisissez la carte une seule fois dans Foody. Si le restaurant change de formulaire pendant votre commande, vérifiez la section Paiement puis confirmez de nouveau. Pour une commande prépayée, « Commande en attente de paiement » signifie que Foody a enregistré la commande et attend le résultat du paiement. Si la page de paiement n’a pas pu s’ouvrir, gardez le numéro de commande et réessayez depuis cette commande lorsque le bouton apparaît. Si Foody vérifie le paiement, attendez le résultat avant toute nouvelle tentative. Sur la page du prestataire, utilisez Retour pour retrouver votre commande, même si vous avez commandé sans compte. Le récapitulatif contient vos articles, vos coordonnées et votre adresse de livraison. Si le paiement reste dû, choisissez Payer maintenant pour le reprendre sur cette commande. Si le prestataire vous renvoie à l’écran d’échec du paiement, choisissez Voir ma commande pour ouvrir ce récapitulatif.
+
+<span id="verifone-iframe-payment" />
+
+## Payer par carte sur le site du restaurant
+
+Si le restaurant utilise Verifone iframe pour le retrait ou la livraison, choisissez Continuer vers le paiement. Vérifiez le montant, puis saisissez votre carte dans le formulaire Verifone affiché sur le site du restaurant. Foody ouvre la confirmation après vérification du paiement. Si le formulaire ne s’affiche pas, choisissez Ouvrir le formulaire dans un nouvel onglet pour reprendre le paiement de la même commande. Revenez à l’onglet d’origine et choisissez Vérifier le statut du paiement pour connaître le résultat. Si la vérification prend du temps ou si le formulaire expire, choisissez Voir ma commande pour retrouver la même commande.
 
 <span id="customer-sign-in-methods" />
 
 ## Se connecter avant de commander
 
-Dans Me connecter, utilisez Google ou votre e-mail et votre mot de passe. Facebook et Apple apparaissent uniquement si ces méthodes sont configurées. La connexion par code seul est retirée ; les codes de vérification d’adresse et de récupération de mot de passe restent distincts. Un ancien compte créé sans mot de passe peut utiliser Mot de passe oublié pour en définir un. Au paiement, les mêmes fournisseurs proposés complètent le choix e-mail + mot de passe ; seul le bouton de paiement soumet l’inscription en ligne. L’accès invité reste possible, et l’enregistrement d’une carte demande toujours un consentement distinct.
+Dans Me connecter, utilisez Google ou votre e-mail et votre mot de passe. Facebook et Apple apparaissent uniquement si ces méthodes sont configurées. La connexion par code seul est retirée ; les codes de vérification d’adresse et de récupération de mot de passe restent distincts. Un ancien compte créé sans mot de passe peut utiliser Mot de passe oublié pour en définir un. Au paiement, Créer mon compte regroupe les fournisseurs disponibles et Continuer avec l’e-mail. Cette dernière option ouvre les champs dans la même page. Le bouton de paiement soumet l’inscription par e-mail avec la commande. L’accès invité reste possible, et l’enregistrement d’une carte demande toujours un consentement distinct.
 
 <span id="related-service-controls" />
 
 ## Accès aux nouveaux réglages
 
-L’invitation à se connecter avant de commander se règle dans Site web → Parcours de commande → Afficher l’invitation à se connecter à l’arrivée. Désactivée, elle laisse entrer directement les informations de retrait ou de livraison ; activée, Commander sans compte reste immédiatement visible. Enregistrez le brouillon puis publiez pour appliquer ce choix. Voir [le réglage du parcours](/fr/help/website-qr/checkout-and-receipt#optional-entry-sign-in). Lorsque l’invitation est désactivée, un lien discret Se connecter reste disponible dans la fenêtre de retrait ou de livraison. Il ouvre la connexion uniquement à la demande ; fermer cette fenêtre conserve les informations déjà saisies et permet de poursuivre sans compte.
+L’invitation à se connecter avant de commander se règle dans Site web → Page de commande → Mode de commande → Afficher l’invitation à se connecter à l’arrivée. Désactivée, elle laisse entrer directement les informations de retrait ou de livraison ; activée, Commander sans compte reste immédiatement visible. Enregistrez le brouillon puis publiez pour appliquer ce choix. Voir [le réglage du parcours](/fr/help/website-qr/checkout-and-receipt#optional-entry-sign-in). Lorsque l’invitation est désactivée, un lien discret Se connecter reste disponible sur l’écran de retrait ou de livraison et dans la fenêtre classique. Il ouvre la connexion uniquement à la demande ; fermer cette fenêtre conserve les informations déjà saisies et permet de poursuivre sans compte.
 
 <span id="conditional-item-choices" />
 
@@ -83,3 +121,75 @@ Quand un restaurant pilote manuellement les commandes hebdomadaires, son équipe
 ## Photos des produits
 
 Un article peut afficher plusieurs photos. Consultez [Photos des produits](/fr/help/menu/product-photos) pour ajouter des photos, choisir la principale et utiliser les bulles, les flèches ou le balayage horizontal dans la fiche produit. Une photo unique n’affiche pas de commandes de galerie.
+
+<span id="prepared-order-existing-cart" />
+
+## Panier préparé et présentation du restaurant
+
+Un lien privé de commande préparée Sumit rejoint le panier habituel du restaurant, puis son formulaire de paiement avec les couleurs, polices et champs publiés. Le panier personnel du navigateur reste conservé ; les articles, prix et date préparés sont figés. Les coordonnées et réponses demandées concernent cette commande, sans chargement d’un compte ou d’une carte enregistrée. Les réponses personnalisées sont liées lors de la première ouverture du paiement. Les frais de livraison sont recalculés puis vérifiés avant paiement. Voir la [procédure Sumit](/fr/help/orders/internal-sumit-checkout).
+
+<span id="stancer-cash-guarantee" />
+
+## Utiliser les espèces avec garantie bancaire facultative
+
+Pour un retrait ou une livraison, le client éligible choisit Paiement en espèces avec garantie bancaire, vérifie le montant exact et accepte explicitement sa réservation puis son encaissement si la commande reste impayée en espèces. Il saisit sa carte sur la page Stancer et effectue l’authentification bancaire éventuelle. Foody confirme la commande après vérification de l’autorisation auprès de Stancer. La vente reste impayée : la réservation ne représente ni des espèces reçues ni un paiement carte encaissé. Cette version accepte les commandes à prix fixe pour un service dans les six jours. Les produits au poids et les dates plus lointaines exigent un autre paiement. Si le montant change, vérifiez le panier actualisé et acceptez le nouveau montant. Stancer documente sept jours pour une autorisation non encaissée ; la durée de vie d’une intention de paiement est une notion différente.
+
+Conditions d’activation et reprise : [garantie bancaire pour les espèces](/fr/help/payments/cash-card-guarantee).
+
+<span id="option-choice-requirement" />
+
+## Laisser une option facultative vide
+
+Dans une fiche produit compatible, Obligatoire demande un choix dans chaque position visible avant Ajouter au panier. Un groupe marqué Facultatif peut rester vide. Après sélection, Effacer le choix retire uniquement cette position et sa précision éventuelle ; les autres positions et le prix du format restent conservés. Une précision obligatoire liée à une option sélectionnée doit toujours être remplie. Vérifiez les choix dans le panier avant de confirmer. Pour la livraison facultative du jour même, consultez le guide Zones et créneaux de livraison avec des versions compatibles de l’API, d’Admin et du site client : le client peut choisir uniquement le jour, voir une estimation avant paiement puis recevoir un horaire confirmé par le restaurant. Les précommandes conservent leur mode configuré. La date locale du restaurant détermine les règles du jour même.
+
+<span id="independent-lifecycle-confirmations" />
+
+## Vérifier les confirmations indépendantes
+
+Le suivi de votre commande distingue le paiement, la préparation et la remise réellement enregistrée, y compris partielle. « Non suivi » est distinct d’une information inconnue. Une valeur monétaire inconnue n’est pas zéro et ne propose pas un paiement à deviner. Les commandes QR des autres clients d’une même table restent distinctes et ne sont pas exposées par cette vue. Voir [les états de commande](/fr/help/orders/payment-preparation-and-handoff).
+
+<span id="event-orders" />
+
+## Événements et empreintes bancaires
+
+Pour modifier un événement enregistré, l’ajouter en production, partager son lien et distinguer acompte encaissé et empreinte Sumit, consultez [Event / Catering](/fr/help/orders/event-orders).
+
+<span id="ready-products-and-cutoffs" />
+
+## Comprendre les produits prêts et les échéances
+
+Avec les versions compatibles, Disponible maintenant reste visible sur la première carte sélectionnée pour cette page du site, même si ce n’est pas la première carte du catalogue. Les produits publiés avec un stock prêt indépendant peuvent aussi y apparaître pendant leur validité. Le panier vérifie la quantité totale, les dates et les créneaux ; ajouter au panier ne réserve pas le stock. Si celui-ci change avant confirmation, rechargez les créneaux et choisissez une proposition disponible. Une échéance de livraison peut exclure un vendredi après 13 h ou un dimanche commandé samedi, même pour un gâteau prêt ; le retrait utilise son propre calendrier. Avant de choisir un article, le créneau proposé utilise la préparation générale du restaurant. Après ajout, il est vérifié pour tout le panier : un roulé rapide ne doit pas hériter du délai d’un gâteau absent du panier.
+
+<span id="delivery-contact-details" />
+
+## Renseigner les coordonnées de livraison
+
+Dans Coordonnées pour une livraison, remplissez les champs marqués d’un astérisque. Vous pouvez laisser les champs facultatifs vides. Selon le restaurant, l’étage, l’appartement, le code immeuble et les notes de livraison sont visibles avant le choix de la ville. Si les suggestions d’adresse sont activées, choisissez une adresse complète dans la liste. Si le formulaire vous renvoie à un champ, complétez-le ou corrigez-le, puis réessayez. Ces informations de livraison ne sont pas demandées pour un retrait.
+
+Vous pouvez aussi confirmer la rue, le numéro et la ville avec **Saisir l’adresse manuellement**. Si vous êtes connecté, une adresse déjà confirmée et enregistrée pour ce restaurant peut être réutilisée pendant une interruption de la recherche. Vérifiez-la avant de continuer.
+
+<span id="service-first" />
+
+## Changer de mode quand la boutique demande de choisir d’abord
+
+Si le site vous demande de choisir un mode au départ, sélectionnez Retrait ou Livraison et confirmez le lieu, l’adresse ou le créneau demandé. Si l’étape Retrait ou Livraison propose de vous connecter, vous pouvez aussi choisir Commander sans compte. Si le statut Connecté apparaît, vous pouvez aussi [vous déconnecter et poursuivre sans compte](/fr/help/guest/tracking-and-account#order-as-guest-after-sign-out). Dans l’en-tête mobile compact, le titre et l’icône du menu restent visibles pendant le défilement. Ouvrez le menu latéral puis sélectionnez Changer de mode. Dans l’en-tête standard, cliquez sur le mode affiché. Confirmez l’adresse ou le créneau applicable. Votre panier vous suit. L’ajout depuis une story et la reprise des achats depuis le panier ouvrent directement la carte. Si le mode reste à choisir, sélectionnez retrait ou livraison sur la carte ou dans le panier avant le paiement.
+
+Dans une version compatible de l’app installée, ouvrez l’onglet Commander. Le titre de commande reste en haut pendant le défilement. Touchez sa flèche de retour lorsqu’elle est affichée pour revenir au choix du mode. Remontez en haut de la carte pour retrouver le créneau et le lieu.
+
+<span id="versioned-commercial-access" />
+
+## Accès commercial en développement
+
+Pour un restaurant inscrit au catalogue versionné de développement, cette fonction doit être incluse dans son offre ou dans son essai actif, en plus des autorisations du rôle. Une fonctionnalité retirée est refusée côté serveur. Consultez Facturation pour voir les modules et les licences, puis faites examiner un ajout par le propriétaire. Les quotas de comptes et de postes POS sont distincts ; un dépassement nécessite les licences correspondantes. Les contrats historiques ne sont pas modifiés automatiquement.
+
+<span id="contact-phone-format" />
+
+## Vérifier le téléphone de contact
+
+Saisissez un numéro complet avec son indicatif pays. Le contrôle de numéro de Foody retire les espaces et les marques invisibles de mise en forme issus d’un copier-coller avant validation ; il ne corrige pas les chiffres et n’accepte pas les lettres ou les extensions. Si votre formulaire refuse encore un numéro collé, ressaisissez-le au format international et vérifiez les chiffres avant de continuer. Un format accepté ne confirme ni la possession du numéro ni l’existence d’un compte WhatsApp. Les éventuelles vérifications SMS et les autres conditions de commande restent applicables.
+
+<span id="series-service-days" />
+
+## Choisir un jour servi
+
+Pour une précommande hebdomadaire, choisissez retrait ou livraison. La liste indique les jours de la série où ce service est disponible. Au paiement, vérifiez la date et le créneau récapitulés. Si un jour vient de changer, rechargez et sélectionnez un créneau proposé.

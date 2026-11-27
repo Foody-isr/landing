@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - settings
   - restaurant-profile
-updatedAt: '2026-10-21'
+updatedAt: '2026-11-24'
 featureId: restaurant-profile
 audience: public
 releaseStatus: available
@@ -34,25 +34,25 @@ For online by-weight orders, open Settings → Payments & VAT with settings.edit
 
 ## Edit restaurant information
 
-In general settings update the displayed name, description, contact information and address fields available to your role. In Branding update logo and brand assets. Save and verify the guest-facing result; Website may have its own published design overrides.
+In general settings update the displayed name, description, contact information and address fields available to your role. In Branding update logo and brand assets. Save and verify the guest-facing result; Website may have its own published design overrides. On supported devices, the logo is also used as the icon when the website is added to the home screen.
 
 <span id="languages" />
 
 ## Set supported languages
 
-In Languages choose the restaurant languages and default language offered by the form. Translate catalog names and public website content separately. Changing the interface language alone does not translate every item or customer message.
+To change the language of the Admin interface, open the account menu and select Language for this browser. To change the original catalogue shown to guests, an authorized manager opens Settings → Language → Default menu language, chooses the language and saves. Foody uses the saved translations in that language as the original and keeps existing translations in the other languages, including explicitly translated older groups. Check item and group names in each published language after saving. Public website content and the visitor’s interface language have their own settings.
 
 <span id="hours" />
 
 ## Maintain opening hours
 
-In Opening hours edit each day and its time ranges, including closed days. Check the restaurant time zone, calendar exceptions and separate pickup/delivery schedules. Save, then verify the next offered fulfillment slot without placing a real order.
+In Opening hours edit each day and its time ranges, including closed days. Check the restaurant time zone, calendar exceptions and separate pickup/delivery schedules. Save, then verify the next offered fulfillment slot without placing a real order. Orders & availability remains the common source for pickup/delivery receiving hours, closures and preparation. Delivery zones add coverage, days, fees and explicit same-day rules; they cannot enable a disabled service. Product-specific preparation replaces the restaurant default. If custom booking hours are active they retain their documented precedence; do not duplicate opening times in each zone.
 
 <span id="related-service-controls" />
 
 ## Access the new controls
 
-The entry sign-in invitation is now a published website order-journey preference. Order without an account remains available; this setting does not replace mandatory phone verification or payment/delivery validation. Google/Geoapify consumption and limits are separately available in [Usage and quotas](/en/help/settings/api-usage-and-quotas).
+The entry sign-in invitation is now a published website order-journey preference. Order without an account remains available; this setting does not replace mandatory phone verification or payment/delivery validation.
 
 <span id="staff-contact-and-courier-defaults" />
 
@@ -70,4 +70,16 @@ Staff activation checks the permissions assigned in this restaurant, including c
 
 ## Control weekly ordering manually
 
-Weekly batch restaurants can choose Manual opening under Settings → Ordering & delivery → Orders & availability, with settings.edit. Save, then explicitly open or pause online orders using the pause control. Automatic opening/cutoff times do not control intake in this mode. Delivery days/windows, the restaurant timezone, preparation and stock rules remain in effect; existing orders are untouched. The website stays browsable during a pause. Active temporary test access must be disabled before reopening publicly. See the fulfillment settings guide for the complete procedure.
+Weekly batch restaurants can choose Manual opening under Settings → Ordering & delivery → Orders & availability, with settings.edit. Save, then explicitly open or pause online orders using the pause control. Automatic opening/cutoff times do not control intake in this mode. Delivery days/windows, the restaurant timezone, preparation and stock rules remain in effect; existing orders are untouched. The website stays browsable during a pause. Active temporary test access must be disabled before reopening publicly. See the fulfillment settings guide for the complete procedure. Profile edits now persist only the fields actually changed so a concurrent name or contact save does not restore stale service hours. Opening-hour editors use a baseline: independent hour changes merge, while competing edits keep the draft and require reviewing the saved version. A zone name is only a label; configure its delivery weekdays in Delivery zones rather than relying on the name.
+
+<span id="ordering-simulation-clock" />
+
+## Test when an order is placed
+
+In Orders & availability → Simulate an order, select Order date and time in the displayed timezone, then the receiving date and basket. Now reloads the server time. Preparation and same-day rules are evaluated at this reference using current saved settings and ready stock. A past date does not reconstruct history; this test neither reserves a courier nor creates an order. Customer orders retain the real server clock. See [the simulation procedure](/en/help/orders/preorders-and-batches#simulate-order).
+
+<span id="shared-date-defaults" />
+
+## Set the restaurant’s date defaults
+
+In restaurant settings, choose the date defaults for Home and Orders. Staff can inherit them or save a personal basis in the date filter. Weekly service windows stay in ordering settings. To move one day, open its series in Orders.

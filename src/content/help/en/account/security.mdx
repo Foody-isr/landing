@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - account
   - account-security
-updatedAt: '2026-10-18'
+updatedAt: '2026-11-18'
 featureId: account-security
 audience: public
 releaseStatus: available
@@ -29,6 +29,18 @@ Use the passkey sign-in option and complete the browser/device verification. A d
 ## Remove an unused key
 
 Select an unused passkey in security settings and confirm removal. Keep a working sign-in method before removing your last key.
+
+<span id="authenticator" />
+
+## Use an authenticator app
+
+When Foody has enabled this protection for your environment, owners, managers and accounts with administration or fiscal permissions must verify a second factor. Sign in with your password or passkey. On first use, add the displayed setup key to your authenticator app (the POS also displays a QR code), enter its six-digit code, and save the ten recovery codes privately before continuing. Each recovery code works once. Never send setup keys or codes to support. The setup prompt expires after five minutes. After five refused factors, wait 15 minutes and restart sign-in. Wait for a new app code if one was already used. Cashiers without these responsibilities keep their existing sign-in. An existing session may require sign-in again when this protection is activated or permissions change; protected sessions last at most 12 hours.
+
+<span id="replace-authenticator" />
+
+## Replace a lost authenticator
+
+If the authenticator is lost, sign in with a recovery code, then within five minutes open Admin → Settings → Security → Authenticator app. Enter your current password and choose Replace my authenticator. Configure the new app, confirm its code and save the new recovery codes. Confirmation revokes the old authenticator, old recovery codes and other sessions; cancellation before confirmation leaves the old app active. If every factor is lost, contact your authorized Foody administrator for verified account recovery. A password reset alone does not remove the second factor. This section is usable only after activation; an unavailable message means the current session cannot manage an authenticator.
 
 ## If the operation fails
 

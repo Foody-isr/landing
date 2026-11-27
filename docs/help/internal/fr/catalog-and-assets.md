@@ -1,22 +1,24 @@
 ---
 title: Catalogue et médias internes partagés
-description: 'Opérateurs Foody : Menu, Formules, Icônes ingrédients et Écran de connexion POS.'
+description: >-
+  Backoffice → POS content → Ingredient icons ou POS login screen. Les cartes et les formules se gèrent dans Foody
+  Admin.
 apps: both
 tags:
   - internal
   - backoffice-assets
-updatedAt: '2026-10-18'
+updatedAt: '2026-11-15'
 featureId: backoffice-assets
 audience: internal
 releaseStatus: available
 ---
-Opérateurs Foody : Menu, Formules, Icônes ingrédients et Écran de connexion POS.
+Backoffice → POS content → Ingredient icons ou POS login screen. Les cartes et les formules se gèrent dans Foody Admin.
 
 <span id="catalog" />
 
-## Maintenir les ressources de catalogue
+## Gérer le catalogue d’un restaurant
 
-Vérifiez contexte global ou restaurant avant modification de catalogue/formule. Contrôlez références avant suppression. Une bibliothèque partagée peut toucher plusieurs restaurants et exige une revue d’impact explicite.
+Connectez-vous à Foody Admin avec un compte autorisé pour le restaurant. Ouvrez **Articles et cartes → Articles** pour gérer les articles et les formules. Dans la même section, ouvrez **Cartes** pour gérer les cartes. Les anciens liens Menu Manager et Combo Menus du Backoffice affichent ce parcours.
 
 <span id="icons" />
 

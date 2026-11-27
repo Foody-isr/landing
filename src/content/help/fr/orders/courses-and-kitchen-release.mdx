@@ -5,7 +5,7 @@ apps: foodypos
 tags:
   - orders
   - pos-courses
-updatedAt: '2026-10-27'
+updatedAt: '2026-10-29'
 featureId: pos-courses
 audience: public
 releaseStatus: available
@@ -22,6 +22,8 @@ Les actions avancées apparaissent si la caisse et l’API installées annoncent
 
 Mettre un service en attente ou l’envoyer change le rythme de préparation, pas le statut de paiement. Une table peut être servie avant encaissement ; ne la comptez pas en espèces avant réception et confirmation de l’argent sur un POS autorisé avec session de caisse ouverte. Un paiement espèces en attente doit être résolu avant la clôture. Le dépôt du terminal carte est une opération de fin de journée distincte.
 
+Pour une addition ouverte, vérifiez l’envoi dans Addition et l’avancement au KDS du passe. Consultez [le suivi d’un plat à table](/fr/help/orders/taking-an-order-pos#open-check-kitchen-progress).
+
 <span id="seats" />
 
 ## Affecter couverts et services
@@ -34,7 +36,9 @@ Avec les versions compatibles de l’API et du POS, l’édition des places d’
 
 ## Mettre en attente ou lancer un service
 
-Vérifiez le service en attente puis Lancez les plats éligibles. Une unité physique part une seule fois même si son prix est partagé. Actualisez après une réponse incertaine au lieu de recréer la vente. Un ancien lot partagé peut bloquer un envoi partiel.
+Vérifiez le service en attente puis Lancez les plats éligibles. Une unité physique part une seule fois même si son prix est partagé. Actualisez après une réponse incertaine au lieu de recréer la vente. Un ancien lot partagé peut bloquer un envoi partiel. Avec la capacité correspondante sur l’API et la caisse, des plats déjà engagés et retenus peuvent encore être lancés après paiement de leur addition. Cette action ne rouvre pas l’addition, ne réoccupe pas une table libérée et ne modifie aucun encaissement. Une autorisation, un paiement en cours ou un remboursement peut rendre le lancement indisponible : vérifiez l’état affiché au lieu de créer une nouvelle vente.
+
+Après une fusion d’additions, ouvrez et vérifiez l’ensemble de l’addition résultante avant de confirmer le lancement. Un ancien lot ne doit pas lancer silencieusement les plats d’autres additions ; le prix partagé ne multiplie pas les quantités physiques.
 
 <span id="repeat" />
 
@@ -47,3 +51,11 @@ Si Répéter est proposé, vérifiez les plats copiés dans le panier provisoire
 ## Piloter les services sur mobile
 
 Sur le POS mobile mis à jour, la barre du bas de Menu choisit le service des prochains articles. Dans Addition, chaque service garde son état et ses propres commandes : flamme pour lancer, arrêt pour retenir et ⋯ pour les autres actions autorisées. Les boutons sont séparés et compacts ; changer le service actif ne l’envoie pas. Envoyer en haut utilise le parcours Foody existant et les sélections de lancement. Un service partagé entre plusieurs additions conserve une seule production physique. Les droits, délais, états envoyés et restrictions de répétition restent applicables.
+
+<span id="independent-lifecycle-confirmations" />
+
+## Vérifier les confirmations indépendantes
+
+Une remise partielle conserve les unités restantes. Terminer un seul poste KDS requis ne termine pas toute la préparation. La remise au livreur et la réception client sont deux confirmations distinctes ; le départ d’une tournée ne prouve pas une heure de réception client. Voir [préparation et remise](/fr/help/orders/payment-preparation-and-handoff).
+
+Ce parcours concerne les commandes dont la vue de traitement propose une remise. Pour une addition ouverte de table, nommée ou fractionnée dans Menu, vérifiez l’envoi dans Addition et l’avancement au KDS du passe.

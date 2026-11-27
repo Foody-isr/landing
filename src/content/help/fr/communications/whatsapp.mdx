@@ -5,7 +5,7 @@ apps: foodyadmin
 tags:
   - communications
   - whatsapp
-updatedAt: '2026-10-25'
+updatedAt: '2026-11-18'
 featureId: whatsapp
 audience: public
 releaseStatus: available
@@ -30,6 +30,8 @@ Meta coexistence direct est un pilote contrôlé, désactivé par défaut. Conne
 
 Dans la communication de commande, consultez envoyé, livré, lu, échec et blocage avant envoi. Un blocage ne prouve pas une livraison. Le rappel livreur relu se déclenche par son action éligible. Un résultat prestataire inconnu n’est pas rejoué automatiquement ; vérifiez avant renvoi.
 
+Le personnel ayant accès à l’espace de gestion des commandes peut consulter cet historique. Le livreur peut ouvrir WhatsApp depuis l’arrêt en cours dans le mode livreur.
+
 <span id="media-templates" />
 
 ## Créer un modèle avec photo ou PDF
@@ -46,13 +48,13 @@ Les fichiers sont accessibles aux utilisateurs autorisés de l’établissement 
 
 ## Vérifier le rappel de livraison calculé
 
-Pour une livraison affectée à une tournée avec une marge client enregistrée, les rappels utilisent l’arrivée calculée plus cette durée, au lieu du large créneau planifié de la commande. Exemple : arrivée à 08:30 et marge de 90 minutes → 08:30–10:00. Réglez-la dans Commandes → Livraisons → répartition, à côté du temps à chaque arrêt, puis vérifiez l’aperçu WhatsApp manuel ou approuvé avant envoi. Le même créneau alimente Twilio, Meta et les rappels par étape ; les variables des modèles et la règle J-1 existantes restent applicables. Les anciennes tournées sans réglage conservent le créneau enregistré. Si le créneau ne peut être vérifié, recalculez puis rouvrez le rappel. Un aperçu approuvé qui a changé doit être revérifié avant envoi. Modifier un modèle seul ne calcule pas de tournée et ne change pas sa marge.
+Pour une livraison affectée à une tournée avec une marge client enregistrée, les rappels utilisent l’arrivée calculée plus cette durée, au lieu du large créneau planifié de la commande. Exemple : arrivée à 08:30 et marge de 90 minutes → 08:30–10:00. Réglez-la dans Livraisons → Répartition → répartition, à côté du temps à chaque arrêt, puis vérifiez l’aperçu WhatsApp manuel ou approuvé avant envoi. Le même créneau alimente Twilio, Meta et les rappels par étape ; les variables des modèles et la règle J-1 existantes restent applicables. Les anciennes tournées sans réglage conservent le créneau enregistré. Si le créneau ne peut être vérifié, recalculez puis rouvrez le rappel. Un aperçu approuvé qui a changé doit être revérifié avant envoi. Modifier un modèle seul ne calcule pas de tournée et ne change pas sa marge.
 
 <span id="delivery-reminder-review-and-send" />
 
 ## Choisir le mode d’envoi du rappel
 
-Les rappels WhatsApp approuvés peuvent être prévisualisés avant la veille, mais les boutons manuels restent bloqués jusqu’à la veille selon le fuseau du restaurant. Commandes → Livraisons → Rappels WhatsApp permet de vérifier et confirmer les rappels de toutes les tournées de la date choisie ; WhatsApp au client et Envoyer ce rappel traitent un seul client. Le message utilise le créneau d’arrivée calculé de la tournée enregistrée et le livreur affecté. Les boutons manuels utilisent le modèle de rappel global ; une étape automatique conserve le modèle et l’horaire explicitement configurés dans Parcours de commande. Pour envoyer uniquement la veille, choisissez ce timing sur l’étape, par exemple Prête. Aucun déclencheur n’est activé en ouvrant un aperçu. Un rappel déjà soumis, incertain ou échoué n’est jamais renvoyé par un autre mode, même si son texte ou son fournisseur change. Une modification avant envoi demande un aperçu actualisé. L’acceptation ne prouve pas la réception ; consultez Messages au client de la commande. Le texte de l’aperçu représente le calcul actuel, pas un ancien message enregistré.
+Les rappels WhatsApp approuvés peuvent être prévisualisés avant la veille, mais les boutons manuels restent bloqués jusqu’à la veille selon le fuseau du restaurant. Livraisons → Répartition → Rappels WhatsApp permet de vérifier et confirmer les rappels de toutes les tournées de la date choisie ; WhatsApp au client et Envoyer ce rappel traitent un seul client. Le message utilise le créneau d’arrivée calculé de la tournée enregistrée et le livreur affecté. Les boutons manuels utilisent le modèle de rappel global ; une étape automatique conserve le modèle et l’horaire explicitement configurés dans Parcours de commande. Pour envoyer uniquement la veille, choisissez ce timing sur l’étape, par exemple Prête. Aucun déclencheur n’est activé en ouvrant un aperçu. Un rappel déjà soumis, incertain ou échoué n’est jamais renvoyé par un autre mode, même si son texte ou son fournisseur change. Une modification avant envoi demande un aperçu actualisé. L’acceptation ne prouve pas la réception ; consultez Messages au client de la commande. Le texte de l’aperçu représente le calcul actuel, pas un ancien message enregistré.
 
 <span id="unified-order-whatsapp" />
 
@@ -79,3 +81,9 @@ Prérequis : un modèle Utility approuvé avec une en-tête Photo dans le compte
 ## Choisir le destinataire WhatsApp du client
 
 Si le client utilise un autre numéro pour WhatsApp, ouvrez Clients → sa fiche et choisissez Utiliser pour WhatsApp dans Numéros de téléphone, puis enregistrez. Ce numéro est utilisé pour les messages Meta et Twilio et pour l’ouverture de WhatsApp depuis la commande, y compris les partages de liens et documents. Le téléphone de la commande reste celui des coordonnées et de la vérification SMS. Vérifiez le destinataire affiché dans l’aperçu ; une modification du numéro WhatsApp impose de revoir un nouvel aperçu avant un envoi API. Aucun message de test n’est envoyé lors de l’enregistrement de la fiche.
+
+<span id="invalid-recipient-recovery" />
+
+## Débloquer un aperçu avec un numéro invalide
+
+Avec les versions compatibles de l’API et de l’Admin, les modes WhatsApp Business et Application WhatsApp retirent automatiquement les espaces insécables et les marqueurs invisibles de copier-coller avant de vérifier le destinataire. Cela fonctionne aussi pour un ancien numéro enregistré ; la préparation ne réécrit pas la fiche client. Si le numéro reste manquant ou invalide, le destinataire et l’aperçu affichent Numéro de téléphone invalide et l’envoi reste bloqué. Dans Clients → fiche du client → Numéros de téléphone, saisissez le numéro complet avec son indicatif pays, choisissez Utiliser pour WhatsApp et enregistrez. Revenez à la commande, cliquez sur Actualiser et relisez le destinataire et le message avant l’envoi. Un échec de lecture de la fiche ou de configuration conserve son erreur générale et ne doit pas être présenté comme un numéro invalide. Le nettoyage ne confirme pas l’existence du compte WhatsApp ; l’envoi demande toujours votre action explicite.
