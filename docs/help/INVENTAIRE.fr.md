@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-18.
 
-115 fiches de fonctionnalités, 1103 procédures/sous-fonctionnalités, dont 103 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2794 fichiers applicatifs et 2411 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+115 fiches de fonctionnalités, 1106 procédures/sous-fonctionnalités, dont 103 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2798 fichiers applicatifs et 2415 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -13,8 +13,8 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 | foodyadmin | 848 | 853 | e2047f8715ab ; versioned |
 | foodybackoffice | 56 | 52 | 68b7b6c9b0fa ; versioned |
 | foodylanding | 158 | 31 | 33c92c3e1440 ; versioned |
-| foodypos | 439 | 186 | d59b7768620b ; versioned |
-| foodyserver | 900 | 1082 | fc4647a46b8b ; versioned |
+| foodypos | 440 | 187 | d59b7768620b ; versioned |
+| foodyserver | 903 | 1085 | fc4647a46b8b ; versioned |
 | foodyweb | 393 | 207 | 67fecae3d815 ; versioned |
 
 ## getting-started
@@ -293,6 +293,7 @@ Identifiant : `kitchen-availability`. Public : public. Disponibilité : availabl
 - [Choisir la source du stock et son profil](../../src/content/help/fr/kitchen/availability.mdx#availability-rule-in-stock-modal)
 - [Gérer les produits déjà préparés](../../src/content/help/fr/kitchen/availability.mdx#prepared-product-stock)
 - [Suivre la disponibilité d’un lot](../../src/content/help/fr/kitchen/availability.mdx#series-stock-after-date-change)
+- [Consulter les disponibilités au poste cuisine](../../src/content/help/fr/kitchen/availability.mdx#kitchen-station-view)
 
 ### [Operations Quotidiennes](../../src/content/help/fr/kitchen/daily-operations.mdx)
 
@@ -1239,6 +1240,7 @@ Identifiant : `pos-behavior`. Public : public. Disponibilité : available. Servi
 - [Vérifier la destination physique du paiement carte](../../src/content/help/fr/settings/pos-behavior.mdx#physical-card-destination)
 - [Utiliser le suivi de caisse commun](../../src/content/help/fr/settings/pos-behavior.mdx#unified-cash-workspace)
 - [Consulter la dernière transaction du terminal](../../src/content/help/fr/settings/pos-behavior.mdx#ashrait-last-transaction-inspection)
+- [Activer l’aperçu cuisine pour une caisse](../../src/content/help/fr/settings/pos-behavior.mdx#register-kitchen-previews)
 
 ### [Appareils et écrans cuisine](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx)
 
@@ -1254,6 +1256,7 @@ Identifiant : `device-kds`. Public : public. Disponibilité : available. Service
 - [Terminer au toucher et reprendre après une coupure](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#touch-and-recovery)
 - [Oublier un appareil dans FoodyPOS](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#forget-hardware)
 - [Distinguer comptes et postes autorisés](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#commercial-device-capacity)
+- [Voir le panier en cuisine pendant la saisie au drive](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#drive-thru-preview)
 
 ### [Configurer l’assistant de commande client](../../src/content/help/fr/settings/guest-order-assistant.mdx)
 

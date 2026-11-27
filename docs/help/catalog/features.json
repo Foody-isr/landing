@@ -2228,12 +2228,25 @@
           "en": "When a series has several handover days, they share its stock. View the same series after a day is moved to see the quantities.",
           "he": "כאשר יש כמה ימי מסירה בסדרה, הם משתמשים במלאי משותף. לאחר העברת יום, הציגו שוב את אותה סדרה כדי לראות את הכמויות."
         }
+      },
+      {
+        "id": "kitchen-station-view",
+        "title": {
+          "fr": "Consulter les disponibilités au poste cuisine",
+          "en": "Check item availability at a kitchen station",
+          "he": "בדיקת זמינות פריטים בעמדת המטבח"
+        },
+        "instructions": {
+          "fr": "Dans FoodyPOS, ouvrez Plus → Écran cuisine ou utilisez la tablette déjà associée. Dans le volet latéral, ouvrez Disponibilité des articles pour consulter les articles des catégories acheminées au poste. Utilisez Actualiser pour relire leur état. Pour modifier une quantité ou déclarer une rupture, ouvrez la gestion du stock avec les autorisations du restaurant.",
+          "en": "In FoodyPOS, open More → Kitchen display or use the paired kitchen tablet. Open Item availability in the side panel to check items in the categories routed to this station. Use Refresh to get their current status. To adjust a quantity or mark an item sold out, use stock management with the restaurant’s stock permissions.",
+          "he": "ב־FoodyPOS פתחו עוד ← מסך מטבח, או השתמשו בטאבלט המטבח שכבר שויך. פתחו את זמינות הפריטים בחלונית הצד כדי לבדוק פריטים מהקטגוריות שמנותבות לעמדה. לחצו על רענון כדי לקבל מצב עדכני. לעדכון כמות או לסימון פריט שאזל, עברו לניהול המלאי עם ההרשאות המתאימות במסעדה."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": true,
-    "procedureUpdatedAt": "2026-11-04",
+    "procedureUpdatedAt": "2026-11-27",
     "description": {
       "fr": "Configurer le stock de l’article, sa règle de disponibilité et son statut manuel dans l’éditeur actuel.",
       "en": "Configure item stock, its availability rule and manual status in the current item editor.",
@@ -11392,12 +11405,25 @@
           "en": "With the compatible version and permission to manage payments, open Hardware → Payment terminals, select the terminal’s details, then open Last terminal transaction. Choose Read last transaction to query that device. See [the procedure and its limits](/en/help/payments/ashrait-terminal-inspection).",
           "he": "בגרסה תואמת ועם הרשאה לניהול תשלומים, פתחו חומרה ← מסופי תשלום, בחרו את פרטי המסוף הרצוי ופתחו העסקה האחרונה במסוף. בחרו הצגת העסקה האחרונה כדי לקרוא מהמכשיר הזה. ראו [הוראות ומגבלות](/he/help/payments/ashrait-terminal-inspection)."
         }
+      },
+      {
+        "id": "register-kitchen-previews",
+        "title": {
+          "fr": "Activer l’aperçu cuisine pour une caisse",
+          "en": "Enable kitchen cart previews for a register",
+          "he": "הפעלת תצוגה מקדימה במטבח עבור קופה"
+        },
+        "instructions": {
+          "fr": "Avec le droit de modifier les réglages, ouvrez Paramètres → Caisse → Saisie de commande rapide sur la caisse associée et activez « Afficher les paniers de cette caisse en cuisine ». Activez aussi la réception dans Tickets sur chaque poste cuisine concerné. La caisse partage ses paniers pour tous les modes de service autorisés par le poste. [Configurer le routage et vérifier l’aperçu](/fr/help/settings/devices-and-kitchen-displays).",
+          "en": "With permission to edit settings, open Settings → Checkout → Fast order entry on the paired register and turn on “Preview this register’s carts in the kitchen”. Also enable reception under Tickets on each receiving kitchen station. The register shares carts for every dining option allowed on that station. [Set up routing and verify a preview](/en/help/settings/devices-and-kitchen-displays).",
+          "he": "עם הרשאה לעריכת הגדרות, פתחו בקופה המשויכת הגדרות ← קופה ← הזנת הזמנה מהירה והפעילו «הצגת הסלים של קופה זו במטבח». הפעילו גם את הקבלה בהגדרות הכרטיסים של כל עמדת מטבח רצויה. הקופה משתפת סלים עבור כל אפשרות סעודה המותרת בעמדה. [הגדרת הניתוב ובדיקת התצוגה המקדימה](/he/help/settings/devices-and-kitchen-displays)."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-11-26"
+    "procedureUpdatedAt": "2026-11-27"
   },
   {
     "id": "table-service-policy",
@@ -11574,7 +11600,11 @@
         "internal/orders/service.go",
         "internal/support/corpus.json",
         "internal/availability/service.go",
-        "migrations/355_kds_modifier_ink.sql"
+        "migrations/355_kds_modifier_ink.sql",
+        "internal/common/kitchen_draft.go",
+        "internal/common/device_models.go",
+        "internal/orders/financial_check_handler.go",
+        "migrations/356_kitchen_draft_previews.sql"
       ],
       "foodypos": [
         "lib/features/kitchen_display/**",
@@ -11592,7 +11622,12 @@
         "lib/main.dart",
         "lib/services/network/api_service.dart",
         "lib/core/routing/app_router.dart",
-        "lib/features/orders/domain/order_item.dart"
+        "lib/features/orders/domain/order_item.dart",
+        "lib/features/orders/data/check_repository.dart",
+        "lib/features/orders/data/financial_check_repository.dart",
+        "lib/features/orders/data/order_repository.dart",
+        "lib/features/orders/presentation/pos_page.dart",
+        "lib/features/settings/presentation/checkout_settings_page.dart"
       ]
     },
     "operations": [
@@ -11724,6 +11759,19 @@
           "fr": "Pour les offres versionnées de développement, Personnel → Appareils affiche la capacité de postes POS séparément des comptes employés. Réautoriser le même appareil identifié ne consomme pas une nouvelle place ; un second appareil au-delà du quota est refusé et le propriétaire doit ajouter une licence depuis Facturation. Une autorisation révoquée ou expirée ne compte plus dans les postes actifs. Les écrans cuisine ont leur propre quantité contractuelle ; la création d’une nouvelle station est refusée lorsque celle-ci est atteinte. Les contrats historiques gardent leurs droits.",
           "en": "For versioned development offers, Staff → Devices shows physical POS capacity separately from employee accounts. Reauthorizing the same identified device does not consume another slot; a second device above the limit is rejected and the owner must add a licence in Billing. Revoked or expired credentials no longer count as active POS devices. Kitchen displays have their own contracted quantity; adding a new station is rejected at that limit. Historical contracts keep their rights.",
           "he": "בהצעות עם גרסה בסביבת הפיתוח, צוות ← מכשירים מציג מכסת עמדות קופה בנפרד מחשבונות עובדים. אישור חוזר של אותו מכשיר מזוהה אינו צורך מקום נוסף; מכשיר שני מעבר למכסה נדחה והבעלים צריכים להוסיף רישיון בחיוב. הרשאה שבוטלה או פגה אינה נספרת כעמדה פעילה. למסכי מטבח יש כמות חוזית נפרדת; יצירת תחנה נוספת נדחית כשהכמות נוצלה. חוזים היסטוריים שומרים על זכויותיהם."
+        }
+      },
+      {
+        "id": "drive-thru-preview",
+        "title": {
+          "fr": "Voir le panier en cuisine pendant la saisie au drive",
+          "en": "Preview a drive-thru cart as the cashier takes the order",
+          "he": "תצוגה מקדימה במטבח בזמן קבלת הזמנה בדרייב־ת׳רו"
+        },
+        "instructions": {
+          "fr": "Sur la caisse associée, ouvrez Paramètres → Caisse → Saisie de commande rapide et activez « Afficher les paniers de cette caisse en cuisine ». Dans les réglages du poste cuisine, ouvrez Tickets et activez « Afficher les paniers en cours de saisie ». Sous Routage, autorisez les commandes de cette caisse, les modes de service et les catégories voulus. Saisissez deux articles puis changez une quantité. Le volet « En saisie » affiche la mise à jour et le nom de la caisse, quel que soit le mode de service admissible. L’aperçu est en lecture seule et le compteur de tickets ouverts reste stable. Vider le panier retire l’aperçu. Si la caisse perd la connexion, l’aperçu expire après une minute sans mise à jour. Quand la commande est envoyée en cuisine, traitez le ticket habituel.",
+          "en": "On the paired register, open Settings → Checkout → Fast order entry and enable “Preview this register’s carts in the kitchen”. In the kitchen station’s Tickets settings, enable “Show tickets for draft orders”. Under Routing, allow this register, the dining options and the categories for the station. Enter two items and change a quantity. The “In entry” panel shows the update and the register name for any eligible dining option. The preview is read-only and the open ticket count stays the same. Clearing the cart removes the preview. If the register loses its connection, the preview expires after one minute without an update. When the order is sent to the kitchen, work from the regular ticket.",
+          "he": "בקופה המשויכת פתחו הגדרות ← קופה ← הזנת הזמנה מהירה והפעילו «הצגת הסלים של קופה זו במטבח». בהגדרות הכרטיסים של עמדת המטבח הפעילו «הצגת הזמנות שעדיין בהקלדה». בהגדרות הניתוב בחרו בקופה, באפשרויות הסעודה ובקטגוריות המתאימות. הזינו שני פריטים ושנו כמות. באזור «בהקלדה» יופיעו העדכון ושם הקופה לכל אפשרות סעודה שנבחרה. התצוגה מיועדת לקריאה בלבד ומספר הכרטיסים הפתוחים נשאר קבוע. ריקון הסל מסיר את התצוגה. אם הקופה מתנתקת, התצוגה פגה אחרי דקה ללא עדכון. אחרי שליחת ההזמנה למטבח מטפלים בכרטיס הרגיל."
         }
       }
     ],
