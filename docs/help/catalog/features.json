@@ -5872,13 +5872,26 @@
           "en": "Attach the Flavour group once to the article and require exactly one selection, minimum and maximum 1. Keep that group free of repeated conditional positions when one flavour applies to the whole cake. Digit or letter positions belong to their own group and must not multiply the flavour choice. Correct the display name if a reusable group still says Number/Letter Cake on a heart, then check the guest item modal and basket. Existing articles are never renamed or deduplicated automatically.",
           "he": "קשרו את קבוצת הטעם לפריט פעם אחת והגדירו בחירה אחת בדיוק, מינימום ומקסימום 1. השאירו את הקבוצה ללא מיקומים מותנים חוזרים כאשר טעם אחד משותף לכל העוגה. מיקומי ספרות או אותיות שייכים לקבוצה נפרדת ואינם אמורים להכפיל את בחירת הטעם. תקנו את השם המוצג אם קבוצה משותפת עדיין מציגה Number/Letter Cake בעוגת לב, ובדקו את חלון הפריט והסל. פריטים קיימים אינם מקבלים שם חדש ואינם עוברים הסרת כפילויות אוטומטית."
         }
+      },
+      {
+        "id": "kitchen-option-color",
+        "title": {
+          "en": "Choose a modifier’s kitchen color",
+          "fr": "Choisir la couleur d’un modificateur en cuisine",
+          "he": "בחירת צבע לתוספת במסך המטבח"
+        },
+        "instructions": {
+          "en": "Open the modifier set in FoodyAdmin. Beside the kitchen name for an option, choose its kitchen color and save. For new orders, FoodyPOS displays this option in that color on the kitchen ticket. Choose Station default to use the station’s modifier text color. The checkout option sequence and prices are independent.",
+          "fr": "Dans FoodyAdmin, ouvrez le groupe de modificateurs. À côté du nom en cuisine d’une option, choisissez sa couleur en cuisine et enregistrez. Pour les nouvelles commandes, FoodyPOS affiche cette option dans la couleur choisie sur le ticket cuisine. Choisissez Couleur du poste pour utiliser la couleur générale des modificateurs du poste. Les prix et l’ordre des options à la caisse se règlent séparément.",
+          "he": "ב־FoodyAdmin פתחו את קבוצת התוספות. ליד שם המטבח של האפשרות בחרו צבע ושמרו. בהזמנות חדשות FoodyPOS יציג את התוספת בצבע שנבחר על כרטיס המטבח. בחרו בברירת המחדל של העמדה כדי להשתמש בצבע הכללי של התוספות בעמדה. מחירי התוספות והסדר שלהן בקופה נקבעים בנפרד."
+        }
       }
     ],
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
     "updatedAt": "2026-10-20",
-    "procedureUpdatedAt": "2026-11-04"
+    "procedureUpdatedAt": "2026-11-27"
   },
   {
     "id": "order-types",
@@ -11559,7 +11572,9 @@
         "internal/orders/full_service_handler.go",
         "internal/orders/handler.go",
         "internal/orders/service.go",
-        "internal/support/corpus.json"
+        "internal/support/corpus.json",
+        "internal/availability/service.go",
+        "migrations/355_kds_modifier_ink.sql"
       ],
       "foodypos": [
         "lib/features/kitchen_display/**",
@@ -11575,7 +11590,9 @@
         "lib/core/l10n/app_*.arb",
         "lib/features/auth/presentation/login_page.dart",
         "lib/main.dart",
-        "lib/services/network/api_service.dart"
+        "lib/services/network/api_service.dart",
+        "lib/core/routing/app_router.dart",
+        "lib/features/orders/domain/order_item.dart"
       ]
     },
     "operations": [
@@ -11613,9 +11630,9 @@
           "he": "הגדרת תחנות מטבח"
         },
         "instructions": {
-          "en": "Create or edit the station and assign its allowed item categories and device access. Review priority and completion behavior. An item can route to its configured production station while keeping its customer-facing menu group unchanged.",
-          "fr": "Créez ou modifiez le poste, affectez catégories d’articles et accès des appareils. Vérifiez priorité et fin de préparation. Un article suit son poste de production sans modifier son groupe de menu public.",
-          "he": "צרו או ערכו תחנה ושייכו קטגוריות פריטים וגישה למכשיר. בדקו עדיפות וסיום הכנה. ניתוב לתחנת ייצור אינו משנה קבוצת תפריט ללקוח."
+          "fr": "Dans FoodyPOS, ouvrez Plus → Écran cuisine, puis les réglages du poste dans le menu. Pour un premier poste, choisissez l’appareil, son rôle Préparation ou Passe et enregistrez. Si le pilote est actif, un gestionnaire peut ajouter une tablette depuis Général. Sous Routage, choisissez les caisses sources, les commandes en ligne, les modes de service et les catégories de cuisine. Dans chaque liste, la sélection des éléments actuels et l’inclusion des futurs éléments se règlent séparément. Pour ne recevoir aucun élément d’une liste, désactivez l’inclusion future et touchez Tout désélectionner. Une catégorie interne peut alimenter un poste sans changer le menu public.",
+          "en": "In FoodyPOS, open More → Kitchen display and open the station settings from the menu. For a new station, select the device, choose Prep or Expo, and save. When the pilot is enabled, a manager can add a tablet from General. Under Routing, select source registers, online orders, dining options and kitchen categories. Each list controls its current choices and future additions separately. To receive nothing from a list, turn off future additions and choose Deselect all. Routing an internal category to a station keeps the public menu layout intact.",
+          "he": "ב־FoodyPOS פתחו עוד ← מסך מטבח ובחרו בהגדרות העמדה בתפריט. לעמדה חדשה בחרו מכשיר ותפקיד הכנה או מסירה ושמרו. כאשר הפיילוט פעיל, מנהל יכול להוסיף טאבלט במסך כללי. תחת ניתוב בחרו קופות מקור, הזמנות מקוונות, אפשרויות הגשה וקטגוריות מטבח. לכל רשימה בחירה נפרדת לפריטים הקיימים ולתוספות עתידיות. כדי שהעמדה לא תקבל דבר מרשימה מסוימת, כבו הכללה עתידית ובטלו את כל הבחירות. ניתוב קטגוריה פנימית לעמדה שומר על מבנה התפריט הציבורי."
         }
       },
       {
@@ -11652,9 +11669,22 @@
           "he": "מעבר בין עמדות ותצוגה כוללת בעמדת המסירה"
         },
         "instructions": {
-          "en": "A tablet opens one station at a time. An assigned list lets the cook switch among those stations from the station selector. All stations includes current and future profiles in this restaurant. A manager can change the assignment while the tablet stays paired. For a kitchen overview, create a pass profile with the required order sources, dining options and every category. An empty category or register selection includes future entries. Enable held courses to see upcoming items. Use view-only access on a display used for monitoring.",
-          "fr": "La tablette affiche un poste à la fois. Avec une sélection de postes, le cuisinier passe de l’un à l’autre depuis le sélecteur. « Tous les postes » inclut les profils actuels et futurs du restaurant. Le gestionnaire peut modifier l’affectation pendant que la tablette reste associée. Pour une vue d’ensemble, configurez un profil Passe couvrant les sources, modes de service et catégories souhaités. Une sélection vide de catégories ou de caisses les inclut toutes, y compris les futures. Activez les plats en attente pour voir ceux à venir. Choisissez la lecture seule pour un écran de suivi.",
-          "he": "הטאבלט מציג עמדה אחת בכל פעם. כשנבחרו כמה עמדות, הטבח יכול לעבור ביניהן בבורר העמדות. הבחירה בכל העמדות כוללת גם פרופילים שיתווספו במסעדה. מנהל יכול לעדכן את השיוך בלי לצמד שוב את הטאבלט. לתצוגה כוללת מגדירים פרופיל מסירה ובוחרים את מקורות ההזמנה, סוגי השירות והקטגוריות הרצויים. בחירה ריקה בקטגוריות או בקופות כוללת את כולן, גם בעתיד. מציגים מנות בהמתנה לפי הצורך ובוחרים הרשאת צפייה בלבד למסך מעקב."
+          "fr": "Le tableau affiche le nom et le rôle du poste. Le sélecteur permet de changer de poste parmi ceux autorisés. Un profil Passe peut regrouper les caisses et catégories de plusieurs postes. Sur une tablette dédiée, le gestionnaire choisit les postes autorisés, l’accès en lecture seule ou les actions en cuisine depuis FoodyAdmin. L’option Tous les postes comprend aussi les nouveaux postes du restaurant.",
+          "en": "The board shows the active station name and role. Use the station selector to switch among allowed stations. An Expo profile can cover multiple registers and categories. For a dedicated tablet, a manager selects the allowed stations and read-only or kitchen-action access in FoodyAdmin. All stations includes future stations at this restaurant.",
+          "he": "בלוח מופיעים שם העמדה הפעילה ותפקידה. בורר העמדות מאפשר לעבור בין העמדות המורשות. עמדת מסירה יכולה לרכז כמה קופות וקטגוריות. לטאבלט ייעודי, המנהל בוחר ב־FoodyAdmin את העמדות המורשות ואת ההרשאה לצפייה בלבד או לביצוע פעולות. האפשרות כל העמדות כוללת גם עמדות שיתווספו למסעדה."
+        }
+      },
+      {
+        "id": "board-display",
+        "title": {
+          "en": "Read and configure the kitchen board",
+          "fr": "Lire et régler le tableau cuisine",
+          "he": "קריאה והגדרה של לוח המטבח"
+        },
+        "instructions": {
+          "fr": "Passez des tickets ouverts aux tickets terminés avec les deux onglets. Les flèches changent de page. Ouvrez le volet latéral pour consulter les quantités par article et la disponibilité des articles acheminés à ce poste. Dans les réglages, Disposition ajuste les rails, la mosaïque et le nombre de colonnes. Apparence propose un en-tête compact ou un bandeau de mode de service et ses couleurs. Minuteries et alertes règle les deux seuils et le son d’arrivée. En service par plats, affichez les plats en attente avec les plats lancés de la même addition, ou affichez chaque plat à son envoi. Sur une tablette dédiée, les réglages d’affichage sont mémorisés pour cette tablette et ce poste. Dans Tickets, classez les articles par saisie, siège, nom ou catégorie. Pour un ordre de catégories personnalisé ou pour classer les groupes de modificateurs, utilisez les flèches. L’échelonnement utilise les durées de préparation du catalogue pour afficher les articles courts plus tard sur ce poste. Un article sans durée apparaît dès l’envoi. Un toucher d’en-tête termine les lignes déjà affichées.",
+          "en": "Switch between open and completed tickets using the two tabs. Use the arrows to change pages. Open the sidebar for item counts and availability for items routed to this station. In settings, Layout changes the rails, tiled layout and column count. Ticket appearance offers a compact header or a dining-option banner with configurable colors. Timers and alerts controls the two thresholds and the arrival sound. With coursing, show held courses with a fired course from the same check, or display courses as they fire. On a dedicated tablet, display preferences are saved for that tablet and station. In Tickets, sort items by entry, seat, name or category. Use the arrows to customize category or modifier set order. Staggered preparation uses catalog prep times to display shorter items later at this station. Items without a duration appear at dispatch. Completing the header finishes the lines already on display.",
+          "he": "עברו בין כרטיסים פתוחים לכרטיסים שהושלמו בעזרת שתי הלשוניות. החצים מעבירים עמוד. פתחו את חלונית הצד לספירת כמויות ולבדיקת זמינות הפריטים המנותבים לעמדה. בהגדרות הפריסה בחרו מסילות, אריחים ומספר עמודות. במראה הכרטיס בחרו כותרת קומפקטית או הדגשה צבעונית של אפשרות ההגשה. בהגדרות הזמנים וההתראות קבעו שני ספי זמן וצליל לכרטיס חדש. בשירות לפי מנות אפשר להציג מנות בהמתנה עם מנה שכבר נשלחה מאותו חשבון או להציג כל מנה במועד שליחתה. בטאבלט ייעודי העדפות התצוגה נשמרות לאותו טאבלט ולאותה עמדה. בכרטיסים בחרו מיון לפי סדר הזנה, מושב, שם או קטגוריה. החצים משנים את סדר הקטגוריות וקבוצות התוספות. בהצגה מדורגת זמן ההכנה בקטלוג קובע מתי יופיע פריט קצר יותר בעמדה. פריט ללא זמן הכנה מופיע מיד בשליחה. לחיצה על הכותרת משלימה את השורות שכבר הוצגו."
         }
       },
       {
@@ -11665,9 +11695,9 @@
           "he": "השלמה בנגיעה וחזרה לעבודה אחרי ניתוק"
         },
         "instructions": {
-          "en": "Touch an item to mark that line, or the ticket header to complete the routed items at this station. Undo during the three-second delay to cancel the touch. The completed tab offers recall. At the pass, prep marks help coordinate the rest of the ticket. A held course or an advance preview of a scheduled pickup becomes actionable after kitchen release. Setting an alert time, priority or ticket completion affects kitchen work. Cash settlement and table occupancy use their respective FoodyPOS workflows. During a network outage the display shows the age of its last update and suspends actions. Reconnect, refresh and read the confirmed state before touching again. A normal app restart restores the association. For a lost or replaced device, check last contact in Admin, revoke its identity and pair the replacement.",
-          "fr": "Touchez une ligne pour marquer cet article, ou l’en-tête pour terminer les articles acheminés à ce poste. Vous disposez de trois secondes pour annuler le geste. Retrouvez un ticket dans les terminés pour le rappeler. Au passe, les marques de préparation montrent les articles déjà prêts. Un plat en attente ou un retrait programmé affiché à l’avance devient actionnable après son envoi en cuisine. Les alertes, la priorité et la complétion concernent la cuisine. L’encaissement et la libération de table ont leurs propres parcours dans FoodyPOS. Hors connexion, l’écran indique l’ancienneté du tableau et suspend les actions. Reconnectez la tablette, actualisez et lisez l’état confirmé avant un nouveau geste. Une relance ordinaire restaure l’association. Pour une tablette perdue ou remplacée, vérifiez le dernier contact dans Admin, révoquez son identité et associez la remplaçante.",
-          "he": "נוגעים בשורת פריט כדי לסמן אותו או בכותרת הכרטיס כדי להשלים את הפריטים המנותבים לעמדה. אפשר לבטל את הנגיעה בתוך שלוש שניות. בלשונית הכרטיסים שהושלמו אפשר להחזיר כרטיס לעבודה. בעמדת המסירה רואים אילו פריטים כבר הוכנו. מנה בהמתנה או הזמנת איסוף עתידית ניתנות לעדכון אחרי שליחתן למטבח. ההתראות, העדיפות וההשלמה מתייחסות לעבודת המטבח. גבייה ופינוי שולחן נעשים במסכים שלהם ב־FoodyPOS. בניתוק מוצג הזמן שחלף מאז העדכון והפעולות מושהות. מחברים מחדש, מרעננים ובודקים מה אושר לפני נגיעה נוספת. בפתיחה מחדש השיוך משוחזר. אם הטאבלט אבד או הוחלף, בודקים מתי התחבר לאחרונה בממשק הניהול, מבטלים את זהותו ומצמדים את המכשיר החלופי."
+          "en": "Touch an item to mark that line, or the ticket header to complete the routed items at this station. Undo during the three-second delay to cancel the touch. The completed tab offers recall. At the pass, prep marks help coordinate the rest of the ticket. A held course or an advance preview of a scheduled pickup becomes actionable after kitchen release. Setting an alert time, priority or ticket completion affects kitchen work. Cash settlement and table occupancy use their respective FoodyPOS workflows. During a network outage the display shows the age of its last update and suspends actions. Reconnect, refresh and read the confirmed state before touching again. A normal app restart restores the association. For a lost or replaced device, check last contact in Admin, revoke its identity and pair the replacement. At Expo, recall can target prep stations, expo stations or all stations, according to the available options and the configured completion scope.",
+          "fr": "Touchez une ligne pour marquer cet article, ou l’en-tête pour terminer les articles acheminés à ce poste. Vous disposez de trois secondes pour annuler le geste. Retrouvez un ticket dans les terminés pour le rappeler. Au passe, les marques de préparation montrent les articles déjà prêts. Un plat en attente ou un retrait programmé affiché à l’avance devient actionnable après son envoi en cuisine. Les alertes, la priorité et la complétion concernent la cuisine. L’encaissement et la libération de table ont leurs propres parcours dans FoodyPOS. Hors connexion, l’écran indique l’ancienneté du tableau et suspend les actions. Reconnectez la tablette, actualisez et lisez l’état confirmé avant un nouveau geste. Une relance ordinaire restaure l’association. Pour une tablette perdue ou remplacée, vérifiez le dernier contact dans Admin, révoquez son identité et associez la remplaçante. Au Passe, le rappel peut cibler les postes de préparation, les postes de passe ou tous les postes selon les options proposées et la portée configurée.",
+          "he": "נוגעים בשורת פריט כדי לסמן אותו או בכותרת הכרטיס כדי להשלים את הפריטים המנותבים לעמדה. אפשר לבטל את הנגיעה בתוך שלוש שניות. בלשונית הכרטיסים שהושלמו אפשר להחזיר כרטיס לעבודה. בעמדת המסירה רואים אילו פריטים כבר הוכנו. מנה בהמתנה או הזמנת איסוף עתידית ניתנות לעדכון אחרי שליחתן למטבח. ההתראות, העדיפות וההשלמה מתייחסות לעבודת המטבח. גבייה ופינוי שולחן נעשים במסכים שלהם ב־FoodyPOS. בניתוק מוצג הזמן שחלף מאז העדכון והפעולות מושהות. מחברים מחדש, מרעננים ובודקים מה אושר לפני נגיעה נוספת. בפתיחה מחדש השיוך משוחזר. אם הטאבלט אבד או הוחלף, בודקים מתי התחבר לאחרונה בממשק הניהול, מבטלים את זהותו ומצמדים את המכשיר החלופי. בעמדת המסירה ניתן להחזיר כרטיס לעמדות ההכנה, לעמדות המסירה או לכל העמדות, לפי האפשרויות הזמינות והיקף ההשלמה שהוגדר."
         }
       },
       {
@@ -11700,7 +11730,7 @@
     "audience": "public",
     "status": "available",
     "preserveExisting": false,
-    "procedureUpdatedAt": "2026-11-26"
+    "procedureUpdatedAt": "2026-11-27"
   },
   {
     "id": "stock-units-policy",

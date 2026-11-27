@@ -91,8 +91,8 @@ for (const [service, configuredRoot] of Object.entries(roots)) {
     // Standalone sandbox subscription files do not implement operational or
     // production payments even when shared selectors cover the same directories.
     // These screens and projections implement only the dedicated kitchen display on iPad and Android.
-    const kitchenDisplay = (service === 'foodyserver' && ['internal/orders/device_kitchen.go','internal/orders/kitchen_source.go'].includes(file))
-      || (service === 'foodypos' && ['lib/features/kitchen/data/kitchen_tablet_platform.dart','lib/features/kitchen/data/kitchen_tablet_repository.dart','lib/features/kitchen/presentation/kitchen_tablet_page.dart','lib/features/kitchen/presentation/kitchen_ticket_layout.dart'].includes(file));
+    const kitchenDisplay = (service === 'foodyserver' && ['internal/orders/device_kitchen.go','internal/orders/kitchen_source.go','internal/orders/kitchen_prep.go'].includes(file))
+      || (service === 'foodypos' && ['lib/features/kitchen/data/kitchen_tablet_platform.dart','lib/features/kitchen/data/kitchen_tablet_repository.dart','lib/features/kitchen/presentation/kitchen_tablet_page.dart','lib/features/kitchen/presentation/kitchen_ticket_layout.dart','lib/features/kitchen/presentation/kitchen_display_board.dart','lib/features/kitchen/presentation/kitchen_ticket_style.dart'].includes(file));
     let ids = kitchenDisplay ? ['device-kds'] : backofficeMFA ? ['backoffice-access'] : commercialDocumentModule ? ['backoffice-commercial-documents'] : sandboxBillingModule ? ['foody-billing-sandbox'] : itemMenuAssignmentModule ? ['menu-categories-and-items', 'menu-creating-a-menu-item', 'menu-menus-and-groups'] : eventModule ? ['orders-events'] : endOfDayModule ? ['pos-end-of-day'] : guardedCash ? ['pos-payments', 'pos-end-of-day'] : cashGuaranteeModule ? ['stancer-cash-guarantee'] : service === 'foodyserver' && file === 'internal/orders/cash_drawer_context.go'
       ? ['pos-payments', 'pos-cash-access-diagnostics']
       : service === 'foodyserver' && /^internal\/orders\/transactions(?:_handler|_adjustments)?\.go$/.test(file)

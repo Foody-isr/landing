@@ -2,7 +2,7 @@
 
 Révision du relevé : 2026-10-18.
 
-115 fiches de fonctionnalités, 1101 procédures/sous-fonctionnalités, dont 103 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2790 fichiers applicatifs et 2409 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
+115 fiches de fonctionnalités, 1103 procédures/sous-fonctionnalités, dont 103 guides publics en trois langues et 12 fiches opérateur internes. Le relevé machine contient 2794 fichiers applicatifs et 2411 surfaces de code. Aucune route de page/application relevée ne reste sans classification.
 
 Ce relevé décrit les sources examinées, les contrôles et les procédures. Il ne certifie pas chaque état d’exécution ni une installation physique. Les chemins API relatifs à un groupe et les enfants Flutter relatifs conservent cette qualification. Les fichiers techniques partagés sont identifiés séparément.
 
@@ -10,11 +10,11 @@ Ce relevé décrit les sources examinées, les contrôles et les procédures. Il
 
 | Service | Fichiers sources | Surfaces | Dépôt/version |
 |---|---:|---:|---|
-| foodyadmin | 848 | 853 | 966d9f964509 ; versioned |
+| foodyadmin | 848 | 853 | e2047f8715ab ; versioned |
 | foodybackoffice | 56 | 52 | 68b7b6c9b0fa ; versioned |
 | foodylanding | 158 | 31 | 33c92c3e1440 ; versioned |
-| foodypos | 437 | 186 | 718e095976ab ; versioned |
-| foodyserver | 898 | 1080 | 6d30ad0f70f4 ; versioned |
+| foodypos | 439 | 186 | d59b7768620b ; versioned |
+| foodyserver | 900 | 1082 | fc4647a46b8b ; versioned |
 | foodyweb | 393 | 207 | 67fecae3d815 ; versioned |
 
 ## getting-started
@@ -537,6 +537,7 @@ Identifiant : `menu-modifiers`. Public : public. Disponibilité : available. Ser
 - [Changer la disponibilité depuis Articles](../../src/content/help/fr/menu/modifiers.mdx#library-availability)
 - [Conditionner les véritables modificateurs](../../src/content/help/fr/menu/modifiers.mdx#conditional-positions)
 - [Demander une seule saveur pour un gâteau](../../src/content/help/fr/menu/modifiers.mdx#one-cake-flavour)
+- [Choisir la couleur d’un modificateur en cuisine](../../src/content/help/fr/menu/modifiers.mdx#kitchen-option-color)
 
 ### [Importer un catalogue et gérer les images](../../src/content/help/fr/menu/import-and-images.mdx)
 
@@ -1249,6 +1250,7 @@ Identifiant : `device-kds`. Public : public. Disponibilité : available. Service
 - [Traiter les tickets cuisine](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#service)
 - [Associer un iPad ou une tablette Android à la cuisine](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#pair-android)
 - [Changer de poste ou configurer une vue d’ensemble au passe](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#station-selection)
+- [Lire et régler le tableau cuisine](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#board-display)
 - [Terminer au toucher et reprendre après une coupure](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#touch-and-recovery)
 - [Oublier un appareil dans FoodyPOS](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#forget-hardware)
 - [Distinguer comptes et postes autorisés](../../src/content/help/fr/settings/devices-and-kitchen-displays.mdx#commercial-device-capacity)

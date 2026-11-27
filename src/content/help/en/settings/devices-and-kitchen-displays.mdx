@@ -5,7 +5,7 @@ apps: both
 tags:
   - settings
   - device-kds
-updatedAt: '2026-11-26'
+updatedAt: '2026-11-27'
 featureId: device-kds
 audience: public
 releaseStatus: available
@@ -30,7 +30,7 @@ Find the correct device, review its identity, active state and selected POS prof
 
 ## Set kitchen stations
 
-Create or edit the station and assign its allowed item categories and device access. Review priority and completion behavior. An item can route to its configured production station while keeping its customer-facing menu group unchanged.
+In FoodyPOS, open More → Kitchen display and open the station settings from the menu. For a new station, select the device, choose Prep or Expo, and save. When the pilot is enabled, a manager can add a tablet from General. Under Routing, select source registers, online orders, dining options and kitchen categories. Each list controls its current choices and future additions separately. To receive nothing from a list, turn off future additions and choose Deselect all. Routing an internal category to a station keeps the public menu layout intact.
 
 <span id="service" />
 
@@ -48,13 +48,19 @@ On the compatible pilot release, an owner or manager with permission to edit set
 
 ## Switch stations or set up a pass overview
 
-A tablet opens one station at a time. An assigned list lets the cook switch among those stations from the station selector. All stations includes current and future profiles in this restaurant. A manager can change the assignment while the tablet stays paired. For a kitchen overview, create a pass profile with the required order sources, dining options and every category. An empty category or register selection includes future entries. Enable held courses to see upcoming items. Use view-only access on a display used for monitoring.
+The board shows the active station name and role. Use the station selector to switch among allowed stations. An Expo profile can cover multiple registers and categories. For a dedicated tablet, a manager selects the allowed stations and read-only or kitchen-action access in FoodyAdmin. All stations includes future stations at this restaurant.
+
+<span id="board-display" />
+
+## Read and configure the kitchen board
+
+Switch between open and completed tickets using the two tabs. Use the arrows to change pages. Open the sidebar for item counts and availability for items routed to this station. In settings, Layout changes the rails, tiled layout and column count. Ticket appearance offers a compact header or a dining-option banner with configurable colors. Timers and alerts controls the two thresholds and the arrival sound. With coursing, show held courses with a fired course from the same check, or display courses as they fire. On a dedicated tablet, display preferences are saved for that tablet and station. In Tickets, sort items by entry, seat, name or category. Use the arrows to customize category or modifier set order. Staggered preparation uses catalog prep times to display shorter items later at this station. Items without a duration appear at dispatch. Completing the header finishes the lines already on display.
 
 <span id="touch-and-recovery" />
 
 ## Complete by touch and recover after disconnection
 
-Touch an item to mark that line, or the ticket header to complete the routed items at this station. Undo during the three-second delay to cancel the touch. The completed tab offers recall. At the pass, prep marks help coordinate the rest of the ticket. A held course or an advance preview of a scheduled pickup becomes actionable after kitchen release. Setting an alert time, priority or ticket completion affects kitchen work. Cash settlement and table occupancy use their respective FoodyPOS workflows. During a network outage the display shows the age of its last update and suspends actions. Reconnect, refresh and read the confirmed state before touching again. A normal app restart restores the association. For a lost or replaced device, check last contact in Admin, revoke its identity and pair the replacement.
+Touch an item to mark that line, or the ticket header to complete the routed items at this station. Undo during the three-second delay to cancel the touch. The completed tab offers recall. At the pass, prep marks help coordinate the rest of the ticket. A held course or an advance preview of a scheduled pickup becomes actionable after kitchen release. Setting an alert time, priority or ticket completion affects kitchen work. Cash settlement and table occupancy use their respective FoodyPOS workflows. During a network outage the display shows the age of its last update and suspends actions. Reconnect, refresh and read the confirmed state before touching again. A normal app restart restores the association. For a lost or replaced device, check last contact in Admin, revoke its identity and pair the replacement. At Expo, recall can target prep stations, expo stations or all stations, according to the available options and the configured completion scope.
 
 <span id="forget-hardware" />
 
